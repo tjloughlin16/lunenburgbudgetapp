@@ -88,6 +88,11 @@ CHECKS = [
     # THE NUMBERS FOR THE COMMUNITY. A sharing document is the one most likely to be
     # quoted, so it is generated and this fails the day the archive outgrows it.
     ('build_app_metrics.py', ['--check']),
+    # THE WATCHERS. Each keeps a committed state file and must never announce a thing
+    # twice; --check asks whether the state still holds together.
+    ('watch_youtube.py', ['--check']),
+    ('write_agenda_preview.py', ['--check']),
+    ('build_notices.py', ['--check']),
     # ONE REPORT OVER ALL OF THEM. It reads every report's payload and writes none of its
     # own claims, so this entry fails exactly when it should: a report changed a
     # conclusion, or stopped publishing one, and the synthesis still says the old thing.

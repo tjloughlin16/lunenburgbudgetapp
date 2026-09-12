@@ -51,6 +51,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'analysis'
   | 'search'
   | 'recorded'
+  | 'thisweek'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
 export const SLUG: Record<Tab, string> = {
@@ -319,6 +320,9 @@ export const SLUG: Record<Tab, string> = {
   // them. "What was said" is the question a resident arrives with and it carries its
   // own caveat, because what was said is on the recording and this points at it.
   recorded: 'what-was-said',
+  // What is coming and what just appeared, as our watchers saw it. The phrase a
+  // resident says; `feed` and `updates` are accepted.
+  thisweek: 'this-week',
   // The name everybody in town says out loud, and nothing else. NOT
   // `regional-vocational-assessment`, which is the accounting shape of the thing and what
   // nobody calls it; NOT `montachusett`, which is also a planning commission, a transit
@@ -566,6 +570,7 @@ const ALIASES: Record<string, Tab> = {
   'who-lives-here': 'bythenumbers', 'who-lives-in-lunenburg': 'bythenumbers',
   demographics: 'bythenumbers', census: 'bythenumbers', acs: 'bythenumbers',
   blog: 'blog', posts: 'blog', 'the-blog': 'blog', updates: 'blog',
+  'this-week': 'thisweek', 'this-week-in-town': 'thisweek', feed: 'thisweek', 'meeting-feed': 'thisweek',
   'what-was-said': 'recorded', 'recording-minutes': 'recorded', 'our-minutes': 'recorded',
   search: 'search', find: 'search', 'search-minutes': 'search', 'search-everything': 'search',
   // /worth-knowing WAS A PAGE AND IS NOW THE BLOG. It rendered all 48 items as cards from
@@ -614,6 +619,7 @@ export const LABEL: Record<Tab, string> = {
   sources: 'Sources',
   search: 'Search — everything this project holds',
   recorded: 'What was said — minutes from the recordings',
+  thisweek: 'This week in town — meetings coming up, minutes and recordings just posted',
   athletics: 'Athletics, both sides of the money',
   rates: 'Rates, fees and contracts — the register',
   freecash: 'Free cash — how much is actually spendable',
@@ -694,6 +700,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   bythenumbers: 'reports',
   blog: 'reports',
   recorded: 'reports',
+  thisweek: 'reports',
   courses: 'reports',
   attrition: 'reports',
   analysis: 'reports',
@@ -843,6 +850,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   bythenumbers: 'analyses',
   blog: 'analyses',
   recorded: 'analyses',
+  thisweek: 'analyses',
   addsup: 'analyses',
   analysis: 'analyses',
   database: 'data', rates: 'data', dataroom: 'data',
@@ -910,7 +918,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // finding in two minutes and then hands the reader on. Somebody who does not yet have a
   // question should meet it before the shelf -- rule 7a applied to a nav bar, the same
   // argument that put `addsup` first.
-  analyses: ['addsup', 'blog', 'recorded', 'reports', 'bythenumbers', 'sped', 'classsize',
+  analyses: ['addsup', 'blog', 'thisweek', 'recorded', 'reports', 'bythenumbers', 'sped', 'classsize',
              'peers',
              'required', 'minaid',
              'formula',

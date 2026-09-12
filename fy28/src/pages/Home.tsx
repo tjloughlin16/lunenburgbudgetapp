@@ -92,6 +92,14 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           <button type="submit" className="px-3.5 py-2 text-sm font-semibold rounded-lg shrink-0"
             style={{ background: 'var(--series-cost)', color: '#fff' }}>Search</button>
         </form>
+        {/* THE WEEK, one line. The doors are places to read; this is the calendar — what is
+            coming and what just appeared. A resident who came for tonight's agenda should
+            not have to guess which door hides it. */}
+        <p className="mt-3 text-[13px]">
+          <button onClick={() => onJump('thisweek')} className="underline font-semibold"
+            style={{ color: 'var(--series-cost)' }}>This week in town &rarr;</button>
+          <span style={{ color: 'var(--text-muted)' }}> meetings coming up, minutes and recordings just posted</span>
+        </p>
       </header>
 
       {/* One column, always. The rows are the whole page on a phone; two columns would

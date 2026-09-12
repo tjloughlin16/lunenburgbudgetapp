@@ -946,6 +946,12 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_recording_minutes.py --check    # ...and fail if it is stale
     python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing
     python3 scripts/build_app_metrics.py --check          # ...and fail if it has drifted
+    python3 scripts/refresh.py                  # THE DAILY RUN: watch the town and the channel, fetch what is new,
+                                                #   write minutes inside the policy, rebuild, push the search index
+    python3 scripts/refresh.py --deploy         # ...and build and deploy the site (rule 10: only when asked)
+    python3 scripts/refresh.py --dry-run        # ...watch only, write nothing
+    python3 scripts/watch_youtube.py            # the channel's RSS feed; record what is NEW
+    python3 scripts/watch_youtube.py --check    # ...and that its state holds together
     python3 scripts/build_question_bank.py      # 107 questions, each run against the database
     python3 scripts/build_question_bank.py --check   # ...and fail if one stops answering
     python3 scripts/watch_meetings.py --seed     # adopt what we hold, announcing nothing
