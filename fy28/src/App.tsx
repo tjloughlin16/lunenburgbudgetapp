@@ -68,7 +68,7 @@ import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
 import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { type Package } from './model/rates'
-import { UpdatedBar, ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
+import { ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
 
 
 /** The three pages you use rather than read.
@@ -436,10 +436,11 @@ export default function App() {
           breadcrumb -- which is most of a small screen spent on furniture. "The archive
           was updated" is context for somebody landing on the site, so it belongs on the
           page people land on. Somebody three pages deep has already arrived. */}
-      {/* Both arrival pages, and only those. `/` is the door somebody lands on now, and
-          the walkthrough is the page most bookmarks and shared links still point at. */}
-      {(tab === 'home' || tab === 'walk')
-        && <UpdatedBar onOpen={() => setNotesOpen(true)} />}
+      {/* THE UPDATED BAR IS GONE FROM THE TOP. TJ, 12 September: "remove the version row
+          from the top. Put it in the footer. Its too much space and changes happen too
+          often." The footer already carries the same stamp and the same "what changed"
+          link on every page, so nothing was lost; the strip had become a daily banner on
+          the one page that should open with the thing. */}
 
       {/* The root has no breadcrumb because there is nothing above it. Everything else
           does, including the walkthrough now that it sits one level down. */}
@@ -554,7 +555,7 @@ export default function App() {
               <button onClick={() => go('walk')}
                 className="text-xs font-semibold mb-2 block"
                 style={{ color: 'var(--series-cost)' }}>
-                Start here &mdash; the walkthrough, from the beginning &rarr;
+                Budget Crisis &mdash; why it keeps breaking, from the beginning &rarr;
               </button>
               <button onClick={() => go('sources')}
                 className="text-xs font-semibold mb-2 block"
