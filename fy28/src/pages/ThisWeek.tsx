@@ -39,9 +39,12 @@ type PreviewItem = { agenda_line: string; why_it_matters: string; kind: string; 
 type Upcoming2 = { board: string; board_slug: string; date: string; days_away: number; when: string; where: string; how_to_attend: string; one_line: string; items: PreviewItem[]; nothing_of_note: boolean; agenda_url: string }
 type Retro = { board: string; board_slug: string; date: string; url: string; headline?: string; summary: string; votes: number; transfers: number; tags: string[]; has_official_minutes: boolean }
 type Notices = { as_of: string; upcoming: Upcoming2[]; retro: Retro[] }
+type FeedItem = { first_seen: string; source: string; kind: string; published: string; title: string; link: string }
 type WhatsNew = {
   as_of: string
   window_days: number
+  feeds?: FeedItem[]
+  feed_sources?: { watched: number; without_a_feed: string[] }
   videos: Video[]
   our_minutes: Ours[]
   transcripts: { board_slug: string; date: string; video_id: string; fetched: string }[]
@@ -130,6 +133,27 @@ export function ThisWeek() {
                   </li>
                 ))}
               </ol>}
+
+          {/* FROM THE TOWN, AND THE COMMUNITY. QUEUE 13 and 14: link and attribute, never
+              republish. The unsourced feeds are counted rather than hidden -- a youth
+              league that only posts on Facebook is a gap, and a gap is shown. */}
+          <H2>From the town</H2>
+          {(n.feeds || []).length === 0
+            ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing new from the town&rsquo;s feeds in the last {n.window_days} days.</p>
+            : <ul className="space-y-1.5">
+                {(n.feeds || []).map(f => (
+                  <li key={f.link} className="text-sm flex flex-wrap gap-x-3 items-baseline">
+                    <span className="tnum text-xs w-24 shrink-0" style={{ color: 'var(--text-secondary)' }}>{f.published}</span>
+                    <a className="underline" style={{ color: 'var(--series-cost)' }} href={f.link} target="_blank" rel="noreferrer">{f.title}</a>
+                    <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{f.source}</span>
+                  </li>
+                ))}
+              </ul>}
+          {n.feed_sources && n.feed_sources.without_a_feed.length > 0 && (
+            <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>
+              {n.feed_sources.watched} feed{n.feed_sources.watched === 1 ? '' : 's'} watched. Not yet watchable, because they publish only on Facebook or by email: {n.feed_sources.without_a_feed.join(', ')}.
+            </p>
+          )}
 
           <H2>What happened — from the recordings</H2>
           {!nt || nt.retro.length === 0

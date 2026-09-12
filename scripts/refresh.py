@@ -56,6 +56,8 @@ RUNS = os.path.join(ROOT, 'sources', 'data', 'refresh-runs.csv')
 WHATS_NEW = os.path.join(ROOT, 'fy28', 'public', 'data', 'whats-new.json')
 MEETING_EVENTS = os.path.join(ROOT, 'sources', 'data', 'meeting-watch-events.csv')
 YOUTUBE_EVENTS = os.path.join(ROOT, 'sources', 'data', 'youtube-watch-events.csv')
+FEED_EVENTS = os.path.join(ROOT, 'sources', 'data', 'feed-watch-events.csv')
+FEED_SOURCES = os.path.join(ROOT, 'sources', 'data', 'feed-sources.csv')
 TRANSCRIPT_INDEX = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
 RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
@@ -144,6 +146,8 @@ def whats_new(as_of, days=14):
                          'votes': sum(1 for v in m['minutes']['votes'] if not v.get('procedural'))})
     ours.sort(key=lambda x: (x['written'], x['date']), reverse=True)
     tr = [t for t in read_csv(TRANSCRIPT_INDEX) if (t.get('fetched_at') or '')[:10] >= since]
+    fe = [e for e in read_csv(FEED_EVENTS) if e['first_seen'] >= since]
+    srcs = read_csv(FEED_SOURCES)
     return {
         'category': 'announcement',
         'not_a_measurement': 'What our watchers first saw, by the day they saw it. first_seen is our '
@@ -157,9 +161,12 @@ def whats_new(as_of, days=14):
                                 'fetched': (t.get('fetched_at') or '')[:10]} for t in tr],
                               key=lambda t: (t['fetched'], t['date']), reverse=True),
         'our_minutes': ours,
+        'feeds': sorted(fe, key=lambda e: (e['published'], e['first_seen']), reverse=True),
+        'feed_sources': {'watched': sum(1 for s in srcs if s.get('url')),
+                         'without_a_feed': [s['source'] for s in srcs if not s.get('url')]},
         'counts': {'agendas': sum(1 for e in me if e['kind'] == 'agenda'),
                    'minutes': sum(1 for e in me if e['kind'] == 'minutes'),
-                   'videos': len(ye), 'transcripts': len(tr), 'our_minutes': len(ours)},
+                   'videos': len(ye), 'transcripts': len(tr), 'our_minutes': len(ours), 'feeds': len(fe)},
     }
 
 
@@ -205,7 +212,7 @@ def main():
 
     if a.check:
         bad = 0
-        for s, args in (('watch_meetings.py', ['--check']), ('watch_youtube.py', ['--check']),
+        for s, args in (('watch_meetings.py', ['--check']), ('watch_youtube.py', ['--check']), ('watch_feeds.py', ['--check']),
                         ('write_recording_minutes.py', ['--check']), ('write_agenda_preview.py', ['--check']),
                         ('build_notices.py', ['--check']), ('build_meeting_feed.py', ['--check'])):
             bad += py(s, *args, check=False).returncode != 0
@@ -229,6 +236,10 @@ def main():
         py('build_minutes_searchable.py')
         if not a.no_minutes:
             py('write_agenda_preview.py', '--upcoming', '--as-of', a.as_of, check=False)
+
+    # 3c. The town's and the community's feeds -- news, alerts, registrations. Linked and
+    # attributed, never republished (QUEUE 13, 14).
+    py('watch_feeds.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
 
     # 4-6. The town's recordings.
     py('watch_youtube.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))

@@ -724,11 +724,15 @@ commitment from publishing.
 
 ## 13. Community news
 
+**BUILT, 12 September 2026**: `watch_feeds.py` over a source registry (`sources/data/feed-sources.csv`), rendered on /this-week as "From the town" — link, date, publisher. The town's News Flash feed is live; the district and the youth leagues have no feed and are listed as such on the page.
+
 Aggregate and LINK. Do not republish. Reproducing somebody else's announcement wholesale is
 both a copyright problem and a quality one — the value is the pointer plus a sentence of
 context, not a copy. Attribute the source on every item.
 
 ## 14. Athletics and youth sports — a section of its own
+
+**Same mechanism as 13, waiting on sources**: the registry has rows for Parks & Recreation, Youth Soccer, Little League and the Boosters with no URL, because none publishes a feed. The page counts them as unwatchable. A source is a row.
 
 Registration openings harvested and posted as they appear. Same rule as community news:
 link, summarise, attribute; never wholesale copy.
@@ -762,6 +766,8 @@ Push the above to drive people back to the site. Nothing to build until the feed
 Set 8 September 2026. Recorded for later — the data is in hand.
 
 ## 17. A Monty Tech drill-in
+
+**BUILT** — `/monty-tech` and `analysis/monty-tech`.
 
 **It is bigger than school choice and growing faster, and nothing on this site mentions it.**
 

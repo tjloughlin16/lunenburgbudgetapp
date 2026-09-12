@@ -91,6 +91,7 @@ CHECKS = [
     # THE WATCHERS. Each keeps a committed state file and must never announce a thing
     # twice; --check asks whether the state still holds together.
     ('watch_youtube.py', ['--check']),
+    ('watch_feeds.py', ['--check']),
     ('write_agenda_preview.py', ['--check']),
     ('reconcile_minutes.py', ['--check']),
     ('build_notices.py', ['--check']),
