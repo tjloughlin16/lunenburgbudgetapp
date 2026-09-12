@@ -5,7 +5,7 @@ import { Inline } from '../lib/inline'
 import { type BlogPayload } from './Blog'
 import type { Area, Tab } from '../routes'
 import { AREA_HOME, AREA_LABEL } from '../routes'
-import { BoardsThisWeek } from '../components/BoardsThisWeek'
+import { BoardsThisWeek, BoardsStrip } from '../components/BoardsThisWeek'
 
 /** The front page: the top-level doors and nothing else.
  *
@@ -78,7 +78,7 @@ function HomeWhatWasSaid({ onJump }: { onJump: (t: Tab) => void }) {
       </div>
       <ol className="space-y-2">
         {d.meetings.slice(0, 3).map(m => (
-          <li key={m.slug} className="card px-3 py-2.5">
+          <li key={m.slug} className="lg:card lg:px-3 lg:py-2.5 py-2" style={{ borderTop: '1px solid var(--grid)' }}>
             <a className="text-[13px] font-semibold underline" href={`/what-was-said/${m.slug}`} style={{ color: 'var(--series-cost)' }}>{m.board}, {fmt(m.date)}</a>
             <span className="text-[11.5px] ml-2" style={{ color: 'var(--text-muted)' }}>{m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'}{m.counts.transfers ? ` · ${m.counts.transfers} transfer${m.counts.transfers === 1 ? '' : 's'}` : ''}</span>
             {/* THE HEADLINE, not the summary. TJ: "not wordy, a high level summary, and
@@ -100,9 +100,13 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
         <h1 className="text-[27px] sm:text-4xl font-bold tracking-tight leading-[1.1]">
           The <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget Project
         </h1>
+        {/* ONE LINE THAT SAYS WHAT THE PAGE IS. TJ, on a phone: "probably need some above
+            the fold context to smooth it". Not a paragraph: the three things the page
+            holds, in the order they appear below. */}
         <p className="mt-2.5 text-[15px] leading-snug"
           style={{ color: 'var(--text-secondary)' }}>
-          An independent tool for residents. Pick your depth.
+          An independent tool for residents: what the town&rsquo;s boards are doing this
+          week, what they decided last time, and the budget explained at whatever depth you want.
         </p>
         {/* THE SEARCH BOX, ON THE FRONT PAGE. TJ, 11 September, on seeing /search: "We
             need to put an indicator on the home page that users can search." The
@@ -150,8 +154,18 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           theory. TJ, 12 September: "the 'doors' need a heading now" -- and a heading
           that says what the five DO, paired with the live column's, rather than a
           label for the container. */}
+      {/* THE PHONE ORDER: a one-line-per-board strip, then the sections, then what was
+          said as one line per meeting. The desktop keeps the two columns. */}
+      <section className="lg:hidden mb-8" aria-label="Meetings this week">
+        <div className="flex items-baseline justify-between gap-3 mb-1">
+          <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week in town</h2>
+          <button onClick={() => onJump('thisweek')} className="text-[12px] underline" style={{ color: 'var(--series-cost)' }}>every board &rarr;</button>
+        </div>
+        <BoardsStrip days={7} />
+      </section>
+
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-start">
-      <div className="order-2 lg:order-1">
+      <div>
       <h2 className="text-[13px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>Understand the budget</h2>
       <div className="grid gap-2.5">
         {DOORS.map(d => d.href ? (
@@ -233,8 +247,8 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           The rule that replaced the old one is smaller and harder: nothing unpublished
           reaches the front page. */}
       </div>
-      <div className="order-1 lg:order-2 space-y-8">
-        <section aria-label="Meetings this week">
+      <div className="space-y-8">
+        <section aria-label="Meetings this week" className="hidden lg:block">
           <div className="flex items-baseline justify-between gap-3 mb-2">
             <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week in town</h2>
             <button onClick={() => onJump('thisweek')} className="text-[12px] underline"

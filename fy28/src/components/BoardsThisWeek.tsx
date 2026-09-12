@@ -66,6 +66,43 @@ function LastTime({ slug, rec }: { slug: string; rec: Recorded | null }) {
   )
 }
 
+/** THE PHONE STRIP. TJ, on the front page on a phone: "Feels overwhelming and the styling
+ *  doesn't help my eye figure out what I'm looking at." Three cards with chips, hooks and
+ *  links, all at one weight, before any orientation. On a phone the same information is
+ *  one line per board -- board, day, time, hook -- and the boards with nothing are one
+ *  muted line together. The row is the link. */
+export function BoardsStrip({ days = 7 }: { days?: number }) {
+  const feed = useReport<Feed>('meeting-feed.json')
+  const notices = useReport<Notices>('notices.json')
+  const f = feed.d
+  if (!f) return null
+  const rows: { name: string; m: Upcoming; p?: Notice }[] = []
+  const quiet: string[] = []
+  for (const [slug, name] of THE_THREE) {
+    const ms = f.upcoming.meetings.filter(m => m.board_slug === slug && m.days_away <= days).sort((a, b) => a.date.localeCompare(b.date))
+    if (ms.length === 0) quiet.push(name)
+    for (const m of ms) rows.push({ name, m, p: notices.d?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date) })
+  }
+  return (
+    <ul>
+      {rows.map(({ name, m, p }) => (
+        <li key={m.file_id} style={{ borderBottom: '1px solid var(--grid)' }}>
+          <a href={`/this-week#m-${m.board_slug}-${m.date}`} className="block py-2.5">
+            <span className="text-[13.5px] font-semibold">{name}</span>
+            <span className="text-[13px] font-semibold ml-2" style={{ color: 'var(--series-cost)' }}>{dayLabel(m.date, f.as_of)}{p?.time && p.time !== 'not stated' ? ` ${p.time}` : ''}</span>
+            {(p?.hook || p?.one_line) && <span className="block text-[13px] mt-0.5 leading-snug" style={{ color: 'var(--text-secondary)' }}>{p!.hook || p!.one_line}</span>}
+          </a>
+        </li>
+      ))}
+      {quiet.length > 0 && (
+        <li className="py-2.5 text-[12.5px]" style={{ color: 'var(--text-muted)' }}>
+          {quiet.join(' and ')}: nothing posted for the next {days} days.
+        </li>
+      )}
+    </ul>
+  )
+}
+
 export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; compact?: boolean }) {
   const feed = useReport<Feed>('meeting-feed.json')
   const notices = useReport<Notices>('notices.json')
