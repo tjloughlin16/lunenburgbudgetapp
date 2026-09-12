@@ -1,5 +1,7 @@
 import type { Tab } from '../routes'
 import { ReportShell, useReport } from '../components/report'
+import { COST_GROWTH_BLENDED } from '../model/engine'
+import { BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES } from '../model/rates'
 
 const TAB: Tab = 'solutions'
 const DATA = '/data/model.json'
@@ -28,6 +30,8 @@ type Model = {
 
 const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US')
 const parseUsd = (s: string) => Number(s.replace(/[^0-9.]/g, ''))
+const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`
+const pts = (x: number) => `${(x * 100).toFixed(2)} pts`
 
 export function Solutions() {
   const { d, err } = useReport<Model>('model.json')
@@ -51,21 +55,29 @@ function Body({ d }: { d: Model }) {
   const overrideBill = d.taxBase.avgHomeBill * (gap / d.taxBase.levy)
   const freeCashC = d.conclusions.find(c => c.n === 17)
   const v = (id: string) => pkg.find(p => p.id === id)?.value ?? 0
+  // THE RATE SIDE. Costs grow at the blended rate, revenue at the levy cap plus new
+  // growth; the difference is the spread, and an amount closes a year of it while only a
+  // rate change closes it for good. Same numbers as /bend-the-curve, same module.
+  const spread = COST_GROWTH_BLENDED - BASELINE_REVENUE_GROWTH
+  const ranked = RATE_LINES.slice().sort((a, b) => b.swing - a.swing)
+  const line = (k: string) => RATE_LINES.find(l => l.key === k)!
+  const health_l = line('health'), other_l = line('other'), sal_l = line('salaries')
+  const LEVEL = 'No — a one-time step; the gap regrows at the spread'
   // SORTED BY IMPACT: recurring dollars a year first, largest at the top; then the
   // one-time and the decade-long, by size; classroom cuts last because they are what is
   // left, not a choice with a figure. TJ: "sort by biggest impact".
-  const rows: { what: string; closes: string; who: string; costs: string; impact: number; recurring: boolean; tone?: string }[] = [
-    { what: 'An override', closes: 'The whole gap, every year', who: 'Town Meeting, then the ballot', costs: 'About ' + usd(overrideBill) + ' a year on the average tax bill', impact: gap, recurring: true },
-    { what: 'Change the health insurance split', closes: health.value + ' a year, once in force', who: 'Negotiated with the employee committee; takes a year or two', costs: (() => { const t = health.sub.replace(/^in year one.*?— and /, ''); return t.charAt(0).toUpperCase() + t.slice(1) })(), impact: parseUsd(health.value), recurring: true },
-    { what: 'Trim administration', closes: usd(v('admin_cut')) + ' a year', who: 'The district', costs: 'Slower office work; possibly a position', impact: v('admin_cut'), recurring: true },
-    { what: 'Fees already raised on sports', closes: usd(v('athletic_fees')) + ' a year', who: 'Done — School Committee, for 2026–27', costs: 'A family with one athlete pays $400 a season, up from $250; $1,500 family cap', impact: v('athletic_fees'), recurring: true },
-    { what: 'Audit software, licences and devices', closes: usd(v('tech_cut')) + ' a year', who: 'The district', costs: 'Fewer tools; no jobs', impact: v('tech_cut'), recurring: true },
-    { what: 'A higher bus fee, grades 7–12', closes: usd(v('bus_fees')) + ' a year', who: 'School Committee vote', costs: '$300 a rider, from the $180 charged today', impact: v('bus_fees'), recurring: true },
-    { what: 'A fee for band, music and clubs', closes: usd(v('activity_fees')) + ' a year', who: 'School Committee vote', costs: 'About $100 per student per activity, where none is charged today; some students quit', impact: v('activity_fees'), recurring: true },
-    { what: 'New businesses', closes: 'The whole gap, if ' + business.value + ' of new commercial value arrives every year', who: 'Planning Board, Select Board, the market', costs: 'Ten years, not one; ' + business.sub.split('—')[1]?.trim(), impact: gap, recurring: false, tone: 'slow' },
-    { what: 'Free cash', closes: (freeCashC?.figure ?? '') + ' in a year like this one', who: 'Town Meeting', costs: 'One-time money on a recurring bill — the gap is back next year', impact: parseUsd(freeCashC?.figure ?? '0'), recurring: false, tone: 'once' },
-    { what: 'Cut every sport, band and club', closes: extras.value + ', once', who: 'School Committee', costs: 'Every extra gone, and the gap returns next year', impact: parseUsd(extras.value), recurring: false, tone: 'once' },
-    { what: 'Cut classroom positions', closes: 'Whatever is left', who: 'School Committee', costs: 'Larger classes; the thing that makes families leave', impact: -1, recurring: false },
+  const rows: { what: string; closes: string; who: string; costs: string; bends: string; impact: number; recurring: boolean; tone?: string }[] = [
+    { what: 'An override', closes: 'The whole gap, every year', who: 'Town Meeting, then the ballot', costs: 'About ' + usd(overrideBill) + ' a year on the average tax bill', bends: 'No — buys one year; the spread reopens the next, and it takes a new one every spring', impact: gap, recurring: true },
+    { what: 'Change the health insurance split', closes: health.value + ' a year, once in force', who: 'Negotiated with the employee committee; takes a year or two', costs: (() => { const t = health.sub.replace(/^in year one.*?— and /, ''); return t.charAt(0).toUpperCase() + t.slice(1) })(), bends: `The split, no. Plan design, yes — this line grows ${pct(health_l.rate, 0)} a year; held to the cap it is worth ${pts(health_l.swing)}, the most of any line`, impact: parseUsd(health.value), recurring: true },
+    { what: 'Trim administration', closes: usd(v('admin_cut')) + ' a year', who: 'The district', costs: 'Slower office work; possibly a position', bends: LEVEL, impact: v('admin_cut'), recurring: true },
+    { what: 'Fees already raised on sports', closes: usd(v('athletic_fees')) + ' a year', who: 'Done — School Committee, for 2026–27', costs: 'A family with one athlete pays $400 a season, up from $250; $1,500 family cap', bends: LEVEL, impact: v('athletic_fees'), recurring: true },
+    { what: 'Audit software, licences and devices', closes: usd(v('tech_cut')) + ' a year', who: 'The district', costs: 'Fewer tools; no jobs', bends: LEVEL, impact: v('tech_cut'), recurring: true },
+    { what: 'A higher bus fee, grades 7–12', closes: usd(v('bus_fees')) + ' a year', who: 'School Committee vote', costs: '$300 a rider, from the $180 charged today', bends: LEVEL, impact: v('bus_fees'), recurring: true },
+    { what: 'A fee for band, music and clubs', closes: usd(v('activity_fees')) + ' a year', who: 'School Committee vote', costs: 'About $100 per student per activity, where none is charged today; some students quit', bends: LEVEL, impact: v('activity_fees'), recurring: true },
+    { what: 'New businesses', closes: 'The whole gap, if ' + business.value + ' of new commercial value arrives every year', who: 'Planning Board, Select Board, the market', costs: 'Ten years, not one; ' + business.sub.split('—')[1]?.trim(), bends: 'Yes — it lifts the revenue rate, which is the other side of the spread', impact: gap, recurring: false, tone: 'slow' },
+    { what: 'Free cash', closes: (freeCashC?.figure ?? '') + ' in a year like this one', who: 'Town Meeting', costs: 'One-time money on a recurring bill — the gap is back next year', bends: LEVEL, impact: parseUsd(freeCashC?.figure ?? '0'), recurring: false, tone: 'once' },
+    { what: 'Cut every sport, band and club', closes: extras.value + ', once', who: 'School Committee', costs: 'Every extra gone, and the gap returns next year', bends: `No — this whole line grows ${pct(other_l.rate, 0)}, worth ${pts(other_l.swing)}; emptying it changes the size, not the slope`, impact: parseUsd(extras.value), recurring: false, tone: 'once' },
+    { what: 'Cut classroom positions', closes: 'Whatever is left', who: 'School Committee', costs: 'Larger classes; the thing that makes families leave', bends: `No — salaries grow at the contract rate, ${pct(sal_l.rate, 0)}; fewer people is a lower line at the same slope`, impact: -1, recurring: false },
   ].sort((a, b) => (Number(b.recurring) - Number(a.recurring)) || (b.impact - a.impact))
   return (
     <>
@@ -78,18 +90,36 @@ function Body({ d }: { d: Model }) {
       <h2 className="text-lg font-semibold mt-10">Everything on the table, biggest first</h2>
       <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Recurring money a year at the top; then what pays once or takes a decade; then what is left.</p>
       <div className="overflow-x-auto mt-3">
-        <table className="w-full text-sm" style={{ minWidth: 640 }}>
+        <table className="w-full text-sm" style={{ minWidth: 820 }}>
           <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
-            <th className="text-left py-2 pr-3">what</th><th className="text-left py-2 pr-3">closes</th><th className="text-left py-2 pr-3">who decides</th><th className="text-left py-2">what it costs somebody</th></tr></thead>
+            <th className="text-left py-2 pr-3">what</th><th className="text-left py-2 pr-3">closes</th><th className="text-left py-2 pr-3">who decides</th><th className="text-left py-2 pr-3">what it costs somebody</th><th className="text-left py-2">bends the curve?</th></tr></thead>
           <tbody>{rows.map(r => (
             <tr key={r.what} style={{ borderTop: '1px solid var(--grid)' }}>
               <td className="py-2.5 pr-3 font-semibold align-top">{r.what}</td>
               <td className="py-2.5 pr-3 align-top tnum" style={{ color: r.tone ? 'var(--text-secondary)' : 'var(--text-primary)' }}>{r.closes}</td>
               <td className="py-2.5 pr-3 align-top" style={{ color: 'var(--text-secondary)' }}>{r.who}</td>
-              <td className="py-2.5 align-top" style={{ color: 'var(--text-secondary)' }}>{r.costs}</td>
+              <td className="py-2.5 pr-3 align-top" style={{ color: 'var(--text-secondary)' }}>{r.costs}</td>
+              <td className="py-2.5 align-top text-[13px]" style={{ color: r.bends.startsWith('No') ? 'var(--text-muted)' : 'var(--text-primary)' }}>{r.bends}</td>
             </tr>))}</tbody>
         </table>
       </div>
+
+      <h2 className="text-lg font-semibold mt-10">Why most of the table does not end it</h2>
+      <p className="text-[15px] mt-2 max-w-3xl leading-relaxed">
+        Costs grow <strong className="tnum">{pct(COST_GROWTH_BLENDED, 2)}</strong> a year and the money to pay them grows <strong className="tnum">{pct(BASELINE_REVENUE_GROWTH, 2)}</strong> — the levy cap plus new building. The difference, <strong className="tnum">{pts(spread)}</strong>, is the problem. An amount closes one year of it; only a change to a growth rate closes it for good. Holding each line to the {pct(LEVY_CAP, 1)} cap would move the cost rate by:
+      </p>
+      <div className="mt-3 max-w-3xl">
+        {ranked.map(l => (
+          <div key={l.key} className="flex items-baseline gap-3 py-1.5 text-sm" style={{ borderTop: '1px solid var(--grid)' }}>
+            <span className="w-52 shrink-0 font-semibold">{l.label}</span>
+            <span className="grow h-1.5 rounded-full" style={{ background: 'var(--surface-3)' }}><span className="block h-full rounded-full" style={{ width: `${(l.swing / ranked[0].swing) * 100}%`, background: 'var(--series-cost)' }} /></span>
+            <span className="w-16 text-right tnum font-bold shrink-0">{pts(l.swing)}</span>
+            <span className="w-40 text-right text-xs shrink-0 tnum" style={{ color: 'var(--text-muted)' }}>{pct(l.weight, 0)} of budget, +{pct(l.rate, 1)}/yr</span>
+          </div>))}
+      </div>
+      <p className="text-sm mt-2 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+        {ranked[0].label} and {ranked[1].label.toLowerCase()} are {Math.round(100 * (ranked[0].swing + ranked[1].swing) / spread)}% of the spread between them. {other_l.label} — where sports, clubs and devices live, and the only line the School Committee sets on its own — is worth {pts(other_l.swing)}. That is why the cuts residents see every spring never change the slope. The dials are on <a className="underline" href="/bend-the-curve">Bend the curve</a>.
+      </p>
 
       <h2 className="text-lg font-semibold mt-10">What follows</h2>
       <ol className="mt-3 space-y-3 max-w-3xl text-[15px] leading-relaxed">
@@ -97,6 +127,7 @@ function Body({ d }: { d: Model }) {
         <li><strong>Cutting the extras buys one year.</strong> {extras.sub.split('.')[0]}. Then the same gap returns with nothing left to cut but classrooms.</li>
         <li><strong>Business growth is real and slow.</strong> It needs {business.value} of new commercial value a year, every year, and pays off in about a decade.</li>
         <li><strong>Free cash covers a year, not a problem.</strong> {freeCashC ? freeCashC.body.split(/\.\s/)[0] + '.' : ''}</li>
+        <li><strong>Only two things on the table change a rate:</strong> the health plan itself, and the pace of commercial building. Everything else is an amount, and an amount has to be found again next year.</li>
         <li><strong>After that there are two choices, and only two.</strong> {d.recommendation.closing}</li>
       </ol>
 
