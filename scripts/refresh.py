@@ -325,6 +325,7 @@ def main():
         py('build_meeting_feed.py')
         py('build_recording_minutes.py')
         py('build_notices.py')
+        py('tag_document_affinity.py', check=False)     # only documents not yet tagged; cents
         py('build_search_index.py', '--quiet')
         py('build_app_metrics.py')
         py('build_sitemap.py')

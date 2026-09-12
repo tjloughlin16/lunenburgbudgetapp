@@ -93,6 +93,7 @@ CHECKS = [
     ('watch_youtube.py', ['--check']),
     ('watch_feeds.py', ['--check']),
     ('watch_documents.py', ['--check']),
+    ('tag_document_affinity.py', ['--check']),
     ('write_agenda_preview.py', ['--check']),
     ('reconcile_minutes.py', ['--check']),
     ('build_notices.py', ['--check']),

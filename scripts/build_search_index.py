@@ -506,8 +506,10 @@ def build_affinity(db):
         if not hit:
             missing.append(doc_key)
             continue
+        title = re.sub(r', page \d+$', '', hit['title']) if hit['corpus'] == 'source' else hit['title']
+        cite = re.sub(r'#page=\d+$', '', hit['cite_url']) if hit['corpus'] == 'source' else hit['cite_url']
         db.execute('INSERT INTO affinity (tags, doc_key, corpus, title, cite_url) VALUES (?,?,?,?,?)',
-                   (tags, doc_key, hit['corpus'], hit['title'], hit['cite_url']))
+                   (tags, doc_key, hit['corpus'], title, cite))
     if missing:
         # Pages exist only when the site has been built; without a build, nothing can be
         # said. With one, a tag naming no page is an error.
