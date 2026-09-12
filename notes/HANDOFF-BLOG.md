@@ -30,8 +30,11 @@ is DEPLOYED (`2fb983f3`, `origin/main` = `e3fdd527`+):
   last index build. It is safe to leave running; `sync_archive.py --push --only
   data/youtube-transcripts` backs up what is new.
 
-Remaining from the original list: the post order (after Tiffany), the refresh mechanisms
-and digests (12, 12a), items 13–17, the paused pages 7–9.
+- **The daily refresh** (`7f519ed4`) is built and ran once live. **Not yet scheduled** —
+  installing a launchd job needs TJ's hand: the two commands are in `ops/README.md`.
+
+Remaining from the original list: the post order (after Tiffany), the digests proper
+(12a — the retro notices are the first version), items 13–17, the paused pages 7–9.
 
 ---
 

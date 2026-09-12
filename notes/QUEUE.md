@@ -580,6 +580,15 @@ budget figure teaches a reader that the budget figures are that kind of number.
 
 ## 12. Refresh mechanisms — soon, TJ wants these in days
 
+**BUILT, 11 September 2026** (`7f519ed4`). `scripts/refresh.py` is the daily run: it
+watches the AgendaCenter and the channel's RSS feed from committed state, fetches what is
+new, writes an agenda PREVIEW for the three policy boards (quoted, checked) and, once the
+captions arrive, our MINUTES; rebuilds the feed, notices, index and metrics; pushes the
+search index inside the D1 budget; deploys with `--deploy`. `/this-week` renders it.
+Facebook texts go to `build/notices-to-post.md` for a person to paste. `ops/README.md`
+has the two commands that schedule it at 6:30 each morning.
+
+
 **"Deterministic" is TJ's word and it is the right requirement.** Every checker answers
 *what changed since the last run*, stores that state, and is idempotent — running twice
 produces one result, not two. No feed should ever be able to say "new" about something it
