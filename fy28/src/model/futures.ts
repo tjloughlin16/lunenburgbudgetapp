@@ -1,7 +1,7 @@
 import { MODEL, COST_GROWTH_BLENDED } from './engine'
 import {
   BASELINE_REVENUE_GROWTH, COST_PER_FTE, DEFAULT_RATES, DEFAULT_SCENARIO, LEVY_CAP,
-  PACKAGES, ROUTE_CLOCK, firstYearsFor, freshGap, holdsWith, least, overrideOnAverageHome,
+  PACKAGES, ROUTE_CLOCK, firstYearsFor, freshGap, overrideOnAverageHome,
   overrideTreadmill, run, workforceShrink, HEADCOUNT,
 } from './rates'
 
