@@ -99,7 +99,7 @@ CATEGORIES = [
     ]),
     ('school', 'The schools', [
         ('what the money buys', [
-            'sped', 'courses', 'cuts', 'sportsmoney', 'stopped', 'unwind',
+            'sped', 'circuitbreaker', 'courses', 'cuts', 'sportsmoney', 'stopped', 'unwind',
             'insurance',
             'athletics-ledger',
         ]),
@@ -294,6 +294,11 @@ ABOUT_PAGES = {
         'Whether school staffing went up, over any span of years you choose — with the '
         'four quantities the archive holds kept apart: names the town printed, FTE and '
         'headcount the state published, and dollars.',
+    'circuitbreaker':
+        'What the state reimburses for the costliest special education placements, '
+        'FY2006 to today: the threshold deducted per child, the share the Legislature '
+        'actually funded each year, and nine children whose placements now cost twice '
+        'what twenty-nine did.',
     'enrollment':
         'Who is in the schools: DESE’s headcount, FY1994 to today, by grade band and '
         'student group — the fall that stopped a decade ago, the high school that did '

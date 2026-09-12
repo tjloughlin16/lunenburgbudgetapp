@@ -45,6 +45,7 @@ import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
 import { ThisWeek } from './pages/ThisWeek'
 import { Enrollment } from './pages/Enrollment'
+import { CircuitBreaker } from './pages/CircuitBreaker'
 // LOCAL ONLY. Not a Tab, in no route table, in no sitemap, prerendered nowhere -- and the
 // reference below sits inside `import.meta.env.DEV`, which is replaced with `false` in a
 // production build, so the module is eliminated from the bundle. See pages/BlogDrafts.tsx
@@ -482,6 +483,7 @@ export default function App() {
       {tab === 'recorded' && <WhatWasSaid />}
       {tab === 'thisweek' && <ThisWeek />}
       {tab === 'enrollment' && <Enrollment />}
+      {tab === 'circuitbreaker' && <CircuitBreaker />}
       {tab === 'attrition' && <WhichGradesStudentsLeave />}
       {tab === 'montytech' && <MontyTech />}
       {tab === 'addsup' && <WhatItAllAddsUpTo />}

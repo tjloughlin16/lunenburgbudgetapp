@@ -63,6 +63,8 @@ export function SpecialEducationHub() {
   const l = useReport<Leaving>('sped-leaving.json').d
   const c = useReport<Cost>('sped-cost.json').d
   const r = useReport<Route>('sped-route.json').d
+  const cbd = useReport<{ series: { fy: number; children: number; paid: number; eligible: number }[] }>('circuit-breaker.json').d
+  const cb = cbd ? cbd.series[cbd.series.length - 1] : null
   const sub = r?.pooled.find(p => /Separate/.test(p.start))
 
   return (
@@ -103,6 +105,13 @@ export function SpecialEducationHub() {
           Out-of-district tuition split by the fund that paid it, circuit breaker
           reimbursement{c ? ` from FY${c.cb_first.fy} to FY${c.cb_last.fy}` : ''}, and the
           check that establishes what the budget line actually is.
+        </Door>
+        <Door href="/circuit-breaker" unit="children"
+          name="The circuit breaker, twenty-one years"
+          figure={cb ? `${cb.children}` : undefined}
+          caption={cb ? `children claimed in FY${cb.fy} · ${usd(cb.paid)} reimbursed on ${usd(cb.eligible)} eligible` : undefined}>
+          The threshold the state deducts per child, the share the Legislature actually
+          funded each year, and placements that now cost twice per child what they did.
         </Door>
         <Door href="/who-ends-up-out-of-district" unit="placements"
           name="The route out of district"

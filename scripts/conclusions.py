@@ -401,7 +401,7 @@ TOPICS = [
      'The subject this town argues about most, in reports that do not combine: how many '
      'children, what it costs, where a placement leads, and the state rule the whole '
      'argument runs under.',
-     ['spedcount', 'spedcost', 'spedroute', 'classsize']),
+     ['spedcount', 'spedcost', 'circuitbreaker', 'spedroute', 'classsize']),
     ('income', 'Where the school money comes from',
      'State aid, the minimum the state requires, what other districts spend, and what '
      'happened when the grants ended.',

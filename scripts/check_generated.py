@@ -96,6 +96,8 @@ CHECKS = [
     ('tag_document_affinity.py', ['--check']),
     ('build_enrollment.py', ['--check']),
     ('verify_enrollment.py', []),
+    ('build_circuit_breaker.py', ['--check']),
+    ('verify_circuit_breaker.py', []),
     ('write_agenda_preview.py', ['--check']),
     ('reconcile_minutes.py', ['--check']),
     ('build_notices.py', ['--check']),

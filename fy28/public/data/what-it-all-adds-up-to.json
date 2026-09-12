@@ -429,6 +429,73 @@
    "so_what": "With an aide it is 12. The aide is what raises the ceiling; the teacher count never changes."
   },
   {
+   "basis": "`dese_circuit_breaker`, Lunenburg rows, eligible_students_claimed and total_eligible_expenses by fiscal year of payment; per child is the division.",
+   "bearing": "sizes",
+   "claim": "29 children claimed in FY2013, 9 in FY2026; the cost per child went from $67,111 to $139,692.",
+   "detail": "The number of children whose placements cost enough to reach the state threshold has fallen by two-thirds; the dollars fell by a third. Eligible expenses were $1,946,230 for 29 children in FY2013 and $1,257,225 for 9 in FY2026. The average eligible cost per child claimed roughly doubled over those years. A district with nine such placements is exposed to each one: one child arriving or leaving moves this line by more than a tenth.",
+   "figure": "kids_now",
+   "figures": {
+    "elig_now": {
+     "text": "$1,257,225",
+     "unit": "",
+     "value": 1257225.0
+    },
+    "elig_then": {
+     "text": "$1,946,230",
+     "unit": "",
+     "value": 1946230.0
+    },
+    "fy_now": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "fy_peak": {
+     "text": "FY2013",
+     "unit": "",
+     "value": 2013
+    },
+    "kids_now": {
+     "text": "9",
+     "unit": "children claimed, FY2026",
+     "value": 9
+    },
+    "kids_peak": {
+     "text": "29",
+     "unit": "",
+     "value": 29
+    },
+    "per_child_now": {
+     "text": "$139,692",
+     "unit": "",
+     "value": 139691.66666666666
+    },
+    "per_child_then": {
+     "text": "$67,111",
+     "unit": "",
+     "value": 67111.37931034483
+    }
+   },
+   "id": "fewer-children-each-far-more-expensive",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Which children, which placements, or why the count fell. A claimed child is one whose costs exceeded the threshold; children in costly placements below it are not counted here at all.",
+   "report": "circuitbreaker",
+   "report_title": "The circuit breaker \u2014 what the state reimburses for the costliest placements",
+   "report_url": "/circuit-breaker",
+   "see": [
+    {
+     "label": "What out-of-district placements cost",
+     "slug": "/what-special-education-costs"
+    },
+    {
+     "label": "Who ends up out of district",
+     "slug": "/who-ends-up-out-of-district"
+    }
+   ],
+   "so_what": "A third fewer dollars for a third as many children: each placement costs about twice what one did."
+  },
+  {
    "basis": "DESE\u2019s end-of-year finance collection for the finance year, all funds, the district per-pupil total \u2014 the same measure for every district on this page \u2014 against DESE\u2019s residents-sending and enrollment-receiving files for the enrollment year, which count Lunenburg resident children by the district that educated them. The destination set is every district that took five or more of them, derived on every run rather than chosen, and the generator refuses to write if one of them has no spending figure.",
    "bearing": "sizes",
    "claim": "More for each pupil at Monty Tech, a regional vocational school, than Lunenburg",
@@ -2967,6 +3034,289 @@
    "id": "classsize",
    "title": "How many students one special education group may have",
    "url": "/special-education-class-size"
+  },
+  {
+   "about": "What the state reimbursed Lunenburg for its costliest special education placements, FY2006 to FY2026, and how the mechanism decides it.",
+   "conclusions": [
+    {
+     "basis": "`dese_circuit_breaker`, Lunenburg rows, eligible_students_claimed and total_eligible_expenses by fiscal year of payment; per child is the division.",
+     "bearing": "sizes",
+     "claim": "29 children claimed in FY2013, 9 in FY2026; the cost per child went from $67,111 to $139,692.",
+     "detail": "The number of children whose placements cost enough to reach the state threshold has fallen by two-thirds; the dollars fell by a third. Eligible expenses were $1,946,230 for 29 children in FY2013 and $1,257,225 for 9 in FY2026. The average eligible cost per child claimed roughly doubled over those years. A district with nine such placements is exposed to each one: one child arriving or leaving moves this line by more than a tenth.",
+     "figure": "kids_now",
+     "figures": {
+      "elig_now": {
+       "text": "$1,257,225",
+       "unit": "",
+       "value": 1257225.0
+      },
+      "elig_then": {
+       "text": "$1,946,230",
+       "unit": "",
+       "value": 1946230.0
+      },
+      "fy_now": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "fy_peak": {
+       "text": "FY2013",
+       "unit": "",
+       "value": 2013
+      },
+      "kids_now": {
+       "text": "9",
+       "unit": "children claimed, FY2026",
+       "value": 9
+      },
+      "kids_peak": {
+       "text": "29",
+       "unit": "",
+       "value": 29
+      },
+      "per_child_now": {
+       "text": "$139,692",
+       "unit": "",
+       "value": 139691.66666666666
+      },
+      "per_child_then": {
+       "text": "$67,111",
+       "unit": "",
+       "value": 67111.37931034483
+      }
+     },
+     "id": "fewer-children-each-far-more-expensive",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Which children, which placements, or why the count fell. A claimed child is one whose costs exceeded the threshold; children in costly placements below it are not counted here at all.",
+     "see": [
+      {
+       "label": "What out-of-district placements cost",
+       "slug": "/what-special-education-costs"
+      },
+      {
+       "label": "Who ends up out of district",
+       "slug": "/who-ends-up-out-of-district"
+      }
+     ],
+     "so_what": "A third fewer dollars for a third as many children: each placement costs about twice what one did."
+    },
+    {
+     "basis": "`dese_circuit_breaker`, total_quarterly_payment divided by total_net_claim, Lunenburg rows, every year.",
+     "bearing": "sizes",
+     "claim": "The state paid 42.3% of the claim in FY2010 and 75.0% in FY2023; the statute allows up to 75%.",
+     "detail": "In FY2010 the claim was $498,853 and the payment $211,224. The shortfall in a pro-rated year lands on the town\u2019s budget with no warning the district can act on, because the rate is not known until the state\u2019s books close. That is the sense in which this line is unforecastable from Lunenburg.",
+     "figure": "low",
+     "figures": {
+      "claim_low": {
+       "text": "$498,853",
+       "unit": "",
+       "value": 498853.0
+      },
+      "full_years": {
+       "text": "17",
+       "unit": "",
+       "value": 17
+      },
+      "fy_high": {
+       "text": "FY2023",
+       "unit": "",
+       "value": 2023
+      },
+      "fy_low": {
+       "text": "FY2010",
+       "unit": "",
+       "value": 2010
+      },
+      "high": {
+       "text": "75.0%",
+       "unit": "",
+       "value": 0.7500058629442082
+      },
+      "low": {
+       "text": "42.3%",
+       "unit": "of the claim paid, FY2010",
+       "value": 0.4234193239290933
+      },
+      "paid_low": {
+       "text": "$211,224",
+       "unit": "",
+       "value": 211224.0
+      },
+      "years": {
+       "text": "21",
+       "unit": "",
+       "value": 21
+      }
+     },
+     "id": "the-state-pays-what-it-appropriated",
+     "kind": "measured",
+     "literals": [
+      "75%",
+      "70%"
+     ],
+     "not_shown": "The appropriation itself, or why any year was short. The state file gives the result, not the vote.",
+     "see": [
+      {
+       "label": "The rest of what the state sends",
+       "slug": "/state-aid"
+      }
+     ],
+     "so_what": "17 of 21 years at 70% or more. The share is the Legislature\u2019s appropriation, not Lunenburg\u2019s costs."
+    },
+    {
+     "basis": "`dese_circuit_breaker` threshold_amount divided by eligible_students_claimed; total_quarterly_payment over total_eligible_expenses.",
+     "bearing": "sizes",
+     "claim": "In FY2026 the state deducted $52,419 per child before reimbursing anything \u2014 $471,771 in all.",
+     "detail": "Of $1,257,225 in eligible expenses the state paid $579,142 \u2014 46.1% of the total, because the threshold comes off first and the share applies to what is left. The threshold is four times the state\u2019s average foundation budget per pupil and rises with it, so the district\u2019s own share rises even when nothing about a placement changes.",
+     "figure": "per_child",
+     "figures": {
+      "elig": {
+       "text": "$1,257,225",
+       "unit": "",
+       "value": 1257225.0
+      },
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "paid": {
+       "text": "$579,142",
+       "unit": "",
+       "value": 579142.0
+      },
+      "per_child": {
+       "text": "$52,419",
+       "unit": "deducted per child, FY2026",
+       "value": 52419.0
+      },
+      "share_elig": {
+       "text": "46.1%",
+       "unit": "",
+       "value": 0.4606510370061047
+      },
+      "total": {
+       "text": "$471,771",
+       "unit": "",
+       "value": 471771.0
+      }
+     },
+     "id": "the-threshold-is-a-deduction-not-a-rate",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "The foundation figure the threshold is four times of; DESE publishes the resulting threshold, not its derivation, in this file.",
+     "see": [],
+     "so_what": "The district pays the first $52,419 of every claimed child, then gets about three-quarters of the rest."
+    },
+    {
+     "basis": "`dese_circuit_breaker` reimb_transport, Lunenburg rows.",
+     "bearing": "sizes",
+     "claim": "Since FY2022 the state has also reimbursed special education transport: $94,993 in FY2026.",
+     "detail": "Before FY2022 the transport column is empty for every district; the reimbursement did not exist. It is a separate line from tuition and is included in the payment totals above.",
+     "figure": "now",
+     "figures": {
+      "first": {
+       "text": "$14,596",
+       "unit": "",
+       "value": 14596.0
+      },
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "fy_first": {
+       "text": "FY2022",
+       "unit": "",
+       "value": 2022
+      },
+      "fy_peak": {
+       "text": "FY2025",
+       "unit": "",
+       "value": 2025
+      },
+      "now": {
+       "text": "$94,993",
+       "unit": "transport reimbursed, FY2026",
+       "value": 94993.0
+      },
+      "peak": {
+       "text": "$111,560",
+       "unit": "",
+       "value": 111560.0
+      }
+     },
+     "id": "transport-joined-the-reimbursement",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "What the district spends on special education transport in total; this is the reimbursed part only.",
+     "see": [],
+     "so_what": "New money: from $14,596 in its first year to a peak of $111,560 in FY2025."
+    },
+    {
+     "basis": "`dese_circuit_breaker`, FY2026 district rows for Lunenburg and its neighbours; state row for the totals.",
+     "bearing": "sizes",
+     "claim": "Lunenburg\u2019s cost per claimed child, $139,692, is second highest of 6 districts in FY2026.",
+     "detail": "The table below gives each district\u2019s children claimed, cost per child and share paid. Statewide, the same file counts 10,759 children and $1,443,824,902 in eligible expenses.",
+     "figure": "lun",
+     "figures": {
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "hi": {
+       "text": "$160,652",
+       "unit": "",
+       "value": 160652.35294117648
+      },
+      "lo": {
+       "text": "$104,213",
+       "unit": "",
+       "value": 104213.35714285714
+      },
+      "lun": {
+       "text": "$139,692",
+       "unit": "per claimed child, FY2026",
+       "value": 139691.66666666666
+      },
+      "n": {
+       "text": "6",
+       "unit": "",
+       "value": 6
+      },
+      "state_elig": {
+       "text": "$1,443,824,902",
+       "unit": "",
+       "value": 1443824902.0
+      },
+      "state_kids": {
+       "text": "10,759",
+       "unit": "",
+       "value": 10759.0
+      }
+     },
+     "id": "lunenburgs-placements-cost-more-per-child-than-most-neighbours",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Whether a higher cost per child reflects the children\u2019s needs, the placements chosen, or the prices charged. All three move it.",
+     "see": [
+      {
+       "label": "The same districts, on spending",
+       "slug": "/what-other-districts-spend"
+      }
+     ],
+     "so_what": "The neighbours range from $104,213 to $160,652 per child; each is paid about the same share."
+    }
+   ],
+   "count": 5,
+   "data": "/data/circuit-breaker.json",
+   "generator": "scripts/build_circuit_breaker.py",
+   "id": "circuitbreaker",
+   "title": "The circuit breaker \u2014 what the state reimburses for the costliest placements",
+   "url": "/circuit-breaker"
   },
   {
    "about": "What DESE says Lunenburg spends for each pupil \u2014 against the districts its own children leave for, against every district in Massachusetts, and against five neighbours \u2014 with the arithmetic that says how much of the difference is money and how much is children.",
@@ -8017,7 +8367,7 @@
  "topics": [
   {
    "about": "The subject this town argues about most, in reports that do not combine: how many children, what it costs, where a placement leads, and the state rule the whole argument runs under.",
-   "conclusions": 14,
+   "conclusions": 19,
    "key": "sped",
    "reports": [
     {
@@ -8360,6 +8710,289 @@
      "id": "spedcost",
      "title": "What out-of-district special education costs, and what comes back",
      "url": "/what-special-education-costs"
+    },
+    {
+     "about": "What the state reimbursed Lunenburg for its costliest special education placements, FY2006 to FY2026, and how the mechanism decides it.",
+     "conclusions": [
+      {
+       "basis": "`dese_circuit_breaker`, Lunenburg rows, eligible_students_claimed and total_eligible_expenses by fiscal year of payment; per child is the division.",
+       "bearing": "sizes",
+       "claim": "29 children claimed in FY2013, 9 in FY2026; the cost per child went from $67,111 to $139,692.",
+       "detail": "The number of children whose placements cost enough to reach the state threshold has fallen by two-thirds; the dollars fell by a third. Eligible expenses were $1,946,230 for 29 children in FY2013 and $1,257,225 for 9 in FY2026. The average eligible cost per child claimed roughly doubled over those years. A district with nine such placements is exposed to each one: one child arriving or leaving moves this line by more than a tenth.",
+       "figure": "kids_now",
+       "figures": {
+        "elig_now": {
+         "text": "$1,257,225",
+         "unit": "",
+         "value": 1257225.0
+        },
+        "elig_then": {
+         "text": "$1,946,230",
+         "unit": "",
+         "value": 1946230.0
+        },
+        "fy_now": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "fy_peak": {
+         "text": "FY2013",
+         "unit": "",
+         "value": 2013
+        },
+        "kids_now": {
+         "text": "9",
+         "unit": "children claimed, FY2026",
+         "value": 9
+        },
+        "kids_peak": {
+         "text": "29",
+         "unit": "",
+         "value": 29
+        },
+        "per_child_now": {
+         "text": "$139,692",
+         "unit": "",
+         "value": 139691.66666666666
+        },
+        "per_child_then": {
+         "text": "$67,111",
+         "unit": "",
+         "value": 67111.37931034483
+        }
+       },
+       "id": "fewer-children-each-far-more-expensive",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Which children, which placements, or why the count fell. A claimed child is one whose costs exceeded the threshold; children in costly placements below it are not counted here at all.",
+       "see": [
+        {
+         "label": "What out-of-district placements cost",
+         "slug": "/what-special-education-costs"
+        },
+        {
+         "label": "Who ends up out of district",
+         "slug": "/who-ends-up-out-of-district"
+        }
+       ],
+       "so_what": "A third fewer dollars for a third as many children: each placement costs about twice what one did."
+      },
+      {
+       "basis": "`dese_circuit_breaker`, total_quarterly_payment divided by total_net_claim, Lunenburg rows, every year.",
+       "bearing": "sizes",
+       "claim": "The state paid 42.3% of the claim in FY2010 and 75.0% in FY2023; the statute allows up to 75%.",
+       "detail": "In FY2010 the claim was $498,853 and the payment $211,224. The shortfall in a pro-rated year lands on the town\u2019s budget with no warning the district can act on, because the rate is not known until the state\u2019s books close. That is the sense in which this line is unforecastable from Lunenburg.",
+       "figure": "low",
+       "figures": {
+        "claim_low": {
+         "text": "$498,853",
+         "unit": "",
+         "value": 498853.0
+        },
+        "full_years": {
+         "text": "17",
+         "unit": "",
+         "value": 17
+        },
+        "fy_high": {
+         "text": "FY2023",
+         "unit": "",
+         "value": 2023
+        },
+        "fy_low": {
+         "text": "FY2010",
+         "unit": "",
+         "value": 2010
+        },
+        "high": {
+         "text": "75.0%",
+         "unit": "",
+         "value": 0.7500058629442082
+        },
+        "low": {
+         "text": "42.3%",
+         "unit": "of the claim paid, FY2010",
+         "value": 0.4234193239290933
+        },
+        "paid_low": {
+         "text": "$211,224",
+         "unit": "",
+         "value": 211224.0
+        },
+        "years": {
+         "text": "21",
+         "unit": "",
+         "value": 21
+        }
+       },
+       "id": "the-state-pays-what-it-appropriated",
+       "kind": "measured",
+       "literals": [
+        "75%",
+        "70%"
+       ],
+       "not_shown": "The appropriation itself, or why any year was short. The state file gives the result, not the vote.",
+       "see": [
+        {
+         "label": "The rest of what the state sends",
+         "slug": "/state-aid"
+        }
+       ],
+       "so_what": "17 of 21 years at 70% or more. The share is the Legislature\u2019s appropriation, not Lunenburg\u2019s costs."
+      },
+      {
+       "basis": "`dese_circuit_breaker` threshold_amount divided by eligible_students_claimed; total_quarterly_payment over total_eligible_expenses.",
+       "bearing": "sizes",
+       "claim": "In FY2026 the state deducted $52,419 per child before reimbursing anything \u2014 $471,771 in all.",
+       "detail": "Of $1,257,225 in eligible expenses the state paid $579,142 \u2014 46.1% of the total, because the threshold comes off first and the share applies to what is left. The threshold is four times the state\u2019s average foundation budget per pupil and rises with it, so the district\u2019s own share rises even when nothing about a placement changes.",
+       "figure": "per_child",
+       "figures": {
+        "elig": {
+         "text": "$1,257,225",
+         "unit": "",
+         "value": 1257225.0
+        },
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "paid": {
+         "text": "$579,142",
+         "unit": "",
+         "value": 579142.0
+        },
+        "per_child": {
+         "text": "$52,419",
+         "unit": "deducted per child, FY2026",
+         "value": 52419.0
+        },
+        "share_elig": {
+         "text": "46.1%",
+         "unit": "",
+         "value": 0.4606510370061047
+        },
+        "total": {
+         "text": "$471,771",
+         "unit": "",
+         "value": 471771.0
+        }
+       },
+       "id": "the-threshold-is-a-deduction-not-a-rate",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "The foundation figure the threshold is four times of; DESE publishes the resulting threshold, not its derivation, in this file.",
+       "see": [],
+       "so_what": "The district pays the first $52,419 of every claimed child, then gets about three-quarters of the rest."
+      },
+      {
+       "basis": "`dese_circuit_breaker` reimb_transport, Lunenburg rows.",
+       "bearing": "sizes",
+       "claim": "Since FY2022 the state has also reimbursed special education transport: $94,993 in FY2026.",
+       "detail": "Before FY2022 the transport column is empty for every district; the reimbursement did not exist. It is a separate line from tuition and is included in the payment totals above.",
+       "figure": "now",
+       "figures": {
+        "first": {
+         "text": "$14,596",
+         "unit": "",
+         "value": 14596.0
+        },
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "fy_first": {
+         "text": "FY2022",
+         "unit": "",
+         "value": 2022
+        },
+        "fy_peak": {
+         "text": "FY2025",
+         "unit": "",
+         "value": 2025
+        },
+        "now": {
+         "text": "$94,993",
+         "unit": "transport reimbursed, FY2026",
+         "value": 94993.0
+        },
+        "peak": {
+         "text": "$111,560",
+         "unit": "",
+         "value": 111560.0
+        }
+       },
+       "id": "transport-joined-the-reimbursement",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "What the district spends on special education transport in total; this is the reimbursed part only.",
+       "see": [],
+       "so_what": "New money: from $14,596 in its first year to a peak of $111,560 in FY2025."
+      },
+      {
+       "basis": "`dese_circuit_breaker`, FY2026 district rows for Lunenburg and its neighbours; state row for the totals.",
+       "bearing": "sizes",
+       "claim": "Lunenburg\u2019s cost per claimed child, $139,692, is second highest of 6 districts in FY2026.",
+       "detail": "The table below gives each district\u2019s children claimed, cost per child and share paid. Statewide, the same file counts 10,759 children and $1,443,824,902 in eligible expenses.",
+       "figure": "lun",
+       "figures": {
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "hi": {
+         "text": "$160,652",
+         "unit": "",
+         "value": 160652.35294117648
+        },
+        "lo": {
+         "text": "$104,213",
+         "unit": "",
+         "value": 104213.35714285714
+        },
+        "lun": {
+         "text": "$139,692",
+         "unit": "per claimed child, FY2026",
+         "value": 139691.66666666666
+        },
+        "n": {
+         "text": "6",
+         "unit": "",
+         "value": 6
+        },
+        "state_elig": {
+         "text": "$1,443,824,902",
+         "unit": "",
+         "value": 1443824902.0
+        },
+        "state_kids": {
+         "text": "10,759",
+         "unit": "",
+         "value": 10759.0
+        }
+       },
+       "id": "lunenburgs-placements-cost-more-per-child-than-most-neighbours",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Whether a higher cost per child reflects the children\u2019s needs, the placements chosen, or the prices charged. All three move it.",
+       "see": [
+        {
+         "label": "The same districts, on spending",
+         "slug": "/what-other-districts-spend"
+        }
+       ],
+       "so_what": "The neighbours range from $104,213 to $160,652 per child; each is paid about the same share."
+      }
+     ],
+     "count": 5,
+     "data": "/data/circuit-breaker.json",
+     "generator": "scripts/build_circuit_breaker.py",
+     "id": "circuitbreaker",
+     "title": "The circuit breaker \u2014 what the state reimburses for the costliest placements",
+     "url": "/circuit-breaker"
     },
     {
      "about": "The route into out-of-district placement: a cohort followed from where it started, and the town\u2019s own published count of children placed.",
@@ -14102,16 +14735,16 @@
  "totals": {
   "bearing": {
    "lever": 19,
-   "sizes": 71,
+   "sizes": 76,
    "unclassified": 0
   },
-  "conclusions": 90,
+  "conclusions": 95,
   "document_words": 80083,
   "documents": 17,
   "hypothesis": 1,
-  "measured": 89,
-  "reports": 25,
-  "with_conclusions": 25,
+  "measured": 94,
+  "reports": 26,
+  "with_conclusions": 26,
   "without_conclusions": 0
  }
 }
