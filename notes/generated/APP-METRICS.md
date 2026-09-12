@@ -6,7 +6,7 @@
 
 - **12,379 documents** — PDFs, spreadsheets, Word files and slide decks — 25,772 files and 4.85 GB in all, each with its address, its publisher’s filename and a checksum.
 - **13 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, meetings, peer-districts, state-census, state-dese, state-dls, town-annual-reports, town-budget, town-ledgers, town-supplementary.
-- **583 meeting documents** from **37 town boards**: 174 sets of minutes and 409 agendas, 2026-01-05 to 2026-09-12 — **1 years**.
+- **12,081 meeting documents** from **51 town boards**: 4,665 sets of minutes and 7,416 agendas, 2009-01-05 to 2026-09-12 — **18 years**.
 - **4,665 annual town report appropriation lines**, FY2011–FY2025, read page by page.
 - **3,815 names** on the town’s printed staff rosters, FY2011–FY2025.
 - **9,503 school budget line-years**, FY2014–FY2027, and **983 ledger lines** from the town’s own accounting system.

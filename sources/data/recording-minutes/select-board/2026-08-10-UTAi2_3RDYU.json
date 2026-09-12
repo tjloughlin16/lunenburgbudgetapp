@@ -30,7 +30,11 @@
   "by": "scripts/write_recording_minutes.py",
   "model": "sonnet",
   "at": "2026-09-11T21:27:11Z",
-  "cost_usd": 0.217112
+  "cost_usd": 0.217112,
+  "retagged": {
+   "at": "2026-09-12T11:53:43Z",
+   "cost_usd": 0.1313536
+  }
  },
  "minutes": {
   "attendees": [
@@ -151,67 +155,103 @@
     "t_start": 2,
     "t_end": 42,
     "topic": "Call to order and meeting opening",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": []
    },
    {
     "t_start": 42,
     "t_end": 166,
     "topic": "Public comment period: congratulations to election winners and a question about a separate petition's feasibility",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "town-meeting",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 166,
     "t_end": 292,
     "topic": "Review of the three warrant articles for the September 3rd special town meeting",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 312,
     "t_end": 332,
     "topic": "Vote to include the school department's article in the warrant",
-    "resolution": "voted"
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "town-meeting",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 332,
     "t_end": 396,
     "topic": "Discussion of the order of articles and overlap between article one and article two",
-    "resolution": "no resolution / left to town meeting floor"
+    "resolution": "no resolution / left to town meeting floor",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 396,
     "t_end": 416,
     "topic": "Vote to approve the full warrant as presented",
-    "resolution": "voted"
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 416,
     "t_end": 540,
     "topic": "Town manager's explanation of certified free cash status for article 3",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": [
+     "free-cash",
+     "town-meeting",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 540,
     "t_end": 706,
     "topic": "Scheduling of upcoming meetings (Aug 18, Aug 25, Sept 1) and Finance Committee/School Committee timing",
-    "resolution": "decided"
+    "resolution": "decided",
+    "tags": [
+     "town-meeting"
+    ]
    },
    {
     "t_start": 706,
     "t_end": 728,
     "topic": "Reminder of a posted meeting the next day at Brooks House then TCB",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": []
    },
    {
     "t_start": 728,
     "t_end": 790,
     "topic": "Second public comment call and closing banter",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
    },
    {
     "t_start": 790,
     "t_end": 807,
     "topic": "Adjournment",
-    "resolution": "voted"
+    "resolution": "voted",
+    "tags": []
    }
   ],
   "not_audible": [

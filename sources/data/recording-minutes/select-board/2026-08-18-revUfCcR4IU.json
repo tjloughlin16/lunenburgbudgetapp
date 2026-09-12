@@ -42,7 +42,11 @@
   "by": "scripts/write_recording_minutes.py",
   "model": "sonnet",
   "at": "2026-09-11T21:17:10Z",
-  "cost_usd": 0.357199
+  "cost_usd": 0.357199,
+  "retagged": {
+   "at": "2026-09-12T11:54:22Z",
+   "cost_usd": 0.14395460000000002
+  }
  },
  "minutes": {
   "attendees": [
@@ -187,157 +191,233 @@
     "t_start": 3,
     "t_end": 108,
     "topic": "Meeting opening, recording notice, and reading of the public hearing notice for the nuisance dog complaint",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 108,
     "t_end": 237,
     "topic": "Chair explains hearing process and reads the Mass. General Law definition of a nuisance dog",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 237,
     "t_end": 397,
     "topic": "Town counsel Adam Costa opens the hearing and swears in witnesses present in the room; no Zoom participant identifies to testify",
-    "resolution": "procedural, completed"
+    "resolution": "procedural, completed",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 397,
     "t_end": 563,
     "topic": "Complainant George Burden, participating by Zoom, states he and his wife will not testify, citing alleged persecution by the town",
-    "resolution": "no testimony given by complainant"
+    "resolution": "no testimony given by complainant",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 563,
     "t_end": 1214,
     "topic": "Testimony of Detective McNamera: reads the Burden complaint aloud, describes his investigation, concludes the complaint contained falsehoods",
-    "resolution": "testimony given"
+    "resolution": "testimony given",
+    "tags": [
+     "legal",
+     "public-safety"
+    ]
    },
    {
     "t_start": 1214,
     "t_end": 1357,
     "topic": "Town counsel's follow-up questions to Detective McNamera confirming no evidence of nuisance behavior was found",
-    "resolution": "testimony concluded"
+    "resolution": "testimony concluded",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 1357,
     "t_end": 1774,
     "topic": "George Burden's cross-examination of Detective McNamera regarding disputed court dockets",
-    "resolution": "no further questions, witness excused"
+    "resolution": "no further questions, witness excused",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 1774,
     "t_end": 2213,
     "topic": "Testimony of Animal Control Officer Kathy Kimo: fencing inspection, neighbor interviews, no evidence of barking from the subject dog",
-    "resolution": "testimony concluded, no board questions"
+    "resolution": "testimony concluded, no board questions",
+    "tags": [
+     "legal",
+     "public-safety"
+    ]
    },
    {
     "t_start": 2233,
     "t_end": 2708,
     "topic": "George Burden's cross-examination of the ACO regarding fence-testing methods and an unrelated phone-call incident",
-    "resolution": "no further questions, witness excused"
+    "resolution": "no further questions, witness excused",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 2708,
     "t_end": 2752,
     "topic": "Board confirms remaining witnesses (dog owner, an HOA neighbor) and sets order",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": []
    },
    {
     "t_start": 2752,
     "t_end": 3208,
     "topic": "Testimony of dog owner Charles/Chuck Cordmash denying any nuisance and describing a history of litigation with the complainant",
-    "resolution": "testimony given"
+    "resolution": "testimony given",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 3208,
     "t_end": 3293,
     "topic": "Town counsel's follow-up questions to Cordmash confirming no excessive barking and no other complaints",
-    "resolution": "testimony concluded"
+    "resolution": "testimony concluded",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 3293,
     "t_end": 3843,
     "topic": "George Burden's contentious cross-examination of Cordmash, repeatedly ruled off-topic by town counsel",
-    "resolution": "concluded, chair moves on"
+    "resolution": "concluded, chair moves on",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 3843,
     "t_end": 4290,
     "topic": "Testimony of neighbor/HOA trustee Ned Pratt that the condo association received no pet complaints in about three years, followed by Burden's cross-examination alleging coordination between witnesses",
-    "resolution": "no further questions, witness excused"
+    "resolution": "no further questions, witness excused",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 4290,
     "t_end": 4310,
     "topic": "Board confirms no further witnesses are available",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": []
    },
    {
     "t_start": 4310,
     "t_end": 4330,
     "topic": "Vote to close the testimonial portion of the hearing",
-    "resolution": "voted, passed unanimously"
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 4330,
     "t_end": 4391,
     "topic": "Vote to reopen the hearing to hear a public comment from a Zoom participant (\"JB\")",
-    "resolution": "voted, passed unanimously"
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "legal",
+     "public-comment"
+    ]
    },
    {
     "t_start": 4391,
     "t_end": 4478,
     "topic": "Public comment from John Bowen",
-    "resolution": "comment heard"
+    "resolution": "comment heard",
+    "tags": [
+     "public-comment"
+    ]
    },
    {
     "t_start": 4478,
     "t_end": 4498,
     "topic": "Vote to close the public hearing",
-    "resolution": "voted, passed unanimously"
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 4498,
     "t_end": 4600,
     "topic": "Town counsel answers a board question about legal attachment/trustee process related to older, unrelated court cases",
-    "resolution": "informational, partly garbled"
+    "resolution": "informational, partly garbled",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 4600,
     "t_end": 4684,
     "topic": "Board deliberation: a member (\"Tom\") summarizes that no evidence supports the nuisance dog complaint and recommends dismissal",
-    "resolution": "informational, leads to motion"
+    "resolution": "informational, leads to motion",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 4684,
     "t_end": 4706,
     "topic": "Other board members concur and comment that the bar for future nuisance-dog hearings should be raised",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 4706,
     "t_end": 4767,
     "topic": "Motion and vote finding the dog is not a nuisance dog",
-    "resolution": "voted, passed unanimously"
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 4767,
     "t_end": 4787,
     "topic": "Board thanks town counsel and asks him to draft the written decision",
-    "resolution": "agreed informally"
+    "resolution": "agreed informally",
+    "tags": [
+     "legal"
+    ]
    },
    {
     "t_start": 4787,
     "t_end": 4910,
     "topic": "Discussion of a possible future process change: bifurcating dangerous-dog and nuisance-dog hearings and delegating nuisance cases to staff",
-    "resolution": "no vote taken; noted for future consideration"
+    "resolution": "no vote taken; noted for future consideration",
+    "tags": [
+     "legal",
+     "policy"
+    ]
    },
    {
     "t_start": 4910,
     "t_end": 4930,
     "topic": "Motion to adjourn",
-    "resolution": "voted, passed"
+    "resolution": "voted, passed",
+    "tags": []
    }
   ],
   "not_audible": [

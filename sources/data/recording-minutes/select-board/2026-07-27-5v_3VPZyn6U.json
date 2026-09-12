@@ -30,7 +30,11 @@
   "by": "scripts/write_recording_minutes.py",
   "model": "sonnet",
   "at": "2026-09-11T21:35:06Z",
-  "cost_usd": 0.20153900000000002
+  "cost_usd": 0.20153900000000002,
+  "retagged": {
+   "at": "2026-09-12T11:53:18Z",
+   "cost_usd": 0.13107259999999998
+  }
  },
  "minutes": {
   "attendees": [
@@ -129,43 +133,64 @@
     "t_start": 2,
     "t_end": 22,
     "topic": "Meeting called to order; recording/broadcast notice and agenda disclaimer",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": []
    },
    {
     "t_start": 22,
     "t_end": 164,
     "topic": "Public comment: town moderator Tim Murphy on his availability and deputy-moderator process for the special town meeting",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "town-meeting"
+    ]
    },
    {
     "t_start": 164,
     "t_end": 951,
     "topic": "Setting the date and warrant schedule for a citizens'-petition special town meeting (Sept. 3, 2026)",
-    "resolution": "voted"
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 951,
     "t_end": 993,
     "topic": "Approval of the September 1, 2026 state primary election warrant",
-    "resolution": "voted"
+    "resolution": "voted",
+    "tags": [
+     "elections"
+    ]
    },
    {
     "t_start": 993,
     "t_end": 1034,
     "topic": "Ratification of Teamsters Local 170 (DPW) collective bargaining agreement",
-    "resolution": "voted"
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions",
+     "personnel",
+     "roads-and-dpw"
+    ]
    },
    {
     "t_start": 1034,
     "t_end": 1076,
     "topic": "Announcement of upcoming meetings: joint workshop with the Municipal Building Design Committee and Mass Save presentation; next regular meeting Aug. 4",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": [
+     "facilities"
+    ]
    },
    {
     "t_start": 1076,
     "t_end": 1093,
     "topic": "Closing public comment and adjournment",
-    "resolution": "voted"
+    "resolution": "voted",
+    "tags": []
    }
   ],
   "not_audible": [

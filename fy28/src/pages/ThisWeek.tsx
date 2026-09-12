@@ -1,5 +1,6 @@
 import type { Tab } from '../routes'
 import { ReportShell, useReport, H2, MoreReports } from '../components/report'
+import { BoardsThisWeek, THE_THREE } from '../components/BoardsThisWeek'
 
 const TAB: Tab = 'thisweek'
 const FEED = 'meeting-feed.json'
@@ -57,7 +58,6 @@ export function ThisWeek() {
   const fresh = useReport<WhatsNew>(NEW)
   const notices = useReport<Notices>(NOTICES)
   const f = feed.d, n = fresh.d, nt = notices.d
-  const previewFor = (m: Upcoming) => nt?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date)
   if (!f) {
     return <ReportShell tab={TAB} title="This week in town" err={feed.err} loading={!feed.err} dataUrl={'/data/' + FEED} />
   }
@@ -70,44 +70,25 @@ export function ThisWeek() {
       standfirst={`Meetings coming up, minutes just posted, recordings just published — as seen on ${f.as_of}.`}
       dataUrl={'/data/' + FEED}>
 
-      <H2>Coming up</H2>
-      {week.length === 0
-        ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No agenda posted for the next seven days.</p>
-        : <ol className="space-y-2">
-            {week.map(m => {
-              const p = previewFor(m)
-              return (
-                <li key={m.file_id} className="card p-3">
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <span className="tnum text-xs font-semibold whitespace-nowrap w-24" style={{ color: 'var(--text-secondary)' }}>{longDate(m.date)}</span>
-                    <span className="text-sm font-semibold flex-1 min-w-[12rem]">{m.board}</span>
-                    <a className="text-xs underline" style={{ color: 'var(--series-cost)' }} href={m.agenda_url} target="_blank" rel="noreferrer">agenda</a>
-                  </div>
-                  {/* WHAT IS ON IT, for the three boards TJ watches: quoted from the agenda,
-                      never a prediction. An agenda lists what MAY be discussed. */}
-                  {p && (
-                    <div className="mt-2 pl-0 sm:pl-[6.75rem]">
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{p.one_line}</p>
-                      <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{p.when}{p.where && p.where !== 'not stated' ? ` · ${p.where}` : ''}{p.how_to_attend ? ` · ${p.how_to_attend.split('.')[0]}` : ''}</p>
-                      {p.items.length > 0 && (
-                        <ul className="mt-2 space-y-1">
-                          {p.items.map((it, i) => (
-                            <li key={i} className="text-sm flex gap-2 items-baseline">
-                              <span className="text-[10px] font-bold uppercase tracking-widest whitespace-nowrap w-16"
-                                style={{ color: it.vote_expected ? 'var(--series-cost)' : 'var(--text-muted)' }}>{it.vote_expected ? 'vote' : it.kind}</span>
-                              <span><span className="font-medium">{it.agenda_line.replace(/^[a-z0-9]+\.\s*/i, '')}</span>
-                                <span className="text-xs" style={{ color: 'var(--text-muted)' }}> — {it.why_it_matters}</span></span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                      <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Items quoted from the agenda; an agenda lists what may be discussed, not what will be decided.</p>
-                    </div>
-                  )}
+      <H2>Select Board, Finance Committee, School Committee</H2>
+      <BoardsThisWeek days={14} />
+
+      <H2>Every other board this week</H2>
+      {(() => {
+        const three = new Set(THE_THREE.map(t => t[0]))
+        const others = week.filter(m => !three.has(m.board_slug))
+        return others.length === 0
+          ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No other agenda posted for the next seven days.</p>
+          : <ul className="text-sm space-y-1">
+              {others.map(m => (
+                <li key={m.file_id} className="flex flex-wrap gap-x-3 items-baseline">
+                  <span className="tnum text-xs w-24 shrink-0" style={{ color: 'var(--text-secondary)' }}>{longDate(m.date)}</span>
+                  <span>{m.board}</span>
+                  <a className="text-xs underline" style={{ color: 'var(--text-muted)' }} href={m.agenda_url} target="_blank" rel="noreferrer">agenda</a>
                 </li>
-              )
-            })}
-          </ol>}
+              ))}
+            </ul>
+      })()}
       {later.length > 0 && (
         <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>
           And within {f.upcoming.horizon_days} days: {later.map((m, i) => <span key={m.file_id}>{i ? '; ' : ''}{m.board} <a className="underline" href={m.agenda_url} target="_blank" rel="noreferrer">{longDate(m.date)}</a></span>)}.

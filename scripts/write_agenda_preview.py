@@ -49,19 +49,24 @@ MODEL = 'sonnet'
 
 SCHEMA = {
     'type': 'object', 'additionalProperties': False,
-    'required': ['when', 'where', 'how_to_attend', 'items', 'one_line', 'nothing_of_note'],
+    'required': ['when', 'time', 'where', 'attend', 'how_to_attend', 'items', 'hook', 'one_line', 'nothing_of_note'],
     'properties': {
         'when': {'type': 'string', 'description': 'date and time exactly as the agenda states them'},
-        'where': {'type': 'string', 'description': 'location as stated, or "not stated"'},
+        'time': {'type': 'string', 'description': 'the start time alone, e.g. "7:00 PM", or "not stated"'},
+        'where': {'type': 'string', 'description': 'location as stated, SHORT (e.g. "Town Hall, Bilotta Room", "LMS Room D132"), or "not stated"'},
+        'attend': {'type': 'string', 'enum': ['in person', 'zoom', 'hybrid', 'broadcast only', 'not stated'],
+                   'description': 'how the public can take part'},
         'how_to_attend': {'type': 'string', 'description': 'in person / Zoom / hybrid / broadcast, as stated; include a Zoom link only if printed'},
+        'hook': {'type': 'string', 'description': 'THE HOOK: the two or three things on this agenda a resident would most want to know about, as one phrase under 110 characters, no date, no board name, no outcome predicted. e.g. "Opioid-settlement money for AEDs, the Brooks House report, and a look at the town buildings"'},
         'items': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
-            'required': ['agenda_line', 'why_it_matters', 'kind'],
+            'required': ['agenda_line', 'why_it_matters', 'kind', 'important'],
             'properties': {
                 'agenda_line': {'type': 'string', 'description': 'the item EXACTLY as printed on the agenda, verbatim, one line'},
                 'why_it_matters': {'type': 'string', 'description': 'one sentence, plain English, no figures the agenda does not print, no prediction of the outcome'},
                 'kind': {'type': 'string', 'enum': ['vote', 'hearing', 'budget', 'contract', 'staffing', 'facilities', 'fees', 'policy', 'grant', 'transfer', 'presentation', 'other']},
                 'vote_expected': {'type': 'boolean', 'description': 'true only if the agenda says a vote is scheduled (e.g. "VOTE", "to approve", "action item")'},
+                'important': {'type': 'boolean', 'description': 'true if this item touches the schools, the budget, taxes or fees, a contract or hiring decision, a building, or a service residents use -- something a resident would want to know was being decided. false for routine or administrative items.'},
             }}},
         'one_line': {'type': 'string', 'description': 'the meeting in one sentence for a notice, under 200 characters, naming the two or three items that matter most; no outcome predicted'},
         'nothing_of_note': {'type': 'boolean', 'description': 'true if the agenda holds only routine items'},
@@ -75,7 +80,8 @@ Rules:
 2. Pick items touching money, votes, public hearings, contracts, hiring or cuts, buildings, fees, policy changes, grants, transfers, and anything marked for a vote. Skip the pledge, approval of prior minutes, adjournment, and standing reports with nothing specific under them.
 3. why_it_matters is one plain sentence. Never predict what will be decided; an agenda lists what may be discussed.
 4. Do not invent figures. If the agenda prints an amount you may repeat it inside agenda_line only.
-5. one_line is for a notice: when, which board, and the two or three items that matter, under 200 characters.
+5. important is true for an item that touches the schools, the budget, taxes or fees, a contract or hiring decision, a building, or a service residents use. Introductions, acknowledgements, correspondence, appointments to committees and housekeeping are not important.
+6. hook is the headline a resident scans: the two or three items that matter, as a phrase, no date and no board name. one_line is for a notice: when, which board, and those items, under 200 characters.
 
 Return only the JSON."""
 
@@ -128,7 +134,9 @@ def write_one(a, force=False):
     path = out_path(a)
     sha = sha256_of(a['text'])
     if os.path.exists(path) and not force:
-        if json.load(open(path)).get('source', {}).get('sha256') == sha:
+        have = json.load(open(path))
+        if (have.get('source', {}).get('sha256') == sha and 'hook' in have.get('preview', {})
+                and all('important' in it for it in have['preview'].get('items', []))):
             return 'current'
     raw = open(a['text'], encoding='utf-8', errors='replace').read()
     body = re.sub(r'^===PAGE \d+===$', '', raw, flags=re.M)
@@ -177,8 +185,9 @@ def write_one(a, force=False):
 def facebook_text(a, p):
     """Composed, not written: the notice a person pastes. Every line is the preview's own."""
     d = dt.date.fromisoformat(a['date'])
-    head = '%s meets %s.' % (a['board'], d.strftime('%A %B %-d'))
-    lines = [head, p['one_line']]
+    head = '%s meets %s%s.' % (a['board'], d.strftime('%A %B %-d'),
+                              (' at ' + p['time']) if p.get('time') and p['time'] != 'not stated' else '')
+    lines = [head, (p.get('hook') or p['one_line']).rstrip('.') + '.']
     picks = [it for it in p['items'] if it.get('vote_expected')] or p['items']
     if picks:
         lines.append('On the agenda: ' + '; '.join(it['agenda_line'].strip().rstrip('.') for it in picks[:4]) + '.')

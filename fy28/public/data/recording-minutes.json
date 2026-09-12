@@ -54,6 +54,126 @@
   "debt": 1,
   "esser": 1
  },
+ "time_by_board": {
+  "school-committee": {
+   "board": "School Committee",
+   "meetings": 5,
+   "topics_span_s": 32983,
+   "by_tag_s": {
+    "state-aid": 8036,
+    "budget": 7425,
+    "staffing": 5707,
+    "public-comment": 5544,
+    "budget-fy27": 5328,
+    "warrant-article": 5259,
+    "hiring": 5022,
+    "athletics": 4888,
+    "personnel": 3782,
+    "chapter-70": 2561,
+    "town-meeting": 2161,
+    "curriculum": 2115,
+    "msba": 1819,
+    "turkey-hill": 1777,
+    "superintendent-report": 1544,
+    "school-choice": 1453,
+    "legal": 1422,
+    "enrollment": 1309,
+    "facilities": 1308,
+    "special-education": 1234,
+    "middle-school": 1073,
+    "override": 1011,
+    "transfers": 886,
+    "grants": 837,
+    "recreation": 819,
+    "contracts-and-unions": 518,
+    "budget-fy26": 509,
+    "transportation": 496,
+    "policy": 476,
+    "primary-school": 226,
+    "executive-session": 145,
+    "capital": 142,
+    "free-cash": 142,
+    "fees": 62
+   }
+  },
+  "select-board": {
+   "board": "Select Board",
+   "meetings": 14,
+   "topics_span_s": 65103,
+   "by_tag_s": {
+    "facilities": 21411,
+    "turkey-hill": 10544,
+    "town-meeting": 8083,
+    "personnel": 7545,
+    "capital": 7421,
+    "warrant-article": 6716,
+    "planning-and-zoning": 6562,
+    "policy": 6141,
+    "town-departments": 5827,
+    "state-aid": 5541,
+    "legal": 5090,
+    "budget-fy27": 4254,
+    "public-comment": 3045,
+    "public-safety": 2951,
+    "seniors": 2132,
+    "budget-fy26": 1863,
+    "athletics": 1662,
+    "budget": 1620,
+    "executive-session": 1377,
+    "economic-development": 1246,
+    "budget-fy28": 1107,
+    "elections": 1073,
+    "transfers": 984,
+    "roads-and-dpw": 879,
+    "msba": 853,
+    "library": 687,
+    "water-sewer": 585,
+    "chapter-70": 476,
+    "hiring": 414,
+    "recreation": 353,
+    "contracts-and-unions": 275,
+    "transportation": 254,
+    "superintendent-report": 187,
+    "housing": 166,
+    "free-cash": 124,
+    "staffing": 81
+   }
+  },
+  "finance-committee": {
+   "board": "Finance Committee",
+   "meetings": 4,
+   "topics_span_s": 28701,
+   "by_tag_s": {
+    "warrant-article": 9298,
+    "staffing": 5005,
+    "facilities": 4768,
+    "superintendent-report": 3961,
+    "athletics": 3713,
+    "override": 3674,
+    "state-aid": 3219,
+    "town-departments": 3086,
+    "personnel": 2519,
+    "grants": 2112,
+    "budget-fy27": 1929,
+    "capital": 1680,
+    "policy": 1546,
+    "budget": 1485,
+    "transfers": 1314,
+    "town-meeting": 1113,
+    "budget-fy26": 893,
+    "public-comment": 883,
+    "school-choice": 864,
+    "legal": 860,
+    "transportation": 759,
+    "free-cash": 579,
+    "turkey-hill": 481,
+    "elections": 320,
+    "recreation": 303,
+    "primary-school": 175
+   }
+  }
+ },
+ "time_note": "Seconds of recording per subject, from our topic spans; a topic with two tags is credited to both, so tags do not sum to the meeting.",
  "what": "Our minutes of recorded meetings, written by a language model from our machine captions. A finding aid to the recording, cited by the second.",
  "counts": {
   "meetings": 23,
@@ -79,6 +199,34 @@
  },
  "meetings": [
   {
+   "time_by_tag_s": {
+    "personnel": 3199,
+    "hiring": 2531,
+    "budget": 1984,
+    "msba": 1415,
+    "turkey-hill": 1415,
+    "enrollment": 1309,
+    "school-choice": 1309,
+    "staffing": 1309,
+    "budget-fy27": 459,
+    "curriculum": 459,
+    "superintendent-report": 459,
+    "town-meeting": 352,
+    "facilities": 226,
+    "primary-school": 226,
+    "override": 210,
+    "policy": 167,
+    "contracts-and-unions": 142,
+    "capital": 142,
+    "free-cash": 142,
+    "executive-session": 63,
+    "warrant-article": 63,
+    "public-comment": 46,
+    "transfers": 43,
+    "budget-fy26": 40,
+    "grants": 20
+   },
+   "topics_span_s": 7590,
    "slug": "school-committee/2026-09-09-tKWYbMFWJtI",
    "board_slug": "school-committee",
    "board": "School Committee",
@@ -156,7 +304,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-12T01:42:48Z",
-    "cost_usd": 0.5540660000000001
+    "cost_usd": 0.5540660000000001,
+    "retagged": {
+     "at": "2026-09-12T11:59:41Z",
+     "cost_usd": 0.1423876
+    }
    },
    "minutes": {
     "attendees": [
@@ -494,127 +646,195 @@
       "t_start": 2,
       "t_end": 26,
       "topic": "Pledge of Allegiance and opening",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 26,
       "t_end": 50,
       "topic": "Public comment for prior issues",
-      "resolution": "no speakers"
+      "resolution": "no speakers",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 50,
       "t_end": 260,
       "topic": "Chair's report: special town meeting override results, class size reduction, AV/sound issues and staff response, start of school",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "override",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 260,
       "t_end": 342,
       "topic": "Student representative report: upcoming dates and reminders",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 342,
       "t_end": 403,
       "topic": "Review and approve minutes of 7/29/26 and 8/26/26",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      },
      {
       "t_start": 403,
       "t_end": 446,
       "topic": "Review line item transfers, warrants, and donations",
-      "resolution": "warrants reported, no transfers this period"
+      "resolution": "warrants reported, no transfers this period",
+      "tags": [
+       "budget",
+       "transfers"
+      ]
      },
      {
       "t_start": 446,
       "t_end": 905,
       "topic": "Superintendent's report: opening-of-school updates, literacy initiatives (NTC landscape analysis, Reading Buddies), new second-grade classroom, financial pressures ahead of FY27 budget cycle",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget-fy27",
+       "curriculum",
+       "superintendent-report"
+      ]
      },
      {
       "t_start": 905,
       "t_end": 3436,
       "topic": "Public interview of school business administrator candidate Derek Andrews, including committee questioning and a floor objection about public participation in the process",
-      "resolution": "no decision — hiring vote deferred to next week; executive session waived"
+      "resolution": "no decision — hiring vote deferred to next week; executive session waived",
+      "tags": [
+       "hiring",
+       "personnel"
+      ]
      },
      {
       "t_start": 3436,
       "t_end": 3662,
       "topic": "Girl Scout troop donation of a memorial picnic table for the primary school",
-      "resolution": "voted (accepted)"
+      "resolution": "voted (accepted)",
+      "tags": [
+       "facilities",
+       "primary-school"
+      ]
      },
      {
       "t_start": 3894,
       "t_end": 3957,
       "topic": "Procedural votes: waive executive session, accept donation, skip re-vote on already-approved warrant articles",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "executive-session",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 3979,
       "t_end": 5288,
       "topic": "Principals' back-to-school updates for primary, Turkey Hill, middle, and high schools (enrollment, staffing, class sizes, school choice concerns)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "enrollment",
+       "school-choice",
+       "staffing"
+      ]
      },
      {
       "t_start": 5288,
       "t_end": 5430,
       "topic": "Cafeteria workers contract ratification",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "contracts-and-unions",
+       "personnel"
+      ]
      },
      {
       "t_start": 5430,
       "t_end": 5956,
       "topic": "Discussion of a potential financial/process audit of the school business office, funding source, scope and goals",
-      "resolution": "no vote — direction set to seek town finance committee funding"
+      "resolution": "no vote — direction set to seek town finance committee funding",
+      "tags": [
+       "budget",
+       "personnel"
+      ]
      },
      {
       "t_start": 5956,
       "t_end": 6123,
       "topic": "Review of school committee operating protocols",
-      "resolution": "tabled to next week"
+      "resolution": "tabled to next week",
+      "tags": [
+       "policy"
+      ]
      },
      {
       "t_start": 6123,
       "t_end": 7538,
       "topic": "Review of prior-year school committee goals and discussion of new goals (Turkey Hill/MSBA, primary parking lot and playground, budget process, tri-board communication, legislative outreach)",
-      "resolution": "tabled — vote planned for next meeting"
+      "resolution": "tabled — vote planned for next meeting",
+      "tags": [
+       "budget",
+       "msba",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 7538,
       "t_end": 7558,
       "topic": "Pass over Prism 2 grant discussion (already addressed previously)",
-      "resolution": "voted to skip"
+      "resolution": "voted to skip",
+      "tags": [
+       "grants"
+      ]
      },
      {
       "t_start": 7558,
       "t_end": 7598,
       "topic": "Pass over FY26 year-end budget review",
-      "resolution": "voted to defer to next week"
+      "resolution": "voted to defer to next week",
+      "tags": [
+       "budget-fy26"
+      ]
      },
      {
       "t_start": 7598,
       "t_end": 7620,
       "topic": "Public comment for issues discussed tonight",
-      "resolution": "no speakers"
+      "resolution": "no speakers",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 7620,
       "t_end": 7683,
       "topic": "Reports from subcommittees",
-      "resolution": "informational — little to report"
+      "resolution": "informational — little to report",
+      "tags": []
      },
      {
       "t_start": 7683,
       "t_end": 7825,
       "topic": "Topics for future discussion: November town meeting warrant article, free cash/year-end closeout timing, capital plan presentation",
-      "resolution": "discussed, added to future agendas"
+      "resolution": "discussed, added to future agendas",
+      "tags": [
+       "capital",
+       "free-cash",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 7825,
       "t_end": 7846,
       "topic": "Adjournment",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -631,6 +851,25 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "warrant-article": 3599,
+    "town-meeting": 3297,
+    "state-aid": 1506,
+    "athletics": 1408,
+    "budget-fy26": 1209,
+    "town-departments": 755,
+    "transfers": 685,
+    "personnel": 650,
+    "policy": 617,
+    "public-comment": 377,
+    "budget": 317,
+    "water-sewer": 105,
+    "roads-and-dpw": 105,
+    "facilities": 63,
+    "housing": 63,
+    "seniors": 63
+   },
+   "topics_span_s": 6257,
    "slug": "select-board/2026-09-01-kG4KE9VgCdY",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -706,7 +945,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:05:19Z",
-    "cost_usd": 0.38185600000000003
+    "cost_usd": 0.38185600000000003,
+    "retagged": {
+     "at": "2026-09-12T11:54:34Z",
+     "cost_usd": 0.1375136
+    }
    },
    "minutes": {
     "attendees": [
@@ -1004,97 +1247,154 @@
       "t_start": 11,
       "t_end": 99,
       "topic": "Call to order, Pledge of Allegiance, announcements (special town meeting Thursday, polls open)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "town-meeting"
+      ]
      },
      {
       "t_start": 99,
       "t_end": 289,
       "topic": "Public comment: special town meeting postcard/notice not received by some residents",
-      "resolution": "no vote; staff to follow up with post office"
+      "resolution": "no vote; staff to follow up with post office",
+      "tags": [
+       "public-comment",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 289,
       "t_end": 419,
       "topic": "Board comment on a school committee remark about not 'squabbling' over $5,000",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget"
+      ]
      },
      {
       "t_start": 419,
       "t_end": 589,
       "topic": "Eagle House supporters toll booth fundraiser application",
-      "resolution": "voted, passed 4-0-1"
+      "resolution": "voted, passed 4-0-1",
+      "tags": []
      },
      {
       "t_start": 589,
       "t_end": 715,
       "topic": "Introduction of new Principal Assessor Brian Fernandez",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "personnel",
+       "town-departments"
+      ]
      },
      {
       "t_start": 715,
       "t_end": 2123,
       "topic": "Special town meeting Article 3: restoring cut middle school and select high school sports and their funding source",
-      "resolution": "discussed only; no vote taken, deferred to the WRAP discussion / town meeting floor"
+      "resolution": "discussed only; no vote taken, deferred to the WRAP discussion / town meeting floor",
+      "tags": [
+       "athletics",
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 2123,
       "t_end": 3629,
       "topic": "Special town meeting Article 1: appropriating additional state aid to the FY27 school operating budget (gross vs. net figure)",
-      "resolution": "voted; board recommended $397,189 (net), passed unanimously"
+      "resolution": "voted; board recommended $397,189 (net), passed unanimously",
+      "tags": [
+       "state-aid",
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 3656,
       "t_end": 4180,
       "topic": "Town Manager's report: FY26 preliminary closeout/review proposal, municipal aggregation, training, personnel committee, Touch a Truck, employee appreciation, recruitment and a resignation",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget-fy26",
+       "personnel",
+       "town-departments"
+      ]
      },
      {
       "t_start": 4180,
       "t_end": 4525,
       "topic": "Select board 'chat' session recap and scheduling of the next session",
-      "resolution": "scheduled: Wednesday, September 30th, 6-7 p.m."
+      "resolution": "scheduled: Wednesday, September 30th, 6-7 p.m.",
+      "tags": []
      },
      {
       "t_start": 4525,
       "t_end": 5142,
       "topic": "Letter to state legislative leaders supporting the Question 1 audit of the legislature",
-      "resolution": "voted, amended and passed unanimously"
+      "resolution": "voted, amended and passed unanimously",
+      "tags": [
+       "policy"
+      ]
      },
      {
       "t_start": 5142,
       "t_end": 5827,
       "topic": "Winter Recovery Assistance Program (RAP) funds: curing the FY26 snow and ice deficit and funding Article 3 via a new special revenue fund",
-      "resolution": "voted; special revenue fund of $36,000 created, passed unanimously"
+      "resolution": "voted; special revenue fund of $36,000 created, passed unanimously",
+      "tags": [
+       "budget-fy26",
+       "transfers",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 5827,
       "t_end": 5890,
       "topic": "Municipal buildings / TC Passos senior housing discussion",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "housing",
+       "seniors"
+      ]
      },
      {
       "t_start": 5890,
       "t_end": 5995,
       "topic": "Approval of prior meeting minutes and signing of a water commitment",
-      "resolution": "voted; minutes passed 3-0-2; water commitment signed"
+      "resolution": "voted; minutes passed 3-0-2; water commitment signed",
+      "tags": [
+       "town-meeting",
+       "water-sewer"
+      ]
      },
      {
       "t_start": 6020,
       "t_end": 6125,
       "topic": "Committee reports: finance committee and stormwater task force update",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "roads-and-dpw",
+       "town-departments"
+      ]
      },
      {
       "t_start": 6125,
       "t_end": 6312,
       "topic": "Public comment: clarification on school funding shortfall and the $5,000 remark",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget",
+       "public-comment"
+      ]
      },
      {
       "t_start": 6312,
       "t_end": 6320,
       "topic": "Adjournment",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -1110,6 +1410,23 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "warrant-article": 6102,
+    "override": 1852,
+    "staffing": 1852,
+    "grants": 1250,
+    "athletics": 1215,
+    "school-choice": 864,
+    "town-meeting": 760,
+    "superintendent-report": 742,
+    "legal": 632,
+    "public-comment": 546,
+    "policy": 307,
+    "budget": 225,
+    "facilities": 128,
+    "recreation": 128
+   },
+   "topics_span_s": 7214,
    "slug": "finance-committee/2026-08-27-LGdwK249dSA",
    "board_slug": "finance-committee",
    "board": "Finance Committee",
@@ -1189,7 +1506,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:08:13Z",
-    "cost_usd": 0.431366
+    "cost_usd": 0.431366,
+    "retagged": {
+     "at": "2026-09-12T11:51:18Z",
+     "cost_usd": 0.1361106
+    }
    },
    "minutes": {
     "attendees": [
@@ -1512,127 +1833,199 @@
       "t_start": 0,
       "t_end": 147,
       "topic": "Opening, open meeting law preamble, pledge of allegiance",
-      "resolution": "procedural"
+      "resolution": "procedural",
+      "tags": []
      },
      {
       "t_start": 169,
       "t_end": 398,
       "topic": "Chair's announcements: PAC/IT broadcast improvements, town meeting schedule concerns, structure of public comment for the hearing",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "town-meeting"
+      ]
      },
      {
       "t_start": 398,
       "t_end": 436,
       "topic": "Initial public comment period and town manager/finance director reports",
-      "resolution": "no comment offered; no report given"
+      "resolution": "no comment offered; no report given",
+      "tags": []
      },
      {
       "t_start": 436,
       "t_end": 457,
       "topic": "Motion to enter public hearing",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 458,
       "t_end": 1200,
       "topic": "Superintendent's presentation on article 1: Ignite grant reallocation and revised spending plan",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "grants",
+       "superintendent-report",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 1222,
       "t_end": 1454,
       "topic": "New issue: $5,541 school choice credits embedded in the article 1 calculation",
-      "resolution": "informal agreement reached, pending ratification"
+      "resolution": "informal agreement reached, pending ratification",
+      "tags": [
+       "school-choice",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 1474,
       "t_end": 3326,
       "topic": "Board questions on article 1: vans, athletic director staffing, assistant principal, class sizes, literacy PD, override/Prop 2.5 debate",
-      "resolution": "discussion only"
+      "resolution": "discussion only",
+      "tags": [
+       "override",
+       "staffing",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 3326,
       "t_end": 3836,
       "topic": "Public comment on article 1",
-      "resolution": "answered by officials"
+      "resolution": "answered by officials",
+      "tags": [
+       "public-comment",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 3836,
       "t_end": 4176,
       "topic": "Presentation and discussion of article 2 by petitioner Mandy Gilman",
-      "resolution": "informational; petitioner stated intent to move to pass over"
+      "resolution": "informational; petitioner stated intent to move to pass over",
+      "tags": [
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 4176,
       "t_end": 4808,
       "topic": "Presentation and discussion of article 3: RAP special purpose fund mechanics, school choice offset, town counsel's wording guidance",
-      "resolution": "discussion only, funding source unresolved"
+      "resolution": "discussion only, funding source unresolved",
+      "tags": [
+       "legal",
+       "school-choice",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 4808,
       "t_end": 5620,
       "topic": "Public and board discussion of specific sports funding figures for article 3 (ski team, girls lacrosse, middle school sports)",
-      "resolution": "discussion only, figures uncertain"
+      "resolution": "discussion only, figures uncertain",
+      "tags": [
+       "athletics",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 5641,
       "t_end": 5664,
       "topic": "Motion to close the public hearing",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "town-meeting"
+      ]
      },
      {
       "t_start": 5664,
       "t_end": 6172,
       "topic": "Deliberation and vote on article 1",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "grants",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 6172,
       "t_end": 6222,
       "topic": "Deliberation and vote on article 2",
-      "resolution": "voted, deferred unanimously"
+      "resolution": "voted, deferred unanimously",
+      "tags": [
+       "warrant-article"
+      ]
      },
      {
       "t_start": 6222,
       "t_end": 6625,
       "topic": "Deliberation and vote on article 3",
-      "resolution": "voted, deferred unanimously"
+      "resolution": "voted, deferred unanimously",
+      "tags": [
+       "athletics",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 6625,
       "t_end": 6772,
       "topic": "Scheduling discussion for a pre-town-meeting caucus",
-      "resolution": "decided informally: caucus at town meeting instead"
+      "resolution": "decided informally: caucus at town meeting instead",
+      "tags": [
+       "town-meeting"
+      ]
      },
      {
       "t_start": 6772,
       "t_end": 6997,
       "topic": "Old business: financial policies (DOR/RAP briefing plans) and fund/trust balance closeout status",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget",
+       "policy"
+      ]
      },
      {
       "t_start": 6997,
       "t_end": 7079,
       "topic": "Operating protocols document discussion",
-      "resolution": "deferred"
+      "resolution": "deferred",
+      "tags": [
+       "policy"
+      ]
      },
      {
       "t_start": 7079,
       "t_end": 7136,
       "topic": "Approval of July 23rd minutes",
-      "resolution": "voted, passed 4-0-1"
+      "resolution": "voted, passed 4-0-1",
+      "tags": []
      },
      {
       "t_start": 7136,
       "t_end": 7264,
       "topic": "Committee reports: municipal building committee, parks and recreation",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "recreation"
+      ]
      },
      {
       "t_start": 7264,
       "t_end": 7300,
       "topic": "Final public comment and adjournment",
-      "resolution": "voted, adjourned"
+      "resolution": "voted, adjourned",
+      "tags": [
+       "public-comment"
+      ]
      }
     ],
     "not_audible": [
@@ -1649,6 +2042,23 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "budget": 3671,
+    "state-aid": 2437,
+    "staffing": 2413,
+    "public-comment": 2226,
+    "special-education": 1234,
+    "curriculum": 1179,
+    "athletics": 918,
+    "warrant-article": 796,
+    "middle-school": 731,
+    "school-choice": 144,
+    "transportation": 144,
+    "hiring": 84,
+    "personnel": 84,
+    "town-meeting": 65
+   },
+   "topics_span_s": 6501,
    "slug": "school-committee/2026-08-26-J_kvfs3s0UE",
    "board_slug": "school-committee",
    "board": "School Committee",
@@ -1720,7 +2130,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:10:01Z",
-    "cost_usd": 0.351022
+    "cost_usd": 0.351022,
+    "retagged": {
+     "at": "2026-09-12T11:51:54Z",
+     "cost_usd": 0.1347726
+    }
    },
    "minutes": {
     "attendees": [
@@ -2050,79 +2464,127 @@
       "t_start": 2,
       "t_end": 64,
       "topic": "Call to order, remote broadcast notice, pledge of allegiance",
-      "resolution": "procedural"
+      "resolution": "procedural",
+      "tags": []
      },
      {
       "t_start": 84,
       "t_end": 1263,
       "topic": "Public comment: Dave Rogers on staff turnover, oversight, and reading scores",
-      "resolution": "no resolution (public comment; committee does not respond substantively)"
+      "resolution": "no resolution (public comment; committee does not respond substantively)",
+      "tags": [
+       "curriculum",
+       "public-comment",
+       "staffing"
+      ]
      },
      {
       "t_start": 1305,
       "t_end": 1994,
       "topic": "Public comment: Renee, Stephanie Quinn, Miss Lu on funding scenarios and shortfalls",
-      "resolution": "informational; questions to be addressed in presentation"
+      "resolution": "informational; questions to be addressed in presentation",
+      "tags": [
+       "budget",
+       "public-comment",
+       "state-aid"
+      ]
      },
      {
       "t_start": 2015,
       "t_end": 2099,
       "topic": "Chair's report: finance director search update",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "hiring",
+       "personnel"
+      ]
      },
      {
       "t_start": 2099,
       "t_end": 3553,
       "topic": "Superintendent's presentation of three funding scenarios for $418,000 in additional state aid",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget",
+       "state-aid"
+      ]
      },
      {
       "t_start": 3553,
       "t_end": 4787,
       "topic": "Committee discussion weighing second-grade teacher vs. BCBA vs. audit",
-      "resolution": "discussed, no immediate resolution"
+      "resolution": "discussed, no immediate resolution",
+      "tags": [
+       "budget",
+       "special-education",
+       "staffing"
+      ]
      },
      {
       "t_start": 4787,
       "t_end": 5081,
       "topic": "Straw poll and formal vote on funding scenario",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "budget",
+       "state-aid"
+      ]
      },
      {
       "t_start": 5081,
       "t_end": 5146,
       "topic": "Warrant article 2 status",
-      "resolution": "decision to pass over, no vote needed"
+      "resolution": "decision to pass over, no vote needed",
+      "tags": [
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 5146,
       "t_end": 5877,
       "topic": "Warrant article 3 (citizens petition for middle school sports) discussion and figures",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "athletics",
+       "middle-school",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 5877,
       "t_end": 6021,
       "topic": "Follow-up Q&A on Ignite seats, transportation timing, and forms",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "school-choice",
+       "transportation"
+      ]
      },
      {
       "t_start": 6021,
       "t_end": 6208,
       "topic": "Closing remarks: booster fundraising thanks, uncertainty about future athletics funding",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "athletics"
+      ]
      },
      {
       "t_start": 6208,
       "t_end": 6566,
       "topic": "Public comment on issues discussed tonight",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 6566,
       "t_end": 6586,
       "topic": "Adjournment",
-      "resolution": "voted (procedural)"
+      "resolution": "voted (procedural)",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -2138,6 +2600,13 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "legal": 4736,
+    "public-safety": 1090,
+    "public-comment": 148,
+    "policy": 123
+   },
+   "topics_span_s": 4907,
    "slug": "select-board/2026-08-18-revUfCcR4IU",
    "board_slug": "select-board",
    "board": "Select Board Public Hearing - Dog Complaint",
@@ -2201,7 +2670,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:17:10Z",
-    "cost_usd": 0.357199
+    "cost_usd": 0.357199,
+    "retagged": {
+     "at": "2026-09-12T11:54:22Z",
+     "cost_usd": 0.14395460000000002
+    }
    },
    "minutes": {
     "attendees": [
@@ -2346,157 +2819,233 @@
       "t_start": 3,
       "t_end": 108,
       "topic": "Meeting opening, recording notice, and reading of the public hearing notice for the nuisance dog complaint",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 108,
       "t_end": 237,
       "topic": "Chair explains hearing process and reads the Mass. General Law definition of a nuisance dog",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 237,
       "t_end": 397,
       "topic": "Town counsel Adam Costa opens the hearing and swears in witnesses present in the room; no Zoom participant identifies to testify",
-      "resolution": "procedural, completed"
+      "resolution": "procedural, completed",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 397,
       "t_end": 563,
       "topic": "Complainant George Burden, participating by Zoom, states he and his wife will not testify, citing alleged persecution by the town",
-      "resolution": "no testimony given by complainant"
+      "resolution": "no testimony given by complainant",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 563,
       "t_end": 1214,
       "topic": "Testimony of Detective McNamera: reads the Burden complaint aloud, describes his investigation, concludes the complaint contained falsehoods",
-      "resolution": "testimony given"
+      "resolution": "testimony given",
+      "tags": [
+       "legal",
+       "public-safety"
+      ]
      },
      {
       "t_start": 1214,
       "t_end": 1357,
       "topic": "Town counsel's follow-up questions to Detective McNamera confirming no evidence of nuisance behavior was found",
-      "resolution": "testimony concluded"
+      "resolution": "testimony concluded",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 1357,
       "t_end": 1774,
       "topic": "George Burden's cross-examination of Detective McNamera regarding disputed court dockets",
-      "resolution": "no further questions, witness excused"
+      "resolution": "no further questions, witness excused",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 1774,
       "t_end": 2213,
       "topic": "Testimony of Animal Control Officer Kathy Kimo: fencing inspection, neighbor interviews, no evidence of barking from the subject dog",
-      "resolution": "testimony concluded, no board questions"
+      "resolution": "testimony concluded, no board questions",
+      "tags": [
+       "legal",
+       "public-safety"
+      ]
      },
      {
       "t_start": 2233,
       "t_end": 2708,
       "topic": "George Burden's cross-examination of the ACO regarding fence-testing methods and an unrelated phone-call incident",
-      "resolution": "no further questions, witness excused"
+      "resolution": "no further questions, witness excused",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 2708,
       "t_end": 2752,
       "topic": "Board confirms remaining witnesses (dog owner, an HOA neighbor) and sets order",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 2752,
       "t_end": 3208,
       "topic": "Testimony of dog owner Charles/Chuck Cordmash denying any nuisance and describing a history of litigation with the complainant",
-      "resolution": "testimony given"
+      "resolution": "testimony given",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 3208,
       "t_end": 3293,
       "topic": "Town counsel's follow-up questions to Cordmash confirming no excessive barking and no other complaints",
-      "resolution": "testimony concluded"
+      "resolution": "testimony concluded",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 3293,
       "t_end": 3843,
       "topic": "George Burden's contentious cross-examination of Cordmash, repeatedly ruled off-topic by town counsel",
-      "resolution": "concluded, chair moves on"
+      "resolution": "concluded, chair moves on",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 3843,
       "t_end": 4290,
       "topic": "Testimony of neighbor/HOA trustee Ned Pratt that the condo association received no pet complaints in about three years, followed by Burden's cross-examination alleging coordination between witnesses",
-      "resolution": "no further questions, witness excused"
+      "resolution": "no further questions, witness excused",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 4290,
       "t_end": 4310,
       "topic": "Board confirms no further witnesses are available",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 4310,
       "t_end": 4330,
       "topic": "Vote to close the testimonial portion of the hearing",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 4330,
       "t_end": 4391,
       "topic": "Vote to reopen the hearing to hear a public comment from a Zoom participant (\"JB\")",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "legal",
+       "public-comment"
+      ]
      },
      {
       "t_start": 4391,
       "t_end": 4478,
       "topic": "Public comment from John Bowen",
-      "resolution": "comment heard"
+      "resolution": "comment heard",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 4478,
       "t_end": 4498,
       "topic": "Vote to close the public hearing",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 4498,
       "t_end": 4600,
       "topic": "Town counsel answers a board question about legal attachment/trustee process related to older, unrelated court cases",
-      "resolution": "informational, partly garbled"
+      "resolution": "informational, partly garbled",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 4600,
       "t_end": 4684,
       "topic": "Board deliberation: a member (\"Tom\") summarizes that no evidence supports the nuisance dog complaint and recommends dismissal",
-      "resolution": "informational, leads to motion"
+      "resolution": "informational, leads to motion",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 4684,
       "t_end": 4706,
       "topic": "Other board members concur and comment that the bar for future nuisance-dog hearings should be raised",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 4706,
       "t_end": 4767,
       "topic": "Motion and vote finding the dog is not a nuisance dog",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 4767,
       "t_end": 4787,
       "topic": "Board thanks town counsel and asks him to draft the written decision",
-      "resolution": "agreed informally"
+      "resolution": "agreed informally",
+      "tags": [
+       "legal"
+      ]
      },
      {
       "t_start": 4787,
       "t_end": 4910,
       "topic": "Discussion of a possible future process change: bifurcating dangerous-dog and nuisance-dog hearings and delegating nuisance cases to staff",
-      "resolution": "no vote taken; noted for future consideration"
+      "resolution": "no vote taken; noted for future consideration",
+      "tags": [
+       "legal",
+       "policy"
+      ]
      },
      {
       "t_start": 4910,
       "t_end": 4930,
       "topic": "Motion to adjourn",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -2511,6 +3060,28 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "town-departments": 1614,
+    "public-comment": 1055,
+    "personnel": 669,
+    "executive-session": 543,
+    "budget-fy26": 459,
+    "roads-and-dpw": 459,
+    "policy": 416,
+    "facilities": 413,
+    "town-meeting": 292,
+    "seniors": 288,
+    "athletics": 254,
+    "transportation": 254,
+    "warrant-article": 225,
+    "planning-and-zoning": 210,
+    "hiring": 126,
+    "budget-fy27": 124,
+    "legal": 103,
+    "public-safety": 103,
+    "elections": 21
+   },
+   "topics_span_s": 5284,
    "slug": "select-board/2026-08-18-YnQcT2BMWS4",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -2593,7 +3164,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:20:35Z",
-    "cost_usd": 0.2397532
+    "cost_usd": 0.2397532,
+    "retagged": {
+     "at": "2026-09-12T11:54:06Z",
+     "cost_usd": 0.1390836
+    }
    },
    "minutes": {
     "attendees": [
@@ -2896,145 +3471,219 @@
       "t_start": 3,
       "t_end": 43,
       "topic": "Call to order and Pledge of Allegiance",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 83,
       "t_end": 626,
       "topic": "Executive session on assistant town manager negotiations",
-      "resolution": "voted to enter; session not captioned"
+      "resolution": "voted to enter; session not captioned",
+      "tags": [
+       "executive-session",
+       "personnel"
+      ]
      },
      {
       "t_start": 626,
       "t_end": 647,
       "topic": "Announcements (state primary election, September 3 special town meeting)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "elections",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 647,
       "t_end": 901,
       "topic": "Public comment: athletic transportation waiver concerns; board members' remarks on the recent election",
-      "resolution": "no resolution"
+      "resolution": "no resolution",
+      "tags": [
+       "athletics",
+       "public-comment",
+       "transportation"
+      ]
      },
      {
       "t_start": 943,
       "t_end": 1153,
       "topic": "Public hearing: Fitchburg Gas and Electric pole petition (Leominster-Shirley Road)",
-      "resolution": "voted (hearing closed, petition approved)"
+      "resolution": "voted (hearing closed, petition approved)",
+      "tags": [
+       "planning-and-zoning"
+      ]
      },
      {
       "t_start": 1153,
       "t_end": 1279,
       "topic": "Ratification of Jessica Jack Miller as assistant town manager",
-      "resolution": "voted (approved)"
+      "resolution": "voted (approved)",
+      "tags": [
+       "hiring",
+       "personnel"
+      ]
      },
      {
       "t_start": 1279,
       "t_end": 1591,
       "topic": "Town manager's report (finance committee reporting, events, RFPs, open positions, board vacancies)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "town-departments"
+      ]
      },
      {
       "t_start": 1634,
       "t_end": 2290,
       "topic": "Food pantry relocation to temporary trailers at 30 School Street",
-      "resolution": "voted (permission granted subject to use agreement)"
+      "resolution": "voted (permission granted subject to use agreement)",
+      "tags": [
+       "town-departments"
+      ]
      },
      {
       "t_start": 2290,
       "t_end": 2515,
       "topic": "November 17, 2026 special town meeting date and warrant schedule",
-      "resolution": "voted (approved as amended)"
+      "resolution": "voted (approved as amended)",
+      "tags": [
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 2515,
       "t_end": 2873,
       "topic": "Select board liaison and committee representative assignments",
-      "resolution": "decided informally, no vote"
+      "resolution": "decided informally, no vote",
+      "tags": [
+       "town-departments"
+      ]
      },
      {
       "t_start": 2873,
       "t_end": 2997,
       "topic": "FY27 select board goals and objectives",
-      "resolution": "no resolution (motion to table not clearly acted on)"
+      "resolution": "no resolution (motion to table not clearly acted on)",
+      "tags": [
+       "budget-fy27"
+      ]
      },
      {
       "t_start": 2997,
       "t_end": 3100,
       "topic": "Scheduling a Town Counsel training session on open meeting law/ethics",
-      "resolution": "decided (date set)"
+      "resolution": "decided (date set)",
+      "tags": [
+       "legal",
+       "policy"
+      ]
      },
      {
       "t_start": 3100,
       "t_end": 3203,
       "topic": "Surplus declaration of 1998 ambulance",
-      "resolution": "voted (approved)"
+      "resolution": "voted (approved)",
+      "tags": [
+       "public-safety"
+      ]
      },
      {
       "t_start": 3203,
       "t_end": 3264,
       "topic": "Approval of prior meeting minutes",
-      "resolution": "voted (passed 3-0-2)"
+      "resolution": "voted (passed 3-0-2)",
+      "tags": []
      },
      {
       "t_start": 3264,
       "t_end": 3346,
       "topic": "Recess ahead of scheduled dog hearing",
-      "resolution": "voted (approved)"
+      "resolution": "voted (approved)",
+      "tags": []
      },
      {
       "t_start": 3346,
       "t_end": 3488,
       "topic": "Scheduling of monthly select board 'chat session' office hours",
-      "resolution": "decided"
+      "resolution": "decided",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 3488,
       "t_end": 3801,
       "topic": "Policy review assignments (appointment, special event, flag policies)",
-      "resolution": "decided (assignments made, no vote)"
+      "resolution": "decided (assignments made, no vote)",
+      "tags": [
+       "policy"
+      ]
      },
      {
       "t_start": 3801,
       "t_end": 3842,
       "topic": "Select board tour of Town Hall and Ritter",
-      "resolution": "postponed"
+      "resolution": "postponed",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 3842,
       "t_end": 4301,
       "topic": "Winter Recovery Assistance Program (WRAP) funds and FY26 snow/ice deficit",
-      "resolution": "no vote taken; deferred to a future meeting"
+      "resolution": "no vote taken; deferred to a future meeting",
+      "tags": [
+       "budget-fy26",
+       "roads-and-dpw"
+      ]
      },
      {
       "t_start": 4322,
       "t_end": 4406,
       "topic": "Old business: Lunenburg municipal buildings (Brooks House, TCP, Ritter tour discussion)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 4406,
       "t_end": 4452,
       "topic": "September 3rd special town meeting: timing of board recommendations",
-      "resolution": "decided (recommendations set for Sept 1 meeting)"
+      "resolution": "decided (recommendations set for Sept 1 meeting)",
+      "tags": [
+       "town-meeting"
+      ]
      },
      {
       "t_start": 4452,
       "t_end": 4740,
       "topic": "Committee reports (Council on Aging, Municipal Building Design Committee, Cable Advisory, Board of Assessors, Stormwater Task Force, Finance Committee)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "seniors",
+       "town-departments"
+      ]
      },
      {
       "t_start": 4740,
       "t_end": 5399,
       "topic": "Public comment (dog hearing conduct complaints; congratulations to new members)",
-      "resolution": "no resolution"
+      "resolution": "no resolution",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 5399,
       "t_end": 5433,
       "topic": "Adjournment",
-      "resolution": "voted (adjourned)"
+      "resolution": "voted (adjourned)",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -3049,6 +3698,26 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "warrant-article": 3196,
+    "staffing": 3153,
+    "athletics": 2498,
+    "override": 1822,
+    "capital": 1456,
+    "state-aid": 1290,
+    "superintendent-report": 1290,
+    "budget": 973,
+    "transfers": 973,
+    "budget-fy26": 893,
+    "grants": 862,
+    "transportation": 759,
+    "town-departments": 592,
+    "free-cash": 438,
+    "public-comment": 251,
+    "legal": 228,
+    "policy": 167
+   },
+   "topics_span_s": 10586,
    "slug": "finance-committee/2026-08-13-v4qvpgKlYRg",
    "board_slug": "finance-committee",
    "board": "Finance Committee",
@@ -3133,7 +3802,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:24:27Z",
-    "cost_usd": 0.587925
+    "cost_usd": 0.587925,
+    "retagged": {
+     "at": "2026-09-12T11:51:06Z",
+     "cost_usd": 0.13536160000000003
+    }
    },
    "minutes": {
     "attendees": [
@@ -3705,115 +4378,179 @@
       "t_start": 5,
       "t_end": 133,
       "topic": "Opening, pledge of allegiance, announcements (Aug 27 public hearing, Sept 3 special town meeting)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 133,
       "t_end": 217,
       "topic": "Public comment: conflict of interest disclosure",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 238,
       "t_end": 338,
       "topic": "Overview of the evening's agenda",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 414,
       "t_end": 1173,
       "topic": "Citizen petitioner's presentation on cost model to reinstate cut sports and transportation",
-      "resolution": "no resolution; referred to school committee meeting and public hearing"
+      "resolution": "no resolution; referred to school committee meeting and public hearing",
+      "tags": [
+       "athletics",
+       "transportation",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 1173,
       "t_end": 2050,
       "topic": "Committee questions/discussion on the petition article, funding uncertainty, Title IX",
-      "resolution": "no resolution"
+      "resolution": "no resolution",
+      "tags": [
+       "athletics",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 2050,
       "t_end": 2278,
       "topic": "Town counsel opinion on scope of 'other available funds' for the citizens petition",
-      "resolution": "informational; scope ultimately left to town meeting moderator"
+      "resolution": "informational; scope ultimately left to town meeting moderator",
+      "tags": [
+       "legal",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 2278,
       "t_end": 2716,
       "topic": "Free cash overview and DLS policy presentation",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "free-cash"
+      ]
      },
      {
       "t_start": 2716,
       "t_end": 3184,
       "topic": "Winter Recovery Assistance Program (WRAP) funding discussion",
-      "resolution": "referred to select board's August 18 meeting"
+      "resolution": "referred to select board's August 18 meeting",
+      "tags": [
+       "town-departments"
+      ]
      },
      {
       "t_start": 3184,
       "t_end": 3518,
       "topic": "Finance Committee Reserve Fund as a potential funding source",
-      "resolution": "informational; likely does not qualify"
+      "resolution": "informational; likely does not qualify",
+      "tags": [
+       "budget",
+       "transfers"
+      ]
      },
      {
       "t_start": 3518,
       "t_end": 4850,
       "topic": "Capital and outstanding articles report, FY21-FY27",
-      "resolution": "informational; feedback requested"
+      "resolution": "informational; feedback requested",
+      "tags": [
+       "capital",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 4850,
       "t_end": 6140,
       "topic": "Superintendent's strategic spending plan for additional state aid (literacy, staffing)",
-      "resolution": "informational/discussion"
+      "resolution": "informational/discussion",
+      "tags": [
+       "staffing",
+       "state-aid",
+       "superintendent-report"
+      ]
      },
      {
       "t_start": 6140,
       "t_end": 7962,
       "topic": "Extended debate on class size research, political messaging, and prior override figures",
-      "resolution": "no resolution"
+      "resolution": "no resolution",
+      "tags": [
+       "override",
+       "staffing"
+      ]
      },
      {
       "t_start": 7983,
       "t_end": 8845,
       "topic": "Grants overview (Title I-IV, IDEA, preschool, earmark) and athletic revolving fund",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "athletics",
+       "grants"
+      ]
      },
      {
       "t_start": 9125,
       "t_end": 10018,
       "topic": "Q3 FY26 town financial report: revenues, expenditures, enterprise funds",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget-fy26"
+      ]
      },
      {
       "t_start": 10018,
       "t_end": 10657,
       "topic": "Special revenue funds worksheet review",
-      "resolution": "informational; follow-up requested"
+      "resolution": "informational; follow-up requested",
+      "tags": [
+       "budget",
+       "transfers"
+      ]
      },
      {
       "t_start": 10677,
       "t_end": 10801,
       "topic": "Old business: capital planning committee representative vacancy",
-      "resolution": "voted (Tom Gray appointed)"
+      "resolution": "voted (Tom Gray appointed)",
+      "tags": [
+       "capital",
+       "town-departments"
+      ]
      },
      {
       "t_start": 10801,
       "t_end": 10968,
       "topic": "Committee reports and public comment on draft operating protocols",
-      "resolution": "referred to future meeting"
+      "resolution": "referred to future meeting",
+      "tags": [
+       "policy",
+       "public-comment"
+      ]
      },
      {
       "t_start": 10968,
       "t_end": 11009,
       "topic": "Closing remarks; concern over school finance team capacity",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "staffing"
+      ]
      },
      {
       "t_start": 11009,
       "t_end": 11009,
       "topic": "Adjournment",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -3828,6 +4565,15 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "facilities": 3917,
+    "town-departments": 810,
+    "budget": 380,
+    "capital": 380,
+    "public-safety": 375,
+    "water-sewer": 375
+   },
+   "topics_span_s": 4102,
    "slug": "select-board/2026-08-11-7CbIQ2xhEw4",
    "board_slug": "select-board",
    "board": "Select Board Meeting - Site Visit to Brooks House and TCP",
@@ -3881,7 +4627,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:25:50Z",
-    "cost_usd": 0.286596
+    "cost_usd": 0.286596,
+    "retagged": {
+     "at": "2026-09-12T11:53:55Z",
+     "cost_usd": 0.1342186
+    }
    },
    "minutes": {
     "attendees": [
@@ -4045,73 +4795,112 @@
       "t_start": 13,
       "t_end": 97,
       "topic": "Opening statement and roll call at Brooks House",
-      "resolution": "procedural, informational"
+      "resolution": "procedural, informational",
+      "tags": []
      },
      {
       "t_start": 97,
       "t_end": 298,
       "topic": "Brooks House tour: ADA/doorway width, balloon framing, fire escape issues",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "town-departments"
+      ]
      },
      {
       "t_start": 298,
       "t_end": 590,
       "topic": "Food pantry representative's concerns about relocating into Brooks House",
-      "resolution": "no resolution, informational"
+      "resolution": "no resolution, informational",
+      "tags": [
+       "facilities",
+       "town-departments"
+      ]
      },
      {
       "t_start": 590,
       "t_end": 830,
       "topic": "Brooks House basement, roof and remaining walkthrough",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 971,
       "t_end": 1253,
       "topic": "TCP tour begins: food pantry cafeteria/kitchen area condition and roof leaks",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 1253,
       "t_end": 1719,
       "topic": "TCP boiler room: failing boilers, cross-connected water, transformers",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 1719,
       "t_end": 2206,
       "topic": "TCP gym, stage/break room and former Shapiro program space: leaks, mold, VOCs",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 2206,
       "t_end": 3083,
       "topic": "TCP decommissioned back half tour: shut-off systems, asbestos, roof drains",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 3083,
       "t_end": 3400,
       "topic": "Town department records storage in former classrooms",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "town-departments"
+      ]
      },
      {
       "t_start": 3400,
       "t_end": 3775,
       "topic": "TCP other wing: lead in drinking water, windows, electrical panel, sprinkler main",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "public-safety",
+       "water-sewer"
+      ]
      },
      {
       "t_start": 3775,
       "t_end": 4155,
       "topic": "Discussion of ADA-trigger cost thresholds, building code (Chapter 34), and renovation cost estimates",
-      "resolution": "no resolution, informational"
+      "resolution": "no resolution, informational",
+      "tags": [
+       "budget",
+       "capital",
+       "facilities"
+      ]
      },
      {
       "t_start": 4155,
       "t_end": 4256,
       "topic": "Closing remarks and adjournment",
-      "resolution": "voted (adjourned)"
+      "resolution": "voted (adjourned)",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -4127,6 +4916,14 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "town-meeting": 644,
+    "warrant-article": 478,
+    "public-comment": 186,
+    "free-cash": 124,
+    "budget": 20
+   },
+   "topics_span_s": 785,
    "slug": "select-board/2026-08-10-UTAi2_3RDYU",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -4184,7 +4981,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:27:11Z",
-    "cost_usd": 0.217112
+    "cost_usd": 0.217112,
+    "retagged": {
+     "at": "2026-09-12T11:53:43Z",
+     "cost_usd": 0.1313536
+    }
    },
    "minutes": {
     "attendees": [
@@ -4305,67 +5106,103 @@
       "t_start": 2,
       "t_end": 42,
       "topic": "Call to order and meeting opening",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 42,
       "t_end": 166,
       "topic": "Public comment period: congratulations to election winners and a question about a separate petition's feasibility",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "public-comment",
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 166,
       "t_end": 292,
       "topic": "Review of the three warrant articles for the September 3rd special town meeting",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 312,
       "t_end": 332,
       "topic": "Vote to include the school department's article in the warrant",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "budget",
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 332,
       "t_end": 396,
       "topic": "Discussion of the order of articles and overlap between article one and article two",
-      "resolution": "no resolution / left to town meeting floor"
+      "resolution": "no resolution / left to town meeting floor",
+      "tags": [
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 396,
       "t_end": 416,
       "topic": "Vote to approve the full warrant as presented",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 416,
       "t_end": 540,
       "topic": "Town manager's explanation of certified free cash status for article 3",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "free-cash",
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 540,
       "t_end": 706,
       "topic": "Scheduling of upcoming meetings (Aug 18, Aug 25, Sept 1) and Finance Committee/School Committee timing",
-      "resolution": "decided"
+      "resolution": "decided",
+      "tags": [
+       "town-meeting"
+      ]
      },
      {
       "t_start": 706,
       "t_end": 728,
       "topic": "Reminder of a posted meeting the next day at Brooks House then TCB",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 728,
       "t_end": 790,
       "topic": "Second public comment call and closing banter",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 790,
       "t_end": 807,
       "topic": "Adjournment",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -4380,6 +5217,23 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "facilities": 1727,
+    "capital": 1689,
+    "personnel": 980,
+    "town-departments": 827,
+    "policy": 716,
+    "budget-fy27": 631,
+    "executive-session": 583,
+    "town-meeting": 528,
+    "recreation": 293,
+    "warrant-article": 280,
+    "elections": 248,
+    "public-comment": 246,
+    "budget": 226,
+    "hiring": 207
+   },
+   "topics_span_s": 5851,
    "slug": "select-board/2026-08-04-yz0b6T1GdWA",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -4448,7 +5302,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:28:45Z",
-    "cost_usd": 0.331082
+    "cost_usd": 0.331082,
+    "retagged": {
+     "at": "2026-09-12T11:53:35Z",
+     "cost_usd": 0.1360866
+    }
    },
    "minutes": {
     "attendees": [
@@ -4658,121 +5516,182 @@
       "t_start": 8,
       "t_end": 95,
       "topic": "Call to order, pledge of allegiance, meeting notices",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 73,
       "t_end": 656,
       "topic": "Executive session re: principal assessor negotiations",
-      "resolution": "voted to enter; not captioned; returned to open session"
+      "resolution": "voted to enter; not captioned; returned to open session",
+      "tags": [
+       "executive-session",
+       "personnel"
+      ]
      },
      {
       "t_start": 656,
       "t_end": 904,
       "topic": "Chair and board announcements (special election, warrant, beach dedication, jazz concert, blood drive, meet-and-greet, ribbon cutting)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "elections",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 904,
       "t_end": 1110,
       "topic": "Public comment: Karen Menard, Genevieve Nass beach house dedication",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "public-comment",
+       "recreation"
+      ]
      },
      {
       "t_start": 1110,
       "t_end": 1237,
       "topic": "Ratification of Brian Fernandez as principal assessor",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "hiring",
+       "personnel"
+      ]
      },
      {
       "t_start": 1237,
       "t_end": 1317,
       "topic": "Ratification of Michael Gail as part-time principal clerk",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "hiring",
+       "personnel"
+      ]
      },
      {
       "t_start": 1317,
       "t_end": 1507,
       "topic": "Appointment of Vincent Aceto, Green Communities Committee",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "personnel"
+      ]
      },
      {
       "t_start": 1507,
       "t_end": 1592,
       "topic": "Volunteer page / application process feedback",
-      "resolution": "informational, decision made"
+      "resolution": "informational, decision made",
+      "tags": [
+       "policy"
+      ]
      },
      {
       "t_start": 1592,
       "t_end": 2005,
       "topic": "Town manager's report (warrant, RFP, serve page, employee event, projects, recruitments, vacancies, personnel committee)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "town-departments"
+      ]
      },
      {
       "t_start": 2005,
       "t_end": 2193,
       "topic": "Board follow-up questions on manager's report",
-      "resolution": "discussed"
+      "resolution": "discussed",
+      "tags": [
+       "town-departments"
+      ]
      },
      {
       "t_start": 2193,
       "t_end": 2379,
       "topic": "Revolutionary War Memorial location vote",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": []
      },
      {
       "t_start": 2379,
       "t_end": 2466,
       "topic": "Beach house dedication certificate vote",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "recreation"
+      ]
      },
      {
       "t_start": 2466,
       "t_end": 4155,
       "topic": "Municipal Building Design Committee discussion: Brooks House and TC Pacios condition, cost estimates, demolition vs. renovation",
-      "resolution": "discussed, no vote; direction given to facilities director"
+      "resolution": "discussed, no vote; direction given to facilities director",
+      "tags": [
+       "capital",
+       "facilities"
+      ]
      },
      {
       "t_start": 4155,
       "t_end": 4193,
       "topic": "Scheduling tour of TCP and Brooks House",
-      "resolution": "decided"
+      "resolution": "decided",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 4193,
       "t_end": 4824,
       "topic": "FY27 select board goals, including opioid settlement funds discussion",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "budget-fy27",
+       "policy"
+      ]
      },
      {
       "t_start": 4824,
       "t_end": 5104,
       "topic": "September 3rd special town meeting warrant articles",
-      "resolution": "discussed, no vote; to be finalized Aug 10"
+      "resolution": "discussed, no vote; to be finalized Aug 10",
+      "tags": [
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 5104,
       "t_end": 5232,
       "topic": "Approval of minutes (six sets)",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": []
      },
      {
       "t_start": 5232,
       "t_end": 5458,
       "topic": "Committee reports (school committee, cable advisory, building design, Fincom, stormwater, 300th anniversary)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget",
+       "town-departments"
+      ]
      },
      {
       "t_start": 5458,
       "t_end": 5797,
       "topic": "Scheduling of August 10th meeting around beach dedication",
-      "resolution": "decided"
+      "resolution": "decided",
+      "tags": []
      },
      {
       "t_start": 5797,
       "t_end": 5837,
       "topic": "Public comment and adjournment",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "public-comment"
+      ]
      }
     ],
     "not_audible": [
@@ -4786,6 +5705,30 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "state-aid": 2978,
+    "budget-fy27": 2188,
+    "warrant-article": 2188,
+    "public-comment": 1079,
+    "chapter-70": 1037,
+    "grants": 817,
+    "hiring": 672,
+    "superintendent-report": 672,
+    "athletics": 605,
+    "budget": 553,
+    "transfers": 553,
+    "recreation": 443,
+    "facilities": 439,
+    "msba": 404,
+    "contracts-and-unions": 315,
+    "turkey-hill": 299,
+    "policy": 247,
+    "transportation": 166,
+    "executive-session": 82,
+    "town-meeting": 81,
+    "budget-fy26": 42
+   },
+   "topics_span_s": 7636,
    "slug": "school-committee/2026-07-29-wR4gBkOqIaE",
    "board_slug": "school-committee",
    "board": "School Committee",
@@ -4857,7 +5800,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:31:53Z",
-    "cost_usd": 0.48306399999999994
+    "cost_usd": 0.48306399999999994,
+    "retagged": {
+     "at": "2026-09-12T11:59:24Z",
+     "cost_usd": 0.13855260000000003
+    }
    },
    "minutes": {
     "attendees": [
@@ -5381,127 +6328,193 @@
       "t_start": 2,
       "t_end": 47,
       "topic": "Opening, open meeting law notice, pledge of allegiance",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 48,
       "t_end": 347,
       "topic": "Public comment (prior issues): Turkey Hill Elementary building needs and MSBA timeline",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "msba",
+       "public-comment",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 348,
       "t_end": 409,
       "topic": "Motion to take executive session out of order",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "executive-session"
+      ]
      },
      {
       "t_start": 409,
       "t_end": 430,
       "topic": "Executive session",
-      "resolution": "held, then returned to regular session"
+      "resolution": "held, then returned to regular session",
+      "tags": [
+       "executive-session"
+      ]
      },
      {
       "t_start": 430,
       "t_end": 511,
       "topic": "Chair's report: special town meeting petition, September 3rd extra special town meeting",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "town-meeting"
+      ]
      },
      {
       "t_start": 511,
       "t_end": 1301,
       "topic": "Chair's cherry sheet / state aid presentation",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "chapter-70",
+       "state-aid"
+      ]
      },
      {
       "t_start": 1301,
       "t_end": 1341,
       "topic": "Thanks to community advocates; student rep report; minutes",
-      "resolution": "informational (no minutes available)"
+      "resolution": "informational (no minutes available)",
+      "tags": []
      },
      {
       "t_start": 1341,
       "t_end": 1894,
       "topic": "Line item transfers",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "budget",
+       "transfers"
+      ]
      },
      {
       "t_start": 1901,
       "t_end": 2046,
       "topic": "Warrants and LEAF grant donations",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "grants"
+      ]
      },
      {
       "t_start": 2048,
       "t_end": 2216,
       "topic": "Lunenburg Musicators donations",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": []
      },
      {
       "t_start": 2216,
       "t_end": 2382,
       "topic": "Football helmet donation withdrawn; football boosters transportation donation",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "athletics",
+       "transportation"
+      ]
      },
      {
       "t_start": 2464,
       "t_end": 3136,
       "topic": "Superintendent's report: hires, vans, ESEA grants, scholarships, recreation partnership, MSBA conference",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "grants",
+       "hiring",
+       "superintendent-report"
+      ]
      },
      {
       "t_start": 3156,
       "t_end": 3599,
       "topic": "Fireworks proposal for 300th anniversary kickoff",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "recreation"
+      ]
      },
      {
       "t_start": 3600,
       "t_end": 5788,
       "topic": "FY27 additional state aid warrant article discussion and amendment",
-      "resolution": "voted, passed (amended to requested figure)"
+      "resolution": "voted, passed (amended to requested figure)",
+      "tags": [
+       "budget-fy27",
+       "state-aid",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 5788,
       "t_end": 6035,
       "topic": "Letter to legislature on proposed per-pupil funding",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "chapter-70",
+       "policy"
+      ]
      },
      {
       "t_start": 6097,
       "t_end": 6412,
       "topic": "Custodians' union contract (MOU)",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "contracts-and-unions"
+      ]
      },
      {
       "t_start": 6474,
       "t_end": 6516,
       "topic": "FY26 budget update",
-      "resolution": "tabled by vote"
+      "resolution": "tabled by vote",
+      "tags": [
+       "budget-fy26"
+      ]
      },
      {
       "t_start": 6516,
       "t_end": 7296,
       "topic": "Public comment on issues discussed tonight",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 7296,
       "t_end": 7735,
       "topic": "Reports from subcommittees: Municipal Building Design Committee, Athletic Advisory Committee",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "athletics",
+       "facilities"
+      ]
      },
      {
       "t_start": 7735,
       "t_end": 7840,
       "topic": "Topics for future discussion: MSBA primer, August meeting question",
-      "resolution": "informational / decided to meet only if needed"
+      "resolution": "informational / decided to meet only if needed",
+      "tags": [
+       "msba"
+      ]
      },
      {
       "t_start": 7840,
       "t_end": 7876,
       "topic": "Adjournment",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -5519,6 +6532,18 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "turkey-hill": 9921,
+    "facilities": 9855,
+    "capital": 3340,
+    "planning-and-zoning": 2892,
+    "town-meeting": 916,
+    "town-departments": 500,
+    "elections": 312,
+    "msba": 230,
+    "public-comment": 226
+   },
+   "topics_span_s": 11016,
    "slug": "select-board/2026-07-28-1fNLbfV7UT4",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -5579,7 +6604,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:34:01Z",
-    "cost_usd": 0.497751
+    "cost_usd": 0.497751,
+    "retagged": {
+     "at": "2026-09-12T11:53:25Z",
+     "cost_usd": 0.1318116
+    }
    },
    "minutes": {
     "attendees": [
@@ -5875,97 +6904,159 @@
       "t_start": 0,
       "t_end": 122,
       "topic": "Call to order, pledge of allegiance, opening public comment",
-      "resolution": "informational; no public comment offered"
+      "resolution": "informational; no public comment offered",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 144,
       "t_end": 1394,
       "topic": "Joint Select Board / Building Design Committee meeting opened; Dave's presentation on Mass Save energy summit programs, incentives and paths for new construction/major renovation",
-      "resolution": "informational presentation, Q&A followed"
+      "resolution": "informational presentation, Q&A followed",
+      "tags": [
+       "facilities",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 1394,
       "t_end": 2350,
       "topic": "Discussion of electricity sourcing, Unitil rates, MSBA code compliance and electrification requirements",
-      "resolution": "informational, no decision"
+      "resolution": "informational, no decision",
+      "tags": [
+       "facilities",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 2350,
       "t_end": 2500,
       "topic": "Concerns about fossil-fuel/electric reliability, citing a past multi-day ice-storm power outage",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 2500,
       "t_end": 2919,
       "topic": "Workshop opens: TCP building background, partial decommissioning history and cost-savings review",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 2919,
       "t_end": 3835,
       "topic": "History of the $300,000/$325,000 roof-repair appropriation, its double-appropriation error, and correction at the most recent annual town meeting",
-      "resolution": "clarified; town meeting corrected the appropriation this past May"
+      "resolution": "clarified; town meeting corrected the appropriation this past May",
+      "tags": [
+       "capital",
+       "town-meeting",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 3835,
       "t_end": 4207,
       "topic": "Facilities Director's full inventory of TCP building deficiencies (boilers, HVAC, electrical, asbestos, lead, sprinklers, doors)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 4207,
       "t_end": 6631,
       "topic": "Debate over renovating vs. demolishing TCP; needs vs. wants; land value vs. building value",
-      "resolution": "no formal vote; general leaning toward demolition/not repairing roof, deferred to committee tour and further discussion"
+      "resolution": "no formal vote; general leaning toward demolition/not repairing roof, deferred to committee tour and further discussion",
+      "tags": [
+       "capital",
+       "facilities",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 6000,
       "t_end": 6230,
       "topic": "MSBA accelerated repair program timeline and its bearing on TCP/Turkey Hill decisions",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "msba",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 7920,
       "t_end": 8232,
       "topic": "Current TCP occupancy (food pantry, file storage, election equipment) and plan to move election storage to a trailer",
-      "resolution": "informational; relocation plan already underway"
+      "resolution": "informational; relocation plan already underway",
+      "tags": [
+       "elections",
+       "facilities",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 6250,
       "t_end": 9142,
       "topic": "Review of the Building Design Committee's charge; discussion of prioritizing space needs and design permutations",
-      "resolution": "no vote; agreed to focus next meeting on square footage needs and needs-vs-wants analysis"
+      "resolution": "no vote; agreed to focus next meeting on square footage needs and needs-vs-wants analysis",
+      "tags": [
+       "facilities",
+       "planning-and-zoning",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 9142,
       "t_end": 9642,
       "topic": "Discussion of the Brooks House and lack of an identified municipal use for it",
-      "resolution": "no vote tonight; select board requested a formal committee recommendation at a future meeting"
+      "resolution": "no vote tonight; select board requested a formal committee recommendation at a future meeting",
+      "tags": [
+       "facilities",
+       "town-departments"
+      ]
      },
      {
       "t_start": 10163,
       "t_end": 10473,
       "topic": "Scheduling the committee's next meeting",
-      "resolution": "decided: August 3rd at 5:30 p.m."
+      "resolution": "decided: August 3rd at 5:30 p.m.",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 10575,
       "t_end": 10615,
       "topic": "Adjournment of the joint Building Design Committee portion",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 10636,
       "t_end": 10740,
       "topic": "Public comment (Kim Duffy)",
-      "resolution": "informational; comment received, no action"
+      "resolution": "informational; comment received, no action",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 10743,
       "t_end": 10762,
       "topic": "Select Board adjournment",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -5980,6 +7071,17 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "town-meeting": 929,
+    "warrant-article": 787,
+    "public-comment": 142,
+    "elections": 42,
+    "facilities": 42,
+    "contracts-and-unions": 41,
+    "personnel": 41,
+    "roads-and-dpw": 41
+   },
+   "topics_span_s": 1091,
    "slug": "select-board/2026-07-27-5v_3VPZyn6U",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -6036,7 +7138,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:35:06Z",
-    "cost_usd": 0.20153900000000002
+    "cost_usd": 0.20153900000000002,
+    "retagged": {
+     "at": "2026-09-12T11:53:18Z",
+     "cost_usd": 0.13107259999999998
+    }
    },
    "minutes": {
     "attendees": [
@@ -6135,43 +7241,64 @@
       "t_start": 2,
       "t_end": 22,
       "topic": "Meeting called to order; recording/broadcast notice and agenda disclaimer",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 22,
       "t_end": 164,
       "topic": "Public comment: town moderator Tim Murphy on his availability and deputy-moderator process for the special town meeting",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "public-comment",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 164,
       "t_end": 951,
       "topic": "Setting the date and warrant schedule for a citizens'-petition special town meeting (Sept. 3, 2026)",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 951,
       "t_end": 993,
       "topic": "Approval of the September 1, 2026 state primary election warrant",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "elections"
+      ]
      },
      {
       "t_start": 993,
       "t_end": 1034,
       "topic": "Ratification of Teamsters Local 170 (DPW) collective bargaining agreement",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "contracts-and-unions",
+       "personnel",
+       "roads-and-dpw"
+      ]
      },
      {
       "t_start": 1034,
       "t_end": 1076,
       "topic": "Announcement of upcoming meetings: joint workshop with the Municipal Building Design Committee and Mass Save presentation; next regular meeting Aug. 4",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 1076,
       "t_end": 1093,
       "topic": "Closing public comment and adjournment",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -6184,6 +7311,20 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "facilities": 3984,
+    "town-departments": 2473,
+    "personnel": 2038,
+    "budget-fy27": 1929,
+    "state-aid": 1929,
+    "superintendent-report": 1929,
+    "town-meeting": 353,
+    "capital": 224,
+    "budget": 141,
+    "free-cash": 141,
+    "public-comment": 21
+   },
+   "topics_span_s": 8964,
    "slug": "finance-committee/2026-07-23-KZQrOju5CWo",
    "board_slug": "finance-committee",
    "board": "Finance Comittee",
@@ -6267,7 +7408,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:36:58Z",
-    "cost_usd": 0.430581
+    "cost_usd": 0.430581,
+    "retagged": {
+     "at": "2026-09-12T11:50:52Z",
+     "cost_usd": 0.13084759999999998
+    }
    },
    "minutes": {
     "attendees": [
@@ -6641,67 +7786,102 @@
       "t_start": 0,
       "t_end": 169,
       "topic": "Call to order, pledge of allegiance, announcements re: additional special town meeting",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "town-meeting"
+      ]
      },
      {
       "t_start": 169,
       "t_end": 190,
       "topic": "Public comment and staff reports (town manager and finance director both on vacation)",
-      "resolution": "no public comment; no reports given"
+      "resolution": "no public comment; no reports given",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 190,
       "t_end": 625,
       "topic": "Reorganization of the Finance Committee: chair, vice chair, clerk",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "town-departments"
+      ]
      },
      {
       "t_start": 645,
       "t_end": 4546,
       "topic": "Presentation by Dave Blad (Green Communities Committee) on Mass Save programs and incentives for municipal buildings and schools",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 4608,
       "t_end": 6537,
       "topic": "Additional state aid, other revenues, and savings; superintendent's requested FY27 items",
-      "resolution": "informational, no vote taken by Finance Committee"
+      "resolution": "informational, no vote taken by Finance Committee",
+      "tags": [
+       "budget-fy27",
+       "state-aid",
+       "superintendent-report"
+      ]
      },
      {
       "t_start": 6537,
       "t_end": 8575,
       "topic": "Committee and liaison assignments (capital planning, school committee, parks, council on aging, library, sewer, green committee, personnel, department liaisons)",
-      "resolution": "assignments made for most seats; capital planning committee representative tabled"
+      "resolution": "assignments made for most seats; capital planning committee representative tabled",
+      "tags": [
+       "personnel",
+       "town-departments"
+      ]
      },
      {
       "t_start": 8575,
       "t_end": 8716,
       "topic": "Upcoming priorities: reserve/free cash/stabilization policy work, quarterly reports, capital project brief",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget",
+       "capital",
+       "free-cash"
+      ]
      },
      {
       "t_start": 8716,
       "t_end": 8757,
       "topic": "Approval of prior minutes",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      },
      {
       "t_start": 8757,
       "t_end": 8840,
       "topic": "Committee reports (Mass Hill/Misville building committee meeting with select board)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "capital",
+       "facilities"
+      ]
      },
      {
       "t_start": 8840,
       "t_end": 9024,
       "topic": "Scheduling of upcoming meetings, special town meeting timing, and quorum concerns",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "town-meeting"
+      ]
      },
      {
       "t_start": 9024,
       "t_end": 9046,
       "topic": "Adjournment",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -6716,6 +7896,19 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "budget-fy27": 2040,
+    "state-aid": 1896,
+    "warrant-article": 1347,
+    "personnel": 829,
+    "policy": 693,
+    "town-meeting": 549,
+    "library": 276,
+    "seniors": 276,
+    "housing": 103,
+    "elections": 59
+   },
+   "topics_span_s": 4755,
    "slug": "select-board/2026-07-21-COzfPKYMWPA",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -6791,7 +7984,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:38:52Z",
-    "cost_usd": 0.325115
+    "cost_usd": 0.325115,
+    "retagged": {
+     "at": "2026-09-12T11:53:09Z",
+     "cost_usd": 0.1329836
+    }
    },
    "minutes": {
     "attendees": [
@@ -7036,73 +8233,105 @@
       "t_start": 0,
       "t_end": 145,
       "topic": "Call to order, pledge, announcements, public comment (none), thanks for town band concert",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 145,
       "t_end": 778,
       "topic": "Eagle Scout Thomas Kerry's loafing shed project presentation",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": []
      },
      {
       "t_start": 779,
       "t_end": 1505,
       "topic": "Joint meeting with Trust Fund Commission: appointment of Richard Howard; John Bowen's request to correct July 7 minutes and set joint-meeting ground rules",
-      "resolution": "appointment voted and passed; correction-of-record request deferred/no formal resolution"
+      "resolution": "appointment voted and passed; correction-of-record request deferred/no formal resolution",
+      "tags": [
+       "personnel"
+      ]
      },
      {
       "t_start": 1505,
       "t_end": 1608,
       "topic": "Ratification of town manager appointments (outreach coordinator, clock winders) and acknowledgment of a Housing Authority resignation",
-      "resolution": "voted (ratifications); resignation acknowledged, no vote"
+      "resolution": "voted (ratifications); resignation acknowledged, no vote",
+      "tags": [
+       "housing",
+       "personnel"
+      ]
      },
      {
       "t_start": 1609,
       "t_end": 1736,
       "topic": "Historical society request to place Revolutionary War memorial on the lower common",
-      "resolution": "voted, passed unanimously; exact location referred to a later on-site meeting"
+      "resolution": "voted, passed unanimously; exact location referred to a later on-site meeting",
+      "tags": []
      },
      {
       "t_start": 1736,
       "t_end": 3083,
       "topic": "School committee's request for a warrant article on additional FY27 state aid: state/town budget timeline, July 8 and July 15 school committee meetings, spending plan changes, citizens' petition for special town meeting",
-      "resolution": "informational discussion; no select board vote taken"
+      "resolution": "informational discussion; no select board vote taken",
+      "tags": [
+       "budget-fy27",
+       "state-aid",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 3083,
       "t_end": 3632,
       "topic": "Board discussion of the state-aid request, FinCom's role, communication process concerns, and scheduling logistics for the special town meeting",
-      "resolution": "discussed only, no vote"
+      "resolution": "discussed only, no vote",
+      "tags": [
+       "state-aid",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 3653,
       "t_end": 3712,
       "topic": "2026 special town election warrant",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "elections"
+      ]
      },
      {
       "t_start": 3713,
       "t_end": 4406,
       "topic": "Select board FY27 goals document review and edits",
-      "resolution": "no vote tonight; to be finalized and voted next week"
+      "resolution": "no vote tonight; to be finalized and voted next week",
+      "tags": [
+       "budget-fy27",
+       "policy"
+      ]
      },
      {
       "t_start": 4406,
       "t_end": 4448,
       "topic": "Approval of four sets of minutes",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": []
      },
      {
       "t_start": 4448,
       "t_end": 4724,
       "topic": "Committee reports (library, Chamber of Commerce, Council on Aging, cable advisory, school committee, board of assessors) and upcoming meeting schedule",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "library",
+       "seniors"
+      ]
      },
      {
       "t_start": 4724,
       "t_end": 4779,
       "topic": "Public comment (none) and adjournment",
-      "resolution": "voted, adjourned"
+      "resolution": "voted, adjourned",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -7115,6 +8344,19 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "budget-fy27": 2681,
+    "warrant-article": 2212,
+    "state-aid": 1161,
+    "hiring": 1009,
+    "staffing": 1009,
+    "town-meeting": 575,
+    "public-comment": 539,
+    "chapter-70": 64,
+    "contracts-and-unions": 61,
+    "transfers": 21
+   },
+   "topics_span_s": 3491,
    "slug": "school-committee/2026-07-15-Dvp2YlTJOXo",
    "board_slug": "school-committee",
    "board": "School Committee",
@@ -7183,7 +8425,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:40:08Z",
-    "cost_usd": 0.252124
+    "cost_usd": 0.252124,
+    "retagged": {
+     "at": "2026-09-12T11:51:34Z",
+     "cost_usd": 0.12999259999999999
+    }
    },
    "minutes": {
     "attendees": [
@@ -7397,67 +8643,103 @@
       "t_start": 3,
       "t_end": 65,
       "topic": "Call to order and procedural preliminaries (open meeting law notice, pledge skipped)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 65,
       "t_end": 85,
       "topic": "Public comment on prior issues",
-      "resolution": "no comment offered"
+      "resolution": "no comment offered",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 85,
       "t_end": 126,
       "topic": "Review and approval of 6/24 minutes",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      },
      {
       "t_start": 126,
       "t_end": 147,
       "topic": "Line item transfers, warrants, and donations",
-      "resolution": "deferred to next meeting"
+      "resolution": "deferred to next meeting",
+      "tags": [
+       "transfers",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 147,
       "t_end": 1244,
       "topic": "Warrant article for a special town meeting: additional $350,000 for FY27 school funding, prompted by extra state education receipts",
-      "resolution": "tabled pending discussion of spending plan"
+      "resolution": "tabled pending discussion of spending plan",
+      "tags": [
+       "budget-fy27",
+       "state-aid",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 1265,
       "t_end": 2274,
       "topic": "Proposed spending plan for the new funding (reading specialists, assistant principal, tutoring seats, music teacher)",
-      "resolution": "voted (passed)"
+      "resolution": "voted (passed)",
+      "tags": [
+       "budget-fy27",
+       "hiring",
+       "staffing"
+      ]
      },
      {
       "t_start": 2295,
       "t_end": 2870,
       "topic": "Return to warrant article vote for the $350,000, with extended debate over trust in the Select Board/town manager's process",
-      "resolution": "voted, count not fully audible"
+      "resolution": "voted, count not fully audible",
+      "tags": [
+       "budget-fy27",
+       "town-meeting",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 2870,
       "t_end": 2931,
       "topic": "Custodial union memorandum of understanding",
-      "resolution": "no vote taken; deferred until union review complete"
+      "resolution": "no vote taken; deferred until union review complete",
+      "tags": [
+       "contracts-and-unions"
+      ]
      },
      {
       "t_start": 2931,
       "t_end": 3450,
       "topic": "Public comment: objections to waiting until November for the state funds and to the Select Board's process",
-      "resolution": "informational, no vote"
+      "resolution": "informational, no vote",
+      "tags": [
+       "public-comment",
+       "warrant-article"
+      ]
      },
      {
       "t_start": 3471,
       "t_end": 3535,
       "topic": "Note on possible per-student state reimbursement model announced by Governor Healey",
-      "resolution": "informational, garbled"
+      "resolution": "informational, garbled",
+      "tags": [
+       "chapter-70",
+       "state-aid"
+      ]
      },
      {
       "t_start": 3535,
       "t_end": 3557,
       "topic": "Adjournment",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -7471,6 +8753,27 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "facilities": 3522,
+    "policy": 2729,
+    "capital": 2012,
+    "personnel": 1880,
+    "budget-fy27": 1459,
+    "economic-development": 1246,
+    "budget-fy28": 1107,
+    "state-aid": 1107,
+    "town-meeting": 847,
+    "msba": 623,
+    "turkey-hill": 623,
+    "planning-and-zoning": 399,
+    "budget": 195,
+    "budget-fy26": 195,
+    "transfers": 195,
+    "public-comment": 122,
+    "recreation": 60,
+    "roads-and-dpw": 40
+   },
+   "topics_span_s": 7801,
    "slug": "select-board/2026-07-14-tlJWseLMwCE",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -7542,7 +8845,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:43:05Z",
-    "cost_usd": 0.47203
+    "cost_usd": 0.47203,
+    "retagged": {
+     "at": "2026-09-12T11:52:59Z",
+     "cost_usd": 0.1364336
+    }
    },
    "minutes": {
     "attendees": [
@@ -7792,91 +9099,148 @@
       "t_start": 9,
       "t_end": 131,
       "topic": "Meeting opening: pledge of allegiance, Finance Committee reappointments/welcome of Peter Bidmore, call for public comment",
-      "resolution": "informational, no public comment offered"
+      "resolution": "informational, no public comment offered",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 132,
       "t_end": 327,
       "topic": "Joint Finance Committee/Select Board consideration of FY2026 year-end transfers",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "budget",
+       "budget-fy26",
+       "transfers"
+      ]
      },
      {
       "t_start": 328,
       "t_end": 388,
       "topic": "Finance Committee adjournment",
-      "resolution": "voted, procedural"
+      "resolution": "voted, procedural",
+      "tags": []
      },
      {
       "t_start": 388,
       "t_end": 448,
       "topic": "Acceptance of gift for Beach House dedication sign",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "recreation"
+      ]
      },
      {
       "t_start": 448,
       "t_end": 877,
       "topic": "Select Board FY27 goal-setting kickoff; Glenn's and Brian's proposed goals reviewed",
-      "resolution": "discussed, no vote"
+      "resolution": "discussed, no vote",
+      "tags": [
+       "budget-fy27",
+       "policy"
+      ]
      },
      {
       "t_start": 877,
       "t_end": 1748,
       "topic": "Chair's detailed goals: operations/processes, minutes compliance, policies, training, onboarding, staff/public outreach ideas",
-      "resolution": "discussed, no vote"
+      "resolution": "discussed, no vote",
+      "tags": [
+       "personnel",
+       "policy"
+      ]
      },
      {
       "t_start": 1748,
       "t_end": 3760,
       "topic": "TCP building: flood damage, roof-vs-demolition decision, capital planning timeline, tours, role of Municipal Building Design Committee",
-      "resolution": "no vote; direction set to seek committee recommendation and hold joint meeting"
+      "resolution": "no vote; direction set to seek committee recommendation and hold joint meeting",
+      "tags": [
+       "capital",
+       "facilities"
+      ]
      },
      {
       "t_start": 3760,
       "t_end": 4607,
       "topic": "Brooks House: overdue town-meeting-directed report on sale/lease, RFP options, renovation cost estimate",
-      "resolution": "no vote; decision to draft a report by fall town meeting"
+      "resolution": "no vote; decision to draft a report by fall town meeting",
+      "tags": [
+       "economic-development",
+       "facilities",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 4607,
       "t_end": 5230,
       "topic": "Turkey Hill/MSBA process, town buildings overview, public engagement and communication goals",
-      "resolution": "discussed, no vote"
+      "resolution": "discussed, no vote",
+      "tags": [
+       "facilities",
+       "msba",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 5230,
       "t_end": 5629,
       "topic": "Master plan as guiding/implementation document; economic development and financial-policy education goals",
-      "resolution": "discussed, no vote"
+      "resolution": "discussed, no vote",
+      "tags": [
+       "economic-development",
+       "planning-and-zoning",
+       "policy"
+      ]
      },
      {
       "t_start": 5629,
       "t_end": 6736,
       "topic": "Budget process timeline for FY28; state funding advocacy and legislative outreach",
-      "resolution": "discussed; advocacy not elevated to a standalone formal goal"
+      "resolution": "discussed; advocacy not elevated to a standalone formal goal",
+      "tags": [
+       "budget-fy28",
+       "state-aid"
+      ]
      },
      {
       "t_start": 6736,
       "t_end": 7745,
       "topic": "Town Manager's proposed FY27 goals presented and discussed (process documentation, MUNIS training, payroll outsourcing study, onboarding, municipal properties, budgeting/finance, service-level expectations)",
-      "resolution": "discussed then voted"
+      "resolution": "discussed then voted",
+      "tags": [
+       "budget-fy27",
+       "personnel",
+       "policy"
+      ]
      },
      {
       "t_start": 7744,
       "t_end": 7765,
       "topic": "Vote to approve Town Manager's FY27 goals",
-      "resolution": "voted, passed unanimously"
+      "resolution": "voted, passed unanimously",
+      "tags": [
+       "budget-fy27",
+       "policy"
+      ]
      },
      {
       "t_start": 7765,
       "t_end": 7805,
       "topic": "Preview of next meeting, including a possible Eagle Scout project presentation (loafing shed for salt storage at DPW)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "roads-and-dpw"
+      ]
      },
      {
       "t_start": 7805,
       "t_end": 7811,
       "topic": "Adjournment",
-      "resolution": "voted, procedural"
+      "resolution": "voted, procedural",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -7892,6 +9256,28 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "planning-and-zoning": 1455,
+    "facilities": 1451,
+    "personnel": 1316,
+    "town-departments": 779,
+    "state-aid": 680,
+    "public-safety": 578,
+    "public-comment": 461,
+    "budget": 313,
+    "elections": 307,
+    "policy": 287,
+    "legal": 251,
+    "executive-session": 210,
+    "superintendent-report": 187,
+    "chapter-70": 124,
+    "water-sewer": 105,
+    "staffing": 81,
+    "town-meeting": 81,
+    "contracts-and-unions": 44,
+    "roads-and-dpw": 44
+   },
+   "topics_span_s": 6087,
    "slug": "select-board/2026-07-07-eqCVy5g-wWE",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -7966,7 +9352,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:46:12Z",
-    "cost_usd": 0.43826000000000004
+    "cost_usd": 0.43826000000000004,
+    "retagged": {
+     "at": "2026-09-12T11:52:46Z",
+     "cost_usd": 0.1326366
+    }
    },
    "minutes": {
     "attendees": [
@@ -8298,145 +9688,229 @@
       "t_start": 0,
       "t_end": 125,
       "topic": "Call to order, pledge, meeting notices, blood drive announcement",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 125,
       "t_end": 586,
       "topic": "Public comment (band concerts, reading/phonics program, municipal buildings planning)",
-      "resolution": "informational, no vote"
+      "resolution": "informational, no vote",
+      "tags": [
+       "facilities",
+       "public-comment"
+      ]
      },
      {
       "t_start": 586,
       "t_end": 918,
       "topic": "Ratification of Bradley McNamera as Detective",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "personnel",
+       "public-safety"
+      ]
      },
      {
       "t_start": 938,
       "t_end": 2059,
       "topic": "Planning/Land Use director's midyear update",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "planning-and-zoning"
+      ]
      },
      {
       "t_start": 2059,
       "t_end": 2944,
       "topic": "Historical Society Revolutionary War memorial gift presentation",
-      "resolution": "discussed, referred to future agenda for permission vote"
+      "resolution": "discussed, referred to future agenda for permission vote",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 2944,
       "t_end": 3416,
       "topic": "Trust Fund Commission appointment of Richard Howard",
-      "resolution": "tabled to future agenda"
+      "resolution": "tabled to future agenda",
+      "tags": [
+       "personnel"
+      ]
      },
      {
       "t_start": 3416,
       "t_end": 3468,
       "topic": "Ratification of Braden Rozer as seasonal cemetery laborer",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "personnel",
+       "town-departments"
+      ]
      },
      {
       "t_start": 3468,
       "t_end": 3612,
       "topic": "Appointment of Anthony Niccastro to ZBA",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "personnel",
+       "planning-and-zoning"
+      ]
      },
      {
       "t_start": 3612,
       "t_end": 4168,
       "topic": "Town Manager's report (state budget, RAP funds, goals prep, merit awards, projects, recruitments)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "state-aid",
+       "town-departments"
+      ]
      },
      {
       "t_start": 4188,
       "t_end": 4269,
       "topic": "Board questions on school funding, staffing, and special town meeting timing",
-      "resolution": "no resolution, referred to next-day meeting with school committee"
+      "resolution": "no resolution, referred to next-day meeting with school committee",
+      "tags": [
+       "budget",
+       "staffing",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 4269,
       "t_end": 4374,
       "topic": "School Street/food pantry septic-sewer status update",
-      "resolution": "informational, no board action needed"
+      "resolution": "informational, no board action needed",
+      "tags": [
+       "facilities",
+       "water-sewer"
+      ]
      },
      {
       "t_start": 4374,
       "t_end": 4500,
       "topic": "Adoption of IRS mileage reimbursement rate",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "town-departments"
+      ]
      },
      {
       "t_start": 4500,
       "t_end": 4544,
       "topic": "DPW union (Teamsters Local 170) contract ratification",
-      "resolution": "tabled pending labor counsel review"
+      "resolution": "tabled pending labor counsel review",
+      "tags": [
+       "contracts-and-unions",
+       "roads-and-dpw"
+      ]
      },
      {
       "t_start": 4544,
       "t_end": 4756,
       "topic": "Cable Advisory Committee special municipal employee designation",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "personnel"
+      ]
      },
      {
       "t_start": 4756,
       "t_end": 4946,
       "topic": "Eminent domain temporary easement, 890 Flatill Road",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "legal",
+       "planning-and-zoning"
+      ]
      },
      {
       "t_start": 4946,
       "t_end": 5192,
       "topic": "Constable vs. police officer for upcoming elections",
-      "resolution": "voted, passed (police for all three elections)"
+      "resolution": "voted, passed (police for all three elections)",
+      "tags": [
+       "elections",
+       "public-safety"
+      ]
      },
      {
       "t_start": 5192,
       "t_end": 5253,
       "topic": "Approval of special town election warrant (Aug 8)",
-      "resolution": "tabled pending town counsel review"
+      "resolution": "tabled pending town counsel review",
+      "tags": [
+       "elections",
+       "legal"
+      ]
      },
      {
       "t_start": 5253,
       "t_end": 5298,
       "topic": "Accounts payable warrant signing",
-      "resolution": "informational, no vote required"
+      "resolution": "informational, no vote required",
+      "tags": [
+       "budget",
+       "town-departments"
+      ]
      },
      {
       "t_start": 5298,
       "t_end": 5404,
       "topic": "Approval of prior and executive session minutes",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": [
+       "executive-session"
+      ]
      },
      {
       "t_start": 5404,
       "t_end": 5508,
       "topic": "Summary of executive session employment agreements",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "executive-session",
+       "personnel"
+      ]
      },
      {
       "t_start": 5508,
       "t_end": 5695,
       "topic": "Committee reports (school committee, 300th anniversary committee, finance committee appointing committee)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget",
+       "superintendent-report"
+      ]
      },
      {
       "t_start": 5695,
       "t_end": 5982,
       "topic": "Upcoming meetings and goals & objectives workshop planning",
-      "resolution": "informational, process agreed"
+      "resolution": "informational, process agreed",
+      "tags": [
+       "policy"
+      ]
      },
      {
       "t_start": 5982,
       "t_end": 6106,
       "topic": "Board comment: statement on Chapter 70 funding advocacy",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "chapter-70",
+       "state-aid"
+      ]
      },
      {
       "t_start": 6106,
       "t_end": 6127,
       "topic": "Adjournment",
-      "resolution": "voted, passed"
+      "resolution": "voted, passed",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -8451,6 +9925,12 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "town-departments": 224,
+    "public-safety": 163,
+    "elections": 21
+   },
+   "topics_span_s": 315,
    "slug": "select-board/2026-06-30-O1ypL39O-TM",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -8501,7 +9981,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:46:44Z",
-    "cost_usd": 0.15755999999999998
+    "cost_usd": 0.15755999999999998,
+    "retagged": {
+     "at": "2026-09-12T11:52:39Z",
+     "cost_usd": 0.12802960000000002
+    }
    },
    "minutes": {
     "attendees": [
@@ -8567,37 +10051,50 @@
       "t_start": 0,
       "t_end": 41,
       "topic": "Meeting called to order; agenda/open meeting law statement; full board noted present",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 41,
       "t_end": 62,
       "topic": "Consideration of discontinuing electronic voting machines for the August 8, 2026 special town election",
-      "resolution": "no resolution - passed over after state determined it is not an option"
+      "resolution": "no resolution - passed over after state determined it is not an option",
+      "tags": [
+       "elections"
+      ]
      },
      {
       "t_start": 62,
       "t_end": 123,
       "topic": "Annual Select Board appointments (Animal Control Officer, Fence Viewer, Field Driver, Forest Warden, Municipal Hearing Officer, Parking Clerk)",
-      "resolution": "voted, passed by roll call"
+      "resolution": "voted, passed by roll call",
+      "tags": [
+       "town-departments"
+      ]
      },
      {
       "t_start": 124,
       "t_end": 287,
       "topic": "Town Manager's annual appointments read into the record (building/dam/emergency management/RACES officers, plumbing and gas inspectors, public weighers, wiring inspectors, town clock winders, veteran service officer, and full police department roster)",
-      "resolution": "read into record, then ratified by vote"
+      "resolution": "read into record, then ratified by vote",
+      "tags": [
+       "public-safety",
+       "town-departments"
+      ]
      },
      {
       "t_start": 288,
       "t_end": 307,
       "topic": "Closing remarks and announcement of next meeting, Tuesday July 7th",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 307,
       "t_end": 317,
       "topic": "Adjournment",
-      "resolution": "voted, passed by roll call"
+      "resolution": "voted, passed by roll call",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -8610,6 +10107,31 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "athletics": 3365,
+    "public-comment": 1654,
+    "chapter-70": 1460,
+    "state-aid": 1460,
+    "legal": 1422,
+    "budget": 1217,
+    "town-meeting": 1088,
+    "staffing": 976,
+    "override": 801,
+    "hiring": 726,
+    "facilities": 643,
+    "personnel": 499,
+    "curriculum": 477,
+    "budget-fy26": 427,
+    "superintendent-report": 413,
+    "recreation": 376,
+    "middle-school": 342,
+    "transfers": 269,
+    "transportation": 186,
+    "turkey-hill": 63,
+    "fees": 62,
+    "policy": 62
+   },
+   "topics_span_s": 7765,
    "slug": "school-committee/2026-06-24-ZS-tW_drdqE",
    "board_slug": "school-committee",
    "board": "School Committee",
@@ -8694,7 +10216,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:49:42Z",
-    "cost_usd": 0.492327
+    "cost_usd": 0.492327,
+    "retagged": {
+     "at": "2026-09-12T11:59:11Z",
+     "cost_usd": 0.14208359999999998
+    }
    },
    "minutes": {
     "attendees": [
@@ -9153,145 +10679,231 @@
       "t_start": 2,
       "t_end": 44,
       "topic": "Call to order, pledge of allegiance",
-      "resolution": "procedural"
+      "resolution": "procedural",
+      "tags": []
      },
      {
       "t_start": 71,
       "t_end": 872,
       "topic": "Public comment: academic performance/override concerns and athletics cost data presentations",
-      "resolution": "no resolution, informational"
+      "resolution": "no resolution, informational",
+      "tags": [
+       "athletics",
+       "override",
+       "public-comment"
+      ]
      },
      {
       "t_start": 892,
       "t_end": 1234,
       "topic": "Public comment: middle school athletics restoration and football booster funding requests",
-      "resolution": "no resolution; referred to future agenda"
+      "resolution": "no resolution; referred to future agenda",
+      "tags": [
+       "athletics",
+       "middle-school",
+       "public-comment"
+      ]
      },
      {
       "t_start": 1360,
       "t_end": 1530,
       "topic": "Board member public comment on legal/Title IX considerations for booster funding",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "athletics",
+       "legal"
+      ]
      },
      {
       "t_start": 1550,
       "t_end": 1922,
       "topic": "Chair's report: end of year, new meeting location, upcoming chapter 70 request, warning of a difficult next year",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget",
+       "chapter-70",
+       "state-aid"
+      ]
      },
      {
       "t_start": 1922,
       "t_end": 1987,
       "topic": "Review and approval of minutes",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      },
      {
       "t_start": 2008,
       "t_end": 2071,
       "topic": "Donation acceptance - Turkey Hill author visit",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 2094,
       "t_end": 2363,
       "topic": "Line item transfers (four transfers)",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "budget",
+       "transfers"
+      ]
      },
      {
       "t_start": 2363,
       "t_end": 2492,
       "topic": "Encumbrances review",
-      "resolution": "informational, reviewed/signed"
+      "resolution": "informational, reviewed/signed",
+      "tags": [
+       "budget"
+      ]
      },
      {
       "t_start": 2492,
       "t_end": 2512,
       "topic": "Warrants",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "budget"
+      ]
      },
      {
       "t_start": 2512,
       "t_end": 2698,
       "topic": "Superintendent report: transportation vans and facilities earmark projects",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "superintendent-report",
+       "transportation"
+      ]
      },
      {
       "t_start": 2698,
       "t_end": 2925,
       "topic": "Superintendent report: leadership/staffing updates and hiring for AD, athletic trainer, assistant principal",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "athletics",
+       "hiring",
+       "superintendent-report"
+      ]
      },
      {
       "t_start": 2925,
       "t_end": 4177,
       "topic": "Booster club guidance and Title IX compliance discussion",
-      "resolution": "discussed at length; some items deferred to July 29th meeting"
+      "resolution": "discussed at length; some items deferred to July 29th meeting",
+      "tags": [
+       "athletics",
+       "legal"
+      ]
      },
      {
       "t_start": 4199,
       "t_end": 4261,
       "topic": "Adult meal price increase",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "fees"
+      ]
      },
      {
       "t_start": 4282,
       "t_end": 4658,
       "topic": "T-ball field relocation to TC Pacios courtyard (displaced by food pantry move)",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "facilities",
+       "recreation"
+      ]
      },
      {
       "t_start": 4658,
       "t_end": 4881,
       "topic": "July school committee meeting date and 2026-27 calendar",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      },
      {
       "t_start": 4881,
       "t_end": 5358,
       "topic": "End of year curriculum report: DIBELS data, loss of interventionists, class size concerns",
-      "resolution": "voted to accept report; extensive discussion, no separate vote on funding"
+      "resolution": "voted to accept report; extensive discussion, no separate vote on funding",
+      "tags": [
+       "curriculum",
+       "staffing"
+      ]
      },
      {
       "t_start": 5378,
       "t_end": 5805,
       "topic": "FY26 quarterly budget report",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "budget",
+       "budget-fy26"
+      ]
      },
      {
       "t_start": 5805,
       "t_end": 6304,
       "topic": "Personnel report: new hires, resignations, retirements, separations",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "hiring",
+       "personnel",
+       "staffing"
+      ]
      },
      {
       "t_start": 6304,
       "t_end": 7392,
       "topic": "Request for additional chapter 70/state aid funds and a special town meeting",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "chapter-70",
+       "state-aid",
+       "town-meeting"
+      ]
      },
      {
       "t_start": 7433,
       "t_end": 7944,
       "topic": "Public comment: music boosters fundraising, uniforms, and scheduling concerns",
-      "resolution": "no resolution; referred to July 29th meeting"
+      "resolution": "no resolution; referred to July 29th meeting",
+      "tags": [
+       "athletics",
+       "public-comment"
+      ]
      },
      {
       "t_start": 7965,
       "t_end": 8046,
       "topic": "Subcommittee reports (municipal building design committee)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 8046,
       "t_end": 8108,
       "topic": "Topics for future discussion: football helmets, fundraising policy review",
-      "resolution": "referred to July 29th meeting"
+      "resolution": "referred to July 29th meeting",
+      "tags": [
+       "athletics",
+       "policy"
+      ]
      },
      {
       "t_start": 8108,
       "t_end": 8129,
       "topic": "Adjournment",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      }
     ],
     "not_audible": [
@@ -9307,6 +10919,27 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "public-safety": 642,
+    "policy": 560,
+    "personnel": 494,
+    "facilities": 421,
+    "library": 411,
+    "planning-and-zoning": 411,
+    "seniors": 411,
+    "chapter-70": 352,
+    "state-aid": 352,
+    "town-departments": 318,
+    "contracts-and-unions": 190,
+    "roads-and-dpw": 190,
+    "budget": 169,
+    "transfers": 104,
+    "public-comment": 82,
+    "hiring": 81,
+    "elections": 63,
+    "executive-session": 41
+   },
+   "topics_span_s": 2803,
    "slug": "select-board/2026-06-16-dJfFYbktFzs",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -9380,7 +11013,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:51:16Z",
-    "cost_usd": 0.276468
+    "cost_usd": 0.276468,
+    "retagged": {
+     "at": "2026-09-12T11:52:32Z",
+     "cost_usd": 0.1370666
+    }
    },
    "minutes": {
     "attendees": [
@@ -9555,115 +11192,179 @@
       "t_start": 0,
       "t_end": 82,
       "topic": "Call to order, pledge, meeting notices, announcements, initial public comment call",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 82,
       "t_end": 163,
       "topic": "Ratification of seasonal appointments (lifeguard, cemetery laborer)",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "hiring",
+       "personnel"
+      ]
      },
      {
       "t_start": 163,
       "t_end": 224,
       "topic": "Acknowledgement of resignation of videographer Lilly Marple",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "personnel"
+      ]
      },
      {
       "t_start": 224,
       "t_end": 434,
       "topic": "Town manager report: food pantry temporary location site search (TC Passios vs School Street)",
-      "resolution": "no vote; decision pending school committee action"
+      "resolution": "no vote; decision pending school committee action",
+      "tags": [
+       "facilities",
+       "town-departments"
+      ]
      },
      {
       "t_start": 434,
       "t_end": 542,
       "topic": "TC Passios building: PAC staff relocation to Eagle House, town clerk equipment storage",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "town-departments"
+      ]
      },
      {
       "t_start": 542,
       "t_end": 646,
       "topic": "Finance/leadership meeting cadence and year-end transfers",
-      "resolution": "decision reached; transfer votes deferred to July"
+      "resolution": "decision reached; transfer votes deferred to July",
+      "tags": [
+       "budget",
+       "transfers"
+      ]
      },
      {
       "t_start": 646,
       "t_end": 686,
       "topic": "Municipal Building Design Committee space-needs survey update",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities"
+      ]
      },
      {
       "t_start": 686,
       "t_end": 998,
       "topic": "Dangerous/nuisance dog complaint investigation and hearing process",
-      "resolution": "no vote; decision to hold standalone hearing"
+      "resolution": "no vote; decision to hold standalone hearing",
+      "tags": [
+       "public-safety"
+      ]
      },
      {
       "t_start": 998,
       "t_end": 1061,
       "topic": "TC Passios lease/agreement timing and August special election siting",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "elections",
+       "facilities"
+      ]
      },
      {
       "t_start": 1061,
       "t_end": 1251,
       "topic": "Flat Hill Road Bridge contract award to Kodiak",
-      "resolution": "informational (contract already awarded)"
+      "resolution": "informational (contract already awarded)",
+      "tags": [
+       "contracts-and-unions",
+       "roads-and-dpw"
+      ]
      },
      {
       "t_start": 1251,
       "t_end": 1459,
       "topic": "Adoption of updated environmentally preferable purchasing policy",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "policy"
+      ]
      },
      {
       "t_start": 1459,
       "t_end": 1811,
       "topic": "Letter of support for Foundation Budget Review Commission / school funding formula",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "chapter-70",
+       "policy",
+       "state-aid"
+      ]
      },
      {
       "t_start": 1811,
       "t_end": 2141,
       "topic": "Scheduling of Select Board / Town Manager goals workshop and dog hearing date",
-      "resolution": "decision reached (no vote)"
+      "resolution": "decision reached (no vote)",
+      "tags": [
+       "personnel",
+       "public-safety"
+      ]
      },
      {
       "t_start": 2141,
       "t_end": 2163,
       "topic": "Old business: cultural council appointment outstanding",
-      "resolution": "no resolution, carried over"
+      "resolution": "no resolution, carried over",
+      "tags": [
+       "personnel"
+      ]
      },
      {
       "t_start": 2163,
       "t_end": 2245,
       "topic": "Approval of multiple sets of prior minutes",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      },
      {
       "t_start": 2245,
       "t_end": 2310,
       "topic": "Warrants",
-      "resolution": "unclear/garbled, no clear action recorded"
+      "resolution": "unclear/garbled, no clear action recorded",
+      "tags": [
+       "budget"
+      ]
      },
      {
       "t_start": 2310,
       "t_end": 2721,
       "topic": "Committee reports (Open Space, Council on Aging, Library, AgCom, Planning Board, Municipal Building Design Committee, School Committee, Board of Assessors, Finance Committee)",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "library",
+       "planning-and-zoning",
+       "seniors"
+      ]
      },
      {
       "t_start": 2700,
       "t_end": 2741,
       "topic": "Upcoming meetings discussion",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 2741,
       "t_end": 2782,
       "topic": "Motion to enter executive session",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "executive-session"
+      ]
      }
     ],
     "not_audible": [
@@ -9677,6 +11378,12 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "planning-and-zoning": 1195,
+    "seniors": 1094,
+    "personnel": 686
+   },
+   "topics_span_s": 4049,
    "slug": "select-board/2026-06-15-7k6khgLOCY8",
    "board_slug": "select-board",
    "board": "Select Board",
@@ -9730,7 +11437,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:53:02Z",
-    "cost_usd": 0.315125
+    "cost_usd": 0.315125,
+    "retagged": {
+     "at": "2026-09-12T11:52:18Z",
+     "cost_usd": 0.13221460000000002
+    }
    },
    "minutes": {
     "attendees": [
@@ -9861,79 +11572,100 @@
       "topic": "Call to order and Pledge of Allegiance",
       "t_start": 5,
       "t_end": 27,
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "topic": "Overview of the appointments process for the evening",
       "t_start": 49,
       "t_end": 133,
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "topic": "Architectural Preservation District Committee (APDC) appointments",
       "t_start": 133,
       "t_end": 772,
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "planning-and-zoning"
+      ]
      },
      {
       "topic": "Council on Aging appointments",
       "t_start": 950,
       "t_end": 2044,
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "seniors"
+      ]
      },
      {
       "topic": "Americans with Disabilities Committee appointment/ratification",
       "t_start": 2064,
       "t_end": 2269,
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      },
      {
       "topic": "Conservation Committee reappointment and remaining vacancy",
       "t_start": 2330,
       "t_end": 2886,
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "planning-and-zoning"
+      ]
      },
      {
       "topic": "Cultural Council appointment",
       "t_start": 2886,
       "t_end": 3139,
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      },
      {
       "topic": "Green Communities Committee appointment and discussion of upcoming vacancy",
       "t_start": 3139,
       "t_end": 3434,
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      },
      {
       "topic": "Historical Commission vacancies",
       "t_start": 3434,
       "t_end": 3476,
-      "resolution": "no resolution"
+      "resolution": "no resolution",
+      "tags": []
      },
      {
       "topic": "PAC vacancy",
       "t_start": 3476,
       "t_end": 3523,
-      "resolution": "no resolution"
+      "resolution": "no resolution",
+      "tags": []
      },
      {
       "topic": "Personnel Committee re-establishment and appointments",
       "t_start": 3523,
       "t_end": 4209,
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": [
+       "personnel"
+      ]
      },
      {
       "topic": "Recap of remaining committee vacancies",
       "t_start": 4209,
       "t_end": 4314,
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "topic": "Adjournment",
       "t_start": 4314,
       "t_end": 4335,
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      }
     ],
     "transfers": [],
@@ -9996,6 +11728,20 @@
    }
   },
   {
+   "time_by_tag_s": {
+    "policy": 1072,
+    "facilities": 656,
+    "personnel": 481,
+    "turkey-hill": 481,
+    "transfers": 341,
+    "elections": 320,
+    "primary-school": 175,
+    "recreation": 175,
+    "budget": 146,
+    "public-comment": 65,
+    "town-departments": 21
+   },
+   "topics_span_s": 1937,
    "slug": "finance-committee/2026-06-11-UQXjJNVXTC8",
    "board_slug": "finance-committee",
    "board": "Finance Committee",
@@ -10063,7 +11809,11 @@
     "by": "scripts/write_recording_minutes.py",
     "model": "sonnet",
     "at": "2026-09-11T21:54:22Z",
-    "cost_usd": 0.23482099999999997
+    "cost_usd": 0.23482099999999997,
+    "retagged": {
+     "at": "2026-09-12T11:50:43Z",
+     "cost_usd": 0.221974
+    }
    },
    "minutes": {
     "attendees": [
@@ -10177,73 +11927,112 @@
       "t_start": 29,
       "t_end": 113,
       "topic": "Opening, meeting notice, pledge of allegiance",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": []
      },
      {
       "t_start": 113,
       "t_end": 155,
       "topic": "Announcements and public comment",
-      "resolution": "no resolution (none offered)"
+      "resolution": "no resolution (none offered)",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 155,
       "t_end": 330,
       "topic": "Committee member comment on primary school cooling/mini-splits and parks revolving fund history",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "primary-school",
+       "recreation"
+      ]
      },
      {
       "t_start": 330,
       "t_end": 351,
       "topic": "Town manager/finance director reports and year-end transfers",
-      "resolution": "deferred to next meeting"
+      "resolution": "deferred to next meeting",
+      "tags": [
+       "budget",
+       "town-departments",
+       "transfers"
+      ]
      },
      {
       "t_start": 351,
       "t_end": 476,
       "topic": "Prioritization of fiscal policies to review",
-      "resolution": "list compiled, no vote"
+      "resolution": "list compiled, no vote",
+      "tags": [
+       "budget",
+       "policy"
+      ]
      },
      {
       "t_start": 476,
       "t_end": 1040,
       "topic": "Discussion of reviving a tri-board committee and community engagement",
-      "resolution": "no resolution, referred to chair"
+      "resolution": "no resolution, referred to chair",
+      "tags": [
+       "policy"
+      ]
      },
      {
       "t_start": 1040,
       "t_end": 1060,
       "topic": "Old business (no minutes to approve)",
-      "resolution": "none conducted"
+      "resolution": "none conducted",
+      "tags": []
      },
      {
       "t_start": 1060,
       "t_end": 1541,
       "topic": "Committee reports: Municipal Buildings Committee (Ritter building, town hall future, possible dealership purchase, Turkey Hill/community center ideas) and PTO/overtime policy costs",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "facilities",
+       "personnel",
+       "turkey-hill"
+      ]
      },
      {
       "t_start": 1541,
       "t_end": 1604,
       "topic": "Further committee reports on Select Board/School Committee interest in tri-board",
-      "resolution": "informational"
+      "resolution": "informational",
+      "tags": [
+       "policy"
+      ]
      },
      {
       "t_start": 1604,
       "t_end": 1924,
       "topic": "Future meeting topics: transfers, tri board, policies; vice chair election/reorg scheduling; interest in board volunteers",
-      "resolution": "deferred to next meeting/chair"
+      "resolution": "deferred to next meeting/chair",
+      "tags": [
+       "elections",
+       "policy",
+       "transfers"
+      ]
      },
      {
       "t_start": 1924,
       "t_end": 1947,
       "topic": "Public comment and committee comment (closing)",
-      "resolution": "none offered"
+      "resolution": "none offered",
+      "tags": [
+       "public-comment"
+      ]
      },
      {
       "t_start": 1947,
       "t_end": 1966,
       "topic": "Adjournment",
-      "resolution": "voted"
+      "resolution": "voted",
+      "tags": []
      }
     ],
     "not_audible": [

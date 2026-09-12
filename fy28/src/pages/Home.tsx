@@ -5,6 +5,7 @@ import { Inline } from '../lib/inline'
 import { type BlogPayload } from './Blog'
 import type { Area, Tab } from '../routes'
 import { AREA_HOME, AREA_LABEL } from '../routes'
+import { BoardsThisWeek } from '../components/BoardsThisWeek'
 
 /** The front page: the top-level doors and nothing else.
  *
@@ -95,12 +96,20 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
         {/* THE WEEK, one line. The doors are places to read; this is the calendar — what is
             coming and what just appeared. A resident who came for tonight's agenda should
             not have to guess which door hides it. */}
-        <p className="mt-3 text-[13px]">
-          <button onClick={() => onJump('thisweek')} className="underline font-semibold"
-            style={{ color: 'var(--series-cost)' }}>This week in town &rarr;</button>
-          <span style={{ color: 'var(--text-muted)' }}> meetings coming up, minutes and recordings just posted</span>
-        </p>
       </header>
+
+      {/* THE THREE BOARDS, at a glance, above the doors. TJ: "we need the same short
+          listing on the home page for the 3 boards". A resident who came to find out
+          whether the School Committee meets this week gets the answer before the
+          doors, in three rows, with the hook and the time. */}
+      <section className="mb-6" aria-label="Meetings this week">
+        <div className="flex items-baseline justify-between gap-3 mb-2">
+          <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week</h2>
+          <button onClick={() => onJump('thisweek')} className="text-[12.5px] underline"
+            style={{ color: 'var(--series-cost)' }}>every board, and what just happened &rarr;</button>
+        </div>
+        <BoardsThisWeek days={7} compact />
+      </section>
 
       {/* One column, always. The rows are the whole page on a phone; two columns would
           pair them off and stop the set reading as a list. The row is the hit target, not

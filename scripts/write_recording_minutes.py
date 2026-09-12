@@ -146,12 +146,17 @@ SCHEMA = {
             }}},
         'topics': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
-            'required': ['t_start', 't_end', 'topic', 'resolution'],
+            'required': ['t_start', 't_end', 'topic', 'resolution', 'tags'],
             'properties': {
                 't_start': {'type': 'integer'},
                 't_end': {'type': 'integer'},
                 'topic': {'type': 'string'},
                 'resolution': {'type': 'string', 'description': 'how it ended: voted, tabled, referred, informational, no resolution'},
+                # TIME BY SUBJECT. TJ, 12 September: "How much time does that committee talk
+                # about X?" Each topic carries one to three tags from the controlled list, so
+                # (t_end - t_start) can be summed by tag across a board's meetings.
+                'tags': {'type': 'array', 'items': {'type': 'string', 'enum': TAGS}, 'minItems': 0, 'maxItems': 3,
+                         'description': 'one to three tags from the controlled list for this topic; empty only for procedural stretches'},
             }}},
         'not_audible': {'type': 'array', 'items': {'type': 'string'},
                         'description': 'things the captions could not settle: a vote count, a figure, who spoke'},
@@ -177,7 +182,8 @@ Rules, none optional:
 10. Do not summarise what the captions do not contain. If a stretch is garbled, say so in not_audible.
 11. Public comment: record each speaker's topic; record the speaker's name ONLY if they stated it themselves for the record, and exactly as heard.
 12. attendees: officials and members identified as present, with the role as stated or as evident from how they are addressed. Never the public.
-13. tags: choose every tag from the controlled list that the meeting substantively touched; "turkey-hill" is Turkey Hill Elementary, "primary-school" is Lunenburg Primary School.
+13. tags (meeting-level): choose every tag from the controlled list that the meeting substantively touched; "turkey-hill" is Turkey Hill Elementary, "primary-school" is Lunenburg Primary School.
+14. topics[].tags: one to three tags from the same list for each topic, so time can be summed by subject. A procedural stretch (pledge, adjournment) gets none. "public-comment" means comment from the floor by residents only -- a public interview of a candidate is hiring; a board member speaking is not public comment.
 
 Return only the JSON."""
 
@@ -297,6 +303,48 @@ def write_one(entry, docs, force=False):
     return 'written ($%.3f)' % (res.get('total_cost_usd') or 0)
 
 
+RETAG_SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['topics'],
+                'properties': {'topics': {'type': 'array', 'items': {
+                    'type': 'object', 'additionalProperties': False, 'required': ['i', 'tags'],
+                    'properties': {'i': {'type': 'integer'},
+                                   'tags': {'type': 'array', 'items': {'type': 'string', 'enum': TAGS}, 'maxItems': 3}}}}}}
+
+
+def retag(path):
+    """Add topic tags to a minutes file written before topics carried them. One small
+    model call over the topic titles alone -- a few cents, not another $0.50 read of the
+    captions -- and the file's source hash is untouched because the captions were not."""
+    m = json.load(open(path, encoding='utf-8'))
+    topics = m['minutes'].get('topics', [])
+    if not topics or all('tags' in t for t in topics):
+        return 'current'
+    prompt = ('Tag each topic with one to three tags from this list, or none for a procedural stretch. '
+              '"public-comment" means comment FROM THE FLOOR by residents, and nothing else: a public '
+              'interview of a candidate is hiring, a board member speaking is not public comment. '
+              'Tags: %s\n\nTopics:\n%s' % (', '.join(TAGS),
+              '\n'.join('%d. %s — %s' % (i, t['topic'], t['resolution']) for i, t in enumerate(topics))))
+    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
+    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL,
+                        '--json-schema', json.dumps(RETAG_SCHEMA), '--output-format', 'json',
+                        '--max-budget-usd', '0.5'],
+                       input=prompt, capture_output=True, text=True, env=env, timeout=300)
+    if r.returncode != 0:
+        raise SystemExit('claude failed retagging %s' % path)
+    res = json.loads(r.stdout)
+    body = res.get('structured_output') or res.get('result')
+    if isinstance(body, str):
+        body = json.loads(body)
+    got = {x['i']: sorted(set(x['tags'])) for x in body['topics']}
+    for i, t in enumerate(topics):
+        t['tags'] = got.get(i, [])
+    m['written']['retagged'] = {'at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                                'cost_usd': res.get('total_cost_usd')}
+    with open(path, 'w', encoding='utf-8') as fh:
+        json.dump(m, fh, indent=1, ensure_ascii=False)
+        fh.write('\n')
+    return 'retagged ($%.3f)' % (res.get('total_cost_usd') or 0)
+
+
 def check():
     docs = town_documents()
     by_rel = {t['rel']: t for t in transcripts()}
@@ -314,6 +362,9 @@ def check():
         if sha256_of(t['path']) != m['source']['sha256']:
             print('STALE %s: transcript changed since these minutes were written' % os.path.relpath(f, ROOT)); bad += 1
         mm = m.get('minutes', {})
+        for t in mm.get('topics', []):
+            if 'tags' not in t:
+                print('NO TOPIC TAGS %s: run --retag' % os.path.relpath(f, ROOT)); bad += 1; break
         for k in ('votes', 'budget_items', 'transfers', 'decisions', 'topics'):
             for it in mm.get(k, []):
                 tt = it.get('t', it.get('t_start'))
@@ -350,9 +401,14 @@ def main():
     ap.add_argument('--force', action='store_true')
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--status', action='store_true')
+    ap.add_argument('--retag', action='store_true', help='add topic tags to minutes written before topics carried them')
     a = ap.parse_args()
     if a.check:
         return check()
+    if a.retag:
+        for f in sorted(glob.glob(os.path.join(OUT, '*', '*.json'))):
+            print('%s  %s' % (os.path.relpath(f, OUT), retag(f)), flush=True)
+        return 0
     if a.status:
         status(); return 0
     docs = town_documents()

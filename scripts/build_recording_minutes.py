@@ -30,7 +30,20 @@ def payload():
         m = json.load(open(f, encoding='utf-8'))
         mm = m['minutes']
         votes = [v for v in mm['votes'] if not v.get('procedural')]
+        # TIME BY SUBJECT. Each topic's span, credited in full to each of its tags (a
+        # topic tagged budget AND athletics counts its minutes toward both), so the
+        # figure answers "how long did they talk about X" and the tags do not sum to the
+        # meeting. Seconds, from the captions' own timestamps.
+        by_tag = {}
+        spoken = 0
+        for t in mm.get('topics', []):
+            span = max(0, int(t.get('t_end', 0)) - int(t.get('t_start', 0)))
+            spoken += span
+            for tag in t.get('tags', []):
+                by_tag[tag] = by_tag.get(tag, 0) + span
         items.append({
+            'time_by_tag_s': dict(sorted(by_tag.items(), key=lambda kv: -kv[1])),
+            'topics_span_s': spoken,
             'slug': '%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
             'board_slug': m['board_slug'],
             'board': m['board'],
@@ -63,9 +76,22 @@ def payload():
     for i in items:
         for t in i['tags']:
             tags[t] = tags.get(t, 0) + 1
+    # Per board: seconds by tag across every meeting held, and the meeting count, so a
+    # page can say "the School Committee spent 4h12m of 21h on athletics across 9 meetings".
+    time_by_board = {}
+    for i in items:
+        b = time_by_board.setdefault(i['board_slug'], {'board': i['board'], 'meetings': 0, 'topics_span_s': 0, 'by_tag_s': {}})
+        b['meetings'] += 1
+        b['topics_span_s'] += i['topics_span_s']
+        for tag, sec in i['time_by_tag_s'].items():
+            b['by_tag_s'][tag] = b['by_tag_s'].get(tag, 0) + sec
+    for b in time_by_board.values():
+        b['by_tag_s'] = dict(sorted(b['by_tag_s'].items(), key=lambda kv: -kv[1]))
     return {
         'warning': W.WARNING,
         'tags': dict(sorted(tags.items(), key=lambda kv: (-kv[1], kv[0]))),
+        'time_by_board': time_by_board,
+        'time_note': 'Seconds of recording per subject, from our topic spans; a topic with two tags is credited to both, so tags do not sum to the meeting.',
         'what': 'Our minutes of recorded meetings, written by a language model from our machine '
                 'captions. A finding aid to the recording, cited by the second.',
         'counts': {'meetings': len(items), 'boards': len(boards),

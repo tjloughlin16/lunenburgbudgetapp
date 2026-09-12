@@ -30,7 +30,11 @@
   "by": "scripts/write_recording_minutes.py",
   "model": "sonnet",
   "at": "2026-09-11T21:46:44Z",
-  "cost_usd": 0.15755999999999998
+  "cost_usd": 0.15755999999999998,
+  "retagged": {
+   "at": "2026-09-12T11:52:39Z",
+   "cost_usd": 0.12802960000000002
+  }
  },
  "minutes": {
   "attendees": [
@@ -96,37 +100,50 @@
     "t_start": 0,
     "t_end": 41,
     "topic": "Meeting called to order; agenda/open meeting law statement; full board noted present",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": []
    },
    {
     "t_start": 41,
     "t_end": 62,
     "topic": "Consideration of discontinuing electronic voting machines for the August 8, 2026 special town election",
-    "resolution": "no resolution - passed over after state determined it is not an option"
+    "resolution": "no resolution - passed over after state determined it is not an option",
+    "tags": [
+     "elections"
+    ]
    },
    {
     "t_start": 62,
     "t_end": 123,
     "topic": "Annual Select Board appointments (Animal Control Officer, Fence Viewer, Field Driver, Forest Warden, Municipal Hearing Officer, Parking Clerk)",
-    "resolution": "voted, passed by roll call"
+    "resolution": "voted, passed by roll call",
+    "tags": [
+     "town-departments"
+    ]
    },
    {
     "t_start": 124,
     "t_end": 287,
     "topic": "Town Manager's annual appointments read into the record (building/dam/emergency management/RACES officers, plumbing and gas inspectors, public weighers, wiring inspectors, town clock winders, veteran service officer, and full police department roster)",
-    "resolution": "read into record, then ratified by vote"
+    "resolution": "read into record, then ratified by vote",
+    "tags": [
+     "public-safety",
+     "town-departments"
+    ]
    },
    {
     "t_start": 288,
     "t_end": 307,
     "topic": "Closing remarks and announcement of next meeting, Tuesday July 7th",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": []
    },
    {
     "t_start": 307,
     "t_end": 317,
     "topic": "Adjournment",
-    "resolution": "voted, passed by roll call"
+    "resolution": "voted, passed by roll call",
+    "tags": []
    }
   ],
   "not_audible": [

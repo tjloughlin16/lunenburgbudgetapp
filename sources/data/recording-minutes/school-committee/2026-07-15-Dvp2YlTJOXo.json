@@ -30,7 +30,11 @@
   "by": "scripts/write_recording_minutes.py",
   "model": "sonnet",
   "at": "2026-09-11T21:40:08Z",
-  "cost_usd": 0.252124
+  "cost_usd": 0.252124,
+  "retagged": {
+   "at": "2026-09-12T11:51:34Z",
+   "cost_usd": 0.12999259999999999
+  }
  },
  "minutes": {
   "attendees": [
@@ -244,67 +248,103 @@
     "t_start": 3,
     "t_end": 65,
     "topic": "Call to order and procedural preliminaries (open meeting law notice, pledge skipped)",
-    "resolution": "informational"
+    "resolution": "informational",
+    "tags": []
    },
    {
     "t_start": 65,
     "t_end": 85,
     "topic": "Public comment on prior issues",
-    "resolution": "no comment offered"
+    "resolution": "no comment offered",
+    "tags": [
+     "public-comment"
+    ]
    },
    {
     "t_start": 85,
     "t_end": 126,
     "topic": "Review and approval of 6/24 minutes",
-    "resolution": "voted"
+    "resolution": "voted",
+    "tags": []
    },
    {
     "t_start": 126,
     "t_end": 147,
     "topic": "Line item transfers, warrants, and donations",
-    "resolution": "deferred to next meeting"
+    "resolution": "deferred to next meeting",
+    "tags": [
+     "transfers",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 147,
     "t_end": 1244,
     "topic": "Warrant article for a special town meeting: additional $350,000 for FY27 school funding, prompted by extra state education receipts",
-    "resolution": "tabled pending discussion of spending plan"
+    "resolution": "tabled pending discussion of spending plan",
+    "tags": [
+     "budget-fy27",
+     "state-aid",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 1265,
     "t_end": 2274,
     "topic": "Proposed spending plan for the new funding (reading specialists, assistant principal, tutoring seats, music teacher)",
-    "resolution": "voted (passed)"
+    "resolution": "voted (passed)",
+    "tags": [
+     "budget-fy27",
+     "hiring",
+     "staffing"
+    ]
    },
    {
     "t_start": 2295,
     "t_end": 2870,
     "topic": "Return to warrant article vote for the $350,000, with extended debate over trust in the Select Board/town manager's process",
-    "resolution": "voted, count not fully audible"
+    "resolution": "voted, count not fully audible",
+    "tags": [
+     "budget-fy27",
+     "town-meeting",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 2870,
     "t_end": 2931,
     "topic": "Custodial union memorandum of understanding",
-    "resolution": "no vote taken; deferred until union review complete"
+    "resolution": "no vote taken; deferred until union review complete",
+    "tags": [
+     "contracts-and-unions"
+    ]
    },
    {
     "t_start": 2931,
     "t_end": 3450,
     "topic": "Public comment: objections to waiting until November for the state funds and to the Select Board's process",
-    "resolution": "informational, no vote"
+    "resolution": "informational, no vote",
+    "tags": [
+     "public-comment",
+     "warrant-article"
+    ]
    },
    {
     "t_start": 3471,
     "t_end": 3535,
     "topic": "Note on possible per-student state reimbursement model announced by Governor Healey",
-    "resolution": "informational, garbled"
+    "resolution": "informational, garbled",
+    "tags": [
+     "chapter-70",
+     "state-aid"
+    ]
    },
    {
     "t_start": 3535,
     "t_end": 3557,
     "topic": "Adjournment",
-    "resolution": "voted"
+    "resolution": "voted",
+    "tags": []
    }
   ],
   "not_audible": [

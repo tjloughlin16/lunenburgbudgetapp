@@ -63,10 +63,13 @@ type Meeting = {
   written: { by: string; model: string; at: string; cost_usd: number | null }
   minutes: Minutes
 }
+type BoardTime = { board: string; meetings: number; topics_span_s: number; by_tag_s: Record<string, number> }
 type Payload = {
   warning: string
   what: string
   tags: Record<string, number>
+  time_by_board: Record<string, BoardTime>
+  time_note: string
   counts: { meetings: number; boards: number; without_official_minutes: number }
   boards: Record<string, { board: string; meetings: number; without_official_minutes: number }>
   meetings: Meeting[]
@@ -149,6 +152,44 @@ function Index({ d }: { d: Payload }) {
         ))}
       </p>
       {tag && <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}><strong>{shown.length}</strong> meeting{shown.length === 1 ? '' : 's'} touched <strong>{tag.replace(/-/g, ' ')}</strong>.</p>}
+
+      {/* WHERE THE TIME GOES. TJ: "How much time does that committee talk about X?" --
+          "then we can figure out where boards are spending their time". Each topic's
+          span from the captions' timestamps, summed by tag per board. A topic with two
+          tags is credited to both, so the bars do not sum to the meeting; the share is
+          of all topic time. Derived twice over and labelled so. */}
+      {!tag && d.time_by_board && (
+        <section className="mt-8">
+          <H2>Where the time goes</H2>
+          <p className="text-xs mb-3" style={{ color: 'var(--text-muted)' }}>{d.time_note}</p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {Object.entries(d.time_by_board).map(([slug, b]) => {
+              const top = Object.entries(b.by_tag_s).slice(0, 7)
+              const max = top.length ? top[0][1] : 1
+              const h = (s: number) => `${Math.floor(s / 3600)}h${String(Math.floor((s % 3600) / 60)).padStart(2, '0')}`
+              return (
+                <div key={slug} className="card p-3">
+                  <p className="text-sm font-semibold">{b.board}</p>
+                  <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{b.meetings} meeting{b.meetings === 1 ? '' : 's'} · {h(b.topics_span_s)} of topics</p>
+                  <ul className="mt-2 space-y-1">
+                    {top.map(([t, sec]) => (
+                      <li key={t} className="text-xs">
+                        <div className="flex justify-between gap-2">
+                          <a className="underline" href={`/what-was-said?tag=${t}`} style={{ color: 'var(--series-cost)' }}>{t.replace(/-/g, ' ')}</a>
+                          <span className="tnum" style={{ color: 'var(--text-secondary)' }}>{h(sec)} · {Math.round(100 * sec / (b.topics_span_s || 1))}%</span>
+                        </div>
+                        <div className="h-1.5 rounded mt-0.5" style={{ background: 'var(--surface-3)' }}>
+                          <div className="h-1.5 rounded" style={{ width: `${Math.round(100 * sec / max)}%`, background: 'var(--series-cost)' }} />
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+      )}
       {boards.map(([slug, b]) => (
         <section key={slug} className="mt-8">
           <H2>{b.board}</H2>
