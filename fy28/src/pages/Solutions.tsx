@@ -50,19 +50,23 @@ function Body({ d }: { d: Model }) {
   const pkgTotal = pkg.reduce((s, p) => s + p.value, 0)
   const overrideBill = d.taxBase.avgHomeBill * (gap / d.taxBase.levy)
   const freeCashC = d.conclusions.find(c => c.n === 17)
-  const rows: { what: string; closes: string; who: string; costs: string; tone?: string }[] = [
-    { what: 'Fees already raised on sports', closes: usd(pkg.find(p => p.id === 'athletic_fees')?.value ?? 0) + ' a year', who: 'Done — School Committee, for 2026–27', costs: 'A family with one athlete pays $400 a season, up from $250' },
-    { what: 'A fee for band, music and clubs', closes: usd(pkg.find(p => p.id === 'activity_fees')?.value ?? 0) + ' a year', who: 'School Committee vote', costs: 'About $100 per student per activity; some students quit' },
-    { what: 'A higher bus fee, grades 7–12', closes: usd(pkg.find(p => p.id === 'bus_fees')?.value ?? 0) + ' a year', who: 'School Committee vote', costs: '$300 a rider, from $180' },
-    { what: 'Audit software, licences and devices', closes: usd(pkg.find(p => p.id === 'tech_cut')?.value ?? 0) + ' a year', who: 'The district', costs: 'Fewer tools; no jobs' },
-    { what: 'Trim administration', closes: usd(pkg.find(p => p.id === 'admin_cut')?.value ?? 0) + ' a year', who: 'The district', costs: 'Slower office work; possibly a position' },
-    { what: 'Change the health insurance split', closes: health.value + ' a year, once in force', who: 'Negotiated with the employee committee; takes a year or two', costs: (() => { const t = health.sub.replace(/^in year one.*?— and /, ''); return t.charAt(0).toUpperCase() + t.slice(1) })() },
-    { what: 'Free cash', closes: (freeCashC?.figure ?? '') + ' in a year like this one', who: 'Town Meeting', costs: 'One-time money on a recurring bill — the gap is back next year', tone: 'once' },
-    { what: 'New businesses', closes: 'The whole gap, if ' + business.value + ' of new commercial value arrives every year', who: 'Planning Board, Select Board, the market', costs: 'Ten years, not one; ' + business.sub.split('—')[1]?.trim(), tone: 'slow' },
-    { what: 'Cut every sport, band and club', closes: extras.value + ', once', who: 'School Committee', costs: 'Every extra gone, and the gap returns next year', tone: 'once' },
-    { what: 'An override', closes: 'The whole gap, every year', who: 'Town Meeting, then the ballot', costs: 'About ' + usd(overrideBill) + ' a year on the average tax bill' },
-    { what: 'Cut classroom positions', closes: 'Whatever is left', who: 'School Committee', costs: 'Larger classes; the thing that makes families leave' },
-  ]
+  const v = (id: string) => pkg.find(p => p.id === id)?.value ?? 0
+  // SORTED BY IMPACT: recurring dollars a year first, largest at the top; then the
+  // one-time and the decade-long, by size; classroom cuts last because they are what is
+  // left, not a choice with a figure. TJ: "sort by biggest impact".
+  const rows: { what: string; closes: string; who: string; costs: string; impact: number; recurring: boolean; tone?: string }[] = [
+    { what: 'An override', closes: 'The whole gap, every year', who: 'Town Meeting, then the ballot', costs: 'About ' + usd(overrideBill) + ' a year on the average tax bill', impact: gap, recurring: true },
+    { what: 'Change the health insurance split', closes: health.value + ' a year, once in force', who: 'Negotiated with the employee committee; takes a year or two', costs: (() => { const t = health.sub.replace(/^in year one.*?— and /, ''); return t.charAt(0).toUpperCase() + t.slice(1) })(), impact: parseUsd(health.value), recurring: true },
+    { what: 'Trim administration', closes: usd(v('admin_cut')) + ' a year', who: 'The district', costs: 'Slower office work; possibly a position', impact: v('admin_cut'), recurring: true },
+    { what: 'Fees already raised on sports', closes: usd(v('athletic_fees')) + ' a year', who: 'Done — School Committee, for 2026–27', costs: 'A family with one athlete pays $400 a season, up from $250; $1,500 family cap', impact: v('athletic_fees'), recurring: true },
+    { what: 'Audit software, licences and devices', closes: usd(v('tech_cut')) + ' a year', who: 'The district', costs: 'Fewer tools; no jobs', impact: v('tech_cut'), recurring: true },
+    { what: 'A higher bus fee, grades 7–12', closes: usd(v('bus_fees')) + ' a year', who: 'School Committee vote', costs: '$300 a rider, from the $180 charged today', impact: v('bus_fees'), recurring: true },
+    { what: 'A fee for band, music and clubs', closes: usd(v('activity_fees')) + ' a year', who: 'School Committee vote', costs: 'About $100 per student per activity, where none is charged today; some students quit', impact: v('activity_fees'), recurring: true },
+    { what: 'New businesses', closes: 'The whole gap, if ' + business.value + ' of new commercial value arrives every year', who: 'Planning Board, Select Board, the market', costs: 'Ten years, not one; ' + business.sub.split('—')[1]?.trim(), impact: gap, recurring: false, tone: 'slow' },
+    { what: 'Free cash', closes: (freeCashC?.figure ?? '') + ' in a year like this one', who: 'Town Meeting', costs: 'One-time money on a recurring bill — the gap is back next year', impact: parseUsd(freeCashC?.figure ?? '0'), recurring: false, tone: 'once' },
+    { what: 'Cut every sport, band and club', closes: extras.value + ', once', who: 'School Committee', costs: 'Every extra gone, and the gap returns next year', impact: parseUsd(extras.value), recurring: false, tone: 'once' },
+    { what: 'Cut classroom positions', closes: 'Whatever is left', who: 'School Committee', costs: 'Larger classes; the thing that makes families leave', impact: -1, recurring: false },
+  ].sort((a, b) => (Number(b.recurring) - Number(a.recurring)) || (b.impact - a.impact))
   return (
     <>
       <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
@@ -71,7 +75,8 @@ function Body({ d }: { d: Model }) {
         <div><div className="text-3xl font-bold tnum">{usd(overrideBill)}</div><div className="text-sm max-w-xs" style={{ color: 'var(--text-secondary)' }}>a year on the average tax bill if the rest were an override — our arithmetic: the gap’s share of the levy, applied to the {usd(d.taxBase.avgHomeBill)} average bill</div></div>
       </div>
 
-      <h2 className="text-lg font-semibold mt-10">Everything on the table</h2>
+      <h2 className="text-lg font-semibold mt-10">Everything on the table, biggest first</h2>
+      <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Recurring money a year at the top; then what pays once or takes a decade; then what is left.</p>
       <div className="overflow-x-auto mt-3">
         <table className="w-full text-sm" style={{ minWidth: 640 }}>
           <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
