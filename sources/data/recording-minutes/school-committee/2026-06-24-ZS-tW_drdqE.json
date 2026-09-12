@@ -744,5 +744,326 @@
   "confidence": "moderate",
   "summary": "The Lunenburg School Committee heard extensive public comment on middle school athletics funding, booster fundraising, and academic performance following the failed override, then reviewed routine business (minutes, a donation, four line-item transfers, warrants, and encumbrances). The superintendent reported on transportation vans, a facilities earmark, staffing changes, and Title IX/booster-donation guidance; the committee also approved an adult meal price increase, relocated the T-ball program to accommodate the food pantry, accepted a curriculum report describing the loss of all reading interventionists and larger class sizes, accepted a strong FY26 quarterly budget report, accepted a personnel report with numerous departures attributed to budget uncertainty, and voted unanimously to ask the select board to convene a special town meeting to direct additional state chapter 70 and other cherry sheet funds into the school budget.",
   "headline": "The committee voted unanimously to ask the select board for a special town meeting to redirect state aid into the school budget."
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7869",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt",
+   "path": "sources/meetings/school-committee/2026-06-24-minutes-7869.pdf"
+  },
+  "official_sha256": "a10316bb7e682648c17b8f484b21432896a047b93cb19015307230c4b0444f5c",
+  "coverage": "partial",
+  "summary": "The two records agree on every vote outcome that both actually record, on the headline dollar figures that appear in both (warrants once corrected, the $175,000 facilities earmark, the $14,415/$29M athletics cut, the $19,400 middle-school revenue figure, the $350 fee, the $50 officiating cost, the $1,500 transportation ask, and the 35% Chapter 70 share), and on the major decisions (Title IX/booster guidance, deferring specific booster requests to July 29, \"everything on the table\" for FY28 athletics). The most consequential gaps are: the official minutes never itemize the four transfer amounts or most of the superintendent's/business manager's dollar figures (chapter 70 add, state aid, tuition, Ignite grant, foundation-budget %) that our minutes captured from the recording; our minutes omit Vice Chair Anthony Sculimbrene entirely despite his making most of the meeting's motions; and two votes (curriculum report, personnel report) show a discrepancy in outcome detail — \"not audible\" vs. a recorded unanimous approval, and a noted abstention vs. \"all approve\" — that should be checked against the recording.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 17,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Donation vote outcome",
+    "ours": "[t=2064] Accept the donation of $196.56 from the author visit to Turkey Hill Elementary — passed",
+    "official": "Ms. Gilman makes a motion to accept the donation, Mr. Sculimbrene seconds the motion all approve",
+    "note": "Both records show the donation accepted unanimously.",
+    "t": 2064
+   },
+   {
+    "kind": "agree",
+    "about": "Donation amount",
+    "ours": "$196.56",
+    "official": "One donation in the amount of $196.56 to the Turkey Hill Elementary School from the author of Taco and Pizza visit.",
+    "note": "Figure matches exactly.",
+    "t": 2029
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Donation source/book title",
+    "ours": "donation ... from the author visit to Turkey Hill Elementary",
+    "official": "from the author of Taco and Pizza visit",
+    "note": "Official names the book/visit (\"Taco and Pizza\"); ours only says \"author visit\" — not a conflict, just a detail ours lacks, likely because the title wasn't clearly audible."
+   },
+   {
+    "kind": "agree",
+    "about": "Four line-item transfers vote",
+    "ours": "[t=2343] Accept the four line item transfers as outlined by Chris — passed unanimously",
+    "official": "Mr. McNamara explains the four line item transfers for this meeting Ms. Gilman makes a motion to accept the transfers as outlined by Mr. McNamara, Mr. Sculimbrene seconds the motion, all approve",
+    "note": "Vote and unanimity match.",
+    "t": 2343
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Salary reserve transfer amount",
+    "ours": "[t=2115] Salary reserve account to ~13 deficit salary lines — $90,769.62",
+    "official": "",
+    "note": "Official records only that the four transfers were explained and approved, with no dollar breakdown — check the transfer worksheet Chris presented for the itemized figures.",
+    "t": 2115
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletic transportation-to-dues transfer amount",
+    "ours": "[t=2196] Athletic transportation (unspent) to athletic dues and fees — $9,670.45",
+    "official": "",
+    "note": "Official gives no line-item breakdown of the four transfers; verify against the transfer worksheet.",
+    "t": 2196
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Equipment reconditioning transfer amount",
+    "ours": "[t=2238] Equipment reconditioning to new equipment — $1,316.94",
+    "official": "",
+    "note": "Not itemized in official minutes; verify against the transfer worksheet.",
+    "t": 2238
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Grant-funded salary to extended-day transfer amount",
+    "ours": "[t=2259] Patty McCarthy Gillette's grant-funded salary to extended day — $35,400 (corrected to $34,500 on the sheet)",
+    "official": "",
+    "note": "Not itemized in official minutes, and our own capture shows two different figures for the same transfer ($35,400 vs $34,500) — check the transfer worksheet for the correct amount.",
+    "t": 2259
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants total",
+    "ours": "[t=2492] Warrants: 500,515,92128",
+    "official": "Warrants 6/2/26 to 6/17/26 $515,921.28",
+    "official_reading": "$515,921.28",
+    "note": "Digit-grouping garble in the caption; the underlying figure matches the official amount.",
+    "t": 2492
+   },
+   {
+    "kind": "discrepancy",
+    "about": "T-Ball vote abstention identity",
+    "ours": "[t=4638] passed, one abstention (Mandy)",
+    "official": "motion approved with 1 abstention",
+    "note": "Official confirms one abstention but does not name who; check the recording/roll call to confirm it was Mandy Gilman before publishing that attribution.",
+    "t": 4638
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Year-end curriculum report vote",
+    "ours": "[t=5358] Accept the year-end curriculum report — not audible",
+    "official": "Mr. Sculimbrene makes a motion to accept the report, Ms. Gilman seconds the report all approve",
+    "note": "Our minutes could not confirm this vote from the recording at all, while official records a unanimous approval; check the recording around this timestamp to confirm the outcome before treating it as settled.",
+    "t": 5358
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 quarterly budget report vote",
+    "ours": "[t=5786] Accept the FY26 quarterly budget report — passed unanimously",
+    "official": "Mr. Sculimbrene makes a motion to accept the end of year quarterly budget report, Ms. Young seconds the motion all approve",
+    "note": "Matches.",
+    "t": 5786
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FY26 personnel report vote abstention",
+    "ours": "[t=6304] passed, one abstention",
+    "official": "Ms. Gilman makes a motion accept the personnel report, Mr. Sculimbrene seconds the report, all approve",
+    "note": "Ours records an abstention that the official minutes do not mention (\"all approve\"); check the recording to see whether an abstention actually occurred.",
+    "t": 6304
+   },
+   {
+    "kind": "agree",
+    "about": "Special town meeting request vote",
+    "ours": "[t=7370] Ask the select board to convene a special town meeting ... — passed unanimously",
+    "official": "Mr. Sculimbrene makes a motion to ask the select board to schedule a special town meeting, Ms. Gilman seconds the motion, all approve",
+    "note": "Matches on both the request and unanimity.",
+    "t": 7370
+   },
+   {
+    "kind": "agree",
+    "about": "Facilities state earmark for FY27",
+    "ours": "[t=2554] Facilities state earmark, FY27: $175,000",
+    "official": "we have secured an additional $175,000 in state earmarks for FY 27 specifically for facilities improvements",
+    "note": "Figure matches exactly.",
+    "t": 2554
+   },
+   {
+    "kind": "agree",
+    "about": "Middle school athletics cut figure",
+    "ours": "[t=913] Middle school athletics cut: $14,415, $29 million",
+    "official": "middle school athletics were eliminated as a budget reduction of $14,415 from roughly a $29 million budget",
+    "note": "Both figures match exactly (public comment).",
+    "t": 913
+   },
+   {
+    "kind": "agree",
+    "about": "Officiating cost example",
+    "ours": "[t=499] Athletics officiating cost example: $50",
+    "official": "one official per game at $50 per official",
+    "note": "Matches exactly (public comment).",
+    "t": 499
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Golf program cost estimate",
+    "ours": "[t=791] Golf program cost estimate: $7,000, $9,500",
+    "official": "",
+    "note": "Not present anywhere in the official minutes' public-comment or discussion text; confirm this figure directly against the recording since it has no independent corroboration."
+   },
+   {
+    "kind": "agree",
+    "about": "Football booster transportation funding request",
+    "ours": "[t=1172] Football booster funding request: $1,500",
+    "official": "we have permission to fund transportation to away games, which comes to about $1500",
+    "note": "Matches (public comment from Nikki Jeannotte).",
+    "t": 1172
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 supplies budget % spent",
+    "ours": "[t=5423] FY26 supplies budget: 99.3%, 99.7%",
+    "official": "",
+    "note": "Official only says Mr. McNamara presented the quarterly report, without figures; not independently confirmable from the official text."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 available salary budget figure",
+    "ours": "[t=5489] FY26 salary budget available: $2,685,632(3)",
+    "official": "",
+    "note": "No figures given in official minutes for the quarterly report; check the quarterly report packet."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 estimated year-end return to town",
+    "ours": "[t=5550] FY26 estimated year-end return to town: garbled figures around $184,123.42",
+    "official": "",
+    "note": "No corresponding figure in official minutes; the caption itself is internally inconsistent, so verify against the quarterly report packet rather than the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 budget surplus comparison",
+    "ours": "[t=5571] FY25 budget surplus comparison: ~$650,000 / $610,000",
+    "official": "",
+    "note": "Not in official minutes; verify against the FY25 closeout materials."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Snow and ice removal funds figure",
+    "ours": "[t=6865] Snow and ice removal funds: $228,540(ish)",
+    "official": "Also there was new snow and ice money that the town got.",
+    "note": "Official confirms the existence of new snow-and-ice money but gives no figure; ours' specific dollar amount is unconfirmed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total estimated state aid receipts figure",
+    "ours": "[t=6997] Total estimated state aid receipts: garbled figures (~11,449?, 1.69)",
+    "official": "",
+    "note": "No total state-aid figure appears in official minutes; not independently checkable from this document."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Charter/school choice tuition figures",
+    "ours": "[t=7055] Charter school and school choice tuition: half a million dollars, $413,000",
+    "official": "",
+    "note": "Not mentioned in official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Placeholder special town meeting ask amount",
+    "ours": "[t=7159] Placeholder ask for special town meeting: $300,000",
+    "official": "",
+    "note": "Official records the vote to request a special town meeting but no placeholder dollar figure; check against the actual warrant article once drafted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ignite tutoring grant figure",
+    "ours": "[t=4944] Ignite tutoring grant: $10 million",
+    "official": "",
+    "note": "Not mentioned anywhere in official minutes; a $10 million tutoring grant for this district seems implausibly large and should be checked directly against the recording — likely a caption misread of a much smaller figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Foundation budget spending level percentages",
+    "ours": "[t=6537] Foundation budget spending level: 120%, 130%",
+    "official": "",
+    "note": "Not present in official minutes; verify against DESE foundation budget data."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Grade/ensemble of the restoration request",
+    "ours": "[t=7823] Fifth grade band restoration request: less than $10,000",
+    "official": "If there is anything we can do to help restore the 6th grade Jazz band, please let us know.",
+    "note": "Ours says a 5th-grade band request; official's public comment names the 6th-grade Jazz band — check the recording to confirm which grade/ensemble was actually requested, since this is more than a digit slip.",
+    "t": 7823
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Grades 3-4 departmentalization decision",
+    "ours": "[t=5090] Grades 3 and 4 will no longer be departmentalized next year; one teacher rather than rotating teams",
+    "official": "",
+    "note": "Not mentioned in official minutes, which do not detail this level of curricular/staffing decision-making."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Zero reading interventionist positions",
+    "ours": "[t=5174] Zero reading interventionist positions at Turkey Hill and Primary next year",
+    "official": "",
+    "note": "Not mentioned in official minutes; a significant staffing cut that a reader should confirm from the personnel report or budget documents."
+   },
+   {
+    "kind": "agree",
+    "about": "Booster club Title IX guidance",
+    "ours": "[t=3069] A guidance document on booster club donations and Title IX compliance has been finalized and shared",
+    "official": "The process with Title IX and boosters' guidance is explained.",
+    "note": "Both describe the same guidance process being communicated to boosters."
+   },
+   {
+    "kind": "agree",
+    "about": "Athletics/extracurriculars \"on the table\" for FY28 cuts",
+    "ours": "[t=8026] All extracurricular activities and athletics are considered on the table for further reductions",
+    "official": "we do want to let everyone know, that yes, next year athletics are on the table for cuts, everything is on the table",
+    "note": "Matches; also echoed in public comment quoting the chair using the same phrase."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's identity",
+    "ours": "attendees list \"the chair\" and \"Laura\" as if separate entries",
+    "official": "Laura Brzozoski Chair - Present",
+    "official_reading": "Laura Brzozoski, Chair",
+    "note": "Our captions apparently didn't connect the unnamed \"chair\" speaker with \"Laura\" as the same person; official confirms Laura Brzozoski is the Chair — these should be one attendee, not two."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vice Chair Anthony Sculimbrene",
+    "ours": "",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "note": "Sculimbrene made or seconded nearly every motion in the official minutes but does not appear anywhere in our attendee list or narration — a significant omission; check the recording's audio/speaker labeling."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Jean Russell, Member (absent)",
+    "ours": "",
+    "official": "Jean Russell, Member - Absent",
+    "note": "Official notes an absent member; not mentioned in ours, which is expected since an absent member wouldn't speak, but worth noting for completeness."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Guests Dr. Kimberly Sarfde and Nadine Lorenzen",
+    "ours": "",
+    "official": "Dr. Kimberly Sarfde – Director of Teaching and Learning, Nadine Lorenzen – Food Service Director",
+    "note": "Both presented substantive items (curriculum report, meal price increase) per official minutes but are not named in our attendee list, only referenced indirectly via their agenda items."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business Administrator's name/title",
+    "ours": "Chris (business manager)",
+    "official": "Christopher McNamara – Business Administrator",
+    "official_reading": "Christopher McNamara, Business Administrator",
+    "note": "Correct first name but our minutes give only the first name and a slightly different title (\"manager\" vs \"Administrator\")."
+   }
+  ],
+  "quotes_not_in_official_dropped": 8,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-12T12:52:39Z",
+   "cost_usd": 0.3180074
+  }
  }
 }

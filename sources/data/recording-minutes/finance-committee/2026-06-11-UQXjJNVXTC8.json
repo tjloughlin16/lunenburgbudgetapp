@@ -277,5 +277,138 @@
   ],
   "confidence": "moderate",
   "headline": "Finance Committee, minus its chair, deferred nearly every substantive item — transfers, policy review, tri-board revival — to a future meeting."
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06112026-7845",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2026-06-11-minutes-7845.txt",
+   "path": "sources/meetings/finance-committee/2026-06-11-minutes-7845.pdf"
+  },
+  "official_sha256": "5ab91610dca99655c17b5b6a1ff5b923530b51cb5233624b554b5facc5d77ea9",
+  "coverage": "partial",
+  "summary": "The two records agree on the meeting's core shape — no non-procedural votes, year-end transfers deferred, and the five-item fiscal-policy list to be prioritized later — but they diverge sharply in what each chose to include: two of the five attendees ours names don't match anyone in the official list, and the official minutes add public-comment and committee-report content ours omits entirely while ours adds a stabilization-fund figure and several forward-looking asides the official minutes never mention. The most important thing to check is the attendee mismatch (Hannah/Dave Black vs. Jay Simeone/Mike Rupp), since that isn't explainable as a simple misheard name.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "attendee: Tom Gray",
+    "ours": "Tom (member (presiding in chair's absence))",
+    "official": "Clerk Tom Gray",
+    "note": "Same person present in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: Tanya Dall",
+    "ours": "Tanya (member)",
+    "official": "Committee Member Tanya Dall",
+    "note": "Same person present in both records."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: Ana Lockwood",
+    "ours": "Anna (member)",
+    "official": "Committee Member Ana Lockwood",
+    "official_reading": "Ana Lockwood",
+    "note": "Same person; captions rendered 'Ana' as 'Anna'."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "attendee list: two members do not match",
+    "ours": "Hannah (member); Dave Black (member)",
+    "official": "Committee Member Jay Simeone; Committee Member Mike Rupp",
+    "note": "Neither 'Hannah' nor 'Dave Black' resembles 'Jay Simeone' or 'Mike Rupp' phonetically, so this is not an ordinary misheard-name caption error; check the recording/roll call to confirm who actually attended."
+   },
+   {
+    "kind": "agree",
+    "about": "Chair Chris Menard's absence",
+    "ours": "",
+    "official": "Absent Member: Chair Chris Menard",
+    "note": "Ours doesn't list him as an attendee but references him throughout as absent and expected to return, consistent with the official record."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "who presided in the chair's absence",
+    "ours": "Tom (member (presiding in chair's absence))",
+    "official": "",
+    "note": "Official minutes list Tom Gray only as Clerk, with no note that he presided; not contradictory, just an added detail worth confirming."
+   },
+   {
+    "kind": "agree",
+    "about": "non-procedural votes taken",
+    "ours": "none",
+    "official": "",
+    "note": "Official minutes record only the procedural adjournment vote (Ana Lockwood/Jay Simeone, all in favor); neither record shows a substantive vote."
+   },
+   {
+    "kind": "agree",
+    "about": "year-end transfers status",
+    "ours": "Year-end transfers are not yet ready and are deferred to a future meeting.",
+    "official": "The documents needed on this topic were not provided but should be available for the next meeting.",
+    "note": "Both records describe the same deferral for the same reason."
+   },
+   {
+    "kind": "agree",
+    "about": "fiscal policy list to prioritize",
+    "ours": "Committee will compile and prioritize a list of fiscal policies (free cash, revenue projections, stabilization accounts, capital committee, OPEB) for future review, rather than voting on any now.",
+    "official": "Policies on free cash; Revenue projections and policies; Stabilization accounts; Role of Capital Committee; OPEB contributions",
+    "note": "Same five-item list and same framing (deferred review, not a vote), in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tom Gray's suggestion on reviewing policies as a group",
+    "ours": "",
+    "official": "Tom gray suggests reviewing policies as a group to then make recommendations to present to the Select Board and/or the Tri-Board Committee.",
+    "note": "Not captured in ours; adds process detail about how the policy review will proceed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tanya Dall's community engagement comment",
+    "ours": "",
+    "official": "Tanya Dall recommended placing greater emphasis on community engagement.",
+    "note": "Not captured in ours; a substantive comment during the policy discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "stabilization accounts figure",
+    "ours": "[t=748] Stabilization accounts (incl. fire truck reserve): $2 million",
+    "official": "",
+    "note": "Official minutes list 'Stabilization accounts' only as a policy-review topic with no dollar figure; check the recording at 12:28 to confirm the $2 million figure before citing it, since it appears in no written record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "tri-board committee outcome",
+    "ours": "[t=1040] No consensus reached on reviving a tri-board committee this meeting; the matter is left for Chair Chris to take the lead on when he returns.",
+    "official": "Tom Gray also watched the Select Board and School Committee meetings and believes there may be interest in continuing the Tri-Board Committee.",
+    "note": "Official does not characterize this as a 'no consensus' discussion or say the matter awaits Chris; it frames it only as Tom's observation, with 'Tri-Board' separately listed as a future topic — check the recording to see whether a lack of consensus was actually discussed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "request to move the reorg/election meeting date",
+    "ours": "[t=1880] Committee will ask Chris about possibly moving the date of the reorg/election meeting so a member unavailable on July 9th can attend.",
+    "official": "",
+    "note": "Not recorded in the official minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ana Lockwood's public comment on board coordination and recreation pilot",
+    "ours": "",
+    "official": "Ana Lockwood referenced two prior requests that were approved by the Select Board but not by the Finance Committee. She suggested that, in similar situations going forward, boards and commissions be included before decisions are made. She also expressed support for the proposed recreation department pilot program.",
+    "note": "Entirely absent from ours; a substantive public-comment item."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-12T12:48:11Z",
+   "cost_usd": 0.242476
+  }
  }
 }

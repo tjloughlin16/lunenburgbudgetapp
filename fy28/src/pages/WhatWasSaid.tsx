@@ -45,8 +45,13 @@ type Minutes = {
   confidence: 'high' | 'moderate' | 'low'
 }
 type TownDoc = { kind: string; url: string; text_url: string; path: string }
+type Finding = { kind: 'agree' | 'caption_error' | 'discrepancy' | 'only_in_ours' | 'only_in_official'; about: string; t?: number; ours: string; official: string; official_reading?: string; note: string }
+type Reconciliation = { official: { url: string; text_url: string }; coverage: string; summary: string; counts: Record<string, number>; findings: Finding[]; written: { at: string } }
 type Meeting = {
   slug: string
+  reconciliation?: Reconciliation | null
+  discrepancies?: number
+  caption_errors?: number
   board_slug: string
   board: string
   date: string
@@ -208,6 +213,7 @@ function Index({ d }: { d: Payload }) {
                   <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
                     {m.recording ? `${m.recording.duration} long · ` : ''}{m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'} · {m.counts.transfers} transfer{m.counts.transfers === 1 ? '' : 's'} · {m.counts.budget_items} budget item{m.counts.budget_items === 1 ? '' : 's'} · {m.counts.public_comment} public comment{m.counts.public_comment === 1 ? '' : 's'}
                     {!m.has_official_minutes && <> · <span style={{ color: 'var(--series-revenue, #b5540f)' }}>no official minutes</span></>}
+                    {m.reconciliation && <> · checked against the town&rsquo;s minutes{m.discrepancies ? <span style={{ color: 'var(--series-revenue, #b5540f)' }}>: {m.discrepancies} difference{m.discrepancies === 1 ? '' : 's'} flagged</span> : ', no substantive differences'}</>}
                   </span>
                 </div>
                 <p className="text-sm mt-1 font-medium">{m.headline || m.summary}</p>
@@ -306,6 +312,73 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
           And {procedural.length} procedural: {procedural.map((v, i) => <span key={i}>{i ? '; ' : ''}{v.motion.toLowerCase()} (<At url={u} t={v.t} />)</span>)}.
         </p>
       )}
+
+      {/* AGAINST THE TOWN'S MINUTES. Two records of one meeting; neither is the referee.
+          TJ: "if there truly is a difference in what was documented vs what we think,
+          that's a flag. but if its just our recording reading being wrong or
+          mistranslated, thats what this is intending to fix." Caption errors show the
+          official reading beside the as-heard one; discrepancies are flagged with the
+          second of video and left for a person. */}
+      {m.reconciliation && (() => {
+        const rc = m.reconciliation!
+        const disc = rc.findings.filter(f => f.kind === 'discrepancy')
+        const fixes = rc.findings.filter(f => f.kind === 'caption_error')
+        const onlyO = rc.findings.filter(f => f.kind === 'only_in_official')
+        const onlyU = rc.findings.filter(f => f.kind === 'only_in_ours')
+        return (
+          <>
+            <H2>Against the town&rsquo;s minutes</H2>
+            <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+              The town published <a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href={rc.official.url} target="_blank" rel="noreferrer">minutes</a> (<a className="underline" href={rc.official.text_url}>text</a>) for this meeting; ours were compared item by item.{' '}
+              <strong>{rc.counts.agree || 0} agree</strong>, <strong>{fixes.length}</strong> caption error{fixes.length === 1 ? '' : 's'} resolved by the official reading, <strong style={disc.length ? { color: 'var(--series-revenue, #b5540f)' } : undefined}>{disc.length} substantive difference{disc.length === 1 ? '' : 's'}</strong>. The town&rsquo;s minutes are {rc.coverage === 'full' ? 'a full record' : rc.coverage === 'partial' ? 'a partial record' : 'a summary'}.
+            </p>
+            {disc.length > 0 && (
+              <ol className="mt-3 space-y-2">
+                {disc.map((f, i) => (
+                  <li key={i} className="card p-3" style={{ borderLeft: '4px solid var(--series-revenue, #b5540f)' }}>
+                    <div className="flex flex-wrap gap-x-3 items-baseline">
+                      <span className="text-[10.5px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-revenue, #b5540f)' }}>differs</span>
+                      <span className="text-sm font-semibold">{f.about}</span>
+                      {typeof f.t === 'number' && <At url={u} t={f.t} />}
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-x-6 gap-y-1 mt-1.5 text-sm">
+                      <p><span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>recording </span><span style={{ color: 'var(--text-secondary)' }}>{f.ours.replace(/^\[t=\d+\]\s*/, '') || '—'}</span></p>
+                      <p><span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>town&rsquo;s minutes </span><span style={{ color: 'var(--text-secondary)' }}>{f.official ? `“${f.official}”` : '—'}</span></p>
+                    </div>
+                    <p className="text-xs mt-1.5" style={{ color: 'var(--text-muted)' }}>{f.note}</p>
+                  </li>
+                ))}
+              </ol>
+            )}
+            {fixes.length > 0 && (
+              <details className="mt-3">
+                <summary className="text-sm cursor-pointer" style={{ color: 'var(--series-cost)' }}>{fixes.length} caption error{fixes.length === 1 ? '' : 's'} the town&rsquo;s minutes resolve</summary>
+                <ul className="mt-2 space-y-1.5 text-sm">
+                  {fixes.map((f, i) => (
+                    <li key={i} className="flex flex-wrap gap-x-2 items-baseline">
+                      <span className="font-medium">{f.about}:</span>
+                      <Heard s={f.ours.replace(/^\[t=\d+\]\s*/, '')} />
+                      <span style={{ color: 'var(--text-muted)' }}>&rarr;</span>
+                      <span className="font-semibold">{f.official_reading || f.official}</span>
+                      {typeof f.t === 'number' && <At url={u} t={f.t} />}
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+            {(onlyO.length > 0 || onlyU.length > 0) && (
+              <details className="mt-2">
+                <summary className="text-sm cursor-pointer" style={{ color: 'var(--series-cost)' }}>In one record only: {onlyU.length} from the recording, {onlyO.length} from the town&rsquo;s minutes</summary>
+                <ul className="mt-2 space-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                  {onlyU.map((f, i) => <li key={'u' + i}>Recording only — <span className="font-medium">{f.about}</span>: {f.ours.replace(/^\[t=\d+\]\s*/, '')} {typeof f.t === 'number' && <At url={u} t={f.t} />}</li>)}
+                  {onlyO.map((f, i) => <li key={'o' + i}>Town&rsquo;s minutes only — <span className="font-medium">{f.about}</span>: “{f.official}”</li>)}
+                </ul>
+              </details>
+            )}
+            <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>Compared {rc.written.at.slice(0, 10)}. Neither record is treated as the referee: a caption error is the same fact heard badly; a difference is for a person to check at the timestamp.</p>
+          </>
+        )
+      })()}
 
       {mm.transfers.length > 0 && (
         <>

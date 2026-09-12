@@ -529,5 +529,357 @@
   "confidence": "moderate",
   "summary": "The Lunenburg Finance Committee reorganized (re-electing Chris Manard as chair, electing Peter Beardmore vice chair and Tom Gray clerk), heard a presentation from the Green Communities Committee on Mass Save incentive programs for municipal and school buildings, and reviewed the FY27 state aid (\"cherry sheet\") changes and the superintendent's proposed use of the resulting funds plus health insurance savings. The committee also worked through committee and liaison assignments for the coming year, deferring a decision on the capital planning committee seat, and set a schedule leading up to an additional special town meeting expected before September 3.",
   "headline": "Finance Committee reorganized under new leadership and moved budget previews earlier ahead of a special town meeting"
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07232026-7917",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2026-07-23-minutes-7917.txt",
+   "path": "sources/meetings/finance-committee/2026-07-23-minutes-7917.pdf"
+  },
+  "official_sha256": "6084f7d642ce9ce91345ad0172c448a1e06e675d368c9a2ce7aabedbfe90036e",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on every vote outcome and the core reorganization/funding figures they both cover, but the official minutes are a narrative summary that omits nearly all the dollar figures from the Green Communities/Mass Save presentation and most of the state-aid line-item detail our captions picked up, while ours omits the minutes-approval vote, the full liaison-assignment list, and several named individuals the official minutes record. The one point worth checking against the recording is the funding source for the Primary School reading specialist position — ours says health insurance savings, the official minutes list it under the $350,000 state-aid-funded request package.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 22,
+   "only_in_official": 9
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Chair election vote",
+    "ours": "[t=313] Elect Chris Manard as chairman — passed",
+    "official": "There was a motion to nominate Chris Menard for Chair by Jay Simeone, seconded by Tanya Dall. All in favor.",
+    "note": "Same outcome; unanimous in both."
+   },
+   {
+    "kind": "agree",
+    "about": "Vice chair election vote",
+    "ours": "[t=523] Elect Peter Beardmore as vice chair — passed",
+    "official": "There was a motion to nominate Peter Beardmore as Vice Chair by Jay Simeone, seconded by Tom Gray. All in favor.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Clerk election vote",
+    "ours": "[t=608] Elect Tom Gray as clerk — passed, unanimous",
+    "official": "There was a motion to nominate Tom Gray for Clerk by Ana Lockwood, seconded by Peter Beardmore. All in favor.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's surname",
+    "ours": "Chris Manard",
+    "official": "Chris Menard",
+    "official_reading": "Chris Menard",
+    "note": "Same person throughout both records; captions misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member 'Anna'",
+    "ours": "Anna",
+    "official": "Ana Lockwood",
+    "official_reading": "Ana Lockwood",
+    "note": "Captions dropped the surname and rendered 'Ana' as 'Anna'."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve minutes (5/28, 6/11, Triboard 1/12, 1/27, 3/10)",
+    "ours": "",
+    "official": "Both sets of minutes were approved by a vote of 5-0-2.",
+    "note": "Our minutes have no record of this vote at all, including that it was not unanimous (5-0-2); check the recording for whether this vote is on tape and who abstained."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Total FY27 school-related state aid increase",
+    "ours": "[t=881] $42,730",
+    "official": "There was a total increase of $402,730 in school related state aid.",
+    "official_reading": "$402,730",
+    "note": "Looks like a dropped leading digit in captions; note the three itemized components below sum to $412,515, not $402,730, so the official total itself may be worth re-checking against its source presentation too."
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 increase",
+    "ours": "[t=942] $135,915",
+    "official": "$135,915 increase in Chapter 70 funds",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Charter tuition reimbursement increase",
+    "ours": "[t=963] $116,413",
+    "official": "$116,413 increase in charter school tuition reimbursement",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Smart Growth school reimbursement",
+    "ours": "[t=973] 160,187, zero",
+    "official": "$160,187 was received in receipts from the Smart Growth school reimbursement.",
+    "note": "Core figure matches; the stray 'zero' in our transcript is unexplained caption noise but doesn't change the figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School transportation reimbursement",
+    "ours": "[t=957] no change",
+    "official": "",
+    "note": "Not mentioned in official minutes; low materiality (no change reported)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School choice receiving tuition",
+    "ours": "[t=5110] $5,541",
+    "official": "",
+    "note": "Not in official minutes' state-aid highlights."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School choice sending tuition (charge)",
+    "ours": "[t=5196] $57,000",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Charter school sending tuition (charge)",
+    "ours": "[t=5216] $72,000",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town-wide net cherry sheet increase (all depts)",
+    "ours": "[t=6297] 471",
+    "official": "",
+    "note": "Figure looks truncated (possibly $471,xxx); check recording near t=6297 for the full number."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unrestricted General Government Aid (UGGA)",
+    "ours": "[t=6389] about $30,000",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Veterans benefits and elderly aid",
+    "ours": "[t=6389] about $43,000, almost $74,000",
+    "official": "",
+    "note": "Two figures given for what may be one or two lines; not in official minutes to cross-check."
+   },
+   {
+    "kind": "agree",
+    "about": "Total of superintendent's requested items",
+    "ours": "[t=5609] $350,000",
+    "official": "Below are the 5 requests proposed by the Superintendent totaling $350,000.",
+    "note": "Total matches; see separate finding on the itemized list and on the reading specialist's funding source."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Itemized list of the 5 superintendent requests",
+    "ours": "",
+    "official": "Reading Specialist at the Primary School; Reading Specialist at the Turkey Hill Elementary; Increasing the Vice Principal position to full time; Increasing the Music Teacher at the High School to full time; Online tutoring program for the Primary School",
+    "note": "Our minutes capture only the $350,000 total and one item's funding-source discussion, not the full itemized list."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost of restoring grade 1-4 sections",
+    "ours": "[t=5798] over, you know, $100,000",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance savings total (town and schools)",
+    "ours": "[t=5695] more than $100,000",
+    "official": "",
+    "note": "Not in official minutes at all, separate from the funding-source discrepancy above."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Finance Committee reserve fund",
+    "ours": "[t=6070] $180,000",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School department budget shortfall vs level services",
+    "ours": "[t=6432] 761, $771,000, 760, 700, 371,000",
+    "official": "",
+    "note": "Multiple garbled readings suggest one real figure near $700-800K; not in official minutes to cross-check, so check the recording directly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Green Communities grant request (Mass Save/National Grid)",
+    "ours": "[t=2848] up to $250,000",
+    "official": "",
+    "note": "Official mentions the presentation topic but no dollar figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Green grant closeout payment received",
+    "ours": "[t=4236] $164,000",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill window replacement estimate",
+    "ours": "[t=3174] $562,000",
+    "official": "",
+    "note": "Official mentions the accelerated repair program covers roof/window repair generally but gives no cost estimate."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Electric lawn equipment rebates",
+    "ours": "[t=1518] $75 rebate, $3,500 rebate, roughly $8,000, $6,000",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Standard heat pump rebate",
+    "ours": "[t=1148] $2,000 per ton, $3,000 rebate per unit",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Building management system rebate",
+    "ours": "[t=1292] 5 or 10 cents times sq ft, 13 sequences, a buck 30 times sq footage",
+    "official": "",
+    "note": "Garbled figures; not in official minutes to cross-check."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ADA compliance trigger tied to Turkey Hill investment",
+    "ours": "[t=2163] roughly $17 million, $5 million",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Heat pump conversion cost per square foot",
+    "ours": "[t=2389] 25 to $180 a square foot",
+    "official": "",
+    "note": "Not in official minutes; wide range suggests possible caption garbling of a narrower stated range."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Demand response program incentives",
+    "ours": "[t=2616] $50 signup, $2-300 for a summer, $7,000/year, up to 600 kW, about 10k a summer",
+    "official": "",
+    "note": "Not in official minutes; multiple inconsistent figures suggest checking the recording directly."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Accelerated repair program timeline",
+    "ours": "",
+    "official": "Applications need to be submitted in January 2027; a decision will be made in mid-2027 and construction will start in 2028. The applications are only accepted every 2 years.",
+    "note": "Timeline detail present only in official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mass Save / National Grid representative names",
+    "ours": "",
+    "official": "The representative at Mass Save is Matt O'Keefe and the representative from National Grid is Sean Krauss.",
+    "note": "Not captured in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Share of MA towns that are Green Communities",
+    "ours": "",
+    "official": "For FY 26, 90% of towns in the Commonwealth are now Green Communities.",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Seating/liaison configuration for this meeting",
+    "ours": "[t=625] Committee remains in current seating/liaison configuration for this meeting.",
+    "official": "",
+    "note": "Minor housekeeping item not in official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Capital Planning Committee liaison slot",
+    "ours": "[t=6947] left undecided, tabled for future meeting",
+    "official": "The assignments for the Capital Planning Committee, Stormwater Task Force, Planning Board were deferred.",
+    "note": "Same substance; official additionally lists Stormwater Task Force and Planning Board as also deferred, which ours does not mention."
+   },
+   {
+    "kind": "agree",
+    "about": "Peter Beardmore as School Committee liaison",
+    "ours": "[t=7702] Peter Beardmore agreed to serve as liaison to the School Committee.",
+    "official": "School Committee: Peter Beardmore",
+    "note": "Matches."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Departments for Beardmore's informal liaison contact role",
+    "ours": "[t=8471] Peter Beardmore will serve as informal inbound point of contact for police, facilities, DPW and fire.",
+    "official": "Peter Beardmore volunteered to be the contact person for department liaison with the Police Department, Facilities Department and the Department of Public Works.",
+    "note": "Official's list omits Fire Department; check the recording to see whether Fire was actually included or added in captions."
+   },
+   {
+    "kind": "agree",
+    "about": "Timing shift for dept./school budget preview presentations",
+    "ours": "[t=8226] Move to a November/December timeframe going forward.",
+    "official": "Chris Menard anticipates that department heads will present their requests prior to the budget season, most likely during wintertime.",
+    "note": "Consistent in substance ('wintertime' vs 'Nov/Dec'), though official is less specific about the month."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Focus of next two Finance Committee meetings",
+    "ours": "[t=8716] Next two meetings focused primarily on the additional special town meeting and its warrant articles.",
+    "official": "",
+    "note": "Not stated explicitly in official minutes, though consistent with the STM context they do record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager Screening Committee liaison",
+    "ours": "",
+    "official": "The Town Manager Screening Committee has concluded its work thus will not need liaison.",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Municipal Building Design Committee meeting with Select Board",
+    "ours": "",
+    "official": "Tom Gray states the Municipal Building Design Committee will be meeting with the Select Board on July 28, 2026, to discuss the future of the Committee.",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Governance documents provided to Finance Committee",
+    "ours": "",
+    "official": "Chris Menard provided the following documents to the Finance Committee members: General Law, Bylaws, Home Rule Charter, as well as guidance from the Mass Dept. of Revenue.",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "DLS presentation to be arranged",
+    "ours": "",
+    "official": "Chris Menard will reach out to the DLS representative to set up a presentation regarding best practice and knowledge for the Finance Committee and the Select Board.",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Special Town Meeting date",
+    "ours": "",
+    "official": "Special Town Meeting – September 3",
+    "note": "Our minutes reference the surrounding schedule (Aug 13, Aug 27) but never state the STM's own date of September 3."
+   }
+  ],
+  "quotes_not_in_official_dropped": 7,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-12T12:50:20Z",
+   "cost_usd": 0.27759939999999994
+  }
  }
 }

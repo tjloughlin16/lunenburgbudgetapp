@@ -92,6 +92,7 @@ CHECKS = [
     # twice; --check asks whether the state still holds together.
     ('watch_youtube.py', ['--check']),
     ('write_agenda_preview.py', ['--check']),
+    ('reconcile_minutes.py', ['--check']),
     ('build_notices.py', ['--check']),
     # ONE REPORT OVER ALL OF THEM. It reads every report's payload and writes none of its
     # own claims, so this entry fails exactly when it should: a report changed a

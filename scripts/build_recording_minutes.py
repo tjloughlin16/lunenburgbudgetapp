@@ -63,9 +63,12 @@ def payload():
                        'not_audible': len(mm['not_audible'])},
             'town_published': m['town_published'],
             'has_official_minutes': any(d['kind'] == 'minutes' for d in m['town_published']),
+            'discrepancies': (m.get('reconciliation') or {}).get('counts', {}).get('discrepancy', 0),
+            'caption_errors': (m.get('reconciliation') or {}).get('counts', {}).get('caption_error', 0),
             'source': m['source'],
             'written': m['written'],
             'minutes': mm,
+            'reconciliation': m.get('reconciliation'),
         })
     items.sort(key=lambda i: (i['date'], i['video_id']), reverse=True)
     boards = {}

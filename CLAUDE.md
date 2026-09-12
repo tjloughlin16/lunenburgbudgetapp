@@ -942,6 +942,7 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/sync_search_d1.py --check   # ...and fail if the two copies disagree
     python3 scripts/write_recording_minutes.py <board> <date>   # OUR minutes of one recording, via claude -p
     python3 scripts/write_recording_minutes.py --check    # every minutes file parses, links, and matches its transcript
+    python3 scripts/reconcile_minutes.py                  # ours against the town's minutes: caption errors resolved, differences flagged
     python3 scripts/build_recording_minutes.py            # the /what-was-said payload, from the files
     python3 scripts/build_recording_minutes.py --check    # ...and fail if it is stale
     python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing

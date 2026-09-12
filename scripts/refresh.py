@@ -24,6 +24,8 @@ THE ORDER, AND WHY IT CANNOT MOVE
   6. transcripts         captions for recent meetings -- re-tried every run, because
                          YouTube's auto-captions arrive hours to days after the upload
   7. minutes             OUR minutes, for recordings inside the approved POLICY only
+  7b. reconcile          ours against the town's minutes where both exist: caption
+                         errors resolved beside the as-heard reading, real differences flagged
   8. rebuild             the feed, the minutes payload, the notices, the index, the metrics
   9. push                the search index to D1, inside the day's write budget
  10. deploy              only with --deploy. Rule 10: nothing deploys without being asked.
@@ -247,6 +249,11 @@ def main():
             notes.append('%d recordings await minutes; wrote %d' % (len(targets), MAX_MINUTES_PER_RUN))
         for t in targets[:MAX_MINUTES_PER_RUN]:
             py('write_recording_minutes.py', t['board_slug'], t['meeting_date'], check=False)
+
+    # 7b. Against the town's minutes, wherever both now exist. Official minutes appear
+    # weeks after a meeting, so this is asked every day and does work only when new.
+    if not a.dry_run and not a.no_minutes:
+        py('reconcile_minutes.py', check=False)
 
     # 8. Rebuild everything derived from the above.
     if not a.dry_run:
