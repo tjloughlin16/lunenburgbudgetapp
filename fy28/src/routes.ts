@@ -38,6 +38,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'enrollment'
   | 'circuitbreaker'
   | 'ap'
+  | 'solutions'
   | 'bythenumbers'
   // The middle of three lengths. One tab for all the posts: the slug is the second path
   // segment, `/blog/why-a-school-with-fewer-children-is-not-a-cheaper-school`, and
@@ -305,6 +306,9 @@ export const SLUG: Record<Tab, string> = {
   circuitbreaker: 'circuit-breaker',
   // The two letters everybody says. `advanced-placement` is the alias.
   ap: 'ap-exams',
+  // UNLISTED. Reached only by somebody given the address. See UNLISTED below; give it
+  // no alias.
+  solutions: 'solutions',
   peers: 'what-other-districts-spend',
   // WHO LIVES HERE, before any argument about what the town should spend. The slug is
   // the phrase people already use for a page of facts about a place -- "Lunenburg by the
@@ -383,7 +387,7 @@ export const SLUG: Record<Tab, string> = {
  *  keep quiet — the classic own-goal of that file.
  *
  *  Give an unlisted page NO alias. An alias is a second guessable address. */
-export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis'])
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'solutions'])
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
  *  accepted — a link that has been shared once is out of your hands forever. */
@@ -672,6 +676,7 @@ export const LABEL: Record<Tab, string> = {
   enrollment: 'Who is in the schools — enrolment, FY1994 to today',
   circuitbreaker: 'The circuit breaker — what the state reimburses for the costliest placements',
   ap: 'AP exams — who sits them, in what, and how they score',
+  solutions: 'What the town can actually do about the school budget',
   peers: 'What other districts spend, for each pupil',
   bythenumbers: 'Lunenburg by the numbers — who lives here',
   blog: 'The blog — one finding at a time, in two minutes',
@@ -725,6 +730,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   enrollment: 'reports',
   circuitbreaker: 'reports',
   ap: 'reports',
+  solutions: 'curve',
   analysis: 'reports',
   required: 'reports',
   agents: 'sources',
