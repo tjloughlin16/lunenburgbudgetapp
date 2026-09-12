@@ -98,6 +98,8 @@ CHECKS = [
     ('verify_enrollment.py', []),
     ('build_circuit_breaker.py', ['--check']),
     ('verify_circuit_breaker.py', []),
+    ('build_ap.py', ['--check']),
+    ('verify_ap.py', []),
     ('write_agenda_preview.py', ['--check']),
     ('reconcile_minutes.py', ['--check']),
     ('build_notices.py', ['--check']),

@@ -409,7 +409,7 @@ TOPICS = [
     ('spending', 'What the money buys, and what it does not',
      'Staffing, the classes that ran, insurance, the lines that stopped, what the '
      'district said it was cutting, and how close the budget lands to what gets spent.',
-     ['staffing', 'schoolstaff', 'parastaff', 'courses', 'insurance', 'stopped',
+     ['staffing', 'schoolstaff', 'parastaff', 'courses', 'ap', 'insurance', 'stopped',
       'cuts', 'variance']),
     ('children', 'Where the children are',
      'Which grades they leave in, who is taught outside Lunenburg, what the town is '

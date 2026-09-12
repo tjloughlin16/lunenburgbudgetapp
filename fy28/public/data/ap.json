@@ -1,0 +1,634 @@
+{
+ "about": "Advanced Placement at Lunenburg High, SY2007 to SY2025: who sits the exams, in what subjects, and how the tests score.",
+ "compare_sy": 2015,
+ "conclusions": [
+  {
+   "basis": "`dese_ap` participation, Lunenburg district, All Students, All Subjects; `dese_enrollment` grades 11 and 12 for the denominator.",
+   "bearing": "sizes",
+   "claim": "89 students sat at least one AP exam in SY2025 \u2014 about 39% of the 11th and 12th grades.",
+   "detail": "A smaller high school sends a larger share of its upperclassmen into AP exams than it did. 89 students took 154 exams in SY2025, against 227 in the 11th and 12th grades. In SY2007 it was 58 students against 322. The ratio is an approximation: a tenth grader can sit an exam, and the two DESE files count on different days.",
+   "figure": "takers",
+   "figures": {
+    "g1112": {
+     "text": "227",
+     "unit": "",
+     "value": 227
+    },
+    "g1112_first": {
+     "text": "322",
+     "unit": "",
+     "value": 322
+    },
+    "peak": {
+     "text": "122",
+     "unit": "",
+     "value": 122
+    },
+    "share": {
+     "text": "39%",
+     "unit": "",
+     "value": 0.3920704845814978
+    },
+    "share_first": {
+     "text": "18%",
+     "unit": "",
+     "value": 0.18012422360248448
+    },
+    "sittings": {
+     "text": "154",
+     "unit": "",
+     "value": 154
+    },
+    "sy": {
+     "text": "SY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "sy_first": {
+     "text": "SY2007",
+     "unit": "",
+     "value": 2007
+    },
+    "sy_peak": {
+     "text": "SY2018",
+     "unit": "",
+     "value": 2018
+    },
+    "takers": {
+     "text": "89",
+     "unit": "students sat an AP exam, SY2025",
+     "value": 89
+    },
+    "takers_first": {
+     "text": "58",
+     "unit": "",
+     "value": 58
+    }
+   },
+   "id": "two-in-five-upperclassmen-sit-an-ap-exam",
+   "kind": "measured",
+   "literals": [
+    "11th",
+    "12th"
+   ],
+   "not_shown": "Who is offered the courses, who is steered toward or away from the exam, or what a sitting costs a family. Participation is a count of who sat.",
+   "see": [
+    {
+     "label": "What courses actually ran",
+     "slug": "/what-courses-actually-ran"
+    },
+    {
+     "label": "Who is in the schools",
+     "slug": "/who-is-in-the-schools"
+    }
+   ],
+   "so_what": "In SY2007 it was 18% of a bigger class. The count peaked at 122 in SY2018."
+  },
+  {
+   "basis": "`dese_ap` performance, Lunenburg district, All Students, All Subjects, pct_3_5 and the score counts.",
+   "bearing": "sizes",
+   "claim": "88.3% of AP tests scored 3 or better in SY2025, the best of 19 years; the low: 62.1% in SY2009.",
+   "detail": "Of 154 tests in SY2025, 28 scored a five and 2 scored a one; the full distribution is charted below. It is a share of TESTS, not of students: a student who sat three exams counts three times.",
+   "figure": "best",
+   "figures": {
+    "best": {
+     "text": "88.3%",
+     "unit": "of tests scored 3\u20135, SY2025",
+     "value": 0.883
+    },
+    "fives": {
+     "text": "28",
+     "unit": "",
+     "value": 28
+    },
+    "ones": {
+     "text": "2",
+     "unit": "",
+     "value": 2
+    },
+    "sy": {
+     "text": "SY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "sy_best": {
+     "text": "SY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "sy_worst": {
+     "text": "SY2009",
+     "unit": "",
+     "value": 2009
+    },
+    "tests": {
+     "text": "154",
+     "unit": "",
+     "value": 154
+    },
+    "two_ago": {
+     "text": "75.8%",
+     "unit": "",
+     "value": 0.758
+    },
+    "worst": {
+     "text": "62.1%",
+     "unit": "",
+     "value": 0.621
+    },
+    "years": {
+     "text": "19",
+     "unit": "",
+     "value": 19
+    }
+   },
+   "id": "the-pass-rate-is-the-highest-in-the-file",
+   "kind": "measured",
+   "literals": [
+    "3\u20135",
+    "score of 3",
+    "3 or better"
+   ],
+   "not_shown": "Why. Better teaching, different students choosing to sit, or the mix of subjects shifting toward ones with higher pass rates all produce this number, and the file separates none of them.",
+   "see": [],
+   "so_what": "A score of 3 is the usual threshold for college credit. Two years ago it was 75.8%."
+  },
+  {
+   "basis": "`dese_ap` participation, subject-family rollups (DESE\u2019s own, `subj = subj_cat`), Lunenburg district, SY2015 and SY2025.",
+   "bearing": "sizes",
+   "claim": "117 of 154 AP sittings in SY2025 were English or history; science and math were 31.",
+   "detail": "76% of sittings in SY2025 were in English or history. The table below gives every subject family at both ends. This is the exam-room view of what /what-courses-actually-ran measures in the schedule: a language programme narrowing, and a STEM one that sits few exams.",
+   "figure": "humanities",
+   "figures": {
+    "hum_share": {
+     "text": "76%",
+     "unit": "",
+     "value": 0.7597402597402597
+    },
+    "humanities": {
+     "text": "117",
+     "unit": "English and history sittings, SY2025",
+     "value": 117
+    },
+    "lang_now": {
+     "text": "1",
+     "unit": "",
+     "value": 1
+    },
+    "lang_then": {
+     "text": "22",
+     "unit": "",
+     "value": 22
+    },
+    "sittings": {
+     "text": "154",
+     "unit": "",
+     "value": 154
+    },
+    "stem_now": {
+     "text": "31",
+     "unit": "",
+     "value": 31
+    },
+    "stem_then": {
+     "text": "51",
+     "unit": "",
+     "value": 51
+    },
+    "sy": {
+     "text": "SY2025",
+     "unit": "",
+     "value": 2025
+    },
+    "sy_then": {
+     "text": "SY2015",
+     "unit": "",
+     "value": 2015
+    }
+   },
+   "id": "the-exams-are-english-and-history",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether the courses are offered and unchosen, or not offered. A sitting count cannot tell a closed door from an empty room. Small families are suppressed in DESE\u2019s participation file and taken from its performance file, which says so in the table.",
+   "see": [
+    {
+     "label": "Foreign language, narrowing on every instrument",
+     "slug": "/what-courses-actually-ran"
+    }
+   ],
+   "so_what": "In SY2015 science and math were 51 sittings. Foreign languages: 22 then, 1 now."
+  }
+ ],
+ "families": [
+  {
+   "basis_now": "participation",
+   "basis_then": "participation",
+   "family": "History and Social Science",
+   "now": 59,
+   "pass_share": 0.949,
+   "takers_now": 56,
+   "then": 65
+  },
+  {
+   "basis_now": "participation",
+   "basis_then": "participation",
+   "family": "English Language Arts",
+   "now": 58,
+   "pass_share": 0.879,
+   "takers_now": 58,
+   "then": 69
+  },
+  {
+   "basis_now": "participation",
+   "basis_then": "participation",
+   "family": "Math and Computer Science",
+   "now": 21,
+   "pass_share": 0.81,
+   "takers_now": 18,
+   "then": 21
+  },
+  {
+   "basis_now": "performance file (participation suppressed)",
+   "basis_then": "participation",
+   "family": "Science and Technology",
+   "now": 10,
+   "pass_share": 0.6,
+   "takers_now": 9,
+   "then": 30
+  },
+  {
+   "basis_now": "performance file (participation suppressed)",
+   "basis_then": "performance file (participation suppressed)",
+   "family": "Arts",
+   "now": 5,
+   "pass_share": null,
+   "takers_now": 5,
+   "then": 4
+  },
+  {
+   "basis_now": "performance file (participation suppressed)",
+   "basis_then": "participation",
+   "family": "Foreign Languages",
+   "now": 1,
+   "pass_share": null,
+   "takers_now": 1,
+   "then": 22
+  }
+ ],
+ "first_sy": 2007,
+ "generated_by": "scripts/build_ap.py",
+ "grain": "Three counts that are not the same thing: CHILDREN who sat at least one exam, SITTINGS, and TESTS at each score. The participation ratio divides children by the 11th and 12th grade enrolment and is an approximation.",
+ "last_sy": 2025,
+ "not_established": [
+  "Which AP courses the high school offers in a given year; DESE counts exams sat, not courses taught.",
+  "Anything about the students who did not sit: whether they were in the course and chose not to, or never had access.",
+  "How Lunenburg compares to other districts \u2014 the extract holds Lunenburg only."
+ ],
+ "sources": [
+  {
+   "bytes": 85008910,
+   "docs_url": "/docs/state-dese/dese-ap-participation.xlsx",
+   "filename": "dese-ap-participation.xlsx",
+   "key": "state-dese/dese-ap-participation.xlsx",
+   "note": "AP participation, every Massachusetts district and school, SY2007-SY2025: children who sat at least one exam and sittings, by subject and student group. Stage: published; counts",
+   "path": "sources/state-dese/dese-ap-participation.xlsx",
+   "publisher": "Massachusetts Department of Elementary and Secondary Education",
+   "sha256": "9e8c773b4896a743bad7ae1e66f26250408faa33684a51f69f9da2bfadeb831b",
+   "stage": "published; counts",
+   "url": "https://educationtocareer.data.mass.gov/d/37cp-pad8",
+   "what": "AP participation, every Massachusetts district and school, SY2007-SY2025: children who sat at least one exam and sittings, by subject and student group."
+  },
+  {
+   "bytes": 88920543,
+   "docs_url": "/docs/state-dese/dese-ap-performance.xlsx",
+   "filename": "dese-ap-performance.xlsx",
+   "key": "state-dese/dese-ap-performance.xlsx",
+   "note": "AP performance, the same span: tests at each score 1-5 by subject and group. Small groups suppressed by DESE. Stage: published; counts of tests",
+   "path": "sources/state-dese/dese-ap-performance.xlsx",
+   "publisher": "Massachusetts Department of Elementary and Secondary Education",
+   "sha256": "d29ed6258ba56d09358f9a2ece626f8053730e9a696c0d2f06aabdb465132926",
+   "stage": "published; counts of tests",
+   "url": "https://educationtocareer.data.mass.gov/d/787a-3wen",
+   "what": "AP performance, the same span: tests at each score 1-5 by subject and group. Small groups suppressed by DESE."
+  },
+  {
+   "bytes": 13368300,
+   "docs_url": "/docs/state-dese/dese-enrollment-by-grade.xlsx",
+   "filename": "dese-enrollment-by-grade.xlsx",
+   "key": "state-dese/dese-enrollment-by-grade.xlsx",
+   "note": "Enrollment by grade; the grade 11 and 12 counts are the denominator for the participation ratio. Stage: published; a count on one day",
+   "path": "sources/state-dese/dese-enrollment-by-grade.xlsx",
+   "publisher": "Massachusetts Department of Elementary and Secondary Education",
+   "sha256": "a2fb23dea70ce67dc0aea46a5eb4856630b1655d2ddf470b96681cdc6a56543e",
+   "stage": "published; a count on one day",
+   "url": "https://educationtocareer.data.mass.gov/d/t8td-gens",
+   "what": "Enrollment by grade; the grade 11 and 12 counts are the denominator for the participation ratio."
+  }
+ ],
+ "years": [
+  {
+   "g1112": 322,
+   "pass_share": 0.769,
+   "per_taker": 1.5689655172413792,
+   "scores": [
+    4,
+    17,
+    32,
+    22,
+    16
+   ],
+   "share_1112": 0.18012422360248448,
+   "sittings": 91,
+   "sy": 2007,
+   "takers": 58
+  },
+  {
+   "g1112": 326,
+   "pass_share": 0.79,
+   "per_taker": 1.7241379310344827,
+   "scores": [
+    4,
+    17,
+    35,
+    28,
+    16
+   ],
+   "share_1112": 0.17791411042944785,
+   "sittings": 100,
+   "sy": 2008,
+   "takers": 58
+  },
+  {
+   "g1112": 278,
+   "pass_share": 0.621,
+   "per_taker": 1.6612903225806452,
+   "scores": [
+    11,
+    28,
+    33,
+    14,
+    17
+   ],
+   "share_1112": 0.22302158273381295,
+   "sittings": 103,
+   "sy": 2009,
+   "takers": 62
+  },
+  {
+   "g1112": 260,
+   "pass_share": 0.695,
+   "per_taker": 1.955223880597015,
+   "scores": [
+    22,
+    18,
+    40,
+    29,
+    22
+   ],
+   "share_1112": 0.25769230769230766,
+   "sittings": 131,
+   "sy": 2010,
+   "takers": 67
+  },
+  {
+   "g1112": 268,
+   "pass_share": 0.834,
+   "per_taker": 1.891566265060241,
+   "scores": [
+    8,
+    18,
+    46,
+    49,
+    36
+   ],
+   "share_1112": 0.30970149253731344,
+   "sittings": 157,
+   "sy": 2011,
+   "takers": 83
+  },
+  {
+   "g1112": 261,
+   "pass_share": 0.741,
+   "per_taker": 2.0470588235294116,
+   "scores": [
+    5,
+    40,
+    53,
+    42,
+    34
+   ],
+   "share_1112": 0.32567049808429116,
+   "sittings": 174,
+   "sy": 2012,
+   "takers": 85
+  },
+  {
+   "g1112": 238,
+   "pass_share": 0.745,
+   "per_taker": 1.9574468085106382,
+   "scores": [
+    4,
+    43,
+    63,
+    54,
+    20
+   ],
+   "share_1112": 0.3949579831932773,
+   "sittings": 184,
+   "sy": 2013,
+   "takers": 94
+  },
+  {
+   "g1112": 221,
+   "pass_share": 0.768,
+   "per_taker": 2.00990099009901,
+   "scores": [
+    3,
+    44,
+    70,
+    50,
+    36
+   ],
+   "share_1112": 0.45701357466063347,
+   "sittings": 203,
+   "sy": 2014,
+   "takers": 101
+  },
+  {
+   "g1112": 206,
+   "pass_share": 0.773,
+   "per_taker": 2.11,
+   "scores": [
+    9,
+    39,
+    84,
+    50,
+    29
+   ],
+   "share_1112": 0.4854368932038835,
+   "sittings": 211,
+   "sy": 2015,
+   "takers": 100
+  },
+  {
+   "g1112": 202,
+   "pass_share": 0.667,
+   "per_taker": 2.191011235955056,
+   "scores": [
+    8,
+    57,
+    55,
+    48,
+    27
+   ],
+   "share_1112": 0.4405940594059406,
+   "sittings": 195,
+   "sy": 2016,
+   "takers": 89
+  },
+  {
+   "g1112": 207,
+   "pass_share": 0.647,
+   "per_taker": 1.8888888888888888,
+   "scores": [
+    20,
+    46,
+    64,
+    37,
+    20
+   ],
+   "share_1112": 0.4782608695652174,
+   "sittings": 187,
+   "sy": 2017,
+   "takers": 99
+  },
+  {
+   "g1112": 211,
+   "pass_share": 0.678,
+   "per_taker": 1.7540983606557377,
+   "scores": [
+    14,
+    55,
+    85,
+    39,
+    21
+   ],
+   "share_1112": 0.5781990521327014,
+   "sittings": 214,
+   "sy": 2018,
+   "takers": 122
+  },
+  {
+   "g1112": 210,
+   "pass_share": 0.788,
+   "per_taker": 1.9090909090909092,
+   "scores": [
+    3,
+    37,
+    69,
+    47,
+    33
+   ],
+   "share_1112": 0.4714285714285714,
+   "sittings": 189,
+   "sy": 2019,
+   "takers": 99
+  },
+  {
+   "g1112": 219,
+   "pass_share": 0.8,
+   "per_taker": 1.875,
+   "scores": [
+    5,
+    25,
+    30,
+    55,
+    35
+   ],
+   "share_1112": 0.365296803652968,
+   "sittings": 150,
+   "sy": 2020,
+   "takers": 80
+  },
+  {
+   "g1112": 239,
+   "pass_share": 0.763,
+   "per_taker": 1.8369565217391304,
+   "scores": [
+    7,
+    33,
+    61,
+    44,
+    24
+   ],
+   "share_1112": 0.38493723849372385,
+   "sittings": 169,
+   "sy": 2021,
+   "takers": 92
+  },
+  {
+   "g1112": 224,
+   "pass_share": 0.789,
+   "per_taker": 2.026666666666667,
+   "scores": [
+    11,
+    21,
+    42,
+    48,
+    30
+   ],
+   "share_1112": 0.33482142857142855,
+   "sittings": 152,
+   "sy": 2022,
+   "takers": 75
+  },
+  {
+   "g1112": 211,
+   "pass_share": 0.758,
+   "per_taker": 1.7010309278350515,
+   "scores": [
+    8,
+    32,
+    63,
+    43,
+    19
+   ],
+   "share_1112": 0.4597156398104265,
+   "sittings": 165,
+   "sy": 2023,
+   "takers": 97
+  },
+  {
+   "g1112": 210,
+   "pass_share": 0.87,
+   "per_taker": 1.9518072289156627,
+   "scores": [
+    2,
+    19,
+    58,
+    47,
+    36
+   ],
+   "share_1112": 0.3952380952380952,
+   "sittings": 162,
+   "sy": 2024,
+   "takers": 83
+  },
+  {
+   "g1112": 227,
+   "pass_share": 0.883,
+   "per_taker": 1.7303370786516854,
+   "scores": [
+    2,
+    16,
+    42,
+    66,
+    28
+   ],
+   "share_1112": 0.3920704845814978,
+   "sittings": 154,
+   "sy": 2025,
+   "takers": 89
+  }
+ ]
+}

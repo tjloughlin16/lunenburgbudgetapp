@@ -881,6 +881,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/verify_enrollment.py         # ...every figure in its conclusions, recomputed
     python3 scripts/build_circuit_breaker.py     # the circuit breaker, FY2006 to today
     python3 scripts/verify_circuit_breaker.py    # ...every figure in its conclusions, recomputed
+    python3 scripts/build_ap.py                  # AP exams at the high school, SY2007 to today
+    python3 scripts/verify_ap.py                 # ...every figure in its conclusions, recomputed
     python3 scripts/verify_if_students_leave.py   # the both-directions record on /if-students-leave,
                                                  #   recomputed from the database against a payload
                                                  #   built from DESE's workbooks

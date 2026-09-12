@@ -99,7 +99,7 @@ CATEGORIES = [
     ]),
     ('school', 'The schools', [
         ('what the money buys', [
-            'sped', 'circuitbreaker', 'courses', 'cuts', 'sportsmoney', 'stopped', 'unwind',
+            'sped', 'circuitbreaker', 'courses', 'ap', 'cuts', 'sportsmoney', 'stopped', 'unwind',
             'insurance',
             'athletics-ledger',
         ]),
@@ -294,6 +294,10 @@ ABOUT_PAGES = {
         'Whether school staffing went up, over any span of years you choose — with the '
         'four quantities the archive holds kept apart: names the town printed, FTE and '
         'headcount the state published, and dollars.',
+    'ap':
+        'Advanced Placement at the high school, SY2007 to today: who sits the exams, '
+        'in what subjects, and how the tests score — three in four sittings are English '
+        'or history, and the pass rate is the highest in the file.',
     'circuitbreaker':
         'What the state reimburses for the costliest special education placements, '
         'FY2006 to today: the threshold deducted per child, the share the Legislature '
