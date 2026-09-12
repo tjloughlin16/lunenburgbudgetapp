@@ -877,6 +877,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/classify_document_basis.py   # what produced each document's figures
     python3 scripts/extract_athletics_history.py # athletics, both sides, checked against its source
     python3 scripts/verify_athletics.py          # every figure in the athletics analysis
+    python3 scripts/build_enrollment.py          # who is in the schools: DESE's headcount, FY1994 to today
+    python3 scripts/verify_enrollment.py         # ...every figure in its conclusions, recomputed
     python3 scripts/verify_if_students_leave.py   # the both-directions record on /if-students-leave,
                                                  #   recomputed from the database against a payload
                                                  #   built from DESE's workbooks

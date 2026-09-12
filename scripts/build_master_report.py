@@ -81,7 +81,7 @@ SELF = 'addsup'
 # rather than detected -- without this it resolves to sped-students.json and this page
 # prints that report's conclusions twice under two different titles. The four are each
 # covered on their own below.
-NOT_A_REPORT = ('analysis', 'sped')
+NOT_A_REPORT = ('analysis', 'sped', 'blog', 'recorded', 'thisweek')
 
 
 def payload_of(rep):

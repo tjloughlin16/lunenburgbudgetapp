@@ -66,7 +66,7 @@ SELF = 'addsup'
 # chooser at /special-education. Named identically in build_master_report.py, and this
 # file asserts the two lists agree so a tab cannot be excluded in one and expected in the
 # other.
-NOT_A_REPORT = ('analysis', 'sped')
+NOT_A_REPORT = ('analysis', 'sped', 'blog', 'recorded', 'thisweek')
 
 
 def head(t):

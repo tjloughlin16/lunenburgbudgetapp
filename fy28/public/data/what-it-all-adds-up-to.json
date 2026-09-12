@@ -1339,6 +1339,84 @@
    "so_what": "The rest simply stopped. It was a handover and a reduction happening at the same time."
   },
   {
+   "basis": "`dese_enrollment`, Lunenburg district rows, total_cnt, FY1994\u2013FY2026; every row from FY2003 has its grades summed to its total, and the three earlier rows are marked `no check`.",
+   "bearing": "sizes",
+   "claim": "1,568 children, 319 fewer than the FY2003 peak \u2014 and the fall stopped in FY2015.",
+   "detail": "The argument in town assumes enrolment is falling. It fell \u2014 17.5% from FY2003 to FY2015 \u2014 and then it stopped. The peak was FY2003 at 1,887. The low was FY2015 at 1,557. Every year since has been within 92 of that low, and FY2026 is 1,568. A budget built on a falling headcount is built on a decade-old trend.",
+   "figure": "now",
+   "figures": {
+    "band": {
+     "text": "92",
+     "unit": "",
+     "value": 92
+    },
+    "band_hi": {
+     "text": "1,649",
+     "unit": "",
+     "value": 1649
+    },
+    "band_lo": {
+     "text": "1,557",
+     "unit": "",
+     "value": 1557
+    },
+    "fewer": {
+     "text": "319",
+     "unit": "",
+     "value": 319
+    },
+    "fy_last": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "fy_peak": {
+     "text": "FY2003",
+     "unit": "",
+     "value": 2003
+    },
+    "fy_trough": {
+     "text": "FY2015",
+     "unit": "",
+     "value": 2015
+    },
+    "now": {
+     "text": "1,568",
+     "unit": "children, FY2026",
+     "value": 1568
+    },
+    "pct": {
+     "text": "17.5%",
+     "unit": "",
+     "value": 0.17488076311605724
+    },
+    "peak": {
+     "text": "1,887",
+     "unit": "",
+     "value": 1887
+    },
+    "trough": {
+     "text": "1,557",
+     "unit": "",
+     "value": 1557
+    }
+   },
+   "id": "the-fall-ended-a-decade-ago",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Why. Births, moves, school choice and Monty Tech all change this count and this file separates none of them. And it is one day a year: a child who arrives in November is not here.",
+   "report": "enrollment",
+   "report_title": "Who is in the schools \u2014 enrolment, FY1994 to today",
+   "report_url": "/who-is-in-the-schools",
+   "see": [
+    {
+     "label": "What a smaller school does and does not save",
+     "slug": "/if-students-leave"
+    }
+   ],
+   "so_what": "Since FY2015 it has stayed between 1,557 and 1,649. Smaller than it was; not still shrinking."
+  },
+  {
    "basis": "`dese_attrition`, Lunenburg\u2019s district rows for All Students, joined to `dese_enrollment` on the PREVIOUS year\u2019s grade counts \u2014 which is the join DESE\u2019s own all-grades rate reproduces five times more closely than the same-year one, and which two other independent checks in the generator confirm.",
    "bearing": "sizes",
    "claim": "20.5% of each eighth grade does not come back to a Lunenburg school for grade 9.",
@@ -2056,7 +2134,7 @@
        "slug": "overrides"
       }
      ],
-     "so_what": "A rise in the levy reaches four households in five as a bill they receive directly."
+     "so_what": "A rise in the levy reaches most households as a bill they receive, rather than through a rent."
     },
     {
      "basis": "Census table B19013 for every Massachusetts municipality, 2019\u20132023; DESE\u2019s all-district per-pupil expenditure, every published year.",
@@ -5770,6 +5848,428 @@
    "id": "unwind",
    "title": "When a grant ends \u2014 who picks up the bill",
    "url": "/when-grants-end"
+  },
+  {
+   "about": "Who is in Lunenburg\u2019s schools: DESE\u2019s headcount, FY1994 to FY2026, by grade band and student group, with the neighbouring districts beside it.",
+   "conclusions": [
+    {
+     "basis": "`dese_enrollment`, Lunenburg district rows, total_cnt, FY1994\u2013FY2026; every row from FY2003 has its grades summed to its total, and the three earlier rows are marked `no check`.",
+     "bearing": "sizes",
+     "claim": "1,568 children, 319 fewer than the FY2003 peak \u2014 and the fall stopped in FY2015.",
+     "detail": "The argument in town assumes enrolment is falling. It fell \u2014 17.5% from FY2003 to FY2015 \u2014 and then it stopped. The peak was FY2003 at 1,887. The low was FY2015 at 1,557. Every year since has been within 92 of that low, and FY2026 is 1,568. A budget built on a falling headcount is built on a decade-old trend.",
+     "figure": "now",
+     "figures": {
+      "band": {
+       "text": "92",
+       "unit": "",
+       "value": 92
+      },
+      "band_hi": {
+       "text": "1,649",
+       "unit": "",
+       "value": 1649
+      },
+      "band_lo": {
+       "text": "1,557",
+       "unit": "",
+       "value": 1557
+      },
+      "fewer": {
+       "text": "319",
+       "unit": "",
+       "value": 319
+      },
+      "fy_last": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "fy_peak": {
+       "text": "FY2003",
+       "unit": "",
+       "value": 2003
+      },
+      "fy_trough": {
+       "text": "FY2015",
+       "unit": "",
+       "value": 2015
+      },
+      "now": {
+       "text": "1,568",
+       "unit": "children, FY2026",
+       "value": 1568
+      },
+      "pct": {
+       "text": "17.5%",
+       "unit": "",
+       "value": 0.17488076311605724
+      },
+      "peak": {
+       "text": "1,887",
+       "unit": "",
+       "value": 1887
+      },
+      "trough": {
+       "text": "1,557",
+       "unit": "",
+       "value": 1557
+      }
+     },
+     "id": "the-fall-ended-a-decade-ago",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Why. Births, moves, school choice and Monty Tech all change this count and this file separates none of them. And it is one day a year: a child who arrives in November is not here.",
+     "see": [
+      {
+       "label": "What a smaller school does and does not save",
+       "slug": "/if-students-leave"
+      }
+     ],
+     "so_what": "Since FY2015 it has stayed between 1,557 and 1,649. Smaller than it was; not still shrinking."
+    },
+    {
+     "basis": "`dese_enrollment` grade columns summed into three bands, Lunenburg district rows, FY2008 against FY2026.",
+     "bearing": "sizes",
+     "claim": "Grades 9\u201312 fell 30.0% since FY2008; pre-K to grade 5 fell 5.8%.",
+     "detail": "FY2008 to FY2026, grades 9\u201312 went from 619 to 433 children. Pre-K to grade 5 went from 791 to 745 (down 5.8%); grades 6\u20138 from 413 to 382 (down 7.5%). The step between grade 8 and grade 9 is where the town loses children every year, and this is what that looks like accumulated.",
+     "figure": "hs_pct",
+     "figures": {
+      "fy_base": {
+       "text": "FY2008",
+       "unit": "",
+       "value": 2008
+      },
+      "fy_last": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "g68_first": {
+       "text": "413",
+       "unit": "",
+       "value": 413
+      },
+      "g68_last": {
+       "text": "382",
+       "unit": "",
+       "value": 382
+      },
+      "g68_pct": {
+       "text": "7.5%",
+       "unit": "",
+       "value": 0.07506053268765134
+      },
+      "hs_first": {
+       "text": "619",
+       "unit": "",
+       "value": 619
+      },
+      "hs_last": {
+       "text": "433",
+       "unit": "",
+       "value": 433
+      },
+      "hs_pct": {
+       "text": "30.0%",
+       "unit": "fall in grades 9\u201312, FY2008 to FY2026",
+       "value": 0.30048465266558966
+      },
+      "k5_first": {
+       "text": "791",
+       "unit": "",
+       "value": 791
+      },
+      "k5_last": {
+       "text": "745",
+       "unit": "",
+       "value": 745
+      },
+      "k5_pct": {
+       "text": "5.8%",
+       "unit": "",
+       "value": 0.05815423514538559
+      }
+     },
+     "id": "the-high-school-did-the-shrinking",
+     "kind": "measured",
+     "literals": [
+      "grade 5",
+      "grade 8",
+      "grade 9",
+      "grades 6\u20138",
+      "grades 9\u201312",
+      "9\u201312",
+      "6\u20138"
+     ],
+     "not_shown": "Where the ninth graders went. A vocational admission, a private school, school choice and a move are one absence here; /which-grades-students-leave measures the rate and /where-students-go-instead the destinations.",
+     "see": [
+      {
+       "label": "Which grades students leave in",
+       "slug": "/which-grades-students-leave"
+      },
+      {
+       "label": "Where they go",
+       "slug": "/where-students-go-instead"
+      }
+     ],
+     "so_what": "The decline is a high-school decline. The lower grades are close to where they were."
+    },
+    {
+     "basis": "`dese_enrollment` swd_cnt and swd_pct, Lunenburg district rows.",
+     "bearing": "sizes",
+     "claim": "258 students with disabilities in FY2008, 258 in FY2026 \u2014 in a school 14.0% smaller.",
+     "detail": "The count moved between 227 and 299 over the years in between, and ends where it began. The share is a ratio, and its denominator fell; that is the whole of the movement. Special education staffing and cost are measured on other pages against this count.",
+     "figure": "now",
+     "figures": {
+      "fy_base": {
+       "text": "FY2008",
+       "unit": "",
+       "value": 2008
+      },
+      "fy_last": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "now": {
+       "text": "258",
+       "unit": "students with disabilities, FY2026",
+       "value": 258
+      },
+      "share_now": {
+       "text": "16.3%",
+       "unit": "",
+       "value": 0.163
+      },
+      "share_then": {
+       "text": "14.1%",
+       "unit": "",
+       "value": 0.141
+      },
+      "shrink": {
+       "text": "14.0%",
+       "unit": "",
+       "value": 0.14035087719298245
+      },
+      "swd_hi": {
+       "text": "299",
+       "unit": "",
+       "value": 299
+      },
+      "swd_lo": {
+       "text": "227",
+       "unit": "",
+       "value": 227
+      },
+      "then": {
+       "text": "258",
+       "unit": "",
+       "value": 258
+      }
+     },
+     "id": "as-many-children-with-disabilities-as-ever",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Need. A count of students with an IEP says nothing about the intensity of any plan, and DESE\u2019s own placement data shows the mix of settings moving while the count did not.",
+     "see": [
+      {
+       "label": "The IEP count, in detail",
+       "slug": "/how-many-students-are-on-an-iep"
+      },
+      {
+       "label": "Special education",
+       "slug": "/special-education"
+      }
+     ],
+     "so_what": "Their share rose from 14.1% to 16.3% without a child being added."
+    },
+    {
+     "basis": "`dese_enrollment` el_cnt, Lunenburg district rows.",
+     "bearing": "sizes",
+     "claim": "English learners went from 3 children in FY2008 to 70 in FY2026.",
+     "detail": "Small numbers, and the growth is real: the count has risen in most years since FY2008. An English learner carries a higher weight in the Chapter 70 foundation budget, so this count moves aid as well as staffing.",
+     "figure": "now",
+     "figures": {
+      "fy_first": {
+       "text": "FY2008",
+       "unit": "",
+       "value": 2008
+      },
+      "fy_last": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "now": {
+       "text": "70",
+       "unit": "English learners, FY2026",
+       "value": 70
+      },
+      "share": {
+       "text": "4.5%",
+       "unit": "",
+       "value": 0.044642857142857144
+      },
+      "then": {
+       "text": "3",
+       "unit": "",
+       "value": 3
+      }
+     },
+     "id": "english-learners-from-a-handful-to-seventy",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Which languages, which schools, or what it costs to teach them. DESE publishes the count and nothing here attaches a dollar to it.",
+     "see": [
+      {
+       "label": "How the formula weights students",
+       "slug": "/how-chapter-70-works"
+      }
+     ],
+     "so_what": "The fastest-growing group in the school, and still 4.5% of enrolment."
+    },
+    {
+     "basis": "`dese_enrollment` low_income_cnt/pct (FY\u22642014 and FY\u22652022) and econ_disadvantaged_cnt (FY2015\u2013FY2021), Lunenburg district rows.",
+     "bearing": "sizes",
+     "claim": "Low-income: 15.5% of students in FY2014, 25.2% in FY2026 \u2014 measured two different ways.",
+     "detail": "Three series, never one. Through FY2014 DESE counted \u201clow income\u201d by free or reduced lunch (243 children in FY2014). FY2015\u2013FY2021 it counted \u201ceconomically disadvantaged\u201d by matching state records, a narrower net (187 to 329). From FY2022 \u201clow income\u201d returns under a broader definition (395 in FY2026). Within each series the count rises. The page draws them as three lines.",
+     "figure": "now",
+     "figures": {
+      "econ_first": {
+       "text": "187",
+       "unit": "",
+       "value": 187
+      },
+      "econ_last": {
+       "text": "329",
+       "unit": "",
+       "value": 329
+      },
+      "fy_econ_a": {
+       "text": "FY2015",
+       "unit": "",
+       "value": 2015
+      },
+      "fy_econ_b": {
+       "text": "FY2021",
+       "unit": "",
+       "value": 2021
+      },
+      "fy_new": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "fy_new_a": {
+       "text": "FY2022",
+       "unit": "",
+       "value": 2022
+      },
+      "fy_old": {
+       "text": "FY2014",
+       "unit": "",
+       "value": 2014
+      },
+      "now": {
+       "text": "25.2%",
+       "unit": "low-income, FY2026",
+       "value": 0.252
+      },
+      "now_n": {
+       "text": "395",
+       "unit": "",
+       "value": 395
+      },
+      "then": {
+       "text": "15.5%",
+       "unit": "",
+       "value": 0.155
+      },
+      "then_n": {
+       "text": "243",
+       "unit": "",
+       "value": 243
+      }
+     },
+     "id": "low-income-share-doubled-across-a-definition-change",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Household income. Each definition is a proxy for it and the proxies differ; nothing here measures poverty in Lunenburg directly. /lunenburg-by-the-numbers has the Census figures.",
+     "see": [
+      {
+       "label": "Who lives here, from the Census",
+       "slug": "/lunenburg-by-the-numbers"
+      }
+     ],
+     "so_what": "DESE changed the definition twice in between. The rise is real; its size is not comparable across them."
+    },
+    {
+     "basis": "`dese_enrollment` district totals for Lunenburg and the five districts this site uses as peers, FY2008 and FY2026.",
+     "bearing": "sizes",
+     "claim": "FY2008 to FY2026 Lunenburg\u2019s enrolment fell 14.0%; its 4 neighbours fell 9.6% to 37.0%.",
+     "detail": "The table below gives each district\u2019s count at both ends. The neighbour that fell most lost 37.0%; the one that fell least lost 9.6%. Ayer Shirley regionalised in FY2012 and has no FY2008 row, so it is not in this comparison.",
+     "figure": "lun",
+     "figures": {
+      "districts": {
+       "text": "5",
+       "unit": "",
+       "value": 5
+      },
+      "fy_ayer": {
+       "text": "FY2012",
+       "unit": "",
+       "value": 2012
+      },
+      "fy_base": {
+       "text": "FY2008",
+       "unit": "",
+       "value": 2008
+      },
+      "fy_last": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "least": {
+       "text": "9.6%",
+       "unit": "",
+       "value": 0.09645909645909646
+      },
+      "lun": {
+       "text": "14.0%",
+       "unit": "fall in enrolment, FY2008 to FY2026",
+       "value": 0.14035087719298245
+      },
+      "most": {
+       "text": "37.0%",
+       "unit": "",
+       "value": 0.3702437912964229
+      },
+      "neighbours": {
+       "text": "4",
+       "unit": "",
+       "value": 4
+      }
+     },
+     "id": "lunenburg-shrank-less-than-most-of-its-neighbours",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Why the region fell. Births and housing are outside this file.",
+     "see": [
+      {
+       "label": "The same districts, on spending",
+       "slug": "/what-other-districts-spend"
+      }
+     ],
+     "so_what": "A regional fall, not a Lunenburg one. Lunenburg is 4th of 5 in how much it shrank."
+    }
+   ],
+   "count": 6,
+   "data": "/data/enrollment.json",
+   "generator": "scripts/build_enrollment.py",
+   "id": "enrollment",
+   "title": "Who is in the schools \u2014 enrolment, FY1994 to today",
+   "url": "/who-is-in-the-schools"
   },
   {
    "about": "Which grades Lunenburg children leave in, year by year \u2014 DESE\u2019s attrition rate for the district and its schools, SY2010 to SY2026, with every figure kept as the rate it is.",
@@ -11497,9 +11997,431 @@
   },
   {
    "about": "Which grades they leave in, who is taught outside Lunenburg, what the town is assessed for them, and what more leaving would cost.",
-   "conclusions": 14,
+   "conclusions": 20,
    "key": "children",
    "reports": [
+    {
+     "about": "Who is in Lunenburg\u2019s schools: DESE\u2019s headcount, FY1994 to FY2026, by grade band and student group, with the neighbouring districts beside it.",
+     "conclusions": [
+      {
+       "basis": "`dese_enrollment`, Lunenburg district rows, total_cnt, FY1994\u2013FY2026; every row from FY2003 has its grades summed to its total, and the three earlier rows are marked `no check`.",
+       "bearing": "sizes",
+       "claim": "1,568 children, 319 fewer than the FY2003 peak \u2014 and the fall stopped in FY2015.",
+       "detail": "The argument in town assumes enrolment is falling. It fell \u2014 17.5% from FY2003 to FY2015 \u2014 and then it stopped. The peak was FY2003 at 1,887. The low was FY2015 at 1,557. Every year since has been within 92 of that low, and FY2026 is 1,568. A budget built on a falling headcount is built on a decade-old trend.",
+       "figure": "now",
+       "figures": {
+        "band": {
+         "text": "92",
+         "unit": "",
+         "value": 92
+        },
+        "band_hi": {
+         "text": "1,649",
+         "unit": "",
+         "value": 1649
+        },
+        "band_lo": {
+         "text": "1,557",
+         "unit": "",
+         "value": 1557
+        },
+        "fewer": {
+         "text": "319",
+         "unit": "",
+         "value": 319
+        },
+        "fy_last": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "fy_peak": {
+         "text": "FY2003",
+         "unit": "",
+         "value": 2003
+        },
+        "fy_trough": {
+         "text": "FY2015",
+         "unit": "",
+         "value": 2015
+        },
+        "now": {
+         "text": "1,568",
+         "unit": "children, FY2026",
+         "value": 1568
+        },
+        "pct": {
+         "text": "17.5%",
+         "unit": "",
+         "value": 0.17488076311605724
+        },
+        "peak": {
+         "text": "1,887",
+         "unit": "",
+         "value": 1887
+        },
+        "trough": {
+         "text": "1,557",
+         "unit": "",
+         "value": 1557
+        }
+       },
+       "id": "the-fall-ended-a-decade-ago",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Why. Births, moves, school choice and Monty Tech all change this count and this file separates none of them. And it is one day a year: a child who arrives in November is not here.",
+       "see": [
+        {
+         "label": "What a smaller school does and does not save",
+         "slug": "/if-students-leave"
+        }
+       ],
+       "so_what": "Since FY2015 it has stayed between 1,557 and 1,649. Smaller than it was; not still shrinking."
+      },
+      {
+       "basis": "`dese_enrollment` grade columns summed into three bands, Lunenburg district rows, FY2008 against FY2026.",
+       "bearing": "sizes",
+       "claim": "Grades 9\u201312 fell 30.0% since FY2008; pre-K to grade 5 fell 5.8%.",
+       "detail": "FY2008 to FY2026, grades 9\u201312 went from 619 to 433 children. Pre-K to grade 5 went from 791 to 745 (down 5.8%); grades 6\u20138 from 413 to 382 (down 7.5%). The step between grade 8 and grade 9 is where the town loses children every year, and this is what that looks like accumulated.",
+       "figure": "hs_pct",
+       "figures": {
+        "fy_base": {
+         "text": "FY2008",
+         "unit": "",
+         "value": 2008
+        },
+        "fy_last": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "g68_first": {
+         "text": "413",
+         "unit": "",
+         "value": 413
+        },
+        "g68_last": {
+         "text": "382",
+         "unit": "",
+         "value": 382
+        },
+        "g68_pct": {
+         "text": "7.5%",
+         "unit": "",
+         "value": 0.07506053268765134
+        },
+        "hs_first": {
+         "text": "619",
+         "unit": "",
+         "value": 619
+        },
+        "hs_last": {
+         "text": "433",
+         "unit": "",
+         "value": 433
+        },
+        "hs_pct": {
+         "text": "30.0%",
+         "unit": "fall in grades 9\u201312, FY2008 to FY2026",
+         "value": 0.30048465266558966
+        },
+        "k5_first": {
+         "text": "791",
+         "unit": "",
+         "value": 791
+        },
+        "k5_last": {
+         "text": "745",
+         "unit": "",
+         "value": 745
+        },
+        "k5_pct": {
+         "text": "5.8%",
+         "unit": "",
+         "value": 0.05815423514538559
+        }
+       },
+       "id": "the-high-school-did-the-shrinking",
+       "kind": "measured",
+       "literals": [
+        "grade 5",
+        "grade 8",
+        "grade 9",
+        "grades 6\u20138",
+        "grades 9\u201312",
+        "9\u201312",
+        "6\u20138"
+       ],
+       "not_shown": "Where the ninth graders went. A vocational admission, a private school, school choice and a move are one absence here; /which-grades-students-leave measures the rate and /where-students-go-instead the destinations.",
+       "see": [
+        {
+         "label": "Which grades students leave in",
+         "slug": "/which-grades-students-leave"
+        },
+        {
+         "label": "Where they go",
+         "slug": "/where-students-go-instead"
+        }
+       ],
+       "so_what": "The decline is a high-school decline. The lower grades are close to where they were."
+      },
+      {
+       "basis": "`dese_enrollment` swd_cnt and swd_pct, Lunenburg district rows.",
+       "bearing": "sizes",
+       "claim": "258 students with disabilities in FY2008, 258 in FY2026 \u2014 in a school 14.0% smaller.",
+       "detail": "The count moved between 227 and 299 over the years in between, and ends where it began. The share is a ratio, and its denominator fell; that is the whole of the movement. Special education staffing and cost are measured on other pages against this count.",
+       "figure": "now",
+       "figures": {
+        "fy_base": {
+         "text": "FY2008",
+         "unit": "",
+         "value": 2008
+        },
+        "fy_last": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "now": {
+         "text": "258",
+         "unit": "students with disabilities, FY2026",
+         "value": 258
+        },
+        "share_now": {
+         "text": "16.3%",
+         "unit": "",
+         "value": 0.163
+        },
+        "share_then": {
+         "text": "14.1%",
+         "unit": "",
+         "value": 0.141
+        },
+        "shrink": {
+         "text": "14.0%",
+         "unit": "",
+         "value": 0.14035087719298245
+        },
+        "swd_hi": {
+         "text": "299",
+         "unit": "",
+         "value": 299
+        },
+        "swd_lo": {
+         "text": "227",
+         "unit": "",
+         "value": 227
+        },
+        "then": {
+         "text": "258",
+         "unit": "",
+         "value": 258
+        }
+       },
+       "id": "as-many-children-with-disabilities-as-ever",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Need. A count of students with an IEP says nothing about the intensity of any plan, and DESE\u2019s own placement data shows the mix of settings moving while the count did not.",
+       "see": [
+        {
+         "label": "The IEP count, in detail",
+         "slug": "/how-many-students-are-on-an-iep"
+        },
+        {
+         "label": "Special education",
+         "slug": "/special-education"
+        }
+       ],
+       "so_what": "Their share rose from 14.1% to 16.3% without a child being added."
+      },
+      {
+       "basis": "`dese_enrollment` el_cnt, Lunenburg district rows.",
+       "bearing": "sizes",
+       "claim": "English learners went from 3 children in FY2008 to 70 in FY2026.",
+       "detail": "Small numbers, and the growth is real: the count has risen in most years since FY2008. An English learner carries a higher weight in the Chapter 70 foundation budget, so this count moves aid as well as staffing.",
+       "figure": "now",
+       "figures": {
+        "fy_first": {
+         "text": "FY2008",
+         "unit": "",
+         "value": 2008
+        },
+        "fy_last": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "now": {
+         "text": "70",
+         "unit": "English learners, FY2026",
+         "value": 70
+        },
+        "share": {
+         "text": "4.5%",
+         "unit": "",
+         "value": 0.044642857142857144
+        },
+        "then": {
+         "text": "3",
+         "unit": "",
+         "value": 3
+        }
+       },
+       "id": "english-learners-from-a-handful-to-seventy",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Which languages, which schools, or what it costs to teach them. DESE publishes the count and nothing here attaches a dollar to it.",
+       "see": [
+        {
+         "label": "How the formula weights students",
+         "slug": "/how-chapter-70-works"
+        }
+       ],
+       "so_what": "The fastest-growing group in the school, and still 4.5% of enrolment."
+      },
+      {
+       "basis": "`dese_enrollment` low_income_cnt/pct (FY\u22642014 and FY\u22652022) and econ_disadvantaged_cnt (FY2015\u2013FY2021), Lunenburg district rows.",
+       "bearing": "sizes",
+       "claim": "Low-income: 15.5% of students in FY2014, 25.2% in FY2026 \u2014 measured two different ways.",
+       "detail": "Three series, never one. Through FY2014 DESE counted \u201clow income\u201d by free or reduced lunch (243 children in FY2014). FY2015\u2013FY2021 it counted \u201ceconomically disadvantaged\u201d by matching state records, a narrower net (187 to 329). From FY2022 \u201clow income\u201d returns under a broader definition (395 in FY2026). Within each series the count rises. The page draws them as three lines.",
+       "figure": "now",
+       "figures": {
+        "econ_first": {
+         "text": "187",
+         "unit": "",
+         "value": 187
+        },
+        "econ_last": {
+         "text": "329",
+         "unit": "",
+         "value": 329
+        },
+        "fy_econ_a": {
+         "text": "FY2015",
+         "unit": "",
+         "value": 2015
+        },
+        "fy_econ_b": {
+         "text": "FY2021",
+         "unit": "",
+         "value": 2021
+        },
+        "fy_new": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "fy_new_a": {
+         "text": "FY2022",
+         "unit": "",
+         "value": 2022
+        },
+        "fy_old": {
+         "text": "FY2014",
+         "unit": "",
+         "value": 2014
+        },
+        "now": {
+         "text": "25.2%",
+         "unit": "low-income, FY2026",
+         "value": 0.252
+        },
+        "now_n": {
+         "text": "395",
+         "unit": "",
+         "value": 395
+        },
+        "then": {
+         "text": "15.5%",
+         "unit": "",
+         "value": 0.155
+        },
+        "then_n": {
+         "text": "243",
+         "unit": "",
+         "value": 243
+        }
+       },
+       "id": "low-income-share-doubled-across-a-definition-change",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Household income. Each definition is a proxy for it and the proxies differ; nothing here measures poverty in Lunenburg directly. /lunenburg-by-the-numbers has the Census figures.",
+       "see": [
+        {
+         "label": "Who lives here, from the Census",
+         "slug": "/lunenburg-by-the-numbers"
+        }
+       ],
+       "so_what": "DESE changed the definition twice in between. The rise is real; its size is not comparable across them."
+      },
+      {
+       "basis": "`dese_enrollment` district totals for Lunenburg and the five districts this site uses as peers, FY2008 and FY2026.",
+       "bearing": "sizes",
+       "claim": "FY2008 to FY2026 Lunenburg\u2019s enrolment fell 14.0%; its 4 neighbours fell 9.6% to 37.0%.",
+       "detail": "The table below gives each district\u2019s count at both ends. The neighbour that fell most lost 37.0%; the one that fell least lost 9.6%. Ayer Shirley regionalised in FY2012 and has no FY2008 row, so it is not in this comparison.",
+       "figure": "lun",
+       "figures": {
+        "districts": {
+         "text": "5",
+         "unit": "",
+         "value": 5
+        },
+        "fy_ayer": {
+         "text": "FY2012",
+         "unit": "",
+         "value": 2012
+        },
+        "fy_base": {
+         "text": "FY2008",
+         "unit": "",
+         "value": 2008
+        },
+        "fy_last": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "least": {
+         "text": "9.6%",
+         "unit": "",
+         "value": 0.09645909645909646
+        },
+        "lun": {
+         "text": "14.0%",
+         "unit": "fall in enrolment, FY2008 to FY2026",
+         "value": 0.14035087719298245
+        },
+        "most": {
+         "text": "37.0%",
+         "unit": "",
+         "value": 0.3702437912964229
+        },
+        "neighbours": {
+         "text": "4",
+         "unit": "",
+         "value": 4
+        }
+       },
+       "id": "lunenburg-shrank-less-than-most-of-its-neighbours",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Why the region fell. Births and housing are outside this file.",
+       "see": [
+        {
+         "label": "The same districts, on spending",
+         "slug": "/what-other-districts-spend"
+        }
+       ],
+       "so_what": "A regional fall, not a Lunenburg one. Lunenburg is 4th of 5 in how much it shrank."
+      }
+     ],
+     "count": 6,
+     "data": "/data/enrollment.json",
+     "generator": "scripts/build_enrollment.py",
+     "id": "enrollment",
+     "title": "Who is in the schools \u2014 enrolment, FY1994 to today",
+     "url": "/who-is-in-the-schools"
+    },
     {
      "about": "Which grades Lunenburg children leave in, year by year \u2014 DESE\u2019s attrition rate for the district and its schools, SY2010 to SY2026, with every figure kept as the rate it is.",
      "conclusions": [
@@ -12634,7 +13556,7 @@
          "slug": "overrides"
         }
        ],
-       "so_what": "A rise in the levy reaches four households in five as a bill they receive directly."
+       "so_what": "A rise in the levy reaches most households as a bill they receive, rather than through a rent."
       },
       {
        "basis": "Census table B19013 for every Massachusetts municipality, 2019\u20132023; DESE\u2019s all-district per-pupil expenditure, every published year.",
@@ -13180,16 +14102,16 @@
  "totals": {
   "bearing": {
    "lever": 19,
-   "sizes": 65,
+   "sizes": 71,
    "unclassified": 0
   },
-  "conclusions": 84,
+  "conclusions": 90,
   "document_words": 80083,
   "documents": 17,
   "hypothesis": 1,
-  "measured": 83,
-  "reports": 24,
-  "with_conclusions": 24,
+  "measured": 89,
+  "reports": 25,
+  "with_conclusions": 25,
   "without_conclusions": 0
  }
 }

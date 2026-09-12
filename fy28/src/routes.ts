@@ -35,6 +35,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'classsize'
   | 'courses'
   | 'attrition'
+  | 'enrollment'
   | 'bythenumbers'
   // The middle of three lengths. One tab for all the posts: the slug is the second path
   // segment, `/blog/why-a-school-with-fewer-children-is-not-a-cheaper-school`, and
@@ -294,6 +295,10 @@ export const SLUG: Record<Tab, string> = {
   // attrition rate names no destination at all. Both are accepted as aliases below,
   // because they are what somebody types.
   attrition: 'which-grades-students-leave',
+  // THE DENOMINATOR every other page divides by, on its own. `enrollment` had been kept
+  // free on purpose ("nothing has meant either before") -- it now means this, and only
+  // this. American spelling in the address because that is what a resident types.
+  enrollment: 'who-is-in-the-schools',
   peers: 'what-other-districts-spend',
   // WHO LIVES HERE, before any argument about what the town should spend. The slug is
   // the phrase people already use for a page of facts about a place -- "Lunenburg by the
@@ -584,6 +589,8 @@ const ALIASES: Record<string, Tab> = {
   'one-fact-at-a-time': 'blog',
   population: 'bythenumbers', seniors: 'bythenumbers', 'town-profile': 'bythenumbers',
   households: 'bythenumbers', 'median-income': 'bythenumbers',
+  'who-is-in-the-schools': 'enrollment', enrollment: 'enrollment', enrolment: 'enrollment',
+  headcount: 'enrollment', 'student-count': 'enrollment', 'how-many-students': 'enrollment',
   'which-grades-students-leave': 'attrition', attrition: 'attrition',
   'student-attrition': 'attrition', 'which-grades-lose-students': 'attrition',
   'declining-enrollment': 'attrition', 'enrollment-decline': 'attrition',
@@ -654,6 +661,7 @@ export const LABEL: Record<Tab, string> = {
   classsize: 'How many students one special education group may have',
   courses: 'What courses actually ran, subject by subject',
   attrition: 'Which grades students leave in',
+  enrollment: 'Who is in the schools — enrolment, FY1994 to today',
   peers: 'What other districts spend, for each pupil',
   bythenumbers: 'Lunenburg by the numbers — who lives here',
   blog: 'The blog — one finding at a time, in two minutes',
@@ -704,6 +712,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   thisweek: 'reports',
   courses: 'reports',
   attrition: 'reports',
+  enrollment: 'reports',
   analysis: 'reports',
   required: 'reports',
   agents: 'sources',
@@ -840,7 +849,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   variance: 'analyses', unwind: 'analyses', minaid: 'analyses', formula: 'analyses',
   sped: 'analyses', spedcount: 'analyses', outflow: 'analyses', spedcost: 'analyses',
   spedroute: 'analyses', peers: 'analyses', montytech: 'analyses', required: 'analyses',
-  classsize: 'analyses', courses: 'analyses', attrition: 'analyses',
+  classsize: 'analyses', courses: 'analyses', attrition: 'analyses', enrollment: 'analyses',
   // AN ANALYSIS OF THE TOWN RATHER THAN OF ITS BUDGET, and this area is named for the
   // FORM rather than for the subject precisely so that it can land here -- see the note
   // on AREA_LABEL.analyses. It is not `crisis`: a page of facts about who lives in
@@ -925,7 +934,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
              'formula',
              'staffing', 'schoolstaff', 'parastaff', 'courses', 'cuts',
              'stopped',
-             'unwind', 'attrition', 'outflow', 'montytech', 'leaving', 'families',
+             'unwind', 'enrollment', 'attrition', 'outflow', 'montytech', 'leaving', 'families',
              'sportsmoney',
              'insurance', 'variance'],
   data: ['database', 'rates'],

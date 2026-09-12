@@ -92,6 +92,11 @@ CATEGORIES = [
     ('cards', 'One finding at a time', [
         ('', ['blog']),
     ]),
+    # THE TOWN AS IT HAPPENS: what is coming and what was said, from the daily refresh.
+    # Neither is an analysis; both are the way most residents will arrive.
+    ('week', 'This week, and what was said', [
+        ('', ['thisweek', 'recorded']),
+    ]),
     ('school', 'The schools', [
         ('what the money buys', [
             'sped', 'courses', 'cuts', 'sportsmoney', 'stopped', 'unwind',
@@ -109,7 +114,7 @@ CATEGORIES = [
             'staffing', 'schoolstaff', 'parastaff',
         ]),
         ('the students', [
-            'attrition', 'outflow', 'montytech', 'leaving', 'families',
+            'enrollment', 'attrition', 'outflow', 'montytech', 'leaving', 'families',
         ]),
         ('where the money comes from, and how it compares', [
             'minaid', 'required', 'peers', 'variance',
@@ -289,6 +294,10 @@ ABOUT_PAGES = {
         'Whether school staffing went up, over any span of years you choose — with the '
         'four quantities the archive holds kept apart: names the town printed, FTE and '
         'headcount the state published, and dollars.',
+    'enrollment':
+        'Who is in the schools: DESE’s headcount, FY1994 to today, by grade band and '
+        'student group — the fall that stopped a decade ago, the high school that did '
+        'the shrinking, and the count of children with disabilities that never moved.',
     'attrition':
         'Which grades Lunenburg children leave in, seventeen years of it — one '
         'grade does almost all of it, and no published record says where any of them '
@@ -321,6 +330,14 @@ ABOUT_PAGES = {
     'sped':
         'Four special education reports behind one door, and the reason they must not be '
         'combined: each counts a different thing.',
+    'thisweek':
+        'Meetings coming up for the Select Board, Finance Committee and School Committee '
+        'with what is on each agenda, minutes just posted, recordings just published, and '
+        'what happened at the last recorded meetings. Refreshed daily.',
+    'recorded':
+        'Our minutes of recorded meetings, written from the captions: votes, transfers, '
+        'budget items, decisions and public comment, every item linked to the video at '
+        'that second, and checked against the town’s minutes where they exist.',
     'blog':
         'Every finding this project has published as a post: the figures, what it means '
         'for a resident, a Finance Committee member and a School Committee member, and '

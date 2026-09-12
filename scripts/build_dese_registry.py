@@ -69,6 +69,14 @@ SOURCES = [
      'Special Education Circuit Breaker Reimbursements',
      'A fund rule 11 names as unmapped, AND a count of children: ELIG_STU_CLAIM_CNT.',
      'Keys on FY, not SY. Every other file here is school year.'),
+    ('sources/state-dese/dese-ap-participation.xlsx', '37cp-pad8',
+     'Advanced Placement (AP) Participation',
+     'Children who sat at least one AP exam, by subject and student group, per school and '
+     'district. test_takers_cnt is CHILDREN; tests_taken_cnt is SITTINGS.', ''),
+    ('sources/state-dese/dese-ap-performance.xlsx', '787a-3wen',
+     'Advanced Placement (AP) Performance',
+     'Scores 1-5 as counts of TESTS, not pupils, by subject and group. Small groups are '
+     'suppressed by DESE.', ''),
     ('sources/state-dese/dese-ch70-foundation-nss.xlsx', '5izv-jyrd',
      'Chapter 70 Foundation Budget and Net School Spending',
      'Required against actual net school spending. Lunenburg sits at ~128% of the floor.',

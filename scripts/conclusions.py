@@ -414,7 +414,7 @@ TOPICS = [
     ('children', 'Where the children are',
      'Which grades they leave in, who is taught outside Lunenburg, what the town is '
      'assessed for them, and what more leaving would cost.',
-     ['attrition', 'outflow', 'montytech', 'leaving']),
+     ['enrollment', 'attrition', 'outflow', 'montytech', 'leaving']),
     # THE HOUSEHOLD, and it is broader than it was. It held the two reports about money a
     # family hands over; it now opens with the report about who those households ARE.
     # `bythenumbers` belongs here rather than in a sixth topic: the ACS's own grain is the
@@ -433,7 +433,9 @@ TOPICS = [
 # `blog` is the fourth and it is the same kind of thing as `addsup` from the other end: it
 # reaches no conclusion of its own, it re-presents what the reports already concluded, and
 # a topic heading over it would file the whole archive under one subject.
-NOT_A_REPORT = ('analysis', 'sped', 'addsup', 'blog')
+# `recorded` and `thisweek` are announcements and finding aids, not analyses with
+# conclusions to synthesise.
+NOT_A_REPORT = ('analysis', 'sped', 'addsup', 'blog', 'recorded', 'thisweek')
 
 
 def topic_of(tab):
