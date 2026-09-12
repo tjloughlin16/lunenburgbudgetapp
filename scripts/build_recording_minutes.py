@@ -69,6 +69,7 @@ def payload():
             'written': m['written'],
             'minutes': mm,
             'reconciliation': m.get('reconciliation'),
+            'digest': m.get('digest'),
         })
     items.sort(key=lambda i: (i['date'], i['video_id']), reverse=True)
     boards = {}

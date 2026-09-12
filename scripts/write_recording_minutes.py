@@ -46,6 +46,7 @@ import glob
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 import datetime as dt
@@ -302,6 +303,7 @@ def write_one(entry, docs, force=False):
     with open(path, 'w', encoding='utf-8') as fh:
         json.dump(minutes, fh, indent=1, ensure_ascii=False)
         fh.write('\n')
+    digest(path)
     return 'written ($%.3f)' % (res.get('total_cost_usd') or 0)
 
 
@@ -341,6 +343,82 @@ def headline(path):
         json.dump(m, fh, indent=1, ensure_ascii=False)
         fh.write('\n')
     return 'headlined ($%.3f): %s' % (res.get('total_cost_usd') or 0, mm['headline'][:80])
+
+
+DIGEST_SCHEMA = {
+    'type': 'object', 'additionalProperties': False,
+    'required': ['what_happened', 'why_it_matters', 'watch_next'],
+    'properties': {
+        'what_happened': {'type': 'array', 'minItems': 2, 'maxItems': 5, 'items': {
+            'type': 'object', 'additionalProperties': False, 'required': ['line', 't'],
+            'properties': {'line': {'type': 'string', 'description': 'one plain sentence, under 160 characters, the most consequential first; no figures from captions'},
+                           't': {'type': 'integer', 'description': 'the second in the recording it rests on, from the minutes'}}}},
+        'why_it_matters': {'type': 'array', 'minItems': 1, 'maxItems': 3, 'items': {
+            'type': 'string', 'description': 'one sentence for a resident: what this touches -- a bill, a school, a service, a vote they will be asked to take. Judgement, plainly, and never an accusation.'}},
+        'watch_next': {'type': 'array', 'minItems': 0, 'maxItems': 2, 'items': {
+            'type': 'string', 'description': 'what to watch for next -- a date, a vote, a document -- if the minutes give one'}},
+    },
+}
+
+DIGEST_SYSTEM = """You write the short digest that sits above a set of meeting minutes on a public budget website, in the site's own voice: plain, exact, no first person, no adjectives of opinion.
+
+You are given our minutes of a recorded meeting (written from machine captions). Write:
+- what_happened: two to five sentences, the most consequential first, each carrying the second in the recording it rests on. Use the vote outcomes and decisions in the minutes. Never restate a figure from the captions as fact; say "a transfer" or "the amount as heard" rather than the number.
+- why_it_matters: one to three sentences for a resident -- what this touches: a tax bill, a school, a program, a service, a vote they will be asked to take. This is judgement and it is allowed to be, but it names mechanisms, never motives, and never a person as the cause.
+- watch_next: what to watch for next, only if the minutes give a date, a vote or a document.
+
+Return only the JSON."""
+
+
+def digest(path):
+    """QUEUE 12a, the digest proper. A third pass over OUR minutes file -- not the
+    captions -- so it costs cents. TJ: 'i personally was watching every meeting ... and
+    taking notes, and posting them online. People loved it because i focused only on the
+    details that mattered to them.' The site now does that, in the site's voice."""
+    m = json.load(open(path, encoding='utf-8'))
+    mm = m['minutes']
+    if m.get('digest'):
+        return 'current'
+    votes = [v for v in mm['votes'] if not v.get('procedural')]
+    prompt = ('%s, %s.\n\nHEADLINE: %s\nSUMMARY: %s\n\nVOTES:\n%s\n\nDECISIONS:\n%s\n\nBUDGET ITEMS:\n%s\n\nPUBLIC COMMENT:\n%s\n\nTOPICS:\n%s'
+              % (m['board'], m['meeting_date'], mm.get('headline', ''), mm['summary'],
+                 '\n'.join('- [t=%d] %s — %s' % (v['t'], v['motion'], v['outcome']) for v in votes) or '- none',
+                 '\n'.join('- [t=%d] %s' % (d['t'], d['decision']) for d in mm.get('decisions', [])) or '- none',
+                 '\n'.join('- [t=%d] %s: %s' % (b['t'], b['topic'], b['what_was_said']) for b in mm.get('budget_items', [])[:12]) or '- none',
+                 '\n'.join('- [t=%d] %s' % (p['t'], p['topic']) for p in mm.get('public_comment', [])) or '- none',
+                 '\n'.join('- [t=%d–%d] %s — %s' % (t['t_start'], t['t_end'], t['topic'], t['resolution']) for t in mm.get('topics', []))))
+    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
+    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', DIGEST_SYSTEM,
+                        '--json-schema', json.dumps(DIGEST_SCHEMA), '--output-format', 'json', '--max-budget-usd', '0.5'],
+                       input=prompt, capture_output=True, text=True, env=env, timeout=300)
+    if r.returncode != 0:
+        raise SystemExit('claude failed on digest for %s' % path)
+    res = json.loads(r.stdout)
+    body = res.get('structured_output') or res.get('result')
+    if isinstance(body, str):
+        body = json.loads(body)
+    # NO CAPTION FIGURE REACHES A DIGEST. The prompt says so and one slipped through on
+    # the first run ("$418,000"); a rule enforced by asking is not a rule. Any dollar
+    # amount or large bare number becomes "as heard" here, mechanically.
+    import re as _re
+    scrub = lambda x: _re.sub(r'\b(?:the |an? )?\$\s?[\d,]+(?:\.\d+)?\s?(?:million|thousand|k|M|K)?\b\s*', 'an amount as heard ', x).replace('  ', ' ').strip()
+    for w in body['what_happened']:
+        w['line'] = scrub(w['line'])
+    body['why_it_matters'] = [scrub(x) for x in body['why_it_matters']]
+    body['watch_next'] = [scrub(x) for x in body['watch_next']]
+    # Every second cited must be one the minutes hold.
+    known = {v['t'] for v in mm['votes']} | {d['t'] for d in mm.get('decisions', [])} | {b['t'] for b in mm.get('budget_items', [])} \
+        | {p['t'] for p in mm.get('public_comment', [])} | {t['t_start'] for t in mm.get('topics', [])}
+    for w in body['what_happened']:
+        if w['t'] not in known:
+            w['t'] = min(known, key=lambda k: abs(k - w['t'])) if known else 0
+    m['digest'] = dict(body, written={'by': 'scripts/write_recording_minutes.py --digest', 'model': MODEL,
+                                      'at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                                      'cost_usd': res.get('total_cost_usd')})
+    with open(path, 'w', encoding='utf-8') as fh:
+        json.dump(m, fh, indent=1, ensure_ascii=False)
+        fh.write('\n')
+    return 'digested ($%.3f): %s' % (res.get('total_cost_usd') or 0, body['what_happened'][0]['line'][:80])
 
 
 RETAG_SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['topics'],
@@ -404,6 +482,13 @@ def check():
         mm = m.get('minutes', {})
         if not mm.get('headline'):
             print('NO HEADLINE %s: run --retag' % os.path.relpath(f, ROOT)); bad += 1
+        if not m.get('digest'):
+            print('NO DIGEST %s: run --retag' % os.path.relpath(f, ROOT)); bad += 1
+        else:
+            dg = m['digest']
+            texts = [w['line'] for w in dg['what_happened']] + dg['why_it_matters'] + dg['watch_next']
+            if any(re.search(r'\$\s?[\d,]', x) for x in texts):
+                print('CAPTION FIGURE IN DIGEST %s' % os.path.relpath(f, ROOT)); bad += 1
         for t in mm.get('topics', []):
             if 'tags' not in t:
                 print('NO TOPIC TAGS %s: run --retag' % os.path.relpath(f, ROOT)); bad += 1; break
@@ -451,6 +536,7 @@ def main():
         for f in sorted(glob.glob(os.path.join(OUT, '*', '*.json'))):
             print('%s  %s' % (os.path.relpath(f, OUT), retag(f)), flush=True)
             print('%s  %s' % (os.path.relpath(f, OUT), headline(f)), flush=True)
+            print('%s  %s' % (os.path.relpath(f, OUT), digest(f)), flush=True)
         return 0
     if a.status:
         status(); return 0

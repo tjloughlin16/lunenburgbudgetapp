@@ -37,7 +37,7 @@ type Video = { first_seen: string; video_id: string; title: string; url: string;
 type Ours = { written: string; board: string; board_slug: string; date: string; url: string; votes: number }
 type PreviewItem = { agenda_line: string; why_it_matters: string; kind: string; vote_expected?: boolean }
 type Upcoming2 = { board: string; board_slug: string; date: string; days_away: number; when: string; where: string; how_to_attend: string; one_line: string; items: PreviewItem[]; nothing_of_note: boolean; agenda_url: string }
-type Retro = { board: string; board_slug: string; date: string; url: string; headline?: string; summary: string; votes: number; transfers: number; tags: string[]; has_official_minutes: boolean }
+type Retro = { board: string; board_slug: string; date: string; url: string; headline?: string; summary: string; digest?: { what_happened: { line: string }[]; why_it_matters: string[] } | null; votes: number; transfers: number; tags: string[]; has_official_minutes: boolean }
 type Notices = { as_of: string; upcoming: Upcoming2[]; retro: Retro[] }
 type FeedItem = { first_seen: string; source: string; kind: string; published: string; title: string; link: string }
 type WhatsNew = {
@@ -181,6 +181,12 @@ export function ThisWeek() {
                       <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{o.votes} substantive vote{o.votes === 1 ? '' : 's'} · {o.transfers} transfer{o.transfers === 1 ? '' : 's'}{o.has_official_minutes ? '' : ' · no official minutes yet'}</span>
                     </div>
                     <p className="text-sm mt-1 font-medium">{o.headline || o.summary}</p>
+                    {o.digest && (
+                      <ul className="mt-1.5 space-y-0.5">
+                        {o.digest.what_happened.slice(0, 3).map((w, i) => <li key={i} className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>· {w.line}</li>)}
+                        <li className="text-[12.5px] mt-1" style={{ color: 'var(--text-muted)' }}>Why it matters: {o.digest.why_it_matters[0]}</li>
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ol>}

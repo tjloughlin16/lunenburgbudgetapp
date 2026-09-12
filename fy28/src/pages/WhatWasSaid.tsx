@@ -47,8 +47,10 @@ type Minutes = {
 type TownDoc = { kind: string; url: string; text_url: string; path: string }
 type Finding = { kind: 'agree' | 'caption_error' | 'discrepancy' | 'only_in_ours' | 'only_in_official'; about: string; t?: number; ours: string; official: string; official_reading?: string; note: string }
 type Reconciliation = { official: { url: string; text_url: string }; coverage: string; summary: string; counts: Record<string, number>; findings: Finding[]; written: { at: string } }
+type Digest = { what_happened: { line: string; t: number }[]; why_it_matters: string[]; watch_next: string[]; written: { at: string } }
 type Meeting = {
   slug: string
+  digest?: Digest | null
   reconciliation?: Reconciliation | null
   discrepancies?: number
   caption_errors?: number
@@ -278,7 +280,31 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
         </p>
       )}
 
-      <Body>{mm.summary}</Body>
+      {/* THE DIGEST, FIRST. QUEUE 12a: "the digests ARE the product". What happened,
+          each line linked to its second; why it matters, which is judgement and says so
+          by its heading; what to watch. In the site's voice. */}
+      {m.digest ? (
+        <div className="card p-4 mt-6 max-w-3xl" style={{ borderLeft: '4px solid var(--series-cost)' }}>
+          <p className="text-[10.5px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>The short version</p>
+          <ol className="mt-2 space-y-1.5">
+            {m.digest.what_happened.map((w, i) => (
+              <li key={i} className="text-[15px] leading-snug flex gap-3 items-baseline"><At url={u} t={w.t} /><span>{w.line}</span></li>
+            ))}
+          </ol>
+          <p className="text-[10.5px] font-bold uppercase tracking-widest mt-4" style={{ color: 'var(--text-muted)' }}>Why it matters — our reading</p>
+          <ul className="mt-1 space-y-1">
+            {m.digest.why_it_matters.map((x, i) => <li key={i} className="text-sm" style={{ color: 'var(--text-secondary)' }}>{x}</li>)}
+          </ul>
+          {m.digest.watch_next.length > 0 && (
+            <>
+              <p className="text-[10.5px] font-bold uppercase tracking-widest mt-4" style={{ color: 'var(--text-muted)' }}>Watch next</p>
+              <ul className="mt-1 space-y-1">
+                {m.digest.watch_next.map((x, i) => <li key={i} className="text-sm" style={{ color: 'var(--text-secondary)' }}>{x}</li>)}
+              </ul>
+            </>
+          )}
+        </div>
+      ) : <Body>{mm.summary}</Body>}
       {m.tags.length > 0 && (
         <p className="mt-2 flex flex-wrap gap-1">
           {m.tags.map(t => <a key={t} href={`/what-was-said?tag=${t}`} className="px-1.5 py-0.5 text-[11px] rounded"

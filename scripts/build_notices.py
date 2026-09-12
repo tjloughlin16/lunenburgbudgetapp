@@ -55,7 +55,16 @@ def retro_text(m):
     votes = [v for v in mm['votes'] if not v.get('procedural')]
     url = '%s/what-was-said/%s/%s-%s' % (SITE, m['board_slug'], m['meeting_date'], m['video_id'])
     lines = ['%s, %s: %s' % (m['board'], long_date(m['meeting_date']), mm.get('headline') or 'here is what the recording carries.')]
-    lines.append(mm['summary'])
+    dg = m.get('digest')
+    if dg:
+        # THE DIGEST IS THE POST (QUEUE 12a). What happened, then why it matters, in the
+        # site's voice; no caption figure can reach it.
+        lines.append('\n'.join('• ' + w['line'] for w in dg['what_happened']))
+        lines.append('Why it matters: ' + ' '.join(dg['why_it_matters']))
+        if dg['watch_next']:
+            lines.append('Watch next: ' + '; '.join(dg['watch_next']) + '.')
+    else:
+        lines.append(mm['summary'])
     if votes:
         lines.append('Votes taken (%d): ' % len(votes)
                      + '; '.join('%s — %s' % (v['motion'].rstrip('.'), v['outcome']) for v in votes[:5])
@@ -105,6 +114,7 @@ def payload():
             'url': '/what-was-said/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
             'headline': mm.get('headline', ''),
             'summary': mm['summary'],
+            'digest': m.get('digest'),
             'votes': sum(1 for v in mm['votes'] if not v.get('procedural')),
             'transfers': len(mm['transfers']),
             'tags': mm.get('tags', []),
