@@ -181,6 +181,22 @@ def push(limit, dry_run):
         print('nothing to send; restating the remote counts')
         return record_counts(written_aff)
 
+    # ONE SWEEP FOR ORPHANS, not one delete per file. wrangler runs a file in chunks, so
+    # an upload that dies midway leaves rows without their indexed_file marker, and a
+    # blind re-send would double them. The first fix deleted each file's rows before
+    # inserting -- and `file_key` is an UNINDEXED column of an FTS5 table, so every one
+    # of those was a full scan: 380 files x 97,000 rows = 37 million rows read, which
+    # exhausted the account's 5-million-a-day READ limit (shared with the public
+    # endpoints) and took /api/search and /api/query dark until midnight UTC. This is a
+    # single scan per run, and it is what makes a re-send safe. Reads cost too: never
+    # put a per-file scan in the loop below.
+    if to_send and (have or to_delete):
+        with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
+            fh.write('DELETE FROM search WHERE file_key NOT IN (SELECT file_key FROM indexed_file);\n')
+        run_file(fh.name)
+        os.unlink(fh.name)
+        print('swept rows with no indexed_file marker (one full scan)')
+
     # Deletions first, so a changed file is never present twice.
     if to_delete:
         with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
@@ -221,13 +237,6 @@ def push(limit, dry_run):
                   % (limit, len(to_send) - sent_files))
             break
         rows = local.execute('SELECT %s FROM search WHERE file_key=?' % cols, (k,)).fetchall()
-        # wrangler runs a file in CHUNKS, not one transaction: an upload that dies midway
-        # leaves earlier chunks committed. A file can therefore have its rows in the
-        # remote and no indexed_file marker -- 709 minutes files were in that state after
-        # a dropped connection -- and re-sending it blind would double them. So every
-        # file's rows are deleted before they are inserted; on a clean file that costs
-        # nothing.
-        batch.append('DELETE FROM search WHERE file_key = %s;' % q(k))
         vals, size = [], 0
         for r in rows:
             v = '(%s)' % ','.join(q(r[c]) for c in B.COLS)
