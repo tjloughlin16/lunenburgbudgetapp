@@ -696,21 +696,22 @@ export function ReportShell({
   return (
     <article className="report mx-auto max-w-6xl px-5 pt-14 pb-16">
       <header className="report-head">
-        <div className="flex items-start justify-between gap-4">
-          <div className="min-w-0">
-            {eyebrow && (
-              <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-                style={{ color: 'var(--text-muted)' }}>{eyebrow}</p>
-            )}
-            {/* ONE h1 treatment for every report on the site. Some titles are the report's
-                NAME and some are the finding itself, in a sentence -- both are the first
-                thing on the page and both are set the same, because a reader takes a
-                difference in setting for a difference in weight. */}
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05]
-                           max-w-3xl">{title}</h1>
-          </div>
+        {/* THE PRINT BUTTON SITS ON THE EYEBROW LINE, NOT BESIDE THE TITLE. It used to
+            share a flex row with the h1, which gave the title the container minus the
+            button and then capped it again at max-w-3xl -- a two-line title on every
+            report. TJ: "squished". The title now runs the width of the page. */}
+        <div className="flex items-start justify-between gap-4 mb-3 min-h-[1.5rem]">
+          {eyebrow ? (
+            <p className="text-xs font-semibold uppercase tracking-widest pt-1.5"
+              style={{ color: 'var(--text-muted)' }}>{eyebrow}</p>
+          ) : <span />}
           {!noPrint && <PrintButton />}
         </div>
+        {/* ONE h1 treatment for every report on the site. Some titles are the report's
+            NAME and some are the finding itself, in a sentence -- both are the first
+            thing on the page and both are set the same, because a reader takes a
+            difference in setting for a difference in weight. */}
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-5xl">{title}</h1>
         {standfirst && (
           <p className="mt-5 text-lg leading-relaxed max-w-2xl"
             style={{ color: 'var(--text-secondary)' }}>{standfirst}</p>
