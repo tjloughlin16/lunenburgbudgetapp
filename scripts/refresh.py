@@ -61,13 +61,24 @@ MAX_MINUTES_PER_RUN = 6
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 RUN_COLS = ['ran_at', 'as_of', 'new_agendas', 'new_minutes', 'new_videos',
-            'new_transcripts', 'new_our_minutes', 'deployed', 'notes']
+            'new_transcripts', 'new_our_minutes', 'deployed', 'seconds', 'timings', 'notes']
+
+
+TIMINGS = []          # (step, seconds, exit code) -- printed at the end and written to the run row
 
 
 def sh(args, check=True, quiet=False, **kw):
+    import time
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
+    name = os.path.basename(args[1] if args[0].endswith('python3') or 'python' in args[0] else args[0])
+    if len(args) > 2 and not args[2].startswith('-'):
+        name += ' ' + ' '.join(a for a in args[2:] if not a.startswith('-'))[:40]
     print('\n$ ' + ' '.join(args), flush=True)
+    t0 = time.monotonic()
     r = subprocess.run(args, cwd=ROOT, env=env, capture_output=quiet, text=True, **kw)
+    secs = time.monotonic() - t0
+    TIMINGS.append((name, secs, r.returncode))
+    print('  [%s: %.1fs, exit %d]' % (name, secs, r.returncode), flush=True)
     if check and r.returncode != 0:
         if quiet:
             print((r.stdout or '') + (r.stderr or ''))
@@ -155,14 +166,28 @@ def write_to_post(as_of):
     p = json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'notices.json'), encoding='utf-8'))
     out = os.path.join(ROOT, 'build', 'notices-to-post.md')
     os.makedirs(os.path.dirname(out), exist_ok=True)
+    # NEW means written by this run: the preview or the minutes carry today's date. A
+    # notice from an earlier day is still in the file -- the window is two weeks -- but
+    # the heading says so, so the morning question "what do I post today" is the first
+    # lines, not a diff.
+    new_up = [u for u in p['upcoming'] if u.get('written') == as_of]
+    new_re = [r for r in p['retro'] if r.get('written') == as_of]
     L = ['# Notices ready to post — as of %s' % as_of, '',
-         'Copy a block into Facebook. Nothing posts itself. Upcoming first, then what happened.', '']
+         '**New today: %d upcoming, %d what-happened.** Copy a block into Facebook. Nothing posts itself.'
+         % (len(new_up), len(new_re)), '']
     for u in p['upcoming']:
-        L += ['## UPCOMING — %s, %s (%d day%s away)' % (u['board'], u['date'], u['days_away'], '' if u['days_away'] == 1 else 's'), '', '```', u['facebook'], '```', '']
+        tag = 'NEW TODAY — ' if u.get('written') == as_of else ''
+        L += ['## %sUPCOMING — %s, %s (%d day%s away)' % (tag, u['board'], u['date'], u['days_away'], '' if u['days_away'] == 1 else 's'), '', '```', u['facebook'], '```', '']
     for r in p['retro']:
-        L += ['## WHAT HAPPENED — %s, %s' % (r['board'], r['date']), '', '```', r['facebook'], '```', '']
+        tag = 'NEW TODAY — ' if r.get('written') == as_of else ''
+        L += ['## %sWHAT HAPPENED — %s, %s' % (tag, r['board'], r['date']), '', '```', r['facebook'], '```', '']
     open(out, 'w', encoding='utf-8').write('\n'.join(L))
-    print('\nwrote %s — %d upcoming, %d retro' % (os.path.relpath(out, ROOT), len(p['upcoming']), len(p['retro'])))
+    print('\nREADY TO POST (%s): %d upcoming (%d new today), %d what-happened (%d new today)'
+          % (os.path.relpath(out, ROOT), len(p['upcoming']), len(new_up), len(p['retro']), len(new_re)))
+    for u in new_up:
+        print('  NEW  upcoming  %s %s — %s' % (u['board'], u['date'], u['one_line'][:90]))
+    for r in new_re:
+        print('  NEW  happened  %s %s — %d vote(s), %d transfer(s)' % (r['board'], r['date'], r['votes'], r['transfers']))
 
 
 def main():
@@ -261,6 +286,8 @@ def main():
                      'as_of': a.as_of, 'new_agendas': delta['agendas'], 'new_minutes': delta['minutes'],
                      'new_videos': delta['videos'], 'new_transcripts': delta['transcripts'],
                      'new_our_minutes': delta['ours'], 'deployed': 'yes' if deployed else 'no',
+                     'seconds': int(sum(t[1] for t in TIMINGS)),
+                     'timings': ' '.join('%s=%d' % (n.replace(' ', '_'), int(sec)) for n, sec, _ in TIMINGS),
                      'notes': '; '.join(notes)})
         with open(RUNS, 'w', newline='', encoding='utf-8') as fh:
             w = csv.DictWriter(fh, fieldnames=RUN_COLS)
@@ -268,7 +295,11 @@ def main():
             for r in runs:
                 w.writerow({c: r.get(c, '') for c in RUN_COLS})
 
-    print('\n=== refresh %s ===' % a.as_of)
+    total = sum(t[1] for t in TIMINGS)
+    print('\n=== refresh %s — %d min %d s ===' % (a.as_of, total // 60, total % 60))
+    print('  %-46s %8s' % ('step', 'seconds'))
+    for name, secs, rc in sorted(TIMINGS, key=lambda t: -t[1]):
+        print('  %-46s %8.1f%s' % (name[:46], secs, '' if rc == 0 else '  exit %d' % rc))
     print('  new agendas %d · new minutes %d · new videos %d · new transcripts %d · our minutes +%d'
           % (delta['agendas'], delta['minutes'], delta['videos'], delta['transcripts'], delta['ours']))
     for n in notes:
