@@ -75,7 +75,8 @@ def sh(args, check=True, quiet=False, **kw):
         name += ' ' + ' '.join(a for a in args[2:] if not a.startswith('-'))[:40]
     print('\n$ ' + ' '.join(args), flush=True)
     t0 = time.monotonic()
-    r = subprocess.run(args, cwd=ROOT, env=env, capture_output=quiet, text=True, **kw)
+    kw.setdefault('cwd', ROOT)
+    r = subprocess.run(args, env=env, capture_output=quiet, text=True, **kw)
     secs = time.monotonic() - t0
     TIMINGS.append((name, secs, r.returncode))
     print('  [%s: %.1fs, exit %d]' % (name, secs, r.returncode), flush=True)

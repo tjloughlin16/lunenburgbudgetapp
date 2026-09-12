@@ -198,12 +198,28 @@ def main() -> None:
             print(f'  {got} downloaded')
         time.sleep(0.15)
 
+    # MERGE INTO THE INDEX. NEVER REPLACE IT. A walk of one year used to rewrite the whole
+    # file with that year's rows -- the daily refresh's first run (11 September 2026) took
+    # it from 12,065 rows to 584, the search index rebuilt from the stub, and the push
+    # then deleted every other year's minutes from the live database. The index is the
+    # catalogue of everything held; a run that saw part of it may only add to it.
     idx = OUT / 'index.csv'
+    cols = ['board', 'board_id', 'date', 'kind', 'file_id', 'path', 'url']
+    held = {}
+    if idx.exists():
+        for r in csv.DictReader(idx.open()):
+            held[(r['board_id'], r['file_id'], r['kind'])] = r
+    before = len(held)
+    for r in rows:
+        held[(r['board_id'], r['file_id'], r['kind'])] = {c: r.get(c, '') for c in cols}
+    merged = sorted(held.values(), key=lambda r: (r['board'], r['date'], r['kind']))
+    if before and len(merged) < before:
+        raise SystemExit(f'refusing to write index.csv: would shrink from {before} to {len(merged)} rows')
     with idx.open('w', newline='') as f:
-        w = csv.DictWriter(f, ['board', 'board_id', 'date', 'kind', 'file_id', 'path', 'url'])
+        w = csv.DictWriter(f, cols)
         w.writeheader()
-        w.writerows(sorted(rows, key=lambda r: (r['board'], r['date'], r['kind'])))
-    print(f'downloaded {got}; index -> {idx}')
+        w.writerows(merged)
+    print(f'downloaded {got}; index -> {idx} ({before} held, {len(merged)} after merge)')
 
 
 if __name__ == '__main__':
