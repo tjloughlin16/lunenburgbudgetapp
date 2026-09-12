@@ -60,11 +60,12 @@ export const SLUG: Record<Tab, string> = {
   // site. It is not: the argument, the documents, the data and the machine-readable
   // addresses are four different visits. See pages/Home.
   home: '',
-  // The walkthrough gave up the root and kept every word. This is the one address on the
-  // site that has ever moved, which is why `walkthrough` and `start-here` were already
-  // aliases for it — anybody who typed one lands where they always did, and `/` now
-  // answers with the door rather than with a 404 or a redirect.
-  walk: 'walkthrough',
+  // The walkthrough gave up the root and kept every word, and on 12 September 2026 it
+  // gave up its name too. TJ: "rename the url for budget crisis to just /crisis vs
+  // /walkthrough" -- the section is called Budget Crisis everywhere a reader sees it,
+  // and an address should say what the page is, not how it was written. `walkthrough`
+  // and `start-here` stay as aliases; nothing anybody typed or shared stops working.
+  walk: 'crisis',
   deeper: 'go-deeper',
   answers: 'straight-answers',
   money: 'find-the-money',
@@ -380,7 +381,7 @@ const ALIASES: Record<string, Tab> = {
   // is what somebody types when they have lost their place.
   home: 'home', doors: 'home',
   answers: 'answers',
-  walk: 'walk', walkthrough: 'walk', start: 'walk', 'start-here': 'walk',
+  walk: 'walk', crisis: 'walk', 'budget-crisis': 'walk', walkthrough: 'walk', start: 'walk', 'start-here': 'walk',
   deeper: 'deeper', more: 'deeper', everything: 'deeper',
   money: 'money', context: 'context', situation: 'context',
   why: 'why', rates: 'curve', curve: 'curve',

@@ -28,7 +28,7 @@ type Vote = { t: number; motion: string; outcome: string; procedural: boolean; m
 type BudgetItem = { t: number; topic: string; what_was_said: string; figures_as_heard?: string[] }
 type Transfer = { t: number; description: string; amount_as_heard?: string; outcome: string }
 type Decision = { t: number; decision: string }
-type Topic = { t_start: number; t_end: number; topic: string; resolution: string }
+type Topic = { t_start: number; t_end: number; topic: string; resolution: string; tags?: string[] }
 type Attendee = { name_as_heard: string; role: string; remote?: boolean }
 type Comment = { t: number; topic: string; speaker_as_heard?: string; stated_role?: string }
 type Minutes = {
@@ -56,6 +56,8 @@ type Meeting = {
   summary: string
   confidence: string
   tags: string[]
+  time_by_tag_s?: Record<string, number>
+  topics_span_s?: number
   recording: { duration_s: number; duration: string; words_approx: number } | null
   counts: Record<string, number>
   town_published: TownDoc[]
@@ -375,13 +377,42 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
         </>
       )}
 
+      {/* WHERE THIS MEETING'S TIME WENT. TJ: "show the breakdown of time per meeting on
+          the individual meeting minutes page". Same derivation as the board-level view:
+          topic spans from the captions, credited to each of a topic's tags. */}
+      {m.time_by_tag_s && Object.keys(m.time_by_tag_s).length > 0 && (
+        <>
+          <H2>Where the time went</H2>
+          <p className="text-xs mb-2" style={{ color: 'var(--text-muted)' }}>
+            Minutes of recording by subject, from the topic spans below. A topic with two subjects counts toward both.
+          </p>
+          <ul className="grid gap-x-8 gap-y-1 sm:grid-cols-2 max-w-3xl">
+            {Object.entries(m.time_by_tag_s).slice(0, 10).map(([t, sec]) => {
+              const max = Object.values(m.time_by_tag_s!)[0] || 1
+              const span = m.topics_span_s || m.recording?.duration_s || 1
+              return (
+                <li key={t} className="text-xs">
+                  <div className="flex justify-between gap-2">
+                    <a className="underline" href={`/what-was-said?tag=${t}`} style={{ color: 'var(--series-cost)' }}>{t.replace(/-/g, ' ')}</a>
+                    <span className="tnum" style={{ color: 'var(--text-secondary)' }}>{Math.round(sec / 60)} min · {Math.round(100 * sec / span)}%</span>
+                  </div>
+                  <div className="h-1.5 rounded mt-0.5" style={{ background: 'var(--surface-3)' }}>
+                    <div className="h-1.5 rounded" style={{ width: `${Math.round(100 * sec / max)}%`, background: 'var(--series-cost)' }} />
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        </>
+      )}
+
       <H2>The whole meeting, in order</H2>
       <ol className="space-y-1">
         {mm.topics.map((t, i) => (
           <li key={i} className="text-sm flex flex-wrap gap-x-3 gap-y-0.5 items-baseline py-1" style={{ borderTop: '1px solid var(--grid)' }}>
             <At url={u} t={t.t_start} />
             <span className="flex-1 min-w-[14rem]">{t.topic}</span>
-            <span className="text-xs whitespace-nowrap" style={{ color: 'var(--text-muted)' }}>{t.resolution} · {hms(t.t_end - t.t_start)} long</span>
+            <span className="text-xs whitespace-nowrap" style={{ color: 'var(--text-muted)' }}>{t.resolution} · {hms(t.t_end - t.t_start)} long{(t.tags || []).length ? ' · ' + t.tags!.map(x => x.replace(/-/g, ' ')).join(', ') : ''}</span>
           </li>
         ))}
       </ol>
