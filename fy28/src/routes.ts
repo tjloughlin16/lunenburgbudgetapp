@@ -525,7 +525,7 @@ const ALIASES: Record<string, Tab> = {
   'who-leaves': 'outflow', 'residents-by-district': 'outflow',
   'where-students-go': 'outflow',
   'what-special-education-costs': 'spedcost', 'sped-cost': 'spedcost',
-  'circuit-breaker': 'spedcost', 'out-of-district-tuition': 'spedcost',
+  'out-of-district-tuition': 'spedcost',
   'sped-money': 'spedcost',
   // NOT 'peers' meaning the older sources/analyses/peer-districts.md -- that document is
   // about what comparable districts CUT, it is reachable from /reports, and it is a
@@ -598,7 +598,7 @@ const ALIASES: Record<string, Tab> = {
   'ap-exams': 'ap', ap: 'ap', 'advanced-placement': 'ap', 'ap-courses': 'ap', 'ap-coursework': 'ap', 'ap-scores': 'ap',
   'circuit-breaker': 'circuitbreaker', circuitbreaker: 'circuitbreaker', 'special-education-reimbursement': 'circuitbreaker', 'sped-reimbursement': 'circuitbreaker',
   'who-is-in-the-schools': 'enrollment', enrollment: 'enrollment', enrolment: 'enrollment',
-  headcount: 'enrollment', 'student-count': 'enrollment', 'how-many-students': 'enrollment',
+  'student-count': 'enrollment', 'how-many-students': 'enrollment',
   'which-grades-students-leave': 'attrition', attrition: 'attrition',
   'student-attrition': 'attrition', 'which-grades-lose-students': 'attrition',
   'declining-enrollment': 'attrition', 'enrollment-decline': 'attrition',
