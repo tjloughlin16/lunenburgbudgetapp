@@ -164,6 +164,8 @@ function TransportFocus() {
         document the district published that lists this line twice, once as an appropriation
         and once as the {S.fund}.
       </p>
+      {/* Wide on a phone: scrolls inside its own box. */}
+      <div className="overflow-x-auto">
       <table className="w-full text-[13px] tnum">
         <thead>
           <tr style={{ color: 'var(--text-muted)' }}>
@@ -188,6 +190,7 @@ function TransportFocus() {
           ))}
         </tbody>
       </table>
+      </div>
       <p className="text-[13px] leading-relaxed mt-4">{S.establishes}</p>
       <p className="text-[12px] leading-relaxed mt-3 pt-3 border-t"
         style={{ borderColor: 'var(--grid)', color: 'var(--text-muted)' }}>

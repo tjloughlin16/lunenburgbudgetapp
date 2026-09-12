@@ -235,7 +235,7 @@ export function TheRate() {
               <span style={{ color: 'var(--text-secondary)' }}>{u.label}</span>
               <span className="flex-1 border-b border-dotted mx-1 translate-y-[-3px]"
                 style={{ borderColor: 'var(--grid)' }} />
-              <span className="tnum shrink-0" style={{ color: 'var(--text-muted)' }}>
+              <span className="tnum text-right min-w-0" style={{ color: 'var(--text-muted)' }}>
                 {pct(u.share, 0)} of the line · {pct(u.rate, 1)} · {u.basis}
               </span>
             </div>

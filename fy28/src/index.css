@@ -564,3 +564,13 @@ details[open] > summary .conc-chev { transform: rotate(90deg); }
     }
   }
 }
+
+/* NOTHING PUSHES THE PAGE SIDEWAYS ON A PHONE. Two traps that did, found by
+   scripts/check_phone_width.sh rather than by eye. A grid item's automatic minimum width
+   is its content width, so one wide table inside a card widened every card in the grid
+   and the page with them; and a long URL or code token has no break opportunity, so an
+   address list on /agents was wider than the screen. Wide things scroll themselves --
+   that is what overflow-x-auto on a table wrapper is for -- and nothing else gets to. */
+.grid > * { min-width: 0; }
+a, code { overflow-wrap: anywhere; }
+body { overflow-wrap: break-word; }   /* any other word too long for the line breaks rather than escapes */

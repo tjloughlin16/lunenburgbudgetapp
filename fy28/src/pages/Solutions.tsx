@@ -94,9 +94,10 @@ function Body({ d }: { d: Model }) {
         Eight things the town could actually decide, each priced by the same model. Four change an amount and buy time; four change a growth rate and can end it. Every figure is the model’s, and “positions” is an estimate at the catalogue’s own cost per position.
       </p>
       <div className="grid gap-3 mt-4 md:grid-cols-2">
-        {FUTURES.map(f => (
+        {FUTURES.map((f, i) => (
           <div key={f.id} className="card p-4" style={{ borderLeft: `3px solid ${f.bends ? 'var(--status-good)' : 'var(--text-muted)'}` }}>
-            <div className="flex items-baseline justify-between gap-3">
+            <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Option {i + 1}</p>
+            <div className="flex items-baseline justify-between gap-3 mt-0.5">
               <p className="text-[15px] font-bold">{f.label}</p>
               <span className="text-[10px] font-bold uppercase tracking-widest shrink-0" style={{ color: f.bends ? 'var(--status-good)' : 'var(--text-muted)' }}>{f.bends ? 'bends the curve' : 'buys time'}</span>
             </div>
@@ -133,11 +134,13 @@ function Body({ d }: { d: Model }) {
       </p>
       <div className="mt-3 max-w-3xl">
         {ranked.map(l => (
-          <div key={l.key} className="flex items-baseline gap-3 py-1.5 text-sm" style={{ borderTop: '1px solid var(--grid)' }}>
-            <span className="w-52 shrink-0 font-semibold">{l.label}</span>
-            <span className="grow h-1.5 rounded-full" style={{ background: 'var(--surface-3)' }}><span className="block h-full rounded-full" style={{ width: `${Math.max(0, l.swing / ranked[0].swing) * 100}%`, background: 'var(--series-cost)' }} /></span>
-            <span className="w-16 text-right tnum font-bold shrink-0">{pts(l.swing)}</span>
-            <span className="w-40 text-right text-xs shrink-0 tnum" style={{ color: 'var(--text-muted)' }}>{pct(l.weight, 0)} of budget, +{pct(l.rate, 1)}/yr</span>
+          <div key={l.key} className="py-1.5 text-sm" style={{ borderTop: '1px solid var(--grid)' }}>
+            <div className="flex items-baseline justify-between gap-3">
+              <span className="font-semibold min-w-0">{l.label}</span>
+              <span className="tnum font-bold shrink-0">{pts(l.swing)}</span>
+            </div>
+            <div className="h-1.5 rounded-full mt-1" style={{ background: 'var(--surface-3)' }}><div className="h-full rounded-full" style={{ width: `${Math.max(0, l.swing / ranked[0].swing) * 100}%`, background: 'var(--series-cost)' }} /></div>
+            <div className="text-xs mt-0.5 tnum" style={{ color: 'var(--text-muted)' }}>{pct(l.weight, 0)} of budget, growing {pct(l.rate, 1)} a year</div>
           </div>))}
       </div>
       <p className="text-sm mt-2 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>

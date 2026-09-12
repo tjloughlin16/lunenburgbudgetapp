@@ -259,7 +259,7 @@ export default function App() {
         style={{ background: 'color-mix(in srgb, var(--surface-2) 92%, transparent)',
                  borderColor: 'var(--grid)' }}>
         <nav aria-label="Sections"
-          className="mx-auto max-w-6xl px-4 h-10 flex items-center gap-2">
+          className="mx-auto max-w-6xl px-4 h-10 flex items-center gap-2 overflow-x-hidden">
           {/* The site outgrew its name. It was "Lunenburg FY28" when it was a projection
               of one budget year; it is now an argument about why the year keeps
               recurring and what would stop it, and the address people will type is
@@ -356,7 +356,12 @@ export default function App() {
               phone where other things are not: the claim this site rests on is that a
               resident can check it, and evidence reachable only on a desktop is a weaker
               claim than it sounds. */}
-          <div className="flex items-center gap-1.5 ml-auto min-w-0 shrink-0">
+          {/* SCROLLS ITSELF on a phone. With Search, Sources and the two crisis boards this
+              group is wider than a 400px screen, and `shrink-0` made the whole page scroll
+              sideways instead of this row. TJ: "the wide things like tables need to scroll
+              themselves". Same treatment as the chapter strip beside it. */}
+          <div className="no-scrollbar flex items-center gap-1.5 ml-auto min-w-0 overflow-x-auto
+                          overscroll-x-contain">
             {/* Search sits beside Sources for the same reason Sources is here: it backs
                 every area. A magnifier alone is the one icon everybody reads, so on a
                 phone the word goes and the glyph stays. */}

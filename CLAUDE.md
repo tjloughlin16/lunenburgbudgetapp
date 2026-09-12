@@ -863,6 +863,7 @@ immediately before writing, and preserve the file's existing newline convention.
 
     python3 scripts/check_generated.py      # EVERY generator still reproduces its output
     python3 scripts/build_sitemap.py        # the sitemap, generated — pages AND endpoints
+    bash scripts/check_phone_width.sh       # every route at a TRUE 400px viewport; fails if any page scrolls sideways
     python3 scripts/check_github_mirror.py  # the fallback for agents that cannot reach the site
     python3 scripts/check_sitemap.py        # the live sitemap, and every URL in it, answers
     python3 scripts/check_sitemap.py --submit    # ...and tell the IndexNow engines it changed
