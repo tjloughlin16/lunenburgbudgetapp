@@ -19,6 +19,9 @@ THE ORDER, AND WHY IT CANNOT MOVE
   3. extract_minutes     text out of anything new (Word and Excel too)
   3b. agenda previews    the UPCOMING notice: what is on a policy-board agenda dated today
                          or later, quoted from the agenda, with a Facebook text to paste
+  3c. watch_feeds        the town's news flash and alert feeds; linked, never republished
+  3d. watch_documents    new documents on the district's budget page and the town's finance
+                         pages, through the crawlers that built the mirrors
   4. watch_youtube       what appeared on the town's channel (the RSS feed, no key)
   5. classification      which board a new video belongs to, from its title
   6. transcripts         captions for recent meetings -- re-tried every run, because
@@ -58,6 +61,7 @@ MEETING_EVENTS = os.path.join(ROOT, 'sources', 'data', 'meeting-watch-events.csv
 YOUTUBE_EVENTS = os.path.join(ROOT, 'sources', 'data', 'youtube-watch-events.csv')
 FEED_EVENTS = os.path.join(ROOT, 'sources', 'data', 'feed-watch-events.csv')
 FEED_SOURCES = os.path.join(ROOT, 'sources', 'data', 'feed-sources.csv')
+DOC_EVENTS = os.path.join(ROOT, 'sources', 'data', 'document-watch-events.csv')
 TRANSCRIPT_INDEX = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
 RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
@@ -147,6 +151,7 @@ def whats_new(as_of, days=14):
     ours.sort(key=lambda x: (x['written'], x['date']), reverse=True)
     tr = [t for t in read_csv(TRANSCRIPT_INDEX) if (t.get('fetched_at') or '')[:10] >= since]
     fe = [e for e in read_csv(FEED_EVENTS) if e['first_seen'] >= since]
+    de = [e for e in read_csv(DOC_EVENTS) if e['first_seen'] >= since]
     srcs = read_csv(FEED_SOURCES)
     return {
         'category': 'announcement',
@@ -162,11 +167,13 @@ def whats_new(as_of, days=14):
                               key=lambda t: (t['fetched'], t['date']), reverse=True),
         'our_minutes': ours,
         'feeds': sorted(fe, key=lambda e: (e['published'], e['first_seen']), reverse=True),
+        'documents': sorted([{**e, 'url': '/docs/' + e['local'][len('sources/'):] if e.get('local', '').startswith('sources/') else e.get('upstream', '')} for e in de],
+                            key=lambda e: e['first_seen'], reverse=True),
         'feed_sources': {'watched': sum(1 for s in srcs if s.get('url')),
                          'without_a_feed': [s['source'] for s in srcs if not s.get('url')]},
         'counts': {'agendas': sum(1 for e in me if e['kind'] == 'agenda'),
                    'minutes': sum(1 for e in me if e['kind'] == 'minutes'),
-                   'videos': len(ye), 'transcripts': len(tr), 'our_minutes': len(ours), 'feeds': len(fe)},
+                   'videos': len(ye), 'transcripts': len(tr), 'our_minutes': len(ours), 'feeds': len(fe), 'documents': len(de)},
     }
 
 
@@ -212,7 +219,7 @@ def main():
 
     if a.check:
         bad = 0
-        for s, args in (('watch_meetings.py', ['--check']), ('watch_youtube.py', ['--check']), ('watch_feeds.py', ['--check']),
+        for s, args in (('watch_meetings.py', ['--check']), ('watch_youtube.py', ['--check']), ('watch_feeds.py', ['--check']), ('watch_documents.py', ['--check']),
                         ('write_recording_minutes.py', ['--check']), ('write_agenda_preview.py', ['--check']),
                         ('build_notices.py', ['--check']), ('build_meeting_feed.py', ['--check'])):
             bad += py(s, *args, check=False).returncode != 0
@@ -236,6 +243,12 @@ def main():
         py('build_minutes_searchable.py')
         if not a.no_minutes:
             py('write_agenda_preview.py', '--upcoming', '--as-of', a.as_of, check=False)
+
+    # 3d. New DOCUMENTS on the district's budget page and the town's finance pages --
+    # the listing pages the archive was built from, re-walked; a shrunken index is
+    # refused. TJ: "look for new documents posted from the school committee (budget
+    # related), as well as on the town pages from the areas we've found."
+    py('watch_documents.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
 
     # 3c. The town's and the community's feeds -- news, alerts, registrations. Linked and
     # attributed, never republished (QUEUE 13, 14).

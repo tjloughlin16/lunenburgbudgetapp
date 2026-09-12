@@ -44,6 +44,7 @@ type WhatsNew = {
   as_of: string
   window_days: number
   feeds?: FeedItem[]
+  documents?: { first_seen: string; folder: string; label: string; upstream: string; url: string }[]
   feed_sources?: { watched: number; without_a_feed: string[] }
   videos: Video[]
   our_minutes: Ours[]
@@ -149,6 +150,20 @@ export function ThisWeek() {
                   </li>
                 ))}
               </ul>}
+          {(n.documents || []).length > 0 && (
+            <>
+              <h3 className="text-sm font-semibold mt-4">New documents</h3>
+              <ul className="space-y-1.5 mt-1">
+                {(n.documents || []).map(d => (
+                  <li key={d.upstream} className="text-sm flex flex-wrap gap-x-3 items-baseline">
+                    <span className="tnum text-xs w-24 shrink-0" style={{ color: 'var(--text-secondary)' }}>{d.first_seen}</span>
+                    <a className="underline" style={{ color: 'var(--series-cost)' }} href={d.url}>{d.label}</a>
+                    <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{d.folder.replace(/-/g, ' ')} · <a className="underline" href={d.upstream} target="_blank" rel="noreferrer">publisher&rsquo;s copy</a></span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
           {n.feed_sources && n.feed_sources.without_a_feed.length > 0 && (
             <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>
               {n.feed_sources.watched} feed{n.feed_sources.watched === 1 ? '' : 's'} watched. Not yet watchable, because they publish only on Facebook or by email: {n.feed_sources.without_a_feed.join(', ')}.
