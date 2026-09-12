@@ -134,6 +134,42 @@ def minutes_targets(rows):
     return out
 
 
+MEETINGS_INDEX = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
+
+
+def adopt_new_meeting_documents(as_of):
+    """Rows the watcher first saw today, appended to sources/meetings/index.csv with an
+    empty path, for `fetch_agendas.py --backfill` to fetch. Never removes a row."""
+    import re
+    events = [e for e in read_csv(MEETING_EVENTS) if e['first_seen'] == as_of]
+    if not events:
+        return 0
+    cols = ['board', 'board_id', 'date', 'kind', 'file_id', 'path', 'url']
+    rows = read_csv(MEETINGS_INDEX)
+    held = {(r['file_id'], r['kind']) for r in rows}
+    board_id = {r['board']: r['board_id'] for r in rows if r.get('board_id')}
+    added = 0
+    for e in events:
+        if (e['file_id'], e['kind']) in held:
+            continue
+        rows.append({'board': e['board'], 'board_id': board_id.get(e['board'], ''),
+                     'date': e['meeting_date'], 'kind': e['kind'], 'file_id': e['file_id'],
+                     'path': '', 'url': e['url']})
+        held.add((e['file_id'], e['kind']))
+        added += 1
+    if added:
+        rows.sort(key=lambda r: (r['board'], r['date'], r['kind']))
+        tmp = MEETINGS_INDEX + '.tmp'
+        with open(tmp, 'w', newline='', encoding='utf-8') as fh:
+            w = csv.DictWriter(fh, fieldnames=cols)
+            w.writeheader()
+            for r in rows:
+                w.writerow({c: r.get(c, '') for c in cols})
+        os.replace(tmp, MEETINGS_INDEX)
+        print('adopted %d new meeting document(s) into the catalogue' % added)
+    return added
+
+
 def whats_new(as_of, days=14):
     """The last two weeks of every event log, as one announcement payload."""
     since = (dt.date.fromisoformat(as_of) - dt.timedelta(days=days)).isoformat()
@@ -237,8 +273,13 @@ def main():
     # 1-3. The town's documents.
     py('watch_meetings.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))
     if not a.dry_run:
-        year = a.as_of[:4]
-        py('fetch_agendas.py', '--from', year, '--to', year)
+        # THE WATCHER'S LISTING IS THE FETCHER'S LIST. The fetcher used to re-list all 51
+        # boards a minute after the watcher had -- the same requests twice. Now the
+        # documents the watcher saw today are adopted into the catalogue with no path,
+        # and `--backfill` fetches exactly those rows and fills the path in.
+        n = adopt_new_meeting_documents(a.as_of)
+        if n:
+            py('fetch_agendas.py', '--backfill')
         py('extract_minutes.py')
         py('build_minutes_searchable.py')
         if not a.no_minutes:
