@@ -1,7 +1,7 @@
 import { LABEL, type Tab } from '../routes'
 import { abs } from '../lib/abs'
 import {
-  Body, Conclusions, H2, H3, NotEstablished, Provenance, ReportShell, Section, Stat, useReport,
+  Body, Conclusions, H2, H3, Provenance, ReportShell, Section, Stat, useReport,
   type Conclusion, type Source,
 } from '../components/report'
 
@@ -279,7 +279,13 @@ function BigPicture({ b }: { b: Big }) {
           <ChangeFact c={f.admin_per_pupil} unit="per pupil" money label="Administration spending" what={`Dollars, not people — total spending per pupil moved ${signed(f.admin_per_pupil.total_per_pupil.pct ?? 0, x => pct(x, 0))} in the same years.`} />
           <Fact value={`${f.athletes.last.toLocaleString('en-US')} athletes`} sub={<><strong>Season participations</strong>, {FY(f.athletes.last_fy)} — {signed(f.athletes.change)} ({signed(f.athletes.pct, x => pct(x, 0))}) since {FY(f.athletes.first_fy)}, the {f.athletes.years} years the district has published. A two-sport athlete counts twice.</>} />
         </div>
-        <NotEstablished rows={b.not_established} closes="The district’s position control list by FTE and funding source, for any two years ten apart." />
+        {/* NOT A BLOCK OF PROSE. TJ: "we need to cut big blocks of text like this from the
+            one big report (subtle links to answer are better)". The three limits behind this
+            page -- no administrator headcount, three years of athletes, no fund-per-teacher
+            -- are rows in the gaps registry, which is where a reader who wants them goes. */}
+        <p className="text-xs mt-4 max-w-3xl" style={{ color: 'var(--text-muted)' }}>
+          Not on this page because nobody publishes it: how many administrators, athletes over ten years, which fund pays which teacher — {L('/what-we-cannot-answer', 'what we cannot answer')} has each one and the document that would settle it.
+        </p>
         <Provenance sources={b.sources} />
       </Section>
     </>
