@@ -878,6 +878,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/classify_document_basis.py   # what produced each document's figures
     python3 scripts/extract_athletics_history.py # athletics, both sides, checked against its source
     python3 scripts/verify_athletics.py          # every figure in the athletics analysis
+    python3 scripts/build_big_picture.py         # the one big report: the hole by year, overrides, drivers, building, the facts
+    python3 scripts/build_big_picture.py --check # ...and fail if it is stale
     python3 scripts/build_enrollment.py          # who is in the schools: DESE's headcount, FY1994 to today
     python3 scripts/verify_enrollment.py         # ...every figure in its conclusions, recomputed
     python3 scripts/build_circuit_breaker.py     # the circuit breaker, FY2006 to today

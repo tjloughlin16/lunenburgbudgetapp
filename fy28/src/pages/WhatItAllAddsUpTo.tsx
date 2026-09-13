@@ -1,14 +1,26 @@
 import { LABEL, type Tab } from '../routes'
 import { abs } from '../lib/abs'
 import {
-  Body, Conclusions, H2, H3, ReportShell, Section, Stat, useReport,
-  type Conclusion,
+  Body, Conclusions, H2, H3, NotEstablished, Provenance, ReportShell, Section, Stat, useReport,
+  type Conclusion, type Source,
 } from '../components/report'
 
 const TAB: Tab = 'addsup'
 const DATA = '/data/what-it-all-adds-up-to.json'
 
-/** ONE REPORT OVER ALL OF THEM.
+/** ONE REPORT OVER ALL OF THEM -- rebuilt on 13 September 2026 to open with THE NUMBERS
+ *  THAT FRAME THE PROBLEM rather than with a digest of sixteen reports' conclusions. TJ:
+ *  "change the one big report to something more meaningful to people... deficit per year
+ *  each year for 5 years; how many years a 2m, 5m override covers; key drivers...; how
+ *  many commercial developments per year...; some 'high level facts'... census... total
+ *  staff/FTEs... total students (and change), total athletes (and change)."
+ *
+ *  Those five sections read `/data/big-picture.json`, written by build_big_picture.py from
+ *  the model, DESE's district files and the Census payload. The digest of every report's
+ *  conclusions stays, below them, because it is generated and free.
+ *
+ *  THE ORIGINAL DESIGN NOTE, still true of the digest half:
+ *
  *
  *  WHAT IT IS FOR. TJ: "across all the drill-ins, I want to put together a sort of ONE
  *  REPORT TO RULE THEM ALL that captures the most important conclusions... The data is not
@@ -90,24 +102,183 @@ type Payload = {
   }
 }
 
+type Change = { first_fy: number; last_fy: number; first: number; last: number; change: number; pct: number | null; grain?: string }
+type Big = {
+  about: string; grain: string
+  hole: { years: { fy: number; short: number; cut: number; fte: number; cum_fte: number; takes: string[] }[]; total: number; average: number; note: string }
+  overrides: { rows: { amount: number; years: number; reopens_fy: number | null; on_average_home: number; townwide: number; townwide_on_average_home: number }[]; school_share: number; first_gap: number; note: string }
+  stabilise: { target: number; others: number; salary_rate: number; contract: number; possible: boolean; shrink_per_year: number; positions_per_year: number; cost_per_fte: number; headcount: number; after10: number; after20: number; positions_after10: number; note: string }
+  drivers: { rows: { key: string; label: string; who: string; share: number; rate: number; pull: number }[]; blended: number; cap: number; spread_over_cap: number; top2_share: number; note: string }
+  development: { target: number; value: number; tax_rate: number; per_development: number; development_value: number; development_mix: string; at_once: number; paces: { per_year: number; years: number | null }[]; current_pace_developments: number; share_of_town: number; note: string }
+  facts: {
+    census: { vintage: number; window: string; households_with_child: { share: number; share_moe: number; n: number; of: number }; seniors: { share: number; share_moe: number; n: number }; children: { share: number; share_moe: number; n: number } }
+    students: Change; teachers: Change; paras: Change; low_income: Change; disabilities: Change
+    state_aid: { aid: number; appropriation: number; share: number; grain: string }
+    admin_per_pupil: Change & { total_per_pupil: Change }
+    athletes: { first_fy: number; last_fy: number; first: number; last: number; change: number; pct: number; years: number; grain: string }
+  }
+  not_established: string[]; sources: Source[]
+}
+
+const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US')
+const usdM = (n: number) => '$' + (n / 1e6).toFixed(n % 1e6 ? 1 : 0) + 'M'
+const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`
+const pts = (x: number) => `${(x * 100).toFixed(2)} pts`
+const n1 = (x: number) => x.toFixed(1)
+const signed = (x: number, f: (n: number) => string = n => String(n)) => (x > 0 ? '+' : x < 0 ? '−' : '') + f(Math.abs(x))
+const FY = (fy: number) => 'FY' + String(fy).slice(2)
+const yrs = (n: number) => `${n} year${n === 1 ? '' : 's'}`
+
+/** A fact: the metric, then one line saying what it is. Rule 7b's card, with the unit. */
+function Fact({ value, sub, tone }: { value: string; sub: React.ReactNode; tone?: string }) {
+  return (
+    <div className="card p-4">
+      <div className="text-2xl font-bold tnum leading-none" style={{ color: tone ?? 'var(--text-primary)' }}>{value}</div>
+      <div className="text-[13px] mt-2 leading-snug" style={{ color: 'var(--text-secondary)' }}>{sub}</div>
+    </div>
+  )
+}
+
+function ChangeFact({ c, unit, label, what, d = 0, money }: { c: Change; unit: string; label: string; what: string; d?: number; money?: boolean }) {
+  return (
+    <Fact value={`${money ? '$' : ''}${c.last.toLocaleString('en-US', { maximumFractionDigits: d })} ${unit}`}
+      sub={<><strong>{label}</strong>, {FY(c.last_fy)} — {signed(c.change, n => n.toLocaleString('en-US', { maximumFractionDigits: d }))}{c.pct != null ? ` (${signed(c.pct, x => pct(x, 0))})` : ''} since {FY(c.first_fy)}. {what}</>} />
+  )
+}
+
+function BigPicture({ b }: { b: Big }) {
+  const h = b.hole, o = b.overrides, dr = b.drivers, st = b.stabilise, dev = b.development, f = b.facts
+  const top = dr.rows.slice(0, 3)
+  return (
+    <>
+      {/* 1 ------------------------------------------------------------ the hole */}
+      <Section kind="conclusions" id="hole" title="The hole, year by year">
+        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6">
+          <Stat value={usd(h.years[0].short)} tone="var(--status-critical)">short next year, {FY(h.years[0].fy)}, at level service</Stat>
+          <Stat value={usd(h.total)}>over five years, after each year’s cuts stay cut</Stat>
+          <Stat value={n1(h.years[h.years.length - 1].cum_fte)}>positions gone by {FY(h.years[h.years.length - 1].fy)} if it is closed by cutting, in the order the School Committee has said</Stat>
+        </div>
+        <div className="overflow-x-auto mt-5">
+          <table className="text-sm" style={{ minWidth: 620 }}>
+            <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+              <th className="text-left py-1.5 pr-4">year</th><th className="text-right py-1.5 pr-4">short by</th><th className="text-right py-1.5 pr-4">positions cut</th><th className="text-left py-1.5">what goes, largest first</th></tr></thead>
+            <tbody>{h.years.map(y => (
+              <tr key={y.fy} style={{ borderTop: '1px solid var(--grid)' }}>
+                <td className="py-2 pr-4 tnum font-semibold">{FY(y.fy)}</td>
+                <td className="py-2 pr-4 tnum text-right">{usd(y.short)}</td>
+                <td className="py-2 pr-4 tnum text-right">{n1(y.fte)}</td>
+                <td className="py-2" style={{ color: 'var(--text-secondary)' }}>{y.takes.join(' · ')}</td></tr>))}</tbody>
+          </table>
+        </div>
+        <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>{h.note} Positions are the catalogue’s own FTE for each item cut, and are an estimate.</p>
+      </Section>
+
+      {/* 2 ---------------------------------------------------- what an override buys */}
+      <Section kind="categorical" id="override" title="What an override buys">
+        <div className="grid gap-3 mt-5 sm:grid-cols-2 max-w-3xl">
+          {o.rows.map(r => (
+            <div key={r.amount} className="card p-4">
+              <div className="flex items-baseline gap-2">
+                <span className="text-2xl font-bold tnum leading-none">{usdM(r.amount)}</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>school override, once</span>
+              </div>
+              <div className="mt-3 text-sm"><strong className="tnum">{yrs(r.years)}</strong> before the gap reopens{r.reopens_fy ? `, in ${FY(r.reopens_fy)}` : ''}</div>
+              <div className="text-[13px] mt-1 tnum" style={{ color: 'var(--text-secondary)' }}>About {usd(r.on_average_home)} a year on the average tax bill, permanently. As a general override it would have to be {usdM(r.townwide)}, about {usd(r.townwide_on_average_home)} a year, because the schools take {pct(o.school_share, 0)} of the town budget.</div>
+            </div>))}
+        </div>
+        <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>{o.note}</p>
+      </Section>
+
+      {/* 3 ------------------------------------------------------------ what drives it */}
+      <Section kind="categorical" id="drivers" title="What drives it">
+        <Body>
+          Costs grow <strong className="tnum">{pct(dr.blended, 2)}</strong> a year against a levy that grows <strong className="tnum">{pct(dr.cap, 1)}</strong>. Three lines carry {pct(top.reduce((s, r) => s + r.pull, 0) / dr.rows.filter(r => r.pull > 0).reduce((s, r) => s + r.pull, 0), 0)} of that excess, and none of the three is set by the School Committee.
+        </Body>
+        <div className="mt-4 max-w-3xl">
+          {dr.rows.map(r => (
+            <div key={r.key} className="py-1.5 text-sm" style={{ borderTop: '1px solid var(--grid)' }}>
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="font-semibold min-w-0">{r.label} <span className="font-normal text-xs" style={{ color: 'var(--text-muted)' }}>— {r.who}</span></span>
+                <span className="tnum font-bold shrink-0">{pts(r.pull)}</span>
+              </div>
+              <div className="h-1.5 rounded-full mt-1" style={{ background: 'var(--surface-3)' }}><div className="h-full rounded-full" style={{ width: `${Math.max(0, r.pull / dr.rows[0].pull) * 100}%`, background: 'var(--series-cost)' }} /></div>
+              <div className="text-xs mt-0.5 tnum" style={{ color: 'var(--text-muted)' }}>{pct(r.share, 0)} of spending, growing {pct(r.rate, 1)} a year</div>
+            </div>))}
+        </div>
+        <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>{dr.note} The dials are on {L('/bend-the-curve', 'Bend the curve')}.</p>
+      </Section>
+
+      {/* 3b ------------------------------------- when does cutting alone stabilise it */}
+      <Section kind="categorical" id="stabilise" title="When cutting alone would stabilise it">
+        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6">
+          <Stat value={n1(st.positions_per_year)} tone="var(--status-critical)">positions fewer every year, for ever, to hold cost growth to the {pct(st.target, 2)} the revenue grows — if everyone kept the {pct(st.contract, 0)} contract raise</Stat>
+          <Stat value={pct(st.after10, 0)}>of the staff gone in ten years on that path — about {st.positions_after10} of roughly {st.headcount} positions</Stat>
+          <Stat value={st.possible ? pct(st.salary_rate, 1) : 'None'}>{st.possible ? 'is the raise that would balance it with no cuts' : `raise balances it: the other lines alone grow ${pct(st.others, 2)} of the budget a year, more than the revenue does, so even a pay freeze leaves a gap`}</Stat>
+        </div>
+        <Body>
+          It never stabilises on its own. A cut shifts the level; the rates reopen it the next year. The only cut that behaves like a rate is one made every year — which is what the first figure is. {st.note}
+        </Body>
+      </Section>
+
+      {/* 4 ------------------------------------------------- what building would do */}
+      <Section kind="categorical" id="building" title={`What it takes to bring in ${usdM(dev.target)} a year`}>
+        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6">
+          <Stat value={usdM(dev.value)}>of new taxable value, at ${dev.tax_rate.toFixed(2)} per $1,000 — {pct(dev.share_of_town, 1)} added to the whole town</Stat>
+          <Stat value={n1(dev.at_once)}>typical developments, if they all arrived at once — each about {usdM(dev.development_value)} of value paying {usd(dev.per_development)} a year</Stat>
+        </div>
+        <div className="grid gap-3 mt-5 sm:grid-cols-3 max-w-3xl">
+          {dev.paces.map(p => (
+            <div key={p.per_year} className="card p-4">
+              <div className="text-2xl font-bold tnum leading-none">{p.years != null ? yrs(p.years) : '—'}</div>
+              <div className="text-[13px] mt-2" style={{ color: 'var(--text-secondary)' }}>at <strong>{p.per_year} developments a year</strong>, every year, compounding in the levy</div>
+            </div>))}
+        </div>
+        <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>A typical development here is {dev.development_mix}. {dev.note} That pace is worth about {n1(dev.current_pace_developments)} such developments a year in value. The full working is on {L('/development', 'development')}.</p>
+      </Section>
+
+      {/* 5 ------------------------------------------------------------- the facts */}
+      <Section kind="categorical" id="facts" title="The facts any solution has to fit">
+        <Body>Not conclusions — counts, from the Census Bureau and the state, with their grain. Ten years apart where the state publishes ten years.</Body>
+        <div className="grid gap-3 mt-5 sm:grid-cols-2 lg:grid-cols-3">
+          <Fact value={pct(f.census.households_with_child.share / 100, 0)} sub={<><strong>of households have a child under 18</strong> — {Math.round(f.census.households_with_child.n).toLocaleString('en-US')} of {Math.round(f.census.households_with_child.of).toLocaleString('en-US')}, ± {pct(f.census.households_with_child.share_moe / 100, 1)}. ACS {f.census.window}.</>} />
+          <Fact value={pct(f.census.seniors.share / 100, 0)} sub={<><strong>of residents are 65 or over</strong> — {Math.round(f.census.seniors.n).toLocaleString('en-US')}, ± {pct(f.census.seniors.share_moe / 100, 1)}. Against {pct(f.census.children.share / 100, 0)} under 18.</>} />
+          <ChangeFact c={f.students} unit="students" label="Students" what="Flat for a decade." />
+          <Fact value={pct(f.low_income.last, 0)} sub={<><strong>of students are low-income</strong>, {FY(f.low_income.last_fy)} — up from {pct(f.low_income.first, 0)} in {FY(f.low_income.first_fy)}, as DESE counts it — {signed(f.low_income.pct ?? 0, x => pct(x, 0))} in a decade of flat enrolment.</>} />
+          <Fact value={pct(f.disabilities.last, 0)} sub={<><strong>of students have a disability</strong>, {FY(f.disabilities.last_fy)} — from {pct(f.disabilities.first, 0)} in {FY(f.disabilities.first_fy)}, as DESE counts it.</>} />
+          <Fact value={pct(f.state_aid.share, 0)} sub={<><strong>of the school budget is state aid</strong> — {usd(f.state_aid.aid)} of {usd(f.state_aid.appropriation)} in FY26, set in the Governor’s budget, not in town.</>} />
+          <ChangeFact c={f.teachers} unit="teacher FTE" label="Teachers" what="Assignments, not people; grant-paid and town-paid alike." d={1} />
+          <ChangeFact c={f.paras} unit="para FTE" label="Paraprofessionals" what="The line that grew." />
+          <ChangeFact c={f.admin_per_pupil} unit="per pupil" money label="Administration spending" what={`Dollars, not people — total spending per pupil moved ${signed(f.admin_per_pupil.total_per_pupil.pct ?? 0, x => pct(x, 0))} in the same years.`} />
+          <Fact value={`${f.athletes.last.toLocaleString('en-US')} athletes`} sub={<><strong>Season participations</strong>, {FY(f.athletes.last_fy)} — {signed(f.athletes.change)} ({signed(f.athletes.pct, x => pct(x, 0))}) since {FY(f.athletes.first_fy)}, the {f.athletes.years} years the district has published. A two-sport athlete counts twice.</>} />
+        </div>
+        <NotEstablished rows={b.not_established} closes="The district’s position control list by FTE and funding source, for any two years ten apart." />
+        <Provenance sources={b.sources} />
+      </Section>
+    </>
+  )
+}
+
 const L = (href: string, t: string) => (
   <a className="underline" style={{ color: 'var(--series-cost)' }} href={abs(href)}>{t}</a>
 )
 
 export function WhatItAllAddsUpTo() {
   const { d, err } = useReport<Payload>('what-it-all-adds-up-to.json')
+  const big = useReport<Big>('big-picture.json')
   const title = LABEL[TAB]
-  if (!d) return <ReportShell tab={TAB} title={title} err={err} loading={!err}
+  if (!d || !big.d) return <ReportShell tab={TAB} title={title} err={err ?? big.err} loading={!(err ?? big.err)}
     dataUrl={DATA} />
 
   const t = d.totals
 
   return (
-    <ReportShell tab={TAB} title={title} dataUrl={DATA}
-      standfirst={`Every conclusion these reports reach, in one place — read out of the reports that computed them.`}>
+    <ReportShell tab={TAB} title={title} dataUrl="/data/big-picture.json"
+      standfirst="The hole year by year, what an override buys, what drives it, what building would do, and the facts any solution has to fit — then every conclusion the reports reach, in one place.">
 
-      {/* ------------------------------------------------ conclusions (rule 7b, first) */}
-      <Section kind="conclusions" id="headlines"
+      <BigPicture b={big.d} />
+
+      {/* ------------------------------------------------ the digest of every report */}
+      <Section kind="categorical" id="headlines"
         title={`The ${t.with_conclusions} findings a resident should have first`}>
         <Body>
           One from each report &mdash; the one that report leads with. Everything else each

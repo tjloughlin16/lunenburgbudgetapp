@@ -1,0 +1,394 @@
+{
+ "about": "The numbers that frame the problem, on one page: the hole year by year, what an override buys, what drives it, what building would do, and the facts about the town and its schools that any solution has to fit.",
+ "development": {
+  "at_once": 23.1,
+  "current_pace_developments": 9.3,
+  "current_pace_value": 27797081,
+  "development_mix": "35% small shop or office \u00b7 15% restaurant \u00b7 10% self-storage facility \u00b7 15% retail plaza \u00b7 10% solar array \u00b7 15% light industrial / warehouse",
+  "development_value": 3005000,
+  "note": "New growth adds to the levy limit permanently and then grows 2.5% a year, so a steady pace compounds. The town budgets about $400,000 of new growth a year today, most of it houses \u2014 which pay the same tax and send children to school.",
+  "paces": [
+   {
+    "per_year": 2,
+    "years": 11
+   },
+   {
+    "per_year": 4,
+    "years": 6
+   },
+   {
+    "per_year": 8,
+    "years": 3
+   }
+  ],
+  "per_development": 43242,
+  "share_of_town": 0.0279,
+  "target": 1000000,
+  "tax_rate": 14.39,
+  "value": 69492703
+ },
+ "drivers": {
+  "blended": 0.05178,
+  "cap": 0.025,
+  "note": "A line matters in proportion to its share of spending times how far its growth exceeds the 2.5% levy cap (rule 4). Neither number alone means anything: the biggest line is not the biggest driver.",
+  "rows": [
+   {
+    "amount": 4019071,
+    "key": "health",
+    "label": "Health insurance",
+    "pull": 0.00967,
+    "rate": 0.09,
+    "share": 0.1487,
+    "who": "the Town buys the insurance"
+   },
+   {
+    "amount": 5466201,
+    "key": "sped",
+    "label": "Special education, in district",
+    "pull": 0.00807,
+    "rate": 0.06487743183668555,
+    "share": 0.2023,
+    "who": "each child\u2019s plan, and the law"
+   },
+   {
+    "amount": 13409674,
+    "key": "salaries",
+    "label": "Salaries",
+    "pull": 0.00744,
+    "rate": 0.04,
+    "share": 0.4962,
+    "who": "bargained with the unions"
+   },
+   {
+    "amount": 1053360,
+    "key": "transport",
+    "label": "Transportation",
+    "pull": 0.00136,
+    "rate": 0.06,
+    "share": 0.039,
+    "who": "contracted"
+   },
+   {
+    "amount": 605511,
+    "key": "utilities",
+    "label": "Utilities",
+    "pull": 0.00056,
+    "rate": 0.05,
+    "share": 0.0224,
+    "who": "the market"
+   },
+   {
+    "amount": 1772053,
+    "key": "other",
+    "label": "Everything else",
+    "pull": 0.00033,
+    "rate": 0.03,
+    "share": 0.0656,
+    "who": "the School Committee"
+   },
+   {
+    "amount": 700142,
+    "key": "sped_tuition",
+    "label": "Out-of-district special education",
+    "pull": -0.00065,
+    "rate": 0.0,
+    "share": 0.0259,
+    "who": "state rates and which children enrol"
+   }
+  ],
+  "spread_over_cap": 0.02678,
+  "top2_share": 0.647
+ },
+ "facts": {
+  "admin_per_pupil": {
+   "change": 164.0,
+   "first": 417.0,
+   "first_fy": 2015,
+   "grain": "administration spending per pupil, DESE \u2014 dollars, not people",
+   "last": 581.0,
+   "last_fy": 2025,
+   "pct": 0.3933,
+   "total_per_pupil": {
+    "change": 5603.0,
+    "first": 12424.0,
+    "first_fy": 2015,
+    "last": 18027.0,
+    "last_fy": 2025,
+    "pct": 0.451
+   }
+  },
+  "athletes": {
+   "change": -26.0,
+   "first": 675.0,
+   "first_fy": 2024,
+   "grain": "participations, by season \u2014 a two-sport athlete counts twice",
+   "last": 649.0,
+   "last_fy": 2026,
+   "pct": -0.0385,
+   "years": 3
+  },
+  "census": {
+   "children": {
+    "n": 2736.0,
+    "share": 23.17858353100644,
+    "share_moe": 3.638284984151937
+   },
+   "households_with_child": {
+    "n": 1477.0,
+    "of": 4529.0,
+    "share": 32.61205564142195,
+    "share_moe": 4.031057799335084
+   },
+   "seniors": {
+    "n": 1979.0,
+    "share": 16.765503219247712,
+    "share_moe": 2.6208919905548558
+   },
+   "vintage": 2023,
+   "window": "2019\u20132023"
+  },
+  "disabilities": {
+   "change": -0.024,
+   "first": 0.182,
+   "first_fy": 2015,
+   "grain": "share of students with disabilities, DESE",
+   "last": 0.158,
+   "last_fy": 2025,
+   "pct": -0.1319
+  },
+  "low_income": {
+   "change": 0.113,
+   "first": 0.12,
+   "first_fy": 2015,
+   "grain": "share of students DESE counts as low-income",
+   "last": 0.233,
+   "last_fy": 2025,
+   "pct": 0.9417
+  },
+  "paras": {
+   "change": 36.0,
+   "first": 31.0,
+   "first_fy": 2015,
+   "grain": "paraprofessional FTE, DESE",
+   "last": 67.0,
+   "last_fy": 2025,
+   "pct": 1.1613
+  },
+  "state_aid": {
+   "aid": 9349335,
+   "appropriation": 26572288,
+   "grain": "Chapter 70 aid against the school appropriation, FY26",
+   "share": 0.3518
+  },
+  "students": {
+   "change": 6.0,
+   "first": 1557.0,
+   "first_fy": 2015,
+   "grain": "DESE student headcount, October 1",
+   "last": 1563.0,
+   "last_fy": 2025,
+   "pct": 0.0039
+  },
+  "teachers": {
+   "change": -1.3,
+   "first": 104.7,
+   "first_fy": 2016,
+   "grain": "teacher FTE as DESE counts it \u2014 per assignment, not per person",
+   "last": 103.4,
+   "last_fy": 2026,
+   "pct": -0.0124
+  }
+ },
+ "generated_by": "scripts/build_big_picture.py",
+ "grain": "Dollars from the model the rest of this site runs on; people and children from DESE\u2019s own district files, ten years apart; residents from the Census Bureau\u2019s five-year survey, with its margins.",
+ "hole": {
+  "average": 569654,
+  "note": "Each year\u2019s shortfall after the year before\u2019s cuts stay cut, in the order the School Committee has said it would cut. Level service means the same people, the same programs, the same buildings, one year older.",
+  "order": [
+   "sped",
+   "core_classroom",
+   "literacy",
+   "wellness",
+   "leadership",
+   "advanced",
+   "operations",
+   "technology",
+   "activities",
+   "arts",
+   "athletics"
+  ],
+  "total": 2848272,
+  "years": [
+   {
+    "cum_fte": 2.9,
+    "cut": 641523,
+    "fte": 2.9,
+    "fy": 2028,
+    "short": 632876,
+    "takes": [
+     "Student Device Refresh & Computer Leases",
+     "Remaining Athletics Program (all sports)",
+     "High School Band & Chorus Program"
+    ],
+    "unclosed": 0
+   },
+   {
+    "cum_fte": 3.9,
+    "cut": 603287,
+    "fte": 1.0,
+    "fy": 2029,
+    "short": 556851,
+    "takes": [
+     "Building Maintenance Contracted Services",
+     "Instructional Technology Contracts (per school)",
+     "Grounds Maintenance & Supplies"
+    ],
+    "unclosed": 0
+   },
+   {
+    "cum_fte": 14.7,
+    "cut": 793806,
+    "fte": 10.8,
+    "fy": 2030,
+    "short": 560986,
+    "takes": [
+     "Advanced Placement & Upper-Level Electives",
+     "Library Staff & Materials \u2014 all four schools",
+     "Middle School Exploratory & Elective Block"
+    ],
+    "unclosed": 0
+   },
+   {
+    "cum_fte": 18.2,
+    "cut": 433129,
+    "fte": 3.5,
+    "fy": 2031,
+    "short": 413372,
+    "takes": [
+     "Guidance Counselors (1.0 reduction)",
+     "1.0 Reading Specialist \u2014 Primary",
+     "Social Workers (1.0 reduction)"
+    ],
+    "unclosed": 0
+   },
+   {
+    "cum_fte": 22.2,
+    "cut": 777687,
+    "fte": 4.0,
+    "fy": 2032,
+    "short": 684187,
+    "takes": [
+     "52 Ignite Tutoring Seats \u2014 Primary",
+     "Classroom Instructional Materials & Workbooks",
+     "1.0 Reading Specialist \u2014 Turkey Hill"
+    ],
+    "unclosed": 0
+   }
+  ]
+ },
+ "not_established": [
+  "How many ADMINISTRATORS the district employs, and how that changed. The annual-report rosters carry names without FTE, classify department liaisons as administrators, and print no central office at all in FY2025; DESE publishes administration as dollars per pupil, which is what this page shows. Closes: the district\u2019s position control list, by FTE and funding source, for any two years.",
+  "How many athletes there are over ten years. The district has published season participation counts for three years; earlier years exist in athletic department reports the archive does not hold.",
+  "Which fund pays which teacher. DESE\u2019s FTE counts every assignment whatever pays for it; a grant ending and a position ending look the same in the town\u2019s budget and different here, and nothing joins the two."
+ ],
+ "overrides": {
+  "first_gap": 632876,
+  "note": "A school-only override: the levy base rises once by this amount, all of it to the schools, and grows 2.5% a year after. It holds while the level-service gap stays under it. A general override has to be larger, because the schools take only their share of the town budget.",
+  "rows": [
+   {
+    "amount": 2000000,
+    "on_average_home": 416,
+    "reopens_fy": 2031,
+    "townwide": 3760609,
+    "townwide_on_average_home": 782,
+    "years": 3
+   },
+   {
+    "amount": 5000000,
+    "on_average_home": 1039,
+    "reopens_fy": 2035,
+    "townwide": 9401522,
+    "townwide_on_average_home": 1954,
+    "years": 7
+   }
+  ],
+  "school_share": 0.5318
+ },
+ "sources": [
+  {
+   "bytes": 1426264,
+   "docs_url": "/docs/state-dese/radar-district-comparison.xlsx",
+   "filename": "radar-district-comparison.xlsx",
+   "key": "state-dese/radar-district-comparison.xlsx",
+   "note": "DESE RADAR district comparison: student headcount, paraprofessional FTE and per-pupil spending by function, FY2009\u2013FY2025.",
+   "path": "sources/state-dese/radar-district-comparison.xlsx",
+   "sha256": "0391c2d358c408c5c61e0dac257cabfca5ad67bfc2187196f80d5e0492a84e79",
+   "url": "https://www.doe.mass.edu/research/radar/district-comparison.xlsx"
+  },
+  {
+   "bytes": 25969884,
+   "docs_url": "/docs/state-dese/dese-teacher-data.xlsx",
+   "filename": "dese-teacher-data.xlsx",
+   "key": "state-dese/dese-teacher-data.xlsx",
+   "note": "DESE teacher data: teacher FTE by district and program area, FY2008\u2013FY2026.",
+   "path": "sources/state-dese/dese-teacher-data.xlsx",
+   "sha256": "4fbe81d65aee0bff88504cfc21dc2140ef9bc4a073bb5bad6b167c738767e2ea",
+   "url": "https://educationtocareer.data.mass.gov/d/4684-cw3t"
+  },
+  {
+   "bytes": 4050,
+   "docs_url": "/docs/state-census/acs5-2023-B01001-lunenburg.json",
+   "note": "Sex by age \u2014 the 65-and-over share, and every band beneath it",
+   "path": "sources/state-census/acs5-2023-B01001-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "3c371d3a828e55fedd3b772a265700a1e3fb739d469f36ae23ba53d3b6fe7c9f",
+   "table": "B01001, 2019\u20132023",
+   "url": "https://api.census.gov/data/2023/acs/acs5"
+  },
+  {
+   "bytes": 1662,
+   "docs_url": "/docs/state-census/acs5-2023-B11005-lunenburg.json",
+   "note": "Households by presence of people under 18 \u2014 the real denominator for \"the 30% who have students in the school\"",
+   "path": "sources/state-census/acs5-2023-B11005-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "0f738e9f499256079794ec194818d0c3ca2b7bcc08c1d806615c192b099ea0d2",
+   "table": "B11005, 2019\u20132023",
+   "url": "https://api.census.gov/data/2023/acs/acs5"
+  },
+  {
+   "bytes": 4039,
+   "docs_url": "/docs/state-census/acs5-2018-B01001-lunenburg.json",
+   "note": "Sex by age \u2014 the 65-and-over share, and every band beneath it",
+   "path": "sources/state-census/acs5-2018-B01001-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "693f9671c3106eda23d7108a9998402013ffebf58c95b3faaa077e5edfb2dcbd",
+   "table": "B01001, 2014\u20132018",
+   "url": "https://api.census.gov/data/2018/acs/acs5"
+  },
+  {
+   "bytes": 1668,
+   "docs_url": "/docs/state-census/acs5-2018-B11005-lunenburg.json",
+   "note": "Households by presence of people under 18 \u2014 the real denominator for \"the 30% who have students in the school\"",
+   "path": "sources/state-census/acs5-2018-B11005-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "3e61847b189e3e1960f2ee8d62fd630d9fa15c7ba98df634630f1a0bb5b253ac",
+   "table": "B11005, 2014\u20132018",
+   "url": "https://api.census.gov/data/2018/acs/acs5"
+  }
+ ],
+ "stabilise": {
+  "after10": 0.3728,
+  "after20": 0.6066,
+  "contract": 0.04,
+  "cost_per_fte": 89096,
+  "headcount": 151,
+  "note": "Revenue grows at the levy cap plus new growth, which decays toward the cap; the rate used is the long-run one. Every other line grows as the model assumes. Positions are at the catalogue\u2019s own cost per position, an estimate; the salary line covers stipends and part-time roles too.",
+  "others": 0.03193,
+  "positions_after10": 56,
+  "positions_per_year": 7.2,
+  "possible": false,
+  "salary_rate": -0.0074,
+  "shrink_per_year": 0.04775,
+  "target": 0.02826
+ }
+}
