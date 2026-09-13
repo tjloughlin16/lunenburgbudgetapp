@@ -365,7 +365,7 @@ export const SLUG: Record<Tab, string> = {
   // instrument: the payload field, the Python module and the component are all called
   // that, and an address should name the reader's question. NOT `the-big-picture`, which
   // promises a view of the whole budget and this is a synthesis of the ANALYSES.
-  addsup: 'what-it-all-adds-up-to',
+  addsup: 'one-big-report',
   // UNLISTED. See UNLISTED below before adding a link to this anywhere.
   // The bare address is the fallback index only. Every markdown analysis lives one
   // segment down -- /analysis/free-cash -- and those are the addresses that are
@@ -412,7 +412,8 @@ const ALIASES: Record<string, Tab> = {
   // The words somebody types looking for the synthesis. `conclusions` and `findings` are
   // what this project calls the thing internally and are exactly the forms a reader who
   // has heard about it second-hand will try; they are accepted and never generated.
-  addsup: 'addsup', conclusions: 'addsup', 'key-findings': 'addsup',
+  addsup: 'addsup', 'what-it-all-adds-up-to': 'addsup', conclusions: 'addsup', 'key-findings': 'addsup',
+  'the-one-big-report': 'addsup', 'big-report': 'addsup',
   findings: 'addsup', summary: 'addsup', takeaways: 'addsup',
   athletics: 'athletics', sports: 'athletics', athletic: 'athletics',
   // NOT 'rates' -- that alias already means the curve page, and has since before this
