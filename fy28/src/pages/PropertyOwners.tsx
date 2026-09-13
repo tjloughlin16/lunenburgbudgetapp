@@ -1,4 +1,4 @@
-import { Bar, BarChart, CartesianGrid, ErrorBar, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, CartesianGrid, ComposedChart, ErrorBar, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import type { Tab } from '../routes'
 import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
@@ -6,12 +6,20 @@ import type { Conclusion, Source } from '../components/report'
 const TAB: Tab = 'owners'
 const DATA = '/data/property-owners.json'
 
-/** WHO OWNS THE HOMES, FOR HOW LONG, AND WHAT THE BILL HAS DONE. Beside Lunenburg by the
- *  numbers, in The town. TJ, 13 September 2026: "to confirm if people are being taxed out
- *  from purchasing half a century ago". Two sources that measure different things -- the
- *  Census asks when the household ARRIVED; the assessor records the last DEED -- kept in
- *  two tables and never added together. Rule 7b: conclusions, then the tables, then what
- *  is not established. */
+/** LUNENBURG'S HOMES AND THE TAX BILL. Beside Lunenburg by the numbers, in The town.
+ *
+ *  REFOCUSED on 13 September 2026. It began as "who owns the homes" -- TJ's question about
+ *  being taxed out of a house bought decades ago -- and he redirected it the same day:
+ *  "refocus on overall properties in lunenburg, not just ownership. your table of tax rates
+ *  over time compared to median prices is a critical component. rates dropped, values went
+ *  up, so residents feel 'higher taxes'. So the top level conclusion should be something
+ *  like total homes, rates dropping, values going up... not the breakdown of home
+ *  ownership." So: the homes, the bill over every year DLS publishes, the neighbours; then,
+ *  lower, how long the owners have been here and what a long-held home pays.
+ *
+ *  The Census asks when the household ARRIVED; the assessor records the last DEED. Two
+ *  tables, never added together. Rule 7b: conclusions, then the tables, then what is not
+ *  established. */
 
 type Band = { label: string; households: number; moe: number; share: number; share_moe: number }
 type Vintage = { vintage: number; window: string; owners: number; owners_moe: number; bands: Band[]; before_2010: { households: number; moe: number; share: number }; since_1980s: { households: number; moe: number; share: number }; median_moved_in: number }
@@ -21,7 +29,14 @@ type Payload = {
   tenure: { households: number; households_moe: number; owners: number; owners_moe: number; renters: number; renters_moe: number; owner_share: number; window: string }
   census: Record<string, Vintage>
   parcels: { fy: number; rate: number; parcels: number; single_family: number; median_value: number; median_bill: number; bands: DeedBand[]; held: { years: number; homes: number; share: number }[]; nominal: { deeds: number; share: number }; owner_in_town: { homes: number; share: number }; oldest_deed: number; earliest_band_bill_ratio: number }
-  bills: { rows: { fy: number; rate: number; value: number; bill: number }[]; first_fy: number; last_fy: number; missing_fy: number[]; value_change: number; rate_change: number; bill_change: number }
+  bills: {
+    rows: { fy: number; parcels: number; value: number; bill: number; rate: number; bill_pct_income: number | null; rank: number | null }[]
+    first_fy: number; last_fy: number; span: number; span_from_fy: number
+    ten: { value_change: number; rate_change: number; bill_change: number; value_from: number; value_to: number; rate_from: number; rate_to: number; bill_from: number; bill_to: number }
+    since_first: { value_change: number; rate_change: number; bill_change: number }
+    neighbours: { town: string; parcels: number; value: number; bill: number; rate: number; bill_pct_income: number | null; income_per_capita: number | null; rank: number | null }[]
+    position: number; of: number; statewide_rank: number | null; statewide_of: number; bill_pct_income: number | null; neighbour_median_bill: number
+  }
   conclusions: Conclusion[]; not_established: string[]; sources: Source[]
 }
 
@@ -40,8 +55,8 @@ export function PropertyOwners() {
   const c = d?.census['2023']
   return (
     <ReportShell tab={TAB}
-      title={d && c ? `${pct(c.before_2010.share)} of Lunenburg’s homeowners moved in before 2010 — and their bill is ${pct(d.parcels.earliest_band_bill_ratio)} of a newcomer’s` : 'Who owns the homes'}
-      standfirst={d && c ? <>{n0(c.before_2010.households)} of {n0(c.owners)} owner households have been in the house since before 2010, on the Census sample; the assessor’s own file puts the median bill on a home last deeded before 1986 at {usd(d.parcels.bands[d.parcels.bands.length - 1].median_bill)} — a house bought decades ago is taxed on what it is worth now.</> : undefined}
+      title={d ? `${n0(d.bills.rows[d.bills.rows.length - 1].parcels)} homes; in ten years the value up ${pct(d.bills.ten.value_change)}, the rate down ${pct(-d.bills.ten.rate_change)}, the bill up ${pct(d.bills.ten.bill_change)}` : 'Lunenburg’s homes and the tax bill'}
+      standfirst={d && c ? <>What the average single-family home in Lunenburg is worth and pays, every year the state has published, and against ten neighbours — then who has owned the homes how long, and what a house bought decades ago pays today.</> : undefined}
       err={err} loading={!d && !err} dataUrl={DATA}>
       {d && <Report d={d} />}
     </ReportShell>
@@ -55,22 +70,71 @@ function Report({ d }: { d: Payload }) {
   return (
     <>
       <section data-section="conclusions">
-        {/* THE DENOMINATOR FIRST. TJ: "we need the total homes first to understand other
-            context." Every share below is a share of one of these three numbers. */}
+        {/* THE DENOMINATOR FIRST, then the two things that changed, then the neighbours. TJ:
+            "we need the total homes first to understand other context." */}
         <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
-          <Stat value={n0(d.tenure.households)}>occupied homes in Lunenburg, {d.tenure.window} — {n0(d.tenure.owners)} owned ({pct(d.tenure.owner_share)}), {n0(d.tenure.renters)} rented; a Census sample, ± {n0(d.tenure.households_moe)}</Stat>
-          <Stat value={n0(p.single_family)}>single-family homes on the assessor’s {FY(p.fy)} rolls, of {n0(p.parcels)} parcels — a count, no margin</Stat>
-        </div>
-        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6 pt-6" style={{ borderTop: '1px solid var(--grid)' }}>
-          <Stat value={pct(c23.before_2010.share)} tone="var(--series-cost)">of owner households moved in before 2010 — {n0(c23.before_2010.households)} ± {n0(c23.before_2010.moe)}</Stat>
-          <Stat value={usd(p.bands[p.bands.length - 1].median_bill)}>median {FY(p.fy)} bill on a home last deeded before 1986; {usd(p.bands[0].median_bill)} on one deeded since 2021</Stat>
-          <Stat value={pct(b.bill_change)}>more on the average home’s bill, {FY(b.first_fy)}–{FY(b.last_fy)}, while its value rose {pct(b.value_change)} and the rate fell {pct(-b.rate_change)}</Stat>
+          <Stat value={n0(d.bills.rows[d.bills.rows.length - 1].parcels)}>single-family homes, {FY(b.last_fy)} — on {n0(p.parcels)} parcels of every kind; {pct(d.tenure.owner_share)} of the town’s {n0(d.tenure.households)} households own their home</Stat>
+          <Stat value={pct(b.ten.bill_change)} tone="var(--series-cost)">more on the average home’s bill in ten years — {usd(b.ten.bill_from)} to {usd(b.ten.bill_to)} — while its value rose {pct(b.ten.value_change)} and the rate fell {pct(-b.ten.rate_change)}</Stat>
+          <Stat value={usd(d.bills.rows[d.bills.rows.length - 1].bill)}>the average bill, {FY(b.last_fy)}: {b.position}th of {b.of} nearby towns and cities, {b.statewide_rank}th of {b.statewide_of} statewide</Stat>
         </div>
         <Grain>{d.grain}</Grain>
         <Conclusions rows={d.conclusions} />
       </section>
 
       <section data-section="categorical">
+        <H2>The average home, every year the state has published</H2>
+        <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+          Proposition 2½ caps how fast the town’s total levy can grow; the rate is whatever divides that levy into the year’s total value. So when values rise the rate falls — and the bill on the average home does neither, it follows the levy. The dark bars are the bill; the line is the effective rate, bill ÷ value per $1,000.
+        </p>
+        <div style={{ width: '100%', height: 300 }} className="mt-4 avoid-break">
+          <ResponsiveContainer>
+            <ComposedChart data={b.rows.map(r => ({ fy: FY(r.fy), bill: r.bill, rate: r.rate, value: r.value }))} margin={{ top: 8, right: 8, left: 0, bottom: 4 }}>
+              <CartesianGrid stroke="var(--grid)" vertical={false} />
+              <XAxis dataKey="fy" tick={AXIS} stroke="var(--axis)" interval={4} />
+              <YAxis yAxisId="bill" tick={AXIS} stroke="var(--axis)" tickFormatter={(v: number) => '$' + Math.round(v / 1000) + 'k'} />
+              <YAxis yAxisId="rate" orientation="right" tick={AXIS} stroke="var(--axis)" tickFormatter={(v: number) => '$' + v.toFixed(0)} domain={[0, 'auto']} />
+              <Tooltip content={({ active, payload, label }) => active && payload?.length ? (() => { const r = payload[0].payload as { bill: number; rate: number; value: number }; return <Box><p className="font-bold">{label}</p><p>average home {usd(r.value)}</p><p>bill {usd(r.bill)} · rate ${r.rate.toFixed(2)}</p></Box> })() : null} />
+              <Legend wrapperStyle={{ fontSize: 11 }} />
+              <Bar yAxisId="bill" dataKey="bill" name="average single-family bill" fill="var(--series-cost)" radius={[2, 2, 0, 0]} isAnimationActive={false} />
+              <Line yAxisId="rate" type="monotone" dataKey="rate" name="effective rate, per $1,000" stroke="var(--text-primary)" strokeWidth={2} dot={false} isAnimationActive={false} />
+            </ComposedChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="overflow-x-auto mt-4">
+          <table className="text-sm" style={{ minWidth: 640 }}>
+            <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+              <th className="text-left py-1.5 pr-4">year</th><th className="text-right py-1.5 px-2">homes</th><th className="text-right py-1.5 px-2">average value</th><th className="text-right py-1.5 px-2">rate per $1,000</th><th className="text-right py-1.5 px-2">average bill</th><th className="text-right py-1.5 px-2">bill as % of income</th><th className="text-right py-1.5 pl-2">rank of 351</th></tr></thead>
+            <tbody>{[...b.rows].reverse().map(r => (
+              <tr key={r.fy} style={{ borderTop: '1px solid var(--grid)', fontWeight: r.fy === b.last_fy || r.fy === b.span_from_fy ? 600 : 400 }}>
+                <td className="py-1 pr-4 tnum">{FY(r.fy)}</td>
+                <td className="py-1 px-2 text-right tnum">{n0(r.parcels)}</td>
+                <td className="py-1 px-2 text-right tnum">{usd(r.value)}</td>
+                <td className="py-1 px-2 text-right tnum">${r.rate.toFixed(2)}</td>
+                <td className="py-1 px-2 text-right tnum">{usd(r.bill)}</td>
+                <td className="py-1 px-2 text-right tnum" style={{ color: 'var(--text-secondary)' }}>{r.bill_pct_income != null ? pct(r.bill_pct_income, 1) : '—'}</td>
+                <td className="py-1 pl-2 text-right tnum" style={{ color: 'var(--text-muted)' }}>{r.rank ?? '—'}</td></tr>))}</tbody>
+          </table>
+        </div>
+        <p className="text-xs mt-1 max-w-3xl" style={{ color: 'var(--text-muted)' }}>DLS Average Single-Family Tax Bill, {FY(b.first_fy)}–{FY(b.last_fy)}. “Homes” is the state’s count of single-family parcels; the rate is derived, bill ÷ value, and for a single-rate town equals the rate set — {FY(b.last_fy)}: ${b.rows[b.rows.length - 1].rate.toFixed(2)}. Bill as a share of DOR income per capita, where the state computed it. Bold rows are the two ends of the ten-year change above.</p>
+
+        <H2>Against the neighbours, {FY(b.last_fy)}</H2>
+        <div className="overflow-x-auto mt-4">
+          <table className="text-sm" style={{ minWidth: 600 }}>
+            <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+              <th className="text-left py-1.5 pr-4">town</th><th className="text-right py-1.5 px-2">homes</th><th className="text-right py-1.5 px-2">average value</th><th className="text-right py-1.5 px-2">rate</th><th className="text-right py-1.5 px-2">average bill</th><th className="text-right py-1.5 px-2">bill as % of income</th><th className="text-right py-1.5 pl-2">rank of {b.statewide_of}</th></tr></thead>
+            <tbody>{b.neighbours.map(r => (
+              <tr key={r.town} style={{ borderTop: '1px solid var(--grid)', fontWeight: r.town === 'Lunenburg' ? 700 : 400 }}>
+                <td className="py-1.5 pr-4">{r.town}</td>
+                <td className="py-1.5 px-2 text-right tnum">{n0(r.parcels)}</td>
+                <td className="py-1.5 px-2 text-right tnum">{usd(r.value)}</td>
+                <td className="py-1.5 px-2 text-right tnum">${r.rate.toFixed(2)}</td>
+                <td className="py-1.5 px-2 text-right tnum">{usd(r.bill)}</td>
+                <td className="py-1.5 px-2 text-right tnum" style={{ color: 'var(--text-secondary)' }}>{r.bill_pct_income != null ? pct(r.bill_pct_income, 1) : '—'}</td>
+                <td className="py-1.5 pl-2 text-right tnum" style={{ color: 'var(--text-muted)' }}>{r.rank ?? '—'}</td></tr>))}</tbody>
+          </table>
+        </div>
+        <p className="text-xs mt-1 max-w-3xl" style={{ color: 'var(--text-muted)' }}>Sorted by the bill. A higher bill is not a higher rate: Harvard and Groton tax at lower rates than Lunenburg on homes worth far more. The share-of-income column is the one that compares what the bill asks of the people paying it.</p>
+
         <H2>How long the owners have been here — the Census</H2>
         <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
           Owner-occupied households by the year the householder moved in. A five-year sample: the margins are real, and the two windows do not overlap, which is what makes the comparison permissible.
@@ -145,24 +209,10 @@ function Report({ d }: { d: Payload }) {
         </div>
         <p className="text-xs mt-1 max-w-3xl" style={{ color: 'var(--text-muted)' }}>Median sale price is of the arm’s-length deeds in the band only. The bill is value × rate before any exemption or abatement. Held at least {p.held.map(h => `${h.years} years: ${n0(h.homes)} homes (${pct(h.share)})`).join(' · ')} — floors, for the reason above. {pct(p.owner_in_town.share)} of single-family owners give a Lunenburg mailing address. Oldest deed on file: {p.oldest_deed}.</p>
 
-        <H2>What the average home’s bill has done</H2>
-        <div className="overflow-x-auto mt-4">
-          <table className="text-sm" style={{ minWidth: 480 }}>
-            <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
-              <th className="text-left py-1.5 pr-4">year</th><th className="text-right py-1.5 px-2">rate per $1,000</th><th className="text-right py-1.5 px-2">average single-family value</th><th className="text-right py-1.5 pl-2">average bill</th></tr></thead>
-            <tbody>{b.rows.map(r => (
-              <tr key={r.fy} style={{ borderTop: '1px solid var(--grid)' }}>
-                <td className="py-1.5 pr-4 font-semibold tnum">{FY(r.fy)}</td>
-                <td className="py-1.5 px-2 text-right tnum">${r.rate.toFixed(2)}</td>
-                <td className="py-1.5 px-2 text-right tnum">{usd(r.value)}</td>
-                <td className="py-1.5 pl-2 text-right tnum font-semibold">{usd(r.bill)}</td></tr>))}</tbody>
-          </table>
-        </div>
-        <p className="text-xs mt-1 max-w-3xl" style={{ color: 'var(--text-muted)' }}>{b.missing_fy.length ? `${b.missing_fy.map(FY).join(' and ')} are not held — the town’s classification hearings for those years are not in the archive. ` : ''}Proposition 2½ caps how fast the levy grows, not the bill on any one house; as values rise the rate falls, and who pays more depends on whose value rose most. Nearby towns’ bills are not shown, for the reason below.</p>
       </section>
 
       <section data-section="raw">
-        <NotEstablished rows={d.not_established} closes="The Division of Local Services’ Average Single Family Tax Bill report, every town, FY2003 to date — pulled by hand from the DLS Gateway, since it refuses a script." />
+        <NotEstablished rows={d.not_established} closes="Census PUMS microdata for the PUMA containing Lunenburg — tenure, year moved in and income per household, at the cost of covering several towns at once." />
         <Provenance sources={d.sources} />
         <MoreReports here={TAB} />
       </section>

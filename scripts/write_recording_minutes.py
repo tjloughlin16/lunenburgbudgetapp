@@ -520,9 +520,12 @@ def status():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('board', nargs='?')
+    ap.add_argument('board_pos', nargs='?', metavar='board')
     ap.add_argument('date', nargs='?')
-    ap.add_argument('--board')
+    # Not `dest='board'`: argparse applies a positional's empty default AFTER the option
+    # has been parsed, so `--board X` with a positional of the same name came out as None
+    # and the batch on 13 September 2026 wrote nothing. Merged below instead.
+    ap.add_argument('--board', dest='board_opt')
     ap.add_argument('--limit', type=int)
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--force', action='store_true')
@@ -540,6 +543,7 @@ def main():
         return 0
     if a.status:
         status(); return 0
+    a.board = a.board_pos or a.board_opt
     docs = town_documents()
     ts = transcripts()
     if a.board and a.date:
@@ -549,7 +553,15 @@ def main():
     elif not a.all:
         ap.error('name a board and date, --board, or --all')
     ts.sort(key=lambda t: t['date'], reverse=True)
-    if a.limit:
+    if a.limit and not a.force:
+        # The limit is a budget of WORK, not of rows: a meeting whose minutes are already
+        # current costs nothing and must not use up a slot. The first batch run this way
+        # asked for 12 and wrote 7, because 5 were done.
+        def current(t):
+            p = out_path(t)
+            return os.path.exists(p) and json.load(open(p)).get('source', {}).get('sha256') == sha256_of(t['path'])
+        ts = [t for t in ts if not current(t)][:a.limit]
+    elif a.limit:
         ts = ts[:a.limit]
     if not ts:
         raise SystemExit('no transcript matches')

@@ -41,7 +41,7 @@ import zipfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'model'))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from taxbase import TAX_RATE, AVG_HOME_VALUE, AVG_HOME_BILL, AVG_HOME_HISTORY   # noqa: E402
+from taxbase import TAX_RATE, AVG_HOME_HISTORY                                   # noqa: E402
 from conclusions import conclusion, emit, figure                                # noqa: E402
 
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'property-owners.json')
@@ -187,14 +187,54 @@ def parcels():
 
 # ------------------------------------------------------------------------- the tax bill
 
+DLS = os.path.join(ROOT, 'sources', 'data', 'dls-avg-tax-bill.csv')
+DLS_KEY = 'state-dls/AvgSingleFamTaxBill.xlsx'
+SPAN = 10                       # the ten-year change the town plans in
+NEIGHBOURS = ['Ayer', 'Groton', 'Littleton', 'Shirley', 'Townsend', 'Westford', 'Leominster',
+              'Fitchburg', 'Lancaster', 'Harvard']
+
+
 def bills():
-    hist = [dict(h) for h in AVG_HOME_HISTORY]
-    hist.append(dict(fy=FY_NOW, rate=TAX_RATE, value=AVG_HOME_VALUE, bill=AVG_HOME_BILL))
-    a, b = hist[0], hist[-1]
-    missing = [fy for fy in range(a['fy'], b['fy'] + 1) if fy not in {h['fy'] for h in hist}]
-    return dict(rows=hist, first_fy=a['fy'], last_fy=b['fy'], missing_fy=missing,
-                value_change=b['value'] / a['value'] - 1, rate_change=b['rate'] / a['rate'] - 1,
-                bill_change=b['bill'] / a['bill'] - 1)
+    """Every year DLS publishes, for Lunenburg; the neighbours for the latest year.
+
+    The RATE is derived -- bill / average value, per $1,000 -- because the DLS table carries
+    the bill and the value and not the rate. For a single-rate town it IS the rate (FY2026:
+    $7,444 / $517,296 = $14.39, which is the rate the town set), and it is labelled as the
+    effective rate on the page so a split-rate town's figure is not mistaken for a levy rate.
+    Asserted against the five years typed into model/taxbase.py from the town's own hearings."""
+    rows = [r for r in csv.DictReader(open(DLS, encoding='utf-8')) if r['avg_sf_bill'] not in ('', '0')]
+    lun = sorted((r for r in rows if r['municipality'] == 'Lunenburg'), key=lambda r: int(r['fy']))
+    series = [dict(fy=int(r['fy']), parcels=int(r['sf_parcels']), value=float(r['avg_sf_value']),
+                   bill=float(r['avg_sf_bill']), rate=float(r['avg_sf_bill']) / float(r['avg_sf_value']) * 1000,
+                   bill_pct_income=float(r['bill_pct_of_income']) / 100 if r['bill_pct_of_income'] else None,
+                   rank=int(r['rank']) if r['rank'] else None) for r in lun]
+    by = {h['fy']: h for h in series}
+    for h in AVG_HOME_HISTORY:
+        d = by.get(h['fy'])
+        if not d or abs(d['bill'] - h['bill']) > 1.5 or abs(d['value'] - h['value']) > 100:
+            fail('FY%d: DLS says bill %s value %s; the town’s hearing says %s / %s' % (h['fy'], d and d['bill'], d and d['value'], h['bill'], h['value']))
+    if abs(by[FY_NOW]['rate'] - TAX_RATE) > 0.01:
+        fail('FY%d effective rate %.2f from DLS; the town set %.2f' % (FY_NOW, by[FY_NOW]['rate'], TAX_RATE))
+    last, prev = by[FY_NOW], by[FY_NOW - SPAN]
+    first = series[0]
+    latest_rows = [r for r in rows if int(r['fy']) == FY_NOW]
+    nb = sorted((dict(town=r['municipality'], parcels=int(r['sf_parcels']), value=float(r['avg_sf_value']),
+                      bill=float(r['avg_sf_bill']), rate=float(r['avg_sf_bill']) / float(r['avg_sf_value']) * 1000,
+                      bill_pct_income=float(r['bill_pct_of_income']) / 100 if r['bill_pct_of_income'] else None,
+                      income_per_capita=float(r['income_per_capita']) if r['income_per_capita'] else None,
+                      rank=int(r['rank']) if r['rank'] else None)
+                 for r in latest_rows if r['municipality'] in NEIGHBOURS + ['Lunenburg']),
+                key=lambda r: -r['bill'])
+    position = [r['town'] for r in nb].index('Lunenburg') + 1
+    return dict(rows=series, first_fy=first['fy'], last_fy=last['fy'], span=SPAN, span_from_fy=prev['fy'],
+                ten=dict(value_change=last['value'] / prev['value'] - 1, rate_change=last['rate'] / prev['rate'] - 1,
+                         bill_change=last['bill'] / prev['bill'] - 1, value_from=prev['value'], value_to=last['value'],
+                         rate_from=prev['rate'], rate_to=last['rate'], bill_from=prev['bill'], bill_to=last['bill']),
+                since_first=dict(value_change=last['value'] / first['value'] - 1, rate_change=last['rate'] / first['rate'] - 1,
+                                 bill_change=last['bill'] / first['bill'] - 1),
+                neighbours=nb, position=position, of=len(nb), statewide_rank=last['rank'], statewide_of=351,
+                bill_pct_income=last['bill_pct_income'],
+                neighbour_median_bill=statistics.median(r['bill'] for r in nb if r['town'] != 'Lunenburg'))
 
 
 # ----------------------------------------------------------------------------- sources
@@ -212,6 +252,14 @@ def sources(c):
                             publisher='United States Census Bureau',
                             note=('Tenure by year the householder moved in' if table == 'B25038'
                                   else 'Median year the householder moved in')))
+    r = man.get(DLS_KEY) or fail('%s is not in the manifest' % DLS_KEY)
+    if not r['upstream']:
+        fail('%s carries no upstream address (rule 12)' % DLS_KEY)
+    out.append(dict(path='sources/' + DLS_KEY, sha256=r['sha256'], bytes=int(r['bytes']), url=r['upstream'],
+                    docs_url='/docs/' + DLS_KEY, table='Average Single-Family Tax Bill, FY1988–FY2026',
+                    publisher='Massachusetts DOR, Division of Local Services',
+                    note=('Every town’s single-family parcels, average value, average bill, the bill as a share '
+                          'of value and of income, and rank — exported from the DLS Gateway by script.')))
     r = man.get(PARCELS_KEY) or fail('%s is not in the manifest' % PARCELS_KEY)
     if not r['upstream']:
         fail('%s carries no upstream address (rule 12)' % PARCELS_KEY)
@@ -226,12 +274,95 @@ def sources(c):
 
 # ------------------------------------------------------------------------- conclusions
 
-def conclusions(c, p, b):
+def conclusions(c, p, b, t):
     c23 = c[2023]
     usd = lambda n: '$' + format(round(n), ',')
     pc = lambda x: '%.0f%%' % (x * 100)
     n0 = lambda n: format(round(n), ',')
     rows = []
+    last = b['rows'][-1]
+    # 1. THE HOMES. The denominator every other figure is a share of. TJ: "the top level
+    #    conclusion should be something like total homes, rates dropping, values going up."
+    rows.append(conclusion(
+        'the-homes',
+        claim='Lunenburg has %s single-family homes on %s parcels, and %s of households own theirs.'
+              % (n0(last['parcels']), n0(p['parcels']), pc(t['owner_share'])),
+        so_what='Four households in five own, so a change in the tax bill reaches most of the town directly.',
+        detail=('%s single-family parcels in the state’s FY%d count, %s in the assessor’s file; %s parcels of '
+                'every kind. %s ± %s occupied households on the Census %s sample, %s ± %s of them owned and '
+                '%s ± %s rented.'
+                % (n0(last['parcels']), last['fy'], n0(p['single_family']), n0(p['parcels']), n0(t['households']),
+                   n0(t['households_moe']), t['window'], n0(t['owners']), n0(t['owners_moe']), n0(t['renters']),
+                   n0(t['renters_moe']))),
+        figures={'sf': figure(last['parcels'], n0(last['parcels']), 'single-family homes'),
+                 'parcels': figure(p['parcels'], n0(p['parcels'])),
+                 'share': figure(t['owner_share'] * 100, pc(t['owner_share'])),
+                 'hh': figure(t['households'], n0(t['households'])),
+                 'hhmoe': figure(t['households_moe'], n0(t['households_moe'])),
+                 'sf2': figure(p['single_family'], n0(p['single_family'])),
+                 'fy': figure(last['fy'], 'FY%d' % last['fy']),
+                 'own': figure(t['owners'], n0(t['owners'])), 'ownmoe': figure(t['owners_moe'], n0(t['owners_moe'])),
+                 'rent': figure(t['renters'], n0(t['renters'])), 'rentmoe': figure(t['renters_moe'], n0(t['renters_moe']))},
+        figure='sf', kind='measured', bearing='sizes',
+        basis='DLS Average Single-Family Tax Bill (parcels, FY2026); MassGIS Level 3 parcels, FY2026; ACS B25003, 2019–2023.',
+        not_shown='Condominiums, two- and three-family homes and apartments, which the single-family count leaves out.',
+        allow=('2019–2023', 'FY2026')))
+    # 2. THE BILL. Ten years: value up, rate down, bill up -- the Proposition 2 1/2 paradox in
+    #    the town's own DLS series.
+    ten = b['ten']
+    rows.append(conclusion(
+        'the-bill',
+        claim='In ten years the average home’s value rose %s and the tax rate fell %s; the bill rose %s.'
+              % (pc(ten['value_change']), pc(-ten['rate_change']), pc(ten['bill_change'])),
+        so_what='Residents feel higher taxes and see a falling rate. Both are true: the levy is capped, values are not.',
+        detail=('FY%d to FY%d: the average single-family value from %s to %s, the effective rate from $%.2f to '
+                '$%.2f per $1,000, the average bill from %s to %s. Since FY%d, the first year the state publishes, '
+                'the value is up %s and the bill %s. Proposition 2½ caps how fast the LEVY grows; the rate is '
+                'whatever divides that levy into the year’s total value, so as values rise the rate falls and '
+                'the bill does neither.'
+                % (b['span_from_fy'], b['last_fy'], usd(ten['value_from']), usd(ten['value_to']), ten['rate_from'],
+                   ten['rate_to'], usd(ten['bill_from']), usd(ten['bill_to']), b['first_fy'],
+                   pc(b['since_first']['value_change']), pc(b['since_first']['bill_change']))),
+        figures={'value': figure(ten['value_change'] * 100, pc(ten['value_change'])),
+                 'rate': figure(-ten['rate_change'] * 100, pc(-ten['rate_change'])),
+                 'bill': figure(ten['bill_change'] * 100, pc(ten['bill_change']), 'more on the average bill in ten years'),
+                 'fy0': figure(b['span_from_fy'], 'FY%d' % b['span_from_fy']),
+                 'fy1': figure(b['last_fy'], 'FY%d' % b['last_fy']),
+                 'v0': figure(ten['value_from'], usd(ten['value_from'])), 'v1': figure(ten['value_to'], usd(ten['value_to'])),
+                 'r0': figure(ten['rate_from'], '$%.2f' % ten['rate_from']), 'r1': figure(ten['rate_to'], '$%.2f' % ten['rate_to']),
+                 'b0': figure(ten['bill_from'], usd(ten['bill_from'])), 'b1': figure(ten['bill_to'], usd(ten['bill_to'])),
+                 'ff': figure(b['first_fy'], 'FY%d' % b['first_fy']),
+                 'sv': figure(b['since_first']['value_change'] * 100, pc(b['since_first']['value_change'])),
+                 'sb': figure(b['since_first']['bill_change'] * 100, pc(b['since_first']['bill_change']))},
+        figure='bill', kind='measured', bearing='sizes',
+        basis='DLS Average Single-Family Tax Bill, Lunenburg, FY1988–FY2026; rate derived as bill ÷ value per $1,000.',
+        not_shown='Any one household’s bill: this is the town-wide average home, and the exemptions and abatements a household may hold.',
+        allow=('2½', '$1,000')))
+    # 3. THE NEIGHBOURS.
+    lun = next(r for r in b['neighbours'] if r['town'] == 'Lunenburg')
+    rows.append(conclusion(
+        'the-neighbours',
+        claim='At %s, Lunenburg’s average bill is %s of %s nearby towns and cities — %s statewide.'
+              % (usd(lun['bill']), ordinal(b['position']), b['of'], ordinal(b['statewide_rank'])),
+        so_what='The bill takes %s of income per capita here; the median of the ten neighbours is %s.'
+                % (pc(lun['bill_pct_income']), usd(b['neighbour_median_bill'])),
+        detail=('FY%d, DLS: Lunenburg %s on an average home worth %s, ranked %s of %s municipalities. The '
+                'towns above and below are in the table, with each one’s bill as a share of its income per capita.'
+                % (b['last_fy'], usd(lun['bill']), usd(lun['value']), ordinal(b['statewide_rank']), b['statewide_of'])),
+        figures={'bill': figure(lun['bill'], usd(lun['bill']), 'a year, the average single-family bill'),
+                 'pos': figure(b['position'], ordinal(b['position'])), 'of': figure(b['of'], str(b['of'])),
+                 'rank': figure(b['statewide_rank'], ordinal(b['statewide_rank'])),
+                 'pct': figure(lun['bill_pct_income'] * 100, pc(lun['bill_pct_income'])),
+                 'med': figure(b['neighbour_median_bill'], usd(b['neighbour_median_bill'])),
+                 'fy': figure(b['last_fy'], 'FY%d' % b['last_fy']),
+                 'value': figure(lun['value'], usd(lun['value'])),
+                 'sw': figure(b['statewide_of'], str(b['statewide_of']))},
+        figure='bill', kind='measured', bearing='sizes',
+        basis='DLS Average Single-Family Tax Bill, FY2026, for Lunenburg and ten neighbours.',
+        not_shown='What each town gets for the bill — services, schools, debt — which the bill alone does not say.',
+        allow=('FY2026',)))
+    # 4. WHO HAS BEEN HERE HOW LONG -- demoted below the bill, kept because it is the question
+    #    that started the page.
     before = c23['before_2010']
     rows.append(conclusion(
         'before-2010',
@@ -241,19 +372,16 @@ def conclusions(c, p, b):
         detail=('%s ± %s of %s owner-occupied households, on the Census Bureau’s %s five-year sample; '
                 '%s ± %s have been in the house since 1989 or earlier. The median owner moved in in %d.'
                 % (n0(before['households']), n0(before['moe']), n0(c23['owners']), c23['window'],
-                   n0(c23['since_1980s']['households']), n0(c23['since_1980s']['moe']),
-                   c23['median_moved_in'])),
+                   n0(c23['since_1980s']['households']), n0(c23['since_1980s']['moe']), c23['median_moved_in'])),
         figures={'n': figure(before['households'], n0(before['households']), 'owner households'),
                  'share': figure(before['share'] * 100, pc(before['share'])),
-                 'moe': figure(before['moe'], n0(before['moe'])),
-                 'owners': figure(c23['owners'], n0(c23['owners'])),
+                 'moe': figure(before['moe'], n0(before['moe'])), 'owners': figure(c23['owners'], n0(c23['owners'])),
                  'old': figure(c23['since_1980s']['households'], n0(c23['since_1980s']['households'])),
                  'oldmoe': figure(c23['since_1980s']['moe'], n0(c23['since_1980s']['moe'])),
                  'median': figure(c23['median_moved_in'], str(c23['median_moved_in']))},
         figure='n', kind='measured', bearing='sizes',
         basis='Census Bureau, ACS five-year estimates, tables B25038 and B25039, 2019–2023, Lunenburg town.',
-        not_shown=('Whether those households can afford the bill. The Census does not publish tenure '
-                   'against income for a town this size.'),
+        not_shown='Whether those households can afford the bill. The Census does not publish tenure against income for a town this size.',
         allow=('2010', '1989', '1980s', '2019–2023', 'B25038', 'B25039')))
     oldest, newest = p['bands'][-1], p['bands'][0]
     rows.append(conclusion(
@@ -262,104 +390,53 @@ def conclusions(c, p, b):
               % (usd(oldest['median_bill']), usd(newest['median_bill'])),
         so_what='The bill barely falls with tenure — long-held homes pay %s of what newcomers pay.'
                 % pc(p['earliest_band_bill_ratio']),
-        detail=('Every single-family parcel in the assessor’s FY%d file, %s of them, at the %s rate: '
-                'median assessed value %s for homes last deeded before 1986 against %s for those '
-                'deeded since 2021. A house bought decades ago is taxed on what it is worth now, '
-                'not on what it cost.'
-                % (p['fy'], n0(p['single_family']), '$%.2f' % p['rate'],
-                   usd(oldest['median_value']), usd(newest['median_value']))),
+        detail=('Every single-family parcel in the assessor’s FY%d file, %s of them, at the %s rate: median '
+                'assessed value %s for homes last deeded before 1986 against %s for those deeded since 2021; the '
+                'median price those older homes last sold for was %s. A house bought decades ago is taxed on '
+                'what it is worth now, not on what it cost.'
+                % (p['fy'], n0(p['single_family']), '$%.2f' % p['rate'], usd(oldest['median_value']),
+                   usd(newest['median_value']), usd(oldest['median_sale_price']))),
         figures={'old': figure(oldest['median_bill'], usd(oldest['median_bill']), 'a year'),
                  'new': figure(newest['median_bill'], usd(newest['median_bill'])),
                  'ratio': figure(p['earliest_band_bill_ratio'] * 100, pc(p['earliest_band_bill_ratio'])),
-                 'n': figure(p['single_family'], n0(p['single_family'])),
-                 'rate': figure(p['rate'], '$%.2f' % p['rate']),
+                 'n': figure(p['single_family'], n0(p['single_family'])), 'rate': figure(p['rate'], '$%.2f' % p['rate']),
                  'oldval': figure(oldest['median_value'], usd(oldest['median_value'])),
                  'newval': figure(newest['median_value'], usd(newest['median_value'])),
+                 'sale': figure(oldest['median_sale_price'], usd(oldest['median_sale_price'])),
                  'fy': figure(p['fy'], 'FY%d' % p['fy'])},
         figure='old', kind='measured', bearing='sizes',
         basis='MassGIS Level 3 parcels, Lunenburg, FY2026 assessing extract; bill = assessed value × the FY2026 rate.',
-        not_shown=('What any household earns, or whether the deed date is when they arrived: a third of '
-                   'deeds are nominal transfers that reset the date. Exemptions and abatements are not '
-                   'applied.'),
+        not_shown=('What any household earns, or whether the deed date is when they arrived: a third of deeds are '
+                   'nominal transfers that reset the date. Exemptions and abatements are not applied.'),
         allow=('1986', '2021', 'FY2026')))
-    h10 = p['held'][0]
-    rows.append(conclusion(
-        'held-ten-years',
-        claim='At least %s single-family homes — %s — have not changed hands in ten years or more.'
-              % (n0(h10['homes']), pc(h10['share'])),
-        so_what='A floor, not the figure: %s of deeds are nominal transfers that reset the date.'
-                % pc(p['nominal']['share']),
-        detail=('%s of %s single-family parcels carry a last deed of %d or earlier; %s at twenty years, '
-                '%s at thirty. %s deeds record a price under $1,000 — a trust, an estate, a family '
-                'transfer — so a home held since the 1970s can show a deed from last year. The Census '
-                'sample, which asks when the household ARRIVED, puts the ten-year-plus share of owner '
-                'households at about %s.'
-                % (n0(h10['homes']), n0(p['single_family']), FY_NOW - 1 - 10, n0(p['held'][1]['homes']),
-                   n0(p['held'][2]['homes']), n0(p['nominal']['deeds']), pc(before['share']))),
-        figures={'n': figure(h10['homes'], n0(h10['homes']), 'homes'),
-                 'share': figure(h10['share'] * 100, pc(h10['share'])),
-                 'nominal': figure(p['nominal']['share'] * 100, pc(p['nominal']['share'])),
-                 'total': figure(p['single_family'], n0(p['single_family'])),
-                 'year': figure(FY_NOW - 1 - 10, str(FY_NOW - 1 - 10)),
-                 'h20': figure(p['held'][1]['homes'], n0(p['held'][1]['homes'])),
-                 'h30': figure(p['held'][2]['homes'], n0(p['held'][2]['homes'])),
-                 'ndeeds': figure(p['nominal']['deeds'], n0(p['nominal']['deeds'])),
-                 'acs': figure(before['share'] * 100, pc(before['share']))},
-        figure='n', kind='measured', bearing='sizes',
-        basis='MassGIS Level 3 parcels, Lunenburg, FY2026: LS_DATE and LS_PRICE for every single-family parcel; ACS B25038 for the household figure.',
-        not_shown='The true tenure of any home whose last deed was a transfer rather than a sale.',
-        allow=('$1,000', '1970s')))
-    rows.append(conclusion(
-        'bill-history',
-        claim='The average home’s value rose %s from FY%d to FY%d; the rate fell %s; the bill rose %s.'
-              % (pc(b['value_change']), b['first_fy'], b['last_fy'],
-                 pc(-b['rate_change']), pc(b['bill_change'])),
-        so_what='Proposition 2½ caps the levy, not the bill on any one house — values decide who pays it.',
-        detail=('From %s on a $%s home in FY%d to %s on a $%s home in FY%d. The rate went from $%.2f to '
-                '$%.2f per $1,000. The years between are in the table; FY%d and FY%d are not held.'
-                % (usd(b['rows'][0]['bill']), n0(b['rows'][0]['value']), b['first_fy'],
-                   usd(b['rows'][-1]['bill']), n0(b['rows'][-1]['value']), b['last_fy'],
-                   b['rows'][0]['rate'], b['rows'][-1]['rate'], b['missing_fy'][0], b['missing_fy'][-1])),
-        figures={'value': figure(b['value_change'] * 100, pc(b['value_change'])),
-                 'rate': figure(-b['rate_change'] * 100, pc(-b['rate_change'])),
-                 'bill': figure(b['bill_change'] * 100, pc(b['bill_change']), 'more on the average bill'),
-                 'first': figure(b['first_fy'], 'FY%d' % b['first_fy']),
-                 'last': figure(b['last_fy'], 'FY%d' % b['last_fy']),
-                 'b0': figure(b['rows'][0]['bill'], usd(b['rows'][0]['bill'])),
-                 'v0': figure(b['rows'][0]['value'], '$' + n0(b['rows'][0]['value'])),
-                 'b1': figure(b['rows'][-1]['bill'], usd(b['rows'][-1]['bill'])),
-                 'v1': figure(b['rows'][-1]['value'], '$' + n0(b['rows'][-1]['value'])),
-                 'r0': figure(b['rows'][0]['rate'], '$%.2f' % b['rows'][0]['rate']),
-                 'r1': figure(b['rows'][-1]['rate'], '$%.2f' % b['rows'][-1]['rate']),
-                 'm0': figure(b['missing_fy'][0], 'FY%d' % b['missing_fy'][0]),
-                 'm1': figure(b['missing_fy'][-1], 'FY%d' % b['missing_fy'][-1])},
-        figure='bill', kind='measured', bearing='sizes',
-        basis='Town tax classification hearings FY2019–FY2023 and the FY2026 rate, as carried in model/taxbase.py.',
-        not_shown='Any other town’s bill. The state publishes every town’s average single-family bill and the page that does sits behind a bot check this project cannot pass by script.',
-        allow=('2½', '$1,000')))
     return emit(REPORT, rows)
+
+
+def ordinal(n):
+    n = int(n)
+    suf = 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+    return '%d%s' % (n, suf)
 
 
 def build():
     c = census()
     p = parcels()
     b = bills()
+    t = tenure()
     return dict(
-        about=('Who owns Lunenburg’s homes and for how long — from the Census sample and from the '
-               'assessor’s own parcel file — and what the bill on an average home has done.'),
+        about=('Lunenburg’s homes and the tax bill: how many there are, what the average one is worth and '
+               'pays, year by year and against the neighbours — and, behind that, how long the owners have '
+               'been here and what a long-held home pays.'),
         grain=('HOUSEHOLDS from the Census, a five-year sample with margins; PARCELS from the assessor, '
                'a count of single-family homes by last recorded deed, which is not the same as when the '
                'family arrived; DOLLARS from the town’s own rate and values.'),
-        tenure=tenure(), census={str(k): v for k, v in c.items()}, parcels=p, bills=b,
-        conclusions=conclusions(c, p, b),
+        tenure=t, census={str(k): v for k, v in c.items()}, parcels=p, bills=b,
+        conclusions=conclusions(c, p, b, t),
         not_established=[
-            'What other towns’ average single-family tax bills are, year by year. The Division of Local '
-            'Services publishes them for every municipality; its gateway is behind a bot check this '
-            'project cannot pass by script, and no copy has been pulled by hand.',
-            'The average bill for FY2024 and FY2025; the town’s classification hearings for those years '
-            'are not in the archive.',
-            'Whether long-tenured owners are being taxed out — that needs tenure against income or '
-            'against the bill, which neither the Census nor the assessor publishes together.',
+            'Whether long-tenured owners are being taxed out — that needs tenure against income or against '
+            'the bill, which neither the Census nor the assessor publishes together.',
+            'Any one household’s bill: exemptions, abatements and the split between land and building are '
+            'not applied; every figure here is the average or the median home.',
         ],
         sources=sources(c), generated_by='scripts/build_property_owners.py')
 

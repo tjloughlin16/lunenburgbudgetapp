@@ -74,6 +74,8 @@ ORIGINS = [
     # the Department of Revenue's, and the distinction is not cosmetic. DESE sets Chapter
     # 70; DOR certifies free cash. A reader tracing a figure needs to be sent to the right
     # agency, and the report is one form submission away rather than one link.
+    {'id': 'state-massgis', 'name': 'MassGIS, Commonwealth of Massachusetts',
+     'url': 'https://www.mass.gov/info-details/massgis-data-property-tax-parcels'},
     {'id': 'state-dls', 'name': 'Massachusetts DOR, Division of Local Services',
      'url': 'https://dls-gw.dor.state.ma.us/gateway/dlspublic/'
             'certificationfreecashpublicreport/certificationfreecashpublic'},
@@ -497,6 +499,22 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'state-massgis', 'origin': 'state-massgis',
+        'title': 'The assessors’ parcels — every property, as the state publishes it',
+        'blurb': 'MassGIS’s Level 3 parcel package for Lunenburg: parcel polygons and the '
+                 'assessor’s FY2026 extract, joined by LOC_ID. Value, use code, year built, '
+                 'last recorded deed and price for all 5,303 parcels. Owner names are in the '
+                 'file, are public record, and are used here in aggregate only.',
+        'items': [
+            ('state-massgis/L3_SHP_M162_LUNENBURG.zip',
+             'Level 3 parcels, Lunenburg (M162), FY2026', 3,
+             'Downloaded 13 September 2026 from MassGIS’s direct file address. The assessing '
+             'table is M162Assess_CY26_FY26.dbf; the last-sale date is a deed, not an arrival — '
+             'a third are nominal transfers.'),
+            ('state-massgis/PROVENANCE.md', 'Where it came from, and what LS_DATE is not', 2,
+             'The address, the hash, and the caveat that governs every tenure figure read from it.'),
+        ]},
+    {
         'section': 'theirs', 'id': 'state-dls', 'origin': 'state-dls',
         'title': 'Free cash, certified — Lunenburg and eight comparable towns',
         'blurb': 'The Division of Local Services publishes a Free Cash Proof for every '
@@ -507,6 +525,13 @@ GROUPS = [
                  'of any kind, so the absolute figures do not compare between towns of '
                  'different size; the composition, being a share, does.',
         'items': [
+            ('state-dls/AvgSingleFamTaxBill.xlsx',
+             'Average Single-Family Tax Bill, eleven towns, FY1988–FY2026', 3,
+             'DLS Gateway export, fetched by script on 13 September 2026 (fetch_dls_tax_bills.py '
+             'records the exact POST). Per town per year: single-family parcels, average value, '
+             'average bill, the bill as a share of value and of income per capita, and the '
+             'town’s rank among the 351. The only series in the archive that puts Lunenburg’s '
+             'bill beside its neighbours’.'),
             ('state-dls/free-cash-proof-lunenburg.xlsx',
              'Lunenburg free cash proof, 2021–2025', 3,
              'Certified free cash rose from $2,666,962 to $3,354,370 over the five years. '

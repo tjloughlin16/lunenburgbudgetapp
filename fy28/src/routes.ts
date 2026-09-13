@@ -322,7 +322,7 @@ export const SLUG: Record<Tab, string> = {
   // first screen which census it is. NOT `who-lives-here` as the canonical form, because
   // the page is also households, income and tenure; it is an alias.
   bythenumbers: 'lunenburg-by-the-numbers',
-  owners: 'who-owns-the-homes',
+  owners: 'homes-and-taxes',
   // THE WORD EVERYBODY ALREADY HAS. Not `posts`, which names the container rather than
   // the thing; not `updates`, which promises news about this project rather than about
   // the town's money. A post is shared into a Facebook group and the address travels with
@@ -588,7 +588,8 @@ const ALIASES: Record<string, Tab> = {
   // before. `census` lands here deliberately -- see the slug note -- and so does
   // `seniors`, which nothing else answers to.
   'lunenburg-by-the-numbers': 'bythenumbers', 'by-the-numbers': 'bythenumbers',
-  'who-owns-the-homes': 'owners', 'property-owners': 'owners', homeowners: 'owners', 'owned-since': 'owners',
+  'homes-and-taxes': 'owners', 'who-owns-the-homes': 'owners', 'property-owners': 'owners', homeowners: 'owners', 'owned-since': 'owners',
+  homes: 'owners', 'the-homes': 'owners', 'tax-rate': 'owners', 'tax-rates': 'owners',
   'tax-bills': 'owners', 'tax-bill': 'owners', 'taxed-out': 'owners',
   'who-lives-here': 'bythenumbers', 'who-lives-in-lunenburg': 'bythenumbers',
   demographics: 'bythenumbers', census: 'bythenumbers', acs: 'bythenumbers',
@@ -686,7 +687,7 @@ export const LABEL: Record<Tab, string> = {
   solutions: 'What the town can actually do about the school budget',
   peers: 'What other districts spend, for each pupil',
   bythenumbers: 'Lunenburg by the numbers — who lives here',
-  owners: 'Who owns the homes — and what the bill has done',
+  owners: 'Lunenburg’s homes and the tax bill',
   blog: 'The blog — one finding at a time, in two minutes',
   required: 'What the state requires us to spend — and where that puts us',
   addsup: 'The One Big Report',

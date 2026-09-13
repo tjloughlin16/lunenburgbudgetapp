@@ -324,10 +324,10 @@ ABOUT_PAGES = {
         'figure carries its margin of error, because a town this size is a small sample '
         'and the margins decide what may be said.',
     'owners':
-        'Who owns Lunenburg’s homes and for how long — from the Census sample and from the '
-        'assessor’s own parcel file — and what the bill on an average home has done, year '
-        'by year. Half of owner households moved in before 2010; the bill barely falls '
-        'with tenure.',
+        'Lunenburg’s homes and the tax bill: how many there are, what the average one is worth '
+        'and pays, every year the state has published and against ten neighbours — and how the '
+        'rate can fall while the bill rises. Then who has owned them how long, from the Census '
+        'and from the assessor’s own parcel file.',
     'cuts':
         'Every reduction the district named in its own budget documents, cycle by cycle, '
         'quoted at its page — and, where a state series reaches it, whether the count '
