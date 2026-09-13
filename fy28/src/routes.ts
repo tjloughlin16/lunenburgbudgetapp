@@ -389,10 +389,10 @@ export const SLUG: Record<Tab, string> = {
  *  keep quiet — the classic own-goal of that file.
  *
  *  Give an unlisted page NO alias. An alias is a second guessable address. */
-// `addsup` -- the One Big Report -- is unlisted FOR NOW. TJ, 13 September 2026: "HIDE the
-// one big report on the analyses site for now. we have to get this in good shape before
-// sharing it." The address still answers; nothing links to it and it is not prerendered.
-export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'solutions', 'addsup'])
+// `addsup` -- the One Big Report -- was unlisted for most of 13 September 2026 while it was
+// rebuilt as a story from TJ's sheet ("we have to get this in good shape before sharing
+// it"), and relisted that evening ("this one big report is a great start. lets reopen").
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'solutions'])
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
  *  accepted — a link that has been shared once is out of your hands forever. */
@@ -960,7 +960,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // finding in two minutes and then hands the reader on. Somebody who does not yet have a
   // question should meet it before the shelf -- rule 7a applied to a nav bar, the same
   // argument that put `addsup` first.
-  analyses: ['blog', 'thisweek', 'recorded', 'reports', 'bythenumbers', 'owners', 'sped', 'classsize', 'circuitbreaker',
+  analyses: ['addsup', 'blog', 'thisweek', 'recorded', 'reports', 'bythenumbers', 'owners', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',
