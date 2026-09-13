@@ -173,64 +173,80 @@
    "so_what": "A group about the size of the 1,568 children in the schools, and measured far less exactly."
   },
   {
-   "basis": "Census Bureau, ACS five-year estimates, tables B25038 and B25039, 2019\u20132023, Lunenburg town.",
+   "basis": "DLS Average Single-Family Tax Bill (parcels, FY2026); MassGIS Level 3 parcels, FY2026; ACS B25003, 2019\u20132023.",
    "bearing": "sizes",
-   "claim": "1,799 of Lunenburg\u2019s owner households moved in before 2010 \u2014 about 49% of them.",
-   "detail": "1,799 \u00b1 297 of 3,682 owner-occupied households, on the Census Bureau\u2019s 2019\u20132023 five-year sample; 636 \u00b1 153 have been in the house since 1989 or earlier. The median owner moved in in 2010.",
-   "figure": "n",
+   "claim": "Lunenburg has 3,645 single-family homes on 5,303 parcels, and 81% of households own theirs.",
+   "detail": "3,645 single-family parcels in the state\u2019s FY2026 count, 3,649 in the assessor\u2019s file; 5,303 parcels of every kind. 4,529 \u00b1 235 occupied households on the Census 2019\u20132023 sample, 3,682 \u00b1 321 of them owned and 847 \u00b1 189 rented.",
+   "figure": "sf",
    "figures": {
-    "median": {
-     "text": "2010",
+    "fy": {
+     "text": "FY2026",
      "unit": "",
-     "value": 2010
+     "value": 2026
     },
-    "moe": {
-     "text": "297",
+    "hh": {
+     "text": "4,529",
      "unit": "",
-     "value": 296.6985001647295
+     "value": 4529.0
     },
-    "n": {
-     "text": "1,799",
-     "unit": "owner households",
-     "value": 1799.0
-    },
-    "old": {
-     "text": "636",
+    "hhmoe": {
+     "text": "235",
      "unit": "",
-     "value": 636.0
+     "value": 235.0
     },
-    "oldmoe": {
-     "text": "153",
-     "unit": "",
-     "value": 153.0
-    },
-    "owners": {
+    "own": {
      "text": "3,682",
      "unit": "",
      "value": 3682.0
     },
-    "share": {
-     "text": "49%",
+    "ownmoe": {
+     "text": "321",
      "unit": "",
-     "value": 48.85931558935361
+     "value": 321.0
+    },
+    "parcels": {
+     "text": "5,303",
+     "unit": "",
+     "value": 5303
+    },
+    "rent": {
+     "text": "847",
+     "unit": "",
+     "value": 847.0
+    },
+    "rentmoe": {
+     "text": "189",
+     "unit": "",
+     "value": 189.0
+    },
+    "sf": {
+     "text": "3,645",
+     "unit": "single-family homes",
+     "value": 3645
+    },
+    "sf2": {
+     "text": "3,649",
+     "unit": "",
+     "value": 3649
+    },
+    "share": {
+     "text": "81%",
+     "unit": "",
+     "value": 81.2982998454405
     }
    },
-   "id": "before-2010",
+   "id": "the-homes",
    "kind": "measured",
    "literals": [
-    "2010",
-    "1989",
-    "1980s",
     "2019\u20132023",
-    "B25038",
-    "B25039"
+    "FY2026"
    ],
-   "not_shown": "Whether those households can afford the bill. The Census does not publish tenure against income for a town this size.",
+   "not_shown": "Condominiums, two- and three-family homes and apartments, which the single-family count leaves out.",
    "report": "owners",
-   "report_title": "Who owns the homes \u2014 and what the bill has done",
-   "report_url": "/who-owns-the-homes",
+   "report_title": "Lunenburg\u2019s homes and the tax bill",
+   "report_url": "/homes-and-taxes",
    "see": [],
-   "so_what": "Half the town\u2019s homeowners have been in the house since before 2010; a sixth since the 1980s."
+   "so_what": "Four households in five own, so a change in the tax bill reaches most of the town directly."
   },
   {
    "basis": "DESE\u2019s Special Education Program Characteristics file for Lunenburg, district rows only, every year it has been published.",
@@ -2425,8 +2441,231 @@
    "url": "/lunenburg-by-the-numbers"
   },
   {
-   "about": "Who owns Lunenburg\u2019s homes and for how long \u2014 from the Census sample and from the assessor\u2019s own parcel file \u2014 and what the bill on an average home has done.",
+   "about": "Lunenburg\u2019s homes and the tax bill: how many there are, what the average one is worth and pays, year by year and against the neighbours \u2014 and, behind that, how long the owners have been here and what a long-held home pays.",
    "conclusions": [
+    {
+     "basis": "DLS Average Single-Family Tax Bill (parcels, FY2026); MassGIS Level 3 parcels, FY2026; ACS B25003, 2019\u20132023.",
+     "bearing": "sizes",
+     "claim": "Lunenburg has 3,645 single-family homes on 5,303 parcels, and 81% of households own theirs.",
+     "detail": "3,645 single-family parcels in the state\u2019s FY2026 count, 3,649 in the assessor\u2019s file; 5,303 parcels of every kind. 4,529 \u00b1 235 occupied households on the Census 2019\u20132023 sample, 3,682 \u00b1 321 of them owned and 847 \u00b1 189 rented.",
+     "figure": "sf",
+     "figures": {
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "hh": {
+       "text": "4,529",
+       "unit": "",
+       "value": 4529.0
+      },
+      "hhmoe": {
+       "text": "235",
+       "unit": "",
+       "value": 235.0
+      },
+      "own": {
+       "text": "3,682",
+       "unit": "",
+       "value": 3682.0
+      },
+      "ownmoe": {
+       "text": "321",
+       "unit": "",
+       "value": 321.0
+      },
+      "parcels": {
+       "text": "5,303",
+       "unit": "",
+       "value": 5303
+      },
+      "rent": {
+       "text": "847",
+       "unit": "",
+       "value": 847.0
+      },
+      "rentmoe": {
+       "text": "189",
+       "unit": "",
+       "value": 189.0
+      },
+      "sf": {
+       "text": "3,645",
+       "unit": "single-family homes",
+       "value": 3645
+      },
+      "sf2": {
+       "text": "3,649",
+       "unit": "",
+       "value": 3649
+      },
+      "share": {
+       "text": "81%",
+       "unit": "",
+       "value": 81.2982998454405
+      }
+     },
+     "id": "the-homes",
+     "kind": "measured",
+     "literals": [
+      "2019\u20132023",
+      "FY2026"
+     ],
+     "not_shown": "Condominiums, two- and three-family homes and apartments, which the single-family count leaves out.",
+     "see": [],
+     "so_what": "Four households in five own, so a change in the tax bill reaches most of the town directly."
+    },
+    {
+     "basis": "DLS Average Single-Family Tax Bill, Lunenburg, FY1988\u2013FY2026; rate derived as bill \u00f7 value per $1,000.",
+     "bearing": "sizes",
+     "claim": "In ten years the average home\u2019s value rose 101% and the tax rate fell 27%; the bill rose 48%.",
+     "detail": "FY2016 to FY2026: the average single-family value from $256,969 to $517,296, the effective rate from $19.61 to $14.39 per $1,000, the average bill from $5,039 to $7,444. Since FY1988, the first year the state publishes, the value is up 681% and the bill 531%. Proposition 2\u00bd caps how fast the LEVY grows; the rate is whatever divides that levy into the year\u2019s total value, so as values rise the rate falls and the bill does neither.",
+     "figure": "bill",
+     "figures": {
+      "b0": {
+       "text": "$5,039",
+       "unit": "",
+       "value": 5039.0
+      },
+      "b1": {
+       "text": "$7,444",
+       "unit": "",
+       "value": 7444.0
+      },
+      "bill": {
+       "text": "48%",
+       "unit": "more on the average bill in ten years",
+       "value": 47.72772375471324
+      },
+      "ff": {
+       "text": "FY1988",
+       "unit": "",
+       "value": 1988
+      },
+      "fy0": {
+       "text": "FY2016",
+       "unit": "",
+       "value": 2016
+      },
+      "fy1": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "r0": {
+       "text": "$19.61",
+       "unit": "",
+       "value": 19.609369223525015
+      },
+      "r1": {
+       "text": "$14.39",
+       "unit": "",
+       "value": 14.390213726763786
+      },
+      "rate": {
+       "text": "27%",
+       "unit": "",
+       "value": 26.615621529018384
+      },
+      "sb": {
+       "text": "531%",
+       "unit": "",
+       "value": 531.3825275657337
+      },
+      "sv": {
+       "text": "681%",
+       "unit": "",
+       "value": 681.2486785271997
+      },
+      "v0": {
+       "text": "$256,969",
+       "unit": "",
+       "value": 256969.0
+      },
+      "v1": {
+       "text": "$517,296",
+       "unit": "",
+       "value": 517296.0
+      },
+      "value": {
+       "text": "101%",
+       "unit": "",
+       "value": 101.30677241223651
+      }
+     },
+     "id": "the-bill",
+     "kind": "measured",
+     "literals": [
+      "2\u00bd",
+      "$1,000"
+     ],
+     "not_shown": "Any one household\u2019s bill: this is the town-wide average home, and the exemptions and abatements a household may hold.",
+     "see": [],
+     "so_what": "Residents feel higher taxes and see a falling rate. Both are true: the levy is capped, values are not."
+    },
+    {
+     "basis": "DLS Average Single-Family Tax Bill, FY2026, for Lunenburg and ten neighbours.",
+     "bearing": "sizes",
+     "claim": "At $7,444, Lunenburg\u2019s average bill is 6th of 11 nearby towns and cities \u2014 145th statewide.",
+     "detail": "FY2026, DLS: Lunenburg $7,444 on an average home worth $517,296, ranked 145th of 351 municipalities. The towns above and below are in the table, with each one\u2019s bill as a share of its income per capita.",
+     "figure": "bill",
+     "figures": {
+      "bill": {
+       "text": "$7,444",
+       "unit": "a year, the average single-family bill",
+       "value": 7444.0
+      },
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "med": {
+       "text": "$7,999",
+       "unit": "",
+       "value": 7999.0
+      },
+      "of": {
+       "text": "11",
+       "unit": "",
+       "value": 11
+      },
+      "pct": {
+       "text": "16%",
+       "unit": "",
+       "value": 15.55
+      },
+      "pos": {
+       "text": "6th",
+       "unit": "",
+       "value": 6
+      },
+      "rank": {
+       "text": "145th",
+       "unit": "",
+       "value": 145
+      },
+      "sw": {
+       "text": "351",
+       "unit": "",
+       "value": 351
+      },
+      "value": {
+       "text": "$517,296",
+       "unit": "",
+       "value": 517296.0
+      }
+     },
+     "id": "the-neighbours",
+     "kind": "measured",
+     "literals": [
+      "FY2026"
+     ],
+     "not_shown": "What each town gets for the bill \u2014 services, schools, debt \u2014 which the bill alone does not say.",
+     "see": [],
+     "so_what": "The bill takes 16% of income per capita here; the median of the ten neighbours is $7,999."
+    },
     {
      "basis": "Census Bureau, ACS five-year estimates, tables B25038 and B25039, 2019\u20132023, Lunenburg town.",
      "bearing": "sizes",
@@ -2488,7 +2727,7 @@
      "basis": "MassGIS Level 3 parcels, Lunenburg, FY2026 assessing extract; bill = assessed value \u00d7 the FY2026 rate.",
      "bearing": "sizes",
      "claim": "A home last deeded before 1986 pays a median $5,992 a year; one deeded since 2021 pays $6,890.",
-     "detail": "Every single-family parcel in the assessor\u2019s FY2026 file, 3,649 of them, at the $14.39 rate: median assessed value $416,400 for homes last deeded before 1986 against $478,800 for those deeded since 2021. A house bought decades ago is taxed on what it is worth now, not on what it cost.",
+     "detail": "Every single-family parcel in the assessor\u2019s FY2026 file, 3,649 of them, at the $14.39 rate: median assessed value $416,400 for homes last deeded before 1986 against $478,800 for those deeded since 2021; the median price those older homes last sold for was $32,500. A house bought decades ago is taxed on what it is worth now, not on what it cost.",
      "figure": "old",
      "figures": {
       "fy": {
@@ -2530,6 +2769,11 @@
        "text": "87%",
        "unit": "",
        "value": 86.96741854636592
+      },
+      "sale": {
+       "text": "$32,500",
+       "unit": "",
+       "value": 32500.0
       }
      },
      "id": "bill-by-tenure",
@@ -2542,160 +2786,14 @@
      "not_shown": "What any household earns, or whether the deed date is when they arrived: a third of deeds are nominal transfers that reset the date. Exemptions and abatements are not applied.",
      "see": [],
      "so_what": "The bill barely falls with tenure \u2014 long-held homes pay 87% of what newcomers pay."
-    },
-    {
-     "basis": "MassGIS Level 3 parcels, Lunenburg, FY2026: LS_DATE and LS_PRICE for every single-family parcel; ACS B25038 for the household figure.",
-     "bearing": "sizes",
-     "claim": "At least 1,641 single-family homes \u2014 45% \u2014 have not changed hands in ten years or more.",
-     "detail": "1,641 of 3,649 single-family parcels carry a last deed of 2015 or earlier; 935 at twenty years, 407 at thirty. 1,213 deeds record a price under $1,000 \u2014 a trust, an estate, a family transfer \u2014 so a home held since the 1970s can show a deed from last year. The Census sample, which asks when the household ARRIVED, puts the ten-year-plus share of owner households at about 49%.",
-     "figure": "n",
-     "figures": {
-      "acs": {
-       "text": "49%",
-       "unit": "",
-       "value": 48.85931558935361
-      },
-      "h20": {
-       "text": "935",
-       "unit": "",
-       "value": 935
-      },
-      "h30": {
-       "text": "407",
-       "unit": "",
-       "value": 407
-      },
-      "n": {
-       "text": "1,641",
-       "unit": "homes",
-       "value": 1641
-      },
-      "ndeeds": {
-       "text": "1,213",
-       "unit": "",
-       "value": 1213
-      },
-      "nominal": {
-       "text": "33%",
-       "unit": "",
-       "value": 33.24198410523431
-      },
-      "share": {
-       "text": "45%",
-       "unit": "",
-       "value": 44.97122499314881
-      },
-      "total": {
-       "text": "3,649",
-       "unit": "",
-       "value": 3649
-      },
-      "year": {
-       "text": "2015",
-       "unit": "",
-       "value": 2015
-      }
-     },
-     "id": "held-ten-years",
-     "kind": "measured",
-     "literals": [
-      "$1,000",
-      "1970s"
-     ],
-     "not_shown": "The true tenure of any home whose last deed was a transfer rather than a sale.",
-     "see": [],
-     "so_what": "A floor, not the figure: 33% of deeds are nominal transfers that reset the date."
-    },
-    {
-     "basis": "Town tax classification hearings FY2019\u2013FY2023 and the FY2026 rate, as carried in model/taxbase.py.",
-     "bearing": "sizes",
-     "claim": "The average home\u2019s value rose 67% from FY2019 to FY2026; the rate fell 23%; the bill rose 29%.",
-     "detail": "From $5,770 on a $308,900 home in FY2019 to $7,444 on a $517,296 home in FY2026. The rate went from $18.68 to $14.39 per $1,000. The years between are in the table; FY2024 and FY2025 are not held.",
-     "figure": "bill",
-     "figures": {
-      "b0": {
-       "text": "$5,770",
-       "unit": "",
-       "value": 5770.25
-      },
-      "b1": {
-       "text": "$7,444",
-       "unit": "",
-       "value": 7444
-      },
-      "bill": {
-       "text": "29%",
-       "unit": "more on the average bill",
-       "value": 29.00654217754863
-      },
-      "first": {
-       "text": "FY2019",
-       "unit": "",
-       "value": 2019
-      },
-      "last": {
-       "text": "FY2026",
-       "unit": "",
-       "value": 2026
-      },
-      "m0": {
-       "text": "FY2024",
-       "unit": "",
-       "value": 2024
-      },
-      "m1": {
-       "text": "FY2025",
-       "unit": "",
-       "value": 2025
-      },
-      "r0": {
-       "text": "$18.68",
-       "unit": "",
-       "value": 18.68
-      },
-      "r1": {
-       "text": "$14.39",
-       "unit": "",
-       "value": 14.39
-      },
-      "rate": {
-       "text": "23%",
-       "unit": "",
-       "value": 22.965738758029975
-      },
-      "v0": {
-       "text": "$308,900",
-       "unit": "",
-       "value": 308900
-      },
-      "v1": {
-       "text": "$517,296",
-       "unit": "",
-       "value": 517296
-      },
-      "value": {
-       "text": "67%",
-       "unit": "",
-       "value": 67.46390417610877
-      }
-     },
-     "id": "bill-history",
-     "kind": "measured",
-     "literals": [
-      "2\u00bd",
-      "$1,000"
-     ],
-     "not_shown": "Any other town\u2019s bill. The state publishes every town\u2019s average single-family bill and the page that does sits behind a bot check this project cannot pass by script.",
-     "see": [],
-     "so_what": "Proposition 2\u00bd caps the levy, not the bill on any one house \u2014 values decide who pays it."
     }
    ],
-   "count": 4,
+   "count": 5,
    "data": "/data/property-owners.json",
    "generator": "scripts/build_property_owners.py",
    "id": "owners",
-   "title": "Who owns the homes \u2014 and what the bill has done",
-   "url": "/who-owns-the-homes"
+   "title": "Lunenburg\u2019s homes and the tax bill",
+   "url": "/homes-and-taxes"
   },
   {
    "about": "How many Lunenburg children have an individual education programme, from the count DESE publishes rather than from any dollar figure.",
@@ -6709,58 +6807,78 @@
      "so_what": "The rest simply stopped. It was a handover and a reduction happening at the same time."
     },
     {
-     "basis": "DESE\u2019s End of Year Financial Report, every function in both FY2024 and FY2025, ranked by the change in the general fund column whatever happened to grants in the same function.",
+     "basis": "DESE\u2019s End of Year Financial Report, function 5200 Insurance for Active Employees, general fund column, FY2023 to FY2025.",
      "bearing": "sizes",
-     "claim": "Rise in what the town paid for employee insurance in FY2025",
-     "detail": "The largest rise in the town\u2019s own school spending in FY2025 was not a grant ending. It was Insurance for Active Employees, up $3,026,556 \u2014 more than the whole year\u2019s net fall in grant funding of $2,023,188. Nothing in the handover explains it: grant funding against that function did not fall, it rose $179,646 in the same year. And across the 27 functions where grants did not fall at all, the general fund rose $1,470,167 net \u2014 a larger movement than the handover. The end of the grants is real and it is not the biggest thing that happened to what Lunenburg raises for its schools that year.",
-     "figure": "insurance_rise",
+     "claim": "Employee insurance: $485,010 reported in FY2024; $3,286,872 the year before, $3,511,566 after.",
+     "detail": "The largest rise in the town\u2019s own school spending in FY2025 on paper was Insurance for Active Employees, up $3,026,556 \u2014 more than the whole year\u2019s net fall in grant funding of $2,023,188. It is not a rise. The general fund column for that function reads $3,286,872 in FY2023, $485,010 in FY2024 and $3,511,566 in FY2025. The middle year is the anomaly \u2014 a seventh of its neighbours \u2014 and the change from FY2023 to FY2025 is $224,694. What the FY2024 figure is \u2014 a mis-filed year, or a year the town appropriated the schools\u2019 insurance outside the school department and reported it there \u2014 is not established, and is a registered gap. Grant funding against the function did not fall in FY2025; it rose $179,646.",
+     "figure": "before",
      "figures": {
+      "before": {
+       "text": "$485,010",
+       "unit": "reported for employee insurance",
+       "value": 485010.0
+      },
+      "before2": {
+       "text": "$3,286,872",
+       "unit": "",
+       "value": 3286872.0
+      },
       "fy": {
        "text": "FY2025",
        "unit": "",
        "value": 2025
+      },
+      "fy1": {
+       "text": "FY2024",
+       "unit": "",
+       "value": 2024
+      },
+      "fy2": {
+       "text": "FY2023",
+       "unit": "",
+       "value": 2023
       },
       "insurance_grants": {
        "text": "$179,646",
        "unit": "",
        "value": 179646
       },
-      "insurance_rise": {
-       "text": "$3,026,556",
-       "unit": "",
-       "value": 3026556
-      },
       "net_grant_fall": {
        "text": "$2,023,188",
        "unit": "",
        "value": 2023188
       },
-      "no_fall_gen": {
-       "text": "$1,470,167",
+      "now": {
+       "text": "$3,511,566",
        "unit": "",
-       "value": 1470167
+       "value": 3511566.0
       },
-      "no_fall_n": {
-       "text": "27",
+      "rise": {
+       "text": "$3,026,556",
        "unit": "",
-       "value": 27
+       "value": 3026556
+      },
+      "two_year": {
+       "text": "$224,694",
+       "unit": "",
+       "value": 224694.0
       }
      },
-     "id": "the-biggest-rise-was-not-a-grant-ending",
+     "id": "the-biggest-rise-was-a-reporting-gap",
      "kind": "measured",
      "literals": [],
-     "not_shown": "Why the insurance figure moved. DESE attributes dollars to a function; it does not report premiums, how many employees are covered, or how the town and the district divide the cost. And a line rising is not people being hired.",
+     "not_shown": "Why FY2024 was reported at that level. DESE attributes dollars to a function; it does not say where a missing two and a half million was reported instead, and this project has not found it.",
      "see": [
       {
        "label": "what health insurance costs the town",
        "slug": "/health-insurance"
       },
       {
-       "label": "where the pressure actually sits",
-       "slug": "/find-the-money"
+       "label": "the insurance appropriated outside the school budget",
+       "slug": "/money-outside-the-budget"
       }
      ],
-     "so_what": "Larger than the whole year\u2019s fall in grant funding, and no grant was paying for it."
+     "so_what": "The FY2025 \u201crise\u201d of $3,026,556 is that gap closing, not a cost; over two years the line moved $224,694."
     },
     {
      "basis": "DESE\u2019s End of Year Financial Report, district totals, every year from FY2009 to FY2025: the general fund column as a share of the state\u2019s own total column.",
@@ -11220,58 +11338,78 @@
        "so_what": "The rest simply stopped. It was a handover and a reduction happening at the same time."
       },
       {
-       "basis": "DESE\u2019s End of Year Financial Report, every function in both FY2024 and FY2025, ranked by the change in the general fund column whatever happened to grants in the same function.",
+       "basis": "DESE\u2019s End of Year Financial Report, function 5200 Insurance for Active Employees, general fund column, FY2023 to FY2025.",
        "bearing": "sizes",
-       "claim": "Rise in what the town paid for employee insurance in FY2025",
-       "detail": "The largest rise in the town\u2019s own school spending in FY2025 was not a grant ending. It was Insurance for Active Employees, up $3,026,556 \u2014 more than the whole year\u2019s net fall in grant funding of $2,023,188. Nothing in the handover explains it: grant funding against that function did not fall, it rose $179,646 in the same year. And across the 27 functions where grants did not fall at all, the general fund rose $1,470,167 net \u2014 a larger movement than the handover. The end of the grants is real and it is not the biggest thing that happened to what Lunenburg raises for its schools that year.",
-       "figure": "insurance_rise",
+       "claim": "Employee insurance: $485,010 reported in FY2024; $3,286,872 the year before, $3,511,566 after.",
+       "detail": "The largest rise in the town\u2019s own school spending in FY2025 on paper was Insurance for Active Employees, up $3,026,556 \u2014 more than the whole year\u2019s net fall in grant funding of $2,023,188. It is not a rise. The general fund column for that function reads $3,286,872 in FY2023, $485,010 in FY2024 and $3,511,566 in FY2025. The middle year is the anomaly \u2014 a seventh of its neighbours \u2014 and the change from FY2023 to FY2025 is $224,694. What the FY2024 figure is \u2014 a mis-filed year, or a year the town appropriated the schools\u2019 insurance outside the school department and reported it there \u2014 is not established, and is a registered gap. Grant funding against the function did not fall in FY2025; it rose $179,646.",
+       "figure": "before",
        "figures": {
+        "before": {
+         "text": "$485,010",
+         "unit": "reported for employee insurance",
+         "value": 485010.0
+        },
+        "before2": {
+         "text": "$3,286,872",
+         "unit": "",
+         "value": 3286872.0
+        },
         "fy": {
          "text": "FY2025",
          "unit": "",
          "value": 2025
+        },
+        "fy1": {
+         "text": "FY2024",
+         "unit": "",
+         "value": 2024
+        },
+        "fy2": {
+         "text": "FY2023",
+         "unit": "",
+         "value": 2023
         },
         "insurance_grants": {
          "text": "$179,646",
          "unit": "",
          "value": 179646
         },
-        "insurance_rise": {
-         "text": "$3,026,556",
-         "unit": "",
-         "value": 3026556
-        },
         "net_grant_fall": {
          "text": "$2,023,188",
          "unit": "",
          "value": 2023188
         },
-        "no_fall_gen": {
-         "text": "$1,470,167",
+        "now": {
+         "text": "$3,511,566",
          "unit": "",
-         "value": 1470167
+         "value": 3511566.0
         },
-        "no_fall_n": {
-         "text": "27",
+        "rise": {
+         "text": "$3,026,556",
          "unit": "",
-         "value": 27
+         "value": 3026556
+        },
+        "two_year": {
+         "text": "$224,694",
+         "unit": "",
+         "value": 224694.0
         }
        },
-       "id": "the-biggest-rise-was-not-a-grant-ending",
+       "id": "the-biggest-rise-was-a-reporting-gap",
        "kind": "measured",
        "literals": [],
-       "not_shown": "Why the insurance figure moved. DESE attributes dollars to a function; it does not report premiums, how many employees are covered, or how the town and the district divide the cost. And a line rising is not people being hired.",
+       "not_shown": "Why FY2024 was reported at that level. DESE attributes dollars to a function; it does not say where a missing two and a half million was reported instead, and this project has not found it.",
        "see": [
         {
          "label": "what health insurance costs the town",
          "slug": "/health-insurance"
         },
         {
-         "label": "where the pressure actually sits",
-         "slug": "/find-the-money"
+         "label": "the insurance appropriated outside the school budget",
+         "slug": "/money-outside-the-budget"
         }
        ],
-       "so_what": "Larger than the whole year\u2019s fall in grant funding, and no grant was paying for it."
+       "so_what": "The FY2025 \u201crise\u201d of $3,026,556 is that gap closing, not a cost; over two years the line moved $224,694."
       },
       {
        "basis": "DESE\u2019s End of Year Financial Report, district totals, every year from FY2009 to FY2025: the general fund column as a share of the state\u2019s own total column.",
@@ -14894,7 +15032,7 @@
   },
   {
    "about": "Who lives in Lunenburg, and the two reports about money a household hands over, side by side.",
-   "conclusions": 16,
+   "conclusions": 17,
    "key": "household",
    "reports": [
     {
@@ -15140,8 +15278,231 @@
      "url": "/lunenburg-by-the-numbers"
     },
     {
-     "about": "Who owns Lunenburg\u2019s homes and for how long \u2014 from the Census sample and from the assessor\u2019s own parcel file \u2014 and what the bill on an average home has done.",
+     "about": "Lunenburg\u2019s homes and the tax bill: how many there are, what the average one is worth and pays, year by year and against the neighbours \u2014 and, behind that, how long the owners have been here and what a long-held home pays.",
      "conclusions": [
+      {
+       "basis": "DLS Average Single-Family Tax Bill (parcels, FY2026); MassGIS Level 3 parcels, FY2026; ACS B25003, 2019\u20132023.",
+       "bearing": "sizes",
+       "claim": "Lunenburg has 3,645 single-family homes on 5,303 parcels, and 81% of households own theirs.",
+       "detail": "3,645 single-family parcels in the state\u2019s FY2026 count, 3,649 in the assessor\u2019s file; 5,303 parcels of every kind. 4,529 \u00b1 235 occupied households on the Census 2019\u20132023 sample, 3,682 \u00b1 321 of them owned and 847 \u00b1 189 rented.",
+       "figure": "sf",
+       "figures": {
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "hh": {
+         "text": "4,529",
+         "unit": "",
+         "value": 4529.0
+        },
+        "hhmoe": {
+         "text": "235",
+         "unit": "",
+         "value": 235.0
+        },
+        "own": {
+         "text": "3,682",
+         "unit": "",
+         "value": 3682.0
+        },
+        "ownmoe": {
+         "text": "321",
+         "unit": "",
+         "value": 321.0
+        },
+        "parcels": {
+         "text": "5,303",
+         "unit": "",
+         "value": 5303
+        },
+        "rent": {
+         "text": "847",
+         "unit": "",
+         "value": 847.0
+        },
+        "rentmoe": {
+         "text": "189",
+         "unit": "",
+         "value": 189.0
+        },
+        "sf": {
+         "text": "3,645",
+         "unit": "single-family homes",
+         "value": 3645
+        },
+        "sf2": {
+         "text": "3,649",
+         "unit": "",
+         "value": 3649
+        },
+        "share": {
+         "text": "81%",
+         "unit": "",
+         "value": 81.2982998454405
+        }
+       },
+       "id": "the-homes",
+       "kind": "measured",
+       "literals": [
+        "2019\u20132023",
+        "FY2026"
+       ],
+       "not_shown": "Condominiums, two- and three-family homes and apartments, which the single-family count leaves out.",
+       "see": [],
+       "so_what": "Four households in five own, so a change in the tax bill reaches most of the town directly."
+      },
+      {
+       "basis": "DLS Average Single-Family Tax Bill, Lunenburg, FY1988\u2013FY2026; rate derived as bill \u00f7 value per $1,000.",
+       "bearing": "sizes",
+       "claim": "In ten years the average home\u2019s value rose 101% and the tax rate fell 27%; the bill rose 48%.",
+       "detail": "FY2016 to FY2026: the average single-family value from $256,969 to $517,296, the effective rate from $19.61 to $14.39 per $1,000, the average bill from $5,039 to $7,444. Since FY1988, the first year the state publishes, the value is up 681% and the bill 531%. Proposition 2\u00bd caps how fast the LEVY grows; the rate is whatever divides that levy into the year\u2019s total value, so as values rise the rate falls and the bill does neither.",
+       "figure": "bill",
+       "figures": {
+        "b0": {
+         "text": "$5,039",
+         "unit": "",
+         "value": 5039.0
+        },
+        "b1": {
+         "text": "$7,444",
+         "unit": "",
+         "value": 7444.0
+        },
+        "bill": {
+         "text": "48%",
+         "unit": "more on the average bill in ten years",
+         "value": 47.72772375471324
+        },
+        "ff": {
+         "text": "FY1988",
+         "unit": "",
+         "value": 1988
+        },
+        "fy0": {
+         "text": "FY2016",
+         "unit": "",
+         "value": 2016
+        },
+        "fy1": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "r0": {
+         "text": "$19.61",
+         "unit": "",
+         "value": 19.609369223525015
+        },
+        "r1": {
+         "text": "$14.39",
+         "unit": "",
+         "value": 14.390213726763786
+        },
+        "rate": {
+         "text": "27%",
+         "unit": "",
+         "value": 26.615621529018384
+        },
+        "sb": {
+         "text": "531%",
+         "unit": "",
+         "value": 531.3825275657337
+        },
+        "sv": {
+         "text": "681%",
+         "unit": "",
+         "value": 681.2486785271997
+        },
+        "v0": {
+         "text": "$256,969",
+         "unit": "",
+         "value": 256969.0
+        },
+        "v1": {
+         "text": "$517,296",
+         "unit": "",
+         "value": 517296.0
+        },
+        "value": {
+         "text": "101%",
+         "unit": "",
+         "value": 101.30677241223651
+        }
+       },
+       "id": "the-bill",
+       "kind": "measured",
+       "literals": [
+        "2\u00bd",
+        "$1,000"
+       ],
+       "not_shown": "Any one household\u2019s bill: this is the town-wide average home, and the exemptions and abatements a household may hold.",
+       "see": [],
+       "so_what": "Residents feel higher taxes and see a falling rate. Both are true: the levy is capped, values are not."
+      },
+      {
+       "basis": "DLS Average Single-Family Tax Bill, FY2026, for Lunenburg and ten neighbours.",
+       "bearing": "sizes",
+       "claim": "At $7,444, Lunenburg\u2019s average bill is 6th of 11 nearby towns and cities \u2014 145th statewide.",
+       "detail": "FY2026, DLS: Lunenburg $7,444 on an average home worth $517,296, ranked 145th of 351 municipalities. The towns above and below are in the table, with each one\u2019s bill as a share of its income per capita.",
+       "figure": "bill",
+       "figures": {
+        "bill": {
+         "text": "$7,444",
+         "unit": "a year, the average single-family bill",
+         "value": 7444.0
+        },
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "med": {
+         "text": "$7,999",
+         "unit": "",
+         "value": 7999.0
+        },
+        "of": {
+         "text": "11",
+         "unit": "",
+         "value": 11
+        },
+        "pct": {
+         "text": "16%",
+         "unit": "",
+         "value": 15.55
+        },
+        "pos": {
+         "text": "6th",
+         "unit": "",
+         "value": 6
+        },
+        "rank": {
+         "text": "145th",
+         "unit": "",
+         "value": 145
+        },
+        "sw": {
+         "text": "351",
+         "unit": "",
+         "value": 351
+        },
+        "value": {
+         "text": "$517,296",
+         "unit": "",
+         "value": 517296.0
+        }
+       },
+       "id": "the-neighbours",
+       "kind": "measured",
+       "literals": [
+        "FY2026"
+       ],
+       "not_shown": "What each town gets for the bill \u2014 services, schools, debt \u2014 which the bill alone does not say.",
+       "see": [],
+       "so_what": "The bill takes 16% of income per capita here; the median of the ten neighbours is $7,999."
+      },
       {
        "basis": "Census Bureau, ACS five-year estimates, tables B25038 and B25039, 2019\u20132023, Lunenburg town.",
        "bearing": "sizes",
@@ -15203,7 +15564,7 @@
        "basis": "MassGIS Level 3 parcels, Lunenburg, FY2026 assessing extract; bill = assessed value \u00d7 the FY2026 rate.",
        "bearing": "sizes",
        "claim": "A home last deeded before 1986 pays a median $5,992 a year; one deeded since 2021 pays $6,890.",
-       "detail": "Every single-family parcel in the assessor\u2019s FY2026 file, 3,649 of them, at the $14.39 rate: median assessed value $416,400 for homes last deeded before 1986 against $478,800 for those deeded since 2021. A house bought decades ago is taxed on what it is worth now, not on what it cost.",
+       "detail": "Every single-family parcel in the assessor\u2019s FY2026 file, 3,649 of them, at the $14.39 rate: median assessed value $416,400 for homes last deeded before 1986 against $478,800 for those deeded since 2021; the median price those older homes last sold for was $32,500. A house bought decades ago is taxed on what it is worth now, not on what it cost.",
        "figure": "old",
        "figures": {
         "fy": {
@@ -15245,6 +15606,11 @@
          "text": "87%",
          "unit": "",
          "value": 86.96741854636592
+        },
+        "sale": {
+         "text": "$32,500",
+         "unit": "",
+         "value": 32500.0
         }
        },
        "id": "bill-by-tenure",
@@ -15257,160 +15623,14 @@
        "not_shown": "What any household earns, or whether the deed date is when they arrived: a third of deeds are nominal transfers that reset the date. Exemptions and abatements are not applied.",
        "see": [],
        "so_what": "The bill barely falls with tenure \u2014 long-held homes pay 87% of what newcomers pay."
-      },
-      {
-       "basis": "MassGIS Level 3 parcels, Lunenburg, FY2026: LS_DATE and LS_PRICE for every single-family parcel; ACS B25038 for the household figure.",
-       "bearing": "sizes",
-       "claim": "At least 1,641 single-family homes \u2014 45% \u2014 have not changed hands in ten years or more.",
-       "detail": "1,641 of 3,649 single-family parcels carry a last deed of 2015 or earlier; 935 at twenty years, 407 at thirty. 1,213 deeds record a price under $1,000 \u2014 a trust, an estate, a family transfer \u2014 so a home held since the 1970s can show a deed from last year. The Census sample, which asks when the household ARRIVED, puts the ten-year-plus share of owner households at about 49%.",
-       "figure": "n",
-       "figures": {
-        "acs": {
-         "text": "49%",
-         "unit": "",
-         "value": 48.85931558935361
-        },
-        "h20": {
-         "text": "935",
-         "unit": "",
-         "value": 935
-        },
-        "h30": {
-         "text": "407",
-         "unit": "",
-         "value": 407
-        },
-        "n": {
-         "text": "1,641",
-         "unit": "homes",
-         "value": 1641
-        },
-        "ndeeds": {
-         "text": "1,213",
-         "unit": "",
-         "value": 1213
-        },
-        "nominal": {
-         "text": "33%",
-         "unit": "",
-         "value": 33.24198410523431
-        },
-        "share": {
-         "text": "45%",
-         "unit": "",
-         "value": 44.97122499314881
-        },
-        "total": {
-         "text": "3,649",
-         "unit": "",
-         "value": 3649
-        },
-        "year": {
-         "text": "2015",
-         "unit": "",
-         "value": 2015
-        }
-       },
-       "id": "held-ten-years",
-       "kind": "measured",
-       "literals": [
-        "$1,000",
-        "1970s"
-       ],
-       "not_shown": "The true tenure of any home whose last deed was a transfer rather than a sale.",
-       "see": [],
-       "so_what": "A floor, not the figure: 33% of deeds are nominal transfers that reset the date."
-      },
-      {
-       "basis": "Town tax classification hearings FY2019\u2013FY2023 and the FY2026 rate, as carried in model/taxbase.py.",
-       "bearing": "sizes",
-       "claim": "The average home\u2019s value rose 67% from FY2019 to FY2026; the rate fell 23%; the bill rose 29%.",
-       "detail": "From $5,770 on a $308,900 home in FY2019 to $7,444 on a $517,296 home in FY2026. The rate went from $18.68 to $14.39 per $1,000. The years between are in the table; FY2024 and FY2025 are not held.",
-       "figure": "bill",
-       "figures": {
-        "b0": {
-         "text": "$5,770",
-         "unit": "",
-         "value": 5770.25
-        },
-        "b1": {
-         "text": "$7,444",
-         "unit": "",
-         "value": 7444
-        },
-        "bill": {
-         "text": "29%",
-         "unit": "more on the average bill",
-         "value": 29.00654217754863
-        },
-        "first": {
-         "text": "FY2019",
-         "unit": "",
-         "value": 2019
-        },
-        "last": {
-         "text": "FY2026",
-         "unit": "",
-         "value": 2026
-        },
-        "m0": {
-         "text": "FY2024",
-         "unit": "",
-         "value": 2024
-        },
-        "m1": {
-         "text": "FY2025",
-         "unit": "",
-         "value": 2025
-        },
-        "r0": {
-         "text": "$18.68",
-         "unit": "",
-         "value": 18.68
-        },
-        "r1": {
-         "text": "$14.39",
-         "unit": "",
-         "value": 14.39
-        },
-        "rate": {
-         "text": "23%",
-         "unit": "",
-         "value": 22.965738758029975
-        },
-        "v0": {
-         "text": "$308,900",
-         "unit": "",
-         "value": 308900
-        },
-        "v1": {
-         "text": "$517,296",
-         "unit": "",
-         "value": 517296
-        },
-        "value": {
-         "text": "67%",
-         "unit": "",
-         "value": 67.46390417610877
-        }
-       },
-       "id": "bill-history",
-       "kind": "measured",
-       "literals": [
-        "2\u00bd",
-        "$1,000"
-       ],
-       "not_shown": "Any other town\u2019s bill. The state publishes every town\u2019s average single-family bill and the page that does sits behind a bot check this project cannot pass by script.",
-       "see": [],
-       "so_what": "Proposition 2\u00bd caps the levy, not the bill on any one house \u2014 values decide who pays it."
       }
      ],
-     "count": 4,
+     "count": 5,
      "data": "/data/property-owners.json",
      "generator": "scripts/build_property_owners.py",
      "id": "owners",
-     "title": "Who owns the homes \u2014 and what the bill has done",
-     "url": "/who-owns-the-homes"
+     "title": "Lunenburg\u2019s homes and the tax bill",
+     "url": "/homes-and-taxes"
     },
     {
      "about": "Athletics with both sides of the money visible at once \u2014 the town\u2019s appropriation, the fee-funded revolving fund, and three district documents that state three different costs for the same team in the same year.",
@@ -15880,14 +16100,14 @@
  "totals": {
   "bearing": {
    "lever": 19,
-   "sizes": 83,
+   "sizes": 84,
    "unclassified": 0
   },
-  "conclusions": 102,
+  "conclusions": 103,
   "document_words": 80083,
   "documents": 17,
   "hypothesis": 1,
-  "measured": 101,
+  "measured": 102,
   "reports": 28,
   "with_conclusions": 28,
   "without_conclusions": 0

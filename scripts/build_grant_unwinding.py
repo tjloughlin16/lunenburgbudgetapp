@@ -371,6 +371,20 @@ def build():
     if top_rise['d_gen_fund'] <= net_grant_fall:
         fail('the largest general fund rise in FY%d is no longer larger than the year’s '
              'net grant fall -- a conclusion on this page says it is' % latest)
+    # THE RISE IS A REPORTING GAP CLOSING, and the first draft of this page did not look.
+    # TJ, 13 September 2026, reading "$3,026,556 rise in what the town paid for employee
+    # insurance in FY2025": "is that true?!" The general fund column for that function
+    # reads $2.83M, $3.29M, $485,010, $3.51M across FY2022-FY2025: the year before the
+    # "rise" is the anomaly, and the change from the year before THAT is a tenth of it.
+    # A difference of two figures quoted as a movement is rule 13's defect exactly. So the
+    # three levels are read and the conclusion states them, and the two-year change.
+    lv = {fy: g for fy, g in db.execute(
+        'SELECT fy, SUM(gen_fund) FROM dese_function_expenditure WHERE lea=? AND level=? '
+        'AND func_code=? GROUP BY fy', (LEA, 'detail', top_rise['func_code']))}
+    levels = dict(func=top_rise['func_desc'], fy=latest, before2=lv.get(latest - 2), before=lv.get(latest - 1),
+                  now=lv.get(latest), two_year=(lv.get(latest) or 0) - (lv.get(latest - 2) or 0))
+    anomalous = (levels['before2'] and levels['now']
+                 and levels['before'] < 0.5 * min(levels['before2'], levels['now']))
     cf = {
         'actual': round(last['gen_fund']),
         'at_first': round(last['total'] * first['gen_fund'] / first['total']),
@@ -469,46 +483,45 @@ def build():
                      ('/what-stopped-being-funded', 'the lines the book took to zero')],
             ),
             conclusion(
-                id='the-biggest-rise-was-not-a-grant-ending',
+                id='the-biggest-rise-was-a-reporting-gap',
                 bearing='sizes',
-                claim='Rise in what the town paid for employee insurance in FY2025',
-                so_what='Larger than the whole year’s fall in grant funding, and no grant was paying for it.',
-                lede='The largest rise in the town’s own school spending in %s was not a '
-                      'grant ending. It was %s, up %s — more than the whole year’s net '
-                      'fall in grant funding of %s.'
-                      % (C.fy(latest), top_rise['func_desc'],
-                         C.usd(top_rise['d_gen_fund']), C.usd(net_grant_fall)),
-                detail='Nothing in the handover explains it: grant funding against that '
-                       'function did not fall, it rose %s in the same year. And across '
-                       'the %s functions where '
-                       'grants did not fall at all, the general fund rose %s net — a '
-                       'larger movement than the handover. The end of the grants is real '
-                       'and it is not the biggest thing that happened to what Lunenburg '
-                       'raises for its schools that year.'
-                       % (C.usd(top_rise['d_grants']), C.num(no_fall_n),
-                          C.usd(no_fall_gen)),
+                claim='Employee insurance: %s reported in %s; %s the year before, %s after.'
+                      % (C.usd(levels['before']), C.fy(latest - 1), C.usd(levels['before2']), C.usd(levels['now'])),
+                so_what='The %s “rise” of %s is that gap closing, not a cost; over two years the line moved %s.'
+                        % (C.fy(latest), C.usd(top_rise['d_gen_fund']), C.usd(levels['two_year'])),
+                lede='The largest rise in the town’s own school spending in %s on paper was %s, up %s '
+                      '— more than the whole year’s net fall in grant funding of %s. It is not a rise.'
+                      % (C.fy(latest), levels['func'], C.usd(top_rise['d_gen_fund']), C.usd(net_grant_fall)),
+                detail='The general fund column for that function reads %s in %s, %s in %s and %s in %s. '
+                       'The middle year is the anomaly — a seventh of its neighbours — and the change from '
+                       '%s to %s is %s. What the %s figure is — a mis-filed year, or a year the town '
+                       'appropriated the schools’ insurance outside the school department and reported it '
+                       'there — is not established, and is a registered gap. Grant funding against the '
+                       'function did not fall in %s; it rose %s.'
+                       % (C.usd(levels['before2']), C.fy(latest - 2), C.usd(levels['before']), C.fy(latest - 1),
+                          C.usd(levels['now']), C.fy(latest), C.fy(latest - 2), C.fy(latest), C.usd(levels['two_year']),
+                          C.fy(latest - 1), C.fy(latest), C.usd(top_rise['d_grants'])),
                 figures={
                     'fy': figure(latest, C.fy(latest)),
-                    'insurance_rise': figure(top_rise['d_gen_fund'],
-                                             C.usd(top_rise['d_gen_fund'])),
+                    'fy1': figure(latest - 1, C.fy(latest - 1)),
+                    'fy2': figure(latest - 2, C.fy(latest - 2)),
+                    'before': figure(levels['before'], C.usd(levels['before']), 'reported for employee insurance'),
+                    'before2': figure(levels['before2'], C.usd(levels['before2'])),
+                    'now': figure(levels['now'], C.usd(levels['now'])),
+                    'rise': figure(top_rise['d_gen_fund'], C.usd(top_rise['d_gen_fund'])),
+                    'two_year': figure(levels['two_year'], C.usd(levels['two_year'])),
                     'net_grant_fall': figure(net_grant_fall, C.usd(net_grant_fall)),
-                    'insurance_grants': figure(top_rise['d_grants'],
-                                               C.usd(top_rise['d_grants'])),
-                    'no_fall_n': figure(no_fall_n, C.num(no_fall_n)),
-                    'no_fall_gen': figure(no_fall_gen, C.usd(no_fall_gen)),
+                    'insurance_grants': figure(top_rise['d_grants'], C.usd(top_rise['d_grants'])),
                 },
-                figure='insurance_rise',
+                figure='before',
                 kind='measured',
-                basis='DESE’s End of Year Financial Report, every function in both FY%d '
-                      'and FY%d, ranked by the change in the general fund column '
-                      'whatever happened to grants in the same function.'
-                      % (latest - 1, latest),
-                not_shown='Why the insurance figure moved. DESE attributes dollars to a '
-                          'function; it does not report premiums, how many employees are '
-                          'covered, or how the town and the district divide the cost. And '
-                          'a line rising is not people being hired.',
+                basis='DESE’s End of Year Financial Report, function 5200 Insurance for Active Employees, '
+                      'general fund column, FY%d to FY%d.' % (latest - 2, latest),
+                not_shown='Why FY%d was reported at that level. DESE attributes dollars to a function; '
+                          'it does not say where a missing two and a half million was reported instead, '
+                          'and this project has not found it.' % (latest - 1),
                 see=[('/health-insurance', 'what health insurance costs the town'),
-                     ('/find-the-money', 'where the pressure actually sits')],
+                     ('/money-outside-the-budget', 'the insurance appropriated outside the school budget')],
             ),
             conclusion(
                 id='the-town-carries-more-of-it-than-it-used-to',
