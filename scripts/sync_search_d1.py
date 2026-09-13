@@ -150,12 +150,36 @@ def remote_counts():
 
 # ------------------------------------------------------------------------------- the push
 
+def half_uploaded():
+    """Files the remote MARKS as held but does not hold in full.
+
+    wrangler runs a SQL file in chunks, and a chunk can fail after the chunk carrying the
+    marker succeeded -- 167 Board of Assessors agendas arrived that way on 13 September
+    2026: marker present, rows absent, and a push that trusts the marker never sends them
+    again. One scan of the search table, once per run; reads cost, so it is not per file."""
+    rows, _ = command(
+        'SELECT i.file_key FROM indexed_file i '
+        'LEFT JOIN (SELECT file_key, COUNT(*) n FROM search GROUP BY file_key) s '
+        'ON s.file_key = i.file_key WHERE COALESCE(s.n, 0) != i.rows')
+    return [r['file_key'] for r in rows]
+
+
 def plan(local):
     """(to_send, to_delete): file_keys, from the local index's own record of itself."""
     have = remote_files()
     want = {r['file_key']: dict(r) for r in local.execute('SELECT * FROM indexed_file')}
-    to_delete = [k for k in have if k not in want or have[k]['sha256'] != want[k]['sha256']]
-    to_send = [k for k in want if k not in have or have[k]['sha256'] != want[k]['sha256']]
+    # Changed means the bytes changed OR the indexer now makes a different number of rows
+    # from the same bytes -- a reader that learned to skip a garbage page changes nothing
+    # on disk and everything in the index.
+    changed = lambda k: have[k]['sha256'] != want[k]['sha256'] or have[k]['rows'] != want[k]['rows']
+    to_delete = [k for k in have if k not in want or changed(k)]
+    to_send = [k for k in want if k not in have or changed(k)]
+    # A marker without all its rows is treated as absent: delete the marker, resend.
+    half = [k for k in half_uploaded() if k in want]
+    if half:
+        print('%d file(s) marked held but not held in full; resending' % len(half))
+        to_delete += [k for k in half if k not in to_delete]
+        to_send += [k for k in half if k not in to_send]
     # Smallest corpora first, so a run cut off by the budget has sent the pages, the
     # posts and the documents whole and left only transcripts for tomorrow.
     order = {c: i for i, c in enumerate(('post', 'page', 'recorded', 'source', 'minutes', 'transcript'))}
@@ -320,6 +344,10 @@ def check():
     dup, _ = command('SELECT COUNT(*) - COUNT(DISTINCT doc_key) AS n FROM search')
     if dup and dup[0]['n']:
         print('  %d duplicated row(s) in the remote -- re-run the sync; it deletes before it inserts' % dup[0]['n'])
+        bad += 1
+    half = half_uploaded()
+    if half:
+        print('  %d file(s) marked held but not held in full -- run sync_search_d1.py; it resends them' % len(half))
         bad += 1
     for c in sorted(set(lc) | set(rc)):
         flag = '' if lc.get(c, 0) == rc.get(c, 0) else '   <-- DIFFERS'

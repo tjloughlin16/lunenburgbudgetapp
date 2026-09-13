@@ -430,9 +430,29 @@ def split_body(body):
     return parts
 
 
+CONTROL = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f]')
+
+
+def readable(body):
+    """Is this text, or the wreckage of a font encoding?
+
+    167 Board of Assessors agendas extracted to `\\x00 \\x01 \\x02 ...` -- a PDF whose text
+    layer maps glyphs to control characters. Indexing that matches nothing, and worse: a
+    NUL inside a SQL string makes D1 drop the insert silently while the file's marker
+    lands, so the sync reported them held for ever. A row nobody could search for is not
+    a row."""
+    if not body:
+        return False
+    # Control characters are the tell. A share-of-letters test was tried and dropped
+    # seven budget spreadsheets, which are legitimately mostly digits.
+    return not CONTROL.search(body)
+
+
 def index_file(db, entry):
     rows = []
     for row, body in READERS[entry['corpus']](entry):
+        if not readable(body):
+            continue
         parts = split_body(body)
         for i, part in enumerate(parts):
             r = dict(row)
