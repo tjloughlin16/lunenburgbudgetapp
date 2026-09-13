@@ -102,10 +102,14 @@ function Body({ d }: { d: Model }) {
               <span className="text-[10px] font-bold uppercase tracking-widest shrink-0" style={{ color: f.bends ? 'var(--status-good)' : 'var(--text-muted)' }}>{f.bends ? 'bends the curve' : 'buys time'}</span>
             </div>
             <p className="text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>{f.angle}</p>
+            <div className="mt-3 pt-3 flex items-baseline gap-2.5" style={{ borderTop: '1px solid var(--grid)' }}>
+              <span className="text-2xl font-bold tnum leading-none" style={{ color: f.bends ? 'var(--status-good)' : 'var(--text-primary)' }}>{f.holdsFor}</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>the gap stays shut</span>
+            </div>
+            <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{f.holds}</p>
             <dl className="mt-3 text-[13px] space-y-1.5">
-              <div><dt className="inline font-semibold">Who says yes. </dt><dd className="inline" style={{ color: 'var(--text-secondary)' }}>{f.whoSaysYes}</dd></div>
               <div><dt className="inline font-semibold">What it costs. </dt><dd className="inline tnum" style={{ color: 'var(--text-secondary)' }}>{f.costs}</dd></div>
-              <div><dt className="inline font-semibold">How long it holds. </dt><dd className="inline" style={{ color: f.bends ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{f.holds}</dd></div>
+              <div><dt className="inline font-semibold">Who says yes. </dt><dd className="inline" style={{ color: 'var(--text-secondary)' }}>{f.whoSaysYes}</dd></div>
             </dl>
             <a className="underline text-xs mt-2 inline-block" style={{ color: 'var(--text-muted)' }} href={f.more}>the working</a>
           </div>))}

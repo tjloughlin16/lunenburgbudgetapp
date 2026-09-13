@@ -26,7 +26,9 @@ export interface Future {
   whoSaysYes: string
   /** What it costs, and to whom -- a resident, an employee, a classroom. */
   costs: string
-  /** How long the gap stays shut. */
+  /** How long the gap stays shut -- the metric, short enough to be the card's number. */
+  holdsFor: string
+  /** ...and the sentence under it. */
   holds: string
   bends: boolean
   /** Where the working is. */
@@ -86,6 +88,7 @@ export const FUTURES: Future[] = [
     angle: 'What happens if nothing else is decided',
     whoSaysYes: 'The School Committee, every year, at budget time',
     costs: `About ${n1(cutsPerYear[0])} positions next year and ${n1(cutsTotal)} over ${MENU_YEARS} years, at the catalogue's own cost per position — from a staff of roughly ${HEADCOUNT}`,
+    holdsFor: 'Never',
     holds: 'Never closes. Each cut balances one year; the rates reopen it the next',
     bends: false,
     more: '/crisis',
@@ -96,6 +99,7 @@ export const FUTURES: Future[] = [
     whoSaysYes: 'The School Committee, once',
     costs: cutOnce === null ? 'No cut of any size holds five years'
       : `${usd(cutOnce)} a year, permanently — about ${n1(cutOnce / COST_PER_FTE)} positions. Holding ten years takes ${usd(cutOnceTen ?? 0)}, about ${n1((cutOnceTen ?? 0) / COST_PER_FTE)} positions`,
+    holdsFor: cutOnce === null ? '—' : plural(yearsHeld({ cut: cutOnce }), 'year'),
     holds: cutOnce === null ? '' : `${plural(yearsHeld({ cut: cutOnce }), 'year')}, then it reopens — a smaller budget growing at the same ${pct(COST_GROWTH_BLENDED, 2)}`,
     bends: false,
     more: '/bend-the-curve',
@@ -105,6 +109,7 @@ export const FUTURES: Future[] = [
     angle: 'Ask the voters each spring for that year’s gap',
     whoSaysYes: 'Town Meeting and the ballot, every year, and it has to pass every time',
     costs: `${usd(treadmill[0].onAverageHome)} on the average tax bill in year one, ${usd(treadmill[MENU_YEARS - 1].onAverageHome)} more in year ${MENU_YEARS}; ${usd(treadmillBill)} added to the bill over ${MENU_YEARS} years, and it keeps rising`,
+    holdsFor: '1 year at a time',
     holds: 'Only while it keeps passing. Nothing about the rates changes, so the question comes back larger each spring',
     bends: false,
     more: '/bend-the-curve',
@@ -115,6 +120,7 @@ export const FUTURES: Future[] = [
     whoSaysYes: 'Town Meeting and the ballot, once',
     costs: overrideOnce === null ? 'No override of any size holds five years'
       : `${usd(overrideOnce)} on the levy — about ${usd(overrideOnAverageHome(overrideOnce))} a year on the average tax bill, permanently. To last ten years: ${usd(overrideOnceTen ?? 0)}, about ${usd(overrideOnAverageHome(overrideOnceTen ?? 0))} a year`,
+    holdsFor: overrideOnce === null ? '—' : plural(yearsHeld({ overrideLevy: overrideOnce }), 'year'),
     holds: overrideOnce === null ? '' : `${plural(yearsHeld({ overrideLevy: overrideOnce }), 'year')}, then it reopens — the levy grows ${pct(LEVY_CAP, 1)} and the costs grow ${pct(COST_GROWTH_BLENDED, 2)}`,
     bends: false,
     more: '/bend-the-curve',
@@ -124,6 +130,7 @@ export const FUTURES: Future[] = [
     angle: 'Plan design or the state GIC, so the line grows ' + pct(insuranceOnly.rates.health) + ' instead of ' + pct(MODEL.assumptions.health),
     whoSaysYes: 'The Town, which buys the insurance, through the Public Employee Committee; the district holds its own lines to the cap. Nothing is asked of the union on pay',
     costs: `Every employee on a narrower network or a higher deductible; ${cheque(insuranceOnly)} to bridge the first ${MENU_YEARS} years. Ten years: ${cheque(insuranceOnlyTen)}`,
+    holdsFor: `${MENU_YEARS}–10 years`,
     holds: `${MENU_YEARS} years with the cheque; ten with the larger one. Salaries still grow ${pct(MODEL.assumptions.salaries)}, so it does not close on its own`,
     bends: true,
     more: '/bend-the-curve',
@@ -133,6 +140,7 @@ export const FUTURES: Future[] = [
     angle: `Pay settles at ${pct(shared.rates.salaries)}, insurance held to ${pct(shared.rates.health)}, the district holds the rest at the cap`,
     whoSaysYes: 'The union, the Town and the School Committee — three parties, none of them alone',
     costs: `About ${n1(shrinkAt3.positionsPerYear)} fewer positions a year if raises stay at contract, or a smaller raise; a costlier plan for staff. To bridge ${MENU_YEARS} years, ${cheque(shared)}; ten years, ${cheque(sharedTen)}`,
+    holdsFor: `${MENU_YEARS}–30 years`,
     holds: `${MENU_YEARS} years, ten with the cheque, thirty if the town also builds about ${Math.round(sharedThirty.firstYears.buildings ?? 0)} developments a year`,
     bends: true,
     more: '/bend-the-curve',
@@ -142,6 +150,7 @@ export const FUTURES: Future[] = [
     angle: `The same local agreement, with Chapter 70 growing ${pct(state.ch70 ?? 0, 1)} a year`,
     whoSaysYes: 'The union, the Town, the School Committee — and the Legislature, in every budget from now on',
     costs: 'The same as the card above locally, and a delegation that has to win it at the State House every year',
+    holdsFor: 'For good',
     holds: 'For good, as long as the state keeps its side — which the town does not control',
     bends: true,
     more: '/state-aid',
@@ -151,6 +160,7 @@ export const FUTURES: Future[] = [
     angle: `Pay at ${pct(forever.rates.salaries)}, insurance at ${pct(forever.rates.health)}, everything else at the cap — under the levy cap on the cost side`,
     whoSaysYes: 'The union, the Town and the School Committee. Nobody else: no developer, no legislature, no override',
     costs: `About ${n1(shrinkAtCap.positionsPerYear)} fewer positions a year if raises stay at contract — ${pct(shrinkAtCap.after10)} of the staff in ten years — or raises under 2%; and the cheapest plan the group can bargain`,
+    holdsFor: 'For good',
     holds: 'For good. Nothing has to keep going right afterwards',
     bends: true,
     more: '/bend-the-curve',
