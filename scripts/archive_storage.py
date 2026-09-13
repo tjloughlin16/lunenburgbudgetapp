@@ -56,7 +56,12 @@ SKIP_NAMES = {'.DS_Store'}
 # its own manifest. Both change every time the archive does, and an object cannot be
 # updated once written, so a copy in the bucket would be permanently out of date about the
 # bucket. The current manifest is published by the site instead, which git versions.
-SKIP_KEYS = {'data/archive-manifest.csv', 'data/archive-push-state.csv'}
+SKIP_KEYS = {'data/archive-manifest.csv', 'data/archive-push-state.csv',
+             # The two search indexes: derived, gitignored, rebuilt by a script from files
+             # the bucket already holds, and re-derived daily -- so every copy in the bucket
+             # is an older rendering the moment it lands, and the larger one (340 MB) dies
+             # in a single PUT anyway. Neither is a document anyone published.
+             'data/search-fts.db', 'data/minutes-fts.db'}
 
 CONTENT_TYPES = {
     '.pdf': 'application/pdf',
