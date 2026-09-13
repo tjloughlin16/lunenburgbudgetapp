@@ -1,3 +1,4 @@
+import { Bar, BarChart, CartesianGrid, ErrorBar, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import type { Tab } from '../routes'
 import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
@@ -28,6 +29,11 @@ const n0 = (n: number) => Math.round(n).toLocaleString('en-US')
 const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US')
 const pct = (x: number, d = 0) => `${(x * 100).toFixed(d)}%`
 const FY = (fy: number) => 'FY' + String(fy).slice(2)
+const AXIS = { fontSize: 11, fill: 'var(--text-muted)' }
+
+function Box({ children }: { children: React.ReactNode }) {
+  return <div className="card p-2.5 text-[12px]" style={{ minWidth: 180 }}>{children}</div>
+}
 
 export function PropertyOwners() {
   const { d, err } = useReport<Payload>('property-owners.json')
@@ -69,6 +75,22 @@ function Report({ d }: { d: Payload }) {
         <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
           Owner-occupied households by the year the householder moved in. A five-year sample: the margins are real, and the two windows do not overlap, which is what makes the comparison permissible.
         </p>
+        {/* THE HISTOGRAM, oldest on the left so time reads left to right, with the margin
+            drawn on every bar -- a sample's bar without its whisker is a count it is not. */}
+        <div style={{ width: '100%', height: 260 }} className="mt-4 avoid-break">
+          <ResponsiveContainer>
+            <BarChart data={[...c23.bands].reverse().map(x => ({ label: x.label, households: x.households, moe: x.moe, share: x.share }))} margin={{ top: 8, right: 8, left: 0, bottom: 4 }}>
+              <CartesianGrid stroke="var(--grid)" vertical={false} />
+              <XAxis dataKey="label" tick={AXIS} stroke="var(--axis)" interval={0} />
+              <YAxis tick={AXIS} stroke="var(--axis)" />
+              <Tooltip cursor={{ fill: 'var(--surface-3)' }} content={({ active, payload }) => active && payload?.length ? (() => { const r = payload[0].payload as { label: string; households: number; moe: number; share: number }; return <Box><p className="font-bold">moved in {r.label}</p><p>{n0(r.households)} ± {n0(r.moe)} owner households</p><p style={{ color: 'var(--text-muted)' }}>{pct(r.share)} of owners</p></Box> })() : null} />
+              <Bar dataKey="households" fill="var(--series-cost)" radius={[2, 2, 0, 0]} isAnimationActive={false}>
+                <ErrorBar dataKey="moe" width={4} strokeWidth={1.5} stroke="var(--text-muted)" />
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Owner households by the year they moved in, {c23.window}; the whisker is the margin of error.</p>
         <div className="overflow-x-auto mt-4">
           <table className="text-sm" style={{ minWidth: 560 }}>
             <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
@@ -91,6 +113,18 @@ function Report({ d }: { d: Payload }) {
         <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
           Every single-family parcel in the {FY(p.fy)} assessing file — {n0(p.single_family)} of {n0(p.parcels)} parcels — by the year of its last recorded deed, with the median assessed value and the bill at the {FY(p.fy)} rate of ${p.rate.toFixed(2)}. A deed is not an arrival: {pct(p.nominal.share)} of them record a price under $1,000 — a trust, an estate, a family transfer — so the newest band is overstated and every older band is a floor.
         </p>
+        <div style={{ width: '100%', height: 260 }} className="mt-4 avoid-break">
+          <ResponsiveContainer>
+            <BarChart data={[...p.bands].reverse().map(x => ({ label: x.label, homes: x.homes, bill: x.median_bill, share: x.share }))} margin={{ top: 8, right: 8, left: 0, bottom: 4 }}>
+              <CartesianGrid stroke="var(--grid)" vertical={false} />
+              <XAxis dataKey="label" tick={AXIS} stroke="var(--axis)" interval={0} />
+              <YAxis tick={AXIS} stroke="var(--axis)" />
+              <Tooltip cursor={{ fill: 'var(--surface-3)' }} content={({ active, payload }) => active && payload?.length ? (() => { const r = payload[0].payload as { label: string; homes: number; bill: number; share: number }; return <Box><p className="font-bold">last deed {r.label}</p><p>{n0(r.homes)} homes · {pct(r.share)}</p><p style={{ color: 'var(--text-muted)' }}>median bill {usd(r.bill)}</p></Box> })() : null} />
+              <Bar dataKey="homes" fill="var(--text-secondary)" radius={[2, 2, 0, 0]} isAnimationActive={false} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Single-family homes by the year of their last recorded deed, {FY(p.fy)} assessing file — a count, so no whisker; but the newest bar holds every nominal transfer, which is why the table beside it carries that share.</p>
         <div className="overflow-x-auto mt-4">
           <table className="text-sm" style={{ minWidth: 680 }}>
             <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
