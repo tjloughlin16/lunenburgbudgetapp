@@ -20,6 +20,7 @@ NOCAP = os.path.join(ROOT, 'sources', 'data', 'youtube-no-captions.csv')
 CLS = os.path.join(ROOT, 'sources', 'data', 'youtube-video-classification.csv')
 BOARDS = os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv')
 INDEX = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
+FETCHED = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
 OUT = os.path.join(ROOT, 'notes', 'generated', 'NO-CAPTIONS.md')
 SITE = 'https://lunenburgbudgetproject.org'
 
@@ -53,6 +54,21 @@ def build():
            'town published for the same board and date, from the meetings index.', '',
            f'**{total} recordings**, across {len(by_board)} boards. Reasons: '
            + ', '.join(f'{k} {v}' for k, v in reasons.most_common()) + '.', '']
+    # BY YEAR, against what was fetched. TJ, 13 September 2026: "looks like the youtube
+    # meetings without transcripts are mostly the older, pre2016 meetings" -- close, and the
+    # table says exactly which years: a 2015-2017 band, with the older uploads mostly fine.
+    fetched = collections.Counter(r['meeting_date'][:4] for r in rows(FETCHED) if r['meeting_date'])
+    missing = collections.Counter(r['meeting_date'][:4] for r in nocap if r['meeting_date'])
+    out += ['## By year', '',
+            'Recordings without captions against recordings whose captions were fetched, by meeting year. '
+            'The shape is a band, not an age: uploads before it and after it mostly carry captions, which '
+            'points at how the channel was uploading in those years rather than at the recordings themselves.', '',
+            '| year | no captions | fetched | share without |', '|---|---|---|---|']
+    for y in sorted(set(fetched) | set(missing)):
+        n, f = missing.get(y, 0), fetched.get(y, 0)
+        flag = ' **' if n > f else ''
+        out.append(f'| {y} | {n}{flag.strip()} | {f} | {n / (n + f):.0%} |' if n + f else f'| {y} | 0 | 0 | — |')
+    out.append('')
     no_record = 0
     for slug in sorted(by_board, key=lambda s: -len(by_board[s])):
         rs = sorted(by_board[slug], key=lambda r: r['meeting_date'] or '', reverse=True)
