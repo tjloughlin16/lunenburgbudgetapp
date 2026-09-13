@@ -14,7 +14,7 @@ Recordings without captions against recordings whose captions were fetched, by m
 | 2013 | 1 | 27 | 4% |
 | 2014 | 1 | 53 | 2% |
 | 2015 | 23 | 33 | 41% |
-| 2016 | 44** | 22 | 67% |
+| 2016 | 44 | 22 | 67% ← more without than with |
 | 2017 | 24 | 42 | 36% |
 | 2018 | 2 | 78 | 2% |
 | 2019 | 0 | 75 | 0% |

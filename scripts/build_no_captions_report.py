@@ -66,8 +66,8 @@ def build():
             '| year | no captions | fetched | share without |', '|---|---|---|---|']
     for y in sorted(set(fetched) | set(missing)):
         n, f = missing.get(y, 0), fetched.get(y, 0)
-        flag = ' **' if n > f else ''
-        out.append(f'| {y} | {n}{flag.strip()} | {f} | {n / (n + f):.0%} |' if n + f else f'| {y} | 0 | 0 | — |')
+        flag = ' ← more without than with' if n > f else ''
+        out.append(f'| {y} | {n} | {f} | {n / (n + f):.0%}{flag} |' if n + f else f'| {y} | 0 | 0 | — |')
     out.append('')
     no_record = 0
     for slug in sorted(by_board, key=lambda s: -len(by_board[s])):
