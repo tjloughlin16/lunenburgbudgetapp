@@ -1,7 +1,7 @@
 import { LABEL, type Tab } from '../routes'
 import { abs } from '../lib/abs'
 import {
-  Body, Conclusions, H3, ReportShell, Section, Stat, useReport,
+  Body, Conclusions, H3, ReportShell, Section, useReport,
   type Conclusion,
 } from '../components/report'
 
@@ -79,7 +79,7 @@ const DATA = '/data/one-big-report.json'
 
 type Item = {
   kind: 'bigpicture' | 'conclusion'; ref: string; note?: string
-  value?: string; label?: string; sub?: string; tone?: string
+  value?: string; label?: string; sub?: string; grain?: string; tone?: string
   conclusion?: Conclusion & { report: string; report_title: string; report_url: string }
 }
 type Section = { key: string; title: string; headline: Item[]; supporting: Item[]; context: Item[] }
@@ -100,9 +100,21 @@ function StorySection({ s, i }: { s: Section; i: number }) {
   const ctxCon = s.context.filter(x => x.kind === 'conclusion').map(x => x.conclusion!)
   return (
     <Section kind={i === 0 ? 'conclusions' : 'categorical'} id={s.key} title={`${i + 1}. ${s.title}`}>
+      {/* THE HEADLINE FIGURES ARE THE POINT OF THE SECTION, so they get a card each: the
+          number set large, its unit bold beside it, the change on its own line, the grain
+          small and grey. TJ: "the 'big metrics' for each section seem downplayed, despite
+          i think the point being they are the most important." */}
       {bigHead.length > 0 && (
-        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6">
-          {bigHead.map(x => <Stat key={x.ref} value={x.value!} tone={x.tone === 'critical' ? 'var(--status-critical)' : undefined}>{x.label} — {x.sub}</Stat>)}
+        <div className="grid gap-3 mt-6 sm:grid-cols-2 lg:grid-cols-3">
+          {bigHead.map(x => (
+            <div key={x.ref} className="card p-4" style={{ borderLeft: `3px solid ${x.tone === 'critical' ? 'var(--status-critical)' : 'var(--series-cost)'}` }}>
+              <div className="flex items-baseline gap-2 flex-wrap">
+                <span className="text-3xl font-bold tnum leading-none" style={{ color: x.tone === 'critical' ? 'var(--status-critical)' : 'var(--text-primary)' }}>{x.value}</span>
+                <span className="text-[13px] font-semibold" style={{ color: 'var(--text-secondary)' }}>{x.label}</span>
+              </div>
+              <div className="text-sm mt-2 tnum">{x.sub}</div>
+              {x.grain && <div className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{x.grain}</div>}
+            </div>))}
         </div>
       )}
       {conHead.length > 0 && <Conclusions rows={conHead} collapse noAsk />}

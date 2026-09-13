@@ -65,7 +65,7 @@ def bigpicture_item(b, ref):
     h, o, dr, dev, f = b['hole'], b['overrides'], b['drivers'], b['development'], b['facts']
     y0, yN = h['years'][0], h['years'][-1]
     if ref == 'hole.short_next':
-        return dict(value=usd(y0['short']), label='short next year', sub='%s, at level service — a projection' % FY(y0['fy']), tone='critical')
+        return dict(value=usd(y0['short']), label='short next year', sub='%s, at level service' % FY(y0['fy']), grain='a projection: the model’s rates run forward', tone='critical')
     if ref == 'hole.total':
         return dict(value=usd(h['total']), label='short over five years', sub='%s–%s, after each year’s cuts stay cut' % (FY(y0['fy']), FY(yN['fy'])))
     if ref == 'hole.cum_fte':
@@ -98,7 +98,7 @@ def bigpicture_item(b, ref):
     if ref == 'facts.children':
         return dict(value=pct(c['children']['share'] / 100), label='of residents are under 18', sub='%s, ± %.1f points' % (format(round(c['children']['n']), ','), c['children']['share_moe']))
     if ref == 'facts.students':
-        return dict(value=format(round(f['students']['last']), ','), label='students', sub=ch(f['students'], 'students') + ' — flat for a decade; ' + f['students']['grain'])
+        return dict(value=format(round(f['students']['last']), ','), label='students', sub=ch(f['students'], 'students') + ' — flat for a decade', grain=f['students']['grain'])
     if ref == 'facts.low_income':
         x = f['low_income']
         return dict(value=pct(x['last']), label='of students are low-income', sub='from %s in %s, as DESE counts it' % (pct(x['first']), FY(x['first_fy'])))
@@ -109,15 +109,15 @@ def bigpicture_item(b, ref):
         x = f['state_aid']
         return dict(value=pct(x['share']), label='of the school budget is state aid', sub='%s of %s, FY26 — set in the Governor’s budget, not in town' % (usd(x['aid']), usd(x['appropriation'])))
     if ref == 'facts.teachers':
-        return dict(value=n1(f['teachers']['last']), label='teacher FTE', sub=ch(f['teachers'], 'FTE', 1) + ' — ' + f['teachers']['grain'])
+        return dict(value=n1(f['teachers']['last']), label='teacher FTE', sub=ch(f['teachers'], 'FTE', 1), grain=f['teachers']['grain'])
     if ref == 'facts.paras':
-        return dict(value=format(round(f['paras']['last']), ','), label='paraprofessional FTE', sub=ch(f['paras'], 'FTE') + ' — the line that grew')
+        return dict(value=format(round(f['paras']['last']), ','), label='paraprofessional FTE', sub=ch(f['paras'], 'FTE') + ' — the line that grew', grain=f['paras']['grain'])
     if ref == 'facts.total_per_pupil':
         x = f['admin_per_pupil']['total_per_pupil']
-        return dict(value=usd(x['last']), label='spent for each pupil, all funds', sub=ch(x, '$') + ', DESE')
+        return dict(value=usd(x['last']), label='spent for each pupil, all funds', sub=ch(x, '$'), grain='DESE end-of-year report, every fund')
     if ref == 'facts.athletes':
         x = f['athletes']
-        return dict(value=format(round(x['last']), ','), label='athletes, by season', sub='%s → %s, %s to %s — the %d years published; a two-sport athlete counts twice' % (format(round(x['first']), ','), format(round(x['last']), ','), FY(x['first_fy']), FY(x['last_fy']), x['years']))
+        return dict(value=format(round(x['last']), ','), label='athletes, by season', sub='%s → %s, %s to %s — the %d years published' % (format(round(x['first']), ','), format(round(x['last']), ','), FY(x['first_fy']), FY(x['last_fy']), x['years']), grain=x['grain'])
     fail('big-picture ref %r is not one this generator knows how to render' % ref)
 
 
