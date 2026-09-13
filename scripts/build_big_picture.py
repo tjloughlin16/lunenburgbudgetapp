@@ -201,59 +201,72 @@ def cost_per_fte():
 def stabilise():
     """TJ, 13 September 2026: "how many staff need to be cut to bring the rate of growth to
     the revenue we get from prop 2.5? IOW when does the problem self stabilize due to cuts."
+    And, on a first draft that answered "never": "I don't want forever. I'm talking even 10
+    years. All these solutions should be a 5 or 10 year proposed solution."
 
-    The same equation as rates.ts salaryRateToBalance / workforceShrink, read from the
-    other end. Costs grow at the blended rate; revenue, far enough out for new growth's
-    flat dollars to have finished decaying, grows at the long-run rate. If every other
-    line grows as assumed, the SALARY line has to grow at whatever rate makes the blend
-    equal revenue -- and if people still get the contract raise, the only way the line
-    grows more slowly is that there are fewer of them every year. Forever: a cut made
-    once shifts the level and the rates reopen it; only a cut made every year is a rate."""
+    So: two horizons, five and ten years, and for each the two shapes a staffing answer can
+    take -- one cut now that holds the whole horizon, or a cut every year. The cut lands on
+    the salary base, so the money saved never gets its raise either (rates.ts `run`, and
+    cascade.py). The reason ten years costs more than twice five is on the page: what is
+    left after a cut is more health insurance and special education by share, and grows
+    faster than the budget did before the cut."""
     base = expense_base()
     base['salaries'] += FY27['stm_addbacks']
-    total = sum(base.values())
-    w = {k: v / total for k, v in base.items()}
-    target = project(years=HORIZON)[-1]['growth_rate']
-    others = sum(w[k] * DEFAULT_ASSUMPTIONS[k] for k in base if k != 'salaries')
-    salary_rate = (target - others) / w['salaries']
-    contract = DEFAULT_ASSUMPTIONS['salaries']
-    per_year = (1 + contract) / (1 + salary_rate) - 1
     cpf = cost_per_fte()
     headcount = round(base['salaries'] / cpf)
-    after = lambda n: 1 - ((1 + salary_rate) / (1 + contract)) ** n
-    # TJ, on reading "no raise balances it": "How is it possible to have no steady state?!
-    # In the extreme if I cut 90% of staff the revenue we earn will surely cover the
-    # increases per year." It does -- for seventeen years. A one-time cut shifts the level;
-    # what is left is more health insurance and special education by share, growing faster
-    # than before, and it crosses the revenue line again. Priced here so the page can say
-    # how long, rather than only that it ends.
-    avail = [y['available'] for y in project(years=120)]
-    once = []
-    for share in (0.10, 0.25, 0.50, 0.90):
+    avail = [y['available'] for y in project(years=40)]
+
+    def holds(years, once=0.0, every=0.0):
         b = dict(base)
-        b['salaries'] -= base['salaries'] * share
-        n = 0
-        for av in avail:
+        b['salaries'] -= once
+        for i in range(years):
+            if i:
+                b['salaries'] -= every
             for k in b:
                 b[k] *= 1 + DEFAULT_ASSUMPTIONS[k]
-            if round(sum(b.values()) - av) <= 0:
-                n += 1
+            if round(sum(b.values()) - avail[i]) > 0:
+                return False
+        return True
+
+    def least(ok, hi):
+        if not ok(hi):
+            return None
+        lo = 0.0
+        for _ in range(60):
+            mid = (lo + hi) / 2
+            if ok(mid):
+                hi = mid
             else:
-                break
-        once.append(dict(share=share, cut=round(base['salaries'] * share),
-                         positions=round(headcount * share), years=n, reopens_fy=2028 + n))
+                lo = mid
+        return hi
+
+    horizons = []
+    for years in (5, 10):
+        once = least(lambda x: holds(years, once=x), base['salaries'])
+        every = least(lambda x: holds(years, once=x, every=x), base['salaries'])
+        horizons.append(dict(
+            years=years, through_fy=2027 + years,
+            once=dict(cut=round(once), positions=round(once / cpf, 1), share=round(once / base['salaries'], 3)),
+            every_year=dict(cut=round(every), positions=round(every / cpf, 1),
+                            total_positions=round(every * years / cpf, 1),
+                            share=round(every * years / base['salaries'], 3))))
+    # What a cut made once buys, by size -- the shape of the curve a resident asks about.
+    once_rows = []
+    for share in (0.10, 0.25, 0.50):
+        n = 0
+        while n < 40 and holds(n + 1, once=base['salaries'] * share):
+            n += 1
+        once_rows.append(dict(share=share, cut=round(base['salaries'] * share),
+                              positions=round(headcount * share), years=n, reopens_fy=2028 + n))
     fastest = max((k for k in base if k != 'salaries'), key=lambda k: DEFAULT_ASSUMPTIONS[k])
-    return dict(once=once, fastest=dict(key=fastest, label=LINE_LABEL[fastest], rate=DEFAULT_ASSUMPTIONS[fastest]),
-                target=round(target, 5), others=round(others, 5), salary_rate=round(salary_rate, 5),
-                contract=contract, possible=salary_rate >= 0,
-                shrink_per_year=round(per_year, 5), positions_per_year=round(base['salaries'] * per_year / cpf, 1),
-                cost_per_fte=cpf, headcount=headcount,
-                after10=round(after(10), 4), after20=round(after(20), 4),
-                positions_after10=round(headcount * after(10)),
-                note=('Revenue grows at the levy cap plus new growth, which decays toward the cap; '
-                      'the rate used is the long-run one. Every other line grows as the model '
-                      'assumes. Positions are at the catalogue’s own cost per position, an estimate; '
-                      'the salary line covers stipends and part-time roles too.'))
+    target = project(years=HORIZON)[-1]['growth_rate']
+    return dict(horizons=horizons, once=once_rows, cost_per_fte=cpf, headcount=headcount,
+                contract=DEFAULT_ASSUMPTIONS['salaries'], target=round(target, 5),
+                fastest=dict(key=fastest, label=LINE_LABEL[fastest], rate=DEFAULT_ASSUMPTIONS[fastest]),
+                note=('Cuts land on the salary line, so the money saved never gets its raise either. '
+                      'Every other line grows as the model assumes. Positions are at the catalogue’s '
+                      'own cost per position, an estimate; the salary line covers stipends and '
+                      'part-time roles too.'))
 
 
 # ------------------------------------------------------------ 4. what building would do

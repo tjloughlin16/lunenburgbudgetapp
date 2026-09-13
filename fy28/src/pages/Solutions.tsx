@@ -91,7 +91,7 @@ function Body({ d }: { d: Model }) {
 
       <h2 className="text-lg font-semibold mt-10">The choices, whole</h2>
       <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-        Eight things the town could actually decide, each priced by the same model. Four change an amount and buy time; four change a growth rate and can end it. Every figure is the model’s, and “positions” is an estimate at the catalogue’s own cost per position.
+        {FUTURES.length} things the town could actually decide, each priced by the same model to hold five years and ten — nobody here plans further. {FUTURES.filter(f => !f.bends).length} change an amount and buy the years; {FUTURES.filter(f => f.bends).length} change a growth rate, which is what makes ten years cheaper than five twice over. Every figure is the model’s, and “positions” is an estimate at the catalogue’s own cost per position.
       </p>
       <div className="grid gap-3 mt-4 md:grid-cols-2">
         {FUTURES.map((f, i) => (
@@ -157,7 +157,7 @@ function Body({ d }: { d: Model }) {
         <li><strong>Cutting the extras buys one year.</strong> {extras.sub.split('.')[0]}. Then the same gap returns with nothing left to cut but classrooms.</li>
         <li><strong>Business growth is real and slow.</strong> It needs {business.value} of new commercial value a year, every year, and pays off in about a decade.</li>
         <li><strong>Free cash covers a year, not a problem.</strong> {freeCashC ? freeCashC.body.split(/\.\s/)[0] + '.' : ''}</li>
-        <li><strong>Only two things on the table change a rate:</strong> the health plan itself, and the pace of commercial building. Everything else is an amount, and an amount has to be found again next year.</li>
+        <li><strong>Only two things on the table change a rate:</strong> the health plan itself, and the pace of commercial building. Everything else is an amount, and an amount has to be found again — which is why every card above is priced to five years and to ten.</li>
         <li><strong>After that there are two choices, and only two.</strong> {d.recommendation.closing}</li>
       </ol>
 

@@ -377,8 +377,6 @@
   }
  ],
  "stabilise": {
-  "after10": 0.3728,
-  "after20": 0.6066,
   "contract": 0.04,
   "cost_per_fte": 89096,
   "fastest": {
@@ -387,7 +385,39 @@
    "rate": 0.09
   },
   "headcount": 151,
-  "note": "Revenue grows at the levy cap plus new growth, which decays toward the cap; the rate used is the long-run one. Every other line grows as the model assumes. Positions are at the catalogue\u2019s own cost per position, an estimate; the salary line covers stipends and part-time roles too.",
+  "horizons": [
+   {
+    "every_year": {
+     "cut": 608535,
+     "positions": 6.8,
+     "share": 0.227,
+     "total_positions": 34.2
+    },
+    "once": {
+     "cut": 2812904,
+     "positions": 31.6,
+     "share": 0.21
+    },
+    "through_fy": 2032,
+    "years": 5
+   },
+   {
+    "every_year": {
+     "cut": 711743,
+     "positions": 8.0,
+     "share": 0.531,
+     "total_positions": 79.9
+    },
+    "once": {
+     "cut": 6003790,
+     "positions": 67.4,
+     "share": 0.448
+    },
+    "through_fy": 2037,
+    "years": 10
+   }
+  ],
+  "note": "Cuts land on the salary line, so the money saved never gets its raise either. Every other line grows as the model assumes. Positions are at the catalogue\u2019s own cost per position, an estimate; the salary line covers stipends and part-time roles too.",
   "once": [
    {
     "cut": 1340967,
@@ -409,21 +439,8 @@
     "reopens_fy": 2039,
     "share": 0.5,
     "years": 11
-   },
-   {
-    "cut": 12068706,
-    "positions": 136,
-    "reopens_fy": 2045,
-    "share": 0.9,
-    "years": 17
    }
   ],
-  "others": 0.03193,
-  "positions_after10": 56,
-  "positions_per_year": 7.2,
-  "possible": false,
-  "salary_rate": -0.0074,
-  "shrink_per_year": 0.04775,
   "target": 0.02826
  }
 }

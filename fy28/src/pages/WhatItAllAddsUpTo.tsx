@@ -107,7 +107,7 @@ type Big = {
   about: string; grain: string
   hole: { years: { fy: number; short: number; cut: number; fte: number; cum_fte: number; takes: string[] }[]; total: number; average: number; note: string }
   overrides: { rows: { amount: number; years: number; reopens_fy: number | null; on_average_home: number; townwide: number; townwide_on_average_home: number }[]; school_share: number; first_gap: number; note: string }
-  stabilise: { once: { share: number; cut: number; positions: number; years: number; reopens_fy: number }[]; fastest: { key: string; label: string; rate: number }; target: number; others: number; salary_rate: number; contract: number; possible: boolean; shrink_per_year: number; positions_per_year: number; cost_per_fte: number; headcount: number; after10: number; after20: number; positions_after10: number; note: string }
+  stabilise: { horizons: { years: number; through_fy: number; once: { cut: number; positions: number; share: number }; every_year: { cut: number; positions: number; total_positions: number; share: number } }[]; once: { share: number; cut: number; positions: number; years: number; reopens_fy: number }[]; cost_per_fte: number; headcount: number; contract: number; target: number; fastest: { key: string; label: string; rate: number }; note: string }
   drivers: { rows: { key: string; label: string; who: string; share: number; rate: number; pull: number }[]; blended: number; cap: number; spread_over_cap: number; top2_share: number; note: string }
   development: { target: number; value: number; tax_rate: number; per_development: number; development_value: number; development_mix: string; at_once: number; paces: { per_year: number; years: number | null }[]; current_pace_developments: number; share_of_town: number; note: string }
   facts: {
@@ -208,15 +208,21 @@ function BigPicture({ b }: { b: Big }) {
         <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>{dr.note} The dials are on {L('/bend-the-curve', 'Bend the curve')}.</p>
       </Section>
 
-      {/* 3b ------------------------------------- when does cutting alone stabilise it */}
-      <Section kind="categorical" id="stabilise" title="When cutting alone would stabilise it">
-        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6">
-          <Stat value={n1(st.positions_per_year)} tone="var(--status-critical)">positions fewer every year, for ever, to hold cost growth to the {pct(st.target, 2)} the revenue grows — if everyone kept the {pct(st.contract, 0)} contract raise</Stat>
-          <Stat value={pct(st.after10, 0)}>of the staff gone in ten years on that path — about {st.positions_after10} of roughly {st.headcount} positions</Stat>
-          <Stat value={st.possible ? pct(st.salary_rate, 1) : 'None'}>{st.possible ? 'is the raise that would balance it with no cuts' : `raise balances it: the other lines alone grow ${pct(st.others, 2)} of the budget a year, more than the revenue does, so even a pay freeze leaves a gap`}</Stat>
+      {/* 3b ------------------------------- what closing it by cutting staff would take */}
+      <Section kind="categorical" id="stabilise" title="What closing it with staff cuts alone would take">
+        <Body>
+          Two horizons, because that is how the town plans: five years and ten. For each, the cut made once now that holds the whole horizon, or the cut made every year. Out of roughly {st.headcount} positions.
+        </Body>
+        <div className="grid gap-3 mt-4 sm:grid-cols-2 max-w-3xl">
+          {st.horizons.map(hz => (
+            <div key={hz.years} className="card p-4">
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>hold it {yrs(hz.years)}, through {FY(hz.through_fy)}</p>
+              <div className="mt-2 flex items-baseline gap-2"><span className="text-2xl font-bold tnum leading-none" style={{ color: 'var(--status-critical)' }}>{n1(hz.once.positions)}</span><span className="text-sm">positions cut <strong>once</strong>, now — {usd(hz.once.cut)} a year, {pct(hz.once.share, 0)} of the salary line</span></div>
+              <div className="mt-2 flex items-baseline gap-2"><span className="text-2xl font-bold tnum leading-none" style={{ color: 'var(--status-critical)' }}>{n1(hz.every_year.positions)}</span><span className="text-sm">positions <strong>every year</strong> instead — {n1(hz.every_year.total_positions)} by {FY(hz.through_fy)}, {pct(hz.every_year.share, 0)} of the salary line</span></div>
+            </div>))}
         </div>
         <Body>
-          It never stabilises on its own, and a bigger cut only moves the day it reopens. What a cut made <em>once</em> buys:
+          Ten years costs more than twice five. Cutting staff removes the line that grows {pct(st.contract, 0)} and leaves {st.fastest.label.toLowerCase()} at {pct(st.fastest.rate, 0)} and special education at {pct(dr.rows.find(r => r.key === 'sped')!.rate, 1)} as a larger share of what remains, so the budget left behind grows faster than the one before the cut, against revenue at about {pct(st.target, 2)}. A cut shifts the level; the rates decide how long it holds:
         </Body>
         <div className="overflow-x-auto mt-3">
           <table className="text-sm" style={{ minWidth: 480 }}>
@@ -230,9 +236,7 @@ function BigPicture({ b }: { b: Big }) {
                 <td className="py-2 tnum" style={{ color: 'var(--text-secondary)' }}>{FY(r.reopens_fy)}</td></tr>))}</tbody>
           </table>
         </div>
-        <Body>
-          Why even the last row reopens: cutting staff removes the line that grows {pct(st.contract, 0)} and leaves the lines that grow faster — {st.fastest.label.toLowerCase()} at {pct(st.fastest.rate, 0)}, special education at {pct(dr.rows.find(r => r.key === 'sped')!.rate, 1)} — as a larger share of what remains. The budget that is left grows <em>faster</em> than the one before the cut, against revenue at {pct(st.target, 2)}, and any amount growing faster than another crosses it eventually. A cut shifts the level; only a cut made every year is a rate, which is what the first figure above is. The model holds those growth rates fixed, and nothing grows {pct(st.fastest.rate, 0)} for ever — over a decade or two that assumption carries the argument; over the three to five years anyone here budgets, it does not need to. {st.note}
-        </Body>
+        <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>{st.note}</p>
       </Section>
 
       {/* 4 ------------------------------------------------- what building would do */}
