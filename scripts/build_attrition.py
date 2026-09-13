@@ -1062,12 +1062,12 @@ def build_conclusions(outlier, prof, ch, grp_gap, era, dest, groups_rows, g9):
     rows = [
         conclusion(
             id='one-grade-does-all-the-leaving',
-            claim='%s of each eighth grade does not come back to a Lunenburg school '
-                  'for grade 9.' % C.pct(outlier['mean'] * 100),
-            so_what='The highest grade in all %s years measured. The other eleven sit '
-                    'between %s and %s.'
-                    % (C.num(outlier['years']), C.pct(others[0] * 100),
-                       C.pct(others[-1] * 100)),
+            # TJ read "20.5%" as a share of leavers. It is a RATE PER GRADE: of the children
+            # in eighth grade, this share does not return; every other grade loses 3-6%.
+            claim='%s of eighth graders do not come back for grade 9; every other grade loses %s to %s.'
+                  % (C.pct(outlier['mean'] * 100), C.pct(others[0] * 100), C.pct(others[-1] * 100)),
+            so_what='A rate for each grade, not a share of leavers — and the highest in all %s years measured.'
+                    % C.num(outlier['years']),
             figures={
                 'mean': figure(outlier['mean'], C.pct(outlier['mean'] * 100),
                                'of each eighth grade'),

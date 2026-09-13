@@ -260,7 +260,8 @@ def build():
     conclusions = emit(REPORT, [
         conclusion(
             id='fewer-students-does-not-mean-less-aid',
-            claim='What one more or one fewer foundation pupil moves Lunenburg’s state aid by',
+            # TJ: "people don't understand 'foundation' language." A student is a student here.
+            claim='What one more or one fewer student moves Lunenburg’s state aid by',
             so_what='Losing pupils does not cut the aid. It changes only the flat increase, which is set on Beacon Hill.',
             lede='Chapter 70 is not recalculated from your students each year. It is last '
                  'year’s aid plus an increase, and in %s the only increase available was '
@@ -304,7 +305,7 @@ def build():
         ),
         conclusion(
             id='the-aid-and-the-increase-are-different-numbers',
-            claim='Chapter 70 aid for each foundation pupil in %s, against %s of increase'
+            claim='Chapter 70 aid for each student in %s, against %s of increase'
                   % (C.fy(fy), usd2(floor_rate)),
             so_what='The figure everybody quotes is an increase, not the aid. They differ by a factor of %s.'
                     % C.num(ratio),
@@ -381,7 +382,7 @@ def build():
         ),
         conclusion(
             id='the-marginal-rate-does-not-extrapolate',
-            claim='Foundation pupils at which the formula’s own subtraction would turn negative',
+            claim='The enrolment at which the formula’s own subtraction would turn negative',
             so_what='%s below today. The per-pupil finding was measured at the margin and stops well above it.'
                     % C.pct(100 * threshold['fall_pct']),
             lede='Everything on this page about one more or one fewer pupil was measured '

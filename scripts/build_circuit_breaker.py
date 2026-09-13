@@ -120,11 +120,13 @@ def build():
         rows = [
             conclusion(
                 id='fewer-children-each-far-more-expensive',
-                claim='%s children claimed in FY%d, %s in FY%d; the cost per child went from %s to %s.'
+                # TJ: "'Claimed' is hard to understand." These are the children whose
+                # placements the district asked the state to help pay for.
+                claim='%s children in the state’s program in FY%d, %s in FY%d; each cost %s, now %s.'
                       % (C.num(most_kids['children']), most_kids['fy'], C.num(last['children']), last['fy'],
                          C.usd(most_kids['per_child']), C.usd(last['per_child'])),
                 so_what='A third fewer dollars for a third as many children: each placement costs about twice what one did.',
-                figures={'kids_now': figure(last['children'], C.num(last['children']), 'children claimed, FY%d' % last['fy']),
+                figures={'kids_now': figure(last['children'], C.num(last['children']), 'children in the reimbursement program, FY%d' % last['fy']),
                          'kids_peak': figure(most_kids['children'], C.num(most_kids['children'])),
                          'per_child_then': figure(most_kids['per_child'], C.usd(most_kids['per_child'])),
                          'per_child_now': figure(last['per_child'], C.usd(last['per_child'])),

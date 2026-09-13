@@ -880,6 +880,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/verify_athletics.py          # every figure in the athletics analysis
     python3 scripts/build_big_picture.py         # the one big report: the hole by year, overrides, drivers, building, the facts
     python3 scripts/build_big_picture.py --check # ...and fail if it is stale
+    python3 scripts/build_one_big_report.py      # the story page, from sources/data/one-big-report-story.csv (TJ's sheet)
+    python3 scripts/build_one_big_report.py --check
     python3 scripts/build_property_owners.py     # who owns the homes, for how long, and what the bill has done
     python3 scripts/build_property_owners.py --check
     python3 scripts/build_enrollment.py          # who is in the schools: DESE's headcount, FY1994 to today

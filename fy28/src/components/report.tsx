@@ -217,8 +217,10 @@ export function Insight({ n, tone, figure, headline, children }: {
  *  own label, the same treatment `Maybe` gives. A figure is a fact and an explanation for
  *  it is not, and the whole of this project's error history is those two set in one voice
  *  a paragraph apart. */
-export function Conclusions({ rows, collapse, reportUrl }: {
+export function Conclusions({ rows, collapse, reportUrl, noAsk }: {
   rows?: (Conclusion & { report_url?: string })[]
+  /** Leave out the ask-us prompt: a page that stacks several Conclusions blocks would say it after every one. */
+  noAsk?: boolean
   /** Collapse the evidence behind a `<details>`, leaving the claim and its figure. Used
    *  by /what-it-all-adds-up-to, which carries a conclusion from EVERY report and so
    *  accumulates weight faster than any single one of them.
@@ -325,7 +327,7 @@ export function Conclusions({ rows, collapse, reportUrl }: {
         )
       })}
     </div>
-    <AskPrompt />
+    {noAsk ? null : <AskPrompt />}
     </>
   )
 }

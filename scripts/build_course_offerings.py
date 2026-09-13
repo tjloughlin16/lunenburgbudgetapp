@@ -2157,8 +2157,10 @@ def build_conclusions(hs, hs_subj, fj, cs, first, last, lang, mc, split, era):
             claim='Lunenburg High ran %s sections in %s against %s in %s, on flat '
                   'enrolment.' % (C.num(b['sections']), 'SY%d' % last,
                                   C.num(a['sections']), 'SY%d' % first),
-            so_what='More classes ran, not fewer — and the average class fell from '
-                    '%s students to %s.' % (a['avg'], b['avg']),
+            # TJ: "Is this 'good or bad'?" Both, and the line says which is which: more
+            # choice for students, each class costlier to run.
+            so_what='More choice for students — the average class fell from %s to %s — and each class costs more to run.'
+                    % (a['avg'], b['avg']),
             figures={
                 'last': figure(b['sections'], C.num(b['sections']), 'course sections'),
                 'first': figure(a['sections'], C.num(a['sections'])),

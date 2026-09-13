@@ -263,7 +263,7 @@ districts reported after a year closed.
 ## What people in Lunenburg have already said about this
 
 Rule 15a: for every category this report calls low, search what residents said about that
-thing in the same year. The search covered **8,899** of the **12,015** meeting documents
+thing in the same year. The search covered **8,915** of the **12,031** meeting documents
 this archive holds — **74%**. The rest are image scans awaiting OCR. An empty search
 result would not have meant nobody said it.
 

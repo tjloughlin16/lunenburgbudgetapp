@@ -1252,11 +1252,13 @@ def build():
                 # not-like-for-like has to be in the same breath rather than in a note
                 # further down. The count carries the finding, in `so_what`, because
                 # `most` hedges where the data does not need a hedge.
-                claim='More for each pupil at Monty Tech, a regional vocational school, '
-                      'than Lunenburg',
-                so_what='%s of the %s children educated outside Lunenburg go to districts '
-                        'that spend more for each pupil.'
-                        % (C.num(dest['children_where_more']), C.num(dest['left'])),
+                # TJ, 13 September 2026: "focus on Monty Tech, not other districts, and
+                # show the actual spending difference in thousands." The gap in dollars
+                # carries the card; the count of children follows.
+                claim='Monty Tech spends %s a pupil to Lunenburg’s %s — %s more.'
+                      % (C.usd(d_wide['per_pupil']), C.usd(dest['lunenburg']), C.usd(d_wide['gap'])),
+                so_what='%s of Lunenburg’s leavers go there; %s of the %s educated elsewhere go where spending is higher.'
+                        % (C.pct(d_wide['share_of_leavers'] * 100), C.num(dest['children_where_more']), C.num(dest['left'])),
                 lede='%s of the %s Lunenburg children educated outside Lunenburg Public '
                       'Schools go to districts that spend more for each pupil than '
                       'Lunenburg does — %s more at %s, and %s more at %s.'
@@ -1305,7 +1307,7 @@ def build():
                     'fin_fy': figure(dest['fin_fy'], C.fy(dest['fin_fy'])),
                     'widest_per_pupil': figure(d_wide['per_pupil'],
                                                C.usd(d_wide['per_pupil'])),
-                    'widest_gap': figure(d_wide['gap'], C.usd(d_wide['gap'])),
+                    'widest_gap': figure(d_wide['gap'], C.usd(d_wide['gap']), 'more for each pupil at Monty Tech'),
                     'lunenburg': figure(dest['lunenburg'], C.usd(dest['lunenburg'])),
                     'like_per_pupil': figure(d_like['per_pupil'],
                                              C.usd(d_like['per_pupil'])),
@@ -1316,7 +1318,7 @@ def build():
                     'gap_5': figure(d_more[4]['gap'], C.usd(d_more[4]['gap'])),
                     'like_gap': figure(d_like['gap'], C.usd(d_like['gap'])),
                 },
-                figure='widest_pct',
+                figure='widest_gap',
                 kind='measured',
                 basis='DESE’s end-of-year finance collection for the finance year, all '
                       'funds, the district per-pupil total — the same measure for every '
@@ -1348,7 +1350,11 @@ def build():
             conclusion(
                 id='the-bottom-quarter-is-the-durable-fact',
                 bearing='sizes',
-                claim='Spent for each pupil, counting every fund — below the state median',
+                # TJ: "i dont think you are showing the cost per pupil of lunenburg, so
+                # numbers like this make no sense." The town, the figure and the median
+                # it is measured against, in one line.
+                claim='Lunenburg spends %s for each pupil, all funds — %s below the state median of %s.'
+                      % (C.usd(lun_last['per_pupil']), C.usd(sw_last['below_median']), C.usd(sw_last['median'])),
                 so_what='Lunenburg has been in the bottom quarter of Massachusetts districts in every published year.',
                 lede='Lunenburg spends %s a pupil, %s below the statewide median, and it '
                       'has been in the bottom quarter of Massachusetts districts in %s of '
@@ -1373,6 +1379,7 @@ def build():
                                         C.usd(lun_last['per_pupil'])),
                     'below_median': figure(sw_last['below_median'],
                                            C.usd(sw_last['below_median'])),
+                    'median': figure(sw_last['median'], C.usd(sw_last['median'])),
                     'bottom_quarter_years': figure(len(bottom_quarter),
                                                    C.num(len(bottom_quarter))),
                     'years': figure(len(sw), C.num(len(sw))),
