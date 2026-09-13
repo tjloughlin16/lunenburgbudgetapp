@@ -58,7 +58,16 @@ def main():
           f'{sum(o["size"] for o in objects.values()) / 1e9:.2f} GB\n')
 
     missing = sorted(set(manifest) - set(objects))
-    orphans = sorted(set(objects) - set(manifest))
+    # A key the manifest skips BY POLICY (archive_storage.SKIP_KEYS) that was uploaded
+    # before the policy is not an orphan: the bucket cannot delete it, and the policy is
+    # the record of why it is there. Reported on its own line rather than as a failure.
+    retired = sorted(k for k in set(objects) - set(manifest) if k in A.SKIP_KEYS)
+    orphans = sorted(set(objects) - set(manifest) - set(retired))
+    if retired:
+        print('IN THE BUCKET, RETIRED FROM THE MANIFEST BY POLICY: %d' % len(retired))
+        for k in retired:
+            print('  ' + k)
+        print()
     wrong_size, drift, stale, uncomparable = [], [], [], []
 
     for key in sorted(set(manifest) & set(objects)):
