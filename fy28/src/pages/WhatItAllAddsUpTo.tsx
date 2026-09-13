@@ -109,7 +109,7 @@ type Big = {
   overrides: { rows: { amount: number; years: number; reopens_fy: number | null; on_average_home: number; townwide: number; townwide_on_average_home: number }[]; school_share: number; first_gap: number; note: string }
   stabilise: { horizons: { years: number; through_fy: number; once: { cut: number; positions: number; share: number }; every_year: { cut: number; positions: number; total_positions: number; share: number } }[]; once: { share: number; cut: number; positions: number; years: number; reopens_fy: number }[]; cost_per_fte: number; headcount: number; contract: number; target: number; fastest: { key: string; label: string; rate: number }; note: string }
   drivers: { rows: { key: string; label: string; who: string; share: number; rate: number; pull: number }[]; blended: number; cap: number; spread_over_cap: number; top2_share: number; note: string }
-  development: { target: number; value: number; tax_rate: number; per_development: number; development_value: number; development_mix: string; at_once: number; paces: { per_year: number; years: number | null }[]; current_pace_developments: number; share_of_town: number; note: string }
+  development: { target: number; value: number; tax_rate: number; per_development: number; development_value: number; development_mix: string; at_once: number; paces: { years: number; through_fy: number; per_year: number; total: number }[]; current_pace_developments: number; share_of_town: number; note: string }
   facts: {
     census: { vintage: number; window: string; households_with_child: { share: number; share_moe: number; n: number; of: number }; seniors: { share: number; share_moe: number; n: number }; children: { share: number; share_moe: number; n: number } }
     students: Change; teachers: Change; paras: Change; low_income: Change; disabilities: Change
@@ -253,13 +253,14 @@ function BigPicture({ b }: { b: Big }) {
           <Stat value={usdM(dev.value)}>of new taxable value, at ${dev.tax_rate.toFixed(2)} per $1,000 — {pct(dev.share_of_town, 1)} added to the whole town</Stat>
           <Stat value={n1(dev.at_once)}>typical developments, if they all arrived at once — each about {usdM(dev.development_value)} of value paying {usd(dev.per_development)} a year</Stat>
         </div>
-        <div className="grid gap-3 mt-5 sm:grid-cols-3 max-w-3xl">
+        <div className="grid gap-3 mt-5 sm:grid-cols-2 max-w-3xl">
           {dev.paces.map(p => (
-            <div key={p.per_year} className="card p-4">
-              <div className="text-2xl font-bold tnum leading-none">{p.years != null ? yrs(p.years) : '—'}</div>
-              <div className="text-[13px] mt-2" style={{ color: 'var(--text-secondary)' }}>at <strong>{p.per_year} developments a year</strong>, every year, compounding in the levy</div>
+            <div key={p.years} className="card p-4">
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>to be paying {usdM(dev.target)} a year by {FY(p.through_fy)}</p>
+              <div className="mt-2 flex items-baseline gap-2"><span className="text-2xl font-bold tnum leading-none">{n1(p.per_year)}</span><span className="text-sm">new developments <strong>every year</strong> for {yrs(p.years)} — {n1(p.total)} in all</span></div>
             </div>))}
         </div>
+        <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>About the same number of buildings either way, spread over twice the years: each year’s new growth stays in the levy and grows 2.5% after it lands, so the earlier ones do more of the work.</p>
         <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>A typical development here is {dev.development_mix}. {dev.note} That pace is worth about {n1(dev.current_pace_developments)} such developments a year in value. The full working is on {L('/development', 'development')}.</p>
       </Section>
 

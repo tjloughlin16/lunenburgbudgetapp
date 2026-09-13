@@ -66,7 +66,6 @@ ATHLETICS = os.path.join(ROOT, 'fy28', 'public', 'data', 'athletics.json')
 YEARS = 5
 OVERRIDES = [2_000_000, 5_000_000]
 TARGET_LEVY = 1_000_000          # "bring in $1m per year"
-PACES = [2, 4, 8]                # developments a year, to show how the years fall
 LEVY_CAP = DEFAULT_ASSUMPTIONS['levy_growth']
 HORIZON = 30
 # The one-time override rates.ts prices to hold exactly five years at today's rates, on
@@ -274,12 +273,21 @@ def stabilise():
 def development():
     value = value_needed(TARGET_LEVY)                  # new taxable value for $1M a year
     at_once = value / MIX_VALUE
+    # TJ, on "11 years at 2 developments a year": "I don't know what this is saying." The
+    # question a resident has is the other way round -- how much building, inside the five
+    # or ten years the town plans over -- so: the developments a year, every year, whose
+    # compounding new growth is paying the target by the last year of each horizon.
     paces = []
-    for per_year in PACES:
-        # years until the compounding levy from `per_year` developments a year reaches the target
-        series = compound_new_growth(per_year * MIX_VALUE, years=40)
-        yrs = next((s['year'] for s in series if s['annual'] >= TARGET_LEVY), None)
-        paces.append(dict(per_year=per_year, years=yrs))
+    for years in (5, 10):
+        lo, hi = 0.0, 100.0
+        for _ in range(60):
+            mid = (lo + hi) / 2
+            if compound_new_growth(mid * MIX_VALUE, years=years)[-1]['annual'] >= TARGET_LEVY:
+                hi = mid
+            else:
+                lo = mid
+        paces.append(dict(years=years, through_fy=2027 + years, per_year=round(hi, 1),
+                          total=round(hi * years, 1)))
     return dict(target=TARGET_LEVY, value=round(value), tax_rate=TAX_RATE,
                 per_development=round(new_growth_revenue(MIX_VALUE)),
                 development_value=MIX_VALUE, development_mix=MIX_COMPOSITION,
