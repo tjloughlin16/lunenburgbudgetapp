@@ -955,6 +955,7 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_recording_minutes.py            # the /what-was-said payload, from the files
     python3 scripts/build_recording_minutes.py --check    # ...and fail if it is stale
     python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing
+    python3 scripts/build_no_captions_report.py           # which meeting recordings have captions disabled, with links
     python3 scripts/build_app_metrics.py --check          # ...and fail if it has drifted
     python3 scripts/refresh.py                  # THE DAILY RUN: watch the town and the channel, fetch what is new,
                                                 #   write minutes inside the policy, rebuild, push the search index
