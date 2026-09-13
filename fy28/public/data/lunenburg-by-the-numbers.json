@@ -91,6 +91,7 @@
  },
  "change": {
   "compared": 15,
+  "compared_text": "15",
   "inside_the_margin": 12,
   "new": 2023,
   "new_window": "2019\u20132023",
@@ -590,13 +591,13 @@
   {
    "basis": "Census Bureau, American Community Survey five-year estimates, tables B01001, B11005, B19049 and B25003, the two releases side by side.",
    "bearing": "sizes",
-   "claim": "Only 3 of 15 measures compared across the two five-year windows clear their margins.",
+   "claim": "Only 3 of 15 things the Census measures here changed by more than the survey\u2019s own noise.",
    "detail": "The windows are 2014\u20132018 and 2019\u20132023, which do not overlap \u2014 consecutive ACS releases share four years of sample and may not be differenced at all. What survives: Population; Households; Median income, householder 65 and over. Everything else, including the share of residents 65 or over and the share of households with a child under 18, moved by less than the combined margin of its own two estimates, which is not a change.",
    "figure": "survived",
    "figures": {
     "survived": {
      "text": "3 of 15",
-     "unit": "comparisons that clear their margins",
+     "unit": "measures that really changed",
      "value": 3
     }
    },
@@ -613,7 +614,7 @@
    ],
    "not_shown": "That nothing changed. A difference inside the margin is one this instrument cannot see, which is not the same as one that did not happen.",
    "see": [],
-   "so_what": "The town changed less than any table of five-year differences would make it look."
+   "so_what": "As far as the Census can tell, the town barely changed in five years; most quoted changes are noise."
   }
  ],
  "gaps": [
@@ -715,13 +716,13 @@
  },
  "minutes": {
   "first_date": "2009-01-05",
-  "held": 12015,
+  "held": 12031,
   "image_scan": 3096,
   "last_date": "2026-11-17",
-  "published": 12065,
-  "searchable": 8899,
-  "searchable_share": 0.7407,
-  "text_files_present": 12014,
+  "published": 12081,
+  "searchable": 8915,
+  "searchable_share": 0.741,
+  "text_files_present": 12030,
   "unsearchable": 3116
  },
  "not_established": [
@@ -1313,7 +1314,7 @@
    "term": "fixed income"
   },
   {
-   "documents": 166,
+   "documents": 167,
    "term": "seniors"
   },
   {
@@ -1446,6 +1447,26 @@
    "url": "https://api.census.gov/data/2023/acs/acs5"
   },
   {
+   "bytes": 1344,
+   "docs_url": "/docs/state-census/acs5-2023-B25038-lunenburg.json",
+   "note": "Tenure by year the householder moved in \u2014 how long the owners have owned, in bands; the question behind \"taxed out of a house bought decades ago\"",
+   "path": "sources/state-census/acs5-2023-B25038-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "73be9c25b44efeb074413b402d7920933cbaab4efc6e81d9412be7ccb003f883",
+   "table": "B25038, 2019\u20132023",
+   "url": "https://api.census.gov/data/2023/acs/acs5"
+  },
+  {
+   "bytes": 388,
+   "docs_url": "/docs/state-census/acs5-2023-B25039-lunenburg.json",
+   "note": "Median year the householder moved in, owners and renters",
+   "path": "sources/state-census/acs5-2023-B25039-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "1d0c101fc30e8809d767a09e66180a36080f86e915ae1e61d13001032716bfe2",
+   "table": "B25039, 2019\u20132023",
+   "url": "https://api.census.gov/data/2023/acs/acs5"
+  },
+  {
    "bytes": 4039,
    "docs_url": "/docs/state-census/acs5-2018-B01001-lunenburg.json",
    "note": "Sex by age \u2014 the 65-and-over share, and every band beneath it",
@@ -1496,12 +1517,32 @@
    "url": "https://api.census.gov/data/2018/acs/acs5"
   },
   {
-   "bytes": 266174,
+   "bytes": 1344,
+   "docs_url": "/docs/state-census/acs5-2018-B25038-lunenburg.json",
+   "note": "Tenure by year the householder moved in \u2014 how long the owners have owned, in bands; the question behind \"taxed out of a house bought decades ago\"",
+   "path": "sources/state-census/acs5-2018-B25038-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "36a1de061c7c3647aabb33127548c367dd5b3e46b6d82629061a5b923f0968f2",
+   "table": "B25038, 2014\u20132018",
+   "url": "https://api.census.gov/data/2018/acs/acs5"
+  },
+  {
+   "bytes": 388,
+   "docs_url": "/docs/state-census/acs5-2018-B25039-lunenburg.json",
+   "note": "Median year the householder moved in, owners and renters",
+   "path": "sources/state-census/acs5-2018-B25039-lunenburg.json",
+   "publisher": "United States Census Bureau",
+   "sha256": "698572dc1ff0026f025c5b42cccf957bbd182fdde8d43089460a81f2f1d592bc",
+   "table": "B25039, 2014\u20132018",
+   "url": "https://api.census.gov/data/2018/acs/acs5"
+  },
+  {
+   "bytes": 277548,
    "docs_url": "/data/census-acs.csv",
    "note": "One row per estimate per vintage, the margin of error in the same row. Written by scripts/fetch_census_acs.py, which refuses to write if the API returns anything that is not JSON.",
    "path": "sources/data/census-acs.csv",
    "publisher": "Built by this project, from the responses above",
-   "sha256": "505e8e0e1a5dc039e16a8b3a5752d2e8eab802bed19e5c8c99d09da332b78636",
+   "sha256": "8974361496fb1760e2784c65e588c051e1edfed50318b1a8ab4437dfd3da83b7",
    "table": "Every estimate, with its margin",
    "url": "https://www.census.gov/programs-surveys/acs/"
   }

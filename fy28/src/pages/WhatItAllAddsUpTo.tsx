@@ -152,7 +152,7 @@ export function WhatItAllAddsUpTo() {
       {d.sections.map((s, i) => <StorySection key={s.key} s={s} i={i} />)}
       <Section kind="raw" id="method" title="How this page is built">
         <Body>
-          An editor’s sheet — {d.spec} — says what appears and in what order; nothing on it is a sentence. Each figure is rendered from the model’s own payload and each conclusion is the report’s own row, verbatim, so this page cannot state something a report does not. The limits behind it are rows in {L('/what-we-cannot-answer', 'what we cannot answer')}; every analysis, in full, is at {L('/reports', 'reports')}.
+          An editor’s sheet — {d.spec} — says what appears and in what order; nothing on it is a sentence. Each figure is rendered from the model’s own payload and each conclusion is the report’s own row, verbatim, so this page cannot state something a report does not. The limits behind it are rows in {L('/what-we-cannot-answer', 'what we cannot answer')}. The analyses written as documents — reaching conclusions in prose rather than in a published payload, among them the two FY26 closeouts that answer “is this FY25 again?” — are not read by this page and are listed, in full, at {L('/reports', 'reports')}.
         </Body>
       </Section>
     </ReportShell>

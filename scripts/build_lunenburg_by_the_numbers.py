@@ -658,7 +658,7 @@ def changes(cs, db, new, old):
     return dict(old=old, new=new, old_window=WINDOW[old], new_window=WINDOW[new],
                 tests=tests, compared=len(tests), survived=len(survived),
                 inside_the_margin=len(tests) - len(survived),
-                survived_text='%d of %d' % (len(survived), len(tests)),
+                survived_text='%d of %d' % (len(survived), len(tests)), compared_text=str(len(tests)),
                 survived_labels=[t['label'] for t in survived])
 
 
@@ -959,15 +959,17 @@ def build_conclusions(age, hh, ten, inc, gap, rk, pp, ch, chg):
 
     rows.append(conclusion(
         id='most-of-what-changed-is-inside-the-margin',
-        claim='Only %s measures compared across the two five-year windows clear their '
-              'margins.' % chg['survived_text'],
-        so_what='The town changed less than any table of five-year differences would make '
-                'it look.',
+        # TJ, 13 September 2026: "Dont know what this means." Said the way a resident
+        # would: the Census is a sample, most of the five-year changes are smaller than its
+        # noise, and only these few are real.
+        claim='Only %s things the Census measures here changed by more than the survey’s own noise.'
+              % chg['survived_text'],
+        so_what='As far as the Census can tell, the town barely changed in five years; most quoted changes are noise.',
         figure='survived', bearing='sizes', kind='measured',
         allow=AGES + WINDOWS,
         figures={
             'survived': figure(chg['survived'], chg['survived_text'],
-                               'comparisons that clear their margins'),
+                               'measures that really changed'),
         },
         detail='The windows are %s and %s, which do not overlap — consecutive ACS '
                'releases share four years of sample and may not be differenced at all. '
