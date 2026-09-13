@@ -152,8 +152,16 @@ function BigPicture({ b }: { b: Big }) {
   return (
     <>
       {/* 1 ------------------------------------------------------------ the hole */}
-      <Section kind="conclusions" id="hole" title="The hole, year by year">
-        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6">
+      <Section kind="conclusions" id="hole" title="The hole, year by year — a projection">
+        {/* THE EPISTEMIC LABEL, in the same voice the conclusion cards use for a scenario
+            (rule 7b): nothing in this section happened. It is what the district's own
+            published growth rates produce when run forward, and a reader who takes a
+            projected shortfall for a recorded one has been misled. TJ: "make sure the top
+            section is listed as a Projection". */}
+        <p className="text-[11px] font-semibold uppercase tracking-widest mt-3" style={{ color: 'var(--status-warning)' }}>
+          A projection, not a record — the model’s growth rates run forward from the FY27 budget
+        </p>
+        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-5">
           <Stat value={usd(h.years[0].short)} tone="var(--status-critical)">short next year, {FY(h.years[0].fy)}, at level service</Stat>
           <Stat value={usd(h.total)}>over five years, after each year’s cuts stay cut</Stat>
           <Stat value={n1(h.years[h.years.length - 1].cum_fte)}>positions gone by {FY(h.years[h.years.length - 1].fy)} if it is closed by cutting, in the order the School Committee has said</Stat>
@@ -174,7 +182,7 @@ function BigPicture({ b }: { b: Big }) {
       </Section>
 
       {/* 2 ---------------------------------------------------- what an override buys */}
-      <Section kind="categorical" id="override" title="What an override buys">
+      <Section kind="categorical" id="override" title="What an override buys — projected">
         <div className="grid gap-3 mt-5 sm:grid-cols-2 max-w-3xl">
           {o.rows.map(r => (
             <div key={r.amount} className="card p-4">
@@ -209,7 +217,7 @@ function BigPicture({ b }: { b: Big }) {
       </Section>
 
       {/* 3b ------------------------------- what closing it by cutting staff would take */}
-      <Section kind="categorical" id="stabilise" title="What closing it with staff cuts alone would take">
+      <Section kind="categorical" id="stabilise" title="What closing it with staff cuts alone would take — projected">
         <Body>
           Two horizons, because that is how the town plans: five years and ten. For each, the cut made once now that holds the whole horizon, or the cut made every year. Out of roughly {st.headcount} positions.
         </Body>
@@ -256,7 +264,7 @@ function BigPicture({ b }: { b: Big }) {
       </Section>
 
       {/* 5 ------------------------------------------------------------- the facts */}
-      <Section kind="categorical" id="facts" title="The facts any solution has to fit">
+      <Section kind="categorical" id="facts" title="The facts any solution has to fit — recorded">
         <Body>Not conclusions — counts, from the Census Bureau and the state, with their grain. Ten years apart where the state publishes ten years.</Body>
         <div className="grid gap-3 mt-5 sm:grid-cols-2 lg:grid-cols-3">
           <Fact value={pct(f.census.households_with_child.share / 100, 0)} sub={<><strong>of households have a child under 18</strong> — {Math.round(f.census.households_with_child.n).toLocaleString('en-US')} of {Math.round(f.census.households_with_child.of).toLocaleString('en-US')}, ± {pct(f.census.households_with_child.share_moe / 100, 1)}. ACS {f.census.window}.</>} />
