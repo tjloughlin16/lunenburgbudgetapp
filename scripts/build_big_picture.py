@@ -221,7 +221,30 @@ def stabilise():
     cpf = cost_per_fte()
     headcount = round(base['salaries'] / cpf)
     after = lambda n: 1 - ((1 + salary_rate) / (1 + contract)) ** n
-    return dict(target=round(target, 5), others=round(others, 5), salary_rate=round(salary_rate, 5),
+    # TJ, on reading "no raise balances it": "How is it possible to have no steady state?!
+    # In the extreme if I cut 90% of staff the revenue we earn will surely cover the
+    # increases per year." It does -- for seventeen years. A one-time cut shifts the level;
+    # what is left is more health insurance and special education by share, growing faster
+    # than before, and it crosses the revenue line again. Priced here so the page can say
+    # how long, rather than only that it ends.
+    avail = [y['available'] for y in project(years=120)]
+    once = []
+    for share in (0.10, 0.25, 0.50, 0.90):
+        b = dict(base)
+        b['salaries'] -= base['salaries'] * share
+        n = 0
+        for av in avail:
+            for k in b:
+                b[k] *= 1 + DEFAULT_ASSUMPTIONS[k]
+            if round(sum(b.values()) - av) <= 0:
+                n += 1
+            else:
+                break
+        once.append(dict(share=share, cut=round(base['salaries'] * share),
+                         positions=round(headcount * share), years=n, reopens_fy=2028 + n))
+    fastest = max((k for k in base if k != 'salaries'), key=lambda k: DEFAULT_ASSUMPTIONS[k])
+    return dict(once=once, fastest=dict(key=fastest, label=LINE_LABEL[fastest], rate=DEFAULT_ASSUMPTIONS[fastest]),
+                target=round(target, 5), others=round(others, 5), salary_rate=round(salary_rate, 5),
                 contract=contract, possible=salary_rate >= 0,
                 shrink_per_year=round(per_year, 5), positions_per_year=round(base['salaries'] * per_year / cpf, 1),
                 cost_per_fte=cpf, headcount=headcount,

@@ -107,7 +107,7 @@ type Big = {
   about: string; grain: string
   hole: { years: { fy: number; short: number; cut: number; fte: number; cum_fte: number; takes: string[] }[]; total: number; average: number; note: string }
   overrides: { rows: { amount: number; years: number; reopens_fy: number | null; on_average_home: number; townwide: number; townwide_on_average_home: number }[]; school_share: number; first_gap: number; note: string }
-  stabilise: { target: number; others: number; salary_rate: number; contract: number; possible: boolean; shrink_per_year: number; positions_per_year: number; cost_per_fte: number; headcount: number; after10: number; after20: number; positions_after10: number; note: string }
+  stabilise: { once: { share: number; cut: number; positions: number; years: number; reopens_fy: number }[]; fastest: { key: string; label: string; rate: number }; target: number; others: number; salary_rate: number; contract: number; possible: boolean; shrink_per_year: number; positions_per_year: number; cost_per_fte: number; headcount: number; after10: number; after20: number; positions_after10: number; note: string }
   drivers: { rows: { key: string; label: string; who: string; share: number; rate: number; pull: number }[]; blended: number; cap: number; spread_over_cap: number; top2_share: number; note: string }
   development: { target: number; value: number; tax_rate: number; per_development: number; development_value: number; development_mix: string; at_once: number; paces: { per_year: number; years: number | null }[]; current_pace_developments: number; share_of_town: number; note: string }
   facts: {
@@ -216,7 +216,22 @@ function BigPicture({ b }: { b: Big }) {
           <Stat value={st.possible ? pct(st.salary_rate, 1) : 'None'}>{st.possible ? 'is the raise that would balance it with no cuts' : `raise balances it: the other lines alone grow ${pct(st.others, 2)} of the budget a year, more than the revenue does, so even a pay freeze leaves a gap`}</Stat>
         </div>
         <Body>
-          It never stabilises on its own. A cut shifts the level; the rates reopen it the next year. The only cut that behaves like a rate is one made every year — which is what the first figure is. {st.note}
+          It never stabilises on its own, and a bigger cut only moves the day it reopens. What a cut made <em>once</em> buys:
+        </Body>
+        <div className="overflow-x-auto mt-3">
+          <table className="text-sm" style={{ minWidth: 480 }}>
+            <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+              <th className="text-left py-1.5 pr-4">cut once</th><th className="text-right py-1.5 pr-4">positions</th><th className="text-right py-1.5 pr-4">gap shut for</th><th className="text-left py-1.5">reopens</th></tr></thead>
+            <tbody>{st.once.map(r => (
+              <tr key={r.share} style={{ borderTop: '1px solid var(--grid)' }}>
+                <td className="py-2 pr-4 tnum font-semibold">{pct(r.share, 0)} of staff, {usd(r.cut)}</td>
+                <td className="py-2 pr-4 tnum text-right">{r.positions}</td>
+                <td className="py-2 pr-4 tnum text-right">{yrs(r.years)}</td>
+                <td className="py-2 tnum" style={{ color: 'var(--text-secondary)' }}>{FY(r.reopens_fy)}</td></tr>))}</tbody>
+          </table>
+        </div>
+        <Body>
+          Why even the last row reopens: cutting staff removes the line that grows {pct(st.contract, 0)} and leaves the lines that grow faster — {st.fastest.label.toLowerCase()} at {pct(st.fastest.rate, 0)}, special education at {pct(dr.rows.find(r => r.key === 'sped')!.rate, 1)} — as a larger share of what remains. The budget that is left grows <em>faster</em> than the one before the cut, against revenue at {pct(st.target, 2)}, and any amount growing faster than another crosses it eventually. A cut shifts the level; only a cut made every year is a rate, which is what the first figure above is. The model holds those growth rates fixed, and nothing grows {pct(st.fastest.rate, 0)} for ever — over a decade or two that assumption carries the argument; over the three to five years anyone here budgets, it does not need to. {st.note}
         </Body>
       </Section>
 
