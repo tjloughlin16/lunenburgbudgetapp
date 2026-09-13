@@ -125,7 +125,7 @@ CATEGORIES = [
         # this shelf measures the town's money; this one measures the town. A reader who
         # does not yet know the place cannot weigh anything below it, and it is the one
         # report in the index that needs no budget knowledge at all to read.
-        ('who lives here', ['bythenumbers']),
+        ('who lives here', ['bythenumbers', 'owners']),
         ('the ledger, read', [
             'fy26-closeout', 'fy26-closeout-town', 'free-cash',
         ]),
@@ -323,6 +323,11 @@ ABOUT_PAGES = {
         'owner against renter, from the Census Bureau’s five-year estimates. Every '
         'figure carries its margin of error, because a town this size is a small sample '
         'and the margins decide what may be said.',
+    'owners':
+        'Who owns Lunenburg’s homes and for how long — from the Census sample and from the '
+        'assessor’s own parcel file — and what the bill on an average home has done, year '
+        'by year. Half of owner households moved in before 2010; the bill barely falls '
+        'with tenure.',
     'cuts':
         'Every reduction the district named in its own budget documents, cycle by cycle, '
         'quoted at its page — and, where a state series reaches it, whether the count '

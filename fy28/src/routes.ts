@@ -40,6 +40,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'ap'
   | 'solutions'
   | 'bythenumbers'
+  | 'owners'
   // The middle of three lengths. One tab for all the posts: the slug is the second path
   // segment, `/blog/why-a-school-with-fewer-children-is-not-a-cheaper-school`, and
   // `blogSlugFromPath` below reads it. The bare `/blog` is the archive. See pages/Blog.
@@ -321,6 +322,7 @@ export const SLUG: Record<Tab, string> = {
   // first screen which census it is. NOT `who-lives-here` as the canonical form, because
   // the page is also households, income and tenure; it is an alias.
   bythenumbers: 'lunenburg-by-the-numbers',
+  owners: 'who-owns-the-homes',
   // THE WORD EVERYBODY ALREADY HAS. Not `posts`, which names the container rather than
   // the thing; not `updates`, which promises news about this project rather than about
   // the town's money. A post is shared into a Facebook group and the address travels with
@@ -387,7 +389,10 @@ export const SLUG: Record<Tab, string> = {
  *  keep quiet — the classic own-goal of that file.
  *
  *  Give an unlisted page NO alias. An alias is a second guessable address. */
-export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'solutions'])
+// `addsup` -- the One Big Report -- is unlisted FOR NOW. TJ, 13 September 2026: "HIDE the
+// one big report on the analyses site for now. we have to get this in good shape before
+// sharing it." The address still answers; nothing links to it and it is not prerendered.
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'solutions', 'addsup'])
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
  *  accepted — a link that has been shared once is out of your hands forever. */
@@ -583,6 +588,8 @@ const ALIASES: Record<string, Tab> = {
   // before. `census` lands here deliberately -- see the slug note -- and so does
   // `seniors`, which nothing else answers to.
   'lunenburg-by-the-numbers': 'bythenumbers', 'by-the-numbers': 'bythenumbers',
+  'who-owns-the-homes': 'owners', 'property-owners': 'owners', homeowners: 'owners', 'owned-since': 'owners',
+  'tax-bills': 'owners', 'tax-bill': 'owners', 'taxed-out': 'owners',
   'who-lives-here': 'bythenumbers', 'who-lives-in-lunenburg': 'bythenumbers',
   demographics: 'bythenumbers', census: 'bythenumbers', acs: 'bythenumbers',
   blog: 'blog', posts: 'blog', 'the-blog': 'blog', updates: 'blog',
@@ -679,6 +686,7 @@ export const LABEL: Record<Tab, string> = {
   solutions: 'What the town can actually do about the school budget',
   peers: 'What other districts spend, for each pupil',
   bythenumbers: 'Lunenburg by the numbers — who lives here',
+  owners: 'Who owns the homes — and what the bill has done',
   blog: 'The blog — one finding at a time, in two minutes',
   required: 'What the state requires us to spend — and where that puts us',
   addsup: 'The One Big Report',
@@ -722,6 +730,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   outflow: 'reports',
   peers: 'reports',
   bythenumbers: 'reports',
+  owners: 'reports',
   blog: 'reports',
   recorded: 'reports',
   thisweek: 'reports',
@@ -823,7 +832,9 @@ export const AREA_LABEL: Record<Area, string> = {
   // half the analyses this project will write are town-side -- free cash, the tax rate,
   // the ledger. Naming the area after the FORM (an analysis) rather than the SUBJECT
   // (schools) is what lets the town reports land here without a second rename.
-  analyses: 'Analyses',
+  // TJ, 13 Sept: "make the 'Analyses' section on the homepage titled 'Analysis: Town and
+  // Schools'" -- the form, then both subjects, so the town half is promised too.
+  analyses: 'Analysis: Town and Schools',
   data: 'The database',
   agents: 'For AI assistants',
 }
@@ -876,6 +887,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   // area is the database and the register, which are instruments, and this is a report
   // with conclusions of its own.
   bythenumbers: 'analyses',
+  owners: 'analyses',
   blog: 'analyses',
   recorded: 'analyses',
   thisweek: 'analyses',
@@ -946,7 +958,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // finding in two minutes and then hands the reader on. Somebody who does not yet have a
   // question should meet it before the shelf -- rule 7a applied to a nav bar, the same
   // argument that put `addsup` first.
-  analyses: ['addsup', 'blog', 'thisweek', 'recorded', 'reports', 'bythenumbers', 'sped', 'classsize', 'circuitbreaker',
+  analyses: ['blog', 'thisweek', 'recorded', 'reports', 'bythenumbers', 'owners', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',

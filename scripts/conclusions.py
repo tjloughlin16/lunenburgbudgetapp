@@ -425,7 +425,7 @@ TOPICS = [
     ('household', 'The households — who they are, and what they pay',
      'Who lives in Lunenburg, and the two reports about money a household hands over, '
      'side by side.',
-     ['bythenumbers', 'sportsmoney', 'families']),
+     ['bythenumbers', 'owners', 'sportsmoney', 'families']),
 ]
 
 # Tabs in the Analyses area that are not reports and belong in no topic: the Markdown

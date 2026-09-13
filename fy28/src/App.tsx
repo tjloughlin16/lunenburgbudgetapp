@@ -40,6 +40,7 @@ import { WhatItAllAddsUpTo } from './pages/WhatItAllAddsUpTo'
 import { PeerSpending } from './pages/PeerSpending'
 import { CourseOfferings } from './pages/CourseOfferings'
 import { LunenburgByTheNumbers } from './pages/LunenburgByTheNumbers'
+import { PropertyOwners } from './pages/PropertyOwners'
 import { Blog } from './pages/Blog'
 import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
@@ -483,6 +484,7 @@ export default function App() {
       {tab === 'peers' && <PeerSpending />}
       {tab === 'courses' && <CourseOfferings />}
       {tab === 'bythenumbers' && <LunenburgByTheNumbers />}
+      {tab === 'owners' && <PropertyOwners />}
       {/* The archive at /blog and every post at /blog/<slug>, one component for both --
           the slug is the second path segment, the same shape /analysis/<id> uses. */}
       {tab === 'blog' && <Blog />}

@@ -175,7 +175,12 @@ def plan(local):
     to_delete = [k for k in have if k not in want or changed(k)]
     to_send = [k for k in want if k not in have or changed(k)]
     # A marker without all its rows is treated as absent: delete the marker, resend.
-    half = [k for k in half_uploaded() if k in want]
+    # ONLY WHEN ASKED. This is a full scan of the FTS table, and FTS5 reads its shadow
+    # tables too, so one call costs far more than the 135,000 rows it looks like. Wired
+    # into every push AND every --check on 13 September 2026, it took the account past
+    # the 5-million-rows-a-day READ limit by evening and darkened /api/search and
+    # /api/query until midnight UTC. Reads are the limit here, not writes.
+    half = [k for k in half_uploaded() if k in want] if REPAIR else []
     if half:
         print('%d file(s) marked held but not held in full; resending' % len(half))
         to_delete += [k for k in half if k not in to_delete]
@@ -345,10 +350,11 @@ def check():
     if dup and dup[0]['n']:
         print('  %d duplicated row(s) in the remote -- re-run the sync; it deletes before it inserts' % dup[0]['n'])
         bad += 1
-    half = half_uploaded()
-    if half:
-        print('  %d file(s) marked held but not held in full -- run sync_search_d1.py; it resends them' % len(half))
-        bad += 1
+    if REPAIR:
+        half = half_uploaded()
+        if half:
+            print('  %d file(s) marked held but not held in full -- run sync_search_d1.py --repair' % len(half))
+            bad += 1
     for c in sorted(set(lc) | set(rc)):
         flag = '' if lc.get(c, 0) == rc.get(c, 0) else '   <-- DIFFERS'
         bad += bool(flag)
@@ -360,12 +366,19 @@ def check():
     return 0
 
 
+REPAIR = False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--plan', action='store_true')
     ap.add_argument('--check', action='store_true')
+    ap.add_argument('--repair', action='store_true',
+                    help='also scan for markers whose rows did not all land (one full FTS scan; reads are the limit)')
     ap.add_argument('--limit', type=int, default=DEFAULT_LIMIT)
     a = ap.parse_args()
+    global REPAIR
+    REPAIR = a.repair
     if not os.path.exists(B.DB):
         raise SystemExit('no local index; run build_search_index.py first')
     if a.check:

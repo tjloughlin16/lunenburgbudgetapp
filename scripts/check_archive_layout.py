@@ -52,6 +52,8 @@ TOP = {
     'meetings':           'agendas and minutes, by board',
     'state-dese':               'state district and school profiles',
     'state-dls':                'state free cash certifications',
+    'state-census':             'Census Bureau API responses, saved as returned',
+    'state-massgis':            'MassGIS downloads — the assessors’ parcel data, as the state publishes it',
     'peer-districts':              'other districts, assembled by us from several publishers',
     'contracts':          'union contracts, from the district HR page and DESE',
     'town-ledgers':      'MUNIS reports — sent to us, never published',

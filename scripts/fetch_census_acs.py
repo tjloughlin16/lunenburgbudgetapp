@@ -110,6 +110,9 @@ TABLES = {
     'B19049': 'Median household income in the past 12 months, by age of householder — '
               'what turns "seniors on fixed incomes" from a claim into a number',
     'B25003': 'Tenure — owner-occupied against renter-occupied',
+    'B25038': 'Tenure by year the householder moved in — how long the owners have owned, '
+              'in bands; the question behind "taxed out of a house bought decades ago"',
+    'B25039': 'Median year the householder moved in, owners and renters',
 }
 
 

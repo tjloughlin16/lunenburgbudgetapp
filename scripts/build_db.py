@@ -1673,7 +1673,7 @@ def load_dese_datasets(db):
 # and the two sit in one file under one set of column names. A query that forgets the
 # difference reads a statewide column as though it were this town's, which is the silent
 # failure this loader exists to make loud.
-CENSUS_TOWN_TABLES = {'B01001', 'B11005', 'B19049', 'B25003'}
+CENSUS_TOWN_TABLES = {'B01001', 'B11005', 'B19049', 'B25003', 'B25038', 'B25039'}
 CENSUS_STATEWIDE_TABLES = {'B19013'}
 LUNENBURG_GEO = 'Lunenburg town, Worcester County, Massachusetts'
 # Massachusetts has 351 municipalities. A statewide release that came back with far fewer
