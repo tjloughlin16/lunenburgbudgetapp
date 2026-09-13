@@ -78,6 +78,17 @@ def fail(msg):
 
 # ------------------------------------------------------------------------------ census
 
+def tenure():
+    """B25003: every occupied home, owner against renter -- the denominator the page opens on."""
+    rows = {r['variable']: r for r in csv.DictReader(open(CENSUS, encoding='utf-8'))
+            if 'Lunenburg' in r['geography'] and r['table'] == 'B25003' and r['vintage'] == '2023'}
+    tot, own, rent = (float(rows[v]['estimate']) for v in ('B25003_001E', 'B25003_002E', 'B25003_003E'))
+    return dict(households=tot, households_moe=float(rows['B25003_001E']['moe']),
+                owners=own, owners_moe=float(rows['B25003_002E']['moe']),
+                renters=rent, renters_moe=float(rows['B25003_003E']['moe']),
+                owner_share=own / tot, window=WINDOW[2023])
+
+
 def census():
     rows = [r for r in csv.DictReader(open(CENSUS, encoding='utf-8'))
             if 'Lunenburg' in r['geography'] and r['table'] in ('B25038', 'B25039')]
@@ -339,7 +350,7 @@ def build():
         grain=('HOUSEHOLDS from the Census, a five-year sample with margins; PARCELS from the assessor, '
                'a count of single-family homes by last recorded deed, which is not the same as when the '
                'family arrived; DOLLARS from the town’s own rate and values.'),
-        census={str(k): v for k, v in c.items()}, parcels=p, bills=b,
+        tenure=tenure(), census={str(k): v for k, v in c.items()}, parcels=p, bills=b,
         conclusions=conclusions(c, p, b),
         not_established=[
             'What other towns’ average single-family tax bills are, year by year. The Division of Local '

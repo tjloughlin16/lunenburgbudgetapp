@@ -17,6 +17,7 @@ type Vintage = { vintage: number; window: string; owners: number; owners_moe: nu
 type DeedBand = { label: string; homes: number; share: number; median_value: number; median_bill: number; nominal_share: number | null; median_sale_price: number | null; arm_length: number }
 type Payload = {
   about: string; grain: string
+  tenure: { households: number; households_moe: number; owners: number; owners_moe: number; renters: number; renters_moe: number; owner_share: number; window: string }
   census: Record<string, Vintage>
   parcels: { fy: number; rate: number; parcels: number; single_family: number; median_value: number; median_bill: number; bands: DeedBand[]; held: { years: number; homes: number; share: number }[]; nominal: { deeds: number; share: number }; owner_in_town: { homes: number; share: number }; oldest_deed: number; earliest_band_bill_ratio: number }
   bills: { rows: { fy: number; rate: number; value: number; bill: number }[]; first_fy: number; last_fy: number; missing_fy: number[]; value_change: number; rate_change: number; bill_change: number }
@@ -48,7 +49,13 @@ function Report({ d }: { d: Payload }) {
   return (
     <>
       <section data-section="conclusions">
+        {/* THE DENOMINATOR FIRST. TJ: "we need the total homes first to understand other
+            context." Every share below is a share of one of these three numbers. */}
         <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
+          <Stat value={n0(d.tenure.households)}>occupied homes in Lunenburg, {d.tenure.window} — {n0(d.tenure.owners)} owned ({pct(d.tenure.owner_share)}), {n0(d.tenure.renters)} rented; a Census sample, ± {n0(d.tenure.households_moe)}</Stat>
+          <Stat value={n0(p.single_family)}>single-family homes on the assessor’s {FY(p.fy)} rolls, of {n0(p.parcels)} parcels — a count, no margin</Stat>
+        </div>
+        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6 pt-6" style={{ borderTop: '1px solid var(--grid)' }}>
           <Stat value={pct(c23.before_2010.share)} tone="var(--series-cost)">of owner households moved in before 2010 — {n0(c23.before_2010.households)} ± {n0(c23.before_2010.moe)}</Stat>
           <Stat value={usd(p.bands[p.bands.length - 1].median_bill)}>median {FY(p.fy)} bill on a home last deeded before 1986; {usd(p.bands[0].median_bill)} on one deeded since 2021</Stat>
           <Stat value={pct(b.bill_change)}>more on the average home’s bill, {FY(b.first_fy)}–{FY(b.last_fy)}, while its value rose {pct(b.value_change)} and the rate fell {pct(-b.rate_change)}</Stat>
