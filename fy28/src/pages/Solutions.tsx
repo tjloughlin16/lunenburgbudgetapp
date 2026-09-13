@@ -102,9 +102,9 @@ function Body({ d }: { d: Model }) {
               <span className="text-[10px] font-bold uppercase tracking-widest shrink-0" style={{ color: f.bends ? 'var(--status-good)' : 'var(--text-muted)' }}>{f.bends ? 'bends the curve' : 'buys time'}</span>
             </div>
             <p className="text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>{f.angle}</p>
-            <div className="mt-3 pt-3 flex items-baseline gap-2.5" style={{ borderTop: '1px solid var(--grid)' }}>
-              <span className="text-2xl font-bold tnum leading-none" style={{ color: f.bends ? 'var(--status-good)' : 'var(--text-primary)' }}>{f.holdsFor}</span>
+            <div className="mt-3 pt-3 flex items-baseline gap-2" style={{ borderTop: '1px solid var(--grid)' }}>
               <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>the gap stays shut</span>
+              <span className="text-sm font-bold tnum px-2 py-0.5 rounded" style={{ background: f.bends ? 'var(--status-good)' : 'var(--surface-3)', color: f.bends ? 'var(--surface-1)' : 'var(--text-primary)' }}>{f.holdsFor}</span>
             </div>
             <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{f.holds}</p>
             <dl className="mt-3 text-[13px] space-y-1.5">
