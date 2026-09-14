@@ -247,8 +247,9 @@ def budget_state(as_of, episode=None):
     log.sort(key=lambda x: x['date'], reverse=True)
     cut_list = sorted(cuts.values(), key=lambda r: (r['scope'], r['status'] in ('restored', 'withdrawn'), r['date']), reverse=False)
     live = [r for r in cut_list if r['status'] not in ('restored', 'withdrawn')]
+    read = [d for d in docs if not episode or in_episode(episode, d['meeting_date'], None)]
     return dict(
-        meetings_read=len(docs), first_date=docs[0]['meeting_date'] if docs else None, last_date=docs[-1]['meeting_date'] if docs else None,
+        meetings_read=len(read), first_date=read[0]['meeting_date'] if read else None, last_date=read[-1]['meeting_date'] if read else None,
         latest={'%s/%s' % k: v for k, v in latest.items()},
         history={'%s/%s' % k: sorted(v, key=lambda r: r['date'], reverse=True) for k, v in history.items()},
         cuts=cut_list, live_cuts=len(live),
@@ -607,6 +608,12 @@ def build(as_of=None, whole_cycle=False):
     if whole_cycle and not any(x['fy'] == fy_now for x in seasons):
         seasons.append(dict(fy=fy_now, path='/budget-feed/fy%d' % (fy_now % 100), label='FY%d, the season replayed' % (fy_now % 100), live=False))
     seasons.sort(key=lambda x: -x['fy'])
+    # The episodes of the live season are choices too -- TJ: "the governor situation should
+    # show up in the dropdown." Listed under their season, newest first.
+    eps_opts = [dict(fy=fy_now, path='/budget-feed/' + e['id'], label='  ↳ ' + e['label'], live=not e['closed'], episode=e['id'])
+                for e in sorted(episodes, key=lambda e: e['opens'] or '', reverse=True) if e['kind'] == 'special']
+    live_at = next((i for i, x in enumerate(seasons) if x.get('live')), 0)
+    seasons[live_at + 1:live_at + 1] = eps_opts     # directly under the live season
     by_board = collections.Counter(e['board'] for e in entries)
     return dict(
         about=('What every board is doing to prepare for Town Meeting: the omnibus budget, the school budget above all, '

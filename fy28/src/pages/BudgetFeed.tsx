@@ -166,8 +166,44 @@ function MeetingRow({ m, kinds, official }: { m: { key: string; board: string; b
   )
 }
 
+/** ONE EPISODE, on its own: the card, its figures and decisions, and the meetings inside its
+ *  window. Reached from the season dropdown. */
+function EpisodePage({ d, e, meetings }: { d: Payload; e: Payload['episodes'][number]; meetings: { key: string; board: string; board_slug: string; date: string; page: string; entries: Entry[] }[] }) {
+  const st = e.state
+  const decisions = d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))
+  return (
+    <ReportShell tab={TAB} title={e.label}
+      standfirst={`${e.closed ? 'Closed' : 'Under way'} — ${mmdd(e.opens)}${e.closes ? ` to ${mmdd(e.closes)}` : ' onward'}, outside the regular ${FY(Number(e.season_fy))} season. ${e.trigger}.`}
+      dataUrl={DATA}>
+      <label className="inline-flex items-center gap-2 mt-4 text-sm">
+        <span style={{ color: 'var(--text-muted)' }}>Season</span>
+        <select className="rounded-md px-2 py-1 text-sm" style={{ background: 'var(--surface-3)', border: '1px solid var(--grid)' }}
+          value={`/budget-feed/${e.id}`} onChange={ev => { window.location.href = ev.target.value }}>
+          {d.seasons.map(s => <option key={s.path} value={s.path}>{s.label}</option>)}
+        </select>
+      </label>
+      {e.outcome && (
+        <div className="card p-4 mt-6" style={{ borderLeft: '4px solid var(--status-good)' }}>
+          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>How it landed</p>
+          <p className="text-xl font-bold mt-1">{e.outcome}</p>
+          {e.note && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>{e.note}. Sources: {e.source}.</p>}
+        </div>
+      )}
+      <LatestState st={st} closed={e.closed} decisions={decisions} />
+      <H2 id="recent">What was said, meeting by meeting</H2>
+      <div className="mt-3 space-y-2">{meetings.map(m => {
+        const kinds = m.entries.reduce((acc, x) => { acc[x.kind] = (acc[x.kind] || 0) + 1; return acc }, {} as Record<string, number>)
+        return <MeetingRow key={m.key} m={m} kinds={kinds} official={m.entries.length === 1 && m.entries[0].kind.startsWith('official')} />
+      })}</div>
+      <p className="text-xs mt-8" style={{ color: 'var(--text-muted)' }}>The whole season: <a className="underline" href="/budget-feed">the budget feed</a>. As of {d.as_of}.</p>
+    </ReportShell>
+  )
+}
+
 export function BudgetFeed() {
-  const season = feedSeasonFromPath(window.location.pathname)
+  const seg = feedSeasonFromPath(window.location.pathname)
+  const season = seg && /^fy\d{2}$/.test(seg) ? seg : null
+  const episodeId = seg && !season ? seg : null
   const { d, err } = useReport<Payload>(season ? `budget-feed-${season}.json` : 'budget-feed.json')
   const [shown, setShown] = useState(20)
   if (!d) return <ReportShell tab={TAB} title="The budget feed" err={err} loading={!err} dataUrl={DATA} />
@@ -180,6 +216,11 @@ export function BudgetFeed() {
     meetings[byKey.get(k)!].entries.push(e)
   }
   const now = d.calendar.find(s => s.status === 'now' || s.status === 'underway')
+  const episode = episodeId ? d.episodes.find(e => e.id === episodeId) : null
+  if (episodeId && !episode) {
+    return <ReportShell tab={TAB} title="No such episode" dataUrl={DATA}><p className="mt-6 text-sm">The address names no budget episode. <a className="underline" href="/budget-feed">The budget feed</a>.</p></ReportShell>
+  }
+  if (episode) return <EpisodePage d={d} e={episode} meetings={meetings.filter(m => m.date >= episode.opens && (!episode.closes || m.date <= episode.closes))} />
   return (
     <ReportShell tab={TAB} title={season ? `The budget feed, replayed — ${FY(d.cycle_fy)}, as of ${d.as_of}` : `The budget feed — ${FY(d.cycle_fy)}`}
       standfirst={`What the boards are doing to prepare for Town Meeting — the omnibus budget, the school budget above all, and the warrant. Meetings coming up, where the ${FY(d.cycle_fy)} cycle stands, ${season ? 'what was said through the season' : `what was said in the last ${d.recent_days} days`}, what was posted. Not every mention of money: the budget being built, and what will land on the warrant.`}
@@ -190,7 +231,7 @@ export function BudgetFeed() {
       <label className="inline-flex items-center gap-2 mt-4 text-sm">
         <span style={{ color: 'var(--text-muted)' }}>Season</span>
         <select className="rounded-md px-2 py-1 text-sm" style={{ background: 'var(--surface-3)', border: '1px solid var(--grid)' }}
-          value={(season ? `/budget-feed/${season}` : '/budget-feed')}
+          value={(seg ? `/budget-feed/${seg}` : '/budget-feed')}
           onChange={e => { window.location.href = e.target.value }}>
           {d.seasons.map(s => <option key={s.path} value={s.path}>{s.label}</option>)}
         </select>

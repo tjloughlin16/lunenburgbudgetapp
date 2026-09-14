@@ -801,7 +801,7 @@ export function analysisIdFromPath(pathname: string): string | null {
  *  an address is not a place to accept arbitrary text. */
 /** The season a `/budget-feed/fy27` address names, or null for the live feed. */
 export function feedSeasonFromPath(pathname: string): string | null {
-  const m = /^\/budget-feed\/(fy\d{2})\/?$/.exec(pathname.toLowerCase())
+  const m = /^\/budget-feed\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
   return m ? m[1] : null
 }
 
