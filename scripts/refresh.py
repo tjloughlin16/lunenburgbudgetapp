@@ -36,7 +36,8 @@ THE ORDER, AND WHY IT CANNOT MOVE
 THE POLICY FILE IS THE APPROVAL. `sources/data/recording-minutes-policy.csv` names which
 boards, from which date, TJ has approved minutes for. Step 7 writes minutes for a
 recording only if a policy row covers it, and at most MAX_MINUTES_PER_RUN of them, because
-that step costs money per meeting and everything else here is free.
+that step draws on the Max plan's weekly allowance (~0.09% a meeting) and everything else
+here is free. Rows carry a `priority`; `*` covers any board.
 
 TWO THINGS IT REFUSES TO DO AT ONCE. If the transcript backfill is running it skips the
 caption fetch rather than competing for the same rate limit (the pattern is written so it
@@ -65,7 +66,11 @@ DOC_EVENTS = os.path.join(ROOT, 'sources', 'data', 'document-watch-events.csv')
 TRANSCRIPT_INDEX = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
 RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
-MAX_MINUTES_PER_RUN = 6
+# THREE A DAY. Measured 13-14 September 2026: one minutes run is about 0.09% of the Max
+# plan's weekly allowance, so three a day is ~2% a week -- the pace TJ set. The whole
+# backlog of transcripts (~880) clears in about ten months at this pace; raise it here
+# if he wants faster, never past ~20 (2% a DAY). See ~/.claude/CLAUDE.md.
+MAX_MINUTES_PER_RUN = 3
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 RUN_COLS = ['ran_at', 'as_of', 'new_agendas', 'new_minutes', 'new_videos',
@@ -116,21 +121,27 @@ def policy():
 
 
 def covered(board_slug, date, rows):
-    return any(r['board_slug'] == board_slug and date >= r['since'] for r in rows)
+    """The policy row that covers this recording, or None. `*` covers any board."""
+    hits = [r for r in rows if r['board_slug'] in (board_slug, '*') and date >= r['since']]
+    return min(hits, key=lambda r: int(r.get('priority') or 9)) if hits else None
 
 
 def minutes_targets(rows):
     """Recordings inside the policy with a transcript on disk and no minutes yet."""
     out = []
     for t in read_csv(TRANSCRIPT_INDEX):
-        if not covered(t['board_slug'], t['meeting_date'], rows):
+        row = covered(t['board_slug'], t['meeting_date'], rows)
+        if not row:
             continue
         if not os.path.exists(os.path.join(ROOT, t['path'])):
             continue
         target = os.path.join(RECORDED, t['board_slug'], '%s-%s.json' % (t['meeting_date'], t['video_id']))
         if not os.path.exists(target):
-            out.append(t)
-    out.sort(key=lambda t: t['meeting_date'], reverse=True)
+            out.append(dict(t, priority=int(row.get('priority') or 9)))
+    # PRIORITY, THEN NEWEST FIRST: the three budget boards are cleared before any other
+    # board is touched. TJ, 14 September 2026: "Schedule roughly 2% a week" -- three a
+    # day at the calibrated 0.09% of the weekly allowance per meeting.
+    out.sort(key=lambda t: (t['priority'], t['meeting_date'].replace('-', '') and -int(t['meeting_date'].replace('-', ''))))
     return out
 
 
