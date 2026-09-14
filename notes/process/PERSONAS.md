@@ -27,7 +27,7 @@ together.
 
 ---
 
-## The six readers
+## The seven readers
 
 ### 1. The resident who has already decided the schools are not straight with them
 
@@ -146,6 +146,31 @@ carelessly? It should make it harder.
 
 ---
 
+### 7. The parent whose child's programme is on the list
+
+**What they believe walking in.** Nothing yet; they came because someone said band, or
+middle school sports, or their kid's teacher, might be cut. They will read exactly one
+column of one page: the one with their word in it.
+
+> "when band was being discussed, it rallied the band families to come speak, which pulled
+> it off the list."
+> — TJ, describing the FY27 season, 14 September 2026
+
+**What the page owes them.** Their word, findable — *lacrosse*, *fifth-grade band*,
+*Turkey Hill* — not a category it sits inside. The status of that thing today, in the
+world's words (*cut*, *came off the list*, *only if the override passes*), with the date
+and who decided. What it would take to change it, if anything can. And, when the record
+does not say why something came off, the sentence *the record gives no reason* rather
+than silence or a guess.
+
+**The test.** Take the publisher's own list of reductions. For every named item, is there
+a line on our page a reader would find by searching that name? For every line, is its
+status about the world, not our data? Does every fact that changed over the season carry
+its dates, and does every block that states it agree? (CLAUDE.md, rule 7d, has the three
+passes this came from.)
+
+---
+
 ## The people nobody writes reports for, and who show up anyway
 
 Boosters, coaches, parents of a child in one programme. They come with one concrete thing.
@@ -192,6 +217,36 @@ right figures are there.
 
 One line per report, with what the review CHANGED. A review that changed nothing is
 recorded as that, because it is a claim worth being able to disbelieve.
+
+### `/budget-feed/fy27` — the FY27 budget season board, 14 September 2026
+
+Read three times as reader 7, a parent with a child in fifth-grade band and middle school
+sports. Each pass changed the page; the faults were a different kind each time (CLAUDE.md
+rule 7d is the generalisation).
+
+- **Pass 1.** The first number was $761,001, a spreadsheet difference nobody said; the
+  page now leads with $2.4 million as announced and $1.98 million as corrected, with the
+  $500,000 double-count named. Audit notes were rendering ("the mistake TJ remembers");
+  prefixed `internal:` and hidden. FINAL said middle school sports "gone" three lines
+  above "restored"; the first now carries "until the September restoration below". Eight
+  town cuts no override would have changed were folded behind a sentence saying so.
+  Middle school sports' restoration (STM Article 3, a citizens' petition) had no row; it
+  does.
+- **Pass 2.** The tiers showed dollars and FTE and not what a yes would have bought;
+  each now names what it brings back or takes, from the district's page. The override
+  track ended at 7 April; it ends at the polls on 16 May. The agenda-window calendar
+  under the board was removed; citation labels became the publishers' titles; two
+  spreadsheet sentences were rewritten in plain words.
+- **Pass 3.** Girls' lacrosse, boys' golf and the ski team were on the district's list
+  and only implied here; three rows. The coaching-stipend line was a fee rise filed as a
+  cut; it leads with the fee. "Not on the 3/23 balanced list" became "gone from the 23
+  Mar list — the record gives no reason". Department names were doubling under their
+  headings. The 864-line log under a finished story folded to one line.
+
+**Left open, as data rather than page work:** the *why* behind each item that came off
+(the record has residents speaking at those meetings and the extraction does not tie a
+comment to a later restoration), and the 25 February deficit moment cited from a 4 March
+recollection rather than the 25 February recording.
 
 ### `/cut-register` — the cut register, 9 September 2026
 
