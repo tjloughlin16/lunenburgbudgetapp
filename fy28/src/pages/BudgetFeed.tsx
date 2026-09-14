@@ -181,6 +181,55 @@ function Metrics({ st, outcome }: { st: State; outcome?: Payload['outcome'] | nu
   )
 }
 
+/** WHAT WAS ACTUALLY CUT, AND WHAT WAS SAVED. TJ, 14 September 2026: "in the final
+ *  section we need to list the actual cuts across all categories, like FTEs, expenses.
+ *  WHAT was cut as the result? What was saved (if anything)?" The outcome decides which
+ *  list applies: with an override failed, the cuts a board voted for the no-override
+ *  budget stand; with one passed, they are avoided. A cut voted and later restored is
+ *  what was saved. Rule 7: this is what the boards voted read against what the ballot
+ *  did -- the town publishes no list of its own -- and the card says so. */
+function FinalCuts({ st, outcome }: { st: State; outcome?: Payload['outcome'] | null }) {
+  const gs = (st.cut_groups || []).filter(g => !g.utterance)
+  const stands = gs.filter(g => g.voted && g.status !== 'restored' && g.status !== 'withdrawn')
+  const saved = gs.filter(g => g.status === 'restored')
+  if (!stands.length && !saved.length) return null
+  const qs = outcome && outcome.closed ? outcome.questions : []
+  const failed = qs.length > 0 && qs.every(q => q.result === 'FAILED'), passed = qs.length > 0 && qs.some(q => q.result !== 'FAILED')
+  const fteOf = (xs: CutGroup[]) => { const f = xs.reduce((a, g) => a + (g.fte || 0), 0); return f ? `${f % 1 ? f.toFixed(1) : f} FTE` : '' }
+  const name = (g: CutGroup) => g.item.replace(/\s*\(.*?\)\s*/g, ' ').trim()
+  const Block = ({ title, xs, color }: { title: string; xs: CutGroup[]; color: string }) => {
+    const by = (scope: string, kind: string) => xs.filter(g => g.scope === scope && g.kind === kind)
+    return (
+      <div className="mt-3">
+        <p className="text-xs font-bold uppercase tracking-wider" style={{ color }}>{title}</p>
+        {(['school', 'town'] as const).map(scope => {
+          const pos = by(scope, 'position'), prog = by(scope, 'program'), exp = by(scope, 'expense')
+          if (!pos.length && !prog.length && !exp.length) return null
+          return (
+            <div key={scope} className="text-[13px] mt-1.5 pl-3" style={{ borderLeft: `2px solid ${color}` }}>
+              <p className="font-semibold">{SCOPE[scope]}: {[pos.length ? `${pos.length} position${pos.length === 1 ? '' : 's'}${fteOf(pos) ? ` (${fteOf(pos)} as heard)` : ''}` : '', prog.length ? `${prog.length} program${prog.length === 1 ? '' : 's'}` : '', exp.length ? `${exp.length} expense line${exp.length === 1 ? '' : 's'}` : ''].filter(Boolean).join(' · ')}</p>
+              {pos.length > 0 && <p style={{ color: 'var(--text-secondary)' }}><span className="text-[10px] font-bold uppercase tracking-wider mr-1" style={{ color: 'var(--text-muted)' }}>positions</span>{pos.map(g => `${name(g)}${g.fte ? ` (${g.fte} FTE)` : g.fte_as_heard ? ` (${g.fte_as_heard})` : ''}`).join('; ')}</p>}
+              {prog.length > 0 && <p style={{ color: 'var(--text-secondary)' }}><span className="text-[10px] font-bold uppercase tracking-wider mr-1" style={{ color: 'var(--text-muted)' }}>programs</span>{prog.map(g => `${name(g)}${g.amount_as_heard ? ` (${g.amount_as_heard})` : ''}`).join('; ')}</p>}
+              {exp.length > 0 && <p style={{ color: 'var(--text-secondary)' }}><span className="text-[10px] font-bold uppercase tracking-wider mr-1" style={{ color: 'var(--text-muted)' }}>expense lines</span>{exp.map(g => `${name(g)}${g.amount_as_heard ? ` (${g.amount_as_heard})` : ''}`).join('; ')}</p>}
+            </div>
+          )
+        })}
+      </div>
+    )
+  }
+  return (
+    <div className="mt-3 pt-3" style={{ borderTop: '1px solid var(--grid)' }}>
+      <p className="text-sm font-bold">What that meant for the cuts</p>
+      <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
+        {failed ? 'With the override failed, the cuts a board voted for the no-override budget stand. ' : passed ? 'With the override passed, the cuts voted for the no-override budget were avoided. ' : 'The cuts the boards voted stand. '}
+        Read from the boards’ votes against the ballot; the town publishes no list of its own. Figures and FTEs as heard.
+      </p>
+      {stands.length > 0 && <Block title={passed ? 'Cuts avoided' : 'Cut'} xs={stands} color={passed ? 'var(--status-good)' : 'var(--status-critical)'} />}
+      {saved.length > 0 && <Block title="Saved — cut, then restored" xs={saved} color="var(--status-good)" />}
+    </div>
+  )
+}
+
 function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta }: { st: State; closed: boolean; decisions: Entry[]; outcome?: Payload['outcome'] | null; finalText?: string | null; finalNote?: string | null; fy: number; meta: Payload['threads'] }) {
   const all = Object.values(st.history).flat()
   // A voted gap or override that a later vote on the same thing replaced is greyed,
@@ -245,6 +294,7 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta 
             {outcome.questions.filter(q => q.yes != null).map(q => <li key={q.question} className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--status-good)' }}><span className="tnum font-bold">{q.amount != null ? '$' + q.amount.toLocaleString('en-US') : ''}</span> — {q.type.replace('Proposition 2½ ', '')} <strong style={{ color: q.result === 'FAILED' ? 'var(--status-critical)' : 'var(--status-good)' }}>{q.result.toLowerCase()}</strong>, {q.yes!.toLocaleString('en-US')} to {q.no!.toLocaleString('en-US')}<span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{q.election}, {q.date.length > 7 ? mmdd(q.date) : q.date}</span></li>)}
           </ul>
         )}
+        {hasFinal && <FinalCuts st={st} outcome={outcome} />}
         {finalNote && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>{finalNote}</p>}
         {!hasFinal && <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Nothing is final yet. Town Meeting appropriates the {FY(fy)} budget and the election decides any override; until then everything below is a board’s position or somebody’s proposal.</p>}
       </div>

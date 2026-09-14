@@ -172,7 +172,7 @@ CUT_STOP = set('the a an of for and to in at on or with from by as is are be all
 
 def cut_words(text):
     t = re.sub(r'\([^)]*\)', ' ', (text or '').lower())          # the bracketed gloss is not the thing
-    ws = {re.sub(r'(es|s)$', '', w) for w in re.findall(r'[a-z][a-z0-9-]+', t)}
+    ws = {(w[:-1] if w.endswith('s') and not w.endswith('ss') else w) for w in re.findall(r'[a-z0-9][a-z0-9-]+', t)}
     return {w for w in ws if w not in CUT_STOP and len(w) > 2}
 
 
@@ -260,7 +260,11 @@ def cut_groups(cuts):
             if g['scope'] != c['scope']:
                 continue
             inter = len(w & g['words']); union = len(w | g['words'])
-            if union and (inter / union >= 0.5 or (len(w) >= 2 and w <= g['words']) or (len(g['words']) >= 2 and g['words'] <= w)):
+            # 'first grade' and 'second grade' are two cuts: a number or ordinal that only
+            # one side carries keeps them apart, however alike the rest of the words are.
+            if any(re.search(r'\d|^(first|second|third|fourth|fifth|sixth|seventh|eighth)$', x) for x in (w ^ g['words'])):
+                continue
+            if union and (inter / union >= 0.5 or (len(w) >= 3 and w <= g['words']) or (len(g['words']) >= 3 and g['words'] <= w)):
                 home = g; break
         if home is None:
             home = dict(words=set(w), scope=c['scope'], rows=[]); groups.append(home)
@@ -277,7 +281,8 @@ def cut_groups(cuts):
             continue                                   # an addition in cut's clothing
         latest = rows[-1]
         by_residents = all((r.get('who') or '').lower().startswith(('a resident', 'resident')) for r in rows)
-        fte_heard = next((r['fte_as_heard'] for r in reversed(rows) if r.get('fte_as_heard')), None)
+        fte_heard = next((r['fte_as_heard'] for r in reversed(rows) if fte_number(r.get('fte_as_heard')) is not None), None) \
+            or next((r['fte_as_heard'] for r in reversed(rows) if r.get('fte_as_heard')), None)
         fte = fte_number(fte_heard)
         out.append(dict(item=best['item'], scope=g['scope'], status=latest['status'], mentions=len(rows), first=rows[0]['date'], last=latest['date'],
                         who=best['who'], utterance=by_residents, thread=best.get('thread'), voted=any(st == 'voted' for st in statuses),
