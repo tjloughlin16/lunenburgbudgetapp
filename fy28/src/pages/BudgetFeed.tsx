@@ -132,11 +132,11 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta 
     }),
     ...votedCuts.map((c, i): Row => ({ date: c.date, t: c.t, thread: c.thread || 'other', nums: amounts(c.amount_as_heard || ''), render: landing => <Line key={'c' + i} chip={`${c.board} vote`} chipColor="var(--series-cost)" landing={landing} amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> })),
     ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, thread: e.thread || 'other', nums: amounts(e.text || ''), render: landing => <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" landing={landing} text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
-  ].sort((a, b) => a.date.localeCompare(b.date) || a.t - b.t)
+  ].sort((a, b) => b.date.localeCompare(a.date) || b.t - a.t)   // newest first, TJ, 14 September
   const threads = meta.filter(th => story.some(r => r.thread === th.id)).map(th => {
     const rows = story.filter(r => r.thread === th.id)
     const hits = rows.map(r => carriesFinal(r.nums))
-    const last = hits.lastIndexOf(true)
+    const last = hits.indexOf(true)   // rows run newest first, so the latest carrying vote is the first hit
     return { ...th, rows, landingAt: last, landed: Object.values(latestVoted).filter(x => x.thread === th.id).map(x => x.amount_as_heard).filter(Boolean) }
   })
   // Tier 3 -- said, proposed, argued; never voted anywhere. The latest figure per thing.
@@ -165,10 +165,10 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta 
       {/* ---- tier 2: THE STORY */}
       <div className="card p-4 mt-4" style={{ borderTop: '4px solid var(--series-cost)' }}>
         <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'How it got there' : 'Where the boards stand, and how they got there'}</p>
-        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>Every board vote, one story per thing the season moves forward, oldest first inside each. A vote a later vote overwrote is struck through and points at what replaced it. None of this is final.</p>
+        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>Every board vote, one story per thing the season moves forward, newest first inside each. A vote a later vote overwrote is struck through and points at what replaced it. None of this is final.</p>
         {story.length > 0 ? threads.map(th => (
           <details key={th.id} className="mt-2">
-            <summary className="cursor-pointer text-sm font-bold flex flex-wrap items-baseline gap-x-2"><span className="conc-chev inline-block transition-transform text-xs" aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&#9656;</span>{th.label}<span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>{th.rows.length} vote{th.rows.length === 1 ? '' : 's'}{th.landed.length > 0 ? ` · landed on ${th.landed.join(', ')}` : ''}{th.rows.length > 0 ? ` · ${mmdd(th.rows[0].date)} → ${mmdd(th.rows[th.rows.length - 1].date)}` : ''}</span>{th.landingAt >= 0 && <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>✓ made final {mmdd(th.rows[th.landingAt].date)}</span>}</summary>
+            <summary className="cursor-pointer text-sm font-bold flex flex-wrap items-baseline gap-x-2"><span className="conc-chev inline-block transition-transform text-xs" aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&#9656;</span>{th.label}<span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>{th.rows.length} vote{th.rows.length === 1 ? '' : 's'}{th.landed.length > 0 ? ` · landed on ${th.landed.join(', ')}` : ''}{th.rows.length > 0 ? ` · ${mmdd(th.rows[th.rows.length - 1].date)} → ${mmdd(th.rows[0].date)}` : ''}</span>{th.landingAt >= 0 && <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>✓ made final {mmdd(th.rows[th.landingAt].date)}</span>}</summary>
             {th.question && <p className="text-xs mt-1 pl-3" style={{ color: 'var(--text-muted)' }}>{th.question}</p>}
             <ul className="text-[13.5px] space-y-1 mt-1">{th.rows.map((r, i) => r.render(i === th.landingAt))}</ul>
           </details>
