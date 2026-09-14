@@ -3881,7 +3881,39 @@
     "live_by_scope": {},
     "live_cuts": 0,
     "log": [],
-    "meetings_read": 1
+    "meetings_read": 1,
+    "warnings": [
+     {
+      "about": "town services and school funding",
+      "board": "School Committee",
+      "board_slug": "school-committee",
+      "condition": "if the town does not expand its tax base, get more state money, or pass an override",
+      "date": "2026-09-09",
+      "fiscal_year": null,
+      "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
+      "prediction": "It will kill the schools and the rest of the town's services, or things will have to be closed",
+      "scope": "both",
+      "t": 7272,
+      "thread": "other",
+      "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=7272s",
+      "who": "a member"
+     },
+     {
+      "about": "school programs and course offerings",
+      "board": "School Committee",
+      "board_slug": "school-committee",
+      "condition": "as students continue to choice out of the district and the district loses Chapter 70 money when they leave",
+      "date": "2026-09-09",
+      "fiscal_year": null,
+      "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
+      "prediction": "The district will have to fight hard to keep offering all the programs and opportunities it currently offers",
+      "scope": "school",
+      "t": 5093,
+      "thread": "other",
+      "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=5093s",
+      "who": "a member"
+     }
+    ]
    },
    "trigger": "The annual cycle: the budget presented, heard and voted, then the Annual Town Meeting and election in May 2027"
   },
@@ -6947,7 +6979,8 @@
       "page": "/meeting-minutes/school-committee/2026-05-20-WMLR7WqrZPw"
      }
     ],
-    "meetings_read": 27
+    "meetings_read": 27,
+    "warnings": []
    },
    "trigger": "After both override questions failed on 16 May 2026 the School Committee adopted the balanced budget and named its cuts; then the enacted FY27 state budget, signed 9 July, carried $471,121 more net aid than the town had budgeted, and the Select Board called a Special Town Meeting for 3 September to decide how to use it"
   }
@@ -6986,14 +7019,27 @@
  "proposed_threads": [
   {
    "first": "2026-06-16",
-   "last": "2026-09-01",
-   "meetings": 9,
+   "last": "2026-09-09",
+   "meetings": 10,
    "name": "athletic",
-   "rows": 23,
+   "rows": 24,
    "suggested": {
     "id": "athletic",
     "label": "athletic",
     "match": "\\bathletic\\w*",
+    "order": 5
+   }
+  },
+  {
+   "first": "2026-06-24",
+   "last": "2026-09-09",
+   "meetings": 7,
+   "name": "transportation",
+   "rows": 24,
+   "suggested": {
+    "id": "transportation",
+    "label": "transportation",
+    "match": "\\btransportation\\w*",
     "order": 5
    }
   },
@@ -7007,19 +7053,6 @@
     "id": "school-choice",
     "label": "school choice",
     "match": "\\bschool\\ choice\\w*",
-    "order": 5
-   }
-  },
-  {
-   "first": "2026-06-24",
-   "last": "2026-09-01",
-   "meetings": 6,
-   "name": "transportation",
-   "rows": 23,
-   "suggested": {
-    "id": "transportation",
-    "label": "transportation",
-    "match": "\\btransportation\\w*",
     "order": 5
    }
   },
@@ -8131,23 +8164,6 @@
     "who": "a resident"
    },
    {
-    "amount_as_heard": null,
-    "board": "School Committee",
-    "board_slug": "school-committee",
-    "date": "2026-09-09",
-    "fiscal_year": 2027,
-    "fte_as_heard": null,
-    "item": "World language classes/staffing (reduced)",
-    "key": "world language classes staffing reduced",
-    "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
-    "scope": "school",
-    "status": "announced",
-    "t": 4757,
-    "thread": "cuts",
-    "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=4757s",
-    "who": "a principal"
-   },
-   {
     "amount_as_heard": "10 grand",
     "board": "School Committee",
     "board_slug": "school-committee",
@@ -8435,6 +8451,57 @@
     "thread": "cuts",
     "video_url": "https://www.youtube.com/watch?v=kG4KE9VgCdY&t=1595s",
     "who": "a resident"
+   },
+   {
+    "amount_as_heard": null,
+    "board": "School Committee",
+    "board_slug": "school-committee",
+    "date": "2026-09-09",
+    "fiscal_year": 2027,
+    "fte_as_heard": null,
+    "item": "second grade classroom / class size reduction at the primary school",
+    "key": "second grade classroom class size at primary school",
+    "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
+    "scope": "school",
+    "status": "restored",
+    "t": 50,
+    "thread": "cuts",
+    "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=50s",
+    "who": "the chair"
+   },
+   {
+    "amount_as_heard": null,
+    "board": "School Committee",
+    "board_slug": "school-committee",
+    "date": "2026-09-09",
+    "fiscal_year": 2027,
+    "fte_as_heard": null,
+    "item": "transportation for student athletes / athletic program funding",
+    "key": "transportation student athletes athletic program funding",
+    "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
+    "scope": "school",
+    "status": "restored",
+    "t": 467,
+    "thread": "cuts",
+    "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=467s",
+    "who": "the superintendent"
+   },
+   {
+    "amount_as_heard": null,
+    "board": "School Committee",
+    "board_slug": "school-committee",
+    "date": "2026-09-09",
+    "fiscal_year": 2027,
+    "fte_as_heard": "full-time",
+    "item": "full-time music teacher at the high school",
+    "key": "full time music teacher at high school",
+    "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
+    "scope": "school",
+    "status": "restored",
+    "t": 4967,
+    "thread": "cuts",
+    "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=4967s",
+    "who": "a principal"
    },
    {
     "amount_as_heard": null,
@@ -9030,6 +9097,23 @@
     }
    ],
    "school/override": [
+    {
+     "amount_as_heard": "$418,000",
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-09-09",
+     "fiscal_year": 2027,
+     "kind": "override",
+     "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
+     "rank": 2,
+     "scope": "school",
+     "statement": "The $418,000 approved through the special town meeting warrant articles does not erase the deficit between the district's needs and its budget",
+     "status": "voted",
+     "t": 70,
+     "thread": "override",
+     "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=70s",
+     "who": "the chair"
+    },
     {
      "amount_as_heard": "$1.6 6 million",
      "board": "Finance Committee",
@@ -9893,20 +9977,20 @@
     "who": "a resident"
    },
    "school/override": {
-    "amount_as_heard": "1.6 million",
-    "board": "Finance Committee",
-    "board_slug": "finance-committee",
-    "date": "2026-08-13",
+    "amount_as_heard": "$418,000",
+    "board": "School Committee",
+    "board_slug": "school-committee",
+    "date": "2026-09-09",
     "fiscal_year": 2027,
     "kind": "override",
-    "page": "/meeting-minutes/finance-committee/2026-08-13-v4qvpgKlYRg",
+    "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
     "rank": 2,
     "scope": "school",
-    "statement": "tier 1 core override amount for the school department, per last year's annual report",
-    "status": "announced",
-    "t": 7777,
+    "statement": "The $418,000 approved through the special town meeting warrant articles does not erase the deficit between the district's needs and its budget",
+    "status": "voted",
+    "t": 70,
     "thread": "override",
-    "video_url": "https://www.youtube.com/watch?v=v4qvpgKlYRg&t=7777s",
+    "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=70s",
     "who": "the chair"
    },
    "school/state_aid": {
@@ -9979,20 +10063,22 @@
    }
   },
   "live_by_scope": {
-   "school": 62,
+   "school": 61,
    "town": 5
   },
-  "live_cuts": 67,
+  "live_cuts": 66,
   "log": [
    {
     "added": [
-     "World language classes/staffing (reduced)"
+     "second grade classroom / class size reduction at the primary school",
+     "transportation for student athletes / athletic program funding",
+     "full-time music teacher at the high school"
     ],
     "board": "School Committee",
     "board_slug": "school-committee",
     "changed": [],
     "date": "2026-09-09",
-    "n_added": 1,
+    "n_added": 3,
     "n_changed": 0,
     "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI"
    },
@@ -10268,7 +10354,39 @@
     "page": "/meeting-minutes/school-committee/2026-05-20-WMLR7WqrZPw"
    }
   ],
-  "meetings_read": 28
+  "meetings_read": 28,
+  "warnings": [
+   {
+    "about": "town services and school funding",
+    "board": "School Committee",
+    "board_slug": "school-committee",
+    "condition": "if the town does not expand its tax base, get more state money, or pass an override",
+    "date": "2026-09-09",
+    "fiscal_year": null,
+    "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
+    "prediction": "It will kill the schools and the rest of the town's services, or things will have to be closed",
+    "scope": "both",
+    "t": 7272,
+    "thread": "other",
+    "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=7272s",
+    "who": "a member"
+   },
+   {
+    "about": "school programs and course offerings",
+    "board": "School Committee",
+    "board_slug": "school-committee",
+    "condition": "as students continue to choice out of the district and the district loses Chapter 70 money when they leave",
+    "date": "2026-09-09",
+    "fiscal_year": null,
+    "page": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
+    "prediction": "The district will have to fight hard to keep offering all the programs and opportunities it currently offers",
+    "scope": "school",
+    "t": 5093,
+    "thread": "other",
+    "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI&t=5093s",
+    "who": "a member"
+   }
+  ]
  },
  "threads": [
   {

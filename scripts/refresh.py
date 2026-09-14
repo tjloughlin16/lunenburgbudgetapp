@@ -327,6 +327,14 @@ def main():
         for t in targets[:MAX_MINUTES_PER_RUN]:
             py('write_recording_minutes.py', t['board_slug'], t['meeting_date'], check=False)
 
+    # 7a. The budget state of the three budget boards' recordings -- the deficit, the cuts,
+    # the warnings as put on the record -- newest first, capped like the minutes. A file
+    # behind the extraction's schema counts as work, so a schema change backfills itself
+    # at MAX_MINUTES_PER_RUN a day rather than in one expensive batch.
+    if not a.dry_run and not a.no_minutes:
+        since = (dt.date.fromisoformat(a.as_of) - dt.timedelta(days=400)).isoformat()
+        py('write_budget_state.py', '--since', since, '--limit', str(MAX_MINUTES_PER_RUN), check=False)
+
     # 7b. Against the town's minutes, wherever both now exist. Official minutes appear
     # weeks after a meeting, so this is asked every day and does work only when new.
     if not a.dry_run and not a.no_minutes:

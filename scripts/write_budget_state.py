@@ -22,8 +22,17 @@ withdrawn, and the second in the video. CUTS: each reduction named, with its amo
 FTE as heard and its status. Every figure is AS HEARD from machine captions, which mishear
 numbers; the page says so, and the second in the video is what a reader checks.
 
+WARNINGS, too. TJ, 14 September 2026: "you should also be able to detect prelim language
+early. Like, if someone on the school committee predicts 'we won't have athletics next
+year' that should go onto the live feed." A warning has no figure -- which is why the
+statements list, which requires one, was missing them -- so it is its own list: what was
+predicted or threatened, for which thing, on what condition, by whom, at what second.
+
 NOT extracted: a department's spending, a transfer between lines, a grant, a fee. Money,
 but not the budget. The same line the budget feed draws.
+
+SCHEMA_VERSION: a file written before `warnings` existed is not current and is re-read
+on the next run -- inside the refresh's daily cap, oldest last.
 
 The same discipline as write_recording_minutes.py: output keyed to the transcript's sha256,
 current files skipped, the cost recorded. Runs inside the refresh for the three budget
@@ -55,7 +64,10 @@ Rules:
 - Include the fiscal year the statement is about (e.g. 2027, 2028) when it can be told from context; otherwise null.
 - t is the caption line's seconds.
 - Do NOT include: line-item transfers within the current year, grants, fees, a department's spending review, closeouts of past years, capital projects unless framed as a warrant article amount.
+- WARNINGS: a prediction, threat or conditional about the coming budget with no figure attached -- "we won't have athletics next year", "if the override fails the fifth-grade band goes", "expect layoffs in the spring", "this is the last year we can absorb this". Record what was predicted, about which thing, the condition if one was said, who said it by role, and the second. A warning is preliminary language, not a decision; do not put it in statements or cuts.
 - If nothing qualifies, return empty lists. Do not invent."""
+
+SCHEMA_VERSION = 2   # 1: statements + cuts; 2: + warnings
 
 SCHEMA = {
     "type": "object",
@@ -80,8 +92,17 @@ SCHEMA = {
             "who": {"type": "string"},
             "t": {"type": "integer"}},
             "required": ["item", "scope", "fiscal_year", "amount_as_heard", "fte_as_heard", "status", "who", "t"]}},
+        "warnings": {"type": "array", "items": {"type": "object", "properties": {
+            "prediction": {"type": "string", "description": "what was predicted or threatened, in plain words"},
+            "about": {"type": "string", "description": "the thing: athletics, the fifth-grade band, class sizes, layoffs"},
+            "condition": {"type": ["string", "null"], "description": "'if the override fails', 'without more state aid', or null"},
+            "scope": {"type": "string", "enum": ["school", "town", "both"]},
+            "fiscal_year": {"type": ["integer", "null"]},
+            "who": {"type": "string", "description": "by role, never a name"},
+            "t": {"type": "integer"}},
+            "required": ["prediction", "about", "condition", "scope", "fiscal_year", "who", "t"]}},
         "nothing_on_the_budget": {"type": "boolean"}},
-    "required": ["statements", "cuts", "nothing_on_the_budget"]}
+    "required": ["statements", "cuts", "warnings", "nothing_on_the_budget"]}
 
 
 def out_path(t):
@@ -90,7 +111,10 @@ def out_path(t):
 
 def current(t):
     p = out_path(t)
-    return os.path.exists(p) and json.load(open(p)).get('source', {}).get('sha256') == sha256_of(t['path'])
+    if not os.path.exists(p):
+        return False
+    d = json.load(open(p))
+    return d.get('source', {}).get('sha256') == sha256_of(t['path']) and d.get('written', {}).get('schema') == SCHEMA_VERSION
 
 
 def write_one(t):
@@ -123,11 +147,11 @@ def write_one(t):
             board_slug=t['board_slug'], board=board, meeting_date=t['date'], video_id=t['video_id'],
             video_url=doc.get('video_url') or 'https://www.youtube.com/watch?v=' + t['video_id'],
             source=dict(transcript=t['rel'], sha256=sha256_of(t['path'])),
-            written=dict(by='scripts/write_budget_state.py', model=MODEL,
+            written=dict(by='scripts/write_budget_state.py', model=MODEL, schema=SCHEMA_VERSION,
                          at=dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), cost_usd=res.get('total_cost_usd')),
             state=body), fh, indent=1, sort_keys=True)
         fh.write('\n')
-    return 'written ($%.3f) — %d statements, %d cuts' % (res.get('total_cost_usd') or 0, len(body['statements']), len(body['cuts']))
+    return 'written ($%.3f) — %d statements, %d cuts, %d warnings' % (res.get('total_cost_usd') or 0, len(body['statements']), len(body['cuts']), len(body.get('warnings') or []))
 
 
 def main():
@@ -141,20 +165,23 @@ def main():
     a = ap.parse_args()
     ts = [t for t in transcripts() if t['board_slug'] in BOARDS]
     if a.check:
-        bad = 0
+        bad = behind = 0
         for f in glob.glob(os.path.join(OUT, '*', '*.json')):
             d = json.load(open(f))
             p = os.path.join(ROOT, d['source']['transcript'])
             if not os.path.exists(p) or sha256_of(p) != d['source']['sha256']:
                 print('STALE', os.path.relpath(f, ROOT)); bad += 1
-        print('%d budget-state file(s), %d problem(s)' % (len(glob.glob(os.path.join(OUT, '*', '*.json'))), bad))
+            elif d.get('written', {}).get('schema') != SCHEMA_VERSION:
+                behind += 1
+        print('%d budget-state file(s), %d problem(s), %d behind schema %d (re-read inside the refresh cap)' % (len(glob.glob(os.path.join(OUT, '*', '*.json'))), bad, behind, SCHEMA_VERSION))
         return 1 if bad else 0
     if a.status:
         have = {os.path.relpath(f, OUT)[:-5] for f in glob.glob(os.path.join(OUT, '*', '*.json'))}
         for b in BOARDS:
             n = sum(1 for t in ts if t['board_slug'] == b)
             h = sum(1 for t in ts if t['board_slug'] == b and '%s/%s-%s' % (b, t['date'], t['video_id']) in have)
-            print('  %-20s %3d transcripts, %3d with budget state' % (b, n, h))
+            c = sum(1 for t in ts if t['board_slug'] == b and current(t))
+            print('  %-20s %3d transcripts, %3d with budget state, %3d current' % (b, n, h, c))
         return 0
     if a.board_pos and a.date:
         ts = [t for t in ts if t['board_slug'] == a.board_pos and t['date'] == a.date]

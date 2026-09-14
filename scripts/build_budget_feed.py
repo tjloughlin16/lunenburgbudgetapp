@@ -267,6 +267,18 @@ def budget_state(as_of, episode=None, threads=()):
             log.append(dict(base, added=[r['item'] for r in added], changed=[dict(item=r['item'], was=r['was'], now=r['status']) for r in changed],
                             n_added=len(added), n_changed=len(changed)))
     log.sort(key=lambda x: x['date'], reverse=True)
+    # WARNINGS -- preliminary language with no figure: "we won't have athletics next year".
+    # TJ: "that should go onto the live feed." Filed to a thread by what it is about.
+    warnings = []
+    for d in docs:
+        for w in d['state'].get('warnings') or []:
+            if not keep(d['meeting_date'], w.get('fiscal_year')):
+                continue
+            warnings.append(dict(board=d['board'], board_slug=d['board_slug'], date=d['meeting_date'],
+                                 page='/meeting-minutes/%s/%s-%s' % (d['board_slug'], d['meeting_date'], d['video_id']),
+                                 **dict(w, prediction=tally_only(w['prediction'])), thread=thread_of(threads, '%s %s' % (w.get('about') or '', w['prediction'])),
+                                 video_url='%s&t=%ds' % (d['video_url'], w['t'])))
+    warnings.sort(key=lambda r: (r['date'], r['t']), reverse=True)
     cut_list = sorted(cuts.values(), key=lambda r: (r['scope'], r['status'] in ('restored', 'withdrawn'), r['date']), reverse=False)
     live = [r for r in cut_list if r['status'] not in ('restored', 'withdrawn')]
     read = [d for d in docs if not episode or in_episode(episode, d['meeting_date'], None)]
@@ -274,7 +286,7 @@ def budget_state(as_of, episode=None, threads=()):
         meetings_read=len(read), first_date=read[0]['meeting_date'] if read else None, last_date=read[-1]['meeting_date'] if read else None,
         latest={'%s/%s' % k: v for k, v in latest.items()},
         history={'%s/%s' % k: sorted(v, key=lambda r: r['date'], reverse=True) for k, v in history.items()},
-        cuts=cut_list, live_cuts=len(live),
+        cuts=cut_list, live_cuts=len(live), warnings=warnings,
         live_by_scope=dict(collections.Counter(r['scope'] for r in live)),
         log=log)
 

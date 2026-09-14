@@ -12,31 +12,41 @@
     "amount_as_heard": null,
     "fiscal_year": 2027,
     "fte_as_heard": null,
-    "item": "World language classes/staffing (reduced)",
+    "item": "second grade classroom / class size reduction at the primary school",
     "scope": "school",
-    "status": "announced",
-    "t": 4757,
+    "status": "restored",
+    "t": 50,
+    "who": "the chair"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2027,
+    "fte_as_heard": null,
+    "item": "transportation for student athletes / athletic program funding",
+    "scope": "school",
+    "status": "restored",
+    "t": 467,
+    "who": "the superintendent"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2027,
+    "fte_as_heard": "full-time",
+    "item": "full-time music teacher at the high school",
+    "scope": "school",
+    "status": "restored",
+    "t": 4967,
     "who": "a principal"
    }
   ],
   "nothing_on_the_budget": false,
   "statements": [
    {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "deficit",
-    "scope": "school",
-    "statement": "The $418,000 approved at the special town meeting does not erase the deficit between the district's needs and its budget",
-    "status": "announced",
-    "t": 70,
-    "who": "the chair"
-   },
-   {
     "amount_as_heard": "$418,000",
     "fiscal_year": 2027,
-    "kind": "other",
+    "kind": "override",
     "scope": "school",
-    "statement": "Voters at the special town meeting approved warrant articles 1 and 3, totaling $418,000, to expand student supports and maintain the athletic program including transportation",
+    "statement": "The $418,000 approved through the special town meeting warrant articles does not erase the deficit between the district's needs and its budget",
     "status": "voted",
     "t": 70,
     "who": "the chair"
@@ -44,51 +54,41 @@
    {
     "amount_as_heard": null,
     "fiscal_year": 2027,
-    "kind": "other",
+    "kind": "deficit",
     "scope": "school",
-    "statement": "The one-time funding approved at the special town meeting addresses immediate needs but does not resolve the district's longer-term structural financial challenges",
+    "statement": "A deficit remains between the district's needs and its budget even after the $418,000 in new funding",
     "status": "announced",
-    "t": 799,
-    "who": "the superintendent"
-   },
-   {
-    "amount_as_heard": null,
-    "fiscal_year": null,
-    "kind": "state_aid",
-    "scope": "school",
-    "statement": "The district loses Chapter 70 money for every student who leaves for another district, and must pay for them to attend elsewhere",
-    "status": "announced",
-    "t": 5093,
-    "who": "a member"
+    "t": 70,
+    "who": "the chair"
    },
    {
     "amount_as_heard": null,
     "fiscal_year": 2027,
     "kind": "override",
-    "scope": "town",
-    "statement": "An override vote did not pass last year",
-    "status": "announced",
-    "t": 7148,
-    "who": "a member"
+    "scope": "school",
+    "statement": "Passage of warrant articles 1 and 3 at the special town meeting allows the district to expand student learning supports and maintain a robust athletic program, including athlete transportation",
+    "status": "voted",
+    "t": 467,
+    "who": "the superintendent"
    },
    {
     "amount_as_heard": "2 and 12%",
     "fiscal_year": null,
     "kind": "levy",
     "scope": "town",
-    "statement": "The town will struggle to sustain services if it stays at the levy cap (heard as \"2 and 12 percent\") for the next 5 to 10 years without expanding the tax base",
+    "statement": "The town will \"die on the vine\" if it stays at the roughly 2.5% levy limit for the next 5 to 10 years without expanding the tax base or getting more state money",
     "status": "announced",
     "t": 7168,
     "who": "a member"
    },
    {
     "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "other",
-    "scope": "both",
-    "statement": "This budget cycle, the town hired an assistant town manager at roughly what it would have cost to hire a second grade teacher",
-    "status": "announced",
-    "t": 6937,
+    "fiscal_year": null,
+    "kind": "override",
+    "scope": "school",
+    "statement": "A member states she personally intends to go for more funding at town meeting because the schools need more money than they are currently getting",
+    "status": "proposed",
+    "t": 7252,
     "who": "a member"
    },
    {
@@ -96,9 +96,29 @@
     "fiscal_year": null,
     "kind": "free_cash",
     "scope": "town",
-    "statement": "Free cash is unlikely to be certified before the November town meeting because the town has not finished its year-end closeout",
+    "statement": "Free cash may not be certified in time for the November special town meeting warrant article that would let any district-placement overages go into a stabilization fund, because year-end close-out is not finished",
     "status": "announced",
     "t": 7724,
+    "who": "the chair"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "school programs and course offerings",
+    "condition": "as students continue to choice out of the district and the district loses Chapter 70 money when they leave",
+    "fiscal_year": null,
+    "prediction": "The district will have to fight hard to keep offering all the programs and opportunities it currently offers",
+    "scope": "school",
+    "t": 5093,
+    "who": "a member"
+   },
+   {
+    "about": "town services and school funding",
+    "condition": "if the town does not expand its tax base, get more state money, or pass an override",
+    "fiscal_year": null,
+    "prediction": "It will kill the schools and the rest of the town's services, or things will have to be closed",
+    "scope": "both",
+    "t": 7272,
     "who": "a member"
    }
   ]
@@ -107,9 +127,10 @@
  "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T17:28:18Z",
+  "at": "2026-09-14T19:05:18Z",
   "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.43841300000000005,
-  "model": "sonnet"
+  "cost_usd": 0.482758,
+  "model": "sonnet",
+  "schema": 2
  }
 }

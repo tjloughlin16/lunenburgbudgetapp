@@ -22,7 +22,8 @@ type Stage = { stage: string; key: string; windows: Window[]; status: 'past' | '
 type Entry = { kind: string; board: string; board_slug: string; date: string; page: string; thread?: string; text?: string | null; detail?: string | null; tags?: string[]; figures?: string[]; markers?: string[]; t?: number | null; video_url?: string; minutes?: number }
 type Statement = { board: string; board_slug: string; date: string; page: string; thread?: string; kind: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; statement: string; who: string; status: string; t: number; video_url: string }
 type Cut = { board: string; board_slug: string; date: string; page: string; thread?: string; item: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; fte_as_heard: string | null; status: string; who: string; t: number; video_url: string; key: string }
-type State = { meetings_read: number; first_date: string | null; last_date: string | null; latest: Record<string, Statement>; history: Record<string, Statement[]>; cuts: Cut[]; live_cuts: number; live_by_scope: Record<string, number>; log: { board: string; board_slug: string; date: string; page: string; added: string[]; changed: { item: string; was: string; now: string }[]; n_added: number; n_changed: number }[] }
+type Warning = { board: string; board_slug: string; date: string; page: string; thread?: string; prediction: string; about: string; condition: string | null; scope: string; fiscal_year: number | null; who: string; t: number; video_url: string }
+type State = { meetings_read: number; warnings?: Warning[]; first_date: string | null; last_date: string | null; latest: Record<string, Statement>; history: Record<string, Statement[]>; cuts: Cut[]; live_cuts: number; live_by_scope: Record<string, number>; log: { board: string; board_slug: string; date: string; page: string; added: string[]; changed: { item: string; was: string; now: string }[]; n_added: number; n_changed: number }[] }
 type Payload = {
   about: string; as_of: string; cycle_fy: number; cycle_opens: string; cycle_closes: string; recent_days: number; state: State; seasons: { fy: number; path: string; label: string; live: boolean }[]
   answers: { question: string; label: string; answer: string; status: string; link?: string | null; basis?: string | null }[]
@@ -135,6 +136,8 @@ function Metrics({ st }: { st: State }) {
     const voted = cs.filter(c => c.status === 'voted').length, gone = cs.filter(c => c.status === 'restored' || c.status === 'withdrawn').length
     cards.push({ label, value: `${cs.length} named`, line: `${voted} voted · ${cs.length - voted - gone} proposed or announced, not voted · ${gone} restored or withdrawn`, foot: '' })
   }
+  const warns = st.warnings || []
+  if (warns.length) cards.push({ label: 'Early warnings', value: `${warns.length} on the record`, line: `predictions and threats with no figure yet — latest ${mmdd(warns[0].date)}: ${warns[0].about}`, foot: '' })
   if (!cards.length) return null
   return (
     <div className="grid gap-3 mt-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -190,6 +193,7 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta 
       const voted = c.status === 'voted', gone = c.status === 'restored' || c.status === 'withdrawn'
       return { date: c.date, t: c.t, thread: c.thread || 'other', vote: voted, nums: voted ? amounts(c.amount_as_heard || '') : [], render: landing => <Line key={'c' + i} chip={voted ? `${c.board} vote` : gone ? `${c.status} · ${c.who}` : `proposed cut · ${c.who}`} chipColor={voted ? 'var(--series-cost)' : 'var(--text-muted)'} quiet={!voted} muted={gone} landing={landing} amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`${gone ? c.status + ': ' : 'cut: '}${c.item}`} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> }
     }),
+    ...(st.warnings || []).map((w, i): Row => ({ date: w.date, t: w.t, thread: w.thread || 'other', vote: false, nums: [], render: () => <Line key={'w' + i} chip={`warned · ${w.who}`} chipColor="var(--status-warning)" quiet text={`${w.prediction}${w.condition ? ` — ${w.condition}` : ''} (${SCOPE[w.scope] || w.scope}: ${w.about})`} board={w.board} board_slug={w.board_slug} date={w.date} video_url={w.video_url} t={w.t} /> })),
     ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, thread: e.thread || 'other', vote: true, nums: amounts(e.text || ''), render: landing => <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" landing={landing} text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
   ].sort((a, b) => b.date.localeCompare(a.date) || b.t - a.t)   // newest first, TJ, 14 September
   const threads = meta.filter(th => story.some(r => r.thread === th.id)).map(th => {
@@ -221,7 +225,7 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta 
       {/* ---- tier 2 and 3 together: THE STORY, one thread per thing, votes strong and what was said as the why */}
       <div className="card p-4 mt-4" style={{ borderTop: '4px solid var(--series-cost)' }}>
         <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'How it got there' : 'Where it stands, and how it got there'}</p>
-        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>One story per thing the season moves forward, newest first. <span style={{ color: 'var(--series-cost)' }}>A board vote</span> is the strong line; what was stated or proposed, by whom, is the reason it happened. A vote a later vote overwrote is struck through. None of this is final.</p>
+        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>One story per thing the season moves forward, newest first. <span style={{ color: 'var(--series-cost)' }}>A board vote</span> is the strong line; what was stated or proposed, by whom, is the reason it happened; <span style={{ color: 'var(--status-warning)' }}>a warning</span> is preliminary language — a prediction with no figure yet. A vote a later vote overwrote is struck through. None of this is final.</p>
         {story.length > 0 ? threads.map(th => <Thread key={th.id} th={th} />)
           : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing on the record yet. Figures, when they come, are as heard from machine captions; the second in the video is the record.</p>}
       </div>
