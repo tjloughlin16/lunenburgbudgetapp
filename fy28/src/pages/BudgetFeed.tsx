@@ -2,6 +2,7 @@ import { useState, type ReactElement } from 'react'
 import { feedSeasonFromPath, type Tab } from '../routes'
 import { H2, ReportShell, useReport } from '../components/report'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
+import { SeasonBoard } from './SeasonBoard'
 
 const TAB: Tab = 'budgetfeed'
 const DATA = '/data/budget-feed.json'
@@ -428,9 +429,14 @@ export function BudgetFeed() {
             <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{e.closed ? 'closed' : 'under way'} · {mmdd(e.opens)}{e.closes ? ` → ${mmdd(e.closes)}` : ' →'}{e.kind === 'special' ? <> · <a className="underline" href={`/budget-feed/${e.id}`}>its own page</a></> : null}</span>
           </div>
           {e.kind === 'special' && <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{e.trigger}.</p>}
-          <Tiers st={e.state} closed={e.closed} decisions={d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))} outcome={e.kind === 'regular' ? d.outcome : null} meta={d.threads} fy={Number(e.about_fy || e.season_fy)}
-            finalText={e.kind === 'special' ? (e.outcome || null) : (d.outcome.closed ? d.outcome.headline : null)}
-            finalNote={e.kind === 'regular' && d.outcome.closed ? `Annual Town Meeting ${d.outcome.atm_date ? long(d.outcome.atm_date) : ''}; election ${d.outcome.election_date ? long(d.outcome.election_date) : ''}. Tallies from the town’s printed results; the appropriation from the adopted budget.` : null} />
+          {/* THE STATUS BOARD, where a season file exists (sources/data/budget-seasons/<fy>.csv);
+              the extraction-built tiers where it does not yet. */}
+          {(() => {
+            const tiers = <Tiers st={e.state} closed={e.closed} decisions={d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))} outcome={e.kind === 'regular' ? d.outcome : null} meta={d.threads} fy={Number(e.about_fy || e.season_fy)}
+              finalText={e.kind === 'special' ? (e.outcome || null) : (d.outcome.closed ? d.outcome.headline : null)}
+              finalNote={e.kind === 'regular' && d.outcome.closed ? `Annual Town Meeting ${d.outcome.atm_date ? long(d.outcome.atm_date) : ''}; election ${d.outcome.election_date ? long(d.outcome.election_date) : ''}. Tallies from the town’s printed results; the appropriation from the adopted budget.` : null} />
+            return e.kind === 'regular' ? <SeasonBoard fy={Number(e.season_fy)} fallback={tiers} /> : tiers
+          })()}
         </section>
       ))}
       {d.episodes.length === 0 && <Tiers st={d.state} closed={d.outcome.closed} decisions={d.entries.filter(x => x.kind === 'vote')} outcome={d.outcome} meta={d.threads} fy={d.cycle_fy} finalText={d.outcome.closed ? d.outcome.headline : null} />}
