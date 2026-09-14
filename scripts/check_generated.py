@@ -100,6 +100,7 @@ CHECKS = [
     ('build_one_big_report.py', ['--check']),
     ('build_boards.py', ['--check']),
     ('build_budget_feed.py', ['--check']),
+    ('extract_scenario_lines.py', ['--check']),
     ('write_budget_state.py', ['--check']),
     ('fetch_board_pages.py', ['--check']),
     ('fetch_dls_tax_bills.py', ['--check']),

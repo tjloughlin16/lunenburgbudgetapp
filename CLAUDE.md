@@ -964,6 +964,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_budget_feed.py --check
     python3 scripts/write_budget_state.py --since DATE     # the deficit, the cuts, the proposals as put on the record, per meeting (claude -p)
     python3 scripts/write_budget_state.py --check
+    python3 scripts/extract_scenario_lines.py            # every line the FY27 scenarios differ on -- the full cut list, footed to the documents
+    python3 scripts/extract_scenario_lines.py --check
     python3 scripts/build_budget_feed.py --as-of 2026-05-16 --out fy28/public/data/budget-feed-fy27.json   # a season replayed
     python3 scripts/fetch_board_pages.py                  # every board's town page: charter text, members, meetings, Facebook
     python3 scripts/fetch_dls_tax_bills.py                # DLS average single-family tax bill, eleven towns, by script
