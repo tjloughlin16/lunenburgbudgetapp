@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { boardSlugFromPath, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
+import { JoinLinks, type Join } from '../components/BoardsThisWeek'
 
 const TAB: Tab = 'boards'
 const DATA = '/data/boards.json'
@@ -15,7 +16,7 @@ const DATA = '/data/boards.json'
  *  three budget boards come first and carry the most; every other board gets the same
  *  page with whatever the town has posted for it. */
 
-type Upcoming = { date: string; days_away: number; agenda_url: string; hook?: string | null; time?: string | null; where?: string | null; attend?: string | null; important?: unknown; items?: { agenda_line: string; why_it_matters?: string; important?: boolean }[] | null }
+type Upcoming = { date: string; days_away: number; agenda_url: string; join?: Join | null; hook?: string | null; time?: string | null; where?: string | null; attend?: string | null; important?: unknown; items?: { agenda_line: string; why_it_matters?: string; important?: boolean }[] | null }
 type Recent = { date: string; agenda_url?: string | null; agenda_doc?: string | null; minutes_url?: string | null; minutes_doc?: string | null; video_url?: string | null; transcript: boolean; captions_disabled: boolean; ours?: { slug: string; headline?: string | null; digest?: string | null; votes?: number; reconciled?: boolean; discrepancies?: number } | null }
 type Vote = { date: string; t?: number | null; motion?: string; outcome?: string; procedural: boolean; moved_by?: string | null; page: string; video_url: string }
 type Cal = { key: string; label: string; cycles: { fy: number; dates: string[] }[]; earliest: string; latest: string; typical_first: string; typical_last: string; meetings: number }
@@ -192,6 +193,7 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
             <span className="text-xs" style={{ color: 'var(--text-muted)' }}>in {u.days_away} day{u.days_away === 1 ? '' : 's'}</span>
           </div>
           {u.hook && <p className="text-[15px] mt-2">{u.hook}</p>}
+          <JoinLinks j={u.join} />
           {u.items && u.items.length > 0 && (
             <details className="mt-2 text-sm">
               <summary className="cursor-pointer" style={{ color: 'var(--text-secondary)' }}>The agenda, item by item</summary>

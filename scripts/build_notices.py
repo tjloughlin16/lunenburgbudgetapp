@@ -25,6 +25,7 @@ import datetime as dt
 import glob
 import json
 import os
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PREVIEWS = os.path.join(ROOT, 'sources', 'data', 'agenda-previews')
@@ -77,6 +78,63 @@ def retro_text(m):
     return '\n\n'.join(lines)
 
 
+URL_RE = re.compile(r'https?://[^\s<>"\')\]]+')
+
+
+def join_links(text_path):
+    """The ways to join, AS PRINTED ON THE AGENDA -- nothing inferred.
+
+    TJ, 14 September 2026: "post the facebook and zoom links for the meetings on the 'this
+    week' on home page and the dedicated page directly, so people can very easily find the
+    way to join those -- IF those links are posted in the agenda." So: every URL on the
+    agenda text that is a Zoom, Facebook or YouTube address, with the meeting ID, passcode
+    and dial-in number where the agenda prints them; and, where the agenda SAYS the meeting
+    is on Facebook Live but prints no address, that sentence, so the page can say "on
+    Facebook Live, per the agenda" without inventing a link."""
+    p = os.path.join(ROOT, text_path) if text_path and not os.path.isabs(text_path) else text_path
+    if not p or not os.path.exists(p):
+        return None
+    t = open(p, encoding='utf-8', errors='replace').read()
+    flat = re.sub(r'\s+', ' ', t)
+    out = dict(zoom=None, facebook=None, youtube=None, meeting_id=None, passcode=None, phone=None, facebook_live=None)
+    for u in URL_RE.findall(flat):
+        u = u.rstrip('.,;')
+        if 'zoom.us' in u and not out['zoom']:
+            out['zoom'] = u
+        elif 'facebook.com' in u and not out['facebook']:
+            out['facebook'] = u
+        elif ('youtube.com' in u or 'youtu.be' in u) and not out['youtube']:
+            out['youtube'] = u
+    m = re.search(r'Meeting ID:?\s*([\d ]{9,15})', flat)
+    out['meeting_id'] = m.group(1).strip() if m else None
+    m = re.search(r'Passcode:?\s*([^\s]{3,20})', flat)
+    out['passcode'] = m.group(1) if m else None
+    m = re.search(r'(?:Join by Phone|Dial(?:-in)?|Phone):?\s*(\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4})', flat)
+    out['phone'] = m.group(1) if m else None
+    m = re.search(r'((?:This meeting|The meeting)[^.]*Facebook Live[^.]*\.)', flat)
+    out['facebook_live'] = m.group(1).strip() if m else None
+    # The agenda names the Lunenburg Public Access Facebook page without an address; the
+    # address is on PACC's own town page (board-pages.csv), which is a published fact, not
+    # a guess -- so the sentence can carry the link, labelled as the agenda's statement.
+    if out['facebook_live'] and 'Public Access' in out['facebook_live'] and not out['facebook']:
+        out['facebook_live_url'] = PACC_FACEBOOK
+    return out if any(out.values()) else None
+
+
+def _pacc_facebook():
+    p = os.path.join(ROOT, 'sources', 'data', 'board-pages.csv')
+    if not os.path.exists(p):
+        return None
+    import csv
+    for r in csv.DictReader(open(p, encoding='utf-8')):
+        if r['slug'] == 'public-access-cable-committee-pacc' and r['facebook_scope'] == 'board':
+            return r['facebook']
+    return None
+
+
+PACC_FACEBOOK = _pacc_facebook()
+
+
 def payload():
     today = as_of()
     upcoming = []
@@ -98,6 +156,7 @@ def payload():
             'nothing_of_note': d['preview']['nothing_of_note'],
             'agenda_url': d['agenda_url'],
             'facebook': d['facebook'],
+            'join': join_links((d.get('source') or {}).get('text')),
             'written': d['written']['at'][:10],
         })
     upcoming.sort(key=lambda x: (x['date'], x['board']))

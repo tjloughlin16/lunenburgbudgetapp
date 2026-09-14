@@ -132,7 +132,7 @@ def build(as_of=None):
             upcoming.append(dict(date=u['date'], days_away=u['days_away'], agenda_url=u['agenda_url'],
                                  hook=pv and pv.get('hook'), time=pv and pv.get('time'), where=pv and pv.get('where'),
                                  attend=pv and pv.get('attend'), important=pv and pv.get('important'),
-                                 items=pv and pv.get('items')))
+                                 items=pv and pv.get('items'), join=pv and pv.get('join')))
         # --- recent meetings, one row each
         recent = []
         for d in past[:RECENT]:

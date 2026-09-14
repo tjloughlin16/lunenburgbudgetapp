@@ -17,7 +17,36 @@ import { useReport } from './report'
 type Upcoming = { agenda_url: string; board: string; board_slug: string; date: string; days_away: number; file_id: string }
 type Feed = { as_of: string; upcoming: { horizon_days: number; meetings: Upcoming[] } }
 type PreviewItem = { agenda_line: string; why_it_matters: string; kind: string; vote_expected?: boolean; important?: boolean }
-type Notice = { board_slug: string; date: string; hook?: string; time?: string; where?: string; attend?: string; one_line: string; items: PreviewItem[]; important?: number; nothing_of_note?: boolean; agenda_url: string }
+export type Join = { zoom?: string | null; facebook?: string | null; youtube?: string | null; meeting_id?: string | null; passcode?: string | null; phone?: string | null; facebook_live?: string | null; facebook_live_url?: string | null }
+type Notice = { board_slug: string; date: string; hook?: string; time?: string; where?: string; attend?: string; one_line: string; items: PreviewItem[]; important?: number; nothing_of_note?: boolean; agenda_url: string; join?: Join | null }
+
+/** HOW TO JOIN, as the agenda prints it. TJ: "post the facebook and zoom links ... so
+ *  people can very easily find the way to join those -- IF those links are posted in the
+ *  agenda." Buttons for a Zoom link, a Facebook or YouTube address, and the dial-in; the
+ *  meeting ID and passcode beside them. Where the agenda says the meeting is on Facebook
+ *  Live on the Public Access page without printing an address, the button links PACC's
+ *  page from the town's own listing and says it is per the agenda. Nothing here is
+ *  inferred: no link on the agenda, no button. */
+export function JoinLinks({ j, compact }: { j?: Join | null; compact?: boolean }) {
+  if (!j) return null
+  const B = ({ href, children }: { href: string; children: React.ReactNode }) => (
+    <a href={href} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+      className="inline-flex items-center px-2.5 py-1 rounded-md text-[12px] font-bold"
+      style={{ background: 'var(--text-primary)', color: 'var(--surface-1)' }}>{children}</a>
+  )
+  const fb = j.facebook || j.facebook_live_url
+  return (
+    <div className={`flex flex-wrap items-center gap-1.5 ${compact ? 'mt-1.5' : 'mt-2'}`}>
+      {j.zoom && <B href={j.zoom}>Join on Zoom ↗</B>}
+      {fb && <B href={fb}>{j.facebook ? 'Facebook ↗' : 'Facebook Live ↗'}</B>}
+      {j.youtube && <B href={j.youtube}>YouTube ↗</B>}
+      {!compact && j.meeting_id && <span className="text-[11.5px] tnum" style={{ color: 'var(--text-secondary)' }}>Meeting ID {j.meeting_id}</span>}
+      {!compact && j.passcode && <span className="text-[11.5px] tnum" style={{ color: 'var(--text-secondary)' }}>· passcode {j.passcode}</span>}
+      {!compact && j.phone && <span className="text-[11.5px] tnum" style={{ color: 'var(--text-secondary)' }}>· by phone {j.phone}</span>}
+      {!compact && !j.facebook && j.facebook_live_url && <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>· Facebook Live on the Public Access page, per the agenda</span>}
+    </div>
+  )
+}
 type Notices = { upcoming: Notice[] }
 type Recorded = { meetings: { slug: string; board_slug: string; date: string; counts: Record<string, number> }[] }
 
@@ -165,6 +194,9 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
                 <p className={`text-[13.5px] mt-1 leading-snug ${indent}`}>{hook}</p>
               )}
               </Row>
+              {/* Outside the Row: on the compact card the Row is itself a link, and a
+                  button inside a link is a button nobody can press. */}
+              {p?.join && <div className={indent}><JoinLinks j={p.join} compact={compact} /></div>}
               <p className={`mt-1 ${indent}`}><LastTime slug={slug} rec={recorded.d} /></p>
               {/* WHAT MATTERS, FLAGGED. TJ: "if there is anything in there that is
                   'important' (think, schools, budgets, citizen-facing impact) then lets
