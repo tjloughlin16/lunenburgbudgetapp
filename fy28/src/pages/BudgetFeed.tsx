@@ -150,17 +150,19 @@ function Metrics({ st, outcome }: { st: State; outcome?: Payload['outcome'] | nu
     // it was said, then programs, then expense lines -- never one undifferentiated count.
     const live = cs.filter(g => g.status !== 'restored' && g.status !== 'withdrawn')
     const pos = live.filter(g => g.kind === 'position'), prog = live.filter(g => g.kind === 'program'), exp = live.filter(g => g.kind === 'expense')
-    const fte = pos.reduce((a, g) => a + (g.fte || 0), 0), fteKnown = pos.filter(g => g.fte != null).length
+    // THE FTE IS SUMMED ONLY OVER WHAT WAS VOTED. TJ, on a card that said 19.5 FTE: "how did
+    // you get 19.5 FTE cuts for the school?" It was every FTE named across four scenarios --
+    // the same two primary teachers as '2.0 classroom teachers' in March and as '1st grade
+    // teacher' + '2nd grade teacher' a week later. Scenarios are alternatives; their FTEs do
+    // not add. One vote's list does.
+    const votedPos = pos.filter(g => g.voted)
+    const fteVoted = votedPos.reduce((a, g) => a + (g.fte || 0), 0)
     const voted = live.filter(g => g.voted).length, gone = cs.length - live.length
-    // TJ: "cuts to big programs should absolutely be named here" and, on the shape of the
-    // card, "FTE, expense, programs (athletics, music, band, MS sports, transportation,
-    // etc)". So: the FTE, the expense lines, then the program FAMILIES by name -- the ones
-    // a vote touched first -- with the raw items behind in the thread.
     const fams: string[] = []
     for (const g of [...prog].sort((a, b) => Number(b.voted) - Number(a.voted))) if (g.family && !fams.includes(g.family)) fams.push(g.family)
-    const fteText = fte ? `${fte % 1 ? fte.toFixed(1) : fte} FTE as heard across ${pos.length} position${pos.length === 1 ? '' : 's'}${fteKnown < pos.length ? ` (${pos.length - fteKnown} with no FTE said)` : ''}` : pos.length ? `${pos.length} position${pos.length === 1 ? '' : 's'}, no FTE said` : ''
-    cards.push({ label, value: fte ? `${fte % 1 ? fte.toFixed(1) : fte} FTE` : pos.length ? `${pos.length} position${pos.length === 1 ? '' : 's'}` : `${live.length} cuts`,
-      line: [fteText, exp.length ? `${exp.length} expense line${exp.length === 1 ? '' : 's'}` : '', fams.length ? `programs: ${fams.join(', ')}` : ''].filter(Boolean).join(' · '),
+    const fmt = (f: number) => (f % 1 ? f.toFixed(1) : String(f))
+    cards.push({ label, value: fteVoted ? `${fmt(fteVoted)} FTE voted` : votedPos.length ? `${votedPos.length} position${votedPos.length === 1 ? '' : 's'} voted` : `${pos.length} position${pos.length === 1 ? '' : 's'} named`,
+      line: [fteVoted ? `${votedPos.length} position${votedPos.length === 1 ? '' : 's'} in the voted list` : '', `${pos.length} position${pos.length === 1 ? '' : 's'} named across the scenarios (alternatives — not added up)`, exp.length ? `${exp.length} expense line${exp.length === 1 ? '' : 's'}` : '', fams.length ? `programs: ${fams.join(', ')}` : ''].filter(Boolean).join(' · '),
       foot: `${voted} voted, ${live.length - voted} not voted${gone ? `, ${gone} restored or withdrawn` : ''}${said ? ` · ${said} more named only by residents` : ''}` })
   }
   const warns = st.warnings || []
@@ -191,7 +193,10 @@ function Metrics({ st, outcome }: { st: State; outcome?: Payload['outcome'] | nu
 function FinalCuts({ st, outcome }: { st: State; outcome?: Payload['outcome'] | null }) {
   const gs = (st.cut_groups || []).filter(g => !g.utterance)
   const stands = gs.filter(g => g.voted && g.status !== 'restored' && g.status !== 'withdrawn')
-  const saved = gs.filter(g => g.status === 'restored')
+  // SAVED means voted as a cut and later restored. TJ: middle school sports 'was cut then
+  // saved -- but that happened in a different scenario, so that's not fair to say.' A cut
+  // that was only ever floated in a scenario and dropped was never cut.
+  const saved = gs.filter(g => g.voted && g.status === 'restored')
   if (!stands.length && !saved.length) return null
   const qs = outcome && outcome.closed ? outcome.questions : []
   const failed = qs.length > 0 && qs.every(q => q.result === 'FAILED'), passed = qs.length > 0 && qs.some(q => q.result !== 'FAILED')
@@ -225,7 +230,7 @@ function FinalCuts({ st, outcome }: { st: State; outcome?: Payload['outcome'] | 
         Read from the boards’ votes against the ballot; the town publishes no list of its own. Figures and FTEs as heard.
       </p>
       {stands.length > 0 && <Block title={passed ? 'Cuts avoided' : 'Cut'} xs={stands} color={passed ? 'var(--status-good)' : 'var(--status-critical)'} />}
-      {saved.length > 0 && <Block title="Saved — cut, then restored" xs={saved} color="var(--status-good)" />}
+      {saved.length > 0 && <Block title="Saved — voted as a cut, then restored" xs={saved} color="var(--status-good)" />}
     </div>
   )
 }

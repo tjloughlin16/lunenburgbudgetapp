@@ -199,10 +199,10 @@ def fte_number(text):
     if m:
         v = float(m.group(0))
         return v if 0 < v <= 12 else None
+    if 'half' in t or 'part' in t:        # 'half-time (from full-time)' is a half, read before 'full'
+        return 0.5 if 'half' in t else None
     if 'full' in t:
         return 1.0
-    if 'half' in t:
-        return 0.5
     return None
 
 
