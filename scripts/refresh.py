@@ -339,6 +339,14 @@ def main():
         py('build_notices.py')
         py('build_boards.py', '--as-of', a.as_of)
         py('build_budget_feed.py', '--as-of', a.as_of)
+        # A new budget episode the feed thinks it sees -- a Special Town Meeting date, an
+        # override, the Governor's budget, the season opening -- is PROPOSED here, with its
+        # evidence, for TJ or the agent to confirm by adding a row to budget-episodes.csv.
+        try:
+            for p in json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'budget-feed.json'))).get('proposed_episodes', []):
+                notes.append('possible new budget episode: %s (%s) -- add to sources/data/budget-episodes.csv if real' % (p['signal'], p['evidence']))
+        except Exception as e:
+            notes.append('could not read proposed episodes: %s' % e)
         # The finished seasons, rebuilt too: their calendars and minutes counts move as the
         # archive fills in. Each closes on its election day (sources/data/budget-cycles.csv).
         for fy, closes in (('fy26', '2025-05-17'), ('fy27', '2026-05-16')):

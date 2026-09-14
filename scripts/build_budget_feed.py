@@ -406,6 +406,54 @@ def what_people_ask(state, outcome, calendar, entries, upcoming, notices, as_of,
     return qs
 
 
+def propose_episodes(eps, docs, names, notices, as_of):
+    """SIGNS THAT A NEW EPISODE HAS STARTED, proposed for a person to confirm -- never created
+    here. TJ, 14 September 2026: "as you discover info through the meeting minutes, [you]
+    can figure out 'hey it looks like something started a new episode' and we can create
+    one." Four signals, each with its evidence:
+      * a Special Town Meeting DATE named in a notice or on an agenda that no episode covers
+      * an override question on an agenda outside any episode window
+      * the Governor's budget / cherry sheet on a budget board's agenda after July, outside a window
+      * the first proposed-budget agenda of a cycle, with no regular episode open
+    Written into the payload as `proposed_episodes` (not rendered) and printed by the
+    refresh with the rest of the day's notes."""
+    covered = lambda d: any((not e['opens'] or e['opens'] <= d) and (not e['closes'] or d <= e['closes']) for e in eps)
+    since = (dt.date.fromisoformat(as_of) - dt.timedelta(days=60)).isoformat()
+    out, seen = [], set()
+    STM = re.compile(r'special\s+town\s+meeting[^.\n]{0,60}?(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})(?:,?\s*(\d{4}))?', re.I)
+    MONTHS_FULL = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+    def stm_dates(text):
+        for m in STM.finditer(text or ''):
+            mon = MONTHS_FULL.index(m.group(1).lower()) + 1
+            yr = int(m.group(3)) if m.group(3) else int(as_of[:4])
+            try:
+                yield dt.date(yr, mon, int(m.group(2))).isoformat()
+            except ValueError:
+                continue
+    for n in notices:
+        for d in stm_dates(n['title']):
+            if d > (n['published'] or n['first_seen']) and not covered(d) and ('stm', d) not in seen:
+                seen.add(('stm', d)); out.append(dict(kind='special', signal='a Special Town Meeting on %s' % d, evidence='%s — %s' % (n['source'], n['title']), link=n['link'], suggested=dict(id='stm-' + d, opens=n['published'] or n['first_seen'], closes=d)))
+    for slug, by_date in docs.items():
+        if slug not in ('select-board', 'finance-committee', 'school-committee'):
+            continue
+        for d, kinds in by_date.items():
+            if d < since or d > as_of or 'agenda' not in kinds:
+                continue
+            text = agenda_text(slug, kinds['agenda'])
+            for sd in stm_dates(text):
+                if sd > d and not covered(sd) and ('stm', sd) not in seen:   # a date after the agenda: a meeting to come, not one recalled
+                    seen.add(('stm', sd)); out.append(dict(kind='special', signal='a Special Town Meeting on %s' % sd, evidence='%s agenda, %s' % (names.get(slug, slug), d), link='/docs/meetings/' + kinds['agenda']['path'], suggested=dict(id='stm-' + sd, opens=d, closes=sd)))
+            if not covered(d):
+                if re.search(r'\boverride\b', text, re.I) and ('override', d[:7]) not in seen:
+                    seen.add(('override', d[:7])); out.append(dict(kind='special', signal='an override on the agenda outside any episode', evidence='%s agenda, %s' % (names.get(slug, slug), d), link='/docs/meetings/' + kinds['agenda']['path'], suggested=dict(id='override-' + d[:7], opens=d)))
+                if re.search(r"governor.?s\s+budget|cherry\s+sheet|chapter\s*70", text, re.I) and ('aid', d[:7]) not in seen:
+                    seen.add(('aid', d[:7])); out.append(dict(kind='special', signal='state aid / the Governor’s budget on the agenda outside any episode', evidence='%s agenda, %s' % (names.get(slug, slug), d), link='/docs/meetings/' + kinds['agenda']['path'], suggested=dict(id='state-aid-' + d[:7], opens=d)))
+                if re.search(r'(proposed|preliminary|superintendent.?s)\s+(fy\s*\d+\s+)?budget|budget\s+presentation', text, re.I) and not any(e['kind'] == 'regular' and (not e['opens'] or e['opens'] <= d) for e in eps) and ('season', d[:7]) not in seen:
+                    seen.add(('season', d[:7])); out.append(dict(kind='regular', signal='a budget presented — the regular season may have opened', evidence='%s agenda, %s' % (names.get(slug, slug), d), link='/docs/meetings/' + kinds['agenda']['path'], suggested=dict(id='fy%d-season' % (fy_of_date(d) % 100), opens=d)))
+    return out
+
+
 def build(as_of=None, whole_cycle=False):
     as_of = as_of or dt.date.today().isoformat()
     since = (dt.date.fromisoformat(as_of) - dt.timedelta(days=RECENT_DAYS)).isoformat()
@@ -542,6 +590,7 @@ def build(as_of=None, whole_cycle=False):
         st = budget_state(as_of, ep)
         episodes.append(dict(ep, closed=bool(ep['closes']) and ep['closes'] <= as_of, state=st,
                              answers=what_people_ask(st, outcome, calendar, entries, upcoming, notices_out, as_of, fy_now) if ep['kind'] == 'regular' else None))
+    proposed = propose_episodes(eps, docs, names, notices_out, as_of) if not whole_cycle else []
     # the whole season, for the tracker sections below; the regular episode's answers for the glance
     state = budget_state(as_of)
     regular = next((e for e in episodes if e['kind'] == 'regular'), None)
@@ -564,7 +613,7 @@ def build(as_of=None, whole_cycle=False):
                'and the warrant. What is coming, where this cycle stands, what was said most recently, what was posted. '
                'Not every mention of money — the budget being built, and what will land on the warrant.'),
         as_of=as_of, cycle_fy=fy_now, cycle_opens=opens, cycle_closes=closes, recent_days=(dt.date.fromisoformat(as_of) - dt.date.fromisoformat(since)).days, whole_cycle=whole_cycle,
-        upcoming=upcoming, calendar=calendar, entries=entries, documents=documents, notices=notices_out, state=state, seasons=seasons, outcome=outcome, answers=answers, episodes=episodes,
+        upcoming=upcoming, calendar=calendar, entries=entries, documents=documents, notices=notices_out, state=state, seasons=seasons, outcome=outcome, answers=answers, episodes=episodes, proposed_episodes=proposed,
         counts=dict(upcoming=len(upcoming), entries=len(entries), boards=len(by_board), by_board=dict(by_board.most_common()),
                     kinds=dict(collections.Counter(e['kind'] for e in entries))),
         markers=sorted(set(w for u in upcoming for w in u['markers'])),
