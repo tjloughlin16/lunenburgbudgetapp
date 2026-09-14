@@ -99,6 +99,8 @@ CHECKS = [
     ('build_property_owners.py', ['--check']),
     ('build_one_big_report.py', ['--check']),
     ('build_boards.py', ['--check']),
+    ('build_budget_feed.py', ['--check']),
+    ('write_budget_state.py', ['--check']),
     ('fetch_board_pages.py', ['--check']),
     ('fetch_dls_tax_bills.py', ['--check']),
     ('build_no_captions_report.py', ['--check']),

@@ -95,7 +95,7 @@ CATEGORIES = [
     # THE TOWN AS IT HAPPENS: what is coming and what was said, from the daily refresh.
     # Neither is an analysis; both are the way most residents will arrive.
     ('week', 'This week, and what was said', [
-        ('', ['thisweek', 'boards', 'recorded']),
+        ('', ['budgetfeed', 'thisweek', 'boards', 'recorded']),
     ]),
     ('school', 'The schools', [
         ('what the money buys', [
@@ -348,6 +348,9 @@ ABOUT_PAGES = {
         'Meetings coming up for the Select Board, Finance Committee and School Committee '
         'with what is on each agenda, minutes just posted, recordings just published, and '
         'what happened at the last recorded meetings. Refreshed daily.',
+    'budgetfeed':
+        'Every board, one page: budget meetings coming up, where this cycle stands against the '
+        'last five, what was said about money in the last ninety days, and what was posted.',
     'boards':
         'Every board and committee, one page each: what is coming, what happened, every vote '
         'we have minutes for in recency order, where the board’s time goes, and when budget '

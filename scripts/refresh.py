@@ -269,7 +269,7 @@ def main():
         for s, args in (('watch_meetings.py', ['--check']), ('watch_youtube.py', ['--check']), ('watch_feeds.py', ['--check']), ('watch_documents.py', ['--check']),
                         ('write_recording_minutes.py', ['--check']), ('write_agenda_preview.py', ['--check']),
                         ('build_notices.py', ['--check']), ('build_meeting_feed.py', ['--check']),
-                        ('build_boards.py', ['--check'])):
+                        ('build_boards.py', ['--check']), ('build_budget_feed.py', ['--check'])):
             bad += py(s, *args, check=False).returncode != 0
         return 1 if bad else 0
 
@@ -338,6 +338,11 @@ def main():
         py('build_recording_minutes.py')
         py('build_notices.py')
         py('build_boards.py', '--as-of', a.as_of)
+        py('build_budget_feed.py', '--as-of', a.as_of)
+        # The finished seasons, rebuilt too: their calendars and minutes counts move as the
+        # archive fills in. Each closes on its election day (sources/data/budget-cycles.csv).
+        for fy, closes in (('fy26', '2025-05-17'), ('fy27', '2026-05-16')):
+            py('build_budget_feed.py', '--as-of', closes, '--out', 'fy28/public/data/budget-feed-%s.json' % fy)
         py('tag_document_affinity.py', check=False)     # only documents not yet tagged; cents
         py('build_search_index.py', '--quiet')
         py('build_app_metrics.py')

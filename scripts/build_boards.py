@@ -32,6 +32,9 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import sys
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+from budget_cycles import fy_of as cycle_fy_of   # noqa: E402
 INDEX = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
 TEXT = os.path.join(ROOT, 'sources', 'meetings', 'text')
 VIDEOS = os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv')
@@ -61,14 +64,16 @@ MARKERS = [
     ('town-meeting', 'Town Meeting', r'town\s+meeting'),
     ('override', 'an override', r'\boverride\b'),
     ('warrant', 'warrant articles', r'warrant\s+article'),
+    ('warrant-closes', 'the warrant closes', r'clos\w*\s+(?:of\s+)?(?:the\s+)?warrant|warrant\s+(?:is\s+)?clos\w*|open\s+(?:the\s+)?warrant|warrant\s+(?:is\s+)?(?:now\s+)?open'),
+    ('petition', 'a citizens’ petition', r'citizen\w*\s+petition'),
 ]
-MONTHS = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+MONTHS = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May']
 
 
 def cycle_pos(date):
-    """Position inside the July-June budget cycle: (months since July, day)."""
+    """Position inside a season, which opens after the May election: (months since June, day)."""
     m, d = int(date[5:7]), int(date[8:10])
-    return ((m - 7) % 12, d)
+    return ((m - 6) % 12, d)
 
 
 def pos_text(pos):
@@ -81,8 +86,8 @@ def read_csv(p):
 
 
 def fy_of(date):
-    y, m = int(date[:4]), int(date[5:7])
-    return y + 1 if m >= 7 else y
+    """The season a date belongs to, by the town's election-day cycles (budget_cycles.py)."""
+    return cycle_fy_of(date)
 
 
 def build(as_of=None):

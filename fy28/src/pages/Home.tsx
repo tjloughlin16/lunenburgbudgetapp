@@ -165,7 +165,7 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
         {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
             Committee meets next is the one who wants everything about it. */}
         <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-          Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
+          Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a> · <a className="underline font-semibold" href="/budget-feed">the budget feed</a>
         </p>
       </section>
 
@@ -263,7 +263,7 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
               Committee meets next is the one who wants everything about it. */}
           <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-            Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
+            Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a> · <a className="underline font-semibold" href="/budget-feed">the budget feed</a>
           </p>
         </section>
         <HomeWhatWasSaid onJump={onJump} />

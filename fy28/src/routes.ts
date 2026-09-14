@@ -57,6 +57,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'search'
   | 'recorded'
   | 'boards'
+  | 'budgetfeed'
   | 'thisweek'
 
 /** The canonical URL for each tab. The default tab lives at the root. */
@@ -340,6 +341,7 @@ export const SLUG: Record<Tab, string> = {
   // own caveat, because what was said is on the recording and this points at it.
   recorded: 'meeting-minutes',
   boards: 'boards',
+  budgetfeed: 'budget-feed',
   // What is coming and what just appeared, as our watchers saw it. The phrase a
   // resident says; `feed` and `updates` are accepted.
   thisweek: 'this-week',
@@ -601,6 +603,7 @@ const ALIASES: Record<string, Tab> = {
   'meeting-minutes': 'recorded', 'what-was-said': 'recorded', 'recording-minutes': 'recorded', 'our-minutes': 'recorded',
   minutes: 'recorded',
   boards: 'boards', committees: 'boards', 'the-boards': 'boards', board: 'boards',
+  'budget-feed': 'budgetfeed', 'budget-season': 'budgetfeed', 'budget-calendar': 'budgetfeed', 'budget-news': 'budgetfeed',
   search: 'search', find: 'search', 'search-minutes': 'search', 'search-everything': 'search',
   // /worth-knowing WAS A PAGE AND IS NOW THE BLOG. It rendered all 48 items as cards from
   // a published payload, with the editorial apparatus on every one -- which put copy
@@ -653,6 +656,7 @@ export const LABEL: Record<Tab, string> = {
   search: 'Search — everything this project holds',
   recorded: 'Meeting minutes — written from the recordings',
   boards: 'The boards — each one, in one place',
+  budgetfeed: 'The budget feed — every board, everything about money',
   thisweek: 'This week in town — meetings coming up, minutes and recordings just posted',
   athletics: 'Athletics, both sides of the money',
   rates: 'Rates, fees and contracts — the register',
@@ -741,6 +745,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   blog: 'reports',
   recorded: 'reports',
   boards: 'reports',
+  budgetfeed: 'reports',
   thisweek: 'reports',
   courses: 'reports',
   attrition: 'reports',
@@ -776,6 +781,7 @@ export function tabFromPath(pathname: string): Tab {
   if (seg.startsWith('blog/')) return 'blog'
   if (seg.startsWith('meeting-minutes/') || seg.startsWith('what-was-said/')) return 'recorded'
   if (seg.startsWith('boards/')) return 'boards'
+  if (seg.startsWith('budget-feed/')) return 'budgetfeed'
   return BY_SLUG[seg] ?? ROOT
 }
 
@@ -793,6 +799,12 @@ export function analysisIdFromPath(pathname: string): string | null {
  *  Restricted to the shape a slug actually has, for the same reason `analysisIdFromPath`
  *  is: this value is compared against a generated payload and rendered into the page, and
  *  an address is not a place to accept arbitrary text. */
+/** The season a `/budget-feed/fy27` address names, or null for the live feed. */
+export function feedSeasonFromPath(pathname: string): string | null {
+  const m = /^\/budget-feed\/(fy\d{2})\/?$/.exec(pathname.toLowerCase())
+  return m ? m[1] : null
+}
+
 /** The board a `/boards/<slug>` address names, or null for the index. */
 export function boardSlugFromPath(pathname: string): string | null {
   const m = /^\/boards\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
@@ -907,6 +919,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   blog: 'analyses',
   recorded: 'analyses',
   boards: 'analyses',
+  budgetfeed: 'analyses',
   thisweek: 'analyses',
   addsup: 'analyses',
   analysis: 'analyses',
@@ -975,7 +988,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // finding in two minutes and then hands the reader on. Somebody who does not yet have a
   // question should meet it before the shelf -- rule 7a applied to a nav bar, the same
   // argument that put `addsup` first.
-  analyses: ['addsup', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'sped', 'classsize', 'circuitbreaker',
+  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',

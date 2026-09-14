@@ -45,6 +45,7 @@ import { Blog } from './pages/Blog'
 import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
 import { Boards } from './pages/Boards'
+import { BudgetFeed } from './pages/BudgetFeed'
 import { ThisWeek } from './pages/ThisWeek'
 import { Enrollment } from './pages/Enrollment'
 import { CircuitBreaker } from './pages/CircuitBreaker'
@@ -492,6 +493,7 @@ export default function App() {
       {tab === 'search' && <Search />}
       {tab === 'recorded' && <WhatWasSaid />}
       {tab === 'boards' && <Boards />}
+      {tab === 'budgetfeed' && <BudgetFeed />}
       {tab === 'thisweek' && <ThisWeek />}
       {tab === 'enrollment' && <Enrollment />}
       {tab === 'circuitbreaker' && <CircuitBreaker />}
