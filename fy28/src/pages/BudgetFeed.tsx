@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { feedSeasonFromPath, type Tab } from '../routes'
-import { H2, ReportShell, Stat, useReport } from '../components/report'
+import { H2, ReportShell, useReport } from '../components/report'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
 
 const TAB: Tab = 'budgetfeed'
@@ -43,7 +43,6 @@ const STATUS: Record<Stage['status'], [string, string]> = {
   underway: ['on agendas this cycle', 'var(--status-good)'], ahead: ['ahead', 'var(--text-secondary)'],
 }
 
-const KIND: Record<string, string> = { deficit: 'deficit or gap', budget_total: 'budget total', override: 'override', state_aid: 'state aid', free_cash: 'free cash', levy: 'the levy' }
 const SCOPE: Record<string, string> = { school: 'School', town: 'Town', both: 'Town and schools' }
 
 /** THE LATEST ON THE RECORD. TJ: "School committee announced 10 cuts for a $2m deficit."
@@ -51,86 +50,67 @@ const SCOPE: Record<string, string> = { school: 'School', town: 'Town', both: 'T
  *  it by role, its status, the second in the video -- then the cut list as last stated
  *  and the meetings that changed it. Every figure is AS HEARD from captions; the second
  *  in the video is the record. */
-const STATUS_LABEL = (status: string, closed: boolean) => closed ? 'final' : status === 'voted' ? 'voted' : status === 'restored' ? 'restored' : status === 'withdrawn' ? 'withdrawn' : 'preliminary'
+/** DECIDED, OR ON THE TABLE. TJ, 14 September 2026: "People get lost in the status. And me
+ *  too. 'Are you saying this is what was decided, or still open/on the table?'" So every
+ *  figure and every cut on the record goes into one of two lists and nothing else: DECIDED
+ *  (a vote carried, or the season's outcome from the registries) and ON THE TABLE (said,
+ *  proposed, argued -- not voted). Restored or withdrawn cuts are a footnote. One line
+ *  each: the figure, what it is in plain words, who said it, when, the second in the video. */
+const PLAIN: Record<string, string> = { deficit: 'gap', budget_total: 'budget', override: 'override', state_aid: 'state aid', free_cash: 'free cash', levy: 'levy' }
+const plain = (s: Statement) => `${SCOPE[s.scope] || s.scope} ${PLAIN[s.kind] || s.kind}`.toLowerCase()
 
-function LatestState({ st, closed, decisions }: { st: State; closed: boolean; decisions: Entry[] }) {
-  const [showAll, setShowAll] = useState(false)
-  const pick = (kind: string) => Object.values(st.latest).filter(x => x.kind === kind)
-  const deficits = pick('deficit'), totals = pick('budget_total')
-  const proposals = Object.values(st.history).flat().filter(x => x.status === 'proposed' && x.kind !== 'deficit' && x.kind !== 'budget_total')
-    .sort((a, b) => b.date.localeCompare(a.date)).slice(0, 8)
-  const voted = Object.values(st.history).flat().filter(x => x.status === 'voted').sort((a, b) => b.date.localeCompare(a.date))
-  const live = st.cuts.filter(c => c.status !== 'restored' && c.status !== 'withdrawn')
-  const gone = st.cuts.filter(c => c.status === 'restored' || c.status === 'withdrawn')
-  const shownCuts = showAll ? st.cuts : live
-  const Card = ({ s, tone }: { s: Statement; tone?: string }) => (
-    <div className="card p-4" style={{ borderLeft: `3px solid ${tone || 'var(--series-cost)'}` }}>
-      <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{SCOPE[s.scope] || s.scope}{s.fiscal_year ? ` · FY${String(s.fiscal_year).slice(2)}` : ''} · <span style={{ color: tone || 'var(--series-cost)' }}>{STATUS_LABEL(s.status, closed)}</span></p>
-      <p className="text-2xl font-bold tnum mt-1" style={{ color: tone || 'var(--text-primary)' }}>{s.amount_as_heard}</p>
-      <p className="text-[13px] mt-1">{s.statement}</p>
-      <p className="text-xs mt-1.5" style={{ color: 'var(--text-muted)' }}>{s.who}, {s.status} · <a className="underline" href={`/boards/${s.board_slug}`}>{s.board}</a>, {mmdd(s.date)} · <a className="underline tnum" href={s.video_url}>{ts(s.t)}</a></p>
-    </div>
+function Line({ amount, text, who, board, board_slug, date, video_url, t, muted }: { amount?: string | null; text: string; who?: string; board: string; board_slug: string; date: string; video_url?: string; t?: number | null; muted?: boolean }) {
+  return (
+    <li className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--grid)', color: muted ? 'var(--text-muted)' : undefined }}>
+      {amount && <span className="tnum font-bold">{amount}</span>}{amount ? ' — ' : ''}{text}
+      <span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{who ? `${who}, ` : ''}<a className="underline" href={`/boards/${board_slug}`}>{board}</a>, {mmdd(date)}{video_url ? <> · <a className="underline tnum" href={video_url}>{ts(t) || 'video'}</a></> : null}</span>
+    </li>
   )
+}
+
+function DecidedOrOpen({ st, closed, decisions, outcome }: { st: State; closed: boolean; decisions: Entry[]; outcome?: Payload['outcome'] | null }) {
+  const [showGone, setShowGone] = useState(false)
+  const all = Object.values(st.history).flat()
+  const decidedStatements = all.filter(x => x.status === 'voted').sort((a, b) => b.date.localeCompare(a.date))
+  const openStatements = Object.values(st.latest).filter(x => x.status !== 'voted' && x.status !== 'withdrawn').sort((a, b) => b.date.localeCompare(a.date))
+  const decidedCuts = st.cuts.filter(c => c.status === 'voted')
+  const openCuts = st.cuts.filter(c => c.status === 'announced' || c.status === 'proposed')
+  const gone = st.cuts.filter(c => c.status === 'restored' || c.status === 'withdrawn')
+  const votes = decisions.filter(e => (e.detail || '').toLowerCase().startsWith('pass'))
+  const nothing = decidedStatements.length + decidedCuts.length + votes.length + openStatements.length + openCuts.length === 0
   return (
     <>
-      <H2 id="latest">{closed ? 'Where it ended' : 'Where it stands'}</H2>
-      <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>From {st.meetings_read} recorded meetings of the three budget boards{st.first_date ? ` since ${mmdd(st.first_date)}` : ''}. Figures are as heard from machine captions — the second in the video is the record. {closed ? 'The season has closed, so every figure here is final unless the town reopened it.' : 'Preliminary until voted; voted until Town Meeting; then final.'}</p>
-
-      {(deficits.length > 0 || totals.length > 0) && (
-        <>
-          <p className="text-[10px] font-bold uppercase tracking-widest mt-5" style={{ color: 'var(--text-muted)' }}>The deficit, and the budget</p>
-          <div className="grid gap-3 mt-2 sm:grid-cols-2 lg:grid-cols-3">
-            {deficits.map(s => <Card key={'d' + s.scope} s={s} tone="var(--status-critical)" />)}
-            {totals.map(s => <Card key={'t' + s.scope} s={s} />)}
-          </div>
-        </>
-      )}
-      {deficits.length === 0 && totals.length === 0 && <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>No deficit or budget total has been put on the record yet this season.</p>}
-
-      {proposals.length > 0 && (
-        <>
-          <p className="text-[10px] font-bold uppercase tracking-widest mt-6" style={{ color: 'var(--text-muted)' }}>Proposals on the table</p>
-          <ul className="mt-2 space-y-1.5 text-[13.5px]">{proposals.map((p, i) => (
-            <li key={i} className="pl-3" style={{ borderLeft: '2px solid var(--grid)' }}><span className="tnum font-semibold">{p.amount_as_heard}</span> — {p.statement} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({KIND[p.kind] || p.kind}; {p.who}, {p.board}, {mmdd(p.date)}, <a className="underline" href={p.video_url}>{ts(p.t)}</a>)</span></li>))}</ul>
-        </>
-      )}
-
-      <p className="text-[10px] font-bold uppercase tracking-widest mt-6" style={{ color: 'var(--text-muted)' }}>Stated impacts — the cuts named</p>
-      <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-        <strong className="tnum">{live.length}</strong> named and standing{Object.keys(st.live_by_scope).length > 1 ? ` (${Object.entries(st.live_by_scope).map(([k, n]) => `${n} ${k}`).join(', ')})` : ''}{gone.length ? `; ${gone.length} restored or withdrawn` : ''}. Each row is the latest status of one named reduction.
-        {gone.length > 0 && <button className="underline ml-2" onClick={() => setShowAll(!showAll)}>{showAll ? 'hide restored' : 'show restored too'}</button>}
-      </p>
-      {st.cuts.length === 0 ? <p className="text-sm mt-2" style={{ color: 'var(--text-muted)' }}>No cut has been named on the record yet this season.</p> : (
-        <div className="overflow-x-auto mt-2">
-          <table className="text-sm w-full" style={{ minWidth: 720 }}>
-            <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
-              <th className="text-left py-1.5 pr-3">cut</th><th className="text-left py-1.5 pr-3">scope</th><th className="text-right py-1.5 pr-3">amount, as heard</th><th className="text-right py-1.5 pr-3">FTE</th><th className="text-left py-1.5 pr-3">status</th><th className="text-left py-1.5">last stated</th></tr></thead>
-            <tbody>{shownCuts.map((c, i) => (
-              <tr key={i} style={{ borderTop: '1px solid var(--grid)', color: c.status === 'restored' || c.status === 'withdrawn' ? 'var(--text-muted)' : undefined }}>
-                <td className="py-1.5 pr-3 align-top">{c.item}</td>
-                <td className="py-1.5 pr-3 align-top">{c.scope}</td>
-                <td className="py-1.5 pr-3 align-top text-right tnum whitespace-nowrap">{c.amount_as_heard || '—'}</td>
-                <td className="py-1.5 pr-3 align-top text-right tnum">{c.fte_as_heard || '—'}</td>
-                <td className="py-1.5 pr-3 align-top font-semibold" style={{ color: c.status === 'voted' ? 'var(--status-critical)' : c.status === 'restored' ? 'var(--status-good)' : undefined }}>{STATUS_LABEL(c.status, closed)}</td>
-                <td className="py-1.5 align-top whitespace-nowrap"><a className="underline" href={`/boards/${c.board_slug}`}>{c.board}</a>, {mmdd(c.date)} · <a className="underline tnum" href={c.video_url}>{ts(c.t)}</a></td>
-              </tr>))}</tbody>
-          </table>
+      <div className="grid gap-4 mt-6 lg:grid-cols-2">
+        <div className="card p-4" style={{ borderTop: '4px solid var(--status-good)' }}>
+          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--status-good)' }}>Decided</p>
+          <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>A vote that carried, or the outcome on the record.</p>
+          {outcome && outcome.closed && (
+            <ul className="text-[13.5px] space-y-1">
+              {outcome.adopted && <li className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--status-good)' }}><span className="tnum font-bold">${outcome.adopted.amount.toLocaleString('en-US')}</span> — {outcome.adopted.label}<span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>Annual Town Meeting, {outcome.atm_date ? mmdd(outcome.atm_date) : ''}</span></li>}
+              {outcome.questions.filter(q => q.yes != null).map(q => <li key={q.question} className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--status-good)' }}><span className="tnum font-bold">{q.amount != null ? '$' + q.amount.toLocaleString('en-US') : ''}</span> — {q.type.replace('Proposition 2½ ', '')} <strong style={{ color: q.result === 'FAILED' ? 'var(--status-critical)' : 'var(--status-good)' }}>{q.result.toLowerCase()}</strong>, {q.yes!.toLocaleString('en-US')} to {q.no!.toLocaleString('en-US')}<span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{q.election}, {q.date.length > 7 ? mmdd(q.date) : q.date}</span></li>)}
+            </ul>
+          )}
+          {(decidedStatements.length + decidedCuts.length + votes.length) > 0 ? (
+            <ul className="text-[13.5px] space-y-1 mt-1">
+              {decidedStatements.map((x, i) => <Line key={'s' + i} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} />)}
+              {decidedCuts.map((c, i) => <Line key={'c' + i} amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} />)}
+              {votes.slice(0, 12).map((e, i) => <Line key={'v' + i} text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} />)}
+            </ul>
+          ) : (!outcome || !outcome.closed) && <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing decided yet.</p>}
         </div>
-      )}
-      {st.log.length > 0 && (
-        <ul className="mt-2 text-xs space-y-1" style={{ color: 'var(--text-secondary)' }}>{st.log.slice(0, 6).map((l, i) => (
-          <li key={i}><span className="tnum mr-2" style={{ color: 'var(--text-muted)' }}>{mmdd(l.date)}</span><a className="underline" href={l.page}>{l.board}</a>: {l.n_added ? `${l.n_added} named` : ''}{l.n_added && l.n_changed ? ', ' : ''}{l.n_changed ? l.changed.map(c => `${c.item} ${c.was} → ${c.now}`).join('; ') : ''}</li>))}</ul>
-      )}
-
-      {(decisions.length > 0 || voted.length > 0) && (
-        <>
-          <p className="text-[10px] font-bold uppercase tracking-widest mt-6" style={{ color: 'var(--text-muted)' }}>Decisions — the votes on the budget, newest first</p>
-          <ul className="mt-2 space-y-1.5 text-[13.5px]">
-            {voted.map((v, i) => <li key={'s' + i} className="pl-3" style={{ borderLeft: '2px solid var(--series-cost)' }}><span className="tnum font-semibold">{v.amount_as_heard}</span> — {v.statement} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({v.board}, {mmdd(v.date)}, <a className="underline" href={v.video_url}>{ts(v.t)}</a>)</span></li>)}
-            {decisions.slice(0, 15).map((e, i) => <li key={'v' + i} className="pl-3" style={{ borderLeft: '2px solid var(--series-cost)' }}>{e.text} <span className="font-semibold" style={{ color: (e.detail || '').startsWith('pass') ? 'var(--status-good)' : (e.detail || '').startsWith('fail') ? 'var(--status-critical)' : 'var(--text-muted)' }}>— {e.detail}</span> <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({e.board}, {mmdd(e.date)}, <a className="underline" href={e.video_url}>{ts(e.t)}</a>)</span></li>)}
-          </ul>
-        </>
-      )}
+        <div className="card p-4" style={{ borderTop: '4px solid var(--series-cost)' }}>
+          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'Was on the table, never voted' : 'On the table'}</p>
+          <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>Stated or proposed at a meeting, not voted. The latest figure for each thing.</p>
+          {(openStatements.length + openCuts.length) > 0 ? (
+            <ul className="text-[13.5px] space-y-1 mt-1">
+              {openStatements.map((x, i) => <Line key={'s' + i} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} />)}
+              {openCuts.length > 0 && <li className="pl-3 py-0.5 mt-2" style={{ borderLeft: '2px solid var(--grid)' }}><strong>{openCuts.length} cut{openCuts.length === 1 ? '' : 's'} named, not voted:</strong> {openCuts.slice(0, 10).map(c => c.item).join('; ')}{openCuts.length > 10 ? ` … and ${openCuts.length - 10} more` : ''}</li>}
+            </ul>
+          ) : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing on the table.</p>}
+          {gone.length > 0 && <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}><button className="underline" onClick={() => setShowGone(!showGone)}>{gone.length} cut{gone.length === 1 ? '' : 's'} restored or withdrawn</button>{showGone ? ': ' + gone.map(c => c.item).join('; ') : ''}</p>}
+        </div>
+      </div>
+      {nothing && !closed && <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>Nothing on the record yet. Figures, when they come, are as heard from machine captions; the second in the video is the record.</p>}
     </>
   )
 }
@@ -175,9 +155,9 @@ function EpisodePage({ d, e, meetings }: { d: Payload; e: Payload['episodes'][nu
     <ReportShell tab={TAB} title={e.label}
       standfirst={`${e.closed ? 'Closed' : 'Under way'} — ${mmdd(e.opens)}${e.closes ? ` to ${mmdd(e.closes)}` : ' onward'}, outside the regular ${FY(Number(e.season_fy))} season. ${e.trigger}.`}
       dataUrl={DATA}>
-      <label className="inline-flex items-center gap-2 mt-4 text-sm">
+      <label className="flex items-center gap-2 mt-4 text-sm max-w-full">
         <span style={{ color: 'var(--text-muted)' }}>Season</span>
-        <select className="rounded-md px-2 py-1 text-sm" style={{ background: 'var(--surface-3)', border: '1px solid var(--grid)' }}
+        <select className="rounded-md px-2 py-1 text-sm min-w-0 max-w-full" style={{ background: 'var(--surface-3)', border: '1px solid var(--grid)' }}
           value={`/budget-feed/${e.id}`} onChange={ev => { window.location.href = ev.target.value }}>
           {d.seasons.map(s => <option key={s.path} value={s.path}>{s.label}</option>)}
         </select>
@@ -189,7 +169,7 @@ function EpisodePage({ d, e, meetings }: { d: Payload; e: Payload['episodes'][nu
           {e.note && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>{e.note}. Sources: {e.source}.</p>}
         </div>
       )}
-      <LatestState st={st} closed={e.closed} decisions={decisions} />
+      <DecidedOrOpen st={st} closed={e.closed} decisions={decisions} />
       <H2 id="recent">What was said, meeting by meeting</H2>
       <div className="mt-3 space-y-2">{meetings.map(m => {
         const kinds = m.entries.reduce((acc, x) => { acc[x.kind] = (acc[x.kind] || 0) + 1; return acc }, {} as Record<string, number>)
@@ -215,7 +195,6 @@ export function BudgetFeed() {
     if (!byKey.has(k)) { byKey.set(k, meetings.length); meetings.push({ key: k, board: e.board, board_slug: e.board_slug, date: e.date, page: e.page, entries: [] }) }
     meetings[byKey.get(k)!].entries.push(e)
   }
-  const now = d.calendar.find(s => s.status === 'now' || s.status === 'underway')
   const episode = episodeId ? d.episodes.find(e => e.id === episodeId) : null
   if (episodeId && !episode) {
     return <ReportShell tab={TAB} title="No such episode" dataUrl={DATA}><p className="mt-6 text-sm">The address names no budget episode. <a className="underline" href="/budget-feed">The budget feed</a>.</p></ReportShell>
@@ -228,92 +207,39 @@ export function BudgetFeed() {
       {season && <p className="text-[11px] font-semibold uppercase tracking-widest mt-3" style={{ color: 'var(--status-warning)' }}>A replay: what this page would have shown on {d.as_of}, built from the same records. The live feed is at <a className="underline" href="/budget-feed">/budget-feed</a>.</p>}
       {/* THE SEASON. TJ: "budget-feed probably should have a dropdown for each season." The
           list is in the payload -- the live cycle and every replay that has been built. */}
-      <label className="inline-flex items-center gap-2 mt-4 text-sm">
+      <label className="flex items-center gap-2 mt-4 text-sm max-w-full">
         <span style={{ color: 'var(--text-muted)' }}>Season</span>
-        <select className="rounded-md px-2 py-1 text-sm" style={{ background: 'var(--surface-3)', border: '1px solid var(--grid)' }}
+        <select className="rounded-md px-2 py-1 text-sm min-w-0 max-w-full" style={{ background: 'var(--surface-3)', border: '1px solid var(--grid)' }}
           value={(seg ? `/budget-feed/${seg}` : '/budget-feed')}
           onChange={e => { window.location.href = e.target.value }}>
           {d.seasons.map(s => <option key={s.path} value={s.path}>{s.label}</option>)}
         </select>
       </label>
-      {/* HOW THE SEASON LANDED, first, on a finished season. TJ: "how it landed at town
-          meeting vote, failing the override, should be clearly visible at the top." From
-          the ballot-questions registry and the model, not from captions. */}
+      {/* THE SEASON, FOR A RESIDENT. TJ: "make it so easily digestible. The groupings and
+          sections and layout have to be so simple." So: how it landed (if it has); then for
+          each episode -- the regular season and any special one -- two lists, DECIDED and
+          ON THE TABLE; then what is coming; then what is next on the calendar; then the
+          meetings. No status vocabulary anywhere. */}
       {d.outcome.closed && (
         <div className="card p-4 mt-6" style={{ borderLeft: '4px solid var(--status-critical)' }}>
           <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>How the {FY(d.cycle_fy)} season landed</p>
           <p className="text-2xl font-bold mt-1">{d.outcome.headline}</p>
-          <div className="grid gap-x-8 gap-y-2 mt-3 sm:grid-cols-2 text-sm">
-            {d.outcome.adopted && <div><span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Annual Town Meeting, {d.outcome.atm_date ? long(d.outcome.atm_date) : ''}</span><div className="tnum"><strong>${d.outcome.adopted.amount.toLocaleString('en-US')}</strong> {d.outcome.adopted.label}</div></div>}
-            {d.outcome.questions.filter(q => q.yes != null).map(q => (
-              <div key={q.question}><span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{q.election}, {q.date.length > 7 ? long(q.date) : q.date} — {q.question.toLowerCase()}</span>
-                <div className="tnum"><strong>{q.amount != null ? '$' + q.amount.toLocaleString('en-US') : ''}</strong> {q.type.replace('Proposition 2½ ', '')} — <span style={{ color: q.result === 'FAILED' ? 'var(--status-critical)' : 'var(--status-good)' }}>{q.result.toLowerCase()}</span>, {q.yes!.toLocaleString('en-US')} yes to {q.no!.toLocaleString('en-US')} no{q.total && q.registered ? ` · ${q.total.toLocaleString('en-US')} of ${q.registered.toLocaleString('en-US')} voters (${q.turnout_pct}%)` : ''}</div></div>))}
-            {d.outcome.questions.filter(q => q.yes == null).map(q => (
-              <div key={q.question}><span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{q.election}, {q.date} — {q.question.toLowerCase()}</span>
-                <div className="tnum">{q.amount != null ? '$' + q.amount.toLocaleString('en-US') + ' ' : ''}{q.type.replace('Proposition 2½ ', '')} — {q.result.toLowerCase()}</div></div>))}
-          </div>
-          <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>Tallies from the town’s printed results, each reconciled to its total; the appropriation from the adopted budget. The season closed with the election on {d.outcome.election_date ? long(d.outcome.election_date) : ''}.</p>
+          <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>Annual Town Meeting {d.outcome.atm_date ? long(d.outcome.atm_date) : ''}; election {d.outcome.election_date ? long(d.outcome.election_date) : ''}. Tallies from the town’s printed results; the appropriation from the adopted budget.</p>
         </div>
       )}
-      {/* EPISODES. TJ: "the 418k was not a deficit... a spending plan. So your FY28 should
-          probably be FY28-governors-budget or something, and be presented that way (which
-          is different than how normal budget season works)." Each special episode -- the
-          post-override cuts, the Governor's extra aid and its Special Town Meeting, the
-          November STM -- is its own card with its trigger, its outcome and its own figures;
-          the regular season's block follows, and says plainly when it has not opened. */}
-      {d.episodes.filter(e => e.kind === 'special').map(e => {
-        const st = e.state
-        const keys = Object.keys(st.latest)
-        const live = st.cuts.filter(c => c.status !== 'restored' && c.status !== 'withdrawn')
-        return (
-          <div key={e.id} className="card p-4 mt-6" style={{ borderLeft: `4px solid ${e.closed ? 'var(--text-muted)' : 'var(--series-cost)'}` }}>
-            <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{e.closed ? 'Closed' : 'Under way'} · outside the regular season · {mmdd(e.opens)}{e.closes ? ` → ${mmdd(e.closes)}` : ' →'}</p>
-            <p className="text-xl font-bold mt-1">{e.label}</p>
-            <p className="text-sm mt-1.5" style={{ color: 'var(--text-secondary)' }}>{e.trigger}.{e.outcome ? <> <strong style={{ color: 'var(--text-primary)' }}>{e.outcome}.</strong></> : null}</p>
-            {(keys.length > 0 || live.length > 0) && (
-              <dl className="grid gap-x-8 gap-y-1.5 mt-3 sm:grid-cols-2 text-[13px]">
-                {keys.map(k => { const x = st.latest[k]; return (
-                  <div key={k} className="flex gap-3"><dt className="w-32 shrink-0 font-semibold">{SCOPE[x.scope] || x.scope} {KIND[x.kind] || x.kind}</dt>
-                    <dd className="min-w-0"><span className="tnum font-semibold">{x.amount_as_heard}</span> — {x.statement} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({x.who}, {x.board}, {mmdd(x.date)}, <a className="underline" href={x.video_url}>{ts(x.t)}</a>)</span></dd></div>) })}
-                {live.length > 0 && <div className="flex gap-3"><dt className="w-32 shrink-0 font-semibold">Cuts named</dt><dd className="min-w-0">{live.length} — {live.slice(0, 4).map(c => c.item).join('; ')}{live.length > 4 ? ' …' : ''}</dd></div>}
-              </dl>
-            )}
-            {e.note && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>{e.note}. Sources: {e.source}.</p>}
+      {d.episodes.map(e => (
+        <section key={e.id} className="mt-8">
+          <div className="flex flex-wrap items-baseline gap-x-3">
+            <h2 className="text-xl font-bold">{e.kind === 'regular' ? `The ${FY(Number(e.season_fy))} season` : e.label}</h2>
+            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{e.closed ? 'closed' : 'under way'} · {mmdd(e.opens)}{e.closes ? ` → ${mmdd(e.closes)}` : ' →'}{e.kind === 'special' ? <> · <a className="underline" href={`/budget-feed/${e.id}`}>its own page</a></> : null}</span>
           </div>
-        )
-      })}
-
-      {/* AT A GLANCE. The things people come here to know, as short labelled facts -- the
-          deficit, the cuts, the status, what is next, the warrant -- each from the record
-          or saying "not on the record yet". TJ: "just make sure all the info is on here
-          clearly understandable." */}
-      <div className="card p-4 mt-6">
-        <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{d.outcome.closed ? `The ${FY(d.cycle_fy)} season — final` : d.episodes.some(e => e.kind === 'regular') ? `The ${FY(d.cycle_fy)} season, at a glance` : `The ${FY(d.cycle_fy)} season has not opened`}</p>
-        {!d.outcome.closed && !d.episodes.some(e => e.kind === 'regular') && <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>The regular cycle — the budget presented, heard and voted, then Town Meeting — typically opens in late October. What is on the record so far belongs to the episodes above; the figures below are the season’s whole record to date.</p>}
-        <dl className="grid gap-x-8 gap-y-2.5 mt-2 sm:grid-cols-2 text-[13.5px]">
-          {d.answers.map((a, i) => (
-            <div key={i} className="flex gap-3">
-              <dt className="w-32 shrink-0 font-semibold">{a.label}</dt>
-              <dd className="min-w-0">
-                <span>{a.answer}</span>
-                {a.link && <a className="underline ml-1.5 text-xs" style={{ color: 'var(--text-muted)' }} href={a.link}>{a.link.startsWith('#') ? 'below' : a.link.startsWith('http') ? 'video' : 'more'}</a>}
-                <span className="ml-1.5 text-[10px] font-bold uppercase tracking-widest" style={{ color: a.status === 'not yet' ? 'var(--text-muted)' : a.status === 'final' ? 'var(--status-good)' : 'var(--series-cost)' }}>{a.status}</span>
-              </dd>
-            </div>))}
-        </dl>
-      </div>
-      <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6">
-        {!season && <Stat value={String(d.counts.upcoming)} tone="var(--series-cost)">budget meetings on the calendar, any board</Stat>}
-        {!d.outcome.closed && <Stat value={now ? now.stage : 'Between stages'}>{now ? `where the ${FY(d.cycle_fy)} cycle stands — typically ${now.typical_first} to ${now.typical_last}` : `the ${FY(d.cycle_fy)} cycle, as of ${d.as_of}`}</Stat>}
-        <Stat value={String(d.counts.boards)}>boards that discussed the budget or the warrant {season ? 'this season' : `in the last ${d.recent_days} days`} — {meetings.length} meetings, {d.counts.entries} things said</Stat>
-      </div>
-
-      {/* ------------------------------------------------------------- the latest */}
-      <LatestState st={d.state} closed={d.outcome.closed} decisions={d.entries.filter(e => e.kind === 'vote')} />
+          {e.kind === 'special' && <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{e.trigger}.{e.outcome ? <> <strong style={{ color: 'var(--text-primary)' }}>{e.outcome}.</strong></> : null}</p>}
+          <DecidedOrOpen st={e.state} closed={e.closed} decisions={d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))} outcome={e.kind === 'regular' ? d.outcome : null} />
+        </section>
+      ))}
+      {d.episodes.length === 0 && <DecidedOrOpen st={d.state} closed={d.outcome.closed} decisions={d.entries.filter(x => x.kind === 'vote')} outcome={d.outcome} />}
 
       {/* ------------------------------------------------------------------ upcoming */}
-      {/* A finished season has nothing coming up; the meetings after its end belong to the
-          next cycle, so a replay skips this section. */}
       {!season && <H2 id="upcoming">Budget meetings coming up</H2>}
       {season ? null : d.upcoming.length === 0 ? <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>No posted agenda carries a budget item, as of {d.as_of}.</p> : (
         <ol className="space-y-3 mt-3">{d.upcoming.map(u => (
@@ -333,7 +259,7 @@ export function BudgetFeed() {
       )}
 
       {/* ------------------------------------------------------------------ calendar */}
-      <H2 id="calendar">The {FY(d.cycle_fy)} budget calendar</H2>
+      <H2 id="calendar">What’s next — the {FY(d.cycle_fy)} calendar</H2>
       <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>The stages of a budget year in the order they come, each with the window measured off the budget boards’ own agendas over the last five cycles, and this cycle’s dates so far.</p>
       <div className="grid gap-3 mt-4 sm:grid-cols-2 lg:grid-cols-3">{d.calendar.map(s => (
         <div key={s.key} className="card p-4" style={{ borderLeft: `3px solid ${STATUS[s.status][1]}` }}>
@@ -346,7 +272,7 @@ export function BudgetFeed() {
       <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>A cycle runs July to June and is named for the budget it builds. “Typically” is the median first and last date the subject appeared on that board’s agenda; the raw dates per cycle are on each board’s page.</p>
 
       {/* -------------------------------------------------------------------- recent */}
-      <H2 id="recent">What was said about the budget and the warrant, newest first</H2>
+      <H2 id="recent">Meeting by meeting, newest first</H2>
       <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>One row per meeting; open it for what was said, each line linked to the second in the video. From our minutes where we have them, and from the town’s agendas and minutes where we do not.</p>
       <div className="mt-3 space-y-2">{meetings.slice(0, shown).map(m => {
         const kinds = m.entries.reduce((acc, e) => { acc[e.kind] = (acc[e.kind] || 0) + 1; return acc }, {} as Record<string, number>)

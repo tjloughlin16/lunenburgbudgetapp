@@ -81,6 +81,24 @@ MARKER = re.compile(r'\b(town\s+meeting|warrant|override|omnibus|proposed\s+budg
                     r'debt\s+exclusion|stabilization\s+fund)', re.I)
 # The stages of a budget year, in the order they come, with the marker each is measured
 # from on the boards' calendars (build_boards.py) and which board leads it.
+# Rule 8: the feed shows what a board decided, never who voted which way. Our minutes
+# record roll calls by name; the feed keeps the tally and drops the names. An appointment
+# is a person, not a budget decision, even when the motion names a budget committee.
+APPOINTMENT = re.compile(r'^\s*(re-?)?appoint', re.I)
+# Housekeeping that names the budget without deciding anything about it: passing over an
+# item, tabling it, skipping it, opening a hearing. Our minutes flag only adjournment and
+# the like as procedural, so the feed draws this line itself.
+HOUSEKEEPING = re.compile(r'^\s*(pass over|skip|table|postpone|continue|enter|open|close|accept the minutes|approve the minutes|approve the agenda)\b', re.I)
+
+
+def tally_only(outcome):
+    if not outcome:
+        return outcome
+    o = re.sub(r'\s*\((?:roll call|by roll call)[^)]*\)', '', outcome, flags=re.I)
+    o = re.sub(r'\s*\([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?(?:\s+[a-z]+)*\)', '', o)   # "(Emily)", "(Tom Gray appointed)" 
+    return o.strip()
+
+
 STAGES = [
     ('Budget presented and reviewed', 'budget-presentation', ['finance-committee', 'school-committee', 'select-board']),
     ('Budget hearing', 'budget-hearing', ['school-committee', 'finance-committee']),
@@ -152,6 +170,8 @@ def episodes_for(fy):
     should probably be FY28-governors-budget or something, and be presented that way."
     A season without a row gets one regular episode covering the whole cycle."""
     rows = [r for r in read_csv(EPISODES) if int(r['season_fy']) == fy]
+    # the season the page is named for leads; its special episodes follow, latest first
+    rows = [r for r in rows if r['kind'] == 'regular'] + sorted([r for r in rows if r['kind'] != 'regular'], key=lambda r: r['opens'] or '', reverse=True)
     return rows
 
 
@@ -540,7 +560,7 @@ def build(as_of=None, whole_cycle=False):
             if not tags:
                 continue
             entries.append(dict(kind='topic', board=m['board'], board_slug=m['board_slug'], date=m['date'], page=page,
-                                text=t['topic'], detail=t.get('resolution'), tags=tags, t=t.get('t_start'),
+                                text=t['topic'], detail=tally_only(t.get('resolution')), tags=tags, t=t.get('t_start'),
                                 video_url='%s&t=%ds' % (m['video_url'], t['t_start']) if t.get('t_start') is not None else m['video_url'],
                                 minutes=round(((t.get('t_end') or 0) - (t.get('t_start') or 0)) / 60)))
         for bi in mins.get('budget_items') or []:
@@ -550,10 +570,10 @@ def build(as_of=None, whole_cycle=False):
                                 text=bi.get('topic'), detail=bi.get('what_was_said'), figures=bi.get('figures_as_heard') or [],
                                 t=bi.get('t'), video_url='%s&t=%ds' % (m['video_url'], bi['t']) if bi.get('t') is not None else m['video_url']))
         for v in mins.get('votes') or []:
-            if v.get('procedural') or not MARKER.search(v.get('motion') or ''):
+            if v.get('procedural') or not MARKER.search(v.get('motion') or '') or APPOINTMENT.match(v.get('motion') or '') or HOUSEKEEPING.match(v.get('motion') or ''):
                 continue
             entries.append(dict(kind='vote', board=m['board'], board_slug=m['board_slug'], date=m['date'], page=page,
-                                text=v.get('motion'), detail=v.get('outcome'), t=v.get('t'),
+                                text=v.get('motion'), detail=tally_only(v.get('outcome')), t=v.get('t'),
                                 video_url='%s&t=%ds' % (m['video_url'], v['t']) if v.get('t') is not None else m['video_url']))
     ours = {(m['board_slug'], m['date']) for m in rec.get('meetings', [])}
     for slug, by_date in docs.items():
