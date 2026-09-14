@@ -37,6 +37,7 @@ type Payload = {
 }
 
 const mmdd = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+const mmddyy = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }).replace(', ', ' ’')
 const long = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
 const ts = (t?: number | null) => t == null ? '' : `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`
 const FY = (fy: number) => 'FY' + String(fy).slice(2)
@@ -360,16 +361,35 @@ export function BudgetFeed() {
       )}
 
       {/* ------------------------------------------------------------------ calendar */}
-      <H2 id="calendar">What’s next — the {FY(d.cycle_fy)} calendar</H2>
-      <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>The stages of a budget year in the order they come, each with the window measured off the budget boards’ own agendas over the last five cycles, and this cycle’s dates so far.</p>
-      <div className="grid gap-3 mt-4 sm:grid-cols-2 lg:grid-cols-3">{d.calendar.map(s => (
-        <div key={s.key} className="card p-4" style={{ borderLeft: `3px solid ${STATUS[s.status][1]}` }}>
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: STATUS[s.status][1] }}>{STATUS[s.status][0]}</p>
-          <p className="text-[15px] font-bold mt-1">{s.stage}</p>
-          <p className="text-sm tnum mt-1">typically {s.typical_first} → {s.typical_last}</p>
-          <ul className="text-xs mt-2 space-y-1" style={{ color: 'var(--text-secondary)' }}>{s.windows.map(w => (
-            <li key={w.board_slug}><a className="underline" href={`/boards/${w.board_slug}#calendar`}>{w.board}</a>: {w.typical_first} → {w.typical_last}{w.this_cycle.length ? <span style={{ color: 'var(--text-primary)' }}> · this cycle {w.this_cycle.map(mmdd).join(', ')}</span> : ''}</li>))}</ul>
-        </div>))}</div>
+      {/* ONE ROW PER STAGE. TJ, 14 September: "the FY27 calendar is very hard to read."
+          Nine cards each listing every board's every date was a wall. A table: the stage,
+          when it typically runs, when it ran this cycle (first to last, how many meetings),
+          and which boards -- the raw dates behind a fold. */}
+      <H2 id="calendar">{d.outcome.closed ? `The ${FY(d.cycle_fy)} calendar, as it ran` : `What’s next — the ${FY(d.cycle_fy)} calendar`}</H2>
+      <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>The stages of a budget year in the order they come. “Typically” is measured off the budget boards’ own agendas over the last five cycles; “this cycle” is when the subject was actually on an agenda.</p>
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full text-sm" style={{ minWidth: 560 }}>
+          <thead><tr className="text-[10px] uppercase tracking-widest text-left" style={{ color: 'var(--text-muted)' }}>
+            <th className="py-1.5 pr-3 font-bold">Stage</th>{!d.outcome.closed && <th className="py-1.5 pr-3 font-bold">Status</th>}<th className="py-1.5 pr-3 font-bold">Typically</th><th className="py-1.5 pr-3 font-bold">This cycle</th><th className="py-1.5 font-bold">Boards</th>
+          </tr></thead>
+          <tbody>{d.calendar.map(s => {
+            const dates = s.windows.flatMap(w => w.this_cycle).sort()
+            return (
+              <tr key={s.key} className="align-top" style={{ borderTop: '1px solid var(--grid)' }}>
+                <td className="py-2 pr-3 font-semibold" style={{ borderLeft: `3px solid ${STATUS[s.status][1]}`, paddingLeft: 8 }}>{s.stage}</td>
+                {!d.outcome.closed && <td className="py-2 pr-3 text-xs whitespace-nowrap" style={{ color: STATUS[s.status][1] }}>{STATUS[s.status][0]}</td>}
+                <td className="py-2 pr-3 tnum whitespace-nowrap" style={{ color: 'var(--text-secondary)' }}>{s.typical_first} → {s.typical_last}</td>
+                <td className="py-2 pr-3 tnum whitespace-nowrap">{dates.length ? <>{mmddyy(dates[0])}{dates.length > 1 ? ` → ${mmddyy(dates[dates.length - 1])}` : ''}<span className="text-xs" style={{ color: 'var(--text-muted)' }}> · {dates.length} meeting{dates.length === 1 ? '' : 's'}</span></> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
+                <td className="py-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
+                  {s.windows.map((w, i) => <span key={w.board_slug}>{i > 0 ? ' · ' : ''}<a className="underline" href={`/boards/${w.board_slug}#calendar`}>{w.board}</a>{w.this_cycle.length ? <span className="tnum"> {w.this_cycle.length}</span> : ''}</span>)}
+                  {dates.length > 0 && <details className="mt-1"><summary className="cursor-pointer" style={{ color: 'var(--text-muted)' }}>the dates</summary>
+                    <ul className="mt-1 space-y-0.5">{s.windows.filter(w => w.this_cycle.length).map(w => <li key={w.board_slug} className="tnum">{w.board}: {w.this_cycle.map(mmddyy).join(', ')}</li>)}</ul></details>}
+                </td>
+              </tr>
+            )
+          })}</tbody>
+        </table>
+      </div>
       <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>A cycle runs July to June and is named for the budget it builds. “Typically” is the median first and last date the subject appeared on that board’s agenda; the raw dates per cycle are on each board’s page.</p>
 
       {/* -------------------------------------------------------------------- recent */}
