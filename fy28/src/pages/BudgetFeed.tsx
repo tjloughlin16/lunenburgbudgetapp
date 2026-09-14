@@ -66,6 +66,19 @@ const SCOPE: Record<string, string> = { school: 'School', town: 'Town', both: 'T
 const PLAIN: Record<string, string> = { deficit: 'gap', budget_total: 'budget', override: 'override', state_aid: 'state aid', free_cash: 'free cash', levy: 'levy' }
 const plain = (s: Statement) => `${SCOPE[s.scope] || s.scope} ${PLAIN[s.kind] || s.kind}`.toLowerCase()
 const keyOf = (s: Statement) => `${s.scope}/${s.kind}`
+const THREADS = ['The gap', 'The override', 'The budget total', 'The cuts', 'Warrant articles', 'State aid, free cash and the levy', 'Everything else']
+const LANDED: Record<string, boolean> = { 'The gap': true, 'The override': true }
+const threadOf = (kind: string) => ({ deficit: 'The gap', override: 'The override', budget_total: 'The budget total', state_aid: 'State aid, free cash and the levy', free_cash: 'State aid, free cash and the levy', levy: 'State aid, free cash and the levy' } as Record<string, string>)[kind] || 'Everything else'
+const threadOfMotion = (m: string) => {
+  const t = m.toLowerCase()
+  if (/\boverride\b/.test(t)) return 'The override'
+  if (/\b(cut|cuts|reduc|layoff|eliminat|attrition)/.test(t)) return 'The cuts'
+  if (/\b(warrant|article)\b/.test(t)) return 'Warrant articles'
+  if (/\b(deficit|gap|shortfall)\b/.test(t)) return 'The gap'
+  if (/\b(free cash|state aid|chapter 70|levy|stabilization)\b/.test(t)) return 'State aid, free cash and the levy'
+  if (/\bbudget\b/.test(t)) return 'The budget total'
+  return 'Everything else'
+}
 
 function Line({ amount, text, who, board, board_slug, date, video_url, t, muted, chip, chipColor, after }: { amount?: string | null; text: string; who?: string; board: string; board_slug: string; date: string; video_url?: string; t?: number | null; muted?: boolean; chip?: string; chipColor?: string; after?: string }) {
   return (
@@ -84,20 +97,30 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy }: { s
   // Tier 2 -- every board vote, oldest first. A voted figure that a later vote on the same
   // thing replaced is greyed, struck, and points at what replaced it.
   const votedStatements = all.filter(x => x.status === 'voted')
+  // Only the gap and the override are ONE thing per scope that a later vote can overwrite.
+  // A 'budget total' is many things -- the omnibus, the capital plan, a sewer fund article --
+  // and striking the capital plan through because a sewer article came later was wrong.
+  const ONE_THING = new Set(['deficit', 'override'])
   const latestVoted: Record<string, Statement> = {}
-  for (const x of votedStatements) if (!latestVoted[keyOf(x)] || latestVoted[keyOf(x)].date <= x.date) latestVoted[keyOf(x)] = x
+  for (const x of votedStatements) if (ONE_THING.has(x.kind) && (!latestVoted[keyOf(x)] || latestVoted[keyOf(x)].date <= x.date)) latestVoted[keyOf(x)] = x
   const votedCuts = st.cuts.filter(c => c.status === 'voted')
   const votes = decisions.filter(e => (e.detail || '').toLowerCase().startsWith('pass'))
-  type Row = { date: string; t: number; el: ReactElement }
+  // THE THREADS. TJ: "there are a few 'balls' that get moved forward in these seasons --
+  // warrant articles, deficit numbers, cuts... interleaving all of those into one feed is
+  // hard to track. I would like to see the story of the warrant articles; the story of the
+  // cuts, 'how did we land on cutting athletics'; the deficit numbers, 'how did we land on
+  // $2.5m?!'" So the same votes, one list per thread, oldest first inside each.
+  type Row = { date: string; t: number; thread: string; el: ReactElement }
   const story: Row[] = [
     ...votedStatements.map((x, i): Row => {
       const later = latestVoted[keyOf(x)]
-      const superseded = later !== x && later.date > x.date
-      return { date: x.date, t: x.t, el: <Line key={'s' + i} chip={`${x.board} vote`} chipColor="var(--series-cost)" muted={superseded} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} after={superseded ? `overwritten ${mmdd(later.date)}${later.amount_as_heard ? ` → ${later.amount_as_heard}` : ''}` : undefined} /> }
+      const superseded = Boolean(later) && later !== x && later.date > x.date
+      return { date: x.date, t: x.t, thread: threadOf(x.kind), el: <Line key={'s' + i} chip={`${x.board} vote`} chipColor="var(--series-cost)" muted={superseded} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} after={superseded ? `overwritten ${mmdd(later.date)}${later.amount_as_heard ? ` → ${later.amount_as_heard}` : ''}` : undefined} /> }
     }),
-    ...votedCuts.map((c, i): Row => ({ date: c.date, t: c.t, el: <Line key={'c' + i} chip={`${c.board} vote`} chipColor="var(--series-cost)" amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> })),
-    ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, el: <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
+    ...votedCuts.map((c, i): Row => ({ date: c.date, t: c.t, thread: 'The cuts', el: <Line key={'c' + i} chip={`${c.board} vote`} chipColor="var(--series-cost)" amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> })),
+    ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, thread: threadOfMotion(e.text || ''), el: <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
   ].sort((a, b) => a.date.localeCompare(b.date) || a.t - b.t)
+  const threads = THREADS.filter(th => story.some(r => r.thread === th)).map(th => ({ name: th, rows: story.filter(r => r.thread === th), landed: LANDED[th] ? Object.values(latestVoted).filter(x => threadOf(x.kind) === th).map(x => x.amount_as_heard).filter(Boolean) : [] }))
   // Tier 3 -- said, proposed, argued; never voted anywhere. The latest figure per thing.
   const said = Object.values(st.latest).filter(x => x.status !== 'voted' && x.status !== 'withdrawn' && !latestVoted[keyOf(x)]).sort((a, b) => b.date.localeCompare(a.date))
   const saidCuts = st.cuts.filter(c => c.status === 'announced' || c.status === 'proposed')
@@ -124,9 +147,13 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy }: { s
       {/* ---- tier 2: THE STORY */}
       <div className="card p-4 mt-4" style={{ borderTop: '4px solid var(--series-cost)' }}>
         <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'How it got there' : 'Where the boards stand, and how they got there'}</p>
-        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>Every board vote, oldest first. A vote a later vote overwrote is struck through and points at what replaced it. None of this is final.</p>
-        {story.length > 0 ? <ul className="text-[13.5px] space-y-1 mt-1">{story.map(r => r.el)}</ul>
-          : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No board has voted on anything yet.</p>}
+        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>Every board vote, one story per thing the season moves forward, oldest first inside each. A vote a later vote overwrote is struck through and points at what replaced it. None of this is final.</p>
+        {story.length > 0 ? threads.map(th => (
+          <div key={th.name} className="mt-3">
+            <p className="text-sm font-bold flex flex-wrap items-baseline gap-x-2">{th.name}<span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>{th.rows.length} vote{th.rows.length === 1 ? '' : 's'}{th.landed.length > 0 ? ` · landed on ${th.landed.join(', ')}` : ''}</span></p>
+            <ul className="text-[13.5px] space-y-1 mt-1">{th.rows.map(r => r.el)}</ul>
+          </div>
+        )) : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No board has voted on anything yet.</p>}
       </div>
 
       {/* ---- tier 3: SAID, NEVER VOTED */}

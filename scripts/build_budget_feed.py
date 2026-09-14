@@ -97,7 +97,7 @@ def tally_only(outcome):
     if not outcome:
         return outcome
     o = re.sub(r'\s*\((?:roll call|by roll call)[^)]*\)', '', outcome, flags=re.I)
-    o = re.sub(r'\s*\([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?(?:\s+[a-z]+)*\)', '', o)   # "(Emily)", "(Tom Gray appointed)" 
+    o = re.sub(r'\s*\([A-Z][a-z]+(?:\s+[A-Z][A-Za-z\'’.-]+)?(?:\s+[a-z]+)*\)', '', o)   # "(Emily)", "(Tom Gray appointed)" 
     return o.strip()
 
 
@@ -239,7 +239,7 @@ def budget_state(as_of, episode=None):
             if not keep(d['meeting_date'], st.get('fiscal_year')):
                 continue
             key = (st['scope'], st['kind'])
-            row = dict(base, **st, video_url='%s&t=%ds' % (d['video_url'], st['t']), rank=rank(st.get('who')))
+            row = dict(base, **dict(st, statement=tally_only(st['statement'])), video_url='%s&t=%ds' % (d['video_url'], st['t']), rank=rank(st.get('who')))
             history[key].append(row)
             if key not in latest or row['rank'] >= latest[key]['rank']:
                 latest[key] = row
@@ -257,7 +257,7 @@ def budget_state(as_of, episode=None):
             if RESTORE.search(c['item']) and not re.search(r'\b(cut|reduc|eliminat)', c['item'], re.I) and c['status'] not in ('restored', 'withdrawn'):
                 c = dict(c, status='restored')
             k = (c['scope'], norm_item(c['item']))
-            row = dict(base, **c, video_url='%s&t=%ds' % (d['video_url'], c['t']), key=norm_item(c['item']))
+            row = dict(base, **dict(c, item=tally_only(c['item'])), video_url='%s&t=%ds' % (d['video_url'], c['t']), key=norm_item(c['item']))
             if k not in cuts:
                 added.append(row)
             elif cuts[k]['status'] != c['status']:
