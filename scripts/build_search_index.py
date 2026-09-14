@@ -314,7 +314,7 @@ def recorded_rows(entry):
         'board': m['board'], 'board_slug': m['board_slug'],
         'date': m['meeting_date'],
         'kind': 'our minutes',
-        'cite_url': '%s/what-was-said/%s' % (SITE, slug),
+        'cite_url': '%s/meeting-minutes/%s' % (SITE, slug),
         'source_url': m['video_url'],
         'start_s': None, 'seg_starts': None,
         'chars': len(body),

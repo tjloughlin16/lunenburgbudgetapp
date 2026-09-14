@@ -77,7 +77,82 @@ function Index({ d }: { d: Payload }) {
   )
 }
 
+/** THE SIDEBAR. TJ, on the first draft: "the design is overwhelming. We need a sidebar with
+ *  all the main links, as a sort of floating button holder." On a wide screen it is a
+ *  sticky column beside the page: where to jump on this page, then where else to go for
+ *  this board. On a phone it is a floating button at the bottom right that opens the same
+ *  list as a sheet, so the links are one tap away without taking the top of the page. */
+function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: boolean) => void }) {
+  const jump: [string, string, boolean][] = [
+    ['#up', 'Upcoming meetings', true], ['#recent', 'Recent meetings', true], ['#votes', 'Votes', b.votes.length > 0],
+    ['#time', 'Time tracking', b.time_by_tag.length > 0], ['#calendar', 'Budget schedule', b.calendar.length > 0],
+  ]
+  const p = b.page
+  // For THIS board only -- TJ: "'This week', 'meeting minutes' and 'all boards' are not
+  // specific to the current board." Those go in a third group, named for what they are.
+  const own: [string, string][] = [
+    ...(p ? [[p.url, p.source === 'district' ? 'District page ↗' : 'Town page ↗'] as [string, string]] : []),
+    ...(p?.facebook && p.facebook_scope === 'board' ? [[p.facebook, 'Facebook ↗'] as [string, string]] : []),
+    ...(b.counts.our_minutes ? [[`${b.urls.what_was_said}#${b.slug}`, 'Its meeting minutes'] as [string, string]] : []),
+    ...(p ? [[p.charter_url, 'Charter & bylaws ↗'] as [string, string]] : []),
+  ]
+  const elsewhere: [string, string][] = [
+    ['/this-week', 'This week, all boards'],
+    [b.urls.what_was_said, 'All meeting minutes'],
+    ['/boards', 'All boards'],
+  ]
+  const Btn = ({ href, children, strong }: { href: string; children: React.ReactNode; strong?: boolean }) => (
+    <a href={href} onClick={() => setOpen(false)}
+      className="block px-3 py-2 rounded-lg text-[13px] font-semibold transition-opacity hover:opacity-80"
+      style={{ background: strong ? 'var(--text-primary)' : 'var(--surface-3)', color: strong ? 'var(--surface-1)' : 'var(--text-primary)' }}>{children}</a>
+  )
+  // THE INFOBOX: the facts about the board, in a card at the top of the column that scrolls
+  // away with the page. Only the short navigation below it sticks. TJ: "scrolling sidebar
+  // isn't my favorite" -- this is the entity-page pattern, and nothing scrolls inside anything.
+  const facts = p && (p.charter_ref || p.meets || p.members.length > 0) ? (
+    <div className="card p-3 text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>
+      {p.charter_ref && <><p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Established by</p><p className="mt-0.5">{p.charter_ref}</p></>}
+      {p.meets && <><p className="text-[10px] font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>Meets</p><p className="mt-0.5" style={{ whiteSpace: 'pre-line' }}>{p.meets}</p></>}
+      {p.members.length > 0 && <><p className="text-[10px] font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>Members, as posted</p><ul className="mt-0.5 space-y-0.5">{p.members.map((m, i) => <li key={i}>{m}</li>)}</ul></>}
+      <p className="text-[11px] mt-3" style={{ color: 'var(--text-muted)' }}>From <a className="underline" href={p.mirror}>our copy</a> of the page, {p.fetched_at}.</p>
+    </div>
+  ) : null
+  const body = (
+    <>
+      <p className="text-[10px] font-bold uppercase tracking-widest px-1" style={{ color: 'var(--text-muted)' }}>On this page</p>
+      <div className="mt-1.5 space-y-1.5">{jump.filter(j => j[2]).map(([h, l]) => <Btn key={h} href={h}>{l}</Btn>)}</div>
+      {own.length > 0 && <>
+        <p className="text-[10px] font-bold uppercase tracking-widest px-1 mt-4" style={{ color: 'var(--text-muted)' }}>For this board</p>
+        <div className="mt-1.5 space-y-1.5">{own.map(([h, l], i) => <Btn key={h} href={h} strong={i === 0}>{l}</Btn>)}</div>
+      </>}
+      <p className="text-[10px] font-bold uppercase tracking-widest px-1 mt-4" style={{ color: 'var(--text-muted)' }}>Elsewhere</p>
+      <div className="mt-1.5 space-y-1.5">{elsewhere.map(([h, l]) => <Btn key={h} href={h}>{l}</Btn>)}</div>
+    </>
+  )
+  return (
+    <>
+      {/* wide: sticky column */}
+      <aside className="hidden lg:block" style={{ width: 240 }}>
+        {facts}
+        <div className="sticky mt-4" style={{ top: 72 }}>{body}</div>
+      </aside>
+      {/* phone: floating button and sheet */}
+      <div className="lg:hidden no-print">
+        <button onClick={() => setOpen(!open)} aria-expanded={open}
+          className="fixed z-40 rounded-full px-4 py-2.5 text-[13px] font-bold shadow-lg"
+          style={{ right: 16, bottom: 16, background: 'var(--text-primary)', color: 'var(--surface-1)' }}>
+          {open ? 'Close' : 'Links'}
+        </button>
+        {open && (
+          <div className="fixed z-30 inset-x-0 bottom-0 card p-4 rounded-b-none" style={{ maxHeight: '70vh', overflowY: 'auto', paddingBottom: 72, boxShadow: '0 -8px 24px rgba(0,0,0,.12)' }}>{body}{facts && <div className="mt-4">{facts}</div>}</div>
+        )}
+      </div>
+    </>
+  )
+}
+
 function BoardPage({ b, d }: { b: Board; d: Payload }) {
+  const [open, setOpen] = useState(false)
   const [allVotes, setAllVotes] = useState(false)
   const substantive = b.votes.filter(v => !v.procedural)
   const shown = allVotes ? b.votes : substantive
@@ -86,16 +161,12 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
     <ReportShell tab={TAB} title={b.name}
       standfirst={<>{c.first ? `Posted since ${c.first.slice(0, 4)}: ` : ''}{n0(c.agendas)} agendas, {n0(c.minutes)} sets of minutes, {n0(c.recordings)} recordings{c.our_minutes ? `, ${n0(c.our_minutes)} meetings with our minutes and ${n0(c.votes)} votes on the record` : ''}. <a className="underline" href="/boards">All boards</a>.</>}
       dataUrl={DATA}>
+     <div className="lg:flex lg:gap-8 lg:items-start">
+     <div className="min-w-0 flex-1">
 
-      {/* ------------------------------------------------------- what it is, and links */}
+      {/* ------------------------------------------------------- what it is */}
       {b.page && (
         <div className="card p-4 mt-6 max-w-3xl">
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            <a className="underline font-semibold" href={b.page.url}>{b.page.source === 'district' ? 'the district’s page for this board' : 'the town’s page for this board'} ↗</a>
-            {b.page.facebook && <a className="underline" href={b.page.facebook}>{b.page.facebook_scope === 'board' ? 'its Facebook page' : 'the town’s Facebook page'} ↗</a>}
-            <a className="underline" href={b.page.charter_url}>the Charter and bylaws ↗</a>
-            <a className="underline" href={b.page.mirror} style={{ color: 'var(--text-muted)' }}>our copy, {b.page.fetched_at}</a>
-          </div>
           {b.page.overview ? (
             <blockquote className="text-sm mt-3 leading-relaxed" style={{ color: 'var(--text-secondary)', borderLeft: '3px solid var(--grid)', paddingLeft: 12 }}>
               {b.page.overview.split('\n').map((p, i) => <p key={i} className={i ? 'mt-2' : ''}>{p}</p>)}
@@ -103,17 +174,12 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
           ) : (
             <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>The {b.page.source === 'district' ? 'district’s' : 'town’s'} page lists the members and the meetings and carries no statement of what the board is for; the Charter and bylaws do.</p>
           )}
-          <div className="grid gap-x-8 gap-y-2 mt-3 sm:grid-cols-2 text-sm">
-            {b.page.charter_ref && <div><span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>established by</span><div>{b.page.charter_ref}</div></div>}
-            {b.page.meets && <div><span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>meets</span><div style={{ whiteSpace: 'pre-line' }}>{b.page.meets}</div></div>}
-            {b.page.members.length > 0 && <div className="sm:col-span-2"><span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>members, as posted</span><ul className="mt-0.5">{b.page.members.map((m, i) => <li key={i}>{m}</li>)}</ul></div>}
-          </div>
-          {b.page.facebook_scope !== 'board' && <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>No Facebook page of its own is linked from this board’s page; the town’s is. Facebook cannot be searched by script, so a page that exists unlinked would not be found here.</p>}
+          {b.page.facebook_scope !== 'board' && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>No Facebook page of its own is linked from the board’s page.</p>}
         </div>
       )}
 
       {/* ---------------------------------------------------------------- upcoming */}
-      <H2>Coming up</H2>
+      <H2 id="up">Upcoming meetings</H2>
       {b.upcoming.length === 0 ? (
         <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>No agenda posted for a future date, as of {d.as_of}. Agendas usually appear two days before a meeting.</p>
       ) : b.upcoming.map(u => (
@@ -138,7 +204,7 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
       ))}
 
       {/* ------------------------------------------------------------------ recent */}
-      <H2>Recent meetings</H2>
+      <H2 id="recent">Recent meetings</H2>
       <div className="overflow-x-auto mt-3">
         <table className="text-sm w-full" style={{ minWidth: 720 }}>
           <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
@@ -149,16 +215,16 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
               <td className="py-2 pr-3 align-top">{r.agenda_doc ? <a className="underline" href={r.agenda_doc}>agenda</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
               <td className="py-2 pr-3 align-top">{r.minutes_doc ? <a className="underline" href={r.minutes_doc}>minutes</a> : <span style={{ color: 'var(--text-muted)' }}>not yet</span>}</td>
               <td className="py-2 pr-3 align-top">{r.video_url ? <a className="underline" href={r.video_url}>video</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>}{r.video_url && r.captions_disabled ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no captions</span> : r.video_url && !r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no transcript yet</span> : null}</td>
-              <td className="py-2 align-top">{r.ours ? <><a className="underline font-semibold" href={`/what-was-said/${r.ours.slug}`}>{r.ours.headline || 'our minutes'}</a><span className="text-xs" style={{ color: 'var(--text-muted)' }}> · {r.ours.votes ?? 0} votes{r.ours.reconciled ? (r.ours.discrepancies ? ` · ${r.ours.discrepancies} difference${r.ours.discrepancies === 1 ? '' : 's'} from the official minutes` : ' · agrees with the official minutes') : ''}</span></> : r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}>transcript held; minutes not yet written</span> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
+              <td className="py-2 align-top">{r.ours ? <><a className="underline font-semibold" href={`/meeting-minutes/${r.ours.slug}`}>{r.ours.headline || 'our minutes'}</a><span className="text-xs" style={{ color: 'var(--text-muted)' }}> · {r.ours.votes ?? 0} votes{r.ours.reconciled ? (r.ours.discrepancies ? ` · ${r.ours.discrepancies} difference${r.ours.discrepancies === 1 ? '' : 's'} from the official minutes` : ' · agrees with the official minutes') : ''}</span></> : r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}>transcript held; minutes not yet written</span> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
             </tr>))}</tbody>
         </table>
       </div>
-      <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>The last {b.recent.length} dates the town posted anything for this board. Every agenda and set of minutes, as text: <a className="underline" href={b.urls.minutes_text}>{b.urls.minutes_text}</a>.</p>
+      <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>The last {b.recent.length} dates the town posted anything for this board. For a program, every agenda and set of minutes as one text file: <a className="underline" href={b.urls.minutes_text}>{b.urls.minutes_text}</a>.</p>
 
       {/* ------------------------------------------------------------------- votes */}
       {b.votes.length > 0 && (
         <>
-          <H2>Every vote on the record, newest first</H2>
+          <H2 id="votes">Votes, newest first</H2>
           <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
             From our minutes of the recordings — {n0(substantive.length)} substantive, {n0(b.votes.length - substantive.length)} procedural (accepting minutes, adjourning).
             <button className="underline ml-2" onClick={() => setAllVotes(!allVotes)}>{allVotes ? 'hide procedural' : 'show all'}</button>
@@ -183,7 +249,7 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
       {/* -------------------------------------------------------------------- time */}
       {b.time_by_tag.length > 0 && (
         <>
-          <H2>Where this board’s time goes</H2>
+          <H2 id="time">Time tracking</H2>
           <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>{hours(b.time_span_s)} of discussion across the {b.time_meetings} recorded meetings we have minutes for, by topic. A topic can overlap another, so the shares can sum past 100%.</p>
           <div className="mt-3 max-w-3xl">{b.time_by_tag.map(t => (
             <div key={t.tag} className="py-1.5 text-sm" style={{ borderTop: '1px solid var(--grid)' }}>
@@ -196,7 +262,7 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
       {/* ---------------------------------------------------------------- calendar */}
       {b.calendar.length > 0 && (
         <>
-          <H2>When budget season lands on this board</H2>
+          <H2 id="calendar">Budget schedule</H2>
           <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>Measured from this board’s own posted agendas over the last {b.calendar_cycles.length} budget cycles (July to June): the dates each subject appeared. The “expect” column is the typical first and last date across those cycles — a scheduled subject, not a decision.</p>
           <div className="overflow-x-auto mt-3">
             <table className="text-sm" style={{ minWidth: 640 }}>
@@ -214,7 +280,10 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
         </>
       )}
 
-      <p className="text-xs mt-8" style={{ color: 'var(--text-muted)' }}>This week’s listing for this board: <a className="underline" href={b.urls.this_week}>this week</a>. All recorded meetings with our minutes: <a className="underline" href={b.urls.what_was_said}>what was said</a>. As of {d.as_of}.</p>
+      <p className="text-xs mt-8" style={{ color: 'var(--text-muted)' }}>As of {d.as_of}.</p>
+     </div>
+     <Sidebar b={b} open={open} setOpen={setOpen} />
+     </div>
     </ReportShell>
   )
 }

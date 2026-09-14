@@ -193,7 +193,7 @@ def whats_new(as_of, days=14):
         if when >= since:
             ours.append({'written': when, 'board': m['board'], 'board_slug': m['board_slug'],
                          'date': m['meeting_date'],
-                         'url': '/what-was-said/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
+                         'url': '/meeting-minutes/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
                          'votes': sum(1 for v in m['minutes']['votes'] if not v.get('procedural'))})
     ours.sort(key=lambda x: (x['written'], x['date']), reverse=True)
     tr = [t for t in read_csv(TRANSCRIPT_INDEX) if (t.get('fetched_at') or '')[:10] >= since]

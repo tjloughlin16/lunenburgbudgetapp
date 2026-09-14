@@ -117,7 +117,7 @@ export function ThisWeek() {
       {f.awaiting_minutes.count > 0 && (
         <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>
           {f.awaiting_minutes.count} meetings in the last {f.awaiting_minutes.window_days} days have an agenda and no minutes yet.
-          {' '}<a className="underline" href="/what-was-said">Our minutes from the recordings</a> cover some of them.
+          {' '}<a className="underline" href="/meeting-minutes">Our minutes from the recordings</a> cover some of them.
         </p>
       )}
 

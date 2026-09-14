@@ -79,7 +79,7 @@ function HomeWhatWasSaid({ onJump }: { onJump: (t: Tab) => void }) {
       <ol className="space-y-2">
         {d.meetings.slice(0, 3).map(m => (
           <li key={m.slug} className="lg:card lg:px-3 lg:py-2.5 py-2" style={{ borderTop: '1px solid var(--grid)' }}>
-            <a className="text-[13px] font-semibold underline" href={`/what-was-said/${m.slug}`} style={{ color: 'var(--series-cost)' }}>{m.board}, {fmt(m.date)}</a>
+            <a className="text-[13px] font-semibold underline" href={`/meeting-minutes/${m.slug}`} style={{ color: 'var(--series-cost)' }}>{m.board}, {fmt(m.date)}</a>
             <span className="text-[11.5px] ml-2" style={{ color: 'var(--text-muted)' }}>{m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'}{m.counts.transfers ? ` · ${m.counts.transfers} transfer${m.counts.transfers === 1 ? '' : 's'}` : ''}</span>
             {/* THE HEADLINE, not the summary. TJ: "not wordy, a high level summary, and
                 definitely include the most important thing first." One sentence, the
@@ -162,6 +162,11 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           <button onClick={() => onJump('thisweek')} className="text-[12px] underline" style={{ color: 'var(--series-cost)' }}>every board &rarr;</button>
         </div>
         <BoardsStrip days={7} />
+        {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
+            Committee meets next is the one who wants everything about it. */}
+        <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
+          Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
+        </p>
       </section>
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-start">
@@ -255,6 +260,11 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
               style={{ color: 'var(--series-cost)' }}>every board &rarr;</button>
           </div>
           <BoardsThisWeek days={7} compact />
+          {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
+              Committee meets next is the one who wants everything about it. */}
+          <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
+            Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
+          </p>
         </section>
         <HomeWhatWasSaid onJump={onJump} />
         <HomeLatest />

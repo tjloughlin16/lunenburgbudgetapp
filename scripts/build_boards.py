@@ -152,7 +152,7 @@ def build(as_of=None):
             for v in o['minutes'].get('votes') or []:
                 votes.append(dict(date=d, t=v.get('t'), motion=v.get('motion'), outcome=v.get('outcome'),
                                   procedural=bool(v.get('procedural')), moved_by=v.get('moved_by'),
-                                  page='/what-was-said/' + o['slug'],
+                                  page='/meeting-minutes/' + o['slug'],
                                   video_url='%s&t=%ds' % (o['video_url'], v['t']) if v.get('t') is not None else o['video_url']))
         # --- where the time goes, this board
         tb = rec.get('time_by_board', {}).get(slug) or {}
@@ -206,7 +206,7 @@ def build(as_of=None):
                         first=min(dates) if dates else None, last=max(past) if past else None),
             upcoming=upcoming, recent=recent, votes=votes, time_by_tag=time_by_tag, time_meetings=time_meetings, time_span_s=span,
             calendar=cal, calendar_cycles=[fy for fy in fys],
-            urls=dict(minutes_text='/minutes/%s.txt' % slug, what_was_said='/what-was-said', this_week='/this-week#m-%s' % slug)))
+            urls=dict(minutes_text='/minutes/%s.txt' % slug, what_was_said='/meeting-minutes', this_week='/this-week#m-%s' % slug)))
     # The three in their fixed order; every other board alphabetically, so a resident can find theirs.
     boards.sort(key=lambda b: (0 if b['the_three'] else 1, THE_THREE.index(b['slug']) if b['the_three'] else 0, b['name'].lower()))
     return dict(

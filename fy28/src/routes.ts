@@ -338,7 +338,7 @@ export const SLUG: Record<Tab, string> = {
   // those. Not `transcripts`: a transcript is the captions, and this is a reading of
   // them. "What was said" is the question a resident arrives with and it carries its
   // own caveat, because what was said is on the recording and this points at it.
-  recorded: 'what-was-said',
+  recorded: 'meeting-minutes',
   boards: 'boards',
   // What is coming and what just appeared, as our watchers saw it. The phrase a
   // resident says; `feed` and `updates` are accepted.
@@ -598,7 +598,8 @@ const ALIASES: Record<string, Tab> = {
   demographics: 'bythenumbers', census: 'bythenumbers', acs: 'bythenumbers',
   blog: 'blog', posts: 'blog', 'the-blog': 'blog', updates: 'blog',
   'this-week': 'thisweek', 'this-week-in-town': 'thisweek', feed: 'thisweek', 'meeting-feed': 'thisweek',
-  'what-was-said': 'recorded', 'recording-minutes': 'recorded', 'our-minutes': 'recorded',
+  'meeting-minutes': 'recorded', 'what-was-said': 'recorded', 'recording-minutes': 'recorded', 'our-minutes': 'recorded',
+  minutes: 'recorded',
   boards: 'boards', committees: 'boards', 'the-boards': 'boards', board: 'boards',
   search: 'search', find: 'search', 'search-minutes': 'search', 'search-everything': 'search',
   // /worth-knowing WAS A PAGE AND IS NOW THE BLOG. It rendered all 48 items as cards from
@@ -650,7 +651,7 @@ export const LABEL: Record<Tab, string> = {
   solved: 'What solved would require',
   sources: 'Sources',
   search: 'Search — everything this project holds',
-  recorded: 'What was said — minutes from the recordings',
+  recorded: 'Meeting minutes — written from the recordings',
   boards: 'The boards — each one, in one place',
   thisweek: 'This week in town — meetings coming up, minutes and recordings just posted',
   athletics: 'Athletics, both sides of the money',
@@ -773,7 +774,7 @@ export function tabFromPath(pathname: string): Tab {
   if (seg.startsWith('analysis/')) return 'analysis'
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'
-  if (seg.startsWith('what-was-said/')) return 'recorded'
+  if (seg.startsWith('meeting-minutes/') || seg.startsWith('what-was-said/')) return 'recorded'
   if (seg.startsWith('boards/')) return 'boards'
   return BY_SLUG[seg] ?? ROOT
 }
@@ -800,7 +801,8 @@ export function boardSlugFromPath(pathname: string): string | null {
 
 /** The meeting a `/what-was-said/<board>/<date>-<video>` address names, or null. */
 export function recordedSlugFromPath(pathname: string): string | null {
-  const m = /^\/what-was-said\/([a-z0-9-]+\/[0-9]{4}-[0-9]{2}-[0-9]{2}-[A-Za-z0-9_-]+)\/?$/.exec(pathname)
+  // The old address, /what-was-said/..., is still answered: links to it have been shared.
+  const m = /^\/(?:meeting-minutes|what-was-said)\/([a-z0-9-]+\/[0-9]{4}-[0-9]{2}-[0-9]{2}-[A-Za-z0-9_-]+)\/?$/.exec(pathname)
   return m ? m[1] : null
 }
 

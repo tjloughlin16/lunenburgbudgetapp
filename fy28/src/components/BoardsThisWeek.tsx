@@ -53,14 +53,14 @@ function shortDate(iso: string) {
 }
 
 /** "Last time" -- the board's most recent meeting we have minutes for. THE FIRST LINK to
- *  /what-was-said, and it is contextual: somebody reading Tuesday's hook is exactly the
+ *  /meeting-minutes, and it is contextual: somebody reading Tuesday's hook is exactly the
  *  person who wants to know what happened last time. */
 function LastTime({ slug, rec }: { slug: string; rec: Recorded | null }) {
   const last = rec?.meetings.filter(m => m.board_slug === slug).sort((a, b) => b.date.localeCompare(a.date))[0]
   if (!last) return null
   const c = last.counts
   return (
-    <a className="text-[12px] underline" href={`/what-was-said/${last.slug}`} style={{ color: 'var(--text-secondary)' }}>
+    <a className="text-[12px] underline" href={`/meeting-minutes/${last.slug}`} style={{ color: 'var(--text-secondary)' }}>
       last time ({shortDate(last.date)}): {c.votes} vote{c.votes === 1 ? '' : 's'}{c.transfers ? `, ${c.transfers} transfer${c.transfers === 1 ? '' : 's'}` : ''} &rarr;
     </a>
   )

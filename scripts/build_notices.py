@@ -53,7 +53,7 @@ def long_date(iso):
 def retro_text(m):
     mm = m['minutes']
     votes = [v for v in mm['votes'] if not v.get('procedural')]
-    url = '%s/what-was-said/%s/%s-%s' % (SITE, m['board_slug'], m['meeting_date'], m['video_id'])
+    url = '%s/meeting-minutes/%s/%s-%s' % (SITE, m['board_slug'], m['meeting_date'], m['video_id'])
     lines = ['%s, %s: %s' % (m['board'], long_date(m['meeting_date']), mm.get('headline') or 'here is what the recording carries.')]
     dg = m.get('digest')
     if dg:
@@ -111,7 +111,7 @@ def payload():
         mm = m['minutes']
         retro.append({
             'board': m['board'], 'board_slug': m['board_slug'], 'date': m['meeting_date'],
-            'url': '/what-was-said/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
+            'url': '/meeting-minutes/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
             'headline': mm.get('headline', ''),
             'summary': mm['summary'],
             'digest': m.get('digest'),

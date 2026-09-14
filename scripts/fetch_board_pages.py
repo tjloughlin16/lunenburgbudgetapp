@@ -125,11 +125,12 @@ def parse_district(html):
     text = text_of(html)
     i = text.find('School Committee Members & INFORMATION')
     j = text.find('Broadcast of Meetings')
-    members = text[i:j].split('\n', 1)[1] if i >= 0 and j > i else ''
-    members = re.sub(r'\n(Term expires[^\n]*)', r' — \1', members)
-    members = re.sub(r'\n[a-z.]+@lunenburgschools\.net', '', members)
-    members = re.sub(r'\n', ' ', members).strip()
-    members = re.sub(r'\s+—', ' —', re.sub(r'(\d{4})\s+', r'\1 · ', members))
+    block = text[i:j] if i >= 0 and j > i else ''
+    # The page breaks names, roles and terms across lines unevenly ("Vice\nChai\nr", "202\n8"),
+    # so members are read as name-role-email-term groups rather than line by line.
+    flat = re.sub(r'\s+', ' ', block)
+    found = re.findall(r'([A-Z][a-z]+(?:\s+[A-Z][A-Za-z.\'-]+)+),\s*((?:Vice\s*Chai\s*r|Vice Chair|Chair|Secretary|Member))\s+[a-z.]+@lunenburgschools\.net\s+Term expires\s*(\d{3}\s?\d)', flat)
+    members = '\n'.join('%s, %s — Term expires %s' % (n.strip(), re.sub(r'\s+', '', r).replace('ViceChair', 'Vice Chair'), t.replace(' ', '')) for n, r, t in found)
     k = text.find('Broadcast of Meetings')
     meets = text[k:].split('LUNENBURG SCHOOL COMMITTEE', 1)[0].split('\n', 1)[1].strip() if k >= 0 else ''
     fb = sorted(set(re.findall(r'https?://(?:www\.)?facebook\.com/[^"\'\s<>]+', html)))

@@ -123,8 +123,8 @@ export function WhatWasSaid() {
       return (
         <ReportShell tab={TAB} title="No minutes at this address" dataUrl={DATA}
           standfirst="Every recording with minutes is listed on the index.">
-          <Body>The address <code>/what-was-said/{slug}</code> names no meeting. The index is{' '}
-            <a className="underline" style={{ color: 'var(--series-cost)' }} href="/what-was-said">here</a>.</Body>
+          <Body>The address <code>/meeting-minutes/{slug}</code> names no meeting. The index is{' '}
+            <a className="underline" style={{ color: 'var(--series-cost)' }} href="/meeting-minutes">here</a>.</Body>
         </ReportShell>
       )
     }
@@ -139,8 +139,8 @@ function Index({ d }: { d: Payload }) {
   const boards = Object.entries(d.boards).sort((a, b) => b[1].meetings - a[1].meetings)
     .filter(([slug]) => shown.some(m => m.board_slug === slug))
   return (
-    <ReportShell tab={TAB} title="What was said, meeting by meeting"
-      standfirst="Our minutes of the recorded meetings — votes, transfers, budget items and decisions, each linked to the second of the video."
+    <ReportShell tab={TAB} title="Meeting minutes, written from the recordings"
+      standfirst="Our minutes of every recorded meeting we have processed — votes, transfers, budget items and decisions, each linked to the second in the video. One board at a time: open the board you want."
       dataUrl={DATA}>
       <p className="mt-6 text-sm" style={{ color: 'var(--text-secondary)' }}>
         <strong>{d.counts.meetings}</strong> meetings across <strong>{d.counts.boards}</strong> boards,{' '}
@@ -153,10 +153,10 @@ function Index({ d }: { d: Payload }) {
           mentions. */}
       <p className="mt-6 text-xs" style={{ color: 'var(--text-muted)' }}>By topic — the number is meetings that touched it:</p>
       <p className="mt-1 flex flex-wrap gap-1.5">
-        {tag && <a href="/what-was-said" className="px-2 py-0.5 text-xs rounded border font-semibold"
+        {tag && <a href="/meeting-minutes" className="px-2 py-0.5 text-xs rounded border font-semibold"
           style={{ borderColor: 'var(--text-primary)', color: 'var(--text-primary)' }}>all meetings ×</a>}
         {Object.entries(d.tags).map(([t, n]) => (
-          <a key={t} href={`/what-was-said?tag=${t}`} className="px-2 py-0.5 text-xs rounded border"
+          <a key={t} href={`/meeting-minutes?tag=${t}`} className="px-2 py-0.5 text-xs rounded border"
             style={{ borderColor: t === tag ? 'var(--series-cost)' : 'var(--grid)', color: 'var(--series-cost)',
                      background: t === tag ? 'var(--surface-3)' : 'transparent' }}>{t.replace(/-/g, ' ')} <span className="tnum" style={{ color: 'var(--text-muted)' }}>{n}</span></a>
         ))}
@@ -185,7 +185,7 @@ function Index({ d }: { d: Payload }) {
                     {top.map(([t, sec]) => (
                       <li key={t} className="text-xs">
                         <div className="flex justify-between gap-2">
-                          <a className="underline" href={`/what-was-said?tag=${t}`} style={{ color: 'var(--series-cost)' }}>{t.replace(/-/g, ' ')}</a>
+                          <a className="underline" href={`/meeting-minutes?tag=${t}`} style={{ color: 'var(--series-cost)' }}>{t.replace(/-/g, ' ')}</a>
                           <span className="tnum" style={{ color: 'var(--text-secondary)' }}>{h(sec)} · {Math.round(100 * sec / (b.topics_span_s || 1))}%</span>
                         </div>
                         <div className="h-1.5 rounded mt-0.5" style={{ background: 'var(--surface-3)' }}>
@@ -200,17 +200,23 @@ function Index({ d }: { d: Payload }) {
           </div>
         </section>
       )}
+      {/* ONE BOARD AT A TIME, COLLAPSED. TJ: "Each board needs to be collapsible and
+          collapsed by default. Took me a minute to realize what it was showing." A filter
+          by topic opens every board, because a reader who asked for a topic wants the
+          meetings, not a list of headings. */}
       {boards.map(([slug, b]) => (
-        <section key={slug} className="mt-8">
-          <H2>{b.board}</H2>
-          <p className="text-xs mb-3" style={{ color: 'var(--text-muted)' }}>
-            {b.meetings} meeting{b.meetings === 1 ? '' : 's'}; {b.without_official_minutes} with no official minutes
-          </p>
-          <ol className="space-y-3">
+        <details key={slug} id={slug} className="mt-4 card px-4 py-3" style={{ scrollMarginTop: 80 }} open={Boolean(tag) || window.location.hash === `#${slug}`}>
+          <summary className="cursor-pointer flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+            <span className="text-xl font-bold tracking-tight">{b.board}</span>
+            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+              {shown.filter(m => m.board_slug === slug).length} meeting{shown.filter(m => m.board_slug === slug).length === 1 ? '' : 's'} · {b.without_official_minutes} with no official minutes · <a className="underline" href={`/boards/${slug}`}>the board’s page</a>
+            </span>
+          </summary>
+          <ol className="space-y-3 mt-3">
             {shown.filter(m => m.board_slug === slug).map(m => (
               <li key={m.slug} className="card p-4">
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <a className="font-semibold underline" href={`/what-was-said/${m.slug}`}
+                  <a className="font-semibold underline" href={`/meeting-minutes/${m.slug}`}
                     style={{ color: 'var(--series-cost)' }}>{longDate(m.date)}</a>
                   <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
                     {m.recording ? `${m.recording.duration} long · ` : ''}{m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'} · {m.counts.transfers} transfer{m.counts.transfers === 1 ? '' : 's'} · {m.counts.budget_items} budget item{m.counts.budget_items === 1 ? '' : 's'} · {m.counts.public_comment} public comment{m.counts.public_comment === 1 ? '' : 's'}
@@ -220,13 +226,13 @@ function Index({ d }: { d: Payload }) {
                 </div>
                 <p className="text-sm mt-1 font-medium">{m.headline || m.summary}</p>
                 <p className="mt-1.5 flex flex-wrap gap-1">
-                  {m.tags.map(t => <a key={t} href={`/what-was-said?tag=${t}`} className="px-1.5 py-0.5 text-[10.5px] rounded"
+                  {m.tags.map(t => <a key={t} href={`/meeting-minutes?tag=${t}`} className="px-1.5 py-0.5 text-[10.5px] rounded"
                     style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>{t.replace(/-/g, ' ')}</a>)}
                 </p>
               </li>
             ))}
           </ol>
-        </section>
+        </details>
       ))}
       <MoreReports here={TAB} />
     </ReportShell>
@@ -307,7 +313,7 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
       ) : <Body>{mm.summary}</Body>}
       {m.tags.length > 0 && (
         <p className="mt-2 flex flex-wrap gap-1">
-          {m.tags.map(t => <a key={t} href={`/what-was-said?tag=${t}`} className="px-1.5 py-0.5 text-[11px] rounded"
+          {m.tags.map(t => <a key={t} href={`/meeting-minutes?tag=${t}`} className="px-1.5 py-0.5 text-[11px] rounded"
             style={{ background: 'var(--surface-3)', color: 'var(--text-secondary)' }}>{t.replace(/-/g, ' ')}</a>)}
         </p>
       )}
@@ -492,7 +498,7 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
               return (
                 <li key={t} className="text-xs">
                   <div className="flex justify-between gap-2">
-                    <a className="underline" href={`/what-was-said?tag=${t}`} style={{ color: 'var(--series-cost)' }}>{t.replace(/-/g, ' ')}</a>
+                    <a className="underline" href={`/meeting-minutes?tag=${t}`} style={{ color: 'var(--series-cost)' }}>{t.replace(/-/g, ' ')}</a>
                     <span className="tnum" style={{ color: 'var(--text-secondary)' }}>{Math.round(sec / 60)} min · {Math.round(100 * sec / span)}%</span>
                   </div>
                   <div className="h-1.5 rounded mt-0.5" style={{ background: 'var(--surface-3)' }}>
@@ -527,7 +533,7 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
       <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>
         Written {m.written.at.slice(0, 10)} by <code>{m.written.by}</code> ({m.written.model}) from{' '}
         <code>{m.source.transcript}</code> — {m.source.segments.toLocaleString()} caption segments, sha256 <code>{m.source.sha256.slice(0, 12)}…</code>.
-        {' '}<a className="underline" href="/what-was-said">All recorded meetings</a>.
+        {' '}<a className="underline" href="/meeting-minutes">All recorded meetings</a>.
       </p>
       <MoreReports here={TAB} />
     </ReportShell>
