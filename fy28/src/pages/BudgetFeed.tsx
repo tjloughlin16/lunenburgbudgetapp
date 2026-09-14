@@ -81,11 +81,11 @@ function amounts(text: string): number[] {
   }
   return out
 }
-function Line({ amount, text, who, board, board_slug, date, video_url, t, muted, chip, chipColor, after, landing }: { amount?: string | null; text: string; who?: string; board: string; board_slug: string; date: string; video_url?: string; t?: number | null; muted?: boolean; chip?: string; chipColor?: string; after?: string; landing?: boolean }) {
+function Line({ amount, text, who, board, board_slug, date, video_url, t, muted, quiet, chip, chipColor, after, landing }: { amount?: string | null; text: string; who?: string; board: string; board_slug: string; date: string; video_url?: string; t?: number | null; muted?: boolean; quiet?: boolean; chip?: string; chipColor?: string; after?: string; landing?: boolean }) {
   return (
-    <li className="pl-3 py-0.5" style={{ borderLeft: `${landing ? '4px' : '2px'} solid ${landing ? 'var(--status-good)' : muted ? 'var(--grid)' : (chipColor || 'var(--grid)')}`, color: muted ? 'var(--text-muted)' : undefined, background: landing ? 'color-mix(in srgb, var(--status-good) 8%, transparent)' : undefined }}>
+    <li className="pl-3 py-0.5" style={{ borderLeft: `${landing ? '4px' : '2px'} solid ${landing ? 'var(--status-good)' : muted || quiet ? 'var(--grid)' : (chipColor || 'var(--grid)')}`, color: muted ? 'var(--text-muted)' : quiet ? 'var(--text-secondary)' : undefined, background: landing ? 'color-mix(in srgb, var(--status-good) 8%, transparent)' : undefined }}>
       {landing && <span className="text-[10px] font-bold uppercase tracking-wider mr-1.5" style={{ color: 'var(--status-good)' }} title="Carries the figure Town Meeting or the ballot ended on">✓ made it final ·</span>}
-      {chip && <><a className="text-[10px] font-bold uppercase tracking-wider" href={`/boards/${board_slug}`} style={{ color: muted ? 'var(--text-muted)' : chipColor }}>{chip}</a><span className="text-[10px] font-bold uppercase tracking-wider tnum mr-1.5" style={{ color: 'var(--text-muted)' }}> · {mmdd(date)}</span></>}
+      {chip && <><a className="text-[10px] font-bold uppercase tracking-wider" href={`/boards/${board_slug}`} style={{ color: muted ? 'var(--text-muted)' : chipColor }}>{chip}</a><span className="text-[10px] font-bold uppercase tracking-wider tnum mr-1.5" style={{ color: 'var(--text-muted)' }}> · {quiet ? `${board}, ` : ''}{mmdd(date)}</span></>}
       {amount && <span className="tnum font-bold" style={{ textDecoration: muted ? 'line-through' : undefined }}>{amount}</span>}{amount ? ' — ' : ''}{text}
       <span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{who ? `${who}, ` : ''}{chip ? null : <><a className="underline" href={`/boards/${board_slug}`}>{board}</a>, {mmdd(date)}</>}{video_url ? <>{chip ? '' : ' · '}<a className="underline tnum" href={video_url}>{ts(t) || 'video'}</a></> : null}</span>
       {after && <span className="text-xs ml-1.5 italic" style={{ color: 'var(--text-muted)' }}>{after}</span>}
@@ -93,62 +93,117 @@ function Line({ amount, text, who, board, board_slug, date, video_url, t, muted,
   )
 }
 
+/** One thread, folded: its rows newest first, capped, the vote that made it final marked. */
+function Thread({ th }: { th: { id: string; label: string; question: string; rows: { date: string; render: (landing: boolean) => ReactElement }[]; votes: number; landingAt: number; landed: (string | null)[] } }) {
+  const [all, setAll] = useState(false)
+  const CAP = 30
+  const rows = all ? th.rows : th.rows.slice(0, CAP)
+  return (
+    <details className="mt-2">
+      <summary className="cursor-pointer text-sm font-bold flex flex-wrap items-baseline gap-x-2"><span className="conc-chev inline-block transition-transform text-xs" aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&#9656;</span>{th.label}<span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>{th.rows.length} line{th.rows.length === 1 ? '' : 's'}, {th.votes} vote{th.votes === 1 ? '' : 's'}{th.landed.length > 0 ? ` · voted to ${th.landed.join(', ')}` : ''}{th.rows.length > 0 ? ` · ${mmdd(th.rows[th.rows.length - 1].date)} → ${mmdd(th.rows[0].date)}` : ''}</span>{th.landingAt >= 0 && <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>✓ made final {mmdd(th.rows[th.landingAt].date)}</span>}</summary>
+      {th.question && <p className="text-xs mt-1 pl-3" style={{ color: 'var(--text-muted)' }}>{th.question}</p>}
+      <ul className="text-[13.5px] space-y-1 mt-1">{rows.map((r, i) => r.render(i === th.landingAt))}</ul>
+      {th.rows.length > CAP && !all && <button className="text-xs underline mt-1 pl-3" style={{ color: 'var(--series-cost)' }} onClick={() => setAll(true)}>all {th.rows.length} lines</button>}
+    </details>
+  )
+}
+
+/** THE METRICS, under the season label. TJ, 14 September 2026: "I can't find where we
+ *  list metrics like the total school deficit, total school cuts. I expect them to be
+ *  right under the FY27 season label." One card per figure: the number, what it is, who
+ *  last put it on the record and with what standing. Rule 7b: a metric and two lines.
+ *  Staff outrank the chair, who outranks a member, who outranks a resident -- so the
+ *  latest figure is the latest STAFF figure where staff gave one, and the card says so. */
+function Metrics({ st }: { st: State }) {
+  const first = (k: string) => { const h = st.history[k] || []; return h.length ? h[h.length - 1] : null }
+  const cards: { label: string; value: string; line: string; foot: string }[] = []
+  for (const [scope, label] of [['school', 'School gap'], ['town', 'Town gap'], ['both', 'Town and schools gap']] as const) {
+    const x = st.latest[`${scope}/deficit`]
+    if (!x) continue
+    const f = first(`${scope}/deficit`)
+    cards.push({ label, value: x.amount_as_heard || '—', line: `${x.status === 'voted' ? 'a board vote' : x.status === 'announced' ? 'stated, not voted' : 'proposed, not voted'} — ${x.who}, ${mmdd(x.date)}`, foot: f && f !== x && f.amount_as_heard ? `first put at ${f.amount_as_heard} (${mmdd(f.date)})` : '' })
+  }
+  for (const [scope, label] of [['school', 'School override ask'], ['town', 'Town override ask'], ['both', 'Override, town and schools']] as const) {
+    const x = st.latest[`${scope}/override`]
+    if (!x || Math.max(0, ...amounts(x.amount_as_heard || '')) < 100_000) continue   // an override is a sum, not a tax-bill impact
+    cards.push({ label, value: x.amount_as_heard || '—', line: `${x.status === 'voted' ? 'a board vote' : x.status === 'announced' ? 'stated, not voted' : 'proposed, not voted'} — ${x.who}, ${mmdd(x.date)}`, foot: '' })
+  }
+  for (const [scope, label] of [['school', 'School cuts'], ['town', 'Town cuts']] as const) {
+    const cs = st.cuts.filter(c => c.scope === scope)
+    if (!cs.length) continue
+    const voted = cs.filter(c => c.status === 'voted').length, gone = cs.filter(c => c.status === 'restored' || c.status === 'withdrawn').length
+    cards.push({ label, value: `${cs.length} named`, line: `${voted} voted · ${cs.length - voted - gone} proposed or announced, not voted · ${gone} restored or withdrawn`, foot: '' })
+  }
+  if (!cards.length) return null
+  return (
+    <div className="grid gap-3 mt-4 sm:grid-cols-2 lg:grid-cols-3">
+      {cards.map(c => (
+        <div key={c.label} className="card px-3 py-2.5">
+          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{c.label}</p>
+          <p className="text-xl font-bold tnum leading-tight mt-0.5">{c.value}</p>
+          <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>{c.line}</p>
+          {c.foot && <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{c.foot}</p>}
+        </div>
+      ))}
+      <p className="text-[11px] sm:col-span-2 lg:col-span-3" style={{ color: 'var(--text-muted)' }}>Figures as heard from machine captions; the second in the video is the record. A stated figure is what somebody said, with their standing; it is not a vote and it is not final.</p>
+    </div>
+  )
+}
+
 function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta }: { st: State; closed: boolean; decisions: Entry[]; outcome?: Payload['outcome'] | null; finalText?: string | null; finalNote?: string | null; fy: number; meta: Payload['threads'] }) {
-  const [showSaid, setShowSaid] = useState(!closed)
   const all = Object.values(st.history).flat()
-  // Tier 2 -- every board vote, oldest first. A voted figure that a later vote on the same
-  // thing replaced is greyed, struck, and points at what replaced it.
-  const votedStatements = all.filter(x => x.status === 'voted')
-  // Only the gap and the override are ONE thing per scope that a later vote can overwrite.
-  // A 'budget total' is many things -- the omnibus, the capital plan, a sewer fund article --
-  // and striking the capital plan through because a sewer article came later was wrong.
+  // A voted gap or override that a later vote on the same thing replaced is greyed,
+  // struck, and points at what replaced it. Only those two are ONE thing per scope: a
+  // 'budget total' is many things -- the omnibus, the capital plan, a sewer fund article.
   const ONE_THING = new Set(['deficit', 'override'])
   const latestVoted: Record<string, Statement> = {}
-  for (const x of votedStatements) if (ONE_THING.has(x.kind) && (!latestVoted[keyOf(x)] || latestVoted[keyOf(x)].date <= x.date)) latestVoted[keyOf(x)] = x
-  const votedCuts = st.cuts.filter(c => c.status === 'voted')
+  for (const x of all) if (x.status === 'voted' && ONE_THING.has(x.kind) && (!latestVoted[keyOf(x)] || latestVoted[keyOf(x)].date <= x.date)) latestVoted[keyOf(x)] = x
   const votes = decisions.filter(e => (e.detail || '').toLowerCase().startsWith('pass'))
   // THE THREADS. TJ: "there are a few 'balls' that get moved forward in these seasons --
-  // warrant articles, deficit numbers, cuts... interleaving all of those into one feed is
-  // hard to track. I would like to see the story of the warrant articles; the story of the
-  // cuts, 'how did we land on cutting athletics'; the deficit numbers, 'how did we land on
-  // $2.5m?!'" So the same votes, one list per thread, oldest first inside each.
-  type Row = { date: string; t: number; thread: string; nums: number[]; render: (landing: boolean) => ReactElement }
+  // warrant articles, deficit numbers, cuts... I would like to see the story of the warrant
+  // articles; the story of the cuts, 'how did we land on cutting athletics'; the deficit
+  // numbers, 'how did we land on $2.5m?!'" And then: "'the gap' doesn't explain anything
+  // about how the deficit was discussed and identified, nor does the event list include
+  // any PROPOSED CUTS early on. The story needs to tell why." So a thread carries the WHOLE
+  // record about its thing -- every figure stated, every cut proposed, every vote -- newest
+  // first. A vote is the strong line; what was said is the reason it happened.
+  type Row = { date: string; t: number; thread: string; vote: boolean; nums: number[]; render: (landing: boolean) => ReactElement }
   // THE VOTE THAT MADE IT FINAL. TJ: "when something landed it into 'final' state, call
-  // that out in this flow too -- that was the vote that made it final." A row whose
-  // figure is one Town Meeting or the ballot ended on -- the adopted appropriation, a
-  // ballot question's amount, the figure in an episode's recorded outcome -- and is the
-  // LAST such row in its thread, is marked. A figure match, not a reading of the motion:
-  // the page says "carries the figure it ended on".
+  // that out in this flow too -- that was the vote that made it final." The latest VOTE in
+  // a thread whose figure is one Town Meeting or the ballot ended on. A figure match, not a
+  // reading of the motion: the page says "carries the figure it ended on".
   const finals = [
     ...(outcome && outcome.closed ? [outcome.adopted?.amount, ...outcome.questions.map(q => q.amount)] : []),
     ...amounts(finalText || ''),
   ].filter((n): n is number => typeof n === 'number' && n > 0)
   const carriesFinal = (nums: number[]) => nums.some(n => finals.some(f => Math.abs(n - f) / f < 0.005))
+  const saidChip = (status: string, who: string) => `${status === 'announced' ? 'stated' : status} · ${who}`
   const story: Row[] = [
-    ...votedStatements.map((x, i): Row => {
+    ...all.map((x, i): Row => {
+      const voted = x.status === 'voted'
       const later = latestVoted[keyOf(x)]
-      const superseded = Boolean(later) && later !== x && later.date > x.date
-      return { date: x.date, t: x.t, thread: x.thread || 'other', nums: amounts(x.amount_as_heard || ''), render: landing => <Line key={'s' + i} chip={`${x.board} vote`} chipColor="var(--series-cost)" muted={superseded && !landing} landing={landing} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} after={superseded && !landing ? `overwritten ${mmdd(later.date)}${later.amount_as_heard ? ` → ${later.amount_as_heard}` : ''}` : undefined} /> }
+      const superseded = voted && Boolean(later) && later !== x && later.date > x.date
+      return { date: x.date, t: x.t, thread: x.thread || 'other', vote: voted, nums: amounts(x.amount_as_heard || ''), render: landing => <Line key={'s' + i} chip={voted ? `${x.board} vote` : saidChip(x.status, x.who)} chipColor={voted ? 'var(--series-cost)' : 'var(--text-muted)'} quiet={!voted} muted={(superseded || x.status === 'withdrawn') && !landing} landing={landing} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} after={superseded && !landing ? `overwritten ${mmdd(later.date)}${later.amount_as_heard ? ` → ${later.amount_as_heard}` : ''}` : undefined} /> }
     }),
-    ...votedCuts.map((c, i): Row => ({ date: c.date, t: c.t, thread: c.thread || 'other', nums: amounts(c.amount_as_heard || ''), render: landing => <Line key={'c' + i} chip={`${c.board} vote`} chipColor="var(--series-cost)" landing={landing} amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> })),
-    ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, thread: e.thread || 'other', nums: amounts(e.text || ''), render: landing => <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" landing={landing} text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
+    ...st.cuts.map((c, i): Row => {
+      const voted = c.status === 'voted', gone = c.status === 'restored' || c.status === 'withdrawn'
+      return { date: c.date, t: c.t, thread: c.thread || 'other', vote: voted, nums: voted ? amounts(c.amount_as_heard || '') : [], render: landing => <Line key={'c' + i} chip={voted ? `${c.board} vote` : gone ? `${c.status} · ${c.who}` : `proposed cut · ${c.who}`} chipColor={voted ? 'var(--series-cost)' : 'var(--text-muted)'} quiet={!voted} muted={gone} landing={landing} amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`${gone ? c.status + ': ' : 'cut: '}${c.item}`} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> }
+    }),
+    ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, thread: e.thread || 'other', vote: true, nums: amounts(e.text || ''), render: landing => <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" landing={landing} text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
   ].sort((a, b) => b.date.localeCompare(a.date) || b.t - a.t)   // newest first, TJ, 14 September
   const threads = meta.filter(th => story.some(r => r.thread === th.id)).map(th => {
     const rows = story.filter(r => r.thread === th.id)
-    const hits = rows.map(r => carriesFinal(r.nums))
-    const last = hits.indexOf(true)   // rows run newest first, so the latest carrying vote is the first hit
-    return { ...th, rows, landingAt: last, landed: Object.values(latestVoted).filter(x => x.thread === th.id).map(x => x.amount_as_heard).filter(Boolean) }
+    const landingAt = rows.findIndex(r => r.vote && carriesFinal(r.nums))   // newest first: the first hit is the latest such vote
+    return { ...th, rows, votes: rows.filter(r => r.vote).length, landingAt, landed: Object.values(latestVoted).filter(x => x.thread === th.id).map(x => x.amount_as_heard).filter(Boolean) }
   })
-  // Tier 3 -- said, proposed, argued; never voted anywhere. The latest figure per thing.
-  const said = Object.values(st.latest).filter(x => x.status !== 'voted' && x.status !== 'withdrawn' && !latestVoted[keyOf(x)]).sort((a, b) => b.date.localeCompare(a.date))
-  const saidCuts = st.cuts.filter(c => c.status === 'announced' || c.status === 'proposed')
-  const gone = st.cuts.filter(c => c.status === 'restored' || c.status === 'withdrawn')
   const finalRows = outcome && outcome.closed ? (outcome.adopted ? 1 : 0) + outcome.questions.filter(q => q.yes != null).length : 0
   const hasFinal = finalRows > 0 || Boolean(finalText)
   return (
     <>
+      <Metrics st={st} />
+
       {/* ---- tier 1: FINAL */}
-      <div className="card p-4 mt-6" style={{ borderTop: `4px solid ${hasFinal ? 'var(--status-good)' : 'var(--grid)'}` }}>
+      <div className="card p-4 mt-4" style={{ borderTop: `4px solid ${hasFinal ? 'var(--status-good)' : 'var(--grid)'}` }}>
         <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: hasFinal ? 'var(--status-good)' : 'var(--text-muted)' }}>Final</p>
         <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>What Town Meeting and the ballot did. Money appropriated, or not. A board’s vote is never in this box.</p>
         {finalText && <p className="text-[15px] font-bold pl-3 mb-1" style={{ borderLeft: '2px solid var(--status-good)' }}>{finalText}</p>}
@@ -162,37 +217,13 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta 
         {!hasFinal && <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Nothing is final yet. Town Meeting appropriates the {FY(fy)} budget and the election decides any override; until then everything below is a board’s position or somebody’s proposal.</p>}
       </div>
 
-      {/* ---- tier 2: THE STORY */}
+      {/* ---- tier 2 and 3 together: THE STORY, one thread per thing, votes strong and what was said as the why */}
       <div className="card p-4 mt-4" style={{ borderTop: '4px solid var(--series-cost)' }}>
-        <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'How it got there' : 'Where the boards stand, and how they got there'}</p>
-        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>Every board vote, one story per thing the season moves forward, newest first inside each. A vote a later vote overwrote is struck through and points at what replaced it. None of this is final.</p>
-        {story.length > 0 ? threads.map(th => (
-          <details key={th.id} className="mt-2">
-            <summary className="cursor-pointer text-sm font-bold flex flex-wrap items-baseline gap-x-2"><span className="conc-chev inline-block transition-transform text-xs" aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&#9656;</span>{th.label}<span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>{th.rows.length} vote{th.rows.length === 1 ? '' : 's'}{th.landed.length > 0 ? ` · landed on ${th.landed.join(', ')}` : ''}{th.rows.length > 0 ? ` · ${mmdd(th.rows[th.rows.length - 1].date)} → ${mmdd(th.rows[0].date)}` : ''}</span>{th.landingAt >= 0 && <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>✓ made final {mmdd(th.rows[th.landingAt].date)}</span>}</summary>
-            {th.question && <p className="text-xs mt-1 pl-3" style={{ color: 'var(--text-muted)' }}>{th.question}</p>}
-            <ul className="text-[13.5px] space-y-1 mt-1">{th.rows.map((r, i) => r.render(i === th.landingAt))}</ul>
-          </details>
-        )) : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No board has voted on anything yet.</p>}
+        <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'How it got there' : 'Where it stands, and how it got there'}</p>
+        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>One story per thing the season moves forward, newest first. <span style={{ color: 'var(--series-cost)' }}>A board vote</span> is the strong line; what was stated or proposed, by whom, is the reason it happened. A vote a later vote overwrote is struck through. None of this is final.</p>
+        {story.length > 0 ? threads.map(th => <Thread key={th.id} th={th} />)
+          : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing on the record yet. Figures, when they come, are as heard from machine captions; the second in the video is the record.</p>}
       </div>
-
-      {/* ---- tier 3: SAID, NEVER VOTED */}
-      {(said.length + saidCuts.length + gone.length) > 0 && (
-        <div className="card p-4 mt-4" style={{ borderTop: '4px solid var(--grid)' }}>
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{closed ? 'Said, never voted' : 'Said, not voted — so far'}</p>
-          <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
-            {said.length > 0 && `${said.length} figure${said.length === 1 ? '' : 's'} put on the record`}{said.length > 0 && saidCuts.length > 0 ? ', ' : ''}{saidCuts.length > 0 && `${saidCuts.length} cut${saidCuts.length === 1 ? '' : 's'} named`}{gone.length > 0 ? `, ${gone.length} restored or withdrawn` : ''} — proposed, argued, announced at a meeting, and never voted by anyone.{' '}
-            <button className="underline" onClick={() => setShowSaid(!showSaid)}>{showSaid ? 'Hide' : 'Show'}</button>
-          </p>
-          {showSaid && (
-            <ul className="text-[13.5px] space-y-1 mt-2" style={{ color: 'var(--text-secondary)' }}>
-              {said.map((x, i) => <Line key={'s' + i} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} />)}
-              {saidCuts.length > 0 && <li className="pl-3 py-0.5 mt-2" style={{ borderLeft: '2px solid var(--grid)' }}><strong>{saidCuts.length} cut{saidCuts.length === 1 ? '' : 's'} named, not voted:</strong> {saidCuts.slice(0, 10).map(c => c.item).join('; ')}{saidCuts.length > 10 ? ` … and ${saidCuts.length - 10} more` : ''}</li>}
-              {gone.length > 0 && <li className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--grid)' }}><strong>Restored or withdrawn:</strong> {gone.map(c => c.item).join('; ')}</li>}
-            </ul>
-          )}
-        </div>
-      )}
-      {story.length + said.length + saidCuts.length === 0 && !closed && <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>Nothing on the record yet. Figures, when they come, are as heard from machine captions; the second in the video is the record.</p>}
     </>
   )
 }
