@@ -1,0 +1,293 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee Special Meeting",
+ "meeting_date": "2025-05-15",
+ "video_id": "KmRUlqJdUcs",
+ "video_url": "https://www.youtube.com/watch?v=KmRUlqJdUcs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2025-05-15-KmRUlqJdUcs.json",
+  "sha256": "eb18c8852beb015960f8720685460911d93f0f653b835cc6c6c38993ed2ca0ea",
+  "caption_lines": 38,
+  "segments": 338
+ },
+ "recording": {
+  "duration_s": 781,
+  "duration": "0:13",
+  "spoken_chars": 11730,
+  "words_approx": 1955
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05152025-7223",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-15-agenda-7223.txt",
+   "path": "sources/meetings/school-committee/2025-05-15-agenda-7223.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05152025-7223",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-15-minutes-7223.txt",
+   "path": "sources/meetings/school-committee/2025-05-15-minutes-7223.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-14T00:47:16Z",
+  "cost_usd": 0.292349
+ },
+ "minutes": {
+  "headline": "School Committee approved incoming superintendent Dr. Fortuna's three-year contract by roll-call vote.",
+  "summary": "The committee announced Dr. Jodie Fortuna's appointment as incoming superintendent, went into executive session, then voted by roll call to approve her contract terms. The rest of the meeting was the first reading of a revised student transportation (bus) fee policy, covering fee tiers, waivers, and the portal-to-portal distance definition.",
+  "attendees": [
+   {
+    "name_as_heard": "Brian Leon",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Beardmore",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Brazilowski (also heard as Mr. Bazilski)",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Minimbo (also heard as Miss Auction)",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Preski (also heard as Mrs. Brzowski)",
+    "role": "as stated, presented superintendent's contract terms"
+   },
+   {
+    "name_as_heard": "Laura",
+    "role": "as stated, helped negotiate contract"
+   },
+   {
+    "name_as_heard": "Anthony (\"Tony\")",
+    "role": "as stated, helped negotiate contract"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "executive-session",
+   "fees",
+   "hiring",
+   "personnel",
+   "policy",
+   "transportation"
+  ],
+  "votes": [
+   {
+    "t": 188,
+    "motion": "Motion to enter executive session to conduct strategy sessions for negotiations with non-union personnel",
+    "moved_by": "",
+    "outcome": "passed 4-0 (roll call, all yes)",
+    "procedural": true
+   },
+   {
+    "t": 290,
+    "motion": "Motion to approve the superintendent's contract as outlined for Dr. Fortuna",
+    "moved_by": "",
+    "outcome": "passed 4-0 (roll call, all yes)",
+    "procedural": false
+   },
+   {
+    "t": 727,
+    "motion": "Motion to accept the first read of policy 3601.1 (bus fee policy)",
+    "moved_by": "",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 770,
+    "motion": "Motion to adjourn",
+    "moved_by": "",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 226,
+    "topic": "Superintendent's contract - annual salary",
+    "figures_as_heard": [
+     "$174,000"
+    ],
+    "what_was_said": "The chair reported that he and a colleague met with the incoming superintendent and agreed on an annual salary. The contract was said to be nearly identical to the outgoing superintendent's."
+   },
+   {
+    "t": 247,
+    "topic": "Superintendent's contract - professional association membership reimbursement",
+    "figures_as_heard": [
+     "$485"
+    ],
+    "what_was_said": "Dr. Fortuna asked for reimbursement of her membership in the American Association of School Superintendents, which the committee agreed to add to the contract."
+   },
+   {
+    "t": 268,
+    "topic": "Superintendent's contract - term and annual raise",
+    "figures_as_heard": [
+     "2 and a half%"
+    ],
+    "what_was_said": "The contract was described as three years with an annual raise, said to be in line with the town manager's contract."
+   },
+   {
+    "t": 625,
+    "topic": "Bus fee policy - standard per-student fee",
+    "figures_as_heard": [
+     "$180"
+    ],
+    "what_was_said": "The draft policy sets an annual busing fee for students using district-contracted buses."
+   },
+   {
+    "t": 625,
+    "topic": "Bus fee policy - reduced lunch status fee",
+    "figures_as_heard": [
+     "$50"
+    ],
+    "what_was_said": "Students with reduced lunch status would pay a lower annual fee under the draft policy."
+   },
+   {
+    "t": 646,
+    "topic": "Bus fee policy - multiple-child family fee",
+    "figures_as_heard": [
+     "$270",
+     "$75"
+    ],
+    "what_was_said": "Families with more than one child using district transportation would pay a higher flat fee, with a lower tier for reduced lunch status families."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 184,
+    "decision": "Committee entered executive session to discuss negotiation strategy for non-union personnel (the incoming superintendent's contract)."
+   },
+   {
+    "t": 460,
+    "decision": "Staff agreed to make sure the bus fee policy document is sent to families before the following Tuesday so parents can give feedback."
+   },
+   {
+    "t": 501,
+    "decision": "Business office to follow up with families who have not yet submitted transportation forms, with reminders tied to the new policy."
+   },
+   {
+    "t": 566,
+    "decision": "A motion to waive the first reading of the bus fee policy was withdrawn; the committee instead read the full policy aloud as the first reading."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 43,
+    "topic": "Call to order and opening procedural remarks",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 44,
+    "t_end": 183,
+    "topic": "Public comment: reading of welcome letter announcing Dr. Jodie Fortuna as incoming superintendent",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 184,
+    "t_end": 223,
+    "topic": "Executive session entered for superintendent contract negotiation strategy",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "personnel",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 224,
+    "t_end": 309,
+    "topic": "New business: vote on incoming superintendent's contract (salary, term, raise, membership reimbursement)",
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions",
+     "hiring",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 310,
+    "t_end": 747,
+    "topic": "Old business: first read of bus fee policy 3601.1, including portal-to-portal distance definition, fee tiers, waivers, and transportation form deadlines",
+    "resolution": "first reading completed after motion to waive was withdrawn; motion to accept first read outcome not audible",
+    "tags": [
+     "transportation",
+     "fees",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 748,
+    "t_end": 769,
+    "topic": "Closing remarks and reminder about town election on Saturday",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 770,
+    "t_end": 780,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Committee members' surnames are rendered inconsistently across the two roll calls (\"Mr. Bazilski\"/\"Mr. Brazilowski\"; \"Miss Auction\"/\"Minimbo\") and it is not clear from captions whether these are the same two people each time.",
+   "The person addressed as \"Mr. Preski\" who reported the contract terms is later referenced as \"Mrs. Brzowski\" crediting the same contract outline; captions do not resolve whether this is one person or two.",
+   "The final outcome/count of the roll-call vote to accept the first read of the bus fee policy is not stated.",
+   "The final outcome/count of the adjournment vote is not stated; captions end during the voice vote."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The committee voted 4-0 by roll call to approve incoming superintendent Dr. Fortuna's three-year contract.",
+    "t": 290
+   },
+   {
+    "line": "The contract adds an annual raise and reimbursement for a professional association membership, and was described as similar to the outgoing superintendent's terms.",
+    "t": 268
+   },
+   {
+    "line": "The committee gave a first reading to a revised student transportation fee policy, withdrawing a motion to waive the reading so the full policy was read aloud.",
+    "t": 566
+   },
+   {
+    "line": "Staff agreed to send the bus fee policy to families before the following Tuesday for feedback and to follow up with families who have not submitted transportation forms.",
+    "t": 460
+   }
+  ],
+  "why_it_matters": [
+   "The superintendent's contract sets salary, term and benefits for the district's top administrator, a recurring line in the school budget.",
+   "The bus fee policy sets what families pay for transportation, including tiers for reduced-lunch status and multiple children, and is not yet final."
+  ],
+  "watch_next": [
+   "Second reading and vote on transportation fee policy 3601.1",
+   "Bus fee policy document sent to families before the following Tuesday for feedback"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-14T00:47:28Z",
+   "cost_usd": 0.1366314
+  }
+ }
+}

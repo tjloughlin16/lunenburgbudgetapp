@@ -1,0 +1,530 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "meeting_date": "2026-01-21",
+ "video_id": "NIZgbfhPwD8",
+ "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2026-01-21-NIZgbfhPwD8.json",
+  "sha256": "385c29519f0a46675fddbdd710a5c3ed35df15ec9d3f2d22eda80275def0ea31",
+  "caption_lines": 374,
+  "segments": 3414
+ },
+ "recording": {
+  "duration_s": 7813,
+  "duration": "2:10",
+  "spoken_chars": 112320,
+  "words_approx": 18720
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01212026-7610",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-01-21-agenda-7610.txt",
+   "path": "sources/meetings/school-committee/2026-01-21-agenda-7610.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01212026-7614",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-01-21-agenda-7614.txt",
+   "path": "sources/meetings/school-committee/2026-01-21-agenda-7614.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01212026-7614",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-01-21-minutes-7614.txt",
+   "path": "sources/meetings/school-committee/2026-01-21-minutes-7614.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-13T23:34:52Z",
+  "cost_usd": 0.4384094
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Tony",
+    "role": "school committee member"
+   },
+   {
+    "name_as_heard": "Emily",
+    "role": "school committee member"
+   },
+   {
+    "name_as_heard": "Dr. Fortuna",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Chris",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "Dr. Saki",
+    "role": "presenter, grant amendment proposal"
+   },
+   {
+    "name_as_heard": "Squire",
+    "role": "principal"
+   },
+   {
+    "name_as_heard": "Beth Robinson",
+    "role": "MTSS specialist and instructional specialist, primary school"
+   },
+   {
+    "name_as_heard": "Amy Resnik",
+    "role": "math coach",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Liz",
+    "role": "staff, asked to compile FTE/staffing data"
+   }
+  ],
+  "headline": "Committee plans two FY27 budgets, banking on a town override; without one, deep cuts loom",
+  "summary": "The committee reviewed reading and math screening data, approved a Student Opportunity Grant reallocation and a preschool tuition/5-day schedule change, and discussed drafting two FY27 budgets (level-services and one with added strategic investments) ahead of an override push, since a flat town revenue projection would otherwise force large cuts. It also discussed a new decision framework for Turkey Hill Elementary, favoring new construction over rehab if the town's out-of-pocket share stays within a proposed threshold, with a vote planned for a future meeting.",
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "chapter-70",
+   "contracts-and-unions",
+   "curriculum",
+   "economic-development",
+   "enrollment",
+   "facilities",
+   "fees",
+   "grants",
+   "health-insurance",
+   "hiring",
+   "msba",
+   "override",
+   "personnel",
+   "primary-school",
+   "school-choice",
+   "special-education",
+   "staffing",
+   "state-aid",
+   "superintendent-report",
+   "tax-rate",
+   "town-meeting",
+   "transfers",
+   "transportation",
+   "turkey-hill",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 326,
+    "motion": "Accept the two Box Tops donations and approve the special education line item transfer for ASL interpreter costs",
+    "outcome": "passed (voice vote, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 846,
+    "motion": "Approve the Student Opportunity Grant reallocation proposal presented by Dr. Saki",
+    "outcome": "passed (voice vote, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 1142,
+    "motion": "Approve the preschool tuition schedule, including the addition of a five-day option",
+    "outcome": "passed (voice vote, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 7791,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed (voice vote, ayes heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 200,
+    "topic": "Warrants, January 6-14",
+    "figures_as_heard": [
+     "133,29869"
+    ],
+    "what_was_said": "The chair noted the warrants covering January 6 to 14 were included in the meeting materials."
+   },
+   {
+    "t": 243,
+    "topic": "Box Tops for Education donations",
+    "figures_as_heard": [
+     "$55.30",
+     "$3660"
+    ],
+    "what_was_said": "Two Box Tops for Education donations were reported, one for Turkey Hill Elementary and one for Lunenburg Middle School."
+   },
+   {
+    "t": 285,
+    "topic": "Special education line item transfer (ASL interpreters)",
+    "figures_as_heard": [
+     "$2,500"
+    ],
+    "what_was_said": "A transfer was proposed from special ed contracted evaluations to special ed contracted related services to cover rising ASL interpreter costs."
+   },
+   {
+    "t": 579,
+    "topic": "Student Opportunity Grant reallocation - supplies",
+    "figures_as_heard": [
+     "$25,000"
+    ],
+    "what_was_said": "Most of the requested supply money would go toward decodable readers, with the rest for math manipulatives, place-value mats and staff book studies."
+   },
+   {
+    "t": 1037,
+    "topic": "Preschool tuition increase",
+    "figures_as_heard": [
+     "4%"
+    ],
+    "what_was_said": "Preschool tuition would rise by the program's standard annual rate, applied across new two-, three-, four- and five-day options."
+   },
+   {
+    "t": 4302,
+    "topic": "Draft warrant articles - Kids Kingdom / turf field",
+    "figures_as_heard": [
+     "195,830"
+    ],
+    "what_was_said": "A draft town meeting warrant article ties a specific figure to one of the projects, described as matching a bid already in hand."
+   },
+   {
+    "t": 4387,
+    "topic": "FY27 proposed budget, level services",
+    "figures_as_heard": [
+     "28,259,974",
+     "$2 million"
+    ],
+    "what_was_said": "The business manager presented a level-services FY27 budget, describing it as roughly two million dollars above the FY26 budget with no staffing cuts or additions."
+   },
+   {
+    "t": 4409,
+    "topic": "Health insurance share of FY27 budget",
+    "figures_as_heard": [
+     "14%",
+     "16%",
+     "8 to $900,000"
+    ],
+    "what_was_said": "Health insurance is projected to grow from a smaller to a larger share of the school budget, estimated as an increase in the high hundreds of thousands of dollars."
+   },
+   {
+    "t": 4449,
+    "topic": "Salary and expense increases",
+    "figures_as_heard": [
+     "about a million dollars"
+    ],
+    "what_was_said": "Both salary and expense sides of the budget are projected to rise by roughly that amount, driven by contractual obligations under the teachers', paraprofessional and custodian union agreements."
+   },
+   {
+    "t": 4511,
+    "topic": "Town-wide health insurance cost",
+    "figures_as_heard": [
+     "$50 million",
+     "$1.3 million",
+     "2.7"
+    ],
+    "what_was_said": "The chair relayed rough, round figures from the town manager suggesting town-wide health insurance costs are roughly doubling year over year."
+   },
+   {
+    "t": 4553,
+    "topic": "Student transportation cost increase",
+    "figures_as_heard": [
+     "$300,000"
+    ],
+    "what_was_said": "Combined general and special education transportation costs are projected to rise substantially, attributed to the district having only one bidder for busing services for several consecutive contracts."
+   },
+   {
+    "t": 4865,
+    "topic": "Town revenue projection reduction scenario",
+    "figures_as_heard": [
+     "$1.7 million"
+    ],
+    "what_was_said": "One preliminary town revenue projection would mean a reduction for the schools, described by the business manager as not a viable option."
+   },
+   {
+    "t": 6192,
+    "topic": "Strategic investment budget option",
+    "figures_as_heard": [
+     "1.6",
+     "1.7",
+     "3.7"
+    ],
+    "what_was_said": "A second, expanded FY27 budget option with targeted investments would add roughly that amount on top of level services, for a combined increase over the current year's budget."
+   },
+   {
+    "t": 6276,
+    "topic": "School share of initial town revenue projection",
+    "figures_as_heard": [
+     "$1.3 million",
+     "53.3%",
+     "$696,521.74",
+     "$1.78 million"
+    ],
+    "what_was_said": "Applying the schools' traditional share of town revenue growth to an initial projection, the business manager calculated a small increase for the district, implying a large cut would otherwise be needed without an override."
+   },
+   {
+    "t": 6648,
+    "topic": "DEBUS transportation contract, recalculated total increase",
+    "figures_as_heard": [
+     "almost a4 million",
+     "$246,000"
+    ],
+    "what_was_said": "Including athletic transportation, the total DEBUS contract cost increase from last year was recalculated live at the meeting."
+   },
+   {
+    "t": 6862,
+    "topic": "Turkey Hill rehab-versus-rebuild cost threshold",
+    "figures_as_heard": [
+     "25%",
+     "50 years",
+     "100 years"
+    ],
+    "what_was_said": "A proposed policy would favor new construction over rehabilitation if the town's out-of-pocket cost (after MSBA reimbursement) is no more than a set percentage above the rehab cost, reasoning a new building could last twice as long."
+   }
+  ],
+  "transfers": [
+   {
+    "t": 285,
+    "description": "special ed contracted evaluations to special ed contracted related services, to cover rising ASL interpreter costs",
+    "amount_as_heard": "$2,500",
+    "outcome": "voted"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 200,
+    "decision": "No minutes were available for the committee to review or approve at this meeting."
+   },
+   {
+    "t": 4345,
+    "decision": "The draft turf field and Kids Kingdom warrant articles were treated as discussion only tonight, with the language considered ready for the town to act on; no formal committee vote was taken on the article text."
+   },
+   {
+    "t": 6608,
+    "decision": "The business manager was directed to prepare a second FY27 budget version incorporating the discussed strategic investment additions, alongside the level-services budget."
+   },
+   {
+    "t": 6754,
+    "decision": "Liz was asked to compile data on FTE positions and the percentage of staff lost over recent years for a future meeting."
+   },
+   {
+    "t": 7686,
+    "decision": "Further discussion of the Turkey Hill directive memo will occur, with a vote planned for a meeting two sessions from now, in part so the absent member can be present."
+   },
+   {
+    "t": 7791,
+    "decision": "The committee will set a date for a public forum on the school budget at its next meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 99,
+    "topic": "Opening, pledge of allegiance, executive session",
+    "resolution": "procedural",
+    "tags": [
+     "executive-session"
+    ]
+   },
+   {
+    "t_start": 99,
+    "t_end": 119,
+    "topic": "Public comment (none offered)",
+    "resolution": "no comment",
+    "tags": []
+   },
+   {
+    "t_start": 119,
+    "t_end": 180,
+    "topic": "Chair's report: member vacancy after resignation",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 180,
+    "t_end": 200,
+    "topic": "No student representative present; no minutes to review",
+    "resolution": "no resolution",
+    "tags": []
+   },
+   {
+    "t_start": 200,
+    "t_end": 345,
+    "topic": "Warrants, donations, and special education line item transfer",
+    "resolution": "voted",
+    "tags": [
+     "transfers",
+     "special-education",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 346,
+    "t_end": 410,
+    "topic": "Superintendent's report, including LEAF Foundation grant cycle",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 410,
+    "t_end": 854,
+    "topic": "Student Opportunity Grant reallocation proposal",
+    "resolution": "voted",
+    "tags": [
+     "grants",
+     "curriculum",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 854,
+    "t_end": 1160,
+    "topic": "Preschool tuition increase and new five-day schedule option",
+    "resolution": "voted",
+    "tags": [
+     "fees",
+     "primary-school",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 1169,
+    "t_end": 3872,
+    "topic": "Reading and math screening data presentation (DIBELS, USNS), primary school and Turkey Hill",
+    "resolution": "informational",
+    "tags": [
+     "curriculum",
+     "primary-school",
+     "turkey-hill"
+    ]
+   },
+   {
+    "t_start": 4201,
+    "t_end": 4366,
+    "topic": "Draft town meeting warrant articles: turf field and Kids Kingdom",
+    "resolution": "discussed, no vote taken",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4366,
+    "t_end": 6780,
+    "topic": "FY27 proposed budget, cost drivers, and override strategy ahead of tri-board",
+    "resolution": "discussed; business manager directed to prepare a second budget option",
+    "tags": [
+     "budget-fy27",
+     "override",
+     "health-insurance"
+    ]
+   },
+   {
+    "t_start": 6780,
+    "t_end": 7688,
+    "topic": "Old business: Turkey Hill Elementary capital planning directive",
+    "resolution": "discussed, vote deferred to a future meeting",
+    "tags": [
+     "turkey-hill",
+     "capital",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 7688,
+    "t_end": 7709,
+    "topic": "Public comment on issues discussed tonight (none offered)",
+    "resolution": "no comment",
+    "tags": []
+   },
+   {
+    "t_start": 7709,
+    "t_end": 7751,
+    "topic": "Subcommittee reports: PTO dance fundraiser, tri-board meeting",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 7751,
+    "t_end": 7791,
+    "topic": "Topics for future discussion: setting a date for a public budget forum",
+    "resolution": "deferred to next meeting",
+    "tags": [
+     "budget",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 7791,
+    "t_end": 7810,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The exact warrant total near t=200 is rendered as '133,29869', which does not parse as a clean dollar figure.",
+   "The exact town-wide health insurance figures relayed secondhand near t=4511 are described by the speaker as rough, round numbers from the town manager, not firm figures.",
+   "The recalculated DEBUS/athletic transportation total near t=6648 ('almost a4 million... $246,000') is garbled and internally inconsistent in the captions.",
+   "No roll call counts are given for any vote; all votes are heard only as unanimous-sounding voice votes ('all in favor... I').",
+   "A name near t=1272 ('Dr. where it's not said') is garbled and could not be confirmed.",
+   "Portions of the reading/math data presentation (roughly 1169-3872) include extended technical exchanges where individual speaker attribution is uncertain.",
+   "The specific figure/name behind the Kids Kingdom vs. turf field warrant article distinction near t=4302-4324 is not fully disambiguated in the captions."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The business manager was directed to prepare a second FY27 budget with strategic-investment additions alongside a level-services option, as a flat town revenue scenario was called not viable.",
+    "t": 6608
+   },
+   {
+    "line": "The committee approved a Student Opportunity Grant reallocation toward decodable readers and math materials.",
+    "t": 846
+   },
+   {
+    "line": "The committee approved a revised preschool tuition schedule adding a five-day option.",
+    "t": 1142
+   },
+   {
+    "line": "Turkey Hill Elementary capital planning discussion favored new construction over rehab within a proposed cap on the town's cost share, with a vote deferred to let an absent member weigh in.",
+    "t": 7686
+   },
+   {
+    "line": "A special education line item transfer was approved to cover rising ASL interpreter costs.",
+    "t": 326
+   }
+  ],
+  "why_it_matters": [
+   "Whether the town approves an override this year will decide which of the two FY27 school budgets goes forward, and that shapes any cuts or new spending residents are asked to fund.",
+   "Preschool families will see a new tuition schedule and a five-day enrollment option take effect.",
+   "The Turkey Hill decision, still unvoted, will set the direction and town cost share for a major school building project."
+  ],
+  "watch_next": [
+   "Turkey Hill Elementary directive vote, planned two meetings from this one",
+   "public budget forum date, to be set at the next School Committee meeting"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-13T23:35:09Z",
+   "cost_usd": 0.14110140000000002
+  }
+ }
+}

@@ -1,0 +1,175 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee Special Meeting",
+ "meeting_date": "2025-05-20",
+ "video_id": "M-BfcrTMqbU",
+ "video_url": "https://www.youtube.com/watch?v=M-BfcrTMqbU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2025-05-20-M-BfcrTMqbU.json",
+  "sha256": "81400023b32d9afa3db2a988145ed321fc42f1f0c96b5ae9660554affd5eff10",
+  "caption_lines": 7,
+  "segments": 52
+ },
+ "recording": {
+  "duration_s": 143,
+  "duration": "0:02",
+  "spoken_chars": 1686,
+  "words_approx": 281
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05202025-7232",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-20-agenda-7232.txt",
+   "path": "sources/meetings/school-committee/2025-05-20-agenda-7232.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05202025-7232",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-20-minutes-7232.txt",
+   "path": "sources/meetings/school-committee/2025-05-20-minutes-7232.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-14T00:45:17Z",
+  "cost_usd": 0.15485939999999998
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Dr. Bham",
+    "role": "conducted roll call votes, as directed by the chair"
+   },
+   {
+    "name_as_heard": "Mrs. Broski (also heard as Mrs. Brazowski)",
+    "role": "committee member"
+   },
+   {
+    "name_as_heard": "Mrs. Gilman",
+    "role": "committee member"
+   },
+   {
+    "name_as_heard": "Mr. Schoolbrini (also heard as Mr. Schooly)",
+    "role": "committee member"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "policy",
+   "transportation"
+  ],
+  "votes": [
+   {
+    "t": 63,
+    "motion": "Motion to waive second reading of the bus policy",
+    "moved_by": "",
+    "outcome": "passed 3-0 (roll call: Mrs. Broski yes, Mrs. Gilman yes, Mr. Schoolbrini yes)",
+    "procedural": false
+   },
+   {
+    "t": 104,
+    "motion": "Motion to adjourn at 4:07 p.m.",
+    "moved_by": "",
+    "outcome": "passed 3-0 (roll call: Mrs. Broski yes, Mrs. Gilman yes, Mr. Schooly yes)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 63,
+    "decision": "Third and final reading of the bus policy will occur the following night, after second reading was waived at this meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 62,
+    "topic": "Open meeting law notice and call to order",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 63,
+    "t_end": 83,
+    "topic": "Motion to waive second reading of the bus policy so a third and final reading could occur the next night",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 84,
+    "t_end": 103,
+    "topic": "Roll call vote confirming quorum (three members present) and passing the waiver motion",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 104,
+    "t_end": 124,
+    "topic": "Call for public comment (none offered) and motion to adjourn",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 125,
+    "t_end": 146,
+    "topic": "Roll call vote to adjourn",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact full names of members are garbled/mangled by captions (e.g., 'Broski' vs 'Brazowski', 'Schoolbrini' vs 'Schooly') and cannot be confirmed as heard.",
+   "The chair's own name is never stated in the captions.",
+   "Dr. Bham's role on/off the committee (e.g., superintendent vs. member) is not stated."
+  ],
+  "confidence": "moderate",
+  "headline": "Committee waived second reading of the bus policy, clearing the way for a final reading the next night",
+  "summary": "A brief special School Committee meeting with only three members present (a bare quorum) voted to waive second reading of the bus policy so that third and final reading could happen the following night. No public comment was offered at either opportunity, and the meeting adjourned after roll call votes on both the waiver and adjournment."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The committee voted 3-0 to waive second reading of the bus policy, clearing it for a third and final reading the next night.",
+    "t": 63
+   },
+   {
+    "line": "Only three of five members were present, a bare quorum, for this special meeting.",
+    "t": 84
+   },
+   {
+    "line": "No public comment was offered when the floor was opened.",
+    "t": 104
+   },
+   {
+    "line": "The meeting adjourned by roll call vote after the waiver passed.",
+    "t": 125
+   }
+  ],
+  "why_it_matters": [
+   "The bus policy is one vote from final adoption, which can set rules families rely on for bus eligibility and routes.",
+   "This step passed on a bare quorum of three of five members, and no resident weighed in before the vote."
+  ],
+  "watch_next": [
+   "Third and final reading of the bus policy, the following night"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-14T00:45:33Z",
+   "cost_usd": 0.1316774
+  }
+ }
+}

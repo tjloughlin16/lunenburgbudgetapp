@@ -1,0 +1,917 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "meeting_date": "2024-05-01",
+ "video_id": "BZaMa3F272M",
+ "video_url": "https://www.youtube.com/watch?v=BZaMa3F272M",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2024-05-01-BZaMa3F272M.json",
+  "sha256": "0aeb7555b5b07e7a08bfea319ccc40b69da5fb65a9478dd632c15ee2cd0d4894",
+  "caption_lines": 571,
+  "segments": 4238
+ },
+ "recording": {
+  "duration_s": 12111,
+  "duration": "3:21",
+  "spoken_chars": 139979,
+  "words_approx": 23329
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05012024-6554",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-05-01-agenda-6554.txt",
+   "path": "sources/meetings/school-committee/2024-05-01-agenda-6554.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05012024-6554",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-05-01-minutes-6554.txt",
+   "path": "sources/meetings/school-committee/2024-05-01-minutes-6554.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-14T02:25:12Z",
+  "cost_usd": 0.5299384
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Carol",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Dr. Burnham",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Mr. Beardmore",
+    "role": "school committee member"
+   },
+   {
+    "name_as_heard": "Mr. Leon",
+    "role": "school committee member"
+   },
+   {
+    "name_as_heard": "Mrs. Brazowski",
+    "role": "school committee member"
+   },
+   {
+    "name_as_heard": "Mrs. Pelski",
+    "role": "school committee member"
+   },
+   {
+    "name_as_heard": "Tony",
+    "role": "school committee member"
+   },
+   {
+    "name_as_heard": "Mr. Bernard",
+    "role": "Director of DPW"
+   },
+   {
+    "name_as_heard": "Mr. Heie",
+    "role": "Director of Facilities and Grounds"
+   },
+   {
+    "name_as_heard": "Mrs. Peterson",
+    "role": "school business/finance staff",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mrs. Gillette",
+    "role": "Extended Day/ELC coordinator",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mrs. Hansum",
+    "role": "Director of Student Services/Special Education"
+   },
+   {
+    "name_as_heard": "student representative",
+    "role": "student representative"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "athletics",
+   "budget",
+   "budget-fy26",
+   "capital",
+   "chapter-70",
+   "enrollment",
+   "facilities",
+   "fees",
+   "hiring",
+   "out-of-district",
+   "override",
+   "personnel",
+   "policy",
+   "roads-and-dpw",
+   "school-choice",
+   "special-education",
+   "staffing",
+   "state-aid",
+   "superintendent-report",
+   "tax-rate",
+   "town-meeting",
+   "transportation"
+  ],
+  "votes": [
+   {
+    "t": 3315,
+    "motion": "Approve the extended day and Early Learning Center handbooks for the coming year",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3508,
+    "motion": "Suspend the food and drink policy for the auditorium for annual town meeting on May 4th",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 12093,
+    "motion": "Adjourn into executive session, not to return to open session",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 531,
+    "topic": "Warrants approved",
+    "what_was_said": "The chair reported warrants approved between April 10th and April 29th.",
+    "figures_as_heard": [
+     "$328",
+     "328,000",
+     "$28 42"
+    ]
+   },
+   {
+    "t": 4369,
+    "topic": "High school universal activity fee",
+    "what_was_said": "All high school students are charged this fee whether or not they participate in an activity; a member recalled it being lower in past years.",
+    "figures_as_heard": [
+     "$55",
+     "$35"
+    ]
+   },
+   {
+    "t": 4586,
+    "topic": "Student parking pass fee",
+    "what_was_said": "Students pay a parking fee but the revenue goes to the town's general fund, not the school; the school also pays to print the physical passes, which the committee flagged as a net loss for the district.",
+    "figures_as_heard": [
+     "$50"
+    ]
+   },
+   {
+    "t": 4670,
+    "topic": "Estimated annual parking pass revenue",
+    "what_was_said": "Members estimated the rough annual total collected from student parking passes.",
+    "figures_as_heard": [
+     "1,000 bucks",
+     "200 * 50"
+    ]
+   },
+   {
+    "t": 6127,
+    "topic": "School choice per-pupil state reimbursement",
+    "what_was_said": "The state reimbursement per school-choice student has not been raised in years; the superintendent listed how many seats could be opened by grade and the potential revenue if all were filled.",
+    "figures_as_heard": [
+     "$5,000",
+     "90,000",
+     "18"
+    ]
+   },
+   {
+    "t": 10183,
+    "topic": "Town Manager's preliminary FY25 school budget",
+    "what_was_said": "The preliminary budget proposed in February represented an increase over the prior year and would have required substantial FTE cuts before additional funding was added.",
+    "figures_as_heard": [
+     "$3,594",
+     "th000",
+     "$522",
+     "2.94%"
+    ]
+   },
+   {
+    "t": 10230,
+    "topic": "Added certified new growth and local receipts",
+    "what_was_said": "The town manager added certified new growth funding and local receipts to the school budget, and redirected planned pavement management money to schools instead.",
+    "figures_as_heard": [
+     "$236,000",
+     "$236,200",
+     "$41,000",
+     "$41,321",
+     "$50,000"
+    ]
+   },
+   {
+    "t": 10296,
+    "topic": "Town Manager's recommended Omnibus school budget",
+    "what_was_said": "This is the Omnibus budget figure expected to be voted at town meeting, funded through the tax levy and Chapter 70.",
+    "figures_as_heard": [
+     "23, 91,9"
+    ]
+   },
+   {
+    "t": 10317,
+    "topic": "ARPA one-time funds for schools",
+    "what_was_said": "The select board appropriated ARPA funds for a mandatory network security upgrade, 911-compliant phone systems, and Chromebook purchases; these are one-time, non-recurring funds.",
+    "figures_as_heard": [
+     "$221,600",
+     "7 $5,895"
+    ]
+   },
+   {
+    "t": 10402,
+    "topic": "Total Omnibus plus one-time school spending",
+    "what_was_said": "This is the combined total the committee is counting on heading into town meeting's Article 8.",
+    "figures_as_heard": [
+     "$24,1 123,50 N8"
+    ]
+   },
+   {
+    "t": 10742,
+    "topic": "Proposed override amount",
+    "what_was_said": "The override under consideration would add this amount to the tax levy on top of the Omnibus budget.",
+    "figures_as_heard": [
+     "$948,000"
+    ]
+   },
+   {
+    "t": 10763,
+    "topic": "Average residential property assessment and Omnibus tax impact",
+    "what_was_said": "Based on FY24 assessments reflected in Q4 tax bills, the average residential property would see this tax increase from the Omnibus budget alone.",
+    "figures_as_heard": [
+     "$481,500",
+     "$678",
+     "$120"
+    ]
+   },
+   {
+    "t": 10804,
+    "topic": "Override impact on average tax bill",
+    "what_was_said": "If the override passes, the presenter said the Omnibus tax increase would grow by this additional amount for the average property.",
+    "figures_as_heard": [
+     "$318",
+     "$198"
+    ]
+   },
+   {
+    "t": 10824,
+    "topic": "Override impact on higher-valued property example",
+    "what_was_said": "The presenter offered a rough example of the override's tax impact on a roughly $1 million property.",
+    "figures_as_heard": [
+     "693",
+     "263",
+     "430"
+    ]
+   },
+   {
+    "t": 7492,
+    "topic": "Athletics budget lines",
+    "what_was_said": "The school budget includes set lines for athletics and athletic transportation that do not cover the actual seasonal cost, particularly for fall.",
+    "figures_as_heard": [
+     "95,000",
+     "40,000",
+     "58,000",
+     "almost 27,000"
+    ]
+   },
+   {
+    "t": 7659,
+    "topic": "Athletic new equipment budget",
+    "what_was_said": "A set annual amount is budgeted for new equipment such as balls, socks, and other consumables across sports.",
+    "figures_as_heard": [
+     "6,000"
+    ]
+   },
+   {
+    "t": 8020,
+    "topic": "Athletic revolving account ticket sales",
+    "what_was_said": "Gate receipts for fall and winter sports are estimated revenue into the athletic revolving account; spring sports charge no admission.",
+    "figures_as_heard": [
+     "about 5,000",
+     "3500"
+    ]
+   },
+   {
+    "t": 8408,
+    "topic": "Actual cost to run athletic seasons",
+    "what_was_said": "Based on FY24 figures, the presenter gave the actual cost to run each athletic season, well above what is budgeted, not including coaching salaries.",
+    "figures_as_heard": [
+     "92600",
+     "almost 91,000",
+     "11,000"
+    ]
+   },
+   {
+    "t": 9301,
+    "topic": "Turf field debt payment",
+    "what_was_said": "The district budgets an annual payment to the town to pay down the turf field debt, with the final payment expected in 2028; Verizon antenna lease revenue on the turf field goes to a town-held account, not the school program.",
+    "figures_as_heard": [
+     "45,000"
+    ]
+   },
+   {
+    "t": 9383,
+    "topic": "Total actual athletics cost vs. budget",
+    "what_was_said": "A member totaled the actual athletic program costs against what is budgeted, showing a large gap covered by the revolving account (user fees and gate receipts).",
+    "figures_as_heard": [
+     "281,000",
+     "95,000",
+     "40,000"
+    ]
+   },
+   {
+    "t": 3993,
+    "topic": "Possible school committee finance workshop cost",
+    "what_was_said": "The superintendent will check the cost of a vendor-run finance best-practices workshop for the committee; a member joked they would not want to pay an exorbitant per-plate cost.",
+    "figures_as_heard": [
+     "$1,000 a plate"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 3782,
+    "description": "Potential additional line-item transfers to cover payroll/salary lines running in deficit, to be brought at the next meeting after further analysis by contracted finance consultants",
+    "amount_as_heard": "not specified",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 2572,
+    "decision": "Committee will get input from the school principal and revisit the rainwater retention (rain garden) project, including plant selection and maintenance plan, before voting at the May 22nd meeting."
+   },
+   {
+    "t": 3931,
+    "decision": "Committee is interested in holding a separate finance/budget workshop, ideally timed to include the incoming business manager once hired."
+   },
+   {
+    "t": 7366,
+    "decision": "Committee will revisit the school choice seat numbers again at the next meeting, after town meeting and the ballot vote, rather than deciding tonight."
+   },
+   {
+    "t": 9787,
+    "decision": "No immediate change to athletics funding or fees, but the committee flagged that budget adjustments to athletics may be needed as soon as the next budget cycle."
+   },
+   {
+    "t": 11339,
+    "decision": "Override presentation team will add a slide showing the concrete impact on students/class sizes if the override fails, and will explicitly note Chromebooks as a recurring cost."
+   },
+   {
+    "t": 12053,
+    "decision": "Superintendent asked to provide the committee a written schedule/plan for the superintendent evaluation process before the next meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 16,
+    "t_end": 124,
+    "topic": "Call to order, broadcast notice, Pledge of Allegiance",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 124,
+    "t_end": 443,
+    "topic": "Public comment period: tribute to late longtime music teacher Don Adams, and reminders to attend Saturday's town meeting and the May 18th election; speakers appear to have been committee members rather than floor members of the public",
+    "resolution": "informational, no vote",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 443,
+    "t_end": 531,
+    "topic": "Chair's report: town meeting logistics, warrants approved",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 551,
+    "t_end": 825,
+    "topic": "Superintendent's report: transportation forms, kindergarten/enrollment update, planned June athletic head-injury presentation, DPW roadwork coordination, May/June calendar including town meeting, election, and graduation",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "enrollment",
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 825,
+    "t_end": 890,
+    "topic": "Student representative report on school events",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 890,
+    "t_end": 2699,
+    "topic": "Rainwater retention (rain garden) demonstration project at the Middle High School, presented by the DPW director, required under the MS4 stormwater permit",
+    "resolution": "no vote; deferred to May 22nd pending principal input, plant selection changes, and maintenance plan",
+    "tags": [
+     "facilities",
+     "roads-and-dpw",
+     "high-school"
+    ]
+   },
+   {
+    "t_start": 2699,
+    "t_end": 3339,
+    "topic": "Extended Day and Early Learning Center handbooks for the coming year",
+    "resolution": "voted, approved",
+    "tags": [
+     "policy",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 3339,
+    "t_end": 3721,
+    "topic": "Food and drink policy suspension in the auditorium for annual town meeting, including lunch menu, overflow locations, and voting clickers",
+    "resolution": "voted, approved",
+    "tags": [
+     "town-meeting",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3721,
+    "t_end": 4201,
+    "topic": "FY24 budget update: weekly meetings with new town finance director, possible line-item transfers, and a proposed school committee finance workshop tied to hiring a new business manager",
+    "resolution": "informational; workshop pursued pending hire",
+    "tags": [
+     "budget-fy26",
+     "hiring",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 4201,
+    "t_end": 5878,
+    "topic": "Discussion of potential new fees and revenue sources for FY26: activity fee, athletic fees, parking passes, prek tuition routing to the town, transportation fees, cell tower and solar options",
+    "resolution": "no vote; general resistance to new fees except possibly athletics; superintendent to gather more information",
+    "tags": [
+     "fees",
+     "budget-fy26"
+    ]
+   },
+   {
+    "t_start": 5878,
+    "t_end": 7409,
+    "topic": "School choice: review of class sizes by grade and potential additional seats, state reimbursement rate, and risk of over-enrolling given possible FY26 budget cuts",
+    "resolution": "no vote taken; decision deferred to next meeting",
+    "tags": [
+     "school-choice",
+     "enrollment",
+     "budget-fy26"
+    ]
+   },
+   {
+    "t_start": 7409,
+    "t_end": 9977,
+    "topic": "Overview of athletic program funding: school budget vs. athletic revolving account, booster clubs, facility rentals, ticket sales, transportation costs, and turf field debt",
+    "resolution": "informational; no vote, but flagged upcoming budget pressure on athletics",
+    "tags": [
+     "athletics",
+     "budget",
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 9997,
+    "t_end": 12012,
+    "topic": "Rehearsal of the override presentation for town meeting: budget history, what the override would fund, tax impact estimates, and messaging including a planned new slide on impacts if the override fails",
+    "resolution": "no committee vote; presentation refined for town meeting and the May 18th ballot",
+    "tags": [
+     "override",
+     "tax-rate",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 12012,
+    "t_end": 12093,
+    "topic": "Topics for future meetings, including post-election reorganization and the superintendent evaluation timeline",
+    "resolution": "no resolution beyond request for a written schedule",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 12093,
+    "t_end": 12093,
+    "topic": "Motion to adjourn into executive session",
+    "resolution": "voted, approved",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Exact warrant total figure (rendered inconsistently as \"$328\", \"328,000\", \"$28 42\")",
+   "Exact town manager's preliminary FY25 budget figure (rendered as \"$3,594 th000... $522\")",
+   "Exact town manager's recommended Omnibus budget total (rendered as \"23, 91,9\")",
+   "Exact total Omnibus plus one-time spending figure (rendered as \"$24,1 123,50 N8\")",
+   "Vote counts for any motion; only voice votes (\"aye\") are audible with no tally given",
+   "The superintendent's name is rendered inconsistently (\"superintendent Bon\", \"Dr Burnham\", \"Dr Burton\")",
+   "The name of one committee member making a comment near the end of the athletics discussion is garbled (\"Mr school and brainy\")",
+   "Whether the two speakers introduced during the public-comment segment were in fact members of the public or, as later context strongly suggests, sitting school committee members"
+  ],
+  "confidence": "moderate",
+  "headline": "Committee rehearsed its override pitch for town meeting, warning of deep staff and program cuts if it fails.",
+  "summary": "This meeting was largely preparation for Saturday's annual town meeting and the May 18th override vote: a full rehearsal of the override presentation (budget history, what it would fund, and estimated tax impact), plus logistics for food, overflow seating, and voting clickers at town meeting. The committee also heard a stormwater rain-garden project proposal (deferred to May 22nd), approved extended-day/ELC handbooks, discussed but took no action on new fees, reviewed school choice options and athletic program funding, and voted to enter executive session at the close."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The committee rehearsed its override presentation ahead of Saturday's town meeting and the May 18th ballot, warning that failure would force staff and program cuts.",
+    "t": 9997
+   },
+   {
+    "line": "The committee voted to approve the Extended Day and Early Learning Center handbooks for the coming year.",
+    "t": 3315
+   },
+   {
+    "line": "The committee voted to suspend the auditorium food and drink policy for annual town meeting.",
+    "t": 3508
+   },
+   {
+    "line": "A vote on the proposed stormwater rain-garden project at the Middle High School was deferred to May 22nd pending input from the school principal.",
+    "t": 2572
+   },
+   {
+    "line": "A decision on adding school choice seats was deferred to the next meeting, to be taken up after town meeting and the override ballot.",
+    "t": 7366
+   }
+  ],
+  "why_it_matters": [
+   "A failed override vote on May 18th could mean staff and program reductions in the schools, while a successful one adds to residents' tax bills on top of the Omnibus budget.",
+   "Any decision to open additional school choice seats affects enrollment, classroom sizes, and the per-pupil state reimbursement the district receives.",
+   "The committee flagged that athletic program funding may need adjustment in the next budget cycle, which could affect fees or offerings for student athletes."
+  ],
+  "watch_next": [
+   "May 18th override ballot vote",
+   "May 22nd School Committee meeting: rain-garden project vote and school choice seat decision"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-14T02:25:25Z",
+   "cost_usd": 0.1416604
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05012024-6554",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-05-01-minutes-6554.txt",
+   "path": "sources/meetings/school-committee/2024-05-01-minutes-6554.pdf"
+  },
+  "official_sha256": "d5e6cfb5d82c243d178c0ee71b7360d570361c1a746e0ad04d7e3a4b12a59659",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on every non-procedural vote, the substance of the transfer discussion, and the three main revisit/deferral decisions, and most attendee mismatches are just caption misspellings of names on the official roster. The biggest gap is that the official minutes are a narrative summary that drops nearly every dollar figure and slide-derived number (activity/parking fees, school-choice cost gap, budget/override math, all athletics figures) that our minutes captured from the recording, and one attendee — \"Mrs. Pelski\" — does not correspond to anyone on the official roster and should be checked.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 25,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Extended Day/ELC handbooks",
+    "ours": "[t=3315] Approve the extended day and Early Learning Center handbooks for the coming year — passed",
+    "official": "Mr. Sculimbrene makes a motion to accept these handbooks.  Mr. Lehtinen seconds the motion.  All approve",
+    "note": "Same vote, same outcome, both records agree it passed."
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer: payroll/salary line deficits",
+    "ours": "[t=3782] Potential additional line-item transfers to cover payroll/salary lines running in deficit, to be brought at the next meeting after further analysis by contracted finance consultants — not specified (discussed only)",
+    "official": "Our team including the contracted finance personnel are now meeting weekly with the finance director at town hall.  We should have an updated budget and any line item transfers at our next meeting.",
+    "note": "Both records describe the same deferred, unspecified transfer discussion tied to the contracted finance consultants."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant total",
+    "ours": "[t=531] Warrants approved: $328, 328,000, $28 42",
+    "official": "Warrant Total 4/10/24-4/29/24 $328,208.42 Warrants have been signed by Ms. Archambault, no questions.",
+    "official_reading": "$328,208.42",
+    "note": "Garbled digit grouping in the caption; the underlying figure matches the official warrant total."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "High school universal activity fee amounts",
+    "ours": "[t=4369] High school universal activity fee: $55, $35",
+    "official": "",
+    "note": "Official only says an activity fee was among options discussed, with no dollar figures; cannot corroborate $55/$35 from the official text."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Student parking pass fee",
+    "ours": "[t=4586] Student parking pass fee: $50",
+    "official": "",
+    "note": "Official mentions parking passes as a fee option but gives no figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Estimated annual parking pass revenue",
+    "ours": "[t=4670] Estimated annual parking pass revenue: 1,000 bucks, 200 * 50",
+    "official": "",
+    "note": "No revenue estimate appears in the official minutes; unverifiable against the source."
+   },
+   {
+    "kind": "agree",
+    "about": "School choice per-pupil state reimbursement",
+    "ours": "[t=6127] School choice per-pupil state reimbursement: $5,000",
+    "official": "We receive $5000 per student, however the cost per student is more than that.",
+    "note": "The $5,000 reimbursement figure matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School choice cost-per-student figures",
+    "ours": "[t=6127] 90,000, 18 (additional figures beyond the $5,000 reimbursement)",
+    "official": "",
+    "note": "Official only says the cost per student 'is more than that' with no number; the 90,000/18 captured by our minutes cannot be checked against the source and may be garbled captions of a cost figure or seat count."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town Manager's preliminary FY25 school budget",
+    "ours": "[t=10183] $3,594,000, $522, 2.94%",
+    "official": "",
+    "note": "Official minutes do not discuss budget dollar figures at all in this meeting; unverifiable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Certified new growth and local receipts added",
+    "ours": "[t=10230] $236,000, $236,200, $41,000, $41,321, $50,000",
+    "official": "",
+    "note": "Not mentioned in official minutes; the override/budget financial detail is absent from the town's summary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town Manager's recommended Omnibus school budget",
+    "ours": "[t=10296] 23,91,9 (garbled)",
+    "official": "",
+    "note": "Not mentioned in official minutes; figure itself is also badly garbled in captions and should be checked against the presentation/slides if available."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA one-time funds for schools",
+    "ours": "[t=10317] $221,600, 7,895",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverifiable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total Omnibus plus one-time school spending",
+    "ours": "[t=10402] $24,123,50N8 (garbled)",
+    "official": "",
+    "note": "Not mentioned in official minutes; figure is also badly garbled in the caption and needs the source presentation to confirm."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Proposed override amount",
+    "ours": "[t=10742] $948,000",
+    "official": "",
+    "note": "Official minutes mention the override presentation existed but state no dollar figure — this is the single most check-worthy figure in the meeting and should be confirmed against the override slide deck."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Average residential assessment and Omnibus tax impact",
+    "ours": "[t=10763] $481,500, $678, $120",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverifiable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Override impact on average tax bill",
+    "ours": "[t=10804] $318, $198",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverifiable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Override impact on higher-valued property example",
+    "ours": "[t=10824] 693, 263, 430 (garbled)",
+    "official": "",
+    "note": "Not mentioned in official minutes; garbled figures need the source slide to confirm."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletics budget line figures",
+    "ours": "[t=7492] 95,000, 40,000, 58,000, almost 27,000",
+    "official": "Dr. Burnham shares a slide show presentation explaining how we fund our Middle and High school athletic programs, anticipated expenses and participation",
+    "note": "Official confirms the presentation topic but records no figures from it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletic new equipment budget",
+    "ours": "[t=7659] 6,000",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverifiable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletic revolving account ticket sales",
+    "ours": "[t=8020] about 5,000, 3500",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverifiable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Actual cost to run athletic seasons",
+    "ours": "[t=8408] 92,600, almost 91,000, 11,000",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverifiable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turf field debt payment",
+    "ours": "[t=9301] 45,000",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverifiable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total actual athletics cost vs. budget",
+    "ours": "[t=9383] 281,000, 95,000, 40,000",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverifiable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Possible finance workshop cost",
+    "ours": "[t=3993] $1,000 a plate",
+    "official": "The president of the finance company has said they offer workshops for school committee members.",
+    "note": "Official confirms the workshop offer but records no cost figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: revisit rain garden project before voting",
+    "ours": "[t=2572] Committee will get input from the school principal and revisit the rainwater retention (rain garden) project, including plant selection and maintenance plan, before voting at the May 22nd meeting.",
+    "official": "Ms. Archambault suggests we ask the principal and speak with Mr. Hevy and vote on May 22.",
+    "note": "Both records describe deferring the vote to May 22 pending principal input."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: finance workshop timed with new business manager",
+    "ours": "[t=3931] Committee is interested in holding a separate finance/budget workshop, ideally timed to include the incoming business manager once hired.",
+    "official": "Mr. Sculimbrene asked if we could wait for a new finance/business director to take this workshop, Mr. Beardmore and Ms. Brzozoski agree",
+    "note": "Both records describe waiting for the new business manager/director to be hired before the workshop."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: revisit school choice seat numbers next meeting",
+    "ours": "[t=7366] Committee will revisit the school choice seat numbers again at the next meeting, after town meeting and the ballot vote, rather than deciding tonight.",
+    "official": "We will look at this for the next meeting",
+    "note": "Both records defer the school choice seat decision to the next meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: no immediate athletics fee/funding change, flagged for next budget cycle",
+    "ours": "[t=9787] No immediate change to athletics funding or fees, but the committee flagged that budget adjustments to athletics may be needed as soon as the next budget cycle.",
+    "official": "",
+    "note": "Official only notes the athletics slide presentation occurred, not this specific forward-looking decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: override presentation to add impact slide and note Chromebooks",
+    "ours": "[t=11339] Override presentation team will add a slide showing the concrete impact on students/class sizes if the override fails, and will explicitly note Chromebooks as a recurring cost.",
+    "official": "",
+    "note": "Official only notes the override slide show existed, not this specific follow-up instruction."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: written schedule for superintendent evaluation",
+    "ours": "[t=12053] Superintendent asked to provide the committee a written schedule/plan for the superintendent evaluation process before the next meeting.",
+    "official": "13. Topics for Future Discussion Superintendents Evaluation",
+    "note": "Official lists the topic name only; the specific request for a written schedule is not recorded — worth checking meeting follow-up materials."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Chair",
+    "ours": "Carol (chair)",
+    "official": "Carol Archambault, Chair - Present",
+    "note": "Same person, same role."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Superintendent",
+    "ours": "Dr. Burnham (superintendent)",
+    "official": "Dr. Kate Burnham",
+    "note": "Same person, same role."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Beardmore",
+    "ours": "Mr. Beardmore (school committee member)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Same person, same role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Lehtinen misheard as 'Leon'",
+    "ours": "Mr. Leon (school committee member)",
+    "official": "Brian Lehtinen, Vice Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Caption mis-transcribed the Vice Chair's surname 'Lehtinen' as 'Leon'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brzozoski misheard/misspelled as 'Brazowski'",
+    "ours": "Mrs. Brazowski (school committee member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same committee member; caption rendered the Polish surname phonetically."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Sculimbrene captured only as first name 'Tony'",
+    "ours": "Tony (school committee member)",
+    "official": "Anthony Sculimbrene, Secretary - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Caption caught only the first name/nickname; same person and meeting role (Secretary)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: 'Mrs. Pelski' does not match the official roster",
+    "ours": "Mrs. Pelski (school committee member)",
+    "official": "",
+    "note": "The official committee roster lists only five members (Archambault, Lehtinen, Sculimbrene, Beardmore, Brzozoski), all marked Present, and none is named or resembles 'Pelski' — check the recording around this name to see whether it is a garbled duplicate of an existing member or an error."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: DPW Director Bernard",
+    "ours": "Mr. Bernard (Director of DPW)",
+    "official": "Guests: Bill Bernard, DPW Director",
+    "note": "Same person and role; official adds the first name Bill."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Facilities/Grounds director name spelling",
+    "ours": "Mr. Heie (Director of Facilities and Grounds)",
+    "official": "Mr. Hevy confirms we do pile snow there, but we can change that and pile it elsewhere",
+    "official_reading": "Hevy",
+    "note": "Both records render this name differently from a likely common source; treat as the same person referenced in the rain-garden discussion, spelling per the official document is 'Hevy'."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Mrs. Peterson, finance/business staff",
+    "ours": "Mrs. Peterson (school business/finance staff)",
+    "official": "",
+    "note": "Official's Business Manager/HR Director line is blank (vacant) and Peterson is not named anywhere in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Gillette/Guillette spelling",
+    "ours": "Mrs. Gillette (Extended Day/ELC coordinator)",
+    "official": "Ms. Guillette shares there aren't any significant changes",
+    "official_reading": "Guillette",
+    "note": "Same person presenting the Extended Day/ELC handbooks; minor spelling difference."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Mrs. Hansum, Student Services/SpEd",
+    "ours": "Mrs. Hansum (Director of Student Services/Special Education)",
+    "official": "",
+    "note": "Not named anywhere in the official minutes or attendee list."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: student representative",
+    "ours": "student representative (student representative)",
+    "official": "8. Student Representative Report",
+    "note": "Both confirm a student representative was present and reported."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Recording Secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Our minutes, drawn from captions, do not capture the recording secretary role since she would not necessarily speak on camera."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-14T13:27:29Z",
+   "cost_usd": 0.27651439999999994
+  }
+ }
+}

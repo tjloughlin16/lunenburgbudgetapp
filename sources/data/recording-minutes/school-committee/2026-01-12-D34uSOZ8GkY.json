@@ -1,0 +1,820 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "TriBoard Meeting",
+ "meeting_date": "2026-01-12",
+ "video_id": "D34uSOZ8GkY",
+ "video_url": "https://www.youtube.com/watch?v=D34uSOZ8GkY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2026-01-12-D34uSOZ8GkY.json",
+  "sha256": "9f6c6a544bcb7b805394c05a84c1e9ce25b90d0319a4faad275c6844a13f1bda",
+  "caption_lines": 471,
+  "segments": 4152
+ },
+ "recording": {
+  "duration_s": 9870,
+  "duration": "2:44",
+  "spoken_chars": 130533,
+  "words_approx": 21755
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01122026-7947",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-01-12-agenda-7947.txt",
+   "path": "sources/meetings/school-committee/2026-01-12-agenda-7947.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-13T23:37:33Z",
+  "cost_usd": 0.47695540000000003
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Jen",
+    "role": "Town Manager"
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "Building Commissioner / Land Use Director (presenter)"
+   },
+   {
+    "name_as_heard": "Dr. Fortuna",
+    "role": "Superintendent"
+   },
+   {
+    "name_as_heard": "Chris (\"C Money\")",
+    "role": "incoming Finance Director"
+   },
+   {
+    "name_as_heard": "Mandy",
+    "role": "board member, as addressed"
+   },
+   {
+    "name_as_heard": "Jenny",
+    "role": "member, as addressed"
+   },
+   {
+    "name_as_heard": "Jody",
+    "role": "member, as addressed"
+   }
+  ],
+  "headline": "Officials warn the FY27 budget leaves almost nothing after health insurance, pointing toward an override",
+  "summary": "This was a joint Select Board / Finance Committee / School Committee (\"tri-board\") session in which the Town Manager walked through preliminary FY27 general government, debt, intergovernmental and revenue figures, including a new assistant town manager position, a large Munis/IT cost increase, and a steep audit-cost jump. The revenue walk-through showed that after health insurance is covered, almost no new money is left to fund any raises, cuts, or level services, and the group spent the second half of the meeting discussing operational efficiencies, the state and federal funding picture, and the likelihood that an override will be needed, without taking any substantive vote.",
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "chapter-70",
+   "contracts-and-unions",
+   "curriculum",
+   "debt",
+   "elections",
+   "facilities",
+   "fees",
+   "health-insurance",
+   "hiring",
+   "msba",
+   "override",
+   "personnel",
+   "planning-and-zoning",
+   "primary-school",
+   "public-safety",
+   "retirement",
+   "roads-and-dpw",
+   "staffing",
+   "state-aid",
+   "superintendent-report",
+   "tax-rate",
+   "technology",
+   "town-departments",
+   "transfers",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 9837,
+    "motion": "Motion to adjourn the Select Board at 9:52 p.m.",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 9858,
+    "motion": "Motion to adjourn/recommend action for the Finance Committee",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "public_comment": [],
+  "budget_items": [
+   {
+    "t": 258,
+    "topic": "Select Board budget",
+    "what_was_said": "The Town Manager said the select board budget is largely driven by staff covering the assistant town manager, HR/procurement director, executive assistant and minute clerks.",
+    "figures_as_heard": [
+     "$180,000"
+    ]
+   },
+   {
+    "t": 400,
+    "topic": "Select Board / Town Manager budget increase",
+    "what_was_said": "A modest select board increase was described as mostly expense-driven, while the town manager budget rises substantially due to the new assistant town manager position and a higher legal line.",
+    "figures_as_heard": [
+     "$20,000",
+     "77,000",
+     "60"
+    ]
+   },
+   {
+    "t": 506,
+    "topic": "New Assistant Town Manager position",
+    "what_was_said": "The Town Manager proposed creating a standalone assistant town manager position, funded for half the year starting January 1, estimated near full-time cost if annualized.",
+    "figures_as_heard": [
+     "120,000",
+     "60,000"
+    ]
+   },
+   {
+    "t": 590,
+    "topic": "Select Board contracted services line",
+    "what_was_said": "A contracted services line created last year for staff appreciation is proposed to increase to give room for unforeseen contracted needs.",
+    "figures_as_heard": [
+     "$6,000",
+     "135"
+    ]
+   },
+   {
+    "t": 654,
+    "topic": "Town Accountant / Finance Department budget",
+    "what_was_said": "The FY26 accountant budget required a large special town meeting supplement due to transition costs, consultants and hiring, which the Town Manager said should not recur in FY27.",
+    "figures_as_heard": [
+     "323,000",
+     "160,000"
+    ]
+   },
+   {
+    "t": 848,
+    "topic": "Finance department total",
+    "what_was_said": "The finance department total was cited while discussing staffing changes including a retirement that offset new hires.",
+    "figures_as_heard": [
+     "198"
+    ]
+   },
+   {
+    "t": 911,
+    "topic": "Audit cost increase",
+    "what_was_said": "The audit line was said to have been underbudgeted; the actual FY27 audit cost is now expected to be much higher, partly because only two municipal auditors remain in Massachusetts.",
+    "figures_as_heard": [
+     "$40,000",
+     "$65,000"
+    ]
+   },
+   {
+    "t": 1041,
+    "topic": "Treasurer/Collector budget",
+    "what_was_said": "Tax title is moving into the operating budget with no change in level funding; a request to restore treasurer/collector staff hours to 40 (from 36) drives a salary increase.",
+    "figures_as_heard": [
+     "30,000",
+     "$15,000",
+     "$10,000"
+    ]
+   },
+   {
+    "t": 1171,
+    "topic": "IT budget increase",
+    "what_was_said": "The FY26 IT budget was described as half a million dollars, and the preliminary FY27 IT budget increases further, driven mostly by Munis software costs and a reclassified communications/IT staff position.",
+    "figures_as_heard": [
+     "500,000",
+     "$90,000"
+    ]
+   },
+   {
+    "t": 1256,
+    "topic": "Telephone line",
+    "what_was_said": "The telephone budget line was raised to match actual cell phone and phone system bills, which had been historically underbudgeted.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1277,
+    "topic": "Munis purchase of service increase",
+    "what_was_said": "A large increase to purchase of service is almost entirely Munis-driven; last year's upgrade cost was offset by ARPA which is not available this year, plus a contractual increase.",
+    "figures_as_heard": [
+     "$55,000",
+     "$18,000",
+     "61,000",
+     "5%"
+    ]
+   },
+   {
+    "t": 1767,
+    "topic": "Souzar IT contracted services",
+    "what_was_said": "The on-site IT contractor line reflects five-days-a-week service; the Town Manager has already reduced to four days as of January and hopes to reduce further to three in FY27.",
+    "figures_as_heard": [
+     "175,000"
+    ]
+   },
+   {
+    "t": 2138,
+    "topic": "Phone/telecom bills",
+    "what_was_said": "A line covers all townwide phone and cell phone bills across multiple carriers.",
+    "figures_as_heard": [
+     "50,000"
+    ]
+   },
+   {
+    "t": 2244,
+    "topic": "Town Clerk budget",
+    "what_was_said": "The FY27 budget is an election year and salary-driven, with an increase attributed mainly to election costs.",
+    "figures_as_heard": [
+     "133",
+     "143,000",
+     "$15,000"
+    ]
+   },
+   {
+    "t": 2671,
+    "topic": "Finance Committee budget/reserve",
+    "what_was_said": "The finance committee's own budget was decreased slightly, while its training/reserve line was kept level from last year.",
+    "figures_as_heard": [
+     "$475",
+     "185"
+    ]
+   },
+   {
+    "t": 2712,
+    "topic": "Salary reserve",
+    "what_was_said": "The salary reserve figure was called premature and not a real number, pending outcomes of active DPW, fire and clerical union negotiations and COLA decisions.",
+    "figures_as_heard": [
+     "210"
+    ]
+   },
+   {
+    "t": 2794,
+    "topic": "Town report / annual meeting booklet printing",
+    "what_was_said": "A large increase in the town report line was explained as covering both the report and the printing of annual/special town meeting booklets, not just the report itself.",
+    "figures_as_heard": [
+     "$7,000",
+     "$16,000"
+    ]
+   },
+   {
+    "t": 2918,
+    "topic": "Central purchasing / postage",
+    "what_was_said": "Postage was consolidated into one line for the first time last year; it is currently running under budget and may be reduced if the trend holds.",
+    "figures_as_heard": [
+     "1,500",
+     "50,000",
+     "40%"
+    ]
+   },
+   {
+    "t": 2979,
+    "topic": "Physicals line",
+    "what_was_said": "The physicals budget for new hires, including heightened police/fire pre-employment screening, is being raised to align with actual year-to-date spending.",
+    "figures_as_heard": [
+     "$2,500",
+     "$3,200"
+    ]
+   },
+   {
+    "t": 3087,
+    "topic": "Debt service",
+    "what_was_said": "Total debt service is decreasing again in FY27 though by a smaller amount than the prior year's larger drop.",
+    "figures_as_heard": [
+     "10,000"
+    ]
+   },
+   {
+    "t": 4128,
+    "topic": "Intergovernmental / Worcester County Retirement",
+    "what_was_said": "The Worcester County Regional retirement assessment is the main driver in intergovernmental costs and is a non-discretionary increase.",
+    "figures_as_heard": [
+     "240,000",
+     "10%"
+    ]
+   },
+   {
+    "t": 4357,
+    "topic": "Land Use / building department permit revenue",
+    "what_was_said": "Building department fee revenue is projected roughly at recent average levels across permits, plumbing, electrical and gas.",
+    "figures_as_heard": [
+     "325,000",
+     "600",
+     "420",
+     "140",
+     "120"
+    ]
+   },
+   {
+    "t": 4699,
+    "topic": "Total FY27 revenue",
+    "what_was_said": "Preliminary total FY27 revenue was presented, described as heavily reliant on property taxes.",
+    "figures_as_heard": [
+     "$51,331,000",
+     "71%",
+     "51,331,376.99"
+    ]
+   },
+   {
+    "t": 4787,
+    "topic": "Levy limit build-up (2.5%, new growth, excluded debt)",
+    "what_was_said": "The levy limit calculation adds the automatic Proposition 2½ increase, estimated new growth, and excluded debt on top before subtracting it back out on the expenditure side.",
+    "figures_as_heard": [
+     "2 and 1/2%"
+    ]
+   },
+   {
+    "t": 5240,
+    "topic": "New growth estimate",
+    "what_was_said": "New growth for FY27 is estimated by the assessors, compared against last year's estimate versus higher actual new growth received.",
+    "figures_as_heard": [
+     "400",
+     "518"
+    ]
+   },
+   {
+    "t": 5342,
+    "topic": "State aid",
+    "what_was_said": "State aid was presented at the current FY26 actual cherry sheet figure, covering Chapter 70, unrestricted government aid, library funding, school choice and veterans funding, held level pending the Governor's budget.",
+    "figures_as_heard": [
+     "11,244,422",
+     "22%"
+    ]
+   },
+   {
+    "t": 5678,
+    "topic": "Local receipts",
+    "what_was_said": "Local receipts (motor vehicle excise, meals tax, fees, fines, licensing) are being held level pending FY25 closeout, though investment income came in well above projection last year.",
+    "figures_as_heard": [
+     "85,000",
+     "100,000",
+     "414"
+    ]
+   },
+   {
+    "t": 6003,
+    "topic": "Non-appropriated expenses / pay-as-you-go capital",
+    "what_was_said": "State assessments, school choice/library aid pass-throughs and the overlay reserve are subtracted off the top of revenue as non-appropriated, along with a pay-as-you-go capital contribution.",
+    "figures_as_heard": [
+     "1.4 million",
+     "244",
+     "49,682,495.99"
+    ]
+   },
+   {
+    "t": 6230,
+    "topic": "New revenue for FY27 and apportionment",
+    "what_was_said": "The remaining new revenue after FY26 appropriations was apportioned traditionally between school, town and Monty Tech by percentage share.",
+    "figures_as_heard": [
+     "1,36,59",
+     "696,521",
+     "573",
+     "36,000"
+    ]
+   },
+   {
+    "t": 6274,
+    "topic": "Health insurance impact on new revenue",
+    "what_was_said": "Subtracting projected non-discretionary health insurance increases for school and town from new revenue leaves only a small amount for all raises and new costs combined.",
+    "figures_as_heard": [
+     "740,000",
+     "480,000",
+     "86,000"
+    ]
+   },
+   {
+    "t": 6509,
+    "topic": "Health insurance rate guidance",
+    "what_was_said": "The town has been told to budget health insurance at a set percentage increase, which is what was used to reach the small remaining new-revenue figure.",
+    "figures_as_heard": [
+     "20%"
+    ]
+   },
+   {
+    "t": 6892,
+    "topic": "Vehicle stabilization fund",
+    "what_was_said": "A vehicle stabilization fund exists and part of the FY27 capital plan, including a needed ladder truck, is planned to draw from it.",
+    "figures_as_heard": [
+     "3 million",
+     "2.59 million"
+    ]
+   },
+   {
+    "t": 7519,
+    "topic": "Fire department additional shift request",
+    "what_was_said": "A fire department budget request for an additional shift was described as not yet included in the presented numbers, at a stated additional cost.",
+    "figures_as_heard": [
+     "half a million"
+    ]
+   },
+   {
+    "t": 7584,
+    "topic": "Union contract COLA costs",
+    "what_was_said": "Separate cost figures were cited for funding cost-of-living increases across the town's employee unions.",
+    "figures_as_heard": [
+     "86,000"
+    ]
+   },
+   {
+    "t": 7902,
+    "topic": "Recycling contract cost",
+    "what_was_said": "A finance committee member questioned why the town pays a large annual amount for recycling and suggested it as a possible operational efficiency.",
+    "figures_as_heard": [
+     "half a million dollars"
+    ]
+   },
+   {
+    "t": 7902,
+    "topic": "TCP (TCPasios) building carrying cost",
+    "what_was_said": "The shared building referred to as TCP/TCPasios was said to cost more annually than the town currently has available in its operating budget.",
+    "figures_as_heard": [
+     "over $100,000"
+    ]
+   },
+   {
+    "t": 9652,
+    "topic": "Override 'outside' number",
+    "what_was_said": "The Town Manager's working figure for the outer bound of a potential override, before further cuts and efficiencies, was cited from the presentation.",
+    "figures_as_heard": [
+     "1,464,000",
+     "one and a half million"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 674,
+    "description": "Possible future supplement from the Finance Committee reserve to the Town Accountant budget",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 674,
+    "description": "Special town meeting supplement to the FY26 Town Accountant budget",
+    "amount_as_heard": "160,000",
+    "outcome": "voted (prior meeting, referenced here)"
+   },
+   {
+    "t": 1041,
+    "description": "Tax title line moved from a front-end exemption/expenditure classification into the operating budget, no change in amount",
+    "amount_as_heard": "30,000 (level funded)",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 6024,
+    "description": "State assessments and school choice/library aid reclassified off the expenditure sheet and taken off the top of revenue instead of being appropriated",
+    "amount_as_heard": "1.4 4 million",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 89,
+    "decision": "Next tri-board meeting is confirmed for January 27th, to be held in Town Hall rather than the library."
+   },
+   {
+    "t": 1403,
+    "decision": "The Town Manager plans to likely terminate the ClearGov software contract this fiscal year unless the incoming finance director wants to keep it."
+   },
+   {
+    "t": 1767,
+    "decision": "On-site IT contractor days are being reduced from five to four days a week starting in January, with an eye toward reducing further to three days in FY27."
+   },
+   {
+    "t": 7944,
+    "decision": "The Town Manager will meet with all occupants/stakeholders of the shared building (TCP) after receiving the facilities director's report, and plans for a possible winding-down in FY27."
+   },
+   {
+    "t": 9464,
+    "decision": "School Committee, Finance Committee and Select Board chairs agreed to send their discussion topics for the next tri-board meeting to the three chairs by Friday."
+   },
+   {
+    "t": 9488,
+    "decision": "The group agreed, on an informal poll, to consider adding a public comment period at the next tri-board meeting."
+   },
+   {
+    "t": 9155,
+    "decision": "The group agreed a public/override forum should be scheduled, though the date was not set at this meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 45,
+    "topic": "Call to order, open meeting law notice, pledge of allegiance",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 68,
+    "t_end": 153,
+    "topic": "Next meeting date and location logistics",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 153,
+    "t_end": 237,
+    "topic": "Introduction to preliminary FY27 general government/debt/intergovernmental budget presentation",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 237,
+    "t_end": 654,
+    "topic": "Select Board and Town Manager budgets, new Assistant Town Manager position, legal costs",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 654,
+    "t_end": 1041,
+    "topic": "Town Accountant/finance department budget and rising audit costs",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 1041,
+    "t_end": 1149,
+    "topic": "Treasurer/Collector budget and staff hours",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1149,
+    "t_end": 2244,
+    "topic": "IT/Munis budget, ClearGov, on-site IT contractor staffing model",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "technology",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 2244,
+    "t_end": 2649,
+    "topic": "Town Clerk budget, election costs, debate over elected vs. appointed clerk role",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "elections",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2649,
+    "t_end": 2939,
+    "topic": "Miscellaneous general government lines: finance committee, salary reserve, town report/booklet printing",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "transfers"
+    ]
+   },
+   {
+    "t_start": 2939,
+    "t_end": 3087,
+    "topic": "Central purchasing/postage consolidation and physicals budget",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 3087,
+    "t_end": 4128,
+    "topic": "Debt service, exempt vs. non-exempt borrowing, capacity, and Turkey Hill/MSBA timing",
+    "resolution": "no resolution",
+    "tags": [
+     "debt",
+     "capital",
+     "turkey-hill"
+    ]
+   },
+   {
+    "t_start": 4128,
+    "t_end": 4236,
+    "topic": "Intergovernmental budget: Worcester County Regional retirement assessment",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 4236,
+    "t_end": 4699,
+    "topic": "Land Use Department (building, planning, conservation, ZBA) budget and permit activity",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "planning-and-zoning",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 4699,
+    "t_end": 6003,
+    "topic": "FY27 revenue walk-through: levy limit, new growth, state aid, local receipts, non-appropriated expenses",
+    "resolution": "informational",
+    "tags": [
+     "tax-rate",
+     "state-aid",
+     "chapter-70"
+    ]
+   },
+   {
+    "t_start": 6003,
+    "t_end": 6378,
+    "topic": "Net new revenue after health insurance and apportionment among school, town and Monty Tech",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "health-insurance",
+     "monty-tech"
+    ]
+   },
+   {
+    "t_start": 6378,
+    "t_end": 7000,
+    "topic": "Health insurance increase guidance and stabilization/OPEB fund options",
+    "resolution": "no resolution",
+    "tags": [
+     "health-insurance",
+     "budget-fy27",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 7000,
+    "t_end": 7328,
+    "topic": "Potential cuts, outsourcing (roads, custodial) and public-vs-private compensation debate",
+    "resolution": "no resolution",
+    "tags": [
+     "budget-fy27",
+     "staffing",
+     "layoffs"
+    ]
+   },
+   {
+    "t_start": 7328,
+    "t_end": 7519,
+    "topic": "School class sizes, staffing levels and literacy scores discussion with Superintendent",
+    "resolution": "informational",
+    "tags": [
+     "staffing",
+     "curriculum",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 7519,
+    "t_end": 7750,
+    "topic": "Additional fire department shift request and COLA/health insurance equity for staff",
+    "resolution": "no resolution",
+    "tags": [
+     "budget-fy27",
+     "public-safety",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 7750,
+    "t_end": 7902,
+    "topic": "Follow-up on December reading assessment data for grade 3/4 students",
+    "resolution": "informational",
+    "tags": [
+     "curriculum",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 7902,
+    "t_end": 8235,
+    "topic": "Operational efficiencies: recycling cost, TCP building decommissioning",
+    "resolution": "no resolution",
+    "tags": [
+     "roads-and-dpw",
+     "facilities",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 8235,
+    "t_end": 8281,
+    "topic": "School Committee loses quorum after a member departs",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 8281,
+    "t_end": 8427,
+    "topic": "Trash/recycling fee restructuring options (pay-as-you-throw)",
+    "resolution": "no resolution",
+    "tags": [
+     "fees",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 8427,
+    "t_end": 9155,
+    "topic": "Debate over state/federal funding responsibility and the case for/conditions on a property tax override",
+    "resolution": "no resolution",
+    "tags": [
+     "override",
+     "state-aid",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 9155,
+    "t_end": 9422,
+    "topic": "Planning a public/override forum and override strategy (single vs. tiered override)",
+    "resolution": "no resolution",
+    "tags": [
+     "override",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 9422,
+    "t_end": 9878,
+    "topic": "Next steps, topic submission deadline, finance committee liaison vacancy, adjournment",
+    "resolution": "voted (adjournment, count not audible)",
+    "tags": [
+     "override",
+     "budget-fy27"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Several stretches are garbled by cross-talk, laughter, and overlapping speakers, especially during the debt service and override strategy discussions.",
+   "The full state aid slide was reported missing/misplaced by the Town Manager during the meeting; only the figure verbally stated was captured.",
+   "The exact vote counts for both end-of-meeting adjournment motions are not clear in the captions, only a partial 'aye'.",
+   "Several figures are ambiguous in scale (e.g. '135', '198', '210', '1,36,59', '573') and may represent thousands or dollars as heard; they are reported exactly as captioned.",
+   "Names of some speakers, including the Souzar IT contractor's staff member and several committee members ('Jenny', 'Jody', 'Mandy'), are not clearly identified by role.",
+   "The precise dollar figure for the proposed fourth fire department shift and the police department budget request are referenced but not stated as clear numbers.",
+   "The identity of the person who moved and seconded each adjournment motion is not clear from the captions."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Officials said that once health insurance costs are covered, the FY27 budget leaves almost no room for raises, cuts, or level services, pointing toward a tax override.",
+    "t": 6003
+   },
+   {
+    "line": "No vote was taken at this joint Select Board, Finance Committee, and School Committee session.",
+    "t": 9422
+   },
+   {
+    "line": "The audit line was underbudgeted for FY27, with costs expected to rise sharply as only two municipal auditors remain licensed in Massachusetts.",
+    "t": 911
+   },
+   {
+    "line": "The Town Manager proposed a new, standalone assistant town manager position, to be funded for half of FY27.",
+    "t": 506
+   },
+   {
+    "line": "The group agreed to hold a separate public forum on a possible override, though no date was set.",
+    "t": 9155
+   }
+  ],
+  "why_it_matters": [
+   "A property tax override would go to voters and would raise bills beyond the state's normal levy cap, and officials here signaled they see it as likely for FY27.",
+   "Rising fixed costs -- health insurance, an audit line, IT/Munis software -- absorb new town revenue before it reaches raises, staffing, or school and town services.",
+   "A new assistant town manager position is a town-side staffing addition, separate from the school budget rule 11 governs."
+  ],
+  "watch_next": [
+   "Next tri-board meeting, January 27, in Town Hall",
+   "A public forum on the possible override, date to be scheduled"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-13T23:37:54Z",
+   "cost_usd": 0.1448474
+  }
+ }
+}

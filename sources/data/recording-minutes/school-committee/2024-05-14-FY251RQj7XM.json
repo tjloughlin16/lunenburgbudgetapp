@@ -1,0 +1,358 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "meeting_date": "2024-05-14",
+ "video_id": "FY251RQj7XM",
+ "video_url": "https://www.youtube.com/watch?v=FY251RQj7XM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2024-05-14-FY251RQj7XM.json",
+  "sha256": "8507e4e109210da9f3b464085aefb32af8c0887f6f5068d17bac2c05e4af2863",
+  "caption_lines": 23,
+  "segments": 158
+ },
+ "recording": {
+  "duration_s": 487,
+  "duration": "0:08",
+  "spoken_chars": 4991,
+  "words_approx": 831
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05142024-6569",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-05-14-agenda-6569.txt",
+   "path": "sources/meetings/school-committee/2024-05-14-agenda-6569.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05142024-6569",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-05-14-minutes-6569.txt",
+   "path": "sources/meetings/school-committee/2024-05-14-minutes-6569.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-14T02:21:29Z",
+  "cost_usd": 0.1628204
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "the superintendent (unnamed)",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Mr. Leon",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Brazowski",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Beardmore",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Arshambo",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Dr. Susan Gilson",
+    "role": "candidate for director of administration and finance; currently assistant superintendent, King Philip Regional District"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 64,
+    "topic": "chair asked for public comment; none offered (audio/technical difficulties noted)"
+   },
+   {
+    "t": 402,
+    "topic": "chair asked for a second round of public comment; none offered"
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "elections",
+   "executive-session",
+   "hiring",
+   "override",
+   "personnel",
+   "public-comment",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 297,
+    "motion": "appoint Dr. Susan Gilson to the position of finance director for the Lunenburg school district, pending final approval and contract with the superintendent",
+    "outcome": "passed, unanimous of members present (roll call: Mr. Leon yes, Mrs. Brazowski yes, Mr. Beardmore yes, Mrs. Arshambo yes)",
+    "procedural": false
+   },
+   {
+    "t": 422,
+    "motion": "enter executive session to consider or interview applicants for employment or appointment by a preliminary screening committee",
+    "outcome": "passed (roll call: Mr. Leon yes, Mrs. Brazowski yes, Mr. Beardmore yes, Mrs. Arshambo yes)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 297,
+    "topic": "Director of Administration and Finance / HR manager position",
+    "what_was_said": "The committee voted to appoint Dr. Susan Gilson to the finance director position, pending final approval of a contract with the superintendent. A member noted the district had just gone through a budget season without a finance director while also in collective bargaining negotiations.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 254,
+    "decision": "Superintendent's interview process (screening down from three scheduled candidates to two interviewed, then a second round with finance consultants) resulted in advancing Dr. Gilson as the recommended candidate."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 63,
+    "topic": "Call to order and opening remarks, noted technical/audio difficulties",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 64,
+    "t_end": 87,
+    "topic": "First public comment period",
+    "resolution": "no comment offered",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 88,
+    "t_end": 129,
+    "topic": "Chair's report: upcoming water district vote and town election including override question",
+    "resolution": "informational",
+    "tags": [
+     "override",
+     "elections",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 130,
+    "t_end": 191,
+    "topic": "New business: introduction of Dr. Susan Gilson as recommended candidate for director of administration and finance",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 191,
+    "t_end": 254,
+    "topic": "Committee question to superintendent about the interview/screening process for the position",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 254,
+    "t_end": 297,
+    "topic": "Committee member remarks welcoming Dr. Gilson and noting need for a business manager amid budget season and contract negotiations",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 297,
+    "t_end": 340,
+    "topic": "Motion and roll call vote to appoint Dr. Susan Gilson to finance director position",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "contracts-and-unions",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 340,
+    "t_end": 401,
+    "topic": "Announcement of unanimous result and welcome to Dr. Gilson",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 402,
+    "t_end": 421,
+    "topic": "Second public comment period",
+    "resolution": "no comment offered",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 422,
+    "t_end": 466,
+    "topic": "Motion and roll call vote to enter executive session to interview applicants for employment/appointment",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "hiring"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Several stretches are garbled by background noise (motorcycles, poor audio) and the chair repeatedly says she cannot hear speakers or the room; exact wording of some remarks could not be made out.",
+   "The name of the 'missing member' referenced after the appointment vote is not stated.",
+   "Zoom meeting ID as read aloud is inconsistent/garbled ('76671... 766 31676 07') and cannot be confirmed exactly."
+  ],
+  "confidence": "moderate",
+  "headline": "School Committee unanimously voted to appoint Dr. Susan Gilson as finance director, pending contract approval.",
+  "summary": "The School Committee, meeting under noisy and difficult audio conditions, voted unanimously by roll call to appoint Dr. Susan Gilson (currently assistant superintendent at King Philip Regional District) as director of administration and finance, pending final contract approval with the superintendent. The chair also flagged the week's water district vote and town election, which included an override question, and the committee then voted to enter executive session to discuss other candidate interviews."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "School Committee voted unanimously to appoint Dr. Susan Gilson to the finance director position, pending a signed contract with the superintendent.",
+    "t": 297
+   },
+   {
+    "line": "The appointment followed a superintendent-led screening that narrowed the field of candidates before a second round of review with finance consultants.",
+    "t": 254
+   },
+   {
+    "line": "A committee member noted the district had gone through the recent budget season and contract negotiations without a finance director in place.",
+    "t": 254
+   },
+   {
+    "line": "The committee then voted to move into executive session to interview applicants for other openings.",
+    "t": 422
+   }
+  ],
+  "why_it_matters": [
+   "The finance director oversees the school department's budget and payroll functions, a post that sat vacant through a budget cycle and contract talks.",
+   "Final appointment still depends on contract terms being agreed with the superintendent, not yet finalized as of this meeting.",
+   "The chair also flagged that week's town election, which included an override question relevant to school funding."
+  ],
+  "watch_next": [
+   "Confirmation that a contract with Dr. Susan Gilson was finalized with the superintendent",
+   "Outcome of the town election override question referenced at this meeting"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-14T02:21:41Z",
+   "cost_usd": 0.1342014
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05142024-6569",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-05-14-minutes-6569.txt",
+   "path": "sources/meetings/school-committee/2024-05-14-minutes-6569.pdf"
+  },
+  "official_sha256": "78a387da94f2be35e0638e58f1cd399b86bf8e10eefd99079ac69eff504dab6f",
+  "coverage": "full",
+  "summary": "The two records agree on the substance of the appointment vote (unanimous, 4 members present, \"pending final approval and contract with the superintendent\") but our captions garbled every proper name and, more importantly, our minutes call the position \"finance director\" throughout while the official minutes name it \"Business/HR Manager\" — that title mismatch is the one thing a reader should check against the agenda or job posting. Official minutes also record procedural detail (who made/seconded the motion, the chair's report, absent/recording-secretary attendees) that our caption-derived minutes omit entirely.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "identity of the Chair / a roll-call voter",
+    "ours": "the chair (unnamed) ... Mrs. Arshambo yes",
+    "official": "Carol Archambault, Chair - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Our transcript failed to attach a name to \"the chair\" but separately misheard the same person's surname during roll call as \"Arshambo\"; the four roll-call voters in ours match the four present members in official once this is corrected."
+   },
+   {
+    "kind": "caption_error",
+    "about": "identity of the Superintendent",
+    "ours": "the superintendent (unnamed)",
+    "official": "Dr. Kate Burnham",
+    "official_reading": "Dr. Kate Burnham",
+    "note": "Same person, our captions simply never captured her name being spoken."
+   },
+   {
+    "kind": "caption_error",
+    "about": "identity of a member (roll call vote)",
+    "ours": "Mr. Leon yes",
+    "official": "Brian Lehtinen, Vice Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "\"Leon\" is a plausible mishearing of \"Lehtinen\"; also note official records him as Vice Chair, a role ours omits."
+   },
+   {
+    "kind": "caption_error",
+    "about": "identity of a member (roll call vote)",
+    "ours": "Mrs. Brazowski yes",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same surname, different transliteration of the caption audio."
+   },
+   {
+    "kind": "agree",
+    "about": "identity of a member (roll call vote)",
+    "ours": "Mr. Beardmore yes",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Surname matches; ours simply omits the first name."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: absent Secretary",
+    "ours": "",
+    "official": "Anthony Sculimbrene, Secretary - Absent",
+    "note": "An absent member would not appear in a caption-derived transcript, so this is expected to be missing from ours, not a caption failure."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: recording secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Administrative role, unlikely to speak on camera, so absent from a caption-based record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "composition of the second round of the hiring/interview process",
+    "ours": "a second round with finance consultants",
+    "official": "We had 3 candidates, one withdrew, we moved onto a second round of interviewing",
+    "note": "Official does not mention \"finance consultants\" for the second round (the panel described — administrative staff, central office staff, staff interfacing with the business director — was for the first round); check the recording near t=254 to confirm who was actually on the second-round panel, since this could be an added/misheard detail rather than the same fact restated."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "meeting type designation",
+    "ours": "",
+    "official": "Special Meeting",
+    "note": "Official labels this a Special Meeting; ours does not note the meeting type."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-14T13:28:43Z",
+   "cost_usd": 0.22573200000000002
+  }
+ }
+}

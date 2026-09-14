@@ -1,0 +1,723 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "meeting_date": "2024-06-26",
+ "video_id": "ADNePNHauu8",
+ "video_url": "https://www.youtube.com/watch?v=ADNePNHauu8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2024-06-26-ADNePNHauu8.json",
+  "sha256": "328bea935c237cebe1aabb97d0d5cb249306825cab09306f7e97b2165ebb228e",
+  "caption_lines": 496,
+  "segments": 3718
+ },
+ "recording": {
+  "duration_s": 10476,
+  "duration": "2:54",
+  "spoken_chars": 126236,
+  "words_approx": 21039
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06262024-6632",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-06-26-agenda-6632.txt",
+   "path": "sources/meetings/school-committee/2024-06-26-agenda-6632.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06262024-6632",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-06-26-minutes-6632.txt",
+   "path": "sources/meetings/school-committee/2024-06-26-minutes-6632.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-14T02:09:38Z",
+  "cost_usd": 0.4224104
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Anthony Scolbrini",
+    "role": "vice chair, acting chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Carol Aseno",
+    "role": "secretary",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Peter Beardmore",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Laura Brazowski",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dr. Burnham",
+    "role": "superintendent",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Courtney Fuller",
+    "role": "recording secretary",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Kevin Bigalow",
+    "role": "athletic director",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dave Abraham",
+    "role": "athletic trainer",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dr. David (Adam) Ridley",
+    "role": "guest presenter, sports medicine physician",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Naen Lorenzen",
+    "role": "food services director",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Paul Livingston",
+    "role": "finance consultant (TMS)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Liz Peterson",
+    "role": "staff / finance office",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 8543,
+    "speaker_as_heard": "Dave Rogers",
+    "topic": "Asked about the new finance director's hiring, cost and start; questioned the chair's union membership given his teaching role; asked how long the outside finance consultants (Livingston/Deo, TMS) would remain and what they cost."
+   }
+  ],
+  "tags": [
+   "athletics",
+   "budget",
+   "contracts-and-unions",
+   "curriculum",
+   "esser",
+   "executive-session",
+   "facilities",
+   "fees",
+   "grants",
+   "hiring",
+   "layoffs",
+   "msba",
+   "out-of-district",
+   "personnel",
+   "policy",
+   "public-comment",
+   "retirement",
+   "special-education",
+   "staffing",
+   "superintendent-report",
+   "technology",
+   "town-departments",
+   "transfers",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 534,
+    "motion": "Transfer $41,675 of available funds from general budget salary lines to FY general budget expense lines to meet expense obligations closing out the FY24 budget.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4861,
+    "motion": "Approve the FY24 encumbrances list as presented (purchase orders held open).",
+    "moved_by": "Peter Beardmore",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5872,
+    "motion": "Approve participation in the Community Eligibility Provision (CEP) program for Turkey Hill Elementary for next year.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7076,
+    "motion": "Appoint Anthony Scolbrini to the town budget task force, with Laura Brazowski as designated backup.",
+    "moved_by": "Anthony Scolbrini",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 8459,
+    "motion": "Table the class accounts discussion until a later date.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 10429,
+    "motion": "Adjourn to executive session and, following executive session, adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 514,
+    "topic": "FY24 line item transfer",
+    "figures_as_heard": [
+     "41675"
+    ],
+    "what_was_said": "The finance consultant recommended transferring available salary-line funds to expense lines to reclassify grant money that should have paid salaries, ahead of the FY24 closeout. This was necessitated by the town accountant and finance director positions being vacant for months."
+   },
+   {
+    "t": 702,
+    "topic": "Warrant total",
+    "figures_as_heard": [
+     "9,241 and2"
+    ],
+    "what_was_said": "The finance office reported the total of the warrants already signed for information only; no committee action was needed."
+   },
+   {
+    "t": 3989,
+    "topic": "FY24 open purchase orders / encumbrances",
+    "figures_as_heard": [
+     "$100,000"
+    ],
+    "what_was_said": "About this amount sits between items truly on the encumbrance list and those simply being held pending review, some funded by grants or the school lunch revolving account rather than the general budget."
+   },
+   {
+    "t": 3782,
+    "topic": "PO adjustment processing overhead",
+    "figures_as_heard": [
+     "$30"
+    ],
+    "what_was_said": "The finance consultant cited a small shipping-cost PO adjustment as an example of how many back-and-forth steps with the town are currently required for even minor changes."
+   },
+   {
+    "t": 4925,
+    "topic": "Community Eligibility Provision (CEP) at Turkey Hill",
+    "figures_as_heard": [],
+    "what_was_said": "CEP would let Turkey Hill serve free meals to all students without meal-benefit applications, reimbursed by formula rather than by processing applications; the food services director said funding could be the same or slightly enhanced but did not give a figure."
+   },
+   {
+    "t": 8890,
+    "topic": "TMS finance consultant contract",
+    "figures_as_heard": [
+     "approximately 31,000"
+    ],
+    "what_was_said": "The superintendent said the district awarded a contract to TMS (Livingston and Deo) for finance support from February 1 through June 30 at roughly this amount, with a possible extension into the transition period."
+   },
+   {
+    "t": 8975,
+    "topic": "New finance director salary",
+    "figures_as_heard": [
+     "$150,000"
+    ],
+    "what_was_said": "The incoming finance director begins July 1 on a three-year contract; her first-year salary was stated at this figure."
+   },
+   {
+    "t": 9008,
+    "topic": "Superintendent's own salary",
+    "figures_as_heard": [],
+    "what_was_said": "The superintendent said her salary for the next two contract years is budgeted and will be exactly the same as it was in FY24, i.e., no raise."
+   }
+  ],
+  "transfers": [
+   {
+    "t": 514,
+    "description": "$41,675 of available funds moved from general budget salary lines to FY general budget expense lines, reclassifying grant salary money to meet FY24 closeout expense obligations.",
+    "amount_as_heard": "41675",
+    "outcome": "voted"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 2438,
+    "decision": "Dr. Ridley agreed to attend (or send a video for) an annual meet-and-greet with coaches, athletes and parents so families know who he is."
+   },
+   {
+    "t": 3442,
+    "decision": "Committee endorsed continuing the three-year cycle of inclusion/special-education program review presented in the slide deck, with no vote needed."
+   },
+   {
+    "t": 10345,
+    "decision": "Superintendent will schedule a finance/budget workshop for the committee over the summer once member availability for July/August is collected."
+   },
+   {
+    "t": 10388,
+    "decision": "Cell phone use by students will be added as a future agenda topic for discussion with educators."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 11,
+    "t_end": 323,
+    "topic": "Call to order, remote-meeting preamble, and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 323,
+    "t_end": 365,
+    "topic": "First public comment period",
+    "resolution": "no one spoke",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 365,
+    "t_end": 410,
+    "topic": "Minutes and chair's report",
+    "resolution": "no minutes or report given (chair absent)",
+    "tags": []
+   },
+   {
+    "t_start": 410,
+    "t_end": 593,
+    "topic": "FY24 line item transfer of grant salary money to expense lines",
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "transfers"
+    ]
+   },
+   {
+    "t_start": 659,
+    "t_end": 722,
+    "topic": "Warrant totals, already signed",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 722,
+    "t_end": 953,
+    "topic": "Superintendent's report: instructional leadership institute, transportation office manager retirement, MSBA survey notice",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "msba",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 953,
+    "t_end": 3360,
+    "topic": "Discussion of head injuries/concussion protocols with athletic director, trainer, and guest sports-medicine physician Dr. Ridley",
+    "resolution": "informational, no vote",
+    "tags": [
+     "athletics",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3361,
+    "t_end": 3569,
+    "topic": "Special education inclusion support program evaluation (slide deck, not presented live)",
+    "resolution": "discussion only, no presenter available",
+    "tags": [
+     "special-education",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3569,
+    "t_end": 4900,
+    "topic": "FY24 budget carryover on open purchase orders/encumbrances and finance-process concerns with the town",
+    "resolution": "voted to hold POs open / approve encumbrance list",
+    "tags": [
+     "budget",
+     "transfers",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4905,
+    "t_end": 5915,
+    "topic": "Community Eligibility Provision (CEP) for Turkey Hill Elementary meals",
+    "resolution": "voted to approve",
+    "tags": [
+     "turkey-hill",
+     "grants",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 5915,
+    "t_end": 7183,
+    "topic": "Appointment to town budget task force",
+    "resolution": "voted to appoint",
+    "tags": [
+     "budget",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 7204,
+    "t_end": 7434,
+    "topic": "FY24 quarterly budget update, ESSER fund closeout",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "esser"
+    ]
+   },
+   {
+    "t_start": 7434,
+    "t_end": 7645,
+    "topic": "Keystone Collaborative quarterly report (out-of-district special education)",
+    "resolution": "informational, no vote",
+    "tags": [
+     "special-education",
+     "out-of-district"
+    ]
+   },
+   {
+    "t_start": 7645,
+    "t_end": 8375,
+    "topic": "Personnel report: new hires, separations, open positions, primary school leadership vacancies",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "hiring",
+     "layoffs"
+    ]
+   },
+   {
+    "t_start": 8396,
+    "t_end": 8479,
+    "topic": "Class accounts update",
+    "resolution": "tabled by vote",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 8479,
+    "t_end": 9060,
+    "topic": "Second public comment (Dave Rogers) on finance director hiring, chair's union status, and TMS consultant costs",
+    "resolution": "questions answered by chair and superintendent",
+    "tags": [
+     "public-comment",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 9060,
+    "t_end": 10282,
+    "topic": "Superintendent's rapid responses to prior school committee members' questions on buses, curriculum (Amplify, IXL), TCP facility, library usage, communications, cultural council fundraising",
+    "resolution": "informational",
+    "tags": [
+     "policy",
+     "curriculum",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 10282,
+    "t_end": 10323,
+    "topic": "Reports deferred (Fincom report skipped for time)",
+    "resolution": "deferred",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 10323,
+    "t_end": 10430,
+    "topic": "Topics for future agendas: finance workshop scheduling and student cell phone use",
+    "resolution": "informational, added to future agenda",
+    "tags": [
+     "policy",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 10430,
+    "t_end": 10454,
+    "topic": "Adjournment to executive session",
+    "resolution": "voted",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Early roll call segment (roughly seconds 71-94) is choppy and some responses overlap.",
+   "The warrant total figure at 702 is rendered as \"9,241 and2\" and cannot be confirmed as a precise dollar figure.",
+   "The speaker moving the first line-item transfer motion at 534 is not clearly identified.",
+   "The identity of the caller with a hand raised before Dave Rogers stated his name (around 8479-8543) is not established.",
+   "Exact current count of open/filled custodial positions (around 8352) was described by the superintendent as unknown/fluid.",
+   "Several instances throughout where 'Scolbrini' is rendered inconsistently (e.g., 'SCH brini', 'SC Briny', 'scho bini') and cannot be confirmed as a single spelling."
+  ],
+  "confidence": "moderate",
+  "headline": "Personnel report shows far more staff departures than hires, mostly pay-driven amid budget uncertainty.",
+  "summary": "This remote School Committee meeting closed out FY24 business: a $41,675 salary-to-expense line item transfer, approval of the FY24 encumbrance/open-PO list, and updates on the messy year caused by long-vacant town accountant and finance director positions. The committee also heard a lengthy concussion-protocol discussion with a guest sports-medicine physician, approved joining the Community Eligibility Provision for free meals at Turkey Hill, appointed a member (with backup) to a new town budget task force, and reviewed a personnel report describing many more staff separations than new hires, attributed largely to pay concerns following the district's recent budget-cut scare."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "A personnel report showed far more staff departures than new hires, attributed largely to pay concerns after the district's recent budget-cut scare.",
+    "t": 7645
+   },
+   {
+    "line": "The committee approved a transfer from salary lines to expense lines to close out the FY24 budget, made necessary by town accountant and finance director positions sitting vacant for months.",
+    "t": 534
+   },
+   {
+    "line": "The committee approved the FY24 encumbrance list, holding a number of purchase orders open, some funded by grants or the school lunch revolving account rather than the general budget.",
+    "t": 4861
+   },
+   {
+    "line": "The committee voted to join the Community Eligibility Provision at Turkey Hill Elementary, which would let the school serve free meals to all students without meal-benefit applications.",
+    "t": 5872
+   },
+   {
+    "line": "A member was appointed, with a backup, to a newly formed town budget task force.",
+    "t": 7076
+   }
+  ],
+  "why_it_matters": [
+   "Staff leaving over pay, even described only as a pattern here, touches classroom continuity and who is teaching students next year.",
+   "The salary-to-expense transfer and the vacant town finance positions behind it affect how reliably the district's books close each year, which residents rely on when judging the budget.",
+   "Joining the Community Eligibility Provision would change how families at Turkey Hill Elementary access school meals, regardless of income."
+  ],
+  "watch_next": [
+   "A summer finance/budget workshop for the committee, once member availability is collected",
+   "Student cell phone use, added as a future agenda topic"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-14T02:09:53Z",
+   "cost_usd": 0.1437284
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06262024-6632",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-06-26-minutes-6632.txt",
+   "path": "sources/meetings/school-committee/2024-06-26-minutes-6632.pdf"
+  },
+  "official_sha256": "2b2958e603ab2178e03f1edb134eb03d8d5613a04bc9f324b5c6fe09ebb411d5",
+  "coverage": "partial",
+  "summary": "The two records agree on every vote's outcome (all passed/unanimous) and on most figures, but the official minutes render several names differently than the captions heard, omit two things our minutes flagged as decisions, and state the line-item transfer amount as roughly ten times larger than what our minutes captured. The one thing to check first: the transfer amount ($41,675 in ours vs. $411,675 in the official minutes) — that gap is too large to be a comma/rounding slip and should be confirmed against the actual transfer request or warrant.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Line-item transfer amount",
+    "t": 534,
+    "ours": "Transfer $41,675 of available funds from general budget salary lines to FY general budget expense lines",
+    "official": "reclassification of $411,675 transfer from general budget salaries to general budget lines to meet the expected expenses",
+    "note": "An order-of-magnitude gap, not a digit-grouping slip; check the actual transfer request/warrant on file for the true figure — both records agree the vote passed unanimously via roll call."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant total figure",
+    "t": 702,
+    "ours": "Warrant total: 9,241 and2",
+    "official": "Warrants approved and signed in total of $159,241.02",
+    "official_reading": "$159,241.02",
+    "note": "Garbled digit string in the captions is clearly the same figure the official minutes give cleanly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair's name",
+    "ours": "Anthony Scolbrini (vice chair, acting chair)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Same person, misheard surname; also chaired the meeting per official minutes item 1."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Secretary's name",
+    "ours": "Carol Aseno (secretary)",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Same person, misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name",
+    "ours": "Laura Brazowski (member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same person, misheard surname; appears repeatedly (motions, CEP, task force)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Athletic director's name",
+    "ours": "Kevin Bigalow (athletic director)",
+    "official": "Kevin Bigelow-Athletic Director",
+    "official_reading": "Kevin Bigelow",
+    "note": "Same person, misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Food services director's name",
+    "ours": "Naen Lorenzen (food services director)",
+    "official": "Nadine Lorenzen-Food Service Director",
+    "official_reading": "Nadine Lorenzen",
+    "note": "Same person, misheard first name."
+   },
+   {
+    "kind": "agree",
+    "about": "Superintendent attendee",
+    "ours": "Dr. Burnham (superintendent)",
+    "official": "Dr. Kate Burnham",
+    "note": "Same person, consistent between records."
+   },
+   {
+    "kind": "agree",
+    "about": "Member attendee",
+    "ours": "Peter Beardmore (member)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Recording secretary attendee",
+    "ours": "Courtney Fuller (recording secretary)",
+    "official": "Courtney Fuller",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Athletic trainer attendee",
+    "ours": "Dave Abraham (athletic trainer)",
+    "official": "Dave Abraham-Athletic Trainer",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Finance consultant attendee",
+    "ours": "Paul Livingston (finance consultant (TMS))",
+    "official": "Mr. Paul Livingston our contract consultant",
+    "note": "Matches; official later also calls him Dr. Livingston / Mr. Livingston inconsistently, but same person."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair attendance",
+    "ours": "",
+    "official": "Brian Lehtinen, Chair - Absent",
+    "note": "Our attendee list omits the chair entirely; official records him present-in-name but absent, and that Sculimbrene ran the meeting as a result — worth confirming who chaired."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Finance office staff attendee",
+    "ours": "Liz Peterson (staff / finance office)",
+    "official": "",
+    "note": "Not named anywhere in the official minutes; check whether she was actually present or the captions misattributed a comment to her."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Open PO/encumbrances dollar total",
+    "ours": "FY24 open purchase orders / encumbrances: $100,000",
+    "official": "",
+    "note": "Official minutes describe the vote (Beardmore moved, Brzozoski seconded, approved) but state no dollar total for the PO carryover list; confirm the $100,000 figure against the PO list itself."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "PO adjustment processing overhead",
+    "ours": "PO adjustment processing overhead: $30",
+    "official": "",
+    "note": "No corresponding figure or topic appears anywhere in the official minutes; verify this wasn't a captioning artifact of an unrelated number."
+   },
+   {
+    "kind": "agree",
+    "about": "TMS finance consultant contract cost",
+    "t": 8890,
+    "ours": "TMS finance consultant contract: approximately 31,000",
+    "official": "the services have been approximately $31,000",
+    "note": "Same figure in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "New finance director salary",
+    "t": 8975,
+    "ours": "New finance director salary: $150,000",
+    "official": "she will be paid $150,000",
+    "note": "Same figure in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "New finance director's name",
+    "ours": "",
+    "official": "Dr. Burnham shares that Dr. Gilson is our Finance Director",
+    "note": "Our minutes note the $150,000 salary but never capture the name Dr. Gilson or her 3-year contract term."
+   },
+   {
+    "kind": "agree",
+    "about": "FY24 encumbrances/open PO vote",
+    "t": 4861,
+    "ours": "Approve the FY24 encumbrances list as presented (purchase orders held open). — passed",
+    "official": "Mr. Beardmore makes a motion to approve the open PO list, Ms. Brzozoski seconds the motion, approved unanimously via roll call.",
+    "note": "Same vote and outcome; official adds mover/seconder detail ours omits."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dr. Ridley meet-and-greet commitment",
+    "t": 2438,
+    "ours": "Dr. Ridley agreed to attend (or send a video for) an annual meet-and-greet with coaches, athletes and parents so families know who he is.",
+    "official": "",
+    "note": "Official minutes describe the head-injury presentation and discussion but record no such commitment; check the recording around this timestamp to confirm whether this was actually said or inferred."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Endorsement of three-year special-ed review cycle",
+    "t": 3442,
+    "ours": "Committee endorsed continuing the three-year cycle of inclusion/special-education program review presented in the slide deck, with no vote needed.",
+    "official": "Ms. Hanscom has provided a slide deck to the school committee for review",
+    "note": "Official minutes note only that the slide deck was provided, not that the committee endorsed continuing any three-year cycle; verify against the recording whether this was said or is an inference from the presentation."
+   },
+   {
+    "kind": "agree",
+    "about": "Finance/budget workshop scheduling",
+    "t": 10345,
+    "ours": "Superintendent will schedule a finance/budget workshop for the committee over the summer once member availability for July/August is collected.",
+    "official": "Discussion for finance workshop",
+    "note": "Same topic flagged as a future item in both, official gives far less detail."
+   },
+   {
+    "kind": "agree",
+    "about": "Cell phone use as future agenda topic",
+    "t": 10388,
+    "ours": "Cell phone use by students will be added as a future agenda topic for discussion with educators.",
+    "official": "Use of cell phones in school",
+    "note": "Same topic listed under Topics for Future Discussion in both."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-14T13:34:56Z",
+   "cost_usd": 0.2248674
+  }
+ }
+}
