@@ -46,7 +46,7 @@ function CiteLink({ c }: { c: Cite | null }) {
 function Item({ r, muted }: { r: Row; muted?: boolean }) {
   return (
     <li className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px solid var(--grid)', color: muted ? 'var(--text-muted)' : undefined }}>
-      <span className="font-semibold">{r.item.replace(/^Town — /, '')}</span>{r.fte ? <span className="tnum"> · {r.fte} FTE</span> : ''}{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}
+      <span className="font-semibold">{r.item.replace(/^Town — /, '').replace(/^(Fire|Police|DPW|Library|Council on Aging|Parks & Recreation|General Government|Universal) — /, '')}</span>{r.fte ? <span className="tnum"> · {r.fte} FTE</span> : ''}{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}
       {r.why && <span style={{ color: 'var(--text-secondary)' }}> — {r.why}</span>}
       <CiteLink c={r.cite} />
       {r.note && !r.note.startsWith('internal:') && <span className="text-xs italic ml-1.5" style={{ color: 'var(--text-muted)' }}>{r.note}</span>}

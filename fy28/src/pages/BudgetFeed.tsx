@@ -387,7 +387,8 @@ export function BudgetFeed() {
   const season = seg && /^fy\d{2}$/.test(seg) ? seg : null
   const episodeId = seg && !season ? seg : null
   const { d, err } = useReport<Payload>(season ? `budget-feed-${season}.json` : 'budget-feed.json')
-  const [hasBoard, setHasBoard] = useState(false)   // a season file renders the board; the agenda-window calendar then has nothing to add
+  const [hasBoard, setHasBoard] = useState(false)
+  const [recentOpen, setRecentOpen] = useState(false)   // a season file renders the board; the agenda-window calendar then has nothing to add
   const [shown, setShown] = useState(20)
   if (!d) return <ReportShell tab={TAB} title="The budget feed" err={err} loading={!err} dataUrl={DATA} />
   // Group the entries by meeting, newest first.
@@ -498,6 +499,11 @@ export function BudgetFeed() {
       </>}
 
       {/* -------------------------------------------------------------------- recent */}
+      {/* Under a finished season's board the raw log is folded to one line: the story is
+          above; this is the record it was read from. */}
+      {hasBoard && !recentOpen ? (
+        <p className="text-sm mt-8" style={{ color: 'var(--text-secondary)' }}><button className="underline" onClick={() => setRecentOpen(true)}>Meeting by meeting</button> — the {d.entries.length.toLocaleString('en-US')} things said or voted about the budget across {d.counts.boards} boards’ meetings this season, each linked to the second in the video. The record the board above was read from.</p>
+      ) : <>
       <H2 id="recent">Meeting by meeting, newest first</H2>
       <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>One row per meeting; open it for what was said, each line linked to the second in the video. From our minutes where we have them, and from the town’s agendas and minutes where we do not.</p>
       <div className="mt-3 space-y-2">{meetings.slice(0, shown).map(m => {
@@ -509,6 +515,7 @@ export function BudgetFeed() {
       })}</div>
       {meetings.length > shown && <button className="underline text-sm mt-3" onClick={() => setShown(shown + 20)}>show {Math.min(20, meetings.length - shown)} more of {meetings.length - shown}</button>}
 
+      </>}
       {/* --------------------------------------------------------------- documents */}
       {(d.notices.length > 0 || d.documents.length > 0) && (
         <>
