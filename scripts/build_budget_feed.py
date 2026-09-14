@@ -189,7 +189,7 @@ def in_episode(ep, date, about_fy):
     return True
 
 
-def budget_state(as_of, episode=None):
+def budget_state(as_of, episode=None, threads=()):
     """THE LATEST, and what changed. TJ: "School committee announced 10 cuts for a $2m
     deficit... the cuts named so far (keeping up with changes, for when the cut lists
     change weekly)."
@@ -239,7 +239,7 @@ def budget_state(as_of, episode=None):
             if not keep(d['meeting_date'], st.get('fiscal_year')):
                 continue
             key = (st['scope'], st['kind'])
-            row = dict(base, **dict(st, statement=tally_only(st['statement'])), video_url='%s&t=%ds' % (d['video_url'], st['t']), rank=rank(st.get('who')))
+            row = dict(base, **dict(st, statement=tally_only(st['statement'])), thread=thread_of(threads, st['statement'], st['kind']), video_url='%s&t=%ds' % (d['video_url'], st['t']), rank=rank(st.get('who')))
             history[key].append(row)
             if key not in latest or row['rank'] >= latest[key]['rank']:
                 latest[key] = row
@@ -257,7 +257,7 @@ def budget_state(as_of, episode=None):
             if RESTORE.search(c['item']) and not re.search(r'\b(cut|reduc|eliminat)', c['item'], re.I) and c['status'] not in ('restored', 'withdrawn'):
                 c = dict(c, status='restored')
             k = (c['scope'], norm_item(c['item']))
-            row = dict(base, **dict(c, item=tally_only(c['item'])), video_url='%s&t=%ds' % (d['video_url'], c['t']), key=norm_item(c['item']))
+            row = dict(base, **dict(c, item=tally_only(c['item'])), thread=thread_of(threads, c['item'], 'cut'), video_url='%s&t=%ds' % (d['video_url'], c['t']), key=norm_item(c['item']))
             if k not in cuts:
                 added.append(row)
             elif cuts[k]['status'] != c['status']:
@@ -429,6 +429,90 @@ def what_people_ask(state, outcome, calendar, entries, upcoming, notices, as_of,
     return qs
 
 
+THREADS_CSV = os.path.join(ROOT, 'sources', 'data', 'budget-threads.csv')
+
+
+def threads_for(fy):
+    """THE THREADS -- the 'balls' a season moves forward, each a story of its own. TJ, 14
+    September 2026: "there are a few 'balls' that get moved forward in these seasons --
+    warrant articles, deficit numbers, cuts... I would like to see the story of the warrant
+    articles; the story of the cuts, 'how did we land on cutting athletics'; the deficit
+    numbers, 'how did we land on $2.5m?!'... we'll also need to autodetect them (auto,
+    meaning, you/I agree one is forming). You never know what will need a specific story."
+    sources/data/budget-threads.csv: id, order (lowest tried first, so a specific thread
+    outranks a generic one), label, the question the thread answers, a regex over the
+    text, the statement kinds it owns, the seasons it applies to (blank = all). A vote or
+    figure lands in exactly one thread; what no thread claims is 'everything else'."""
+    out = []
+    for r in read_csv(THREADS_CSV):
+        if r.get('seasons') and str(fy) not in [x.strip() for x in r['seasons'].split(';')]:
+            continue
+        out.append(dict(r, order=int(r['order']), rx=re.compile(r['match'], re.I) if r['match'] else None,
+                        kinds=[k for k in (r.get('kinds') or '').split(';') if k]))
+    return sorted(out, key=lambda r: r['order'])
+
+
+def thread_of(threads, text, kind=None):
+    """The first thread, by order, whose kinds own this row or whose pattern matches its text."""
+    for t in threads:
+        if kind and kind in t['kinds']:
+            return t['id']
+    for t in threads:
+        if t['rx'] and t['rx'].search(text or ''):
+            return t['id']
+    return 'other'
+
+
+# The words a proposed thread may NOT be built on: the names of things every season has.
+THREAD_STOP = {'town meeting', 'select board', 'school committee', 'finance committee', 'town manager', 'school department',
+               'annual town meeting', 'special town meeting', 'town hall', 'proposition 2½', 'fiscal year', 'general fund'}
+
+
+# Subjects a budget story is often about, for the detector: lower-case, so 'athletics'
+# recurring across four meetings surfaces even though nobody capitalises it.
+THREAD_SUBJECTS = ['athletic', 'transportation', 'busing', 'firefighter', 'police', 'library', 'custodian', 'paraprofessional',
+                   'interventionist', 'kindergarten', 'special education', 'out-of-district', 'health insurance', 'opeb', 'pension',
+                   'capital plan', 'debt exclusion', 'enterprise fund', 'solid waste', 'sewer', 'water', 'stabilization', 'free cash',
+                   'school choice', 'circuit breaker', 'chapter 70', 'reserve fund', 'snow and ice', 'union', 'collective bargaining',
+                   'assistant town manager', 'nurse', 'counselor', 'psychologist', 'music program', 'art program', 'art teacher',
+                   'world language', 'technology', 'field', 'track', 'playground', 'marshall park', 'kids kingdom']
+
+
+def propose_threads(rows, threads):
+    """A STORY FORMING THAT NO THREAD NAMES, proposed for a person to confirm -- never created
+    here. Over everything the season's meetings put on the record (topics, budget items,
+    figures, cuts, votes), a NAMED THING -- a capitalised phrase ('Marshall Park', 'Kids
+    Kingdom', 'TC Pacios') or a budget subject ('athletics', 'firefighter') -- that recurs
+    in five or more lines across three or more meetings, and is not already what a
+    specific thread is about, is a candidate. Written into the payload as
+    `proposed_threads` and printed by the refresh; it becomes a thread when a row is added
+    to sources/data/budget-threads.csv."""
+    NAME = re.compile(r"\b([A-Z][A-Za-z'’.]+(?:\s+(?:of|the|and|&)\s+)?(?:\s+[A-Z][A-Za-z'’.]+)+)\b")
+    SUBJ = re.compile(r'\b(' + '|'.join(re.escape(x) for x in THREAD_SUBJECTS) + r')(s|es)?\b', re.I)
+    hits = collections.defaultdict(set)
+    for r in rows:
+        text = r.get('text') or ''
+        names = set()
+        for m in NAME.finditer(text):
+            name = re.sub(r'\s+', ' ', m.group(1)).strip('.')
+            if name.lower() in THREAD_STOP or re.match(r'^(FY|Article|Articles|Motion|Recommend|Approve|Defer|Include|Remove|Accept|Public|New|Old)\b', name) or len(name) < 6:
+                continue
+            names.add(name)
+        for m in SUBJ.finditer(text):
+            names.add(m.group(1).lower())
+        for name in names:
+            if any(t['rx'] and t['rx'].search(name) for t in threads):   # a thread already tells this story
+                continue
+            hits[name].add((r['board'], r['date'], r.get('t') or 0))
+    out = []
+    for name, ms in hits.items():
+        meetings = sorted({(d, b) for b, d, _ in ms})
+        if len(ms) >= 5 and len(meetings) >= 3:
+            out.append(dict(name=name, rows=len(ms), meetings=len(meetings), first=meetings[0][0], last=meetings[-1][0],
+                            suggested=dict(id=re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-'), label=name, match=r'\b' + re.escape(name) + r'\w*', order=5)))
+    return sorted(out, key=lambda x: (-x['meetings'], -x['rows'], x['name']))[:12]
+
+
 def propose_episodes(eps, docs, names, notices, as_of):
     """SIGNS THAT A NEW EPISODE HAS STARTED, proposed for a person to confirm -- never created
     here. TJ, 14 September 2026: "as you discover info through the meeting minutes, [you]
@@ -551,6 +635,7 @@ def build(as_of=None, whole_cycle=False):
                              typical_last=MONTHS[last // 31] + ' ' + str(last % 31 or 1)))
 
     # 3. recent discussion, newest first
+    threads_all = threads_for(fy_now)
     entries = []
     for m in rec.get('meetings', []):
         if m['date'] < since or m['date'] >= as_of:
@@ -575,7 +660,7 @@ def build(as_of=None, whole_cycle=False):
             if v.get('procedural') or not MARKER.search(v.get('motion') or '') or APPOINTMENT.match(v.get('motion') or '') or HOUSEKEEPING.match(v.get('motion') or '') or ELECTION_WARRANT.search(v.get('motion') or ''):
                 continue
             entries.append(dict(kind='vote', board=m['board'], board_slug=m['board_slug'], date=m['date'], page=page,
-                                text=v.get('motion'), detail=tally_only(v.get('outcome')), t=v.get('t'),
+                                text=v.get('motion'), detail=tally_only(v.get('outcome')), t=v.get('t'), thread=thread_of(threads_all, v.get('motion')),
                                 video_url='%s&t=%ds' % (m['video_url'], v['t']) if v.get('t') is not None else m['video_url']))
     ours = {(m['board_slug'], m['date']) for m in rec.get('meetings', [])}
     for slug, by_date in docs.items():
@@ -605,17 +690,18 @@ def build(as_of=None, whole_cycle=False):
     notices_out.sort(key=lambda x: x['published'] or x['first_seen'], reverse=True)
 
     outcome = season_outcome(fy_now, opens, closes, as_of)
+    threads = threads_all
     eps = episodes_for(fy_now)
     episodes = []
     for ep in eps:
         if ep['opens'] and ep['opens'] > as_of:
             continue
-        st = budget_state(as_of, ep)
+        st = budget_state(as_of, ep, threads)
         episodes.append(dict(ep, closed=bool(ep['closes']) and ep['closes'] <= as_of, state=st,
                              answers=what_people_ask(st, outcome, calendar, entries, upcoming, notices_out, as_of, fy_now) if ep['kind'] == 'regular' else None))
     proposed = propose_episodes(eps, docs, names, notices_out, as_of) if not whole_cycle else []
     # the whole season, for the tracker sections below; the regular episode's answers for the glance
-    state = budget_state(as_of)
+    state = budget_state(as_of, threads=threads)
     regular = next((e for e in episodes if e['kind'] == 'regular'), None)
     answers = regular['answers'] if regular else what_people_ask(state, outcome, calendar, entries, upcoming, notices_out, as_of, fy_now)
     # THE SAME LIST IN EVERY PAYLOAD: the live cycle is today's, whatever this payload's
@@ -643,6 +729,11 @@ def build(as_of=None, whole_cycle=False):
                'Not every mention of money — the budget being built, and what will land on the warrant.'),
         as_of=as_of, cycle_fy=fy_now, cycle_opens=opens, cycle_closes=closes, recent_days=(dt.date.fromisoformat(as_of) - dt.date.fromisoformat(since)).days, whole_cycle=whole_cycle,
         upcoming=upcoming, calendar=calendar, entries=entries, documents=documents, notices=notices_out, state=state, seasons=seasons, outcome=outcome, answers=answers, episodes=episodes, proposed_episodes=proposed,
+        threads=[dict(id=t['id'], label=t['label'], question=t['question'], order=t['order'], note=t.get('note') or '') for t in threads] + [dict(id='other', label='Everything else', question='', order=999, note='')],
+        proposed_threads=propose_threads(
+            [dict(text='%s %s' % (e.get('text') or '', e.get('detail') or ''), board=e['board'], date=e['date'], t=e.get('t')) for e in entries if e['kind'] in ('vote', 'topic', 'budget item')]
+            + [dict(text=x['statement'], board=x['board'], date=x['date'], t=x['t']) for x in sum(state['history'].values(), [])]
+            + [dict(text=c['item'], board=c['board'], date=c['date'], t=c['t']) for c in state['cuts']], threads),
         counts=dict(upcoming=len(upcoming), entries=len(entries), boards=len(by_board), by_board=dict(by_board.most_common()),
                     kinds=dict(collections.Counter(e['kind'] for e in entries))),
         markers=sorted(set(w for u in upcoming for w in u['markers'])),

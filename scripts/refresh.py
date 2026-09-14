@@ -343,8 +343,14 @@ def main():
         # override, the Governor's budget, the season opening -- is PROPOSED here, with its
         # evidence, for TJ or the agent to confirm by adding a row to budget-episodes.csv.
         try:
-            for p in json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'budget-feed.json'))).get('proposed_episodes', []):
+            feed = json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'budget-feed.json')))
+            for p in feed.get('proposed_episodes', []):
                 notes.append('possible new budget episode: %s (%s) -- add to sources/data/budget-episodes.csv if real' % (p['signal'], p['evidence']))
+            # A story forming that no thread names -- 'athletics' in 23 lines across 9 meetings --
+            # is proposed the same way; a row in sources/data/budget-threads.csv makes it one.
+            for p in feed.get('proposed_threads', [])[:5]:
+                notes.append('a budget story may be forming: %s -- %d lines across %d meetings, %s to %s; add to sources/data/budget-threads.csv to give it a thread'
+                             % (p['name'], p['rows'], p['meetings'], p['first'], p['last']))
         except Exception as e:
             notes.append('could not read proposed episodes: %s' % e)
         # The finished seasons, rebuilt too: their calendars and minutes counts move as the

@@ -162,10 +162,17 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           <button onClick={() => onJump('thisweek')} className="text-[12px] underline" style={{ color: 'var(--series-cost)' }}>every board &rarr;</button>
         </div>
         <BoardsStrip days={7} />
+        {/* THE BUDGET FEED, its own line. TJ, 14 September: "we need a link to the budget
+            feed on the home page somewhere too." It was the last word of the boards line,
+            which is where a link goes to be missed. One row, one sentence, no card. */}
+        <a href="/budget-feed" className="block mt-3 px-3 py-2 rounded-md" style={{ background: 'color-mix(in srgb, var(--series-cost) 7%, transparent)', borderLeft: '3px solid var(--series-cost)' }}>
+          <span className="font-bold text-[13.5px]" style={{ color: 'var(--series-cost)' }}>The budget feed &rarr;</span>
+          <span className="text-[12.5px] ml-2" style={{ color: 'var(--text-secondary)' }}>This year’s budget, one page: what is final, where each board stands, and what has only been said.</span>
+        </a>
         {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
             Committee meets next is the one who wants everything about it. */}
         <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-          Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a> · <a className="underline font-semibold" href="/budget-feed">the budget feed</a>
+          Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
         </p>
       </section>
 
@@ -260,10 +267,14 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
               style={{ color: 'var(--series-cost)' }}>every board &rarr;</button>
           </div>
           <BoardsThisWeek days={7} compact />
+          <a href="/budget-feed" className="block mt-3 px-3 py-2 rounded-md" style={{ background: 'color-mix(in srgb, var(--series-cost) 7%, transparent)', borderLeft: '3px solid var(--series-cost)' }}>
+            <span className="font-bold text-[13.5px]" style={{ color: 'var(--series-cost)' }}>The budget feed &rarr;</span>
+            <span className="text-[12.5px] ml-2" style={{ color: 'var(--text-secondary)' }}>This year’s budget, one page: what is final, where each board stands, and what has only been said.</span>
+          </a>
           {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
               Committee meets next is the one who wants everything about it. */}
           <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-            Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a> · <a className="underline font-semibold" href="/budget-feed">the budget feed</a>
+            Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
           </p>
         </section>
         <HomeWhatWasSaid onJump={onJump} />

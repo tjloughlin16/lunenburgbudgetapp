@@ -19,9 +19,9 @@ const DATA = '/data/budget-feed.json'
 type Upcoming = { board: string; board_slug: string; date: string; days_away: number; agenda_url: string; markers: string[]; hook?: string | null; time?: string | null; where?: string | null; attend?: string | null; join?: Join | null; items: { agenda_line: string; why_it_matters?: string; important?: boolean }[]; board_page: string }
 type Window = { board: string; board_slug: string; typical_first: string; typical_last: string; earliest: string; latest: string; cycles: number; this_cycle: string[] }
 type Stage = { stage: string; key: string; windows: Window[]; status: 'past' | 'now' | 'underway' | 'ahead'; typical_first: string; typical_last: string }
-type Entry = { kind: string; board: string; board_slug: string; date: string; page: string; text?: string | null; detail?: string | null; tags?: string[]; figures?: string[]; markers?: string[]; t?: number | null; video_url?: string; minutes?: number }
-type Statement = { board: string; board_slug: string; date: string; page: string; kind: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; statement: string; who: string; status: string; t: number; video_url: string }
-type Cut = { board: string; board_slug: string; date: string; page: string; item: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; fte_as_heard: string | null; status: string; who: string; t: number; video_url: string; key: string }
+type Entry = { kind: string; board: string; board_slug: string; date: string; page: string; thread?: string; text?: string | null; detail?: string | null; tags?: string[]; figures?: string[]; markers?: string[]; t?: number | null; video_url?: string; minutes?: number }
+type Statement = { board: string; board_slug: string; date: string; page: string; thread?: string; kind: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; statement: string; who: string; status: string; t: number; video_url: string }
+type Cut = { board: string; board_slug: string; date: string; page: string; thread?: string; item: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; fte_as_heard: string | null; status: string; who: string; t: number; video_url: string; key: string }
 type State = { meetings_read: number; first_date: string | null; last_date: string | null; latest: Record<string, Statement>; history: Record<string, Statement[]>; cuts: Cut[]; live_cuts: number; live_by_scope: Record<string, number>; log: { board: string; board_slug: string; date: string; page: string; added: string[]; changed: { item: string; was: string; now: string }[]; n_added: number; n_changed: number }[] }
 type Payload = {
   about: string; as_of: string; cycle_fy: number; cycle_opens: string; cycle_closes: string; recent_days: number; state: State; seasons: { fy: number; path: string; label: string; live: boolean }[]
@@ -29,6 +29,8 @@ type Payload = {
   episodes: { id: string; season_fy: string; kind: 'regular' | 'special'; label: string; opens: string; closes: string; about_fy: string; trigger: string; outcome: string; source: string; note: string; closed: boolean; state: State; answers: { label: string; answer: string; status: string; link?: string | null }[] | null }[]
   outcome: { closed: boolean; atm_date: string | null; election_date: string | null; headline: string; adopted: { amount: number; label: string; source: string } | null; questions: { date: string; election: string; question: string; type: string; amount: number | null; purpose: string; yes: number | null; no: number | null; total: number | null; registered: number | null; turnout_pct: number | null; result: string }[] }
   upcoming: Upcoming[]; calendar: Stage[]; entries: Entry[]
+  threads: { id: string; label: string; question: string; order: number; note: string }[]
+  proposed_threads: { name: string; rows: number; meetings: number; first: string; last: string }[]
   documents: { first_seen: string; source: string; title: string; url: string }[]
   notices: { first_seen: string; source: string; published: string; title: string; link: string }[]
   counts: { upcoming: number; entries: number; boards: number; by_board: Record<string, number>; kinds: Record<string, number> }
@@ -66,32 +68,32 @@ const SCOPE: Record<string, string> = { school: 'School', town: 'Town', both: 'T
 const PLAIN: Record<string, string> = { deficit: 'gap', budget_total: 'budget', override: 'override', state_aid: 'state aid', free_cash: 'free cash', levy: 'levy' }
 const plain = (s: Statement) => `${SCOPE[s.scope] || s.scope} ${PLAIN[s.kind] || s.kind}`.toLowerCase()
 const keyOf = (s: Statement) => `${s.scope}/${s.kind}`
-const THREADS = ['The gap', 'The override', 'The budget total', 'The cuts', 'Warrant articles', 'State aid, free cash and the levy', 'Everything else']
-const LANDED: Record<string, boolean> = { 'The gap': true, 'The override': true }
-const threadOf = (kind: string) => ({ deficit: 'The gap', override: 'The override', budget_total: 'The budget total', state_aid: 'State aid, free cash and the levy', free_cash: 'State aid, free cash and the levy', levy: 'State aid, free cash and the levy' } as Record<string, string>)[kind] || 'Everything else'
-const threadOfMotion = (m: string) => {
-  const t = m.toLowerCase()
-  if (/\boverride\b/.test(t)) return 'The override'
-  if (/\b(cut|cuts|reduc|layoff|eliminat|attrition)/.test(t)) return 'The cuts'
-  if (/\b(warrant|article)\b/.test(t)) return 'Warrant articles'
-  if (/\b(deficit|gap|shortfall)\b/.test(t)) return 'The gap'
-  if (/\b(free cash|state aid|chapter 70|levy|stabilization)\b/.test(t)) return 'State aid, free cash and the levy'
-  if (/\bbudget\b/.test(t)) return 'The budget total'
-  return 'Everything else'
+/** Every dollar figure in a string, as a number: "$2,400,000", "$3.3 million", "1.6 million dollars", "$418k". */
+function amounts(text: string): number[] {
+  const out: number[] = []
+  const rx = /\$?\s?(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s*(million|m\b|k\b|thousand)?/gi
+  let m: RegExpExecArray | null
+  while ((m = rx.exec(text))) {
+    const n = parseFloat(m[1].replace(/,/g, ''))
+    const u = (m[2] || '').toLowerCase()
+    const v = u.startsWith('m') ? n * 1e6 : u ? n * 1e3 : n
+    if (v >= 1000 && (m[0].includes('$') || u || m[1].includes(','))) out.push(v)
+  }
+  return out
 }
-
-function Line({ amount, text, who, board, board_slug, date, video_url, t, muted, chip, chipColor, after }: { amount?: string | null; text: string; who?: string; board: string; board_slug: string; date: string; video_url?: string; t?: number | null; muted?: boolean; chip?: string; chipColor?: string; after?: string }) {
+function Line({ amount, text, who, board, board_slug, date, video_url, t, muted, chip, chipColor, after, landing }: { amount?: string | null; text: string; who?: string; board: string; board_slug: string; date: string; video_url?: string; t?: number | null; muted?: boolean; chip?: string; chipColor?: string; after?: string; landing?: boolean }) {
   return (
-    <li className="pl-3 py-0.5" style={{ borderLeft: `2px solid ${muted ? 'var(--grid)' : (chipColor || 'var(--grid)')}`, color: muted ? 'var(--text-muted)' : undefined }}>
-      {chip && <a className="text-[10px] font-bold uppercase tracking-wider mr-1.5" href={`/boards/${board_slug}`} style={{ color: muted ? 'var(--text-muted)' : chipColor }}>{chip}</a>}
+    <li className="pl-3 py-0.5" style={{ borderLeft: `${landing ? '4px' : '2px'} solid ${landing ? 'var(--status-good)' : muted ? 'var(--grid)' : (chipColor || 'var(--grid)')}`, color: muted ? 'var(--text-muted)' : undefined, background: landing ? 'color-mix(in srgb, var(--status-good) 8%, transparent)' : undefined }}>
+      {landing && <span className="text-[10px] font-bold uppercase tracking-wider mr-1.5" style={{ color: 'var(--status-good)' }} title="Carries the figure Town Meeting or the ballot ended on">✓ made it final ·</span>}
+      {chip && <><a className="text-[10px] font-bold uppercase tracking-wider" href={`/boards/${board_slug}`} style={{ color: muted ? 'var(--text-muted)' : chipColor }}>{chip}</a><span className="text-[10px] font-bold uppercase tracking-wider tnum mr-1.5" style={{ color: 'var(--text-muted)' }}> · {mmdd(date)}</span></>}
       {amount && <span className="tnum font-bold" style={{ textDecoration: muted ? 'line-through' : undefined }}>{amount}</span>}{amount ? ' — ' : ''}{text}
-      <span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{who ? `${who}, ` : ''}{chip ? null : <><a className="underline" href={`/boards/${board_slug}`}>{board}</a>, </>}{mmdd(date)}{video_url ? <> · <a className="underline tnum" href={video_url}>{ts(t) || 'video'}</a></> : null}</span>
+      <span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{who ? `${who}, ` : ''}{chip ? null : <><a className="underline" href={`/boards/${board_slug}`}>{board}</a>, {mmdd(date)}</>}{video_url ? <>{chip ? '' : ' · '}<a className="underline tnum" href={video_url}>{ts(t) || 'video'}</a></> : null}</span>
       {after && <span className="text-xs ml-1.5 italic" style={{ color: 'var(--text-muted)' }}>{after}</span>}
     </li>
   )
 }
 
-function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy }: { st: State; closed: boolean; decisions: Entry[]; outcome?: Payload['outcome'] | null; finalText?: string | null; finalNote?: string | null; fy: number }) {
+function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta }: { st: State; closed: boolean; decisions: Entry[]; outcome?: Payload['outcome'] | null; finalText?: string | null; finalNote?: string | null; fy: number; meta: Payload['threads'] }) {
   const [showSaid, setShowSaid] = useState(!closed)
   const all = Object.values(st.history).flat()
   // Tier 2 -- every board vote, oldest first. A voted figure that a later vote on the same
@@ -110,17 +112,33 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy }: { s
   // hard to track. I would like to see the story of the warrant articles; the story of the
   // cuts, 'how did we land on cutting athletics'; the deficit numbers, 'how did we land on
   // $2.5m?!'" So the same votes, one list per thread, oldest first inside each.
-  type Row = { date: string; t: number; thread: string; el: ReactElement }
+  type Row = { date: string; t: number; thread: string; nums: number[]; render: (landing: boolean) => ReactElement }
+  // THE VOTE THAT MADE IT FINAL. TJ: "when something landed it into 'final' state, call
+  // that out in this flow too -- that was the vote that made it final." A row whose
+  // figure is one Town Meeting or the ballot ended on -- the adopted appropriation, a
+  // ballot question's amount, the figure in an episode's recorded outcome -- and is the
+  // LAST such row in its thread, is marked. A figure match, not a reading of the motion:
+  // the page says "carries the figure it ended on".
+  const finals = [
+    ...(outcome && outcome.closed ? [outcome.adopted?.amount, ...outcome.questions.map(q => q.amount)] : []),
+    ...amounts(finalText || ''),
+  ].filter((n): n is number => typeof n === 'number' && n > 0)
+  const carriesFinal = (nums: number[]) => nums.some(n => finals.some(f => Math.abs(n - f) / f < 0.005))
   const story: Row[] = [
     ...votedStatements.map((x, i): Row => {
       const later = latestVoted[keyOf(x)]
       const superseded = Boolean(later) && later !== x && later.date > x.date
-      return { date: x.date, t: x.t, thread: threadOf(x.kind), el: <Line key={'s' + i} chip={`${x.board} vote`} chipColor="var(--series-cost)" muted={superseded} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} after={superseded ? `overwritten ${mmdd(later.date)}${later.amount_as_heard ? ` → ${later.amount_as_heard}` : ''}` : undefined} /> }
+      return { date: x.date, t: x.t, thread: x.thread || 'other', nums: amounts(x.amount_as_heard || ''), render: landing => <Line key={'s' + i} chip={`${x.board} vote`} chipColor="var(--series-cost)" muted={superseded && !landing} landing={landing} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} after={superseded && !landing ? `overwritten ${mmdd(later.date)}${later.amount_as_heard ? ` → ${later.amount_as_heard}` : ''}` : undefined} /> }
     }),
-    ...votedCuts.map((c, i): Row => ({ date: c.date, t: c.t, thread: 'The cuts', el: <Line key={'c' + i} chip={`${c.board} vote`} chipColor="var(--series-cost)" amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> })),
-    ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, thread: threadOfMotion(e.text || ''), el: <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
+    ...votedCuts.map((c, i): Row => ({ date: c.date, t: c.t, thread: c.thread || 'other', nums: amounts(c.amount_as_heard || ''), render: landing => <Line key={'c' + i} chip={`${c.board} vote`} chipColor="var(--series-cost)" landing={landing} amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> })),
+    ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, thread: e.thread || 'other', nums: amounts(e.text || ''), render: landing => <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" landing={landing} text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
   ].sort((a, b) => a.date.localeCompare(b.date) || a.t - b.t)
-  const threads = THREADS.filter(th => story.some(r => r.thread === th)).map(th => ({ name: th, rows: story.filter(r => r.thread === th), landed: LANDED[th] ? Object.values(latestVoted).filter(x => threadOf(x.kind) === th).map(x => x.amount_as_heard).filter(Boolean) : [] }))
+  const threads = meta.filter(th => story.some(r => r.thread === th.id)).map(th => {
+    const rows = story.filter(r => r.thread === th.id)
+    const hits = rows.map(r => carriesFinal(r.nums))
+    const last = hits.lastIndexOf(true)
+    return { ...th, rows, landingAt: last, landed: Object.values(latestVoted).filter(x => x.thread === th.id).map(x => x.amount_as_heard).filter(Boolean) }
+  })
   // Tier 3 -- said, proposed, argued; never voted anywhere. The latest figure per thing.
   const said = Object.values(st.latest).filter(x => x.status !== 'voted' && x.status !== 'withdrawn' && !latestVoted[keyOf(x)]).sort((a, b) => b.date.localeCompare(a.date))
   const saidCuts = st.cuts.filter(c => c.status === 'announced' || c.status === 'proposed')
@@ -149,10 +167,11 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy }: { s
         <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'How it got there' : 'Where the boards stand, and how they got there'}</p>
         <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>Every board vote, one story per thing the season moves forward, oldest first inside each. A vote a later vote overwrote is struck through and points at what replaced it. None of this is final.</p>
         {story.length > 0 ? threads.map(th => (
-          <div key={th.name} className="mt-3">
-            <p className="text-sm font-bold flex flex-wrap items-baseline gap-x-2">{th.name}<span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>{th.rows.length} vote{th.rows.length === 1 ? '' : 's'}{th.landed.length > 0 ? ` · landed on ${th.landed.join(', ')}` : ''}</span></p>
-            <ul className="text-[13.5px] space-y-1 mt-1">{th.rows.map(r => r.el)}</ul>
-          </div>
+          <details key={th.id} className="mt-2">
+            <summary className="cursor-pointer text-sm font-bold flex flex-wrap items-baseline gap-x-2"><span className="conc-chev inline-block transition-transform text-xs" aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&#9656;</span>{th.label}<span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>{th.rows.length} vote{th.rows.length === 1 ? '' : 's'}{th.landed.length > 0 ? ` · landed on ${th.landed.join(', ')}` : ''}{th.rows.length > 0 ? ` · ${mmdd(th.rows[0].date)} → ${mmdd(th.rows[th.rows.length - 1].date)}` : ''}</span>{th.landingAt >= 0 && <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>✓ made final {mmdd(th.rows[th.landingAt].date)}</span>}</summary>
+            {th.question && <p className="text-xs mt-1 pl-3" style={{ color: 'var(--text-muted)' }}>{th.question}</p>}
+            <ul className="text-[13.5px] space-y-1 mt-1">{th.rows.map((r, i) => r.render(i === th.landingAt))}</ul>
+          </details>
         )) : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No board has voted on anything yet.</p>}
       </div>
 
@@ -225,7 +244,7 @@ function EpisodePage({ d, e, meetings }: { d: Payload; e: Payload['episodes'][nu
           {d.seasons.map(s => <option key={s.path} value={s.path}>{s.label}</option>)}
         </select>
       </label>
-      <Tiers st={st} closed={e.closed} decisions={decisions} fy={Number(e.about_fy || e.season_fy)} finalText={e.outcome || null} finalNote={e.note ? `${e.note}. Sources: ${e.source}.` : null} />
+      <Tiers st={st} closed={e.closed} decisions={decisions} meta={d.threads} fy={Number(e.about_fy || e.season_fy)} finalText={e.outcome || null} finalNote={e.note ? `${e.note}. Sources: ${e.source}.` : null} />
       <H2 id="recent">What was said, meeting by meeting</H2>
       <div className="mt-3 space-y-2">{meetings.map(m => {
         const kinds = m.entries.reduce((acc, x) => { acc[x.kind] = (acc[x.kind] || 0) + 1; return acc }, {} as Record<string, number>)
@@ -283,12 +302,12 @@ export function BudgetFeed() {
             <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{e.closed ? 'closed' : 'under way'} · {mmdd(e.opens)}{e.closes ? ` → ${mmdd(e.closes)}` : ' →'}{e.kind === 'special' ? <> · <a className="underline" href={`/budget-feed/${e.id}`}>its own page</a></> : null}</span>
           </div>
           {e.kind === 'special' && <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{e.trigger}.</p>}
-          <Tiers st={e.state} closed={e.closed} decisions={d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))} outcome={e.kind === 'regular' ? d.outcome : null} fy={Number(e.about_fy || e.season_fy)}
+          <Tiers st={e.state} closed={e.closed} decisions={d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))} outcome={e.kind === 'regular' ? d.outcome : null} meta={d.threads} fy={Number(e.about_fy || e.season_fy)}
             finalText={e.kind === 'special' ? (e.outcome || null) : (d.outcome.closed ? d.outcome.headline : null)}
             finalNote={e.kind === 'regular' && d.outcome.closed ? `Annual Town Meeting ${d.outcome.atm_date ? long(d.outcome.atm_date) : ''}; election ${d.outcome.election_date ? long(d.outcome.election_date) : ''}. Tallies from the town’s printed results; the appropriation from the adopted budget.` : null} />
         </section>
       ))}
-      {d.episodes.length === 0 && <Tiers st={d.state} closed={d.outcome.closed} decisions={d.entries.filter(x => x.kind === 'vote')} outcome={d.outcome} fy={d.cycle_fy} finalText={d.outcome.closed ? d.outcome.headline : null} />}
+      {d.episodes.length === 0 && <Tiers st={d.state} closed={d.outcome.closed} decisions={d.entries.filter(x => x.kind === 'vote')} outcome={d.outcome} meta={d.threads} fy={d.cycle_fy} finalText={d.outcome.closed ? d.outcome.headline : null} />}
 
       {/* ------------------------------------------------------------------ upcoming */}
       {!season && <H2 id="upcoming">Budget meetings coming up</H2>}
