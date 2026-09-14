@@ -403,10 +403,12 @@ export function BudgetFeed() {
   }
   if (episode) return <EpisodePage d={d} e={episode} meetings={meetings.filter(m => m.date >= episode.opens && (!episode.closes || m.date <= episode.closes))} />
   return (
-    <ReportShell tab={TAB} title={season ? `The budget feed, replayed — ${FY(d.cycle_fy)}, as of ${d.as_of}` : `The budget feed — ${FY(d.cycle_fy)}`}
-      standfirst={`What the boards are doing to prepare for Town Meeting — the omnibus budget, the school budget above all, and the warrant. Meetings coming up, where the ${FY(d.cycle_fy)} cycle stands, ${season ? 'what was said through the season' : `what was said in the last ${d.recent_days} days`}, what was posted. Not every mention of money: the budget being built, and what will land on the warrant.`}
+    <ReportShell tab={TAB} title={season ? `The ${FY(d.cycle_fy)} budget season` : `The budget feed — ${FY(d.cycle_fy)}`}
+      standfirst={season
+        ? `How the ${FY(d.cycle_fy)} budget went — the gap, the cuts, the proposals, the override, what Town Meeting and the ballot did, and what took effect — with the meeting or the document behind every line.`
+        : `What the boards are doing to prepare for Town Meeting — the omnibus budget, the school budget above all, and the warrant. Meetings coming up, where the ${FY(d.cycle_fy)} cycle stands, what was said in the last ${d.recent_days} days, what was posted. Not every mention of money: the budget being built, and what will land on the warrant.`}
       dataUrl={season ? `/data/budget-feed-${season}.json` : DATA}>
-      {season && <p className="text-[11px] font-semibold uppercase tracking-widest mt-3" style={{ color: 'var(--status-warning)' }}>A replay: what this page would have shown on {d.as_of}, built from the same records. The live feed is at <a className="underline" href="/budget-feed">/budget-feed</a>.</p>}
+      {season && <p className="text-[11px] font-semibold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>A finished season, closed at the election of {long(d.cycle_closes)}. The live feed is at <a className="underline" href="/budget-feed">/budget-feed</a>.</p>}
       {/* THE SEASON. TJ: "budget-feed probably should have a dropdown for each season." The
           list is in the payload -- the live cycle and every replay that has been built. */}
       <label className="flex items-center gap-2 mt-4 text-sm max-w-full">
