@@ -176,6 +176,71 @@ def cut_words(text):
     return {w for w in ws if w not in CUT_STOP and len(w) > 2}
 
 
+# WHAT KIND OF CUT. TJ, 14 September 2026: "when people hear 'cuts' they think FTEs. So we
+# need different language than listing 51 cuts. Maybe 'X FTE cuts, 20 expense cuts'."
+# A cut is a POSITION (a person's job), a PROGRAM (a team, a band, a bus route, a course),
+# or an EXPENSE line (supplies, dues, a lease). Decided by the words, FTE-as-heard first.
+POSITION = re.compile(r"\b(fte|teacher|paraprofessional|para|position|custodian|principal|director|coach|coaching|counselor|counsellor|nurse|"
+                      r"interventionist|coordinator|secretary|aide|officer|firefighter|clerk|assistant|administrator|specialist|"
+                      r"psychologist|therapist|librarian|educator|manager|trainer|technician|dispatcher|mechanic|laborer|worker|employee)s?\b|"
+                      r"\b(staff|layoffs?|hires?|hiring|retirement|resignation|attrition)\b", re.I)
+PROGRAM = re.compile(r"\b(team|teams|sports?|athletics?|band|chorus|program|programs|transportation|busing|bus|club|clubs|course|courses|"
+                     r"curriculum|adoption|electives?|league|season|field trips?|extracurricular|after.?school|music|art|drama|theater)\b", re.I)
+
+
+def fte_number(text):
+    """'2.0' -> 2.0; 'full-time' -> 1; 'half-time', '0.5' -> 0.5; 'part-time' or nothing -> None.
+    Hours, days, dollars and a-to-b ranges are NOT an FTE ('19 hours a week', '112 to 70
+    hours', '.7 to .5') and return None rather than a number that sums to 266."""
+    t = (text or '').lower()
+    if re.search(r'\b(hours?|hrs?|days?|week|to|\$|%|percent)\b|\d\s*(hr|hour|day)', t):
+        return None
+    m = re.search(r'\d+(?:\.\d+)?|\.\d+', t)
+    if m:
+        v = float(m.group(0))
+        return v if 0 < v <= 12 else None
+    if 'full' in t:
+        return 1.0
+    if 'half' in t:
+        return 0.5
+    return None
+
+
+# THE PROGRAM FAMILIES people name -- TJ: "programs (athletics, music, band, MS sports,
+# transportation, etc)". A program cut is filed to the first family whose words it carries.
+PROGRAM_FAMILIES = [
+    ('middle school sports', r'middle school (sports|athletics)|\bms sports'),
+    ('transportation', r'transportation|busing|\bbus(es)?\b'),   # before athletics: 'athletic transportation' is a bus, not a team
+    ('athletics', r'athletic|sports?\b|\bteam\b|lacrosse|golf|\bski\b|football|soccer|basketball|baseball|softball|hockey|track|cross country|volleyball|wrestling|tennis|cheer|swim'),
+    ('band and music', r'\bband\b|music|chorus|choir|orchestra'),
+    ('art and drama', r'\bart\b|drama|theat(er|re)'),
+    ('world language', r'world language|spanish|french|latin'),
+    ('curriculum', r'curriculum|textbook|adoption'),
+    ('adult and community programs', r'lifelong learning|adult (ed|programs?)|community (ed|programs?)|council on aging|senior'),
+    ('library programs', r'library'),
+    ('recreation', r'recreation|beach|playground|summer'),
+    ('clubs and activities', r'\bclub|extracurricular|after.?school|field trip'),
+]
+
+
+def program_family(item):
+    t = (item or '').lower()
+    for name, rx in PROGRAM_FAMILIES:
+        if re.search(rx, t):
+            return name
+    return 'other programs'
+
+
+def cut_kind(item, fte):
+    if re.search(r'\b(supplies|dues|mileage|repairs?|maintenance|removal|line items?)\b', item or '', re.I) and not fte:
+        return 'expense'
+    if fte or POSITION.search(item or ''):
+        return 'position'
+    if PROGRAM.search(item or ''):
+        return 'program'
+    return 'expense'
+
+
 def cut_groups(cuts):
     """THE SAME CUT, SAID THREE WAYS, IS ONE CUT. TJ, 14 September 2026, on '111 named cuts
     for the school': the athletic trainer was 'Athletic trainer position', 'Athletic Trainer
@@ -212,10 +277,13 @@ def cut_groups(cuts):
             continue                                   # an addition in cut's clothing
         latest = rows[-1]
         by_residents = all((r.get('who') or '').lower().startswith(('a resident', 'resident')) for r in rows)
+        fte_heard = next((r['fte_as_heard'] for r in reversed(rows) if r.get('fte_as_heard')), None)
+        fte = fte_number(fte_heard)
         out.append(dict(item=best['item'], scope=g['scope'], status=latest['status'], mentions=len(rows), first=rows[0]['date'], last=latest['date'],
                         who=best['who'], utterance=by_residents, thread=best.get('thread'), voted=any(st == 'voted' for st in statuses),
                         amount_as_heard=next((r['amount_as_heard'] for r in reversed(rows) if r.get('amount_as_heard')), None),
-                        fte_as_heard=next((r['fte_as_heard'] for r in reversed(rows) if r.get('fte_as_heard')), None)))
+                        fte_as_heard=fte_heard, fte=fte, kind=cut_kind(best['item'], fte),
+                        family=program_family(best['item']) if cut_kind(best['item'], fte) == 'program' else None))
     return out
 
 
@@ -541,7 +609,8 @@ THREAD_SUBJECTS = ['athletic', 'transportation', 'busing', 'firefighter', 'polic
                    'capital plan', 'debt exclusion', 'enterprise fund', 'solid waste', 'sewer', 'water', 'stabilization', 'free cash',
                    'school choice', 'circuit breaker', 'chapter 70', 'reserve fund', 'snow and ice', 'union', 'collective bargaining',
                    'assistant town manager', 'nurse', 'counselor', 'psychologist', 'music program', 'art program', 'art teacher',
-                   'world language', 'technology', 'field', 'track', 'playground', 'marshall park', 'kids kingdom']
+                   'world language', 'technology', 'field', 'track', 'playground', 'marshall park', 'kids kingdom',
+                   'tier one', 'tier two', 'two tiers', 'tiered override', 'tier 1', 'tier 2']
 
 
 def propose_threads(rows, threads):

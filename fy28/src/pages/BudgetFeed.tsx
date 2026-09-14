@@ -23,7 +23,7 @@ type Entry = { kind: string; board: string; board_slug: string; date: string; pa
 type Statement = { board: string; board_slug: string; date: string; page: string; thread?: string; kind: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; statement: string; who: string; status: string; t: number; video_url: string }
 type Cut = { board: string; board_slug: string; date: string; page: string; thread?: string; item: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; fte_as_heard: string | null; status: string; who: string; t: number; video_url: string; key: string }
 type Warning = { board: string; board_slug: string; date: string; page: string; thread?: string; prediction: string; about: string; condition: string | null; scope: string; fiscal_year: number | null; who: string; t: number; video_url: string }
-type CutGroup = { item: string; scope: string; status: string; mentions: number; first: string; last: string; who: string; utterance: boolean; thread?: string; voted: boolean; amount_as_heard: string | null; fte_as_heard: string | null }
+type CutGroup = { item: string; scope: string; status: string; mentions: number; first: string; last: string; who: string; utterance: boolean; thread?: string; voted: boolean; amount_as_heard: string | null; fte_as_heard: string | null; fte: number | null; kind: 'position' | 'program' | 'expense'; family: string | null }
 type State = { meetings_read: number; warnings?: Warning[]; cut_groups?: CutGroup[]; first_date: string | null; last_date: string | null; latest: Record<string, Statement>; history: Record<string, Statement[]>; cuts: Cut[]; live_cuts: number; live_by_scope: Record<string, number>; log: { board: string; board_slug: string; date: string; page: string; added: string[]; changed: { item: string; was: string; now: string }[]; n_added: number; n_changed: number }[] }
 type Payload = {
   about: string; as_of: string; cycle_fy: number; cycle_opens: string; cycle_closes: string; recent_days: number; state: State; seasons: { fy: number; path: string; label: string; live: boolean }[]
@@ -117,7 +117,7 @@ function Thread({ th }: { th: { id: string; label: string; question: string; row
  *  last put it on the record and with what standing. Rule 7b: a metric and two lines.
  *  Staff outrank the chair, who outranks a member, who outranks a resident -- so the
  *  latest figure is the latest STAFF figure where staff gave one, and the card says so. */
-function Metrics({ st }: { st: State }) {
+function Metrics({ st, outcome }: { st: State; outcome?: Payload['outcome'] | null }) {
   const first = (k: string) => { const h = st.history[k] || []; return h.length ? h[h.length - 1] : null }
   const cards: { label: string; value: string; line: string; foot: string }[] = []
   for (const [scope, label] of [['school', 'School gap'], ['town', 'Town gap']] as const) {
@@ -126,7 +126,16 @@ function Metrics({ st }: { st: State }) {
     const f = first(`${scope}/deficit`)
     cards.push({ label, value: x.amount_as_heard || '—', line: `${x.status === 'voted' ? 'a board vote' : x.status === 'announced' ? 'stated, not voted' : 'proposed, not voted'} — ${x.who}, ${mmdd(x.date)}`, foot: f && f !== x && f.amount_as_heard ? `first put at ${f.amount_as_heard} (${mmdd(f.date)})` : '' })
   }
-  for (const [scope, label] of [['school', 'School override ask'], ['town', 'Town override ask'], ['both', 'Override, town and schools']] as const) {
+  // A closed season's override is what reached the ballot, tier by tier -- TJ: "for FY27 we
+  // need to list the fact that there were two override tiers." A live season's is the asks.
+  const qs = outcome && outcome.closed ? outcome.questions.filter(q => q.amount != null) : []
+  if (qs.length) {
+    const tier = (q: typeof qs[number]) => (q.purpose.match(/tier\s*(\d)/i) || [])[0] || q.question.replace(/\.\s*OVERRIDE.*$/i, '')
+    cards.push({ label: qs.length > 1 ? `The override — ${qs.length} tiers on the ballot` : 'The override on the ballot', value: qs.map(q => '$' + q.amount!.toLocaleString('en-US')).join(' / '),
+      line: qs.map(q => `${tier(q)}: $${q.amount!.toLocaleString('en-US')}${q.purpose.match(/\((.*?)\)/) ? ` (${q.purpose.match(/\((.*?)\)/)![1]})` : ''} — ${q.result.toLowerCase()}${q.yes != null ? `, ${q.yes.toLocaleString('en-US')} to ${q.no!.toLocaleString('en-US')}` : ''}`).join(' · '),
+      foot: `${qs[0].election}, ${qs[0].date.length > 7 ? mmdd(qs[0].date) : qs[0].date}; tallies from the town’s printed results` })
+  }
+  for (const [scope, label] of (qs.length ? [] : [['school', 'School override ask'], ['town', 'Town override ask'], ['both', 'Override, town and schools']]) as ReadonlyArray<readonly [string, string]>) {
     const x = st.latest[`${scope}/override`]
     if (!x || (amounts(x.amount_as_heard || '')[0] || 0) < 100_000) continue   // an override is a sum; '$56.95 added to the tax bill' is its impact
     cards.push({ label, value: x.amount_as_heard || '—', line: `${x.status === 'voted' ? 'a board vote' : x.status === 'announced' ? 'stated, not voted' : 'proposed, not voted'} — ${x.who}, ${mmdd(x.date)}`, foot: '' })
@@ -137,8 +146,22 @@ function Metrics({ st }: { st: State }) {
     const gs = (st.cut_groups || []).filter(g => g.scope === scope)
     const cs = gs.filter(g => !g.utterance), said = gs.length - cs.length
     if (!cs.length) continue
-    const voted = cs.filter(g => g.voted).length, gone = cs.filter(g => !g.voted && (g.status === 'restored' || g.status === 'withdrawn')).length
-    cards.push({ label, value: `${cs.length} named`, line: `${voted} voted · ${cs.length - voted - gone} proposed or announced, not voted · ${gone} restored or withdrawn`, foot: `by staff, the chair or a member; ${st.cuts.filter(c => c.scope === scope).length} lines on the record${said ? `, ${said} more named only by residents` : ''}` })
+    // TJ: "when people hear 'cuts' they think FTEs." So positions first, with the FTE where
+    // it was said, then programs, then expense lines -- never one undifferentiated count.
+    const live = cs.filter(g => g.status !== 'restored' && g.status !== 'withdrawn')
+    const pos = live.filter(g => g.kind === 'position'), prog = live.filter(g => g.kind === 'program'), exp = live.filter(g => g.kind === 'expense')
+    const fte = pos.reduce((a, g) => a + (g.fte || 0), 0), fteKnown = pos.filter(g => g.fte != null).length
+    const voted = live.filter(g => g.voted).length, gone = cs.length - live.length
+    // TJ: "cuts to big programs should absolutely be named here" and, on the shape of the
+    // card, "FTE, expense, programs (athletics, music, band, MS sports, transportation,
+    // etc)". So: the FTE, the expense lines, then the program FAMILIES by name -- the ones
+    // a vote touched first -- with the raw items behind in the thread.
+    const fams: string[] = []
+    for (const g of [...prog].sort((a, b) => Number(b.voted) - Number(a.voted))) if (g.family && !fams.includes(g.family)) fams.push(g.family)
+    const fteText = fte ? `${fte % 1 ? fte.toFixed(1) : fte} FTE as heard across ${pos.length} position${pos.length === 1 ? '' : 's'}${fteKnown < pos.length ? ` (${pos.length - fteKnown} with no FTE said)` : ''}` : pos.length ? `${pos.length} position${pos.length === 1 ? '' : 's'}, no FTE said` : ''
+    cards.push({ label, value: fte ? `${fte % 1 ? fte.toFixed(1) : fte} FTE` : pos.length ? `${pos.length} position${pos.length === 1 ? '' : 's'}` : `${live.length} cuts`,
+      line: [fteText, exp.length ? `${exp.length} expense line${exp.length === 1 ? '' : 's'}` : '', fams.length ? `programs: ${fams.join(', ')}` : ''].filter(Boolean).join(' · '),
+      foot: `${voted} voted, ${live.length - voted} not voted${gone ? `, ${gone} restored or withdrawn` : ''}${said ? ` · ${said} more named only by residents` : ''}` })
   }
   const warns = st.warnings || []
   if (warns.length) cards.push({ label: 'Early warnings', value: `${warns.length} on the record`, line: `predictions and threats with no figure yet — latest ${mmdd(warns[0].date)}: ${warns[0].about}`, foot: '' })
@@ -209,7 +232,7 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta 
   const hasFinal = finalRows > 0 || Boolean(finalText)
   return (
     <>
-      <Metrics st={st} />
+      <Metrics st={st} outcome={outcome} />
 
       {/* ---- tier 1: FINAL */}
       <div className="card p-4 mt-4" style={{ borderTop: `4px solid ${hasFinal ? 'var(--status-good)' : 'var(--grid)'}` }}>
