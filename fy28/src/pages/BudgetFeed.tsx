@@ -387,6 +387,7 @@ export function BudgetFeed() {
   const season = seg && /^fy\d{2}$/.test(seg) ? seg : null
   const episodeId = seg && !season ? seg : null
   const { d, err } = useReport<Payload>(season ? `budget-feed-${season}.json` : 'budget-feed.json')
+  const [hasBoard, setHasBoard] = useState(false)   // a season file renders the board; the agenda-window calendar then has nothing to add
   const [shown, setShown] = useState(20)
   if (!d) return <ReportShell tab={TAB} title="The budget feed" err={err} loading={!err} dataUrl={DATA} />
   // Group the entries by meeting, newest first.
@@ -437,7 +438,7 @@ export function BudgetFeed() {
             const tiers = <Tiers st={e.state} closed={e.closed} decisions={d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))} outcome={e.kind === 'regular' ? d.outcome : null} meta={d.threads} fy={Number(e.about_fy || e.season_fy)}
               finalText={e.kind === 'special' ? (e.outcome || null) : (d.outcome.closed ? d.outcome.headline : null)}
               finalNote={e.kind === 'regular' && d.outcome.closed ? `Annual Town Meeting ${d.outcome.atm_date ? long(d.outcome.atm_date) : ''}; election ${d.outcome.election_date ? long(d.outcome.election_date) : ''}. Tallies from the town’s printed results; the appropriation from the adopted budget.` : null} />
-            return e.kind === 'regular' ? <SeasonBoard fy={Number(e.season_fy)} fallback={tiers} /> : tiers
+            return e.kind === 'regular' ? <SeasonBoard fy={Number(e.season_fy)} fallback={tiers} onLoaded={() => setHasBoard(true)} /> : tiers
           })()}
         </section>
       ))}
@@ -463,6 +464,7 @@ export function BudgetFeed() {
       )}
 
       {/* ------------------------------------------------------------------ calendar */}
+      {!hasBoard && <>
       {/* ONE ROW PER STAGE. TJ, 14 September: "the FY27 calendar is very hard to read."
           Nine cards each listing every board's every date was a wall. A table: the stage,
           when it typically runs, when it ran this cycle (first to last, how many meetings),
@@ -493,6 +495,7 @@ export function BudgetFeed() {
         </table>
       </div>
       <p className="text-xs mt-2 max-w-3xl" style={{ color: 'var(--text-muted)' }}>A cycle runs July to June and is named for the budget it builds. “Typically” is the median first and last date the subject appeared on that board’s agenda; the raw dates per cycle are on each board’s page.</p>
+      </>}
 
       {/* -------------------------------------------------------------------- recent */}
       <H2 id="recent">Meeting by meeting, newest first</H2>

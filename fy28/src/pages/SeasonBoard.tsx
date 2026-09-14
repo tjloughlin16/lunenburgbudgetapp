@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { useReport } from '../components/report'
 
 /** THE SEASON AS A STATUS BOARD. notes/process/BUDGET-SEASON-MODEL.md, from TJ's account of
@@ -64,9 +64,10 @@ function Block({ title, color, children, sub }: { title: string; color: string; 
   )
 }
 
-export function SeasonBoard({ fy, fallback }: { fy: number; fallback: ReactNode }) {
+export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: ReactNode; onLoaded?: () => void }) {
   const { d, err } = useReport<Season>(`budget-season-fy${String(fy).slice(2)}.json`)
   const [showLines, setShowLines] = useState(false)
+  useEffect(() => { if (d && onLoaded) onLoaded() }, [d, onLoaded])
   if (err) return <>{fallback}</>     // no season file yet: the page built from the extraction
   if (!d) return null
   const b = d.blocks
@@ -159,7 +160,7 @@ export function SeasonBoard({ fy, fallback }: { fy: number; fallback: ReactNode 
       {/* 4 + 5. the override track and the late moves */}
       <div className="grid gap-4 lg:grid-cols-2">
         <Block title="The override track" color="var(--series-cost)" sub="Whether one is filed, for how much, and where each board stands — step by step.">
-          <ul>{b.override.map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px solid var(--series-cost)' }}><span className="tnum text-xs mr-2" style={{ color: 'var(--text-muted)' }}>{mmdd(r.date)}</span><span className="font-semibold">{r.item}</span>{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}{r.why ? <span style={{ color: 'var(--text-secondary)' }}> — {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({r.who})</span><CiteLink c={r.cite} />{r.note && !r.note.startsWith('internal:') && <span className="text-xs italic ml-1.5" style={{ color: 'var(--text-muted)' }}>{r.note}</span>}</li>)}</ul>
+          <ul>{b.override.map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: `2px solid ${r.cite?.kind === 'ballot' ? 'var(--status-critical)' : 'var(--series-cost)'}` }}><span className="tnum text-xs mr-2" style={{ color: 'var(--text-muted)' }}>{mmdd(r.date)}</span><span className="font-semibold">{r.item}</span>{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}{r.why ? <span style={{ color: 'var(--text-secondary)' }}> — {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({r.who})</span><CiteLink c={r.cite} />{r.note && !r.note.startsWith('internal:') && <span className="text-xs italic ml-1.5" style={{ color: 'var(--text-muted)' }}>{r.note}</span>}</li>)}</ul>
         </Block>
         <Block title="Free cash and other moves" color="var(--series-cost)" sub="Money moved late — free cash, transfers, new revenue — and what it changed.">
           <ul>{b.late.map((r, i) => <Item key={i} r={r} />)}</ul>

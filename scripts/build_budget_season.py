@@ -42,6 +42,20 @@ def read_csv(p):
     return list(csv.DictReader(open(p, encoding='utf-8')))
 
 
+def doc_label(rel):
+    """The publisher's own title from the folder's index, so a reader sees 'FY27 Budget
+    Projections as of 3-23-26' rather than a filename. Our analyses are labelled as ours."""
+    if rel.startswith('sources/analyses/'):
+        return 'our analysis: ' + os.path.basename(rel).replace('.md', '').replace('-', ' ')
+    folder = rel.split('/')[1]
+    idx = os.path.join(ROOT, 'sources', folder, 'index.csv')
+    if os.path.exists(idx):
+        for r in read_csv(idx):
+            if r.get('local') == rel:
+                return r.get('label') or os.path.basename(rel)
+    return os.path.basename(rel)
+
+
 def resolve(ev):
     """One citation -> where a reader goes. Fails loudly on a dead one."""
     ev = (ev or '').strip()
@@ -51,7 +65,7 @@ def resolve(ev):
         rel = ev[4:]
         if not os.path.exists(os.path.join(ROOT, rel)):
             raise SystemExit('dead citation: %s' % ev)
-        return dict(kind='document', href='/docs/' + rel.split('sources/', 1)[1], label=os.path.basename(rel))
+        return dict(kind='document', href='/docs/' + rel.split('sources/', 1)[1], label=doc_label(rel))
     if ev.startswith('ballot:'):
         date = ev[7:]
         qs = [r for r in read_csv(BALLOT) if r['date'] == date]
