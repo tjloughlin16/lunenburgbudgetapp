@@ -23,7 +23,7 @@ type Entry = { kind: string; board: string; board_slug: string; date: string; pa
 type Statement = { board: string; board_slug: string; date: string; page: string; thread?: string; kind: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; statement: string; who: string; status: string; t: number; video_url: string }
 type Cut = { board: string; board_slug: string; date: string; page: string; thread?: string; item: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; fte_as_heard: string | null; status: string; who: string; t: number; video_url: string; key: string }
 type Warning = { board: string; board_slug: string; date: string; page: string; thread?: string; prediction: string; about: string; condition: string | null; scope: string; fiscal_year: number | null; who: string; t: number; video_url: string }
-type CutGroup = { item: string; scope: string; status: string; mentions: number; first: string; last: string; who: string; utterance: boolean; thread?: string; voted: boolean; amount_as_heard: string | null; fte_as_heard: string | null; fte: number | null; kind: 'position' | 'program' | 'expense'; family: string | null }
+type CutGroup = { item: string; scope: string; status: string; mentions: number; first: string; last: string; who: string; utterance: boolean; thread?: string; voted: boolean; amount_as_heard: string | null; fte_as_heard: string | null; fte: number | null; kind: 'position' | 'program' | 'expense'; family: string | null; aftermath?: boolean; adopted?: boolean }
 type State = { meetings_read: number; warnings?: Warning[]; cut_groups?: CutGroup[]; first_date: string | null; last_date: string | null; latest: Record<string, Statement>; history: Record<string, Statement[]>; cuts: Cut[]; live_cuts: number; live_by_scope: Record<string, number>; log: { board: string; board_slug: string; date: string; page: string; added: string[]; changed: { item: string; was: string; now: string }[]; n_added: number; n_changed: number }[] }
 type Payload = {
   about: string; as_of: string; cycle_fy: number; cycle_opens: string; cycle_closes: string; recent_days: number; state: State; seasons: { fy: number; path: string; label: string; live: boolean }[]
@@ -155,7 +155,7 @@ function Metrics({ st, outcome }: { st: State; outcome?: Payload['outcome'] | nu
     // the same two primary teachers as '2.0 classroom teachers' in March and as '1st grade
     // teacher' + '2nd grade teacher' a week later. Scenarios are alternatives; their FTEs do
     // not add. One vote's list does.
-    const votedPos = pos.filter(g => g.voted)
+    const votedPos = pos.filter(g => g.voted || g.adopted)
     const fteVoted = votedPos.reduce((a, g) => a + (g.fte || 0), 0)
     const voted = live.filter(g => g.voted).length, gone = cs.length - live.length
     const fams: string[] = []
@@ -192,7 +192,11 @@ function Metrics({ st, outcome }: { st: State; outcome?: Payload['outcome'] | nu
  *  did -- the town publishes no list of its own -- and the card says so. */
 function FinalCuts({ st, outcome }: { st: State; outcome?: Payload['outcome'] | null }) {
   const gs = (st.cut_groups || []).filter(g => !g.utterance)
-  const stands = gs.filter(g => g.voted && g.status !== 'restored' && g.status !== 'withdrawn')
+  // What stands: voted as a cut and not restored -- or, TJ: "middle school sports WERE
+  // CUT" -- named by the district or a board in the sixty days after the ballot as the
+  // no-override budget was adopted (aftermath), with nothing restoring it.
+  const stands = gs.filter(g => (g.voted || g.adopted) && g.status !== 'restored' && g.status !== 'withdrawn')
+  const afterN = stands.filter(g => g.adopted && !g.voted).length
   // SAVED means voted as a cut and later restored. TJ: middle school sports 'was cut then
   // saved -- but that happened in a different scenario, so that's not fair to say.' A cut
   // that was only ever floated in a scenario and dropped was never cut.
@@ -227,9 +231,15 @@ function FinalCuts({ st, outcome }: { st: State; outcome?: Payload['outcome'] | 
       <p className="text-sm font-bold">What that meant for the cuts</p>
       <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
         {failed ? 'With the override failed, the cuts a board voted for the no-override budget stand. ' : passed ? 'With the override passed, the cuts voted for the no-override budget were avoided. ' : 'The cuts the boards voted stand. '}
-        Read from the boards’ votes against the ballot; the town publishes no list of its own. Figures and FTEs as heard.
+        Read from the boards’ votes against the ballot{afterN ? `, and from the ${afterN} cut${afterN === 1 ? '' : 's'} the district named in the sixty days after it as the budget was adopted` : ''}; the town publishes no list of its own. Figures and FTEs as heard.
       </p>
-      {stands.length > 0 && <Block title={passed ? 'Cuts avoided' : 'Cut'} xs={stands} color={passed ? 'var(--status-good)' : 'var(--status-critical)'} />}
+      {/* Two lists, not one sum: the budget adopted after the ballot is the operative list;
+          what a board voted during the season and did not restate after it is shown apart,
+          because adding the two would count the same teacher twice (TJ, on 19.5 FTE). */}
+      {afterN > 0 ? <>
+        <Block title={passed ? 'Cuts avoided' : 'Cut — in the budget adopted after the ballot'} xs={stands.filter(g => g.adopted)} color={passed ? 'var(--status-good)' : 'var(--status-critical)'} />
+        {stands.some(g => !g.adopted) && <Block title="Voted during the season, not restated after the ballot" xs={stands.filter(g => !g.adopted)} color="var(--text-muted)" />}
+      </> : stands.length > 0 && <Block title={passed ? 'Cuts avoided' : 'Cut'} xs={stands} color={passed ? 'var(--status-good)' : 'var(--status-critical)'} />}
       {saved.length > 0 && <Block title="Saved — voted as a cut, then restored" xs={saved} color="var(--status-good)" />}
     </div>
   )
@@ -272,7 +282,7 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta 
     }),
     ...st.cuts.map((c, i): Row => {
       const voted = c.status === 'voted', gone = c.status === 'restored' || c.status === 'withdrawn'
-      return { date: c.date, t: c.t, thread: c.thread || 'other', vote: voted, nums: voted ? amounts(c.amount_as_heard || '') : [], render: landing => <Line key={'c' + i} chip={voted ? `${c.board} vote` : gone ? `${c.status} · ${c.who}` : `proposed cut · ${c.who}`} chipColor={voted ? 'var(--series-cost)' : 'var(--text-muted)'} quiet={!voted} muted={gone} landing={landing} amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`${gone ? c.status + ': ' : 'cut: '}${c.item}`} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> }
+      return { date: c.date, t: c.t, thread: c.thread || 'other', vote: voted, nums: voted ? amounts(c.amount_as_heard || '') : [], render: landing => <Line key={'c' + i} chip={voted ? `${c.board} vote` : gone ? `${c.status} · ${c.who}` : (c as Cut & { aftermath?: boolean }).aftermath ? `after the ballot · ${c.who}` : `proposed cut · ${c.who}`} chipColor={voted ? 'var(--series-cost)' : 'var(--text-muted)'} quiet={!voted} muted={gone} landing={landing} amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`${gone ? c.status + ': ' : 'cut: '}${c.item}`} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> }
     }),
     ...(st.warnings || []).map((w, i): Row => ({ date: w.date, t: w.t, thread: w.thread || 'other', vote: false, nums: [], render: () => <Line key={'w' + i} chip={`warned · ${w.who}`} chipColor="var(--status-warning)" quiet text={`${w.prediction}${w.condition ? ` — ${w.condition}` : ''} (${SCOPE[w.scope] || w.scope}: ${w.about})`} board={w.board} board_slug={w.board_slug} date={w.date} video_url={w.video_url} t={w.t} /> })),
     ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, thread: e.thread || 'other', vote: true, nums: amounts(e.text || ''), render: landing => <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" landing={landing} text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),

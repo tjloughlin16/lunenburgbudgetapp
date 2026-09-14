@@ -93,10 +93,25 @@ HOUSEKEEPING = re.compile(r'^\s*(pass over|skip|table|postpone|continue|enter|op
 ELECTION_WARRANT = re.compile(r'\b(election|primary)\s+warrant\b', re.I)
 
 
+CORRECTIONS = os.path.join(ROOT, 'sources', 'data', 'caption-corrections.csv')
+
+
+def spell(text):
+    """A proper noun the captions mishear, corrected to the spelling the town's own
+    documents use -- sources/data/caption-corrections.csv, each row with its basis. Only
+    names: a figure is never corrected here, because a figure as heard is the record and
+    the second in the video is how a reader checks it."""
+    if not hasattr(spell, 'rows'):
+        spell.rows = [(re.compile(r'\b' + re.escape(r['heard']) + r'\b'), r['correct']) for r in read_csv(CORRECTIONS)]
+    for rx, to in spell.rows:
+        text = rx.sub(to, text or '')
+    return text
+
+
 def tally_only(outcome):
     if not outcome:
         return outcome
-    o = re.sub(r'\s*\((?:roll call|by roll call)[^)]*\)', '', outcome, flags=re.I)
+    o = re.sub(r'\s*\((?:roll call|by roll call)[^)]*\)', '', spell(outcome), flags=re.I)
     o = re.sub(r'\s*\([A-Z][a-z]+(?:\s+[A-Z][A-Za-z\'’.-]+)?(?:\s+[a-z]+)*\)', '', o)   # "(Emily)", "(Tom Gray appointed)" 
     return o.strip()
 
@@ -284,8 +299,14 @@ def cut_groups(cuts):
         fte_heard = next((r['fte_as_heard'] for r in reversed(rows) if fte_number(r.get('fte_as_heard')) is not None), None) \
             or next((r['fte_as_heard'] for r in reversed(rows) if r.get('fte_as_heard')), None)
         fte = fte_number(fte_heard)
+        after = [r for r in rows if r.get('aftermath')]
+        # Adopted after the ballot: a cut the district or a board NAMED in the aftermath, with
+        # nothing restoring it, is the no-override budget being carried out, vote or not.
+        adopted = any(r['status'] in ('announced', 'proposed', 'voted') and not (r.get('who') or '').lower().startswith(('a resident', 'resident')) for r in after) \
+            and not any(r['status'] in ('restored', 'withdrawn') for r in after)
         out.append(dict(item=best['item'], scope=g['scope'], status=latest['status'], mentions=len(rows), first=rows[0]['date'], last=latest['date'],
                         who=best['who'], utterance=by_residents, thread=best.get('thread'), voted=any(st == 'voted' for st in statuses),
+                        aftermath=bool(after), adopted=adopted,
                         amount_as_heard=next((r['amount_as_heard'] for r in reversed(rows) if r.get('amount_as_heard')), None),
                         fte_as_heard=fte_heard, fte=fte, kind=cut_kind(best['item'], fte),
                         family=program_family(best['item']) if cut_kind(best['item'], fte) == 'program' else None))
@@ -330,12 +351,22 @@ def budget_state(as_of, episode=None, threads=()):
     files = sorted(glob.glob(os.path.join(STATE, '*', '*.json')))
     docs = []
     cycle_start_ = cycle_start(as_of)
+    # THE AFTERMATH. TJ, 14 September 2026: "middle school sports WERE CUT." They were --
+    # by the School Committee adopting the balanced budget in the weeks after the ballot
+    # failed, which is after the season closes and so was landing in the next episode. A
+    # regular season's outcome is not known until the budget adopted after the ballot is
+    # named, so a regular episode also reads the CUTS (not the figures) named in the sixty
+    # days after it closes, and marks them aftermath.
+    after_close = None
+    if episode and episode.get('kind') == 'regular' and episode.get('closes'):
+        after_close = (dt.date.fromisoformat(episode['closes']) + dt.timedelta(days=60)).isoformat()
     for f in files:
         d = json.load(open(f, encoding='utf-8'))
-        if cycle_start_ <= d['meeting_date'] <= as_of:
+        if cycle_start_ <= d['meeting_date'] <= as_of or (after_close and episode['closes'] < d['meeting_date'] <= after_close):
             docs.append(d)
     docs.sort(key=lambda d: d['meeting_date'])
     keep = (lambda date, fy: in_episode(episode, date, fy)) if episode else (lambda date, fy: True)
+    aftermath = (lambda date: bool(after_close) and episode['closes'] < date <= after_close)
     # A cut belongs to the episode in which it was FIRST named; an episode that only restates
     # it -- the July talk of June's cuts -- does not list it again unless its status changed.
     first_named = {}
@@ -361,7 +392,7 @@ def budget_state(as_of, episode=None, threads=()):
         page = '/meeting-minutes/%s/%s-%s' % (d['board_slug'], d['meeting_date'], d['video_id'])
         base = dict(board=d['board'], board_slug=d['board_slug'], date=d['meeting_date'], page=page)
         for st in d['state'].get('statements') or []:
-            if st['kind'] == 'other' or not well_formed(st.get('amount_as_heard')):
+            if st['kind'] == 'other' or not well_formed(st.get('amount_as_heard')) or not (cycle_start_ <= d['meeting_date'] <= as_of):
                 continue
             if not keep(d['meeting_date'], st.get('fiscal_year')):
                 continue
@@ -372,8 +403,14 @@ def budget_state(as_of, episode=None, threads=()):
                 latest[key] = row
         added, changed = [], []
         for c in d['state'].get('cuts') or []:
+            if aftermath(d['meeting_date']):
+                c = dict(c, aftermath=True)
+            elif not (cycle_start_ <= d['meeting_date'] <= as_of):
+                continue
             k0 = (c['scope'], norm_item(c['item']))
-            if episode and not in_episode(episode, first_named[k0], c.get('fiscal_year')):
+            if c.get('aftermath'):
+                pass                                   # the budget adopted after the ballot: this season's consequence
+            elif episode and not in_episode(episode, first_named[k0], c.get('fiscal_year')):
                 # first named in another episode: keep only if this is a status change
                 if k0 not in cuts or cuts[k0]['status'] == c['status']:
                     continue
@@ -399,7 +436,7 @@ def budget_state(as_of, episode=None, threads=()):
     warnings = []
     for d in docs:
         for w in d['state'].get('warnings') or []:
-            if not keep(d['meeting_date'], w.get('fiscal_year')):
+            if not keep(d['meeting_date'], w.get('fiscal_year')) or not (cycle_start_ <= d['meeting_date'] <= as_of):
                 continue
             warnings.append(dict(board=d['board'], board_slug=d['board_slug'], date=d['meeting_date'],
                                  page='/meeting-minutes/%s/%s-%s' % (d['board_slug'], d['meeting_date'], d['video_id']),
@@ -408,7 +445,7 @@ def budget_state(as_of, episode=None, threads=()):
     warnings.sort(key=lambda r: (r['date'], r['t']), reverse=True)
     cut_list = sorted(cuts.values(), key=lambda r: (r['scope'], r['status'] in ('restored', 'withdrawn'), r['date']), reverse=False)
     live = [r for r in cut_list if r['status'] not in ('restored', 'withdrawn')]
-    read = [d for d in docs if not episode or in_episode(episode, d['meeting_date'], None)]
+    read = [d for d in docs if (cycle_start_ <= d['meeting_date'] <= as_of) and (not episode or in_episode(episode, d['meeting_date'], None))]
     return dict(
         meetings_read=len(read), first_date=read[0]['meeting_date'] if read else None, last_date=read[-1]['meeting_date'] if read else None,
         latest={'%s/%s' % k: v for k, v in latest.items()},
@@ -787,20 +824,20 @@ def build(as_of=None, whole_cycle=False):
             if not tags:
                 continue
             entries.append(dict(kind='topic', board=m['board'], board_slug=m['board_slug'], date=m['date'], page=page,
-                                text=t['topic'], detail=tally_only(t.get('resolution')), tags=tags, t=t.get('t_start'),
+                                text=spell(t['topic']), detail=tally_only(t.get('resolution')), tags=tags, t=t.get('t_start'),
                                 video_url='%s&t=%ds' % (m['video_url'], t['t_start']) if t.get('t_start') is not None else m['video_url'],
                                 minutes=round(((t.get('t_end') or 0) - (t.get('t_start') or 0)) / 60)))
         for bi in mins.get('budget_items') or []:
             if not MARKER.search((bi.get('topic') or '') + ' ' + (bi.get('what_was_said') or '')):
                 continue
             entries.append(dict(kind='budget item', board=m['board'], board_slug=m['board_slug'], date=m['date'], page=page,
-                                text=bi.get('topic'), detail=bi.get('what_was_said'), figures=bi.get('figures_as_heard') or [],
+                                text=spell(bi.get('topic')), detail=spell(bi.get('what_was_said')), figures=bi.get('figures_as_heard') or [],
                                 t=bi.get('t'), video_url='%s&t=%ds' % (m['video_url'], bi['t']) if bi.get('t') is not None else m['video_url']))
         for v in mins.get('votes') or []:
             if v.get('procedural') or not MARKER.search(v.get('motion') or '') or APPOINTMENT.match(v.get('motion') or '') or HOUSEKEEPING.match(v.get('motion') or '') or ELECTION_WARRANT.search(v.get('motion') or ''):
                 continue
             entries.append(dict(kind='vote', board=m['board'], board_slug=m['board_slug'], date=m['date'], page=page,
-                                text=v.get('motion'), detail=tally_only(v.get('outcome')), t=v.get('t'), thread=thread_of(threads_all, v.get('motion')),
+                                text=spell(v.get('motion')), detail=tally_only(v.get('outcome')), t=v.get('t'), thread=thread_of(threads_all, v.get('motion')),
                                 video_url='%s&t=%ds' % (m['video_url'], v['t']) if v.get('t') is not None else m['video_url']))
     ours = {(m['board_slug'], m['date']) for m in rec.get('meetings', [])}
     for slug, by_date in docs.items():
