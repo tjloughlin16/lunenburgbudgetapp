@@ -195,7 +195,8 @@ def build(as_of=None):
             upcoming=upcoming, recent=recent, votes=votes, time_by_tag=time_by_tag, time_meetings=time_meetings, time_span_s=span,
             calendar=cal, calendar_cycles=[fy for fy in fys],
             urls=dict(minutes_text='/minutes/%s.txt' % slug, what_was_said='/what-was-said', this_week='/this-week#m-%s' % slug)))
-    boards.sort(key=lambda b: (0 if b['the_three'] else 1, THE_THREE.index(b['slug']) if b['the_three'] else 0, -b['counts']['agendas']))
+    # The three in their fixed order; every other board alphabetically, so a resident can find theirs.
+    boards.sort(key=lambda b: (0 if b['the_three'] else 1, THE_THREE.index(b['slug']) if b['the_three'] else 0, b['name'].lower()))
     return dict(
         about=('Every board and committee the town posts for, one page each: what is coming, what happened, '
                'every vote we have minutes for, where the board’s time goes, and when budget season has '
