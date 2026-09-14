@@ -161,8 +161,13 @@ function Metrics({ st, outcome }: { st: State; outcome?: Payload['outcome'] | nu
     const fams: string[] = []
     for (const g of [...prog].sort((a, b) => Number(b.voted) - Number(a.voted))) if (g.family && !fams.includes(g.family)) fams.push(g.family)
     const fmt = (f: number) => (f % 1 ? f.toFixed(1) : String(f))
-    cards.push({ label, value: fteVoted ? `${fmt(fteVoted)} FTE voted` : votedPos.length ? `${votedPos.length} position${votedPos.length === 1 ? '' : 's'} voted` : `${pos.length} position${pos.length === 1 ? '' : 's'} named`,
-      line: [fteVoted ? `${votedPos.length} position${votedPos.length === 1 ? '' : 's'} in the voted list` : '', `${pos.length} position${pos.length === 1 ? '' : 's'} named across the scenarios (alternatives — not added up)`, exp.length ? `${exp.length} expense line${exp.length === 1 ? '' : 's'}` : '', fams.length ? `programs: ${fams.join(', ')}` : ''].filter(Boolean).join(' · '),
+    // No FTE sum here. TJ, 14 September: "I can't reconcile '8 positions (3 FTE)' and '11.5
+    // FTE voted'" -- both were sums over caption-extracted groups, and the same season had
+    // produced 19.5, 8.5, 11.5 and 3. The FTE for a season comes from the district's own
+    // line-item budget and slides, recorded in sources/data/budget-seasons/<fy>.csv.
+    void fteVoted; void fmt
+    cards.push({ label, value: votedPos.length ? `${votedPos.length} position${votedPos.length === 1 ? '' : 's'} voted` : `${pos.length} position${pos.length === 1 ? '' : 's'} named`,
+      line: [`${pos.length} position${pos.length === 1 ? '' : 's'} named across the scenarios (alternatives — not added up)`, exp.length ? `${exp.length} expense line${exp.length === 1 ? '' : 's'}` : '', fams.length ? `programs: ${fams.join(', ')}` : ''].filter(Boolean).join(' · '),
       foot: `${voted} voted, ${live.length - voted} not voted${gone ? `, ${gone} restored or withdrawn` : ''}${said ? ` · ${said} more named only by residents` : ''}` })
   }
   const warns = st.warnings || []
@@ -204,7 +209,6 @@ function FinalCuts({ st, outcome }: { st: State; outcome?: Payload['outcome'] | 
   if (!stands.length && !saved.length) return null
   const qs = outcome && outcome.closed ? outcome.questions : []
   const failed = qs.length > 0 && qs.every(q => q.result === 'FAILED'), passed = qs.length > 0 && qs.some(q => q.result !== 'FAILED')
-  const fteOf = (xs: CutGroup[]) => { const f = xs.reduce((a, g) => a + (g.fte || 0), 0); return f ? `${f % 1 ? f.toFixed(1) : f} FTE` : '' }
   const name = (g: CutGroup) => g.item.replace(/\s*\(.*?\)\s*/g, ' ').trim()
   const Block = ({ title, xs, color }: { title: string; xs: CutGroup[]; color: string }) => {
     const by = (scope: string, kind: string) => xs.filter(g => g.scope === scope && g.kind === kind)
@@ -216,7 +220,7 @@ function FinalCuts({ st, outcome }: { st: State; outcome?: Payload['outcome'] | 
           if (!pos.length && !prog.length && !exp.length) return null
           return (
             <div key={scope} className="text-[13px] mt-1.5 pl-3" style={{ borderLeft: `2px solid ${color}` }}>
-              <p className="font-semibold">{SCOPE[scope]}: {[pos.length ? `${pos.length} position${pos.length === 1 ? '' : 's'}${fteOf(pos) ? ` (${fteOf(pos)} as heard)` : ''}` : '', prog.length ? `${prog.length} program${prog.length === 1 ? '' : 's'}` : '', exp.length ? `${exp.length} expense line${exp.length === 1 ? '' : 's'}` : ''].filter(Boolean).join(' · ')}</p>
+              <p className="font-semibold">{SCOPE[scope]}: {[pos.length ? `${pos.length} position${pos.length === 1 ? '' : 's'}` : '', prog.length ? `${prog.length} program${prog.length === 1 ? '' : 's'}` : '', exp.length ? `${exp.length} expense line${exp.length === 1 ? '' : 's'}` : ''].filter(Boolean).join(' · ')}</p>
               {pos.length > 0 && <p style={{ color: 'var(--text-secondary)' }}><span className="text-[10px] font-bold uppercase tracking-wider mr-1" style={{ color: 'var(--text-muted)' }}>positions</span>{pos.map(g => `${name(g)}${g.fte ? ` (${g.fte} FTE)` : g.fte_as_heard ? ` (${g.fte_as_heard})` : ''}`).join('; ')}</p>}
               {prog.length > 0 && <p style={{ color: 'var(--text-secondary)' }}><span className="text-[10px] font-bold uppercase tracking-wider mr-1" style={{ color: 'var(--text-muted)' }}>programs</span>{prog.map(g => `${name(g)}${g.amount_as_heard ? ` (${g.amount_as_heard})` : ''}`).join('; ')}</p>}
               {exp.length > 0 && <p style={{ color: 'var(--text-secondary)' }}><span className="text-[10px] font-bold uppercase tracking-wider mr-1" style={{ color: 'var(--text-muted)' }}>expense lines</span>{exp.map(g => `${name(g)}${g.amount_as_heard ? ` (${g.amount_as_heard})` : ''}`).join('; ')}</p>}
@@ -233,13 +237,7 @@ function FinalCuts({ st, outcome }: { st: State; outcome?: Payload['outcome'] | 
         {failed ? 'With the override failed, the cuts a board voted for the no-override budget stand. ' : passed ? 'With the override passed, the cuts voted for the no-override budget were avoided. ' : 'The cuts the boards voted stand. '}
         Read from the boards’ votes against the ballot{afterN ? `, and from the ${afterN} cut${afterN === 1 ? '' : 's'} the district named in the sixty days after it as the budget was adopted` : ''}; the town publishes no list of its own. Figures and FTEs as heard.
       </p>
-      {/* Two lists, not one sum: the budget adopted after the ballot is the operative list;
-          what a board voted during the season and did not restate after it is shown apart,
-          because adding the two would count the same teacher twice (TJ, on 19.5 FTE). */}
-      {afterN > 0 ? <>
-        <Block title={passed ? 'Cuts avoided' : 'Cut — in the budget adopted after the ballot'} xs={stands.filter(g => g.adopted)} color={passed ? 'var(--status-good)' : 'var(--status-critical)'} />
-        {stands.some(g => !g.adopted) && <Block title="Voted during the season, not restated after the ballot" xs={stands.filter(g => !g.adopted)} color="var(--text-muted)" />}
-      </> : stands.length > 0 && <Block title={passed ? 'Cuts avoided' : 'Cut'} xs={stands} color={passed ? 'var(--status-good)' : 'var(--status-critical)'} />}
+      {stands.length > 0 && <Block title={passed ? 'Cuts avoided' : 'Cut'} xs={stands} color={passed ? 'var(--status-good)' : 'var(--status-critical)'} />}
       {saved.length > 0 && <Block title="Saved — voted as a cut, then restored" xs={saved} color="var(--status-good)" />}
     </div>
   )
