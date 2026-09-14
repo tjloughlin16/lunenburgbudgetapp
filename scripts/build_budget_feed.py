@@ -84,11 +84,13 @@ MARKER = re.compile(r'\b(town\s+meeting|warrant|override|omnibus|proposed\s+budg
 # Rule 8: the feed shows what a board decided, never who voted which way. Our minutes
 # record roll calls by name; the feed keeps the tally and drops the names. An appointment
 # is a person, not a budget decision, even when the motion names a budget committee.
-APPOINTMENT = re.compile(r'^\s*(re-?)?appoint', re.I)
+APPOINTMENT = re.compile(r'^\s*((re-?)?appoint|nominate|elect)\b', re.I)
 # Housekeeping that names the budget without deciding anything about it: passing over an
 # item, tabling it, skipping it, opening a hearing. Our minutes flag only adjournment and
 # the like as procedural, so the feed draws this line itself.
 HOUSEKEEPING = re.compile(r'^\s*(pass over|skip|table|postpone|continue|enter|open|close|accept the minutes|approve the minutes|approve the agenda)\b', re.I)
+# An election warrant is the ballot's paperwork, not the budget's; it matches 'warrant' and is not a budget decision.
+ELECTION_WARRANT = re.compile(r'\b(election|primary)\s+warrant\b', re.I)
 
 
 def tally_only(outcome):
@@ -570,7 +572,7 @@ def build(as_of=None, whole_cycle=False):
                                 text=bi.get('topic'), detail=bi.get('what_was_said'), figures=bi.get('figures_as_heard') or [],
                                 t=bi.get('t'), video_url='%s&t=%ds' % (m['video_url'], bi['t']) if bi.get('t') is not None else m['video_url']))
         for v in mins.get('votes') or []:
-            if v.get('procedural') or not MARKER.search(v.get('motion') or '') or APPOINTMENT.match(v.get('motion') or '') or HOUSEKEEPING.match(v.get('motion') or ''):
+            if v.get('procedural') or not MARKER.search(v.get('motion') or '') or APPOINTMENT.match(v.get('motion') or '') or HOUSEKEEPING.match(v.get('motion') or '') or ELECTION_WARRANT.search(v.get('motion') or ''):
                 continue
             entries.append(dict(kind='vote', board=m['board'], board_slug=m['board_slug'], date=m['date'], page=page,
                                 text=v.get('motion'), detail=tally_only(v.get('outcome')), t=v.get('t'),

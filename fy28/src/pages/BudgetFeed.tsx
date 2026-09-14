@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ReactElement } from 'react'
 import { feedSeasonFromPath, type Tab } from '../routes'
 import { H2, ReportShell, useReport } from '../components/report'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
@@ -50,67 +50,103 @@ const SCOPE: Record<string, string> = { school: 'School', town: 'Town', both: 'T
  *  it by role, its status, the second in the video -- then the cut list as last stated
  *  and the meetings that changed it. Every figure is AS HEARD from captions; the second
  *  in the video is the record. */
-/** DECIDED, OR ON THE TABLE. TJ, 14 September 2026: "People get lost in the status. And me
- *  too. 'Are you saying this is what was decided, or still open/on the table?'" So every
- *  figure and every cut on the record goes into one of two lists and nothing else: DECIDED
- *  (a vote carried, or the season's outcome from the registries) and ON THE TABLE (said,
- *  proposed, argued -- not voted). Restored or withdrawn cuts are a footnote. One line
- *  each: the figure, what it is in plain words, who said it, when, the second in the video. */
+/** THREE TIERS, BY WHO GETS THE LAST WORD. TJ, 14 September 2026: "1) Decided, final
+ *  information -- how much was actually approved, voted, final, money gets appropriated
+ *  (or not). 2) The context for how we got there. Many meetings and votes along the way;
+ *  a board's vote doesn't make things final -- the School Committee voted 3-1 for $350k,
+ *  and that got overwritten a few times to get to the $418k. That's part of the story,
+ *  not the final situation. 3) Things proposed that never made it to a vote of the
+ *  citizens, Town Meeting, or maybe even other boards -- part of the story, but mostly
+ *  just utterances."
+ *
+ *  FINAL is what Town Meeting and the ballot did, from the registries, or the episode's
+ *  recorded outcome; nothing a board voted is ever in it. THE STORY is every board vote
+ *  in order, oldest first, with the ones a later vote overwrote greyed and pointed at
+ *  what replaced them. SAID, NEVER VOTED is a count and a fold. */
 const PLAIN: Record<string, string> = { deficit: 'gap', budget_total: 'budget', override: 'override', state_aid: 'state aid', free_cash: 'free cash', levy: 'levy' }
 const plain = (s: Statement) => `${SCOPE[s.scope] || s.scope} ${PLAIN[s.kind] || s.kind}`.toLowerCase()
+const keyOf = (s: Statement) => `${s.scope}/${s.kind}`
 
-function Line({ amount, text, who, board, board_slug, date, video_url, t, muted }: { amount?: string | null; text: string; who?: string; board: string; board_slug: string; date: string; video_url?: string; t?: number | null; muted?: boolean }) {
+function Line({ amount, text, who, board, board_slug, date, video_url, t, muted, chip, chipColor, after }: { amount?: string | null; text: string; who?: string; board: string; board_slug: string; date: string; video_url?: string; t?: number | null; muted?: boolean; chip?: string; chipColor?: string; after?: string }) {
   return (
-    <li className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--grid)', color: muted ? 'var(--text-muted)' : undefined }}>
-      {amount && <span className="tnum font-bold">{amount}</span>}{amount ? ' — ' : ''}{text}
+    <li className="pl-3 py-0.5" style={{ borderLeft: `2px solid ${muted ? 'var(--grid)' : (chipColor || 'var(--grid)')}`, color: muted ? 'var(--text-muted)' : undefined }}>
+      {chip && <span className="text-[10px] font-bold uppercase tracking-wider mr-1.5" style={{ color: muted ? 'var(--text-muted)' : chipColor }}>{chip}</span>}
+      {amount && <span className="tnum font-bold" style={{ textDecoration: muted ? 'line-through' : undefined }}>{amount}</span>}{amount ? ' — ' : ''}{text}
       <span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{who ? `${who}, ` : ''}<a className="underline" href={`/boards/${board_slug}`}>{board}</a>, {mmdd(date)}{video_url ? <> · <a className="underline tnum" href={video_url}>{ts(t) || 'video'}</a></> : null}</span>
+      {after && <span className="text-xs ml-1.5 italic" style={{ color: 'var(--text-muted)' }}>{after}</span>}
     </li>
   )
 }
 
-function DecidedOrOpen({ st, closed, decisions, outcome }: { st: State; closed: boolean; decisions: Entry[]; outcome?: Payload['outcome'] | null }) {
-  const [showGone, setShowGone] = useState(false)
+function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy }: { st: State; closed: boolean; decisions: Entry[]; outcome?: Payload['outcome'] | null; finalText?: string | null; finalNote?: string | null; fy: number }) {
+  const [showSaid, setShowSaid] = useState(!closed)
   const all = Object.values(st.history).flat()
-  const decidedStatements = all.filter(x => x.status === 'voted').sort((a, b) => b.date.localeCompare(a.date))
-  const openStatements = Object.values(st.latest).filter(x => x.status !== 'voted' && x.status !== 'withdrawn').sort((a, b) => b.date.localeCompare(a.date))
-  const decidedCuts = st.cuts.filter(c => c.status === 'voted')
-  const openCuts = st.cuts.filter(c => c.status === 'announced' || c.status === 'proposed')
-  const gone = st.cuts.filter(c => c.status === 'restored' || c.status === 'withdrawn')
+  // Tier 2 -- every board vote, oldest first. A voted figure that a later vote on the same
+  // thing replaced is greyed, struck, and points at what replaced it.
+  const votedStatements = all.filter(x => x.status === 'voted')
+  const latestVoted: Record<string, Statement> = {}
+  for (const x of votedStatements) if (!latestVoted[keyOf(x)] || latestVoted[keyOf(x)].date <= x.date) latestVoted[keyOf(x)] = x
+  const votedCuts = st.cuts.filter(c => c.status === 'voted')
   const votes = decisions.filter(e => (e.detail || '').toLowerCase().startsWith('pass'))
-  const nothing = decidedStatements.length + decidedCuts.length + votes.length + openStatements.length + openCuts.length === 0
+  type Row = { date: string; t: number; el: ReactElement }
+  const story: Row[] = [
+    ...votedStatements.map((x, i): Row => {
+      const later = latestVoted[keyOf(x)]
+      const superseded = later !== x && later.date > x.date
+      return { date: x.date, t: x.t, el: <Line key={'s' + i} chip="board vote" chipColor="var(--series-cost)" muted={superseded} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} after={superseded ? `overwritten ${mmdd(later.date)}${later.amount_as_heard ? ` → ${later.amount_as_heard}` : ''}` : undefined} /> }
+    }),
+    ...votedCuts.map((c, i): Row => ({ date: c.date, t: c.t, el: <Line key={'c' + i} chip="board vote" chipColor="var(--series-cost)" amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> })),
+    ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, el: <Line key={'v' + i} chip="board vote" chipColor="var(--series-cost)" text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
+  ].sort((a, b) => a.date.localeCompare(b.date) || a.t - b.t)
+  // Tier 3 -- said, proposed, argued; never voted anywhere. The latest figure per thing.
+  const said = Object.values(st.latest).filter(x => x.status !== 'voted' && x.status !== 'withdrawn' && !latestVoted[keyOf(x)]).sort((a, b) => b.date.localeCompare(a.date))
+  const saidCuts = st.cuts.filter(c => c.status === 'announced' || c.status === 'proposed')
+  const gone = st.cuts.filter(c => c.status === 'restored' || c.status === 'withdrawn')
+  const finalRows = outcome && outcome.closed ? (outcome.adopted ? 1 : 0) + outcome.questions.filter(q => q.yes != null).length : 0
+  const hasFinal = finalRows > 0 || Boolean(finalText)
   return (
     <>
-      <div className="grid gap-4 mt-6 lg:grid-cols-2">
-        <div className="card p-4" style={{ borderTop: '4px solid var(--status-good)' }}>
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--status-good)' }}>Decided</p>
-          <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>A vote that carried, or the outcome on the record.</p>
-          {outcome && outcome.closed && (
-            <ul className="text-[13.5px] space-y-1">
-              {outcome.adopted && <li className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--status-good)' }}><span className="tnum font-bold">${outcome.adopted.amount.toLocaleString('en-US')}</span> — {outcome.adopted.label}<span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>Annual Town Meeting, {outcome.atm_date ? mmdd(outcome.atm_date) : ''}</span></li>}
-              {outcome.questions.filter(q => q.yes != null).map(q => <li key={q.question} className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--status-good)' }}><span className="tnum font-bold">{q.amount != null ? '$' + q.amount.toLocaleString('en-US') : ''}</span> — {q.type.replace('Proposition 2½ ', '')} <strong style={{ color: q.result === 'FAILED' ? 'var(--status-critical)' : 'var(--status-good)' }}>{q.result.toLowerCase()}</strong>, {q.yes!.toLocaleString('en-US')} to {q.no!.toLocaleString('en-US')}<span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{q.election}, {q.date.length > 7 ? mmdd(q.date) : q.date}</span></li>)}
+      {/* ---- tier 1: FINAL */}
+      <div className="card p-4 mt-6" style={{ borderTop: `4px solid ${hasFinal ? 'var(--status-good)' : 'var(--grid)'}` }}>
+        <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: hasFinal ? 'var(--status-good)' : 'var(--text-muted)' }}>Final</p>
+        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>What Town Meeting and the ballot did. Money appropriated, or not. A board’s vote is never in this box.</p>
+        {finalText && <p className="text-[15px] font-bold pl-3 mb-1" style={{ borderLeft: '2px solid var(--status-good)' }}>{finalText}</p>}
+        {outcome && outcome.closed && (
+          <ul className="text-[13.5px] space-y-1">
+            {outcome.adopted && <li className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--status-good)' }}><span className="tnum font-bold">${outcome.adopted.amount.toLocaleString('en-US')}</span> — {outcome.adopted.label}<span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>Annual Town Meeting, {outcome.atm_date ? mmdd(outcome.atm_date) : ''}</span></li>}
+            {outcome.questions.filter(q => q.yes != null).map(q => <li key={q.question} className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--status-good)' }}><span className="tnum font-bold">{q.amount != null ? '$' + q.amount.toLocaleString('en-US') : ''}</span> — {q.type.replace('Proposition 2½ ', '')} <strong style={{ color: q.result === 'FAILED' ? 'var(--status-critical)' : 'var(--status-good)' }}>{q.result.toLowerCase()}</strong>, {q.yes!.toLocaleString('en-US')} to {q.no!.toLocaleString('en-US')}<span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{q.election}, {q.date.length > 7 ? mmdd(q.date) : q.date}</span></li>)}
+          </ul>
+        )}
+        {finalNote && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>{finalNote}</p>}
+        {!hasFinal && <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Nothing is final yet. Town Meeting appropriates the {FY(fy)} budget and the election decides any override; until then everything below is a board’s position or somebody’s proposal.</p>}
+      </div>
+
+      {/* ---- tier 2: THE STORY */}
+      <div className="card p-4 mt-4" style={{ borderTop: '4px solid var(--series-cost)' }}>
+        <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'How it got there' : 'Where the boards stand, and how they got there'}</p>
+        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>Every board vote, oldest first. A vote a later vote overwrote is struck through and points at what replaced it. None of this is final.</p>
+        {story.length > 0 ? <ul className="text-[13.5px] space-y-1 mt-1">{story.map(r => r.el)}</ul>
+          : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No board has voted on anything yet.</p>}
+      </div>
+
+      {/* ---- tier 3: SAID, NEVER VOTED */}
+      {(said.length + saidCuts.length + gone.length) > 0 && (
+        <div className="card p-4 mt-4" style={{ borderTop: '4px solid var(--grid)' }}>
+          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{closed ? 'Said, never voted' : 'Said, not voted — so far'}</p>
+          <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
+            {said.length > 0 && `${said.length} figure${said.length === 1 ? '' : 's'} put on the record`}{said.length > 0 && saidCuts.length > 0 ? ', ' : ''}{saidCuts.length > 0 && `${saidCuts.length} cut${saidCuts.length === 1 ? '' : 's'} named`}{gone.length > 0 ? `, ${gone.length} restored or withdrawn` : ''} — proposed, argued, announced at a meeting, and never voted by anyone.{' '}
+            <button className="underline" onClick={() => setShowSaid(!showSaid)}>{showSaid ? 'Hide' : 'Show'}</button>
+          </p>
+          {showSaid && (
+            <ul className="text-[13.5px] space-y-1 mt-2" style={{ color: 'var(--text-secondary)' }}>
+              {said.map((x, i) => <Line key={'s' + i} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} />)}
+              {saidCuts.length > 0 && <li className="pl-3 py-0.5 mt-2" style={{ borderLeft: '2px solid var(--grid)' }}><strong>{saidCuts.length} cut{saidCuts.length === 1 ? '' : 's'} named, not voted:</strong> {saidCuts.slice(0, 10).map(c => c.item).join('; ')}{saidCuts.length > 10 ? ` … and ${saidCuts.length - 10} more` : ''}</li>}
+              {gone.length > 0 && <li className="pl-3 py-0.5" style={{ borderLeft: '2px solid var(--grid)' }}><strong>Restored or withdrawn:</strong> {gone.map(c => c.item).join('; ')}</li>}
             </ul>
           )}
-          {(decidedStatements.length + decidedCuts.length + votes.length) > 0 ? (
-            <ul className="text-[13.5px] space-y-1 mt-1">
-              {decidedStatements.map((x, i) => <Line key={'s' + i} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} />)}
-              {decidedCuts.map((c, i) => <Line key={'c' + i} amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} />)}
-              {votes.slice(0, 12).map((e, i) => <Line key={'v' + i} text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} />)}
-            </ul>
-          ) : (!outcome || !outcome.closed) && <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing decided yet.</p>}
         </div>
-        <div className="card p-4" style={{ borderTop: '4px solid var(--series-cost)' }}>
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'Was on the table, never voted' : 'On the table'}</p>
-          <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>Stated or proposed at a meeting, not voted. The latest figure for each thing.</p>
-          {(openStatements.length + openCuts.length) > 0 ? (
-            <ul className="text-[13.5px] space-y-1 mt-1">
-              {openStatements.map((x, i) => <Line key={'s' + i} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} />)}
-              {openCuts.length > 0 && <li className="pl-3 py-0.5 mt-2" style={{ borderLeft: '2px solid var(--grid)' }}><strong>{openCuts.length} cut{openCuts.length === 1 ? '' : 's'} named, not voted:</strong> {openCuts.slice(0, 10).map(c => c.item).join('; ')}{openCuts.length > 10 ? ` … and ${openCuts.length - 10} more` : ''}</li>}
-            </ul>
-          ) : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing on the table.</p>}
-          {gone.length > 0 && <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}><button className="underline" onClick={() => setShowGone(!showGone)}>{gone.length} cut{gone.length === 1 ? '' : 's'} restored or withdrawn</button>{showGone ? ': ' + gone.map(c => c.item).join('; ') : ''}</p>}
-        </div>
-      </div>
-      {nothing && !closed && <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>Nothing on the record yet. Figures, when they come, are as heard from machine captions; the second in the video is the record.</p>}
+      )}
+      {story.length + said.length + saidCuts.length === 0 && !closed && <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>Nothing on the record yet. Figures, when they come, are as heard from machine captions; the second in the video is the record.</p>}
     </>
   )
 }
@@ -162,14 +198,7 @@ function EpisodePage({ d, e, meetings }: { d: Payload; e: Payload['episodes'][nu
           {d.seasons.map(s => <option key={s.path} value={s.path}>{s.label}</option>)}
         </select>
       </label>
-      {e.outcome && (
-        <div className="card p-4 mt-6" style={{ borderLeft: '4px solid var(--status-good)' }}>
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>How it landed</p>
-          <p className="text-xl font-bold mt-1">{e.outcome}</p>
-          {e.note && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>{e.note}. Sources: {e.source}.</p>}
-        </div>
-      )}
-      <DecidedOrOpen st={st} closed={e.closed} decisions={decisions} />
+      <Tiers st={st} closed={e.closed} decisions={decisions} fy={Number(e.about_fy || e.season_fy)} finalText={e.outcome || null} finalNote={e.note ? `${e.note}. Sources: ${e.source}.` : null} />
       <H2 id="recent">What was said, meeting by meeting</H2>
       <div className="mt-3 space-y-2">{meetings.map(m => {
         const kinds = m.entries.reduce((acc, x) => { acc[x.kind] = (acc[x.kind] || 0) + 1; return acc }, {} as Record<string, number>)
@@ -220,24 +249,19 @@ export function BudgetFeed() {
           each episode -- the regular season and any special one -- two lists, DECIDED and
           ON THE TABLE; then what is coming; then what is next on the calendar; then the
           meetings. No status vocabulary anywhere. */}
-      {d.outcome.closed && (
-        <div className="card p-4 mt-6" style={{ borderLeft: '4px solid var(--status-critical)' }}>
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>How the {FY(d.cycle_fy)} season landed</p>
-          <p className="text-2xl font-bold mt-1">{d.outcome.headline}</p>
-          <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>Annual Town Meeting {d.outcome.atm_date ? long(d.outcome.atm_date) : ''}; election {d.outcome.election_date ? long(d.outcome.election_date) : ''}. Tallies from the town’s printed results; the appropriation from the adopted budget.</p>
-        </div>
-      )}
       {d.episodes.map(e => (
         <section key={e.id} className="mt-8">
           <div className="flex flex-wrap items-baseline gap-x-3">
             <h2 className="text-xl font-bold">{e.kind === 'regular' ? `The ${FY(Number(e.season_fy))} season` : e.label}</h2>
             <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{e.closed ? 'closed' : 'under way'} · {mmdd(e.opens)}{e.closes ? ` → ${mmdd(e.closes)}` : ' →'}{e.kind === 'special' ? <> · <a className="underline" href={`/budget-feed/${e.id}`}>its own page</a></> : null}</span>
           </div>
-          {e.kind === 'special' && <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{e.trigger}.{e.outcome ? <> <strong style={{ color: 'var(--text-primary)' }}>{e.outcome}.</strong></> : null}</p>}
-          <DecidedOrOpen st={e.state} closed={e.closed} decisions={d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))} outcome={e.kind === 'regular' ? d.outcome : null} />
+          {e.kind === 'special' && <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{e.trigger}.</p>}
+          <Tiers st={e.state} closed={e.closed} decisions={d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))} outcome={e.kind === 'regular' ? d.outcome : null} fy={Number(e.about_fy || e.season_fy)}
+            finalText={e.kind === 'special' ? (e.outcome || null) : (d.outcome.closed ? d.outcome.headline : null)}
+            finalNote={e.kind === 'regular' && d.outcome.closed ? `Annual Town Meeting ${d.outcome.atm_date ? long(d.outcome.atm_date) : ''}; election ${d.outcome.election_date ? long(d.outcome.election_date) : ''}. Tallies from the town’s printed results; the appropriation from the adopted budget.` : null} />
         </section>
       ))}
-      {d.episodes.length === 0 && <DecidedOrOpen st={d.state} closed={d.outcome.closed} decisions={d.entries.filter(x => x.kind === 'vote')} outcome={d.outcome} />}
+      {d.episodes.length === 0 && <Tiers st={d.state} closed={d.outcome.closed} decisions={d.entries.filter(x => x.kind === 'vote')} outcome={d.outcome} fy={d.cycle_fy} finalText={d.outcome.closed ? d.outcome.headline : null} />}
 
       {/* ------------------------------------------------------------------ upcoming */}
       {!season && <H2 id="upcoming">Budget meetings coming up</H2>}
