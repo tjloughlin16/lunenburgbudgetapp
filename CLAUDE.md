@@ -668,6 +668,13 @@ of it. It is published at `/data/archive-manifest.csv` and deliberately **not** 
 the bucket: an object there cannot be updated once written, so a manifest inside it would
 be permanently out of date about its own contents.
 
+## The budget feed has its own guideline
+
+`notes/process/BUDGET-FEED-GUIDELINES.md` is how a budget season page is read before it
+ships -- three passes as the parent whose child's programme is on the list -- and
+`notes/process/BUDGET-SEASON-MODEL.md` is what the page is built to. Both are scoped to
+the feed and its season files; nothing in them is a rule for the rest of the site.
+
 ## Picking up mid-stream
 
 `notes/HANDOFF-AGENT-ACCESS.md` covers one workstream on its own: making this archive

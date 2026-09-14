@@ -166,7 +166,7 @@ than silence or a guess.
 **The test.** Take the publisher's own list of reductions. For every named item, is there
 a line on our page a reader would find by searching that name? For every line, is its
 status about the world, not our data? Does every fact that changed over the season carry
-its dates, and does every block that states it agree? (notes/process/BUDGET-SEASON-MODEL.md §4a has the three
+its dates, and does every block that states it agree? (notes/process/BUDGET-FEED-GUIDELINES.md has the three
 passes this came from -- for the budget feed only.)
 
 ---
@@ -222,7 +222,7 @@ recorded as that, because it is a claim worth being able to disbelieve.
 
 Read three times as reader 7, a parent with a child in fifth-grade band and middle school
 sports. Each pass changed the page; the faults were a different kind each time
-(BUDGET-SEASON-MODEL.md §4a keeps the lessons, for the budget feed only).
+(BUDGET-FEED-GUIDELINES.md keeps the lessons, for the budget feed only).
 
 - **Pass 1.** The first number was $761,001, a spreadsheet difference nobody said; the
   page now leads with $2.4 million as announced and $1.98 million as corrected, with the
