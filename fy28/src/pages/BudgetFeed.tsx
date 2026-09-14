@@ -70,9 +70,9 @@ const keyOf = (s: Statement) => `${s.scope}/${s.kind}`
 function Line({ amount, text, who, board, board_slug, date, video_url, t, muted, chip, chipColor, after }: { amount?: string | null; text: string; who?: string; board: string; board_slug: string; date: string; video_url?: string; t?: number | null; muted?: boolean; chip?: string; chipColor?: string; after?: string }) {
   return (
     <li className="pl-3 py-0.5" style={{ borderLeft: `2px solid ${muted ? 'var(--grid)' : (chipColor || 'var(--grid)')}`, color: muted ? 'var(--text-muted)' : undefined }}>
-      {chip && <span className="text-[10px] font-bold uppercase tracking-wider mr-1.5" style={{ color: muted ? 'var(--text-muted)' : chipColor }}>{chip}</span>}
+      {chip && <a className="text-[10px] font-bold uppercase tracking-wider mr-1.5" href={`/boards/${board_slug}`} style={{ color: muted ? 'var(--text-muted)' : chipColor }}>{chip}</a>}
       {amount && <span className="tnum font-bold" style={{ textDecoration: muted ? 'line-through' : undefined }}>{amount}</span>}{amount ? ' — ' : ''}{text}
-      <span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{who ? `${who}, ` : ''}<a className="underline" href={`/boards/${board_slug}`}>{board}</a>, {mmdd(date)}{video_url ? <> · <a className="underline tnum" href={video_url}>{ts(t) || 'video'}</a></> : null}</span>
+      <span className="text-xs ml-1.5" style={{ color: 'var(--text-muted)' }}>{who ? `${who}, ` : ''}{chip ? null : <><a className="underline" href={`/boards/${board_slug}`}>{board}</a>, </>}{mmdd(date)}{video_url ? <> · <a className="underline tnum" href={video_url}>{ts(t) || 'video'}</a></> : null}</span>
       {after && <span className="text-xs ml-1.5 italic" style={{ color: 'var(--text-muted)' }}>{after}</span>}
     </li>
   )
@@ -93,10 +93,10 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy }: { s
     ...votedStatements.map((x, i): Row => {
       const later = latestVoted[keyOf(x)]
       const superseded = later !== x && later.date > x.date
-      return { date: x.date, t: x.t, el: <Line key={'s' + i} chip="board vote" chipColor="var(--series-cost)" muted={superseded} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} after={superseded ? `overwritten ${mmdd(later.date)}${later.amount_as_heard ? ` → ${later.amount_as_heard}` : ''}` : undefined} /> }
+      return { date: x.date, t: x.t, el: <Line key={'s' + i} chip={`${x.board} vote`} chipColor="var(--series-cost)" muted={superseded} amount={x.amount_as_heard} text={`${x.statement} (${plain(x)})`} who={x.who} board={x.board} board_slug={x.board_slug} date={x.date} video_url={x.video_url} t={x.t} after={superseded ? `overwritten ${mmdd(later.date)}${later.amount_as_heard ? ` → ${later.amount_as_heard}` : ''}` : undefined} /> }
     }),
-    ...votedCuts.map((c, i): Row => ({ date: c.date, t: c.t, el: <Line key={'c' + i} chip="board vote" chipColor="var(--series-cost)" amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> })),
-    ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, el: <Line key={'v' + i} chip="board vote" chipColor="var(--series-cost)" text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
+    ...votedCuts.map((c, i): Row => ({ date: c.date, t: c.t, el: <Line key={'c' + i} chip={`${c.board} vote`} chipColor="var(--series-cost)" amount={c.amount_as_heard || c.fte_as_heard && `${c.fte_as_heard} FTE` || null} text={`cut: ${c.item}`} who={c.who} board={c.board} board_slug={c.board_slug} date={c.date} video_url={c.video_url} t={c.t} /> })),
+    ...votes.map((e, i): Row => ({ date: e.date, t: e.t || 0, el: <Line key={'v' + i} chip={`${e.board} vote`} chipColor="var(--series-cost)" text={`${e.text} — ${e.detail}`} board={e.board} board_slug={e.board_slug} date={e.date} video_url={e.video_url} t={e.t} /> })),
   ].sort((a, b) => a.date.localeCompare(b.date) || a.t - b.t)
   // Tier 3 -- said, proposed, argued; never voted anywhere. The latest figure per thing.
   const said = Object.values(st.latest).filter(x => x.status !== 'voted' && x.status !== 'withdrawn' && !latestVoted[keyOf(x)]).sort((a, b) => b.date.localeCompare(a.date))
