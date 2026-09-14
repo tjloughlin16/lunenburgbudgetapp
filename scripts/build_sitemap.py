@@ -101,6 +101,15 @@ def blog_pages():
     return ['/blog'] + ['/blog/' + s for s in sorted(live)]
 
 
+def board_pages():
+    """One page per board, read from the boards payload -- the same list the page renders."""
+    p = os.path.join(PUB, 'data', 'boards.json')
+    if not os.path.exists(p):
+        return []
+    boards = json.load(io.open(p, encoding='utf-8')).get('boards', [])
+    return ['/boards/' + b['slug'] for b in boards]
+
+
 def published_data():
     """Every dataset published under /data, so each is indexable on its own."""
     out = []
@@ -134,7 +143,7 @@ def reference():
 
 def render():
     seen, urls = set(), []
-    for u in (routes() + analysis_pages() + blog_pages() + ENTRY + published_data()
+    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + ENTRY + published_data()
               + reference() + analyses()):
         if u not in seen:
             seen.add(u)

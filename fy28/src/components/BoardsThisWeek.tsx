@@ -130,7 +130,7 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
           return (
             <li key={slug} className="flex flex-wrap items-baseline gap-x-3 px-3 py-2 rounded-lg"
               style={{ border: '1px dashed var(--grid)' }}>
-              <span className="text-[13px] font-semibold w-36 shrink-0">{name}</span>
+              <a href={`/boards/${slug}`} className="text-[13px] font-semibold w-36 shrink-0 underline decoration-dotted" title={`Everything about the ${name}`}>{name}</a>
               <span className="text-[12.5px]" style={{ color: 'var(--text-muted)' }}>no meeting posted in the next {days} days</span>
               <span className="ml-auto"><LastTime slug={slug} rec={recorded.d} /></span>
             </li>
@@ -149,7 +149,10 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
             <li key={m.file_id} id={id} className="card px-3 py-2.5" style={{ scrollMarginTop: 80, ...(target === id ? { borderColor: 'var(--series-cost)' } : {}) }}>
               <Row {...(compact ? { href: `/this-week#${id}`, className: 'block hover:opacity-90' } : {})}>
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
-                <span className="text-[13px] font-semibold w-36 shrink-0">{name}</span>
+                {/* The board's own page, from the expanded card only: the compact card is
+                    itself a link, and an anchor inside an anchor is invalid HTML. */}
+                {compact ? <span className="text-[13px] font-semibold w-36 shrink-0">{name}</span>
+                  : <a href={`/boards/${slug}`} className="text-[13px] font-semibold w-36 shrink-0 underline decoration-dotted" title={`Everything about the ${name}`}>{name}</a>}
                 <span className="text-[13px] font-bold" style={{ color: 'var(--series-cost)' }}>{dayLabel(m.date, f.as_of)}</span>
                 {p?.time && p.time !== 'not stated' && <Chip tone="strong">{p.time}</Chip>}
                 {p?.where && p.where !== 'not stated' && <Chip>{p.where}</Chip>}

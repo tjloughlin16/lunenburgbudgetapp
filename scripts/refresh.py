@@ -268,7 +268,8 @@ def main():
         bad = 0
         for s, args in (('watch_meetings.py', ['--check']), ('watch_youtube.py', ['--check']), ('watch_feeds.py', ['--check']), ('watch_documents.py', ['--check']),
                         ('write_recording_minutes.py', ['--check']), ('write_agenda_preview.py', ['--check']),
-                        ('build_notices.py', ['--check']), ('build_meeting_feed.py', ['--check'])):
+                        ('build_notices.py', ['--check']), ('build_meeting_feed.py', ['--check']),
+                        ('build_boards.py', ['--check'])):
             bad += py(s, *args, check=False).returncode != 0
         return 1 if bad else 0
 
@@ -336,6 +337,7 @@ def main():
         py('build_meeting_feed.py')
         py('build_recording_minutes.py')
         py('build_notices.py')
+        py('build_boards.py', '--as-of', a.as_of)
         py('tag_document_affinity.py', check=False)     # only documents not yet tagged; cents
         py('build_search_index.py', '--quiet')
         py('build_app_metrics.py')

@@ -435,7 +435,7 @@ TOPICS = [
 # a topic heading over it would file the whole archive under one subject.
 # `recorded` and `thisweek` are announcements and finding aids, not analyses with
 # conclusions to synthesise.
-NOT_A_REPORT = ('analysis', 'sped', 'addsup', 'blog', 'recorded', 'thisweek')
+NOT_A_REPORT = ('analysis', 'sped', 'addsup', 'blog', 'recorded', 'thisweek', 'boards')
 
 
 def topic_of(tab):
