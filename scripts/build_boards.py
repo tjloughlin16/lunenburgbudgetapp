@@ -41,6 +41,8 @@ NOCAP = os.path.join(ROOT, 'sources', 'data', 'youtube-no-captions.csv')
 RECORDED = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes.json')
 FEED = os.path.join(ROOT, 'fy28', 'public', 'data', 'meeting-feed.json')
 NOTICES = os.path.join(ROOT, 'fy28', 'public', 'data', 'notices.json')
+PAGES = os.path.join(ROOT, 'sources', 'data', 'board-pages.csv')
+CHARTER_URL = 'https://www.lunenburgma.gov/323/Charter-Town-Bylaws'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'boards.json')
 SITE = 'https://lunenburgbudgetproject.org'
 RECENT = 15
@@ -109,6 +111,10 @@ def build(as_of=None):
     feed = json.load(open(FEED, encoding='utf-8'))
     notices = json.load(open(NOTICES, encoding='utf-8'))
     previews = {(n['board_slug'], n['date']): n for n in notices.get('upcoming', [])}
+    # The board's own page on the town's (or the district's) site: what it is, in the
+    # publisher's words, its members, when it meets, and a Facebook link where the page
+    # carries one. fetch_board_pages.py mirrors and extracts; nothing is paraphrased here.
+    pages = {r['slug']: r for r in read_csv(PAGES)}
 
     boards = []
     for slug in sorted(set(docs) | set(vids)):
@@ -183,8 +189,14 @@ def build(as_of=None):
                             earliest=pos_text(firsts[0]), latest=pos_text(lasts[-1]),
                             typical_first=pos_text(firsts[len(firsts) // 2]), typical_last=pos_text(lasts[len(lasts) // 2]),
                             meetings=sum(len(v) for v in per.values())))
+        pg = pages.get(slug)
+        page = pg and dict(url=pg['url'], source=pg['source'], overview=pg['overview'], charter_ref=pg['charter_ref'],
+                           meets=pg['meets'], members=[m for m in pg['members'].split('\n') if m.strip()],
+                           facebook=pg['facebook'] or None, facebook_scope=pg['facebook_scope'],
+                           mirror='/docs/' + pg['local'][len('sources/'):], fetched_at=pg['fetched_at'][:10],
+                           charter_url=CHARTER_URL)
         boards.append(dict(
-            slug=slug, name=name, the_three=slug in THE_THREE,
+            slug=slug, name=name, the_three=slug in THE_THREE, page=page,
             counts=dict(agendas=sum(1 for d in docs[slug] if 'agenda' in docs[slug][d]),
                         minutes=sum(1 for d in docs[slug] if 'minutes' in docs[slug][d]),
                         recordings=len(vids[slug]),

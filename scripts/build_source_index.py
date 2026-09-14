@@ -344,6 +344,13 @@ GROUPS = [
              'What turns \u201cseniors on fixed incomes\u201d from a claim into a '
              'number. Five estimates; the under-25 band is published as the sentinel '
              '-666666666, which means not available and is not a figure.'),
+            ('state-census/acs5-2023-B25038-lunenburg.json',
+             'Owner and renter households by the year the householder moved in, Lunenburg, 2019–2023', 3,
+             'How long the owners have been here, in bands. The question behind “taxed out of a '
+             'house bought decades ago”, and the table /homes-and-taxes reads.'),
+            ('state-census/acs5-2023-B25039-lunenburg.json',
+             'Median year the householder moved in, Lunenburg, 2019–2023', 3,
+             'One number each for owners and renters.'),
             ('state-census/acs5-2023-B25003-lunenburg.json',
              'Owner against renter, Lunenburg, 2019\u20132023', 3,
              'Tenure. It is how a levy increase reaching four households in five directly '
@@ -365,6 +372,12 @@ GROUPS = [
             ('state-census/acs5-2018-B19049-lunenburg.json',
              'Median household income by age of householder, Lunenburg, 2014\u20132018', 2,
              'The 2014\u20132018 window.'),
+            ('state-census/acs5-2018-B25038-lunenburg.json',
+             'Households by the year the householder moved in, Lunenburg, 2014–2018', 2,
+             'The 2014–2018 window; its bands are cut at different years from 2023’s.'),
+            ('state-census/acs5-2018-B25039-lunenburg.json',
+             'Median year the householder moved in, Lunenburg, 2014–2018', 2,
+             'The 2014–2018 window.'),
             ('state-census/acs5-2018-B25003-lunenburg.json',
              'Owner against renter, Lunenburg, 2014\u20132018', 2,
              'The 2014\u20132018 window.'),
@@ -1690,6 +1703,57 @@ GROUPS = [
          'adopted when the watch was seeded carry an EMPTY first_seen, because we do not '
          'know — an empty cell rather than a guess — and the `basis` column says '
          'which rows those are. Rebuild with scripts/watch_meetings.py.'),
+        ('data/youtube-watch-events.csv',
+         'What appeared on the town’s YouTube channel between one check and the next', 2,
+         'Written by us. One row per video the RSS watch first saw, with when. The channel '
+         'itself is the record; this is the deterministic log the refresh reads.'),
+        ('data/youtube-no-captions.csv',
+         'Recordings whose captions are switched off', 2,
+         'Written by us. One row per meeting recording the caption fetcher was refused for, '
+         'with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md '
+         'lists them with what written record survives for the same date.'),
+        ('data/feed-sources.csv',
+         'The town and community feeds the refresh watches', 2,
+         'Written by us. Each feed’s address and what it carries. Items are linked and '
+         'attributed on the site, never republished.'),
+        ('data/feed-watch-events.csv',
+         'What appeared in those feeds', 2,
+         'Written by us. One row per item first seen, with when.'),
+        ('data/refresh-runs.csv',
+         'Every daily refresh, timed', 2,
+         'Written by us. One row per run: what was new, what was written, how long each '
+         'step took, whether it deployed.'),
+        ('data/recording-minutes-policy.csv',
+         'Which boards TJ has approved minutes for, from when, in what order', 2,
+         'The approval itself. The refresh writes minutes for a recording only if a row '
+         'covers it, and at most a few a day — see refresh.py.'),
+        ('data/search-affinity.csv',
+         'Which words pin which page or document at the top of a search', 2,
+         'Written by us. Topic tags for 77 pages and 259 documents so a search for a subject '
+         'finds the page about it even where the word is not on it.'),
+        ('data/search-vocabulary.csv',
+         'The site’s own vocabulary, for the search box’s suggestions', 2,
+         'Written by us. Terms and the pages they belong to.'),
+        ('data/board-pages.csv',
+         'Every board’s own page on the town’s site, extracted', 3,
+         'What the town (or, for the School Committee, the district) says each board is: '
+         'the overview as printed, the charter or bylaw it cites, when it meets, its members '
+         'and terms, and a Facebook link where the board’s page carries one. One row per '
+         'board; the mirrored pages are under town-supplementary/docs/. Rebuild with '
+         'scripts/fetch_board_pages.py.'),
+        ('data/dls-avg-tax-bill.csv',
+         'Average single-family tax bill, eleven towns, FY1988–FY2026', 3,
+         'Extracted from the DLS Gateway export in state-dls/. Per town per year: parcels, '
+         'average value, average bill, the bill as a share of value and of income, rank. '
+         'Rebuild with scripts/fetch_dls_tax_bills.py.'),
+        ('data/one-big-report-story.csv',
+         'The editor’s spec for /one-big-report', 2,
+         'Written by TJ. One row per figure or conclusion on the page: its section, its role '
+         '(headline, supporting, context) and its reference. It arranges what the reports say '
+         'and cannot restate any of it.'),
+        ('data/myths.csv',
+         'Claims heard in town, and what the data says', 2,
+         'Written by us. Each row is a claim as commonly put, and the report that answers it.'),
         ('data/meeting-watch-events.csv',
          'What appeared on the town’s site between one crawl and the next', 2,
          'Written by us. One row per document the watch saw APPEAR — an agenda posted '
@@ -1883,7 +1947,15 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # *fifteen hundred*, *$1,500* and *$50* are one sound. The citable artefact is
              # the VIDEO AT ITS TIMESTAMP, and `data/youtube-transcript-index.csv` below is
              # the map into them.
-             'data/youtube-transcripts'}
+             'data/youtube-transcripts',
+             # One JSON per meeting: OUR minutes of a recording and OUR preview of an agenda,
+             # written by a language model from captions or agenda text. Not documents
+             # anybody published, and never a source -- the citable artefact is the video at
+             # its timestamp or the agenda itself. The payloads built from them
+             # (recording-minutes.json, notices.json) are what the site serves.
+             'data/recording-minutes', 'data/agenda-previews',
+             # The site's own brand assets: the favicon and the Facebook cover, with a README.
+             'data/brand'}
 # Bookkeeping about the R2 archive rather than anything read for a figure:
 # `archive-manifest.csv` is every object with its sha256, and `archive-push-state.csv`
 # records what `sync_archive.py` has uploaded and read back. Both are described on the
@@ -1895,6 +1967,11 @@ SKIP_FILES = {'supplemental.csv',
               # figure of its own -- everything in it is a copy of text catalogued
               # elsewhere. `scripts/build_minutes_fts.py --check` is what guards it.
               'data/minutes-fts.db',
+              # Its sibling over pages, posts, documents, minutes and captions, pushed to D1
+              # for /api/search; rebuilt by scripts/build_search_index.py, 340 MB, gitignored.
+              'data/search-fts.db',
+              # A mirror folder's own index is the catalogue of that folder, not a document.
+              'state-dls/index.csv', 'state-massgis/index.csv',
               # Semantics for the CSV datasets that are NOT database tables. A registry
               # ABOUT the archive rather than anything read for a figure, in the same
               # family as the manifest above.

@@ -19,8 +19,9 @@ type Upcoming = { date: string; days_away: number; agenda_url: string; hook?: st
 type Recent = { date: string; agenda_url?: string | null; agenda_doc?: string | null; minutes_url?: string | null; minutes_doc?: string | null; video_url?: string | null; transcript: boolean; captions_disabled: boolean; ours?: { slug: string; headline?: string | null; digest?: string | null; votes?: number; reconciled?: boolean; discrepancies?: number } | null }
 type Vote = { date: string; t?: number | null; motion?: string; outcome?: string; procedural: boolean; moved_by?: string | null; page: string; video_url: string }
 type Cal = { key: string; label: string; cycles: { fy: number; dates: string[] }[]; earliest: string; latest: string; typical_first: string; typical_last: string; meetings: number }
+type Page = { url: string; source: 'town' | 'district'; overview: string; charter_ref: string; meets: string; members: string[]; facebook: string | null; facebook_scope: string; mirror: string; fetched_at: string; charter_url: string }
 type Board = {
-  slug: string; name: string; the_three: boolean
+  slug: string; name: string; the_three: boolean; page?: Page | null
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; votes: number; first: string | null; last: string | null }
   upcoming: Upcoming[]; recent: Recent[]; votes: Vote[]
   time_by_tag: { tag: string; label: string; seconds: number; share: number | null }[]; time_meetings: number; time_span_s: number
@@ -85,6 +86,31 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
     <ReportShell tab={TAB} title={b.name}
       standfirst={<>{c.first ? `Posted since ${c.first.slice(0, 4)}: ` : ''}{n0(c.agendas)} agendas, {n0(c.minutes)} sets of minutes, {n0(c.recordings)} recordings{c.our_minutes ? `, ${n0(c.our_minutes)} meetings with our minutes and ${n0(c.votes)} votes on the record` : ''}. <a className="underline" href="/boards">All boards</a>.</>}
       dataUrl={DATA}>
+
+      {/* ------------------------------------------------------- what it is, and links */}
+      {b.page && (
+        <div className="card p-4 mt-6 max-w-3xl">
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+            <a className="underline font-semibold" href={b.page.url}>{b.page.source === 'district' ? 'the district’s page for this board' : 'the town’s page for this board'} ↗</a>
+            {b.page.facebook && <a className="underline" href={b.page.facebook}>{b.page.facebook_scope === 'board' ? 'its Facebook page' : 'the town’s Facebook page'} ↗</a>}
+            <a className="underline" href={b.page.charter_url}>the Charter and bylaws ↗</a>
+            <a className="underline" href={b.page.mirror} style={{ color: 'var(--text-muted)' }}>our copy, {b.page.fetched_at}</a>
+          </div>
+          {b.page.overview ? (
+            <blockquote className="text-sm mt-3 leading-relaxed" style={{ color: 'var(--text-secondary)', borderLeft: '3px solid var(--grid)', paddingLeft: 12 }}>
+              {b.page.overview.split('\n').map((p, i) => <p key={i} className={i ? 'mt-2' : ''}>{p}</p>)}
+            </blockquote>
+          ) : (
+            <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>The {b.page.source === 'district' ? 'district’s' : 'town’s'} page lists the members and the meetings and carries no statement of what the board is for; the Charter and bylaws do.</p>
+          )}
+          <div className="grid gap-x-8 gap-y-2 mt-3 sm:grid-cols-2 text-sm">
+            {b.page.charter_ref && <div><span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>established by</span><div>{b.page.charter_ref}</div></div>}
+            {b.page.meets && <div><span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>meets</span><div style={{ whiteSpace: 'pre-line' }}>{b.page.meets}</div></div>}
+            {b.page.members.length > 0 && <div className="sm:col-span-2"><span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>members, as posted</span><ul className="mt-0.5">{b.page.members.map((m, i) => <li key={i}>{m}</li>)}</ul></div>}
+          </div>
+          {b.page.facebook_scope !== 'board' && <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>No Facebook page of its own is linked from this board’s page; the town’s is. Facebook cannot be searched by script, so a page that exists unlinked would not be found here.</p>}
+        </div>
+      )}
 
       {/* ---------------------------------------------------------------- upcoming */}
       <H2>Coming up</H2>

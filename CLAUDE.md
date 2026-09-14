@@ -960,6 +960,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_recording_minutes.py --check    # ...and fail if it is stale
     python3 scripts/build_boards.py                       # one page per board: upcoming, recent, every vote, time, budget calendar
     python3 scripts/build_boards.py --check
+    python3 scripts/fetch_board_pages.py                  # every board's town page: charter text, members, meetings, Facebook
+    python3 scripts/fetch_dls_tax_bills.py                # DLS average single-family tax bill, eleven towns, by script
     python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing
     python3 scripts/build_no_captions_report.py           # which meeting recordings have captions disabled, with links
     python3 scripts/build_app_metrics.py --check          # ...and fail if it has drifted
