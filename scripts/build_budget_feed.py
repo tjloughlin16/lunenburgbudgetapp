@@ -165,6 +165,60 @@ def norm_item(text):
     return re.sub(r'\s+', ' ', t).strip()
 
 
+CUT_STOP = set('the a an of for and to in at on or with from by as is are be all its their our this that per one two three four full time part half new any '
+               'position positions reduction reductions reduce reduced cut cuts eliminate eliminated elimination remove removed not refilled attrition through '
+               'proposed proposal scenario budget override balanced school schools department district town year fy fy27 fy28 level services'.split())
+
+
+def cut_words(text):
+    t = re.sub(r'\([^)]*\)', ' ', (text or '').lower())          # the bracketed gloss is not the thing
+    ws = {re.sub(r'(es|s)$', '', w) for w in re.findall(r'[a-z][a-z0-9-]+', t)}
+    return {w for w in ws if w not in CUT_STOP and len(w) > 2}
+
+
+def cut_groups(cuts):
+    """THE SAME CUT, SAID THREE WAYS, IS ONE CUT. TJ, 14 September 2026, on '111 named cuts
+    for the school': the athletic trainer was 'Athletic trainer position', 'Athletic Trainer
+    (full-time position), replaced with contracted EMT coverage' and 'athletic trainer
+    reduced to half-time' -- three lines, one cut. Lines are grouped when their content
+    words overlap by half, or one's words are inside the other's. Each group takes the
+    latest status, the wording of its highest-ranked speaker, and its span. A group named
+    only by residents is an utterance, not a cut, and is counted apart; a group that was
+    only ever 'restored' was an addition, never a cut, and is not counted at all."""
+    groups = []   # each: dict(words=set, rows=[...])
+    for c in sorted(cuts, key=lambda c: (c['date'], c['t'])):
+        w = cut_words(c['item'])
+        if not w:
+            continue
+        home = None
+        for g in groups:
+            if g['scope'] != c['scope']:
+                continue
+            inter = len(w & g['words']); union = len(w | g['words'])
+            if union and (inter / union >= 0.5 or (len(w) >= 2 and w <= g['words']) or (len(g['words']) >= 2 and g['words'] <= w)):
+                home = g; break
+        if home is None:
+            home = dict(words=set(w), scope=c['scope'], rows=[]); groups.append(home)
+        home['words'] |= w
+        home['rows'].append(c)
+    out = []
+    for g in groups:
+        rows = g['rows']
+        statuses = [r['status'] for r in rows]
+        if all(st == 'restored' for st in statuses):
+            continue                                   # an addition, filed as 'restored' because it was never a cut
+        best = max(rows, key=lambda r: (r.get('rank', 0), r['date']))
+        if re.match(r'^\s*(add\w*|increas\w*|restor\w*|reinstat\w*|new)\b', best['item'], re.I):
+            continue                                   # an addition in cut's clothing
+        latest = rows[-1]
+        by_residents = all((r.get('who') or '').lower().startswith(('a resident', 'resident')) for r in rows)
+        out.append(dict(item=best['item'], scope=g['scope'], status=latest['status'], mentions=len(rows), first=rows[0]['date'], last=latest['date'],
+                        who=best['who'], utterance=by_residents, thread=best.get('thread'), voted=any(st == 'voted' for st in statuses),
+                        amount_as_heard=next((r['amount_as_heard'] for r in reversed(rows) if r.get('amount_as_heard')), None),
+                        fte_as_heard=next((r['fte_as_heard'] for r in reversed(rows) if r.get('fte_as_heard')), None)))
+    return out
+
+
 def episodes_for(fy):
     """The episodes of a season -- the regular cycle and the special ones (a Special Town
     Meeting, a post-election cut list, new state aid) -- from sources/data/budget-episodes.csv.
@@ -257,7 +311,7 @@ def budget_state(as_of, episode=None, threads=()):
             if RESTORE.search(c['item']) and not re.search(r'\b(cut|reduc|eliminat)', c['item'], re.I) and c['status'] not in ('restored', 'withdrawn'):
                 c = dict(c, status='restored')
             k = (c['scope'], norm_item(c['item']))
-            row = dict(base, **dict(c, item=tally_only(c['item'])), thread=thread_of(threads, c['item'], 'cut'), video_url='%s&t=%ds' % (d['video_url'], c['t']), key=norm_item(c['item']))
+            row = dict(base, **dict(c, item=tally_only(c['item'])), thread=thread_of(threads, c['item'], 'cut'), rank=rank(c.get('who')), video_url='%s&t=%ds' % (d['video_url'], c['t']), key=norm_item(c['item']))
             if k not in cuts:
                 added.append(row)
             elif cuts[k]['status'] != c['status']:
@@ -286,7 +340,7 @@ def budget_state(as_of, episode=None, threads=()):
         meetings_read=len(read), first_date=read[0]['meeting_date'] if read else None, last_date=read[-1]['meeting_date'] if read else None,
         latest={'%s/%s' % k: v for k, v in latest.items()},
         history={'%s/%s' % k: sorted(v, key=lambda r: r['date'], reverse=True) for k, v in history.items()},
-        cuts=cut_list, live_cuts=len(live), warnings=warnings,
+        cuts=cut_list, live_cuts=len(live), warnings=warnings, cut_groups=cut_groups(cut_list),
         live_by_scope=dict(collections.Counter(r['scope'] for r in live)),
         log=log)
 

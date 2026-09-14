@@ -23,7 +23,8 @@ type Entry = { kind: string; board: string; board_slug: string; date: string; pa
 type Statement = { board: string; board_slug: string; date: string; page: string; thread?: string; kind: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; statement: string; who: string; status: string; t: number; video_url: string }
 type Cut = { board: string; board_slug: string; date: string; page: string; thread?: string; item: string; scope: string; fiscal_year: number | null; amount_as_heard: string | null; fte_as_heard: string | null; status: string; who: string; t: number; video_url: string; key: string }
 type Warning = { board: string; board_slug: string; date: string; page: string; thread?: string; prediction: string; about: string; condition: string | null; scope: string; fiscal_year: number | null; who: string; t: number; video_url: string }
-type State = { meetings_read: number; warnings?: Warning[]; first_date: string | null; last_date: string | null; latest: Record<string, Statement>; history: Record<string, Statement[]>; cuts: Cut[]; live_cuts: number; live_by_scope: Record<string, number>; log: { board: string; board_slug: string; date: string; page: string; added: string[]; changed: { item: string; was: string; now: string }[]; n_added: number; n_changed: number }[] }
+type CutGroup = { item: string; scope: string; status: string; mentions: number; first: string; last: string; who: string; utterance: boolean; thread?: string; voted: boolean; amount_as_heard: string | null; fte_as_heard: string | null }
+type State = { meetings_read: number; warnings?: Warning[]; cut_groups?: CutGroup[]; first_date: string | null; last_date: string | null; latest: Record<string, Statement>; history: Record<string, Statement[]>; cuts: Cut[]; live_cuts: number; live_by_scope: Record<string, number>; log: { board: string; board_slug: string; date: string; page: string; added: string[]; changed: { item: string; was: string; now: string }[]; n_added: number; n_changed: number }[] }
 type Payload = {
   about: string; as_of: string; cycle_fy: number; cycle_opens: string; cycle_closes: string; recent_days: number; state: State; seasons: { fy: number; path: string; label: string; live: boolean }[]
   answers: { question: string; label: string; answer: string; status: string; link?: string | null; basis?: string | null }[]
@@ -119,7 +120,7 @@ function Thread({ th }: { th: { id: string; label: string; question: string; row
 function Metrics({ st }: { st: State }) {
   const first = (k: string) => { const h = st.history[k] || []; return h.length ? h[h.length - 1] : null }
   const cards: { label: string; value: string; line: string; foot: string }[] = []
-  for (const [scope, label] of [['school', 'School gap'], ['town', 'Town gap'], ['both', 'Town and schools gap']] as const) {
+  for (const [scope, label] of [['school', 'School gap'], ['town', 'Town gap']] as const) {
     const x = st.latest[`${scope}/deficit`]
     if (!x) continue
     const f = first(`${scope}/deficit`)
@@ -127,14 +128,17 @@ function Metrics({ st }: { st: State }) {
   }
   for (const [scope, label] of [['school', 'School override ask'], ['town', 'Town override ask'], ['both', 'Override, town and schools']] as const) {
     const x = st.latest[`${scope}/override`]
-    if (!x || Math.max(0, ...amounts(x.amount_as_heard || '')) < 100_000) continue   // an override is a sum, not a tax-bill impact
+    if (!x || (amounts(x.amount_as_heard || '')[0] || 0) < 100_000) continue   // an override is a sum; '$56.95 added to the tax bill' is its impact
     cards.push({ label, value: x.amount_as_heard || '—', line: `${x.status === 'voted' ? 'a board vote' : x.status === 'announced' ? 'stated, not voted' : 'proposed, not voted'} — ${x.who}, ${mmdd(x.date)}`, foot: '' })
   }
+  // Cuts are counted as GROUPS -- the same cut said three ways is one cut -- and a cut named
+  // only by residents is counted apart. cut_groups() in build_budget_feed.py.
   for (const [scope, label] of [['school', 'School cuts'], ['town', 'Town cuts']] as const) {
-    const cs = st.cuts.filter(c => c.scope === scope)
+    const gs = (st.cut_groups || []).filter(g => g.scope === scope)
+    const cs = gs.filter(g => !g.utterance), said = gs.length - cs.length
     if (!cs.length) continue
-    const voted = cs.filter(c => c.status === 'voted').length, gone = cs.filter(c => c.status === 'restored' || c.status === 'withdrawn').length
-    cards.push({ label, value: `${cs.length} named`, line: `${voted} voted · ${cs.length - voted - gone} proposed or announced, not voted · ${gone} restored or withdrawn`, foot: '' })
+    const voted = cs.filter(g => g.voted).length, gone = cs.filter(g => !g.voted && (g.status === 'restored' || g.status === 'withdrawn')).length
+    cards.push({ label, value: `${cs.length} named`, line: `${voted} voted · ${cs.length - voted - gone} proposed or announced, not voted · ${gone} restored or withdrawn`, foot: `by staff, the chair or a member; ${st.cuts.filter(c => c.scope === scope).length} lines on the record${said ? `, ${said} more named only by residents` : ''}` })
   }
   const warns = st.warnings || []
   if (warns.length) cards.push({ label: 'Early warnings', value: `${warns.length} on the record`, line: `predictions and threats with no figure yet — latest ${mmdd(warns[0].date)}: ${warns[0].about}`, foot: '' })

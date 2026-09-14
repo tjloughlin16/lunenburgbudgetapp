@@ -59,6 +59,7 @@ SYSTEM = """You read machine captions of a Massachusetts town board meeting and 
 Rules:
 - Figures are AS HEARD. Copy the number the captions carry; do not correct or infer. If no figure was said, leave amount empty.
 - Say WHO by role only: the superintendent, the business administrator, the town manager, the chair, a member, a resident. Never a name.
+- kind 'deficit' is the TOTAL gap or shortfall as stated ("we are $900,000 short"); a cost increase that contributes to it ("health insurance is up $682,718") is kind 'other', not a deficit.
 - Status: announced (stated as fact by staff or chair), proposed (put forward for discussion), voted (a motion carried), restored (a cut reversed), withdrawn.
 - Scope: school (the school department budget), town (the omnibus/municipal budget), both.
 - Include the fiscal year the statement is about (e.g. 2027, 2028) when it can be told from context; otherwise null.
