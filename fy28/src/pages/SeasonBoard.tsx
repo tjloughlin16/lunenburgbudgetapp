@@ -84,8 +84,8 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
   const summary = [
     started ? `the schools said they were ${started.figure} short in February` : '',
     corrected ? `then ${corrected.figure.split(' (')[0]} once ${corrected.why.replace(/^corrected downward: /, '')}` : '',
-    finalBallot.length ? `${finalBallot.length} override question${finalBallot.length === 1 ? '' : 's'} ${finalBallot.every(q => /failed/i.test(q.why)) ? 'failed' : 'went to the ballot'}` : '',
-    schoolDecided.length ? `${fteOf(schoolDecided) ? fteOf(schoolDecided) + ' FTE and ' : ''}${schoolDecided.filter(r => !r.fte).length} program and expense cuts stood on the school side` : '',
+    finalBallot.some(q => q.figure) ? `${finalBallot.filter(q => q.figure).length} override question${finalBallot.filter(q => q.figure).length === 1 ? '' : 's'} ${finalBallot.filter(q => q.figure).every(q => /failed/i.test(q.why)) ? 'failed' : 'went to the ballot'}` : finalBallot.length ? 'no override question reached the ballot' : '',
+    schoolDecided.length ? `${schoolDecided.length} cuts stood on the school side${fteOf(schoolDecided) ? ` (${fteOf(schoolDecided)} FTE where an FTE is printed)` : ''}` : '',
     townDecided.length ? `${townDecided.length} on the town side` : '',
   ].filter(Boolean).join('; ')
   const lines = d.lines.filter(l => l.side === 'school' && (l.cut || 0) > 0).sort((a, c) => (c.cut || 0) - (a.cut || 0))
@@ -125,7 +125,10 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
             {(['school', 'town'] as const).map(scope => {
               const xs = decided.filter(r => r.scope === scope && !/^Town — Universal/.test(r.item))
               const universal = decided.filter(r => r.scope === scope && /^Town — Universal/.test(r.item))
-              return xs.length ? <div key={scope} className="mt-2"><p className="text-[13px] font-semibold">{SCOPE[scope]} — {xs.length}{fteOf(xs) ? `, ${fteOf(xs)} FTE` : ''}</p>
+              const noFte = xs.filter(r => r.fte == null && /one position/.test(r.note)).length
+              const notes = cuts.filter(r => r.scope === scope && r.status === 'note')
+              if (!xs.length && notes.length) return <div key={scope} className="mt-2"><p className="text-[13px] font-semibold">{SCOPE[scope]}</p>{notes.map((r, i) => <p key={i} className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>{r.item} — {r.why}<CiteLink c={r.cite} /></p>)}</div>
+              return xs.length ? <div key={scope} className="mt-2"><p className="text-[13px] font-semibold">{SCOPE[scope]} — {xs.length}{fteOf(xs) ? `, ${fteOf(xs)} FTE where an FTE is printed` : ''}{noFte ? `; ${noFte} printed as whole positions` : ''}</p>
                 {byFamily(xs).map(([f, rows]) => <div key={f} className="mt-1"><p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{f}</p><ul>{rows.map((r, i) => <Item key={i} r={r} />)}</ul></div>)}
                 {universal.length > 0 && <details className="mt-2"><summary className="cursor-pointer text-xs underline" style={{ color: 'var(--text-muted)' }}>{universal.length} more the town cut in all three budgets — no override would have changed these</summary><ul className="mt-1">{universal.map((r, i) => <Item key={i} r={{ ...r, item: r.item.replace('Town — Universal — ', ''), why: '' }} muted />)}</ul></details>}</div> : null
             })}
@@ -162,7 +165,7 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
         <Block title="The override track" color="var(--series-cost)" sub="Whether one is filed, for how much, and where each board stands — step by step.">
           <ul>{b.override.map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: `2px solid ${r.cite?.kind === 'ballot' ? 'var(--status-critical)' : 'var(--series-cost)'}` }}><span className="tnum text-xs mr-2" style={{ color: 'var(--text-muted)' }}>{mmdd(r.date)}</span><span className="font-semibold">{r.item}</span>{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}{r.why ? <span style={{ color: 'var(--text-secondary)' }}> — {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({r.who})</span><CiteLink c={r.cite} />{r.note && !r.note.startsWith('internal:') && <span className="text-xs italic ml-1.5" style={{ color: 'var(--text-muted)' }}>{r.note}</span>}</li>)}</ul>
         </Block>
-        <Block title="Free cash and other moves" color="var(--series-cost)" sub="Money moved late — free cash, transfers, new revenue — and what it changed.">
+        <Block title="Fees, free cash and other moves" color="var(--series-cost)" sub="What was charged or moved to close the gap — fees, free cash, transfers, new revenue.">
           <ul>{b.late.map((r, i) => <Item key={i} r={r} />)}</ul>
           {b.late.length === 0 && <p className="text-sm" style={{ color: 'var(--text-muted)' }}>None recorded.</p>}
         </Block>
@@ -170,7 +173,7 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
 
       {/* 6. final */}
       <Block title="Final — what Town Meeting and the ballot did, and what took effect" color="var(--status-good)">
-        <ul>{[...appropriated, ...finalBallot].map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px solid var(--status-good)' }}><span className="font-bold tnum">{r.figure}</span> — {r.item}{r.why ? <span style={{ color: /failed/i.test(r.why) ? 'var(--status-critical)' : 'var(--text-secondary)' }}>, {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{r.who}, {mmdd(r.date)}</span><CiteLink c={r.cite} /></li>)}</ul>
+        <ul>{[...appropriated, ...finalBallot].map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px solid var(--status-good)' }}>{r.figure ? <><span className="font-bold tnum">{r.figure}</span> — </> : null}<span className={r.figure ? '' : 'font-semibold'}>{r.item}</span>{r.why ? <span style={{ color: /failed/i.test(r.why) ? 'var(--status-critical)' : 'var(--text-secondary)' }}>, {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{r.who}, {mmdd(r.date)}</span><CiteLink c={r.cite} /></li>)}</ul>
         {took.map((r, i) => <div key={i} className="mt-3 pl-3" style={{ borderLeft: '2px solid var(--status-critical)' }}><p className="text-[13.5px] font-semibold">{r.item}{r.fte ? <span className="tnum"> · {r.fte} FTE</span> : ''}{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}</p><p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{r.why}. {r.note.startsWith('internal:') ? '' : r.note}<CiteLink c={r.cite} /></p></div>)}
         {later.map((r, i) => <div key={i} className="mt-3 pl-3" style={{ borderLeft: '2px solid var(--status-good)' }}><p className="text-[13.5px] font-semibold">{r.item}{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}</p><p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{r.why}. {r.note.startsWith('internal:') ? '' : r.note}<CiteLink c={r.cite} /></p></div>)}
       </Block>

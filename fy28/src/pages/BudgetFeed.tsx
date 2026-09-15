@@ -443,7 +443,16 @@ export function BudgetFeed() {
           })()}
         </section>
       ))}
-      {d.episodes.length === 0 && <Tiers st={d.state} closed={d.outcome.closed} decisions={d.entries.filter(x => x.kind === 'vote')} outcome={d.outcome} meta={d.threads} fy={d.cycle_fy} finalText={d.outcome.closed ? d.outcome.headline : null} />}
+      {d.episodes.length === 0 && (
+        <section className="mt-8">
+          <div className="flex flex-wrap items-baseline gap-x-3">
+            <h2 className="text-xl font-bold">The {FY(d.cycle_fy)} season</h2>
+            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{d.outcome.closed ? 'closed' : 'under way'} · {mmddyy(d.cycle_opens)}{d.outcome.closed ? ` → ${mmddyy(d.cycle_closes)}` : ' →'}</span>
+          </div>
+          <SeasonBoard fy={d.cycle_fy} onLoaded={() => setHasBoard(true)}
+            fallback={<Tiers st={d.state} closed={d.outcome.closed} decisions={d.entries.filter(x => x.kind === 'vote')} outcome={d.outcome} meta={d.threads} fy={d.cycle_fy} finalText={d.outcome.closed ? d.outcome.headline : null} />} />
+        </section>
+      )}
 
       {/* ------------------------------------------------------------------ upcoming */}
       {!season && <H2 id="upcoming">Budget meetings coming up</H2>}

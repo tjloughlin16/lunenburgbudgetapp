@@ -102,6 +102,7 @@ CHECKS = [
     ('build_budget_feed.py', ['--check']),
     ('extract_scenario_lines.py', ['--check']),
     ('build_budget_season.py', ['fy27', '--check']),
+    ('build_budget_season.py', ['fy26', '--check']),
     ('write_budget_state.py', ['--check']),
     ('fetch_board_pages.py', ['--check']),
     ('fetch_dls_tax_bills.py', ['--check']),

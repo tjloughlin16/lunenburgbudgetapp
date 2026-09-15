@@ -218,6 +218,33 @@ right figures are there.
 One line per report, with what the review CHANGED. A review that changed nothing is
 recorded as that, because it is a claim worth being able to disbelieve.
 
+### `/budget-feed/fy26` — the FY26 budget season board, 14 September 2026
+
+Written by hand from the district's FY26 documents (the 22 January level-service
+presentation, the 5 February target-budget presentation, the 12 March summary and approved
+personnel cut list), the town's minutes (Finance Committee 3 April, School Committee 16
+April and 7 May) and our minutes of the January–March recordings; no extraction exists
+for 2025. Read once as reader 7, against BUDGET-FEED-GUIDELINES.md.
+
+- The one-liner said "1 override question went to the ballot" -- none did; a ballot row
+  with no figure now reads "no override question reached the ballot". The 27 positions the
+  district prints without an FTE were being counted as "program and expense cuts"; the
+  line now counts cuts and says "FTE where an FTE is printed". "No town cut list was
+  published" was a cut row; it is a note under the town heading. Town minutes cited by
+  filename now read "Finance Committee minutes, 3 Apr 2025". The season's dates carry
+  their years (May 19 '24 → May 17 '25). Fees sat under "free cash"; the block is "Fees,
+  free cash and other moves".
+
+**The story FY26 tells that FY27 does not:** a citizens' petition for a $2,099,337
+override that the Finance Committee recommended against 6–0, that Town Meeting approved
+anyway on 3 May, and that never reached the ballot because the Select Board did not call
+a special election -- the appropriation lapsed. Residents at the 7 May School Committee
+meeting said they would petition again for FY27, which is where FY27's story starts.
+
+**Left open:** the Town Meeting record itself (Article 11's vote, Article 12's $500,000
+free cash) is not in our archive -- the outcome is cited from a School Committee member's
+account on 7 May; and the town side has no published cut list to read.
+
 ### `/budget-feed/fy27` — the FY27 budget season board, 14 September 2026
 
 Read three times as reader 7, a parent with a child in fifth-grade band and middle school

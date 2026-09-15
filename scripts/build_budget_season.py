@@ -14,8 +14,9 @@ evidence, note. The event log is what the evidence column points at, and EVERY c
 resolved here or the build fails:
 
     board/date@seconds   our record of that meeting -- the budget-state file for that
-                         recording (write_budget_state.py); resolved to the minutes page and
-                         the video at that second
+                         recording (write_budget_state.py), or our minutes of it where the
+                         extraction has not run (2025); resolved to the minutes page and the
+                         video at that second
     doc:<path>           a document in the archive, resolved to its /docs/ address
     ballot:<date>        rows in sources/data/ballot-questions.csv for that election
 
@@ -33,6 +34,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SEASONS = os.path.join(ROOT, 'sources', 'data', 'budget-seasons')
 STATE = os.path.join(ROOT, 'sources', 'data', 'budget-state')
+MINUTES = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 BALLOT = os.path.join(ROOT, 'sources', 'data', 'ballot-questions.csv')
 OUTDIR = os.path.join(ROOT, 'fy28', 'public', 'data')
 BLOCKS = ['deficit', 'proposals', 'cuts', 'override', 'late', 'final']
@@ -47,6 +49,11 @@ def doc_label(rel):
     Projections as of 3-23-26' rather than a filename. Our analyses are labelled as ours."""
     if rel.startswith('sources/analyses/'):
         return 'our analysis: ' + os.path.basename(rel).replace('.md', '').replace('-', ' ')
+    m = re.match(r'^sources/meetings/text/([a-z0-9-]+)/(\d{4}-\d{2}-\d{2})-(agenda|minutes)-\d+\.txt$', rel)
+    if m:                                    # the town's own minutes or agenda, named as a reader would
+        board = ' '.join(w.capitalize() for w in m.group(1).split('-'))
+        d = m.group(2)
+        return '%s %s, %s' % (board, m.group(3), __import__('datetime').date.fromisoformat(d).strftime('%-d %b %Y'))
     folder = rel.split('/')[1]
     idx = os.path.join(ROOT, 'sources', folder, 'index.csv')
     if os.path.exists(idx):
@@ -76,9 +83,10 @@ def resolve(ev):
     if not m:
         raise SystemExit('unreadable citation: %s' % ev)
     board, date, t = m.group(1), m.group(2), int(m.group(3))
-    files = glob.glob(os.path.join(STATE, board, '%s-*.json' % date))
+    # our record of the meeting: the budget-state file (2026 on) or our minutes of the recording
+    files = glob.glob(os.path.join(STATE, board, '%s-*.json' % date)) or glob.glob(os.path.join(MINUTES, board, '%s-*.json' % date))
     if not files:
-        raise SystemExit('dead citation: %s (no budget-state file for that meeting)' % ev)
+        raise SystemExit('dead citation: %s (no budget-state file and no minutes of ours for that meeting)' % ev)
     d = json.load(open(files[0], encoding='utf-8'))
     return dict(kind='meeting', board=d['board'], board_slug=board, date=date, t=t,
                 href='%s&t=%ds' % (d['video_url'], t) if t else d['video_url'],
