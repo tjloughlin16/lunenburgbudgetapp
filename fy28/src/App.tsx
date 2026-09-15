@@ -73,7 +73,7 @@ import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
-import { LABEL, PARENT, REFERENCE, ROOT, pathFor, tabFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle } from './lib/title'
 import { ReadingTime } from './components/ReadingTime'
@@ -669,7 +669,7 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
         ))}
         <li aria-current="page" style={{ color: 'var(--text-secondary)' }}>{LABEL[tab]}</li>
       </ol>
-      <ReadingTime tab={tab} reference={REFERENCE.has(tab)} />
+      <ReadingTime tab={tab} reference={REFERENCE.has(tab)} tool={TOOLS.has(tab)} />
       </div>
     </nav>
   )

@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import { useEffect, useMemo, useState } from 'react'
 import { usd, usdShort } from '../model/engine'
@@ -8,8 +9,7 @@ import {
 } from '../components/SpecialRevenueCharts'
 import {
   Body, H2, Insight, NotShown, Stat,
-  ReportShell,
-} from '../components/report'
+  ReportShell, ShortVersion } from '../components/report'
 
 const TAB: Tab = 'funds'
 const DATA = '/data/special-revenue.json'
@@ -178,6 +178,7 @@ export function SpecialRevenue() {
       </div>
 
       {/* =========================================================== 1. INSIGHTS */}
+      <ShortVersion>
       <H2 id="what-this-says">What the thirteen years say</H2>
       <Body>
         Four claims, each one a movement of dollars in this schedule and nothing more. Why
@@ -267,6 +268,8 @@ export function SpecialRevenue() {
         </p>
       </NotShown>
 
+      </ShortVersion>
+      <FullVersion what="the full analysis">
       {/* ===================================================== 2. CATEGORICAL DATA */}
       <H2 id="in-and-out">Money in, money out</H2>
       <Body>
@@ -652,6 +655,7 @@ export function SpecialRevenue() {
         {c.merged_group_rows} rows are merged into one heading here. That is our rendering
         of the town&rsquo;s page, not something the page says.
       </p>
+      </FullVersion>
     </ReportShell>
   )
 }

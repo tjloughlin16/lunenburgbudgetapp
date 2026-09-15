@@ -1,4 +1,6 @@
 import { abs } from '../lib/abs'
+import { FullVersion } from '../components/FullVersion'
+import { ShortVersion } from '../components/report'
 import { useEffect, useState } from 'react'
 import { MODEL, usd } from '../model/engine'
 import {
@@ -285,6 +287,7 @@ export function FreeCash() {
       {/* ==================================================== 1. WHAT THIS ESTABLISHES */}
       {d && last && first && mult && lunenburg && v25 && unspentTotal && receiptsTotal && (
         <>
+          <ShortVersion>
           <H2 id="insights">What this establishes</H2>
           <Body>
             Four claims a resident could repeat at a meeting. Each is recomputed from the
@@ -377,6 +380,13 @@ export function FreeCash() {
             </p>
           </div>
 
+          </ShortVersion>
+        </>
+      )}
+
+      <FullVersion what="the full analysis">
+      {d && last && first && mult && lunenburg && v25 && unspentTotal && receiptsTotal && (
+        <>
           {/* ================================== 2. THE ORGANISED CATEGORICAL DATA */}
           <H2 id="where">Where the money comes from</H2>
           <Body>
@@ -986,6 +996,7 @@ export function FreeCash() {
           {d.coverage.years.length} years, {d.coverage.lines} lines each.
         </p>
       )}
+      </FullVersion>
     </div>
   )
 }

@@ -130,7 +130,8 @@ def measure(route, path):
     # A REFERENCE page -- an index, a register, a search box -- says so on its breadcrumb
     # row (REFERENCE in routes.ts, drawn by components/ReadingTime.tsx). Read off the
     # build rather than off the route table, so this file and the page cannot disagree.
-    kind = 'reference' if crumb and re.search(r'>Reference(<| )', crumb.group(0)) else 'page'
+    kind = ('reference' if crumb and re.search(r'>Reference(<| )', crumb.group(0))
+            else 'tool' if crumb and re.search(r'>Interactive<', crumb.group(0)) else 'page')
     body = FURNITURE.sub(' ', raw)
     h1 = H1.search(body)
     h2s = [m.start() for m in H2.finditer(body)]
@@ -191,7 +192,7 @@ def budget(rows, previous, strict):
             fails.append('%s: short version grew from %s to %d words while over the %d budget -- it may only shrink'
                          % (r['route'], before, n, SHORT_BUDGET))
     missing = [r['route'] for r in rows
-               if r['short_words'] == '' and r['kind'] != 'reference' and r['route'] not in ('/', '/not-found')]
+               if r['short_words'] == '' and r['kind'] == 'page' and r['route'] not in ('/', '/not-found')]
     if strict and missing:
         fails.append('%d page(s) declare no short version: %s' % (len(missing), ', '.join(missing)))
     return fails, missing

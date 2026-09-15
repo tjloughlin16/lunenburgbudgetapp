@@ -412,7 +412,13 @@ export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis'])
 export const REFERENCE: ReadonlySet<Tab> = new Set<Tab>([
   'sources', 'reports', 'database', 'rates', 'gaps', 'recorded', 'boards', 'blog',
   'search', 'agents', 'ask', 'dataroom', 'deeper', 'thisweek', 'budgetfeed',
+  // Indexes of other pages, and the question form.
+  'sped', 'themoney', 'askus',
 ])
+
+/** Pages that are BOARDS -- dials, sliders, a cascade to reorder. They are used, not
+ *  read, so the indicator says "Interactive" rather than minutes. */
+export const TOOLS: ReadonlySet<Tab> = new Set<Tab>(['adjust', 'priorities', 'money', 'development'])
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
  *  accepted — a link that has been shared once is out of your hands forever. */

@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import { usd } from '../model/engine'
@@ -10,8 +11,7 @@ import {
 } from '../components/StateAidCharts'
 import {
   Body, H2, H3, Insight, Maybe, NotShown, Stat,
-  ReportShell,
-} from '../components/report'
+  ReportShell, ShortVersion } from '../components/report'
 
 /** The frame this report is drawn in. See components/report.tsx.
  *  TITLE is the report's NAME, used before the payload arrives; the h1 the
@@ -222,6 +222,7 @@ export function StateAid() {
       </div>
 
       {/* ------------------------------------------------------------ 1. THE CONCLUSIONS */}
+      <ShortVersion>
       <H2 id="findings">What this page establishes</H2>
       <Body>
         Five claims, each derived from the town&rsquo;s, the state&rsquo;s or the
@@ -316,6 +317,8 @@ export function StateAid() {
         </p>
       </NotShown>
 
+      </ShortVersion>
+      <FullVersion what="the full analysis">
       {/* ------------------------------------------------------- 2. ORGANISED CATEGORIES */}
       <H2 id="who-decides">Who decides the school dollar</H2>
       <Body>
@@ -785,6 +788,7 @@ export function StateAid() {
         Chapter 70 summary is the {fy(F.fy)} calculation as published
         {F.as_of ? ` on ${F.as_of}` : ''}, and Chapter 70 is recalculated every year.
       </p>
+      </FullVersion>
     </ReportShell>
   )
 }

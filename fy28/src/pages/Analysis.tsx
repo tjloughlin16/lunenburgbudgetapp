@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
+import { isValidElement } from 'react'
 import { renderMarkdown, type Heading } from '../lib/markdown'
+import { FullVersion } from '../components/FullVersion'
+
+/** First-section headings that ARE a short version. Anything else opening a document is
+ *  context, and the document keeps its full length until it is edited. */
+const SHORT_HEADING = /^(the short version|what this establishes|in plain terms|what we now hold|where things stand)/i
 import { analysisIdFromPath } from '../routes'
-import { Body, H2, MoreReports, ReportShell } from '../components/report'
+import { Body, H2, MoreReports, ReportShell, ShortVersion } from '../components/report'
 
 /** THE MARKDOWN ANALYSES, IN THE SAME SHELL AS EVERY OTHER REPORT.
  *
@@ -88,6 +94,22 @@ export function Analysis() {
     : null
   const contents = (rendered?.headings ?? []).filter(h => h.depth === 2)
 
+  // THE SHORT VERSION OF A DOCUMENT is its first section, WHEN that section is one --
+  // "The short version", "What this establishes", "In plain terms". A document that
+  // opens with its caveats ("What this rests on, and what it is not") or with why it
+  // exists has no short version yet, and the reading-time table says so; the fix is in
+  // the document, not here (rule 7a). When there is one, everything after it goes
+  // behind the fold.
+  const split = (() => {
+    if (!body) return null
+    const h2s = body.map((n, i) => (isValidElement(n) && n.type === 'h2' ? i : -1)).filter(i => i >= 0)
+    if (h2s.length < 2) return null
+    const first = body[h2s[0]] as React.ReactElement<{ id: string }>
+    const head = contents.find(h => h.id === first.props.id)
+    if (!head || !SHORT_HEADING.test(head.text)) return null
+    return { short: body.slice(h2s[0], h2s[1]), rest: body.slice(h2s[1]), lead: body.slice(0, h2s[0]) }
+  })()
+
   const title = meta?.title
     ?? (rendered?.headings[0]?.depth === 1 ? rendered.headings[0].text : id)
 
@@ -101,7 +123,8 @@ export function Analysis() {
       sourceUrl={`/docs/analyses/${id}.md`}
       meta={<DocumentBar id={id} meta={meta} />}
     >
-      {contents.length > 2 && (
+      {/* The contents list draws only where there is no fold; the fold carries its own. */}
+      {contents.length > 2 && !split && (
         <nav aria-label="Contents" className="no-print card p-4 mt-8 max-w-2xl">
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
             style={{ color: 'var(--text-muted)' }}>What is in it</p>
@@ -116,7 +139,17 @@ export function Analysis() {
         </nav>
       )}
 
-      <div className="report-body mt-6">{body}</div>
+      {split ? (
+        <>
+          <div className="report-body mt-6">{split.lead}</div>
+          <ShortVersion><div className="report-body">{split.short}</div></ShortVersion>
+          <FullVersion what="the full analysis">
+            <div className="report-body mt-6">{split.rest}</div>
+          </FullVersion>
+        </>
+      ) : (
+        <div className="report-body mt-6">{body}</div>
+      )}
 
       {/* AFTER the document, not above it. Rule 7a: the page leads with the thing, and
           the note about how to read it comes after -- except where the caveat changes

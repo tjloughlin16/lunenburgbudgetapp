@@ -150,6 +150,14 @@ kind="conclusions">`, a `<Conclusions>` block, or `<ShortVersion>` in
 
 The first measurement, at the 460-word budget first tried: 30 pages declare one, 26
 are over, 48 declare none. At 1,150 words, 8 are over -- the pages with too many cards.
+By the end of 15 September: 45 declare one, 9 are over, 13 declare none -- nine of them
+markdown analyses whose first section is context rather than a conclusion, which is the
+edit each one needs (a first section headed *The short version* or *What this
+establishes* is picked up by `pages/Analysis.tsx` automatically), plus `/why-it-repeats`
+and `/athletics`.
+
+Pages that are not reads say so instead of a time: **Reference** (an index, a register,
+a search box -- `REFERENCE` in routes.ts) and **Interactive** (a board -- `TOOLS`).
 `/one-big-report` declares 15,479 words -- its "short version" is every report's
 conclusions stacked, which is the page telling us it is an index and not a read.
 

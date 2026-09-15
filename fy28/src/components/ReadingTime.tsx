@@ -60,7 +60,7 @@ export function label(words: number): string {
 }
 
 /** `tab` only so the count restarts when the page changes; the observer does the rest. */
-export function ReadingTime({ tab, reference }: { tab: string; reference?: boolean }) {
+export function ReadingTime({ tab, reference, tool }: { tab: string; reference?: boolean; tool?: boolean }) {
   const [words, setWords] = useState<{ all: number; short: number | null; rows: number } | null>(null)
 
   useEffect(() => {
@@ -86,6 +86,14 @@ export function ReadingTime({ tab, reference }: { tab: string; reference?: boole
   const n = (x: number) => x.toLocaleString('en-US')
   // AN INSTRUMENT IS NOT A READ. A register, an index, a search box: the honest label is
   // what it is and how big, not how long it would take to read every row.
+  if (tool) {
+    return (
+      <span data-no-count className="text-[12px] whitespace-nowrap shrink-0" style={{ color: 'var(--text-muted)' }}
+        title={`A board to use rather than a page to read: ${n(words.all)} words around the controls`}>
+        Interactive
+      </span>
+    )
+  }
   if (reference) {
     return (
       <span data-no-count className="text-[12px] tnum whitespace-nowrap shrink-0"
