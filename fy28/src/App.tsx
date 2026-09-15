@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { MODEL, project, runCascade, newGrowthPerDollar } from './model/engine'
 import { seedFromCuts, type CutState } from './model/cuts'
 import { Context, CONTEXT_NAV } from './pages/Context'
@@ -73,7 +73,12 @@ import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
-import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { Go, NavProvider, plainClick } from './lib/nav'
+import { pageTitle } from './lib/title'
+
+/** What index.html ships, read once so the front page keeps it exactly. */
+const HOME_TITLE = document.title
 import { type Package } from './model/rates'
 import { ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
 
@@ -145,6 +150,18 @@ export default function App() {
    *  opposite ends of every page. */
   const [notesOpen, setNotesOpen] = useState(false)
   const pending = useRef<string | null>(null)
+
+  // THE TAB TITLE, per page. A layout effect so that a page which knows its own name
+  // better than the route table does (a post, a meeting, a report whose H1 is a
+  // finding) can override it from a passive effect -- see lib/title.ts. The front page
+  // keeps the title index.html ships.
+  useLayoutEffect(() => {
+    if (tab === ROOT) { document.title = HOME_TITLE; return }
+    // An area's front page is named for the area -- "Budget Crisis", not "Start here",
+    // which is what the tab inside the area calls it.
+    const area = areaOf(tab)
+    document.title = pageTitle(area && AREA_HOME[area] === tab ? AREA_LABEL[area] : LABEL[tab])!
+  }, [tab])
 
   // The back button has to work, or a shared link is a trap: follow one, look around,
   // and there is no way back to where you came from.
@@ -255,6 +272,7 @@ export default function App() {
   }
 
   return (
+    <NavProvider value={go}>
     <div>
       {/* `no-print`: the header is navigation, and navigation on paper is ink that
           cannot be pressed. See the print block in index.css. */}
@@ -270,7 +288,7 @@ export default function App() {
               small tax on everybody who tries to tell somebody else about it.
               FY28 has not gone anywhere — it is all over the walkthrough, where it is a
               fact rather than a title. */}
-          <button onClick={() => go('home')}
+          <Go to="home"
             className="font-bold shrink-0 mr-1 leading-none text-left"
             title="Back to the front page — the four ways into this site">
             {/* Two lines on a phone rather than a shorter name. "Budget Project" alone
@@ -289,7 +307,7 @@ export default function App() {
             <span className="sm:hidden text-[13px] whitespace-nowrap">
               <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget
             </span>
-          </button>
+          </Go>
 
           {/* AREA NAV — scoped, and empty on the front page.
               This bar used to list the walkthrough, Go deeper and the two boards on EVERY
@@ -325,11 +343,11 @@ export default function App() {
               sitemap — arriving a third time because the strip is generated per area and
               nobody had asked what fifteen entries do to it. */}
           {area === 'analyses' && tab !== 'reports' && (
-            <button onClick={() => go('reports')}
+            <Go to="reports"
               className="text-xs font-semibold px-2 py-1 rounded whitespace-nowrap shrink-0"
               style={{ color: 'var(--text-secondary)' }}>
               &larr; All reports
-            </button>
+            </Go>
           )}
 
           {area && area !== 'analyses' && tab !== 'reports' && (
@@ -340,14 +358,14 @@ export default function App() {
               <div className="no-scrollbar flex items-center gap-1 min-w-0
                               overflow-x-auto overscroll-x-contain">
                 {AREA_TABS[area].map(id => (
-                  <button key={id} onClick={() => go(id)}
+                  <Go key={id} to={id}
                     aria-current={tab === id ? 'page' : undefined}
                     className="text-xs font-semibold px-2 py-1 rounded whitespace-nowrap shrink-0"
                     style={{ background: tab === id ? 'var(--surface-3)' : 'transparent',
                              color: tab === id ? 'var(--text-primary)'
                                                : 'var(--text-secondary)' }}>
                     {LABEL[id]}
-                  </button>
+                  </Go>
                 ))}
               </div>
             </>
@@ -368,7 +386,7 @@ export default function App() {
             {/* Search sits beside Sources for the same reason Sources is here: it backs
                 every area. A magnifier alone is the one icon everybody reads, so on a
                 phone the word goes and the glyph stays. */}
-            <button onClick={() => go('search')} title="Search everything this project holds"
+            <Go to="search" title="Search everything this project holds"
               aria-label="Search"
               aria-current={tab === 'search' ? 'page' : undefined}
               className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-1 rounded
@@ -381,8 +399,8 @@ export default function App() {
                 <circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" />
               </svg>
               <span className="hidden sm:inline">Search</span>
-            </button>
-            <button onClick={() => go('sources')} title="Every document this is built on"
+            </Go>
+            <Go to="sources" title="Every document this is built on"
               aria-current={tab === 'sources' ? 'page' : undefined}
               className="inline-flex text-xs font-semibold px-2 py-1 rounded
                          whitespace-nowrap shrink-0"
@@ -390,12 +408,12 @@ export default function App() {
                        color: tab === 'sources' ? 'var(--text-primary)'
                                                 : 'var(--text-secondary)' }}>
               Sources
-            </button>
+            </Go>
 
             {/* The two boards, only where they mean something. On the money, database and
                 assistant areas they are an invitation to leave. */}
             {area === 'crisis' && CTAS.map(c => (
-              <button key={c.id} onClick={() => go(c.id)} title={c.sub}
+              <Go key={c.id} to={c.id} title={c.sub}
                 aria-current={tab === c.id ? 'page' : undefined}
                 className="cta flex items-center gap-1.5 text-xs font-bold
                            px-2.5 py-1.5 rounded whitespace-nowrap shrink-0
@@ -406,7 +424,7 @@ export default function App() {
                 <span aria-hidden="true">{c.glyph}</span>
                 <span className="hidden sm:inline">{c.label}</span>
                 <span className="sm:hidden">{c.short}</span>
-              </button>
+              </Go>
             ))}
           </div>
         </nav>
@@ -458,18 +476,18 @@ export default function App() {
           does, including the walkthrough now that it sits one level down. */}
       {tab !== ROOT && <Breadcrumb tab={tab} goUp={goUp} />}
 
-      {tab === 'home' && <Home onJump={go} />}
+      {tab === 'home' && <Home />}
 
-      {tab === 'walk' && <Walkthrough onJump={go} />}
+      {tab === 'walk' && <Walkthrough />}
 
-      {tab === 'deeper' && <GoDeeper onJump={go} />}
+      {tab === 'deeper' && <GoDeeper />}
 
-      {tab === 'sources' && <Sources onJump={go} />}
-      {tab === 'athletics' && <Athletics onJump={go} />}
+      {tab === 'sources' && <Sources />}
+      {tab === 'athletics' && <Athletics />}
       {tab === 'rates' && <Rates />}
       {tab === 'freecash' && <FreeCash />}
-      {tab === 'themoney' && <Money onJump={go} />}
-      {tab === 'gaps' && <Gaps onJump={go} />}
+      {tab === 'themoney' && <Money />}
+      {tab === 'gaps' && <Gaps />}
       {tab === 'variance' && <BudgetVsActual />}
       {tab === 'staffing' && <SchoolStaffing />}
       {tab === 'schoolstaff' && <WhoWorksInEachSchool />}
@@ -512,7 +530,7 @@ export default function App() {
       {tab === 'askus' && <AskUs />}
       {tab === 'sportsmoney' && <AthleticsMoney />}
       {tab === 'funds' && <SpecialRevenue />}
-      {tab === 'database' && <Database onJump={go} />}
+      {tab === 'database' && <Database />}
       {tab === 'reports' && <Reports />}
       {/* Every MARKDOWN analysis, at /analysis/<id>, rendered in the same shell as the
           React reports. One component for seventeen documents -- the id is in the path.
@@ -523,9 +541,9 @@ export default function App() {
       {/* Unlisted. Nothing on the site links here -- see UNLISTED in routes.ts. */}
       {tab === 'dataroom' && <DataRoom />}
 
-      {tab === 'answers' && <Answers onJump={go} />}
+      {tab === 'answers' && <Answers />}
 
-      {tab === 'money' && <FindTheMoney onJump={go} />}
+      {tab === 'money' && <FindTheMoney />}
 
       {tab === 'context' && <Context onSources={() => go('sources')}
         onAthletics={() => go('athletics')} onRecommend={() => {
@@ -536,11 +554,11 @@ export default function App() {
 
       {tab === 'why' && <WhyItRepeats />}
 
-      {tab === 'curve' && <BendTheCurve onJump={go} option={optionFor('curve')} />}
+      {tab === 'curve' && <BendTheCurve option={optionFor('curve')} />}
 
       {tab === 'solved' && <Solved onLoadPackage={loadOption} />}
 
-      {tab === 'override' && <Override onJump={go} />}
+      {tab === 'override' && <Override />}
 
       {tab === 'priorities' && (
         <Priorities order={order} setOrder={setOrder} preset={preset} setPreset={setPreset}
@@ -571,21 +589,21 @@ export default function App() {
               something and a way out is worth the room. */}
           {tab !== 'home' && (
             <div className="no-print">
-              <button onClick={() => go('walk')}
+              <Go to="walk"
                 className="text-xs font-semibold mb-2 block"
                 style={{ color: 'var(--series-cost)' }}>
                 Budget Crisis &mdash; why it keeps breaking, from the beginning &rarr;
-              </button>
-              <button onClick={() => go('sources')}
+              </Go>
+              <Go to="sources"
                 className="text-xs font-semibold mb-2 block"
                 style={{ color: 'var(--series-cost)' }}>
                 Sources &mdash; every document this is built on &rarr;
-              </button>
-              <button onClick={() => go('deeper')}
+              </Go>
+              <Go to="deeper"
                 className="text-xs font-semibold mb-3 block"
                 style={{ color: 'var(--series-cost)' }}>
                 Go deeper &mdash; every other page &rarr;
-              </button>
+              </Go>
               <DataFooter />
             </div>
           )}
@@ -611,6 +629,7 @@ export default function App() {
 
       <ReleaseNotesDialog open={notesOpen} onClose={() => setNotesOpen(false)} />
     </div>
+    </NavProvider>
   )
 }
 
@@ -637,8 +656,10 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
                      text-[12px]">
         {trail.map(t => (
           <li key={t} className="flex items-center gap-1.5">
-            <button onClick={() => goUp(t)} className="font-semibold hover:underline"
-              style={{ color: 'var(--series-cost)' }}>{LABEL[t]}</button>
+            <a href={pathFor(t)}
+              onClick={e => { if (!plainClick(e)) return; e.preventDefault(); goUp(t) }}
+              className="font-semibold hover:underline"
+              style={{ color: 'var(--series-cost)' }}>{LABEL[t]}</a>
             <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&rsaquo;</span>
           </li>
         ))}

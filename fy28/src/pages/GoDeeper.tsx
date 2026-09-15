@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { Go } from '../lib/nav'
 import { LABEL, pathFor } from '../routes'
 import { Note } from '../components/primitives'
 
@@ -70,7 +71,7 @@ const GROUPS: { title: string; sub: string; items: { id: Tab; what: string }[] }
   },
 ]
 
-export function GoDeeper({ onJump }: { onJump: (t: Tab) => void }) {
+export function GoDeeper() {
   return (
     <div>
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-4">
@@ -98,7 +99,7 @@ export function GoDeeper({ onJump }: { onJump: (t: Tab) => void }) {
             <p className="text-[13px] mb-5" style={{ color: 'var(--text-muted)' }}>{g.sub}</p>
             <div className="grid gap-3 lg:grid-cols-2 items-start">
               {g.items.map(it => (
-                <button key={it.id} onClick={() => onJump(it.id)}
+                <Go key={it.id} to={it.id}
                   className="card p-4 text-left w-full transition-opacity hover:opacity-90">
                   <div className="flex items-baseline justify-between gap-3">
                     <span className="text-[15px] font-bold">{LABEL[it.id]}</span>
@@ -109,7 +110,7 @@ export function GoDeeper({ onJump }: { onJump: (t: Tab) => void }) {
                     style={{ color: 'var(--text-secondary)' }}>{it.what}</span>
                   <span className="block text-[12px] font-semibold mt-2.5"
                     style={{ color: 'var(--series-cost)' }}>Open &rarr;</span>
-                </button>
+                </Go>
               ))}
             </div>
           </div>

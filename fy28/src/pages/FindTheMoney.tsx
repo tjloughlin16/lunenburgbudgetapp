@@ -1,4 +1,6 @@
 import { usd, usdShort } from '../model/engine'
+import type { Tab } from '../routes'
+import { Go } from '../lib/nav'
 import { GAPS } from '../model/answers'
 import { verdict, TARGETS } from '../model/price'
 import { PriceList } from '../components/PriceList'
@@ -20,9 +22,7 @@ import { Section, Note } from '../components/primitives'
  *  argument nobody has to take on trust, which is a different and sometimes more useful
  *  thing for a town to have. The closing section says plainly what was given up to get
  *  it, because a page that drops the time dimension has to admit that it did. */
-export function FindTheMoney({ onJump }: {
-  onJump: (tab: 'why' | 'answers' | 'adjust' | 'development') => void
-}) {
+export function FindTheMoney() {
   const v = verdict(TARGETS[0])
   const last = GAPS[GAPS.length - 1]
 
@@ -108,17 +108,17 @@ export function FindTheMoney({ onJump }: {
               question comes back the following spring, bigger &mdash; the hole reaches{' '}
               {usdShort(last.cumulative)} by FY{last.fy}. That is the part you cannot get
               to without a projection.</>}
-            link="See why it repeats" onClick={() => onJump('why')} />
+            link="See why it repeats" to="why" />
           <Caveat title="It prices levers, not consequences"
             body={<>{usd(TARGETS[0])} of program cuts is {v.rows.find(r => r.id === 'cuts')?.ask ?? ''} —
               but which programs, in what order, is a choice somebody has to make, and
               the cost of it is not a dollar figure.</>}
-            link="Read the answers in full" onClick={() => onJump('answers')} />
+            link="Read the answers in full" to="answers" />
           <Caveat title="It does one lever at a time"
             body={<>Nobody will close this with a single lever, because most of them
               cannot reach. The real answer is a combination, and the only honest way to
               see a combination is to build one.</>}
-            link="Build your own budget" onClick={() => onJump('adjust')} />
+            link="Build your own budget" to="adjust" />
         </div>
         <Note>
           One thing the page deliberately does not do is rank these. Which lever is
@@ -130,8 +130,8 @@ export function FindTheMoney({ onJump }: {
   )
 }
 
-function Caveat({ title, body, link, onClick }: {
-  title: string; body: React.ReactNode; link: string; onClick: () => void
+function Caveat({ title, body, link, to }: {
+  title: string; body: React.ReactNode; link: string; to: Tab
 }) {
   return (
     <div className="card p-5">
@@ -139,10 +139,10 @@ function Caveat({ title, body, link, onClick }: {
       <p className="text-[13px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
         {body}
       </p>
-      <button onClick={onClick}
+      <Go to={to!}
         className="text-[12px] font-semibold mt-3" style={{ color: 'var(--series-cost)' }}>
         {link} &rarr;
-      </button>
+      </Go>
     </div>
   )
 }

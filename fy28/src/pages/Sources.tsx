@@ -1,7 +1,7 @@
 import DATA_FILES from '../data/agent-data-files.json'
+import { Go } from '../lib/nav'
 import MANIFEST from '../data/agent-manifest.json'
 import { SourceIndex } from '../components/SourceIndex'
-import type { Tab } from '../routes'
 
 /** Every document, at its own address.
  *
@@ -15,7 +15,7 @@ import type { Tab } from '../routes'
  *  meeting, which is where somebody is standing when they need it. */
 const SITE = MANIFEST.site
 
-export function Sources({ onJump }: { onJump: (t: Tab) => void }) {
+export function Sources() {
   return (
     <div>
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-8">
@@ -39,16 +39,16 @@ export function Sources({ onJump }: { onJump: (t: Tab) => void }) {
           a document here, the document is right.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <button onClick={() => onJump('context')}
+          <Go to="context"
             className="text-xs font-semibold px-3 py-2 rounded-md"
             style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>
             Where the numbers come from &rarr;
-          </button>
-          <button onClick={() => onJump('deeper')}
+          </Go>
+          <Go to="deeper"
             className="text-xs font-semibold px-3 py-2 rounded-md"
             style={{ background: 'transparent', color: 'var(--text-secondary)' }}>
             Every other page &rarr;
-          </button>
+          </Go>
         </div>
       </div>
 

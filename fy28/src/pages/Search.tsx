@@ -264,7 +264,13 @@ export default function Search() {
             </p>
           )}
 
-          {ORDER.map(c => {
+          {/* SECTIONS WITH HITS, THEN ONE LINE FOR THE REST. The page used to open a
+              search for "paraprofessional" with "Blog posts -- 0 of 0 posts searched --
+              No hits here", an empty section leading 624 hits. The denominator still
+              matters -- a null result must be readable as "not in what could be
+              searched" -- so the corpora with nothing are summed into one line under the
+              results rather than each getting a heading over an empty space. */}
+          {ORDER.filter(c => (data.results[c] || []).length > 0).map(c => {
             const hits = data.results[c] || []
             const count = data.counts[c]
             if (!count) return null
@@ -279,9 +285,6 @@ export default function Search() {
                   </span>
                 </div>
                 <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{WHAT[c]}</p>
-                {hits.length === 0 && (
-                  <p className="text-sm mt-2" style={{ color: 'var(--text-muted)' }}>No hits here.</p>
-                )}
                 <ol className="mt-3 space-y-3">
                   {hits.map(h => <Result key={h.doc_key} h={h} />)}
                 </ol>
@@ -294,6 +297,14 @@ export default function Search() {
               </section>
             )
           })}
+
+          {ORDER.some(c => data.counts[c] && !(data.results[c] || []).length) && (
+            <p className="text-sm mt-8" style={{ color: 'var(--text-muted)' }}>
+              Nothing in{' '}
+              {ORDER.filter(c => data.counts[c] && !(data.results[c] || []).length)
+                .map((c, i, arr) => { const n = data.counts[c]!.holds; return <span key={c}>{i ? (i === arr.length - 1 ? ' or ' : ', ') : ''}{NAME[c].toLowerCase()} ({fmt(n)} {n === 1 ? UNIT[c][0] : UNIT[c][1]} searched)</span> })}.
+            </p>
+          )}
 
           <p className="text-xs mt-10" style={{ color: 'var(--text-muted)' }}>
             Index built {data.index.built ? data.index.built.slice(0, 10) : 'unknown'}, holding{' '}

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Go } from '../lib/nav'
 import { MODEL, usd } from '../model/engine'
 import {
   BY_ID, CURATED, OTHER_RESTORES, REST_BY_CAT, REST_COUNT, restoreId,
@@ -10,10 +11,9 @@ import {
  *  The groups above the fold are the ones people actually name in a budget meeting. The
  *  rest of the budget is real and cuttable too, but putting fifty checkboxes on screen at
  *  once turns a decision into a data-entry exercise — so it lives behind one click. */
-export function CutBoard({ state, setState, onJump }: {
+export function CutBoard({ state, setState }: {
   state: CutState
   setState: (s: CutState) => void
-  onJump: (anchor: string) => void
 }) {
   const [showAll, setShowAll] = useState(false)
 
@@ -34,9 +34,9 @@ export function CutBoard({ state, setState, onJump }: {
         <Group key={g.id} title={g.title} blurb={g.blurb}
           items={g.ids.map(id => BY_ID.get(id)).filter((i): i is CutItem => !!i)}
           state={state} set={set}
-          action={<button onClick={() => onJump(g.anchor)}
+          action={<Go to="context" anchor={g.anchor}
             className="text-[11px] font-semibold shrink-0"
-            style={{ color: 'var(--series-cost)' }}>Why this matters →</button>} />
+            style={{ color: 'var(--series-cost)' }}>Why this matters →</Go>} />
       ))}
 
       {/* Restoring is the mirror image of cutting, so it gets its own board rather than

@@ -1,6 +1,6 @@
 import { abs } from '../lib/abs'
+import { Go } from '../lib/nav'
 import { useEffect, useState } from 'react'
-import type { Tab } from '../routes'
 import { LABEL } from '../routes'
 
 /** The front door to "The database".
@@ -109,7 +109,7 @@ function Route({ href, name, note }: { href: string; name: string; note: React.R
   )
 }
 
-export function Database({ onJump }: { onJump: (t: Tab) => void }) {
+export function Database() {
   const [ref, setRef] = useState<RefIndex | null>(null)
   const [schema, setSchema] = useState<Schema | null>(null)
   const [err, setErr] = useState<string | null>(null)
@@ -218,8 +218,8 @@ export function Database({ onJump }: { onJump: (t: Tab) => void }) {
       </div>
       <p className="text-xs leading-relaxed mt-4" style={{ color: 'var(--text-muted)' }}>
         Every other machine-readable address is listed on{' '}
-        <button onClick={() => onJump('agents')} className="underline"
-          style={{ color: 'var(--text-secondary)' }}>{LABEL.agents}</button>.
+        <Go to="agents" className="underline"
+          style={{ color: 'var(--text-secondary)' }}>{LABEL.agents}</Go>.
       </p>
 
       <H2>The documents themselves</H2>
@@ -230,7 +230,7 @@ export function Database({ onJump }: { onJump: (t: Tab) => void }) {
         written by the town and the district rather than by us.
       </Body>
       <div className="grid gap-2 mt-6">
-        <button onClick={() => onJump('sources')}
+        <Go to="sources"
           className="card block px-4 py-4 min-h-[44px] text-left w-full transition-opacity
                      hover:opacity-90">
           <span className="text-[16px] font-bold leading-tight"
@@ -240,7 +240,7 @@ export function Database({ onJump }: { onJump: (t: Tab) => void }) {
             Every document behind every figure &mdash; where it came from, the filename its
             publisher gave it, our copy, and a hash of both.
           </span>
-        </button>
+        </Go>
       </div>
     </div>
   )

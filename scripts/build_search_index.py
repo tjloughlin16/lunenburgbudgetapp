@@ -236,8 +236,15 @@ def source_rows(entry):
 TAG = re.compile(r'<[^>]+>')
 DROP = re.compile(r'<(script|style|nav|header|footer|noscript)\b.*?</\1>', re.S | re.I)
 TITLE = re.compile(r'<title>(.*?)</title>', re.S | re.I)
-# The <title> is the site's, on every page. The page's own name is its first <h1>.
+# The page's NAME is its <title>, minus the site's suffix -- set per page by the app
+# since 15 September 2026 (fy28/src/lib/title.ts). Before that every page carried the
+# site's title and the index fell back to the first <h1>, which on a report is the
+# FINDING in a sentence ("Fewest paraprofessionals per pupil in the group, then the
+# most.") rather than anything a reader could recognise as a page. The <h1> is still the
+# fallback for a page whose title is the site's, so nothing goes untitled.
 H1 = re.compile(r'<h1\b[^>]*>(.*?)</h1>', re.S | re.I)
+SITE_NAME = 'Lunenburg Budget Project'
+SITE_TITLE_SUFFIX = re.compile(r'\s+\u2014\s+' + re.escape(SITE_NAME) + r'\s*$')
 
 
 def page_files():
@@ -262,9 +269,14 @@ def page_files():
 
 def page_rows(entry):
     raw = open(entry['file'], encoding='utf-8', errors='replace').read()
-    m = H1.search(raw) or TITLE.search(raw)
-    title = html.unescape(TAG.sub('', m.group(1))).strip() if m else entry['route']
-    title = re.sub(r'\s+', ' ', title)
+    t = TITLE.search(raw)
+    title = re.sub(r'\s+', ' ', html.unescape(TAG.sub('', t.group(1))).strip()) if t else ''
+    if not SITE_TITLE_SUFFIX.search(title):
+        # The site's own title, or none: this page did not name itself. Fall back to
+        # the first heading, as before.
+        m = H1.search(raw)
+        title = html.unescape(TAG.sub('', m.group(1))).strip() if m else entry['route']
+    title = re.sub(r'\s+', ' ', SITE_TITLE_SUFFIX.sub('', title))
     body_html = DROP.sub(' ', raw)
     body = html.unescape(TAG.sub(' ', body_html))
     body = re.sub(r'\s+', ' ', body).strip()

@@ -1,6 +1,6 @@
 import { abs } from '../lib/abs'
+import { Go } from '../lib/nav'
 import { useEffect, useState } from 'react'
-import type { Tab } from '../routes'
 import { TraceLadder, type Trace } from '../components/TraceLadder'
 
 /** What we cannot answer — the gaps, in one place, with what would close each of them.
@@ -182,7 +182,7 @@ function splitCloses(why: string): [string, string | undefined] {
   return i < 0 ? [why, undefined] : [why.slice(0, i), why.slice(i + ' — closes: '.length)]
 }
 
-export function Gaps({ onJump }: { onJump: (t: Tab) => void }) {
+export function Gaps() {
   const [gaps, setGaps] = useState<GapIndex | null>(null)
   const [ext, setExt] = useState<Extraction | null>(null)
   const [req, setReq] = useState<Request | null>(null)
@@ -530,8 +530,8 @@ export function Gaps({ onJump }: { onJump: (t: Tab) => void }) {
       <Body>
         How the money does move, where it can be followed, is the other half of this
         area &mdash;{' '}
-        <button onClick={() => onJump('themoney')} className="underline"
-          style={{ color: 'var(--series-cost)' }}>How the money moves</button>.
+        <Go to="themoney" className="underline"
+          style={{ color: 'var(--series-cost)' }}>How the money moves</Go>.
       </Body>
     </div>
   )

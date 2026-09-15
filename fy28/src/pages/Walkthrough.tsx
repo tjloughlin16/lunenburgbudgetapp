@@ -11,6 +11,7 @@ import {
 import { ADMIN, DEVELOPMENT } from '../model/answers'
 import { MODEL } from '../model/engine'
 import { CitationList } from '../components/Citations'
+import { Go } from '../lib/nav'
 import { Room, Say, Plate, SectionLink, AlreadyCut, OneTimeAnswers,
          WhatIsADevelopment } from '../components/walk'
 import { TheRaise } from '../components/TheRaise'
@@ -37,10 +38,7 @@ const HOME_COSTS = Math.round(MODEL.taxBase.localCostPerPupil / MODEL.taxBase.ho
  *
  *  Built alongside the tabs rather than instead of them, so nothing that works breaks while
  *  this is still wrong in places. */
-export function Walkthrough({ onJump }: {
-  onJump: (tab: 'money' | 'override' | 'curve' | 'adjust' | 'context' | 'answers'
-    | 'deeper' | 'solved') => void
-}) {
+export function Walkthrough() {
   /** The cheapest ballot question on the packages page, which is the one figure from it
    *  worth carrying into the room — an override an order of magnitude below the one the
    *  town has already refused is the fact that makes somebody click through. */
@@ -85,23 +83,27 @@ export function Walkthrough({ onJump }: {
           Why <span style={{ color: 'var(--brand)' }}>Lunenburg&rsquo;s</span> school
           budget keeps doing this
         </h1>
-        <p className="mt-5 text-[16px] leading-relaxed max-w-2xl"
-          style={{ color: 'var(--text-secondary)' }}>
-          <strong style={{ color: 'var(--text-primary)' }}>This is a projection of a year
-          nobody has argued about yet.</strong> FY{N.fy} has not been decided, presented or
-          debated. What follows is what the district&rsquo;s own published growth rates
-          produce when you run them forward &mdash; which is the point of doing it now
-          rather than in January.
+        {/* THE NUMBER FIRST. This page opened with ninety words of hedging -- "this is a
+            projection of a year nobody has argued about yet" -- before it said anything.
+            A taxpayer reads that as "so this isn't real?" and leaves (rule 7a, on the
+            start-here page of all places). The figure leads, its epistemic label sits
+            beside it in the same sentence, and the full caveat is at the foot of the
+            page under "About these figures", where TJ asked for caveats to live. */}
+        <p className="mt-5 text-[17px] leading-relaxed max-w-2xl">
+          <strong className="tnum" style={{ color: 'var(--status-critical)' }}>
+            {usd(LEVEL_SERVICE.gap)} short next year</strong>, and more every year after
+          &mdash; <em>projected</em>: what the district&rsquo;s own published growth rates
+          produce when you run them forward. FY{N.fy} has not been decided, presented or
+          debated yet, which is the point of doing this now rather than in January.
         </p>
-        <Note>
-          Figures for FY27 and earlier are from the town&rsquo;s published budget and tax
-          records. FY{N.fy} onward are this model&rsquo;s arithmetic, shown in full at every
-          step so you can disagree with it precisely. Nothing here is rounded to flatter an
-          argument.
-        </Note>
+        <p className="mt-3 text-[14px] leading-snug max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+          Read in order: the short version, then <a href="#the-working" className="underline">the working</a>,
+          then <Go to="solutions" className="underline">what the town can do about it</Go>.
+          {' '}<a href="#about-these-figures" className="underline">About these figures</a>.
+        </p>
       </div>
 
-      <Upshot onJump={onJump} />
+      <Upshot />
 
       {/* The summary's primary button lands here rather than on room one, so the reader
           arrives at the handover — "now the same thing slowly" — instead of dropping into
@@ -493,10 +495,10 @@ export function Walkthrough({ onJump }: {
             table they were all drawn from. Any of them can be loaded straight into the
             curve or the budget builder.
           </p>
-          <button onClick={() => onJump('solved')} className="text-[13px] font-semibold"
+          <Go to="solved" className="text-[13px] font-semibold"
             style={{ color: 'var(--series-cost)' }}>
             See what actually holds, and for how long &rarr;
-          </button>
+          </Go>
         </div>
       </Room>
 
@@ -531,20 +533,32 @@ export function Walkthrough({ onJump }: {
               ['curve', 'Bend the curve', 'Cut things, then change a rate, and watch which one works'],
               ['deeper', 'Go deeper', 'Everything this walkthrough left out, and where the numbers come from'],
             ] as const).map(([id, label, what]) => (
-              <button key={id} onClick={() => onJump(id)}
+              <Go key={id} to={id}
                 className="card p-4 text-left transition-opacity hover:opacity-90">
                 <span className="block text-[14px] font-bold">{label}</span>
                 <span className="block text-[12px] leading-snug mt-1"
                   style={{ color: 'var(--text-secondary)' }}>{what}</span>
                 <span className="block text-[12px] font-semibold mt-2"
                   style={{ color: 'var(--series-cost)' }}>Open &rarr;</span>
-              </button>
+              </Go>
             ))}
           </div>
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-5 py-12">
+      {/* THE CAVEATS, AT THE FOOT. TJ, 15 September 2026: "Caveats should always go at
+          the bottom." Everything that qualifies the figures above is here, in one place,
+          linked from the top of the page rather than sitting in front of it. */}
+      <div id="about-these-figures" className="scroll-mt-12 mx-auto max-w-6xl px-5 py-12">
+        <p className="text-xs font-semibold uppercase tracking-widest mb-3"
+          style={{ color: 'var(--text-muted)' }}>About these figures</p>
+        <Note>
+          <strong>This is a projection of a year nobody has argued about yet.</strong>{' '}
+          FY{N.fy} has not been decided, presented or debated. Figures for FY{N.fy - 1} and
+          earlier are from the town&rsquo;s published budget and tax records. FY{N.fy}{' '}
+          onward are this model&rsquo;s arithmetic, shown in full at every step so you can
+          disagree with it precisely. Nothing here is rounded to flatter an argument.
+        </Note>
         <Note>
           The staff reductions in room one are the FY27 cycle, which is what this model
           records. If there were cuts in earlier years they are not here, and a multi-year

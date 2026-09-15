@@ -574,3 +574,9 @@ details[open] > summary .conc-chev { transform: rotate(90deg); }
 .grid > * { min-width: 0; }
 a, code { overflow-wrap: anywhere; }
 body { overflow-wrap: break-word; }   /* any other word too long for the line breaks rather than escapes */
+
+/* A card the reader has already opened. Only a real link has a visited state, and on a
+   shelf of thirty cards it is how anybody keeps their place. Colour is the one property
+   a :visited rule may change, so the title dims and nothing else moves. */
+.door-title { color: var(--series-cost); }
+a:visited .door-title { color: var(--text-secondary); }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
+import { Go } from '../lib/nav'
 import { MODEL, usd } from '../model/engine'
-import type { Tab } from '../routes'
 
 const H = MODEL.athleticsHistory
 const S = MODEL.splitReporting
@@ -208,7 +208,7 @@ function TransportFocus() {
  *  appropriation is not what a thing costs, and the only way to show that is to put the
  *  two side by side. Nothing on this page feeds a projection — audit_provenance.py fails
  *  the build if it ever does. */
-export function Athletics({ onJump }: { onJump: (t: Tab) => void }) {
+export function Athletics() {
   const [showAll, setShowAll] = useState(false)
   return (
     <div className="mx-auto max-w-6xl px-5 pt-14 pb-16">
@@ -257,11 +257,11 @@ export function Athletics({ onJump }: { onJump: (t: Tab) => void }) {
       </div>
 
       <div className="mt-10 flex flex-wrap gap-3">
-        <button onClick={() => onJump('context')}
+        <Go to="context"
           className="text-xs font-semibold px-3 py-2 rounded-md"
           style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>
           ← The situation
-        </button>
+        </Go>
         <a href="https://lunenburgbudgetproject.org/docs/analyses/athletics.md"
           className="text-xs font-semibold px-3 py-2 rounded-md"
           style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>

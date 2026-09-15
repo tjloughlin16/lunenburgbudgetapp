@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
-import { abs } from '../lib/abs'
+import { Go } from '../lib/nav'
 import { useReport } from '../components/report'
 import { Inline } from '../lib/inline'
 import { type BlogPayload } from './Blog'
-import type { Area, Tab } from '../routes'
+import type { Tab } from '../routes'
 import { AREA_HOME, AREA_LABEL } from '../routes'
+import { usdShort } from '../model/engine'
+import { LEVEL_SERVICE } from '../model/walk'
+import { DEFAULT_SCENARIO, nextYear, run } from '../model/rates'
 import { BoardsThisWeek, BoardsStrip } from '../components/BoardsThisWeek'
 
 /** The front page: the top-level doors and nothing else.
@@ -35,37 +38,10 @@ import { BoardsThisWeek, BoardsStrip } from '../components/BoardsThisWeek'
  *     outcome.)
  */
 
-/** `quiet` marks a door that is not for a resident. It is smaller and in the muted
- *  colour rather than the brand one, so the eye sorts it out of the set of three before
- *  reading it — the three above are choices about the town, and this one is plumbing. */
-const DOORS: { area: Area; who: string; note?: string; quiet?: boolean
-  /** A door that opens a generated FILE rather than a route.
-   *
-   *  NOTHING USES THIS NOW, and it is kept because the reasoning is worth having when the
-   *  next area has no front page. `The database` had this set to `/reference/schema.html`,
-   *  because that document — every table, with a live query box — was a better greeting
-   *  than the rate register it opened before, which answers a question about athletic fees
-   *  to somebody who came for a database. It was still a front page whose first click left
-   *  the app, and the four other reference documents behind that door were reachable from
-   *  nowhere. `pages/Database` is the route now, and the schema page is the first thing on
-   *  it. */
-  href?: string }[] = [
-  { area: 'crisis', who: 'Why the budget keeps breaking, and what would fix it' },
-  { area: 'money', who: 'Where every dollar comes from, and where the trail goes cold' },
-  // Split out of `money` on 8 September at TJ's suggestion. The money door had grown
-  // thirteen tabs behind it, which is a sitemap rather than an area. Named for the FORM
-  // and not the subject -- it was `School analysis` for an hour, which would have made
-  // the town-side reports homeless the moment one was written.
-  { area: 'analyses', who: 'The reports: staffing, athletics, fees, and what each one cannot say' },
-  { area: 'data', who: 'Every table, the whole file, and how to check a figure' },
-  { area: 'agents', who: 'Pointing an assistant at this, or you are one',
-    quiet: true },
-]
-
 /** WHAT WAS SAID, the standing entrance. The last three recorded meetings with our
  *  minutes, and the count. The contextual link is on each board's row above; this is
  *  for somebody who did not come for a particular board. */
-function HomeWhatWasSaid({ onJump }: { onJump: (t: Tab) => void }) {
+function HomeWhatWasSaid() {
   const { d } = useReport<{ counts: { meetings: number }; meetings: { slug: string; board: string; date: string; counts: Record<string, number>; headline: string; summary: string }[] }>('recording-minutes.json')
   if (!d || !d.meetings.length) return null
   const fmt = (iso: string) => { const [y, m, dd] = iso.split('-').map(Number); return new Date(y, m - 1, dd).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }
@@ -73,8 +49,8 @@ function HomeWhatWasSaid({ onJump }: { onJump: (t: Tab) => void }) {
     <section aria-label="What was said">
       <div className="flex items-baseline justify-between gap-3 mb-2">
         <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>What was said</h2>
-        <button onClick={() => onJump('recorded')} className="text-[12px] underline"
-          style={{ color: 'var(--series-cost)' }}>all {d.counts.meetings} meetings &rarr;</button>
+        <Go to="recorded" className="text-[12px] underline"
+          style={{ color: 'var(--series-cost)' }}>all {d.counts.meetings} meetings &rarr;</Go>
       </div>
       <ol className="space-y-2">
         {d.meetings.slice(0, 3).map(m => (
@@ -93,7 +69,136 @@ function HomeWhatWasSaid({ onJump }: { onJump: (t: Tab) => void }) {
   )
 }
 
-export function Home({ onJump }: { onJump: (t: Tab) => void }) {
+/** THE DOORS, RANKED.
+ *
+ *  They were five equal cards. A resident reading five equal cards has no way to know
+ *  that the first is the one they came for; the walk on 15 September 2026 put it plainly:
+ *  "The four doors have no ranking." So the set now has a shape:
+ *
+ *    1. The crisis, first and heavier, carrying THE NUMBER -- the projected gap -- so
+ *       the door has information scent before anybody opens it. The front page never
+ *       stated the one figure most likely to make somebody click.
+ *    2. What the town can do about it, beside the crisis. TJ: "The point of the crisis
+ *       page is not just cost to the tax payers. It's also insight to the board leaders.
+ *       Hard decisions need to be made. They are looking for the solutions. The crisis
+ *       page is the context." Context, then the answer to it, as a pair.
+ *    3. The money, and the reports -- for the reader with a question of their own.
+ *    4. The database and the assistant door, quiet, in one row: plumbing, not choices
+ *       about the town.
+ *
+ *  The gap figure is READ FROM THE MODEL (rule 2), labelled as a projection (rule 7),
+ *  and it is the same `LEVEL_SERVICE.gap` the crisis page's first card shows. */
+const GAP_NOW = usdShort(LEVEL_SERVICE.gap)
+const GAP_NEXT = usdShort(run(2, DEFAULT_SCENARIO)[1].gap)
+
+type Door = { to: Tab; label: string; who: string; figure?: string; figureNote?: string; quiet?: boolean }
+const DOORS: Door[] = [
+  { to: AREA_HOME.crisis, label: AREA_LABEL.crisis,
+    who: 'Why the budget keeps breaking, from the beginning',
+    figure: `${GAP_NOW} short`, figureNote: `projected for FY${nextYear().fy}, ${GAP_NEXT} the year after` },
+  { to: 'solutions', label: 'What the town can do',
+    who: 'Every option, what it closes, who decides it, and what it costs somebody' },
+  { to: AREA_HOME.money, label: AREA_LABEL.money,
+    who: 'Where every dollar comes from, and where the trail goes cold' },
+  // Split out of `money` on 8 September at TJ's suggestion. The money door had grown
+  // thirteen tabs behind it, which is a sitemap rather than an area. Named for the FORM
+  // and not the subject -- it was `School analysis` for an hour, which would have made
+  // the town-side reports homeless the moment one was written.
+  { to: AREA_HOME.analyses, label: AREA_LABEL.analyses,
+    who: 'The reports: staffing, athletics, fees, and what each one cannot say' },
+  { to: AREA_HOME.data, label: AREA_LABEL.data, who: 'Every table, and how to check a figure', quiet: true },
+  { to: AREA_HOME.agents, label: AREA_LABEL.agents, who: 'Pointing an assistant at this, or you are one', quiet: true },
+]
+
+function DoorCard({ d, lead }: { d: Door; lead?: boolean }) {
+  return (
+    <Go to={d.to}
+      className={'card block transition-opacity hover:opacity-90 '
+        + (d.quiet ? 'px-4 py-3 min-h-[52px]' : lead ? 'px-5 py-5 min-h-[88px]' : 'px-4 py-4 min-h-[64px]')}
+      style={d.quiet ? { background: 'transparent' }
+        : lead ? { borderLeft: '4px solid var(--status-critical)' } : undefined}>
+      <span className="flex items-baseline justify-between gap-3 flex-wrap">
+        <span className={d.quiet ? 'text-[14.5px] font-bold leading-tight'
+          : lead ? 'text-[20px] font-bold leading-tight' : 'text-[17px] font-bold leading-tight'}
+          style={d.quiet ? { color: 'var(--text-secondary)' } : undefined}>
+          {d.label} <span aria-hidden="true">&rarr;</span>
+        </span>
+        {d.figure && (
+          <span className="text-[19px] font-bold tnum leading-none" style={{ color: 'var(--status-critical)' }}>{d.figure}</span>
+        )}
+      </span>
+      <span className={d.quiet ? 'block text-[12.5px] mt-0.5 leading-snug' : 'block text-[13.5px] mt-1 leading-snug'}
+        style={{ color: 'var(--text-muted)' }}>{d.who}</span>
+      {d.figureNote && (
+        <span className="block text-[11.5px] mt-1.5 tnum" style={{ color: 'var(--text-muted)' }}>{d.figureNote}</span>
+      )}
+    </Go>
+  )
+}
+
+/** The sections, as one block, so the phone and the laptop can place it differently
+ *  without two copies of it. */
+function Doors() {
+  const [lead, second, ...rest] = DOORS
+  const loud = rest.filter(d => !d.quiet)
+  const quiet = rest.filter(d => d.quiet)
+  return (
+    <div>
+      <h2 className="text-[13px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>Understand the budget</h2>
+      <div className="grid gap-2.5">
+        <DoorCard d={lead} lead />
+        <DoorCard d={second} />
+        {loud.map(d => <DoorCard key={d.to} d={d} />)}
+        {/* The plumbing, in one row and quieter, so the eye sorts it out of the set before
+            reading it. Two doors in one row is the ranking made visible: half the width,
+            half the weight. */}
+        <div className="grid gap-2.5 sm:grid-cols-2 mt-1">
+          {quiet.map(d => <DoorCard key={d.to} d={d} />)}
+        </div>
+      </div>
+
+      {/* A FIFTH THING, and deliberately not a fifth DOOR.
+          A door is a place to go and read; this is an invitation to say something, which
+          is a different act. So it sits under the set, smaller and quieter, where it
+          reads as an offer rather than as an option competing with the doors. */}
+      <Go to="askus"
+        className="mt-5 w-full block text-left px-4 py-3 min-h-[44px] rounded-lg
+                   transition-opacity hover:opacity-80"
+        style={{ border: '1px dashed var(--grid)', background: 'transparent' }}>
+        <span className="text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
+          Ask us a question &rarr;
+        </span>
+        <span className="block text-[12.5px] mt-0.5 leading-snug"
+          style={{ color: 'var(--text-muted)' }}>
+          About the budget, or anything on this site. A person reads every one.
+        </span>
+      </Go>
+    </div>
+  )
+}
+
+function BudgetFeedCard() {
+  return (
+    <section aria-label="The budget feed">
+      <div className="flex items-baseline justify-between gap-3 mb-2">
+        <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This year&rsquo;s budget, as it is built</h2>
+        <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>FY28 &rarr;</a>
+      </div>
+      {/* A door, not a note: the same card the doors use, with an arrow, so it reads as
+          a place to go. TJ: "make sure it looks clickable to navigate to a page."
+          THE HEADING SAYS WHAT IT IS. It was "The budget feed", which is our name for
+          it and not a thing a resident has heard of -- no information scent. What it is:
+          this year's budget, followed as it is built. */}
+      <a href="/budget-feed" className="card px-4 py-4 block transition-opacity hover:opacity-90" style={{ borderLeft: '4px solid var(--series-cost)' }}>
+        <span className="text-[17px] font-bold leading-tight block" style={{ color: 'var(--series-cost)' }}>The FY28 budget feed <span aria-hidden="true">&rarr;</span></span>
+        <span className="block text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-muted)' }}>From the first deficit figure to Town Meeting: what is decided, what is still on the table, what has only been said.</span>
+      </a>
+      <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Past years: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
+    </section>
+  )
+}
+
+export function Home() {
   return (
     <div className="mx-auto max-w-5xl px-5 pb-20">
       <header className="pt-10 pb-6">
@@ -105,8 +210,8 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
             holds, in the order they appear below. */}
         <p className="mt-2.5 text-[15px] leading-snug"
           style={{ color: 'var(--text-secondary)' }}>
-          An independent tool for residents: what the town&rsquo;s boards are doing this
-          week, what they decided last time, and the budget explained at whatever depth you want.
+          An independent tool for residents: why the school budget keeps breaking, what the
+          town can do about it, and what its boards are deciding this week.
         </p>
         {/* THE SEARCH BOX, ON THE FRONT PAGE. TJ, 11 September, on seeing /search: "We
             need to put an indicator on the home page that users can search." The
@@ -128,182 +233,39 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           <button type="submit" className="px-3.5 py-2 text-sm font-semibold rounded-lg shrink-0"
             style={{ background: 'var(--series-cost)', color: '#fff' }}>Search</button>
         </form>
-        {/* THE WEEK, one line. The doors are places to read; this is the calendar — what is
-            coming and what just appeared. A resident who came for tonight's agenda should
-            not have to guess which door hides it. */}
       </header>
 
-      {/* One column, always. The rows are the whole page on a phone; two columns would
-          pair them off and stop the set reading as a list. The row is the hit target, not
-          the words in it. The count is deliberately not written into the prose here or in
-          the comment above — it was "four" until it was five, which is rule 2 arriving in
-          a doc comment. */}
-      {/* TWO COLUMNS AT A LAPTOP WIDTH. TJ asked for this twice — "This should be a new
-          column or something on the home page that gives them another way in", "an easier
-          door" — and then, seeing it as a section underneath everything: "at the bottom
-          and inline is NOT going to work".
-          The earlier argument against a column was that it would make the posts a PEER of
-          the doors. They are a peer. A chooser assumes you already know what you want; the
-          post is for the larger number of people who do not. On a phone it stacks with the
-          doors first, because somebody who came back on purpose should not scroll past an
-          article to reach them. */}
-      {/* TWO COLUMNS BY TEMPO. Left is the map -- the sections, which change monthly.
-          Right is the live column -- this week, what was said, the latest article --
-          which changes daily. On a phone the live column comes FIRST: somebody on a
-          phone in the evening is there for tonight's meeting more often than for the
-          theory. TJ, 12 September: "the 'doors' need a heading now" -- and a heading
-          that says what the five DO, paired with the live column's, rather than a
-          label for the container. */}
-      {/* THE PHONE ORDER: a one-line-per-board strip, then the sections, then what was
-          said as one line per meeting. The desktop keeps the two columns. */}
-        {/* THE BUDGET FEED, at the top of the column. TJ, 14 September: "on the home page the
-          budget feed should be at the top of the right sidebar." The season as it is built
-          -- what is on the record, what is not yet -- is the thing a resident comes back
-          for; the week's meetings sit under it. */}
-      <section aria-label="The budget feed" className="lg:hidden mb-8">
-        <div className="flex items-baseline justify-between gap-3 mb-2">
-          <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>The budget feed</h2>
-          <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>FY28 planning &rarr;</a>
-        </div>
-        {/* A door, not a note: the same card the four doors use, with an arrow, so it reads as
-            a place to go. TJ: "make sure it looks clickable to navigate to a page." */}
-        <a href="/budget-feed" className="card px-4 py-4 block transition-opacity hover:opacity-90" style={{ borderLeft: '4px solid var(--series-cost)' }}>
-          <span className="text-[17px] font-bold leading-tight block" style={{ color: 'var(--series-cost)' }}>FY28, as it is built <span aria-hidden="true">&rarr;</span></span>
-          <span className="block text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-muted)' }}>One page that follows this year’s budget from the first deficit figure to Town Meeting — what is decided, what is still on the table, what has only been said.</span>
-        </a>
-        <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Past years: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
-      </section>
-      <section className="lg:hidden mb-8" aria-label="Meetings this week">
-        <div className="flex items-baseline justify-between gap-3 mb-1">
-          <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week in town</h2>
-          <button onClick={() => onJump('thisweek')} className="text-[12px] underline" style={{ color: 'var(--series-cost)' }}>every board &rarr;</button>
-        </div>
-        <BoardsStrip days={7} />
-        {/* THE BUDGET FEED, its own line. TJ, 14 September: "we need a link to the budget
-            feed on the home page somewhere too." It was the last word of the boards line,
-            which is where a link goes to be missed. One row, one sentence, no card. */}
-        {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
-            Committee meets next is the one who wants everything about it. */}
-        <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
-          Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
-        </p>
-      </section>
+      {/* TWO COLUMNS BY TEMPO. Left is the map -- the doors, which change monthly. Right
+          is the live column -- this year's budget as it is built, this week, what was
+          said -- which changes daily.
 
+          THE PHONE ORDER CHANGED ON 15 SEPTEMBER 2026. It was the live column first, on
+          the argument that somebody on a phone in the evening is there for tonight's
+          meeting. The walk as a first-time resident found the cost of that: a newcomer
+          scrolls past a feed and a meeting they have no context for to find "start
+          here". The doors now come first everywhere; the meeting regular knows to scroll,
+          the newcomer does not. The feed keeps its place at the top of the live column
+          (TJ, 14 September: "on the home page the budget feed should be at the top of
+          the right sidebar"). */}
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-start">
-      <div>
-      <h2 className="text-[13px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>Understand the budget</h2>
-      <div className="grid gap-2.5">
-        {DOORS.map(d => d.href ? (
-          <a key={d.area} href={abs(d.href)}
-            className="card px-4 py-4 text-left w-full min-h-[64px] block
-                       transition-opacity hover:opacity-90">
-            <span className="text-[17px] font-bold leading-tight block">
-              {AREA_LABEL[d.area]}
-            </span>
-            <span className="block text-[13.5px] mt-1 leading-snug"
-              style={{ color: 'var(--text-muted)' }}>{d.who}</span>
-          </a>
-        ) : (
-          <button key={d.area} onClick={() => onJump(AREA_HOME[d.area])}
-            className={'card text-left w-full transition-opacity hover:opacity-90 ' +
-              (d.quiet ? 'px-4 py-3 min-h-[52px] mt-1.5' : 'px-4 py-4 min-h-[64px]')}
-            style={d.quiet ? { background: 'transparent' } : undefined}>
-            <span className="flex items-baseline gap-2 flex-wrap">
-              <span className={d.quiet
-                ? 'text-[14.5px] font-bold leading-tight'
-                : 'text-[17px] font-bold leading-tight'}
-                style={d.quiet ? { color: 'var(--text-secondary)' } : undefined}>
-                {AREA_LABEL[d.area]}
-              </span>
-              {d.note && (
-                <span className="text-[10.5px] font-semibold uppercase tracking-wider"
-                  style={{ color: 'var(--status-warning)' }}>{d.note}</span>
-              )}
-            </span>
-            <span className={d.quiet
-              ? 'block text-[12.5px] mt-0.5 leading-snug'
-              : 'block text-[13.5px] mt-1 leading-snug'}
-              style={{ color: 'var(--text-muted)' }}>{d.who}</span>
-          </button>
-        ))}
-      </div>
-
-      {/* A FIFTH THING, and deliberately not a fifth DOOR.
-          This page is four choices and that took three attempts to get right — TJ:
-          "too many buttons... ONLY show the top level subpages." A door is a place to
-          go and read; this is an invitation to say something, which is a different act.
-          So it sits under the set, smaller and quieter, where it reads as an offer
-          rather than as a fifth option competing with the four. */}
-      <button onClick={() => onJump('askus')}
-        className="mt-5 w-full text-left px-4 py-3 min-h-[44px] rounded-lg
-                   transition-opacity hover:opacity-80"
-        style={{ border: '1px dashed var(--grid)', background: 'transparent' }}>
-        <span className="text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
-          Ask us a question &rarr;
-        </span>
-        <span className="block text-[12.5px] mt-0.5 leading-snug"
-          style={{ color: 'var(--text-muted)' }}>
-          About the budget, or anything on this site. A person reads every one.
-        </span>
-      </button>
-
-      {/* A SECOND WAY IN, AND IT IS NOT A FIFTH DOOR EITHER.
-          The doors stay, all of them, and they stay ABOVE this. TJ: "we have to keep the
-          current 'doors' we have. This should be a new column or something on the home
-          page that gives them another way in" -- and "an easier door".
-
-          THE ARGUMENT, because the docstring at the top of this file argues hard against
-          adding targets and that argument still stands for the doors. A chooser assumes
-          somebody already knows what they want; every door on this page is a place to go
-          and read, and a reader who does not yet have a question cannot pick one. A CARD
-          is the other half: it gives somebody a reason to want something. Both belong,
-          and they are different acts, so they are not in the same set -- the doors are a
-          decision and this is an offer.
-
-          WHY IT IS BELOW AND NOT BESIDE. A column next to the doors would make the two
-          sets peers and reinstate exactly the "too many buttons" failure the docstring
-          records. Under them, behind a rule, the page is still four choices; a reader who
-          knew what they wanted has already left, and a reader who did not scrolls into
-          the thing that was built for them.
-
-          AND IT IS ONE POST, NOT FORTY-EIGHT CARDS. It was three cards, chosen by a
-          rule; it is now the newest PUBLISHED post, because a card is eight seconds and
-          cannot convince anybody on its own -- see pages/Blog.tsx for the three lengths.
-          The rule that replaced the old one is smaller and harder: nothing unpublished
-          reaches the front page. */}
-      </div>
+      <Doors />
       <div className="space-y-8">
-        {/* THE BUDGET FEED, at the top of the column. TJ, 14 September: "on the home page the
-            budget feed should be at the top of the right sidebar." The season as it is built
-            -- what is on the record, what is not yet -- is the thing a resident comes back
-            for; the week's meetings sit under it. */}
-        <section aria-label="The budget feed" className="hidden lg:block">
-          <div className="flex items-baseline justify-between gap-3 mb-2">
-            <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>The budget feed</h2>
-            <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>FY28 planning &rarr;</a>
-          </div>
-          {/* A door, not a note: the same card the four doors use, with an arrow, so it reads as
-              a place to go. TJ: "make sure it looks clickable to navigate to a page." */}
-          <a href="/budget-feed" className="card px-4 py-4 block transition-opacity hover:opacity-90" style={{ borderLeft: '4px solid var(--series-cost)' }}>
-            <span className="text-[17px] font-bold leading-tight block" style={{ color: 'var(--series-cost)' }}>FY28, as it is built <span aria-hidden="true">&rarr;</span></span>
-            <span className="block text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-muted)' }}>One page that follows this year’s budget from the first deficit figure to Town Meeting — what is decided, what is still on the table, what has only been said.</span>
-          </a>
-          <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Past years: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
-        </section>
-        <section aria-label="Meetings this week" className="hidden lg:block">
+        <BudgetFeedCard />
+        <section aria-label="Meetings this week">
           <div className="flex items-baseline justify-between gap-3 mb-2">
             <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week in town</h2>
-            <button onClick={() => onJump('thisweek')} className="text-[12px] underline"
-              style={{ color: 'var(--series-cost)' }}>every board &rarr;</button>
+            <Go to="thisweek" className="text-[12px] underline"
+              style={{ color: 'var(--series-cost)' }}>every board &rarr;</Go>
           </div>
-          <BoardsThisWeek days={7} compact />
+          <div className="lg:hidden"><BoardsStrip days={7} /></div>
+          <div className="hidden lg:block"><BoardsThisWeek days={7} compact /></div>
           {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
               Committee meets next is the one who wants everything about it. */}
           <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
             Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
           </p>
         </section>
-        <HomeWhatWasSaid onJump={onJump} />
+        <HomeWhatWasSaid />
         <HomeLatest />
       </div>
       </div>

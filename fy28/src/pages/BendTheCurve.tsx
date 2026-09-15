@@ -1,4 +1,6 @@
 import { MODEL, usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
+import type { Tab } from '../routes'
+import { Go } from '../lib/nav'
 import {
   BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, run, STATE_AID,
   nextYear, HEADCOUNT, PACKAGES,
@@ -29,8 +31,7 @@ const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
  *  itself a rate. */
 const RAISE = nextYear()
 
-export function BendTheCurve({ onJump, option = null }: {
-  onJump: (tab: 'why' | 'money' | 'answers' | 'adjust' | 'override' | 'solved') => void
+export function BendTheCurve({ option = null }: {
   /** An option loaded into this page's own board, from here or from the walkthrough. */
   option?: { route: Package; nonce: number } | null
 }) {
@@ -311,10 +312,10 @@ export function BendTheCurve({ onJump, option = null }: {
           section. The short version: it compounds at {pct(LEVY_CAP, 1)} while the gap
           compounds at {pct(COST_GROWTH_BLENDED)}, so a {usdShort(1_250_000)} school
           override funds two years, and no override of any size holds for ever.</>}>
-        <button onClick={() => onJump('override')}
+        <Go to="override"
           className="text-[13px] font-semibold" style={{ color: 'var(--series-cost)' }}>
           See the override arithmetic &rarr;
-        </button>
+        </Go>
       </Section>
 
       <Section id="forever" eyebrow="The actual question"
@@ -335,10 +336,10 @@ export function BendTheCurve({ onJump, option = null }: {
             House is worth to each, and the trade table they were drawn from. Any of them
             loads straight back into the board above.
           </p>
-          <button onClick={() => onJump('solved')} className="text-[13px] font-semibold"
+          <Go to="solved" className="text-[13px] font-semibold"
             style={{ color: 'var(--series-cost)' }}>
             See what actually holds, and for how long &rarr;
-          </button>
+          </Go>
         </div>
       </Section>
 
@@ -371,15 +372,15 @@ export function BendTheCurve({ onJump, option = null }: {
             body={<>Every arithmetic here is indifferent to what a school is for. Which
               cuts are survivable, and which rate is fair to ask of the people who work
               there, are not questions a curve can answer.</>}
-            link="See what each option costs" onClick={() => onJump('money')} />
+            link="See what each option costs" to="money" />
         </div>
         <Note>
           If this tab makes its point, the rest of the site reads differently: the cut
           lists are not solutions, they are the price of not having fixed a rate.{' '}
-          <button onClick={() => onJump('why')} className="font-semibold"
+          <Go to="why" className="font-semibold"
             style={{ color: 'var(--series-cost)' }}>
             The static version of this argument is on &ldquo;Why it repeats&rdquo; &rarr;
-          </button>
+          </Go>
         </Note>
       </Section>
     </div>
@@ -404,8 +405,8 @@ function Fact({ label, value, sub, tone }: {
   )
 }
 
-function Caveat({ title, body, link, onClick }: {
-  title: string; body: React.ReactNode; link?: string; onClick?: () => void
+function Caveat({ title, body, link, to }: {
+  title: string; body: React.ReactNode; link?: string; to?: Tab
 }) {
   return (
     <div className="card p-5">
@@ -414,8 +415,8 @@ function Caveat({ title, body, link, onClick }: {
         {body}
       </p>
       {link && (
-        <button onClick={onClick} className="text-[12px] font-semibold mt-3"
-          style={{ color: 'var(--series-cost)' }}>{link} &rarr;</button>
+        <Go to={to!} className="text-[12px] font-semibold mt-3"
+          style={{ color: 'var(--series-cost)' }}>{link} &rarr;</Go>
       )}
     </div>
   )

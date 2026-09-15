@@ -29,7 +29,10 @@ type BudgetItem = { t: number; topic: string; what_was_said: string; figures_as_
 type Transfer = { t: number; description: string; amount_as_heard?: string; outcome: string }
 type Decision = { t: number; decision: string }
 type Topic = { t_start: number; t_end: number; topic: string; resolution: string; tags?: string[] }
-type Attendee = { name_as_heard: string; role: string; remote?: boolean }
+/** `posted_name` is the board's posted roster where the hearing could be matched to it
+ *  unambiguously, and within the member's current term; `matched_by` says how. See
+ *  scripts/build_recording_minutes.py. The heard form is always kept. */
+type Attendee = { name_as_heard: string; role: string; remote?: boolean; posted_name?: string; posted_role?: string; matched_by?: string }
 type Comment = { t: number; topic: string; speaker_as_heard?: string; stated_role?: string }
 type Minutes = {
   summary: string
@@ -318,13 +321,30 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
         </p>
       )}
 
-      {(mm.attendees || []).length > 0 && (
-        <p className="mt-4 text-sm" style={{ color: 'var(--text-secondary)' }}>
-          <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Present, as heard: </span>
-          {(mm.attendees || []).map((a, i) => <span key={i}>{i ? '; ' : ''}{a.name_as_heard} <span style={{ color: 'var(--text-muted)' }}>({a.role}{a.remote ? ', remote' : ''})</span></span>)}.
-          <span className="text-xs" style={{ color: 'var(--text-muted)' }}> Names are the caption model's hearing and may be wrong.</span>
-        </p>
-      )}
+      {(mm.attendees || []).length > 0 && (() => {
+        // THE POSTED NAME WHERE IT IS KNOWN. This line printed "Manny Gilman's (member)"
+        // on a public page about a real elected official, with the caveat after it. A
+        // name the build matched to the board's posted roster is shown as posted, with
+        // the heard form on hover; the rest stay as heard and are marked so. The caveat
+        // sits beside the names it qualifies rather than after them.
+        const list = mm.attendees || []
+        const matched = list.filter(a => a.posted_name).length
+        return (
+          <p className="mt-4 text-sm" style={{ color: 'var(--text-secondary)' }}>
+            <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Present: </span>
+            {list.map((a, i) => (
+              <span key={i}>{i ? '; ' : ''}
+                {a.posted_name
+                  ? <span title={`heard as “${a.name_as_heard}”; matched to the posted roster by ${a.matched_by}`}>{a.posted_name}</span>
+                  : <span title="As heard by the caption model; not matched to a posted roster"><em>{a.name_as_heard}</em></span>}
+                {' '}<span style={{ color: 'var(--text-muted)' }}>({a.role}{a.remote ? ', remote' : ''})</span>
+              </span>))}.
+            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+              {' '}{matched ? `${matched} of ${list.length} matched to the board’s posted roster; the rest, in italics, are` : 'Names are'} the caption model&rsquo;s hearing and may be wrong.
+            </span>
+          </p>
+        )
+      })()}
 
       <H2>Votes</H2>
       {votes.length === 0
@@ -517,7 +537,7 @@ function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
           <li key={i} className="text-sm flex flex-wrap gap-x-3 gap-y-0.5 items-baseline py-1" style={{ borderTop: '1px solid var(--grid)' }}>
             <At url={u} t={t.t_start} />
             <span className="flex-1 min-w-[14rem]">{t.topic}</span>
-            <span className="text-xs whitespace-nowrap" style={{ color: 'var(--text-muted)' }}>{t.resolution} · {hms(t.t_end - t.t_start)} long{(t.tags || []).length ? ' · ' + t.tags!.map(x => x.replace(/-/g, ' ')).join(', ') : ''}</span>
+            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{t.resolution} · {hms(t.t_end - t.t_start)} long{(t.tags || []).length ? ' · ' + t.tags!.map(x => x.replace(/-/g, ' ')).join(', ') : ''}</span>
           </li>
         ))}
       </ol>

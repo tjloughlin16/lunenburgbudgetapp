@@ -1,5 +1,6 @@
 import { abs } from '../lib/abs'
 import { Cite } from './Citations'
+import { Go } from '../lib/nav'
 import { MODEL, usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
 import {
   ALL_CUTS, CUT_OPTIONS, DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, PACKAGES, RATE_LINES,
@@ -156,7 +157,7 @@ const PANELS: Panel[] = [
     s: { ...DEFAULT_SCENARIO, newGrowth: BUILD.levy } }] : []),
 ]
 
-export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
+export function Upshot() {
   const runs = PANELS.map(p => ({ ...p, r: run(YEARS, p.s) }))
   const lo = Math.min(...runs.flatMap(p => p.r.flatMap(y => [y.cost, y.revenue])),
                       ...BASE.map(y => y.revenue)) * 0.98
@@ -172,13 +173,12 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
         <h2 className="text-2xl sm:text-4xl font-bold tracking-tight leading-[1.1] max-w-3xl">
           If you read nothing else
         </h2>
-        <p className="mt-4 text-[16px] leading-relaxed max-w-2xl"
+        {/* One line. It was five, explaining how to read the cards before a reader had
+            seen a card -- a legend before the map (rule 7a). The eyebrow on every card
+            already says whether it is the record or the model. */}
+        <p className="mt-4 text-[15px] leading-relaxed max-w-2xl"
           style={{ color: 'var(--text-secondary)' }}>
-          Six things and two pictures. Everything after this is the working &mdash; the
-          same facts in the order somebody has to meet them, with every number derived
-          where you can disagree with it. Each card below links to the step that shows its
-          arithmetic, and says whether it is the town&rsquo;s published record or this
-          model&rsquo;s.
+          Five claims and two pictures; each card opens the step that shows its arithmetic.
         </p>
 
         <ol className="grid gap-3 sm:grid-cols-2 mt-8">
@@ -228,42 +228,8 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
             administrators are an amount, not a direction.
           </Claim>
 
-          {/* The two questions that get asked in every room, answered where they are
-            * asked. Neither state aid nor development is a missing option — both are
-            * already inside the revenue line of every chart on this page, which is
-            * exactly why they keep coming back. So each card says which line it is in
-            * before it says anything else. */}
-          <Claim n={5} figure={CH70_RATE === null ? usdShort(STATE_AID.total)
-                                                  : pct(CH70_RATE, 1)}
-            figureNote="Chapter 70, every year"
-            tone="critical" eyebrow="Record and projection" href="#the-state-house"
-            head={`State aid is already in these charts, and would have to grow `
-              + `${CH70_MULTIPLE !== null && CH70_MULTIPLE < SPELLED.length
-                    ? SPELLED[CH70_MULTIPLE] : CH70_MULTIPLE}`
-              + ` times faster.`}
-            cites={['ch70', 'levy']}>
-            Chapter 70 and the rest are {usdShort(STATE_AID.total)} a year,{' '}
-            {pct(STATE_AID.shareOfTownRevenue, 0)} of everything the town collects. It is
-            not missing from the charts below &mdash; it is inside the orange line, growing
-            at {pct(STATE_AID.ch70Assumed, 0)}.
-            {CH70_RATE !== null && <> Worth asking the delegation for; not worth planning
-              around.</>}
-          </Claim>
-
-          {BUILD && (
-            <Claim n={6} figure={`${BUILD.multiple.toFixed(1)}×`}
-              figureNote="today’s build rate, for ever"
-              tone="critical" eyebrow="Record and projection" href="#commercial-development"
-              cites={['taxbase', 'levy']}
-            head="Commercial development is real money and the wrong order of magnitude.">
-              New building raises that same orange line, and the schools keep{' '}
-              {(SHARE * 100).toFixed(0)}&cent; of each dollar. Holding the projection from
-              that side alone takes {usdShort(BUILD.value)} of new value a year &mdash;{' '}
-              {pct(BUILD.shareOfExisting, 0)} of the town&rsquo;s whole commercial base,
-              added again every year.
-            </Claim>
-          )}
-
+          {/* Free cash is the fifth claim; it was the seventh, behind the two objection
+              cards that now sit under the wedge. */}
           {/* Added because two arguments in town point at this number and both are right
               about a different year. The card carries the condition as well as the
               headline, because the headline alone is the more persuasive half and the
@@ -274,7 +240,7 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
               ten years the plan publishes — so "available within the guideline" and
               "available" are not the same sentence. What it costs capital in PROJECTS is a
               range and not a number; that argument is on the rate board, not here. */}
-          <Claim n={7} figure={usdShort(FC_REDIRECT)}
+          <Claim n={5} figure={usdShort(FC_REDIRECT)}
             figureNote="a year, in a year like this one"
             tone="critical" eyebrow="Record and projection" href="/free-cash"
             head="Free cash could pay for some of this, and it is one-time money.">
@@ -295,6 +261,76 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
         </ol>
 
         <TheWedge />
+
+        {/* WHERE THIS LANDS ON YOU, AND WHAT TO DO ABOUT IT. The walk as a resident found
+            the taxpayer hunting for "what does this cost me" and leaving without it: the
+            page that answers it was three levels down and linked from nowhere here. And
+            the board member wants the other door -- the options -- which this page never
+            named. Three links, at the point the wedge has just made the problem real. */}
+        <div className="grid gap-2.5 sm:grid-cols-3 mt-6">
+          <Go to="solutions" className="card px-4 py-3.5 block transition-opacity hover:opacity-90"
+            style={{ borderLeft: '3px solid var(--status-critical)' }}>
+            <span className="block text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
+              What the town can do about it &rarr;</span>
+            <span className="block text-[12.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
+              Every option, what it closes, who decides, what it costs somebody.</span>
+          </Go>
+          <Go to="owners" className="card px-4 py-3.5 block transition-opacity hover:opacity-90">
+            <span className="block text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
+              What it means for your tax bill &rarr;</span>
+            <span className="block text-[12.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
+              The homes, who owns them, and what the bill has done.</span>
+          </Go>
+          <Go to="override" className="card px-4 py-3.5 block transition-opacity hover:opacity-90">
+            <span className="block text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
+              What an override would cost &rarr;</span>
+            <span className="block text-[12.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
+              ${OVERRIDE.onAverageHome} a year on the average home, and for how long it holds.</span>
+          </Go>
+        </div>
+
+        {/* THE TWO QUESTIONS EVERYBODY ASKS, answered after the picture rather than in the
+            top row. They were cards 05 and 06 among the claims -- rebuttals to objections
+            a first-time reader had not raised yet, which read as "somebody is already
+            arguing with me". Neither state aid nor development is a missing option:
+            both are already inside the orange line, which is exactly why they keep
+            coming back, so each card says which line it is in before anything else. */}
+        <p className="text-xs font-semibold uppercase tracking-widest mt-10 mb-3"
+          style={{ color: 'var(--text-muted)' }}>The two questions everybody asks next</p>
+        <ol className="grid gap-3 sm:grid-cols-2" start={6}>
+          <Claim n={6} figure={CH70_RATE === null ? usdShort(STATE_AID.total)
+                                                  : pct(CH70_RATE, 1)}
+            figureNote="Chapter 70, every year"
+            tone="critical" eyebrow="Record and projection" href="#the-state-house"
+            head={`State aid is already in these charts, and would have to grow `
+              + `${CH70_MULTIPLE !== null && CH70_MULTIPLE < SPELLED.length
+                    ? SPELLED[CH70_MULTIPLE] : CH70_MULTIPLE}`
+              + ` times faster.`}
+            cites={['ch70', 'levy']}>
+            Chapter 70 and the rest are {usdShort(STATE_AID.total)} a year,{' '}
+            {pct(STATE_AID.shareOfTownRevenue, 0)} of everything the town collects. It is
+            not missing from the charts below &mdash; it is inside the orange line, growing
+            at {pct(STATE_AID.ch70Assumed, 0)}.
+            {CH70_RATE !== null && <> Worth asking the delegation for; not worth planning
+              around.</>}
+          </Claim>
+
+          {BUILD && (
+            <Claim n={7} figure={`${BUILD.multiple.toFixed(1)}×`}
+              figureNote="today’s build rate, for ever"
+              tone="critical" eyebrow="Record and projection" href="#commercial-development"
+              cites={['taxbase', 'levy']}
+            head="Commercial development is real money and the wrong order of magnitude.">
+              New building raises that same orange line, and the schools keep{' '}
+              {(SHARE * 100).toFixed(0)}&cent; of each dollar. Holding the projection from
+              that side alone takes {usdShort(BUILD.value)} of new value a year &mdash;{' '}
+              {pct(BUILD.shareOfExisting, 0)} of the town&rsquo;s whole commercial base,
+              added again every year.
+            </Claim>
+          )}
+
+        </ol>
+
         <LevelOrSlope panels={runs} lo={lo} hi={hi} />
 
         {/* The ending this page owes the reader.
@@ -368,11 +404,11 @@ export function Upshot({ onJump }: { onJump: (tab: 'solved') => void }) {
               style={{ background: 'var(--text-primary)', color: 'var(--surface-1)' }}>
               Keep reading to see why &darr;
             </a>
-            <button onClick={() => onJump('solved')}
+            <Go to="solved"
               className="text-[13px] font-semibold px-3.5 py-2.5 rounded-md"
               style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>
               Or skip to what would fix it &rarr;
-            </button>
+            </Go>
           </div>
         </div>
       </div>

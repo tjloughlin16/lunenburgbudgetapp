@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { AREA_LABEL, AREA_TABS, LABEL, SLUG, areaOf, type Tab } from '../routes'
+import { useDocumentTitle } from '../lib/title'
 
 /** THE ONE SHELL EVERY REPORT ON THIS SITE IS BUILT IN.
  *
@@ -672,6 +673,9 @@ export function PrintButton({ label = 'Print / Save as PDF' }: { label?: string 
  *
  *  `sourceUrl` is the report's own document where one exists -- the Markdown analyses keep
  *  theirs at /docs/analyses/<id>.md, which is rule 12's third leg. */
+/** Routes that serve many pages, so the route's label is not the page's name. */
+const MANY_PER_ROUTE: ReadonlySet<Tab> = new Set<Tab>(['recorded', 'boards', 'blog', 'analysis', 'budgetfeed'])
+
 export function ReportShell({
   tab, kicker, title, standfirst, err, loading, dataUrl, sourceUrl, meta, children,
   noPrint,
@@ -695,6 +699,12 @@ export function ReportShell({
 }) {
   const area = tab ? areaOf(tab) : null
   const eyebrow = kicker ?? (area ? AREA_LABEL[area] : null)
+  // THE TAB TITLE. The route's name where the route IS the page; the page's own title
+  // where one route serves many pages (a post, a meeting, a board, a season, a markdown
+  // analysis) and the name is in the path. A report whose H1 is its finding keeps the
+  // route name in the tab -- "The paraprofessionals", not the sentence.
+  useDocumentTitle(tab && !MANY_PER_ROUTE.has(tab) ? LABEL[tab]
+    : typeof title === 'string' ? title : tab ? LABEL[tab] : null)
   return (
     <article className="report mx-auto max-w-6xl px-5 pt-14 pb-16">
       <header className="report-head">

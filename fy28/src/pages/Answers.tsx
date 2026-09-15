@@ -1,4 +1,5 @@
 import { abs } from '../lib/abs'
+import { Go } from '../lib/nav'
 import type { ReactNode } from 'react'
 import { MODEL, usd, usdShort } from '../model/engine'
 import {
@@ -25,9 +26,7 @@ const pct = (x: number, d = 0) => `${(x * 100).toFixed(d)}%`
  *  The rule for this page: no sentence that needs a glossary, and no figure without its
  *  denominator visible. Where the honest answer is "we cannot know that from published
  *  documents", it says so rather than reaching for a plausible number. */
-export function Answers({ onJump }: {
-  onJump: (tab: 'why' | 'development' | 'adjust' | 'money') => void
-}) {
+export function Answers() {
   return (
     <div>
       <div className="mx-auto max-w-6xl px-5 pt-12 pb-2">
@@ -75,10 +74,10 @@ export function Answers({ onJump }: {
             to {usd(verdict(TARGETS[0]).overheadAndFees)} &mdash; and that ceiling does not
             grow from year to year. The hole does.
           </p>
-          <button onClick={() => onJump('money')}
+          <Go to="money"
             className="text-[12px] font-semibold mt-3" style={{ color: 'var(--series-cost)' }}>
             Price it yourself &rarr;
-          </button>
+          </Go>
         </div>
       </Section>
 
@@ -127,7 +126,7 @@ export function Answers({ onJump }: {
           raised at the meeting where next April has to be settled &mdash; and why next
           April will be settled out of the groups above instead. Everything below this is
           the working.</>}>
-        <WhatWorks onJump={onJump} />
+        <WhatWorks />
       </Section>
 
       <Section id="drivers" eyebrow="Where it actually comes from"
@@ -1499,9 +1498,7 @@ function Lever({ n, name, head, href, children }: {
   )
 }
 
-function WhatWorks({ onJump }: {
-  onJump: (tab: 'why' | 'development' | 'adjust') => void
-}) {
+function WhatWorks() {
   const hl = HEALTH_LEVERS
   return (
     <div className="grid gap-4 lg:grid-cols-2 items-start">
@@ -1538,10 +1535,10 @@ function WhatWorks({ onJump }: {
           this projection grows at {pct(MODEL.assumptions.state_aid_growth, 1)} a year.
           Lunenburg can argue for more of it, but it cannot decide it.
         </p>
-        <button onClick={() => onJump('development')}
+        <Go to="development"
           className="text-[12px] font-semibold" style={{ color: 'var(--series-cost)' }}>
           See the development arithmetic &rarr;
-        </button>
+        </Go>
       </div>
 
       <div className="card p-5">
@@ -1619,10 +1616,10 @@ function WhatWorks({ onJump }: {
           real number is nearer the low end, the gap on this page is smaller than shown
           &mdash; and so is everything this lever appears to save.
         </p>
-        <button onClick={() => onJump('why')}
+        <Go to="why"
           className="text-[12px] font-semibold" style={{ color: 'var(--series-cost)' }}>
           See how the two rates compound &rarr;
-        </button>
+        </Go>
       </div>
 
       <div className="card p-5 lg:col-span-2" style={{ background: 'var(--surface-3)' }}>
@@ -1636,10 +1633,10 @@ function WhatWorks({ onJump }: {
           on the cut list is a strategy; it is a way of paying for the year in which no
           strategy was chosen.
         </p>
-        <button onClick={() => onJump('adjust')}
+        <Go to="adjust"
           className="text-[12px] font-semibold mt-3" style={{ color: 'var(--series-cost)' }}>
           Try your own combination on the Adjust page &rarr;
-        </button>
+        </Go>
       </div>
     </div>
   )

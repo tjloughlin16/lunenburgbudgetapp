@@ -396,7 +396,11 @@ export const SLUG: Record<Tab, string> = {
 // `addsup` -- the One Big Report -- was unlisted for most of 13 September 2026 while it was
 // rebuilt as a story from TJ's sheet ("we have to get this in good shape before sharing
 // it"), and relisted that evening ("this one big report is a great start. lets reopen").
-export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'solutions'])
+// `solutions` was unlisted from 12 to 15 September 2026 and is now the SECOND DOOR on the
+// front page, beside the crisis. TJ: "The point of the crisis page is not just cost to
+// the tax payers. It's also insight to the board leaders. Hard decisions need to be made.
+// They are looking for the solutions. The crisis page is the context."
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis'])
 
 /** Forms somebody might type or that an older link might carry. Never generated, always
  *  accepted — a link that has been shared once is out of your hands forever. */
@@ -412,6 +416,9 @@ const ALIASES: Record<string, Tab> = {
   override: 'override', 'the-override': 'override',
   adjust: 'adjust', budget: 'adjust', build: 'adjust',
   solved: 'solved', packages: 'solved', sustainable: 'solved', forever: 'solved',
+  // The word a board member types. `fix` and `options` are what the page is asked for in
+  // meetings; accepted, never generated.
+  fix: 'solutions', options: 'solutions', 'what-to-do': 'solutions',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
   // The words somebody types looking for the synthesis. `conclusions` and `findings` are
   // what this project calls the thing internally and are exactly the forms a reader who
@@ -694,7 +701,9 @@ export const LABEL: Record<Tab, string> = {
   enrollment: 'Who is in the schools — enrolment, FY1994 to today',
   circuitbreaker: 'The circuit breaker — what the state reimburses for the costliest placements',
   ap: 'AP exams — who sits them, in what, and how they score',
-  solutions: 'What the town can actually do about the school budget',
+  // Short enough for the crisis bar and the breadcrumb; the page's own title is the long
+  // form. The area label is the context, this is the answer to it.
+  solutions: 'Solutions',
   peers: 'What other districts spend, for each pupil',
   bythenumbers: 'Lunenburg by the numbers — who lives here',
   owners: 'Lunenburg’s homes and the tax bill',
@@ -752,7 +761,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   enrollment: 'reports',
   circuitbreaker: 'reports',
   ap: 'reports',
-  solutions: 'curve',
+  solutions: 'walk',
   analysis: 'reports',
   required: 'reports',
   agents: 'sources',
@@ -891,6 +900,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   walk: 'crisis', deeper: 'crisis', answers: 'crisis', money: 'crisis', context: 'crisis',
   why: 'crisis', curve: 'crisis', override: 'crisis', priorities: 'crisis',
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
+  solutions: 'crisis',
   freecash: 'crisis',
   // `money` is now WHERE THE MONEY COMES FROM AND GOES, plus the limits of the record:
   // the flow hub, the two revenue-side pages, what we cannot answer, and the question box.
@@ -939,7 +949,10 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // bar, so listing them here drew each of them twice. Chapters and tools are different
   // things sharing one strip; the lists must stay disjoint, and `assertNoDuplicateNav`
   // below fails loudly if they stop being.
-  crisis: ['walk', 'answers', 'deeper'],
+  // `solutions` is second, straight after the context it answers. The bar reads as the
+  // order a board member needs it: why this keeps happening, what can be done, the
+  // objections, everything else.
+  crisis: ['walk', 'solutions', 'answers', 'deeper'],
   money: ['themoney', 'stateaid', 'funds', 'gaps', 'askus'],
   // `sped` is ONE entry for FOUR reports, and that is deliberate twice over. The comment
   // above warns that a bar with fourteen entries is a sitemap; adding the four reports

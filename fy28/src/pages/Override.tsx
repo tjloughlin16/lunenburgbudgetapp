@@ -1,4 +1,6 @@
 import { usd, usdShort } from '../model/engine'
+import type { Tab } from '../routes'
+import { Go } from '../lib/nav'
 import {
   DEFAULT_SCENARIO, LEVY_CAP, SHARE, nextYear, overrideForYears, run,
 } from '../model/rates'
@@ -23,9 +25,7 @@ const OVERRIDE = 1_250_000
  *  way — a school-only question is worth nearly twice a townwide one per dollar of tax,
  *  and a large enough override genuinely does cover years rather than a year. What the
  *  page will not do is let "an override fixes it" stand without saying for how long. */
-export function Override({ onJump }: {
-  onJump: (tab: 'curve' | 'money' | 'answers' | 'adjust') => void
-}) {
+export function Override() {
   const townwide = OVERRIDE / SHARE
   const five = overrideForYears(5)
   const withOne = run(10, { ...DEFAULT_SCENARIO, overrideLevy: OVERRIDE })
@@ -161,22 +161,22 @@ export function Override({ onJump }: {
               do not meet &mdash; buying a decade costs{' '}
               {usd(overrideForYears(10).onAverageHome)} a year on the average home and
               FY{38} arrives anyway.</>}
-            link="See the rate problem" onClick={() => onJump('curve')} />
+            link="See the rate problem" to="curve" />
           <Card title="What the time would be for"
             body={<>Which is the case for one rather than against it. Five years of
               stability is five years in which a health insurance contract could be
               renegotiated and a teachers&rsquo; agreement settled at a different number
               &mdash; the two lines that are 82% of the budget. An override that buys time
               nobody uses buys nothing.</>}
-            link="See what each option costs" onClick={() => onJump('money')} />
+            link="See what each option costs" to="money" />
         </div>
       </Section>
     </div>
   )
 }
 
-function Card({ title, body, tone, link, onClick }: {
-  title: string; body: React.ReactNode; tone?: 'good'; link?: string; onClick?: () => void
+function Card({ title, body, tone, link, to }: {
+  title: string; body: React.ReactNode; tone?: 'good'; link?: string; to?: Tab
 }) {
   return (
     <div className="card p-5">
@@ -186,8 +186,8 @@ function Card({ title, body, tone, link, onClick }: {
         {body}
       </p>
       {link && (
-        <button onClick={onClick} className="text-[12px] font-semibold mt-3"
-          style={{ color: 'var(--series-cost)' }}>{link} &rarr;</button>
+        <Go to={to!} className="text-[12px] font-semibold mt-3"
+          style={{ color: 'var(--series-cost)' }}>{link} &rarr;</Go>
       )}
     </div>
   )

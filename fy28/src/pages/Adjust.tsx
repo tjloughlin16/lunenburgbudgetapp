@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { Go } from '../lib/nav'
 import {
   MODEL, project, runCascade, usd, leverYield, leverStart, ladderTaken, ladderUnlawful,
   newGrowthPerDollar, newGrowthToClose,
@@ -387,8 +388,8 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
             and the two ladders that cut it &mdash; administration one position at a time,
             athletics one team at a time. Each has a catch, and the catch is under the
             dial. The argument behind the bigger ones is in the panels below them.{' '}
-            <button onClick={() => onJump('the-money')} className="underline font-semibold"
-              style={{ color: 'var(--series-cost)' }}>Why so little of this is possible →</button>
+            <Go to="context" anchor="the-money" className="underline font-semibold"
+              style={{ color: 'var(--series-cost)' }}>Why so little of this is possible →</Go>
           </p>
           {/* The team dial rides directly after the athletics fee lever, because the two
               are one argument: charge more, or field fewer teams. Reading them a screen
@@ -419,10 +420,10 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
               <Note>
                 This is the same control as the athletics fee slider above &mdash; move
                 either one and both change.{' '}
-                <button onClick={() => onJump('fees')} className="underline font-semibold"
+                <Go to="context" anchor="fees" className="underline font-semibold"
                   style={{ color: 'var(--series-cost)' }}>
                   What families already pay →
-                </button>
+                </Go>
               </Note>
             </Disclose>
 
@@ -457,10 +458,10 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
                   style={{ color: 'var(--series-cost)' }}>Development</button> page.
               </Note>
               <Note>
-                <button onClick={() => onJump('tax-base')} className="underline font-semibold"
+                <Go to="context" anchor="tax-base" className="underline font-semibold"
                   style={{ color: 'var(--series-cost)' }}>
                   Why this takes a decade, and why houses make it worse →
-                </button>
+                </Go>
               </Note>
             </Disclose>
           </div>
@@ -495,7 +496,7 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
             than closing it. Amounts and staffing are the district&rsquo;s own published
             figures except where a line says otherwise.
           </p>
-          <CutBoard state={cuts} setState={setCuts} onJump={onJump} />
+          <CutBoard state={cuts} setState={setCuts} />
         </div>
 
         {/* ---------- assumptions ---------- */}

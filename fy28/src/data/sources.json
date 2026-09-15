@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-14",
+ "generated": "2026-09-15",
  "origins": [
   {
    "id": "school",
@@ -54,7 +54,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 339 of these 355 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 336 of these 352 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -3069,9 +3069,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1761495,
+     "bytes": 1761809,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12083,
+     "count": 12085,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -3233,6 +3233,18 @@
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fund1301.md"
     },
     {
+     "path": "data/meeting-watch-events.csv",
+     "title": "What appeared on the town’s site between one crawl and the next",
+     "stars": 2,
+     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 3139,
+     "url": "/docs/data/meeting-watch-events.csv",
+     "count": 20,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-events.csv"
+    },
+    {
      "path": "data/search-vocabulary.csv",
      "title": "The site’s own vocabulary, for the search box’s suggestions",
      "stars": 2,
@@ -3250,23 +3262,11 @@
      "stars": 2,
      "what": "Written by us. Confirmed rows only; warnings are read straight from the record; figures the record proposes wait in fy28.proposed.csv until a person copies them in.",
      "kind": "Data",
-     "bytes": 2882,
+     "bytes": 2560,
      "url": "/docs/data/budget-seasons/fy28.csv",
-     "count": 16,
+     "count": 15,
      "unit": "rows",
      "textUrl": "/docs/data/budget-seasons/fy28.csv"
-    },
-    {
-     "path": "data/meeting-watch-events.csv",
-     "title": "What appeared on the town’s site between one crawl and the next",
-     "stars": 2,
-     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 2841,
-     "url": "/docs/data/meeting-watch-events.csv",
-     "count": 18,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-events.csv"
     },
     {
      "path": "data/budget-episodes.csv",
@@ -3274,7 +3274,7 @@
      "stars": 2,
      "what": "Written by us. FY27’s season; the summer of 2026 (the Governor’s budget, the extra state aid, the September Special Town Meeting); FY28’s season. Each with its window, what triggered it and how it ended.",
      "kind": "Data",
-     "bytes": 1746,
+     "bytes": 1742,
      "url": "/docs/data/budget-episodes.csv",
      "count": 3,
      "unit": "rows",
@@ -3418,9 +3418,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 271,
+     "bytes": 302,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 6,
+     "count": 7,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -3469,7 +3469,7 @@
    "id": "district-page",
    "origin": "school",
    "title": "The district budget page, mirrored in full",
-   "blurb": "Every document linked from the district’s budget information page — 90 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
+   "blurb": "Every document linked from the district’s budget information page — 87 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
    "items": [
     {
      "path": "district-budget/docs/additional-town-revenue-spending-plan.pdf",
@@ -3623,16 +3623,6 @@
      "upstream": "https://drive.google.com/file/d/1629406huLmh7uEw-owRL-9bu2KEdFwLt/view?usp=drive_link"
     },
     {
-     "path": "district-budget/docs/budget-sandbox-site.html",
-     "title": "Budget Proposal & FAQ site (Google Sites page, as fetched)",
-     "stars": 1,
-     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
-     "kind": "HTML",
-     "bytes": 243179,
-     "url": "/docs/district-budget/docs/budget-sandbox-site.html",
-     "upstream": "https://sites.google.com/lunenburgschools.net/budget-sandbox"
-    },
-    {
      "path": "district-budget/docs/community-forums-scheduled-on-school-department-budget.docx",
      "title": "Community Forums Scheduled on School Department Budget",
      "stars": 1,
@@ -3642,16 +3632,6 @@
      "url": "/docs/district-budget/docs/community-forums-scheduled-on-school-department-budget.docx",
      "textUrl": "/docs/district-budget/text/community-forums-scheduled-on-school-department-budget.txt",
      "upstream": "https://docs.google.com/document/d/1NrKTOrbVYEEt5tb_WGS3caDkM42oX8ik93RWg26fakE/edit?usp=sharing"
-    },
-    {
-     "path": "district-budget/docs/budget-sandbox-embed.html",
-     "title": "District budget page: Budget Proposal & FAQ",
-     "stars": 1,
-     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
-     "kind": "HTML",
-     "bytes": 91986,
-     "url": "/docs/district-budget/docs/budget-sandbox-embed.html",
-     "upstream": "https://sites.google.com/lunenburgschools.net/budget-sandbox"
     },
     {
      "path": "district-budget/docs/faq-fy25-budget.pdf",
@@ -4301,16 +4281,6 @@
      "url": "/docs/district-budget/docs/notice-of-public-hearing-fy20-budget.pdf",
      "textUrl": "/docs/district-budget/text/notice-of-public-hearing-fy20-budget.txt",
      "upstream": "https://drive.google.com/open?id=1XK3NgvlkLDMZ4oGt0pUzAvX21JrM4hM8"
-    },
-    {
-     "path": "district-budget/docs/school-committee-page.html",
-     "title": "School Committee (district page)",
-     "stars": 1,
-     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
-     "kind": "HTML",
-     "bytes": 158675,
-     "url": "/docs/district-budget/docs/school-committee-page.html",
-     "upstream": "https://www.lunenburgschools.net/school-committee-1"
     },
     {
      "path": "district-budget/docs/school-committee-approved-fy26-budget-personnel-cuts.pdf",
@@ -7375,7 +7345,7 @@
    },
    {
     "name": "Conservation Commission",
-    "documents": 711
+    "documents": 712
    },
    {
     "name": "Board Of Health",
@@ -7419,7 +7389,7 @@
    },
    {
     "name": "School Committee",
-    "documents": 282
+    "documents": 283
    },
    {
     "name": "Capital Planning Committee",
@@ -7563,21 +7533,21 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12081,
-  "fetched": 12031,
-  "agendas": 7416,
+  "listed": 12083,
+  "fetched": 12033,
+  "agendas": 7418,
   "minutes": 4665,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12032,
+  "textFiles": 12034,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 625,
+  "documents": 622,
   "groups": 22,
-  "bytes": 1637695189,
+  "bytes": 1637201666,
   "loadBearing": 118
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
