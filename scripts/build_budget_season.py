@@ -102,7 +102,8 @@ def build(fy):
             raise SystemExit('row %d: unknown block %r' % (i + 2, r['block']))
         blocks[r['block']].append(dict(r, fte=float(r['fte']) if r['fte'] else None, cite=resolve(r['evidence'])))
     for b in blocks:
-        blocks[b].sort(key=lambda r: r['date'])
+        if b != 'proposals':                 # proposals stay in the order the publisher printed them
+            blocks[b].sort(key=lambda r: r['date'])
     lines_p = os.path.join(SEASONS, '%s-lines.csv' % fy)
     lines = read_csv(lines_p) if os.path.exists(lines_p) else []
     for r in lines:

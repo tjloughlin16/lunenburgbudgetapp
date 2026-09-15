@@ -19,14 +19,15 @@ const SCOPE: Record<string, string> = { school: 'Schools', town: 'Town', both: '
 
 /** The family a resident would name -- the word that decides whether they show up. */
 const FAMILIES: [string, RegExp][] = [
+  ['Special education and intervention', /interventionist|intervention|mtss|special ed|cota|occupational|psycholog|guidance|counselor|bcba|bridge/i],
+  ['Paraprofessionals and tutors', /paraprofessional|\bpara\b|tutor/i],
   ['Teachers', /teacher|classroom|grade|kindergarten/i],
-  ['Special education and intervention', /interventionist|special ed|cota|occupational|psycholog|guidance|counselor/i],
-  ['Athletics', /athletic|sport|coach|trainer|lacrosse|golf|ski/i],
+  ['Athletics', /athletic|sport|\bcoach\b(?!.*specialist)|trainer|lacrosse|golf|\bski/i],
   ['Band and music', /band|music/i],
   ['Transportation', /transport/i],
   ['Administration', /principal|business manager|secretary|director|administrator|manager|clerk|admin/i],
   ['Custodial and facilities', /custod|facilit|maintenance|building|tcp|passios|grounds/i],
-  ['Curriculum and technology', /curriculum|technology|computer|supplies/i],
+  ['Curriculum and technology', /curriculum|technology|computer|supplies|\bit\b|\btech\b/i],
   ['Fire', /\bfire\b/i], ['Police', /police|sro|school resource|patrol|sergeant|lobby/i],
   ['DPW and roads', /dpw|pavement|stormwater|road|recycling|line painting/i],
   ['Library', /librar/i], ['Council on Aging', /council on aging|coa\b|dietary/i],
@@ -83,7 +84,7 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
   const started = moment('school', 'started'), corrected = moment('school', 'corrected'), toCut = moment('school', 'to_cut'), closed = moment('school', 'now')
   const summary = [
     started ? `the schools said they were ${started.figure} short in February` : '',
-    corrected ? `then ${corrected.figure.split(' (')[0]} once ${corrected.why.replace(/^corrected downward: /, '')}` : '',
+    corrected ? `then ${corrected.figure.split(' (')[0]} ${corrected.why.replace(/^corrected downward: /, 'once ').split(/[;:]/)[0]}` : '',
     finalBallot.some(q => q.figure) ? `${finalBallot.filter(q => q.figure).length} override question${finalBallot.filter(q => q.figure).length === 1 ? '' : 's'} ${finalBallot.filter(q => q.figure).every(q => /failed/i.test(q.why)) ? 'failed' : 'went to the ballot'}` : finalBallot.length ? 'no override question reached the ballot' : '',
     schoolDecided.length ? `${schoolDecided.length} cuts stood on the school side${fteOf(schoolDecided) ? ` (${fteOf(schoolDecided)} FTE where an FTE is printed)` : ''}` : '',
     townDecided.length ? `${townDecided.length} on the town side` : '',
@@ -124,12 +125,21 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
             <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-critical)' }}>Cut — {decided.length}</p>
             {(['school', 'town'] as const).map(scope => {
               const xs = decided.filter(r => r.scope === scope && !/^Town — Universal/.test(r.item))
+              // The provenance most of a list shares is said once, under the heading, and the
+              // rows that share it carry only their name -- 39 rows of 'on the approved list'
+              // was a wall (FY26, read as a parent).
+              const key = (r: Row) => `${r.why}|${r.cite?.href || ''}`
+              const tally = new Map<string, number>(); for (const r of xs) tally.set(key(r), (tally.get(key(r)) || 0) + 1)
+              const [commonKey, commonN] = [...tally.entries()].sort((a, b) => b[1] - a[1])[0] || ['', 0]
+              const common = commonN >= 5 ? xs.find(r => key(r) === commonKey) : undefined
+              const strip = (r: Row): Row => common && key(r) === commonKey ? { ...r, why: '', cite: null } : r
               const universal = decided.filter(r => r.scope === scope && /^Town — Universal/.test(r.item))
-              const noFte = xs.filter(r => r.fte == null && /one position/.test(r.note)).length
+              const noFte = common ? xs.filter(r => r.fte == null && !r.figure && key(r) === commonKey).length : 0   // only meaningful for a printed list
               const notes = cuts.filter(r => r.scope === scope && r.status === 'note')
               if (!xs.length && notes.length) return <div key={scope} className="mt-2"><p className="text-[13px] font-semibold">{SCOPE[scope]}</p>{notes.map((r, i) => <p key={i} className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>{r.item} — {r.why}<CiteLink c={r.cite} /></p>)}</div>
               return xs.length ? <div key={scope} className="mt-2"><p className="text-[13px] font-semibold">{SCOPE[scope]} — {xs.length}{fteOf(xs) ? `, ${fteOf(xs)} FTE where an FTE is printed` : ''}{noFte ? `; ${noFte} printed as whole positions` : ''}</p>
-                {byFamily(xs).map(([f, rows]) => <div key={f} className="mt-1"><p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{f}</p><ul>{rows.map((r, i) => <Item key={i} r={r} />)}</ul></div>)}
+                {common && <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{commonN} of these: {common.why}<CiteLink c={common.cite} /></p>}
+                {byFamily(xs).map(([f, rows]) => <div key={f} className="mt-1"><p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{f}</p><ul>{rows.map((r, i) => <Item key={i} r={strip(r)} />)}</ul></div>)}
                 {universal.length > 0 && <details className="mt-2"><summary className="cursor-pointer text-xs underline" style={{ color: 'var(--text-muted)' }}>{universal.length} more the town cut in all three budgets — no override would have changed these</summary><ul className="mt-1">{universal.map((r, i) => <Item key={i} r={{ ...r, item: r.item.replace('Town — Universal — ', ''), why: '' }} muted />)}</ul></details>}</div> : null
             })}
           </div>
@@ -137,9 +147,8 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
             <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>Came off the list — {off.length}</p>
             <ul className="mt-2">{off.map((r, i) => <Item key={i} r={r} />)}</ul>
             {off.length === 0 && <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing came off.</p>}
-            <p className="text-xs font-bold uppercase tracking-wider mt-5" style={{ color: 'var(--text-muted)' }}>Only inside a tier — {tierOnly.length}</p>
-            <ul className="mt-2">{tierOnly.map((r, i) => <Item key={i} r={r} muted />)}</ul>
-            {tierOnly.length === 0 && <p className="text-sm" style={{ color: 'var(--text-muted)' }}>None.</p>}
+            {tierOnly.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-5" style={{ color: 'var(--text-muted)' }}>Only inside a tier — {tierOnly.length}</p>
+            <ul className="mt-2">{tierOnly.map((r, i) => <Item key={i} r={r} muted />)}</ul></>}
           </div>
         </div>
         {lines.length > 0 && <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}><button className="underline" onClick={() => setShowLines(!showLines)}>{showLines ? 'Hide' : 'Check against'} the district’s line-item budget</button> — every line where the balanced budget is below level service, footed to the document’s printed total: {lines.length} lines, {usd(lines.reduce((a, l) => a + (l.cut || 0), 0))} gross.</p>}

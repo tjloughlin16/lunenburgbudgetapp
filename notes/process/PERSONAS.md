@@ -235,6 +235,17 @@ for 2025. Read once as reader 7, against BUDGET-FEED-GUIDELINES.md.
   their years (May 19 '24 → May 17 '25). Fees sat under "free cash"; the block is "Fees,
   free cash and other moves".
 
+- **Second read.** Thirty-nine rows each ended "on the School Committee's approved
+  personnel cut list · [document] · one position; the list prints no FTE" — a wall. The
+  provenance a list shares is now said once under the heading ("39 of these: on the
+  School Committee's approved personnel cut list") and the rows carry only their names.
+  Six paraprofessionals sat under "Other" and the MTSS coach under "Athletics"; there is a
+  "Paraprofessionals and tutors" family and *coach* no longer means athletics on its own.
+  Three numbers disagreed (41 / 39 / "4.85 FTE across 12") — the 4.85 was an arithmetic
+  slip; it is 4.5 FTE across 15 part positions and 24 whole. The one-liner dragged a
+  whole clause in; it takes the first. "Only inside a tier — 0 · None" is not shown. The
+  proposals are in the district's printed order, not date order.
+
 **The story FY26 tells that FY27 does not:** a citizens' petition for a $2,099,337
 override that the Finance Committee recommended against 6–0, that Town Meeting approved
 anyway on 3 May, and that never reached the ballot because the Select Board did not call
