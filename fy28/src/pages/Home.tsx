@@ -96,7 +96,7 @@ const DOORS: Door[] = [
   { to: AREA_HOME.crisis, label: AREA_LABEL.crisis,
     who: 'Why the budget keeps breaking, from the beginning',
     figure: `${GAP_NOW} short`, figureNote: `projected for FY${nextYear().fy}, ${GAP_NEXT} the year after` },
-  { to: 'solutions', label: 'What the town can do',
+  { to: 'solutions', label: 'Solutions: what the town can do',
     who: 'Every option, what it closes, who decides it, and what it costs somebody' },
   { to: AREA_HOME.money, label: AREA_LABEL.money,
     who: 'Where every dollar comes from, and where the trail goes cold' },

@@ -271,7 +271,7 @@ export function Upshot() {
           <Go to="solutions" className="card px-4 py-3.5 block transition-opacity hover:opacity-90"
             style={{ borderLeft: '3px solid var(--status-critical)' }}>
             <span className="block text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
-              What the town can do about it &rarr;</span>
+              Solutions: what the town can do about it &rarr;</span>
             <span className="block text-[12.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
               Every option, what it closes, who decides, what it costs somebody.</span>
           </Go>
