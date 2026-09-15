@@ -27,7 +27,12 @@ export const WORDS_PER_MINUTE = 230
  *  anything that opts out with `data-no-count` (this component's own output does). */
 const SKIP = 'header, footer, nav[aria-label="Breadcrumb"], script, style, noscript, svg, [data-no-count]'
 
-function countWords(root: HTMLElement): number {
+/** The page's SHORT VERSION -- the part sized to one sitting. Marked with `data-short`
+ *  by components/report.tsx (a conclusions section, a Conclusions block, ShortVersion).
+ *  Counted once however many marks nest. `null` when the page declares none. */
+const SHORT = '[data-short]'
+
+function countWords(root: HTMLElement): { all: number; short: number | null } {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode: node => {
       const el = node.parentElement
@@ -35,12 +40,15 @@ function countWords(root: HTMLElement): number {
       return NodeFilter.FILTER_ACCEPT
     },
   })
-  let n = 0
+  let all = 0, short = 0
   for (let t = walker.nextNode(); t; t = walker.nextNode()) {
     const s = (t.nodeValue || '').trim()
-    if (s) n += s.split(/\s+/).length
+    if (!s) continue
+    const n = s.split(/\s+/).length
+    all += n
+    if (t.parentElement!.closest(SHORT)) short += n
   }
-  return n
+  return { all, short: root.querySelector(SHORT) ? short : null }
 }
 
 export function label(words: number): string {
@@ -52,14 +60,20 @@ export function label(words: number): string {
 
 /** `tab` only so the count restarts when the page changes; the observer does the rest. */
 export function ReadingTime({ tab }: { tab: string }) {
-  const [words, setWords] = useState<number | null>(null)
+  const [words, setWords] = useState<{ all: number; short: number | null } | null>(null)
 
   useEffect(() => {
     const root = document.getElementById('root')
     if (!root) return
     let timer: number | undefined
     let live = true
-    const measure = () => { if (live) setWords(countWords(root)) }
+    // Only set when the count moved: a re-render is itself a mutation the observer sees,
+    // and a state change on every pass would be a loop that never settles.
+    const measure = () => {
+      if (!live) return
+      const c = countWords(root)
+      setWords(prev => (prev && prev.all === c.all && prev.short === c.short) ? prev : c)
+    }
     const later = () => { window.clearTimeout(timer); timer = window.setTimeout(measure, 250) }
     measure()
     const mo = new MutationObserver(later)
@@ -68,11 +82,21 @@ export function ReadingTime({ tab }: { tab: string }) {
   }, [tab])
 
   if (words === null) return null
+  const n = (x: number) => x.toLocaleString('en-US')
+  // TWO FIGURES WHERE THE PAGE HAS TWO LAYERS. "Short version: 3 min · In full: 47 min"
+  // tells a reader what they are committing to, and a page that can only say "In full"
+  // is a page with no short version -- which is the shame line, on purpose.
   return (
     <span data-no-count className="text-[12px] tnum whitespace-nowrap shrink-0"
       style={{ color: 'var(--text-muted)' }}
-      title={`${words.toLocaleString('en-US')} words on this page at ${WORDS_PER_MINUTE} a minute, counted from the page itself`}>
-      Est. reading time: <span style={{ color: 'var(--text-secondary)' }}>{label(words)}</span>
+      title={(words.short !== null ? `${n(words.short)} words in the short version, ` : '')
+        + `${n(words.all)} words on the whole page, at ${WORDS_PER_MINUTE} a minute, counted from the page itself`}>
+      {words.short !== null ? (
+        <>Short version: <span style={{ color: 'var(--text-secondary)' }}>{label(words.short)}</span>
+          <span aria-hidden="true"> · </span></>
+      ) : null}
+      {words.short !== null ? 'In full: ' : 'Est. reading time: '}
+      <span style={{ color: 'var(--text-secondary)' }}>{label(words.all)}</span>
     </span>
   )
 }

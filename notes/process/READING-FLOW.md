@@ -136,6 +136,22 @@ should be added here first and built second.
 
 ---
 
+## The short version, as built (15 September 2026)
+
+Every page can declare the part of itself sized to one sitting: `<Section
+kind="conclusions">`, a `<Conclusions>` block, or `<ShortVersion>` in
+`components/report.tsx` all mark it with `data-short`. Two things read the mark:
+
+- **The indicator on the breadcrumb row**: *Short version: 4 min · In full: 21 min*.
+  A page that can only say *Est. reading time: 40 min* has declared none.
+- **`scripts/build_reading_time.py`**: `short_words` per page, a 460-word budget (two
+  minutes), enforced as a **ratchet** -- a short version over budget may only shrink, a
+  page under budget may not go over, and `--strict` fails pages with none.
+
+The first measurement: 30 pages declare one, 26 are over budget, 48 declare none.
+`/one-big-report` declares 15,479 words -- its "short version" is every report's
+conclusions stacked, which is the page telling us it is an index and not a read.
+
 ## What this rules out
 
 - **A caveat above the thing.** It goes at the foot, linked from the top. A reader who

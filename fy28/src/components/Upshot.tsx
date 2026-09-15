@@ -165,7 +165,7 @@ export function Upshot() {
                       ...BASE.map(y => y.cost)) * 1.02
 
   return (
-    <section id="short-version" className="border-t"
+    <section id="short-version" data-short="" className="border-t"
       style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>
       <div className="mx-auto max-w-6xl px-5 py-12">
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"

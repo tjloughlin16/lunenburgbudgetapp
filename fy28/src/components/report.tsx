@@ -142,9 +142,35 @@ export function Section({ kind, id, title, children }: {
   id?: string; title?: React.ReactNode; children: React.ReactNode
 }) {
   return (
-    <section id={id} data-section={kind}
+    // The conclusions section IS the page's short version -- see ShortVersion below.
+    <section id={id} data-section={kind} data-short={kind === 'conclusions' ? '' : undefined}
       className="report-section scroll-mt-[calc(var(--header-h)+1rem)]">
       {title ? <H2>{title}</H2> : null}
+      {children}
+    </section>
+  )
+}
+
+/** THE SHORT VERSION: the part of a page sized to one sitting.
+ *
+ *  TJ, 15 September 2026, on how to give residents faster reads: *"'Short version' is
+ *  perfect."* The idea is the INVERTED PYRAMID with the fold made explicit -- every page
+ *  declares which part of itself is the whole story in miniature, that part is measured
+ *  separately by components/ReadingTime.tsx ("Short version: 3 min · In full: 47 min"),
+ *  and scripts/build_reading_time.py holds it to a word budget so that a short version
+ *  cannot quietly grow into the long one.
+ *
+ *  Three things mark the layer, and a reader's text is counted once however many apply:
+ *  `<Section kind="conclusions">`, a `<Conclusions>` block, and this wrapper for a page
+ *  whose short version is its own shape (the walkthrough's "If you read nothing else").
+ *  `label` draws the eyebrow; leave it off where the page already has its own heading. */
+export function ShortVersion({ label, children }: { label?: boolean; children: React.ReactNode }) {
+  return (
+    <section data-short="" className="report-section">
+      {label ? (
+        <p className="text-[11px] font-bold uppercase tracking-widest mb-2"
+          style={{ color: 'var(--text-muted)' }}>Short version</p>
+      ) : null}
       {children}
     </section>
   )
@@ -249,7 +275,8 @@ export function Conclusions({ rows, collapse, reportUrl, noAsk }: {
   if (!rows || !rows.length) return null
   return (
     <>
-    <div className="grid gap-4 mt-5 md:grid-cols-2">
+    {/* `data-short`: a report's conclusions are its short version. See ShortVersion. */}
+    <div data-short="" className="grid gap-4 mt-5 md:grid-cols-2">
       {rows.map((c, i) => {
         const fig = c.figure ? c.figures[c.figure]?.text : undefined
         const unit = c.figure ? c.figures[c.figure]?.unit : undefined

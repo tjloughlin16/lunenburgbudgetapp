@@ -19,6 +19,18 @@ payloads and not here. The pace is a reading pace, not a skimming one: nobody re
 45-minute page, which is the point of the table.
 
 Sorted longest first, because the top of the list is the work.
+
+THE SHORT VERSION, AND ITS BUDGET. TJ, 15 September: "'Short version' is perfect." Every
+page can declare the part of itself sized to one sitting -- `data-short` in the DOM, set
+by components/report.tsx -- and it is measured here as `short_words`. The budget is
+SHORT_BUDGET words, about two minutes, and it is enforced as a RATCHET rather than a
+wall: `--check` fails if any page's short version is over budget and larger than the
+last time this file was written, and it fails if a page that was under budget goes over.
+A page already over budget may only shrink. That is the honest shape for a rule adopted
+with eight pages already breaking it -- a wall would have failed the build on the day
+the rule arrived and taught everybody to skip the check; a ratchet lets nothing get
+worse and reports what is left. Pages with no short version at all are listed, not
+failed, for the same reason; `--strict` fails on them too, for the day coverage is done.
 """
 import argparse
 import csv
@@ -33,6 +45,9 @@ DIST = os.path.join(ROOT, 'fy28', 'dist')
 OUT = os.path.join(ROOT, 'notes', 'generated', 'reading-time.csv')
 
 WPM = 230
+# Two minutes. A short version has to fit one sitting; past this it is a second page.
+SHORT_BUDGET = 460
+SHORT = re.compile(r'<[^>]+\bdata-short\b', re.I)
 # Skipped: not pages a person reads, or not ours to measure.
 SKIP_PREFIX = ('share/', 'docs/', 'data/', 'api/', 'reference/', 'minutes/', 'assets/')
 
@@ -72,6 +87,34 @@ def routes():
     return out
 
 
+def short_words(body):
+    """Words inside any data-short element, counted once however the marks nest.
+    None when the page declares no short version."""
+    marks = list(SHORT.finditer(body))
+    if not marks:
+        return None
+    # Walk each marked element to its matching close tag by counting open/close tags of
+    # the same name, then union the spans so a Conclusions block inside a conclusions
+    # section is not counted twice.
+    spans = []
+    for m in marks:
+        name = re.match(r'<([a-zA-Z0-9]+)', body[m.start():]).group(1)
+        depth = 0
+        for t in re.finditer(r'<(/?)%s\b[^>]*>' % name, body[m.start():], re.I):
+            depth += -1 if t.group(1) else 1
+            if depth == 0:
+                spans.append((m.start(), m.start() + t.end()))
+                break
+    spans.sort()
+    merged = []
+    for a, b in spans:
+        if merged and a <= merged[-1][1]:
+            merged[-1] = (merged[-1][0], max(merged[-1][1], b))
+        else:
+            merged.append((a, b))
+    return sum(words(body[a:b]) for a, b in merged)
+
+
 def measure(route, path):
     raw = open(path, encoding='utf-8', errors='replace').read()
     raw = COMMENT.sub(' ', raw)
@@ -88,6 +131,7 @@ def measure(route, path):
     # Words before the first section heading -- the standfirst and whatever else stands
     # in front of the thing (rule 7a's count).
     before = words(body[:h2s[0]]) if h2s else total
+    short = short_words(body)
     return {
         'route': '/' + route,
         'title': title,
@@ -95,6 +139,9 @@ def measure(route, path):
         'h1': text(h1.group(1)) if h1 else '',
         'words': total,
         'minutes': round(total / WPM, 1),
+        'short_words': '' if short is None else short,
+        'short_minutes': '' if short is None else round(short / WPM, 1),
+        'short_over_budget': '' if short is None else ('yes' if short > SHORT_BUDGET else ''),
         'sections': len(h2s),
         'words_before_first_section': before,
         # A table is read down a column, not word by word, so a page whose words are
@@ -116,18 +163,57 @@ def render():
     return buf.getvalue(), rows
 
 
+def budget(rows, previous, strict):
+    """The ratchet. Returns a list of failures; empty means the short versions held."""
+    fails = []
+    was = {r['route']: r for r in previous}
+    for r in rows:
+        if r['short_words'] == '':
+            continue
+        n = int(r['short_words'])
+        if n <= SHORT_BUDGET:
+            continue
+        before = was.get(r['route'], {}).get('short_words', '')
+        if not was:
+            continue  # no baseline yet: this write IS the baseline
+        if before == '' or int(before) <= SHORT_BUDGET:
+            fails.append('%s: short version is %d words, over the %d budget (it was %s)'
+                         % (r['route'], n, SHORT_BUDGET, before or 'not declared'))
+        elif n > int(before):
+            fails.append('%s: short version grew from %s to %d words while over the %d budget -- it may only shrink'
+                         % (r['route'], before, n, SHORT_BUDGET))
+    missing = [r['route'] for r in rows if r['short_words'] == '' and r['route'] not in ('/', '/not-found', '/search')]
+    if strict and missing:
+        fails.append('%d page(s) declare no short version: %s' % (len(missing), ', '.join(missing)))
+    return fails, missing
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
+    ap.add_argument('--strict', action='store_true', help='also fail pages with no short version')
     a = ap.parse_args()
     out, rows = render()
+    previous = list(csv.DictReader(open(OUT, encoding='utf-8'))) if os.path.exists(OUT) else []
+    # The first write after the column arrives is the baseline the ratchet turns from.
+    if previous and 'short_words' not in previous[0]:
+        previous = []
+    fails, missing = budget(rows, previous, a.strict)
+    over = [r for r in rows if r['short_over_budget']]
     if a.check:
         have = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
+        for f in fails:
+            print('BUDGET ' + f)
         if have != out:
             print('STALE %s -- run: python3 scripts/build_reading_time.py' % os.path.relpath(OUT, ROOT))
             return 1
-        print('ok: %s reproduces' % os.path.relpath(OUT, ROOT))
+        if fails:
+            return 1
+        print('ok: %s reproduces; %d short version(s) still over the %d-word budget, none grew; %d page(s) declare none'
+              % (os.path.relpath(OUT, ROOT), len(over), SHORT_BUDGET, len(missing)))
         return 0
+    for f in fails:
+        print('BUDGET ' + f)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w', encoding='utf-8') as fh:
         fh.write(out)
@@ -135,7 +221,11 @@ def main():
     print('wrote %s -- %d pages, %s words, %d min at %d wpm; longest %s (%s min)'
           % (os.path.relpath(OUT, ROOT), len(rows), format(total, ','), total // WPM, WPM,
              rows[0]['route'], rows[0]['minutes']))
-    return 0
+    print('short versions: %d declared, %d over the %d-word budget, %d page(s) with none'
+          % (sum(1 for r in rows if r['short_words'] != ''), len(over), SHORT_BUDGET, len(missing)))
+    for r in over:
+        print('  over: %-45s %5s words' % (r['route'], r['short_words']))
+    return 1 if fails else 0
 
 
 if __name__ == '__main__':
