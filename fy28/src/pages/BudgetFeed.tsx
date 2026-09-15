@@ -407,10 +407,9 @@ export function BudgetFeed() {
   return (
     <ReportShell tab={TAB} title={season ? `The ${FY(d.cycle_fy)} budget season` : `The budget feed — ${FY(d.cycle_fy)}`}
       standfirst={season
-        ? `How the ${FY(d.cycle_fy)} budget went — the gap, the cuts, the proposals, the override, what Town Meeting and the ballot did, and what took effect — with the meeting or the document behind every line.`
+        ? `A finished season — closed at the election of ${long(d.cycle_closes)}. Every line below links to the meeting or the document it is read from.`
         : `What the boards are doing to prepare for Town Meeting — the omnibus budget, the school budget above all, and the warrant. Meetings coming up, where the ${FY(d.cycle_fy)} cycle stands, what was said in the last ${d.recent_days} days, what was posted. Not every mention of money: the budget being built, and what will land on the warrant.`}
       dataUrl={season ? `/data/budget-feed-${season}.json` : DATA}>
-      {season && <p className="text-[11px] font-semibold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>A finished season, closed at the election of {long(d.cycle_closes)}. The live feed is at <a className="underline" href="/budget-feed">/budget-feed</a>.</p>}
       {/* THE SEASON. TJ: "budget-feed probably should have a dropdown for each season." The
           list is in the payload -- the live cycle and every replay that has been built. */}
       <label className="flex items-center gap-2 mt-4 text-sm max-w-full">
@@ -430,7 +429,7 @@ export function BudgetFeed() {
         <section key={e.id} className="mt-8">
           <div className="flex flex-wrap items-baseline gap-x-3">
             <h2 className="text-xl font-bold">{e.kind === 'regular' ? `The ${FY(Number(e.season_fy))} season` : e.label}</h2>
-            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{e.closed ? 'closed' : 'under way'} · {mmdd(e.opens)}{e.closes ? ` → ${mmdd(e.closes)}` : ' →'}{e.kind === 'special' ? <> · <a className="underline" href={`/budget-feed/${e.id}`}>its own page</a></> : null}</span>
+            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{e.closed ? 'closed' : 'under way'} · {mmddyy(e.opens)}{e.closes ? ` → ${mmddyy(e.closes)}` : ' →'}{e.kind === 'special' ? <> · <a className="underline" href={`/budget-feed/${e.id}`}>its own page</a></> : null}</span>
           </div>
           {e.kind === 'special' && <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{e.trigger}.</p>}
           {/* THE STATUS BOARD, where a season file exists (sources/data/budget-seasons/<fy>.csv);

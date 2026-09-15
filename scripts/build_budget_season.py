@@ -59,7 +59,7 @@ def doc_label(rel):
     if os.path.exists(idx):
         for r in read_csv(idx):
             if r.get('local') == rel:
-                return r.get('label') or os.path.basename(rel)
+                return __import__('html').unescape(r.get('label') or os.path.basename(rel)).replace('&nbsp;', '').strip()
     return os.path.basename(rel)
 
 

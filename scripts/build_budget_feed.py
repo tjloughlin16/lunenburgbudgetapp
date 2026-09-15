@@ -889,9 +889,9 @@ def build(as_of=None, whole_cycle=False):
         tag = os.path.basename(f)[len('budget-feed-'):-5]
         fy = 2000 + int(tag[2:])
         if fy != live_fy:
-            seasons.append(dict(fy=fy, path='/budget-feed/' + tag, label='FY%d, the season replayed' % (fy % 100), live=False))
+            seasons.append(dict(fy=fy, path='/budget-feed/' + tag, label='FY%d, finished' % (fy % 100), live=False))
     if whole_cycle and not any(x['fy'] == fy_now for x in seasons):
-        seasons.append(dict(fy=fy_now, path='/budget-feed/fy%d' % (fy_now % 100), label='FY%d, the season replayed' % (fy_now % 100), live=False))
+        seasons.append(dict(fy=fy_now, path='/budget-feed/fy%d' % (fy_now % 100), label='FY%d, finished' % (fy_now % 100), live=False))
     seasons.sort(key=lambda x: -x['fy'])
     # The episodes of the live season are choices too -- TJ: "the governor situation should
     # show up in the dropdown." Listed under their season, newest first.

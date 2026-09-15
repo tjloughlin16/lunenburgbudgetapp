@@ -107,7 +107,7 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
             </div>
           ) : null)}
         </div>
-        {closed && <p className="text-sm mt-3" style={{ color: 'var(--text-secondary)' }}><span className="font-semibold">How it closed:</span> {closed.why} ({closed.figure.split(' — ')[0]}).<CiteLink c={closed.cite} /></p>}
+        {closed && <p className="text-sm mt-3" style={{ color: 'var(--text-secondary)' }}><span className="font-semibold">How it closed:</span> {closed.why}{closed.why.includes(closed.figure.split(' — ')[0]) ? '' : ` (${closed.figure.split(' — ')[0]})`}.<CiteLink c={closed.cite} /></p>}
         {town && <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}><span className="font-semibold">The town side:</span> {town.figure.split(' (')[0]} — {town.why} ({town.who}, {mmdd(town.date)}).<CiteLink c={town.cite} /></p>}
         <details className="mt-3"><summary className="cursor-pointer text-xs underline" style={{ color: 'var(--series-cost)' }}>How the numbers moved — {b.deficit.length} figures, three stories</summary>
           {(['school', 'both', 'town'] as const).map(scope => gap(scope).length ? (
