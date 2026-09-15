@@ -76,6 +76,7 @@ import { Analysis } from './pages/Analysis'
 import { LABEL, PARENT, ROOT, pathFor, tabFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle } from './lib/title'
+import { ReadingTime } from './components/ReadingTime'
 
 /** What index.html ships, read once so the front page keeps it exactly. */
 const HOME_TITLE = document.title
@@ -652,7 +653,10 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
 
   return (
     <nav aria-label="Breadcrumb" className="border-b" style={{ borderColor: 'var(--grid)' }}>
-      <ol className="mx-auto max-w-6xl px-5 py-2.5 flex items-center gap-1.5 flex-wrap
+      {/* The reading time shares this row: where the page sits, and how long it is, both
+          answered before the title. See components/ReadingTime.tsx. */}
+      <div className="mx-auto max-w-6xl px-5 py-2.5 flex items-center justify-between gap-4">
+      <ol className="flex items-center gap-1.5 flex-wrap min-w-0
                      text-[12px]">
         {trail.map(t => (
           <li key={t} className="flex items-center gap-1.5">
@@ -665,6 +669,8 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
         ))}
         <li aria-current="page" style={{ color: 'var(--text-secondary)' }}>{LABEL[tab]}</li>
       </ol>
+      <ReadingTime tab={tab} />
+      </div>
     </nav>
   )
 }
