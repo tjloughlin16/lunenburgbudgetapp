@@ -110,6 +110,16 @@ def board_pages():
     return ['/boards/' + b['slug'] for b in boards]
 
 
+def feed_pages():
+    """The budget feed and every finished year and episode it lists, from its own payload."""
+    p = os.path.join(PUB, 'data', 'budget-feed.json')
+    if not os.path.exists(p):
+        return []
+    d = json.load(io.open(p, encoding='utf-8'))
+    out = ['/budget-feed'] + [s['path'] for s in d.get('seasons', []) if s.get('path') and s['path'] != '/budget-feed']
+    return sorted(set(out))
+
+
 def published_data():
     """Every dataset published under /data, so each is indexable on its own."""
     out = []
@@ -143,7 +153,7 @@ def reference():
 
 def render():
     seen, urls = set(), []
-    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + ENTRY + published_data()
+    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + feed_pages() + ENTRY + published_data()
               + reference() + analyses()):
         if u not in seen:
             seen.add(u)
