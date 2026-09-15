@@ -156,6 +156,21 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           label for the container. */}
       {/* THE PHONE ORDER: a one-line-per-board strip, then the sections, then what was
           said as one line per meeting. The desktop keeps the two columns. */}
+        {/* THE BUDGET FEED, at the top of the column. TJ, 14 September: "on the home page the
+          budget feed should be at the top of the right sidebar." The season as it is built
+          -- what is on the record, what is not yet -- is the thing a resident comes back
+          for; the week's meetings sit under it. */}
+      <section aria-label="The budget feed" className="lg:hidden mb-8">
+        <div className="flex items-baseline justify-between gap-3 mb-2">
+          <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>The budget feed</h2>
+          <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>the FY28 season &rarr;</a>
+        </div>
+        <a href="/budget-feed" className="block px-3 py-2.5 rounded-md" style={{ background: 'color-mix(in srgb, var(--series-cost) 7%, transparent)', borderLeft: '3px solid var(--series-cost)' }}>
+          <span className="font-bold text-[13.5px]" style={{ color: 'var(--series-cost)' }}>FY28, as it is built</span>
+          <span className="block text-[12.5px] mt-0.5" style={{ color: 'var(--text-secondary)' }}>The gap, the cuts, the proposals, the override, Town Meeting — what is on the record so far and what has not come yet, read from the meetings daily.</span>
+        </a>
+        <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Finished seasons: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
+      </section>
       <section className="lg:hidden mb-8" aria-label="Meetings this week">
         <div className="flex items-baseline justify-between gap-3 mb-1">
           <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week in town</h2>
@@ -165,10 +180,6 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
         {/* THE BUDGET FEED, its own line. TJ, 14 September: "we need a link to the budget
             feed on the home page somewhere too." It was the last word of the boards line,
             which is where a link goes to be missed. One row, one sentence, no card. */}
-        <a href="/budget-feed" className="block mt-3 px-3 py-2 rounded-md" style={{ background: 'color-mix(in srgb, var(--series-cost) 7%, transparent)', borderLeft: '3px solid var(--series-cost)' }}>
-          <span className="font-bold text-[13.5px]" style={{ color: 'var(--series-cost)' }}>The budget feed &rarr;</span>
-          <span className="text-[12.5px] ml-2" style={{ color: 'var(--text-secondary)' }}>This year’s budget, one page: what is final, where each board stands, and what has only been said.</span>
-        </a>
         {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
             Committee meets next is the one who wants everything about it. */}
         <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
@@ -260,6 +271,21 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           reaches the front page. */}
       </div>
       <div className="space-y-8">
+        {/* THE BUDGET FEED, at the top of the column. TJ, 14 September: "on the home page the
+            budget feed should be at the top of the right sidebar." The season as it is built
+            -- what is on the record, what is not yet -- is the thing a resident comes back
+            for; the week's meetings sit under it. */}
+        <section aria-label="The budget feed" className="hidden lg:block">
+          <div className="flex items-baseline justify-between gap-3 mb-2">
+            <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>The budget feed</h2>
+            <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>the FY28 season &rarr;</a>
+          </div>
+          <a href="/budget-feed" className="block px-3 py-2.5 rounded-md" style={{ background: 'color-mix(in srgb, var(--series-cost) 7%, transparent)', borderLeft: '3px solid var(--series-cost)' }}>
+            <span className="font-bold text-[13.5px]" style={{ color: 'var(--series-cost)' }}>FY28, as it is built</span>
+            <span className="block text-[12.5px] mt-0.5" style={{ color: 'var(--text-secondary)' }}>The gap, the cuts, the proposals, the override, Town Meeting — what is on the record so far and what has not come yet, read from the meetings daily.</span>
+          </a>
+          <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Finished seasons: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
+        </section>
         <section aria-label="Meetings this week" className="hidden lg:block">
           <div className="flex items-baseline justify-between gap-3 mb-2">
             <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>This week in town</h2>
@@ -267,10 +293,6 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
               style={{ color: 'var(--series-cost)' }}>every board &rarr;</button>
           </div>
           <BoardsThisWeek days={7} compact />
-          <a href="/budget-feed" className="block mt-3 px-3 py-2 rounded-md" style={{ background: 'color-mix(in srgb, var(--series-cost) 7%, transparent)', borderLeft: '3px solid var(--series-cost)' }}>
-            <span className="font-bold text-[13.5px]" style={{ color: 'var(--series-cost)' }}>The budget feed &rarr;</span>
-            <span className="text-[12.5px] ml-2" style={{ color: 'var(--text-secondary)' }}>This year’s budget, one page: what is final, where each board stands, and what has only been said.</span>
-          </a>
           {/* THE DOOR TO THE BOARD PAGES. A resident who came to see when the School
               Committee meets next is the one who wants everything about it. */}
           <p className="text-[12px] mt-2" style={{ color: 'var(--text-secondary)' }}>
