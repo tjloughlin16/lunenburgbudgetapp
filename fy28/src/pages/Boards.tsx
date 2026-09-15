@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { boardSlugFromPath, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
-import { JoinLinks, type Join } from '../components/BoardsThisWeek'
+import { JoinLinks, daysFromToday, todayIso, type Join } from '../components/BoardsThisWeek'
 
 const TAB: Tab = 'boards'
 const DATA = '/data/boards.json'
@@ -183,14 +183,14 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
       <H2 id="up">Upcoming meetings</H2>
       {b.upcoming.length === 0 ? (
         <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>No agenda posted for a future date, as of {d.as_of}. Agendas usually appear two days before a meeting.</p>
-      ) : b.upcoming.map(u => (
+      ) : b.upcoming.filter(u => u.date >= todayIso()).map(u => (
         <div key={u.date} className="card p-4 mt-3">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <span className="font-bold">{dateText(u.date)}</span>
             {u.time && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.time}</span>}
             {u.where && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.where}</span>}
             {u.attend && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.attend}</span>}
-            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>in {u.days_away} day{u.days_away === 1 ? '' : 's'}</span>
+            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{daysFromToday(u.date) === 0 ? 'today' : daysFromToday(u.date) === 1 ? 'tomorrow' : `in ${daysFromToday(u.date)} days`}</span>
           </div>
           {u.hook && <p className="text-[15px] mt-2">{u.hook}</p>}
           <JoinLinks j={u.join} />

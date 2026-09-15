@@ -56,16 +56,28 @@ export const THE_THREE: [string, string][] = [
   ['school-committee', 'School Committee'],
 ]
 
-function dayLabel(iso: string, asOf: string) {
+/** THE DAY, RELATIVE TO THE READER'S TODAY, AND ALWAYS THE WEEKDAY AND DATE. TJ, 15
+ *  September 2026: "I see 'tomorrow' for something that is very much today (and we always
+ *  need to show the day of the week and the date)." The payload carries the day it was
+ *  built; a page read two days later must not call that day "today". So 'today' is the
+ *  browser's clock, and the label is "Today, Tue Sep 15" -- never a bare "Tomorrow". */
+export function todayIso() {
+  const n = new Date()
+  return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`
+}
+export function daysFromToday(iso: string) {
+  const [y, m, d] = iso.split('-').map(Number)
+  const n = new Date()
+  return Math.round((new Date(y, m - 1, d).getTime() - new Date(n.getFullYear(), n.getMonth(), n.getDate()).getTime()) / 86400000)
+}
+export function dayLabel(iso: string, _asOf?: string) {
   const [y, m, d] = iso.split('-').map(Number)
   const date = new Date(y, m - 1, d)
-  const [ay, am, ad] = asOf.split('-').map(Number)
-  const diff = Math.round((date.getTime() - new Date(ay, am - 1, ad).getTime()) / 86400000)
-  const wd = date.toLocaleDateString('en-US', { weekday: 'long' })
-  if (diff === 0) return 'Today'
-  if (diff === 1) return 'Tomorrow'
-  if (diff < 7) return wd
-  return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+  const diff = daysFromToday(iso)
+  const full = date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+  if (diff === 0) return `Today · ${full}`
+  if (diff === 1) return `Tomorrow · ${full}`
+  return full
 }
 
 function Chip({ children, tone }: { children: React.ReactNode; tone?: 'strong' }) {
@@ -108,7 +120,7 @@ export function BoardsStrip({ days = 7 }: { days?: number }) {
   const rows: { name: string; m: Upcoming; p?: Notice }[] = []
   const quiet: string[] = []
   for (const [slug, name] of THE_THREE) {
-    const ms = f.upcoming.meetings.filter(m => m.board_slug === slug && m.days_away <= days).sort((a, b) => a.date.localeCompare(b.date))
+    const ms = f.upcoming.meetings.filter(m => m.board_slug === slug && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
     if (ms.length === 0) quiet.push(name)
     for (const m of ms) rows.push({ name, m, p: notices.d?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date) })
   }
@@ -149,7 +161,7 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
   }, [compact, target, f])
   if (!f) return null
   const byBoard = (slug: string) =>
-    f.upcoming.meetings.filter(m => m.board_slug === slug && m.days_away <= days).sort((a, b) => a.date.localeCompare(b.date))
+    f.upcoming.meetings.filter(m => m.board_slug === slug && m.date >= todayIso() && daysFromToday(m.date) <= days).sort((a, b) => a.date.localeCompare(b.date))
   const previewFor = (m: Upcoming) => notices.d?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date)
   return (
     <ol className="space-y-2">

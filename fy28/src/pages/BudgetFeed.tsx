@@ -1,7 +1,7 @@
 import { useState, type ReactElement } from 'react'
 import { feedSeasonFromPath, type Tab } from '../routes'
 import { H2, ReportShell, useReport } from '../components/report'
-import { JoinLinks, type Join } from '../components/BoardsThisWeek'
+import { JoinLinks, dayLabel, todayIso, type Join } from '../components/BoardsThisWeek'
 import { SeasonBoard } from './SeasonBoard'
 
 const TAB: Tab = 'budgetfeed'
@@ -455,12 +455,12 @@ export function BudgetFeed() {
 
       {/* ------------------------------------------------------------------ upcoming */}
       {!season && <H2 id="upcoming">Budget meetings coming up</H2>}
-      {season ? null : d.upcoming.length === 0 ? <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>No posted agenda carries a budget item, as of {d.as_of}.</p> : (
+      {season ? null : d.upcoming.filter(u => u.date >= todayIso()).length === 0 ? <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>No posted agenda carries a budget item, as of {d.as_of}.</p> : (
         <ol className="space-y-3 mt-3">{d.upcoming.map(u => (
           <li key={u.board_slug + u.date} className="card p-4">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <a className="font-bold" href={u.board_page}>{u.board}</a>
-              <span className="text-[13px] font-bold" style={{ color: 'var(--series-cost)' }}>{u.days_away === 0 ? 'Today' : u.days_away === 1 ? 'Tomorrow' : long(u.date)}</span>
+              <span className="text-[13px] font-bold" style={{ color: 'var(--series-cost)' }}>{dayLabel(u.date)}</span>
               {u.time && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.time}</span>}
               {u.where && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.where}</span>}
               <span className="text-xs ml-auto" style={{ color: 'var(--text-muted)' }}>on the agenda: {u.markers.join(', ')}</span>
