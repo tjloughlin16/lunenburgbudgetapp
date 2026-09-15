@@ -408,7 +408,7 @@ export function BudgetFeed() {
     <ReportShell tab={TAB} title={season ? `The ${FY(d.cycle_fy)} budget season` : `The budget feed — ${FY(d.cycle_fy)}`}
       standfirst={season
         ? `A finished season — closed at the election of ${long(d.cycle_closes)}. Every line below links to the meeting or the document it is read from.`
-        : `What the boards are doing to prepare for Town Meeting — the omnibus budget, the school budget above all, and the warrant. Meetings coming up, where the ${FY(d.cycle_fy)} cycle stands, what was said in the last ${d.recent_days} days, what was posted. Not every mention of money: the budget being built, and what will land on the warrant.`}
+        : `The ${FY(d.cycle_fy)} budget as it is built — what is on the record so far, what has not come yet, and every meeting behind it.`}
       dataUrl={season ? `/data/budget-feed-${season}.json` : DATA}>
       {/* THE SEASON. TJ: "budget-feed probably should have a dropdown for each season." The
           list is in the payload -- the live cycle and every replay that has been built. */}

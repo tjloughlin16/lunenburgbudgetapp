@@ -218,6 +218,19 @@ right figures are there.
 One line per report, with what the review CHANGED. A review that changed nothing is
 recorded as that, because it is a claim worth being able to disbelieve.
 
+### `/budget-feed` — the FY28 season, live, 14 September 2026
+
+The same board, ten days into a season: 'expected' rows render as dashed "not yet" lines
+with when each moment usually comes (from FY26 and FY27), warnings from the record show
+under "Warned about" as predictions with no figure, and figures the record proposes wait
+in `fy28.proposed.csv`. Read once as reader 7: the hand-written one-liner would have gone
+stale the day a figure arrived, so it is derived ("No figure is on the record yet; 6
+things said so far are below. Next up: the schools' first number — usually late
+January"); "Cut — 0 / Came off the list — 0" headers were noise on an empty board and are
+hidden while live; "(School Committee vote)" after a not-yet line read as a citation and
+now reads "from a School Committee vote"; the page standfirst was the old feed's
+paragraph and is one line.
+
 ### `/budget-feed/fy27-summer-governors-budget` — the summer of 2026, 14 September 2026
 
 An episode on the same board. The blocks are renamed for what this one was about -- THE

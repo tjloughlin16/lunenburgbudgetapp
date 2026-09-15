@@ -78,7 +78,7 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
   // the record. Both render as what they are and never as a figure.
   const expected = (block: keyof Season['blocks']) => b[block].filter(r => r.status === 'expected')
   const NotYet = ({ block }: { block: keyof Season['blocks'] }) => expected(block).length ? (
-    <ul className="mt-2 space-y-1">{expected(block).map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px dashed var(--grid)', color: 'var(--text-muted)' }}><span className="text-[10px] font-bold uppercase tracking-wider mr-1.5">not yet</span><span className="font-semibold" style={{ color: 'var(--text-secondary)' }}>{r.item}</span> — {r.why}{r.who ? <span className="text-xs"> ({r.who})</span> : null}</li>)}</ul>
+    <ul className="mt-2 space-y-1">{expected(block).map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px dashed var(--grid)', color: 'var(--text-muted)' }}><span className="text-[10px] font-bold uppercase tracking-wider mr-1.5">not yet</span><span className="font-semibold" style={{ color: 'var(--text-secondary)' }}>{r.item}</span> — {r.why}{r.who ? <span className="text-xs"> · from {r.who}</span> : null}</li>)}</ul>
   ) : null
   const warned = b.cuts.filter(r => r.status === 'warned')
   const gap = (scope: string) => b.deficit.filter(r => r.scope === scope && r.status !== 'expected')
@@ -99,7 +99,10 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
     schoolDecided.length ? `${schoolDecided.length} cuts stood on the school side${fteOf(schoolDecided) ? ` (${fteOf(schoolDecided)} FTE where an FTE is printed)` : ''}` : '',
     townDecided.length ? `${townDecided.length} on the town side` : '',
   ].filter(Boolean).join('; ')
-  const oneLine = d.titles?.summary?.title
+  const nextUp = d.live ? [...b.deficit, ...b.proposals, ...b.cuts, ...b.override, ...b.final].filter(r => r.status === 'expected' && (!d.as_of || r.date >= d.as_of)).sort((a, c) => a.date.localeCompare(c.date))[0] : undefined
+  const onRecord = d.live ? [...b.deficit, ...b.cuts, ...b.override, ...b.late].filter(r => r.status !== 'expected').length : 0
+  const liveLine = d.live ? `The ${'FY' + String(d.fy).slice(2)} budget is being built. No figure is on the record yet${onRecord ? `; ${onRecord} thing${onRecord === 1 ? '' : 's'} said so far ${onRecord === 1 ? 'is' : 'are'} below` : ''}. ${nextUp ? `Next up: ${nextUp.item.toLowerCase()} — ${nextUp.why.split(' — ')[0]}.` : ''}` : ''
+  const oneLine = d.titles?.summary?.title || (d.live && !started ? liveLine : '')
   const lines = d.lines.filter(l => l.side === 'school' && (l.cut || 0) > 0).sort((a, c) => (c.cut || 0) - (a.cut || 0))
 
   return (
@@ -137,7 +140,7 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
       <Block title={T('cuts', 'The cuts', '').title} color="var(--status-critical)" sub={T('cuts', '', 'What was cut, what came off the list, and what only an override tier would have cut — grouped the way a family looks for its own.').sub}>
         <div className="grid gap-4 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-critical)' }}>{T('cuts.cut', 'Cut', '').title} — {decided.length}</p>
+            {(decided.length > 0 || !d.live) && <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-critical)' }}>{T('cuts.cut', 'Cut', '').title} — {decided.length}</p>}
             <NotYet block="cuts" />
             {(['school', 'town'] as const).map(scope => {
               const xs = decided.filter(r => r.scope === scope && !/^Town — Universal/.test(r.item))
@@ -160,7 +163,7 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
             })}
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>{T('cuts.off', 'Came off the list', '').title} — {off.length}</p>
+            {(off.length > 0 || !d.live) && <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>{T('cuts.off', 'Came off the list', '').title} — {off.length}</p>}
             <ul className="mt-2">{off.map((r, i) => <Item key={i} r={r} />)}</ul>
             {off.length === 0 && decided.length > 0 && <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing came off.</p>}
             {warned.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-5" style={{ color: 'var(--status-warning)' }}>Warned about — {warned.length}</p>
