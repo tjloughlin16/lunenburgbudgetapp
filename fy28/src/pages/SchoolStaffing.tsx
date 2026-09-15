@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import {
@@ -152,6 +153,8 @@ export function SchoolStaffing() {
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* ================================================== TRENDS OVER TIME
           The centre of this page, and the answer to the question two town bodies are
@@ -438,6 +441,7 @@ export function SchoolStaffing() {
         </div>
       </div>
 
+      </FullVersion>
       <MoreReports here={TAB} />
     </ReportShell>
   )

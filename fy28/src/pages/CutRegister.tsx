@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { FullVersion } from '../components/FullVersion'
 import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import { usd } from '../model/engine'
@@ -319,6 +320,8 @@ export function CutRegister() {
         <H2 id="conclusions">If you read nothing else</H2>
         <Conclusions rows={d.conclusions} />
       </Section>
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* ------------------------------------------------ 2. THE CATEGORICAL DATA */}
       <Section kind="categorical">
@@ -955,6 +958,7 @@ export function CutRegister() {
         <H2 id="not-established">What this does not establish</H2>
         <NotEstablished rows={d.not_established} closes={d.closes} />
       </Section>
+      </FullVersion>
     </ReportShell>
   )
 }

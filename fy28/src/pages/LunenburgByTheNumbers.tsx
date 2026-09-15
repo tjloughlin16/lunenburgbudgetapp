@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import {
@@ -214,6 +215,8 @@ function Report({ d }: { d: Payload }) {
         <H2 id="what-this-establishes">What this page establishes</H2>
         <Conclusions rows={d.conclusions} />
       </Section>
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       <Section kind="categorical" id="age" title="The town, by age">
         <Body>
@@ -438,8 +441,9 @@ function Report({ d }: { d: Payload }) {
           route in <code>scripts/verify_lunenburg_by_the_numbers.py</code>.
         </Caption>
 
-        <MoreReports here={TAB} />
       </Section>
+      </FullVersion>
+      <MoreReports here={TAB} />
     </Shell>
   )
 }

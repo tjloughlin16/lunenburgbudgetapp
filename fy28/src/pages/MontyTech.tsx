@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import {
@@ -334,6 +335,8 @@ export function MontyTech() {
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       <H2 id="findings">What this page establishes</H2>
       <div className="grid gap-4 mt-6"
@@ -927,6 +930,7 @@ export function MontyTech() {
         {said('aligned') ? '' : ''}
         Nothing on this page is typed into it. {d.about}
       </p>
+      </FullVersion>
     </Shell>
   )
 }

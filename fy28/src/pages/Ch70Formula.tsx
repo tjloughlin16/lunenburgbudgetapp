@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { TableTwin, fy, money, share } from '../components/MinimumAidCharts'
@@ -159,6 +160,8 @@ export function Ch70Formula() {
       <Section kind="conclusions" id="conclusions" title="If you read nothing else">
         <Conclusions rows={d.conclusions} />
       </Section>
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* The two pages, named as two questions. Placed here rather than at the top: a
           reader needs it before they start reading the steps and not before they know
@@ -436,6 +439,7 @@ export function Ch70Formula() {
             href={abs('/state-aid')}>state aid</a>.
         </Body>
       </Section>
+      </FullVersion>
     </Shell>
   )
 }

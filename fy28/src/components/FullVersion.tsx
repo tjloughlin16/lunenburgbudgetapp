@@ -120,12 +120,21 @@ export function FullVersion({ what = 'the full analysis', children }: {
           </span>
         )}
       </summary>
+      {/* A TABLE OF CONTENTS, SET LIKE ONE. The first version was a stack of underlined
+          sentences -- TJ: "i thought this was a bug, but its the styling." Numbered,
+          in the secondary colour, no underline until hover, two columns where there is
+          room, inside a quiet card so it reads as an instrument and not as prose. */}
       {heads.length > 1 && (
-        <nav aria-label="On this page" data-no-count className="mt-6 mb-2">
-          <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: 'var(--text-muted)' }}>On this page</p>
-          <ol className="text-[13.5px] leading-snug space-y-1" style={{ color: 'var(--text-secondary)' }}>
-            {heads.map(h => (
-              <li key={h.id}><a className="underline" href={`#${h.id}`}>{h.text}</a></li>
+        <nav aria-label="On this page" data-no-count className="toc card mt-4 mb-6 px-5 py-4">
+          <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>
+            On this page <span className="tnum font-semibold normal-case tracking-normal">&middot; {heads.length} sections</span>
+          </p>
+          <ol className="toc-list text-[13.5px] leading-snug">
+            {heads.map((h, i) => (
+              <li key={h.id} className="flex gap-2 py-0.5">
+                <span className="tnum shrink-0 w-5 text-right" style={{ color: 'var(--text-muted)' }}>{i + 1}</span>
+                <a className="toc-link min-w-0" href={`#${h.id}`}>{h.text}</a>
+              </li>
             ))}
           </ol>
         </nav>

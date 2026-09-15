@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import { useEffect, useMemo, useState } from 'react'
 import {
@@ -181,6 +182,8 @@ export function WhoWorksInEachSchool() {
 
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* ================================================== THE FOUR SCHOOLS
           Rule 7a: the most concrete thing this page holds, immediately under the
@@ -815,6 +818,7 @@ export function WhoWorksInEachSchool() {
         </div>
       </div>
 
+      </FullVersion>
       <MoreReports here={TAB} />
     </ReportShell>
   )

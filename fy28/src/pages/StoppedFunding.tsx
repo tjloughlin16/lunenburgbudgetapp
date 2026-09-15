@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { usd } from '../model/engine'
@@ -264,6 +265,8 @@ export function StoppedFunding() {
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       <H2 id="findings">What this establishes</H2>
       <div className="grid gap-4 mt-6"
@@ -819,6 +822,7 @@ export function StoppedFunding() {
           href={abs('/what-we-cannot-answer')}>what we cannot answer</a>, which is what the
         records request reads &mdash; not prose written only here.
       </Body>
+      </FullVersion>
     </ReportShell>
   )
 }

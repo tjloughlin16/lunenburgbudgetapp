@@ -1,3 +1,4 @@
+import { FullVersion } from '../components/FullVersion'
 import {
   Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend,
 } from 'recharts'
@@ -69,7 +70,7 @@ function Report({ d }: { d: Payload }) {
   const schoolNames = Array.from(new Set(d.schools.map(s => s.school)))
   return (
     <>
-      <section data-section="conclusions">
+      <section data-section="conclusions" data-short="">
         <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
           <Stat value={n0(last.total)}>children enrolled in FY{last.fy}, against {n0(d.peak.total)} at the FY{d.peak.fy} peak</Stat>
           <Stat value={pct1(Math.abs(d.bands[2].pct))} tone="var(--series-cost)">fewer in grades 9&ndash;12 than in FY{d.base_fy}; pre-K to grade 5 is down {pct1(Math.abs(d.bands[0].pct))}</Stat>
@@ -78,6 +79,8 @@ function Report({ d }: { d: Payload }) {
         <Grain>{d.grain}</Grain>
         <Conclusions rows={d.conclusions} />
       </section>
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       <section data-section="categorical">
         <H2>The count, by grade band</H2>
@@ -179,8 +182,9 @@ function Report({ d }: { d: Payload }) {
         <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Every third year shown; schools appear and disappear as the district reorganised them. A blank is a school that did not exist under that name.</p>
         <NotEstablished rows={d.not_established} closes="DESE’s enrollment file carries no reason a count moved; the district’s own October 1 report and its birth-cohort projections would." />
         <Provenance sources={d.sources} />
-        <MoreReports here={TAB} />
       </section>
+      </FullVersion>
+      <MoreReports here={TAB} />
     </>
   )
 }

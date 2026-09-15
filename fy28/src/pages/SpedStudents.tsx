@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import type { Base } from '../components/report'
 import {
@@ -132,6 +133,8 @@ export function SpedStudents() {
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       <H2 id="findings">What this establishes</H2>
       <div className="grid gap-4 mt-5 md:grid-cols-2">
@@ -349,6 +352,7 @@ export function SpedStudents() {
         difference is the point &mdash; a placement is not a cost and a dollar is not a
         child.
       </Body>
+      </FullVersion>
       <OtherReports here="how-many-students-are-on-an-iep" />
     </Shell>
   )

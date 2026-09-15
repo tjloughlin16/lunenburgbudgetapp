@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import {
   Caption, Churn, GradeProfile, GroupBars, Legend, OverTime, SchoolArtefact, TableTwin,
@@ -170,7 +171,7 @@ function Report({ d }: { d: Payload }) {
   return (
     <>
       {/* ---- rule 7b, first movement: what this page establishes ---------- */}
-      <section data-section="conclusions">
+      <section data-section="conclusions" data-short="">
         <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
           <Stat value={pct1(o.mean)} tone={RATE}>
             of every eighth grade does not return for grade 9, averaged over{' '}
@@ -195,6 +196,8 @@ function Report({ d }: { d: Payload }) {
 
         <Conclusions rows={d.conclusions} />
       </section>
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* ---- rule 7b, second movement: the organised categorical data ----- */}
       <section data-section="categorical">
@@ -605,8 +608,9 @@ function Report({ d }: { d: Payload }) {
           CSVs by a second route in <code>scripts/verify_attrition.py</code>.
         </p>
 
-        <MoreReports here={TAB} />
       </section>
+      </FullVersion>
+      <MoreReports here={TAB} />
     </>
   )
 }

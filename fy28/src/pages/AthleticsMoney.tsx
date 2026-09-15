@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import { Basis, type Level } from '../components/Basis'
 import { useEffect, useState } from 'react'
@@ -331,6 +332,8 @@ export function AthleticsMoney() {
           a participation is not a child. */}
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* ================================== THE DISAGREEMENT, WHICH IS THE FIRST FINDING
         *
@@ -1393,6 +1396,7 @@ export function AthleticsMoney() {
         </p>
       </div>
 
+      </FullVersion>
       <MoreReports here={TAB} />
 
       <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[13px]">

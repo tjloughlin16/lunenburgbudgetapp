@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import { Basis } from '../components/Basis'
 import { useEffect, useMemo, useState } from 'react'
@@ -376,6 +377,8 @@ export function BudgetVsActual() {
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* --------------------------------------------------------- by year */}
       <H2 id="by-year">The whole measured budget, year by year</H2>
@@ -839,6 +842,7 @@ export function BudgetVsActual() {
         {d.coverage.workbook_lines} lines in the district&rsquo;s current workbook are never
         measured here at all &mdash; mostly lines the older documents do not carry.
       </p>
+      </FullVersion>
     </ReportShell>
   )
 }

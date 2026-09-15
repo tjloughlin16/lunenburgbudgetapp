@@ -1,4 +1,5 @@
 import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from 'recharts'
+import { FullVersion } from '../components/FullVersion'
 import type { Tab } from '../routes'
 import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
@@ -46,7 +47,7 @@ function Report({ d }: { d: Payload }) {
   const scores = last.scores ? [1, 2, 3, 4, 5].map((s, i) => ({ score: String(s), tests: last.scores![i] })) : []
   return (
     <>
-      <section data-section="conclusions">
+      <section data-section="conclusions" data-short="">
         <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
           <Stat value={n0(last.takers)} tone="var(--series-cost)">students sat at least one AP exam in SY{last.sy}; {n0(last.sittings)} sittings</Stat>
           <Stat value={pct1(last.pass_share ?? 0)}>of tests scored 3 or better</Stat>
@@ -55,6 +56,8 @@ function Report({ d }: { d: Payload }) {
         <Grain>{d.grain}</Grain>
         <Conclusions rows={d.conclusions} />
       </section>
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       <section data-section="categorical">
         <H2>Who sits, year by year</H2>
@@ -127,8 +130,9 @@ function Report({ d }: { d: Payload }) {
         </div>
         <NotEstablished rows={d.not_established} closes="The high school’s program of studies for each year, which lists the AP courses offered; the district publishes it and the archive does not yet hold it." />
         <Provenance sources={d.sources} />
-        <MoreReports here={TAB} />
       </section>
+      </FullVersion>
+      <MoreReports here={TAB} />
     </>
   )
 }

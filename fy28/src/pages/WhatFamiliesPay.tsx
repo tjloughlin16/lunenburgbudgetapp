@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { useEffect, useMemo, useState } from 'react'
 import { abs } from '../lib/abs'
 import { TableTwin } from '../components/StateAidCharts'
@@ -294,6 +295,8 @@ export function WhatFamiliesPay() {
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* ============================================================ 1. THE TABLE.
           Rule 7a: the page is called what a family pays, so the bill is the page. The
@@ -800,6 +803,7 @@ export function WhatFamiliesPay() {
         <a className="underline" href={abs('/data/what-families-pay.json')}>
           /data/what-families-pay.json</a>.
       </p>
+      </FullVersion>
     </ReportShell>
   )
 }

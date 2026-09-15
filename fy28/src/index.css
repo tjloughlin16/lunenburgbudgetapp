@@ -598,3 +598,11 @@ a:visited .door-title { color: var(--text-secondary); }
 @media print {
   .fold > .fold-summary { display: none; }
 }
+
+/* "On this page" inside the fold: a numbered list in two columns where there is room,
+   links in the secondary colour, underlined only on hover. */
+.toc-list { columns: 1; column-gap: 2.5rem; }
+@media (min-width: 720px) { .toc-list { columns: 2; } }
+.toc-list > li { break-inside: avoid; }
+.toc-link { color: var(--text-secondary); text-decoration: none; }
+.toc-link:hover { color: var(--text-primary); text-decoration: underline; }

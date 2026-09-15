@@ -45,8 +45,11 @@ DIST = os.path.join(ROOT, 'fy28', 'dist')
 OUT = os.path.join(ROOT, 'notes', 'generated', 'reading-time.csv')
 
 WPM = 230
-# Two minutes. A short version has to fit one sitting; past this it is a second page.
-SHORT_BUDGET = 460
+# Five minutes, at 230 wpm. TJ, 15 September 2026: "each short page should be 5 minutes
+# or less." Three or four conclusion cards with their rests-on and does-not-show halves
+# is about a thousand words; a two-minute budget would have cut the halves, which are
+# the point. Five is the ceiling, not the target.
+SHORT_BUDGET = 1150
 SHORT = re.compile(r'<[^>]+\bdata-short\b', re.I)
 # Skipped: not pages a person reads, or not ours to measure.
 SKIP_PREFIX = ('share/', 'docs/', 'data/', 'api/', 'reference/', 'minutes/', 'assets/')

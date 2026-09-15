@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import type { Base } from '../components/report'
 import {
@@ -138,6 +139,8 @@ export function ClassSize() {
       {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* ------------------------------------------- 2. THE RULE, AS A TABLE (rule 7b) */}
       <H2 id="table">What the rule permits, group by group</H2>
@@ -497,6 +500,7 @@ export function ClassSize() {
       <NotEstablished rows={d.not_established} closes={d.closes} />
 
       <H2 id="other">The other reports</H2>
+      </FullVersion>
       <MoreReports here={TAB} />
     </Shell>
   )

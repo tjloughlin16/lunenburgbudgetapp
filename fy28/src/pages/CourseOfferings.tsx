@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { Basis } from '../components/Basis'
@@ -410,6 +411,8 @@ function Report({ d }: { d: Payload }) {
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       {/* ====================================================================
           2. WHAT A STAFFING CHANGE DID TO WHAT RAN — the two visuals this page
@@ -1323,6 +1326,7 @@ function Report({ d }: { d: Payload }) {
         <code>scripts/verify_course_offerings.py</code>.
       </Body>
 
+      </FullVersion>
       <MoreReports here={TAB} />
     </Shell>
   )

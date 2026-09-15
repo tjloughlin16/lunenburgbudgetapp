@@ -144,11 +144,12 @@ kind="conclusions">`, a `<Conclusions>` block, or `<ShortVersion>` in
 
 - **The indicator on the breadcrumb row**: *Short version: 4 min · In full: 21 min*.
   A page that can only say *Est. reading time: 40 min* has declared none.
-- **`scripts/build_reading_time.py`**: `short_words` per page, a 460-word budget (two
-  minutes), enforced as a **ratchet** -- a short version over budget may only shrink, a
+- **`scripts/build_reading_time.py`**: `short_words` per page, a 1,150-word budget (five
+  minutes -- TJ's ceiling, not a target), enforced as a **ratchet** -- a short version over budget may only shrink, a
   page under budget may not go over, and `--strict` fails pages with none.
 
-The first measurement: 30 pages declare one, 26 are over budget, 48 declare none.
+The first measurement, at the 460-word budget first tried: 30 pages declare one, 26
+are over, 48 declare none. At 1,150 words, 8 are over -- the pages with too many cards.
 `/one-big-report` declares 15,479 words -- its "short version" is every report's
 conclusions stacked, which is the page telling us it is an index and not a read.
 

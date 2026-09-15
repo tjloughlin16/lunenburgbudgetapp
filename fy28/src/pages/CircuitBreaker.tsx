@@ -1,4 +1,5 @@
 import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from 'recharts'
+import { FullVersion } from '../components/FullVersion'
 import type { Tab } from '../routes'
 import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
@@ -55,7 +56,7 @@ function Report({ d }: { d: Payload }) {
   const share = d.series.map(y => ({ fy: `FY${y.fy}`, share: y.paid_share_of_claim ?? 0 }))
   return (
     <>
-      <section data-section="conclusions">
+      <section data-section="conclusions" data-short="">
         <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
           <Stat value={usd(last.paid)} tone="var(--series-cost)">reimbursed in FY{last.fy}, on {usd(last.eligible)} of eligible costs</Stat>
           <Stat value={n0(last.children)}>children claimed &mdash; {n0(Math.max(...d.series.map(y => y.children)))} at the most</Stat>
@@ -68,6 +69,8 @@ function Report({ d }: { d: Payload }) {
         <Grain>{d.grain}</Grain>
         <Conclusions rows={d.conclusions} />
       </section>
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       <section data-section="categorical">
         <H2>The money, year by year</H2>
@@ -157,8 +160,9 @@ function Report({ d }: { d: Payload }) {
         </div>
         <NotEstablished rows={d.not_established} closes="The district’s own out-of-district placement list by setting and cost, which it holds and does not publish." />
         <Provenance sources={d.sources} />
-        <MoreReports here={TAB} />
       </section>
+      </FullVersion>
+      <MoreReports here={TAB} />
     </>
   )
 }

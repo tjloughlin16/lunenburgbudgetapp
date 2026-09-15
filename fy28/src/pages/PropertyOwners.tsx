@@ -1,4 +1,5 @@
 import { Bar, BarChart, CartesianGrid, ComposedChart, ErrorBar, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { FullVersion } from '../components/FullVersion'
 import type { Tab } from '../routes'
 import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
@@ -69,7 +70,7 @@ function Report({ d }: { d: Payload }) {
   const byLabel18 = Object.fromEntries(c18.bands.map(x => [x.label, x]))
   return (
     <>
-      <section data-section="conclusions">
+      <section data-section="conclusions" data-short="">
         {/* THE DENOMINATOR FIRST, then the two things that changed, then the neighbours. TJ:
             "we need the total homes first to understand other context." */}
         <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
@@ -80,6 +81,8 @@ function Report({ d }: { d: Payload }) {
         <Grain>{d.grain}</Grain>
         <Conclusions rows={d.conclusions} />
       </section>
+      {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
+      <FullVersion>
 
       <section data-section="categorical">
         <H2>The average home, every year the state has published</H2>
@@ -214,8 +217,9 @@ function Report({ d }: { d: Payload }) {
       <section data-section="raw">
         <NotEstablished rows={d.not_established} closes="Census PUMS microdata for the PUMA containing Lunenburg — tenure, year moved in and income per household, at the cost of covering several towns at once." />
         <Provenance sources={d.sources} />
-        <MoreReports here={TAB} />
       </section>
+      </FullVersion>
+      <MoreReports here={TAB} />
     </>
   )
 }
