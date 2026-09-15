@@ -192,6 +192,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--strict', action='store_true', help='also fail pages with no short version')
+    ap.add_argument('--allow-growth', action='store_true', help='write even though a short version grew past its budget')
     a = ap.parse_args()
     out, rows = render()
     previous = list(csv.DictReader(open(OUT, encoding='utf-8'))) if os.path.exists(OUT) else []
@@ -214,6 +215,11 @@ def main():
         return 0
     for f in fails:
         print('BUDGET ' + f)
+    if fails and not a.allow_growth:
+        # Refusing to write is what keeps the ratchet a ratchet: a write that moved the
+        # baseline would let the next --check pass on a page that just got longer.
+        print('not written: shrink the short version, or pass --allow-growth to move the baseline on purpose')
+        return 1
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w', encoding='utf-8') as fh:
         fh.write(out)
