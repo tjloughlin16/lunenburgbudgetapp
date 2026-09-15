@@ -148,14 +148,25 @@ export default function Search() {
     const params = new URLSearchParams({ q: asked })
     if (board) params.set('board', board)
     if (since) params.set('since', since)
-    fetch(`${API}?${params}`)
-      .then(async r => {
-        const j = await r.json() as Payload
+    // For about half a minute after a deploy the static site is live before the API
+    // function is, and /api/search answers with the page's own HTML. TJ hit exactly that
+    // (15 Sep: "Unexpected token '<', '<!doctype'"). Read the body as text, and if it is
+    // not JSON, wait a few seconds and try once more before saying anything.
+    const ask = (attempt: number): Promise<Payload> => fetch(`${API}?${params}`).then(async r => {
+      const text = await r.text()
+      try { return JSON.parse(text) as Payload }
+      catch {
+        if (attempt < 2) return new Promise(res => setTimeout(res, 4000)).then(() => ask(attempt + 1))
+        throw new Error('The site was just updated and the search is still coming back up — try again in a moment.')
+      }
+    })
+    ask(0)
+      .then(j => {
         if (!alive) return
         if (j.error) setErr(j.message || j.error)
         setData(j)
       })
-      .catch(e => { if (alive) setErr(String(e)) })
+      .catch(e => { if (alive) setErr(e instanceof Error ? e.message : String(e)) })
       .finally(() => { if (alive) setBusy(false) })
     return () => { alive = false }
   }, [asked, board, since])
