@@ -974,5 +974,379 @@
    "at": "2026-09-14T01:00:53Z",
    "cost_usd": 0.1651694
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04162025-7171",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-04-16-minutes-7171.txt",
+   "path": "sources/meetings/school-committee/2025-04-16-minutes-7171.pdf"
+  },
+  "official_sha256": "0ebd8e78e921aa43c2299f0113da700847cef5712867c9c422c82857d4d797d1",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the sequence of motions, seconds and outcomes for nearly every warrant-article and routine vote, and most \"mismatches\" are just captioning garbling names and digit strings that the official minutes render correctly. The things a reader should actually check are: the Article 28 (Marshall Park) vote count (3-2 in ours vs. 4-1 in the official), a FinCom/free-cash motion the official minutes record that ours does not, an outcome-unclear school-choice and second-read-policies vote in ours where the official states a clean \"all approve,\" and the fact that the official minutes are a narrative summary that drops almost every dollar figure from the Turkey Hill, municipal-building, student-activity-fee and FY26-budget presentations that our caption-derived minutes captured.",
+  "counts": {
+   "agree": 20,
+   "caption_error": 11,
+   "discrepancy": 2,
+   "only_in_ours": 14,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Leighton (chair)",
+    "official": "Brian Lehtinen, Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname; same person/role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Bzowski's name",
+    "ours": "Mrs. Bzowski (also heard as Broski/Rosowski)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Misheard surname; captions never landed on the correct spelling."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Arshambo's name",
+    "ours": "Mrs. Arshambo (also heard as Ashimo/Ashabo/Arshab)",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Misheard surname across multiple attempts."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Scholrini's name",
+    "ours": "Mr. Scholrini (also heard as Schoolbrini/Scholbrini/Skull Brady)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Misheard surname; also missing his Vice Chair title in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Dr. Gilson's name",
+    "ours": "Dr. Gillson",
+    "official": "Dr. Susan Gilson – Director of Administration and Finance",
+    "official_reading": "Dr. Susan Gilson",
+    "note": "One-letter misspelling; her title/role is also absent from our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Michael Ray Jefferies' name",
+    "ours": "Michael Ray Jeff",
+    "official": "Michael Ray Jefferies – Select board Vice Chair",
+    "official_reading": "Michael Ray Jefferies",
+    "note": "Surname truncated by captions; his Select Board role also missing in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Architect's name",
+    "ours": "Kaya Sasta (Ka)",
+    "official": "Kaja Savasta – CSS Architects Inc.",
+    "official_reading": "Kaja Savasta",
+    "note": "Both first and last name misheard."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Mr. Santry",
+    "ours": "Mr. Santry (administrator, presenter on student activity fees)",
+    "official": "",
+    "note": "Official minutes list no guest by this name and give no presenter detail for the student-activity-fee item at all; check whether this name is real or a caption artifact."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept both donations",
+    "ours": "[t=692] Accept both donations ($800 Parel family; $1,000 anonymous) — passed roll call all yes",
+    "official": "Mr. Beardmore makes a motion to accept both donations with gratitude, Ms. Archambault seconds the motion all approve via roll call",
+    "note": "Same motion, second and unanimous roll-call outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "STEM donor family name",
+    "ours": "Parel family",
+    "official": "A donation in the amount of $800 for the Parilla family",
+    "official_reading": "Parilla family",
+    "note": "Misheard surname; dollar amount ($800) matches exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants total",
+    "ours": "[t=630] Warrants: $368,970.31",
+    "official": "Warrants 3/27/25 to 4/14/25 $368,097.31",
+    "official_reading": "$368,097.31",
+    "note": "Digits transposed (970 vs 097) — a captioning digit-order error rather than a different figure; still worth a spot check against the warrant."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Individual roll-call names for transfer vote",
+    "ours": "Beardmore yes, Arshambo yes, Scholrini yes, Leighton yes",
+    "official": "",
+    "note": "Official only records \"all approve via roll call\" without naming each yes vote; not a conflict, just less detail."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Salary reserve transfer amount",
+    "ours": "$311,4169",
+    "official": "A third transfer from the school salary reserve line of $311,041.69",
+    "official_reading": "$311,041.69",
+    "note": "A digit appears dropped/reordered in the caption; same transfer, same purpose."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Equipment maintenance and lease line total",
+    "ours": "[t=1047] Equipment maintenance and lease line: $83,500",
+    "official": "",
+    "note": "Official minutes do not state this running total for the line."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Turkey Hill ADA study report as draft",
+    "ours": "[t=8511] Accept as a draft — passed",
+    "official": "Ms. Brzozoski makes a motion to accept the report as a draft, Mr. Beardmore seconds the motion all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: FinCom memo approval",
+    "ours": "[t=9089] Approve the memorandum to the finance committee as presented — passed unanimously",
+    "official": "Mr. Beardmore makes a motion to approve the memo to the finance committee as presented, Ms. Brzozoski seconds the motion all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote: move forward with free-cash recommendations",
+    "ours": "",
+    "official": "Mr. Brzozoski makes a motion to move forward with the recommendations for free cash, Mr. Sculimbrene seconds the motion all approve",
+    "note": "A second, distinct vote follows the FinCom-memo vote in the official minutes that our minutes do not record at all — check the recording around t=9089-9200 for a second motion."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: recommend Article 7 (FY25 closeout deficits)",
+    "ours": "[t=11592] passed",
+    "official": "Mr. Beardmore makes a motion to support Article 7, Mr. Sculimbrene seconds the motion all in favor",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: recommend Article 8 option 2 (FY26 capital program)",
+    "ours": "[t=11655] passed",
+    "official": "Mr. Sculimbrene makes a motion to support Article 8 option 2, Ms. Brzozoski seconds the motion all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: recommend Article 9 (special projects/TC Pasios)",
+    "ours": "[t=11697] passed",
+    "official": "Mr. Sculimbrene makes a motion to support article 9, Ms. Brzozoski seconds the motion, all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article 11 citizens petition override",
+    "ours": "[t=11742] withdrawn, no vote taken",
+    "official": "Article 11 is the citizens petition for the override – no motion",
+    "note": "Both agree no vote occurred."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: recommend Article 12 (free cash supplement)",
+    "ours": "[t=11824] passed",
+    "official": "Mr. Beardmore makes a motion to support article 12, Mr. Sculimbrene seconds the motion all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: Article 28 Marshall Park debt exclusion",
+    "ours": "[t=12576] passed 3-2",
+    "official": "the motion passes 4-1 with Mr. Beardmore voting no",
+    "note": "Vote counts differ (3-2 vs 4-1) — check the roll call/recording directly to determine the true tally and which members dissented."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article 29 municipal building design debt exclusion",
+    "ours": "[t=12640] passed 4-1",
+    "official": "motion passes 4-1 with Mr. Sculimbrene voting no",
+    "note": "Vote count matches; only the official names the dissenting member (Sculimbrene), which ours omits."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: superintendent finalist interview scheduling",
+    "ours": "[t=13716] two interviews week of April 28, two week of May 5, deliberation May 7 — passed",
+    "official": "Ms Archambault makes a motion for Alicia to see if she can schedule two candidates the week of the 28th and two candidates the week of the 5th, Mr. Sculimbrene seconds the motion all approve",
+    "note": "Matches; the May 7 deliberation date is separately listed among official's upcoming dates rather than tied to this motion, but is not a conflict."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Student rep asking questions during interviews",
+    "ours": "[t=14049] motion/second made but no vote actually taken; replaced by separate student-led interview block",
+    "official": "",
+    "note": "Official minutes do not mention this discussion at all; our note that no vote occurred is consistent with its absence from the official record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: second read of policies",
+    "ours": "[t=14364] \"Approve the second read of the policies\" — not audible, no outcome stated",
+    "official": "Mr. Sculimbrene makes a motion to waive second read, Mr. Beardmore seconds the motion all approve",
+    "note": "The motion itself is described differently (approve vs. waive second read) and the official states a clear unanimous outcome that ours lacks — check the recording around t=14364 for the actual wording and result."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: table the Reports item",
+    "ours": "[t=14427] passed",
+    "official": "Mr. Sculimbrene makes a motion to table reports, Ms. Brzozoski seconds the motion all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision to table the LMBDC presentation until Zoom presenter arrived",
+    "ours": "[t=2639] tabled with no objection until presenter arrived on Zoom",
+    "official": "",
+    "note": "Official just describes the LMBDC presentation as given, with no mention of a delay."
+   },
+   {
+    "kind": "agree",
+    "about": "Memo to be turned into a town-meeting handout",
+    "ours": "[t=9089] superintendent to revise memo into a handout, circulate for feedback rather than a second formal vote",
+    "official": "it was suggested it be printed and available to the public and at town meeting",
+    "note": "Consistent."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Separate student-led interview block for candidates",
+    "ours": "[t=14302] two student reps to coordinate a separate student-led interview segment during site-visit day",
+    "official": "",
+    "note": "Official minutes do not describe this arrangement."
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 minimum aid per student figures",
+    "ours": "[t=108] $75 per student rising to $150 per student",
+    "official": "minimum aid to school raising from the $75 per student to $150",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "\"Charter school reimbursement: 100%\"",
+    "ours": "[t=149] Charter school reimbursement: 100%",
+    "official": "",
+    "note": "No official statement about charter-school reimbursement exists; likely a caption conflation with the separate 100% regional-transportation reimbursement figure discussed later — verify against the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Out-of-district placement transportation reimbursement",
+    "ours": "[t=173] 75%",
+    "official": "potential for 75% of all required out of district placement eligible for reimbursement",
+    "note": "Matches, from Archambault's public comment."
+   },
+   {
+    "kind": "agree",
+    "about": "Supplemental FY25 state budget H410 total",
+    "ours": "[t=445] 1.3 billion",
+    "official": "allocates a one-time 1.3 billion FY24 fair share amendments tax surplus",
+    "note": "Matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Regional school transportation reimbursement",
+    "ours": "[t=465] 100%, 80, 82%",
+    "official": "a full 100% reimbursement for FY25 regional transportation up from 82%",
+    "official_reading": "100%, up from 82%",
+    "note": "The extra \"80\" figure appears to be a garbled repeat of \"82\" picked up twice by captions."
+   },
+   {
+    "kind": "agree",
+    "about": "Circuit breaker (out-of-district special ed transportation) reimbursement",
+    "ours": "[t=465/485] 75%, up from 44%",
+    "official": "a 75% reimbursement increased from 44% for FY out of district special education transportation cost through circuit breaker",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "State earmarks for Lunenburg schools",
+    "ours": "[t=505] 50,000",
+    "official": "$50,000 in earmarks for Lunenburg Public Schools",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Chromebook repair parts price increase",
+    "ours": "[t=2152] 54%",
+    "official": "the prices went up 54% due to tariffs",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Town meeting bagged lunch price",
+    "ours": "[t=2197] $8",
+    "official": "cost will be $8",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Potential position restorations",
+    "ours": "[t=2283] nine",
+    "official": "We should be able to restore 9 positions if all of them pass",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Student activity fee figures",
+    "ours": "[t=2742-3189] fees $55/$70, enrollment basis 346 students/77%/23%, historical fee $35",
+    "official": "The committee has been provided an update in their folder regarding the progress that has been made thus far.",
+    "note": "Official summarizes this agenda item in one sentence with no figures at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill renovation vs. replacement cost estimates",
+    "ours": "[t=6754] 16 million (renovation) vs. 100 million (replacement)",
+    "official": "",
+    "note": "Official describes only that costs/scenarios were presented, without figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill detailed system cost estimates (sprinkler/HVAC/electrical/roof-window)",
+    "ours": "[t=6943-7715] sprinkler ~$2M; HVAC $2-8M; electrical $700-800K; roof/window $2.25-2.6M with 50% MSBA reimbursement",
+    "official": "",
+    "note": "None of these figures appear in the official minutes' one-paragraph summary of the ADA study presentation."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill total study cost estimate",
+    "ours": "[t=7420] $16.57 million",
+    "official": "",
+    "note": "Not stated in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 budget specifics discussed (AD/AP restoration, offsets, grants at risk, mini-split gap, unemployment reserve, business manager line)",
+    "ours": "[t=9518-10526] $43,000 position restoration; $20,000 AD salary offset; $694,000 Title I/SpEd grants at risk; $23-25,000 mini-split gap; unemployment reserve 30%/30 weeks/$200,000/$25,000; $20,000 business manager line",
+    "official": "The committee discusses the FY 26 budget, position cuts, unemployment costs.",
+    "note": "Official gives only a one-line topic summary with no figures for any of this."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Article 29 municipal building debt exclusion figures",
+    "ours": "[t=12598] 18.3 million, 22,422,9898",
+    "official": "",
+    "note": "Official gives no figures for Article 29; the second figure in ours (22,422,9898) also looks internally garbled and should be checked against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Article 11 citizens petition override amount",
+    "ours": "[t=11720] 2,992,99,337",
+    "official": "",
+    "note": "No motion was made on Article 11 so official gives no figure; ours also appears garbled by captions and should be verified against the recording if the figure matters."
+   }
+  ],
+  "quotes_not_in_official_dropped": 11,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:03:36Z",
+   "cost_usd": 0.36391039999999997
+  }
  }
 }

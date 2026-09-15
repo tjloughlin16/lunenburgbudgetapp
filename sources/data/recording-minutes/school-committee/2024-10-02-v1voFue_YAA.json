@@ -546,5 +546,277 @@
    "at": "2026-09-14T01:53:51Z",
    "cost_usd": 0.1460254
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10022024-6798",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-10-02-minutes-6798.txt",
+   "path": "sources/meetings/school-committee/2024-10-02-minutes-6798.pdf"
+  },
+  "official_sha256": "aaeeadc0c6c2c09a8eb44cb813a03f815e8ef4685167c81288c8fb3952f867c9",
+  "coverage": "partial",
+  "summary": "The two records agree on the core actions of the night — the LEAF nomination, the facilities report acceptance, the third-read policies, and the general shape of the TC Pasos and comfort-dog discussions — but our minutes are built from misheard captions (names and several policy/dollar figures) while the official minutes are a hand-written narrative that omits most dollar figures and several decisions (BCBA staffing, budget-scenario timeline, specific goal wording) that our recording-based minutes captured. The single item most worth checking is the Spain trip vote and the third-read policy list, where the official record shows a different vote composition (an abstention) and a different set of policy numbers than ours does.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 7,
+   "discrepancy": 6,
+   "only_in_ours": 9,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Mr. Leon (chair)",
+    "official": "Brian Lehtinen, Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Captions rendered 'Lehtinen' as 'Leon'; same person, chair role agrees."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Secretary's name",
+    "ours": "Miss Areno (member)",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Captions misheard 'Archambault' as 'Areno'; role (secretary) not captured in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's name",
+    "ours": "Mr. Scalini (also heard as \"Mr. Scul Bre\") (member); Anthony (member, as addressed)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Ours split one person into two attendee entries ('Scalini'/'Scul Bre' and 'Anthony') because captions caught his first name and mangled last name separately; both refer to Sculimbrene, Vice Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Brzozoski's name",
+    "ours": "Ms. Brazowski (member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same person, name misheard phonetically."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sixth attendee 'Ms. Praski'/'M. Pelski'",
+    "ours": "Ms. Praski (also heard as \"M. Pelski\") (member)",
+    "official": "",
+    "note": "The official roster lists only five School Committee members (Lehtinen, Sculimbrene, Archambault, Beardmore, Brzozoski) with no sixth name close to 'Praski'/'Pelski'; check the recording to see whether this is a garbled duplicate of an existing member or an actual sixth attendee (e.g., a guest) omitted from the official roster."
+   },
+   {
+    "kind": "agree",
+    "about": "Beardmore attendance",
+    "ours": "Mr. Beardmore (member)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Superintendent attendance",
+    "ours": "Dr. Burnham (superintendent)",
+    "official": "Dr. Kate Burnham",
+    "note": "Matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police lieutenant's name",
+    "ours": "Lieutenant Tibido (also heard \"Jeff Lber\")",
+    "official": "Lt. Thibodeau – Lunenburg Police Dept",
+    "official_reading": "Lt. Thibodeau",
+    "note": "Same guest, surname misheard by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Second SRO officer's name",
+    "ours": "Officer Cam Monroe (school resource officer, presenter)",
+    "official": "our second SRO Officer Kam Munroe",
+    "official_reading": "Kam Munroe",
+    "note": "First name 'Cam' vs 'Kam' and surname spelling are caption variants of the same name."
+   },
+   {
+    "kind": "agree",
+    "about": "Comfort dog handler",
+    "ours": "Officer McNamara (\"mcnamer\") (K9/comfort dog handler, presenter)",
+    "official": "Mr. McNamara volunteers Hank to the district",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "World Language teacher guest",
+    "ours": "Lynn Radford (World Language teacher, presenter)",
+    "official": "Lynn Radford – World Language Teacher",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Facilities administrator (Turkey Hill ADA)",
+    "ours": "Dr. Gilson (administrator (led Turkey Hill ADA study procurement))",
+    "official": "Dr. Gilson shares where they are at in the process of Turkey Hill ADA compliance work",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Policy liaison",
+    "ours": "Miss Peterson (policy liaison)",
+    "official": "Ms. Peterson confirms there has been no feedback on any of the policies.",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recording secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Not the kind of attendee our minutes track (staff, not committee), but note for completeness."
+   },
+   {
+    "kind": "agree",
+    "about": "LEAF representative nomination vote",
+    "ours": "Nominate Ms. Brazowski as school committee representative to LEAF (Lunenburg education accelerator foundation) — passed",
+    "official": "Ms. Archambault makes a motion to nominate Ms, Brzozoski as the school committee representative for LEAF, Mr. Beardmore seconds the motion, all approve",
+    "note": "Same vote and outcome; only the name spelling differs (caption error, noted separately)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Spain trip date-change vote composition",
+    "ours": "[t=4203] Allow the Spain trip to start one day earlier to reduce costs — passed",
+    "official": "Mr. Sculimbrene makes a motion to approve the change, Ms. Archambault seconds the motion, Mr. Beardmore abstains, the motion is approved.",
+    "note": "Official records Mr. Beardmore abstaining; ours records simply 'passed' with no mention of an abstention — check the recording around t=4203 for whether an abstention was voiced."
+   },
+   {
+    "kind": "agree",
+    "about": "Facilities and grounds report acceptance vote",
+    "ours": "[t=4956] Accept the facilities and grounds update report — passed",
+    "official": "Mr. Sculimbrene makes a motion to accept the report, Ms. Brzozoski seconds the report, motion is approved",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Third-read policy numbers approved",
+    "ours": "Approve policies 1408, 5717, 3503, 356, 3502, 3501 and 35301 (third reads) — passed",
+    "official": "Ms. Brzozoski makes a motion to approve policies 1408, 5717, 3503, 3506, 3503.02, 3501.01, 3501, & 3503.01, Mr. Beardm ore seconds the motion all approve.",
+    "note": "The two lists share 1408, 5717, 3503, 3501 but otherwise diverge (ours: 356, 3502, 35301; official: 3506, 3503.02, 3501.01, 3503.01) and differ in count (7 vs 8) — this goes beyond a simple misheard digit and should be checked against the actual policy documents read at the meeting."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Line item transfers/warrants figure",
+    "ours": "[t=596] Line item transfers and donations for the evening — none (discussed only - none this evening)",
+    "official": "9/16/24-09/28/24 $224,314.51 No line item transfers, warrants have been signed.",
+    "note": "Both agree there were no line-item transfers, but only the official minutes give the warrant total ($224,314.51) for the period; ours omits the figure entirely."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Comfort dog Hank funding figures",
+    "ours": "[t=1003] Comfort dog Hank - care/training funding: $1,572 47, $19,000",
+    "official": "",
+    "note": "Official describes the Hank presentation narratively with no dollar figures at all — check the recording near t=1003 to confirm these amounts were actually stated."
+   },
+   {
+    "kind": "agree",
+    "about": "TC Pasos building operational deficit",
+    "ours": "[t=2541] TC Pasos building operational deficit: $90,000",
+    "official": "there was a $90,000 debt for the building",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "TC Pasos rent/upkeep figure",
+    "ours": "[t=2562] School rent/upkeep at TC Pasos: $27,000",
+    "official": "",
+    "note": "Not mentioned in official narrative of the TCP discussion; check the recording to confirm this figure was stated (distinct from the $90,000 debt)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Leasing vs staying at TC Pasos figure",
+    "ours": "[t=3357] Leasing space vs. staying at TC Pasos: 27k",
+    "official": "",
+    "note": "Appears to duplicate the $27,000 figure above; official gives no leasing-cost figure at all."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Spain trip airfare/savings figures",
+    "ours": "[t=3903] Spain trip airfare increase: $800, $350, $700",
+    "official": "This would be approximately a $350 savings",
+    "note": "Only the $350 figure is corroborated by official text; the $800 and $700 figures are not mentioned — check the recording around t=3903 to see what those numbers referred to (e.g., original vs. new airfare) since they are not obviously misheard digits of $350."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance cost per FTE",
+    "ours": "[t=8706] Health insurance cost per full-time position: $24,000, $224,000",
+    "official": "",
+    "note": "The official summary of the FY26 healthcare discussion (item e) gives no dollar figures at all; check the recording to confirm these amounts were actually stated."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant mailing cost",
+    "ours": "[t=12539] Capital planning / warrant mailing costs: $2 to $5,000",
+    "official": "it costs $2,000-$5,000 a year",
+    "official_reading": "$2,000-$5,000 a year",
+    "note": "Captions dropped the thousands grouping on the low end ('$2' instead of '$2,000'); same fact."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town budget gap figure",
+    "ours": "[t=12644] Town budget gap / possible savings: $1.6 million",
+    "official": "",
+    "note": "No such figure appears anywhere in the official minutes' account of the FinCom or Budget Task Force reports; check the recording near t=12644 for context and source of this number."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 90 DPW truck funds",
+    "ours": "[t=456] Chapter 90 funds for DPW trucks: 27,000",
+    "official": "I also reached out to the DPW director in regards to a public comment about the trucks. Mr. Bernard responded and the response was read out loud",
+    "note": "Official confirms the DPW-trucks topic was raised but states no dollar figure; check the recording near t=456 for the $27,000 amount."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision to explore moving central administration out of TC Pasos",
+    "ours": "[t=3801] Superintendent directed to explore options (including Turkey Hill space, leasing, or splitting offices) for moving central administration out of the TC Pasos building.",
+    "official": "Mr. Lehtinen shares we need to be working on a way to get out of TCP, and leave it to the Superintendent to know her staffing and space needs.",
+    "note": "Both records reflect the same direction to the Superintendent to pursue alternatives to TC Pasos."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision not to cut BCBA positions",
+    "ours": "[t=2792] Committee will not cut the district's two BCBA positions in the FY26 budget planning.",
+    "official": "Mr. Sculimbrene would like to see more BCBAs in a way to stabilize a cost, Dr. Burnham shares at this time the two we have, we believe is supporting the students needs as of now.",
+    "note": "Ours states this as a settled decision not to cut BCBAs; official presents it only as ongoing discussion with no clear vote or commitment — check the recording near t=2792 for whether the committee actually reached a decision or just discussed it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Superintendent to bring budget scenarios by December",
+    "ours": "[t=8233] Superintendent to bring two or three budget scenarios to the committee no later than the first meeting in December.",
+    "official": "",
+    "note": "No such commitment or timeline appears in the official minutes' FY26 budget priorities section (item d); check the recording near t=8233."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Where the healthcare line-item question gets revisited",
+    "ours": "[t=9012] Healthcare line-item relocation question tabled for now; will be revisited during the FY26 budget/healthcare discussion.",
+    "official": "Mr. Sculimbrene will bring this topic up at the next Budget Task Force meeting.",
+    "note": "Ours says the follow-up happens in a future School Committee FY26 budget/healthcare discussion; official says the follow-up is at the (external) Budget Task Force — check the recording near t=9012 for which venue was actually named."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dropping goal four / wordsmithing goal three",
+    "ours": "[t=12141] Committee agreed to drop proposed goal four and to word-smith goal three (communication) further before adopting the FY26 school committee goals.",
+    "official": "The committee discusses and revises their goals.",
+    "note": "Official gives no specifics on which goal was dropped or reworded; check the recording near t=12141 for confirmation of these specific edits."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Facilities goal scope (TC Pasos, Turkey Hill, turf field)",
+    "ours": "[t=10981] School committee goal on facilities will focus specifically on TC Pasos, Turkey Hill, and the turf field rather than all district facility needs.",
+    "official": "The committee discusses and revises their goals.",
+    "note": "Official's goals discussion is a single vague sentence with no facilities-goal detail; check the recording near t=10981."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:34:04Z",
+   "cost_usd": 0.28792399999999996
+  }
  }
 }

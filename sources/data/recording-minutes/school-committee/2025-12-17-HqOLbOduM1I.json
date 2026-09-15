@@ -579,5 +579,354 @@
    "at": "2026-09-13T23:44:30Z",
    "cost_usd": 0.14291740000000003
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12172025-7572",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-12-17-minutes-7572.txt",
+   "path": "sources/meetings/school-committee/2025-12-17-minutes-7572.pdf"
+  },
+  "official_sha256": "b012fbd8ca8c3aeaed38fed7cd7abaa31089c47d7aebfd7c9e2a173c8df33a27",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the items the official minutes actually record — the FY25 variance-statement vote, the \"no line-item transfers\" finding, the warrant total, and most attendee identities (once captioning errors on names are resolved) — but the official minutes are far thinner than ours on the FY27 budget workshop, recording only that it happened rather than any of the ~15 figures discussed, and they omit several planning decisions (vote timing, cut-discussion strategy, override timing) and one item ours misses entirely (Mr. Yapp's resignation from the committee). The one thing worth double-checking first: our minutes have Dr. Fortuna \"addressed informally as Tony,\" but the official minutes give her first name as Jodi and the chair's first name is Anthony — likely a caption mix-up of who was called \"Tony.\"",
+  "counts": {
+   "agree": 4,
+   "caption_error": 7,
+   "discrepancy": 5,
+   "only_in_ours": 22,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "vote on FY2025 budget variance statement",
+    "ours": "make official the Lunenburg School Committee's statement on FY2025 budget variances, pending edits that don't change the theme, tone or message — passed",
+    "official": "Ms. Brzozoski makes a motion to accept the statement regarding FY25 variances and changes, and allowing changes to be made by the chair as long as the message and tone remains the same, Ms. Gilman seconds the motion all approve.",
+    "note": "Same vote and same outcome (approved); wording matches in substance.",
+    "t": 7862
+   },
+   {
+    "kind": "agree",
+    "about": "line item transfers, Dec 3-12 2025 warrant period",
+    "ours": "none this period (discussed only)",
+    "official": "Line Item Transfers None",
+    "note": "Both records agree no line-item transfers occurred that period.",
+    "t": 1455
+   },
+   {
+    "kind": "caption_error",
+    "about": "warrant total, Dec 3-12, 2025",
+    "ours": "two $217,820.97",
+    "official": "Warrants 12/3/25 – 12/12/25 $217,820.97",
+    "official_reading": "$217,820.97",
+    "note": "Captions appear to have doubled or misheard the figure as 'two $217,820.97'; official gives a single total.",
+    "t": 1474
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "prior-year athletics revolving fund transfer",
+    "ours": "prior-year transfer of some athletics revolving fund costs into the general budget — not stated (discussed only)",
+    "official": "",
+    "note": "Official minutes do not mention this transfer at all; check the recording to confirm whether an actual amount was stated.",
+    "t": 2837
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 salaries vs FY26 percent increase",
+    "ours": "5 and a half%",
+    "official": "",
+    "note": "Official minutes summarize the budget workshop ('the committee discusses level service budget information') without stating this figure; verify against the recording.",
+    "t": 3823
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 expenses vs FY26 percent increase",
+    "ours": "7.72%",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 3863
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 total proposed school budget",
+    "ours": "27,935,275",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording, since a headline budget total is normally worth recording.",
+    "t": 3883
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 paraprofessional staffing gap",
+    "ours": "10 paras",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 3924
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 payroll expenditure rate",
+    "ours": "2.5 to 2.7%, 44.6%",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 3966
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 expense budget breakdown",
+    "ours": "$9.9 million, 45%, 40%, 20 to 25%",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 4010
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "special education transportation line",
+    "ours": "1.7 million",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 4062
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "level-service budget increase with health insurance",
+    "ours": "6.2, 6.27%",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 4218
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "health insurance cost impact on budget increase",
+    "ours": "$600 to $700,000",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 4238
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 projected health insurance total",
+    "ours": "$4.4 million, 3.7",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 4319
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 total school budget baseline",
+    "ours": "26287474",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording — this is the base figure other percentages are computed against.",
+    "t": 4360
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cost per new hire (e.g. reading interventionist)",
+    "ours": "72,000, 38,000, 120,000, 100 to 120,000",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 4405
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "eliminating district coaching model, savings",
+    "ours": "$10,000",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 6288
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "athletic medical coverage cost per game",
+    "ours": "$200 range",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 2419
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "athletic gate revenue",
+    "ours": "50 grand, 20 grand, $16,000",
+    "official": "",
+    "note": "Not stated in official minutes; verify against the recording.",
+    "t": 2713
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Harvard doctoral resident (Johnny Reid) placement cost",
+    "ours": "$85,000",
+    "official": "",
+    "note": "Official minutes describe Mr. Johnny Reid's Harvard doctoral residency at length but state no cost figure; verify the $85,000 against the recording.",
+    "t": 1352
+   },
+   {
+    "kind": "caption_error",
+    "about": "PTO blanket fundraiser organization name",
+    "ours": "PTL blanket fundraiser: $30",
+    "official": "Ms. Gilman reports the PTO is selling blankets for $30, we have about 20 left.",
+    "official_reading": "PTO",
+    "note": "Price matches ($30); 'PTL' is a mishearing of 'PTO'.",
+    "t": 7986
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Special Someone Dance ticket counts",
+    "ours": "800 tickets, 400 tickets",
+    "official": "Our special someone dance is the first weekend in February, if anyone would like to sponsor us, we are still looking.",
+    "note": "Official gives no ticket numbers for the dance and instead mentions 'a few tickets left' for the separate SpongeBob movie fundraiser; check the recording to see whether the 800/400 figures were misattributed to the wrong event.",
+    "t": 8088
+   },
+   {
+    "kind": "discrepancy",
+    "about": "attribution of the 'cannot sustain further cuts' statement",
+    "ours": "The committee and superintendent agreed they cannot sustain any further staffing cuts.",
+    "official": "Ms. Squier shares that all buildings are struggling, we are really feeling it this year the repercussions of all of the cuts over the past few years. We cannot cut anything else.",
+    "note": "Official attributes the statement to Ms. Squier (principal) alone, not jointly to the committee and superintendent; check the recording for who said it and whether others voiced agreement.",
+    "t": 6634
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "plan to vote on committee's own budget before town manager's number",
+    "ours": "The committee will aim to vote on its own school committee budget before the town manager issues her budget number.",
+    "official": "",
+    "note": "Not recorded in official minutes; confirm this planning decision against the recording.",
+    "t": 6912
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "approach to discussing budget cuts (broad categories vs named positions)",
+    "ours": "Unlike last year, the committee will discuss needed budget cuts in broad categories rather than naming specific staff positions or people before an override vote.",
+    "official": "",
+    "note": "Not recorded in official minutes; confirm against the recording.",
+    "t": 7301
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "override target town meeting (May vs November)",
+    "ours": "Any override request will target the May town meeting rather than a November special town meeting, because of a higher approval threshold in November.",
+    "official": "",
+    "note": "Official minutes only note a future discussion topic on 'borrowing capacity...not related to overrides,' with no override-timing decision; verify against the recording.",
+    "t": 7447
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who finalizes edits to the FY25 variance statement",
+    "ours": "Members will send their edits on the draft FY2025 budget variance statement directly to Dr. Fortuna to finalize, rather than word-smith it live at the table.",
+    "official": "Ms. Brzozoski makes a motion to accept the statement regarding FY25 variances and changes, and allowing changes to be made by the chair as long as the message and tone remains the same, Ms. Gilman seconds the motion all approve.",
+    "note": "Official minutes say the CHAIR makes the changes, not Dr. Fortuna (the superintendent); check the recording for who was actually named to finalize edits.",
+    "t": 7798
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "named town contacts for borrowing-capacity outreach",
+    "ours": "Jen, Caesar, and possibly Chris Bernard",
+    "official": "",
+    "note": "Official minutes name no specific town contacts for this outreach; verify the names against the recording, since captions are error-prone on names.",
+    "t": 8234
+   },
+   {
+    "kind": "only_in_official",
+    "about": "meeting with Mr. Beardmore about the track",
+    "ours": "",
+    "official": "meet with Mr. Beardmore regarding the track",
+    "note": "Our minutes do not capture this future-discussion item at all."
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair's name",
+    "ours": "Mr. Scullbrren (also heard \"Skullbr\") (chair)",
+    "official": "Anthony Sculimbrene Chair - Present",
+    "official_reading": "Sculimbrene",
+    "note": "Same person (committee chair); captions garbled the surname."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dr. Fortuna's informal nickname 'Tony'",
+    "ours": "Dr. Fortuna (superintendent (addressed informally as \"Tony\"))",
+    "official": "Dr. Jodi Fortuna",
+    "note": "Official gives her first name as Jodi, not a name 'Tony' would shorten; the chair's first name is Anthony (i.e. 'Tony'), so check the recording for whether the nickname was actually directed at the chair, not the superintendent."
+   },
+   {
+    "kind": "agree",
+    "about": "Mandy Gilman attendee",
+    "ours": "Mandy (school committee member)",
+    "official": "Mandy Gilman, Member - Present",
+    "note": "Same person; ours has first name only."
+   },
+   {
+    "kind": "agree",
+    "about": "Laura Brzozoski attendee",
+    "ours": "Laura (school committee member)",
+    "official": "Laura Brzozoski, Vice Chair - Present",
+    "note": "Same person; ours omits her Vice Chair title and surname."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "'Liz' committee member",
+    "ours": "Liz (school committee member)",
+    "official": "Emily Young Secretary - Present",
+    "note": "Official minutes list no 'Liz'; the fifth present committee member is Emily Young, Secretary — check the recording for whether 'Liz' is a mishearing or nickname for Emily, or a separate error."
+   },
+   {
+    "kind": "caption_error",
+    "about": "business manager's name",
+    "ours": "Chris (\"C money\", McNamara-sounding) (business manager)",
+    "official": "Christopher McNamara – Business Administrator",
+    "official_reading": "Christopher McNamara",
+    "note": "Same person; ours already flagged the McNamara-sounding caption, confirmed by official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "primary school principal's name",
+    "ours": "Miss Squire (principal)",
+    "official": "Carla Squier-Primary School Principal",
+    "official_reading": "Carla Squier",
+    "note": "Same person; 'Squire' is a captioning misspelling of 'Squier'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "high school principal's name",
+    "ours": "Mr. Sanchry (also heard \"Sanria\") (high school principal)",
+    "official": "Tim Santry-LMHS principal",
+    "official_reading": "Tim Santry",
+    "note": "Same person; captions misheard 'Santry' as 'Sanchry'/'Sanria'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "athletic director's name",
+    "ours": "Shannina Burns (athletic director, presenter)",
+    "official": "Yanina Burns-Athletic Director",
+    "official_reading": "Yanina Burns",
+    "note": "Same person; first name misheard as 'Shannina' for 'Yanina'."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "'Randy' attendee",
+    "ours": "Randy (school committee member / PTO liaison)",
+    "official": "",
+    "note": "No 'Randy' appears among official present members or guests; check the recording — may be a misheard name or a non-member speaker mislabeled as a committee member."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Director of Special Services attendee",
+    "ours": "",
+    "official": "Julianna Hanscom-Director of Special Services",
+    "note": "This guest is entirely absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "THES principal attendee",
+    "ours": "",
+    "official": "Norman Yvon-THES Principal",
+    "note": "This guest is entirely absent from our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:33:44Z",
+   "cost_usd": 0.3003574
+  }
  }
 }

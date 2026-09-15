@@ -556,5 +556,329 @@
    "at": "2026-09-14T00:40:54Z",
    "cost_usd": 0.14127440000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06042025-7251",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-06-04-minutes-7251.txt",
+   "path": "sources/meetings/school-committee/2025-06-04-minutes-7251.pdf"
+  },
+  "official_sha256": "f9242e11db213c23478c3e6a0ab7d6977b21e79a01e101c80cd86bb1bf3439e3",
+  "coverage": "partial",
+  "summary": "The two records agree on every roll-call vote (all six substantive votes match in outcome and 4-1/5-0 tallies) and on the large dollar figures (warrants, transfers, donations), but our minutes carry a great deal of discussion-level detail — the fire alarm date, turf field costs, the TCP rent and PTO-storage asks — that the official minutes never record at all, and in the other direction the official minutes name several guests, the Finance Director search, and the new Assistant Principal hire that our minutes omit entirely. The single thing most worth a person checking is the attendee list: our minutes appear to have split each of the five School Committee members into two separate people (first name and surname captured at different points), and list a \"Tony\" and a \"Mandy...filling in as chair\" that don't match the official roster of who chaired and who was present.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 10,
+   "discrepancy": 0,
+   "only_in_ours": 9,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "vote: accept donations",
+    "ours": "accept all three donations with gratitude — passed 5-0",
+    "official": "Mr. Sculimbrene makes a motion to approve all donations with gratitude, Mr. Yapp seconds the motion, all approve via roll call vote.",
+    "note": "Same vote, same outcome; official omits the numeric tally but records unanimous roll call with 5 present members.",
+    "t": 1002
+   },
+   {
+    "kind": "agree",
+    "about": "vote: line item transfers",
+    "ours": "approve the line item transfers as described in the packet — passed 5-0",
+    "official": "Mr. Sculimbrene makes a motion to approve line item transfers, Ms. Gilman seconds the motion all approve via roll call.",
+    "note": "Matches.",
+    "t": 1284
+   },
+   {
+    "kind": "agree",
+    "about": "vote: FY26 handbooks",
+    "ours": "approve all of the FY26 school handbooks as proposed — passed 5-0",
+    "official": "Mr. Sculimbrene makes a motion to accept the handbook as proposed, Ms. Gilman seconds the motion, all approve via roll call vote",
+    "note": "Official uses singular \"handbook\"; same vote and outcome.",
+    "t": 2470
+   },
+   {
+    "kind": "agree",
+    "about": "vote: School Improvement Plans",
+    "ours": "approve the school improvement plans (SIP) as included in the materials — passed 5-0",
+    "official": "Mr. Sculimbrene makes a motion to approve SIP plans as included in the folder. Ms. Young seconds the motion all approve via roll call vote",
+    "note": "Matches.",
+    "t": 2510
+   },
+   {
+    "kind": "agree",
+    "about": "vote: facilities and grounds report",
+    "ours": "accept the facilities and grounds report — passed 5-0",
+    "official": "Ms. Gilman makes a motion to accept the report, Ms. Young seconds the motion, all approve via roll call vote",
+    "note": "Matches.",
+    "t": 3117
+   },
+   {
+    "kind": "agree",
+    "about": "vote: operating protocols as rules",
+    "ours": "adopt the proposed operating protocols as rules (not guidelines), minus the ban on PowerPoint and minus the requirement to meet in one location — passed 4-1",
+    "official": "Ms. Gilman makes a motion to accept the proposals with the removal of meetings being at one location and ban on PowerPoint and that these are rules and not guidelines as an amendment to the current protocols. Mr. Yapp seconds the motion, Motion passes with 4 approvals and 1 no.",
+    "note": "Matches exactly, including the 4-1 split.",
+    "t": 3844
+   },
+   {
+    "kind": "agree",
+    "about": "transfer amount",
+    "ours": "Year-end line item transfers: $231,912.49 (voted)",
+    "official": "Line Item Transfer $231,912.49 transferred from multiple lines to cover expenses, unemployment, student activities and spring athletics.",
+    "note": "Same figure.",
+    "t": 1077
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "detail of which lines were transferred from/to",
+    "ours": "from underspent lines (general supplies, art, music, guidance, math supplies, salary lines from unfilled positions, custodial and maintenance salary lines) to lines needing more funds (unemployment compensation, mileage reimbursement, spring athletics transportation/stipends, student activities, vacation payout for departing contract employees)",
+    "official": "transferred from multiple lines to cover expenses, unemployment, student activities and spring athletics",
+    "note": "Official summarizes; not a discrepancy, just less detail — worth checking the packet if the specific source/destination lines matter.",
+    "t": 1077
+   },
+   {
+    "kind": "agree",
+    "about": "warrants figure",
+    "ours": "Warrants: $598,262.60",
+    "official": "Warrants 5/19/25-5/29/25 $598,262.6",
+    "note": "Same amount; official is missing a trailing zero, a formatting slip not a different figure.",
+    "t": 887
+   },
+   {
+    "kind": "only_in_official",
+    "about": "STEM supplies donor name",
+    "ours": "",
+    "official": "Lauren Perilla donated $800 to the Primary School for the purchase of STEM supplies for the next school year.",
+    "note": "Ours captured the amount but not the donor's name.",
+    "t": 928
+   },
+   {
+    "kind": "agree",
+    "about": "Box Tops donation amount",
+    "ours": "$31.70",
+    "official": "Box top donation of $31.70 to be deposited in the gift account for future field trips and presentations.",
+    "note": "Matches.",
+    "t": 948
+   },
+   {
+    "kind": "caption_error",
+    "about": "Scholastic Book Fair donation amount",
+    "ours": "$2,3818",
+    "official": "A donation of $2381.08 from the Scholastic Book fair also to be deposited into the gift account at the Primary School",
+    "official_reading": "$2,381.08",
+    "note": "Our figure is garbled/ambiguous digit grouping of the same donation; check the packet to confirm $2,381.08.",
+    "t": 968
+   },
+   {
+    "kind": "caption_error",
+    "about": "unpaid bus fee count",
+    "ours": "1,074, 484",
+    "official": "We have received 1,074 bus requests, and have 494 unpaid at this time.",
+    "official_reading": "1,074 bus requests, 494 unpaid",
+    "note": "The 1,074 matches; \"484\" vs \"494\" is a single-digit caption misread — check the superintendent's report for the correct unpaid count.",
+    "t": 1316
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "fire alarm upgrade contract date",
+    "ours": "Fire alarm upgrade contract: August 15th",
+    "official": "",
+    "note": "Official minutes give no specific date for a fire alarm project; the facilities report is only summarized. Check the facilities report itself for this figure.",
+    "t": 2681
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "turf field feasibility/site study costs",
+    "ours": "60,000, 50,000, 110,000",
+    "official": "",
+    "note": "Not mentioned at all in official minutes, which only summarize the facilities report generically; check the facilities report or FY26 capital materials for these figures.",
+    "t": 2909
+   },
+   {
+    "kind": "only_in_official",
+    "about": "new Assistant Principal/Athletic Director hire",
+    "ours": "",
+    "official": "Yanina Burns will be the part time Assistant Principal and part time Athletic Director for the next school year.",
+    "note": "A substantive personnel item present only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Finance Director search outcome",
+    "ours": "",
+    "official": "There have been two finalists for the Finance Director position, however, both declined due to the salary.",
+    "note": "Substantive fact omitted from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "TCP vacate date moved up",
+    "ours": "",
+    "official": "The move for TCP to Turkey Hill will be happening sooner than expected. A new program will be using our classrooms and we have to be completely vacated by 6/30 instead of 7/15.",
+    "note": "Our minutes reference a related decision (rent proration ask) but not this underlying fact/date change."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: administration authorized to move year-end funds",
+    "ours": "administration will be authorized to move any remaining funds in various lines to designated lines by June 30 as the fiscal year closes out",
+    "official": "",
+    "note": "Official records the transfer vote itself but not this stated standing authorization; check if this was a separate statement or just restating the transfer vote's effect.",
+    "t": 1233
+   },
+   {
+    "kind": "agree",
+    "about": "decision: ask town manager to adjust tri-board meeting dates",
+    "ours": "committee will ask the town manager to restructure the proposed tri-board meeting schedule so fewer new meeting nights are added to the school committee's calendar",
+    "official": "Mr. Sculimbrene asks if we can go back to the town manager to adjust dates to be on dates that some of the meetings are already scheduled versus adding seven meetings for the School Committee.",
+    "note": "Matches in substance.",
+    "t": 1897
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: ask about TCP rent proration",
+    "ours": "request that the town manager address whether the school department's rent at TCP will be prorated given the early, forced vacate",
+    "official": "",
+    "note": "Not recorded in official minutes even though the underlying TCP vacate-date change is mentioned; check the meeting recording near this timestamp.",
+    "t": 2172
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: look for continued PTO storage space after TCP vacate",
+    "ours": "look for a way to accommodate continued PTO storage space, ideally centrally located, after the district vacates TCP",
+    "official": "",
+    "note": "Not recorded in official minutes at all.",
+    "t": 2346
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: Tony to draft budget priorities statement",
+    "ours": "Tony will draft a statement on the committee's budget priorities and circulate it via the superintendent for member feedback before the tri-board meetings",
+    "official": "A statement from the committee to guide our discussions going forward - Budget",
+    "note": "Official lists the topic generally but not who was assigned to draft it or the circulation method.",
+    "t": 4720
+   },
+   {
+    "kind": "agree",
+    "about": "decision: consider MASC workshop on superintendent evaluation",
+    "ours": "consider scheduling an MASC workshop on superintendent evaluation and school committee roles/responsibilities for when the new superintendent starts",
+    "official": "MASC workshop on superintendent evaluations and school committee roles and responsibilities",
+    "note": "Matches.",
+    "t": 4784
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name split into two entries",
+    "ours": "Tony (school committee member (participating remotely/by phone)); Mr. Schoolbriny (school committee member)",
+    "official": "Anthony Sculimbrene Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "\"Tony\" and \"Mr. Schoolbriny\" both appear to be the same person, Anthony Sculimbrene, captured once by first name and once by a mis-heard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's name split into two entries",
+    "ours": "Laura (school committee member); Mrs. Broski (school committee member)",
+    "official": "Laura Brzozoski, Vice Chair - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "\"Laura\" and \"Mrs. Broski\" appear to be the same person, with \"Brzozoski\" misheard as \"Broski.\""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Secretary's name split into two entries",
+    "ours": "Mrs. Young (school committee member); Emily (school committee member)",
+    "official": "Emily Young Secretary - Present",
+    "official_reading": "Emily Young",
+    "note": "Same person captured twice, once by surname and once by first name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Gilman's name split into two entries",
+    "ours": "Mrs. Gilman (school committee member); Mandy (school committee member, filling in as chair)",
+    "official": "Mandy Gilman, Member - Present",
+    "official_reading": "Mandy Gilman",
+    "note": "Likely the same person captured twice; the \"filling in as chair\" note is not supported by the official minutes and should be checked (see chair discrepancy above)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Yapp's name misheard",
+    "ours": "Mr. Yap (school committee member)",
+    "official": "George Yapp, Member - Present",
+    "official_reading": "George Yapp",
+    "note": "Surname misheard/mis-transcribed as \"Yap.\""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "unidentified attendee \"Andy\"",
+    "ours": "Andy (school committee member)",
+    "official": "",
+    "note": "No sixth School Committee member exists in the official roster (only 5: Sculimbrene, Brzozoski, Young, Gilman, Yapp); \"Andy\" is likely a stray caption artifact, possibly of \"Yapp\" — check the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "finance/facilities administrator's name",
+    "ours": "Dr. Gillson (district finance/facilities administrator (covering finance, HR and facilities))",
+    "official": "Dr. Susan Gilson – Director of Administration and Finance",
+    "official_reading": "Dr. Susan Gilson",
+    "note": "Same person; surname misheard as \"Gillson\" instead of \"Gilson.\""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "other guests present",
+    "ours": "",
+    "official": "Tim Santry – LMHS Principal, Norm Yvon -THES Principal, Carla Squier – Primary School Principal",
+    "note": "Three named guests in the official minutes that our attendee list omits entirely."
+   },
+   {
+    "kind": "caption_error",
+    "about": "speaker who honored Dr. Burnham",
+    "ours": "Liz (central office staff, presented superintendent tribute)",
+    "official": "Liz Peterson – reads a letter in honor of Dr. Burnham retirement. Ms. Peterson presents Dr. Burnham with a plaque in honor of her 7 years and a bouquet of flowers.",
+    "official_reading": "Liz Peterson",
+    "note": "Surname missing in ours; role description (\"central office staff\") is also a guess not confirmed by the official minutes, which frame her as a public-comment speaker."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "public comment speaker Carol Archambault",
+    "ours": "",
+    "official": "Carol Archambault – Thanks three retirees for all of their service. Ms. Archambault reads her letter in honor of Dr. Burnham's retirement.",
+    "note": "A named public-comment speaker present only in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "retiring art teacher's first name",
+    "ours": "Karen Giuliani (retiring high school art teacher, honoree)",
+    "official": "Dr. Burnham reports Ms. Karyn Giuliani is retiring from the High School",
+    "official_reading": "Karyn Giuliani",
+    "note": "\"Karen\" vs \"Karyn\" — a misheard first name for the same honoree."
+   },
+   {
+    "kind": "agree",
+    "about": "retiring world language teacher",
+    "ours": "Peggy Proctor (retiring middle/high school world language teacher, honoree)",
+    "official": "Ms. Peggy Proctor is a World Language teacher working with grades 8 through 12, we thank her for her 26 years of service.",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "retiring science teacher",
+    "ours": "Robert Hill (retiring high school science teacher, honoree)",
+    "official": "Mr. Robert Hill is a Science teacher at the high school and has been with us for 26 years.",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "unidentified attendee \"Brian\"",
+    "ours": "Brian (as stated present, role not specified (possibly Select Board liaison))",
+    "official": "",
+    "note": "Not named anywhere in the official minutes' attendee/guest lists; check the recording to confirm whether this person actually spoke or was present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:15:00Z",
+   "cost_usd": 0.2710858
+  }
  }
 }

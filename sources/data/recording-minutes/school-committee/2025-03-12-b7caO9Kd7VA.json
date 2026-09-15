@@ -621,5 +621,302 @@
    "at": "2026-09-14T01:14:59Z",
    "cost_usd": 0.14881540000000001
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122025-7098",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-03-12-minutes-7098.txt",
+   "path": "sources/meetings/school-committee/2025-03-12-minutes-7098.pdf"
+  },
+  "official_sha256": "600a4ad63eba87ffdaab9bf60de6d8fe3b05c36810c0273fa40268e0ede0e564",
+  "coverage": "partial",
+  "summary": "The four substantive votes, the bus-fee rates, and several ski-program cost figures agree closely between the two records, with most differences being caption mis-hearings of names and digit groupings (Lehtinen→\"Leon\", Archambault→\"Ash\", Brzozoski→\"Brazowski\", Santry→\"Sry\", $25,787,474→\"2,787,474\", $1,440→\"13,44/440\"). The two records otherwise diverge in what they cover at all: ours carries many granular dollar figures and several committee \"consensus\" decisions (librarian, curriculum coach, Reggie Lewis shuttle, free-cash directive, fifth-grade teacher) that the official minutes never mention, while the official minutes carry extensive verbatim public comment and one dissenting-vote detail that ours omits — none of these one-sided items are votes, so they are flagged as only_in_ours/only_in_official rather than resolved.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 17,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "vote to table the ski program cut",
+    "ours": "Motion to table the ski program cut until the athletic director can pursue a more equitable cost-sharing arrangement with co-op partner schools — passed",
+    "official": "Ms Brzozoski makes a motion to table the cut to the ski team and give the athletic director an opportunity to negotiate terms with co-op schools, Mr. Lehtinen seconds the motion all approve",
+    "note": "Same motion, same outcome (unanimous); only the mover/seconder names are omitted in ours.",
+    "t": 4271
+   },
+   {
+    "kind": "caption_error",
+    "about": "title of the restructured finance position",
+    "ours": "Motion to accept the superintendent's proposal to restructure the Director of Finance and Administration position as she proposed — passed unanimously",
+    "official": "Ms. Archambault makes a motion to accept the superintendent's proposal to restructure of the Business Finance Director Position, Mr. Lehtinen seconds the motion all approve",
+    "official_reading": "Business Finance Director Position",
+    "note": "Same vote and unanimous outcome; the position's name was rendered differently by the captions than the official title — worth checking the budget document for the position's exact title.",
+    "t": 4333
+   },
+   {
+    "kind": "agree",
+    "about": "bus fee rates and vote outcome",
+    "ours": "Motion to adopt a student bus fee ($180 one child, $270 two or more, $50 reduced-fee) and send the policy, including a waiver safety valve, to the policy subcommittee — passed 4-1",
+    "official": "Mr. Sculimbrene makes a motion to vote on bus fees and send to policy subcommittee for setting rates and language of safety of travel. The rates would be $180 for 1 child, $270 for 2 kids or more and a $50 reduced fee, Ms. Archambault seconds the motion. Motion passes 4:1 with Ms. Brzozoski opposing.",
+    "note": "Rates and 4-1 vote count match exactly.",
+    "t": 5938
+   },
+   {
+    "kind": "only_in_official",
+    "about": "identity of the dissenting vote on the bus fee",
+    "ours": "",
+    "official": "Motion passes 4:1 with Ms. Brzozoski opposing.",
+    "note": "Ours records the 4-1 tally but not who cast the dissenting vote; confirm against the recording's roll call if it matters."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to accept FY26 recommended budget with ski program retained",
+    "ours": "Motion to accept the superintendent's recommended FY26 budget with the change of continuing the ski program, funded by projected bus fee revenue — passed unanimously",
+    "official": "Ms. Archambault makes a motion to accept the superintendents recommended budget with the change of the ski team continuation to be funded by the bus fee $25,787,474 and 3.6% Mr. Beardmore seconds the motion all approve.",
+    "note": "Same motion and unanimous outcome; the dollar total is checked separately below."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ski-program savings redirected into athletic transportation (as originally proposed)",
+    "ours": "Savings from reducing the co-op ski program redirected from the athletic revolving account into the athletic transportation line, as originally proposed in the town manager's budget — 11,000",
+    "official": "",
+    "note": "Not a vote; the official minutes give no budget-mechanics detail at all here. Check the town manager's original budget proposal for this line.",
+    "t": 2256
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "transfer funding the retained ski program from General Ed Transportation",
+    "ours": "Approximately $11,000 shifted from the General Ed Transportation line to the Athletic Transportation line to keep funding the ski program after it was retained — 11,000 (voted)",
+    "official": "",
+    "note": "The official minutes describe the ski continuation only as \"funded by the bus fee,\" with no separate transportation-line transfer mentioned — check the adopted budget document to see whether both funding mechanisms actually occurred.",
+    "t": 7711
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "legal/HR consulting line figure",
+    "ours": "3,28 to 35",
+    "official": "",
+    "note": "No corresponding figure appears anywhere in the official minutes.",
+    "t": 2190
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "band transportation dollar figure",
+    "ours": "th000, 3,000",
+    "official": "",
+    "note": "Official minutes report the band transportation cut only as a percentage (via public comment), not a dollar figure.",
+    "t": 2233
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "athletic transportation line dollar figures",
+    "ours": "91,5, 30,000, 11,000",
+    "official": "",
+    "note": "No matching dollar breakdown for athletic transportation appears in the official minutes.",
+    "t": 2256
+   },
+   {
+    "kind": "agree",
+    "about": "claimed cost per four ski-team students",
+    "ours": "11,000",
+    "official": "four kids - 100% four kids should not be spending $11,000.",
+    "note": "Same figure, from Chris Sullivan's public comment.",
+    "t": 3664
+   },
+   {
+    "kind": "caption_error",
+    "about": "total ski program bill cited in first public comment",
+    "ours": "13,44, 440",
+    "official": "I know the total cost of those bills is $1,440 for this year.",
+    "official_reading": "$1,440",
+    "note": "Captions split $1,440 into two garbled fragments; same underlying figure from Chris Sullivan's earlier comment.",
+    "t": 3664
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "remaining ski program cost figures",
+    "ours": "111,000, 8,575, 4469, 3,170, 9874",
+    "official": "",
+    "note": "These figures have no clear counterpart in the official minutes' public-comment quotes; likely additional cost breakdown numbers or captioning noise — check the recording near t=3664."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "free cash toward school budget via Omnibus article",
+    "ours": "5 thou $500,000, $500,000, 3 500",
+    "official": "",
+    "note": "The official minutes do not discuss a specific free-cash dollar amount for the schools; public comments reference free cash only in general terms."
+   },
+   {
+    "kind": "agree",
+    "about": "new student bus fee rates",
+    "ours": "$180, 270, 50",
+    "official": "The rates would be $180 for 1 child, $270 for 2 kids or more and a $50 reduced fee",
+    "note": "Figures match exactly.",
+    "t": 5960
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "30% figure associated with the new bus fee",
+    "ours": "30%",
+    "official": "",
+    "note": "No corresponding percentage appears in the official minutes' bus-fee discussion; check the recording for what this modifies (e.g., a waiver income threshold).",
+    "t": 5960
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reggie Lewis Center track transportation figures",
+    "ours": "five, 1100, 100",
+    "official": "",
+    "note": "No mention of Reggie Lewis Center transportation costs in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "proposed general athletic transportation fee increase",
+    "ours": "$25",
+    "official": "",
+    "note": "This idea and figure do not appear in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "consensus against a school-specific override this year",
+    "ours": "Following a joint meeting with the Select Board the night before, the school committee reached consensus not to pursue a school-specific override this year, favoring a future townwide override instead.",
+    "official": "The consensus by the school committee was that we were not interested in an override this year. It makes more sense to wait and do a full town override, instead of doing an override this year and still needing one next year.",
+    "note": "Same decision and same stated reasoning."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision not to cut a librarian position",
+    "ours": "Consensus not to cut a librarian position from the budget.",
+    "official": "",
+    "note": "No mention of a librarian position anywhere in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to cut one of two curriculum coach positions",
+    "ours": "Consensus to cut one of two curriculum coach positions, not both.",
+    "official": "",
+    "note": "The official minutes mention a curriculum director only in unrelated public comment (Amy King, wanting more high-school funding); no committee decision on curriculum coaches is recorded."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reggie Lewis Center shuttle/carpool consensus",
+    "ours": "Consensus to pursue a shuttle/carpool arrangement for Reggie Lewis Center track trips rather than a sport-specific fee, and to consider a small general transportation fee increase instead.",
+    "official": "",
+    "note": "No mention of this decision in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "directive to renegotiate ski co-op cost-sharing",
+    "ours": "Directed the athletic director to attempt to renegotiate cost-sharing for the co-op ski program with partner schools before any decision to cut it.",
+    "official": "Ms Brzozoski makes a motion to table the cut to the ski team and give the athletic director an opportunity to negotiate terms with co-op schools",
+    "note": "Captured as part of the tabling motion in the official minutes; same substance."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "directive on structural handling of free cash at town meeting",
+    "ours": "Directed staff to bring clarity, before the next meeting, on how any free cash allocation to the schools would structurally be handled at town meeting.",
+    "official": "",
+    "note": "No such directive is recorded in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision not to restore the fifth-grade teacher position",
+    "ours": "Decided not to restore the fifth-grade teacher position at this meeting given funding uncertainty, per the superintendent's recommendation against relying on projected bus-fee or free-cash revenue for a position.",
+    "official": "",
+    "note": "No mention of a fifth-grade teacher restoration decision in the official minutes, though related class-size and staffing concerns appear in public comment."
+   },
+   {
+    "kind": "caption_error",
+    "about": "the board chair's name",
+    "ours": "Brian Leon (chair)",
+    "official": "Brian Lehtinen, Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "superintendent's attendance",
+    "ours": "Dr. Burnham (superintendent)",
+    "official": "Dr. Kate Burnham",
+    "note": "Same person."
+   },
+   {
+    "kind": "agree",
+    "about": "member Beardmore's attendance",
+    "ours": "Mr. Beardmore (member)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "secretary's name",
+    "ours": "Carol / Ms. Ash (member)",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Misheard surname (\"Ash\" for \"Archambault\")."
+   },
+   {
+    "kind": "agree",
+    "about": "vice chair's attendance",
+    "ours": "Tony (member)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "note": "\"Tony\" is Anthony Sculimbrene, referred to by both first name and surname across the meeting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member Brzozoski's name and title",
+    "ours": "Mr. Brazowski (member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski (referred to throughout as Ms. Brzozoski)",
+    "note": "Both the surname spelling and the gender title were misheard by the captions."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "identity of \"school andrini,\" credited with proposing bus-fee waiver language",
+    "ours": "school andrini (member, proposed bus-fee waiver policy language)",
+    "official": "",
+    "note": "This name matches no one on the five-member committee roster or named guest list in the official minutes; check the recording near the bus-fee vote to identify who actually proposed the waiver language, since it may be a badly garbled rendering of a real speaker's name or role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "the high school principal's name",
+    "ours": "Tim Sry (principal, Middle High School)",
+    "official": "Tim Santry, LMHS Principal",
+    "official_reading": "Tim Santry",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "unnamed Primary School principal presenting class-size data",
+    "ours": "unnamed principal (Primary School principal, presented class-size data)",
+    "official": "",
+    "note": "No Primary School principal or class-size presentation is named in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "athletic director Kevin",
+    "ours": "Kevin (athletic director)",
+    "official": "I would also encourage Kevin to reach out to all the parents having a group conversation",
+    "note": "Same person, referenced by a public commenter in the official minutes as well."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Liz Peterson, business/finance staff",
+    "ours": "Liz Peterson (business/finance staff)",
+    "official": "",
+    "note": "Not named anywhere in the official minutes, including in the motion restructuring the finance position."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:57:52Z",
+   "cost_usd": 0.34595339999999997
+  }
  }
 }

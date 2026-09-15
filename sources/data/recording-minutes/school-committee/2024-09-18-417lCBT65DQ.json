@@ -517,5 +517,226 @@
    "at": "2026-09-14T01:56:20Z",
    "cost_usd": 0.14040840000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09182024-6771",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-09-18-minutes-6771.txt",
+   "path": "sources/meetings/school-committee/2024-09-18-minutes-6771.pdf"
+  },
+  "official_sha256": "6d7b2184803edab6f9e78783cc7af7c66bb993c31fa2f11ff7197d8d28cd6c27",
+  "coverage": "partial",
+  "summary": "The two records agree closely on every routine \"accept the report\" vote, the MART transfer, the TCP deficit, and the $31,000 Chapter 70 warrant article — no substantive conflicts there. The real gaps are: the grant-authorization vote outcome is unconfirmed in ours where official shows unanimous approval, several dollar/percentage figures ours captured (PRISM grant, THES RFP cost, quarterly budget percentages) appear nowhere in official's text-only summary, two names were likely mis-captioned (Brzozoski→\"Peterson\", Bookis→\"Bookas\"), and ours attributes a \"charter compliance\" concern to \"the chair\" even though official lists the chair as absent that night.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Grant authorization vote outcome (Cyber Resilient + PRISM grants)",
+    "ours": "[t=2039] Authorize pursuit of Cyber Resilient Massachusetts grant and PRISM grant — not audible",
+    "official": "Ms. Archambault makes a motion to approve both grants, Mr. Beardmore seconds the motion, all approve",
+    "note": "Our minutes could not confirm from the captions whether/how this vote passed; official records a clear unanimous approval. Check the recording near t=2039 for the actual motion/second/vote language."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of the cyber grant",
+    "ours": "Cyber Resilient Massachusetts grant",
+    "official": "the first is a Cyber Resilient Improvement Grant for $25,000",
+    "official_reading": "Cyber Resilient Improvement Grant",
+    "note": "Likely a mishearing of the grant's actual name; the dollar amount ($25,000) matches, so this looks like a captioned name error rather than a different grant."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of the PRISM grant",
+    "ours": "PRISM literacy grant (with Harvard)",
+    "official": "The second is Prism One Grant, this is a multi-year grant",
+    "official_reading": "Prism One Grant",
+    "note": "Both describe the same second grant discussed by Dr. Bookis; \"PRISM One\" vs \"PRISM literacy... with Harvard\" is likely a captioning garble of the actual program name — check the grant paperwork for its official title."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "PRISM grant figures (27 million, 75%/50%/25%)",
+    "ours": "27 Milli(on), 75%, 50%, 25%",
+    "official": "",
+    "note": "Official gives no dollar figure or percentages for the PRISM grant, only that it is multi-year; verify these numbers against the grant application since captions marked the dollar figure itself as uncertain."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve posting THES engineering assessment RFP",
+    "ours": "[t=3623] Approve posting the Turkey Hill Elementary engineering assessment request for services, with the changes discussed — passed",
+    "official": "Ms. Brzozoski makes a motion to approve the posting of this request, Mr. Sculimbrene seconds the motion all approve",
+    "note": "Same vote and outcome; official's motion text does not mention 'changes discussed' but this is a minor framing difference, not a substantive one."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "THES engineering/feasibility RFP dollar figures",
+    "ours": "275k, $250,000",
+    "official": "",
+    "note": "Official narrative describes Dr. Gilson's document and contacts but states no dollar figures at all for the RFP; confirm these figures against the RFP document itself."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept FY quarterly budget report",
+    "ours": "[t=3879] Accept the FY quarterly budget report — passed",
+    "official": "Ms. Archambault makes a motion to accept this reports, Mr. Sculimbrene seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Quarterly budget report percentage figures",
+    "ours": "15%, 15.2%, 4%, 177%",
+    "official": "",
+    "note": "Official just notes the report was provided and accepted, with no figures stated; check the report itself in the committee folder for these percentages."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept Personnel report",
+    "ours": "[t=3900] Accept the Personnel report — passed",
+    "official": "Mr. Sculimbrene makes a motion to accept the report, Ms. Brzozoski seconds the motion all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept Fall Athletics report",
+    "ours": "[t=4045] Accept the Fall Athletics report — passed",
+    "official": "Mr. Sculimbrene makes a motion to accept the report, Ms. Brzozoski seconds the motion all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept Keystone Collaborative report",
+    "ours": "[t=4065] Accept the Keystone Collaborative report — passed",
+    "official": "Ms. Brzozoski makes a motion to accept the report, Mr. Sculimbrene seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: waive second reading of policies",
+    "ours": "[t=4113] Waive the second reading of the facility, concussion, and Chapter 766 policies — passed",
+    "official": "Ms. Brzozoski makes a motion to waive the second reading of the policies, Mr. Beardmore seconds the motion all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: table School Committee goals discussion",
+    "ours": "[t=4802] Table discussion of school committee goals — passed",
+    "official": "Mr. Beardmore makes a motion to table this topic until the full committee is available, Ms. Archambault seconds the motion, all approve",
+    "note": "Same vote, same outcome; ours specifies it's waiting on Brian, consistent with official noting Brian Lehtinen absent."
+   },
+   {
+    "kind": "agree",
+    "about": "MART ride-service transfer",
+    "ours": "[t=5222] Finance committee transfer into MART ride-service account — $5,000 (voted by finance committee, reported to school committee)",
+    "official": "the MART grant is running out but the committee voted to transfer $5,000 into the account, so they would be able to continue serving some of our kids",
+    "note": "Figures and vote description match."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants total",
+    "ours": "$377,900",
+    "official": "9/3 to 9/13/24 $377,997.08",
+    "official_reading": "$377,997.08",
+    "note": "Same warrant period and rounded amount; the cents and exact hundreds were misheard/rounded in the captions."
+   },
+   {
+    "kind": "agree",
+    "about": "TCP budget deficit",
+    "ours": "[t=5266] TCP (Turkey Hill?) budget deficit: $90,000",
+    "official": "There was a comment TCP is running $90,000 in the red",
+    "note": "Figure matches; ours was unsure what \"TCP\" stands for — official doesn't clarify either, worth checking with the finance committee report for the acronym."
+   },
+   {
+    "kind": "agree",
+    "about": "Special town meeting Chapter 70 supplemental appropriation",
+    "ours": "[t=5308] Special town meeting warrant article - Chapter 70 supplemental appropriation: $31,000",
+    "official": "There will be a warrant article at the special town meeting to appropriate $31,000 to the schools as a supplementary appropriation over the amount of Chapter 70",
+    "note": "Figure and description match."
+   },
+   {
+    "kind": "agree",
+    "about": "PTO grant funding to teachers",
+    "ours": "[t=5605] PTO grant funding to teachers: 20,000, 5,000 per school",
+    "official": "the total amount awarded will be $20,000 ($5,000 per school)",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FY26 budget timeline discussion — \"charter compliance\" issue attributed to the chair",
+    "ours": "[t=4802] No formal action taken on the FY26 budget timeline; it was accepted as informational, with the chair noting a possible charter compliance issue on the timing of the budget's final vote.",
+    "official": "The committee discusses the struggles of having a budget they can balance and vote on, because they have to wait until the health insurance number comes in. Perhaps it is time to move that item off our budget and onto the Towns budget, as the rest of the town departments do.",
+    "note": "Official's summary of this discussion is about the health-insurance timing problem and does not mention a charter compliance issue, and its own header lists Chair Brian Lehtinen as absent, so \"the chair noting\" may be a misattribution (likely Vice Chair Sculimbrene, who ran the meeting); check the recording for who raised the charter point and in what terms."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: school committee member misheard as \"Miss Peterson\"",
+    "ours": "Miss Peterson (school committee member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "No \"Peterson\" appears anywhere in the official roster or narrative, while Brzozoski is present and active throughout (open house, athletics, PACSAL, policy votes) with no counterpart in ours; the name was very likely mis-captioned."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: presenter's name",
+    "ours": "Dr. Bookas (Director of Teaching and Learning, presenter)",
+    "official": "Dr. Bookis, the Director of Teaching and Learning goes through the details",
+    "official_reading": "Dr. Bookis",
+    "note": "Same person and title in both; spelling differs by one letter, consistent with a captioning mishearing."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Vice Chair Sculimbrene",
+    "ours": "Tony (school committee member)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "note": "Same person; \"Tony\" is an informal short form of Anthony, not a mishearing."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Carol Archambault",
+    "ours": "Carol (school committee member)",
+    "official": "Carol Archambault, Secretary - Present",
+    "note": "Same person, first name only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Peter Beardmore",
+    "ours": "Peter (school committee member)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Same person, first name only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Chair Brian Lehtinen's absence recorded formally",
+    "ours": "",
+    "official": "Brian Lehtinen, Chair - Absent",
+    "note": "Ours never lists Brian as an attendee at all (consistent with his absence, referenced only via the goals-tabling vote), but doesn't formally record his absence the way official's header does."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: student representative's name",
+    "ours": "the student representative (student representative)",
+    "official": "Student Representative Kara Harunkiewicz reports for the district",
+    "note": "Ours never captures the student rep's name; check the recording's intro/roll for how it was said if a named record is wanted."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Recording Secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Ours has no equivalent entry for the recording secretary; not a voting member so unlikely to be announced on camera."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:32:27Z",
+   "cost_usd": 0.2597164
+  }
  }
 }

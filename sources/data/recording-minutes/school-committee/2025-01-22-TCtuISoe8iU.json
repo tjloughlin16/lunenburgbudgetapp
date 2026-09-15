@@ -589,5 +589,286 @@
    "at": "2026-09-14T01:32:29Z",
    "cost_usd": 0.1427834
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01222025-6971",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-01-22-minutes-6971.txt",
+   "path": "sources/meetings/school-committee/2025-01-22-minutes-6971.pdf"
+  },
+  "official_sha256": "ad45548ba2dc4ec030be07e4fe92a019f280a8ee71ed931b065ae64d8420b326",
+  "coverage": "partial",
+  "summary": "The two records agree on the core narrative and on the one clean vote (4% preschool tuition), but our minutes carry far more granular budget figures from the presentations that the official summary simply omits, and several names/dates were mangled by captions in ways worth flagging. The one thing to check first: the workshop/search-committee meeting date (ours says Jan 29, official says \"February 29,\" a date that does not exist in 2025) and the MASC search fee ($1,500 in ours vs. $11,500 in official).",
+  "counts": {
+   "agree": 10,
+   "caption_error": 9,
+   "discrepancy": 3,
+   "only_in_ours": 13,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: preschool tuition 4% increase",
+    "ours": "[t=991] Approve the proposed 4% preschool tuition increase for FY26 — passed unanimously",
+    "official": "Mr. Beardmore makes a motion to approve the increase, Ms. Archambault seconds the motion, all approve.",
+    "note": "Same vote, same unanimous outcome, in both records."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants Jan 7-15, 2025 total",
+    "ours": "[t=417] Warrants for January 7-15, 2025 — 3641 426 (not audible)",
+    "official": "Warrants 1/7/25 to 1/15/25 $364,142.06",
+    "official_reading": "$364,142.06",
+    "note": "Same warrant batch; captions dropped the decimal/grouping and the recording secretary flagged it as inaudible. Not a substantive difference."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Central office trailer lease cost range",
+    "ours": "[t=485] Central office trailers: 110 and 150,000",
+    "official": "an approximate cost would be somewhere between $110,000 and $150,000 a year",
+    "official_reading": "$110,000 to $150,000",
+    "note": "Same range, captions dropped the thousands grouping on the low end."
+   },
+   {
+    "kind": "agree",
+    "about": "Preschool tuition increase percentage",
+    "ours": "[t=956] Preschool tuition: 4%",
+    "official": "a request for a 4% increase to tuition in FY26",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY26 Chapter 70 aid figure",
+    "ours": "[t=4257] Chapter 70 state aid (Governor's budget): 9,191 185",
+    "official": "the Lunenburg FY26 local aid distribution for Chapter 70 funding is proposed at $9,191,185",
+    "official_reading": "$9,191,185",
+    "note": "Same figure, captions dropped the comma/thousands grouping."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Unrestricted General Government Aid figure",
+    "ours": "[t=4265] Unrestricted General Government Aid: 1,330 762",
+    "official": "the unrestricted general government aid $1,330,762",
+    "official_reading": "$1,330,762",
+    "note": "Same figure, digit-grouping garble only."
+   },
+   {
+    "kind": "agree",
+    "about": "State aid formula inflation factor",
+    "ours": "[t=4290] Inflation and pupil minimum in state aid formula: 1.93%",
+    "official": "The inflation is 1.93% in all categories",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "A '6.13%' figure tied to the state-aid formula discussion",
+    "ours": "[t=4290] 6.13%",
+    "official": "",
+    "note": "No corresponding figure appears anywhere in the official minutes' account of the state-aid formula; check the recording near t=4290 to see what this percentage referred to, since it may be a caption artifact of something not summarized at all rather than a misheard version of an official figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 total school (override) budget figure",
+    "ours": "[t=5597] FY25 total school budget (override budget): 24,8 5149",
+    "official": "",
+    "note": "Official minutes describe the FY26 presentation only in general terms ('context and a reality check') without stating this total; the garbled digits ('24,8 5149') cannot be reconstructed with confidence from official text alone — check the recording/slide directly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance increase percentage (first mention)",
+    "ours": "[t=5683] Health insurance increase: 12%",
+    "official": "",
+    "note": "Official minutes do not include any health-insurance figures from the FY26 budget presentation."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Special education transportation additions",
+    "ours": "[t=5704] Special education transportation: three additional",
+    "official": "",
+    "note": "Not mentioned in official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletics transportation line budget figures",
+    "ours": "[t=5747] Athletics transportation line: $40,000, slightly more than $100,000",
+    "official": "",
+    "note": "Not mentioned in official minutes; official only references athletic fee discussion in passing under Reports."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Out-of-district tuition growth rate",
+    "ours": "[t=5791] Out-of-district tuition: 3.42%",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance increase scenario percentages",
+    "ours": "[t=6377] Health insurance increase likelihood: 12%, 10%, 6%",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total health insurance budget line",
+    "ours": "[t=6591] Total health insurance line: a little more than 3.7 million",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletic fee increase proposal amount",
+    "ours": "[t=8134] Athletic fee increase proposal: $75 a sport",
+    "official": "",
+    "note": "Official mentions 'the increase in athletic fees' will be discussed at an open meeting for parents but never states the dollar figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletics transportation cost per student",
+    "ours": "[t=8154] Athletics transportation cost per student: 247 per",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "MASC superintendent search service fee",
+    "ours": "[t=9137] MASC superintendent search service cost: $1,500",
+    "official": "this does have a fee of $11,500",
+    "official_reading": "$11,500",
+    "note": "Likely a misheard 'eleven thousand five hundred' captured as '$1,500' — same fact (the MASC fee), garbled by a factor of ten; verify against the recording near t=9137, since this is large enough that it should not be assumed without confirming the audio."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager search consultant cost comparison",
+    "ours": "[t=9179] Town manager search consultant cost (comparison): $155,000, $115,000",
+    "official": "",
+    "note": "No mention anywhere in official minutes of a town manager search consultant cost comparison; check the recording to confirm this figure was actually said and in what context."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "District office move plumbing cost estimate",
+    "ours": "[t=9767] District office move - plumbing costs: under $20,000",
+    "official": "",
+    "note": "Official's District Offices discussion (11c) does not mention plumbing costs."
+   },
+   {
+    "kind": "agree",
+    "about": "Ledger advertisement fee for search committee posting",
+    "ours": "[t=8344] Ledger advertisement for search committee posting: $50",
+    "official": "the Ledger has a $50 fee to advertise, committee agrees it is fine to pay that $50 to have this advertised",
+    "note": "Matches exactly, including the committee's agreement to pay it."
+   },
+   {
+    "kind": "agree",
+    "about": "Central office relocation decision (Turkey Hill over trailers)",
+    "ours": "[t=922] Central office relocation will move forward with the option of occupying space at Turkey Hill Elementary rather than leasing trailers or other properties.",
+    "official": "what we are seeing with the upcoming budget, I think we need to stay closer to a free option of moving into space at Turkey Hill.",
+    "note": "Same underlying direction (Turkey Hill over trailers/lease), though official records it later in the meeting (Old Business, District Offices) as the superintendent's stated direction rather than as an early formal committee decision — a sequencing difference, not a substantive one."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Reason given for tabling the school choice decision",
+    "ours": "[t=8157] The decision on school choice participation for next year will be delayed until after the extent of budget cuts is known, rather than being decided at the next meeting.",
+    "official": "Ultimately the committee decides to table this topic until after the budget is approved, in order to discuss proposed class sizes.",
+    "note": "Both agree the decision is tabled, but the stated reason differs — 'until cuts are known' vs. 'until the budget is approved, to discuss class sizes.' Check the recording near t=8157 for the actual rationale given."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair/vice-chair to compile screening committee applicant feedback",
+    "ours": "[t=8657] Rather than the full committee discussing individual superintendent screening committee applicants publicly, the chair and vice chair (Carol) will compile member feedback and bring forward a joint recommendation.",
+    "official": "",
+    "note": "Official's Search Committee section (11b) does not describe this arrangement at all; check the recording near t=8657 to confirm this was actually decided (also note: 'vice chair' is Anthony Sculimbrene per official roster, not Carol, who is Secretary — worth double-checking who was actually assigned this task)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date of the search-committee workshop meeting",
+    "ours": "[t=8511] A workshop-style meeting will be held on January 29th at 6 p.m. to discuss superintendent search committee membership, listening sessions, and guidance for the screening committee.",
+    "official": "A future meeting for February 29 is planned to further the discussion and vote on committee members and a workshop",
+    "note": "Different dates given, and the official's date (February 29, 2025) does not exist on the calendar — 2025 is not a leap year. Check the recording near t=8511 and the town's posted meeting calendar to establish the real date; this is not a simple digit-grouping issue since 'January' vs 'February' are different words, not different digits."
+   },
+   {
+    "kind": "agree",
+    "about": "Timeline to fully vacate TCP building",
+    "ours": "[t=9705] The school committee affirmed its intent to fully vacate the TCP building space, likely by July, without a formal vote, to relay to the interim town manager.",
+    "official": "The town would like to know definitively when we will be moving out, my thoughts are its going to take a bit of time and it will be over the summer, throughout the month of July.",
+    "note": "Both give July as the target; official frames it as the superintendent's personal assessment rather than a formal committee affirmation, but the substance (July timeframe, no formal vote) matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Leighton (chair)",
+    "official": "Brian Lehtinen, Chair - present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname; same person, same role."
+   },
+   {
+    "kind": "agree",
+    "about": "Member Peter Beardmore",
+    "ours": "Mr. Beardmore (Peter) (member)",
+    "official": "Peter Beardmore, Member – present",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Secretary Carol Archambault",
+    "ours": "Carol (member)",
+    "official": "Carol Archambault, Secretary - present",
+    "note": "Ours gives only a first name but it is the same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Vice Chair Anthony Sculimbrene",
+    "ours": "Mr. Scul / Tony (member)",
+    "official": "Anthony Sculimbrene, Vice Chair - present",
+    "note": "Matches, captions only got a partial surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Fifth committee member's name, captured three different ways",
+    "ours": "Miss Aro (member, liaison to finance committee); Mr. Bowski (member); M. Arell (member)",
+    "official": "Laura Brzozoski, Member - present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Official lists exactly five committee members; four are already accounted for by Lehtinen, Beardmore, Archambault and Sculimbrene, so 'Aro', 'Bowski' and 'Arell' in our minutes are almost certainly three separate caption mis-renderings of the same fifth member, Laura Brzozoski, at different points in the recording — not three additional people."
+   },
+   {
+    "kind": "agree",
+    "about": "Superintendent Dr. Kate Burnham",
+    "ours": "Dr. Burnham (superintendent)",
+    "official": "Dr. Kate Burnham",
+    "note": "Matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "High school principal presenter's name",
+    "ours": "Mr. Sandry (high school principal, presenter)",
+    "official": "Tim Santry – LMHS Principal",
+    "official_reading": "Tim Santry",
+    "note": "Misheard surname; same person and role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Curriculum presenter's name and title",
+    "ours": "Dr. Bookas (presenter, health/PE curriculum lead)",
+    "official": "Dr. Deborah Bookis – Director of Teaching & Learning",
+    "official_reading": "Dr. Deborah Bookis",
+    "note": "Misheard surname; her actual title (Director of Teaching & Learning) is broader than the 'health/PE curriculum lead' description in our minutes, likely inferred from the topic of her presentation rather than heard directly."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dr. Gillson's presence and role at this meeting",
+    "ours": "Dr. Gillson (presenter, transportation/facilities)",
+    "official": "",
+    "note": "Official's guest list for this meeting names only Tim Santry and Dr. Deborah Bookis; a 'Dr. Gilson' is mentioned in official minutes only under Reports (item 12) as someone who will attend a FUTURE open meeting on athletic fees, not as a presenter at this meeting. Check the recording to confirm whether Dr. Gilson actually presented on transportation/facilities at this meeting or whether that reference was misplaced."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:49:45Z",
+   "cost_usd": 0.28741439999999996
+  }
  }
 }

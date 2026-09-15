@@ -422,5 +422,120 @@
    "at": "2026-09-14T00:52:37Z",
    "cost_usd": 0.1340874
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05062025-7193",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-06-minutes-7193.txt",
+   "path": "sources/meetings/school-committee/2025-05-06-minutes-7193.pdf"
+  },
+  "official_sha256": "11de8539ebc5418be4c7ca467cafaef8d2ea817ce805252a2c3aabedf98f2106",
+  "coverage": "official minutes are a summary only",
+  "summary": "The official minutes are a brief procedural summary of the interview format and don't record any of the substantive Q&A content, specific figures, or the scheduling decision our minutes captured; where names overlap, several are simple caption mishearings. The one thing worth checking is School Committee Vice Chair Anthony Sculimbrene: the official roster lists him as present, but our captioned minutes never clearly identify him, instead producing three separate uncertain name guesses (\"Minimal,\" \"Mr. Screen,\" \"Joey\").",
+  "counts": {
+   "agree": 2,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "committee chair's name",
+    "ours": "Brian Leighton (chair)",
+    "official": "Brian Lehtinen, Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Same person, misheard surname by the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "committee secretary's name",
+    "ours": "Carol Shambo (school committee member)",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Same person (Secretary), badly misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "committee member's name",
+    "ours": "Mr. Bzowski (school committee member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Captions caught only a fragment of the surname and missed the first name and gender entirely; same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "superintendent finalist candidate's name",
+    "ours": "Joanie Manard (superintendent finalist candidate / presenter)",
+    "official": "Joanne Menard, Superintendent Finalist",
+    "official_reading": "Joanne Menard",
+    "note": "Both first and last name were misheard; matches the meeting title's spelling 'Menard'."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: Peter Beardmore",
+    "ours": "Peter Beardmore (school committee member)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Name and role match exactly."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "attendance/identity of Vice Chair Anthony Sculimbrene",
+    "ours": "Minimal (school committee member (name uncertain)); Mr. Screen (school committee member (name uncertain)); Joey (school committee member)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "note": "The official minutes list a fifth member, Sculimbrene, whom our captions apparently never named correctly, instead producing three separate garbled/uncertain entries; someone should check the recording to confirm whether all three refer to Sculimbrene, whether he was actually present, and whether any of the three names is a different speaker (e.g., a public commenter) rather than a committee member."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: outgoing/current Superintendent",
+    "ours": "",
+    "official": "Dr. Kate Burnham",
+    "note": "Listed in the official header as Superintendent; our minutes make no mention of her presence or role in this interview session."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: Recording Secretary",
+    "ours": "",
+    "official": "Courtney Fuller",
+    "note": "Administrative role not captured in our minutes, likely because she did not speak on camera."
+   },
+   {
+    "kind": "agree",
+    "about": "community feedback via survey",
+    "ours": "The chair reminded community members they may submit feedback on the candidate via survey, either online or in person.",
+    "official": "Surveys have been sent out to stakeholders to share their input",
+    "note": "Both records confirm a stakeholder survey was in use for candidate feedback."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to hold deliberations the next day",
+    "ours": "The committee set the next day for deliberations on the finalist candidate.",
+    "official": "",
+    "note": "This is a scheduling decision the official summary omits entirely; worth confirming against the board's calendar or a subsequent agenda that such a deliberation session was in fact held."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "capital planning horizon figure",
+    "ours": "Capital planning horizon: three or five years",
+    "official": "",
+    "note": "Substantive interview content the official minutes, being a procedural summary, do not record at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "low-enrollment 'singleton' class sizes",
+    "ours": "Low-enrollment 'singleton' classes: less than 10 kids, six kids, 25",
+    "official": "",
+    "note": "Substantive interview content omitted from the official summary; also note the three numbers (under 10, six, 25) came from captions and should be checked against the recording for possible digit/count mishearing."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:06:57Z",
+   "cost_usd": 0.1765898
+  }
  }
 }

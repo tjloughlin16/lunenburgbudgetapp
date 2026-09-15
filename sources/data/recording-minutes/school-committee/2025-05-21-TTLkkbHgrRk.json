@@ -634,5 +634,273 @@
    "at": "2026-09-14T00:44:47Z",
    "cost_usd": 0.1548464
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05212025-7235",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-21-minutes-7235.txt",
+   "path": "sources/meetings/school-committee/2025-05-21-minutes-7235.pdf"
+  },
+  "official_sha256": "ca57035511799ab321376f4ca3a987779371265f9397b736d663152c7d9f4a29",
+  "coverage": "partial",
+  "summary": "The two records agree closely on every formal motion actually taken — the chair/vice-chair/secretary elections, the subcommittee slate, policy continuation, the student-activity and auditorium-waiver approvals, the grant authorization, the Chapter 70 letter, the operating-protocols motion, the bus-fee policy third read, and the superintendent-contract decision — and the one shared dollar figure (the warrant total) matches exactly. Where they differ, it is mostly that the official minutes are a bare motion log: they omit almost every figure discussed (budget cuts, contract terms, placement counts, health-insurance and circuit-breaker numbers), omit several informal committee commitments made late in the meeting, and separately record one vote — approving the 3/5 and 3/12 minutes, 2 yes/3 abstain — that our minutes do not mention at all.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 3,
+   "discrepancy": 6,
+   "only_in_ours": 10,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "chair's surname",
+    "ours": "Anthony (Tony) (chair, elected during this meeting (surname heard variously as 'Goldy'/'Skolenrini'/'Scoring'))",
+    "official": "Anthony Sculimbrene Chair - Present",
+    "official_reading": "Sculimbrene",
+    "note": "Captions never converged on the actual surname; the official spelling should be used going forward."
+   },
+   {
+    "kind": "caption_error",
+    "about": "vice chair's surname",
+    "ours": "Laura Bzoski (vice chair, elected during this meeting (surname heard variously as 'Broski'/'Bazowski'/'Pazowski'/'Bzowski'))",
+    "official": "Laura Brzozoski, Vice Chair - Present",
+    "official_reading": "Brzozoski",
+    "note": "Same misheard-surname pattern as the chair; official spelling is Brzozoski."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member Yapp's name",
+    "ours": "Mr. Yap (member; named finance committee representative)",
+    "official": "George Yapp, Member - Present",
+    "official_reading": "George Yapp",
+    "note": "Captions dropped the double-p and the first name; otherwise the same person."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "recording secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Our attendee list has no recording-secretary role; not a vote or decision, just an omitted attendee."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "first responders/staff thanked for bus accident",
+    "ours": "",
+    "official": "Thank you Dr. Gilson, Juliana Hanscom, our SRO Brad McNamara, Chief Sullivan from the fire department, Sandra Martin from Dee Bus, and Liz Peterson.",
+    "note": "Ours captures Gillson/Gilson, Hanscom and Liz but not McNamara, Sullivan or Martin — likely a caption gap rather than a substantive dispute."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "superintendent's status as outgoing",
+    "ours": "Dr. Burnham (superintendent (outgoing))",
+    "official": "Dr. Kate Burnham",
+    "note": "Official lists her simply as sitting superintendent with no note about departing; check the recording near the new-contract discussion (t≈8222) to confirm whether 'outgoing' was actually stated or inferred."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "vote to approve 3/5/25 & 3/12/25 minutes",
+    "ours": "",
+    "official": "Ms. Brzozoski makes a motion to approve, Mr. Sculimbrene seconds the motion, the motion passes with two yes's and 3 abstain",
+    "note": "This vote — notable because it was not unanimous — does not appear anywhere in our minutes; check the start of the recording (shortly after call to order) to confirm it occurred as described."
+   },
+   {
+    "kind": "agree",
+    "about": "election of chair",
+    "ours": "[t=612] Elect chair (nominee Anthony Goldy) by roll call — passed",
+    "official": "Ms. Brzozoski makes a motion to nominate Mr. Sculimbrene as Chair Ms. Gilman seconds the motion all approve via roll call vote.",
+    "note": "Same outcome; ours additionally records individual roll-call responses that official omits."
+   },
+   {
+    "kind": "agree",
+    "about": "election of vice chair",
+    "ours": "[t=697] Elect vice chair (nominee Laura Bzoski) by roll call — passed",
+    "official": "Mr. Sculimbrene makes a motion to nominate Ms Brzozoski as Vice Chair, Ms. Young seconds the motion all approve via roll call vote.",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "election of secretary/clerk",
+    "ours": "[t=762] Elect secretary/clerk (nominee Mandy Gilman) — passed",
+    "official": "Ms. Brzozoski makes a motion to nominate Mandy Gilman as Secretary, Mr. Yapp seconds the motion, all approve via roll call vote.",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "acceptance of subcommittee slate",
+    "ours": "[t=2434] Accept the slate of candidates for subcommittee/liaison positions — passed (all in favor)",
+    "official": "Ms. Gilman makes a motion to accept all appointment of subcommittee, Mr. Yapp seconds the motion, all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "continuing existing policies",
+    "ours": "[t=2456] Continue all existing school policies in effect for the ensuing year — passed",
+    "official": "Ms. Brzozoski makes a motion to continue as is Ms. Gilman seconds the motion all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "student activities account authorization vote",
+    "ours": "[t=2511] Approve authorization of funds for student activities accounts in the amounts described — passed",
+    "official": "Ms. Brzozoski makes a motion to authorize annual student activity accounts, Ms. Gilman seconds the motion all approve",
+    "note": "Vote matches; see separate finding on the dollar figures, which official omits."
+   },
+   {
+    "kind": "agree",
+    "about": "auditorium food/beverage waiver",
+    "ours": "[t=2532] Approve a waiver to allow food and beverages with lids in the LMHS auditorium for annual/special town meeting — passed",
+    "official": "Ms. Gilman makes a motion to continue waiver, Mr. Yapp seconds the motion, all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 legislative letter",
+    "ours": "[t=3044] Make the outlined changes to the Chapter 70 legislative letter and send it as a body — passed",
+    "official": "Ms. Brzozoski makes a motion to accept the letter with revisions as stated, Mr. Sculimbrene seconds the motion all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "continuing operating protocols",
+    "ours": "[t=4240] Continue the current operating protocols in effect for one more meeting only, pending a revised draft — passed",
+    "official": "Ms, Brzozoski makes a motion to accept protocols as is and bring back for review at next meeting, Mr. Yapp seconds the motion all approve",
+    "note": "Matches in substance."
+   },
+   {
+    "kind": "agree",
+    "about": "bus fee policy third read",
+    "ours": "[t=7478] Approve the new bus (transportation fee) policy on its third read — passed",
+    "official": "Ms. Brzozoski makes a motion to approve the Bus Fee Policy 3601.01 as written, Ms. Gilman seconds the motion all approve",
+    "note": "Matches; see separate finding on the specific dollar tiers, which official omits."
+   },
+   {
+    "kind": "agree",
+    "about": "disposition of superintendent's contract",
+    "ours": "[t=8038] The committee will proceed with the superintendent's contract as originally negotiated and signed, rather than adopt the attorney's later red-lined revisions or renegotiate.",
+    "official": "The contract has been signed, our lawyer came to us after the fact with multiple changes to the contract. The committee agrees to allow the contract that was ratified to be the final contract",
+    "note": "Matches in substance."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "instruction to copy central-office questions to chair",
+    "ours": "[t=4986] Member questions to central office staff should be copied to the chair so the chair is aware of recurring issues, within open meeting law limits.",
+    "official": "",
+    "note": "No trace of this committee agreement in the official minutes; check the recording near t=4986 to confirm it was an actual decision rather than informal chatter."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "outreach on a November FY27 override special town meeting",
+    "ours": "[t=5723] Committee will email the town manager and the chairs of the select board and finance committee to gauge interest in a November special town meeting FY27 override.",
+    "official": "",
+    "note": "A potentially significant commitment absent from the official minutes entirely; verify at t=5723 whether this was formally agreed or just floated in discussion."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "request for level-services FY27/28 budget projection",
+    "ours": "[t=5974] Superintendent will provide the committee with a level-services FY27/FY28 budget projection incorporating already-settled bus and teacher/para contracts, before the last meeting of the year.",
+    "official": "",
+    "note": "Not recorded officially; check t=5974 to confirm this was a directive to the superintendent and note the deadline (before the last meeting of the year, i.e. before 6/18)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "excluding free-cash funded positions from level-services comparison",
+    "ours": "[t=6014] Level-services budget comparisons will exclude positions funded by free cash, since that funding is one-time and outside the regular budget.",
+    "official": "",
+    "note": "An analytical ground rule not reflected in official minutes; check t=6014 to see if it was stated as committee consensus or one member's suggestion."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "contacting assistant town manager on health insurance comparisons",
+    "ours": "[t=6530] A member will contact assistant town manager Jen Warren to ask how other towns have handled/broken out health insurance in departmental budgets, for comparison purposes.",
+    "official": "",
+    "note": "Not in official minutes; check t=6530 to confirm who was tasked with this follow-up."
+   },
+   {
+    "kind": "agree",
+    "about": "warrant total",
+    "ours": "[t=317] Warrants: $130,589.17",
+    "official": "Warrants 5/6/25 – 5/16/25 $130,589.17",
+    "note": "Exact match, including cents."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "student activities account dollar amounts",
+    "ours": "[t=2477] Student activities account authorization: $2,000, $2,000, $5,000, $10,000",
+    "official": "",
+    "note": "Official records only the motion, no figures; verify the four amounts against the packet since captions can mis-split adjacent dollar figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 70 consultant/reform bill funding figure",
+    "ours": "[t=2629] Chapter 70 reform bill / consultant funding: $250,000",
+    "official": "",
+    "note": "No figure appears in official's brief description of the letter discussion; check the recording at t=2629 for the actual amount and its source."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "staff positions eliminated figures",
+    "ours": "[t=2937] Staff positions eliminated: 39 positions, 28 FTEES, 9.3%",
+    "official": "",
+    "note": "A significant staffing figure with no counterpart in the official minutes at all; verify against a budget document, not just captions, since 39 vs 28 vs 9.3% could be three related but distinct figures easily mis-heard."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "bus/transportation fee tiers",
+    "ours": "[t=7312] Bus/transportation fee policy amounts: $180, $50, $275, $75",
+    "official": "",
+    "note": "Official says only that the policy was read aloud and approved as written, no dollar tiers given; check policy 3601.01 itself for the correct figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "superintendent professional membership cost",
+    "ours": "[t=8017] Superintendent professional membership: $485 a year",
+    "official": "",
+    "note": "Not in official minutes; minor figure, check recording at t=8017 if it matters for budget tracking."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "new superintendent contract terms",
+    "ours": "[t=8222] New superintendent's contract terms: $174,000, three-year term, 2.5%",
+    "official": "",
+    "note": "Official section 10c describes only that the contract was signed and later red-lined by counsel, with no salary, term length or raise percentage; these figures should be checked against the signed contract itself, not the captions."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "out-of-district placement growth figures",
+    "ours": "[t=8842] Out-of-district placement growth impacting FY27 budget: 5 to seven, 48, 49, 414",
+    "official": "",
+    "note": "No corresponding figures in official minutes; the string of numbers is hard to parse from captions alone and should be checked against a special-education placement report."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "health insurance cost comparison figures",
+    "ours": "[t=8322] Health insurance in the school budget vs. town departments: $1 million, $20 million, $48 million, $25 million, 55%",
+    "official": "",
+    "note": "Entirely absent from official minutes; given rule that budget lines are net figures, these should be checked against actual town/school budget documents rather than relied on as heard."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "special ed circuit breaker and state budget figures",
+    "ours": "[t=8951] Special education circuit breaker reimbursement and state budget increases: $600,000, $70,000, 50 grand, 100 grand, 120%",
+    "official": "There may be some money coming through Special Ed Circuit Breaker for the current fiscal year. There is also a one-time millionaire's tax, it could mean some money for Lunenburg.",
+    "note": "Official acknowledges the topic (circuit breaker, millionaire's tax money) but states no figures; the specific dollar amounts in ours should be checked against a state budget line, not treated as confirmed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "transportation form counts",
+    "ours": "",
+    "official": "We have received 1006 transportation forms so far, which is down from 1450 last year.",
+    "note": "A figure from the superintendent's report with no counterpart anywhere in our minutes; likely simply not selected for our figures_as_heard list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:13:06Z",
+   "cost_usd": 0.27011680000000005
+  }
  }
 }

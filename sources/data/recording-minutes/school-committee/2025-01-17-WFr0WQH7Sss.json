@@ -250,5 +250,147 @@
    "at": "2026-09-14T01:33:45Z",
    "cost_usd": 0.13632539999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01172025-6970",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-01-17-minutes-6970.txt",
+   "path": "sources/meetings/school-committee/2025-01-17-minutes-6970.pdf"
+  },
+  "official_sha256": "5b65c2f9687995c717e544e90472f8be03604e293af4385a19c2b068123601fd",
+  "coverage": "partial",
+  "summary": "The two records agree on the two substantive votes' subject and 3-0/unanimous outcome, but each contains material the other omits entirely: ours has four discussion/decision items (community outreach, MASC timing, seat specificity, a possible Jan 29 special meeting) the official minutes never mention, while the official minutes record an executive session vote, a committee-assignment decision, and concrete dates (Jan 31 deadline, Feb 5 appointment) ours never captures. The one place they may actually conflict rather than just diverge in coverage is the appointment timeline: ours describes discussion of an earlier special meeting around Jan 29, while the official minutes state appointment happens at the Feb 5 regular meeting.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: approve internal Superintendent job posting",
+    "ours": "[t=3294] Motion to approve the internal job posting for Superintendent of Lunenburg Public Schools as read by chair Brian Leon - passed 3-0",
+    "official": "Ms. Brzozoski makes a motion to approve the internal job posting, Ms. Archambault seconds the motion, all approve via roll call vote.",
+    "note": "Same motion and unanimous outcome; ours doesn't name the mover/seconder but that's a detail gap, not a conflict.",
+    "t": 3294
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve screening-committee call/description",
+    "ours": "[t=3486] Motion to put out the call for the 12-person superintendent screening committee with the description as written (dates to be adjusted as needed) - passed 3-0",
+    "official": "Ms. Brzozoski makes a motion to approve the screening committee post with potential for dates to be adjusted as needed. Ms. Archambault seconds the motion, all approve via roll call",
+    "note": "Same motion (flexible dates) and unanimous outcome; agree on substance.",
+    "t": 3486
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: 12-person screening committee size",
+    "ours": "12-person superintendent screening committee",
+    "official": "",
+    "note": "Official minutes never state a committee size; check the recording near t=3486 to confirm 12 was actually said, since nothing corroborates it.",
+    "t": 3486
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote: enter executive session",
+    "ours": "",
+    "official": "Ms. Archambault makes a motion to enter executive session, Ms. Brzozoski seconds the motion, all approve via roll call. Return 3:32",
+    "note": "A real roll-call vote at the start of the meeting our minutes do not mention at all; likely occurred before the portion of the recording ours drew from."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision: assignment to search committee",
+    "ours": "",
+    "official": "The school committee assigned Mr. Lehtinen and Ms. Archambault for the search committee.",
+    "note": "Not present in ours; a substantive assignment decision missing from our record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Dates: letter-of-interest deadline and appointment meeting",
+    "ours": "",
+    "official": "You can send your letter of interest to Mr. Lehtinen no later than January 31, 2025 the members will be appointed at the School Committee meeting on February 5th.",
+    "note": "Concrete dates missing from ours entirely."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Timing of screening-committee appointment",
+    "ours": "[t=2936] Committee discussed holding a special meeting around January 29th to appoint the screening committee sooner, allowing subcommittee work to start the first week of February.",
+    "official": "the members will be appointed at the School Committee meeting on February 5th",
+    "note": "Ours describes discussion of an earlier special meeting (~Jan 29) for appointment; official states appointment happens at the regular Feb 5 meeting - check the recording to see whether the Jan 29 idea was dropped/superseded or the official minutes omit a later special meeting that was actually held.",
+    "t": 2936
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: outreach to school community and public notices",
+    "ours": "[t=2374] Committee agreed to have the retiring superintendent email the school community about the screening-committee search and to post notice at the library, the senior center, on Facebook and the town website.",
+    "official": "",
+    "note": "No mention in official minutes of this outreach decision; check the recording near t=2374 to confirm the detail before relying on it.",
+    "t": 2374
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: MASC assistance deferred",
+    "ours": "[t=3079] Committee agreed to decide later, after the internal search concludes, whether to seek MASC assistance for an external superintendent search.",
+    "official": "",
+    "note": "Not recorded in official minutes; official only alludes to needing an external search during the Plan B discussion, without a stated decision to defer.",
+    "t": 3079
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: no specific seats named in the call",
+    "ours": "[t=3355] Committee agreed not to specify particular seats (e.g. Select Board, Council on Aging) in the screening-committee call itself, and instead to build a diverse candidate pool together as a full school committee once applications are in.",
+    "official": "",
+    "note": "Official minutes describe the post's general content (qualifications, vision, resume, references) but do not mention this seat-specificity decision.",
+    "t": 3355
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair's name",
+    "ours": "Brian Leon (chair)",
+    "official": "Brian Lehtinen, Chair - present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Same person, same role; captions misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: secretary's name",
+    "ours": "Mrs. Aimo (also heard as Zambo / Arshambo / Shambo; first name Carol) (member)",
+    "official": "Carol Archambault, Secretary - present",
+    "official_reading": "Carol Archambault",
+    "note": "Multiple caption variants all point to Archambault; ours also mislabels her role as member rather than Secretary."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: member's name",
+    "ours": "Mrs. Brzowski (also heard as Bosski / Brosi / Prosi) (member)",
+    "official": "Laura Brzozoski, Member - present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same person and role; captions misheard the surname and dropped the first name."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: absent member Anthony Sculimbrene",
+    "ours": "",
+    "official": "Anthony Sculimbrene, Vice Chair - absent",
+    "note": "Ours only lists members who were present/speaking, so absent members are missing entirely from our attendee list."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: absent member Peter Beardmore",
+    "ours": "",
+    "official": "Peter Beardmore, Member - absent",
+    "note": "Same gap as Sculimbrene - our minutes have no mechanism for recording who was absent."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:47:34Z",
+   "cost_usd": 0.3182192
+  }
  }
 }

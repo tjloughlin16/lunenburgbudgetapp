@@ -315,5 +315,98 @@
    "at": "2026-09-14T00:55:06Z",
    "cost_usd": 0.13802640000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05012025-7191",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-01-minutes-7191.txt",
+   "path": "sources/meetings/school-committee/2025-05-01-minutes-7191.pdf"
+  },
+  "official_sha256": "e6c382c396b57ab51630851406661833237b1c918b32e32cb496bfd1c99801d4",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records barely overlap: official minutes describe only the interview's format (10 questions, 75-minute limit, closing statement, adjournment) and never capture anything said, while ours captures one substantive figure from inside the interview. Most differences are caption mishearings of committee members' names, but one attendee in ours (\"Mr. Sbury\") has no counterpart in the official roster and should be checked against the recording.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 5,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Leightton",
+    "official": "Brian Lehtinen, Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Same person, misheard surname; not substantive.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's name",
+    "ours": "Tony Skully",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Captions rendered 'Sculimbrene' as 'Skully'; same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Secretary's name",
+    "ours": "Carol Shambo (member (self-identified as retired teacher))",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Surname misheard as 'Shambo'; official also gives her role as Secretary, which ours omits.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name (Brzozoski)",
+    "ours": "Laura Brosovski",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Phonetic misspelling of the same surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name (Beardmore)",
+    "ours": "Peter Bearborn",
+    "official": "Peter Beardmore, Member - Present",
+    "official_reading": "Peter Beardmore",
+    "note": "Misheard surname; same person.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee 'Mr. Sbury'",
+    "ours": "Mr. Sbury (member)",
+    "official": "",
+    "note": "No name in the official 5-member roster (Lehtinen, Sculimbrene, Archambault, Beardmore, Brzozoski) resembles this. Check the recording for a sixth voice or committee guest — could be a caption hallucination rather than a real attendee."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recording secretary",
+    "ours": "",
+    "official": "Recording Secretary: Courtney Fuller",
+    "note": "A staff role, not a committee member — reasonably omitted from a captions-based attendee list, but worth noting as an official-only detail."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Brookline FY budget gap figure",
+    "ours": "Candidate's current district (Brookline) FY budget gap: $8.2 million",
+    "official": "",
+    "note": "The official minutes record no content from the interview itself (no figures, no answers), only the interview format; this figure exists only in the caption-derived minutes and cannot be cross-checked against the official text."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:05:15Z",
+   "cost_usd": 0.1682444
+  }
  }
 }

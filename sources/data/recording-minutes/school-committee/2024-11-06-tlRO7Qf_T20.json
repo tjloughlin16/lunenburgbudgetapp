@@ -649,5 +649,338 @@
    "at": "2026-09-14T01:46:46Z",
    "cost_usd": 0.14499040000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11062024-6866",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-11-06-minutes-6866.txt",
+   "path": "sources/meetings/school-committee/2024-11-06-minutes-6866.pdf"
+  },
+  "official_sha256": "6bfecb80ff2435f0f88da25b4e87e07263f769b899d910066be58f0076591438",
+  "coverage": "partial",
+  "summary": "The two records agree on every vote's outcome and on most dollar figures once caption digit-garbling is unwound, but ours drops a second line-item transfer, omits Beardmore's recusal from the LEA vote, misidentifies at least one attendee, and is missing most of the item-13 committee reports that official minutes carry in narrative form. The single thing worth checking first: the $105 HS-office-supplies-to-accreditation transfer is entirely absent from our minutes, and the interim Town Manager's substitution for a recused Beardmore on the LEA contract vote is never stated even though the roll-call names hint at it.",
+  "counts": {
+   "agree": 17,
+   "caption_error": 12,
+   "discrepancy": 5,
+   "only_in_ours": 7,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "HS office-supply transfer destination line name",
+    "ours": "moving money from the high school office-supply line to the fizzed line",
+    "official": "$80  from HS office supplies to Phys Ed, some items cost more than expected",
+    "official_reading": "Phys Ed",
+    "note": "\"Fizzed\" is a mishearing of \"Phys Ed\"; amount ($80) and vote outcome agree."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "second line-item transfer ($105 to accreditation)",
+    "ours": "",
+    "official": "$105  from HS office supplies to accreditation line, because NEASC membership has increased",
+    "note": "Our minutes record only the $80 transfer; the $105 NEASC/accreditation transfer that was part of the same motion is entirely missing. Check the recording near t=127 for whether this transfer was actually voted on together with the $80 one."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to approve line-item transfer(s)",
+    "ours": "Approve the line item transfers as described — passed",
+    "official": "Ms. Archambault makes a motion to approve line item transfer, Ms. Brzozoski seconds the motion, all approve",
+    "note": "Outcome matches even though ours undercounts which transfers were covered."
+   },
+   {
+    "kind": "caption_error",
+    "about": "PTO Penny Wars donation amount",
+    "ours": "$536 198, $536 198 and 2,400",
+    "official": "PTO Penny Wars donations of $5,316.98 to go into gift account at Turkey Hill, earmarked for shade structure outside",
+    "official_reading": "$5,316.98",
+    "note": "Digits garbled/repeated by captions; same underlying figure once regrouped."
+   },
+   {
+    "kind": "caption_error",
+    "about": "PTO Scholastic Book Fair donation amount",
+    "ours": "$2,483",
+    "official": "PTO  Scholastic Book Fair $2,408.38 to go into the gift account at Turkey Hill, earmarked for Library",
+    "official_reading": "$2,408.38",
+    "note": "Close digit sequence, likely misheard cents/digits; not a large enough gap to be a different figure."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to accept PTO donations",
+    "ours": "Accept the PTO donations (Penny Wars and Scholastic Book Fair proceeds) under 8.34 — passed unanimously",
+    "official": "Ms. Brzozoski makes a motion to accept both donations, Mr. Beardmore seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "warrants total, Oct 11–Nov 4",
+    "ours": "$427,900 3",
+    "official": "Warrants 10/11 to 11/4/24 $427,970.03  Warrants have been signed",
+    "official_reading": "$427,970.03",
+    "note": "Digit-grouping/garbling of the same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to accept facilities & grounds report",
+    "ours": "Accept the facilities and grounds report of November 6 — passed",
+    "official": "Ms. Brzozoski makes a motion to accept the report, Mr. Sculimbrene seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "911 compliance cabling shortfall (Turkey Hill phones)",
+    "ours": "5, 59,927 93, 120",
+    "official": "this costs $59,920 more than we budgeted",
+    "official_reading": "$59,920",
+    "note": "Garbled digit string around the same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Primary School generator cost",
+    "ours": "under 100,000, 170 $72,000, $172,000",
+    "official": "The generator at the Primary School is $172,000",
+    "official_reading": "$172,000",
+    "note": "Ours includes false-start fragments but lands on the same final figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "mini-split phase 2 cost figure",
+    "ours": "483",
+    "official": "",
+    "note": "Official lists mini-split phase 2 among items needing extra money but gives no standalone dollar figure for it; the fragment \"483\" in ours cannot be checked against anything official states — verify against the recording near t=2725."
+   },
+   {
+    "kind": "agree",
+    "about": "Turkey Hill door replacement/vestibule cost",
+    "ours": "82,000",
+    "official": "Turkey Hill door replacement included a vestibule addition, will be $82,000 additional money",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Turkey Hill fire alarm upgrade cost",
+    "ours": "100,000",
+    "official": "Fire alarm needs to be upgraded to code is $100,000 over what was allocated",
+    "note": "Same figure."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "total shortfall across capital/ARPA items",
+    "ours": "almost $660,000",
+    "official": "",
+    "note": "Official never states a combined total, and summing its individually stated figures ($59,920+$172,000+$82,000+$100,000 ≈ $413,920) does not reach $660,000. Check the recording near t=3407 for what total (if any) was actually said."
+   },
+   {
+    "kind": "agree",
+    "about": "decision to keep capital plan priorities unchanged",
+    "ours": "Committee agreed to keep its capital plan priority list unchanged despite the generator price increase, without a formal motion.",
+    "official": "Mr. Lehtinen states based on conversation, no action is needed we want to keep our list as is.",
+    "note": "Same decision, same no-formal-vote character."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "agenda framing: ARPA/capital plan as separate conversations",
+    "ours": "Agreed to discuss ARPA funding options and the capital plan as two separate conversations.",
+    "official": "",
+    "note": "Official's agenda actually bundles ARPA requests and the capital plan under one item (10b) before a separate capital-planning item (10c); this is a structural note in ours with no explicit official counterpart — low stakes but worth a light check against the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to recommend Article 2 (Chapter 70) at special town meeting",
+    "ours": "Recommend approval of Article 2 (Chapter 70 funding) at special town meeting — passed unanimously",
+    "official": "Ms. Brzozoski makes a motion to support Article 2, Mr. Sculimbrene seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to recommend Article 10 (Brooks House)",
+    "ours": "Recommend approval of Article 10 (Brooks House sale/long-term lease study) — passed unanimously",
+    "official": "Mr. Beardmore makes a motion to support article 10, regarding The Brooks House, Ms. Archambault seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to appoint secretary negotiation team reps",
+    "ours": "Appoint Laura and Brian to represent the school committee on the secretary negotiation team — passed unanimously",
+    "official": "Mr. Beardmore makes a motion to nominate Mr. Lehtinen and Ms. Brzozoski, Ms. Archambault seconds the motion, all approve.",
+    "note": "'Brian' = Brian Lehtinen (Chair), 'Laura' = Laura Brzozoski — same two people, first names vs. last names."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to pursue Municipal Cybersecurity Awareness Grant",
+    "ours": "Approve pursuing the 2025 Municipal Cybersecurity Awareness Grant — passed unanimously",
+    "official": "Ms. Brzozoski makes a motion to allow the team to apply for the grant, Mr. Beardmore seconds the motion, all approve.",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Beardmore's recusal on the LEA contract vote",
+    "ours": "",
+    "official": "Mr. Beardmore steps out of the meeting due to conflict of interest, the Interim Town Manager is included in the action.",
+    "note": "Ours never states that Beardmore recused himself or that an interim Town Manager voted in his place, even though the roll-call name \"Terenzini\" in ours (not a committee member on the official roster) is consistent with being that substitute. Check the recording to confirm Beardmore's absence from this vote and the substitute's actual name."
+   },
+   {
+    "kind": "agree",
+    "about": "LEA contract vote outcome",
+    "ours": "Approve the contract with the LEA (teachers' union) — passed 5-0 (roll call: Terenzini, Bzowski, Ashino, Scullbrini, Leighton all voted aye)",
+    "official": "Mr. Sculimbrene makes a motion to approve the LEA contract, Ms. Archambault seconds the motion, all approve via roll call.",
+    "note": "Unanimous roll-call approval in both; only the substitute-member issue above is unresolved."
+   },
+   {
+    "kind": "caption_error",
+    "about": "LEA contract cost-of-living increases",
+    "ours": "2.5%, 4%, 3.5%",
+    "official": "The pay is 2.5%, 3.5%, 4.5% increases per year.",
+    "official_reading": "2.5%, 3.5%, 4.5%",
+    "note": "Order and one digit (4% vs 4.5%) misheard; same three-year structure."
+   },
+   {
+    "kind": "agree",
+    "about": "school committee goals 1-3 vote",
+    "ours": "Accept school committee goals 1, 2 and 3 for the year — passed",
+    "official": "Ms. Brzozoski makes a motion to approve the goals as written, Mr. Beardmore seconds the motion all approve.",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "superintendent's goals vote",
+    "ours": "Approve the superintendent's goals — passed unanimously",
+    "official": "Mr. Sculimbrene makes a motion to accept superintendent's goals, Ms. Archambault seconds the motion, all approve.",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "strategies for continuous improvement vote",
+    "ours": "Approve the strategies for continuous improvement as proposed — passed unanimously",
+    "official": "Mr. Beardmore makes a motion to approve the plan as proposed, Ms. Archambault seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 2 town-meeting recommendation dollar amount",
+    "ours": "$31,000",
+    "official": "The voted 5 to none to recommended approval of the $31,000 in Article 2.",
+    "note": "Same figure, and both note it passed without dissent."
+   },
+   {
+    "kind": "agree",
+    "about": "municipal building design estimate",
+    "ours": "$14 million",
+    "official": "The parks said the new design group led them to a 14 million estimate",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "PTO Shrieks and Krieks proceeds",
+    "ours": "$95",
+    "official": "they made $95 at Shrieks and Krieks",
+    "note": "Same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Lunenburg gear items sold",
+    "ours": "$17",
+    "official": "they were able to sell 170 items",
+    "official_reading": "170 items",
+    "note": "Captions rendered a count of items sold (\"170\") as a dollar figure (\"$17\") — misheard unit/digits, same underlying number 170 vs 17."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "PTO funding-request responses figure",
+    "ours": "$1,400",
+    "official": "they have received 11 responses",
+    "note": "Neither the type (dollar figure vs. count) nor the magnitude reconciles; check the recording near t=6009 for what number was actually associated with this point."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Municipal building design committee underbid amount",
+    "ours": "$440,000",
+    "official": "After the fact it came out that it was under bid by $44,000.",
+    "official_reading": "$44,000",
+    "note": "Extra zero inserted by captions — an order-of-magnitude digit-grouping error, not a different fact."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision on superintendent sending survey link",
+    "ours": "Superintendent will send the master planning committee's survey link to staff and families.",
+    "official": "",
+    "note": "Official only says staff will be surveyed about the PD day, with no mention of a master-planning-committee survey link; check the recording near t=2126 for what was actually said and to whom."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "no budget update until January",
+    "ours": "No budget update for next year's budget will be given until January.",
+    "official": "",
+    "note": "This statement does not appear anywhere in the official minutes; verify against the recording near t=6741."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: committee member",
+    "ours": "Bzowski (school committee member)",
+    "official": "Laura Brzozoski, Member - present",
+    "official_reading": "Brzozoski",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: committee member/vice chair",
+    "ours": "Scullbrini (school committee member)",
+    "official": "Anthony Sculimbrene, Vice Chair - present",
+    "official_reading": "Sculimbrene",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: committee chair (roll call)",
+    "ours": "Leighton (school committee member)",
+    "official": "Brian Lehtinen, Chair - present",
+    "official_reading": "Lehtinen",
+    "note": "Misheard surname, appearing only in the LEA roll-call list in ours."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "attendee identity labeled superintendent",
+    "ours": "Ashino / Asino (superintendent of schools)",
+    "official": "Dr. Kate Burnham, Superintendent of Schools",
+    "note": "The name doesn't resemble Burnham at all, and the same name reappears as one of the five LEA roll-call voters — where by elimination it should be Carol Archambault, the Secretary, not the superintendent. Check the recording for who \"Ashino\" actually is; our minutes may have merged two different speakers under one misheard name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: interim Town Manager substitute on LEA vote",
+    "ours": "Terenzini (Carter) (interim Town Manager, sat in for the vote on the LEA contract)",
+    "official": "the Interim Town Manager is included in the action",
+    "note": "Official confirms an interim Town Manager voted in Beardmore's place but never names them; ours supplies a name (or two variant hearings of one) that cannot be checked against the official text — confirm the correct name against town records."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: facilities staff on bids",
+    "ours": "Dr. Gilson (facilities staff, handled bids)",
+    "official": "",
+    "note": "Official's facilities & grounds report is written impersonally (\"we\") and names no presenter; check the recording to confirm this name and role."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: business/HR staff on LEA contract",
+    "ours": "Ashber (business/HR staff, presented contract details)",
+    "official": "",
+    "note": "Official attributes the LEA contract detail discussion to Sculimbrene and Archambault only; no separate business/HR staffer is named. Check the recording for whether a staff member presented alongside them."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "recording secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Procedural attendee not carried into ours; low stakes but part of the official roster."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:38:55Z",
+   "cost_usd": 0.3275974
+  }
  }
 }

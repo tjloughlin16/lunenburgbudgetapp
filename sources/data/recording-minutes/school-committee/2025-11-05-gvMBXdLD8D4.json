@@ -696,5 +696,247 @@
    "at": "2026-09-13T23:58:54Z",
    "cost_usd": 0.1470144
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11052025-7496",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-11-05-minutes-7496.txt",
+   "path": "sources/meetings/school-committee/2025-11-05-minutes-7496.docx"
+  },
+  "official_sha256": "9e8ccec5c1a0536d9704cf759b31be381b7ee8e9e0b30bfc8201552c8ba6cc6a",
+  "coverage": "partial",
+  "summary": "The two records agree closely on every recorded vote (transfers, donations, Larkin scholarship, superintendent goals) and on several specific figures (the $13,500 and $2,000 transfers, the $125/night Great Wolf Lodge rate, the $1,400 eighth-grade trip), with only caption-level misreadings of two donor names and the business administrator's surname. The one thing to check first: our minutes record five School Committee goals for the year (adding a facilities plan and the turf field) where the official minutes list only three, and the official minutes contain none of the extensive Turkey Hill facilities figures, the several procedural decisions (the Nov 12 workshop, the trust-review process change, the staged Turkey Hill approach, soliciting staff feedback, and George's MSBA outreach) that our minutes record as having been decided at this meeting.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 3,
+   "discrepancy": 7,
+   "only_in_ours": 10,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "$13,500 transfer: admin tech contractor services to school committee dues",
+    "ours": "Admin tech contractor services (unused website design contract) to school committee dues, to cover a superintendent search service invoice — $13,500 (voted)",
+    "official": "We want to transfer $13,500 from admin tech contracts to school committee dues, to cover superintendent search invoice.",
+    "note": "Same transfer, same amount, same purpose in both records.",
+    "t": 901
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "purpose detail for the $2,000 primary school transfer",
+    "ours": "Primary school science supply line item to primary school reading supply line item, for magnetic letter tiles and Heggerty program — $2,000",
+    "official": "Transfer $2000 from school science supply line item at Primary School to the reading supply line item at the Primary school to cover cost.",
+    "note": "Official just says \"to cover cost\"; ours adds the specific items (magnetic letter tiles, Heggerty program) — worth checking the transfer request itself for this detail.",
+    "t": 1018
+   },
+   {
+    "kind": "agree",
+    "about": "vote to approve both line-item transfers",
+    "ours": "Motion to accept both line item transfers presented by Mr. McNamera — passed",
+    "official": "Ms. Gilman makes a motion to approve transfers, Ms. Young seconds the motion all approve",
+    "note": "Same vote and outcome; mover/seconder not captured in ours.",
+    "t": 1051
+   },
+   {
+    "kind": "caption_error",
+    "about": "donor name for the $100 field-trip donation",
+    "ours": "Laura Barushian",
+    "official": "Laura Barooshian is donating $100 for the high school field trips.",
+    "official_reading": "Laura Barooshian",
+    "note": "Same donor and amount; captions misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "name of the group donating $500 x3 to music programs",
+    "ours": "Music Boosters",
+    "official": "Music Gators has donated $500 to High School Music Program, $500 for the Middle High School Program and $500 for the Turkey Hill Music Program.",
+    "official_reading": "Music Gators",
+    "note": "Same donation amounts and recipients; the donor-group name differs and one side is likely wrong — check the donation record itself, since \"Gators\" is an unusual name for a booster group too."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to accept all four donations",
+    "ours": "Motion to accept the four donations as outlined with appreciation — passed",
+    "official": "Ms. Brzozoski makes a motion to accept all donations with our gratitude, Ms. Gilman seconds the motion all approve",
+    "note": "Same vote, same outcome, same count of donations (1 + 3).",
+    "t": 1204
+   },
+   {
+    "kind": "agree",
+    "about": "vote to accept the James J. Larkin scholarship",
+    "ours": "Motion to accept the James J. Larkin scholarship — passed",
+    "official": "Ms. Gilman makes a motion to accept this scholarship, Ms. Brzozoski seconds the motion all approve.",
+    "note": "Same vote and outcome.",
+    "t": 2670
+   },
+   {
+    "kind": "agree",
+    "about": "James J. Larkin scholarship amounts",
+    "ours": "$250, $500",
+    "official": "This will be classified as a gift and is the amount of $500 this Spring and then $250 every year after.",
+    "note": "Same two figures in both; ours lists them without the spring/annual sequencing official gives — worth confirming which amount applies which year.",
+    "t": 2595
+   },
+   {
+    "kind": "agree",
+    "about": "vote to approve superintendent draft goals",
+    "ours": "Motion to approve the already-discussed superintendent draft goals — passed",
+    "official": "Mr. Sculimbrene makes a motion to approve, Ms. Gilman seconds the motion all approve",
+    "note": "Same vote and outcome.",
+    "t": 5015
+   },
+   {
+    "kind": "discrepancy",
+    "about": "list of School Committee goals for the year",
+    "ours": "Set five school-committee goals for the year: the future of Turkey Hill, the primary school playground/parking project, a smooth FY budget process, a comprehensive long-term facilities plan for all buildings, and pursuing the turf field alongside the other capital-planning goals.",
+    "official": "Committee lists their goals as: the future of Turkey Hill, Primary School playground and parking lot, and budget process.",
+    "note": "Official lists three goals, ours lists five (adding a facilities plan and the turf field); check the actual adopted goals list or a follow-up document to see which is complete.",
+    "t": 7255
+   },
+   {
+    "kind": "only_in_official",
+    "about": "warrant total for 10/15/25–11/3/25",
+    "ours": "",
+    "official": "Warrants 10/15/25 to 11/3/25 $709,457.44",
+    "note": "This warrant figure does not appear anywhere in our minutes; check whether the recording covered this agenda item or it was passed over without discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "year-to-date budget spending percentage",
+    "ours": "Year-to-date budget spending: 34.9%",
+    "official": "Finance and spending updates.",
+    "note": "Official mentions a finance update generically with no figure; the 34.9% figure is only in ours.",
+    "t": 1873
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Nov 12 workshop replacing the tri-board meeting",
+    "ours": "In place of the postponed tri-board meeting, hold a dedicated School Committee workshop on Nov 12 at 7pm on committee operating norms, facilitated by Dr. Grace Wiseman.",
+    "official": "",
+    "note": "This decision is entirely absent from the official minutes; check the recording and/or the calendar to confirm whether this workshop was actually scheduled."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "amended trust-fund review process (who searches scholarship records)",
+    "ours": "Amended the trust-fund review process so the superintendent and district staff (not the town trust commission) will first search district scholarship records and report findings back to the committee.",
+    "official": "It has been asked to gather all the trusts for the town, we could take this information to the attorney general and they can administratively modify them, which will then make the money usable for modern day needs.",
+    "note": "Official describes a related but different trust-commission plan (gathering trusts for the attorney general); the specific decision to have district staff search scholarship records first is not in the official minutes — check which process was actually adopted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "orphaned town trust example",
+    "ours": "Orphaned town trust example (1903 sidewalk trust): $27,000",
+    "official": "",
+    "note": "Official's trust discussion has no dollar figures or specific trust examples."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "library trust fund precedent",
+    "ours": "Library trust fund precedent: over $50,000",
+    "official": "",
+    "note": "Not mentioned in official's trust discussion at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "advertising-in-schools policy revenue potential",
+    "ours": "Advertising-in-schools policy revenue potential: $5,000, $10,000",
+    "official": "First Read Policies 1303.1 Advertising in the Schools, 3303.01 Cash Handling, 5201.03 Middle School Pathways, 5204.01 Competency Determination The committee takes turns reading through each policy.",
+    "note": "Official records this as a first-read policy item with no figures; the revenue estimates are only in ours."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "staged multi-meeting approach to the Turkey Hill decision",
+    "ours": "Agreed on a staged, multi-meeting approach to the Turkey Hill decision: first set the end-goal/needs for the building, then debate rehab vs. rebuild, then address funding options.",
+    "official": "",
+    "note": "Official only lists \"Future of Turkey Hill\" as a topic for future discussion with no process agreed; check the recording to confirm this staged approach was actually adopted as a plan."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision not to have facilities director attend the next meeting",
+    "ours": "Decided not to have the facilities director attend the very next meeting on Turkey Hill; instead solicit written feedback on building needs from Turkey Hill staff first.",
+    "official": "",
+    "note": "Not recorded in the official minutes at all; check the next agenda to see whether the facilities director was in fact scheduled or excluded."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill renovation vs. new build cost estimates",
+    "ours": "$16 million, $85 million, $60 million, $75 million, $66 million",
+    "official": "",
+    "note": "None of these cost figures appear in the official minutes, which only list Turkey Hill as a future topic."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Littleton comparable district building cost",
+    "ours": "$110 million",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "hypothetical MSBA reimbursement comparison figures",
+    "ours": "$100 million, $50 million",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "prevailing wage cost impact on construction",
+    "ours": "30%",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MSBA reimbursement base rate",
+    "ours": "31%",
+    "official": "",
+    "note": "Not in official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "George's action to email Senator Cronin's office re: MSBA guidance",
+    "ours": "George agreed to email Senator Cronin's office to try to get direct guidance from MSBA on reimbursement trends.",
+    "official": "",
+    "note": "This action item is not recorded in the official minutes; check with George or the next meeting's minutes to confirm it happened."
+   },
+   {
+    "kind": "agree",
+    "about": "PTO Great Wolf Lodge fundraiser rate",
+    "ours": "PTO Great Wolf Lodge fundraiser rate: $125 a night",
+    "official": "We also have a night at Great Wolf Lodge, it is a day in March the rate is $125 per night and you get tickets to the water park as well.",
+    "note": "Same figure in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "eighth grade trip cost",
+    "ours": "Eighth grade trip cost: $1,400",
+    "official": "The cost is going to be about $1400.",
+    "note": "Same figure in both records."
+   },
+   {
+    "kind": "caption_error",
+    "about": "business administrator's name",
+    "ours": "Chris McNamera",
+    "official": "Guests: Christopher McNamara – Business Administrator",
+    "official_reading": "Christopher McNamara",
+    "note": "Same person; captions misspelled the surname."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "identity of staff member \"Liz\"",
+    "ours": "Liz (staff/clerk)",
+    "official": "Recording Secretary: Courtney Fuller",
+    "note": "No \"Liz\" appears anywhere in the official minutes, and the only staff role listed is Recording Secretary Courtney Fuller; check the recording to determine who \"Liz\" was and whether that person is missing from the official attendee list, or whether the captions produced a name that isn't in this meeting at all."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:29:48Z",
+   "cost_usd": 0.2847194
+  }
  }
 }

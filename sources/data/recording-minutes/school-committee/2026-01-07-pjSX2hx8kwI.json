@@ -507,5 +507,250 @@
    "at": "2026-09-13T23:41:06Z",
    "cost_usd": 0.1398824
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01072026-7586",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-01-07-minutes-7586.txt",
+   "path": "sources/meetings/school-committee/2026-01-07-minutes-7586.pdf"
+  },
+  "official_sha256": "23a79cc0dc66158d67d8f5352953c787f495580350e20a469256b37ad9b88af1",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on every substantive fact where both actually state one — the Kids Kingdom outcome, the $3.267M capital total, the ~$200K field study, the $30 blankets, the $15–20 Great Wolf fundraiser, the $1,250,000 Turkey Hill accessibility estimate, and Tony's THES framework assignment — but the official minutes are a condensed narrative that drops nearly every dollar figure, percentage, and specific directive our captioned minutes captured, and it records the curriculum-report vote (which our recording could not make out) while omitting the Kids Kingdom vote tally's context and several attendees present in the room. The single item a reader should actually check is the curriculum-report motion, since our minutes could not confirm it passed at all and the official minutes say it did unanimously.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 14,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Midyear curriculum report vote",
+    "ours": "not audible",
+    "official": "Ms. Brzozoski makes a motion to accept the report, Ms. Gilman seconds the report, all approve",
+    "note": "Our recording could not confirm this vote occurred at all; check the audio around t=7321 against the official's claim of unanimous approval.",
+    "t": 7321
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Kids Kingdom vote tally",
+    "ours": "passed",
+    "official": "the motion passes with 3 approvals and 1 abstention",
+    "note": "Both agree the motion passed, but ours has no vote count while the official records an abstention — worth confirming who abstained and why it wasn't audible in the recording.",
+    "t": 5324
+   },
+   {
+    "kind": "agree",
+    "about": "Grant-funded literacy coach position transfer",
+    "ours": "Grant funds previously supporting the literacy coach position, to be redirected via a budget amendment toward direct services for children — discussed only",
+    "official": "This is a grant funded position and we will be directing those funds to more direct services for the children.",
+    "note": "Same substance in both: the coach resigned, the grant funds move to direct services."
+   },
+   {
+    "kind": "agree",
+    "about": "FY27 capital plan total",
+    "ours": "$3.267 million, a million and a half",
+    "official": "In total the requests were 3.267 million dollars.",
+    "note": "The core figure $3.267 million matches exactly; \"a million and a half\" appears to be caption noise with no counterpart in the official text."
+   },
+   {
+    "kind": "agree",
+    "about": "Track/turf field engineering study cost",
+    "ours": "$200,000, 196",
+    "official": "cam in just under $200,000",
+    "note": "The \"196\" (i.e., ~$196,000) reconciles with the official's \"just under $200,000\" — consistent figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Estimated total track/turf field rebuild cost",
+    "ours": "2 million, 10",
+    "official": "",
+    "note": "The official minutes do not give a total rebuild estimate at all — check the recording near t=3093 for the exact figure before citing it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Turkey Hill ADA/rebuild cost estimate ($16 million)",
+    "ours": "16 million",
+    "official": "",
+    "note": "This figure has no counterpart in the official minutes, which only discuss a rebuild-vs-new-building conversation without a dollar figure; confirm whether the recording actually said $16 million or something smaller (e.g. $1.6 million) before using it.",
+    "t": 3515
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 percent of budget expended",
+    "ours": "47.3%, 47.2%, 5.6%",
+    "official": "we are on track for FY 26 for spending. We are in a good position",
+    "note": "The official gives only a qualitative assessment; the specific percentages are only in our minutes and should be checked against the recording before citing.",
+    "t": 7382
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 year-end budget wiggle room",
+    "ours": "1%, 25 million, 26 million",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all; verify against the recording before using these figures.",
+    "t": 7573
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prior air conditioning project cost overrun example",
+    "ours": "$84,000, $7 million",
+    "official": "",
+    "note": "This cautionary example is entirely absent from the official minutes; confirm the figures against the recording.",
+    "t": 8358
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Great Wolf Lodge PTO fundraiser amount",
+    "ours": "$15, $20, $119",
+    "official": "The PTO is doing a Great Wolf Lodge night in March and we will receive $15 or $20 per reservation.",
+    "note": "The $15/$20 figures agree, but the extra \"$119\" in ours has no counterpart in the official text — check the recording to see what that figure referred to (possibly room cost)."
+   },
+   {
+    "kind": "agree",
+    "about": "Turkey Hill accessibility project cost estimate",
+    "ours": "a million to 1,250,000, 500,000",
+    "official": "the cost was estimated at $1,250,000",
+    "note": "The core figure $1,250,000 matches; the range language in ours (\"a million to... 500,000\") is extra caption detail not contradicted by the official summary.",
+    "t": 9394
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant article placeholder for track/field engineering",
+    "ours": "School committee will ask the superintendent to formally request the town manager place a placeholder warrant article for track/field engineering funding.",
+    "official": "",
+    "note": "The official minutes note urgency (\"as soon as possible\") but do not record this specific decision — check the recording near t=4705 to confirm it was actually voted/decided rather than just discussed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Kindergarten start date and screening days decision",
+    "ours": "Kindergarten will start the same day as other students; the three former screening days will move to June for kindergarten screening.",
+    "official": "The committee discusses parent/teacher conference dates and kindergarten screenings and start dates.",
+    "note": "Official records this as discussion only, not a decision; confirm from the recording whether this was actually settled or is still open.",
+    "t": 6819
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Parent-teacher conference survey decision",
+    "ours": "Administration will survey parents again on parent-teacher conference timing and report results back to the committee.",
+    "official": "The committee discusses parent/teacher conference dates",
+    "note": "Official records only that the topic was discussed, not that a survey was commissioned — verify this specific directive against the recording.",
+    "t": 7260
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Standalone bathroom remodel proposal directive",
+    "ours": "Facilities director asked to pull bathroom-accessibility cost figures out of the prior Turkey Hill engineering study to produce a standalone bathroom remodel project proposal.",
+    "official": "Dr. Fortuna states the first phase needs to be the restrooms, they're not accessible.",
+    "note": "Official confirms restrooms are the priority but does not record the specific directive to the facilities director; check the recording near t=8607.",
+    "t": 8607
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tri-board override number alignment",
+    "ours": "Committee aims to align with the select board and finance committee on a single override number at the next tri-board meeting.",
+    "official": "",
+    "note": "The official minutes list \"override\" only as a topic for future discussion (item 13), with no mention of this specific alignment goal or a tri-board meeting; check the recording near t=9163.",
+    "t": 9163
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DIBELS/benchmark testing results timeline",
+    "ours": "District will try to have DIBELS/benchmark testing results ready by the next school committee meeting, though timing may slip given short staffing.",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes; verify against the recording near t=9497.",
+    "t": 9497
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business Administrator's name",
+    "ours": "Chris (\"C money\")",
+    "official": "Christopher McNamara",
+    "official_reading": "Christopher McNamara",
+    "note": "Captions rendered his name/nickname as \"C money\"; the official minutes give his full name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "East Coast Renewable Energy presenter's name",
+    "ours": "Nick Falori",
+    "official": "Nick Valorie",
+    "official_reading": "Nick Valorie",
+    "note": "Same presenter, misheard surname in the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Curriculum presenter's name",
+    "ours": "Dr. Sari",
+    "official": "Dr. Sarfdie",
+    "official_reading": "Dr. Sarfdie",
+    "note": "Both spellings look like imperfect renderings of the same name; use this as a flag to confirm the presenter's correct spelling from another source rather than trusting either transcript."
+   },
+   {
+    "kind": "agree",
+    "about": "Committee member 'Tony'",
+    "ours": "Tony",
+    "official": "Anthony Sculimbrene Chair - Present",
+    "note": "Same person, informal first name in ours vs. full name/title in official — not a caption error, just a naming difference."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Primary school principal attendee (Mrs. Squire)",
+    "ours": "Mrs. Squire (primary school principal (presenter))",
+    "official": "",
+    "note": "Not listed among official attendees or guests at all; confirm from the recording whether she actually spoke/presented."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reading specialist attendee (Kimberly)",
+    "ours": "Kimberly (interventionist/reading specialist (staff, presenter))",
+    "official": "",
+    "note": "Not listed among official attendees or guests; confirm her presence/role from the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager attendee",
+    "ours": "the town manager (town manager)",
+    "official": "",
+    "note": "Official minutes reference \"the select board\" sending a Kids Kingdom proposal but do not list the town manager as present; confirm attendance from the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Liz listed as staff attendee",
+    "ours": "Liz (school committee staff (records/administrative support))",
+    "official": "Liz has included in the folders, feedback, that we have received regarding the proposed calendar.",
+    "note": "Liz is mentioned in the official minutes' body text (item 10b) but is not on the formal attendee/guest list, where the official instead names Courtney Fuller as Recording Secretary — check whether Liz and the Recording Secretary are the same person."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fifth committee seat (Member TBD)",
+    "ours": "",
+    "official": "Member - TBD",
+    "note": "Ours does not record that the committee currently has a vacant fifth seat — worth noting since the Chair's Report also mentions it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "ECR Representative Matt Paraliticci",
+    "ours": "",
+    "official": "Matt Paraliticci – ECR Representative",
+    "note": "A second East Coast Renewable Energy representative attended per the official minutes but is absent from our attendee list; check the recording for whether he spoke."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recording Secretary Courtney Fuller",
+    "ours": "",
+    "official": "Courtney Fuller",
+    "note": "The minutes' author/recording secretary is not listed in our attendee set, which is expected since she may not have spoken on camera."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:35:05Z",
+   "cost_usd": 0.2300994
+  }
  }
 }

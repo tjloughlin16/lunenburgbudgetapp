@@ -849,5 +849,301 @@
    "at": "2026-09-14T01:38:02Z",
    "cost_usd": 0.1478134
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082025-6948",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-01-08-minutes-6948.txt",
+   "path": "sources/meetings/school-committee/2025-01-08-minutes-6948.pdf"
+  },
+  "official_sha256": "072882b9e4be049dcc5a3110069d24e7438927b35b3bb6e0526cd3a3c1e58534",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the outcome of every vote that appears in both, and on the handful of figures the official minutes bother to state (warrant total, donation amounts, the $300,000 Turkey Hill door capital, FY24 free cash), but the official minutes omit nearly all the numeric and procedural detail our caption-derived minutes captured — the withdrawn transportation motion, the ARPA transfer, and virtually every athletic-finance and revolving-account figure. The one thing a reader should actually check is the Vincent Joseph scholarship: our minutes give $115,000 (heard twice, at the vote and in the figures) against the official minutes' $15,000 — a $100,000 gap on the same named gift that is too large to be a digit-grouping slip.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 6,
+   "discrepancy": 0,
+   "only_in_ours": 14,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "only_in_ours",
+    "about": "withdrawn transportation bid motion",
+    "ours": "Motion to accept the Deboss/Dee Bus bid with the caveat that Dr. Gilson keep negotiating a more even spread over the first three years — withdrawn",
+    "official": "",
+    "note": "Official minutes record only the final motion (authorize Gilson to negotiate and finalize); the intermediate withdrawn motion is not in the record, which is expected for a withdrawn vote but worth confirming it isn't a caption artifact of the same discussion.",
+    "t": 3264
+   },
+   {
+    "kind": "caption_error",
+    "about": "transportation vendor name",
+    "ours": "Deboss",
+    "official": "Dr. Gilson supplied the bid with Dee Bus",
+    "official_reading": "Dee Bus",
+    "note": "Same vendor, misheard by captions; use the official spelling (still worth confirming the vendor's actual legal name against the contract).",
+    "t": 3264
+   },
+   {
+    "kind": "agree",
+    "about": "vote to authorize Dr. Gilson to negotiate/finalize transportation contract",
+    "ours": "passed",
+    "official": "Mr. Beardmore makes a motion to authorized Dr. Gilson to negotiate and finalize this contract, Ms. Archambault seconds the motion, all approve.",
+    "note": "Matches.",
+    "t": 3412
+   },
+   {
+    "kind": "agree",
+    "about": "vote to accept donations (Box Tops, Cultural Council, PTO)",
+    "ours": "passed",
+    "official": "Mr. Beardmore makes a motion to accept the donations with gratitude, Ms. Archambault seconds the motion all approve.",
+    "note": "Matches.",
+    "t": 1888
+   },
+   {
+    "kind": "agree",
+    "about": "Box Tops donation figure",
+    "ours": "$30.3",
+    "official": "$30.30 from Box Tops, will be used for field trips",
+    "note": "Same value, formatting only.",
+    "t": 1845
+   },
+   {
+    "kind": "agree",
+    "about": "Cultural Council donation figure",
+    "ours": "$13.51",
+    "official": "a donation in the amount of $13.51 for art supplies from the Cultural Council",
+    "note": "Matches exactly.",
+    "t": 1866
+   },
+   {
+    "kind": "agree",
+    "about": "PTO donation figure",
+    "ours": "$1,560",
+    "official": "A donation of $1,560 from the PTO for STEM and Reading materials",
+    "note": "Matches exactly.",
+    "t": 1866
+   },
+   {
+    "kind": "caption_error",
+    "about": "warrant total, Dec 16-19 2024",
+    "ours": "$237,000, 237,000, 271",
+    "official": "Warrants 12/16/24-12/19/24 $237,027.01",
+    "official_reading": "$237,027.01",
+    "note": "Captions dropped the cents/exact figure into fragments; same warrant.",
+    "t": 1823
+   },
+   {
+    "kind": "agree",
+    "about": "vote to accept facilities and grounds report",
+    "ours": "passed",
+    "official": "Ms. Brzozoski makes a motion to accept the report, Mr. Beardmore seconds the motional approve.",
+    "note": "Matches.",
+    "t": 8259
+   },
+   {
+    "kind": "agree",
+    "about": "vote to transfer Class of 2005 funds",
+    "ours": "passed",
+    "official": "Ms. Archambault makes a motion to approve the transfer of funds, Mr. Beardmore seconds the motion, all approve.",
+    "note": "Matches.",
+    "t": 8327
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "destination of Class of 2005 transferred funds",
+    "ours": "transfer to a new joint personal account opened by class officers",
+    "official": "Krista Diamantopoulos officially requests the money from the class of 2005 be moved into a separate account for future use for the class.",
+    "note": "Official doesn't specify the account is a personal account opened by class officers; worth checking which description is accurate given oversight/audit implications of a 'personal' account holding class funds.",
+    "t": 8327
+   },
+   {
+    "kind": "agree",
+    "about": "vote to nominate a member to Sick Bank committee",
+    "ours": "passed, nominee heard as \"Brian\"",
+    "official": "Ms. Brzozoski makes a motion to nominate Mr. Lehtinen to serve on the Sick Bank Committee, Mr. Beardmore seconds the motion, all approved.",
+    "note": "Same vote and outcome; nominee is Brian Lehtinen.",
+    "t": 8704
+   },
+   {
+    "kind": "agree",
+    "about": "vote to appoint Carol to superintendent search subcommittee",
+    "ours": "passed",
+    "official": "Mr. Lehtinen makes a motion to appoint Carol Archambault as the Superintendent Subcommittee Search subcommittee, Ms. Brzozoski seconds the motion, all approve.",
+    "note": "Matches.",
+    "t": 9143
+   },
+   {
+    "kind": "agree",
+    "about": "vote to appoint second member to superintendent search subcommittee",
+    "ours": "passed, appointee heard as \"Brian Leon\"",
+    "official": "Mr. Beardmore nominates Mr. Lehtinen as a second member to the committee, Ms. Brzozoski seconds the motion, all approve.",
+    "note": "Matches; appointee is Brian Lehtinen.",
+    "t": 9185
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name: Laura Brzozoski",
+    "ours": "Mrs. Brzowski",
+    "official": "Laura Brzozoski, Member - present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Misheard surname, same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name: Carol Archambault",
+    "ours": "Carol (heard also as Shambo/Asembo/Ashino/Aseno/Arshambo)",
+    "official": "Carol Archambault, Secretary - present",
+    "official_reading": "Carol Archambault",
+    "note": "Multiple caption misreadings of the same surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name: Brian Lehtinen",
+    "ours": "Mr. Leon / Brian Leon",
+    "official": "Brian Lehtinen, Chair - present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname across multiple mentions (Sick Bank nomination and search subcommittee appointment)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "athletic director name: Mr. Bigelow",
+    "ours": "Kevin Bigalow",
+    "official": "Dr. Gilson and Mr. Bigelow share a presentation for a proposal for increases for athletic fees.",
+    "official_reading": "Mr. Bigelow",
+    "note": "Minor spelling/first-name variance; likely same person, worth confirming his first name is Kevin."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: Anthony Sculimbrene",
+    "ours": "",
+    "official": "Anthony Sculimbrene, Vice Chair - absent",
+    "note": "Vice Chair's absence is recorded in the official minutes but not noted in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendees: Liz Peterson and Juliana Hansum",
+    "ours": "Liz Peterson (executive assistant/presenter), Juliana Hansum (presenter, special services)",
+    "official": "",
+    "note": "Neither is named in the official minutes, which do not credit individual staff presenters for most agenda items."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA transfer to Turkey Hill fire alarm project",
+    "ours": "~$75,000 in ARPA funds applied to close the funding gap on the Turkey Hill fire alarm upgrade, voted by the Select Board on the school department's request",
+    "official": "",
+    "note": "Official School Committee minutes describe the fire alarm coming in over budget but do not mention the ARPA transfer or that the Select Board voted it; check the Select Board's own minutes since that vote wasn't theirs to record here.",
+    "t": 7339
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "reclassification of unfilled-position funds for athletic shortfall",
+    "ours": "discussed only — prior-year transfer of unfilled-position funds to cover athletic revolving account shortfall",
+    "official": "",
+    "note": "Not mentioned in official minutes at all; confirm with the business office whether this reclassification actually occurred."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "transportation contract rate figures",
+    "ours": "bid increase 10%; renegotiated spread 6.76%/8%/3%; five-year schedule 6.76%/8.09%/3.07%/6.91%/88.0%",
+    "official": "a 3 year contract with tentative increases over the 3 years, working with them for a bit more consistency on increases throughout the contract",
+    "note": "Official gives no percentages at all; the specific rate figures exist only in our transcript-derived minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "state grant received",
+    "ours": "$31,500",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill fire alarm upgrade bid amount",
+    "ours": "$354,990",
+    "official": "the fire alarm system came in much higher than expected, based on new requirements",
+    "note": "Official does not state the bid figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill exterior door/security bid amount",
+    "ours": "$477,000",
+    "official": "",
+    "note": "Official does not state this bid figure, only that available capital covers 3 doors plus security."
+   },
+   {
+    "kind": "agree",
+    "about": "Turkey Hill door project available capital",
+    "ours": "$300,000",
+    "official": "We have $300,000 for the door and security that will cover all the security and only 3 doors.",
+    "note": "Matches exactly.",
+    "t": 7468
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "athletic budget and fee figures (stipends, revolving account, fee schedule, comparison towns, revenue target)",
+    "ours": "coaching stipends 2%/4%; local athletic spending $258,600; revolving revenue $133,000/$8,500/$142,000; revolving spending $76,000/$551,000; total budget $512,000 at 26% fee share; current fee $250 ($193,000 at full pay); proposed fees $325/$275 with 25%/50% discounts and a $1,500 family cap; comparison towns $325/$300/$600; revenue target $137,000 to hold 26% share",
+    "official": "Dr. Gilson and Mr. Bigelow share a presentation for a proposal for increases for athletic fees.",
+    "note": "Official records only that a fee-increase presentation occurred, with none of the underlying figures; these numbers need to be checked against the actual presentation slides before being cited anywhere."
+   },
+   {
+    "kind": "agree",
+    "about": "FY24 year-end free cash figure",
+    "ours": "$2.5 million",
+    "official": "They FY 24 year end free cash came in at 2.5 million",
+    "note": "Matches exactly.",
+    "t": 12094
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "state funding vs. district cost growth figures in draft resolutions",
+    "ours": "40%, half a percent, 5%",
+    "official": "School Committee Resolutions A draft has been uploaded into the folder, any feedback and suggestions can be emailed to Mr. Lehtinen",
+    "note": "Official does not restate any of the figures discussed regarding the draft resolutions."
+   },
+   {
+    "kind": "agree",
+    "about": "decision to proceed with phase-one Turkey Hill door/security award up to $300,000",
+    "ours": "proceed, deferring full replacement pending MSBA info",
+    "official": "We have $300,000 for the door and security that will cover all the security and only 3 doors.",
+    "note": "Consistent decision.",
+    "t": 8218
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to defer formal vote on restructured athletic fees",
+    "ours": "take no formal vote tonight; gather public/booster feedback before deciding closer to the FY budget vote",
+    "official": "Dr. Gilson and Mr. Bigelow share a presentation for a proposal for increases for athletic fees.",
+    "note": "Official doesn't state that a vote was explicitly deferred, only that a presentation occurred; not contradicted, just unconfirmed in the written record."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to bring cell phone policy discussion back at a future meeting",
+    "ours": "bring back next meeting or first meeting in February, with feedback from a regional legislative conversation",
+    "official": "We would prefer that each school have a policy that goes into the handbook.",
+    "note": "Official states a preference/conclusion, not the plan to revisit the topic at a specific future meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to revise draft resolutions document",
+    "ours": "revise to be shorter and less numerically dense before returning for discussion",
+    "official": "A draft has been uploaded into the folder, any feedback and suggestions can be emailed to Mr. Lehtinen",
+    "note": "Official doesn't record a decision to shorten/simplify the document, only that feedback can be emailed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Superintendent's announced retirement",
+    "ours": "",
+    "official": "we were notified today the Superintendent will be retiring at the end of the school year",
+    "note": "This is the reason the search subcommittee appointments happened; it's absent from our minutes even though the resulting appointment votes are recorded, so the context for those votes is missing from our record."
+   }
+  ],
+  "quotes_not_in_official_dropped": 8,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:45:37Z",
+   "cost_usd": 0.31596939999999996
+  }
  }
 }

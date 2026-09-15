@@ -709,5 +709,337 @@
    "at": "2026-09-14T00:15:37Z",
    "cost_usd": 0.1523144
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012025-7432",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-10-01-minutes-7432.txt",
+   "path": "sources/meetings/school-committee/2025-10-01-minutes-7432.pdf"
+  },
+  "official_sha256": "ca995287cb6b89845cb6d0369bd4ca051049ecb465b17a4f4e99de80297deb8c",
+  "coverage": "full",
+  "summary": "The two records agree closely on every vote outcome and on the two headline transfer/warrant-article decisions, with two clear caption mishearings (a name and the Chapter 70 dollar figure) and one apparent duplication of a person in our attendee list. The main gaps are structural rather than factual: ours carries far more in-meeting dollar detail (spending comparisons, reserve balances, audit and uniform cost estimates) that the official summary omits entirely, while the official record alone carries roll call, public comment, the warrant total, and a possible missed vote-tally on one tabling motion.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 19,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "athletic insurance→dues transfer vote",
+    "ours": "Accept the line-item transfer of $20,000 from athletic insurance to athletic dues and fees as outlined — passed",
+    "official": "We have one transfer it is to move $20,000 from athletic insurance to athletic dues and fees, they were classified in the wrong object and org number  Ms. Brzozoski makes a motion to approve the transfer, Ms. Gilman seconds the motion all approve",
+    "note": "Same amount, same direction, same outcome in both records.",
+    "t": 940
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "paraprofessional position locations",
+    "ours": "Add two paraprofessional positions, at the primary school and at Turkey Hill, to fill staffing needs — passed",
+    "official": "Ms. Brzozoski makes a motion to add two paraprofessional positions where needed, Ms Young seconds the motion, all approve",
+    "note": "Vote and count of positions agree; only ours names the two specific schools — worth checking the recording to confirm the schools stated.",
+    "t": 2254
+   },
+   {
+    "kind": "agree",
+    "about": "IT/technology full-time hire vote",
+    "ours": "Approve hiring for the IT/technology position (moving the part-time computer tech to full-time) — passed",
+    "official": "this was a position that was cut to part time, and it is not working at the middle high school, this would allow us to have coverage for the full school day.  Ms. Gilman makes a motion to approve this request, Ms. Brzozoski seconds the motion all approve",
+    "note": "Same vote and rationale in both.",
+    "t": 2649
+   },
+   {
+    "kind": "agree",
+    "about": "fall athletics report acceptance",
+    "ours": "Accept the fall athletics report — passed",
+    "official": "Ms. Brzozoski makes a motion to accept the report, Ms. Gilman seconds the motion all approve",
+    "note": "Matches.",
+    "t": 2984
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 Q1 budget/personnel report acceptance",
+    "ours": "Accept the FY26 first-quarter budget and personnel report — passed",
+    "official": "Ms, Brzozoski makes a motion to accept the quarterly budget report, Ms. Gilman seconds the motion all approve.",
+    "note": "Matches.",
+    "t": 4146
+   },
+   {
+    "kind": "caption_error",
+    "about": "what was redacted from the grant/revolving funds report",
+    "ours": "Accept the report on grant and revolving funds, amended to remove student names from the material — passed",
+    "official": "Ms. Brzozoski makes a motion to accept the grant funds and revolving account, with the caveat that we remove family names from circuit breaker , Ms. Gilman seconds the motion all approve",
+    "official_reading": "remove family names from circuit breaker",
+    "note": "Same vote; captions likely misheard 'family' as 'student' and dropped the specific document name 'circuit breaker' in favor of the vague 'the material'.",
+    "t": 4478
+   },
+   {
+    "kind": "agree",
+    "about": "HMH2 curriculum donation",
+    "ours": "Accept and approve donating surplus HMH2 curriculum materials to another district — passed",
+    "official": "we have a surplus of HMH 2 supplies, and we would like to offer to donate to other districts that may be able to use these supplies.  Ms. Gilman makes a motion to accept the request to donate, Ms. Young seconds the motion all approve",
+    "note": "Matches.",
+    "t": 4628
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "custodial rate increase tied to AV fee vote",
+    "ours": "Accept the increase to the AV support facility-fee line (and the related custodial rate increase) — passed",
+    "official": "we would like to make 1 hour of AV support mandatory to match what it is costing us.   Ms. Gilman makes a motion to accept the increase in fees, Ms. Brzozoski seconds the motion all approve",
+    "note": "Both agree on the AV fee increase vote; only ours mentions a linked custodial rate increase — check the recording for whether that was part of the same motion.",
+    "t": 4732
+   },
+   {
+    "kind": "agree",
+    "about": "facilities and grounds report acceptance",
+    "ours": "Accept the facilities and grounds report — passed",
+    "official": "Mr Stevens gives an update on the Facility and Ground reports  Ms. Brzozoski makes a motion to approve, Ms. Young seconds the motion all approve",
+    "note": "Matches.",
+    "t": 5477
+   },
+   {
+    "kind": "agree",
+    "about": "stabilization fund warrant article vote",
+    "ours": "Recommend the special reserve/stabilization fund warrant article (for out-of-district special education and transportation costs) go on the town warrant — passed",
+    "official": "the first one is to come up with a form of a stabilization account Ms. Gilman makes a motion to add this as a warrant item , Ms. Gilman seconds the motion all approve.",
+    "note": "Matches (official's transcription shows Gilman both moving and seconding, likely a stenography slip on the town's side).",
+    "t": 6121
+   },
+   {
+    "kind": "caption_error",
+    "about": "amount of additional Chapter 70 funding",
+    "ours": "Put a Chapter 70 supplemental-funding ($22,185 as heard) warrant article on the November town meeting warrant — withdrawn before a vote was taken",
+    "official": "this year there is an additional $202,185, in order for the school to get this money it needs to be on the warrant for the Town meeting in November.",
+    "official_reading": "$202,185",
+    "note": "Same fact (extra Chapter 70 money, same warrant-article proposal, same withdrawal) — captions likely dropped a leading '2' hearing 'two hundred two' as 'twenty-two'; the figure appears three times in our captions ($22,000/$22,185/$22,185) and twice in the official text as $202,185, so check the recording to confirm which is right.",
+    "t": 8266
+   },
+   {
+    "kind": "agree",
+    "about": "FY27 capital plan tie vote outcome",
+    "ours": "Move the replacement lawnmower to the top of the FY27 capital plan priority list — tied, so the prior ranking order was kept",
+    "official": "Ms. Brzozoski makes a motion to change the capital plan, it ends with a tie vote, in the event of a tie, the original plan will stay as is and be submitted.",
+    "note": "Both records agree the reorder motion tied and the original order was kept.",
+    "t": 10389
+   },
+   {
+    "kind": "discrepancy",
+    "about": "generator removed / turf added to FY27 capital plan",
+    "ours": "Generator removed from FY27 capital plan priority list and turf field added at priority four, with the rest of the ranking left unchanged after a tied vote on reordering the mower.",
+    "official": "",
+    "note": "Official minutes say the tie vote means 'the original plan will stay as is and be submitted' with no mention of any generator/turf swap — check the recording at t=10120 to see whether this change was actually adopted, was a separate unrecorded vote, or was not adopted at all and our minutes are in error.",
+    "t": 10120
+   },
+   {
+    "kind": "only_in_official",
+    "about": "warrants approved",
+    "ours": "",
+    "official": "Warrants 9/5/25 – 9/26/25 $464,149.66",
+    "note": "Ours does not record this warrant total or any vote on it at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 Q1 vs FY26 Q1 general fund spending figures",
+    "ours": "2,990,30, 3,17,183, 18,755,476, 24.5, 3,653,29, 3,89,598, 19,544,665, 25.7",
+    "official": "",
+    "note": "Detailed budget-comparison figures discussed live; the official summary does not include any of these numbers.",
+    "t": 3024
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cost estimate to reinstate full-time IT/computer tech position",
+    "ours": "38 to 45,000, 10 to 20,000",
+    "official": "",
+    "note": "Cost range discussed live; not in the official summary.",
+    "t": 2402
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "combined salary-reserve cost of two paras plus IT hire",
+    "ours": "26 and 27,000, 38 and $40,000, 55 to 60,000",
+    "official": "",
+    "note": "Not in the official summary.",
+    "t": 3754
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "salary reserve line available balance",
+    "ours": "$90,76962",
+    "official": "",
+    "note": "As-heard figure is likely $90,769.62 with a dropped decimal point; not in the official summary at all so there is no official figure to cross-check the digit grouping against.",
+    "t": 2543
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "health insurance (account 5200) spending pace",
+    "ours": "24.7%, 915,000, 3.7 million",
+    "official": "",
+    "note": "Not in the official summary.",
+    "t": 3857
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "proposed out-of-district reserve fund percentage",
+    "ours": "2%",
+    "official": "",
+    "note": "Not in the official summary, which only names the stabilization account concept without a percentage.",
+    "t": 6079
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "estimated cost of a forensic/comprehensive audit",
+    "ours": "up to $60,000, about 40 grand, close to 50",
+    "official": "",
+    "note": "Official only says a forensic/best-practices audit was discussed as a possible warrant article; no cost figures appear in the official text.",
+    "t": 8809
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "replacement lawnmower cost",
+    "ours": "20,000, $70,000",
+    "official": "",
+    "note": "Not in the official summary.",
+    "t": 10223
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cost of unauthorized soccer/football uniform purchases",
+    "ours": "$10,000, $8,000, $18,000",
+    "official": "",
+    "note": "Official describes the uniforms being held but gives no purchase-cost figure.",
+    "t": 10742
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "town-side grant and cafeteria fund liabilities",
+    "ours": "about $600,000, about $450, around $600,000",
+    "official": "",
+    "note": "Not in the official summary.",
+    "t": 9477
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "history of district budget increases and free cash support",
+    "ours": "4.47%, 8%, 8 and a half%, 2 and a half%, 3.81, $500,000, $320,000, $800,000",
+    "official": "",
+    "note": "Not in the official summary.",
+    "t": 11734
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DESE extension for middle school exploration policy",
+    "ours": "Superintendent will likely request a DESE extension for the middle school exploration policy deadline, since there are not three school committee meetings before November 1.",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes.",
+    "t": 1295
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "deferral details on the forensic audit decision",
+    "ours": "Decision on pursuing a comprehensive/forensic audit of FY25 books was deferred; the superintendent will talk with the town manager and bring back options and funding questions.",
+    "official": "Ms. Brzozoski discusses a potential for a forensic audit and best practices audit being added as a warrant article",
+    "note": "Official records only that the audit idea was discussed, not the specific deferral plan (superintendent to talk with town manager) that ours records.",
+    "t": 9978
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "soccer/football uniform cycle framing",
+    "ours": "Undistributed soccer uniforms will be held and issued next year as the start of a new uniform replacement cycle; football's new uniforms count as its turn in that cycle, with no retroactive budget penalty to either team.",
+    "official": "These will be kept and will be held for the soccer team until the Fall of 2026",
+    "note": "Both agree the soccer uniforms are held until next fall; only ours frames this as a formal rotating replacement cycle including football — worth checking the recording for whether that framing was actually stated or is an inference.",
+    "t": 10990
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "policy subcommittee spending-authority policy",
+    "ours": "Committee signaled intent to develop a policy, via the policy subcommittee, requiring staff with spending authority to affirm they will not spend outside the certified budget without pre-approval.",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "superintendent's report: retirement savings funding a paraprofessional",
+    "ours": "",
+    "official": "Staffing is being closely monitored and a recent retirement as created a savings that will allow us to hire a full time paraprofessional.",
+    "note": "Official ties the para hire to a specific retirement-driven savings; ours has no equivalent detail in the superintendent's report section."
+   },
+   {
+    "kind": "caption_error",
+    "about": "business administrator's name",
+    "ours": "Chris (McNamera) (business manager/finance director)",
+    "official": "Christopher McNamara – Business Administrator",
+    "official_reading": "Christopher McNamara",
+    "note": "Same person, surname misheard by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "vice chair's name",
+    "ours": "Laura / Lori (school committee member)",
+    "official": "Laura Brzozoski, Vice Chair - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Captions offer two competing hearings; the official spelling is Laura Brzozoski."
+   },
+   {
+    "kind": "caption_error",
+    "about": "athletic director's name",
+    "ours": "Shenina Burns (assistant principal / interim athletic director)",
+    "official": "Yanina Burns – Athletic Director",
+    "official_reading": "Yanina Burns",
+    "note": "First name misheard by captions; also note ours calls her interim/assistant principal while official lists her simply as Athletic Director."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "whether 'Tony' and 'the chair' are the same person",
+    "ours": "the chair (chair); ... Tony (school committee member)",
+    "official": "Anthony Sculimbrene Chair - Present",
+    "note": "Official lists only one Sculimbrene, the chair; ours appears to list him twice under 'the chair' and 'Tony' (a nickname for Anthony) as if they were two different members — check the recording/roll call to confirm this is a double-count, not a second person."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "business office staff attendee 'Liz'",
+    "ours": "Liz (business office staff)",
+    "official": "",
+    "note": "Not listed among official attendees or guests."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "student representative's presence",
+    "ours": "the student representative (student representative (junior))",
+    "official": "",
+    "note": "Official's attendance section does not list a student representative, though a student representative report is summarized in item 6 of the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "absent member George Yapp",
+    "ours": "",
+    "official": "George Yapp, Member - Absent",
+    "note": "Ours does not record any committee member as absent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "public commenter TJ Loughlin",
+    "ours": "",
+    "official": "TJ Loughlin 207 Rolling Acres Road In regards to the salary reserve line as it relates to paras, and how these hires show up in next year's budget items.",
+    "note": "Not recorded anywhere in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "recording secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Not recorded anywhere in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:25:59Z",
+   "cost_usd": 0.31896739999999996
+  }
  }
 }

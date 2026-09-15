@@ -1,0 +1,473 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-03-10",
+ "video_id": "7TS97IU0kuA",
+ "video_url": "https://www.youtube.com/watch?v=7TS97IU0kuA",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-03-10-7TS97IU0kuA.json",
+  "sha256": "cb2968edb064667428572c201f2ff3f9936aac070637764d946a677c18d83681",
+  "caption_lines": 172,
+  "segments": 1543
+ },
+ "recording": {
+  "duration_s": 3570,
+  "duration": "0:59",
+  "spoken_chars": 53424,
+  "words_approx": 8904
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03102026-7697",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-10-agenda-7697.txt",
+   "path": "sources/meetings/select-board/2026-03-10-agenda-7697.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03102026-7698",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-10-agenda-7698.txt",
+   "path": "sources/meetings/select-board/2026-03-10-agenda-7698.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03102026-7698",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-10-minutes-7698.txt",
+   "path": "sources/meetings/select-board/2026-03-10-minutes-7698.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-15T13:20:12Z",
+  "cost_usd": 0.2961244
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the Chair",
+    "role": "Select Board Chair"
+   },
+   {
+    "name_as_heard": "Andrea",
+    "role": "Board of Health agent/director"
+   },
+   {
+    "name_as_heard": "the Town Manager",
+    "role": "Town Manager (gave brief oral report)"
+   },
+   {
+    "name_as_heard": "Timothy McGllinchi",
+    "role": "Director, Central Mass Mosquito Control Project (presenter)"
+   },
+   {
+    "name_as_heard": "Frank Cornin",
+    "role": "Director of Operations / staff biologist, Central Mass Mosquito Control (presenter)"
+   },
+   {
+    "name_as_heard": "Melissa",
+    "role": "staff, operating presentation slides"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 3021,
+    "speaker_as_heard": "Teddy Ducat",
+    "stated_role": "resident, 318 Howard Street",
+    "topic": "Raised concern that the mosquito spray Zenovex is toxic to bees and that the district's website language on this seemed to conflict with the product label."
+   },
+   {
+    "t": 3271,
+    "speaker_as_heard": "Nita",
+    "stated_role": "Lunenburg Diner",
+    "topic": "Apologized to the board for arriving late for the diner's one-day liquor license application, which had already been approved."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "facilities",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 153,
+    "motion": "Approve the one-day liquor license application for Sam Fam, Inc. DBA Lunenburg Diner, 324 Electric Avenue, for a mix-and-mingle event March 19, 2026, 6-8 p.m.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3255,
+    "motion": "Close the joint Board of Health portion of the meeting",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 258,
+    "topic": "Mosquito control assessment (Central Mass Mosquito Control Project)",
+    "what_was_said": "The select board chair said the town faces a substantial budgetary shortfall and framed the mosquito control assessment as a significant, non-small part of the budget; she said the town's people should decide at town meeting whether to keep paying at that rate.",
+    "figures_as_heard": [
+     "$100,000"
+    ]
+   },
+   {
+    "t": 2518,
+    "topic": "Lunenburg's share of the mosquito control assessment",
+    "what_was_said": "A board member recapped notes from the presentation, estimating the town's annual share and noting other program totals (ditch footage, culverts, acreage treated, catch basins), while clarifying the tire-recycling figure was cumulative since program inception, not annual.",
+    "figures_as_heard": [
+     "around 91,000",
+     "4,500 feet of ditch maintenance",
+     "123 coverts",
+     "14.43 acres",
+     "1,475 catch basins",
+     "1,500 tires"
+    ]
+   },
+   {
+    "t": 2897,
+    "topic": "How the mosquito control assessment is calculated",
+    "what_was_said": "A board member asked how the charge to the town is determined; the presenter said it is set by the state Department of Revenue using a formula based on land mass and equalized valuation, not decided by the mosquito control project itself.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3495,
+    "topic": "Economic Development Committee revolving fund (draft warrant article)",
+    "what_was_said": "The board reviewed a draft warrant article that would establish a new revolving fund allowing the Economic Development Committee to take in receipts and expend from that fund; it was presented as a draft only, not yet voted onto the warrant.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3515,
+    "topic": "Technology revolving fund (draft warrant article)",
+    "what_was_said": "A draft warrant article was noted as a language/title change tied to the renaming of the land use director position, with no substantive change described.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3515,
+    "topic": "FY26 capital cleanup article",
+    "what_was_said": "A draft warrant article was described as reallocating money from one capital item to another as part of an FY26 capital cleanup; no amount was stated.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3538,
+    "topic": "Vacation buyout transition language",
+    "what_was_said": "A draft warrant article was described as transition language moving the vacation buyout to the approval (town meeting approval) system; no figures were given.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 3515,
+    "description": "FY26 capital cleanup article reallocating money from one capital item to another, as drafted for the 2026 annual town meeting warrant",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 280,
+    "decision": "The select board chair indicated the decision on whether to continue paying for mosquito control participation should go to town meeting voters rather than be decided by the board alone."
+   },
+   {
+    "t": 3474,
+    "decision": "The board treated the packet of warrant-article drafts as informational only; reviewing/holding the draft document does not constitute a vote to place any article on the warrant."
+   },
+   {
+    "t": 3312,
+    "decision": "The board acknowledged the resignation of Chris St. Germaine from the Conservation Commission."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 42,
+    "topic": "Call to order and pledge of allegiance",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 42,
+    "t_end": 63,
+    "topic": "Public comment period (none offered)",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 63,
+    "t_end": 175,
+    "topic": "One-day liquor license application, Lunenburg Diner",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 175,
+    "t_end": 300,
+    "topic": "Joint select board / board of health meeting opened; context on mosquito control budget pressure and a possible town meeting vote",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "town-meeting",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 300,
+    "t_end": 2437,
+    "topic": "Central Mass Mosquito Control Project educational presentation (surveillance, ditch maintenance, larval/adult control, exclusions, beaver mitigation, research)",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2437,
+    "t_end": 3000,
+    "topic": "Board questions on program costs, assessment formula, and spraying practices",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 3021,
+    "t_end": 3185,
+    "topic": "Public comment on pesticide toxicity to bees",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 3185,
+    "t_end": 3271,
+    "topic": "Closing remarks and vote to close board of health portion of joint meeting",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 3271,
+    "t_end": 3311,
+    "topic": "Diner representative's apology for arriving late",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 3311,
+    "t_end": 3331,
+    "topic": "Appointments, ratifications and resignations: Chris St. Germaine, Conservation Commission",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3331,
+    "t_end": 3412,
+    "topic": "Town manager report: TC Pacios building leak and food pantry temporary-location discussions",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 3432,
+    "t_end": 3453,
+    "topic": "New business: FY27 budget discussion item",
+    "resolution": "no resolution",
+    "tags": [
+     "budget-fy27",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 3453,
+    "t_end": 3559,
+    "topic": "Old business: draft warrant articles for 2026 annual town meeting reviewed",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "transfers"
+    ]
+   },
+   {
+    "t_start": 3559,
+    "t_end": 3579,
+    "topic": "Recess before tri-board meeting",
+    "resolution": "procedural",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Names of individual select board members and board of health members are not stated in the captions; only roles/addressing can be inferred.",
+   "The identity of the person giving the 'town manager report' (t~3331-3412) is unclear from the captions.",
+   "Stretch around t=3412-3453 discussing warrant changes is garbled ('I think we should go over the some of the warrant our warrants changed').",
+   "A brief exchange near t=3538-3559 about someone possibly 'stuck' is unclear/garbled.",
+   "Exact vote counts are not given for either motion; only voice votes ('all in favor') are heard."
+  ],
+  "confidence": "moderate",
+  "headline": "Select Board leans toward letting town meeting voters decide on continued mosquito-control funding.",
+  "summary": "The select board approved a one-day liquor license, then held a joint meeting with the board of health for an extensive educational presentation by Central Mass Mosquito Control Project on its surveillance, ditch-maintenance, larval and adult mosquito control work, amid a town budget shortfall that has put the district's assessment on the table. No vote was taken on the mosquito control funding; the chair said it should go to town meeting voters. The board also acknowledged a Conservation Commission resignation, heard a brief town manager report on a building leak, and reviewed (without voting on) draft warrant articles for the 2026 annual town meeting before recessing into a tri-board meeting."
+ },
+ "digest": {
+  "watch_next": [
+   "Whether mosquito-control funding appears as a warrant article for a town meeting vote",
+   "Final warrant articles for the 2026 annual town meeting, including the draft revolving-fund and capital-cleanup items reviewed this meeting"
+  ],
+  "what_happened": [
+   {
+    "line": "The select board chair said continued funding for mosquito control should be decided by town meeting voters, not the board, amid a town budget shortfall.",
+    "t": 280
+   },
+   {
+    "line": "No vote was taken on the mosquito control assessment; the board instead held a joint educational session with the board of health on the program.",
+    "t": 175
+   },
+   {
+    "line": "The board approved a one-day liquor license for the Lunenburg Diner for a March 19 event.",
+    "t": 153
+   },
+   {
+    "line": "The board reviewed, but did not vote on, draft 2026 town meeting warrant articles covering a new Economic Development revolving fund, a technology revolving fund renaming, an FY26 capital cleanup item, and vacation buyout transition language.",
+    "t": 3474
+   },
+   {
+    "line": "The board acknowledged a resignation from the Conservation Commission.",
+    "t": 3312
+   }
+  ],
+  "why_it_matters": [
+   "If mosquito control funding goes to town meeting, residents will be asked to vote directly on whether to keep paying into that regional assessment, which a board member said the state sets using a land-mass and valuation formula rather than local choice.",
+   "The draft warrant articles reviewed -- a new revolving fund, a capital reallocation, and a policy change to vacation buyouts -- are early-stage and not yet committed to the warrant, but they preview what voters may see at the 2026 annual town meeting.",
+   "A public commenter raised a concern about pesticide safety to bees, which residents may want addressed before any funding vote."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-15T13:20:26Z",
+   "cost_usd": 0.1448044
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03102026-7698",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-10-minutes-7698.txt",
+   "path": "sources/meetings/select-board/2026-03-10-minutes-7698.pdf"
+  },
+  "official_sha256": "be166399bc7259b4e4ef7d64aea2d64db7659b54f339b6bd1dcdf912fdbefdb3",
+  "coverage": "partial",
+  "summary": "These two records share almost no content: our minutes cover a liquor license vote, a mosquito control assessment presentation, a capital-cleanup warrant article discussion, and a Conservation Commission resignation, while the official minutes cover only the Tri-Board (Select Board/School Committee/Finance Committee) FY27 override discussion — none of our agenda items appear in the official document and none of its override discussion appears in ours. The one direct contradiction is attendance: our minutes show \"the Chair\" present, but the official minutes explicitly list Select Board Chair Caesar Nuzzolo as absent (National Guard duty) for the whole session — worth checking whether these are genuinely the same meeting/session or the Chair was present only for a portion our official minutes don't cover.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 0,
+   "discrepancy": 0,
+   "only_in_ours": 7,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "only_in_ours",
+    "about": "vote: one-day liquor license for Sam Fam, Inc. DBA Lunenburg Diner",
+    "ours": "Approve the one-day liquor license application for Sam Fam, Inc. DBA Lunenburg Diner, 324 Electric Avenue, for a mix-and-mingle event March 19, 2026, 6-8 p.m. — passed",
+    "official": "",
+    "note": "This vote does not appear anywhere in the official minutes, which record only the Tri-Board FY27 override discussion; check whether a separate Select Board-only session (with its own minutes) covered this item.",
+    "t": 153
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "discussion: FY26 capital cleanup article (warrant article funding transfer)",
+    "ours": "FY26 capital cleanup article reallocating money from one capital item to another, as drafted for the 2026 annual town meeting warrant — discussed only, no vote stated",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all; confirm whether this was a genuine Select Board agenda item covered by separate minutes not provided here.",
+    "t": 3515
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figures: mosquito control assessment and Lunenburg's share",
+    "ours": "Central Mass Mosquito Control Project assessment: $100,000 total; Lunenburg's share approximately $91,000, covering 4,500 feet of ditch maintenance, 123 coverts, 14.43 acres, 1,475 catch basins, 1,500 tires",
+    "official": "",
+    "note": "No mosquito control item appears in the official minutes; verify these figures against the presenters' own materials if a check is needed, since they are only in our (caption-derived) minutes.",
+    "t": 2518
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: mosquito control funding referred to town meeting voters",
+    "ours": "The select board chair indicated the decision on whether to continue paying for mosquito control participation should go to town meeting voters rather than be decided by the board alone.",
+    "official": "",
+    "note": "Not recorded in the official minutes; if this decision matters for the warrant, confirm it was actually made at this meeting and not misattributed.",
+    "t": 280
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: capital-article packet treated as informational only, not a vote",
+    "ours": "The board treated the packet of warrant-article drafts as informational only; reviewing/holding the draft document does not constitute a vote to place any article on the warrant.",
+    "official": "",
+    "note": "Absent from official minutes; a reader tracking what is or isn't on the warrant should confirm this characterization against the actual warrant filing.",
+    "t": 3474
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: Conservation Commission resignation acknowledged",
+    "ours": "The board acknowledged the resignation of Chris St. Germaine from the Conservation Commission.",
+    "official": "",
+    "note": "Not mentioned in the official minutes; confirm the resignation and its acknowledgment through a separate Select Board record if this needs to be on file.",
+    "t": 3312
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendees: mosquito control presenters and Board of Health agent",
+    "ours": "Andrea (Board of Health agent/director), Timothy McGllinchi (Director, Central Mass Mosquito Control Project), Frank Cornin (Director of Operations/staff biologist, Central Mass Mosquito Control), Melissa (staff, presentation slides)",
+    "official": "",
+    "note": "None of these people appear in the official minutes' attendee list; likely because the official minutes only cover the Tri-Board budget segment, not the mosquito-control agenda item.",
+    "t": 258
+   },
+   {
+    "kind": "only_in_official",
+    "about": "straw poll: unanimous support for placing an override on the ballot",
+    "ours": "",
+    "official": "The Moderator called for a straw poll on whether all members present supported placing an override on the ballot. All members present indicated their support. The Moderator confirmed that this was unanimous among those in attendance and noted for the record that it was a non-binding straw poll.",
+    "note": "This significant (though non-binding) decision is entirely absent from our minutes, which do not cover the FY27 override discussion at all.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "figures: override tax impact on average household",
+    "ours": "",
+    "official": "the average single-family home in Lunenburg is assessed at $517,296, with a current FY26 tax bill of $7,444. The estimated impact of a $3,000,000 override on that average household would be an additional $636.27 per year, based on FY26 figures.",
+    "note": "Not covered anywhere in our minutes; these figures come from the Town Manager and would need to be checked against the FY27 budget model if used in the app.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "deadline: ballot question language due to Town Clerk",
+    "ours": "",
+    "official": "Member Emkey confirmed the key timeline constraint: the ballot question language must be submitted to the Town Clerk by April 11, 2026, which is thirty-five days prior to the election.",
+    "note": "Not present in our minutes at all; a hard statutory deadline worth cross-checking against the town clerk's own posted calendar if used elsewhere in the app.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:39:51Z",
+   "cost_usd": 0.2602288
+  }
+ }
+}

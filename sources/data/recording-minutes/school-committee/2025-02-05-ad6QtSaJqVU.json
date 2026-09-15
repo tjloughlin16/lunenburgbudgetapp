@@ -728,5 +728,365 @@
    "at": "2026-09-14T01:26:46Z",
    "cost_usd": 0.14983839999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02052025-7006",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-02-05-minutes-7006.txt",
+   "path": "sources/meetings/school-committee/2025-02-05-minutes-7006.pdf"
+  },
+  "official_sha256": "43a0f2f850e756284a232b83368f81bcf00afb0a64ed8e2c9711bb9ef9a82483",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the formal actions taken — nearly every motion, second, and vote tally (grant approval, warrant article, assessment report, LHS program of studies 3-1-1, facilities report, capital contracts, competency determination 4-1, search consultant directive, tabling reports) matches between the two records. The biggest thing to know is that the official minutes are essentially silent on the FY26 budget presentation's actual numbers (level-service total, target-budget gap, proposed cuts, FTE reductions, tuition, utilities, cost drivers, athletics fee) — those figures exist only in our machine-caption-derived minutes and cannot be cross-checked against the official text at all, and one seated committee member (Laura Brzozoski, who spoke and made/seconded multiple motions) is entirely absent from our attendee list.",
+  "counts": {
+   "agree": 15,
+   "caption_error": 5,
+   "discrepancy": 1,
+   "only_in_ours": 18,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Grant application vote (Mass Life Science Center / Turkey Hill)",
+    "ours": "passed",
+    "official": "Mr. Sculimbrene makes a motion to approve the application for the grant proposed, Ms. Brzozoski seconds the motion, all approve",
+    "note": "Same vote, same outcome.",
+    "t": 2018
+   },
+   {
+    "kind": "agree",
+    "about": "Track and field complex warrant article vote",
+    "ours": "passed unanimously",
+    "official": "Mr. Sculimbrene makes a motion to approve the warrant for town meeting, Ms. Archambault seconds the motion all approve",
+    "note": "Same vote, same outcome.",
+    "t": 2553
+   },
+   {
+    "kind": "agree",
+    "about": "Midyear benchmark assessment report vote",
+    "ours": "passed",
+    "official": "Ms. Brzozoski makes a motion to accept the report, Ms. Archambault seconds the motion all approve.",
+    "note": "Same vote (called 'Assessment Report' in official), same outcome.",
+    "t": 4471
+   },
+   {
+    "kind": "agree",
+    "about": "LHS program of studies vote",
+    "ours": "passed 3 to 1, one abstention",
+    "official": "the motion passes with 3 approvals, 1 no and 1 abstention",
+    "note": "Tally matches exactly.",
+    "t": 5181
+   },
+   {
+    "kind": "agree",
+    "about": "Facilities and grounds report vote",
+    "ours": "passed",
+    "official": "Mr. Beardmore makes a motion to accept the report, Ms. Archambault seconds all approve.",
+    "note": "Same vote, same outcome.",
+    "t": 5821
+   },
+   {
+    "kind": "agree",
+    "about": "Door-replacement and security-system capital contracts vote",
+    "ours": "passed unanimously",
+    "official": "Mr. Beardmore makes a motion to award the contracts as explained by Dr. Gilson, Ms. Archambault seconds the motion all approve.",
+    "note": "Same vote, same outcome, same presenter attribution.",
+    "t": 5842
+   },
+   {
+    "kind": "agree",
+    "about": "District competency determination vote",
+    "ours": "passed 4 to 1",
+    "official": "The motion passes with 4 approvals and Mr. Beardmore votes no",
+    "note": "Tally and dissenter identity match.",
+    "t": 6096
+   },
+   {
+    "kind": "agree",
+    "about": "Direct superintendent to procure search consultant vote",
+    "ours": "passed unanimously",
+    "official": "Ms. Archambault makes a motion to direct the superintendent to appropriately and legally procure a consultant for the superintendent search, Mr. Sculimbrene seconds the motion, all approve",
+    "note": "Same vote, same outcome.",
+    "t": 7402
+   },
+   {
+    "kind": "agree",
+    "about": "Table remaining reports vote",
+    "ours": "passed",
+    "official": "Mr. Sculimbrene makes a motion to postpone reports, Ms. Archambault seconds the motion all approve",
+    "note": "Same vote (worded 'postpone reports' officially), same outcome.",
+    "t": 13592
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers/donations this period",
+    "ours": "",
+    "official": "Warrants have been signed, no questions, no transfers or donations.",
+    "note": "Both records agree no transfers occurred.",
+    "t": 1210
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants 1/21-1/31/25 total",
+    "ours": "$159,794.33",
+    "official": "$159,787.33",
+    "official_reading": "$159,787.33",
+    "note": "Digit misheard by captions; check the warrant packet to confirm the exact cents/hundreds figure.",
+    "t": 1210
+   },
+   {
+    "kind": "agree",
+    "about": "911 phone upgrade cabling cost at Turkey Hill",
+    "ours": "almost $60,000",
+    "official": "about $60,000",
+    "note": "Same figure, same rounding.",
+    "t": 1294
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Track/field warrant article cost-range discussion figures",
+    "ours": "$100,000, $50,000 less or $50,000 more, 1.5 and $2.5 million, 5% of that $2 million",
+    "official": "",
+    "note": "Official minutes only record the $100,000 estimate and that Dr. Gilson would verify it; the wider discussion range is not in the official record.",
+    "t": 2068
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash as funding option for track/field project",
+    "ours": "$500,000",
+    "official": "",
+    "note": "Not mentioned in official minutes at all; check the recording near t=2262 to confirm this figure was actually stated.",
+    "t": 2262
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26-28 unaffiliated salary schedule percentages",
+    "ours": "4% increase in 2025, 3% increase in 2026, 3% increase in 2027",
+    "official": "The committee has been provided the salary schedule for review, this is primarily for the extended day staff, which is a self-sustaining program and has no budgetary impact.",
+    "note": "Official omits the specific percentages and instead notes the program is self-sustaining with no budgetary impact; a reader should check the actual salary schedule document for the percentages.",
+    "t": 2975
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Primary/Turkey Hill door replacement and security contract dollar amounts",
+    "ours": "$189,982, $134,800, $325,000, 324798",
+    "official": "",
+    "note": "Official minutes describe the vote to award contracts but state no dollar figures; check the contract documents for the actual amounts.",
+    "t": 5352
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 level-service budget total with special ed grant applied",
+    "ours": "$28.7 Million, in excess of 14%",
+    "official": "",
+    "note": "Official only describes that a budget presentation occurred with cuts listed; no figures are recorded. Check the budget presentation slides for these numbers.",
+    "t": 7664
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager's FY26 target budget vs level-service gap",
+    "ours": "$680,000, 2.6, 29 million, 2,563,376, almost $3.5 million",
+    "official": "",
+    "note": "Official gives no budget figures in the presentation section (the ~$3.5 million figure appears only in a resident's public comment, TJ Laughlin, not in the presentation summary); check the presentation slides.",
+    "t": 7726
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 proposed cuts to reach town's target budget",
+    "ours": "10.6%, 1.9 million",
+    "official": "",
+    "note": "Not recorded in official minutes; check the budget presentation slides.",
+    "t": 9001
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 staffing (FTE) reductions by category",
+    "ours": "36.5 FTE, 1.5 FTE, 13.6 FTE, 5 FTE, 10 FTE, 3 FTE, 1.9 FTE, 16.2 FTE, 15.4 FTE, 4.9 FTE",
+    "official": "",
+    "note": "Official only notes 'A slide is shared that lists the Personnel cuts' without figures; check the presentation slides for the FTE breakdown.",
+    "t": 8178
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Out-of-district special education tuition reimbursement figures",
+    "ours": "four times, $166,000, 75%",
+    "official": "",
+    "note": "Not recorded in official minutes; check the budget presentation for these figures.",
+    "t": 9348
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Electricity (Unitil) budget line figures",
+    "ours": ".27 kilowatt hours, .12 or .13, $30,000",
+    "official": "",
+    "note": "Not recorded in official minutes; check the budget presentation for these figures.",
+    "t": 9435
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Proposition 2½ cap vs inflation rate comparison",
+    "ours": "8.07%",
+    "official": "",
+    "note": "Not recorded in official minutes; check the budget presentation for this figure.",
+    "t": 9670
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 budget cost driver figures",
+    "ours": "$70,000, $120,000, 24%",
+    "official": "",
+    "note": "The $70,000 transportation figure is echoed in a resident's public comment (TJ Laughlin) but not stated in the official presentation summary itself; check the presentation slides.",
+    "t": 10516
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletics revolving fund fee increase figures",
+    "ours": "26%, $250 a season, 325",
+    "official": "",
+    "note": "Not recorded in official minutes (a resident's public comment cites a different figure, ~$40,000/1%, for a related but distinct point); check the presentation slides.",
+    "t": 11090
+   },
+   {
+    "kind": "agree",
+    "about": "MASC superintendent search consultant cost",
+    "ours": "11,500",
+    "official": "The cost is $11,500.",
+    "note": "Matches exactly.",
+    "t": 6790
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance vs. contract-driven cost growth percentages",
+    "ours": "14%, 12%",
+    "official": "",
+    "note": "A resident's public comment (TJ Laughlin) separately cites 'a 12% health insurance increase' but the official minutes do not record this pair of figures from the presentation itself; check the presentation slides.",
+    "t": 10850
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision to add missing January warrants to next packet",
+    "ours": "Staff will add the missing January warrants (through the 19th) to the next meeting's packet.",
+    "official": "",
+    "note": "Not recorded in official minutes; check the next meeting's packet for whether this occurred.",
+    "t": 1273
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Facilities director hiring status to be put on next agenda",
+    "ours": "Facilities director hiring status will be put on the next meeting's agenda after a finalist withdrew.",
+    "official": "",
+    "note": "Not recorded in official minutes; check the subsequent meeting's agenda.",
+    "t": 1479
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 letter to legislators/governor/districts",
+    "ours": "Chair will revise the Chapter 70 letter to remove specific bill numbers and send it to state legislators, the governor, and surrounding districts.",
+    "official": "The committee discusses a letter and details they would like to send to legislature",
+    "note": "Both records confirm a letter to legislators was planned; official omits the detail about removing bill numbers.",
+    "t": 3654
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Kids Kingdom / TCP move discussion outcome",
+    "ours": "Superintendent will tell the town manager the committee is split on the Kids Kingdom move and will convene a joint discussion (school committee, Council on Aging, facilities director, library) before any proposal returns for a vote.",
+    "official": "The superintendent will reach out to the Town Manager and let them know the School Committee is not ready to take action at this time. The conversation is also to include having a meeting between school committee, council on aging, town facilities director and the library to come up with a plan.",
+    "note": "Both agree a joint meeting will be convened, but the characterization of the committee's position differs — 'split' (ours) vs 'not ready to take action' (official); check the recording around t=4223 to see which framing the superintendent actually used.",
+    "t": 4223
+   },
+   {
+    "kind": "agree",
+    "about": "Decision to forgo separate written resolutions",
+    "ours": "Committee will forgo separate written resolutions and rely on the Chapter 70 letter instead.",
+    "official": "Mr. Lehtinen shares he does not need these resolutions to go out, the letter is sufficient, the committee agrees",
+    "note": "Same decision.",
+    "t": 12787
+   },
+   {
+    "kind": "agree",
+    "about": "Chair's announcement not to seek reelection",
+    "ours": "Chair Brian Lean announced he will not seek reelection to the school committee.",
+    "official": "I've decided that I will not be running for re-election, I've appreciated the time and the experience that I have had.",
+    "note": "Same announcement (see separate caption_error finding for the chair's name).",
+    "t": 14795
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Lean",
+    "official": "Brian Lehtinen, Chair - present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname throughout our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair's name",
+    "ours": "Mr Scullbrini (Anthony) — rendered variously as 'skull b i', 'scull brini', 'Bowski', 'scalini'",
+    "official": "Anthony Sculimbrene, Vice Chair - present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Consistently misheard across many variant spellings in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Secretary's name",
+    "ours": "Miss Aro / Carol Arshambo",
+    "official": "Carol Archambault, Secretary - present",
+    "official_reading": "Carol Archambault",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee member Laura Brzozoski",
+    "ours": "",
+    "official": "Laura Brzozoski, Member - present",
+    "note": "A seated committee member who made/seconded multiple motions (assessment report, LHS program of studies, etc.) and spoke in public comment response is entirely missing from our attendee list; check the recording for her presence and voice.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director of Teaching and Learning's name",
+    "ours": "Dr Bookas / Miss Bookas",
+    "official": "Dr. Bookis – Director of Teaching and Learning",
+    "official_reading": "Dr. Bookis",
+    "note": "Close misheard spelling of the same name."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Special Services Director Julianna Hanscom",
+    "ours": "",
+    "official": "Julianna Hanscom – Special Services Director",
+    "note": "Listed as a guest in official minutes but not captured in our attendee list at all; check the recording for her presence/participation."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MTSS Specialist/Coaches Amy Resnick and Lisa Cantin",
+    "ours": "",
+    "official": "Amy Resnick – MTSS Specialist/Coach, Lisa Cantin – MTSS Specialist/Coach",
+    "note": "Listed as guests in official minutes but absent from our attendee list; check the recording for their presence/participation."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee 'principal Squire'",
+    "ours": "principal Squire (principal)",
+    "official": "",
+    "note": "Official minutes list a 'Mrs. Squier' only as a public commenter (section 13), not in the formal guest/attendee list at the top; check whether she was an official guest or only a public speaker."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee 'principal Yvon'",
+    "ours": "principal Yvon (principal)",
+    "official": "",
+    "note": "Not named anywhere in the official minutes; check the recording to confirm this person's presence and correct name."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:52:47Z",
+   "cost_usd": 0.3016588
+  }
  }
 }

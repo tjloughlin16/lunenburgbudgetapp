@@ -632,5 +632,286 @@
    "at": "2026-09-14T00:21:42Z",
    "cost_usd": 0.1449064
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09172025-7408",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-09-17-minutes-7408.txt",
+   "path": "sources/meetings/school-committee/2025-09-17-minutes-7408.pdf"
+  },
+  "official_sha256": "b6e21fad3bbdc53bb0d9b3b1a10d33369e3a3d2ea0d6949f7b9e1aa706ddbb4a",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the four line-item transfer amounts, the donation split, the grant figure, the legal-fee bump, the secretarial-hours vote, and the FY25 surplus figure — differences there are almost all caption garble, not substance. Where they diverge for real: our minutes cover the capital-plan discussion, the FY25 underspent-line breakdown, and several specific decisions (generator/turf swap, monthly forecasting, staff meetings) in detail the official minutes never record, while the official minutes record a Executive Session and a vote to table the School Committee Goals/subcommittee reports that our minutes omit entirely — a reader should check the town's video/vote record for both.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 7,
+   "discrepancy": 8,
+   "only_in_ours": 14,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "only_in_ours",
+    "about": "transfer vote detail: date correction 9/26→9/25",
+    "ours": "Approve the four line item transfers, with the date on one transfer corrected from 9/26 to 9/25 — passed",
+    "official": "Ms. Brzozoski makes a motion to approve transfers, Mr. Yapp seconds the motion all approve.",
+    "note": "The date-correction amendment is not mentioned in the official minutes at all; check the recording near t=461 to confirm it happened and which transfer it applied to.",
+    "t": 461
+   },
+   {
+    "kind": "caption_error",
+    "about": "donor organization name",
+    "ours": "the Lunenburg Music Boosters",
+    "official": "Ms. Barooshian, President of the Music Gators, kids raised $1500 through toll booth in town, would like to donate $500 to Turkey Hill Music program and $1000 to the Lunenburg Middle High School Music supply budget",
+    "official_reading": "the Music Gators",
+    "note": "Same donation event and dollar amounts; the group's name was misheard by the captions.",
+    "t": 657
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "name of new legal firm",
+    "ours": "Valerio, Dominello, and Hillman LLC",
+    "official": "Dr. Fortuna would like to use a firm she has used in the past with 3 other districts, the fee is $25 more per hour and would like the committees approval to move forward with the change.",
+    "note": "Official minutes never name the firm; confirm the firm name against the recording or the board packet.",
+    "t": 1712
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "content of the legal-representation amendment",
+    "ours": "with one amendment regarding union negotiation control",
+    "official": "Ms. Brzozoski makes a motion to approve the change in legal representation with an amendment as Mr. Sculimbrene explained, Ms. Young seconds the motion all approve",
+    "note": "Official minutes reference \"an amendment as Mr. Sculimbrene explained\" but do not say what it was; our detail should be checked against the recording.",
+    "t": 1712
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attribution of secretarial-hours proposal",
+    "ours": "as outlined by Mr. Santry",
+    "official": "Ms. Brzozoski makes a motion to approve an additional 15 hours to secretarial support, Mr. Yapp seconds the motion all approve",
+    "note": "No name is given in the official minutes for who outlined the request; verify \"Santry\" is a real name and not a caption misfire.",
+    "t": 1926
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY26 curriculum-adoption transfer amount formatting",
+    "ours": "$4,22259",
+    "official": "FY 26 we will be moving $4,222.59 out of the curriculum adoption line and putting it into the Primary School workbook line",
+    "official_reading": "$4,222.59",
+    "note": "Same figure; the decimal/comma got dropped in the caption-derived transcript.",
+    "t": 291
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY25 maintenance-to-sewage/electricity/telephone transfer amount",
+    "ours": "$50,7143",
+    "official": "FY25 transfers are from maintenance of buildings to sewage disposal, electricity charges and telephone charges in the amount of $50,701.43",
+    "official_reading": "$50,701.43",
+    "note": "A digit appears to have dropped in the captioned figure; the transaction described is the same.",
+    "t": 377
+   },
+   {
+    "kind": "caption_error",
+    "about": "warrants total",
+    "ours": "$699,112.33",
+    "official": "Warrants 9/2/25-9/15/25 $689,112.33",
+    "official_reading": "$689,112.33",
+    "note": "Cents match exactly ($x12.33) and only one interior digit differs (9 vs 8); likely a misheard digit rather than a different total — worth a quick check against the warrant itself given the $10,000 gap.",
+    "t": 502
+   },
+   {
+    "kind": "discrepancy",
+    "about": "an extra $200 figure in the donation discussion",
+    "ours": "$1,500, $500, $1,000, $200",
+    "official": "kids raised $1500 through toll booth in town, would like to donate $500 to Turkey Hill Music program and $1000 to the Lunenburg Middle High School Music supply budget",
+    "note": "Official accounts for $1,500 as $500+$1,000; the extra $200 in our figures does not reconcile to anything in the official text — check the recording near t=543 for what it refers to.",
+    "t": 543
+   },
+   {
+    "kind": "discrepancy",
+    "about": "a second secretarial-hours figure (2460)",
+    "ours": "15, 2460",
+    "official": "Ms. Brzozoski makes a motion to approve an additional 15 hours to secretarial support, Mr. Yapp seconds the motion all approve",
+    "note": "The 15-hour figure matches, but \"2460\" (possibly a rate or a total dollar amount) has no counterpart in the official minutes — check the recording near t=1822.",
+    "t": 1822
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "turf field/track financing figures",
+    "ours": "$2.5 million, $920,000, $1.5 million",
+    "official": "Committee and Mr. Beardmore discus the items on the drafted plan, to include the turf and track, plow for a truck, and some building renovations, safety film and playground",
+    "note": "Official minutes list the capital items discussed but give no dollar figures at all for any of them.",
+    "t": 2252
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "procurement officer certification savings figure",
+    "ours": "$1,500",
+    "official": "",
+    "note": "This item does not appear anywhere in the official minutes.",
+    "t": 3799
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "hot water tank replacement figure",
+    "ours": "$20,000",
+    "official": "Committee and Mr. Beardmore discus the items on the drafted plan, to include the turf and track, plow for a truck, and some building renovations, safety film and playground",
+    "note": "Official minutes summarize the capital plan discussion without itemizing this or its cost.",
+    "t": 4272
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY26 budget surplus figure",
+    "ours": "603,885.97, $63, $63,885.97",
+    "official": "Mr. McNamara explains the surplus number has gone up to $603,885.97, the change is due to closing out purchase orders from FY25.",
+    "official_reading": "$603,885.97",
+    "note": "The main figure matches; the stray \"$63\"/\"$63,885.97\" fragments are caption garble of the same number.",
+    "t": 4483
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 override and FY26 cuts figures",
+    "ours": "500,000, a million",
+    "official": "Mr. McNamara explains the surplus number has gone up to $603,885.97, the change is due to closing out purchase orders from FY25. Mr. McNamara and Dr. Fortuna explains how this may have occurred and how we can avoid this for the current and upcoming years.",
+    "note": "Official's FY25 Budget Update section does not mention an override or specific cut figures; check the recording near t=4741.",
+    "t": 4741
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 underspent-line percentages and dollar figures (administrative technology, curriculum director office, paraprofessionals, other instructional materials, custodial services, heating of buildings, maintenance of buildings, equipment acquisition/improvement, equipment replacement, collaborative tuition)",
+    "ours": "90.1%/$30,119.69; 92.3%/$33,898.95; 87.5%/$91,294.26 (or $191,294.26); 67.2%/$39,348.44; 83.4%/$141-143,37.15; 80.7%/$25,62.19; 83.2%/$80,27.14; 49%/$56,384.12; 93.5%/$29,394.70; 49.6%/$29,415",
+    "official": "The committee explains some of the issues that have been discovered, to include double booking of the para salaries, the music program and supply line cuts, and also the process the committee had gone through in the past year and how they did not know this was the reality of the budget.",
+    "note": "Official minutes describe the discovery only in general terms; none of these ten line-by-line percentages or dollar figures are recorded, so none can be cross-checked against the official text — verify the whole set against the recording or the underlying budget-to-actual report.",
+    "t": 5987
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "athletic transportation vans figure",
+    "ours": "$200,000",
+    "official": "",
+    "note": "This item does not appear anywhere in the official minutes.",
+    "t": 7302
+   },
+   {
+    "kind": "discrepancy",
+    "about": "capital plan decision: remove generator, add turf/track, send to capital planning committee by Oct 1",
+    "ours": "Remove the generator from the FY27 draft capital plan priority list and add the turf field/track project in its place, sending the revised list to the capital planning committee by October 1st.",
+    "official": "Committee and Mr. Beardmore discus the items on the drafted plan, to include the turf and track, plow for a truck, and some building renovations, safety film and playground",
+    "note": "Official minutes record only a discussion, no decision or vote; check the recording/vote record to confirm whether the committee actually took this action.",
+    "t": 4358
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision to implement monthly budget-to-actual forecasting reports",
+    "ours": "The business office will implement monthly budget-to-actual forecasting reports to the school committee for greater transparency.",
+    "official": "Mr. McNamara reads the questions that have been submitted and answers them for the public. Also discussed what the schools missed out on by not spending the funds.",
+    "note": "Official minutes do not record this as a decision or commitment; check the recording near t=4886 to confirm whether it was adopted or just discussed as an idea.",
+    "t": 4886
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision to hold staff meetings on the FY25 surplus",
+    "ours": "Superintendent, business manager and staff will hold meetings with all staff (LMHS, then primary school) to discuss the FY25 budget surplus and answer questions.",
+    "official": "Mr. McNamara reads the questions that have been submitted and answers them for the public.",
+    "note": "Official minutes do not record a decision to hold follow-up staff meetings; check the recording near t=7933.",
+    "t": 7933
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision to treat turf/track as a single project within FY27 capital plan",
+    "ours": "Treat the turf field/track project as a single project managed within the FY27 capital plan rather than split across FY27 and FY29, pending further town manager/finance director coordination on financing.",
+    "official": "Committee and Mr. Beardmore discus the items on the drafted plan, to include the turf and track, plow for a truck, and some building renovations, safety film and playground",
+    "note": "Official minutes record no such structural decision; check the recording near t=3338.",
+    "t": 3338
+   },
+   {
+    "kind": "discrepancy",
+    "about": "vote to table School Committee Goals and subcommittee reports",
+    "ours": "",
+    "official": "Ms. Brzozoski makes a motion to pass table the school committee goals and the subcommittee reports, Ms. Young seconds the motion all approve",
+    "note": "This vote is entirely absent from our minutes' vote list; confirm it occurred and at what timestamp in the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "executive session on security personnel/devices",
+    "ours": "",
+    "official": "Executive Session To discuss the deployment of security personnel or devices- or strategies with respect thereto. Returns from executive session at 7:34",
+    "note": "Our minutes contain no mention of an executive session; likely the recording used to build our minutes begins after the return from executive session.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: Emily Young, Secretary",
+    "ours": "",
+    "official": "Emily Young Secretary - Present",
+    "note": "Emily Young is not listed anywhere in our attendee list despite seconding multiple motions in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "identity/role of \"George\"",
+    "ours": "George (facilities/site consultant)",
+    "official": "George Yapp, Member - Present",
+    "note": "Official minutes list George as a voting School Committee member (and motion-seconder throughout), not a facilities or site consultant; check whether our minutes conflated him with a different person or mislabeled his role.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "business manager's name",
+    "ours": "Chris McNamera",
+    "official": "Guests: Christopher McNamara – Business Administrator",
+    "official_reading": "Christopher McNamara",
+    "note": "Same person, surname misspelled by the captions.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "student representative named as Taylor",
+    "ours": "Taylor (student representative)",
+    "official": "",
+    "note": "The official minutes summarize a Student Representative Report but never name the student giving it.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: the town manager",
+    "ours": "the town manager (town manager)",
+    "official": "",
+    "note": "No town manager is listed among attendees or guests in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: Juliana (grant coordinator)",
+    "ours": "Juliana (grant coordinator)",
+    "official": "",
+    "note": "Not listed in the official attendee/guest list.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: Liz (town accountant)",
+    "ours": "Liz (town accountant)",
+    "official": "",
+    "note": "Not listed in the official attendee/guest list.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair identified separately from \"Anthony\"",
+    "ours": "the chair (chair) ... Anthony (school committee member)",
+    "official": "Anthony Sculimbrene Chair - Present",
+    "note": "Official minutes show these are the same single person (Anthony Sculimbrene, the Chair); our list appears to split him into two separate attendee entries.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:23:24Z",
+   "cost_usd": 0.3028908
+  }
  }
 }

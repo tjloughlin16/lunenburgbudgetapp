@@ -695,5 +695,340 @@
    "at": "2026-09-14T13:19:39Z",
    "cost_usd": 0.212922
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04072026-7752",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-07-minutes-7752.txt",
+   "path": "sources/meetings/select-board/2026-04-07-minutes-7752.pdf"
+  },
+  "official_sha256": "0d0467283f488523ed5df87248ad26abd129e15f1e25adc428b2fd9b3e5ecd32",
+  "coverage": "partial",
+  "summary": "The two records agree closely on every substantive vote outcome except one: our minutes could not make out the result of the Article M Tier 1 override vote (\"not audible\"), while the official minutes record it as carried 3-1 with McLeod opposed, and our minutes omit the executive-session entry vote entirely. Most other differences are caption mis-hearings of names and a few cents/dollars, plus a cluster of public-comment figures (Bowen's extra numbers, the $150,000 and $15,000 figures, the excise-tax \"$138,000,\" and a Finance Committee \"4-2\" vote on the Assistant Town Manager position) that appear only in ours and cannot be checked against the official text as written.",
+  "counts": {
+   "agree": 25,
+   "caption_error": 7,
+   "discrepancy": 3,
+   "only_in_ours": 7,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Chair identity",
+    "ours": "the chair (chair)",
+    "official": "Chair Caesar Nuzzolo called the meeting to order at 7:00 PM",
+    "note": "Same person, official gives the name our transcript captured only as a role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: McCloud vs McLeod",
+    "ours": "Mr. McCloud (member)",
+    "official": "Member Glenn McLeod",
+    "official_reading": "Glenn McLeod",
+    "note": "Misheard surname; same member throughout the meeting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Leighton/Brian vs Lehtinen",
+    "ours": "Mr. Leighton (member); Brian (member)",
+    "official": "Member Brian Lehtinen (arrived at 7:35 PM)",
+    "official_reading": "Brian Lehtinen",
+    "note": "Our minutes appear to have split one member (Brian Lehtinen) into two separate attendee entries; officially there is only one member named Lehtinen, who arrived partway through the meeting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Treasurer/Collector name: Mylinh vs Myleen Mallari",
+    "ours": "Mylinh (Treasurer Collector)",
+    "official": "Treasurer/Collector Myleen Mallari (via Zoom)",
+    "official_reading": "Myleen Mallari",
+    "note": "Misheard first and last name."
+   },
+   {
+    "kind": "agree",
+    "about": "Town Manager attendee",
+    "ours": "Jen (town manager)",
+    "official": "Also Present: Jennifer Warren-Dyment, Town Manager",
+    "note": "Same person, ours used a nickname/first name only."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "Members Absent: Vice-Chair Amanda Moore",
+    "note": "Our minutes do not note any absent member; not a vote or decision, just an omission."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: appoint Andrew Gillis to APDC",
+    "ours": "passed unanimously",
+    "official": "Motion by Clerk Renee Emkey to appoint Andrew Gillis as a member of the Architectural Preservation District Commission, with a term to expire June 30, 2026. Seconded by Member Glenn McLeod. Call for the vote: Three-aye. The motion passed unanimously (3-0-0).",
+    "note": "Same outcome; official adds the 3-0-0 tally (only three members present before Lehtinen arrived)."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: ratify cemetery laborer appointments",
+    "ours": "passed unanimously",
+    "official": "Call for the vote: Three-aye. The motion passed unanimously (3-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: advocacy letter to state delegation",
+    "ours": "passed unanimously",
+    "official": "Motion made by Clerk Emkey to send the advocacy letter as read, with minor grammatical corrections. Seconded by Member Lehtinen. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: annual town election warrant",
+    "ours": "passed unanimously",
+    "official": "Motion by Clerk Emkey to approve the May 16, 2026 Annual Town Election Warrant was made. Seconded by Member Lehtinen. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: waive special event requirements",
+    "ours": "passed unanimously",
+    "official": "Motion by Clerk Emkey to waive the printed publication notification for the public hearing, the notice to abutters, and the certificate of insurance requirements for the Girl Scouts Family Picnic and Bridging Ceremony and the Lions Club Cruise Night special event applications. Seconded by Member Lehtinen. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome, both events combined as one vote in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: annual town meeting booklet",
+    "ours": "passed unanimously",
+    "official": "Motion by Clerk Emkey to approve the Annual Town Meeting Booklet as presented, allowing for the inclusion of the warrant and any changes to the Finance Committee report. Seconded by Member Lehtinen. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article L FY27 omnibus budget",
+    "ours": "passed unanimously",
+    "official": "Motion by Clerk Emkey to recommend approval of Article L. Seconded by Member McLeod. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: Article M override Tier 1",
+    "ours": "not audible",
+    "official": "Motion to recommend approval of Article M, Tier 1, was made by Clerk Emkey. Seconded by Member Lehtinen. The motion carried 3-1, with Member McLeod opposed.",
+    "note": "Our minutes could not determine the outcome of this vote from the recording; the official minutes record it as carried 3-1 with McLeod opposed. A person should re-check the recording audio around t=5262 to confirm the actual tally, since our record has no independent confirmation of it."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article M override Tier 2",
+    "ours": "passed 3-1",
+    "official": "Motion made by Clerk Emkey to recommend approval of Article M, Tier 2. Seconded by Member Lehtinen. The motion carried 3-1, with Member McLeod opposed.",
+    "note": "Same outcome and same dissenting member."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article X PAC/PEG operating budget",
+    "ours": "passed unanimously",
+    "official": "Motion made by Clerk Emkey to recommend approval of Article X. Seconded by Member Lehtinen. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article X1 PAC/PEG capital budget",
+    "ours": "passed unanimously",
+    "official": "Motion made by Clerk Emkey to include in the Warrant and recommend approval of Article X1. Seconded by Member Lehtinen. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article Y solid waste enterprise fund",
+    "ours": "passed unanimously",
+    "official": "Motion made by Clerk Emkey to recommend approval of Article Y. Seconded by Member Lehtinen. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article Z water enterprise fund",
+    "ours": "passed unanimously",
+    "official": "Motion made by Clerk Emkey to recommend approval of Article Z. Seconded by Member Lehtinen. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article Z2 sewer enterprise fund",
+    "ours": "passed unanimously",
+    "official": "Motion made by Clerk Emkey to recommend approval of Article Z2. Seconded by Member Lehtinen. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article L surplus: amount transferred to schools after prior-year bills",
+    "ours": "remainder $41,390 to schools",
+    "official": "a small surplus of $41,398.20, which she recommended be used first to pay prior-year bills, with the remainder directed to the School Department",
+    "note": "Official does not state a specific remainder dollar figure, so ours cannot be confirmed against it; check the Town Manager's actual reconciliation memo for the amount that went to the schools versus prior-year bills."
+   },
+   {
+    "kind": "caption_error",
+    "about": "One-time tax adjustment figure (Bowen public comment)",
+    "ours": "a dollar 89 per thousand",
+    "official": "a one-time tax adjustment of $1.89 per $1,000 of assessed value",
+    "official_reading": "$1.89 per $1,000",
+    "note": "Same figure, captions rendered the dollar amount as words."
+   },
+   {
+    "kind": "agree",
+    "about": "Total assessed property value (Bowen public comment)",
+    "ours": "3.3 billion",
+    "official": "based on Lunenburg's total assessed property value of approximately $3.3 billion",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Additional Bowen public-comment figures (6.2 million, 185,000, 310,000)",
+    "ours": "6.2 million, 185,000, 310,000",
+    "official": "",
+    "note": "Official minutes summarize Bowen's comment but do not include these three figures; check the recording near t=211 to see what they refer to, since the official summary may have simply omitted them."
+   },
+   {
+    "kind": "agree",
+    "about": "Median household income (Lockwood public comment)",
+    "ours": "113, 120",
+    "official": "He cited Lunenburg's median household income of $113,000 and noted that 50% of residents earn that amount or less",
+    "note": "113 matches; the paired '120' in our transcript likely bleeds in from a different, nearby public comment about the Assistant Town Manager position rather than being part of Lockwood's remark."
+   },
+   {
+    "kind": "agree",
+    "about": "School level-services budget figure (Lockwood public comment)",
+    "ours": "$800,000",
+    "official": "the School's level-services budget would require only $800,000 to maintain the current structure",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Constable revenue figure (public comment)",
+    "ours": "about $50",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes; check the recording near t=665 for context, since it may belong to a speaker or aside not captured in the official summary."
+   },
+   {
+    "kind": "agree",
+    "about": "Assistant Town Manager position cost (Jeffreys public comment)",
+    "ours": "$120,000",
+    "official": "He questioned the inclusion of a $120,000 Assistant Town Manager position while simultaneously cutting teachers, paraprofessionals, the Recreation Director, the beach coordinator, the Police Department Clerk, and the library budget.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Beach program funding figure",
+    "ours": "$15,000 a year",
+    "official": "",
+    "note": "Official mentions cuts to the 'beach coordinator' but gives no dollar figure; check the recording near t=934 for the source of this number."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tax revenue vs. cost of losing services figure",
+    "ours": "$150,000",
+    "official": "",
+    "note": "No matching figure in the official minutes; check the recording near t=975."
+   },
+   {
+    "kind": "agree",
+    "about": "925 Mass Ave environmental/appraisal funding",
+    "ours": "$4,500",
+    "official": "The Town has received $4,500 in funding support through MRPC's Brownfield Steering Committee to reengage Beta Group",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "AAC and Teen Center flooring capital figures",
+    "ours": "$41,000, $35,000",
+    "official": "with $41,000 budgeted for the Adult Activity Center and $35,000 for the Teen Center under the FY26 Capital Plan",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Motor vehicle excise tax collection rate and revenue",
+    "ours": "94.11%, approximately 2 million",
+    "official": "Lunenburg's current 2025 excise tax collection rate is 94.11%, representing approximately $2 million in revenue",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Uncollected excise tax dollar figure",
+    "ours": "138,000",
+    "official": "",
+    "note": "Official states the uncollected share as '6%' but gives no dollar figure; check the recording near t=1833, since 138,000 could be a derived/heard figure for that 6%."
+   },
+   {
+    "kind": "caption_error",
+    "about": "PAC/PEG broadcast system vendor name",
+    "ours": "Casto broadcast system replacement",
+    "official": "the PACC Director requested the capital purchase of a new CASTA broadcast server for approximately $77,000 be authorized as an FY26 project rather than FY27 to avoid a potential 15% price increase effective July 1",
+    "official_reading": "CASTA",
+    "note": "Same equipment and same $77,000/15% figures; only the product name was misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Assistant Town Manager funding figures",
+    "ours": "$59,459.33, $121,000, $120,000",
+    "official": "the $120,000 Assistant Town Manager position is offset in part by the elimination of the Information Technology and Communications Director position ($59,459.33)",
+    "official_reading": "$120,000 (no separate $121,000 figure)",
+    "note": "$59,459.33 and $120,000 both match; the extra $121,000 in ours is likely a misheard repeat of $120,000."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Finance Committee vote on Assistant Town Manager position",
+    "ours": "4-2",
+    "official": "",
+    "note": "The official minutes do not record any specific Finance Committee vote tally on the Assistant Town Manager position; check the Finance Committee's own minutes for that vote, since the Select Board minutes only reference the Finance Committee's Warrant Article votes in general."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash levels and history figures",
+    "ours": "$3.3 million, 6.65%, 5%, $2.9 million, 6.53%, $263,000",
+    "official": "",
+    "note": "None of this free-cash discussion appears in the official minutes at all; check the recording near t=4894 to see whether this was a substantive part of the meeting the official minutes chose to omit."
+   },
+   {
+    "kind": "agree",
+    "about": "Article X PAC/PEG operating budget figures",
+    "ours": "$217,847.55, $177,000, $40,847.55",
+    "official": "the FY27 PACK operating budget at $217,847.55, with $177,000 from anticipated revenues and $40,847.55 from retained earnings",
+    "note": "Matches exactly (official's 'PACK' is itself a typo/misspelling of PACC, but the figures match)."
+   },
+   {
+    "kind": "agree",
+    "about": "Article Y solid waste enterprise fund figure",
+    "ours": "500,000",
+    "official": "The article authorizes $500,000 from solid waste disposal enterprise revenues to operate the enterprise fund.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Article Z water enterprise fund figure",
+    "ours": "120,000",
+    "official": "The article authorizes $120,000 for the Water Enterprise Fund.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article Z2 sewer enterprise fund total budget figure",
+    "ours": "1,981,993.06",
+    "official": "The article reflects a total budget of $1,981,993.60 against estimated revenues of $2,008,047.",
+    "official_reading": "$1,981,993.60",
+    "note": "Cents transposed (.06 vs .60); the revenue figure of $2,008,047 matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Location of April 28 budget open house meeting",
+    "ours": "at the Adult Activity Center",
+    "official": "",
+    "note": "Official minutes do not state a location for this meeting; check the recording near t=6084 or a later agenda for the confirmed venue."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:42:14Z",
+   "cost_usd": 0.35959680000000005
+  }
  }
 }

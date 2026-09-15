@@ -599,5 +599,283 @@
    "at": "2026-09-14T01:51:37Z",
    "cost_usd": 0.14520139999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10162024-6830",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-10-16-minutes-6830.txt",
+   "path": "sources/meetings/school-committee/2024-10-16-minutes-6830.pdf"
+  },
+  "official_sha256": "eff9834419176da903c398058ea0f51886133ab29e322c12d6f5cab30a0358d7",
+  "coverage": "full",
+  "summary": "The two records agree closely on every vote outcome, on most dollar figures, and on the substance of most discussion items — the misses are almost all caption mishearings of names and of one transfer amount. The one thing worth checking: our minutes list the Chair and Vice Chair identities (and Beardmore's title) inconsistent with the official roster, and describe the PTO liaison and student-representative situations differently from the official minutes — these are substantive, not just misheard names.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 10,
+   "discrepancy": 5,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "HS office supply → PE/health transfer amount",
+    "t": 523,
+    "ours": "$11,100 from high school office supply line to PE/health supply line",
+    "official": "$1,100 from High School Office Supply to Phys Ed to renew software subscription Ms. Brzozoski makes a motion to approve line item transfer, Mr. Beardmore seconds the motion all approve via roll call vote.",
+    "official_reading": "$1,100",
+    "note": "Same transfer, same purpose (software subscription); captions likely added a digit turning $1,100 into $11,100 — check the warrant/transfer form for the true amount."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: athletic donations (Szocik brush + T-Mobile grant)",
+    "ours": "passed 5-0",
+    "official": "Mr. Beardmore makes a motion to approve both donations, Ms. Archambault seconds the motion all approve via roll call.",
+    "note": "Both records show a unanimous approval of both donations."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: FY25 School Improvement Plans",
+    "ours": "passed, roll call yes from all members",
+    "official": "Ms. Archambault makes a motion to accept the FY25 School Improvement Plan, Ms. Brzozoski seconds the motion all approve via roll call",
+    "note": "Both records show unanimous acceptance."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Salary reserve funding paraprofessional contract",
+    "t": 2267,
+    "ours": "Salary reserve fund used to help fund the paraprofessional contract (discussed only)",
+    "official": "",
+    "note": "Official minutes describe Chapter 70/salary reserve money going toward the Director of Facilities salary but never mention a paraprofessional contract — worth checking the recording again for whether 'paraprofessional' was actually said or is a caption artifact of 'facilities' discussion."
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 minimum-contribution legislation rate figures",
+    "t": 200,
+    "ours": "5%, 41, 46%",
+    "official": "it was actually a bill to change the contribution rate by 5% to make the state contribute more. This would be adjusted from 41% to 46%.",
+    "note": "The 5%, 41%, and 46% figures match across both records."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Additional Chapter 70 legislation figure '82.5%'",
+    "t": 200,
+    "ours": "82.5%",
+    "official": "",
+    "note": "No corresponding figure appears anywhere in the official account of the Chapter 70 legislation discussion; check the recording near t=200 for what this number actually referred to."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Senate Bill number for Chapter 70 legislation",
+    "ours": "",
+    "official": "There is also an excel document of a potential bill for January, the specifics bill is Senate Bill 303",
+    "note": "Our minutes never capture the bill number; add if useful for citation."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Athletic donor foundation name",
+    "t": 669,
+    "ours": "SO Foundation athletics donation: $1,200, 1100 and change",
+    "official": "Mr. Bigelow presents a donation from the Szocik foundation in the amount of $1200 to be earmarked for something that will benefit all athletes – we've chosen a brush to help maintain our turf field.",
+    "official_reading": "Szocik Foundation, $1,200",
+    "note": "\"SO Foundation\" is a mishearing of \"Szocik Foundation\"; the amount agrees at $1,200 and the extra '1100 and change' in ours appears to be caption noise."
+   },
+   {
+    "kind": "agree",
+    "about": "T-Mobile athletics grant amount",
+    "t": 712,
+    "ours": "$5,000",
+    "official": "we were selected for a $5,000 check, to be presented at the homecoming rally.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Warrants Oct 1–9 total",
+    "t": 839,
+    "ours": "$361,662",
+    "official": "Warrants 10/1 to 10/9/24 $361,064.94",
+    "note": "The difference ($361,662 vs. $361,064.94) is larger than a plausible digit-grouping mishearing; check the signed warrant for the correct total."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Additional Chapter 70 state aid request figures",
+    "t": 1863,
+    "ours": "300$, 3,882, 31,000",
+    "official": "",
+    "note": "Official text only says the district was asked how it would spend additional Chapter 70 money, with no dollar figures; these garbled numbers should be re-checked against the recording, as they may be caption noise rather than real figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Facilities director position salary figure",
+    "t": 2200,
+    "ours": "$110,000",
+    "official": "",
+    "note": "Official minutes mention a portion of Chapter 70/salary reserve money going toward the Director of Facilities salary but state no dollar amount — verify $110,000 against the recording or a budget document."
+   },
+   {
+    "kind": "agree",
+    "about": "Middle school Washington DC trip cost",
+    "t": 10228,
+    "ours": "$1,400",
+    "official": "they are anticipating the cost to be $1400",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Marsh Park / Marshall Park borrowing warrant article name",
+    "t": 10396,
+    "ours": "Marsh Park borrowing warrant article: $5 million",
+    "official": "to borrow $5 million dollars for Marshall Park, their public hearing will be on the 24th.",
+    "official_reading": "Marshall Park",
+    "note": "\"Marsh Park\" is a mishearing of \"Marshall Park\"; the $5 million figure agrees."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Chapter 70 money to salary reserve / facilities director hire",
+    "t": 2094,
+    "ours": "Committee agreed additional Chapter 70 money would go toward salary reserve, including help hiring a facilities director, rather than a specific line item.",
+    "official": "The committee discusses the Chapter 70 money going into salary reserve, with a portion of it going toward the Director of Facilities salary.",
+    "note": "Substance matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: SEL/'seal' grant not pursued",
+    "t": 7086,
+    "ours": "District will not pursue the new SEL/'seal' grant because it does not meet eligibility criteria.",
+    "official": "SEL Grant reporting an update, after more research, we do not qualify for this",
+    "note": "Substance matches."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "PTO liaison arrangement",
+    "t": 7192,
+    "ours": "No change was made to the PTO liaison; the current liaison continues, with the committee to be told when the next PTO meeting is.",
+    "official": "Currently Mr. Sculimbrene is the PTO liaison, however he is also on the Budget Task Force committee which typically meets on the same day, wanted to open discussion to either add a secondary liaison, a new liaison, or to make no changes. Ms. Archambualt will cover the meetings until Mr. Sculimbrene is done with the Budget Task Force.",
+    "note": "Official minutes describe an actual interim change (Archambault covering meetings) while ours states explicitly that no change was made — check the recording near t=7192 for what was actually decided."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: core-values work starts with small group",
+    "t": 9490,
+    "ours": "Core-values/continuous-improvement work will begin with a small instructional leadership group before broadening.",
+    "official": "Initially we are going to start with small groups on leadership and work our way out from there.",
+    "note": "Substance matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "'Track' and 'complex' wording added to facilities/capital goal",
+    "t": 9805,
+    "ours": "The words 'track' and 'complex' will be added to the facilities/capital planning goal language covering Turkey Hill and the turf field.",
+    "official": "",
+    "note": "This specific wording edit does not appear in the official minutes' School Committee Goals discussion; official minutes describe that discussion only in general terms."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Revised communication goal as formal action item next meeting",
+    "t": 10104,
+    "ours": "The revised communication goal will be brought back as a formal action item at the next meeting.",
+    "official": "",
+    "note": "Not mentioned in official minutes; check the recording to confirm this commitment was made."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Member 'Leon'/'Leightman' identity",
+    "ours": "Mr. Leon (also heard as 'Leightman') (member)",
+    "official": "Brian Lehtinen, Chair - Present",
+    "note": "\"Leon\"/\"Leightman\" is almost certainly a mishearing of Brian Lehtinen, the actual Chair, but ours lists him as an unremarkable member rather than as chair — check the recording to confirm Lehtinen chaired."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Beardmore's title",
+    "ours": "Mr. Beardmore (vice chair)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Official lists Beardmore as Member and Sculimbrene as Vice Chair; ours has the vice-chair title on the wrong person — check meeting recording/roster for the correct officers."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Brazowski",
+    "ours": "Mrs. Brazowski (member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same person, misheard spelling."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Arshambo/Ashino",
+    "ours": "Mrs. Arshambo (also heard as 'Ashino') (member)",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Same person, misheard name; official also notes she is Secretary, a title ours omits."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Math coach name: Resnik/Resnick",
+    "ours": "Amy Resnik (math specialist instructional coach)",
+    "official": "Amy Resnick-MTSS Math Specialist/Coach",
+    "official_reading": "Amy Resnick",
+    "note": "Minor spelling mishearing."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Literacy coach name: Canton/Cantin",
+    "ours": "Lisa Canton (literacy specialist instructional coach)",
+    "official": "Lisa Cantin- MTSS Literacy Specialist/Coach",
+    "official_reading": "Lisa Cantin",
+    "note": "Minor spelling mishearing."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Primary School principal name: Squire/Squier",
+    "ours": "Mrs. Squire (Principal, Primary School)",
+    "official": "Carla Squier-Primary School Principal",
+    "official_reading": "Carla Squier",
+    "note": "Minor spelling mishearing; first name also omitted in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Turkey Hill Elementary principal's name",
+    "ours": "unnamed in captions (Principal, Turkey Hill Elementary)",
+    "official": "Norman Yvon-THES Principal",
+    "note": "Our captions never resolved this person's name; official minutes give it as Norman Yvon."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Athletic Director name: Bigalow/Bigelow",
+    "ours": "Mr. Bigalow (Athletic Director)",
+    "official": "Mr. Bigelow presents a donation from the Szocik foundation",
+    "official_reading": "Mr. Bigelow",
+    "note": "Minor spelling mishearing."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director of Special Services name: Hansum/Hanscom",
+    "ours": "Juliana Hansum (Director of Special Services)",
+    "official": "Julianna Hanscom-Director of Special Services",
+    "official_reading": "Julianna Hanscom",
+    "note": "Minor spelling mishearing."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Student representative presence/report",
+    "ours": "unnamed in captions (student representative) listed as an attendee",
+    "official": "5. Student Representative's Report - None",
+    "note": "Official minutes record no student representative report for this meeting; check whether a student representative was actually present or whether the caption picked up an unrelated voice."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Additional guests not captured in ours",
+    "ours": "",
+    "official": "John Palumbo-School Psychologist, Dr. Susan Gilson-Director of Administration & Finance",
+    "note": "These two guests are listed in the official roster but do not appear anywhere in our attendee list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:36:21Z",
+   "cost_usd": 0.31347980000000003
+  }
  }
 }

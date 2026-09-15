@@ -585,5 +585,272 @@
    "at": "2026-09-13T23:30:06Z",
    "cost_usd": 0.201084
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02042026-7634",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-02-04-minutes-7634.txt",
+   "path": "sources/meetings/school-committee/2026-02-04-minutes-7634.pdf"
+  },
+  "official_sha256": "2eb482cab18b267bf69115863158802918119a1044ffa0f20a100ee798f24207",
+  "coverage": "partial",
+  "summary": "The two records share almost no overlapping content: ours describes a detailed budget-forum discussion (paraprofessional grants, out-of-district placement dollars, MCAS scores, per-pupil spending, staffing ratios) while the official minutes describe a standard business meeting (five votes, warrants, DESE grants, earmark amounts) that only briefly touches budget/override topics and none of the same figures. The single biggest thing to check: whether these are even the same meeting — the official minutes mark Chair Anthony Sculimbrene ABSENT while ours has \"Tony Scholenrini\" actively chairing and making commitments, and the five votes the official minutes record appear nowhere in ours (which logs zero votes).",
+  "counts": {
+   "agree": 0,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 22,
+   "only_in_official": 8
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Chair's presence",
+    "ours": "Tony Scholenrini (chair, school committee) — listed as attending and, at t=2487, personally agreeing to provide a withheld document.",
+    "official": "Anthony Sculimbrene Chair - Absent",
+    "note": "Verify whether the chair was actually present; the two records directly contradict each other on this point."
+   },
+   {
+    "kind": "caption_error",
+    "about": "vice chair's name",
+    "ours": "Laura Broski (school committee member)",
+    "official": "Laura Brzozoski, Vice Chair - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same person, misheard surname and missed her Vice Chair title/role as meeting chair for the session."
+   },
+   {
+    "kind": "caption_error",
+    "about": "business official's name/title",
+    "ours": "Chris (business manager)",
+    "official": "Christopher McNamara – Business Administrator",
+    "official_reading": "Christopher McNamara",
+    "note": "Same role, first name only captured and title slightly off (Administrator vs. Manager)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "town manager attendee",
+    "ours": "Jennifer Warren Diamond (town manager)",
+    "official": "",
+    "note": "No such attendee appears in the official minutes at all; confirm a Town Manager was present, since she does not appear on the official attendee/guest list."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "hypothetical paraprofessional-to-touchscreen transfer (t=341)",
+    "ours": "discussed hypothetical line-item transfer from the paraprofessional line (freed by the competitive grant) to primary school touch-view screens; amount not stated",
+    "official": "",
+    "note": "Compare against official's $36,000 earmarked (legislative, not grant) funding for touch-view screens at the Primary School — same subject, different funding mechanism described; worth checking which is accurate."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 budget correction transfer (t=1110)",
+    "ours": "a line-item transfer made in FY26 to correct a substantial mistake caught through closer monitoring; amount not stated",
+    "official": "",
+    "note": "Not mentioned in official minutes; official's line-item-transfer section for this meeting explicitly says none, so confirm which meeting/period this correction was reported in."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "illustrative routine inter-fund transfer example (t=1887)",
+    "ours": "$1,100, described as a hypothetical/illustrative example only",
+    "official": "",
+    "note": "Not a real transfer per our own minutes (illustrative only); no official counterpart expected."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "formal line-item transfers section",
+    "ours": "three transfers discussed (hypothetical, FY26 correction, illustrative example), none stated as formally enacted",
+    "official": "Line Item Transfers None",
+    "note": "Official explicitly logs zero line-item transfers for this session; consistent with ours only if none of the discussed transfers were ever formally voted — confirm none of them were later acted on outside this meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 total budget surplus",
+    "ours": "$556,000 (t=152)",
+    "official": "",
+    "note": "No matching figure in official minutes; check the source workbook for the FY25 surplus total."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "competitive paraprofessional grant amount",
+    "ours": "\"between four and 500,000\" (t=195)",
+    "official": "",
+    "note": "Figure itself looks garbled in the captions (likely a dollar range or a specific number misheard); no official figure to cross-check against — get the grant award letter."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "out-of-district placement costs",
+    "ours": "$254,000, in excess of $800,000 (t=799)",
+    "official": "Dr. Fortuna gives an update on the status of the budget cuts last year as we currently have students on our radar that may require out of district placement and we have also had students move into the district that require out of district placements.",
+    "note": "Official confirms the topic (new OOD placement needs) but states no dollar figures — check the business office for the actual cost figures behind ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 override vs. surplus optics",
+    "ours": "\"over 50%\" (t=1088)",
+    "official": "The committee has discussed the override amount of $2.9 million, it's still undecided if it will be one town override, if it will be one amount for an override or a tiered approach",
+    "note": "Different framing of the override entirely (a percentage relationship in ours vs. a dollar total and structure question in official) — not clearly the same statement; check the recording against the FY27 override figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "inflation vs. levy cap gap, 2020-2023",
+    "ours": "18.05%, 8.05% (t=1530)",
+    "official": "",
+    "note": "No official corresponding figure; verify against DLS/levy data directly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "federal Title I grant cut",
+    "ours": "30% (t=1674)",
+    "official": "",
+    "note": "Not mentioned in official minutes; check the Title I grant notice for the actual reduction percentage."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "out-of-district stabilization reserve line item",
+    "ours": "around $2 million (t=1992)",
+    "official": "",
+    "note": "No official corresponding figure; confirm against the stabilization fund balance."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "hypothetical grant transparency example",
+    "ours": "$400,000 (t=2201)",
+    "official": "",
+    "note": "Stated by ours as illustrative only; no official counterpart expected, but flag that it is illustrative not actual."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 unspent workbook line item",
+    "ours": "$11,000 (t=3053)",
+    "official": "",
+    "note": "No corresponding figure in official minutes; check the FY25 closeout workbook."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 budget expended to date",
+    "ours": "56.2% (t=3053)",
+    "official": "",
+    "note": "No corresponding figure in official minutes; check against the FY26 MUNIS expenditure report as of the meeting date."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "per-pupil expenditure comparison",
+    "ours": "$17,684, 20,6, 20,000, $19,05 (t=4516)",
+    "official": "",
+    "note": "Figures appear partially garbled in captions (e.g. \"20,6\", \"$19,05\"); no official figures to reconcile against — pull the DESE per-pupil expenditure report directly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "student-teacher ratio comparison",
+    "ours": "14.9 to 1, 12 (t=4473)",
+    "official": "",
+    "note": "No corresponding figure in official minutes; check DESE staffing ratio data."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MCAS reading proficiency, grades K-3",
+    "ours": "46%, 2%, 44% (t=4431)",
+    "official": "",
+    "note": "No corresponding figure in official minutes; verify against the DESE MCAS report."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "paraprofessional and total staff counts",
+    "ours": "242, 60 (t=4600)",
+    "official": "",
+    "note": "No corresponding figure in official minutes; check the staffing roster/headcount."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 entitlement-grant staffing decision",
+    "ours": "anyone currently paid through an entitlement grant will be fully removed from grant funding in FY27; entitlement grants used only for one-time expenses going forward (t=1949)",
+    "official": "",
+    "note": "No mention in official minutes; confirm this policy decision was actually made and where it would be formally recorded."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to stop double-budgeting a line already sought via competitive grant",
+    "ours": "the district will discontinue budgeting a line item for something it is also seeking a competitive grant to cover (t=2345)",
+    "official": "",
+    "note": "No mention in official minutes; confirm this decision and where/when it would be formally adopted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to memorialize a written budgeting handbook",
+    "ours": "once the current budget season concludes, new budgeting practices will be documented in a handbook (t=2656)",
+    "official": "",
+    "note": "No mention in official minutes; check for follow-up on this commitment."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "chair agreeing to release a withheld document",
+    "ours": "the chair agreed to provide a document previously requested from and withheld by the prior administration (t=2487)",
+    "official": "",
+    "note": "No mention in official minutes, and the official minutes list the chair as absent — check who actually made this commitment and whether the document was produced."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "warrants approved",
+    "ours": "",
+    "official": "Warrants 1/20/26 – 2/2/26 $180,039.36",
+    "note": "Routine warrant approval not covered in ours; confirm this line if reconciling total FY26 spend."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "legislative earmark allocations",
+    "ours": "",
+    "official": "$36,000 is going toward touch view screens at the Primary School, $7,000 will fund IXL for our middle school students, and $10,000 is going toward safety improvements",
+    "note": "Compare the $36,000 touch-view-screens earmark against ours' hypothetical paraprofessional-line transfer for the same equipment (t=341) — likely two different funding mechanisms discussed for the same purchase."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "IReady diagnostic assessment reallocation",
+    "ours": "",
+    "official": "We originally allocated $42,700 toward IReady diagnostic assessments', however given how late in the year the approval came through, we will be looking to better utilize these funds",
+    "note": "Not discussed in ours; no conflict, simply absent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote: LHS Program of Studies approval",
+    "ours": "",
+    "official": "Ms. Gilman makes a motion to approve LHS Program of Studies, Ms. Young seconds the motion, all approve.",
+    "note": "Non-procedural vote entirely absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote: School Choice proposal approval",
+    "ours": "",
+    "official": "Ms. Gilman makes a motion to accept the school choice proposal, Ms. Young seconds the motion all approve.",
+    "note": "Non-procedural vote entirely absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote: move meetings to LMHS",
+    "ours": "",
+    "official": "Ms. Gilman to move meetings to LHS for the foreseeable future, Ms. Young seconds the motion, all approve.",
+    "note": "Non-procedural vote entirely absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote: discussion with Rep. Scarsdale on reallocating a $195,000 earmark",
+    "ours": "",
+    "official": "Ms Young makes a motion to approve a discussion with Representative Scarsdale, Ms. Brzozoski seconds the motion, Ms. Gilman abstains, and the motion is approved.",
+    "note": "Non-procedural vote (with an abstention) entirely absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote: Facilities and Grounds report acceptance",
+    "ours": "",
+    "official": "Ms. Gilman makes a motion to accept the report, Ms. Young seconds the motion all approve.",
+    "note": "Non-procedural vote entirely absent from our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 5,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:38:38Z",
+   "cost_usd": 0.2527864
+  }
  }
 }

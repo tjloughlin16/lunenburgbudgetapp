@@ -720,5 +720,331 @@
    "at": "2026-09-14T00:50:39Z",
    "cost_usd": 0.14475739999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05072025-7207",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-07-minutes-7207.txt",
+   "path": "sources/meetings/school-committee/2025-05-07-minutes-7207.pdf"
+  },
+  "official_sha256": "0de78ca751f488b3a20279d32770e7b12804de468c4359c35840a9cc76015bbe",
+  "coverage": "full",
+  "summary": "The two records agree closely on the substance of nearly every vote, transfer amount, and figure — most differences are caption artifacts (misheard names, dropped digit grouping) rather than real disputes. The one thing to check: our minutes record an explicit unanimous vote to appoint Jodie Fortuna, while the official minutes' own tally of the final round shows 4–1 (Archambault still for Brent Conway), and our minutes note an abstention on tabling the budget task force charge that the official minutes do not record.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 12,
+   "discrepancy": 5,
+   "only_in_ours": 7,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "vote: open discussion of superintendent candidacy",
+    "ours": "proceed to discussion related to the superintendency and appointment of superintendent of schools — passed",
+    "official": "Mr. Sculimbrene makes a motion to open the discussion of superintendent candidacy, a candidate needs three affirmative votes, Ms. Archambault seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "vote: appointment of Jodie Fortuna",
+    "ours": "appoint Jodie Fortuna as superintendent of schools subject to successful negotiation of an employment contract — passed unanimously",
+    "official": "With four votes for Jodi she is voted to be the next superintendent of schools pending negotiations, Mr. Lehtinen calls her and she accepts.",
+    "note": "The official minutes never record a separate formal appointment vote made unanimous — they just restate the 4-1 preference tally (Archambault stayed with Conway); check the recording for whether a distinct motion to appoint (and make it unanimous) actually occurred after the roll call, at/after t=5883."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: four line item transfers",
+    "ours": "approve the four line item transfers as presented — passed unanimously",
+    "official": "Ms. Brzozoski makes a motion to approve, Mr. Sculimbrene seconds the motion all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: accept donations",
+    "ours": "accept with gratitude both donations (Stackitz Memorial Scholarship and Box Tops for Education) — passed unanimously",
+    "official": "Mr. Sculimbrene makes a motion to accept donations with gratitude, Ms. Brzozoski seconds the motion all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: student activity fee to $70",
+    "ours": "approve option one, a flat $70 student activity fee — passed unanimously",
+    "official": "the committee ultimately decides for a universal increase from $55 to $70 Mr. Sculimbrene makes a motion to approve the increase to $70, Mr. Beardmore seconds the motion, all approve",
+    "note": "Same vote, same outcome and amount."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: Turkey Hill ADA study report",
+    "ours": "accept the Turkey Hill ADA study final report — passed unanimously",
+    "official": "Ms. Brzozoski makes a motion to accept the report, Mr. Beardmore seconds the motion all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: facilities and grounds report",
+    "ours": "accept the facilities and grounds report — passed",
+    "official": "Ms. Brzozoski makes a motion to accept the report, Mr. Beardmore seconds the report, all approve.",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: paraprofessional agreement",
+    "ours": "accept the paraprofessional agreement as outlined — passed",
+    "official": "Ms. Archambault makes a motion to accept the agreement, Ms. Brzozoski seconds the motion all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: advertising in schools policy 1303.1",
+    "ours": "accept the advertising in schools policy (1303.1) as read — passed unanimously",
+    "official": "Ms. Brzozoski makes a motion to approve policy 1303.1 as read, Mr. Beardmore seconds the motion, all approve.",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: FY26 grants submission",
+    "ours": "approve submission of the FY26 grants as outlined — passed unanimously",
+    "official": "Ms. Brzozoski makes a motion to accept the submission of grants, Mr. Beardmore seconds the motion all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "vote: table budget task force charge",
+    "ours": "table the budget task force charge until the next school committee is constituted — passed, one abstention noted",
+    "official": "Mr. Sculimbrene makes a motion to table this until next meeting, Mr. Lehtinen seconds the motion all approve",
+    "note": "Our minutes record an abstention; the official minutes say 'all approve' with no abstention — check the recording around t=11146 for a member not voting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "transfer: guidance/maintenance to substitute lines",
+    "ours": "$16,63.77 and $7,136 uh41",
+    "official": "A request to transfer $16,063.77 and $7,136.41 from the Elementary Guidance salary due to a resignation and partial unfilled maintenance to substitute lines.",
+    "official_reading": "$16,063.77 and $7,136.41",
+    "note": "Digit-grouping/decimal caption error; same transfer and same underlying figures."
+   },
+   {
+    "kind": "agree",
+    "about": "transfer: fire safety/furniture to vehicle repair",
+    "ours": "$1,000",
+    "official": "A request to transfer $1000 from fire safety furniture line to vehicle maintenance.",
+    "note": "Same amount."
+   },
+   {
+    "kind": "caption_error",
+    "about": "transfer: general supplies/tech to contracted services",
+    "ours": "$12,332.80 total ($6,3701 and $5,962.79)",
+    "official": "A request of $12,332.80 to go to contracted services from general supply line of $6,370.01 and $5,962.79 from another general supplies.",
+    "official_reading": "$6,370.01",
+    "note": "Missing decimal point in the caption; total and second figure match exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "transfer: business manager/HR/salary reserve to business office",
+    "ours": "$1,500, $1,500, and $53,49340",
+    "official": "move $1,500 from business manager, $1,500 from human resource director, $53,493 from salary reserve line to Business Office, Assistance Secretary.",
+    "official_reading": "$53,493",
+    "note": "Extra trailing digits in the caption; first two figures match exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "figure: April warrants total",
+    "ours": "$182,68.62",
+    "official": "Warrants 4/16/25 – 4/30/25 $182,608.62",
+    "official_reading": "$182,608.62",
+    "note": "Digit dropped/misgrouped in the caption; same warrant period and same underlying total."
+   },
+   {
+    "kind": "caption_error",
+    "about": "figure: scholarship donor family name",
+    "ours": "Richard Stackitz Memorial Scholarship donation: $1,500",
+    "official": "Donations from the Madigan Family for $1,500 to continue the Richard Stachowicz Memorial Scholarship to be awarded to a graduating senior in the class of 2026.",
+    "official_reading": "Stachowicz",
+    "note": "Misheard surname; amount and purpose agree."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure: additional student activity fee tier discussion",
+    "ours": "$55, $70, $60, $80, $20, $140",
+    "official": "the committee ultimately decides for a universal increase from $55 to $70",
+    "note": "Official minutes summarize only the adopted $55-to-$70 figures; the other tiered options discussed are not recorded there."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure: Turkey Hill MSBA reimbursement rate and construction costs",
+    "ours": "57%, 59%, $340, $750 to $1,000",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes; if these figures matter, verify against the MSBA project documents rather than the minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure: Turkey Hill renovation cost estimate",
+    "ours": "$16 million",
+    "official": "",
+    "note": "Not recorded in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure: paraprofessional contract COLA percentages",
+    "ours": "4%, 3%, 2%",
+    "official": "a raise in pay, they will now be on a salary plan opposed to an hourly pay plan, 26 week pay period and all benefits of a contracted employee",
+    "note": "Official minutes describe the contract changes qualitatively but give no COLA percentages."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "figure: state transportation reimbursement rate increase",
+    "ours": "80 to 82%",
+    "official": "a full 100% reimbursement for FY25 regional school transportations up from 80%",
+    "note": "Our figure of 82% does not match the official's 100%; check the recording near t=2666 and the actual House budget language (H410) for the correct ceiling."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "figure: early education/care investment",
+    "ours": "",
+    "official": "invests $1667 billion in early education care",
+    "note": "Not captured in our figures-as-heard list; note the official text itself likely has a typo (probably $1.667 billion)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "figure: House vote tally on the state budget bill",
+    "ours": "",
+    "official": "The state budget process with a vote of 140-14, the House passed H410",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure: additional state aid tied to FY26 override situation",
+    "ours": "$500,000",
+    "official": "",
+    "note": "Not recorded in the official minutes' override-ballot-impact section."
+   },
+   {
+    "kind": "caption_error",
+    "about": "decision: bus fee policy number",
+    "ours": "Bus fee policy (3601.1) will be reworded...",
+    "official": "Third Read Policies 3601.3 Bus Fee Policy, 1303.1 Advertising in Schools the bus policy needs to go back to the subcommittee for an adjustment in language.",
+    "official_reading": "3601.3",
+    "note": "Policy number misheard/transposed with the advertising policy's number (1303.1)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision: recipients of master planning priority ratings",
+    "ours": "Committee members will send Carol Arshambo their high/medium/low priority ratings on the master planning committee's school-facilities wish list within about a week.",
+    "official": "The committee decides they will go through the list and will send their priority list to Dr. Burnham and Ms. Archambault",
+    "note": "Our minutes name only Archambault as recipient and add a one-week timeframe not in the official text; check the recording near t=11673 for whether Dr. Burnham was also named and whether a deadline was stated."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: informal exit interview with Dr. Burnham",
+    "ours": "An informal exit interview will be conducted with Dr. Burnham for the state-of-the-schools report and shared with the full committee.",
+    "official": "Dr. Burnham is working on the State of the Schools report",
+    "note": "Official minutes note only that the report is in progress, not an exit-interview process."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "decision: names of retiring staff honored at June 4 meeting",
+    "ours": "following meeting June 4 at town hall will include retiree recognition for three retiring high school staff.",
+    "official": "6/4 School Committee Meeting hybrid – prior to meeting will be a celebration for retirees, Karyn Giuliani from the Art Department at the high school, Peggy Proctor from World Language at the high school, and Bob Hill from the Science Department at the high school",
+    "note": "Official names the three retirees; ours only gives the count. Also note: official does not say 'town hall' as the location."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: committee chair",
+    "ours": "Brian Leighton (chair)",
+    "official": "Brian Lehtinen, Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: outgoing secretary",
+    "ours": "Carol Arshambo (member (outgoing))",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: outgoing member",
+    "ours": "Laura Bzowski (member (outgoing))",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: vice chair",
+    "ours": "Anthony (Tony) Scullenbrine (member)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Misheard surname; official also gives his title as Vice Chair, which ours omits."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: business/finance director name",
+    "ours": "Dr. Gillson (business manager)",
+    "official": "Dr. Susan Gilson – Director of Administration and Finance",
+    "official_reading": "Susan Gilson",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "attendee: business/finance director title",
+    "ours": "business manager",
+    "official": "Director of Administration and Finance",
+    "note": "Our minutes call her the business manager throughout (e.g. transfer discussion) while the official title is Director of Administration and Finance; check which title is current."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: student representative's name",
+    "ours": "student representative (student representative)",
+    "official": "Tatum Furman, Student Rep",
+    "note": "Our minutes never capture the name; official does."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: MASC search facilitator",
+    "ours": "Alicia (MASC consultant, superintendent search facilitator)",
+    "official": "",
+    "note": "Not listed among the official minutes' attendees/guests for this meeting; check whether she was present or this is a leftover reference from an earlier search-process meeting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: grants staff member",
+    "ours": "Juliana Hansum (staff, grants)",
+    "official": "the committee has been provided the memo's in their packet from Dr. Bookis and Ms. Hanscom.",
+    "official_reading": "Ms. Hanscom",
+    "note": "Misheard surname (and possibly first name); could not confirm 'Juliana' in the official text."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: Director of Teaching and Learning",
+    "ours": "",
+    "official": "Dr. Deborah Bookis – Director of Teaching and Learning",
+    "note": "Guest listed in the official minutes header, absent from our attendee list."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: recording secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Not listed in our attendees."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: superintendent-elect",
+    "ours": "Jodie Fortuna (superintendent-elect)",
+    "official": "With four votes for Jodi she is voted to be the next superintendent of schools",
+    "note": "Same person, consistent role in both records."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:09:06Z",
+   "cost_usd": 0.3506818
+  }
  }
 }

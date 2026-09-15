@@ -526,5 +526,317 @@
    "at": "2026-09-13T23:35:09Z",
    "cost_usd": 0.14110140000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01212026-7614",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-01-21-minutes-7614.txt",
+   "path": "sources/meetings/school-committee/2026-01-21-minutes-7614.pdf"
+  },
+  "official_sha256": "0cbd129f16f44c74c58d6286a65cd8d427d4d4bcf18352c16943b1f45b512e08",
+  "coverage": "official minutes are a summary only",
+  "summary": "All three substantive votes and the one transfer agree in outcome and amount between the two records, and several figures and names differ only because captions mis-heard digits or names. The official minutes are a condensed agenda-summary that omits most of the numeric detail from the FY27 budget/DEBUS/Turkey Hill discussion and four follow-up decisions (second budget version, FTE data request, Turkey Hill vote timing, forum date) that our minutes record but the official text does not — those decision omissions are the main thing worth checking against the town's own records or a follow-up agenda.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 5,
+   "discrepancy": 4,
+   "only_in_ours": 12,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Box Tops donations + special ed transfer",
+    "t": 326,
+    "ours": "Accept the two Box Tops donations and approve the special education line item transfer for ASL interpreter costs — passed (voice vote, ayes heard)",
+    "official": "Ms. Gilman makes a motion to approve the line item transfer and accept the donations, Ms. Young seconds the motion, all approve.",
+    "note": "Same combined motion, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Student Opportunity Act grant reallocation",
+    "t": 846,
+    "ours": "Approve the Student Opportunity Grant reallocation proposal presented by Dr. Saki — passed (voice vote, ayes heard)",
+    "official": "Ms. Young makes the motion to approve the amendment for the grant, Ms. Gilman seconds the motion, all approve",
+    "note": "Same vote and outcome; presenter's name is a separate caption issue (see below)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Grant proposal presenter's name",
+    "t": 846,
+    "ours": "Dr. Saki",
+    "official": "Kimberly Sarfde – Director of Teaching and Learning",
+    "official_reading": "Dr./Ms. Sarfde",
+    "note": "Captions misheard 'Sarfde' as 'Saki'; same person and role."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: preschool tuition schedule + 5-day option",
+    "t": 1142,
+    "ours": "Approve the preschool tuition schedule, including the addition of a five-day option — passed (voice vote, ayes heard)",
+    "official": "Ms. Gilman makes a motion to approve the addition of 5 days and tuition increase, Ms. Young seconds the motion, all approve",
+    "note": "Same motion and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer: $2,500 special ed contracted evaluations to related services",
+    "t": 285,
+    "ours": "special ed contracted evaluations to special ed contracted related services — $2,500 (voted)",
+    "official": "We are moving $2500 from Special Ed contracted evaluations to special Ed contracted related services",
+    "note": "Same amount and same accounts."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants figure, Jan 6-14",
+    "t": 200,
+    "ours": "133,29869",
+    "official": "Warrants 1/6/26 – 1/14/26 $133,298.69",
+    "official_reading": "$133,298.69",
+    "note": "Digit-grouping/decimal loss in captions, same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Box Tops donation amounts",
+    "t": 243,
+    "ours": "$55.30, $3660",
+    "official": "Box top for education for $55.30 for Turkey Hill, and Box Top for education for $36.60 for Primary School",
+    "official_reading": "$36.60",
+    "note": "$55.30 transcribed correctly; the second figure lost its decimal ($3660 vs $36.60)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dollar figure for SOA grant reallocation (supplies)",
+    "t": 579,
+    "ours": "$25,000",
+    "official": "",
+    "note": "Official describes the reallocation only qualitatively, with no dollar amount; check the grant budget documents for the actual figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Preschool tuition increase percentage",
+    "t": 1037,
+    "ours": "4%",
+    "official": "Tuition increase would be 4%",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Draft warrant article figure, Kids Kingdom/turf field",
+    "t": 4302,
+    "ours": "195,830",
+    "official": "",
+    "note": "Official only says the warrant articles were drafted for submission, with no dollar figure given."
+   },
+   {
+    "kind": "agree",
+    "about": "FY27 proposed budget increase vs FY26",
+    "t": 4387,
+    "ours": "$2 million",
+    "official": "approximately $2 million more than FY26",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 proposed total budget figure",
+    "t": 4387,
+    "ours": "28,259,974",
+    "official": "",
+    "note": "Official gives only the increase, not the total proposed budget figure; check the budget document for the total."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance share of FY27 budget figures",
+    "t": 4409,
+    "ours": "14%, 16%, 8 to $900,000",
+    "official": "",
+    "note": "Official only notes health insurance as a key expense-side item, with no percentages or dollar range; check the budget presentation for these figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Salary/expense increase amount",
+    "t": 4449,
+    "ours": "about a million dollars",
+    "official": "on the salary side is going up about $1 million",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town-wide health insurance cost figures",
+    "t": 4511,
+    "ours": "$50 million, $1.3 million, 2.7",
+    "official": "",
+    "note": "Not mentioned at all in official minutes; check the budget presentation materials."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Student transportation cost increase",
+    "t": 4553,
+    "ours": "$300,000",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town revenue projection reduction scenario",
+    "t": 4865,
+    "ours": "$1.7 million",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Strategic investment budget option figures",
+    "t": 6192,
+    "ours": "1.6, 1.7, 3.7",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School share of initial town revenue projection figures",
+    "t": 6276,
+    "ours": "$1.3 million, 53.3%, $696,521.74, $1.78 million",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DEBUS transportation contract recalculated increase figures",
+    "t": 6648,
+    "ours": "almost a4 million, $246,000",
+    "official": "",
+    "note": "Not mentioned in official minutes at all; the phrase 'a4 million' itself looks like a caption glitch for '$4 million' but cannot be confirmed against official text — check the transportation contract documents."
+   },
+   {
+    "kind": "agree",
+    "about": "Turkey Hill rehab-vs-rebuild cost threshold percentage",
+    "t": 6862,
+    "ours": "25%",
+    "official": "unless the out of pocket cost to the taxpayers' of Lunenburg would be no more than 25% additional funding, then it would make fiscal sense to do a new building.",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill rehab-vs-rebuild timeframe figures",
+    "t": 6862,
+    "ours": "50 years, 100 years",
+    "official": "",
+    "note": "Official states the 25% cost threshold but not the building-life comparison years; check the directive memo referenced in the meeting."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: no minutes available to approve",
+    "t": 200,
+    "ours": "No minutes were available for the committee to review or approve at this meeting.",
+    "official": "Review and Approve Minutes None",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: turf field/Kids Kingdom warrant articles, discussion only",
+    "t": 4345,
+    "ours": "treated as discussion only tonight, with the language considered ready for the town to act on; no formal committee vote was taken on the article text.",
+    "official": "The last school committee meeting we discussed adding two items to the warrant, one is related to the turf field and one related to Kids Kingdom, Dr. Fortuna drafted the warrants that will be submitted.",
+    "note": "Consistent: discussion/drafting only, no vote recorded in either."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: directive to prepare second FY27 budget version",
+    "t": 6608,
+    "ours": "The business manager was directed to prepare a second FY27 budget version incorporating the discussed strategic investment additions, alongside the level-services budget.",
+    "official": "",
+    "note": "Official's FY27 budget item only describes the level-services budget presentation with no mention of a second version being directed; check agenda/follow-up materials for whether this directive was actually given."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: Liz asked to compile FTE/staffing-loss data",
+    "t": 6754,
+    "ours": "Liz was asked to compile data on FTE positions and the percentage of staff lost over recent years for a future meeting.",
+    "official": "",
+    "note": "Not recorded in official minutes at all; check whether this request was actually made and to whom."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: Turkey Hill further discussion and vote timing",
+    "t": 7686,
+    "ours": "Further discussion of the Turkey Hill directive memo will occur, with a vote planned for a meeting two sessions from now, in part so the absent member can be present.",
+    "official": "",
+    "note": "Official's Turkey Hill item (11a) states the substance of the directive but not a planned future vote or timeline; check the next meeting's agenda for whether this vote is scheduled."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: setting a public forum/hearing date on the school budget",
+    "t": 7791,
+    "ours": "The committee will set a date for a public forum on the school budget at its next meeting.",
+    "official": "Topics for Future Discussion  Public hearing date for FY 26 budget",
+    "note": "Ours describes a 'public forum' on 'the school budget' generally; official specifies a 'public hearing' for the 'FY26' budget even though this meeting discussed the FY27 budget — check which fiscal year and which type of event (forum vs. hearing) is actually planned."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's identity possibly split into two attendees",
+    "ours": "the chair (chair); Tony (school committee member) listed separately",
+    "official": "Anthony Sculimbrene Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Our minutes appear to list the chair (Anthony 'Tony' Sculimbrene) twice, once by role and once by first name, as if they were two different people."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Emily Young",
+    "ours": "Emily (school committee member)",
+    "official": "Emily Young, Member - Present",
+    "note": "Same person, first name only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Superintendent",
+    "ours": "Dr. Fortuna (superintendent)",
+    "official": "Dr. Jodi Fortuna",
+    "note": "Same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Business manager",
+    "ours": "Chris (business manager)",
+    "official": "Christopher McNamara – Business Administrator",
+    "note": "Same person, first name only in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Primary School principal's name",
+    "ours": "Squire (principal)",
+    "official": "Carla Squier – Primary School Principal",
+    "official_reading": "Carla Squier",
+    "note": "Captions rendered 'Squier' as 'Squire'."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Mandy Gilman, Secretary",
+    "ours": "",
+    "official": "Mandy Gilman, Secretary – Present",
+    "note": "She is recorded as making or seconding nearly every motion in the official minutes but does not appear anywhere in our attendee list; check the recording for whether her name was captured under a different label or missed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees: Beth Robinson, Amy Resnik, Liz",
+    "ours": "Beth Robinson (MTSS specialist and instructional specialist, primary school); Amy Resnik (math coach); Liz (staff, asked to compile FTE/staffing data)",
+    "official": "",
+    "note": "None of these three appear in official's guest list (which names only McNamara, Sarfde, and Squier); check whether they attended/spoke and were simply omitted from the official minutes, or whether any are a misheard duplicate of a listed guest."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Vice Chair Laura Brzozoski (absent)",
+    "ours": "",
+    "official": "Laura Brzozoski, Vice Chair - Absent",
+    "note": "Minor: she is noted as absent in official minutes and is correspondingly not mentioned in ours; not a substantive conflict."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:36:55Z",
+   "cost_usd": 0.27209340000000004
+  }
  }
 }

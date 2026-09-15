@@ -199,5 +199,107 @@
    "at": "2026-09-14T01:27:42Z",
    "cost_usd": 0.1300484
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02012025-6994",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-02-01-minutes-6994.txt",
+   "path": "sources/meetings/school-committee/2025-02-01-minutes-6994.pdf"
+  },
+  "official_sha256": "47d79ed2815a9a8fe0a3e5a853da62d639fed75dc62e46b54ddf10cb1d283c74",
+  "coverage": "partial",
+  "summary": "The two records agree on the one recorded vote (approving the 10-person screening committee list, roll call, all yes) and largely agree on attendees once caption-garbled names are corrected, but they diverge sharply on content: the official minutes contain an extended narrative of committee members' concerns (list is \"parent heavy,\" under-represented age/community views) that our minutes omit entirely, while our minutes record three decisions/discussion points (no late applicants, planned listening sessions, chair follow-up with non-selected applicants) that appear nowhere in the official text. A reader should check the source recording around t=1518-1539 to confirm those three items were actually said, since the official minutes — despite being fairly detailed — do not corroborate them.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 5,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "vote to approve screening committee membership list",
+    "ours": "Approve the recommended 10-person superintendent screening committee membership list as presented — passed, roll call all yes (5 members)",
+    "official": "Mr. Beardmore makes a motion to approve the list as presented, Ms. Brzozoski seconds the list, all approve via roll call vote",
+    "note": "Same vote, same unanimous roll-call outcome; official additionally names the mover and seconder."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "mover and seconder of the approval motion",
+    "ours": "",
+    "official": "Mr. Beardmore makes a motion to approve the list as presented, Ms. Brzozoski seconds the list",
+    "note": "Procedural detail our minutes did not capture; not a substantive discrepancy since the vote outcome itself agrees."
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair's name",
+    "ours": "Brian Leon",
+    "official": "",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname in captions; official minutes give Lehtinen."
+   },
+   {
+    "kind": "caption_error",
+    "about": "secretary's name",
+    "ours": "Carol Areno",
+    "official": "",
+    "official_reading": "Carol Archambault",
+    "note": "Misheard surname; official minutes give Archambault (Secretary)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member's name",
+    "ours": "Mr Bardmore (also heard as Beardmore)",
+    "official": "",
+    "official_reading": "Peter Beardmore",
+    "note": "Our alternate hearing already matched the official spelling; the correct name is confirmed as Beardmore."
+   },
+   {
+    "kind": "caption_error",
+    "about": "vice chair's name",
+    "ours": "Mr Scullbrini (heard as \"school and brini\")",
+    "official": "",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Misheard surname in captions; official minutes give Sculimbrene (Vice Chair) and also name him as maker of the discussion on diversity."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member's name",
+    "ours": "Ms Brzowski (heard as \"Bowski\")",
+    "official": "",
+    "official_reading": "Laura Brzozoski",
+    "note": "Misheard surname; official minutes give Brzozoski."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "no late applicants received",
+    "ours": "No additional screening committee applicants were received by the January 31st deadline, so no changes were made to the recommended list.",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all; check the recording near t=71 to confirm this was actually stated."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "planned listening sessions",
+    "ours": "The committee will hold listening sessions so the public can give input on desired superintendent characteristics.",
+    "official": "",
+    "note": "No corresponding item in official minutes; verify against recording near t=1518, since this reads like a decision that would normally appear in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "chair follow-up with non-selected applicants",
+    "ours": "The chair will reach out to all applicants who were not selected to keep them engaged in the process.",
+    "official": "",
+    "note": "No corresponding item in official minutes; verify against recording near t=1539."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:51:04Z",
+   "cost_usd": 0.1583098
+  }
  }
 }

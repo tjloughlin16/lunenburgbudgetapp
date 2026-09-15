@@ -579,5 +579,275 @@
    "at": "2026-09-14T02:00:02Z",
    "cost_usd": 0.1490584
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09042024-6739",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-09-04-minutes-6739.txt",
+   "path": "sources/meetings/school-committee/2024-09-04-minutes-6739.pdf"
+  },
+  "official_sha256": "173496151306a3f613af2ee1a09b15c1ccb45596f221b114f7e53341905b084f",
+  "coverage": "full",
+  "summary": "The two records agree closely on every vote's outcome, the FY26 capital-plan figures, the para-professional 4% raise, and the chapter 90 figures, with most surface differences being predictable caption mishearings of names (Lehtinen→\"Leon,\" Sculimbrene→\"Scholbrini,\" Archambault→\"Arshambo,\" Brzozoski→\"Brzowski\") and one garbled amount. The one figure a reader should check by hand is the town-manager recruiting-firm transfer: our captions have $115,000, the official minutes say $15,000 — an order-of-magnitude gap that should be confirmed against the Finance Committee/Select Board vote, not assumed to be a caption slip.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 7,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: accept facilities and grounds report",
+    "ours": "Accept the facilities and grounds report as presented — passed",
+    "official": "Ms. Archambault makes a motion to accept the report as presented, Ms. Brzozoski seconds the motion all approve",
+    "note": "Same vote, same outcome.",
+    "t": 7424
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: FY26 capital plan priority rankings",
+    "ours": "Approve the stated priority rankings for the FY26 draft capital plan — passed",
+    "official": "Ms. Brzozoski makes a motion to accept the priority ranking, Mr. Sculimbrene seconds the motion all approve",
+    "note": "Same vote, same outcome.",
+    "t": 8601
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: para-professional contract ratification",
+    "ours": "Ratify the para-professional contract for one year as proposed — passed (roll call, all six members aye)",
+    "official": "Ms. Brzozoski makes a motion to accept as proposed, Mr. Beardmore seconds the motion, roll call vote to include Mr. Terenzini, all approve.",
+    "note": "Both records show unanimous passage by roll call.",
+    "t": 9028
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Roll-call phrasing for Terenzini's vote",
+    "ours": "Terenzini listed as an ordinary aye vote among six, no special note",
+    "official": "\"roll call vote to include Mr. Terenzini\"",
+    "note": "The official phrasing implies something specific about needing to add Terenzini to the roll call (remote participation, late arrival, etc.) that ours does not capture — worth checking the recording for why he is singled out.",
+    "t": 9028
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Town manager recruiting firm transfer amount",
+    "ours": "$115,000 from a reserve account to fund a recruiting firm for the town manager search (voted by finance committee/select board, not this body)",
+    "official": "\"we were given $15,000 from the reserve account to fund a recruiting firm\"",
+    "note": "An order-of-magnitude difference ($115,000 vs $15,000), not simple digit-grouping — check the Finance Committee/Select Board minutes or warrant for the actual approved amount.",
+    "t": 9241
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant total, Aug 5-22",
+    "ours": "4 63,360",
+    "official": "$463,413.80",
+    "official_reading": "$463,413.80",
+    "note": "Same warrant period and same order of magnitude; captions garbled the exact cents/digits of a dollar figure spoken aloud.",
+    "t": 697
+   },
+   {
+    "kind": "agree",
+    "about": "Para-professional raise percentage",
+    "ours": "4%",
+    "official": "\"the contract includes a 4% raise\"",
+    "note": "Matches exactly.",
+    "t": 8878
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan: Primary School driveway",
+    "ours": "$30,000",
+    "official": "\"Driveway at Primary School - $30,000\"",
+    "note": "Matches exactly.",
+    "t": 7699
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan: Primary School playground",
+    "ours": "$30,000",
+    "official": "\"Playground at Primary School $30,000\"",
+    "note": "Matches exactly.",
+    "t": 7797
+   },
+   {
+    "kind": "caption_error",
+    "about": "Capital plan: Turkey Hill item name",
+    "ours": "Turkey Hill item: $20,000",
+    "official": "\"Hot Water Tank _ THES $20,000\"",
+    "official_reading": "Hot Water Tank – THES, $20,000",
+    "note": "Amount matches; captions caught the school (Turkey Hill/THES) but not the specific item, a hot water tank.",
+    "t": 7840
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Additional FY26 capital plan line items",
+    "ours": "",
+    "official": "Generator at Primary School $70,000; Safety Film at Primary School $38,120; Security Camera Server; Safety Film at LMHS; Utility Pick up",
+    "note": "Five more capital-plan items appear only in the official minutes' list; captions did not surface them in figures_as_heard.",
+    "t": 8601
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 90 funds figures",
+    "ours": "$2.4 million currently, $1.6 million after committed work",
+    "official": "\"currently they have $2.4 million dollars, but there is much work underway, after that work is paid off there is $1.6 million left over\"",
+    "note": "Matches exactly.",
+    "t": 9431
+   },
+   {
+    "kind": "agree",
+    "about": "September 18 meeting start time shift",
+    "ours": "Meeting kept but start shifted later, ~7:15-7:30pm, to accommodate Turkey Hill open house attendance",
+    "official": "\"September 18 School Committee Meeting Hybrid LMHS 7:30\"",
+    "note": "Final scheduled time (7:30, later than the usual 6:30) matches; official does not narrate the reasoning, just the outcome.",
+    "t": 1390
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Shifting SC goals/strategy discussion from Oct 2 to Oct 16",
+    "ours": "Shift discussion of school committee goals, strategy/school improvement plans from the October 2 meeting to October 16, once MCAS data can be analyzed.",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes; check whether this was actually decided or a captions misread of forward-looking discussion.",
+    "t": 1410
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Facilities report converted to written monthly submission",
+    "ours": "Convert the facilities and grounds report to a written monthly submission rather than a live verbal report at each meeting.",
+    "official": "",
+    "note": "Official's facilities section (9.e) only describes the report and the accept vote, with no mention of changing its format going forward.",
+    "t": 1266
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Committee's concerns on draft Town Financial Policies manual",
+    "ours": "Give the interim town manager the committee's concerns about the draft Town Financial Policies manual (especially the grant pre-approval requirement) rather than taking further action now.",
+    "official": "\"The committee received documents of all town policies, Dr. Burnham shares they are still cross referencing to see if the school committee has any different expectations.\"",
+    "note": "Official describes an unresolved, ongoing review; ours describes a completed action (concerns already communicated to the interim town manager) — check the record for whether concerns were actually transmitted or the review is still open.",
+    "t": 6752
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Proposed grant pre-approval language in reorganization document",
+    "ours": "Consider adding language to the annual reorganization document authorizing the superintendent or designee to pursue grants aligned with district goals without prior committee vote.",
+    "official": "",
+    "note": "Not mentioned in official minutes' financial-policies section (9.d).",
+    "t": 6462
+   },
+   {
+    "kind": "agree",
+    "about": "Cell phone policy as future discussion topic",
+    "ours": "Have the superintendent bring stakeholders in for a future discussion item on the school cell phone policy.",
+    "official": "Topics for Future Discussion: \"Cell phone policy\"",
+    "note": "Same topic flagged for a future meeting; official omits the stakeholder detail.",
+    "t": 9666
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Athletic advisory committee meeting/fundraiser format change",
+    "ours": "Athletic advisory committee will move to a single annual live meeting format and shift fundraiser approval mostly to an email-based process, requiring a policy change.",
+    "official": "\"discussed going to a different meeting format, maybe an annual live meeting and also a new format for approving fundraisers, most likely through email\"",
+    "note": "Ours presents this as a decided change; official's language (\"discussed,\" \"maybe,\" \"most likely\") reads as still tentative — check the athletic advisory committee's own minutes for whether this was finalized.",
+    "t": 9131
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CEP Update on Turkey Hill eligibility",
+    "ours": "",
+    "official": "\"CEP Update Unfortunately Turkey Hill was not eligible.\"",
+    "note": "Not captured in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager recruiting firm next steps",
+    "ours": "",
+    "official": "\"The Town Manager selection committee is set to meet next week to discuss proposals for a recruiting firm\"",
+    "note": "Procedural next-step detail present only in official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "the presiding chair (name not distinctly identified in captions)",
+    "official": "Brian Lehtinen, Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Captions never resolved the chair's name; official masthead names him. His voice is likely also behind our roll-call name \"Leon\" (see below)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's name",
+    "ours": "Mr. Scholbrini (member)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Phonetically close misheard surname; same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Secretary's name",
+    "ours": "Mrs. Arshambo (member)",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Phonetically close misheard surname; same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Brzozoski's name",
+    "ours": "Mrs. Brzowski (member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Minor misheard spelling; same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Member Beardmore's name",
+    "ours": "Mr. Beardmore (member)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Superintendent",
+    "ours": "Dr. Burnham (superintendent)",
+    "official": "Dr. Kate Burnham",
+    "note": "Matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "LEAF co-presenter's surname",
+    "ours": "Tom (surname unclear) (presenter, LEAF co-founder)",
+    "official": "Tom Littlepage and Sybil Kaufman shared their idea to create LEAF",
+    "official_reading": "Tom Littlepage",
+    "note": "Captions caught the first name but not the surname."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "School principals and guests attending",
+    "ours": "",
+    "official": "Guests: Tim Santry – LMHS Principal, Norman Yvon – THES Principal, Carla Squier, Primary School Principal, Nadine Lorenzen – Food Service Director",
+    "note": "None of these four guests, who gave the 'Back to School Updates,' appear in our attendee list at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recording Secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Not captured in our attendees; she also signs the minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mr. Bernard, Chapter 90 presenter",
+    "ours": "",
+    "official": "\"Mr. Bernard was there to explain chapter 90 funding\"",
+    "note": "This presenter is named in official minutes but is entirely absent from our attendee list, even though we captured the chapter 90 figures he presumably presented."
+   }
+  ],
+  "quotes_not_in_official_dropped": 7,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:30:48Z",
+   "cost_usd": 0.371625
+  }
  }
 }

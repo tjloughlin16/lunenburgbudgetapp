@@ -697,5 +697,270 @@
    "at": "2026-09-14T01:23:24Z",
    "cost_usd": 0.15417839999999997
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02262025-7076",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-02-26-minutes-7076.txt",
+   "path": "sources/meetings/school-committee/2025-02-26-minutes-7076.pdf"
+  },
+  "official_sha256": "a822a8f8ada6d4ba46e32506bcfd11535a3fc27663909c1222235cea46d0f415",
+  "coverage": "partial",
+  "summary": "The four substantive votes (transfer, athletic fees, facility fees, closing the Q&A) agree in outcome and in the headline figures on both sides. But the two records diverge sharply below that: the official minutes summarize most of the FY26 budget figures (revolving-fund offsets, per-season and per-sport athletic costs, the town-manager's gap number, restructuring-option dollars) out of existence, our minutes omit an entire cluster of committee decisions on which administrative positions to cut or keep, and the superintendent (Dr. Kate Burnham) is misattributed/missing in our attendee list while a director (Gilson) is mislabeled as superintendent — a reader should check the recording against the official's \"Old Business\" paragraph before treating either attendee list or that decision cluster as complete.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 6,
+   "discrepancy": 4,
+   "only_in_ours": 14,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "warrant amount and date range",
+    "t": 1866,
+    "ours": "Warrants Feb 3 - Feb 24, 2025: $387,900",
+    "official": "Warrants 2/3/25 – 2/4/25 $387,798.50 – Signed and approved",
+    "official_reading": "$387,798.50, for the warrant dated 2/3/25–2/4/25",
+    "note": "Both the amount ($387,900 vs $387,798.50) and the end date (Feb 24 vs Feb 4) look like digit/word mishearings of the same warrant; check the recording to confirm it is one warrant, not two."
+   },
+   {
+    "kind": "agree",
+    "about": "line-item transfer vote",
+    "ours": "Approve $9,200 vehicle maintenance to contractor services — passed",
+    "official": "Line Item Transfers - $9,200 from vehicle maintenance to contracted services to take care of HVAC on roof of LMHS. Mr. Sculimbrene makes a motion to approve line item transfer, Mr. Beardmore seconds the motion, all approve",
+    "note": "Same transfer, same amount, same outcome; official adds the mover/seconder."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "second, undiscussed transfer",
+    "ours": "From general supplies, ELL, ACE, and mileage reimbursement lines into a contracted evaluation special education line — discussed only, not voted",
+    "official": "",
+    "note": "Official records no discussion of a second transfer; since it was never voted this is an omission rather than a vote discrepancy, but worth checking the recording to confirm it was really raised and not conflated with the $9,200 transfer."
+   },
+   {
+    "kind": "agree",
+    "about": "911 upgrade cost at Turkey Hill",
+    "ours": "$60,000",
+    "official": "$60,000 unbudgeted additional cost for the 911 upgrades at Turkey Hill",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "athletic director asked to name a cut",
+    "ours": "",
+    "official": "Mr. Bigelow is asked to suggest a sport to cut",
+    "note": "An attendee/participant (\"Mr. Bigelow\", apparently the athletic director) appears only in the official minutes; check whether captions rendered his name as something else or dropped him entirely."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "athletic revolving account offset",
+    "ours": "26%",
+    "official": "",
+    "note": "No matching figure in official; likely a real detail from the athletics slide deck that the summary dropped."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "athletic program costs by season",
+    "ours": "$117,000 / $84,000 / $45,000",
+    "official": "",
+    "note": "Not in official summary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "football program cost",
+    "ours": "$31,700, almost $332,000",
+    "official": "",
+    "note": "Not in official summary; the two figures (a per-sport cost and a much larger total) should be checked against the slide deck for which is which."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "student activity fee proposal decision",
+    "ours": "Tabled the student activity fee restructuring proposal and agreed to seek student council feedback before acting",
+    "official": "Committee recommends Dr. Gilson meet with students to discuss these possibility of increases in fees",
+    "note": "Both describe deferring the decision pending student input, but \"student council feedback\" vs \"Dr. Gilson meets with students\" name different mechanisms — check the recording for which was actually said/decided."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "student activity fee figures",
+    "ours": "$55, $43, $45, $50, $75",
+    "official": "",
+    "note": "Official gives no proposed fee figures for student activities."
+   },
+   {
+    "kind": "agree",
+    "about": "bus transportation fee proposal — tabled for a parent survey",
+    "ours": "Tabled pending a parent survey and more data",
+    "official": "Committee would like a survey to go out to parents to get community feedback",
+    "note": "Same substance."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "bus transportation fee figures",
+    "ours": "$997,000, $976,000, 87,000, 1563, 9911, 683, $180, $225, $270, $775,000, $75,000",
+    "official": "",
+    "note": "None of this detail (ridership counts, per-grade fees, revenue totals) appears in the official summary."
+   },
+   {
+    "kind": "agree",
+    "about": "facility rental/labor rate increase — 50%",
+    "ours": "50% increase adopted, passed 5-0 roll call",
+    "official": "Proposal to increase fees by 50% Mr. Beardmore makes a motion to accept this as proposed, Mr. Sculimbrene seconds the motion, all approve via roll call vote",
+    "note": "Rate and outcome match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "specific facility rental dollar figures",
+    "ours": "$36, $39, $29, $30, $30, $39",
+    "official": "",
+    "note": "Official states only the 50% headline rate, not the underlying per-item dollar figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 budget gap and town manager's revised number",
+    "ours": "$680,000; $27,422,795; 12%; 14.8%; 1.6",
+    "official": "",
+    "note": "The chair's report discusses the statewide funding crisis in prose but states no specific gap dollar figure or budget total — this is a significant figure missing from the official record; check the slide deck referenced in the minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "North Middlesex central office consolidation — outcome",
+    "ours": "",
+    "official": "A discussion about sharing resources with North Middlesex, which was not supported by the committee",
+    "note": "Our minutes record the topic only as a figures_as_heard entry (40%, $300,000) with no stated outcome; the official records a clear rejection. Check the recording to confirm the committee actually declined this option."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "North Middlesex consolidation figures",
+    "ours": "40%, $300,000",
+    "official": "",
+    "note": "Not stated in official."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "finance/administration restructuring decision detail",
+    "ours": "Tabled the proposal to eliminate the director of finance and administration position, citing continuity-of-operations concerns with an incoming new superintendent",
+    "official": "Committee tables the idea of eliminating Director of Finance and Administration and add an accountant position and HR Consulting Contract Support",
+    "note": "Both agree the elimination was tabled, but official adds a companion action (add accountant + HR consulting support) not in our minutes, and our minutes give a stated reason (continuity with incoming superintendent) not in official — check the recording for both halves."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "finance/administration restructuring option figure",
+    "ours": "$55,000",
+    "official": "",
+    "note": "Not in official."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "positions committee agreed to cut",
+    "ours": "",
+    "official": "Committee supports eliminating one of the assistant principals at the Middle High School and the part time athletics secretary, making the IT tech to a part time position",
+    "note": "These three confirmed cuts are entirely absent from our minutes; check the recording, since these are concrete staffing decisions that should have a timestamp."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "money available to restore cut positions",
+    "ours": "$136,000, $210,000, 300, $310,000, $75,000, $85,000",
+    "official": "",
+    "note": "Not in official."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "out-of-district/ACE placement cost options",
+    "ours": "$646,000, 767, $330,000, $431,000, $491,000",
+    "official": "",
+    "note": "Not in official."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "federal special education and title grant figures",
+    "ours": "$15,000, $14–15,000",
+    "official": "",
+    "note": "Not in official."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to close public Q&A",
+    "ours": "Close the public portion of the budget Q&A — passed",
+    "official": "Mr. Beardmore makes a motion to close the public portion of the Q&A, Mr. Sculimbrene seconds the motion all approve",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "facilities/grounds director hire",
+    "ours": "Gave direction to proceed with hiring the previously interviewed candidate for facilities/grounds director",
+    "official": "it is recommended that Dr. Burnham hire the candidate she has interviewed",
+    "note": "Same decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "superintendent search — 11 vs 12 members detail",
+    "ours": "Possibility of the search committee proceeding with 11 rather than 12 members due to a scheduling conflict",
+    "official": "Superintendent Search Committee discusses timeline and ultimately decide to proceed as listed",
+    "note": "Official gives no membership-count detail; not necessarily wrong, just unconfirmable from the official text."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sandry / Santry",
+    "ours": "Mr. Sandry (principal, Middle High School)",
+    "official": "Tim Santry – LMHS Principal",
+    "official_reading": "Tim Santry",
+    "note": "Same person, same role, misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Hansam / Hanscom",
+    "ours": "Juliana Hansam (director of special services)",
+    "official": "Julianna Hanscom – Director of Special Services",
+    "official_reading": "Julianna Hanscom",
+    "note": "Same person, same role, misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Bookas / Bookis",
+    "ours": "Dr. Bookas (director of teaching and learning)",
+    "official": "Dr. Deborah Bookis – Director of Teaching & Learning",
+    "official_reading": "Dr. Deborah Bookis",
+    "note": "Same person, same role, misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Canton / Cantin",
+    "ours": "Lisa Canton (literacy coach specialist)",
+    "official": "Lisa Cantin – MTSS Specialist/Coach",
+    "official_reading": "Lisa Cantin, MTSS Specialist/Coach",
+    "note": "Surname misheard; role given as \"literacy coach\" in ours vs. the official's broader \"MTSS Specialist/Coach\" — worth a glance at the recording to see if she was introduced with a narrower title."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Resnik / Resnick",
+    "ours": "Amy Resnik (math coach specialist)",
+    "official": "Amy Resnick – MTSS Specialist/Coach",
+    "official_reading": "Amy Resnick, MTSS Specialist/Coach",
+    "note": "Surname misheard; role given as \"math coach\" in ours vs. official's \"MTSS Specialist/Coach\" — same caveat as Cantin."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "two guests absent from our attendee list",
+    "ours": "",
+    "official": "Norman Yvon – THES Principal, Carla Squier – Primary School Principal",
+    "note": "Neither appears anywhere in our attendees or elsewhere in our minutes; check whether they spoke (and were missed) or were simply present without speaking."
+   },
+   {
+    "kind": "agree",
+    "about": "chair identity",
+    "ours": "Brian Leon (chair)",
+    "official": "Brian Lehtinen, Chair",
+    "note": "Caption misheard surname (Leon vs Lehtinen), same role — flagged here as agree-on-role/caption-error-on-name rather than a separate entry."
+   }
+  ],
+  "quotes_not_in_official_dropped": 8,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:55:35Z",
+   "cost_usd": 0.3674944
+  }
  }
 }

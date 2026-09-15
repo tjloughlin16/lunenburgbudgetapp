@@ -549,5 +549,254 @@
    "at": "2026-09-14T00:12:15Z",
    "cost_usd": 0.14712740000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10152025-7458",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-10-15-minutes-7458.txt",
+   "path": "sources/meetings/school-committee/2025-10-15-minutes-7458.pdf"
+  },
+  "official_sha256": "556be03d62b08aa304cee86a4237e32d3fcbfd85a9cad0b1e026811659bd2c08",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on every vote's outcome and on the core facts behind each (donations, grants, uniforms, tabling subcommittee reports), but the official minutes are a brief topic-by-topic summary that omits almost all the numeric/discussion detail our minutes captured from the recording (retention rates, compensation percentages, van funding, Turkey Hill cost estimate, several attendees). The one thing a reader should double-check is the earmark grant total (our captions say \"$15,000\" where the official minutes say \"$105,000\") and whether \"Mr. Von\" is actually Norman Yvon, principal of Turkey Hill Elementary rather than the Primary School as our minutes label him.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 5,
+   "discrepancy": 1,
+   "only_in_ours": 13,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: accept PTO donations",
+    "ours": "[t=341] Accept three PTO donations to the schools — passed",
+    "official": "Donation from PTO, they donated $1500 to each school to be used as principal believes is best. Ms. Gilman makes a motion to accept the donations, Ms. Young seconds the motion all approve",
+    "note": "Same vote, same outcome; official confirms $1500 per school (three schools) and unanimous approval."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept grants for I-Ready and touch screens",
+    "ours": "[t=1127] Accept the superintendent's proposal to fund I-Ready and primary school touch screens from the state legislative earmark — passed",
+    "official": "Dr. Fortuna recommends this to be used for I-Touch screens at the Primary School and to restore iReady for one more year. Ms. Gilman makes a motion to accept these grants and spend as described, Ms. Young seconds the motion all approve",
+    "note": "Same vote, same outcome, same two uses of the money."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: disperse soccer uniforms",
+    "ours": "[t=1714] Disperse the boys' and girls' soccer uniforms to the teams as soon as possible — passed",
+    "official": "Ms. Brzozoski makes a motion to disperse the soccer uniforms to the players as soon as possible, Ms. Young seconds the motion all approve",
+    "note": "Same vote, same outcome; official adds the mover's name (Brzozoski)."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: table subcommittee reports",
+    "ours": "[t=9217] Table subcommittee reports for now — passed",
+    "official": "Mr. Sculimbrene makes a motion to table the reports, Ms. Gilman seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "No line-item transfers this meeting",
+    "ours": "[t=222] No line-item transfers reported this meeting; warrants and three PTO donations were reviewed instead — none (discussed only)",
+    "official": "Line Item Transfers  None",
+    "note": "Both records agree no transfers occurred."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrant total for the period",
+    "ours": "",
+    "official": "Warrants 9/30/25  - 10/8/25 $280,131.23",
+    "note": "Our minutes note warrants were reviewed but do not capture the dollar figure; check the recording near t=222 for the amount as read aloud."
+   },
+   {
+    "kind": "caption_error",
+    "about": "State legislative earmark grant total",
+    "ours": "[t=386] State legislative one-time earmark grant: $15,000, $55,000, 50,000",
+    "official": "we have been granted the opportunity to receive $105,000 in two amounts, one is $50,000 and one is $55,000",
+    "official_reading": "$105,000 total, split into $50,000 and $55,000",
+    "note": "The two component figures ($55,000 and ~$50,000) match; the total was misheard as $15,000 instead of $105,000, a plausible caption error (\"one-oh-five\" heard as \"fifteen\")."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Duration of restored I-Ready funding",
+    "ours": "[t=428] Restoring the I-Ready assessment/instruction tool: 47",
+    "official": "to restore iReady for one more year",
+    "official_reading": "for one more year",
+    "note": "No numeric figure was actually said; the captions appear to have rendered \"for one\" as the number \"47\"."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Alternative transportation vans funding",
+    "ours": "[t=681] Alternative transportation vans (not funded): 100",
+    "official": "",
+    "note": "Official minutes do not mention transportation vans at all; this level of budget-discussion detail is absent from the summary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Teacher/paraprofessional compensation figure",
+    "ours": "[t=6481] Teacher and paraprofessional compensation: 20%",
+    "official": "",
+    "note": "Not recorded in the official summary of the FY27 budget priorities discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Staff retention rate figures",
+    "ours": "[t=6633] Teacher and instructional staff retention rate: 90%, 80.2%",
+    "official": "",
+    "note": "Not recorded in the official minutes; official only notes that the assessment report was presented and discussed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Federal entitlement grant funding outlook",
+    "ours": "[t=6802] Federal entitlement grant funding outlook: 15%",
+    "official": "",
+    "note": "Not recorded in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill renovation cost estimate",
+    "ours": "[t=7883] Turkey Hill Elementary renovation cost estimate: $16 million",
+    "official": "Audits and the future of Turkey Hill including a conversation with the Facilities Director.",
+    "note": "Official confirms Turkey Hill was discussed as a future topic but omits the $16 million estimate; verify this figure against the recording since it is financially significant and only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Uniform replacement plan being developed",
+    "ours": "[t=1627] Staff (Mrs. Burns) are developing a roughly six-year uniform replacement cycle pairing higher-wear and lower-wear sports; still being refined.",
+    "official": "we are currently adding an addendum to the bottom of the order forms regarding employees that do not adhere the rules will face consequences along with creating a uniform replacement plan",
+    "note": "Both confirm a uniform replacement plan is being created; core fact agrees."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Six-year cycle detail and staff name for uniform plan",
+    "ours": "roughly six-year uniform replacement cycle, developed by Mrs. Burns",
+    "official": "",
+    "note": "Official does not specify a timeframe or name a staff member; not a contradiction, just more detail captured in ours — worth confirming \"Mrs. Burns\" is correct since no similarly-named person appears on the official attendee/guest list."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Community town halls mid-November",
+    "ours": "[t=6969] Community town halls at each school in mid-November were set as part of the FY28 budget development schedule.",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Superintendent evaluation goals as next month's action item",
+    "ours": "[t=7739] The superintendent's first-year evaluation goals will be a formal action item at next month's meeting.",
+    "official": "The committee has been provided the goals in their packet.  Dr. Fortuna explains her goals and the structured elements of the goals.  There are goals, key actions, and benchmarks and what will be provided to show evidence of each goal",
+    "note": "Official describes the goals discussion but does not say a formal vote is scheduled for next month; worth checking the recording to confirm this commitment was actually made."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Preference for a rubric over a numeric formula for budget requests",
+    "ours": "[t=8028] Rather than a strict numeric formula, the committee leaned toward a small set of guiding questions/rubric, building on the superintendent's five budget-priority questions, to weigh competing budget requests.",
+    "official": "This is more explained as a statement of our community values, not just numbers, we are looking a kids futures.",
+    "note": "Official captures the same general sentiment (values over numbers) but not the specific rubric/formula decision; likely the same underlying discussion, condensed."
+   },
+   {
+    "kind": "agree",
+    "about": "Written testimony on Chapter 70 K-2 finance formula",
+    "ours": "[t=9256] A member will draft written testimony on the statewide K-2 (Chapter 70) school finance formula for the committee to review, to potentially submit to the state working group.",
+    "official": "Representative Scarsdale will also be having a forum and Ms. Gilman would like to put some information together to submit.",
+    "note": "Same underlying fact; official names Ms. Gilman as the member, ours says only \"a member.\""
+   },
+   {
+    "kind": "agree",
+    "about": "Follow-up conversation with facilities director on Turkey Hill",
+    "ours": "[t=9298] The committee will talk with the facilities director about Turkey Hill as a next step.",
+    "official": "Audits and the future of Turkey Hill including a conversation with the Facilities Director.",
+    "note": "Same decision in both records."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Tony (also addressed as Mr. Skulleny)",
+    "official": "Anthony Sculimbrene Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "\"Skulleny\" is a mishearing of \"Sculimbrene.\""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Gilman's first name",
+    "ours": "Miss Gilman (also heard \"Mitty Gilman\", \"Ms. G\")",
+    "official": "Mandy Gilman, Member – Present",
+    "official_reading": "Mandy Gilman",
+    "note": "\"Mitty\" is a mishearing of \"Mandy.\""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Primary/Turkey Hill principal's name",
+    "ours": "Mr. Von (also heard Mr. Yvong)",
+    "official": "Norman Yvon-THES Principal",
+    "official_reading": "Norman Yvon",
+    "note": "\"Von\"/\"Yvong\" is a mishearing of the surname \"Yvon.\""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Which school Mr. Von/Yvon is principal of",
+    "ours": "Mr. Von ... (primary school principal)",
+    "official": "Norman Yvon-THES Principal",
+    "note": "Official lists Norman Yvon as Turkey Hill Elementary School (THES) principal and Carla Squier as the separate Primary School Principal — our minutes may have mislabeled which school this speaker leads; check the recording to see which principal was actually being addressed at that timestamp."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Primary School Principal attendee",
+    "ours": "",
+    "official": "Carla Squier-Primary School Principal",
+    "note": "Carla Squier does not appear anywhere in our attendee list; if she was present or spoke, our minutes missed her entirely (possibly conflated with \"Mr. Von\")."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee \"Liz\"",
+    "ours": "Liz (school committee member)",
+    "official": "",
+    "note": "No committee member, guest, or staff named Liz appears anywhere in the official minutes' roster; check the recording to identify who this is — could be a misheard name for someone on the official list."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Jen Traverso, K-8 literacy specialist coach",
+    "ours": "Jen Traverso (also heard Carvero/Travero) (K-8 literacy specialist coach)",
+    "official": "",
+    "note": "Not named in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Amy Resnik, K-8 math specialist coach",
+    "ours": "Amy Resnik (K-8 math specialist coach)",
+    "official": "",
+    "note": "Not named in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Miss Peterson, staff re: turnover rate",
+    "ours": "Miss Peterson (staff, addressed regarding staff turnover rate)",
+    "official": "",
+    "note": "Not named in the official minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "George Yapp, Member - Absent",
+    "note": "Our attendee list does not note any absent members; George Yapp's absence is only in the official record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recording Secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Administrative role not captured in our attendee list, likely because she does not speak on camera/mic in a way captions would attribute."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:27:29Z",
+   "cost_usd": 0.2443954
+  }
  }
 }

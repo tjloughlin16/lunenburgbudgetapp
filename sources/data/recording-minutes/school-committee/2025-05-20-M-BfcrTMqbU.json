@@ -171,5 +171,91 @@
    "at": "2026-09-14T00:45:33Z",
    "cost_usd": 0.1316774
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05202025-7232",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-20-minutes-7232.txt",
+   "path": "sources/meetings/school-committee/2025-05-20-minutes-7232.pdf"
+  },
+  "official_sha256": "72b33452cba029f39418c88964cab36029c7c1344e9ad5b64986f57f25bf2d7a",
+  "coverage": "full",
+  "summary": "Both records agree on the single substantive event of the meeting — the bus policy's second reading was waived by unanimous roll call — and the four names in our attendee list map cleanly onto the three committee members and the superintendent named officially, once caption errors are unwound. The differences are mostly granularity (who moved/seconded, per-member roll-call tally, the policy's formal number) and one item — the note that a third/final reading would occur \"the following night\" — that appears only in our minutes and should be checked against the next meeting's agenda.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 3,
+   "discrepancy": 0,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "attendee name",
+    "ours": "Mrs. Broski (also heard as Mrs. Brazowski)",
+    "official": "Laura Brzozoski - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same committee member, misheard by captions; official spelling is Brzozoski."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name",
+    "ours": "Mr. Schoolbrini (also heard as Mr. Schooly)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Same person (the Vice Chair, who called the meeting to order), badly misheard by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name",
+    "ours": "Dr. Bham (conducted roll call votes, as directed by the chair)",
+    "official": "Dr. Kate Burnham",
+    "official_reading": "Dr. Kate Burnham",
+    "note": "Superintendent's name misheard; official minutes list her as Superintendent present, not as the person conducting roll call, so also check whether the role attribution in ours is accurate."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee",
+    "ours": "Mrs. Gilman (committee member)",
+    "official": "Mandy Gilman - Present",
+    "note": "Name and presence match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "vote outcome: waive second reading of bus policy",
+    "ours": "Motion to waive second reading of the bus policy — passed 3-0 (roll call: Mrs. Broski yes, Mrs. Gilman yes, Mr. Schoolbrini yes)",
+    "official": "Ms. Brzozoski makes a motion to waive second reading, Ms. Gilman seconds the motion all approve via roll call",
+    "note": "Both records agree the motion passed unanimously by roll call; only the level of detail differs."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "who made/seconded the motion",
+    "ours": "",
+    "official": "Ms. Brzozoski makes a motion to waive second reading, Ms. Gilman seconds the motion",
+    "note": "Our minutes record the roll call tally but not who moved and who seconded; not a conflict, just missing detail — check the recording near t=63 if the mover/seconder matters."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "policy identifier",
+    "ours": "the bus policy",
+    "official": "Second Read 3601.1 Bus Fee Policy",
+    "note": "Official gives the formal policy number and name; ours only describes it generically — not a conflict, just less specific."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "timing of third/final reading",
+    "ours": "Third and final reading of the bus policy will occur the following night, after second reading was waived at this meeting.",
+    "official": "",
+    "note": "This scheduling detail is absent from the official minutes; check the next School Committee agenda/minutes to confirm the third reading actually happened the following night as stated."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:11:13Z",
+   "cost_usd": 0.16331279999999998
+  }
  }
 }

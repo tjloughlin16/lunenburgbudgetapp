@@ -313,5 +313,110 @@
    "at": "2026-09-14T01:29:45Z",
    "cost_usd": 0.1344734
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01292025-6988",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-01-29-minutes-6988.txt",
+   "path": "sources/meetings/school-committee/2025-01-29-minutes-6988.pdf"
+  },
+  "official_sha256": "d7ea181d4f6610a9df752d04cd5d3cc7361279a100cdb2418bfa9c670a150879",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records overlap only loosely: the official minutes are a brief, high-level summary that captures the tabling vote and a general list of workshop topics, while ours captures far more granular detail (six specific mid-meeting decisions and a budget-related figure) that the official minutes never mention at all. The one point that most needs checking is the tabling vote itself — ours calls it \"passed unanimously\" while the official minutes explicitly note that Mr. Sculimbrene was not present for that vote, and separately our attendee list omits two of the five committee members (Beardmore and Brzozoski) that the official minutes record as present.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 1,
+   "discrepancy": 0,
+   "only_in_ours": 6,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "only_in_ours",
+    "about": "Elevator repairs / budget shortfall figure of 15",
+    "ours": "Elevator repairs / budget shortfall: 15",
+    "official": "",
+    "note": "This figure does not correspond to any topic in the official summary (which lists only superintendent-search workshop topics); check the recording near t=759 to confirm this was actually said in this meeting and wasn't a captioning error pulling in unrelated audio."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision to produce a short bulleted superintendent-characteristics document",
+    "ours": "Committee agreed to finalize a short, bulleted version of the superintendent characteristics document to send to the full committee and the screening committee, saving the longer draft separately for reference.",
+    "official": "",
+    "note": "Official only says characteristics were discussed and ranked; the specific decision to produce a short bulleted version is not recorded there."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assignment of listening-session organizing duties to each member",
+    "ours": "Committee agreed each member would organize at least one staff or public listening session, coordinating dates through the chair to avoid scheduling overlaps.",
+    "official": "Listening sessions for staff and also for the public is suggested.",
+    "note": "Official confirms listening sessions were discussed but does not record the specific assignment/coordination arrangement ours describes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision to proceed with internal superintendent posting without outside legal review",
+    "ours": "Committee proceeded with the internal superintendent job posting using language largely copied from a prior posting, without a separate outside legal review.",
+    "official": "",
+    "note": "Not mentioned in the official summary at all; official's workshop description stops at topics and application review process."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Plan to engage MASC if search goes external",
+    "ours": "Committee agreed that if the search moves to an external candidate process, they will bring in MASC (the state school committee association) to guide it.",
+    "official": "",
+    "note": "Not mentioned in the official summary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision to post the special Saturday meeting notice by Thursday",
+    "ours": "Committee decided to post notice of a special Saturday meeting for the screening subcommittee by Thursday morning to satisfy the 48-hour posting requirement.",
+    "official": "",
+    "note": "Official mentions the Saturday meeting is planned (in the context of tabling the vote) but not this specific posting-timeline decision."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's surname",
+    "ours": "Brian Leon (chair)",
+    "official": "Brian Lehtinen, Chair - present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname; same person and role (chair)."
+   },
+   {
+    "kind": "agree",
+    "about": "Secretary's identity",
+    "ours": "Carol (member)",
+    "official": "Carol Archambault, Secretary - present",
+    "note": "Same person, first name only in ours; official adds surname and correct title (Secretary, not just member)."
+   },
+   {
+    "kind": "agree",
+    "about": "Vice Chair's identity",
+    "ours": "Tony (member)",
+    "official": "Anthony Sculimbrene, Vice Chair - present",
+    "note": "Tony is a common nickname for Anthony; same person, though official gives full name and correct title (Vice Chair, not just member) and notes he was absent for the tabling vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Peter Beardmore",
+    "ours": "",
+    "official": "Peter Beardmore, Member - present",
+    "note": "Not listed in our attendees at all, despite official recording him as present and as the one who made the tabling motion."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Laura Brzozoski",
+    "ours": "",
+    "official": "Laura Brzozoski, Member - present",
+    "note": "Not listed in our attendees at all, despite official recording her as present and speaking during public comment."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:50:36Z",
+   "cost_usd": 0.18392879999999998
+  }
  }
 }

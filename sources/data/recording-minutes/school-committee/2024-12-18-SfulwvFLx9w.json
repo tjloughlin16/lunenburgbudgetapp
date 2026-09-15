@@ -611,5 +611,326 @@
    "at": "2026-09-14T01:40:47Z",
    "cost_usd": 0.1465274
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12182024-6933",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-12-18-minutes-6933.txt",
+   "path": "sources/meetings/school-committee/2024-12-18-minutes-6933.pdf"
+  },
+  "official_sha256": "f7693d9c2f844302af1f32661f99a726b4ab0bc21020246e5cf32e44e31d7682",
+  "coverage": "partial",
+  "summary": "The two records agree closely on every vote's outcome (gifts, transfer, Food Services review, FY24 report, secretaries' MOU, winter athletics) and on most committee-report figures, but the official minutes are a narrative summary that drops nearly every dollar figure from the LMHS activity-fees discussion, the town-manager search cost, and the DC scholarship percentage — and several attendee names differ enough between the two (plus a superintendent mislabeling and a possible duplicated committee member) that a reader should check the roster against the roll-call votes before citing it.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 9,
+   "discrepancy": 4,
+   "only_in_ours": 9,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "warrant total / PTO check amount",
+    "t": 653,
+    "ours": "$ 27,825, 420",
+    "official": "Warrants 12/3/24 to 12/13/24 $217,821.91 – Warrants have been signed",
+    "note": "Our figure appears to garble two separate official amounts ($217,821.91 warrants and a $3,420 PTO check) into one number that matches neither; check the recording audio at this timestamp against both official figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Hannaford Helps middle-school donation amount",
+    "t": 694,
+    "ours": "$365",
+    "official": "A donation from Hannaford helps in the amount of $365 will be deposited into the Lunenburg Middle School gift account.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "donor name \"Hanford Helps\"",
+    "t": 694,
+    "ours": "Hanford Helps",
+    "official": "Hannaford helps",
+    "official_reading": "Hannaford Helps",
+    "note": "Captions dropped a syllable in the retailer's name; the donation itself and amount agree."
+   },
+   {
+    "kind": "caption_error",
+    "about": "primary school donation amount",
+    "t": 715,
+    "ours": "$410 4",
+    "official": "We have a check in the amount of $410 also from Hannaford Helps that will be deposited into the gift account at the Primary School",
+    "official_reading": "$410",
+    "note": "Stray trailing digit in the caption; the figure is otherwise correct — no need to check further."
+   },
+   {
+    "kind": "caption_error",
+    "about": "technology line-item transfer amount",
+    "t": 776,
+    "ours": "$1,279 6 / $1,279",
+    "official": "The technology department has requested to transfer $1,279.60 from the computer maintenance repair system",
+    "official_reading": "$1,279.60",
+    "note": "Captions split the cents off the amount; same transfer."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: approve line-item transfer",
+    "t": 861,
+    "ours": "Motion to approve the line item transfer as discussed — passed (roll call: all yes)",
+    "official": "Mr. Sculimbrene makes a motion to approve the line item transfer as described, Mr. Beardmore seconds the motion all approve via roll call vote.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "annual gift card drive total",
+    "t": 903,
+    "ours": "$6,700",
+    "official": "This year we received $6,700 donated gift cards.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: accept Food Services administrative review",
+    "t": 1566,
+    "ours": "Motion to accept the report regarding the school Food Services administrative review — passed (roll call: all yes)",
+    "official": "Mr. Sculimbrene makes a motion to approve the report for School Food Services, Ms. Archambault seconds the motion, all approve via roll call.",
+    "note": "Same vote and outcome; 'accept' vs 'approve' is wording only."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: accept FY24 end of year report",
+    "t": 1694,
+    "ours": "Motion to accept the FY24 end of year report — passed (roll call: all yes)",
+    "official": "Mr. Sculimbrene makes a motion to accept the report, Ms. Archambault seconds the report, all approve via roll call.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "secretaries' contract COLA",
+    "t": 1802,
+    "ours": "4%, 4%, 4%",
+    "official": "COLA percentages were 4% each year.",
+    "note": "Matches across the 3-year contract."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: approve secretaries' MOU",
+    "t": 1933,
+    "ours": "Motion to approve the MOU with the secretaries' bargaining unit as proposed — passed (roll call: all yes)",
+    "official": "Mr. Beardmore makes a motion to approve as proposed, Ms. Archambault seconds the motion, all approve via roll call vote.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: accept winter athletics report",
+    "t": 2102,
+    "ours": "Motion to accept the winter Athletics report — passed (\"all in favor... the motion passes\")",
+    "official": "Mr. Beardmore makes a motion to accept the winter athletics report, Ms. Archambault seconds the motion, all approve (no longer roll call vote, Ms. Brzozoski has left the meeting)",
+    "note": "Both records show a non-roll-call 'all in favor' style vote here, consistent with each other."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "member Brzozoski leaving mid-meeting",
+    "ours": "",
+    "official": "all approve (no longer roll call vote, Ms. Brzozoski has left the meeting)",
+    "note": "Explains why the athletics vote wasn't a roll call; our minutes don't note the departure — worth checking who was present for later votes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "activity fee structure figures",
+    "t": 2291,
+    "ours": "$43, $55",
+    "official": "",
+    "note": "Official's item (c) only says a presentation on activity fees was shared, with no figures; check the recording at this timestamp to confirm the fee amounts."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Art Club revenue vs. stipend",
+    "t": 2395,
+    "ours": "$430, $600",
+    "official": "",
+    "note": "Not in the official summary of the LMHS activity fees discussion; verify against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "HS activity fee revenue vs. waivers",
+    "t": 2588,
+    "ours": "$55, $247",
+    "official": "",
+    "note": "Not in the official summary; verify against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "HS stipend costs vs. fee revenue",
+    "t": 2608,
+    "ours": "34,7 93, $199,800",
+    "official": "",
+    "note": "Not in the official summary, and our own figure looks caption-garbled ('34,7 93'); verify the true stipend/revenue numbers from the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "projected activity fee to cover stipends",
+    "t": 4297,
+    "ours": "$20,000, $40,000, $110",
+    "official": "",
+    "note": "Not in the official summary; verify against the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "directive on tiered activity-fee proposal",
+    "t": 4213,
+    "ours": "The committee directed that a tiered activity-fee proposal (busing vs. non-busing clubs) should come from the school advisory councils/administration and be brought back to the school committee for approval before any change.",
+    "official": "",
+    "note": "Official's write-up of item (c) is a single sentence with no such directive recorded; check the recording to confirm the committee actually voted or directed this, since a directive is a decision and its absence from the official record matters."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "town manager search consulting cost",
+    "t": 4859,
+    "ours": "$155,000",
+    "official": "",
+    "note": "Official's report on the Town Manager screening committee (item 13) gives no consulting cost figure; verify this dollar figure against the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 capital funding level",
+    "t": 4967,
+    "ours": "1.1 million, 1.3 5 million",
+    "official": "originally we were told funding would be around 1.1 million, however, an error was found in free cash and is not anticipating another quarter of a million to go to capital planning.",
+    "note": "1.1M plus an additional roughly $0.25M matches our stated total of about $1.35M; official phrases it as an addition rather than a new total."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "primary school generator cost figure",
+    "t": 5181,
+    "ours": "171",
+    "official": "number 14 is the Primary School generator",
+    "note": "Official names the generator as capital-list item 14 but gives no dollar figure matching '171'; check the recording to see whether this was a cost figure or a list-item number that got misheard."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Washington DC trip scholarship percentage",
+    "t": 5369,
+    "ours": "50%",
+    "official": "There are 9 families requesting a need for scholarship help, the PTO said they would help out with some money as well.",
+    "note": "Official gives a family count but no coverage percentage; verify the 50% figure against the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "which district is seeking an override",
+    "t": 5748,
+    "ours": "Neighboring district override: $8 million",
+    "official": "Mr. Lehtinen reports Natick is looking for a potential $8 million dollar override.",
+    "note": "The dollar figure agrees, but our minutes generalize the town to 'neighboring district' while official names Natick specifically — and Natick is not actually adjacent to Lunenburg, so this isn't an obvious mishearing; check the recording for the town actually named."
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 / state aid share of budget",
+    "t": 231,
+    "ours": "$25 million, 10 million",
+    "official": "When you run a $25 million budget and $10 million of that comes from the state",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Middle School cell phone policy should be school-level",
+    "t": 5329,
+    "ours": "cell phone use policy should be decided at the individual school level rather than set by a single district policy",
+    "official": "it was felt by the group this decision should be made on a school level not a policy",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "High School advisory: no formal cell phone policy",
+    "t": 5139,
+    "ours": "the high school advisory committee recommended that no formal cell phone policy be adopted, deferring the issue to the student handbook",
+    "official": "they discussed items including cell phone use, to which they recommended no formal policy be adopted into the handbook",
+    "note": "Matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "committee chair's name",
+    "ours": "Brian Leon",
+    "official": "Call to Order by Brian Lehtinen",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname; same person and role (chair)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name 'Brazowski'",
+    "ours": "Mrs Brazowski (also heard \"Bosski\"/\"Brzowski\")",
+    "official": "Laura Brzozoski, Member - present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Misheard surname; matches official's Laura Brzozoski."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "'Laura' listed as a separate member from 'Mrs Brazowski'",
+    "ours": "Laura (member)",
+    "official": "Laura Brzozoski, Member - present",
+    "note": "Official lists only one Laura (Brzozoski) among five members, but our attendee list has both 'Mrs Brazowski' and 'Laura' as separate entries; check the recording to confirm this is one person split into two by the captions, not two different members."
+   },
+   {
+    "kind": "agree",
+    "about": "member name Beardmore",
+    "ours": "Mr Beardmore (member)",
+    "official": "Peter Beardmore, Member - present",
+    "note": "Matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name 'Ash'",
+    "ours": "Mrs Ash (also heard \"Aso\"/\"Areno\"/\"Arshambo\")",
+    "official": "Carol Archambault, Secretary - present",
+    "official_reading": "Carol Archambault",
+    "note": "Misheard surname; multiple caption variants converge on Archambault."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name 'Scholbrini'",
+    "ours": "Mr Scholbrini (also heard \"Schini\"/\"Skull\"/\"Scho Ry\"; called \"Tony\")",
+    "official": "Anthony Sculimbrene, Vice Chair - present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Misheard surname; the heard nickname 'Tony' matches Anthony."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter name 'Sandry'",
+    "ours": "Mr Sandry (also heard \"Mr sry\")",
+    "official": "Recently Mr. Santry received a letter from NEASC",
+    "official_reading": "Mr. Santry",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "presenter 'Tim'",
+    "ours": "Tim (presenter, high school administrator)",
+    "official": "",
+    "note": "No presenter named Tim appears anywhere in the official minutes; check the recording to identify this speaker (possibly Mr. Santry, who is a Facilities/Activities presenter in the official text)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "food service director's first name",
+    "ours": "Nina Lorenzen (also heard \"naen renen\")",
+    "official": "Nadine Lorenzen – Food Service Director",
+    "official_reading": "Nadine Lorenzen",
+    "note": "Misheard first name; role and surname match."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "recording secretary Courtney Fuller",
+    "ours": "",
+    "official": "Recording Secretary  Courtney Fuller",
+    "note": "Our attendee list has no recording secretary; not a vote or decision, just an omitted attendee."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:43:06Z",
+   "cost_usd": 0.30405839999999995
+  }
  }
 }

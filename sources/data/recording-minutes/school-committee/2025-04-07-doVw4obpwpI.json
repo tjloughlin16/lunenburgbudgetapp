@@ -390,5 +390,210 @@
    "at": "2026-09-14T01:02:43Z",
    "cost_usd": 0.1411984
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04072025-7153",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-04-07-minutes-7153.txt",
+   "path": "sources/meetings/school-committee/2025-04-07-minutes-7153.pdf"
+  },
+  "official_sha256": "9a477369ce3783a05792f4b5e6ebd7f1a3eab11e4a112111a76eeb072ae40481",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the single substantive fact — the committee endorsed the amended FY26 capital plan sending mini-split funding back to the town manager, and it passed — but the official minutes are a one-paragraph summary that omits nearly every figure, sub-decision, and transfer our minutes captured from the recording, while adding a motion-maker/seconder and a public-comment line ours lack. The one thing a reader should check first is attendee identity: our captions misheard \"Sculimbrene\" as \"Scholenrini\" and likely \"Brzozoski\" as \"Pazowski,\" and separately, neither record clearly says which named person cast the \"chair\" vote given the Chair (Lehtinen) was present but the Vice Chair (Sculimbrene) called the meeting to order.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 3,
+   "discrepancy": 0,
+   "only_in_ours": 17,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "outcome of the capital-plan endorsement vote",
+    "ours": "passed (roll call: Scholenrini yes, Pazilki yes, Beardmore yes, chair yes)",
+    "official": "Mr. Beardmore makes a motion to endorse the town manager and the superintendents plan to modify our request and extend the request back to the town manager, Mr. Sculimbrene seconds the motion all approve via roll call vote",
+    "note": "Both records agree the plan was endorsed unanimously by roll call; only the level of detail differs."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "motion maker and seconder for the capital-plan vote",
+    "ours": "",
+    "official": "Mr. Beardmore makes a motion to endorse the town manager and the superintendents plan to modify our request and extend the request back to the town manager, Mr. Sculimbrene seconds the motion",
+    "note": "Our minutes record the roll-call yes votes but not who made or seconded the motion; add this detail if a full record is wanted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "free cash transfer to cover mini-split shortfall",
+    "ours": "Use of free cash to cover the approximately $23,000 shortfall in the mini-split funding plan — $23,000 (discussed only; folded into the main vote)",
+    "official": "",
+    "note": "The official minutes do not mention a free-cash transfer or the $23,000 shortfall at all; confirm from the recording whether free cash was actually invoked or only discussed as an option."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Green Communities grant award amount",
+    "ours": "$200",
+    "official": "Dr. Burnham reports we were awarded a Green Communities Grant of $200,000",
+    "official_reading": "$200,000",
+    "note": "Captions dropped the trailing zeros; same grant, same fact."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "mini-split phase two total project value",
+    "ours": "$485,000, $483,000",
+    "official": "",
+    "note": "Official summary omits this figure entirely; not resolvable from the official text alone."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "remaining balance needed for phase two",
+    "ours": "$170,000",
+    "official": "",
+    "note": "Not stated in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "total funding of FY26 capital projects proposed for removal",
+    "ours": "$146,865",
+    "official": "",
+    "note": "Not stated in the official minutes; official only says projects would be amended, not the dollar total removed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "utility incentive amount",
+    "ours": "$113,250 ($113 to $150 as heard)",
+    "official": "",
+    "note": "Not stated in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "shortfall in mini-split funding plan",
+    "ours": "$23,000",
+    "official": "",
+    "note": "Not stated in the official minutes; also see the related transfer finding above."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "free cash amount discussed to cover shortfall",
+    "ours": "$500,000",
+    "official": "",
+    "note": "Not stated in the official minutes; worth checking the recording since $500,000 against a $23,000 shortfall is a large disparity that may itself reflect a captioning error (e.g., a fund balance figure, not the amount actually used)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town Hall HVAC upgrade cost (comparison figure)",
+    "ours": "$113,000",
+    "official": "",
+    "note": "Comparison figure raised in discussion; not in the official summary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "phase one mini-split cost (comparison figure)",
+    "ours": "$230,000",
+    "official": "",
+    "note": "Comparison figure raised in discussion; not in the official summary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "number of items on FY26 capital plan",
+    "ours": "22 items, less than 10 (as heard)",
+    "official": "",
+    "note": "Not stated in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "historical cost of primary school air conditioning (comparison)",
+    "ours": "$2 and $3 million",
+    "official": "",
+    "note": "Comparison figure raised in discussion; not in the official summary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "town capital plan funding line amount",
+    "ours": "$1.225 million",
+    "official": "",
+    "note": "Not stated in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "disposition of removed FY26 projects (brought back for FY27 ten-year plan)",
+    "ours": "Projects removed (playground design study, driveway design study, safety window film, Turkey Hill hot water tank, security camera server) would be brought back for consideration in the FY27 ten-year capital plan.",
+    "official": "",
+    "note": "The official summary does not name the specific projects removed or their future disposition."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Friday working group continuing to meet",
+    "ours": "The Friday working group of superintendent, Dr. Gillson, the finance committee chair, the select board chair, and the school committee chair will continue meeting routinely.",
+    "official": "",
+    "note": "Not mentioned in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "plan to reconfirm the vote at a future non-emergency meeting",
+    "ours": "This vote will be placed on a future non-emergency meeting agenda as a regular item to reconfirm it, ahead of informing Green Communities and the select board.",
+    "official": "",
+    "note": "Not mentioned in the official minutes; worth confirming this follow-up actually happened, since it is not on the town's own record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "public comment thanking the town manager",
+    "ours": "",
+    "official": "Mr. Beardmore I want to thank the town manager for her willingness to be extremely creative and flexible in her approach and collaborative is much appreciated.",
+    "note": "Our minutes omit this public-comment statement; not a vote or decision, so simply a gap in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: Vice Chair",
+    "ours": "Mr. Scholenrini (school committee member)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Misheard surname; same person and role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: female member",
+    "ours": "Ms. Pazowski / Pazilki (school committee member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Likely the same person misheard by captions (only one female member present per the official roster); confirm against the recording since the names differ more than a typical caption slip."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: Mr. Beardmore",
+    "ours": "Mr. Beardmore (school committee member)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Name matches in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: Secretary absent",
+    "ours": "",
+    "official": "Carol Archambault, Secretary - Absent",
+    "note": "Our minutes do not note her absence at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: Dr. Gillson as presenter",
+    "ours": "Dr. Gillson (presenter / administrator involved in grant)",
+    "official": "",
+    "note": "Official minutes credit only Dr. Burnham with reporting the grant and plan; Dr. Gillson is not named at all, though our minutes and the decisions section place her in the ongoing Friday working group — check the recording to confirm her role and whether she spoke."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: Town Manager named",
+    "ours": "Jen Warren Diamond (Town Manager)",
+    "official": "",
+    "note": "Official minutes refer only to 'the town manager' without naming her; not a conflict, just an omission in the official summary."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:00:45Z",
+   "cost_usd": 0.20456240000000003
+  }
  }
 }

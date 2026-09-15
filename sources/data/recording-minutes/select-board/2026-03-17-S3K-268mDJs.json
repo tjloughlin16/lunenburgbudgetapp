@@ -1,0 +1,623 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-03-17",
+ "video_id": "S3K-268mDJs",
+ "video_url": "https://www.youtube.com/watch?v=S3K-268mDJs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-03-17-S3K-268mDJs.json",
+  "sha256": "b29a32f89c47ab50ecf8129066574d6e1f9d82114268f494691e4ab5a7b4d33c",
+  "caption_lines": 256,
+  "segments": 2449
+ },
+ "recording": {
+  "duration_s": 6265,
+  "duration": "1:44",
+  "spoken_chars": 74796,
+  "words_approx": 12466
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03172026-7717",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-17-agenda-7717.txt",
+   "path": "sources/meetings/select-board/2026-03-17-agenda-7717.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-15T13:13:30Z",
+  "cost_usd": 0.816418
+ },
+ "minutes": {
+  "headline": "Board included nearly all FY27 warrant articles; TC Passios' safety issues leave the food pantry's future unresolved.",
+  "summary": "The Select Board worked through most of the draft FY2027 annual town meeting warrant, voting to include (and in some cases recommend) dozens of articles covering capital cleanup items, union contract funding, an OPEB trust appropriation, a vacation-buyout liability reduction, and several bylaw changes, while holding off on the override placeholder, trust fund commission articles, a stormwater bylaw, and the Central Mass Mosquito Control article pending more information. The board also heard an extended, unresolved presentation from the Lunenburg Community Food Pantry about the deteriorating TC Passios building, where the food pantry currently operates, and closed a public hearing on opting out of mail-in early voting before entering executive session to discuss a collective bargaining agreement.",
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. MacLeod",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Laitinen",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Ms. Semke",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Ms. Moore",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager",
+    "remote": false
+   },
+   {
+    "name_as_heard": "the town clerk",
+    "role": "town clerk",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Nancy Beach",
+    "role": "presenter, president of the Lunenburg Community Food Pantry",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 113,
+    "speaker_as_heard": "Anthony Scollanbreeni",
+    "stated_role": "resident, 5 Valley Road",
+    "topic": "Urged the board to have the Municipal Building Design Committee take up TC Passios' town administrative functions (records storage, elections) and suggested charging the food pantry rent."
+   },
+   {
+    "t": 5139,
+    "topic": "A board member (not a floor speaker) noted the board is continuing conversations about placing an override on the ballot for both school and town sides."
+   }
+  ],
+  "tags": [
+   "athletics",
+   "budget",
+   "budget-fy27",
+   "capital",
+   "contracts-and-unions",
+   "debt",
+   "elections",
+   "executive-session",
+   "facilities",
+   "free-cash",
+   "legal",
+   "override",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "retirement",
+   "staffing",
+   "superintendent-report",
+   "town-meeting",
+   "transfers",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 2180,
+    "motion": "Close the public hearing on opting out of early voting by mail.",
+    "outcome": "passed unanimously",
+    "procedural": true
+   },
+   {
+    "t": 2199,
+    "motion": "Opt out of early voting by mail for local elections this year.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2270,
+    "motion": "Waive the town's right of first refusal for 1083 Northfield Road.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2437,
+    "motion": "Include Article A (accept reports of officers and committees) in the warrant.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2582,
+    "motion": "Include Article D, establishing an Economic Development Committee Revolving Fund with a $10,000 spending cap.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2951,
+    "motion": "Include Article J, a cleanup article rescinding and reauthorizing prior capital plan funding votes tied to the TCP roof.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3015,
+    "motion": "Include Article M, the FY2027 Prop 2.5 override placeholder article, without recommending it.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3097,
+    "motion": "Include and recommend approval of Article N, the FY2027 salary administration plan 3% COLA adjustment.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3138,
+    "motion": "Include and recommend approval of Article O, appropriating free cash to the OPEB Trust Fund.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3921,
+    "motion": "Include Article AA, funding the first year of the professional firefighters union collective bargaining agreement.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3963,
+    "motion": "Include Article BB/CC, funding the first year of the municipal employees union and Teamsters Local 170 DPW collective bargaining agreements.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4132,
+    "motion": "Include the vacation system transition liability reduction (buyout) article.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4446,
+    "motion": "Include the article transferring care, custody and control of Kids Kingdom and its land from the School Committee to the Select Board.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4467,
+    "motion": "Recommend approval of the Kids Kingdom transfer article.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4538,
+    "motion": "Include and approve the Open Space Committee standing-committee bylaw article.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5179,
+    "motion": "Enter executive session under MGL c.30 §21A(3) to discuss collective bargaining strategy for the firefighters union and public employee committee.",
+    "outcome": "passed, roll call all aye (MacLeod, Laitinen, Semke, Moore, chair)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1015,
+    "topic": "TC Passios annual operating costs",
+    "figures_as_heard": [
+     "$120,000"
+    ],
+    "what_was_said": "The building's annual operating cost was stated as this figure, not including roof or other maintenance/upkeep."
+   },
+   {
+    "t": 1142,
+    "topic": "Temporary building for food pantry relocation",
+    "figures_as_heard": [
+     "$539,000"
+    ],
+    "what_was_said": "A quote for a temporary building behind TC Passios came back at this amount, deemed too costly for a temporary structure."
+   },
+   {
+    "t": 1162,
+    "topic": "Asbestos remediation, decommissioned wing",
+    "figures_as_heard": [
+     "$384,000"
+    ],
+    "what_was_said": "This was cited as the cost to remediate asbestos in just the one decommissioned wing of TC Passios."
+   },
+   {
+    "t": 1327,
+    "topic": "TC Passios roof replacement",
+    "figures_as_heard": [
+     "$1.3 million"
+    ],
+    "what_was_said": "Replacing the whole roof as-is was estimated at this figure; a member suggested the town might be better off demolishing and rebuilding."
+   },
+   {
+    "t": 1349,
+    "topic": "Prior roof repair appropriation",
+    "figures_as_heard": [
+     "$300,000"
+    ],
+    "what_was_said": "This amount had previously been appropriated to repair the section of roof over the decommissioned classrooms where the recent leak occurred."
+   },
+   {
+    "t": 2305,
+    "topic": "Free cash certification",
+    "figures_as_heard": [
+     "3 million 354,370 dollars"
+    ],
+    "what_was_said": "The town manager reported free cash has now been certified at this final figure; capital plan and distribution to be discussed at an upcoming meeting."
+   },
+   {
+    "t": 2725,
+    "topic": "FY prior-year cemetery expenses (article G)",
+    "figures_as_heard": [
+     "$500",
+     "$1,000"
+    ],
+    "what_was_said": "Two small prior-fiscal-year cemetery bills, for porta-potty rentals, were cited as examples of what the article would cover."
+   },
+   {
+    "t": 2827,
+    "topic": "FY2026 budget closeout deficit",
+    "figures_as_heard": [
+     "around 500,000",
+     "half a million dollars"
+    ],
+    "what_was_said": "The running deficit, driven partly by snow and ice, was described; the town hopes to close it from unexpended operating funds rather than free cash."
+   },
+   {
+    "t": 2868,
+    "topic": "FY26 capital plan funding reauthorization (Article J)",
+    "figures_as_heard": [
+     "$325,000",
+     "1 million 225,000"
+    ],
+    "what_was_said": "A cleanup article rescinds and reauthorizes a prior transfer so that capital-plan funding used for the TCP roof is properly re-appropriated from its original town meeting article."
+   },
+   {
+    "t": 3138,
+    "topic": "OPEB Trust Fund appropriation (Article O)",
+    "figures_as_heard": [
+     "$335,437"
+    ],
+    "what_was_said": "Free cash appropriation to the OPEB trust, described as the same 10% amount as in prior years."
+   },
+   {
+    "t": 3160,
+    "topic": "Compensated absences reserve fund (Article P)",
+    "figures_as_heard": [
+     "10,000"
+    ],
+    "what_was_said": "An annual appropriation adding to the reserve fund created previously for compensated absences."
+   },
+   {
+    "t": 3221,
+    "topic": "300th anniversary committee appropriation",
+    "figures_as_heard": [
+     "$15,000"
+    ],
+    "what_was_said": "A one-time appropriation with a spending deadline of June 30, 2029, to cover anniversary-related bills."
+   },
+   {
+    "t": 3343,
+    "topic": "Trust fund commission trust totals",
+    "figures_as_heard": [
+     "roughly $80,000"
+    ],
+    "what_was_said": "Five town trust funds together total approximately this amount; the legal fees article would draw from them."
+   },
+   {
+    "t": 3466,
+    "topic": "Legion Poor Fund legal research cost",
+    "figures_as_heard": [
+     "$14,000"
+    ],
+    "what_was_said": "Legal research to bring a cy pres action for this undocumented trust would likely cost more than the amount currently in the fund, cited as this figure."
+   },
+   {
+    "t": 3838,
+    "topic": "PEG enterprise fund FY27 deficit",
+    "figures_as_heard": [
+     "about a $100,000 deficit"
+    ],
+    "what_was_said": "The public/education/government access enterprise fund is projected to operate at a deficit for FY27, offset by a transfer from its reserves."
+   },
+   {
+    "t": 3985,
+    "topic": "Vacation system transition liability buyout",
+    "figures_as_heard": [
+     "$265,916.17",
+     "56,000"
+    ],
+    "what_was_said": "Buying out 100% of accrued vacation time across all bargaining units and non-union staff was costed at the higher figure; buying out only time over three weeks was costed at the lower figure."
+   },
+   {
+    "t": 4630,
+    "topic": "Flat Hill Road bridge eminent domain taking value",
+    "figures_as_heard": [
+     "about $500, maybe a couple thousand"
+    ],
+    "what_was_said": "A new appraisal is needed for the low-value temporary taking of an easement for bridge work access."
+   },
+   {
+    "t": 4870,
+    "topic": "School Committee FY27 budget deficit",
+    "figures_as_heard": [
+     "1.9 million",
+     "2.4 million",
+     "900,000"
+    ],
+    "what_was_said": "The School Committee's updated projected deficit had fallen from the higher figure to the lower one, though a shortfall remained for level services, per the committee report."
+   }
+  ],
+  "transfers": [
+   {
+    "t": 2868,
+    "description": "Rescinding and reauthorizing a prior transfer of capital plan funding from a 2022 annual town meeting article, which had also been used to fund the TCP roof, back into the FY26 capital plan.",
+    "amount_as_heard": "$325,000 / 1 million 225,000",
+    "outcome": "voted to include and recommend, passed unanimously"
+   },
+   {
+    "t": 2786,
+    "description": "PAC transferring money from its certified returns into its current operating budget to cover a deficit.",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only, to be included as an FY2026 budget adjustment"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1306,
+    "decision": "The board indicated it will not put money into repairing the TC Passios roof or heating without a broader plan for the building's future."
+   },
+   {
+    "t": 1496,
+    "decision": "TC Passios does not currently fall under the Lunenburg Municipal Building Design Committee's charge; the board did not resolve whether to expand that committee's scope, despite the public comment request."
+   },
+   {
+    "t": 2305,
+    "decision": "Free cash certification accepted; capital plan and free cash distribution to be discussed at an upcoming meeting."
+   },
+   {
+    "t": 3651,
+    "decision": "Hold off including the trust fund commission quorum bylaw article; have Town Council finalize review of the draft language first."
+   },
+   {
+    "t": 3527,
+    "decision": "Hold off including the trust fund commission legal fees article and invite Attorney Costa to present directly to the board."
+   },
+   {
+    "t": 3672,
+    "decision": "Hold off including the stormwater utility bylaw article."
+   },
+   {
+    "t": 4343,
+    "decision": "Hold off including the Central Mass Mosquito Control Project participation article, to give residents more time to weigh in; board members were split on their leanings."
+   },
+   {
+    "t": 4364,
+    "decision": "Board agreed it may send a letter regarding the mosquito control assessment formula, which it views as disproportionate for smaller budgets."
+   },
+   {
+    "t": 4487,
+    "decision": "Board asked for brief one-slide presentations/rationale to be prepared ahead of town meeting for the Kids Kingdom transfer and Open Space Committee bylaw articles."
+   },
+   {
+    "t": 4671,
+    "decision": "Do not include an eminent domain warrant article for the Flat Hill Road bridge; Town Council determined the prior town meeting authorization was broad enough for the board to proceed without a new vote."
+   },
+   {
+    "t": 5077,
+    "decision": "Thursday's tri-board meeting is canceled for lack of a School Committee quorum; Monday's regular meeting and workshop will proceed, with a possible tri-board Tuesday."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 5,
+    "t_end": 89,
+    "topic": "Opening, pledge, and announcement of a photo competition for the annual town report cover",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 89,
+    "t_end": 377,
+    "topic": "Public comment on TC Passios town administrative functions and building costs",
+    "resolution": "no resolution",
+    "tags": [
+     "public-comment",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 377,
+    "t_end": 2013,
+    "topic": "Lunenburg Community Food Pantry presentation on relocation options from TC Passios",
+    "resolution": "no resolution; conversation to continue",
+    "tags": [
+     "facilities",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2013,
+    "t_end": 2199,
+    "topic": "Public hearing to opt out of early voting by mail for local elections",
+    "resolution": "voted, opted out unanimously",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 2199,
+    "t_end": 2282,
+    "topic": "Right of first refusal for 1083 Northfield Road (Chapter 61 land conversion)",
+    "resolution": "voted to waive, unanimously",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2282,
+    "t_end": 2305,
+    "topic": "Appointments, ratifications, and resignations",
+    "resolution": "none pending",
+    "tags": []
+   },
+   {
+    "t_start": 2305,
+    "t_end": 2350,
+    "topic": "Town manager report: free cash certification",
+    "resolution": "informational",
+    "tags": [
+     "free-cash",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2350,
+    "t_end": 2373,
+    "topic": "Vote to ratify the Lunenburg public employee committee agreement for FY27-FY29",
+    "resolution": "deferred to after executive session",
+    "tags": [
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 2373,
+    "t_end": 4691,
+    "topic": "Line-by-line review and votes to include/recommend FY2027 annual town meeting warrant articles",
+    "resolution": "voted on most articles, several held for more information",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 4732,
+    "t_end": 4825,
+    "topic": "Review of FY27 Select Board and Town Manager goals and objectives",
+    "resolution": "no vote; to be redlined and revisited",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4825,
+    "t_end": 4849,
+    "topic": "Minutes and warrants (none pending)",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 4849,
+    "t_end": 5056,
+    "topic": "Committee reports, including School Committee's FY27 budget update",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "budget",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 5056,
+    "t_end": 5139,
+    "topic": "Upcoming meetings: budget workshop and possible tri-board scheduling",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 5139,
+    "t_end": 5179,
+    "topic": "Board comment on continuing override discussions for school and town budgets",
+    "resolution": "no resolution",
+    "tags": [
+     "override",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 5179,
+    "t_end": 5199,
+    "topic": "Vote to enter executive session for collective bargaining strategy discussion",
+    "resolution": "voted, roll call all aye",
+    "tags": [
+     "executive-session",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 5199,
+    "t_end": 6263,
+    "topic": "Executive session (audio/captions not available)",
+    "resolution": "not audible",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The chair's own name was never stated in the captions.",
+   "Most of the executive session (roughly t=5199 to the end of the recording) has no discernible captioned content, only repeated 'Mhm.'",
+   "Whether the board ultimately voted to ratify the public employee committee agreement is not captured; the recording ends during executive session.",
+   "The exact final vote counts for most 'passed unanimously' warrant article motions are not individually enumerated beyond 'unanimously.'",
+   "Several figures were spoken in an unusual verbal form (e.g., free cash as '3 million 354,370 dollars') rather than as a clean dollar figure."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "watch_next": [
+   "Attorney Costa's planned presentation to the board on the trust fund commission legal fees article",
+   "Town meeting vote on the FY2027 warrant, including the override placeholder article"
+  ],
+  "what_happened": [
+   {
+    "line": "The board voted to include most of the draft FY2027 town meeting warrant, including the Prop 2.5 override placeholder article, without recommending it.",
+    "t": 3015
+   },
+   {
+    "line": "It held off on the trust fund commission bylaw and legal-fees articles, a stormwater utility bylaw, and Central Mass Mosquito Control participation, pending legal review or more resident input.",
+    "t": 3651
+   },
+   {
+    "line": "An extended presentation on the deteriorating TC Passios building, where the food pantry operates, ended without a decision on relocation or the building's future.",
+    "t": 1306
+   },
+   {
+    "line": "The board closed a public hearing and voted unanimously to opt out of mail-in early voting for local elections this year.",
+    "t": 2199
+   },
+   {
+    "line": "The board entered executive session to discuss a collective bargaining agreement; that portion of the recording has no audio.",
+    "t": 5199
+   }
+  ],
+  "why_it_matters": [
+   "Residents will see a Prop 2.5 override placeholder on the FY2027 warrant, though the board has not recommended it, so it will be a question voters take up at town meeting.",
+   "The food pantry's future home is unresolved: the board said it will not fund TC Passios roof or heating repairs without a broader plan for the building.",
+   "A handful of warrant articles -- a stormwater bylaw, mosquito control participation, and trust fund commission bylaws -- are still open and could return changed before town meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-15T13:13:50Z",
+   "cost_usd": 0.216593
+  }
+ }
+}

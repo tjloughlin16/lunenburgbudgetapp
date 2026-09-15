@@ -615,5 +615,246 @@
    "at": "2026-09-14T01:11:14Z",
    "cost_usd": 0.1699014
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03192025-7111",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-03-19-minutes-7111.txt",
+   "path": "sources/meetings/school-committee/2025-03-19-minutes-7111.pdf"
+  },
+  "official_sha256": "ad6a628afdb85e9c69a7a6ad0d53e0a3bf336dd0c782c25b589a101f9225698d",
+  "coverage": "full",
+  "summary": "The two records agree on the substance of nearly every vote and decision — donations, handbooks, grants, salary schedule, calendar, camp, and the letter-writing/superintendent-search items all match — and most figure mismatches look like captions mis-hearing digits rather than real differences. The one thing worth checking by hand: our minutes say the line-item-transfers vote was tabled and folded into the single FY25 quarterly-budget vote, while the official minutes show two separate roll-call votes at two different points in the meeting (transfers under item 7c, the quarterly report under item 11a) — and several attendee names (the two building principals, \"Areno,\" \"Skolnick/Scholl\") are badly garbled or misattributed in ours.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 11,
+   "discrepancy": 2,
+   "only_in_ours": 9,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Turkey Hill music donation amount",
+    "ours": "$15",
+    "official": "a donation of $105 from a Lunenburg family, this is for the Turkey Hill Music Department",
+    "official_reading": "$105",
+    "note": "Captions likely dropped a digit ('one-oh-five' heard as 'fifteen'); same donation, same vote 5-0/roll-call."
+   },
+   {
+    "kind": "caption_error",
+    "about": "March 2025 warrants total",
+    "ours": "$138,500.41",
+    "official": "Warrants 3/3/25 to 3/12/25 $138,511.41 signed by chair",
+    "official_reading": "$138,511.41",
+    "note": "Off by $11 — a plausible mis-heard digit, not a different warrant."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Citizen override warrant article amount",
+    "ours": "$2,993.37",
+    "official": "raise and appropriate $2,099,337 to supplement Lunenburg Public Schools budget for fiscal year 2026",
+    "official_reading": "$2,099,337",
+    "note": "Same article (level-service vs. town-manager's-budget gap), but the magnitude gap between $2,993 and $2.1M is large enough that someone should confirm captions, not the underlying figure, are what's wrong."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "level-service vs. town manager's budget component figures",
+    "ours": "27,886 1811, 2,787 474",
+    "official": "",
+    "note": "Official only states the resulting override difference ($2,099,337), not the two budgets it was derived from; our figures are too garbled to check against anything in the official text."
+   },
+   {
+    "kind": "agree",
+    "about": "HS supply-to-contracted-services transfer amount",
+    "ours": "$1,374.76",
+    "official": "A transfer for contracted services of $1,374 to target the contracted services at the high school level.",
+    "note": "Same transfer; the 76-cent difference is immaterial and likely just official rounding, not a caption error worth flagging."
+   },
+   {
+    "kind": "caption_error",
+    "about": "special ed contracted-evaluations transfer amount",
+    "ours": "122,000 / 112,000 and 10 (heard both ways)",
+    "official": "Special ED evaluation line needs $1200.10",
+    "official_reading": "$1,200.10",
+    "note": "Captions appear to have misread '$1,200.10' as amounts two orders of magnitude larger; check the recording against the $1,200.10 figure in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "custodial supplies transfer amount",
+    "ours": "15,000, 5,000",
+    "official": "Custodial will be collecting all unused supply funds to turn and buy toilet paper, paper towel, and cleaning supplies.",
+    "note": "Official describes the pooling but states no dollar figure at all; our figures can't be checked against it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "substitute-line consolidation transfer amount ($3,392)",
+    "ours": "3,392 plus unspecified substitute-line amounts",
+    "official": "a request to consolidate substitute lines and applying a high school paras with excess in English text books and Middle School overtime secretarial",
+    "note": "The description of which lines feed the consolidation matches closely; only the dollar figure has no counterpart in the official text."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "special ed transportation line running negative",
+    "ours": "negative 42 cent / $42.33 cent — discussed only, no transfer made",
+    "official": "",
+    "note": "Official minutes make no mention of this line at all; worth checking the recording to confirm this was actually raised as stated."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "vote count on FY26 school calendar and summer athletic camp",
+    "ours": "passed, roll call recorded 4 yes (t=4698 and t=5785)",
+    "official": "all approve via roll call",
+    "note": "The committee has 5 voting members per the official attendee list; a repeated '4 yes' in ours should be checked against the recording to see whether a member was actually absent for those two votes or whether the caption undercounted."
+   },
+   {
+    "kind": "agree",
+    "about": "unaffiliated salary schedule FY26-28 raise structure",
+    "ours": "4%, 2 and a half",
+    "official": "there is a 4% increase next year and then 2 ½ % increases for the following two years",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "net position changes over five years figures",
+    "ours": "20, 21",
+    "official": "",
+    "note": "No corresponding figure appears anywhere in the official minutes; cannot be checked against them."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "athletic summer camp revenue split",
+    "ours": "50%, 50%",
+    "official": "Concerns are shared and it is recommended that there is communication with the Town Rec Department",
+    "note": "Official records the camp discussion but no revenue-split figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "athletic department secretary position cost ($20,000)",
+    "ours": "$20,000",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "grant name 'Invention Land'",
+    "ours": "Authorize pursuit of the Invention Land grant — passed 5-0",
+    "official": "Dr. Bookis explains what the grants are and how they will be used. Mr. Sculimbrene makes a motion to move forward and apply for the grants, Ms. Archambault seconds the motion all approve via roll call.",
+    "note": "Same vote to pursue grants, but the official minutes never name which grant(s); can't confirm 'Invention Land' independently."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Brzozowski's contingency plan if absent from final superintendent-screening meeting",
+    "ours": "If Mrs Brzozowski cannot attend a final superintendent-screening decision meeting after March 31, she will leave her interview rubric/recommendation with the MASC representative to share with the rest of the screening committee.",
+    "official": "The initial meeting with MASC rep went over guidelines, privacy disclosure agreements and set an agenda for the rest of the screening committee. The next meetings will be 3/25, 3/27, 3/28 and 3/31 if needed",
+    "note": "Official records the screening-committee schedule but not this specific contingency arrangement; check the recording if this detail matters."
+   },
+   {
+    "kind": "agree",
+    "about": "decision to use school email for legislator-letter-writing campaign",
+    "ours": "Agreed to use the school department's email to invite families to write letters to state legislators about school funding, with guidance on tone and including name/address.",
+    "official": "School Committee agrees to use school email to reach out to community and send letters. Mr. Lehtinen will draft the information and guidelines and run by Ms. Archambault and Dr. Burnham.",
+    "note": "Matches; the 'stopgap' framing detail in ours (t=7903) has no counterpart in the official text but doesn't contradict it."
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair's name",
+    "ours": "Brian Leighton (chair)",
+    "official": "Brian Lehtinen, Chair",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name (Brzozowski/Brzozoski)",
+    "ours": "Mrs Brazowski / Brzozowski",
+    "official": "Laura Brzozoski, Member",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same person, minor spelling variants from captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member identified as 'Mrs Areno'",
+    "ours": "Mrs Areno (member)",
+    "official": "Carol Archambault, Secretary - Present",
+    "official_reading": "Carol Archambault",
+    "note": "Only 5 members are seated in the official list and 4 of ours map cleanly onto them; 'Areno' is very likely a mis-caption of 'Archambault' filling the remaining seat, but worth confirming against the recording since the names sound quite different."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member rendered as 'Skolnick/Scholl/schini/SCH BR'",
+    "ours": "Mr Skolnick/Scholl (rendered variously 'school and Brini', 'schini', 'SCH BR')",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "The garbled variants ('school-and-Brini', 'SCH BR') are consistent with captions repeatedly failing on 'Sculimbrene.'"
+   },
+   {
+    "kind": "agree",
+    "about": "business manager / finance director identity",
+    "ours": "Dr Gilson (business manager, gave quarterly budget report)",
+    "official": "Dr. Susan Gilson – Director of Administration & Finance",
+    "note": "Same person; our shorthand title is close enough, first name confirmed as Susan."
+   },
+   {
+    "kind": "caption_error",
+    "about": "grants presenter name",
+    "ours": "Dr Bookas (presenter, grants)",
+    "official": "Dr. Deborah Bookis – Director of Teaching and Learning",
+    "official_reading": "Dr. Deborah Bookis",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "superintendent identity",
+    "ours": "Dr Burnham (superintendent, name uncertain, also heard as 'bernon'/'bernham')",
+    "official": "Dr. Kate Burnham, Superintendent of Schools",
+    "note": "Surname confirmed correct; first name is Kate."
+   },
+   {
+    "kind": "agree",
+    "about": "high school principal identity",
+    "ours": "Mr Santry (high school principal)",
+    "official": "Tim Santry – LMHS Principal",
+    "note": "Matches."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "which principal serves Turkey Hill vs. the Primary School",
+    "ours": "Mrs Squire (Turkey Hill principal); Ms Devon (primary school principal)",
+    "official": "Norman Yvon – THES Principal, Carla Squier – Primary Principal",
+    "note": "Our minutes assign 'Squire' to Turkey Hill and name a 'Devon' as Primary principal, but the official list has Carla Squier as Primary principal and Norman Yvon (not present at all in ours) as Turkey Hill principal — this is a school/person mismatch, not just a spelling issue, and should be checked against the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "athletic director name",
+    "ours": "Mr Bigalow (athletic director)",
+    "official": "Kevin Bigelow – Athletic Director",
+    "official_reading": "Kevin Bigelow",
+    "note": "Misheard/misspelled surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "special education staff member name",
+    "ours": "Juliana (special education staff, evaluations)",
+    "official": "Julianna Hanscom – Director of Special Services",
+    "official_reading": "Julianna Hanscom",
+    "note": "First name matches; surname and title missing from ours, likely just not captured by the captions."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Director of Community School Programs attendee",
+    "ours": "",
+    "official": "Patty McCarthy – Guillette – Director of Community School Programs",
+    "note": "Not mentioned anywhere in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:59:43Z",
+   "cost_usd": 0.2921284
+  }
  }
 }

@@ -407,5 +407,111 @@
    "at": "2026-09-14T00:53:52Z",
    "cost_usd": 0.1388764
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05052025-7192",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-05-05-minutes-7192.txt",
+   "path": "sources/meetings/school-committee/2025-05-05-minutes-7192.pdf"
+  },
+  "official_sha256": "c070e1044e0a0c5bb25cd510a77fc09fc503b03784fbecf9d88836505d226341",
+  "coverage": "official minutes are a summary only",
+  "summary": "The official minutes record only that the interview happened, in what format, and when it adjourned — none of the substantive figures Timothy McCormick cited during the Q&A (budget shortfall, grant amounts, staffing counts, spending percentages) appear in the official record at all, so nothing there confirms or contradicts our captured figures. The two records also diverge on who was present: several School Committee member names in our minutes are badly garbled by captions and cannot be confidently matched to the official roster, and the official minutes name two attendees (the Superintendent and the Recording Secretary) that our minutes omit entirely.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 7,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Committee chair's name",
+    "ours": "Brian Leighton (chair)",
+    "official": "Brian Lehtinen, Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Same person, name misheard by captions (Leighton for Lehtinen)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Candidate's surname",
+    "ours": "Timothy McCormack",
+    "official": "Guests: Timothy McCormick, Superintendent Finalist",
+    "official_reading": "Timothy McCormick",
+    "note": "Same person, one letter off (McCormack vs McCormick) — a caption misspelling."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Other four School Committee members' names",
+    "ours": "Mr. Pazowski, Mr. Gmore, Mau, Mr. Scry (school committee members)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present; Carol Archambault, Secretary - Present; Peter Beardmore, Member - Present; Laura Brzozoski, Member - Present",
+    "note": "Both lists total five committee members including the chair, and some pairs are plausible caption garbles (Brzozoski→Pazowski, Beardmore→Gmore) but none can be confidently matched name-for-name; check the recording/roster to confirm exactly which four members were present and correct the transcript."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recording secretary attendee",
+    "ours": "",
+    "official": "Recording Secretary: Courtney Fuller",
+    "note": "Official minutes name Courtney Fuller as recording secretary and the minutes' author; not mentioned in our minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Recent budget cut / shortfall figure",
+    "ours": "$2 million, 1.5",
+    "official": "",
+    "note": "Official minutes contain no interview content at all (procedural summary only), so this figure from the Q&A cannot be cross-checked; verify against the recording near t=990."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Innovative Career Pathways (ICP) grant funding",
+    "ours": "$75,000, 50,000",
+    "official": "",
+    "note": "Not in official minutes, which omit all interview substance; verify the exact grant figure against the recording near t=1094."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "18 Foundation grant support",
+    "ours": "a quart[er] million dollars",
+    "official": "",
+    "note": "Not in official minutes; the caption phrase itself is garbled ('a quart million') and should be checked against the recording near t=1073."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Value of a high school diploma vs. college",
+    "ours": "less than $43,000 a year",
+    "official": "",
+    "note": "Not in official minutes; verify against the recording near t=587."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost differential for a more experienced teacher hire",
+    "ours": "$15,000 more",
+    "official": "",
+    "note": "Not in official minutes; verify against the recording near t=2634."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Net school spending percentage change",
+    "ours": "113 to 100%",
+    "official": "",
+    "note": "Not in official minutes; verify against the recording near t=3129 — this figure especially should be checked since a swing from 113% to 100% is a large, consequential claim."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Paraprofessional (EBA) staffing count",
+    "ours": "about 20 plus",
+    "official": "",
+    "note": "Not in official minutes; verify against the recording near t=3589."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:06:11Z",
+   "cost_usd": 0.1864514
+  }
  }
 }

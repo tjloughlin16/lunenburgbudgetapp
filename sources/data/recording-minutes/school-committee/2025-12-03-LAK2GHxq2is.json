@@ -649,5 +649,287 @@
    "at": "2026-09-13T23:47:41Z",
    "cost_usd": 0.1460294
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12032025-7548",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-12-03-minutes-7548.txt",
+   "path": "sources/meetings/school-committee/2025-12-03-minutes-7548.pdf"
+  },
+  "official_sha256": "df1b249e780be3e4b3b851086b7ec31752efa4442958a4c5806d33cd3fdd57ed",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on every procedural item and on the two votes that were audible in the recording, but the official minutes compress almost every financial and grant figure the captions caught into narrative (\"documents were provided,\" \"an update is shared\") rather than stating them — so the great majority of differences are figures or decision-details present only in ours. The one substantive discrepancy worth checking is the France/Switzerland trip vote: our recording captions were not audible for the vote, while the official minutes record a specific 4-approve/1-abstain outcome.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 0,
+   "only_in_ours": 26,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Hannaford Helps donations (middle + primary school)",
+    "ours": "[t=376] passed",
+    "official": "Ms. Brzozoski makes a motion to accept both donations, Ms. Gilman seconds the motion, all approve",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Line item transfers",
+    "ours": "(none listed)",
+    "official": "Line Item Transfers - None",
+    "note": "Both records show no transfers this meeting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants figure",
+    "ours": "[t=298] 245,000, $240,518.56",
+    "official": "Warrants 11/17/25 – 12/1/25 $240,518.56",
+    "official_reading": "$240,518.56",
+    "note": "The captions produced a spurious extra figure (\"245,000\") alongside the correct amount, which matches the official figure exactly; treat \"245,000\" as caption noise, not a second warrant total."
+   },
+   {
+    "kind": "agree",
+    "about": "Hannaford Helps donation, primary school",
+    "ours": "[t=334] $600",
+    "official": "$600.00",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Hannaford Helps donation, middle school",
+    "ours": "[t=356] $483",
+    "official": "$483.00",
+    "note": "Same figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 year-to-date spending percentage",
+    "ours": "[t=650] 41.9%, 42.2%",
+    "official": "An update is shared on year to date expenditures.",
+    "note": "Official minutes note the update happened but omit the percentage figures captions caught."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "France/Switzerland trip payment plan",
+    "ours": "[t=1023] $350 per month",
+    "official": "",
+    "note": "Not mentioned in official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "France/Switzerland trip cost comparison to prior trips",
+    "ours": "[t=1256] 3,190; Greece was about 5K",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletic fee used as a comparator",
+    "ours": "[t=1276] $325",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Galapagos trip cost comparator",
+    "ours": "[t=1681] 8,000",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "France/Switzerland trip negotiated price",
+    "ours": "[t=2366] under $5,000",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Title I grant FY27 planning baseline",
+    "ours": "[t=5039] $210,000",
+    "official": "",
+    "note": "Not stated in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Title I grant FY26 vs FY24 difference",
+    "ours": "[t=5164] $900",
+    "official": "",
+    "note": "Not stated in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Title I grant share of budget",
+    "ours": "[t=5225] 200k, about 1%",
+    "official": "",
+    "note": "Not stated in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Title II grant (professional development) figures",
+    "ours": "[t=5312] $2,846, $1,200",
+    "official": "",
+    "note": "Not stated in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Title II grant FY27 planning baseline",
+    "ours": "[t=5374] $35,000",
+    "official": "",
+    "note": "Not stated in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Title IV grant amount",
+    "ours": "[t=5417] $15,000",
+    "official": "",
+    "note": "Not stated in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Title IV grant FY27 planning baseline",
+    "ours": "[t=5478] 14,600",
+    "official": "",
+    "note": "Not stated in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Federal entitlement grants cumulative purchasing-power loss",
+    "ours": "[t=5708] approximately $17,000",
+    "official": "",
+    "note": "Not stated in official minutes; only a generic reference to a grant analysis document exists."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Special education entitlement grants (240/260)",
+    "ours": "[t=5789] $260,000, two and a half to three and a half FTE",
+    "official": "",
+    "note": "Not stated in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill capital needs figures",
+    "ours": "[t=6908] that 20 million, 16 million",
+    "official": "Dr. Fortuna shares a list of projects that are going to have to be done at the Turkey Hill Building in the near future, which are also listed in our capital plan.",
+    "note": "Official notes the list exists but gives no dollar figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill AC retrofit history comparator",
+    "ours": "[t=7220] $180,000, $7 million",
+    "official": "",
+    "note": "Not stated in official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: October 15, 2025 minutes approval deferred",
+    "ours": "[t=292] pushed to next meeting",
+    "official": "10/15/25 full committee did not get a chance to view the minutes, push to next meeting",
+    "note": "Same decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: principals to provide school improvement plan updates",
+    "ours": "[t=230] principals will provide updates on their SIPs",
+    "official": "",
+    "note": "No corresponding statement in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: winter athletics report pulled from docket",
+    "ours": "[t=2717] pulled, to be presented next meeting",
+    "official": "",
+    "note": "Official minutes do not mention this agenda change at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: school calendar review process (councils, public feedback before vote)",
+    "ours": "[t=2801] first draft to go to principals/school councils and public posting before a vote",
+    "official": "Ms. Petersen shares with the committee the anticipated calendar as a first draft for the 26/27 school year.",
+    "note": "Official confirms it is a first draft but omits the stated review/feedback process; check the recording for the exact process described."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: AD/AT role-combination discussion set for Dec 17 workshop",
+    "ours": "[t=4727] full discussion with Ms. Burns input at the Dec 17 budget workshop",
+    "official": "The committee discusses athletics and positions of Athletic Director and Athletic Trainer.",
+    "note": "Official confirms the topic was discussed but omits the specific follow-up date and named participant."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: forgo competitive MSBA application this cycle",
+    "ours": "[t=6614] wait for MSBA process rather than pursue a competitive application this year",
+    "official": "It is very unlikely we could put in a competitive letter by the end of April to the MSBA.",
+    "note": "Both convey the same substantive decision not to pursue this year's competitive MSBA deadline."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: MSBA statement of intent targeting April 2027",
+    "ours": "[t=6529] pursue SOI targeting April 2027 submission (not April 2026)",
+    "official": "",
+    "note": "Official minutes do not give the specific target date for the statement of intent."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: town's unused debt capacity/capital strategy to next tri-board",
+    "ours": "[t=7407] to be discussed at next tri-board meeting",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: Mandy to reach out to other school committees on shared advocacy coalition",
+    "ours": "[t=6096] Mandy designated to reach out",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: next tri-board meeting date not yet set",
+    "ours": "[t=6467] staff to follow up to schedule",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee/presenter: school calendar presentation",
+    "ours": "Liz",
+    "official": "Ms. Petersen shares with the committee the anticipated calendar",
+    "official_reading": "Ms. Petersen",
+    "note": "Likely the same staff member (calendar presenter); the captions rendered a name that does not match the official minutes' surname — verify whether \"Liz\" is Ms. Petersen's first name or a misheard name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee/presenter: France/Switzerland trip proposal (French teacher, World Language Dept head)",
+    "ours": "Jessica",
+    "official": "Ms. Ayer, a French Teacher and Department head for the World Language Department, presents to the committee a proposal for a trip to France and Switzerland",
+    "official_reading": "Ms. Ayer",
+    "note": "Same role and presentation; the captioned first name does not match the official surname — misheard name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Peter, Facilities Director",
+    "ours": "Peter (Facilities Director)",
+    "official": "",
+    "note": "Not listed as present or as a presenter in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Recording Secretary",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Our minutes do not list a recording secretary among attendees; official minutes credit and name one."
+   }
+  ],
+  "quotes_not_in_official_dropped": 7,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:31:38Z",
+   "cost_usd": 0.3376662
+  }
  }
 }

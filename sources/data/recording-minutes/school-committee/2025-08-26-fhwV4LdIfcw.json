@@ -826,5 +826,651 @@
    "at": "2026-09-14T00:29:59Z",
    "cost_usd": 0.1394954
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262025-7364",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-08-26-minutes-7364.txt",
+   "path": "sources/meetings/school-committee/2025-08-26-minutes-7364.pdf"
+  },
+  "official_sha256": "34713f4e7de9cd4f937f2cde49a7b19671b633edad585e050c922878bd4e8d2a",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records tell the same basic story of a long budget-preview session with no non-procedural votes, and every dollar figure that does appear in both (Eagle House gift, COA formula grant, COA $8,000 increase, library's $671,142 FY27 request, CW MARS $8,000 fee, the $3,298,520 health-insurance line, 14.8% increase, Board of Health's $126,000/$8,200/6.51%, VSO's $11,000, Chapter 115's 75% split and dollar range, band's $6,000/$40, and Historic Commission's $3,000) matches exactly, with only minor caption garbling. The one thing a reader should check is the Historic Commission item: our recording captured a discussion of a separate $5,000 line meant for an APDC hero-banner transfer that the official minutes never mention at all, while dozens of other precise dollar figures (library trust funds, health-insurance cost breakdowns, veteran-services history) that our captions caught simply never made it into the official narrative summary.",
+  "counts": {
+   "agree": 17,
+   "caption_error": 11,
+   "discrepancy": 3,
+   "only_in_ours": 44,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Historic Commission $5,000 hero-banner transfer to APDC",
+    "ours": "A prior-year $5,000 Historic Commission-related line the town manager said was intended to transfer to the APDC for hero banners; presenter believed it was unspent and likely reverted to the general fund.",
+    "official": "",
+    "note": "Official minutes only discuss the Historic Commission line being cut from $3,000 to $1,000 and say nothing about a $5,000 hero-banner/APDC transfer; someone should check town manager's records or the APDC for whether this transfer happened.",
+    "t": 9761
+   },
+   {
+    "kind": "caption_error",
+    "about": "Historic Commission budget line",
+    "ours": "$3,000, a,000",
+    "official": "Ms. Warren-Dyment stated that the budget had been reduced from $3,000 to $1,000 this fiscal year and she does not intend to change this appropriation.",
+    "official_reading": "$1,000",
+    "note": "\"a,000\" is a garbled \"$1,000\"; the $3,000 figure and the reduction story otherwise match.",
+    "t": 9741
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA FY27 recommended budget total",
+    "ours": "$268,14383",
+    "official": "",
+    "note": "Official states only the $8,000 net increase, not a total budget figure to check the $268,143.83 against.",
+    "t": 1147
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA FY26 current-year budget total",
+    "ours": "261182",
+    "official": "",
+    "note": "No comparable figure in official minutes.",
+    "t": 1477
+   },
+   {
+    "kind": "agree",
+    "about": "Eagle House Supporters gift to COA",
+    "ours": "$10,000",
+    "official": "$10,000 annually from the Eagle House supporters",
+    "note": "Matches exactly.",
+    "t": 706
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA coffee spending from Eagle House gift",
+    "ours": "$3500, $3,500",
+    "official": "",
+    "note": "Not mentioned in official minutes.",
+    "t": 727
+   },
+   {
+    "kind": "agree",
+    "about": "COA state formula grant",
+    "ours": "$15, $46,800",
+    "official": "a state formula grant of $46,800 based on the senior population",
+    "note": "The $46,800 total matches exactly; the stray \"$15\" figure (likely a per-senior rate) is not confirmable against official text.",
+    "t": 770
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA meals revolving fund",
+    "ours": "$5",
+    "official": "",
+    "note": "Not mentioned in official minutes; figure may be truncated (e.g. $5,000) in captions.",
+    "t": 798
+   },
+   {
+    "kind": "agree",
+    "about": "COA overall FY27 budget increase",
+    "ours": "$8,000",
+    "official": "She estimated a total budgetary increase of $8,000, which includes these changes.",
+    "note": "Matches exactly.",
+    "t": 978
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA staffing changes needing COA board vetting",
+    "ours": "The staffing reorganization has not yet been discussed with or vetted by the Council on Aging board itself; that needs to happen before it proceeds.",
+    "official": "",
+    "note": "Official only records that changes take effect July 1 and that the Outreach role is absorbed into the new Assistant Director role — it does not mention a pending COA-board vetting step; check the COA board's own agenda for this item.",
+    "t": 1477
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library FY26 total municipal budget",
+    "ours": "$632,000",
+    "official": "",
+    "note": "No comparable figure stated in official minutes.",
+    "t": 2419
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library costs paid by other town departments, FY25 actual",
+    "ours": "$179,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 2442
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library other outside funds, FY26",
+    "ours": "$166,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 2463
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library FY26 anticipated total cost of operation",
+    "ours": "$977,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 2485
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MBLC minimum municipal appropriation requirement, FY27",
+    "ours": "$598,835",
+    "official": "",
+    "note": "Official mentions the MBLC appropriation requirement exists but gives no dollar figure.",
+    "t": 2528
+   },
+   {
+    "kind": "agree",
+    "about": "Library FY27 anticipated budget request",
+    "ours": "$671,142",
+    "official": "The library's FY27 budget request was $671,142, which includes salaries, materials, utilities, and other core services.",
+    "note": "Matches exactly.",
+    "t": 2528
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library state aid (FY25 basis)",
+    "ours": "$35,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 2548
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Friends of the Library operating funds",
+    "ours": "$45,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 2570
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Friends of the Library endowment-funded projects",
+    "ours": "$66,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 2593
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Main Street Foundation grant for library lunch program",
+    "ours": "$14,225",
+    "official": "",
+    "note": "Official minutes do not mention a library lunch program at all.",
+    "t": 2613
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Lunenburg Cultural Council support for library",
+    "ours": "$6,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 2635
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Value of library materials circulated, FY25",
+    "ours": "$1.148 million",
+    "official": "",
+    "note": "Official gives circulation item counts (77,543 physical + 34,363 electronic) rather than a dollar value; the two are not directly comparable — check which framing the library actually presented.",
+    "t": 2144
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library materials-expenditure requirement, FY27",
+    "ours": "$17,38282",
+    "official": "",
+    "note": "Not stated in official minutes.",
+    "t": 2932
+   },
+   {
+    "kind": "agree",
+    "about": "CW MARS standard membership fee",
+    "ours": "$8,000",
+    "official": "The annual assessment for this membership is expected to increase to the full membership fee of $8,000 in FY27.",
+    "note": "Matches exactly.",
+    "t": 4186
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "CW MARS total assessment, FY26",
+    "ours": "$20,571",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 4329
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Small Libraries in Networks grant",
+    "ours": "$2,500",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 4412
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Estimated value of CW MARS membership to Lunenburg",
+    "ours": "approximately $240,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 4498
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library trust funds, total value",
+    "ours": "about $100,000",
+    "official": "",
+    "note": "Official notes members asked about trust funds but records no figures.",
+    "t": 4899
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library trust fund protected principal",
+    "ours": "$36,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 4939
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library programming spending, FY25",
+    "ours": "$15,000, $22,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 3137
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library FY27 programming request",
+    "ours": "$21,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 3158
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library database subscription spending",
+    "ours": "$45,000",
+    "official": "",
+    "note": "Official notes some state-provided databases were discontinued and must now be purchased directly, but gives no dollar figure.",
+    "t": 4790
+   },
+   {
+    "kind": "agree",
+    "about": "Total health insurance budget line, FY26",
+    "ours": "$3,298,520",
+    "official": "the FY26 health insurance budget is $3,298,520",
+    "note": "Matches exactly.",
+    "t": 5415
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance opt-out payments",
+    "ours": "$2,000, $4,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 5602
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Opt-out usage, current and prior year",
+    "ours": "$14,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 5623
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Per-person annual health insurance cost by plan type",
+    "ours": "8,400, almost 12,000, 22,000, 31,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 5793
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost of benefits relative to new hire's salary",
+    "ours": "$60,000, $31,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 5835
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total active health insurance enrollment cost",
+    "ours": "1,118,994",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 5856
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Non-Medicare-eligible retiree health costs",
+    "ours": "$195,000, almost $196,000, $424,573",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 5977
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Medicare-eligible retiree health costs",
+    "ours": "196,000, 688,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 5999
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Medicare Part B reimbursement to retirees",
+    "ours": "$96 per month, $72,000, $232,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 6020
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MIIA/Blue Cross Blue Shield trust pool rate swings by year",
+    "ours": "2.9%, 9.92%",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 6345
+   },
+   {
+    "kind": "agree",
+    "about": "Current-year (FY26) health insurance increase",
+    "ours": "14.8%",
+    "official": "FY26 seeing a 14.8% increase",
+    "note": "Matches exactly.",
+    "t": 5750
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assumed health insurance increase for FY27 budgeting",
+    "ours": "15%",
+    "official": "",
+    "note": "Not stated in official minutes.",
+    "t": 6409
+   },
+   {
+    "kind": "agree",
+    "about": "Three-year health insurance cost increase headline",
+    "ours": "a million dollar increase in three fiscal years",
+    "official": "Ms. Warren-Dyment projected a potential over a million-dollar increase in health insurance costs over the next three fiscal years if current trends continue.",
+    "note": "The headline claim matches.",
+    "t": 6944
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Three-year health insurance projection detail figures",
+    "ours": "14.52%, $478,000, $4,715,937",
+    "official": "",
+    "note": "Official gives only the rounded 'over a million dollar' headline, not these component figures.",
+    "t": 6944
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 health insurance line detail breakdown",
+    "ours": "$1,18,000 (likely $118,000), $14,000, $182,000",
+    "official": "",
+    "note": "Not broken out in official minutes.",
+    "t": 7028
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance consultant/cost-control line",
+    "ours": "$8,000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 7132
+   },
+   {
+    "kind": "agree",
+    "about": "Board of Health (health services) FY26 budget",
+    "ours": "$126,000",
+    "official": "the Health Services budget at $126,000 for FY26",
+    "note": "Matches exactly.",
+    "t": 8392
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Nashoba Associated Boards of Health assessment amount",
+    "ours": "$47,000",
+    "official": "",
+    "note": "Official mentions Nashoba assessment assumptions (10% increase) but not this dollar figure.",
+    "t": 8643
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board of Health FY27 percentage increase",
+    "ours": "6.5.1%",
+    "official": "a relatively level budget with a 6.51% increase or $8,200",
+    "official_reading": "6.51%",
+    "note": "Garbled digit grouping of the same figure; the $8,200 and 10% (Nashoba) figures both match official exactly.",
+    "t": 8517
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Board of Health FY27 contractual staff increase rate",
+    "ours": "2.5%",
+    "official": "",
+    "note": "Not stated separately in official minutes.",
+    "t": 8517
+   },
+   {
+    "kind": "agree",
+    "about": "Veteran Service Officer stipend",
+    "ours": "$11,000",
+    "official": "receiving a stipend of $11,000 per year",
+    "note": "Matches exactly.",
+    "t": 8836
+   },
+   {
+    "kind": "agree",
+    "about": "Veteran services budget flat-funding figure",
+    "ours": "77,000 (final figure in the history list)",
+    "official": "Ms. Warren-Dyment proposed keeping the overall budget flat at $77,000 for the foreseeable future",
+    "note": "The proposed flat budget of $77,000 matches.",
+    "t": 8898
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Veteran services historical budget figures",
+    "ours": "99,000, 71,24, 54, 99,000, 50,000",
+    "official": "",
+    "note": "These garbled historical figures have no official-minutes counterpart to check against.",
+    "t": 8898
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 115 veterans benefit state reimbursement rate",
+    "ours": "75%, 25%",
+    "official": "The town pays out all benefits first and is then reimbursed 75% by the state.",
+    "note": "The 75% reimbursement matches; the 25% is simply the town's complementary share.",
+    "t": 8731
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Number of Chapter 115 beneficiaries",
+    "ours": "",
+    "official": "Currently, Lunenburg has seven individuals receiving Chapter 115 benefits",
+    "note": "This count is not in our figures list at all."
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 115 individual benefit range",
+    "ours": "under $100 a month, over $1,000 a month",
+    "official": "ranging from under $100 to over $1,000 per month",
+    "note": "Matches exactly.",
+    "t": 8773
+   },
+   {
+    "kind": "only_in_official",
+    "about": "VSO name and multi-town service",
+    "ours": "",
+    "official": "The VSO, Michelle Durkey, serves Lunenburg and three other communities",
+    "note": "Neither her name nor the multi-town detail appears in our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Town band level-funded budget line",
+    "ours": "$6,000",
+    "official": "level-funded at $6,000 for several years",
+    "note": "Matches exactly.",
+    "t": 9220
+   },
+   {
+    "kind": "agree",
+    "about": "Town band per-performance pay",
+    "ours": "$40",
+    "official": "with band members paid $40 per performance",
+    "note": "Matches exactly.",
+    "t": 9220
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town band figure of $4,200",
+    "ours": "$4,200",
+    "official": "",
+    "note": "No corresponding figure in official minutes; unclear what this represents (garbled?)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town band membership count",
+    "ours": "35, 35 to 40",
+    "official": "There are currently 35 members in the town band.",
+    "official_reading": "35 members",
+    "note": "Ours hedges with a range where official gives an exact count; underlying fact (about 35 members) matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Approval of July 8 joint minutes postponed",
+    "ours": "Approval postponed; each board will review and approve its own copy separately at its own meeting.",
+    "official": "The committee decided to table the review and approval of the July 8, 2025 minutes. It was agreed that each board or committee would review and approve these minutes at their respective upcoming meetings when they had full attendance.",
+    "note": "Matches; official adds the reason (needing full attendance)."
+   },
+   {
+    "kind": "agree",
+    "about": "PEC to revisit health insurance opt-out program",
+    "ours": "The PEC will be asked to revisit the opt-out program structure (amount, one-time vs. annual, two-year wait) at an upcoming meeting.",
+    "official": "They discussed revisiting the opt-out program to make it more financially appealing.",
+    "note": "Consistent in substance; official omits the specific structural details (one-time vs. annual, two-year wait) that ours captured.",
+    "t": 7319
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Regional veteran services district idea",
+    "ours": "Flagged for future consideration: whether Lunenburg should join or host a regional veteran services district with neighboring towns.",
+    "official": "",
+    "note": "Not mentioned in official minutes; check the recording or a follow-up agenda for whether this idea was pursued.",
+    "t": 8856
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who will follow up with the band conductor, and their title",
+    "ours": "The Assistant Town Manager will follow up directly with the town band conductor, Steve Archambault.",
+    "official": "Ms. Warren-Dyment acknowledged that more information was needed and agreed to follow up with the Band Director, Steve Archambault.",
+    "note": "Official identifies Jennifer Warren-Dyment as Town Manager (not Assistant Town Manager) doing the follow-up; check whether 'Jen' in our minutes and Jennifer Warren-Dyment are the same person and what her correct title is.",
+    "t": 9448
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Presenter's title: Jen / Jennifer Warren-Dyment",
+    "ours": "Jen (Assistant Town Manager, presenter of most budget items)",
+    "official": "Town Manager Jennifer Warren-Dyment",
+    "note": "Ours labels the main presenter Assistant Town Manager; official identifies her as Town Manager — check the town's organizational chart to confirm her actual title."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board chair name",
+    "ours": "Mr. Nulo",
+    "official": "Chair Caesar Nuzzolo",
+    "official_reading": "Caesar Nuzzolo",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member name",
+    "ours": "Brian Leighton",
+    "official": "Member Brian Lehtinen",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member name",
+    "ours": "Glenn Mloud",
+    "official": "Member Glenn McLeod",
+    "official_reading": "Glenn McLeod",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board clerk name",
+    "ours": "Renee Mky",
+    "official": "Clerk Renee Emkey (via Zoom)",
+    "official_reading": "Renee Emkey",
+    "note": "Misheard surname; official also notes she attended via Zoom, a detail ours omits."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance Committee chair name",
+    "ours": "Chris Man",
+    "official": "Chair Chris Menard",
+    "official_reading": "Chris Menard",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance Committee member name",
+    "ours": "Anna Lockwood",
+    "official": "Member Ana Lockwood",
+    "official_reading": "Ana Lockwood",
+    "note": "Minor spelling difference in first name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance Committee member name",
+    "ours": "Tanya Dah",
+    "official": "Member Tanya Dall",
+    "official_reading": "Tanya Dall",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Library director name",
+    "ours": "Mark Hammond",
+    "official": "Muir Haman, Director of the Lunenburg Public Library",
+    "official_reading": "Muir Haman",
+    "note": "Misheard first and last name."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "School Committee chair name",
+    "ours": "the school committee chair (name not stated)",
+    "official": "Chairperson Anthony Sculimbrene",
+    "note": "Ours never captures this name from captions; official provides it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Jack Rabbit, COA board member in audience",
+    "ours": "Jack Rabbit (Council on Aging board member, present in audience)",
+    "official": "",
+    "note": "Not listed among official attendees; likely an audience member not formally recorded."
+   }
+  ],
+  "quotes_not_in_official_dropped": 8,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:19:08Z",
+   "cost_usd": 0.3683644
+  }
  }
 }

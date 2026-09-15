@@ -371,5 +371,98 @@
    "at": "2026-09-14T00:31:54Z",
    "cost_usd": 0.1399744
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08062025-7334",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-08-06-minutes-7334.txt",
+   "path": "sources/meetings/school-committee/2025-08-06-minutes-7334.pdf"
+  },
+  "official_sha256": "af1ca78257dad75f2e8c195cb27a36c234eddbb13d28addb282b86c12d2aef2e",
+  "coverage": "partial",
+  "summary": "The two records agree on the substantive vote (the $895 athletics donation, unanimous) and on the headline decision (Chris McNamara hired as business administrator), with several names garbled by the captions along the way. The two things a reader should check: our minutes could not make out the outcome of the business-administrator contract vote that the official minutes record as passed unanimously, and the attendee lists don't cleanly reconcile — \"Liz\" and \"Tony\" in ours need to be matched against Emily Young, Mandy Gilman, and chair Anthony Sculimbrene in the official roll call.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "donor name for the athletics gift",
+    "ours": "Kevin T. Zozek Memorial Scholarship for Financial Trust",
+    "official": "Kevin T Szocik foundation donated a check in the amount of $895 to Lunenburg Middle High School Athletics Program",
+    "official_reading": "Kevin T Szocik foundation",
+    "note": "Same $895 gift to the same athletics program; the donor's name and entity type were misheard by the captions."
+   },
+   {
+    "kind": "agree",
+    "about": "donation amount",
+    "ours": "$895",
+    "official": "$895",
+    "note": "Figure matches exactly in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "donation vote outcome",
+    "ours": "Accept the gift of $895 — passed",
+    "official": "Ms. Gilman makes a motion to accept the motion, Ms. Young seconds the motion, all approve",
+    "note": "Both records agree the donation was accepted unanimously; ours lacks the mover/seconder detail official includes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "business administrator contract vote outcome",
+    "ours": "Accept the business administrator employment contract for Chris McNamera — not audible",
+    "official": "Business Administrator Contract Approval – Ms. Gilman makes a motion to accept the contract, Mr. Sculimbrene seconds the motion, all approve",
+    "note": "Our minutes could not determine whether this vote passed; the official minutes record it as passing unanimously — a person should check the recording around t=872 to confirm the outcome and who moved/seconded."
+   },
+   {
+    "kind": "caption_error",
+    "about": "business administrator's name",
+    "ours": "Chris McNamera",
+    "official": "Ms. Brzozoski announces that Chris McNamara has been hired as our Business Administrator",
+    "official_reading": "Chris McNamara",
+    "note": "Same hire, same role; the surname was misheard by the captions throughout our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "decision to hire the business administrator",
+    "ours": "The committee announced it had already decided to hire Chris McNamera as the district's business administrator.",
+    "official": "Ms. Brzozoski announces that Chris McNamara has been hired as our Business Administrator",
+    "note": "Both records agree this was announced as an already-made hiring decision at the start of the meeting; official attributes the announcement to Ms. Brzozoski specifically."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter's name",
+    "ours": "Tracy Novok (presenter, MASC field director)",
+    "official": "Guests: Tracey O'Connell Novick – MASC Field Director",
+    "official_reading": "Tracey O'Connell Novick",
+    "note": "Same guest presenter and role; captions dropped the middle name and misheard the surname spelling."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "target date for superintendent evaluation cycle",
+    "ours": "The committee tentatively agreed to target June for the superintendent's evaluation cycle this year.",
+    "official": "",
+    "note": "Official minutes summarize the whole workshop item as \"Ms. Novick discusses roles... shares some worksheet presentations\" without capturing this specific tentative agreement — likely because the official minutes are a summary of this discussion rather than a full account."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "plan for a follow-up evaluation discussion",
+    "ours": "The committee agreed to hold a follow-up discussion at a future meeting to plan the calendar and process for the superintendent's evaluation.",
+    "official": "",
+    "note": "Not captured in the official minutes' brief summary of the workshop item; same likely cause as the June-target omission above."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:15:57Z",
+   "cost_usd": 0.18941339999999998
+  }
  }
 }

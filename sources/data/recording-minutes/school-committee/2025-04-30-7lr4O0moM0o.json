@@ -388,5 +388,190 @@
    "at": "2026-09-14T00:56:41Z",
    "cost_usd": 0.1381374
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04302025-7190",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2025-04-30-minutes-7190.txt",
+   "path": "sources/meetings/school-committee/2025-04-30-minutes-7190.pdf"
+  },
+  "official_sha256": "a8423a9d30bac7563f95bbc406f65cb8f129ae0baf0cf31cad61cf23b5bcd75f",
+  "coverage": "official minutes are a summary only",
+  "summary": "The official minutes record only the meeting's procedural shell (call to order, format of the interview, adjournment vote) and contain none of the substantive content of the interview itself, so every figure, the transfer discussion, and most attendee names exist only in our transcript-derived minutes or only match loosely through likely caption mishearings. A reader should treat the attendee list as needing verification — several names in ours appear to be garbled versions of the five official committee members, but two or three entries (\\\"Mbo,\\\" \\\"Mr. agree,\\\" \\\"Miss Ashen\\\") cannot be confidently matched to anyone on the official roster.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 4,
+   "discrepancy": 0,
+   "only_in_ours": 10,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "only_in_official",
+    "about": "purpose of meeting/interview format",
+    "ours": "",
+    "official": "The candidate introduces themselves as well as an opening statement. The committee takes turns asking a series of up to 10 questions that have been predetermined and will be the same for each candidate. Each interview will be a max of 75 minutes.",
+    "note": "Our minutes capture the content discussed but not this framing of the interview's structure; not a substantive discrepancy, just detail the official record includes and ours does not restate as such."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "discussion of mid-year line-item transfers",
+    "t": 1156,
+    "ours": "General discussion of mid-year line-item transfers within an approved school budget — not stated (discussed only)",
+    "official": "",
+    "note": "Official minutes contain no content from the interview itself, so this topic (raised as an interview question/answer) is absent there; not a vote or formal transfer, just missing detail — no action needed unless the transfer topic becomes material later."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "state aid decline figures",
+    "t": 421,
+    "ours": "State aid decline: 40%, 29%",
+    "official": "",
+    "note": "Official minutes have no content on this; figures come only from captions and were not independently verified against a written source — treat as approximate."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pentucket budget gap revenue figure",
+    "t": 589,
+    "ours": "Pentucket budget gap closed via new revenue: $2.5 million",
+    "official": "",
+    "note": "Not in official minutes; a caption-derived figure with no other record to check it against."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "transportation contract rebid figures",
+    "t": 610,
+    "ours": "Transportation contract rebid: $4.5 million, $2.5 million",
+    "official": "",
+    "note": "Not in official minutes; two dollar figures given close together in the caption suggest either an old vs. new contract value or a range — worth checking the actual transportation contract documents if this number matters."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "health insurance cost growth percentages",
+    "t": 885,
+    "ours": "Health insurance cost growth: 12, 14, 15%, 2 and a half%, 3%",
+    "official": "",
+    "note": "Not in official minutes; multiple percentages in the caption suggest a multi-year comparison that the town's own health-insurance budget documents could verify."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "robotics program funding and specs",
+    "t": 3288,
+    "ours": "Robotics program funding: $60,000, 120 pounds, 25 miles an hour",
+    "official": "",
+    "note": "Not in official minutes; the weight/speed figures look like robot specifications mixed into the same caption segment as a funding figure — worth listening to the recording directly to disambiguate."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "school budget share of town budget",
+    "t": 3371,
+    "ours": "School budget share of total town budget: 54%, 52%, 7525, 75%, 6040, 50/50",
+    "official": "",
+    "note": "Not in official minutes; the fragmented figures (7525, 6040) look like mis-split '75/25' and '60/40' splits — check the recording at this timestamp for the actual ratio discussed."
+   },
+   {
+    "kind": "agree",
+    "about": "non-procedural votes taken",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record shows a substantive vote during the interview; the only vote in official minutes is the procedural adjournment roll call, which is excluded by rule."
+   },
+   {
+    "kind": "agree",
+    "about": "substantive decisions made",
+    "ours": "",
+    "official": "",
+    "note": "Neither record shows a formal decision reached during this interview session, consistent with it being a candidate interview rather than a decision-making meeting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair's name",
+    "ours": "Brian Leighton (chair)",
+    "official": "Brian Lehtinen, Chair - Present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Same person, name misheard by captions as 'Leighton' instead of 'Lehtinen'."
+   },
+   {
+    "kind": "agree",
+    "about": "Superintendent finalist candidate attendee",
+    "ours": "Brent Conway (superintendent finalist candidate)",
+    "official": "Guests: Brent Conway, Superintendent Finalist",
+    "note": "Same name, same role, in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "member Beardmore attendee",
+    "ours": "Mr. Beardmore (member)",
+    "official": "Peter Beardmore, Member - Present",
+    "note": "Same person; ours omits first name but the surname matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member Brzozoski's name",
+    "ours": "Mr. Bazowski (member)",
+    "official": "Laura Brzozoski, Member - Present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same person, name misheard as 'Bazowski' and gender misheard as 'Mr.' instead of correctly identifying Laura Brzozoski."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair Sculimbrene's name",
+    "ours": "Mr. Skully (member)",
+    "official": "Anthony Sculimbrene, Vice Chair - Present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Likely the same person; 'Skully' is a plausible caption garble of 'Sculimbrene', but confirm by checking the recording since the match is not certain."
+   },
+   {
+    "kind": "caption_error",
+    "about": "duplicate first-name-only entry for Beardmore",
+    "ours": "Peter (member)",
+    "official": "Peter Beardmore, Member - Present",
+    "official_reading": "Peter Beardmore",
+    "note": "Appears to be the same Peter Beardmore captured twice by captions as separate entries — a first-name-only fragment and a surname-only fragment."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Secretary Carol Archambault attendance",
+    "ours": "",
+    "official": "Carol Archambault, Secretary - Present",
+    "note": "No entry in our attendee list confidently matches Archambault; 'Mbo' or 'Miss Ashen' in our list may be garbled fragments of her name but cannot be confirmed — check the recording's roll call at the start of the meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "unmatched attendee fragment 'Mbo'",
+    "ours": "Mbo (member)",
+    "official": "",
+    "note": "Does not clearly match any of the five official committee members; may be a caption fragment of Archambault's name or a different mishearing — verify against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "unmatched attendee fragment 'Mr. agree'",
+    "ours": "Mr. agree (member)",
+    "official": "",
+    "note": "Does not match any name on the official roster and reads like a captioning artifact (possibly a mistranscribed 'aye' or similar) rather than an actual attendee name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "unmatched attendee fragment 'Miss Ashen'",
+    "ours": "Miss Ashen (member)",
+    "official": "",
+    "note": "Does not clearly match any of the five official committee members; could be a garbled fragment of Archambault's name but cannot be confirmed — verify against the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "recording secretary Courtney Fuller",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Non-voting staff role not mentioned in our minutes; not a substantive omission."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T14:04:35Z",
+   "cost_usd": 0.1913154
+  }
  }
 }

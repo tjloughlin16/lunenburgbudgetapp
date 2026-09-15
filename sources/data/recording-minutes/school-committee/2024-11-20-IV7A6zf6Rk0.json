@@ -446,5 +446,189 @@
    "at": "2026-09-14T01:43:33Z",
    "cost_usd": 0.1464134
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11202024-6888",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2024-11-20-minutes-6888.txt",
+   "path": "sources/meetings/school-committee/2024-11-20-minutes-6888.pdf"
+  },
+  "official_sha256": "e552cdbd1b3058cf51fead3a225469b463700b02bda51b03865dc5b3adc26677",
+  "coverage": "partial",
+  "summary": "The two records describe the same meeting and agree on the only clearly substantive vote-like items (the warrant total, once corrected for caption garbling, and Beardmore's ARPA-item recommendation), but they diverge heavily elsewhere: several names in our attendee list are caption-garbled, the official minutes omit almost every specific dollar figure and percentage our transcript captured from the municipal-building presentation and the delegation/budget discussion, and three of our four \"decisions\" describe outcomes (advisory-council referral, individual legislator emails, survey responses going to the superintendent) that the official text either doesn't mention or attributes differently. A reader relying on either document alone would miss real content — the official for the granular figures spoken aloud, ours for narrative context like public comment and the Town Meeting outcomes reported in the Chair's Report.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 7,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Leon (chair)",
+    "official": "Brian Lehtinen, Chair - present",
+    "official_reading": "Brian Lehtinen",
+    "note": "Same person, captions misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's name",
+    "ours": "Mr. Scullbrini (member)",
+    "official": "Anthony Sculimbrene, Vice Chair - present",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Same person; captions also dropped his Vice Chair title."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name",
+    "ours": "Mr. Brazowski (member)",
+    "official": "Laura Brzozoski, Member - present",
+    "official_reading": "Laura Brzozoski",
+    "note": "Same person, surname misheard by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Secretary's name, heard three different ways",
+    "ours": "Miss Ash (member) / Miss Aseno (member) / Miss Shambo (member)",
+    "official": "Carol Archambault, Secretary - present",
+    "official_reading": "Carol Archambault",
+    "note": "Only one committee member unaccounted for in the official roster (the Secretary); the captions appear to have rendered her surname three different garbled ways at different points in the recording rather than three different people — check the recording to confirm no other attendee is missing."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Curriculum/assessment presenter's name",
+    "ours": "Dr. Bookas (presenter (curriculum/assessment))",
+    "official": "The committee along with Dr. Bookis discus the MCAS.",
+    "official_reading": "Dr. Bookis",
+    "note": "Same person discussed in the MCAS item; spelling differs slightly but is plainly a caption/typo variant, not a different person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "LMBDC presenter's name",
+    "ours": "Michael Ray Jeff (chair, Lunenburg Municipal Building Design Committee (presenter))",
+    "official": "Guests: Mr. Michael- Ray Jeffreys – Lunenburg Municipal Design Committee Chair",
+    "official_reading": "Michael-Ray Jeffreys",
+    "note": "Same person and role; captions dropped the final syllable of the surname."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recording Secretary attendee",
+    "ours": "",
+    "official": "Recording Secretary Courtney Fuller",
+    "note": "Our attendee list has no recording-secretary role at all; not a caption issue, simply not captured by our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant total, Nov 5-15",
+    "ours": "$2 29,5 2931",
+    "official": "Warrants 11/5/24 to 11/15/24 $290,529.31 – Warrants have been signed",
+    "official_reading": "$290,529.31",
+    "note": "Same figure; captions mis-grouped the digits and decimal point."
+   },
+   {
+    "kind": "agree",
+    "about": "Line item transfers and donations this period",
+    "ours": "none reported this period",
+    "official": "Review & Approve Warrants, Line Item Transfers, & Donations — a. Warrants 11/5/24 to 11/15/24 $290,529.31 – Warrants have been signed",
+    "note": "Official lists only the warrant under that agenda header with no separate transfer or donation entries, consistent with ours reporting none."
+   },
+   {
+    "t": 1516,
+    "kind": "discrepancy",
+    "about": "Municipal building project cost estimate",
+    "ours": "under 15 million",
+    "official": "the pandemic we were hit with a price tag of close to $30 million, which about $14 million was for code upgrades",
+    "note": "Ours gives a single 'under 15 million' figure that doesn't clearly match either the $30 million total or the $14 million code-upgrade portion in the official text — check the recording near this timestamp to see which quantity was actually being described."
+   },
+   {
+    "t": 1949,
+    "kind": "only_in_ours",
+    "about": "Renovation cost per square foot",
+    "ours": "33 to $350 a square foot, close to $550 a square foot",
+    "official": "",
+    "note": "Official minutes give no per-square-foot figures for the building project; this level of detail from the presentation was summarized out."
+   },
+   {
+    "t": 2159,
+    "kind": "only_in_ours",
+    "about": "Health insurance rate increase percentage",
+    "ours": "between 12 and 15%, 9%",
+    "official": "Health Insurance assistance, and help or insight they can give on the large increases in health insurance costs.",
+    "note": "Official acknowledges the topic (large health insurance increases) but states no percentage; check the recording for the actual figure(s) cited."
+   },
+   {
+    "t": 2201,
+    "kind": "only_in_ours",
+    "about": "Average tax bill increase",
+    "ours": "about $500, 427",
+    "official": "",
+    "note": "No corresponding figure or topic appears anywhere in the official minutes."
+   },
+   {
+    "t": 3247,
+    "kind": "only_in_ours",
+    "about": "Prior override cost per household",
+    "ours": "$200 extra, around 200 bucks",
+    "official": "",
+    "note": "No mention of a prior override or its household cost anywhere in the official minutes."
+   },
+   {
+    "t": 8283,
+    "kind": "only_in_ours",
+    "about": "Busing costs vs. the levy cap percentage",
+    "ours": "2 and a half%",
+    "official": "Mr. Sculimbrene wants them to focus giving us some indication that they will fix the problem we are all having with busing cost increases, these increases are going to make it impossible for us to operate.",
+    "note": "Official confirms busing cost increases were discussed as a serious concern but records no percentage figure."
+   },
+   {
+    "t": 10207,
+    "kind": "only_in_ours",
+    "about": "Community Preservation Act funding for affordable housing percentage",
+    "ours": "10%",
+    "official": "One of the things we considered and talked about extensively was community preservation and funding.",
+    "note": "Official confirms CPA/community preservation was discussed at length but gives no percentage; check the recording for the actual figure."
+   },
+   {
+    "t": 6690,
+    "kind": "discrepancy",
+    "about": "Cell phone policy next step",
+    "ours": "Cell phone policy development will be referred to each school's advisory council to gather stakeholder input before any districtwide policy is drafted.",
+    "official": "Surveying the teachers was brought up as an option, as is it a \"problem\" in their classrooms, surveying administration, students, and parents.",
+    "note": "Official describes surveying teachers/administration/students/parents as the option raised, not a referral to each school's advisory council — check the recording to see whether an advisory-council referral was actually decided or is a mis-transcription of the surveying idea."
+   },
+   {
+    "t": 8664,
+    "kind": "discrepancy",
+    "about": "Legislative delegation follow-up plan",
+    "ours": "Beardmore will email each state legislator individually, and the legislative delegation will become a standing agenda item until town meeting.",
+    "official": "Mr. Beardmore says we need to apply pressure, and we keep an open invitation on each agenda for delegation to attend our meetings.",
+    "note": "Official records an existing standing open invitation on the agenda but no commitment by Beardmore to individually email each legislator — check the recording for whether that specific action was actually assigned."
+   },
+   {
+    "t": 9793,
+    "kind": "agree",
+    "about": "Removing ARPA-funded items from the capital plan",
+    "ours": "Beardmore will recommend the capital planning committee remove ARPA-funded items (the truck/plow and window film) from the capital plan, with no objection raised.",
+    "official": "One topic I am going to recommend that we remove the items that have been funded by AARPA. My preference would be to remove the truck and plow and the window film for the middle high school.",
+    "note": "Same recommendation, same two items, in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Meeting outcomes reported in Chair's Report",
+    "ours": "",
+    "official": "The town did pass the additional Chapter 70 funding to the school budget and the study was approved for the Brooks House.",
+    "note": "Ours has no decisions or figures entry reflecting this Town Meeting result, which the official minutes record under the Chair's Report."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-15T13:40:47Z",
+   "cost_usd": 0.2702814
+  }
  }
 }
