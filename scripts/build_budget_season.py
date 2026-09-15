@@ -97,8 +97,66 @@ def resolve(ev):
                 label='%s, %s%s' % (d['board'], date, (' · %d:%02d' % (t // 60, t % 60)) if t else ''))
 
 
+RANK = [(r'superintendent|business administrator|business manager|town manager|finance director|accountant|assistant town manager', 3), (r'chair', 2), (r'member|committee|board', 1)]
+
+
+def rank(who):
+    w = (who or '').lower()
+    return next((n for rx, n in RANK if re.search(rx, w)), 0)
+
+
+def live_rows(fy, opens, have):
+    """A LIVE SEASON, fed from the record. TJ: "it has to work LIVE and in retro" -- "you
+    can figure out 'hey it looks like something is started'... I can confirm."
+
+    Two streams out of the budget-state files dated from the season's opening:
+      * AUTO -- rows the board shows without confirmation, because they are low-stakes and
+        labelled for what they are: WARNINGS (predictions with no figure) as 'warned' rows in
+        the cuts block, cited to the second.
+      * PROPOSED -- rows a person confirms by copying them into <fy>.csv: a deficit figure
+        put on the record by staff or the chair, a cut named by staff, an override figure.
+        Written to <fy>.proposed.csv (never rendered) and counted by the refresh.
+    A proposed row already in the file (same evidence) is not proposed again."""
+    auto, proposed = [], []
+    seen = {r['evidence'] for r in have}
+    files = sorted(f for f in glob.glob(os.path.join(STATE, '*', '*.json')) if os.path.basename(f)[:10] >= opens)
+    for f in files:
+        d = json.load(open(f, encoding='utf-8'))
+        board = os.path.basename(os.path.dirname(f))
+        base = dict(scope='school', fte='', date=d['meeting_date'], note='')
+        for w in d['state'].get('warnings') or []:
+            ev = '%s/%s@%d' % (board, d['meeting_date'], w['t'])
+            auto.append(dict(base, block='cuts', item=w['about'], scope=w.get('scope') or 'school', status='warned', figure='', who=w['who'],
+                             why=w['prediction'] + (' — ' + w['condition'] if w.get('condition') else ''), evidence=ev))
+        for st in d['state'].get('statements') or []:
+            ev = '%s/%s@%d' % (board, d['meeting_date'], st['t'])
+            if ev in seen or rank(st.get('who')) < 2 or st['status'] == 'withdrawn':
+                continue
+            if st['kind'] in ('deficit', 'override', 'budget_total') and st.get('amount_as_heard'):
+                proposed.append(dict(base, block='deficit' if st['kind'] == 'deficit' else 'override', item=st['statement'][:80], scope=st['scope'],
+                                     status='path' if st['kind'] == 'deficit' else 'step', figure=st['amount_as_heard'], who=st['who'], why=st['statement'], evidence=ev))
+        for c in d['state'].get('cuts') or []:
+            ev = '%s/%s@%d' % (board, d['meeting_date'], c['t'])
+            if ev in seen or rank(c.get('who')) < 2:
+                continue
+            proposed.append(dict(base, block='cuts', item=c['item'], scope=c['scope'], status='proposed' if c['status'] in ('proposed', 'announced') else c['status'],
+                                 figure=c.get('amount_as_heard') or '', fte=c.get('fte_as_heard') or '', who=c['who'], why='', evidence=ev))
+    return auto, proposed
+
+
 def build(fy):
     rows = read_csv(os.path.join(SEASONS, '%s.csv' % fy))
+    live = next((r for r in rows if r['block'] == 'meta' and r['item'] == 'live'), None)
+    if live:
+        opens = re.search(r'opens (\d{4}-\d{2}-\d{2})', live['note']).group(1)
+        auto, proposed = live_rows(fy, opens, rows)
+        rows = rows + auto
+        pp = os.path.join(SEASONS, '%s.proposed.csv' % fy)
+        with open(pp, 'w', newline='', encoding='utf-8') as fh:
+            w = csv.DictWriter(fh, fieldnames=['block', 'item', 'scope', 'status', 'figure', 'fte', 'date', 'who', 'why', 'evidence', 'note'], lineterminator='\n')
+            w.writeheader()
+            for r in proposed:
+                w.writerow({k: r.get(k, '') for k in w.fieldnames})
     blocks = {b: [] for b in BLOCKS}
     titles = {}
     for i, r in enumerate(rows):
@@ -117,7 +175,8 @@ def build(fy):
         for k in ('level_service', 'balanced', 'tier1_core', 'tier2_restoration', 'cut', 'tier1_restores', 'tier2_restores'):
             r[k] = float(r[k]) if r[k] else None
     return dict(id=fy, fy=int(fy[2:4]) + 2000, source='sources/data/budget-seasons/%s.csv' % fy, rows=len(rows) - len(titles), blocks=blocks, lines=lines,
-                titles=titles, model='notes/process/BUDGET-SEASON-MODEL.md')
+                titles=titles, live=bool(live), proposed=len(proposed) if live else 0, as_of=__import__('datetime').date.today().isoformat() if live else None,
+                model='notes/process/BUDGET-SEASON-MODEL.md')
 
 
 def main():
@@ -129,11 +188,14 @@ def main():
     text = json.dumps(build(a.fy), indent=1, sort_keys=True, ensure_ascii=False) + '\n'
     if a.check:
         have = open(out, encoding='utf-8').read() if os.path.exists(out) else ''
-        print('ok — %s reproduces; every citation resolves' % os.path.relpath(out, ROOT) if have == text else 'STALE ' + out)
-        return 0 if have == text else 1
+        strip = lambda t: re.sub(r'"as_of": "[^"]*"', '"as_of": ""', t)
+        same = strip(have) == strip(text)
+        print('ok — %s reproduces; every citation resolves' % os.path.relpath(out, ROOT) if same else 'STALE ' + out)
+        return 0 if same else 1
     open(out, 'w', encoding='utf-8').write(text)
     d = json.loads(text)
-    print('%s: %d rows — %s' % (os.path.relpath(out, ROOT), d['rows'], ', '.join('%s %d' % (b, len(d['blocks'][b])) for b in BLOCKS)))
+    print('%s: %d rows — %s%s' % (os.path.relpath(out, ROOT), d['rows'], ', '.join('%s %d' % (b, len(d['blocks'][b])) for b in BLOCKS),
+                                   ('; LIVE — %d row(s) proposed in %s.proposed.csv' % (d['proposed'], a.fy)) if d.get('live') else ''))
     return 0
 
 

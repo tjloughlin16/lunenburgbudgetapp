@@ -335,6 +335,20 @@ def main():
         since = (dt.date.fromisoformat(a.as_of) - dt.timedelta(days=400)).isoformat()
         py('write_budget_state.py', '--since', since, '--limit', str(MAX_MINUTES_PER_RUN), check=False)
 
+    # 7a'. The live season's board, re-read from the record: warnings straight onto the
+    # page, figures and cuts PROPOSED into budget-seasons/fy28.proposed.csv for a person to
+    # confirm by copying a row into fy28.csv. Nothing with a figure appears unconfirmed.
+    if not a.dry_run:
+        py('build_budget_season.py', 'fy28', check=False)
+        try:
+            import csv as _csv
+            pp = os.path.join(ROOT, 'sources', 'data', 'budget-seasons', 'fy28.proposed.csv')
+            n = sum(1 for _ in _csv.DictReader(open(pp, encoding='utf-8'))) if os.path.exists(pp) else 0
+            if n:
+                notes.append('%d row(s) proposed for the FY28 board in sources/data/budget-seasons/fy28.proposed.csv -- confirm by copying into fy28.csv' % n)
+        except Exception as e:
+            notes.append('could not count proposed season rows: %s' % e)
+
     # 7b. Against the town's minutes, wherever both now exist. Official minutes appear
     # weeks after a meeting, so this is asked every day and does work only when new.
     if not a.dry_run and not a.no_minutes:
