@@ -374,7 +374,7 @@ export function SchoolStaffing() {
             quantity from FTE and this page is FTE throughout.
           </p>
         </a>
-        <a className="card px-4 py-3.5 block" href={abs('/the-paraprofessionals')}>
+        <a className="card px-4 py-3.5 block" href={abs('/paras')}>
           <p className="text-[14.5px] font-bold">The paraprofessionals</p>
           <p className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>
             The biggest single change in who Lunenburg&rsquo;s schools employ, the

@@ -341,7 +341,7 @@ export function WhoWorksInEachSchool() {
             reimbursement have paid theirs, so a line can rise because a grant ended and
             nothing else changed. They are drawn on{' '}
             <a className="underline" style={{ color: 'var(--series-cost)' }}
-              href={abs('/the-paraprofessionals')}>the paraprofessionals</a>, apart from
+              href={abs('/paras')}>the paraprofessionals</a>, apart from
             everything on this page, for exactly the reason in the paragraph below.
           </li>
         </ul>
@@ -751,7 +751,7 @@ export function WhoWorksInEachSchool() {
             count of how many spans of published years give each answer.
           </p>
         </a>
-        <a className="card px-4 py-3.5 block" href={abs('/the-paraprofessionals')}>
+        <a className="card px-4 py-3.5 block" href={abs('/paras')}>
           <p className="text-[14.5px] font-bold">The paraprofessionals</p>
           <p className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>
             The biggest single change in who Lunenburg&rsquo;s schools employ, and the

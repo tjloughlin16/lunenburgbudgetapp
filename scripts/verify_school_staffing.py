@@ -69,7 +69,7 @@ PAGES = (
     ('/who-works-in-each-school', 'who-works-in-each-school.json',
      ('board', 'composition', 'headcount', 'peers', 'roster', 'state', 'wages'),
      ('a-headcount-is-not-an-fte-count',)),
-    ('/the-paraprofessionals', 'the-paraprofessionals.json',
+    ('/paras', 'the-paraprofessionals.json',
      ('dollars', 'peers', 'sped_staffing', 'state'),
      ('the-change-is-paraprofessionals',
       'paraprofessionals-outside-special-education',

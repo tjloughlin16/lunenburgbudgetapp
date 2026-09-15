@@ -629,7 +629,7 @@ three readings that fit and none of them resolved (rule 13a: publish the spread)
 arrows are drawn in one recessive ink in both directions, and the page says in its own
 prose that a change over three years is not a hire and not a cut.
 
-### `/who-works-in-each-school` and `/the-paraprofessionals` — the staffing split, 10 September 2026
+### `/who-works-in-each-school` and `/paras` (then `/the-paraprofessionals`) — the staffing split, 10 September 2026
 
 `/school-staffing` had grown to twenty-two sections because it was answering three
 questions under one title. It is now three pages, and the review question is not the usual

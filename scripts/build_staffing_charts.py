@@ -6,7 +6,7 @@
 
   fy28/public/data/school-staffing.json          /school-staffing
   fy28/public/data/who-works-in-each-school.json /who-works-in-each-school
-  fy28/public/data/the-paraprofessionals.json    /the-paraprofessionals
+  fy28/public/data/the-paraprofessionals.json    /paras
 
 /school-staffing grew to twenty-two sections because it was answering three questions
 under one title. It is three pages now, and the data behind them is still computed ONCE:
@@ -2287,7 +2287,7 @@ PAGES = (
     ),
     dict(
         out='the-paraprofessionals.json',
-        report='the-paraprofessionals',
+        report='paras',
         keys=('state', 'peers', 'sped_staffing', 'dollars'),
         conclusions=('the-change-is-paraprofessionals',
                      'paraprofessionals-outside-special-education',

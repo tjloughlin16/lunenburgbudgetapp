@@ -159,12 +159,13 @@ export const SLUG: Record<Tab, string> = {
   // /school-staffing since long before this page existed and keep meaning it. The slug is
   // the sentence somebody says out loud.
   schoolstaff: 'who-works-in-each-school',
-  // The biggest single change in who the schools employ. NOT `paras` or
-  // `paraprofessionals` as the slug OR as an alias -- both have pointed at
-  // /school-staffing for months and a link that has been shared once keeps landing where
-  // it landed. The definite article is deliberate: it is the name of a group of people,
-  // not a topic heading.
-  parastaff: 'the-paraprofessionals',
+  // The biggest single change in who the schools employ. `/paras` since 15 September
+  // 2026 -- TJ: "the-paraprofessionals should be shorted as a url to paras i think." For
+  // months `paras` was an ALIAS for /school-staffing on the argument that a shared link
+  // keeps landing where it landed; the argument lost to the fact that a link called
+  // /paras landing on the page about the paraprofessionals is what anybody who typed it
+  // meant. The old slug stays as an alias, so nothing shared before this breaks.
+  parastaff: 'paras',
   // The largest school cost that is not in the school budget. The slug is the THING, not
   // the finding — `health-insurance` is what a resident types and what gets read aloud at
   // a meeting. NOT `insurance` on its own: the town's ledger has a liability-insurance
@@ -463,11 +464,11 @@ const ALIASES: Record<string, Tab> = {
   // have seen it.
   'school-staffing': 'staffing', staffing: 'staffing', staff: 'staffing',
   teachers: 'staffing', headcount: 'staffing', paraprofessionals: 'staffing',
-  paras: 'staffing', 'staff-rosters': 'staffing', rosters: 'staffing',
+  'staff-rosters': 'staffing', rosters: 'staffing',
   // NOTHING ABOVE MOVES. These are forms nobody has been handed before, for the two pages
   // carved out of /school-staffing -- `staff-by-school` and `who-works-here` for the
   // building question, and the paraprofessional forms that are NOT already spoken for.
-  // `paras`, `paraprofessionals`, `teachers`, `headcount`, `rosters` and `staff-rosters`
+  // `paraprofessionals`, `teachers`, `headcount`, `rosters` and `staff-rosters`
   // are deliberately absent: every one of them has meant /school-staffing since long
   // before these pages existed.
   'who-works-in-each-school': 'schoolstaff', 'staff-by-school': 'schoolstaff',
@@ -574,9 +575,10 @@ const ALIASES: Record<string, Tab> = {
   'the-route-out-of-district': 'spedroute',
   // NOT `class-size` bare pointing anywhere else: this is the only page about it. The
   // citation forms are here because an official arriving from a DESE document has the
-  // number and not the question, and `paras`/`paraprofessionals` are deliberately NOT
-  // here -- both have meant /school-staffing since long before this page existed, and a
-  // link that has been shared once must keep landing where it landed.
+  // number and not the question. `paraprofessionals` is deliberately NOT here -- it has
+  // meant /school-staffing since long before this page existed, and a link that has been
+  // shared once must keep landing where it landed. (`paras` is now the paraprofessionals
+  // page's own slug; see SLUG.)
   'special-education-class-size': 'classsize', 'class-size': 'classsize',
   'class-sizes': 'classsize', 'class-size-rules': 'classsize',
   'special-education-regulation': 'classsize', '603-cmr-28': 'classsize',
