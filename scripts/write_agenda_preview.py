@@ -64,7 +64,8 @@ SCHEMA = {
             'properties': {
                 'agenda_line': {'type': 'string', 'description': 'the item EXACTLY as printed on the agenda, verbatim, one line'},
                 'why_it_matters': {'type': 'string', 'description': 'one sentence, plain English, no figures the agenda does not print, no prediction of the outcome'},
-                'kind': {'type': 'string', 'enum': ['vote', 'hearing', 'budget', 'contract', 'staffing', 'facilities', 'fees', 'policy', 'grant', 'transfer', 'presentation', 'other']},
+                'kind': {'type': 'string', 'enum': ['vote', 'hearing', 'budget', 'contract', 'staffing', 'facilities', 'fees', 'policy', 'grant', 'transfer', 'presentation', 'other'],
+                         'description': "'budget' ONLY for the town's or the schools' operating budget being built for a coming fiscal year: a budget presentation or hearing, a deficit or shortfall, proposed cuts, an override, the levy, state aid or Chapter 70, free cash for the operating budget, a Tri-Board budget meeting. NOT a warrant article on zoning or a bylaw, not a department's routine spending, not a transfer within the current year (that is 'transfer')."},
                 'vote_expected': {'type': 'boolean', 'description': 'true only if the agenda says a vote is scheduled (e.g. "VOTE", "to approve", "action item")'},
                 'important': {'type': 'boolean', 'description': 'true if this item touches the schools, the budget, taxes or fees, a contract or hiring decision, a building, or a service residents use -- something a resident would want to know was being decided. false for routine or administrative items.'},
             }}},

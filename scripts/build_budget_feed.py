@@ -70,8 +70,9 @@ DOC_DAYS = 120
 # budget being built, the warrant, Town Meeting, an override, and the revenue that sizes the
 # budget (state aid, the levy, free cash). NOT line-item transfers, grants, fees, a
 # department's spending, a closeout -- money, but not the budget.
-BUDGET_TAGS = {'budget', 'budget-fy27', 'budget-fy28', 'override', 'town-meeting', 'warrant-article',
-               'free-cash', 'state-aid', 'chapter-70', 'tax-rate', 'capital'}
+# TJ: 'same with minutes' -- a topic is budget when our minutes tagged it budget. 'town-meeting'
+# and 'warrant-article' alone are the warrant, not the budget, and no longer qualify.
+BUDGET_TAGS = {'budget', 'budget-fy26', 'budget-fy27', 'budget-fy28', 'override', 'free-cash', 'state-aid', 'chapter-70', 'tax-rate'}
 # The words that mark an agenda, a set of minutes, a vote or a notice as Town Meeting
 # preparation. Generic money words -- transfer, revenue, closeout, fiscal year -- are not here.
 MARKER = re.compile(r'\b(town\s+meeting|warrant|override|omnibus|proposed\s+budget|preliminary\s+budget|draft\s+budget|'
@@ -79,6 +80,26 @@ MARKER = re.compile(r'\b(town\s+meeting|warrant|override|omnibus|proposed\s+budg
                     r'(?:school|town|operating|capital|municipal)\s+budget|fy\s?2[78]\s+budget|budget\s+fy\s?2[78]|'
                     r'levy\s+(?:limit|cap)|free\s+cash|chapter\s*70|state\s+aid|cherry\s+sheet|capital\s+(?:plan|request|article)|'
                     r'debt\s+exclusion|stabilization\s+fund)', re.I)
+# COMING UP is stricter than the feed. TJ, 14 September 2026: "we need to actually identify
+# the meetings that have something in their agenda that indicates they are discussing a
+# budget. Don't list any committees or meetings without that listed." 'Town meeting' and
+# 'warrant' on an agenda are the Planning Board referring a zoning article, the Stormwater
+# Task Force approving its own warrant, the By-Law Committee's bylaws -- meetings ABOUT the
+# warrant, not about a budget. A meeting is listed only when its agenda names a budget, a
+# deficit, an override, the levy, state aid, free cash or the Tri-Board.
+BUDGET_AGENDA = re.compile(r'\b(budget\w*|deficit|shortfall|override|omnibus|levy|free\s+cash|chapter\s*70|state\s+aid|cherry\s+sheet|tri-?board|appropriat\w*)\b', re.I)
+
+
+def budget_hits(text, n=4):
+    seen, out = set(), []
+    for m in BUDGET_AGENDA.finditer(text or ''):
+        w = re.sub(r'\s+', ' ', m.group(0).lower())
+        w = {'budgets': 'budget', 'budgeted': 'budget', 'budgeting': 'budget', 'appropriated': 'appropriation', 'appropriations': 'appropriation', 'appropriate': 'appropriation'}.get(w, w)
+        if w not in seen:
+            seen.add(w); out.append(w)
+    return out[:n]
+
+
 # The stages of a budget year, in the order they come, with the marker each is measured
 # from on the boards' calendars (build_boards.py) and which board leads it.
 # Rule 8: the feed shows what a board decided, never who voted which way. Our minutes
@@ -773,12 +794,17 @@ def build(as_of=None, whole_cycle=False):
             continue          # two agendas for one date (a revision) are one meeting
         seen_up.add((u['board_slug'], u['date']))
         row = docs[u['board_slug']].get(u['date'], {}).get('agenda')
+        # TJ: "as we scan agendas, we probably need to tag with 'budget' to make that easier."
+        # The preview (write_agenda_preview.py) tags each item with a kind, and 'budget' is
+        # defined there as the operating budget being built. Where a preview exists, the tag
+        # decides; where none does, the agenda's own words do.
+        pv = previews.get((u['board_slug'], u['date']))
+        tagged = [it for it in (pv or {}).get('items') or [] if it.get('kind') == 'budget']
         text = agenda_text(u['board_slug'], row) if row else ''
-        h = hits(text)
+        h = ['budget'] + [w for w in budget_hits(text) if w != 'budget'] if tagged else (budget_hits(text) if not pv else [])
         if not h:
             continue
-        pv = previews.get((u['board_slug'], u['date']))
-        items = [it for it in (pv or {}).get('items') or [] if MARKER.search(it.get('agenda_line', '') + ' ' + (it.get('why_it_matters') or ''))]
+        items = tagged or [it for it in (pv or {}).get('items') or [] if BUDGET_AGENDA.search(it.get('agenda_line', '') + ' ' + (it.get('why_it_matters') or ''))]
         upcoming.append(dict(board=u['board'], board_slug=u['board_slug'], date=u['date'], days_away=u['days_away'],
                              agenda_url=u['agenda_url'], markers=h, hook=pv and pv.get('hook'), time=pv and pv.get('time'),
                              where=pv and pv.get('where'), attend=pv and pv.get('attend'), join=pv and pv.get('join'),
