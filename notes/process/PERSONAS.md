@@ -218,6 +218,17 @@ right figures are there.
 One line per report, with what the review CHANGED. A review that changed nothing is
 recorded as that, because it is a claim worth being able to disbelieve.
 
+### `/budget-feed/fy27-summer-governors-budget` — the summer of 2026, 14 September 2026
+
+An episode on the same board. The blocks are renamed for what this one was about -- THE
+NEW MONEY (how much more the state sent, how much of it the schools asked for, what the
+town would back), THE JUNE CUTS AND WHAT CAME BACK (stayed cut / came back), THE PLANS
+FOR THE MONEY, THE WARRANT STEP BY STEP, WHERE THE REST CAME FROM -- through `meta` rows
+in the season file rather than new code. Read once as reader 7: the first card had
+dropped (the state's $471,121 is the town's figure, not the schools', and the card picker
+only looked at the schools'); the block subtitles were in the wrong column; the town's
+$397,189 was said twice. All three fixed before commit.
+
 ### `/budget-feed/fy26` — the FY26 budget season board, 14 September 2026
 
 Written by hand from the district's FY26 documents (the 22 January level-service

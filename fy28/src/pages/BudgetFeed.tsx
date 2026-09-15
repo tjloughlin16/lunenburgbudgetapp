@@ -371,7 +371,7 @@ function EpisodePage({ d, e, meetings }: { d: Payload; e: Payload['episodes'][nu
           {d.seasons.map(s => <option key={s.path} value={s.path}>{s.label}</option>)}
         </select>
       </label>
-      <Tiers st={st} closed={e.closed} decisions={decisions} meta={d.threads} fy={Number(e.about_fy || e.season_fy)} finalText={e.outcome || null} finalNote={e.note ? `${e.note}. Sources: ${e.source}.` : null} />
+      <SeasonBoard fy={Number(e.about_fy || e.season_fy)} id={e.id} fallback={<Tiers st={st} closed={e.closed} decisions={decisions} meta={d.threads} fy={Number(e.about_fy || e.season_fy)} finalText={e.outcome || null} finalNote={e.note ? `${e.note}. Sources: ${e.source}.` : null} />} />
       <H2 id="recent">What was said, meeting by meeting</H2>
       <div className="mt-3 space-y-2">{meetings.map(m => {
         const kinds = m.entries.reduce((acc, x) => { acc[x.kind] = (acc[x.kind] || 0) + 1; return acc }, {} as Record<string, number>)
@@ -438,7 +438,7 @@ export function BudgetFeed() {
             const tiers = <Tiers st={e.state} closed={e.closed} decisions={d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))} outcome={e.kind === 'regular' ? d.outcome : null} meta={d.threads} fy={Number(e.about_fy || e.season_fy)}
               finalText={e.kind === 'special' ? (e.outcome || null) : (d.outcome.closed ? d.outcome.headline : null)}
               finalNote={e.kind === 'regular' && d.outcome.closed ? `Annual Town Meeting ${d.outcome.atm_date ? long(d.outcome.atm_date) : ''}; election ${d.outcome.election_date ? long(d.outcome.election_date) : ''}. Tallies from the town’s printed results; the appropriation from the adopted budget.` : null} />
-            return e.kind === 'regular' ? <SeasonBoard fy={Number(e.season_fy)} fallback={tiers} onLoaded={() => setHasBoard(true)} /> : tiers
+            return e.kind === 'regular' ? <SeasonBoard fy={Number(e.season_fy)} fallback={tiers} onLoaded={() => setHasBoard(true)} /> : <SeasonBoard fy={Number(e.about_fy || e.season_fy)} id={e.id} fallback={tiers} />
           })()}
         </section>
       ))}

@@ -2,6 +2,7 @@
 """A BUDGET SEASON AS A STATUS BOARD -- the state view, backed by the event log.
 
     python3 scripts/build_budget_season.py fy27            # -> fy28/public/data/budget-season-fy27.json
+    python3 scripts/build_budget_season.py fy27-summer-governors-budget   # an episode, the same way
     python3 scripts/build_budget_season.py fy27 --check    # ...and fail if it is stale or a citation is dead
 
 notes/process/BUDGET-SEASON-MODEL.md is the model. TJ, 14 September 2026: "the event log
@@ -38,6 +39,8 @@ MINUTES = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 BALLOT = os.path.join(ROOT, 'sources', 'data', 'ballot-questions.csv')
 OUTDIR = os.path.join(ROOT, 'fy28', 'public', 'data')
 BLOCKS = ['deficit', 'proposals', 'cuts', 'override', 'late', 'final']
+# A 'meta' row renames a block for one season: item = block, why = title, note = subtitle.
+# The summer episode's 'override' block is the warrant articles; its 'deficit' is the new money.
 
 
 def read_csv(p):
@@ -97,7 +100,11 @@ def resolve(ev):
 def build(fy):
     rows = read_csv(os.path.join(SEASONS, '%s.csv' % fy))
     blocks = {b: [] for b in BLOCKS}
+    titles = {}
     for i, r in enumerate(rows):
+        if r['block'] == 'meta':
+            titles[r['item']] = dict(title=r['why'], sub=r['note'])
+            continue
         if r['block'] not in blocks:
             raise SystemExit('row %d: unknown block %r' % (i + 2, r['block']))
         blocks[r['block']].append(dict(r, fte=float(r['fte']) if r['fte'] else None, cite=resolve(r['evidence'])))
@@ -109,8 +116,8 @@ def build(fy):
     for r in lines:
         for k in ('level_service', 'balanced', 'tier1_core', 'tier2_restoration', 'cut', 'tier1_restores', 'tier2_restores'):
             r[k] = float(r[k]) if r[k] else None
-    return dict(fy=int(fy[2:]) + 2000, source='sources/data/budget-seasons/%s.csv' % fy, rows=len(rows), blocks=blocks, lines=lines,
-                model='notes/process/BUDGET-SEASON-MODEL.md')
+    return dict(id=fy, fy=int(fy[2:4]) + 2000, source='sources/data/budget-seasons/%s.csv' % fy, rows=len(rows) - len(titles), blocks=blocks, lines=lines,
+                titles=titles, model='notes/process/BUDGET-SEASON-MODEL.md')
 
 
 def main():

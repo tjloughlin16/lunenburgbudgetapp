@@ -11,7 +11,7 @@ import { useReport } from '../components/report'
 type Cite = { kind: 'meeting' | 'document' | 'ballot'; href: string; label: string; page?: string; board?: string; date?: string; t?: number }
 type Row = { block: string; item: string; scope: string; status: string; figure: string; fte: number | null; date: string; who: string; why: string; evidence: string; note: string; cite: Cite | null }
 type Line = { side: string; document: string; category: string; line: string; level_service: number | null; balanced: number | null; tier1_core: number | null; tier2_restoration: number | null; cut: number | null; tier1_restores: number | null; tier2_restores: number | null }
-export type Season = { fy: number; source: string; rows: number; model: string; blocks: Record<'deficit' | 'proposals' | 'cuts' | 'override' | 'late' | 'final', Row[]>; lines: Line[] }
+export type Season = { id: string; fy: number; source: string; rows: number; model: string; titles: Record<string, { title: string; sub: string }>; blocks: Record<'deficit' | 'proposals' | 'cuts' | 'override' | 'late' | 'final', Row[]>; lines: Line[] }
 
 const mmdd = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US')
@@ -65,15 +65,17 @@ function Block({ title, color, children, sub }: { title: string; color: string; 
   )
 }
 
-export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: ReactNode; onLoaded?: () => void }) {
-  const { d, err } = useReport<Season>(`budget-season-fy${String(fy).slice(2)}.json`)
+export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: string; fallback: ReactNode; onLoaded?: () => void }) {
+  const { d, err } = useReport<Season>(`budget-season-${id || 'fy' + String(fy).slice(2)}.json`)
   const [showLines, setShowLines] = useState(false)
   useEffect(() => { if (d && onLoaded) onLoaded() }, [d, onLoaded])
   if (err) return <>{fallback}</>     // no season file yet: the page built from the extraction
   if (!d) return null
   const b = d.blocks
+  const T = (block: string, title: string, sub: string) => ({ title: d.titles?.[block]?.title || title, sub: d.titles?.[block]?.sub || sub })
   const gap = (scope: string) => b.deficit.filter(r => r.scope === scope)
-  const moment = (scope: string, st: string) => gap(scope).find(r => r.status === st)
+  // the school's figure first; failing that, any scope's -- an episode's 'started' can be the town's
+  const moment = (scope: string, st: string) => gap(scope).find(r => r.status === st) || b.deficit.find(r => r.status === st)
   const town = moment('town', 'now'), both = moment('both', 'now')
   const cuts = b.cuts
   const decided = cuts.filter(r => r.status === 'decided'), off = cuts.filter(r => r.status === 'came_off'), tierOnly = cuts.filter(r => r.status === 'tier_only')
@@ -89,26 +91,27 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
     schoolDecided.length ? `${schoolDecided.length} cuts stood on the school side${fteOf(schoolDecided) ? ` (${fteOf(schoolDecided)} FTE where an FTE is printed)` : ''}` : '',
     townDecided.length ? `${townDecided.length} on the town side` : '',
   ].filter(Boolean).join('; ')
+  const oneLine = d.titles?.summary?.title
   const lines = d.lines.filter(l => l.side === 'school' && (l.cut || 0) > 0).sort((a, c) => (c.cut || 0) - (a.cut || 0))
 
   return (
     <section className="mt-4">
-      <p className="text-[15px] max-w-3xl" style={{ color: 'var(--text-secondary)' }}>FY{String(d.fy).slice(2)}: {summary}.</p>
+      <p className="text-[15px] max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{oneLine || `FY${String(d.fy).slice(2)}: ${summary}.`}</p>
 
       {/* 1. the deficit -- the moments a resident heard, not a spreadsheet difference */}
-      <Block title="The gap" color="var(--status-critical)" sub="The shortfall as staff put it on the record — the number people argued about, and every time it moved, with why.">
+      <Block title={T('deficit', 'The gap', '').title} color="var(--status-critical)" sub={T('deficit', '', 'The shortfall as staff put it on the record — the number people argued about, and every time it moved, with why.').sub}>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {[['Schools — as announced', started], ['Schools — corrected', corrected], ['Schools — left to cut on the night of the vote', toCut], ['Town and schools together', both]].map(([label, r]) => r && typeof r !== 'string' ? (
-            <div key={label as string}>
-              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{label as string}</p>
+          {[['Schools — as announced', started], ['Schools — corrected', corrected], ['Schools — left to cut on the night of the vote', toCut], ['Town and schools together', both]].map(([label0, r]) => r && typeof r !== 'string' ? (
+            <div key={label0 as string}>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{['Schools', 'Town', 'Town and schools together'].includes(r.item) ? label0 as string : r.item}</p>
               <p className="text-xl font-bold tnum leading-tight">{r.figure.split(' (')[0]}</p>
               <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{r.why}</p>
               <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{r.who}, {mmdd(r.date)}<CiteLink c={r.cite} /></p>
             </div>
           ) : null)}
         </div>
-        {closed && <p className="text-sm mt-3" style={{ color: 'var(--text-secondary)' }}><span className="font-semibold">How it closed:</span> {closed.why}{closed.why.includes(closed.figure.split(' — ')[0]) ? '' : ` (${closed.figure.split(' — ')[0]})`}.<CiteLink c={closed.cite} /></p>}
-        {town && <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}><span className="font-semibold">The town side:</span> {town.figure.split(' (')[0]} — {town.why} ({town.who}, {mmdd(town.date)}).<CiteLink c={town.cite} /></p>}
+        {closed && <p className="text-sm mt-3" style={{ color: 'var(--text-secondary)' }}><span className="font-semibold">{T('closed', 'How it closed', '').title}:</span> {closed.why}{closed.why.includes(closed.figure.split(' — ')[0]) ? '' : ` (${closed.figure.split(' — ')[0]})`}.<CiteLink c={closed.cite} /></p>}
+        {town && town !== both && <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}><span className="font-semibold">The town side:</span> {town.figure.split(' (')[0]} — {town.why} ({town.who}, {mmdd(town.date)}).<CiteLink c={town.cite} /></p>}
         <details className="mt-3"><summary className="cursor-pointer text-xs underline" style={{ color: 'var(--series-cost)' }}>How the numbers moved — {b.deficit.length} figures, three stories</summary>
           {(['school', 'both', 'town'] as const).map(scope => gap(scope).length ? (
             <div key={scope} className="mt-3">
@@ -119,10 +122,10 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
       </Block>
 
       {/* 2. the cuts */}
-      <Block title="The cuts" color="var(--status-critical)" sub="What was cut, what came off the list, and what only an override tier would have cut — grouped the way a family looks for its own.">
+      <Block title={T('cuts', 'The cuts', '').title} color="var(--status-critical)" sub={T('cuts', '', 'What was cut, what came off the list, and what only an override tier would have cut — grouped the way a family looks for its own.').sub}>
         <div className="grid gap-4 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-critical)' }}>Cut — {decided.length}</p>
+            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-critical)' }}>{T('cuts.cut', 'Cut', '').title} — {decided.length}</p>
             {(['school', 'town'] as const).map(scope => {
               const xs = decided.filter(r => r.scope === scope && !/^Town — Universal/.test(r.item))
               // The provenance most of a list shares is said once, under the heading, and the
@@ -144,7 +147,7 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
             })}
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>Came off the list — {off.length}</p>
+            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>{T('cuts.off', 'Came off the list', '').title} — {off.length}</p>
             <ul className="mt-2">{off.map((r, i) => <Item key={i} r={r} />)}</ul>
             {off.length === 0 && <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing came off.</p>}
             {tierOnly.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-5" style={{ color: 'var(--text-muted)' }}>Only inside a tier — {tierOnly.length}</p>
@@ -157,7 +160,7 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
       </Block>
 
       {/* 3. the proposals */}
-      <Block title="The proposals" color="var(--series-cost)" sub="The budgets put on the table, side by side — the names change every year.">
+      <Block title={T('proposals', 'The proposals', '').title} color="var(--series-cost)" sub={T('proposals', '', 'The budgets put on the table, side by side — the names change every year.').sub}>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{b.proposals.map((r, i) => (
           <div key={i} className="px-3 py-2 rounded-md" style={{ background: 'var(--surface-3)' }}>
             <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{SCOPE[r.scope]}</p>
@@ -171,17 +174,17 @@ export function SeasonBoard({ fy, fallback, onLoaded }: { fy: number; fallback: 
 
       {/* 4 + 5. the override track and the late moves */}
       <div className="grid gap-4 lg:grid-cols-2">
-        <Block title="The override track" color="var(--series-cost)" sub="Whether one is filed, for how much, and where each board stands — step by step.">
+        <Block title={T('override', 'The override track', '').title} color="var(--series-cost)" sub={T('override', '', 'Whether one is filed, for how much, and where each board stands — step by step.').sub}>
           <ul>{b.override.map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: `2px solid ${r.cite?.kind === 'ballot' ? 'var(--status-critical)' : 'var(--series-cost)'}` }}><span className="tnum text-xs mr-2" style={{ color: 'var(--text-muted)' }}>{mmdd(r.date)}</span><span className="font-semibold">{r.item}</span>{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}{r.why ? <span style={{ color: 'var(--text-secondary)' }}> — {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({r.who})</span><CiteLink c={r.cite} />{r.note && !r.note.startsWith('internal:') && <span className="text-xs italic ml-1.5" style={{ color: 'var(--text-muted)' }}>{r.note}</span>}</li>)}</ul>
         </Block>
-        <Block title="Fees, free cash and other moves" color="var(--series-cost)" sub="What was charged or moved to close the gap — fees, free cash, transfers, new revenue.">
+        <Block title={T('late', 'Fees, free cash and other moves', '').title} color="var(--series-cost)" sub={T('late', '', 'What was charged or moved to close the gap — fees, free cash, transfers, new revenue.').sub}>
           <ul>{b.late.map((r, i) => <Item key={i} r={r} />)}</ul>
           {b.late.length === 0 && <p className="text-sm" style={{ color: 'var(--text-muted)' }}>None recorded.</p>}
         </Block>
       </div>
 
       {/* 6. final */}
-      <Block title="Final — what Town Meeting and the ballot did, and what took effect" color="var(--status-good)">
+      <Block title={T('final', 'Final — what Town Meeting and the ballot did, and what took effect', '').title} color="var(--status-good)" sub={T('final', '', '').sub || undefined}>
         <ul>{[...appropriated, ...finalBallot].map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px solid var(--status-good)' }}>{r.figure ? <><span className="font-bold tnum">{r.figure}</span> — </> : null}<span className={r.figure ? '' : 'font-semibold'}>{r.item}</span>{r.why ? <span style={{ color: /failed/i.test(r.why) ? 'var(--status-critical)' : 'var(--text-secondary)' }}>, {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{r.who}, {mmdd(r.date)}</span><CiteLink c={r.cite} /></li>)}</ul>
         {took.map((r, i) => <div key={i} className="mt-3 pl-3" style={{ borderLeft: '2px solid var(--status-critical)' }}><p className="text-[13.5px] font-semibold">{r.item}{r.fte ? <span className="tnum"> · {r.fte} FTE</span> : ''}{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}</p><p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{r.why}. {r.note.startsWith('internal:') ? '' : r.note}<CiteLink c={r.cite} /></p></div>)}
         {later.map((r, i) => <div key={i} className="mt-3 pl-3" style={{ borderLeft: '2px solid var(--status-good)' }}><p className="text-[13.5px] font-semibold">{r.item}{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}</p><p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{r.why}. {r.note.startsWith('internal:') ? '' : r.note}<CiteLink c={r.cite} /></p></div>)}
