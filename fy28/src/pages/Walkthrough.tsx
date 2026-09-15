@@ -12,6 +12,7 @@ import { ADMIN, DEVELOPMENT } from '../model/answers'
 import { MODEL } from '../model/engine'
 import { CitationList } from '../components/Citations'
 import { Go } from '../lib/nav'
+import { FullVersion } from '../components/FullVersion'
 import { Room, Say, Plate, SectionLink, AlreadyCut, OneTimeAnswers,
          WhatIsADevelopment } from '../components/walk'
 import { TheRaise } from '../components/TheRaise'
@@ -97,7 +98,7 @@ export function Walkthrough() {
           debated yet, which is the point of doing this now rather than in January.
         </p>
         <p className="mt-3 text-[14px] leading-snug max-w-2xl" style={{ color: 'var(--text-muted)' }}>
-          Read in order: the short version, then <a href="#the-working" className="underline">the working</a>,
+          Read in order: the short version, then <a href="#the-working" className="underline">the whole argument, step by step</a>,
           then <Go to="solutions" className="underline">what the town can do about it</Go>.
           {' '}<a href="#about-these-figures" className="underline">About these figures</a>.
         </p>
@@ -108,9 +109,15 @@ export function Walkthrough() {
       {/* The summary's primary button lands here rather than on room one, so the reader
           arrives at the handover — "now the same thing slowly" — instead of dropping into
           the middle of an argument that has just been summarized at them. */}
-      <div id="the-working" className="scroll-mt-12 mx-auto max-w-6xl px-5 pt-12 pb-8">
+      {/* THE FOLD. Everything below the short version -- the eleven steps, the caveats,
+          the citations -- is behind one control that says what it is and how long. It
+          opens itself for a citation marker, a "how this was worked out" link, a shared
+          #hash, or the print button. See components/FullVersion.tsx. */}
+      <div className="mx-auto max-w-6xl px-5">
+      <FullVersion what="the whole argument, step by step">
+      <div id="the-working" className="scroll-mt-12 pt-12 pb-8">
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"
-          style={{ color: 'var(--text-muted)' }}>The working &middot; eleven steps</p>
+          style={{ color: 'var(--text-muted)' }}>Step by step &middot; eleven steps</p>
         <h2 className="text-2xl sm:text-4xl font-bold tracking-tight leading-[1.1] max-w-3xl">
           Now the same thing slowly, with every number shown
         </h2>
@@ -140,7 +147,7 @@ export function Walkthrough() {
           No committee has published a figure and no meeting has argued about one. The{' '}
           {usd(LEVEL_SERVICE.gap)} below is not a number somebody handed the town &mdash;
           it is what this projection produces by running the district&rsquo;s own published
-          growth rates forward one year, and the next ten rooms are the working.
+          growth rates forward one year, and the next ten steps show every number behind it.
         </Say>
         <Say>
           Which is the reason to read it now rather than in January. Everything in the
@@ -569,6 +576,8 @@ export function Walkthrough() {
       {/* Last thing on the page on purpose. A reader who has followed the argument this
           far has earned the right to check it, and should not have to go looking. */}
       <CitationList />
+      </FullVersion>
+      </div>
     </div>
   )
 }

@@ -402,7 +402,7 @@ export function Upshot() {
             <a href="#the-working"
               className="text-[13px] font-bold px-3.5 py-2.5 rounded-md"
               style={{ background: 'var(--text-primary)', color: 'var(--surface-1)' }}>
-              Keep reading to see why &darr;
+              Read the whole argument, step by step &darr;
             </a>
             <Go to="solved"
               className="text-[13px] font-semibold px-3.5 py-2.5 rounded-md"

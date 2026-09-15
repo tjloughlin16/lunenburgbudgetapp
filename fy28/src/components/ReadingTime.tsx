@@ -32,7 +32,7 @@ const SKIP = 'header, footer, nav[aria-label="Breadcrumb"], script, style, noscr
  *  Counted once however many marks nest. `null` when the page declares none. */
 const SHORT = '[data-short]'
 
-function countWords(root: HTMLElement): { all: number; short: number | null } {
+export function countWords(root: HTMLElement): { all: number; short: number | null } {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode: node => {
       const el = node.parentElement

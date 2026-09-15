@@ -580,3 +580,21 @@ body { overflow-wrap: break-word; }   /* any other word too long for the line br
    a :visited rule may change, so the title dims and nothing else moves. */
 .door-title { color: var(--series-cost); }
 a:visited .door-title { color: var(--text-secondary); }
+
+/* THE FOLD. One full-width control between a page's short version and the rest of it;
+   see components/FullVersion.tsx. The summary is the boundary the sections lacked, so
+   it is drawn as a bar rather than a line: bordered, tinted, tall enough to be a target. */
+.fold > .fold-summary {
+  display: flex; align-items: baseline; flex-wrap: wrap;
+  padding: 14px 18px; min-height: 52px;
+  border: 1px solid var(--grid); border-radius: 10px;
+  background: var(--surface-2);
+}
+.fold > .fold-summary::-webkit-details-marker { display: none; }
+.fold > .fold-summary:hover { background: var(--surface-3); }
+.fold > .fold-summary .fold-open { display: none; }
+.fold[open] > .fold-summary .fold-open { display: inline; }
+.fold[open] > .fold-summary .fold-closed { display: none; }
+@media print {
+  .fold > .fold-summary { display: none; }
+}

@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import { useEffect, useState } from 'react'
 import { usd } from '../model/engine'
@@ -132,6 +133,8 @@ export function TheParaprofessionals() {
       <H2 id="conclusions">If you read nothing else</H2>
       <Conclusions rows={d.conclusions} />
 
+      {/* Everything from here to the other-reports list is behind the fold. */}
+      <FullVersion>
       {/* ================================================== 1. the paraprofessional shift */}
       <H2 id="paras">Lunenburg went from the fewest paraprofessionals per pupil to the most</H2>
       <Body>
@@ -472,6 +475,7 @@ export function TheParaprofessionals() {
         </p>
       </div>
 
+      </FullVersion>
       <MoreReports here={TAB} />
     </ReportShell>
   )
