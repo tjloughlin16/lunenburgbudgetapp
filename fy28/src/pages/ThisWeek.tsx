@@ -1,6 +1,6 @@
 import type { Tab } from '../routes'
 import { ReportShell, useReport, H2, MoreReports } from '../components/report'
-import { BoardsThisWeek, THE_THREE } from '../components/BoardsThisWeek'
+import { BoardsThisWeek, THE_THREE, daysFromToday, todayIso } from '../components/BoardsThisWeek'
 
 const TAB: Tab = 'thisweek'
 const FEED = 'meeting-feed.json'
@@ -65,8 +65,10 @@ export function ThisWeek() {
   if (!f) {
     return <ReportShell tab={TAB} title="This week in town" err={feed.err} loading={!feed.err} dataUrl={'/data/' + FEED} />
   }
-  const week = f.upcoming.next_7_days
-  const later = f.upcoming.meetings.filter(m => !week.some(w => w.file_id === m.file_id))
+  // By the reader's clock, not the payload's: a page read two days after its build must not
+  // list a meeting that has happened as coming up (the 'tomorrow' that was today, 15 Sep).
+  const week = f.upcoming.meetings.filter(m => m.date >= todayIso() && daysFromToday(m.date) < 7)
+  const later = f.upcoming.meetings.filter(m => m.date >= todayIso() && daysFromToday(m.date) >= 7)
   const minutes = f.announced.items.filter(i => i.kind === 'minutes')
   const agendas = f.announced.items.filter(i => i.kind === 'agenda' && i.meeting_date < f.as_of)
   return (
