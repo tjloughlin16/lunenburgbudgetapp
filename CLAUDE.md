@@ -915,6 +915,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_closeout_charts.py     # the charts that head both closeout analyses
     python3 scripts/build_reports_index.py       # the /reports index, generated from what is on disk
     python3 scripts/build_reports_index.py --check    # ...and fail if an analysis is missing from it
+    python3 scripts/build_reading_time.py        # how long every page takes to read, from the build; longest first
+    python3 scripts/build_reading_time.py --check
     python3 scripts/build_blog.py                # the blog: ONLY the posts named in PUBLISHED
     python3 scripts/build_blog.py --check        # ...and that no unpublished one is anywhere on the site
     python3 scripts/verify_blog.py               # every sentence on a post, verbatim from the copy
