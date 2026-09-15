@@ -1,5 +1,6 @@
 import type { Tab } from '../routes'
-import { ReportShell, useReport } from '../components/report'
+import { ReportShell, ShortVersion, useReport } from '../components/report'
+import { FullVersion } from '../components/FullVersion'
 import { COST_GROWTH_BLENDED } from '../model/engine'
 import { BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES } from '../model/rates'
 import { FUTURES, MENU } from '../model/futures'
@@ -89,6 +90,24 @@ function Body({ d }: { d: Model }) {
         <div><div className="text-3xl font-bold tnum">{usd(overrideBill)}</div><div className="text-sm max-w-xs" style={{ color: 'var(--text-secondary)' }}>on the average tax bill next year if the whole gap were an override — and more the year after, because the rates do not change</div></div>
       </div>
 
+      {/* THE SHORT VERSION: the six things a resident should leave with. These sat at the
+          foot of the page as "What follows" -- the conclusions after the working, which
+          is rule 7b backwards. Reordered on 15 September 2026, not rewritten; every
+          figure in them is still read from the model. */}
+      <ShortVersion>
+      <h2 className="text-lg font-semibold mt-10">If you read nothing else</h2>
+      <ol className="mt-3 space-y-3 max-w-3xl text-[15px] leading-relaxed">
+        <li><strong>The fees and trims are worth doing and do not solve it.</strong> Together they close about {Math.round(100 * pkgTotal / gap)}% of the gap without touching a program.</li>
+        <li><strong>Cutting the extras buys one year.</strong> {extras.sub.split('.')[0]}. Then the same gap returns with nothing left to cut but classrooms.</li>
+        <li><strong>Business growth is real and slow.</strong> It needs {business.value} of new commercial value a year, every year, and pays off in about a decade.</li>
+        <li><strong>Free cash covers a year, not a problem.</strong> {freeCashC ? freeCashC.body.split(/\.\s/)[0] + '.' : ''}</li>
+        <li><strong>Only two things on the table change a rate:</strong> the health plan itself, and the pace of commercial building. Everything else is an amount, and an amount has to be found again — which is why every option below is priced to five years and to ten.</li>
+        <li><strong>After that there are two choices, and only two.</strong> {d.recommendation.closing}</li>
+      </ol>
+
+      </ShortVersion>
+
+      <FullVersion what="every option, priced">
       <h2 className="text-lg font-semibold mt-10">The choices, whole</h2>
       <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
         {FUTURES.length} things the town could actually decide, each priced by the same model to hold five years and ten — nobody here plans further. {FUTURES.filter(f => !f.bends).length} change an amount and buy the years; {FUTURES.filter(f => f.bends).length} change a growth rate, which is what makes ten years cheaper than five twice over. Every figure is the model’s, and “positions” is an estimate at the catalogue’s own cost per position.
@@ -151,21 +170,12 @@ function Body({ d }: { d: Model }) {
         {ranked[0].label} and {ranked[1].label.toLowerCase()} are {Math.round(100 * (ranked[0].swing + ranked[1].swing) / spread)}% of the spread between them. {other_l.label} — where sports, clubs and devices live, and the only line the School Committee sets on its own — is worth {pts(other_l.swing)}. That is why the cuts residents see every spring never change the slope. The dials are on <a className="underline" href="/bend-the-curve">Bend the curve</a>.
       </p>
 
-      <h2 className="text-lg font-semibold mt-10">What follows</h2>
-      <ol className="mt-3 space-y-3 max-w-3xl text-[15px] leading-relaxed">
-        <li><strong>The fees and trims are worth doing and do not solve it.</strong> Together they close about {Math.round(100 * pkgTotal / gap)}% of the gap without touching a program.</li>
-        <li><strong>Cutting the extras buys one year.</strong> {extras.sub.split('.')[0]}. Then the same gap returns with nothing left to cut but classrooms.</li>
-        <li><strong>Business growth is real and slow.</strong> It needs {business.value} of new commercial value a year, every year, and pays off in about a decade.</li>
-        <li><strong>Free cash covers a year, not a problem.</strong> {freeCashC ? freeCashC.body.split(/\.\s/)[0] + '.' : ''}</li>
-        <li><strong>Only two things on the table change a rate:</strong> the health plan itself, and the pace of commercial building. Everything else is an amount, and an amount has to be found again — which is why every card above is priced to five years and to ten.</li>
-        <li><strong>After that there are two choices, and only two.</strong> {d.recommendation.closing}</li>
-      </ol>
-
       <p className="text-sm mt-10 max-w-3xl" style={{ color: 'var(--text-muted)' }}>
-        Every figure on this page is computed by the same model that runs the rest of this site and is read from it, not typed; the working is on{' '}
+        Every figure on this page is computed by the same model that runs the rest of this site and is read from it, not typed; the arithmetic is on{' '}
         <a className="underline" href="/bend-the-curve">Bend the curve</a>, <a className="underline" href="/what-solved-requires">What “solved” requires</a> and{' '}
         <a className="underline" href="/build-your-own-budget">Build your own budget</a>. The whole-choice cards run the same projection as Bend the curve; the override figures are that page’s treadmill, on the average bill.
       </p>
+      </FullVersion>
     </>
   )
 }

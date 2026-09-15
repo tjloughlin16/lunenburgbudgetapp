@@ -1,4 +1,6 @@
 import { abs } from '../lib/abs'
+import { FullVersion } from '../components/FullVersion'
+import { ShortVersion } from '../components/report'
 import { Go } from '../lib/nav'
 import type { ReactNode } from 'react'
 import { MODEL, usd, usdShort } from '../model/engine'
@@ -42,13 +44,10 @@ export function Answers() {
           adjectives, and nothing you have to take on trust &mdash; the sums are small
           enough to check.
         </p>
-        <Note>
-          Every figure comes from the town&rsquo;s published FY27 budget and tax records,
-          run through the same model as the rest of this site. FY28 and later are
-          projections, not published numbers.
-        </Note>
       </div>
 
+      {/* THE SHORT VERSION: four sentences, and the price. */}
+      <ShortVersion>
       <Section id="short" eyebrow="Start here"
         title="The whole thing in four sentences">
         <FourSentences />
@@ -80,7 +79,10 @@ export function Answers() {
           </Go>
         </div>
       </Section>
+      </ShortVersion>
 
+      <div className="mx-auto max-w-6xl px-5">
+      <FullVersion what="all ten answers">
       <Section id="scoreboard" eyebrow="Every idea, side by side"
         title="Every idea on one page"
         lede={<>Every answer anyone has proposed to that {usd(GAP)}, priced the same way:
@@ -168,7 +170,13 @@ export function Answers() {
           positions.</>}>
         <Lookback />
       </Section>
-
+      <Note>
+        Every figure comes from the town&rsquo;s published FY27 budget and tax records,
+        run through the same model as the rest of this site. FY28 and later are
+        projections, not published numbers.
+      </Note>
+      </FullVersion>
+      </div>
     </div>
   )
 }

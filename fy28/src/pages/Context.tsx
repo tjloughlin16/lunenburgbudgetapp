@@ -1,4 +1,6 @@
 import { useMemo } from 'react'
+import { FullVersion } from '../components/FullVersion'
+import { ShortVersion } from '../components/report'
 import { MODEL, project, runCascade, usd } from '../model/engine'
 import { Section, Stat, Note } from '../components/primitives'
 import { Composition, FrillsCheck } from '../components/Composition'
@@ -69,11 +71,15 @@ export function Context({ onRecommend, onSources, onAthletics }: {
             sub="Cost of today's services minus revenue likely to be available" />
           <Stat label="Cutting every sport saves" value={usd(f.athleticsRemaining)}
             sub={`A further ${usd(f.athleticsAlreadyCut)} of athletics is already cut`} />
-          <Stat label="Override vote, May 2026" value="33% yes" tone="critical"
+          {/* Derived, not typed: it read "33% yes" as a literal beside two counts that
+              could compute it (rule 2). */}
+          <Stat label="Override vote, May 2026"
+            value={`${Math.round(100 * f.overrideQ1.yes / (f.overrideQ1.yes + f.overrideQ1.no))}% yes`} tone="critical"
             sub={`${f.overrideQ1.yes.toLocaleString()} for, ${f.overrideQ1.no.toLocaleString()} against`} />
         </div>
       </div>
 
+      <ShortVersion>
       <Section id="conclusions" eyebrow="The short version" title="What we found"
         lede={<>Six numbers, then {MODEL.conclusions.length} findings &mdash; from the
           published budgets, the town warrant, the Assessors&rsquo; own hearings, the Town
@@ -82,7 +88,10 @@ export function Context({ onRecommend, onSources, onAthletics }: {
           the section that shows the arithmetic.</>}>
         <Conclusions />
       </Section>
+      </ShortVersion>
 
+      <div className="mx-auto max-w-6xl px-5">
+      <FullVersion what="the evidence, section by section">
       <Section id="where-we-are" eyebrow="The starting point" title="How Lunenburg got here"
         lede={<>The town put three budgets to voters: a balanced budget that fit available
           revenue, and two override tiers that would have restored services. Town Meeting
@@ -375,6 +384,8 @@ export function Context({ onRecommend, onSources, onAthletics }: {
           district&rsquo;s own growth rates.
         </Note>
       </Section>
+      </FullVersion>
+      </div>
     </div>
   )
 }

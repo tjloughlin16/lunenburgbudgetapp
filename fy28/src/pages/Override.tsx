@@ -1,4 +1,6 @@
 import { usd, usdShort } from '../model/engine'
+import { FullVersion } from '../components/FullVersion'
+import { ShortVersion } from '../components/report'
 import type { Tab } from '../routes'
 import { Go } from '../lib/nav'
 import {
@@ -48,13 +50,11 @@ export function Override() {
           real questions are how big, for how long, and written for whom &mdash; and all
           three have arithmetic answers.
         </p>
-        <Note>
-          Nothing here argues for or against one. Two of the findings below make overrides
-          look considerably better than they are usually described, and one makes them look
-          worse.
-        </Note>
       </div>
 
+      {/* THE SHORT VERSION: the mechanics, three cards. What every other section on this
+          page assumes. */}
+      <ShortVersion>
       <Section id="shape" eyebrow="Three things about the instrument"
         title="What an override actually is"
         lede={<>Before any number, the mechanics &mdash; because most of the disagreement
@@ -80,7 +80,10 @@ export function Override() {
               appropriate the difference elsewhere.</>} />
         </div>
       </Section>
+      </ShortVersion>
 
+      <div className="mx-auto max-w-6xl px-5">
+      <FullVersion what="the override arithmetic">
       <Section id="one" eyebrow="What one override does"
         title={`One ${usdShort(OVERRIDE)} override, followed to the end`}
         lede={<>The clearest way to see it is the ordinary projection with one thing added:
@@ -171,6 +174,14 @@ export function Override() {
             link="See what each option costs" to="money" />
         </div>
       </Section>
+      {/* The caveat, at the foot rather than in front of the mechanics. */}
+      <Note>
+        Nothing here argues for or against one. Two of the findings above make overrides
+        look considerably better than they are usually described, and one makes them look
+        worse.
+      </Note>
+      </FullVersion>
+      </div>
     </div>
   )
 }

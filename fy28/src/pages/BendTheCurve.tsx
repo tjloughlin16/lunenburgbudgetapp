@@ -1,4 +1,6 @@
 import { MODEL, usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
+import { FullVersion } from '../components/FullVersion'
+import { ShortVersion } from '../components/report'
 import type { Tab } from '../routes'
 import { Go } from '../lib/nav'
 import {
@@ -66,12 +68,11 @@ export function BendTheCurve({ option = null }: {
           answer a rate problem with an amount</strong>. This page lets you do both and
           watch the difference.
         </p>
-        <Note>
-          Same projection as the rest of the site, opened up at the growth rates. At the
-          default settings it reproduces the main model to the dollar.
-        </Note>
       </div>
 
+      {/* THE SHORT VERSION: the raise, and the two numbers. Everything after is the
+          board and the argument, behind the fold. */}
+      <ShortVersion>
       <Section id="raise" eyebrow="Start here"
         title={`Next year the schools get ${usdShort(RAISE.allowed)} more. Here is who spends it.`}
         lede={<>Nobody at a meeting argues about the size of the school budget. They argue
@@ -106,9 +107,18 @@ export function BendTheCurve({ option = null }: {
             sub={`Starting from ${usdShort(base[0].gap)} next year, with nothing going wrong`}
             tone="critical" />
         </div>
+      </Section>
+      </ShortVersion>
+
+      <div className="mx-auto max-w-6xl px-5">
+      <FullVersion what="the board and the argument">
+      {/* The year-by-year ledger, out of the short version: a table a reader checks
+          by subtraction is the full version's business. */}
+      <Section id="years" eyebrow="Every year"
+        title="The gap, year by year, with the increase already taken off">
         <div className="mt-4">
           <YearLedger
-            title="Every year, with the increase already taken off"
+            title="Revenue in, costs out, the gap that is left"
             intro={<>Revenue does rise every year, and it rises here &mdash; third column.
               The gap is what is left <em>after</em> it. The last column is the difference
               between the row above and the row below, so it can be checked by
@@ -382,7 +392,13 @@ export function BendTheCurve({ option = null }: {
             The static version of this argument is on &ldquo;Why it repeats&rdquo; &rarr;
           </Go>
         </Note>
+        <Note>
+          Same projection as the rest of the site, opened up at the growth rates. At the
+          default settings it reproduces the main model to the dollar.
+        </Note>
       </Section>
+      </FullVersion>
+      </div>
     </div>
   )
 }

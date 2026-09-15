@@ -1,4 +1,6 @@
 import { usd, usdShort } from '../model/engine'
+import { FullVersion } from '../components/FullVersion'
+import { ShortVersion } from '../components/report'
 import {
   DEFAULT_SCENARIO, DEFAULT_RATES, LONG, PACKAGES, HEADCOUNT,
   longRunTarget, salaryRateToBalance, workforceShrink, FOREVER_BAR, TODAY_GAP,
@@ -47,13 +49,27 @@ export function Solved({ onLoadPackage }: { onLoadPackage?: LoadPackage }) {
           {PACKAGES.length} ways through it, {forEver} of which never reopen, and this page
           prices all of them the same way.
         </p>
-        <Note>
-          Same projection as the rest of the site, opened up at the growth rates. Every
-          package is solved rather than proposed: the figures are what the arithmetic
-          requires, not what anybody has recommended.
-        </Note>
       </div>
 
+      {/* THE SHORT VERSION: the single condition is in the standfirst, and this is the
+          reason no one lever meets it. It sat after the menu; a reader should have it
+          before choosing from the menu. */}
+      <ShortVersion>
+      <Section id="why" eyebrow="The reason there is no single lever"
+        title="Why every one of them moves at least two lines"
+        lede={<>Not one package on the board below pulls one lever, and that is arithmetic
+          rather than taste. Salaries and special education staffing are two thirds of the
+          budget between them &mdash; but only one of those is bargained, and insurance is
+          the highest-leverage line relative to its size. No one of them finishes the job,
+          and the price of leaving either one out is on this page in the currency it is
+          actually paid in.</>}>
+        <WhyCombination />
+      </Section>
+
+      </ShortVersion>
+
+      <div className="mx-auto max-w-6xl px-5">
+      <FullVersion what="every combination, priced">
       <Section id="packages" eyebrow="The menu"
         title="Combinations that hold, and for how long"
         lede={<>Filed by how long they keep the gap shut rather than by how good they are,
@@ -62,17 +78,6 @@ export function Solved({ onLoadPackage }: { onLoadPackage?: LoadPackage }) {
           asked for what &mdash; which is the only part of this that is a decision rather
           than arithmetic.</>}>
         <Packages onLoad={onLoadPackage} />
-      </Section>
-
-      <Section id="why" eyebrow="The reason there is no single lever"
-        title="Why every one of them moves at least two lines"
-        lede={<>Not one package on the board above pulls one lever, and that is arithmetic
-          rather than taste. Salaries and special education staffing are two thirds of the
-          budget between them &mdash; but only one of those is bargained, and insurance is
-          the highest-leverage line relative to its size. No one of them finishes the job,
-          and the price of leaving either one out is on this page in the currency it is
-          actually paid in.</>}>
-        <WhyCombination />
       </Section>
 
       <Section id="trade" eyebrow="The table the packages were drawn from"
@@ -116,7 +121,14 @@ export function Solved({ onLoadPackage }: { onLoadPackage?: LoadPackage }) {
               development a year &mdash; none of those are questions a curve can answer,
               and this page does not pretend otherwise.</>} />
         </div>
+        <Note>
+          Same projection as the rest of the site, opened up at the growth rates. Every
+          package is solved rather than proposed: the figures are what the arithmetic
+          requires, not what anybody has recommended.
+        </Note>
       </Section>
+      </FullVersion>
+      </div>
     </div>
   )
 }
