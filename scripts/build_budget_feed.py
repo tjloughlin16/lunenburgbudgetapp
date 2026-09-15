@@ -504,9 +504,9 @@ def season_outcome(fy, opens, closes, as_of):
         else:
             headline = 'Override questions: ' + ', '.join('%s %s' % (q['question'].lower(), q['result'].lower()) for q in overrides)
     elif closed:
-        headline = 'No override question this season'
+        headline = 'No override question this year'
     else:
-        headline = 'The season is under way'
+        headline = 'Planning is under way'
     return dict(closed=closed, atm_date=atm if closed else None, election_date=closes or None, questions=questions,
                 adopted=adopted, headline=headline)
 
@@ -556,7 +556,7 @@ def what_people_ask(state, outcome, calendar, entries, upcoming, notices, as_of,
             q('How big is %s deficit?' % label, '%s (%s, %s, %s)' % (d['amount_as_heard'], d['who'], d['board'], d['date']),
               'final' if outcome['closed'] else d['status'], d['video_url'], 'as heard in the recording')
         elif scope == 'school':
-            q('How big is the school deficit?', 'Not on the record yet this season.', 'not yet')
+            q('How big is the school deficit?', 'Not on the record yet this year.', 'not yet')
     # cuts
     if live:
         athletics = has(r'\b(athletic\w*|sports?|coach\w*)\b'); band = has(r'\b(band|music|chorus|art|arts|drama|theater)\b'); teachers = has(r'\b(teacher\w*|classroom|para\w*|aide\w*)\b')
@@ -568,10 +568,10 @@ def what_people_ask(state, outcome, calendar, entries, upcoming, notices, as_of,
         q('Are they cutting athletics this year?', few(athletics) if athletics else 'Not named among the cuts so far.', 'preliminary' if not outcome['closed'] else 'final', '#cuts')
         q('Band? Music? Arts?', few(band) if band else 'Not named among the cuts so far.', 'preliminary' if not outcome['closed'] else 'final', '#cuts')
     else:
-        q('What are they planning to cut?', 'No cut has been named on the record yet this season.', 'not yet')
+        q('What are they planning to cut?', 'No cut has been named on the record yet this year.', 'not yet')
     # status
     if outcome['closed']:
-        q('Is it final?', 'Yes — the season closed with the election on %s. %s.' % (outcome['election_date'], outcome['headline']), 'final', '#top')
+        q('Is it final?', 'Yes — planning closed with the election on %s. %s.' % (outcome['election_date'], outcome['headline']), 'final', '#top')
     else:
         t = latest.get('school/budget_total') or latest.get('town/budget_total')
         q('What’s the status — is it final?', ('The latest budget total on the record is %s, %s (%s, %s). Not final: nothing is until Town Meeting votes it.' % (t['amount_as_heard'], t['status'], t['board'], t['date'])) if t else 'No budget total has been put on the record yet; nothing is final until Town Meeting votes it.', 'preliminary' if t else 'not yet', t and t['video_url'])
@@ -597,7 +597,7 @@ def what_people_ask(state, outcome, calendar, entries, upcoming, notices, as_of,
     elif pet:
         q('Has anyone filed a petition for the budget?', 'A citizens’ petition came up at %s on %s: %s' % (pet[0]['board'], pet[0]['date'], (pet[0].get('text') or '')[:120]), 'on the record', pet[0].get('video_url') or pet[0]['page'])
     else:
-        q('Has anyone filed a petition for the budget?', 'None on the record this season.', 'not yet')
+        q('Has anyone filed a petition for the budget?', 'None on the record this year.', 'not yet')
     # open questions: budget topics our minutes marked as discussed only / deferred
     openq = [e for e in entries if e['kind'] == 'topic' and re.search(r'discuss|defer|tabled|no decision|informational|continued', (e.get('detail') or ''), re.I)][:5]
     if openq:

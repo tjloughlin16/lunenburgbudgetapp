@@ -163,7 +163,7 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
       <section aria-label="The budget feed" className="lg:hidden mb-8">
         <div className="flex items-baseline justify-between gap-3 mb-2">
           <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>The budget feed</h2>
-          <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>the FY28 season &rarr;</a>
+          <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>FY28 planning &rarr;</a>
         </div>
         {/* A door, not a note: the same card the four doors use, with an arrow, so it reads as
             a place to go. TJ: "make sure it looks clickable to navigate to a page." */}
@@ -171,7 +171,7 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
           <span className="text-[17px] font-bold leading-tight block" style={{ color: 'var(--series-cost)' }}>FY28, as it is built <span aria-hidden="true">&rarr;</span></span>
           <span className="block text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-muted)' }}>The gap, the cuts, the proposals, the override, Town Meeting — what is on the record so far and what has not come yet, read from the meetings daily.</span>
         </a>
-        <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Finished seasons: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
+        <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Past years: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
       </section>
       <section className="lg:hidden mb-8" aria-label="Meetings this week">
         <div className="flex items-baseline justify-between gap-3 mb-1">
@@ -280,7 +280,7 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
         <section aria-label="The budget feed" className="hidden lg:block">
           <div className="flex items-baseline justify-between gap-3 mb-2">
             <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>The budget feed</h2>
-            <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>the FY28 season &rarr;</a>
+            <a className="text-[12px] underline" href="/budget-feed" style={{ color: 'var(--series-cost)' }}>FY28 planning &rarr;</a>
           </div>
           {/* A door, not a note: the same card the four doors use, with an arrow, so it reads as
               a place to go. TJ: "make sure it looks clickable to navigate to a page." */}
@@ -288,7 +288,7 @@ export function Home({ onJump }: { onJump: (t: Tab) => void }) {
             <span className="text-[17px] font-bold leading-tight block" style={{ color: 'var(--series-cost)' }}>FY28, as it is built <span aria-hidden="true">&rarr;</span></span>
             <span className="block text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-muted)' }}>The gap, the cuts, the proposals, the override, Town Meeting — what is on the record so far and what has not come yet, read from the meetings daily.</span>
           </a>
-          <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Finished seasons: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
+          <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Past years: <a className="underline" href="/budget-feed/fy27">FY27</a> · <a className="underline" href="/budget-feed/fy26">FY26</a> · <a className="underline" href="/budget-feed/fy27-summer-governors-budget">the summer of 2026</a></p>
         </section>
         <section aria-label="Meetings this week" className="hidden lg:block">
           <div className="flex items-baseline justify-between gap-3 mb-2">

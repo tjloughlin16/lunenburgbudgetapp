@@ -316,7 +316,7 @@ function Tiers({ st, closed, decisions, outcome, finalText, finalNote, fy, meta 
       {/* ---- tier 2 and 3 together: THE STORY, one thread per thing, votes strong and what was said as the why */}
       <div className="card p-4 mt-4" style={{ borderTop: '4px solid var(--series-cost)' }}>
         <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--series-cost)' }}>{closed ? 'How it got there' : 'Where it stands, and how it got there'}</p>
-        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>One story per thing the season moves forward, newest first. <span style={{ color: 'var(--series-cost)' }}>A board vote</span> is the strong line; what was stated or proposed, by whom, is the reason it happened; <span style={{ color: 'var(--status-warning)' }}>a warning</span> is preliminary language — a prediction with no figure yet. A vote a later vote overwrote is struck through. None of this is final.</p>
+        <p className="text-xs mt-0.5 mb-2" style={{ color: 'var(--text-muted)' }}>One story per thing the year’s planning moves forward, newest first. <span style={{ color: 'var(--series-cost)' }}>A board vote</span> is the strong line; what was stated or proposed, by whom, is the reason it happened; <span style={{ color: 'var(--status-warning)' }}>a warning</span> is preliminary language — a prediction with no figure yet. A vote a later vote overwrote is struck through. None of this is final.</p>
         {story.length > 0 ? threads.map(th => <Thread key={th.id} th={th} />)
           : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing on the record yet. Figures, when they come, are as heard from machine captions; the second in the video is the record.</p>}
       </div>
@@ -362,10 +362,10 @@ function EpisodePage({ d, e, meetings }: { d: Payload; e: Payload['episodes'][nu
   const decisions = d.entries.filter(x => x.kind === 'vote' && x.date >= e.opens && (!e.closes || x.date <= e.closes))
   return (
     <ReportShell tab={TAB} title={e.label}
-      standfirst={`${e.closed ? 'Closed' : 'Under way'} — ${mmdd(e.opens)}${e.closes ? ` to ${mmdd(e.closes)}` : ' onward'}, outside the regular ${FY(Number(e.season_fy))} season. ${e.trigger}.`}
+      standfirst={`${e.closed ? 'Closed' : 'Under way'} — ${mmdd(e.opens)}${e.closes ? ` to ${mmdd(e.closes)}` : ' onward'}, outside the regular ${FY(Number(e.season_fy))} planning. ${e.trigger}.`}
       dataUrl={DATA}>
       <label className="flex items-center gap-2 mt-4 text-sm max-w-full">
-        <span style={{ color: 'var(--text-muted)' }}>Season</span>
+        <span style={{ color: 'var(--text-muted)' }}>Budget year</span>
         <select className="rounded-md px-2 py-1 text-sm min-w-0 max-w-full" style={{ background: 'var(--surface-3)', border: '1px solid var(--grid)' }}
           value={`/budget-feed/${e.id}`} onChange={ev => { window.location.href = ev.target.value }}>
           {d.seasons.map(s => <option key={s.path} value={s.path}>{s.label}</option>)}
@@ -377,7 +377,7 @@ function EpisodePage({ d, e, meetings }: { d: Payload; e: Payload['episodes'][nu
         const kinds = m.entries.reduce((acc, x) => { acc[x.kind] = (acc[x.kind] || 0) + 1; return acc }, {} as Record<string, number>)
         return <MeetingRow key={m.key} m={m} kinds={kinds} official={m.entries.length === 1 && m.entries[0].kind.startsWith('official')} />
       })}</div>
-      <p className="text-xs mt-8" style={{ color: 'var(--text-muted)' }}>The whole season: <a className="underline" href="/budget-feed">the budget feed</a>. As of {d.as_of}.</p>
+      <p className="text-xs mt-8" style={{ color: 'var(--text-muted)' }}>The whole year’s planning: <a className="underline" href="/budget-feed">the budget feed</a>. As of {d.as_of}.</p>
     </ReportShell>
   )
 }
@@ -405,15 +405,15 @@ export function BudgetFeed() {
   }
   if (episode) return <EpisodePage d={d} e={episode} meetings={meetings.filter(m => m.date >= episode.opens && (!episode.closes || m.date <= episode.closes))} />
   return (
-    <ReportShell tab={TAB} title={season ? `The ${FY(d.cycle_fy)} budget season` : `The budget feed — ${FY(d.cycle_fy)}`}
+    <ReportShell tab={TAB} title={season ? `${FY(d.cycle_fy)} budget planning` : `The budget feed — ${FY(d.cycle_fy)}`}
       standfirst={season
-        ? `A finished season — closed at the election of ${long(d.cycle_closes)}. Every line below links to the meeting or the document it is read from.`
+        ? `Finished — closed at the election of ${long(d.cycle_closes)}. Every line below links to the meeting or the document it is read from.`
         : `The ${FY(d.cycle_fy)} budget as it is built — what is on the record so far, what has not come yet, and every meeting behind it.`}
       dataUrl={season ? `/data/budget-feed-${season}.json` : DATA}>
       {/* THE SEASON. TJ: "budget-feed probably should have a dropdown for each season." The
           list is in the payload -- the live cycle and every replay that has been built. */}
       <label className="flex items-center gap-2 mt-4 text-sm max-w-full">
-        <span style={{ color: 'var(--text-muted)' }}>Season</span>
+        <span style={{ color: 'var(--text-muted)' }}>Budget year</span>
         <select className="rounded-md px-2 py-1 text-sm min-w-0 max-w-full" style={{ background: 'var(--surface-3)', border: '1px solid var(--grid)' }}
           value={(seg ? `/budget-feed/${seg}` : '/budget-feed')}
           onChange={e => { window.location.href = e.target.value }}>
@@ -428,7 +428,7 @@ export function BudgetFeed() {
       {d.episodes.map(e => (
         <section key={e.id} className="mt-8">
           <div className="flex flex-wrap items-baseline gap-x-3">
-            <h2 className="text-xl font-bold">{e.kind === 'regular' ? `The ${FY(Number(e.season_fy))} season` : e.label}</h2>
+            <h2 className="text-xl font-bold">{e.kind === 'regular' ? `${FY(Number(e.season_fy))} budget planning` : e.label}</h2>
             <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{e.closed ? 'closed' : 'under way'} · {mmddyy(e.opens)}{e.closes ? ` → ${mmddyy(e.closes)}` : ' →'}{e.kind === 'special' ? <> · <a className="underline" href={`/budget-feed/${e.id}`}>its own page</a></> : null}</span>
           </div>
           {e.kind === 'special' && <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{e.trigger}.</p>}
@@ -445,7 +445,7 @@ export function BudgetFeed() {
       {d.episodes.length === 0 && (
         <section className="mt-8">
           <div className="flex flex-wrap items-baseline gap-x-3">
-            <h2 className="text-xl font-bold">The {FY(d.cycle_fy)} season</h2>
+            <h2 className="text-xl font-bold">{FY(d.cycle_fy)} budget planning</h2>
             <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{d.outcome.closed ? 'closed' : 'under way'} · {mmddyy(d.cycle_opens)}{d.outcome.closed ? ` → ${mmddyy(d.cycle_closes)}` : ' →'}</span>
           </div>
           <SeasonBoard fy={d.cycle_fy} onLoaded={() => setHasBoard(true)}
@@ -510,7 +510,7 @@ export function BudgetFeed() {
       {/* Under a finished season's board the raw log is folded to one line: the story is
           above; this is the record it was read from. */}
       {hasBoard && !recentOpen ? (
-        <p className="text-sm mt-8" style={{ color: 'var(--text-secondary)' }}><button className="underline" onClick={() => setRecentOpen(true)}>Meeting by meeting</button> — the {d.entries.length.toLocaleString('en-US')} things said or voted about the budget across {d.counts.boards} boards’ meetings this season, each linked to the second in the video. The record the board above was read from.</p>
+        <p className="text-sm mt-8" style={{ color: 'var(--text-secondary)' }}><button className="underline" onClick={() => setRecentOpen(true)}>Meeting by meeting</button> — the {d.entries.length.toLocaleString('en-US')} things said or voted about the budget across {d.counts.boards} boards’ meetings this year, each linked to the second in the video. The record the board above was read from.</p>
       ) : <>
       <H2 id="recent">Meeting by meeting, newest first</H2>
       <p className="text-sm mt-1 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>One row per meeting; open it for what was said, each line linked to the second in the video. From our minutes where we have them, and from the town’s agendas and minutes where we do not.</p>

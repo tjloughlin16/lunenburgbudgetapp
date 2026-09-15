@@ -67,7 +67,7 @@ function Index({ d }: { d: Payload }) {
   )
   return (
     <ReportShell tab={TAB} title="The boards — each one, in one place"
-      standfirst={`${d.boards.length} boards and committees the town posts for. What is coming, what happened, every vote we have minutes for, where the time goes, and when budget season lands — one page each.`}
+      standfirst={`${d.boards.length} boards and committees the town posts for. What is coming, what happened, every vote we have minutes for, where the time goes, and when budget planning lands — one page each.`}
       dataUrl={DATA}>
       <H2>The three that set the school budget</H2>
       <div className="grid gap-3 mt-4 sm:grid-cols-3">{three.map(b => <Card key={b.slug} b={b} />)}</div>
