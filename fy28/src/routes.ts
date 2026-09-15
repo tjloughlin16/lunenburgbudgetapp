@@ -403,6 +403,17 @@ export const SLUG: Record<Tab, string> = {
 // They are looking for the solutions. The crisis page is the context."
 export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis'])
 
+/** Pages that are INSTRUMENTS, not reads: an index, a register, a search box, a
+ *  catalogue. Nobody reads a register top to bottom; they search it. So these carry no
+ *  short version, are not asked for one, and the reading-time indicator says
+ *  "Reference" (with the row count where there is a table) rather than minutes --
+ *  "92 min" on /what-we-cannot-answer was true of the words and false of the visit.
+ *  Read by components/ReadingTime.tsx and by scripts/build_reading_time.py. */
+export const REFERENCE: ReadonlySet<Tab> = new Set<Tab>([
+  'sources', 'reports', 'database', 'rates', 'gaps', 'recorded', 'boards', 'blog',
+  'search', 'agents', 'ask', 'dataroom', 'deeper', 'thisweek', 'budgetfeed',
+])
+
 /** Forms somebody might type or that an older link might carry. Never generated, always
  *  accepted — a link that has been shared once is out of your hands forever. */
 const ALIASES: Record<string, Tab> = {

@@ -127,6 +127,10 @@ def measure(route, path):
     crumb = CRUMB.search(raw)
     # The structural trail, as the page shows it -- PARENT in routes.ts, not the area.
     trail = ' > '.join(text(x).rstrip(' \u203a') for x in LI.findall(crumb.group(0))) if crumb else ''
+    # A REFERENCE page -- an index, a register, a search box -- says so on its breadcrumb
+    # row (REFERENCE in routes.ts, drawn by components/ReadingTime.tsx). Read off the
+    # build rather than off the route table, so this file and the page cannot disagree.
+    kind = 'reference' if crumb and re.search(r'>Reference(<| )', crumb.group(0)) else 'page'
     body = FURNITURE.sub(' ', raw)
     h1 = H1.search(body)
     h2s = [m.start() for m in H2.finditer(body)]
@@ -138,6 +142,7 @@ def measure(route, path):
     return {
         'route': '/' + route,
         'title': title,
+        'kind': kind,
         'breadcrumb': trail,
         'h1': text(h1.group(1)) if h1 else '',
         'words': total,
@@ -185,7 +190,8 @@ def budget(rows, previous, strict):
         elif n > int(before):
             fails.append('%s: short version grew from %s to %d words while over the %d budget -- it may only shrink'
                          % (r['route'], before, n, SHORT_BUDGET))
-    missing = [r['route'] for r in rows if r['short_words'] == '' and r['route'] not in ('/', '/not-found', '/search')]
+    missing = [r['route'] for r in rows
+               if r['short_words'] == '' and r['kind'] != 'reference' and r['route'] not in ('/', '/not-found')]
     if strict and missing:
         fails.append('%d page(s) declare no short version: %s' % (len(missing), ', '.join(missing)))
     return fails, missing

@@ -32,7 +32,7 @@ const SKIP = 'header, footer, nav[aria-label="Breadcrumb"], script, style, noscr
  *  Counted once however many marks nest. `null` when the page declares none. */
 const SHORT = '[data-short]'
 
-export function countWords(root: HTMLElement): { all: number; short: number | null } {
+export function countWords(root: HTMLElement): { all: number; short: number | null; rows: number } {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode: node => {
       const el = node.parentElement
@@ -48,7 +48,8 @@ export function countWords(root: HTMLElement): { all: number; short: number | nu
     all += n
     if (t.parentElement!.closest(SHORT)) short += n
   }
-  return { all, short: root.querySelector(SHORT) ? short : null }
+  return { all, short: root.querySelector(SHORT) ? short : null,
+           rows: root.querySelectorAll('tbody tr').length }
 }
 
 export function label(words: number): string {
@@ -59,8 +60,8 @@ export function label(words: number): string {
 }
 
 /** `tab` only so the count restarts when the page changes; the observer does the rest. */
-export function ReadingTime({ tab }: { tab: string }) {
-  const [words, setWords] = useState<{ all: number; short: number | null } | null>(null)
+export function ReadingTime({ tab, reference }: { tab: string; reference?: boolean }) {
+  const [words, setWords] = useState<{ all: number; short: number | null; rows: number } | null>(null)
 
   useEffect(() => {
     const root = document.getElementById('root')
@@ -72,7 +73,7 @@ export function ReadingTime({ tab }: { tab: string }) {
     const measure = () => {
       if (!live) return
       const c = countWords(root)
-      setWords(prev => (prev && prev.all === c.all && prev.short === c.short) ? prev : c)
+      setWords(prev => (prev && prev.all === c.all && prev.short === c.short && prev.rows === c.rows) ? prev : c)
     }
     const later = () => { window.clearTimeout(timer); timer = window.setTimeout(measure, 250) }
     measure()
@@ -83,6 +84,17 @@ export function ReadingTime({ tab }: { tab: string }) {
 
   if (words === null) return null
   const n = (x: number) => x.toLocaleString('en-US')
+  // AN INSTRUMENT IS NOT A READ. A register, an index, a search box: the honest label is
+  // what it is and how big, not how long it would take to read every row.
+  if (reference) {
+    return (
+      <span data-no-count className="text-[12px] tnum whitespace-nowrap shrink-0"
+        style={{ color: 'var(--text-muted)' }}
+        title={`A reference page, for looking things up rather than reading through: ${n(words.all)} words${words.rows ? `, ${n(words.rows)} table rows` : ''}`}>
+        Reference{words.rows ? <> &middot; <span style={{ color: 'var(--text-secondary)' }}>{n(words.rows)} rows</span></> : null}
+      </span>
+    )
+  }
   // TWO FIGURES WHERE THE PAGE HAS TWO LAYERS. "Short version: 3 min · In full: 47 min"
   // tells a reader what they are committing to, and a page that can only say "In full"
   // is a page with no short version -- which is the shame line, on purpose.
