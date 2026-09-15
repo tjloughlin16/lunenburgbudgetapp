@@ -1,0 +1,8 @@
+id,order,label,question,match,kinds,seasons,note
+override-tiers,5,The two override tiers,"Why two questions on the ballot — a core tier and a restorative tier — and how each was sized?","\b(tier|tiers|tiered|two-tier|scenario c|scenario d)\b",,2027,"FY27: Tier 1 $2.4M (scenario C, core) and Tier 2 $3.3M (restorative); both failed 16 May 2026. Added by TJ, 14 September 2026"
+gap,10,The gap,How big is the shortfall — and how did we land on that number?,\b(deficit|gap|shortfall)\b,deficit,,A figure a later vote overwrites: struck through on the page
+override,20,The override,Is there an override — how much — and how did it get to that?,\boverride\b,override,,A figure a later vote overwrites: struck through on the page
+cuts,30,The cuts,What is being cut — and how did each cut get onto the list?,\b(cut|cuts|reduc\w*|layoff\w*|eliminat\w*|attrition)\b,cut,,Every cut the extraction filed as voted
+warrant-articles,40,Warrant articles,Which articles are going to Town Meeting?,\b(warrant|article)\b,,,
+state-aid,50,"State aid, free cash and the levy",What is the state sending — and what is the town drawing on?,\b(free cash|state aid|chapter 70|levy|stabili[sz]ation|cherry sheet)\b,state_aid;free_cash;levy,,
+budget-total,60,The budget total,What is the budget itself — the omnibus and the plans inside it?,\bbudget\b,budget_total,,Many things share this word; nothing here is struck through
