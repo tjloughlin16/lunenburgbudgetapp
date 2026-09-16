@@ -56,8 +56,9 @@ export function installBeacon(): void {
   const token = (analytics as { cfBeaconToken?: string }).cfBeaconToken
   if (!token || import.meta.env.DEV || typeof document === 'undefined') return
   if (document.querySelector('script[data-cf-beacon]')) return
+  // The snippet Cloudflare hands out loads the beacon as a module; match it.
   const s = document.createElement('script')
-  s.defer = true
+  s.type = 'module'
   s.src = 'https://static.cloudflareinsights.com/beacon.min.js'
   s.setAttribute('data-cf-beacon', JSON.stringify({ token }))
   document.head.appendChild(s)
