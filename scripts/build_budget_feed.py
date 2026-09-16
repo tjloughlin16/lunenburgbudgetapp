@@ -399,7 +399,7 @@ def budget_state(as_of, episode=None, threads=()):
     # WHO SAID IT RANKS THE FIGURE. A deficit the superintendent or business administrator
     # stated outranks a member's, which outranks a resident's at public comment: the
     # latest statement wins only among the highest rank that has spoken this season.
-    RANK = [(r'superintendent|business administrator|town manager|finance director|accountant|assistant town manager', 3),
+    RANK = [(r'superintendent|business administrator|town manager|finance director|accountant|assistant town manager|budget (book|slides|message|document|presentation)|district\'s|town\'s', 3),
             (r'chair', 2), (r'member|committee', 1)]
     def rank(who):
         w = (who or '').lower()
@@ -409,16 +409,21 @@ def budget_state(as_of, episode=None, threads=()):
         # A dollar figure, or a count of millions: a bare percentage or a mangled number is not a budget figure.
         return bool(re.search(r'\$\s?\d{1,3}(,\d{3})+(\.\d+)?|\$\s?\d+(\.\d+)?\s?(million|m|k|thousand)\b|\b\d+(\.\d+)?\s?million\b', a, re.I))
     RESTORE = re.compile(r'\b(restor\w*|reinstat\w*|add(?:ed|ing)?\b|increas\w*|expand\w*|new position|hire|bring back|fund(?:ed|ing)? back|return)', re.I)
+    # A DOCUMENT'S STATE (write_document_budget_state.py) reads with the same code: its
+    # `page` is the document itself and a citation opens the document at the page the
+    # figure is printed on, where a meeting's opens the video at the second.
+    def cite(d, t):
+        return '%s#page=%d' % (d['video_url'], t) if d.get('document') else '%s&t=%ds' % (d['video_url'], t)
     for d in docs:
-        page = '/meeting-minutes/%s/%s-%s' % (d['board_slug'], d['meeting_date'], d['video_id'])
-        base = dict(board=d['board'], board_slug=d['board_slug'], date=d['meeting_date'], page=page)
+        page = d['video_url'] if d.get('document') else '/meeting-minutes/%s/%s-%s' % (d['board_slug'], d['meeting_date'], d['video_id'])
+        base = dict(board=d['board'], board_slug=d['board_slug'], date=d['meeting_date'], page=page, document=bool(d.get('document')))
         for st in d['state'].get('statements') or []:
             if st['kind'] == 'other' or not well_formed(st.get('amount_as_heard')) or not (cycle_start_ <= d['meeting_date'] <= as_of):
                 continue
             if not keep(d['meeting_date'], st.get('fiscal_year')):
                 continue
             key = (st['scope'], st['kind'])
-            row = dict(base, **dict(st, statement=tally_only(st['statement'])), thread=thread_of(threads, st['statement'], st['kind']), video_url='%s&t=%ds' % (d['video_url'], st['t']), rank=rank(st.get('who')))
+            row = dict(base, **dict(st, statement=tally_only(st['statement'])), thread=thread_of(threads, st['statement'], st['kind']), video_url=cite(d, st['t']), rank=rank(st.get('who')))
             history[key].append(row)
             if key not in latest or row['rank'] >= latest[key]['rank']:
                 latest[key] = row
@@ -442,7 +447,7 @@ def budget_state(as_of, episode=None, threads=()):
             if RESTORE.search(c['item']) and not re.search(r'\b(cut|reduc|eliminat)', c['item'], re.I) and c['status'] not in ('restored', 'withdrawn'):
                 c = dict(c, status='restored')
             k = (c['scope'], norm_item(c['item']))
-            row = dict(base, **dict(c, item=tally_only(c['item'])), thread=thread_of(threads, c['item'], 'cut'), rank=rank(c.get('who')), video_url='%s&t=%ds' % (d['video_url'], c['t']), key=norm_item(c['item']))
+            row = dict(base, **dict(c, item=tally_only(c['item'])), thread=thread_of(threads, c['item'], 'cut'), rank=rank(c.get('who')), video_url=cite(d, c['t']), key=norm_item(c['item']))
             if k not in cuts:
                 added.append(row)
             elif cuts[k]['status'] != c['status']:
@@ -459,10 +464,10 @@ def budget_state(as_of, episode=None, threads=()):
         for w in d['state'].get('warnings') or []:
             if not keep(d['meeting_date'], w.get('fiscal_year')) or not (cycle_start_ <= d['meeting_date'] <= as_of):
                 continue
-            warnings.append(dict(board=d['board'], board_slug=d['board_slug'], date=d['meeting_date'],
-                                 page='/meeting-minutes/%s/%s-%s' % (d['board_slug'], d['meeting_date'], d['video_id']),
+            warnings.append(dict(board=d['board'], board_slug=d['board_slug'], date=d['meeting_date'], document=bool(d.get('document')),
+                                 page=d['video_url'] if d.get('document') else '/meeting-minutes/%s/%s-%s' % (d['board_slug'], d['meeting_date'], d['video_id']),
                                  **dict(w, prediction=tally_only(w['prediction'])), thread=thread_of(threads, '%s %s' % (w.get('about') or '', w['prediction'])),
-                                 video_url='%s&t=%ds' % (d['video_url'], w['t'])))
+                                 video_url=cite(d, w['t'])))
     warnings.sort(key=lambda r: (r['date'], r['t']), reverse=True)
     cut_list = sorted(cuts.values(), key=lambda r: (r['scope'], r['status'] in ('restored', 'withdrawn'), r['date']), reverse=False)
     live = [r for r in cut_list if r['status'] not in ('restored', 'withdrawn')]

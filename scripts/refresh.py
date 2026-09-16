@@ -302,6 +302,12 @@ def main():
     # refused. TJ: "look for new documents posted from the school committee (budget
     # related), as well as on the town pages from the areas we've found."
     py('watch_documents.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
+    # 4a. A NEW BUDGET DOCUMENT IS READ THE MORNING IT APPEARS. TJ, 16 September 2026:
+    # "anytime a new doc is 'found', we need to identify if it impacts the budget feed and
+    # process it right then and there." One read per document, page-cited, into the same
+    # budget-state shape the feed and the season boards already draw from.
+    if not a.dry_run:
+        py('write_document_budget_state.py', '--new', '--as-of', a.as_of, '--limit', '3', check=False)
 
     # 3c. The town's and the community's feeds -- news, alerts, registrations. Linked and
     # attributed, never republished (QUEUE 13, 14).

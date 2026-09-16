@@ -97,7 +97,9 @@ def resolve(ev):
                 label='%s, %s%s' % (d['board'], date, (' · %d:%02d' % (t // 60, t % 60)) if t else ''))
 
 
-RANK = [(r'superintendent|business administrator|business manager|town manager|finance director|accountant|assistant town manager', 3), (r'chair', 2), (r'member|committee|board', 1)]
+# A staff-authored DOCUMENT -- the budget book, the slides, the manager's message -- ranks
+# with the staff who wrote it (write_document_budget_state.py names the author by role).
+RANK = [(r'superintendent|business administrator|business manager|town manager|finance director|accountant|assistant town manager|budget (book|slides|message|document|presentation)|district\'s|town\'s', 3), (r'chair', 2), (r'member|committee|board', 1)]
 
 
 def rank(who):
@@ -119,24 +121,27 @@ def live_rows(fy, opens, have):
     A proposed row already in the file (same evidence) is not proposed again."""
     auto, proposed = [], []
     seen = {r['evidence'] for r in have}
-    files = sorted(f for f in glob.glob(os.path.join(STATE, '*', '*.json')) if os.path.basename(f)[:10] >= opens)
-    for f in files:
-        d = json.load(open(f, encoding='utf-8'))
+    # By the file's own date, not its name: a document's file is named for the document.
+    loaded = [(f, json.load(open(f, encoding='utf-8'))) for f in sorted(glob.glob(os.path.join(STATE, '*', '*.json')))]
+    for f, d in sorted((x for x in loaded if x[1]['meeting_date'] >= opens), key=lambda x: x[1]['meeting_date']):
         board = os.path.basename(os.path.dirname(f))
         base = dict(scope='school', fte='', date=d['meeting_date'], note='')
+        # A document's rows cite the document (`doc:` -- resolve() already reads it); a
+        # meeting's cite the board, date and second.
+        evidence = (lambda t: 'doc:' + d['source']['document']) if d.get('document') else (lambda t: '%s/%s@%d' % (board, d['meeting_date'], t))
         for w in d['state'].get('warnings') or []:
-            ev = '%s/%s@%d' % (board, d['meeting_date'], w['t'])
+            ev = evidence(w['t'])
             auto.append(dict(base, block='cuts', item=w['about'], scope=w.get('scope') or 'school', status='warned', figure='', who=w['who'],
                              why=w['prediction'] + (' — ' + w['condition'] if w.get('condition') else ''), evidence=ev))
         for st in d['state'].get('statements') or []:
-            ev = '%s/%s@%d' % (board, d['meeting_date'], st['t'])
+            ev = evidence(st['t'])
             if ev in seen or rank(st.get('who')) < 2 or st['status'] == 'withdrawn':
                 continue
             if st['kind'] in ('deficit', 'override', 'budget_total') and st.get('amount_as_heard'):
                 proposed.append(dict(base, block='deficit' if st['kind'] == 'deficit' else 'override', item=st['statement'][:80], scope=st['scope'],
                                      status='path' if st['kind'] == 'deficit' else 'step', figure=st['amount_as_heard'], who=st['who'], why=st['statement'], evidence=ev))
         for c in d['state'].get('cuts') or []:
-            ev = '%s/%s@%d' % (board, d['meeting_date'], c['t'])
+            ev = evidence(c['t'])
             if ev in seen or rank(c.get('who')) < 2:
                 continue
             proposed.append(dict(base, block='cuts', item=c['item'], scope=c['scope'], status='proposed' if c['status'] in ('proposed', 'announced') else c['status'],
