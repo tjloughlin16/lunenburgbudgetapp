@@ -115,7 +115,7 @@ Two layers, neither with a cookie or an identifier -- `fy28/src/lib/track.ts`:
 2. **First-party events** -- `view` (with landing flag and referrer host), `door`,
    `fold_open`, `exit`, `search_zero`, `question` -- POSTed with `sendBeacon` to
    `functions/api/event.js`, written to the Analytics Engine dataset
-   `lunenburg_site_events` (binding `EVENTS` in `wrangler.jsonc`; Analytics Engine, not
+   `lburg_usage_data` (binding `EVENTS` in `wrangler.jsonc`; Analytics Engine, not
    D1, so the search sync and question inbox keep their write budget). Live the moment
    the next deploy carries the binding. `scripts/report_site_events.py` prints the funnel;
    **it needs an API token with Account Analytics: Read** in `CF_ANALYTICS_TOKEN` --

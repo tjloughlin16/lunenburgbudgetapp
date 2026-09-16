@@ -42,9 +42,11 @@
   // Analytics Engine rather than D1 on purpose: its own write budget, so a busy launch
   // day cannot take the search sync or the question inbox dark. No cookie, no
   // identifier; see src/lib/track.ts. Query with scripts/report_site_events.py.
-  "analytics_engine_datasets": [
-    { "binding": "EVENTS", "dataset": "lunenburg_site_events" }
-  ],
+  // PARKED 16 Sep 2026: the account has Analytics Engine on and the dataset exists, yet
+  // `wrangler pages deploy` still answers "You need to enable Analytics Engine" -- so the
+  // binding is out until a deploy with it succeeds, or the refresh would fail daily.
+  // To retry: uncomment the line below, `npx wrangler pages deploy`, and commit if it lands.
+  // "analytics_engine_datasets": [ { "binding": "EVENTS", "dataset": "lburg_usage_data" } ],
   "r2_buckets": [
     { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
   ],
@@ -58,9 +60,11 @@
         { "binding": "SEARCH", "database_name": "lunenburg-search",
           "database_id": "b49eb3b2-eb17-4b3a-812e-f4ba09ec7d02" }
       ],
-      "analytics_engine_datasets": [
-        { "binding": "EVENTS", "dataset": "lunenburg_site_events" }
-      ],
+      // PARKED 16 Sep 2026: the account has Analytics Engine on and the dataset exists, yet
+      // `wrangler pages deploy` still answers "You need to enable Analytics Engine" -- so the
+      // binding is out until a deploy with it succeeds, or the refresh would fail daily.
+      // To retry: uncomment the line below, `npx wrangler pages deploy`, and commit if it lands.
+      // "analytics_engine_datasets": [ { "binding": "EVENTS", "dataset": "lburg_usage_data" } ],
       "r2_buckets": [
         { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
       ]
@@ -74,9 +78,11 @@
         { "binding": "SEARCH", "database_name": "lunenburg-search",
           "database_id": "b49eb3b2-eb17-4b3a-812e-f4ba09ec7d02" }
       ],
-      "analytics_engine_datasets": [
-        { "binding": "EVENTS", "dataset": "lunenburg_site_events" }
-      ],
+      // PARKED 16 Sep 2026: the account has Analytics Engine on and the dataset exists, yet
+      // `wrangler pages deploy` still answers "You need to enable Analytics Engine" -- so the
+      // binding is out until a deploy with it succeeds, or the refresh would fail daily.
+      // To retry: uncomment the line below, `npx wrangler pages deploy`, and commit if it lands.
+      // "analytics_engine_datasets": [ { "binding": "EVENTS", "dataset": "lburg_usage_data" } ],
       "r2_buckets": [
         { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
       ]

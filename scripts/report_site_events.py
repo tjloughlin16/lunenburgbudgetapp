@@ -32,7 +32,7 @@ import sys
 import urllib.request
 
 ACCOUNT = '9221b607bd1ade7b08a96ab614b6edce'
-DATASET = 'lunenburg_site_events'
+DATASET = 'lburg_usage_data'
 URL = 'https://api.cloudflare.com/client/v4/accounts/%s/analytics_engine/sql' % ACCOUNT
 # blob1 name · blob2 page · blob3 detail · blob4 referrer host · blob5 country · blob6 landing
 
