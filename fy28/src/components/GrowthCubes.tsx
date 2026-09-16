@@ -49,23 +49,29 @@ function shade(hex: string, f: number): string {
 
 type Block = { u: number; v: number; h: number; w: number; d: number; tone: number; top: string; year: number }
 
-/** LAY THE TOWN OUT WITHOUT A GRID. TJ: "We're a farmtown. It has to be scattered
- *  looking." Buildings are dropped at random on the ground, rejecting any that would sit
- *  on another, and the colours are kept apart by RADIUS: today's town is the white
- *  cluster in the middle, and each year's additions form the next ring out, so the eye
- *  reads the growth as growth -- the town getting bigger around what is already there.
- *  The ring radii come from the counts: each band has the area its buildings need at
- *  one density, so a ring of 28 is visibly the same size as the next ring of 28 and
- *  the centre of 51 is visibly bigger than either. */
+/** LAY THE TOWN OUT WITHOUT A GRID, LEFT TO RIGHT. TJ: "We're a farmtown. It has to be
+ *  scattered looking" -- and then: "starting with today on the left, and growing to the
+ *  right will make the point more." It does: a reader's eye already reads left-to-right
+ *  as time, and six clusters side by side let the size of five years' growth be seen
+ *  against the size of the town that exists, which is the whole finding.
+ *
+ *  Each group is a loose blob whose radius comes from its count at one density, so
+ *  today's 51 is visibly bigger than any one year's 28 and the five years together are
+ *  visibly bigger than today. The blobs overlap a little at the edges, so it reads as
+ *  one town spreading along a corridor rather than six piles. Buildings are dropped at
+ *  random inside each blob and rejected if they would sit on another. */
 const DENSITY = 0.42      // buildings per square unit of ground
 const MIN_GAP = 1.15      // centre-to-centre, in ground units, before two overlap
 
 function layout(): Block[] {
   const r = rng(20260916)
   const counts = [BASE, ...Array(YEARS).fill(PER_YEAR) as number[]]
-  const radii: number[] = [0]
-  let cum = 0
-  for (const n of counts) { cum += n; radii.push(Math.sqrt(cum / (DENSITY * Math.PI))) }
+  const radii = counts.map(n => Math.sqrt(n / (DENSITY * Math.PI)))
+  // Centres along the ground's diagonal (u up, v down), which is screen-right in this
+  // projection; each blob starts where the last one's edge is, less a little overlap.
+  const centres: number[] = []
+  let edge = 0
+  radii.forEach((rad, k) => { const c = k === 0 ? 0 : edge + rad - 0.6; centres.push(c); edge = c + rad })
   const placed: Block[] = []
   // Less like cubes, more like buildings: long low ones, tall thin ones, and a little
   // tonal drift per building so no two are the same colour.
@@ -73,18 +79,18 @@ function layout(): Block[] {
     const long = r() < 0.3
     return { h: 0.55 + r() * (r() < 0.2 ? 2.2 : 1.1), w: long ? 0.9 + r() * 0.7 : 0.4 + r() * 0.5, d: long ? 0.4 + r() * 0.3 : 0.4 + r() * 0.5, tone: 0.93 + r() * 0.1 }
   }
-  counts.forEach((n, band) => {
-    const r0 = radii[band], r1 = radii[band + 1]
+  counts.forEach((n, k) => {
     let done = 0, tries = 0
     while (done < n && tries < n * 400) {
       tries++
-      // Uniform in the annulus by area, with a soft edge so rings blend rather than snap.
-      const rr = Math.sqrt(r0 * r0 + r() * (r1 * r1 - r0 * r0)) + (r() - 0.5) * 0.35
+      // Uniform in the disc by area, with a soft edge so neighbouring years mingle.
+      const rr = Math.sqrt(r()) * radii[k] + (r() - 0.5) * 0.5
       const a = r() * Math.PI * 2
-      const u = rr * Math.cos(a), v = rr * Math.sin(a)
+      // The corridor runs along (u, -v): a step of t along it is u += t/√2, v -= t/√2.
+      const t = centres[k] + rr * Math.cos(a), n2 = rr * Math.sin(a) * 0.85
+      const u = (t + n2) / Math.SQRT2, v = (-t + n2) / Math.SQRT2
       if (placed.every(p => Math.hypot(p.u - u, p.v - v) >= MIN_GAP)) {
-        const top = band === 0 ? TODAY.top : YEAR_HUES[band - 1]
-        placed.push({ u, v, ...shape(), top, year: band })
+        placed.push({ u, v, ...shape(), top: k === 0 ? TODAY.top : YEAR_HUES[k - 1], year: k })
         done++
       }
     }
@@ -114,7 +120,7 @@ export function GrowthCubes() {
       <div className="overflow-x-auto" style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}>
         <svg viewBox={`${minX} ${minY} ${maxX - minX} ${maxY - minY}`} className="w-full block"
           style={{ maxHeight: '50vh' }} preserveAspectRatio="xMidYMid meet" role="img"
-          aria-label={`Today's commercial base is about ${BASE} typical developments, the white cluster in the middle; holding the gap adds about ${PER_YEAR} more a year for five years, each year a ring further out.`}>
+          aria-label={`Today's commercial base is about ${BASE} typical developments, the white cluster on the left; holding the gap adds about ${PER_YEAR} more a year for five years, each year a cluster further right.`}>
           {ordered.map((b, n) => {
             // A box of footprint w x d, h storeys, centred at (u, v). No outlines: the
             // three faces at three shades are the silhouette, which is what a building
@@ -151,7 +157,7 @@ export function GrowthCubes() {
         ))}
       </div>
       <figcaption className="text-[12.5px] mt-2 max-w-3xl leading-snug" style={{ color: 'var(--text-muted)' }}>
-        Each building is one typical Lunenburg development, about {usdShort(MIX)} of assessed value in the model&rsquo;s own mix. The white cluster is everything commercial, industrial and personal the town has today &mdash; about {BASE} of them. Each ring out is one year of what would have to be added to hold the gap for five years: about {PER_YEAR} a year, {PER_YEAR * YEARS} in all. A projection, drawn to count; the layout is invented.
+        Each building is one typical Lunenburg development, about {usdShort(MIX)} of assessed value in the model&rsquo;s own mix. The white cluster on the left is everything commercial, industrial and personal the town has today &mdash; about {BASE} of them. Each cluster to its right is one year of what would have to be added to hold the gap for five years: about {PER_YEAR} a year, {PER_YEAR * YEARS} in all. A projection, drawn to count; the layout is invented.
       </figcaption>
     </figure>
   )
