@@ -193,7 +193,7 @@ function Card({ title, body, tone, link, to }: {
 }) {
   return (
     <div className="card p-5">
-      <h3 className="text-[15px] font-bold mb-2"
+      <h3 className="text-[15px] font-bold mb-2" data-point=""
         style={{ color: tone === 'good' ? 'var(--status-good)' : undefined }}>{title}</h3>
       <p className="text-[13px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
         {body}

@@ -929,8 +929,8 @@ def build_conclusions(age, hh, ten, inc, gap, rk, pp, ch, chg):
 
     rows.append(conclusion(
         id='ordinary-on-income-near-the-bottom-on-spending',
-        claim='Ordinary income for Massachusetts, and %s districts on spending for each '
-              'pupil.' % pp['last']['rank_text'],
+        claim='Ordinary income (%s Massachusetts towns); %s districts on spending per pupil.'
+              % (rk['rank_text'], pp['last']['rank_text']),
         so_what='Both are true at once, and this town has not had the two put side by '
                 'side before.',
         figure='overlap', bearing='sizes', kind='measured',

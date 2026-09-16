@@ -11,7 +11,7 @@ export function Section({ id, eyebrow, title, lede, children }: {
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: 'var(--text-muted)' }}>{eyebrow}</p>
         )}
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">{title}</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3" data-point="">{title}</h2>
         {lede && (
           <div className="max-w-3xl text-[15px] leading-relaxed mb-8"
             style={{ color: 'var(--text-secondary)' }}>{lede}</div>

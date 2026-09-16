@@ -361,7 +361,7 @@ export function UpshotMore() {
           <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
             style={{ color: 'var(--text-muted)' }}>What all of it adds up to</p>
           <h3 className="text-[19px] sm:text-2xl font-bold tracking-tight leading-snug
-                         max-w-3xl">
+                         max-w-3xl" data-point="">
             There is no painless version, and there is no single one
           </h3>
           <p className="text-[15px] leading-relaxed mt-3 max-w-3xl">
@@ -487,7 +487,7 @@ function Claim({ n, figure, figureNote, head, href, tone, eyebrow, wide, cites, 
             )}
           </span>
         </div>
-        <h3 className="text-[16px] font-bold leading-snug mb-2">{head}</h3>
+        <h3 className="text-[16px] font-bold leading-snug mb-2" data-point="" data-figure={figure}>{head}</h3>
         <p className="text-[13px] leading-relaxed flex-1"
           style={{ color: 'var(--text-secondary)' }}>{children}</p>
         <a href={abs(href)} className="text-[11px] font-semibold mt-3 no-underline

@@ -62,8 +62,71 @@ NUMERIC = re.compile(r'^[\s$€£+\-−~≈]*[\d.,]+\s*(%|×|x|k|M|FTE|pts|yr|mi
 CARD_CLASS = re.compile(r'(^|\s)card(\s|$)')
 
 
+class Marked(HTMLParser):
+    """Inside any `data-short` element, collect every `[data-point]` -- the claim of a
+    Conclusions card, the headline of an Insight, the text under a Stat, a crisis-page
+    card's head. The components MARK their points; nothing here guesses from a class.
+
+    TJ, 16 September 2026, reading the first version of this table, which had guessed:
+    "if you read them as is, it'll be clear that they don't speak for themselves". It
+    had collected ordinal badges ("01"), a nav row, a basis line and bare section
+    headings as points. A heading is not a point and a badge is not a figure, and the
+    only way to know which text on a card is the claim is for the card to say so.
+
+    A point marked with `data-figure` is rendered as "figure — text" unless the text
+    already carries the figure."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.depth = 0
+        self.stack = []      # (tag, is_short, is_point)
+        self.buf = None      # (figure, [texts]) while inside a point
+        self.points = []
+        self.stats = []
+        self.figures = []
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if 'data-short' in a:
+            self.depth += 1
+        is_point = self.depth > 0 and 'data-point' in a and self.buf is None
+        if is_point:
+            self.buf = (a.get('data-figure') or '', [], a.get('data-point') == 'stat', a.get('data-figure-bare') or a.get('data-figure') or '')
+        self.stack.append((tag, 'data-short' in a, is_point))
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs); self.handle_endtag(tag)
+
+    def handle_data(self, data):
+        if self.buf is not None:
+            self.buf[1].append(data)
+
+    def handle_endtag(self, tag):
+        while self.stack:
+            t, was_short, is_point = self.stack.pop()
+            if is_point and self.buf is not None:
+                fig, parts, is_stat, bare = self.buf
+                text = re.sub(r'\s+', ' ', ''.join(parts)).strip()
+                self.buf = None
+                if text:
+                    if fig:
+                        self.figures.append(fig)
+                    # Token-bounded: a figure of 9 is not "in" a label that says 29.
+                    carries = bool(bare) and re.search(r'(?<![\d.,])' + re.escape(bare) + r'(?!\d|[.,]\d)', text, re.I) is not None
+                    line = text if not fig or carries else '%s — %s' % (fig, text)
+                    # A STAT is a metric and a label, not a claim. It stands as a point
+                    # only on a page whose short version is nothing but stats.
+                    (self.stats if is_stat else self.points).append(line)
+            if was_short:
+                self.depth -= 1
+            if t == tag:
+                break
+
+
 class Points(HTMLParser):
-    """Walk one page; inside any `data-short` element, collect points and figures.
+    """THE FALLBACK, for a short version whose points are not marked: a hand-written
+    page or a markdown analysis. Inside any `data-short` element, collect paragraphs'
+    first sentences and bold list items. Headings are NOT points (see Marked).
 
     A point found inside a `.card` is prefixed with that card's headline figure -- the
     Insight and Conclusions cards set the number above a claim that reads as a fragment
@@ -102,9 +165,7 @@ class Points(HTMLParser):
             self.row.append(' ')
         kind = None
         if self.depth > 0 and self.buf is None:
-            if tag in ('h2', 'h3', 'h4'):
-                kind = 'point'
-            elif tag == 'p' and CLAIM_CLASS.search(cls) and not LABEL_CLASS.search(cls):
+            if tag == 'p' and CLAIM_CLASS.search(cls) and not LABEL_CLASS.search(cls):
                 kind = 'point'
             elif tag == 'p' or (tag == 'li' and self.in_body):
                 kind = 'para'
@@ -191,14 +252,20 @@ def rows():
         path = os.path.join(DIST, (route.strip('/') or 'index') + '.html')
         if not os.path.exists(path):
             continue
+        src = open(path, encoding='utf-8', errors='replace').read()
+        m = Marked()
+        m.feed(src)
         p = Points()
-        p.feed(open(path, encoding='utf-8', errors='replace').read())
-        points = dedupe(p.points)
+        p.feed(src)
+        marked = dedupe(m.points) or dedupe(m.stats)
+        points = marked if marked else dedupe(p.points)
+        if marked:
+            p.figures = m.figures
         # A short version made of figures alone (the story page) or of plain prose (four
         # sentences) has no claim lines; fall back to the figure rows, then the paragraphs.
-        if len(points) < 3 and p.figrows:
+        if not marked and len(points) < 3 and p.figrows:
             points = dedupe(points + p.figrows)
-        if len(points) < 3 and p.paras:
+        if not marked and len(points) < 3 and p.paras:
             points = dedupe(points + p.paras)[:6]
         figures = dedupe(p.figures)
         out.append({

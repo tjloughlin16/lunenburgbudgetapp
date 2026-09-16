@@ -121,7 +121,7 @@ export function Stat({ value, tone, children }: {
     <div className="avoid-break">
       <div className="text-3xl font-bold tracking-tight tnum"
         style={tone ? { color: tone } : undefined}>{value}</div>
-      <div className="text-[13px] leading-snug mt-1 max-w-[15rem]"
+      <div className="text-[13px] leading-snug mt-1 max-w-[15rem]" data-point="stat" data-figure={value}
         style={{ color: 'var(--text-secondary)' }}>{children}</div>
     </div>
   )
@@ -238,7 +238,7 @@ export function Insight({ n, tone, figure, headline, children }: {
       )}
       <p className={figure !== undefined
         ? 'text-[15.5px] font-semibold leading-snug mt-2'
-        : 'text-[17px] font-bold leading-snug'}>{headline}</p>
+        : 'text-[17px] font-bold leading-snug'} data-point="" data-figure={figure}>{headline}</p>
       <div className={figure !== undefined
         ? 'text-[13.5px] leading-relaxed mt-2'
         : 'text-[14px] leading-relaxed mt-2.5'}
@@ -348,7 +348,7 @@ export function Conclusions({ rows, collapse, reportUrl, noAsk, short = true }: 
                 and what conclusion to draw from it without needing a full paragraph of
                 context for each." The two lines are length-capped in conclusions.py, so a
                 card that grows a third idea fails the build rather than the eye. */}
-            <p className="text-[15.5px] font-semibold leading-snug mt-2">{c.claim}</p>
+            <p className="text-[15.5px] font-semibold leading-snug mt-2" data-point="" data-figure={fig ? (unit ? `${fig} ${unit}` : fig) : undefined} data-figure-bare={fig}>{c.claim}</p>
             <p className="text-[14px] leading-snug mt-1.5"
               style={{ color: 'var(--text-secondary)' }}>{c.so_what}</p>
             {collapse && href ? (
