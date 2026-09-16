@@ -3,8 +3,7 @@ import { FullVersion } from '../components/FullVersion'
 import { useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { TableTwin, fy, money, share } from '../components/MinimumAidCharts'
-import {
-  Body, Conclusions, H3, Quote, Section, Stat, ReportShell, H2 } from '../components/report'
+import { Body, Conclusions, H3, Quote, Section, Stat, ReportShell, H2, splitConclusions } from '../components/report'
 import type { Conclusion } from '../components/report'
 
 const TAB: Tab = 'formula'
@@ -147,6 +146,7 @@ export function Ch70Formula() {
   const T = d.threshold
   const rate = d.three_numbers[1]
 
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, undefined)
   return (
     <Shell standfirst={<>
       Eight steps, in the order the questions arrive. Worked through with{' '}
@@ -157,17 +157,17 @@ export function Ch70Formula() {
       {/* NOT WRITTEN HERE. Every word and every figure comes out of this report's own
           payload, computed by the generator that computed the figures. */}
       <Section kind="conclusions" id="conclusions" title="If you read nothing else">
-        <Conclusions rows={d.conclusions.slice(0, 3)} />
+        <Conclusions rows={shortRows} />
       </Section>
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
       {/* THE OTHER FINDINGS. The short version carries the first 3; the rest are still
           findings, still on the page, here at the top of the full version. The order is
           the payload's -- a generator that wants a different 3 on the card reorders. */}
-      {d.conclusions.length > 3 && (
+      {moreRows.length > 0 && (
         <>
           <H2 id="more-findings">The other findings</H2>
-          <Conclusions rows={d.conclusions.slice(3)} noAsk short={false} />
+          <Conclusions rows={moreRows} noAsk short={false} />
         </>
       )}
 

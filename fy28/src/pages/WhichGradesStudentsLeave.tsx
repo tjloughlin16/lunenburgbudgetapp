@@ -6,11 +6,11 @@ import {
   KIDS, OTHER, RATE, fyLong, n0, n1, pct1, pts, syLong,
   type Band, type GradeStat, type GroupRow, type YearPoint,
 } from '../components/AttritionCharts'
-import {
-  Body, Conclusions, Coverage, Grain, H2, H3, Maybe, MoreReports, NotEstablished,
-  NotShown, Provenance, Quote, ReportShell, Stat, useReport,
-} from '../components/report'
+import { Body, Conclusions, Coverage, Grain, H2, H3, Maybe, MoreReports, NotEstablished, NotShown, Provenance, Quote, ReportShell, Stat, useReport, splitConclusions } from '../components/report'
 import type { Conclusion, Said, Source, Minutes } from '../components/report'
+
+/** The three findings on the card -- the ones to repeat. The rest open the full version. */
+const SHORT = ['one-grade-does-all-the-leaving', 'the-leaving-is-nine-times-the-fall', 'the-gap-is-at-one-step-not-everywhere']
 
 const TAB: Tab = 'attrition'
 const DATA = '/data/attrition.json'
@@ -168,6 +168,7 @@ function Report({ d }: { d: Payload }) {
   const hemorrhage = said('hemorrhage')
   const band = said('band-transition')
   const sizer = said('sizer-parker')
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, SHORT)
   return (
     <>
       {/* ---- rule 7b, first movement: what this page establishes ---------- */}
@@ -194,17 +195,17 @@ function Report({ d }: { d: Payload }) {
 
         <Grain>{d.grain}</Grain>
 
-        <Conclusions rows={d.conclusions.slice(0, 3)} />
+        <Conclusions rows={shortRows} />
       </section>
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
       {/* THE OTHER FINDINGS. The short version carries the first 3; the rest are still
           findings, still on the page, here at the top of the full version. The order is
           the payload's -- a generator that wants a different 3 on the card reorders. */}
-      {d.conclusions.length > 3 && (
+      {moreRows.length > 0 && (
         <>
           <H2 id="more-findings">The other findings</H2>
-          <Conclusions rows={d.conclusions.slice(3)} noAsk short={false} />
+          <Conclusions rows={moreRows} noAsk short={false} />
         </>
       )}
 

@@ -8,11 +8,7 @@ import {
   AidHistory, Asymmetry, BothWays, ChoiceIn, Dial, Flows, LOSS, PerGrade, SAVE, Sensitivity,
   type AidYear, type BothWaysYear, type FlowYear, type FundYear, type Grade,
 } from '../components/LeavingCharts'
-import {
-  Conclusions,
-  Body, H2, H3, Insight, Maybe, NotShown, Stat,
-  ReportShell,
-} from '../components/report'
+import { Conclusions, Body, H2, H3, Insight, Maybe, NotShown, Stat, ReportShell, splitConclusions } from '../components/report'
 import type { Conclusion } from '../components/report'
 
 /** The frame this report is drawn in. See components/report.tsx.
@@ -310,6 +306,7 @@ function Page({ d }: { d: Payload }) {
 
   const fund = C.fund_series
 
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, undefined)
   return (
     <ReportShell tab={TAB} dataUrl={DATA}
       title={<>
@@ -354,16 +351,16 @@ function Page({ d }: { d: Payload }) {
           scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
-      <Conclusions rows={d.conclusions.slice(0, 3)} />
+      <Conclusions rows={shortRows} />
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
       {/* THE OTHER FINDINGS. The short version carries the first 3; the rest are still
           findings, still on the page, here at the top of the full version. The order is
           the payload's -- a generator that wants a different 3 on the card reorders. */}
-      {d.conclusions.length > 3 && (
+      {moreRows.length > 0 && (
         <>
           <H2 id="more-findings">The other findings</H2>
-          <Conclusions rows={d.conclusions.slice(3)} noAsk short={false} />
+          <Conclusions rows={moreRows} noAsk short={false} />
         </>
       )}
 

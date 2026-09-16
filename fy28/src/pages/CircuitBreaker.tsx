@@ -1,7 +1,7 @@
 import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from 'recharts'
 import { FullVersion } from '../components/FullVersion'
 import type { Tab } from '../routes'
-import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport } from '../components/report'
+import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport, splitConclusions } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
 
 const TAB: Tab = 'circuitbreaker'
@@ -54,6 +54,7 @@ function Report({ d }: { d: Payload }) {
   const money = d.series.map(y => ({ fy: `FY${y.fy}`, eligible: y.eligible, threshold: y.threshold, paid: y.paid, claim: y.claim }))
   const kids = d.series.map(y => ({ fy: `FY${y.fy}`, children: y.children, per_child: y.per_child ?? 0 }))
   const share = d.series.map(y => ({ fy: `FY${y.fy}`, share: y.paid_share_of_claim ?? 0 }))
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, undefined)
   return (
     <>
       <section data-section="conclusions" data-short="">
@@ -67,10 +68,16 @@ function Report({ d }: { d: Payload }) {
           <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>{d.mechanism}</p>
         </div>
         <Grain>{d.grain}</Grain>
-        <Conclusions rows={d.conclusions} />
+        <Conclusions rows={shortRows} />
       </section>
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
+      {moreRows.length > 0 && (
+        <>
+          <H2 id="more-findings">The other findings</H2>
+          <Conclusions rows={moreRows} noAsk short={false} />
+        </>
+      )}
 
       <section data-section="categorical">
         <H2>The money, year by year</H2>

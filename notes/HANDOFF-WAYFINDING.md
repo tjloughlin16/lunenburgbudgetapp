@@ -71,6 +71,29 @@ agreed to make them all 5 or less." No prose was cut and no figure typed:
   `Section` and `Conclusions` take `short={false}` there so the index does not count as
   the short version, which is how it measured 15,479 words.
 
+**Which three are on the card (16 September).** TJ: "make sure whats remaining on all 5m
+short cards are truly the most important things ... Things we want them to repeat in
+public ... if they are supportive metrics that won't resonate ... it doesnt deserve to be
+in the 5m short form." So every page with more than three findings now shows THREE, and
+six pages name theirs by id in a `SHORT` constant at the top of the page component
+(`splitConclusions` in `components/report.tsx`); the others take the payload's first
+three. The choices, for pruning:
+- `/cut-register`: the override took 13 positions off the list · 48 adopted cuts nobody
+  can check · a cut list is a draft (3 gone in four weeks).
+- `/lunenburg-by-the-numbers`: a third of homes have a child · a sixth of the town is
+  65+ · ordinary on income, near the bottom on spending.
+- `/homes-and-taxes`: value +101%, rate −27%, bill +48% · $7,444, 6th of 11 · the bill by
+  when you bought.
+- `/special-education-class-size`: eight to one · the rule is a minimum, IEPs add · 41 of
+  258 substantially separate.
+- `/which-grades-students-leave`: one grade does all the leaving · the leaving is nine
+  times the fall · the gap is at one step. (The IEP rate, 34.7% vs 20.5%, is the fourth
+  and arguably belongs on the card instead of "one step" — TJ's call.)
+- `/what-other-districts-spend`: bottom quarter, 17 of 17 years · near the top on pay,
+  fewest teachers · the districts our children leave for spend more.
+- Left as the payload's first three: circuit breaker, enrolment, courses, if-students-
+  leave, Chapter 70, and every page with three or fewer.
+
 **No short version (13):** eleven markdown analyses that open with context rather than a
 conclusion — `show-your-work`, `fy26-closeout`, `fy26-closeout-town`, `athletics`,
 `athletics-ledger`, `questions`, `budget-vs-actual`, `sped-and-funds`, `what-you-can-ask`,

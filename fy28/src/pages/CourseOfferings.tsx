@@ -10,10 +10,7 @@ import {
   type Band, type Era, type EraSubject, type Point, type QuadRow,
   type Subject,
 } from '../components/CourseCharts'
-import {
-  Body, Conclusions, Coverage, Grain, H2, H3, MoreReports, NotEstablished, NotShown,
-  Provenance, Quote, ReportShell, Stat,
-} from '../components/report'
+import { Body, Conclusions, Coverage, Grain, H2, H3, MoreReports, NotEstablished, NotShown, Provenance, Quote, ReportShell, Stat, splitConclusions } from '../components/report'
 import type { Conclusion, Said, Source, Minutes } from '../components/report'
 
 const TAB: Tab = 'courses'
@@ -363,6 +360,7 @@ function Report({ d }: { d: Payload }) {
                     `Class size ${syLong(W.first_sy)}`, `Class size ${syLong(W.last_sy)}`,
                     `Students ${syLong(W.first_sy)}`, `Students ${syLong(W.last_sy)}`]
 
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, undefined)
   return (
     <Shell standfirst={<>
       How many classes ran in each subject, {syLong(W.first_sy)} to {syLong(W.last_sy)}:
@@ -410,16 +408,16 @@ function Report({ d }: { d: Payload }) {
           scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
-      <Conclusions rows={d.conclusions.slice(0, 3)} />
+      <Conclusions rows={shortRows} />
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
       {/* THE OTHER FINDINGS. The short version carries the first 3; the rest are still
           findings, still on the page, here at the top of the full version. The order is
           the payload's -- a generator that wants a different 3 on the card reorders. */}
-      {d.conclusions.length > 3 && (
+      {moreRows.length > 0 && (
         <>
           <H2 id="more-findings">The other findings</H2>
-          <Conclusions rows={d.conclusions.slice(3)} noAsk short={false} />
+          <Conclusions rows={moreRows} noAsk short={false} />
         </>
       )}
 

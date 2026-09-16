@@ -179,6 +179,25 @@ export function ShortVersion({ label, children }: { label?: boolean; children: R
   )
 }
 
+/** WHICH FINDINGS GO ON THE CARD. TJ, 16 September 2026: "make sure whats remaining on
+ *  all 5m short cards are truly the most important things for people to understand.
+ *  Things we want them to repeat in public and to each other to make a solid point ...
+ *  if they are supportive metrics that won't resonate or make a strong point, it doesnt
+ *  deserve to be in the 5m short form."
+ *
+ *  So a page names the ids of the findings that carry its point -- three, as rule 7b
+ *  says -- and everything else goes under "The other findings" at the top of the full
+ *  version. Nothing is dropped; the choice is which three a reader leaves with. Without
+ *  a list the payload's first three stand. An id that is not in the payload is skipped
+ *  rather than failing the page, and the missing card shows up in the count. */
+export function splitConclusions<T extends { id: string }>(rows: T[] | undefined, ids?: string[], n = 3): [T[], T[]] {
+  const all = rows ?? []
+  const chosen = ids
+    ? ids.map(id => all.find(r => r.id === id)).filter((r): r is T => Boolean(r))
+    : all.slice(0, n)
+  return [chosen, all.filter(r => !chosen.includes(r))]
+}
+
 /** One conclusion, in the voice rule 7b's first movement requires: a claim a reader
  *  could repeat at a meeting.
  *

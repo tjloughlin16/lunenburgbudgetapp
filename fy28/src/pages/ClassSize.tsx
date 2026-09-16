@@ -2,12 +2,12 @@ import type { Tab } from '../routes'
 import { FullVersion } from '../components/FullVersion'
 import { abs } from '../lib/abs'
 import type { Base } from '../components/report'
-import {
-  Body, Conclusions, Coverage, Grain, H2, H3, Insight, MoreReports, NotEstablished,
-  NotShown, Provenance, Quote, Shell, Stat, useReport,
-} from '../components/report'
+import { Body, Conclusions, Coverage, Grain, H2, H3, Insight, MoreReports, NotEstablished, NotShown, Provenance, Quote, Shell, Stat, useReport, splitConclusions } from '../components/report'
 import type { Band, Room, Tier } from '../components/ClassSizeTable'
 import { Clause, RoomTable, ScenarioTable, TableTwin } from '../components/ClassSizeTable'
+
+/** The three findings on the card -- the ones to repeat. The rest open the full version. */
+const SHORT = ['eight-to-one', 'caps-children-not-adults', 'how-many-are-in-scope']
 
 const TAB: Tab = 'classsize'
 
@@ -104,6 +104,7 @@ export function ClassSize() {
   const found = (term: string) => d.searched.find(s => s.term === term)
   const silent = d.searched.filter(s => s.documents === 0).map(s => s.term)
 
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, SHORT)
   return (
     <Shell tab={TAB} title={title} dataUrl="/data/sped-regulation.json"
       standfirst={`The state sets it: ${d.sub_cap} to one certified special educator in a substantially separate setting, ${d.sub_aide_cap} with an aide. Here is the rule, and here is what it cannot tell you about Lunenburg.`}>
@@ -138,16 +139,16 @@ export function ClassSize() {
 
       {/* ------------------------------------------------ 1. CONCLUSIONS (rule 7b) */}
       <H2 id="conclusions">If you read nothing else</H2>
-      <Conclusions rows={(d.conclusions ?? []).slice(0, 3)} />
+      <Conclusions rows={shortRows} />
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
       {/* THE OTHER FINDINGS. The short version carries the first 3; the rest are still
           findings, still on the page, here at the top of the full version. The order is
           the payload's -- a generator that wants a different 3 on the card reorders. */}
-      {(d.conclusions ?? []).length > 3 && (
+      {moreRows.length > 0 && (
         <>
           <H2 id="more-findings">The other findings</H2>
-          <Conclusions rows={(d.conclusions ?? []).slice(3)} noAsk short={false} />
+          <Conclusions rows={moreRows} noAsk short={false} />
         </>
       )}
 

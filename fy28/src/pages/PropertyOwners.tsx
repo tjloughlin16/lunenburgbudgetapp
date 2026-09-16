@@ -1,8 +1,11 @@
 import { Bar, BarChart, CartesianGrid, ComposedChart, ErrorBar, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { FullVersion } from '../components/FullVersion'
 import type { Tab } from '../routes'
-import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport } from '../components/report'
+import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport, splitConclusions } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
+
+/** The three findings on the card -- the ones to repeat. The rest open the full version. */
+const SHORT = ['the-bill', 'the-neighbours', 'bill-by-tenure']
 
 const TAB: Tab = 'owners'
 const DATA = '/data/property-owners.json'
@@ -68,6 +71,7 @@ function Report({ d }: { d: Payload }) {
   const c23 = d.census['2023'], c18 = d.census['2018']
   const p = d.parcels, b = d.bills
   const byLabel18 = Object.fromEntries(c18.bands.map(x => [x.label, x]))
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, SHORT)
   return (
     <>
       <section data-section="conclusions" data-short="">
@@ -79,10 +83,16 @@ function Report({ d }: { d: Payload }) {
           <Stat value={usd(d.bills.rows[d.bills.rows.length - 1].bill)}>the average bill, {FY(b.last_fy)}: {b.position}th of {b.of} nearby towns and cities, {b.statewide_rank}th of {b.statewide_of} statewide</Stat>
         </div>
         <Grain>{d.grain}</Grain>
-        <Conclusions rows={d.conclusions} />
+        <Conclusions rows={shortRows} />
       </section>
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
+      {moreRows.length > 0 && (
+        <>
+          <H2 id="more-findings">The other findings</H2>
+          <Conclusions rows={moreRows} noAsk short={false} />
+        </>
+      )}
 
       <section data-section="categorical">
         <H2>The average home, every year the state has published</H2>

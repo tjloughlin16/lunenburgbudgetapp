@@ -6,11 +6,11 @@ import {
   AgeProfile, Caption, IncomeByAge, IncomeDistribution, MarginTest, TableTwin,
   type AgeGroup, type Bin, type Est, type Test,
 } from '../components/CensusCharts'
-import {
-  Body, Conclusions, Coverage, Grain, H2, H3, MoreReports, NotEstablished, NotShown,
-  Provenance, Quote, ReportShell, Section, Stat,
-} from '../components/report'
+import { Body, Conclusions, Coverage, Grain, H2, H3, MoreReports, NotEstablished, NotShown, Provenance, Quote, ReportShell, Section, Stat, splitConclusions } from '../components/report'
 import type { Conclusion, Said, Source, Minutes } from '../components/report'
+
+/** The three findings on the card -- the ones to repeat. The rest open the full version. */
+const SHORT = ['a-third-of-homes-have-a-child-under-18', 'a-sixth-of-the-town-is-65-or-over', 'ordinary-on-income-near-the-bottom-on-spending']
 
 const TAB: Tab = 'bythenumbers'
 const DATA = '/data/lunenburg-by-the-numbers.json'
@@ -175,6 +175,7 @@ function Report({ d }: { d: Payload }) {
   const senior = d.ages.groups.find(g => g.key === 'senior')!
   const children = d.ages.groups.find(g => g.key === 'children')!
 
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, SHORT)
   return (
     <Shell standfirst={<>Who lives here, from the Census Bureau&rsquo;s {d.window}{' '}
       estimates. Every figure is a sample with a margin, and every one of them is
@@ -213,10 +214,16 @@ function Report({ d }: { d: Payload }) {
         </Body>
 
         <H2 id="what-this-establishes">What this page establishes</H2>
-        <Conclusions rows={d.conclusions} />
+        <Conclusions rows={shortRows} />
       </Section>
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
+      {moreRows.length > 0 && (
+        <>
+          <H2 id="more-findings">The other findings</H2>
+          <Conclusions rows={moreRows} noAsk short={false} />
+        </>
+      )}
 
       <Section kind="categorical" id="age" title="The town, by age">
         <Body>

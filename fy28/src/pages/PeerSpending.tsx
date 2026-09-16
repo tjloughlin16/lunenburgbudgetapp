@@ -7,12 +7,11 @@ import {
   Statewide, TableTwin, TeacherSplit, fy, money, pct1, shortName, signedPct, signedUsd,
   type CatRow, type DecompRow, type SwRow, type TeacherRow, type YearRow,
 } from '../components/PeerSpendingCharts'
-import {
-  Conclusions,
-  Body, H2, H3, Insight, NotShown, Quote, Stat,
-  ReportShell,
-} from '../components/report'
+import { Conclusions, Body, H2, H3, Insight, NotShown, Quote, Stat, ReportShell, splitConclusions } from '../components/report'
 import type { Conclusion } from '../components/report'
+
+/** The three findings on the card -- the ones to repeat. The rest open the full version. */
+const SHORT = ['the-bottom-quarter-is-the-durable-fact', 'near-the-top-on-pay-fewest-teachers', 'the-districts-our-children-leave-for-spend-more']
 
 const TAB: Tab = 'peers'
 const DATA = '/data/peer-spending.json'
@@ -257,6 +256,7 @@ export function PeerSpending() {
   const destMax = Math.max(...destBars.map(r => r.per_pupil))
   const destUnreconciled = DEST.rows.filter(r => r.reconciles === 'no')
 
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, SHORT)
   return (
     <Shell standfirst={<>
         What DESE says each Massachusetts district spends for each pupil &mdash;{' '}
@@ -302,16 +302,16 @@ export function PeerSpending() {
           scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
-      <Conclusions rows={d.conclusions.slice(0, 3)} />
+      <Conclusions rows={shortRows} />
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
       {/* THE OTHER FINDINGS. The short version carries the first 3; the rest are still
           findings, still on the page, here at the top of the full version. The order is
           the payload's -- a generator that wants a different 3 on the card reorders. */}
-      {d.conclusions.length > 3 && (
+      {moreRows.length > 0 && (
         <>
           <H2 id="more-findings">The other findings</H2>
-          <Conclusions rows={d.conclusions.slice(3)} noAsk short={false} />
+          <Conclusions rows={moreRows} noAsk short={false} />
         </>
       )}
 

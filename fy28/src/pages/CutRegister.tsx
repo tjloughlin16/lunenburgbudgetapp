@@ -4,11 +4,11 @@ import type { Tab } from '../routes'
 import { abs } from '../lib/abs'
 import { usd } from '../model/engine'
 import { Basis } from '../components/Basis'
-import {
-  Body, Conclusions, Coverage, H2, H3, Insight, Maybe, NotEstablished, NotShown,
-  Quote, ReportShell, Section, Stat, useReport,
-} from '../components/report'
+import { Body, Conclusions, Coverage, H2, H3, Insight, Maybe, NotEstablished, NotShown, Quote, ReportShell, Section, Stat, useReport, splitConclusions } from '../components/report'
 import type { Conclusion, Minutes, Said } from '../components/report'
+
+/** The three findings on the card -- the ones to repeat. The rest open the full version. */
+const SHORT = ['the-override-changed-which-cuts-happened', 'most-announced-cuts-cannot-be-checked', 'a-cut-list-is-a-draft']
 
 /** THE CUT REGISTER — what the schools said they were cutting, and whether it shows.
  *
@@ -226,6 +226,7 @@ export function CutRegister() {
   const restores = d.said.filter(q => q.key.startsWith('restore-'))
   const shown = openFy === null ? rows : rows.filter(r => r.fy === openFy)
 
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, SHORT)
   return (
     <ReportShell tab={TAB} dataUrl={DATA}
       title={<>
@@ -318,10 +319,16 @@ export function CutRegister() {
           computed by the generator that computed the figures — scripts/conclusions.py. */}
       <Section kind="conclusions">
         <H2 id="conclusions">If you read nothing else</H2>
-        <Conclusions rows={d.conclusions} />
+        <Conclusions rows={shortRows} />
       </Section>
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
+      {moreRows.length > 0 && (
+        <>
+          <H2 id="more-findings">The other findings</H2>
+          <Conclusions rows={moreRows} noAsk short={false} />
+        </>
+      )}
 
       {/* ------------------------------------------------ 2. THE CATEGORICAL DATA */}
       <Section kind="categorical">

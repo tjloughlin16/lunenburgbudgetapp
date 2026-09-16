@@ -3,9 +3,7 @@ import {
   Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend,
 } from 'recharts'
 import type { Tab } from '../routes'
-import {
-  Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport,
-} from '../components/report'
+import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport, splitConclusions } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
 
 const TAB: Tab = 'enrollment'
@@ -68,6 +66,7 @@ function Report({ d }: { d: Payload }) {
   }))
   const schoolYears = Array.from(new Set(d.schools.map(s => s.fy))).sort()
   const schoolNames = Array.from(new Set(d.schools.map(s => s.school)))
+  const [shortRows, moreRows] = splitConclusions(d.conclusions, undefined)
   return (
     <>
       <section data-section="conclusions" data-short="">
@@ -77,10 +76,16 @@ function Report({ d }: { d: Payload }) {
           <Stat value={n0(last.swd ?? 0)}>students with disabilities &mdash; {n0(base.swd ?? 0)} in FY{d.base_fy}</Stat>
         </div>
         <Grain>{d.grain}</Grain>
-        <Conclusions rows={d.conclusions} />
+        <Conclusions rows={shortRows} />
       </section>
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
+      {moreRows.length > 0 && (
+        <>
+          <H2 id="more-findings">The other findings</H2>
+          <Conclusions rows={moreRows} noAsk short={false} />
+        </>
+      )}
 
       <section data-section="categorical">
         <H2>The count, by grade band</H2>
