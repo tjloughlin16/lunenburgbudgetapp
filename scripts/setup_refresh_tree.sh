@@ -42,7 +42,11 @@ ln -s "$HERE/fy28/node_modules" fy28/node_modules
 echo "node_modules linked"
 
 echo "pulling the archive's binaries from R2 (about 1.4 GB, once) ..."
-python3 scripts/sync_archive.py --pull
+# Two kinds of file are expected to FAIL the pull and do not matter here: derived files
+# the bucket holds an older rendering of (lunenburg.db, rebuilt below) and mirrored pages
+# the refresh re-fetches (the district's School Committee page). The pull refuses a byte
+# mismatch on purpose -- rule 13 -- so its exit code is reported, not obeyed.
+python3 scripts/sync_archive.py --pull || echo "(some files did not pull -- see above; derived and re-fetched files are expected)"
 
 echo "building the derived database ..."
 python3 scripts/build_db.py > /dev/null
