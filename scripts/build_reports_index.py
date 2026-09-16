@@ -125,7 +125,7 @@ CATEGORIES = [
         # this shelf measures the town's money; this one measures the town. A reader who
         # does not yet know the place cannot weigh anything below it, and it is the one
         # report in the index that needs no budget knowledge at all to read.
-        ('who lives here', ['bythenumbers', 'owners']),
+        ('who lives here', ['bythenumbers', 'owners', 'homestudents']),
         ('the ledger, read', [
             'fy26-closeout', 'fy26-closeout-town', 'free-cash',
         ]),

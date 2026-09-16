@@ -52,6 +52,7 @@ import { CircuitBreaker } from './pages/CircuitBreaker'
 import { AdvancedPlacement } from './pages/AdvancedPlacement'
 import { Solutions } from './pages/Solutions'
 import { CommercialDevelopment } from './pages/CommercialDevelopment'
+import { HomesAndStudents } from './pages/HomesAndStudents'
 // LOCAL ONLY. Not a Tab, in no route table, in no sitemap, prerendered nowhere -- and the
 // reference below sits inside `import.meta.env.DEV`, which is replaced with `false` in a
 // production build, so the module is eliminated from the bundle. See pages/BlogDrafts.tsx
@@ -507,6 +508,7 @@ export default function App() {
       {tab === 'ap' && <AdvancedPlacement />}
       {tab === 'solutions' && <Solutions />}
       {tab === 'growth' && <CommercialDevelopment />}
+      {tab === 'homestudents' && <HomesAndStudents />}
       {tab === 'attrition' && <WhichGradesStudentsLeave />}
       {tab === 'montytech' && <MontyTech />}
       {tab === 'addsup' && <WhatItAllAddsUpTo />}

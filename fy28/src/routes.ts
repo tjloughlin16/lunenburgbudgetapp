@@ -40,6 +40,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'ap'
   | 'solutions'
   | 'growth'
+  | 'homestudents'
   | 'bythenumbers'
   | 'owners'
   // The middle of three lengths. One tab for all the posts: the slug is the second path
@@ -316,6 +317,8 @@ export const SLUG: Record<Tab, string> = {
   solutions: 'solutions',
   // The commercial development REPORT. `/development` stays the board of dials.
   growth: 'commercial-development',
+  // Homes and students: the town keeps adding homes and the schools do not gain children.
+  homestudents: 'homes-and-students',
   peers: 'what-other-districts-spend',
   // WHO LIVES HERE, before any argument about what the town should spend. The slug is
   // the phrase people already use for a page of facts about a place -- "Lunenburg by the
@@ -441,6 +444,7 @@ const ALIASES: Record<string, Tab> = {
   // meetings; accepted, never generated.
   fix: 'solutions', options: 'solutions', 'what-to-do': 'solutions',
   growth: 'growth', 'new-growth': 'growth', 'commercial-growth': 'growth', 'grow-our-way-out': 'growth',
+  'homes-and-enrollment': 'homestudents', 'homes-vs-students': 'homestudents', 'residential-development': 'homestudents',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
   // The words somebody types looking for the synthesis. `conclusions` and `findings` are
   // what this project calls the thing internally and are exactly the forms a reader who
@@ -728,6 +732,7 @@ export const LABEL: Record<Tab, string> = {
   // form. The area label is the context, this is the answer to it.
   solutions: 'Solutions',
   growth: 'Commercial development — what it would have to look like',
+  homestudents: 'Homes and students — the town builds, the schools do not grow',
   peers: 'What other districts spend, for each pupil',
   bythenumbers: 'Lunenburg by the numbers — who lives here',
   owners: 'Lunenburg’s homes and the tax bill',
@@ -791,6 +796,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   ap: 'reports',
   solutions: 'walk',
   growth: 'reports',
+  homestudents: 'reports',
   analysis: 'reports',
   required: 'reports',
   agents: 'sources',
@@ -930,7 +936,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   why: 'crisis', curve: 'crisis', priorities: 'crisis',
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   solutions: 'crisis',
-  override: 'analyses', growth: 'analyses',
+  override: 'analyses', growth: 'analyses', homestudents: 'analyses',
   freecash: 'crisis',
   // `money` is now WHERE THE MONEY COMES FROM AND GOES, plus the limits of the record:
   // the flow hub, the two revenue-side pages, what we cannot answer, and the question box.
@@ -1033,7 +1039,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // argument that put `addsup` first.
   // `owners`, `override` and `growth` are the town's shelf: who owns the homes and what
   // the bill does, what an override actually is, and what growing out of it would take.
-  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
+  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',
