@@ -28,8 +28,8 @@ const PER_YEAR = Math.max(1, Math.round(DEVELOPMENT.fiveYear.developments))
 const YEARS = 5
 /** Five steps of one hue, deepening: the years read as one thing growing. Fixed colours
  *  on purpose -- the same picture in both themes and on paper. */
-const YEAR_HUES = ['#a5c8fa', '#6ea8f5', '#3b82f6', '#2563eb', '#1e3a8a']
-const TODAY = { top: '#eceef1', edge: '#9ca3af' }
+const YEAR_HUES = ['#bfdbfe', '#7fb3f7', '#3b82f6', '#1d4ed8', '#172554']
+const TODAY = { top: '#f4f5f7' }
 
 /** A small seeded PRNG (mulberry32) so the scatter never changes between builds. */
 function rng(seed: number) {
@@ -47,83 +47,80 @@ function shade(hex: string, f: number): string {
   return `#${((ch((n >> 16) & 255) << 16) | (ch((n >> 8) & 255) << 8) | ch(n & 255)).toString(16).padStart(6, '0')}`
 }
 
-type Block = { i: number; j: number; h: number; w: number; d: number; top: string; edge: string; year: number }
+type Block = { u: number; v: number; h: number; w: number; d: number; top: string; year: number }
 
-/** Lay the town out: a jittered grid big enough for every block with a few streets
- *  left empty, today's businesses spread evenly across it, each year's additions
- *  taking the nearest empty lots to the centre. */
+/** LAY THE TOWN OUT WITHOUT A GRID. TJ: "We're a farmtown. It has to be scattered
+ *  looking." Buildings are dropped at random on the ground, rejecting any that would sit
+ *  on another, and the colours are kept apart by RADIUS: today's town is the white
+ *  cluster in the middle, and each year's additions form the next ring out, so the eye
+ *  reads the growth as growth -- the town getting bigger around what is already there.
+ *  The ring radii come from the counts: each band has the area its buildings need at
+ *  one density, so a ring of 28 is visibly the same size as the next ring of 28 and
+ *  the centre of 51 is visibly bigger than either. */
+const DENSITY = 0.42      // buildings per square unit of ground
+const MIN_GAP = 1.05      // centre-to-centre, in ground units, before two overlap
+
 function layout(): Block[] {
-  const total = BASE + PER_YEAR * YEARS
-  const cols = Math.ceil(Math.sqrt(total * 1.55 * 1.6))
-  const rows = Math.ceil((total * 1.55) / cols)
   const r = rng(20260916)
-  // Streets: every sixth column and fifth row stay empty, so the ground reads as a map
-  // with blocks on it rather than as a solid mass -- the way a map shows a town.
-  const cells: { i: number; j: number }[] = []
-  for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) if (i % 6 !== 3 && j % 5 !== 2) cells.push({ i, j })
-  // Shuffle, then take today's blocks from across the whole ground -- scattered.
-  for (let n = cells.length - 1; n > 0; n--) { const m = Math.floor(r() * (n + 1)); [cells[n], cells[m]] = [cells[m], cells[n]] }
-  const today = cells.slice(0, BASE)
-  // The rest, by distance from the centre with a little noise, so each year's colour
-  // grows outward from the middle of town rather than appearing at random.
-  const ci = (cols - 1) / 2, cj = (rows - 1) / 2
-  const rest = cells.slice(BASE)
-    .map(c => ({ c, d: Math.hypot((c.i - ci) / cols, (c.j - cj) / rows) + (r() - 0.5) * 0.12 }))
-    .sort((a, b) => a.d - b.d).map(x => x.c)
-  // A building on a map is a low box with its own outline: mostly one storey, a few
-  // taller, and a footprint that is not the whole lot and not square.
-  const shape = () => ({ h: [1, 1, 1, 1.6, 1.6, 2.4][Math.floor(r() * 6)], w: 0.55 + r() * 0.4, d: 0.55 + r() * 0.4 })
-  const blocks: Block[] = today.map(c => ({ ...c, ...shape(), top: TODAY.top, edge: TODAY.edge, year: 0 }))
-  let k = 0
-  for (let y = 0; y < YEARS; y++) {
-    for (let n = 0; n < PER_YEAR && k < rest.length; n++, k++) {
-      blocks.push({ ...rest[k], ...shape(), top: YEAR_HUES[y], edge: shade(YEAR_HUES[y], 0.72), year: y + 1 })
+  const counts = [BASE, ...Array(YEARS).fill(PER_YEAR) as number[]]
+  const radii: number[] = [0]
+  let cum = 0
+  for (const n of counts) { cum += n; radii.push(Math.sqrt(cum / (DENSITY * Math.PI))) }
+  const placed: Block[] = []
+  const shape = () => ({ h: [0.8, 1, 1, 1.3, 1.7][Math.floor(r() * 5)], w: 0.5 + r() * 0.4, d: 0.5 + r() * 0.4 })
+  counts.forEach((n, band) => {
+    const r0 = radii[band], r1 = radii[band + 1]
+    let done = 0, tries = 0
+    while (done < n && tries < n * 400) {
+      tries++
+      // Uniform in the annulus by area, with a soft edge so rings blend rather than snap.
+      const rr = Math.sqrt(r0 * r0 + r() * (r1 * r1 - r0 * r0)) + (r() - 0.5) * 0.35
+      const a = r() * Math.PI * 2
+      const u = rr * Math.cos(a), v = rr * Math.sin(a)
+      if (placed.every(p => Math.hypot(p.u - u, p.v - v) >= MIN_GAP)) {
+        const top = band === 0 ? TODAY.top : YEAR_HUES[band - 1]
+        placed.push({ u, v, ...shape(), top, year: band })
+        done++
+      }
     }
-  }
-  return blocks
+  })
+  return placed
 }
 
 const BLOCKS = layout()
-const W = 18          // a lot's width on the ground, in px
-const U = 6           // one storey, in px -- low, the way a map draws them
-const GROUND = '#f3f4f6'
-const GROUND_EDGE = '#e5e7eb'
-const TODAY_SIDE = 0.9
+const W = 20          // one ground unit, in px
+const U = 7           // one storey, in px
 
 export function GrowthCubes() {
-  const px = (i: number, j: number) => ({ x: (i - j) * (W / 2), y: (i + j) * (W / 4) })
-  const pts = BLOCKS.map(b => px(b.i, b.j))
+  const px = (u: number, v: number) => ({ x: (u - v) * (W / 2), y: (u + v) * (W / 4) })
+  const pts = BLOCKS.map(b => px(b.u, b.v))
   const minX = Math.min(...pts.map(p => p.x)) - W, maxX = Math.max(...pts.map(p => p.x)) + W
-  const minY = Math.min(...pts.map(p => p.y)) - U * 4 - W / 2, maxY = Math.max(...pts.map(p => p.y)) + W
-  const ordered = [...BLOCKS].sort((a, b) => (a.i + a.j) - (b.i + b.j))
-  // The ground: the diamond the grid sits on, drawn first.
-  const maxI = Math.max(...BLOCKS.map(b => b.i)) + 1, maxJ = Math.max(...BLOCKS.map(b => b.j)) + 1
-  const g = [px(-0.5, -0.5), px(maxI - 0.5, -0.5), px(maxI - 0.5, maxJ - 0.5), px(-0.5, maxJ - 0.5)]
-  const ground = g.map(p => `${p.x},${p.y}`).join(' ')
-  const legend = [{ label: 'Today', n: BASE, hue: TODAY.top, edge: TODAY.edge },
-    ...YEAR_HUES.map((h, y) => ({ label: `Year ${y + 1}`, n: PER_YEAR, hue: h, edge: shade(h, 0.6) }))]
+  const minY = Math.min(...pts.map(p => p.y)) - U * 3 - W / 2, maxY = Math.max(...pts.map(p => p.y)) + W
+  const ordered = [...BLOCKS].sort((a, b) => (a.u + a.v) - (b.u + b.v))
+  const legend = [{ label: 'Today', n: BASE, hue: TODAY.top },
+    ...YEAR_HUES.map((h, y) => ({ label: `Year ${y + 1}`, n: PER_YEAR, hue: h }))]
   return (
     <figure className="mt-8 mb-2" aria-label="The required growth, as a town of buildings">
       <div className="overflow-x-auto">
         <svg viewBox={`${minX} ${minY} ${maxX - minX} ${maxY - minY}`} className="w-full"
-          style={{ minWidth: 560, maxHeight: 460 }} role="img"
-          aria-label={`Today's commercial base is about ${BASE} typical developments, scattered across town; holding the gap adds about ${PER_YEAR} more a year for five years, ${PER_YEAR * YEARS} in all.`}>
-          <polygon points={ground} fill={GROUND} stroke={GROUND_EDGE} strokeWidth={1} />
+          style={{ minWidth: 560, maxHeight: '50vh' }} role="img"
+          aria-label={`Today's commercial base is about ${BASE} typical developments, the white cluster in the middle; holding the gap adds about ${PER_YEAR} more a year for five years, each year a ring further out.`}>
           {ordered.map((b, n) => {
-            // A box of footprint w x d lots, h storeys, at lot (i, j): its four ground
-            // corners in iso, lifted by the height for the roof.
+            // A box of footprint w x d, h storeys, centred at (u, v). No outlines: the
+            // three faces at three shades are the silhouette, which is what a building
+            // is from the air.
             const hh = b.h * U
-            const c = (di: number, dj: number, up = 0) => { const p = px(b.i + di, b.j + dj); return `${p.x},${p.y - up}` }
+            const c = (du: number, dv: number, up = 0) => { const p = px(b.u + du, b.v + dv); return `${p.x},${p.y - up}` }
             const w = b.w / 2, d = b.d / 2
             const roof = [c(-w, -d, hh), c(w, -d, hh), c(w, d, hh), c(-w, d, hh)].join(' ')
-            const left = [c(-w, d, hh), c(w, d, hh), c(w, d), c(-w, d)].join(' ')   // the face toward the viewer's left
-            const right = [c(w, -d, hh), c(w, d, hh), c(w, d), c(w, -d)].join(' ')  // ... and right
-            const side = b.year === 0 ? TODAY_SIDE : 0.84
+            const left = [c(-w, d, hh), c(w, d, hh), c(w, d), c(-w, d)].join(' ')
+            const right = [c(w, -d, hh), c(w, d, hh), c(w, d), c(w, -d)].join(' ')
+            const k = b.year === 0 ? 0.86 : 0.82
             return (
               <g key={n}>
-                <polygon points={left} fill={shade(b.top, side)} stroke={b.edge} strokeWidth={0.4} strokeLinejoin="round" />
-                <polygon points={right} fill={shade(b.top, side - 0.14)} stroke={b.edge} strokeWidth={0.4} strokeLinejoin="round" />
-                <polygon points={roof} fill={b.top} stroke={b.edge} strokeWidth={0.4} strokeLinejoin="round" />
+                <polygon points={left} fill={shade(b.top, k)} />
+                <polygon points={right} fill={shade(b.top, k - 0.16)} />
+                <polygon points={roof} fill={b.top} />
               </g>
             )
           })}
@@ -132,14 +129,14 @@ export function GrowthCubes() {
       <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-3 text-[12px]" aria-label="Key">
         {legend.map(l => (
           <span key={l.label} className="inline-flex items-center gap-1.5">
-            <span aria-hidden="true" style={{ width: 12, height: 12, background: l.hue, border: `1px solid ${l.edge}`, display: 'inline-block', borderRadius: 2 }} />
+            <span aria-hidden="true" style={{ width: 12, height: 12, background: l.hue, boxShadow: `inset -3px -3px 0 ${shade(l.hue, 0.72)}`, display: 'inline-block', borderRadius: 2 }} />
             <span className="font-semibold">{l.label}</span>
             <span className="tnum" style={{ color: 'var(--text-muted)' }}>{l.label === 'Today' ? `${l.n} buildings’ worth` : `+${l.n}`}</span>
           </span>
         ))}
       </div>
       <figcaption className="text-[12.5px] mt-2 max-w-3xl leading-snug" style={{ color: 'var(--text-muted)' }}>
-        Each building is one typical Lunenburg development, about {usdShort(MIX)} of assessed value in the model&rsquo;s own mix. Grey is everything commercial, industrial and personal the town has today &mdash; about {BASE} of them. Each year&rsquo;s blue is what would have to be added to hold the gap for five years: about {PER_YEAR} a year, {PER_YEAR * YEARS} in all, until most of the town is new. A projection, drawn to count; the streets are invented.
+        Each building is one typical Lunenburg development, about {usdShort(MIX)} of assessed value in the model&rsquo;s own mix. The white cluster is everything commercial, industrial and personal the town has today &mdash; about {BASE} of them. Each ring out is one year of what would have to be added to hold the gap for five years: about {PER_YEAR} a year, {PER_YEAR * YEARS} in all. A projection, drawn to count; the layout is invented.
       </figcaption>
     </figure>
   )
