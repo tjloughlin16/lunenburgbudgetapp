@@ -47,7 +47,7 @@ function shade(hex: string, f: number): string {
   return `#${((ch((n >> 16) & 255) << 16) | (ch((n >> 8) & 255) << 8) | ch(n & 255)).toString(16).padStart(6, '0')}`
 }
 
-type Block = { u: number; v: number; h: number; w: number; d: number; top: string; year: number }
+type Block = { u: number; v: number; h: number; w: number; d: number; tone: number; top: string; year: number }
 
 /** LAY THE TOWN OUT WITHOUT A GRID. TJ: "We're a farmtown. It has to be scattered
  *  looking." Buildings are dropped at random on the ground, rejecting any that would sit
@@ -58,7 +58,7 @@ type Block = { u: number; v: number; h: number; w: number; d: number; top: strin
  *  one density, so a ring of 28 is visibly the same size as the next ring of 28 and
  *  the centre of 51 is visibly bigger than either. */
 const DENSITY = 0.42      // buildings per square unit of ground
-const MIN_GAP = 1.05      // centre-to-centre, in ground units, before two overlap
+const MIN_GAP = 1.15      // centre-to-centre, in ground units, before two overlap
 
 function layout(): Block[] {
   const r = rng(20260916)
@@ -67,7 +67,12 @@ function layout(): Block[] {
   let cum = 0
   for (const n of counts) { cum += n; radii.push(Math.sqrt(cum / (DENSITY * Math.PI))) }
   const placed: Block[] = []
-  const shape = () => ({ h: [0.8, 1, 1, 1.3, 1.7][Math.floor(r() * 5)], w: 0.5 + r() * 0.4, d: 0.5 + r() * 0.4 })
+  // Less like cubes, more like buildings: long low ones, tall thin ones, and a little
+  // tonal drift per building so no two are the same colour.
+  const shape = () => {
+    const long = r() < 0.3
+    return { h: 0.55 + r() * (r() < 0.2 ? 2.2 : 1.1), w: long ? 0.9 + r() * 0.7 : 0.4 + r() * 0.5, d: long ? 0.4 + r() * 0.3 : 0.4 + r() * 0.5, tone: 0.93 + r() * 0.1 }
+  }
   counts.forEach((n, band) => {
     const r0 = radii[band], r1 = radii[band + 1]
     let done = 0, tries = 0
@@ -92,7 +97,9 @@ const W = 20          // one ground unit, in px
 const U = 7           // one storey, in px
 
 export function GrowthCubes() {
-  const px = (u: number, v: number) => ({ x: (u - v) * (W / 2), y: (u + v) * (W / 4) })
+  // Stretched sideways: the page is wide and the picture is allowed half a screen of
+  // height, so the town is drawn long rather than letterboxed in a square.
+  const px = (u: number, v: number) => ({ x: (u - v) * (W / 2) * 1.55, y: (u + v) * (W / 4) })
   const pts = BLOCKS.map(b => px(b.u, b.v))
   const minX = Math.min(...pts.map(p => p.x)) - W, maxX = Math.max(...pts.map(p => p.x)) + W
   const minY = Math.min(...pts.map(p => p.y)) - U * 3 - W / 2, maxY = Math.max(...pts.map(p => p.y)) + W
@@ -101,9 +108,12 @@ export function GrowthCubes() {
     ...YEAR_HUES.map((h, y) => ({ label: `Year ${y + 1}`, n: PER_YEAR, hue: h }))]
   return (
     <figure className="mt-8 mb-2" aria-label="The required growth, as a town of buildings">
-      <div className="overflow-x-auto">
-        <svg viewBox={`${minX} ${minY} ${maxX - minX} ${maxY - minY}`} className="w-full"
-          style={{ minWidth: 560, maxHeight: '50vh' }} role="img"
+      {/* FULL BLEED. The report column is narrow for reading; a picture is not read, and
+          TJ: "make sure it takes up the full width of the screen". The wrapper breaks
+          out of the column to the viewport's edges; the caption stays in the column. */}
+      <div className="overflow-x-auto" style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}>
+        <svg viewBox={`${minX} ${minY} ${maxX - minX} ${maxY - minY}`} className="w-full block"
+          style={{ maxHeight: '50vh' }} preserveAspectRatio="xMidYMid meet" role="img"
           aria-label={`Today's commercial base is about ${BASE} typical developments, the white cluster in the middle; holding the gap adds about ${PER_YEAR} more a year for five years, each year a ring further out.`}>
           {ordered.map((b, n) => {
             // A box of footprint w x d, h storeys, centred at (u, v). No outlines: the
@@ -116,11 +126,16 @@ export function GrowthCubes() {
             const left = [c(-w, d, hh), c(w, d, hh), c(w, d), c(-w, d)].join(' ')
             const right = [c(w, -d, hh), c(w, d, hh), c(w, d), c(w, -d)].join(' ')
             const k = b.year === 0 ? 0.86 : 0.82
+            const top = shade(b.top, Math.min(b.tone, b.year === 0 ? 1 : 1.04))
+            // A soft shadow on the ground, cast to the lower right, is what makes a box
+            // sit on a surface instead of float on the page.
+            const shadow = [c(-w + 0.18, -d + 0.1), c(w + 0.45, -d + 0.1), c(w + 0.45, d + 0.35), c(-w + 0.18, d + 0.35)].join(' ')
             return (
               <g key={n}>
-                <polygon points={left} fill={shade(b.top, k)} />
-                <polygon points={right} fill={shade(b.top, k - 0.16)} />
-                <polygon points={roof} fill={b.top} />
+                <polygon points={shadow} fill="rgba(15, 23, 42, 0.10)" />
+                <polygon points={left} fill={shade(top, k)} />
+                <polygon points={right} fill={shade(top, k - 0.16)} />
+                <polygon points={roof} fill={top} />
               </g>
             )
           })}
