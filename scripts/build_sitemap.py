@@ -25,6 +25,7 @@ import glob
 import io
 import json
 import os
+import re
 import sys
 from datetime import date
 
@@ -46,19 +47,35 @@ ENTRY = [
 ]
 
 
-def routes():
-    """Every prerendered page, read off the build rather than listed here.
+ROUTES_TS = os.path.join(ROOT, 'fy28', 'src', 'routes.ts')
 
-    Only the top level. The nested pages -- `/reference/<name>` and `/analysis/<id>` --
-    are enumerated from the SOURCES that decide them, below and in `reference()`, because
-    a stale file left in dist would otherwise keep a deleted page in the sitemap.
+
+def routed():
+    """Every top-level route the app itself routes on, read from routes.ts -- the SLUG
+    table minus UNLISTED -- the same way prerender.mjs reads it.
+
+    THIS BREAKS THE LAST CYCLE. `routes()` used to read dist alone, and `prerender.mjs`
+    refuses to write a route that is not in the sitemap, so a brand new top-level page
+    could never enter either: the first refresh after /commercial-development was added
+    (16 September 2026) built every route and then failed on exactly that check, and
+    production went another day without a deploy. The route table is the thing that
+    decides a page exists, so the sitemap reads it directly.
     """
-    out = ['/']
-    for p in sorted(glob.glob(os.path.join(DIST, '*.html'))):
-        name = os.path.basename(p)[:-5]
-        if name not in ('index', 'not-found'):
-            out.append('/' + name)
-    return out
+    src = io.open(ROUTES_TS, encoding='utf-8').read()
+    m = re.search(r'export const SLUG: Record<Tab, string> = \{(.*?)\n\}', src, re.S)
+    if not m:
+        raise SystemExit('routes.ts: could not find SLUG')
+    slugs = {k: v for k, v in re.findall(r"^\s*([a-z]+):\s*'([^']*)'", m.group(1), re.M)}
+    u = re.search(r"export const UNLISTED[^\n]*new Set<Tab>\(\[([^\]]*)\]", src)
+    unlisted = set(re.findall(r"'([a-z]+)'", u.group(1))) if u else set()
+    return ['/' + v for k, v in slugs.items() if v and k not in unlisted]
+
+
+def routes():
+    """Every top-level page, from the route table (see `routed`), alphabetical as the
+    build's file listing was, so the sitemap's order does not churn. Nested routes --
+    /analysis/<id>, /blog/<slug> and the rest -- are enumerated by their own sources."""
+    return ['/'] + sorted(routed())
 
 
 def analysis_pages():
