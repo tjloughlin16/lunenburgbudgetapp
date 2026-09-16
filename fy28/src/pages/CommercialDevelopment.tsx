@@ -104,12 +104,12 @@ export function CommercialDevelopment() {
             That is {pct(five.shareOfBase, 0)} of everything commercial, industrial and personal the town has today, added again every year. The best year on record added {usdShort(bestValue)} of new value of every kind, residential included. Broken into the model&rsquo;s own mix of a &ldquo;typical Lunenburg development&rdquo; it is {F.buildings5} buildings in five years, on {F.parcelsToday} business parcels today.
           </Insight>
           <Insight n={2} figure={`${(SHARE * 100).toFixed(0)}¢`}
-            headline={<>The schools keep {(SHARE * 100).toFixed(0)}&cent; of each new-growth dollar. Pricing a development against the school gap without that roughly doubles what it appears to be worth.</>}>
+            headline={<>The schools keep {(SHARE * 100).toFixed(0)}&cent; of each new-growth dollar, so against the school gap a development is worth about half what it looks.</>}>
             New growth goes to the town&rsquo;s levy, and the schools get their share of what the town collects &mdash; {pct(T.schoolShareOfBudget, 0)} of it. And the housing half: the <em>average</em> home pays about {usd(HOME_PAYS)} a year toward schools and brings about {usd(HOME_COSTS)} of school cost, a wash &mdash; but the town's own record says a <em>new</em> home has not, on net, brought a pupil; what that is worth is on <Go to="homestudents" className="underline">Homes and students</Go>.
           </Insight>
           {BUILD && (
             <Insight n={3} figure={`${BUILD.multiple.toFixed(1)}×`} tone="var(--status-critical)"
-              headline={<>Development is the one answer that moves the revenue <em>rate</em> &mdash; and a flat build rate decays. To do the job it has to accelerate, not merely continue.</>}>
+              headline={<>Holding the projection on development alone takes {BUILD.multiple.toFixed(1)}&times; today&rsquo;s build rate, for ever &mdash; a flat build rate decays.</>}>
               A fixed number of dollars of new growth each year is a shrinking share of a growing town, which is why {pct(BASELINE_REVENUE_GROWTH, 2)} drifts back toward the {pct(LEVY_CAP, 1)} cap. Holding the projection for {YEARS} years from this side alone takes {BUILD.multiple.toFixed(1)} times today&rsquo;s build rate &mdash; {usdShort(BUILD.value)} a year, {pct(BUILD.shareOfExisting, 0)} of the commercial base{BUILD.forThirty !== null ? <>; for thirty years, {(BUILD.forThirty / DEFAULT_SCENARIO.newGrowth).toFixed(1)} times</> : null}. It is the only lever on the revenue side the town owns, and it is a decade&rsquo;s work before it shows.
             </Insight>
           )}

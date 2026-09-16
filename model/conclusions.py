@@ -72,7 +72,7 @@ EXTRAS_TOTAL = sum(p['cost'] or 0 for p in PROGRAMS
 
 CONCLUSIONS = [
  dict(n=1, anchor='the-money',
-      headline='Cutting every extra in the district buys exactly one year.',
+      headline=f'Cutting every extra in the district — ${EXTRAS_TOTAL:,.0f} — buys exactly one year.',
       figure=f'${EXTRAS_TOTAL:,.0f}',
       body=f'Every sport, every band, every club and every art supply, eliminated entirely, '
            f'comes to ${EXTRAS_TOTAL:,.0f}. The gap over the next five years is about $2.9 million. So '
@@ -80,7 +80,7 @@ CONCLUSIONS = [
            'forever, while the gap returns every single year.'),
 
  dict(n=2, anchor='the-money',
-      headline='After that, only classroom positions are big enough to cut.',
+      headline='Contracts, insurance and law set about 90% of the budget; after the extras, only classroom positions are big enough to cut.',
       figure='~90%',
       body='Salaries, health insurance, transportation and out-of-district tuition are '
            'roughly nine of every ten dollars, and each is set by contract, by the '
@@ -88,8 +88,8 @@ CONCLUSIONS = [
            'cuts had to come from personnel. There is no other place large enough.'),
 
  dict(n=3, anchor='/bend-the-curve#sped',
-      headline=f'The published cost increase is {sped.level_service_year()["published"]:.2%}. The recurring one is '
-               f'{sped.level_service_year()["underlying"]:.2%}.',
+      headline=f'The published cost increase is {sped.level_service_year()["published"]:.2%}; the one that comes back '
+               f'every year is {sped.level_service_year()["underlying"]:.2%}.',
       figure=f'{sped.level_service_year()["bend"]*100:.2f} pts',
       body=f'The district\u2019s own arithmetic for running the same schools one year '
            f'longer comes to {sped.level_service_year()["published"]:.2%}. Inside it, one line falls '

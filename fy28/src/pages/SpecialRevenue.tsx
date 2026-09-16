@@ -188,7 +188,7 @@ export function SpecialRevenue() {
 
       <ul className="mt-6">
         <Insight n={1} headline={<>
-          These funds took in more than they spent in {surplusYears.length} of{' '}
+          The town&rsquo;s funds outside the budget took in more than they spent in {surplusYears.length} of{' '}
           {d.by_year.length} years, and what they hold multiplied{' '}
           {times(last.carried / first.carried)}.
         </>}>
@@ -202,7 +202,7 @@ export function SpecialRevenue() {
         </Insight>
 
         <Insight n={2} headline={<>
-          {share(bandsLast.pandemic / bandsLast.total)} of what is being held is
+          {share(bandsLast.pandemic / bandsLast.total)} of what those funds hold is
           pandemic-era money, and this series ends before we can see whether it has gone.
         </>}>
           {bandsLast.pandemic_funds} funds &mdash; ARPA, the ESSER rounds and the rest of
@@ -217,8 +217,8 @@ export function SpecialRevenue() {
         </Insight>
 
         <Insight n={3} headline={<>
-          Most of it is not school money, and a large part of it is not even the general
-          town either &mdash; it is water, sewer and trash.
+          Most of the money held outside the budget is not school money &mdash; a large part
+          is water, sewer and trash.
         </>}>
           The five enterprise funds sit inside this same schedule until {fy(c.last_fy)} and
           held {usd(bandsLast.enterprise)}, or {share(bandsLast.enterprise / bandsLast.total)}{' '}

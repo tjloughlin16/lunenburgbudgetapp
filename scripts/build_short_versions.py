@@ -259,13 +259,23 @@ def rows():
         p.feed(src)
         marked = dedupe(m.points) or dedupe(m.stats)
         points = marked if marked else dedupe(p.points)
+        if not marked and route.startswith('/analysis/'):
+            # A markdown analysis has no short version yet. Where it numbers its claims
+            # ("1. Lunenburg paid ...") those are its points; otherwise its opening
+            # sentence alone -- every later first-sentence leans on the one before it.
+            numbered = [x for x in points if re.match(r'^\d+\. ', x)]
+            points = numbered if numbered else points[:1]
         if marked:
             p.figures = m.figures
         # A short version made of figures alone (the story page) or of plain prose (four
         # sentences) has no claim lines; fall back to the figure rows, then the paragraphs.
-        if not marked and len(points) < 3 and p.figrows:
+        md = route.startswith('/analysis/')
+        if not marked and not md and len(points) < 3 and p.figrows:
             points = dedupe(points + p.figrows)
-        if not marked and len(points) < 3 and p.paras:
+        if not marked and not md and len(points) < 3 and p.paras:
+            # A markdown analysis has no short version yet. Where it numbers its claims
+            # ("1. Lunenburg paid ...") those are its points; otherwise its opening
+            # sentence alone -- every later first-sentence leans on the one before it.
             points = dedupe(points + p.paras)[:6]
         figures = dedupe(p.figures)
         out.append({

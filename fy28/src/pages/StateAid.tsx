@@ -256,8 +256,8 @@ export function StateAid() {
         </Insight>
 
         <Insight n={3} headline={
-          <>The direction is far steadier than the size. In {V.town.over} of{' '}
-            {V.years.length} years the surprise was in the town&rsquo;s favour.</>
+          <>In {V.town.over} of {V.years.length} years the state-aid surprise was in the
+            town&rsquo;s favour &mdash; the direction is far steadier than the size.</>
         }>
           That is the answer to the question a board actually asks before it will look
           forward: is this stable enough to plan on? On the evidence here the aid estimate

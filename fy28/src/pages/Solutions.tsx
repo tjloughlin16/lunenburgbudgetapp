@@ -102,7 +102,7 @@ function Body({ d }: { d: Model }) {
         <li><strong>Business growth is real and slow.</strong> It needs {business.value} of new commercial value a year, every year, and pays off in about a decade.</li>
         <li><strong>Free cash covers a year, not a problem.</strong> {freeCashC ? freeCashC.body.split(/\.\s/)[0] + '.' : ''}</li>
         <li><strong>Only two things on the table change a rate: the health plan, and the pace of commercial building.</strong> Everything else is an amount, and an amount has to be found again — which is why every option below is priced to five years and to ten.</li>
-        <li><strong>After that there are two choices, and only two.</strong> {d.recommendation.closing}</li>
+        <li><strong>After that there are two choices, and only two: an override, or classroom positions.</strong> {d.recommendation.closing}</li>
       </ol>
 
       </ShortVersion>

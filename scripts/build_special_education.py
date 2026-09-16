@@ -833,8 +833,8 @@ def build_leaving(db, mf):
             conclusion(
                 id='the-total-held-while-its-parts-changed',
                 bearing='sizes',
-                claim='Children schooled outside Lunenburg changed %s over %s years.'
-                      % (C.pct(rc['elsewhere']['pct']), C.num(len(series))),
+                claim='Children schooled outside Lunenburg %s %s over %s years.'
+                      % ('fell' if rc['elsewhere']['pct'] < 0 else 'rose', C.pct(abs(rc['elsewhere']['pct'])), C.num(len(series))),
                 so_what='The total barely moved. Where they go changed completely, and the '
                         'routes cost the town different amounts.',
                 lede='The number of Lunenburg children going to school somewhere other '
@@ -860,8 +860,8 @@ def build_leaving(db, mf):
                           C.num(rc['in_lunenburg']['last'])),
                 figure='total_change',
                 figures={
-                    'total_change': figure(rc['elsewhere']['pct'],
-                                           C.pct(rc['elsewhere']['pct'])),
+                    'total_change': figure(rc['elsewhere']['pct'], C.pct(abs(rc['elsewhere']['pct'])),
+                                           ('fall' if rc['elsewhere']['pct'] < 0 else 'rise') + ' in children schooled outside Lunenburg'),
                     'years': figure(len(series), C.num(len(series)), 'years'),
                     'elsewhere_from': figure(rc['elsewhere']['first'],
                                              C.num(rc['elsewhere']['first'])),

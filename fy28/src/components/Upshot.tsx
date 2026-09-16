@@ -188,7 +188,7 @@ export function Upshot() {
           <Claim n={1} figure={usdShort(LEVEL_SERVICE.gap)} tone="critical"
             eyebrow="Projected" href="#where-the-town-is"
             cites={['gap', 'expense-base', 'salaries', 'health']}
-            head="Projections show a deficit next year, and in every year after it.">
+            head={`Projections show a ${usdShort(LEVEL_SERVICE.gap)} deficit next year, and one in every year after it.`}>
             No FY{BASE[0].fy} budget exists yet. Run the district&rsquo;s own published growth
             rates forward one year &mdash; same staff, same{' '}
             {LEVEL_SERVICE.enrollment.toLocaleString()} children &mdash; and they produce a
@@ -198,7 +198,7 @@ export function Upshot() {
           <Claim n={2} figure={`${ALREADY_CUT.fte} FTE`} tone="critical"
             eyebrow="On the record" href="#two-rates"
             cites={['cuts', 'fy27-approp']}
-            head="The town has already cut deeply, and the projection reopens anyway.">
+            head={`The budget in force already cut ${ALREADY_CUT.fte} FTE, and the projection reopens anyway.`}>
             The budget now in force cut {ALREADY_CUT.fte} positions and{' '}
             {usd(ALREADY_CUT.cost)} &mdash; four classroom teachers, an interventionist and
             a half, an assistant principal, a custodian. The gap above opens on top of
@@ -209,7 +209,7 @@ export function Upshot() {
             figureNote={`against ${pct(LONG_RUN)} revenue`}
             tone="critical" eyebrow="Projected" href="#two-rates"
             cites={['prop25', 'salaries', 'health']}
-            head="It is a rate problem, not a bad year.">
+            head={`Costs grow ${pct(COST_GROWTH_BLENDED)} a year and revenue ${pct(LONG_RUN)}: a rate problem, not a bad year.`}>
             Proposition 2&frac12; caps what the town may collect. Nothing caps insurance.
             Two things compounding at different speeds pull apart for ever, and the
             distance grows on its own with nobody doing anything wrong.
@@ -218,7 +218,7 @@ export function Upshot() {
           <Claim n={4} figure={pct(SALARY_AND_HEALTH, 0)} eyebrow="On the record"
             href="#the-cuts"
             cites={['expense-base', 'salaries', 'health']}
-            head="Only two lines can change the direction — and neither is a School Committee vote.">
+            head={`Salaries and health insurance are ${pct(SALARY_AND_HEALTH, 0)} of the budget — the only two lines that can change the direction, and neither is a School Committee vote.`}>
             Salaries and health insurance are {pct(SALARY_AND_HEALTH, 0)} of the budget:
             one bargained with the unions, one bought by the Town. Sports, clubs and
             administrators are an amount, not a direction.
@@ -239,7 +239,7 @@ export function Upshot() {
           <Claim n={5} figure={usdShort(FC_REDIRECT)}
             figureNote="a year, in a year like this one"
             tone="critical" eyebrow="Record and projection" href="/free-cash"
-            head="Free cash could pay for some of this, and it is one-time money.">
+            head={`About ${usdShort(FC_REDIRECT)} a year of free cash could go to the schools, and it is one-time money.`}>
             The town certified {usdShort(FC.certified)} this year,{' '}
             {(FC.currentShare * 100).toFixed(2)}% of its budget against a stated aim of{' '}
             {(FC.bandLow * 100).toFixed(0)}&ndash;{(FC.bandHigh * 100).toFixed(0)}%. About{' '}
@@ -317,7 +317,7 @@ export function UpshotMore() {
                                                   : pct(CH70_RATE, 1)}
             figureNote="Chapter 70, every year"
             tone="critical" eyebrow="Record and projection" href="#the-state-house"
-            head={`State aid is already in these charts, and would have to grow `
+            head={`State aid is already in these charts at ${CH70_RATE === null ? usdShort(STATE_AID.total) + ' a year' : pct(CH70_RATE, 1) + ' a year'}, and would have to grow `
               + `${CH70_MULTIPLE !== null && CH70_MULTIPLE < SPELLED.length
                     ? SPELLED[CH70_MULTIPLE] : CH70_MULTIPLE}`
               + ` times faster.`}
@@ -335,7 +335,7 @@ export function UpshotMore() {
               figureNote="today’s build rate, for ever"
               tone="critical" eyebrow="Record and projection" href="#commercial-development"
               cites={['taxbase', 'levy']}
-            head="Commercial development is real money and the wrong order of magnitude.">
+            head={`Commercial development is real money and the wrong order of magnitude: ${BUILD.multiple.toFixed(1)}× today’s build rate, for ever.`}>
               New building raises that same orange line, and the schools keep{' '}
               {(SHARE * 100).toFixed(0)}&cent; of each dollar. Holding the projection from
               that side alone takes {usdShort(BUILD.value)} of new value a year &mdash;{' '}
