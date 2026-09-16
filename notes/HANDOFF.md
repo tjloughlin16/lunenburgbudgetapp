@@ -10,6 +10,15 @@ it had never been fixed anywhere. Check anything load-bearing against the repo.
 
 ---
 
+## 16 September 2026 — wayfinding, the short version, the fold
+
+**`notes/HANDOFF-WAYFINDING.md` is the current workstream**, on branch
+`resident-wayfinding` (14 commits, not deployed). Real links everywhere, a ranked front
+page with `/solutions` beside the crisis, per-page titles, reading time on every page, a
+declared and budgeted **short version** per page, and **the fold** behind it. What is left
+is editorial: 9 pages over the five-minute budget and 13 with no short version, listed
+there. `notes/process/READING-FLOW.md` is the design it was built to.
+
 ## 11 September 2026 — the blog, the brand, and the reset order
 
 **`notes/HANDOFF-BLOG.md` is the current workstream** and supersedes the ordering below for

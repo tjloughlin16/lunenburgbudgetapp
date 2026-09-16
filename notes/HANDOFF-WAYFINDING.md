@@ -1,0 +1,109 @@
+# Handoff — wayfinding, the short version, and the fold
+
+Written 16 September 2026 to survive a context reset. **Nothing here is a source**: after
+a reset it reads like something verified, and it is a claim about the repo. Check anything
+load-bearing against the branch.
+
+**Branch: `resident-wayfinding`, 14 commits on top of `main`, NOT deployed** (rule 10).
+One of the 14 is `54f82336 Daily refresh, 2026-09-15` — the cron committed the daily
+refresh onto this branch because it was checked out at the time. It is harmless and merges
+with the rest; do not rebase it away by accident.
+
+`notes/process/READING-FLOW.md` is the design document this branch built to. Read it
+first; this file is what a person needs to *continue*, not the argument.
+
+---
+
+## What the branch did, in one paragraph
+
+A walk through the live site as three residents (a parent, a taxpayer, a board member) on
+15 September found the pages good and the paths between them assuming the reader already
+knew the map. So: every navigation is a real `<a href>`; the front page ranks its doors
+and carries the projected gap; `/solutions` is listed and sits beside the crisis; caveats
+moved to the foot of the pages they used to open; every page names itself in the browser
+tab; meeting pages show posted roster names where the caption's hearing can be matched.
+Then the length problem: every page shows an estimated reading time, counted from itself;
+every page can declare a **short version** sized to one sitting, held to a five-minute
+budget by a ratchet; and everything after the short version sits behind one control —
+**the fold** — that says what it is and how long it is, and opens itself for any link into
+it.
+
+## The mechanisms, and where each lives
+
+| thing | where | what to know |
+|---|---|---|
+| Real links | `fy28/src/lib/nav.tsx` | `<Go to="tab">` renders `<a href>`, routes in-app on a plain left click only. The router is a React context (`NavProvider` in `App.tsx`); no `onJump` props remain. **Every new navigation must be a `Go` or an `<a>`, never a `<button onClick={go}>`.** |
+| Per-page `<title>` | `fy28/src/lib/title.ts` | App sets it in a layout effect from `LABEL`; `ReportShell` overrides from a passive effect for the routes that serve many pages. All 157 pages carried the site title before this. |
+| Reading time on the page | `fy28/src/components/ReadingTime.tsx` | Counts text nodes under `#root` minus header/breadcrumb/footer/`[data-no-count]`, re-counts on a MutationObserver, 230 wpm. Renders on the breadcrumb row (App's `Breadcrumb`). Says **Reference** (with row count) for `REFERENCE` tabs and **Interactive** for `TOOLS` tabs — both sets in `routes.ts`. |
+| The short version | `data-short` attribute | Set by `<Section kind="conclusions">`, every `<Conclusions>` block, `<ShortVersion>` (all in `components/report.tsx`), the crisis page's Upshot section, and raw `<section data-section="conclusions" data-short="">` on five pages. Counted once however the marks nest. |
+| The fold | `fy28/src/components/FullVersion.tsx` | A native `<details>`; summary reads *Read the full analysis ↓ · 10 min* (its own word count). **Opens itself** on a `#hash` inside it, on a click of an in-page anchor whose target is inside (capture-phase listener — citation markers, "how this was worked out"), and on `beforeprint`. Carries an "On this page" contents list (numbered, two columns, `.toc-*` in `index.css`). |
+| The table | `scripts/build_reading_time.py` → `notes/generated/reading-time.csv` | One row per prerendered route: words, minutes, `kind` (page/reference/tool, read off the build), `short_words`, `short_over_budget`, sections, `words_before_first_section`, `table_rows`. **Reads `fy28/dist`, so build first.** Registered in `check_generated.py`. |
+| The budget | same script, `SHORT_BUDGET = 1150` | Five minutes — TJ: "each short page should be 5 minutes or less", a ceiling not a target. Enforced as a **ratchet**: a short version over budget may only shrink; one under may not go over; the writer **refuses to write** if a baseline would move upward (`--allow-growth` to do it on purpose, e.g. when a mark widens rather than the text). `--strict` also fails pages with none — not yet in `check_generated`; turn it on when the list below is empty. |
+| Posted names | `scripts/build_recording_minutes.py` | Matches heard attendees to `sources/data/board-pages.csv` rosters — seat-like roles only, unambiguous only, and **only within the member's current term** (term expiry − 3 years). `posted_name`, `posted_role`, `matched_by` on each attendee; the heard form is always kept. Rendered in `pages/WhatWasSaid.tsx`. Under-matching is the safe direction. |
+| Search titles | `scripts/build_search_index.py` | Page name from `<title>` minus the site suffix; H1 as fallback. **The index has not been rebuilt or synced** — do it at deploy (`build_search_index.py`, then `sync_search_d1.py`, inside the D1 write budget). |
+| `/paras` | `routes.ts` | Slug for the paraprofessionals page; `/the-paraprofessionals` is an alias. `paras` had been an alias for `/school-staffing` — the routes comment records why that was overridden. `notes/process/PERSONAS.md` records the review under the new address. |
+
+## The numbers as of the last commit (`8be3dc76`)
+
+From `notes/generated/reading-time.csv`, 81 prerendered routes:
+
+- **45 pages declare a short version; 9 are over the five-minute budget; 13 declare none.**
+- The fold is on all 29 React report pages, `/crisis`, the six crisis-area pages, the
+  three money reports, and any markdown analysis whose first `##` matches
+  `SHORT_HEADING` in `pages/Analysis.tsx` (*The short version*, *What this establishes*,
+  *In plain terms*, *What we now hold*, *Where things stand*).
+
+**Over budget (the "what is truly critical" decisions — TJ's, not an agent's to guess):**
+`/one-big-report` 15,479 (it is an index of every report's conclusions; needs its own
+treatment, not trimming) · `/what-courses-actually-ran` 2,190 · `/the-situation` 1,928
+(prints all 17 model conclusions) · `/crisis` 1,659 · `/special-education-class-size`
+1,496 · `/which-grades-students-leave` 1,494 · `/if-students-leave` 1,272 ·
+`/what-other-districts-spend` 1,252 · `/how-chapter-70-works` 1,172. The fix on most is
+fewer cards, not shorter cards — rule 7b says three or four.
+
+**No short version (13):** eleven markdown analyses that open with context rather than a
+conclusion — `show-your-work`, `fy26-closeout`, `fy26-closeout-town`, `athletics`,
+`athletics-ledger`, `questions`, `budget-vs-actual`, `sped-and-funds`, `what-you-can-ask`,
+`peer-districts`, `fy27-and-the-override` — plus `/why-it-repeats` and `/athletics`. For a
+markdown document the fix is in the document: a first section headed *The short version*,
+and the page folds itself. Several of those openers (*What this rests on, and what it is
+not*; *Why this is a separate document*) are rule 7a violations in their own right.
+
+## What is NOT done, in order
+
+1. **Deploy.** Nobody asked. When it happens: `npm run build:site`, `build_sitemap.py`,
+   `build_search_index.py`, `sync_search_d1.py`, then deploy; verify `/paras`,
+   `/the-paraprofessionals` (alias), `/solutions`, and that `/crisis#where-the-town-is`
+   opens the fold.
+2. **The editing pass** on the 9 over budget and the 13 with none (above). Then flip
+   `--strict` on in `check_generated.py`.
+3. **The blog has zero published posts.** It is the site's built "faster read" format and
+   `HomeLatest` renders nothing until one is published. See `notes/HANDOFF-BLOG.md`.
+4. **Names on meeting pages**: only ~170 of ~1,028 attendees match, by design. Older
+   meetings stay as heard because the roster is evidence only for the current term. If TJ
+   wants more, the honest route is historical rosters from the annual reports, not a looser
+   matcher.
+5. `oxlint` is broken in `node_modules` (missing native binding) — pre-existing; `tsc` is
+   the check that runs.
+6. `check_generated.py` reports ~30 stale generators **from the 15 September refresh**,
+   unrelated to this branch; everything this branch touches passes.
+
+## Things that will bite
+
+- **Never wrap a `Section`'s close inside a `FullVersion` opened outside it.** The
+  rollout script got five pages wrong that way; `tsc` catches it (JSX nesting), so run it.
+- **A `<details>` hides its content from `scrollIntoView`.** Anything that links into a
+  page must go through an anchor or a hash so `FullVersion` sees it; a programmatic
+  `scrollIntoView` from elsewhere needs to open the fold first.
+- **`build_reading_time.py` measures `dist`.** A stale build gives a stale table and the
+  `--check` will say STALE against the committed CSV. Build, then write, then check.
+- **The Python and DOM word counts differ by a few percent** (different tag stripping).
+  The on-page figure is the one a reader sees; the CSV is for triage. Do not "fix" one to
+  match the other by typing.
+- **The ratchet baseline is the committed CSV.** Running the writer with `--allow-growth`
+  moves it; do that only when the *mark* changed, and say so in the commit.
+- **The reading-time `<span>` is `data-no-count`** and so is the fold's contents list;
+  anything else added to the chrome should be too, or it counts itself.
+- The three "walk as a resident" screenshots and the `page.py` text-dumper live only in
+  the session scratchpad; the method (headless Chrome `--screenshot` against a local
+  static server over `dist`, `--dump-dom` to check `<details open>`) is cheap to redo.

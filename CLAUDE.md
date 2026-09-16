@@ -683,6 +683,11 @@ separate agent failures in one day that prompted it — none of which was the ag
 
 
 
+`notes/HANDOFF-WAYFINDING.md` is the running doc for the site's reading experience: real
+links, the ranked front page, per-page reading time, the **short version** every page
+declares (five-minute budget, ratcheted) and the **fold** behind it. `notes/process/READING-FLOW.md`
+is the design it follows -- three readers, their paths, what each page owes them.
+
 `notes/HANDOFF-MONEY-IN.md` is the running doc for the current workstream: modelling every
 route money takes into the school budget, what has been established, and what is explicitly
 not. It is where to start if the work in progress is the money-flow page.
