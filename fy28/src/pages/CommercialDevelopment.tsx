@@ -7,6 +7,7 @@ import { DEVELOPMENT, FEASIBILITY } from '../model/answers'
 import { ReportShell, ShortVersion, Insight, Stat, Grain, NotShown, H2, Body, MoreReports } from '../components/report'
 import { FullVersion } from '../components/FullVersion'
 import { WhatIsADevelopment } from '../components/walk'
+import { GrowthCubes } from '../components/GrowthCubes'
 
 const TAB: Tab = 'growth'
 const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`
@@ -56,6 +57,9 @@ export function CommercialDevelopment() {
     <ReportShell tab={TAB} dataUrl="/data/model.json"
       title="Commercial development is real money and the wrong order of magnitude"
       standfirst={<>What &ldquo;grow our way out of it&rdquo; would have to look like: {usdShort(five.value)} of new commercial value a year, every year, against a town whose best year on record added {usdShort(bestValue)} of new value of every kind &mdash; and the schools keep {(SHARE * 100).toFixed(0)}&cent; of each new dollar.</>}>
+
+      {/* THE PICTURE FIRST. TJ: "so people 'feel' it." */}
+      <GrowthCubes />
 
       <Grain>
         A projection from the town&rsquo;s own tax-base records &mdash; the assessors&rsquo; new-growth history, the FY23 value by class, and the model&rsquo;s archetype values for what one development is worth. Dollars of assessed value, not buildings that exist. Nothing here says whether any of it will happen.
