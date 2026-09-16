@@ -57,6 +57,10 @@ export async function onRequestPost({ request, env }) {
 }
 
 // Every other method. Pages routes a POST to onRequestPost above before falling here.
-export async function onRequestGet() {
-  return new Response('POST one event: {name, page, detail?, ref?, landing?}', { status: 405 })
+export async function onRequestGet({ env }) {
+  // A GET says whether the Analytics Engine binding reached this deployment -- the
+  // one thing a 204 from the POST cannot say, since the POST fails quiet without it.
+  return new Response(JSON.stringify({ post: 'one event: {name, page, detail?, ref?, landing?}',
+    bound: Boolean(env.EVENTS && typeof env.EVENTS.writeDataPoint === 'function') }),
+    { status: 200, headers: { 'content-type': 'application/json' } })
 }
