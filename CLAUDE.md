@@ -925,6 +925,7 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_reading_time.py --strict    # ...and fail every page that declares no short version, once coverage is done
     python3 scripts/build_short_versions.py      # every page and the points its short version asks a reader to leave with (.md table + .csv)
     python3 scripts/build_short_versions.py --check
+    CF_ANALYTICS_TOKEN=... python3 scripts/report_site_events.py   # the funnel: where people land, which door, was the fold opened, what search found nothing
     python3 scripts/build_blog.py                # the blog: ONLY the posts named in PUBLISHED
     python3 scripts/build_blog.py --check        # ...and that no unpublished one is anywhere on the site
     python3 scripts/verify_blog.py               # every sentence on a post, verbatim from the copy

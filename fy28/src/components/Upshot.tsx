@@ -1,6 +1,7 @@
 import { abs } from '../lib/abs'
 import { Cite } from './Citations'
 import { Go } from '../lib/nav'
+import { track } from '../lib/track'
 import { MODEL, usd, usdShort, COST_GROWTH_BLENDED } from '../model/engine'
 import {
   ALL_CUTS, CUT_OPTIONS, DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, PACKAGES, RATE_LINES,
@@ -263,20 +264,20 @@ export function Upshot() {
             the board member wants the other door -- the options -- which this page never
             named. Three links, at the point the wedge has just made the problem real. */}
         <div className="grid gap-2.5 sm:grid-cols-3 mt-6">
-          <Go to="solutions" className="card px-4 py-3.5 block transition-opacity hover:opacity-90"
+          <Go to="solutions" onClick={() => track('exit', 'solutions')} className="card px-4 py-3.5 block transition-opacity hover:opacity-90"
             style={{ borderLeft: '3px solid var(--status-critical)' }}>
             <span className="block text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
               Solutions: what the town can do about it &rarr;</span>
             <span className="block text-[12.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
               Every option, what it closes, who decides, what it costs somebody.</span>
           </Go>
-          <Go to="owners" className="card px-4 py-3.5 block transition-opacity hover:opacity-90">
+          <Go to="owners" onClick={() => track('exit', 'owners')} className="card px-4 py-3.5 block transition-opacity hover:opacity-90">
             <span className="block text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
               What it means for your tax bill &rarr;</span>
             <span className="block text-[12.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
               The homes, who owns them, and what the bill has done.</span>
           </Go>
-          <Go to="override" className="card px-4 py-3.5 block transition-opacity hover:opacity-90">
+          <Go to="override" onClick={() => track('exit', 'override')} className="card px-4 py-3.5 block transition-opacity hover:opacity-90">
             <span className="block text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
               What an override would cost &rarr;</span>
             <span className="block text-[12.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>

@@ -102,6 +102,28 @@ markdown document the fix is in the document: a first section headed *The short 
 and the page folds itself. Several of those openers (*What this rests on, and what it is
 not*; *Why this is a separate document*) are rule 7a violations in their own right.
 
+## Analytics (16 September)
+
+Two layers, neither with a cookie or an identifier -- `fy28/src/lib/track.ts`:
+
+1. **Cloudflare Web Analytics**, loaded by the app as a script tag (never zone-injected
+   again -- that once altered archived HTML bytes). **Needs the site token** in
+   `fy28/src/data/analytics.json` (`cfBeaconToken`); empty means nothing loads. Create
+   the site in the dashboard: Analytics & Logs > Web Analytics > Add a site >
+   lunenburgbudgetproject.org, and paste the token from the snippet. It is public by
+   nature, so it lives in git.
+2. **First-party events** -- `view` (with landing flag and referrer host), `door`,
+   `fold_open`, `exit`, `search_zero`, `question` -- POSTed with `sendBeacon` to
+   `functions/api/event.js`, written to the Analytics Engine dataset
+   `lunenburg_site_events` (binding `EVENTS` in `wrangler.jsonc`; Analytics Engine, not
+   D1, so the search sync and question inbox keep their write budget). Live the moment
+   the next deploy carries the binding. `scripts/report_site_events.py` prints the funnel;
+   **it needs an API token with Account Analytics: Read** in `CF_ANALYTICS_TOKEN` --
+   wrangler's OAuth login does not have that scope (checked).
+
+The prerenderer and headless checks are excluded (`navigator.webdriver`), and dev builds
+send nothing.
+
 ## What is NOT done, in order
 
 1. **Verify the 16 September deploy** (the daily refresh does build, sitemap, search

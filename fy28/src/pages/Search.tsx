@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Tab } from '../routes'
+import { track } from '../lib/track'
 import { ReportShell, Body } from '../components/report'
 
 const TAB: Tab = 'search'
@@ -172,6 +173,11 @@ export default function Search() {
   }, [asked, board, since])
 
   const total = data ? ORDER.reduce((n, c) => n + (data.counts[c]?.hits || 0), 0) : 0
+  // A search that found nothing is the most useful thing analytics can tell this site:
+  // a question the archive did not answer. The term, not the person (lib/track.ts).
+  useEffect(() => {
+    if (data && asked && !busy && !err && total === 0) track('search_zero', asked.slice(0, 100))
+  }, [data, asked, busy, err, total])
   const suggestions = useMemo(() => {
     const key = asked.trim().toLowerCase().replace(/^"|"$/g, '')
     if (!key) return null

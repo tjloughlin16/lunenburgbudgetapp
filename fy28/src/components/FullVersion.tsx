@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { countWords, label } from './ReadingTime'
+import { track } from '../lib/track'
 
 /** THE FOLD: everything after the short version, behind one control.
  *
@@ -46,6 +47,11 @@ export function FullVersion({ what = 'the full analysis', children }: {
       return t && el.contains(t) ? t : null
     }
     const open = () => { if (!el.open) el.open = true }
+    // Did anybody open it, and on which page -- the one number the whole short-version
+    // design is judged by. Counted once per mount, however it opened.
+    let counted = false
+    const onToggle = () => { if (el.open && !counted) { counted = true; track('fold_open', window.location.pathname) } }
+    el.addEventListener('toggle', onToggle)
 
     // The count and the section list, settled with the content.
     const measure = () => {
@@ -100,6 +106,7 @@ export function FullVersion({ what = 'the full analysis', children }: {
       document.removeEventListener('click', onClick, true)
       window.removeEventListener('beforeprint', before)
       window.removeEventListener('afterprint', after)
+      el.removeEventListener('toggle', onToggle)
     }
   }, [])
 

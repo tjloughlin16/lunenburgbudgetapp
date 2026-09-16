@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Go } from '../lib/nav'
+import { track } from '../lib/track'
 import { useReport } from '../components/report'
 import { Inline } from '../lib/inline'
 import { type BlogPayload } from './Blog'
@@ -112,7 +113,7 @@ const DOORS: Door[] = [
 
 function DoorCard({ d, lead }: { d: Door; lead?: boolean }) {
   return (
-    <Go to={d.to}
+    <Go to={d.to} onClick={() => track('door', d.to)}
       className={'card block transition-opacity hover:opacity-90 '
         + (d.quiet ? 'px-4 py-3 min-h-[52px]' : lead ? 'px-5 py-5 min-h-[88px]' : 'px-4 py-4 min-h-[64px]')}
       style={d.quiet ? { background: 'transparent' }

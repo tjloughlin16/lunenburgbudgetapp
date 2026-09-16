@@ -76,6 +76,7 @@ import { Analysis } from './pages/Analysis'
 import { LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle } from './lib/title'
+import { track } from './lib/track'
 import { ReadingTime } from './components/ReadingTime'
 
 /** What index.html ships, read once so the front page keeps it exactly. */
@@ -156,6 +157,10 @@ export default function App() {
   // better than the route table does (a post, a meeting, a report whose H1 is a
   // finding) can override it from a passive effect -- see lib/title.ts. The front page
   // keeps the title index.html ships.
+  // One `view` per page shown, first-party (see lib/track.ts). The beacon counts too;
+  // this one is here so the funnel report has every step in one dataset.
+  useEffect(() => { track('view', tab) }, [tab])
+
   useLayoutEffect(() => {
     if (tab === ROOT) { document.title = HOME_TITLE; return }
     // An area's front page is named for the area -- "Budget Crisis", not "Start here",

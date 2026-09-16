@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { track } from '../lib/track'
 import CONFIG from '../data/ask-config.json'
 
 /** Ask us a question about the budget.
@@ -104,6 +105,7 @@ export function AskUs() {
       const j = await r.json()
       if (!r.ok || !j.ok) { setStatus('error'); setError(j.error || `HTTP ${r.status}`); return }
       setStatus('sent'); setQuestion(''); setEmail('')
+      track('question')
     } catch (err) {
       setStatus('error'); setError(String(err))
     }
