@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-10",
+ "generated": "2026-09-15",
  "origins": [
   {
    "id": "school",
@@ -17,9 +17,19 @@
    "url": "https://www.doe.mass.edu/"
   },
   {
+   "id": "state-massgis",
+   "name": "MassGIS, Commonwealth of Massachusetts",
+   "url": "https://www.mass.gov/info-details/massgis-data-property-tax-parcels"
+  },
+  {
    "id": "state-dls",
    "name": "Massachusetts DOR, Division of Local Services",
    "url": "https://dls-gw.dor.state.ma.us/gateway/dlspublic/certificationfreecashpublicreport/certificationfreecashpublic"
+  },
+  {
+   "id": "us-census",
+   "name": "United States Census Bureau",
+   "url": "https://www.census.gov/programs-surveys/acs/"
   },
   {
    "id": "peer-districts",
@@ -40,11 +50,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 18 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 35 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 297 of these 313 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 336 of these 352 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -539,6 +549,155 @@
   },
   {
    "section": "theirs",
+   "id": "census",
+   "origin": "us-census",
+   "title": "Who lives here — the American Community Survey",
+   "blurb": "The Census Bureau’s five-year estimates for Lunenburg: age, households with children, income by age of householder, and owner against renter — plus median household income for every Massachusetts municipality. EVERY FIGURE IS A SAMPLE ESTIMATE WITH A MARGIN, which is what makes it a different kind of document from a DESE count of children.",
+   "items": [
+    {
+     "path": "state-census/acs5-2023-B19013-massachusetts-lunenburg.json",
+     "title": "Median household income, every Massachusetts municipality, 2019–2023",
+     "stars": 3,
+     "what": "Fetched whole rather than for Lunenburg alone, because a rank is a claim about 350 other places and quoting one from a query nobody kept is a derived thing passed off as an observed one. Four municipalities are top-coded at $250,001 with no computable margin.",
+     "kind": "JSON",
+     "bytes": 31257,
+     "url": "/docs/state-census/acs5-2023-B19013-massachusetts-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2023-B19013-massachusetts-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2023-B01001-lunenburg.json",
+     "title": "Age by sex, Lunenburg, 2019–2023",
+     "stars": 3,
+     "what": "The raw API response, saved as returned. 49 estimates with their margins: every five-year age band for each sex, which is where the 65-and-over count comes from — it is a sum of twelve cells and its margin is the root of the sum of their squares, not one of theirs.",
+     "kind": "JSON",
+     "bytes": 4050,
+     "url": "/docs/state-census/acs5-2023-B01001-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2023-B01001-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2023-B11005-lunenburg.json",
+     "title": "Households by presence of a child under 18, Lunenburg, 2019–2023",
+     "stars": 3,
+     "what": "The real denominator behind “about 30% of homes have a child in the school”. It counts households with a child under 18 — which includes Monty Tech, private, charter and pre-school children — so it is a CEILING on the claim rather than the figure.",
+     "kind": "JSON",
+     "bytes": 1662,
+     "url": "/docs/state-census/acs5-2023-B11005-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2023-B11005-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2023-B25038-lunenburg.json",
+     "title": "Owner and renter households by the year the householder moved in, Lunenburg, 2019–2023",
+     "stars": 3,
+     "what": "How long the owners have been here, in bands. The question behind “taxed out of a house bought decades ago”, and the table /homes-and-taxes reads.",
+     "kind": "JSON",
+     "bytes": 1344,
+     "url": "/docs/state-census/acs5-2023-B25038-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2023-B25038-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2023-B19049-lunenburg.json",
+     "title": "Median household income by age of householder, Lunenburg, 2019–2023",
+     "stars": 3,
+     "what": "What turns “seniors on fixed incomes” from a claim into a number. Five estimates; the under-25 band is published as the sentinel -666666666, which means not available and is not a figure.",
+     "kind": "JSON",
+     "bytes": 582,
+     "url": "/docs/state-census/acs5-2023-B19049-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2023-B19049-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2023-B25003-lunenburg.json",
+     "title": "Owner against renter, Lunenburg, 2019–2023",
+     "stars": 3,
+     "what": "Tenure. It is how a levy increase reaching four households in five directly stops being an impression.",
+     "kind": "JSON",
+     "bytes": 393,
+     "url": "/docs/state-census/acs5-2023-B25003-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2023-B25003-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2023-B25039-lunenburg.json",
+     "title": "Median year the householder moved in, Lunenburg, 2019–2023",
+     "stars": 3,
+     "what": "One number each for owners and renters.",
+     "kind": "JSON",
+     "bytes": 388,
+     "url": "/docs/state-census/acs5-2023-B25039-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2023-B25039-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2018-B19013-massachusetts-lunenburg.json",
+     "title": "Median household income, every Massachusetts municipality, 2014–2018",
+     "stars": 2,
+     "what": "The 2014–2018 window. It holds 351 municipalities against 2023’s 350, so a rank in one vintage is not a rank in the same set as the other.",
+     "kind": "JSON",
+     "bytes": 31012,
+     "url": "/docs/state-census/acs5-2018-B19013-massachusetts-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2018-B19013-massachusetts-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2018-B01001-lunenburg.json",
+     "title": "Age by sex, Lunenburg, 2014–2018",
+     "stars": 2,
+     "what": "The older vintage. The two five-year windows do not overlap, which is what makes a comparison between them permissible at all — and most of the comparisons still do not clear the margins.",
+     "kind": "JSON",
+     "bytes": 4039,
+     "url": "/docs/state-census/acs5-2018-B01001-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2018-B01001-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2018-B11005-lunenburg.json",
+     "title": "Households by presence of a child under 18, Lunenburg, 2014–2018",
+     "stars": 2,
+     "what": "The 2014–2018 window.",
+     "kind": "JSON",
+     "bytes": 1668,
+     "url": "/docs/state-census/acs5-2018-B11005-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2018-B11005-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2018-B25038-lunenburg.json",
+     "title": "Households by the year the householder moved in, Lunenburg, 2014–2018",
+     "stars": 2,
+     "what": "The 2014–2018 window; its bands are cut at different years from 2023’s.",
+     "kind": "JSON",
+     "bytes": 1344,
+     "url": "/docs/state-census/acs5-2018-B25038-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2018-B25038-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2018-B19049-lunenburg.json",
+     "title": "Median household income by age of householder, Lunenburg, 2014–2018",
+     "stars": 2,
+     "what": "The 2014–2018 window.",
+     "kind": "JSON",
+     "bytes": 582,
+     "url": "/docs/state-census/acs5-2018-B19049-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2018-B19049-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2018-B25003-lunenburg.json",
+     "title": "Owner against renter, Lunenburg, 2014–2018",
+     "stars": 2,
+     "what": "The 2014–2018 window.",
+     "kind": "JSON",
+     "bytes": 393,
+     "url": "/docs/state-census/acs5-2018-B25003-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2018-B25003-lunenburg.json"
+    },
+    {
+     "path": "state-census/acs5-2018-B25039-lunenburg.json",
+     "title": "Median year the householder moved in, Lunenburg, 2014–2018",
+     "stars": 2,
+     "what": "The 2014–2018 window.",
+     "kind": "JSON",
+     "bytes": 388,
+     "url": "/docs/state-census/acs5-2018-B25039-lunenburg.json",
+     "textUrl": "/docs/state-census/acs5-2018-B25039-lunenburg.json"
+    }
+   ]
+  },
+  {
+   "section": "theirs",
    "id": "tax-base",
    "origin": "town",
    "title": "Tax base, Chapter 70 and peers",
@@ -935,11 +1094,54 @@
   },
   {
    "section": "theirs",
+   "id": "state-massgis",
+   "origin": "state-massgis",
+   "title": "The assessors’ parcels — every property, as the state publishes it",
+   "blurb": "MassGIS’s Level 3 parcel package for Lunenburg: parcel polygons and the assessor’s FY2026 extract, joined by LOC_ID. Value, use code, year built, last recorded deed and price for all 5,303 parcels. Owner names are in the file, are public record, and are used here in aggregate only.",
+   "items": [
+    {
+     "path": "state-massgis/L3_SHP_M162_LUNENBURG.zip",
+     "title": "Level 3 parcels, Lunenburg (M162), FY2026",
+     "stars": 3,
+     "what": "Downloaded 13 September 2026 from MassGIS’s direct file address. The assessing table is M162Assess_CY26_FY26.dbf; the last-sale date is a deed, not an arrival — a third are nominal transfers.",
+     "kind": "ZIP",
+     "bytes": 1697201,
+     "url": "/docs/state-massgis/L3_SHP_M162_LUNENBURG.zip",
+     "textUrl": "/docs/state-massgis/L3_SHP_M162_LUNENBURG.zip"
+    },
+    {
+     "path": "state-massgis/PROVENANCE.md",
+     "title": "Where it came from, and what LS_DATE is not",
+     "stars": 2,
+     "what": "The address, the hash, and the caveat that governs every tenure figure read from it.",
+     "kind": "Notes",
+     "bytes": 1821,
+     "url": "/docs/state-massgis/PROVENANCE.md",
+     "count": 33,
+     "unit": "lines",
+     "textUrl": "/docs/state-massgis/PROVENANCE.md"
+    }
+   ]
+  },
+  {
+   "section": "theirs",
    "id": "state-dls",
    "origin": "state-dls",
    "title": "Free cash, certified — Lunenburg and eight comparable towns",
    "blurb": "The Division of Local Services publishes a Free Cash Proof for every community: the year-end calculation of what a town may appropriate without raising taxes, broken into its components. Downloaded 30 August 2026. These reconcile to themselves twice over — 81 checks across nine towns and five years, all tying to the dollar. They carry no denominator of any kind, so the absolute figures do not compare between towns of different size; the composition, being a share, does.",
    "items": [
+    {
+     "path": "state-dls/AvgSingleFamTaxBill.xlsx",
+     "title": "Average Single-Family Tax Bill, eleven towns, FY1988–FY2026",
+     "stars": 3,
+     "what": "DLS Gateway export, fetched by script on 13 September 2026 (fetch_dls_tax_bills.py records the exact POST). Per town per year: single-family parcels, average value, average bill, the bill as a share of value and of income per capita, and the town’s rank among the 351. The only series in the archive that puts Lunenburg’s bill beside its neighbours’.",
+     "kind": "Spreadsheet",
+     "bytes": 40358,
+     "url": "/docs/state-dls/AvgSingleFamTaxBill.xlsx",
+     "count": 441,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/AvgSingleFamTaxBill.xlsx"
+    },
     {
      "path": "state-dls/free-cash-proof-lunenburg.xlsx",
      "title": "Lunenburg free cash proof, 2021–2025",
@@ -1625,9 +1827,9 @@
      "stars": 3,
      "what": "7 records. Every tally verified against its own precinct figures. This is the other question the reports answered that nothing else could: an override or debt exclusion is the moment the town decides, and the budget documents record only the outcome’s consequences.",
      "kind": "Data",
-     "bytes": 2301,
+     "bytes": 3233,
      "url": "/docs/data/ballot-questions.csv",
-     "count": 7,
+     "count": 9,
      "unit": "rows",
      "textUrl": "/docs/data/ballot-questions.csv"
     },
@@ -1661,9 +1863,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1037688,
+     "bytes": 1040264,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4671,
+     "count": 4683,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -1685,9 +1887,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 586897,
+     "bytes": 588418,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4671,
+     "count": 4683,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -1697,9 +1899,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 432127,
+     "bytes": 433485,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2873,
+     "count": 2882,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -1740,6 +1942,18 @@
      "textUrl": "/docs/data/report-anomalies.csv"
     },
     {
+     "path": "data/money-gaps.csv",
+     "title": "What the town’s records cannot answer",
+     "stars": 2,
+     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
+     "kind": "Data",
+     "bytes": 114065,
+     "url": "/docs/data/money-gaps.csv",
+     "count": 130,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
      "path": "data/stated-cuts.csv",
      "title": "Every reduction and restoration the district named in writing, FY2020–FY2027",
      "stars": 2,
@@ -1752,26 +1966,14 @@
      "textUrl": "/docs/data/stated-cuts.csv"
     },
     {
-     "path": "data/money-gaps.csv",
-     "title": "What the town’s records cannot answer",
-     "stars": 2,
-     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
-     "kind": "Data",
-     "bytes": 108123,
-     "url": "/docs/data/money-gaps.csv",
-     "count": 122,
-     "unit": "rows",
-     "textUrl": "/docs/data/money-gaps.csv"
-    },
-    {
      "path": "data/table-semantics.csv",
      "title": "What each table in the database is",
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 74432,
+     "bytes": 76405,
      "url": "/docs/data/table-semantics.csv",
-     "count": 118,
+     "count": 119,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -2208,7 +2410,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 32563200,
+     "bytes": 32997376,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2357,6 +2559,18 @@
      "textUrl": "/docs/data/dese-function-statewide.csv"
     },
     {
+     "path": "data/census-acs.csv",
+     "title": "The Census figures, one row per estimate",
+     "stars": 3,
+     "what": "853 rows: every estimate from the five ACS tables above, in both vintages, WITH ITS MARGIN OF ERROR IN THE SAME ROW. The margin is the column that makes this data safe to quote, so it is never dropped and the sentinels — -666666666 for no estimate, -555555555 for an estimate controlled to a total — are kept verbatim rather than read as numbers. Rebuild with scripts/fetch_census_acs.py.",
+     "kind": "Data",
+     "bytes": 277548,
+     "url": "/docs/data/census-acs.csv",
+     "count": 889,
+     "unit": "rows",
+     "textUrl": "/docs/data/census-acs.csv"
+    },
+    {
      "path": "data/dese-town-enrollment.csv",
      "title": "Where every town’s children actually go to school, SY2014–SY2026",
      "stars": 3,
@@ -2405,6 +2619,18 @@
      "textUrl": "/docs/data/line-history-disagreements.csv"
     },
     {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 162708,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "count": 999,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
+    },
+    {
      "path": "data/dese-educator-workforce.csv",
      "title": "Staff HEADCOUNT by job class, with hires and retention, SY2021–SY2023",
      "stars": 3,
@@ -2441,6 +2667,18 @@
      "textUrl": "/docs/data/dese-attrition.csv"
     },
     {
+     "path": "data/board-pages.csv",
+     "title": "Every board’s own page on the town’s site, extracted",
+     "stars": 3,
+     "what": "What the town (or, for the School Committee, the district) says each board is: the overview as printed, the charter or bylaw it cites, when it meets, its members and terms, and a Facebook link where the board’s page carries one. One row per board; the mirrored pages are under town-supplementary/docs/. Rebuild with scripts/fetch_board_pages.py.",
+     "kind": "Data",
+     "bytes": 103673,
+     "url": "/docs/data/board-pages.csv",
+     "count": 1660,
+     "unit": "rows",
+     "textUrl": "/docs/data/board-pages.csv"
+    },
+    {
      "path": "data/free-cash-proof.csv",
      "title": "Free cash, nine towns, five years, line by line",
      "stars": 3,
@@ -2475,6 +2713,18 @@
      "count": 684,
      "unit": "rows",
      "textUrl": "/docs/data/dese-sped-movement.csv"
+    },
+    {
+     "path": "data/dls-avg-tax-bill.csv",
+     "title": "Average single-family tax bill, eleven towns, FY1988–FY2026",
+     "stars": 3,
+     "what": "Extracted from the DLS Gateway export in state-dls/. Per town per year: parcels, average value, average bill, the bill as a share of value and of income, rank. Rebuild with scripts/fetch_dls_tax_bills.py.",
+     "kind": "Data",
+     "bytes": 66329,
+     "url": "/docs/data/dls-avg-tax-bill.csv",
+     "count": 440,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-avg-tax-bill.csv"
     },
     {
      "path": "data/athletics-by-sport.csv",
@@ -2561,18 +2811,6 @@
      "textUrl": "/docs/data/fund-1301-cash-journal.csv"
     },
     {
-     "path": "data/youtube-transcript-index.csv",
-     "title": "Which meeting recordings we hold a transcript for",
-     "stars": 3,
-     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
-     "kind": "Data",
-     "bytes": 33591,
-     "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 200,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-transcript-index.csv"
-    },
-    {
      "path": "data/grants-history.csv",
      "title": "Grant income by grant, FY20–FY24",
      "stars": 3,
@@ -2657,6 +2895,18 @@
      "textUrl": "/docs/data/rate-register.csv"
     },
     {
+     "path": "data/dese-source-registry.csv",
+     "title": "Every DESE dataset this project reads, and how to refresh it",
+     "stars": 3,
+     "what": "The state publishes these on its own schedule, so each row carries the portal page a person can open, the API endpoint a program can call, the publisher, the sha256 of the copy we hold, what the dataset can answer, and when it is worth fetching again. Rows marked WANTED are datasets we do NOT hold and have decided we need — the registry records the gap rather than only the holdings, so next year’s refresh starts from a list rather than from memory. Rebuild with scripts/build_dese_registry.py.",
+     "kind": "Data",
+     "bytes": 13529,
+     "url": "/docs/data/dese-source-registry.csv",
+     "count": 31,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-source-registry.csv"
+    },
+    {
      "path": "data/athletic-fee-schedule.csv",
      "title": "Athletic fees, by fiscal year, with their sources",
      "stars": 3,
@@ -2667,18 +2917,6 @@
      "count": 32,
      "unit": "rows",
      "textUrl": "/docs/data/athletic-fee-schedule.csv"
-    },
-    {
-     "path": "data/dese-source-registry.csv",
-     "title": "Every DESE dataset this project reads, and how to refresh it",
-     "stars": 3,
-     "what": "The state publishes these on its own schedule, so each row carries the portal page a person can open, the API endpoint a program can call, the publisher, the sha256 of the copy we hold, what the dataset can answer, and when it is worth fetching again. Rows marked WANTED are datasets we do NOT hold and have decided we need — the registry records the gap rather than only the holdings, so next year’s refresh starts from a list rather than from memory. Rebuild with scripts/build_dese_registry.py.",
-     "kind": "Data",
-     "bytes": 12587,
-     "url": "/docs/data/dese-source-registry.csv",
-     "count": 29,
-     "unit": "rows",
-     "textUrl": "/docs/data/dese-source-registry.csv"
     },
     {
      "path": "data/account-names.csv",
@@ -2831,9 +3069,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1759575,
+     "bytes": 1761809,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12071,
+     "count": 12085,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -2862,6 +3100,18 @@
      "textUrl": "/docs/data/link-status.csv"
     },
     {
+     "path": "data/search-affinity.csv",
+     "title": "Which words pin which page or document at the top of a search",
+     "stars": 2,
+     "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
+     "kind": "Data",
+     "bytes": 46407,
+     "url": "/docs/data/search-affinity.csv",
+     "count": 340,
+     "unit": "rows",
+     "textUrl": "/docs/data/search-affinity.csv"
+    },
+    {
      "path": "MANIFEST.md",
      "title": "Source manifest",
      "stars": 2,
@@ -2872,6 +3122,18 @@
      "count": 396,
      "unit": "lines",
      "textUrl": "/docs/MANIFEST.md"
+    },
+    {
+     "path": "data/budget-seasons/fy27.csv",
+     "title": "The FY27 budget season as a status board: the gap’s path, the choices, every cut, the override, what took effect",
+     "stars": 2,
+     "what": "Written by us, by hand, every row citing the event in our record (board/date@second) or the document it is read from. notes/process/BUDGET-SEASON-MODEL.md is the model.",
+     "kind": "Data",
+     "bytes": 20554,
+     "url": "/docs/data/budget-seasons/fy27.csv",
+     "count": 91,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-seasons/fy27.csv"
     },
     {
      "path": "data/athletics-by-sport-reconciliation.csv",
@@ -2886,6 +3148,30 @@
      "textUrl": "/docs/data/athletics-by-sport-reconciliation.csv"
     },
     {
+     "path": "data/budget-seasons/fy26.csv",
+     "title": "The FY26 budget season as a status board: the $3.49M target gap, 39 positions cut, the petition override Town Meeting approved and the Select Board never put to voters",
+     "stars": 2,
+     "what": "Written by us, by hand, from the district’s FY26 budget documents, the town’s minutes and our minutes of the recordings; every row cites its source.",
+     "kind": "Data",
+     "bytes": 16904,
+     "url": "/docs/data/budget-seasons/fy26.csv",
+     "count": 65,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-seasons/fy26.csv"
+    },
+    {
+     "path": "data/youtube-no-captions.csv",
+     "title": "Recordings whose captions are switched off",
+     "stars": 2,
+     "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
+     "kind": "Data",
+     "bytes": 12608,
+     "url": "/docs/data/youtube-no-captions.csv",
+     "count": 102,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-no-captions.csv"
+    },
+    {
      "path": "contracts/CONTRACTS.md",
      "title": "Research notes: union contracts",
      "stars": 2,
@@ -2896,6 +3182,42 @@
      "count": 202,
      "unit": "lines",
      "textUrl": "/docs/contracts/CONTRACTS.md"
+    },
+    {
+     "path": "data/one-big-report-story.csv",
+     "title": "The editor’s spec for /one-big-report",
+     "stars": 2,
+     "what": "Written by TJ. One row per figure or conclusion on the page: its section, its role (headline, supporting, context) and its reference. It arranges what the reports say and cannot restate any of it.",
+     "kind": "Data",
+     "bytes": 11589,
+     "url": "/docs/data/one-big-report-story.csv",
+     "count": 92,
+     "unit": "rows",
+     "textUrl": "/docs/data/one-big-report-story.csv"
+    },
+    {
+     "path": "data/budget-seasons/fy27-summer-governors-budget.csv",
+     "title": "The summer of 2026 as a status board: $471,121 more state aid, the $350,000 then $418,056 ask, the 3 September Special Town Meeting, what came back",
+     "stars": 2,
+     "what": "Written by us from our record of the May–September meetings and the analysis; every row cites its source. An episode, built the same way as a season.",
+     "kind": "Data",
+     "bytes": 10364,
+     "url": "/docs/data/budget-seasons/fy27-summer-governors-budget.csv",
+     "count": 52,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-seasons/fy27-summer-governors-budget.csv"
+    },
+    {
+     "path": "data/budget-seasons/fy27-lines.csv",
+     "title": "Every budget line the FY27 scenarios differ on, school and town",
+     "stars": 2,
+     "what": "Generated by extract_scenario_lines.py from the district’s line-item budget and the town’s Balanced/Tier 1/Tier 2 operating budgets, each column footed to the document’s printed total.",
+     "kind": "Data",
+     "bytes": 7837,
+     "url": "/docs/data/budget-seasons/fy27-lines.csv",
+     "count": 47,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-seasons/fy27-lines.csv"
     },
     {
      "path": "town-ledgers/account-details/PROVENANCE-fund1301.md",
@@ -2916,11 +3238,119 @@
      "stars": 2,
      "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1006,
+     "bytes": 3139,
      "url": "/docs/data/meeting-watch-events.csv",
-     "count": 6,
+     "count": 20,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-events.csv"
+    },
+    {
+     "path": "data/search-vocabulary.csv",
+     "title": "The site’s own vocabulary, for the search box’s suggestions",
+     "stars": 2,
+     "what": "Written by us. Terms and the pages they belong to.",
+     "kind": "Data",
+     "bytes": 3128,
+     "url": "/docs/data/search-vocabulary.csv",
+     "count": 44,
+     "unit": "rows",
+     "textUrl": "/docs/data/search-vocabulary.csv"
+    },
+    {
+     "path": "data/budget-seasons/fy28.csv",
+     "title": "The FY28 budget season, live: what is on the record so far, and the moments not yet come with when they usually do",
+     "stars": 2,
+     "what": "Written by us. Confirmed rows only; warnings are read straight from the record; figures the record proposes wait in fy28.proposed.csv until a person copies them in.",
+     "kind": "Data",
+     "bytes": 2560,
+     "url": "/docs/data/budget-seasons/fy28.csv",
+     "count": 15,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-seasons/fy28.csv"
+    },
+    {
+     "path": "data/budget-episodes.csv",
+     "title": "The episodes of a budget season: the regular cycle and the special ones",
+     "stars": 2,
+     "what": "Written by us. FY27’s season; the summer of 2026 (the Governor’s budget, the extra state aid, the September Special Town Meeting); FY28’s season. Each with its window, what triggered it and how it ended.",
+     "kind": "Data",
+     "bytes": 1742,
+     "url": "/docs/data/budget-episodes.csv",
+     "count": 3,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-episodes.csv"
+    },
+    {
+     "path": "data/youtube-watch-events.csv",
+     "title": "What appeared on the town’s YouTube channel between one check and the next",
+     "stars": 2,
+     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
+     "kind": "Data",
+     "bytes": 1423,
+     "url": "/docs/data/youtube-watch-events.csv",
+     "count": 12,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-watch-events.csv"
+    },
+    {
+     "path": "data/budget-threads.csv",
+     "title": "The stories a budget season moves forward, one thread each",
+     "stars": 2,
+     "what": "Written by us. The gap, the override, the cuts, the warrant articles, state aid; and a season-specific thread when TJ and the detector agree one has formed (FY27: the two override tiers). Each with its pattern and the question it answers.",
+     "kind": "Data",
+     "bytes": 1414,
+     "url": "/docs/data/budget-threads.csv",
+     "count": 7,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-threads.csv"
+    },
+    {
+     "path": "data/budget-cycles.csv",
+     "title": "When each budget season opens and closes: the day after one annual election to the next",
+     "stars": 2,
+     "what": "Written by us from the election dates in the annual town reports and the 2026 printed results. scripts/budget_cycles.py reads it; a fiscal year’s season is FY(n): after the election of year n−2 to the election of year n−1.",
+     "kind": "Data",
+     "bytes": 1361,
+     "url": "/docs/data/budget-cycles.csv",
+     "count": 13,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-cycles.csv"
+    },
+    {
+     "path": "data/myths.csv",
+     "title": "Claims heard in town, and what the data says",
+     "stars": 2,
+     "what": "Written by us. Each row is a claim as commonly put, and the report that answers it.",
+     "kind": "Data",
+     "bytes": 1353,
+     "url": "/docs/data/myths.csv",
+     "count": 3,
+     "unit": "rows",
+     "textUrl": "/docs/data/myths.csv"
+    },
+    {
+     "path": "data/feed-sources.csv",
+     "title": "The town and community feeds the refresh watches",
+     "stars": 2,
+     "what": "Written by us. Each feed’s address and what it carries. Items are linked and attributed on the site, never republished.",
+     "kind": "Data",
+     "bytes": 1064,
+     "url": "/docs/data/feed-sources.csv",
+     "count": 7,
+     "unit": "rows",
+     "textUrl": "/docs/data/feed-sources.csv"
+    },
+    {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 851,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 3,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "data/sped-transport-history.csv",
@@ -2935,6 +3365,18 @@
      "textUrl": "/docs/data/sped-transport-history.csv"
     },
     {
+     "path": "data/feed-watch-events.csv",
+     "title": "What appeared in those feeds",
+     "stars": 2,
+     "what": "Written by us. One row per item first seen, with when.",
+     "kind": "Data",
+     "bytes": 713,
+     "url": "/docs/data/feed-watch-events.csv",
+     "count": 4,
+     "unit": "rows",
+     "textUrl": "/docs/data/feed-watch-events.csv"
+    },
+    {
      "path": "data/capital-funding-history.csv",
      "title": "How the capital programme has been paid for",
      "stars": 2,
@@ -2947,16 +3389,52 @@
      "textUrl": "/docs/data/capital-funding-history.csv"
     },
     {
+     "path": "data/recording-minutes-policy.csv",
+     "title": "Which boards TJ has approved minutes for, from when, in what order",
+     "stars": 2,
+     "what": "The approval itself. The refresh writes minutes for a recording only if a row covers it, and at most a few a day — see refresh.py.",
+     "kind": "Data",
+     "bytes": 412,
+     "url": "/docs/data/recording-minutes-policy.csv",
+     "count": 4,
+     "unit": "rows",
+     "textUrl": "/docs/data/recording-minutes-policy.csv"
+    },
+    {
+     "path": "data/budget-seasons/fy28.proposed.csv",
+     "title": "Rows the record proposes for the FY28 board, awaiting confirmation",
+     "stars": 2,
+     "what": "Generated daily by build_budget_season.py; never rendered. A row moves to fy28.csv when a person confirms it.",
+     "kind": "Data",
+     "bytes": 357,
+     "url": "/docs/data/budget-seasons/fy28.proposed.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/budget-seasons/fy28.proposed.csv"
+    },
+    {
      "path": "data/meeting-watch-runs.csv",
      "title": "When we looked, how much answered, and what was new",
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 147,
+     "bytes": 302,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 2,
+     "count": 7,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
+    },
+    {
+     "path": "data/caption-corrections.csv",
+     "title": "Proper nouns the captions mishear, spelled as the town spells them",
+     "stars": 2,
+     "what": "Written by us, each row with its basis in the town’s own documents. Names only; a figure as heard is never corrected.",
+     "kind": "Data",
+     "bytes": 242,
+     "url": "/docs/data/caption-corrections.csv",
+     "count": 3,
+     "unit": "rows",
+     "textUrl": "/docs/data/caption-corrections.csv"
     },
     {
      "path": "town-ledgers/revenue/PROVENANCE-fy2026-p09.md",
@@ -3965,7 +4443,7 @@
    "id": "town-budget",
    "origin": "town",
    "title": "The town’s budget and finance documents, mirrored",
-   "blurb": "Every budget-relevant document linked from the town’s finance pages — 145 of them, including the audited financial statements and the year-end reports. Reached by walking the budget hub, town meetings and finances, and the finance-adjacent department pages rather than by enumerating the document store, which would have meant thousands of files about dog licenses.",
+   "blurb": "Every budget-relevant document linked from the town’s finance pages — 146 of them, including the audited financial statements and the year-end reports. Reached by walking the budget hub, town meetings and finances, and the finance-adjacent department pages rather than by enumerating the document store, which would have meant thousands of files about dog licenses.",
    "items": [
     {
      "path": "town-budget/docs/4161-2026-annual-town-election-warrant.pdf",
@@ -4315,6 +4793,17 @@
      "url": "/docs/town-budget/docs/4112-article-32-notice-of-town-meeting.pdf",
      "textUrl": "/docs/town-budget/text/4112-article-32-notice-of-town-meeting.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4112"
+    },
+    {
+     "path": "town-budget/docs/4108-budget-scenarios-at-a-glance-pdf.pdf",
+     "title": "Budget Scenarios At a Glance (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 166774,
+     "url": "/docs/town-budget/docs/4108-budget-scenarios-at-a-glance-pdf.pdf",
+     "textUrl": "/docs/town-budget/text/4108-budget-scenarios-at-a-glance-pdf.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4108/Budget-Scenarios-At-a-Glance-PDF"
     },
     {
      "path": "town-budget/docs/373-fy-2023-budget-narrative-pdf.pdf",
@@ -5578,7 +6067,7 @@
    "id": "town-supplementary",
    "origin": "town",
    "title": "The town’s supplementary documents, mirrored",
-   "blurb": "The other 27 documents from the same town pages: tax billing and exemption forms, the senior work-off programme, police policies, HR forms, grant notices and an infrastructure assessment. Split out because a folder called budget should hold budgets — data, spreadsheets and plans — and these are supplementary to it. Nothing was discarded: they are mirrored on the same terms as everything else, and several bear on the budget indirectly.",
+   "blurb": "The other 63 documents from the same town pages: tax billing and exemption forms, the senior work-off programme, police policies, HR forms, grant notices and an infrastructure assessment. Split out because a folder called budget should hold budgets — data, spreadsheets and plans — and these are supplementary to it. Nothing was discarded: they are mirrored on the same terms as everything else, and several bear on the budget indirectly.",
    "items": [
     {
      "path": "town-supplementary/docs/394-1-40-school-resource-officer-pdf.pdf",
@@ -5647,6 +6136,36 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/443"
     },
     {
+     "path": "town-supplementary/docs/board-159-agricultural-commission.html",
+     "title": "Agricultural Commission (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 102603,
+     "url": "/docs/town-supplementary/docs/board-159-agricultural-commission.html",
+     "upstream": "https://www.lunenburgma.gov/159/Agricultural-Commission"
+    },
+    {
+     "path": "town-supplementary/docs/board-202-americans-with-disabilities-committee.html",
+     "title": "Americans with Disabilities Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 102274,
+     "url": "/docs/town-supplementary/docs/board-202-americans-with-disabilities-committee.html",
+     "upstream": "https://www.lunenburgma.gov/202/Americans-with-Disabilities-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-203-architectural-preservation-district-commission.html",
+     "title": "Architectural Preservation District Commission (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 103267,
+     "url": "/docs/town-supplementary/docs/board-203-architectural-preservation-district-commission.html",
+     "upstream": "https://www.lunenburgma.gov/203/Architectural-Preservation-District-Comm"
+    },
+    {
      "path": "town-supplementary/docs/344-bencor-financial-wellness-pdf.pdf",
      "title": "Bencor Financial Wellness (PDF)",
      "stars": 1,
@@ -5656,6 +6175,26 @@
      "url": "/docs/town-supplementary/docs/344-bencor-financial-wellness-pdf.pdf",
      "textUrl": "/docs/town-supplementary/text/344-bencor-financial-wellness-pdf.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/344"
+    },
+    {
+     "path": "town-supplementary/docs/board-207-board-of-health.html",
+     "title": "Board Of Health (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 108497,
+     "url": "/docs/town-supplementary/docs/board-207-board-of-health.html",
+     "upstream": "https://www.lunenburgma.gov/207/Board-Of-Health"
+    },
+    {
+     "path": "town-supplementary/docs/board-772-board-of-assessors.html",
+     "title": "Board of Assessors (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 111995,
+     "url": "/docs/town-supplementary/docs/board-772-board-of-assessors.html",
+     "upstream": "https://www.lunenburgma.gov/772/Board-of-Assessors"
     },
     {
      "path": "town-supplementary/docs/3541-board-of-assessors-code-of-conduct-pdf.pdf",
@@ -5669,6 +6208,16 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3541"
     },
     {
+     "path": "town-supplementary/docs/board-398-board-of-registrars.html",
+     "title": "Board of Registrars (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 100270,
+     "url": "/docs/town-supplementary/docs/board-398-board-of-registrars.html",
+     "upstream": "https://www.lunenburgma.gov/398/Board-of-Registrars"
+    },
+    {
      "path": "town-supplementary/docs/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.pdf",
      "title": "Bridge Assessment and Ranking, Prepared for the Town of Lunenburg by BSC Group, May 2024",
      "stars": 1,
@@ -5680,6 +6229,66 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3463"
     },
     {
+     "path": "town-supplementary/docs/board-719-budget-task-force.html",
+     "title": "Budget Task Force (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 177655,
+     "url": "/docs/town-supplementary/docs/board-719-budget-task-force.html",
+     "upstream": "https://www.lunenburgma.gov/719/Budget-Task-Force"
+    },
+    {
+     "path": "town-supplementary/docs/board-210-by-law-review-committee.html",
+     "title": "By-Law Review Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97219,
+     "url": "/docs/town-supplementary/docs/board-210-by-law-review-committee.html",
+     "upstream": "https://www.lunenburgma.gov/210/By-Law-Review-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-826-cable-advisory-committee.html",
+     "title": "Cable Advisory Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 174485,
+     "url": "/docs/town-supplementary/docs/board-826-cable-advisory-committee.html",
+     "upstream": "https://www.lunenburgma.gov/826/Cable-Advisory-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-212-capital-planning-committee.html",
+     "title": "Capital Planning Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 102253,
+     "url": "/docs/town-supplementary/docs/board-212-capital-planning-committee.html",
+     "upstream": "https://www.lunenburgma.gov/212/Capital-Planning-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-217-cemetery-commission.html",
+     "title": "Cemetery Commission (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 103157,
+     "url": "/docs/town-supplementary/docs/board-217-cemetery-commission.html",
+     "upstream": "https://www.lunenburgma.gov/217/Cemetery-Commission"
+    },
+    {
+     "path": "town-supplementary/docs/board-219-charter-review-committee.html",
+     "title": "Charter Review Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 95994,
+     "url": "/docs/town-supplementary/docs/board-219-charter-review-committee.html",
+     "upstream": "https://www.lunenburgma.gov/219/Charter-Review-Committee"
+    },
+    {
      "path": "town-supplementary/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf",
      "title": "Conflict of Interest/Financial Disclosure (PDF)",
      "stars": 1,
@@ -5689,6 +6298,46 @@
      "url": "/docs/town-supplementary/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf",
      "textUrl": "/docs/town-supplementary/text/187-conflict-of-interest-financial-disclosure-pdf.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/187"
+    },
+    {
+     "path": "town-supplementary/docs/board-225-conservation-commission.html",
+     "title": "Conservation Commission (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 106176,
+     "url": "/docs/town-supplementary/docs/board-225-conservation-commission.html",
+     "upstream": "https://www.lunenburgma.gov/225/Conservation-Commission"
+    },
+    {
+     "path": "town-supplementary/docs/board-229-council-on-aging.html",
+     "title": "Council On Aging (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 106390,
+     "url": "/docs/town-supplementary/docs/board-229-council-on-aging.html",
+     "upstream": "https://www.lunenburgma.gov/229/Council-On-Aging"
+    },
+    {
+     "path": "town-supplementary/docs/board-247-cultural-council.html",
+     "title": "Cultural Council (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 172496,
+     "url": "/docs/town-supplementary/docs/board-247-cultural-council.html",
+     "upstream": "https://www.lunenburgma.gov/247/Cultural-Council"
+    },
+    {
+     "path": "town-supplementary/docs/board-250-economic-development-committee.html",
+     "title": "Economic Development Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 186980,
+     "url": "/docs/town-supplementary/docs/board-250-economic-development-committee.html",
+     "upstream": "https://www.lunenburgma.gov/250/Economic-Development-Committee"
     },
     {
      "path": "town-supplementary/docs/2499-fy25-governor-awards-lunenburg-fd-state-firefighter-safety-grant-pdf.pdf",
@@ -5746,6 +6395,76 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4285"
     },
     {
+     "path": "town-supplementary/docs/board-252-finance-committee.html",
+     "title": "Finance Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 99533,
+     "url": "/docs/town-supplementary/docs/board-252-finance-committee.html",
+     "upstream": "https://www.lunenburgma.gov/252/Finance-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-257-green-communities-committee.html",
+     "title": "Green Communities Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 103960,
+     "url": "/docs/town-supplementary/docs/board-257-green-communities-committee.html",
+     "upstream": "https://www.lunenburgma.gov/257/Green-Communities-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-261-historical-commission.html",
+     "title": "Historical Commission (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 99176,
+     "url": "/docs/town-supplementary/docs/board-261-historical-commission.html",
+     "upstream": "https://www.lunenburgma.gov/261/Historical-Commission"
+    },
+    {
+     "path": "town-supplementary/docs/board-264-library-board-of-trustees.html",
+     "title": "Library Board of Trustees (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 102122,
+     "url": "/docs/town-supplementary/docs/board-264-library-board-of-trustees.html",
+     "upstream": "https://www.lunenburgma.gov/264/Library-Board-of-Trustees"
+    },
+    {
+     "path": "town-supplementary/docs/board-269-lunenburg-300th-anniversary-committee.html",
+     "title": "Lunenburg 300th Anniversary Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 172027,
+     "url": "/docs/town-supplementary/docs/board-269-lunenburg-300th-anniversary-committee.html",
+     "upstream": "https://www.lunenburgma.gov/269/Lunenburg-300th-Anniversary-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-273-lunenburg-housing-authority.html",
+     "title": "Lunenburg Housing Authority (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 98193,
+     "url": "/docs/town-supplementary/docs/board-273-lunenburg-housing-authority.html",
+     "upstream": "https://www.lunenburgma.gov/273/Lunenburg-Housing-Authority"
+    },
+    {
+     "path": "town-supplementary/docs/board-278-lunenburg-municipal-building-design-committee.html",
+     "title": "Lunenburg Municipal Building Design Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 100368,
+     "url": "/docs/town-supplementary/docs/board-278-lunenburg-municipal-building-design-committee.html",
+     "upstream": "https://www.lunenburgma.gov/278/Lunenburg-Municipal-Building-Design-Comm"
+    },
+    {
      "path": "town-supplementary/docs/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.pdf",
      "title": "Lunenburg Senior Citizen Property Tax Work-Off Program Application 2025 (PDF)",
      "stars": 1,
@@ -5768,6 +6487,16 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/787"
     },
     {
+     "path": "town-supplementary/docs/board-497-master-plan-steering-committee.html",
+     "title": "Master Plan Steering Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 104846,
+     "url": "/docs/town-supplementary/docs/board-497-master-plan-steering-committee.html",
+     "upstream": "https://www.lunenburgma.gov/497/Master-Plan-Steering-Committee"
+    },
+    {
      "path": "town-supplementary/docs/785-motor-vehicle-excise-tax-pdf.pdf",
      "title": "Motor Vehicle Excise Tax (PDF)",
      "stars": 1,
@@ -5788,6 +6517,56 @@
      "url": "/docs/town-supplementary/docs/4306-notice-of-tax-taking-lists.pdf",
      "textUrl": "/docs/town-supplementary/text/4306-notice-of-tax-taking-lists.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4306"
+    },
+    {
+     "path": "town-supplementary/docs/board-281-open-space-committee.html",
+     "title": "Open Space Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 98889,
+     "url": "/docs/town-supplementary/docs/board-281-open-space-committee.html",
+     "upstream": "https://www.lunenburgma.gov/281/Open-Space-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-283-parks-commission.html",
+     "title": "Parks Commission (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 104958,
+     "url": "/docs/town-supplementary/docs/board-283-parks-commission.html",
+     "upstream": "https://www.lunenburgma.gov/283/Parks-Commission"
+    },
+    {
+     "path": "town-supplementary/docs/board-284-personnel-committee.html",
+     "title": "Personnel Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96838,
+     "url": "/docs/town-supplementary/docs/board-284-personnel-committee.html",
+     "upstream": "https://www.lunenburgma.gov/284/Personnel-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-285-planning-board.html",
+     "title": "Planning Board (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 111064,
+     "url": "/docs/town-supplementary/docs/board-285-planning-board.html",
+     "upstream": "https://www.lunenburgma.gov/285/Planning-Board"
+    },
+    {
+     "path": "town-supplementary/docs/board-293-public-access-cable-committee-pacc.html",
+     "title": "Public Access Cable Committee (PACC) (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 110412,
+     "url": "/docs/town-supplementary/docs/board-293-public-access-cable-committee-pacc.html",
+     "upstream": "https://www.lunenburgma.gov/293/Public-Access-Cable-Committee-PACC"
     },
     {
      "path": "town-supplementary/docs/783-real-estate-personal-property-tax-actual-billing-pdf.pdf",
@@ -5823,6 +6602,16 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3547"
     },
     {
+     "path": "town-supplementary/docs/board-295-select-board.html",
+     "title": "Select Board (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 103495,
+     "url": "/docs/town-supplementary/docs/board-295-select-board.html",
+     "upstream": "https://www.lunenburgma.gov/295/Select-Board"
+    },
+    {
      "path": "town-supplementary/docs/493-senior-citizen-property-tax-work-off-program-application-form-pdf.pdf",
      "title": "Senior Citizen Property Tax Work Off Program Application Form (PDF)",
      "stars": 1,
@@ -5856,6 +6645,26 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1416"
     },
     {
+     "path": "town-supplementary/docs/board-302-sewer-commission.html",
+     "title": "Sewer Commission (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 103375,
+     "url": "/docs/town-supplementary/docs/board-302-sewer-commission.html",
+     "upstream": "https://www.lunenburgma.gov/302/Sewer-Commission"
+    },
+    {
+     "path": "town-supplementary/docs/board-317-stormwater-task-force.html",
+     "title": "Stormwater Task Force (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 108037,
+     "url": "/docs/town-supplementary/docs/board-317-stormwater-task-force.html",
+     "upstream": "https://www.lunenburgma.gov/317/Stormwater-Task-Force"
+    },
+    {
      "path": "town-supplementary/docs/786-tax-lien-sale-auction-notice-pdf.pdf",
      "title": "Tax Lien Sale Auction Notice (PDF)",
      "stars": 1,
@@ -5867,6 +6676,36 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/786"
     },
     {
+     "path": "town-supplementary/docs/board-716-town-manager-screening-committee.html",
+     "title": "Town Manager Screening Committee (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 171713,
+     "url": "/docs/town-supplementary/docs/board-716-town-manager-screening-committee.html",
+     "upstream": "https://www.lunenburgma.gov/716/Town-Manager-Screening-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/board-766-tri-board.html",
+     "title": "Tri-Board (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 173066,
+     "url": "/docs/town-supplementary/docs/board-766-tri-board.html",
+     "upstream": "https://www.lunenburgma.gov/766/Tri-Board"
+    },
+    {
+     "path": "town-supplementary/docs/board-224-trust-fund-commission.html",
+     "title": "Trust Fund Commission (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97800,
+     "url": "/docs/town-supplementary/docs/board-224-trust-fund-commission.html",
+     "upstream": "https://www.lunenburgma.gov/224/Trust-Fund-Commission"
+    },
+    {
      "path": "town-supplementary/docs/182-w-4-federal-tax-form-pdf.pdf",
      "title": "W-4 Federal Tax Form (PDF)",
      "stars": 1,
@@ -5876,6 +6715,16 @@
      "url": "/docs/town-supplementary/docs/182-w-4-federal-tax-form-pdf.pdf",
      "textUrl": "/docs/town-supplementary/text/182-w-4-federal-tax-form-pdf.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/182"
+    },
+    {
+     "path": "town-supplementary/docs/board-322-zoning-board-of-appeals.html",
+     "title": "Zoning Board of Appeals (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 118730,
+     "url": "/docs/town-supplementary/docs/board-322-zoning-board-of-appeals.html",
+     "upstream": "https://www.lunenburgma.gov/322/Zoning-Board-of-Appeals"
     }
    ]
   },
@@ -6069,7 +6918,7 @@
    "id": "state-dese",
    "origin": "state-dese",
    "title": "State enrollment data",
-   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 38 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
+   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 40 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
    "items": [
     {
      "path": "state-dese/603cmr28-special-education-regulations.html",
@@ -6082,6 +6931,26 @@
      "textUrl": "/docs/state-dese/text/603cmr28-special-education-regulations.txt",
      "upstream": "https://www.doe.mass.edu/lawsregs/603cmr28.html?section=all",
      "alsoUsed": "state-dese/603cmr28-special-education-regulations.html"
+    },
+    {
+     "path": "state-dese/dese-ap-participation.xlsx",
+     "title": "Advanced Placement (AP) Participation",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 85008910,
+     "url": "/docs/state-dese/dese-ap-participation.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/37cp-pad8"
+    },
+    {
+     "path": "state-dese/dese-ap-performance.xlsx",
+     "title": "Advanced Placement (AP) Performance",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 88920543,
+     "url": "/docs/state-dese/dese-ap-performance.xlsx",
+     "upstream": "https://educationtocareer.data.mass.gov/d/787a-3wen"
     },
     {
      "path": "state-dese/dese-ch70-district-profile.xlsx",
@@ -6460,23 +7329,23 @@
   "boards": [
    {
     "name": "Select Board",
-    "documents": 1395
+    "documents": 1396
    },
    {
     "name": "Planning Board",
-    "documents": 1351
+    "documents": 1352
    },
    {
     "name": "Finance Committee",
-    "documents": 780
+    "documents": 781
    },
    {
     "name": "Sewer Commission",
-    "documents": 743
+    "documents": 744
    },
    {
     "name": "Conservation Commission",
-    "documents": 710
+    "documents": 712
    },
    {
     "name": "Board Of Health",
@@ -6484,7 +7353,7 @@
    },
    {
     "name": "Board Of Assessors",
-    "documents": 489
+    "documents": 492
    },
    {
     "name": "Library Board Of Trustees",
@@ -6496,7 +7365,7 @@
    },
    {
     "name": "Public Access Cable Committee (PACC)",
-    "documents": 367
+    "documents": 369
    },
    {
     "name": "Zoning Board Of Appeals",
@@ -6508,7 +7377,7 @@
    },
    {
     "name": "Historical Commission",
-    "documents": 329
+    "documents": 331
    },
    {
     "name": "Parks Commission",
@@ -6520,7 +7389,7 @@
    },
    {
     "name": "School Committee",
-    "documents": 282
+    "documents": 283
    },
    {
     "name": "Capital Planning Committee",
@@ -6544,7 +7413,7 @@
    },
    {
     "name": "Stormwater Task Force",
-    "documents": 191
+    "documents": 192
    },
    {
     "name": "Agricultural Commission",
@@ -6571,24 +7440,24 @@
     "documents": 69
    },
    {
+    "name": "By Law Committee",
+    "documents": 65
+   },
+   {
     "name": "Building Reuse Committee",
     "documents": 64
    },
    {
-    "name": "By Law Committee",
-    "documents": 64
+    "name": "Planning Board Public Hearing",
+    "documents": 63
    },
    {
     "name": "Senior Citizens Tax Work Off Committee",
     "documents": 63
    },
    {
-    "name": "Planning Board Public Hearing",
-    "documents": 62
-   },
-   {
     "name": "Trust Fund Commission",
-    "documents": 52
+    "documents": 53
    },
    {
     "name": "Finance  Committee Appointing  Committee",
@@ -6664,22 +7533,22 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12065,
-  "fetched": 12015,
-  "agendas": 7405,
-  "minutes": 4660,
+  "listed": 12083,
+  "fetched": 12033,
+  "agendas": 7418,
+  "minutes": 4665,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12016,
+  "textFiles": 12034,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 543,
-  "groups": 20,
-  "bytes": 1455883152,
-  "loadBearing": 106
+  "documents": 622,
+  "groups": 22,
+  "bytes": 1637201666,
+  "loadBearing": 118
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

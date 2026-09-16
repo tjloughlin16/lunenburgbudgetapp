@@ -4,10 +4,11 @@ Written 16 September 2026 to survive a context reset. **Nothing here is a source
 a reset it reads like something verified, and it is a claim about the repo. Check anything
 load-bearing against the branch.
 
-**Branch: `resident-wayfinding`, 14 commits on top of `main`, NOT deployed** (rule 10).
-One of the 14 is `54f82336 Daily refresh, 2026-09-15` — the cron committed the daily
-refresh onto this branch because it was checked out at the time. It is harmless and merges
-with the rest; do not rebase it away by accident.
+**Merged to `main` on 16 September (fast-forward, pushed), deployed by the 9:00 daily
+refresh that day** — nobody ran a deploy by hand. `54f82336 Daily refresh, 2026-09-15` is
+in the sequence because the cron committed that day's refresh onto the branch while it was
+checked out; Cloudflare Pages put that day's deploy on a preview alias, not production, so
+production skipped a day's refresh and caught up on the 16th.
 
 `notes/process/READING-FLOW.md` is the design document this branch built to. Read it
 first; this file is what a person needs to *continue*, not the argument.
@@ -43,7 +44,7 @@ it.
 | Search titles | `scripts/build_search_index.py` | Page name from `<title>` minus the site suffix; H1 as fallback. **The index has not been rebuilt or synced** — do it at deploy (`build_search_index.py`, then `sync_search_d1.py`, inside the D1 write budget). |
 | `/paras` | `routes.ts` | Slug for the paraprofessionals page; `/the-paraprofessionals` is an alias. `paras` had been an alias for `/school-staffing` — the routes comment records why that was overridden. `notes/process/PERSONAS.md` records the review under the new address. |
 
-## The numbers as of the last commit (`8be3dc76`)
+## The numbers as of `608b2f02`
 
 From `notes/generated/reading-time.csv`, 81 prerendered routes:
 
@@ -80,11 +81,11 @@ not*; *Why this is a separate document*) are rule 7a violations in their own rig
 
 ## What is NOT done, in order
 
-1. **Deploy.** Nobody asked. When it happens: `npm run build:site`, `build_sitemap.py`,
-   `build_search_index.py`, `sync_search_d1.py`, then deploy; verify `/paras`,
-   `/the-paraprofessionals` (alias), `/solutions`, and that `/crisis#where-the-town-is`
-   opens the fold.
-2. **The editing pass** on the 9 over budget and the 13 with none (above). Then flip
+1. **Verify the 16 September deploy** (the daily refresh does build, sitemap, search
+   index, D1 sync, deploy): `/paras`, `/the-paraprofessionals` (alias), `/solutions`, and
+   that `/crisis#where-the-town-is` opens the fold; `version.json` should say built
+   2026-09-16.
+2. **The editing pass** on the 13 with no short version (above). Then flip
    `--strict` on in `check_generated.py`.
 3. **The blog has zero published posts.** It is the site's built "faster read" format and
    `HomeLatest` renders nothing until one is published. See `notes/HANDOFF-BLOG.md`.
