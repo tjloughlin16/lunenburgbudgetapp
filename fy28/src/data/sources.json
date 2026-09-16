@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-15",
+ "generated": "2026-09-16",
  "origins": [
   {
    "id": "school",
@@ -1863,9 +1863,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1040664,
+     "bytes": 1040853,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4685,
+     "count": 4686,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -1887,9 +1887,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 588665,
+     "bytes": 588783,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4685,
+     "count": 4686,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -1899,9 +1899,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 433777,
+     "bytes": 433901,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2884,
+     "count": 2885,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -2624,9 +2624,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 164084,
+     "bytes": 164245,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 1007,
+     "count": 1008,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -2780,7 +2780,7 @@
      "stars": 3,
      "what": "Per board and year: how many documents the town listed, how many we hold, and how many contain text a search can match — which is a quarter fewer than hold a text file at all. The unsearchable ones are split by CAUSE rather than lumped: image scans, pages whose text was converted to vector outlines (which OCR cannot read either until they are rasterised), blank files, our own extractor failing on a real text layer, and documents the town lists that we do not hold. The threshold is not a guess — it is calibrated against whether the PDF carries a font resource at all, and the two agree at zero characters and nowhere else. It exists because rule 15a tells everyone here to search the archive before concluding a thing was never discussed, and an unreadable document and a subject nobody raised produce the identical empty result. Rebuild with scripts/build_minutes_searchable.py.",
      "kind": "Data",
-     "bytes": 41823,
+     "bytes": 41826,
      "url": "/docs/data/minutes-searchable.csv",
      "count": 514,
      "unit": "rows",
@@ -3069,9 +3069,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1761809,
+     "bytes": 1762681,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12085,
+     "count": 12090,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -3105,9 +3105,9 @@
      "stars": 2,
      "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
      "kind": "Data",
-     "bytes": 46407,
+     "bytes": 46563,
      "url": "/docs/data/search-affinity.csv",
-     "count": 340,
+     "count": 341,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
     },
@@ -3238,9 +3238,9 @@
      "stars": 2,
      "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 3139,
+     "bytes": 3971,
      "url": "/docs/data/meeting-watch-events.csv",
-     "count": 20,
+     "count": 25,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-events.csv"
     },
@@ -3281,6 +3281,18 @@
      "textUrl": "/docs/data/budget-seasons/fy28.csv"
     },
     {
+     "path": "data/youtube-watch-events.csv",
+     "title": "What appeared on the town’s YouTube channel between one check and the next",
+     "stars": 2,
+     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
+     "kind": "Data",
+     "bytes": 1752,
+     "url": "/docs/data/youtube-watch-events.csv",
+     "count": 15,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-watch-events.csv"
+    },
+    {
      "path": "data/budget-episodes.csv",
      "title": "The episodes of a budget season: the regular cycle and the special ones",
      "stars": 2,
@@ -3291,18 +3303,6 @@
      "count": 3,
      "unit": "rows",
      "textUrl": "/docs/data/budget-episodes.csv"
-    },
-    {
-     "path": "data/youtube-watch-events.csv",
-     "title": "What appeared on the town’s YouTube channel between one check and the next",
-     "stars": 2,
-     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
-     "kind": "Data",
-     "bytes": 1646,
-     "url": "/docs/data/youtube-watch-events.csv",
-     "count": 14,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-watch-events.csv"
     },
     {
      "path": "data/budget-threads.csv",
@@ -3418,9 +3418,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 302,
+     "bytes": 333,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 7,
+     "count": 8,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -7387,7 +7387,7 @@
    },
    {
     "name": "Library Board Of Trustees",
-    "documents": 437
+    "documents": 439
    },
    {
     "name": "Council On Aging",
@@ -7455,7 +7455,7 @@
    },
    {
     "name": "Lunenburg Municipal Building Design Committee",
-    "documents": 161
+    "documents": 162
    },
    {
     "name": "School Building Committee Meeting",
@@ -7507,7 +7507,7 @@
    },
    {
     "name": "Board Of Registrars",
-    "documents": 35
+    "documents": 36
    },
    {
     "name": "Nashoba Valley Reginal Dispatch Committee",
@@ -7527,7 +7527,7 @@
    },
    {
     "name": "Select Board Public Hearing",
-    "documents": 20
+    "documents": 21
    },
    {
     "name": "Land Acquisition Committee",
@@ -7563,13 +7563,13 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12083,
-  "fetched": 12033,
-  "agendas": 7418,
+  "listed": 12088,
+  "fetched": 12038,
+  "agendas": 7423,
   "minutes": 4665,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12034,
+  "textFiles": 12039,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
@@ -7577,7 +7577,7 @@
  "totals": {
   "documents": 625,
   "groups": 22,
-  "bytes": 1637699865,
+  "bytes": 1637702457,
   "loadBearing": 118
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

@@ -25,7 +25,7 @@ prints no total. **Nothing here may be aggregated without splitting on `status` 
 | dataset | rows | years | state | in db | provenance | published |
 |---|---:|---|---|---|---|---|
 | `placement-counts.csv` | 15 | 2011–2025 | parts sum to the total; each year states its predecessor | yes | yes | yes |
-| `ballot-questions.csv` | 7 | 2012–2025 | every tally against its own precinct figures | yes | — | yes |
+| `ballot-questions.csv` | 9 | 2012–2025 | every tally against its own precinct figures | yes | — | yes |
 | `annual-report-receipts.csv` | 1,137 | 2011–2023 | 504 checked / 85 failed / 548 no check | yes | yes | yes |
 | `special-revenue-funds.csv` | 2,387 | 2011–2025 | 0 checked / 2,058 failed / 328 no check | yes | yes | yes |
 | `staff-roster-entries.csv` | 3,815 | 2011–2025 | every line of every page accounted for | yes | — | yes |

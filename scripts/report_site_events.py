@@ -4,7 +4,7 @@
     CF_ANALYTICS_TOKEN=... python3 scripts/report_site_events.py            # last 7 days
     CF_ANALYTICS_TOKEN=... python3 scripts/report_site_events.py --days 30
 
-Reads the `lunenburg_site_events` Analytics Engine dataset that functions/api/event.js
+Reads the `lburg_usage_data` Analytics Engine dataset that functions/api/event.js
 writes (see src/lib/track.ts for what is and is not recorded -- no cookie, no identifier)
 and prints the funnel as counts at each step:
 
