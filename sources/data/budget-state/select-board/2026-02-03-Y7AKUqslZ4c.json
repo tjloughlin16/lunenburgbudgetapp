@@ -15,7 +15,17 @@
     "fiscal_year": 2027,
     "kind": "override",
     "scope": "both",
-    "statement": "FY27 budget cycle will be difficult; major cost drivers (health insurance, retirement assessment, school transportation) exceed revenue growth, so absent service reductions an override is likely required.",
+    "statement": "Absent service reductions, an override is likely required for FY27.",
+    "status": "announced",
+    "t": 1403,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2027,
+    "kind": "other",
+    "scope": "both",
+    "statement": "Health insurance, retirement assessment, and school transportation are major cost drivers exceeding revenue growth.",
     "status": "announced",
     "t": 1403,
     "who": "the town manager"
@@ -25,9 +35,9 @@
     "fiscal_year": 2027,
     "kind": "free_cash",
     "scope": "town",
-    "statement": "Free cash has not yet been certified, which directly affects town meeting planning for the capital plan, reserve transfers, and the snow and ice deficit.",
+    "statement": "Free cash has not been certified, which directly affects planning for town meeting funding of the capital plan, reserve transfers, and the snow and ice deficit.",
     "status": "announced",
-    "t": 1550,
+    "t": 1560,
     "who": "the town manager"
    },
    {
@@ -35,20 +45,48 @@
     "fiscal_year": 2027,
     "kind": "other",
     "scope": "school",
-    "statement": "School committee discussed the school budget's healthcare figures, then learned the actual healthcare numbers are lower, so the budget will have to be adjusted downward accordingly.",
+    "statement": "The school committee had discussed the school budget using certain healthcare figures that turned out to be lower, requiring the budget to be adjusted.",
     "status": "announced",
     "t": 3376,
     "who": "a member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "the FY27 capital plan",
+    "condition": "until free cash is certified",
+    "fiscal_year": 2027,
+    "prediction": "Many capital plan projects will go unfunded, with two large projects (a road bridge and the public safety roof) consuming much of the available funding.",
+    "scope": "town",
+    "t": 1696,
+    "who": "the town manager"
    },
    {
-    "amount_as_heard": "$15,000",
+    "about": "the snow and ice budget",
+    "condition": null,
     "fiscal_year": null,
-    "kind": "other",
+    "prediction": "A high year-end deficit is expected given the number of snow events so far.",
     "scope": "town",
-    "statement": "Draft warrant article proposes a multi-year allocation of $15,000 for the town's 300th anniversary.",
-    "status": "proposed",
-    "t": 2968,
-    "who": "the chair"
+    "t": 1797,
+    "who": "the town manager"
+   },
+   {
+    "about": "the FY25 closeout and its effect on FY27 planning",
+    "condition": "if the books are not reconciled and Schedule A submitted",
+    "fiscal_year": null,
+    "prediction": "If the FY25 closeout is not resolved, the town faces a slippery slope: local aid withheld, and knock-on effects on the capital plan and funding the snow and ice deficit.",
+    "scope": "town",
+    "t": 2366,
+    "who": "the town manager"
+   },
+   {
+    "about": "TC Pacios building operations wind-down",
+    "condition": "if the town proceeds with winding down remaining TCP operations",
+    "fiscal_year": null,
+    "prediction": "Some user groups of the TC Pacios building will see substantial impact to their operations.",
+    "scope": "town",
+    "t": 2011,
+    "who": "the town manager"
    }
   ]
  },
@@ -56,9 +94,10 @@
  "video_url": "https://www.youtube.com/watch?v=Y7AKUqslZ4c",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T19:01:45Z",
-  "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.2493298,
-  "model": "sonnet"
+  "at": "2026-09-16T20:41:16Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
  }
 }

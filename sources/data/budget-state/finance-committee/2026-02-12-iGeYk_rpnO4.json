@@ -12,11 +12,21 @@
     "amount_as_heard": null,
     "fiscal_year": 2027,
     "fte_as_heard": null,
-    "item": "IT service level reduced from 5 days/week to 4 days/week",
+    "item": "an unspecified service or program reduced from 5 days a week to 4 days a week",
     "scope": "town",
     "status": "announced",
-    "t": 794,
+    "t": 814,
     "who": "the finance director"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2027,
+    "fte_as_heard": null,
+    "item": "restorative services previously cut, unspecified which",
+    "scope": "school",
+    "status": "proposed",
+    "t": 732,
+    "who": "the chair"
    }
   ],
   "nothing_on_the_budget": false,
@@ -26,17 +36,27 @@
     "fiscal_year": 2027,
     "kind": "other",
     "scope": "both",
-    "statement": "The town's actual health insurance rate increase came in at 8.85%.",
+    "statement": "Actual health insurance rate increase came in at 8.85%.",
     "status": "announced",
     "t": 297,
     "who": "the finance director"
    },
    {
+    "amount_as_heard": "over 20",
+    "fiscal_year": 2027,
+    "kind": "other",
+    "scope": "both",
+    "statement": "Eliminating GLP-1 weight-loss drug coverage brought the health insurance increase down from an original estimate of over 20% to 8.85%.",
+    "status": "announced",
+    "t": 339,
+    "who": "the finance director"
+   },
+   {
     "amount_as_heard": null,
     "fiscal_year": 2027,
-    "kind": "budget_total",
+    "kind": "deficit",
     "scope": "both",
-    "statement": "A level-service budget is likely not going to be a balanced budget.",
+    "statement": "A level-service budget is likely not going to be a balanced budget and will need to be reconciled at town meeting.",
     "status": "announced",
     "t": 712,
     "who": "the chair"
@@ -46,70 +66,40 @@
     "fiscal_year": 2027,
     "kind": "override",
     "scope": "both",
-    "statement": "A level-service budget will probably require an override.",
-    "status": "announced",
-    "t": 754,
-    "who": "the chair"
-   },
-   {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "override",
-    "scope": "both",
-    "statement": "Increased or restorative service above level service would require a larger override.",
-    "status": "proposed",
-    "t": 754,
-    "who": "the chair"
-   },
-   {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "budget_total",
-    "scope": "both",
-    "statement": "Cutting to reach a balanced budget at town meeting would mean reducing services.",
+    "statement": "Level service will likely require an override; increased or restorative services would require a larger override; a balanced budget without an override would mean service cuts.",
     "status": "announced",
     "t": 774,
     "who": "the chair"
    },
    {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
+    "amount_as_heard": "$140,000",
+    "fiscal_year": 2025,
     "kind": "other",
     "scope": "school",
-    "statement": "The school may request restoration of some services that were cut in the past.",
-    "status": "proposed",
-    "t": 732,
-    "who": "the chair"
-   },
-   {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "override",
-    "scope": "town",
-    "statement": "The town is likely to put forward one or more Prop 2\u00bd overrides.",
+    "statement": "In a past year an extra $140,000 was paid toward transportation because it was being counted against the athletics revolving account.",
     "status": "announced",
-    "t": 1405,
-    "who": "the chair"
-   },
-   {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "deficit",
-    "scope": "both",
-    "statement": "A member wants the gap between the level-service budget and funds available stated clearly before an override is asked for.",
-    "status": "proposed",
-    "t": 1467,
+    "t": 1027,
     "who": "a member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "the FY27/FY28 override strategy",
+    "condition": "even if a level-service override is approved this year",
+    "fiscal_year": 2028,
+    "prediction": "even if a level-service override passes this year, another level-service override may be needed next year",
+    "scope": "both",
+    "t": 2010,
+    "who": "the chair"
    },
    {
-    "amount_as_heard": null,
+    "about": "the school budget's level of service versus academic performance",
+    "condition": "if the district is funding a top-tier service level while ranking near the bottom for third-grade reading performance",
     "fiscal_year": 2027,
-    "kind": "override",
-    "scope": "both",
-    "statement": "Even with a level-service override this year, another level-service override may be needed next year.",
-    "status": "announced",
-    "t": 2003,
-    "who": "the chair"
+    "prediction": "a member said she would have an issue supporting the school budget/override",
+    "scope": "school",
+    "t": 1899,
+    "who": "a member"
    }
   ]
  },
@@ -117,9 +107,10 @@
  "video_url": "https://www.youtube.com/watch?v=iGeYk_rpnO4",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T18:53:34Z",
-  "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.23514780000000002,
-  "model": "sonnet"
+  "at": "2026-09-16T20:34:44Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
  }
 }

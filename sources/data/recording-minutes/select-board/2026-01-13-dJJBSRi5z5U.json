@@ -1,0 +1,528 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-01-13",
+ "video_id": "dJJBSRi5z5U",
+ "video_url": "https://www.youtube.com/watch?v=dJJBSRi5z5U",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-01-13-dJJBSRi5z5U.json",
+  "sha256": "6fa6e55b2d9318edb23848649c771a416021e311041c6cb8f924045696986c69",
+  "caption_lines": 281,
+  "segments": 2680
+ },
+ "recording": {
+  "duration_s": 9779,
+  "duration": "2:42",
+  "spoken_chars": 84272,
+  "words_approx": 14045
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01132026-7602",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-01-13-agenda-7602.txt",
+   "path": "sources/meetings/select-board/2026-01-13-agenda-7602.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01132026-7602",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-01-13-minutes-7602.txt",
+   "path": "sources/meetings/select-board/2026-01-13-minutes-7602.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-16T20:43:28Z",
+  "cost_usd": 0.47899780000000003
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Leighton",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Miss Em",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Miss Moore",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Amanda",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jen",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chief Sullivan",
+    "role": "chief (police or fire)"
+   }
+  ],
+  "headline": "Select Board approved a 30% water-rate increase under the Fitchburg intermunicipal agreement.",
+  "summary": "The Select Board took two substantive votes -- entering executive session over firefighters' collective bargaining, and a 30% water rate increase tied to the Fitchburg intermunicipal agreement -- and spent most of the meeting line-editing its appointment policy and reviewing a draft special event license policy. Committee reports covered a new $15,000 request for the 300th anniversary committee, capital projects, an assessors' budget increase, and stormwater utility planning ahead of town meeting.",
+  "confidence": "moderate",
+  "not_audible": [
+   "Member names during the roll call into executive session are garbled ('Mr. Mloud')",
+   "Much of the appointment-policy wordsmithing is overlapping cross-talk with speakers not identifiable",
+   "Exact vote counts (e.g. 5-0) are not stated for any vote; only 'unanimous' or roll-call affirmatives are heard"
+  ],
+  "public_comment": [
+   {
+    "t": 73,
+    "speaker_as_heard": "Karen Manard",
+    "stated_role": "chair of the parks commission",
+    "topic": "Thanked a departing commissioner, appealed for volunteers to fill a parks commission vacancy and the vacant recreation director position, and reported the Marshall Park project is paused while the skate park project moves toward the next phase."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "economic-development",
+   "executive-session",
+   "fees",
+   "free-cash",
+   "hiring",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "recreation",
+   "seniors",
+   "staffing",
+   "town-departments",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 502,
+    "motion": "Enter executive session under MGL c.30 sec.21A(3) to discuss collective bargaining strategy with Lunenburg Professional Firefighters Local 5369 (amended to reconvene in open session afterward)",
+    "outcome": "roll call, all members responded affirmatively",
+    "procedural": true
+   },
+   {
+    "t": 4978,
+    "motion": "Approve a 30% rate increase for all rates under the Fitchburg-Lunenburg water intermunicipal agreement, effective per the schedule adopted by Fitchburg City Council April 18, 2023, with rates effective February 1, 2026",
+    "outcome": "passed unanimously",
+    "moved_by": "a member",
+    "procedural": false
+   },
+   {
+    "t": 9017,
+    "motion": "Approve the minutes of May 8, 2024 and May 14, 2024",
+    "outcome": "passed unanimously",
+    "procedural": true
+   },
+   {
+    "t": 9751,
+    "motion": "Adjourn",
+    "outcome": "passed unanimously",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 4755,
+    "topic": "300th anniversary committee funding",
+    "figures_as_heard": [
+     "$5,000",
+     "$15,000"
+    ],
+    "what_was_said": "An original $5,000 seed allocation for the 300th anniversary committee went unspent in FY24 and lapsed into free cash; the committee now wants a new multi-year appropriation of $15,000 plus a separate gift fund for sponsorships and merchandise sales."
+   },
+   {
+    "t": 4898,
+    "topic": "Water rate increase (Fitchburg agreement)",
+    "figures_as_heard": [
+     "30%"
+    ],
+    "what_was_said": "The intermunicipal agreement with Fitchburg fixes Lunenburg's water rates at Fitchburg's rates plus 30%; the board voted to adopt the increase effective February 1, 2026."
+   },
+   {
+    "t": 4446,
+    "topic": "Payroll and benefits coordinator appointment",
+    "figures_as_heard": [],
+    "what_was_said": "An agenda item to appoint a payroll and benefits coordinator was added but the board was not prepared to act, so it was passed over."
+   },
+   {
+    "t": 9099,
+    "topic": "School committee: literacy coach position",
+    "figures_as_heard": [],
+    "what_was_said": "A grant-funded literacy coach resigned and the school committee is not planning to fill the position."
+   },
+   {
+    "t": 9141,
+    "topic": "Capital planning requests",
+    "figures_as_heard": [],
+    "what_was_said": "Capital planning discussed track and turf field engineering (targeting summer 2027 construction if approved at town meeting), plus primary school playground/driveway design, Turkey Hill intercom/security cameras, safety film, and a maintenance garage heating project."
+   },
+   {
+    "t": 9269,
+    "topic": "Board of assessors FY budget",
+    "figures_as_heard": [
+     "6 to 7%"
+    ],
+    "what_was_said": "The principal assessor presented a budget described as roughly a 6 to 7% increase overall to the board of assessors."
+   },
+   {
+    "t": 9290,
+    "topic": "Stormwater utility bylaw and fee structure",
+    "figures_as_heard": [],
+    "what_was_said": "The plan is to bring a bylaw establishing the stormwater utility framework -- with no fee or dollar figures -- to annual town meeting, with the fee structure to follow at a special town meeting; the DPW director's stormwater budget is to be presented to the finance committee February 5."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 4446,
+    "decision": "Appointment of a payroll and benefits coordinator was passed over for the night rather than acted on."
+   },
+   {
+    "t": 4692,
+    "decision": "Board will pursue a joint select board/school committee warrant article on Kids Kingdom custody transfer, largely reusing the special town meeting language."
+   },
+   {
+    "t": 5449,
+    "decision": "Chair will establish a working group for the 925 Mass Ave RFP, with Amanda as the select board representative, targeting an April 1 RFP advertisement."
+   },
+   {
+    "t": 8515,
+    "decision": "Board deferred approving the appointment policy tonight; members to review individually and bring modifications to the next meeting for possible final approval."
+   },
+   {
+    "t": 8974,
+    "decision": "A member (Amanda) volunteered to draft a first revision of the special event license policy, based on the 2018 town counsel draft, for the next meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 10,
+    "t_end": 73,
+    "topic": "Call to order, pledge, open meeting law notice, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 73,
+    "t_end": 502,
+    "topic": "Public comment: parks commission update from its chair",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "recreation",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 502,
+    "t_end": 4425,
+    "topic": "Executive session: collective bargaining strategy, firefighters Local 5369",
+    "resolution": "voted to enter; session held",
+    "tags": [
+     "executive-session",
+     "contracts-and-unions",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 4425,
+    "t_end": 4446,
+    "topic": "Appointments/ratifications: payroll and benefits coordinator",
+    "resolution": "tabled",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 4446,
+    "t_end": 4508,
+    "topic": "Town manager report: tri-board meeting, ongoing litigation hearing",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4508,
+    "t_end": 4529,
+    "topic": "Member comment on finance committee meeting",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4529,
+    "t_end": 4877,
+    "topic": "Warrant articles to be sponsored by the board: COA warrant, Kids Kingdom, 300th anniversary committee funding",
+    "resolution": "discussed, no vote; standing agenda item",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4877,
+    "t_end": 5020,
+    "topic": "Water rate increase under Fitchburg intermunicipal agreement",
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 5040,
+    "t_end": 5449,
+    "topic": "Establishment of 925 Mass Ave RFP working group",
+    "resolution": "decided informally, no vote",
+    "tags": [
+     "economic-development",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5449,
+    "t_end": 8974,
+    "topic": "Line-by-line revision of the board's appointment policy draft",
+    "resolution": "not approved; deferred to a future meeting",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 8974,
+    "t_end": 9017,
+    "topic": "Review of draft special event license policy",
+    "resolution": "referred for further drafting",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 9017,
+    "t_end": 9037,
+    "topic": "Approval of May 8 and May 14, 2024 minutes",
+    "resolution": "voted, passed unanimously",
+    "tags": []
+   },
+   {
+    "t_start": 9037,
+    "t_end": 9057,
+    "topic": "Warrants",
+    "resolution": "no action items",
+    "tags": []
+   },
+   {
+    "t_start": 9057,
+    "t_end": 9730,
+    "topic": "Committee reports: EDC, Municipal Building Design, School Committee, Capital Planning, Board of Assessors, Stormwater, 300th committee, Council on Aging",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "capital",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 9730,
+    "t_end": 9772,
+    "topic": "Upcoming meetings, public comment, adjournment",
+    "resolution": "voted to adjourn, passed unanimously",
+    "tags": []
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Select Board voted unanimously to raise water rates under the Fitchburg intermunicipal agreement, effective February 1, 2026 (the size of the increase as heard on the recording, not independently confirmed here).",
+    "t": 4978
+   },
+   {
+    "line": "The board entered executive session to discuss collective bargaining strategy with the firefighters' union, Local 5369, before returning to open session.",
+    "t": 502
+   },
+   {
+    "line": "The board deferred its own draft appointment policy to a future meeting after a lengthy line-by-line review, and passed over appointing a payroll and benefits coordinator.",
+    "t": 8515
+   },
+   {
+    "line": "The board will sponsor a joint warrant article with the school committee to transfer custody of the Kids Kingdom property, reusing most of the prior special town meeting language.",
+    "t": 4692
+   },
+   {
+    "line": "The 300th anniversary committee asked for a new multi-year appropriation after its original seed funding lapsed unspent into free cash.",
+    "t": 4755
+   }
+  ],
+  "why_it_matters": [
+   "Water bills for Lunenburg customers served under the Fitchburg agreement will change because of tonight's vote, since the agreement ties Lunenburg's rate to Fitchburg's plus a fixed markup.",
+   "The stalled appointment policy and the open payroll-coordinator hire bear on how the town fills its own staff positions going forward.",
+   "The Kids Kingdom transfer and the anniversary committee's funding request are among the items residents may see on an upcoming town meeting warrant."
+  ],
+  "watch_next": [
+   "Next Select Board meeting: possible final approval of the appointment policy and a first draft of the special event license policy",
+   "Annual town meeting: warrant articles including the Kids Kingdom custody transfer, 300th anniversary committee funding, and the stormwater utility bylaw"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-16T20:43:51Z",
+   "cost_usd": 0.1572898
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01132026-7602",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-01-13-minutes-7602.txt",
+   "path": "sources/meetings/select-board/2026-01-13-minutes-7602.pdf"
+  },
+  "official_sha256": "94230928ea1858852fac208d7ede5470256d1b1715738e0f6bcaccf2cc0bf497",
+  "coverage": "full",
+  "summary": "The two records agree closely on every substantive vote, figure, and decision our minutes captured — the 30% water rate increase, the 300th Anniversary funding figures, the assessors' 6–7% budget growth, the Kids Kingdom warrant plan, the 925 Mass Ave working group, and the deferred appointment policy all match. The main things to know: our minutes omit the executive session roll-call vote and Member Glenn McLeod entirely, split three attendees (Amanda Moore, Brian Lehtinen, Renee Emkey) into duplicate mis-captioned names, and add unconfirmed details (a \"2018\" draft date, an unspecified rate-schedule year) that the official text does not corroborate.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 0,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Water rate increase vote",
+    "t": 4978,
+    "ours": "Approve a 30% rate increase for all rates under the Fitchburg-Lunenburg water intermunicipal agreement, effective per the schedule adopted by Fitchburg City Council April 18, 2023, with rates effective February 1, 2026 — passed unanimously",
+    "official": "Motion by Vice-Chair Moore to approve a rate increase for all rates covered under the Intermunicipal Agreement for the supply of water between the City of Fitchburg and the Town of Lunenburg by an increase of 30% over the rates established by the Fitchburg City Council on April 18, 2023, with the July 1, 2025 rates to be effective on February 1, 2026, and future increases to take effect in accordance with the April 18, 2023 vote of the Fitchburg City Council. Seconded by Clerk Emkey. Call for vote: Five-Aye. The motion passed unanimously (5-0-0).",
+    "note": "Same vote: 30% increase, April 18, 2023 Fitchburg schedule, February 1, 2026 effective date, unanimous outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Water rate increase percentage",
+    "t": 4898,
+    "ours": "30%",
+    "official": "an increase of 30% over the rates established by the Fitchburg City Council",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Board of Assessors FY budget increase",
+    "t": 9269,
+    "ours": "6 to 7%",
+    "official": "the Principal Assessor presented a proposed budget reflecting an approximately 6–7% overall increase",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Payroll and benefits coordinator appointment decision",
+    "t": 4446,
+    "ours": "Appointment of a payroll and benefits coordinator was passed over for the night rather than acted on.",
+    "official": "Chair Nuzzolo reported that, while the agenda had been amended to include this appointment, the Select Board was not yet prepared to act on it. The item was passed over and will be brought forward at a future meeting.",
+    "note": "Same outcome: deferred, not acted on."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Name and salary step of the payroll coordinator appointee",
+    "ours": "",
+    "official": "Town Manager's appointment of Thomas Alsup as Payroll and Benefits Coordinator, and approval of Step 5 salary",
+    "note": "Our minutes never capture the appointee's name (Thomas Alsup) or the Step 5 salary detail."
+   },
+   {
+    "kind": "agree",
+    "about": "Kids Kingdom warrant article plan",
+    "t": 4692,
+    "ours": "Board will pursue a joint select board/school committee warrant article on Kids Kingdom custody transfer, largely reusing the special town meeting language.",
+    "official": "Chair Nuzzolo indicated the Article would proceed in substantially the same form as presented at Special Town Meeting, potentially as a joint Warrant Article co-sponsored by the Select Board and the School Committee.",
+    "note": "Matches: joint article, reuse of prior special town meeting language."
+   },
+   {
+    "kind": "agree",
+    "about": "Appointment policy deferred to next meeting",
+    "t": 8515,
+    "ours": "Board deferred approving the appointment policy tonight; members to review individually and bring modifications to the next meeting for possible final approval.",
+    "official": "The policy was not voted upon at this meeting. A clean draft will be brought forward for approval at a future meeting.",
+    "note": "Same overall decision; official additionally records which specific sections (2, 7, 8) were revised, which ours omits, but the core outcome agrees."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Basis/date of the special event license policy draft",
+    "t": 8974,
+    "ours": "A member (Amanda) volunteered to draft a first revision of the special event license policy, based on the 2018 town counsel draft, for the next meeting.",
+    "official": "Chair Nuzzolo read a draft policy provided by Town Counsel Adam Costa. The Select Board agreed to use Town Counsel's draft as a starting point and discuss feedback and/or revisions at a future meeting. Vice-Chair Moore offered to draft a version to be discussed at a future Select Board meeting.",
+    "note": "Official names only current Town Counsel Adam Costa's draft with no year attached; check whether the draft actually dates to 2018 (a prior counsel's work) or whether '2018' is a captioning error for something else."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Glenn McLeod",
+    "ours": "",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Amanda Moore, Clerk Renee Emkey Member Brian Lehtinen, and Member Glenn McLeod",
+    "note": "McLeod is a full voting member who gave several committee reports (EDC, School Committee, Board of Assessors) and voted in the executive-session roll call, but does not appear anywhere in our attendee list — check the recording for a missed or unclear introduction."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Amanda Moore listed twice",
+    "ours": "Miss Moore (member); Amanda (member)",
+    "official": "Vice-Chair Amanda Moore",
+    "official_reading": "Vice-Chair Amanda Moore",
+    "note": "One person captured under two different names/entries in ours; merge to a single attendee."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brian Lehtinen listed twice",
+    "ours": "Mr. Leighton (member); Brian (member)",
+    "official": "Member Brian Lehtinen",
+    "official_reading": "Member Brian Lehtinen",
+    "note": "\"Leighton\" is a mishearing of \"Lehtinen\"; one person listed twice in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Renee Emkey captured as 'Miss Em'",
+    "ours": "Miss Em (member)",
+    "official": "Clerk Renee Emkey",
+    "official_reading": "Clerk Renee Emkey",
+    "note": "\"Em\" is a truncated hearing of \"Emkey.\""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: possible duplicate listing of the Town Manager as 'Jen'",
+    "ours": "the town manager (town manager); Jen (member)",
+    "official": "Also Present: Jennifer Warren-Dyment, Town Manager",
+    "note": "The Select Board has only five named members (Nuzzolo, Moore, Emkey, Lehtinen, McLeod) and Jen/Jennifer is not one of them; check whether 'Jen (member)' in ours is actually a second, mistaken listing of Town Manager Jennifer Warren-Dyment rather than a board member."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-16T20:50:10Z",
+   "cost_usd": 0.30221580000000003
+  }
+ }
+}
