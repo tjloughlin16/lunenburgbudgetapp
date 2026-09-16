@@ -1,5 +1,15 @@
 # Running the refresh every day
 
+**It runs in its own checkout.** `scripts/setup_refresh_tree.sh` (once) creates a git
+worktree at `../lunenburgbudgets-refresh` on a branch called `refresh`; every run resets
+it to `origin/main`, refreshes, commits, pushes to `main`, builds and deploys. People and
+agents never work in that tree -- they work here, on branches, and merge to `main`. After
+each refresh this tree is behind `main` by one commit: `git pull` before starting work.
+Why: on 15 September 2026 the refresh ran here while a feature branch was checked out and
+its deploy went to a Pages preview alias; production missed a day.
+
+    bash scripts/setup_refresh_tree.sh    # once; pulls the archive's binaries from R2 (~1.4 GB)
+
 `scripts/daily_refresh.sh` runs `refresh.py --deploy`, commits the observation logs,
 previews, minutes and payloads, and pushes. It logs to `build/refresh-logs/<date>.log`.
 Nothing in it posts to Facebook; the paste-ready texts land in `build/notices-to-post.md`.

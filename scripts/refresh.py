@@ -398,6 +398,16 @@ def main():
 
     # 10. The site, only when asked.
     deployed = False
+    # DEPLOY ONLY FROM MAIN, or from the refresh tree's branch that IS main. Cloudflare
+    # Pages sends any other branch to a preview alias and the log would still say
+    # "deployed" -- which is exactly what happened on 15 September 2026.
+    if a.deploy and not a.dry_run:
+        branch = subprocess.run(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], cwd=ROOT,
+                                capture_output=True, text=True).stdout.strip()
+        if branch not in ('main', 'refresh'):
+            print('  NOT deploying: on branch %r, and only main deploys to production. '
+                  'Run the refresh from the refresh tree (scripts/daily_refresh.sh) or check out main.' % branch)
+            a.deploy = False
     if a.deploy and not a.dry_run:
         sh(['npm', 'run', 'build:site'], cwd=os.path.join(ROOT, 'fy28'))
         sh(['npx', 'wrangler', 'pages', 'deploy'], cwd=os.path.join(ROOT, 'fy28'))
