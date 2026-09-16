@@ -974,7 +974,7 @@ def the_conclusions(rows, register, lad27, discount_pct, contrast, hh_bills,
         conclusion(
             id='what-a-family-actually-pays',
                 bearing='lever',
-            claim='A year for two high schoolers, one sport each, riding the bus and joining a club',
+            claim='Two high schoolers, one sport each, the bus and a club: %s a year.' % dollars(two['floor_carried']),
             so_what='Athletic fees, the bus and student activity fees. Several other charges have no published amount.',
             lede='Two Lunenburg high schoolers, one sport each, riding the bus and '
                   'joining a club, cost their family %s in %s: %s in athletic fees, %s '
@@ -1027,7 +1027,7 @@ def the_conclusions(rows, register, lad27, discount_pct, contrast, hh_bills,
         conclusion(
             id='parents-is-not-one-group',
                 bearing='sizes',
-            claim='A year for three children playing one sport each, at the full rate',
+            claim='Three children playing one sport each pay %s a year at the full rate.' % dollars(contrast['full']),
             so_what='Another family pays a fraction of that for the same children. Parents are not one group.',
             lede='The same %s children playing one sport each cost one Lunenburg family '
                   '%s a year and another %s — a factor of %s between two households at '
@@ -1072,7 +1072,7 @@ def the_conclusions(rows, register, lad27, discount_pct, contrast, hh_bills,
         conclusion(
             id='the-second-child-does-not-double-the-bill',
             bearing='lever',
-            claim='What a second child adds to a family’s school bill',
+            claim='A second child adds %s to a family’s school bill.' % dollars(second_costs),
             so_what='Not another full share: the bus is one charge per family, and each athlete after the first pays less.',
             lede='A second child costs a Lunenburg family %s more and a third %s more — '
                   'not another %s each — because the bus is one charge for the whole '

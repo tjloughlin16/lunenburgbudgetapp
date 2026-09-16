@@ -509,8 +509,8 @@ def build_students(db, mf):
             conclusion(
                 id='the-share-rose-partly-because-enrollment-fell',
                 bearing='sizes',
-                claim='Lunenburg children with a special education plan, %s'
-                      % C.fy(last['fy']),
+                claim='%s Lunenburg children have a special education plan in %s.'
+                      % (C.num(last['swd']), C.fy(last['fy'])),
                 so_what='Up from %s four years earlier. Enrollment fell over the same '
                         'years, so the share rose further than the count.'
                         % C.num(lowest['swd']),
@@ -559,8 +559,8 @@ def build_students(db, mf):
             conclusion(
                 id='paraprofessional-fte-fell-while-the-count-did-not',
                 bearing='sizes',
-                claim='Fall in the paraprofessionals the state counts in special '
-                      'education',
+                claim='The paraprofessionals the state counts in special education fell %s.'
+                      % C.pct(para_fall_pct),
                 so_what='%s posts down to %s since %s, while the number of children they '
                         'support barely moved.'
                         % (para_first_fte, para_last_fte, C.fy(paras[0]['fy'])),
@@ -833,8 +833,8 @@ def build_leaving(db, mf):
             conclusion(
                 id='the-total-held-while-its-parts-changed',
                 bearing='sizes',
-                claim='Change in children schooled outside Lunenburg, over %s years'
-                      % C.num(len(series)),
+                claim='Children schooled outside Lunenburg changed %s over %s years.'
+                      % (C.pct(rc['elsewhere']['pct']), C.num(len(series))),
                 so_what='The total barely moved. Where they go changed completely, and the '
                         'routes cost the town different amounts.',
                 lede='The number of Lunenburg children going to school somewhere other '
@@ -896,7 +896,7 @@ def build_leaving(db, mf):
             conclusion(
                 id='the-biggest-destination-is-not-school-choice',
                 bearing='sizes',
-                claim='Lunenburg children at Monty Tech, the largest single destination',
+                claim='%s Lunenburg children are at Monty Tech, the largest single destination.' % C.num(biggest_dest['students']),
                 so_what='More than school choice and charter together. Lunenburg is a '
                         'member town there, so this is not choosing out.',
                 lede='The largest single destination for a Lunenburg child educated '
@@ -1134,8 +1134,8 @@ def build_cost(db, mf):
             conclusion(
                 id='the-line-is-the-towns-share',
                 bearing='sizes',
-                claim='Of what Lunenburg spent teaching children at other schools was '
-                      'paid from outside the budget',
+                claim='%s of what Lunenburg spent teaching children at other schools came '
+                      'from outside the budget.' % C.pct(last['outside_share_pct']),
                 so_what='The figure residents argue about is the town\u2019s share of '
                         'that bill, not the bill.',
                 lede='The special education figure residents argue about \u2014 what the '
@@ -1177,8 +1177,8 @@ def build_cost(db, mf):
             conclusion(
                 id='the-threshold-comes-off-first',
                 bearing='sizes',
-                claim='Taken off the bill in %s before the state reimburses anything'
-                      % C.fy(cb_last['fy']),
+                claim='%s came off the bill in %s before the state reimbursed anything.'
+                      % (C.usd(cb_last['threshold']), C.fy(cb_last['fy'])),
                 so_what='So the town carries the first slice of these placements in every '
                         'year, whatever else happens.',
                 lede='The state does reimburse out-of-district tuition, but it takes a '
@@ -1217,7 +1217,7 @@ def build_cost(db, mf):
             conclusion(
                 id='out-of-district-spending-is-not-a-straight-line',
                 bearing='sizes',
-                claim='Spent teaching children at other schools in %s' % C.fy(last['fy']),
+                claim='%s was spent teaching children at other schools in %s.' % (C.usd(last['total']), C.fy(last['fy'])),
                 so_what='It peaked at %s in %s. This cost steps with single placements '
                         'rather than rising steadily.'
                         % (C.usd(peak['total']), C.fy(peak['fy'])),
@@ -1450,8 +1450,8 @@ def build_route(db, mf):
                 # choice." A placement is made because a child's education plan requires
                 # it; choosing out is a family applying elsewhere. Two mechanisms, two
                 # reports, and the label has to say which one it is.
-                claim='Children whose special education plan placed them outside '
-                      'Lunenburg schools, %s' % C.fy(clast['fy']),
+                claim='%s children’s special education plans placed them outside '
+                      'Lunenburg schools in %s.' % (C.num(clast['total']), C.fy(clast['fy'])),
                 so_what='It was %s in %s and %s in %s. The town prints this every year, '
                         'and it moves both ways.'
                         % (C.num(cpeak['total']), C.fy(cpeak['fy']),
@@ -1501,8 +1501,8 @@ def build_route(db, mf):
             conclusion(
                 id='where-a-child-starts-tracks-where-they-end-up',
                 bearing='lever',
-                claim='Of children starting in a separate special education classroom '
-                      'end up outside the district',
+                claim='%s of children who start in a separate special education classroom '
+                      'end up out of district.' % C.pct(sub['ood_pct']),
                 so_what='Against %s of those starting in an ordinary classroom. Small '
                         'groups \u2014 read what this does not show.'
                         % C.pct(incl['ood_pct']),

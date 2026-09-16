@@ -2724,8 +2724,7 @@ def build():
             conclusion(
                 id='the-sign-is-a-property-of-the-window',
                 bearing='lever',
-                claim='Pairs of published years where the state counts fewer teachers at '
-                      'the end than the start',
+                claim='In %s of %s pairs of published years the state counts fewer teachers at the end.' % (C.num(ew['fell']), C.num(ew['pairs'])),
                 so_what='Whether staffing “went up” is decided by the years somebody '
                         'picks, not by the town.',
                 lede='Both sides of the staffing argument in this town are quoting true '
@@ -2800,7 +2799,7 @@ def build():
             conclusion(
                 id='the-change-is-paraprofessionals',
                 bearing='sizes',
-                claim='Rise in paraprofessionals for each hundred pupils, the biggest change in staffing',
+                claim='Paraprofessionals for each hundred pupils rose %s, the biggest change in staffing.' % C.pct(para_rise),
                 so_what='Lunenburg went from the lowest on the state’s comparison sheet to the highest.',
                 lede='Paraprofessionals are the biggest change in who Lunenburg’s '
                       'schools employ: the state’s count went from %s per hundred '
@@ -2857,7 +2856,7 @@ def build():
             conclusion(
                 id='fewest-teachers-per-pupil-in-the-group',
                 bearing='sizes',
-                claim='Teaching staff for each hundred pupils, near the bottom of the state’s comparison group',
+                claim='%s teaching staff for every hundred pupils, near the bottom of the state’s comparison group.' % per100(latest_teach['value']),
                 so_what='Teaching fell faster than enrollment did, so falling rolls do not explain it.',
                 lede='Lunenburg ranks %s of the %s districts on the state’s '
                       'comparison sheet for teachers per pupil — and falling '
@@ -2940,7 +2939,7 @@ def build():
             conclusion(
                 id='inside-sped-the-money-went-to-paraprofessionals',
                 bearing='lever',
-                claim='Rise in what the schools budget for special education paraprofessionals',
+                claim='What the schools budget for special education paraprofessionals rose %s.' % C.pct(cw_para['pct'] * 100),
                 so_what='Special education teacher lines rose a fifth as fast. Inside this budget, the money went to paraprofessionals.',
                 lede='Inside special education the money went to paraprofessionals: '
                       'those %s budget lines rose %s over %s, while the %s special '
@@ -3007,9 +3006,9 @@ def build():
             conclusion(
                 id='a-headcount-is-not-an-fte-count',
                 bearing='sizes',
-                claim='Teachers the state counted as people in %s, against %s full-time '
-                      'equivalent posts'
-                      % (C.fy(hc_last['fy']), fte(hc_last['teacher_fte'])),
+                claim='The state counted %s teachers as people in %s, holding %s full-time '
+                      'equivalent posts.'
+                      % (C.num(hc_last['teacher_headcount']), C.fy(hc_last['fy']), fte(hc_last['teacher_fte'])),
                 so_what='A roster counts heads and DESE counts posts, so the same staff '
                         'give two different numbers.',
                 lede='The state publishes both counts and they are not the same count: '
@@ -3088,9 +3087,9 @@ def build():
             conclusion(
                 id='paraprofessionals-outside-special-education',
                 bearing='sizes',
-                claim='Rise in paraprofessional FTE the state does not code to special '
-                      'education, %s to %s'
-                      % (C.fy(sp_all['first_fy']), C.fy(sp_all['last_fy'])),
+                claim='Paraprofessional FTE the state does not code to special education rose %s, '
+                      '%s to %s.'
+                      % (fte(sped['implied']['change']), C.fy(sp_all['first_fy']), C.fy(sp_all['last_fy'])),
                 so_what='The paraprofessional workforce grew while its special education '
                         'half more than halved.',
                 lede='Two of the state’s files count Lunenburg’s paraprofessionals and '

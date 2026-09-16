@@ -957,7 +957,7 @@ def build():
         conclusion(
             id='the-whole-increase-is-the-legislatures-floor',
             bearing='sizes',
-            claim='Increase in state school aid for FY2026, all of it the Legislature’s flat minimum',
+            claim='State school aid rose %s for FY2026, all of it the Legislature’s flat minimum.' % C.usd(delta),
             so_what='The funding formula itself awarded nothing. What the town gets moves with a rate set on Beacon Hill.',
             lede='Lunenburg’s entire increase in state school aid for %s was the flat '
                   'minimum the Legislature votes each year — %s, which is exactly %s for '
@@ -1014,7 +1014,7 @@ def build():
         conclusion(
             id='the-local-share-is-rising-faster-than-the-aid',
             bearing='sizes',
-            claim='Rise since FY2019 in what the state requires Lunenburg to pay for its own schools',
+            claim='What the state requires Lunenburg to pay for its own schools rose %s since FY2019.' % C.pct(req_pct),
             so_what='State aid rose by less over the same years, and the pupil count the formula runs on fell.',
             lede='Since %s the amount the state requires Lunenburg to pay towards its '
                   'own schools has risen %s, while the state aid it sends rose %s — and '
@@ -1074,7 +1074,7 @@ def build():
         conclusion(
             id='the-required-contribution-is-wealth-not-children',
             bearing='sizes',
-            claim='Growth in Lunenburg’s property wealth since FY2019, against a state median far below it',
+            claim='Lunenburg’s property wealth grew %s since FY2019, against a state median far below it.' % C.pct(eqv_growth_pct),
             so_what='The town’s required share is worked out from wealth, not from how many children it has.',
             lede='What the state requires Lunenburg to pay towards its own schools is '
                   'worked out from property values and residents’ incomes, and has no '

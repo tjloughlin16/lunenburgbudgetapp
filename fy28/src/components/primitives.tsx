@@ -1,7 +1,10 @@
 import { useState, type ReactNode } from 'react'
 
-export function Section({ id, eyebrow, title, lede, children }: {
+export function Section({ id, eyebrow, title, lede, point, children }: {
   id: string; eyebrow?: string; title: string; lede?: ReactNode; children: ReactNode
+  /** The title is itself a claim a reader should leave with ("Costs grow 5.18%. Revenue
+   *  grows 3.23%."), not a heading over one. Marks it for the short-version table. */
+  point?: boolean
 }) {
   return (
     <section id={id} className="scroll-mt-32 lg:scroll-mt-16 py-14 border-t"
@@ -11,7 +14,7 @@ export function Section({ id, eyebrow, title, lede, children }: {
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: 'var(--text-muted)' }}>{eyebrow}</p>
         )}
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3" data-point="">{title}</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3" data-point={point ? '' : undefined}>{title}</h2>
         {lede && (
           <div className="max-w-3xl text-[15px] leading-relaxed mb-8"
             style={{ color: 'var(--text-secondary)' }}>{lede}</div>

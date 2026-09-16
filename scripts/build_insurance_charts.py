@@ -474,7 +474,7 @@ def build():
         conclusion(
             id='the-school-budget-is-not-what-the-schools-cost',
             bearing='sizes',
-            claim='Of the schools’ health insurance is not in the school budget at all',
+            claim='%s of the schools’ health insurance is not in the school budget at all.' % C.usd(school_in_dept914),
             so_what='It is appropriated to the town’s insurance department, so the school budget understates the town’s bill.',
             lede=(
                 'The schools’ health insurance is %s in %s, and %s of it is not in the '
@@ -527,7 +527,7 @@ def build():
         concl.append(conclusion(
             id='insurance-outgrows-the-levy-that-pays-for-it',
             bearing='sizes',
-            claim='A year, the growth of the town’s insurance department',
+            claim='The town’s insurance department grows %s a year.' % C.pct(100 * town_ch['cagr']),
             so_what='Faster than the levy that pays for it is allowed to rise, so it takes a growing share of every increase.',
             lede=(
                 'The town’s insurance department has nearly doubled since %s, to %s — %s a '

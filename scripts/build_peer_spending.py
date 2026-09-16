@@ -1414,7 +1414,7 @@ def build():
             conclusion(
                 id='most-of-the-gap-is-the-denominator',
                 bearing='sizes',
-                claim='What Lunenburg would spend for each pupil at its own enrollment of thirteen years ago',
+                claim='At its enrollment of thirteen years ago, Lunenburg would spend %s for each pupil.' % C.usd(dec_lun['at_old_enrollment']),
                 so_what='Most of the gap with its neighbours is fewer children, not less money.',
                 lede='Most of the per-pupil gap between Lunenburg and its neighbours is '
                       'the denominator. Spending grew within a narrow band across all six '
@@ -1479,7 +1479,7 @@ def build():
             conclusion(
                 id='near-the-top-on-pay-fewest-teachers',
                 bearing='lever',
-                claim='Average teacher salary, near the top of the neighbouring districts',
+                claim='Lunenburg’s average teacher salary is %s, near the top of the neighbouring districts.' % C.usd(tch_lun['average_salary']),
                 so_what='And Lunenburg employs the fewest teachers for each pupil of the group — the same money, spread wider.',
                 lede='Lunenburg pays near the top of this group for a teacher and '
                       'employs the fewest of them for each pupil: %s on average, and %s '

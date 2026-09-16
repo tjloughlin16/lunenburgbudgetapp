@@ -70,7 +70,7 @@ export function WhyCombination() {
             <strong className="tnum">{pct(sal.blendedOthersFrozen)}</strong>: dead level,
             nothing to spare, and the town still starts the period behind.
           </p>
-          <p className="text-[13px] leading-relaxed mt-2"
+          <p className="text-[13px] leading-relaxed mt-2" data-point=""
             style={{ color: 'var(--text-secondary)' }}>
             There is no arrangement of the other five lines that reaches the bar while
             salaries go on rising 4%. It can be paid around &mdash; with{' '}
@@ -195,7 +195,7 @@ function Side({ label, v, sub, tone }: {
       <p className="text-[11px] font-semibold" style={{ color: 'var(--text-muted)' }}>
         {label}
       </p>
-      <p className="text-[15px] font-bold leading-snug mt-0.5" style={{
+      <p className="text-[15px] font-bold leading-snug mt-0.5" data-point="" data-figure={label} style={{
         color: tone === 'critical' ? 'var(--status-critical)' : 'var(--status-good)' }}>
         {v}
       </p>

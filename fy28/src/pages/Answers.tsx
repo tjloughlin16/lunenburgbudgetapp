@@ -305,7 +305,7 @@ function FourSentences() {
         <li key={i} className="card p-5 flex gap-4">
           <span className="text-xl font-bold tnum shrink-0 w-20 leading-snug"
             style={{ color: 'var(--status-critical)' }}>{it.fig}</span>
-          <p className="text-[14px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-[14px] leading-relaxed" data-point="" data-figure={it.fig} style={{ color: 'var(--text-secondary)' }}>
             {it.body}
           </p>
         </li>

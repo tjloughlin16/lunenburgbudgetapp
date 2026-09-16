@@ -1443,7 +1443,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
         conclusion(
             id='what-the-scenario-costs-and-what-would-have-to-be-cut',
             bearing='sizes',
-            claim='Leaves the town in year one, if 78 high school students transferred out',
+            claim='If %s high school students transferred out, %s would leave the town in year one.' % (C.num(scn['leavers']), C.usd(year_one)),
             so_what='A scenario put to this site, not something that happened.',
             lede='If %s high school students transferred out under school choice — the '
                   'scenario as it was put to this site — %s leaves the town in the first '
@@ -1517,7 +1517,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
             # card beside the marginal figure. A marginal quantity shown without the
             # average it moves is not a hard figure to misread; it is a hard figure to
             # read CORRECTLY.
-            claim='How much Lunenburg’s state aid changes if one pupil leaves',
+            claim='Lunenburg’s state aid changes by %s if one pupil leaves.' % C.usd(hist['min_aid_per_pupil']),
             so_what='Lunenburg gets %s a pupil in all. Only %s of it moves with '
                     'enrolment.'
                     % (C.usd(fml['aid_per_pupil']),
@@ -1588,7 +1588,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
         conclusion(
             id='this-is-a-flow-that-already-runs',
             bearing='sizes',
-            claim='Lunenburg residents leaving under school choice in the latest year counted',
+            claim='%s Lunenburg residents left under school choice in the latest year counted.' % C.num(flows['latest']['out_choice']),
             so_what='Children already leave. The question the scenario puts is how fast that moves, not whether it happens.',
             lede='Children already leave. DESE counts %s Lunenburg residents choicing '
                   'out in %s against %s arriving, so the question the scenario puts is '
@@ -1641,7 +1641,7 @@ def the_conclusions(enr, fml, hist, flows, scn):
         conclusion(
             id='the-net-is-flat-and-the-arriving-half-is-not',
             bearing='lever',
-            claim='Fall in children arriving in Lunenburg from other towns',
+            claim='Children arriving in Lunenburg from other towns fell %s.' % C.pct(-bw['in_change_pct'] * 100),
             so_what='Leaving is flat and arriving has collapsed. The net barely moves, and that is what hides it.',
             lede='Lunenburg has not had a year of net gain in the %s school years DESE '
                   'publishes — %s '

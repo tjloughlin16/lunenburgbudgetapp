@@ -261,7 +261,7 @@ def build():
         conclusion(
             id='fewer-students-does-not-mean-less-aid',
             # TJ: "people don't understand 'foundation' language." A student is a student here.
-            claim='What one more or one fewer student moves Lunenburg’s state aid by',
+            claim='One more or one fewer student moves Lunenburg’s state aid by %s.' % usd2(floor_rate),
             so_what='Losing pupils does not cut the aid. It changes only the flat increase, which is set on Beacon Hill.',
             lede='Chapter 70 is not recalculated from your students each year. It is last '
                  'year’s aid plus an increase, and in %s the only increase available was '
@@ -305,8 +305,8 @@ def build():
         ),
         conclusion(
             id='the-aid-and-the-increase-are-different-numbers',
-            claim='Chapter 70 aid for each student in %s, against %s of increase'
-                  % (C.fy(fy), usd2(floor_rate)),
+            claim='Chapter 70 pays %s for each student in %s; the increase is %s of it.'
+                  % (usd2(aid_per_pupil), C.fy(fy), usd2(floor_rate)),
             so_what='The figure everybody quotes is an increase, not the aid. They differ by a factor of %s.'
                     % C.num(ratio),
             lede='Three numbers get used interchangeably in this town and two of them are '
@@ -344,7 +344,7 @@ def build():
         ),
         conclusion(
             id='nothing-in-the-formula-takes-aid-away-for-losing-pupils',
-            claim='Provisions in DESE’s own definitions that can reduce a district’s Chapter 70 aid',
+            claim='%s provisions in DESE’s own definitions can reduce a district’s Chapter 70 aid.' % C.num(len(reductions)),
             so_what='One is a legislated across-the-board cut. The other applies only to districts that run no schools.',
             lede='DESE’s glossary names %s things that reduce Chapter 70 aid, and neither '
                  'of them is enrolment for a district that runs its own schools.'
@@ -382,7 +382,7 @@ def build():
         ),
         conclusion(
             id='the-marginal-rate-does-not-extrapolate',
-            claim='The enrolment at which the formula’s own subtraction would turn negative',
+            claim='At %s foundation pupils the formula’s own subtraction would turn negative.' % C.num(pupils_at_zero),
             so_what='%s below today. The per-pupil finding was measured at the margin and stops well above it.'
                     % C.pct(100 * threshold['fall_pct']),
             lede='Everything on this page about one more or one fewer pupil was measured '

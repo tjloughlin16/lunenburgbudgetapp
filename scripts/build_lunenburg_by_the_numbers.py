@@ -933,11 +933,11 @@ def build_conclusions(age, hh, ten, inc, gap, rk, pp, ch, chg):
               % (rk['rank_text'], pp['last']['rank_text']),
         so_what='Both are true at once, and this town has not had the two put side by '
                 'side before.',
-        figure='overlap', bearing='sizes', kind='measured',
+        figure='rank', bearing='sizes', kind='measured',
         figures={
             'overlap': figure(rk['overlap'], n(rk['overlap']),
                               'towns we cannot be told apart from'),
-            'rank': figure(rk['rank'], rk['rank_text']),
+            'rank': figure(rk['rank'], rk['rank_text'], 'Massachusetts towns, by median household income'),
             'pprank': figure(pp['last']['rank'], pp['last']['rank_text']),
             'ppyears': figure(pp['bottom_quarter_years'], pp['ppyears_text']),
         },

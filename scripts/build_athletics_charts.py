@@ -1350,8 +1350,8 @@ def build():
             conclusion(
                 id='more-left-the-accounts-than-any-document-totals',
                 bearing='sizes',
-                claim='Left the town’s accounts for athletics in %s, more than any '
-                      'document totals' % C.fy(three_way['fy']),
+                claim='%s left the town’s accounts for athletics in %s, more than any '
+                      'document totals.' % (C.usd(three_way['two_pots']), C.fy(three_way['fy'])),
                 so_what='The district’s own workbook puts the whole programme well below that. The spread is published, not reconciled.',
                 lede='Athletics took %s out of the town\u2019s two pots in %s '
                       '\u2014 %s more than the district\u2019s own workbook says the '
@@ -1406,8 +1406,8 @@ def build():
             conclusion(
                 id='everything-the-books-call-athletics-and-what-they-cannot',
                 bearing='sizes',
-                claim='Everything the town’s books code to athletics in %s — director '
-                      'and trainer included' % C.fy(count['fy']),
+                claim='The town’s books code %s to athletics in %s, director and '
+                      'trainer included.' % (C.usd(count['appropriated']), C.fy(count['fy'])),
                 so_what='Not the buildings. Grounds, heat and custodians split by no programme, so this is a floor.',
                 lede='The town\u2019s accounting system codes %d accounts to function '
                      '%s, Athletics, in %s \u2014 %s appropriated, and the '
@@ -1471,8 +1471,8 @@ def build():
             conclusion(
                 id='the-bus-bill-fell-and-the-town-paid-more',
                 bearing='lever',
-                claim='Budgeted for athletic buses in %s, more than double the year '
-                      'before' % C.fy(t_to['fy']),
+                claim='%s budgeted for athletic buses in %s, more than double the year '
+                      'before.' % (C.usd(t_to['general']), C.fy(t_to['fy'])),
                 so_what='The bus bill itself fell that year. What changed is which pot paid, not what it cost.',
                 lede='Lunenburg\u2019s athletic transportation line rose from %s to %s '
                       'in a year when the bus bill itself fell from %s to %s: the cost '

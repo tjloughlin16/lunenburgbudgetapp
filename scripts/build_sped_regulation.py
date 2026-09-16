@@ -1027,7 +1027,7 @@ def build():
             conclusion(
                 id='eight-to-one',
                 claim='A substantially separate group may not exceed %s students to '
-                      'one certified special educator' % C.num(sub_cap),
+                      'one certified special educator.' % C.num(sub_cap),
                 so_what='With an aide it is %s. The aide is what raises the ceiling; the '
                         'teacher count never changes.' % C.num(sub_aide),
                 detail='603 CMR 28.06(6)(d), quoted in full below: a setting "serving '
@@ -1054,7 +1054,7 @@ def build():
             conclusion(
                 id='no-required-number',
                 claim='Nothing published lets anybody compute how many staff this rule '
-                      'requires in Lunenburg',
+                      'requires in Lunenburg.',
                 so_what='%s children could be four groups or seven, needing very '
                         'different staffing. Both are lawful.' % C.num(p['sub']['count']),
                 detail='The regulation binds instructional groups. Lunenburg publishes a '
@@ -1085,8 +1085,8 @@ def build():
                           'this page supports either reading, and it is not an audit.',
             ),            conclusion(
                 id='one-educator-every-tier',
-                claim='Every tier the rule sets names one educator — at every age, in '
-                      'every setting',
+                claim='All %s group-size tiers the rule sets name one educator, at every age '
+                      'and in every setting.' % C.num(len(all_tiers)),
                 so_what='Across all %s tiers only the aides change. A bigger group never '
                         'buys a second educator.' % C.num(len(all_tiers)),
                 detail='%s tiers, in two age bands: 28.06(6)(c) and (d) for students %s, '
@@ -1119,8 +1119,8 @@ def build():
             ),
             conclusion(
                 id='ceiling-falls-with-separateness',
-                claim='The more separate the setting, the lower the ceiling — in both '
-                      'age bands',
+                claim='The more separate the setting, the lower the cap: %s students in a '
+                      'young class, %s if separate.' % (C.num(yg_band['top']), C.num(yg_band['sub'])),
                 so_what='School age falls %s to %s. Preschool falls %s to %s — same '
                         'direction, bigger drop.'
                         % (C.num(sa_band['top']), C.num(sa_band['sub']),
@@ -1159,8 +1159,8 @@ def build():
             ),
             conclusion(
                 id='caps-children-not-adults',
-                claim='The rule sets the MINIMUM staffing for a group size. IEPs add on '
-                      'top of it',
+                claim='The rule sets %s limits on adults in a room; it is a minimum, and IEPs '
+                      'add on top.' % C.num(silent_total),
                 so_what='%s children with one educator and %s aides is lawful. So is %s '
                         'with one aide.'
                         % (C.num(sub_aide), C.num(1 + ROOM_EXTRA_IEP_AIDES),
@@ -1214,8 +1214,8 @@ def build():
             ),
             conclusion(
                 id='labels-share-the-axis',
-                claim='DESE counts placements on the same axis the rule uses: time '
-                      'outside general education',
+                claim='DESE counts placements on the same axis the rule uses: time outside '
+                      'general education, at %d%%.' % threshold,
                 so_what='Its "Substantially Separate" label and 28.06(6)(d) both turn '
                         'on the same %d%% threshold.' % threshold,
                 detail='The SIMS data handbook defines element DOE034 value 40 as '
@@ -1242,7 +1242,7 @@ def build():
             conclusion(
                 id='how-many-are-in-scope',
                 claim='DESE reports %s of Lunenburg’s %s students with disabilities '
-                      'as substantially separate' % (C.num(p['sub']['count']),
+                      'as substantially separate.' % (C.num(p['sub']['count']),
                                                      C.num(p['total'])),
                 so_what='That is the group 28.06(6)(d) covers. It is children, not '
                         'groups, so it sets no staffing number.',

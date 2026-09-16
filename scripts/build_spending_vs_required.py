@@ -365,7 +365,7 @@ def build():
         conclusion(
             id='the-requirement-moved-faster-than-the-spending',
             bearing='sizes',
-            claim='Rise in the state minimum since FY2018, against a rise in spending of half that',
+            claim='The state minimum rose %s since FY2018; spending rose %s.' % (C.pct(req_growth_pct), C.pct(spent_growth_pct)),
             so_what='Lunenburg’s slide down the state ranking is mostly the bar moving, not the town spending less.',
             lede='Lunenburg’s slide down the state ranking since %s is mostly the bar '
                   'rising: the requirement went up %s over those years while what the '
@@ -419,7 +419,7 @@ def build():
         conclusion(
             id='what-the-median-would-have-cost',
             bearing='lever',
-            claim='More than Lunenburg spent, to match the middle district in the state',
+            claim='Matching the middle district in the state would take %s more than Lunenburg spent.' % C.usd(latest['short_of_median']),
             so_what='A subtraction on a published median. Nobody has proposed it and nothing is costed against it.',
             lede='Spending like the middle district in Massachusetts would have meant '
                   '%s more than Lunenburg spent in %s — %s more, on a state minimum '
@@ -461,7 +461,7 @@ def build():
         conclusion(
             id='the-enforced-floor-has-never-been-missed',
             bearing='sizes',
-            claim='Years Lunenburg spent at or above what the middle district in the state spent',
+            claim='Lunenburg spent at or above the middle district in %s of %s years measured.' % (C.num(len(at_or_above)), C.num(len(ranked))),
             so_what='Massachusetts sets a minimum every town must spend on its schools. Lunenburg has never missed it.',
             lede='Massachusetts sets a minimum every town must spend on its own '
                   'schools. Lunenburg has met it in all %s years measured, and in %s of '

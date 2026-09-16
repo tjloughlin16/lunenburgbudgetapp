@@ -434,7 +434,7 @@ def build():
             conclusion(
                 id='half-of-it-was-replaced-and-half-just-stopped',
                 bearing='sizes',
-                claim='Of the grant money that ran out in FY2025 was replaced by the town’s own money',
+                claim='%s of the grant money that ran out in FY2025 was replaced by the town’s own money.' % C.pct(replaced_share),
                 so_what='The rest simply stopped. It was a handover and a reduction happening at the same time.',
                 lede='When the grant money ran out in %s the town replaced under half of '
                       'it: of %s of grant funding that fell, across %s areas of school '
@@ -526,7 +526,7 @@ def build():
             conclusion(
                 id='the-town-carries-more-of-it-than-it-used-to',
                 bearing='sizes',
-                claim='A year the town now carries that outside money used to, at today’s spending',
+                claim='The town now carries %s a year that outside money used to, at today’s spending.' % C.usd(cf['difference']),
                 so_what='Outside money paid nearly a dollar in five of school spending and now pays about one in ten.',
                 lede='Money from outside the town’s budget — grants and the like — used '
                       'to pay nearly one dollar in five of what Lunenburg schools spend, '

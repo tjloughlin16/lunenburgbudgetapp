@@ -837,7 +837,7 @@ def build():
             conclusion(
                 id='a-zero-is-usually-a-pause',
                 bearing='lever',
-                claim='Things cut to zero in the school budget that were funded again later',
+                claim='%s of %s things cut to zero in the school budget were funded again later.' % (C.num(len(came_back)), C.num(len(events))),
                 so_what='When the school budget stops paying for something, it usually comes back.',
                 lede='When the school budget stops paying for something, it usually '
                       'comes back: %s of the %s things cut to zero between %s and %s were '
@@ -883,7 +883,7 @@ def build():
             conclusion(
                 id='what-stops-for-good-is-small-and-mostly-staff-money',
                 bearing='sizes',
-                claim='Carried by everything the schools cut and never funded again',
+                claim='Everything the schools cut and never funded again carried %s.' % C.usd(permanent_dollars),
                 so_what='Under one per cent of the school budget. What ends for good is small, and mostly specialist posts.',
                 lede='What stops for good is small: %s things the schools paid for were '
                       'cut and never funded again, %s between them — %s of the %s school '
@@ -932,7 +932,7 @@ def build():
             conclusion(
                 id='the-biggest-sustained-falls-are-tuition',
                 bearing='sizes',
-                claim='A year below their peaks, across the two biggest lasting falls in the school budget',
+                claim='The two biggest lasting falls in the school budget sit %s a year below their peaks.' % C.usd(tuition_fall),
                 so_what='Both are money paid to other schools to teach Lunenburg children — the part people hear is running away.',
                 lede='The two biggest lasting falls in the school budget are both money '
                       'paid to other schools to teach Lunenburg children: %s is %s below '

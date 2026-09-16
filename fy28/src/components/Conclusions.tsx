@@ -57,7 +57,7 @@ export function Conclusions({ from = 0, to }: { from?: number; to?: number } = {
                 <span className="text-lg font-bold tnum shrink-0"
                   style={{ color: 'var(--status-critical)' }}>{c.figure}</span>
               </div>
-              <h3 className="text-[15px] font-bold leading-snug mb-2">{c.headline}</h3>
+              <h3 className="text-[15px] font-bold leading-snug mb-2" data-point="" data-figure={c.figure}>{c.headline}</h3>
               <p className="text-[13px] leading-relaxed flex-1"
                 style={{ color: 'var(--text-secondary)' }}>{c.body}</p>
               <span className="text-[11px] font-semibold mt-3"

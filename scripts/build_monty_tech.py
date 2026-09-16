@@ -1257,7 +1257,7 @@ def build():
             conclusion(
                 id='a-child-moving-there-moves-the-bill',
                 bearing='sizes',
-                claim='The single amount the state requires Lunenburg to pay for schools, split between two districts',
+                claim='The state requires Lunenburg to pay %s for schools, split between two districts.' % C.usd(last['town_rlc']),
                 so_what='A child moving to Monty Tech does not add to the town’s bill. It moves part of it.',
                 lede='A Lunenburg child enrolling at Monty Tech does not add to what the '
                       'town has to raise for schools. It moves part of it: the state sets '
@@ -1310,7 +1310,7 @@ def build():
             conclusion(
                 id='the-assessment-is-a-bill-not-a-cost',
                 bearing='sizes',
-                claim='Billed to Lunenburg for Monty Tech, which is not what a place there costs',
+                claim='Monty Tech billed Lunenburg %s, which is not what a place there costs.' % C.usd(d26['lunenburg']),
                 so_what='State aid paid straight to the school covers most of its budget, and none of that is in this bill.',
                 lede='What Lunenburg is billed for Monty Tech is not what a Monty Tech '
                       'place costs. The town\u2019s %s is %s of the district\u2019s '
@@ -1361,7 +1361,7 @@ def build():
             conclusion(
                 id='not-an-escalator',
                 bearing='lever',
-                claim='The actual Monty Tech bill, against a forecast that carried it forward at an inflation rate',
+                claim='The Monty Tech bill came in at %s; a forecast that grew it like a cost said %s.' % (C.usd(fc['actual']), C.usd(fc['projected'])),
                 so_what='This is set by a state formula, not by a price, so it cannot be planned like an ordinary cost.',
                 lede='This line cannot be planned as an ordinary cost escalator. Carried '
                       'forward at %s a year it reached %s for %s, and the assessment came '

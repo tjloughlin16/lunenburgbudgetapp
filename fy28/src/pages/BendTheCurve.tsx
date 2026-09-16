@@ -72,7 +72,7 @@ export function BendTheCurve({ option = null }: {
       {/* THE SHORT VERSION: the raise, and the two numbers. Everything after is the
           board and the argument, behind the fold. */}
       <ShortVersion>
-      <Section id="raise" eyebrow="Start here"
+      <Section id="raise" eyebrow="Start here" point
         title={`Next year the schools get ${usdShort(RAISE.allowed)} more. Here is who spends it.`}
         lede={<>Nobody at a meeting argues about the size of the school budget. They argue
           about whether a {pct(LEVY_CAP, 1)} raise ought to be enough. So put the raise on
@@ -87,7 +87,7 @@ export function BendTheCurve({ option = null }: {
         <TheRaise />
       </Section>
 
-      <Section id="two" eyebrow="The whole thing in two numbers"
+      <Section id="two" eyebrow="The whole thing in two numbers" point
         title={`Costs grow ${pct(COST_GROWTH_BLENDED)}. Revenue grows ${pct(BASELINE_REVENUE_GROWTH)}.`}
         lede={<>That is the entire problem, and everything else on this site is downstream
           of it. Two things compounding at different speeds pull apart forever, and the
