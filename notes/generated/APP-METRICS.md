@@ -4,7 +4,7 @@
 
 ## What the town and the state published — and we hold
 
-- **12,397 documents** — PDFs, spreadsheets, Word files and slide decks — 26,462 files and 4.87 GB in all, each with its address, its publisher’s filename and a checksum.
+- **12,406 documents** — PDFs, spreadsheets, Word files and slide decks — 26,506 files and 4.87 GB in all, each with its address, its publisher’s filename and a checksum.
 - **14 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, meetings, peer-districts, state-census, state-dese, state-dls, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,088 meeting documents** from **51 town boards**: 4,665 sets of minutes and 7,423 agendas, 2009-01-05 to 2026-09-16 — **18 years**.
 - **4,665 annual town report appropriation lines**, FY2011–FY2025, read page by page.
@@ -16,15 +16,15 @@
 
 - **1,956 hours of meeting recordings transcribed** — 1,006 meetings, 81.5 days of audio end to end, 2012-05-02 to 2026-09-15. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
 - **119 meetings with our own minutes** written from those recordings — **580 substantive votes** and **188 transfers** logged, each linked to the second of the video.
-- **A database of 132,888 rows in 103 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
-- **17 analyses** and **123 published conclusions**, every figure recomputed by a script before it ships.
+- **A database of 132,890 rows in 103 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
+- **17 analyses** and **126 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.
 - **130 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
 - **93 pages** on the site.
 
 ## Where it came from
 
-- `www.lunenburgma.gov` — 12,444 files
+- `www.lunenburgma.gov` — 12,451 files
 - `drive.google.com` — 163 files
 - `educationtocareer.data.mass.gov` — 21 files
 - `profiles.doe.mass.edu` — 11 files

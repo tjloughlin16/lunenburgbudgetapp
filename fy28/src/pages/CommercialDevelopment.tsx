@@ -4,13 +4,35 @@ import { MODEL, usd, usdShort } from '../model/engine'
 import { BASELINE_REVENUE_GROWTH, LEVY_CAP, SHARE, DEFAULT_SCENARIO, DEFAULT_RATES,
          buildRateToHold, newGrowthValueFor, developmentsFor } from '../model/rates'
 import { DEVELOPMENT, FEASIBILITY } from '../model/answers'
-import { ReportShell, ShortVersion, Insight, Stat, Grain, NotShown, H2, Body, MoreReports } from '../components/report'
+import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { ReportShell, ShortVersion, Insight, Stat, Grain, NotShown, H2, Body, MoreReports, Conclusions, NotEstablished, Provenance, useReport, splitConclusions } from '../components/report'
+import type { Conclusion, Source } from '../components/report'
 import { FullVersion } from '../components/FullVersion'
 import { WhatIsADevelopment } from '../components/walk'
 import { GrowthCubes } from '../components/GrowthCubes'
 
 const TAB: Tab = 'growth'
+const DATA = '/data/commercial-base.json'
 const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`
+const AXIS = { fontSize: 11, fill: 'var(--text-muted)' }
+
+/** THE STATE'S RECORD OF THE COMMERCIAL BASE, beside the model's plan. Built by
+ *  scripts/build_commercial_base.py from the two DLS Gateway exports (assessed value
+ *  by class FY2002 on; certified new growth, residential against total, FY2003 on).
+ *  The model's figures on this page are arithmetic; these are measurements, and the
+ *  page sets the plan against the certified pace rather than against a typed year. */
+type ValueRow = { fy: number; residential: number; commercial: number; industrial: number; personal: number; total: number; commercial_industrial: number; cip_share: number }
+type GrowthRow = { fy: number; total_value: number; residential_value: number; non_residential_value: number; total_levy: number; residential_levy: number }
+type Payload = {
+  about: string; grain: string; first_fy: number; last_fy: number
+  values: ValueRow[]; new_growth: GrowthRow[]
+  peers: { town: string; fy: number; cip_share: number }[]
+  step: { from_fy: number; to_fy: number; avg_non_residential: number; before_from_fy: number; before_to_fy: number; avg_non_residential_before: number }
+  sources: Source[]; not_established: string[]; conclusions: Conclusion[]
+}
+// The one finding of the record that belongs in the short version: what the town has
+// actually been building. The other two are context and sit inside the fold.
+const SHORT = ['non-residential-building-stepped-up']
 
 /** COMMERCIAL DEVELOPMENT, AS A REPORT OF ITS OWN.
  *
@@ -50,11 +72,13 @@ export function CommercialDevelopment() {
   const five = DEVELOPMENT.fiveYear
   const F = FEASIBILITY
   const best = DEVELOPMENT.best
-  // The assessors certify new growth as levy DOLLARS; the plan is stated in VALUE. Put
-  // the best year in the same unit before setting the two beside each other.
-  const bestValue = newGrowthValueFor(best.amount)
+  // The plan is stated in VALUE; the state's file certifies the value behind each year's
+  // new growth, so the best year is read off it rather than converted at today's rate.
+  const bestValue = best.value
+  const { d } = useReport<Payload>('commercial-base.json')
+  const [shortRows, moreRows] = splitConclusions(d?.conclusions, SHORT)
   return (
-    <ReportShell tab={TAB} dataUrl="/data/model.json"
+    <ReportShell tab={TAB} dataUrl={DATA}
       title="Commercial development is real money and the wrong order of magnitude"
       standfirst={<>What &ldquo;grow our way out of it&rdquo; would have to look like: {usdShort(five.value)} of new commercial value a year, every year, against a town whose best year on record added {usdShort(bestValue)} of new value of every kind &mdash; and the schools keep {(SHARE * 100).toFixed(0)}&cent; of each new dollar.</>}>
 
@@ -62,7 +86,7 @@ export function CommercialDevelopment() {
       <GrowthCubes />
 
       <Grain>
-        A projection from the town&rsquo;s own tax-base records &mdash; the assessors&rsquo; new-growth history, the FY23 value by class, and the model&rsquo;s archetype values for what one development is worth. Dollars of assessed value, not buildings that exist. Nothing here says whether any of it will happen.
+        A projection from the town&rsquo;s tax-base records as the state certifies them &mdash; new growth and value by class through FY{T.base.fy}, and the model&rsquo;s archetype values for what one development is worth. Dollars of assessed value, not buildings that exist. Nothing here says whether any of it will happen.
       </Grain>
 
       <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
@@ -90,6 +114,14 @@ export function CommercialDevelopment() {
             </Insight>
           )}
         </div>
+        {d && d.step && (
+          <>
+            <Conclusions rows={shortRows} reportUrl="/commercial-development" />
+            <p className="text-sm max-w-3xl mt-3" style={{ color: 'var(--text-secondary)' }}>
+              Set beside the plan: the five-year figure above is <strong>{(five.value / d.step.avg_non_residential).toFixed(1)}&times;</strong> the FY{d.step.from_fy}&ndash;FY{d.step.to_fy} pace of non-residential building &mdash; the best three years the state has on record for this town. Real, and the wrong order of magnitude, is a measurement here rather than a slogan.
+            </p>
+          </>
+        )}
         <NotShown>
           Whether any of this is buildable. The model prices assessed value; it does not know the zoning, the sewer capacity or the market, and the town&rsquo;s own planning documents name the constraint: {F.constraint.replace(/\.$/, '')}. It does not say development is a bad idea &mdash; it says what size of idea it is.
         </NotShown>
@@ -125,21 +157,75 @@ export function CommercialDevelopment() {
           {F.notRealistic ? <> The one building type big enough to shortcut this is a {F.notRealistic.name.toLowerCase()}, and the model&rsquo;s own note on it: {F.notRealistic.note}</> : null}
         </Body>
 
+        {d && moreRows.length > 0 && (
+          <>
+            <H2 id="the-record">What the state&rsquo;s record says about the base</H2>
+            <Conclusions rows={moreRows} noAsk short={false} />
+          </>
+        )}
+
         <H2 id="history">What the town has actually added, year by year</H2>
-        <Body>New growth of every kind &mdash; commercial, industrial, personal property and residential &mdash; as the assessors certified it. The five-year plan above asks for {usdShort(five.value)} of <em>commercial value</em> a year; the table is dollars of new growth <em>revenue</em> as certified, the two are related by the tax rate, and the best year is marked.</Body>
+        <Body>New growth as the assessors certified it, FY{d ? d.new_growth[0].fy : DEVELOPMENT.history[0].fy} to FY{T.base.fy}: the value added to the rolls each year, split between housing and everything else. The five-year plan above asks for {usdShort(five.value)} of <em>commercial value</em> a year; the bars are the same unit, and the best year is FY{best.fy}.</Body>
+        {d && (
+          <div style={{ width: '100%', height: 300 }} className="mt-4 avoid-break">
+            <ResponsiveContainer>
+              <BarChart data={d.new_growth.map(r => ({ fy: `FY${String(r.fy).slice(2)}`, housing: r.residential_value, other: r.non_residential_value }))} margin={{ top: 8, right: 8, left: 0, bottom: 4 }}>
+                <CartesianGrid stroke="var(--grid)" vertical={false} />
+                <XAxis dataKey="fy" tick={AXIS} stroke="var(--axis)" interval={2} />
+                <YAxis tick={AXIS} stroke="var(--axis)" tickFormatter={(v: number) => usdShort(v)} width={56} />
+                <Tooltip formatter={(v, n) => [usd(v as number), n === 'housing' ? 'residential' : 'commercial, industrial, personal property']}
+                  contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)', borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }} />
+                <Legend wrapperStyle={{ fontSize: 11 }} formatter={(v: string) => v === 'housing' ? 'residential' : 'everything else'} />
+                <Bar dataKey="housing" stackId="a" fill="var(--text-muted)" isAnimationActive={false} />
+                <Bar dataKey="other" stackId="a" fill="var(--series-cost)" isAnimationActive={false} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        )}
         <div className="overflow-x-auto mt-4">
-          <table className="text-sm" style={{ minWidth: 320 }}>
-            <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}><th className="text-left py-2 pr-6">year</th><th className="text-right py-2">new growth</th></tr></thead>
-            <tbody>{DEVELOPMENT.history.map(h => (
+          <table className="text-sm" style={{ minWidth: 420 }}>
+            <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}><th className="text-left py-2 pr-6">year</th><th className="text-right py-2 pr-6">added to the levy</th><th className="text-right py-2 pr-6">value, all classes</th><th className="text-right py-2">of which not housing</th></tr></thead>
+            <tbody>{(d ? d.new_growth : []).map(h => (
               <tr key={h.fy} style={{ borderTop: '1px solid var(--grid)' }} className={h.fy === best.fy ? 'font-bold' : undefined}>
-                <td className="py-1.5 pr-6 tnum">FY{h.fy}</td><td className="py-1.5 text-right tnum">{usd(h.amount)}</td>
+                <td className="py-1.5 pr-6 tnum">FY{h.fy}</td><td className="py-1.5 pr-6 text-right tnum">{usd(h.total_levy)}</td><td className="py-1.5 pr-6 text-right tnum">{usd(h.total_value)}</td><td className="py-1.5 text-right tnum">{usd(h.non_residential_value)}</td>
               </tr>))}</tbody>
           </table>
         </div>
-        <Body>The recent direction of travel by class, FY22 to FY23:</Body>
+
+        {d && (
+          <>
+            <H2 id="the-base">The base by class, FY{d.first_fy} to FY{d.last_fy}</H2>
+            <Body>Assessed value, as certified each year. A revaluation moves these lines as much as a building does, which is why the chart above &mdash; what was added &mdash; is the one that says what got built. Business&rsquo;s share of the whole is the thin line on the right axis.</Body>
+            <div style={{ width: '100%', height: 300 }} className="mt-4 avoid-break">
+              <ResponsiveContainer>
+                <LineChart data={d.values.map(r => ({ fy: `FY${String(r.fy).slice(2)}`, business: r.commercial_industrial + r.personal, homes: r.residential, share: r.cip_share }))} margin={{ top: 8, right: 8, left: 0, bottom: 4 }}>
+                  <CartesianGrid stroke="var(--grid)" vertical={false} />
+                  <XAxis dataKey="fy" tick={AXIS} stroke="var(--axis)" interval={2} />
+                  <YAxis yAxisId="v" tick={AXIS} stroke="var(--axis)" tickFormatter={(v: number) => usdShort(v)} width={56} />
+                  <YAxis yAxisId="s" orientation="right" tick={AXIS} stroke="var(--axis)" tickFormatter={(v: number) => `${v}%`} domain={[0, 12]} width={40} />
+                  <Tooltip formatter={(v, n) => n === 'share' ? [`${v}%`, 'business share of the base'] : [usd(v as number), n === 'homes' ? 'residential' : 'commercial, industrial, personal property']}
+                    contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)', borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }} />
+                  <Legend wrapperStyle={{ fontSize: 11 }} formatter={(v: string) => v === 'homes' ? 'residential value' : v === 'business' ? 'business value' : 'business share'} />
+                  <Line yAxisId="v" type="monotone" dataKey="homes" stroke="var(--text-muted)" strokeWidth={2} dot={false} isAnimationActive={false} />
+                  <Line yAxisId="v" type="monotone" dataKey="business" stroke="var(--series-cost)" strokeWidth={2} dot={false} isAnimationActive={false} />
+                  <Line yAxisId="s" type="monotone" dataKey="share" stroke="var(--series-revenue)" strokeWidth={1.5} strokeDasharray="4 3" dot={false} isAnimationActive={false} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            <Body>Business&rsquo;s share of the base in FY{d.peers[0]?.fy}, the towns this project compares Lunenburg with: {d.peers.map((p, i) => <span key={p.town}>{i > 0 ? ', ' : ''}{p.town === 'Lunenburg' ? <strong>{p.town} {p.cip_share.toFixed(1)}%</strong> : <>{p.town} {p.cip_share.toFixed(1)}%</>}</span>)}. A share, so it compares across towns of different size; it says nothing about what any of them collects.</Body>
+          </>
+        )}
+        <Body>The latest certified step by class, FY{F.trend[0].fromFy} to FY{F.trend[0].toFy} &mdash; a revaluation moves these as much as a building does, which is why the new-growth table above is the one to read for building:</Body>
         <ul className="mt-2 text-sm space-y-1" style={{ color: 'var(--text-secondary)' }}>
-          {F.trend.map(v => <li key={v.cls} className="tnum"><strong style={{ color: 'var(--text-primary)' }}>{v.cls}</strong>: {usd(v.fy22)} &rarr; {usd(v.fy23)} ({v.pct >= 0 ? '+' : ''}{pct(v.pct, 1)})</li>)}
+          {F.trend.map(v => <li key={v.cls} className="tnum"><strong style={{ color: 'var(--text-primary)' }}>{v.cls}</strong>: {usd(v.frm)} &rarr; {usd(v.to)} ({v.pct >= 0 ? '+' : ''}{pct(v.pct, 1)})</li>)}
         </ul>
+
+        {d && (
+          <>
+            <NotEstablished rows={d.not_established} closes="The assessors’ new-growth worksheets for FY2024–FY2026, which list the parcels behind each year’s certified figure, would say what was built and where." />
+            <Provenance sources={d.sources} />
+          </>
+        )}
 
         <H2 id="try-it">Try it yourself</H2>
         <Body>

@@ -50,7 +50,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 35 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 25 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 37 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -1143,6 +1143,30 @@
      "textUrl": "/docs/state-dls/AvgSingleFamTaxBill.xlsx"
     },
     {
+     "path": "state-dls/assessedvalues.xlsx",
+     "title": "Assessed Values by Class, eleven towns, FY2002–FY2026",
+     "stars": 3,
+     "what": "DLS Gateway export, fetched by script on 16 September 2026 (fetch_dls_property.py records the exact POST). Per town per year: residential, open space, commercial, industrial and personal property value, the total, and the residential and CIP shares. How big the commercial base IS — a revaluation moves it as much as a building does, so read it with new_growth.xlsx, which is what was added.",
+     "kind": "Spreadsheet",
+     "bytes": 32909,
+     "url": "/docs/state-dls/assessedvalues.xlsx",
+     "count": 287,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/assessedvalues.xlsx"
+    },
+    {
+     "path": "state-dls/new_growth.xlsx",
+     "title": "New Growth, residential and total, eleven towns, FY2003–FY2026",
+     "stars": 3,
+     "what": "DLS Gateway export, fetched by script on 16 September 2026 (fetch_dls_property.py). Per town per year: residential new-growth value and the levy dollars it added, the same for all classes together, the prior year’s levy limit and the addition as a share of it. Total minus residential is what was BUILT that was not housing. The town’s own six-year series in model/taxbase.py is these figures, to the dollar.",
+     "kind": "Spreadsheet",
+     "bytes": 28879,
+     "url": "/docs/state-dls/new_growth.xlsx",
+     "count": 276,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/new_growth.xlsx"
+    },
+    {
      "path": "state-dls/free-cash-proof-lunenburg.xlsx",
      "title": "Lunenburg free cash proof, 2021–2025",
      "stars": 3,
@@ -1410,7 +1434,7 @@
      "stars": 3,
      "what": "The method document. Every figure this project publishes, with its inputs, the formula, a worked example in real dollars, and — beside each one — whether it is somebody else’s figure, a contract, a statute, our measurement or our assumption. Fifteen sections: the projection itself, why each escalator is what it is, special education, out-of-district tuition, health insurance, free cash, athletic fees, the levers, the cut cascade, the tax base and overrides, an assumption register ranked by what each one moves, and what none of it can compute. GENERATED from the live model by scripts/build_show_your_work.py, so it cannot drift from the code — run it with --check to prove the copy you are reading is current. Written to be usable by an assistant checking a number as well as by a resident following the argument.",
      "kind": "Notes",
-     "bytes": 95280,
+     "bytes": 95621,
      "url": "/docs/analyses/show-your-work.md",
      "count": 1839,
      "unit": "lines",
@@ -1731,7 +1755,7 @@
      "stars": 3,
      "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
      "kind": "Notes",
-     "bytes": 41063,
+     "bytes": 41062,
      "url": "/docs/analyses/questions.md",
      "count": 952,
      "unit": "lines",
@@ -2516,9 +2540,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 605550,
+     "bytes": 607161,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7014,
+     "count": 7031,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -2763,6 +2787,18 @@
      "textUrl": "/docs/data/minutes-coverage.csv"
     },
     {
+     "path": "data/dls-assessed-values.csv",
+     "title": "Assessed value by class, eleven towns, FY2002–FY2026",
+     "stars": 3,
+     "what": "Extracted from the DLS Gateway export in state-dls/, footed to its own totals. Rebuild with scripts/fetch_dls_property.py.",
+     "kind": "Data",
+     "bytes": 48553,
+     "url": "/docs/data/dls-assessed-values.csv",
+     "count": 286,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-assessed-values.csv"
+    },
+    {
      "path": "data/dese-ch70-formula.csv",
      "title": "The Chapter 70 formula, term by term, FY1993–FY2026",
      "stars": 3,
@@ -2785,6 +2821,18 @@
      "count": 514,
      "unit": "rows",
      "textUrl": "/docs/data/minutes-searchable.csv"
+    },
+    {
+     "path": "data/dls-new-growth.csv",
+     "title": "New growth, residential and total, eleven towns, FY2003–FY2026",
+     "stars": 3,
+     "what": "Extracted from the DLS Gateway export in state-dls/, footed to its own shares. Rebuild with scripts/fetch_dls_property.py.",
+     "kind": "Data",
+     "bytes": 41258,
+     "url": "/docs/data/dls-new-growth.csv",
+     "count": 275,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-new-growth.csv"
     },
     {
      "path": "data/dese-sped-trajectory.csv",
@@ -7575,10 +7623,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 625,
+  "documents": 629,
   "groups": 22,
-  "bytes": 1637702457,
-  "loadBearing": 118
+  "bytes": 1637856007,
+  "loadBearing": 122
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

@@ -782,7 +782,7 @@ Returns `measure`, `rows`, `first`, `last` — for example: measure=Teacher FTE,
 SELECT date, election, question, type, amount, yes, no, total FROM ballot_questions ORDER BY date DESC
 ```
 
-Returns `date`, `election`, `question`, `type`, `amount`, `yes`, `no`, `total` — for example: date=2025-05, election=Annual Town Meeting, question=ARTICLE 11 (Citizens Petition), type=Proposition 2½ override, amount=2099337, yes=, no=, total=
+Returns `date`, `election`, `question`, `type`, `amount`, `yes`, `no`, `total` — for example: date=2026-05-16, election=Annual Town Election, question=QUESTION 1. OVERRIDE, type=Proposition 2½ override, amount=2400000, yes=867, no=1753, total=2638
 
 **What turnout did each ballot question draw?**
 
@@ -790,7 +790,7 @@ Returns `date`, `election`, `question`, `type`, `amount`, `yes`, `no`, `total` �
 SELECT date, question, total, registered, ROUND(100.0*total/registered,1) AS turnout_pct FROM ballot_questions WHERE registered > 0 ORDER BY date DESC
 ```
 
-Returns `date`, `question`, `total`, `registered`, `turnout_pct` — for example: date=2014-01-11, question=QUESTION 1. DEBT EXCLUSION, total=1957, registered=7059, turnout_pct=27.7
+Returns `date`, `question`, `total`, `registered`, `turnout_pct` — for example: date=2026-05-16, question=QUESTION 1. OVERRIDE, total=2638, registered=9565, turnout_pct=27.6
 
 **What election results did the annual reports print?**
 
@@ -818,7 +818,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=321
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=365
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -896,7 +896,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=check fa
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=321
+Returns `source_type`, `documents` — for example: source_type=primary, documents=365
 
 **What basis does each document have for the figures it prints?**
 

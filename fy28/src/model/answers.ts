@@ -312,9 +312,9 @@ function devPlan(years: number) {
     businesses: value / T.avgCommercialValue,
     homes: value / T.avgHomeValue,
     /** Against the entire commercial, industrial and personal base the town has today. */
-    shareOfBase: value / T.fy23.cipValue,
+    shareOfBase: value / T.base.cipValue,
     vsAssumed: needed / T.currentNewGrowthRevenue,
-    vsActual: needed / T.fy23.newGrowth,
+    vsActual: needed / T.base.newGrowth,
     vsBest: needed / Math.max(...T.newGrowthHistory.map(h => h.amount)),
   }
 }
@@ -327,7 +327,7 @@ export const DEVELOPMENT = {
   tenYear: devPlan(10),
   mixValue,
   oneDevelopment: (mixValue * T.rate) / 1000,
-  existingBase: T.fy23.cipValue,
+  existingBase: T.base.cipValue,
   existingCount: T.businesses,
   history: T.newGrowthHistory,
   best: T.newGrowthHistory.reduce((a, b) => (b.amount > a.amount ? b : a)),
@@ -357,8 +357,8 @@ export const FEASIBILITY = (() => {
     const perYear = (value * m.share) / arch.value
     return { label: m.label, unit: arch.value, perYear, over5: Math.round(perYear * 5) }
   })
-  const cip5 = T.fy23.cipValue + value * 5
-  const res = T.fy23.residentialValue
+  const cip5 = T.base.cipValue + value * 5
+  const res = T.base.residentialValue
   return {
     each,
     buildings5: each.reduce((s2, e) => s2 + e.over5, 0),
@@ -368,9 +368,9 @@ export const FEASIBILITY = (() => {
     everyDays: Math.round(365 / DEVELOPMENT.fiveYear.developments),
     parcelsToday: T.businesses,
     /** Where the town's tax base ends up if it is actually done. */
-    businessShareNow: T.fy23.cipShare,
+    businessShareNow: T.base.cipShare,
     businessShareAfter: cip5 / (res + cip5),
-    multipleOfBase: cip5 / T.fy23.cipValue,
+    multipleOfBase: cip5 / T.base.cipValue,
     corridors: T.commercialContext.corridors,
     constraint: T.commercialContext.constraint,
     /** The recent direction of travel, which is the opposite one. */

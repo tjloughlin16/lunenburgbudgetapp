@@ -245,11 +245,11 @@ one budget line changes that. It is four numbers, and it is the whole argument.
   commitment to that. It is the assumption most capable of making everything else
   here beside the point.
 - **New growth stays at $400,000 a year.** That is the town’s own
-  estimate. The Assessors’ own series runs from
-  $481,496 in
-  FY2018 down to
-  $234,383 in
-  FY2023. Section 11.
+  estimate. The certified series, as the Division of Local Services publishes it, runs from
+  $314,966 in
+  FY2003 to
+  $518,650 in
+  FY2026, at or above the assumption in 4 of the last five certified years, with the best year on record FY2024 at $630,220. Section 11.
 - **Excluded debt, and the revenue outside the omnibus, are held flat.** Both will
   move. Neither is modelled.
 - **There is no FY28 budget.** Everything after FY27 is projection. When the
@@ -1485,11 +1485,11 @@ things a town actually permits.
 
 | unit | assessed value | needed to close the FY28 gap in one year |
 |:--|--:|--:|
-| An average existing Lunenburg business | $658,001 | 67 of them |
+| An average existing Lunenburg business | $907,449 | 48 of them |
 | A typical mixed development | $3,005,000 | 14.6 of them |
-| The town’s entire recent annual new growth | $17,348,853 | 2.5 times it |
+| The town’s entire FY2026 new growth, as certified | $36,117,700 | 1.2 times it |
 
-67 average businesses is 29% of
+48 average businesses is 21% of
 every business in town — there are 234, per the 2024 Census
 Business Patterns — added in a single year, and again the next year, because the gap
 grows.
@@ -1497,9 +1497,9 @@ grows.
 **The development values are ours**, order-of-magnitude estimates rather than
 Lunenburg assessments, and the site lets you change them. They exist so that people
 can reason in buildings rather than in millions. The one figure that is not ours is
-the average existing business: $153,972,120 of commercial, industrial
-and personal property across 234 establishments, from the tax
-rolls.
+the average existing business: $212,343,140 of commercial, industrial
+and personal property across 234 establishments, from the FY2026 tax
+rolls as the Division of Local Services publishes them.
 
 ### Does new growth lower my tax bill?
 
@@ -1574,13 +1574,13 @@ model, which is what a ballot question actually does.
   figures.
 - **Total taxable value is calculated, not transcribed.**
 - **The town levies to its maximum.** True in every year we hold. Not a law.
-- **New growth is assumed flat at $400,000.** The Assessors’ own
-  series runs from $481,496 in
-  FY2018 to
-  $234,383 in
-  FY2023 — not every year down, but ending well
-  below the assumption. And every commercial class **shrank in absolute dollars** in
-  the most recent year we hold. This is the assumption most likely to be optimistic.
+- **New growth is assumed flat at $400,000.** The certified
+  series runs from $314,966 in
+  FY2003 to
+  $518,650 in
+  FY2026, at or above the assumption in 4 of the last five certified years, with the best year on record FY2024 at $630,220.
+  Every commercial class **grew in absolute dollars** from FY2025 to FY2026, the latest step certified. A flat figure is the assumption most likely to be wrong in
+  one direction or the other, and the series is the check on it.
 
 ---
 

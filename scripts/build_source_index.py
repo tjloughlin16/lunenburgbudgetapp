@@ -545,6 +545,20 @@ GROUPS = [
              'average bill, the bill as a share of value and of income per capita, and the '
              'town’s rank among the 351. The only series in the archive that puts Lunenburg’s '
              'bill beside its neighbours’.'),
+            ('state-dls/assessedvalues.xlsx',
+             'Assessed Values by Class, eleven towns, FY2002–FY2026', 3,
+             'DLS Gateway export, fetched by script on 16 September 2026 (fetch_dls_property.py '
+             'records the exact POST). Per town per year: residential, open space, commercial, '
+             'industrial and personal property value, the total, and the residential and CIP '
+             'shares. How big the commercial base IS — a revaluation moves it as much as a '
+             'building does, so read it with new_growth.xlsx, which is what was added.'),
+            ('state-dls/new_growth.xlsx',
+             'New Growth, residential and total, eleven towns, FY2003–FY2026', 3,
+             'DLS Gateway export, fetched by script on 16 September 2026 (fetch_dls_property.py). '
+             'Per town per year: residential new-growth value and the levy dollars it added, the '
+             'same for all classes together, the prior year’s levy limit and the addition as a '
+             'share of it. Total minus residential is what was BUILT that was not housing. The '
+             'town’s own six-year series in model/taxbase.py is these figures, to the dollar.'),
             ('state-dls/free-cash-proof-lunenburg.xlsx',
              'Lunenburg free cash proof, 2021–2025', 3,
              'Certified free cash rose from $2,666,962 to $3,354,370 over the five years. '
@@ -1786,6 +1800,14 @@ GROUPS = [
          'Extracted from the DLS Gateway export in state-dls/. Per town per year: parcels, '
          'average value, average bill, the bill as a share of value and of income, rank. '
          'Rebuild with scripts/fetch_dls_tax_bills.py.'),
+        ('data/dls-assessed-values.csv',
+         'Assessed value by class, eleven towns, FY2002–FY2026', 3,
+         'Extracted from the DLS Gateway export in state-dls/, footed to its own totals. '
+         'Rebuild with scripts/fetch_dls_property.py.'),
+        ('data/dls-new-growth.csv',
+         'New growth, residential and total, eleven towns, FY2003–FY2026', 3,
+         'Extracted from the DLS Gateway export in state-dls/, footed to its own shares. '
+         'Rebuild with scripts/fetch_dls_property.py.'),
         ('data/one-big-report-story.csv',
          'The editor’s spec for /one-big-report', 2,
          'Written by TJ. One row per figure or conclusion on the page: its section, its role '

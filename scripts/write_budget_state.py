@@ -176,17 +176,20 @@ def main():
     ts = [t for t in transcripts() if t['board_slug'] in BOARDS]
     if a.check:
         bad = behind = 0
-        for f in glob.glob(os.path.join(OUT, '*', '*.json')):
+        # documents/ holds the DOCUMENT extracts (write_document_budget_state.py), keyed
+        # on the document's own sha256; that script's --check covers them.
+        files = [f for f in glob.glob(os.path.join(OUT, '*', '*.json')) if os.path.basename(os.path.dirname(f)) != 'documents']
+        for f in files:
             d = json.load(open(f))
             p = os.path.join(ROOT, d['source']['transcript'])
             if not os.path.exists(p) or sha256_of(p) != d['source']['sha256']:
                 print('STALE', os.path.relpath(f, ROOT)); bad += 1
             elif d.get('written', {}).get('schema') != SCHEMA_VERSION:
                 behind += 1
-        print('%d budget-state file(s), %d problem(s), %d behind schema %d (re-read inside the refresh cap)' % (len(glob.glob(os.path.join(OUT, '*', '*.json'))), bad, behind, SCHEMA_VERSION))
+        print('%d budget-state file(s), %d problem(s), %d behind schema %d (re-read inside the refresh cap)' % (len(files), bad, behind, SCHEMA_VERSION))
         return 1 if bad else 0
     if a.status:
-        have = {os.path.relpath(f, OUT)[:-5] for f in glob.glob(os.path.join(OUT, '*', '*.json'))}
+        have = {os.path.relpath(f, OUT)[:-5] for f in glob.glob(os.path.join(OUT, '*', '*.json')) if os.path.basename(os.path.dirname(f)) != 'documents'}
         for b in BOARDS:
             n = sum(1 for t in ts if t['board_slug'] == b)
             h = sum(1 for t in ts if t['board_slug'] == b and '%s/%s-%s' % (b, t['date'], t['video_id']) in have)

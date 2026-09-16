@@ -784,7 +784,7 @@ export function buildScale(newGrowth: number) {
     valuePerYear: value,
     /** Everything commercial, industrial and personal the town has, accumulated over its
      *  entire history. The thing an annual figure has to be read against. */
-    existingBase: T.fy23.cipValue,
+    existingBase: T.base.cipValue,
     existingCount: T.businesses,
   }
 }

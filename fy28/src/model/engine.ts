@@ -304,11 +304,15 @@ export const MODEL = raw as unknown as {
     homesPerPupil: number; enrollment: number
     currentNewGrowthRevenue: number; currentNewGrowthValue: number; levyGrowth: number
     fy23: Record<string, number>
+    /** The anchor year: the latest DLS certifies, read off the state's file. */
+    base: { fy: number; residentialValue: number; residentialShare: number; cipValue: number; cipShare: number
+            totalValue: number; newGrowth: number; newGrowthValue: number; newGrowthResidentialValue: number }
     businesses: number; employees: number; payroll: number
-    avgCommercialValue: number; fy23NewValue: number
+    avgCommercialValue: number; baseNewValue: number
     commercialContext: { corridors: string[]; anchor: string; targets: string[]; constraint: string }
-    newGrowthHistory: { fy: number; amount: number }[]
-    valueByClass: { cls: string; fy23: number; fy22: number; change: number; pct: number }[]
+    newGrowthHistory: { fy: number; amount: number; value: number; residentialAmount: number; residentialValue: number; priorLevyLimit: number }[]
+    valueByClass: { cls: string; fromFy: number; toFy: number; frm: number; to: number; change: number; pct: number }[]
+    valueByClassSeries: { fy: number; residential: number; openSpace: number; commercial: number; industrial: number; personal: number; total: number; cipShare: number }[]
     avgHomeHistory: { fy: number; rate: number; value: number; bill: number }[]
     excessLevyCapacity: { fy: number; amount: number }[]
     mixValue: number

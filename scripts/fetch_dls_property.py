@@ -1,0 +1,224 @@
+#!/usr/bin/env python3
+"""The Division of Local Services' two property-base reports, every year, our towns:
+assessed value BY CLASS, and NEW GROWTH split residential against everything else.
+
+    python3 scripts/fetch_dls_property.py          # fetch both, catalogue, extract
+    python3 scripts/fetch_dls_property.py --check  # both extracts still reproduce from their files
+
+WHY TWO REPORTS. Assessed value by class says how big the commercial base IS, and a
+revaluation moves it as much as a building does -- Lunenburg's residential value rose 23%
+in FY2023 with nothing built. New growth is what the assessors certify was ADDED: new
+construction and new personal property, valued and put on the levy limit, by class. The
+first answers "what share of the town is business"; the second answers "how much got
+built". Reading the first as the second was the trap TJ's four-year export set on
+16 September 2026 -- it started at FY2023, the last flat year, and made a 41% "boom" out of
+a series that had been flat for seventeen years.
+
+WHERE THEY COME FROM. Two DLS Gateway Logi reports, both found by TJ on 16 September
+2026 -- on two different hosts, which is why nothing guessed from the tax-bill report's
+address answered:
+
+    dlsgateway.dor.state.ma.us  PropertyTaxInformation.AssessedValuesbyClass.assessedvaluesbyclass   FY2002 onward
+    dls-gw.dor.state.ma.us      NewGrowth.NewGrowth_dash_v2_test                                     FY2003 onward
+
+Each is the same shape as fetch_dls_tax_bills.py's: municipalities and years are checkbox
+lists, and the Export Table button POSTs the form back with `rdReportFormat=NativeExcel`.
+`rdExcelOutputFormat=Excel2007` asks for .xlsx rather than the binary .xls the button
+gives by default, so openpyxl reads it and nothing new is installed. The newest fiscal
+year is a blank row until the town's values are certified.
+
+WHAT EACH FILE HOLDS, per municipality per fiscal year, as the columns are printed.
+  assessedvalues.xlsx   Residential, Open Space, Commercial, Industrial, Personal Property,
+                        Total, and the RO and CIP shares of it.
+  new_growth.xlsx       residential new growth VALUE and the levy dollars it ADDED; total
+                        new growth value and levy dollars; residential as a share; the
+                        prior year's levy limit; the addition as a share of it.
+
+RECONCILED TO THE FILE'S OWN ARITHMETIC before anything is written (rule 13): the five
+classes foot to the total and the CIP share recomputes; residential new growth is no
+more than total, and the addition-as-share recomputes from the prior levy limit.
+
+The model's own new-growth series (`model/taxbase.py`, from the FY2023 tax classification
+hearing) is six years of the same figures, and build_commercial_base.py asserts the two
+agree to the dollar where they overlap -- so the town's document and the state's file
+are checked against each other every build rather than trusted separately.
+"""
+import argparse
+import csv
+import hashlib
+import os
+import re
+import sys
+import urllib.parse
+import urllib.request
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+from fetch_dls_tax_bills import TOWNS, INDEX   # noqa: E402  the same eleven towns, the same catalogue
+
+UA = {'User-Agent': 'Mozilla/5.0 (lunenburgbudgetproject.org research)'}
+
+REPORTS = {
+    'assessed-values': dict(
+        host='dlsgateway', report='PropertyTaxInformation.AssessedValuesbyClass.assessedvaluesbyclass',
+        table='tblassessedvalues', export='assessedvalues', min_years=20,
+        file='assessedvalues.xlsx', csv='dls-assessed-values.csv',
+        title='Assessed Values by Class, %s, FY%s–FY%s',
+        head=['DOR Code', 'Municipality', 'Fiscal Year', 'Residential', 'Open Space', 'Commercial', 'Industrial',
+              'Personal Property', 'Total', 'RO% of Total', 'CIP% of Total'],
+        cols=['dor_code', 'municipality', 'fy', 'residential', 'open_space', 'commercial', 'industrial',
+              'personal_property', 'total', 'ro_pct', 'cip_pct'],
+    ),
+    'new-growth': dict(
+        host='dls-gw', report='NewGrowth.NewGrowth_dash_v2_test',
+        table='tblNewGrowth', export='new_growth', min_years=20,
+        file='new_growth.xlsx', csv='dls-new-growth.csv',
+        title='New Growth, residential and total, %s, FY%s–FY%s',
+        head=['DOR Code', 'Municipality', 'Fiscal Year', 'Residential New Growth Value',
+              'Residential New Growth Applied to the Levy Limit', 'Total New Growth Value',
+              'Total New Growth Applied to Levy Limit', 'Res New Growth as a % of Total New Growth',
+              "Prior Year's Levy Limit", 'Total New Growth Applied to Limit as a % of PY Levy Limit'],
+        cols=['dor_code', 'municipality', 'fy', 'res_value', 'res_levy', 'total_value', 'total_levy',
+              'res_pct_of_total', 'prior_levy_limit', 'levy_pct_of_prior_limit'],
+    ),
+}
+
+
+def sha256(path):
+    h = hashlib.sha256()
+    with open(path, 'rb') as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def page_url(r):
+    return 'https://%s.dor.state.ma.us/reports/rdPage.aspx?rdReport=%s' % (r['host'], r['report'])
+
+
+def export_url(r):
+    return (page_url(r) + '&rdReportFormat=NativeExcel&rdExportTableID=%s&rdExportFilename=%s'
+            '&rdShowGridlines=True&rdExcelOutputFormat=Excel2007' % (r['table'], r['export']))
+
+
+def xlsx_path(r):
+    return os.path.join(ROOT, 'sources', 'state-dls', r['file'])
+
+
+def csv_path(r):
+    return os.path.join(ROOT, 'sources', 'data', r['csv'])
+
+
+def fetch(r):
+    page = urllib.request.urlopen(urllib.request.Request(page_url(r), headers=UA), timeout=120).read().decode('utf-8', 'replace')
+    years = sorted(set(re.findall(r'name="iclYear"[^>]*value="(\d+)"', page)))
+    if len(years) < r['min_years']:
+        raise SystemExit('%s: the DLS form offered %d years; expected %d or more' % (r['report'], len(years), r['min_years']))
+    offered = set(re.findall(r'name="iclMuni"[^>]*value="([^"]*)"', page))
+    missing = [t for t in TOWNS if t not in offered]
+    if missing:
+        raise SystemExit('%s: the DLS form does not list %s' % (r['report'], missing))
+    fields = ([('iclMuni', t) for t in TOWNS] + [('iclYear', y) for y in years]
+              + [('rdreport', r['report'].lower()), ('lgxver', '')])
+    req = urllib.request.Request(export_url(r), data=urllib.parse.urlencode(fields).encode(),
+                                 headers=dict(UA, Referer=page_url(r)))
+    resp = urllib.request.urlopen(req, timeout=180)
+    data = resp.read()
+    if not data.startswith(b'PK'):
+        raise SystemExit('%s: the export was not a workbook (%s, %d bytes)' % (r['report'], resp.headers.get('Content-Type'), len(data)))
+    with open(xlsx_path(r), 'wb') as fh:
+        fh.write(data)
+    return years
+
+
+def num(v):
+    return None if v in (None, '') else float(v)
+
+
+def extract(key):
+    import openpyxl
+    r = REPORTS[key]
+    wb = openpyxl.load_workbook(xlsx_path(r), read_only=True)
+    rows = list(wb.worksheets[0].iter_rows(values_only=True))
+    head = [str(c or '').strip() for c in rows[0]]
+    if head != r['head']:
+        raise SystemExit('%s: the workbook’s columns moved: %s' % (r['file'], head))
+    digest = sha256(xlsx_path(r))
+    out = []
+    for row in rows[1:]:
+        if not row or row[1] is None:
+            continue
+        vals = ['' if v in (None, '') else v for v in row]
+        out.append(dict(zip(r['cols'] + ['source_file', 'sha256'], list(vals) + [r['file'], digest])))
+    bad = []
+    for o in out:
+        if o['fy'] and num(o.get('total') if key == 'assessed-values' else o.get('total_value')) is None:
+            continue   # the uncertified year: a blank row
+        if key == 'assessed-values':
+            parts = sum(num(o[c]) for c in ('residential', 'open_space', 'commercial', 'industrial', 'personal_property'))
+            if abs(parts - num(o['total'])) > 1:
+                bad.append('%s FY%s: classes foot to %.0f, total printed %.0f' % (o['municipality'], o['fy'], parts, num(o['total'])))
+            cip = 100 * (num(o['commercial']) + num(o['industrial']) + num(o['personal_property'])) / num(o['total'])
+            if abs(cip - num(o['cip_pct'])) > 0.01:
+                bad.append('%s FY%s: CIP share recomputes to %.4f, printed %s' % (o['municipality'], o['fy'], cip, o['cip_pct']))
+        else:
+            if num(o['res_value']) > num(o['total_value']) + 1 or num(o['res_levy']) > num(o['total_levy']) + 1:
+                bad.append('%s FY%s: residential new growth exceeds total' % (o['municipality'], o['fy']))
+            if num(o['prior_levy_limit']):
+                share = 100 * num(o['total_levy']) / num(o['prior_levy_limit'])
+                if abs(share - num(o['levy_pct_of_prior_limit'])) > 0.01:
+                    bad.append('%s FY%s: addition as share of prior limit recomputes to %.2f, printed %s'
+                               % (o['municipality'], o['fy'], share, o['levy_pct_of_prior_limit']))
+    if bad:
+        raise SystemExit('%s does not foot to itself:\n  %s' % (r['file'], '\n  '.join(bad[:10])))
+    return out
+
+
+def write_csv(key, rows):
+    r = REPORTS[key]
+    with open(csv_path(r), 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=r['cols'] + ['source_file', 'sha256'])
+        w.writeheader()
+        w.writerows(rows)
+
+
+def write_index(key, years):
+    r = REPORTS[key]
+    local = 'state-dls/' + r['file']
+    rows = [x for x in csv.DictReader(open(INDEX, encoding='utf-8'))] if os.path.exists(INDEX) else []
+    rows = [x for x in rows if x['local'] != local]
+    rows.append(dict(local=local, url=export_url(r), title=r['title'] % (', '.join(TOWNS), years[0], years[-1]),
+                     note='DLS Gateway export (POST of the report form with these towns and years; see fetch_dls_property.py)'))
+    with open(INDEX, 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=['local', 'url', 'title', 'note'])
+        w.writeheader()
+        w.writerows(rows)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--check', action='store_true')
+    a = ap.parse_args()
+    if a.check:
+        ok = True
+        for key, r in REPORTS.items():
+            rows = extract(key)
+            have = list(csv.DictReader(open(csv_path(r), encoding='utf-8'))) if os.path.exists(csv_path(r)) else []
+            same = [{k: str(v) for k, v in x.items()} for x in rows] == have
+            print(('ok — %s reproduces from %s' if same else 'STALE %s — run fetch_dls_property.py (from %s)')
+                  % (os.path.relpath(csv_path(r), ROOT), r['file']))
+            ok = ok and same
+        return 0 if ok else 1
+    for key, r in REPORTS.items():
+        years = fetch(r)
+        rows = extract(key)
+        write_csv(key, rows)
+        write_index(key, years)
+        lun = [x for x in rows if x['municipality'] == 'Lunenburg' and x[r['cols'][-1]] != '']
+        print('%s: %d rows, %d towns, FY%s–FY%s; Lunenburg through FY%s'
+              % (os.path.relpath(csv_path(r), ROOT), len(rows), len({x['municipality'] for x in rows}), years[0], years[-1], lun[-1]['fy']))
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

@@ -303,7 +303,7 @@ export function GrowthCalculator({ gap, newValue, setNewValue, share = 1,
                 <div>
                   <p className="text-2xl font-bold tnum leading-none"
                     style={{ color: 'var(--series-cost)' }}>
-                    {((newValue / MODEL.taxBase.fy23.cipValue) * 100).toFixed(1)}%
+                    {((newValue / MODEL.taxBase.base.cipValue) * 100).toFixed(1)}%
                   </p>
                   <p className="text-[11px] font-semibold mt-1">of the commercial base</p>
                   <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
@@ -332,7 +332,7 @@ export function GrowthCalculator({ gap, newValue, setNewValue, share = 1,
                  + `${businessesForGap.toFixed(0)} businesses`} />
             <Row k="Share of the whole tax base" v={`${shareOfBase.toFixed(2)}%`} />
             <Row k="Versus the town's recent new growth"
-              v={`${(newValue / MODEL.taxBase.fy23NewValue).toFixed(1)}×`} />
+              v={`${(newValue / MODEL.taxBase.baseNewValue).toFixed(1)}×`} />
             <Row k="By year 10" v={usd(data[9].growth)} bold />
             <Row k="Ten-year total"
               v={usd(data.reduce((s, d) => s + d.growth, 0))} bold />

@@ -469,11 +469,11 @@ def s_projection():
       '  commitment to that. It is the assumption most capable of making everything else',
       '  here beside the point.',
       f'- **New growth stays at {usd(A["new_growth"])} a year.** That is the town’s own',
-      '  estimate. The Assessors’ own series runs from',
+      '  estimate. The certified series, as the Division of Local Services publishes it, runs from',
       f'  {usd(taxbase.NEW_GROWTH_HISTORY[0]["amount"])} in',
-      f'  FY{taxbase.NEW_GROWTH_HISTORY[0]["fy"]} down to',
+      f'  FY{taxbase.NEW_GROWTH_HISTORY[0]["fy"]} to',
       f'  {usd(taxbase.NEW_GROWTH_HISTORY[-1]["amount"])} in',
-      f'  FY{taxbase.NEW_GROWTH_HISTORY[-1]["fy"]}. Section 11.',
+      f'  FY{taxbase.NEW_GROWTH_HISTORY[-1]["fy"]}, {_ng_vs_assumption()}. Section 11.',
       '- **Excluded debt, and the revenue outside the omnibus, are held flat.** Both will',
       '  move. Neither is modelled.',
       '- **There is no FY28 budget.** Everything after FY27 is projection. When the',
@@ -1863,7 +1863,7 @@ def s_taxbase():
               f"{num(bn['businesses'])} of them"],
              ['A typical mixed development', usd(T.MIX_VALUE),
               f"{bn['developments']:.1f} of them"],
-             ['The town’s entire recent annual new growth', usd(T.FY23_NEW_VALUE),
+             [f'The town’s entire FY{T.BASE["fy"]} new growth, as certified', usd(T.BASE_NEW_VALUE),
               f"{bn['vsActualNewGrowth']:.1f} times it"]],
             'lrr'),
       '',
@@ -1875,9 +1875,9 @@ def s_taxbase():
       '**The development values are ours**, order-of-magnitude estimates rather than',
       'Lunenburg assessments, and the site lets you change them. They exist so that people',
       'can reason in buildings rather than in millions. The one figure that is not ours is',
-      f'the average existing business: {usd(T.FY23["cipValue"])} of commercial, industrial',
-      f'and personal property across {num(T.BUSINESSES)} establishments, from the tax',
-      'rolls.',
+      f'the average existing business: {usd(T.BASE["cipValue"])} of commercial, industrial',
+      f'and personal property across {num(T.BUSINESSES)} establishments, from the FY{T.BASE["fy"]} tax',
+      'rolls as the Division of Local Services publishes them.',
       '')
 
     w('### Does new growth lower my tax bill?',
@@ -1961,14 +1961,39 @@ def s_taxbase():
       '  figures.',
       '- **Total taxable value is calculated, not transcribed.**',
       '- **The town levies to its maximum.** True in every year we hold. Not a law.',
-      f'- **New growth is assumed flat at {usd(A["new_growth"])}.** The Assessors’ own',
+      f'- **New growth is assumed flat at {usd(A["new_growth"])}.** The certified',
       f'  series runs from {usd(taxbase.NEW_GROWTH_HISTORY[0]["amount"])} in',
       f'  FY{taxbase.NEW_GROWTH_HISTORY[0]["fy"]} to',
       f'  {usd(taxbase.NEW_GROWTH_HISTORY[-1]["amount"])} in',
-      f'  FY{taxbase.NEW_GROWTH_HISTORY[-1]["fy"]} — not every year down, but ending well',
-      '  below the assumption. And every commercial class **shrank in absolute dollars** in',
-      '  the most recent year we hold. This is the assumption most likely to be optimistic.',
+      f'  FY{taxbase.NEW_GROWTH_HISTORY[-1]["fy"]}, {_ng_vs_assumption()}.',
+      f'  {_class_step_sentence()} A flat figure is the assumption most likely to be wrong in',
+      '  one direction or the other, and the series is the check on it.',
       '')
+
+
+def _ng_vs_assumption():
+    """How the certified series sits against the flat assumption -- computed, so the
+    sentence cannot say 'down' about a series that rose (rule 14: it did, for a day)."""
+    ng = taxbase.NEW_GROWTH_HISTORY
+    last5 = ng[-5:]
+    above = sum(1 for g in last5 if g['amount'] >= A['new_growth'])
+    best = max(ng, key=lambda g: g['amount'])
+    return ('at or above the assumption in %d of the last five certified years, with the best year on record FY%d at %s'
+            % (above, best['fy'], usd(best['amount'])))
+
+
+def _class_step_sentence():
+    """The latest certified step by class, direction read off the data."""
+    v = taxbase.VALUE_BY_CLASS
+    non_res = [x for x in v if x['cls'] != 'Residential']
+    fy0, fy1 = v[0]['fromFy'], v[0]['toFy']
+    if all(x['change'] < 0 for x in non_res):
+        return ('Every commercial class **shrank in absolute dollars** from FY%d to FY%d, the latest step certified.' % (fy0, fy1))
+    if all(x['change'] > 0 for x in non_res):
+        return ('Every commercial class **grew in absolute dollars** from FY%d to FY%d, the latest step certified.' % (fy0, fy1))
+    up = ', '.join(x['cls'].lower() for x in non_res if x['change'] > 0)
+    down = ', '.join(x['cls'].lower() for x in non_res if x['change'] <= 0)
+    return ('From FY%d to FY%d, the latest step certified, %s grew in absolute dollars and %s did not.' % (fy0, fy1, up, down))
 
 
 # ==============================================  12. THE ASSUMPTION REGISTER

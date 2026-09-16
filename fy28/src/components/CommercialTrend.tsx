@@ -9,17 +9,24 @@ const T = MODEL.taxBase
 /** New growth over time, and which classes are actually growing. */
 export function CommercialTrend() {
   const ng = T.newGrowthHistory
-  const decline = (ng.at(-1)!.amount / ng[0].amount - 1) * 100
+  const last = ng.at(-1)!
+  const best = ng.reduce((a, b) => (b.amount > a.amount ? b : a))
+  // The last five certified years against the five before them: the direction of
+  // travel as a five-year average, not one year against one year.
+  const avg = (rows: typeof ng) => rows.reduce((s, r) => s + r.amount, 0) / rows.length
+  const recent = avg(ng.slice(-5)), prior = avg(ng.slice(-10, -5))
+  const change = (recent / prior - 1) * 100
+  const budgeted = T.currentNewGrowthRevenue
+  const above = ng.slice(-5).filter(r => r.amount >= budgeted).length
   const maxAbs = Math.ceil(Math.max(...T.valueByClass.map(v => Math.abs(v.pct))) / 5) * 5
 
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       <div className="card p-5">
-        <h3 className="text-sm font-bold mb-1">New growth is falling</h3>
+        <h3 className="text-sm font-bold mb-1">New growth, FY{ng[0].fy} to FY{last.fy}</h3>
         <p className="text-[12px] mb-4" style={{ color: 'var(--text-secondary)' }}>
           New growth is the only thing that raises the levy limit without an override.
-          Lunenburg&rsquo;s has dropped <strong>{Math.abs(decline).toFixed(0)}%</strong> in
-          five years.
+          The last five years average <strong>{change >= 0 ? `${change.toFixed(0)}% more` : `${Math.abs(change).toFixed(0)}% less`}</strong> than the five before them; the best year on record is FY{best.fy}.
         </p>
         <div style={{ width: '100%', height: 200 }}>
           <ResponsiveContainer>
@@ -37,7 +44,7 @@ export function CommercialTrend() {
                 formatter={v => [usd(v as number), 'New growth']} />
               <ReferenceLine y={T.currentNewGrowthRevenue} stroke="var(--status-critical)"
                 strokeDasharray="4 4"
-                label={{ value: 'FY27 budgeted $400k', position: 'insideTopRight',
+                label={{ value: `FY27 budgets ${usdShort(budgeted)}`, position: 'insideTopRight',
                          fill: 'var(--status-critical)', fontSize: 10 }} />
               <Bar dataKey="amount" fill="var(--series-cost)" radius={[4, 4, 0, 0]}
                 isAnimationActive={false} />
@@ -45,18 +52,17 @@ export function CommercialTrend() {
           </ResponsiveContainer>
         </div>
         <p className="text-[12px] leading-relaxed mt-3" style={{ color: 'var(--text-secondary)' }}>
-          The FY27 budget assumes <strong>{usd(T.currentNewGrowthRevenue)}</strong> of new
-          growth. The town has not reached that since FY22, and FY23 came in at{' '}
-          {usd(ng.at(-1)!.amount)} — barely half. Every dollar it falls short is a dollar
+          The FY27 budget assumes <strong>{usd(budgeted)}</strong> of new
+          growth. The town reached that in {above} of the last five certified years; FY{last.fy} came in at{' '}
+          {usd(last.amount)}. Every dollar it falls short is a dollar
           the schools do not get.
         </p>
       </div>
 
       <div className="card p-5">
-        <h3 className="text-sm font-bold mb-1">Only one class is growing</h3>
+        <h3 className="text-sm font-bold mb-1">{T.valueByClass.filter(v => v.cls !== 'Residential').every(v => v.change < 0) ? 'Only one class is growing' : T.valueByClass.every(v => v.change > 0) ? 'Every class grew' : 'Which classes are growing'}</h3>
         <p className="text-[12px] mb-4" style={{ color: 'var(--text-secondary)' }}>
-          Change in assessed value by class, FY22 to FY23. Commercial, industrial and
-          personal property all fell in <em>absolute dollars</em>.
+          Change in assessed value by class, FY{T.valueByClass[0].fromFy} to FY{T.valueByClass[0].toFy}, the latest step the state has certified. A revaluation moves these as much as a building does.
         </p>
         <div style={{ width: '100%', height: 200 }}>
           <ResponsiveContainer>
@@ -76,7 +82,7 @@ export function CommercialTrend() {
                                 borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }}
                 formatter={(v, _n, p) => [
                   `${v as number}%  (${usd((p.payload as { change: number }).change)})`,
-                  'Change FY22 to FY23']} />
+                  `Change FY${T.valueByClass[0].fromFy} to FY${T.valueByClass[0].toFy}`]} />
               <ReferenceLine x={0} stroke="var(--axis)" />
               <Bar dataKey="pct" radius={3} isAnimationActive={false}>
                 {T.valueByClass.map(v => (
@@ -186,8 +192,8 @@ export function HomeValueParadox() {
 export function GrowthReality({ newValue }: { newValue: number }) {
   const g = T.gapInBusinesses.sustained
   const businesses = newValue / T.avgCommercialValue
-  const pctCommercial = (newValue / T.fy23.cipValue) * 100
-  const vsActual = newValue / T.fy23NewValue
+  const pctCommercial = (newValue / T.base.cipValue) * 100
+  const vsActual = newValue / T.baseNewValue
   const c = T.commercialContext
 
   return (
@@ -201,7 +207,7 @@ export function GrowthReality({ newValue }: { newValue: number }) {
         <Fig v={`+${pctCommercial.toFixed(1)}%`} k="of the commercial base"
           s="added every single year, sustained" />
         <Fig v={`${vsActual.toFixed(1)}×`} k="the town's recent new growth"
-          s={`FY23 added about ${usdShort(T.fy23NewValue)} across all classes`} />
+          s={`FY${T.base.fy} added ${usdShort(T.baseNewValue)} across all classes`} />
       </div>
       {/* What it would take to carry the whole gap on business growth alone */}
       <div className="rounded-lg p-4 mb-4"
@@ -216,7 +222,7 @@ export function GrowthReality({ newValue }: { newValue: number }) {
           <Fig v={`${g.fiveYearTotal}`} k="businesses after five years"
             s={`up from ${T.businesses} — a ${g.fiveYearPct}% increase`} />
           <Fig v={`${g.vsActualNewGrowth}×`} k="the town's actual new growth"
-            s="FY23 delivered less than half of one year of this" />
+            s={`FY${T.base.fy} delivered ${g.vsActualNewGrowth >= 2 ? 'less than half' : g.vsActualNewGrowth >= 1 ? 'less than' : 'more than'} one year of this`} />
         </div>
         <div className="h-3 rounded-full overflow-hidden flex gap-0.5"
           style={{ background: 'var(--surface-3)' }}>
@@ -252,8 +258,8 @@ export function GrowthReality({ newValue }: { newValue: number }) {
         <li>
           Lunenburg has <strong>{T.businesses} business establishments</strong> employing{' '}
           {T.employees.toLocaleString()} people (Census, 2024). The whole commercial,
-          industrial and personal-property base is {usdShort(T.fy23.cipValue)} —{' '}
-          {(T.fy23.cipShare * 100).toFixed(1)}% of the town&rsquo;s value — which works out
+          industrial and personal-property base is {usdShort(T.base.cipValue)} (FY{T.base.fy}) &mdash;{' '}
+          {(T.base.cipShare * 100).toFixed(1)}% of the town&rsquo;s value &mdash; which works out
           to about <strong>{usd(T.avgCommercialValue)}</strong> per establishment.
         </li>
         <li>

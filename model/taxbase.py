@@ -157,7 +157,9 @@ if __name__ == '__main__':
 # Reality anchors for "what does $15M a year actually mean?"
 # ---------------------------------------------------------------------------
 
-# FY2023 Tax Classification Hearing (Board of Assessors) -- hard figures
+# FY2023 Tax Classification Hearing (Board of Assessors) -- the town's own printed
+# figures. These were the model's anchor until 16 September 2026; they remain the CHECK
+# on the state's file (below), which carries the same quantities for every year.
 FY23 = dict(
     residentialValue=1_957_462_820, residentialShare=0.927077,
     cipValue=153_972_120, cipShare=0.072923,
@@ -173,7 +175,76 @@ BUSINESSES = 234
 EMPLOYEES = 2_172
 PAYROLL = 126_716_000
 
-AVG_COMMERCIAL_VALUE = round(FY23['cipValue'] / BUSINESSES)
+# ---------------------------------------------------------------------------
+# The state's series, FY2002 onward: assessed value by class and certified new growth,
+# from the Division of Local Services' Gateway (sources/state-dls/, fetched by
+# scripts/fetch_dls_property.py, footed to the file's own totals before it is written).
+#
+# WHY THE ANCHOR MOVED. Every "x the town's recent new growth" on the site divided by
+# FY23's $234,383 -- which the state's file shows to be the LOWEST year in twenty-four.
+# The three years after it were the three best on record. An argument that development
+# is the wrong order of magnitude does not need the worst year as its denominator, and
+# rule 8 says give the town credit where the record shows it. The anchor is now the
+# latest fiscal year DLS has certified, read off the file rather than typed.
+# ---------------------------------------------------------------------------
+import csv as _csv
+import os as _os
+
+_DATA = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), 'sources', 'data')
+
+
+def _dls(name, town='Lunenburg'):
+    with open(_os.path.join(_DATA, name), encoding='utf-8') as fh:
+        rows = [r for r in _csv.DictReader(fh) if r['municipality'] == town and r['total' if 'total' in r else 'total_value']]
+    rows.sort(key=lambda r: int(r['fy']))
+    if len(rows) < 20:
+        raise SystemExit('taxbase: %s holds %d certified Lunenburg years; expected twenty or more' % (name, len(rows)))
+    return rows
+
+
+_AV = _dls('dls-assessed-values.csv')
+_NG = _dls('dls-new-growth.csv')
+
+# Assessed value by class, every certified year, as printed (dollars).
+VALUE_BY_CLASS_SERIES = [dict(
+    fy=int(r['fy']), residential=round(float(r['residential'])), openSpace=round(float(r['open_space'])),
+    commercial=round(float(r['commercial'])), industrial=round(float(r['industrial'])),
+    personal=round(float(r['personal_property'])), total=round(float(r['total'])),
+    cipShare=round(float(r['cip_pct']) / 100, 6)) for r in _AV]
+
+# New growth as certified, every year: the levy dollars ADDED and the VALUE behind them,
+# all classes and residential alone. `amount` is the levy figure the town's hearing prints.
+NEW_GROWTH_HISTORY = [dict(
+    fy=int(r['fy']), amount=round(float(r['total_levy'])), value=round(float(r['total_value'])),
+    residentialAmount=round(float(r['res_levy'])), residentialValue=round(float(r['res_value'])),
+    priorLevyLimit=round(float(r['prior_levy_limit']))) for r in _NG]
+
+# The hearing's six figures against the state's file, to the dollar (rule 13: two
+# documents that print the same quantity get checked against each other, not trusted).
+_HEARING_NEW_GROWTH = {2018: 481_496, 2019: 472_536, 2020: 366_231, 2021: 308_732, 2022: 430_254, 2023: 234_383}
+for _g in NEW_GROWTH_HISTORY:
+    if _g['fy'] in _HEARING_NEW_GROWTH and _g['amount'] != _HEARING_NEW_GROWTH[_g['fy']]:
+        raise SystemExit('taxbase: FY%d new growth is %s in the hearing and %s in the DLS file'
+                         % (_g['fy'], _HEARING_NEW_GROWTH[_g['fy']], _g['amount']))
+_av23 = next(v for v in VALUE_BY_CLASS_SERIES if v['fy'] == 2023)
+if _av23['total'] != FY23['totalValue'] or _av23['residential'] != FY23['residentialValue']:
+    raise SystemExit('taxbase: the FY23 hearing and the DLS file disagree on FY23 value')
+
+# THE ANCHOR: the latest year both files certify.
+_latest = min(VALUE_BY_CLASS_SERIES[-1]['fy'], NEW_GROWTH_HISTORY[-1]['fy'])
+_bv = next(v for v in VALUE_BY_CLASS_SERIES if v['fy'] == _latest)
+_bg = next(g for g in NEW_GROWTH_HISTORY if g['fy'] == _latest)
+BASE = dict(
+    fy=_latest,
+    residentialValue=_bv['residential'], residentialShare=round(_bv['residential'] / _bv['total'], 6),
+    cipValue=_bv['commercial'] + _bv['industrial'] + _bv['personal'], cipShare=_bv['cipShare'],
+    totalValue=_bv['total'],
+    newGrowth=_bg['amount'],            # levy dollars added that year, all classes
+    newGrowthValue=_bg['value'],        # the assessed value behind them, as certified
+    newGrowthResidentialValue=_bg['residentialValue'],
+)
+
+AVG_COMMERCIAL_VALUE = round(BASE['cipValue'] / BUSINESSES)
 
 # The town's real average, offered as a unit in the calculator so that one control
 # drives every figure -- rather than a fixed "average business" count sitting beside
@@ -181,11 +252,12 @@ AVG_COMMERCIAL_VALUE = round(FY23['cipValue'] / BUSINESSES)
 ARCHETYPES.insert(1, dict(
     id='avg_existing', name='Average existing Lunenburg business',
     value=AVG_COMMERCIAL_VALUE, plausible=True,
-    note=f"The real figure from the tax rolls: ${FY23['cipValue']:,} of commercial, "
+    note=f"The real figure from the tax rolls: ${BASE['cipValue']:,} of commercial, "
          f"industrial and personal property across {BUSINESSES} establishments."))
 
-FY23_PRIOR_RATE = 13.51            # FY22 rate, used to compute FY23 new growth
-FY23_NEW_VALUE = round(FY23['newGrowth'] * 1000 / FY23_PRIOR_RATE)
+# The value behind the anchor year's new growth, AS CERTIFIED -- the DLS file prints it,
+# so it is no longer derived by dividing levy dollars by the prior year's rate.
+BASE_NEW_VALUE = BASE['newGrowthValue']
 
 COMMERCIAL_CONTEXT = dict(
     corridors=['Route 2A (Massachusetts Avenue)', 'Route 13 (Chase Road)',
@@ -202,21 +274,21 @@ COMMERCIAL_CONTEXT = dict(
 def growth_in_context(extra_value_per_year):
     return dict(
         businessesEquivalent=extra_value_per_year / AVG_COMMERCIAL_VALUE,
-        pctOfCommercialBase=extra_value_per_year / FY23['cipValue'] * 100,
-        pctOfTotalBase=extra_value_per_year / FY23['totalValue'] * 100,
-        vsActualNewGrowth=extra_value_per_year / FY23_NEW_VALUE,
+        pctOfCommercialBase=extra_value_per_year / BASE['cipValue'] * 100,
+        pctOfTotalBase=extra_value_per_year / BASE['totalValue'] * 100,
+        vsActualNewGrowth=extra_value_per_year / BASE_NEW_VALUE,
         revenue=new_growth_revenue(extra_value_per_year),
-        vsActualNewGrowthRevenue=new_growth_revenue(extra_value_per_year) / FY23['newGrowth'],
+        vsActualNewGrowthRevenue=new_growth_revenue(extra_value_per_year) / BASE['newGrowth'],
     )
 
 
 if __name__ == '__main__':
     print()
     print(f'Businesses (Census 2024): {BUSINESSES}, {EMPLOYEES:,} employees')
-    print(f'CIP value FY23: ${FY23["cipValue"]:,} ({FY23["cipShare"]*100:.2f}% of base)')
+    print(f'CIP value FY{BASE["fy"]}: ${BASE["cipValue"]:,} ({BASE["cipShare"]*100:.2f}% of base)')
     print(f'Average value per establishment: ${AVG_COMMERCIAL_VALUE:,}')
-    print(f'FY23 ACTUAL new growth: ${FY23["newGrowth"]:,} '
-          f'(~${FY23_NEW_VALUE:,} of new value, all classes)')
+    print(f'FY{BASE["fy"]} ACTUAL new growth: ${BASE["newGrowth"]:,} '
+          f'(${BASE_NEW_VALUE:,} of new value, all classes)')
     print()
     for v in (5_000_000, 15_000_000, 30_000_000):
         c = growth_in_context(v)
@@ -224,7 +296,7 @@ if __name__ == '__main__':
         print(f'   ~{c["businessesEquivalent"]:.0f} more average businesses EVERY year')
         print(f'   +{c["pctOfCommercialBase"]:.1f}% of the commercial base every year')
         print(f'   {c["vsActualNewGrowth"]:.1f}x the town\'s entire recent new growth')
-        print(f'   ${c["revenue"]:,.0f}/yr revenue = {c["vsActualNewGrowthRevenue"]:.1f}x FY23 new growth')
+        print(f'   ${c["revenue"]:,.0f}/yr revenue = {c["vsActualNewGrowthRevenue"]:.1f}x FY{BASE["fy"]} new growth')
         print()
 
 
@@ -233,27 +305,21 @@ if __name__ == '__main__':
 # (Lunenburg Board of Assessors). These are the town's own published figures.
 # ---------------------------------------------------------------------------
 
-# New growth added to the levy limit, by fiscal year. Declining.
-NEW_GROWTH_HISTORY = [
-    dict(fy=2018, amount=481_496),
-    dict(fy=2019, amount=472_536),
-    dict(fy=2020, amount=366_231),
-    dict(fy=2021, amount=308_732),
-    dict(fy=2022, amount=430_254),
-    dict(fy=2023, amount=234_383),
-]
+# New growth by year is NEW_GROWTH_HISTORY above, from the state's file; the hearing's
+# six years (FY2018-FY2023) are asserted against it at import.
 
-# Assessed value by class, FY22 -> FY23. Residential boomed; every commercial
-# class SHRANK in absolute dollars.
+# Assessed value by class, the latest certified year against the one before it, from
+# the state's series. The hearing's FY22 -> FY23 step -- residential up 23%, every other
+# class down in dollars -- is one row of that series and is still there to read.
+_prev = next(v for v in VALUE_BY_CLASS_SERIES if v['fy'] == BASE['fy'] - 1)
 VALUE_BY_CLASS = [
-    dict(cls='Residential',       fy23=1_957_462_820, fy22=1_587_173_648),
-    dict(cls='Commercial',        fy23=74_992_410,    fy22=75_178_002),
-    dict(cls='Industrial',        fy23=23_827_000,    fy22=24_608_600),
-    dict(cls='Personal property', fy23=55_152_710,    fy22=55_708_580),
+    dict(cls=cls, fromFy=_prev['fy'], toFy=_bv['fy'], frm=_prev[k], to=_bv[k])
+    for cls, k in (('Residential', 'residential'), ('Commercial', 'commercial'),
+                   ('Industrial', 'industrial'), ('Personal property', 'personal'))
 ]
 for _v in VALUE_BY_CLASS:
-    _v['change'] = _v['fy23'] - _v['fy22']
-    _v['pct'] = round(_v['change'] / _v['fy22'] * 100, 2)
+    _v['change'] = _v['to'] - _v['frm']
+    _v['pct'] = round(_v['change'] / _v['frm'] * 100, 2)
 
 # The Proposition 2 1/2 paradox, in the town's own numbers: values up 52%,
 # rate down 22%, bills up only 19%.
@@ -277,10 +343,10 @@ if __name__ == '__main__':
     for g in NEW_GROWTH_HISTORY:
         print(f"  FY{g['fy']}  ${g['amount']:>9,}")
     d = NEW_GROWTH_HISTORY[-1]['amount'] / NEW_GROWTH_HISTORY[0]['amount'] - 1
-    print(f"  FY18 -> FY23 change: {d*100:.0f}%")
-    print('\nASSESSED VALUE BY CLASS, FY22 -> FY23')
+    print(f"  FY{NEW_GROWTH_HISTORY[0]['fy']} -> FY{NEW_GROWTH_HISTORY[-1]['fy']} change: {d*100:.0f}%")
+    print(f"\nASSESSED VALUE BY CLASS, FY{VALUE_BY_CLASS[0]['fromFy']} -> FY{VALUE_BY_CLASS[0]['toFy']}")
     for v in VALUE_BY_CLASS:
-        print(f"  {v['cls']:<18} ${v['fy22']:>15,} -> ${v['fy23']:>15,}  {v['pct']:>7.2f}%")
+        print(f"  {v['cls']:<18} ${v['frm']:>15,} -> ${v['to']:>15,}  {v['pct']:>7.2f}%")
     print('\nAVERAGE SINGLE FAMILY')
     for h in AVG_HOME_HISTORY:
         print(f"  FY{h['fy']}  rate {h['rate']:>5}  value ${h['value']:>9,}  bill ${h['bill']:>8,.2f}")
@@ -356,7 +422,7 @@ def businesses_needed(gap):
         developments=round(v / MIX_VALUE, 1),
         businesses=round(n),
         pctOfToday=round(n / BUSINESSES * 100),
-        vsActualNewGrowth=round(v / FY23_NEW_VALUE, 1),
+        vsActualNewGrowth=round(v / BASE_NEW_VALUE, 1),
         fiveYearAdded=round(n * 5),
         fiveYearTotal=round(BUSINESSES + n * 5),
         fiveYearPct=round(n * 5 / BUSINESSES * 100),

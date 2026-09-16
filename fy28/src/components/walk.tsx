@@ -311,7 +311,7 @@ export function WhatIsADevelopment() {
         style={{ borderColor: 'var(--grid)' }}>
         <strong>That is {FEASIBILITY.buildings5} new commercial buildings over five
         years.</strong> Lunenburg has {T.businesses} commercial properties today, worth{' '}
-        {usdShort(T.fy23.cipValue)} in total &mdash; accumulated over the whole life of the
+        {usdShort(T.base.cipValue)} in total &mdash; accumulated over the whole life of the
         town. This asks for very nearly that many again, in five years, one every{' '}
         {FEASIBILITY.everyDays} days.
       </p>

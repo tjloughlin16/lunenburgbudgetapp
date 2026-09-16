@@ -8478,9 +8478,9 @@
    {
     "id": "avg_existing",
     "name": "Average existing Lunenburg business",
-    "value": 658001,
+    "value": 907449,
     "plausible": true,
-    "note": "The real figure from the tax rolls: $153,972,120 of commercial, industrial and personal property across 234 establishments."
+    "note": "The real figure from the tax rolls: $212,343,140 of commercial, industrial and personal property across 234 establishments."
    },
    {
     "id": "small_biz",
@@ -8560,11 +8560,22 @@
    "maxShiftResidentialSaving": 0.039,
    "maxShiftCIPIncrease": 0.5
   },
+  "base": {
+   "fy": 2026,
+   "residentialValue": 2225599600,
+   "residentialShare": 0.912901,
+   "cipValue": 212343140,
+   "cipShare": 0.087099,
+   "totalValue": 2437942740,
+   "newGrowth": 518650,
+   "newGrowthValue": 36117700,
+   "newGrowthResidentialValue": 19027240
+  },
   "businesses": 234,
   "employees": 2172,
   "payroll": 126716000,
-  "avgCommercialValue": 658001,
-  "fy23NewValue": 17348853,
+  "avgCommercialValue": 907449,
+  "baseNewValue": 36117700,
   "commercialContext": {
    "corridors": [
     "Route 2A (Massachusetts Avenue)",
@@ -8580,58 +8591,486 @@
   },
   "newGrowthHistory": [
    {
+    "fy": 2003,
+    "amount": 314966,
+    "value": 20190107,
+    "residentialAmount": 298514,
+    "residentialValue": 19135500,
+    "priorLevyLimit": 11461042
+   },
+   {
+    "fy": 2004,
+    "amount": 341785,
+    "value": 26050700,
+    "residentialAmount": 312042,
+    "residentialValue": 23783700,
+    "priorLevyLimit": 12062534
+   },
+   {
+    "fy": 2005,
+    "amount": 452710,
+    "value": 31881000,
+    "residentialAmount": 440065,
+    "residentialValue": 30990500,
+    "priorLevyLimit": 12705882
+   },
+   {
+    "fy": 2006,
+    "amount": 325484,
+    "value": 24399133,
+    "residentialAmount": 295135,
+    "residentialValue": 22124100,
+    "priorLevyLimit": 13476239
+   },
+   {
+    "fy": 2007,
+    "amount": 295074,
+    "value": 23809803,
+    "residentialAmount": 281585,
+    "residentialValue": 22690200,
+    "priorLevyLimit": 14138629
+   },
+   {
+    "fy": 2008,
+    "amount": 211735,
+    "value": 17455441,
+    "residentialAmount": 190309,
+    "residentialValue": 15689100,
+    "priorLevyLimit": 14787169
+   },
+   {
+    "fy": 2009,
+    "amount": 138168,
+    "value": 11297476,
+    "residentialAmount": 74286,
+    "residentialValue": 6074100,
+    "priorLevyLimit": 15368583
+   },
+   {
+    "fy": 2010,
+    "amount": 130170,
+    "value": 9982315,
+    "residentialAmount": 79505,
+    "residentialValue": 6097000,
+    "priorLevyLimit": 15890966
+   },
+   {
+    "fy": 2011,
+    "amount": 188732,
+    "value": 13291045,
+    "residentialAmount": 113370,
+    "residentialValue": 7983800,
+    "priorLevyLimit": 16418410
+   },
+   {
+    "fy": 2012,
+    "amount": 448111,
+    "value": 27729619,
+    "residentialAmount": 408080,
+    "residentialValue": 25252469,
+    "priorLevyLimit": 17017602
+   },
+   {
+    "fy": 2013,
+    "amount": 321862,
+    "value": 19124255,
+    "residentialAmount": 253509,
+    "residentialValue": 15062900,
+    "priorLevyLimit": 17891153
+   },
+   {
+    "fy": 2014,
+    "amount": 297571,
+    "value": 17200564,
+    "residentialAmount": 253710,
+    "residentialValue": 14665300,
+    "priorLevyLimit": 18661730
+   },
+   {
+    "fy": 2015,
+    "amount": 262484,
+    "value": 14590507,
+    "residentialAmount": 176894,
+    "residentialValue": 9832900,
+    "priorLevyLimit": 19425844
+   },
+   {
+    "fy": 2016,
+    "amount": 360856,
+    "value": 19697381,
+    "residentialAmount": 311555,
+    "residentialValue": 17006300,
+    "priorLevyLimit": 20173974
+   },
+   {
+    "fy": 2017,
+    "amount": 487955,
+    "value": 24883011,
+    "residentialAmount": 413298,
+    "residentialValue": 21075900,
+    "priorLevyLimit": 21039179
+   },
+   {
     "fy": 2018,
-    "amount": 481496
+    "amount": 481496,
+    "value": 24098920,
+    "residentialAmount": 315692,
+    "residentialValue": 15800400,
+    "priorLevyLimit": 22054802
    },
    {
     "fy": 2019,
-    "amount": 472536
+    "amount": 472536,
+    "value": 23986590,
+    "residentialAmount": 285164,
+    "residentialValue": 14475320,
+    "priorLevyLimit": 23087668
    },
    {
     "fy": 2020,
-    "amount": 366231
+    "amount": 366231,
+    "value": 19605489,
+    "residentialAmount": 173768,
+    "residentialValue": 9302359,
+    "priorLevyLimit": 24137396
    },
    {
     "fy": 2021,
-    "amount": 308732
+    "amount": 308732,
+    "value": 17038185,
+    "residentialAmount": 160452,
+    "residentialValue": 8854975,
+    "priorLevyLimit": 25107062
    },
    {
     "fy": 2022,
-    "amount": 430254
+    "amount": 430254,
+    "value": 24253330,
+    "residentialAmount": 325257,
+    "residentialValue": 18334650,
+    "priorLevyLimit": 26043471
    },
    {
     "fy": 2023,
-    "amount": 234383
+    "amount": 234383,
+    "value": 13634891,
+    "residentialAmount": 169631,
+    "residentialValue": 9868011,
+    "priorLevyLimit": 27131063
+   },
+   {
+    "fy": 2024,
+    "amount": 630220,
+    "value": 43106729,
+    "residentialAmount": 291582,
+    "residentialValue": 19944059,
+    "priorLevyLimit": 28043723
+   },
+   {
+    "fy": 2025,
+    "amount": 527289,
+    "value": 37396296,
+    "residentialAmount": 273344,
+    "residentialValue": 19386086,
+    "priorLevyLimit": 29375036
+   },
+   {
+    "fy": 2026,
+    "amount": 518650,
+    "value": 36117700,
+    "residentialAmount": 273231,
+    "residentialValue": 19027240,
+    "priorLevyLimit": 31602108
    }
   ],
   "valueByClass": [
    {
     "cls": "Residential",
-    "fy23": 1957462820,
-    "fy22": 1587173648,
-    "change": 370289172,
-    "pct": 23.33
+    "fromFy": 2025,
+    "toFy": 2026,
+    "frm": 2161060074,
+    "to": 2225599600,
+    "change": 64539526,
+    "pct": 2.99
    },
    {
     "cls": "Commercial",
-    "fy23": 74992410,
-    "fy22": 75178002,
-    "change": -185592,
-    "pct": -0.25
+    "fromFy": 2025,
+    "toFy": 2026,
+    "frm": 97763006,
+    "to": 101060600,
+    "change": 3297594,
+    "pct": 3.37
    },
    {
     "cls": "Industrial",
-    "fy23": 23827000,
-    "fy22": 24608600,
-    "change": -781600,
-    "pct": -3.18
+    "fromFy": 2025,
+    "toFy": 2026,
+    "frm": 32625700,
+    "to": 38166600,
+    "change": 5540900,
+    "pct": 16.98
    },
    {
     "cls": "Personal property",
-    "fy23": 55152710,
-    "fy22": 55708580,
-    "change": -555870,
-    "pct": -1.0
+    "fromFy": 2025,
+    "toFy": 2026,
+    "frm": 69258000,
+    "to": 73115940,
+    "change": 3857940,
+    "pct": 5.57
+   }
+  ],
+  "valueByClassSeries": [
+   {
+    "fy": 2002,
+    "residential": 661373500,
+    "openSpace": 101700,
+    "commercial": 48099200,
+    "industrial": 14603000,
+    "personal": 15492500,
+    "total": 739669900,
+    "cipShare": 0.105716
+   },
+   {
+    "fy": 2003,
+    "residential": 841292300,
+    "openSpace": 135100,
+    "commercial": 52514100,
+    "industrial": 15996300,
+    "personal": 14849700,
+    "total": 924787500,
+    "cipShare": 0.09014
+   },
+   {
+    "fy": 2004,
+    "residential": 908570200,
+    "openSpace": 139600,
+    "commercial": 54756700,
+    "industrial": 16373400,
+    "personal": 16455400,
+    "total": 996295300,
+    "cipShare": 0.087911
+   },
+   {
+    "fy": 2005,
+    "residential": 1014814200,
+    "openSpace": 165300,
+    "commercial": 55942900,
+    "industrial": 17232000,
+    "personal": 15868000,
+    "total": 1104022400,
+    "cipShare": 0.080653
+   },
+   {
+    "fy": 2006,
+    "residential": 1172156400,
+    "openSpace": 0,
+    "commercial": 62162500,
+    "industrial": 19104400,
+    "personal": 17031900,
+    "total": 1270455200,
+    "cipShare": 0.077373
+   },
+   {
+    "fy": 2007,
+    "residential": 1186935300,
+    "openSpace": 32700,
+    "commercial": 62230700,
+    "industrial": 19024000,
+    "personal": 17725200,
+    "total": 1285947900,
+    "cipShare": 0.07697
+   },
+   {
+    "fy": 2008,
+    "residential": 1217975700,
+    "openSpace": 0,
+    "commercial": 64418400,
+    "industrial": 21025300,
+    "personal": 19252440,
+    "total": 1322671840,
+    "cipShare": 0.079155
+   },
+   {
+    "fy": 2009,
+    "residential": 1177626000,
+    "openSpace": 0,
+    "commercial": 74160900,
+    "industrial": 22719700,
+    "personal": 22670064,
+    "total": 1297176664,
+    "cipShare": 0.092162
+   },
+   {
+    "fy": 2010,
+    "residential": 1110439200,
+    "openSpace": 0,
+    "commercial": 71405100,
+    "industrial": 22444600,
+    "personal": 22985504,
+    "total": 1227274404,
+    "cipShare": 0.095199
+   },
+   {
+    "fy": 2011,
+    "residential": 1000004500,
+    "openSpace": 0,
+    "commercial": 64514700,
+    "industrial": 21614900,
+    "personal": 28148789,
+    "total": 1114282889,
+    "cipShare": 0.102558
+   },
+   {
+    "fy": 2012,
+    "residential": 1008566509,
+    "openSpace": 0,
+    "commercial": 63563291,
+    "industrial": 20402900,
+    "personal": 28433861,
+    "total": 1120966561,
+    "cipShare": 0.100271
+   },
+   {
+    "fy": 2013,
+    "residential": 1016139357,
+    "openSpace": 0,
+    "commercial": 65224243,
+    "industrial": 20290900,
+    "personal": 29375244,
+    "total": 1131029744,
+    "cipShare": 0.10158
+   },
+   {
+    "fy": 2014,
+    "residential": 1013879421,
+    "openSpace": 0,
+    "commercial": 63717379,
+    "industrial": 20091700,
+    "personal": 29944552,
+    "total": 1127633052,
+    "cipShare": 0.100878
+   },
+   {
+    "fy": 2015,
+    "residential": 1027856023,
+    "openSpace": 0,
+    "commercial": 65371177,
+    "industrial": 20155100,
+    "personal": 33119236,
+    "total": 1146501536,
+    "cipShare": 0.103485
+   },
+   {
+    "fy": 2016,
+    "residential": 1079768102,
+    "openSpace": 0,
+    "commercial": 64763998,
+    "industrial": 19994000,
+    "personal": 35078223,
+    "total": 1199604323,
+    "cipShare": 0.099896
+   },
+   {
+    "fy": 2017,
+    "residential": 1120428704,
+    "openSpace": 0,
+    "commercial": 62607199,
+    "industrial": 20123300,
+    "personal": 36566467,
+    "total": 1239725670,
+    "cipShare": 0.096229
+   },
+   {
+    "fy": 2018,
+    "residential": 1187963086,
+    "openSpace": 0,
+    "commercial": 66034778,
+    "industrial": 20822700,
+    "personal": 37237660,
+    "total": 1312058224,
+    "cipShare": 0.094581
+   },
+   {
+    "fy": 2019,
+    "residential": 1304701251,
+    "openSpace": 0,
+    "commercial": 75054946,
+    "industrial": 23722400,
+    "personal": 38770080,
+    "total": 1442248677,
+    "cipShare": 0.09537
+   },
+   {
+    "fy": 2020,
+    "residential": 1404806468,
+    "openSpace": 0,
+    "commercial": 73878632,
+    "industrial": 25130800,
+    "personal": 44440550,
+    "total": 1548256450,
+    "cipShare": 0.092653
+   },
+   {
+    "fy": 2021,
+    "residential": 1481848704,
+    "openSpace": 0,
+    "commercial": 74506835,
+    "industrial": 25208500,
+    "personal": 47079550,
+    "total": 1628643589,
+    "cipShare": 0.090133
+   },
+   {
+    "fy": 2022,
+    "residential": 1587173648,
+    "openSpace": 0,
+    "commercial": 75178002,
+    "industrial": 24608600,
+    "personal": 55708580,
+    "total": 1742668830,
+    "cipShare": 0.089228
+   },
+   {
+    "fy": 2023,
+    "residential": 1957462820,
+    "openSpace": 0,
+    "commercial": 74992410,
+    "industrial": 23827000,
+    "personal": 55152710,
+    "total": 2111434940,
+    "cipShare": 0.072923
+   },
+   {
+    "fy": 2024,
+    "residential": 2057467522,
+    "openSpace": 0,
+    "commercial": 90744628,
+    "industrial": 29559800,
+    "personal": 64914630,
+    "total": 2242686580,
+    "cipShare": 0.082588
+   },
+   {
+    "fy": 2025,
+    "residential": 2161060074,
+    "openSpace": 0,
+    "commercial": 97763006,
+    "industrial": 32625700,
+    "personal": 69258000,
+    "total": 2360706780,
+    "cipShare": 0.084571
+   },
+   {
+    "fy": 2026,
+    "residential": 2225599600,
+    "openSpace": 0,
+    "commercial": 101060600,
+    "industrial": 38166600,
+    "personal": 73115940,
+    "total": 2437942740,
+    "cipShare": 0.087099
    }
   ],
   "avgHomeHistory": [
@@ -8692,22 +9131,22 @@
    "fy28": {
     "value": 42615566,
     "developments": 14.2,
-    "businesses": 65,
-    "pctOfToday": 28,
-    "vsActualNewGrowth": 2.5,
-    "fiveYearAdded": 324,
-    "fiveYearTotal": 558,
-    "fiveYearPct": 138
+    "businesses": 47,
+    "pctOfToday": 20,
+    "vsActualNewGrowth": 1.2,
+    "fiveYearAdded": 235,
+    "fiveYearTotal": 469,
+    "fiveYearPct": 100
    },
    "sustained": {
     "value": 40244962,
     "developments": 13.4,
-    "businesses": 61,
-    "pctOfToday": 26,
-    "vsActualNewGrowth": 2.3,
-    "fiveYearAdded": 306,
-    "fiveYearTotal": 540,
-    "fiveYearPct": 131
+    "businesses": 44,
+    "pctOfToday": 19,
+    "vsActualNewGrowth": 1.1,
+    "fiveYearAdded": 222,
+    "fiveYearTotal": 456,
+    "fiveYearPct": 95
    }
   },
   "mixValue": 3005000
@@ -8897,7 +9336,7 @@
    "id": "business",
    "label": "What business growth would have to deliver",
    "value": "$40.6M",
-   "sub": "of new commercial value every year \u2014 about 62 more average businesses a year, on top of the 234 the town has, or 13 typical developments",
+   "sub": "of new commercial value every year \u2014 about 45 more average businesses a year, on top of the 234 the town has, or 13 typical developments",
    "anchor": "tax-base",
    "tone": "neutral"
   },

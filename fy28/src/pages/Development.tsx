@@ -9,6 +9,13 @@ import { GrowthCalculator } from '../components/TaxBase'
 import { TaxBaseMix } from '../components/TaxBaseMix'
 
 const T = MODEL.taxBase
+// Business's share of the base after ten years at the anchor year's certified new growth,
+// split residential / everything else as the assessors certified it. Derived, never typed.
+const MIX_TEN = (() => {
+  const res = T.base.residentialValue + T.base.newGrowthResidentialValue * 10
+  const cip = T.base.cipValue + (T.base.newGrowthValue - T.base.newGrowthResidentialValue) * 10
+  return { cip: (cip / (res + cip)) * 100 }
+})()
 
 /** Development, modeled properly.
  *
@@ -224,8 +231,7 @@ function Residential({ homes, setHomes }: {
           value={homes} onChange={e => setHomes(Number(e.target.value))} className="w-full" />
         <p className="text-[10px] mb-4" style={{ color: 'var(--text-muted)' }}>
           At the town&rsquo;s {usd(T.avgHomeValue)} average assessment. Defaulted to{' '}
-          {usdShort(T.fy23NewValue)} — the whole of FY23 new growth, which was effectively
-          all housing.
+          {usdShort(T.base.newGrowthResidentialValue)} &mdash; the residential part of FY{T.base.fy} new growth, {Math.round(100 * T.base.newGrowthResidentialValue / T.base.newGrowthValue)}% of what the assessors certified that year.
         </p>
 
         <div className="flex items-baseline justify-between gap-3 mb-1">
@@ -419,13 +425,15 @@ function Findings({ gap, share }: { gap: number; share: number }) {
         + `nobody.`,
     },
     {
-      n: 5, anchor: 'mix', figure: '92.7%',
-      head: 'Homeowners carry almost the whole tax base, and the share is moving the wrong way.',
+      n: 5, anchor: 'mix', figure: `${(T.base.residentialShare * 100).toFixed(1)}%`,
+      head: MIX_TEN.cip > T.base.cipShare * 100
+        ? 'Homeowners carry almost the whole tax base, and the latest certified pace barely moves it.'
+        : 'Homeowners carry almost the whole tax base, and the share is moving the wrong way.',
       body: `One tax rate means a class's share of the base is its share of the bill. `
-        + `Homes are ${(T.fy23.residentialShare * 100).toFixed(1)}% of it, business `
-        + `${(T.fy23.cipShare * 100).toFixed(1)}%. Carry on at the town's recent pace — `
-        + `essentially all of new growth residential, while commercial value actually FELL `
-        + `0.25% and industrial 3.2% — and business's share drops to about 6.7% in ten `
+        + `Homes are ${(T.base.residentialShare * 100).toFixed(1)}% of it, business `
+        + `${(T.base.cipShare * 100).toFixed(1)}% (FY${T.base.fy}). Carry on at the pace the assessors certified that year — `
+        + `${Math.round(100 * T.base.newGrowthResidentialValue / T.base.newGrowthValue)}% of new growth residential — `
+        + `and business's share ${MIX_TEN.cip > T.base.cipShare * 100 ? 'edges up' : 'drops'} to about ${MIX_TEN.cip.toFixed(1)}% in ten `
         + `years. Even the maximum legal split rate only moves residential bills about 4%, `
         + `because there is so little business to shift onto.`,
     },
@@ -765,7 +773,7 @@ function BillModel({ commercial, homes, gap, share }: {
                   The only lever that costs the town nothing. Worth about{' '}
                   {usd(T.avgHomeBill - (T.avgHomeValue * T.splitRate.residential) / 1000)} —
                   capped because business is only{' '}
-                  {(T.fy23.cipShare * 100).toFixed(1)}% of the base. The average business
+                  {(T.base.cipShare * 100).toFixed(1)}% of the base. The average business
                   pays {usd(T.splitRate.avgCommercialIncrease)} more.
                 </span>
               </span>
@@ -831,7 +839,7 @@ function BillModel({ commercial, homes, gap, share }: {
                 target.</strong> Every lever is pulled as far as it is set and the bill
                 still lands at {usd(yr10.policy)} against a {usd(yr10.target)} target. The
                 arithmetic that makes this hard: the levy rises 2&frac12;% a year by right,
-                business is only {(T.fy23.cipShare * 100).toFixed(1)}% of the base so
+                business is only {(T.base.cipShare * 100).toFixed(1)}% of the base so
                 shifting onto it is capped near 5%, and everything else means the town
                 collecting less.</>}
           </p>

@@ -140,7 +140,7 @@ export default function App() {
   // The commercial build rate is the same decision on two pages, so it lives here rather
   // than being duplicated. Housing is modeled on Development only.
   const [newValue, setNewValue] = useState(MODEL.taxBase.currentNewGrowthValue)
-  const [homes, setHomes] = useState(MODEL.taxBase.fy23NewValue)
+  const [homes, setHomes] = useState(MODEL.taxBase.base.newGrowthResidentialValue)
   /** The release notes, over the page rather than instead of it. Held here because
    *  two things open it — the bar at the top and the footer stamp — and they are on
    *  opposite ends of every page. */

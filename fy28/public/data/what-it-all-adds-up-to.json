@@ -90,14 +90,14 @@
    "id": "questions",
    "title": "A hundred questions this archive can answer",
    "url": "/analysis/questions",
-   "words": 5492
+   "words": 5490
   },
   {
    "doc_url": "/docs/analyses/show-your-work.md",
    "id": "show-your-work",
    "title": "Show your work",
    "url": "/analysis/show-your-work",
-   "words": 16209
+   "words": 16273
   },
   {
    "doc_url": "/docs/analyses/sped-and-funds.md",
@@ -339,6 +339,82 @@
     }
    ],
    "so_what": "Homes rose in every one of the 26 steps in the record. Enrolment has not followed them."
+  },
+  {
+   "basis": "DLS new growth file, Lunenburg rows: total new growth value minus residential new growth value, by fiscal year. Averages over FY2024\u2013FY2026 and the eleven years before them.",
+   "bearing": "sizes",
+   "claim": "Non-residential new growth ran 3.3 times its prior eleven-year pace in FY2024\u2013FY2026.",
+   "detail": "New growth is what the assessors certify was added to the tax rolls, valued, and the state publishes it split residential against all classes. Total minus residential is building that is not housing. The three largest years in the record are FY2024, FY2025, FY2026; FY2024 alone added $23,162,670. The recent three-year average is 3.3 times the eleven-year average before it.",
+   "figure": "multiple",
+   "figures": {
+    "avg_before": {
+     "text": "$5,803,101",
+     "unit": "",
+     "value": 5803101
+    },
+    "avg_recent": {
+     "text": "$19,421,113",
+     "unit": "of new non-residential value a year, FY2024\u2013FY2026",
+     "value": 19421113
+    },
+    "best": {
+     "text": "$23,162,670",
+     "unit": "",
+     "value": 23162670
+    },
+    "best_fy": {
+     "text": "FY2024",
+     "unit": "",
+     "value": 2024
+    },
+    "fy_r0": {
+     "text": "FY2024",
+     "unit": "",
+     "value": 2024
+    },
+    "fy_r1": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    },
+    "multiple": {
+     "text": "3.3",
+     "unit": "times the FY2013\u2013FY2023 pace of non-residential new growth",
+     "value": 3.346678654406303
+    },
+    "top3": {
+     "text": "FY2024, FY2025, FY2026",
+     "unit": "",
+     "value": [
+      2024,
+      2025,
+      2026
+     ]
+    },
+    "years": {
+     "text": "24",
+     "unit": "",
+     "value": 24
+    }
+   },
+   "id": "non-residential-building-stepped-up",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "WHAT was built, or where. The file carries a dollar of certified value and no parcel, permit or project. Nor whether the pace holds: three years is the whole of the step. And personal property (equipment, utility plant) is inside the non-residential figure with the buildings.",
+   "report": "growth",
+   "report_title": "Commercial development \u2014 what it would have to look like",
+   "report_url": "/commercial-development",
+   "see": [
+    {
+     "label": "What commercial growth would have to look like",
+     "slug": "/commercial-development"
+    },
+    {
+     "label": "The dials",
+     "slug": "/development"
+    }
+   ],
+   "so_what": "$19,421,113 a year against $5,803,101: the three best years for building that is not housing on record."
   },
   {
    "basis": "DESE\u2019s Special Education Program Characteristics file for Lunenburg, district rows only, every year it has been published.",
@@ -2294,12 +2370,6 @@
    "title": "Overrides",
    "url": "/overrides",
    "why": "Its figures are the projection\u2019s, computed by the page from the model rather than published as a payload, so nothing on this page speaks for it yet. Read the report itself."
-  },
-  {
-   "id": "growth",
-   "title": "Commercial development \u2014 what it would have to look like",
-   "url": "/commercial-development",
-   "why": "Its figures are the projection\u2019s, computed by the page from the model rather than published as a payload, so nothing on this page speaks for it yet. Read the report itself."
   }
  ],
  "reports": [
@@ -3120,11 +3190,225 @@
    "url": "/overrides"
   },
   {
-   "about": "What \u201cgrow our way out of it\u201d would have to look like: the new commercial value a year that holds the gap, in buildings, against the best year the town has ever had \u2014 and the share of each new dollar the schools actually keep.",
-   "conclusions": [],
-   "count": 0,
-   "data": null,
-   "generator": null,
+   "about": "The commercial base as the state certifies it, FY2002 to FY2026: how big it is, what share of the town it is, and how much of it was built rather than revalued.",
+   "conclusions": [
+    {
+     "basis": "DLS new growth file, Lunenburg rows: total new growth value minus residential new growth value, by fiscal year. Averages over FY2024\u2013FY2026 and the eleven years before them.",
+     "bearing": "sizes",
+     "claim": "Non-residential new growth ran 3.3 times its prior eleven-year pace in FY2024\u2013FY2026.",
+     "detail": "New growth is what the assessors certify was added to the tax rolls, valued, and the state publishes it split residential against all classes. Total minus residential is building that is not housing. The three largest years in the record are FY2024, FY2025, FY2026; FY2024 alone added $23,162,670. The recent three-year average is 3.3 times the eleven-year average before it.",
+     "figure": "multiple",
+     "figures": {
+      "avg_before": {
+       "text": "$5,803,101",
+       "unit": "",
+       "value": 5803101
+      },
+      "avg_recent": {
+       "text": "$19,421,113",
+       "unit": "of new non-residential value a year, FY2024\u2013FY2026",
+       "value": 19421113
+      },
+      "best": {
+       "text": "$23,162,670",
+       "unit": "",
+       "value": 23162670
+      },
+      "best_fy": {
+       "text": "FY2024",
+       "unit": "",
+       "value": 2024
+      },
+      "fy_r0": {
+       "text": "FY2024",
+       "unit": "",
+       "value": 2024
+      },
+      "fy_r1": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "multiple": {
+       "text": "3.3",
+       "unit": "times the FY2013\u2013FY2023 pace of non-residential new growth",
+       "value": 3.346678654406303
+      },
+      "top3": {
+       "text": "FY2024, FY2025, FY2026",
+       "unit": "",
+       "value": [
+        2024,
+        2025,
+        2026
+       ]
+      },
+      "years": {
+       "text": "24",
+       "unit": "",
+       "value": 24
+      }
+     },
+     "id": "non-residential-building-stepped-up",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "WHAT was built, or where. The file carries a dollar of certified value and no parcel, permit or project. Nor whether the pace holds: three years is the whole of the step. And personal property (equipment, utility plant) is inside the non-residential figure with the buildings.",
+     "see": [
+      {
+       "label": "What commercial growth would have to look like",
+       "slug": "/commercial-development"
+      },
+      {
+       "label": "The dials",
+       "slug": "/development"
+      }
+     ],
+     "so_what": "$19,421,113 a year against $5,803,101: the three best years for building that is not housing on record."
+    },
+    {
+     "basis": "DLS assessed values by class, Lunenburg rows, the CIP share as printed; the FY2023 residential step is FY2023 over FY2022 residential value.",
+     "bearing": "sizes",
+     "claim": "Business is 8.7% of the tax base in FY2026; 10.6% at the FY2002 peak, 7.3% at the FY2023 low.",
+     "detail": "One tax rate, so a class\u2019s share of assessed value is its share of the bill. Commercial, industrial and personal property are $212,343,140 of $2,437,942,740 in FY2026. In FY2023 residential value was revalued up 23% in a single year and business\u2019s share fell to 7.3% with no business lost; the share is a ratio and the denominator is mostly homes.",
+     "figure": "share_now",
+     "figures": {
+      "cip_now": {
+       "text": "$212,343,140",
+       "unit": "",
+       "value": 212343140
+      },
+      "fy_low": {
+       "text": "FY2023",
+       "unit": "",
+       "value": 2023
+      },
+      "fy_now": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "fy_peak": {
+       "text": "FY2002",
+       "unit": "",
+       "value": 2002
+      },
+      "res_reval": {
+       "text": "23%",
+       "unit": "",
+       "value": 23.330098282982583
+      },
+      "share_low": {
+       "text": "7.3%",
+       "unit": "",
+       "value": 7.29
+      },
+      "share_now": {
+       "text": "8.7%",
+       "unit": "of assessed value that is commercial, industrial or personal property, FY2026",
+       "value": 8.71
+      },
+      "share_peak": {
+       "text": "10.6%",
+       "unit": "",
+       "value": 10.57
+      },
+      "total_now": {
+       "text": "$2,437,942,740",
+       "unit": "",
+       "value": 2437942740
+      }
+     },
+     "id": "business-share-of-the-base",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Whether a larger business share would lower anybody\u2019s bill. Proposition 2\u00bd sets what the town collects; a share moves who owes what part of it. The crisis page prices that separately.",
+     "see": [
+      {
+       "label": "Who pays the tax base, and where it is heading",
+       "slug": "/development"
+      }
+     ],
+     "so_what": "The share moves with home prices more than with building: the FY2023 low was a 23% home revaluation."
+    },
+    {
+     "basis": "DLS assessed values by class, Lunenburg rows, commercial plus industrial, as printed.",
+     "bearing": "sizes",
+     "claim": "Business property value: +$39,440,598 in four years to FY2026, +$37,084,402 in the 20 before.",
+     "detail": "Commercial plus industrial assessed value: $62,702,200 in FY2002, $99,786,602 in FY2022, $139,227,200 in FY2026. Personal property is left out here because it is equipment and utility plant, not buildings.",
+     "figure": "step_add",
+     "figures": {
+      "ci_first": {
+       "text": "$62,702,200",
+       "unit": "",
+       "value": 62702200
+      },
+      "ci_last": {
+       "text": "$139,227,200",
+       "unit": "",
+       "value": 139227200
+      },
+      "ci_step": {
+       "text": "$99,786,602",
+       "unit": "",
+       "value": 99786602
+      },
+      "fy_first": {
+       "text": "FY2002",
+       "unit": "",
+       "value": 2002
+      },
+      "fy_last": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "fy_step": {
+       "text": "FY2022",
+       "unit": "",
+       "value": 2022
+      },
+      "long_add": {
+       "text": "$37,084,402",
+       "unit": "",
+       "value": 37084402
+      },
+      "long_pct": {
+       "text": "59%",
+       "unit": "",
+       "value": 59.14370149691717
+      },
+      "span": {
+       "text": "20",
+       "unit": "",
+       "value": 20
+      },
+      "step_add": {
+       "text": "$39,440,598",
+       "unit": "of commercial and industrial value added, FY2022 to FY2026",
+       "value": 39440598
+      },
+      "step_pct": {
+       "text": "40%",
+       "unit": "",
+       "value": 39.52494343879953
+      }
+     },
+     "id": "commercial-value-long-run",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "How much of the step is construction and how much is the assessors revaluing what stood. The new-growth series above is the part that was built; the rest of the step is revaluation, and the two are not reconciled here.",
+     "see": [
+      {
+       "label": "The report this feeds",
+       "slug": "/commercial-development"
+      }
+     ],
+     "so_what": "Up 40% in four years after 59% over 20. Part built, part revalued; this series cannot split them."
+    }
+   ],
+   "count": 3,
+   "data": "/data/commercial-base.json",
+   "generator": "scripts/build_commercial_base.py",
    "id": "growth",
    "title": "Commercial development \u2014 what it would have to look like",
    "url": "/commercial-development"
@@ -16638,21 +16922,253 @@
     }
    ],
    "title": "The households \u2014 who they are, and what they pay"
+  },
+  {
+   "about": "The two revenue answers the crisis page names, each priced by the projection: what an override does and for how long, and what commercial development would have to look like to do the same job.",
+   "conclusions": 3,
+   "key": "levers",
+   "reports": [
+    {
+     "about": "The commercial base as the state certifies it, FY2002 to FY2026: how big it is, what share of the town it is, and how much of it was built rather than revalued.",
+     "conclusions": [
+      {
+       "basis": "DLS new growth file, Lunenburg rows: total new growth value minus residential new growth value, by fiscal year. Averages over FY2024\u2013FY2026 and the eleven years before them.",
+       "bearing": "sizes",
+       "claim": "Non-residential new growth ran 3.3 times its prior eleven-year pace in FY2024\u2013FY2026.",
+       "detail": "New growth is what the assessors certify was added to the tax rolls, valued, and the state publishes it split residential against all classes. Total minus residential is building that is not housing. The three largest years in the record are FY2024, FY2025, FY2026; FY2024 alone added $23,162,670. The recent three-year average is 3.3 times the eleven-year average before it.",
+       "figure": "multiple",
+       "figures": {
+        "avg_before": {
+         "text": "$5,803,101",
+         "unit": "",
+         "value": 5803101
+        },
+        "avg_recent": {
+         "text": "$19,421,113",
+         "unit": "of new non-residential value a year, FY2024\u2013FY2026",
+         "value": 19421113
+        },
+        "best": {
+         "text": "$23,162,670",
+         "unit": "",
+         "value": 23162670
+        },
+        "best_fy": {
+         "text": "FY2024",
+         "unit": "",
+         "value": 2024
+        },
+        "fy_r0": {
+         "text": "FY2024",
+         "unit": "",
+         "value": 2024
+        },
+        "fy_r1": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "multiple": {
+         "text": "3.3",
+         "unit": "times the FY2013\u2013FY2023 pace of non-residential new growth",
+         "value": 3.346678654406303
+        },
+        "top3": {
+         "text": "FY2024, FY2025, FY2026",
+         "unit": "",
+         "value": [
+          2024,
+          2025,
+          2026
+         ]
+        },
+        "years": {
+         "text": "24",
+         "unit": "",
+         "value": 24
+        }
+       },
+       "id": "non-residential-building-stepped-up",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "WHAT was built, or where. The file carries a dollar of certified value and no parcel, permit or project. Nor whether the pace holds: three years is the whole of the step. And personal property (equipment, utility plant) is inside the non-residential figure with the buildings.",
+       "see": [
+        {
+         "label": "What commercial growth would have to look like",
+         "slug": "/commercial-development"
+        },
+        {
+         "label": "The dials",
+         "slug": "/development"
+        }
+       ],
+       "so_what": "$19,421,113 a year against $5,803,101: the three best years for building that is not housing on record."
+      },
+      {
+       "basis": "DLS assessed values by class, Lunenburg rows, the CIP share as printed; the FY2023 residential step is FY2023 over FY2022 residential value.",
+       "bearing": "sizes",
+       "claim": "Business is 8.7% of the tax base in FY2026; 10.6% at the FY2002 peak, 7.3% at the FY2023 low.",
+       "detail": "One tax rate, so a class\u2019s share of assessed value is its share of the bill. Commercial, industrial and personal property are $212,343,140 of $2,437,942,740 in FY2026. In FY2023 residential value was revalued up 23% in a single year and business\u2019s share fell to 7.3% with no business lost; the share is a ratio and the denominator is mostly homes.",
+       "figure": "share_now",
+       "figures": {
+        "cip_now": {
+         "text": "$212,343,140",
+         "unit": "",
+         "value": 212343140
+        },
+        "fy_low": {
+         "text": "FY2023",
+         "unit": "",
+         "value": 2023
+        },
+        "fy_now": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "fy_peak": {
+         "text": "FY2002",
+         "unit": "",
+         "value": 2002
+        },
+        "res_reval": {
+         "text": "23%",
+         "unit": "",
+         "value": 23.330098282982583
+        },
+        "share_low": {
+         "text": "7.3%",
+         "unit": "",
+         "value": 7.29
+        },
+        "share_now": {
+         "text": "8.7%",
+         "unit": "of assessed value that is commercial, industrial or personal property, FY2026",
+         "value": 8.71
+        },
+        "share_peak": {
+         "text": "10.6%",
+         "unit": "",
+         "value": 10.57
+        },
+        "total_now": {
+         "text": "$2,437,942,740",
+         "unit": "",
+         "value": 2437942740
+        }
+       },
+       "id": "business-share-of-the-base",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Whether a larger business share would lower anybody\u2019s bill. Proposition 2\u00bd sets what the town collects; a share moves who owes what part of it. The crisis page prices that separately.",
+       "see": [
+        {
+         "label": "Who pays the tax base, and where it is heading",
+         "slug": "/development"
+        }
+       ],
+       "so_what": "The share moves with home prices more than with building: the FY2023 low was a 23% home revaluation."
+      },
+      {
+       "basis": "DLS assessed values by class, Lunenburg rows, commercial plus industrial, as printed.",
+       "bearing": "sizes",
+       "claim": "Business property value: +$39,440,598 in four years to FY2026, +$37,084,402 in the 20 before.",
+       "detail": "Commercial plus industrial assessed value: $62,702,200 in FY2002, $99,786,602 in FY2022, $139,227,200 in FY2026. Personal property is left out here because it is equipment and utility plant, not buildings.",
+       "figure": "step_add",
+       "figures": {
+        "ci_first": {
+         "text": "$62,702,200",
+         "unit": "",
+         "value": 62702200
+        },
+        "ci_last": {
+         "text": "$139,227,200",
+         "unit": "",
+         "value": 139227200
+        },
+        "ci_step": {
+         "text": "$99,786,602",
+         "unit": "",
+         "value": 99786602
+        },
+        "fy_first": {
+         "text": "FY2002",
+         "unit": "",
+         "value": 2002
+        },
+        "fy_last": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "fy_step": {
+         "text": "FY2022",
+         "unit": "",
+         "value": 2022
+        },
+        "long_add": {
+         "text": "$37,084,402",
+         "unit": "",
+         "value": 37084402
+        },
+        "long_pct": {
+         "text": "59%",
+         "unit": "",
+         "value": 59.14370149691717
+        },
+        "span": {
+         "text": "20",
+         "unit": "",
+         "value": 20
+        },
+        "step_add": {
+         "text": "$39,440,598",
+         "unit": "of commercial and industrial value added, FY2022 to FY2026",
+         "value": 39440598
+        },
+        "step_pct": {
+         "text": "40%",
+         "unit": "",
+         "value": 39.52494343879953
+        }
+       },
+       "id": "commercial-value-long-run",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "How much of the step is construction and how much is the assessors revaluing what stood. The new-growth series above is the part that was built; the rest of the step is revaluation, and the two are not reconciled here.",
+       "see": [
+        {
+         "label": "The report this feeds",
+         "slug": "/commercial-development"
+        }
+       ],
+       "so_what": "Up 40% in four years after 59% over 20. Part built, part revalued; this series cannot split them."
+      }
+     ],
+     "count": 3,
+     "data": "/data/commercial-base.json",
+     "generator": "scripts/build_commercial_base.py",
+     "id": "growth",
+     "title": "Commercial development \u2014 what it would have to look like",
+     "url": "/commercial-development"
+    }
+   ],
+   "title": "The town\u2019s levers \u2014 an override, and growth"
   }
  ],
  "totals": {
   "bearing": {
    "lever": 19,
-   "sizes": 87,
+   "sizes": 90,
    "unclassified": 0
   },
-  "conclusions": 106,
-  "document_words": 80083,
+  "conclusions": 109,
+  "document_words": 80145,
   "documents": 17,
   "hypothesis": 1,
-  "measured": 105,
+  "measured": 108,
   "reports": 31,
-  "with_conclusions": 29,
-  "without_conclusions": 2
+  "with_conclusions": 30,
+  "without_conclusions": 1
  }
 }

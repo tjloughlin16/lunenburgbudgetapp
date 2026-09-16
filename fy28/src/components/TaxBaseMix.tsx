@@ -4,7 +4,15 @@ import {
 import { MODEL, usdShort } from '../model/engine'
 
 const T = MODEL.taxBase
-const F = T.fy23
+const F = T.base
+const signedPct = (x: number) => `${x >= 0 ? 'rose' : 'fell'} ${Math.abs(x).toFixed(x % 1 === 0 ? 0 : 1)}%`
+// The latest certified step, by class, read off the state's series -- never typed.
+const STEP = Object.fromEntries(T.valueByClass.map(v => [v.cls, v])) as Record<string, (typeof T.valueByClass)[number]>
+const RES_STEP = STEP['Residential'], COM_STEP = STEP['Commercial'], IND_STEP = STEP['Industrial']
+// What the town actually added in the anchor year, split as the assessors certified it.
+const NEW_RES = F.newGrowthResidentialValue
+const NEW_CIP = F.newGrowthValue - F.newGrowthResidentialValue
+const NEW_RES_SHARE = NEW_RES / F.newGrowthValue
 
 /** Who owns the tax base, and where it is heading.
  *
@@ -16,8 +24,9 @@ const F = T.fy23
  *  Appreciation is deliberately not modeled: if both classes appreciate at the same
  *  rate it cancels out of a share calculation entirely. What moves the mix is new
  *  construction in each class, which is what this chart takes as its two inputs. When
- *  homes appreciate FASTER than commercial — as they did 23.3% to -0.25% in FY23 — the
- *  mix shifts toward homeowners no matter what gets built, which is the note below. */
+ *  homes appreciate FASTER than commercial — as they did in FY23, 23% against a fall —
+ *  the mix shifts toward homeowners no matter what gets built. The note below states
+ *  the latest certified step from the data, whichever way it went. */
 export function TaxBaseMix({ commercialPerYear, homesPerYear, setHomesPerYear }: {
   commercialPerYear: number
   homesPerYear: number
@@ -40,8 +49,8 @@ export function TaxBaseMix({ commercialPerYear, homesPerYear, setHomesPerYear }:
 
   // What the town has actually been doing, for contrast.
   const actual = (() => {
-    const res = F.residentialValue + T.fy23NewValue * 10
-    const cip = F.cipValue
+    const res = F.residentialValue + NEW_RES * 10
+    const cip = F.cipValue + NEW_CIP * 10
     return ((cip / (res + cip)) * 100).toFixed(1)
   })()
 
@@ -78,9 +87,8 @@ export function TaxBaseMix({ commercialPerYear, homesPerYear, setHomesPerYear }:
           value={homesPerYear} onChange={e => setHomesPerYear(Number(e.target.value))}
           className="w-full" />
         <p className="text-[10px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
-          Defaulted to {usdShort(T.fy23NewValue)} — the town&rsquo;s entire FY23 new growth,
-          which was effectively all residential, because commercial, industrial and
-          personal property values all fell that year.
+          Defaulted to {usdShort(NEW_RES)} &mdash; the residential part of the town&rsquo;s FY{F.fy} new growth,
+          {(NEW_RES_SHARE * 100).toFixed(0)}% of the {usdShort(F.newGrowthValue)} the assessors certified that year.
         </p>
       </div>}
 
@@ -116,22 +124,21 @@ export function TaxBaseMix({ commercialPerYear, homesPerYear, setHomesPerYear }:
 
       <p className="text-[13px] leading-relaxed mt-3 pt-3 border-t"
         style={{ color: 'var(--text-secondary)', borderColor: 'var(--grid)' }}>
-        <strong>Yes — but only if business outgrows housing, and today it does not.</strong>{' '}
+        <strong>Yes &mdash; but only if business outgrows housing{Number(actual) > now.commercial ? ', and at the latest certified pace it just does' : ', and at the latest certified pace it does not'}.</strong>{' '}
         Lunenburg has a single tax rate, so a class&rsquo;s share of the taxable base is
         exactly its share of the tax bill. Homeowners carry{' '}
         <strong>{now.residential.toFixed(1)}%</strong> of it. Carry on at the town&rsquo;s
-        actual recent pace &mdash; {usdShort(T.fy23NewValue)} of new value a year,
-        effectively all of it housing &mdash; and business&rsquo;s share <em>falls</em> to
-        about <strong>{actual}%</strong> in ten years. Homeowners end up carrying more, not
-        less.
+        latest certified pace &mdash; {usdShort(F.newGrowthValue)} of new value in FY{F.fy}, {(NEW_RES_SHARE * 100).toFixed(0)}% of it housing &mdash;
+        and business&rsquo;s share {Number(actual) > now.commercial ? <>edges <em>up</em></> : <><em>falls</em></>} to
+        about <strong>{actual}%</strong> in ten years{Number(actual) > now.commercial ? ', a shift of well under a point' : '. Homeowners end up carrying more, not less'}.
       </p>
       <p className="text-[12px] leading-relaxed mt-2" style={{ color: 'var(--text-muted)' }}>
         Two things this chart does not do. It ignores appreciation, because if homes and
         businesses appreciate at the same rate it cancels out of a share calculation
-        &mdash; but they have not: residential value rose <strong>23.3%</strong> in FY23
-        while commercial fell <strong>0.25%</strong> and industrial fell{' '}
-        <strong>3.2%</strong>, which pushes the mix toward homeowners regardless of what
-        gets built. And a smaller share is not a smaller bill: Proposition 2&frac12; sets
+        &mdash; and they do not always: in FY{RES_STEP.toFy} residential value {signedPct(RES_STEP.pct)}
+        while commercial {signedPct(COM_STEP.pct)} and industrial {signedPct(IND_STEP.pct)}, and a year
+        where homes outrun business pushes the mix toward homeowners regardless of what
+        gets built (FY23 was one: homes up 23%, every other class down). And a smaller share is not a smaller bill: Proposition 2&frac12; sets
         what the town collects, so a shifting mix changes who owes what portion of a
         growing total, not what lands in your mailbox.
       </p>
