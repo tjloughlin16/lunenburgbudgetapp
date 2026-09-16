@@ -132,6 +132,13 @@ CATEGORIES = [
         ('what the votes decided', [
             'fy27-and-the-override', 'fy27-cut-reconciliation',
         ]),
+        # THE LEVERS. TJ, 16 September 2026: "we need individual reports for the big
+        # concepts in the budget crisis" -- for the town, with the crisis page keeping
+        # the high level. Overrides moved here from Go deeper; commercial development
+        # was a room on the crisis page and a board of dials, and is a report now.
+        ('the levers — an override, and growth', [
+            'override', 'growth',
+        ]),
     ]),
     # A FOURTH SHELF, AND THE ARGUMENT FOR IT.
     #
@@ -277,6 +284,14 @@ DATA_DIR = os.path.join(ROOT, 'fy28', 'public', 'data')
 # prints which pages fell back to their own title, so a new page is visible rather than
 # silently described by nothing.
 ABOUT_PAGES = {
+    'override':
+        'What an override actually is — permanent, compounding, a ceiling rather than a '
+        'bill — what one of a given size buys and for how long, and why a school-only '
+        'question is worth nearly twice a townwide one.',
+    'growth':
+        'What “grow our way out of it” would have to look like: the new commercial value '
+        'a year that holds the gap, in buildings, against the best year the town has ever '
+        'had — and the share of each new dollar the schools actually keep.',
     'sportsmoney':
         'Athletics with both sides of the money visible at once — the town’s '
         'appropriation, the fee-funded revolving fund, and three district documents that '

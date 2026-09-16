@@ -51,6 +51,7 @@ import { Enrollment } from './pages/Enrollment'
 import { CircuitBreaker } from './pages/CircuitBreaker'
 import { AdvancedPlacement } from './pages/AdvancedPlacement'
 import { Solutions } from './pages/Solutions'
+import { CommercialDevelopment } from './pages/CommercialDevelopment'
 // LOCAL ONLY. Not a Tab, in no route table, in no sitemap, prerendered nowhere -- and the
 // reference below sits inside `import.meta.env.DEV`, which is replaced with `false` in a
 // production build, so the module is eliminated from the bundle. See pages/BlogDrafts.tsx
@@ -73,7 +74,7 @@ import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
-import { LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle } from './lib/title'
 import { track } from './lib/track'
@@ -97,17 +98,9 @@ import { ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
  *  is not sure anybody wants: a quiet index entry is the right shape for a derivation and
  *  the wrong shape for the conclusion. Somebody who arrives already knowing the problem —
  *  which by now is most of this town — should be one click from what would fix it. */
-const CTAS: { id: Tab; label: string; short: string; glyph: string; sub: string }[] = [
-  { id: 'solved', label: 'What would fix it', short: 'What fixes it', glyph: '\u2713',
-    sub: 'Combinations that keep the gap shut — for five years, ten, a generation, or permanently' },
-  { id: 'curve', label: 'Bend the curve', short: 'The curve', glyph: '\u2197',
-    sub: 'Cut things and watch the rate not move; then change a rate and watch it bend' },
-  { id: 'adjust', label: 'Build your own budget', short: 'Build a budget', glyph: '\u2699',
-    sub: 'The interactive one — every dial that moves the gap, on one page' },
-]
 
 // Fails the dev build if a page is about to be drawn twice in one bar.
-assertNoDuplicateNav(CTAS.map(c => c.id))
+assertNoDuplicateNav(BOARDS.map(c => c.id))
 
 /** The chapter strip is gone.
  *
@@ -416,22 +409,12 @@ export default function App() {
               Sources
             </Go>
 
-            {/* The two boards, only where they mean something. On the money, database and
-                assistant areas they are an invitation to leave. */}
-            {area === 'crisis' && CTAS.map(c => (
-              <Go key={c.id} to={c.id} title={c.sub}
-                aria-current={tab === c.id ? 'page' : undefined}
-                className="cta flex items-center gap-1.5 text-xs font-bold
-                           px-2.5 py-1.5 rounded whitespace-nowrap shrink-0
-                           transition-opacity hover:opacity-90"
-                style={tab === c.id
-                  ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
-                  : undefined}>
-                <span aria-hidden="true">{c.glyph}</span>
-                <span className="hidden sm:inline">{c.label}</span>
-                <span className="sm:hidden">{c.short}</span>
-              </Go>
-            ))}
+            {/* THE THREE BOARDS ARE NOT IN THE HEADER ANY MORE. With four area tabs, Search
+                and Sources they made nine items in one strip, scrolling sideways on a
+                laptop. TJ, 16 September 2026: "there are a LOT of links on the header. its
+                overwhelming." They are drawn where they mean something instead -- the exits
+                under the crisis wedge, the foot of /solutions, and Go deeper. CTAS is kept
+                as BOARDS in routes.ts, the list of what they are. */}
           </div>
         </nav>
         {tab === 'context' && (
@@ -523,6 +506,7 @@ export default function App() {
       {tab === 'circuitbreaker' && <CircuitBreaker />}
       {tab === 'ap' && <AdvancedPlacement />}
       {tab === 'solutions' && <Solutions />}
+      {tab === 'growth' && <CommercialDevelopment />}
       {tab === 'attrition' && <WhichGradesStudentsLeave />}
       {tab === 'montytech' && <MontyTech />}
       {tab === 'addsup' && <WhatItAllAddsUpTo />}

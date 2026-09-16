@@ -1187,7 +1187,7 @@
    "not_shown": "Whether any of this is about children. An FTE count is staff: not a count of students with disabilities, not one-to-one assignments, not hours delivered. And DESE counts staff paid from grants, circuit breaker reimbursement and revolving funds alongside those the town appropriates, so this series cannot say who pays for the rise \u2014 DESE\u2019s End of Year Financial Report, which separates spending by fund, is what would.",
    "report": "parastaff",
    "report_title": "The paraprofessionals",
-   "report_url": "/the-paraprofessionals",
+   "report_url": "/paras",
    "see": [
     {
      "label": "what special education costs",
@@ -2196,7 +2196,20 @@
    "so_what": "The bottom line is dependable and any single row in it is not. A budget is a plan, not a promise."
   }
  ],
- "not_covered": [],
+ "not_covered": [
+  {
+   "id": "override",
+   "title": "Overrides",
+   "url": "/overrides",
+   "why": "Its figures are the projection\u2019s, computed by the page from the model rather than published as a payload, so nothing on this page speaks for it yet. Read the report itself."
+  },
+  {
+   "id": "growth",
+   "title": "Commercial development \u2014 what it would have to look like",
+   "url": "/commercial-development",
+   "why": "Its figures are the projection\u2019s, computed by the page from the model rather than published as a payload, so nothing on this page speaks for it yet. Read the report itself."
+  }
+ ],
  "reports": [
   {
    "about": "Who lives in Lunenburg \u2014 how many people, how old, in how many households, owning or renting, and on what income \u2014 from the Census Bureau\u2019s five-year estimates, every figure with its margin of error.",
@@ -2794,6 +2807,26 @@
    "id": "owners",
    "title": "Lunenburg\u2019s homes and the tax bill",
    "url": "/homes-and-taxes"
+  },
+  {
+   "about": "What an override actually is \u2014 permanent, compounding, a ceiling rather than a bill \u2014 what one of a given size buys and for how long, and why a school-only question is worth nearly twice a townwide one.",
+   "conclusions": [],
+   "count": 0,
+   "data": null,
+   "generator": null,
+   "id": "override",
+   "title": "Overrides",
+   "url": "/overrides"
+  },
+  {
+   "about": "What \u201cgrow our way out of it\u201d would have to look like: the new commercial value a year that holds the gap, in buildings, against the best year the town has ever had \u2014 and the share of each new dollar the schools actually keep.",
+   "conclusions": [],
+   "count": 0,
+   "data": null,
+   "generator": null,
+   "id": "growth",
+   "title": "Commercial development \u2014 what it would have to look like",
+   "url": "/commercial-development"
   },
   {
    "about": "How many Lunenburg children have an individual education programme, from the count DESE publishes rather than from any dollar figure.",
@@ -5461,7 +5494,7 @@
    "generator": "scripts/build_staffing_charts.py",
    "id": "parastaff",
    "title": "The paraprofessionals",
-   "url": "/the-paraprofessionals"
+   "url": "/paras"
   },
   {
    "about": "How many classes ran in each subject in Lunenburg\u2019s schools, year by year \u2014 the one measurement in this archive that counts what was taught rather than who was employed to teach it.",
@@ -12048,7 +12081,7 @@
      "generator": "scripts/build_staffing_charts.py",
      "id": "parastaff",
      "title": "The paraprofessionals",
-     "url": "/the-paraprofessionals"
+     "url": "/paras"
     },
     {
      "about": "How many classes ran in each subject in Lunenburg\u2019s schools, year by year \u2014 the one measurement in this archive that counts what was taught rather than who was employed to teach it.",
@@ -16108,8 +16141,8 @@
   "documents": 17,
   "hypothesis": 1,
   "measured": 102,
-  "reports": 28,
+  "reports": 30,
   "with_conclusions": 28,
-  "without_conclusions": 0
+  "without_conclusions": 2
  }
 }

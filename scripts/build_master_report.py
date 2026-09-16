@@ -164,8 +164,15 @@ def build():
             # the point of this list.
             holes.append({
                 'id': rep['id'], 'title': rep['title'], 'url': rep['url'],
+                # Three reasons a routed report has no conclusions here, told apart
+                # rather than lumped: the sped chooser; a report whose figures are the
+                # projection's own, rendered by the page (overrides, growth); a report
+                # whose generator has not been given conclusions yet.
                 'why': ('This is a chooser rather than a report — its four reports each '
-                        'carry their own conclusions.') if not rep.get('data') else
+                        'carry their own conclusions.') if rep['id'] == 'sped' else
+                       ('Its figures are the projection’s, computed by the page from the '
+                        'model rather than published as a payload, so nothing on this page '
+                        'speaks for it yet. Read the report itself.') if not rep.get('data') else
                        ('Its generator does not yet publish conclusions, so nothing on '
                         'this page speaks for it. Read the report itself.'),
             })

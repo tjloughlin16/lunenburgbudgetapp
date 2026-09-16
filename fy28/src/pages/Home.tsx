@@ -10,6 +10,7 @@ import { usdShort } from '../model/engine'
 import { LEVEL_SERVICE } from '../model/walk'
 import { DEFAULT_SCENARIO, nextYear, run } from '../model/rates'
 import { BoardsThisWeek, BoardsStrip } from '../components/BoardsThisWeek'
+import { RecentMeetings } from '../components/RecentMeetings'
 
 /** The front page: the top-level doors and nothing else.
  *
@@ -39,33 +40,20 @@ import { BoardsThisWeek, BoardsStrip } from '../components/BoardsThisWeek'
  *     outcome.)
  */
 
-/** WHAT WAS SAID, the standing entrance. The last three recorded meetings with our
- *  minutes, and the count. The contextual link is on each board's row above; this is
- *  for somebody who did not come for a particular board. */
-function HomeWhatWasSaid() {
-  const { d } = useReport<{ counts: { meetings: number }; meetings: { slug: string; board: string; date: string; counts: Record<string, number>; headline: string; summary: string }[] }>('recording-minutes.json')
-  if (!d || !d.meetings.length) return null
-  const fmt = (iso: string) => { const [y, m, dd] = iso.split('-').map(Number); return new Date(y, m - 1, dd).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }
+/** RECENT MEETINGS -- what we have for each, whatever that is. Replaces "What was said",
+ *  which drew only the meetings that had our minutes and so could not show last night's
+ *  meeting until its minutes were written. See components/RecentMeetings.tsx. */
+function HomeRecentMeetings() {
+  const { d } = useReport<{ counts: { meetings: number } }>('recording-minutes.json')
   return (
-    <section aria-label="What was said">
+    <section aria-label="Recent meetings">
       <div className="flex items-baseline justify-between gap-3 mb-2">
-        <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>What was said</h2>
+        <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Recent meetings</h2>
         <Go to="recorded" className="text-[12px] underline"
-          style={{ color: 'var(--series-cost)' }}>all {d.counts.meetings} meetings &rarr;</Go>
+          style={{ color: 'var(--series-cost)' }}>{d ? `all ${d.counts.meetings} with our minutes` : 'our minutes'} &rarr;</Go>
       </div>
-      <ol className="space-y-2">
-        {d.meetings.slice(0, 3).map(m => (
-          <li key={m.slug} className="lg:card lg:px-3 lg:py-2.5 py-2" style={{ borderTop: '1px solid var(--grid)' }}>
-            <a className="text-[13px] font-semibold underline" href={`/meeting-minutes/${m.slug}`} style={{ color: 'var(--series-cost)' }}>{m.board}, {fmt(m.date)}</a>
-            <span className="text-[11.5px] ml-2" style={{ color: 'var(--text-muted)' }}>{m.counts.votes} vote{m.counts.votes === 1 ? '' : 's'}{m.counts.transfers ? ` · ${m.counts.transfers} transfer${m.counts.transfers === 1 ? '' : 's'}` : ''}</span>
-            {/* THE HEADLINE, not the summary. TJ: "not wordy, a high level summary, and
-                definitely include the most important thing first." One sentence, the
-                consequential thing first, written for exactly this card. */}
-            <p className="text-[13px] mt-1 leading-snug">{m.headline || m.summary}</p>
-          </li>
-        ))}
-      </ol>
-      <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>Our minutes, from the recordings — every item links to the video at that moment.</p>
+      <RecentMeetings days={7} min={3} compact />
+      <p className="text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>The last seven days of the three boards, with whatever exists for each: the recording, the agenda, the town&rsquo;s minutes, ours. A headline appears once our minutes are written.</p>
     </section>
   )
 }
@@ -266,7 +254,7 @@ export function Home() {
             Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
           </p>
         </section>
-        <HomeWhatWasSaid />
+        <HomeRecentMeetings />
         <HomeLatest />
       </div>
       </div>

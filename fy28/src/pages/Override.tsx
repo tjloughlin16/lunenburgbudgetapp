@@ -1,6 +1,6 @@
 import { usd, usdShort } from '../model/engine'
 import { FullVersion } from '../components/FullVersion'
-import { ShortVersion } from '../components/report'
+import { MoreReports, ShortVersion } from '../components/report'
 import type { Tab } from '../routes'
 import { Go } from '../lib/nav'
 import {
@@ -10,6 +10,7 @@ import { YearLedger } from '../components/TheRaise'
 import { OverrideTreadmill, OverrideSizing } from '../components/LevelVsSlope'
 import { Section, Note } from '../components/primitives'
 
+const TAB: Tab = 'override'
 const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`
 const N = nextYear()
 /** The size the rest of the site uses, so the pages agree. */
@@ -181,6 +182,7 @@ export function Override() {
         worse.
       </Note>
       </FullVersion>
+      <MoreReports here={TAB} />
       </div>
     </div>
   )

@@ -39,6 +39,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'circuitbreaker'
   | 'ap'
   | 'solutions'
+  | 'growth'
   | 'bythenumbers'
   | 'owners'
   // The middle of three lengths. One tab for all the posts: the slug is the second path
@@ -313,6 +314,8 @@ export const SLUG: Record<Tab, string> = {
   // UNLISTED. Reached only by somebody given the address. See UNLISTED below; give it
   // no alias.
   solutions: 'solutions',
+  // The commercial development REPORT. `/development` stays the board of dials.
+  growth: 'commercial-development',
   peers: 'what-other-districts-spend',
   // WHO LIVES HERE, before any argument about what the town should spend. The slug is
   // the phrase people already use for a page of facts about a place -- "Lunenburg by the
@@ -437,6 +440,7 @@ const ALIASES: Record<string, Tab> = {
   // The word a board member types. `fix` and `options` are what the page is asked for in
   // meetings; accepted, never generated.
   fix: 'solutions', options: 'solutions', 'what-to-do': 'solutions',
+  growth: 'growth', 'new-growth': 'growth', 'commercial-growth': 'growth', 'grow-our-way-out': 'growth',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
   // The words somebody types looking for the synthesis. `conclusions` and `findings` are
   // what this project calls the thing internally and are exactly the forms a reader who
@@ -723,6 +727,7 @@ export const LABEL: Record<Tab, string> = {
   // Short enough for the crisis bar and the breadcrumb; the page's own title is the long
   // form. The area label is the context, this is the answer to it.
   solutions: 'Solutions',
+  growth: 'Commercial development — what it would have to look like',
   peers: 'What other districts spend, for each pupil',
   bythenumbers: 'Lunenburg by the numbers — who lives here',
   owners: 'Lunenburg’s homes and the tax bill',
@@ -738,7 +743,11 @@ export const LABEL: Record<Tab, string> = {
  *  its header; everything else is behind the one door. */
 export const PARENT: Partial<Record<Tab, Tab>> = {
   answers: 'deeper', money: 'deeper', context: 'deeper', why: 'deeper',
-  override: 'deeper', priorities: 'deeper', development: 'deeper', solved: 'deeper',
+  priorities: 'deeper', development: 'deeper', solved: 'deeper',
+  // TJ, 16 September 2026: "we need individual reports for the big concepts in the
+  // budget crisis." Overrides was a chapter behind Go deeper; it is a report on the
+  // town's shelf now, and the crisis page keeps the high level and links here.
+  override: 'reports',
   athletics: 'context',
   rates: 'deeper',
   reports: 'themoney',
@@ -781,6 +790,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   circuitbreaker: 'reports',
   ap: 'reports',
   solutions: 'walk',
+  growth: 'reports',
   analysis: 'reports',
   required: 'reports',
   agents: 'sources',
@@ -917,9 +927,10 @@ export const AREA_HOME: Record<Area, Tab> = {
 
 const AREA_OF: Partial<Record<Tab, Area>> = {
   walk: 'crisis', deeper: 'crisis', answers: 'crisis', money: 'crisis', context: 'crisis',
-  why: 'crisis', curve: 'crisis', override: 'crisis', priorities: 'crisis',
+  why: 'crisis', curve: 'crisis', priorities: 'crisis',
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   solutions: 'crisis',
+  override: 'analyses', growth: 'analyses',
   freecash: 'crisis',
   // `money` is now WHERE THE MONEY COMES FROM AND GOES, plus the limits of the record:
   // the flow hub, the two revenue-side pages, what we cannot answer, and the question box.
@@ -1020,7 +1031,9 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // finding in two minutes and then hands the reader on. Somebody who does not yet have a
   // question should meet it before the shelf -- rule 7a applied to a nav bar, the same
   // argument that put `addsup` first.
-  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'sped', 'classsize', 'circuitbreaker',
+  // `owners`, `override` and `growth` are the town's shelf: who owns the homes and what
+  // the bill does, what an override actually is, and what growing out of it would take.
+  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',
@@ -1032,6 +1045,19 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   data: ['database', 'rates'],
   agents: ['ask', 'agents'],
 }
+
+/** THE THREE BOARDS -- what would fix it, bend the curve, build your own budget. They
+ *  were buttons in the crisis header until 16 September 2026 and are now drawn only
+ *  where they mean something (the foot of /solutions, Go deeper, the walkthrough's end).
+ *  Kept as a list so those places agree on what the boards are. */
+export const BOARDS: { id: Tab; label: string; short: string; glyph: string; sub: string }[] = [
+  { id: 'solved', label: 'What would fix it', short: 'What fixes it', glyph: '\u2713',
+    sub: 'Combinations that keep the gap shut — for five years, ten, a generation, or permanently' },
+  { id: 'curve', label: 'Bend the curve', short: 'The curve', glyph: '\u2197',
+    sub: 'Cut things and watch the rate not move; then change a rate and watch it bend' },
+  { id: 'adjust', label: 'Build your own budget', short: 'Build a budget', glyph: '\u2699',
+    sub: 'The interactive one — every dial that moves the gap, on one page' },
+]
 
 /** The area bar and the boards must not draw the same page twice.
  *

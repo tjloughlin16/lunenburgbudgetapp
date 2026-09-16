@@ -1,4 +1,5 @@
 import type { Tab } from '../routes'
+import { RecentMeetings } from '../components/RecentMeetings'
 import { recordedSlugFromPath } from '../routes'
 import { ReportShell, useReport, H2, Body, MoreReports } from '../components/report'
 
@@ -171,6 +172,15 @@ function Index({ d }: { d: Payload }) {
           span from the captions' timestamps, summed by tag per board. A topic with two
           tags is credited to both, so the bars do not sum to the meeting; the share is
           of all topic time. Derived twice over and labelled so. */}
+      {/* THE THING FIRST: the meetings that have happened and have no minutes yet,
+          above everything else, because the most recent meeting is the one a reader
+          came for and until 16 September it was the one this page could not show. */}
+      {!tag && (
+        <section className="mt-8" aria-label="Recent meetings">
+          <H2>The last two weeks, whatever we have</H2>
+          <RecentMeetings days={14} min={3} />
+        </section>
+      )}
       {!tag && d.time_by_board && (
         <section className="mt-8">
           <H2>Where the time goes</H2>

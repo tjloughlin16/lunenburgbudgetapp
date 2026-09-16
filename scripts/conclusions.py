@@ -426,6 +426,17 @@ TOPICS = [
      'Who lives in Lunenburg, and the two reports about money a household hands over, '
      'side by side.',
      ['bythenumbers', 'owners', 'sportsmoney', 'families']),
+    # THE TOWN'S LEVERS, as reports. TJ, 16 September 2026: "we need individual reports
+    # for the big concepts in the budget crisis." Two of them are the crisis page's
+    # revenue answers, priced by the same model: what an override actually is, and what
+    # growing out of it would have to look like. Neither publishes a conclusions payload
+    # yet -- their figures are the model's, rendered by the page -- so the synthesis
+    # page lists them under this heading and carries no card for them until one does.
+    ('levers', 'The town\u2019s levers \u2014 an override, and growth',
+     'The two revenue answers the crisis page names, each priced by the projection: what '
+     'an override does and for how long, and what commercial development would have to '
+     'look like to do the same job.',
+     ['override', 'growth']),
 ]
 
 # Tabs in the Analyses area that are not reports and belong in no topic: the Markdown
