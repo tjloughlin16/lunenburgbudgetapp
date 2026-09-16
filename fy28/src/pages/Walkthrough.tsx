@@ -401,9 +401,12 @@ export function Walkthrough() {
           keep rising.
         </Say>
         <Say>
-          And the housing half, which settles a separate argument: the average home pays
-          about {usd(HOME_PAYS)} a year toward schools and brings about {usd(HOME_COSTS)} of
-          school cost with it. Housing grows the town. It does not close this.
+          And the housing half. The <em>average</em> home pays about {usd(HOME_PAYS)} a
+          year toward schools and brings about {usd(HOME_COSTS)} of school cost with it
+          &mdash; a wash. Whether a <em>new</em> home brings a pupil is a different
+          question, and thirty years of the town&rsquo;s own record say it has not, on
+          net: see <Go to="homestudents" className="underline">Homes and students</Go>,
+          which also prices what a home that brings no pupil is worth against this gap.
         </Say>
       </Room>
 

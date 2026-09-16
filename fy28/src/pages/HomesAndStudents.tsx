@@ -1,7 +1,10 @@
 import { FullVersion } from '../components/FullVersion'
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import type { Tab } from '../routes'
-import { Conclusions, Grain, H2, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport, splitConclusions } from '../components/report'
+import { Conclusions, Grain, H2, Insight, MoreReports, NotEstablished, Provenance, ReportShell, Stat, useReport, splitConclusions } from '../components/report'
+import { Go } from '../lib/nav'
+import { MODEL, usd } from '../model/engine'
+import { LEVEL_SERVICE } from '../model/walk'
 import type { Conclusion, Source } from '../components/report'
 
 const TAB: Tab = 'homestudents'
@@ -23,6 +26,19 @@ type Payload = {
 }
 
 const AXIS = { fontSize: 11, fill: 'var(--text-muted)' }
+
+/** WHAT A HOME THAT BRINGS NO PUPIL IS WORTH. TJ, 16 September 2026, reading the chart:
+ *  "doesnt that mean residential homes DO actually contribute to filling the gap?! ... as
+ *  long as they dont bring students (like historically they seem to not)." The crisis
+ *  page priced the AVERAGE home -- what it pays toward the schools against the school
+ *  cost it brings, a wash -- and the question was always the MARGINAL one. Here: what
+ *  the average home pays toward the schools (the model's tax base), the projected gap
+ *  (the model's), and so how many homes a year at zero pupils would hold it, set against
+ *  what the town actually adds. The condition is in the sentence, every time. */
+const T = MODEL.taxBase
+const HOME_PAYS = Math.round(T.avgHomeValue * (T.rate / 1000) * T.schoolShareOfBudget)
+const HOME_COSTS = Math.round(T.localCostPerPupil / T.homesPerPupil)
+const HOMES_TO_HOLD = Math.ceil(LEVEL_SERVICE.gap / HOME_PAYS)
 const n0 = (n: number) => n.toLocaleString('en-US')
 const signed = (n: number) => (n >= 0 ? '+' : '−') + n0(Math.abs(n))
 
@@ -58,6 +74,17 @@ function Report({ d, first, last }: { d: Payload; first: Row; last: Row }) {
         </div>
         <Grain>{d.grain}</Grain>
         <Conclusions rows={shortRows} />
+        {/* The fourth finding is arithmetic on the model rather than on the two files,
+            so it is drawn here rather than emitted by the generator; every figure in it
+            is the model's or the payload's. */}
+        <div className="grid gap-4 mt-4 md:grid-cols-2">
+          <Insight n={4} figure={n0(HOMES_TO_HOLD)} tone="var(--series-revenue)"
+            headline={<>If a new home brings no pupil &mdash; as the record above suggests &mdash; it pays about {usd(HOME_PAYS)} a year toward the schools. The gap needs about {n0(HOMES_TO_HOLD)} such homes a year; the town adds about {n0(Math.round(d.window5.homes / (d.window5.last_fy - d.window5.first_fy)))}.</>}>
+            The crisis page prices the <em>average</em> home: about {usd(HOME_PAYS)} a year toward the schools against about {usd(HOME_COSTS)} of school cost, a wash. The question a new subdivision raises is the <em>marginal</em> one, and thirty years of this record say the marginal home has not, on net, added a pupil. On that condition every new home is revenue without cost &mdash; and holding the projected {usd(LEVEL_SERVICE.gap)} gap that way takes {n0(HOMES_TO_HOLD)} of them a year at the average value, against the {n0(d.window5.homes)} added over the last {d.window5.last_fy - d.window5.first_fy} years. Real money; the wrong order of magnitude, like <Go to="growth" className="underline">commercial growth</Go>.
+            <span className="block mt-2 text-[12.5px]" style={{ color: 'var(--text-muted)' }}>What it does not show: whether the <em>next</em> home brings a pupil. The record is a town-wide count and a new home with children is invisible in it if an older home loses them the same year.</span>
+            <span className="block mt-2 text-[12.5px]" style={{ color: 'var(--text-secondary)' }}><strong>What would change this:</strong> the ratio chart below turning up &mdash; students per hundred homes rising while homes keep rising. That, and not enrolment alone, is the sign that new homes have started bringing pupils, and the day it appears this finding is withdrawn. It has not appeared in {d.last_fy - d.first_fy} years.</span>
+          </Insight>
+        </div>
       </section>
       <FullVersion>
       {moreRows.length > 0 && (

@@ -81,7 +81,7 @@ export function CommercialDevelopment() {
           </Insight>
           <Insight n={2} figure={`${(SHARE * 100).toFixed(0)}¢`}
             headline={<>The schools keep {(SHARE * 100).toFixed(0)}&cent; of each new-growth dollar. Pricing a development against the school gap without that roughly doubles what it appears to be worth.</>}>
-            New growth goes to the town&rsquo;s levy, and the schools get their share of what the town collects &mdash; {pct(T.schoolShareOfBudget, 0)} of it. And the housing half of the same argument: the average home pays about {usd(HOME_PAYS)} a year toward schools and brings about {usd(HOME_COSTS)} of school cost with it. Housing grows the town; it does not close this.
+            New growth goes to the town&rsquo;s levy, and the schools get their share of what the town collects &mdash; {pct(T.schoolShareOfBudget, 0)} of it. And the housing half: the <em>average</em> home pays about {usd(HOME_PAYS)} a year toward schools and brings about {usd(HOME_COSTS)} of school cost, a wash &mdash; but the town's own record says a <em>new</em> home has not, on net, brought a pupil; what that is worth is on <Go to="homestudents" className="underline">Homes and students</Go>.
           </Insight>
           {BUILD && (
             <Insight n={3} figure={`${BUILD.multiple.toFixed(1)}×`} tone="var(--status-critical)"
