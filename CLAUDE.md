@@ -923,6 +923,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_reading_time.py        # how long every page takes to read, from the build; longest first
     python3 scripts/build_reading_time.py --check     # ...and that no short version grew past its 1,150-word budget, five minutes (a ratchet)
     python3 scripts/build_reading_time.py --strict    # ...and fail every page that declares no short version, once coverage is done
+    python3 scripts/build_short_versions.py      # every page and the points its short version asks a reader to leave with (.md table + .csv)
+    python3 scripts/build_short_versions.py --check
     python3 scripts/build_blog.py                # the blog: ONLY the posts named in PUBLISHED
     python3 scripts/build_blog.py --check        # ...and that no unpublished one is anywhere on the site
     python3 scripts/verify_blog.py               # every sentence on a post, verbatim from the copy

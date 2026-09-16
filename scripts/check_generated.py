@@ -65,6 +65,8 @@ CHECKS = [
     # How long every page is, measured from the build. It changes whenever a page does,
     # which is the point: a page that grew past the table's top row grew on the record.
     ('build_reading_time.py', ['--check']),
+    # Every page and the points its short version carries, read off the same build.
+    ('build_short_versions.py', ['--check']),
     # THE BLOG. `notes/process/CONTENT-CANDIDATES.md` is the content and a PERSON edits
     # it, so this entry fails the moment somebody rewrites an item and the published
     # payload still carries the old wording. It is the only generator here whose input is
