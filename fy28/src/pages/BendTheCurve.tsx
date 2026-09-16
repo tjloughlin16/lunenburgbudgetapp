@@ -5,8 +5,7 @@ import type { Tab } from '../routes'
 import { Go } from '../lib/nav'
 import {
   BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, run, STATE_AID,
-  nextYear, HEADCOUNT, PACKAGES,
-} from '../model/rates'
+  nextYear, HEADCOUNT, PACKAGES, ILLUSTRATIVE_OVERRIDE } from '../model/rates'
 import { ALREADY_CUT } from '../model/walk'
 import { RateBoard } from '../components/RateBoard'
 import { type Package } from '../model/rates'
@@ -320,7 +319,7 @@ export function BendTheCurve({ option = null }: {
           the arithmetic of it &mdash; how big, for how long, and whether the question is
           written for the schools or for the whole town &mdash; needs more room than a
           section. The short version: it compounds at {pct(LEVY_CAP, 1)} while the gap
-          compounds at {pct(COST_GROWTH_BLENDED)}, so a {usdShort(1_250_000)} school
+          compounds at {pct(COST_GROWTH_BLENDED)}, so a {usdShort(ILLUSTRATIVE_OVERRIDE)} school
           override funds two years, and no override of any size holds for ever.</>}>
         <Go to="override"
           className="text-[13px] font-semibold" style={{ color: 'var(--series-cost)' }}>

@@ -4,7 +4,7 @@ import { MoreReports, ShortVersion } from '../components/report'
 import type { Tab } from '../routes'
 import { Go } from '../lib/nav'
 import {
-  DEFAULT_SCENARIO, LEVY_CAP, SHARE, nextYear, overrideForYears, run,
+  DEFAULT_SCENARIO, LEVY_CAP, SHARE, nextYear, overrideForYears, run, ILLUSTRATIVE_OVERRIDE,
 } from '../model/rates'
 import { YearLedger } from '../components/TheRaise'
 import { OverrideTreadmill, OverrideSizing } from '../components/LevelVsSlope'
@@ -13,8 +13,8 @@ import { Section, Note } from '../components/primitives'
 const TAB: Tab = 'override'
 const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`
 const N = nextYear()
-/** The size the rest of the site uses, so the pages agree. */
-const OVERRIDE = 1_250_000
+/** The example size the override pages share -- see ILLUSTRATIVE_OVERRIDE in model/rates.ts. Not a proposal. */
+const OVERRIDE = ILLUSTRATIVE_OVERRIDE
 
 /** Overrides, given a page of their own.
  *

@@ -3,8 +3,7 @@ import { usd, usdShort } from '../model/engine'
 import {
   DEFAULT_SCENARIO, DEFAULT_RATES, LEVY_CAP, ALL_CUTS,
   run, blendedOf, longRunRevenueGrowth, overrideTreadmill, overrideForYears,
-  overrideStops, type Scenario,
-} from '../model/rates'
+  overrideStops, type Scenario, ILLUSTRATIVE_OVERRIDE } from '../model/rates'
 
 const YEARS = 10
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
@@ -31,7 +30,7 @@ const CASES: Case[] = [
       + `administrative line — ${usdShort(ALL_CUTS)} at once`,
     s: { ...DEFAULT_SCENARIO, cut: ALL_CUTS } },
   { label: 'Pass one override', kind: 'level',
-    sub: `${usdShort(1_250_000)}, school-only, so the schools keep all of it`,
+    sub: `${usdShort(ILLUSTRATIVE_OVERRIDE)}, school-only, so the schools keep all of it — an example size, not a proposal`,
     // The surplus in the covered years is a fair thing to ask about, and the answer is
     // not "it is wasted": an override raises a ceiling, it does not compel collection.
     note: 'An override raises the levy limit; it does not oblige the town to collect it. '
@@ -39,7 +38,7 @@ const CASES: Case[] = [
       + '— Lunenburg has left as much as $53,706 unlevied — or appropriate the difference '
       + 'elsewhere. The override then compounds at 2½% like the rest of the limit, which '
       + 'is why it falls behind a gap growing faster than that.',
-    s: { ...DEFAULT_SCENARIO, overrideLevy: 1_250_000 } },
+    s: { ...DEFAULT_SCENARIO, overrideLevy: ILLUSTRATIVE_OVERRIDE } },
   { label: 'Bend health insurance', sub: 'From 9% a year to 4%', kind: 'slope',
     s: { ...DEFAULT_SCENARIO, rates: rates({ health: 0.04 }) } },
   { label: 'Bend salaries and health', kind: 'slope',

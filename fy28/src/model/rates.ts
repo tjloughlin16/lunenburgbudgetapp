@@ -1260,6 +1260,15 @@ export function reconciles() {
  *  while the gap compounds at nearly 5% from a base that is already growing, so buying
  *  each extra year costs disproportionately more than the last — and no finite override
  *  holds forever, because the two rates never cross. */
+/** THE ILLUSTRATIVE OVERRIDE. $1.25M is not a proposal and not a figure any board has
+ *  put on the record: it is the size the override pages use to walk through the
+ *  arithmetic -- roughly the gap plus a year of growth, and about half the smaller of the
+ *  two questions the town voted down in May 2026 (MODEL.facts.overrideQ1). It was typed
+ *  in three files, which is rule 2's failure mode for a scenario constant: change it in
+ *  one place and the pages disagree. One definition, labelled as an example wherever it
+ *  is printed. */
+export const ILLUSTRATIVE_OVERRIDE = 1_250_000
+
 export function overrideForYears(
   years: number, base: Scenario = DEFAULT_SCENARIO,
 ): { levy: number; onAverageHome: number } {
