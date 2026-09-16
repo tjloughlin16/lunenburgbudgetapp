@@ -1,0 +1,575 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-02-17",
+ "video_id": "VfWvWHwTzog",
+ "video_url": "https://www.youtube.com/watch?v=VfWvWHwTzog",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-02-17-VfWvWHwTzog.json",
+  "sha256": "e3900dd527511b28d7e01766f98f5149b02686a0973a893af40d465e1ba6d611",
+  "caption_lines": 264,
+  "segments": 2539
+ },
+ "recording": {
+  "duration_s": 5483,
+  "duration": "1:31",
+  "spoken_chars": 83540,
+  "words_approx": 13923
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02172026-7656",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-02-17-agenda-7656.txt",
+   "path": "sources/meetings/select-board/2026-02-17-agenda-7656.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-16T14:04:07Z",
+  "cost_usd": 0.48199699999999995
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Glenn",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Amanda",
+    "role": "staff (special event policy)"
+   },
+   {
+    "name_as_heard": "Karen Barrett",
+    "role": "staff, present for financial policy discussion"
+   },
+   {
+    "name_as_heard": "Mr. Wallace",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Melissa",
+    "role": "executive assistant"
+   },
+   {
+    "name_as_heard": "Shahid Keshi",
+    "role": "presenter/applicant, Empire Athletics",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Nicholas Gallagher",
+    "role": "co-owner, Empire Athletics (on call)",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 5242,
+    "speaker_as_heard": "John Bowen",
+    "stated_role": "resident, 162 Highland Street",
+    "topic": "Urged the town to raise the property tax rate now (citing figures around $166-$186 per thousand and a possible $5 million influx) as an alternative to repeated overrides, warning otherwise the town faces override after override."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "contracts-and-unions",
+   "facilities",
+   "free-cash",
+   "health-insurance",
+   "hiring",
+   "override",
+   "personnel",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "state-aid",
+   "tax-rate",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 210,
+    "motion": "Approve the Common Victualer license application for Empire Athletics at 308 Massachusetts Avenue",
+    "outcome": "passed unanimously",
+    "procedural": false,
+    "moved_by": "the chair"
+   },
+   {
+    "t": 365,
+    "motion": "Ratify the town manager's appointment of Kimberly Govin as payroll and benefits coordinator",
+    "outcome": "passed unanimously",
+    "procedural": false,
+    "moved_by": "the chair"
+   },
+   {
+    "t": 964,
+    "motion": "Declare the electric range stove from the Lunenburg Adult Activity Center as surplus property",
+    "outcome": "passed unanimously",
+    "procedural": false,
+    "moved_by": "the chair"
+   },
+   {
+    "t": 5457,
+    "motion": "Motion to adjourn at 8:31 p.m.",
+    "outcome": "passed unanimously",
+    "procedural": true,
+    "moved_by": "the chair"
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 149,
+    "topic": "Empire Athletics Common Victualer license",
+    "figures_as_heard": [],
+    "what_was_said": "Co-owners sought a Common Victualer license for a smoothie bar/cafe attached to their fitness facility; all other permits from the board of health and town were already secured."
+   },
+   {
+    "t": 402,
+    "topic": "FY27 budget - override needed",
+    "figures_as_heard": [],
+    "what_was_said": "The town manager said the preliminary FY27 budget will be presented to the finance committee and will not be balanced, relying on an override."
+   },
+   {
+    "t": 422,
+    "topic": "Health insurance rate increase",
+    "figures_as_heard": [
+     "8.85% 85%"
+    ],
+    "what_was_said": "The town received its FY27 health insurance rate increase, though ongoing PEC negotiations could change the final effect."
+   },
+   {
+    "t": 464,
+    "topic": "FY27 budget shortfall",
+    "figures_as_heard": [
+     "over $3 million"
+    ],
+    "what_was_said": "The town manager said the preliminary FY27 budget gap is looking to be over $3 million, pending confirmation of the school's numbers."
+   },
+   {
+    "t": 549,
+    "topic": "FY25 free cash",
+    "figures_as_heard": [
+     "over $3 million"
+    ],
+    "what_was_said": "Preliminary FY25 free cash figures look very healthy, driven partly by a large turnback from the schools and strong investment income."
+   },
+   {
+    "t": 570,
+    "topic": "Capital plan free cash assumption",
+    "figures_as_heard": [
+     "$1.8 million",
+     "$3 million"
+    ],
+    "what_was_said": "The town manager budgeted the capital plan conservatively at $1.8 million in free cash and will not revisit that plan until final numbers are in, despite free cash coming in much higher."
+   },
+   {
+    "t": 591,
+    "topic": "Stabilization fund contributions",
+    "figures_as_heard": [],
+    "what_was_said": "With high, uncertain free cash, the town manager plans to look at contributions to the stabilization fund and possibly the health insurance stabilization fund."
+   },
+   {
+    "t": 746,
+    "topic": "Regional dispatch district free cash",
+    "figures_as_heard": [
+     "$433,000"
+    ],
+    "what_was_said": "The regional dispatch district generated free cash for the first time in a long time; the administrative board decided not to return it to member communities but to keep some in free cash and move some to stabilization/capital."
+   },
+   {
+    "t": 842,
+    "topic": "Snow and ice deficit",
+    "figures_as_heard": [
+     "a half a million dollars",
+     "300,000",
+     "$300,000"
+    ],
+    "what_was_said": "The town manager had tentatively pegged the snow and ice deficit around half a million dollars but said it is currently running about $300,000, and free cash should cover it."
+   },
+   {
+    "t": 964,
+    "topic": "Surplus electric range/stove",
+    "figures_as_heard": [
+     "less than $200"
+    ],
+    "what_was_said": "An electric range stove from the Lunenburg Adult Activity Center was declared surplus, estimated at under $200 in value."
+   },
+   {
+    "t": 1595,
+    "topic": "ClearGov software savings vs. MUNIS cost increase",
+    "figures_as_heard": [
+     "$20,000",
+     "almost $50,000",
+     "$108,000"
+    ],
+    "what_was_said": "Not renewing ClearGov saves about $20,000, which helps offset a roughly $50,000 increase in the IT budget as MUNIS's ARPA subsidy ends; total MUNIS cost is now $108,000."
+   },
+   {
+    "t": 4348,
+    "topic": "300th anniversary committee warrant articles",
+    "figures_as_heard": [
+     "15,000"
+    ],
+    "what_was_said": "A multi-year allocation of $15,000 and a separate gift account article are proposed for the 300th anniversary committee, to be funded with free cash."
+   },
+   {
+    "t": 4389,
+    "topic": "PAC restore to general fund",
+    "figures_as_heard": [
+     "$31,271.94"
+    ],
+    "what_was_said": "PAC's warrant article would restore this amount to the town general fund, a housekeeping swap between the general and enterprise funds for indirect staff costs."
+   },
+   {
+    "t": 4431,
+    "topic": "PAC operating budget",
+    "figures_as_heard": [
+     "209,000"
+    ],
+    "what_was_said": "PAC's enterprise fund operating budget article for expected income and other sources."
+   },
+   {
+    "t": 4539,
+    "topic": "Trust Fund Commission legal research allocation",
+    "figures_as_heard": [
+     "$14,252.39"
+    ],
+    "what_was_said": "The Trust Fund Commission is seeking this specific allocation to fund legal research; the board was unsure how the figure was derived and expects a presentation."
+   },
+   {
+    "t": 4703,
+    "topic": "Capital plan cleanup - TCP roof/primary school remediation funds",
+    "figures_as_heard": [],
+    "what_was_said": "Funds originally voted for primary school remediation were used for the TCP roof repair and were also voted into the FY26 capital plan for windows/HVAC in this building; one vote must be unwound and revoted since the money cannot fund both, though none of it has been spent."
+   },
+   {
+    "t": 4932,
+    "topic": "FY27 state budget legislative earmarks",
+    "figures_as_heard": [],
+    "what_was_said": "The chair is still working out whether to propose an adult activity center ramp earmark, pending a cost estimate, and may substitute other capital items."
+   },
+   {
+    "t": 5306,
+    "topic": "Public comment on tax rate vs. override",
+    "figures_as_heard": [
+     "$166",
+     "$5 million",
+     "$700,000",
+     "a million dollars",
+     "$186",
+     "$1.89"
+    ],
+    "what_was_said": "A resident argued the town should have raised the tax rate two years ago rather than relying on overrides, citing per-thousand figures and potential added revenue to the general fund."
+   }
+  ],
+  "transfers": [
+   {
+    "t": 4389,
+    "description": "Restore funds from town general fund/enterprise fund swap for PAC's indirect staff costs (FY26)",
+    "amount_as_heard": "$31,271.94",
+    "outcome": "discussed only, to be a warrant article"
+   },
+   {
+    "t": 4703,
+    "description": "Unwind and revote capital funds originally voted for primary school remediation (used for TCP roof repair) so they can properly fund the FY26 capital plan items (windows/HVAC) set aside in this building",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only, pending town meeting vote"
+   },
+   {
+    "t": 746,
+    "description": "Regional dispatch district free cash split between remaining in free cash and moving to the district's stabilization and capital account, rather than returned to member communities",
+    "amount_as_heard": "$433,000",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1616,
+    "decision": "Board agreed to remove Objective 3 (ClearGov software) from the town manager's FY26 goals since the software subscription was not renewed."
+   },
+   {
+    "t": 1741,
+    "decision": "Board agreed to change objective 4 language from 'complete the review' to 'begin the review' and target special town meeting rather than the 2026 annual town meeting."
+   },
+   {
+    "t": 2008,
+    "decision": "Board agreed to strike a sentence from the onboarding objective (removing the March 1 target date for a formal materials package) while keeping the broader goal of identifying gaps."
+   },
+   {
+    "t": 2359,
+    "decision": "Board agreed to update the PEC/health insurance objective's target date to March."
+   },
+   {
+    "t": 2649,
+    "decision": "Board discussed sending a short survey to department heads to compile fees for a periodic fee-review policy."
+   },
+   {
+    "t": 2816,
+    "decision": "Board decided not to complete a full open meeting law/conflict of interest training policy this year, opting instead to check with town counsel about updates and make an existing recording available to boards."
+   },
+   {
+    "t": 3164,
+    "decision": "Board agreed to add a sentence to the notice-of-town-meeting bylaw requiring the select board's office to maintain an opt-in mailing list for residents wanting physical warrant copies."
+   },
+   {
+    "t": 4183,
+    "decision": "Board agreed to add language requiring the town meeting notification to include information sufficient to reasonably direct residents to the full text of the warrant."
+   },
+   {
+    "t": 4872,
+    "decision": "Board agreed to hold the vote on the revised appointment policy until the next meeting when the full board (including the absent member) is present."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 7,
+    "t_end": 108,
+    "topic": "Pledge, open meeting law notice, announcements (caucus, fire department 4-shift proposal session)",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 108,
+    "t_end": 129,
+    "topic": "Public comment (none from floor or board)",
+    "resolution": "no comment",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 129,
+    "t_end": 231,
+    "topic": "Common Victualer license application, Empire Athletics",
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 231,
+    "t_end": 296,
+    "topic": "Acknowledge retirement of Fire Chief Patrick Sullivan",
+    "resolution": "informational, no vote",
+    "tags": [
+     "public-safety",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 296,
+    "t_end": 402,
+    "topic": "Ratify appointment of Kimberly Govin as payroll and benefits coordinator",
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "hiring",
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 402,
+    "t_end": 505,
+    "topic": "Town manager report: FY27 budget preparation, override, labor and health insurance negotiations",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "override",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 505,
+    "t_end": 591,
+    "topic": "Town manager report: FY25 closeout, free cash, capital plan caution",
+    "resolution": "informational",
+    "tags": [
+     "free-cash",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 591,
+    "t_end": 716,
+    "topic": "Town manager report: TCP windown, food pantry and PAC relocation discussions",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 716,
+    "t_end": 801,
+    "topic": "Town manager report: regional dispatch tri-board meeting and free cash decision; staff recruitments",
+    "resolution": "informational",
+    "tags": [
+     "free-cash",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 822,
+    "t_end": 944,
+    "topic": "Board Q&A: snow and ice deficit, FY25 closeout extension, capital budget clarification",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 944,
+    "t_end": 986,
+    "topic": "Declare electric range/stove surplus property",
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 986,
+    "t_end": 2961,
+    "topic": "Review of FY26 town manager and select board goals and objectives, line by line",
+    "resolution": "multiple informal decisions to amend/remove objectives; no formal vote",
+    "tags": [
+     "budget-fy27",
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2961,
+    "t_end": 4744,
+    "topic": "Discussion of warrant articles for 2026 annual town meeting (Kids Kingdom, notice of town meeting bylaw, 300th anniversary, PAC, trust fund commission, open space committee, capital cleanup)",
+    "resolution": "discussed, no votes; several referred to future presentations/policy work",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4744,
+    "t_end": 4932,
+    "topic": "Discussion and near-approval of revised appointment policy",
+    "resolution": "held pending full board attendance at next meeting",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 4932,
+    "t_end": 5036,
+    "topic": "Request for legislative earmarks in the FY27 state budget",
+    "resolution": "informational, decision deferred pending cost estimates",
+    "tags": [
+     "state-aid",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 5036,
+    "t_end": 5057,
+    "topic": "Minutes and warrants (none to approve)",
+    "resolution": "no items",
+    "tags": []
+   },
+   {
+    "t_start": 5057,
+    "t_end": 5220,
+    "topic": "Committee reports (open space, library, master plan, stormwater, finance committee, capital planning, bylaw review)",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5220,
+    "t_end": 5452,
+    "topic": "Public comment: resident proposes raising tax rate instead of relying on overrides",
+    "resolution": "informational, no board action",
+    "tags": [
+     "public-comment",
+     "tax-rate",
+     "override"
+    ]
+   },
+   {
+    "t_start": 5452,
+    "t_end": 5472,
+    "topic": "Adjournment",
+    "resolution": "voted, passed unanimously",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "No roll-call vote counts were given for any motion; all votes were by voice ('aye'/'no') and reported only as unanimous.",
+   "Speaker identities during the lengthy goals-review section (t~986-2961) are frequently ambiguous; multiple unnamed voices overlap.",
+   "The chair's own name is never stated in the captions.",
+   "Exact figures in John Bowen's public comment (e.g. '$166 per thousand' vs '$186', '$1.89 per thousand') are inconsistent between mentions and may reflect caption transcription errors.",
+   "Whether the school committee had formally voted to co-sponsor the Kids Kingdom warrant article was uncertain to the board itself."
+  ],
+  "confidence": "moderate",
+  "headline": "Town manager says the preliminary FY27 budget won't balance and will need an override, projected over $3 million short",
+  "summary": "The Select Board heard the town manager's report that the FY27 budget is not balanced and will require an override, with a shortfall estimated at over $3 million pending school figures, alongside healthy FY25 free cash and a health insurance rate increase. The board also spent most of the meeting reviewing and amending its FY26 goals objective-by-objective and working through a long list of warrant articles for the 2026 annual town meeting, deferring several (appointment policy, legislative earmarks, trust fund/open space bylaws) to future meetings."
+ },
+ "digest": {
+  "watch_next": [
+   "Next Select Board meeting, for the appointment policy vote with the full board present",
+   "Final school budget figures and the FY27 override question ahead of the 2026 annual town meeting"
+  ],
+  "what_happened": [
+   {
+    "line": "The town manager told the Select Board the preliminary FY27 budget will not balance and will need an override, with the gap as heard put at more than an amount as heard pending final school figures.",
+    "t": 464
+   },
+   {
+    "line": "Preliminary FY25 free cash is coming in well above what was budgeted, partly from a school turnback, but the capital plan still holds its lower, more conservative figure until numbers are certified.",
+    "t": 549
+   },
+   {
+    "line": "The board spent most of the meeting revising its FY26 goals line by line and reviewing warrant articles for the 2026 annual town meeting, deferring the appointment policy vote to the next meeting.",
+    "t": 986
+   },
+   {
+    "line": "Three routine items passed unanimously: a Common Victualer license for Empire Athletics, ratifying a payroll and benefits coordinator appointment, and declaring an old stove surplus.",
+    "t": 210
+   }
+  ],
+  "why_it_matters": [
+   "An override signal this early means residents should expect a tax-related vote tied to the FY27 budget once school figures are finalized.",
+   "Free cash running above the budgeted assumption could fund one-time costs like the snow and ice deficit or stabilization reserves, but the town manager is not yet building it into the capital plan.",
+   "The warrant articles and goals decided at this meeting shape what residents will see and vote on at the 2026 annual town meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-16T14:04:26Z",
+   "cost_usd": 0.1525584
+  }
+ }
+}

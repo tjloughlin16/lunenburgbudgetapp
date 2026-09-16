@@ -140,6 +140,15 @@ def write_one(t):
         body = json.loads(body)
     if not isinstance(body, dict) or 'statements' not in body:
         raise SystemExit('no structured output for %s' % t['rel'])
+    write_state(t, doc, body, cost=res.get('total_cost_usd'), by='scripts/write_budget_state.py')
+    return 'written ($%.3f) — %d statements, %d cuts, %d warnings' % (res.get('total_cost_usd') or 0, len(body['statements']), len(body['cuts']), len(body.get('warnings') or []))
+
+
+def write_state(t, doc, body, cost, by):
+    """The budget-state file, in one shape whichever script produced the extraction --
+    this one on its own read, or write_recording_minutes.py from the read it was already
+    making. `by` records which, and `current()` accepts either."""
+    board = doc.get('title') or t['board_slug'].replace('-', ' ').title()
     os.makedirs(os.path.dirname(out_path(t)), exist_ok=True)
     with open(out_path(t), 'w', encoding='utf-8') as fh:
         json.dump(dict(
@@ -148,11 +157,10 @@ def write_one(t):
             board_slug=t['board_slug'], board=board, meeting_date=t['date'], video_id=t['video_id'],
             video_url=doc.get('video_url') or 'https://www.youtube.com/watch?v=' + t['video_id'],
             source=dict(transcript=t['rel'], sha256=sha256_of(t['path'])),
-            written=dict(by='scripts/write_budget_state.py', model=MODEL, schema=SCHEMA_VERSION,
-                         at=dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), cost_usd=res.get('total_cost_usd')),
+            written=dict(by=by, model=MODEL, schema=SCHEMA_VERSION,
+                         at=dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), cost_usd=cost),
             state=body), fh, indent=1, sort_keys=True)
         fh.write('\n')
-    return 'written ($%.3f) — %d statements, %d cuts, %d warnings' % (res.get('total_cost_usd') or 0, len(body['statements']), len(body['cuts']), len(body.get('warnings') or []))
 
 
 def main():
@@ -161,6 +169,7 @@ def main():
     ap.add_argument('date', nargs='?')
     ap.add_argument('--since')
     ap.add_argument('--limit', type=int)
+    ap.add_argument('--with-minutes-only', action='store_true', help='only meetings that already have our minutes (the refresh: new ones get both in one read)')
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--status', action='store_true')
     a = ap.parse_args()
@@ -192,6 +201,14 @@ def main():
         ap.error('name a board and date, or --since')
     ts.sort(key=lambda t: t['date'], reverse=True)
     ts = [t for t in ts if not current(t)]
+    if a.with_minutes_only:
+        # THE REFRESH'S MODE. A meeting without our minutes will get its budget state in
+        # the same read as its minutes (write_recording_minutes.py, one read, two files);
+        # reading it here first would spend the second read this flag exists to avoid.
+        # What is left for this script is the catch-up: meetings whose minutes were
+        # written before the merge, and files behind the schema.
+        from write_recording_minutes import out_path as minutes_path
+        ts = [t for t in ts if os.path.exists(minutes_path(t))]
     if a.limit:
         ts = ts[:a.limit]
     for t in ts:

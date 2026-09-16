@@ -82,6 +82,39 @@ TAGS = [
     'seniors', 'housing', 'economic-development', 'personnel', 'superintendent-report',
 ]
 
+# ONE READ, TWO DOCUMENTS. TJ, 16 September 2026: "the refresh is already reading the
+# transcripts, so that step should also identify changes that need to go into the budget
+# feed. it will save both TOKENS and time ... everytime a meeting transcript is processed,
+# it has to identify impact to the budget feed and the FY related, and update the budget
+# feed for that 'season'/FY if appropriate." Until then each budget-board meeting was read
+# twice, once here and once by write_budget_state.py, ~2.5 minutes and ~$0.35 the second
+# time. Now, for the three budget boards, this one call also returns the budget state --
+# the same schema write_budget_state.py defines, appended below -- and this script writes
+# that file too, in the same shape, so the feed builder and --check are unchanged.
+# write_budget_state.py remains for the backlog and for a meeting written before this.
+BUDGET_BOARDS = ('school-committee', 'select-board', 'finance-committee')
+
+
+def schema_for(board_slug):
+    """The minutes schema, plus the budget state for a budget board."""
+    if board_slug not in BUDGET_BOARDS:
+        return SCHEMA
+    import write_budget_state as BS   # here, not at the top: BS imports this module
+    s = json.loads(json.dumps(SCHEMA))
+    s['properties']['budget_state'] = dict(BS.SCHEMA, description=(
+        'What this meeting put on the record about THE BUDGET BEING BUILT and what will go '
+        'to Town Meeting; see the second part of the system prompt. Empty lists if nothing.'))
+    s['required'] = s['required'] + ['budget_state']
+    return s
+
+
+def system_for(board_slug):
+    if board_slug not in BUDGET_BOARDS:
+        return SYSTEM
+    import write_budget_state as BS
+    return SYSTEM + '\n\n=== SECOND TASK, returned as `budget_state` in the same JSON ===\n' + BS.SYSTEM
+
+
 SCHEMA = {
     'type': 'object',
     'additionalProperties': False,
@@ -260,8 +293,8 @@ def write_one(entry, docs, force=False):
               % (board, entry['date'], doc.get('video_url'), len(lines), '\n'.join(lines)))
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
     r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL,
-                        '--system-prompt', SYSTEM,
-                        '--json-schema', json.dumps(SCHEMA),
+                        '--system-prompt', system_for(entry['board_slug']),
+                        '--json-schema', json.dumps(schema_for(entry['board_slug'])),
                         '--output-format', 'json', '--max-budget-usd', '2'],
                        input=prompt, capture_output=True, text=True, env=env, timeout=900)
     if r.returncode != 0:
@@ -274,6 +307,9 @@ def write_one(entry, docs, force=False):
         body['tags'] = sorted(set(body['tags']))
     if not isinstance(body, dict) or 'votes' not in body:
         raise SystemExit('no structured output for %s: %s' % (entry['rel'], str(res)[:800]))
+    # The budget state travels in the same answer and lands in its own file, not in the
+    # minutes: the feed reads sources/data/budget-state/, and the minutes page does not.
+    budget_state = body.pop('budget_state', None)
     video_url = doc.get('video_url') or 'https://www.youtube.com/watch?v=' + entry['video_id']
     segs = doc.get('segments') or []
     last = segs[-1] if segs else {}
@@ -304,7 +340,13 @@ def write_one(entry, docs, force=False):
         json.dump(minutes, fh, indent=1, ensure_ascii=False)
         fh.write('\n')
     digest(path)
-    return 'written ($%.3f)' % (res.get('total_cost_usd') or 0)
+    extra = ''
+    if budget_state is not None:
+        import write_budget_state as BS
+        BS.write_state(entry, doc, budget_state, cost=None, by='scripts/write_recording_minutes.py (one read with the minutes)')
+        extra = ' — budget state: %d statements, %d cuts, %d warnings' % (
+            len(budget_state.get('statements', [])), len(budget_state.get('cuts', [])), len(budget_state.get('warnings', [])))
+    return 'written ($%.3f)%s' % (res.get('total_cost_usd') or 0, extra)
 
 
 HEADLINE_SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['headline'],
@@ -401,7 +443,10 @@ def digest(path):
     # the first run ("$418,000"); a rule enforced by asking is not a rule. Any dollar
     # amount or large bare number becomes "as heard" here, mechanically.
     import re as _re
-    scrub = lambda x: _re.sub(r'\b(?:the |an? )?\$\s?[\d,]+(?:\.\d+)?\s?(?:million|thousand|k|M|K)?\b\s*', 'an amount as heard ', x).replace('  ', ' ').strip()
+    # No leading \b: there is no word boundary between a space and a dollar sign, so the
+    # old pattern only caught a figure that followed "the" or "a" -- "$3 million" bare
+    # slipped through on 16 September 2026 and --check caught it.
+    scrub = lambda x: _re.sub(r'(?:\b(?:the |an? ))?\$\s?[\d,]+(?:\.\d+)?\s?(?:million|thousand|k|M|K)?\b\s*', 'an amount as heard ', x).replace('  ', ' ').strip()
     for w in body['what_happened']:
         w['line'] = scrub(w['line'])
     body['why_it_matters'] = [scrub(x) for x in body['why_it_matters']]

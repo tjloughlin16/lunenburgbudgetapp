@@ -12,7 +12,7 @@
     "amount_as_heard": null,
     "fiscal_year": 2027,
     "fte_as_heard": null,
-    "item": "part-time principal clerk position at the conservation department",
+    "item": "part-time principal clerk position, conservation department",
     "scope": "town",
     "status": "announced",
     "t": 1259,
@@ -22,23 +22,44 @@
   "nothing_on_the_budget": false,
   "statements": [
    {
-    "amount_as_heard": "350,000",
-    "fiscal_year": null,
-    "kind": "other",
+    "amount_as_heard": null,
+    "fiscal_year": 2026,
+    "kind": "free_cash",
     "scope": "school",
-    "statement": "The school committee voted to amend their special town meeting article from ($300,000-ish, 'the 300') to a superintendent spending plan of $350,000",
-    "status": "voted",
+    "statement": "There is no certified free cash yet; FY26 free cash is not certified until it goes through the DLS process, so a petitioned article to use free cash for athletics may not be actionable at town meeting.",
+    "status": "announced",
+    "t": 4999,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "300",
+    "fiscal_year": 2027,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "The school committee's special town meeting article originally sought $300 (as heard) before being amended.",
+    "status": "proposed",
     "t": 5353,
     "who": "the school committee"
    },
    {
-    "amount_as_heard": null,
+    "amount_as_heard": "350,000",
+    "fiscal_year": 2027,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "The school committee voted to amend its special town meeting article to the superintendent's spending plan of $350,000.",
+    "status": "voted",
+    "t": 5353,
+    "who": "the school committee"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "a petitioned special town meeting article to appropriate free cash for athletics",
+    "condition": "if FY26 free cash is not certified by the state (DLS) before September 3rd",
     "fiscal_year": 2026,
-    "kind": "free_cash",
-    "scope": "town",
-    "statement": "FY26 free cash is not yet certified by the state (DLS); a citizen petition seeking free cash for athletics may not be actionable at the September 3 special town meeting if it isn't certified by then",
-    "status": "announced",
-    "t": 5019,
+    "prediction": "the action at town meeting on the athletics free-cash article may not be able to be taken",
+    "scope": "school",
+    "t": 4999,
     "who": "the town manager"
    }
   ]
@@ -47,9 +68,10 @@
  "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T17:39:48Z",
+  "at": "2026-09-16T14:07:17Z",
   "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.2885858,
-  "model": "sonnet"
+  "cost_usd": 0.339636,
+  "model": "sonnet",
+  "schema": 2
  }
 }

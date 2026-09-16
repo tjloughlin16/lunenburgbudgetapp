@@ -333,7 +333,11 @@ def main():
     # at MAX_MINUTES_PER_RUN a day rather than in one expensive batch.
     if not a.dry_run and not a.no_minutes:
         since = (dt.date.fromisoformat(a.as_of) - dt.timedelta(days=400)).isoformat()
-        py('write_budget_state.py', '--since', since, '--limit', str(MAX_MINUTES_PER_RUN), check=False)
+        # ONLY THE CATCH-UP. A new meeting's budget state now comes out of the same read
+        # as its minutes (step 6), so this reads only meetings that already have minutes
+        # from before the merge, or files behind the schema -- never a meeting the minutes
+        # step will read anyway. TJ: "it will save both TOKENS and time."
+        py('write_budget_state.py', '--since', since, '--limit', str(MAX_MINUTES_PER_RUN), '--with-minutes-only', check=False)
 
     # 7a'. The live season's board, re-read from the record: warnings straight onto the
     # page, figures and cuts PROPOSED into budget-seasons/fy28.proposed.csv for a person to
