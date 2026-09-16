@@ -20,7 +20,7 @@ import { RateBoard } from '../components/RateBoard'
 import { OverrideSizing, OverrideTreadmill, OverrideExplorer } from '../components/LevelVsSlope'
 import { PriceList } from '../components/PriceList'
 import { Note } from '../components/primitives'
-import { Upshot } from '../components/Upshot'
+import { Upshot, UpshotMore } from '../components/Upshot'
 
 const pct = (x: number, d = 2) => `${(x * 100).toFixed(d)}%`
 const N = nextYear()
@@ -115,6 +115,7 @@ export function Walkthrough() {
           #hash, or the print button. See components/FullVersion.tsx. */}
       <div className="mx-auto max-w-6xl px-5">
       <FullVersion what="the whole argument, step by step">
+      <UpshotMore />
       <div id="the-working" className="scroll-mt-12 pt-12 pb-8">
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"
           style={{ color: 'var(--text-muted)' }}>Step by step &middot; eleven steps</p>

@@ -32,15 +32,20 @@ export function Headlines() {
   )
 }
 
-export function Conclusions() {
+/** `from`/`to` slice the findings so a page can show the first three as its short
+ *  version and the rest inside the fold; the headlines and the one-line summary draw
+ *  only with the first slice. */
+export function Conclusions({ from = 0, to }: { from?: number; to?: number } = {}) {
   return (
     <div>
-      <Headlines />
-      <p className="text-xl sm:text-2xl font-bold leading-snug max-w-4xl mb-8">
-        {MODEL.headline}
-      </p>
+      {from === 0 && <Headlines />}
+      {from === 0 && (
+        <p className="text-xl sm:text-2xl font-bold leading-snug max-w-4xl mb-8">
+          {MODEL.headline}
+        </p>
+      )}
       <ol className="grid gap-3 md:grid-cols-2">
-        {MODEL.conclusions.map(c => (
+        {MODEL.conclusions.slice(from, to).map(c => (
           <li key={c.n}>
             <a href={abs(hrefFor(c.anchor))}
               className="card p-5 h-full flex flex-col hover:opacity-90 transition-opacity block">

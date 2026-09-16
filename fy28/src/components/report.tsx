@@ -137,13 +137,16 @@ export function Stat({ value, tone, children }: {
  *
  *  A page may have several `categorical` sections. It should have exactly one of the other
  *  two, and they are the first and last things on it. */
-export function Section({ kind, id, title, children }: {
+export function Section({ kind, id, title, short = true, children }: {
   kind: 'conclusions' | 'categorical' | 'raw'
   id?: string; title?: React.ReactNode; children: React.ReactNode
+  /** `false` on a conclusions section that is NOT the page's short version -- the One
+   *  Big Report, where the first section is an index of other reports' conclusions. */
+  short?: boolean
 }) {
   return (
     // The conclusions section IS the page's short version -- see ShortVersion below.
-    <section id={id} data-section={kind} data-short={kind === 'conclusions' ? '' : undefined}
+    <section id={id} data-section={kind} data-short={kind === 'conclusions' && short ? '' : undefined}
       className="report-section scroll-mt-[calc(var(--header-h)+1rem)]">
       {title ? <H2>{title}</H2> : null}
       {children}
@@ -244,8 +247,14 @@ export function Insight({ n, tone, figure, headline, children }: {
  *  own label, the same treatment `Maybe` gives. A figure is a fact and an explanation for
  *  it is not, and the whole of this project's error history is those two set in one voice
  *  a paragraph apart. */
-export function Conclusions({ rows, collapse, reportUrl, noAsk }: {
+export function Conclusions({ rows, collapse, reportUrl, noAsk, short = true }: {
   rows?: (Conclusion & { report_url?: string })[]
+  /** `false` for a block of conclusions that is NOT the page's short version: the
+   *  findings a page shows after its first three, inside the fold. The budget is five
+   *  minutes (scripts/build_reading_time.py), and three cards with their rests-on and
+   *  does-not-show halves is what fits; the rest are still findings, still on the page,
+   *  one control down. */
+  short?: boolean
   /** Leave out the ask-us prompt: a page that stacks several Conclusions blocks would say it after every one. */
   noAsk?: boolean
   /** Collapse the evidence behind a `<details>`, leaving the claim and its figure. Used
@@ -276,7 +285,7 @@ export function Conclusions({ rows, collapse, reportUrl, noAsk }: {
   return (
     <>
     {/* `data-short`: a report's conclusions are its short version. See ShortVersion. */}
-    <div data-short="" className="grid gap-4 mt-5 md:grid-cols-2">
+    <div data-short={short ? '' : undefined} className="grid gap-4 mt-5 md:grid-cols-2">
       {rows.map((c, i) => {
         const fig = c.figure ? c.figures[c.figure]?.text : undefined
         const unit = c.figure ? c.figures[c.figure]?.unit : undefined

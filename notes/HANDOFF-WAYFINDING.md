@@ -47,19 +47,28 @@ it.
 
 From `notes/generated/reading-time.csv`, 81 prerendered routes:
 
-- **45 pages declare a short version; 9 are over the five-minute budget; 13 declare none.**
+- **45 pages declare a short version; 0 are over the five-minute budget; 13 declare none.**
+  (16 September: the nine that were over were brought under -- see below.)
 - The fold is on all 29 React report pages, `/crisis`, the six crisis-area pages, the
   three money reports, and any markdown analysis whose first `##` matches
   `SHORT_HEADING` in `pages/Analysis.tsx` (*The short version*, *What this establishes*,
   *In plain terms*, *What we now hold*, *Where things stand*).
 
-**Over budget (the "what is truly critical" decisions — TJ's, not an agent's to guess):**
-`/one-big-report` 15,479 (it is an index of every report's conclusions; needs its own
-treatment, not trimming) · `/what-courses-actually-ran` 2,190 · `/the-situation` 1,928
-(prints all 17 model conclusions) · `/crisis` 1,659 · `/special-education-class-size`
-1,496 · `/which-grades-students-leave` 1,494 · `/if-students-leave` 1,272 ·
-`/what-other-districts-spend` 1,252 · `/how-chapter-70-works` 1,172. The fix on most is
-fewer cards, not shorter cards — rule 7b says three or four.
+**How the nine over budget were brought under (16 September).** TJ: "I thought we
+agreed to make them all 5 or less." No prose was cut and no figure typed:
+- Six report pages (`courses`, `class-size`, `which-grades`, `if-students-leave`,
+  `other-districts`, `ch70`) show their **first three** findings on the card and the rest
+  under *The other findings* at the top of the full version — `Conclusions` takes
+  `short={false}`, and the payload's order decides which three. A generator that wants a
+  different three reorders its conclusions.
+- `/crisis`: the two objection cards, the three-panel picture and the closing card moved
+  into the full version (`UpshotMore` in `components/Upshot.tsx`).
+- `/the-situation`: its own `Conclusions` takes `from`/`to`; three on the card, fourteen
+  in the fold.
+- `/one-big-report`: a new short version — *The story in N figures*, one row per section
+  with that section's headline figures — and the nine sections behind the fold.
+  `Section` and `Conclusions` take `short={false}` there so the index does not count as
+  the short version, which is how it measured 15,479 words.
 
 **No short version (13):** eleven markdown analyses that open with context rather than a
 conclusion — `show-your-work`, `fy26-closeout`, `fy26-closeout-town`, `athletics`,

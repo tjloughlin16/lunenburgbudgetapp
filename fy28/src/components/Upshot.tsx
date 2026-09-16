@@ -158,11 +158,6 @@ const PANELS: Panel[] = [
 ]
 
 export function Upshot() {
-  const runs = PANELS.map(p => ({ ...p, r: run(YEARS, p.s) }))
-  const lo = Math.min(...runs.flatMap(p => p.r.flatMap(y => [y.cost, y.revenue])),
-                      ...BASE.map(y => y.revenue)) * 0.98
-  const hi = Math.max(...runs.flatMap(p => p.r.map(y => y.cost)),
-                      ...BASE.map(y => y.cost)) * 1.02
 
   return (
     <section id="short-version" data-short="" className="border-t"
@@ -289,6 +284,25 @@ export function Upshot() {
           </Go>
         </div>
 
+      </div>
+    </section>
+  )
+}
+
+/** WHAT FOLLOWS THE SHORT VERSION, inside the fold: the two objections, the three-panel
+ *  picture, and the closing card. They were in the short version and it measured 1,659
+ *  words against a 1,150-word budget (TJ: "I thought we agreed to make them all 5 or
+ *  less"). Five claims, the wedge and the exits are the short version; these are the
+ *  first thing a reader meets on opening the full one. Same runs, same scale. */
+export function UpshotMore() {
+  const runs = PANELS.map(p => ({ ...p, r: run(YEARS, p.s) }))
+  const lo = Math.min(...runs.flatMap(p => p.r.flatMap(y => [y.cost, y.revenue])),
+                      ...BASE.map(y => y.revenue)) * 0.98
+  const hi = Math.max(...runs.flatMap(p => p.r.map(y => y.cost)),
+                      ...BASE.map(y => y.cost)) * 1.02
+  return (
+    <section id="short-version-more" style={{ background: 'var(--surface-1)' }}>
+      <div className="mx-auto max-w-6xl px-5 pb-12">
         {/* THE TWO QUESTIONS EVERYBODY ASKS, answered after the picture rather than in the
             top row. They were cards 05 and 06 among the claims -- rebuttals to objections
             a first-time reader had not raised yet, which read as "somebody is already

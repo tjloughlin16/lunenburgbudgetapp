@@ -86,12 +86,16 @@ export function Context({ onRecommend, onSources, onAthletics }: {
           Clerk&rsquo;s business records and five neighboring districts. These are our
           conclusions, not the district&rsquo;s and not the town&rsquo;s. Every one links to
           the section that shows the arithmetic.</>}>
-        <Conclusions />
+        {/* Three findings on the card; the other fourteen open the full version. */}
+        <Conclusions to={3} />
       </Section>
       </ShortVersion>
 
       <div className="mx-auto max-w-6xl px-5">
       <FullVersion what="the evidence, section by section">
+      <Section id="more-findings" eyebrow="The short version, continued" title="The other findings">
+        <Conclusions from={3} />
+      </Section>
       <Section id="where-we-are" eyebrow="The starting point" title="How Lunenburg got here"
         lede={<>The town put three budgets to voters: a balanced budget that fit available
           revenue, and two override tiers that would have restored services. Town Meeting

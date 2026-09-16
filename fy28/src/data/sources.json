@@ -54,7 +54,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 336 of these 352 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 339 of these 355 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -1863,9 +1863,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1040264,
+     "bytes": 1040664,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4683,
+     "count": 4685,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -1887,9 +1887,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 588418,
+     "bytes": 588665,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4683,
+     "count": 4685,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -1899,9 +1899,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 433485,
+     "bytes": 433777,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2882,
+     "count": 2884,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -2624,9 +2624,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 162708,
+     "bytes": 164084,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 999,
+     "count": 1007,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -3257,6 +3257,18 @@
      "textUrl": "/docs/data/search-vocabulary.csv"
     },
     {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 2672,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 4,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
+    },
+    {
      "path": "data/budget-seasons/fy28.csv",
      "title": "The FY28 budget season, live: what is on the record so far, and the moments not yet come with when they usually do",
      "stars": 2,
@@ -3286,9 +3298,9 @@
      "stars": 2,
      "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
      "kind": "Data",
-     "bytes": 1423,
+     "bytes": 1646,
      "url": "/docs/data/youtube-watch-events.csv",
-     "count": 12,
+     "count": 14,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-watch-events.csv"
     },
@@ -3339,18 +3351,6 @@
      "count": 7,
      "unit": "rows",
      "textUrl": "/docs/data/feed-sources.csv"
-    },
-    {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 851,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 3,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "data/sped-transport-history.csv",
@@ -3469,7 +3469,7 @@
    "id": "district-page",
    "origin": "school",
    "title": "The district budget page, mirrored in full",
-   "blurb": "Every document linked from the district’s budget information page — 87 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
+   "blurb": "Every document linked from the district’s budget information page — 90 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
    "items": [
     {
      "path": "district-budget/docs/additional-town-revenue-spending-plan.pdf",
@@ -3623,6 +3623,16 @@
      "upstream": "https://drive.google.com/file/d/1629406huLmh7uEw-owRL-9bu2KEdFwLt/view?usp=drive_link"
     },
     {
+     "path": "district-budget/docs/budget-sandbox-site.html",
+     "title": "Budget Proposal & FAQ site (Google Sites page, as fetched)",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 243179,
+     "url": "/docs/district-budget/docs/budget-sandbox-site.html",
+     "upstream": "https://sites.google.com/lunenburgschools.net/budget-sandbox"
+    },
+    {
      "path": "district-budget/docs/community-forums-scheduled-on-school-department-budget.docx",
      "title": "Community Forums Scheduled on School Department Budget",
      "stars": 1,
@@ -3632,6 +3642,16 @@
      "url": "/docs/district-budget/docs/community-forums-scheduled-on-school-department-budget.docx",
      "textUrl": "/docs/district-budget/text/community-forums-scheduled-on-school-department-budget.txt",
      "upstream": "https://docs.google.com/document/d/1NrKTOrbVYEEt5tb_WGS3caDkM42oX8ik93RWg26fakE/edit?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/budget-sandbox-embed.html",
+     "title": "District budget page: Budget Proposal & FAQ",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 91986,
+     "url": "/docs/district-budget/docs/budget-sandbox-embed.html",
+     "upstream": "https://sites.google.com/lunenburgschools.net/budget-sandbox"
     },
     {
      "path": "district-budget/docs/faq-fy25-budget.pdf",
@@ -4281,6 +4301,16 @@
      "url": "/docs/district-budget/docs/notice-of-public-hearing-fy20-budget.pdf",
      "textUrl": "/docs/district-budget/text/notice-of-public-hearing-fy20-budget.txt",
      "upstream": "https://drive.google.com/open?id=1XK3NgvlkLDMZ4oGt0pUzAvX21JrM4hM8"
+    },
+    {
+     "path": "district-budget/docs/school-committee-page.html",
+     "title": "School Committee (district page)",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 158675,
+     "url": "/docs/district-budget/docs/school-committee-page.html",
+     "upstream": "https://www.lunenburgschools.net/school-committee-1"
     },
     {
      "path": "district-budget/docs/school-committee-approved-fy26-budget-personnel-cuts.pdf",
@@ -7545,9 +7575,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 622,
+  "documents": 625,
   "groups": 22,
-  "bytes": 1637201666,
+  "bytes": 1637699865,
   "loadBearing": 118
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 25 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 6 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

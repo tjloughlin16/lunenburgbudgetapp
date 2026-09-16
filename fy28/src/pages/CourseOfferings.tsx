@@ -410,9 +410,18 @@ function Report({ d }: { d: Payload }) {
           scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
           from the same file, so the two cannot drift apart. */}
       <H2 id="conclusions">If you read nothing else</H2>
-      <Conclusions rows={d.conclusions} />
+      <Conclusions rows={d.conclusions.slice(0, 3)} />
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
+      {/* THE OTHER FINDINGS. The short version carries the first 3; the rest are still
+          findings, still on the page, here at the top of the full version. The order is
+          the payload's -- a generator that wants a different 3 on the card reorders. */}
+      {d.conclusions.length > 3 && (
+        <>
+          <H2 id="more-findings">The other findings</H2>
+          <Conclusions rows={d.conclusions.slice(3)} noAsk short={false} />
+        </>
+      )}
 
       {/* ====================================================================
           2. WHAT A STAFFING CHANGE DID TO WHAT RAN — the two visuals this page

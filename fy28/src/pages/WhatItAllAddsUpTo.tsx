@@ -1,7 +1,8 @@
+import { FullVersion } from '../components/FullVersion'
 import { LABEL, type Tab } from '../routes'
 import { abs } from '../lib/abs'
 import {
-  Body, Conclusions, H3, ReportShell, Section, useReport,
+  Body, Conclusions, H2, H3, ReportShell, Section, ShortVersion, useReport,
   type Conclusion,
 } from '../components/report'
 
@@ -99,7 +100,7 @@ function StorySection({ s, i }: { s: Section; i: number }) {
   const ctxBig = s.context.filter(x => x.kind === 'bigpicture')
   const ctxCon = s.context.filter(x => x.kind === 'conclusion').map(x => x.conclusion!)
   return (
-    <Section kind={i === 0 ? 'conclusions' : 'categorical'} id={s.key} title={`${i + 1}. ${s.title}`}>
+    <Section kind={i === 0 ? 'conclusions' : 'categorical'} short={false} id={s.key} title={`${i + 1}. ${s.title}`}>
       {/* THE HEADLINE FIGURES ARE THE POINT OF THE SECTION, so they get a card each: the
           number set large, its unit bold beside it, the change on its own line, the grain
           small and grey. TJ: "the 'big metrics' for each section seem downplayed, despite
@@ -117,11 +118,11 @@ function StorySection({ s, i }: { s: Section; i: number }) {
             </div>))}
         </div>
       )}
-      {conHead.length > 0 && <Conclusions rows={conHead} collapse noAsk />}
+      {conHead.length > 0 && <Conclusions rows={conHead} collapse noAsk short={false} />}
       {support.length > 0 && (
         <>
           <H3>Behind it</H3>
-          <Conclusions rows={support} collapse noAsk />
+          <Conclusions rows={support} collapse noAsk short={false} />
         </>
       )}
       {(ctxBig.length > 0 || ctxCon.length > 0) && (
@@ -138,7 +139,7 @@ function StorySection({ s, i }: { s: Section; i: number }) {
               </table>
             </div>
           )}
-          {ctxCon.length > 0 && <Conclusions rows={ctxCon} collapse noAsk />}
+          {ctxCon.length > 0 && <Conclusions rows={ctxCon} collapse noAsk short={false} />}
         </>
       )}
       <p className="text-xs mt-4" style={{ color: 'var(--text-muted)' }}>
@@ -161,12 +162,43 @@ export function WhatItAllAddsUpTo() {
       <p className="text-[11px] font-semibold uppercase tracking-widest mt-3" style={{ color: 'var(--status-warning)' }}>
         Section 1 is a projection, not a record — the model’s growth rates run forward from the FY27 budget. Everything after it is recorded.
       </p>
+      {/* THE SHORT VERSION OF THE STORY: each section's headline figures, one row per
+          section, in the sheet's own order -- the numbers TJ's sheet says matter most,
+          with nothing else. The nine sections, with their conclusions, supporting rows
+          and context, are the full version. Before this the page measured 15,479 words
+          of "short version", because every conclusions block on it counted. */}
+      <ShortVersion>
+        <H2 id="in-figures">The story in {d.sections.reduce((n, s) => n + s.headline.filter(x => x.kind === 'bigpicture').length, 0)} figures</H2>
+        <ol className="mt-4 space-y-3">
+          {d.sections.map((s, i) => {
+            const figs = s.headline.filter(x => x.kind === 'bigpicture')
+            return (
+              <li key={s.key} className="card p-4">
+                <a href={`#${s.key}`} className="text-[13px] font-bold" style={{ color: 'var(--series-cost)' }}>{i + 1}. {s.title} &rarr;</a>
+                {figs.length ? (
+                  <div className="grid gap-x-8 gap-y-2 mt-2 sm:grid-cols-2 lg:grid-cols-3">
+                    {figs.map(x => (
+                      <div key={x.ref} className="flex items-baseline gap-2 flex-wrap">
+                        <span className="text-xl font-bold tnum leading-none" style={{ color: x.tone === 'critical' ? 'var(--status-critical)' : 'var(--text-primary)' }}>{x.value}</span>
+                        <span className="text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>{x.label}</span>
+                      </div>))}
+                  </div>
+                ) : (
+                  <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-muted)' }}>{s.headline.length} conclusion{s.headline.length === 1 ? '' : 's'}, no headline figure</p>
+                )}
+              </li>
+            )
+          })}
+        </ol>
+      </ShortVersion>
+      <FullVersion what="the whole story, section by section">
       {d.sections.map((s, i) => <StorySection key={s.key} s={s} i={i} />)}
       <Section kind="raw" id="method" title="How this page is built">
         <Body>
           An editor’s sheet — {d.spec} — says what appears and in what order; nothing on it is a sentence. Each figure is rendered from the model’s own payload and each conclusion is the report’s own row, verbatim, so this page cannot state something a report does not. The limits behind it are rows in {L('/what-we-cannot-answer', 'what we cannot answer')}. The analyses written as documents — reaching conclusions in prose rather than in a published payload, among them the two FY26 closeouts that answer “is this FY25 again?” — are not read by this page and are listed, in full, at {L('/reports', 'reports')}.
         </Body>
       </Section>
+      </FullVersion>
     </ReportShell>
   )
 }
