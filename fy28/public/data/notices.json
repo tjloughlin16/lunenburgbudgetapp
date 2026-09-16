@@ -1,13 +1,13 @@
 {
  "category": "announcement",
  "what": "Notices composed from published agendas (upcoming) and our minutes of recordings (retro). Nothing here predicts a decision or quotes a caption figure. The facebook field is text a person pastes.",
- "as_of": "2026-09-13",
+ "as_of": "2026-09-15",
  "upcoming": [
   {
    "board": "Select Board",
    "board_slug": "select-board",
    "date": "2026-09-15",
-   "days_away": 2,
+   "days_away": 0,
    "when": "Tuesday, September 15, 2026",
    "where": "Bilotta Meeting Room, Town Hall",
    "time": "7:00 PM",
@@ -114,7 +114,7 @@
    "board": "School Committee",
    "board_slug": "school-committee",
    "date": "2026-09-16",
-   "days_away": 3,
+   "days_away": 1,
    "when": "Wednesday, September 16, 2026, 7:00pm",
    "where": "LMS Collaborative Room #D132",
    "time": "7:00 PM",
@@ -204,6 +204,79 @@
   }
  ],
  "retro": [
+  {
+   "board": "Select Board",
+   "board_slug": "select-board",
+   "date": "2026-09-15",
+   "url": "/meeting-minutes/select-board/2026-09-15-kig-BTakGjQ",
+   "headline": "Select Board advanced the Food Pantry's temporary move to 30 School Street, waiving fees and OK'ing a license.",
+   "summary": "The board presented three staff Merit Awards, publicly introduced new town manager Jessica \"Jack\" Miller, and voted to authorize a license agreement and waive building fees advancing the Lunenburg Food Pantry's temporary relocation to 30 School Street, amid public-comment dispute over whether that structure is \"permanent\" or \"temporary.\" The board also referred zoning cleanup and stormwater-fee articles to the planning board for the November special town meeting, accepted a donated boulder for town hall, discussed but declined for now a MassWorks grant to study senior housing at the former TCP school, and debated (and largely declined) moving to a biweekly meeting schedule.",
+   "digest": {
+    "what_happened": [
+     {
+      "line": "Select Board authorized a license agreement and waived building-department fees to advance the Food Pantry's move to 30 School Street.",
+      "t": 3144
+     },
+     {
+      "line": "A resident disputed the building commissioner's call that the new structure counts as permanent rather than temporary.",
+      "t": 183
+     },
+     {
+      "line": "Board publicly introduced incoming town manager Jessica \"Jack\" Miller.",
+      "t": 1961
+     },
+     {
+      "line": "Zoning cleanup and a stormwater fee-bylaw article were referred to the planning board for the November 17 special town meeting.",
+      "t": 4548
+     },
+     {
+      "line": "Board declined to pursue a MassWorks grant this cycle to study senior housing at the former TCP school, citing a need for more public discussion.",
+      "t": 6598
+     }
+    ],
+    "why_it_matters": [
+     "The food pantry's site status and its permanent-vs-temporary classification affect what oversight and process apply to future town-building decisions.",
+     "The stormwater bylaw change would tie fee amounts to a planning-board schedule that can change without a town meeting vote, which residents will be asked to weigh in November.",
+     "Passing on the MassWorks grant this cycle means no funded study of TCP senior housing for now, leaving that option undecided."
+    ],
+    "watch_next": [
+     "November 17 special town meeting: zoning and stormwater fee articles, plus the Brooks House sale/lease report",
+     "FY26 budget close-out figures, expected in roughly two to three weeks"
+    ],
+    "written": {
+     "by": "scripts/write_recording_minutes.py --digest",
+     "model": "sonnet",
+     "at": "2026-09-16T13:08:55Z",
+     "cost_usd": 0.212633
+    }
+   },
+   "votes": 5,
+   "transfers": 0,
+   "tags": [
+    "athletics",
+    "budget",
+    "economic-development",
+    "facilities",
+    "fees",
+    "health-insurance",
+    "hiring",
+    "housing",
+    "legal",
+    "personnel",
+    "planning-and-zoning",
+    "policy",
+    "public-comment",
+    "public-safety",
+    "staffing",
+    "town-departments",
+    "town-meeting",
+    "transportation",
+    "warrant-article"
+   ],
+   "has_official_minutes": false,
+   "facebook": "Select Board, Tuesday September 15: Select Board advanced the Food Pantry's temporary move to 30 School Street, waiving fees and OK'ing a license.\n\n• Select Board authorized a license agreement and waived building-department fees to advance the Food Pantry's move to 30 School Street.\n• A resident disputed the building commissioner's call that the new structure counts as permanent rather than temporary.\n• Board publicly introduced incoming town manager Jessica \"Jack\" Miller.\n• Zoning cleanup and a stormwater fee-bylaw article were referred to the planning board for the November 17 special town meeting.\n• Board declined to pursue a MassWorks grant this cycle to study senior housing at the former TCP school, citing a need for more public discussion.\n\nWhy it matters: The food pantry's site status and its permanent-vs-temporary classification affect what oversight and process apply to future town-building decisions. The stormwater bylaw change would tie fee amounts to a planning-board schedule that can change without a town meeting vote, which residents will be asked to weigh in November. Passing on the MassWorks grant this cycle means no funded study of TCP senior housing for now, leaving that option undecided.\n\nWatch next: November 17 special town meeting: zoning and stormwater fee articles, plus the Brooks House sale/lease report; FY26 budget close-out figures, expected in roughly two to three weeks.\n\nVotes taken (5): Approve the renewal of the earth removal permit at 780 Northfield Road — passed unanimously; Authorize the town manager to proceed with a license agreement with town counsel for the food pantry's temporary site — passed unanimously; Waive the building, wiring, plumbing, gas, sheet metal, and technology fees for the food pantry project — passed unanimously; Refer the special town meeting articles (zoning amendments and stormwater management bylaw fee structure) to the planning board for review and public hearing — passed unanimously; Accept the three donations (boulder, engraving, and installation work) for placement in front of town hall — passed unanimously.\n\nEvery item links to the video at that moment: https://lunenburgbudgetproject.org/meeting-minutes/select-board/2026-09-15-kig-BTakGjQ\n\nThese are our minutes from the recording, not the town’s. Figures are as heard and may be wrong; the recording is the record.",
+   "written": "2026-09-16"
+  },
   {
    "board": "School Committee",
    "board_slug": "school-committee",
@@ -532,6 +605,6 @@
  ],
  "counts": {
   "upcoming": 2,
-  "retro": 4
+  "retro": 5
  }
 }
