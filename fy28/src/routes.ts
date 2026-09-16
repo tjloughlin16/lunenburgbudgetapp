@@ -88,7 +88,10 @@ export const SLUG: Record<Tab, string> = {
   override: 'overrides',
   priorities: 'priorities',
   adjust: 'build-your-own-budget',
-  development: 'development',
+  // The board of dials. TJ, 16 September 2026, on /development beside /commercial-development:
+  // "i like try-growth". The report says what is true; the tool lets you test it, and the
+  // slug now says which is which. `/development` stays as an alias.
+  development: 'try-growth',
   solved: 'what-solved-requires',
   // Top level, and a short address. This is the page somebody is sent to when they say
   // they do not believe a number, and the link has to survive being read aloud.
@@ -315,7 +318,7 @@ export const SLUG: Record<Tab, string> = {
   // UNLISTED. Reached only by somebody given the address. See UNLISTED below; give it
   // no alias.
   solutions: 'solutions',
-  // The commercial development REPORT. `/development` stays the board of dials.
+  // The commercial development REPORT. `/try-growth` is the board of dials.
   growth: 'commercial-development',
   // Homes and students: the town keeps adding homes and the schools do not gain children.
   homestudents: 'homes-and-students',
@@ -443,6 +446,7 @@ const ALIASES: Record<string, Tab> = {
   // The word a board member types. `fix` and `options` are what the page is asked for in
   // meetings; accepted, never generated.
   fix: 'solutions', options: 'solutions', 'what-to-do': 'solutions',
+  development: 'development', 'growth-dials': 'development', 'try-development': 'development',
   growth: 'growth', 'new-growth': 'growth', 'commercial-growth': 'growth', 'grow-our-way-out': 'growth',
   'homes-and-enrollment': 'homestudents', 'homes-vs-students': 'homestudents', 'residential-development': 'homestudents',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
@@ -684,7 +688,7 @@ export const LABEL: Record<Tab, string> = {
   override: 'Overrides',
   priorities: 'Priorities',
   adjust: 'Build your own budget',
-  development: 'Development',
+  development: 'Try growth',
   solved: 'What solved would require',
   sources: 'Sources',
   search: 'Search — everything this project holds',

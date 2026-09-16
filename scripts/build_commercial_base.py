@@ -166,7 +166,7 @@ def build():
                   'Averages over FY%d–FY%d and the eleven years before them.' % (recent[0]['fy'], recent[-1]['fy']),
             not_shown='WHAT was built, or where. The file carries a dollar of certified value and no parcel, permit or project. '
                       'Nor whether the pace holds: three years is the whole of the step. And personal property (equipment, utility plant) is inside the non-residential figure with the buildings.',
-            see=[('/commercial-development', 'What commercial growth would have to look like'), ('/development', 'The dials')],
+            see=[('/commercial-development', 'What commercial growth would have to look like'), ('/try-growth', 'Try it: the growth dials')],
         ),
         conclusion(
             id='business-share-of-the-base',
@@ -185,7 +185,7 @@ def build():
                    % (C.usd(last['commercial'] + last['industrial'] + last['personal']), C.usd(last['total']), last['fy'], low['fy'], C.pct(res_reval, 0), C.pct(low['cip_share'])),
             basis='DLS assessed values by class, Lunenburg rows, the CIP share as printed; the FY%d residential step is FY%d over FY%d residential value.' % (low['fy'], low['fy'], low['fy'] - 1),
             not_shown='Whether a larger business share would lower anybody’s bill. Proposition 2½ sets what the town collects; a share moves who owes what part of it. The crisis page prices that separately.',
-            see=[('/development', 'Who pays the tax base, and where it is heading')],
+            see=[('/try-growth', 'Try it: the growth dials')],
         ),
         conclusion(
             id='commercial-value-long-run',

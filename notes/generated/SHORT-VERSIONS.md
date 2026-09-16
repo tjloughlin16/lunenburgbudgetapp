@@ -32,7 +32,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [What comparable districts actually cut, and in what order](/analysis/peer-districts) | page | — / 12.2 min | *(none declared)* |
 | [What Lunenburg spends for each pupil, and what that number hides](/analysis/per-pupil-spending) | page | 4.8 / 25.0 min | 1. 1. 145 of the 177 Lunenburg children educated outside Lunenburg Public Schools go to districts that spend more for each pupil than Lunenburg does — 12.0% more at Leominster, and 43.3% more at Montachusett Regional Vocational Technical.<br>2. The set is every district that took 5 or more Lunenburg children in FY2026, derived from DESE&#x27;s residents-sending and enrolment-receiving files rather than chosen; a further 16 children went to 9 other districts in ones and twos.<br>3. And nothing in this section is a foundation budget.<br>4. 2. Lunenburg is in the bottom quarter of Massachusetts districts by total per-pupil spending, and it has been in every one of the seventeen years the state publishes.<br>5. 3. Against five neighbouring districts it has never been higher than fifth of six.<br>6. 4. Most of the spread between these six districts is the denominator, not the money.<br>7. 5. The gap is not spread evenly across the budget.<br>8. 6. Against the whole state the two smallest lines are the extreme ones.<br>9. 7. Lunenburg pays near the top of this set for teachers and employs the fewest of them per pupil.<br>10. 8. A tenth of what DESE counts as Lunenburg&#x27;s school spending is not general-fund money, and that is the smallest share in the set.<br>11. 9. The two Chapter 70 standings that look like a contradiction are not one. |
 | [A hundred questions this archive can answer](/analysis/questions) | page | — / 31.7 min | *(none declared)* |
-| [Show your work](/analysis/show-your-work) | page | — / 69.9 min | *(none declared)* |
+| [Show your work](/analysis/show-your-work) | page | — / 70.1 min | *(none declared)* |
 | [Special education, and the money outside the operating budget](/analysis/sped-and-funds) | page | — / 23.0 min | *(none declared)* |
 | [Special education and the curve](/analysis/sped-and-the-curve) | page | 0.9 / 33.8 min | 1. The FY27 level-service budget rises 3.98%.<br>2. That line is out-of-district tuition — what the town pays other schools to educate children it cannot serve here — budgeted down 46%, a fall of $591,151 in a single year.<br>3. Underneath it, in-district special education escalates at 6.49% — and the reason is not pay. |
 | [What you can ask this archive](/analysis/what-you-can-ask) | page | — / 15.0 min | *(none declared)* |
@@ -80,10 +80,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [The budget feed — FY28](/budget-feed) | reference | — / 17.4 min | *(none declared)* |
 | [Build your own budget](/build-your-own-budget) | tool | — / 15.3 min | *(none declared)* |
 | [The database](/database) | reference | — / 7.5 min | *(none declared)* |
-| [Development](/development) | tool | — / 21.2 min | *(none declared)* |
 | [Find the money](/find-the-money) | tool | — / 11.6 min | *(none declared)* |
 | [Go deeper](/go-deeper) | reference | — / 8.0 min | *(none declared)* |
-| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 48.0 min | *(none declared)* |
+| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 48.3 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 12.5 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.6 min | *(none declared)* |
 | [Analysis: Town and Schools](/reports) | reference | — / 14.7 min | *(none declared)* |
@@ -91,4 +90,5 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Sources](/sources) | reference | — / 17.1 min | *(none declared)* |
 | [Special education — four reports](/special-education) | reference | — / 7.5 min | *(none declared)* |
 | [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 13.2 min | *(none declared)* |
+| [Try growth](/try-growth) | tool | — / 21.2 min | *(none declared)* |
 | [What we cannot answer](/what-we-cannot-answer) | reference | — / 92.3 min | *(none declared)* |

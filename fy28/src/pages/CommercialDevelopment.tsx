@@ -42,7 +42,7 @@ const SHORT = ['non-residential-building-stepped-up']
  *  individual reports for the big concepts in the budget crisis."
  *
  *  There was a room on the crisis page (Walkthrough, room 9), a card in its short
- *  version, a question on Straight answers, and a board of dials at /development -- and
+ *  version, a question on Straight answers, and a board of dials at /try-growth -- and
  *  no report a resident could be handed. This is that report. It draws the same figures
  *  from the same model (`DEVELOPMENT`, `FEASIBILITY` in model/answers.ts; the build rate
  *  that holds the projection in model/rates.ts), so it cannot disagree with the crisis
