@@ -14,8 +14,8 @@ its deploy went to a Pages preview alias; production missed a day.
 previews, minutes and payloads, and pushes. It logs to `build/refresh-logs/<date>.log`.
 Nothing in it posts to Facebook; the paste-ready texts land in `build/notices-to-post.md`.
 
-Install it as a launchd job. It fires at 9:00 every morning AND at every login/boot; the
-script itself refuses to run twice in one day, so a Mac that was off at 9:00 catches up
+Install it as a launchd job. It fires at 7:00 every morning AND at every login/boot; the
+script itself refuses to run twice in one day, so a Mac that was off at 7:00 catches up
 the next time it starts, and one that was asleep runs on wake.
 
     cp ops/org.lunenburgbudgetproject.refresh.plist ~/Library/LaunchAgents/

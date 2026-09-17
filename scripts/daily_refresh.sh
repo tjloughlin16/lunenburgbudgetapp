@@ -35,7 +35,7 @@ if [ "$HERE" != "$(cd "$TREE" 2>/dev/null && pwd)" ]; then
     echo "$(date): no refresh tree at $TREE -- run: bash scripts/setup_refresh_tree.sh" >> "$LOG"
     exit 1
   fi
-  # ONCE A DAY, WHENEVER THE MACHINE IS ON. launchd fires this at 9:00 and again at every
+  # ONCE A DAY, WHENEVER THE MACHINE IS ON. launchd fires this at 7:00 and again at every
   # login/boot (RunAtLoad); the guard makes the second firing a no-op on a day that ran.
   if grep -q "=== finished" "$LOG" 2>/dev/null; then
     echo "already ran today ($(date)); nothing to do" >> "$LOG"
