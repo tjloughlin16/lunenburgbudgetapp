@@ -709,11 +709,11 @@ export function PrintButton({ label = 'Print / Save as PDF' }: { label?: string 
   return (
     <button type="button" onClick={() => window.print()}
       className="no-print inline-flex items-center gap-1.5 text-xs font-semibold
-                 px-2.5 py-1.5 rounded border min-h-[32px] shrink-0
+                 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded border min-h-[28px] sm:min-h-[32px] shrink-0
                  transition-opacity hover:opacity-80"
       style={{ borderColor: 'var(--grid)', color: 'var(--text-secondary)',
                background: 'var(--surface-1)' }}>
-      <span aria-hidden="true">&#x2399;</span>{label}
+      <span aria-hidden="true">&#x2399;</span><span className="hidden sm:inline">{label}</span><span className="sm:hidden">Print</span>
     </button>
   )
 }
@@ -769,13 +769,13 @@ export function ReportShell({
     if (text) setShareMeta({ description: text, page: true, type: 'article' })
   })
   return (
-    <article className="report mx-auto max-w-6xl px-5 pt-14 pb-16">
+    <article className="report mx-auto max-w-6xl px-5 pt-5 sm:pt-12 pb-16">
       <header className="report-head">
         {/* THE PRINT BUTTON SITS ON THE EYEBROW LINE, NOT BESIDE THE TITLE. It used to
             share a flex row with the h1, which gave the title the container minus the
             button and then capped it again at max-w-3xl -- a two-line title on every
             report. TJ: "squished". The title now runs the width of the page. */}
-        <div className="flex items-start justify-between gap-4 mb-3 min-h-[1.5rem]">
+        <div className="flex items-start justify-between gap-4 mb-1.5 sm:mb-3 min-h-[1.5rem]">
           {eyebrow ? (
             <p className="text-xs font-semibold uppercase tracking-widest pt-1.5"
               style={{ color: 'var(--text-muted)' }}>{eyebrow}</p>
@@ -786,9 +786,9 @@ export function ReportShell({
             NAME and some are the finding itself, in a sentence -- both are the first
             thing on the page and both are set the same, because a reader takes a
             difference in setting for a difference in weight. */}
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-5xl">{title}</h1>
+        <h1 className="text-[2rem] sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-5xl">{title}</h1>
         {standfirst && (
-          <p ref={standRef} className="mt-5 text-lg leading-relaxed max-w-2xl"
+          <p ref={standRef} className="mt-3 sm:mt-5 text-[17px] sm:text-lg leading-relaxed max-w-2xl"
             style={{ color: 'var(--text-secondary)' }}>{standfirst}</p>
         )}
         {meta}

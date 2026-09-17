@@ -476,5 +476,181 @@
    "at": "2026-09-17T11:22:20Z",
    "cost_usd": 0.18496999999999997
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01062026-7584",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-01-06-minutes-7584.txt",
+   "path": "sources/meetings/select-board/2026-01-06-minutes-7584.pdf"
+  },
+  "official_sha256": "c16716d8958f49dea52ceedf1e1c2f1085122f6a0f07549eedcd50710d761fa7",
+  "coverage": "partial",
+  "summary": "The two records agree closely on every vote, figure, and decision that both capture — outcomes, dollar amounts, and counts all match, with only one name garbled by captions. The most consequential gap is procedural: our minutes omit an entire vote (approving eight sets of back minutes, 4-0-1) and a whole attendee, Member Glenn McLeod, who made motions and cast the lone abstention.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Sanderson APDC appointment vote",
+    "t": 324,
+    "ours": "Appoint Jennifer Sanderson to the APDC as the historical commission representative, term to expire June 2027 — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to appoint Jennifer Sanderson to the APDC as the Historical Commission Representative, with a term to expire June 2027. Seconded by Vice-Chair Amanda Moore. Call for vote: Five-Aye. The motion passed unanimously (5-0-0).",
+    "note": "Same appointee, term, and unanimous outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "McBride register of voters vote",
+    "t": 344,
+    "ours": "Appoint Shirley McBride to the register of voters, term to expire March 31, 2028 — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to appoint Shirley McBride to the Registrar of Voters, with a term to expire March 31, 2028. Seconded by Vice-Chair Amanda Moore. Call for vote: Five-Aye. The motion passed unanimously (5-0-0).",
+    "note": "Same appointee, term, and unanimous outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation agent's name",
+    "t": 590,
+    "ours": "Herin/Hurland Jamie",
+    "official": "Herlin Jaime",
+    "official_reading": "Herlin Jaime",
+    "note": "Captions misheard the name; vote content and outcome otherwise match."
+   },
+   {
+    "kind": "agree",
+    "about": "Conservation agent ratification vote",
+    "t": 590,
+    "ours": "Ratify the town manager's appointment of Herin/Hurland Jamie as conservation agent and approve a step five salary — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to ratify the Town Manager's appointment of Herlin Jaime as Conservation Agent and approve a Step 5 salary. Seconded by Vice-Chair Amanda Moore. Call for vote: Five-Aye. The motion passed unanimously (5-0-0).",
+    "note": "Same motion and unanimous outcome, aside from the name (see caption_error entry)."
+   },
+   {
+    "kind": "agree",
+    "about": "ABCC certification forms vote",
+    "t": 1401,
+    "ours": "Approve the two ABCC annual certification forms — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to approve the two forms for the ABCC Annual Certification. Seconded by Vice-Chair Moore. Call for vote: Five-Aye. The motion passed unanimously (5-0-0).",
+    "note": "Matches, including that both forms were bundled into one vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Annual town meeting warrant open/close vote",
+    "t": 1487,
+    "ours": "Open the annual town meeting warrant on January 6, 2026 and close it on March 16, 2026 — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to open the Annual Town Meeting Warrant on Tuesday, January 6, 2026, and close the warrant on March 16, 2026. Seconded by Vice-Chair Moore. Call for vote: Five-Aye. The motion passed unanimously (5-0-0).",
+    "note": "Dates and outcome match exactly."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve eight sets of back minutes",
+    "ours": "",
+    "official": "Motion by Chair Nuzzolo to approve all sets of minutes as presented. Seconded by Seconded by Clerk Emkey. Call for vote: Four-Aye; One-Abstain. The motion passed (4-0-1), with Member McLeod abstaining.",
+    "note": "This entire vote is absent from our minutes — check the recording around the minutes-approval segment to confirm it was captured and simply mis-transcribed as procedural rather than genuinely missed."
+   },
+   {
+    "kind": "agree",
+    "about": "Nashoba assessment percentage increase",
+    "t": 984,
+    "ours": "30%",
+    "official": "Nashoba voted to raise their assessments by 30%",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Nashoba assessment dollar increase and new total",
+    "t": 1005,
+    "ours": "$13,946, a little over $90,000",
+    "official": "The increase represents approximately $13,946 above what had been anticipated, bringing the total Nashoba assessment to just over $90,000.",
+    "note": "Both figures match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Number of water billing catch-up bills",
+    "t": 841,
+    "ours": "11",
+    "official": "Eleven customers had not received water bills during the regular quarterly schedule",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable warrant amount",
+    "t": 1401,
+    "ours": "$316,660.36",
+    "official": "An Accounts Payable Warrant in the amount of $316,660.36 was presented for approval.",
+    "note": "Matches exactly, down to the cents."
+   },
+   {
+    "kind": "agree",
+    "about": "Uncounted paraprofessionals in FY26 school budget",
+    "t": 2939,
+    "ours": "10",
+    "official": "the discovery of ten paraprofessionals not accounted for in the FY26 budget",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Special event policy workshop scheduling",
+    "t": 1507,
+    "ours": "The board will hold a workshop on the special event policy at next week's meeting.",
+    "official": "Chair Nuzzolo noted that the Select Board would workshop the Special Event Policy at the following week's meeting.",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision not to add subcommittee screening step",
+    "t": 2429,
+    "ours": "The board agreed not to move forward with a subcommittee-based screening step for the appointment policy, in response to public and member feedback.",
+    "official": "Reflecting on the public feedback received both from the public comment earlier in the evening and from a resident email the Select Board reached consensus to not move forward with the subcommittee concept.",
+    "note": "Matches; official adds that Member McLeod originally raised the idea, which our minutes omit along with McLeod generally."
+   },
+   {
+    "kind": "agree",
+    "about": "Water billing rate adjustment scheduling",
+    "t": 881,
+    "ours": "A rate adjustment related to water billing is expected to be placed on next Tuesday's agenda.",
+    "official": "Town Manager Warren-Dyment noted the Select Board would consider a rate adjustment in accordance with the applicable contract, anticipated to be placed on the following week's agenda.",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Town mailer warrant article to be scheduled",
+    "t": 2705,
+    "ours": "Add a warrant article for a town mailer (for the council on aging) to an upcoming agenda before budget meetings intensify.",
+    "official": "Clerk Emkey requested that the Warrant Article pertaining to the Town Meeting mailer be placed on an upcoming agenda, in advance of the budget season. Chair Nuzzolo confirmed this was being tracked and would be scheduled.",
+    "note": "Matches; official additionally attributes the request specifically to Clerk Emkey, which ours does not specify."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Glenn McLeod",
+    "ours": "",
+    "official": "Member Brian Lehtinen, and Member Glenn McLeod",
+    "note": "McLeod is entirely absent from our attendee list despite being an active participant (raised the subcommittee screening idea, gave a committee report, cast the sole abstention) — check whether captions simply never named him or he was off-camera/muted."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair's name",
+    "ours": "the chair (chair)",
+    "official": "Chair Caesar Nuzzolo",
+    "note": "Ours never names the chair; check the recording's opening minutes where he is likely introduced by name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Melissa Richard",
+    "ours": "Melissa Richard (executive assistant)",
+    "official": "",
+    "note": "Not listed in the official 'Members Present'/'Also Present' roster at all; check whether she was present but omitted by the town, or whether captions misattributed a role/name to someone else present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-17T22:40:42Z",
+   "cost_usd": 0.2262056
+  }
  }
 }

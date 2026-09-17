@@ -1854,7 +1854,7 @@
      "stars": 3,
      "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
      "kind": "Notes",
-     "bytes": 41062,
+     "bytes": 41064,
      "url": "/docs/analyses/questions.md",
      "count": 952,
      "unit": "lines",
@@ -2639,9 +2639,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 607161,
+     "bytes": 607275,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7031,
+     "count": 7032,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -2747,9 +2747,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 164590,
+     "bytes": 166729,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 1010,
+     "count": 1023,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -2790,18 +2790,6 @@
      "textUrl": "/docs/data/dese-attrition.csv"
     },
     {
-     "path": "data/board-pages.csv",
-     "title": "Every board’s own page on the town’s site, extracted",
-     "stars": 3,
-     "what": "What the town (or, for the School Committee, the district) says each board is: the overview as printed, the charter or bylaw it cites, when it meets, its members and terms, and a Facebook link where the board’s page carries one. One row per board; the mirrored pages are under town-supplementary/docs/. Rebuild with scripts/fetch_board_pages.py.",
-     "kind": "Data",
-     "bytes": 103673,
-     "url": "/docs/data/board-pages.csv",
-     "count": 1660,
-     "unit": "rows",
-     "textUrl": "/docs/data/board-pages.csv"
-    },
-    {
      "path": "data/free-cash-proof.csv",
      "title": "Free cash, nine towns, five years, line by line",
      "stars": 3,
@@ -2824,6 +2812,18 @@
      "count": 323,
      "unit": "rows",
      "textUrl": "/docs/data/document-basis.csv"
+    },
+    {
+     "path": "data/board-pages.csv",
+     "title": "Every board’s own page on the town’s site, extracted",
+     "stars": 3,
+     "what": "What the town (or, for the School Committee, the district) says each board is: the overview as printed, the charter or bylaw it cites, when it meets, its members and terms, and a Facebook link where the board’s page carries one. One row per board; the mirrored pages are under town-supplementary/docs/. Rebuild with scripts/fetch_board_pages.py.",
+     "kind": "Data",
+     "bytes": 81816,
+     "url": "/docs/data/board-pages.csv",
+     "count": 542,
+     "unit": "rows",
+     "textUrl": "/docs/data/board-pages.csv"
     },
     {
      "path": "data/dese-sped-movement.csv",
@@ -15650,7 +15650,7 @@
  "totals": {
   "documents": 1357,
   "groups": 22,
-  "bytes": 2161677074,
+  "bytes": 2161657472,
   "loadBearing": 125
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

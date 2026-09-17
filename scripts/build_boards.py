@@ -149,15 +149,28 @@ def similar(a, b):
 
 
 def outcome_key(o):
-    o = (o or '').lower()
-    if 'not' in o or 'unknown' in o or not o:
-        return 'unknown'
-    if 'fail' in o or 'defeat' in o:
-        return 'failed'
-    m = re.search(r'(\d+)\s*-\s*(\d+)', o)
-    if m:
-        return 'count:%s-%s' % (m.group(1), m.group(2))
-    return 'passed' if 'pass' in o or 'carr' in o or 'approv' in o or 'unanim' in o else o
+    """('passed'|'failed'|'unknown', count-or-None). "passed 4-0-0" and "passed" AGREE: a
+    count is more than a bare result, not a different one. Two counts that differ, or a
+    pass against a fail, disagree."""
+    t = (o or '').lower()
+    if not t or 'not audible' in t or 'unknown' in t or 'not stated' in t:
+        return ('unknown', None)
+    m = re.search(r'(\d+)\s*-\s*(\d+)(?:\s*-\s*(\d+))?', t)
+    count = (m.group(1), m.group(2)) if m else None
+    if 'fail' in t or 'defeat' in t or 'did not pass' in t or 'not pass' in t:
+        return ('failed', count)
+    return ('passed', count)
+
+
+def outcomes_disagree(a, b):
+    ka, kb = outcome_key(a), outcome_key(b)
+    if 'unknown' in (ka[0], kb[0]):
+        return False
+    if ka[0] != kb[0]:
+        return True
+    return bool(ka[1] and kb[1] and ka[1] != kb[1])
+
+
 CYCLES = 5
 
 # THE THREE, first on the index and richest on their pages.
@@ -228,7 +241,6 @@ def finance_counts():
                     else:
                         f['related'] += 1
     return _FINANCE
-
 
 def build(as_of=None):
     as_of = as_of or dt.date.today().isoformat()
@@ -326,7 +338,7 @@ def build(as_of=None):
                 if rv is not None:
                     used.add(best)
                 conflict = None
-                if rv is not None and outcome_key(ov.get('outcome')) != outcome_key(rv.get('outcome')) and outcome_key(rv.get('outcome')) != 'unknown':
+                if rv is not None and outcomes_disagree(ov.get('outcome'), rv.get('outcome')):
                     conflict = 'the minutes say “%s”; the recording was heard as “%s”' % (ov.get('outcome'), rv.get('outcome'))
                     conflicts += 1
                 votes.append(dict(date=d, t=rv.get('t') if rv else None, motion=ov.get('motion'), outcome=ov.get('outcome'),

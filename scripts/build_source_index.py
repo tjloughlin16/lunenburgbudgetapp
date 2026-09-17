@@ -2098,6 +2098,10 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # The budget state of a recording -- deficits, cuts, warnings as heard -- the same
              # kind of thing as our minutes: written by a model, never a source.
              'data/budget-state',
+             # The votes read out of the TOWN'S minutes by extract_official_votes.py, one
+             # JSON per set of minutes, each vote with its verbatim quote. A reading of a
+             # document the archive already catalogues, not a document; the minutes are.
+             'data/official-votes',
              # The site's own brand assets: the favicon and the Facebook cover, with a README.
              'data/brand'}
 # Bookkeeping about the R2 archive rather than anything read for a figure:

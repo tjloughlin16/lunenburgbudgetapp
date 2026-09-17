@@ -538,5 +538,264 @@
    "at": "2026-09-17T11:19:58Z",
    "cost_usd": 0.1677826
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082026-7592",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2026-01-08-minutes-7592.txt",
+   "path": "sources/meetings/finance-committee/2026-01-08-minutes-7592.pdf"
+  },
+  "official_sha256": "a96ec333b7ad95151d3201f800f5d1446b63dadc44bb98a43feb524e56481e21",
+  "coverage": "partial",
+  "summary": "The two records overlap on the calendar/process decisions (Monty Tech timing, schools presenting earlier, the 5% reduction directive, the capital-template push) and on the water-bill customer count, but otherwise diverge sharply: nearly every dollar figure in our minutes (recruiter fee, revenue estimate, Monty Tech assessment, health insurance, trash/recycling, TCP, ambulance, capital vehicles, tuition decline, turf field, playground, Wi-Fi, cruiser) is absent from the official minutes, while the official minutes carry a full staffing narrative, a roll-call vote on prior minutes, and committee member Tanya Dall — none of which appear in ours. A reader should specifically check the $90,000 Fitchburg/Ritter-ADA transfer (only in ours, no corroborating official record) and the missing minutes-approval vote and missing attendee (only in official).",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 18,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "vote to approve prior minutes (10/23/25, 11/13/25)",
+    "ours": "none (our VOTES list is empty)",
+    "official": "There was a motion to approve minutes of October 23, 2025, and November 13, 2025 as amended by Ana Lockwood, seconded by Tom Gray. Roll call vote. Jean Russell aye, Mike Rupp aye, Ana Lockwood aye, Tanya Dall aye, Jay Simeone aye, Tom Gray aye, Chris Menard aye.",
+    "note": "A real roll-call vote is recorded officially but missing entirely from our transcript-based minutes; check the recording near the end of the meeting to see if this segment was skipped or inaudible."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "transfer to pay Fitchburg water back bill",
+    "t": 1890,
+    "ours": "Town meeting authorization to use old/unexpended capital funds (including funds set aside for Ritter ADA upgrades) to pay a back bill owed to Fitchburg for water service — 90,000 (voted at a prior town meeting, referenced here as already authorized)",
+    "official": "",
+    "note": "No mention of a Fitchburg back bill, a $90,000 transfer, or the Ritter ADA capital funds appears anywhere in the official minutes; check the town meeting warrant/vote record to confirm this authorization exists as described."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fitchburg intermunicipal water rate increase",
+    "t": 1828,
+    "ours": "Water rate increase under the Fitchburg intermunicipal contract: 30%",
+    "official": "",
+    "note": "Official minutes discuss the 11 water customers/catch-up bills but never mention a 30% rate increase or the intermunicipal contract; verify against the water enterprise fund materials."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "water enterprise fund reimbursement figures",
+    "t": 2137,
+    "ours": "Water enterprise fund reimbursement and annual budgeting: 90,000, 50,000, 150,000",
+    "official": "",
+    "note": "None of these three figures appear in the official minutes; check the enterprise fund budget documents to confirm."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "date range of the water catch-up bills",
+    "ours": "",
+    "official": "they will be issued a catch-up bill to cover January 2025 through November 2025",
+    "note": "Official adds the specific billing period; not captured in our figures — a caption/detail gap, not a conflict."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "finance director recruiter fee",
+    "t": 896,
+    "ours": "Recruiter fee for finance director search: 20%, 145, up to 20%",
+    "official": "",
+    "note": "Official only states 'Town Manager has signed an agreement with Complete Staffing to recruit and fill the Finance Director position' with no percentage or dollar figure; check the actual recruiter contract for the fee terms — '145' is unclear and may be a caption misread."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 revenue estimate",
+    "t": 2806,
+    "ours": "FY27 revenue estimate: 1.3 million",
+    "official": "",
+    "note": "No revenue estimate figure appears in the official minutes; check the FY27 budget calendar materials."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Monty Tech assessment share figures",
+    "t": 2826,
+    "ours": "Monty Tech assessment share of the town budget: 3%, 39,000",
+    "official": "",
+    "note": "Official discusses aligning Monty Tech's assessment with LPS but gives no percentage or dollar figure; check the Monty Tech FY27 assessment worksheet."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "health insurance increase vs. new revenue",
+    "t": 3107,
+    "ours": "Health insurance increase vs. available new revenue: 20%, 86,000",
+    "official": "",
+    "note": "Not mentioned at all in the official minutes; check the FY27 health insurance rate renewal documents."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "trash/recycling contract cost figures",
+    "t": 3919,
+    "ours": "Trash/recycling contract cost: 150,000, 500,000, 300,000",
+    "official": "Ana Lockwood states there needs to be a solution found as opposed to an override. Some areas to focus on included recycling, TCP building, and ambulance receipts.",
+    "note": "Official names 'recycling' only as a topic to focus on, with none of the three dollar figures; check the solid waste contract for the real numbers."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "TCP building operating cost",
+    "t": 3962,
+    "ours": "TCP building operating cost: 100,000",
+    "official": "Some areas to focus on included recycling, TCP building, and ambulance receipts.",
+    "note": "Official names TCP building as a topic with no figure attached; check the facilities budget for the actual operating cost."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ambulance receipts and free cash",
+    "t": 4003,
+    "ours": "Ambulance receipts and free cash: 250,000",
+    "official": "Some areas to focus on included recycling, TCP building, and ambulance receipts.",
+    "note": "Official names ambulance receipts as a topic with no figure; check the ambulance fund/free cash reports for the actual amount."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "capital vehicle requests (brush truck, dump truck)",
+    "t": 4087,
+    "ours": "Capital vehicle requests: brush truck and dump truck: 335,000, 41,000",
+    "official": "",
+    "note": "Not mentioned at all in the official minutes; check the FY27 capital plan for these vehicle requests."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "out-of-district tuition settlement revenue decline",
+    "t": 4463,
+    "ours": "Out-of-district tuition settlement revenue decline: 500,000, 100,000, 400,000",
+    "official": "",
+    "note": "Not mentioned at all in the official minutes; check the school district's tuition revenue projections. Also keep budget vs. actual distinct per this repo's rule 1 if used downstream."
+   },
+   {
+    "kind": "agree",
+    "about": "5% department budget reduction directive",
+    "t": 4588,
+    "ours": "Department heads asked to submit budgets reflecting a 5% reduction scenario with a narrative explanation.",
+    "official": "Jennifer Warren-Dyment has spoken to department heads to update their budget as well as include a budget with a 5% reduction.",
+    "note": "Same directive and same 5% figure in both; official omits the 'narrative explanation' detail, a minor addition only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "turf field design funding (warrant article)",
+    "t": 5392,
+    "ours": "Turf field design funding (proposed warrant article): 200,000, 4 million",
+    "official": "",
+    "note": "Not mentioned at all in the official minutes; check the capital planning committee's FY27 warrant article list."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "primary school playground design figures",
+    "t": 6081,
+    "ours": "Primary school playground design: 30,000, 200,000, 300,000",
+    "official": "",
+    "note": "Not mentioned at all in the official minutes; check the capital plan for the playground design request."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "outdoor Wi-Fi access point request",
+    "t": 5094,
+    "ours": "Outdoor Wi-Fi access point request: under $5,000",
+    "official": "",
+    "note": "Not mentioned at all in the official minutes; check the IT/capital small-purchase list."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "police cruiser hybrid vs. gas cost comparison",
+    "t": 6997,
+    "ours": "Police cruiser hybrid vs. gas and charging station cost: 45,000",
+    "official": "",
+    "note": "Not mentioned at all in the official minutes; check the police department's FY27 vehicle request."
+   },
+   {
+    "kind": "agree",
+    "about": "schools presenting budget earlier",
+    "t": 3002,
+    "ours": "Schools will present their budget earlier in this year's calendar than in past years.",
+    "official": "The Town Manager and the Finance Committee request they present their budget earlier than usual.",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "standardized capital project presentation template",
+    "t": 6019,
+    "ours": "Standardize capital project presentations into one common template/format (GFOA-style) before bringing them to the committee.",
+    "official": "The Capital Planning Committee has initiated a request to implement a standardized template or format for use by all department heads.",
+    "note": "Same underlying fact; official attributes the initiative to the Capital Planning Committee while ours frames it as a committee decision, and only ours specifies 'GFOA-style' — worth checking which body actually owns this action."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "department heads copying clerk/finance chair on warrant articles",
+    "t": 7595,
+    "ours": "Department heads asked to copy the town clerk and the finance committee chair when they submit warrant articles.",
+    "official": "",
+    "note": "Not mentioned at all in the official minutes; check whether this instruction was actually given or is a caption artifact from a tangential conversation."
+   },
+   {
+    "kind": "caption_error",
+    "about": "committee member Ana Lockwood's first name",
+    "ours": "Anna (Lockwood) (member)",
+    "official": "Committee Member Ana Lockwood",
+    "official_reading": "Ana Lockwood",
+    "note": "Same person; captions added an extra 'n' to her first name."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "committee member Tanya Dall",
+    "ours": "",
+    "official": "Committee Member Tanya Dall",
+    "note": "An entire attendee present and voting in the official minutes is missing from our attendee list; check whether the recording captured her being named/introduced."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "clerk/recording secretary 'Danielle'",
+    "ours": "Danielle (clerk/recording secretary)",
+    "official": "",
+    "note": "Official's 'Present Members' list has no separate recording secretary — Tom Gray holds the Clerk title himself; check whether 'Danielle' is town staff (not a committee member, so omitted from official's member list) or a caption misidentification."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Jean Russell's title",
+    "ours": "Jean (member)",
+    "official": "Vice Chair Jean Russell",
+    "note": "Same person, but the Vice Chair title is only in the official minutes; ours only heard her as a generic member."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tom Gray's title",
+    "ours": "Tom (Gray) (member)",
+    "official": "Clerk Tom Gray",
+    "note": "Ours correctly got his last name but missed that he holds the Clerk title; official has it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Monty Tech representative Stephanie's last name",
+    "ours": "Stephanie (Quinn) (Monty Tech representative)",
+    "official": "Stephanie (LAST NAME) participated in the meeting as a newly appointed representative who began her role on October 1, 2025.",
+    "note": "Official could not identify her surname at all, while ours gives 'Quinn' — check the Monty Tech school committee roster to confirm whether Quinn is correct or a caption guess."
+   },
+   {
+    "kind": "caption_error",
+    "about": "town manager's name",
+    "ours": "Jen (town manager)",
+    "official": "Jennifer Warren-Dyment",
+    "official_reading": "Jennifer Warren-Dyment",
+    "note": "Same person; captions only caught the short form of her first name and dropped her surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Mike Rupp and Jay Simeone's identities",
+    "ours": "Mike (member); Jay (member)",
+    "official": "Committee Member Mike Rupp; Committee Member Jay Simeone",
+    "note": "Same two people; official simply supplies the surnames the captions did not catch."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-17T22:27:50Z",
+   "cost_usd": 0.373497
+  }
  }
 }

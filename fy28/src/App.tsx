@@ -673,11 +673,14 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
     <nav aria-label="Breadcrumb" className="border-b" style={{ borderColor: 'var(--grid)' }}>
       {/* The reading time shares this row: where the page sits, and how long it is, both
           answered before the title. See components/ReadingTime.tsx. */}
-      <div className="mx-auto max-w-6xl px-5 py-2.5 flex items-center justify-between gap-4">
+      <div className="mx-auto max-w-6xl px-5 py-1.5 sm:py-2.5 flex items-center justify-between gap-4">
       <ol className="flex items-center gap-1.5 flex-wrap min-w-0
                      text-[12px]">
-        {trail.map(t => (
-          <li key={t} className="flex items-center gap-1.5">
+        {/* ON A PHONE, ONLY THE PARENT. TJ, 17 September 2026, on a three-line breadcrumb
+            over a title: "we have to lose some of this space. It's too much on mobile".
+            The full trail from the root is desktop furniture; a phone shows where up goes. */}
+        {trail.map((t, i) => (
+          <li key={t} className={`${i < trail.length - 1 ? 'hidden sm:flex' : 'flex'} items-center gap-1.5`}>
             <a href={pathFor(t)}
               onClick={e => { if (!plainClick(e)) return; e.preventDefault(); goUp(t) }}
               className="font-semibold hover:underline"
@@ -685,7 +688,7 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
             <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>&rsaquo;</span>
           </li>
         ))}
-        <li aria-current="page" style={{ color: 'var(--text-secondary)' }}>{LABEL[tab]}</li>
+        <li aria-current="page" className="hidden sm:block" style={{ color: 'var(--text-secondary)' }}>{LABEL[tab]}</li>
       </ol>
       <ReadingTime tab={tab} reference={REFERENCE.has(tab)} tool={TOOLS.has(tab)} />
       </div>

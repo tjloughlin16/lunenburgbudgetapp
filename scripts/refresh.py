@@ -406,6 +406,13 @@ def main():
         # 9. The search index to D1 -- the analysis database push is NOT run here.
         if not a.no_push:
             py('sync_search_d1.py', '--limit', str(SEARCH_PUSH_LIMIT), check=False)
+        # 10. THE DOCUMENTS THEMSELVES TO THE BUCKET. The refresh fetches the town's new
+        # PDFs into its own worktree, but git carries only the manifest and the text --
+        # so a document fetched here and never pushed exists on one disk and nowhere
+        # else (a Stormwater agenda went that way on 17 September 2026). New keys only.
+        if not a.no_push:
+            py('sync_archive.py', '--manifest', check=False)
+            py('sync_archive.py', '--push', check=False)
 
     after = {
         'agendas': sum(1 for e in read_csv(MEETING_EVENTS) if e['kind'] == 'agenda'),
