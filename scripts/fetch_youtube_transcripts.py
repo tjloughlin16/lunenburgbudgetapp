@@ -256,6 +256,9 @@ def fetch_one(api, row):
     }
 
 
+MIN_SLEEP = 45
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -280,13 +283,19 @@ def main():
     # Nothing here is urgent. The whole channel is 2,857 meetings and this costs no money
     # and no attention -- it runs unattended and resumes. So the default is slow enough to
     # be invisible to YouTube rather than fast enough to finish in one sitting.
-    ap.add_argument('--sleep', type=float, default=45.0,
-                    help='seconds between requests (default 45; 1.5 got us 429ed)')
+    ap.add_argument('--sleep', type=float, default=MIN_SLEEP,
+                    help='seconds between fetches; anything under %d s is raised to it' % MIN_SLEEP)
     ap.add_argument('--stop-after-failures', type=int, default=3,
                     help='give up the run after this many consecutive failures')
     ap.add_argument('--status', action='store_true',
                     help='what is fetched and what is not, then stop')
     args = ap.parse_args()
+    # A HARD FLOOR. 30 seconds tripped the throttle after 13 videos on 17 September 2026
+    # and the endpoint then refuses for hours; 45 has run for weeks without. TJ: "put a
+    # hard limit on 45. seems faster is bad and fails."
+    if args.sleep < MIN_SLEEP:
+        print('--sleep %g raised to the floor of %d s: faster trips the caption endpoint’s throttle' % (args.sleep, MIN_SLEEP))
+        args.sleep = MIN_SLEEP
 
     idx = read_index()
     targets = load_targets(args.board, args.since, args.until, args.video_only)
