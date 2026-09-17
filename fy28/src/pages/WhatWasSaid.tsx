@@ -1,6 +1,7 @@
 import type { Tab } from '../routes'
 import { RecentMeetings } from '../components/RecentMeetings'
 import { recordedSlugFromPath } from '../routes'
+import { useShareMeta } from '../lib/title'
 import { ReportShell, useReport, H2, Body, MoreReports } from '../components/report'
 
 const TAB: Tab = 'recorded'
@@ -277,6 +278,9 @@ function Caveat({ warning }: { warning: string }) {
 
 function MeetingPage({ m, warning }: { m: Meeting; warning: string }) {
   const mm = m.minutes
+  // THE LINK PREVIEW: the headline and the summary, so a meeting shared on Facebook says
+  // what happened at it rather than what the site is (lib/title.ts).
+  useShareMeta(m.headline ? `${m.headline}. ${m.summary}` : m.summary, 'article')
   const votes = mm.votes.filter(v => !v.procedural)
   const procedural = mm.votes.filter(v => v.procedural)
   const official = m.town_published.filter(x => x.kind === 'minutes')

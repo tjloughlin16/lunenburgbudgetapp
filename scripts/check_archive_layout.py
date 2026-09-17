@@ -77,7 +77,9 @@ LEDGER = {
                         'glytdbud-revenue-fy2025-p13-gf-all'),
     'account-details': (re.compile(r'^(account-details-fy\d{4}-[a-z0-9-]+'
                                    r'|athletics-by-sport-fy\d{4}-fy\d{4}'
-                                   r'|athletic-fee-counts-fy\d{4})$'),
+                                   r'|athletic-fee-counts-fy\d{4}'
+                                   r'|field-rental-receipts-fy\d{4}-fy\d{4}-[a-z]+'
+                                   r'|parks-[a-z-]+-fy\d{4}-myrec)$'),
                         'account-details-fy2025-gf-school'),
     'transfers':       (re.compile(r'^transfers-fy\d{4}(-[a-z0-9-]+)?$'),
                         'transfers-fy2025'),

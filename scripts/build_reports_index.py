@@ -134,6 +134,7 @@ CATEGORIES = [
         # pay the schools. others pay Parks and Rec." So it shelves with the schools; a
         # Parks and Recreation counterpart would be the town's.
         ('the fields, and the leagues that pay the schools to use them', ['youthsports']),
+        ('every fund and line the School Committee owns', ['schoolfinance']),
         ('the rules everyone argues under', ['classsize', 'formula']),
     ]),
     ('town', 'The town', [

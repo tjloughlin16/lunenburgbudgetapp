@@ -979,6 +979,10 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/reconcile_minutes.py                  # ours against the town's minutes: caption errors resolved, differences flagged
     python3 scripts/build_recording_minutes.py            # the /what-was-said payload, from the files
     python3 scripts/build_recording_minutes.py --check    # ...and fail if it is stale
+    python3 scripts/build_fund_owners.py --seed           # the ACCOUNT REGISTRY: every measure a held report prints, with an owner
+    python3 scripts/build_fund_owners.py --check          # ...and fail if a report prints one the registry lacks, or an owner is nobody
+    python3 scripts/build_finance.py                      # every measure by owner, FY26 figures beside the annual-report history: /accounts, /departments, /boards/<slug>/finance
+    python3 scripts/build_finance.py --check
     python3 scripts/build_boards.py                       # one page per board: upcoming, recent, every vote, time, budget calendar
     python3 scripts/build_boards.py --check
     python3 scripts/build_budget_feed.py                  # everything budget-related across every board, on one page

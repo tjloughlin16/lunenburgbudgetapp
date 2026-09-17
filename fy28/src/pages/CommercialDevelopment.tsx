@@ -100,7 +100,7 @@ export function CommercialDevelopment() {
       <ShortVersion>
         <div className="grid gap-4 mt-5 md:grid-cols-2">
           <Insight n={1} figure={usdShort(five.value)} tone="var(--status-critical)"
-            headline={<>Holding the gap for five years takes {usdShort(five.value)} of new commercial value a year &mdash; about {five.developments.toFixed(0)} developments a year, {F.developments5} over the five.</>}>
+            headline={<>Growth alone is not a solution: holding the gap for just five years takes {usdShort(five.value)} of new commercial value a year &mdash; about {five.developments.toFixed(0)} developments a year, {F.developments5} over the five.</>}>
             That is {pct(five.shareOfBase, 0)} of everything commercial, industrial and personal the town has today, added again every year. The best year on record added {usdShort(bestValue)} of new value of every kind, residential included. Broken into the model&rsquo;s own mix of a &ldquo;typical Lunenburg development&rdquo; it is {F.buildings5} buildings in five years, on {F.parcelsToday} business parcels today.
           </Insight>
           <Insight n={2} figure={`${(SHARE * 100).toFixed(0)}¢`}
@@ -109,7 +109,7 @@ export function CommercialDevelopment() {
           </Insight>
           {BUILD && (
             <Insight n={3} figure={`${BUILD.multiple.toFixed(1)}×`} tone="var(--status-critical)"
-              headline={<>Holding the projection on development alone takes {BUILD.multiple.toFixed(1)}&times; today&rsquo;s build rate, for ever &mdash; a flat build rate decays.</>}>
+              headline={<>To hold the whole projection by building alone, the town would have to build {BUILD.multiple.toFixed(1)}&times; as fast as today, for ever &mdash; and a decade passes before it shows.</>}>
               A fixed number of dollars of new growth each year is a shrinking share of a growing town, which is why {pct(BASELINE_REVENUE_GROWTH, 2)} drifts back toward the {pct(LEVY_CAP, 1)} cap. Holding the projection for {YEARS} years from this side alone takes {BUILD.multiple.toFixed(1)} times today&rsquo;s build rate &mdash; {usdShort(BUILD.value)} a year, {pct(BUILD.shareOfExisting, 0)} of the commercial base{BUILD.forThirty !== null ? <>; for thirty years, {(BUILD.forThirty / DEFAULT_SCENARIO.newGrowth).toFixed(1)} times</> : null}. It is the only lever on the revenue side the town owns, and it is a decade&rsquo;s work before it shows.
             </Insight>
           )}

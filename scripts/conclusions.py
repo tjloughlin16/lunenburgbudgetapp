@@ -405,7 +405,7 @@ TOPICS = [
     ('income', 'Where the school money comes from',
      'State aid, the minimum the state requires, what other districts spend, and what '
      'happened when the grants ended.',
-     ['minaid', 'formula', 'required', 'peers', 'unwind']),
+     ['minaid', 'formula', 'required', 'peers', 'unwind', 'schoolfinance']),
     ('spending', 'What the money buys, and what it does not',
      'Staffing, the classes that ran, insurance, the lines that stopped, what the '
      'district said it was cutting, and how close the budget lands to what gets spent.',

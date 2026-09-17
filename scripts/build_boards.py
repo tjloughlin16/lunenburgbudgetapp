@@ -170,6 +170,30 @@ def plain_fy(date):
     return y + 1 if date[5:7] >= '07' else y
 
 
+_FINANCE = None
+
+
+def finance_counts():
+    """How many accounting measures each board owns, from the registry -- enough for the
+    board page to carry a Finance link and say what is behind it. The figures are on
+    /boards/<slug>/finance, from finance.json."""
+    global _FINANCE
+    if _FINANCE is None:
+        _FINANCE = {}
+        p = os.path.join(ROOT, 'sources', 'data', 'fund-owners.csv')
+        for r in csv.DictReader(open(p, encoding='utf-8', newline='')):
+            for slug in (r['owner'], r['relates_to']):
+                if slug and slug != 'unresolved':
+                    f = _FINANCE.setdefault(slug, dict(accounts=0, funds=0, related=0))
+                    if slug == r['owner']:
+                        f['accounts'] += 1
+                        if r['kind'] in ('special-revenue', 'trust', 'stabilization', 'agency', 'capital', 'enterprise'):
+                            f['funds'] += 1
+                    else:
+                        f['related'] += 1
+    return _FINANCE
+
+
 def build(as_of=None):
     as_of = as_of or dt.date.today().isoformat()
     idx = read_csv(INDEX)
@@ -301,6 +325,7 @@ def build(as_of=None):
         join = how_to_join(slug, docs[slug], as_of)
         boards.append(dict(
             slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard, join=join,
+            finance=finance_counts().get(slug),
             counts=dict(agendas=sum(1 for d in docs[slug] if 'agenda' in docs[slug][d]),
                         minutes=sum(1 for d in docs[slug] if 'minutes' in docs[slug][d]),
                         recordings=len(vids[slug]),

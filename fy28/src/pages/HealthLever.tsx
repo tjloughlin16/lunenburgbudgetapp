@@ -44,15 +44,15 @@ export function HealthLever() {
       <ShortVersion>
         <div className="grid gap-4 mt-5 md:grid-cols-2">
           <Insight n={1} figure={pct(H.shareOfGap, 0)} tone="var(--status-critical)"
-            headline={<>Health insurance is {pct(H.shareOfBudget, 0)} of the budget and {pct(H.shareOfGap, 0)} of the gap: it is the line that punches {ATTRIBUTION.weight(H).toFixed(1)}&times; its size.</>}>
+            headline={<>The health plan is the largest single lever and not a solution on its own: {pct(H.shareOfGap, 0)} of next year&rsquo;s gap is this one line, from {pct(H.shareOfBudget, 0)} of the budget.</>}>
             Hold it to the levy cap and re-run the projection: {usdShort(GAP - Math.round(GAP * (1 - H.shareOfGap)))} of next year&rsquo;s {usdShort(GAP)} gap falls out. Salaries are {ATTRIBUTION.sizeRatio.toFixed(1)}&times; the size and contribute about the same, because they grow {pct(DEFAULT_RATES.salaries, 0)} and this grows {pct(HEALTH.rise, 0)}. Rule 4 on this site: weight times excess rate, not size.
           </Insight>
           <Insight n={2} figure={usdShort(AT_FOUR.removed)}
-            headline={<>A {pct(0.04, 0)} line instead of {pct(HEALTH.rise, 0)} takes {usdShort(AT_FOUR.removed)} out of the next ten years&rsquo; gaps, and the FY{GAPS[GAPS.length - 1].fy} gap is {pct(AT_FOUR.smallerBy, 0)} smaller.</>}>
+            headline={<>Held to {pct(0.04, 0)} instead of {pct(HEALTH.rise, 0)}, it takes {usdShort(AT_FOUR.removed)} out of the next ten years&rsquo; gaps for good &mdash; the FY{GAPS[GAPS.length - 1].fy} gap is {pct(AT_FOUR.smallerBy, 0)} smaller, not gone.</>}>
             That is a rate change, so it compounds the right way: {usdShort(AT_FOUR.firstYear)} in the first year, more every year after. At the levy cap itself it would be {usdShort(AT_CAP.removed)}. Neither closes the gap alone &mdash; salaries at {pct(DEFAULT_RATES.salaries, 0)} still outrun the cap &mdash; but it is the single largest rate move on the table, and it is the least painful column on <a className="underline" href="/what-solved-requires">the page that combines them</a>.
           </Insight>
           <Insight n={3} figure={usd(M.kept)}
-            headline={<>The routes are a plan, a pool and a share &mdash; moving one person off the broadest plan keeps the town {usd(M.kept)} a year, and {n0(M.onBroadest)} are on it.</>}>
+            headline={<>Every route is bargained, not voted: moving one person off the broadest plan keeps the town {usd(M.kept)} a year, and {n0(M.onBroadest)} are on it.</>}>
             The broadest plan ({M.from}) to the narrower one ({M.to}) saves {usd(M.gross)} a person in premium; state law hands a quarter of the first year&rsquo;s saving back to employees, so the town keeps {usd(M.kept)}. Every enrollee moved: {usdShort(M.ifAll)} a year. The opt-out the committee voted in March 2026 pays {usd(O.incentive)} against a {usd(O.premium)} premium, netting {usd(O.net)} per person who takes it. And the employee share: each point of the premium shifted from the town to its staff is worth {usd(HEALTH.perPoint)} a year to the budget.
           </Insight>
         </div>

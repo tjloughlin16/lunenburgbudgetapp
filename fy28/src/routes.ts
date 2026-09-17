@@ -42,6 +42,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'growth'
   | 'homestudents'
   | 'boardcompare' | 'youthsports'
+  | 'schoolfinance' | 'accounts' | 'departments'
   | 'healthlever' | 'freecashlever' | 'salarylever' | 'feelever' | 'extraslever' | 'positionslever'
   | 'bythenumbers'
   | 'owners'
@@ -330,6 +331,15 @@ export const SLUG: Record<Tab, string> = {
   // claimed here before the per-board route below can read it as a board.
   boardcompare: 'boards/compared',
   youthsports: 'youth-sports',
+  // THE FINANCES, PER OWNER. TJ, 17 September 2026: "Every board should have a 'Finance'
+  // tab ... we'll need a /departments page ... take every fund and account we know of,
+  // break it down into which 'department' owns them ... leaving none out from being
+  // listed somewhere." The School Committee's is the worked example and a report of its
+  // own; every other board's is /boards/<slug>/finance, read by the boards tab; the
+  // town-manager departments are /departments/<slug>; /accounts lists every measure once.
+  schoolfinance: 'boards/school-committee/finance',
+  accounts: 'accounts',
+  departments: 'departments',
   // THE LEVERS: one report per thing the town can actually decide (TJ, 17 September
   // 2026, the first shelf of /reports, "What the town can do"). Each answers what pulling
   // it is worth, who pays, what it does not do. Override and growth were already reports.
@@ -440,6 +450,8 @@ export const REFERENCE: ReadonlySet<Tab> = new Set<Tab>([
   'search', 'agents', 'ask', 'dataroom', 'deeper', 'thisweek', 'budgetfeed',
   // Indexes of other pages, and the question form.
   'sped', 'themoney', 'askus',
+  // The account registry's doors: every measure once, and the departments.
+  'accounts', 'departments',
 ])
 
 /** Pages that are BOARDS -- dials, sliders, a cascade to reorder. They are used, not
@@ -467,6 +479,7 @@ const ALIASES: Record<string, Tab> = {
   growth: 'growth', 'new-growth': 'growth', 'commercial-growth': 'growth', 'grow-our-way-out': 'growth',
   'health-plan': 'healthlever', 'free-cash-gap': 'freecashlever', 'the-contract': 'salarylever', 'salaries': 'salarylever', 'raise-fees': 'feelever', 'extras': 'extraslever', 'positions': 'positionslever', 'cut-classrooms': 'positionslever',
   'youth-soccer': 'youthsports', 'field-rentals': 'youthsports', 'the-leagues': 'youthsports',
+  'school-finances': 'schoolfinance', 'school-funds': 'schoolfinance', 'every-account': 'accounts', 'funds': 'accounts', 'the-accounts': 'accounts', 'department': 'departments',
   'board-analysis': 'boardcompare', 'minutes-posted': 'boardcompare', 'who-posts-minutes': 'boardcompare', 'how-the-boards-post': 'boardcompare', 'compare-the-boards': 'boardcompare',
   'homes-and-enrollment': 'homestudents', 'homes-vs-students': 'homestudents', 'residential-development': 'homestudents',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
@@ -759,6 +772,9 @@ export const LABEL: Record<Tab, string> = {
   homestudents: 'Homes and students — the town builds, the schools do not grow',
   boardcompare: 'The boards, compared',
   youthsports: 'Youth sports and the town — what the leagues pay for the fields',
+  schoolfinance: 'The School Committee’s finances — every fund and line it owns',
+  accounts: 'Every account, once',
+  departments: 'The departments',
   healthlever: 'What changing the health plan does',
   freecashlever: 'Can free cash fill the gap?',
   salarylever: 'What the contract decides',
@@ -831,6 +847,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   homestudents: 'reports',
   boardcompare: 'boards',
   youthsports: 'reports',
+  schoolfinance: 'boards', accounts: 'themoney', departments: 'boards',
   healthlever: 'reports', freecashlever: 'reports', salarylever: 'reports', feelever: 'reports', extraslever: 'reports', positionslever: 'reports',
   analysis: 'reports',
   required: 'reports',
@@ -860,7 +877,9 @@ export function tabFromPath(pathname: string): Tab {
   if (seg.startsWith('blog/')) return 'blog'
   if (seg.startsWith('meeting-minutes/') || seg.startsWith('what-was-said/')) return 'recorded'
   if (seg === 'boards/compared') return 'boardcompare'
+  if (seg === 'boards/school-committee/finance') return 'schoolfinance'
   if (seg.startsWith('boards/')) return 'boards'
+  if (seg.startsWith('departments/')) return 'departments'
   if (seg.startsWith('budget-feed/')) return 'budgetfeed'
   return BY_SLUG[seg] ?? ROOT
 }
@@ -889,6 +908,18 @@ export function feedSeasonFromPath(pathname: string): string | null {
 export function boardSlugFromPath(pathname: string): string | null {
   const m = /^\/boards\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
   return m && m[1] !== 'compared' ? m[1] : null
+}
+
+/** The board a `/boards/<slug>/finance` address names, or null. */
+export function boardFinanceSlugFromPath(pathname: string): string | null {
+  const m = /^\/boards\/([a-z0-9-]+)\/finance\/?$/.exec(pathname.toLowerCase())
+  return m ? m[1] : null
+}
+
+/** The department a `/departments/<slug>` address names, or null for the index. */
+export function departmentSlugFromPath(pathname: string): string | null {
+  const m = /^\/departments\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
+  return m ? m[1] : null
 }
 
 /** The meeting a `/what-was-said/<board>/<date>-<video>` address names, or null. */
@@ -978,6 +1009,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   solutions: 'crisis',
   override: 'analyses', growth: 'analyses', homestudents: 'analyses', boardcompare: 'analyses', youthsports: 'analyses',
+  schoolfinance: 'analyses', accounts: 'money', departments: 'money',
   healthlever: 'analyses', freecashlever: 'analyses', salarylever: 'analyses', feelever: 'analyses', extraslever: 'analyses', positionslever: 'analyses',
   freecash: 'crisis',
   // `money` is now WHERE THE MONEY COMES FROM AND GOES, plus the limits of the record:
@@ -1031,7 +1063,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // order a board member needs it: why this keeps happening, what can be done, the
   // objections, everything else.
   crisis: ['walk', 'solutions', 'answers', 'deeper'],
-  money: ['themoney', 'stateaid', 'funds', 'gaps', 'askus'],
+  money: ['themoney', 'stateaid', 'funds', 'accounts', 'departments', 'gaps', 'askus'],
   // `sped` is ONE entry for FOUR reports, and that is deliberate twice over. The comment
   // above warns that a bar with fourteen entries is a sitemap; adding the four reports
   // individually would have made it exactly that. And the four belong behind one door
@@ -1081,7 +1113,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // argument that put `addsup` first.
   // `owners`, `override` and `growth` are the town's shelf: who owns the homes and what
   // the bill does, what an override actually is, and what growing out of it would take.
-  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'youthsports', 'healthlever', 'freecashlever', 'salarylever', 'feelever', 'extraslever', 'positionslever', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
+  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'youthsports', 'schoolfinance', 'healthlever', 'freecashlever', 'salarylever', 'feelever', 'extraslever', 'positionslever', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',

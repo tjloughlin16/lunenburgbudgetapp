@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { abs } from '../lib/abs'
 import { AREA_LABEL, AREA_TABS, LABEL, SLUG, areaOf, type Tab } from '../routes'
-import { useDocumentTitle } from '../lib/title'
+import { useDocumentTitle, setShareMeta } from '../lib/title'
 
 /** THE ONE SHELL EVERY REPORT ON THIS SITE IS BUILT IN.
  *
@@ -729,7 +729,7 @@ export function PrintButton({ label = 'Print / Save as PDF' }: { label?: string 
  *  `sourceUrl` is the report's own document where one exists -- the Markdown analyses keep
  *  theirs at /docs/analyses/<id>.md, which is rule 12's third leg. */
 /** Routes that serve many pages, so the route's label is not the page's name. */
-const MANY_PER_ROUTE: ReadonlySet<Tab> = new Set<Tab>(['recorded', 'boards', 'blog', 'analysis', 'budgetfeed'])
+const MANY_PER_ROUTE: ReadonlySet<Tab> = new Set<Tab>(['recorded', 'boards', 'blog', 'analysis', 'budgetfeed', 'departments'])
 
 export function ReportShell({
   tab, kicker, title, standfirst, err, loading, dataUrl, sourceUrl, meta, children,
@@ -760,6 +760,14 @@ export function ReportShell({
   // route name in the tab -- "The paraprofessionals", not the sentence.
   useDocumentTitle(tab && !MANY_PER_ROUTE.has(tab) ? LABEL[tab]
     : typeof title === 'string' ? title : tab ? LABEL[tab] : null)
+  // THE LINK PREVIEW. The standfirst is the one-line answer to "what is this page", so it
+  // is what a shared link should show under its title -- read off the rendered element,
+  // because it is JSX and carries figures (lib/title.ts, setShareMeta).
+  const standRef = useRef<HTMLParagraphElement>(null)
+  useEffect(() => {
+    const text = standRef.current?.textContent?.trim()
+    if (text) setShareMeta({ description: text, page: true, type: 'article' })
+  })
   return (
     <article className="report mx-auto max-w-6xl px-5 pt-14 pb-16">
       <header className="report-head">
@@ -780,7 +788,7 @@ export function ReportShell({
             difference in setting for a difference in weight. */}
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-5xl">{title}</h1>
         {standfirst && (
-          <p className="mt-5 text-lg leading-relaxed max-w-2xl"
+          <p ref={standRef} className="mt-5 text-lg leading-relaxed max-w-2xl"
             style={{ color: 'var(--text-secondary)' }}>{standfirst}</p>
         )}
         {meta}

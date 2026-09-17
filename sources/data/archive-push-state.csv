@@ -54,6 +54,7 @@ contracts/txt/nonaffiliated-benefits.txt,8425,b8d07ead5561f45730f77304005a006d2b
 contracts/txt/nonaffiliated-salary-schedule.txt,2048,f29b5eadf68585f69caedc2482f8b2c48efe50fd6eba5b01f7be123f60fdabaf,2026-09-05T16:48:07Z
 contracts/txt/paraprofessional-fy26-fy28.txt,45502,35817144cd2cd9224202f6583e90e07786c62718dc73e9b897690459936ccf5e,2026-09-05T16:48:07Z
 contracts/txt/paraprofessional-salary-fy26-fy28.txt,2534,2c33935c5b29c728ad0e8c078a197f28941a2e30972bf0d6a542ae6aec138f94,2026-09-05T16:48:08Z
+correspondence/2024-03-01-parks-beach-and-swim-fees.txt,1191,38e3d81a80f7e18dc2a266dd183ca7ed7093a12a4437f14bec70e8abbf5ec43a,2026-09-17T19:30:33Z
 correspondence/2025-05-bus-fees-superintendent.txt,1824,25a3dece33996d13180b5841b9a5a6302a74ee9ee507ba213b45da198e7eefe2,2026-09-05T16:48:08Z
 correspondence/2026-08-17-bus-routes-and-fees-superintendent.txt,1974,b08af7ae35004b5a0e3dfdea102af6e8d5bf13b0fc7f39c0530bcfadbe1f9cb5,2026-09-05T16:48:08Z
 data/PROVENANCE-annual-report-receipts.md,12854,dec6aec6b1d637eab4bc1071970844fcc9746ad712e6a8a79fe95d89d52b539b,2026-09-05T16:48:09Z
@@ -181,6 +182,7 @@ data/d1-pushed-tables.txt,1510,55fe2d966258acd93dec087b81ace38d9c35170e7641b977d
 data/d1-pushed.txt,65,ec88e9d38fdf33a477facf7ea829d12183e24127716220b1be26e5bd88d1ac5b,2026-09-08T15:44:20Z
 data/dataset-provenance.csv,15445,0772b0bd6fbb86bfb9c84d8874bd17290992f7fc65036f9540cb3e8ad2b09ffb,2026-09-05T16:48:31Z
 data/dataset-semantics.csv,21300,7120aebcddffaf749b7c2bb31750ceaf4324fdcff877fdf11889d12749beb200,2026-09-13T19:16:27Z
+data/departments.csv,1493,1c02dbed8a0e7b4e7cea13f1d53ff5469faf6db9bdb004d7ea7d0944c3cc53a4,2026-09-17T19:30:45Z
 data/dese-ap.csv,1152906,ce88c90f971bb4d4594e6d8b7da1ea582a96d14e1918488ded8aafdef046d46e,2026-09-13T19:16:28Z
 data/dese-attrition.csv,104251,f93da3577ee3dd44dbccc48e790203c7d9cf80c57632a3066baea324abc3b90f,2026-09-13T19:16:29Z
 data/dese-ch70-aid-factor.csv,24998,f5ae36a2924b1d6c8f07388e255d312eb091175dfdc1cdcf2321a125c852745e,2026-09-08T15:44:21Z
@@ -212,8 +214,10 @@ data/enterprise-balance-sheet.csv,17605,d31ddda8b7bf0aa2e2d46ded3ecf60c30cf3824b
 data/extraction-plan.csv,286235,da65195654518c6055a21c537bbb242bacafc21872b993e012e759362dff1061,2026-09-05T16:48:32Z
 data/feed-sources.csv,1064,8ee013cdc4331b896ea47462ef8a2d89c85f97e55a1b2f43071b61fc4a9f4fd8,2026-09-13T19:16:34Z
 data/feed-watch-events.csv,713,e19330ca27eaaa69f59f5f837799be8058caab9e663f7f286b83a02515f647db,2026-09-13T19:16:34Z
+data/field-rental-receipts-lysa.csv,825,74f87c418f67318ee151b569591c1d1bc9665bc9e048d6e02c70c5f3d73b60f5,2026-09-17T18:19:32Z
 data/free-cash-proof.csv,73294,50d33d48472464bf80537c8a3479588dbc90527895dad0d9a81b995f15b0fc58,2026-09-05T16:48:33Z
 data/fund-1301-cash-journal.csv,34927,5235cd1bf1342baadd834c2eab7a021051bf186de82c88ddc8d31b10eb9429e6,2026-09-05T16:48:33Z
+data/fund-owners.csv,104405,8c0e163c632accec4e2d3cd11a77ff500fa720d51fece8967f33b3c34fa5725f,2026-09-17T19:30:49Z
 data/fy26-code-reconciliation.xlsx,43925,90c886badb01a56eab7c507d4fdcf39cc166af7238b5cbc981c268718b2b895e,2026-09-05T16:48:33Z
 data/grants-history.csv,32896,b3f78dd98635d58ae8b2353b519d5c5e76ba76455a932a9a589de4f8c17e4ed1,2026-09-05T16:48:39Z
 data/gross-school-budget-fy2026.xlsx,69819,a3ea36ab8c78fb7cdefc02a367209acc94ddac25551eed4feae1bd8c81f821b8,2026-09-05T16:48:39Z
@@ -255,6 +259,7 @@ data/munis-ledger.csv,230432,b9cbc07f552c9de2ad865bf615bd04f76828c4b76e2160edd6b
 data/myths.csv,1353,b0e78dbc45066e64e5e70923824cc02e3c519eb85f45a28f837efbee1f90b759,2026-09-13T19:17:06Z
 data/one-big-report-story.csv,12208,89b9a42ff6c12db0f2cc13f5e9b8ba5150f0abc7a81f8722d97168d51e3714ab,2026-09-14T14:25:16Z
 data/ood-tuition-history.csv,1166,e3b57b085895a0c7113edb8b2a93fce7f5a594f03028b89df6c4dd61bece5d1c,2026-09-05T16:49:03Z
+data/parks-myrec-sales-fy2025.csv,3207,b9203e56aa18a952c66650ca65c5f2f0d6cd4650787fe4a038c16abe37beb34d,2026-09-17T19:30:56Z
 data/peg-access-identities.csv,1562,72e3ce226d213cc74e47677e4cd46594f93b90985e5451aef239766574285134,2026-09-08T15:44:51Z
 data/peg-access-printed-totals.csv,12260,72d749883510a7a73ee4fc9e2b4a73c386e6b8ebcc1d6feaf1f9ea5863223d05,2026-09-08T15:44:51Z
 data/peg-access.csv,14591,a97fe011dd91006514ddc4e44304f5faa0f6b56e4455dca14f01cf447f370dd8,2026-09-08T15:44:52Z
@@ -27766,14 +27771,21 @@ town-budget/text/a91-fy20-preliminary-budget-revenue-expense-sheet-pdf.txt,7442,
 town-budget/text/a98-fy24-public-access-budget-presentation-pdf.txt,9116,51344081fe193a279ab4f9340c67000e3a41a22d0e2b6a09bc15e9ce40201847,2026-09-05T17:48:53Z
 town-budget/text/a99-fy24-land-use-budget-presentation-pdf.txt,6218,42524b16d62f5cdc51b5cf02815566bd75f1ad88ce671a4a4b95a00e98c402fd,2026-09-05T17:48:54Z
 town-budget/text/tax-classification-fy23.txt,7200,064be522bebf39c21b9cf42cd73c3da27e5497e3cee5804bf917382bd4e13639,2026-09-05T17:48:54Z
+town-ledgers/account-details/PROVENANCE-field-rental-lysa.md,3255,b6a34b0a49e28c55154f97e9f0eb09db9b1a2f58240b85e80c4e4a7e672eea03,2026-09-17T18:20:05Z
 town-ledgers/account-details/PROVENANCE-fund1301.md,6506,fa12002283103d5a6bd1421a227e501f434b15b3c5244716587490041368b44c,2026-09-05T17:48:54Z
+town-ledgers/account-details/PROVENANCE-parks-2025.md,4490,3cbb78a043728562c0d61d4baf04a8cd90bd74e935107a0b19e97160762584fd,2026-09-17T19:31:23Z
 town-ledgers/account-details/account-details-fy2024-fund1301.xlsx,21816,9bbf76db320bf83148870005e7208b990dddaeb5e04433e9196d62c38d8230bd,2026-09-05T17:48:55Z
 town-ledgers/account-details/account-details-fy2025-fund1301.xlsx,19901,3ebf3472134182f2f52953323f47330a59f130ad24842b677a9db4666a53691f,2026-09-05T17:48:56Z
 town-ledgers/account-details/account-details-fy2026-fund1301.xlsx,17919,fc76a981f0857c6670ad19b3199a0ad1f5d5d724d58a1817adb0f6ba04b7a69a,2026-09-05T17:48:56Z
 town-ledgers/account-details/athletic-fee-counts-fy2026.docx,11996,82042df3785b4c0406649a54bee77cb9aaa7514c2cbad58aaf4fd57e40bbf1eb,2026-09-05T17:49:00Z
 town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx,557501,9c669e9f34a4c5c0807b018a51292b1b2248c2c388652012f8b673487415069b,2026-09-05T17:49:00Z
+town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx,138171,dbf099b0cd4f73a8f736d284c2f23302ad7bd8453dc7353c83e66fb93ff14f77,2026-09-17T18:20:07Z
+town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf,47186,c93147feab5f0160676a16d2bb933843a228973b62c14c5f16daf1dc739a6106,2026-09-17T19:31:23Z
+town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf,91089,d37d6d14553123ab4e6f578835c44747cd1df17affe38a593ebd380f8b859333,2026-09-17T19:31:23Z
+town-ledgers/account-details/parks-program-offerings-fy2025-myrec.pdf,2565202,416df29be572e3074f63198a1710938eacad9bf8292c5f105ca013147b069c24,2026-09-17T19:31:25Z
 town-ledgers/expenses/PROVENANCE-fy2026-p09.md,1995,1cf8f90fbf561943da776220f9b653c6d0159fe7f07ba3b39e593a6115e2c167,2026-09-05T17:49:01Z
 town-ledgers/expenses/PROVENANCE-fy2026-p12.md,5629,f027650023008a044eec083142c2ee26c32e74682a5fd3ccb9841e2c00f3e5ac,2026-09-05T17:49:02Z
+town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-parks.pdf,2750883,551f5abd194ed05de71719928ac820d91916949da4a9be5092b1072a91fcab3a,2026-09-17T19:31:25Z
 town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.pdf,240106,399a9c4fd2809ecb478fdb564a932fbed4bf79fb601795f2bb80178cfe29f0ea,2026-09-05T17:49:02Z
 town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.txt,6089,6e2ada913f7457f23c56ab7901a98fcb8811e5e32f12d4fe988e07b12e33aa37,2026-09-05T17:49:02Z
 town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.pdf,1453079,4de69c1c20a77ff1fe848decc82e63d0206a18064ff042342209d64ca21ca960,2026-09-05T17:49:04Z
@@ -27790,6 +27802,8 @@ town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx,73581,215dd64f597f
 town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md,272,9c7d06f1f0fa95b78b002cefe3c162e3a6a1f8f538a255bd8924ae97cc1a028b,2026-09-05T17:49:16Z
 town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx,56447,4b9777d83c747c1c39fa7f3e4b33624976dae918855cf8422528dba57e274d4e,2026-09-05T17:49:16Z
 town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx,27464,2779f34b465f745c630ed16c98001413b1de056a11ac32fa4c60ea0ac8ed2ddd,2026-09-05T17:49:18Z
+town-ledgers/purchase-orders/PROVENANCE-parks-grounds-bid.md,923,aa5da8d304a41ac5d187c0f875bf0abdb93599838eadfcb563c9638f778182be,2026-09-17T19:31:25Z
+town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf,24599,ea3d724fe3427571df7e53227ba73c09b4177d03f08a1d91cee1a965383751ab,2026-09-17T19:31:26Z
 town-ledgers/revenue/PROVENANCE-fy2026-p09.md,272,9c7d06f1f0fa95b78b002cefe3c162e3a6a1f8f538a255bd8924ae97cc1a028b,2026-09-05T17:49:18Z
 town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.pdf,826872,80ff725293e80c6d3e8f31bd24a694612d8c91f308ba5b9b0cc25715b960c4f5,2026-09-05T17:49:19Z
 town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.txt,4583,668868e19fc24fa6bfd3c40ef13afee3d709c75ba1d207cfe35239465df5349d,2026-09-05T17:49:21Z

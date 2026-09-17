@@ -42,15 +42,15 @@ export function SalaryLever() {
       <ShortVersion>
         <div className="grid gap-4 mt-5 md:grid-cols-2">
           <Insight n={1} figure={usd(SETTLEMENT.perHalfPoint)} tone="var(--status-critical)"
-            headline={<>The next settlement is the largest unwritten number in FY{GAPS[0].fy}: each half a point is {usd(SETTLEMENT.perHalfPoint)} on the gap, and it compounds.</>}>
+            headline={<>The contract is the biggest lever the town has not yet pulled: each half a point off the next settlement is {usd(SETTLEMENT.perHalfPoint)} off the FY{GAPS[0].fy} gap, every year after too.</>}>
             The projection assumes {pct(SETTLEMENT.assumed, 1)}, which costs {usd(SETTLEMENT.assumedCost)} next year on its own. At {pct(0.025, 1)} the FY{GAPS[0].fy} gap is {usd(SETTLEMENT.rates.find(r => r.rate === 0.025)!.gap)}; at {pct(0.05, 1)} it is {usd(SETTLEMENT.rates.find(r => r.rate === 0.05)!.gap)}. The last agreement moved the scale {pct(CONTRACT.compound, 2)} over three years ({CONTRACT.cola.map(c => pct(c.pct, 1)).join(', ')}), with steps of about {pct(CONTRACT.avgStep, 1)} on top for anyone not at the maximum.
           </Insight>
           <Insight n={2} figure={`${SHRINK.positionsPerYear.toFixed(1)} FTE`}
-            headline={<>&ldquo;Hold salaries to the cap&rdquo; with the contract at {pct(DEFAULT_RATES.salaries, 0)} means {SHRINK.positionsPerYear.toFixed(1)} fewer positions every year &mdash; {pct(SHRINK.after10, 0)} of the staff in ten.</>}>
+            headline={<>Held to the cap by attrition instead of at the table, the line sheds {SHRINK.positionsPerYear.toFixed(1)} positions a year &mdash; {pct(SHRINK.after10, 0)} of the staff in ten.</>}>
             A line can only grow slower than the pay on it by carrying fewer people. At the catalogue&rsquo;s {usd(COST_PER_FTE)} a position and roughly {n0(HEADCOUNT)} positions, the difference between {pct(DEFAULT_RATES.salaries, 0)} and {pct(LEVY_CAP, 1)} is {SHRINK.positionsPerYear.toFixed(1)} a year, for ever. The other way to the same line is a settlement at the cap with the staff intact &mdash; which is the table, not the budget.
           </Insight>
           <Insight n={3} figure={usdShort(COUNTERFACTUAL.atCap.fy28)}
-            headline={<>Had the last three raises been {pct(LEVY_CAP, 1)} instead of {pct(CONTRACT.compound / 3, 1)} a year, next year&rsquo;s gap would be {usdShort(COUNTERFACTUAL.atCap.fy28)} rather than {usdShort(COUNTERFACTUAL.actual.fy28)} &mdash; and FY{GAPS[4].fy}&rsquo;s {usdShort(COUNTERFACTUAL.atCap.fy32)} rather than {usdShort(COUNTERFACTUAL.actual.fy32)}.</>}>
+            headline={<>A settlement at the cap shrinks the gap and does not close it: raises of {pct(LEVY_CAP, 1)} instead of {pct(CONTRACT.compound / 3, 1)} would have made next year&rsquo;s gap {usdShort(COUNTERFACTUAL.atCap.fy28)} rather than {usdShort(COUNTERFACTUAL.actual.fy28)}, and FY{GAPS[4].fy}&rsquo;s {usdShort(COUNTERFACTUAL.atCap.fy32)} rather than {usdShort(COUNTERFACTUAL.actual.fy32)}.</>}>
             A smaller settlement is a level shift, not a slope change: it lowers every year at once and slows nothing down. Health insurance still rises {pct(DEFAULT_RATES.health, 0)}, the levy is still capped at {pct(LEVY_CAP, 1)}, so the effect is dramatic next year and modest by FY{GAPS[4].fy}. The counterfactual is on {pct(COUNTERFACTUAL.shareOfSalaries, 0)} of the salary line &mdash; the {usdShort(COUNTERFACTUAL.payroll)} the teachers&rsquo; agreement covers &mdash; and a teacher at the middle of the scale ({CONTRACT.samples[1].label}, {usd(CONTRACT.samples[1].pay)}) would be paid {pct(COUNTERFACTUAL.atCap.perCent, 1)} less today.
           </Insight>
         </div>

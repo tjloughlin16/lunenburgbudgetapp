@@ -147,12 +147,32 @@ async function readRoutes() {
   // app shell: no title, no <link rel="alternate"> to the board's feed. The list comes
   // from the payload, as the blog's comes from blog.json.
   const boardsFile = join(APP, 'public', 'data', 'boards.json')
-  let boards = []
+  let boards = [], finance = []
   if (existsSync(boardsFile)) {
-    boards = JSON.parse(await readFile(boardsFile, 'utf8')).boards.map(b => b.slug).sort()
+    const all = JSON.parse(await readFile(boardsFile, 'utf8')).boards
+    boards = all.map(b => b.slug).sort()
     console.log(`  ${boards.length} boards at /boards/<slug>`)
+    // THE FINANCE TAB of every board that owns an account; the School Committee's is a
+    // top-level route already (routes.ts: schoolfinance).
+    finance = all.filter(b => b.finance && b.slug !== 'school-committee').map(b => `/boards/${b.slug}/finance`).sort()
+    console.log(`  ${finance.length} board finance pages at /boards/<slug>/finance`)
   }
-  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`)]
+  // EVERY MEETING WITH OUR MINUTES. Client-rendered until 17 September 2026, so a link
+  // shared on Facebook carried the site's description rather than the meeting's headline.
+  const minutesFile = join(APP, 'public', 'data', 'recording-minutes.json')
+  let meetings = []
+  if (existsSync(minutesFile)) {
+    meetings = JSON.parse(await readFile(minutesFile, 'utf8')).meetings.map(m => `/meeting-minutes/${m.slug}`).sort()
+    console.log(`  ${meetings.length} meetings at /meeting-minutes/<board>/<date>-<video>`)
+  }
+  const financeFile = join(APP, 'public', 'data', 'finance.json')
+  let departments = []
+  if (existsSync(financeFile)) {
+    const f = JSON.parse(await readFile(financeFile, 'utf8'))
+    departments = f.departments.filter(x => f.owners[x.slug]).map(x => `/departments/${x.slug}`).sort()
+    console.log(`  ${departments.length} departments at /departments/<slug>`)
+  }
+  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...finance, ...departments, ...meetings]
 }
 
 /** Serve dist, falling back to the PRISTINE shell.

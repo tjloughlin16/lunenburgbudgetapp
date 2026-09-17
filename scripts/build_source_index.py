@@ -657,6 +657,44 @@ GROUPS = [
              'giving those counts for that year; the workbook’s columns for it are empty. '
              '79 full waivers against 455 full-pay. The town’s filename is '
              'ATHLETIC FEES 2025.docx.'),
+            ('town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-parks.pdf',
+             'FY2024 year-to-date budget report, Parks & Recreation, with journal detail', 1,
+             'Two pages, image only: the Parks department’s FY2024 salary and expense lines '
+             '(16501, 16502) with every warrant, invoice and vendor behind them. Obtained by '
+             'records request, August 2025; the town’s filename is '
+             'Ytd_Budget_Report_20250815103019671.pdf. The period in our filename is inferred '
+             '— see PROVENANCE-parks-2025.md in account-details. Nothing has been extracted '
+             'from it yet.'),
+            ('town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf',
+             'Parks & Recreation programme sales, FY2025, from the registration system', 2,
+             'MyRec’s Program Sales Report, 1 July 2024 to 30 June 2025: registrations and '
+             'fees for seventeen programmes, resident and non-resident, $38,955.50 in all '
+             'against a printed totals row. A system printout, and not the town’s books: '
+             'what reached fund 1500 is a different document. Extracted to '
+             'data/parks-myrec-sales-fy2025.csv. Records request, August 2025.'),
+            ('town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf',
+             'Beach passes sold, FY2025, from the registration system', 2,
+             'MyRec’s Membership Sales Report for the same year: 164 passes, $8,828.00, '
+             'resident and non-resident, with a printed totals row. Extracted beside the '
+             'programme report. Records request, August 2025.'),
+            ('town-ledgers/account-details/parks-program-offerings-fy2025-myrec.pdf',
+             'Every Parks & Recreation programme offered in FY2025, as the public saw it', 3,
+             '32 pages from MyRec: each programme’s description, sessions, ages and fee. '
+             'The catalogue the sales reports count against. Records request, August 2025.'),
+            ('town-ledgers/account-details/PROVENANCE-parks-2025.md',
+             'Provenance for the August 2025 Parks & Recreation records request', 2,
+             'Where the six Parks documents came from, the town’s filename for each, a '
+             'sha256, where each is filed and why, which are system printouts and which are '
+             'statements — and that the MUNIS report’s period is inferred.'),
+            ('town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf',
+             'A contractor’s bid for grounds maintenance at the parks, from 1 July 2024', 3,
+             'One page: mowing, weeding, turf, clean-ups and infield work priced per park — '
+             'Fitzgerald, McNally, Marshall, Memorial, Town Beach, Wallis — for year one. A '
+             'bid, not an invoice; what was paid is in the FY2024 Parks budget report. '
+             'Records request, August 2025.'),
+            ('town-ledgers/purchase-orders/PROVENANCE-parks-grounds-bid.md',
+             'Provenance for the grounds-maintenance bid', 3,
+             'Points to the Parks provenance file and says what a bid is and is not.'),
             ('town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx',
              'Field rental receipts from Lunenburg Youth Soccer, FY2024–FY2026', 2,
              'Seven receipts — date, amount, payer — the district’s business office typed '
@@ -1268,6 +1306,11 @@ GROUPS = [
             ('town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 fund balance reports', 1,
              'The same pointer, filed with the fund balance reports.'),
+            ('town-ledgers/account-details/PROVENANCE-field-rental-lysa.md',
+             'Provenance for the field-rental receipts workbook', 2,
+             'How the LYSA field-rental workbook reached us — a records request to the '
+             'district, September 2026 — its sha256, and what it does and does not contain. '
+             'The requester is deliberately not named.'),
             ('town-ledgers/account-details/PROVENANCE-fund1301.md',
              'Provenance for the 17 June 2026 records request', 2,
              'Written by us, filed with the documents it describes: where each one came '
@@ -1329,6 +1372,27 @@ GROUPS = [
              'scripts/extract_fund1301_ledger.py, which refuses to write unless each '
              'year’s closing balance equals the opening balance the town prints for the '
              'next.'),
+            ('data/fund-owners.csv',
+             'The account registry: every accounting measure the town prints, and who owns it', 2,
+             'One row per department line, revenue estimate, special-revenue fund, enterprise '
+             'fund, trust, stabilization fund, agency account, capital project fund and debt-'
+             'service line in the reports we hold — 506 at first writing — with the board or '
+             'department that owns it, what that rests on (the department code the town itself '
+             'puts on a fund, the department a line is filed under, or the fund’s name), its '
+             'purpose and authority where a document states them, and the name the annual '
+             'reports use for it. scripts/build_fund_owners.py --check fails if a held report '
+             'prints a measure this file lacks. Read by scripts/build_finance.py for '
+             '/accounts, /departments and every board’s Finance page.'),
+            ('data/departments.csv',
+             'The Town Manager’s departments, and the assessments from outside', 2,
+             'Each department with the MUNIS department codes filed under it, the board that '
+             'oversees it where one does, and the head’s title. Boards are in boards.json; '
+             'this is the rest of the owners a measure in fund-owners.csv may name.'),
+            ('data/parks-myrec-sales-fy2025.csv',
+             'Parks & Recreation sales, FY2025, both MyRec reports as rows', 2,
+             '21 rows: seventeen programmes and four membership lines, each with resident '
+             'and non-resident counts and amounts, tied to the totals each report prints. '
+             'scripts/extract_parks_myrec.py refuses to write if a column stops tying.'),
             ('data/field-rental-receipts-lysa.csv',
              'Field rental receipts from Lunenburg Youth Soccer, FY2024–FY2026', 2,
              'Seven rows extracted from the district’s workbook: the fiscal year as the '

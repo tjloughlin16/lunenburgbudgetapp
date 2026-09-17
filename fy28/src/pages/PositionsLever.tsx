@@ -44,7 +44,7 @@ export function PositionsLever() {
       <ShortVersion>
         <div className="grid gap-4 mt-5 md:grid-cols-2">
           <Insight n={1} figure={`${IN_POSITIONS.positions.toFixed(1)} FTE`} tone="var(--status-critical)"
-            headline={<>Next year&rsquo;s gap is {IN_POSITIONS.positions.toFixed(1)} positions; by FY{fy32.fy} it is {posBy32.toFixed(1)}, because a gap that grows {pct(GAPS[1].growthRate, 1)} a year is more people every year.</>}>
+            headline={<>Cutting classrooms closes the gap only by cutting again every year: {IN_POSITIONS.positions.toFixed(1)} positions next year, {posBy32.toFixed(1)} by FY{fy32.fy}, because the gap grows {pct(GAPS[1].growthRate, 1)} a year.</>}>
             At the catalogue&rsquo;s {usd(COST_PER_FTE)} per position &mdash; salary and benefits, averaged across the roughly {n0(HEADCOUNT)} the salary line pays &mdash; the {usdShort(GAP)} gap is {IN_POSITIONS.positions.toFixed(1)} FTE, {pct(IN_POSITIONS.shareOfBudget, 1)} of the appropriation. A position cut in FY{GAPS[0].fy} stays cut, and the next year&rsquo;s gap asks for more on top.
           </Insight>
           <Insight n={2} figure={`${YEARS_ALL_DISCRETIONARY} yr`}

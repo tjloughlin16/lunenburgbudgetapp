@@ -45,6 +45,7 @@ import { Blog } from './pages/Blog'
 import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
 import { Boards } from './pages/Boards'
+import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
 import { BudgetFeed } from './pages/BudgetFeed'
 import { ThisWeek } from './pages/ThisWeek'
 import { Enrollment } from './pages/Enrollment'
@@ -83,9 +84,9 @@ import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
-import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
-import { pageTitle } from './lib/title'
+import { pageTitle, setShareMeta, shareFromPage } from './lib/title'
 import { track } from './lib/track'
 import { ReadingTime } from './components/ReadingTime'
 
@@ -170,6 +171,11 @@ export default function App() {
     const area = areaOf(tab)
     document.title = pageTitle(area && AREA_HOME[area] === tab ? AREA_LABEL[area] : LABEL[tab])!
   }, [tab])
+  // SHARE TEXT, two layers (lib/title.ts). Before paint: the site's own description, so
+  // nothing from the previous page survives a navigation. After the page's own effects
+  // have run: if it set nothing more specific, its first paragraph under the H1.
+  useLayoutEffect(() => { setShareMeta({ page: false }) }, [tab])
+  useEffect(() => { const id = window.setTimeout(shareFromPage, 0); return () => window.clearTimeout(id) }, [tab])
 
   // The back button has to work, or a shared link is a trap: follow one, look around,
   // and there is no way back to where you came from.
@@ -508,7 +514,10 @@ export default function App() {
       {tab === 'blog' && <Blog />}
       {tab === 'search' && <Search />}
       {tab === 'recorded' && <WhatWasSaid />}
-      {tab === 'boards' && <Boards />}
+      {tab === 'boards' && (boardFinanceSlugFromPath(window.location.pathname) ? <BoardFinance /> : <Boards />)}
+      {tab === 'schoolfinance' && <SchoolFinance />}
+      {tab === 'departments' && <Departments />}
+      {tab === 'accounts' && <Accounts />}
       {tab === 'budgetfeed' && <BudgetFeed />}
       {tab === 'thisweek' && <ThisWeek />}
       {tab === 'enrollment' && <Enrollment />}

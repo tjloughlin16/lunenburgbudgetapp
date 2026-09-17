@@ -466,6 +466,49 @@
    "so_what": "By fiscal year as the district lists them: FY2024 $6,728, FY2025 $23,308, FY2026 $9,038."
   },
   {
+   "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report\u2019s department 300 total.",
+   "bearing": "sizes",
+   "claim": "The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.",
+   "detail": "The town\u2019s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools\u2019 code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 year-end budget report ($26,332,564 revised, period 12, summed from its accounts). A balance is not a spendable surplus: a grant fund\u2019s balance is claimed against a grant\u2019s budget, and a revolving fund\u2019s against the programme that raised it.",
+   "figure": "held",
+   "figures": {
+    "appropriation": {
+     "text": "$26,332,564",
+     "unit": "the FY2026 school appropriation, as revised",
+     "value": 26332564.24
+    },
+    "held": {
+     "text": "$1,592,572",
+     "unit": "held in school special-revenue funds at 31 March 2026",
+     "value": 1592572.2899999996
+    },
+    "n": {
+     "text": "61",
+     "unit": "",
+     "value": 61
+    },
+    "share": {
+     "text": "6.0%",
+     "unit": "",
+     "value": 6.047919509414248
+    }
+   },
+   "id": "outside-the-appropriation",
+   "kind": "measured",
+   "literals": [
+    "300",
+    "FY26",
+    "2026",
+    "12"
+   ],
+   "not_shown": "What any balance is committed to. The report is balances, not obligations; the district\u2019s own fund-by-fund plan would say what is spoken for.",
+   "report": "schoolfinance",
+   "report_title": "The School Committee\u2019s finances \u2014 every fund and line it owns",
+   "report_url": "/boards/school-committee/finance",
+   "see": [],
+   "so_what": "6.0% of the $26,332,564 appropriation, in money Town Meeting never votes on: revolving funds, grants, gifts."
+  },
+  {
    "basis": "DLS new growth file, Lunenburg rows: total new growth value minus residential new growth value, by fiscal year. Averages over FY2024\u2013FY2026 and the eleven years before them.",
    "bearing": "sizes",
    "claim": "Non-residential new growth ran 3.3 times its prior eleven-year pace in FY2024\u2013FY2026.",
@@ -3790,6 +3833,219 @@
    "id": "youthsports",
    "title": "Youth sports and the town \u2014 what the leagues pay for the fields",
    "url": "/youth-sports"
+  },
+  {
+   "about": "The School Committee\u2019s finances, every line: the appropriation, its revolving funds, grants, gifts and trusts, with what each held at 31 March 2026 and what it has done since FY2011 \u2014 the first of a page per board and department, from a registry of every accounting measure the town prints.",
+   "conclusions": [
+    {
+     "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report\u2019s department 300 total.",
+     "bearing": "sizes",
+     "claim": "The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.",
+     "detail": "The town\u2019s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools\u2019 code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 year-end budget report ($26,332,564 revised, period 12, summed from its accounts). A balance is not a spendable surplus: a grant fund\u2019s balance is claimed against a grant\u2019s budget, and a revolving fund\u2019s against the programme that raised it.",
+     "figure": "held",
+     "figures": {
+      "appropriation": {
+       "text": "$26,332,564",
+       "unit": "the FY2026 school appropriation, as revised",
+       "value": 26332564.24
+      },
+      "held": {
+       "text": "$1,592,572",
+       "unit": "held in school special-revenue funds at 31 March 2026",
+       "value": 1592572.2899999996
+      },
+      "n": {
+       "text": "61",
+       "unit": "",
+       "value": 61
+      },
+      "share": {
+       "text": "6.0%",
+       "unit": "",
+       "value": 6.047919509414248
+      }
+     },
+     "id": "outside-the-appropriation",
+     "kind": "measured",
+     "literals": [
+      "300",
+      "FY26",
+      "2026",
+      "12"
+     ],
+     "not_shown": "What any balance is committed to. The report is balances, not obligations; the district\u2019s own fund-by-fund plan would say what is spoken for.",
+     "see": [],
+     "so_what": "6.0% of the $26,332,564 appropriation, in money Town Meeting never votes on: revolving funds, grants, gifts."
+    },
+    {
+     "basis": "The same report, the rows for the revolving funds under department 300 (subkind `revolving` in sources/data/fund-owners.csv); revenue, salaries, expenditure and fund balance, credits shown as amounts.",
+     "bearing": "sizes",
+     "claim": "The 9 school revolving funds took in $1,031,126 and spent $1,119,195 in nine months of FY2026.",
+     "detail": "A revolving fund is fee or sale income the district may spend without an appropriation, on the programme that raised it: lunch sales, extended day, facilities rental, athletics, school choice tuition. Nine months of FY2026: $1,031,126 in, $1,119,195 out. School choice took in $83,116 and held $299,461. 3 of the nine pay salaries directly from the fund: extended day $227,221; school lunch $217,676; athletics $24,490.",
+     "figure": "in",
+     "figures": {
+      "biggest": {
+       "text": "$299,461",
+       "unit": "",
+       "value": 299460.97
+      },
+      "choice_held": {
+       "text": "$299,461",
+       "unit": "",
+       "value": 299460.97
+      },
+      "choice_in": {
+       "text": "$83,116",
+       "unit": "",
+       "value": 83116.5
+      },
+      "held": {
+       "text": "$900,325",
+       "unit": "",
+       "value": 900325.25
+      },
+      "in": {
+       "text": "$1,031,126",
+       "unit": "into the school revolving funds, FY2026 through March",
+       "value": 1031125.6199999999
+      },
+      "lunch_in": {
+       "text": "$572,231",
+       "unit": "",
+       "value": 572231.32
+      },
+      "n": {
+       "text": "9",
+       "unit": "",
+       "value": 9
+      },
+      "out": {
+       "text": "$1,119,195",
+       "unit": "",
+       "value": 1119194.76
+      },
+      "sal_1301": {
+       "text": "$24,490",
+       "unit": "",
+       "value": 24490.19
+      },
+      "sal_1312": {
+       "text": "$227,221",
+       "unit": "",
+       "value": 227220.93
+      },
+      "sal_2200": {
+       "text": "$217,676",
+       "unit": "",
+       "value": 217676.1
+      },
+      "salaried_n": {
+       "text": "3",
+       "unit": "",
+       "value": 3
+      }
+     },
+     "id": "the-revolving-funds",
+     "kind": "measured",
+     "literals": [
+      "300",
+      "2026",
+      "FY2026"
+     ],
+     "not_shown": "What each fund is committed to for the last quarter, or what the year-end balances were: the report stops at 31 March.",
+     "see": [],
+     "so_what": "They hold $900,325. Lunch is the largest flow, $572,231 in; school choice holds the most, $299,461."
+    },
+    {
+     "basis": "The same report, every grant fund (code 25xx\u201329xx) under department 300, column FUND BALANCE below zero.",
+     "bearing": "sizes",
+     "claim": "13 of the 46 school grant funds were overdrawn at 31 March 2026, by $378,942 together.",
+     "detail": "The circuit breaker fund (2640) held $615,301. The overdrawn funds are the reimbursement grants \u2014 Title I, IDEA #240, Title II and IV \u2014 whose money arrives after the spending it repays. The largest: FY26 #240 $179,637; FY25 117 SOA EVIDENCE BASE $91,220; FY25 #240 $88,503; FY23 240 $8,167; FY23 TITLE II #140 $5,680; FY26 #309 TITLE IV PART A $3,240.",
+     "figure": "deficit",
+     "figures": {
+      "cb_held": {
+       "text": "$615,301",
+       "unit": "",
+       "value": 615300.66
+      },
+      "d_2690": {
+       "text": "$3,240",
+       "unit": "",
+       "value": 3240.0
+      },
+      "d_2758": {
+       "text": "$8,167",
+       "unit": "",
+       "value": 8166.51
+      },
+      "d_2778": {
+       "text": "$91,220",
+       "unit": "",
+       "value": 91220.0
+      },
+      "d_2796": {
+       "text": "$5,680",
+       "unit": "",
+       "value": 5680.42
+      },
+      "d_2813": {
+       "text": "$88,503",
+       "unit": "",
+       "value": 88502.82
+      },
+      "d_2814": {
+       "text": "$179,637",
+       "unit": "",
+       "value": 179636.83
+      },
+      "deficit": {
+       "text": "$378,942",
+       "unit": "overdrawn across the school grant funds at 31 March 2026",
+       "value": 378942.44
+      },
+      "deficit_n": {
+       "text": "13",
+       "unit": "",
+       "value": 13
+      },
+      "grants_n": {
+       "text": "46",
+       "unit": "",
+       "value": 46
+      }
+     },
+     "id": "grants-in-deficit",
+     "kind": "measured",
+     "literals": [
+      "2640",
+      "300",
+      "25",
+      "29",
+      "FY26",
+      "2026",
+      "31",
+      "IDEA #240",
+      "Title I",
+      "Title II",
+      "Title IV",
+      "FY26 #240",
+      "FY25 117 SOA EVIDENCE BASE",
+      "FY25 #240",
+      "FY23 240",
+      "FY23 TITLE II #140",
+      "FY26 #309 TITLE IV PART A"
+     ],
+     "not_shown": "When each reimbursement arrived after 31 March, or whether any grant closed short. The FY26 year-end report would say.",
+     "see": [],
+     "so_what": "Spent ahead of the reimbursement \u2014 the normal shape of a grant, and town cash until it lands."
+    }
+   ],
+   "count": 3,
+   "data": "/data/finance.json",
+   "generator": "scripts/build_boards.py",
+   "id": "schoolfinance",
+   "title": "The School Committee\u2019s finances \u2014 every fund and line it owns",
+   "url": "/boards/school-committee/finance"
   },
   {
    "about": "What a slower-growing health line is worth to the gap, and the three routes to one \u2014 a narrower plan, a smaller pool, a larger employee share \u2014 each priced, each landing on somebody.",
@@ -11467,7 +11723,7 @@
   },
   {
    "about": "State aid, the minimum the state requires, what other districts spend, and what happened when the grants ended.",
-   "conclusions": 17,
+   "conclusions": 20,
    "key": "income",
    "reports": [
     {
@@ -12782,6 +13038,219 @@
      "id": "unwind",
      "title": "When a grant ends \u2014 who picks up the bill",
      "url": "/when-grants-end"
+    },
+    {
+     "about": "The School Committee\u2019s finances, every line: the appropriation, its revolving funds, grants, gifts and trusts, with what each held at 31 March 2026 and what it has done since FY2011 \u2014 the first of a page per board and department, from a registry of every accounting measure the town prints.",
+     "conclusions": [
+      {
+       "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report\u2019s department 300 total.",
+       "bearing": "sizes",
+       "claim": "The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.",
+       "detail": "The town\u2019s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools\u2019 code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 year-end budget report ($26,332,564 revised, period 12, summed from its accounts). A balance is not a spendable surplus: a grant fund\u2019s balance is claimed against a grant\u2019s budget, and a revolving fund\u2019s against the programme that raised it.",
+       "figure": "held",
+       "figures": {
+        "appropriation": {
+         "text": "$26,332,564",
+         "unit": "the FY2026 school appropriation, as revised",
+         "value": 26332564.24
+        },
+        "held": {
+         "text": "$1,592,572",
+         "unit": "held in school special-revenue funds at 31 March 2026",
+         "value": 1592572.2899999996
+        },
+        "n": {
+         "text": "61",
+         "unit": "",
+         "value": 61
+        },
+        "share": {
+         "text": "6.0%",
+         "unit": "",
+         "value": 6.047919509414248
+        }
+       },
+       "id": "outside-the-appropriation",
+       "kind": "measured",
+       "literals": [
+        "300",
+        "FY26",
+        "2026",
+        "12"
+       ],
+       "not_shown": "What any balance is committed to. The report is balances, not obligations; the district\u2019s own fund-by-fund plan would say what is spoken for.",
+       "see": [],
+       "so_what": "6.0% of the $26,332,564 appropriation, in money Town Meeting never votes on: revolving funds, grants, gifts."
+      },
+      {
+       "basis": "The same report, the rows for the revolving funds under department 300 (subkind `revolving` in sources/data/fund-owners.csv); revenue, salaries, expenditure and fund balance, credits shown as amounts.",
+       "bearing": "sizes",
+       "claim": "The 9 school revolving funds took in $1,031,126 and spent $1,119,195 in nine months of FY2026.",
+       "detail": "A revolving fund is fee or sale income the district may spend without an appropriation, on the programme that raised it: lunch sales, extended day, facilities rental, athletics, school choice tuition. Nine months of FY2026: $1,031,126 in, $1,119,195 out. School choice took in $83,116 and held $299,461. 3 of the nine pay salaries directly from the fund: extended day $227,221; school lunch $217,676; athletics $24,490.",
+       "figure": "in",
+       "figures": {
+        "biggest": {
+         "text": "$299,461",
+         "unit": "",
+         "value": 299460.97
+        },
+        "choice_held": {
+         "text": "$299,461",
+         "unit": "",
+         "value": 299460.97
+        },
+        "choice_in": {
+         "text": "$83,116",
+         "unit": "",
+         "value": 83116.5
+        },
+        "held": {
+         "text": "$900,325",
+         "unit": "",
+         "value": 900325.25
+        },
+        "in": {
+         "text": "$1,031,126",
+         "unit": "into the school revolving funds, FY2026 through March",
+         "value": 1031125.6199999999
+        },
+        "lunch_in": {
+         "text": "$572,231",
+         "unit": "",
+         "value": 572231.32
+        },
+        "n": {
+         "text": "9",
+         "unit": "",
+         "value": 9
+        },
+        "out": {
+         "text": "$1,119,195",
+         "unit": "",
+         "value": 1119194.76
+        },
+        "sal_1301": {
+         "text": "$24,490",
+         "unit": "",
+         "value": 24490.19
+        },
+        "sal_1312": {
+         "text": "$227,221",
+         "unit": "",
+         "value": 227220.93
+        },
+        "sal_2200": {
+         "text": "$217,676",
+         "unit": "",
+         "value": 217676.1
+        },
+        "salaried_n": {
+         "text": "3",
+         "unit": "",
+         "value": 3
+        }
+       },
+       "id": "the-revolving-funds",
+       "kind": "measured",
+       "literals": [
+        "300",
+        "2026",
+        "FY2026"
+       ],
+       "not_shown": "What each fund is committed to for the last quarter, or what the year-end balances were: the report stops at 31 March.",
+       "see": [],
+       "so_what": "They hold $900,325. Lunch is the largest flow, $572,231 in; school choice holds the most, $299,461."
+      },
+      {
+       "basis": "The same report, every grant fund (code 25xx\u201329xx) under department 300, column FUND BALANCE below zero.",
+       "bearing": "sizes",
+       "claim": "13 of the 46 school grant funds were overdrawn at 31 March 2026, by $378,942 together.",
+       "detail": "The circuit breaker fund (2640) held $615,301. The overdrawn funds are the reimbursement grants \u2014 Title I, IDEA #240, Title II and IV \u2014 whose money arrives after the spending it repays. The largest: FY26 #240 $179,637; FY25 117 SOA EVIDENCE BASE $91,220; FY25 #240 $88,503; FY23 240 $8,167; FY23 TITLE II #140 $5,680; FY26 #309 TITLE IV PART A $3,240.",
+       "figure": "deficit",
+       "figures": {
+        "cb_held": {
+         "text": "$615,301",
+         "unit": "",
+         "value": 615300.66
+        },
+        "d_2690": {
+         "text": "$3,240",
+         "unit": "",
+         "value": 3240.0
+        },
+        "d_2758": {
+         "text": "$8,167",
+         "unit": "",
+         "value": 8166.51
+        },
+        "d_2778": {
+         "text": "$91,220",
+         "unit": "",
+         "value": 91220.0
+        },
+        "d_2796": {
+         "text": "$5,680",
+         "unit": "",
+         "value": 5680.42
+        },
+        "d_2813": {
+         "text": "$88,503",
+         "unit": "",
+         "value": 88502.82
+        },
+        "d_2814": {
+         "text": "$179,637",
+         "unit": "",
+         "value": 179636.83
+        },
+        "deficit": {
+         "text": "$378,942",
+         "unit": "overdrawn across the school grant funds at 31 March 2026",
+         "value": 378942.44
+        },
+        "deficit_n": {
+         "text": "13",
+         "unit": "",
+         "value": 13
+        },
+        "grants_n": {
+         "text": "46",
+         "unit": "",
+         "value": 46
+        }
+       },
+       "id": "grants-in-deficit",
+       "kind": "measured",
+       "literals": [
+        "2640",
+        "300",
+        "25",
+        "29",
+        "FY26",
+        "2026",
+        "31",
+        "IDEA #240",
+        "Title I",
+        "Title II",
+        "Title IV",
+        "FY26 #240",
+        "FY25 117 SOA EVIDENCE BASE",
+        "FY25 #240",
+        "FY23 240",
+        "FY23 TITLE II #140",
+        "FY26 #309 TITLE IV PART A"
+       ],
+       "not_shown": "When each reimbursement arrived after 31 March, or whether any grant closed short. The FY26 year-end report would say.",
+       "see": [],
+       "so_what": "Spent ahead of the reimbursement \u2014 the normal shape of a grant, and town cash until it lands."
+      }
+     ],
+     "count": 3,
+     "data": "/data/finance.json",
+     "generator": "scripts/build_boards.py",
+     "id": "schoolfinance",
+     "title": "The School Committee\u2019s finances \u2014 every fund and line it owns",
+     "url": "/boards/school-committee/finance"
     }
    ],
    "title": "Where the school money comes from"
@@ -18290,16 +18759,16 @@
  "totals": {
   "bearing": {
    "lever": 20,
-   "sizes": 95,
+   "sizes": 98,
    "unclassified": 0
   },
-  "conclusions": 115,
+  "conclusions": 118,
   "document_words": 80145,
   "documents": 17,
   "hypothesis": 2,
-  "measured": 113,
-  "reports": 39,
-  "with_conclusions": 32,
+  "measured": 116,
+  "reports": 40,
+  "with_conclusions": 33,
   "without_conclusions": 7
  }
 }

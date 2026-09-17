@@ -27,6 +27,7 @@ type Board = {
   slug: string; name: string; the_three: boolean; page?: Page | null
   about_itself?: { key: string; label: string; school_year: string; url: string; upstream: string; sha256: string; text: string }[]
   scorecard?: { this: Score; last: Score; minutes_lag_days: number; video_lag_days: number }
+  finance?: { accounts: number; funds: number; related: number } | null
   join?: { weekday: string; weekday_share: number; meetings_sampled: number; time: string | null; place: string | null; zoom: boolean; cable: boolean; agendas_read: number } | null
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; votes: number; first: string | null; last: string | null }
   upcoming: Upcoming[]; recent: Recent[]; votes: Vote[]
@@ -106,6 +107,7 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
     ...(p ? [[p.url, p.source === 'district' ? 'District page ↗' : 'Town page ↗'] as [string, string]] : []),
     ...(p?.facebook && p.facebook_scope === 'board' ? [[p.facebook, 'Facebook ↗'] as [string, string]] : []),
     ...(b.counts.our_minutes ? [[`${b.urls.what_was_said}#${b.slug}`, 'Its meeting minutes'] as [string, string]] : []),
+    ...(b.finance ? [[`/boards/${b.slug}/finance`, `Finance — ${b.finance.accounts} account${b.finance.accounts === 1 ? '' : 's'}`] as [string, string]] : []),
     ...(p ? [[p.charter_url, 'Charter & bylaws ↗'] as [string, string]] : []),
   ]
   const elsewhere: [string, string][] = [
@@ -293,6 +295,8 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
         </p>
       )}
       <p className="text-[13px] mt-4"><a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href="/boards/compared">How the {b.name} compares with the other boards &rarr;</a></p>
+      {/* THE FINANCE TAB. TJ, 17 September 2026: "Every board should have a 'Finance' tab". */}
+      {b.finance && <p className="text-[13px] mt-2"><a className="underline font-semibold" style={{ color: 'var(--series-revenue)' }} href={`/boards/${b.slug}/finance`}>Finance: the {b.finance.accounts} account{b.finance.accounts === 1 ? '' : 's'} the {b.name} owns{b.finance.funds ? `, ${b.finance.funds} of them funds` : ''} &rarr;</a></p>}
       <Subscribe path={`/feeds/${b.slug}.xml`} what={`the ${b.name} posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in`} />
 
       {/* ---------------------------------------------------------------- upcoming */}

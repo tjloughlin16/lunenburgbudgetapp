@@ -142,31 +142,45 @@ def scan_text(path):
 def scan_xlsx(path):
     """Workbooks: scan every cell in the first 8 rows of every sheet, plus label
     columns, and record hidden columns -- a hidden column is present in the data
-    and absent from the reader's screen, which is its own finding."""
+    and absent from the reader's screen, which is its own finding.
+
+    A LARGE WORKBOOK IS OPENED READ-ONLY. openpyxl's full loader builds every cell of
+    every sheet in memory; on the 26 MB DESE teacher-data workbook that ran for over an
+    hour before it was killed (17 September 2026), and the thirty header rows this scan
+    needs were available in seconds. Read-only mode streams rows and cannot see column
+    dimensions, so for those files the hidden-column check is recorded as not run
+    rather than silently reported as clean."""
     try:
         import openpyxl
     except ImportError:
         return None, None, None, ''
+    large = os.path.getsize(path) > LARGE_WORKBOOK_BYTES
     try:
-        wb = openpyxl.load_workbook(path, data_only=True)
+        wb = openpyxl.load_workbook(path, data_only=True, read_only=large)
     except Exception:
         return None, None, None, ''
     act = bud = led = None
     hidden = []
+    if large:
+        hidden.append('hidden columns not checked: workbook over %d MB, opened read-only' % (LARGE_WORKBOOK_BYTES // 1_000_000))
     for ws in wb.worksheets:
-        h = [k for k, v in ws.column_dimensions.items() if v.hidden]
-        if h:
-            hidden.append(f'{ws.title}:{",".join(sorted(h))}')
-        for r in range(1, min(ws.max_row, 30) + 1):
+        if not large:
+            h = [k for k, v in ws.column_dimensions.items() if v.hidden]
+            if h:
+                hidden.append(f'{ws.title}:{",".join(sorted(h))}')
+        # The first 31 rows and 40 columns, as a grid, so the two modes scan the same cells.
+        grid = [list(row) for row in ws.iter_rows(min_row=1, max_row=31, max_col=40, values_only=False)]
+        for i, row in enumerate(grid[:30]):
+            r = i + 1
             cells = []
-            for c in range(1, min(ws.max_column, 40) + 1):
-                v = ws.cell(r, c).value
+            for cell in row:
+                v = cell.value
                 if isinstance(v, str) and v.strip():
-                    cells.append((f'{ws.title}!{ws.cell(r,c).coordinate}', v.strip()))
+                    cells.append((f'{ws.title}!{cell.coordinate}', v.strip()))
             # A header that spans four adjacent cells says nothing in any one of them, so
             # each row is tested joined as well as cell by cell -- with the next row too,
             # because these reports stack "Beginning / Balance" over two rows.
-            nxt = [ws.cell(r + 1, c).value for c in range(1, min(ws.max_column, 40) + 1)]
+            nxt = [c.value for c in grid[i + 1]] if i + 1 < len(grid) else []
             joined = ' '.join([t for _, t in cells] +
                               [str(x).strip() for x in nxt if isinstance(x, str) and x.strip()])
             if joined and len(cells) > 1:
@@ -184,7 +198,12 @@ def scan_xlsx(path):
                     for rx, why in LEDGER_HDR:
                         if rx.search(s):
                             led = (ref, s[:200], why); break
+    if large:
+        wb.close()
     return act, bud, led, '; '.join(hidden)
+
+
+LARGE_WORKBOOK_BYTES = 5_000_000
 
 # Directories holding documents that publish figures. Meeting minutes are excluded
 # by design: they are narrative, there are 1,100 of them, and a figure quoted in

@@ -56,29 +56,29 @@ export function Override() {
       {/* THE SHORT VERSION: the mechanics, three cards. What every other section on this
           page assumes. */}
       <ShortVersion>
-      <Section id="shape" eyebrow="Three things about the instrument"
-        title="What an override actually is"
-        lede={<>Before any number, the mechanics &mdash; because most of the disagreement
-          in town is about these rather than about the money.</>}>
+      <Section id="shape" eyebrow="Is it a solution, and for how long"
+        title="What one override buys"
+        lede={<>Three answers before any argument: how long one override lasts, what a
+          lasting one costs, and how the question has to be written.</>}>
         <div className="grid gap-3 lg:grid-cols-3 items-start">
-          <Card title="An override is permanent, and it compounds"
-            body={<>Not a cheque for one year. The levy limit rises by the amount voted and
-              stays risen, then grows {pct(LEVY_CAP)} a year like the rest of the limit. A{' '}
-              {usdShort(OVERRIDE)} override is worth {usd(OVERRIDE * (1 + LEVY_CAP) ** 5)}{' '}
-              in its sixth year without anybody voting again.</>} />
-          <Card title="A school-only override is worth nearly twice a townwide one"
+          <Card title={`A ${usdShort(OVERRIDE)} school-only override funds ${lasts} year${lasts === 1 ? '' : 's'}, then the same gap is back`}
+            body={<>It is not a solution; it is time. The levy limit rises by the amount voted,
+              permanently, and then grows {pct(LEVY_CAP)} a year while what the schools buy grows
+              nearly 5% &mdash; so the override covers the level once and the rate runs on. In its
+              sixth year the same vote is worth {usd(OVERRIDE * (1 + LEVY_CAP) ** 5)} and the gap
+              has outrun it.</>} />
+          <Card title={`Five years of stability costs ${usdShort(five.levy)} — $${five.onAverageHome} a year on the average home, for ever`}
+            body={<>Because it compounds, a large enough override genuinely does cover years rather
+              than a year. The price of each extra year is on the sizing table below; ten years is{' '}
+              {usd(overrideForYears(10).onAverageHome)} a year on the average home, and the
+              conversation still returns after that unless a cost rate changes.</>} />
+          <Card title={`Written townwide, the question has to be ${usdShort(townwide)} to do the work of ${usdShort(OVERRIDE)} for the schools`}
             tone="good"
-            body={<>An override may be written for a single department. A school-only
-              question sends the schools every dollar. A general one covering all
-              departments sends them about {(SHARE * 100).toFixed(0)}&cent; of each, so it
-              has to be {usdShort(townwide)} to do the work of a {usdShort(OVERRIDE)}{' '}
-              school question &mdash; and costs the average homeowner nearly twice as much.
-              The ask Lunenburg put up and lost was the townwide kind.</>} />
-          <Card title="An override raises a ceiling, not a bill"
-            body={<>An override lifts the limit; it does not oblige the town to collect to
-              it. In a year the schools need less than it raises, the town can levy under
-              the limit &mdash; Lunenburg has left as much as $53,706 unlevied &mdash; or
-              appropriate the difference elsewhere.</>} />
+            body={<>A school-only question sends the schools every dollar. A general one sends them
+              about {(SHARE * 100).toFixed(0)}&cent; of each, so it costs the average homeowner
+              nearly twice as much for the same result. The ask Lunenburg put up and lost was the
+              townwide kind. And an override raises a ceiling, not a bill: in a year the schools
+              need less, the town can levy under it.</>} />
         </div>
       </Section>
       </ShortVersion>

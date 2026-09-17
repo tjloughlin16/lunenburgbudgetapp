@@ -10,6 +10,44 @@ it had never been fixed anywhere. Check anything load-bearing against the repo.
 
 ---
 
+## 17 September 2026 — the account registry, the finance pages, share metadata
+
+**The registry is `sources/data/fund-owners.csv`** — one row per accounting measure the
+FY26 reports print (506: department lines, revenue estimates, special-revenue funds,
+enterprise, trusts, stabilization, agency, capital project funds, debt service), each with
+an `owner` (a board slug from boards.json or a department slug from
+`sources/data/departments.csv`, or `unresolved`) and an `owner_basis`. The basis that does
+most of the work: the town's own special-revenue report carries a MUNIS department code
+in an UNLABELLED column between FUND DESCRIPTION and ACCOUNT ORG CODE — 300 on every
+school fund, 210 on every police grant. `build_fund_owners.py --check` fails if a held
+report prints a measure the registry lacks; `--seed` adds it with a rule-based owner and
+never overwrites one. Six are unresolved on purpose; they are listed on `/accounts`.
+
+**`build_finance.py` → `finance.json`** puts the figures beside each measure in three
+grades that the pages keep apart: FY26 printouts (evidence), the FY2011–2023 page-read
+special-revenue schedule (read), OCR of the FY2023–2025 balance tables (transcribed,
+flagged where FY2025 does not chain to the FY26 opening balance — school choice does not).
+Pages: `/boards/school-committee/finance` (tab `schoolfinance`, a report with three
+conclusions from the FY26 report only), `/boards/<slug>/finance` (tab `boards`),
+`/departments[/<slug>]`, `/accounts`. **Not established:** a trend for any appropriation
+line (the annual-report extract cannot say which printed column is which — rule 13), and
+any FY2024–FY2025 fund activity. Both are money-gaps rows.
+
+**Share metadata.** `lib/title.ts` sets `<meta name="description">` and Open Graph tags on
+every page: report pages from the standfirst, meeting pages from headline + summary, the
+rest from the first paragraph under the H1. The 127 meeting-minutes pages are prerendered
+now so the scraper sees it (`prerender.mjs`, `build_sitemap.py`).
+
+**Parks & Recreation, August 2025 records request** is ingested and filed by what each
+file is (see `sources/town-ledgers/account-details/PROVENANCE-parks-2025.md`). The FY2024
+Parks MUNIS report is image-only and nothing is extracted from it; its period in the
+filename is inferred, and the provenance file says so. MyRec is not the town's books.
+
+**The lever reports' conclusions** were rewritten to answer TJ's test — is it a solution,
+for how long, with what implications — after "the override ones are general facts that
+are useless". Override, growth, health, contract and positions changed; the rest already
+did.
+
 ## 16 September 2026 — wayfinding, the short version, the fold
 
 **`notes/HANDOFF-WAYFINDING.md` is the current workstream**, on branch

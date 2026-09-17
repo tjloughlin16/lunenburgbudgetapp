@@ -124,7 +124,30 @@ def board_pages():
     if not os.path.exists(p):
         return []
     boards = json.load(io.open(p, encoding='utf-8')).get('boards', [])
-    return ['/boards/' + b['slug'] for b in boards]
+    out = ['/boards/' + b['slug'] for b in boards]
+    # THE FINANCE TAB, for every board that owns an account (the registry decides which).
+    # The School Committee's is a top-level route of its own and is already in `routes()`.
+    out += ['/boards/%s/finance' % b['slug'] for b in boards if b.get('finance') and b['slug'] != 'school-committee']
+    return out
+
+
+def meeting_pages():
+    """One page per meeting we have written minutes for, from the payload that decides it.
+    Prerendered so a shared link carries the meeting's own title and description."""
+    p = os.path.join(PUB, 'data', 'recording-minutes.json')
+    if not os.path.exists(p):
+        return []
+    d = json.load(io.open(p, encoding='utf-8'))
+    return sorted('/meeting-minutes/' + m['slug'] for m in d.get('meetings', []))
+
+
+def department_pages():
+    """One page per department the finance payload knows an owner for."""
+    p = os.path.join(PUB, 'data', 'finance.json')
+    if not os.path.exists(p):
+        return []
+    d = json.load(io.open(p, encoding='utf-8'))
+    return ['/departments/' + x['slug'] for x in d.get('departments', []) if x['slug'] in d.get('owners', {})]
 
 
 def feed_pages():
@@ -175,7 +198,7 @@ def reference():
 
 def render():
     seen, urls = set(), []
-    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + feed_pages() + ENTRY + published_data()
+    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + department_pages() + meeting_pages() + feed_pages() + ENTRY + published_data()
               + reference() + analyses() + feeds()):
         if u not in seen:
             seen.add(u)
