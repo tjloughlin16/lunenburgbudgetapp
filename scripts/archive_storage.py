@@ -61,7 +61,13 @@ SKIP_KEYS = {'data/archive-manifest.csv', 'data/archive-push-state.csv',
              # the bucket already holds, and re-derived daily -- so every copy in the bucket
              # is an older rendering the moment it lands, and the larger one (340 MB) dies
              # in a single PUT anyway. Neither is a document anyone published.
-             'data/search-fts.db', 'data/minutes-fts.db'}
+             'data/search-fts.db', 'data/minutes-fts.db',
+             # DUPLICATES UNDER A SECOND NAME, 17 September 2026. For an hour the district
+             # crawler unescaped `&#39;` in labels, so eleven documents whose names carry
+             # `-39-s-` were re-downloaded as `-s-` and pushed before it was caught. Same
+             # bytes as the originals, which the manifest keeps; the bucket cannot delete
+             # them, so they are recorded here as what they are.
+             *['district-budget/docs/3-12-25-town-manager-s-budget.pdf', 'district-budget/docs/budget-hearing-fy22-superintendent-s-recommended-budget.pdf', 'district-budget/docs/final-fy26-town-manager-s-target-budget-approved-3-12-25.pdf', 'district-budget/docs/final-fy26-town-manager-s-target-budget.pdf', 'district-budget/docs/fy24-superintendent-s-recommended-budget-presentation.pdf', 'district-budget/docs/fy25-superintendent-s-budget-update.pdf', 'district-budget/docs/fy26-superintendent-s-proposed-budget-2-26-25-updated-3-12-25.pdf', 'district-budget/docs/fy26-superintendent-s-proposed-budget-presentation-1-22-25.pdf', 'district-budget/docs/fy26-town-manager-s-target-budget-2-5-25-presentation.pdf', 'district-budget/docs/superintendent-s-fy21-budget-identified-needs.pdf', 'district-budget/docs/updated-town-manager-s-budget-sheets-2-66-2-5-25.xlsx', 'district-budget/text/3-12-25-town-manager-s-budget.txt', 'district-budget/text/budget-hearing-fy22-superintendent-s-recommended-budget.txt', 'district-budget/text/final-fy26-town-manager-s-target-budget-approved-3-12-25.txt', 'district-budget/text/final-fy26-town-manager-s-target-budget.txt', 'district-budget/text/fy24-superintendent-s-recommended-budget-presentation.txt', 'district-budget/text/fy25-superintendent-s-budget-update.txt', 'district-budget/text/fy26-superintendent-s-proposed-budget-2-26-25-updated-3-12-25.txt', 'district-budget/text/fy26-superintendent-s-proposed-budget-presentation-1-22-25.txt', 'district-budget/text/fy26-town-manager-s-target-budget-2-5-25-presentation.txt', 'district-budget/text/superintendent-s-fy21-budget-identified-needs.txt', 'district-budget/text/updated-town-manager-s-budget-sheets-2-66-2-5-25.txt']}
 
 CONTENT_TYPES = {
     '.pdf': 'application/pdf',

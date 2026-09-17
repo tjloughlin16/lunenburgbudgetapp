@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**316 of 1338 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **103 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**320 of 1344 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **1022 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **1024 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -37,17 +37,17 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY13 | 1 |
 | FY14 | 9 |
 | FY15 | 14 |
-| FY16 | 13 |
-| FY17 | 16 |
-| FY18 | 17 |
-| FY19 | 28 |
-| FY20 | 42 |
-| FY21 | 15 |
+| FY16 | 14 |
+| FY17 | 17 |
+| FY18 | 19 |
+| FY19 | 30 |
+| FY20 | 45 |
+| FY21 | 16 |
 | FY22 | 21 |
-| FY23 | 38 |
-| FY24 | 66 |
-| FY25 | 64 |
-| FY26 | 87 |
+| FY23 | 39 |
+| FY24 | 67 |
+| FY25 | 68 |
+| FY26 | 89 |
 | FY27 | 66 |
 | FY28 | 6 |
 | FY29 | 2 |
@@ -217,7 +217,7 @@ Listed so this view cannot look more complete than it is.
 - `data/youtube-video-classification.csv` — One row per video, with what we think it is
 - `data/youtube-videos.csv` — Every video on the town’s PEG access channel
 - `data/youtube-watch-events.csv` — What appeared on the town’s YouTube channel between one check and the next
-- `district-budget/docs/3-12-25-town-manager-s-budget.pdf` — 3/12/25 Town Manager's Budget
+- `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
 - `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
 - `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic program costs by sport
 - `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic Program Costs by Sport
@@ -226,6 +226,8 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — Multi-Scenario Financial Analysis
 - `district-budget/docs/budget-addendum-multi-scenario-financial-analysis.pdf` — BUDGET ADDENDUM MULTI-SCENARIO FINANCIAL ANALYSIS
 - `district-budget/docs/budget-message-for-families-2-27-26.pdf` — Budget Message for Families 2-27-26
+- `district-budget/docs/budget-sandbox-embed.html` — District budget page: Budget Proposal & FAQ
+- `district-budget/docs/budget-sandbox-site.html` — Budget Proposal & FAQ site (Google Sites page, as fetched)
 - `district-budget/docs/community-forums-scheduled-on-school-department-budget.docx` — Community Forums Scheduled on School Department Budget
 - `district-budget/docs/frequently-asked-questions-november-town-meeting.pdf` — FREQUENTLY ASKED QUESTIONS-NOVEMBER TOWN MEETING
 - `district-budget/docs/lhs-athletics-faq.pdf` — High school athletics fee schedule
@@ -458,5 +460,3 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/sc-meetings/2023-09-06-proposed-extended-day-program-increase.pdf` — Proposed Extended Day Program Increase
 - `district-budget/docs/sc-meetings/2023-09-06-proposed-facilities-logo.pdf` — Proposed Facilities Logo
 - `district-budget/docs/sc-meetings/2023-09-06-proposed-lhs-continuous-school-improvement-plan.pdf` — Proposed LHS Continuous School Improvement Plan
-- `district-budget/docs/sc-meetings/2023-09-06-proposed-lms-continuous-school-improvement-plan.pdf` — Proposed LMS Continuous School Improvement Plan
-- `district-budget/docs/sc-meetings/2023-09-06-proposed-primary-continuous-school-improvement-plan.pdf` — Proposed Primary Continuous School Improvement Plan

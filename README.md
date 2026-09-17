@@ -1,7 +1,7 @@
 # The Lunenburg Budget Project
 
 An independent, checkable archive of the Lunenburg, Massachusetts town and school budget:
-27,894 documents, 128 datasets, and 12,089 agendas and sets
+27,876 documents, 128 datasets, and 12,089 agendas and sets
 of minutes across 51 town boards. Not affiliated with the Town of Lunenburg, the
 School Committee or the school district.
 
@@ -36,7 +36,7 @@ clone is needed:
 **Nothing in `fy28/public/api/` is larger than one fetch.** Anything that would be is split
 — `staff_roster_entries.json` is an index and `staff_roster_entries/2022.json` is that year.
 
-**The documents themselves are not in this repository.** 27,894 files, 1.47 GB, live
+**The documents themselves are not in this repository.** 27,876 files, 1.47 GB, live
 in a public object store; `sources/data/archive-manifest.csv` lists every one with its
 sha256 and `python3 scripts/sync_archive.py --pull` fetches them. The extracted text IS
 here, under `sources/*/text/`, and that is what the analysis reads.

@@ -109,7 +109,15 @@ def links(page=PAGE, subdir='', seen=None):
                 meeting = _date(h)
             continue
         href, label = m.group(3), re.sub(r'<[^>]+>', '', m.group(4))
-        label = re.sub(r'\s+', ' ', _html.unescape(label)).strip()
+        # NOT unescaped: a label's `&#39;` has been part of its filename -- and so of its
+        # published /docs/ address -- since the first crawl, and an address once shared
+        # keeps resolving. Unescaping it on 17 September 2026 re-downloaded twelve
+        # documents under new names before it was caught.
+        label = re.sub(r'\s+', ' ', label).strip()
+        if subdir:
+            # The meetings page is new (17 September 2026) and its names were never
+            # published escaped, so they are the clean ones: "C&O", not "C&amp;O".
+            label = _html.unescape(label)
         fid = re.search(r'/d/([A-Za-z0-9_-]{20,})|[?&]id=([A-Za-z0-9_-]{20,})', href)
         if not fid or not label:
             continue
@@ -308,6 +316,16 @@ def main():
         print(f'  [{n:>2}] {note:<14} {os.path.splitext(path)[1]:<6} {len(body)/1000:>7.0f}KB '
               f'{how:<16} {it["label"][:44]}')
 
+    # ROWS THIS CRAWL DID NOT PRODUCE ARE KEPT: the mirrored pages fetch_board_pages.py
+    # adds to this index, and any document the district has taken off its listing --
+    # which is still a document we hold, with its address. A full rewrite dropped five
+    # such rows on 17 September 2026 and the search index lost two published documents.
+    mine = {it['url'] for it in items}
+    if os.path.exists(MANIFEST):
+        with open(MANIFEST, newline='') as fh:
+            kept = [r for r in csv.DictReader(fh) if r['upstream'] not in mine]
+        rows += [dict(r, page=r.get('page') or 'budget', school_year=r.get('school_year') or '',
+                      meeting_date=r.get('meeting_date') or '') for r in kept]
     with open(MANIFEST, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=['label', 'upstream', 'local', 'text',
                                            'bytes', 'sha256', 'read', 'page', 'school_year', 'meeting_date'])
