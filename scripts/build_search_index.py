@@ -487,8 +487,10 @@ def forget(db, file_key):
 
 
 def build(rebuild=False, quiet=False):
-    fresh = rebuild or not os.path.exists(DB)
-    if rebuild and os.path.exists(DB):
+    # A zero-byte file is what an interrupted first run leaves behind, and it is not an
+    # index: the refresh tree's 17 September run died on `no such table: indexed_file`.
+    fresh = rebuild or not os.path.exists(DB) or os.path.getsize(DB) == 0
+    if fresh and os.path.exists(DB):
         os.remove(DB)
     db = connect(DB, create=fresh)
     if fresh:

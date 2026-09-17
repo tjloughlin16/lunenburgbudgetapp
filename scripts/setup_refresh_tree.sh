@@ -48,8 +48,11 @@ echo "pulling the archive's binaries from R2 (about 1.4 GB, once) ..."
 # mismatch on purpose -- rule 13 -- so its exit code is reported, not obeyed.
 python3 scripts/sync_archive.py --pull || echo "(some files did not pull -- see above; derived and re-fetched files are expected)"
 
-echo "building the derived database ..."
+echo "building the derived databases ..."
 python3 scripts/build_db.py > /dev/null
+# The search index is derived and gitignored too, and the refresh pushes it to D1
+# incrementally -- so it has to exist here before the first run.
+python3 scripts/build_search_index.py --quiet > /dev/null
 
 echo
 echo "refresh tree ready at $TREE, on branch 'refresh' tracking origin/main."
