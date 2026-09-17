@@ -84,7 +84,7 @@ CATEGORIES = [
     # up the page ... in some special section". They are the two things the town can
     # actually do about the gap, and a reader who came from the crisis page is looking
     # for exactly these before any filing question.
-    ('levers', 'What the town can do — the two levers', [
+    ('levers', 'What the town can do', [
         ('', ['override', 'growth']),
     ]),
     # A SHELF WITH ONE THING ON IT, FIRST, AND THE ARGUMENT FOR IT.
