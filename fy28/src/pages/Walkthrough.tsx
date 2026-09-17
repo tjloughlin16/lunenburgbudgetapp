@@ -6,19 +6,16 @@ import {
   BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES, DEFAULT_SCENARIO, STATE_AID,
   nextYear, overrideForYears, longRunTarget, salaryRateToBalance, workforceShrink,
   DEFAULT_RATES, ch70OnlyGrowth, aidGrowthToSustain, SHARE, PACKAGES,
-  overrideOnAverageHome,
+  overrideOnAverageHome, ALL_CUTS, cutInThings,
 } from '../model/rates'
-import { ADMIN, DEVELOPMENT } from '../model/answers'
+import { ADMIN, DEVELOPMENT, EXTRACURRICULAR, FEES, GAP, SETTLEMENT, ATTRIBUTION, CONTRACT, yearsCovered } from '../model/answers'
 import { MODEL } from '../model/engine'
 import { CitationList } from '../components/Citations'
 import { Go } from '../lib/nav'
 import { FullVersion } from '../components/FullVersion'
-import { Room, Say, Plate, SectionLink, AlreadyCut, OneTimeAnswers,
-         WhatIsADevelopment } from '../components/walk'
+import { Room, Say, Plate, SectionLink, AlreadyCut, Doors } from '../components/walk'
 import { TheRaise } from '../components/TheRaise'
 import { RateBoard } from '../components/RateBoard'
-import { OverrideSizing, OverrideTreadmill, OverrideExplorer } from '../components/LevelVsSlope'
-import { PriceList } from '../components/PriceList'
 import { Note } from '../components/primitives'
 import { Upshot, UpshotMore } from '../components/Upshot'
 
@@ -49,13 +46,11 @@ export function Walkthrough() {
       <= (b.firstYears.overrideTownwide ?? 0) ? a : b))
   const cuts = ALREADY_CUT
   const ranked = RATE_LINES.slice().sort((a, b) => b.swing - a.swing)
-  const salaryAt4 = salaryRateToBalance({ ...DEFAULT_RATES, health: 0.04 }, T)
   const shrink = workforceShrink(Math.max(salaryRateToBalance(DEFAULT_RATES, T), 0), 0.04)
   const aidRate = aidGrowthToSustain(DEFAULT_SCENARIO)!
   // Derived, not typed. Both of these moved when special education got its own escalator
   // and neither noticed, which is rule 2 in CLAUDE.md and the reason it is written down.
   const ch70Rate = ch70OnlyGrowth(aidRate)
-  const ch70Year1 = STATE_AID.chapter70 * ch70Rate
   const ch70TenYear = Array.from({ length: 10 }, (_, i) =>
     STATE_AID.chapter70 * ((1 + ch70Rate) ** (i + 1) - 1)).reduce((a, b) => a + b, 0)
   const five = overrideForYears(5)
@@ -302,35 +297,39 @@ export function Walkthrough() {
       </Room>
 
       {/* ------------------------------------------------ 07 */}
-      <Room n={7} slug="the-cuts" tag="The cuts you feel" handsOn
+      {/* ROOMS 7 TO 11 ARE THE LEVERS, AND EACH HAS A REPORT OF ITS OWN NOW. TJ,
+          17 September 2026: "crisis page should be mostly standalone, or maybe just the
+          big conclusions and point to these independent pages now?" So each room keeps
+          what it corrects and the sentence to leave with, states the two or three
+          figures that carry it, and opens the door to the report. The tools that lived
+          here -- the price list, the override explorer, the treadmill, the packages --
+          are on the reports and the dials pages, where a reader who wants them is. */}
+      <Room n={7} slug="the-cuts" tag="The cuts you feel"
         title="What the things you would cut are actually worth"
         corrects={<>&ldquo;Cut the administrators.&rdquo; &middot; &ldquo;Cut sports before
           you cut classrooms.&rdquo;</>}
-        leave={<>Athletics is a third of one year and none of the problem. That is not an
+        leave={<>Every extra still funded is {pct(EXTRACURRICULAR.total / GAP, 0)} of one year and none of the problem. That is not an
           argument for cutting it. It is an argument that cutting it was never the
           answer.</>}>
         <Say>
-          This room owes you a straight answer about the two cuts people feel most, and it
-          is not going to flinch. Every remaining sport &mdash; 25 of them, 691
-          student-seasons, every coach &mdash; is{' '}
-          {usd(MODEL.facts.athleticsRemaining as number)}. Every administrative and office
-          line the law allows the district to cut is {usd(ADMIN.lawful)}.
+          Every remaining sport, the band, the clubs and the art supplies come to{' '}
+          {usd(EXTRACURRICULAR.total)} &mdash; {pct(EXTRACURRICULAR.total / GAP, 0)} of next
+          year&rsquo;s gap, once, and the FY27 budget already took {usd(EXTRACURRICULAR.alreadyCut)} of
+          athletics. Every administrative and office line the law allows the district to cut is{' '}
+          {usd(ADMIN.lawful)}. Every fee at its peak adds {usd(FEES.total)}. All of it together
+          buys about {yearsCovered(ALL_CUTS, DEFAULT_RATES.other)} years; after that the only
+          lines big enough are classrooms, and next year&rsquo;s gap is{' '}
+          {cutInThings(GAP).positions.toFixed(1)} positions.
         </Say>
-        <OneTimeAnswers />
-        <Say>
-          The two cheapest-looking rows are the only two that change anything, and the
-          loudest argument in town is worth nothing structurally at all.
-        </Say>
-        <Say>
-          <strong>Try it.</strong> Pick a number you think the town should find, and see
-          what every lever would have to do to raise it &mdash; and how many of them
-          cannot, at any price.
-        </Say>
-        <PriceList />
+        <Doors items={[
+          ['extraslever', 'Cutting the extras', `${usdShort(EXTRACURRICULAR.total)}, once`],
+          ['feelever', 'What fees can raise', `${usdShort(FEES.total)} at every fee’s peak`],
+          ['positionslever', 'Classroom positions', `${cutInThings(GAP).positions.toFixed(1)} FTE next year`],
+        ]} />
       </Room>
 
       {/* ------------------------------------------------ 08 */}
-      <Room n={8} slug="the-override" tag="The revenue answer" handsOn
+      <Room n={8} slug="the-override" tag="The revenue answer"
         title="What one override actually buys"
         corrects={<>&ldquo;An override would fix this&rdquo; &middot; &ldquo;Overrides are
           just the schools coming back again.&rdquo;</>}
@@ -338,32 +337,18 @@ export function Walkthrough() {
           ever, or a very large one whose first years collect far more than the schools
           need.</>}>
         <Say>
-          Both sides of this argument are wrong in the same way: they think an override is a
-          payment. It is a permanent lift to the town&rsquo;s levy limit, which then
-          compounds at {pct(LEVY_CAP, 1)} like the rest of the limit. Three things follow,
-          and two of them are good news nobody has told the town.
+          Both sides of this argument think an override is a payment. It is a permanent lift
+          to the town&rsquo;s levy limit, which then compounds at {pct(LEVY_CAP, 1)} like the
+          rest of the limit. The schools keep {(SHARE * 100).toFixed(0)}&cent; of a town-wide
+          override dollar and all of a school-only one, so the same money does nearly twice
+          the work written for the schools alone: {usdShort(two.levy)} covers two years at{' '}
+          ${two.onAverageHome} on the average home; {usdShort(five.levy)} covers five at{' '}
+          ${five.onAverageHome}, and over-collects in its first years.
         </Say>
-        <Plate label="The two nobody mentions" figures={[
-          { v: `${(SHARE * 100).toFixed(0)}¢`, k: 'what the schools keep of a town-wide override dollar — a school-only question keeps all of it', tone: 'good' },
-          { v: usdShort(two.levy), k: `a school question covering two years, at $${two.onAverageHome} on the average home`, tone: 'good' },
-          { v: usdShort(five.levy), k: `and five years, at $${five.onAverageHome} — but see what it over-collects` },
+        <Doors items={[
+          ['override', 'Overrides', 'permanent, compounding, a ceiling not a bill'],
+          ['freecashlever', 'Can free cash fill the gap?', 'yes, once — and it is the capital plan’s money'],
         ]} />
-        <Say>
-          The two questions Lunenburg put up and lost were town-wide, covering every
-          department. Written for the schools alone, the same money does nearly twice the
-          work here.
-        </Say>
-        <OverrideSizing />
-        <Say>
-          <strong>Try it.</strong> Each notch is the smallest override that funds one more
-          year. Watch the ballot figure, the tax bill and the over-collection move together
-          &mdash; they are three views of one decision.
-        </Say>
-        <OverrideExplorer />
-        <Say>
-          And the alternative to one big question: a smaller one, every spring, for ever.
-        </Say>
-        <OverrideTreadmill />
       </Room>
 
       {/* ------------------------------------------------ 09 */}
@@ -373,41 +358,23 @@ export function Walkthrough() {
         leave={<>Commercial development is real money and the wrong order of magnitude
           &mdash; and it has to accelerate, not merely continue.</>}>
         <Say>
-          The right instinct, priced honestly. Two facts do all the work here, and neither
-          is in general circulation.
+          The schools keep {(SHARE * 100).toFixed(0)}&cent; of each new-growth dollar, so a
+          development is worth about half what it looks against the school gap. Holding the
+          gap for five years takes {usdShort(DEVELOPMENT.fiveYear.value)} of new commercial
+          value a year &mdash; about {DEVELOPMENT.fiveYear.developments.toFixed(0)}{' '}
+          developments &mdash; against a town whose best three years on record for
+          non-residential building, FY2024 to FY2026, are a fraction of that. And a flat
+          build rate decays as a rate: a fixed number of new-growth dollars is a shrinking
+          share of a growing town, which is why {pct(BASELINE_REVENUE_GROWTH)} drifts back
+          toward {pct(LEVY_CAP, 1)}. The <em>average</em> home is a wash &mdash; about{' '}
+          {usd(HOME_PAYS)} toward schools against {usd(HOME_COSTS)} of school cost &mdash;
+          and the record says a <em>new</em> home has not, on net, brought a pupil.
         </Say>
-        <Plate label="On the wall" figures={[
-          { v: `${(SHARE * 100).toFixed(0)}¢`, k: 'of each new-growth dollar reaches the schools — the rest is the town’s', cite: 'levy' },
-          { v: usdShort(DEVELOPMENT.fiveYear.value),
-            k: 'of new commercial value a year to hold the gap for five years', cite: 'taxbase' },
-          { v: DEVELOPMENT.fiveYear.developments.toFixed(0),
-            k: 'developments a year — see below for what one of those is' },
-          { v: `${usd(HOME_PAYS)} · ${usd(HOME_COSTS)}`,
-            k: 'what an average home pays toward schools, and the school cost it brings' },
+        <Doors items={[
+          ['growth', 'Commercial development', `${usdShort(DEVELOPMENT.fiveYear.value)} a year, and what the town actually built`],
+          ['homestudents', 'Homes and students', 'the town builds, the schools do not grow'],
+          ['development', 'Try growth', 'the dials'],
         ]} />
-        <WhatIsADevelopment />
-        <Say>
-          The first is that <strong>the schools keep {(SHARE * 100).toFixed(0)}&cent; of
-          each new-growth dollar</strong>. New growth goes to the town&rsquo;s levy, and the
-          schools get their share of what the town collects. Pricing development against the
-          school gap without that roughly doubles what a new development appears to be worth.
-        </Say>
-        <Say>
-          The second has not been said out loud anywhere in town: <strong>a flat build rate
-          decays as a rate.</strong> A fixed number of dollars of new growth each year is a
-          shrinking share of a growing town, which is exactly why{' '}
-          {pct(BASELINE_REVENUE_GROWTH)} drifts back toward {pct(LEVY_CAP, 1)}. To work as a
-          rate rather than as a one-off, the rate of new commercial construction has to
-          keep rising.
-        </Say>
-        <Say>
-          And the housing half. The <em>average</em> home pays about {usd(HOME_PAYS)} a
-          year toward schools and brings about {usd(HOME_COSTS)} of school cost with it
-          &mdash; a wash. Whether a <em>new</em> home brings a pupil is a different
-          question, and thirty years of the town&rsquo;s own record say it has not, on
-          net: see <Go to="homestudents" className="underline">Homes and students</Go>,
-          which also prices what a home that brings no pupil is worth against this gap.
-        </Say>
       </Room>
 
       {/* ------------------------------------------------ 10 */}
@@ -416,33 +383,23 @@ export function Walkthrough() {
         corrects={<>&ldquo;Fix Chapter 70 and we&rsquo;re fine.&rdquo;</>}
         leave={<>Worth asking the delegation for. Not worth planning around.</>}>
         <Say>
-          The one route where nobody in Lunenburg gives anything up, so it deserves a number
-          rather than a wish. First untangle two figures that get conflated constantly: all
-          state aid is {usdShort(STATE_AID.total)}, and Chapter 70 school aid is{' '}
-          {usdShort(STATE_AID.chapter70)} of it.
+          The one route where nobody in Lunenburg gives anything up. All state aid is{' '}
+          {usdShort(STATE_AID.total)} and Chapter 70 is {usdShort(STATE_AID.chapter70)} of it
+          &mdash; {pct(STATE_AID.shareOfTownRevenue, 0)} of what the town collects, which is
+          why fixing a {pct(COST_GROWTH_BLENDED)} cost rate from that quarter of the revenue
+          means Chapter 70 growing {pct(ch70Rate)} a year, for ever: {usdShort(ch70TenYear)}{' '}
+          extra over ten years. The town already spends {usdShort(STATE_AID.aboveFoundation)}{' '}
+          above its foundation budget, which is not where the formula sends money &mdash;
+          worth knowing before writing the letter.
         </Say>
-        <Plate label="On the wall" figures={[
-          { v: pct(STATE_AID.shareOfTownRevenue, 0), k: 'of town revenue is state aid — which is why the rate has to be so high', cite: 'levy' },
-          { v: pct(ch70Rate), k: 'annual growth Chapter 70 alone would need, for ever', cite: 'ch70', tone: 'critical' },
-          { v: `+${usd(Math.round(ch70Year1))}`, k: 'extra in the first year', cite: 'ch70' },
-          { v: usdShort(ch70TenYear), k: 'extra over ten years', cite: 'ch70' },
+        <Doors items={[
+          ['stateaid', 'State aid', 'the part nobody here votes on'],
+          ['formula', 'How Chapter 70 works', 'eight steps'],
         ]} />
-        <Say>
-          The reason the rate has to be so steep is that aid is only{' '}
-          {pct(STATE_AID.shareOfTownRevenue, 0)} of what the town collects. Fixing a{' '}
-          {pct(COST_GROWTH_BLENDED)} cost rate by moving a quarter of the revenue means
-          moving that quarter very hard.
-        </Say>
-        <Say>
-          And the fact that should shape the ask: the town already spends{' '}
-          {usdShort(STATE_AID.aboveFoundation)} above its foundation budget, which is not
-          where the formula sends money. Worth knowing before writing the letter, because it
-          tells you what to ask for.
-        </Say>
       </Room>
 
       {/* ------------------------------------------------ 11 */}
-      <Room n={11} slug="what-it-takes" tag="What it would take" handsOn
+      <Room n={11} slug="what-it-takes" tag="What it would take"
         title="What &ldquo;solved&rdquo; would actually require"
         corrects={<>&ldquo;There must be a version of this where nobody gets hurt.&rdquo;</>}
         leave={<>There is no painless version, and there are several that work. Five
@@ -450,67 +407,24 @@ export function Walkthrough() {
           salaries and insurance; and the packages that share the change cost a
           fraction of the ones that spare either side.</>}>
         <Say>
-          Permanent balance has exactly one condition: everything the district buys has to
-          grow no faster than <strong>{pct(T)}</strong> a year, which is where the
-          town&rsquo;s revenue settles once a flat new-growth figure has finished shrinking
-          as a share.
+          Permanent balance has one condition: everything the district buys grows no faster
+          than <strong>{pct(T)}</strong> a year. Four of the six lines are fixed by contract,
+          law or the market, so it comes down to the two that change the rate &mdash;
+          health insurance, {pct(ATTRIBUTION.health.shareOfGap, 0)} of the gap from{' '}
+          {pct(ATTRIBUTION.health.shareOfBudget, 0)} of the budget, and salaries, bargained
+          three years at a time with the agreement expiring {CONTRACT.expires}. If nobody
+          decides anything, the default is already happening: {shrink.positionsPerYear.toFixed(1)}{' '}
+          positions a year, {pct(shrink.after20, 0)} of the workforce in twenty. There are{' '}
+          {PACKAGES.length} combinations that keep the gap shut, {PACKAGES.filter(p => p.forEver).length}{' '}
+          for ever, and the cheapest costs an override of about{' '}
+          {usd(overrideOnAverageHome(CHEAPEST.firstYears.overrideTownwide ?? 0))} a year on the
+          average home.
         </Say>
-        <Say>
-          Four of the six lines are fixed by contract, state law or the market. So salaries
-          are the residual, and the honest question is not whether the town can hold them to
-          a number, but what is left for them once insurance has taken its share.
-        </Say>
-        <Say>
-          Start with the version of that nobody has to agree to, because it is the one
-          already happening. Leave insurance where it is, leave the bargained increase
-          where it is, and hold the salary line down by employing fewer people:
-        </Say>
-        <Plate label="The default — what happens if nobody decides anything" figures={[
-          { v: pct(Math.max(salaryRateToBalance(DEFAULT_RATES, T), 0)), k: 'all the salary line can grow, while insurance rises 9% a year', cite: 'salaries', tone: 'critical' },
-          { v: `${shrink.positionsPerYear.toFixed(1)}`, k: 'positions gone in the first year, and more every year after' },
-          { v: `−${pct(shrink.after20, 0)}`, k: 'of the workforce after twenty years', tone: 'critical' },
-          { v: pct(salaryAt4), k: 'what the salary line could grow at instead, if insurance came to 4%', cite: 'health', tone: 'good' },
+        <Doors items={[
+          ['healthlever', 'What changing the health plan does', `${pct(ATTRIBUTION.health.shareOfGap, 0)} of the gap; the plan, the pool, the share`],
+          ['salarylever', 'What the contract decides', `${usd(SETTLEMENT.perHalfPoint)} per half a point`],
+          ['solved', 'What “solved” would require', `${PACKAGES.length} priced combinations`],
         ]} />
-        <Say>
-          <strong>That is not a recommendation.</strong> It is what the arithmetic does on
-          its own when nobody chooses: every position left unfilled is an instalment on it,
-          and the town has been paying them for years without ever voting for the total.
-          It appears below as <strong>option five of seven</strong>, priced beside the
-          rest rather than standing on its own &mdash; and the last figure above is the
-          reason it is not the only option. What insurance does decides what is left for
-          salaries.
-        </Say>
-        <Say>
-          So the one condition sounds like a single locked door, and it is not. There are
-          {' '}{PACKAGES.length} combinations that actually keep the gap shut &mdash; for
-          five years, for ten, for a generation, and {PACKAGES.filter(p => p.forEver).length}{' '}
-          that never reopen at all &mdash; and none of them pulls a single lever. The
-          cheapest of them costs an override of about{' '}
-          {usd(overrideOnAverageHome(CHEAPEST.firstYears.overrideTownwide ?? 0))} a year on
-          the average home, against the {usd(Math.round(MODEL.facts.tier1TaxIncrease))} one
-          the town turned down.
-        </Say>
-        <Say>
-          Each one names the rates it needs, the four interchangeable ways to cover the
-          first years &mdash; build, one override, user fees, or one permanent cut &mdash;
-          and who has to say yes. That is more arithmetic than a room can hold, so it has a
-          page of its own.
-        </Say>
-        <div className="card p-4 sm:p-5">
-          <p className="text-[15px] font-bold mb-1">
-            What &ldquo;solved&rdquo; would actually require
-          </p>
-          <p className="text-[13px] leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
-            {PACKAGES.length} priced combinations, why every one of them moves at least two
-            lines, what a moderate result at the State House is worth to each, and the
-            table they were all drawn from. Any of them can be loaded straight into the
-            curve or the budget builder.
-          </p>
-          <Go to="solved" className="text-[13px] font-semibold"
-            style={{ color: 'var(--series-cost)' }}>
-            See what actually holds, and for how long &rarr;
-          </Go>
-        </div>
       </Room>
 
       {/* The exit, which is not a room.

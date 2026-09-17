@@ -277,7 +277,7 @@ Everything here is currently load-bearing somewhere. A row leaves this table whe
 | `1302` | ADULT EDUCATION REVOLVING FUND | **school** | outside | Adult education is run by the district in Massachusetts. Not stated here. |
 | `1303` | SUMMER SCHOOL REVOLVING FUND | **school** | stated | Summer school. |
 | `1305` | AFTER SCHOOL ACTIVITIES FUND | **school** | stated | After school activities. |
-| `1306` | SCHOOL FACILITIES USE REVOLV | **school** | stated | Use of school facilities. |
+| `1306` | SCHOOL FACILITIES USE REVOLV | **school** | evidence | Use of school facilities — where youth sports’ field rentals land. The district’s records-request answer of September 2026 lists Lunenburg Youth Soccer’s receipts here (MUNIS CRP 996437, “THES RENTAL/FIELD RENTAL”), $39,073.50 across FY2024–FY2026; the annual reports carry the fund from FY2011. The turf contribution is fund 1545. |
 | `1308` | SCHOOL CHOICE REVOLVING | **school** | stated | School choice. |
 | `1309` | INSURANCE RECOVERIES SCHOOL | **school** | stated | Insurance recoveries, school. |
 | `1310` | GREENTHUMB REVOLVING FUND | **unresolved** | unresolved | “Greenthumb” — a school garden program or a town one. Nothing here says. No FY26 activity. |

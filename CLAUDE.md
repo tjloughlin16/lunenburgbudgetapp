@@ -900,6 +900,7 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/verify_enrollment.py         # ...every figure in its conclusions, recomputed
     python3 scripts/build_homes_and_students.py  # homes and students: single-family parcels beside enrolment, FY1994 to today
     python3 scripts/build_board_posting.py       # the boards, compared: measure 1, which meetings got minutes, by board and fiscal year, on the town's own site
+    python3 scripts/build_youth_sports.py        # youth sports and the town: what the leagues pay for the fields, the funds it lands in, what was said
     python3 scripts/build_circuit_breaker.py     # the circuit breaker, FY2006 to today
     python3 scripts/verify_circuit_breaker.py    # ...every figure in its conclusions, recomputed
     python3 scripts/build_ap.py                  # AP exams at the high school, SY2007 to today

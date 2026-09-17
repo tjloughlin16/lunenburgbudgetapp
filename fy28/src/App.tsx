@@ -54,6 +54,7 @@ import { Solutions } from './pages/Solutions'
 import { CommercialDevelopment } from './pages/CommercialDevelopment'
 import { HomesAndStudents } from './pages/HomesAndStudents'
 import { BoardCompare } from './pages/BoardCompare'
+import { YouthSports } from './pages/YouthSports'
 import { HealthLever } from './pages/HealthLever'
 import { FreeCashLever } from './pages/FreeCashLever'
 import { SalaryLever } from './pages/SalaryLever'
@@ -517,6 +518,7 @@ export default function App() {
       {tab === 'growth' && <CommercialDevelopment />}
       {tab === 'homestudents' && <HomesAndStudents />}
       {tab === 'boardcompare' && <BoardCompare />}
+      {tab === 'youthsports' && <YouthSports />}
       {tab === 'healthlever' && <HealthLever />}
       {tab === 'freecashlever' && <FreeCashLever />}
       {tab === 'salarylever' && <SalaryLever />}

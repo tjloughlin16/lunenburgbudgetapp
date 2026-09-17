@@ -4,6 +4,8 @@ import { usd } from '../model/engine'
 import { ALREADY_CUT, ONE_TIME_ANSWERS, SPREAD } from '../model/walk'
 import { MODEL, usdShort } from '../model/engine'
 import { DEVELOPMENT, FEASIBILITY } from '../model/answers'
+import { Go } from '../lib/nav'
+import type { Tab } from '../routes'
 
 /** The exhibit's structural language, as components.
  *
@@ -321,6 +323,22 @@ export function WhatIsADevelopment() {
         {(FEASIBILITY.businessShareAfter * 100).toFixed(0)}%. And it has somewhere to go
         or it does not happen: {MODEL.taxBase.commercialContext.constraint.toLowerCase()}
       </p>
+    </div>
+  )
+}
+
+
+/** THE DOOR OUT OF A ROOM: the report each lever has now. A room states its conclusion
+ *  and its two or three figures; the arithmetic lives on the report. */
+export function Doors({ items }: { items: [Tab, string, string][] }) {
+  return (
+    <div className="grid gap-2.5 sm:grid-cols-3 mt-5">
+      {items.map(([to, label, sub]) => (
+        <Go key={to} to={to} className="card px-4 py-3 block transition-opacity hover:opacity-90">
+          <span className="block text-[13.5px] font-bold" style={{ color: 'var(--series-cost)' }}>{label} &rarr;</span>
+          <span className="block text-[12px] mt-0.5 leading-snug" style={{ color: 'var(--text-secondary)' }}>{sub}</span>
+        </Go>
+      ))}
     </div>
   )
 }

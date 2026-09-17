@@ -41,7 +41,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'solutions'
   | 'growth'
   | 'homestudents'
-  | 'boardcompare'
+  | 'boardcompare' | 'youthsports'
   | 'healthlever' | 'freecashlever' | 'salarylever' | 'feelever' | 'extraslever' | 'positionslever'
   | 'bythenumbers'
   | 'owners'
@@ -329,6 +329,7 @@ export const SLUG: Record<Tab, string> = {
   // under /boards so a person browsing the boards meets it; `boards/compared` is
   // claimed here before the per-board route below can read it as a board.
   boardcompare: 'boards/compared',
+  youthsports: 'youth-sports',
   // THE LEVERS: one report per thing the town can actually decide (TJ, 17 September
   // 2026, the first shelf of /reports, "What the town can do"). Each answers what pulling
   // it is worth, who pays, what it does not do. Override and growth were already reports.
@@ -465,6 +466,7 @@ const ALIASES: Record<string, Tab> = {
   development: 'development', 'growth-dials': 'development', 'try-development': 'development',
   growth: 'growth', 'new-growth': 'growth', 'commercial-growth': 'growth', 'grow-our-way-out': 'growth',
   'health-plan': 'healthlever', 'free-cash-gap': 'freecashlever', 'the-contract': 'salarylever', 'salaries': 'salarylever', 'raise-fees': 'feelever', 'extras': 'extraslever', 'positions': 'positionslever', 'cut-classrooms': 'positionslever',
+  'youth-soccer': 'youthsports', 'field-rentals': 'youthsports', 'the-leagues': 'youthsports',
   'board-analysis': 'boardcompare', 'minutes-posted': 'boardcompare', 'who-posts-minutes': 'boardcompare', 'how-the-boards-post': 'boardcompare', 'compare-the-boards': 'boardcompare',
   'homes-and-enrollment': 'homestudents', 'homes-vs-students': 'homestudents', 'residential-development': 'homestudents',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
@@ -756,6 +758,7 @@ export const LABEL: Record<Tab, string> = {
   growth: 'Commercial development — what it would have to look like',
   homestudents: 'Homes and students — the town builds, the schools do not grow',
   boardcompare: 'The boards, compared',
+  youthsports: 'Youth sports and the town — what the leagues pay for the fields',
   healthlever: 'What changing the health plan does',
   freecashlever: 'Can free cash fill the gap?',
   salarylever: 'What the contract decides',
@@ -827,6 +830,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   growth: 'reports',
   homestudents: 'reports',
   boardcompare: 'boards',
+  youthsports: 'reports',
   healthlever: 'reports', freecashlever: 'reports', salarylever: 'reports', feelever: 'reports', extraslever: 'reports', positionslever: 'reports',
   analysis: 'reports',
   required: 'reports',
@@ -973,7 +977,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   why: 'crisis', curve: 'crisis', priorities: 'crisis',
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   solutions: 'crisis',
-  override: 'analyses', growth: 'analyses', homestudents: 'analyses', boardcompare: 'analyses',
+  override: 'analyses', growth: 'analyses', homestudents: 'analyses', boardcompare: 'analyses', youthsports: 'analyses',
   healthlever: 'analyses', freecashlever: 'analyses', salarylever: 'analyses', feelever: 'analyses', extraslever: 'analyses', positionslever: 'analyses',
   freecash: 'crisis',
   // `money` is now WHERE THE MONEY COMES FROM AND GOES, plus the limits of the record:
@@ -1077,7 +1081,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // argument that put `addsup` first.
   // `owners`, `override` and `growth` are the town's shelf: who owns the homes and what
   // the bill does, what an override actually is, and what growing out of it would take.
-  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'healthlever', 'freecashlever', 'salarylever', 'feelever', 'extraslever', 'positionslever', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
+  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'youthsports', 'healthlever', 'freecashlever', 'salarylever', 'feelever', 'extraslever', 'positionslever', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',

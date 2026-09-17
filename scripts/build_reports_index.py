@@ -146,6 +146,11 @@ CATEGORIES = [
         # THE BOARDS THEMSELVES, as a subject. TJ, 17 September 2026: "a sort of 'board
         # analysis' page" -- what each board posts, measured on the town's own site.
         ('the boards, compared', ['boardcompare']),
+        # THE FIELDS AND THE LEAGUES. TJ, 17 September 2026: "Youth Sports report" --
+        # what the independent leagues pay the town and the district for the fields,
+        # and where it lands; the first report built from a records request that the
+        # town's own fund report could then place.
+        ('the fields, and the leagues that use them', ['youthsports']),
     ]),
     # A FOURTH SHELF, AND THE ARGUMENT FOR IT.
     #

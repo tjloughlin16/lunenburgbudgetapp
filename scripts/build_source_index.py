@@ -657,6 +657,16 @@ GROUPS = [
              'giving those counts for that year; the workbook’s columns for it are empty. '
              '79 full waivers against 455 full-pay. The town’s filename is '
              'ATHLETIC FEES 2025.docx.'),
+            ('town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx',
+             'Field rental receipts from Lunenburg Youth Soccer, FY2024–FY2026', 2,
+             'Seven receipts — date, amount, payer — the district’s business office typed '
+             'into a workbook in answer to a records request, September 2026; $39,073.50 '
+             'in all. One row carries a pasted MUNIS cash-receipt record (CRP 996437, '
+             '“THES RENTAL/FIELD RENTAL 2023/”), the only system mark on it. The money '
+             'lands in fund 1306, School Facilities Use Revolving, whose balance the town’s '
+             'special-revenue report carries and whose journal the archive does not hold. '
+             'The district’s filename is LYSA Field Rental Charges FY24-FY26.xlsx; see '
+             'PROVENANCE-field-rental-lysa.md beside it.'),
         ],
     },
     {
@@ -1319,6 +1329,11 @@ GROUPS = [
              'scripts/extract_fund1301_ledger.py, which refuses to write unless each '
              'year’s closing balance equals the opening balance the town prints for the '
              'next.'),
+            ('data/field-rental-receipts-lysa.csv',
+             'Field rental receipts from Lunenburg Youth Soccer, FY2024–FY2026', 2,
+             'Seven rows extracted from the district’s workbook: the fiscal year as the '
+             'district listed it, the receipt date, the amount, the payer as printed, and '
+             'the MUNIS description where one was pasted in.'),
             ('data/athletics-by-sport.csv',
              'Athletics by sport, long form', 3,
              '960 rows: season, level, sport, year, metric, value — and the cell each value '
