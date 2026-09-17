@@ -410,7 +410,7 @@ TOPICS = [
      'Staffing, the classes that ran, insurance, the lines that stopped, what the '
      'district said it was cutting, and how close the budget lands to what gets spent.',
      ['staffing', 'schoolstaff', 'parastaff', 'courses', 'ap', 'insurance', 'stopped',
-      'cuts', 'variance']),
+      'cuts', 'variance', 'youthsports']),
     ('children', 'Where the children are',
      'Which grades they leave in, who is taught outside Lunenburg, what the town is '
      'assessed for them, and what more leaving would cost.',
@@ -425,7 +425,7 @@ TOPICS = [
     ('household', 'The households — who they are, and what they pay',
      'Who lives in Lunenburg, and the two reports about money a household hands over, '
      'side by side.',
-     ['bythenumbers', 'owners', 'homestudents', 'sportsmoney', 'families', 'youthsports']),
+     ['bythenumbers', 'owners', 'homestudents', 'sportsmoney', 'families']),
     # THE TOWN'S LEVERS, as reports. TJ, 16 September 2026: "we need individual reports
     # for the big concepts in the budget crisis." Two of them are the crisis page's
     # revenue answers, priced by the same model: what an override actually is, and what

@@ -129,6 +129,11 @@ CATEGORIES = [
         # The note that used to introduce a fourth shelf still holds for what these ARE
         # -- a state rule quoted and explained, stopping before any Lunenburg finding --
         # and the index now says so in the subsection title rather than by distance.
+        # THE FIELDS AND THE LEAGUES THAT PAY THE SCHOOLS. TJ, 17 September 2026: "it's
+        # not a town thing for this report ... the point of that report is the ones that
+        # pay the schools. others pay Parks and Rec." So it shelves with the schools; a
+        # Parks and Recreation counterpart would be the town's.
+        ('the fields, and the leagues that pay the schools to use them', ['youthsports']),
         ('the rules everyone argues under', ['classsize', 'formula']),
     ]),
     ('town', 'The town', [
@@ -146,11 +151,6 @@ CATEGORIES = [
         # THE BOARDS THEMSELVES, as a subject. TJ, 17 September 2026: "a sort of 'board
         # analysis' page" -- what each board posts, measured on the town's own site.
         ('the boards, compared', ['boardcompare']),
-        # THE FIELDS AND THE LEAGUES. TJ, 17 September 2026: "Youth Sports report" --
-        # what the independent leagues pay the town and the district for the fields,
-        # and where it lands; the first report built from a records request that the
-        # town's own fund report could then place.
-        ('the fields, and the leagues that use them', ['youthsports']),
     ]),
     # A FOURTH SHELF, AND THE ARGUMENT FOR IT.
     #
