@@ -24,6 +24,7 @@ type Cal = { key: string; label: string; cycles: { fy: number; dates: string[] }
 type Page = { url: string; source: 'town' | 'district'; overview: string; charter_ref: string; meets: string; members: string[]; facebook: string | null; facebook_scope: string; mirror: string; fetched_at: string; charter_url: string }
 type Board = {
   slug: string; name: string; the_three: boolean; page?: Page | null
+  about_itself?: { key: string; label: string; school_year: string; url: string; upstream: string; sha256: string; text: string }[]
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; votes: number; first: string | null; last: string | null }
   upcoming: Upcoming[]; recent: Recent[]; votes: Vote[]
   time_by_tag: { tag: string; label: string; seconds: number; share: number | null }[]; time_meetings: number; time_span_s: number
@@ -181,6 +182,28 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
           {b.page.facebook_scope !== 'board' && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>No Facebook page of its own is linked from the board’s page.</p>}
         </div>
       )}
+
+      {/* THE COMMITTEE'S OWN RULES FOR ITSELF, shown in full. TJ, 17 September 2026:
+          "post the new 'operating procedures' directly on the school committee page in
+          the app for reference. It's quite interesting." From the district's meetings
+          page, as the crawler files it; the PDF and the district's copy are linked. */}
+      {(b.about_itself ?? []).filter(d => d.key === 'protocols').map(d => (
+        <div key={d.key} className="card p-4 mt-6 max-w-3xl">
+          <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>The committee&rsquo;s own rules for itself{d.school_year ? ` · ${d.school_year}` : ''}</p>
+          <h3 className="text-[16px] font-bold mt-1">{d.label}</h3>
+          <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
+            As the committee posted it: <a className="underline" href={d.url}>the PDF</a> · <a className="underline" href={d.upstream} rel="noreferrer">the district&rsquo;s copy</a>. Reproduced here in full for reference; the PDF is the record.
+          </p>
+          {d.text && (
+            <div className="text-[13.5px] leading-relaxed mt-3 whitespace-pre-line" style={{ color: 'var(--text-secondary)' }}>{d.text}</div>
+          )}
+        </div>
+      ))}
+      {(b.about_itself ?? []).filter(d => d.key === 'calendar').map(d => (
+        <p key={d.key} className="text-sm mt-3" style={{ color: 'var(--text-secondary)' }}>
+          The committee&rsquo;s <a className="underline" href={d.url}>{d.school_year} meeting calendar</a>, as posted.
+        </p>
+      ))}
 
       <Subscribe path={`/feeds/${b.slug}.xml`} what={`the ${b.name} posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in`} />
 

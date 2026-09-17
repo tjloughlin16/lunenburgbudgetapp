@@ -45,6 +45,31 @@ RECORDED = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes.json'
 FEED = os.path.join(ROOT, 'fy28', 'public', 'data', 'meeting-feed.json')
 NOTICES = os.path.join(ROOT, 'fy28', 'public', 'data', 'notices.json')
 PAGES = os.path.join(ROOT, 'sources', 'data', 'board-pages.csv')
+DISTRICT_INDEX = os.path.join(ROOT, 'sources', 'district-budget', 'index.csv')
+# THE COMMITTEE'S OWN DOCUMENTS ABOUT ITSELF, from the district's meetings page as the
+# crawler files it (page = sc-meetings): the operating protocols and the meeting
+# calendar, latest school year of each. TJ, 17 September 2026: "post the new 'operating
+# procedures' directly on the school committee page in the app for reference."
+ABOUT_ITSELF = (('protocols', r'operating protocols'), ('calendar', r'meeting calendar'))
+
+
+def about_itself(slug):
+    if slug != 'school-committee' or not os.path.exists(DISTRICT_INDEX):
+        return []
+    rows = [r for r in csv.DictReader(open(DISTRICT_INDEX, encoding='utf-8'))
+            if r.get('page') == 'sc-meetings' and r.get('local')]
+    out = []
+    for key, pat in ABOUT_ITSELF:
+        hits = sorted((r for r in rows if re.search(pat, r['label'], re.I)), key=lambda r: r.get('school_year') or '', reverse=True)
+        if not hits:
+            continue
+        r = hits[0]
+        text = ''
+        if r.get('text') and os.path.exists(os.path.join(ROOT, r['text'])):
+            text = re.sub(r'===PAGE \d+===\n?', '', open(os.path.join(ROOT, r['text']), encoding='utf-8', errors='replace').read()).strip()
+        out.append(dict(key=key, label=r['label'], school_year=r.get('school_year') or '', url='/docs/' + r['local'][len('sources/'):],
+                        upstream=r['upstream'], sha256=r['sha256'], text=text if key == 'protocols' else ''))
+    return out
 CHARTER_URL = 'https://www.lunenburgma.gov/323/Charter-Town-Bylaws'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'boards.json')
 SITE = 'https://lunenburgbudgetproject.org'
@@ -201,7 +226,7 @@ def build(as_of=None):
                            mirror='/docs/' + pg['local'][len('sources/'):], fetched_at=pg['fetched_at'][:10],
                            charter_url=CHARTER_URL)
         boards.append(dict(
-            slug=slug, name=name, the_three=slug in THE_THREE, page=page,
+            slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug),
             counts=dict(agendas=sum(1 for d in docs[slug] if 'agenda' in docs[slug][d]),
                         minutes=sum(1 for d in docs[slug] if 'minutes' in docs[slug][d]),
                         recordings=len(vids[slug]),
