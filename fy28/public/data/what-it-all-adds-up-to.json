@@ -397,9 +397,9 @@
    "kind": "measured",
    "literals": [],
    "not_shown": "Whether a meeting was held. A posted agenda for a cancelled meeting counts as a meeting without minutes, and the Agenda Center does not mark cancellations.",
-   "report": "boardposting",
-   "report_title": "How the boards post \u2014 which meetings got minutes, board by board",
-   "report_url": "/how-the-boards-post",
+   "report": "boardcompare",
+   "report_title": "The boards, compared",
+   "report_url": "/boards/compared",
    "see": [
     {
      "label": "Every board, one page each",
@@ -3534,9 +3534,9 @@
    "count": 3,
    "data": "/data/board-posting.json",
    "generator": "scripts/build_board_posting.py",
-   "id": "boardposting",
-   "title": "How the boards post \u2014 which meetings got minutes, board by board",
-   "url": "/how-the-boards-post"
+   "id": "boardcompare",
+   "title": "The boards, compared",
+   "url": "/boards/compared"
   },
   {
    "about": "What an override actually is \u2014 permanent, compounding, a ceiling rather than a bill \u2014 what one of a given size buys and for how long, and why a school-only question is worth nearly twice a townwide one.",
@@ -17515,7 +17515,7 @@
    "title": "The town\u2019s levers \u2014 an override, and growth"
   },
   {
-   "about": "Which meetings got minutes, board by board and year by year, and which were recorded.",
+   "about": "Every board the town posts for, set beside the others on what the record measures: which meetings got minutes, which were recorded.",
    "conclusions": 3,
    "key": "boards",
    "reports": [
@@ -17806,12 +17806,12 @@
      "count": 3,
      "data": "/data/board-posting.json",
      "generator": "scripts/build_board_posting.py",
-     "id": "boardposting",
-     "title": "How the boards post \u2014 which meetings got minutes, board by board",
-     "url": "/how-the-boards-post"
+     "id": "boardcompare",
+     "title": "The boards, compared",
+     "url": "/boards/compared"
     }
    ],
-   "title": "The boards \u2014 how they post"
+   "title": "The boards, compared"
   }
  ],
  "totals": {

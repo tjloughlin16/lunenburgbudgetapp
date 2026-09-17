@@ -72,6 +72,10 @@ function Index({ d }: { d: Payload }) {
     <ReportShell tab={TAB} title="The boards — each one, in one place"
       standfirst={`${d.boards.length} boards and committees the town posts for. What is coming, what happened, every vote we have minutes for, where the time goes, and when budget planning lands — one page each.`}
       dataUrl={DATA}>
+      <p className="text-[14px] mt-5 max-w-3xl">
+        <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/boards/compared">The boards, compared &rarr;</a>
+        <span style={{ color: 'var(--text-secondary)' }}> &mdash; every board beside the others on what the record measures, starting with which meetings got minutes.</span>
+      </p>
       <Subscribe path="/feeds/all.xml" what="any board posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in — each board’s own page has a feed of its own" />
       <H2>The three that set the school budget</H2>
       <div className="grid gap-3 mt-4 sm:grid-cols-3">{three.map(b => <Card key={b.slug} b={b} />)}</div>
@@ -205,6 +209,7 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
         </p>
       ))}
 
+      <p className="text-[13px] mt-4"><a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href="/boards/compared">How the {b.name} compares with the other boards &rarr;</a></p>
       <Subscribe path={`/feeds/${b.slug}.xml`} what={`the ${b.name} posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in`} />
 
       {/* ---------------------------------------------------------------- upcoming */}

@@ -41,7 +41,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'solutions'
   | 'growth'
   | 'homestudents'
-  | 'boardposting'
+  | 'boardcompare'
   | 'bythenumbers'
   | 'owners'
   // The middle of three lengths. One tab for all the posts: the slug is the second path
@@ -323,7 +323,11 @@ export const SLUG: Record<Tab, string> = {
   growth: 'commercial-development',
   // Homes and students: the town keeps adding homes and the schools do not gain children.
   homestudents: 'homes-and-students',
-  boardposting: 'how-the-boards-post',
+  // THE BOARDS, COMPARED. TJ, 17 September 2026: "more of a general board comparison,
+  // not specific about the minutes. we will analyze a lot more than that." Lives
+  // under /boards so a person browsing the boards meets it; `boards/compared` is
+  // claimed here before the per-board route below can read it as a board.
+  boardcompare: 'boards/compared',
   peers: 'what-other-districts-spend',
   // WHO LIVES HERE, before any argument about what the town should spend. The slug is
   // the phrase people already use for a page of facts about a place -- "Lunenburg by the
@@ -450,7 +454,7 @@ const ALIASES: Record<string, Tab> = {
   fix: 'solutions', options: 'solutions', 'what-to-do': 'solutions',
   development: 'development', 'growth-dials': 'development', 'try-development': 'development',
   growth: 'growth', 'new-growth': 'growth', 'commercial-growth': 'growth', 'grow-our-way-out': 'growth',
-  'board-analysis': 'boardposting', 'minutes-posted': 'boardposting', 'who-posts-minutes': 'boardposting',
+  'board-analysis': 'boardcompare', 'minutes-posted': 'boardcompare', 'who-posts-minutes': 'boardcompare', 'how-the-boards-post': 'boardcompare', 'compare-the-boards': 'boardcompare',
   'homes-and-enrollment': 'homestudents', 'homes-vs-students': 'homestudents', 'residential-development': 'homestudents',
   sources: 'sources', documents: 'sources', evidence: 'sources', citations: 'sources',
   // The words somebody types looking for the synthesis. `conclusions` and `findings` are
@@ -740,7 +744,7 @@ export const LABEL: Record<Tab, string> = {
   solutions: 'Solutions',
   growth: 'Commercial development — what it would have to look like',
   homestudents: 'Homes and students — the town builds, the schools do not grow',
-  boardposting: 'How the boards post — which meetings got minutes, board by board',
+  boardcompare: 'The boards, compared',
   peers: 'What other districts spend, for each pupil',
   bythenumbers: 'Lunenburg by the numbers — who lives here',
   owners: 'Lunenburg’s homes and the tax bill',
@@ -805,7 +809,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   solutions: 'walk',
   growth: 'reports',
   homestudents: 'reports',
-  boardposting: 'reports',
+  boardcompare: 'boards',
   analysis: 'reports',
   required: 'reports',
   agents: 'sources',
@@ -833,6 +837,7 @@ export function tabFromPath(pathname: string): Tab {
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'
   if (seg.startsWith('meeting-minutes/') || seg.startsWith('what-was-said/')) return 'recorded'
+  if (seg === 'boards/compared') return 'boardcompare'
   if (seg.startsWith('boards/')) return 'boards'
   if (seg.startsWith('budget-feed/')) return 'budgetfeed'
   return BY_SLUG[seg] ?? ROOT
@@ -861,7 +866,7 @@ export function feedSeasonFromPath(pathname: string): string | null {
 /** The board a `/boards/<slug>` address names, or null for the index. */
 export function boardSlugFromPath(pathname: string): string | null {
   const m = /^\/boards\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
-  return m ? m[1] : null
+  return m && m[1] !== 'compared' ? m[1] : null
 }
 
 /** The meeting a `/what-was-said/<board>/<date>-<video>` address names, or null. */
@@ -950,7 +955,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   why: 'crisis', curve: 'crisis', priorities: 'crisis',
   adjust: 'crisis', development: 'crisis', solved: 'crisis', athletics: 'crisis',
   solutions: 'crisis',
-  override: 'analyses', growth: 'analyses', homestudents: 'analyses', boardposting: 'analyses',
+  override: 'analyses', growth: 'analyses', homestudents: 'analyses', boardcompare: 'analyses',
   freecash: 'crisis',
   // `money` is now WHERE THE MONEY COMES FROM AND GOES, plus the limits of the record:
   // the flow hub, the two revenue-side pages, what we cannot answer, and the question box.
@@ -1053,7 +1058,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // argument that put `addsup` first.
   // `owners`, `override` and `growth` are the town's shelf: who owns the homes and what
   // the bill does, what an override actually is, and what growing out of it would take.
-  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardposting', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
+  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',

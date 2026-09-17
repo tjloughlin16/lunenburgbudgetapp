@@ -3,12 +3,16 @@ import type { Tab } from '../routes'
 import { Conclusions, Grain, H2, NotEstablished, Provenance, ReportShell, Stat, useReport, splitConclusions } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
 
-const TAB: Tab = 'boardposting'
+const TAB: Tab = 'boardcompare'
 const DATA = '/data/board-posting.json'
 
-/** HOW THE BOARDS POST. TJ, 17 September 2026: "do we have a breakdown of the boards
+/** THE BOARDS, COMPARED. TJ, 17 September 2026: "do we have a breakdown of the boards
  *  who post minutes? I want to show the school committee what percent of minutes they
- *  have missed compared to other boards" -- and then "a sort of 'board analysis' page."
+ *  have missed compared to other boards" -- then "a sort of 'board analysis' page" --
+ *  then "more of a general board comparison, not specific about the minutes. we will
+ *  analyze a lot more than that." So this is the page every board is set beside the
+ *  others on, one MEASURE per section, and the first measure is minutes posted. Each
+ *  measure a report-style block: what it counts, the three budget boards, every board.
  *
  *  Built by scripts/build_board_posting.py from the town's own Agenda Center: a meeting
  *  is a date a board posted an agenda for; it has minutes if the Agenda Center lists
@@ -28,12 +32,12 @@ type Payload = {
 const n0 = (n: number) => n.toLocaleString('en-US')
 const pct = (k: number, n: number) => (n ? `${Math.round(100 * k / n)}%` : '—')
 
-export function BoardPosting() {
+export function BoardCompare() {
   const { d, err } = useReport<Payload>('board-posting.json')
   return (
     <ReportShell tab={TAB}
-      title={d ? `${d.totals.share.toFixed(0)}% of meetings have minutes posted` : 'How the boards post'}
-      standfirst={d ? <>Across every board the town posts for, FY{d.fys[0]} to FY{d.fys[d.fys.length - 1]}: {n0(d.totals.with_minutes)} of {n0(d.totals.meetings)} meetings with a posted agenda also have posted minutes. Board by board and year by year, on the town&rsquo;s own site.</> : undefined}
+      title="The boards, compared"
+      standfirst={d ? <>Every board the town posts for, set beside the others on what the record measures. One measure so far &mdash; which meetings got minutes, FY{d.fys[0]} to FY{d.fys[d.fys.length - 1]} &mdash; and more to come. <a className="underline" href="/boards">Each board&rsquo;s own page</a>.</> : undefined}
       err={err} loading={!d && !err} dataUrl={DATA}>
       {d && <Report d={d} />}
     </ReportShell>
@@ -86,7 +90,11 @@ function Report({ d }: { d: Payload }) {
   return (
     <>
       <section data-section="conclusions" data-short="">
-        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
+        <H2 id="minutes">Measure 1 &mdash; which meetings got minutes</H2>
+        <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+          Across every board, FY{d.fys[0]} to FY{d.fys[d.fys.length - 1]}: {n0(d.totals.with_minutes)} of {n0(d.totals.meetings)} meetings with a posted agenda also have posted minutes, {d.totals.share.toFixed(0)}%. Board by board and year by year, on the town&rsquo;s own site.
+        </p>
+        <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6">
           <Stat value={pct(y(fc).with_minutes, y(fc).meetings)}>of Finance Committee meetings in FY{last} have minutes posted &mdash; {y(fc).with_minutes} of {y(fc).meetings}</Stat>
           <Stat value={pct(y(sb).with_minutes, y(sb).meetings)} tone="var(--status-critical)">of Select Board meetings in FY{last} &mdash; {y(sb).with_minutes} of {y(sb).meetings}</Stat>
           <Stat value={pct(y(sc).with_minutes, y(sc).meetings)} tone="var(--series-cost)">of School Committee meetings in FY{last} &mdash; {y(sc).with_minutes} of {y(sc).meetings}</Stat>

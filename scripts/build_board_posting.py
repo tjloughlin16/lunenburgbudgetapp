@@ -241,7 +241,7 @@ def build(as_of):
             'Whether an agenda without minutes was a meeting that happened. The Agenda Center does not mark cancellations.',
             'Whether every recording is of the meeting the agenda names; recordings are classified to a board and date by title.',
         ],
-        conclusions=emit('boardposting', rows_out),
+        conclusions=emit('boardcompare', rows_out),
     )
 
 
