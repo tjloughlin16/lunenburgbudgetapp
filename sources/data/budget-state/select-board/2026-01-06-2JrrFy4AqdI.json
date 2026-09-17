@@ -11,21 +11,31 @@
   "nothing_on_the_budget": false,
   "statements": [
    {
-    "amount_as_heard": "$13,946 increase over what was anticipated; total assessment a little over $90,000",
+    "amount_as_heard": "30%",
     "fiscal_year": 2027,
     "kind": "other",
     "scope": "town",
-    "statement": "Nashoba Associated Boards of Health voted to raise their assessment 30% instead of the usual 10%, a $13,946 increase over what was anticipated, bringing the town's total assessment to just over $90,000",
+    "statement": "Nashoba Associated Boards of Health voted to raise its assessment by 30% instead of the usual 10%, citing a structural funding shortfall.",
     "status": "announced",
-    "t": 1015,
+    "t": 984,
     "who": "the town manager"
    },
    {
-    "amount_as_heard": null,
+    "amount_as_heard": "$13,946",
+    "fiscal_year": 2027,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The Nashoba assessment increase over what the town had already anticipated was stated, along with the resulting total assessment.",
+    "status": "announced",
+    "t": 1005,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "10",
     "fiscal_year": 2026,
-    "kind": "deficit",
+    "kind": "other",
     "scope": "school",
-    "statement": "School committee budget workshop noted the discovery of 10 paraprofessionals not accounted for in the FY26 budget",
+    "statement": "The school committee's budget workshop discovered paraprofessionals that had not been accounted for in the FY26 budget.",
     "status": "announced",
     "t": 2939,
     "who": "a member"
@@ -35,9 +45,38 @@
     "fiscal_year": 2027,
     "kind": "other",
     "scope": "school",
-    "statement": "School administration recommended the school committee vote on a school budget before receiving the town manager's budget number, to present a clear ask to the town manager and tri-board",
+    "statement": "School administration recommended the school committee vote on its own budget before receiving the town manager's budget number, to present a clear ask to the town manager and tri-board.",
     "status": "proposed",
-    "t": 2949,
+    "t": 2939,
+    "who": "a member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "the FY27 budget season generally",
+    "condition": "given ongoing finance-department staffing vacancies",
+    "fiscal_year": 2027,
+    "prediction": "The coming budget season is anticipated to be financially challenging.",
+    "scope": "both",
+    "t": 801,
+    "who": "the town manager"
+   },
+   {
+    "about": "the FY27 budget season generally",
+    "condition": null,
+    "fiscal_year": 2027,
+    "prediction": "It's going to be a rough budget season, and it won't get easier than the last two years.",
+    "scope": "both",
+    "t": 1191,
+    "who": "a member"
+   },
+   {
+    "about": "the pace of the FY27 budget process",
+    "condition": "given the aggressive budget calendar",
+    "fiscal_year": 2027,
+    "prediction": "Information and changes will come fast and on short notice for boards and committees during budget season.",
+    "scope": "both",
+    "t": 1212,
     "who": "a member"
    }
   ]
@@ -46,9 +85,10 @@
  "video_url": "https://www.youtube.com/watch?v=2JrrFy4AqdI",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T19:14:02Z",
-  "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.2290568,
-  "model": "sonnet"
+  "at": "2026-09-17T11:22:20Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
  }
 }

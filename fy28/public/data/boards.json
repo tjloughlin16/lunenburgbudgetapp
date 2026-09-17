@@ -1,6 +1,6 @@
 {
  "about": "Every board and committee the town posts for, one page each: what is coming, what happened, every vote we have minutes for, where the board\u2019s time goes, and when budget season has fallen on its agendas in past years.",
- "as_of": "2026-09-16",
+ "as_of": "2026-09-17",
  "boards": [
   {
    "calendar": [
@@ -274,10 +274,10 @@
     "first": "2012-05-02",
     "last": "2026-09-16",
     "minutes": 80,
-    "our_minutes": 74,
-    "recordings": 285,
-    "transcripts": 259,
-    "votes": 500
+    "our_minutes": 75,
+    "recordings": 286,
+    "transcripts": 260,
+    "votes": 510
    },
    "name": "School Committee",
    "page": {
@@ -307,9 +307,54 @@
      "date": "2026-09-16",
      "minutes_doc": null,
      "minutes_url": null,
-     "ours": null,
-     "transcript": false,
-     "video_url": null
+     "ours": {
+      "digest": {
+       "watch_next": [
+        "November town meeting warrant: votes on the special education stabilization fund and the turf field/track feasibility study articles",
+        "A future School Committee vote on reratifying the corrected paraprofessional contract"
+       ],
+       "what_happened": [
+        {
+         "line": "The committee again passed over ratifying the paraprofessional contract after salary-scale calculation errors were found.",
+         "t": 7649
+        },
+        {
+         "line": "Members voted unanimously to send a placeholder warrant article for a special education stabilization fund toward November town meeting.",
+         "t": 1118
+        },
+        {
+         "line": "A placeholder warrant article seeking money for a feasibility and schematic study of the turf field, track, drainage and retaining wall passed 5-0.",
+         "t": 1829
+        },
+        {
+         "line": "The committee passed over the business administrator position after its top candidate withdrew, and the job was reposted with a revised description and a higher salary range.",
+         "t": 2621
+        },
+        {
+         "line": "Members approved the eighth-grade Washington DC trip, switching student travel from a prior mode to train.",
+         "t": 4508
+        }
+       ],
+       "why_it_matters": [
+        "A further delay in ratifying the paraprofessional contract means paraprofessionals' pay under the new agreement remains unsettled.",
+        "The two placeholder warrant articles put a special education stabilization fund and a turf field/track study before voters at the November town meeting.",
+        "The unfilled business administrator post, alongside a financial practices review with UMass Boston, touches who oversees the school budget while that review is underway."
+       ],
+       "written": {
+        "at": "2026-09-17T11:16:28Z",
+        "by": "scripts/write_recording_minutes.py --digest",
+        "cost_usd": 0.22435,
+        "model": "sonnet"
+       }
+      },
+      "discrepancies": 0,
+      "headline": "Paraprofessional contract vote delayed again over salary-calculation errors; two placeholder warrant articles advanced",
+      "reconciled": false,
+      "slug": "school-committee/2026-09-16-XY8Ru12S9Xg",
+      "votes": 9
+     },
+     "transcript": true,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
     },
     {
      "agenda_doc": "/docs/meetings/school-committee/2026-09-09-agenda-8002.pdf",
@@ -1003,171 +1048,186 @@
    "time_by_tag": [
     {
      "label": "budget",
-     "seconds": 98524,
-     "share": 0.15715837545800107,
+     "seconds": 99142,
+     "share": 0.15619973121710126,
      "tag": "budget"
     },
     {
      "label": "staffing",
-     "seconds": 93871,
-     "share": 0.14973624561140453,
+     "seconds": 94689,
+     "share": 0.1491839618851355,
      "tag": "staffing"
     },
     {
      "label": "facilities",
-     "seconds": 93404,
-     "share": 0.14899132090941428,
+     "seconds": 93978,
+     "share": 0.1480637705545656,
      "tag": "facilities"
     },
     {
      "label": "policy",
-     "seconds": 81444,
-     "share": 0.12991359192482482,
+     "seconds": 82292,
+     "share": 0.12965229954325813,
      "tag": "policy"
     },
     {
      "label": "budget fy27",
      "seconds": 80860,
-     "share": 0.12898203726537663,
+     "share": 0.12739616172978968,
      "tag": "budget-fy27"
     },
     {
      "label": "budget fy26",
      "seconds": 72428,
-     "share": 0.11553191930567275,
+     "share": 0.11411141728623803,
      "tag": "budget-fy26"
     },
     {
      "label": "override",
-     "seconds": 70772,
-     "share": 0.11289038760011422,
+     "seconds": 70997,
+     "share": 0.11185685498800245,
      "tag": "override"
     },
     {
      "label": "personnel",
-     "seconds": 68925,
-     "share": 0.10994418647682519,
+     "seconds": 69803,
+     "share": 0.10997568979995682,
      "tag": "personnel"
     },
     {
      "label": "athletics",
-     "seconds": 67141,
-     "share": 0.10709847840755198,
+     "seconds": 67936,
+     "share": 0.10703420286019036,
      "tag": "athletics"
     },
     {
      "label": "capital",
-     "seconds": 58639,
-     "share": 0.09353670149894164,
+     "seconds": 59434,
+     "share": 0.09363917235033786,
      "tag": "capital"
     },
     {
-     "label": "public comment",
-     "seconds": 50729,
-     "share": 0.08091924027251164,
-     "tag": "public-comment"
+     "label": "turkey hill",
+     "seconds": 51753,
+     "share": 0.08153763984667085,
+     "tag": "turkey-hill"
     },
     {
-     "label": "turkey hill",
-     "seconds": 50486,
-     "share": 0.08053162420702208,
-     "tag": "turkey-hill"
+     "label": "special education",
+     "seconds": 51342,
+     "share": 0.08089010308596169,
+     "tag": "special-education"
     }
    ],
-   "time_meetings": 76,
-   "time_span_s": 626909,
-   "upcoming": [
-    {
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09162026-8016",
-     "attend": "hybrid",
-     "date": "2026-09-16",
-     "days_away": 0,
-     "hook": "Hiring a Business Administrator, Finance Office staffing, and warrant articles for Town Meeting",
-     "important": 6,
-     "items": [
-      {
-       "agenda_line": "a. Warrants   9/1/26 to 9/9/26 $74,790.28",
-       "important": true,
-       "kind": "transfer",
-       "vote_expected": true,
-       "why_it_matters": "The committee is being asked to approve payment of town warrants totaling $74,790.28."
-      },
-      {
-       "agenda_line": "a. Vote to Request Warrant Article(s)be Placed on Town Meeting Warrant (3 min)",
-       "important": true,
-       "kind": "vote",
-       "vote_expected": true,
-       "why_it_matters": "The committee may vote to put one or more articles before Town Meeting, which decides funding and policy questions residents vote on."
-      },
-      {
-       "agenda_line": "b. Request for LHS Parent Teacher Conference Date Change (3 min)",
-       "important": true,
-       "kind": "other",
-       "vote_expected": false,
-       "why_it_matters": "A change to the high school's parent-teacher conference date would affect families' schedules."
-      },
-      {
-       "agenda_line": "c. Vote to Approve SC Operating Protocols (3 min)",
-       "important": false,
-       "kind": "vote",
-       "vote_expected": true,
-       "why_it_matters": "The committee may formally adopt its own rules for how it conducts meetings and business."
-      },
-      {
-       "agenda_line": "d. Vote on Business Administrator Position (3 min)",
-       "important": true,
-       "kind": "staffing",
-       "vote_expected": true,
-       "why_it_matters": "The committee may take a vote related to filling the district's Business Administrator position."
-      },
-      {
-       "agenda_line": "d. Draft Superintendent Goals (3 min)",
-       "important": false,
-       "kind": "other",
-       "vote_expected": false,
-       "why_it_matters": "The committee will discuss draft goals for evaluating the Superintendent."
-      },
-      {
-       "agenda_line": "e. Finance Office Staffing (3 min)",
-       "important": true,
-       "kind": "staffing",
-       "vote_expected": false,
-       "why_it_matters": "The committee will discuss staffing levels in the district's finance office."
-      },
-      {
-       "agenda_line": "a. School Committee Goals (3 min)",
-       "important": false,
-       "kind": "other",
-       "vote_expected": true,
-       "why_it_matters": "The committee will take action on its own set of goals for the year."
-      },
-      {
-       "agenda_line": "b. Resuming Tri-Board Discussion (3 min)",
-       "important": true,
-       "kind": "budget",
-       "vote_expected": false,
-       "why_it_matters": "The committee will discuss restarting joint budget coordination meetings with other town boards."
-      }
-     ],
-     "join": {
-      "facebook": null,
-      "facebook_live": null,
-      "meeting_id": "832 2784 7126",
-      "passcode": null,
-      "phone": null,
-      "youtube": null,
-      "zoom": "https://us02web.zoom.us/j/83227847126"
-     },
-     "time": "7:00 PM",
-     "where": "LMS Collaborative Room #D132"
-    }
-   ],
+   "time_meetings": 77,
+   "time_span_s": 634713,
+   "upcoming": [],
    "urls": {
     "minutes_text": "/minutes/school-committee.txt",
     "this_week": "/this-week#m-school-committee",
     "what_was_said": "/meeting-minutes"
    },
    "votes": [
+    {
+     "date": "2026-09-16",
+     "motion": "Accept that the town manager and superintendent will work on placeholder warrant-article language for the special education stabilization fund",
+     "moved_by": "Laura (chair)",
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": false,
+     "t": 1118,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=1118s"
+    },
+    {
+     "date": "2026-09-16",
+     "motion": "Request the town raise/appropriate/borrow funds for a full feasibility and schematic study of the turf field, track, drainage and retaining wall, as a placeholder warrant article",
+     "moved_by": "a member",
+     "outcome": "passed 5-0 (all yes on roll call)",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": false,
+     "t": 1829,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=1829s"
+    },
+    {
+     "date": "2026-09-16",
+     "motion": "Accept the high school's request to change the spring parent-teacher conference date",
+     "moved_by": null,
+     "outcome": "passed (roll call, all yes)",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": false,
+     "t": 2528,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=2528s"
+    },
+    {
+     "date": "2026-09-16",
+     "motion": "Accept the school committee operating protocols",
+     "moved_by": null,
+     "outcome": "passed (roll call, all yes)",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": false,
+     "t": 2585,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=2585s"
+    },
+    {
+     "date": "2026-09-16",
+     "motion": "Pass over the vote on the business administrator position",
+     "moved_by": null,
+     "outcome": "passed (roll call, all yes)",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": false,
+     "t": 2621,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=2621s"
+    },
+    {
+     "date": "2026-09-16",
+     "motion": "Approve the eighth-grade Washington DC trip as outlined, including the switch to train travel",
+     "moved_by": null,
+     "outcome": "passed (roll call, all yes)",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": false,
+     "t": 4508,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=4508s"
+    },
+    {
+     "date": "2026-09-16",
+     "motion": "Pass over the reratification of the paraprofessional contract",
+     "moved_by": null,
+     "outcome": "passed (roll call, all yes)",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": false,
+     "t": 7649,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=7649s"
+    },
+    {
+     "date": "2026-09-16",
+     "motion": "Accept the three school committee goals as outlined",
+     "moved_by": null,
+     "outcome": "passed (roll call, all yes)",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": false,
+     "t": 7671,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=7671s"
+    },
+    {
+     "date": "2026-09-16",
+     "motion": "Table the subcommittee's discussion",
+     "moved_by": null,
+     "outcome": "not audible",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": false,
+     "t": 7708,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=7708s"
+    },
+    {
+     "date": "2026-09-16",
+     "motion": "Adjourn the meeting",
+     "moved_by": null,
+     "outcome": "passed (roll call, all yes)",
+     "page": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+     "procedural": true,
+     "t": 7823,
+     "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=7823s"
+    },
     {
      "date": "2026-09-09",
      "motion": "Accept the minutes of 7/29/26",
@@ -6561,10 +6621,10 @@
     "first": "2010-07-06",
     "last": "2026-09-15",
     "minutes": 557,
-    "our_minutes": 32,
+    "our_minutes": 33,
     "recordings": 507,
     "transcripts": 447,
-    "votes": 225
+    "votes": 232
    },
    "name": "Select Board",
    "page": {
@@ -7364,78 +7424,78 @@
     {
      "label": "facilities",
      "seconds": 31021,
-     "share": 0.18209086640056352,
+     "share": 0.17903272349512322,
      "tag": "facilities"
     },
     {
      "label": "budget fy27",
-     "seconds": 30727,
-     "share": 0.1803651091805588,
+     "seconds": 30973,
+     "share": 0.1787556991977838,
      "tag": "budget-fy27"
     },
     {
      "label": "town meeting",
-     "seconds": 30108,
-     "share": 0.17673162714252172,
+     "seconds": 30211,
+     "share": 0.17435793847752062,
      "tag": "town-meeting"
     },
     {
      "label": "warrant article",
-     "seconds": 26020,
-     "share": 0.15273538389293262,
+     "seconds": 26123,
+     "share": 0.15076470248744733,
      "tag": "warrant-article"
     },
     {
      "label": "personnel",
-     "seconds": 24492,
-     "share": 0.1437661422869218,
+     "seconds": 25051,
+     "share": 0.1445778265135338,
      "tag": "personnel"
     },
     {
      "label": "public safety",
      "seconds": 18760,
-     "share": 0.11011974641934727,
+     "share": 0.10827032954348705,
      "tag": "public-safety"
     },
     {
      "label": "policy",
-     "seconds": 15535,
-     "share": 0.09118924630194881,
+     "seconds": 16747,
+     "share": 0.09665262307381543,
      "tag": "policy"
+    },
+    {
+     "label": "town departments",
+     "seconds": 15377,
+     "share": 0.08874588792058637,
+     "tag": "town-departments"
     },
     {
      "label": "legal",
      "seconds": 14909,
-     "share": 0.08751467480629256,
+     "share": 0.08604490102152709,
      "tag": "legal"
     },
     {
-     "label": "town departments",
-     "seconds": 14818,
-     "share": 0.08698051185724348,
-     "tag": "town-departments"
-    },
-    {
      "label": "public comment",
-     "seconds": 13319,
-     "share": 0.07818149800422634,
+     "seconds": 13464,
+     "share": 0.0777053154037052,
      "tag": "public-comment"
     },
     {
      "label": "planning and zoning",
-     "seconds": 12281,
-     "share": 0.0720885184315567,
+     "seconds": 12302,
+     "share": 0.07099901887228026,
      "tag": "planning-and-zoning"
     },
     {
      "label": "capital",
      "seconds": 12226,
-     "share": 0.07176567269312045,
+     "share": 0.07056039706815952,
      "tag": "capital"
     }
    ],
-   "time_meetings": 33,
-   "time_span_s": 170360,
+   "time_meetings": 34,
+   "time_span_s": 173270,
    "upcoming": [],
    "urls": {
     "minutes_text": "/minutes/select-board.txt",
@@ -9692,6 +9752,76 @@
      "procedural": true,
      "t": 9751,
      "video_url": "https://www.youtube.com/watch?v=dJJBSRi5z5U&t=9751s"
+    },
+    {
+     "date": "2026-01-06",
+     "motion": "Appoint Jennifer Sanderson to the APDC as the historical commission representative, term to expire June 2027.",
+     "moved_by": null,
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-01-06-2JrrFy4AqdI",
+     "procedural": false,
+     "t": 324,
+     "video_url": "https://www.youtube.com/watch?v=2JrrFy4AqdI&t=324s"
+    },
+    {
+     "date": "2026-01-06",
+     "motion": "Appoint Shirley McBride to the register of voters, term to expire March 31, 2028.",
+     "moved_by": null,
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-01-06-2JrrFy4AqdI",
+     "procedural": false,
+     "t": 344,
+     "video_url": "https://www.youtube.com/watch?v=2JrrFy4AqdI&t=344s"
+    },
+    {
+     "date": "2026-01-06",
+     "motion": "Ratify the town manager's appointment of Herin/Hurland Jamie as conservation agent and approve a step five salary.",
+     "moved_by": null,
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-01-06-2JrrFy4AqdI",
+     "procedural": false,
+     "t": 590,
+     "video_url": "https://www.youtube.com/watch?v=2JrrFy4AqdI&t=590s"
+    },
+    {
+     "date": "2026-01-06",
+     "motion": "Approve the two ABCC annual certification forms.",
+     "moved_by": null,
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-01-06-2JrrFy4AqdI",
+     "procedural": false,
+     "t": 1401,
+     "video_url": "https://www.youtube.com/watch?v=2JrrFy4AqdI&t=1401s"
+    },
+    {
+     "date": "2026-01-06",
+     "motion": "Open the annual town meeting warrant on January 6, 2026 and close it on March 16, 2026.",
+     "moved_by": null,
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-01-06-2JrrFy4AqdI",
+     "procedural": false,
+     "t": 1487,
+     "video_url": "https://www.youtube.com/watch?v=2JrrFy4AqdI&t=1487s"
+    },
+    {
+     "date": "2026-01-06",
+     "motion": "Approve the listed sets of minutes (multiple dates read aloud, including one from December 16).",
+     "moved_by": null,
+     "outcome": "passed, described as \"401\" (one member abstaining)",
+     "page": "/meeting-minutes/select-board/2026-01-06-2JrrFy4AqdI",
+     "procedural": true,
+     "t": 2656,
+     "video_url": "https://www.youtube.com/watch?v=2JrrFy4AqdI&t=2656s"
+    },
+    {
+     "date": "2026-01-06",
+     "motion": "Adjourn the meeting at 7:51 p.m.",
+     "moved_by": null,
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-01-06-2JrrFy4AqdI",
+     "procedural": true,
+     "t": 2999,
+     "video_url": "https://www.youtube.com/watch?v=2JrrFy4AqdI&t=2999s"
     }
    ]
   },
@@ -10022,10 +10152,10 @@
     "first": "2010-01-13",
     "last": "2026-09-10",
     "minutes": 343,
-    "our_minutes": 15,
+    "our_minutes": 16,
     "recordings": 240,
     "transcripts": 213,
-    "votes": 77
+    "votes": 79
    },
    "name": "Finance Committee",
    "page": {
@@ -10704,79 +10834,79 @@
    "time_by_tag": [
     {
      "label": "budget fy27",
-     "seconds": 51937,
-     "share": 0.4151439579236807,
+     "seconds": 54012,
+     "share": 0.40437223927528637,
      "tag": "budget-fy27"
     },
     {
      "label": "warrant article",
-     "seconds": 21840,
-     "share": 0.17457196297539687,
+     "seconds": 22497,
+     "share": 0.16842853934266677,
      "tag": "warrant-article"
     },
     {
      "label": "staffing",
      "seconds": 16736,
-     "share": 0.1337745591738206,
+     "share": 0.12529759676574082,
      "tag": "staffing"
     },
     {
      "label": "personnel",
-     "seconds": 14469,
-     "share": 0.11565392547120042,
+     "seconds": 15813,
+     "share": 0.11838736243168377,
      "tag": "personnel"
     },
     {
      "label": "override",
-     "seconds": 13976,
-     "share": 0.11171326714945726,
+     "seconds": 15403,
+     "share": 0.11531781088567793,
      "tag": "override"
     },
     {
-     "label": "town meeting",
-     "seconds": 11934,
-     "share": 0.09539110834012757,
-     "tag": "town-meeting"
-    },
-    {
      "label": "facilities",
-     "seconds": 11802,
-     "share": 0.09433600306939716,
+     "seconds": 15400,
+     "share": 0.11529535075241447,
      "tag": "facilities"
     },
     {
+     "label": "town meeting",
+     "seconds": 12591,
+     "share": 0.09426517930673055,
+     "tag": "town-meeting"
+    },
+    {
      "label": "capital",
-     "seconds": 10709,
-     "share": 0.08559941169887934,
+     "seconds": 12380,
+     "share": 0.09268548326720072,
      "tag": "capital"
     },
     {
-     "label": "public safety",
-     "seconds": 10687,
-     "share": 0.08542356082042428,
-     "tag": "public-safety"
+     "label": "water sewer",
+     "seconds": 11039,
+     "share": 0.08264580369843527,
+     "tag": "water-sewer"
     },
     {
-     "label": "water sewer",
-     "seconds": 10477,
-     "share": 0.08374498425335315,
-     "tag": "water-sewer"
+     "label": "public safety",
+     "seconds": 11034,
+     "share": 0.08260837014299618,
+     "tag": "public-safety"
     },
     {
      "label": "free cash",
      "seconds": 9719,
-     "share": 0.07768612216840119,
+     "share": 0.07276334506251404,
      "tag": "free-cash"
     },
     {
      "label": "fees",
-     "seconds": 8262,
-     "share": 0.06603999808162678,
+     "seconds": 8824,
+     "share": 0.06606273863891593,
      "tag": "fees"
     }
    ],
-   "time_meetings": 15,
-   "time_span_s": 125106,
+   "time_meetings": 16,
+   "time_span_s": 133570,
    "upcoming": [],
    "urls": {
     "minutes_text": "/minutes/finance-committee.txt",
@@ -11553,6 +11683,26 @@
      "procedural": true,
      "t": 14148,
      "video_url": "https://www.youtube.com/watch?v=6csHPPkKg7c&t=14148s"
+    },
+    {
+     "date": "2026-01-08",
+     "motion": "Approve the minutes of 10/23 and 11/13 (as amended)",
+     "moved_by": "Anna Lockwood",
+     "outcome": "passed (roll call, all ayes: Jean, Mike, Anna, Jay, Tom, chair)",
+     "page": "/meeting-minutes/finance-committee/2026-01-08-GykEFtJVvsM",
+     "procedural": true,
+     "t": 8006,
+     "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM&t=8006s"
+    },
+    {
+     "date": "2026-01-08",
+     "motion": "Adjourn",
+     "moved_by": "Jay",
+     "outcome": "passed (roll call, all ayes: Jean, Mike, Anna, Jay, Tom, chair)",
+     "page": "/meeting-minutes/finance-committee/2026-01-08-GykEFtJVvsM",
+     "procedural": true,
+     "t": 8234,
+     "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM&t=8234s"
     }
    ]
   },
@@ -13090,7 +13240,7 @@
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09182026-8020",
      "attend": null,
      "date": "2026-09-18",
-     "days_away": 2,
+     "days_away": 1,
      "hook": null,
      "important": null,
      "items": null,
@@ -15009,8 +15159,8 @@
     "last": "2026-09-16",
     "minutes": 293,
     "our_minutes": 0,
-    "recordings": 191,
-    "transcripts": 8,
+    "recordings": 192,
+    "transcripts": 9,
     "votes": 0
    },
    "name": "Conservation Commission",
@@ -15044,8 +15194,8 @@
      "minutes_doc": null,
      "minutes_url": null,
      "ours": null,
-     "transcript": false,
-     "video_url": null
+     "transcript": true,
+     "video_url": "https://www.youtube.com/watch?v=KXzIph3Demg"
     },
     {
      "agenda_doc": "/docs/meetings/conservation-commission/2026-09-12-agenda-8009.pdf",
@@ -15207,20 +15357,7 @@
    "time_by_tag": [],
    "time_meetings": 0,
    "time_span_s": 0,
-   "upcoming": [
-    {
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09162026-8015",
-     "attend": null,
-     "date": "2026-09-16",
-     "days_away": 0,
-     "hook": null,
-     "important": null,
-     "items": null,
-     "join": null,
-     "time": null,
-     "where": null
-    }
-   ],
+   "upcoming": [],
    "urls": {
     "minutes_text": "/minutes/conservation-commission.txt",
     "this_week": "/this-week#m-conservation-commission",
@@ -17705,7 +17842,7 @@
     "agendas": 231,
     "captions_disabled": 0,
     "first": "2009-01-22",
-    "last": "2026-07-10",
+    "last": "2026-09-17",
     "minutes": 208,
     "our_minutes": 0,
     "recordings": 7,
@@ -17727,6 +17864,17 @@
     "url": "https://www.lunenburgma.gov/264/Library-Board-of-Trustees"
    },
    "recent": [
+    {
+     "agenda_doc": "/docs/meetings/library-board-of-trustees/2026-09-17-agenda-8017.pdf",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09172026-8017",
+     "captions_disabled": false,
+     "date": "2026-09-17",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "ours": null,
+     "transcript": false,
+     "video_url": null
+    },
     {
      "agenda_doc": "/docs/meetings/library-board-of-trustees/2026-07-10-agenda-7893.pdf",
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07102026-7893",
@@ -17880,17 +18028,6 @@
      "ours": null,
      "transcript": false,
      "video_url": null
-    },
-    {
-     "agenda_doc": "/docs/meetings/library-board-of-trustees/2025-04-17-agenda-7162.pdf",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04172025-7162",
-     "captions_disabled": false,
-     "date": "2025-04-17",
-     "minutes_doc": "/docs/meetings/library-board-of-trustees/2025-04-17-minutes-7162.pdf",
-     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04172025-7162",
-     "ours": null,
-     "transcript": false,
-     "video_url": null
     }
    ],
    "slug": "library-board-of-trustees",
@@ -17903,7 +18040,7 @@
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09172026-8017",
      "attend": null,
      "date": "2026-09-17",
-     "days_away": 1,
+     "days_away": 0,
      "hook": null,
      "important": null,
      "items": null,
@@ -17915,7 +18052,7 @@
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09182026-8018",
      "attend": null,
      "date": "2026-09-18",
-     "days_away": 2,
+     "days_away": 1,
      "hook": null,
      "important": null,
      "items": null,
@@ -18785,7 +18922,7 @@
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09212026-8021",
      "attend": null,
      "date": "2026-09-21",
-     "days_away": 5,
+     "days_away": 4,
      "hook": null,
      "important": null,
      "items": null,
@@ -21089,7 +21226,7 @@
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09282026-8006",
      "attend": null,
      "date": "2026-09-28",
-     "days_away": 12,
+     "days_away": 11,
      "hook": null,
      "important": null,
      "items": null,
@@ -21404,20 +21541,7 @@
    "time_by_tag": [],
    "time_meetings": 0,
    "time_span_s": 0,
-   "upcoming": [
-    {
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09162026-8014",
-     "attend": null,
-     "date": "2026-09-16",
-     "days_away": 0,
-     "hook": null,
-     "important": null,
-     "items": null,
-     "join": null,
-     "time": null,
-     "where": null
-    }
-   ],
+   "upcoming": [],
    "urls": {
     "minutes_text": "/minutes/public-access-cable-committee-pacc.txt",
     "this_week": "/this-week#m-public-access-cable-committee-pacc",
@@ -22296,7 +22420,7 @@
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09292026-8019",
      "attend": null,
      "date": "2026-09-29",
-     "days_away": 13,
+     "days_away": 12,
      "hook": null,
      "important": null,
      "items": null,
@@ -22940,7 +23064,7 @@
     2028
    ],
    "counts": {
-    "agendas": 124,
+    "agendas": 125,
     "captions_disabled": 0,
     "first": "2016-01-13",
     "last": "2026-09-14",
@@ -23142,7 +23266,20 @@
    "time_by_tag": [],
    "time_meetings": 0,
    "time_span_s": 0,
-   "upcoming": [],
+   "upcoming": [
+    {
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09212026-8022",
+     "attend": null,
+     "date": "2026-09-21",
+     "days_away": 4,
+     "hook": null,
+     "important": null,
+     "items": null,
+     "join": null,
+     "time": null,
+     "where": null
+    }
+   ],
    "urls": {
     "minutes_text": "/minutes/stormwater-task-force.txt",
     "this_week": "/this-week#m-stormwater-task-force",

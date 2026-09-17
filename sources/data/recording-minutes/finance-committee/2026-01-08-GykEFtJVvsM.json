@@ -1,0 +1,542 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "meeting_date": "2026-01-08",
+ "video_id": "GykEFtJVvsM",
+ "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2026-01-08-GykEFtJVvsM.json",
+  "sha256": "dd53893e57376edc63409d08f2a25b89c99552483695733100875019c0c268c0",
+  "caption_lines": 392,
+  "segments": 3534
+ },
+ "recording": {
+  "duration_s": 8261,
+  "duration": "2:17",
+  "spoken_chars": 112198,
+  "words_approx": 18699
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01082026-7592",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2026-01-08-agenda-7592.txt",
+   "path": "sources/meetings/finance-committee/2026-01-08-agenda-7592.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082026-7592",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2026-01-08-minutes-7592.txt",
+   "path": "sources/meetings/finance-committee/2026-01-08-minutes-7592.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-17T11:19:32Z",
+  "cost_usd": 0.4887174
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Chris",
+    "role": "chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Jean",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mike",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Anna (Lockwood)",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Jay",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Tom (Gray)",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Jen",
+    "role": "town manager",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Stephanie (Quinn)",
+    "role": "Monty Tech representative",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Danielle",
+    "role": "clerk/recording secretary",
+    "remote": true
+   }
+  ],
+  "headline": "FinCom says FY27 leaves almost no room after health insurance; a school override looms and deep cuts are floated",
+  "summary": "The Finance Committee heard that the finance/accounting office is in crisis (a departed finance director, an unclosed FY25, a retired accountant filling in part-time) and got an early FY27 revenue estimate that leaves very little after health insurance. Members debated whether to support another Proposition 2½ override, with one member insisting the town do \"hard work\" on cuts (recycling, the TCP building, ambulance receipts, capital funding sources) before any override is considered, while the town manager warned that a no-override budget likely means real staffing/service cuts. The committee also adjusted its budget-season calendar to bring Monty Tech and the schools in earlier, reviewed the capital plan ranking, water billing/enterprise fund problems, and approved its prior minutes and adjournment by roll call.",
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "contracts-and-unions",
+   "facilities",
+   "free-cash",
+   "health-insurance",
+   "hiring",
+   "layoffs",
+   "monty-tech",
+   "override",
+   "personnel",
+   "policy",
+   "primary-school",
+   "public-safety",
+   "roads-and-dpw",
+   "staffing",
+   "state-aid",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "turkey-hill",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "confidence": "moderate",
+  "not_audible": [
+   "Speakers are not diarized in the captions; many exchanges after the opening are attributed by inference from context rather than stated identification.",
+   "Brief video/audio dropout and uncertainty about whether Zoom was actually recording, around 3462-3523.",
+   "Exact figure for the finance director/accountant recruiter's posted salary cap ('up to 145') is unclear -- likely $145,000 but not stated in full.",
+   "Several crosstalk stretches during the override/capital discussion (approx. 4900-5030, 6350-6600) have overlapping speakers making full attribution unreliable."
+  ],
+  "public_comment": [],
+  "votes": [
+   {
+    "t": 8006,
+    "motion": "Approve the minutes of 10/23 and 11/13 (as amended)",
+    "moved_by": "Anna Lockwood",
+    "outcome": "passed (roll call, all ayes: Jean, Mike, Anna, Jay, Tom, chair)",
+    "procedural": true
+   },
+   {
+    "t": 8234,
+    "motion": "Adjourn",
+    "moved_by": "Jay",
+    "outcome": "passed (roll call, all ayes: Jean, Mike, Anna, Jay, Tom, chair)",
+    "procedural": true
+   }
+  ],
+  "transfers": [
+   {
+    "t": 1890,
+    "description": "Town meeting authorization to use old/unexpended capital funds (including funds set aside for Ritter ADA upgrades) to pay a back bill owed to Fitchburg for water service",
+    "amount_as_heard": "90,000",
+    "outcome": "voted (at a prior town meeting; referenced here as already authorized)"
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 896,
+    "topic": "Recruiter fee for finance director search",
+    "figures_as_heard": [
+     "20%",
+     "145",
+     "up to 20%"
+    ],
+    "what_was_said": "The town manager said the two recruiting firms helping fill the finance director/town accountant position are paid only if a candidate is hired, at a percentage of the annual salary; the position is posted up to a certain salary level."
+   },
+   {
+    "t": 1788,
+    "topic": "Water billing catch-up bills",
+    "figures_as_heard": [
+     "11"
+    ],
+    "what_was_said": "The town manager said catch-up water bills covering a full year of unbilled usage were being mailed to a set number of water customers."
+   },
+   {
+    "t": 1828,
+    "topic": "Water rate increase under the Fitchburg intermunicipal contract",
+    "figures_as_heard": [
+     "30%"
+    ],
+    "what_was_said": "The town manager said the contract requires a non-discretionary rate increase tied to what Fitchburg charges, to be voted by the select board."
+   },
+   {
+    "t": 1890,
+    "topic": "Town meeting authorization to pay Fitchburg water bill",
+    "figures_as_heard": [
+     "90,000"
+    ],
+    "what_was_said": "The town manager explained the town needed and received town meeting authorization to pay a larger, overdue water bill to Fitchburg using old capital funds."
+   },
+   {
+    "t": 2137,
+    "topic": "Water enterprise fund reimbursement and annual budgeting",
+    "figures_as_heard": [
+     "90,000",
+     "50,000",
+     "150,000"
+    ],
+    "what_was_said": "Members discussed that the water enterprise account has been underbudgeted annually and will take time to rebuild after covering the back payment to Fitchburg."
+   },
+   {
+    "t": 2806,
+    "topic": "FY27 revenue estimate",
+    "figures_as_heard": [
+     "1.3 million"
+    ],
+    "what_was_said": "The town manager gave a preliminary estimate of new revenue available for appropriation beyond last year, to be finalized soon."
+   },
+   {
+    "t": 2826,
+    "topic": "Monty Tech assessment share of the town budget",
+    "figures_as_heard": [
+     "3%",
+     "39,000"
+    ],
+    "what_was_said": "The town manager said Monty Tech represents a share of the town's total operating budget and estimated the added appropriation needed for FY27 under that formula."
+   },
+   {
+    "t": 3107,
+    "topic": "Health insurance increase vs. available new revenue",
+    "figures_as_heard": [
+     "20%",
+     "86,000"
+    ],
+    "what_was_said": "Committee members calculated that after a health insurance increase, very little of the new revenue estimate would remain for any other town or school cost increases."
+   },
+   {
+    "t": 3919,
+    "topic": "Trash/recycling contract cost",
+    "figures_as_heard": [
+     "150,000",
+     "500,000",
+     "300,000"
+    ],
+    "what_was_said": "A member said the town's recycling costs have risen sharply and proposed restructuring or eliminating curbside recycling to save money before considering an override."
+   },
+   {
+    "t": 3962,
+    "topic": "TCP building operating cost",
+    "figures_as_heard": [
+     "100,000"
+    ],
+    "what_was_said": "A member questioned whether the services in the TCP building are worth its annual operating cost and suggested closing it and relocating tenants."
+   },
+   {
+    "t": 4003,
+    "topic": "Ambulance receipts and free cash",
+    "figures_as_heard": [
+     "250,000"
+    ],
+    "what_was_said": "A member noted ambulance receipts currently flow into free cash rather than directly funding operations and suggested a revolving or enterprise fund instead."
+   },
+   {
+    "t": 4087,
+    "topic": "Capital vehicle requests: brush truck and dump truck",
+    "figures_as_heard": [
+     "335,000",
+     "41,000"
+    ],
+    "what_was_said": "A member questioned funding large vehicle purchases through capital requests versus the special stabilization fund."
+   },
+   {
+    "t": 4463,
+    "topic": "Out-of-district tuition settlement revenue decline",
+    "figures_as_heard": [
+     "500,000",
+     "100,000",
+     "400,000"
+    ],
+    "what_was_said": "A member said revenue the town used to receive for out-of-district students attending Lunenburg schools has dropped sharply, shifting cost onto town funds, and called it a school committee decision needing accountability."
+   },
+   {
+    "t": 4588,
+    "topic": "Department budget reduction scenarios",
+    "figures_as_heard": [
+     "5%"
+    ],
+    "what_was_said": "The town manager said she asked town department heads to submit a budget reflecting a percentage reduction to their bottom line along with a narrative of how it could be achieved."
+   },
+   {
+    "t": 5392,
+    "topic": "Turf field design funding (proposed warrant article)",
+    "figures_as_heard": [
+     "200,000",
+     "4 million"
+    ],
+    "what_was_said": "A member questioned the funding source and vetting process for turf field design work outside the normal capital planning cycle, suggesting combining several projects into one larger debt-excluded borrowing instead."
+   },
+   {
+    "t": 6081,
+    "topic": "Primary school playground design",
+    "figures_as_heard": [
+     "30,000",
+     "200,000",
+     "300,000"
+    ],
+    "what_was_said": "A member argued that paying separately for playground design was unnecessary since vendors typically design based on an approved budget amount."
+   },
+   {
+    "t": 5094,
+    "topic": "Outdoor Wi-Fi access point request",
+    "figures_as_heard": [
+     "under $5,000"
+    ],
+    "what_was_said": "A small supplemental request for an outdoor Wi-Fi access point was noted as part of the capital list."
+   },
+   {
+    "t": 6997,
+    "topic": "Police cruiser hybrid vs. gas and charging station cost",
+    "figures_as_heard": [
+     "45,000"
+    ],
+    "what_was_said": "Members discussed the cost of adding a charging station and reliability concerns with hybrid cruiser batteries as reasons for reverting some vehicles to gas."
+   }
+  ],
+  "decisions": [
+   {
+    "t": 2394,
+    "decision": "Bring Monty Tech in earlier in the budget calendar, before their board votes on its assessment, rather than after."
+   },
+   {
+    "t": 3002,
+    "decision": "Schools will present their budget earlier in this year's calendar than in past years."
+   },
+   {
+    "t": 4588,
+    "decision": "Town department heads asked to submit budgets reflecting a 5% reduction scenario with a narrative explanation."
+   },
+   {
+    "t": 6019,
+    "decision": "Standardize capital project presentations into one common template/format (GFOA-style) before bringing them to the committee."
+   },
+   {
+    "t": 7595,
+    "decision": "Department heads asked to copy the town clerk and the finance committee chair when they submit warrant articles."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 53,
+    "t_end": 320,
+    "topic": "Opening, pledge of allegiance, announcements (tri-board and Monty Tech meeting dates)",
+    "resolution": "informational",
+    "tags": [
+     "monty-tech"
+    ]
+   },
+   {
+    "t_start": 320,
+    "t_end": 401,
+    "topic": "Introduction of new Monty Tech representative; public comment invited (none from public)",
+    "resolution": "informational",
+    "tags": [
+     "monty-tech"
+    ]
+   },
+   {
+    "t_start": 401,
+    "t_end": 1082,
+    "topic": "Town manager's finance department report: finance director departure, unclosed FY25, interim staffing, payroll/benefits vacancy, recruiter agreements",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "hiring",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1082,
+    "t_end": 1745,
+    "topic": "Discussion of whether the town accountant should report independently to the select board versus being combined with finance director",
+    "resolution": "no resolution / referred to bylaw committee",
+    "tags": [
+     "policy",
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1788,
+    "t_end": 2350,
+    "topic": "Water billing catch-up bills, rate increase, and water enterprise fund shortfall",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "transfers",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2351,
+    "t_end": 2939,
+    "topic": "Budget calendar review and Monty Tech budget/assessment discussion",
+    "resolution": "decision to engage Monty Tech earlier",
+    "tags": [
+     "monty-tech",
+     "budget-fy27",
+     "state-aid"
+    ]
+   },
+   {
+    "t_start": 2959,
+    "t_end": 3461,
+    "topic": "School budget approach, FY27 revenue estimate, and health insurance increase impact",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "health-insurance",
+     "state-aid"
+    ]
+   },
+   {
+    "t_start": 3461,
+    "t_end": 3709,
+    "topic": "State funding advocacy and health insurance/PEC negotiation strategy",
+    "resolution": "informational",
+    "tags": [
+     "health-insurance",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 3709,
+    "t_end": 4694,
+    "topic": "Prop 2½ override discussion; member's list of proposed cost-savings (recycling, TCP building, ambulance receipts, capital funding) before supporting an override",
+    "resolution": "no resolution / member to draft written outline",
+    "tags": [
+     "override",
+     "budget-fy27",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 4694,
+    "t_end": 5136,
+    "topic": "TCP building relocation feasibility, town manager's capacity constraints, and staff/service cut framing",
+    "resolution": "no resolution",
+    "tags": [
+     "override",
+     "facilities",
+     "layoffs"
+    ]
+   },
+   {
+    "t_start": 5136,
+    "t_end": 6807,
+    "topic": "Capital planning committee ranking, funding sources, turf field/design process, and standardizing capital presentations",
+    "resolution": "informational, no vote",
+    "tags": [
+     "capital",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 6100,
+    "t_end": 6600,
+    "topic": "Primary school (Turkey Hill) driveway expansion and playground design/replacement",
+    "resolution": "informational",
+    "tags": [
+     "primary-school",
+     "turkey-hill",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 6980,
+    "t_end": 7327,
+    "topic": "Police cruiser hybrid vs. gas debate and DPW snow plowing staffing",
+    "resolution": "no resolution",
+    "tags": [
+     "public-safety",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 7328,
+    "t_end": 7985,
+    "topic": "Town meeting warrant process: order of articles, warrant closing date, communication with department heads on warrant articles",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 7985,
+    "t_end": 8087,
+    "topic": "Approval of prior minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 8087,
+    "t_end": 8212,
+    "topic": "Committee reports and future agenda topics (committee assignments, Monty Tech next meeting)",
+    "resolution": "informational",
+    "tags": [
+     "monty-tech"
+    ]
+   },
+   {
+    "t_start": 8212,
+    "t_end": 8255,
+    "topic": "Public comment (none) and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "A preliminary FY27 revenue estimate leaves little room for other cost increases once health insurance rises, intensifying override debate.",
+    "t": 3107
+   },
+   {
+    "line": "The finance office is described as being in crisis: the finance director has departed, FY25 remains unclosed, and a retired accountant is filling in part time.",
+    "t": 401
+   },
+   {
+    "line": "A committee member urged cuts to recycling, the TCP building, ambulance receipts and capital funding before supporting any override.",
+    "t": 3919
+   },
+   {
+    "line": "The town manager warned that a budget built without an override would likely mean real staffing and service cuts.",
+    "t": 4694
+   },
+   {
+    "line": "Monty Tech and the schools will be brought into the budget calendar earlier, and department heads must submit a 5% reduction scenario.",
+    "t": 4588
+   }
+  ],
+  "why_it_matters": [
+   "A possible Proposition 2½ override for FY27 would go to voters, and this meeting weighed what cuts to town services might come first.",
+   "Requiring departments to model a 5% reduction, and moving the school and Monty Tech budgets earlier in the calendar, could change which programs and staffing residents see proposed and when.",
+   "An unclosed FY25 and a vacant finance director post touch how reliable the town's current financial reporting is while these budget decisions are being made."
+  ],
+  "watch_next": [
+   "The finalized FY27 revenue estimate once the town manager completes it",
+   "Department budgets submitted under the requested 5% reduction scenario, with narrative explanations"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-17T11:19:58Z",
+   "cost_usd": 0.1677826
+  }
+ }
+}

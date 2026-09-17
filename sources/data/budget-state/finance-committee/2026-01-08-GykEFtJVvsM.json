@@ -9,30 +9,30 @@
  "state": {
   "cuts": [
    {
-    "amount_as_heard": "$300,000 savings",
-    "fiscal_year": 2027,
+    "amount_as_heard": "300,000",
+    "fiscal_year": null,
     "fte_as_heard": null,
-    "item": "curbside recycling program (proposed to end/shift to DPW self-haul)",
+    "item": "Trash/recycling collection contract",
     "scope": "town",
     "status": "proposed",
     "t": 3941,
     "who": "a member"
    },
    {
-    "amount_as_heard": "$100,000",
-    "fiscal_year": 2027,
+    "amount_as_heard": "100,000",
+    "fiscal_year": null,
     "fte_as_heard": null,
-    "item": "TCP building (close/relocate remaining programs)",
+    "item": "TCP building - close or relocate its functions",
     "scope": "town",
     "status": "proposed",
-    "t": 3982,
+    "t": 3962,
     "who": "a member"
    },
    {
-    "amount_as_heard": "5% reduction across the bottom line",
+    "amount_as_heard": "5%",
     "fiscal_year": 2027,
     "fte_as_heard": null,
-    "item": "department budgets, across-the-board reduction requested of all department heads",
+    "item": "Across-the-board town department budget reduction",
     "scope": "town",
     "status": "proposed",
     "t": 4588,
@@ -42,43 +42,43 @@
   "nothing_on_the_budget": false,
   "statements": [
    {
-    "amount_as_heard": "just over $1.3 million",
+    "amount_as_heard": "1.3 million",
     "fiscal_year": 2027,
     "kind": "budget_total",
     "scope": "both",
-    "statement": "estimated new revenue available for appropriation, to be spread across all town and school departments for FY27",
+    "statement": "New revenue available for appropriation beyond last year, across all town and school departments, is estimated at just over this figure.",
     "status": "announced",
     "t": 2806,
     "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "3%; 39,000",
+    "fiscal_year": 2027,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Monty Tech's assessment is about this share of the total operating budget, implying roughly this much additional appropriation needed for FY27.",
+    "status": "announced",
+    "t": 2826,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "20%; 86,000",
+    "fiscal_year": 2027,
+    "kind": "other",
+    "scope": "both",
+    "statement": "After assuming a health insurance increase, only about this amount of the new revenue estimate would remain for all other town and school cost increases combined.",
+    "status": "announced",
+    "t": 3107,
+    "who": "a member"
    },
    {
     "amount_as_heard": null,
     "fiscal_year": 2027,
     "kind": "state_aid",
     "scope": "both",
-    "statement": "the $1.3 million revenue estimate assumes level state aid; the December consensus revenue hearing did not indicate a significant increase in state money coming",
+    "statement": "The revenue estimate assumes level state aid; the actual figure is not yet known.",
     "status": "announced",
-    "t": 3081,
-    "who": "the town manager"
-   },
-   {
-    "amount_as_heard": "$39,000",
-    "fiscal_year": 2027,
-    "kind": "other",
-    "scope": "town",
-    "statement": "Montachusett Regional (Monty Tech) is about 3% of the town's operating budget, so under that formula the town would have $39,000 of additional appropriation available for the FY27 assessment; anything above $40,000 impacts other areas",
-    "status": "proposed",
-    "t": 2826,
-    "who": "the town manager"
-   },
-   {
-    "amount_as_heard": "$86,000",
-    "fiscal_year": 2027,
-    "kind": "other",
-    "scope": "both",
-    "statement": "after assuming a 20% health insurance increase, about $86,000 of the $1.3M revenue estimate is left for every other contract and cost increase across both town and school",
-    "status": "announced",
-    "t": 3103,
+    "t": 3067,
     "who": "the town manager"
    },
    {
@@ -86,7 +86,7 @@
     "fiscal_year": 2027,
     "kind": "other",
     "scope": "both",
-    "statement": "health insurance premium increase is currently assumed at 20%; the actual figure won't be known until the insurance trust announces rates around January 23-24",
+    "statement": "Health insurance is expected to rise by about this percentage, with the confirmed figure not available until after the insurance trust's announcement later in January.",
     "status": "announced",
     "t": 3148,
     "who": "the town manager"
@@ -96,8 +96,8 @@
     "fiscal_year": 2027,
     "kind": "override",
     "scope": "school",
-    "statement": "the school department is expected to seek a Proposition 2\u00bd override for FY27",
-    "status": "announced",
+    "statement": "It appears the schools will seek to pursue a Proposition 2\u00bd override for FY27.",
+    "status": "proposed",
     "t": 3749,
     "who": "the chair"
    },
@@ -105,70 +105,57 @@
     "amount_as_heard": null,
     "fiscal_year": 2027,
     "kind": "override",
+    "scope": "town",
+    "statement": "The fire chief has indicated a need for a fourth shift, which may also factor into an override request alongside school and general town needs.",
+    "status": "proposed",
+    "t": 3771,
+    "who": "the chair"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "town and school service levels/staffing",
+    "condition": "if the budget is balanced without a Proposition 2\u00bd override",
+    "fiscal_year": 2027,
+    "prediction": "Balancing the budget without an override would mean real, significant staffing and service cuts, not minor items.",
     "scope": "both",
-    "statement": "a member stated he will not support any operational override before the town does the hard work of finding cuts and reallocations first",
-    "status": "announced",
+    "t": 4357,
+    "who": "the town manager"
+   },
+   {
+    "about": "the FY27 budget development schedule",
+    "condition": null,
+    "fiscal_year": 2027,
+    "prediction": "The town manager said she will be shocked or astonished if the town can keep to the current budget-season meeting schedule given staffing shortages in the finance office.",
+    "scope": "both",
+    "t": 4885,
+    "who": "the town manager"
+   },
+   {
+    "about": "health insurance rate increase justification",
+    "condition": "if GLP-1 coverage is removed from the plan",
+    "fiscal_year": 2027,
+    "prediction": "If GLP-1 medication coverage is dropped by the insurance plan, the town manager does not expect the health insurance rate increase to still come in near 20% with a new justification offered instead.",
+    "scope": "both",
+    "t": 3401,
+    "who": "the town manager"
+   },
+   {
+    "about": "staff morale and retention amid budget-cut discussions",
+    "condition": null,
+    "fiscal_year": 2027,
+    "prediction": "Talk of budget cuts risks creating a fear factor among town employees that could cause them to leave their jobs.",
+    "scope": "both",
+    "t": 4611,
+    "who": "the town manager"
+   },
+   {
+    "about": "support for a future Proposition 2\u00bd override",
+    "condition": "unless the town first pursues cost savings and budget restructuring",
+    "fiscal_year": 2027,
+    "prediction": "A member said he will not support another operational override until the town does the hard work of reviewing and restructuring the budget first.",
+    "scope": "both",
     "t": 3897,
-    "who": "a member"
-   },
-   {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "deficit",
-    "scope": "both",
-    "statement": "achieving a balanced budget without an override was said to require service cuts, described as cutting staff (\"heads\") not just supplies",
-    "status": "announced",
-    "t": 5745,
-    "who": "the chair"
-   },
-   {
-    "amount_as_heard": "$800,000",
-    "fiscal_year": 2027,
-    "kind": "other",
-    "scope": "town",
-    "statement": "capital plan requests were noted to total around $800,000, which by itself was said not to be enough to close the budget gap",
-    "status": "announced",
-    "t": 4335,
-    "who": "the chair"
-   },
-   {
-    "amount_as_heard": "$200,000",
-    "fiscal_year": null,
-    "kind": "free_cash",
-    "scope": "town",
-    "statement": "a $200,000 turf-field design was raised as a possible standalone warrant article, to be funded from free cash",
-    "status": "proposed",
-    "t": 5475,
-    "who": "a member"
-   },
-   {
-    "amount_as_heard": "$250,000",
-    "fiscal_year": null,
-    "kind": "other",
-    "scope": "town",
-    "statement": "a member proposed moving ambulance receipts (roughly $250,000/year, currently swept into free cash) into an enterprise or revolving fund so it could be used toward operations instead",
-    "status": "proposed",
-    "t": 4003,
-    "who": "a member"
-   },
-   {
-    "amount_as_heard": "$400,000",
-    "fiscal_year": null,
-    "kind": "other",
-    "scope": "school",
-    "statement": "out-of-district tuition settlement receipts have fallen from about $500,000 to about $100,000, a member said, shifting roughly $400,000 onto town funds available",
-    "status": "announced",
-    "t": 4504,
-    "who": "a member"
-   },
-   {
-    "amount_as_heard": "$700,000",
-    "fiscal_year": null,
-    "kind": "other",
-    "scope": "both",
-    "statement": "a member offered an illustrative figure that closing a $700,000 gap would mean cutting roughly 10 positions, but cautioned it isn't that simple a calculation",
-    "status": "announced",
-    "t": 4674,
     "who": "a member"
    }
   ]
@@ -177,9 +164,10 @@
  "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T19:12:18Z",
-  "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.4013608000000001,
-  "model": "sonnet"
+  "at": "2026-09-17T11:19:58Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
  }
 }
