@@ -371,6 +371,7 @@ def main():
         py('build_notices.py')
         py('build_boards.py', '--as-of', a.as_of)
         py('build_budget_feed.py', '--as-of', a.as_of)
+        py('build_feeds.py')
         # A new budget episode the feed thinks it sees -- a Special Town Meeting date, an
         # override, the Governor's budget, the season opening -- is PROPOSED here, with its
         # evidence, for TJ or the agent to confirm by adding a row to budget-episodes.csv.

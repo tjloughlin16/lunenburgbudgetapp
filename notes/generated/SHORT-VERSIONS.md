@@ -9,7 +9,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 
 | page | kind | short / full | the points a reader should take away |
 |---|---|---:|---|
-| [The Lunenburg Budget Project — FY28 and beyond](/) | page | — / 6.8 min | *(none declared)* |
+| [The Lunenburg Budget Project — FY28 and beyond](/) | page | — / 6.6 min | *(none declared)* |
 | [Budget Crisis](/crisis) | page | 2.9 / 46.7 min | 1. Projections show a $633k deficit next year, and one in every year after it.<br>2. The budget in force already cut 9.2 FTE, and the projection reopens anyway.<br>3. Costs grow 5.18% a year and revenue 3.03%: a rate problem, not a bad year.<br>4. Salaries and health insurance are 64% of the budget — the only two lines that can change the direction, and neither is a School Committee vote.<br>5. About $795k a year of free cash could go to the schools, and it is one-time money. |
 | [Solutions](/solutions) | page | 1.0 / 13.2 min | 1. The fees and trims are worth doing and do not solve it.<br>2. Cutting the extras buys one year.<br>3. Business growth is real and slow.<br>4. Free cash covers a year, not a problem.<br>5. Only two things on the table change a rate: the health plan, and the pace of commercial building.<br>6. After that there are two choices, and only two: an override, or classroom positions. |
 | [Straight answers](/straight-answers) | page | 1.2 / 37.7 min | 1. $633k — The schools need $632,876 more next year than the town can give them. That is the whole problem, in one number.<br>2. 2.68% — The things schools buy get 5.18% more expensive each year. State law lets the town collect about 2.5% more each year. Nobody overspent — the two numbers are simply different.<br>3. $571k — That difference opens a brand new hole every year, of roughly $570,844 to $787,015, whether or not you closed the last one.<br>4. 1 yr — So no single cut fixes this. Every answer in the table below — sports, fees, administrators, pay, insurance — buys one year at most, and then the question comes back larger. |
@@ -76,19 +76,78 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [For AI assistants](/ask) | reference | — / 9.8 min | *(none declared)* |
 | [Ask us a question](/ask-a-question) | reference | — / 6.1 min | *(none declared)* |
 | [The blog](/blog) | reference | — / 7.4 min | *(none declared)* |
-| [The boards — each one, in one place](/boards) | reference | — / 8.8 min | *(none declared)* |
-| [The budget feed — FY28](/budget-feed) | reference | — / 17.4 min | *(none declared)* |
+| [The boards — each one, in one place](/boards) | reference | — / 9.1 min | *(none declared)* |
+| [Agricultural Commission](/boards/agricultural-commission) | reference | — / 8.5 min | *(none declared)* |
+| [Architectural Preservation District Commission](/boards/architectural-preservation-district-commission) | reference | — / 8.7 min | *(none declared)* |
+| [Athletic Advisory Council](/boards/athletic-advisory-council) | reference | — / 5.9 min | *(none declared)* |
+| [BOA Neighborhood ans Site Index Subcommittee](/boards/boa-neighborhood-ans-site-index-subcommittee) | reference | — / 5.8 min | *(none declared)* |
+| [Board of Assessors](/boards/board-of-assessors) | reference | — / 11.2 min | *(none declared)* |
+| [Board of Health](/boards/board-of-health) | reference | — / 8.9 min | *(none declared)* |
+| [Board of Registrars](/boards/board-of-registrars) | reference | — / 6.4 min | *(none declared)* |
+| [Budget Task Force](/boards/budget-task-force) | reference | — / 9.1 min | *(none declared)* |
+| [Building Reuse Committee](/boards/building-reuse-committee) | reference | — / 6.7 min | *(none declared)* |
+| [By-Law Committee](/boards/by-law-committee) | reference | — / 7.5 min | *(none declared)* |
+| [Cable Advisory Committee](/boards/cable-advisory-committee) | reference | — / 11.3 min | *(none declared)* |
+| [Capital Planning Committee](/boards/capital-planning-committee) | reference | — / 8.6 min | *(none declared)* |
+| [Cemetery Commission](/boards/cemetery-commission) | reference | — / 7.7 min | *(none declared)* |
+| [Charter Review Committee](/boards/charter-review-committee) | reference | — / 7.1 min | *(none declared)* |
+| [Conservation Commission](/boards/conservation-commission) | reference | — / 8.5 min | *(none declared)* |
+| [Conservation Commission Public Hearing](/boards/conservation-commission-public-hearing) | reference | — / 5.9 min | *(none declared)* |
+| [Council on Aging](/boards/council-on-aging) | reference | — / 8.8 min | *(none declared)* |
+| [Cultural Council](/boards/cultural-council) | reference | — / 7.1 min | *(none declared)* |
+| [Devens Regional Oversight Committee](/boards/devens-regional-oversight-committee) | reference | — / 6.7 min | *(none declared)* |
+| [Economic Development Committee](/boards/economic-development-committee) | reference | — / 12.9 min | *(none declared)* |
+| [Federal Energy Regulatory Commission](/boards/ferc) | reference | — / 5.8 min | *(none declared)* |
+| [Finance Committee](/boards/finance-committee) | reference | — / 16.2 min | *(none declared)* |
+| [Finance Committee Appointing Committee](/boards/finance-committee-appointing-committee) | reference | — / 6.3 min | *(none declared)* |
+| [Finance Committee Public Hearing](/boards/finance-committee-public-hearing) | reference | — / 6.5 min | *(none declared)* |
+| [Green Communities Committee](/boards/green-communities-committee) | reference | — / 9.5 min | *(none declared)* |
+| [Green Community Task Force](/boards/green-community-task-force) | reference | — / 6.5 min | *(none declared)* |
+| [Historical Commission](/boards/historical-commission) | reference | — / 7.8 min | *(none declared)* |
+| [Land Acquisition Committee](/boards/land-acquisition-committee) | reference | — / 6.1 min | *(none declared)* |
+| [Library Board of Trustees](/boards/library-board-of-trustees) | reference | — / 9.2 min | *(none declared)* |
+| [Lunenburg 300th Anniversary Committee](/boards/lunenburg-300th-anniversary-committee) | reference | — / 8.3 min | *(none declared)* |
+| [Lunenburg Hazard Mitigation Plan Team Committee](/boards/lunenburg-hazard-mitigation-plan-team-committee) | reference | — / 5.9 min | *(none declared)* |
+| [Lunenburg Housing Authority](/boards/lunenburg-housing-authority) | reference | — / 7.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee](/boards/lunenburg-municipal-building-design-committee) | reference | — / 8.5 min | *(none declared)* |
+| [Lunenburg Water District](/boards/lunenburg-water-district) | reference | — / 6.5 min | *(none declared)* |
+| [Massachusetts Department of Public Utilities](/boards/ma-dpu) | reference | — / 5.8 min | *(none declared)* |
+| [Massachusetts Energy Facilities Siting Board](/boards/ma-efsb) | reference | — / 5.8 min | *(none declared)* |
+| [Master Plan Steering Committee](/boards/master-plan-steering-committee) | reference | — / 10.2 min | *(none declared)* |
+| [Nashoba Valley Reginal Dispatch Committee](/boards/nashoba-valley-reginal-dispatch-committee) | reference | — / 6.7 min | *(none declared)* |
+| [North Central Climate Change Coalition](/boards/north-central-climate-change-coalition) | reference | — / 6.0 min | *(none declared)* |
+| [Open Space Committee](/boards/open-space-committee) | reference | — / 8.0 min | *(none declared)* |
+| [Parks Commission](/boards/parks-commission) | reference | — / 9.0 min | *(none declared)* |
+| [Personnel Committee](/boards/personnel-committee) | reference | — / 8.4 min | *(none declared)* |
+| [Planning Board](/boards/planning-board) | reference | — / 8.7 min | *(none declared)* |
+| [Planning Board Public Hearing](/boards/planning-board-public-hearing) | reference | — / 6.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC)](/boards/public-access-cable-committee-pacc) | reference | — / 8.3 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees](/boards/school-advisory-councils-committees) | reference | — / 6.9 min | *(none declared)* |
+| [School Building Committee](/boards/school-building-committee) | reference | — / 6.5 min | *(none declared)* |
+| [School Building Committee Meeting](/boards/school-building-committee-meeting) | reference | — / 6.7 min | *(none declared)* |
+| [School Committee](/boards/school-committee) | reference | — / 44.2 min | *(none declared)* |
+| [Select Board](/boards/select-board) | reference | — / 29.9 min | *(none declared)* |
+| [Select Board Public Hearing](/boards/select-board-public-hearing) | reference | — / 6.2 min | *(none declared)* |
+| [Senior Citizens Tax Work Off Committee](/boards/senior-citizens-tax-work-off-committee) | reference | — / 6.7 min | *(none declared)* |
+| [Sewer Commission](/boards/sewer-commission) | reference | — / 9.3 min | *(none declared)* |
+| [Stormwater Task Force](/boards/stormwater-task-force) | reference | — / 8.3 min | *(none declared)* |
+| [TCP Building Design Committee](/boards/tcp-building-design-committee) | reference | — / 6.5 min | *(none declared)* |
+| [Town Manager Screening Committee](/boards/town-manager-screening-committee) | reference | — / 11.3 min | *(none declared)* |
+| [Town Meeting](/boards/town-meeting) | reference | — / 6.5 min | *(none declared)* |
+| [Trust Fund Commission](/boards/trust-fund-commission) | reference | — / 7.6 min | *(none declared)* |
+| [Zoning Board of Appeals](/boards/zoning-board-of-appeals) | reference | — / 7.5 min | *(none declared)* |
+| [The budget feed — FY28](/budget-feed) | reference | — / 17.6 min | *(none declared)* |
 | [Build your own budget](/build-your-own-budget) | tool | — / 15.3 min | *(none declared)* |
 | [The database](/database) | reference | — / 7.5 min | *(none declared)* |
 | [Find the money](/find-the-money) | tool | — / 11.6 min | *(none declared)* |
 | [Go deeper](/go-deeper) | reference | — / 8.0 min | *(none declared)* |
-| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 48.3 min | *(none declared)* |
+| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 50.8 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 12.5 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.6 min | *(none declared)* |
 | [Analysis: Town and Schools](/reports) | reference | — / 14.7 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.2 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 17.1 min | *(none declared)* |
 | [Special education — four reports](/special-education) | reference | — / 7.5 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 13.2 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 12.7 min | *(none declared)* |
 | [Try growth](/try-growth) | tool | — / 21.2 min | *(none declared)* |
 | [What we cannot answer](/what-we-cannot-answer) | reference | — / 92.3 min | *(none declared)* |

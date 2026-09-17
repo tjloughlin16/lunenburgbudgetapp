@@ -142,7 +142,17 @@ async function readRoutes() {
       .filter(p => p.publish && p.publish <= today).map(p => p.slug).sort()
     console.log(`  ${posts.length} published blog posts at /blog/<slug>`)
   }
-  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`)]
+  // ONE PAGE PER BOARD. Client-rendered from boards.json until 17 September 2026, which
+  // meant a feed reader (or a search engine) fetching /boards/school-committee got the
+  // app shell: no title, no <link rel="alternate"> to the board's feed. The list comes
+  // from the payload, as the blog's comes from blog.json.
+  const boardsFile = join(APP, 'public', 'data', 'boards.json')
+  let boards = []
+  if (existsSync(boardsFile)) {
+    boards = JSON.parse(await readFile(boardsFile, 'utf8')).boards.map(b => b.slug).sort()
+    console.log(`  ${boards.length} boards at /boards/<slug>`)
+  }
+  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`)]
 }
 
 /** Serve dist, falling back to the PRISTINE shell.

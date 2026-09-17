@@ -1,6 +1,7 @@
 import { useState, type ReactElement } from 'react'
 import { feedSeasonFromPath, type Tab } from '../routes'
 import { H2, ReportShell, useReport } from '../components/report'
+import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, dayLabel, todayIso, type Join } from '../components/BoardsThisWeek'
 import { SeasonBoard } from './SeasonBoard'
 
@@ -391,6 +392,7 @@ function EpisodePage({ d, e, meetings }: { d: Payload; e: Payload['episodes'][nu
 }
 
 export function BudgetFeed() {
+  useFeedLink('/feeds/budget.xml', 'The budget feed — Lunenburg Budget Project')
   const seg = feedSeasonFromPath(window.location.pathname)
   const season = seg && /^fy\d{2}$/.test(seg) ? seg : null
   const episodeId = seg && !season ? seg : null
@@ -418,6 +420,7 @@ export function BudgetFeed() {
         ? `Finished — closed at the election of ${long(d.cycle_closes)}. Every line below links to the meeting or the document it is read from.`
         : `One page that follows the town’s budget from the first deficit figure to Town Meeting — what is decided, what is still on the table, what has only been said — updated from every board’s meetings.`}
       dataUrl={season ? `/data/budget-feed-${season}.json` : DATA}>
+      {!season && <Subscribe path="/feeds/budget.xml" what="a new line lands on the budget feed" />}
       {/* THE SEASON. TJ: "budget-feed probably should have a dropdown for each season." The
           list is in the payload -- the live cycle and every replay that has been built. */}
       <label className="flex items-center gap-2 mt-4 text-sm max-w-full">

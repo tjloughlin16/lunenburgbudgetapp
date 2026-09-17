@@ -1,7 +1,7 @@
 # The Lunenburg Budget Project
 
 An independent, checkable archive of the Lunenburg, Massachusetts town and school budget:
-26,506 documents, 128 datasets, and 12,088 agendas and sets
+26,506 documents, 128 datasets, and 12,089 agendas and sets
 of minutes across 51 town boards. Not affiliated with the Town of Lunenburg, the
 School Committee or the school district.
 

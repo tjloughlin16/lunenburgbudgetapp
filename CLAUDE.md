@@ -981,6 +981,8 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_boards.py --check
     python3 scripts/build_budget_feed.py                  # everything budget-related across every board, on one page
     python3 scripts/build_budget_feed.py --check
+    python3 scripts/build_feeds.py                        # Atom feeds under /feeds/: one per board, the budget feed, and all -- what a resident subscribes to
+    python3 scripts/build_feeds.py --check
     python3 scripts/write_budget_state.py --since DATE     # the deficit, the cuts, the proposals as put on the record, per meeting (claude -p)
     python3 scripts/write_budget_state.py --check
     python3 scripts/extract_scenario_lines.py            # every line the FY27 scenarios differ on -- the full cut list, footed to the documents

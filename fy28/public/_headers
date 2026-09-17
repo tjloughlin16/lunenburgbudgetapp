@@ -1,0 +1,6 @@
+# Cloudflare Pages honours this file (unlike _redirects, see that file). One rule: the
+# Atom feeds under /feeds/ are served as what they are, so a reader handed the URL
+# recognises it without sniffing. scripts/build_feeds.py writes them.
+/feeds/*
+  Content-Type: application/atom+xml; charset=utf-8
+  Cache-Control: public, max-age=900

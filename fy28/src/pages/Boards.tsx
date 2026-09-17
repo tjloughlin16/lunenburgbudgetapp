@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { boardSlugFromPath, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
+import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, daysFromToday, todayIso, type Join } from '../components/BoardsThisWeek'
 
 const TAB: Tab = 'boards'
@@ -42,6 +43,7 @@ export function Boards() {
   const { d, err } = useReport<Payload>('boards.json')
   const slug = boardSlugFromPath(window.location.pathname)
   const b = d && slug ? d.boards.find(x => x.slug === slug) : null
+  useFeedLink(slug ? (b ? `/feeds/${b.slug}.xml` : null) : '/feeds/all.xml', b ? `${b.name} — Lunenburg Budget Project` : 'Every board — Lunenburg Budget Project')
   if (!d) return <ReportShell tab={TAB} title={slug ? 'A board' : 'The boards'} err={err} loading={!err} dataUrl={DATA} />
   if (slug && !b) {
     return (
@@ -69,6 +71,7 @@ function Index({ d }: { d: Payload }) {
     <ReportShell tab={TAB} title="The boards — each one, in one place"
       standfirst={`${d.boards.length} boards and committees the town posts for. What is coming, what happened, every vote we have minutes for, where the time goes, and when budget planning lands — one page each.`}
       dataUrl={DATA}>
+      <Subscribe path="/feeds/all.xml" what="any board posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in — each board’s own page has a feed of its own" />
       <H2>The three that set the school budget</H2>
       <div className="grid gap-3 mt-4 sm:grid-cols-3">{three.map(b => <Card key={b.slug} b={b} />)}</div>
       <H2>Every other board</H2>
@@ -178,6 +181,8 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
           {b.page.facebook_scope !== 'board' && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>No Facebook page of its own is linked from the board’s page.</p>}
         </div>
       )}
+
+      <Subscribe path={`/feeds/${b.slug}.xml`} what={`the ${b.name} posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in`} />
 
       {/* ---------------------------------------------------------------- upcoming */}
       <H2 id="up">Upcoming meetings</H2>

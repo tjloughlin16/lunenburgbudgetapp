@@ -146,6 +146,11 @@ def published_data():
     return out
 
 
+def feeds():
+    """The Atom feeds (scripts/build_feeds.py): addresses a program subscribes to."""
+    return ['/feeds/' + os.path.basename(p) for p in sorted(glob.glob(os.path.join(PUB, 'feeds', '*.xml')))]
+
+
 def analyses():
     out = []
     for p in sorted(glob.glob(os.path.join(PUB, 'docs', 'analyses', '*.md'))):
@@ -171,7 +176,7 @@ def reference():
 def render():
     seen, urls = set(), []
     for u in (routes() + analysis_pages() + blog_pages() + board_pages() + feed_pages() + ENTRY + published_data()
-              + reference() + analyses()):
+              + reference() + analyses() + feeds()):
         if u not in seen:
             seen.add(u)
             urls.append(u)
@@ -181,7 +186,7 @@ def render():
     for u in urls:
         # A page a person reads is worth more to a crawler than one shard of a dataset,
         # but the endpoints must be here at all -- that is the whole point.
-        pri = '1.0' if u == '/' else ('0.8' if not u.startswith(('/api/', '/data/', '/docs/'))
+        pri = '1.0' if u == '/' else ('0.8' if not u.startswith(('/api/', '/data/', '/docs/', '/feeds/'))
                                       else '0.5')
         lines += ['  <url>', f'    <loc>{SITE}{u}</loc>',
                   f'    <lastmod>{today}</lastmod>',
@@ -205,7 +210,7 @@ def main():
         print(f'ok: sitemap.xml lists {len(urls)} URLs')
         return 0
     open(OUT, 'w').write(body)
-    pages = sum(1 for u in urls if not u.startswith(('/api/', '/data/', '/docs/')))
+    pages = sum(1 for u in urls if not u.startswith(('/api/', '/data/', '/docs/', '/feeds/')))
     print(f'wrote sitemap.xml: {len(urls)} URLs — {pages} pages a person reads, '
           f'{len(urls) - pages} addresses a program needs')
     return 0

@@ -106,6 +106,7 @@ CHECKS = [
     ('build_one_big_report.py', ['--check']),
     ('build_boards.py', ['--check']),
     ('build_budget_feed.py', ['--check']),
+    ('build_feeds.py', ['--check']),
     ('extract_scenario_lines.py', ['--check']),
     ('build_budget_season.py', ['fy27', '--check']),
     ('build_budget_season.py', ['fy26', '--check']),
