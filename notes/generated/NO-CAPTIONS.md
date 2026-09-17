@@ -24,7 +24,7 @@ Recordings without captions against recordings whose captions were fetched, by m
 | 2023 | 0 | 100 | 0% |
 | 2024 | 2 | 96 | 2% |
 | 2025 | 0 | 103 | 0% |
-| 2026 | 1 | 92 | 1% |
+| 2026 | 1 | 94 | 1% |
 | 2027 | 0 | 2 | 0% |
 
 ## Select Board — 55
