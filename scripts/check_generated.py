@@ -101,6 +101,7 @@ CHECKS = [
     ('tag_document_affinity.py', ['--check']),
     ('build_enrollment.py', ['--check']),
     ('build_homes_and_students.py', ['--check']),
+    ('build_board_posting.py', ['--check']),
     ('build_big_picture.py', ['--check']),
     ('build_property_owners.py', ['--check']),
     ('build_one_big_report.py', ['--check']),

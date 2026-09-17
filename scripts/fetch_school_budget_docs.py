@@ -34,6 +34,13 @@ import zipfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = ('https://www.lunenburgschools.net/department-directory/'
         'superintendent-of-schools/school-budget-information')
+# THE SCHOOL COMMITTEE'S OWN MEETINGS PAGE. TJ, 17 September 2026: "do we have this
+# page captured, and included in the refresh list ... they post the meeting docs there.
+# SOME of them." A Google Site: for each school year, a heading per meeting date and
+# under it the agenda and every supporting document as a Drive link -- the packet the
+# town's Agenda Center never carries. Filed under docs/sc-meetings/, each row carrying
+# the school year and the meeting date read off the heading it sat under.
+MEETINGS_PAGE = 'https://www.lunenburgschools.net/school-committee-1/meetings'
 OUT = os.path.join(ROOT, 'sources', 'district-budget')
 DOCS = os.path.join(OUT, 'docs')
 TEXT = os.path.join(OUT, 'text')
@@ -71,13 +78,37 @@ def slug(s):
     return re.sub(r'-+', '-', s)[:70] or 'untitled'
 
 
-def links():
-    """Every Drive/Docs link on the page, with the text that labels it."""
-    html = get(PAGE)[0].decode('utf8', 'ignore')
-    out, seen = [], set()
-    for m in re.finditer(r'<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html, re.S | re.I):
-        href, label = m.group(1), re.sub(r'<[^>]+>', '', m.group(2))
-        label = re.sub(r'\s+', ' ', label).strip()
+def _date(text):
+    """A meeting date as the page writes it -- 7-29-26, 9-6-23, 12-10-2025 -- as ISO."""
+    m = re.search(r'\b(\d{1,2})-(\d{1,2})-(\d{2}|\d{4})\b', text or '')
+    if not m:
+        return ''
+    y = int(m.group(3))
+    y = y + 2000 if y < 100 else y
+    try:
+        return '%04d-%02d-%02d' % (y, int(m.group(1)), int(m.group(2)))
+    except ValueError:
+        return ''
+
+
+def links(page=PAGE, subdir='', seen=None):
+    """Every Drive/Docs link on a page, with the text that labels it and -- walking the
+    page in order -- the school-year and meeting-date headings it sits under."""
+    import html as _html
+    html = get(page)[0].decode('utf8', 'ignore')
+    out, seen = [], set() if seen is None else seen
+    year = meeting = ''
+    for m in re.finditer(r'<h([1-6])[^>]*>(.*?)</h\1>|<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html, re.S | re.I):
+        if m.group(2) is not None:
+            h = re.sub(r'\s+', ' ', _html.unescape(re.sub(r'<[^>]+>', '', m.group(2)))).strip()
+            yr = re.search(r'(\d{4})-(\d{4})', h)
+            if yr and 'MEETING DOCUMENTS' in h.upper():
+                year, meeting = yr.group(0), ''
+            elif _date(h):
+                meeting = _date(h)
+            continue
+        href, label = m.group(3), re.sub(r'<[^>]+>', '', m.group(4))
+        label = re.sub(r'\s+', ' ', _html.unescape(label)).strip()
         fid = re.search(r'/d/([A-Za-z0-9_-]{20,})|[?&]id=([A-Za-z0-9_-]{20,})', href)
         if not fid or not label:
             continue
@@ -87,7 +118,8 @@ def links():
         seen.add(gid)
         kind = ('sheet' if '/spreadsheets/' in href else
                 'doc' if '/document/' in href else 'file')
-        out.append(dict(id=gid, label=label, url=href, kind=kind))
+        out.append(dict(id=gid, label=label, url=href, kind=kind, subdir=subdir,
+                        school_year=year if subdir else '', meeting_date=(meeting or _date(label)) if subdir else ''))
     return out
 
 
@@ -185,8 +217,14 @@ def main():
 
     os.makedirs(DOCS, exist_ok=True)
     os.makedirs(TEXT, exist_ok=True)
-    items = links()
+    seen = set()
+    items = links(PAGE, '', seen)
     print(f'{len(items)} documents linked from the district budget page')
+    meetings = links(MEETINGS_PAGE, 'sc-meetings', seen)
+    print(f'{len(meetings)} documents linked from the School Committee meetings page')
+    items += meetings
+    os.makedirs(os.path.join(DOCS, 'sc-meetings'), exist_ok=True)
+    os.makedirs(os.path.join(TEXT, 'sc-meetings'), exist_ok=True)
     if a.list:
         for i in items:
             print(f"  {i['kind']:<6} {i['label'][:70]}")
@@ -208,26 +246,31 @@ def main():
 
     rows = []
     for n, it in enumerate(items, 1):
-        base = slug(it['label'])
-        existing = [f for f in os.listdir(DOCS) if os.path.splitext(f)[0] == base]
+        # A meetings-page document is named by its meeting date and its label, because
+        # "School Committee Agenda" is the label of a hundred different agendas.
+        base = slug(it['label']) if not it['subdir'] else slug('%s %s' % (it['meeting_date'] or it['school_year'], it['label']))
+        docs_dir = os.path.join(DOCS, it['subdir']) if it['subdir'] else DOCS
+        text_dir = os.path.join(TEXT, it['subdir']) if it['subdir'] else TEXT
+        existing = [f for f in os.listdir(docs_dir) if os.path.splitext(f)[0] == base]
         try:
             if existing:
-                path = os.path.join(DOCS, existing[0])
+                path = os.path.join(docs_dir, existing[0])
                 body = open(path, 'rb').read()
                 note = 'already had it'
             else:
                 body = download(it)
-                path = os.path.join(DOCS, base + sniff(body))
+                path = os.path.join(docs_dir, base + sniff(body))
                 open(path, 'wb').write(body)
                 note = 'downloaded'
                 time.sleep(0.6)
         except Exception as e:
             print(f'  [{n:>2}] FAILED  {it["label"][:56]}  {type(e).__name__}')
             rows.append(dict(label=it['label'], upstream=it['url'], local='', text='',
-                             bytes=0, sha256='', read='download failed'))
+                             bytes=0, sha256='', read='download failed', page=it['subdir'] or 'budget',
+                             school_year=it['school_year'], meeting_date=it['meeting_date']))
             continue
 
-        txt = os.path.join(TEXT, base + '.txt')
+        txt = os.path.join(text_dir, base + '.txt')
         if os.path.exists(txt) and os.path.getsize(txt) > 0:
             how = was_read.get(it['label'], 'already had it')
         else:
@@ -236,13 +279,14 @@ def main():
             label=it['label'], upstream=it['url'],
             local=os.path.relpath(path, ROOT), text=os.path.relpath(txt, ROOT)
             if os.path.exists(txt) else '',
-            bytes=len(body), sha256=hashlib.sha256(body).hexdigest(), read=how))
+            bytes=len(body), sha256=hashlib.sha256(body).hexdigest(), read=how,
+            page=it['subdir'] or 'budget', school_year=it['school_year'], meeting_date=it['meeting_date']))
         print(f'  [{n:>2}] {note:<14} {os.path.splitext(path)[1]:<6} {len(body)/1000:>7.0f}KB '
               f'{how:<16} {it["label"][:44]}')
 
     with open(MANIFEST, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=['label', 'upstream', 'local', 'text',
-                                           'bytes', 'sha256', 'read'])
+                                           'bytes', 'sha256', 'read', 'page', 'school_year', 'meeting_date'])
         w.writeheader()
         w.writerows(rows)
     ok = sum(1 for r in rows if r['local'])

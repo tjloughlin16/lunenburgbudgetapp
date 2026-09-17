@@ -132,6 +132,9 @@ CATEGORIES = [
         ('what the votes decided', [
             'fy27-and-the-override', 'fy27-cut-reconciliation',
         ]),
+        # THE BOARDS THEMSELVES, as a subject. TJ, 17 September 2026: "a sort of 'board
+        # analysis' page" -- what each board posts, measured on the town's own site.
+        ('how the boards work', ['boardposting']),
         # THE LEVERS. TJ, 16 September 2026: "we need individual reports for the big
         # concepts in the budget crisis" -- for the town, with the crisis page keeping
         # the high level. Overrides moved here from Go deeper; commercial development

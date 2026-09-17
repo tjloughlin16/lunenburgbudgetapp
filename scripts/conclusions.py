@@ -437,6 +437,12 @@ TOPICS = [
      'an override does and for how long, and what commercial development would have to '
      'look like to do the same job.',
      ['override', 'growth']),
+    # THE BOARDS AS A SUBJECT: what they post, measured on the town's own site. One
+    # report today; the heading is there for the ones that follow.
+    ('boards', 'The boards \u2014 how they post',
+     'Which meetings got minutes, board by board and year by year, and which were '
+     'recorded.',
+     ['boardposting']),
 ]
 
 # Tabs in the Analyses area that are not reports and belong in no topic: the Markdown
