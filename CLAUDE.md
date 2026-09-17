@@ -983,6 +983,9 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_fund_owners.py --check          # ...and fail if a report prints one the registry lacks, or an owner is nobody
     python3 scripts/build_finance.py                      # every measure by owner, FY26 figures beside the annual-report history: /accounts, /departments, /boards/<slug>/finance
     python3 scripts/build_finance.py --check
+    python3 scripts/extract_parks_myrec.py --check         # the Parks registration system's FY2025 sales, tied to the printed totals
+    python3 scripts/build_parks.py                        # Parks & Recreation: the department, its fund since FY2011, its sales, its grounds bid
+    python3 scripts/build_parks.py --check
     python3 scripts/build_boards.py                       # one page per board: upcoming, recent, every vote, time, budget calendar
     python3 scripts/build_boards.py --check
     python3 scripts/build_budget_feed.py                  # everything budget-related across every board, on one page

@@ -509,6 +509,60 @@
    "so_what": "6.0% of the $26,332,564 appropriation, in money Town Meeting never votes on: revolving funds, grants, gifts."
   },
   {
+   "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); the FY26 year-end expense report, department 650 summed from its accounts.",
+   "bearing": "sizes",
+   "claim": "The parks\u2019 own fee fund held $84,818 at 31 March 2026 \u2014 60% of the $140,759 voted for the year.",
+   "detail": "The general fund voted the department $140,759 for FY2026 as revised and $113,350 of it was spent by year end (the FY26 year-end budget report, department 650). Beside that, fund 1500 \u2014 programme and beach fees, kept in a revolving fund the department spends on the parks that raise them \u2014 carried $84,818 at the end of March, after $7,616 in and $9,766 out since July. A revolving balance is not a surplus the town can move: it is committed to the purpose that raised it, by the vote that created the fund.",
+   "figure": "held",
+   "figures": {
+    "appro": {
+     "text": "$140,759",
+     "unit": "",
+     "value": 140759.43
+    },
+    "held": {
+     "text": "$84,818",
+     "unit": "in the Park Revolving Fund, 31 March 2026",
+     "value": 84817.56
+    },
+    "in": {
+     "text": "$7,616",
+     "unit": "",
+     "value": 7615.97
+    },
+    "out": {
+     "text": "$9,766",
+     "unit": "",
+     "value": 9765.55
+    },
+    "share": {
+     "text": "60%",
+     "unit": "",
+     "value": 60.25710675298984
+    },
+    "spent_appro": {
+     "text": "$113,350",
+     "unit": "",
+     "value": 113350.2
+    }
+   },
+   "id": "the-parks-reserve",
+   "kind": "measured",
+   "literals": [
+    "1500",
+    "650",
+    "FY26",
+    "2026",
+    "31"
+   ],
+   "not_shown": "What the balance is spoken for, or what the last quarter of FY2026 did. The report stops at 31 March.",
+   "report": "parks",
+   "report_title": "Parks & Recreation \u2014 the department, its fund, its sales, its grounds",
+   "report_url": "/parks-and-recreation",
+   "see": [],
+   "so_what": "Money the parks may spend without a vote; it took in $7,616 and spent $9,766 in nine months of FY2026."
+  },
+  {
    "basis": "DLS new growth file, Lunenburg rows: total new growth value minus residential new growth value, by fiscal year. Averages over FY2024\u2013FY2026 and the eleven years before them.",
    "bearing": "sizes",
    "claim": "Non-residential new growth ran 3.3 times its prior eleven-year pace in FY2024\u2013FY2026.",
@@ -4046,6 +4100,267 @@
    "id": "schoolfinance",
    "title": "The School Committee\u2019s finances \u2014 every fund and line it owns",
    "url": "/boards/school-committee/finance"
+  },
+  {
+   "about": "Parks & Recreation: what the department is voted, what its own fee fund holds and has done since FY2011, what the registration system took in for FY2025, and what a contractor bid to keep the grounds.",
+   "conclusions": [
+    {
+     "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); the FY26 year-end expense report, department 650 summed from its accounts.",
+     "bearing": "sizes",
+     "claim": "The parks\u2019 own fee fund held $84,818 at 31 March 2026 \u2014 60% of the $140,759 voted for the year.",
+     "detail": "The general fund voted the department $140,759 for FY2026 as revised and $113,350 of it was spent by year end (the FY26 year-end budget report, department 650). Beside that, fund 1500 \u2014 programme and beach fees, kept in a revolving fund the department spends on the parks that raise them \u2014 carried $84,818 at the end of March, after $7,616 in and $9,766 out since July. A revolving balance is not a surplus the town can move: it is committed to the purpose that raised it, by the vote that created the fund.",
+     "figure": "held",
+     "figures": {
+      "appro": {
+       "text": "$140,759",
+       "unit": "",
+       "value": 140759.43
+      },
+      "held": {
+       "text": "$84,818",
+       "unit": "in the Park Revolving Fund, 31 March 2026",
+       "value": 84817.56
+      },
+      "in": {
+       "text": "$7,616",
+       "unit": "",
+       "value": 7615.97
+      },
+      "out": {
+       "text": "$9,766",
+       "unit": "",
+       "value": 9765.55
+      },
+      "share": {
+       "text": "60%",
+       "unit": "",
+       "value": 60.25710675298984
+      },
+      "spent_appro": {
+       "text": "$113,350",
+       "unit": "",
+       "value": 113350.2
+      }
+     },
+     "id": "the-parks-reserve",
+     "kind": "measured",
+     "literals": [
+      "1500",
+      "650",
+      "FY26",
+      "2026",
+      "31"
+     ],
+     "not_shown": "What the balance is spoken for, or what the last quarter of FY2026 did. The report stops at 31 March.",
+     "see": [],
+     "so_what": "Money the parks may spend without a vote; it took in $7,616 and spent $9,766 in nine months of FY2026."
+    },
+    {
+     "basis": "sources/data/special-revenue-read.csv (fund \u201cPark User Fees\u201d, FY2011\u2013FY2023); sources/data/special-revenue-funds.csv rows 1500 for FY2024 and FY2025, column v2; the FY26 report\u2019s ACCOUNT BALANCE.",
+     "bearing": "sizes",
+     "claim": "The fund stood at $10,019 in FY2011, fell to $0 in FY2015, and was $91,726 by 30 June 2025.",
+     "detail": "The annual reports print the fund as \u201cPark User Fees\u201d under Parks & Recreation: balance forward, receipts, disbursements and balance carried, FY2011 to FY2023, every year tying to the report\u2019s own totals. FY2023 closed at $58,200. The FY2024 and FY2025 reports print a balance only, transcribed here; FY2025\u2019s $91,726 is not the $86,967 the FY26 report opens with, and nothing in the archive says why \u2014 an audit adjustment, an encumbrance, or a misread digit all fit.",
+     "figure": "fy25",
+     "figures": {
+      "first": {
+       "text": "$10,019",
+       "unit": "in the fund at the end of FY2011",
+       "value": 10019.25
+      },
+      "first_fy": {
+       "text": "FY2011",
+       "unit": "",
+       "value": 2011
+      },
+      "fy25": {
+       "text": "$91,726",
+       "unit": "",
+       "value": 91726.3
+      },
+      "last_read": {
+       "text": "$58,200",
+       "unit": "",
+       "value": 58199.61
+      },
+      "low": {
+       "text": "$0",
+       "unit": "",
+       "value": 0.0
+      },
+      "low_fy": {
+       "text": "FY2015",
+       "unit": "",
+       "value": 2015
+      },
+      "opening26": {
+       "text": "$86,967",
+       "unit": "",
+       "value": 86967.14
+      }
+     },
+     "id": "the-fund-since-2011",
+     "kind": "measured",
+     "literals": [
+      "FY2011",
+      "FY2023",
+      "FY2024",
+      "FY2025",
+      "FY26",
+      "2025",
+      "30",
+      "1500"
+     ],
+     "not_shown": "Receipts and spending for FY2024 and FY2025: the reports for those years print a balance and no flow.",
+     "see": [],
+     "so_what": "Thirteen years read and tied, two transcribed \u2014 and FY2025 does not chain to the FY26 opening."
+    },
+    {
+     "basis": "sources/data/parks-myrec-sales-fy2025.csv, extracted by scripts/extract_parks_myrec.py from the two MyRec reports and checked against their printed totals.",
+     "bearing": "sizes",
+     "claim": "The registration system recorded $47,784 in FY2025: 650 programme places and 164 beach passes.",
+     "detail": "Two printouts from MyRec, the system the department sells through, both footing to their own totals: $38,956 across 17 programmes, $8,828 across four membership lines. Non-residents were 390 of 814 registrations and paid $23,972. That is what the system recorded, not what reached the town\u2019s books \u2014 the FY2025 fund report that would show the deposits is not in the archive, and the general fund\u2019s REC FEES line was estimated at zero for FY2026.",
+     "figure": "all",
+     "figures": {
+      "all": {
+       "text": "$47,784",
+       "unit": "recorded by MyRec, 1 July 2024 to 30 June 2025",
+       "value": 47783.5
+      },
+      "all_n": {
+       "text": "814",
+       "unit": "",
+       "value": 814
+      },
+      "mem_n": {
+       "text": "164",
+       "unit": "",
+       "value": 164
+      },
+      "mem_total": {
+       "text": "$8,828",
+       "unit": "",
+       "value": 8828.0
+      },
+      "nonres": {
+       "text": "$23,972",
+       "unit": "",
+       "value": 23972.5
+      },
+      "nonres_n": {
+       "text": "390",
+       "unit": "",
+       "value": 390
+      },
+      "nonres_share": {
+       "text": "50%",
+       "unit": "",
+       "value": 50.16899138824071
+      },
+      "prog_count": {
+       "text": "17",
+       "unit": "",
+       "value": 17
+      },
+      "prog_n": {
+       "text": "650",
+       "unit": "",
+       "value": 650
+      },
+      "prog_total": {
+       "text": "$38,956",
+       "unit": "",
+       "value": 38955.5
+      },
+      "top": {
+       "text": "$17,060",
+       "unit": "",
+       "value": 17060.5
+      }
+     },
+     "id": "what-myrec-took-in",
+     "kind": "measured",
+     "literals": [
+      "2024",
+      "2025",
+      "FY2025",
+      "FY2026",
+      "1"
+     ],
+     "not_shown": "Refunds, waivers, or what the programmes cost to run \u2014 a sales report is the fee side only. And a 2024 season sold partly before 1 July 2024 is undercounted in this window.",
+     "see": [],
+     "so_what": "50% of it \u2014 $23,972 \u2014 was paid by non-residents; the largest programme was Snapology-Stem Programs at $17,060."
+    },
+    {
+     "basis": "sources/town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf, the Location Total line, read from the text layer and footed.",
+     "bearing": "sizes",
+     "claim": "Grounds upkeep at six parks was bid at $44,590 a year \u2014 32% of what the department is voted.",
+     "detail": "The bid sheet prices mowing, weeding, turf, clean-ups and infield work per park for the year from 1 July 2024: Fitzgerald Field $9,875; McNally Field $7,500; Marshall Park $20,975; Memorial Park $2,640; Town Beach $2,300; Wallis Park $1,300. The total is the sheet\u2019s own six location totals summed. It is a vendor\u2019s figure (stated), and the FY2026 appropriation it is set against is $140,759.",
+     "figure": "bid",
+     "figures": {
+      "appro": {
+       "text": "$140,759",
+       "unit": "",
+       "value": 140759.43
+      },
+      "bid": {
+       "text": "$44,590",
+       "unit": "bid for year one of grounds maintenance, from 1 July 2024",
+       "value": 44590
+      },
+      "p_0": {
+       "text": "$9,875",
+       "unit": "",
+       "value": 9875
+      },
+      "p_1": {
+       "text": "$7,500",
+       "unit": "",
+       "value": 7500
+      },
+      "p_2": {
+       "text": "$20,975",
+       "unit": "",
+       "value": 20975
+      },
+      "p_3": {
+       "text": "$2,640",
+       "unit": "",
+       "value": 2640
+      },
+      "p_4": {
+       "text": "$2,300",
+       "unit": "",
+       "value": 2300
+      },
+      "p_5": {
+       "text": "$1,300",
+       "unit": "",
+       "value": 1300
+      },
+      "share": {
+       "text": "32%",
+       "unit": "",
+       "value": 31.67816181125485
+      }
+     },
+     "id": "what-the-grounds-cost",
+     "kind": "measured",
+     "literals": [
+      "1",
+      "2024",
+      "FY2026"
+     ],
+     "not_shown": "Whether this bid was accepted, or what the town paid for grounds work in any year: the FY2024 Parks budget report with its journal detail is in the archive as an image and has not been read.",
+     "see": [],
+     "so_what": "$20,975 is Marshall Park alone. A bid is an offer; what was paid is in the ledger, not here."
+    }
+   ],
+   "count": 4,
+   "data": "/data/parks.json",
+   "generator": "scripts/build_parks.py",
+   "id": "parks",
+   "title": "Parks & Recreation \u2014 the department, its fund, its sales, its grounds",
+   "url": "/parks-and-recreation"
   },
   {
    "about": "What a slower-growing health line is worth to the gap, and the three routes to one \u2014 a narrower plan, a smaller pool, a larger employee share \u2014 each priced, each landing on somebody.",
@@ -16951,7 +17266,7 @@
   },
   {
    "about": "Who lives in Lunenburg, and the two reports about money a household hands over, side by side.",
-   "conclusions": 20,
+   "conclusions": 24,
    "key": "household",
    "reports": [
     {
@@ -18220,6 +18535,267 @@
      "id": "families",
      "title": "What a family actually pays",
      "url": "/what-families-pay"
+    },
+    {
+     "about": "Parks & Recreation: what the department is voted, what its own fee fund holds and has done since FY2011, what the registration system took in for FY2025, and what a contractor bid to keep the grounds.",
+     "conclusions": [
+      {
+       "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); the FY26 year-end expense report, department 650 summed from its accounts.",
+       "bearing": "sizes",
+       "claim": "The parks\u2019 own fee fund held $84,818 at 31 March 2026 \u2014 60% of the $140,759 voted for the year.",
+       "detail": "The general fund voted the department $140,759 for FY2026 as revised and $113,350 of it was spent by year end (the FY26 year-end budget report, department 650). Beside that, fund 1500 \u2014 programme and beach fees, kept in a revolving fund the department spends on the parks that raise them \u2014 carried $84,818 at the end of March, after $7,616 in and $9,766 out since July. A revolving balance is not a surplus the town can move: it is committed to the purpose that raised it, by the vote that created the fund.",
+       "figure": "held",
+       "figures": {
+        "appro": {
+         "text": "$140,759",
+         "unit": "",
+         "value": 140759.43
+        },
+        "held": {
+         "text": "$84,818",
+         "unit": "in the Park Revolving Fund, 31 March 2026",
+         "value": 84817.56
+        },
+        "in": {
+         "text": "$7,616",
+         "unit": "",
+         "value": 7615.97
+        },
+        "out": {
+         "text": "$9,766",
+         "unit": "",
+         "value": 9765.55
+        },
+        "share": {
+         "text": "60%",
+         "unit": "",
+         "value": 60.25710675298984
+        },
+        "spent_appro": {
+         "text": "$113,350",
+         "unit": "",
+         "value": 113350.2
+        }
+       },
+       "id": "the-parks-reserve",
+       "kind": "measured",
+       "literals": [
+        "1500",
+        "650",
+        "FY26",
+        "2026",
+        "31"
+       ],
+       "not_shown": "What the balance is spoken for, or what the last quarter of FY2026 did. The report stops at 31 March.",
+       "see": [],
+       "so_what": "Money the parks may spend without a vote; it took in $7,616 and spent $9,766 in nine months of FY2026."
+      },
+      {
+       "basis": "sources/data/special-revenue-read.csv (fund \u201cPark User Fees\u201d, FY2011\u2013FY2023); sources/data/special-revenue-funds.csv rows 1500 for FY2024 and FY2025, column v2; the FY26 report\u2019s ACCOUNT BALANCE.",
+       "bearing": "sizes",
+       "claim": "The fund stood at $10,019 in FY2011, fell to $0 in FY2015, and was $91,726 by 30 June 2025.",
+       "detail": "The annual reports print the fund as \u201cPark User Fees\u201d under Parks & Recreation: balance forward, receipts, disbursements and balance carried, FY2011 to FY2023, every year tying to the report\u2019s own totals. FY2023 closed at $58,200. The FY2024 and FY2025 reports print a balance only, transcribed here; FY2025\u2019s $91,726 is not the $86,967 the FY26 report opens with, and nothing in the archive says why \u2014 an audit adjustment, an encumbrance, or a misread digit all fit.",
+       "figure": "fy25",
+       "figures": {
+        "first": {
+         "text": "$10,019",
+         "unit": "in the fund at the end of FY2011",
+         "value": 10019.25
+        },
+        "first_fy": {
+         "text": "FY2011",
+         "unit": "",
+         "value": 2011
+        },
+        "fy25": {
+         "text": "$91,726",
+         "unit": "",
+         "value": 91726.3
+        },
+        "last_read": {
+         "text": "$58,200",
+         "unit": "",
+         "value": 58199.61
+        },
+        "low": {
+         "text": "$0",
+         "unit": "",
+         "value": 0.0
+        },
+        "low_fy": {
+         "text": "FY2015",
+         "unit": "",
+         "value": 2015
+        },
+        "opening26": {
+         "text": "$86,967",
+         "unit": "",
+         "value": 86967.14
+        }
+       },
+       "id": "the-fund-since-2011",
+       "kind": "measured",
+       "literals": [
+        "FY2011",
+        "FY2023",
+        "FY2024",
+        "FY2025",
+        "FY26",
+        "2025",
+        "30",
+        "1500"
+       ],
+       "not_shown": "Receipts and spending for FY2024 and FY2025: the reports for those years print a balance and no flow.",
+       "see": [],
+       "so_what": "Thirteen years read and tied, two transcribed \u2014 and FY2025 does not chain to the FY26 opening."
+      },
+      {
+       "basis": "sources/data/parks-myrec-sales-fy2025.csv, extracted by scripts/extract_parks_myrec.py from the two MyRec reports and checked against their printed totals.",
+       "bearing": "sizes",
+       "claim": "The registration system recorded $47,784 in FY2025: 650 programme places and 164 beach passes.",
+       "detail": "Two printouts from MyRec, the system the department sells through, both footing to their own totals: $38,956 across 17 programmes, $8,828 across four membership lines. Non-residents were 390 of 814 registrations and paid $23,972. That is what the system recorded, not what reached the town\u2019s books \u2014 the FY2025 fund report that would show the deposits is not in the archive, and the general fund\u2019s REC FEES line was estimated at zero for FY2026.",
+       "figure": "all",
+       "figures": {
+        "all": {
+         "text": "$47,784",
+         "unit": "recorded by MyRec, 1 July 2024 to 30 June 2025",
+         "value": 47783.5
+        },
+        "all_n": {
+         "text": "814",
+         "unit": "",
+         "value": 814
+        },
+        "mem_n": {
+         "text": "164",
+         "unit": "",
+         "value": 164
+        },
+        "mem_total": {
+         "text": "$8,828",
+         "unit": "",
+         "value": 8828.0
+        },
+        "nonres": {
+         "text": "$23,972",
+         "unit": "",
+         "value": 23972.5
+        },
+        "nonres_n": {
+         "text": "390",
+         "unit": "",
+         "value": 390
+        },
+        "nonres_share": {
+         "text": "50%",
+         "unit": "",
+         "value": 50.16899138824071
+        },
+        "prog_count": {
+         "text": "17",
+         "unit": "",
+         "value": 17
+        },
+        "prog_n": {
+         "text": "650",
+         "unit": "",
+         "value": 650
+        },
+        "prog_total": {
+         "text": "$38,956",
+         "unit": "",
+         "value": 38955.5
+        },
+        "top": {
+         "text": "$17,060",
+         "unit": "",
+         "value": 17060.5
+        }
+       },
+       "id": "what-myrec-took-in",
+       "kind": "measured",
+       "literals": [
+        "2024",
+        "2025",
+        "FY2025",
+        "FY2026",
+        "1"
+       ],
+       "not_shown": "Refunds, waivers, or what the programmes cost to run \u2014 a sales report is the fee side only. And a 2024 season sold partly before 1 July 2024 is undercounted in this window.",
+       "see": [],
+       "so_what": "50% of it \u2014 $23,972 \u2014 was paid by non-residents; the largest programme was Snapology-Stem Programs at $17,060."
+      },
+      {
+       "basis": "sources/town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf, the Location Total line, read from the text layer and footed.",
+       "bearing": "sizes",
+       "claim": "Grounds upkeep at six parks was bid at $44,590 a year \u2014 32% of what the department is voted.",
+       "detail": "The bid sheet prices mowing, weeding, turf, clean-ups and infield work per park for the year from 1 July 2024: Fitzgerald Field $9,875; McNally Field $7,500; Marshall Park $20,975; Memorial Park $2,640; Town Beach $2,300; Wallis Park $1,300. The total is the sheet\u2019s own six location totals summed. It is a vendor\u2019s figure (stated), and the FY2026 appropriation it is set against is $140,759.",
+       "figure": "bid",
+       "figures": {
+        "appro": {
+         "text": "$140,759",
+         "unit": "",
+         "value": 140759.43
+        },
+        "bid": {
+         "text": "$44,590",
+         "unit": "bid for year one of grounds maintenance, from 1 July 2024",
+         "value": 44590
+        },
+        "p_0": {
+         "text": "$9,875",
+         "unit": "",
+         "value": 9875
+        },
+        "p_1": {
+         "text": "$7,500",
+         "unit": "",
+         "value": 7500
+        },
+        "p_2": {
+         "text": "$20,975",
+         "unit": "",
+         "value": 20975
+        },
+        "p_3": {
+         "text": "$2,640",
+         "unit": "",
+         "value": 2640
+        },
+        "p_4": {
+         "text": "$2,300",
+         "unit": "",
+         "value": 2300
+        },
+        "p_5": {
+         "text": "$1,300",
+         "unit": "",
+         "value": 1300
+        },
+        "share": {
+         "text": "32%",
+         "unit": "",
+         "value": 31.67816181125485
+        }
+       },
+       "id": "what-the-grounds-cost",
+       "kind": "measured",
+       "literals": [
+        "1",
+        "2024",
+        "FY2026"
+       ],
+       "not_shown": "Whether this bid was accepted, or what the town paid for grounds work in any year: the FY2024 Parks budget report with its journal detail is in the archive as an image and has not been read.",
+       "see": [],
+       "so_what": "$20,975 is Marshall Park alone. A bid is an offer; what was paid is in the ledger, not here."
+      }
+     ],
+     "count": 4,
+     "data": "/data/parks.json",
+     "generator": "scripts/build_parks.py",
+     "id": "parks",
+     "title": "Parks & Recreation \u2014 the department, its fund, its sales, its grounds",
+     "url": "/parks-and-recreation"
     }
    ],
    "title": "The households \u2014 who they are, and what they pay"
@@ -18759,16 +19335,16 @@
  "totals": {
   "bearing": {
    "lever": 20,
-   "sizes": 98,
+   "sizes": 102,
    "unclassified": 0
   },
-  "conclusions": 118,
+  "conclusions": 122,
   "document_words": 80145,
   "documents": 17,
   "hypothesis": 2,
-  "measured": 116,
-  "reports": 40,
-  "with_conclusions": 33,
+  "measured": 120,
+  "reports": 41,
+  "with_conclusions": 34,
   "without_conclusions": 7
  }
 }

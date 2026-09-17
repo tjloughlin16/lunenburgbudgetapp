@@ -152,6 +152,9 @@ CATEGORIES = [
         # THE BOARDS THEMSELVES, as a subject. TJ, 17 September 2026: "a sort of 'board
         # analysis' page" -- what each board posts, measured on the town's own site.
         ('the boards, compared', ['boardcompare']),
+        # A DEPARTMENT, READ WHOLE. TJ, 17 September 2026: "a report for parks, under 'the
+        # town' for whatever data you got."
+        ('a department, whole: parks and recreation', ['parks']),
     ]),
     # A FOURTH SHELF, AND THE ARGUMENT FOR IT.
     #

@@ -1,0 +1,1003 @@
+{
+ "about": "Parks & Recreation: what the department is voted, what its own fee fund holds and has done since FY2011, what the registration system took in for FY2025, and what a contractor bid to keep the grounds.",
+ "appropriation": {
+  "available": 23140.83,
+  "code": "650",
+  "encumbered": 4268.4,
+  "expended": 113350.2,
+  "name": "PARKS & RECREATION",
+  "original": 134433.6,
+  "period": 12,
+  "revised": 140759.43
+ },
+ "as_of": {
+  "fund": "2026-03-31",
+  "ledger": "FY2026 year end (period 12), unaudited",
+  "myrec": "1 July 2024 – 30 June 2025"
+ },
+ "bid": {
+  "rows": [
+   {
+    "mowing": 2975,
+    "park": "Fitzgerald Field",
+    "year_one": 9875
+   },
+   {
+    "mowing": 2550,
+    "park": "McNally Field",
+    "year_one": 7500
+   },
+   {
+    "mowing": 8500,
+    "park": "Marshall Park",
+    "year_one": 20975
+   },
+   {
+    "mowing": 850,
+    "park": "Memorial Park",
+    "year_one": 2640
+   },
+   {
+    "mowing": null,
+    "park": "Town Beach",
+    "year_one": 2300
+   },
+   {
+    "mowing": null,
+    "park": "Wallis Park",
+    "year_one": 1300
+   }
+  ],
+  "total": 44590
+ },
+ "conclusions": [
+  {
+   "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); the FY26 year-end expense report, department 650 summed from its accounts.",
+   "bearing": "sizes",
+   "claim": "The parks’ own fee fund held $84,818 at 31 March 2026 — 60% of the $140,759 voted for the year.",
+   "detail": "The general fund voted the department $140,759 for FY2026 as revised and $113,350 of it was spent by year end (the FY26 year-end budget report, department 650). Beside that, fund 1500 — programme and beach fees, kept in a revolving fund the department spends on the parks that raise them — carried $84,818 at the end of March, after $7,616 in and $9,766 out since July. A revolving balance is not a surplus the town can move: it is committed to the purpose that raised it, by the vote that created the fund.",
+   "figure": "held",
+   "figures": {
+    "appro": {
+     "text": "$140,759",
+     "unit": "",
+     "value": 140759.43
+    },
+    "held": {
+     "text": "$84,818",
+     "unit": "in the Park Revolving Fund, 31 March 2026",
+     "value": 84817.56
+    },
+    "in": {
+     "text": "$7,616",
+     "unit": "",
+     "value": 7615.97
+    },
+    "out": {
+     "text": "$9,766",
+     "unit": "",
+     "value": 9765.55
+    },
+    "share": {
+     "text": "60%",
+     "unit": "",
+     "value": 60.25710675298984
+    },
+    "spent_appro": {
+     "text": "$113,350",
+     "unit": "",
+     "value": 113350.2
+    }
+   },
+   "id": "the-parks-reserve",
+   "kind": "measured",
+   "literals": [
+    "1500",
+    "650",
+    "FY26",
+    "2026",
+    "31"
+   ],
+   "not_shown": "What the balance is spoken for, or what the last quarter of FY2026 did. The report stops at 31 March.",
+   "see": [],
+   "so_what": "Money the parks may spend without a vote; it took in $7,616 and spent $9,766 in nine months of FY2026."
+  },
+  {
+   "basis": "sources/data/special-revenue-read.csv (fund “Park User Fees”, FY2011–FY2023); sources/data/special-revenue-funds.csv rows 1500 for FY2024 and FY2025, column v2; the FY26 report’s ACCOUNT BALANCE.",
+   "bearing": "sizes",
+   "claim": "The fund stood at $10,019 in FY2011, fell to $0 in FY2015, and was $91,726 by 30 June 2025.",
+   "detail": "The annual reports print the fund as “Park User Fees” under Parks & Recreation: balance forward, receipts, disbursements and balance carried, FY2011 to FY2023, every year tying to the report’s own totals. FY2023 closed at $58,200. The FY2024 and FY2025 reports print a balance only, transcribed here; FY2025’s $91,726 is not the $86,967 the FY26 report opens with, and nothing in the archive says why — an audit adjustment, an encumbrance, or a misread digit all fit.",
+   "figure": "fy25",
+   "figures": {
+    "first": {
+     "text": "$10,019",
+     "unit": "in the fund at the end of FY2011",
+     "value": 10019.25
+    },
+    "first_fy": {
+     "text": "FY2011",
+     "unit": "",
+     "value": 2011
+    },
+    "fy25": {
+     "text": "$91,726",
+     "unit": "",
+     "value": 91726.3
+    },
+    "last_read": {
+     "text": "$58,200",
+     "unit": "",
+     "value": 58199.61
+    },
+    "low": {
+     "text": "$0",
+     "unit": "",
+     "value": 0.0
+    },
+    "low_fy": {
+     "text": "FY2015",
+     "unit": "",
+     "value": 2015
+    },
+    "opening26": {
+     "text": "$86,967",
+     "unit": "",
+     "value": 86967.14
+    }
+   },
+   "id": "the-fund-since-2011",
+   "kind": "measured",
+   "literals": [
+    "FY2011",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY26",
+    "2025",
+    "30",
+    "1500"
+   ],
+   "not_shown": "Receipts and spending for FY2024 and FY2025: the reports for those years print a balance and no flow.",
+   "see": [],
+   "so_what": "Thirteen years read and tied, two transcribed — and FY2025 does not chain to the FY26 opening."
+  },
+  {
+   "basis": "sources/data/parks-myrec-sales-fy2025.csv, extracted by scripts/extract_parks_myrec.py from the two MyRec reports and checked against their printed totals.",
+   "bearing": "sizes",
+   "claim": "The registration system recorded $47,784 in FY2025: 650 programme places and 164 beach passes.",
+   "detail": "Two printouts from MyRec, the system the department sells through, both footing to their own totals: $38,956 across 17 programmes, $8,828 across four membership lines. Non-residents were 390 of 814 registrations and paid $23,972. That is what the system recorded, not what reached the town’s books — the FY2025 fund report that would show the deposits is not in the archive, and the general fund’s REC FEES line was estimated at zero for FY2026.",
+   "figure": "all",
+   "figures": {
+    "all": {
+     "text": "$47,784",
+     "unit": "recorded by MyRec, 1 July 2024 to 30 June 2025",
+     "value": 47783.5
+    },
+    "all_n": {
+     "text": "814",
+     "unit": "",
+     "value": 814
+    },
+    "mem_n": {
+     "text": "164",
+     "unit": "",
+     "value": 164
+    },
+    "mem_total": {
+     "text": "$8,828",
+     "unit": "",
+     "value": 8828.0
+    },
+    "nonres": {
+     "text": "$23,972",
+     "unit": "",
+     "value": 23972.5
+    },
+    "nonres_n": {
+     "text": "390",
+     "unit": "",
+     "value": 390
+    },
+    "nonres_share": {
+     "text": "50%",
+     "unit": "",
+     "value": 50.16899138824071
+    },
+    "prog_count": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    },
+    "prog_n": {
+     "text": "650",
+     "unit": "",
+     "value": 650
+    },
+    "prog_total": {
+     "text": "$38,956",
+     "unit": "",
+     "value": 38955.5
+    },
+    "top": {
+     "text": "$17,060",
+     "unit": "",
+     "value": 17060.5
+    }
+   },
+   "id": "what-myrec-took-in",
+   "kind": "measured",
+   "literals": [
+    "2024",
+    "2025",
+    "FY2025",
+    "FY2026",
+    "1"
+   ],
+   "not_shown": "Refunds, waivers, or what the programmes cost to run — a sales report is the fee side only. And a 2024 season sold partly before 1 July 2024 is undercounted in this window.",
+   "see": [],
+   "so_what": "50% of it — $23,972 — was paid by non-residents; the largest programme was Snapology-Stem Programs at $17,060."
+  },
+  {
+   "basis": "sources/town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf, the Location Total line, read from the text layer and footed.",
+   "bearing": "sizes",
+   "claim": "Grounds upkeep at six parks was bid at $44,590 a year — 32% of what the department is voted.",
+   "detail": "The bid sheet prices mowing, weeding, turf, clean-ups and infield work per park for the year from 1 July 2024: Fitzgerald Field $9,875; McNally Field $7,500; Marshall Park $20,975; Memorial Park $2,640; Town Beach $2,300; Wallis Park $1,300. The total is the sheet’s own six location totals summed. It is a vendor’s figure (stated), and the FY2026 appropriation it is set against is $140,759.",
+   "figure": "bid",
+   "figures": {
+    "appro": {
+     "text": "$140,759",
+     "unit": "",
+     "value": 140759.43
+    },
+    "bid": {
+     "text": "$44,590",
+     "unit": "bid for year one of grounds maintenance, from 1 July 2024",
+     "value": 44590
+    },
+    "p_0": {
+     "text": "$9,875",
+     "unit": "",
+     "value": 9875
+    },
+    "p_1": {
+     "text": "$7,500",
+     "unit": "",
+     "value": 7500
+    },
+    "p_2": {
+     "text": "$20,975",
+     "unit": "",
+     "value": 20975
+    },
+    "p_3": {
+     "text": "$2,640",
+     "unit": "",
+     "value": 2640
+    },
+    "p_4": {
+     "text": "$2,300",
+     "unit": "",
+     "value": 2300
+    },
+    "p_5": {
+     "text": "$1,300",
+     "unit": "",
+     "value": 1300
+    },
+    "share": {
+     "text": "32%",
+     "unit": "",
+     "value": 31.67816181125485
+    }
+   },
+   "id": "what-the-grounds-cost",
+   "kind": "measured",
+   "literals": [
+    "1",
+    "2024",
+    "FY2026"
+   ],
+   "not_shown": "Whether this bid was accepted, or what the town paid for grounds work in any year: the FY2024 Parks budget report with its journal detail is in the archive as an image and has not been read.",
+   "see": [],
+   "so_what": "$20,975 is Marshall Park alone. A bid is an offer; what was paid is in the ledger, not here."
+  }
+ ],
+ "fund": {
+  "code": "1500",
+  "current": {
+   "as_of": "2026-03-31",
+   "closing": 84817.56,
+   "encumbered": 0,
+   "foots": true,
+   "fy": 2026,
+   "grade": "evidence",
+   "opening": 86967.14,
+   "report": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "revenue": 7615.97,
+   "salaries": 0,
+   "spent": 9765.55
+  },
+  "history": [
+   {
+    "closing": 10019.25,
+    "fy": 2011,
+    "grade": "read",
+    "opening": 9636.86,
+    "report": "sources/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
+    "revenue": 16024.33,
+    "spent": 15641.94
+   },
+   {
+    "closing": 10653.69,
+    "fy": 2012,
+    "grade": "read",
+    "opening": 10019.25,
+    "report": "sources/town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf",
+    "revenue": 22379.73,
+    "spent": 21745.29
+   },
+   {
+    "closing": 5572.81,
+    "fy": 2013,
+    "grade": "read",
+    "opening": 10653.69,
+    "report": "sources/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
+    "revenue": 10453.42,
+    "spent": 15534.3
+   },
+   {
+    "closing": 3795.26,
+    "fy": 2014,
+    "grade": "read",
+    "opening": 5572.81,
+    "report": "sources/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
+    "revenue": 16342.75,
+    "spent": 18120.3
+   },
+   {
+    "closing": 0.0,
+    "fy": 2015,
+    "grade": "read",
+    "opening": 3795.26,
+    "report": "sources/town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf",
+    "revenue": 13068.5,
+    "spent": 16863.76
+   },
+   {
+    "closing": 0.0,
+    "fy": 2016,
+    "grade": "read",
+    "opening": 0.0,
+    "report": "sources/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+    "revenue": 11721.25,
+    "spent": 11721.25
+   },
+   {
+    "closing": 4057.82,
+    "fy": 2017,
+    "grade": "read",
+    "opening": 0.0,
+    "report": "sources/town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf",
+    "revenue": 11899.0,
+    "spent": 7841.18
+   },
+   {
+    "closing": 11638.28,
+    "fy": 2018,
+    "grade": "read",
+    "opening": 4057.82,
+    "report": "sources/town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf",
+    "revenue": 12811.0,
+    "spent": 5230.54
+   },
+   {
+    "closing": 30818.28,
+    "fy": 2019,
+    "grade": "read",
+    "opening": 11638.28,
+    "report": "sources/town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf",
+    "revenue": 19180.0,
+    "spent": null
+   },
+   {
+    "closing": 32462.51,
+    "fy": 2020,
+    "grade": "read",
+    "opening": 30818.28,
+    "report": "sources/town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf",
+    "revenue": 8516.0,
+    "spent": 6871.77
+   },
+   {
+    "closing": 66443.78,
+    "fy": 2021,
+    "grade": "read",
+    "opening": 32462.51,
+    "report": "sources/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
+    "revenue": 48797.27,
+    "spent": 14816.0
+   },
+   {
+    "closing": 66418.95,
+    "fy": 2022,
+    "grade": "read",
+    "opening": 66443.78,
+    "report": "sources/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+    "revenue": 21152.06,
+    "spent": 21176.89
+   },
+   {
+    "closing": 58199.61,
+    "fy": 2023,
+    "grade": "read",
+    "opening": 66418.95,
+    "report": "sources/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+    "revenue": 36914.65,
+    "spent": 45133.99
+   },
+   {
+    "closing": 72564.34,
+    "fy": 2024,
+    "grade": "transcribed",
+    "report": "sources/data/special-revenue-funds.csv"
+   },
+   {
+    "chains": false,
+    "closing": 91726.3,
+    "fy": 2025,
+    "grade": "transcribed",
+    "report": "sources/data/special-revenue-funds.csv"
+   }
+  ],
+  "name": "PARK REVOLVING FUND"
+ },
+ "generated_by": "scripts/build_parks.py",
+ "gift": {
+  "code": "1523",
+  "current": {
+   "as_of": "2026-03-31",
+   "closing": 1268.0,
+   "encumbered": 0,
+   "foots": true,
+   "fy": 2026,
+   "grade": "evidence",
+   "opening": 752.0,
+   "report": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "revenue": 516.0,
+   "salaries": 0,
+   "spent": 0
+  },
+  "history": [
+   {
+    "closing": 1108.19,
+    "fy": 2011,
+    "grade": "read",
+    "opening": 3220.33,
+    "report": "sources/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
+    "revenue": 22886.86,
+    "spent": 24999.0
+   },
+   {
+    "closing": 1857.65,
+    "fy": 2012,
+    "grade": "read",
+    "opening": 1108.19,
+    "report": "sources/town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf",
+    "revenue": 28498.46,
+    "spent": 27749.0
+   },
+   {
+    "closing": 0.0,
+    "fy": 2013,
+    "grade": "read",
+    "opening": 1857.65,
+    "report": "sources/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
+    "revenue": 23141.35,
+    "spent": 24999.0
+   },
+   {
+    "closing": 360.0,
+    "fy": 2014,
+    "grade": "read",
+    "opening": 0.0,
+    "report": "sources/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
+    "revenue": 360.0,
+    "spent": null
+   },
+   {
+    "closing": 1760.0,
+    "fy": 2015,
+    "grade": "read",
+    "opening": 360.0,
+    "report": "sources/town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf",
+    "revenue": 1400.0,
+    "spent": null
+   },
+   {
+    "closing": 752.0,
+    "fy": 2016,
+    "grade": "read",
+    "opening": 1760.0,
+    "report": "sources/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+    "revenue": null,
+    "spent": 1008.0
+   },
+   {
+    "closing": 752.0,
+    "fy": 2017,
+    "grade": "read",
+    "opening": 752.0,
+    "report": "sources/town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf",
+    "revenue": null,
+    "spent": null
+   },
+   {
+    "closing": 752.0,
+    "fy": 2018,
+    "grade": "read",
+    "opening": 752.0,
+    "report": "sources/town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf",
+    "revenue": null,
+    "spent": null
+   },
+   {
+    "closing": 752.0,
+    "fy": 2019,
+    "grade": "read",
+    "opening": 752.0,
+    "report": "sources/town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf",
+    "revenue": null,
+    "spent": null
+   },
+   {
+    "closing": 752.0,
+    "fy": 2020,
+    "grade": "read",
+    "opening": 752.0,
+    "report": "sources/town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf",
+    "revenue": null,
+    "spent": null
+   },
+   {
+    "closing": 752.0,
+    "fy": 2021,
+    "grade": "read",
+    "opening": 752.0,
+    "report": "sources/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
+    "revenue": null,
+    "spent": null
+   },
+   {
+    "closing": 752.0,
+    "fy": 2022,
+    "grade": "read",
+    "opening": 752.0,
+    "report": "sources/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+    "revenue": null,
+    "spent": null
+   },
+   {
+    "closing": 752.0,
+    "fy": 2023,
+    "grade": "read",
+    "opening": 752.0,
+    "report": "sources/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+    "revenue": null,
+    "spent": null
+   },
+   {
+    "closing": 752.0,
+    "fy": 2024,
+    "grade": "transcribed",
+    "report": "sources/data/special-revenue-funds.csv"
+   },
+   {
+    "chains": true,
+    "closing": 752.0,
+    "fy": 2025,
+    "grade": "transcribed",
+    "report": "sources/data/special-revenue-funds.csv"
+   }
+  ],
+  "name": "PARK GIFT FUND"
+ },
+ "grain": "DOLLARS from four kinds of document kept apart: the FY26 accounting printouts (evidence), the annual reports’ fund schedule (read and tied; FY2024–FY2025 transcribed), the registration system’s sales (a printout, not the books), and a bid (stated). Not what the parks cost all in.",
+ "myrec": {
+  "membership": [
+   {
+    "document": "sources/town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 3,
+    "nonres_total": 175.0,
+    "program": "2024 BEACH PASSES",
+    "report": "membership",
+    "res_count": 26,
+    "res_total": 1509.0,
+    "total": 1684.0,
+    "total_count": 29
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 3,
+    "nonres_total": 15.0,
+    "program": "2024 SEASON PASS-FAMILY ADD ON $5",
+    "report": "membership",
+    "res_count": 1,
+    "res_total": 5.0,
+    "total": 20.0,
+    "total_count": 4
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 71,
+    "nonres_total": 3614.0,
+    "program": "2025 BEACH PASSES",
+    "report": "membership",
+    "res_count": 60,
+    "res_total": 3466.0,
+    "total": 7080.0,
+    "total_count": 131
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 0,
+    "nonres_total": 44.0,
+    "program": "LUNENBURG EMPLOYEE MEMBERSHIP",
+    "report": "membership",
+    "res_count": 0,
+    "res_total": 0.0,
+    "total": 44.0,
+    "total_count": 0
+   }
+  ],
+  "membership_n": 164,
+  "membership_total": 8828.0,
+  "nonres_share": 50.2,
+  "nonres_total": 23972.5,
+  "program": [
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 4,
+    "nonres_total": 0.0,
+    "program": "2024 Lunenburg's Great Cardboard Boat Race",
+    "report": "program",
+    "res_count": 3,
+    "res_total": 0.0,
+    "total": 0.0,
+    "total_count": 7
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 11,
+    "nonres_total": 2090.0,
+    "program": "BEST Soccer",
+    "report": "program",
+    "res_count": 16,
+    "res_total": 3040.0,
+    "total": 5130.0,
+    "total_count": 27
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 0,
+    "nonres_total": 0.0,
+    "program": "BEST Soccer- Summer Clinic",
+    "report": "program",
+    "res_count": 1,
+    "res_total": -190.0,
+    "total": -190.0,
+    "total_count": 1
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 0,
+    "nonres_total": 0.0,
+    "program": "COUCH TO 5K",
+    "report": "program",
+    "res_count": 8,
+    "res_total": 280.0,
+    "total": 280.0,
+    "total_count": 8
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 2,
+    "nonres_total": -320.0,
+    "program": "Game Time Training Basketball Clinic",
+    "report": "program",
+    "res_count": 1,
+    "res_total": -160.0,
+    "total": -480.0,
+    "total_count": 3
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 12,
+    "nonres_total": 0.0,
+    "program": "Gentle Flow Yoga",
+    "report": "program",
+    "res_count": 4,
+    "res_total": 0.0,
+    "total": 0.0,
+    "total_count": 16
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 14,
+    "nonres_total": 2000.0,
+    "program": "MA Sports Leagues School Vacation Programs",
+    "report": "program",
+    "res_count": 30,
+    "res_total": 4600.0,
+    "total": 6600.0,
+    "total_count": 44
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 0,
+    "nonres_total": 0.0,
+    "program": "NRWA Summertime Eco-Adventures",
+    "report": "program",
+    "res_count": 4,
+    "res_total": 0.0,
+    "total": 0.0,
+    "total_count": 4
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 15,
+    "nonres_total": 0.0,
+    "program": "Science Heroes",
+    "report": "program",
+    "res_count": 15,
+    "res_total": 0.0,
+    "total": 0.0,
+    "total_count": 30
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 59,
+    "nonres_total": 10559.5,
+    "program": "SNAPOLOGY-STEM PROGRAMS",
+    "report": "program",
+    "res_count": 49,
+    "res_total": 6501.0,
+    "total": 17060.5,
+    "total_count": 108
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 1,
+    "nonres_total": 0.0,
+    "program": "SWIM LESSONS 2024",
+    "report": "program",
+    "res_count": 19,
+    "res_total": 360.0,
+    "total": 360.0,
+    "total_count": 20
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 47,
+    "nonres_total": 1170.0,
+    "program": "SWIM LESSONS 2025",
+    "report": "program",
+    "res_count": 98,
+    "res_total": 2310.0,
+    "total": 3480.0,
+    "total_count": 145
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 8,
+    "nonres_total": 405.0,
+    "program": "The Painted Goat- Adult and Youth Workshops!",
+    "report": "program",
+    "res_count": 13,
+    "res_total": 570.0,
+    "total": 975.0,
+    "total_count": 21
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 19,
+    "nonres_total": 780.0,
+    "program": "Thursday Night Volleyball- Advanced",
+    "report": "program",
+    "res_count": 12,
+    "res_total": 480.0,
+    "total": 1260.0,
+    "total_count": 31
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 28,
+    "nonres_total": 1120.0,
+    "program": "Thursday- Intermediate Pickleball",
+    "report": "program",
+    "res_count": 7,
+    "res_total": 160.0,
+    "total": 1280.0,
+    "total_count": 35
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 71,
+    "nonres_total": 2130.0,
+    "program": "Wednesday Afternoon Pickleball",
+    "report": "program",
+    "res_count": 27,
+    "res_total": 600.0,
+    "total": 2730.0,
+    "total_count": 98
+   },
+   {
+    "document": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+    "fy": "2025",
+    "nonres_count": 22,
+    "nonres_total": 190.0,
+    "program": "Wildlife Encounters- Junior Zookeepers",
+    "report": "program",
+    "res_count": 30,
+    "res_total": 280.0,
+    "total": 470.0,
+    "total_count": 52
+   }
+  ],
+  "program_n": 650,
+  "program_total": 38955.5,
+  "total": 47783.5
+ },
+ "not_established": [
+  "What the registration system’s $47,784 became on the town’s books — which fund it was deposited to, and when. The FY2025 special-revenue report and fund 1500’s journal would say.",
+  "Why the fund’s 30 June 2025 balance in the annual report ($91,726) is not the FY26 report’s opening balance ($86,967).",
+  "What the parks cost to keep in any year: the FY2024 budget report with its journal detail is held as an image and not yet read; FY2025’s is not held.",
+  "Whether the grounds bid was accepted."
+ ],
+ "other_funds": [
+  {
+   "current": {
+    "as_of": "2026-03-31",
+    "closing": 197.0,
+    "encumbered": 0,
+    "foots": true,
+    "fy": 2026,
+    "grade": "evidence",
+    "opening": 197.0,
+    "report": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+    "revenue": 0,
+    "salaries": 0,
+    "spent": 0
+   },
+   "id": "sr-1529",
+   "kind": "special-revenue",
+   "name": "SKATE PARK FUND"
+  },
+  {
+   "current": {
+    "as_of": "2026-03-31",
+    "closing": 125.0,
+    "encumbered": 0,
+    "foots": true,
+    "fy": 2026,
+    "grade": "evidence",
+    "opening": 125.0,
+    "report": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+    "revenue": 0,
+    "salaries": 0,
+    "spent": 0
+   },
+   "id": "sr-1532",
+   "kind": "special-revenue",
+   "name": "MARSHALL PK RESTORATION FUND"
+  },
+  {
+   "current": {
+    "as_of": "2026-03-31",
+    "closing": 94.52,
+    "foots": true,
+    "fy": 2026,
+    "grade": "evidence",
+    "opening": 91.78,
+    "report": "sources/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
+    "revenue": 2.74,
+    "spent": 0
+   },
+   "id": "tr-8126",
+   "kind": "trust",
+   "name": "Playground Fund"
+  },
+  {
+   "current": {
+    "closing": 54263.96,
+    "fy": 2025,
+    "grade": "transcribed",
+    "report": "sources/data/report-trust-funds.csv"
+   },
+   "id": "cp-3108",
+   "kind": "capital",
+   "name": "11/22 Marshall Park Design"
+  }
+ ],
+ "sources": [
+  {
+   "bytes": 91089,
+   "docs_url": "/docs/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+   "note": "",
+   "path": "sources/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
+   "publisher": "the department’s registration system, by records request",
+   "sha256": "d37d6d14553123ab4e6f578835c44747cd1df17affe38a593ebd380f8b859333",
+   "table": "MyRec Program Sales Report, FY2025",
+   "url": ""
+  },
+  {
+   "bytes": 47186,
+   "docs_url": "/docs/town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf",
+   "note": "",
+   "path": "sources/town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf",
+   "publisher": "the same",
+   "sha256": "c93147feab5f0160676a16d2bb933843a228973b62c14c5f16daf1dc739a6106",
+   "table": "MyRec Membership Sales Report, FY2025",
+   "url": ""
+  },
+  {
+   "bytes": 24599,
+   "docs_url": "/docs/town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf",
+   "note": "",
+   "path": "sources/town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf",
+   "publisher": "a contractor, by records request",
+   "sha256": "ea3d724fe3427571df7e53227ba73c09b4177d03f08a1d91cee1a965383751ab",
+   "table": "Grounds-maintenance bid, year one from 1 July 2024",
+   "url": ""
+  },
+  {
+   "bytes": 2750883,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-parks.pdf",
+   "note": "",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-parks.pdf",
+   "publisher": "MUNIS, by records request; image only",
+   "sha256": "551f5abd194ed05de71719928ac820d91916949da4a9be5092b1072a91fcab3a",
+   "table": "FY2024 year-to-date budget report, Parks, with journal detail",
+   "url": ""
+  },
+  {
+   "bytes": 56447,
+   "docs_url": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "note": "",
+   "path": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "publisher": "MUNIS, by records request",
+   "sha256": "4b9777d83c747c1c39fa7f3e4b33624976dae918855cf8422528dba57e274d4e",
+   "table": "FY26 special-revenue report, 31 March 2026",
+   "url": ""
+  },
+  {
+   "bytes": 73581,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "note": "",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "publisher": "MUNIS, by records request",
+   "sha256": "215dd64f597f1f2d8a373080756a188c0fecfd7caff9158824ec7d293e287cd1",
+   "table": "FY26 year-end budget report, general fund",
+   "url": ""
+  }
+ ]
+}

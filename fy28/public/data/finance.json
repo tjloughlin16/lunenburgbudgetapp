@@ -654,6 +654,16 @@
    "side": "money_in",
    "what": "Which fund and account each field-rental receipt from Lunenburg Youth Soccer was posted to, and whether the $15,000 turf contribution is inside or beside them",
    "why": "The district’s records-request answer lists seven receipts, FY2024–FY2026, $39,073.50 in all, with one MUNIS reference; the town’s FY26 special-revenue report carries fund 1306 School Facilities Use Revolving and fund 1545 Artificial Turf Revolving as balances only — closes: the journal detail export for funds 1306 and 1545, FY2024–FY2026, the same report the archive holds for fund 1301"
+  },
+  {
+   "side": "money_in",
+   "what": "What Parks & Recreation’s programme fees and beach-pass sales became on the town’s books — how much of the $38,955.50 of programme fees and $8,828.00 of passes MyRec recorded for FY2025 reached fund 1500 (Park Revolving) or the general fund, and when",
+   "why": "MyRec is the registration system, not the ledger: its FY2025 sales reports foot to their own totals but say nothing about deposits, refunds or the fund each fee was posted to, and the FY2025 special-revenue report is not in the archive — closes: the FY2025 special-revenue report and the journal detail for fund 1500, the same report the archive holds for fund 1301."
+  },
+  {
+   "side": "money_out",
+   "what": "What each of the town’s 500-odd accounting measures did before FY2026, line by line — the appropriation history of every department and the year-by-year activity of every fund",
+   "why": "The registry (fund-owners.csv) lists every measure the FY26 reports print, but only the special-revenue funds have a read, tied history (FY2011–FY2023); the appropriation lines’ history sits in the annual reports where the extract cannot yet say which printed column is which, and FY2024–FY2025 fund activity was never printed — closes: the year-to-date budget reports and special-revenue reports for FY2023–FY2025 from the Town Accountant."
   }
  ],
  "generated_by": "scripts/build_finance.py",
@@ -11391,6 +11401,123 @@
    },
    "history": [
     {
+     "closing": 10019.25,
+     "fy": 2011,
+     "grade": "read",
+     "opening": 9636.86,
+     "report": "sources/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
+     "revenue": 16024.33,
+     "spent": 15641.94
+    },
+    {
+     "closing": 10653.69,
+     "fy": 2012,
+     "grade": "read",
+     "opening": 10019.25,
+     "report": "sources/town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf",
+     "revenue": 22379.73,
+     "spent": 21745.29
+    },
+    {
+     "closing": 5572.81,
+     "fy": 2013,
+     "grade": "read",
+     "opening": 10653.69,
+     "report": "sources/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
+     "revenue": 10453.42,
+     "spent": 15534.3
+    },
+    {
+     "closing": 3795.26,
+     "fy": 2014,
+     "grade": "read",
+     "opening": 5572.81,
+     "report": "sources/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
+     "revenue": 16342.75,
+     "spent": 18120.3
+    },
+    {
+     "closing": 0.0,
+     "fy": 2015,
+     "grade": "read",
+     "opening": 3795.26,
+     "report": "sources/town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf",
+     "revenue": 13068.5,
+     "spent": 16863.76
+    },
+    {
+     "closing": 0.0,
+     "fy": 2016,
+     "grade": "read",
+     "opening": 0.0,
+     "report": "sources/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+     "revenue": 11721.25,
+     "spent": 11721.25
+    },
+    {
+     "closing": 4057.82,
+     "fy": 2017,
+     "grade": "read",
+     "opening": 0.0,
+     "report": "sources/town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf",
+     "revenue": 11899.0,
+     "spent": 7841.18
+    },
+    {
+     "closing": 11638.28,
+     "fy": 2018,
+     "grade": "read",
+     "opening": 4057.82,
+     "report": "sources/town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf",
+     "revenue": 12811.0,
+     "spent": 5230.54
+    },
+    {
+     "closing": 30818.28,
+     "fy": 2019,
+     "grade": "read",
+     "opening": 11638.28,
+     "report": "sources/town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf",
+     "revenue": 19180.0,
+     "spent": null
+    },
+    {
+     "closing": 32462.51,
+     "fy": 2020,
+     "grade": "read",
+     "opening": 30818.28,
+     "report": "sources/town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf",
+     "revenue": 8516.0,
+     "spent": 6871.77
+    },
+    {
+     "closing": 66443.78,
+     "fy": 2021,
+     "grade": "read",
+     "opening": 32462.51,
+     "report": "sources/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
+     "revenue": 48797.27,
+     "spent": 14816.0
+    },
+    {
+     "closing": 66418.95,
+     "fy": 2022,
+     "grade": "read",
+     "opening": 66443.78,
+     "report": "sources/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+     "revenue": 21152.06,
+     "spent": 21176.89
+    },
+    {
+     "closing": 58199.61,
+     "fy": 2023,
+     "grade": "read",
+     "opening": 66418.95,
+     "report": "sources/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+     "revenue": 36914.65,
+     "spent": 45133.99
+    },
+    {
      "closing": 72564.34,
      "fy": 2024,
      "grade": "transcribed",
@@ -11410,11 +11537,11 @@
    "notes": [],
    "owner": "parks-commission",
    "owner_basis": "department code 650 in the unlabelled column of the town’s special-revenue report",
-   "purpose": "",
+   "purpose": "programme and beach fees, spent on the parks that raise them",
    "relates_to": "",
    "report": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
    "subkind": "revolving",
-   "trend_label": ""
+   "trend_label": "Park User Fees"
   },
   "sr-1501": {
    "authority": "",
@@ -12195,6 +12322,123 @@
    },
    "history": [
     {
+     "closing": 1108.19,
+     "fy": 2011,
+     "grade": "read",
+     "opening": 3220.33,
+     "report": "sources/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
+     "revenue": 22886.86,
+     "spent": 24999.0
+    },
+    {
+     "closing": 1857.65,
+     "fy": 2012,
+     "grade": "read",
+     "opening": 1108.19,
+     "report": "sources/town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf",
+     "revenue": 28498.46,
+     "spent": 27749.0
+    },
+    {
+     "closing": 0.0,
+     "fy": 2013,
+     "grade": "read",
+     "opening": 1857.65,
+     "report": "sources/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
+     "revenue": 23141.35,
+     "spent": 24999.0
+    },
+    {
+     "closing": 360.0,
+     "fy": 2014,
+     "grade": "read",
+     "opening": 0.0,
+     "report": "sources/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
+     "revenue": 360.0,
+     "spent": null
+    },
+    {
+     "closing": 1760.0,
+     "fy": 2015,
+     "grade": "read",
+     "opening": 360.0,
+     "report": "sources/town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf",
+     "revenue": 1400.0,
+     "spent": null
+    },
+    {
+     "closing": 752.0,
+     "fy": 2016,
+     "grade": "read",
+     "opening": 1760.0,
+     "report": "sources/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+     "revenue": null,
+     "spent": 1008.0
+    },
+    {
+     "closing": 752.0,
+     "fy": 2017,
+     "grade": "read",
+     "opening": 752.0,
+     "report": "sources/town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf",
+     "revenue": null,
+     "spent": null
+    },
+    {
+     "closing": 752.0,
+     "fy": 2018,
+     "grade": "read",
+     "opening": 752.0,
+     "report": "sources/town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf",
+     "revenue": null,
+     "spent": null
+    },
+    {
+     "closing": 752.0,
+     "fy": 2019,
+     "grade": "read",
+     "opening": 752.0,
+     "report": "sources/town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf",
+     "revenue": null,
+     "spent": null
+    },
+    {
+     "closing": 752.0,
+     "fy": 2020,
+     "grade": "read",
+     "opening": 752.0,
+     "report": "sources/town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf",
+     "revenue": null,
+     "spent": null
+    },
+    {
+     "closing": 752.0,
+     "fy": 2021,
+     "grade": "read",
+     "opening": 752.0,
+     "report": "sources/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
+     "revenue": null,
+     "spent": null
+    },
+    {
+     "closing": 752.0,
+     "fy": 2022,
+     "grade": "read",
+     "opening": 752.0,
+     "report": "sources/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+     "revenue": null,
+     "spent": null
+    },
+    {
+     "closing": 752.0,
+     "fy": 2023,
+     "grade": "read",
+     "opening": 752.0,
+     "report": "sources/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+     "revenue": null,
+     "spent": null
+    },
+    {
      "closing": 752.0,
      "fy": 2024,
      "grade": "transcribed",
@@ -12218,7 +12462,7 @@
    "relates_to": "",
    "report": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
    "subkind": "gift",
-   "trend_label": ""
+   "trend_label": "Park Gift Fund"
   },
   "sr-1524": {
    "authority": "",

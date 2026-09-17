@@ -46,6 +46,7 @@ import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
 import { Boards } from './pages/Boards'
 import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
+import { Parks } from './pages/Parks'
 import { BudgetFeed } from './pages/BudgetFeed'
 import { ThisWeek } from './pages/ThisWeek'
 import { Enrollment } from './pages/Enrollment'
@@ -518,6 +519,7 @@ export default function App() {
       {tab === 'schoolfinance' && <SchoolFinance />}
       {tab === 'departments' && <Departments />}
       {tab === 'accounts' && <Accounts />}
+      {tab === 'parks' && <Parks />}
       {tab === 'budgetfeed' && <BudgetFeed />}
       {tab === 'thisweek' && <ThisWeek />}
       {tab === 'enrollment' && <Enrollment />}

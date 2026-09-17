@@ -425,7 +425,7 @@ TOPICS = [
     ('household', 'The households — who they are, and what they pay',
      'Who lives in Lunenburg, and the two reports about money a household hands over, '
      'side by side.',
-     ['bythenumbers', 'owners', 'homestudents', 'sportsmoney', 'families']),
+     ['bythenumbers', 'owners', 'homestudents', 'sportsmoney', 'families', 'parks']),
     # THE TOWN'S LEVERS, as reports. TJ, 16 September 2026: "we need individual reports
     # for the big concepts in the budget crisis." Two of them are the crisis page's
     # revenue answers, priced by the same model: what an override actually is, and what

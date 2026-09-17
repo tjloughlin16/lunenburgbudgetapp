@@ -105,6 +105,8 @@ CHECKS = [
     ('build_youth_sports.py', ['--check']),
     ('build_fund_owners.py', ['--check']),
     ('build_finance.py', ['--check']),
+    ('extract_parks_myrec.py', ['--check']),
+    ('build_parks.py', ['--check']),
     ('build_big_picture.py', ['--check']),
     ('build_property_owners.py', ['--check']),
     ('build_one_big_report.py', ['--check']),
