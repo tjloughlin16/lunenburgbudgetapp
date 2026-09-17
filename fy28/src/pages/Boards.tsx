@@ -27,6 +27,7 @@ type Board = {
   slug: string; name: string; the_three: boolean; page?: Page | null
   about_itself?: { key: string; label: string; school_year: string; url: string; upstream: string; sha256: string; text: string }[]
   scorecard?: { this: Score; last: Score; minutes_lag_days: number; video_lag_days: number }
+  join?: { weekday: string; weekday_share: number; meetings_sampled: number; time: string | null; place: string | null; zoom: boolean; cable: boolean; agendas_read: number } | null
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; votes: number; first: string | null; last: string | null }
   upcoming: Upcoming[]; recent: Recent[]; votes: Vote[]
   time_by_tag: { tag: string; label: string; seconds: number; share: number | null }[]; time_meetings: number; time_span_s: number
@@ -131,13 +132,37 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
         </div>
       )}
       {p && p.charter_ref && <><p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Established by</p><p className="mt-0.5">{p.charter_ref}</p></>}
-      {p && p.meets && <><p className="text-[10px] font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>Meets</p><p className="mt-0.5" style={{ whiteSpace: 'pre-line' }}>{p.meets}</p></>}
+      {p && p.meets && <><p className="text-[10px] font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>Broadcast and rebroadcast, as the {p.source === 'district' ? 'district' : 'town'} states it</p><p className="mt-0.5 text-[11.5px]" style={{ whiteSpace: 'pre-line', color: 'var(--text-muted)' }}>{p.meets}</p></>}
       {p && p.members.length > 0 && <><p className="text-[10px] font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>Members, as posted</p><ul className="mt-0.5 space-y-0.5">{p.members.map((m, i) => <li key={i}>{m}</li>)}</ul></>}
       {p && <p className="text-[11px] mt-3" style={{ color: 'var(--text-muted)' }}>From <a className="underline" href={p.mirror}>our copy</a> of the page, {p.fetched_at}.</p>}
     </div>
   ) : null
+  // HOW TO JOIN, ABOVE EVERYTHING. TJ, 17 September 2026: "if someone wants to join
+  // live, what info do they need to know?" -- the weekday and time first and large, then
+  // the room, then whether there is a Zoom and a broadcast. Read off the last few agendas
+  // (build_boards.how_to_join), not the board's boilerplate; the rebroadcast schedule is
+  // context and stays in the infobox below.
+  const j = b.join
+  const next = b.upcoming[0]
+  const joinBlock = j ? (
+    <div className="card p-3 mb-4">
+      <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>When it meets</p>
+      <p className="text-[15px] font-bold leading-snug mt-1">
+        {j.weekday_share >= 0.6 ? `${j.weekday}s` : `Usually ${j.weekday}s`}{j.time ? `, ${j.time}` : ''}
+      </p>
+      {j.place && <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-secondary)' }}>{j.place}</p>}
+      {(j.zoom || j.cable) && (
+        <p className="text-[12px] mt-1" style={{ color: 'var(--text-secondary)' }}>
+          {j.zoom ? 'Hybrid — a Zoom link is on each agenda' : ''}{j.zoom && j.cable ? ' · ' : ''}{j.cable ? 'broadcast live on the public access channel' : ''}
+        </p>
+      )}
+      {next && <p className="text-[12.5px] mt-2"><strong>Next:</strong> {dateText(next.date)}</p>}
+      <p className="text-[10.5px] mt-1.5" style={{ color: 'var(--text-muted)' }}>From the last {j.agendas_read} agendas; check the agenda for the meeting you mean.</p>
+    </div>
+  ) : null
   const body = (
     <>
+      {joinBlock}
       <p className="text-[10px] font-bold uppercase tracking-widest px-1" style={{ color: 'var(--text-muted)' }}>On this page</p>
       <div className="mt-1.5 space-y-1.5">{jump.filter(j => j[2]).map(([h, l]) => <Btn key={h} href={h}>{l}</Btn>)}</div>
       {own.length > 0 && <>

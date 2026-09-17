@@ -47,6 +47,52 @@ NOTICES = os.path.join(ROOT, 'fy28', 'public', 'data', 'notices.json')
 PAGES = os.path.join(ROOT, 'sources', 'data', 'board-pages.csv')
 DISTRICT_INDEX = os.path.join(ROOT, 'sources', 'district-budget', 'index.csv')
 MINUTES_LAG_DAYS = 60   # minutes are approved at the next meeting and posted after it
+WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+TIME_RE = re.compile(r'\b(\d{1,2})(?::(\d{2}))?\s*([ap])\.?m\.?\b', re.I)
+# A stated place: a "Location:" line first, else a line naming a room or a hall.
+LOCATION_RE = re.compile(r'^\s*Location:\s*([^\n]+)', re.I | re.M)
+PLACE_RE = re.compile(r'^[^\n]*\b(?:Room|Hall|Library|Conference|Building|Office)\b[^\n]*$', re.I | re.M)
+
+
+def how_to_join(slug, docs, as_of):
+    """WHAT A PERSON NEEDS TO JOIN LIVE, read off the last few agendas rather than the
+    board's boilerplate. TJ, 17 September 2026: "if someone wants to join live, what
+    info do they need to know?" -- the weekday, the time, the room, whether there is a
+    Zoom, whether it is on the cable channel. The usual weekday is the commonest among
+    recent meeting dates; the time and the place are the commonest stated on the last
+    six agendas with text; the broadcast facts are whether any of those mention them."""
+    dates = sorted((d for d in docs if 'agenda' in docs[d] and d <= as_of), reverse=True)[:10]
+    if not dates:
+        return None
+    wd = collections.Counter(dt.date.fromisoformat(d).weekday() for d in dates).most_common(1)[0]
+    times, places, zoom, cable = collections.Counter(), collections.Counter(), False, False
+    read = 0
+    for d in dates:
+        a = docs[d]['agenda']
+        txt_path = os.path.join(TEXT, slug, os.path.splitext(os.path.basename(a.get('path') or ''))[0] + '.txt')
+        if not os.path.exists(txt_path):
+            continue
+        head = open(txt_path, encoding='utf-8', errors='replace').read()[:2500]
+        read += 1
+        for m in TIME_RE.finditer(head):
+            hh = int(m.group(1)); mm = m.group(2) or '00'
+            if 1 <= hh <= 12 and int(mm) < 60:
+                times['%d:%s %sm' % (hh, mm, m.group(3).lower())] += 1
+                break
+        pm = LOCATION_RE.search(head) or PLACE_RE.search(head)
+        if pm:
+            place = pm.group(1) if pm.re is LOCATION_RE else pm.group(0)
+            place = re.sub(r'[\uf0b7\u2022•]', '', place)
+            places[re.sub(r'\s+', ' ', place).strip(' .,;')[:80]] += 1
+        low = head.lower()
+        zoom = zoom or ('zoom' in low or 'hybrid' in low or 'remote' in low)
+        cable = cable or ('channel' in low or 'broadcast' in low or 'public access' in low)
+        if read >= 6:
+            break
+    return dict(weekday=WEEKDAYS[wd[0]], weekday_share=round(wd[1] / len(dates), 2), meetings_sampled=len(dates),
+                time=times.most_common(1)[0][0] if times else None,
+                place=places.most_common(1)[0][0] if places else None,
+                zoom=zoom, cable=cable, agendas_read=read)
 VIDEO_LAG_DAYS = 7      # a recording is up within days, or it is not coming
 # THE COMMITTEE'S OWN DOCUMENTS ABOUT ITSELF, from the district's meetings page as the
 # crawler files it (page = sc-meetings): the operating protocols and the meeting
@@ -252,8 +298,9 @@ def build(as_of=None):
                         minutes=dict(meetings=len(m_elig), have=sum(1 for d in m_elig if 'minutes' in docs[slug][d])),
                         recordings=dict(meetings=len(v_elig), have=sum(1 for d in v_elig if d in vids[slug])))
         scorecard = dict(this=score(this_fy), last=score(this_fy - 1), minutes_lag_days=MINUTES_LAG_DAYS, video_lag_days=VIDEO_LAG_DAYS)
+        join = how_to_join(slug, docs[slug], as_of)
         boards.append(dict(
-            slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard,
+            slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard, join=join,
             counts=dict(agendas=sum(1 for d in docs[slug] if 'agenda' in docs[slug][d]),
                         minutes=sum(1 for d in docs[slug] if 'minutes' in docs[slug][d]),
                         recordings=len(vids[slug]),
