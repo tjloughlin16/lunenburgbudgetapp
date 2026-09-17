@@ -18,6 +18,7 @@ const DATA = '/data/boards.json'
  *  page with whatever the town has posted for it. */
 
 type Upcoming = { date: string; days_away: number; agenda_url: string; join?: Join | null; hook?: string | null; time?: string | null; where?: string | null; attend?: string | null; important?: unknown; items?: { agenda_line: string; why_it_matters?: string; important?: boolean }[] | null }
+type Score = { fy: number; minutes: { meetings: number; have: number }; recordings: { meetings: number; have: number } }
 type Recent = { date: string; agenda_url?: string | null; agenda_doc?: string | null; minutes_url?: string | null; minutes_doc?: string | null; video_url?: string | null; transcript: boolean; captions_disabled: boolean; ours?: { slug: string; headline?: string | null; digest?: string | null; votes?: number; reconciled?: boolean; discrepancies?: number } | null }
 type Vote = { date: string; t?: number | null; motion?: string; outcome?: string; procedural: boolean; moved_by?: string | null; page: string; video_url: string }
 type Cal = { key: string; label: string; cycles: { fy: number; dates: string[] }[]; earliest: string; latest: string; typical_first: string; typical_last: string; meetings: number }
@@ -25,6 +26,7 @@ type Page = { url: string; source: 'town' | 'district'; overview: string; charte
 type Board = {
   slug: string; name: string; the_three: boolean; page?: Page | null
   about_itself?: { key: string; label: string; school_year: string; url: string; upstream: string; sha256: string; text: string }[]
+  scorecard?: { this: Score; last: Score; minutes_lag_days: number; video_lag_days: number }
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; votes: number; first: string | null; last: string | null }
   upcoming: Upcoming[]; recent: Recent[]; votes: Vote[]
   time_by_tag: { tag: string; label: string; seconds: number; share: number | null }[]; time_meetings: number; time_span_s: number
@@ -160,6 +162,38 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
   )
 }
 
+/** THE SCORECARD. TJ, 17 September 2026: "put the percentages of the current fiscal
+ *  year of minutes and video postings on each board's page ... '66% minutes FY27' ...
+ *  '100% YouTube recordings FY27' (in nice designs...)". Two tiles. Each leads with the
+ *  current fiscal year once it has three meetings old enough to count, and with last
+ *  year until then -- because "0% minutes FY27" in September is one July meeting whose
+ *  minutes are simply due, and a badge that reads as a verdict has to have a basis.
+ *  The other year sits under it, small. Counts are printed on every tile so the
+ *  percentage is never a bare number (rule 7b). */
+function Tile({ what, sc, lag, note }: { what: string; sc: { this: Score; last: Score }; lag: number; note: string }) {
+  const pick = (s: Score) => s[what === 'minutes' ? 'minutes' : 'recordings']
+  const lead = pick(sc.this).meetings >= 3 ? sc.this : sc.last
+  const other = lead === sc.this ? sc.last : sc.this
+  const L = pick(lead), O = pick(other)
+  const p = L.meetings ? Math.round(100 * L.have / L.meetings) : null
+  const tone = p === null ? 'var(--text-muted)' : p >= 90 ? 'var(--status-good)' : p >= 60 ? 'var(--text-primary)' : 'var(--status-critical)'
+  const bar = p ?? 0
+  return (
+    <div className="card p-4 flex-1" style={{ minWidth: 220 }}>
+      <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{what === 'minutes' ? 'Minutes posted' : 'Recorded on YouTube'} · FY{String(lead.fy).slice(2)}{lead === sc.this ? ' so far' : ''}</p>
+      <p className="text-4xl font-bold tnum leading-none mt-2" style={{ color: tone }}>{p === null ? '—' : `${p}%`}</p>
+      <div className="h-1.5 rounded-full mt-3 overflow-hidden" style={{ background: 'var(--surface-3)' }}>
+        <div className="h-full rounded-full" style={{ width: `${bar}%`, background: tone }} />
+      </div>
+      <p className="text-[12.5px] mt-2 tnum" style={{ color: 'var(--text-secondary)' }}>
+        {L.meetings ? <>{L.have} of {L.meetings} meetings</> : 'no meetings old enough to count yet'}
+        {O.meetings ? <span style={{ color: 'var(--text-muted)' }}> · FY{String(other.fy).slice(2)}{other === sc.this ? ' so far' : ''}: {O.have} of {O.meetings}{O.meetings ? ` (${Math.round(100 * O.have / O.meetings)}%)` : ''}</span> : null}
+      </p>
+      <p className="text-[11px] mt-1.5 leading-snug" style={{ color: 'var(--text-muted)' }}>{note.replace('LAG', String(lag))}</p>
+    </div>
+  )
+}
+
 function BoardPage({ b, d }: { b: Board; d: Payload }) {
   const [open, setOpen] = useState(false)
   const [allVotes, setAllVotes] = useState(false)
@@ -209,6 +243,14 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
         </p>
       ))}
 
+      {b.scorecard && (
+        <div className="flex flex-wrap gap-3 mt-6 max-w-3xl">
+          <Tile what="minutes" sc={b.scorecard} lag={b.scorecard.minutes_lag_days}
+            note="Of meetings with a posted agenda, those with minutes on the town’s Agenda Center. Meetings in the last LAG days are not counted: minutes are approved at the next meeting." />
+          <Tile what="recordings" sc={b.scorecard} lag={b.scorecard.video_lag_days}
+            note="Of meetings with a posted agenda, those with a recording on the town’s YouTube channel. Meetings in the last LAG days are not counted." />
+        </div>
+      )}
       <p className="text-[13px] mt-4"><a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href="/boards/compared">How the {b.name} compares with the other boards &rarr;</a></p>
       <Subscribe path={`/feeds/${b.slug}.xml`} what={`the ${b.name} posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in`} />
 

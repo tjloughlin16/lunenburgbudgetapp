@@ -46,6 +46,8 @@ FEED = os.path.join(ROOT, 'fy28', 'public', 'data', 'meeting-feed.json')
 NOTICES = os.path.join(ROOT, 'fy28', 'public', 'data', 'notices.json')
 PAGES = os.path.join(ROOT, 'sources', 'data', 'board-pages.csv')
 DISTRICT_INDEX = os.path.join(ROOT, 'sources', 'district-budget', 'index.csv')
+MINUTES_LAG_DAYS = 60   # minutes are approved at the next meeting and posted after it
+VIDEO_LAG_DAYS = 7      # a recording is up within days, or it is not coming
 # THE COMMITTEE'S OWN DOCUMENTS ABOUT ITSELF, from the district's meetings page as the
 # crawler files it (page = sc-meetings): the operating protocols and the meeting
 # calendar, latest school year of each. TJ, 17 September 2026: "post the new 'operating
@@ -113,6 +115,13 @@ def read_csv(p):
 def fy_of(date):
     """The season a date belongs to, by the town's election-day cycles (budget_cycles.py)."""
     return cycle_fy_of(date)
+
+
+def plain_fy(date):
+    """The ordinary fiscal year, July to June -- what 'FY27' means on a scorecard, as
+    against the budget SEASON above, which turns over at the May election."""
+    y = int(date[:4])
+    return y + 1 if date[5:7] >= '07' else y
 
 
 def build(as_of=None):
@@ -225,8 +234,26 @@ def build(as_of=None):
                            facebook=pg['facebook'] or None, facebook_scope=pg['facebook_scope'],
                            mirror='/docs/' + pg['local'][len('sources/'):], fetched_at=pg['fetched_at'][:10],
                            charter_url=CHARTER_URL)
+        # THIS YEAR'S SCORECARD. TJ, 17 September 2026: "put the percentages of the
+        # current fiscal year of minutes and video postings on each board's page ... '66%
+        # minutes FY27' ... '100% YouTube recordings FY27'". Meetings are dates with a
+        # posted agenda in the current fiscal year; minutes are counted only for meetings
+        # older than MINUTES_LAG_DAYS (approved at the next meeting, posted after) and
+        # recordings for meetings older than VIDEO_LAG_DAYS. Early in a fiscal year the
+        # denominators are small and the card says so by printing them.
+        this_fy = plain_fy(as_of)
+        m_cut = (dt.date.fromisoformat(as_of) - dt.timedelta(days=MINUTES_LAG_DAYS)).isoformat()
+        v_cut = (dt.date.fromisoformat(as_of) - dt.timedelta(days=VIDEO_LAG_DAYS)).isoformat()
+        def score(fy):
+            ms = [d for d in docs[slug] if 'agenda' in docs[slug][d] and plain_fy(d) == fy and d <= as_of]
+            m_elig = [d for d in ms if d <= m_cut]
+            v_elig = [d for d in ms if d <= v_cut]
+            return dict(fy=fy,
+                        minutes=dict(meetings=len(m_elig), have=sum(1 for d in m_elig if 'minutes' in docs[slug][d])),
+                        recordings=dict(meetings=len(v_elig), have=sum(1 for d in v_elig if d in vids[slug])))
+        scorecard = dict(this=score(this_fy), last=score(this_fy - 1), minutes_lag_days=MINUTES_LAG_DAYS, video_lag_days=VIDEO_LAG_DAYS)
         boards.append(dict(
-            slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug),
+            slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard,
             counts=dict(agendas=sum(1 for d in docs[slug] if 'agenda' in docs[slug][d]),
                         minutes=sum(1 for d in docs[slug] if 'minutes' in docs[slug][d]),
                         recordings=len(vids[slug]),
