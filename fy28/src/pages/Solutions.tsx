@@ -1,5 +1,6 @@
 import type { Tab } from '../routes'
-import { ReportShell, ShortVersion, useReport } from '../components/report'
+import { ReportShell, ShortVersion } from '../components/report'
+import { MODEL } from '../model/engine'
 import { FullVersion } from '../components/FullVersion'
 import { COST_GROWTH_BLENDED } from '../model/engine'
 import { BASELINE_REVENUE_GROWTH, LEVY_CAP, RATE_LINES } from '../model/rates'
@@ -36,12 +37,15 @@ const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`
 const pts = (x: number) => `${(x * 100).toFixed(2)} pts`
 
 export function Solutions() {
-  const { d, err } = useReport<Model>('model.json')
+  // The model is IMPORTED, like every other page, not fetched: this page fetched
+  // /data/model.json at runtime until 17 September 2026, and that copy was a week
+  // older than the one the rest of the site rendered from.
+  const d = MODEL as unknown as Model
   return (
     <ReportShell tab={TAB} kicker="For residents" title="What the town can actually do about the school budget"
       standfirst="Every option that exists, how much of the gap each one closes, who decides it, and what it costs somebody. Nothing here is painless; this page says which pain is which."
-      err={err} loading={!d && !err} dataUrl={DATA}>
-      {d && <Body d={d} />}
+      dataUrl={DATA}>
+      <Body d={d} />
     </ReportShell>
   )
 }
@@ -98,7 +102,7 @@ function Body({ d }: { d: Model }) {
       <h2 className="text-lg font-semibold mt-10">If you read nothing else</h2>
       <ol className="mt-3 space-y-3 max-w-3xl text-[15px] leading-relaxed">
         <li><strong>The fees and trims are worth doing and do not solve it.</strong> Together they close about {Math.round(100 * pkgTotal / gap)}% of the gap without touching a program.</li>
-        <li><strong>Cutting the extras buys one year.</strong> {extras.sub.split('.')[0]}. Then the same gap returns with nothing left to cut but classrooms.</li>
+        <li><strong>{/^Covers one year/.test(extras.sub.split('. ')[1] ?? '') ? 'Cutting the extras buys one year.' : `Cutting the extras does not buy a year: ${extras.value}, ${(extras.sub.match(/Covers (\d+%)/) ?? [])[1] ?? 'part'} of it.`}</strong> {extras.sub.split('.')[0]}. Then the same gap returns with nothing left to cut but classrooms.</li>
         <li><strong>Business growth is real and slow.</strong> It needs {business.value} of new commercial value a year, every year, and pays off in about a decade.</li>
         <li><strong>Free cash covers a year, not a problem.</strong> {freeCashC ? freeCashC.body.split(/\.\s/)[0] + '.' : ''}</li>
         <li><strong>Only two things on the table change a rate: the health plan, and the pace of commercial building.</strong> Everything else is an amount, and an amount has to be found again — which is why every option below is priced to five years and to ten.</li>

@@ -198,6 +198,11 @@ def freshness_check():
         after = hashlib.sha256(open(out, 'rb').read()).hexdigest()
         if before != after:
             shutil.copy2(keep, out)      # leave the tree as we found it
+    # THE PUBLISHED COPY must be the same bytes. /data/model.json is what the site says
+    # every figure is computed from; on 17 September 2026 it was a week behind the copy
+    # the pages rendered from, and one page fetched it at runtime.
+    pub = os.path.join(ROOT, 'fy28', 'public', 'data', 'model.json')
+    published_same = os.path.exists(pub) and open(pub, 'rb').read() == open(out, 'rb').read()
     # The method document is generated from the same model, and it is nothing but figures.
     # A stale copy of it is worse than a stale model.json, because a reader checking a
     # number goes there first. Checked here rather than in its own remembered command, on
@@ -208,11 +213,14 @@ def freshness_check():
     print(f"  model.json matches model/export.py: {'yes' if before == after else 'NO'}")
     if before != after:
         print('  committed model.json is stale — run: python3 model/export.py')
+    print(f"  published /data/model.json is the same bytes: {'yes' if published_same else 'NO'}")
+    if not published_same:
+        print('  fy28/public/data/model.json differs from fy28/src/data/model.json — run: python3 model/export.py')
     print(f"  show-your-work.md matches the model: "
           f"{'yes' if doc.returncode == 0 else 'NO'}")
     if doc.returncode != 0:
         print(f"  {doc.stdout.strip() or doc.stderr.strip()}")
-    return before == after, doc.returncode == 0
+    return before == after and published_same, doc.returncode == 0
 
 
 def provenance_table():

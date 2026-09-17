@@ -85,7 +85,10 @@ CATEGORIES = [
     # actually do about the gap, and a reader who came from the crisis page is looking
     # for exactly these before any filing question.
     ('levers', 'What the town can do', [
-        ('', ['override', 'growth']),
+        # In the order a resident weighs them: the two that move the revenue side, the
+        # two that move the cost RATE, then the amounts -- free cash, fees, the extras --
+        # and last the one every other page exists to avoid.
+        ('', ['override', 'growth', 'healthlever', 'salarylever', 'freecashlever', 'feelever', 'extraslever', 'positionslever']),
     ]),
     # A SHELF WITH ONE THING ON IT, FIRST, AND THE ARGUMENT FOR IT.
     #
@@ -292,6 +295,27 @@ DATA_DIR = os.path.join(ROOT, 'fy28', 'public', 'data')
 # prints which pages fell back to their own title, so a new page is visible rather than
 # silently described by nothing.
 ABOUT_PAGES = {
+    'healthlever':
+        'What a slower-growing health line is worth to the gap, and the three routes to '
+        'one — a narrower plan, a smaller pool, a larger employee share — each priced, '
+        'each landing on somebody.',
+    'freecashlever':
+        'Whether free cash can fill the gap: yes, once, inside the town’s own guideline — '
+        'for one year, out of the capital plan’s money, and budgeting tighter moves the same '
+        'dollars a year earlier.',
+    'salarylever':
+        'What the next teachers’ settlement is worth to the gap per half a point, what '
+        'holding the line to the cap means in positions, and what smaller raises would have '
+        'changed.',
+    'feelever':
+        'What athletic, activity and bus fees can add at the most each can ever raise — every '
+        'fee has a peak — and how many years that covers.',
+    'extraslever':
+        'Every sport, the band, the clubs and the art supplies still funded, eliminated: what '
+        'it saves, and that it buys one year.',
+    'positionslever':
+        'The gap in classroom positions at the district’s own cost per post, what is already '
+        'cut, and why this is the line every other option exists to avoid.',
     'override':
         'What an override actually is — permanent, compounding, a ceiling rather than a '
         'bill — what one of a given size buys and for how long, and why a school-only '

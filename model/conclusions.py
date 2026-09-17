@@ -12,7 +12,9 @@ has produced in some time.
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from catalog import PROGRAMS
-from headlines import AVG_GAP_3YR
+from headlines import AVG_GAP_3YR, _gaps as _HEADLINE_GAPS
+_gap0 = _HEADLINE_GAPS[0]
+_gap5 = sum(_HEADLINE_GAPS[:5])
 import sped
 import athletics as _ath
 import freecash as _fc
@@ -68,16 +70,20 @@ def _ls_clause():
 # than written down, so that adding a program cannot leave this figure describing a
 # district that no longer exists.
 EXTRAS_TOTAL = sum(p['cost'] or 0 for p in PROGRAMS
-                   if p['cat'] in ('athletics', 'arts', 'activities'))
+                   if p['cat'] in ('athletics', 'arts', 'activities')
+                   and p.get('status') in ('funded', 'restoring'))   # only what is still funded can be cut
 
 CONCLUSIONS = [
  dict(n=1, anchor='the-money',
-      headline=f'Cutting every extra in the district — ${EXTRAS_TOTAL:,.0f} — buys exactly one year.',
+      headline=(f'Cutting every extra still funded — ${EXTRAS_TOTAL:,.0f} — covers '
+                f'{EXTRAS_TOTAL / _gap0:.0%} of next year’s gap, once.' if EXTRAS_TOTAL < _gap0
+                else f'Cutting every extra in the district — ${EXTRAS_TOTAL:,.0f} — buys exactly one year.'),
       figure=f'${EXTRAS_TOTAL:,.0f}',
-      body=f'Every sport, every band, every club and every art supply, eliminated entirely, '
-           f'comes to ${EXTRAS_TOTAL:,.0f}. The gap over the next five years is about $2.9 million. So '
-           'the whole "cut the frills" argument covers FY28 and then the column is empty '
-           'forever, while the gap returns every single year.'),
+      body=f'Every sport still funded, every band, every club and every art supply, eliminated entirely, '
+           f'comes to ${EXTRAS_TOTAL:,.0f}; the FY27 budget already took most of athletics, and the same '
+           f'money cannot be cut twice. Next year’s gap is ${_gap0:,.0f} and the five-year total about '
+           f'${_gap5/1e6:.1f} million. So the whole "cut the frills" argument does not cover FY28, and then '
+           'the column is empty forever while the gap returns every single year.'),
 
  dict(n=2, anchor='the-money',
       headline='Contracts, insurance and law set about 90% of the budget; after the extras, only classroom positions are big enough to cut.',

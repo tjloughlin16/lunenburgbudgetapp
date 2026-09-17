@@ -17,8 +17,13 @@ from catalog import PROGRAMS
 
 # Summed from the catalogue, not written down. Stated in two places -- here and in
 # conclusions -- and a figure written twice is a figure that will disagree with itself.
+# ONLY WHAT IS STILL FUNDED. The adopted FY27 budget cut most of athletics, and money
+# already cut cannot be cut again -- so this is what eliminating the extras would save
+# NOW, not what the whole shelf once cost. It fell below one year's gap on 17 September
+# 2026 and the sentence that said "covers one year" is computed from here on.
 EXTRAS_TOTAL = sum(p['cost'] or 0 for p in PROGRAMS
-                   if p['cat'] in ('athletics', 'arts', 'activities'))
+                   if p['cat'] in ('athletics', 'arts', 'activities')
+                   and p.get('status') in ('funded', 'restoring'))
 
 _years = run(PRESETS['school_committee']['order'], DEFAULT_ASSUMPTIONS, 5)
 _gaps = [y['deficit'] for y in _years]
@@ -69,8 +74,9 @@ HEADLINES = [
 
  dict(id='extras', label='Cutting every sport, band and club',
       value=f'${EXTRAS_TOTAL:,.0f}',
-      sub='All athletics, all arts and music, all clubs — eliminated entirely. Covers one '
-          'year, once, and then the column is empty',
+      sub=('All athletics still funded, all arts and music, all clubs — eliminated entirely. '
+           + (f'Covers {_gaps[0] and EXTRAS_TOTAL / _gaps[0]:.0%} of next year’s gap, once, and then the column is empty'
+              if EXTRAS_TOTAL < _gaps[0] else 'Covers one year, once, and then the column is empty')),
       anchor='the-money', tone='neutral'),
 
  dict(id='health', label='Health insurance, shifted 75/25 → 70/30',

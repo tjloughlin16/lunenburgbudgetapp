@@ -27,12 +27,12 @@
  {
   "name": "model.json",
   "note": "Every figure the site computes: the FY27 base by bucket, the growth assumptions, the projection, the program catalogue, the conclusions, and the citations.",
-  "bytes": 342953
+  "bytes": 352725
  },
  {
   "name": "sources.json",
   "note": "The document archive: every source, its group, its size, and the URL it is served from.",
-  "bytes": 398911
+  "bytes": 849919
  },
  {
   "name": "budget-lines.csv",
@@ -42,7 +42,7 @@
  {
   "name": "district-page-index.csv",
   "note": "The 87 documents mirrored from the district budget page: label, our copy, the extracted text, the district\u2019s original URL, and a sha256.",
-  "bytes": 32188
+  "bytes": 334915
  },
  {
   "name": "staff-roster-entries.csv",
@@ -62,7 +62,7 @@
  {
   "name": "archive-manifest.csv",
   "note": "Every file in the archive \u2014 3,876 of them \u2014 with its size, its sha256, and the publisher\u2019s own URL where one is recorded. The documents themselves are no longer in the repository: they are in a public, locked R2 bucket and are served under the /docs/<path> URLs they have always had, so this is the index that makes a download checkable and the list a fresh clone works from. The bucket holds no copy of this file, deliberately \u2014 an object there cannot be updated once written, so a manifest inside it would be permanently out of date about its own contents.",
-  "bytes": 5289398
+  "bytes": 5669023
  },
  {
   "name": "free-cash-proof.csv",
@@ -82,7 +82,7 @@
  {
   "name": "model/index.json",
   "note": "Every figure the site computes, one section per file. An index; each section is its own file, sized.",
-  "bytes": 5100
+  "bytes": 5101
  },
  {
   "name": "sources/index.json",
@@ -91,7 +91,7 @@
  },
  {
   "name": "minutes-index.csv",
-  "note": "Every agenda and set of minutes the town publishes: board, date, kind, the town\u2019s own URL, has_text and searchable. 12,083 rows, of which 12,032 have an extracted text file and only 8,917 hold any text a search can match \u2014 the rest are image scans. Check SEARCHABLE, not has_text, before concluding that something was never discussed: a document nothing can read and a subject nobody raised are different facts and produce the same empty result.",
-  "bytes": 2097746
+  "note": "Every agenda and set of minutes the town publishes: board, date, kind, the town\u2019s own URL, has_text and searchable. 12,089 rows, of which 12,038 have an extracted text file and only 8,912 hold any text a search can match \u2014 the rest are image scans. Check SEARCHABLE, not has_text, before concluding that something was never discussed: a document nothing can read and a subject nobody raised are different facts and produce the same empty result.",
+  "bytes": 2098862
  }
 ]

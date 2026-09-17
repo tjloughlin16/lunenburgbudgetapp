@@ -436,7 +436,7 @@ TOPICS = [
      'The two revenue answers the crisis page names, each priced by the projection: what '
      'an override does and for how long, and what commercial development would have to '
      'look like to do the same job.',
-     ['override', 'growth']),
+     ['override', 'growth', 'healthlever', 'salarylever', 'freecashlever', 'feelever', 'extraslever', 'positionslever']),
     # THE BOARDS AS A SUBJECT: what they post, measured on the town's own site. One
     # report today; the heading is there for the ones that follow.
     ('boards', 'The boards, compared',

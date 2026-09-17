@@ -299,4 +299,8 @@ def absolutise(node):
 
 data = absolutise(data)
 json.dump(data, open('fy28/src/data/model.json', 'w'), indent=1)
-print('wrote fy28/src/data/model.json', len(json.dumps(data)), 'bytes')
+# THE PUBLISHED COPY, written by the same export: /data/model.json is what the site tells
+# readers and agents every figure is computed from, and until 17 September 2026 it was
+# copied by hand and sat a week behind the copy the pages rendered from.
+json.dump(data, open('fy28/public/data/model.json', 'w'), indent=1)
+print('wrote fy28/src/data/model.json and fy28/public/data/model.json', len(json.dumps(data)), 'bytes')

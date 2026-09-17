@@ -54,6 +54,12 @@ import { Solutions } from './pages/Solutions'
 import { CommercialDevelopment } from './pages/CommercialDevelopment'
 import { HomesAndStudents } from './pages/HomesAndStudents'
 import { BoardCompare } from './pages/BoardCompare'
+import { HealthLever } from './pages/HealthLever'
+import { FreeCashLever } from './pages/FreeCashLever'
+import { SalaryLever } from './pages/SalaryLever'
+import { FeeLever } from './pages/FeeLever'
+import { ExtrasLever } from './pages/ExtrasLever'
+import { PositionsLever } from './pages/PositionsLever'
 // LOCAL ONLY. Not a Tab, in no route table, in no sitemap, prerendered nowhere -- and the
 // reference below sits inside `import.meta.env.DEV`, which is replaced with `false` in a
 // production build, so the module is eliminated from the bundle. See pages/BlogDrafts.tsx
@@ -511,6 +517,12 @@ export default function App() {
       {tab === 'growth' && <CommercialDevelopment />}
       {tab === 'homestudents' && <HomesAndStudents />}
       {tab === 'boardcompare' && <BoardCompare />}
+      {tab === 'healthlever' && <HealthLever />}
+      {tab === 'freecashlever' && <FreeCashLever />}
+      {tab === 'salarylever' && <SalaryLever />}
+      {tab === 'feelever' && <FeeLever />}
+      {tab === 'extraslever' && <ExtrasLever />}
+      {tab === 'positionslever' && <PositionsLever />}
       {tab === 'attrition' && <WhichGradesStudentsLeave />}
       {tab === 'montytech' && <MontyTech />}
       {tab === 'addsup' && <WhatItAllAddsUpTo />}
