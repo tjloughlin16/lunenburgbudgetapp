@@ -71,6 +71,9 @@ NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
 # backlog of transcripts (~880) clears in about ten months at this pace; raise it here
 # if he wants faster, never past ~20 (2% a DAY). See ~/.claude/CLAUDE.md.
 MAX_MINUTES_PER_RUN = 3
+# The town's own minutes, read for their votes: cheap (a short document, the small model,
+# every quote checked) but 4,600 of them, so newest first and capped, every board.
+MAX_OFFICIAL_VOTES_PER_RUN = 40
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 RUN_COLS = ['ran_at', 'as_of', 'new_agendas', 'new_minutes', 'new_videos',
@@ -332,6 +335,12 @@ def main():
             notes.append('%d recordings await minutes; wrote %d' % (len(targets), MAX_MINUTES_PER_RUN))
         for t in targets[:MAX_MINUTES_PER_RUN]:
             py('write_recording_minutes.py', t['board_slug'], t['meeting_date'], check=False)
+
+    # 7b. THE TOWN'S MINUTES, READ FOR THEIR VOTES -- every board, newest first, capped.
+    # build_boards.py joins these with our recording minutes at build time, so the two
+    # records can arrive in either order (TJ, 17 September 2026).
+    if not a.dry_run and not a.no_minutes:
+        py('extract_official_votes.py', '--limit', str(MAX_OFFICIAL_VOTES_PER_RUN), check=False)
 
     # 7a. The budget state of the three budget boards' recordings -- the deficit, the cuts,
     # the warnings as put on the record -- newest first, capped like the minutes. A file

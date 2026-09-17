@@ -20,7 +20,8 @@ const DATA = '/data/boards.json'
 type Upcoming = { date: string; days_away: number; agenda_url: string; join?: Join | null; hook?: string | null; time?: string | null; where?: string | null; attend?: string | null; important?: unknown; items?: { agenda_line: string; why_it_matters?: string; important?: boolean }[] | null }
 type Score = { fy: number; minutes: { meetings: number; have: number }; recordings: { meetings: number; have: number } }
 type Recent = { date: string; agenda_url?: string | null; agenda_doc?: string | null; minutes_url?: string | null; minutes_doc?: string | null; video_url?: string | null; transcript: boolean; captions_disabled: boolean; ours?: { slug: string; headline?: string | null; digest?: string | null; votes?: number; reconciled?: boolean; discrepancies?: number } | null }
-type Vote = { date: string; t?: number | null; motion?: string; outcome?: string; procedural: boolean; moved_by?: string | null; page: string; video_url: string }
+type Vote = { date: string; t?: number | null; motion?: string; outcome?: string; procedural: boolean; moved_by?: string | null; page: string | null; video_url: string | null
+  source: 'minutes' | 'recording' | 'both'; quote?: string | null; conflict?: string | null; minutes_doc?: string | null; minutes_url?: string | null }
 type Cal = { key: string; label: string; cycles: { fy: number; dates: string[] }[]; earliest: string; latest: string; typical_first: string; typical_last: string; meetings: number }
 type Page = { url: string; source: 'town' | 'district'; overview: string; charter_ref: string; meets: string; members: string[]; facebook: string | null; facebook_scope: string; mirror: string; fetched_at: string; charter_url: string }
 type Board = {
@@ -29,7 +30,7 @@ type Board = {
   scorecard?: { this: Score; last: Score; minutes_lag_days: number; video_lag_days: number }
   finance?: { accounts: number; funds: number; related: number } | null
   join?: { weekday: string; weekday_share: number; meetings_sampled: number; time: string | null; place: string | null; zoom: boolean; cable: boolean; agendas_read: number } | null
-  counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; votes: number; first: string | null; last: string | null }
+  counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; official_votes_read: number; votes: number; vote_conflicts: number; first: string | null; last: string | null }
   upcoming: Upcoming[]; recent: Recent[]; votes: Vote[]
   time_by_tag: { tag: string; label: string; seconds: number; share: number | null }[]; time_meetings: number; time_span_s: number
   calendar: Cal[]; calendar_cycles: number[]
@@ -95,6 +96,36 @@ function Index({ d }: { d: Payload }) {
  *  sticky column beside the page: where to jump on this page, then where else to go for
  *  this board. On a phone it is a floating button at the bottom right that opens the same
  *  list as a sheet, so the links are one tap away without taking the top of the page. */
+/** THE TOWN'S DESCRIPTION, SHORT. TJ, 17 September 2026, on the Parks page: "insanely
+ *  long ... keep it short and put info in a collapsible panel if too long." The first
+ *  paragraph stands, clipped to about eighty words at a sentence end; the rest of what
+ *  the town wrote -- usually the board's full charge -- is one click away, as printed. */
+const LEAD_WORDS = 80
+function Overview({ text, who }: { text: string; who: string }) {
+  const paras = text.split('\n').map(p => p.trim()).filter(Boolean)
+  let lead = paras[0] ?? ''
+  let rest = paras.slice(1)
+  const words = lead.split(/\s+/)
+  if (words.length > LEAD_WORDS) {
+    const cut = words.slice(0, LEAD_WORDS).join(' ')
+    const end = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('; '))
+    const head = end > cut.length * 0.4 ? cut.slice(0, end + 1) : cut + '…'
+    rest = [lead.slice(head.replace(/…$/, '').length).trim(), ...rest].filter(Boolean)
+    lead = head
+  }
+  return (
+    <blockquote className="text-sm mt-3 leading-relaxed" style={{ color: 'var(--text-secondary)', borderLeft: '3px solid var(--grid)', paddingLeft: 12 }}>
+      <p>{lead}</p>
+      {rest.length > 0 && (
+        <details className="mt-2">
+          <summary className="cursor-pointer text-[12.5px] underline" style={{ color: 'var(--text-muted)' }}>The rest of what {who} says about it ({rest.join(' ').split(/\s+/).length} more words)</summary>
+          {rest.map((p, i) => <p key={i} className="mt-2">{p}</p>)}
+        </details>
+      )}
+    </blockquote>
+  )
+}
+
 function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: boolean) => void }) {
   const jump: [string, string, boolean][] = [
     ['#up', 'Upcoming meetings', true], ['#recent', 'Recent meetings', true], ['#votes', 'Votes', b.votes.length > 0],
@@ -250,9 +281,7 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
       {b.page && (
         <div className="card p-4 mt-6 max-w-3xl">
           {b.page.overview ? (
-            <blockquote className="text-sm mt-3 leading-relaxed" style={{ color: 'var(--text-secondary)', borderLeft: '3px solid var(--grid)', paddingLeft: 12 }}>
-              {b.page.overview.split('\n').map((p, i) => <p key={i} className={i ? 'mt-2' : ''}>{p}</p>)}
-            </blockquote>
+            <Overview text={b.page.overview} who={b.page.source === 'district' ? 'the district' : 'the town'} />
           ) : (
             <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>The {b.page.source === 'district' ? 'district’s' : 'town’s'} page lists the members and the meetings and carries no statement of what the board is for; the Charter and bylaws do.</p>
           )}
@@ -350,23 +379,31 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
         <>
           <H2 id="votes">Votes, newest first</H2>
           <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
-            From our minutes of the recordings — {n0(substantive.length)} substantive, {n0(b.votes.length - substantive.length)} procedural (accepting minutes, adjourning).
+            From the town&rsquo;s minutes ({n0(b.counts.official_votes_read)} of {n0(b.counts.minutes)} sets read) and our minutes of the recordings ({n0(b.counts.our_minutes)}), joined per meeting: {n0(substantive.length)} substantive, {n0(b.votes.length - substantive.length)} procedural (accepting minutes, adjourning). Where both records have a vote the town&rsquo;s wording stands{b.counts.vote_conflicts ? <>; <strong style={{ color: 'var(--status-critical)' }}>{n0(b.counts.vote_conflicts)} disagree on the outcome</strong> and say so</> : '; none disagree on the outcome'}.
             <button className="underline ml-2" onClick={() => setAllVotes(!allVotes)}>{allVotes ? 'hide procedural' : 'show all'}</button>
           </p>
           <div className="overflow-x-auto mt-3">
             <table className="text-sm w-full" style={{ minWidth: 760 }}>
               <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
-                <th className="text-left py-1.5 pr-3">date</th><th className="text-left py-1.5 pr-3">motion</th><th className="text-left py-1.5 pr-3">outcome</th><th className="text-left py-1.5">in the video</th></tr></thead>
+                <th className="text-left py-1.5 pr-3">date</th><th className="text-left py-1.5 pr-3">motion</th><th className="text-left py-1.5 pr-3">outcome</th><th className="text-left py-1.5 pr-3">record</th><th className="text-left py-1.5">check it</th></tr></thead>
               <tbody>{shown.map((v, i) => (
                 <tr key={i} style={{ borderTop: '1px solid var(--grid)', color: v.procedural ? 'var(--text-muted)' : undefined }}>
                   <td className="py-1.5 pr-3 tnum whitespace-nowrap align-top">{mmdd(v.date)} {v.date.slice(0, 4)}</td>
-                  <td className="py-1.5 pr-3 align-top" style={{ minWidth: 320 }}>{v.motion}{v.moved_by ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> — moved by {v.moved_by}</span> : null}</td>
+                  <td className="py-1.5 pr-3 align-top" style={{ minWidth: 320 }}>{v.motion}{v.moved_by ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> — moved by {v.moved_by}</span> : null}
+                    {v.quote && <span className="block text-[11px] mt-0.5 italic" style={{ color: 'var(--text-muted)' }}>&ldquo;{v.quote}&rdquo;</span>}
+                    {v.conflict && <span className="block text-[11px] mt-0.5 font-semibold" style={{ color: 'var(--status-critical)' }}>The two records disagree: {v.conflict}.</span>}</td>
                   <td className="py-1.5 pr-3 align-top font-semibold" style={{ maxWidth: 220, color: (v.outcome || '').startsWith('pass') ? 'var(--status-good)' : (v.outcome || '').startsWith('fail') ? 'var(--status-critical)' : 'var(--text-muted)' }}>{v.outcome}</td>
-                  <td className="py-1.5 align-top whitespace-nowrap"><a className="underline" href={v.video_url}>{v.t != null ? `${Math.floor(v.t / 60)}:${String(v.t % 60).padStart(2, '0')}` : 'video'}</a> · <a className="underline" href={v.page}>minutes</a></td>
+                  <td className="py-1.5 pr-3 align-top text-[11px] whitespace-nowrap" style={{ color: 'var(--text-muted)' }}>{v.source === 'both' ? 'minutes + recording' : v.source === 'minutes' ? 'the minutes' : 'the recording only'}</td>
+                  <td className="py-1.5 align-top whitespace-nowrap text-[12.5px]">
+                    {v.minutes_doc && <a className="underline" href={v.minutes_url || v.minutes_doc}>the minutes</a>}
+                    {v.minutes_doc && v.video_url ? ' · ' : ''}
+                    {v.video_url && <a className="underline" href={v.video_url}>{v.t != null ? `video ${Math.floor(v.t / 60)}:${String(v.t % 60).padStart(2, '0')}` : 'video'}</a>}
+                    {v.page ? <> · <a className="underline" href={v.page}>ours</a></> : null}
+                  </td>
                 </tr>))}</tbody>
             </table>
           </div>
-          <p className="text-xs mt-1 max-w-3xl" style={{ color: 'var(--text-muted)' }}>Written by a language model from machine captions: a motion is as heard, an outcome “not audible” is a finding about the recording. Where the town has published minutes, those are the record; ours link to the second in the video so anyone can check.</p>
+          <p className="text-xs mt-1 max-w-3xl" style={{ color: 'var(--text-muted)' }}>The town&rsquo;s minutes are the record: a vote from them carries the minutes&rsquo; own words, checked verbatim. A vote from the recording only was written by a language model from machine captions &mdash; a motion as heard, and “not audible” a finding about the recording &mdash; and links to the second in the video. Both records are read as they arrive and joined here, whichever came first.</p>
         </>
       )}
 

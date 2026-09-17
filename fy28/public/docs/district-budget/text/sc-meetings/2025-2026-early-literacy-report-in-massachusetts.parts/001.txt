@@ -1,0 +1,2577 @@
+===PAGE 1===
+ 
+Early Literacy 
+Performance in 
+Massachusetts 
+Results of Ongoing Analysis of Literacy 
+Screening Assessments (2023/24 Data) 
+Mariann Lemke, Molly Faulkner-Bond, 
+Brandon LeBeau, Aaron Soo Ping Chow, 
+Sarah Quesen 
+Fall 2025 
+ 
+===PAGE 2===
+ 
+ 
+© 2025 WestEd. All rights reserved. 
+  
+Suggested citation: Lemke, M., Faulkner-Bond, M., LeBeau, B, Soo Ping Chow, A., & Quesen, S. 
+(2025). Early literacy performance in Massachusetts: Results of ongoing analysis of literacy 
+screening assessments (2023/24 data). WestEd. 
+WestEd is a nonpartisan, nonprofit organization that aims to improve the lives of children and 
+adults at all ages of learning and development. We do this by addressing challenges in 
+education and human development, increasing opportunity, and helping build communities 
+where all can thrive. WestEd staff conduct and apply research, provide technical assistance, and 
+support professional learning. We work with early learning educators, classroom teachers, local 
+and state leaders, and policymakers at all levels of government. 
+For more information, visit WestEd.org. For regular updates on research, free resources, 
+solutions, and job postings from WestEd, subscribe to the E-Bulletin, our semimonthly e-
+newsletter, at WestEd.org/subscribe. 
+===PAGE 3===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– iii – 
+Contents 
+Executive Summary 1 
+Key Findings 1 
+Introduction 4 
+Research Questions 5 
+Data and Methods 7 
+Early Literacy Universal Screening Assessment Data 7 
+Student-Level State Education Data 13 
+Publicly Available School- and District-Level Data 15 
+Merging and Reporting of Student-, School-, and District-Level Data 16 
+Analysis and Findings 16 
+Screening Assessment Data Overview 16 
+Student Performance 27 
+Student Progress 51 
+School Characteristics and Student Performance 69 
+English Learner Student Performance 80 
+Discussion and Next Steps 96 
+References 99 
+Appendix A. Business Rules and Data Processing Specifications 102 
+Cleaning Early Literacy Universal Screening Assessment Data 102 
+Cleaning Student-Level State Education Data 105 
+Merging Student-Level Early Literacy Screening Data and State 
+Education Data 105 
+Cleaning and Merging Publicly Available School- and District-Level 
+Data 107 
+===PAGE 4===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– iv – 
+Appendix B.Comparability Analysis Details 108 
+Screening Assessment Benchmark Details 108 
+Screening Assessment Agreement Rates 112 
+Comparability Testing 113 
+Equipercentile Linking Procedure 177 
+MCAS Grade 3 Linked Values 178 
+Appendix C. Screening Assessment Overview and Student Performance 180 
+Appendix D. Student Progress 208 
+Appendix E. School Analysis Details 223 
+Multilevel Logistic Regression Model Description 223 
+Neighborhood Segregation Analysis Description 229 
+“Outperforming” School Selection 232 
+Regression Discontinuity Design Analysis 232 
+Appendix F. Corresponding Data Tables and Figure Descriptions 239 
+ 
+  
+===PAGE 5===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 1 – 
+Executive Summary 
+Since the 2020/21 school year, the Massachusetts Department of Elementary and Secondary 
+Education (DESE) has collected and analyzed early literacy screening assessment data from 
+schools and districts that participated in targeted state grants. In 2023/24, the 1st year that 
+screening was required for all kindergarten through grade 3 (K–3) students statewide, data 
+were collected for nearly half the state’s K–3 population. 
+Using 2023/24 and longitudinal data, this report examines patterns of early literacy 
+performance and progress across student groups, grades, and schools. The findings reaffirm 
+patterns seen in prior years— such as the persistence of risk and disparities across student 
+populations— while also offering new information on benchmark comparability, multilingual 
+learners, and school-level variation in outcomes. 
+Data Used in 2023/24 Analysis 
+• The data available in 2023/24 doubled from 2022/23.  
+• The data include 388,000 scores from 137,000 students, about 53 percent of the 
+state’s K–3 student population.  
+• Scores are from 612 schools and 144 districts, about half of schools serving  
+K–3 students.  
+• The data are from 13 screening assessments. 
+• Six screening assessments account for 92 percent of the data. 
+Key Findings 
+• Student benchmark performance is consistent over time. About one quarter to one 
+third of students were identified as significantly below benchmark at any given time 
+period (beginning, middle, or end of year), and between 16 and 19 percent were 
+significantly below benchmark in all three time periods. These rates have been 
+consistent over 3 years of analysis.  
+• Inequities in literacy performance persist. Students from low income backgrounds; 
+English learners; students receiving special education services; and Black, Hispanic, 
+American Indian or Alaska Native, and Native Hawaiian or Other Pacific Islander 
+students were more likely to be identified as significantly below benchmark than were 
+their peers not in those groups. For example, students from low income backgrounds 
+were 2.5 times as likely to be repeatedly classified as at significant risk than were 
+students without low income backgrounds. Students from backgrounds that include 
+membership in multiple historically underserved groups were even more frequently 
+===PAGE 6===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 2 – 
+identified as at risk, although there is variation across groups. For example, students 
+from low income backgrounds in all racial and ethnic groups were more often classified 
+as significantly below benchmark, but Hispanic White students were about 1.8 times as 
+likely to be at significant risk than were non–Hispanic White students. Prior results 
+show these same patterns of performance.  
+• Early literacy performance tends to predict later performance. Students who started 
+the school year significantly below benchmark tended to remain so throughout the 
+year and across grade levels, and students who met reading benchmarks also tended to 
+stay at those levels. More than half the students identified as at significant risk at the 
+beginning of the year were still at that level at the end of the year. However, students 
+who improved their performance beyond the significant risk threshold typically 
+maintained higher scores on screening assessments and the grade 3 Massachusetts 
+Comprehensive Assessment System (MCAS) test. Also, students in earlier grades 
+consistently showed a lower likelihood of remaining at significant risk from year to year 
+compared with those in higher grades. These findings also mirror past results. 
+• Meeting benchmarks early is associated with better longer term achievement. This 
+year’s analysis followed students identified as at significant risk at the beginning of 
+grade 1 through grade 3. Students who met reading benchmarks by the end of grade 1 
+were at least 1.3 times as likely to meet expectations on the MCAS English language 
+arts (ELA) assessment in grade 3 as were students who met benchmarks later, and they 
+were at least 5 times as likely to meet expectations as students who never met 
+benchmarks. These and similar previous findings underscore the need for early, 
+targeted interventions to disrupt trajectories of reading difficulty.  
+At the same time, analysis has repeatedly shown that meeting screening assessment 
+benchmarks is not always sufficient for meeting expectations on MCAS. In many cases, 
+even students who met screening assessment benchmarks did not meet expectations 
+on MCAS, pointing to the need for comprehensive literacy instruction that addresses  
+higher-level ELA and writing skills not typically measured by screening assessments.  
+• Students just above and below significant risk threshold perform similarly on MCAS. 
+New exploratory analysis this year focused on students just above and below risk 
+thresholds to examine differences in later performance. Students just below risk 
+thresholds were identified as needing intervention and support, and students just 
+above risk thresholds were not identified as needing such supports. There were no 
+observed differences between these groups in later MCAS performance, although this 
+finding could be due to differences between screening assessments and MCAS (as 
+mentioned in the finding above). Or it could simply suggest that any supports being 
+provided are helping students keep up but not gain ground compared with their peers.  
+• School factors influence literacy outcomes. Previous analyses showed that school 
+environments are related to rates of risk identification, and this is shown in the current 
+===PAGE 7===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 3 – 
+results also. School-level factors like higher concentrations of students from low 
+income backgrounds correlated with the increased likelihood of repeated risk 
+identification. Zooming out to the district level this year— through an analysis of 
+district-level school segregation measures— showed that historically underserved 
+students in more racially segregated contexts were slightly more likely to be identified 
+as significantly below benchmark multiple times. However, some schools do 
+outperform the risk rates predicted by statistical models that take into account student 
+demographics and resources, suggesting avenues for potential further study.  
+• Screening results for the same students from different assessments can vary 
+considerably. In any time period, about 3 percent to 4 percent of students took more 
+than one screening assessment. Some students took assessments in English and 
+Spanish (mostly Star assessments). Some took assessments that targeted different 
+grade or skill levels or that varied in length or mode of administration. Rates of 
+agreement between screening assessments— that is, whether students would be 
+considered at risk of reading difficulty— varied from 47 percent to 85 percent 
+depending on screening assessment combinations.  
+Among English learners taking screening assessments in English and Spanish, patterns 
+of performance varied by language. In English, about 21 percent of students who 
+performed above the significant risk threshold at the beginning of the year were still 
+there by the end of the year, and another 19 percent improved to that level. In Spanish, 
+fewer students (11%) improved beyond the significant risk level. This difference may be 
+related to the fact that most students are being taught primarily in English, and Spanish 
+language development outside of school may not align with the types of skills included 
+on screening assessments. Taken together, these findings suggest that schools and 
+districts carefully consider whether administering multiple screening assessments 
+provides new information that supports student learning. 
+Some caution is needed in generalizing from these results given differences between screening 
+assessments and between screening assessment data samples over time. Addressing these 
+challenges could improve DESE’s ability to develop a comparable system for reporting and 
+analysis. Nonetheless, although exact numbers may vary depending on the benchmarks used in 
+analysis or characteristics of the available data, patterns of performance over 3 years of analysis 
+have been remarkably consistent. Although universal screening provides valuable data that can 
+be used to identify students who need support, current interventions are not yet addressing 
+these challenges fully. Continued efforts to investigate and support effective school practices 
+are essential for advancing literacy outcomes statewide. 
+===PAGE 8===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 4 – 
+Introduction 
+Over the past few years, the Commonwealth of Massachusetts, like many other states, has 
+implemented a series of policies and programs aimed at improving the literacy skills of young 
+children. A change to state regulation in 2022 required elementary schools to assess each 
+student’s reading abilities and early literacy skills at least twice per year from kindergarten 
+through at least grade 3 (K–3), beginning in the 2023/24 school year.  
+The early literacy screening regulation also requires that schools determine how to meet the 
+needs of students whose screening results are “significantly below relevant benchmarks for 
+age-typical development” based on use of a “valid, developmentally appropriate, screening 
+instrument approved by the Department.”  
+To assist schools and districts in implementing the regulation, the Massachusetts Department 
+of Elementary and Secondary Education (DESE) published guidance in June 2023 that includes 
+information on selecting and administering screening assessments and interpreting their results 
+in the context of the regulation. The guidance also provides information on considerations for 
+screening students with disabilities and multilingual learners, as well as information on the 
+relationship between screening and identification of dyslexia. DESE’s goal is to support schools 
+in implementing an effective screening and data-based decision-making process that will 
+identify students at risk of reading difficulty early and provide evidence-based and effective 
+supports. Even before the amendment to the regulation, DESE had begun supporting early 
+literacy screening by providing a list of vetted literacy screening assessments to schools and 
+districts and offering grant funding to purchase and implement them.  
+Beginning with the 2020/21 school year, DESE began collecting literacy screening assessment 
+data from schools and districts participating in certain state grants. DESE contracted with 
+WestEd, a national nonpartisan research and service organization, to analyze these data. 
+Following on earlier analysis, this report uses data from 2023/24 and earlier years to address 
+key questions about the extent to which students are reaching critical early reading 
+benchmarks and how performance and progress differ across student groups and schools.1 
+The specific research questions addressed in this year’s report are in the next section. Several 
+associated issue briefs provide additional information on related topics.   
+ 
+1 Earlier reports and issue briefs are available on the DESE website Early Reading Performance 
+in Massachusetts. 
+===PAGE 9===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 5 – 
+Research Questions 
+Screening Assessment Data Overview 
+• How many benchmark scores are available overall and for each assessment? 
+• How many students, schools, and districts are represented by the data in 2023/24? 
+• How many benchmark scores are available by grade and student group? To what extent 
+does the sample of students with available benchmark scores represent the overall 
+grade K–3 student population in the state? 
+• How many benchmark scores are available by time period in 2023/24? 
+Student Performance 
+• How many students were identified as significantly below benchmark by time period, 
+grade, and student group? 
+• How many students were identified as significantly below benchmark two or three 
+times overall and by grade and student group? 
+• How do student and school background factors interact and relate to the likelihood of 
+students being identified as significantly below benchmark more than once? 
+• Which students are tested “off grade level”? How does their performance compare 
+with that of other students? 
+Student Progress 
+• How does student performance change as the school year progresses? Do students 
+identified as significantly below benchmark remain significantly below benchmark? 
+• How does student progress vary by grade and student background characteristics? 
+• How does student performance change across grade levels? Do students at risk remain 
+at risk across years? 
+• How does student performance change over the summer? 
+• What is the relationship between screening assessment scores and MCAS performance 
+in grade 3? 
+• How do students identified as at risk in grades 1, 2, and 3 perform on MCAS in later 
+grades (e.g., 3, 4, and 5)? Among students identified as at risk early (e.g., beginning of 
+grade 1), how does MCAS performance in grade 3 differ between those who remain at 
+risk over time and those who reach benchmark? 
+===PAGE 10===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 6 – 
+School Characteristics and Student Performance 
+• How do school-level characteristics relate to the risk of being identified as at significant 
+reading difficulty multiple times?  
+• To what extent does district-level school segregation (as measured by indices of 
+concentration of poverty and race/ethnicity) moderate the relationship of school-level 
+factors to student performance? 
+• How does MCAS performance differ for those just below compared with those just 
+above screener benchmarks identifying students as at risk?  
+• Are there schools where students are “outperforming” expectations in terms of 
+achievement and/or growth within the school year, based on the demographics of 
+students and/or schools or other factors? 
+English Learner Student Performance 
+• How many students participate in Spanish-language screening assessments? 
+• What Spanish-language screening assessments are used in the state? 
+• What are the characteristics of students who participate in Spanish-language screening 
+assessments? 
+• To what extent are students who participate in Spanish-language screening 
+assessments also being taught in Spanish? 
+• To what extent are through-year score patterns on Star Spanish-language assessments 
+similar to patterns on English-language assessments?  
+• To what extent do Spanish-language screening assessment outcomes agree with 
+English-language versions? When the results of each screener diverge, are there any 
+patterns to the disagreement? 
+This report draws mainly on early literacy screening assessment and other administrative data. 
+More details on the specific screening assessments used and details on analytic approaches are 
+provided in the section on data and methods, followed by the results of analysis for each of the 
+research questions and a summary discussion of limitations and findings.  
+ 
+===PAGE 11===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 7 – 
+Data and Methods 
+This report uses data from multiple sources, including extant student-level data provided by 
+DESE and publicly available school- and district-level data obtained from DESE’s school and 
+district profiles website and other sources. The following sections provide an overview of data 
+included in analysis and how it is used:  
+• early literacy universal screening assessment data for K–3 students in districts that 
+receive specific state grants and programs  
+• the state’s Student Information Management System (SIMS) data  
+• MCAS data  
+• Assessing Comprehension and Communication in English State-to-State for English 
+Language Learners (ACCESS for ELLs, or ACCESS) data 
+• school- and district-level data from DESE and other sources 
+More detail on data processing is provided in Appendix A. 
+Early Literacy Universal Screening Assessment Data 
+As part of early efforts to encourage screening of students for potential reading difficulties and 
+early intervention, DESE approved a set of early literacy screening assessments developed by 
+various publishers for use in the state, although their use was not required except by certain 
+grantees. Beginning in the 2020/21 school year, recipients of certain state grants, including 
+those related to early literacy screening, were required to provide their students’ early literacy 
+universal screening assessment data to DESE. Over time, the number of grants and programs 
+included has expanded. 
+For the 2023/24 school year, screening became required for all schools in the state. Currently, 
+nine early literacy screening products (some of which include multiple assessment versions that 
+target younger or older learners or are available in English and Spanish) are approved for use in 
+elementary schools in Massachusetts.  
+Eleven English-language screening assessments are currently approved or partially approved for 
+use in the state. Six Spanish-language assessments offered by publishers of the English-
+language assessments are also available for district or school use, although they are not 
+formally approved.2 Approved English-language products and related Spanish-language 
+assessments include Acadience Reading, Amira and Amira Spanish, Dynamic Indicators of Basic 
+Early Literacy Skills (DIBELS) 8th Edition, EarlyBird, FastBridge’s suite of assessments (aReading, 
+earlyReading, earlyReading Spanish), i-Ready, MAP Reading Fluency and MAP Reading Fluency 
+ 
+2 Note that data from Spanish-language assessments is included in the analysis if available. 
+===PAGE 12===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 8 – 
+Spanish, mCLASS and mCLASS Lectura, and Star’s suite of assessments (Star Early Literacy, 
+Star Early Literacy Spanish, Star Reading, and Star Reading Spanish). Note that mCLASS and 
+DIBELS 8th Edition are the same assessment— DIBELS 8th Edition users assess students with 
+paper tasks, and mCLASS users deliver the same tasks online. Assessments may continue to be 
+added to the approved list on a rolling basis.  
+For this report, data from the following 13 specific screening assessments for grades K–3 were 
+included in some or all analyses:  
+• Acadience Reading 
+• DIBELS 8th Edition 
+• EarlyBird 
+• FastBridge (aReading, earlyReading)3 
+• i-Ready (Diagnostic) 
+• MAP Reading Fluency 
+• mCLASS (mCLASS, mCLASS Lectura) 
+• Star Early Literacy (English and Spanish) 
+• Star Reading (English and Spanish) 
+DESE collected the K–3 screening assessment data from individual schools and districts and 
+from assessment publishers (with whom districts signed data-sharing agreements to report 
+data to DESE on their behalf) and provided it to the WestEd research team.  
+Comparability of Screening Assessments and Reporting 
+Approved early literacy screening assessments vary in many ways, including the content they 
+assess, their technical characteristics, the mode of administration (e.g., paper, digital), the 
+grade levels and languages targeted, costs, types of scores provided, and other aspects. 
+Descriptions and details for each assessment can be found on DESE’s early literacy screening 
+assessment site and in Appendix B. 
+Perhaps most importantly, however, screening assessments differ in how they identify students 
+who may be at risk for reading difficulty. Because the goal of screening is to identify these 
+students so that additional support can be provided to them, all the screening assessments 
+offer some indicator of risk. Indeed, most provide several performance benchmarks or risk 
+levels (e.g., low risk, some risk, high risk or below benchmark, at benchmark, above 
+benchmark). It is the lowest performance categories that are typically used to identify students 
+who are “at risk” or “at significant risk.”  
+ 
+3 FastBridge earlyReading Spanish did not include sufficient data for reporting. 
+===PAGE 13===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 9 – 
+In its June 2023 Early Literacy Screening Guidance, DESE recommends that schools and districts 
+use publisher-provided reporting categories for each approved screening assessment in order 
+to determine whether or not students are performing “significantly below relevant 
+benchmarks” as required by state regulation (Table 1). For example, for DIBELS 8th Edition, 
+DESE recommends using the at risk or well below benchmark performance level to identify 
+students significantly below benchmark. Using these benchmarks in analysis describes the 
+numbers of students who would be identified as at risk locally according to DESE’s guidance and 
+for whom additional supports should be provided and information reported to parents.4 
+Table 1. Publisher-Provided Language for Benchmarks That Indicate Risk Based on 
+DESE Guidance 
+Early literacy 
+universal screening 
+assessments 
+At/above 
+benchmark Below benchmark Significantly below 
+benchmark 
+DIBELS 8th Edition 
+(paper version) 
+Minimal/negligible 
+risk 
+Some risk At risk 
+EarlyBird Minimal/negligible 
+risk 
+Some risk Flag icon 
+mCLASS and DIBELS 
+8th Edition (digital 
+version) 
+At/above benchmark Below benchmark/ 
+strategic support 
+Well below 
+benchmark/intensiv
+e intervention 
+Acadience At/above benchmark Below benchmark Well below 
+benchmark 
+FastBridge Low/no risk Some risk High risk 
+i-Ready No observed risk At some risk At risk 
+MAP Reading 
+Fluency 
+At grade level Approaching grade 
+level expectations 
+Flag and/or below 
+grade level 
+expectations 
+STAR At/above benchmark Below benchmark/ 
+on watch 
+Intervention and 
+urgent intervention 
+Source: DESE. (2023). Early literacy screening guidance. 
+https://www.doe.mass.edu/instruction/screening-guide.pdf 
+ 
+4 Note that we use “at significant risk” and scoring “significantly below benchmark more than 
+once” and scoring “significantly below benchmark” interchangeably in the sections that follow. 
+===PAGE 14===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 10 – 
+The levels that identify students as significantly below benchmark differ in how they were 
+determined by assessment developers and in what they represent. The most common 
+approach across screening assessments is a predictive approach that establishes a risk cut score 
+by using an external criterion— generally another standardized test of reading skills— that is 
+thought to be a good indicator of success in reading. A cut score is then established by 
+identifying, through data analysis, students who have a low likelihood of being successful on 
+that measure. One screening assessment used a judgment-based standard setting process in 
+which panels of educators reviewed the assessment and decided how much of the content and 
+skills measured on the test students needed to demonstrate to be “on grade level.” The risk cut 
+score identifies students farthest away from being on grade level according to that test.  
+Finally, benchmarks can be set based on normative data— selecting a percentile, such as the 
+25th percentile, to identify the lowest-performing group of students. Assessment publishers 
+may also use both types of information to set their cut scores. Benchmark levels are generally, 
+although not always, based on composite scores derived from specific reading subtests 
+administered at each grade level. These differences in approach to setting benchmarks mean 
+there is no truly common definition of risk across screening assessments. Table 2 provides an 
+overview of how the risk levels for each screening assessment included in this report were set. 
+Appendix B provides additional details on the methods and samples used in this report to set 
+cut scores. 
+Table 2. Approaches to Setting Risk-Level Benchmarks 
+Early literacy 
+screening 
+assessment 
+Performance 
+level 
+indicating 
+significant risk 
+in reporting 
+Method for 
+setting risk  
+cut scores 
+Additional details on risk cut score 
+Acadience 
+Reading  
+(grades K–3) 
+Well below 
+benchmark 
+Predictive 
+analysis 
+Low likelihood (10% to 20% chance) of 
+performance above 40th percentile on 
+GRADE assessment 
+DIBELS 8th 
+Edition  
+(grades K–3) 
+Well below 
+benchmark 
+Predictive 
+analysis 
+Low likelihood of performance above 
+20th percentile on DIBELS Next (grade K) 
+or Iowa Assessments (grades 1–3) 
+MAP Reading 
+Fluency  
+(grades K–3) 
+Universal 
+screener flag 
+Predictive 
+analysis 
+Low likelihood of performing above 10th 
+percentile on MAP Growth Reading or 
+below 25th percentile on words correct 
+per minute (WCPM) measure 
+===PAGE 15===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 11 – 
+Early literacy 
+screening 
+assessment 
+Performance 
+level 
+indicating 
+significant risk 
+in reporting 
+Method for 
+setting risk  
+cut scores 
+Additional details on risk cut score 
+mCLASS  
+(grades K–3) 
+Well below 
+benchmark 
+Predictive 
+analysis 
+Low likelihood of performance above 
+20th percentile on DIBELS Next (grade K) 
+or Iowa Assessments (grades 1–3) 
+mCLASS Lectura  
+(grades K–3) 
+Well below 
+benchmark 
+Predictive 
+analysis 
+Low likelihood of performance above 
+20th percentile on Woodcock-Muñoz 
+Análisis de Palabras (grade K) or Star 
+Early Literacy Spanish (grades 1–3) 
+EarlyBird  
+(grade K) 
+Dyslexia risk 
+flag 
+Predictive 
+analysis 
+Low likelihood of performing above the 
+16th percentile on the Kaufman Test of 
+Educational Achievement, 3rd Edition 
+(KTEA-3), Phonological Processing 
+subtest 
+FastBridge 
+aReading  
+(grades 2 and 3) 
+High risk Predictive 
+analysis 
+Performance below 15th percentile 
+(selected based on low likelihood of 
+performing above 20th percentile on 
+Gates-MacGinitie Reading Tests or MAP 
+Growth Reading) 
+FastBridge 
+earlyReading  
+(grades K and 1) 
+High risk Predictive 
+analysis 
+Performance below 15th percentile 
+(selected based on low likelihood of 
+performing above 15th percentile on 
+Group Reading Assessment & Diagnostic 
+Evaluation [GRADE] assessment) 
+i-Ready 
+Diagnostic  
+(grades K–3) 
+At risk Judgment-
+based 
+standard 
+setting 
+Performance below grade-level 
+expectations (typically one or more 
+grade level below current grade); grade-
+level expectations established based on 
+college and career readiness standards 
+Star Early 
+Literacy (English 
+and Spanish;  
+grades K and 1)  
+Intervention 
+and urgent 
+intervention 
+Normative Performance below 25th national 
+percentile 
+===PAGE 16===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 12 – 
+Early literacy 
+screening 
+assessment 
+Performance 
+level 
+indicating 
+significant risk 
+in reporting 
+Method for 
+setting risk  
+cut scores 
+Additional details on risk cut score 
+Star Reading 
+(English and 
+Spanish; grades  
+2 and 3) 
+Intervention 
+and urgent 
+intervention 
+Normative Performance below 25th national 
+percentile 
+Source: WestEd’s compilation based on technical documentation and/or communication with 
+publishers. (See the references for list of technical reports and related documentation.) 
+The lack of a common definition of “risk” can create challenges at the school, district, and state 
+levels. First, students who move across schools or districts that use different screening 
+assessments may not be consistently identified as in need of additional support or services. 
+In the screening assessment data, agreement rates between results for students who were 
+administered different screening assessments at the same time periods ranged between 
+62 percent and 85 percent (see Table B2 in Appendix B). Since schools are required to notify 
+parents if students are identified as at risk, differences in how screening assessments identify 
+students as at risk may also cause confusion for parents and families who could receive 
+conflicting information about student performance and needs. It also complicates the ability of 
+schools, districts, and the state to examine performance trends across schools and districts that 
+use different screening assessments because patterns of performance may vary across 
+assessments. A key goal of this analysis is to provide Massachusetts with a summary of how 
+many students across the state are at risk of reading difficulties and how risk varies by student 
+group, by school, and over time; therefore, selecting indicators of risk to use in reporting is an 
+important analytic decision. 
+However, as noted, publisher-provided benchmarks differ in how they were established, and 
+prior analysis5 shows that screening assessments identify different numbers of students as at 
+risk based on their benchmarks. Further, some screening assessment benchmarks are designed 
+differently at different times of the year— for example, a beginning of year benchmark may be 
+easier to achieve than an end-of-year benchmark on some screening assessments. 
+An alternative approach is to use publisher-provided national percentile scores. DESE’s Dyslexia 
+Guidelines recommend using the national 25th percentile or below as a metric to define the 
+category of “significantly below relevant benchmarks.” Thus, using these scores could provide a 
+more consistent way to identify how many students in Massachusetts are among the lowest 
+ 
+5 See earlier reports on Massachusetts data available at the DESE Early Reading Performance in 
+Massachusetts site.  
+===PAGE 17===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 13 – 
+performers relative to the national population. However, two approved English-language 
+screening assessments— EarlyBird and MAP Reading Fluency— do not report national percentile 
+scores for reading risk overall, nor does mCLASS Lectura. Additionally, there may be some 
+variability in the samples included and in the norming procedures used for other assessments, 
+which may mean that national percentiles are not fully comparable either. Further, norms may 
+change over time. Publishers often update their norms in response to broader educational 
+trends. For example, several publishers recently updated their prepandemic norms for the 
+2024/25 school year, meaning that future analysis using normative metrics like the 
+25th percentile would need to acknowledge and/or take these changes into account.6  
+Table 2 also shows which grade levels for each assessment were included in this analysis. Note 
+that for 2023/24 analysis, we excluded data from overall reporting for students who take 
+assessments outside of the recommended grade levels (though we include additional analysis 
+focused specifically on these students where possible). This change also applies to historical data 
+(i.e., for analyses that compare data from prior years to 2023/24 data, we apply the same 
+exclusions to prior year data). 
+As part of the analysis for this year’s report, WestEd tested several different approaches to 
+developing comparable metrics for reporting reading risk. This work demonstrated several 
+potential methods DESE could use to create and apply consistent benchmarks indicating risk 
+across assessments. However, given available data, no method works for all currently approved 
+screening assessments. Each approach has other benefits and limitations as well. Details of this 
+testing and its outcomes can be found in Appendix B. 
+For this reason, and for consistency with 2022/23 and earlier reporting, we report on 2023/24 
+data using both the publisher-provided benchmark categories and a 25th percentile or below 
+metric, noting where differences in findings occur (though, as noted, national percentile data 
+were not available for a few assessments). Using both types of reporting metrics provides 
+complementary information that can be used to triangulate findings. Benchmark categories 
+may be most commonly used in schools for identifying students and can therefore provide a 
+picture of performance of students for whom schools are providing extra support, whereas 
+national percentiles provide a more consistent measure across assessments and over time. 
+Student-Level State Education Data  
+In addition to the K–3 early literacy screening assessment data, other student-level data used in 
+analysis included SIMS data, MCAS data, and ACCESS for ELLs data. These data provided 
+additional information (demographic and assessment) about the K–3 students in the sample 
+and were used to determine how representative the sample is of the state’s K–3 student 
+ 
+6 Star Early Literacy and Star Reading and i-Ready Diagnostic norms were updated. In both 
+cases, results show that some students whose scale scores would have been identified as 
+below the 25th percentile previously would not be so identified under updated norms.  
+===PAGE 18===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 14 – 
+population. DESE’s guide to researchers using the statewide educational data in Massachusetts 
+provides further details about which students are included/excluded in the SIMS, MCAS, and 
+ACCESS data collections. A brief description of each data set follows. 
+Student Information Management System (SIMS) 
+SIMS collects data pertaining to various student characteristics (e.g., gender, race/ethnicity, 
+English learner status, immigrant status, native language, attendance) for the majority of students 
+across the state. In the SIMS data set, students can be identified using their unique state-assigned 
+student identifier (SASID) or their locally assigned student identifier (LASID), which is unique at 
+the district level. SIMS data are submitted three times per school year (October, March, and June) 
+by districts across Massachusetts. For this analysis, data from the June collection were used to 
+provide background characteristics for students in the screening assessment data unless it was 
+missing. In those cases, October data were used. If a student was missing from both data sets, 
+then they were included only in analyses not requiring demographic data. Only 4,057 obser-
+vations (1% of cases and 1,668 students) were missing from both the October and the June SIMS 
+data or do not have state student IDs available in the screening assessment data and cannot be 
+matched to SIMS data. 
+Only the variables relevant to K–3 students were used when creating the student-level data set 
+for analysis. These variables (and their associated codes) were defined using Version 20.3 of the 
+SIMS Data Handbook for the 2020/21 school year, Version 20.7 for the 2021/22 school year, 
+Version 20.9 for the 2022/23 school year, and Version 30.0 for the 2023/24 school year.  
+Massachusetts Comprehensive Assessment System (MCAS) 
+The MCAS data for the 2023/24 school year provide student assessment scores in mathematics 
+and ELA for students in grade 3 and beyond who also have screening assessment scores in 
+2023/24 or earlier. MCAS data provide a statewide measure of ELA achievement for students, 
+allowing for an analysis of how well screening assessment performance relates to later 
+outcomes. These data include scaled scores and achievement levels describing performance in 
+reading, writing, and language relative to grade-level expectations (Not Meeting Expectations, 
+Partially Meeting Expectations, Meeting Expectations, Exceeding Expectations). Note that 
+English learner students in their 1st year in the United States are exempt from taking the MCAS 
+ELA assessment and are therefore excluded from MCAS-related analysis in those years. 
+Assessing Comprehension and Communication in English State-to-
+State for English Language Learners (ACCESS for ELLs) 
+English learner students in grades K–12 in Massachusetts are tested annually using the ACCESS 
+assessment to satisfy federal and state laws that require measuring the English proficiency of 
+these students each year. ACCESS for ELLs is used to measure student proficiency in reading, 
+writing, listening, and speaking, typically in January or February of each school year. ACCESS 
+assessment data provide scale scores for each of the four language domains (i.e., listening, 
+===PAGE 19===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 15 – 
+speaking, reading, and writing) and an associated proficiency level. Proficiency levels describe a 
+student’s performance in terms of six English Language Proficiency Levels (i.e., Entering 
+[Level 1], Emerging [Level 2], Developing [Level 3], Expanding [Level 4], Bridging [Level 5], and 
+Reaching [Level 6]).  
+Students also receive four composite scores and proficiency levels that are derived from a 
+weighted combination of domain scale scores: 
+• Overall: listening (15%), speaking (15%), reading (35%), and writing (35%) 
+• Oral Language: listening (50%) and speaking (50%) 
+• Comprehension: listening (30%) and reading (70%) 
+• Literacy: reading (50%) and writing (50%) 
+In addition to the scaled scores and proficiency levels, other assessment data are provided in 
+the ACCESS files that can be used to evaluate the performance of English learner students, 
+including progress toward proficiency and attainment of English proficiency resulting in 
+students exiting English learner status.  
+Publicly Available School- and District-Level Data 
+Publicly available school- and district-level data for 2023/24 for Massachusetts were retrieved 
+from DESE’s school and district profiles website7 to provide contextual data about the sample of 
+students used in the analysis. Overall, the data pertain to the following four main categories of 
+aggregate information: (a) educator characteristics (e.g., teacher race/ethnicity, teacher 
+retention rate, percentage of experienced teachers), (b) student performance (e.g., MCAS 
+scores, MCAS achievement levels), (c) student enrollment and demographic characteristics 
+(e.g., grade-level enrollment, race/ethnicity, gender, percentage of students from low income 
+backgrounds or who are economically disadvantaged, attrition rate, retention rate), and 
+(d) financial (e.g., per-pupil expenditure amounts). 
+Additionally, for 2023/24 analysis, WestEd utilized publicly available data from the Segregation 
+Tracking Project,8 which provides several different metrics representing differences in the 
+composition of schools and districts for students of different racial/ethnic and economic 
+backgrounds. These data were used in analysis of the relationship between school segregation 
+and early literacy performance. 
+ 
+7 This website can be found at DESE’s School and District Profiles website. 
+8 This resource can be found at The Educational Opportunity Project’s Segregation Tracking 
+Project website. 
+===PAGE 20===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 16 – 
+Merging and Reporting of Student-, School-, and District-Level 
+Data 
+All student-, school-, and district-level data for the 2020/21, 2021/22, 2022/23, and 2023/24 
+school years were combined into one primary longitudinal analytic file. Data are organized as a 
+single longitudinal data set with one observation per student, per test period (i.e., beginning of 
+year [BOY], middle of year [MOY], and end of year [EOY]), per screening assessment, per year. 
+Some students had multiple screening assessment scores per test period because they 
+participated in multiple early literacy screening assessments during the school year. Appendix A 
+details the process of merging different data sources and describes the data cleaning process 
+and associated business rules.  
+This report follows DESE’s standard procedure for suppression of student demographic and 
+assessment data: A minimum sample size of 6 students is required for reporting any student 
+demographic information, and a minimum sample size of 10 students is required for reporting 
+student assessment outcomes. “Sup data” represents suppressed data in this report. 
+Analysis and Findings 
+In this section, we describe how well the data represent students in grades K–3 in 
+Massachusetts and provide updated information about student performance and progress. 
+Screening Assessment Data Overview 
+This subsection provides an overview of the literacy screening assessment data available for 
+analysis. Specific questions to be addressed include the following: 
+• How many benchmark scores are available overall and for each assessment? 
+• How many students, schools, and districts are represented by the data in 2023/24? 
+• How many benchmark scores are available by grade and student group? To what extent 
+does the sample of students with available benchmark scores represent the overall 
+grade K–3 student population in the state? 
+• How many benchmark scores are available by time period in 2023/24? 
+===PAGE 21===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 17 – 
+How many benchmark scores are available overall and for each 
+assessment? 
+Data Summary 
+• The data available in 2023/24 doubled from 2022/23.  
+• The data include about 388,000 scores and 137,000 students, about 53 percent of the 
+state’s K–3 student population.  
+• Scores from 612 schools and 144 districts, about half of schools serving K–3 students.  
+• The data are from 13 screening assessments. 
+• Six screening assessments account for 92 percent of the data. 
+Early literacy screening assessment data for the 2023/24 school year includes a total of 
+388,204 records with benchmark scores (i.e., levels that identify whether students are at risk of 
+reading difficulty given their grade level and time of testing, as described in Table 2).9 This 
+number includes all screening assessments, grades K–3, and all time periods, because most 
+assessments are administered several times per year.10 The number of records available in 
+2023/24 doubled from 2022/23. 
+The most commonly used assessments were mCLASS (37%) and DIBELS 8th Edition (21%), which 
+together account for about 58 percent of the sample. Star assessments (Star Early Literacy and 
+Star Reading) represented 15 percent of the sample, i-Ready 12 percent, and MAP Reading 
+Fluency 8 percent (see Table 3 for a full list).  
+Compared with 2022/23, the sample includes more mCLASS and MAP Reading Fluency records; 
+fewer Star Early Literacy, Star Reading, i-Ready records; and somewhat fewer DIBELS 8th 
+Edition records.  
+Analyses based on the 25th percentile include a smaller number of scores than those using 
+publisher-provided benchmarks because not all screening assessments report national 
+percentiles. 
+ 
+9 About 65.7 thousand (65,657) records were removed from the data due to missing benchmark 
+scores or other data issues. (Most of the observations removed came from DIBELS 8th Edition 
+and Star CBM data that had only subtest scores.) Almost 14 thousand (13,949) observations 
+from the FastBridge and Star suite of assessments were not used for the main analyses due to 
+“off grade level” testing, but they were used for sub-analyses. 
+10 Almost 6,000 (5,958) students had multiple scores from different screening assessments in 
+the same time period in the 2023/24 school year (e.g., Star Early Literacy, Star Early Literacy 
+Spanish). 
+===PAGE 22===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 18 – 
+Table 3. Number and Percentage of Screening Assessment Benchmark Scores by Year and Assessment for Grades K –3 
+Early literacy 
+screening assessment 
+2021/22 
+(N) 
+2021/22 
+(%) 
+2022/23 
+(N) 
+2022/23 
+(%) 
+2023/24 
+(N) 
+2023/24 
+(%) 
+2023/24 
+(25th 
+percentile 
+metric)  
+(N) 
+2023/24 
+(25th 
+percentile 
+metric) 
+(%) 
+Acadience Reading 0 0% 4,615 3% 8,838 2% 8,838 3% 
+DIBELS 8th Edition 21,686 32% 46,938 26% 79,914 21% 79,914 23% 
+EarlyBird 1,360 2% 2,689 1% 4,214 1% 0 0% 
+FastBridge aReading 1,291 2% 628 <1% 4,053 1% 4,053 1% 
+FastBridge 
+earlyReading 390 <1% 1,168 <1% 5,452 1% 5,452 2% 
+MAP Reading Fluency 314 <1% 0 0% 32,414 8% 0 0% 
+Star Early Literacy 12,530 19% 26,418 15% 29,337 8% 29,337 8% 
+Star Early Literacy 
+Spanish 1,534 2% 0 0% 3,564 <1% 3,564 1% 
+Star Reading 2,799 4% 25,977 14% 28,680 7% 28,680 8% 
+Star Reading Spanish 0 0% 0 0% 1,728 <1% 1,728 <1% 
+i-Ready 16,426 24% 34,784 19% 45,568 12% 45,568 13% 
+mCLASS 9,383 14% 36,131 20% 143,949 37% 143,942 41% 
+mCLASS Lectura 0 0% 0 0% 493 <1% 0 0% 
+===PAGE 23===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 19 – 
+Early literacy 
+screening assessment 
+2021/22 
+(N) 
+2021/22 
+(%) 
+2022/23 
+(N) 
+2022/23 
+(%) 
+2023/24 
+(N) 
+2023/24 
+(%) 
+2023/24 
+(25th 
+percentile 
+metric)  
+(N) 
+2023/24 
+(25th 
+percentile 
+metric) 
+(%) 
+Total 67,713 100% 179,348 100% 388,204 100% 351,076 100% 
+Note. Excludes screening assessments with no data or insufficient data for reporting in 2023/24. EarlyBird includes only data for 
+grade K. FastBridge earlyReading and Star Early Literacy (English and Spanish) include only grades K and grade 1. FastBridge 
+aReading and Star Reading (English and Spanish) include only grades 2 and 3. Source: Early literacy screening assessment data. 
+===PAGE 24===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 20 – 
+How many students, schools, and districts are represented by the data 
+in 2023/24? 
+Most screening assessments are administered at least three times per school year (i.e., BOY, 
+MOY, and EOY), although the start and end dates for these time periods vary across schools and 
+districts. As a result, most students have multiple scores within a school year, and some 
+students have more than one score per time period if they took multiple different screening 
+assessments during the school year.  
+The 388,204 scores shown in Table 3 represent 137,159 unique students across 144 districts 
+and 612 schools in 2023/24, about double the numbers of students, schools, and districts 
+included in 2021/22 (Figure 1). About half of elementary schools and one third of school 
+districts in the state are represented in the data. 
+Figure 1. Between School Years 2022/23 and 2023/24, Numbers of Schools and 
+Districts Included in Analysis Approximately Doubled 
+ 
+Note. Five hundred and six schools across 136 districts are represented in data using the 
+25th percentile or below metric Source: Early literacy screening assessment data. 
+The 137,159 students represent about 53 percent of the total grade K–3 student population 
+in the state in 2023/24, up from 26 percent in 2022/23.11 About 30 percent of students 
+(40,473 students) across the sample have at least one benchmark score in 2022/23 and 
+2023/24, and about 5 percent of students have scores for 2023/24 and 2 prior years.  
+ 
+11 Enrollment data were retrieved from DESE’s School and District Profiles page. 
+===PAGE 25===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 21 – 
+Table C1 in Appendix C provides the number of students with data from each literacy screening 
+assessment. Some students took multiple screening assessments within the school year, 
+resulting in larger totals than the actual number of unique students. 
+How many benchmark scores are available by grade and student group? 
+To what extent does the sample of students with available benchmark 
+scores represent the overall grade K–3 student population in the state?  
+Key Findings 
+• There are more Hispanic students, students from low income backgrounds, and 
+English learner students in the screening data sample than there are in the state. 
+• Student background characteristics differ across assessments. 
+• The screening assessment sample may be somewhat lower performing than that of 
+the state overall. 
+The results in this report are based on a sample of students. Because the sample slightly 
+overrepresents students who may be at higher risk of being identified as significantly below 
+benchmark, the findings may slightly underestimate overall student performance across the 
+state. 
+Compared with the state, the background characteristics of students in the screening 
+assessment sample include between 6 and 8 percent more students who are Hispanic, from low 
+income backgrounds, and are English learners (Figure 2). About 51 percent of the sample was 
+classified as from low income backgrounds compared with 43 percent in the state, about one 
+quarter were identified as English learner students compared with 19 percent in the state, and 
+32 percent were Hispanic compared with 26 percent in the state.  
+The early literacy screening assessment data have 2 to 3 percent more Black, American Indian 
+or Alaska Native, and kindergarten students and students receiving special education services 
+than the state and about 2 to 3 percent fewer Asian, White, and grade 2 students. Thirty-seven 
+percent of 3rd grade students met expectations on MCAS in the literacy screening assessment 
+sample compared with 42 percent in the state overall.  
+===PAGE 26===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 22 – 
+Figure 2. Screening Assessment Data Includes More Hispanic, English learner, and 
+Students From Low Income Backgrounds Than the State Population At Grades K–3 
+ 
+Note. Students may be included in more than one racial/ethnic category (Hispanic/not Hispanic 
+and multiple race/ethnicity categories). For figure data, see Figure 2 in Appendix F. Source: 
+Early literacy screening assessment data, October and June SIMS collection data, and state-
+provided MCAS data. 
+0.7%
+4%
+10%
+17%
+26%
+77%
+17%
+19%
+51%
+49%
+43%
+42%
+25%
+26%
+25%
+24%
+1%
+6%
+8%
+20%
+32%
+74%
+20%
+25%
+51%
+49%
+51%
+37%
+24%
+24%
+26%
+26%
+0% 20% 40% 60% 80% 100%
+Native Hawaiian/Other Pacific Islander
+American Indian/Alaska Native
+Asian
+Black
+Hispanic
+White
+Special education students
+English learner students
+Male
+Female
+Low income
+MCAS meeting/exceeding expectations
+(Grade 3 only)
+Grade 3
+Grade 2
+Grade 1
+Kindergarten
+Percentage in Sample Percentage in State
+===PAGE 27===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 23 – 
+The students in the screening data sample and the state are clustered in schools, which may 
+affect the resources and support available to them. Compared with schools in the state, the 
+schools included in early literacy screening data had higher concentrations of Black, Hispanic, 
+and English learner students and lower concentrations of White students than most schools in 
+the state. They also had higher mobility and chronic absenteeism rates and lower MCAS 
+proficiency rates than most schools in the state. A later section of this report enumerates 
+differences in student performance by school characteristics. 
+Student data are also clustered by screening assessment, and student background varies by 
+assessment, showing differences in which assessments schools with different student 
+populations choose. As noted in the previous section, six assessments account for 92 percent of 
+the sample. Among these assessments, MAP Reading Fluency had higher proportions of 
+students from low income backgrounds and English learner, Hispanic, and Black students than 
+other assessments (Table 4). Fewer DIBELS 8th Edition and i-Ready test takers were from low 
+income backgrounds and more were White compared with other assessments. 
+Table 4. Screening Assessment Data by Student Group 
+Demographic 
+DIBELS 
+8th 
+Edition 
+MAP 
+Reading 
+Fluency 
+Star 
+Early 
+Literacy 
+Star 
+Reading i-Ready mCLASS State 
+Low income 39% 69% 53% 49% 46% 55% 43% 
+English learner 17% 41% 30% 25% 20% 26% 19% 
+Students receiving 
+special education 
+services 
+20% 21% 16% 20% 21% 20% 17% 
+White 86% 53% 71% 77% 86% 68% 77% 
+Hispanic/Latino 26% 44% 36% 31% 30% 32% 26% 
+Black 10% 42% 17% 15% 13% 26% 17% 
+Asian 8% 9% 6% 5% 5% 10% 10% 
+American Indian or 
+Alaska Native 
+5% 3% 14% 10% 3% 3% 4% 
+Native Hawaiian or 
+Other Pacific 
+Islander 
+0% 1% 1% 1% 0% 1% 1% 
+===PAGE 28===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 24 – 
+Demographic 
+DIBELS 
+8th 
+Edition 
+MAP 
+Reading 
+Fluency 
+Star 
+Early 
+Literacy 
+Star 
+Reading i-Ready mCLASS State 
+Not MCAS 
+meeting/exceeding 
+58% 68% N/A 65% 64% 63% 58% 
+MCAS 
+meeting/exceeding 
+42% 32% N/A 35% 36% 37% 42% 
+Note. No MCAS performance is listed for Star Early Literacy because only K–1 students were 
+analyzed for Star Early Literacy. Some students may appear multiple times per row if they were 
+administered multiple screening assessments. Students may be included in more than one 
+racial/ethnic category (Hispanic/not Hispanic and multiple race/ethnicity categories). 
+Source: Early literacy screening assessment data, October and June SIMS collection data, and 
+state-provided MCAS data. 
+To the extent that school- and student-level characteristics related to early literacy 
+performance and progress differ between the early literacy screening assessment sample and 
+the state as a whole, the description of results based on the sample may not be fully 
+generalizable to the state’s K–3 population. In this case, screening assessment data were 
+obtained from schools and districts participating in certain grants for which they had to 
+compete, which could suggest a higher level of capacity or willingness to take on improvement 
+initiatives than other districts in the state. Further, prior year analysis shows that within the 
+sample of screening assessment data, students from low income backgrounds; students 
+receiving special education services; and Hispanic, Black, and English learner students are more 
+likely to be identified as at risk than their peers not in those groups (as are students who attend 
+schools with more students in those groups). Because these groups are somewhat 
+overrepresented in the screening sample, the sample may be somewhat lower performing than 
+the state overall.  
+An additional challenge is that, in this case, student performance measures themselves can vary 
+(and are also related to student and school background characteristics). As described in the 
+introduction, this year’s analysis included additional work to examine approaches to improve 
+comparability of performance measures; future work could also incorporate other approaches 
+to adjust for sample differences and improve generalizability.   
+===PAGE 29===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 25 – 
+How many benchmark scores were available by time period in 2023/24?  
+Key Findings 
+• Scores were evenly distributed by time period. 
+• Seventy-six percent of students have scores in all three time periods. 
+• More White students and fewer English learners, Black and Hispanic students, 
+students from low income backgrounds, and students receiving special education 
+services had three scores compared with students with only one or two scores. 
+Of the 388,204 records with benchmark scores in 2023/24, about 33 percent were from the 
+BOY time period, 34 percent were from the MOY time period, and 33 percent were from the 
+EOY time period (Figure 3).12  
+Most screening assessments had about the same number of scores in each time period, but 
+about 40 percent of EarlyBird scores were from BOY compared with only 23 percent at EOY. 
+mCLASS Lectura also had more scores at BOY (37%) compared with EOY (27%), while Star Early 
+Literacy Spanish and Star Reading Spanish had more scores at the end of the year. Table C5 in 
+Appendix C provides details. Students with different background characteristics also had about 
+the same number of scores in each time period (see Table C6 in Appendix C for data by time 
+period and student group). 
+Figure 3. Data Included About the Same Number of Scores in Each Time Period 
+ 
+Note. Some students are included more than once in a time period if they took multiple 
+screening assessments in that time period. Source: Early literacy screening assessment data. 
+ 
+12 Under the 25th percentile metric, 35 percent of scores are from EOY, 33 percent from MOY, 
+and 32 percent from BOY. 
+===PAGE 30===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 26 – 
+Just over three quarters of the K–3 students in the screening assessment data (76%) had 
+benchmark scores from the same screening assessment in all three time periods (Figure 4), 
+about the same as in 2022/23. About 15 percent had benchmark scores only from two time 
+periods, and 9 percent had benchmarks only from a single time period. Of the students with 
+two benchmark scores, most had MOY and EOY scores (Figure 4). Most students with only one 
+benchmark had that score at BOY.  
+Figure 4. Seventy-Six Percent of Students Had Benchmark Scores in  
+All Three Time Periods 
+ 
+Note. Students with multiple screening assessments per time period are counted for each 
+screening assessment. Using the 25th percentile or below metric, about 6 percent of students 
+had one score, 13 percent had two scores, and 81 percent had scores in all three time periods. 
+(Although the total number of scores was smaller than the publisher-provided benchmark 
+scores because several screening assessments do not report national percentiles.) Source: Early 
+literacy screening assessment data. 
+Students with all three scores included a higher percentage of White students and lower 
+percentages of students from low income backgrounds, English learner, Black, and Hispanic 
+students and students receiving special education services compared with students with only 
+one or two scores (see Table C7 in Appendix C). For example, 22 percent of students with three 
+scores were ELs compared with 34 percent of students with two scores and 43 percent of 
+===PAGE 31===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 27 – 
+students with one score. Kindergarten students were about twice as likely as students in grades 
+1 to 3 to have only two scores available than three scores. Most had MOY and EOY scores, 
+which may reflect a preference to begin screening kindergarteners later in the year after they 
+first enter school. 
+Student Performance 
+There are multiple approaches to describing how many students may be at risk of reading 
+difficulty based on the literacy screening assessment data. In addition to differences between 
+screener benchmarks, different interest holders may be interested in answering different 
+questions for different purposes— for example, at what time of year are most students at risk? 
+How many students are at risk? How many students are consistently at risk? In the following 
+sections, we provide information that addresses several questions of student performance: 
+• How many students were identified as significantly below benchmark by time period, 
+grade, and student group? 
+• How many students were identified as significantly below benchmark two or three 
+times overall and by grade and student group? 
+• How do student and school background factors interact and relate to the likelihood of 
+students being identified as significantly below benchmark more than once? 
+• Which students are tested “off grade level”? How does their performance compare 
+with that of other students? 
+This section first describes students “significantly below benchmark” following DESE guidance13 
+(refer to Table 3 for details on reporting of benchmark categories for each assessment) and 
+then students at or below the 25th percentile.  
+In the analysis that follows, we provide information for each time period during which students 
+typically take tests (BOY, MOY, and EOY) separately and summarize information across time 
+periods, describing how often students are classified as significantly below or below benchmark 
+multiple times during the year.  
+ 
+13 DESE’s early literacy screening guidance can be found in the Early Literacy Screening 
+Guidance document. 
+===PAGE 32===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 28 – 
+How many students were identified as significantly below benchmark 
+by time period, grade, and student group?  
+Key Findings 
+• About one third of students were identified as significantly below benchmark at each 
+time point according to publisher-provided benchmarks, and about one quarter were 
+identified with the 25th percentile as the risk indicator. 
+• Risk rates were higher for students from low income backgrounds; students receiving 
+special education services; and English learner, Black, Hispanic, AIAN, and NHPI 
+students. 
+• Risk rates varied from BOY to EOY by screening assessment and benchmark type. 
+• Fewer former English learner students were at significant risk than current or never 
+English learner students. 
+As in prior reporting, using publisher-provided benchmarks shows that about one third of 
+students were classified as significantly below benchmark at BOY (33%), MOY (33%) and EOY 
+(30%) (Figure 5). Using the 25th percentile as a risk metric (which excludes MAP Reading Fluency, 
+EarlyBird, and mCLASS Lectura) identifies about 26 percent of students as significantly below 
+benchmark in any time period.14  
+Figure 5. About One Third of Students Were Identified as At Significant Risk At Each 
+Time Period 
+ 
+Note. Some students may appear multiple times per time period if they were administered 
+multiple screening assessments. Includes students with any number of scores. Percentages 
+identified as significantly below benchmark for students with scores in all three time periods 
+ 
+14 Removing Spanish-language assessments reduces the percentages of students identified as at 
+risk by less than 1 percent. 
+===PAGE 33===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 29 – 
+are 33 percent at BOY, 32 percent at MOY, and 27 percent at EOY. Source: Early literacy 
+screening assessment data. 
+Figure 5 represents students with scores in any number of time periods. Among students who 
+had scores in all three time periods, the percentages of students identified as significantly 
+below benchmark varied by grade level and test over time. Figure 6 shows how percentages 
+changed for the most commonly used assessments (DIBELS 8th Edition, MAP Reading Fluency, 
+Star Early Literacy, i-Ready, mCLASS) for 3 as an example. Table C8 in Appendix C provides data 
+for all grade levels and assessments. Note that these figures include different students at each 
+grade level. For information on how individual students progress across years, see the section 
+on student progress. 
+The percentage of students identified as at significant risk using publisher-provided benchmarks 
+generally decreased between BOY and MOY for DIBELS 8th Edition, Star Early Literacy, and 
+mCLASS and generally increased for i-Ready. That is, fewer students are identified as at 
+significant risk over time, except for i-Ready, for which those percentages increase likely due to 
+the manner in which i-Ready sets its EOY risk cut scores to move closer to grade-level 
+performance.15 Percentages decrease for MAP Reading Fluency at grades K and 1 and increase 
+at grades 2 and 3. Prior reporting showed greater decreases in the percentages of students 
+identified as at risk at earlier grade levels, which is also true using publisher-provided 
+benchmarks in 2023/24 (again, except for i-Ready).  
+The percentage of students identified as at risk— based on scoring below the 25th percentile—
+either decreases or remains the same across grade levels and assessments except for mCLASS 
+at grades K and 1. DIBELS 8th Edition and mCLASS show greater decreases with the publisher-
+provided benchmarks than with the 25th percentile. Unlike with the publisher-provided 
+benchmarks, the percentages of students identified as at risk on i-Ready decrease using the 
+25th percentile. As noted, these differences between results using publisher-provided 
+benchmarks and the 25th percentile are likely due to the manner in which different publishers 
+set their risk benchmarks. (See Comparability of Screening Assessments and Reporting in the 
+data and methods section for more information.) Because Star’s publisher-provided benchmark 
+is based on the 25th percentile, percentages of students identified as at risk do not change 
+using that metric.  
+ 
+15 i-Ready documentation recommends analyzing student performance over time based on 
+changes in scaled scores compared with typical changes. See, for example, description of i-
+Ready student growth metrics. 
+===PAGE 34===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 30 – 
+Figure 6. Percentages of Students Identified as At Significant Risk Decrease Between 
+BOY and EOY for Most Assessments At Grade 1 
+ 
+ 
+Note. Some students may appear multiple times per time period if they were administered 
+multiple screening assessments. Source: Early literacy screening assessment data. 
+===PAGE 35===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 31 – 
+As in prior reporting, in each time period, students from low income backgrounds; English 
+learner students; students receiving special education services; and Black, Hispanic, American 
+Indian or Alaska Native, and Native Hawaiian or Other Pacific Islander students were more likely 
+to be identified as at risk than their peers not in those groups (Table 5). For example, 
+47 percent of students from low income backgrounds were significantly below benchmark at 
+BOY compared with 20 percent of students not from low income backgrounds, meaning 
+students from low income backgrounds were more than twice as likely to be identified as 
+significantly below benchmark as students not from low income backgrounds. Conversely, Asian 
+students were about half as likely as non-Asian students to be classified as significantly below 
+benchmark. 
+===PAGE 36===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 32 – 
+Table 5. Percentage of Students Identified as Significantly Below Benchmark and At Relative Risk of Being Significantly 
+Below Benchmark At BOY, MOY, and EOY by Student Group 
+Demographic 
+Significantly 
+below 
+benchmark 
+at BOY 
+Significantly 
+below 
+benchmark 
+at MOY 
+Significantly 
+below 
+benchmark 
+at EOY 
+Change from 
+BOY to EOY 
+Relative risk 
+at BOY 
+Relative risk 
+at MOY 
+Relative risk 
+at EOY 
+Low income 47% 46% 39% –7% 2.3 2.4 2.4 
+Non–low income 20% 19% 16% –4% N/A N/A N/A 
+Female 32% 31% 26% –6% 1.0 1.0 0.9 
+Male 33% 33% 28% –5% N/A N/A N/A 
+Nonbinary Sup data Sup data Sup data Sup data NC NC NC 
+English learner 60% 58% 49% –11% 2.4 2.3 2.3 
+Non-English 
+learner 
+25% 25% 21% –4% N/A N/A N/A 
+Students receiving 
+special education 
+services 
+56% 58% 53% –4% 2.1 2.2 2.5 
+Students not 
+receiving special 
+education services 
+27% 26% 21% –6% N/A N/A N/A 
+White 31% 30% 25% –5% 0.8 0.8 0.8 
+Non-White 39% 39% 33% –6% N/A N/A N/A 
+===PAGE 37===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 33 – 
+Demographic 
+Significantly 
+below 
+benchmark 
+at BOY 
+Significantly 
+below 
+benchmark 
+at MOY 
+Significantly 
+below 
+benchmark 
+at EOY 
+Change from 
+BOY to EOY 
+Relative risk 
+at BOY 
+Relative risk 
+at MOY 
+Relative risk 
+at EOY 
+Hispanic/Latino 50% 49% 43% –7% 1.9 2.0 2.0 
+Non-
+Hispanic/Latino 
+26% 25% 21% –5% N/A N/A N/A 
+Black 41% 41% 34% –7% 1.3 1.4 1.3 
+Non-Black 31% 30% 26% –5% N/A N/A N/A 
+Asian 18% 18% 14% –4% 0.5 0.5 0.5 
+Non-Asian 34% 33% 28% –6% N/A N/A N/A 
+American Indian 
+or Alaska Native 
+59% 54% 50% –9% 1.9 1.8 1.9 
+Non-American 
+Indian or Alaska 
+Native 
+31% 31% 26% –5% N/A N/A N/A 
+Native Hawaiian 
+or Other Pacific 
+Islander 
+45% 44% 37% –8% NC NC NC 
+Non-Native 
+Hawaiian or Other 
+Pacific Islander 
+33% 32% 27% –5% N/A N/A N/A 
+Total 33% 32% 27% –6% N/A N/A N/A 
+Note. Some students may appear multiple times per time period if they were administered multiple screening assessments. 
+Students may be included in more than one racial/ethnic category (i.e., Hispanic/not Hispanic and multiple race/ethnicity 
+===PAGE 38===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 34 – 
+categories). The relative risk ratio indicates the likelihood of a student group being classified as significantly below benchmark 
+compared with students not in that group. For example, students from low income backgrounds were 2.3 times more likely than 
+students who are not from low income backgrounds to be classified as significantly below benchmark at BOY. Includes only students 
+with three scores. “Sup data” means that data for student groups with fewer than 10 students are not shown in order to protect 
+student privacy. NC means that the percentage was not computed because the group made up 5 percent or less of the sample. 
+Source: Early literacy screening assessment data and October and June SIMS collection data.  
+===PAGE 39===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 35 – 
+Analyzing data with the 25th percentile as the indicator of significant risk shows the same 
+patterns by student group (see Table C13 in Appendix C).  
+In 2023/24, we also explored in more depth the performance of English learner students—
+specifically, achievement differences between students who exited from English learner status 
+(former English learners) compared with those still receiving service or who never received 
+services. In general, research shows that students who exit from English learner status in early 
+elementary grades tend to be high achievers overall and often are students who entered school 
+with relatively higher levels of English language proficiency compared with their peers (see, 
+e.g., Greenberg Motamedi, Singh & Thompson, 2016; Kieffer & Parker, 2016; Slama et al., 2017; 
+Thompson, 2017). As Figure 7 shows, this trend held true among screener data as well: the 
+percentage of former English learners who were deemed at risk (by any screener in any 
+language) was lower at all time points than for current or never English learners, by 
+comparison. 
+Figure 7. The Percentage of Students Significantly Below Benchmark Is Lower Among 
+Former English Learners Than Current or Never English Learners At All Time Points 
+ 
+Note. Some students may appear multiple times per time period if they were administered 
+multiple screening assessments. Source: Early literacy screening assessment data and October 
+and June SIMS collection data. 
+===PAGE 40===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 36 – 
+How many students were identified as significantly below benchmark 
+two or three times overall and by grade and student group?  
+Key Findings 
+• About 25 to 30 percent of students were significantly below benchmark more than 
+once during the school year. 
+• Between 16 and 19 percent of students were significantly below benchmark three 
+times. 
+• Fewer kindergarten students were significantly below benchmark multiple times than 
+were students in other grades. 
+• Repeated risk identification rates were higher for students from low income 
+backgrounds; students receiving special education services; and English learner, Black, 
+Hispanic, AIAN, and NHPI students. 
+• Likelihood of being identified more than once varies by screening assessment. 
+As described in earlier sections, because students are typically assessed more than once during 
+the school year, there are multiple approaches to summarizing performance. One relevant 
+metric is the number of students who are repeatedly identified as significantly below 
+benchmark, because these students may be particularly in need of additional support. 
+In the previous section, we summarized performance by grade and student groups for each 
+time period. In the following sections, we focus on the performance of students with scores in 
+at least two time periods who were identified as significantly below benchmark in more than 
+one time period. Such analysis necessarily excludes students with only one score. About 
+76 percent of students had scores in all three time periods, and about 91 percent had scores in 
+at least two time periods. Focusing on students identified as significantly below benchmark 
+multiple times therefore excludes about 9 percent of students because those students only had 
+one score (Figure 4). 
+In 2023/24, among students with at least two scores, 30 percent of students were identified as 
+significantly below benchmark two or more times (Table 6). That percentage was 25 percent 
+using the 25th percentile to identify students as significantly below benchmark. Despite the fact 
+that this year’s screening assessment sample differs from prior year samples, these percentages 
+are nearly identical to those from 2022/23.  
+===PAGE 41===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 37 – 
+Table 6. Percentage of Students Identified as Significantly Below Benchmark Multiple 
+Times by Number of Available Scores 
+Benchmark scores 
+available 
+Significantly below 
+benchmark 
+multiple times 
+25th percentile or below 
+multiple times 
+Two benchmarks 
+available 
+30% (n = 6,481), 2 times 30% (n = 4,822), 2 times 
+Three benchmarks 
+available 
+30% (n = 33,639), 2 or 3 times 
+12% (n = 13,011), 2 times 
+19% (n = 20,628), 3 times 
+24% (n = 24,621), 2 or 3 times 
+8% (n = 8,000), 2 times 
+16% (n = 16,621), 3 times 
+Total 30% (n = 40,120) 25% (n = 29,443) 
+Note. Some students may appear multiple times per time period if they were administered 
+multiple screening assessments. The total for each column includes the number of students 
+significantly below benchmark two or more times among students with two or three 
+benchmarks available. Source: Early literacy screening assessment data. 
+Similarly, among students with scores in all three time periods, fewer students overall were 
+identified as at significant risk more than once during the school year using the 25th percentile 
+as an indicator of risk compared with publisher-provided benchmarks (24% compared with 
+30%). Similar to prior reporting, between 16 and 19 percent of students with all three scores 
+were identified as at significant risk in all three time periods.  
+Of the students who had at least two scores, fewer kindergarten students were identified as 
+significantly below benchmark multiple times than were students in other grades. As was the 
+case in prior reporting, students from low income backgrounds; students receiving special 
+education services; English Learner students; and Black, Hispanic, American Indian or Alaska 
+Native, and Native Hawaiian or Other Pacific Islander students were more likely than their peers 
+not in those groups to score significantly below benchmark multiple times during the school 
+year (Table 7).   
+===PAGE 42===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 38 – 
+Table 7. Relative Risk of Being Identified as At Significant Risk Multiple Times by 
+Student Group 
+Demographic 
+Significantly below 
+benchmark  
+two or more times 
+Relative risk of 
+significantly below 
+benchmark  
+two or more times 
+Low income 43% 2.5 
+Non–low income 17% N/A 
+Female 29% 0.9 
+Male 31% N/A 
+English learner 56% 2.5 
+Non-English learner 22% N/A 
+Students receiving special education 
+services 56% 2.3 
+Students not receiving special education 
+services 24% N/A 
+White 28% 0.8 
+Non-White 37% N/A 
+Hispanic/Latino 47% 2.0 
+Non-Hispanic/Latino 23% N/A 
+Black 38% 1.4 
+Non-Black 28% N/A 
+Asian 16% 0.5 
+Non-Asian 32% N/A 
+American Indian or Alaska Native 54% 1.9 
+Non–American Indian or Alaska Native 29% N/A 
+Native Hawaiian or Other Pacific 
+Islander 42% NC 
+Non–Native Hawaiian or Other Pacific 
+Islander 30% N/A 
+Total 30% N/A 
+===PAGE 43===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 39 – 
+Note. Some students may appear multiple times per row if they were administered multiple 
+screening assessments. Students may be included in more than one racial/ethnic category 
+(i.e., Hispanic/not Hispanic and multiple race/ethnicity categories). The relative risk ratio 
+indicates the likelihood of a student group being classified as significantly below benchmark 
+compared with students not in that group. For example, students from low income 
+backgrounds were 2.5 times more likely than students who are not from low income 
+backgrounds to be classified as significantly below benchmark multiple times. NC means that 
+the percentage was not computed because the group made up 5 percent or less of the sample. 
+Source: Early literacy screening assessment data and October and June SIMS collection data. 
+For example, 43 percent of students from low income backgrounds were significantly below 
+benchmark at least twice during the school year compared with 17 percent of students not 
+from low income backgrounds. The relative risk of students from low income backgrounds 
+being classified as significantly below benchmark multiple times during the school year was 
+2.5 times that of students not from low income backgrounds. Asian students and White 
+students were less likely than their peers to be significantly below benchmark more than once 
+during the school year; about the same proportions of female and male students were 
+classified as significantly below benchmark. Table C14 in Appendix C provides the percentages 
+of students identified as significantly below benchmark using the 25th percentile and below 
+metric. These values follow the same patterns as shown for the publisher-provided 
+benchmarks. 
+Across the most commonly used screening assessments (DIBELS 8th Edition, i-Ready, mCLASS, 
+Star Early Literacy, MAP Reading Fluency, and Star Reading), the percentages of students 
+classified as significantly below benchmark multiple times during the school year vary from 
+22 percent to 43 percent using the publisher-provided benchmarks (Figure 8 and Table C15 in 
+Appendix C).16 Using the 25th percentile as the indicator of significant risk results in smaller 
+overall percentages of students identified as at risk, and smaller differences between the 
+percentages identified by each assessment. These disparities are likely due to differences in the 
+ways each screening assessment’s benchmark scores are calculated and to differences in the 
+background characteristics of students participating in each assessment.  
+ 
+16 Results of a multilevel model that examines student and school-level factors associated with 
+being identified as at risk multiple times also showed differences in the likelihood of 
+identification for some screening assessments. See Appendix E for details.  
+===PAGE 44===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 40 – 
+Figure 8. Percentage of Students Identified as At Risk More Than Once Varies by 
+Screening Assessment 
+ 
+Note. Some students may appear multiple times if they were administered multiple screening 
+assessments. MAP Reading Fluency does not report national percentiles. For figure data, see 
+Figure 8 in Appendix F. Source: Early literacy screening assessment data.   
+===PAGE 45===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 41 – 
+How do student and school background factors interact and relate to 
+the likelihood of students being identified as significantly below 
+benchmark more than once? 
+Key Findings 
+• Students who experienced intersecting educational inequities related to factors like 
+race/ethnicity or socioeconomic status were more likely to be repeatedly identified as 
+at risk. 
+• Patterns of repeated risk differed by gender and race/ethnicity. 
+Early literacy screening assessments aim to identify students who are not on track to become 
+successful readers and who require additional support to be so. Analysis in the prior section and 
+prior reporting show disparities in performance between students with different background 
+characteristics, as are often found in analysis of educational and other data, suggesting that 
+current systems are not providing adequate support for all students. For example, screening 
+assessment data show that students from low income backgrounds, English learner students, 
+and students receiving special education services were more likely than their peers not in those 
+groups to score significantly below benchmark multiple times during the school year, which 
+means these students are in need of additional support.  
+However, taking an intersectional approach to analysis offers an opportunity to more closely 
+examine outcomes. Such an approach may inform development of policies and supports that 
+better address the complexity of students’ experiences and recognize that membership in 
+multiple historically marginalized groups is likely associated with disparities in achievement. 
+McCall (2005) identified several different approaches to intersectional analysis. In prior 
+reporting, WestEd took an “intercategorical” approach, analyzing data across student 
+background categories such as low income status and race/ethnicity rather than only analyzing 
+categories separately.17 This analysis used a multilevel regression modeling approach with 
+interactions to examine the relationships between multiple characteristics and risk of reading 
+difficulty. Results showed variation in the relationship between performance and factors like 
+low income status, race/ethnicity, and gender. For example, results showed that all students 
+from low income backgrounds were more likely to need additional support than students not 
+from low income backgrounds, but the likelihood increased by 5 percentage points for Asian 
+students and 10 percentage points for Hispanic students.  
+ 
+17 See the brief Lemke, M., Murphy, D., Soo Ping Chow, A., & Acuña, A. (2024). Intersections: 
+Student Background and Early Literacy Performance, WestEd. 
+https://www.doe.mass.edu/instruction/ela/research/intersections.pdf 
+===PAGE 46===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 42 – 
+Using data from 2023/24, we repeated this analysis using a similar statistical model to validate 
+previous findings and found very similar results. A detailed description of the statistical model 
+and full model results can be found in Appendix E.  
+As in prior reporting, although a pattern of increasing likelihood of being identified as at 
+significant risk as background characteristics intersect is the same across student groups, the 
+increases vary by gender, race/ethnicity, and other background characteristics. For example, 
+female students receiving special education services were again shown to be more likely to be 
+identified as at significant risk more than once during the school year across all ethnoracial 
+groups, while there were no differences between males and females among non-special 
+education participants (Figure 9). Other findings from prior reporting, such as the relevance of 
+early childhood participation in reducing risk differences across English learner students by 
+gender and race/ethnicity were also observed again. See the issue brief Intersections: Student 
+Background and Early Literacy Performance (Lemke et al., 2024) for details. 
+===PAGE 47===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 43 – 
+Figure 9. Likelihood of Repeated Risk Identification Was Higher for Female Students 
+Receiving Special Education Services Than It Was for Male Students Across 
+Ethnoracial Groups 
+ 
+ 
+Note. Model probabilities indicate the likelihood of being identified as significantly below 
+benchmark multiple times during the school year. For example, White female students 
+receiving special education services had about a 50 percent probability of being identified as 
+significantly below benchmark multiple times. Source: Early literacy screening assessment data 
+and October and June SIMS collection data. 
+===PAGE 48===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 44 – 
+In last year’s and current analyses, ethnoracial categories were defined as mutually exclusive. It 
+was not possible to estimate a model with non-exclusive ethnoracial categories given the small 
+numbers of students in each group when combined with other background data. However, with 
+a larger sample in 2023/24, it is possible to descriptively analyze data with overlapping racial 
+and ethnic categories, though some caution is needed in interpreting results. 
+Student racial and ethnic background is typically collected by asking parents of students or 
+students themselves to identify first if they are Hispanic/Latino and then to select from other 
+racial categories (e.g., White, Black, Asian). In Massachusetts, common intersections of student 
+race and ethnicity are Hispanic/White, Hispanic/Black, Not Hispanic/White, Not Hispanic/Black, 
+Not Hispanic/Asian, and Not Hispanic/Multiple. These intersecting categories also intersect with 
+other background characteristics in variable ways, including coming from a low income 
+background, being an English learner, and receiving special education services (Table 8). For 
+example, 83 percent of Hispanic/Black students are classified as being from a low income 
+background compared with 76 percent of Hispanic/White students and 73 percent of Not 
+Hispanic/Black students. About 40 percent of Hispanic/Black and Not Hispanic/Asian students 
+were classified as English learners, but Hispanic/Black English learner students were about 
+twice as likely to also be classified as being from a low income background and about four times 
+as likely to receive special education services as Not Hispanic/Asian students. 
+Table 8. Percentage of Students From Low Income Backgrounds, English Learner 
+Students, and Students Receiving Special Education Services by Race/Ethnicity 
+Race/ethnicity Number % of total LI EL 
+student 
+Receiving 
+special 
+education 
+services 
+LI and EL 
+student 
+LI student 
+and 
+receiving 
+special 
+education 
+services 
+Hispanic/White 26,783 19% 76% 47% 21% 40% 17% 
+Hispanic/Black 5,164 4% 83% 40% 21% 36% 18% 
+Hispanic/Asian 280 <1% 55% 28% 12% 19% 9% 
+Hispanic/Multiple 3,657 3% 77% 43% 21% 37% 18% 
+Hispanic/AIAN 4,524 3% 85% 83% 12% 71% 10% 
+Hispanic/NHPI 338 <1% 85% 51% 19% 44% 17% 
+Not 
+Hispanic/White 
+62,123 44% 28% 5% 20% 4% 8% 
+===PAGE 49===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 45 – 
+Race/ethnicity Number % of total LI EL 
+student 
+Receiving 
+special 
+education 
+services 
+LI and EL 
+student 
+LI student 
+and 
+receiving 
+special 
+education 
+services 
+Not 
+Hispanic/Black 
+14,562 10% 73% 28% 22% 23% 16% 
+Not 
+Hispanic/Asian 
+7,652 5% 34% 38% 12% 19% 5% 
+Not 
+Hispanic/Multiple 
+6,075 4% 45% 6% 20% 4% 12% 
+Not 
+Hispanic/AIAN 
+326 <1% 68% 44% 17% 37% 13% 
+Not Hispanic/NHPI 130 <1% 62% 38% 25% 30% 20% 
+Note. Some students may appear multiple times per row if they were administered multiple 
+screening assessments. Source: Early literacy screening assessment data and October and June 
+SIMS collection data. 
+Following up on previous analyses, we again explore how identifying or being identified as a 
+member of multiple student groups relates to consistent risk of reading difficulties— that is, 
+being identified as significantly below benchmark more than once within a school year. For 
+2023/24, we focus on common overlapping background characteristics, including 
+Hispanic/White, Hispanic/Black, Hispanic/AIAN, non-Hispanic White, non-Hispanic Black, and 
+non-Hispanic Asian students who are also classified as coming from low income backgrounds, 
+being English learners, and/or receiving special education services. 
+As seen in this year’s and previous analyses, students who receive special education services, 
+are English learners, or come from a low income background are more often identified as 
+significantly below benchmark more than once than are students without those backgrounds, 
+and the chance of being identified as in need of support increases as these background 
+characteristics intersect.  
+For example, across ethnoracial groups, more students from low income backgrounds were 
+identified as at significant risk than were students not from low income backgrounds 
+(Figure 10). However, within students not from low income backgrounds, Hispanic White 
+students were about 1.8 times as likely to be at significant risk than were non-Hispanic White 
+students and about 2.9 times as likely as non-Hispanic Asian students.  
+===PAGE 50===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 46 – 
+Figure 10. Across Ethnoracial Student Groups, More Students From Low Income 
+Backgrounds Were Identified as At Significant Risk Than Were Students Not From Low 
+Income Backgrounds 
+ 
+Note. Some students may appear multiple times per group if they were administered multiple 
+screening assessments. Source: Early literacy screening assessment data and October and June 
+SIMS collection data. 
+Additionally, across ethnoracial groups, students who receive special education services and are 
+also classified as from low income backgrounds are most often identified as significantly below 
+benchmark, followed by students receiving special education services (particularly female 
+students receiving special education services), students classified as English learners and from 
+low income backgrounds, and English learner students not from low income backgrounds (see 
+Appendix C for details).  
+However, the pattern is the same, there are differences between students based on race and 
+ethnicity. For example, as shown in Figure 11, 44 percent of Hispanic Black students were 
+identified as at significant risk compared with 38 percent of non-Hispanic Black students. Data 
+also show other differences within ethnoracial groups (e.g., between non-Hispanic White and 
+Hispanic White students). The percentages of students identified as at risk was always smallest 
+for non-Hispanic Asian students and highest for Hispanic AIAN students.  
+51%
+30%
+29%
+26%
+10%
+17%
+62%
+50%
+47%
+42%
+27%
+43%
+Hispanic/AIAN
+Hispanic/White
+Hispanic/Black
+Not Hispanic/Black
+Not Hispanic/Asian
+Not Hispanic/White
+Percentage of Students at Significant Risk More Than Once
+Non–low income          Low income
+===PAGE 51===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 47 – 
+Figure 11. More Hispanic Black Students Were At Significant Risk More Than Once 
+Than Were Non-Hispanic Black Students 
+ 
+Note. Some students may appear multiple times per group if they were administered multiple 
+screening assessments. LI means low income, “SpecEdSvc” means students receiving special 
+education services. For figure data, see Figure 11 in Appendix F. Source: Early literacy screening 
+assessment data and October and June SIMS collection data.  
+===PAGE 52===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 48 – 
+Which students are tested “off grade level”? How does their 
+performance compare with that of other students? 
+Key Findings 
+• Most students taking “off grade” assessments were English learners or students who 
+received special education services. 
+• Students tested “off grade level” in later grades were more likely to be repeatedly 
+identified as at risk. 
+• Most students taking both grade-level and “off grade level” assessments were 
+consistently identified as at risk. 
+Several of the approved early literacy screening tools include multiple separate assessments 
+designed to be used on their own or together. For example, the Star assessment suite includes 
+Star Early Literacy and Star Reading, separate assignments that target different skills and, as a 
+result, different grade levels. Star also offers assessments in Spanish and a curriculum-based 
+measure (CBM).18 Other publishers also offer multiple assessments for different purposes or 
+students. As noted in the introduction, to maximize comparability in reporting, we restricted 
+Star and FastBridge reporting to include students from the grade levels for which the publisher 
+or DESE recommends use of each assessment. Recommended grade levels for Star Early 
+Literacy and FastBridge earlyReading are grades K–1 and grades 2 and 3 for Star Reading and 
+FastBridge aReading.19 
+However, publisher and DESE guidance also recommend that schools consider which 
+assessments are most appropriate for students, and in 2023/24 and prior years, some data 
+were reported for students using assessments outside of the recommended grade levels 
+(e.g., Star Early Literacy for a grade 3 student). In this section, we examine the numbers, 
+background characteristics, and performance of students taking Star Early Literacy and Star 
+Reading in English by grade. A later section more closely examines the numbers, background, 
+and performance of students taking assessments in Spanish and English. FastBridge “off grade 
+level” test data include fewer than 10 students and are excluded from this analysis. 
+Most students taking Star Early Literacy were in grades K and 1 and most students taking Star 
+Reading were in grades 2 and 3 (Table 9). Students taking Star Early Literacy in later grades 
+were more often students receiving special education services, English learners, or both than 
+students taking Star Early Literacy in grades K and 1. For example, 41 percent of students taking 
+ 
+18 Star CBM is not currently approved for use on its own. 
+19 See Renaissance guidance for Star at the K–3 Guidance for Star Early Literacy and Star 
+Reading site and Illuminate Education’s FastBridge FAQs site.  
+===PAGE 53===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 49 – 
+Star Early Literacy in grade 3 were receiving special education services compared with 
+16 percent of Star Early Literacy test takers in grades K and 1.  
+Table 9. Students Taking “Off Grade Level” Star Assessments by Student 
+Background Characteristics 
+Grade Assessment Number 
+Receiving 
+special 
+education 
+services 
+EL 
+student 
+EL student 
+and receiving 
+special 
+education 
+services 
+Not EL or 
+receiving 
+special 
+education 
+services 
+K Star Early 
+Literacy 
+5,343 15% 29% 4% 60% 
+1 Star Early 
+Literacy 
+5,621 18% 31% 5% 56% 
+2 Star Early 
+Literacy 
+3,132 25% 45% 8% 38% 
+3 Star Early 
+Literacy 
+1,137 41% 52% 16% 23% 
+K Star Reading 59 17% 25% 2% 59% 
+1 Star Reading 1,435 14% 11% 2% 76% 
+2 Star Reading 4,697 18% 23% 3% 63% 
+3 Star Reading 5,575 22% 27% 5% 56% 
+Source: Early literacy screening assessment data and October and June SIMS collection data. 
+However, between 23 and 38 percent of students taking Star Early Literacy assessments in 
+grades 2 and 3 were not receiving special education services or were English learners, 
+suggesting that schools may also be administering these assessments to students for reasons 
+unrelated to disability or language proficiency. Among English-proficient students not receiving 
+special education services, students taking Star Early Literacy in grades 2 and 3 were about 
+1.5 to 3 times as likely to be repeatedly identified as at significant risk than were students in 
+grades K and 1 taking the same assessment (Table 10). Students taking Star Early Literacy in 
+grade 3 were also more likely to have been at significant risk more than once the year before 
+(while in grade 2). 
+===PAGE 54===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 50 – 
+Table 10. Percentage of Students Taking “Off Grade Level” Star Assessments Identified 
+as At Significant Risk Multiple Times 
+Grade Assessment All 
+Receiving 
+special 
+education 
+services 
+EL student 
+EL student 
+and 
+receiving 
+special 
+education 
+services 
+Not an EL 
+student, not 
+receiving 
+special 
+education 
+services 
+K Star Early 
+Literacy 
+26% 42% 55% 62% 11% 
+1 Star Early 
+Literacy 
+37% 60% 66% 79% 16% 
+2 Star Early 
+Literacy 
+64% 88% 79% 94% 33% 
+3 Star Early 
+Literacy 
+75% 92% 90% 95% 25% 
+K Star Reading Sup data Sup data Sup data Sup data Sup data 
+1 Star Reading 6% 21% 13% 27% 4% 
+2 Star Reading 29% 60% 51% 70% 16% 
+3 Star Reading 34% 64% 69% 85% 12% 
+Note. “Sup data” means that data for student groups with fewer than 10 students are not 
+shown in order to protect student privacy. Source: Early literacy screening assessment data and 
+October and June SIMS collection data. 
+Most students taking Star Reading were in grades 2 and 3, but students taking it at earlier 
+grades were somewhat less likely to be receiving special education services than were students 
+in grades 2 and 3, and at grade 1, they were less likely to be English learners. They were also 
+less likely to be identified as at significant risk on Star Reading than were students in higher 
+grade levels, suggesting that these students may be advanced learners. 
+Many students taking “off grade” assessments also took typical grade-level assessments in the 
+same time period— 88 percent of grade 3 students took Star Early Literacy and 69 percent of 
+grade 2 students also took Star Reading. In these cases, about 84 percent of students were 
+identified as significantly below benchmark on both assessments (Table 11). This finding would 
+seem to suggest that in general, no new information about identification is being gained by 
+===PAGE 55===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 51 – 
+giving students both assessments, though in about 15 percent of cases, students would be 
+identified as at significant risk on one assessment and not the other.  
+Table 11. Percentage of Students Identified as Significantly Below Benchmark on Star 
+Early Literacy and Star Reading 
+Assessments BOY  
+(N, % agree) 
+MOY  
+(N, % agree) 
+EOY  
+(N, % agree) 
+Star Early Literacy 
+(English) and 
+Reading (English) 
+1,870 
+83% 
+1,998 
+84% 
+2,046 
+83% 
+Note. Includes students with any number of scores (i.e., agreement is within time period). 
+Including only students with all three scores decreases sample size to 628 and increases 
+agreement rate to 87 percent at BOY, 90 percent at MOY, 89 percent at EOY. Source: Early 
+literacy screening assessment data.  
+Student Progress 
+In the previous sections, we reported on student performance at BOY, MOY, and EOY and 
+across time periods and on students who performed significantly below benchmark at multiple 
+time periods. In this section, we examine how individual student performance changes over the 
+course of the year and across years. Specifically, we address the following questions: 
+• How does student performance change as the school year progresses? Do students 
+identified as significantly below benchmark remain significantly below benchmark? 
+• How does student progress vary by grade and student background characteristics? 
+• How does student performance change across grade levels? Do students at risk remain 
+at risk across years? 
+• How does student performance change over the summer? 
+• What is the relationship between screening assessment scores and MCAS performance 
+in grade 3? 
+• How do students identified as at risk in grades 1, 2, and 3 perform on MCAS in later 
+grades (e.g., 3, 4, and 5)? Among students identified as at risk early (e.g., beginning of 
+grade 1), how does MCAS performance in grade 3 differ between those who remain at 
+risk over time and those who reach benchmark? 
+===PAGE 56===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 52 – 
+How does student performance change as the school year progresses? 
+Do students identified as significantly below benchmark remain 
+significantly below benchmark? 
+Key Findings 
+• Students mostly remain either significantly below benchmark or at benchmark across 
+the school year. 
+• Most students who get on track and meet benchmark by MOY stay on track, whereas 
+most who fall off track stay off track through EOY. 
+As in prior reporting, most students who were significantly below benchmark in one time 
+period were also significantly below benchmark in later time periods. Among students who had 
+a score in all three time periods of the school, 75 percent of students who were identified as 
+significantly below benchmark at BOY were also significantly below benchmark at MOY, and 
+76 percent of the students who performed significantly below benchmark at BOY and MOY 
+were also at that level at EOY (Figure 12).  
+Conversely, the vast majority of students who were not identified as significantly below 
+benchmark at the beginning of the year were also not identified as such at the end of the year. 
+Also, most students who improved their performance between BOY and MOY maintained that 
+performance at EOY. About 25 percent of students who were classified as significantly below 
+benchmark at BOY improved their performance at MOY, and of these students, the vast 
+majority (83%) were not significantly below benchmark at EOY.  
+However, most students who were identified as at significant risk for the first time at MOY 
+remained at significant risk at EOY. Of the 11 percent of students who were not significantly 
+below benchmark at BOY but were at MOY, 58 percent continued to be significantly below 
+benchmark at EOY.  
+===PAGE 57===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 53 – 
+Figure 12. Most Students Who Started Significantly Below Benchmark Were Still 
+Significantly Below Benchmark in Later Time Periods 
+ 
+Note. Some students may appear multiple times per time period if they were administered 
+multiple screening assessments. Only students with scores across each time period (76% of 
+students) were included in the figure. See Figure 12 in Appendix F for a full description of this 
+figure. Source: Early literacy screening assessment data. 
+Using the 25th national percentile to identify students as at significant risk shows the same 
+patterns of performance, though fewer students were identified as at significant risk at BOY 
+(Figure D1 in Appendix D). 
+Figure 12 divides student performance into two categories: significantly below benchmark and 
+not significantly below benchmark. However, because most assessments include multiple risk 
+levels, some students identified as not significantly below benchmark might still be at some risk 
+of reading difficulty.  
+Figure 13 displays progress using these more detailed categories of risk. As in the earlier 
+analysis, students who met benchmark or who were significantly below benchmark at BOY 
+typically remained at those levels at MOY and EOY, but students at a lower level of risk (“below 
+benchmark” but not “significantly below benchmark”) have more mixed results. 
+===PAGE 58===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 54 – 
+Figure 13. Most Students Who Improved Performance Between BOY and MOY 
+Maintained That Improvement 
+ 
+Note. Some students may appear multiple times per time period if they were administered 
+multiple screening assessments. Only students with scores across each time period (76%) were 
+included in the figure. See Figure 13 in Appendix F for a full description of this figure. Source: 
+Early literacy screening assessment data. 
+Student performance followed several patterns. Students who were below benchmark at the 
+beginning of the year (BOY)— represented by the yellow segment in Figure 13— showed mixed 
+trajectories. By the middle of the year (MOY), their outcomes were fairly evenly split: About 
+one third had improved to meet benchmark, one third remained below benchmark, and one 
+third declined further, falling into the significantly below benchmark category. By EOY, 
+approximately half of students reached benchmark, while the remainder were evenly divided 
+between those still below benchmark and those significantly below. 
+===PAGE 59===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 55 – 
+Students who fell off track at MOY were unlikely to recover by EOY. For example, among the 
+12 percent of students who were on track at BOY but dropped below benchmark at MOY, about 
+half continued to perform below or significantly below benchmark by the end of the year.  
+Conversely, students who improved between BOY and MOY were more likely to succeed by 
+EOY.  
+• Students who were below benchmark at BOY but reached benchmark at MOY were 
+nearly twice as likely to meet benchmark at EOY compared with those who remained 
+below benchmark at both BOY and MOY. 
+• Students who began the year significantly below benchmark but met benchmark by 
+MOY were 
+- 1.6 times more likely to meet benchmark at EOY than students who only 
+improved to just below benchmark at MOY and 
+- 7.7 times more likely to meet benchmark than students who remained 
+significantly below benchmark throughout the year. 
+How does student progress vary by grade and student background 
+characteristics? 
+Key Findings 
+• Fewer students at later grade levels get on track after being identified as significantly 
+below benchmark than do students in earlier grade levels. 
+• More English learner students, students from low income backgrounds, students 
+receiving special education services, and non-White and non-Asian students were 
+significantly below benchmark at EOY after being identified at BOY or MOY than were 
+their peers not in those groups. 
+Among students with scores at all three time points, the percentage who remained significantly 
+below benchmark after being identified as such at BOY increased across grade levels, consistent 
+with prior findings. For instance, 43 percent of kindergarten students identified as significantly 
+below benchmark at BOY remained in that category at EOY compared with 80 percent of grade 
+3 students (Figure 14). Grade 3 students were approximately 1.9 times more likely than 
+kindergarten students to remain significantly below benchmark at EOY if they began the year in 
+that category; grade 2 students were 1.6 times more likely, and grade 1 students were 1.3 times 
+more likely. Notably, students in the earlier grades were more likely to meet benchmark by 
+EOY, even if they started the year significantly below benchmark. 
+Additionally, as shown in prior analyses, more English learner students, students from low 
+income backgrounds, students receiving special education services, and non-White and non-
+===PAGE 60===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 56 – 
+Asian students were significantly below benchmark at EOY after being identified as such at BOY 
+than were their peers not in those groups (Figure 14). For example, 66 percent of students from 
+low income backgrounds who were significantly below benchmark at BOY were still significantly 
+below benchmark at EOY compared with 51 percent of students not from low income 
+backgrounds. Similarly, among students who started the year below benchmark (but not 
+significantly below), fewer students from low income backgrounds, students receiving special 
+education services, and English learner students improved and met benchmark at EOY than did 
+their peers not in those groups. 
+===PAGE 61===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 57 – 
+Figure 14. English Learner Students, Students From Low Income Backgrounds, and 
+Students Receiving Special Education Services Were More Likely to Remain 
+Significantly Below Benchmark From BOY to EOY Compared With Peers Not in Those 
+Groups 
+ 
+Note. Students may be included in more than one racial/ethnic category (Hispanic/not Hispanic 
+and multiple race categories). Source: Early literacy screening assessment data and October and 
+June SIMS collection data. 
+===PAGE 62===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 58 – 
+How does student performance change across grade levels? Do 
+students at risk remain at risk across years? 
+Key Findings 
+• Most students who were significantly below benchmark at EOY in grades K and 1 were 
+still significantly below benchmark 2 years later. 
+• More students in grades 2 and 3 remained significantly below benchmark across years 
+than did students in grades K and 1. 
+• Students who were English learners, from low income backgrounds, Hispanic, and 
+receiving special education services were more likely to remain significantly below 
+benchmark across years. 
+In this section, we examine changes in performance for students with scores from multiple 
+years. Prior analysis focused on changes in performance over a single year— between EOY 
+2021/22 and EOY 2022/23. In 2023/24, we can track student performance for some students 
+over 2 years. Additionally, in 2023/24 we examine performance from EOY of 1 year to BOY of 
+the next to explore how student performance may change over the summer.  
+In total, 29,826 (about 23% of the scores in 2023/24) had EOY scores in 2023/24 and 1 year 
+earlier (Tables 12 and 13). There were 4,272 students who had scores at EOY in 2021/22, 
+2022/23, and 2023/24 on the same assessment. 
+Table 12. Number of Students With EOY Scores Over 1 Year 
+Students with scores from EOY 
+2022/23 and EOY 2023/24  
+(EOY 1 year later) 
+Number 
+Grade K to grade 1 11,305 
+Grade 1 to grade 2 7,776 
+Grade 2 to grade 3 10,745 
+Total 29,826 
+Note. Screening assessment data are available only for students in grades K–3, so we cannot 
+track scores 1 year later for students in grade 3. Source: District-provided early literacy 
+screening assessment data. 
+===PAGE 63===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 59 – 
+Table 13. Number of Students With EOY Scores Over 2 Years 
+Students with scores from EOY 
+2021/22, 2022/23 and 2023/24 
+(EOY 2 years later) 
+Number 
+Grade K to grade 2 2,263 
+Grade 1 to grade 3 2,009 
+Total 4,272 
+Note. Screening assessment data are available only for students in grades K–3, so we cannot 
+track scores 2 years later for students who were screened in grades 2 or 3. Source: District-
+provided early literacy screening assessment data. 
+Of the students who had scores in 2022/23 and 2023/24, about one quarter were identified as 
+at significant risk at EOY of 2022/23. By EOY of 2023/24, most of these students (74%) were still 
+at significant risk (Figure 15). 
+As in previous analyses, more students in later grades remained significantly below benchmark 
+across years than did students in earlier grades. For example, 65 percent of students who 
+ended kindergarten significantly below benchmark were still significantly below benchmark at 
+the end of grade 1 compared with 81 percent of grade 1 students who moved to grade 2 and 
+78 percent of grade 2 students who moved to grade 3.20  
+ 
+20 Using the 25th percentile and below to identify students as at significant risk shows a similar 
+pattern (62% of grade K students remained significantly below benchmark at the next grade 
+level compared to 70% of grade 1 students and 73% of grade 2 students). 
+===PAGE 64===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 60 – 
+Figure 15. More Students At Higher Grade Levels Stayed At Risk from Grade to Grade 
+Than Students At Lower Grade Levels 
+ 
+Note. Graph shows EOY to EOY performance across grades. For example, 65 percent of students 
+significantly below benchmark at EOY in kindergarten were still significantly below benchmark 
+at EOY of grade 1. Source: Early literacy screening assessment data. 
+Figure 15 shows students who had scores in 2022/23 and 2023/24. Of students who had EOY 
+scores in kindergarten or grade 1 that were significantly below benchmark and EOY scores both 
+1 and 2 years later, most were also still classified as significantly below benchmark (Figure 16). 
+Again, however, fewer students who were identified earlier were at significant risk than 
+students identified later. 
+===PAGE 65===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 61 – 
+Figure 16. Most Students Identified as At Significant Risk in Grades K or 1 Were Still 
+Significantly Below Benchmark 1 and 2 Years Later 
+ 
+Note. Graph shows EOY to EOY performance across grades. For example, 64 percent of students 
+significantly below benchmark at EOY in kindergarten were still significantly below benchmark 
+at EOY of grade 1, and 58 percent were still significantly below benchmark at EOY of grade 2. 
+Source: District-provided early literacy screening assessment data. 
+More English learner students, students from low income backgrounds, students receiving 
+special education services, and Hispanic students remained significantly below benchmark 
+across grade levels and years than did their peers not in those groups (Figures D5–D14 in 
+Appendix D). For example, 72 percent of Hispanic students who ended kindergarten 
+significantly below benchmark remained at that level at the end of grade 1 compared with 
+58 percent of non-Hispanic students.  
+These results indicate that students who finish a school year below benchmark are likely to 
+continue below benchmark in subsequent years. This risk increases as students move from 
+kindergarten through grade 3, highlighting the need for early, targeted interventions to disrupt 
+these trajectories. They also indicate that the current supports, interventions, and 
+opportunities provided to students performing below benchmark have not yet fully achieved 
+desired improvements in student outcomes and progress. 
+===PAGE 66===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 62 – 
+How does student performance change over the summer? 
+Key Findings 
+• Measuring summer changes in student risk is challenging due to differences in 
+assessments and shifting benchmarks. 
+• Results vary across assessments. Publisher benchmarks generally show summer 
+declines, whereas percentile benchmarks indicate stable or improved performance, 
+highlighting the need for further research. 
+Focusing on a shorter time period— between EOY of 1 year and BOY of the next— addresses a 
+common question about how student performance may change over the summer. However, 
+changes in assessments, score scales across grade levels, and shifts in risk benchmarks over time 
+complicate the interpretation of results. Figure 17 (next page) shows data for the most commonly 
+used screening assessments for students with scores at EOY and the following BOY between 
+grades K and 1.  
+In general, the publisher-provided benchmarks appear to suggest that student performance 
+declines over the summer, such that the percentages of students identified as at significant risk 
+at the beginning of the school year are larger than they were at the end of the year before. 
+A few screening assessments show a different pattern (i-Ready, FastBridge earlyReading), in 
+which the percentages of students identified as at risk decreases between EOY and BOY of the 
+following year, which may be due at least in part to how those publishers set their benchmarks. 
+However, examining the same data with the 25th percentile as the benchmark to identify 
+students as at significant risk, however, shows the percentages staying the same or decreasing 
+between EOY and the following BOY except for Star Early Literacy. Both FastBridge and Star 
+Early Literacy (which use normative metrics as their publisher-provided benchmark) continue to 
+show the same patterns of student performance, with FastBridge percentages of students at 
+significant risk decreasing from EOY to the following BOY and Star Early Literacy increasing. 
+Taken together, the inconsistent patterns suggest that additional research may be needed to 
+determine the most accurate approaches to analyzing changes in the percentages of students 
+identified as significantly below benchmark, particularly when analyzing transitions between 
+grade levels. 
+===PAGE 67===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 63 – 
+Figure 17. Differences in Benchmarks Across Assessments Make Assessing Changes 
+From EOY to the Following BOY Difficult to Measure 
+ 
+ 
+Note. Some students may appear multiple times per time period if they were administered 
+multiple assessments. Source: Early literacy screening assessment data. 
+===PAGE 68===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 64 – 
+What is the relationship between screening assessment scores and 
+MCAS performance in grade 3? 
+Key Findings 
+• The 2023/24 analysis confirms prior findings that show that most screening 
+assessment benchmarks align with the MCAS level of partially meeting performance. 
+• Most students identified as significantly below benchmark on screening assessments 
+were not proficient on MCAS. 
+• About one third of students who met publisher benchmarks were not proficient on 
+MCAS. 
+Prior analyses examined the relationship between student performance on screening 
+assessments and later performance on MCAS in several different ways: examining the strength 
+and accuracy of the predictive relationship between screener scores and MCAS performance 
+through statistical analysis, linking screener benchmarks directly to the MCAS scale, and cross-
+tabulating the percentages of students at each MCAS performance level by screening 
+assessment performance.  
+This analysis showed that despite differences between screening assessments and MCAS, scores 
+correlate between 0.64 to 0.84 depending on the screening assessment, time of year, and grade 
+level when administered. Linking to the MCAS scale shows that most screening assessment 
+benchmarks identifying students as at significant risk of reading difficulty map to the MCAS 
+Partially Meeting Expectations performance level. Additionally, screening assessment scores do 
+discriminate between students who will meet and not meet MCAS proficiency standards, with 
+classification accuracy ranging from about 75 to 89 percent. Unsurprisingly, given these findings, 
+most students identified as significantly below benchmark on screening assessments did not 
+meet expectations on MCAS. 
+The 2023/24 data show these same patterns. Table B74 in Appendix B provides MCAS-linked 
+values. Figure 18 shows the MCAS performance of students who were identified as significantly 
+below benchmark at BOY of grade 2 or grade 3 compared with peers who were not. About 
+11 percent of students in grade 2 and about 4 percent of students in grade 3 who were 
+identified as significantly below benchmark at BOY met or exceeded standards on MCAS, with 
+about one half in the partially meeting category and the remainder in the not meeting category. 
+More students who were identified as significantly below benchmark in grade 2 met or partially 
+met MCAS standards than did students who were identified as significantly below benchmark in 
+grade 3. As described in the Comparability of Screening Assessments and Reporting section, 
+most benchmarks indicating reading risk map to the MCAS partially meeting performance level, 
+so these results are not surprising. However, as also previously shown, benchmarks that 
+indicate little to no risk do not necessarily mean that all students above them will meet MCAS 
+===PAGE 69===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 65 – 
+standards. In 2023/24, about 65 percent of students who met screening assessment 
+benchmarks also met MCAS standards (meaning about one third did not). 
+Figure 18. Relatively Few Students Identified as At Significant Risk on Grade 2 and 
+Grade 3 Screening Assessments Met or Exceeded Expectations on Grade 3 MCAS ELA 
+ 
+Note. Some students may appear multiple times per time period if they were administered 
+multiple assessments. For figure data, see Figure 18 in Appendix F. Source: Early literacy 
+screening assessment data and state-provided MCAS data. 
+How do students identified as at risk in grades 1, 2, and 3 perform on 
+MCAS in later grades (e.g., 3, 4, and 5)? Among students identified as 
+at risk early (e.g., beginning of grade 1), how does MCAS performance 
+in grade 3 differ between those who remain at risk over time and 
+those who reach benchmark?  
+Key Findings 
+• Among students identified as at risk at EOY in 2021/22, few were proficient on MCAS 
+2 years later. 
+• More students who were identified as significantly below benchmark in earlier grades 
+met MCAS expectations than those identified at later grades. 
+Prior analysis focused on grade 3 MCAS performance for students in grades 2 and 3 given the 
+smaller numbers of students with data beyond grade 3. In 2023/24, additional data are 
+===PAGE 70===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 66 – 
+available to track student MCAS performance in later grades and also to examine the 
+performance of multiple cohorts of students into grade 3 (Cohorts 2 and 3). Specifically, we can 
+now examine grade 4 MCAS performance for two groups of students (Cohorts 3 and 4), 
+examine Grade 5 performance for one group (Cohort 4), and examine MCAS performance both 
+1 and 2 years after students took screening assessments (Table 14).  
+Table 14. Available Data in 2023/24 
+Year K 1 2 3 4 5 
+2020/21 Limited data Limited data Limited data Limited data Limited data Limited data 
+2021/22 Cohort 1 Cohort 2 Cohort 3 Cohort 4 No screening 
+data 
+No screening 
+data 
+2022/23 Cohort 5 Cohort 1 Cohort 2 Cohort 3 Cohort 4 No screening 
+data 
+2023/24 Cohort 6 Cohort 5 Cohort 1 Cohort 2 Cohort 3 Cohort 4 
+Source: Early literacy screening assessment data and state-provided MCAS data. 
+Among students identified as at risk at EOY in 2021/22, few met expectations on MCAS 2 years 
+later, but as in prior analysis, more students who were identified as significantly below 
+benchmark in earlier grades met expectations than did those who were identified later. Eleven 
+percent of students identified in grade 1 met expectations by grade 3 compared with 
+10 percent of those identified in grade 2 and tested in grade 4, and only 6 percent of those 
+identified in grade 3 tested in grade 5 (Figure 19). Similarly, more students who were identified 
+as significantly below benchmark at grade 2 in either 2021/22 or 2022/23 met expectations as 
+3rd graders than did students identified at grade 3 in 2021/22 or 2022/23 as 4th graders (about 
+10% compared with 5%).  
+===PAGE 71===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 67 – 
+Figure 19. Rates of Meeting or Exceeding on MCAS Higher for Students Identified as At 
+Risk in Earlier Grades 
+ 
+Note. Using the 25th percentile as an indicator of risk, percentages meeting or exceeding 
+expectations on MCAS are 7 percent (grades 1 to 3), 6 percent (grades 2 to 4), and 2 percent 
+(grades 3 to 5). Source: Early literacy screening assessment data and state-provided MCAS data. 
+To further examine patterns of screening assessment and MCAS performance, we analyzed 
+data for a group of students who were identified as at risk early (BOY of grade 1), creating four 
+categories: students who never got on track (i.e., never met benchmark) prior to grade 3, 
+students who first got on track (i.e., met benchmark) at EOY of grade 1, students who first got 
+on track at BOY of grade 2, and students who first got on track at EOY of grade 2. Not all 
+students who met benchmark at these time periods stayed at benchmark; some students met 
+benchmark but then were identified as at risk or at significant risk in a subsequent time period. 
+Nonetheless, the students did get on track at least temporarily prior to MCAS and did so at 
+different times.  
+Overall, using publisher-provided benchmarks, between 41 and 59 percent of students who 
+met benchmark at some point after being identified as at risk at grade 1 BOY met expectations 
+on MCAS compared with only 15 percent of students who never met benchmark in grades 1 or 
+2 (Tables 15 and 16). Using the 25th percentile and the 40th percentile as indicators of 
+significant risk and some risk, the percentages of students who met expectations on MCAS 
+ranged from 18 to 34 percent, with students who got on track earlier more likely to meet 
+expectations on MCAS (Figure 20). Differences between publisher benchmarks within and 
+across grade levels likely explain differences in the patterns of performance. 
+===PAGE 72===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 68 – 
+Table 15. Pathways for Students Identified as At Risk At BOY Grade 1 to Grade 3 MCAS, 
+Publisher Benchmarks 
+Time period and 
+grade when  
+first on track 
+Number % of students 
+% who met or 
+exceeded 
+expectations on 
+MCAS 
+On track EOY G2 209 9% 41% 
+On track BOY G2 143 6% 59% 
+On track EOY G1 768 33% 50% 
+Never on track 1,178 51% 15% 
+Total 2,298 100% 32% 
+Source: Early literacy screening assessment data. 
+Table 16. Pathways for Students Identified as At Risk At BOY Grade 1 to Grade 3 MCAS, 
+National Percentiles 
+Time period and 
+grade when  
+first on track 
+Number % of students 
+% who met or 
+exceeded 
+expectations on 
+MCAS 
+On track EOY G2 80 8% 18% 
+On track BOY G2 103 10% 21% 
+On track EOY G1 422 42% 34% 
+Never on track 396 40% 5% 
+Total 1,001 100% 20% 
+Note. National percentile thresholds used in analysis were 25th and below for significant 
+risk/significantly below benchmark and 40th percentile for at risk/below benchmark.  
+Source: Early literacy screening assessment data. 
+The most common pathways for students identified as below benchmark at BOY in grade 1 
+were to remain at risk through the remainder of grade 1 and grade 2 (“never on track”) or to 
+get on track by end of grade 1 (“on track EOY G1”). In total, over 80 percent of students 
+followed these patterns. Only a small number of students got on track anytime after grade 1. 
+===PAGE 73===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 69 – 
+Among students who met benchmark, those who remained at benchmark were more likely to 
+meet expectations on MCAS.  
+Figure 20. Students Who Get On Track and Who Get On Track Earlier Based on 
+Screening Assessment Data Have Much Higher MCAS Meeting Expectation Rates Than 
+Do Students Who Never Meet Screener Benchmarks 
+ 
+Note. Not all students who met benchmark at each time period stayed at benchmark. Source: 
+Early literacy screening assessment data and state-provided MCAS data. 
+Along with other data, these findings once again point to the importance and benefit of helping 
+students meet benchmark as early as possible, though it is important to note that differences in 
+screening assessment benchmarks mean that performance pathways to MCAS may not be 
+perfectly comparable across screening assessments. 
+School Characteristics and Student Performance 
+Key Findings 
+• School-level enrollment of students from low income backgrounds was significantly 
+associated with higher rates of repeated reading risk identification. Schools with 
+higher populations of English learners showed a marginal association with increased 
+risk. 
+• District-level segregation measures were highly correlated with school characteristics. 
+• One racial segregation index (White–Minority isolation) was modestly but significantly 
+associated with increased student risk after adjusting for other factors. 
+• Students just above and students just below benchmark cut scores showed similar 
+MCAS outcomes, suggesting interventions might help maintain— but not significantly 
+===PAGE 74===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 70 – 
+improve— performance among at-risk students or that measurement limitations 
+prevent detection of effects of any interventions. 
+• Some schools notably outperformed similar schools based on student demographics 
+and resources, demonstrating lower risk rates than predicted by statistical models. 
+Earlier sections of this report focus on student-level performance and progress. However, 
+research has long shown that school-level factors are associated with individual student 
+performance. The characteristics of the communities in which schools are located, the 
+backgrounds of the families of students in different schools, and the actions of and resources 
+available to schools themselves can all influence student opportunities and learning. 
+Prior descriptive analysis of screening assessment data (see the Opportunity Gaps issue brief 
+[Lemke et al., 2023]) showed that students enrolled in schools with the highest mobility rates, 
+lowest attendance rates, highest discipline rates, fewest experienced teachers, lowest teacher 
+retention rates, and highest percentages of historically marginalized student groups were more 
+likely to be below benchmark and to stay there from BOY through EOY than were their peers in 
+schools without those characteristics. Additional multilevel modeling analysis also showed that 
+students in schools with above-average percentages of students from low income backgrounds 
+and below-average teacher retention and student attendance rates were more likely to be 
+identified as significantly below benchmark than were students in average schools.  
+In 2023/24, new analyses aimed to provide additional information about how school-level and 
+district-level factors may influence student performance. Questions to be addressed include the 
+following: 
+• How do school-level characteristics relate to the risk of being identified as at significant 
+reading difficulty multiple times?  
+• To what extent does district-level school segregation (as measured by indices of 
+concentration of poverty and race/ethnicity) moderate the relationship of school-level 
+factors to student performance? 
+• How does MCAS performance differ for those just below compared with those just 
+above screener benchmarks identifying students as at risk?  
+• Are there schools where students are “outperforming” expectations in terms of 
+achievement and/or growth within the school year, based on the demographics of 
+students and/or schools or other factors? 
+===PAGE 75===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 71 – 
+How do school-level characteristics relate to the risk of being identified 
+as at significant reading difficulty multiple times?  
+The multilevel statistical model described in the Student Performance section and Appendix E 
+also examined how school-level factors relate to students’ likelihood of being identified as 
+significantly below benchmark more than once during the school year. 
+The model included four school-level variables: 
+• Percentage of students from low income backgrounds 
+• Student mobility rate (measured as schoolwide student stability) 
+• Average student attendance rate 
+• Percentage of English learner students 
+Among these factors, the percentage of students from low income backgrounds in a school 
+showed a strong association with repeated risk identification. Specifically, for every one 
+standard deviation increase in the percentage of students from low income backgrounds (about 
+25 percentage points), the odds of a student being identified as at risk multiple times increased 
+by 37 percent (Odds ratio = 1.37, p < .001). 
+Other school-level variables (student mobility, attendance rate, and percentage of English 
+learner students) did not reach conventional levels of statistical significance, though some 
+showed marginal associations. For example, higher attendance rates were modestly associated 
+with a lower likelihood of repeated identification (p = .06), while schools with higher 
+percentages of English learner students showed a trend toward increased risk (p = .06). These 
+patterns may merit further investigation but did not represent statistically significant effects in 
+this model. 
+To what extent does district-level school segregation (as measured by 
+indices of concentration of poverty and race/ethnicity) moderate the 
+relationship of school-level factors to student performance? 
+Schools and their districts help shape the conditions for student learning. Segregation by 
+race/ethnicity and income can influence students’ access to opportunities, including 
+experienced teachers, rigorous coursework, and adequate resources, all factors known to 
+impact academic achievement and long-term outcomes (e.g., Owens, 2018; Reardon, 2016). 
+To explore these dynamics, we incorporated measures of district-level school segregation into 
+our analysis of factors predicting students’ repeated identification as significantly below 
+benchmark. Using 2023/24 data and segregation indices from the Education Opportunity 
+Project at Stanford University (Reardon et al., 2025), we examined the extent to which patterns 
+of racial and income-based school segregation at the district level correspond to differences in 
+school composition and risk, after adjusting for student and school-level attributes. 
+===PAGE 76===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 72 – 
+These segregation indices quantify the extent to which students from different groups attend 
+school together within a given district. Values range from 0 to 1, with higher values indicating 
+greater isolation. For example, a Black-White isolation index of 0.70 indicates that Black 
+students attend schools where, on average, 70 percent of the student body (considering only 
+Black and White students) is Black. 
+Table 17 shows how segregation indices correlate with key school-level characteristics. Racial 
+segregation (e.g., White–Black, White–Hispanic) is strongly negatively correlated with indicators 
+such as the percentages of students from low income backgrounds (e.g., –0.81), English learner 
+students (e.g., –0.69), and high-need students (e.g., –0.84). These patterns suggest that 
+decreasing concentrations of White students at the district level are associated with higher 
+school-level percentages of historically underserved student groups. District-level school racial 
+segregation also shows moderate to strong positive associations with school conditions 
+typically associated with higher achievement, such as higher attendance rates and teacher 
+retention, particularly for White–Black and White–Hispanic indices. 
+In contrast, income-based segregation (e.g., comparing free/reduced-price lunch students to 
+those not eligible) is positively correlated with school-level socioeconomic and linguistic 
+diversity. For example, the FRL–non-FRL segregation index correlates at 0.90 with percentage of 
+students from low income backgrounds and 0.67 with percentage of English learners. These 
+findings suggest that income segregation in schools within a district often coincides with 
+concentrations of students in schools who often face systemic barriers to educational 
+opportunity. 
+Because the segregation indices are correlated with one another, we selected one racial 
+segregation measure (White–Minority isolation) and one income-based measure (FRL–non-FRL 
+isolation) for inclusion in a multilevel logistic regression model predicting repeated risk 
+identification.21 These variables were added to the model described earlier that already 
+included student and school-level predictors. 
+In this model, White–Minority segregation was modestly but significantly associated with 
+increased risk (estimate = 0.12, t = 2.26, p = .02), indicating that students in more racially 
+segregated contexts were slightly more likely to be identified as significantly below benchmark 
+multiple times. The FRL–non-FRL segregation measure, however, was not statistically significant 
+(p = .41). 
+These results suggest that within district segregation may influence student outcomes primarily 
+through its effects on school composition, many examples of which (e.g., concentration of 
+students from low income backgrounds, percentage of English learner students) were already 
+included in the model. While district-level school segregation measures added some 
+ 
+21 According to Education Opportunity project documentation, “Minority” includes Black, 
+Hispanic, and Native American students (Documentation for Segregation Estimates, 
+Segregation Explorer Version 1.0). 
+===PAGE 77===
+ Early Literacy Performance in Massachusetts:  
+Results of Ongoing Analysis of Literacy Screening Assessments (2023/24 Data) 
+– 73 – 
+explanatory value, especially for racial isolation, their incremental effect was relatively small 
+when controlling for school-level characteristics. 

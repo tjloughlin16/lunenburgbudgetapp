@@ -122,6 +122,42 @@ CHARTER_URL = 'https://www.lunenburgma.gov/323/Charter-Town-Bylaws'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'boards.json')
 SITE = 'https://lunenburgbudgetproject.org'
 RECENT = 15
+MATCH = 0.5      # share of the shorter motion's words found in the other, above which the two records describe one vote
+
+STOP = {'the', 'a', 'an', 'to', 'of', 'and', 'for', 'on', 'in', 'at', 'as', 'by', 'with', 'that', 'be', 'is', 'it', 'from',
+        'motion', 'move', 'moved', 'moves', 'approve', 'accept', 'proposal', 'proposed', 'meeting', 'report'}
+
+
+def tokens(m):
+    t = (m or '').lower()
+    t = re.sub(r'\bfy\s*(\d)', r'fy\1', t)                 # "FY 26" and "FY26" are one token
+    t = re.sub(r'\b(\d+)(st|nd|rd|th)\b', r'\1', t)         # "April 1st" and "April 1"
+    t = re.sub(r"[’']s?\b", '', t)
+    return {w for w in re.findall(r'[a-z0-9]+', t) if w not in STOP}
+
+
+def similar(a, b):
+    """How much of the shorter motion the longer one contains. The recording's version is
+    usually longer ("...at 8:52 p.m.", "...without naming names"), so containment rather
+    than Jaccard, and a procedural adjournment matches an adjournment outright."""
+    ta, tb = tokens(a), tokens(b)
+    if 'adjourn' in ta and 'adjourn' in tb:
+        return 1.0
+    if not ta or not tb:
+        return 0.0
+    return len(ta & tb) / min(len(ta), len(tb))
+
+
+def outcome_key(o):
+    o = (o or '').lower()
+    if 'not' in o or 'unknown' in o or not o:
+        return 'unknown'
+    if 'fail' in o or 'defeat' in o:
+        return 'failed'
+    m = re.search(r'(\d+)\s*-\s*(\d+)', o)
+    if m:
+        return 'count:%s-%s' % (m.group(1), m.group(2))
+    return 'passed' if 'pass' in o or 'carr' in o or 'approv' in o or 'unanim' in o else o
 CYCLES = 5
 
 # THE THREE, first on the index and richest on their pages.
@@ -215,6 +251,10 @@ def build(as_of=None):
     nocap = {(r['board_slug'], r['meeting_date']) for r in read_csv(NOCAP)}
     rec = json.load(open(RECORDED, encoding='utf-8'))
     ours = collections.defaultdict(dict)
+    official = collections.defaultdict(dict)
+    for p in glob.glob(os.path.join(ROOT, 'sources', 'data', 'official-votes', '*', '*.json')):
+        ov = json.load(open(p, encoding='utf-8'))
+        official[ov['board_slug']][ov['meeting_date']] = ov
     for m in rec['meetings']:
         ours[m['board_slug']][m['date']] = m
     feed = json.load(open(FEED, encoding='utf-8'))
@@ -255,14 +295,54 @@ def build(as_of=None):
                 ours=o and dict(slug=o['slug'], headline=o.get('headline'), digest=o.get('digest'),
                                 votes=o['counts'].get('votes'), reconciled=o.get('has_official_minutes'),
                                 discrepancies=o.get('discrepancies'))))
-        # --- every vote we have minutes for, newest first, with the second in the video
-        votes = []
-        for d, o in sorted(ours[slug].items(), reverse=True):
-            for v in o['minutes'].get('votes') or []:
-                votes.append(dict(date=d, t=v.get('t'), motion=v.get('motion'), outcome=v.get('outcome'),
-                                  procedural=bool(v.get('procedural')), moved_by=v.get('moved_by'),
+        # --- every vote, from BOTH records, joined per meeting and deduplicated.
+        #
+        # TJ, 17 September 2026: "I assumed votes would be a combination of the transcript
+        # processing as well as the official minutes, joined and deduped ... using official
+        # minutes as the primary in case of conflict, but flagging conflict ... make sure
+        # this process can happen in any order. The unofficial minutes might come in first
+        # then the official." So the join is done HERE, at build time, over whatever both
+        # directories hold today: sources/data/official-votes/ (the town's minutes, read by
+        # extract_official_votes.py, each vote carrying its verbatim quote) and
+        # sources/data/recording-minutes/ (ours, from the recording). A vote in both is one
+        # row with the town's wording and outcome and the recording's timestamp; where the
+        # two outcomes disagree the row says so. A vote in one record only says which.
+        votes, conflicts = [], 0
+        for d in sorted(set(ours[slug]) | set(official[slug]), reverse=True):
+            o = ours[slug].get(d)
+            rec_votes = list((o or {}).get('minutes', {}).get('votes') or [])
+            off = official[slug].get(d)
+            off_votes = list((off or {}).get('votes') or [])
+            used = set()
+            for ov in off_votes:
+                best, best_j = None, 0.0
+                for i, rv in enumerate(rec_votes):
+                    if i in used:
+                        continue
+                    j = similar(ov.get('motion'), rv.get('motion'))
+                    if j > best_j:
+                        best, best_j = i, j
+                rv = rec_votes[best] if best is not None and best_j >= MATCH else None
+                if rv is not None:
+                    used.add(best)
+                conflict = None
+                if rv is not None and outcome_key(ov.get('outcome')) != outcome_key(rv.get('outcome')) and outcome_key(rv.get('outcome')) != 'unknown':
+                    conflict = 'the minutes say “%s”; the recording was heard as “%s”' % (ov.get('outcome'), rv.get('outcome'))
+                    conflicts += 1
+                votes.append(dict(date=d, t=rv.get('t') if rv else None, motion=ov.get('motion'), outcome=ov.get('outcome'),
+                                  procedural=bool(ov.get('procedural')), moved_by=ov.get('moved_by') or (rv or {}).get('moved_by'),
+                                  source='both' if rv else 'minutes', quote=ov.get('quote'), conflict=conflict,
+                                  minutes_doc=off['source'].get('doc_url'), minutes_url=off['source'].get('minutes_url'),
+                                  page=('/meeting-minutes/' + o['slug']) if o else None,
+                                  video_url=(('%s&t=%ds' % (o['video_url'], rv['t'])) if rv and rv.get('t') is not None else o['video_url']) if o else None))
+            for i, rv in enumerate(rec_votes):
+                if i in used:
+                    continue
+                votes.append(dict(date=d, t=rv.get('t'), motion=rv.get('motion'), outcome=rv.get('outcome'),
+                                  procedural=bool(rv.get('procedural')), moved_by=rv.get('moved_by'),
+                                  source='recording', quote=None, conflict=None, minutes_doc=None, minutes_url=None,
                                   page='/meeting-minutes/' + o['slug'],
-                                  video_url='%s&t=%ds' % (o['video_url'], v['t']) if v.get('t') is not None else o['video_url']))
+                                  video_url='%s&t=%ds' % (o['video_url'], rv['t']) if rv.get('t') is not None else o['video_url']))
         # --- where the time goes, this board
         tb = rec.get('time_by_board', {}).get(slug) or {}
         span = tb.get('topics_span_s') or 0
@@ -331,7 +411,7 @@ def build(as_of=None):
                         recordings=len(vids[slug]),
                         transcripts=sum(1 for d in vids[slug] if (slug, d) in trans),
                         captions_disabled=sum(1 for d in vids[slug] if (slug, d) in nocap),
-                        our_minutes=len(ours[slug]), votes=len(votes),
+                        our_minutes=len(ours[slug]), official_votes_read=len(official[slug]), votes=len(votes), vote_conflicts=conflicts,
                         first=min(dates) if dates else None, last=max(past) if past else None),
             upcoming=upcoming, recent=recent, votes=votes, time_by_tag=time_by_tag, time_meetings=time_meetings, time_span_s=span,
             calendar=cal, calendar_cycles=[fy for fy in fys],

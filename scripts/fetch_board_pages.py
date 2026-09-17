@@ -81,7 +81,10 @@ def text_of(html):
     t = re.sub(r'<br\s*/?>|</p>|</li>|</div>|</h\d>', '\n', t, flags=re.I)
     t = re.sub(r'<[^>]+>', '', t)
     t = H.unescape(t)
-    return re.sub(r'[ \t ]+', ' ', re.sub(r'\n\s*\n+', '\n', t)).strip()
+    t = re.sub(r'[ \t\u00a0]+', ' ', t)
+    # Every line stripped, so a heading CivicPlus indents (" Contact Us") still ends a section.
+    t = '\n'.join(line.strip() for line in t.split('\n'))
+    return re.sub(r'\n\s*\n+', '\n', t).strip()
 
 
 def section(text, start, ends):
@@ -98,6 +101,14 @@ def section(text, start, ends):
     return body[:cut].strip()
 
 
+# Headings and labels that end an overview: the next section, or the page furniture.
+CHROME = ['Contact Us', 'Members', 'Meetings', 'Agendas & Minutes', 'Quick Links', 'Physical Address',
+          'Mailing Address', 'Directory', 'Staff', 'Documents', 'Related Links', 'Helpful Links', 'Links',
+          'Local Sports Organization Contacts', 'Site Links', 'Loading', 'View All',
+          'Related Documents', 'Related Documents and Links', 'Code of Conduct', 'Forms', 'Applications']
+LINK_LINE = re.compile(r'^(Facebook:|Email |Phone:|Fax:|/QuickLinks|-->|View All|\[\]|Arrow |Slideshow |Do Not Show|Close$|Government Websites)')
+
+
 def parse_town(html):
     text = text_of(html)
     heads = ['Meetings', 'Agendas & Minutes', 'Members', 'Overview', 'Contact Us', 'Responsibilities', 'Mission', 'Purpose']
@@ -105,9 +116,20 @@ def parse_town(html):
     members = section(text, 'Members', ['Overview', 'Contact Us', 'Responsibilities', 'Mission', 'Purpose', 'Staff', 'Documents'])
     overview = ''
     for h in ('Overview', 'Responsibilities', 'Mission', 'Purpose'):
-        overview = section(text, h, ['Contact Us', 'Members', 'Meetings', 'Agendas & Minutes'])
+        overview = section(text, h, CHROME)
         if overview:
             break
+    # THE PAGE'S FURNITURE IS NOT THE BOARD'S DESCRIPTION. TJ, 17 September 2026, on the
+    # Parks page: "the one for parks is insanely long ... filter it out to be a description
+    # and not an app link." CivicPlus prints quick links, the contact card, the footer and
+    # the slideshow controls after the overview with no heading of their own, so a line
+    # that is a link label rather than a sentence ends the description too.
+    kept = []
+    for line in overview.split('\n'):
+        if LINK_LINE.match(line):
+            break
+        kept.append(line)
+    overview = '\n'.join(kept).strip()
     # tidy: members print as "Name\n, Chair\nTerm Expires June 2029"
     members = re.sub(r'\n, ', ', ', members)
     members = re.sub(r'\n(Term Expires[^\n]*)', r' — \1', members)
@@ -154,9 +176,29 @@ def add_index_row(index_path, label, url, local, digest, size):
         w.writerows(rows)
 
 
+def reparse():
+    """Re-run the extractor over the pages already mirrored -- the parser changed, the town
+    did not -- keeping every fetch-time field as it was."""
+    rows = list(csv.DictReader(open(OUT, encoding='utf-8')))
+    for r in rows:
+        html = open(os.path.join(ROOT, r['local']), 'rb').read().decode('utf-8', 'replace')
+        p = parse_town(html) if r['source'] == 'town' else parse_district(html)
+        if r['source'] == 'district':
+            p = {k: v for k, v in p.items() if k in r and v}      # the district row's hand-written overview stays
+            p.pop('overview', None)
+        r.update(p)
+        print('  %-45s overview %4d words' % (r['name'], len(r['overview'].split())))
+    with open(OUT, 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=COLS)
+        w.writeheader()
+        w.writerows(rows)
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
+    ap.add_argument('--reparse', action='store_true', help='re-extract from the mirrored pages without fetching')
     a = ap.parse_args()
     if a.check:
         have = list(csv.DictReader(open(OUT, encoding='utf-8'))) if os.path.exists(OUT) else []
@@ -165,6 +207,8 @@ def main():
               else 'STALE board-pages.csv: %s' % ', '.join(bad))
         return 1 if bad else 0
     import datetime as dt
+    if a.reparse:
+        return reparse()
     now = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     slugs = meeting_slugs()
     index = fetch(INDEX_URL).decode('utf-8', 'replace')
