@@ -117,9 +117,8 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
       className="block px-3 py-2 rounded-lg text-[13px] font-semibold transition-opacity hover:opacity-80"
       style={{ background: strong ? 'var(--text-primary)' : 'var(--surface-3)', color: strong ? 'var(--surface-1)' : 'var(--text-primary)' }}>{children}</a>
   )
-  // THE INFOBOX: the facts about the board, in a card at the top of the column that scrolls
-  // away with the page. Only the short navigation below it sticks. TJ: "scrolling sidebar
-  // isn't my favorite" -- this is the entity-page pattern, and nothing scrolls inside anything.
+  // THE INFOBOX: the facts about the board and its posting record, in a card UNDER the
+  // links. TJ: "scrolling sidebar isn't my favorite" -- nothing scrolls inside anything.
   const sc = b.scorecard
   const facts = sc || (p && (p.charter_ref || p.meets || p.members.length > 0)) ? (
     <div className="card p-3 text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>
@@ -152,9 +151,15 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
   return (
     <>
       {/* wide: sticky column */}
+      {/* LINKS FIRST, then the board's facts and its posting record under them (TJ,
+          17 September 2026: "LINKS first, then the sort of 'metadata' under it"). Both
+          in one sticky block, so the links stay put and the facts do not slide under
+          them as the page scrolls. */}
       <aside className="hidden lg:block" style={{ width: 240 }}>
-        {facts}
-        <div className="sticky mt-4" style={{ top: 72 }}>{body}</div>
+        <div className="sticky" style={{ top: 72 }}>
+          {body}
+          {facts && <div className="mt-4">{facts}</div>}
+        </div>
       </aside>
       {/* phone: floating button and sheet */}
       <div className="lg:hidden no-print">
