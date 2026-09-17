@@ -10,7 +10,9 @@
 type Row = { slug: string; name: string; the_three: boolean; meetings: number; with_minutes: number; share: number; rank?: number }
 
 export function BoardBars({ rows, fys }: { rows: Row[]; fys: number[] }) {
-  const tone = (s: number) => (s >= 90 ? 'var(--status-good)' : s >= 60 ? 'var(--text-secondary)' : 'var(--status-critical)')
+  // The colour tests the ROUNDED figure the label shows: a bar that says 90% is green.
+  // TJ, on the Sewer Commission at 89.8%: "It seems to have hit 90% as well?"
+  const tone = (s: number) => { const r = Math.round(s); return r >= 90 ? 'var(--status-good)' : r >= 60 ? 'var(--text-secondary)' : 'var(--status-critical)' }
   return (
     <figure className="mt-6" style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}>
       <div className="mx-auto px-4 sm:px-6" style={{ maxWidth: 1100 }}>

@@ -46,7 +46,7 @@ export function BoardCompare() {
 }
 
 function Cell({ y }: { y: Year }) {
-  const s = y.meetings ? 100 * y.with_minutes / y.meetings : null
+  const s = y.meetings ? Math.round(100 * y.with_minutes / y.meetings) : null
   const tone = s === null ? 'var(--text-muted)' : s >= 90 ? 'var(--status-good)' : s >= 60 ? 'var(--text-primary)' : 'var(--status-critical)'
   return (
     <td className="py-1.5 pr-3 text-right tnum whitespace-nowrap" style={{ color: tone }}>
