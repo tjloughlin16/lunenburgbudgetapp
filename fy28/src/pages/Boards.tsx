@@ -120,12 +120,21 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
   // THE INFOBOX: the facts about the board, in a card at the top of the column that scrolls
   // away with the page. Only the short navigation below it sticks. TJ: "scrolling sidebar
   // isn't my favorite" -- this is the entity-page pattern, and nothing scrolls inside anything.
-  const facts = p && (p.charter_ref || p.meets || p.members.length > 0) ? (
+  const sc = b.scorecard
+  const facts = sc || (p && (p.charter_ref || p.meets || p.members.length > 0)) ? (
     <div className="card p-3 text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>
-      {p.charter_ref && <><p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Established by</p><p className="mt-0.5">{p.charter_ref}</p></>}
-      {p.meets && <><p className="text-[10px] font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>Meets</p><p className="mt-0.5" style={{ whiteSpace: 'pre-line' }}>{p.meets}</p></>}
-      {p.members.length > 0 && <><p className="text-[10px] font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>Members, as posted</p><ul className="mt-0.5 space-y-0.5">{p.members.map((m, i) => <li key={i}>{m}</li>)}</ul></>}
-      <p className="text-[11px] mt-3" style={{ color: 'var(--text-muted)' }}>From <a className="underline" href={p.mirror}>our copy</a> of the page, {p.fetched_at}.</p>
+      {sc && (
+        <div className="pb-3 mb-1" style={{ borderBottom: '1px solid var(--grid)' }}>
+          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Posting record</p>
+          <Chip what="minutes" sc={sc} title={`Of meetings with a posted agenda, those with minutes on the town’s Agenda Center. Meetings in the last ${sc.minutes_lag_days} days are not counted: minutes are approved at the next meeting.`} />
+          <Chip what="recordings" sc={sc} title={`Of meetings with a posted agenda, those with a recording on the town’s YouTube channel. Meetings in the last ${sc.video_lag_days} days are not counted.`} />
+          <a className="block text-[10.5px] underline mt-1.5" style={{ color: 'var(--text-muted)' }} href="/boards/compared">compared with every board &rarr;</a>
+        </div>
+      )}
+      {p && p.charter_ref && <><p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Established by</p><p className="mt-0.5">{p.charter_ref}</p></>}
+      {p && p.meets && <><p className="text-[10px] font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>Meets</p><p className="mt-0.5" style={{ whiteSpace: 'pre-line' }}>{p.meets}</p></>}
+      {p && p.members.length > 0 && <><p className="text-[10px] font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--text-muted)' }}>Members, as posted</p><ul className="mt-0.5 space-y-0.5">{p.members.map((m, i) => <li key={i}>{m}</li>)}</ul></>}
+      {p && <p className="text-[11px] mt-3" style={{ color: 'var(--text-muted)' }}>From <a className="underline" href={p.mirror}>our copy</a> of the page, {p.fetched_at}.</p>}
     </div>
   ) : null
   const body = (
@@ -162,34 +171,32 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
   )
 }
 
-/** THE SCORECARD. TJ, 17 September 2026: "put the percentages of the current fiscal
- *  year of minutes and video postings on each board's page ... '66% minutes FY27' ...
- *  '100% YouTube recordings FY27' (in nice designs...)". Two tiles. Each leads with the
- *  current fiscal year once it has three meetings old enough to count, and with last
- *  year until then -- because "0% minutes FY27" in September is one July meeting whose
- *  minutes are simply due, and a badge that reads as a verdict has to have a basis.
- *  The other year sits under it, small. Counts are printed on every tile so the
- *  percentage is never a bare number (rule 7b). */
-function Tile({ what, sc, lag, note }: { what: string; sc: { this: Score; last: Score }; lag: number; note: string }) {
-  const pick = (s: Score) => s[what === 'minutes' ? 'minutes' : 'recordings']
-  const lead = pick(sc.this).meetings >= 3 ? sc.this : sc.last
+/** THE SCORECARD, AS TWO CHIPS IN THE SIDEBAR. TJ, 17 September 2026: "put the
+ *  percentages of the current fiscal year of minutes and video postings on each
+ *  board's page ... '66% minutes FY27' ... (in nice designs...)" -- and, on the first
+ *  version, "those metrics are far too central on the board page. I was expecting a
+ *  sort of sidebar progress report or small chip." So: a percentage, a hairline bar
+ *  and the counts, in the infobox. Each chip leads with the current fiscal year once
+ *  it has three meetings old enough to count, and with last year until then, because
+ *  "0% minutes FY27" in September is one July meeting whose minutes are simply due. */
+function Chip({ what, sc, title }: { what: 'minutes' | 'recordings'; sc: { this: Score; last: Score }; title: string }) {
+  const lead = sc.this[what].meetings >= 3 ? sc.this : sc.last
   const other = lead === sc.this ? sc.last : sc.this
-  const L = pick(lead), O = pick(other)
+  const L = lead[what], O = other[what]
   const p = L.meetings ? Math.round(100 * L.have / L.meetings) : null
   const tone = p === null ? 'var(--text-muted)' : p >= 90 ? 'var(--status-good)' : p >= 60 ? 'var(--text-primary)' : 'var(--status-critical)'
-  const bar = p ?? 0
   return (
-    <div className="card p-4 flex-1" style={{ minWidth: 220 }}>
-      <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{what === 'minutes' ? 'Minutes posted' : 'Recorded on YouTube'} · FY{String(lead.fy).slice(2)}{lead === sc.this ? ' so far' : ''}</p>
-      <p className="text-4xl font-bold tnum leading-none mt-2" style={{ color: tone }}>{p === null ? '—' : `${p}%`}</p>
-      <div className="h-1.5 rounded-full mt-3 overflow-hidden" style={{ background: 'var(--surface-3)' }}>
-        <div className="h-full rounded-full" style={{ width: `${bar}%`, background: tone }} />
+    <div className="mt-2" title={title}>
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{what === 'minutes' ? 'minutes posted' : 'on YouTube'} · FY{String(lead.fy).slice(2)}{lead === sc.this ? ' so far' : ''}</span>
+        <span className="text-[15px] font-bold tnum" style={{ color: tone }}>{p === null ? '—' : `${p}%`}</span>
       </div>
-      <p className="text-[12.5px] mt-2 tnum" style={{ color: 'var(--text-secondary)' }}>
-        {L.meetings ? <>{L.have} of {L.meetings} meetings</> : 'no meetings old enough to count yet'}
-        {O.meetings ? <span style={{ color: 'var(--text-muted)' }}> · FY{String(other.fy).slice(2)}{other === sc.this ? ' so far' : ''}: {O.have} of {O.meetings}{O.meetings ? ` (${Math.round(100 * O.have / O.meetings)}%)` : ''}</span> : null}
+      <div className="h-1 rounded-full mt-1 overflow-hidden" style={{ background: 'var(--surface-3)' }}>
+        <div className="h-full rounded-full" style={{ width: `${p ?? 0}%`, background: tone }} />
+      </div>
+      <p className="text-[10.5px] mt-0.5 tnum" style={{ color: 'var(--text-muted)' }}>
+        {L.meetings ? `${L.have} of ${L.meetings}` : 'none old enough yet'}{O.meetings ? ` · FY${String(other.fy).slice(2)}${other === sc.this ? ' so far' : ''} ${O.have} of ${O.meetings}` : ''}
       </p>
-      <p className="text-[11px] mt-1.5 leading-snug" style={{ color: 'var(--text-muted)' }}>{note.replace('LAG', String(lag))}</p>
     </div>
   )
 }
@@ -244,12 +251,16 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
       ))}
 
       {b.scorecard && (
-        <div className="flex flex-wrap gap-3 mt-6 max-w-3xl">
-          <Tile what="minutes" sc={b.scorecard} lag={b.scorecard.minutes_lag_days}
-            note="Of meetings with a posted agenda, those with minutes on the town’s Agenda Center. Meetings in the last LAG days are not counted: minutes are approved at the next meeting." />
-          <Tile what="recordings" sc={b.scorecard} lag={b.scorecard.video_lag_days}
-            note="Of meetings with a posted agenda, those with a recording on the town’s YouTube channel. Meetings in the last LAG days are not counted." />
-        </div>
+        /* Phone only: the sidebar's two chips as one line, since the infobox is behind the Links button there. */
+        <p className="lg:hidden text-[12px] mt-3 tnum" style={{ color: 'var(--text-secondary)' }}>
+          {(['minutes', 'recordings'] as const).map((w, i) => {
+            const sc = b.scorecard!
+            const lead = sc.this[w].meetings >= 3 ? sc.this : sc.last
+            const L = lead[w]; const pc = L.meetings ? Math.round(100 * L.have / L.meetings) : null
+            return <span key={w}>{i ? ' · ' : ''}<strong style={{ color: pc === null ? 'var(--text-muted)' : pc >= 90 ? 'var(--status-good)' : pc >= 60 ? 'var(--text-primary)' : 'var(--status-critical)' }}>{pc === null ? '—' : `${pc}%`}</strong> {w === 'minutes' ? 'minutes posted' : 'on YouTube'}, FY{String(lead.fy).slice(2)}{lead === sc.this ? ' so far' : ''} ({L.have} of {L.meetings})</span>
+          })}
+          {' · '}<a className="underline" href="/boards/compared">compared</a>
+        </p>
       )}
       <p className="text-[13px] mt-4"><a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href="/boards/compared">How the {b.name} compares with the other boards &rarr;</a></p>
       <Subscribe path={`/feeds/${b.slug}.xml`} what={`the ${b.name} posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in`} />
