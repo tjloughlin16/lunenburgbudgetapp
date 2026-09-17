@@ -215,14 +215,16 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
       <div className="overflow-x-auto mt-3">
         <table className="text-sm w-full" style={{ minWidth: 720 }}>
           <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
-            <th className="text-left py-1.5 pr-3">date</th><th className="text-left py-1.5 pr-3">agenda</th><th className="text-left py-1.5 pr-3">official minutes</th><th className="text-left py-1.5 pr-3">recording</th><th className="text-left py-1.5">our minutes</th></tr></thead>
+            {/* COLUMNS IN THE ORDER WE WANT THEM USED -- our minutes, the recording, the
+                agenda, the town's minutes (TJ, 17 September 2026). */}
+            <th className="text-left py-1.5 pr-3">date</th><th className="text-left py-1.5 pr-3">our minutes</th><th className="text-left py-1.5 pr-3">recording</th><th className="text-left py-1.5 pr-3">agenda</th><th className="text-left py-1.5">official minutes</th></tr></thead>
           <tbody>{b.recent.map(r => (
             <tr key={r.date} style={{ borderTop: '1px solid var(--grid)' }}>
               <td className="py-2 pr-3 tnum font-semibold whitespace-nowrap align-top">{mmdd(r.date)} {r.date.slice(0, 4)}</td>
-              <td className="py-2 pr-3 align-top">{r.agenda_doc ? <a className="underline" href={r.agenda_doc}>agenda</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
-              <td className="py-2 pr-3 align-top">{r.minutes_doc ? <a className="underline" href={r.minutes_doc}>minutes</a> : <span style={{ color: 'var(--text-muted)' }}>not yet</span>}</td>
+              <td className="py-2 pr-3 align-top">{r.ours ? <><a className="font-semibold" href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{r.ours.headline || 'our minutes'}</a><span className="text-xs" style={{ color: 'var(--text-muted)' }}> · {r.ours.votes ?? 0} votes{r.ours.reconciled ? (r.ours.discrepancies ? ` · ${r.ours.discrepancies} difference${r.ours.discrepancies === 1 ? '' : 's'} from the official minutes` : ' · agrees with the official minutes') : ''}</span></> : r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}>transcript held; minutes not yet written</span> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
               <td className="py-2 pr-3 align-top">{r.video_url ? <a className="underline" href={r.video_url}>video</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>}{r.video_url && r.captions_disabled ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no captions</span> : r.video_url && !r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no transcript yet</span> : null}</td>
-              <td className="py-2 align-top">{r.ours ? <><a href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{r.ours.headline || 'our minutes'}</a><span className="text-xs" style={{ color: 'var(--text-muted)' }}> · {r.ours.votes ?? 0} votes{r.ours.reconciled ? (r.ours.discrepancies ? ` · ${r.ours.discrepancies} difference${r.ours.discrepancies === 1 ? '' : 's'} from the official minutes` : ' · agrees with the official minutes') : ''}</span></> : r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}>transcript held; minutes not yet written</span> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
+              <td className="py-2 pr-3 align-top">{r.agenda_doc ? <a className="underline" href={r.agenda_doc}>agenda</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
+              <td className="py-2 align-top">{r.minutes_doc ? <a className="underline" href={r.minutes_doc}>minutes</a> : <span style={{ color: 'var(--text-muted)' }}>not yet</span>}</td>
             </tr>))}</tbody>
         </table>
       </div>

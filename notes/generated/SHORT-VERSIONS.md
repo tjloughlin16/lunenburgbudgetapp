@@ -141,7 +141,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [The database](/database) | reference | — / 7.5 min | *(none declared)* |
 | [Find the money](/find-the-money) | tool | — / 11.6 min | *(none declared)* |
 | [Go deeper](/go-deeper) | reference | — / 8.0 min | *(none declared)* |
-| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 50.8 min | *(none declared)* |
+| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 50.9 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 12.5 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.6 min | *(none declared)* |
 | [Analysis: Town and Schools](/reports) | reference | — / 14.7 min | *(none declared)* |

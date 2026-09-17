@@ -862,7 +862,12 @@ export function boardSlugFromPath(pathname: string): string | null {
 /** The meeting a `/what-was-said/<board>/<date>-<video>` address names, or null. */
 export function recordedSlugFromPath(pathname: string): string | null {
   // The old address, /what-was-said/..., is still answered: links to it have been shared.
-  const m = /^\/(?:meeting-minutes|what-was-said)\/([a-z0-9-]+\/[0-9]{4}-[0-9]{2}-[0-9]{2}-[A-Za-z0-9_-]+)\/?$/.exec(pathname)
+  // The full slug ends in the recording's YouTube id, because a meeting can have two
+  // recordings and the id is what the page cites at a timestamp. TJ, 17 September 2026:
+  // "why do meeting minutes pages have long random characters at the end" -- so the
+  // DATE alone is also an address: /meeting-minutes/school-committee/2026-09-16. The
+  // page resolves it to the one recording of that day, or lists them if there are two.
+  const m = /^\/(?:meeting-minutes|what-was-said)\/([a-z0-9-]+\/[0-9]{4}-[0-9]{2}-[0-9]{2}(?:-[A-Za-z0-9_-]+)?)\/?$/.exec(pathname)
   return m ? m[1] : null
 }
 

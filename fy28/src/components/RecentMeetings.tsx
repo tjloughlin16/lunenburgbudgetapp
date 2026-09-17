@@ -65,13 +65,18 @@ export function RecentMeetings({ days = 7, min = 3, compact = false }: { days?: 
               <span className="text-[11.5px]" style={{ color: 'var(--text-muted)' }}>{r.ours.votes} vote{r.ours.votes === 1 ? '' : 's'}</span>
             )}
           </div>
-          {/* WHAT WE HAVE, as links, in the order a person would want them: the video
-              first, because "go watch it" is the fastest thing on the page. */}
+          {/* WHAT WE HAVE, as links, IN THE ORDER WE WANT THEM USED. TJ, 17 September
+              2026: "our meetings should be the most obvious clickable thing and come
+              first. then the video. then the agenda." Our minutes are the thing this
+              site adds -- a reader who takes one link should take that one -- so they
+              lead, set bolder; the recording next; the agenda and the town's minutes
+              after. The town's minutes are the record; they are not the thing we are
+              asking anybody to read first. */}
           <p className="text-[12px] mt-0.5 flex flex-wrap gap-x-2" style={{ color: 'var(--text-secondary)' }}>
-            {r.video_url && <a className={link} href={r.video_url} target="_blank" rel="noreferrer">&#9654; watch the recording</a>}
-            {r.agenda_doc && <>{r.video_url ? '· ' : ''}<a className={link} href={r.agenda_doc}>agenda</a></>}
+            {r.ours && <a className={`${link} font-semibold`} href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>read our minutes &rarr;</a>}
+            {r.video_url && <>{r.ours ? '· ' : ''}<a className={link} href={r.video_url} target="_blank" rel="noreferrer">&#9654; watch the recording</a></>}
+            {r.agenda_doc && <>{r.ours || r.video_url ? '· ' : ''}<a className={link} href={r.agenda_doc}>agenda</a></>}
             {(r.minutes_doc || r.minutes_url) && <>· <a className={link} href={r.minutes_doc || r.minutes_url!}>the town&rsquo;s minutes</a></>}
-            {r.ours && <>· <a className={link} href={`/meeting-minutes/${r.ours.slug}`}>our minutes</a></>}
           </p>
           {r.ours?.headline
             ? <p className="text-[13px] mt-1 leading-snug">{r.ours.headline}</p>

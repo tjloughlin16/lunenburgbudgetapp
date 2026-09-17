@@ -122,7 +122,19 @@ export function WhatWasSaid() {
     return <ReportShell tab={TAB} title="What was said" err={err} loading={!err} dataUrl={DATA} />
   }
   if (slug) {
-    const m = d.meetings.find(x => x.slug === slug)
+    // A date-only address: the one recording of that day, or the choice of them.
+    const byDay = /^([a-z0-9-]+)\/([0-9]{4}-[0-9]{2}-[0-9]{2})$/.exec(slug)
+    const sameDay = byDay ? d.meetings.filter(x => x.board_slug === byDay[1] && x.date === byDay[2]) : []
+    if (byDay && sameDay.length > 1) {
+      return (
+        <ReportShell tab={TAB} title={`${sameDay[0].board}, ${sameDay[0].date} — two recordings`} dataUrl={DATA}
+          standfirst="This meeting was recorded in parts. Each has its own minutes.">
+          <ul className="mt-6 space-y-2">{sameDay.map(x => (
+            <li key={x.slug}><a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href={`/meeting-minutes/${x.slug}`}>{x.headline || x.slug}</a></li>))}</ul>
+        </ReportShell>
+      )
+    }
+    const m = d.meetings.find(x => x.slug === slug) ?? sameDay[0]
     if (!m) {
       return (
         <ReportShell tab={TAB} title="No minutes at this address" dataUrl={DATA}
