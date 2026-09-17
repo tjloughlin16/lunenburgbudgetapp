@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**248 of 535 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**316 of 1338 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **103 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **287 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **1022 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -37,22 +37,24 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY13 | 1 |
 | FY14 | 9 |
 | FY15 | 14 |
-| FY16 | 14 |
-| FY17 | 17 |
-| FY18 | 19 |
-| FY19 | 30 |
-| FY20 | 45 |
+| FY16 | 13 |
+| FY17 | 16 |
+| FY18 | 17 |
+| FY19 | 28 |
+| FY20 | 42 |
 | FY21 | 15 |
-| FY22 | 12 |
-| FY23 | 29 |
-| FY24 | 57 |
-| FY25 | 52 |
-| FY26 | 75 |
-| FY27 | 56 |
-| FY28 | 3 |
+| FY22 | 21 |
+| FY23 | 38 |
+| FY24 | 66 |
+| FY25 | 64 |
+| FY26 | 87 |
+| FY27 | 66 |
+| FY28 | 6 |
 | FY29 | 2 |
+| FY32 | 1 |
 | FY33 | 6 |
 | FY34 | 8 |
+| FY35 | 2 |
 
 ## Documents with no stated fiscal year
 
@@ -103,17 +105,26 @@ Listed so this view cannot look more complete than it is.
 - `data/balance-sheet-printed-totals.csv` — The TOTAL rows each balance sheet prints
 - `data/balance-sheet.csv` — The combined balance sheet, read from the page
 - `data/ballot-questions.csv` — What the town was asked to fund, and whether it agreed
+- `data/board-pages.csv` — Every board’s own page on the town’s site, extracted
+- `data/budget-cycles.csv` — When each budget season opens and closes: the day after one annual election to the next
+- `data/budget-episodes.csv` — The episodes of a budget season: the regular cycle and the special ones
+- `data/budget-threads.csv` — The stories a budget season moves forward, one thread each
 - `data/business/categorized.csv` — Business records by industry
 - `data/business/merged_dataset.csv` — Business certificate records
 - `data/capital-funding-history.csv` — How the capital programme has been paid for
+- `data/caption-corrections.csv` — Proper nouns the captions mishear, spelled as the town spells them
+- `data/census-acs.csv` — The Census figures, one row per estimate
 - `data/column-glossary.csv` — What each column name means, across every table
 - `data/copy-status.csv` — Whether the publisher’s copy is still our copy
 - `data/dataset-provenance.csv` — Every dataset row joined to the document it came from
+- `data/dese-ap.csv` — Advanced Placement participation and performance
+- `data/dese-attrition.csv` — How many students leave, by grade, SY2010–SY2026
 - `data/dese-ch70-aid-factor.csv` — How the Chapter 70 aid figure is built, FY2007 on
 - `data/dese-ch70-contribution.csv` — The municipal half of the Chapter 70 formula, FY2007 on
 - `data/dese-ch70-formula.csv` — The Chapter 70 formula, term by term, FY1993–FY2026
 - `data/dese-ch70-statewide.csv` — Where Lunenburg sits among every Massachusetts district on state aid
 - `data/dese-circuit-breaker.csv` — High-cost special education reimbursement, FY2006–FY2026
+- `data/dese-class-size.csv` — How many classes ran in each subject, and how full they were
 - `data/dese-educator-workforce.csv` — Staff HEADCOUNT by job class, with hires and retention, SY2021–SY2023
 - `data/dese-enrollment.csv` — Enrollment by grade and selected population, SY1992–SY2026
 - `data/dese-function-expenditure.csv` — DESE spending by function code, general fund against grants, FY2009–FY2025
@@ -128,10 +139,15 @@ Listed so this view cannot look more complete than it is.
 - `data/dese-teacher-program-area.csv` — Teacher FTE by program area, SY2008–SY2026
 - `data/dese-teacher-subject.csv` — Teacher FTE by subject, with licensure and class ratios, SY2008–SY2026
 - `data/dese-town-enrollment.csv` — Where every town’s children actually go to school, SY2014–SY2026
+- `data/dls-assessed-values.csv` — Assessed value by class, eleven towns, FY2002–FY2026
+- `data/dls-avg-tax-bill.csv` — Average single-family tax bill, eleven towns, FY1988–FY2026
+- `data/dls-new-growth.csv` — New growth, residential and total, eleven towns, FY2003–FY2026
 - `data/document-basis.csv` — What produced each document’s figures
 - `data/enterprise-balance-sheet-printed-totals.csv` — The TOTAL rows and the PROOF row each enterprise sheet prints
 - `data/enterprise-balance-sheet.csv` — The enterprise-funds balance sheet, read from the page
 - `data/extraction-plan.csv` — Which pages each dataset was read from
+- `data/feed-sources.csv` — The town and community feeds the refresh watches
+- `data/feed-watch-events.csv` — What appeared in those feeds
 - `data/free-cash-proof.csv` — Free cash, nine towns, five years, line by line
 - `data/fund-1301-cash-journal.csv` — The athletics revolving fund’s cashbook, three years
 - `data/line-history-coverage.csv` — What the line reader could and could not read, document by document
@@ -151,12 +167,16 @@ Listed so this view cannot look more complete than it is.
 - `data/money-edges.csv` — Which source of money pays which use, and whether that can be shown
 - `data/money-gaps.csv` — What the town’s records cannot answer
 - `data/munis-ledger.csv` — Every MUNIS budget report we hold, one table
+- `data/myths.csv` — Claims heard in town, and what the data says
+- `data/one-big-report-story.csv` — The editor’s spec for /one-big-report
 - `data/ood-tuition-history.csv` — Out-of-district tuition, eleven budgets
 - `data/peg-access-identities.csv` — The arithmetic each PEG statement states about itself
 - `data/peg-access-printed-totals.csv` — The revenue-versus-expenses statement each report prints
 - `data/peg-access.csv` — PEG Access expenses, line by line, read from the page
 - `data/placement-counts.csv` — Out-of-district placements, by year, FY2011–FY2025
 - `data/rate-register.csv` — Every rate, with the year it applies to and who set it
+- `data/recording-minutes-policy.csv` — Which boards TJ has approved minutes for, from when, in what order
+- `data/refresh-runs.csv` — Every daily refresh, timed
 - `data/report-anomalies.csv` — What looks wrong in the extracts, and where to look
 - `data/report-appropriations.csv` — The general fund appropriations, both tables, FY2011–FY2025
 - `data/report-capital-projects.csv` — Capital project authorisations
@@ -171,6 +191,8 @@ Listed so this view cannot look more complete than it is.
 - `data/report-valuation.csv` — Valuation and tax rate history
 - `data/report-vital-records.csv` — Births, marriages and deaths
 - `data/role-classification.csv` — What kind of job each printed roster title is
+- `data/search-affinity.csv` — Which words pin which page or document at the top of a search
+- `data/search-vocabulary.csv` — The site’s own vocabulary, for the search box’s suggestions
 - `data/special-revenue-funds.csv` — The special revenue funds, FY2011–FY2025
 - `data/special-revenue-printed-totals.csv` — The GRAND TOTAL each report prints
 - `data/special-revenue-read.csv` — The special revenue funds, read from the page
@@ -188,12 +210,14 @@ Listed so this view cannot look more complete than it is.
 - `data/variance-by-group.csv` — Budget against actual, every group and year
 - `data/youtube-boards.csv` — The bodies we named, and why we say two names are one board
 - `data/youtube-classification-overrides.csv` — Human corrections to the video classification
+- `data/youtube-no-captions.csv` — Recordings whose captions are switched off
 - `data/youtube-title-classification.csv` — What each video title says the video IS
 - `data/youtube-transcript-index.csv` — Which meeting recordings we hold a transcript for
 - `data/youtube-video-boards.csv` — One row per (video, board) pair
 - `data/youtube-video-classification.csv` — One row per video, with what we think it is
 - `data/youtube-videos.csv` — Every video on the town’s PEG access channel
-- `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
+- `data/youtube-watch-events.csv` — What appeared on the town’s YouTube channel between one check and the next
+- `district-budget/docs/3-12-25-town-manager-s-budget.pdf` — 3/12/25 Town Manager's Budget
 - `district-budget/docs/additional-town-revenue-spending-plan.pdf` — Additional Town Revenue Spending Plan
 - `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic program costs by sport
 - `district-budget/docs/athletic-program-costs-by-sport.pdf` — Athletic Program Costs by Sport
@@ -206,142 +230,233 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/frequently-asked-questions-november-town-meeting.pdf` — FREQUENTLY ASKED QUESTIONS-NOVEMBER TOWN MEETING
 - `district-budget/docs/lhs-athletics-faq.pdf` — High school athletics fee schedule
 - `district-budget/docs/lunenburg-school-committee-override-statement.pdf` — LUNENBURG SCHOOL COMMITTEE OVERRIDE STATEMENT
-- `district-budget/docs/notice-of-budget-hearing-april-29-2020.bin` — Notice of Budget Hearing April 29, 2020
-- `district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — School Committee deck, 23 March 2026
-- `district-budget/docs/slide-deck-from-the-sc-meeting-3-23-26.pdf` — Slide Deck from the SC Meeting 3/23/26
-- `district-budget/docs/superintendent-s-budget-recommendations.docx` — Superintendent’s Budget Recommendations
-- `peer-districts/montytech-class-of-2030-lottery.pdf` — Montachusett Regional admissions lottery, class of 2030
-- `state-dese/dese-ch70-district-profile.xlsx` — Chapter 70 District Profile
-- `state-dese/dese-ch70-foundation-nss.xlsx` — Chapter 70 Foundation Budget and Net School Spending
-- `state-dese/dese-ch70-key-factors.xlsx` — Chapter 70 Key Factors
-- `state-dese/dese-circuit-breaker.xlsx` — Special Education Circuit Breaker Reimbursements
-- `state-dese/dese-educators-retention.xlsx` — Total Educators, Retention, and New Hires
-- `state-dese/dese-enrollment-by-grade.xlsx` — Enrollment: Grade, Race/Ethnicity, Gender, and Selected Populations
-- `state-dese/dese-enrollment-receiving.xlsx` — Reasons for Student Enrollment by Town (Receiving)
-- `state-dese/dese-job-classification-codes.docx` — Job Classification Codes (evaluation)
-- `state-dese/dese-residents-sending.xlsx` — Where Residents Go to School (Sending)
-- `state-dese/dese-sped-indicators.xlsx` — Special Education Indicators
-- `state-dese/dese-sped-movement.xlsx` — Students Moving In and Out of Special Education Services
-- `state-dese/dese-sped-placement-trajectory.xlsx` — Special Education Placement Trajectory
-- `state-dese/dese-sped-program-characteristics.xlsx` — Special Education Program Characteristics and Student Demographics
-- `state-dese/dese-teacher-data.xlsx` — Elementary and Secondary Teacher Data
-- `state-dese/dese-teachers-by-grade-subject.xlsx` — Elementary and Secondary Teachers by Grade and Subject
-- `state-dese/dese-teachers-by-program-area.xlsx` — Elementary and Secondary Teachers by Program Area
-- `state-dese/district-expenditures-by-function.xlsx` — DESE district expenditures by function code, SY2009-SY2025 — general fund and grants/revolving as separate columns, every Massachusetts district
-- `state-dese/district-expenditures-by-spending-category.xlsx` — DESE district expenditures by spending category, SY2009-SY2025 — the RADAR measures for every district; supersedes the seven-district workbook
-- `state-dese/epims-datahandbook.docx` — EPIMS Data Handbook
-- `state-dese/lunenburg-finance-profile.html` — DESE school and district profiles — Lunenburg per pupil expenditures, all funds
-- `state-dese/radar-district-comparison.xlsx` — DESE RADAR district comparison — spending by function, all funds, every district, FY2021-FY2025
-- `state-dese/school-expenditures-by-spending-category.xlsx` — DESE school expenditures by spending category, SY2009-SY2025 — per-school rather than per-district
-- `state-dese/selected-populations-2019.html` — DESE selected populations, state report, FY2019
-- `state-dese/selected-populations-2020.html` — DESE selected populations, state report, FY2020
-- `state-dese/selected-populations-2021.html` — DESE selected populations, state report, FY2021
-- `state-dese/selected-populations-2022.html` — DESE selected populations, state report, FY2022
-- `state-dese/selected-populations-2023.html` — DESE selected populations, state report, FY2023
-- `state-dese/selected-populations-2024.html` — DESE selected populations, state report, FY2024
-- `state-dese/selected-populations-2025.html` — DESE selected populations, state report, FY2025
-- `state-dese/selected-populations-2026.html` — DESE selected populations, state report, FY2026
-- `state-dese/selected-populations.csv` — Lunenburg selected populations, all years (CSV)
-- `state-dese/sims-datahandbook-current.docx` — SIMS Data Handbook (current)
-- `state-dese/sims-datahandbook_2021.docx` — SIMS Data Handbook 2021
-- `state-dese/sims-datahandbook_2022.docx` — SIMS Data Handbook 2022
-- `state-dls/PROVENANCE.md` — Where these came from, and what they cannot do
-- `state-dls/free-cash-proof-ayer.xlsx` — Ayer
-- `state-dls/free-cash-proof-groton.xlsx` — Groton
-- `state-dls/free-cash-proof-littleton.xlsx` — Littleton
-- `state-dls/free-cash-proof-lunenburg.xlsx` — Lunenburg free cash proof, 2021–2025
-- `state-dls/free-cash-proof-shirley.xlsx` — Shirley
-- `state-dls/free-cash-proof-townsend.xlsx` — Townsend
-- `state-dls/free-cash-proof-upton.xlsx` — Upton
-- `state-dls/free-cash-proof-uxbridge.xlsx` — Uxbridge
-- `state-dls/free-cash-proof-westford.xlsx` — Westford
-- `town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf` — FY 2011 Annual Town Report
-- `town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf` — FY 2012 Annual Town Report
-- `town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf` — FY 2013 Annual Town Report
-- `town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf` — FY 2015 Annual Town Report
-- `town-annual-reports/docs/4122-fy-2016-annual-town-report-addendum.pdf` — FY 2016 Annual Town Report, Addendum
-- `town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf` — FY 2016 Annual Town Report
-- `town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf` — FY 2017 Annual Town Report
-- `town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf` — FY 2018 Annual Town Report
-- `town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf` — FY 2019 Annual Town Report
-- `town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf` — FY 2020 Annual Town Report
-- `town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf` — FY 2021 Annual Town Report
-- `town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf` — FY 2022 Annual Town Report
-- `town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf` — FY 2025 Annual Town Report
-- `town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf` — FY 2023 Annual Town Report
-- `town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf` — FY 2024 Annual Town Report
-- `town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf` — Finance Committee deck on Proposition 2½
-- `town-budget/docs/1591-town-revenue-amp-proposition-2-5-presentation.pdf` — Town Revenue &amp; Proposition 2.5 Presentation
-- `town-budget/docs/3378-lunenburg-proposed-roadway-capital-improvement-plan-list-pdf.pdf` — Lunenburg Proposed Roadway Capital Improvement Plan List (PDF)
-- `town-budget/docs/374-fy-2023-budget-presentation-pdf.pdf` — FY 2023 Budget Presentation (PDF)
-- `town-budget/docs/4111-article-13-fy-2027-capital-plan.pdf` — Article 13: FY 2027 Capital Plan
-- `town-budget/docs/4112-article-32-notice-of-town-meeting.pdf` — Article 32: Notice of Town Meeting
-- `town-budget/docs/4113-article-12-capital-program-funding-reauthorization.pdf` — Article 12: Capital Program Funding Reauthorization
-- `town-budget/docs/4161-2026-annual-town-election-warrant.pdf` — Ballot question language
-- `town-budget/docs/4161-2026-annual-town-election-warrant.pdf` — 2026 Annual Town Election Warrant
-- `town-budget/docs/4365-september-3-2026-special-town-meeting-legal-notice.pdf` — September 3, 2026 Special Town Meeting Legal Notice
-- `town-budget/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf` — November 17, 2026 Special Town Meeting Legal Notice
-- `town-budget/docs/a112-fiscal-year-2016-preliminary-budget-pdf.pdf` — Fiscal Year 2016 Preliminary Budget (PDF)
-- `town-budget/docs/a114-fiscal-year-2014-budget-as-appropriated-pdf.pdf` — Fiscal Year 2014 Budget As Appropriated (PDF)
-- `town-budget/docs/a115-fiscal-year-2016-budget-presentation-pdf.pdf` — Fiscal Year 2016 Budget Presentation (PDF)
-- `town-budget/docs/a116-fiscal-year-2013-budget-line-item-detail-of-fiscal-year-2013-budget-recommendati.pdf` — Fiscal Year 2013 Budget Line Item Detail of Fiscal Year 2013 Budget Recommendation (PDF)
-- `town-budget/docs/a119-fiscal-year-2013-appendix-document-5-comprehensive-pavement-management-system-pd.pdf` — Fiscal Year 2013 Appendix Document 5 Comprehensive Pavement Management System (PDF)
-- `town-budget/docs/a120-5-year-financial-forecast-16-20-pdf.pdf` — 5-Year Financial Forecast 16.20 (PDF)
-- `town-budget/docs/a157-2024-may-annual-town-meeting-booklet-pdf.pdf` — 2024 May Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a161-2024-november-special-town-meeting-warrant-booklet-pdf.pdf` — 2024 November Special Town Meeting Warrant Booklet (PDF)
-- `town-budget/docs/a162-2015-may-annual-town-meeting-booklet-pdf.pdf` — 2015 May Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a163-2016-may-annual-town-meeting-booklet-pdf.pdf` — 2016 May Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a164-2015-november-special-town-meeting-booklet-pdf.pdf` — 2015 November Special Town Meeting Booklet (PDF)
-- `town-budget/docs/a165-2016-november-special-town-meeting-booklet-pdf.pdf` — 2016 November Special Town Meeting Booklet (PDF)
-- `town-budget/docs/a166-2017-november-special-town-meeting-booklet-pdf.pdf` — 2017 November Special Town Meeting Booklet (PDF)
-- `town-budget/docs/a167-2019-november-special-town-meeting-booklet-pdf.pdf` — 2019 November Special Town Meeting Booklet (PDF)
-- `town-budget/docs/a168-2021-november-special-town-meeting-booklet-pdf.pdf` — 2021 November Special Town Meeting Booklet (PDF)
-- `town-budget/docs/a170-2022-may-annual-town-meeting-booklet-pdf.pdf` — 2022 May Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a171-2022-november-special-town-meeting-booklet-pdf.pdf` — 2022 November Special Town Meeting Booklet (PDF)
-- `town-budget/docs/a172-2023-may-annual-town-meeting-booklet-pdf.pdf` — 2023 May Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a173-2023-november-special-town-meeting-booklet-pdf.pdf` — 2023 November Special Town Meeting Booklet (PDF)
-- `town-budget/docs/a61-2018-may-annual-town-meeting-booklet-pdf.pdf` — 2018 May Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a62-2019-may-annual-town-meeting-booklet-pdf.pdf` — 2019 May Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a63-2018-november-special-town-meeting-booklet-pdf.pdf` — 2018 November Special Town Meeting Booklet (PDF)
-- `town-budget/docs/a64-2020-june-annual-town-meeting-booklet-pdf.pdf` — 2020 June Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a65-2020-november-special-town-meeting-booklet-pdf.pdf` — 2020 November Special Town Meeting Booklet (PDF)
-- `town-budget/docs/a66-2021-may-annual-town-meeting-booklet-pdf.pdf` — 2021 May Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a67-2017-may-annual-town-meeting-booklet-pdf.pdf` — 2017 May Annual Town Meeting Booklet (PDF)
-- `town-budget/docs/a78-fiscal-year-2022-capital-plan-presentation-pdf.pdf` — Fiscal Year 2022 Capital Plan Presentation (PDF)
-- `town-budget/docs/a81-fiscal-year-2021-capital-plan-presentation-pdf.pdf` — Fiscal Year 2021 Capital Plan Presentation (PDF)
-- `town-budget/docs/a82-fiscal-year-2021-adjustment-worksheet-made-to-budget-due-to-covid-19-pdf.pdf` — Fiscal Year 2021 Adjustment Worksheet Made to Budget due to COVID-19 (PDF)
-- `town-budget/docs/a83-fiscal-year-2021-budget-message-and-preliminary-budget-proposal-pdf.pdf` — Fiscal Year 2021 Budget Message and Preliminary Budget Proposal (PDF)
-- `town-budget/docs/a85-fiscal-year-2021-town-manager-budget-recommendation-revised-due-to-covid-19-pdf.pdf` — Fiscal Year 2021 Town Manager Budget Recommendation, Revised due to COVID-19 (PDF)
-- `town-ledgers/account-details/PROVENANCE-fund1301.md` — Provenance for the 17 June 2026 records request
-- `town-ledgers/account-details/account-details-fy2024-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2024
-- `town-ledgers/account-details/account-details-fy2025-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2025
-- `town-ledgers/account-details/account-details-fy2026-fund1301.xlsx` — Athletics revolving fund, journal detail, FY2026
-- `town-ledgers/account-details/athletic-fee-counts-fy2026.docx` — Athletic fee counts, 2025-2026
-- `town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx` — Athletics by sport, three school years
-- `town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx` — Special revenue funds, 31 March 2026
-- `town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx` — Trust, agency and stabilization funds, 31 March 2026
-- `town-supplementary/docs/1416-senior-tax-work-off-record-hours.pdf` — Senior Tax Work Off- Record Hours
-- `town-supplementary/docs/182-w-4-federal-tax-form-pdf.pdf` — W-4 Federal Tax Form (PDF)
-- `town-supplementary/docs/187-conflict-of-interest-financial-disclosure-pdf.pdf` — Conflict of Interest/Financial Disclosure (PDF)
-- `town-supplementary/docs/1982-3-25-2024-presentation-how-can-we-help-you-property-tax-exemptions-amp-assistanc.pptx` — 3/25/2024 Presentation: How Can We Help You- Property Tax Exemptions &amp; Assistance for Seniors
-- `town-supplementary/docs/2086-4-14-sex-offender-audits-pdf.pdf` — 4.14 Sex Offender Audits (PDF)
-- `town-supplementary/docs/2504-2-3-25-assessor-conference-presentation-pdf.pdf` — 2/3/25 Assessor Conference Presentation (PDF)
-- `town-supplementary/docs/3358-lunenburg-senior-citizen-property-tax-work-off-program-application-2025-pdf.pdf` — Lunenburg Senior Citizen Property Tax Work-Off Program Application 2025 (PDF)
-- `town-supplementary/docs/344-bencor-financial-wellness-pdf.pdf` — Bencor Financial Wellness (PDF)
-- `town-supplementary/docs/3463-bridge-assessment-and-ranking-prepared-for-the-town-of-lunenburg-by-bsc-group-ma.pdf` — Bridge Assessment and Ranking, Prepared for the Town of Lunenburg by BSC Group, May 2024
-- `town-supplementary/docs/3541-board-of-assessors-code-of-conduct-pdf.pdf` — Board of Assessors Code of Conduct (PDF)
-- `town-supplementary/docs/3547-role-of-the-assessing-department.pdf` — Role of the Assessing Department
-- `town-supplementary/docs/394-1-40-school-resource-officer-pdf.pdf` — 1.40 School Resource Officer (PDF)
-- `town-supplementary/docs/4306-notice-of-tax-taking-lists.pdf` — Notice of Tax Taking Lists
-- `town-supplementary/docs/442-4-38-reserve-officer-hiring-process-pdf.pdf` — 4.38 Reserve Officer Hiring Process (PDF)
-- `town-supplementary/docs/443-4-39-reserve-officer-program-pdf.pdf` — 4.39 Reserve Officer Program (PDF)
-- `town-supplementary/docs/493-senior-citizen-property-tax-work-off-program-application-form-pdf.pdf` — Senior Citizen Property Tax Work Off Program Application Form (PDF)
-- `town-supplementary/docs/494-senior-tax-work-off-program-brochure-pdf.pdf` — Senior Tax Work Off Program Brochure (PDF)
-- `town-supplementary/docs/783-real-estate-personal-property-tax-actual-billing-pdf.pdf` — Real Estate & Personal Property Tax Actual Billing (PDF)
-- `town-supplementary/docs/784-real-estate-tax-preliminary-billing-pfd.pdf` — Real Estate Tax Preliminary Billing (PFD)
-- `town-supplementary/docs/785-motor-vehicle-excise-tax-pdf.pdf` — Motor Vehicle Excise Tax (PDF)
-- `town-supplementary/docs/786-tax-lien-sale-auction-notice-pdf.pdf` — Tax Lien Sale Auction Notice (PDF)
-- `town-supplementary/docs/787-march-17-2022-tax-lien-sale-auction-registration-form-pdf.pdf` — March 17, 2022 Tax Lien Sale Auction Registration Form (PDF)
-- `town-supplementary/docs/assessors-agenda-11-19-2025.pdf` — Board of Assessors agenda, 19 November 2025
-- `town-supplementary/docs/health-insurance-rates-2025.pdf` — Health insurance rates, 1 July 2026
-- `town-supplementary/docs/town-2026-election-unofficial-results.pdf` — Election results, 16 May 2026
+- `district-budget/docs/sc-meetings/2023-09-06-20-21-fall-athletic-report.pdf` — 20/21 Fall Athletic Report
+- `district-budget/docs/sc-meetings/2023-09-06-20-21-superintendent-goals.pdf` — 20/21 Superintendent Goals
+- `district-budget/docs/sc-meetings/2023-09-06-2020-2021-revised-proposed-school-calendar.xlsx` — 2020-2021 Revised Proposed School Calendar
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-c-o-1.pdf` — 2021-2022 Action Plan C & O.1
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-1.pdf` — 2021-2022 Action Plan CC & C 1
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-1.pdf` — 2021-2022 Action Plan CC & C.1
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-2.pdf` — 2021-2022 Action Plan CC & C 2
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-2.pdf` — 2021-2022 Action Plan CC & C.2
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-3.pdf` — 2021-2022 Action Plan CC & C.3
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-eaao-1.pdf` — 2021-2022 Action Plan EAAO.1
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-eaao-1.pdf` — 2021-2022 Action Plan EAAO.1
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-eaao-2.pdf` — 2021-2022 Action Plan EAAO.2
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-eaao-2.pdf` — 2021-2022 Action Plan EAAO.2
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-1.pdf` — 2021-2022 Action Plan TT & L.1
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-1.pdf` — 2021-2022 Action Plan TT & L.1
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-2.pdf` — 2021-2022 Action Plan TT & L.2
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-2.pdf` — 2021-2022 Action Plan TT & L.2
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-3.pdf` — 2021-2022 Action Plan TT & L.3
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-3.pdf` — 2021-2022 Action Plan TT & L.3
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-cc-c-3.pdf` — 2021-2022 CC & C 3
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-draft-school-calendar.pdf` — 2021/2022 DRAFT School Calendar
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-lhs-school-improvement-plan-progress.pdf` — 2021-2022 LHS School Improvement Plan Progress
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-lms-school-improvement-plan-progress.pdf` — 2021-2022 LMS School Improvement Plan Progress
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-new-action-plan-cc-c-4.pdf` — 2021-2022 NEW Action Plan CC & C 4
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-new-action-plan-cc-c-4.pdf` — 2021-2022 NEW Action Plan CC & C.4
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-primary-school-improvement-plan-progress.pdf` — 2021-2022 Primary School Improvement Plan Progress
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-revised-school-calendar-update-juneteenth.pdf` — 2021-2022 REVISED School Calendar Update-Juneteenth
+- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-thes-school-improvement-plan-progress.pdf` — 2021-2022 THES School Improvement Plan Progress
+- `district-budget/docs/sc-meetings/2023-09-06-2021-summer-program.pdf` — 2021 Summer Program
+- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-lhs-handbook.pdf` — 2022-2023 DRAFT Proposed LHS Handbook
+- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-lms-handbook.pdf` — 2022-2023 DRAFT Proposed LMS Handbook
+- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-lms-student-handbook.pdf` — 2022-2023 DRAFT Proposed LMS Student Handbook
+- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-primary-school-handbook.pdf` — 2022-2023 DRAFT Proposed Primary School Handbook
+- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-thes-handbook.pdf` — 2022-2023 DRAFT Proposed THES Handbook
+- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-school-calendar.pdf` — 2022-2023 DRAFT School Calendar
+- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-revised-school-calendar.pdf` — 2022-2023 Revised School Calendar
+- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-school-lunch-price-increase.pdf` — 2022-2023 School Lunch Price Increase
+- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-lhs-school-handbook.pdf` — 2023-2024 DRAFT LHS School Handbook
+- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-lms-handboo.pdf` — 2023-2024 DRAFT LMS Handboo
+- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-lms-student-handbook.pdf` — 2023-2024 DRAFT LMS STUDENT HANDBOOK
+- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-primary-school-handbook.pdf` — 2023-2024 DRAFT Primary School Handbook
+- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-school-calendar.pdf` — 2023-2024 DRAFT School Calendar
+- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-thes-school-handbook.pdf` — 2023-2024 DRAFT THES School Handbook
+- `district-budget/docs/sc-meetings/2023-09-06-3101-budget-planning-schedule.pdf` — 3101 Budget Planning Schedule
+- `district-budget/docs/sc-meetings/2023-09-06-3101-budget-planning-schedule.pdf` — 3101 Budget Planning/Schedule
+- `district-budget/docs/sc-meetings/2023-09-06-3103-budget-adoption-procedures.pdf` — 3103 Budget Adoption Procedures
+- `district-budget/docs/sc-meetings/2023-09-06-3103-budget-adoption-procedures.pdf` — 3103 Budget Adoption Procedures
+- `district-budget/docs/sc-meetings/2023-09-06-3104-fiscal-year-budget-deadlines-schedules.pdf` — 3104 Fiscal Year Budget Deadlines & Schedules
+- `district-budget/docs/sc-meetings/2023-09-06-3104-fiscal-year-budget-deadlines-schedules.pdf` — 3104 Fiscal Year Budget Deadlines & Schedules
+- `district-budget/docs/sc-meetings/2023-09-06-3105-budget-transfer-authority.pdf` — 3105 Budget Transfer Authority
+- `district-budget/docs/sc-meetings/2023-09-06-3201-student-activities-accounts.pdf` — 3201 Student Activities Accounts
+- `district-budget/docs/sc-meetings/2023-09-06-3203-01-federal-funds-supplement-not-supplant.pdf` — 3203.01 Federal Funds Supplement Not Supplant
+- `district-budget/docs/sc-meetings/2023-09-06-3203-funding-proposal-and-applications.pdf` — 3203 Funding Proposal and Applications
+- `district-budget/docs/sc-meetings/2023-09-06-3204-acceptance-of-gifts-grants-and-bequests.pdf` — 3204 Acceptance of Gifts, Grants and Bequests
+- `district-budget/docs/sc-meetings/2023-09-06-3301-fiscal-accounting-and-reporting.pdf` — 3301 Fiscal Accounting and Reporting
+- `district-budget/docs/sc-meetings/2023-09-06-3302-audits.pdf` — 3302 Audits
+- `district-budget/docs/sc-meetings/2023-09-06-3307-bonded-employees-and-officers.pdf` — 3307 Bonded Employees and Officers
+- `district-budget/docs/sc-meetings/2023-09-06-3401-purchasing-and-purchasing-authority.pdf` — 3401 Purchasing and Purchasing Authority
+- `district-budget/docs/sc-meetings/2023-09-06-3601-transportation-policy.pdf` — 3601 Transportation Policy
+- `district-budget/docs/sc-meetings/2023-09-06-3701-03-concession-stand.pdf` — 3701.03 Concession Stand
+- `district-budget/docs/sc-meetings/2023-09-06-5225-health-education-second-read.pdf` — 5225 Health Education Second Read
+- `district-budget/docs/sc-meetings/2023-09-06-5706-communicable-diseases-second-read.pdf` — 5706 Communicable Diseases Second Read
+- `district-budget/docs/sc-meetings/2023-09-06-5th-grade-consent-to-release-bus-students.pdf` — 5th Grade Consent to Release Bus Students
+- `district-budget/docs/sc-meetings/2023-09-06-8th-grade-washington-d-c-proposal.pdf` — 8th Grade Washington D.C. Proposal
+- `district-budget/docs/sc-meetings/2023-09-06-action-plan-c-o-feb-update.pdf` — Action Plan C & O Feb Update
+- `district-budget/docs/sc-meetings/2023-09-06-action-plan-cc-c-2-feb-update.pdf` — Action Plan CC & C 2 Feb Update
+- `district-budget/docs/sc-meetings/2023-09-06-action-plan-cc-c-3-feb-update.pdf` — Action Plan CC & C 3 Feb Update
+- `district-budget/docs/sc-meetings/2023-09-06-action-plan-cc-c-feb-update.pdf` — Action Plan CC & C Feb Update
+- `district-budget/docs/sc-meetings/2023-09-06-action-plan-eaao-1-feb-update.pdf` — Action Plan EAAO 1 Feb Update
+- `district-budget/docs/sc-meetings/2023-09-06-action-plan-eaao-2-feb-update.pdf` — Action Plan EAAO 2 Feb Update
+- `district-budget/docs/sc-meetings/2023-09-06-action-plan-tt-l-1-feb-update.pdf` — Action Plan TT & L 1 Feb Update
+- `district-budget/docs/sc-meetings/2023-09-06-action-plan-tt-l-2-feb-update.pdf` — Action Plan TT & L 2 Feb Update
+- `district-budget/docs/sc-meetings/2023-09-06-action-plan-tt-l-3-feb-update.pdf` — Action Plan TT & L 3 Feb Update
+- `district-budget/docs/sc-meetings/2023-09-06-agenda-3-17-21.pdf` — Agenda 3-17-21
+- `district-budget/docs/sc-meetings/2023-09-06-air-quality-update.pdf` — Air Quality Update
+- `district-budget/docs/sc-meetings/2023-09-06-alternate-proposal-i.pdf` — Alternate Proposal I
+- `district-budget/docs/sc-meetings/2023-09-06-alternate-proposal-ii.pdf` — Alternate Proposal II
+- `district-budget/docs/sc-meetings/2023-09-06-alternate-proposal-iii.pdf` — Alternate Proposal III
+- `district-budget/docs/sc-meetings/2023-09-06-approved-early-learning-center-handbook-amended-5-24-23.pdf` — Approved Early Learning Center Handbook Amended 5-24-23
+- `district-budget/docs/sc-meetings/2023-09-06-approved-extended-day-handbook-amended-5-24-23.pdf` — Approved Extended Day Handbook Amended 5-24-23
+- `district-budget/docs/sc-meetings/2023-09-06-arpa-sidewalk-distances.pdf` — ARPA-Sidewalk Distances
+- `district-budget/docs/sc-meetings/2023-09-06-behavioral-health-presentation.pdf` — Behavioral Health Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-behavioral-health-presentation.pdf` — Behavioral Health Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-blue-knights-fall-review.pdf` — Blue Knights Fall Review
+- `district-budget/docs/sc-meetings/2023-09-06-bright-eyed-inc-transition.pdf` — Bright Eyed Inc. Transition
+- `district-budget/docs/sc-meetings/2023-09-06-bus-transportation-policy-reconsideration-presentation.pdf` — Bus Transportation Policy Reconsideration Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-bus-transportation-presentation.pdf` — Bus Transportation Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-c-o-1.pdf` — C & O.1
+- `district-budget/docs/sc-meetings/2023-09-06-cc-c-1.pdf` — CC & C.1
+- `district-budget/docs/sc-meetings/2023-09-06-cc-c-2.pdf` — CC & C.2
+- `district-budget/docs/sc-meetings/2023-09-06-cc-c-3.pdf` — CC & C.3
+- `district-budget/docs/sc-meetings/2023-09-06-cc-c-4.pdf` — CC & C.4
+- `district-budget/docs/sc-meetings/2023-09-06-cdc-update.pdf` — CDC Update
+- `district-budget/docs/sc-meetings/2023-09-06-charter-and-bylaws-concerning-school-committee.pdf` — Charter and Bylaws Concerning School Committee
+- `district-budget/docs/sc-meetings/2023-09-06-civics-project-implementation.pdf` — Civics project Implementation
+- `district-budget/docs/sc-meetings/2023-09-06-cold-weather-guidelines.pdf` — Cold Weather Guidelines
+- `district-budget/docs/sc-meetings/2023-09-06-committee-reorganization.pdf` — Committee Reorganization
+- `district-budget/docs/sc-meetings/2023-09-06-communication-survey-results.pdf` — Communication Survey Results
+- `district-budget/docs/sc-meetings/2023-09-06-copy-of-alternate-iii-revised-at-3-8-23-meeting.pdf` — Copy of Alternate III-Revised at 3-8-23 Meeting
+- `district-budget/docs/sc-meetings/2023-09-06-covid-19update-slides.pdf` — COVID-19Update Slides
+- `district-budget/docs/sc-meetings/2023-09-06-cultivating-climate-culture-presentation.pdf` — Cultivating Climate & Culture Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-curriculum-adoption-math-selection.pdf` — Curriculum Adoption- Math Selection
+- `district-budget/docs/sc-meetings/2023-09-06-curriculum-assessment-instruction-pd-presentation.pdf` — CURRICULUM, ASSESSMENT, INSTRUCTION & PD PRESENTATION
+- `district-budget/docs/sc-meetings/2023-09-06-curriculum-instruction-assessment-presentation.pdf` — Curriculum, Instruction, Assessment Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-dese-covid-testing-programs.pdf` — DESE COVID Testing Programs
+- `district-budget/docs/sc-meetings/2023-09-06-district-improvement-goal-family-engagement.pdf` — District Improvement Goal-Family Engagement
+- `district-budget/docs/sc-meetings/2023-09-06-district-improvement-goal-family-engagement.pdf` — District Improvement Goal: Family Engagement
+- `district-budget/docs/sc-meetings/2023-09-06-district-improvement-goal-family-engagement.pdf` — District Improvement Goal: Family Engagement
+- `district-budget/docs/sc-meetings/2023-09-06-district-improvement-goal-the-importance-of-school-culture-.pdf` — District Improvement Goal: The Importance of School Culture Year 2
+- `district-budget/docs/sc-meetings/2023-09-06-district-model-of-tiered-supports.pdf` — District Model Of Tiered Supports
+- `district-budget/docs/sc-meetings/2023-09-06-district-safety-team-presentation.pdf` — District Safety Team Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-district-spring-guidelines.pdf` — District Spring Guidelines
+- `district-budget/docs/sc-meetings/2023-09-06-district-strategy-overview-connections.pdf` — District Strategy Overview & Connections
+- `district-budget/docs/sc-meetings/2023-09-06-draft-2021-2022-school-calendar-3-17-21.pdf` — Draft 2021/2022 School Calendar 3-17-21
+- `district-budget/docs/sc-meetings/2023-09-06-draft-2021-2022-superintendent-goals.pdf` — Draft 2021-2022 Superintendent Goals
+- `district-budget/docs/sc-meetings/2023-09-06-draft-2022-2023-lhs-continuous-school-improvement-plan.pdf` — DRAFT 2022-2023 LHS Continuous School Improvement Plan
+- `district-budget/docs/sc-meetings/2023-09-06-draft-2022-2023-lms-continuous-school-improvement-plan.pdf` — DRAFT 2022-2023 LMS Continuous School Improvement Plan
+- `district-budget/docs/sc-meetings/2023-09-06-draft-2022-2023-primary-continuous-school-improvement-plan.pdf` — DRAFT 2022-2023 Primary Continuous School Improvement Plan
+- `district-budget/docs/sc-meetings/2023-09-06-draft-2022-2023-thes-continuous-school-improvement-plan.pdf` — DRAFT 2022-2023 THES Continuous School Improvement Plan
+- `district-budget/docs/sc-meetings/2023-09-06-draft-educational-acronyms.pdf` — DRAFT Educational Acronyms
+- `district-budget/docs/sc-meetings/2023-09-06-draft-facility-improvement-plan.pdf` — DRAFT Facility Improvement Plan
+- `district-budget/docs/sc-meetings/2023-09-06-draft-lhs-parent-student-hybrid-protocol.pdf` — DRAFT LHS Parent & Student Hybrid Protocol
+- `district-budget/docs/sc-meetings/2023-09-06-draft-lhs-teacher-staff-hybrid-protocol.pdf` — DRAFT LHS Teacher & Staff Hybrid Protocol
+- `district-budget/docs/sc-meetings/2023-09-06-draft-lms-parent-student-hybrid-protocol.pdf` — DRAFT LMS Parent & Student Hybrid Protocol
+- `district-budget/docs/sc-meetings/2023-09-06-draft-lms-teacher-staff-hybrid-protocols.pdf` — DRAFT LMS Teacher & Staff Hybrid Protocols
+- `district-budget/docs/sc-meetings/2023-09-06-draft-policy-1202-regulations-governing-the-use-of-school-f.pdf` — Draft Policy 1202 Regulations Governing the Use of School Facilities
+- `district-budget/docs/sc-meetings/2023-09-06-draft-policy-3201-student-activities-accounts.pdf` — Draft Policy 3201 Student Activities Accounts
+- `district-budget/docs/sc-meetings/2023-09-06-draft-policy-3202-01-federal-funds-supplement-not-supplant.pdf` — Draft Policy 3202.01 Federal Funds Supplement Not Supplant
+- `district-budget/docs/sc-meetings/2023-09-06-draft-primary-parent-student-hybrid-protocols.pdf` — DRAFT Primary Parent & Student Hybrid Protocols
+- `district-budget/docs/sc-meetings/2023-09-06-draft-primary-teacher-staff-hybrid-protocols.pdf` — DRAFT Primary Teacher & Staff Hybrid Protocols
+- `district-budget/docs/sc-meetings/2023-09-06-draft-sc-operating-protocols.pdf` — DRAFT SC OPERATING PROTOCOLS
+- `district-budget/docs/sc-meetings/2023-09-06-draft-thes-parent-student-hybrid-protocols.pdf` — DRAFT THES Parent & Student Hybrid Protocols
+- `district-budget/docs/sc-meetings/2023-09-06-draft-thes-teacher-staff-hybrid-protocols.pdf` — DRAFT THES Teacher & Staff Hybrid Protocols
+- `district-budget/docs/sc-meetings/2023-09-06-dyslexia-guidance-overview.pdf` — Dyslexia Guidance Overview
+- `district-budget/docs/sc-meetings/2023-09-06-eaao-1.pdf` — EAAO.1
+- `district-budget/docs/sc-meetings/2023-09-06-eaao-2.pdf` — EAAO.2
+- `district-budget/docs/sc-meetings/2023-09-06-early-learning-center-cover-letter-amended-5-24-23.pdf` — Early Learning Center Cover Letter Amended 5-24-23
+- `district-budget/docs/sc-meetings/2023-09-06-end-of-year-financial-report-section-2.pdf` — End of Year Financial Report Section 2
+- `district-budget/docs/sc-meetings/2023-09-06-end-of-year-financial-report-section-3.pdf` — End of Year Financial Report Section 3
+- `district-budget/docs/sc-meetings/2023-09-06-end-of-year-financial-report-section-i.pdf` — End of Year Financial Report Section I
+- `district-budget/docs/sc-meetings/2023-09-06-enhanced-hybrid-lunenburg-education-association-moa.pdf` — Enhanced Hybrid Lunenburg Education Association MOA
+- `district-budget/docs/sc-meetings/2023-09-06-equity-audit-report.pdf` — Equity Audit Report
+- `district-budget/docs/sc-meetings/2023-09-06-equity-report-presentation.pdf` — Equity Report Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-esser-budget-update-sheet.pdf` — ESSER Budget Update Sheet
+- `district-budget/docs/sc-meetings/2023-09-06-esser-grant-budget-update.pdf` — ESSER Grant Budget Update
+- `district-budget/docs/sc-meetings/2023-09-06-esser-grant-budget-update.pdf` — ESSER Grant Budget Update
+- `district-budget/docs/sc-meetings/2023-09-06-esser-grant-expenditure-summary.pdf` — ESSER Grant Expenditure Summary
+- `district-budget/docs/sc-meetings/2023-09-06-esser-grant-update.pdf` — ESSER Grant Update
+- `district-budget/docs/sc-meetings/2023-09-06-esser-grant-update.pdf` — ESSER Grant Update
+- `district-budget/docs/sc-meetings/2023-09-06-extended-day-elc-recommendations-and-handbooks.pdf` — Extended Day & ELC Recommendations and Handbooks
+- `district-budget/docs/sc-meetings/2023-09-06-extended-day-elc-recommendations-handbooks.pdf` — Extended Day & ELC Recommendations & Handbooks
+- `district-budget/docs/sc-meetings/2023-09-06-extended-day-registration-letter-amended-closure-dates.pdf` — Extended Day Registration Letter Amended-Closure Dates
+- `district-budget/docs/sc-meetings/2023-09-06-fall-2-athletic-participation-numbers.pdf` — Fall 2 Athletic Participation Numbers
+- `district-budget/docs/sc-meetings/2023-09-06-fall-2-athletic-updates.pdf` — Fall 2 Athletic Updates
+- `district-budget/docs/sc-meetings/2023-09-06-fall-2-protocol-development-and-timeline.pdf` — Fall 2 Protocol Development and Timeline
+- `district-budget/docs/sc-meetings/2023-09-06-fall-assessment-report.pdf` — Fall Assessment Report
+- `district-budget/docs/sc-meetings/2023-09-06-fall-athletic-participation-numbers.pdf` — Fall Athletic Participation Numbers
+- `district-budget/docs/sc-meetings/2023-09-06-family-school-partnership-presentation.pdf` — FAMILY SCHOOL PARTNERSHIP PRESENTATION
+- `district-budget/docs/sc-meetings/2023-09-06-february-2021-feedback-on-learning-models-presentation.pdf` — February 2021 Feedback on Learning Models Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-final-approval-italy-greece-trip.pdf` — Final Approval Italy/Greece Trip
+- `district-budget/docs/sc-meetings/2023-09-06-first-read-policy-3201-student-activities-accounts.pdf` — First Read Policy 3201 Student Activities Accounts
+- `district-budget/docs/sc-meetings/2023-09-06-first-read-policy-3601-transportation.pdf` — First Read Policy 3601 Transportation
+- `district-budget/docs/sc-meetings/2023-09-06-first-read-policy-3701-03-concession-stand.pdf` — First Read Policy 3701.03 Concession Stand
+- `district-budget/docs/sc-meetings/2023-09-06-francis-w-parker-charter-annual-report.pdf` — Francis W. Parker Charter Annual Report
+- `district-budget/docs/sc-meetings/2023-09-06-galapagos-trip-final-approval-information.pdf` — Galapagos Trip Final Approval Information
+- `district-budget/docs/sc-meetings/2023-09-06-initial-approval-costa-rica-trip.pdf` — Initial Approval Costa Rica Trip
+- `district-budget/docs/sc-meetings/2023-09-06-initial-approval-galapagos-trip.pdf` — Initial Approval-Galapagos Trip
+- `district-budget/docs/sc-meetings/2023-09-06-initial-approval-greece-italy-student-trip.pdf` — Initial Approval Greece & Italy Student Trip
+- `district-budget/docs/sc-meetings/2023-09-06-introduction-to-law-presentation.pdf` — Introduction to Law Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-joint-meeting-agenda-school-committee-select-board-finance-.pdf` — Joint Meeting Agenda-School Committee, Select Board & Finance Committee 3-7-23
+- `district-budget/docs/sc-meetings/2023-09-06-keystone-agreement.pdf` — Keystone Agreement
+- `district-budget/docs/sc-meetings/2023-09-06-keystone-collaborative-annual-report.pdf` — Keystone Collaborative Annual Report
+- `district-budget/docs/sc-meetings/2023-09-06-keystone-collaborative-annual-report.pdf` — Keystone Collaborative Annual Report
+- `district-budget/docs/sc-meetings/2023-09-06-keystone-property-acquisition.pdf` — Keystone Property Acquisition
+- `district-budget/docs/sc-meetings/2023-09-06-lhs-draft-program-of-studies.pdf` — LHS DRAFT Program of Studies
+- `district-budget/docs/sc-meetings/2023-09-06-lhs-music-presentation.pdf` — LHS Music Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-lhs-new-math-course-2022-2023.pdf` — LHS New Math Course 2022-2023
+- `district-budget/docs/sc-meetings/2023-09-06-lhs-program-of-studies-2022-2023.pdf` — LHS Program of Studies 2022-2023
+- `district-budget/docs/sc-meetings/2023-09-06-lhs-program-of-studies-presentation.pdf` — LHS Program of Studies Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-lhs-school-improvement-plan-progress.pdf` — LHS School Improvement Plan Progress
+- `district-budget/docs/sc-meetings/2023-09-06-lifting-mask-mandate-presentation.pdf` — Lifting Mask Mandate Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-line-item-transfer.pdf` — Line Item Transfer
+- `district-budget/docs/sc-meetings/2023-09-06-line-item-transfer.pdf` — Line Item Transfer
+- `district-budget/docs/sc-meetings/2023-09-06-lmhs-athletic-complex-update.pdf` — LMHS Athletic Complex Update
+- `district-budget/docs/sc-meetings/2023-09-06-lmhs-civics-requirement-pd-presentation.pdf` — LMHS Civics Requirement & PD Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-lmhs-concession-stand-presentation.pdf` — LMHS Concession Stand Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-lmhs-opening-day.pdf` — LMHS OPENING DAY
+- `district-budget/docs/sc-meetings/2023-09-06-lms-school-improvement-plan-progress.pdf` — LMS School Improvement Plan Progress
+- `district-budget/docs/sc-meetings/2023-09-06-lms-swot-analysis.pdf` — LMS SWOT Analysis
+- `district-budget/docs/sc-meetings/2023-09-06-lps-assessment-report.pdf` — LPS Assessment Report
+- `district-budget/docs/sc-meetings/2023-09-06-lps-dismissal-procedures-excerpt-from-school-handbooks.pdf` — LPS Dismissal Procedures(excerpt from School Handbooks)
+- `district-budget/docs/sc-meetings/2023-09-06-lunenburg-coaches-guidebook.pdf` — Lunenburg Coaches Guidebook
+- `district-budget/docs/sc-meetings/2023-09-06-lunenburg-public-schools-appreciation-resolutions.pdf` — Lunenburg Public Schools Appreciation Resolutions
+- `district-budget/docs/sc-meetings/2023-09-06-lunenburg-public-schools-reopen-plan.pdf` — Lunenburg Public Schools Reopen Plan
+- `district-budget/docs/sc-meetings/2023-09-06-lunenburg-public-schools-resolutions-2020-2021.pdf` — Lunenburg Public Schools Resolutions 2020-2021
+- `district-budget/docs/sc-meetings/2023-09-06-lunenburg-staff-appreciation-resolutions.pdf` — Lunenburg Staff Appreciation Resolutions
+- `district-budget/docs/sc-meetings/2023-09-06-mass-position-paper-on-mcass-access-testing.pdf` — MASS Position Paper on MCASS & ACCESS Testing
+- `district-budget/docs/sc-meetings/2023-09-06-massachusetts-travel-advisory.pdf` — Massachusetts Travel Advisory
+- `district-budget/docs/sc-meetings/2023-09-06-meeting-agenda-4-28-21.pdf` — Meeting Agenda 4-28-21
+- `district-budget/docs/sc-meetings/2023-09-06-meeting-agenda-5-15-21.pdf` — Meeting Agenda 5-15-21
+- `district-budget/docs/sc-meetings/2023-09-06-meeting-agenda-5-19-21.pdf` — Meeting Agenda 5-19-21
+- `district-budget/docs/sc-meetings/2023-09-06-meeting-agenda-6-16-21.pdf` — Meeting Agenda 6-16-21
+- `district-budget/docs/sc-meetings/2023-09-06-meeting-agenda-thursday-6-3-21.pdf` — Meeting Agenda Thursday, 6-3-21
+- `district-budget/docs/sc-meetings/2023-09-06-mid-wach-fall2-protocols-draft.pdf` — Mid-Wach Fall2 Protocols Draft
+- `district-budget/docs/sc-meetings/2023-09-06-middle-school-athletic-waiver-information.pdf` — Middle School Athletic Waiver Information
+- `district-budget/docs/sc-meetings/2023-09-06-middle-school-student-athletic-eligibility.pdf` — Middle School Student Athletic Eligibility
+- `district-budget/docs/sc-meetings/2023-09-06-november-feedback-on-learning-models.pdf` — November Feedback on Learning Models
+- `district-budget/docs/sc-meetings/2023-09-06-operations-communication-presentation.pdf` — Operations & Communication Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-permission-to-post-mentor-program-plc-facilitator.pdf` — Permission to Post-Mentor Program PLC Facilitator
+- `district-budget/docs/sc-meetings/2023-09-06-pesticide-letter-to-school-committee.pdf` — Pesticide Letter to School Committee
+- `district-budget/docs/sc-meetings/2023-09-06-policy-1202-regulations-governing-the-use-of-school-facilit.pdf` — Policy 1202 Regulations Governing the Use of School facilities
+- `district-budget/docs/sc-meetings/2023-09-06-policy-1202-v3-regulaions-governing-the-use-of-school-facil.pdf` — Policy 1202 V3 Regulaions Governing the Use of School Facilities
+- `district-budget/docs/sc-meetings/2023-09-06-policy-5204-promotion-retention-of-students.pdf` — Policy 5204 Promotion & Retention of Students
+- `district-budget/docs/sc-meetings/2023-09-06-policy-5225-draft-health-education.pdf` — Policy 5225 Draft Health Education
+- `district-budget/docs/sc-meetings/2023-09-06-policy-5706-draft-communicable-diseases.pdf` — Policy 5706 Draft Communicable Diseases
+- `district-budget/docs/sc-meetings/2023-09-06-policy-subcommittee-proposal.pdf` — Policy Subcommittee Proposal
+- `district-budget/docs/sc-meetings/2023-09-06-primary-ac-project-presentation.pdf` — Primary AC Project Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-primary-school-back-to-school-update.pdf` — PRIMARY SCHOOL BACK TO SCHOOL UPDATE
+- `district-budget/docs/sc-meetings/2023-09-06-primary-school-school-improvement-plan-progress.pdf` — Primary School School Improvement Plan Progress
+- `district-budget/docs/sc-meetings/2023-09-06-principals-back-to-school-report.pdf` — PRINCIPALS BACK TO SCHOOL REPORT
+- `district-budget/docs/sc-meetings/2023-09-06-professional-learning-community-presentation.pdf` — Professional Learning Community Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-professional-practice-goal-k-5.pdf` — Professional Practice Goal(K-5)
+- `district-budget/docs/sc-meetings/2023-09-06-promoting-a-professional-learning-community-equity-presenta.pdf` — Promoting a Professional Learning Community Equity Presentation
+- `district-budget/docs/sc-meetings/2023-09-06-proposal-at-t-tower.pdf` — Proposal AT & T Tower
+- `district-budget/docs/sc-meetings/2023-09-06-proposed-esser-grant-amendment.pdf` — Proposed ESSER Grant Amendment
+- `district-budget/docs/sc-meetings/2023-09-06-proposed-extended-day-program-increase.pdf` — Proposed Extended Day Program Increase
+- `district-budget/docs/sc-meetings/2023-09-06-proposed-facilities-logo.pdf` — Proposed Facilities Logo
+- `district-budget/docs/sc-meetings/2023-09-06-proposed-lhs-continuous-school-improvement-plan.pdf` — Proposed LHS Continuous School Improvement Plan
+- `district-budget/docs/sc-meetings/2023-09-06-proposed-lms-continuous-school-improvement-plan.pdf` — Proposed LMS Continuous School Improvement Plan
+- `district-budget/docs/sc-meetings/2023-09-06-proposed-primary-continuous-school-improvement-plan.pdf` — Proposed Primary Continuous School Improvement Plan

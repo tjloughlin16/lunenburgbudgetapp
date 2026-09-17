@@ -74,8 +74,9 @@ ORDER = [
 # the same ground the PAGE wins and the document is offered from it, because the page is
 # current, computed on every build, and the document is what it was written from.
 #
-# SCHOOL first because that is where the money and the argument are; TOWN second; METHOD
-# last, for the reader who has a reason to check rather than a question to answer.
+# TOWN first, opening with the two levers, because that is what a reader who came from the
+# crisis page is looking for (TJ, 17 September 2026: "should be near the top"); SCHOOL
+# second, where the money and the argument are; the live pages and METHOD last.
 CATEGORIES = [
     # A SHELF WITH ONE THING ON IT, FIRST, AND THE ARGUMENT FOR IT.
     #
@@ -89,38 +90,14 @@ CATEGORIES = [
     # a reader who has arrived at an INDEX and does not know which report they want is
     # exactly the reader it was built for. It is not in UNCATEGORISED with `addsup` and
     # `show-your-work` because those two are about the reports; this is a way IN to them.
-    ('cards', 'One finding at a time', [
-        ('', ['blog']),
-    ]),
-    # THE TOWN AS IT HAPPENS: what is coming and what was said, from the daily refresh.
-    # Neither is an analysis; both are the way most residents will arrive.
-    ('week', 'This week, and what was said', [
-        ('', ['budgetfeed', 'thisweek', 'boards', 'recorded']),
-    ]),
-    ('school', 'The schools', [
-        ('what the money buys', [
-            'sped', 'circuitbreaker', 'courses', 'ap', 'cuts', 'sportsmoney', 'stopped', 'unwind',
-            'insurance',
-            'athletics-ledger',
-        ]),
-        # TJ, 10 September 2026: this belongs "under The Schools, and just above 'the
-        # students'". It had been a top-level shelf of its own, and the correction is
-        # right for a reason the shelf version missed: a reader browsing the schools is
-        # already in the place where "who works in them" is the obvious next question.
-        # A top-level shelf made it a peer of "The town", which it is not — it is one
-        # aspect of the schools, and the order adults-then-children reads the way a
-        # person would ask it.
-        ('who works in them', [
-            'staffing', 'schoolstaff', 'parastaff',
-        ]),
-        ('the students', [
-            'enrollment', 'attrition', 'outflow', 'montytech', 'leaving', 'families',
-        ]),
-        ('where the money comes from, and how it compares', [
-            'minaid', 'required', 'peers', 'variance',
-        ]),
-    ]),
     ('town', 'The town', [
+        # THE LEVERS FIRST. TJ, 16 September 2026: "we need individual reports for the
+        # big concepts in the budget crisis" -- and, 17 September, "should be near the
+        # top". These are the two things the town can actually do; a reader who came from
+        # the crisis page is looking for exactly these.
+        ('the levers — an override, and growth', [
+            'override', 'growth',
+        ]),
         # WHO LIVES HERE, FIRST, and above the ledger on purpose. Every other report on
         # this shelf measures the town's money; this one measures the town. A reader who
         # does not yet know the place cannot weigh anything below it, and it is the one
@@ -135,13 +112,6 @@ CATEGORIES = [
         # THE BOARDS THEMSELVES, as a subject. TJ, 17 September 2026: "a sort of 'board
         # analysis' page" -- what each board posts, measured on the town's own site.
         ('the boards, compared', ['boardcompare']),
-        # THE LEVERS. TJ, 16 September 2026: "we need individual reports for the big
-        # concepts in the budget crisis" -- for the town, with the crisis page keeping
-        # the high level. Overrides moved here from Go deeper; commercial development
-        # was a room on the crisis page and a board of dials, and is a report now.
-        ('the levers — an override, and growth', [
-            'override', 'growth',
-        ]),
     ]),
     # A FOURTH SHELF, AND THE ARGUMENT FOR IT.
     #
@@ -169,8 +139,41 @@ CATEGORIES = [
     # mechanism. `minaid` stays under "where the money comes from" because that page
     # MEASURES Lunenburg against the rule; this one explains the rule. Two pages, two
     # shelves, and neither is moved.
-    ('rules', 'The rules everyone argues under', [
-        ('', ['classsize', 'formula']),
+    ('school', 'The schools', [
+        ('what the money buys', [
+            'sped', 'circuitbreaker', 'courses', 'ap', 'cuts', 'sportsmoney', 'stopped', 'unwind',
+            'insurance',
+            'athletics-ledger',
+        ]),
+        # TJ, 10 September 2026: this belongs "under The Schools, and just above 'the
+        # students'". It had been a top-level shelf of its own, and the correction is
+        # right for a reason the shelf version missed: a reader browsing the schools is
+        # already in the place where "who works in them" is the obvious next question.
+        # A top-level shelf made it a peer of "The town", which it is not — it is one
+        # aspect of the schools, and the order adults-then-children reads the way a
+        # person would ask it.
+        ('who works in them', [
+            'staffing', 'schoolstaff', 'parastaff',
+        ]),
+        ('the students', [
+            'enrollment', 'attrition', 'outflow', 'montytech', 'leaving', 'families',
+        ]),
+        ('where the money comes from, and how it compares', [
+            'minaid', 'required', 'peers', 'variance',
+        ]),
+        # THE RULES EVERYONE ARGUES UNDER, as a subsection here rather than a shelf of
+        # their own. TJ, 17 September 2026: "should go under the schools as a subsection".
+        # The note that used to introduce a fourth shelf still holds for what these ARE
+        # -- a state rule quoted and explained, stopping before any Lunenburg finding --
+        # and the index now says so in the subsection title rather than by distance.
+        ('the rules everyone argues under', ['classsize', 'formula']),
+    ]),
+    # THE LIVE PAGES, LAST. Neither the blog nor the week is an analysis; both were at
+    # the top of this index and TJ, 17 September 2026, found them "very misplaced" there.
+    # They stay listed so the index is complete, at the end, under a heading that says
+    # what they are.
+    ('live', 'Not reports — the pages that change every day', [
+        ('', ['blog', 'budgetfeed', 'thisweek', 'boards', 'recorded']),
     ]),
     ('method', 'How to check any of it', [
         ('', ['connecting-the-budget', 'what-you-can-ask', 'questions']),

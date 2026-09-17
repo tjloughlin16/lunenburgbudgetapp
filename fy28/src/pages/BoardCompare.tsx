@@ -2,6 +2,7 @@ import { FullVersion } from '../components/FullVersion'
 import type { Tab } from '../routes'
 import { Conclusions, Grain, H2, NotEstablished, Provenance, ReportShell, Stat, useReport, splitConclusions } from '../components/report'
 import type { Conclusion, Source } from '../components/report'
+import { BoardBars } from '../components/BoardBars'
 
 const TAB: Tab = 'boardcompare'
 const DATA = '/data/board-posting.json'
@@ -89,6 +90,9 @@ function Report({ d }: { d: Payload }) {
   const y = (r: Row) => r.years.find(x => x.fy === last)!
   return (
     <>
+      {/* THE PICTURE FIRST: every ranked board, one bar each. */}
+      <BoardBars rows={ranked} fys={d.fys} />
+
       <section data-section="conclusions" data-short="">
         <H2 id="minutes">Measure 1 &mdash; which meetings got minutes</H2>
         <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>

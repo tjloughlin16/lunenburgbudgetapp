@@ -128,7 +128,7 @@ type ReportsPayload = {
 /** Groups that are TOOLING, not money reports -- the blog, this week, the boards, the
  *  minutes. They filed here as equals of "who ends up out of district" and made the
  *  shelf a sitemap. They have the front page and /reports; this page is about money. */
-const NOT_MONEY = new Set(['cards', 'week'])
+const NOT_MONEY = new Set(['cards', 'week', 'live'])
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="text-2xl font-bold tracking-tight mt-14 mb-3 max-w-3xl">{children}</h2>

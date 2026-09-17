@@ -41,6 +41,7 @@ PAGE = ('https://www.lunenburgschools.net/department-directory/'
 # town's Agenda Center never carries. Filed under docs/sc-meetings/, each row carrying
 # the school year and the meeting date read off the heading it sat under.
 MEETINGS_PAGE = 'https://www.lunenburgschools.net/school-committee-1/meetings'
+MAX_BYTES = 60_000_000   # the largest real document on either page is a 16 MB financial report
 OUT = os.path.join(ROOT, 'sources', 'district-budget')
 DOCS = os.path.join(OUT, 'docs')
 TEXT = os.path.join(OUT, 'text')
@@ -244,8 +245,19 @@ def main():
             was_read = {r['label']: r['read'] for r in csv.DictReader(fh)
                         if r.get('read') and r['read'] != 'already had it'}
 
+    # What an earlier run SKIPPED -- a video, an unknown blob -- keyed on its address, so
+    # it is never downloaded again to be skipped again (one was 2.5 GB).
+    skipped = {}
+    if os.path.exists(MANIFEST):
+        with open(MANIFEST, newline='') as fh:
+            skipped = {r['upstream']: r for r in csv.DictReader(fh) if (r.get('read') or '').startswith('skipped')}
+
     rows = []
     for n, it in enumerate(items, 1):
+        if it['url'] in skipped:
+            rows.append(dict(skipped[it['url']], label=it['label'], page=it['subdir'] or 'budget',
+                             school_year=it['school_year'], meeting_date=it['meeting_date']))
+            continue
         # A meetings-page document is named by its meeting date and its label, because
         # "School Committee Agenda" is the label of a hundred different agendas.
         base = slug(it['label']) if not it['subdir'] else slug('%s %s' % (it['meeting_date'] or it['school_year'], it['label']))
@@ -259,7 +271,19 @@ def main():
                 note = 'already had it'
             else:
                 body = download(it)
-                path = os.path.join(docs_dir, base + sniff(body))
+                ext = sniff(body)
+                # NOT A DOCUMENT. A Drive link on the meetings page can be a video of a
+                # presentation (one was 2.5 GB), and an unknown blob of any size is not
+                # something this archive reads. Recorded in the index, never kept.
+                if ext == '.bin' or len(body) > MAX_BYTES:
+                    print(f'  [{n:>2}] SKIPPED {len(body)/1e6:>8.1f}MB  {it["label"][:56]}  (not a document)')
+                    rows.append(dict(label=it['label'], upstream=it['url'], local='', text='',
+                                     bytes=len(body), sha256=hashlib.sha256(body).hexdigest(),
+                                     read='skipped: %s, %d bytes' % ('unknown format' if ext == '.bin' else 'over the size cap', len(body)),
+                                     page=it['subdir'] or 'budget', school_year=it['school_year'], meeting_date=it['meeting_date']))
+                    time.sleep(0.6)
+                    continue
+                path = os.path.join(docs_dir, base + ext)
                 open(path, 'wb').write(body)
                 note = 'downloaded'
                 time.sleep(0.6)
