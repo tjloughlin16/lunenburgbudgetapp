@@ -356,6 +356,81 @@ def num(v):
         return None
 
 
+# THE ONE SPORT WHOSE PRINTED COST IS NOT LUNENBURG'S COST.
+#
+# The district's by-sport workbook prints one figure for the ski team and it is the whole
+# CO-OP's cost. Lunenburg High School runs a four-town co-op: it pays the mountain and the
+# coach, then invoices Littleton, Narragansett and Leominster for their athletes' shares.
+# For 2025-26 the gross was $12,392 and Lunenburg's own share $2,655.43 -- 3 of 14
+# athletes, 21.4% of the bill.
+#
+# TJ, 18 September 2026: "even though the 'costs' lunenburg sees from invoices is the 13k,
+# the cost to lunenburg is only 2655 because other towns pay their share of the overall
+# bill."
+#
+# This is rule 11 in a form the rule did not anticipate. A budget line is net of what else
+# pays for the thing -- but here the workbook's figure is GROSS of four towns, and the
+# reimbursements are a receivable rather than a netting. Read straight off the workbook,
+# ski has the highest per-athlete cost of any sport the town runs, and that comparison is
+# between a four-town total and every other sport's one-town total. It is not a comparison
+# at all.
+#
+# WHAT THIS DOES NOT DO. It does not restate any year's figure. The invoice is ONE season
+# and the workbook's cost years are different ones; a split measured in 2025-26 may not be
+# 2024-25's split, and nothing here tests that. The page prints the invoice beside the
+# workbook and says which is which. Registered in money-gaps.csv as its own row.
+SKI_COOP = os.path.join(ROOT, 'sources', 'data', 'ski-coop.csv')
+SKI_SOURCE = 'sources/correspondence/2026-03-30-ski-coop-invoice.xlsx'
+SKI_NOTE = 'sources/correspondence/2026-03-30-ski-coop-invoice.md'
+
+
+def ski_coop():
+    """The 2025-26 co-op invoice, footed to its own printed total."""
+    if not os.path.exists(SKI_COOP):
+        fail('%s is missing; it is the only document showing the ski line is a co-op'
+             % os.path.relpath(SKI_COOP, ROOT))
+    rows = list(csv.DictReader(open(SKI_COOP, encoding='utf-8')))
+    lines = [r for r in rows if r['kind'] == 'line']
+    shares = [r for r in rows if r['kind'] == 'share']
+    tot = [r for r in rows if r['kind'] == 'total']
+    if not (lines and shares and len(tot) == 1):
+        fail('ski-coop.csv is not shaped as line/total/share rows')
+    total = float(tot[0]['amount'])
+    athletes = int(tot[0]['athletes'])
+
+    # RECONCILE TO THE DOCUMENT'S OWN TOTAL, both ways (rule 13). The line items must sum
+    # to the printed total, and the four towns' shares must sum to it too -- the second is
+    # the one that matters, because it is the claim being made: that every dollar of the
+    # gross is allocated to some town, so the part Lunenburg does not pay is real money
+    # somebody else owes and not a rounding artefact.
+    if round(sum(float(r['amount']) for r in lines), 2) != round(total, 2):
+        fail('ski co-op: the line items do not sum to the printed total')
+    if round(sum(float(r['amount']) for r in shares), 2) != round(total, 2):
+        fail('ski co-op: the towns\u2019 shares do not sum to the printed total')
+    if sum(int(r['athletes']) for r in shares) != athletes:
+        fail('ski co-op: the towns\u2019 athletes do not sum to the printed roster')
+
+    lun = [r for r in shares if r['town'] == 'Lunenburg']
+    if len(lun) != 1:
+        fail('ski co-op: Lunenburg is not exactly one row')
+    ours = float(lun[0]['amount'])
+    return dict(
+        fy=2026, season='2025-26',
+        total=round(total, 2), athletes=athletes,
+        per_athlete=round(total / athletes, 2),
+        lunenburg=round(ours, 2), lunenburg_athletes=int(lun[0]['athletes']),
+        lunenburg_share=round(100 * ours / total, 1),
+        others=round(total - ours, 2),
+        towns=[dict(town=r['town'], athletes=int(r['athletes']),
+                    amount=round(float(r['amount']), 2), note=r['note'])
+               for r in sorted(shares, key=lambda r: -float(r['amount']))],
+        lines=[dict(label=r['label'], amount=round(float(r['amount']), 2), cell=r['cell'])
+               for r in lines],
+        source=SKI_SOURCE, note=SKI_NOTE, basis='stated',
+        dated='30 March 2026',
+    )
+
+
 def fail(msg):
     sys.exit(f'build_athletics_charts: {msg}')
 
@@ -1293,6 +1368,7 @@ def build():
         categories=categories,
         category_order=CAT_ORDER,
         by_sport=by_sport,
+        ski_coop=ski_coop(),
         participation=participation,
         participation_totals=part_totals,
         negatives=negatives,

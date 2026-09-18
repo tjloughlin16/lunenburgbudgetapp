@@ -1447,6 +1447,35 @@ GROUPS = [
              'One row per job the pre-reset sweep ran: the stream, the board, the meeting date, '
              'the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed '
              'budget, so this is how much of it the machine reading took.'),
+            ('correspondence/2026-03-30-ski-coop-invoice.xlsx',
+             'The ski co-op invoice, 2025-26 season', 2,
+             'The invoice Lunenburg High School’s athletic department issues to the other towns '
+             'in the ski co-op, dated 30 March 2026. Lunenburg runs the co-op, pays the mountain '
+             'and the coach, and bills Littleton, Narragansett and Leominster for their athletes: '
+             '$12,392 gross, 14 skiers, of whom 3 are Lunenburg’s at $2,655.43 — 21.4% of the '
+             'bill. It matters because the district’s by-sport workbook prints the whole '
+             'co-op’s cost as the ski team’s cost, which makes ski the dearest sport per '
+             'participation the town runs by comparing a four-town total with every other '
+             'sport’s one-town total. A sheet the department assembled, not an accounting '
+             'printout, so every figure off it is `stated` (rule 13a) — but it foots: the line '
+             'items sum to its own printed total and the four towns’ shares sum to it too. '
+             'Sent to this project by a resident; there is no publisher address, because the '
+             'town does not publish it.'),
+            ('correspondence/2026-03-30-ski-coop-invoice.md',
+             'How the ski co-op invoice reached us, and what it does not show', 3,
+             'The provenance note for the invoice beside it: where it came from, its sha256, why '
+             'it is `stated` rather than evidence, and the three things it does not establish '
+             '— it is one season and says nothing about how earlier years split; it is a bill '
+             'rather than a receipt, so it shows what the other towns were invoiced and not that '
+             'they paid; and it does not say which account receives a reimbursement, which is '
+             'what decides whether the money offsets the athletics line at all.'),
+            ('data/ski-coop.csv',
+             'The ski co-op invoice, line by line and town by town', 3,
+             'The invoice extracted: nine cost lines, the printed total and roster, and the four '
+             'towns’ shares, each row carrying the workbook cell it came from. '
+             'scripts/build_athletics_charts.py refuses to write unless the line items sum to the '
+             'printed total, the towns’ shares sum to it, and their athletes sum to the printed '
+             'roster — reconciling to the document’s own figures rather than to ours (rule 13).'),
             ('data/school-field-maintenance.csv',
              'What the schools say maintaining the fields and grounds costs, FY2024', 2,
              'Five rows from the Superintendent’s email of September 2026: about $126,000 of all '

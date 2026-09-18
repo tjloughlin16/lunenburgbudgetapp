@@ -1028,6 +1028,12 @@ WORKBOOK_COLUMNS = {
 # domain data the model already reads, put where it can be joined rather than re-parsed.
 REFERENCE = [
     'athletic-fee-schedule', 'athletics-by-sport', 'athletics-by-sport-reconciliation',
+    # The 2025-26 ski co-op invoice: nine cost lines, the printed total and roster, and
+    # the four towns' shares. The one place the archive can show that the by-sport
+    # workbook's ski figure is FOUR TOWNS' money -- $12,392 gross against Lunenburg's
+    # $2,655.43 -- so a query joining athletics_by_sport to a cost is not silently
+    # comparing a co-op total with every other sport's one-town total.
+    'ski-coop',
     'athletics-history', 'capital-funding-history', 'capital-plan-fy27',
     'free-cash-proof', 'fund-1301-cash-journal', 'ood-tuition-history',
     'line-history-disagreements', 'rate-register', 'sped-para-history',

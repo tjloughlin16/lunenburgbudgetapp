@@ -1,0 +1,269 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "open-space-committee",
+ "board": "Open Space Committee",
+ "meeting_date": "2026-09-09",
+ "video_id": "qp-NjUCVwuc",
+ "video_url": "https://www.youtube.com/watch?v=qp-NjUCVwuc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/open-space-committee/2026-09-09-qp-NjUCVwuc.json",
+  "sha256": "2ecc03d6c694e479162cd13cc54b59dcaaf57b42f3c58c24b0735e669a1fde8b",
+  "caption_lines": 97,
+  "segments": 840
+ },
+ "recording": {
+  "duration_s": 2066,
+  "duration": "0:34",
+  "spoken_chars": 26519,
+  "words_approx": 4419
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09092026-7994",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2026-09-09-agenda-7994.txt",
+   "path": "sources/meetings/open-space-committee/2026-09-09-agenda-7994.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-18T16:18:02Z",
+  "cost_usd": 0.2216216
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Mike Hill",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Eric",
+    "role": "clerk",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Chris",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Tim",
+    "role": "planning board representative / member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Andrea",
+    "role": "conservation commission representative / member",
+    "remote": true
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "planning-and-zoning",
+   "policy",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 145,
+    "motion": "Accept the May 13th minutes as written",
+    "moved_by": "Tim",
+    "outcome": "passed 5-0 (roll call: Chris, Eric, Tim, Andrea, Hill all \"I\")",
+    "procedural": true
+   },
+   {
+    "t": 313,
+    "motion": "Elect Eric as clerk for the coming year",
+    "outcome": "passed 5-0 (roll call: Chris, Eric, Tim, Andrea, Hill all \"I\")",
+    "procedural": false
+   },
+   {
+    "t": 353,
+    "motion": "Elect Anna as vice chair for the coming year",
+    "outcome": "passed 5-0 (roll call: Chris, Eric, Tim, Andrea, Hill all \"I\")",
+    "procedural": false
+   },
+   {
+    "t": 373,
+    "motion": "Elect Mike Hill as chair for another year",
+    "outcome": "passed 5-0 (roll call: Chris, Eric, Tim, Andrea, Hill all \"I\")",
+    "procedural": false
+   },
+   {
+    "t": 2027,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed 5-0 (roll call: Chris, Eric, Tim, Andrea, Hill all \"I\")",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1590,
+    "decision": "Chair will rework the parcel-size and other criteria wording based on Eric's suggestion and bring a revised draft back to the October meeting; no vote taken tonight."
+   },
+   {
+    "t": 1307,
+    "decision": "Committee agreed to leave the \"scenic vistas / rural character\" criterion somewhat open to interpretation rather than tying it to a specific mapping dataset."
+   },
+   {
+    "t": 1352,
+    "decision": "Committee agreed the \"contiguous to other protected open space\" item should remain a separate, stand-alone criterion rather than being folded into the parcel-size criterion."
+   },
+   {
+    "t": 1990,
+    "decision": "Committee will continue meeting the second Wednesday of each month; next meeting set for October 14th."
+   },
+   {
+    "t": 416,
+    "decision": "Chair to confirm with each appointing board (conservation, planning, parks) whether they want their current representative to continue for another year, since a new bylaw sets term limits and reappointment procedures."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 124,
+    "topic": "Call to order, roll call/quorum check, note that new Parks appointee Dan Burns has not yet joined",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 124,
+    "t_end": 185,
+    "topic": "Review and vote on May 13th minutes",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 185,
+    "t_end": 229,
+    "topic": "Reports from conservation commission and planning board representatives on open space",
+    "resolution": "informational, nothing to report",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 229,
+    "t_end": 415,
+    "topic": "Annual election of committee officers (clerk, vice chair, chair) under new term-limit bylaw",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 415,
+    "t_end": 479,
+    "topic": "Term-limit/reappointment procedure for board-appointed representatives (conservation, planning, parks)",
+    "resolution": "no resolution, chair to follow up with each board",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 479,
+    "t_end": 1610,
+    "topic": "Discussion of proposed revisions to the open space acquisition criteria (parcel size tiers, important habitat resources, public access, scenic vistas, contiguous parcels, agricultural viability, recreation opportunity)",
+    "resolution": "tabled to October meeting for a reworked draft",
+    "tags": [
+     "planning-and-zoning",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1610,
+    "t_end": 1692,
+    "topic": "Eric shares screen to confirm his interpretation of the proposed parcel-size criteria table",
+    "resolution": "informational, confirmed intent, to be reworded",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1692,
+    "t_end": 1757,
+    "topic": "Other business placeholder; no right-of-first-refusal referrals pending; discussion of results of special town meeting articles",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 1757,
+    "t_end": 1901,
+    "topic": "Member report on logging/selective cutting operation near Flat Hill; suggestion of contractor for future conservation commission logging bids",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1901,
+    "t_end": 2005,
+    "topic": "Meeting schedule: confirm second-Wednesday cadence, meeting start time preferences, next meeting date",
+    "resolution": "decided informally",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2005,
+    "t_end": 2047,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact article numbers and vote tallies for the special town meeting are not stated, only that two of three articles passed by well over the required two-thirds and one was passed over",
+   "Some crosstalk and interjections during the open space criteria discussion (roughly 650-1150s) are partly garbled",
+   "The exact wording changes the chair intends to make to the criteria document were discussed conceptually but no final text was read into the record"
+  ],
+  "confidence": "moderate",
+  "headline": "Open Space Committee reelected its chair and began rewriting land-acquisition criteria, to return in October",
+  "summary": "The Lunenburg Open Space Committee held its first meeting since June, approved the May minutes, and re-elected its officers (Mike Hill as chair, Anna as vice chair, Eric as clerk) under a new term-limit bylaw. Most of the meeting was spent workshopping proposed revisions to the open space acquisition criteria -- parcel size tiers, habitat resources, public access, scenic vistas, contiguous parcels, and agricultural viability -- with the chair agreeing to rework the wording based on member feedback and bring it back in October."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The committee re-elected Mike Hill as chair, Anna as vice chair, and Eric as clerk, each by unanimous roll call under a newly adopted term-limit bylaw.",
+    "t": 229
+   },
+   {
+    "line": "Members spent most of the meeting workshopping revisions to the criteria used to prioritize land for open space acquisition, including parcel size, habitat, public access, scenic vistas, contiguous parcels, and farmland viability.",
+    "t": 479
+   },
+   {
+    "line": "No vote was taken on the criteria; the chair agreed to rework the wording based on member feedback and bring a revised draft back in October.",
+    "t": 1590
+   },
+   {
+    "line": "The chair will check with the conservation commission, planning board, and parks department on whether their appointed representatives to this committee will continue, since the new bylaw sets term limits and a reappointment process.",
+    "t": 416
+   }
+  ],
+  "why_it_matters": [
+   "The criteria under revision are what the town uses to decide which parcels get prioritized for conservation purchase or protection, so the wording adopted in October will shape future land decisions.",
+   "The new term-limit bylaw affects who can serve on the committee and how other boards appoint their representatives to it."
+  ],
+  "watch_next": [
+   "October 14 meeting: a revised draft of the acquisition criteria",
+   "Confirmation from the conservation, planning, and parks boards on their appointed representatives"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-18T16:18:13Z",
+   "cost_usd": 0.1493676
+  }
+ }
+}

@@ -96,6 +96,15 @@ type Payload = {
   categories: CatRow[]
   category_order: string[]
   by_sport: SportRow[]
+  /** The 2025-26 ski co-op invoice. The one sport whose printed cost is four towns'
+   *  money rather than Lunenburg's. */
+  ski_coop: {
+    fy: number; season: string; total: number; athletes: number; per_athlete: number
+    lunenburg: number; lunenburg_athletes: number; lunenburg_share: number; others: number
+    towns: { town: string; athletes: number; amount: number; note: string }[]
+    lines: { label: string; amount: number; cell: string }[]
+    source: string; note: string; basis: string; dated: string
+  }
   participation: PartRow[]
   participation_totals: {
     fy: number; total: number; hs: number; ms: number
@@ -615,7 +624,12 @@ export function AthleticsMoney() {
         never divides one by the other. <strong>This division is ours.</strong> In{' '}
         {fy(dearest.fy)} it runs from {usd(dearest.per_athlete ?? 0)} a participation for{' '}
         {dearest.sport} down to {usd(cheapest.per_athlete ?? 0)} for {cheapest.sport}, against
-        a first-child fee of {usd(costYearFee?.amount ?? 0)}. Across the whole programme it
+        a first-child fee of {usd(costYearFee?.amount ?? 0)}.
+        {dearest.sport === 'Ski Team' && <>
+          {' '}<strong>The ski figure is not Lunenburg&rsquo;s money.</strong> Lunenburg runs
+          a four-town co-op and the workbook prints the whole co-op&rsquo;s cost;{' '}
+          <a href="#ski-coop">what the town actually pays</a> is below.
+        </>} Across the whole programme it
         is {perPart.map(p => `${usd(p.per_participation ?? 0)} in ${fy(p.fy)}`).join(' and ')}.
       </Body>
       <div className="mt-6">
@@ -636,6 +650,86 @@ export function AthleticsMoney() {
           children, and the town publishes no unduplicated athlete count.
         </p>
       </NotShown>
+
+      {/* ------------------------------------------------ the ski co-op, in its own right
+
+          THE ONE SPORT WHOSE PRINTED COST IS NOT LUNENBURG'S COST. Read straight off the
+          workbook, ski is the dearest sport per participation the town runs — and that
+          compares a FOUR-TOWN total against every other sport's one-town total. It is not
+          a comparison at all.
+
+          TJ, 18 September 2026: "even though the 'costs' lunenburg sees from invoices is
+          the 13k, the cost to lunenburg is only 2655 because other towns pay their share
+          of the overall bill."
+
+          This is rule 11 in a shape the rule did not anticipate. A budget line is net of
+          whatever else pays for the thing; here the workbook's figure is GROSS of four
+          towns, and what the other three owe is a receivable rather than a netting.
+
+          It sits AFTER the chart, not before it, because a reader has to have seen the
+          bar to want the correction (rule 7a). The standfirst above carries the one-line
+          flag and links here. */}
+      <div id="ski-coop" className="card p-5 mt-6 max-w-3xl"
+        style={{ borderLeft: '4px solid var(--series-cost)' }}>
+        <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+          style={{ color: 'var(--text-muted)' }}>The ski team is a four-town co-op</p>
+        <p className="text-[15px] font-bold mb-1">
+          The {d.ski_coop.season} season cost {usd(d.ski_coop.total)}. Lunenburg&rsquo;s
+          share was {usd(d.ski_coop.lunenburg)}.
+        </p>
+        <p className="text-[13.5px] leading-relaxed mb-3"
+          style={{ color: 'var(--text-secondary)' }}>
+          {d.ski_coop.lunenburg_athletes} of the {d.ski_coop.athletes} skiers were
+          Lunenburg&rsquo;s &mdash; {d.ski_coop.lunenburg_share}% of the bill. Lunenburg
+          High School pays the mountain and the coach, then invoices the other towns for
+          their athletes at {usd(d.ski_coop.per_athlete)} each. The district&rsquo;s
+          by-sport workbook prints the whole co-op&rsquo;s cost as the ski team&rsquo;s
+          cost.
+        </p>
+        <table className="w-full text-[13px] tabular-nums">
+          <tbody>
+            {d.ski_coop.towns.map(t => (
+              <tr key={t.town} style={{ borderTop: '1px solid var(--grid)' }}>
+                <td className="py-1.5 pr-2">
+                  <span className={t.town === 'Lunenburg' ? 'font-bold' : ''}>{t.town}</span>
+                  <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
+                    {' '}&middot; {t.athletes} {t.athletes === 1 ? 'athlete' : 'athletes'}
+                  </span>
+                </td>
+                <td className="py-1.5 text-right whitespace-nowrap">{usd(t.amount)}</td>
+              </tr>
+            ))}
+            <tr style={{ borderTop: '2px solid var(--grid)' }}>
+              <td className="py-1.5 pr-2 font-semibold">Billed to the other three towns</td>
+              <td className="py-1.5 text-right font-semibold whitespace-nowrap">
+                {usd(d.ski_coop.others)}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="text-[12.5px] leading-relaxed mt-3"
+          style={{ color: 'var(--text-muted)' }}>
+          <strong>What this does not establish.</strong> It is one season, dated{' '}
+          {d.ski_coop.dated}, and the workbook&rsquo;s cost years are different ones
+          &mdash; nothing here says how any earlier year split, or that the co-op had the
+          same members. It is a bill, not a receipt: it states what the other towns were
+          invoiced, not that they paid. And where a reimbursement lands &mdash; against the
+          athletics line, the revolving fund, or general revenue &mdash; decides whether it
+          offsets this cost at all, and no document held says which.
+        </p>
+        <p className="text-[12.5px] mt-2" style={{ color: 'var(--text-muted)' }}>
+          <Basis level="stated">
+            the athletic department&rsquo;s own invoice, sent to this project by a resident;
+            it foots to its own printed total and is not an accounting-system report
+          </Basis>{' '}
+          &middot;{' '}
+          <a className="underline"
+            href={abs('/docs/' + d.ski_coop.source.replace('sources/', ''))}>
+            the invoice itself
+          </a>, with how it reached us and what it does not show in{' '}
+          <code>{d.ski_coop.note}</code>
+        </p>
+      </div>
 
       {/* ------------------------ why nothing independent can check a per-sport figure */}
       <div className="card p-5 mt-6 max-w-3xl" style={{ borderLeft: '4px solid var(--status-warning)' }}>

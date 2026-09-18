@@ -2082,9 +2082,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 118100,
+     "bytes": 120088,
      "url": "/docs/data/money-gaps.csv",
-     "count": 137,
+     "count": 140,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -2545,7 +2545,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 35647488,
+     "bytes": 35655680,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2802,6 +2802,18 @@
      "textUrl": "/docs/data/dese-teacher-program-area.csv"
     },
     {
+     "path": "data/ocr-minutes.csv",
+     "title": "Scanned minutes read by OCR: which, when, and from which bytes",
+     "stars": 3,
+     "what": "One row per image-only PDF that scripts/ocr_scanned_minutes.py has read with macOS Vision, with the sha256 of the PDF it read and the characters and pages recovered. The text files it writes begin ===OCR macOS Vision=== so nothing mistakes a reading for an extract.",
+     "kind": "Data",
+     "bytes": 108689,
+     "url": "/docs/data/ocr-minutes.csv",
+     "count": 644,
+     "unit": "rows",
+     "textUrl": "/docs/data/ocr-minutes.csv"
+    },
+    {
      "path": "data/dese-attrition.csv",
      "title": "How many students leave, by grade, SY2010–SY2026",
      "stars": 3,
@@ -2874,18 +2886,6 @@
      "textUrl": "/docs/data/dls-avg-tax-bill.csv"
     },
     {
-     "path": "data/ocr-minutes.csv",
-     "title": "Scanned minutes read by OCR: which, when, and from which bytes",
-     "stars": 3,
-     "what": "One row per image-only PDF that scripts/ocr_scanned_minutes.py has read with macOS Vision, with the sha256 of the PDF it read and the characters and pages recovered. The text files it writes begin ===OCR macOS Vision=== so nothing mistakes a reading for an extract.",
-     "kind": "Data",
-     "bytes": 61061,
-     "url": "/docs/data/ocr-minutes.csv",
-     "count": 364,
-     "unit": "rows",
-     "textUrl": "/docs/data/ocr-minutes.csv"
-    },
-    {
      "path": "data/athletics-by-sport.csv",
      "title": "Athletics by sport, long form",
      "stars": 3,
@@ -2946,6 +2946,18 @@
      "textUrl": "/docs/data/dese-ch70-formula.csv"
     },
     {
+     "path": "data/agentic-spend.csv",
+     "title": "What the scripted reading cost, job by job",
+     "stars": 3,
+     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
+     "kind": "Data",
+     "bytes": 42699,
+     "url": "/docs/data/agentic-spend.csv",
+     "count": 605,
+     "unit": "rows",
+     "textUrl": "/docs/data/agentic-spend.csv"
+    },
+    {
      "path": "data/minutes-searchable.csv",
      "title": "How much of the meeting archive a search can actually read",
      "stars": 3,
@@ -3004,18 +3016,6 @@
      "count": 79,
      "unit": "rows",
      "textUrl": "/docs/data/grants-history.csv"
-    },
-    {
-     "path": "data/agentic-spend.csv",
-     "title": "What the scripted reading cost, job by job",
-     "stars": 3,
-     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
-     "kind": "Data",
-     "bytes": 25853,
-     "url": "/docs/data/agentic-spend.csv",
-     "count": 368,
-     "unit": "rows",
-     "textUrl": "/docs/data/agentic-spend.csv"
     },
     {
      "path": "data/dese-ch70-statewide.csv",
@@ -3162,6 +3162,18 @@
      "textUrl": "/docs/data/school-special-revenue-fy26-q3.csv"
     },
     {
+     "path": "correspondence/2026-03-30-ski-coop-invoice.md",
+     "title": "How the ski co-op invoice reached us, and what it does not show",
+     "stars": 3,
+     "what": "The provenance note for the invoice beside it: where it came from, its sha256, why it is `stated` rather than evidence, and the three things it does not establish — it is one season and says nothing about how earlier years split; it is a bill rather than a receipt, so it shows what the other towns were invoiced and not that they paid; and it does not say which account receives a reimbursement, which is what decides whether the money offsets the athletics line at all.",
+     "kind": "Notes",
+     "bytes": 2186,
+     "url": "/docs/correspondence/2026-03-30-ski-coop-invoice.md",
+     "count": 43,
+     "unit": "lines",
+     "textUrl": "/docs/correspondence/2026-03-30-ski-coop-invoice.md"
+    },
+    {
      "path": "data/capital-plan-fy27.csv",
      "title": "The FY27 capital programme, ranked by the town",
      "stars": 3,
@@ -3245,6 +3257,18 @@
      "count": 2,
      "unit": "rows",
      "textUrl": "/docs/data/stated-figures.csv"
+    },
+    {
+     "path": "data/ski-coop.csv",
+     "title": "The ski co-op invoice, line by line and town by town",
+     "stars": 3,
+     "what": "The invoice extracted: nine cost lines, the printed total and roster, and the four towns’ shares, each row carrying the workbook cell it came from. scripts/build_athletics_charts.py refuses to write unless the line items sum to the printed total, the towns’ shares sum to it, and their athletes sum to the printed roster — reconciling to the document’s own figures rather than to ours (rule 13).",
+     "kind": "Data",
+     "bytes": 982,
+     "url": "/docs/data/ski-coop.csv",
+     "count": 15,
+     "unit": "rows",
+     "textUrl": "/docs/data/ski-coop.csv"
     },
     {
      "path": "data/total-expenses-history.csv",
@@ -3437,6 +3461,18 @@
      "count": 92,
      "unit": "rows",
      "textUrl": "/docs/data/one-big-report-story.csv"
+    },
+    {
+     "path": "correspondence/2026-03-30-ski-coop-invoice.xlsx",
+     "title": "The ski co-op invoice, 2025-26 season",
+     "stars": 2,
+     "what": "The invoice Lunenburg High School’s athletic department issues to the other towns in the ski co-op, dated 30 March 2026. Lunenburg runs the co-op, pays the mountain and the coach, and bills Littleton, Narragansett and Leominster for their athletes: $12,392 gross, 14 skiers, of whom 3 are Lunenburg’s at $2,655.43 — 21.4% of the bill. It matters because the district’s by-sport workbook prints the whole co-op’s cost as the ski team’s cost, which makes ski the dearest sport per participation the town runs by comparing a four-town total with every other sport’s one-town total. A sheet the department assembled, not an accounting printout, so every figure off it is `stated` (rule 13a) — but it foots: the line items sum to its own printed total and the four towns’ shares sum to it too. Sent to this project by a resident; there is no publisher address, because the town does not publish it.",
+     "kind": "Spreadsheet",
+     "bytes": 11586,
+     "url": "/docs/correspondence/2026-03-30-ski-coop-invoice.xlsx",
+     "count": 46,
+     "unit": "rows",
+     "textUrl": "/docs/correspondence/2026-03-30-ski-coop-invoice.xlsx"
     },
     {
      "path": "data/budget-seasons/fy27-summer-governors-budget.csv",
@@ -15756,10 +15792,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1366,
+  "documents": 1369,
   "groups": 22,
-  "bytes": 2171705632,
-  "loadBearing": 129
+  "bytes": 2171795040,
+  "loadBearing": 131
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

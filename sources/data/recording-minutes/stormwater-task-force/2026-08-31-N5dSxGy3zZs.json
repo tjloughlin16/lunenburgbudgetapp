@@ -1,0 +1,377 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "stormwater-task-force",
+ "board": "Stormwater Task Force",
+ "meeting_date": "2026-08-31",
+ "video_id": "N5dSxGy3zZs",
+ "video_url": "https://www.youtube.com/watch?v=N5dSxGy3zZs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/stormwater-task-force/2026-08-31-N5dSxGy3zZs.json",
+  "sha256": "ccd15cbddf978ad57f922e7a6d5bf00bb9f182ec947a9874ab338b91c705123a",
+  "caption_lines": 225,
+  "segments": 2270
+ },
+ "recording": {
+  "duration_s": 5833,
+  "duration": "1:37",
+  "spoken_chars": 66565,
+  "words_approx": 11094
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08312026-7986",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/stormwater-task-force/2026-08-31-agenda-7986.txt",
+   "path": "sources/meetings/stormwater-task-force/2026-08-31-agenda-7986.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-18T18:24:36Z",
+  "cost_usd": 0.2979656
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Tim",
+    "role": "task force member"
+   },
+   {
+    "name_as_heard": "Jenny",
+    "role": "task force member"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "town official/member"
+   },
+   {
+    "name_as_heard": "Mark",
+    "role": "task force member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "the stormwater consulting engineer",
+    "role": "consultant/presenter"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "fees",
+   "hiring",
+   "legal",
+   "override",
+   "personnel",
+   "retirement",
+   "roads-and-dpw",
+   "staffing",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "headline": "Task force will draft a non-binding article asking town meeting to choose stormwater utility vs. operating budget funding",
+  "summary": "The Stormwater Task Force reviewed impervious-surface billing data reconciled against the assessor's roll, settled on an ERU-based flat-fee approach rather than tiers, and discussed an abatement/credit program for commercial properties. Most of the meeting planned the path to the November 17 special town meeting: a non-binding straw poll on utility vs. operating-budget funding, a warrant article due September 17, a schedule of FinCom, Select Board and public information sessions in October/November, and a two-meeting process (around September 8 and 14) to draft, share and vote on the article language before sending it to town counsel Adam.",
+  "votes": [
+   {
+    "t": 5813,
+    "motion": "Motion to adjourn",
+    "moved_by": "chair",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1268,
+    "topic": "Flat stormwater fee per household",
+    "figures_as_heard": [
+     "$80"
+    ],
+    "what_was_said": "After reconciling impervious-surface data with the assessor's roll, the consultant said the final flat per-household number came out around this figure and the task force preferred a flat fee over calculating perable area per residence."
+   },
+   {
+    "t": 1331,
+    "topic": "Per-parcel data questions",
+    "figures_as_heard": [
+     "$12.95"
+    ],
+    "what_was_said": "The task force said there were questions on four properties and that they had gotten answers, citing this figure in the discussion of one parcel."
+   },
+   {
+    "t": 1873,
+    "topic": "High-end commercial parcel fee",
+    "figures_as_heard": [
+     "$15,000 a year"
+    ],
+    "what_was_said": "Two properties approaching a million square feet were cited as an example of how high a utility fee could get for very large non-residential parcels."
+   },
+   {
+    "t": 1913,
+    "topic": "Abatement cap",
+    "figures_as_heard": [
+     "50% rebate"
+    ],
+    "what_was_said": "A comparison town's abatement system was described as capping relief at this level, described as a powerful incentive for commercial property owners to improve stormwater management."
+   },
+   {
+    "t": 2490,
+    "topic": "Utility program overhead",
+    "figures_as_heard": [
+     "30%",
+     "25%"
+    ],
+    "what_was_said": "The finance committee's objection to the utility approach centered on overhead described as around this share of the budget; a member argued the same share of overhead would exist under an operating-budget approach too."
+   },
+   {
+    "t": 2552,
+    "topic": "Override amount for stormwater engineer position",
+    "figures_as_heard": [
+     "400,000",
+     "500,000"
+    ],
+    "what_was_said": "The task force recalled the failed override figure proposed to fund a junior engineer position, unsure whether it would need to change for the next attempt."
+   },
+   {
+    "t": 2861,
+    "topic": "Shared staff cost between approaches",
+    "figures_as_heard": [
+     "50%"
+    ],
+    "what_was_said": "Because the junior engineer position would also do other DPW project-manager work, the task force suggested only about half the position's cost should be attributed to the stormwater comparison."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2287,
+    "decision": "Task force agreed to bill using an ERU (equivalent residential unit) approach based on actual impervious surface area rather than a tiered fee structure."
+   },
+   {
+    "t": 2223,
+    "decision": "Agreed the warrant article should include enough financial/rate substance for voters to understand the choice, but should not include a draft bylaw."
+   },
+   {
+    "t": 1580,
+    "decision": "Agreed stormwater fees will be billed separately from the property tax bill, with an option for residents to pay quarterly via a tear-off coupon."
+   },
+   {
+    "t": 2448,
+    "decision": "Agreed municipal parcels will not be billed, but nonprofits and churches will be billed like any other property."
+   },
+   {
+    "t": 3879,
+    "decision": "Agreed the task force needs to vote on the article language itself before it can be submitted, and that members cannot deliberate over email/BCC due to open meeting rules."
+   },
+   {
+    "t": 5142,
+    "decision": "Set a schedule of two meetings (around September 8 and September 14) to draft, review, and vote on the article before sending it to town counsel Adam ahead of the September 17 warrant deadline."
+   },
+   {
+    "t": 5328,
+    "decision": "Planned FinCom presentation for October 8, Select Board presentation for October 20, and a public information session in the first week of November (around November 3), spaced roughly two weeks apart ahead of the November 17 town meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1061,
+    "t_end": 1103,
+    "topic": "Meeting opening and invitation for public comment",
+    "resolution": "no resolution",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 1103,
+    "t_end": 1330,
+    "topic": "Impervious surface/assessor data reconciliation and flat household fee",
+    "resolution": "informational",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1331,
+    "t_end": 1580,
+    "topic": "Parcel-specific questions (church/rectory, subdivisions) and billing structure/frequency",
+    "resolution": "informational",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1600,
+    "t_end": 2100,
+    "topic": "Town meeting article strategy: non-binding straw poll on utility vs operating budget, comparisons to other towns, abatement/credit system, MS4 permit uncertainty",
+    "resolution": "discussed only",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2100,
+    "t_end": 2308,
+    "topic": "Abatement phase-in plan, warrant deadline, article content, and shift to ERU-based billing",
+    "resolution": "decision reached",
+    "tags": [
+     "warrant-article",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2368,
+    "t_end": 2468,
+    "topic": "Billing treatment for condos, rentals, municipal parcels and nonprofits",
+    "resolution": "decision reached",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2468,
+    "t_end": 2960,
+    "topic": "Utility overhead, prior failed override, junior engineer position and pension/retirement liability concerns",
+    "resolution": "discussed only",
+    "tags": [
+     "override",
+     "retirement",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2960,
+    "t_end": 3300,
+    "topic": "Political framing of utility vs operating budget; recent flooding and catch basin maintenance",
+    "resolution": "discussed only",
+    "tags": [
+     "roads-and-dpw",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3318,
+    "t_end": 3360,
+    "topic": "Pending lawsuit against the town over drainage/flooding maintenance",
+    "resolution": "informational",
+    "tags": [
+     "legal",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 3382,
+    "t_end": 3510,
+    "topic": "Current budget scope (MS4 compliance only) and planning info-session/town-meeting presentation content",
+    "resolution": "discussed only",
+    "tags": [
+     "budget",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 3510,
+    "t_end": 3858,
+    "topic": "Lessons from other towns' utility rollouts (Milbury, Concord) and staffing/outsourcing tradeoffs",
+    "resolution": "discussed only",
+    "tags": [
+     "contracts-and-unions",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 3858,
+    "t_end": 4008,
+    "topic": "Process for voting on and submitting the warrant article",
+    "resolution": "decision reached",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 4008,
+    "t_end": 4132,
+    "topic": "Drafting approach and examples from other towns' articles",
+    "resolution": "discussed only",
+    "tags": [
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 4132,
+    "t_end": 4258,
+    "topic": "Expected town meeting turnout and margin needed for the non-binding vote",
+    "resolution": "discussed only",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 4258,
+    "t_end": 4351,
+    "topic": "Value of putting a non-binding choice to town meeting voters",
+    "resolution": "discussed only",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 4351,
+    "t_end": 4700,
+    "topic": "Scheduling info session, FinCom and Select Board hearings relative to town meeting",
+    "resolution": "discussed only",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 4700,
+    "t_end": 5285,
+    "topic": "Scheduling the drafting process and two task force meetings before the Sept 17 deadline",
+    "resolution": "decision reached",
+    "tags": [
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 5328,
+    "t_end": 5641,
+    "topic": "Scheduling October FinCom/Select Board presentations and November public engagement session; presentation roles and rate structure sharing",
+    "resolution": "decision reached",
+    "tags": [
+     "town-meeting",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 5748,
+    "t_end": 5813,
+    "topic": "Minutes and venue booking for public info session",
+    "resolution": "no resolution",
+    "tags": []
+   },
+   {
+    "t_start": 5813,
+    "t_end": 5821,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Several speaker turns are not attributable to named individuals; most participants besides Tim, Jenny, Renee, and Mark are unidentified in the captions.",
+   "The exact figure discussed for the abatement/relief given to a church or cemetery in another community (t~1515-1535) is unclear.",
+   "The specific vote count or tally for the adjournment motion is not stated, only a verbal 'aye' from those present."
+  ],
+  "confidence": "moderate"
+ }
+}
