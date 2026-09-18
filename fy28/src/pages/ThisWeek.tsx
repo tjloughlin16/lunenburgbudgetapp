@@ -5,7 +5,6 @@ import { BoardsThisWeek, THE_THREE, daysFromToday, todayIso } from '../component
 const TAB: Tab = 'thisweek'
 const FEED = 'meeting-feed.json'
 const NEW = 'whats-new.json'
-const NOTICES = 'notices.json'
 
 /** THIS WEEK IN TOWN: what is coming, and what just appeared.
  *
@@ -35,14 +34,14 @@ type Feed = {
 }
 type Video = { first_seen: string; video_id: string; title: string; url: string; uploaded: string }
 type Ours = { written: string; board: string; board_slug: string; date: string; url: string; votes: number }
-type PreviewItem = { agenda_line: string; why_it_matters: string; kind: string; vote_expected?: boolean }
-type Upcoming2 = { board: string; board_slug: string; date: string; days_away: number; when: string; where: string; how_to_attend: string; one_line: string; items: PreviewItem[]; nothing_of_note: boolean; agenda_url: string }
-type Retro = { board: string; board_slug: string; date: string; url: string; headline?: string; summary: string; digest?: { what_happened: { line: string }[]; why_it_matters: string[] } | null; votes: number; transfers: number; tags: string[]; has_official_minutes: boolean }
-type Notices = { as_of: string; upcoming: Upcoming2[]; retro: Retro[] }
 type FeedItem = { first_seen: string; source: string; kind: string; published: string; title: string; link: string }
+type Artifact = { url?: string; first_seen?: string; days_after_meeting_upper_bound?: number | null; title?: string; uploaded?: string; fetched?: string; video_id?: string
+  written?: string; headline?: string; summary?: string; votes?: number; confidence?: string }
+type Activity = { board: string; board_slug: string; date: string; latest: string; artifacts: Record<'agenda' | 'minutes' | 'recording' | 'transcript' | 'our_minutes', Artifact | undefined> }
 type WhatsNew = {
   as_of: string
   window_days: number
+  activity?: Activity[]
   feeds?: FeedItem[]
   documents?: { first_seen: string; folder: string; label: string; upstream: string; url: string }[]
   feed_sources?: { watched: number; without_a_feed: string[] }
@@ -50,6 +49,34 @@ type WhatsNew = {
   our_minutes: Ours[]
   transcripts: { board_slug: string; date: string; video_id: string; fetched: string }[]
   counts: Record<string, number>
+}
+
+const chip = 'text-[11px] px-1.5 py-0.5 rounded border'
+function ActivityRow({ a }: { a: Activity }) {
+  const x = a.artifacts
+  const ours = x.our_minutes
+  return (
+    <li className="card p-3">
+      <div className="flex flex-wrap gap-x-3 gap-y-1 items-baseline">
+        <span className="font-semibold">{a.board}</span>
+        <span style={{ color: 'var(--text-secondary)' }}>{longDate(a.date)}</span>
+        <span className="flex flex-wrap gap-1.5">
+          {x.agenda && <a className={chip} style={{ borderColor: 'var(--grid)' }} href={x.agenda.url} target="_blank" rel="noreferrer">agenda</a>}
+          {x.minutes && <a className={chip} style={{ borderColor: 'var(--status-good)', color: 'var(--status-good)' }} href={x.minutes.url} target="_blank" rel="noreferrer">town&rsquo;s minutes{typeof x.minutes.days_after_meeting_upper_bound === 'number' ? ` · within ${x.minutes.days_after_meeting_upper_bound} days` : ''}</a>}
+          {x.recording && <a className={chip} style={{ borderColor: 'var(--series-revenue, #b5540f)', color: 'var(--series-revenue, #b5540f)' }} href={x.recording.url} target="_blank" rel="noreferrer">&#9654; recording</a>}
+          {x.transcript && !ours && <span className={chip} style={{ borderColor: 'var(--grid)', color: 'var(--text-muted)' }}>transcript · minutes pending</span>}
+          {ours && <a className={chip} style={{ borderColor: 'var(--series-cost)', color: 'var(--series-cost)' }} href={ours.url}>our minutes{ours.votes ? ` · ${ours.votes} vote${ours.votes === 1 ? '' : 's'}` : ''}</a>}
+          {!x.minutes && !x.recording && !ours && <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>agenda only so far</span>}
+        </span>
+      </div>
+      {ours && ours.headline && (
+        <details className="mt-1.5">
+          <summary className="text-sm font-medium cursor-pointer">{ours.headline}</summary>
+          <p className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>{ours.summary} <a className="underline" href={ours.url}>Read our minutes.</a></p>
+        </details>
+      )}
+    </li>
+  )
 }
 
 function longDate(iso: string) {
@@ -60,8 +87,7 @@ function longDate(iso: string) {
 export function ThisWeek() {
   const feed = useReport<Feed>(FEED)
   const fresh = useReport<WhatsNew>(NEW)
-  const notices = useReport<Notices>(NOTICES)
-  const f = feed.d, n = fresh.d, nt = notices.d
+  const f = feed.d, n = fresh.d
   if (!f) {
     return <ReportShell tab={TAB} title="This week in town" err={feed.err} loading={!feed.err} dataUrl={'/data/' + FEED} />
   }
@@ -69,11 +95,9 @@ export function ThisWeek() {
   // list a meeting that has happened as coming up (the 'tomorrow' that was today, 15 Sep).
   const week = f.upcoming.meetings.filter(m => m.date >= todayIso() && daysFromToday(m.date) < 7)
   const later = f.upcoming.meetings.filter(m => m.date >= todayIso() && daysFromToday(m.date) >= 7)
-  const minutes = f.announced.items.filter(i => i.kind === 'minutes')
-  const agendas = f.announced.items.filter(i => i.kind === 'agenda' && i.meeting_date < f.as_of)
   return (
     <ReportShell tab={TAB} kicker="This week" title="This week in town"
-      standfirst={`Meetings coming up, minutes just posted, recordings just published — as seen on ${f.as_of}.`}
+      standfirst={`Meetings coming up, and what the town has posted for recent ones — as seen on ${f.as_of}.`}
       dataUrl={'/data/' + FEED}>
 
       <H2>Select Board, Finance Committee, School Committee</H2>
@@ -101,20 +125,17 @@ export function ThisWeek() {
         </p>
       )}
 
-      <H2>Minutes just posted</H2>
-      {minutes.length === 0
-        ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>None seen in the last two weeks.</p>
-        : <ol className="space-y-1.5">
-            {minutes.map(i => (
-              <li key={i.url} className="text-sm flex flex-wrap gap-x-3 items-baseline">
-                <span className="font-semibold">{i.board}</span>
-                <span style={{ color: 'var(--text-secondary)' }}>meeting of {longDate(i.meeting_date)}</span>
-                <a className="text-xs underline" style={{ color: 'var(--series-cost)' }} href={i.url} target="_blank" rel="noreferrer">minutes</a>
-                {typeof i.days_after_meeting_upper_bound === 'number' && (
-                  <span className="text-xs" style={{ color: 'var(--text-muted)' }}>posted within {i.days_after_meeting_upper_bound} days of the meeting</span>
-                )}
-              </li>
-            ))}
+      {/* RECENT ACTIVITY, ONE ROW PER MEETING. TJ, 18 September 2026: "combine these 2
+          sections, plus 'What happened — from the recordings' into one 'recent activity',
+          showing each event and then each artifact that has been provided for the event."
+          The row is the meeting; the chips are what exists for it -- the town's agenda,
+          minutes and recording, our transcript and our minutes -- and where our minutes
+          exist the headline sits on the row with the summary one click down. */}
+      <H2>Recent activity</H2>
+      {!n || (n.activity || []).length === 0
+        ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing posted for a recent meeting in the last two weeks.</p>
+        : <ol className="space-y-2">
+            {(n.activity || []).map(a => <ActivityRow key={a.board_slug + a.date} a={a} />)}
           </ol>}
       {f.awaiting_minutes.count > 0 && (
         <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>
@@ -125,22 +146,10 @@ export function ThisWeek() {
 
       {n && (
         <>
-          <H2>Recordings just published</H2>
-          {n.videos.length === 0
-            ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing new on the town&rsquo;s channel in the last {n.window_days} days.</p>
-            : <ol className="space-y-1.5">
-                {n.videos.map(v => (
-                  <li key={v.video_id} className="text-sm flex flex-wrap gap-x-3 items-baseline">
-                    <span className="tnum text-xs w-24" style={{ color: 'var(--text-secondary)' }}>{v.uploaded}</span>
-                    <a className="underline" style={{ color: 'var(--series-revenue, #b5540f)' }} href={v.url} target="_blank" rel="noreferrer">&#9654; {v.title}</a>
-                  </li>
-                ))}
-              </ol>}
-
           {/* FROM THE TOWN, AND THE COMMUNITY. QUEUE 13 and 14: link and attribute, never
               republish. The unsourced feeds are counted rather than hidden -- a youth
               league that only posts on Facebook is a gap, and a gap is shown. */}
-          <H2>From the town</H2>
+          <H2>Notices from the town</H2>
           {(n.feeds || []).length === 0
             ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing new from the town&rsquo;s feeds in the last {n.window_days} days.</p>
             : <ul className="space-y-1.5">
@@ -172,35 +181,6 @@ export function ThisWeek() {
             </p>
           )}
 
-          <H2>What happened — from the recordings</H2>
-          {!nt || nt.retro.length === 0
-            ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No recent meeting has our minutes yet.</p>
-            : <ol className="space-y-2">
-                {nt.retro.map(o => (
-                  <li key={o.url} className="card p-3">
-                    <div className="flex flex-wrap gap-x-3 items-baseline">
-                      <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href={o.url}>{o.board}, {longDate(o.date)}</a>
-                      <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{o.votes} substantive vote{o.votes === 1 ? '' : 's'} · {o.transfers} transfer{o.transfers === 1 ? '' : 's'}{o.has_official_minutes ? '' : ' · no official minutes yet'}</span>
-                    </div>
-                    <p className="text-sm mt-1 font-medium">{o.headline || o.summary}</p>
-                    {o.digest && (
-                      <ul className="mt-1.5 space-y-0.5">
-                        {o.digest.what_happened.slice(0, 3).map((w, i) => <li key={i} className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>· {w.line}</li>)}
-                        <li className="text-[12.5px] mt-1" style={{ color: 'var(--text-muted)' }}>Why it matters: {o.digest.why_it_matters[0]}</li>
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ol>}
-        </>
-      )}
-
-      {agendas.length > 0 && (
-        <>
-          <H2>Agendas posted for past meetings</H2>
-          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-            {agendas.map((i, j) => <span key={i.url}>{j ? '; ' : ''}{i.board} <a className="underline" href={i.url} target="_blank" rel="noreferrer">{longDate(i.meeting_date)}</a></span>)}.
-          </p>
         </>
       )}
 
