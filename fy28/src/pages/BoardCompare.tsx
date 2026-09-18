@@ -23,7 +23,7 @@ const DATA = '/data/board-posting.json'
  *  named as the standard; nobody is called out for a reason the data cannot see. */
 type Year = { fy: number; meetings: number; with_minutes: number; recorded: number }
 type Row = { slug: string; name: string; the_three: boolean; years: Year[]; meetings: number; with_minutes: number; share: number
-             recorded: number; recorded_share: number; captions_disabled: number; ranked: boolean; rank?: number }
+             recorded: number; recorded_share: number; captions_disabled: number; complete: number; ranked: boolean; rank?: number }
 type Payload = {
   about: string; grain: string; as_of: string; lag_days: number; fys: number[]; min_meetings: number
   totals: { meetings: number; with_minutes: number; share: number; boards_ranked: number }
@@ -64,14 +64,17 @@ function Table({ rows, fys, caption }: { rows: Row[]; fys: number[]; caption: st
           <th className="text-left py-1.5 pr-4">board</th>
           {fys.map(f => <th key={f} className="text-right py-1.5 pr-3">FY{f}</th>)}
           <th className="text-right py-1.5 pr-3">all {fys.length} years</th>
-          <th className="text-right py-1.5">recorded</th>
+          <th className="text-right py-1.5 pr-3">recorded</th>
+          <th className="text-right py-1.5">the record</th>
         </tr></thead>
         <tbody>{rows.map(r => (
           <tr key={r.slug} style={{ borderTop: '1px solid var(--grid)' }} className={r.the_three ? 'font-semibold' : undefined}>
             <td className="py-1.5 pr-4"><a className="underline" href={`/boards/${r.slug}`}>{r.name}</a>{r.rank ? <span className="text-[11px] font-normal ml-1.5" style={{ color: 'var(--text-muted)' }}>#{r.rank}</span> : null}</td>
             {r.years.map(y => <Cell key={y.fy} y={y} />)}
             <td className="py-1.5 pr-3 text-right tnum whitespace-nowrap">{r.with_minutes} of {r.meetings} <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>({pct(r.with_minutes, r.meetings)})</span></td>
-            <td className="py-1.5 text-right tnum whitespace-nowrap" style={{ color: 'var(--text-secondary)' }}>{pct(r.recorded, r.meetings)}</td>
+            <td className="py-1.5 pr-3 text-right tnum whitespace-nowrap" style={{ color: 'var(--text-secondary)' }}>{pct(r.recorded, r.meetings)}</td>
+            <td className="py-1.5 text-right tnum whitespace-nowrap" title="Of the seven things a meeting's record can hold — the listing, the agenda, the minutes, a recording, our transcript, our minutes and the votes read from the town's — the share this board's meetings have."
+              style={{ color: r.complete >= 60 ? 'var(--status-good)' : r.complete >= 40 ? 'var(--text-primary)' : 'var(--status-critical)' }}>{Math.round(r.complete)}%</td>
           </tr>))}</tbody>
       </table>
     </div>

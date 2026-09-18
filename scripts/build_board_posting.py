@@ -54,8 +54,7 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import conclusions as C                                           # noqa: E402
 from conclusions import conclusion, emit, figure                  # noqa: E402
 
-MEETINGS = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
-VIDEOS = os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv')
+REGISTER = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
 BOARDS = os.path.join(ROOT, 'fy28', 'public', 'data', 'boards.json')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'board-posting.json')
 LAG_DAYS = 60
@@ -83,49 +82,55 @@ def build(as_of):
     slug_by_name = {}
     for b in boards.values():
         slug_by_name[b['name']] = b['slug']
-    rows = list(csv.DictReader(open(MEETINGS, encoding='utf-8')))
-    if not rows:
-        fail('no meetings in %s' % os.path.relpath(MEETINGS, ROOT))
-    # THE WINDOW: the latest fiscal year with a real quarter of meetings in it once the
-    # lag is excluded, and three before. In September the new fiscal year has a handful
-    # of eligible meetings and would show every board at 0 of 3.
-    eligible_by_fy = collections.Counter(fy_of(r['date']) for r in rows if r['kind'] == 'agenda' and r['date'] <= cutoff)
-    latest_fy = max(f for f, n in eligible_by_fy.items() if n >= 100)
-    fys = list(range(latest_fy - YEARS + 1, latest_fy + 1))
-    # meeting = (slug, date) -> {agenda, minutes}
-    mt = collections.defaultdict(lambda: {'agenda': False, 'minutes': False})
+    # THE ONE MEETING RECORD, not another join. sources/data/meeting-register.csv is a row
+    # per meeting with every artifact on it (build_meeting_register.py); this page reads it
+    # so "the Select Board met 110 times" cannot mean one thing here and another on
+    # /this-week. A hearing listed inside another board's meeting (`part_of`) is not a
+    # second meeting and is left out.
+    reg = [r for r in csv.DictReader(open(REGISTER, encoding='utf-8')) if not r['part_of']]
+    if not reg:
+        fail('no meetings in %s — run scripts/build_meeting_register.py' % os.path.relpath(REGISTER, ROOT))
     unmatched = collections.Counter()
-    for r in rows:
-        slug = slug_by_name.get(r['board']) or slugify(r['board'])
-        if slug not in boards:
+    mt = {}
+    for r in reg:
+        if r['board_slug'] not in boards:
             unmatched[r['board']] += 1
             continue
-        if r['date'] > cutoff:
+        if r['date'] > cutoff or r['noticed'] != '1':
             continue
-        mt[(slug, r['date'])][r['kind']] = True
+        mt[(r['board_slug'], r['date'])] = r
     if not mt:
         fail('no meetings matched a board')
-    recorded = set()
-    for v in csv.DictReader(open(VIDEOS, encoding='utf-8')):
-        if v.get('meeting_date') and v['board_slug'] in boards:
-            recorded.add((v['board_slug'], v['meeting_date']))
+    eligible_by_fy = collections.Counter(fy_of(d) for _, d in mt)
+    latest_fy = max(f for f, n in eligible_by_fy.items() if n >= 100)
+    fys = list(range(latest_fy - YEARS + 1, latest_fy + 1))
+    recorded = {k for k, r in mt.items() if r['video'] == '1'}
 
     table = []
     for slug, b in boards.items():
         years = []
         for f in fys:
-            ms = [(k, m) for k, m in mt.items() if k[0] == slug and fy_of(k[1]) == f and m['agenda']]
+            ms = [(k, m) for k, m in mt.items() if k[0] == slug and fy_of(k[1]) == f]
             n = len(ms)
-            years.append(dict(fy=f, meetings=n, with_minutes=sum(1 for _, m in ms if m['minutes']),
-                              recorded=sum(1 for k, _ in ms if k in recorded)))
+            years.append(dict(fy=f, meetings=n, with_minutes=sum(1 for _, m in ms if m['minutes'] == '1'),
+                              recorded=sum(1 for k, _ in ms if k in recorded),
+                              complete=round(sum(int(m['complete']) for _, m in ms) / n, 2) if n else 0))
         n = sum(y['meetings'] for y in years)
         k = sum(y['with_minutes'] for y in years)
         rec = sum(y['recorded'] for y in years)
         if n == 0:
             continue
+        ms_all = [m for kk, m in mt.items() if kk[0] == slug and fy_of(kk[1]) in fys]
+        comp = sum(int(m['complete']) for m in ms_all)
         table.append(dict(slug=slug, name=b['name'], the_three=slug in THE_THREE, years=years,
                           meetings=n, with_minutes=k, share=round(100 * k / n, 1),
                           recorded=rec, recorded_share=round(100 * rec / n, 1),
+                          # HOW COMPLETE THE RECORD IS, the same seven parts the meeting
+                          # record counts. A board that is never recorded loses a seventh
+                          # of its score, and that is the intent: TJ, 18 September 2026,
+                          # "that's still a gap compared to other boards. and it's an
+                          # ok/accepted gap, but still a gap."
+                          complete=round(100 * comp / (7 * len(ms_all)), 1) if ms_all else 0,
                           captions_disabled=b['counts'].get('captions_disabled', 0),
                           ranked=n >= MIN_MEETINGS))
     table.sort(key=lambda r: (-r['share'], r['name']))
