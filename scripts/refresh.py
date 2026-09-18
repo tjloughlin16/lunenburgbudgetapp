@@ -212,68 +212,8 @@ def whats_new(as_of, days=14):
     fe = [e for e in read_csv(FEED_EVENTS) if e['first_seen'] >= since]
     de = [e for e in read_csv(DOC_EVENTS) if e['first_seen'] >= since]
     srcs = read_csv(FEED_SOURCES)
-    # RECENT ACTIVITY, PER MEETING. TJ, 18 September 2026: "combine these 2 sections, plus
-    # 'What happened — from the recordings' into one 'recent activity', showing each event
-    # and then each artifact that has been provided for the event." One entry per
-    # (board, meeting date) seen in the window, with every artifact we hold for it:
-    # agenda, the town's minutes, the recording, our transcript, our minutes (headline,
-    # summary, votes). Newest activity first.
-    vb = {r['video_id']: r for r in read_csv(os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv'))}
-    names = {}
-    act = {}
-
-    def entry(slug, date, board=None):
-        k = (slug, date)
-        if k not in act:
-            act[k] = {'board_slug': slug, 'board': board or names.get(slug) or slug.replace('-', ' ').title(), 'date': date,
-                      'latest': '', 'artifacts': {}}
-        if board:
-            act[k]['board'] = board
-            names[slug] = board
-        return act[k]
-
-    def touch(e, when):
-        e['latest'] = max(e['latest'], when or '')
-
-    for e in me:
-        if not e.get('meeting_date'):
-            continue
-        a = entry(e['board_slug'], e['meeting_date'], e['board'])
-        a['artifacts'][e['kind']] = {'url': e['url'], 'first_seen': e['first_seen'],
-                                     'days_after_meeting_upper_bound': e.get('days_after_meeting_upper_bound')}
-        touch(a, e['first_seen'])
-    for v in ye:
-        b = vb.get(v['video_id'])
-        if not b or not b.get('meeting_date') or not b.get('board_slug'):
-            continue
-        a = entry(b['board_slug'], b['meeting_date'], b.get('board_name'))
-        a['artifacts']['recording'] = {'url': v['url'], 'title': v['title'], 'uploaded': v['uploaded'], 'first_seen': v['first_seen']}
-        touch(a, v['first_seen'])
-    for t in tr:
-        a = entry(t['board_slug'], t['meeting_date'])
-        a['artifacts']['transcript'] = {'fetched': (t.get('fetched_at') or '')[:10], 'video_id': t['video_id']}
-        touch(a, (t.get('fetched_at') or '')[:10])
-    for f in glob.glob(os.path.join(RECORDED, '*', '*.json')):
-        m = json.load(open(f, encoding='utf-8'))
-        when = (m.get('written') or {}).get('at', '')[:10]
-        if when < since:
-            continue
-        a = entry(m['board_slug'], m['meeting_date'], m['board'])
-        a['artifacts']['our_minutes'] = {'url': '/meeting-minutes/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
-                                         'written': when, 'headline': m.get('headline') or '', 'summary': m.get('summary') or '',
-                                         'votes': sum(1 for v in m['minutes']['votes'] if not v.get('procedural')),
-                                         'confidence': (m.get('minutes') or {}).get('confidence') or m.get('confidence')}
-        touch(a, when)
-    # ONLY MEETINGS THE TOWN DID SOMETHING ABOUT IN THE WINDOW. A transcript backfill or a
-    # minutes sweep touches hundreds of old meetings in a night; those are our doings and
-    # belong on the boards' pages, not here. And a future meeting's agenda is 'upcoming',
-    # shown above, not activity.
-    activity = [a for a in act.values() if a['date'] <= as_of
-                and any(k in a['artifacts'] for k in ('agenda', 'minutes', 'recording'))]
-    activity.sort(key=lambda a: (a['latest'], a['date']), reverse=True)
     return {
         'category': 'announcement',
-        'activity': activity,
         'not_a_measurement': 'What our watchers first saw, by the day they saw it. first_seen is our '
                              'crawl date, not the day the town posted anything.',
         'as_of': as_of,
@@ -449,6 +389,8 @@ def main():
 
     # 8. Rebuild everything derived from the above.
     if not a.dry_run:
+        # THE ONE MEETING RECORD, before anything that lists meetings reads it.
+        py('build_meeting_register.py')
         py('build_meeting_feed.py')
         py('build_recording_minutes.py')
         py('build_notices.py')

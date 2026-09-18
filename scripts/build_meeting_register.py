@@ -58,7 +58,24 @@ OUT = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
 
 COLS = ['board', 'board_slug', 'date', 'agenda', 'minutes', 'searchable_docs',
         'unsearchable_docs', 'video', 'video_ids', 'transcript', 'transcript_processed',
-        'evidence']
+        'evidence',
+        # THE CANONICAL RECORD. TJ, 18 September 2026: "each meeting has ONE record for
+        # it. That record knows which artifacts have been produced." Every artifact we hold
+        # for the meeting, by its address, so a page joins THIS and never re-derives the
+        # meeting from five sources. Empty means we do not hold it.
+        'agenda_path', 'agenda_url', 'agenda_first_seen',
+        'minutes_path', 'minutes_url', 'minutes_first_seen', 'minutes_lag_upper_bound', 'minutes_ocr',
+        'video_urls', 'video_uploaded', 'video_first_seen', 'captions_disabled',
+        'transcript_paths', 'transcript_fetched',
+        'our_minutes_path', 'our_minutes_url', 'our_minutes_written', 'our_minutes_headline', 'our_votes',
+        'official_votes_path', 'official_votes', 'last_activity']
+EVENTS = os.path.join(ROOT, 'sources', 'data', 'meeting-watch-events.csv')
+VIDEO_EVENTS = os.path.join(ROOT, 'sources', 'data', 'youtube-watch-events.csv')
+TRANSCRIPTS = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
+NO_CAPTIONS = os.path.join(ROOT, 'sources', 'data', 'youtube-no-captions.csv')
+OURS = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
+VOTES = os.path.join(ROOT, 'sources', 'data', 'official-votes')
+OCR_MARK = '===OCR'
 
 PAGE = re.compile(r'===PAGE \d+===')
 
@@ -90,12 +107,21 @@ def load_documents():
             slug = r['path'].split('/')[0]
             names[slug] = r['board']
             key = (slug, r['date'])
-            m = out.setdefault(key, {'agenda': 0, 'minutes': 0, 'ok': 0, 'bad': 0})
+            m = out.setdefault(key, {'agenda': 0, 'minutes': 0, 'ok': 0, 'bad': 0, 'paths': {}, 'urls': {}, 'ocr': 0})
             if r['kind'] in ('agenda', 'minutes'):
                 m[r['kind']] = 1
+                m['paths'].setdefault(r['kind'], r['path'])
+                m['urls'].setdefault(r['kind'], r.get('url', ''))
             txt = os.path.join(TEXT_DIR, os.path.splitext(r['path'])[0] + '.txt')
             if os.path.exists(txt):
                 m['ok' if searchable(txt) else 'bad'] += 1
+                if r['kind'] == 'minutes':
+                    try:
+                        with open(txt, encoding='utf-8', errors='replace') as fh:
+                            if fh.read(8).startswith(OCR_MARK):
+                                m['ocr'] = 1
+                    except OSError:
+                        pass
     return out, names
 
 
@@ -124,6 +150,42 @@ def load_videos():
     return out, nofolder, nodate
 
 
+def read(p):
+    if not os.path.exists(p):
+        return []
+    with open(p, newline='', encoding='utf-8') as fh:
+        return list(csv.DictReader(fh))
+
+
+def load_artifacts():
+    """Everything else we hold, keyed the same way."""
+    import glob
+    import json
+    ev = {}
+    for e in read(EVENTS):
+        k = (e['board_slug'], e['meeting_date'], e['kind'])
+        if k not in ev or e['first_seen'] < ev[k]['first_seen']:
+            ev[k] = e
+    vev = {e['video_id']: e for e in read(VIDEO_EVENTS)}
+    vmeta = {r['video_id']: r for r in read(VIDEOS)}
+    nocap = {r['video_id'] for r in read(NO_CAPTIONS)}
+    tr = {}
+    for t in read(TRANSCRIPTS):
+        tr.setdefault((t['board_slug'], t['meeting_date']), []).append(t)
+    ours = {}
+    for f in glob.glob(os.path.join(OURS, '*', '*.json')):
+        m = json.load(open(f, encoding='utf-8'))
+        ours[(m['board_slug'], m['meeting_date'])] = dict(
+            path=os.path.relpath(f, ROOT), url='/meeting-minutes/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
+            written=(m.get('written') or {}).get('at', '')[:10], headline=m.get('headline') or '',
+            votes=sum(1 for v in (m.get('minutes') or {}).get('votes') or [] if not v.get('procedural')))
+    ov = {}
+    for f in glob.glob(os.path.join(VOTES, '*', '*.json')):
+        d = json.load(open(f, encoding='utf-8'))
+        ov[(d['board_slug'], d['meeting_date'])] = dict(path=os.path.relpath(f, ROOT), votes=len(d.get('votes') or []))
+    return ev, vev, vmeta, nocap, tr, ours, ov
+
+
 def build():
     docs, names = load_documents()
     vids, nofolder, nodate = load_videos()
@@ -141,12 +203,19 @@ def build():
             'not one meeting has both a document and a video. The two sides key on '
             '(board folder, date) and something has stopped lining up. Nothing written.')
 
+    ev, vev, vmeta, nocap, tr, ours, ov = load_artifacts()
     rows = []
     for key in sorted(set(docs) | set(vids)):
         slug, date = key
-        d = docs.get(key, {'agenda': 0, 'minutes': 0, 'ok': 0, 'bad': 0})
+        d = docs.get(key, {'agenda': 0, 'minutes': 0, 'ok': 0, 'bad': 0, 'paths': {}, 'urls': {}, 'ocr': 0})
         v = vids.get(key, [])
         have_doc = bool(docs.get(key))
+        ea, em = ev.get((slug, date, 'agenda'), {}), ev.get((slug, date, 'minutes'), {})
+        vs = sorted(v)
+        ts = tr.get(key, [])
+        o, votes = ours.get(key, {}), ov.get(key, {})
+        acts = [x for x in (ea.get('first_seen'), em.get('first_seen'), *(vev.get(i, {}).get('first_seen') for i in vs),
+                            *((t.get('fetched_at') or '')[:10] for t in ts), o.get('written')) if x]
         rows.append({
             'board': names.get(slug, slug),
             'board_slug': slug,
@@ -157,13 +226,25 @@ def build():
             'unsearchable_docs': d['bad'],
             'video': 1 if v else 0,
             'video_ids': ' '.join(sorted(v)),
-            'transcript': 0,             # nothing fetched yet, on purpose
-            'transcript_processed': 0,
+            'transcript': 1 if ts else 0,
+            'transcript_processed': 1 if o else 0,
             # WHICH KIND OF EVIDENCE PUT THIS ROW HERE. The document side is the town's
             # own filing; the video side is a model reading a title. Saying so per row is
             # what stops the second being read as the first.
             'evidence': ('document+video' if have_doc and v
                          else 'document' if have_doc else 'video only'),
+            'agenda_path': d['paths'].get('agenda', ''), 'agenda_url': d['urls'].get('agenda', ''), 'agenda_first_seen': ea.get('first_seen', ''),
+            'minutes_path': d['paths'].get('minutes', ''), 'minutes_url': d['urls'].get('minutes', ''), 'minutes_first_seen': em.get('first_seen', ''),
+            'minutes_lag_upper_bound': em.get('days_after_meeting_upper_bound', ''), 'minutes_ocr': d['ocr'],
+            'video_urls': ' '.join('https://www.youtube.com/watch?v=' + i for i in vs),
+            'video_uploaded': ' '.join((vev.get(i) or vmeta.get(i) or {}).get('uploaded', '') or '-' for i in vs),
+            'video_first_seen': ' '.join(vev.get(i, {}).get('first_seen', '') or '-' for i in vs),
+            'captions_disabled': 1 if vs and all(i in nocap for i in vs) else 0,
+            'transcript_paths': ' '.join(t['path'] for t in ts), 'transcript_fetched': max(((t.get('fetched_at') or '')[:10] for t in ts), default=''),
+            'our_minutes_path': o.get('path', ''), 'our_minutes_url': o.get('url', ''), 'our_minutes_written': o.get('written', ''),
+            'our_minutes_headline': o.get('headline', ''), 'our_votes': o.get('votes', '') if o else '',
+            'official_votes_path': votes.get('path', ''), 'official_votes': votes.get('votes', '') if votes else '',
+            'last_activity': max(acts) if acts else '',
         })
     return rows, nofolder, nodate, len(overlap)
 

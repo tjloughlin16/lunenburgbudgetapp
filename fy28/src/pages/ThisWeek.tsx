@@ -30,18 +30,22 @@ type Feed = {
   upcoming: { count: number; horizon_days: number; meetings: Upcoming[]; next_7_days: Upcoming[]; basis: string }
   announced: { count: number; items: Announced[]; basis: string }
   awaiting_minutes: { count: number; meetings: Awaiting[]; oldest: unknown; window_days: number; basis: string }
+  recent: { window_days: number; count: number; meetings: Recent[] }
   runs: { ran: string; new_agendas: number; new_minutes: number; boards_listed: number }[]
 }
 type Video = { first_seen: string; video_id: string; title: string; url: string; uploaded: string }
 type Ours = { written: string; board: string; board_slug: string; date: string; url: string; votes: number }
 type FeedItem = { first_seen: string; source: string; kind: string; published: string; title: string; link: string }
-type Artifact = { url?: string; first_seen?: string; days_after_meeting_upper_bound?: number | null; title?: string; uploaded?: string; fetched?: string; video_id?: string
-  written?: string; headline?: string; summary?: string; votes?: number; confidence?: string }
-type Activity = { board: string; board_slug: string; date: string; latest: string; artifacts: Record<'agenda' | 'minutes' | 'recording' | 'transcript' | 'our_minutes', Artifact | undefined> }
+type Recent = { board: string; board_slug: string; date: string; last_activity: string
+  agenda: { url: string; first_seen: string } | null
+  minutes: { url: string; first_seen: string; days_after_meeting_upper_bound: number | null; ocr: boolean } | null
+  recording: { url: string; uploaded: string; first_seen: string; captions_disabled: boolean } | null
+  transcript: { fetched: string } | null
+  our_minutes: { url: string; written: string; headline: string; votes: number } | null
+  official_votes: number | null }
 type WhatsNew = {
   as_of: string
   window_days: number
-  activity?: Activity[]
   feeds?: FeedItem[]
   documents?: { first_seen: string; folder: string; label: string; upstream: string; url: string }[]
   feed_sources?: { watched: number; without_a_feed: string[] }
@@ -52,28 +56,24 @@ type WhatsNew = {
 }
 
 const chip = 'text-[11px] px-1.5 py-0.5 rounded border'
-function ActivityRow({ a }: { a: Activity }) {
-  const x = a.artifacts
-  const ours = x.our_minutes
+function ActivityRow({ a }: { a: Recent }) {
+  const ours = a.our_minutes
   return (
     <li className="card p-3">
       <div className="flex flex-wrap gap-x-3 gap-y-1 items-baseline">
-        <span className="font-semibold">{a.board}</span>
+        <span className="font-semibold"><a className="hover:underline" href={`/boards/${a.board_slug}`}>{a.board}</a></span>
         <span style={{ color: 'var(--text-secondary)' }}>{longDate(a.date)}</span>
         <span className="flex flex-wrap gap-1.5">
-          {x.agenda && <a className={chip} style={{ borderColor: 'var(--grid)' }} href={x.agenda.url} target="_blank" rel="noreferrer">agenda</a>}
-          {x.minutes && <a className={chip} style={{ borderColor: 'var(--status-good)', color: 'var(--status-good)' }} href={x.minutes.url} target="_blank" rel="noreferrer">town&rsquo;s minutes{typeof x.minutes.days_after_meeting_upper_bound === 'number' ? ` · within ${x.minutes.days_after_meeting_upper_bound} days` : ''}</a>}
-          {x.recording && <a className={chip} style={{ borderColor: 'var(--series-revenue, #b5540f)', color: 'var(--series-revenue, #b5540f)' }} href={x.recording.url} target="_blank" rel="noreferrer">&#9654; recording</a>}
-          {x.transcript && !ours && <span className={chip} style={{ borderColor: 'var(--grid)', color: 'var(--text-muted)' }}>transcript · minutes pending</span>}
+          {a.agenda && <a className={chip} style={{ borderColor: 'var(--grid)' }} href={a.agenda.url} target="_blank" rel="noreferrer">agenda</a>}
+          {a.minutes && <a className={chip} style={{ borderColor: 'var(--status-good)', color: 'var(--status-good)' }} href={a.minutes.url} target="_blank" rel="noreferrer">town&rsquo;s minutes{typeof a.minutes.days_after_meeting_upper_bound === 'number' ? ` · within ${a.minutes.days_after_meeting_upper_bound} days` : ''}{a.official_votes ? ` · ${a.official_votes} vote${a.official_votes === 1 ? '' : 's'}` : ''}</a>}
+          {a.recording && <a className={chip} style={{ borderColor: 'var(--series-revenue, #b5540f)', color: 'var(--series-revenue, #b5540f)' }} href={a.recording.url} target="_blank" rel="noreferrer">&#9654; recording{a.recording.captions_disabled ? ' · captions off' : ''}</a>}
+          {a.transcript && !ours && <span className={chip} style={{ borderColor: 'var(--grid)', color: 'var(--text-muted)' }}>transcript · minutes pending</span>}
           {ours && <a className={chip} style={{ borderColor: 'var(--series-cost)', color: 'var(--series-cost)' }} href={ours.url}>our minutes{ours.votes ? ` · ${ours.votes} vote${ours.votes === 1 ? '' : 's'}` : ''}</a>}
-          {!x.minutes && !x.recording && !ours && <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>agenda only so far</span>}
+          {!a.minutes && !a.recording && !ours && <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>agenda only so far</span>}
         </span>
       </div>
       {ours && ours.headline && (
-        <details className="mt-1.5">
-          <summary className="text-sm font-medium cursor-pointer">{ours.headline}</summary>
-          <p className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>{ours.summary} <a className="underline" href={ours.url}>Read our minutes.</a></p>
-        </details>
+        <p className="text-sm mt-1.5 font-medium">{ours.headline} <a className="text-xs underline font-normal" style={{ color: 'var(--text-muted)' }} href={ours.url}>read our minutes</a></p>
       )}
     </li>
   )
@@ -132,10 +132,10 @@ export function ThisWeek() {
           minutes and recording, our transcript and our minutes -- and where our minutes
           exist the headline sits on the row with the summary one click down. */}
       <H2>Recent activity</H2>
-      {!n || (n.activity || []).length === 0
-        ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing posted for a recent meeting in the last two weeks.</p>
+      {f.recent.meetings.length === 0
+        ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing posted for a recent meeting in the last {f.recent.window_days} days.</p>
         : <ol className="space-y-2">
-            {(n.activity || []).map(a => <ActivityRow key={a.board_slug + a.date} a={a} />)}
+            {f.recent.meetings.map(a => <ActivityRow key={a.board_slug + a.date} a={a} />)}
           </ol>}
       {f.awaiting_minutes.count > 0 && (
         <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>

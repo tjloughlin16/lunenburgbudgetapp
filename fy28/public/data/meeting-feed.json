@@ -1659,6 +1659,536 @@
   "category": "announcement",
   "first_seen_means": "The day our crawler first saw a document. The town publishes no posting timestamp, so a gap between a meeting and its minutes appearing is an UPPER BOUND on how long the town took, never a measurement of it. Documents adopted when the watch was seeded have no first_seen and are excluded from every lag figure.",
   "not_a_measurement": "This file records what the Lunenburg Budget Project's crawler could see on the town's AgendaCenter on the date given. It is not a figure checked against a document, and it must not be presented beside one as the same kind of number.",
+  "recent": {
+    "basis": "one row per meeting from sources/data/meeting-register.csv -- the one record a meeting has -- for past meetings the town posted or published something about in the window; every artifact we hold for it is on the row. Newest activity first.",
+    "count": 25,
+    "meetings": [
+      {
+        "agenda": {
+          "first_seen": "2026-09-15",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09162026-8016"
+        },
+        "board": "School Committee",
+        "board_slug": "school-committee",
+        "date": "2026-09-16",
+        "last_activity": "2026-09-17",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": {
+          "headline": "",
+          "url": "/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg",
+          "votes": 9,
+          "written": "2026-09-17"
+        },
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-17",
+          "uploaded": "2026-09-17",
+          "url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
+        },
+        "transcript": {
+          "fetched": "2026-09-17"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-15",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09162026-8015"
+        },
+        "board": "Conservation Commission",
+        "board_slug": "conservation-commission",
+        "date": "2026-09-16",
+        "last_activity": "2026-09-17",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-17",
+          "uploaded": "2026-09-17",
+          "url": "https://www.youtube.com/watch?v=KXzIph3Demg"
+        },
+        "transcript": {
+          "fetched": "2026-09-17"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-16",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09172026-8017"
+        },
+        "board": "Library Board of Trustees",
+        "board_slug": "library-board-of-trustees",
+        "date": "2026-09-17",
+        "last_activity": "2026-09-16",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": null,
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-11",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09152026-8011"
+        },
+        "board": "Select Board",
+        "board_slug": "select-board",
+        "date": "2026-09-15",
+        "last_activity": "2026-09-16",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": {
+          "headline": "",
+          "url": "/meeting-minutes/select-board/2026-09-15-kig-BTakGjQ",
+          "votes": 5,
+          "written": "2026-09-16"
+        },
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-16",
+          "uploaded": "2026-09-16",
+          "url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
+        },
+        "transcript": {
+          "fetched": "2026-09-16"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-11",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09142026-7989"
+        },
+        "board": "Stormwater Task Force",
+        "board_slug": "stormwater-task-force",
+        "date": "2026-09-14",
+        "last_activity": "2026-09-15",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-15",
+          "uploaded": "2026-09-15",
+          "url": "https://www.youtube.com/watch?v=fHuUxPFr0rg"
+        },
+        "transcript": {
+          "fetched": "2026-09-15"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-11",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09142026-8010"
+        },
+        "board": "Planning Board",
+        "board_slug": "planning-board",
+        "date": "2026-09-14",
+        "last_activity": "2026-09-15",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-15",
+          "uploaded": "2026-09-15",
+          "url": "https://www.youtube.com/watch?v=1eG6rHwscq4"
+        },
+        "transcript": {
+          "fetched": "2026-09-15"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08252026-7974"
+        },
+        "board": "Sewer Commission",
+        "board_slug": "sewer-commission",
+        "date": "2026-08-25",
+        "last_activity": "2026-09-15",
+        "minutes": {
+          "days_after_meeting_upper_bound": 17,
+          "first_seen": "2026-09-11",
+          "ocr": false,
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08252026-7974"
+        },
+        "official_votes": 2,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "-",
+          "uploaded": "-",
+          "url": "https://www.youtube.com/watch?v=Ki8TszCpmCY"
+        },
+        "transcript": {
+          "fetched": "2026-09-15"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-08",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09102026-8008"
+        },
+        "board": "Trust Fund Commission",
+        "board_slug": "trust-fund-commission",
+        "date": "2026-09-10",
+        "last_activity": "2026-09-14",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-11",
+          "uploaded": "2026-09-11",
+          "url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
+        },
+        "transcript": {
+          "fetched": "2026-09-14"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09092026-7994"
+        },
+        "board": "Open Space Committee",
+        "board_slug": "open-space-committee",
+        "date": "2026-09-09",
+        "last_activity": "2026-09-14",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-11",
+          "uploaded": "2026-09-10",
+          "url": "https://www.youtube.com/watch?v=qp-NjUCVwuc"
+        },
+        "transcript": {
+          "fetched": "2026-09-14"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09092026-7999"
+        },
+        "board": "Board of Assessors",
+        "board_slug": "board-of-assessors",
+        "date": "2026-09-09",
+        "last_activity": "2026-09-14",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-11",
+          "uploaded": "2026-09-10",
+          "url": "https://www.youtube.com/watch?v=Qimi3yNAudg"
+        },
+        "transcript": {
+          "fetched": "2026-09-14"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09082026-8000"
+        },
+        "board": "Sewer Commission",
+        "board_slug": "sewer-commission",
+        "date": "2026-09-08",
+        "last_activity": "2026-09-14",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-11",
+          "uploaded": "2026-09-09",
+          "url": "https://www.youtube.com/watch?v=VMfaXMyKBII"
+        },
+        "transcript": {
+          "fetched": "2026-09-14"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09082026-7991"
+        },
+        "board": "Public Access Cable Committee (PACC)",
+        "board_slug": "public-access-cable-committee-pacc",
+        "date": "2026-09-08",
+        "last_activity": "2026-09-14",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-11",
+          "uploaded": "2026-09-09",
+          "url": "https://www.youtube.com/watch?v=f1AbB5ZEQ5Q"
+        },
+        "transcript": {
+          "fetched": "2026-09-14"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09082026-7992"
+        },
+        "board": "Council on Aging",
+        "board_slug": "council-on-aging",
+        "date": "2026-09-08",
+        "last_activity": "2026-09-14",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-11",
+          "uploaded": "2026-09-08",
+          "url": "https://www.youtube.com/watch?v=z6Wp_dJsdtA"
+        },
+        "transcript": {
+          "fetched": "2026-09-14"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09032026-7993"
+        },
+        "board": "Personnel Committee",
+        "board_slug": "personnel-committee",
+        "date": "2026-09-03",
+        "last_activity": "2026-09-14",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-11",
+          "uploaded": "2026-09-08",
+          "url": "https://www.youtube.com/watch?v=x4HDKD0Ol7c"
+        },
+        "transcript": {
+          "fetched": "2026-09-14"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09092026-8002"
+        },
+        "board": "School Committee",
+        "board_slug": "school-committee",
+        "date": "2026-09-09",
+        "last_activity": "2026-09-12",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": {
+          "headline": "",
+          "url": "/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI",
+          "votes": 5,
+          "written": "2026-09-12"
+        },
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "2026-09-11",
+          "uploaded": "2026-09-10",
+          "url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+        },
+        "transcript": {
+          "fetched": "2026-09-12"
+        }
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-11",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09162026-8014"
+        },
+        "board": "Public Access Cable Committee (PACC)",
+        "board_slug": "public-access-cable-committee-pacc",
+        "date": "2026-09-16",
+        "last_activity": "2026-09-11",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": null,
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-11",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09152026-8012"
+        },
+        "board": "By-Law Committee",
+        "board_slug": "by-law-committee",
+        "date": "2026-09-15",
+        "last_activity": "2026-09-11",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": null,
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-11",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09102026-8003"
+        },
+        "board": "Historical Commission",
+        "board_slug": "historical-commission",
+        "date": "2026-09-10",
+        "last_activity": "2026-09-11",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": null,
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08112026-7956"
+        },
+        "board": "Board of Assessors",
+        "board_slug": "board-of-assessors",
+        "date": "2026-08-11",
+        "last_activity": "2026-09-11",
+        "minutes": {
+          "days_after_meeting_upper_bound": 31,
+          "first_seen": "2026-09-11",
+          "ocr": false,
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08112026-7956"
+        },
+        "official_votes": 1,
+        "our_minutes": null,
+        "recording": null,
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08052026-7942"
+        },
+        "board": "Board of Assessors",
+        "board_slug": "board-of-assessors",
+        "date": "2026-08-05",
+        "last_activity": "2026-09-11",
+        "minutes": {
+          "days_after_meeting_upper_bound": 37,
+          "first_seen": "2026-09-11",
+          "ocr": false,
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08052026-7942"
+        },
+        "official_votes": 7,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "-",
+          "uploaded": "-",
+          "url": "https://www.youtube.com/watch?v=N_IaHAJniy0"
+        },
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08032026-7929"
+        },
+        "board": "Public Access Cable Committee (PACC)",
+        "board_slug": "public-access-cable-committee-pacc",
+        "date": "2026-08-03",
+        "last_activity": "2026-09-11",
+        "minutes": {
+          "days_after_meeting_upper_bound": 39,
+          "first_seen": "2026-09-11",
+          "ocr": false,
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08032026-7929"
+        },
+        "official_votes": 1,
+        "our_minutes": null,
+        "recording": null,
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07012026-7885"
+        },
+        "board": "Board of Assessors",
+        "board_slug": "board-of-assessors",
+        "date": "2026-07-01",
+        "last_activity": "2026-09-11",
+        "minutes": {
+          "days_after_meeting_upper_bound": 72,
+          "first_seen": "2026-09-11",
+          "ocr": false,
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07012026-7885"
+        },
+        "official_votes": 0,
+        "our_minutes": null,
+        "recording": {
+          "captions_disabled": false,
+          "first_seen": "-",
+          "uploaded": "-",
+          "url": "https://www.youtube.com/watch?v=ZHueTsTeRmU"
+        },
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-08",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09152026-8004"
+        },
+        "board": "Historical Commission",
+        "board_slug": "historical-commission",
+        "date": "2026-09-15",
+        "last_activity": "2026-09-08",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": null,
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-08",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09122026-8009"
+        },
+        "board": "Conservation Commission",
+        "board_slug": "conservation-commission",
+        "date": "2026-09-12",
+        "last_activity": "2026-09-08",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": null,
+        "transcript": null
+      },
+      {
+        "agenda": {
+          "first_seen": "2026-09-08",
+          "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09102026-8005"
+        },
+        "board": "Finance Committee",
+        "board_slug": "finance-committee",
+        "date": "2026-09-10",
+        "last_activity": "2026-09-08",
+        "minutes": null,
+        "official_votes": null,
+        "our_minutes": null,
+        "recording": null,
+        "transcript": null
+      }
+    ],
+    "window_days": 14
+  },
   "runs": [
     {
       "boards_listed": 51,

@@ -43,6 +43,8 @@ STATE = os.path.join(DATA, 'meeting-watch-state.csv')
 EVENTS = os.path.join(DATA, 'meeting-watch-events.csv')
 RUNS = os.path.join(DATA, 'meeting-watch-runs.csv')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'meeting-feed.json')
+REGISTER = os.path.join(DATA, 'meeting-register.csv')
+RECENT_DAYS = 14
 
 # How far back "awaiting minutes" looks. A meeting from 2011 with no minutes is a fact
 # about the record, which is what minutes-coverage.csv is for; this surface is about
@@ -118,6 +120,40 @@ def build():
     minutes_events = [e for e in announced if e['kind'] == 'minutes'
                       and e['days_after_meeting_upper_bound'] is not None]
 
+    # RECENT, FROM THE ONE MEETING RECORD. TJ, 18 September 2026: "each meeting has ONE
+    # record for it. That record knows which artifacts have been produced ... every page,
+    # like the home page, should pull from this same list to know what is upcoming and
+    # 'recent'. the list is sorted newest first." sources/data/meeting-register.csv is that
+    # record (build_meeting_register.py); this is the slice of it a reader wants on the
+    # front: past meetings the town did something about in the last two weeks, newest
+    # activity first, each with every artifact it has.
+    reg = rows(REGISTER)
+    if not reg:
+        raise SystemExit('sources/data/meeting-register.csv is missing or empty. Run '
+                         'scripts/build_meeting_register.py first: the feed reads the meeting record.')
+    since = (dt.date.fromisoformat(as_of) - dt.timedelta(days=RECENT_DAYS)).isoformat()
+    recent = []
+    for r in reg:
+        if r['date'] > as_of:
+            continue
+        town_seen = [x for x in (r['agenda_first_seen'], r['minutes_first_seen'], *r['video_first_seen'].split()) if x and x != '-']
+        if not town_seen or max(town_seen) < since:
+            continue
+        recent.append({
+            'board': r['board'], 'board_slug': r['board_slug'], 'date': r['date'], 'last_activity': r['last_activity'],
+            'agenda': {'url': r['agenda_url'], 'first_seen': r['agenda_first_seen']} if r['agenda'] == '1' else None,
+            'minutes': {'url': r['minutes_url'], 'first_seen': r['minutes_first_seen'],
+                        'days_after_meeting_upper_bound': int(r['minutes_lag_upper_bound']) if r['minutes_lag_upper_bound'] else None,
+                        'ocr': r['minutes_ocr'] == '1'} if r['minutes'] == '1' else None,
+            'recording': {'url': r['video_urls'].split()[0], 'uploaded': r['video_uploaded'].split()[0],
+                          'first_seen': r['video_first_seen'].split()[0], 'captions_disabled': r['captions_disabled'] == '1'} if r['video'] == '1' else None,
+            'transcript': {'fetched': r['transcript_fetched']} if r['transcript'] == '1' else None,
+            'our_minutes': {'url': r['our_minutes_url'], 'written': r['our_minutes_written'], 'headline': r['our_minutes_headline'],
+                            'votes': int(r['our_votes'] or 0)} if r['transcript_processed'] == '1' else None,
+            'official_votes': int(r['official_votes']) if r['official_votes'] else None,
+        })
+    recent.sort(key=lambda a: (a['last_activity'], a['date']), reverse=True)
+
     return {
         'category': 'announcement',
         'not_a_measurement':
@@ -154,6 +190,14 @@ def build():
                   'new_minutes': int(r['new_minutes'] or 0)}
                  for r in sorted(runs, key=lambda r: (r['ran'], r['source']),
                                  reverse=True)],
+        'recent': {
+            'window_days': RECENT_DAYS,
+            'basis': 'one row per meeting from sources/data/meeting-register.csv -- the one record a meeting has -- '
+                     'for past meetings the town posted or published something about in the window; every '
+                     'artifact we hold for it is on the row. Newest activity first.',
+            'count': len(recent),
+            'meetings': recent,
+        },
         'upcoming': {
             'horizon_days': UPCOMING_HORIZON_DAYS,
             'basis': 'an agenda posted for a date on or after as_of. An agenda is not a '
