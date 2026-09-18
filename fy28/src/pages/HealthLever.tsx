@@ -26,7 +26,7 @@ const O = HEALTH_LEVERS.optOut
 export function HealthLever() {
   return (
     <ReportShell tab={TAB} dataUrl="/data/model.json"
-      title="What changing the health plan does"
+      title="Health insurance: what changing the plan does"
       standfirst={<>Health insurance is {pct(H.shareOfBudget, 0)} of the school budget and puts {pct(H.shareOfGap, 0)} of the gap into it, because it grows {pct(HEALTH.rise, 0)} a year against a levy capped at {pct(LEVY_CAP, 1)}. It is one of two lines that can change the <em>rate</em>. Nobody in town sets the premium; what the town can change is which plans it buys, who is in the pool, and who pays what share &mdash; and each of those lands on somebody.</>}>
 
       <Grain>

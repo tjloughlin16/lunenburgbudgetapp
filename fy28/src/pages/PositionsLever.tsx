@@ -91,7 +91,7 @@ export function PositionsLever() {
           Children in larger classes, and the people whose jobs they were. What the town has already asked of them is in the table above; what the cut register shows about earlier rounds &mdash; which announced cuts the state&rsquo;s counts can see and which they cannot &mdash; is on <a className="underline" href="/cut-register">the cut register</a>.
         </WhoPays>
         <DoesNot>
-          It does not change the rate either. Fewer positions is a smaller base growing at the same {pct(DEFAULT_RATES.salaries, 0)}; the gap reopens the next year on the smaller base. Only <a className="underline" href="/what-the-contract-decides">the settlement</a> and <a className="underline" href="/what-changing-the-health-plan-does">the health plan</a> move the rate, and an <a className="underline" href="/overrides">override</a> moves the other side of it.
+          It does not change the rate either. Fewer positions is a smaller base growing at the same {pct(DEFAULT_RATES.salaries, 0)}; the gap reopens the next year on the smaller base. Only <a className="underline" href="/what-the-contract-decides">the settlement</a> and <a className="underline" href="/health-insurance-what-changing-the-plan-does">the health plan</a> move the rate, and an <a className="underline" href="/overrides">override</a> moves the other side of it.
         </DoesNot>
         <Settles>a class-size report by school and grade for FY{GAPS[0].fy - 1}, which the district does not publish and could; and DESE&rsquo;s staffing file for the same year, to turn the catalogue&rsquo;s positions into a count.</Settles>
 

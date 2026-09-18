@@ -104,7 +104,7 @@ export function FreeCashLever() {
           The capital plan: the roof, the cruiser, the bridge that were next in the queue. {CAP?.restrictedTotal ? <>About {usdShort(CAP.restrictedTotal)} of it is restricted money that could not move anyway; the {usdShort(CAP.convertibleTotal)} that could is what the redirect competes with.</> : null} And, in a year that is not a record, nobody &mdash; because there is nothing above the floor to move.
         </WhoPays>
         <DoesNot>
-          It does not change the rate. Costs grow {pct(GAPS[1].growthRate, 1)} a year and the levy {pct(0.025, 1)}; a one-time appropriation, however large, leaves both where they were, and the same gap is back the next spring plus growth. The two things that change the rate are on <a className="underline" href="/what-changing-the-health-plan-does">the health plan</a> and <a className="underline" href="/what-the-contract-decides">the contract</a>.
+          It does not change the rate. Costs grow {pct(GAPS[1].growthRate, 1)} a year and the levy {pct(0.025, 1)}; a one-time appropriation, however large, leaves both where they were, and the same gap is back the next spring plus growth. The two things that change the rate are on <a className="underline" href="/health-insurance-what-changing-the-plan-does">the health plan</a> and <a className="underline" href="/what-the-contract-decides">the contract</a>.
         </DoesNot>
         <Settles>the Town Accountant&rsquo;s free cash certification for 1 July {n0(GAPS[0].fy - 1)} (the next one), which says whether this year&rsquo;s record repeats; and the capital plan&rsquo;s adopted FY{GAPS[0].fy} funding table, which says what a redirect would actually displace.</Settles>
 

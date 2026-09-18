@@ -344,7 +344,7 @@ export const SLUG: Record<Tab, string> = {
   // THE LEVERS: one report per thing the town can actually decide (TJ, 17 September
   // 2026, the first shelf of /reports, "What the town can do"). Each answers what pulling
   // it is worth, who pays, what it does not do. Override and growth were already reports.
-  healthlever: 'what-changing-the-health-plan-does',
+  healthlever: 'health-insurance-what-changing-the-plan-does',
   freecashlever: 'can-free-cash-fill-the-gap',
   salarylever: 'what-the-contract-decides',
   feelever: 'what-fees-can-raise',
@@ -478,7 +478,7 @@ const ALIASES: Record<string, Tab> = {
   fix: 'solutions', options: 'solutions', 'what-to-do': 'solutions',
   development: 'development', 'growth-dials': 'development', 'try-development': 'development',
   growth: 'growth', 'new-growth': 'growth', 'commercial-growth': 'growth', 'grow-our-way-out': 'growth',
-  'health-plan': 'healthlever', 'free-cash-gap': 'freecashlever', 'the-contract': 'salarylever', 'salaries': 'salarylever', 'raise-fees': 'feelever', 'extras': 'extraslever', 'positions': 'positionslever', 'cut-classrooms': 'positionslever',
+  'health-plan': 'healthlever', 'what-changing-the-health-plan-does': 'healthlever', 'change-the-health-plan': 'healthlever', 'free-cash-gap': 'freecashlever', 'the-contract': 'salarylever', 'salaries': 'salarylever', 'raise-fees': 'feelever', 'extras': 'extraslever', 'positions': 'positionslever', 'cut-classrooms': 'positionslever',
   'youth-soccer': 'youthsports', 'field-rentals': 'youthsports', 'the-leagues': 'youthsports',
   'parks': 'parks', 'parks-and-rec': 'parks', 'recreation': 'parks', 'the-parks': 'parks', 'beach': 'parks',
   'school-finances': 'schoolfinance', 'school-funds': 'schoolfinance', 'every-account': 'accounts', 'funds': 'accounts', 'the-accounts': 'accounts', 'department': 'departments',
@@ -778,7 +778,7 @@ export const LABEL: Record<Tab, string> = {
   parks: 'Parks & Recreation — the department, its fund, its sales, its grounds',
   accounts: 'Every account, once',
   departments: 'The departments',
-  healthlever: 'What changing the health plan does',
+  healthlever: 'Health insurance — what changing the plan does',
   freecashlever: 'Can free cash fill the gap?',
   salarylever: 'What the contract decides',
   feelever: 'What fees can raise',
