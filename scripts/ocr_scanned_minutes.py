@@ -73,9 +73,42 @@ def candidates(kinds=('minutes',)):
     return out
 
 
+# COMPILE IT ONCE, NOT TWO THOUSAND TIMES.
+#
+# `swift ocr_pdf.swift` INTERPRETS the script, which means the compiler front end runs
+# again for every document -- and it was the single hottest process on the machine, at
+# 160% of a core, while the actual page reading sat behind it. TJ, 18 September 2026,
+# watching the fans: "I can't tell what my laptop is doing but heavy cpu usage despite
+# you being blocked by rates."
+#
+# The reading is the work; compiling the same 100 lines two thousand times is not. So it
+# is built once with -O into build/ (gitignored, derived, rebuilt whenever the source is
+# newer) and the binary is what runs per document.
+BIN = os.path.join(ROOT, 'build', 'ocr_pdf')
+
+
+def ocr_binary():
+    """The compiled reader, built if the source has moved since."""
+    if os.path.exists(BIN) and os.path.getmtime(BIN) >= os.path.getmtime(SWIFT):
+        return BIN
+    os.makedirs(os.path.dirname(BIN), exist_ok=True)
+    r = subprocess.run(['swiftc', '-O', '-o', BIN, SWIFT], capture_output=True, text=True)
+    if r.returncode != 0 or not os.path.exists(BIN):
+        # Falling back to the interpreter is slow, not wrong: better a hot laptop than a
+        # stream that stops because a toolchain moved.
+        print('  could not compile %s, falling back to `swift`: %s'
+              % (os.path.relpath(SWIFT, ROOT), (r.stderr or '').strip()[-200:]))
+        return None
+    print('  compiled %s once; the reader is a binary from here on'
+          % os.path.relpath(SWIFT, ROOT))
+    return BIN
+
+
 def ocr_one(c):
     tmp = c['txt'] + '.ocr'
-    r = subprocess.run(['swift', SWIFT, c['src'], tmp, '2'], capture_output=True, text=True, timeout=1800)
+    exe = ocr_binary()
+    cmd = ([exe] if exe else ['swift', SWIFT]) + [c['src'], tmp, '2']
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
     if r.returncode != 0 or not os.path.exists(tmp):
         return None
     body = open(tmp, encoding='utf-8', errors='replace').read()
@@ -131,14 +164,21 @@ def main():
         for k, v in by.most_common():
             print('  %-50s %4d' % (k, v))
         return
+    # THE REGISTRY IS WRITTEN PER DOCUMENT, NOT AT THE END. A long run -- 600 of these
+    # is five hours -- used to append every row after the last one finished, so a laptop
+    # closing or a kill signal lost the whole record of what had been read. The TEXT
+    # files were never at risk (each is written as it is produced, and a file already
+    # carrying the marker is skipped, so nothing is ever read twice), but the registry
+    # holds the sha256 of the PDF each reading came from, which is what --check verifies
+    # against. Losing it costs the proof rather than the work, and there is no reason to
+    # hold five hours of proof in memory.
     done = []
     for c in cs[:a.limit]:
         row = ocr_one(c)
-        print('  %s %s  %s' % (c['board_slug'], c['date'], ('%d chars, %d pages' % (row['chars'], row['pages'])) if row else 'FAILED'))
+        print('  %s %s  %s' % (c['board_slug'], c['date'], ('%d chars, %d pages' % (row['chars'], row['pages'])) if row else 'FAILED'), flush=True)
         if row:
             done.append(row)
-    if done:
-        append(done)
+            append([row])
     print('%d read; %d still to read' % (len(done), len(cs) - len(done)))
 
 

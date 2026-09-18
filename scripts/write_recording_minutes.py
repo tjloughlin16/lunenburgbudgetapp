@@ -373,8 +373,14 @@ def headline(path):
                         '--json-schema', json.dumps(HEADLINE_SCHEMA), '--output-format', 'json',
                         '--max-budget-usd', '0.3'],
                        input=prompt, capture_output=True, text=True, env=env, timeout=300)
+    # THE CLI'S OWN WORDS, NOT OURS. These two sites printed only "claude failed on X",
+    # so a 429 saying "You've hit your session limit · resets 4:30pm" reached the sweep as
+    # an unclassifiable failure and stopped a run that should have waited five minutes.
+    # Rule 13, one layer down: an instrument that reformats before you see it is part of
+    # the finding.
     if r.returncode != 0:
-        raise SystemExit('claude failed on headline for %s' % path)
+        raise SystemExit('claude failed on headline for %s:\n%s'
+                         % (path, (r.stdout + r.stderr)[-3000:]))
     res = json.loads(r.stdout)
     body = res.get('structured_output') or res.get('result')
     if isinstance(body, str):
@@ -433,8 +439,14 @@ def digest(path):
     r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', DIGEST_SYSTEM,
                         '--json-schema', json.dumps(DIGEST_SCHEMA), '--output-format', 'json', '--max-budget-usd', '0.5'],
                        input=prompt, capture_output=True, text=True, env=env, timeout=300)
+    # THE CLI'S OWN WORDS, NOT OURS. These two sites printed only "claude failed on X",
+    # so a 429 saying "You've hit your session limit · resets 4:30pm" reached the sweep as
+    # an unclassifiable failure and stopped a run that should have waited five minutes.
+    # Rule 13, one layer down: an instrument that reformats before you see it is part of
+    # the finding.
     if r.returncode != 0:
-        raise SystemExit('claude failed on digest for %s' % path)
+        raise SystemExit('claude failed on digest for %s:\n%s'
+                         % (path, (r.stdout + r.stderr)[-3000:]))
     res = json.loads(r.stdout)
     body = res.get('structured_output') or res.get('result')
     if isinstance(body, str):
