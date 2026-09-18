@@ -176,64 +176,88 @@ def build():
     peak = max(ser, key=lambda y: y['receipts'] or 0)
     latest = [y for y in ser if y['fy'] == max(y['fy'] for y in ser)][0]
 
+    funds_total_in = sum(funds[k]['revenue'] for k in (1306, 1545, 1500, 1301))
+    funds_total_held = sum(funds[k]['available'] for k in (1306, 1545, 1500, 1301))
+    funds_total_out = sum(funds[k]['expenditure'] for k in (1306, 1545, 1500, 1301))
     rows = [
         conclusion(
-            id='what-youth-soccer-paid',
-            claim='Lunenburg Youth Soccer paid the schools %s for field use in FY2024–FY2026, in %s receipts.'
-                  % (C.usd(total), C.num(len(rec))),
-            so_what='By fiscal year as the district lists them: %s.' % ', '.join('%s %s' % (k, C.usd(v)) for k, v in sorted(by_fy.items())),
-            figures={'total': figure(total, C.usd(total), 'paid by Lunenburg Youth Soccer for field use, FY2024–FY2026'),
-                     'n': figure(len(rec), C.num(len(rec))),
-                     **{'fy_%s' % k[2:]: figure(v, C.usd(v)) for k, v in by_fy.items()}},
-            figure='total', kind='measured', bearing='sizes',
-            detail='The district’s business office answered a records request in September 2026 with a workbook of %s receipts: a date, an amount and the payer’s name each, '
-                   'grouped by fiscal year as the district groups them. One receipt carries the accounting system’s own record — a cash receipt referenced 996437, described '
-                   '“THES RENTAL/FIELD RENTAL 2023/”. Amounts as printed; nothing here is computed from them except the sums.' % C.num(len(rec)),
-            basis='sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx, every row; the extract beside it in sources/data.',
-            not_shown='What the fields cost to keep, what any other league pays, or what the receipts were for by field and by season — the workbook lists dates and amounts, not invoices. '
-                      'A figure a person typed, not a printout from the books (rule 13a): the fund’s own journal would confirm each line.',
-            see=[('/what-sports-cost', 'What school sports cost, and who pays')],
-            allow=('996437', '2023', '2025', '2026', 'FY2024', 'FY2025', 'FY2026', '1306'),
+            id='the-funds',
+            claim='Four funds take in field and facility money, and held %s at 31 March 2026.'
+                  % C.usd(funds_total_held),
+            so_what='%s came in and %s went out in nine months of FY2026, none of it appropriated by Town Meeting.'
+                    % (C.usd(funds_total_in), C.usd(funds_total_out)),
+            figures={'held': figure(funds_total_held, C.usd(funds_total_held), 'held across the four field and facility funds at 31 March 2026'),
+                     'in': figure(funds_total_in, C.usd(funds_total_in)), 'out': figure(funds_total_out, C.usd(funds_total_out)),
+                     **{'f%d' % k: figure(funds[k]['available'], C.usd(funds[k]['available'])) for k in (1306, 1545, 1500, 1301)}},
+            figure='held', kind='measured', bearing='sizes',
+            detail='School Facilities Use (1306) takes rent from outside groups using school buildings and fields and held %s. Artificial Turf (1545) held %s. '
+                   'Park Revolving (1500), the Parks Commission’s own fee fund, held %s. Chapter 658 athletics (1301), which is the school teams rather than '
+                   'the outside leagues, held %s. A revolving fund may be spent on the thing that raised it without an appropriation, which is why these '
+                   'balances sit outside the budget argument the town has every spring.'
+                   % (C.usd(funds[1306]['available']), C.usd(funds[1545]['available']), C.usd(funds[1500]['available']), C.usd(funds[1301]['available'])),
+            basis='sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the rows for funds 1306, 1545, 1500 and 1301, read by the identity opening + revenue − salaries − expenditure = closing.',
+            not_shown='Who paid into each fund, and for what. The report is balances, not transactions; only fund 1301 has a journal in the archive.',
+            see=[('/accounts', 'Every account, once')],
+            allow=('1306', '1545', '1500', '1301', '658', 'FY2026', '2026', '31'),
         ),
         conclusion(
-            id='where-it-lands',
-            claim='The School Facilities Use fund took in %s in FY2026 through March and holds %s.'
-                  % (C.usd(f1306['revenue']), C.usd(f1306['available'])),
-            so_what='Fund 1306 is where field rentals land; it spent %s, and soccer’s receipts are %s of the revenue.' % (C.usd(f1306['expenditure']), C.pct(100 * fy26_total / f1306['revenue'], 0)),
+            id='what-the-fields-take-in',
+            claim='Field and facility rent ran %s into the schools’ fund in nine months of FY2026.'
+                  % C.usd(f1306['revenue']),
+            so_what='%s went out; the fund holds %s, which the schools may spend on facilities without a vote.'
+                    % (C.usd(f1306['expenditure']), C.usd(f1306['available'])),
             figures={'revenue': figure(f1306['revenue'], C.usd(f1306['revenue']), 'into the School Facilities Use fund, FY2026 through March'),
-                     'spent': figure(f1306['expenditure'], C.usd(f1306['expenditure'])), 'held': figure(f1306['available'], C.usd(f1306['available'])),
-                     'fy26_soccer': figure(fy26_total, C.usd(fy26_total)),
-                     'share': figure(100 * fy26_total / f1306['revenue'], C.pct(100 * fy26_total / f1306['revenue'], 0)),
-                     },
+                     'spent': figure(f1306['expenditure'], C.usd(f1306['expenditure'])),
+                     'held': figure(f1306['available'], C.usd(f1306['available'])),
+                     'fy24_close': figure(latest['carried'] or 0, C.usd(latest['carried'] or 0)),
+                     'fy26_open': figure(f1306['opening'], C.usd(f1306['opening']))},
             figure='revenue', kind='measured', bearing='sizes',
-            detail='The town’s FY26 special-revenue report, a printout from its accounting system as of the end of March, carries the fund by number and name with its revenue, expenditure and '
-                   'available balance. Youth soccer’s three FY2026 receipts, %s, are %s of the %s the fund had taken in by March. The fund’s journal — which would list every payer — '
-                   'is not in the archive.' % (C.usd(fy26_total), C.pct(100 * fy26_total / f1306['revenue'], 0), C.usd(f1306['revenue'])),
-            basis='sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1306, columns REVENUE, EXPENDITURE and FUND BALANCE; credits print negative and are shown here as amounts.',
-            not_shown='Who else pays into it, and what the %s was spent on. The report is balances, not transactions.' % C.usd(f1306['expenditure']),
-            see=[('/money-nodes', 'Every fund in the school money graph')],
-            allow=('1306', 'FY2026', '2026', 'FY26'),
+            detail='Fund 1306 is where a group renting a school field or gym pays. Nine months of FY2026: %s in, %s out, %s available. The annual reports carry the '
+                   'same fund back to FY2011 under the name “School Facilities Use”, and the archive cannot see FY2025 at all — the balance moved from %s at 30 June 2024 '
+                   'to %s a year later with no schedule in between.'
+                   % (C.usd(f1306['revenue']), C.usd(f1306['expenditure']), C.usd(f1306['available']), C.usd(latest['carried'] or 0), C.usd(f1306['opening'])),
+            basis='The FY26 special-revenue report for the current year; sources/data/special-revenue-funds.csv for the annual-report series, which is transcribed and does not tie to its own printed totals.',
+            not_shown='What the %s was spent on, and what a field costs the town to keep. Grounds, custodial and utility costs are coded to no programme.' % C.usd(f1306['expenditure']),
+            see=[('/parks-and-recreation', 'Parks and Recreation — the department, its fund, its grounds')],
+            allow=('1306', 'FY2026', 'FY2011', 'FY2025', '2026', '2024', '30'),
+        ),
+        conclusion(
+            id='who-uses-the-fields',
+            claim='Four youth leagues use the fields; one league’s payments are the only ones we hold records for.',
+            so_what='%s of receipts, FY2024–FY2026, by records request. What the others pay is published nowhere.'
+                    % C.usd(total),
+            figures={'paid': figure(total, C.usd(total), 'in receipts from the one league whose payments the archive holds'),
+                     'n': figure(len(rec), C.num(len(rec)))},
+            figure='paid', kind='measured', bearing='sizes',
+            detail='The leagues that use town and school fields are %s. What any of them pays is published nowhere. A records request to the district produced one '
+                   'league’s receipts — Lunenburg Youth Soccer, %s across %s payments, FY2024 to FY2026 — and that is a start rather than a finding about that league: '
+                   'it is the one we asked for first. The same request to the town and the district for every user group would make this a comparison instead of a sample.'
+                   % (', '.join(LEAGUES), C.usd(total), C.num(len(rec))),
+            basis='sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx, every row; the leagues as the town’s own Parks Commission page lists them.',
+            not_shown='What every other league pays, and on what terms. One league’s receipts cannot say whether the arrangement is the same for all of them, and nothing here suggests it is not.',
+            see=[('/what-sports-cost', 'What school sports cost, and who pays')],
+            allow=('FY2024', 'FY2026', '2026', '1306') + tuple(LEAGUES),
         ),
         conclusion(
             id='the-turf-fund',
             claim='The Artificial Turf fund took in %s in FY2026, the figure the 2016 plan adds up to.' % C.usd(f1545['revenue']),
-            so_what='The 2016 plan as said: $30,000 a year from the cell tower, $15,000 from youth soccer. No ledger splits it.',
+            so_what='The 2016 plan as said: $30,000 a year from the cell tower, $15,000 from a youth league. No ledger splits it.',
             figures={'revenue': figure(f1545['revenue'], C.usd(f1545['revenue']), 'into the Artificial Turf fund, FY2026'),
                      'spent': figure(f1545['expenditure'], C.usd(f1545['expenditure'])), 'held': figure(f1545['available'], C.usd(f1545['available']))},
             figure='revenue', kind='hypothesis', bearing='sizes',
-            detail='The fund’s FY2026 revenue is %s, its expenditure %s, its available balance %s — all as printed. That the %s is $30,000 of cell-tower rent plus $15,000 from the '
-                   'soccer association is what the Select Board said the plan was in May 2016 (the recording, at 1:36:05), and it matches to the dollar. It is not established by any '
-                   'ledger the archive holds, which is why this card is a hypothesis: the receipt detail for fund 1545 would settle it, and would say whether the Bengals’ $7,500 is inside it or elsewhere.'
+            detail='The fund’s FY2026 revenue is %s, its expenditure %s, its available balance %s — all as printed. That the %s is $30,000 of cell-tower rent plus $15,000 from a '
+                   'youth league is what the Select Board said the plan was in May 2016 (the recording, at 1:36:05), and it matches to the dollar. It is not established by any '
+                   'ledger the archive holds, which is why this card is a hypothesis: the receipt detail for fund 1545 would settle it, and would say which groups are inside it.'
                    % (C.usd(f1545['revenue']), C.usd(f1545['expenditure']), C.usd(f1545['available']), C.usd(f1545['revenue'])),
             basis='The same FY26 report, the row for fund 1545; the Select Board recording of 3 May 2016 at 5,765 seconds, machine captions.',
             not_shown='Whether the arrangement is still what was described in 2016, or who signed it. A recording is a finding aid; the agreement itself is not in the archive.',
             see=[('/meeting-minutes', 'Our minutes of the recordings')],
-            allow=('30,000', '15,000', '7,500', '1:36:05', '5,765', '1545', '2016', '2026', 'FY2026'),
+            allow=('30,000', '15,000', '1:36:05', '5,765', '1545', '2016', '2026', 'FY2026'),
         ),
     ]
     return dict(
         generated_by='scripts/build_youth_sports.py',
-        about='Youth sports and the town: what the leagues pay to use the fields, the funds that money lands in, and what the boards have said about the arrangement since 2014.',
+        about='Youth sports and the town: the funds that field and facility money runs through, what goes in and out of them, which leagues use the fields, and what the boards have said about the arrangement since 2014.',
         grain='DOLLARS as three different documents print them — a MUNIS fund report (evidence), a records-request workbook (stated), and the annual reports’ schedules (transcribed, unreconciled) — kept apart on the page. Not what a field costs, and not what any league pays in total.',
         as_of=asof, leagues=LEAGUES,
         funds=[funds[k] for k in (1306, 1545, 1500, 1301)],

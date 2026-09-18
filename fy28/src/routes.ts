@@ -786,7 +786,7 @@ export const LABEL: Record<Tab, string> = {
   growth: 'Commercial development and new growth',
   homestudents: 'Homes and students — the town builds, the schools do not grow',
   boardcompare: 'The boards, compared',
-  youthsports: 'Youth sports and the town — what the leagues pay for the fields',
+  youthsports: 'Youth sports and the fields',
   schoolfinance: 'The School Committee’s finances — every fund and line it owns',
   parks: 'Parks & Recreation — the department, its fund, its sales, its grounds',
   accounts: 'Every account, once',

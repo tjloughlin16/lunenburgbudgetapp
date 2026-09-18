@@ -37,8 +37,8 @@ export function YouthSports() {
   const { d, err } = useReport<Payload>('youth-sports.json')
   return (
     <ReportShell tab={TAB}
-      title={d ? `Youth sports paid the schools ${usdShort(d.receipts_total)} for the fields in three years` : 'Youth sports and the town'}
-      standfirst={d ? <>What the leagues pay to use the town&rsquo;s fields, the two funds that money lands in, and what the boards have said about the arrangement since 2014. Three documents of three kinds, kept apart: a fund report from the town&rsquo;s books, a records-request answer from the district, and fifteen years of annual-report schedules.</> : undefined}
+      title="Youth sports and the fields: the funds, and who uses them"
+      standfirst={d ? <>Four funds take rent and fees for the town&rsquo;s fields and buildings and hold {usdShort(d.funds.reduce((s2, f) => s2 + f.available, 0))} between them, outside anything Town Meeting votes. This page is what goes in and out of them, which leagues use the fields, and what the boards have said since 2014. What any league pays is published nowhere; one league&rsquo;s receipts came by records request and are shown as the sample they are.</> : undefined}
       err={err} loading={!d && !err} dataUrl={DATA}>
       {d && <Report d={d} />}
     </ReportShell>
@@ -54,10 +54,10 @@ function Report({ d }: { d: Payload }) {
     <>
       <section data-section="conclusions" data-short="">
         <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
-          <Stat value={usdShort(d.receipts_total)} tone="var(--series-revenue)">paid by Lunenburg Youth Soccer for field use, FY2024&ndash;FY2026, in {d.receipts.length} receipts</Stat>
-          <Stat value={usdShort(f1306.revenue)}>into the School Facilities Use fund in FY2026 through March; {usdShort(f1306.available)} available</Stat>
+          <Stat value={usdShort(d.funds.reduce((s2, f) => s2 + f.available, 0))} tone="var(--series-revenue)">held across the four field and facility funds at 31 March 2026, spendable without a vote</Stat>
+          <Stat value={usdShort(f1306.revenue)}>of field and building rent into the schools&rsquo; fund in FY2026 through March; {usdShort(f1306.available)} available</Stat>
           <Stat value={usdShort(f1545.revenue)}>a year into the Artificial Turf fund &mdash; the 2016 deal&rsquo;s figure</Stat>
-          <Stat value={usdShort(d.series_peak.receipts)} tone="var(--text-secondary)">the fund&rsquo;s best year of receipts in the annual reports, FY{d.series_peak.fy} &mdash; transcribed, not verified</Stat>
+          <Stat value={`${d.leagues.length} leagues`} tone="var(--text-secondary)">use the fields; the payments of {d.receipts.length ? 'one' : 'none'} of them are in the archive, by records request</Stat>
         </div>
         <Grain>{d.grain}</Grain>
         <Conclusions rows={shortRows} />
@@ -72,9 +72,9 @@ function Report({ d }: { d: Payload }) {
         )}
 
         <section data-section="categorical">
-          <H2 id="receipts">The receipts, as the district listed them</H2>
+          <H2 id="receipts">One league&rsquo;s payments, as the district listed them</H2>
           <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-            A workbook the district&rsquo;s business office typed in answer to a records request, September 2026. Grouped by fiscal year as the district groups them &mdash; the 8 July 2024 receipt sits under FY24 although the date is in FY25. One row carries a pasted record from the accounting system.
+            <strong>The only user group whose payments the archive holds</strong> &mdash; because it is the one we asked for first, not because it is unusual. A workbook the district&rsquo;s business office typed in answer to a records request, September 2026. Grouped by fiscal year as the district groups them &mdash; the 8 July 2024 receipt sits under FY24 although the date is in FY25. One row carries a pasted record from the accounting system.
           </p>
           <div className="overflow-x-auto mt-4">
             <table className="text-sm" style={{ minWidth: 560 }}>

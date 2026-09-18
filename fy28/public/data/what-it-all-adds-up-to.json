@@ -409,61 +409,71 @@
    "so_what": "What posting every meeting\u2019s minutes looks like on the town\u2019s site; every other board is measured against it."
   },
   {
-   "basis": "sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx, every row; the extract beside it in sources/data.",
+   "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the rows for funds 1306, 1545, 1500 and 1301, read by the identity opening + revenue \u2212 salaries \u2212 expenditure = closing.",
    "bearing": "sizes",
-   "claim": "Lunenburg Youth Soccer paid the schools $39,074 for field use in FY2024\u2013FY2026, in 7 receipts.",
-   "detail": "The district\u2019s business office answered a records request in September 2026 with a workbook of 7 receipts: a date, an amount and the payer\u2019s name each, grouped by fiscal year as the district groups them. One receipt carries the accounting system\u2019s own record \u2014 a cash receipt referenced 996437, described \u201cTHES RENTAL/FIELD RENTAL 2023/\u201d. Amounts as printed; nothing here is computed from them except the sums.",
-   "figure": "total",
+   "claim": "Four funds take in field and facility money, and held $395,711 at 31 March 2026.",
+   "detail": "School Facilities Use (1306) takes rent from outside groups using school buildings and fields and held $71,559. Artificial Turf (1545) held $69,390. Park Revolving (1500), the Parks Commission\u2019s own fee fund, held $84,818. Chapter 658 athletics (1301), which is the school teams rather than the outside leagues, held $169,945. A revolving fund may be spent on the thing that raised it without an appropriation, which is why these balances sit outside the budget argument the town has every spring.",
+   "figure": "held",
    "figures": {
-    "fy_2024": {
-     "text": "$6,728",
+    "f1301": {
+     "text": "$169,945",
      "unit": "",
-     "value": 6728.0
+     "value": 169944.8
     },
-    "fy_2025": {
-     "text": "$23,308",
+    "f1306": {
+     "text": "$71,559",
      "unit": "",
-     "value": 23308.0
+     "value": 71558.82
     },
-    "fy_2026": {
-     "text": "$9,038",
+    "f1500": {
+     "text": "$84,818",
      "unit": "",
-     "value": 9037.5
+     "value": 84817.56
     },
-    "n": {
-     "text": "7",
+    "f1545": {
+     "text": "$69,390",
      "unit": "",
-     "value": 7
+     "value": 69389.52
     },
-    "total": {
-     "text": "$39,074",
-     "unit": "paid by Lunenburg Youth Soccer for field use, FY2024\u2013FY2026",
-     "value": 39073.5
+    "held": {
+     "text": "$395,711",
+     "unit": "held across the four field and facility funds at 31 March 2026",
+     "value": 395710.7
+    },
+    "in": {
+     "text": "$231,451",
+     "unit": "",
+     "value": 231450.56
+    },
+    "out": {
+     "text": "$161,040",
+     "unit": "",
+     "value": 161040.01
     }
    },
-   "id": "what-youth-soccer-paid",
+   "id": "the-funds",
    "kind": "measured",
    "literals": [
-    "996437",
-    "2023",
-    "2025",
-    "2026",
-    "FY2024",
-    "FY2025",
+    "1306",
+    "1545",
+    "1500",
+    "1301",
+    "658",
     "FY2026",
-    "1306"
+    "2026",
+    "31"
    ],
-   "not_shown": "What the fields cost to keep, what any other league pays, or what the receipts were for by field and by season \u2014 the workbook lists dates and amounts, not invoices. A figure a person typed, not a printout from the books (rule 13a): the fund\u2019s own journal would confirm each line.",
+   "not_shown": "Who paid into each fund, and for what. The report is balances, not transactions; only fund 1301 has a journal in the archive.",
    "report": "youthsports",
-   "report_title": "Youth sports and the town \u2014 what the leagues pay for the fields",
+   "report_title": "Youth sports and the fields",
    "report_url": "/youth-sports",
    "see": [
     {
-     "label": "What school sports cost, and who pays",
-     "slug": "/what-sports-cost"
+     "label": "Every account, once",
+     "slug": "/accounts"
     }
    ],
-   "so_what": "By fiscal year as the district lists them: FY2024 $6,728, FY2025 $23,308, FY2026 $9,038."
+   "so_what": "$231,451 came in and $161,040 went out in nine months of FY2026, none of it appropriated by Town Meeting."
   },
   {
    "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report\u2019s department 300 total.",
@@ -3729,73 +3739,88 @@
    "url": "/boards/compared"
   },
   {
-   "about": "Youth sports and the town: what the leagues pay to use the fields, the funds that money lands in, and what the boards have said about the arrangement since 2014.",
+   "about": "Youth sports and the town: the funds that field and facility money runs through, what goes in and out of them, which leagues use the fields, and what the boards have said about the arrangement since 2014.",
    "conclusions": [
     {
-     "basis": "sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx, every row; the extract beside it in sources/data.",
+     "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the rows for funds 1306, 1545, 1500 and 1301, read by the identity opening + revenue \u2212 salaries \u2212 expenditure = closing.",
      "bearing": "sizes",
-     "claim": "Lunenburg Youth Soccer paid the schools $39,074 for field use in FY2024\u2013FY2026, in 7 receipts.",
-     "detail": "The district\u2019s business office answered a records request in September 2026 with a workbook of 7 receipts: a date, an amount and the payer\u2019s name each, grouped by fiscal year as the district groups them. One receipt carries the accounting system\u2019s own record \u2014 a cash receipt referenced 996437, described \u201cTHES RENTAL/FIELD RENTAL 2023/\u201d. Amounts as printed; nothing here is computed from them except the sums.",
-     "figure": "total",
+     "claim": "Four funds take in field and facility money, and held $395,711 at 31 March 2026.",
+     "detail": "School Facilities Use (1306) takes rent from outside groups using school buildings and fields and held $71,559. Artificial Turf (1545) held $69,390. Park Revolving (1500), the Parks Commission\u2019s own fee fund, held $84,818. Chapter 658 athletics (1301), which is the school teams rather than the outside leagues, held $169,945. A revolving fund may be spent on the thing that raised it without an appropriation, which is why these balances sit outside the budget argument the town has every spring.",
+     "figure": "held",
      "figures": {
-      "fy_2024": {
-       "text": "$6,728",
+      "f1301": {
+       "text": "$169,945",
        "unit": "",
-       "value": 6728.0
+       "value": 169944.8
       },
-      "fy_2025": {
-       "text": "$23,308",
+      "f1306": {
+       "text": "$71,559",
        "unit": "",
-       "value": 23308.0
+       "value": 71558.82
       },
-      "fy_2026": {
-       "text": "$9,038",
+      "f1500": {
+       "text": "$84,818",
        "unit": "",
-       "value": 9037.5
+       "value": 84817.56
       },
-      "n": {
-       "text": "7",
+      "f1545": {
+       "text": "$69,390",
        "unit": "",
-       "value": 7
+       "value": 69389.52
       },
-      "total": {
-       "text": "$39,074",
-       "unit": "paid by Lunenburg Youth Soccer for field use, FY2024\u2013FY2026",
-       "value": 39073.5
+      "held": {
+       "text": "$395,711",
+       "unit": "held across the four field and facility funds at 31 March 2026",
+       "value": 395710.7
+      },
+      "in": {
+       "text": "$231,451",
+       "unit": "",
+       "value": 231450.56
+      },
+      "out": {
+       "text": "$161,040",
+       "unit": "",
+       "value": 161040.01
       }
      },
-     "id": "what-youth-soccer-paid",
+     "id": "the-funds",
      "kind": "measured",
      "literals": [
-      "996437",
-      "2023",
-      "2025",
-      "2026",
-      "FY2024",
-      "FY2025",
+      "1306",
+      "1545",
+      "1500",
+      "1301",
+      "658",
       "FY2026",
-      "1306"
+      "2026",
+      "31"
      ],
-     "not_shown": "What the fields cost to keep, what any other league pays, or what the receipts were for by field and by season \u2014 the workbook lists dates and amounts, not invoices. A figure a person typed, not a printout from the books (rule 13a): the fund\u2019s own journal would confirm each line.",
+     "not_shown": "Who paid into each fund, and for what. The report is balances, not transactions; only fund 1301 has a journal in the archive.",
      "see": [
       {
-       "label": "What school sports cost, and who pays",
-       "slug": "/what-sports-cost"
+       "label": "Every account, once",
+       "slug": "/accounts"
       }
      ],
-     "so_what": "By fiscal year as the district lists them: FY2024 $6,728, FY2025 $23,308, FY2026 $9,038."
+     "so_what": "$231,451 came in and $161,040 went out in nine months of FY2026, none of it appropriated by Town Meeting."
     },
     {
-     "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1306, columns REVENUE, EXPENDITURE and FUND BALANCE; credits print negative and are shown here as amounts.",
+     "basis": "The FY26 special-revenue report for the current year; sources/data/special-revenue-funds.csv for the annual-report series, which is transcribed and does not tie to its own printed totals.",
      "bearing": "sizes",
-     "claim": "The School Facilities Use fund took in $18,670 in FY2026 through March and holds $71,559.",
-     "detail": "The town\u2019s FY26 special-revenue report, a printout from its accounting system as of the end of March, carries the fund by number and name with its revenue, expenditure and available balance. Youth soccer\u2019s three FY2026 receipts, $9,038, are 48% of the $18,670 the fund had taken in by March. The fund\u2019s journal \u2014 which would list every payer \u2014 is not in the archive.",
+     "claim": "Field and facility rent ran $18,670 into the schools\u2019 fund in nine months of FY2026.",
+     "detail": "Fund 1306 is where a group renting a school field or gym pays. Nine months of FY2026: $18,670 in, $12,354 out, $71,559 available. The annual reports carry the same fund back to FY2011 under the name \u201cSchool Facilities Use\u201d, and the archive cannot see FY2025 at all \u2014 the balance moved from $3,011 at 30 June 2024 to $65,242 a year later with no schedule in between.",
      "figure": "revenue",
      "figures": {
-      "fy26_soccer": {
-       "text": "$9,038",
+      "fy24_close": {
+       "text": "$3,011",
        "unit": "",
-       "value": 9037.5
+       "value": 3010.67
+      },
+      "fy26_open": {
+       "text": "$65,242",
+       "unit": "",
+       "value": 65241.82
       },
       "held": {
        "text": "$71,559",
@@ -3807,39 +3832,76 @@
        "unit": "into the School Facilities Use fund, FY2026 through March",
        "value": 18670.5
       },
-      "share": {
-       "text": "48%",
-       "unit": "",
-       "value": 48.405238210010445
-      },
       "spent": {
        "text": "$12,354",
        "unit": "",
        "value": 12353.5
       }
      },
-     "id": "where-it-lands",
+     "id": "what-the-fields-take-in",
      "kind": "measured",
      "literals": [
       "1306",
       "FY2026",
+      "FY2011",
+      "FY2025",
       "2026",
-      "FY26"
+      "2024",
+      "30"
      ],
-     "not_shown": "Who else pays into it, and what the $12,354 was spent on. The report is balances, not transactions.",
+     "not_shown": "What the $12,354 was spent on, and what a field costs the town to keep. Grounds, custodial and utility costs are coded to no programme.",
      "see": [
       {
-       "label": "Every fund in the school money graph",
-       "slug": "/money-nodes"
+       "label": "Parks and Recreation \u2014 the department, its fund, its grounds",
+       "slug": "/parks-and-recreation"
       }
      ],
-     "so_what": "Fund 1306 is where field rentals land; it spent $12,354, and soccer\u2019s receipts are 48% of the revenue."
+     "so_what": "$12,354 went out; the fund holds $71,559, which the schools may spend on facilities without a vote."
+    },
+    {
+     "basis": "sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx, every row; the leagues as the town\u2019s own Parks Commission page lists them.",
+     "bearing": "sizes",
+     "claim": "Four youth leagues use the fields; one league\u2019s payments are the only ones we hold records for.",
+     "detail": "The leagues that use town and school fields are Ayer-Shirley-Lunenburg Bengals, Lunenburg Little League (Baseball and Softball), Lunenburg Youth Soccer Association, Lunenburg Jr Basketball. What any of them pays is published nowhere. A records request to the district produced one league\u2019s receipts \u2014 Lunenburg Youth Soccer, $39,074 across 7 payments, FY2024 to FY2026 \u2014 and that is a start rather than a finding about that league: it is the one we asked for first. The same request to the town and the district for every user group would make this a comparison instead of a sample.",
+     "figure": "paid",
+     "figures": {
+      "n": {
+       "text": "7",
+       "unit": "",
+       "value": 7
+      },
+      "paid": {
+       "text": "$39,074",
+       "unit": "in receipts from the one league whose payments the archive holds",
+       "value": 39073.5
+      }
+     },
+     "id": "who-uses-the-fields",
+     "kind": "measured",
+     "literals": [
+      "FY2024",
+      "FY2026",
+      "2026",
+      "1306",
+      "Ayer-Shirley-Lunenburg Bengals",
+      "Lunenburg Little League (Baseball and Softball)",
+      "Lunenburg Youth Soccer Association",
+      "Lunenburg Jr Basketball"
+     ],
+     "not_shown": "What every other league pays, and on what terms. One league\u2019s receipts cannot say whether the arrangement is the same for all of them, and nothing here suggests it is not.",
+     "see": [
+      {
+       "label": "What school sports cost, and who pays",
+       "slug": "/what-sports-cost"
+      }
+     ],
+     "so_what": "$39,074 of receipts, FY2024\u2013FY2026, by records request. What the others pay is published nowhere."
     },
     {
      "basis": "The same FY26 report, the row for fund 1545; the Select Board recording of 3 May 2016 at 5,765 seconds, machine captions.",
      "bearing": "sizes",
      "claim": "The Artificial Turf fund took in $45,000 in FY2026, the figure the 2016 plan adds up to.",
-     "detail": "The fund\u2019s FY2026 revenue is $45,000, its expenditure $38,454, its available balance $69,390 \u2014 all as printed. That the $45,000 is $30,000 of cell-tower rent plus $15,000 from the soccer association is what the Select Board said the plan was in May 2016 (the recording, at 1:36:05), and it matches to the dollar. It is not established by any ledger the archive holds, which is why this card is a hypothesis: the receipt detail for fund 1545 would settle it, and would say whether the Bengals\u2019 $7,500 is inside it or elsewhere.",
+     "detail": "The fund\u2019s FY2026 revenue is $45,000, its expenditure $38,454, its available balance $69,390 \u2014 all as printed. That the $45,000 is $30,000 of cell-tower rent plus $15,000 from a youth league is what the Select Board said the plan was in May 2016 (the recording, at 1:36:05), and it matches to the dollar. It is not established by any ledger the archive holds, which is why this card is a hypothesis: the receipt detail for fund 1545 would settle it, and would say which groups are inside it.",
      "figure": "revenue",
      "figures": {
       "held": {
@@ -3863,7 +3925,6 @@
      "literals": [
       "30,000",
       "15,000",
-      "7,500",
       "1:36:05",
       "5,765",
       "1545",
@@ -3878,14 +3939,14 @@
        "slug": "/meeting-minutes"
       }
      ],
-     "so_what": "The 2016 plan as said: $30,000 a year from the cell tower, $15,000 from youth soccer. No ledger splits it."
+     "so_what": "The 2016 plan as said: $30,000 a year from the cell tower, $15,000 from a youth league. No ledger splits it."
     }
    ],
-   "count": 3,
+   "count": 4,
    "data": "/data/youth-sports.json",
    "generator": "scripts/build_youth_sports.py",
    "id": "youthsports",
-   "title": "Youth sports and the town \u2014 what the leagues pay for the fields",
+   "title": "Youth sports and the fields",
    "url": "/youth-sports"
   },
   {
@@ -13572,7 +13633,7 @@
   },
   {
    "about": "Staffing, the classes that ran, insurance, the lines that stopped, what the district said it was cutting, and how close the budget lands to what gets spent.",
-   "conclusions": 33,
+   "conclusions": 34,
    "key": "spending",
    "reports": [
     {
@@ -15710,73 +15771,88 @@
      "url": "/budget-vs-actual"
     },
     {
-     "about": "Youth sports and the town: what the leagues pay to use the fields, the funds that money lands in, and what the boards have said about the arrangement since 2014.",
+     "about": "Youth sports and the town: the funds that field and facility money runs through, what goes in and out of them, which leagues use the fields, and what the boards have said about the arrangement since 2014.",
      "conclusions": [
       {
-       "basis": "sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx, every row; the extract beside it in sources/data.",
+       "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the rows for funds 1306, 1545, 1500 and 1301, read by the identity opening + revenue \u2212 salaries \u2212 expenditure = closing.",
        "bearing": "sizes",
-       "claim": "Lunenburg Youth Soccer paid the schools $39,074 for field use in FY2024\u2013FY2026, in 7 receipts.",
-       "detail": "The district\u2019s business office answered a records request in September 2026 with a workbook of 7 receipts: a date, an amount and the payer\u2019s name each, grouped by fiscal year as the district groups them. One receipt carries the accounting system\u2019s own record \u2014 a cash receipt referenced 996437, described \u201cTHES RENTAL/FIELD RENTAL 2023/\u201d. Amounts as printed; nothing here is computed from them except the sums.",
-       "figure": "total",
+       "claim": "Four funds take in field and facility money, and held $395,711 at 31 March 2026.",
+       "detail": "School Facilities Use (1306) takes rent from outside groups using school buildings and fields and held $71,559. Artificial Turf (1545) held $69,390. Park Revolving (1500), the Parks Commission\u2019s own fee fund, held $84,818. Chapter 658 athletics (1301), which is the school teams rather than the outside leagues, held $169,945. A revolving fund may be spent on the thing that raised it without an appropriation, which is why these balances sit outside the budget argument the town has every spring.",
+       "figure": "held",
        "figures": {
-        "fy_2024": {
-         "text": "$6,728",
+        "f1301": {
+         "text": "$169,945",
          "unit": "",
-         "value": 6728.0
+         "value": 169944.8
         },
-        "fy_2025": {
-         "text": "$23,308",
+        "f1306": {
+         "text": "$71,559",
          "unit": "",
-         "value": 23308.0
+         "value": 71558.82
         },
-        "fy_2026": {
-         "text": "$9,038",
+        "f1500": {
+         "text": "$84,818",
          "unit": "",
-         "value": 9037.5
+         "value": 84817.56
         },
-        "n": {
-         "text": "7",
+        "f1545": {
+         "text": "$69,390",
          "unit": "",
-         "value": 7
+         "value": 69389.52
         },
-        "total": {
-         "text": "$39,074",
-         "unit": "paid by Lunenburg Youth Soccer for field use, FY2024\u2013FY2026",
-         "value": 39073.5
+        "held": {
+         "text": "$395,711",
+         "unit": "held across the four field and facility funds at 31 March 2026",
+         "value": 395710.7
+        },
+        "in": {
+         "text": "$231,451",
+         "unit": "",
+         "value": 231450.56
+        },
+        "out": {
+         "text": "$161,040",
+         "unit": "",
+         "value": 161040.01
         }
        },
-       "id": "what-youth-soccer-paid",
+       "id": "the-funds",
        "kind": "measured",
        "literals": [
-        "996437",
-        "2023",
-        "2025",
-        "2026",
-        "FY2024",
-        "FY2025",
+        "1306",
+        "1545",
+        "1500",
+        "1301",
+        "658",
         "FY2026",
-        "1306"
+        "2026",
+        "31"
        ],
-       "not_shown": "What the fields cost to keep, what any other league pays, or what the receipts were for by field and by season \u2014 the workbook lists dates and amounts, not invoices. A figure a person typed, not a printout from the books (rule 13a): the fund\u2019s own journal would confirm each line.",
+       "not_shown": "Who paid into each fund, and for what. The report is balances, not transactions; only fund 1301 has a journal in the archive.",
        "see": [
         {
-         "label": "What school sports cost, and who pays",
-         "slug": "/what-sports-cost"
+         "label": "Every account, once",
+         "slug": "/accounts"
         }
        ],
-       "so_what": "By fiscal year as the district lists them: FY2024 $6,728, FY2025 $23,308, FY2026 $9,038."
+       "so_what": "$231,451 came in and $161,040 went out in nine months of FY2026, none of it appropriated by Town Meeting."
       },
       {
-       "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1306, columns REVENUE, EXPENDITURE and FUND BALANCE; credits print negative and are shown here as amounts.",
+       "basis": "The FY26 special-revenue report for the current year; sources/data/special-revenue-funds.csv for the annual-report series, which is transcribed and does not tie to its own printed totals.",
        "bearing": "sizes",
-       "claim": "The School Facilities Use fund took in $18,670 in FY2026 through March and holds $71,559.",
-       "detail": "The town\u2019s FY26 special-revenue report, a printout from its accounting system as of the end of March, carries the fund by number and name with its revenue, expenditure and available balance. Youth soccer\u2019s three FY2026 receipts, $9,038, are 48% of the $18,670 the fund had taken in by March. The fund\u2019s journal \u2014 which would list every payer \u2014 is not in the archive.",
+       "claim": "Field and facility rent ran $18,670 into the schools\u2019 fund in nine months of FY2026.",
+       "detail": "Fund 1306 is where a group renting a school field or gym pays. Nine months of FY2026: $18,670 in, $12,354 out, $71,559 available. The annual reports carry the same fund back to FY2011 under the name \u201cSchool Facilities Use\u201d, and the archive cannot see FY2025 at all \u2014 the balance moved from $3,011 at 30 June 2024 to $65,242 a year later with no schedule in between.",
        "figure": "revenue",
        "figures": {
-        "fy26_soccer": {
-         "text": "$9,038",
+        "fy24_close": {
+         "text": "$3,011",
          "unit": "",
-         "value": 9037.5
+         "value": 3010.67
+        },
+        "fy26_open": {
+         "text": "$65,242",
+         "unit": "",
+         "value": 65241.82
         },
         "held": {
          "text": "$71,559",
@@ -15788,39 +15864,76 @@
          "unit": "into the School Facilities Use fund, FY2026 through March",
          "value": 18670.5
         },
-        "share": {
-         "text": "48%",
-         "unit": "",
-         "value": 48.405238210010445
-        },
         "spent": {
          "text": "$12,354",
          "unit": "",
          "value": 12353.5
         }
        },
-       "id": "where-it-lands",
+       "id": "what-the-fields-take-in",
        "kind": "measured",
        "literals": [
         "1306",
         "FY2026",
+        "FY2011",
+        "FY2025",
         "2026",
-        "FY26"
+        "2024",
+        "30"
        ],
-       "not_shown": "Who else pays into it, and what the $12,354 was spent on. The report is balances, not transactions.",
+       "not_shown": "What the $12,354 was spent on, and what a field costs the town to keep. Grounds, custodial and utility costs are coded to no programme.",
        "see": [
         {
-         "label": "Every fund in the school money graph",
-         "slug": "/money-nodes"
+         "label": "Parks and Recreation \u2014 the department, its fund, its grounds",
+         "slug": "/parks-and-recreation"
         }
        ],
-       "so_what": "Fund 1306 is where field rentals land; it spent $12,354, and soccer\u2019s receipts are 48% of the revenue."
+       "so_what": "$12,354 went out; the fund holds $71,559, which the schools may spend on facilities without a vote."
+      },
+      {
+       "basis": "sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx, every row; the leagues as the town\u2019s own Parks Commission page lists them.",
+       "bearing": "sizes",
+       "claim": "Four youth leagues use the fields; one league\u2019s payments are the only ones we hold records for.",
+       "detail": "The leagues that use town and school fields are Ayer-Shirley-Lunenburg Bengals, Lunenburg Little League (Baseball and Softball), Lunenburg Youth Soccer Association, Lunenburg Jr Basketball. What any of them pays is published nowhere. A records request to the district produced one league\u2019s receipts \u2014 Lunenburg Youth Soccer, $39,074 across 7 payments, FY2024 to FY2026 \u2014 and that is a start rather than a finding about that league: it is the one we asked for first. The same request to the town and the district for every user group would make this a comparison instead of a sample.",
+       "figure": "paid",
+       "figures": {
+        "n": {
+         "text": "7",
+         "unit": "",
+         "value": 7
+        },
+        "paid": {
+         "text": "$39,074",
+         "unit": "in receipts from the one league whose payments the archive holds",
+         "value": 39073.5
+        }
+       },
+       "id": "who-uses-the-fields",
+       "kind": "measured",
+       "literals": [
+        "FY2024",
+        "FY2026",
+        "2026",
+        "1306",
+        "Ayer-Shirley-Lunenburg Bengals",
+        "Lunenburg Little League (Baseball and Softball)",
+        "Lunenburg Youth Soccer Association",
+        "Lunenburg Jr Basketball"
+       ],
+       "not_shown": "What every other league pays, and on what terms. One league\u2019s receipts cannot say whether the arrangement is the same for all of them, and nothing here suggests it is not.",
+       "see": [
+        {
+         "label": "What school sports cost, and who pays",
+         "slug": "/what-sports-cost"
+        }
+       ],
+       "so_what": "$39,074 of receipts, FY2024\u2013FY2026, by records request. What the others pay is published nowhere."
       },
       {
        "basis": "The same FY26 report, the row for fund 1545; the Select Board recording of 3 May 2016 at 5,765 seconds, machine captions.",
        "bearing": "sizes",
        "claim": "The Artificial Turf fund took in $45,000 in FY2026, the figure the 2016 plan adds up to.",
-       "detail": "The fund\u2019s FY2026 revenue is $45,000, its expenditure $38,454, its available balance $69,390 \u2014 all as printed. That the $45,000 is $30,000 of cell-tower rent plus $15,000 from the soccer association is what the Select Board said the plan was in May 2016 (the recording, at 1:36:05), and it matches to the dollar. It is not established by any ledger the archive holds, which is why this card is a hypothesis: the receipt detail for fund 1545 would settle it, and would say whether the Bengals\u2019 $7,500 is inside it or elsewhere.",
+       "detail": "The fund\u2019s FY2026 revenue is $45,000, its expenditure $38,454, its available balance $69,390 \u2014 all as printed. That the $45,000 is $30,000 of cell-tower rent plus $15,000 from a youth league is what the Select Board said the plan was in May 2016 (the recording, at 1:36:05), and it matches to the dollar. It is not established by any ledger the archive holds, which is why this card is a hypothesis: the receipt detail for fund 1545 would settle it, and would say which groups are inside it.",
        "figure": "revenue",
        "figures": {
         "held": {
@@ -15844,7 +15957,6 @@
        "literals": [
         "30,000",
         "15,000",
-        "7,500",
         "1:36:05",
         "5,765",
         "1545",
@@ -15859,14 +15971,14 @@
          "slug": "/meeting-minutes"
         }
        ],
-       "so_what": "The 2016 plan as said: $30,000 a year from the cell tower, $15,000 from youth soccer. No ledger splits it."
+       "so_what": "The 2016 plan as said: $30,000 a year from the cell tower, $15,000 from a youth league. No ledger splits it."
       }
      ],
-     "count": 3,
+     "count": 4,
      "data": "/data/youth-sports.json",
      "generator": "scripts/build_youth_sports.py",
      "id": "youthsports",
-     "title": "Youth sports and the town \u2014 what the leagues pay for the fields",
+     "title": "Youth sports and the fields",
      "url": "/youth-sports"
     }
    ],
@@ -19335,14 +19447,14 @@
  "totals": {
   "bearing": {
    "lever": 20,
-   "sizes": 102,
+   "sizes": 103,
    "unclassified": 0
   },
-  "conclusions": 122,
+  "conclusions": 123,
   "document_words": 80191,
   "documents": 17,
   "hypothesis": 2,
-  "measured": 120,
+  "measured": 121,
   "reports": 41,
   "with_conclusions": 34,
   "without_conclusions": 7
