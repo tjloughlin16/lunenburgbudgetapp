@@ -29,3 +29,14 @@ Costs per run: agenda previews ~$0.20 each and minutes ~$0.50 each, only for the
 and dates in `sources/data/recording-minutes-policy.csv`; everything else is free. The
 search-index push uses up to 20,000 of the day's 100,000 D1 writes, so a full
 `sync_d1.py` should not run on the same day as a large refresh.
+
+## The Wednesday sweep
+
+`org.lunenburgbudgetproject.sweep.plist` runs `scripts/weekly_sweep.sh` at 18:00 every
+Wednesday: `sweep_backlog.py` works the agentic backlog four jobs at a time until 22:55,
+five minutes before the plan's weekly reset, and stops the moment the plan refuses. The
+daily caps in `refresh.py` stay small so the week's allowance is there for interactive
+work; the sweep spends what is left rather than letting it lapse.
+
+    cp ops/org.lunenburgbudgetproject.sweep.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/org.lunenburgbudgetproject.sweep.plist
