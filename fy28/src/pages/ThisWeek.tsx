@@ -42,7 +42,8 @@ type Recent = { board: string; board_slug: string; date: string; last_activity: 
   recording: { url: string; uploaded: string; first_seen: string; captions_disabled: boolean } | null
   transcript: { fetched: string } | null
   our_minutes: { url: string; written: string; headline: string; votes: number } | null
-  official_votes: number | null }
+  official_votes: number | null
+  complete: number; complete_of: number; complete_pct: number; missing: string[]; part_of: string | null }
 type WhatsNew = {
   as_of: string
   window_days: number
@@ -63,6 +64,8 @@ function ActivityRow({ a }: { a: Recent }) {
       <div className="flex flex-wrap gap-x-3 gap-y-1 items-baseline">
         <span className="font-semibold"><a className="hover:underline" href={`/boards/${a.board_slug}`}>{a.board}</a></span>
         <span style={{ color: 'var(--text-secondary)' }}>{longDate(a.date)}</span>
+        <span className="text-[11px] tnum" title={`The record of this meeting: ${a.complete} of ${a.complete_of} — the town's listing, agenda, minutes and recording, and our transcript, minutes and reading of its votes.${a.missing.length ? ' Missing: ' + a.missing.join(', ') + '.' : ''}`}
+          style={{ color: a.complete_pct >= 85 ? 'var(--status-good)' : a.complete_pct >= 50 ? 'var(--text-muted)' : 'var(--status-critical)' }}>{a.complete}/{a.complete_of} of the record</span>
         <span className="flex flex-wrap gap-1.5">
           {a.agenda && <a className={chip} style={{ borderColor: 'var(--grid)' }} href={a.agenda.url} target="_blank" rel="noreferrer">agenda</a>}
           {a.minutes && <a className={chip} style={{ borderColor: 'var(--status-good)', color: 'var(--status-good)' }} href={a.minutes.url} target="_blank" rel="noreferrer">town&rsquo;s minutes{typeof a.minutes.days_after_meeting_upper_bound === 'number' ? ` · within ${a.minutes.days_after_meeting_upper_bound} days` : ''}{a.official_votes ? ` · ${a.official_votes} vote${a.official_votes === 1 ? '' : 's'}` : ''}</a>}

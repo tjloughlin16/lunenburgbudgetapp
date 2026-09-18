@@ -151,6 +151,9 @@ def build():
             'our_minutes': {'url': r['our_minutes_url'], 'written': r['our_minutes_written'], 'headline': r['our_minutes_headline'],
                             'votes': int(r['our_votes'] or 0)} if r['transcript_processed'] == '1' else None,
             'official_votes': int(r['official_votes']) if r['official_votes'] else None,
+            'complete': int(r['complete']), 'complete_of': int(r['complete_of']),
+            'complete_pct': int(r['complete_pct']), 'missing': r['missing'].split(),
+            'part_of': r['part_of'] or None,
         })
     recent.sort(key=lambda a: (a['last_activity'], a['date']), reverse=True)
 

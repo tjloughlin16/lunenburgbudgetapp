@@ -44,7 +44,9 @@ a measurable gap; a column nobody added is an invisible one.
     python3 scripts/build_meeting_register.py --check
 """
 import argparse
+import collections
 import csv
+import datetime as dt
 import os
 import re
 import sys
@@ -87,7 +89,26 @@ COLS = ['board', 'board_slug', 'date', 'agenda', 'minutes', 'searchable_docs',
         # means the 48-hour notice was not possible for this file; 48 or more means it
         # was possible and nothing here says it happened.
         'agenda_created', 'agenda_created_hours_before_meeting',
-        'minutes_created', 'minutes_created_days_after_meeting']
+        'minutes_created', 'minutes_created_days_after_meeting',
+        # HOW COMPLETE THE RECORD OF THIS MEETING IS. TJ, 18 September 2026: "we can list
+        # a 'completion' percent per meeting, based on which artifacts are available ...
+        # completion is across all artifacts, towns and ours. not two scores, no."
+        #
+        # SEVEN THINGS, counted once each, whoever made them: the AgendaCenter listing,
+        # the agenda file, the town's minutes, the recording, our transcript of it, our
+        # minutes of it, and the votes read out of the town's minutes. The question the
+        # score answers is a reader's -- how much of this meeting can I get at -- and a
+        # reader does not care whose job each piece was. `complete_of` names the parts so
+        # the number can always be unpacked into which ones are missing.
+        'complete', 'complete_pct', 'complete_of', 'missing',
+        # ONE OCCASION, LISTED TWICE. The AgendaCenter lists "Planning Board Public
+        # Hearing" beside "Planning Board" for the same evening: the hearing is an item
+        # inside the meeting, not a second meeting. 67 of 69 such rows fall on a date
+        # their parent board also met. The row stays -- the town listed it, and a
+        # resident searching for the hearing must find it -- but it names its parent, so
+        # nothing counts the evening twice or marks the hearing short of a recording the
+        # parent's row already has.
+        'part_of']
 STAMPS = os.path.join(ROOT, 'sources', 'data', 'meeting-document-timestamps.csv')
 EVENTS = os.path.join(ROOT, 'sources', 'data', 'meeting-watch-events.csv')
 VIDEO_EVENTS = os.path.join(ROOT, 'sources', 'data', 'youtube-watch-events.csv')
@@ -262,6 +283,9 @@ def build():
         vs = sorted(v)
         ts = tr.get(key, [])
         o, votes = ours.get(key, {}), ov.get(key, {})
+        parts = [('notice', 1 if ((slug, date) in listed or d['agenda']) else 0), ('agenda', d['agenda']),
+                 ('minutes', d['minutes']), ('recording', 1 if v else 0), ('transcript', 1 if ts else 0),
+                 ('our-minutes', 1 if o else 0), ('votes-read', 1 if votes else 0)]
         acts = [x for x in (ea.get('first_seen'), em.get('first_seen'), *(vev.get(i, {}).get('first_seen') for i in vs),
                             *((t.get('fetched_at') or '')[:10] for t in ts), o.get('written')) if x]
         rows.append({
@@ -311,7 +335,17 @@ def build():
             'agenda_created_hours_before_meeting': stamps.get((slug, date, 'agenda'), {}).get('hours_before_meeting', ''),
             'minutes_created': stamps.get((slug, date, 'minutes'), {}).get('created', ''),
             'minutes_created_days_after_meeting': stamps.get((slug, date, 'minutes'), {}).get('days_after_meeting', ''),
+            'complete': sum(1 for _, got in parts if got), 'complete_pct': int(round(100.0 * sum(1 for _, got in parts if got) / len(parts))),
+            'complete_of': len(parts), 'missing': ' '.join(name for name, got in parts if not got),
+            'part_of': '',
         })
+    seen = {(r['board_slug'], r['date']) for r in rows}
+    for r in rows:
+        for suffix in ('-public-hearing', '-meeting'):
+            if r['board_slug'].endswith(suffix):
+                parent = r['board_slug'][:-len(suffix)]
+                if (parent, r['date']) in seen:
+                    r['part_of'] = parent
     return rows, nofolder, nodate, len(overlap)
 
 
@@ -345,6 +379,16 @@ def report(rows, nofolder, nodate, overlap):
     print('  VIDEO ONLY             %6d  %5.1f%%   <- the town filed no agenda or minutes'
           % (vonly, 100.0*vonly/n))
     print('  document, no video     %6d  %5.1f%%' % (novid, 100.0*novid/n))
+    print('\n  how complete the record is, out of 7 (notice, agenda, minutes, recording,')
+    print('  transcript, our minutes, votes read):')
+    own = [r for r in rows if not r['part_of']]
+    dist = collections.Counter(r['complete'] for r in own)
+    for k in sorted(dist, reverse=True):
+        print('    %d of 7  %6d  %5.1f%%' % (k, dist[k], 100.0 * dist[k] / len(own)))
+    print('  (%d occasions; %d more rows are a hearing listed inside one of them)'
+          % (len(own), len(rows) - len(own)))
+    miss = collections.Counter(m for r in own for m in r['missing'].split())
+    print('  most often missing: %s' % ', '.join('%s %d' % (k, v) for k, v in miss.most_common(4)))
     print('\n  %d video board rows have no AgendaCenter folder and cannot join '
           '(Water District, Town Meeting and the rest); %d have no date.'
           % (nofolder, nodate))
