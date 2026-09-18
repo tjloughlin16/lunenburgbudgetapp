@@ -1408,7 +1408,7 @@ def build():
                           'results, and a function line is not a service.',
                 see=[('/what-the-state-requires-us-to-spend',
                       'what the state requires the town to spend'),
-                     ('/health-insurance',
+                     ('/health-insurance-what-it-costs',
                       'the insurance DESE counts here and the school budget does not')],
             ),
             conclusion(

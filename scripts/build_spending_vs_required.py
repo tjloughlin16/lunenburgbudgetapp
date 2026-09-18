@@ -507,7 +507,7 @@ def build():
                       'here separates them.',
             see=[('/what-other-districts-spend',
                   'what districts spend for each pupil, which is a different measure'),
-                 ('/overrides', 'the overrides the town has voted on')],
+                 ('/override', 'the overrides the town has voted on')],
         ),
     ])
 

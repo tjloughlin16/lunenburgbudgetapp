@@ -296,7 +296,7 @@ AREA_ORDER = ['Home', 'Start here', 'How the money moves', 'Reports and analyses
 def sort_key(r):
     crumb = r['route']
     order = {'/': 0, '/crisis': 1, '/solutions': 2, '/straight-answers': 3, '/bend-the-curve': 4,
-             '/what-solved-requires': 5, '/overrides': 6, '/the-situation': 7, '/the-money': 8,
+             '/what-solved-requires': 5, '/override': 6, '/the-situation': 7, '/the-money': 8,
              '/one-big-report': 9}
     return (order.get(crumb, 50), 0 if r['kind'] == 'page' else 1, crumb)
 

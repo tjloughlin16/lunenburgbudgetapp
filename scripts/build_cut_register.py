@@ -878,7 +878,7 @@ def build():
                           'operative and nothing about any individual post. The pairing '
                           'between the two documents is our reading of two different '
                           'wordings, printed here so it can be disagreed with.',
-                see=[('/overrides', 'what this town does with an override'),
+                see=[('/override', 'what this town does with an override'),
                      ('/when-grants-end', 'what happened when the federal money stopped')],
                 allow=('May 2024', 'FY25', '43',),
             ),

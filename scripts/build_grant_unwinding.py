@@ -520,7 +520,7 @@ def build():
                 not_shown='Why FY%d was reported at that level. DESE attributes dollars to a function; '
                           'it does not say where a missing two and a half million was reported instead, '
                           'and this project has not found it.' % (latest - 1),
-                see=[('/health-insurance', 'what health insurance costs the town'),
+                see=[('/health-insurance-what-it-costs', 'what health insurance costs the town'),
                      ('/money-outside-the-budget', 'the insurance appropriated outside the school budget')],
             ),
             conclusion(

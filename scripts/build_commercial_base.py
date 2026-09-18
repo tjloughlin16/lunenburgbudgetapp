@@ -166,7 +166,7 @@ def build():
                   'Averages over FY%d–FY%d and the eleven years before them.' % (recent[0]['fy'], recent[-1]['fy']),
             not_shown='WHAT was built, or where. The file carries a dollar of certified value and no parcel, permit or project. '
                       'Nor whether the pace holds: three years is the whole of the step. And personal property (equipment, utility plant) is inside the non-residential figure with the buildings.',
-            see=[('/commercial-development', 'What commercial growth would have to look like'), ('/try-growth', 'Try it: the growth dials')],
+            see=[('/growth', 'What commercial growth would have to look like'), ('/try-growth', 'Try it: the growth dials')],
         ),
         conclusion(
             id='business-share-of-the-base',
@@ -207,7 +207,7 @@ def build():
                    % (C.usd(first['commercial_industrial']), first['fy'], C.usd(step_from['commercial_industrial']), step_from['fy'], C.usd(last['commercial_industrial']), last['fy']),
             basis='DLS assessed values by class, Lunenburg rows, commercial plus industrial, as printed.',
             not_shown='How much of the step is construction and how much is the assessors revaluing what stood. The new-growth series above is the part that was built; the rest of the step is revaluation, and the two are not reconciled here.',
-            see=[('/commercial-development', 'The report this feeds')],
+            see=[('/growth', 'The report this feeds')],
         ),
     ]
     return dict(

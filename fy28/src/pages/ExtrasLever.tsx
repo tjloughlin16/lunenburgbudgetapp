@@ -44,7 +44,7 @@ export function ExtrasLever() {
           </Insight>
           <Insight n={2} figure={YEARS ? `${YEARS} yr` : 'not 1 yr'}
             headline={YEARS ? <>It buys {YEARS} year{YEARS === 1 ? '' : 's'}. In FY{AFTER.fy} the gap is {usdShort(AFTER.short)} past it, with nothing left outside the classroom to cut.</> : <>It does not buy even one year: {usdShort(AFTER.short)} short in FY{AFTER.fy}, with nothing left outside the classroom to cut.</>}>
-            A cut is permanent and so is its saving, but the saving grows at most with the programmes it removed ({pct(DEFAULT_RATES.other, 0)}) and the gap grows {pct(GAPS[1].growthRate, 1)} a year from a base twenty times larger. The line under the extras is classrooms &mdash; which is <a className="underline" href="/classroom-positions">the next page</a>.
+            A cut is permanent and so is its saving, but the saving grows at most with the programmes it removed ({pct(DEFAULT_RATES.other, 0)}) and the gap grows {pct(GAPS[1].growthRate, 1)} a year from a base twenty times larger. The line under the extras is classrooms &mdash; which is <a className="underline" href="/classrooms">the next page</a>.
           </Insight>
           <Insight n={3} figure={`${E.fte} FTE`}
             headline={<>It is {E.fte} FTE of people &mdash; coaches, advisors, a music teacher &mdash; and {n0(E.items.length)} lines, every one of which has a room of parents.</>}>

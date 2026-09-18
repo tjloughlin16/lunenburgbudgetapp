@@ -116,7 +116,7 @@ export function CommercialDevelopment() {
         </div>
         {d && d.step && (
           <>
-            <Conclusions rows={shortRows} reportUrl="/commercial-development" />
+            <Conclusions rows={shortRows} reportUrl="/growth" />
             <p className="text-sm max-w-3xl mt-3" style={{ color: 'var(--text-secondary)' }}>
               Set beside the plan: the five-year figure above is <strong>{(five.value / d.step.avg_non_residential).toFixed(1)}&times;</strong> the FY{d.step.from_fy}&ndash;FY{d.step.to_fy} pace of non-residential building &mdash; the best three years the state has on record for this town. Real, and the wrong order of magnitude, is a measurement here rather than a slogan.
             </p>

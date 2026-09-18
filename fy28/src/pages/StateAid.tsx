@@ -347,7 +347,7 @@ export function StateAid() {
           It excludes Monty Tech, which is a separate assessment, and it excludes school
           costs the town appropriates elsewhere &mdash; retiree health insurance is{' '}
           <a className="underline" style={{ color: 'var(--series-cost)' }}
-            href="/health-insurance">its own page</a>.</>} />
+            href="/health-insurance-what-it-costs">its own page</a>.</>} />
 
       <Maybe settle={<>The Town&rsquo;s year-end recap beside the Cherry Sheet for the same
         year, which states estimated and actual receipts on one page.</>}>

@@ -175,7 +175,7 @@ def build():
             basis='The same two series, the latest six fiscal years.',
             not_shown='Whether the homes added were bought by families with children who then enrolled elsewhere — Monty Tech, school choice, private school — which would leave enrolment flat with more children in town. '
                       '/where-students-go-instead counts residents educated elsewhere and is the place to look.',
-            see=[('/where-students-go-instead', 'Where Lunenburg’s children go instead'), ('/commercial-development', 'What commercial growth would have to look like')],
+            see=[('/where-students-go-instead', 'Where Lunenburg’s children go instead'), ('/growth', 'What commercial growth would have to look like')],
         ),
     ]
     return dict(

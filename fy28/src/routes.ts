@@ -88,7 +88,7 @@ export const SLUG: Record<Tab, string> = {
   context: 'the-situation',
   why: 'why-it-repeats',
   curve: 'bend-the-curve',
-  override: 'overrides',
+  override: 'override',
   priorities: 'priorities',
   adjust: 'build-your-own-budget',
   // The board of dials. TJ, 16 September 2026, on /development beside /commercial-development:
@@ -178,7 +178,7 @@ export const SLUG: Record<Tab, string> = {
   // the finding — `health-insurance` is what a resident types and what gets read aloud at
   // a meeting. NOT `insurance` on its own: the town's ledger has a liability-insurance
   // department too, and a bare `insurance` would promise both.
-  insurance: 'health-insurance',
+  insurance: 'health-insurance-what-it-costs',
   // Athletics drilled in: both sides of the money, charted. NOT `athletics` -- that tab
   // has meant the DECISION BOARD since long before this page existed, it is cited off
   // this site, and `sports`/`athletic` are already aliases for it. The slug is the
@@ -322,7 +322,7 @@ export const SLUG: Record<Tab, string> = {
   // no alias.
   solutions: 'solutions',
   // The commercial development REPORT. `/try-growth` is the board of dials.
-  growth: 'commercial-development',
+  growth: 'growth',
   // Homes and students: the town keeps adding homes and the schools do not gain children.
   homestudents: 'homes-and-students',
   // THE BOARDS, COMPARED. TJ, 17 September 2026: "more of a general board comparison,
@@ -344,12 +344,12 @@ export const SLUG: Record<Tab, string> = {
   // THE LEVERS: one report per thing the town can actually decide (TJ, 17 September
   // 2026, the first shelf of /reports, "What the town can do"). Each answers what pulling
   // it is worth, who pays, what it does not do. Override and growth were already reports.
-  healthlever: 'health-insurance-what-changing-the-plan-does',
-  freecashlever: 'can-free-cash-fill-the-gap',
-  salarylever: 'what-the-contract-decides',
-  feelever: 'what-fees-can-raise',
-  extraslever: 'cutting-the-extras',
-  positionslever: 'classroom-positions',
+  healthlever: 'health-insurance',
+  freecashlever: 'free-cash-for-schools',
+  salarylever: 'salaries',
+  feelever: 'fees',
+  extraslever: 'extras',
+  positionslever: 'classrooms',
   peers: 'what-other-districts-spend',
   // WHO LIVES HERE, before any argument about what the town should spend. The slug is
   // the phrase people already use for a page of facts about a place -- "Lunenburg by the
@@ -478,7 +478,17 @@ const ALIASES: Record<string, Tab> = {
   fix: 'solutions', options: 'solutions', 'what-to-do': 'solutions',
   development: 'development', 'growth-dials': 'development', 'try-development': 'development',
   growth: 'growth', 'new-growth': 'growth', 'commercial-growth': 'growth', 'grow-our-way-out': 'growth',
-  'health-plan': 'healthlever', 'what-changing-the-health-plan-does': 'healthlever', 'change-the-health-plan': 'healthlever', 'free-cash-gap': 'freecashlever', 'the-contract': 'salarylever', 'salaries': 'salarylever', 'raise-fees': 'feelever', 'extras': 'extraslever', 'positions': 'positionslever', 'cut-classrooms': 'positionslever',
+  'health-plan': 'healthlever', 'what-changing-the-health-plan-does': 'healthlever', 'change-the-health-plan': 'healthlever',
+  'health-insurance-what-changing-the-plan-does': 'healthlever', 'health-insurance-options': 'healthlever',
+  // ONE WORD PER LEVER. TJ, 18 September 2026: "having sentences as page links is not a
+  // good model at all ... I want people to say 'go to lburg.org and go to health insurance
+  // or fees'." So every report on the What the town can do shelf is a noun somebody can
+  // say out loud, and every address these pages have ever had still resolves.
+  overrides: 'override', 'commercial-development': 'growth', 'what-the-contract-decides': 'salarylever',
+  'what-fees-can-raise': 'feelever', 'cutting-the-extras': 'extraslever',
+  'classroom-positions': 'positionslever', 'can-free-cash-fill-the-gap': 'freecashlever',
+  contracts: 'salarylever', raises: 'salarylever', 'the-extras': 'extraslever',
+  classrooms: 'positionslever', 'free-cash-for-schools': 'freecashlever', 'free-cash-gap': 'freecashlever', 'the-contract': 'salarylever', 'salaries': 'salarylever', 'raise-fees': 'feelever', 'extras': 'extraslever', 'positions': 'positionslever', 'cut-classrooms': 'positionslever',
   'youth-soccer': 'youthsports', 'field-rentals': 'youthsports', 'the-leagues': 'youthsports',
   'parks': 'parks', 'parks-and-rec': 'parks', 'recreation': 'parks', 'the-parks': 'parks', 'beach': 'parks',
   'school-finances': 'schoolfinance', 'school-funds': 'schoolfinance', 'every-account': 'accounts', 'funds': 'accounts', 'the-accounts': 'accounts', 'department': 'departments',
@@ -544,7 +554,10 @@ const ALIASES: Record<string, Tab> = {
   // NOT 'retirees' or 'benefits' alone -- the first names only half the page and the
   // second would promise pensions, which are a different assessment in a different
   // department and are NOT established here.
-  'health-insurance': 'insurance', insurance: 'insurance', health: 'insurance',
+  // /health-insurance is the LEVER page (the options, the law, the comparisons); the
+  // cost report keeps its own aliases and is linked from it. TJ, 18 September 2026:
+  // "simplify the page title so people can share it intuitively ... to just /health-insurance".
+  'health-insurance-costs': 'insurance', 'what-health-insurance-costs': 'insurance', insurance: 'insurance', health: 'insurance',
   'retiree-health': 'insurance', 'chapter-32b': 'insurance', 'schrethlth': 'insurance',
   // NOT 'athletics', 'sports' or 'athletic' -- all three already land on the decision
   // board, and a link that has been shared once must keep landing where it landed.
