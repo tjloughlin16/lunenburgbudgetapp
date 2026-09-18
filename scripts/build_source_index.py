@@ -1447,6 +1447,18 @@ GROUPS = [
              'One row per job the pre-reset sweep ran: the stream, the board, the meeting date, '
              'the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed '
              'budget, so this is how much of it the machine reading took.'),
+            ('data/school-field-maintenance.csv',
+             'What the schools say maintaining the fields and grounds costs, FY2024', 2,
+             'Five rows from the Superintendent’s email of September 2026: about $126,000 of all '
+             'fields and grounds work in FY2024 (including playgrounds, irrigation and the '
+             'vehicles that also do snow removal), of which about $29–30,000 is vehicle and '
+             'equipment maintenance, plus $9,500 autumn and $9,200 spring for the landscaper who '
+             'mows the athletic grass fields and $19,400 for summer 2023 field repair. Every row '
+             'is marked `stated`: these are figures a person read back from budget requests, not '
+             'a printout from the books (rule 13a), and the fund’s own FY2024 expenditure is not '
+             'in the archive to check them against. The Superintendent also states the outsourced '
+             'mowing is paid from the Facility Revolving account — fund 1306, where the field '
+             'rent is deposited.'),
             ('data/field-rental-receipts-lysa.csv',
              'Field rental receipts from Lunenburg Youth Soccer, FY2024–FY2026', 2,
              'Seven rows extracted from the district’s workbook: the fiscal year as the '

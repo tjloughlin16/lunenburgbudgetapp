@@ -718,6 +718,7 @@ apply it now.
 
 ### What we assumed, and what would settle it
 
+- And the panel may not touch the SPLIT at all: §21(f) says it “shall not impose any change to contribution ratios.” The 2011 reform moved plan design out of bargaining and left who pays what share inside it, under c.150E and the town’s §19 agreement.
 - The Town, not the school district, controls the insurance group. The schools cannot change this on their own.
 - Contribution splits are bargained with each union. A shift is a pay cut in everything but name, to staff who have already absorbed position reductions.
 - Enrollment by plan and tier is not published. The figures here move with the counts you set, and should be replaced with real ones before anybody relies on them.

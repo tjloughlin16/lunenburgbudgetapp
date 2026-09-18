@@ -44,8 +44,19 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'youth-sports.json')
 FUNDS = {1306: 'School Facilities Use Revolving', 1545: 'Artificial Turf Revolving', 1500: 'Park Revolving', 1301: 'Chapter 658 (athletics) Revolving'}
 # The leagues the town's own Parks Commission page lists as "Local Sports Organization
 # Contacts ... provided as a courtesy and are not run or managed by the Parks Commission".
+# WHAT THIS LIST IS, AND WHAT IT IS NOT. TJ, 18 September 2026: "'Four leagues use the
+# fields' how do you know?!" -- we did not, and the page said it anyway. The town's Parks
+# Commission page prints these four under "Local Sports Organization Contacts" with its own
+# disclaimer beside them: "Organization contacts are provided as a courtesy and are not run
+# or managed by the Parks Commission." It is a contact list. It does not say who rents a
+# field, who pays for one, or that this is all of them -- and one of the four is a
+# basketball programme. Rule 13: quote the source, never your reading of it.
 LEAGUES = ['Ayer-Shirley-Lunenburg Bengals', 'Lunenburg Little League (Baseball and Softball)',
            'Lunenburg Youth Soccer Association', 'Lunenburg Jr Basketball']
+LEAGUES_BASIS = ('the Parks Commission’s own page, under “Local Sports Organization Contacts”, '
+                 'which says they “are provided as a courtesy and are not run or managed by the '
+                 'Parks Commission”')
+MAINT = os.path.join(ROOT, 'sources', 'data', 'school-field-maintenance.csv')
 # What was said, on the record, about the arrangement -- the video at its second.
 SAID = [
     dict(board='Select Board', date='2016-05-03', video='Lj-VhDQJaDM', t=5765,
@@ -179,6 +190,9 @@ def build():
     funds_total_in = sum(funds[k]['revenue'] for k in (1306, 1545, 1500, 1301))
     funds_total_held = sum(funds[k]['available'] for k in (1306, 1545, 1500, 1301))
     funds_total_out = sum(funds[k]['expenditure'] for k in (1306, 1545, 1500, 1301))
+    maint = [r for r in csv.DictReader(open(MAINT, encoding='utf-8'))]
+    maint_total = next(float(r['amount']) for r in maint if r['item'].startswith('All fields'))
+    maint_landscaper = sum(float(r['amount']) for r in maint if r['item'].startswith('Landscaper'))
     rows = [
         conclusion(
             id='the-funds',
@@ -218,25 +232,51 @@ def build():
                    % (C.usd(f1306['revenue']), C.usd(f1306['expenditure']), C.usd(f1306['available']), C.usd(latest['carried'] or 0), C.usd(f1306['opening'])),
             basis='The FY26 special-revenue report for the current year; sources/data/special-revenue-funds.csv for the annual-report series, which is transcribed and does not tie to its own printed totals.',
             not_shown='What the %s was spent on, and what a field costs the town to keep. Grounds, custodial and utility costs are coded to no programme.' % C.usd(f1306['expenditure']),
-            see=[('/parks-and-recreation', 'Parks and Recreation — the department, its fund, its grounds')],
+            # Parks and the schools run separate fields, separate funds and separate
+            # grounds contracts -- TJ, 18 September 2026: "Parks has ZERO overlap with the
+            # schools." Nothing here compares them, and the page does not link as though
+            # it were a comparison.
+            see=[('/accounts', 'Every account, once')],
             allow=('1306', 'FY2026', 'FY2011', 'FY2025', '2026', '2024', '30'),
         ),
         conclusion(
             id='who-uses-the-fields',
-            claim='Four youth leagues use the fields; one league’s payments are the only ones we hold records for.',
-            so_what='%s of receipts, FY2024–FY2026, by records request. What the others pay is published nowhere.'
+            claim='Nobody publishes who rents the fields. One user group’s payments are in the archive.',
+            so_what='%s of receipts, FY2024–FY2026, by records request. The town lists four clubs as contacts, not as renters.'
                     % C.usd(total),
-            figures={'paid': figure(total, C.usd(total), 'in receipts from the one league whose payments the archive holds'),
+            figures={'paid': figure(total, C.usd(total), 'in receipts from the one user group whose payments the archive holds'),
                      'n': figure(len(rec), C.num(len(rec)))},
             figure='paid', kind='measured', bearing='sizes',
-            detail='The leagues that use town and school fields are %s. What any of them pays is published nowhere. A records request to the district produced one '
-                   'league’s receipts — Lunenburg Youth Soccer, %s across %s payments, FY2024 to FY2026 — and that is a start rather than a finding about that league: '
-                   'it is the one we asked for first. The same request to the town and the district for every user group would make this a comparison instead of a sample.'
-                   % (', '.join(LEAGUES), C.usd(total), C.num(len(rec))),
-            basis='sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx, every row; the leagues as the town’s own Parks Commission page lists them.',
-            not_shown='What every other league pays, and on what terms. One league’s receipts cannot say whether the arrangement is the same for all of them, and nothing here suggests it is not.',
+            detail='No list of who uses the town’s and the schools’ fields is published anywhere. The nearest thing is %s: %s. That is a contact list — it does not say '
+                   'who rents a field, on what terms, or that these are all of them, and one of the four is a basketball programme. What the archive does hold is one group’s '
+                   'receipts, %s across %s payments, FY2024 to FY2026, produced by a records request to the district. It is the group we asked for first, and nothing here is '
+                   'a finding about that group as against any other.'
+                   % (LEAGUES_BASIS, ', '.join(LEAGUES), C.usd(total), C.num(len(rec))),
+            basis='sources/town-supplementary/docs/board-283-parks-commission.html for the contact list and its disclaimer; sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx for the receipts.',
+            not_shown='Who else rents a field and what they pay. The fund’s journal would list every payer; the archive holds it for fund 1301 and not for 1306.',
             see=[('/what-sports-cost', 'What school sports cost, and who pays')],
-            allow=('FY2024', 'FY2026', '2026', '1306') + tuple(LEAGUES),
+            allow=('FY2024', 'FY2026', '2026', '1306', '1301', '283') + tuple(LEAGUES),
+        ),
+        conclusion(
+            id='what-the-fund-pays-for',
+            claim='The schools mow the grass fields from the same fund the rent goes into.',
+            so_what='%s of landscaping in FY2024, about %s of all grounds work — his figures, not the ledger’s.'
+                    % (C.usd(maint_landscaper), C.usd(maint_total)),
+            figures={'landscaper': figure(maint_landscaper, C.usd(maint_landscaper), 'of outsourced mowing and field repair the Superintendent states for FY2024'),
+                     'total': figure(maint_total, C.usd(maint_total)),
+                     'fall': figure(9500, C.usd(9500)), 'spring': figure(9200, C.usd(9200)), 'summer': figure(19400, C.usd(19400))},
+            figure='landscaper', kind='measured', bearing='sizes',
+            detail='Asked what maintaining the school fields costs, the Superintendent wrote that the district outsources maintenance of the grass playing fields and '
+                   '“we have covered that expense from the Facility Revolving account. That is the account that field rental fees are deposited into” — fund 1306. The '
+                   'landscaper was %s in the autumn, %s in the spring and %s for summer repair in 2023, with no field repair in summer 2024; all fields and grounds work '
+                   'came to about %s in FY2024, including playgrounds, irrigation and the vehicles that also do snow removal. '
+                   'RULE 13a: this is an email, not a printout from the books. Every figure is the district’s statement of its own costs and none of it has been '
+                   'confirmed against the ledger — which the fund’s journal would do, and which is now a registered gap.'
+                   % (C.usd(9500), C.usd(9200), C.usd(19400), C.usd(maint_total)),
+            basis='sources/correspondence/2026-09-18-school-field-maintenance-superintendent.txt, quoted; the figures extracted to sources/data/school-field-maintenance.csv, every row marked `stated`.',
+            not_shown='Whether the books agree. The amounts are read back from FY24 budget requests by the person who holds them, and the fund’s own expenditure for FY2024 is not in the archive.',
+            see=[('/accounts', 'Every account, once')],
+            allow=('1306', 'FY2024', '2023', '2024', '13'),
         ),
         conclusion(
             id='the-turf-fund',
@@ -264,6 +304,8 @@ def build():
         receipts=rec, receipts_total=round(total, 2), receipts_by_fy=by_fy,
         series=ser, series_peak=dict(fy=peak['fy'], receipts=peak['receipts']), series_latest=latest,
         said=SAID,
+        leagues_basis=LEAGUES_BASIS,
+        maintenance=maint,
         sources=sources(),
         not_established=[
             'Who else pays into fund 1306, and how much: the fund’s journal detail (the report the archive holds for fund 1301) would list every receipt by payer.',

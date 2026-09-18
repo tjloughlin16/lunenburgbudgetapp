@@ -113,17 +113,17 @@
    "not_shown": "What the $12,354 was spent on, and what a field costs the town to keep. Grounds, custodial and utility costs are coded to no programme.",
    "see": [
     {
-     "label": "Parks and Recreation \u2014 the department, its fund, its grounds",
-     "slug": "/parks-and-recreation"
+     "label": "Every account, once",
+     "slug": "/accounts"
     }
    ],
    "so_what": "$12,354 went out; the fund holds $71,559, which the schools may spend on facilities without a vote."
   },
   {
-   "basis": "sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx, every row; the leagues as the town\u2019s own Parks Commission page lists them.",
+   "basis": "sources/town-supplementary/docs/board-283-parks-commission.html for the contact list and its disclaimer; sources/town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx for the receipts.",
    "bearing": "sizes",
-   "claim": "Four youth leagues use the fields; one league\u2019s payments are the only ones we hold records for.",
-   "detail": "The leagues that use town and school fields are Ayer-Shirley-Lunenburg Bengals, Lunenburg Little League (Baseball and Softball), Lunenburg Youth Soccer Association, Lunenburg Jr Basketball. What any of them pays is published nowhere. A records request to the district produced one league\u2019s receipts \u2014 Lunenburg Youth Soccer, $39,074 across 7 payments, FY2024 to FY2026 \u2014 and that is a start rather than a finding about that league: it is the one we asked for first. The same request to the town and the district for every user group would make this a comparison instead of a sample.",
+   "claim": "Nobody publishes who rents the fields. One user group\u2019s payments are in the archive.",
+   "detail": "No list of who uses the town\u2019s and the schools\u2019 fields is published anywhere. The nearest thing is the Parks Commission\u2019s own page, under \u201cLocal Sports Organization Contacts\u201d, which says they \u201care provided as a courtesy and are not run or managed by the Parks Commission\u201d: Ayer-Shirley-Lunenburg Bengals, Lunenburg Little League (Baseball and Softball), Lunenburg Youth Soccer Association, Lunenburg Jr Basketball. That is a contact list \u2014 it does not say who rents a field, on what terms, or that these are all of them, and one of the four is a basketball programme. What the archive does hold is one group\u2019s receipts, $39,074 across 7 payments, FY2024 to FY2026, produced by a records request to the district. It is the group we asked for first, and nothing here is a finding about that group as against any other.",
    "figure": "paid",
    "figures": {
     "n": {
@@ -133,7 +133,7 @@
     },
     "paid": {
      "text": "$39,074",
-     "unit": "in receipts from the one league whose payments the archive holds",
+     "unit": "in receipts from the one user group whose payments the archive holds",
      "value": 39073.5
     }
    },
@@ -144,19 +144,72 @@
     "FY2026",
     "2026",
     "1306",
+    "1301",
+    "283",
     "Ayer-Shirley-Lunenburg Bengals",
     "Lunenburg Little League (Baseball and Softball)",
     "Lunenburg Youth Soccer Association",
     "Lunenburg Jr Basketball"
    ],
-   "not_shown": "What every other league pays, and on what terms. One league\u2019s receipts cannot say whether the arrangement is the same for all of them, and nothing here suggests it is not.",
+   "not_shown": "Who else rents a field and what they pay. The fund\u2019s journal would list every payer; the archive holds it for fund 1301 and not for 1306.",
    "see": [
     {
      "label": "What school sports cost, and who pays",
      "slug": "/what-sports-cost"
     }
    ],
-   "so_what": "$39,074 of receipts, FY2024\u2013FY2026, by records request. What the others pay is published nowhere."
+   "so_what": "$39,074 of receipts, FY2024\u2013FY2026, by records request. The town lists four clubs as contacts, not as renters."
+  },
+  {
+   "basis": "sources/correspondence/2026-09-18-school-field-maintenance-superintendent.txt, quoted; the figures extracted to sources/data/school-field-maintenance.csv, every row marked `stated`.",
+   "bearing": "sizes",
+   "claim": "The schools mow the grass fields from the same fund the rent goes into.",
+   "detail": "Asked what maintaining the school fields costs, the Superintendent wrote that the district outsources maintenance of the grass playing fields and \u201cwe have covered that expense from the Facility Revolving account. That is the account that field rental fees are deposited into\u201d \u2014 fund 1306. The landscaper was $9,500 in the autumn, $9,200 in the spring and $19,400 for summer repair in 2023, with no field repair in summer 2024; all fields and grounds work came to about $126,000 in FY2024, including playgrounds, irrigation and the vehicles that also do snow removal. RULE 13a: this is an email, not a printout from the books. Every figure is the district\u2019s statement of its own costs and none of it has been confirmed against the ledger \u2014 which the fund\u2019s journal would do, and which is now a registered gap.",
+   "figure": "landscaper",
+   "figures": {
+    "fall": {
+     "text": "$9,500",
+     "unit": "",
+     "value": 9500
+    },
+    "landscaper": {
+     "text": "$38,100",
+     "unit": "of outsourced mowing and field repair the Superintendent states for FY2024",
+     "value": 38100.0
+    },
+    "spring": {
+     "text": "$9,200",
+     "unit": "",
+     "value": 9200
+    },
+    "summer": {
+     "text": "$19,400",
+     "unit": "",
+     "value": 19400
+    },
+    "total": {
+     "text": "$126,000",
+     "unit": "",
+     "value": 126000.0
+    }
+   },
+   "id": "what-the-fund-pays-for",
+   "kind": "measured",
+   "literals": [
+    "1306",
+    "FY2024",
+    "2023",
+    "2024",
+    "13"
+   ],
+   "not_shown": "Whether the books agree. The amounts are read back from FY24 budget requests by the person who holds them, and the fund\u2019s own expenditure for FY2024 is not in the archive.",
+   "see": [
+    {
+     "label": "Every account, once",
+     "slug": "/accounts"
+    }
+   ],
+   "so_what": "$38,100 of landscaping in FY2024, about $126,000 of all grounds work \u2014 his figures, not the ledger\u2019s."
   },
   {
    "basis": "The same FY26 report, the row for fund 1545; the Select Board recording of 3 May 2016 at 5,765 seconds, machine captions.",
@@ -248,6 +301,54 @@
   "Lunenburg Little League (Baseball and Softball)",
   "Lunenburg Youth Soccer Association",
   "Lunenburg Jr Basketball"
+ ],
+ "leagues_basis": "the Parks Commission\u2019s own page, under \u201cLocal Sports Organization Contacts\u201d, which says they \u201care provided as a courtesy and are not run or managed by the Parks Commission\u201d",
+ "maintenance": [
+  {
+   "amount": "126000",
+   "approximate": "yes",
+   "basis": "stated",
+   "fy": "2024",
+   "item": "All fields and grounds maintenance",
+   "note": "Read back by the Superintendent from FY24 budget requests broken out by the Director of Facilities & Grounds: mulch, line paint, fertilizer, seed, loam, field maintenance, playground repair, irrigation programming and repair, equipment repair, and vehicle maintenance and repair",
+   "source": "sources/correspondence/2026-09-18-school-field-maintenance-superintendent.txt"
+  },
+  {
+   "amount": "29500",
+   "approximate": "yes",
+   "basis": "stated",
+   "fy": "2024",
+   "item": "Of that: vehicle and equipment maintenance and repair",
+   "note": "Stated as approximately $29-30,000 a year and already inside the $126,000. It also supports snow removal, so it is not a fields-only cost",
+   "source": "sources/correspondence/2026-09-18-school-field-maintenance-superintendent.txt"
+  },
+  {
+   "amount": "9500",
+   "approximate": "no",
+   "basis": "stated",
+   "fy": "2024",
+   "item": "Landscaper, mowing the athletic grass fields, autumn",
+   "note": "Outsourced; the Superintendent states this is paid from the Facility Revolving account, which is fund 1306",
+   "source": "sources/correspondence/2026-09-18-school-field-maintenance-superintendent.txt"
+  },
+  {
+   "amount": "9200",
+   "approximate": "no",
+   "basis": "stated",
+   "fy": "2024",
+   "item": "Landscaper, mowing the athletic grass fields, spring",
+   "note": "Outsourced; the Superintendent states this is paid from the Facility Revolving account, which is fund 1306",
+   "source": "sources/correspondence/2026-09-18-school-field-maintenance-superintendent.txt"
+  },
+  {
+   "amount": "19400",
+   "approximate": "no",
+   "basis": "stated",
+   "fy": "2023",
+   "item": "Landscaper, summer field repair",
+   "note": "Summer 2023. The Superintendent states no field repair was done in summer 2024",
+   "source": "sources/correspondence/2026-09-18-school-field-maintenance-superintendent.txt"
+  }
  ],
  "not_established": [
   "Who else pays into fund 1306, and how much: the fund\u2019s journal detail (the report the archive holds for fund 1301) would list every receipt by payer.",

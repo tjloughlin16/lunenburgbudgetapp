@@ -1545,9 +1545,9 @@
      "stars": 3,
      "what": "The method document. Every figure this project publishes, with its inputs, the formula, a worked example in real dollars, and — beside each one — whether it is somebody else’s figure, a contract, a statute, our measurement or our assumption. Fifteen sections: the projection itself, why each escalator is what it is, special education, out-of-district tuition, health insurance, free cash, athletic fees, the levers, the cut cascade, the tax base and overrides, an assumption register ranked by what each one moves, and what none of it can compute. GENERATED from the live model by scripts/build_show_your_work.py, so it cannot drift from the code — run it with --check to prove the copy you are reading is current. Written to be usable by an assistant checking a number as well as by a resident following the argument.",
      "kind": "Notes",
-     "bytes": 95621,
+     "bytes": 95881,
      "url": "/docs/analyses/show-your-work.md",
-     "count": 1839,
+     "count": 1840,
      "unit": "lines",
      "textUrl": "/docs/analyses/show-your-work.md"
     },
@@ -2082,9 +2082,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 117490,
+     "bytes": 118100,
      "url": "/docs/data/money-gaps.csv",
-     "count": 136,
+     "count": 137,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3595,6 +3595,18 @@
      "count": 19,
      "unit": "rows",
      "textUrl": "/docs/data/departments.csv"
+    },
+    {
+     "path": "data/school-field-maintenance.csv",
+     "title": "What the schools say maintaining the fields and grounds costs, FY2024",
+     "stars": 2,
+     "what": "Five rows from the Superintendent’s email of September 2026: about $126,000 of all fields and grounds work in FY2024 (including playgrounds, irrigation and the vehicles that also do snow removal), of which about $29–30,000 is vehicle and equipment maintenance, plus $9,500 autumn and $9,200 spring for the landscaper who mows the athletic grass fields and $19,400 for summer 2023 field repair. Every row is marked `stated`: these are figures a person read back from budget requests, not a printout from the books (rule 13a), and the fund’s own FY2024 expenditure is not in the archive to check them against. The Superintendent also states the outsourced mowing is paid from the Facility Revolving account — fund 1306, where the field rent is deposited.",
+     "kind": "Data",
+     "bytes": 1492,
+     "url": "/docs/data/school-field-maintenance.csv",
+     "count": 5,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-field-maintenance.csv"
     },
     {
      "path": "data/budget-threads.csv",
@@ -15744,9 +15756,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1365,
+  "documents": 1366,
   "groups": 22,
-  "bytes": 2171703270,
+  "bytes": 2171705632,
   "loadBearing": 129
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

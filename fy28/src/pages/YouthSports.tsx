@@ -23,11 +23,12 @@ type Fund = { fund: number; name: string; opening: number; revenue: number; sala
 type Receipt = { fy: string; date: string; amount: number; payer: string; munis: string }
 type Year = { fy: number; forward: number | null; receipts: number | null; disbursed: number | null; carried: number | null; status: string; page: number | null }
 type Said = { board: string; date: string; video: string; t: number; what: string }
+type Maint = { fy: string; item: string; amount: string; approximate: string; basis: string; note: string; source: string }
 type Payload = {
   about: string; grain: string; as_of: string; leagues: string[]
   funds: Fund[]; receipts: Receipt[]; receipts_total: number; receipts_by_fy: Record<string, number>
   series: Year[]; series_peak: { fy: number; receipts: number }; series_latest: Year
-  said: Said[]; sources: Source[]; not_established: string[]; conclusions: Conclusion[]
+  said: Said[]; maintenance: Maint[]; leagues_basis: string; sources: Source[]; not_established: string[]; conclusions: Conclusion[]
 }
 const AXIS = { fontSize: 11, fill: 'var(--text-muted)' }
 const hms = (t: number) => `${Math.floor(t / 3600)}:${String(Math.floor((t % 3600) / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}`
@@ -104,7 +105,7 @@ function Report({ d }: { d: Payload }) {
             </table>
           </div>
           <p className="text-sm max-w-3xl mt-3" style={{ color: 'var(--text-secondary)' }}>
-            Fund 1306 is the school department&rsquo;s facilities-use revolving fund; 1545 the turf fund; 1500 the Parks Commission&rsquo;s own revolving fund; 1301 the athletics fund whose full cash journal the archive holds &mdash; and which carries no receipt from any youth league, which is how the search for these payments started.
+            Fund 1306 is the school department&rsquo;s facilities-use revolving fund; 1545 the turf fund; 1500 the Parks Commission&rsquo;s own revolving fund, which runs separate fields on a separate contract and is here only because it is the other field money in town; 1301 the athletics fund whose full cash journal the archive holds &mdash; and which carries no receipt from any youth league, which is how the search for these payments started.
           </p>
 
           <H2 id="years">The facilities-use fund, FY2011 to FY2024, as the annual reports print it</H2>
@@ -137,6 +138,24 @@ function Report({ d }: { d: Payload }) {
             </table>
           </div>
 
+          <H2 id="maintenance">What the fund pays for, as the district describes it</H2>
+          <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
+            Asked what maintaining the school fields costs, the Superintendent wrote that the district outsources maintenance of the grass playing fields and &ldquo;we have covered that expense from the Facility Revolving account. That is the account that field rental fees are deposited into.&rdquo; <strong>These are her figures, from an email, read back from FY24 budget requests &mdash; not a printout from the books</strong> (rule 13a), and the fund&rsquo;s own FY2024 expenditure is not in the archive to check them against.
+          </p>
+          <div className="overflow-x-auto mt-4">
+            <table className="text-sm" style={{ minWidth: 560 }}>
+              <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+                <th className="text-left py-2 pr-4">year</th><th className="text-left py-2 pr-4">what</th><th className="text-right py-2 pr-4">amount</th><th className="text-left py-2">as stated</th></tr></thead>
+              <tbody>{d.maintenance.map((m, i) => (
+                <tr key={i} style={{ borderTop: '1px solid var(--grid)' }}>
+                  <td className="py-1.5 pr-4 tnum">FY{m.fy}</td>
+                  <td className="py-1.5 pr-4">{m.item}</td>
+                  <td className="py-1.5 pr-4 text-right tnum">{m.approximate === 'yes' ? 'about ' : ''}{usd(Number(m.amount))}</td>
+                  <td className="py-1.5 text-[11.5px]" style={{ color: 'var(--text-muted)' }}>{m.note}</td>
+                </tr>))}</tbody>
+            </table>
+          </div>
+
           <H2 id="said">What the boards have said</H2>
           <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
             From the recordings&rsquo; machine captions &mdash; a finding aid, not a record. Each line opens the video at the moment.
@@ -149,7 +168,7 @@ function Report({ d }: { d: Payload }) {
 
           <H2 id="leagues">The leagues</H2>
           <p className="text-sm max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-            The town&rsquo;s Parks Commission page lists {d.leagues.length}, &ldquo;provided as a courtesy and not run or managed by the Parks Commission&rdquo;: {d.leagues.join('; ')}. Independent organisations that use town and school fields; only one of them has a records-request answer in this archive.
+            The town&rsquo;s Parks Commission page lists {d.leagues.length}, &ldquo;provided as a courtesy and not run or managed by the Parks Commission&rdquo;: {d.leagues.join('; ')}. A contact list, not a list of renters: it does not say who uses a field, on what terms, or that these are all of them &mdash; and one is a basketball programme. Only one of the four has a records-request answer in this archive, and it is the one we asked for first.
           </p>
         </section>
 
