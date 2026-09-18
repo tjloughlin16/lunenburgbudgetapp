@@ -191,6 +191,9 @@ def build():
     funds_total_held = sum(funds[k]['available'] for k in (1306, 1545, 1500, 1301))
     funds_total_out = sum(funds[k]['expenditure'] for k in (1306, 1545, 1500, 1301))
     maint = [r for r in csv.DictReader(open(MAINT, encoding='utf-8'))]
+    fy24_close = latest['carried'] or 0
+    jump = f1306['opening'] - fy24_close
+    best_receipts = max(y['receipts'] or 0 for y in ser)
     maint_total = next(float(r['amount']) for r in maint if r['item'].startswith('All fields'))
     maint_landscaper = sum(float(r['amount']) for r in maint if r['item'].startswith('Landscaper'))
     rows = [
@@ -260,7 +263,7 @@ def build():
         conclusion(
             id='what-the-fund-pays-for',
             claim='The schools mow the grass fields from the same fund the rent goes into.',
-            so_what='%s of landscaping in FY2024, about %s of all grounds work — his figures, not the ledger’s.'
+            so_what='%s of landscaping in FY2024, about %s of all grounds work — her figures, not the ledger’s.'
                     % (C.usd(maint_landscaper), C.usd(maint_total)),
             figures={'landscaper': figure(maint_landscaper, C.usd(maint_landscaper), 'of outsourced mowing and field repair the Superintendent states for FY2024'),
                      'total': figure(maint_total, C.usd(maint_total)),
@@ -277,6 +280,28 @@ def build():
             not_shown='Whether the books agree. The amounts are read back from FY24 budget requests by the person who holds them, and the fund’s own expenditure for FY2024 is not in the archive.',
             see=[('/accounts', 'Every account, once')],
             allow=('1306', 'FY2024', '2023', '2024', '13'),
+        ),
+        conclusion(
+            id='the-fy2025-jump',
+            claim='The fund rose %s in FY2025 — the one year no schedule is published for.' % C.usd(jump),
+            so_what='%s to %s — more than its receipts in any year on record. Rent alone does not explain it.'
+                    % (C.usd(fy24_close), C.usd(f1306['opening'])),
+            figures={'fy24': figure(fy24_close, C.usd(fy24_close), 'in the School Facilities Use fund at 30 June 2024'),
+                     'fy25': figure(f1306['opening'], C.usd(f1306['opening'])),
+                     'jump': figure(jump, C.usd(jump)),
+                     'best': figure(best_receipts, C.usd(best_receipts))},
+            figure='jump', kind='measured', bearing='sizes',
+            detail='TJ, 18 September 2026, on the Superintendent’s statement that the fund pays for mowing: “if they are paying for mowing with that same 1306 account, '
+                   'why hasn’t the amount in it decreased proportionally?” Part of the answer is the calendar — the FY2026 report runs to 31 March, so it holds the autumn '
+                   'mowing and not the spring. The part that is not the calendar is this: the balance rose %s in FY2025, and the most this fund has ever taken in during a '
+                   'single year in the annual reports is %s. Something other than rent went in, or something stopped being charged to it. '
+                   'WHAT THIS DOES NOT ESTABLISH is which — a transfer, a change in what the fund is charged for, and a year of unusually high rent all fit the same two '
+                   'balances, and FY2025 is precisely the year no schedule is published for.'
+                   % (C.usd(jump), C.usd(best_receipts)),
+            basis='The FY2024 annual report’s Special Revenue Fund Balance Detail for fund 1306 (%s at 30 June 2024) and the FY26 MUNIS report’s opening balance for the same fund (%s at 1 July 2025); the receipts series from sources/data/special-revenue-funds.csv, which is transcribed and does not tie to its own printed totals.' % (C.usd(fy24_close), C.usd(f1306['opening'])),
+            not_shown='What went in, and when. The fund’s journal would say in a line; the FY2025 special-revenue report would say in a row.',
+            see=[('/what-we-cannot-answer', 'What the town’s records cannot answer')],
+            allow=('1306', 'FY2025', 'FY2026', 'FY2024', '2024', '2025', '31', '30', '18', '2026'),
         ),
         conclusion(
             id='the-turf-fund',
