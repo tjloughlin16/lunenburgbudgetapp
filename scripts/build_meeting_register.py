@@ -69,12 +69,25 @@ COLS = ['board', 'board_slug', 'date', 'agenda', 'minutes', 'searchable_docs',
         'transcript_paths', 'transcript_fetched',
         'our_minutes_path', 'our_minutes_url', 'our_minutes_written', 'our_minutes_headline', 'our_votes',
         'official_votes_path', 'official_votes', 'last_activity', 'noticed',
-        # THE TWO TIMESTAMPS THE LAW CARES ABOUT (TJ, 18 September 2026): when the notice
-        # and agenda were made, and when the minutes were. From the documents' own
-        # metadata -- scripts/extract_document_timestamps.py -- which is a LOWER bound on
-        # posting, never the posting date. See that script for what a bound can and
-        # cannot support.
-        'agenda_created', 'notice_hours', 'minutes_created', 'minutes_lag_days']
+        # WHEN THE DOCUMENTS WERE MADE -- never when they were posted. From their own
+        # metadata (scripts/extract_document_timestamps.py). The column names say
+        # `created` because TJ, 18 September 2026: "we have to make sure the 'created'
+        # timestamps are labeled that way, not treated as the 'posted' date. they could
+        # have created them way ahead and waited to post, right?" -- yes, and that is
+        # why the bound runs one way only:
+        #
+        #   created EARLY proves nothing. A notice written a week ahead can still be
+        #     posted an hour before the meeting, and nothing in the file would show it.
+        #   created LATE is evidence. A file made 6 hours before the meeting cannot have
+        #     been posted 48 hours before it -- unless an earlier version was posted and
+        #     this one replaced it in place, which the AgendaCenter allows.
+        #
+        # What they DO measure, and it is a real quantity: THE MOST NOTICE THAT WAS
+        # POSSIBLE -- the meeting, minus the moment the file was made. Under 48 hours
+        # means the 48-hour notice was not possible for this file; 48 or more means it
+        # was possible and nothing here says it happened.
+        'agenda_created', 'agenda_created_hours_before_meeting',
+        'minutes_created', 'minutes_created_days_after_meeting']
 STAMPS = os.path.join(ROOT, 'sources', 'data', 'meeting-document-timestamps.csv')
 EVENTS = os.path.join(ROOT, 'sources', 'data', 'meeting-watch-events.csv')
 VIDEO_EVENTS = os.path.join(ROOT, 'sources', 'data', 'youtube-watch-events.csv')
@@ -295,9 +308,9 @@ def build():
             # So this is a list to check, never a finding. `--unnoticed` prints it.
             'noticed': 1 if (slug, date) in listed or d['agenda'] else 0,
             'agenda_created': stamps.get((slug, date, 'agenda'), {}).get('created', ''),
-            'notice_hours': stamps.get((slug, date, 'agenda'), {}).get('hours_before_meeting', ''),
+            'agenda_created_hours_before_meeting': stamps.get((slug, date, 'agenda'), {}).get('hours_before_meeting', ''),
             'minutes_created': stamps.get((slug, date, 'minutes'), {}).get('created', ''),
-            'minutes_lag_days': stamps.get((slug, date, 'minutes'), {}).get('days_after_meeting', ''),
+            'minutes_created_days_after_meeting': stamps.get((slug, date, 'minutes'), {}).get('days_after_meeting', ''),
         })
     return rows, nofolder, nodate, len(overlap)
 

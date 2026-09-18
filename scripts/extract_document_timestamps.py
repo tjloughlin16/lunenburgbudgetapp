@@ -14,12 +14,35 @@ watch was seeded on 8 September 2026. So the two dates that carry legal weight w
 now, unknown for the whole archive.
 
 WHAT A CREATION DATE IS, AND IS NOT (rule 13). `/CreationDate` is when the FILE was made
-on somebody's machine. It is not when the town posted it. It is a LOWER BOUND on posting:
-a document cannot be published before it exists. Our `first_seen` is an UPPER bound. Where
-we hold both, the posting is bracketed; where we hold only the creation date, a document
-made three days before the meeting is CONSISTENT WITH the 48-hour notice and does not
-prove it, and one made after the meeting began proves only that this FILE is later --
-an amended agenda, a re-save, or a scan of a signed copy.
+on somebody's machine. It is NOT when the town posted it, and every column here is named
+`created` for that reason. TJ, 18 September 2026: "they could have created them way ahead
+and waited to post, right?" -- yes. Posting happens at or after creation, so the bound
+runs ONE WAY:
+
+  * made EARLY proves nothing. An agenda written a week ahead can still have gone up an
+    hour before the meeting, and nothing in the file would show it.
+  * made LATE is evidence. A file made six hours before the meeting cannot have been
+    posted forty-eight hours before it -- unless an earlier version was posted and this
+    one replaced it in place, which the AgendaCenter allows and which `resaved` flags.
+
+THE MEASURE THAT IS HONEST, AND IT IS NOT NOTHING. TJ: "but we 'do' know, they didn't
+come anytime BEFORE that for sure ... I think we can use this to measure that 76%, just
+put context to it." Exactly: the file did not exist before it was made, so the notice
+cannot have been up any longer than that. The quantity this dataset measures is therefore
+
+    THE MOST NOTICE THAT WAS POSSIBLE = the meeting, minus the moment the file was made.
+
+An upper bound on a period, from below on a timestamp. It is a real measurement with a
+direction, and it splits every meeting into two named groups rather than one soft one:
+
+  * `at most under 48 h` -- the 48-hour notice was NOT POSSIBLE for this file. Evidence,
+    with one alternative: an earlier file posted and replaced in place (`resaved` flags
+    the ones that were re-saved at all).
+  * `at most 48 h or more` -- timely notice was possible. Not proof that it happened; the
+    town could have made the file a week early and posted it an hour before.
+
+The same asymmetry makes the MINUTES figures the strong ones: minutes made fifty days
+after their meeting were posted at least fifty days after it, whatever else is true.
 
 Two more limits worth stating before anybody quotes a figure from this:
 
@@ -150,13 +173,18 @@ def report(rows):
         ahead = sorted(float(r['hours_before_meeting']) for r in ag)
         n48 = sum(1 for h in ahead if h >= 48)
         late = sum(1 for h in ahead if h < 0)
-        print('  agendas   %5d dated; median %.0f h before the meeting; %d (%.1f%%) made 48 h or more ahead; %d made after it'
-              % (len(ag), ahead[len(ahead) // 2], n48, 100.0 * n48 / len(ag), late))
+        under = sum(1 for h in ahead if 0 <= h < 48)
+        print('  agendas   %5d dated. THE MOST NOTICE THAT WAS POSSIBLE, median %.0f h:'
+              % (len(ag), ahead[len(ahead) // 2]))
+        print('            %d (%.1f%%) could have had 48 h of notice or more — possible, not proven'
+              % (n48, 100.0 * n48 / len(ag)))
+        print('            %d could not: %d made under 48 h ahead, %d made after the meeting began'
+              % (under + late, under, late))
     if mi:
         after = sorted(float(r['days_after_meeting']) for r in mi)
         print('  minutes   %5d dated; median %.0f days after the meeting; %d took more than 30'
               % (len(mi), after[len(after) // 2], sum(1 for d in after if d > 30)))
-    print('  A creation date is a LOWER bound on posting, never the posting date itself.')
+    print('  Created is not posted: this measures the MOST notice that was possible, not the notice given.')
 
 
 def main():
