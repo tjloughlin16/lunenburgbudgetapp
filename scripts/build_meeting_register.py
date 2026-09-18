@@ -237,7 +237,11 @@ def load_artifacts():
         m = json.load(open(f, encoding='utf-8'))
         ours[(m['board_slug'], m['meeting_date'])] = dict(
             path=os.path.relpath(f, ROOT), url='/meeting-minutes/%s/%s-%s' % (m['board_slug'], m['meeting_date'], m['video_id']),
-            written=(m.get('written') or {}).get('at', '')[:10], headline=m.get('headline') or '',
+            written=(m.get('written') or {}).get('at', '')[:10],
+            # The headline lives inside `minutes`, not at the top level: the top-level
+            # key exists on the payload the SITE builds, not on the file.
+            headline=(m.get('minutes') or {}).get('headline') or m.get('headline') or '',
+            summary=(m.get('minutes') or {}).get('summary') or '',
             votes=sum(1 for v in (m.get('minutes') or {}).get('votes') or [] if not v.get('procedural')))
     ov = {}
     for f in glob.glob(os.path.join(VOTES, '*', '*.json')):

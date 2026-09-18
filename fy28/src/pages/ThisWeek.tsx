@@ -56,28 +56,54 @@ type WhatsNew = {
   counts: Record<string, number>
 }
 
-const chip = 'text-[11px] px-1.5 py-0.5 rounded border'
+/** THE ARTIFACT COLUMNS. TJ, 18 September 2026: "align the 'Recent activity' artifacts to
+ *  the right. Show gaps as gaps (grayed out / n/a) but all recording links line up
+ *  vertically." So every row draws the same five slots in the same order, and a slot we
+ *  hold nothing for is drawn muted rather than skipped -- which is what makes the gaps
+ *  legible down the column instead of invisible. */
+const SLOTS = ['agenda', 'minutes', 'recording', 'transcript', 'our minutes'] as const
+const cell = 'block text-[11px] text-center rounded px-1 py-0.5 border whitespace-nowrap'
+
+function Slot({ label, href, title, tone, had }: { label: string; href?: string | null; title?: string; tone?: string; had: boolean }) {
+  const style = had
+    ? { borderColor: tone ?? 'var(--grid)', color: tone ?? 'var(--text-primary)' }
+    : { borderColor: 'transparent', color: 'var(--text-muted)', opacity: 0.55 }
+  return href && had
+    ? <a className={cell} style={style} href={href} title={title} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">{label}</a>
+    : <span className={cell} style={style} title={title}>{had ? label : '—'}</span>
+}
+
 function ActivityRow({ a }: { a: Recent }) {
   const ours = a.our_minutes
   return (
     <li className="card p-3">
-      <div className="flex flex-wrap gap-x-3 gap-y-1 items-baseline">
-        <span className="font-semibold"><a className="hover:underline" href={`/boards/${a.board_slug}`}>{a.board}</a></span>
-        <span style={{ color: 'var(--text-secondary)' }}>{longDate(a.date)}</span>
-        <span className="text-[11px] tnum" title={`The record of this meeting: ${a.complete} of ${a.complete_of} — the town's listing, agenda, minutes and recording, and our transcript, minutes and reading of its votes.${a.missing.length ? ' Missing: ' + a.missing.join(', ') + '.' : ''}`}
-          style={{ color: a.complete_pct >= 85 ? 'var(--status-good)' : a.complete_pct >= 50 ? 'var(--text-muted)' : 'var(--status-critical)' }}>{a.complete}/{a.complete_of} of the record</span>
-        <span className="flex flex-wrap gap-1.5">
-          {a.agenda && <a className={chip} style={{ borderColor: 'var(--grid)' }} href={a.agenda.url} target="_blank" rel="noreferrer">agenda</a>}
-          {a.minutes && <a className={chip} style={{ borderColor: 'var(--status-good)', color: 'var(--status-good)' }} href={a.minutes.url} target="_blank" rel="noreferrer">town&rsquo;s minutes{typeof a.minutes.days_after_meeting_upper_bound === 'number' ? ` · within ${a.minutes.days_after_meeting_upper_bound} days` : ''}{a.official_votes ? ` · ${a.official_votes} vote${a.official_votes === 1 ? '' : 's'}` : ''}</a>}
-          {a.recording && <a className={chip} style={{ borderColor: 'var(--series-revenue, #b5540f)', color: 'var(--series-revenue, #b5540f)' }} href={a.recording.url} target="_blank" rel="noreferrer">&#9654; recording{a.recording.captions_disabled ? ' · captions off' : ''}</a>}
-          {a.transcript && !ours && <span className={chip} style={{ borderColor: 'var(--grid)', color: 'var(--text-muted)' }}>transcript · minutes pending</span>}
-          {ours && <a className={chip} style={{ borderColor: 'var(--series-cost)', color: 'var(--series-cost)' }} href={ours.url}>our minutes{ours.votes ? ` · ${ours.votes} vote${ours.votes === 1 ? '' : 's'}` : ''}</a>}
-          {!a.minutes && !a.recording && !ours && <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>agenda only so far</span>}
-        </span>
+      <div className="sm:flex sm:items-start sm:gap-4">
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap gap-x-3 items-baseline">
+            <a className="font-semibold hover:underline" href={`/boards/${a.board_slug}`}>{a.board}</a>
+            <span style={{ color: 'var(--text-secondary)' }}>{longDate(a.date)}</span>
+            <span className="text-[11px] tnum" title={`The record of this meeting: ${a.complete} of ${a.complete_of} — the town's listing, agenda, minutes and recording, and our transcript, minutes and reading of its votes.${a.missing.length ? ' Missing: ' + a.missing.join(', ') + '.' : ''}`}
+              style={{ color: a.complete_pct >= 85 ? 'var(--status-good)' : a.complete_pct >= 50 ? 'var(--text-muted)' : 'var(--status-critical)' }}>{a.complete}/{a.complete_of} of the record</span>
+          </div>
+          {/* THE SUMMARY TITLE, where our minutes exist: what the meeting did, on the row. */}
+          {ours && ours.headline && (
+            <p className="text-[13.5px] mt-1 leading-snug">{ours.headline}{' '}
+              <a className="text-[11.5px] underline" style={{ color: 'var(--text-muted)' }} href={ours.url}>our minutes{ours.votes ? ` · ${ours.votes} vote${ours.votes === 1 ? '' : 's'}` : ''}</a></p>
+          )}
+        </div>
+        {/* Right, and the same five slots on every row so the eye can run down a column. */}
+        <div className="grid grid-cols-5 gap-1 mt-2 sm:mt-0 sm:w-[21rem] sm:shrink-0">
+          <Slot label="agenda" had={Boolean(a.agenda)} href={a.agenda?.url} title={a.agenda ? 'The agenda the town posted' : 'No agenda in the town’s listing'} />
+          <Slot label={a.minutes?.days_after_meeting_upper_bound != null ? `${a.minutes.days_after_meeting_upper_bound}d` : 'minutes'} had={Boolean(a.minutes)} href={a.minutes?.url} tone="var(--status-good)"
+            title={a.minutes ? `The town’s minutes${a.minutes.days_after_meeting_upper_bound != null ? `, seen within ${a.minutes.days_after_meeting_upper_bound} days of the meeting` : ''}${a.minutes.ocr ? '; read here by OCR' : ''}` : 'The town has posted no minutes for this meeting'} />
+          <Slot label="video" had={Boolean(a.recording)} href={a.recording?.url} tone="var(--series-revenue, #b5540f)"
+            title={a.recording ? (a.recording.captions_disabled ? 'On the town’s channel; captions are disabled' : 'On the town’s channel') : 'This board’s meetings are not recorded'} />
+          <Slot label="captions" had={Boolean(a.transcript)} tone="var(--text-secondary)"
+            title={a.transcript ? 'We hold machine captions of the recording' : 'No captions held'} />
+          <Slot label={ours?.votes ? `${ours.votes} votes` : 'ours'} had={Boolean(ours)} href={ours?.url} tone="var(--series-cost)"
+            title={ours ? 'Our minutes, written from the recording' : 'We have not written minutes for this meeting'} />
+        </div>
       </div>
-      {ours && ours.headline && (
-        <p className="text-sm mt-1.5 font-medium">{ours.headline} <a className="text-xs underline font-normal" style={{ color: 'var(--text-muted)' }} href={ours.url}>read our minutes</a></p>
-      )}
     </li>
   )
 }
@@ -106,7 +132,7 @@ export function ThisWeek() {
       <H2>Select Board, Finance Committee, School Committee</H2>
       <BoardsThisWeek days={14} />
 
-      <H2>Every other board this week</H2>
+      <H2>Upcoming meetings</H2>
       {(() => {
         const three = new Set(THE_THREE.map(t => t[0]))
         const others = week.filter(m => !three.has(m.board_slug))
@@ -137,9 +163,17 @@ export function ThisWeek() {
       <H2>Recent activity</H2>
       {f.recent.meetings.length === 0
         ? <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing posted for a recent meeting in the last {f.recent.window_days} days.</p>
-        : <ol className="space-y-2">
-            {f.recent.meetings.map(a => <ActivityRow key={a.board_slug + a.date} a={a} />)}
-          </ol>}
+        : <>
+            {/* The column labels once, over the list, rather than on every row. */}
+            <div className="hidden sm:flex justify-end mb-1 pr-3">
+              <div className="grid grid-cols-5 gap-1 w-[21rem]">
+                {SLOTS.map(name => <span key={name} className="text-[9.5px] uppercase tracking-wide text-center" style={{ color: 'var(--text-muted)' }}>{name === 'our minutes' ? 'ours' : name}</span>)}
+              </div>
+            </div>
+            <ol className="space-y-2">
+              {f.recent.meetings.map(a => <ActivityRow key={a.board_slug + a.date} a={a} />)}
+            </ol>
+          </>}
       {f.awaiting_minutes.count > 0 && (
         <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>
           {f.awaiting_minutes.count} meetings in the last {f.awaiting_minutes.window_days} days have an agenda and no minutes yet.
