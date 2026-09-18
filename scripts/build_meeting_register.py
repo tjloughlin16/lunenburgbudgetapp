@@ -68,7 +68,14 @@ COLS = ['board', 'board_slug', 'date', 'agenda', 'minutes', 'searchable_docs',
         'video_urls', 'video_uploaded', 'video_first_seen', 'captions_disabled',
         'transcript_paths', 'transcript_fetched',
         'our_minutes_path', 'our_minutes_url', 'our_minutes_written', 'our_minutes_headline', 'our_votes',
-        'official_votes_path', 'official_votes', 'last_activity', 'noticed']
+        'official_votes_path', 'official_votes', 'last_activity', 'noticed',
+        # THE TWO TIMESTAMPS THE LAW CARES ABOUT (TJ, 18 September 2026): when the notice
+        # and agenda were made, and when the minutes were. From the documents' own
+        # metadata -- scripts/extract_document_timestamps.py -- which is a LOWER bound on
+        # posting, never the posting date. See that script for what a bound can and
+        # cannot support.
+        'agenda_created', 'notice_hours', 'minutes_created', 'minutes_lag_days']
+STAMPS = os.path.join(ROOT, 'sources', 'data', 'meeting-document-timestamps.csv')
 EVENTS = os.path.join(ROOT, 'sources', 'data', 'meeting-watch-events.csv')
 VIDEO_EVENTS = os.path.join(ROOT, 'sources', 'data', 'youtube-watch-events.csv')
 TRANSCRIPTS = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
@@ -224,6 +231,14 @@ def build():
 
     ev, vev, vmeta, nocap, tr, ours, ov = load_artifacts()
     listed = listed_meetings()
+    stamps = {}
+    for r in read(STAMPS):
+        k = (r['board_slug'], r['meeting_date'], r['kind'])
+        cur = stamps.get(k)
+        # The EARLIEST file wins: an amended agenda re-saved the day of the meeting must
+        # not erase the one made a week ahead.
+        if r['created'] and (not cur or r['created'] < cur['created']):
+            stamps[k] = r
     rows = []
     for key in sorted(set(docs) | set(vids)):
         slug, date = key
@@ -279,6 +294,10 @@ def build():
             # recent ones, and the board and date on a video are a MODEL READING A TITLE.
             # So this is a list to check, never a finding. `--unnoticed` prints it.
             'noticed': 1 if (slug, date) in listed or d['agenda'] else 0,
+            'agenda_created': stamps.get((slug, date, 'agenda'), {}).get('created', ''),
+            'notice_hours': stamps.get((slug, date, 'agenda'), {}).get('hours_before_meeting', ''),
+            'minutes_created': stamps.get((slug, date, 'minutes'), {}).get('created', ''),
+            'minutes_lag_days': stamps.get((slug, date, 'minutes'), {}).get('days_after_meeting', ''),
         })
     return rows, nofolder, nodate, len(overlap)
 

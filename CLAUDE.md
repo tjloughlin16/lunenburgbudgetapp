@@ -982,6 +982,9 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/ocr_scanned_minutes.py --limit 40     # scanned minutes read by macOS Vision, newest first; local, free; marked ===OCR=== and never re-extracted over
     python3 scripts/ocr_scanned_minutes.py --check
     python3 scripts/build_agentic_backlog.py              # every machine-reading stream: done and to do, last two years vs older -- notes/generated/AGENTIC-BACKLOG.md
+    python3 scripts/extract_document_timestamps.py        # when each agenda and set of minutes was MADE, from the document's own metadata — a LOWER bound on posting
+    python3 scripts/build_meeting_register.py             # THE MEETING RECORD: one row per board and date, every artifact's address, the two legal timestamps
+    python3 scripts/build_meeting_register.py --unnoticed --since 2025-01-01   # ...meetings the AgendaCenter does not list, to CHECK
     python3 scripts/build_recording_minutes.py            # the /what-was-said payload, from the files
     python3 scripts/build_recording_minutes.py --check    # ...and fail if it is stale
     python3 scripts/build_fund_owners.py --seed           # the ACCOUNT REGISTRY: every measure a held report prints, with an owner

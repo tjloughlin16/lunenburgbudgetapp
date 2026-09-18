@@ -390,6 +390,7 @@ def main():
     # 8. Rebuild everything derived from the above.
     if not a.dry_run:
         # THE ONE MEETING RECORD, before anything that lists meetings reads it.
+        py('extract_document_timestamps.py', '--quiet')
         py('build_meeting_register.py')
         py('build_meeting_feed.py')
         py('build_recording_minutes.py')

@@ -1393,6 +1393,25 @@ GROUPS = [
              '21 rows: seventeen programmes and four membership lines, each with resident '
              'and non-resident counts and amounts, tied to the totals each report prints. '
              'scripts/extract_parks_myrec.py refuses to write if a column stops tying.'),
+            ('data/meeting-document-timestamps.csv',
+             'When each agenda and each set of minutes was MADE, from the document itself', 2,
+             '12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files '
+             'carry, with the hours between a document being made and its meeting, and the days '
+             'between a meeting and its minutes being made. A creation date is a LOWER BOUND on '
+             'posting — a file cannot be published before it exists — and never the posting date, '
+             'which the AgendaCenter does not publish. Written by '
+             'scripts/extract_document_timestamps.py; read into the meeting record.'),
+            ('data/ocr-minutes.csv',
+             'Scanned minutes read by OCR: which, when, and from which bytes', 3,
+             'One row per image-only PDF that scripts/ocr_scanned_minutes.py has read with macOS '
+             'Vision, with the sha256 of the PDF it read and the characters and pages recovered. '
+             'The text files it writes begin ===OCR macOS Vision=== so nothing mistakes a reading '
+             'for an extract.'),
+            ('data/agentic-spend.csv',
+             'What the scripted reading cost, job by job', 3,
+             'One row per job the pre-reset sweep ran: the stream, the board, the meeting date, '
+             'the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed '
+             'budget, so this is how much of it the machine reading took.'),
             ('data/field-rental-receipts-lysa.csv',
              'Field rental receipts from Lunenburg Youth Soccer, FY2024–FY2026', 2,
              'Seven rows extracted from the district’s workbook: the fiscal year as the '

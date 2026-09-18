@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-17",
+ "generated": "2026-09-18",
  "origins": [
   {
    "id": "school",
@@ -2070,9 +2070,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 115921,
+     "bytes": 116576,
      "url": "/docs/data/money-gaps.csv",
-     "count": 133,
+     "count": 134,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -2538,6 +2538,18 @@
      "textUrl": "/docs/data/lunenburg.db"
     },
     {
+     "path": "data/meeting-register.csv",
+     "title": "Every meeting, and what survives of it",
+     "stars": 3,
+     "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
+     "kind": "Data",
+     "bytes": 2713034,
+     "url": "/docs/data/meeting-register.csv",
+     "count": 7032,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-register.csv"
+    },
+    {
      "path": "data/dese-teacher-grade-subject.csv",
      "title": "Teacher FTE by grade band AND subject AND school, SY2008–SY2026",
      "stars": 3,
@@ -2632,18 +2644,6 @@
      "count": 5344,
      "unit": "rows",
      "textUrl": "/docs/data/dese-radar.csv"
-    },
-    {
-     "path": "data/meeting-register.csv",
-     "title": "Every meeting, and what survives of it",
-     "stars": 3,
-     "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
-     "kind": "Data",
-     "bytes": 607275,
-     "url": "/docs/data/meeting-register.csv",
-     "count": 7032,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-register.csv"
     },
     {
      "path": "data/dese-class-size.csv",
@@ -2850,6 +2850,18 @@
      "textUrl": "/docs/data/dls-avg-tax-bill.csv"
     },
     {
+     "path": "data/ocr-minutes.csv",
+     "title": "Scanned minutes read by OCR: which, when, and from which bytes",
+     "stars": 3,
+     "what": "One row per image-only PDF that scripts/ocr_scanned_minutes.py has read with macOS Vision, with the sha256 of the PDF it read and the characters and pages recovered. The text files it writes begin ===OCR macOS Vision=== so nothing mistakes a reading for an extract.",
+     "kind": "Data",
+     "bytes": 61061,
+     "url": "/docs/data/ocr-minutes.csv",
+     "count": 364,
+     "unit": "rows",
+     "textUrl": "/docs/data/ocr-minutes.csv"
+    },
+    {
      "path": "data/athletics-by-sport.csv",
      "title": "Athletics by sport, long form",
      "stars": 3,
@@ -2968,6 +2980,18 @@
      "count": 79,
      "unit": "rows",
      "textUrl": "/docs/data/grants-history.csv"
+    },
+    {
+     "path": "data/agentic-spend.csv",
+     "title": "What the scripted reading cost, job by job",
+     "stars": 3,
+     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
+     "kind": "Data",
+     "bytes": 25853,
+     "url": "/docs/data/agentic-spend.csv",
+     "count": 368,
+     "unit": "rows",
+     "textUrl": "/docs/data/agentic-spend.csv"
     },
     {
      "path": "data/dese-ch70-statewide.csv",
@@ -3209,6 +3233,18 @@
      "count": 28,
      "unit": "rows",
      "textUrl": "/docs/data/total-expenses-history.csv"
+    },
+    {
+     "path": "data/meeting-document-timestamps.csv",
+     "title": "When each agenda and each set of minutes was MADE, from the document itself",
+     "stars": 2,
+     "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
+     "kind": "Data",
+     "bytes": 2555631,
+     "url": "/docs/data/meeting-document-timestamps.csv",
+     "count": 12039,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
     {
      "path": "data/meeting-watch-state.csv",
@@ -15648,10 +15684,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1357,
+  "documents": 1360,
   "groups": 22,
-  "bytes": 2161657472,
-  "loadBearing": 125
+  "bytes": 2166406431,
+  "loadBearing": 127
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
