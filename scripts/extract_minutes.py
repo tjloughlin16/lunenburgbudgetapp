@@ -47,6 +47,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent / 'sources' / 'meetings'
 TEXT = ROOT / 'text'
 scanned, done, failed = [], 0, []
 
+OCR_MARKER = '===OCR'
 SOURCES = ('*.pdf', '*.docx', '*.doc', '*.xlsx')
 by_format = {}
 
@@ -55,6 +56,11 @@ for src in sorted(p for pat in SOURCES for p in ROOT.rglob(pat)):
         continue
     out = TEXT / src.relative_to(ROOT).with_suffix('.txt')
     if out.exists() and out.stat().st_mtime > src.stat().st_mtime:
+        continue
+    # A text file that OCR wrote (scripts/ocr_scanned_minutes.py) is kept: re-extracting
+    # a scan yields nothing and would replace a reading with an empty file. mtimes do not
+    # protect it -- a git checkout in the refresh worktree resets them.
+    if out.exists() and out.read_text(errors='replace').startswith(OCR_MARKER):
         continue
     try:
         if src.suffix == '.pdf':

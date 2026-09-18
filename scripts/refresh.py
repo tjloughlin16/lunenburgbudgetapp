@@ -74,6 +74,7 @@ MAX_MINUTES_PER_RUN = 3
 # The town's own minutes, read for their votes: cheap (a short document, the small model,
 # every quote checked) but 4,600 of them, so newest first and capped, every board.
 MAX_OFFICIAL_VOTES_PER_RUN = 40
+MAX_OCR_PER_RUN = 40             # ~20 minutes of local CPU; nothing charged to the plan
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 RUN_COLS = ['ran_at', 'as_of', 'new_agendas', 'new_minutes', 'new_videos',
@@ -141,11 +142,19 @@ def minutes_targets(rows):
         target = os.path.join(RECORDED, t['board_slug'], '%s-%s.json' % (t['meeting_date'], t['video_id']))
         if not os.path.exists(target):
             out.append(dict(t, priority=int(row.get('priority') or 9)))
-    # PRIORITY, THEN NEWEST FIRST: the three budget boards are cleared before any other
-    # board is touched. TJ, 14 September 2026: "Schedule roughly 2% a week" -- three a
-    # day at the calibrated 0.09% of the weekly allowance per meeting.
-    out.sort(key=lambda t: (t['priority'], t['meeting_date'].replace('-', '') and -int(t['meeting_date'].replace('-', ''))))
+    # THE LAST TWO YEARS FIRST, ACROSS EVERY BOARD; then priority; newest first inside
+    # each. TJ, 17 September 2026: "work them in priority order, newest first. Last 2
+    # years is most important across everything than deeper for more." Three a day at
+    # the calibrated 0.09% of the weekly allowance per meeting.
+    out.sort(key=lambda t: (0 if t['meeting_date'] >= recent_since() else 1, t['priority'], -int(t['meeting_date'].replace('-', ''))))
     return out
+
+
+RECENT_YEARS = 2
+
+
+def recent_since():
+    return (dt.date.today() - dt.timedelta(days=365 * RECENT_YEARS)).isoformat()
 
 
 MEETINGS_INDEX = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
@@ -336,9 +345,14 @@ def main():
         for t in targets[:MAX_MINUTES_PER_RUN]:
             py('write_recording_minutes.py', t['board_slug'], t['meeting_date'], check=False)
 
-    # 7b. THE TOWN'S MINUTES, READ FOR THEIR VOTES -- every board, newest first, capped.
+    # 7b. SCANNED MINUTES, OCR'D -- local, free, about half a minute each; newest first.
+    if not a.dry_run and not a.no_minutes:
+        py('ocr_scanned_minutes.py', '--limit', str(MAX_OCR_PER_RUN), check=False)
+
+    # 7c. THE TOWN'S MINUTES, READ FOR THEIR VOTES -- every board, newest first, capped.
     # build_boards.py joins these with our recording minutes at build time, so the two
-    # records can arrive in either order (TJ, 17 September 2026).
+    # records can arrive in either order (TJ, 17 September 2026). Runs after the OCR so
+    # a scan read today is read for its votes today.
     if not a.dry_run and not a.no_minutes:
         py('extract_official_votes.py', '--limit', str(MAX_OFFICIAL_VOTES_PER_RUN), check=False)
 
@@ -403,6 +417,7 @@ def main():
         py('build_search_index.py', '--quiet')
         py('build_app_metrics.py')
         py('build_sitemap.py')
+        py('build_agentic_backlog.py', check=False)     # where every machine-reading stream stands, notes/generated/AGENTIC-BACKLOG.md
         # 9. The search index to D1 -- the analysis database push is NOT run here.
         if not a.no_push:
             py('sync_search_d1.py', '--limit', str(SEARCH_PUSH_LIMIT), check=False)

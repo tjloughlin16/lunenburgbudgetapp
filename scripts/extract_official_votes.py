@@ -107,6 +107,9 @@ def minutes_files(board=None):
             continue
         out.append(dict(path=p, rel=os.path.relpath(p, ROOT), board_slug=os.path.basename(os.path.dirname(p)),
                         date=m.group(1), docid=m.group(2)))
+    # NEWEST FIRST ACROSS EVERY BOARD, not board by board: the last two years matter more
+    # than any one board's depth (TJ, 17 September 2026).
+    out.sort(key=lambda e: e['date'], reverse=True)
     return out
 
 

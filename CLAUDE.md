@@ -979,6 +979,9 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/reconcile_minutes.py                  # ours against the town's minutes: caption errors resolved, differences flagged
     python3 scripts/extract_official_votes.py --board X   # the votes in the TOWN'S minutes, each with its verbatim quote (claude -p, haiku); joined with ours by build_boards
     python3 scripts/extract_official_votes.py --check     # every quote verbatim in the minutes it came from
+    python3 scripts/ocr_scanned_minutes.py --limit 40     # scanned minutes read by macOS Vision, newest first; local, free; marked ===OCR=== and never re-extracted over
+    python3 scripts/ocr_scanned_minutes.py --check
+    python3 scripts/build_agentic_backlog.py              # every machine-reading stream: done and to do, last two years vs older -- notes/generated/AGENTIC-BACKLOG.md
     python3 scripts/build_recording_minutes.py            # the /what-was-said payload, from the files
     python3 scripts/build_recording_minutes.py --check    # ...and fail if it is stale
     python3 scripts/build_fund_owners.py --seed           # the ACCOUNT REGISTRY: every measure a held report prints, with an owner

@@ -18,7 +18,6 @@ set -u
 # index is written after every fetch, so a restart costs nothing and re-fetches nothing.
 cd "$(dirname "$0")/.."
 
-BOARDS="school-committee select-board finance-committee"
 BATCH=25          # per attempt, then a long pause regardless
 SLEEP=45          # between individual fetches
 COOLDOWN=1800     # first cooldown after a throttled batch; DOUBLES while it stays stuck
@@ -77,36 +76,36 @@ while true; do
   fi
 done
 
-echo "$(date -u +%H:%M:%S)  PHASE 2 — everything else, newest first"
-while true; do
-  progressed=0
-  for b in $BOARDS; do
-    left=$(python3 scripts/fetch_youtube_transcripts.py --board "$b" --status 2>/dev/null \
-           | awk '/video\(s\) in scope/ {print $(NF-1)}')
-    [ -z "${left:-}" ] && left=0
-    if [ "$left" -eq 0 ]; then
-      echo "$(date -u +%H:%M:%S)  $b complete"
-      continue
+# PHASE 2 AND 3 -- THE LAST TWO YEARS ACROSS EVERY BOARD, THEN EVERYTHING. TJ, 17
+# September 2026: "work them in priority order, newest first. Last 2 years is most
+# important across everything than deeper for more." The fetcher is newest-first within a
+# scope, so the scope is what sets the order: first every board since two years ago, then
+# every board without a floor. The 45-second floor in the fetcher holds whatever SLEEP says.
+RECENT=$(python3 -c "import datetime as d; print((d.date.today()-d.timedelta(days=730)).isoformat())")
+for phase in "2 --since $RECENT" "3"; do
+  set -- $phase
+  label=$1; shift
+  scope="$@"
+  echo "$(date -u +%H:%M:%S)  PHASE $label — every board, newest first ${scope:+(since ${scope#--since })}"
+  while true; do
+    left=$(python3 scripts/fetch_youtube_transcripts.py $scope --limit 0 2>/dev/null | awk '/nothing to fetch/ {print 0}')
+    if [ "${left:-}" = "0" ]; then
+      echo "$(date -u +%H:%M:%S)  phase $label complete"
+      break
     fi
-    echo "$(date -u +%H:%M:%S)  $b — $left remaining, taking $BATCH"
-    if python3 scripts/fetch_youtube_transcripts.py --board "$b" \
-         --limit "$BATCH" --sleep "$SLEEP" 2>&1 | tail -20 | grep -q "fetched"; then
-      progressed=1
-    fi
-    # Did that batch actually land anything? A batch that fetched nothing means the
-    # throttle is on, and the right response is to go away for a while.
-    if python3 scripts/fetch_youtube_transcripts.py --board "$b" --status 2>/dev/null \
-         | grep -q "0 fetched"; then
-      echo "$(date -u +%H:%M:%S)  throttled — sleeping ${COOLDOWN}s"
+    before=$(python3 scripts/fetch_youtube_transcripts.py $scope --status 2>/dev/null | awk '/video\(s\) in scope/ {print $(NF-1)}')
+    echo "$(date -u +%H:%M:%S)  ${before:-?} remaining, taking $BATCH"
+    python3 scripts/fetch_youtube_transcripts.py $scope --limit "$BATCH" --sleep "$SLEEP" 2>&1 | tail -3
+    after=$(python3 scripts/fetch_youtube_transcripts.py $scope --status 2>/dev/null | awk '/video\(s\) in scope/ {print $(NF-1)}')
+    if [ "${after:-0}" -ge "${before:-0}" ]; then
+      echo "$(date -u +%H:%M:%S)  no progress — cooling down ${COOLDOWN}s"
       sleep "$COOLDOWN"
+      COOLDOWN=$(( COOLDOWN * 2 ))
+      [ "$COOLDOWN" -gt "$COOLDOWN_MAX" ] && COOLDOWN=$COOLDOWN_MAX
     else
+      COOLDOWN=1800
       sleep "$BETWEEN"
     fi
   done
-  remaining=$(python3 scripts/fetch_youtube_transcripts.py --status 2>/dev/null \
-              | awk '/video\(s\) in scope/ {print $(NF-1)}')
-  if [ "${remaining:-1}" = "0" ]; then
-    echo "$(date -u +%H:%M:%S)  ALL BOARDS COMPLETE"; break
-  fi
-  [ "$progressed" -eq 0 ] && { echo "no progress this cycle; long sleep"; sleep "$COOLDOWN"; }
 done
+echo "$(date -u +%H:%M:%S)  ALL BOARDS COMPLETE"
