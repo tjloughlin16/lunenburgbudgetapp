@@ -128,12 +128,19 @@ export function LeverWorkbench({ gap, vals, setVals, basis, setBasis, showTotal 
                 </span>
               </div>
               <input type="range" min={l.isPercent || l.isLadder ? 0 : (l.current ?? 0)}
-                max={l.max} step={l.step} value={l.isLadder ? taken : v}
+                max={l.legal_max ? Math.min(l.max, l.legal_max) : l.max} step={l.step} value={l.isLadder ? taken : v}
                 aria-label={`${l.name}, ${l.unit}`}
                 onChange={e => setVals({ ...vals,
                   [l.id]: l.isLadder ? ladderMask(Number(e.target.value))
                                      : Number(e.target.value) })}
                 className="w-full" />
+              {/* THE LAW'S CEILING, said out loud under the control that stops at it. */}
+              {l.legal_max && (
+                <p className="text-[11px] mt-1 pl-2 border-l-2" style={{ color: 'var(--text-muted)', borderColor: 'var(--status-critical)' }}>
+                  <strong>The law stops this one.</strong> {l.legal_basis}{' '}
+                  {l.legal_url && <a className="underline" href={l.legal_url} target="_blank" rel="noreferrer">Read the section</a>}
+                </p>
+              )}
               {isFee && (
                 <div className="flex items-start justify-between text-[10px] -mt-0.5"
                   style={{ color: 'var(--text-muted)' }}>
@@ -167,6 +174,13 @@ export function LeverWorkbench({ gap, vals, setVals, basis, setBasis, showTotal 
                 </div>
               )}
 
+              {/* THE LAW'S CEILING, said out loud under the control that stops at it. */}
+              {l.legal_max && (
+                <p className="text-[11px] mt-1 pl-2 border-l-2" style={{ color: 'var(--text-muted)', borderColor: 'var(--status-critical)' }}>
+                  <strong>The law stops this one.</strong> {l.legal_basis}{' '}
+                  {l.legal_url && <a className="underline" href={l.legal_url} target="_blank" rel="noreferrer">Read the section</a>}
+                </p>
+              )}
               {isFee && (
                 <div className="flex items-center gap-2 mt-1.5">
                   <label htmlFor={`b-${l.id}`} className="text-[11px] shrink-0"
@@ -181,6 +195,13 @@ export function LeverWorkbench({ gap, vals, setVals, basis, setBasis, showTotal 
                              color: 'var(--text-primary)' }} />
                 </div>
               )}
+              {/* THE LAW'S CEILING, said out loud under the control that stops at it. */}
+              {l.legal_max && (
+                <p className="text-[11px] mt-1 pl-2 border-l-2" style={{ color: 'var(--text-muted)', borderColor: 'var(--status-critical)' }}>
+                  <strong>The law stops this one.</strong> {l.legal_basis}{' '}
+                  {l.legal_url && <a className="underline" href={l.legal_url} target="_blank" rel="noreferrer">Read the section</a>}
+                </p>
+              )}
               {isFee && (payers[l.id]?.removed ?? 0) > 0 && (
                 <p className="text-[10px] leading-snug mt-1"
                   style={{ color: 'var(--status-serious)' }}>
@@ -191,6 +212,13 @@ export function LeverWorkbench({ gap, vals, setVals, basis, setBasis, showTotal 
 
               {/* Flat break-even: what one participant would pay if the program
                   fully covered itself, ignoring waivers and drop-off. */}
+              {/* THE LAW'S CEILING, said out loud under the control that stops at it. */}
+              {l.legal_max && (
+                <p className="text-[11px] mt-1 pl-2 border-l-2" style={{ color: 'var(--text-muted)', borderColor: 'var(--status-critical)' }}>
+                  <strong>The law stops this one.</strong> {l.legal_basis}{' '}
+                  {l.legal_url && <a className="underline" href={l.legal_url} target="_blank" rel="noreferrer">Read the section</a>}
+                </p>
+              )}
               {isFee && (() => {
                 const pool = poolOf(l)
                 const cap = capOf(l)

@@ -1010,7 +1010,9 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_budget_feed.py --as-of 2026-05-16 --out fy28/public/data/budget-feed-fy27.json   # a season replayed
     python3 scripts/fetch_board_pages.py                  # every board's town page: charter text, members, meetings, Facebook
     python3 scripts/fetch_dls_tax_bills.py                # DLS average single-family tax bill, eleven towns, by script
-    python3 scripts/fetch_dls_property.py                 # DLS assessed value by class and certified new growth, eleven towns, by script
+    python3 scripts/fetch_dls_property.py                 # DLS assessed value by class, certified new growth (eleven towns) and HEALTH INSURANCE spending (all 351), by script
+    python3 scripts/build_health_options.py               # what c.32B lets a town do about health insurance, each option linked to its section, beside every town's spending
+    python3 scripts/build_health_options.py --check
     python3 scripts/build_commercial_base.py             # the commercial base as the state certifies it: size, share, and what was BUILT, with conclusions
     python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing
     python3 scripts/build_no_captions_report.py           # which meeting recordings have captions disabled, with links

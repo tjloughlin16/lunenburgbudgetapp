@@ -552,6 +552,12 @@ GROUPS = [
              'industrial and personal property value, the total, and the residential and CIP '
              'shares. How big the commercial base IS — a revaluation moves it as much as a '
              'building does, so read it with new_growth.xlsx, which is what was added.'),
+            ('state-dls/health-insurance-expenditures.xlsx',
+             'Health insurance expenditures, every municipality, FY2002–FY2026', 3,
+             'DLS Gateway export, fetched by script (fetch_dls_property.py): the whole '
+             'Commonwealth, one figure per town per year, from Schedule A Parts 2 and 6. '
+             'Extracted to data/dls-health-insurance.csv, where the two warnings DLS prints '
+             'about what the figure contains are recorded.'),
             ('state-dls/new_growth.xlsx',
              'New Growth, residential and total, eleven towns, FY2003–FY2026', 3,
              'DLS Gateway export, fetched by script on 16 September 2026 (fetch_dls_property.py). '
@@ -1393,6 +1399,23 @@ GROUPS = [
              '21 rows: seventeen programmes and four membership lines, each with resident '
              'and non-resident counts and amounts, tied to the totals each report prints. '
              'scripts/extract_parks_myrec.py refuses to write if a column stops tying.'),
+            ('data/dls-health-insurance.csv',
+             'What every Massachusetts municipality spends on health insurance, FY2002 onward', 2,
+             '8,775 rows: one dollar figure per municipality per fiscal year, all 351, as filed '
+             'on Schedule A Parts 2 and 6 and published by the Division of Local Services. '
+             'TWO WARNINGS DLS PRINTS ITSELF: for a self-insured town the figure includes the '
+             'employee share, and a town accounting through a trust may have workers’ '
+             'compensation and OPEB inside it — and nothing in the file says which town is '
+             'which, so the LEVEL is not comparable across towns and the growth is. Fetched by '
+             'scripts/fetch_dls_property.py.'),
+            ('data/health-insurance-law.csv',
+             'What Massachusetts law lets a town do about health insurance, and what it forbids', 2,
+             'Eleven rows, one per option: the section of M.G.L. c.32B that permits or forbids '
+             'it, who decides, the threshold, who the change lands on, and a link to the statute '
+             'so a reader can check the sentence. Four of the eleven are things no town may do — '
+             'cutting the employer share below 50%, changing the split through the 2011 plan-'
+             'design process, revoking coverage, dropping retirees. The research behind it is '
+             'notes/findings/MA-MUNICIPAL-HEALTH-INSURANCE.md.'),
             ('data/meeting-document-timestamps.csv',
              'When each agenda and each set of minutes was MADE, from the document itself', 2,
              '12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files '

@@ -175,18 +175,40 @@ LEVERS = [
       unit='employee share of the premium', max=40, step=1, default=25,
       current=25, isPercentPoint=True, basis=5_331_280,
       cap=5_331_280 * 0.15 * 0.75,
-      # M.G.L. c.32B §§21-23 requires 25% of first-year savings back to employees as
-      # mitigation, so the district keeps only three quarters of the shift. The health
-      # panel already applied this; this lever did not, and the two disagreed by 25%.
+      # THE LAW SETS A HARD FLOOR AND THE SLIDER MUST NOT CROSS IT. M.G.L. c.32B §7 fixes
+      # the town's share at 50% and §7A permits "more, but not less, than fifty per cent":
+      # there is no lawful configuration in which employees pay more than half. TJ, 18
+      # September 2026: "we cannot break the law or let people and need to tell them why
+      # it can't go below that." So the ceiling is declared here, with the section that
+      # imposes it, and the app refuses to model past it rather than quietly clamping.
+      legal_max=50,
+      legal_basis='M.G.L. c.32B §7 fixes the town’s share at 50%, and §7A permits paying '
+                  '“more, but not less, than fifty per cent.” An employee share above 50% '
+                  'is not a choice the town declined to make; it is one no town may make.',
+      legal_url='https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section7A',
+      # AND THE ROUTE IS BARGAINING, NOT THE 2011 REFORM. §21(f): "The panel shall not
+      # impose any change to contribution ratios." The plan-design process moves copays
+      # and deductibles; the SPLIT stays at the table under c.150E and the town's §19
+      # Public Employee Committee agreement. The 25% mitigation rule belongs to plan
+      # design, so it does not attach to this lever by statute -- it is kept as OUR
+      # assumption about what a PEC would extract for agreeing, and labelled as one.
       mitigation=0.75,
+      mitigation_basis='assumption, not statute: §21(f)’s 25% mitigation cap governs plan '
+                       'design, and a contribution-ratio change is bargained instead. We '
+                       'assume a quarter of the first year’s saving is conceded at the '
+                       'table, which is what the 25% looks like in practice.',
       what='The Town pays 75% of the premium and the employee 25%. Every point shifted to '
-           'employees moves about $53,300 of premium — but 25% of first-year savings must '
-           'go back to employees as mitigation, so the district keeps roughly $40,000 a '
-           'point. It costs a family on the broadest plan about $440 a year.',
-      caveat='This is a pay cut in everything but name. Plan design changes go through the '
-             'Public Employee Committee under M.G.L. c.32B §§21-23 and 25% of first-year '
-             'savings must go back to employees as mitigation. The Town, not the district, '
-             'controls the insurance group. Multi-year, and bargained.',
+           'employees moves about $53,300 of premium; we assume a quarter of the first '
+           'year’s saving is conceded back at the table, so the district keeps roughly '
+           '$40,000 a point. It costs a family on the broadest plan about $440 a year. '
+           'The employee share cannot lawfully pass 50%.',
+      caveat='This is a pay cut in everything but name, and it is BARGAINED — not a '
+             'decision the Select Board or Town Meeting can take. The 2011 municipal '
+             'health reform (c.32B §§21-23) moved plan design out of bargaining and '
+             'expressly left the split in it: §21(f) says the review panel “shall not '
+             'impose any change to contribution ratios.” So this lever runs through the '
+             'Public Employee Committee and the unions under c.150E, multi-year, and the '
+             'Town rather than the district controls the insurance group.',
       benchmark='Health insurance rose 8–14% across every neighboring district in FY27; '
                 'Lunenburg premiums rose 5.38% for FY27'),
 

@@ -1,0 +1,3612 @@
+{
+ "about": "What Massachusetts law lets a town do about health insurance, what each option costs somebody, and what every municipality in the Commonwealth has spent since FY2002.",
+ "can": [
+  "plan-design",
+  "join-gic-agreement",
+  "join-gic-unilateral",
+  "medicare-transfer",
+  "opt-out",
+  "self-insure",
+  "raise-town-share"
+ ],
+ "cannot": [
+  "cut-town-share",
+  "change-split-by-vote",
+  "stop-offering",
+  "drop-retirees"
+ ],
+ "comparison_caveat": "DLS prints two warnings on this report and both bite. For a SELF-INSURED town the figure includes the employee share, and a town accounting through a trust may have workers’ compensation and OPEB inside it — and nothing in the file says which town is which. So the LEVEL is not comparable across towns; the GROWTH is, because whatever a town’s figure contains it contains in both years. Lunenburg is fully insured through the MIIA joint purchase group, so its figure is the town’s premium share alone.",
+ "generated_by": "scripts/build_health_options.py",
+ "grain": "LAW as the statute states it, linked section by section; DOLLARS as each town filed them on Schedule A. The spending figure is a net appropriation and is not the same quantity in every town — see `comparison_caveat`.",
+ "neighbours": [
+  {
+   "municipality": "Lunenburg",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 1923642.0
+    },
+    {
+     "fy": 2003,
+     "spent": 2234321.0
+    },
+    {
+     "fy": 2004,
+     "spent": 1067289.0
+    },
+    {
+     "fy": 2005,
+     "spent": 2684297.0
+    },
+    {
+     "fy": 2006,
+     "spent": 1266574.0
+    },
+    {
+     "fy": 2007,
+     "spent": 1391064.0
+    },
+    {
+     "fy": 2008,
+     "spent": 1456620.0
+    },
+    {
+     "fy": 2009,
+     "spent": 1476676.0
+    },
+    {
+     "fy": 2010,
+     "spent": 1614213.0
+    },
+    {
+     "fy": 2011,
+     "spent": 1728021.0
+    },
+    {
+     "fy": 2012,
+     "spent": 1759840.0
+    },
+    {
+     "fy": 2013,
+     "spent": 1834821.0
+    },
+    {
+     "fy": 2014,
+     "spent": 1680215.0
+    },
+    {
+     "fy": 2015,
+     "spent": 1568744.0
+    },
+    {
+     "fy": 2016,
+     "spent": 1670770.0
+    },
+    {
+     "fy": 2017,
+     "spent": 1805969.0
+    },
+    {
+     "fy": 2018,
+     "spent": 1969483.0
+    },
+    {
+     "fy": 2019,
+     "spent": 2108353.0
+    },
+    {
+     "fy": 2020,
+     "spent": 2103154.0
+    },
+    {
+     "fy": 2021,
+     "spent": 2080165.0
+    },
+    {
+     "fy": 2022,
+     "spent": 2170119.0
+    },
+    {
+     "fy": 2023,
+     "spent": 2505400.0
+    },
+    {
+     "fy": 2024,
+     "spent": 2894390.0
+    },
+    {
+     "fy": 2025,
+     "spent": 3038832.0
+    }
+   ]
+  },
+  {
+   "municipality": "Ayer",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 1551130.0
+    },
+    {
+     "fy": 2003,
+     "spent": 1702708.0
+    },
+    {
+     "fy": 2004,
+     "spent": 1796509.0
+    },
+    {
+     "fy": 2005,
+     "spent": 1947324.0
+    },
+    {
+     "fy": 2006,
+     "spent": 2136949.0
+    },
+    {
+     "fy": 2007,
+     "spent": 2563623.0
+    },
+    {
+     "fy": 2008,
+     "spent": 2883948.0
+    },
+    {
+     "fy": 2009,
+     "spent": 2476388.0
+    },
+    {
+     "fy": 2010,
+     "spent": 2854728.0
+    },
+    {
+     "fy": 2011,
+     "spent": 3004709.0
+    },
+    {
+     "fy": 2012,
+     "spent": 1581682.0
+    },
+    {
+     "fy": 2013,
+     "spent": 1468585.0
+    },
+    {
+     "fy": 2014,
+     "spent": 1329676.0
+    },
+    {
+     "fy": 2015,
+     "spent": 1264714.0
+    },
+    {
+     "fy": 2016,
+     "spent": 1300435.0
+    },
+    {
+     "fy": 2017,
+     "spent": 1388407.0
+    },
+    {
+     "fy": 2018,
+     "spent": 1487542.0
+    },
+    {
+     "fy": 2019,
+     "spent": 1652034.0
+    },
+    {
+     "fy": 2020,
+     "spent": 1708566.0
+    },
+    {
+     "fy": 2021,
+     "spent": 1701696.0
+    },
+    {
+     "fy": 2022,
+     "spent": 1420165.0
+    },
+    {
+     "fy": 2023,
+     "spent": 1826371.0
+    },
+    {
+     "fy": 2024,
+     "spent": 1895616.0
+    },
+    {
+     "fy": 2025,
+     "spent": 1587063.0
+    }
+   ]
+  },
+  {
+   "municipality": "Groton",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 504300.0
+    },
+    {
+     "fy": 2003,
+     "spent": 658125.0
+    },
+    {
+     "fy": 2004,
+     "spent": 823174.0
+    },
+    {
+     "fy": 2005,
+     "spent": 896400.0
+    },
+    {
+     "fy": 2006,
+     "spent": 901400.0
+    },
+    {
+     "fy": 2007,
+     "spent": 959332.0
+    },
+    {
+     "fy": 2008,
+     "spent": 1087201.0
+    },
+    {
+     "fy": 2009,
+     "spent": 1124173.0
+    },
+    {
+     "fy": 2010,
+     "spent": 1179553.0
+    },
+    {
+     "fy": 2011,
+     "spent": 1275135.0
+    },
+    {
+     "fy": 2012,
+     "spent": 1387790.0
+    },
+    {
+     "fy": 2013,
+     "spent": 1299409.0
+    },
+    {
+     "fy": 2014,
+     "spent": 1384473.0
+    },
+    {
+     "fy": 2015,
+     "spent": 1360249.0
+    },
+    {
+     "fy": 2016,
+     "spent": 1276592.0
+    },
+    {
+     "fy": 2017,
+     "spent": 1340906.0
+    },
+    {
+     "fy": 2018,
+     "spent": 1467729.0
+    },
+    {
+     "fy": 2019,
+     "spent": 1408663.0
+    },
+    {
+     "fy": 2020,
+     "spent": 1578803.0
+    },
+    {
+     "fy": 2021,
+     "spent": 1727423.0
+    },
+    {
+     "fy": 2022,
+     "spent": 1749313.0
+    },
+    {
+     "fy": 2023,
+     "spent": 1811069.0
+    },
+    {
+     "fy": 2024,
+     "spent": 2280480.0
+    },
+    {
+     "fy": 2025,
+     "spent": 1876928.0
+    }
+   ]
+  },
+  {
+   "municipality": "Littleton",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 2552070.0
+    },
+    {
+     "fy": 2003,
+     "spent": 2794804.0
+    },
+    {
+     "fy": 2004,
+     "spent": 4213874.0
+    },
+    {
+     "fy": 2005,
+     "spent": 4230189.0
+    },
+    {
+     "fy": 2006,
+     "spent": 4524377.0
+    },
+    {
+     "fy": 2007,
+     "spent": 3266634.0
+    },
+    {
+     "fy": 2008,
+     "spent": 5441248.0
+    },
+    {
+     "fy": 2009,
+     "spent": 2058597.0
+    },
+    {
+     "fy": 2010,
+     "spent": 2228725.0
+    },
+    {
+     "fy": 2011,
+     "spent": 4057476.0
+    },
+    {
+     "fy": 2012,
+     "spent": 2539086.0
+    },
+    {
+     "fy": 2013,
+     "spent": 2769160.0
+    },
+    {
+     "fy": 2014,
+     "spent": 2927004.0
+    },
+    {
+     "fy": 2015,
+     "spent": 3035390.0
+    },
+    {
+     "fy": 2016,
+     "spent": 3335404.0
+    },
+    {
+     "fy": 2017,
+     "spent": 3748578.0
+    },
+    {
+     "fy": 2018,
+     "spent": 4093820.0
+    },
+    {
+     "fy": 2019,
+     "spent": 4093426.0
+    },
+    {
+     "fy": 2020,
+     "spent": 3809633.0
+    },
+    {
+     "fy": 2021,
+     "spent": 4214714.0
+    },
+    {
+     "fy": 2022,
+     "spent": 4006834.0
+    },
+    {
+     "fy": 2023,
+     "spent": 4617975.0
+    },
+    {
+     "fy": 2024,
+     "spent": 4892301.0
+    },
+    {
+     "fy": 2025,
+     "spent": 5148716.0
+    }
+   ]
+  },
+  {
+   "municipality": "Shirley",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 787983.0
+    },
+    {
+     "fy": 2003,
+     "spent": 915224.0
+    },
+    {
+     "fy": 2004,
+     "spent": 925766.0
+    },
+    {
+     "fy": 2005,
+     "spent": 964500.0
+    },
+    {
+     "fy": 2006,
+     "spent": 1060350.0
+    },
+    {
+     "fy": 2007,
+     "spent": 1263660.0
+    },
+    {
+     "fy": 2008,
+     "spent": 1428709.0
+    },
+    {
+     "fy": 2009,
+     "spent": 1448090.0
+    },
+    {
+     "fy": 2010,
+     "spent": 1335577.0
+    },
+    {
+     "fy": 2011,
+     "spent": 1532900.0
+    },
+    {
+     "fy": 2012,
+     "spent": 626664.0
+    },
+    {
+     "fy": 2013,
+     "spent": 583569.0
+    },
+    {
+     "fy": 2014,
+     "spent": 609580.0
+    },
+    {
+     "fy": 2015,
+     "spent": 505948.0
+    },
+    {
+     "fy": 2016,
+     "spent": 541271.0
+    },
+    {
+     "fy": 2017,
+     "spent": 597474.0
+    },
+    {
+     "fy": 2018,
+     "spent": 659012.0
+    },
+    {
+     "fy": 2019,
+     "spent": 726817.0
+    },
+    {
+     "fy": 2020,
+     "spent": 582450.0
+    },
+    {
+     "fy": 2021,
+     "spent": 673259.0
+    },
+    {
+     "fy": 2022,
+     "spent": 678859.0
+    },
+    {
+     "fy": 2023,
+     "spent": 186353.0
+    },
+    {
+     "fy": 2024,
+     "spent": 225088.0
+    },
+    {
+     "fy": 2025,
+     "spent": 216504.0
+    }
+   ]
+  },
+  {
+   "municipality": "Townsend",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 274235.0
+    },
+    {
+     "fy": 2003,
+     "spent": 351415.0
+    },
+    {
+     "fy": 2004,
+     "spent": 417917.0
+    },
+    {
+     "fy": 2005,
+     "spent": 429801.0
+    },
+    {
+     "fy": 2006,
+     "spent": 578825.0
+    },
+    {
+     "fy": 2007,
+     "spent": 573954.0
+    },
+    {
+     "fy": 2008,
+     "spent": 556232.0
+    },
+    {
+     "fy": 2009,
+     "spent": 609421.0
+    },
+    {
+     "fy": 2010,
+     "spent": 572468.0
+    },
+    {
+     "fy": 2011,
+     "spent": 654722.0
+    },
+    {
+     "fy": 2012,
+     "spent": 761361.0
+    },
+    {
+     "fy": 2013,
+     "spent": 802938.0
+    },
+    {
+     "fy": 2014,
+     "spent": 829102.0
+    },
+    {
+     "fy": 2015,
+     "spent": 846681.0
+    },
+    {
+     "fy": 2016,
+     "spent": 952035.0
+    },
+    {
+     "fy": 2017,
+     "spent": 959955.0
+    },
+    {
+     "fy": 2018,
+     "spent": 778778.0
+    },
+    {
+     "fy": 2019,
+     "spent": 767211.0
+    },
+    {
+     "fy": 2020,
+     "spent": 795726.0
+    },
+    {
+     "fy": 2021,
+     "spent": 771751.0
+    },
+    {
+     "fy": 2022,
+     "spent": 754454.0
+    },
+    {
+     "fy": 2023,
+     "spent": 839824.0
+    },
+    {
+     "fy": 2024,
+     "spent": 1055580.0
+    },
+    {
+     "fy": 2025,
+     "spent": 1102338.0
+    }
+   ]
+  },
+  {
+   "municipality": "Westford",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 5310555.0
+    },
+    {
+     "fy": 2003,
+     "spent": 5241237.0
+    },
+    {
+     "fy": 2004,
+     "spent": 3298407.0
+    },
+    {
+     "fy": 2005,
+     "spent": 3681044.0
+    },
+    {
+     "fy": 2006,
+     "spent": 3719532.0
+    },
+    {
+     "fy": 2007,
+     "spent": 4611684.0
+    },
+    {
+     "fy": 2008,
+     "spent": 5521480.0
+    },
+    {
+     "fy": 2009,
+     "spent": 5075483.0
+    },
+    {
+     "fy": 2010,
+     "spent": 6455172.0
+    },
+    {
+     "fy": 2011,
+     "spent": 7378422.0
+    },
+    {
+     "fy": 2012,
+     "spent": 7724184.0
+    },
+    {
+     "fy": 2013,
+     "spent": 8244022.0
+    },
+    {
+     "fy": 2014,
+     "spent": 8141183.0
+    },
+    {
+     "fy": 2015,
+     "spent": 8186031.0
+    },
+    {
+     "fy": 2016,
+     "spent": 8652844.0
+    },
+    {
+     "fy": 2017,
+     "spent": 9046212.0
+    },
+    {
+     "fy": 2018,
+     "spent": 9448741.0
+    },
+    {
+     "fy": 2019,
+     "spent": 9812913.0
+    },
+    {
+     "fy": 2020,
+     "spent": 10239599.0
+    },
+    {
+     "fy": 2021,
+     "spent": 10470349.0
+    },
+    {
+     "fy": 2022,
+     "spent": 13979019.0
+    },
+    {
+     "fy": 2023,
+     "spent": 20335528.0
+    },
+    {
+     "fy": 2024,
+     "spent": 18438471.0
+    },
+    {
+     "fy": 2025,
+     "spent": 17239556.0
+    }
+   ]
+  },
+  {
+   "municipality": "Leominster",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 8154657.0
+    },
+    {
+     "fy": 2003,
+     "spent": 9743965.0
+    },
+    {
+     "fy": 2004,
+     "spent": 10900295.0
+    },
+    {
+     "fy": 2005,
+     "spent": 12408365.0
+    },
+    {
+     "fy": 2006,
+     "spent": 14789220.0
+    },
+    {
+     "fy": 2007,
+     "spent": 15196278.0
+    },
+    {
+     "fy": 2008,
+     "spent": 15637226.0
+    },
+    {
+     "fy": 2009,
+     "spent": 17294563.0
+    },
+    {
+     "fy": 2010,
+     "spent": 18687650.0
+    },
+    {
+     "fy": 2011,
+     "spent": 18801897.0
+    },
+    {
+     "fy": 2012,
+     "spent": 20385070.0
+    },
+    {
+     "fy": 2013,
+     "spent": 18661882.0
+    },
+    {
+     "fy": 2014,
+     "spent": 20161999.0
+    },
+    {
+     "fy": 2015,
+     "spent": 19308192.0
+    },
+    {
+     "fy": 2016,
+     "spent": 21227597.0
+    },
+    {
+     "fy": 2017,
+     "spent": 22504827.0
+    },
+    {
+     "fy": 2018,
+     "spent": 23081136.0
+    },
+    {
+     "fy": 2019,
+     "spent": 24054025.0
+    },
+    {
+     "fy": 2020,
+     "spent": 23665758.0
+    },
+    {
+     "fy": 2021,
+     "spent": 23094736.0
+    },
+    {
+     "fy": 2022,
+     "spent": 25986726.0
+    },
+    {
+     "fy": 2023,
+     "spent": 23509932.0
+    },
+    {
+     "fy": 2024,
+     "spent": 31709224.0
+    },
+    {
+     "fy": 2025,
+     "spent": 36365769.0
+    }
+   ]
+  },
+  {
+   "municipality": "Fitchburg",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 14601321.0
+    },
+    {
+     "fy": 2003,
+     "spent": 17007203.0
+    },
+    {
+     "fy": 2004,
+     "spent": 19387070.0
+    },
+    {
+     "fy": 2005,
+     "spent": 20783989.0
+    },
+    {
+     "fy": 2006,
+     "spent": 22207107.0
+    },
+    {
+     "fy": 2007,
+     "spent": 14331913.0
+    },
+    {
+     "fy": 2008,
+     "spent": 15418417.0
+    },
+    {
+     "fy": 2009,
+     "spent": 16085342.0
+    },
+    {
+     "fy": 2010,
+     "spent": 16803976.0
+    },
+    {
+     "fy": 2011,
+     "spent": 16219049.0
+    },
+    {
+     "fy": 2012,
+     "spent": 16578347.0
+    },
+    {
+     "fy": 2013,
+     "spent": 17484562.0
+    },
+    {
+     "fy": 2014,
+     "spent": 17285568.0
+    },
+    {
+     "fy": 2015,
+     "spent": 16973461.0
+    },
+    {
+     "fy": 2016,
+     "spent": 16391234.0
+    },
+    {
+     "fy": 2017,
+     "spent": 19678743.0
+    },
+    {
+     "fy": 2018,
+     "spent": 20462725.0
+    },
+    {
+     "fy": 2019,
+     "spent": 18805021.0
+    },
+    {
+     "fy": 2020,
+     "spent": 21351432.0
+    },
+    {
+     "fy": 2021,
+     "spent": 19724002.0
+    },
+    {
+     "fy": 2022,
+     "spent": 21845621.0
+    },
+    {
+     "fy": 2023,
+     "spent": 25587786.0
+    },
+    {
+     "fy": 2024,
+     "spent": 26553253.0
+    },
+    {
+     "fy": 2025,
+     "spent": 30208091.0
+    }
+   ]
+  },
+  {
+   "municipality": "Lancaster",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 304612.0
+    },
+    {
+     "fy": 2003,
+     "spent": 302017.0
+    },
+    {
+     "fy": 2004,
+     "spent": 285942.0
+    },
+    {
+     "fy": 2005,
+     "spent": 343230.0
+    },
+    {
+     "fy": 2006,
+     "spent": 433954.0
+    },
+    {
+     "fy": 2007,
+     "spent": 517832.0
+    },
+    {
+     "fy": 2008,
+     "spent": 613295.0
+    },
+    {
+     "fy": 2009,
+     "spent": 631750.0
+    },
+    {
+     "fy": 2010,
+     "spent": 447455.0
+    },
+    {
+     "fy": 2011,
+     "spent": 576514.0
+    },
+    {
+     "fy": 2012,
+     "spent": 520627.0
+    },
+    {
+     "fy": 2013,
+     "spent": 493910.0
+    },
+    {
+     "fy": 2014,
+     "spent": 470715.0
+    },
+    {
+     "fy": 2015,
+     "spent": 488439.0
+    },
+    {
+     "fy": 2016,
+     "spent": 523970.0
+    },
+    {
+     "fy": 2017,
+     "spent": 611611.0
+    },
+    {
+     "fy": 2018,
+     "spent": 494575.0
+    },
+    {
+     "fy": 2019,
+     "spent": 708291.0
+    },
+    {
+     "fy": 2020,
+     "spent": 713879.0
+    },
+    {
+     "fy": 2021,
+     "spent": 836546.0
+    },
+    {
+     "fy": 2022,
+     "spent": 772274.0
+    },
+    {
+     "fy": 2023,
+     "spent": 632144.0
+    },
+    {
+     "fy": 2024,
+     "spent": 570186.0
+    },
+    {
+     "fy": 2025,
+     "spent": 744845.0
+    }
+   ]
+  },
+  {
+   "municipality": "Harvard",
+   "series": [
+    {
+     "fy": 2002,
+     "spent": 1029170.0
+    },
+    {
+     "fy": 2003,
+     "spent": 1106848.0
+    },
+    {
+     "fy": 2004,
+     "spent": 1232310.0
+    },
+    {
+     "fy": 2005,
+     "spent": 1252231.0
+    },
+    {
+     "fy": 2006,
+     "spent": 1282575.0
+    },
+    {
+     "fy": 2007,
+     "spent": 1481499.0
+    },
+    {
+     "fy": 2008,
+     "spent": 1741995.0
+    },
+    {
+     "fy": 2009,
+     "spent": 1581456.0
+    },
+    {
+     "fy": 2010,
+     "spent": 1848951.0
+    },
+    {
+     "fy": 2011,
+     "spent": 1944615.0
+    },
+    {
+     "fy": 2012,
+     "spent": 2078197.0
+    },
+    {
+     "fy": 2013,
+     "spent": 2191973.0
+    },
+    {
+     "fy": 2014,
+     "spent": 2190457.0
+    },
+    {
+     "fy": 2015,
+     "spent": 2046430.0
+    },
+    {
+     "fy": 2016,
+     "spent": 2090798.0
+    },
+    {
+     "fy": 2017,
+     "spent": 2351219.0
+    },
+    {
+     "fy": 2018,
+     "spent": 2133887.0
+    },
+    {
+     "fy": 2019,
+     "spent": 2974227.0
+    },
+    {
+     "fy": 2020,
+     "spent": 3114160.0
+    },
+    {
+     "fy": 2021,
+     "spent": 3016353.0
+    },
+    {
+     "fy": 2022,
+     "spent": 3320290.0
+    },
+    {
+     "fy": 2023,
+     "spent": 3126760.0
+    },
+    {
+     "fy": 2024,
+     "spent": 2564753.0
+    },
+    {
+     "fy": 2025,
+     "spent": 2921588.0
+    },
+    {
+     "fy": 2026,
+     "spent": 3567815.0
+    }
+   ]
+  }
+ ],
+ "options": [
+  {
+   "available_to_lunenburg": "yes",
+   "effect_on_the_gap": "Lowers the premium the town buys, so it lowers the rate the whole projection compounds",
+   "id": "plan-design",
+   "note": "Copays may be no greater in dollar amount than the GIC's largest non-Medicare plan (§22). Up to 25% of the first year's savings may be directed back to subscribers (§21(f)) — a ceiling on what a panel may order, not a floor the town owes. Lunenburg has never used this route.",
+   "option": "Change copays, deductibles and tiers up to the state plan's level",
+   "statute": "M.G.L. c.32B §§21–22",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section21",
+   "threshold": "30 days with the Public Employee Committee, then a three-person panel decides in 10 days, binding",
+   "who_decides": "Select Board",
+   "who_it_lands_on": "Employees and retirees, at the point of care — a copay is paid by whoever is ill"
+  },
+  {
+   "available_to_lunenburg": "yes",
+   "effect_on_the_gap": "A different premium, and the town stops choosing plans",
+   "id": "join-gic-agreement",
+   "note": "Notice by 1 December for 1 July. The often-quoted 70% is the threshold for sending a dispute to arbitration, not for agreeing.",
+   "option": "Move everyone into the state's Group Insurance Commission by agreement",
+   "statute": "M.G.L. c.32B §19(e)",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section19",
+   "threshold": "A majority of the weighted votes — the retiree representative holds 10%",
+   "who_decides": "Select Board with the Public Employee Committee",
+   "who_it_lands_on": "Everyone insured: the plan menu becomes the state's"
+  },
+  {
+   "available_to_lunenburg": "yes",
+   "effect_on_the_gap": "Same as above",
+   "id": "join-gic-unilateral",
+   "note": "Locks the town in for 3 years, then whole-year intervals of at least 2. Benefits are then set exclusively by the Commission and are not bargainable, except the contribution split.",
+   "option": "Move everyone into the GIC without agreement",
+   "statute": "M.G.L. c.32B §23",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section23",
+   "threshold": "Must show savings at least 5% greater than plan design alone could reach (§21(d))",
+   "who_decides": "Select Board",
+   "who_it_lands_on": "Same as above"
+  },
+  {
+   "available_to_lunenburg": "already done in part",
+   "effect_on_the_gap": "Medicare becomes the primary payer, so the town's plan pays only what is left",
+   "id": "medicare-transfer",
+   "note": "Lunenburg moved a group in 2020 and states it cut the active renewal 2% and reduced OPEB liability by $5–6M — the town's own figures, with no valuation in the archive.",
+   "option": "Require Medicare-eligible retirees onto a Medicare plan",
+   "statute": "M.G.L. c.32B §18A",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section18A",
+   "threshold": "Only where the Medicare plan plus Parts A and B is of comparable actuarial value",
+   "who_decides": "Acceptance",
+   "who_it_lands_on": "Retirees, who move to a different plan"
+  },
+  {
+   "available_to_lunenburg": "already running",
+   "effect_on_the_gap": "Small: the town saves a premium and pays an incentive",
+   "id": "opt-out",
+   "note": "Lunenburg's pilot ran from FY24; the Finance Director called the result \"minimal.\" FY27 budgets $14,000 for 10 people.",
+   "option": "Pay employees to decline coverage",
+   "statute": "M.G.L. c.32B §4",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section4",
+   "threshold": "Only for someone already covered by a plan financed without any employer participation",
+   "who_decides": "Bargained or employer discretion",
+   "who_it_lands_on": "Nobody loses coverage — it is voluntary and reversible"
+  },
+  {
+   "available_to_lunenburg": "yes, but",
+   "effect_on_the_gap": "Removes the insurer's margin and adds the town's claims risk",
+   "id": "self-insure",
+   "note": "Any deficit in the claims trust \"shall be raised in the next fiscal year's tax rate\" — by operation of law. Requires an annual audit accruing claims incurred but not reported.",
+   "option": "Pay claims from a town trust instead of buying premiums",
+   "statute": "M.G.L. c.32B §3A",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section3A",
+   "threshold": "No state approval needed",
+   "who_decides": "Town",
+   "who_it_lands_on": "Taxpayers, in a bad year"
+  },
+  {
+   "available_to_lunenburg": "already accepted",
+   "effect_on_the_gap": "Raises the town's cost",
+   "id": "raise-town-share",
+   "note": "Lunenburg pays 75% for actives. §7A permits more than 50% and has no ceiling — and no route back down.",
+   "option": "Pay more than half the premium",
+   "statute": "M.G.L. c.32B §7A",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section7A",
+   "threshold": "Acceptance vote",
+   "who_decides": "Town Meeting or ballot",
+   "who_it_lands_on": "Taxpayers"
+  },
+  {
+   "available_to_lunenburg": "no",
+   "effect_on_the_gap": "—",
+   "id": "cut-town-share",
+   "note": "§7 fixes the town's share at 50% and §7A permits \"more, but not less, than fifty per cent.\" There is no downward route in the statute at all.",
+   "option": "Pay less than half the premium",
+   "statute": "M.G.L. c.32B §7",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section7",
+   "threshold": "Not permitted at any threshold",
+   "who_decides": "Nobody",
+   "who_it_lands_on": "—"
+  },
+  {
+   "available_to_lunenburg": "no",
+   "effect_on_the_gap": "—",
+   "id": "change-split-by-vote",
+   "note": "\"The panel shall not impose any change to contribution ratios.\" The 2011 reform moved plan design out of bargaining and left the split at the table. Between 75% and the 50% floor it is bargained, never decreed.",
+   "option": "Change the 75/25 split through the plan-design process",
+   "statute": "M.G.L. c.32B §21(f)",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section21",
+   "threshold": "Not permitted",
+   "who_decides": "Nobody",
+   "who_it_lands_on": "—"
+  },
+  {
+   "available_to_lunenburg": "no",
+   "effect_on_the_gap": "—",
+   "id": "stop-offering",
+   "note": "Acceptance \"shall not be revoked or rescinded.\" And if Town Meeting does not appropriate the cost, §3 has the assessors put it in the tax rate anyway.",
+   "option": "Stop offering health insurance",
+   "statute": "M.G.L. c.32B §10",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section10",
+   "threshold": "Not permitted",
+   "who_decides": "Nobody",
+   "who_it_lands_on": "—"
+  },
+  {
+   "available_to_lunenburg": "no",
+   "effect_on_the_gap": "—",
+   "id": "drop-retirees",
+   "note": "Galenski v. Town of Erving, 471 Mass. 305 (2015), struck down a ten-year service prerequisite.",
+   "option": "Drop retirees or require years of service for coverage",
+   "statute": "M.G.L. c.32B §9",
+   "statute_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section9",
+   "threshold": "Not permitted",
+   "who_decides": "Nobody",
+   "who_it_lands_on": "—"
+  }
+ ],
+ "peers": {
+  "all": [
+   {
+    "first": 19097347.0,
+    "growth": -37.32,
+    "last": 178722.0,
+    "municipality": "Amherst"
+   },
+   {
+    "first": 505948.0,
+    "growth": -8.14,
+    "last": 216504.0,
+    "municipality": "Shirley"
+   },
+   {
+    "first": 4327672.0,
+    "growth": -6.09,
+    "last": 2309847.0,
+    "municipality": "Winchendon"
+   },
+   {
+    "first": 46190.0,
+    "growth": -5.8,
+    "last": 25407.0,
+    "municipality": "Royalston"
+   },
+   {
+    "first": 80833.0,
+    "growth": -3.76,
+    "last": 55084.0,
+    "municipality": "Huntington"
+   },
+   {
+    "first": 21178.0,
+    "growth": -3.64,
+    "last": 14617.0,
+    "municipality": "Goshen"
+   },
+   {
+    "first": 1065845.0,
+    "growth": -3.61,
+    "last": 738069.0,
+    "municipality": "Lanesborough"
+   },
+   {
+    "first": 1832551.0,
+    "growth": -3.39,
+    "last": 1297683.0,
+    "municipality": "Williamstown"
+   },
+   {
+    "first": 51642.0,
+    "growth": -3.11,
+    "last": 37660.0,
+    "municipality": "Plainfield"
+   },
+   {
+    "first": 9689886.0,
+    "growth": -2.14,
+    "last": 7808868.0,
+    "municipality": "Dartmouth"
+   },
+   {
+    "first": 717716.0,
+    "growth": -1.26,
+    "last": 632549.0,
+    "municipality": "Berlin"
+   },
+   {
+    "first": 32517.0,
+    "growth": -1.2,
+    "last": 28832.0,
+    "municipality": "Middlefield"
+   },
+   {
+    "first": 125679.0,
+    "growth": -0.59,
+    "last": 118477.0,
+    "municipality": "Tyringham"
+   },
+   {
+    "first": 802371.0,
+    "growth": -0.45,
+    "last": 767332.0,
+    "municipality": "Boylston"
+   },
+   {
+    "first": 2086553.0,
+    "growth": -0.4,
+    "last": 2004607.0,
+    "municipality": "Athol"
+   },
+   {
+    "first": 5411253.0,
+    "growth": -0.35,
+    "last": 5224167.0,
+    "municipality": "Northbridge"
+   },
+   {
+    "first": 56518.0,
+    "growth": -0.32,
+    "last": 54754.0,
+    "municipality": "Chester"
+   },
+   {
+    "first": 456939.0,
+    "growth": -0.24,
+    "last": 445986.0,
+    "municipality": "Barre"
+   },
+   {
+    "first": 62306.0,
+    "growth": -0.23,
+    "last": 60865.0,
+    "municipality": "Heath"
+   },
+   {
+    "first": 157629.0,
+    "growth": -0.23,
+    "last": 154023.0,
+    "municipality": "Monterey"
+   },
+   {
+    "first": 66122.0,
+    "growth": -0.09,
+    "last": 65503.0,
+    "municipality": "Blandford"
+   },
+   {
+    "first": 195211.0,
+    "growth": -0.09,
+    "last": 193450.0,
+    "municipality": "Clarksburg"
+   },
+   {
+    "first": 8083514.0,
+    "growth": 0.06,
+    "last": 8134691.0,
+    "municipality": "Wareham"
+   },
+   {
+    "first": 865410.0,
+    "growth": 0.09,
+    "last": 873594.0,
+    "municipality": "Adams"
+   },
+   {
+    "first": 1407136.0,
+    "growth": 0.22,
+    "last": 1438418.0,
+    "municipality": "Manchester By The Sea"
+   },
+   {
+    "first": 1920412.0,
+    "growth": 0.22,
+    "last": 1963417.0,
+    "municipality": "Mattapoisett"
+   },
+   {
+    "first": 339612.0,
+    "growth": 0.27,
+    "last": 348925.0,
+    "municipality": "Wales"
+   },
+   {
+    "first": 7130062.0,
+    "growth": 0.31,
+    "last": 7351955.0,
+    "municipality": "Hingham"
+   },
+   {
+    "first": 2321480.0,
+    "growth": 0.33,
+    "last": 2399316.0,
+    "municipality": "Douglas"
+   },
+   {
+    "first": 6053173.0,
+    "growth": 0.35,
+    "last": 6269235.0,
+    "municipality": "Webster"
+   },
+   {
+    "first": 127237.0,
+    "growth": 0.43,
+    "last": 132847.0,
+    "municipality": "Buckland"
+   },
+   {
+    "first": 4556900.0,
+    "growth": 0.63,
+    "last": 4853239.0,
+    "municipality": "Oxford"
+   },
+   {
+    "first": 44552.0,
+    "growth": 0.65,
+    "last": 47516.0,
+    "municipality": "Mount Washington"
+   },
+   {
+    "first": 46198.0,
+    "growth": 0.74,
+    "last": 49721.0,
+    "municipality": "Montgomery"
+   },
+   {
+    "first": 283701.0,
+    "growth": 0.78,
+    "last": 306536.0,
+    "municipality": "Princeton"
+   },
+   {
+    "first": 11248314.0,
+    "growth": 0.78,
+    "last": 12160300.0,
+    "municipality": "Watertown"
+   },
+   {
+    "first": 1565911.0,
+    "growth": 0.8,
+    "last": 1695321.0,
+    "municipality": "North Brookfield"
+   },
+   {
+    "first": 115456.0,
+    "growth": 0.83,
+    "last": 125395.0,
+    "municipality": "Colrain"
+   },
+   {
+    "first": 1877655.0,
+    "growth": 0.91,
+    "last": 2055578.0,
+    "municipality": "Orange"
+   },
+   {
+    "first": 340994.0,
+    "growth": 0.95,
+    "last": 374775.0,
+    "municipality": "Holland"
+   },
+   {
+    "first": 331896.0,
+    "growth": 1.25,
+    "last": 375678.0,
+    "municipality": "Sheffield"
+   },
+   {
+    "first": 3968381.0,
+    "growth": 1.31,
+    "last": 4517965.0,
+    "municipality": "Lenox"
+   },
+   {
+    "first": 6874689.0,
+    "growth": 1.35,
+    "last": 7859547.0,
+    "municipality": "Somerset"
+   },
+   {
+    "first": 689106.0,
+    "growth": 1.36,
+    "last": 788916.0,
+    "municipality": "Dalton"
+   },
+   {
+    "first": 931501.0,
+    "growth": 1.37,
+    "last": 1066884.0,
+    "municipality": "Marion"
+   },
+   {
+    "first": 202824.0,
+    "growth": 1.42,
+    "last": 233483.0,
+    "municipality": "Otis"
+   },
+   {
+    "first": 2914868.0,
+    "growth": 1.47,
+    "last": 3373061.0,
+    "municipality": "Westport"
+   },
+   {
+    "first": 4667754.0,
+    "growth": 1.48,
+    "last": 5405594.0,
+    "municipality": "Holliston"
+   },
+   {
+    "first": 8195861.0,
+    "growth": 1.68,
+    "last": 9678788.0,
+    "municipality": "Ludlow"
+   },
+   {
+    "first": 1629857.0,
+    "growth": 1.74,
+    "last": 1937133.0,
+    "municipality": "Lakeville"
+   },
+   {
+    "first": 48757.0,
+    "growth": 1.79,
+    "last": 58219.0,
+    "municipality": "Chesterfield"
+   },
+   {
+    "first": 579629.0,
+    "growth": 1.81,
+    "last": 693409.0,
+    "municipality": "Ashburnham"
+   },
+   {
+    "first": 2682622.0,
+    "growth": 1.91,
+    "last": 3241080.0,
+    "municipality": "Lee"
+   },
+   {
+    "first": 442433.0,
+    "growth": 1.92,
+    "last": 535222.0,
+    "municipality": "Stockbridge"
+   },
+   {
+    "first": 3821232.0,
+    "growth": 1.95,
+    "last": 4636236.0,
+    "municipality": "Palmer"
+   },
+   {
+    "first": 204029.0,
+    "growth": 1.98,
+    "last": 248145.0,
+    "municipality": "Northfield"
+   },
+   {
+    "first": 21350467.0,
+    "growth": 2.01,
+    "last": 26041270.0,
+    "municipality": "Haverhill"
+   },
+   {
+    "first": 979497.0,
+    "growth": 2.17,
+    "last": 1213527.0,
+    "municipality": "Templeton"
+   },
+   {
+    "first": 4012100.0,
+    "growth": 2.27,
+    "last": 5023266.0,
+    "municipality": "East Bridgewater"
+   },
+   {
+    "first": 1264714.0,
+    "growth": 2.3,
+    "last": 1587063.0,
+    "municipality": "Ayer"
+   },
+   {
+    "first": 752118.0,
+    "growth": 2.37,
+    "last": 950618.0,
+    "municipality": "Spencer"
+   },
+   {
+    "first": 6862369.0,
+    "growth": 2.39,
+    "last": 8694120.0,
+    "municipality": "Norton"
+   },
+   {
+    "first": 422126.0,
+    "growth": 2.43,
+    "last": 536498.0,
+    "municipality": "Warren"
+   },
+   {
+    "first": 701134.0,
+    "growth": 2.44,
+    "last": 892541.0,
+    "municipality": "Dudley"
+   },
+   {
+    "first": 123693.0,
+    "growth": 2.45,
+    "last": 157510.0,
+    "municipality": "Hubbardston"
+   },
+   {
+    "first": 3172830.0,
+    "growth": 2.47,
+    "last": 4051070.0,
+    "municipality": "Ware"
+   },
+   {
+    "first": 9254575.0,
+    "growth": 2.52,
+    "last": 11871909.0,
+    "municipality": "Weston"
+   },
+   {
+    "first": 21626401.0,
+    "growth": 2.53,
+    "last": 27751568.0,
+    "municipality": "Peabody"
+   },
+   {
+    "first": 1216500.0,
+    "growth": 2.59,
+    "last": 1570283.0,
+    "municipality": "Sherborn"
+   },
+   {
+    "first": 1655370.0,
+    "growth": 2.65,
+    "last": 2150659.0,
+    "municipality": "Dover"
+   },
+   {
+    "first": 1321520.0,
+    "growth": 2.65,
+    "last": 1716726.0,
+    "municipality": "Granby"
+   },
+   {
+    "first": 10331620.0,
+    "growth": 2.66,
+    "last": 13433644.0,
+    "municipality": "Wakefield"
+   },
+   {
+    "first": 846681.0,
+    "growth": 2.67,
+    "last": 1102338.0,
+    "municipality": "Townsend"
+   },
+   {
+    "first": 22483396.0,
+    "growth": 2.68,
+    "last": 29299417.0,
+    "municipality": "Danvers"
+   },
+   {
+    "first": 2961753.0,
+    "growth": 2.69,
+    "last": 3863341.0,
+    "municipality": "Hanover"
+   },
+   {
+    "first": 3686904.0,
+    "growth": 2.71,
+    "last": 4818666.0,
+    "municipality": "Rockport"
+   },
+   {
+    "first": 3955698.0,
+    "growth": 2.73,
+    "last": 5177423.0,
+    "municipality": "Belchertown"
+   },
+   {
+    "first": 2538605.0,
+    "growth": 2.75,
+    "last": 3329623.0,
+    "municipality": "Acton"
+   },
+   {
+    "first": 8585791.0,
+    "growth": 2.77,
+    "last": 11281004.0,
+    "municipality": "Walpole"
+   },
+   {
+    "first": 993534.0,
+    "growth": 2.8,
+    "last": 1310155.0,
+    "municipality": "Halifax"
+   },
+   {
+    "first": 2989884.0,
+    "growth": 2.81,
+    "last": 3942813.0,
+    "municipality": "Provincetown"
+   },
+   {
+    "first": 197525.0,
+    "growth": 2.85,
+    "last": 261695.0,
+    "municipality": "Dunstable"
+   },
+   {
+    "first": 3655230.0,
+    "growth": 2.9,
+    "last": 4864198.0,
+    "municipality": "Medfield"
+   },
+   {
+    "first": 9759970.0,
+    "growth": 2.9,
+    "last": 12990331.0,
+    "municipality": "North Andover"
+   },
+   {
+    "first": 227924.0,
+    "growth": 2.92,
+    "last": 303831.0,
+    "municipality": "Brimfield"
+   },
+   {
+    "first": 430837.0,
+    "growth": 2.93,
+    "last": 574838.0,
+    "municipality": "Paxton"
+   },
+   {
+    "first": 2775347.0,
+    "growth": 2.97,
+    "last": 3717326.0,
+    "municipality": "West Boylston"
+   },
+   {
+    "first": 656308.0,
+    "growth": 3.0,
+    "last": 882398.0,
+    "municipality": "Boxford"
+   },
+   {
+    "first": 15887169.0,
+    "growth": 3.01,
+    "last": 21364147.0,
+    "municipality": "Woburn"
+   },
+   {
+    "first": 7638892.0,
+    "growth": 3.04,
+    "last": 10305959.0,
+    "municipality": "Easton"
+   },
+   {
+    "first": 10525986.0,
+    "growth": 3.04,
+    "last": 14205265.0,
+    "municipality": "Melrose"
+   },
+   {
+    "first": 26166878.0,
+    "growth": 3.05,
+    "last": 35328702.0,
+    "municipality": "Taunton"
+   },
+   {
+    "first": 38840.0,
+    "growth": 3.06,
+    "last": 52527.0,
+    "municipality": "Monroe"
+   },
+   {
+    "first": 312912.0,
+    "growth": 3.06,
+    "last": 422794.0,
+    "municipality": "Whately"
+   },
+   {
+    "first": 17602539.0,
+    "growth": 3.07,
+    "last": 23827131.0,
+    "municipality": "Braintree"
+   },
+   {
+    "first": 61096647.0,
+    "growth": 3.09,
+    "last": 82844345.0,
+    "municipality": "Springfield"
+   },
+   {
+    "first": 393340.0,
+    "growth": 3.11,
+    "last": 534207.0,
+    "municipality": "Shutesbury"
+   },
+   {
+    "first": 8676808.0,
+    "growth": 3.12,
+    "last": 11793024.0,
+    "municipality": "Dracut"
+   },
+   {
+    "first": 13187486.0,
+    "growth": 3.12,
+    "last": 17924729.0,
+    "municipality": "Norwood"
+   },
+   {
+    "first": 63371379.0,
+    "growth": 3.18,
+    "last": 86664892.0,
+    "municipality": "Newton"
+   },
+   {
+    "first": 3677033.0,
+    "growth": 3.22,
+    "last": 5049929.0,
+    "municipality": "South Hadley"
+   },
+   {
+    "first": 4285046.0,
+    "growth": 3.23,
+    "last": 5890465.0,
+    "municipality": "Abington"
+   },
+   {
+    "first": 1360249.0,
+    "growth": 3.27,
+    "last": 1876928.0,
+    "municipality": "Groton"
+   },
+   {
+    "first": 14007333.0,
+    "growth": 3.3,
+    "last": 19381964.0,
+    "municipality": "Lawrence"
+   },
+   {
+    "first": 35277663.0,
+    "growth": 3.3,
+    "last": 48802901.0,
+    "municipality": "Lowell"
+   },
+   {
+    "first": 30223921.0,
+    "growth": 3.33,
+    "last": 41948202.0,
+    "municipality": "Framingham"
+   },
+   {
+    "first": 5468040.0,
+    "growth": 3.33,
+    "last": 7586071.0,
+    "municipality": "Marshfield"
+   },
+   {
+    "first": 1030983.0,
+    "growth": 3.35,
+    "last": 1433651.0,
+    "municipality": "Sterling"
+   },
+   {
+    "first": 4289612.0,
+    "growth": 3.36,
+    "last": 5970527.0,
+    "municipality": "Millbury"
+   },
+   {
+    "first": 5472434.0,
+    "growth": 3.37,
+    "last": 7621345.0,
+    "municipality": "Ashland"
+   },
+   {
+    "first": 905648.0,
+    "growth": 3.39,
+    "last": 1263744.0,
+    "municipality": "Southampton"
+   },
+   {
+    "first": 9281349.0,
+    "growth": 3.43,
+    "last": 13007996.0,
+    "municipality": "Marblehead"
+   },
+   {
+    "first": 4336371.0,
+    "growth": 3.48,
+    "last": 6103469.0,
+    "municipality": "Northborough"
+   },
+   {
+    "first": 5761259.0,
+    "growth": 3.51,
+    "last": 8134132.0,
+    "municipality": "Fairhaven"
+   },
+   {
+    "first": 138741.0,
+    "growth": 3.51,
+    "last": 195840.0,
+    "municipality": "Hardwick"
+   },
+   {
+    "first": 6274275.0,
+    "growth": 3.51,
+    "last": 8855235.0,
+    "municipality": "Pembroke"
+   },
+   {
+    "first": 5027005.0,
+    "growth": 3.51,
+    "last": 7100976.0,
+    "municipality": "Uxbridge"
+   },
+   {
+    "first": 23540050.0,
+    "growth": 3.53,
+    "last": 33291157.0,
+    "municipality": "Weymouth"
+   },
+   {
+    "first": 2928424.0,
+    "growth": 3.54,
+    "last": 4145668.0,
+    "municipality": "Lincoln"
+   },
+   {
+    "first": 8253358.0,
+    "growth": 3.55,
+    "last": 11699096.0,
+    "municipality": "Middleborough"
+   },
+   {
+    "first": 4201854.0,
+    "growth": 3.56,
+    "last": 5958831.0,
+    "municipality": "Holbrook"
+   },
+   {
+    "first": 16069084.0,
+    "growth": 3.56,
+    "last": 22798400.0,
+    "municipality": "Wellesley"
+   },
+   {
+    "first": 12995926.0,
+    "growth": 3.57,
+    "last": 18463707.0,
+    "municipality": "Natick"
+   },
+   {
+    "first": 4114448.0,
+    "growth": 3.58,
+    "last": 5849366.0,
+    "municipality": "Medway"
+   },
+   {
+    "first": 2203049.0,
+    "growth": 3.59,
+    "last": 3134419.0,
+    "municipality": "Leicester"
+   },
+   {
+    "first": 4963916.0,
+    "growth": 3.62,
+    "last": 7082987.0,
+    "municipality": "East Longmeadow"
+   },
+   {
+    "first": 2046430.0,
+    "growth": 3.62,
+    "last": 2921588.0,
+    "municipality": "Harvard"
+   },
+   {
+    "first": 7541980.0,
+    "growth": 3.63,
+    "last": 10777991.0,
+    "municipality": "Stoneham"
+   },
+   {
+    "first": 187844.0,
+    "growth": 3.68,
+    "last": 269503.0,
+    "municipality": "Egremont"
+   },
+   {
+    "first": 1973264.0,
+    "growth": 3.68,
+    "last": 2831133.0,
+    "municipality": "Monson"
+   },
+   {
+    "first": 2375468.0,
+    "growth": 3.7,
+    "last": 3416406.0,
+    "municipality": "Avon"
+   },
+   {
+    "first": 2783944.0,
+    "growth": 3.7,
+    "last": 4004184.0,
+    "municipality": "Brewster"
+   },
+   {
+    "first": 1533750.0,
+    "growth": 3.72,
+    "last": 2208969.0,
+    "municipality": "Raynham"
+   },
+   {
+    "first": 2904832.0,
+    "growth": 3.72,
+    "last": 4187209.0,
+    "municipality": "Tyngsborough"
+   },
+   {
+    "first": 12018718.0,
+    "growth": 3.74,
+    "last": 17348343.0,
+    "municipality": "Gloucester"
+   },
+   {
+    "first": 2170062.0,
+    "growth": 3.75,
+    "last": 3134785.0,
+    "municipality": "Chatham"
+   },
+   {
+    "first": 675799.0,
+    "growth": 3.75,
+    "last": 976486.0,
+    "municipality": "Rochester"
+   },
+   {
+    "first": 5031549.0,
+    "growth": 3.76,
+    "last": 7277231.0,
+    "municipality": "Swansea"
+   },
+   {
+    "first": 6137390.0,
+    "growth": 3.78,
+    "last": 8891055.0,
+    "municipality": "Greenfield"
+   },
+   {
+    "first": 1087908.0,
+    "growth": 3.78,
+    "last": 1576337.0,
+    "municipality": "Hadley"
+   },
+   {
+    "first": 3040160.0,
+    "growth": 3.79,
+    "last": 4409608.0,
+    "municipality": "Wrentham"
+   },
+   {
+    "first": 72904.0,
+    "growth": 3.81,
+    "last": 105915.0,
+    "municipality": "Petersham"
+   },
+   {
+    "first": 9444115.0,
+    "growth": 3.82,
+    "last": 13737077.0,
+    "municipality": "Bourne"
+   },
+   {
+    "first": 15731628.0,
+    "growth": 3.83,
+    "last": 22911305.0,
+    "municipality": "Tewksbury"
+   },
+   {
+    "first": 2386660.0,
+    "growth": 3.84,
+    "last": 3478518.0,
+    "municipality": "Georgetown"
+   },
+   {
+    "first": 4454473.0,
+    "growth": 3.88,
+    "last": 6515402.0,
+    "municipality": "North Adams"
+   },
+   {
+    "first": 9665751.0,
+    "growth": 3.9,
+    "last": 14173934.0,
+    "municipality": "Northampton"
+   },
+   {
+    "first": 3726702.0,
+    "growth": 3.93,
+    "last": 5476870.0,
+    "municipality": "Franklin"
+   },
+   {
+    "first": 727285.0,
+    "growth": 3.95,
+    "last": 1071540.0,
+    "municipality": "Hamilton"
+   },
+   {
+    "first": 21448377.0,
+    "growth": 3.95,
+    "last": 31609764.0,
+    "municipality": "Pittsfield"
+   },
+   {
+    "first": 4197991.0,
+    "growth": 3.97,
+    "last": 6196432.0,
+    "municipality": "Maynard"
+   },
+   {
+    "first": 4947827.0,
+    "growth": 3.97,
+    "last": 7303415.0,
+    "municipality": "Seekonk"
+   },
+   {
+    "first": 5736162.0,
+    "growth": 3.98,
+    "last": 8476694.0,
+    "municipality": "Mashpee"
+   },
+   {
+    "first": 4197788.0,
+    "growth": 3.98,
+    "last": 6203463.0,
+    "municipality": "Sudbury"
+   },
+   {
+    "first": 158553.0,
+    "growth": 3.99,
+    "last": 234456.0,
+    "municipality": "West Stockbridge"
+   },
+   {
+    "first": 50882.0,
+    "growth": 4.04,
+    "last": 75591.0,
+    "municipality": "New Salem"
+   },
+   {
+    "first": 9402606.0,
+    "growth": 4.05,
+    "last": 13986976.0,
+    "municipality": "Winchester"
+   },
+   {
+    "first": 341805.0,
+    "growth": 4.08,
+    "last": 509974.0,
+    "municipality": "Becket"
+   },
+   {
+    "first": 2917707.0,
+    "growth": 4.08,
+    "last": 4351410.0,
+    "municipality": "Edgartown"
+   },
+   {
+    "first": 3667667.0,
+    "growth": 4.08,
+    "last": 5468626.0,
+    "municipality": "Hull"
+   },
+   {
+    "first": 4256266.0,
+    "growth": 4.08,
+    "last": 6351429.0,
+    "municipality": "Norwell"
+   },
+   {
+    "first": 5413436.0,
+    "growth": 4.11,
+    "last": 8096745.0,
+    "municipality": "Winthrop"
+   },
+   {
+    "first": 12872027.0,
+    "growth": 4.12,
+    "last": 19266730.0,
+    "municipality": "Canton"
+   },
+   {
+    "first": 8597161.0,
+    "growth": 4.12,
+    "last": 12877162.0,
+    "municipality": "Dedham"
+   },
+   {
+    "first": 24190594.0,
+    "growth": 4.12,
+    "last": 36211242.0,
+    "municipality": "Malden"
+   },
+   {
+    "first": 17865992.0,
+    "growth": 4.13,
+    "last": 26775758.0,
+    "municipality": "Billerica"
+   },
+   {
+    "first": 18638164.0,
+    "growth": 4.13,
+    "last": 27944126.0,
+    "municipality": "Westfield"
+   },
+   {
+    "first": 243279.0,
+    "growth": 4.14,
+    "last": 364839.0,
+    "municipality": "West Brookfield"
+   },
+   {
+    "first": 17691304.0,
+    "growth": 4.15,
+    "last": 26565084.0,
+    "municipality": "Medford"
+   },
+   {
+    "first": 5379134.0,
+    "growth": 4.18,
+    "last": 8098809.0,
+    "municipality": "North Reading"
+   },
+   {
+    "first": 3828939.0,
+    "growth": 4.19,
+    "last": 5771803.0,
+    "municipality": "Grafton"
+   },
+   {
+    "first": 4892165.0,
+    "growth": 4.19,
+    "last": 7371714.0,
+    "municipality": "Scituate"
+   },
+   {
+    "first": 732339.0,
+    "growth": 4.21,
+    "last": 1106591.0,
+    "municipality": "Deerfield"
+   },
+   {
+    "first": 50359795.0,
+    "growth": 4.21,
+    "last": 76083486.0,
+    "municipality": "Fall River"
+   },
+   {
+    "first": 6622708.0,
+    "growth": 4.21,
+    "last": 9998323.0,
+    "municipality": "Longmeadow"
+   },
+   {
+    "first": 2166862.0,
+    "growth": 4.24,
+    "last": 3282153.0,
+    "municipality": "Tisbury"
+   },
+   {
+    "first": 6088354.0,
+    "growth": 4.24,
+    "last": 9222887.0,
+    "municipality": "Westwood"
+   },
+   {
+    "first": 34108918.0,
+    "growth": 4.26,
+    "last": 51790246.0,
+    "municipality": "Plymouth"
+   },
+   {
+    "first": 20655737.0,
+    "growth": 4.29,
+    "last": 31442552.0,
+    "municipality": "Somerville"
+   },
+   {
+    "first": 488439.0,
+    "growth": 4.31,
+    "last": 744845.0,
+    "municipality": "Lancaster"
+   },
+   {
+    "first": 6804411.0,
+    "growth": 4.35,
+    "last": 10412056.0,
+    "municipality": "Barnstable"
+   },
+   {
+    "first": 8492915.0,
+    "growth": 4.35,
+    "last": 12994929.0,
+    "municipality": "North Attleborough"
+   },
+   {
+    "first": 28460819.0,
+    "growth": 4.38,
+    "last": 43687936.0,
+    "municipality": "Brookline"
+   },
+   {
+    "first": 13286139.0,
+    "growth": 4.38,
+    "last": 20403467.0,
+    "municipality": "Nantucket"
+   },
+   {
+    "first": 298645.0,
+    "growth": 4.39,
+    "last": 458908.0,
+    "municipality": "Ashby"
+   },
+   {
+    "first": 12634397.0,
+    "growth": 4.41,
+    "last": 19451744.0,
+    "municipality": "Chicopee"
+   },
+   {
+    "first": 8804215.0,
+    "growth": 4.42,
+    "last": 13568463.0,
+    "municipality": "Reading"
+   },
+   {
+    "first": 11514519.0,
+    "growth": 4.42,
+    "last": 17737649.0,
+    "municipality": "Salem"
+   },
+   {
+    "first": 360078299.0,
+    "growth": 4.47,
+    "last": 557834115.0,
+    "municipality": "Boston"
+   },
+   {
+    "first": 1917241.0,
+    "growth": 4.47,
+    "last": 2969663.0,
+    "municipality": "Yarmouth"
+   },
+   {
+    "first": 9377249.0,
+    "growth": 4.48,
+    "last": 14538515.0,
+    "municipality": "Bellingham"
+   },
+   {
+    "first": 5839062.0,
+    "growth": 4.48,
+    "last": 9048031.0,
+    "municipality": "Foxborough"
+   },
+   {
+    "first": 2221625.0,
+    "growth": 4.49,
+    "last": 3445685.0,
+    "municipality": "Amesbury"
+   },
+   {
+    "first": 7109782.0,
+    "growth": 4.49,
+    "last": 11029133.0,
+    "municipality": "Newburyport"
+   },
+   {
+    "first": 1236326.0,
+    "growth": 4.5,
+    "last": 1919891.0,
+    "municipality": "Freetown"
+   },
+   {
+    "first": 1501222.0,
+    "growth": 4.51,
+    "last": 2332682.0,
+    "municipality": "Topsfield"
+   },
+   {
+    "first": 4577835.0,
+    "growth": 4.53,
+    "last": 7131029.0,
+    "municipality": "Swampscott"
+   },
+   {
+    "first": 587361.0,
+    "growth": 4.56,
+    "last": 917474.0,
+    "municipality": "Mendon"
+   },
+   {
+    "first": 322810.0,
+    "growth": 4.57,
+    "last": 504721.0,
+    "municipality": "Conway"
+   },
+   {
+    "first": 1913912.0,
+    "growth": 4.6,
+    "last": 2999625.0,
+    "municipality": "Eastham"
+   },
+   {
+    "first": 827837.0,
+    "growth": 4.6,
+    "last": 1298109.0,
+    "municipality": "Montague"
+   },
+   {
+    "first": 621437.0,
+    "growth": 4.6,
+    "last": 974709.0,
+    "municipality": "Newbury"
+   },
+   {
+    "first": 3757441.0,
+    "growth": 4.62,
+    "last": 5900880.0,
+    "municipality": "Easthampton"
+   },
+   {
+    "first": 8372410.0,
+    "growth": 4.63,
+    "last": 13165871.0,
+    "municipality": "Mansfield"
+   },
+   {
+    "first": 1135698.0,
+    "growth": 4.65,
+    "last": 1788567.0,
+    "municipality": "Whitman"
+   },
+   {
+    "first": 10500166.0,
+    "growth": 4.66,
+    "last": 16554303.0,
+    "municipality": "Falmouth"
+   },
+   {
+    "first": 129019.0,
+    "growth": 4.67,
+    "last": 203691.0,
+    "municipality": "Pelham"
+   },
+   {
+    "first": 46581373.0,
+    "growth": 4.68,
+    "last": 73593503.0,
+    "municipality": "Waltham"
+   },
+   {
+    "first": 116600.0,
+    "growth": 4.7,
+    "last": 184588.0,
+    "municipality": "New Marlborough"
+   },
+   {
+    "first": 1306946.0,
+    "growth": 4.74,
+    "last": 2077222.0,
+    "municipality": "Sturbridge"
+   },
+   {
+    "first": 409505.0,
+    "growth": 4.75,
+    "last": 651591.0,
+    "municipality": "Williamsburg"
+   },
+   {
+    "first": 17792.0,
+    "growth": 4.76,
+    "last": 28336.0,
+    "municipality": "Hawley"
+   },
+   {
+    "first": 2349284.0,
+    "growth": 4.82,
+    "last": 3762113.0,
+    "municipality": "Bridgewater"
+   },
+   {
+    "first": 1151039.0,
+    "growth": 4.82,
+    "last": 1842156.0,
+    "municipality": "Holden"
+   },
+   {
+    "first": 13319137.0,
+    "growth": 4.85,
+    "last": 21384375.0,
+    "municipality": "Arlington"
+   },
+   {
+    "first": 51367806.0,
+    "growth": 4.86,
+    "last": 82550997.0,
+    "municipality": "Lynn"
+   },
+   {
+    "first": 1904847.0,
+    "growth": 4.91,
+    "last": 3076572.0,
+    "municipality": "Norfolk"
+   },
+   {
+    "first": 245136.0,
+    "growth": 4.95,
+    "last": 397306.0,
+    "municipality": "Aquinnah"
+   },
+   {
+    "first": 1944908.0,
+    "growth": 4.95,
+    "last": 3151797.0,
+    "municipality": "Orleans"
+   },
+   {
+    "first": 833316.0,
+    "growth": 4.95,
+    "last": 1351398.0,
+    "municipality": "Upton"
+   },
+   {
+    "first": 6057649.0,
+    "growth": 4.97,
+    "last": 9841598.0,
+    "municipality": "Wayland"
+   },
+   {
+    "first": 558519.0,
+    "growth": 4.98,
+    "last": 907752.0,
+    "municipality": "Rutland"
+   },
+   {
+    "first": 2154192.0,
+    "growth": 5.0,
+    "last": 3509802.0,
+    "municipality": "Sutton"
+   },
+   {
+    "first": 93554.0,
+    "growth": 5.03,
+    "last": 152803.0,
+    "municipality": "Millville"
+   },
+   {
+    "first": 20444996.0,
+    "growth": 5.06,
+    "last": 33508497.0,
+    "municipality": "Marlborough"
+   },
+   {
+    "first": 758568.0,
+    "growth": 5.08,
+    "last": 1245599.0,
+    "municipality": "Westminster"
+   },
+   {
+    "first": 486513.0,
+    "growth": 5.1,
+    "last": 800154.0,
+    "municipality": "Blackstone"
+   },
+   {
+    "first": 184550.0,
+    "growth": 5.1,
+    "last": 303534.0,
+    "municipality": "Cheshire"
+   },
+   {
+    "first": 1234330.0,
+    "growth": 5.1,
+    "last": 2029763.0,
+    "municipality": "Hanson"
+   },
+   {
+    "first": 19788490.0,
+    "growth": 5.11,
+    "last": 32562940.0,
+    "municipality": "Attleboro"
+   },
+   {
+    "first": 10366872.0,
+    "growth": 5.12,
+    "last": 17072898.0,
+    "municipality": "Saugus"
+   },
+   {
+    "first": 59528824.0,
+    "growth": 5.13,
+    "last": 98161815.0,
+    "municipality": "Cambridge"
+   },
+   {
+    "first": 605490.0,
+    "growth": 5.14,
+    "last": 999615.0,
+    "municipality": "West Tisbury"
+   },
+   {
+    "first": 3477602.0,
+    "growth": 5.18,
+    "last": 5760907.0,
+    "municipality": "Southborough"
+   },
+   {
+    "first": 604031.0,
+    "growth": 5.19,
+    "last": 1001608.0,
+    "municipality": "Middleton"
+   },
+   {
+    "first": 2310497.0,
+    "growth": 5.19,
+    "last": 3833593.0,
+    "municipality": "West Bridgewater"
+   },
+   {
+    "first": 2165515.0,
+    "growth": 5.21,
+    "last": 3597093.0,
+    "municipality": "Oak Bluffs"
+   },
+   {
+    "first": 14754126.0,
+    "growth": 5.23,
+    "last": 24574270.0,
+    "municipality": "Needham"
+   },
+   {
+    "first": 2379670.0,
+    "growth": 5.24,
+    "last": 3967603.0,
+    "municipality": "Dennis"
+   },
+   {
+    "first": 644831.0,
+    "growth": 5.24,
+    "last": 1074994.0,
+    "municipality": "Rehoboth"
+   },
+   {
+    "first": 1070582.0,
+    "growth": 5.24,
+    "last": 1783472.0,
+    "municipality": "Truro"
+   },
+   {
+    "first": 1000510.0,
+    "growth": 5.26,
+    "last": 1671172.0,
+    "municipality": "Salisbury"
+   },
+   {
+    "first": 702788.0,
+    "growth": 5.26,
+    "last": 1173427.0,
+    "municipality": "Stow"
+   },
+   {
+    "first": 88580809.0,
+    "growth": 5.26,
+    "last": 147917270.0,
+    "municipality": "Worcester"
+   },
+   {
+    "first": 18788086.0,
+    "growth": 5.28,
+    "last": 31422788.0,
+    "municipality": "Beverly"
+   },
+   {
+    "first": 9936986.0,
+    "growth": 5.28,
+    "last": 16622680.0,
+    "municipality": "Gardner"
+   },
+   {
+    "first": 454921.0,
+    "growth": 5.34,
+    "last": 765684.0,
+    "municipality": "Southwick"
+   },
+   {
+    "first": 13713443.0,
+    "growth": 5.35,
+    "last": 23092445.0,
+    "municipality": "Wilmington"
+   },
+   {
+    "first": 417206.0,
+    "growth": 5.36,
+    "last": 702993.0,
+    "municipality": "Essex"
+   },
+   {
+    "first": 1041496.0,
+    "growth": 5.37,
+    "last": 1757739.0,
+    "municipality": "Wilbraham"
+   },
+   {
+    "first": 41423089.0,
+    "growth": 5.38,
+    "last": 69973543.0,
+    "municipality": "Revere"
+   },
+   {
+    "first": 9389379.0,
+    "growth": 5.4,
+    "last": 15880876.0,
+    "municipality": "Duxbury"
+   },
+   {
+    "first": 8080646.0,
+    "growth": 5.4,
+    "last": 13668826.0,
+    "municipality": "Sandwich"
+   },
+   {
+    "first": 3035390.0,
+    "growth": 5.43,
+    "last": 5148716.0,
+    "municipality": "Littleton"
+   },
+   {
+    "first": 2398812.0,
+    "growth": 5.45,
+    "last": 4079003.0,
+    "municipality": "Hopedale"
+   },
+   {
+    "first": 2131262.0,
+    "growth": 5.45,
+    "last": 3622325.0,
+    "municipality": "Kingston"
+   },
+   {
+    "first": 674203.0,
+    "growth": 5.47,
+    "last": 1148435.0,
+    "municipality": "Nahant"
+   },
+   {
+    "first": 3319612.0,
+    "growth": 5.49,
+    "last": 5667051.0,
+    "municipality": "Harwich"
+   },
+   {
+    "first": 9497176.0,
+    "growth": 5.5,
+    "last": 16214958.0,
+    "municipality": "Sharon"
+   },
+   {
+    "first": 1006971.0,
+    "growth": 5.51,
+    "last": 1721788.0,
+    "municipality": "Charlton"
+   },
+   {
+    "first": 4614852.0,
+    "growth": 5.51,
+    "last": 7887759.0,
+    "municipality": "Lynnfield"
+   },
+   {
+    "first": 12416789.0,
+    "growth": 5.58,
+    "last": 21373474.0,
+    "municipality": "Belmont"
+   },
+   {
+    "first": 85429.0,
+    "growth": 5.61,
+    "last": 147457.0,
+    "municipality": "Bernardston"
+   },
+   {
+    "first": 505077.0,
+    "growth": 5.61,
+    "last": 872051.0,
+    "municipality": "Chilmark"
+   },
+   {
+    "first": 111758.0,
+    "growth": 5.63,
+    "last": 193246.0,
+    "municipality": "Richmond"
+   },
+   {
+    "first": 327381.0,
+    "growth": 5.64,
+    "last": 566914.0,
+    "municipality": "Groveland"
+   },
+   {
+    "first": 124784.0,
+    "growth": 5.65,
+    "last": 216161.0,
+    "municipality": "Shelburne"
+   },
+   {
+    "first": 231177.0,
+    "growth": 5.65,
+    "last": 400693.0,
+    "municipality": "West Newbury"
+   },
+   {
+    "first": 20365417.0,
+    "growth": 5.71,
+    "last": 35492309.0,
+    "municipality": "Andover"
+   },
+   {
+    "first": 20685134.0,
+    "growth": 5.71,
+    "last": 36047684.0,
+    "municipality": "Lexington"
+   },
+   {
+    "first": 2261345.0,
+    "growth": 5.74,
+    "last": 3952272.0,
+    "municipality": "Millis"
+   },
+   {
+    "first": 13368735.0,
+    "growth": 5.79,
+    "last": 23467754.0,
+    "municipality": "Milford"
+   },
+   {
+    "first": 410333.0,
+    "growth": 5.8,
+    "last": 721265.0,
+    "municipality": "Brookfield"
+   },
+   {
+    "first": 9517034.0,
+    "growth": 5.86,
+    "last": 16816348.0,
+    "municipality": "Chelmsford"
+   },
+   {
+    "first": 12716169.0,
+    "growth": 5.87,
+    "last": 22495723.0,
+    "municipality": "West Springfield"
+   },
+   {
+    "first": 313214.0,
+    "growth": 5.87,
+    "last": 554315.0,
+    "municipality": "Westhampton"
+   },
+   {
+    "first": 628129.0,
+    "growth": 5.93,
+    "last": 1117838.0,
+    "municipality": "Dighton"
+   },
+   {
+    "first": 16973461.0,
+    "growth": 5.93,
+    "last": 30208091.0,
+    "municipality": "Fitchburg"
+   },
+   {
+    "first": 1211960.0,
+    "growth": 5.95,
+    "last": 2159388.0,
+    "municipality": "Acushnet"
+   },
+   {
+    "first": 406806.0,
+    "growth": 5.95,
+    "last": 725038.0,
+    "municipality": "Hatfield"
+   },
+   {
+    "first": 41761.0,
+    "growth": 5.99,
+    "last": 74685.0,
+    "municipality": "Sandisfield"
+   },
+   {
+    "first": 51396962.0,
+    "growth": 6.02,
+    "last": 92256039.0,
+    "municipality": "New Bedford"
+   },
+   {
+    "first": 3175731.0,
+    "growth": 6.03,
+    "last": 5703781.0,
+    "municipality": "Clinton"
+   },
+   {
+    "first": 12012289.0,
+    "growth": 6.04,
+    "last": 21588443.0,
+    "municipality": "Milton"
+   },
+   {
+    "first": 36507.0,
+    "growth": 6.04,
+    "last": 65622.0,
+    "municipality": "Savoy"
+   },
+   {
+    "first": 17265918.0,
+    "growth": 6.06,
+    "last": 31082641.0,
+    "municipality": "Methuen"
+   },
+   {
+    "first": 388556.0,
+    "growth": 6.06,
+    "last": 700000.0,
+    "municipality": "Rowe"
+   },
+   {
+    "first": 5319566.0,
+    "growth": 6.19,
+    "last": 9695730.0,
+    "municipality": "Bedford"
+   },
+   {
+    "first": 4738954.0,
+    "growth": 6.23,
+    "last": 8676427.0,
+    "municipality": "Rockland"
+   },
+   {
+    "first": 14375519.0,
+    "growth": 6.25,
+    "last": 26347816.0,
+    "municipality": "Burlington"
+   },
+   {
+    "first": 542704.0,
+    "growth": 6.34,
+    "last": 1003102.0,
+    "municipality": "Wenham"
+   },
+   {
+    "first": 556623.0,
+    "growth": 6.36,
+    "last": 1031442.0,
+    "municipality": "Boxborough"
+   },
+   {
+    "first": 1887168.0,
+    "growth": 6.37,
+    "last": 3499836.0,
+    "municipality": "Plainville"
+   },
+   {
+    "first": 292270.0,
+    "growth": 6.4,
+    "last": 543412.0,
+    "municipality": "Plympton"
+   },
+   {
+    "first": 1078965.0,
+    "growth": 6.52,
+    "last": 2030012.0,
+    "municipality": "Wellfleet"
+   },
+   {
+    "first": 19308192.0,
+    "growth": 6.54,
+    "last": 36365769.0,
+    "municipality": "Leominster"
+   },
+   {
+    "first": 3341602.0,
+    "growth": 6.56,
+    "last": 6305949.0,
+    "municipality": "Cohasset"
+   },
+   {
+    "first": 2770813.0,
+    "growth": 6.6,
+    "last": 5252559.0,
+    "municipality": "Southbridge"
+   },
+   {
+    "first": 6994250.0,
+    "growth": 6.67,
+    "last": 13336714.0,
+    "municipality": "Randolph"
+   },
+   {
+    "first": 771452.0,
+    "growth": 6.77,
+    "last": 1485744.0,
+    "municipality": "Erving"
+   },
+   {
+    "first": 1568744.0,
+    "growth": 6.84,
+    "last": 3038832.0,
+    "municipality": "Lunenburg"
+   },
+   {
+    "first": 26367.0,
+    "growth": 6.9,
+    "last": 51403.0,
+    "municipality": "Tolland"
+   },
+   {
+    "first": 353712.0,
+    "growth": 6.97,
+    "last": 693910.0,
+    "municipality": "Bolton"
+   },
+   {
+    "first": 7241699.0,
+    "growth": 7.09,
+    "last": 14368027.0,
+    "municipality": "Westborough"
+   },
+   {
+    "first": 200542.0,
+    "growth": 7.14,
+    "last": 399833.0,
+    "municipality": "Merrimac"
+   },
+   {
+    "first": 856935.0,
+    "growth": 7.19,
+    "last": 1715975.0,
+    "municipality": "Great Barrington"
+   },
+   {
+    "first": 8902909.0,
+    "growth": 7.21,
+    "last": 17861805.0,
+    "municipality": "Agawam"
+   },
+   {
+    "first": 21683389.0,
+    "growth": 7.48,
+    "last": 44613318.0,
+    "municipality": "Everett"
+   },
+   {
+    "first": 58291.0,
+    "growth": 7.52,
+    "last": 120368.0,
+    "municipality": "Peru"
+   },
+   {
+    "first": 825579.0,
+    "growth": 7.54,
+    "last": 1707890.0,
+    "municipality": "Carlisle"
+   },
+   {
+    "first": 742460.0,
+    "growth": 7.54,
+    "last": 1535976.0,
+    "municipality": "Rowley"
+   },
+   {
+    "first": 8186031.0,
+    "growth": 7.73,
+    "last": 17239556.0,
+    "municipality": "Westford"
+   },
+   {
+    "first": 58221.0,
+    "growth": 7.85,
+    "last": 123919.0,
+    "municipality": "Charlemont"
+   },
+   {
+    "first": 3734286.0,
+    "growth": 7.93,
+    "last": 8009013.0,
+    "municipality": "Concord"
+   },
+   {
+    "first": 160273.0,
+    "growth": 8.04,
+    "last": 347340.0,
+    "municipality": "East Brookfield"
+   },
+   {
+    "first": 576915.0,
+    "growth": 8.05,
+    "last": 1251500.0,
+    "municipality": "Pepperell"
+   },
+   {
+    "first": 42195.0,
+    "growth": 8.09,
+    "last": 91822.0,
+    "municipality": "Granville"
+   },
+   {
+    "first": 4784853.0,
+    "growth": 8.35,
+    "last": 10669686.0,
+    "municipality": "Hopkinton"
+   },
+   {
+    "first": 49745.0,
+    "growth": 8.38,
+    "last": 111224.0,
+    "municipality": "Warwick"
+   },
+   {
+    "first": 6199010.0,
+    "growth": 8.52,
+    "last": 14047598.0,
+    "municipality": "Auburn"
+   },
+   {
+    "first": 8110976.0,
+    "growth": 8.56,
+    "last": 18433078.0,
+    "municipality": "Shrewsbury"
+   },
+   {
+    "first": 19890.0,
+    "growth": 8.82,
+    "last": 46308.0,
+    "municipality": "Washington"
+   },
+   {
+    "first": 39636.0,
+    "growth": 9.42,
+    "last": 97521.0,
+    "municipality": "Alford"
+   },
+   {
+    "first": 17390.0,
+    "growth": 9.9,
+    "last": 44679.0,
+    "municipality": "Windsor"
+   },
+   {
+    "first": 76655.0,
+    "growth": 10.04,
+    "last": 199506.0,
+    "municipality": "Hinsdale"
+   },
+   {
+    "first": 10402897.0,
+    "growth": 10.22,
+    "last": 27534567.0,
+    "municipality": "Stoughton"
+   },
+   {
+    "first": 74505.0,
+    "growth": 10.48,
+    "last": 201795.0,
+    "municipality": "Leverett"
+   },
+   {
+    "first": 56456.0,
+    "growth": 10.69,
+    "last": 155911.0,
+    "municipality": "Phillipston"
+   },
+   {
+    "first": 51593981.0,
+    "growth": 10.8,
+    "last": 143922050.0,
+    "municipality": "Brockton"
+   },
+   {
+    "first": 37050.0,
+    "growth": 11.59,
+    "last": 110941.0,
+    "municipality": "Ashfield"
+   },
+   {
+    "first": 53918.0,
+    "growth": 11.9,
+    "last": 166012.0,
+    "municipality": "Russell"
+   },
+   {
+    "first": 171385.0,
+    "growth": 12.36,
+    "last": 549736.0,
+    "municipality": "Sunderland"
+   },
+   {
+    "first": 38411926.0,
+    "growth": 12.84,
+    "last": 128528056.0,
+    "municipality": "Quincy"
+   },
+   {
+    "first": 17702.0,
+    "growth": 13.07,
+    "last": 60450.0,
+    "municipality": "Wendell"
+   },
+   {
+    "first": 160419.0,
+    "growth": 16.12,
+    "last": 714892.0,
+    "municipality": "Hampden"
+   },
+   {
+    "first": 6848630.0,
+    "growth": 16.3,
+    "last": 31015501.0,
+    "municipality": "Chelsea"
+   },
+   {
+    "first": 1130131.0,
+    "growth": 16.81,
+    "last": 5343985.0,
+    "municipality": "Ipswich"
+   },
+   {
+    "first": 72414.0,
+    "growth": 16.81,
+    "last": 342330.0,
+    "municipality": "Worthington"
+   },
+   {
+    "first": 18602.0,
+    "growth": 17.15,
+    "last": 90586.0,
+    "municipality": "Oakham"
+   },
+   {
+    "first": 927696.0,
+    "growth": 19.01,
+    "last": 5286226.0,
+    "municipality": "Carver"
+   },
+   {
+    "first": 202978.0,
+    "growth": 20.93,
+    "last": 1357960.0,
+    "municipality": "Berkley"
+   },
+   {
+    "first": 5457.0,
+    "growth": 22.3,
+    "last": 40848.0,
+    "municipality": "Cummington"
+   },
+   {
+    "first": 5383.0,
+    "growth": 24.64,
+    "last": 48699.0,
+    "municipality": "New Braintree"
+   }
+  ],
+  "count": 343,
+  "fastest": [
+   {
+    "first": 5383.0,
+    "growth": 24.64,
+    "last": 48699.0,
+    "municipality": "New Braintree"
+   },
+   {
+    "first": 5457.0,
+    "growth": 22.3,
+    "last": 40848.0,
+    "municipality": "Cummington"
+   },
+   {
+    "first": 202978.0,
+    "growth": 20.93,
+    "last": 1357960.0,
+    "municipality": "Berkley"
+   },
+   {
+    "first": 927696.0,
+    "growth": 19.01,
+    "last": 5286226.0,
+    "municipality": "Carver"
+   },
+   {
+    "first": 18602.0,
+    "growth": 17.15,
+    "last": 90586.0,
+    "municipality": "Oakham"
+   },
+   {
+    "first": 72414.0,
+    "growth": 16.81,
+    "last": 342330.0,
+    "municipality": "Worthington"
+   },
+   {
+    "first": 1130131.0,
+    "growth": 16.81,
+    "last": 5343985.0,
+    "municipality": "Ipswich"
+   },
+   {
+    "first": 6848630.0,
+    "growth": 16.3,
+    "last": 31015501.0,
+    "municipality": "Chelsea"
+   }
+  ],
+  "from_fy": 2015,
+  "histogram": [
+   {
+    "band": 0,
+    "has_town": false,
+    "high": 0,
+    "low": -100,
+    "towns": 22
+   },
+   {
+    "band": 1,
+    "has_town": false,
+    "high": 2,
+    "low": 0,
+    "towns": 34
+   },
+   {
+    "band": 2,
+    "has_town": false,
+    "high": 4,
+    "low": 2,
+    "towns": 99
+   },
+   {
+    "band": 3,
+    "has_town": false,
+    "high": 6,
+    "low": 4,
+    "towns": 126
+   },
+   {
+    "band": 4,
+    "has_town": true,
+    "high": 8,
+    "low": 6,
+    "towns": 33
+   },
+   {
+    "band": 5,
+    "has_town": false,
+    "high": 10,
+    "low": 8,
+    "towns": 10
+   },
+   {
+    "band": 6,
+    "has_town": false,
+    "high": 100,
+    "low": 10,
+    "towns": 19
+   }
+  ],
+  "slowest": [
+   {
+    "first": 19097347.0,
+    "growth": -37.32,
+    "last": 178722.0,
+    "municipality": "Amherst"
+   },
+   {
+    "first": 505948.0,
+    "growth": -8.14,
+    "last": 216504.0,
+    "municipality": "Shirley"
+   },
+   {
+    "first": 4327672.0,
+    "growth": -6.09,
+    "last": 2309847.0,
+    "municipality": "Winchendon"
+   },
+   {
+    "first": 46190.0,
+    "growth": -5.8,
+    "last": 25407.0,
+    "municipality": "Royalston"
+   },
+   {
+    "first": 80833.0,
+    "growth": -3.76,
+    "last": 55084.0,
+    "municipality": "Huntington"
+   },
+   {
+    "first": 21178.0,
+    "growth": -3.64,
+    "last": 14617.0,
+    "municipality": "Goshen"
+   },
+   {
+    "first": 1065845.0,
+    "growth": -3.61,
+    "last": 738069.0,
+    "municipality": "Lanesborough"
+   },
+   {
+    "first": 1832551.0,
+    "growth": -3.39,
+    "last": 1297683.0,
+    "municipality": "Williamstown"
+   }
+  ],
+  "span_years": 10,
+  "to_fy": 2025
+ },
+ "research": "notes/findings/MA-MUNICIPAL-HEALTH-INSURANCE.md",
+ "sources": [
+  {
+   "local": "sources/data/dls-health-insurance.csv",
+   "publisher": "Massachusetts Division of Local Services",
+   "title": "Health Insurance Expenditures, every municipality, FY2002 onward",
+   "url": "https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=ScheduleA.HealthInsurance.HealthInsExpenditures"
+  },
+  {
+   "local": "sources/data/health-insurance-law.csv",
+   "publisher": "The General Court",
+   "title": "M.G.L. Chapter 32B — municipal group insurance",
+   "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B"
+  }
+ ],
+ "town": {
+  "faster_than_median": 2.65,
+  "fy": 2025,
+  "growth": 6.84,
+  "median_growth": 4.19,
+  "municipality": "Lunenburg",
+  "of": 343,
+  "rank": 301,
+  "series": [
+   {
+    "fy": 2002,
+    "spent": 1923642.0
+   },
+   {
+    "fy": 2003,
+    "spent": 2234321.0
+   },
+   {
+    "fy": 2004,
+    "spent": 1067289.0
+   },
+   {
+    "fy": 2005,
+    "spent": 2684297.0
+   },
+   {
+    "fy": 2006,
+    "spent": 1266574.0
+   },
+   {
+    "fy": 2007,
+    "spent": 1391064.0
+   },
+   {
+    "fy": 2008,
+    "spent": 1456620.0
+   },
+   {
+    "fy": 2009,
+    "spent": 1476676.0
+   },
+   {
+    "fy": 2010,
+    "spent": 1614213.0
+   },
+   {
+    "fy": 2011,
+    "spent": 1728021.0
+   },
+   {
+    "fy": 2012,
+    "spent": 1759840.0
+   },
+   {
+    "fy": 2013,
+    "spent": 1834821.0
+   },
+   {
+    "fy": 2014,
+    "spent": 1680215.0
+   },
+   {
+    "fy": 2015,
+    "spent": 1568744.0
+   },
+   {
+    "fy": 2016,
+    "spent": 1670770.0
+   },
+   {
+    "fy": 2017,
+    "spent": 1805969.0
+   },
+   {
+    "fy": 2018,
+    "spent": 1969483.0
+   },
+   {
+    "fy": 2019,
+    "spent": 2108353.0
+   },
+   {
+    "fy": 2020,
+    "spent": 2103154.0
+   },
+   {
+    "fy": 2021,
+    "spent": 2080165.0
+   },
+   {
+    "fy": 2022,
+    "spent": 2170119.0
+   },
+   {
+    "fy": 2023,
+    "spent": 2505400.0
+   },
+   {
+    "fy": 2024,
+    "spent": 2894390.0
+   },
+   {
+    "fy": 2025,
+    "spent": 3038832.0
+   }
+  ],
+  "spent": 3038832.0
+ }
+}

@@ -69,6 +69,29 @@ REPORTS = {
         cols=['dor_code', 'municipality', 'fy', 'residential', 'open_space', 'commercial', 'industrial',
               'personal_property', 'total', 'ro_pct', 'cip_pct'],
     ),
+    # HEALTH INSURANCE, TOWN BY TOWN. TJ, 18 September 2026, on finding it: "we should
+    # build analysis into the health insurance report that compares!" Schedule A Parts 2
+    # and 6, FY2002 onward, one dollar figure per town-year.
+    #
+    # TWO TRAPS DLS PRINTS ITSELF AND THIS FILE CANNOT FIX. For a SELF-INSURED town the
+    # figure includes the EMPLOYEE share; for a town accounting through a trust it can
+    # include workers' compensation and OPEB as well. Nothing in the export flags which
+    # town is which, so a raw town-against-town comparison compares different quantities.
+    # Lunenburg is fully insured through the MIIA joint purchase group (c.32B §12), so its
+    # own figure is the town's premium share alone -- notes/findings/MA-MUNICIPAL-HEALTH-INSURANCE.md.
+    'health-insurance': dict(
+        host='dls-gw', report='ScheduleA.HealthInsurance.HealthInsExpenditures',
+        table='ctHealthExp', export='health_insurance', min_years=20,
+        file='health-insurance-expenditures.xlsx', csv='dls-health-insurance.csv',
+        title='Health insurance expenditures, %s, FY%s–FY%s',
+        head=None,          # read from the workbook: the year columns move every autumn
+        cols=None,
+        # EVERY MUNICIPALITY, not the eleven peers. The control is checked for all 351 by
+        # default and the export is small; a peer set chosen in the fetcher is a judgment
+        # baked into the archive, and this way the judgment stays in the analysis where it
+        # can be argued with.
+        all_towns=True,
+    ),
     'new-growth': dict(
         host='dls-gw', report='NewGrowth.NewGrowth_dash_v2_test',
         table='tblNewGrowth', export='new_growth', min_years=20,
@@ -114,12 +137,25 @@ def fetch(r):
     years = sorted(set(re.findall(r'name="iclYear"[^>]*value="(\d+)"', page)))
     if len(years) < r['min_years']:
         raise SystemExit('%s: the DLS form offered %d years; expected %d or more' % (r['report'], len(years), r['min_years']))
-    offered = set(re.findall(r'name="iclMuni"[^>]*value="([^"]*)"', page))
-    missing = [t for t in TOWNS if t not in offered]
-    if missing:
-        raise SystemExit('%s: the DLS form does not list %s' % (r['report'], missing))
-    fields = ([('iclMuni', t) for t in TOWNS] + [('iclYear', y) for y in years]
-              + [('rdreport', r['report'].lower()), ('lgxver', '')])
+    if r.get('all_towns'):
+        # The control's values are DOR codes, and its labels are the town names; both are
+        # taken from the page so a renamed or renumbered municipality cannot go missing.
+        codes = re.findall(r'name="iclMuni"[^>]*value="(\d+)"\s*/><span>([^<]+)</span>', page)
+        if len(codes) < 340:
+            raise SystemExit('%s: the DLS form listed %d municipalities; expected 351' % (r['report'], len(codes)))
+        names = {c: n.strip() for c, n in codes}
+        if names.get('162') != 'Lunenburg':
+            raise SystemExit('%s: DOR code 162 is %r, not Lunenburg -- the codes have moved'
+                             % (r['report'], names.get('162')))
+        fields = ([('iclMuni', c) for c, _ in codes] + [('iclYear', y) for y in years]
+                  + [('rdreport', r['report'].lower()), ('lgxver', '')])
+    else:
+        offered = set(re.findall(r'name="iclMuni"[^>]*value="([^"]*)"', page))
+        missing = [t for t in TOWNS if t not in offered]
+        if missing:
+            raise SystemExit('%s: the DLS form does not list %s' % (r['report'], missing))
+        fields = ([('iclMuni', t) for t in TOWNS] + [('iclYear', y) for y in years]
+                  + [('rdreport', r['report'].lower()), ('lgxver', '')])
     req = urllib.request.Request(export_url(r), data=urllib.parse.urlencode(fields).encode(),
                                  headers=dict(UA, Referer=page_url(r)))
     resp = urllib.request.urlopen(req, timeout=180)
@@ -135,9 +171,52 @@ def num(v):
     return None if v in (None, '') else float(v)
 
 
+def extract_wide(key):
+    """A report whose columns are YEARS, not fields: DOR code, municipality, FY…FY.
+
+    The year columns move every autumn as a new one is certified, so the header is read
+    rather than asserted; what IS asserted is that the years are consecutive and that
+    Lunenburg's row is present."""
+    import openpyxl
+    r = REPORTS[key]
+    wb = openpyxl.load_workbook(xlsx_path(r), read_only=True)
+    rows = list(wb.worksheets[0].iter_rows(values_only=True))
+    head = [str(c or '').strip() for c in rows[0]]
+    if head[:2] != ['DOR Code', 'Municipality']:
+        raise SystemExit('%s: expected DOR Code and Municipality, found %s' % (r['file'], head[:2]))
+    years = []
+    for c in head[2:]:
+        m = re.search(r'(\d{4})', c)
+        if m:
+            years.append(int(m.group(1)))
+    if len(years) < 10 or years != list(range(years[0], years[0] + len(years))):
+        raise SystemExit('%s: the year columns are not consecutive: %s' % (r['file'], head[2:]))
+    digest = sha256(xlsx_path(r))
+    out, towns = [], set()
+    for row in rows[1:]:
+        name = str(row[1] or '').strip()
+        if not name or name.lower().startswith('total'):
+            continue
+        towns.add(name)
+        for i, fy in enumerate(years):
+            v = row[2 + i]
+            out.append(dict(dor_code=str(row[0] or '').strip(), municipality=name, fy=fy,
+                            # DLS prints 0 for a year whose Schedule A is not yet filed --
+                            # an empty cell, not a town that spent nothing. Kept as blank.
+                            expenditure='' if v in (None, '', 0) else v,
+                            source_file=r['file'], sha256=digest))
+    if 'Lunenburg' not in towns:
+        raise SystemExit('%s: no Lunenburg row' % r['file'])
+    if len(towns) < 340:
+        raise SystemExit('%s: only %d municipalities' % (r['file'], len(towns)))
+    return out
+
+
 def extract(key):
     import openpyxl
     r = REPORTS[key]
+    if r.get('head') is None:
+        return extract_wide(key)
     wb = openpyxl.load_workbook(xlsx_path(r), read_only=True)
     rows = list(wb.worksheets[0].iter_rows(values_only=True))
     head = [str(c or '').strip() for c in rows[0]]
@@ -176,8 +255,9 @@ def extract(key):
 
 def write_csv(key, rows):
     r = REPORTS[key]
+    cols = r['cols'] or ['dor_code', 'municipality', 'fy', 'expenditure']
     with open(csv_path(r), 'w', newline='', encoding='utf-8') as fh:
-        w = csv.DictWriter(fh, fieldnames=r['cols'] + ['source_file', 'sha256'])
+        w = csv.DictWriter(fh, fieldnames=cols + ['source_file', 'sha256'])
         w.writeheader()
         w.writerows(rows)
 
@@ -187,7 +267,8 @@ def write_index(key, years):
     local = 'state-dls/' + r['file']
     rows = [x for x in csv.DictReader(open(INDEX, encoding='utf-8'))] if os.path.exists(INDEX) else []
     rows = [x for x in rows if x['local'] != local]
-    rows.append(dict(local=local, url=export_url(r), title=r['title'] % (', '.join(TOWNS), years[0], years[-1]),
+    who = 'every municipality' if r.get('all_towns') else ', '.join(TOWNS)
+    rows.append(dict(local=local, url=export_url(r), title=r['title'] % (who, years[0], years[-1]),
                      note='DLS Gateway export (POST of the report form with these towns and years; see fetch_dls_property.py)'))
     with open(INDEX, 'w', newline='', encoding='utf-8') as fh:
         w = csv.DictWriter(fh, fieldnames=['local', 'url', 'title', 'note'])
@@ -214,7 +295,8 @@ def main():
         rows = extract(key)
         write_csv(key, rows)
         write_index(key, years)
-        lun = [x for x in rows if x['municipality'] == 'Lunenburg' and x[r['cols'][-1]] != '']
+        last = (r['cols'] or ['dor_code', 'municipality', 'fy', 'expenditure'])[-1]
+        lun = [x for x in rows if x['municipality'] == 'Lunenburg' and x[last] != '']
         print('%s: %d rows, %d towns, FY%s–FY%s; Lunenburg through FY%s'
               % (os.path.relpath(csv_path(r), ROOT), len(rows), len({x['municipality'] for x in rows}), years[0], years[-1], lun[-1]['fy']))
     return 0

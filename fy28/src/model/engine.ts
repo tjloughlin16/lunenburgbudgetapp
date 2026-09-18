@@ -16,8 +16,17 @@ export interface Lever {
   cap: number; isPercent?: boolean; what: string; caveat: string; benchmark: string
   current?: number; selfFunding?: number | null; isPercentPoint?: boolean
   peakFee?: number; peakYield?: number; currentYield?: number
-  /** Share of the gross saving the district actually keeps (statutory giveback). */
+  /** Share of the gross saving the district actually keeps. Where this is an assumption
+   *  rather than a statute, `mitigationBasis` says so. */
   mitigation?: number
+  mitigation_basis?: string
+  /** THE LAW'S OWN CEILING, where one exists. `max` is the furthest this app will model;
+   *  `legal_max` is the furthest anybody may lawfully go, and `legal_basis` is the
+   *  sentence that says so. A slider stops at the law and explains itself rather than
+   *  letting a reader build a budget the town could not adopt. */
+  legal_max?: number
+  legal_basis?: string
+  legal_url?: string
   /** Cut a named line at a time rather than a percentage of an aggregate. */
   isLadder?: boolean
   rungs?: LeverRung[]

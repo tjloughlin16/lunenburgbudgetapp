@@ -110,6 +110,7 @@ CHECKS = [
     ('extract_official_votes.py', ['--check']),
     ('ocr_scanned_minutes.py', ['--check']),
     ('extract_document_timestamps.py', ['--check']),
+    ('build_health_options.py', ['--check']),
     ('build_big_picture.py', ['--check']),
     ('build_property_owners.py', ['--check']),
     ('build_one_big_report.py', ['--check']),
