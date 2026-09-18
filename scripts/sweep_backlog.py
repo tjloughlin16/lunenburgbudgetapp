@@ -43,6 +43,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 LEDGER = os.path.join(ROOT, 'sources', 'data', 'agentic-spend.csv')
 ACTIVE_MINUTES = 30
+MAX_FAILURES = 3
 LIMIT_WORDS = ('rate limit', 'usage limit', 'limit reached', 'out of credits', 'quota', 'too many requests', '429', 'overloaded')
 MY_SESSION = os.environ.get('CLAUDE_SESSION_FILE', '')
 
@@ -116,6 +117,7 @@ def main():
     spent = 0.0
     n = 0
     stop_reason = None
+    failures = 0          # non-limit failures; a transient one (a timeout, a hiccup) should not end the night
     from concurrent.futures import ThreadPoolExecutor, as_completed
     it = iter(js)
 
@@ -148,7 +150,13 @@ def main():
             print('  %s %s %s  %s%s' % (j['stream'], j['board'], j['date'], 'ok' if ok else 'FAILED', (' $%.2f' % cost) if cost else ''), flush=True)
             if not ok:
                 low = out.lower()
-                stop_reason = 'the plan refused (a limit) — the week is spent' if any(w in low for w in LIMIT_WORDS) else 'a job failed: ' + out[-600:]
+                if any(w in low for w in LIMIT_WORDS):
+                    stop_reason = 'the plan refused (a limit) — the week is spent'
+                else:
+                    failures += 1
+                    print('    failed (%d of %d tolerated): %s' % (failures, MAX_FAILURES, out[-300:].replace('\n', ' ')), flush=True)
+                    if failures >= MAX_FAILURES:
+                        stop_reason = '%d jobs failed for reasons other than a limit — stopping rather than guessing' % failures
         # Let what is in flight finish; nothing new is submitted once a reason is set.
         for fut in pending:
             j, ok, out = fut.result()
