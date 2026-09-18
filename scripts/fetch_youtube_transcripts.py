@@ -330,8 +330,15 @@ def main():
     # `--retry-no-captions` exists because the town CAN turn captions on later, so this
     # must be a skip somebody can undo rather than a decision made once.
     skip = set() if args.retry_no_captions else read_no_captions()
-    todo = [r for r in targets
-            if r['video_id'] not in idx and r['video_id'] not in skip][:args.limit]
+    fetchable = [r for r in targets if r['video_id'] not in idx and r['video_id'] not in skip]
+    # `--limit 0` is the backfill's PROBE: "is there anything you would fetch?" It must
+    # answer about the scope, not about a zero-length slice of it -- the old code sliced
+    # first and printed "nothing to fetch" for a scope holding 481 videos, and the
+    # backfill declared every phase complete in one second (17 September 2026).
+    if args.limit == 0:
+        print('%d fetchable in scope' % len(fetchable) if fetchable else 'nothing to fetch — every video in scope already has a transcript')
+        return 0
+    todo = fetchable[:args.limit]
     if skip:
         held_back = sum(1 for r in targets
                         if r['video_id'] not in idx and r['video_id'] in skip)
