@@ -82,6 +82,24 @@ def build():
     me = next(p for p in peers if p['municipality'] == TOWN)
     rank = peers.index(me) + 1
     growths = [p['growth'] for p in peers]
+    # IS THE SCENARIO EVEN POSSIBLE? TJ, 18 September 2026: "'Held to 4%' is not
+    # believable ... we can't just 'hold it to 4%'. Everyone would choose that obviously.
+    # so the conclusion has to be 1 step higher. is it POSSIBLE to hold it to 4%?"
+    #
+    # It is a fair objection to a modelled rate, and it is answerable with this file rather
+    # than with an opinion: count the municipalities that DID hold it, over the same ten
+    # years, and count the decades in which Lunenburg itself did. Neither is a promise that
+    # it can be done again -- what a town's premium does is claims and a pool, not a policy
+    # choice -- but "45% of the Commonwealth" is a different kind of sentence from "if we
+    # held it to 4%".
+    achievable = []
+    for thr in (2.5, 4.0, 5.0, 6.0):
+        n = sum(1 for p in peers if p['growth'] < thr)
+        achievable.append(dict(threshold=thr, towns=n, of=len(peers), share=round(100.0 * n / len(peers), 1)))
+    s_town = by[TOWN]
+    rolling = [dict(fy=fy, growth=round(100 * cagr(s_town[fy - SPAN], s_town[fy], SPAN), 2))
+               for fy in sorted(s_town) if fy - SPAN in s_town and s_town[fy - SPAN] > 0]
+    under = [r for r in rolling if r['growth'] < 4]
     law = rows(LAW)
     if not any(r['available_to_lunenburg'] == 'no' for r in law):
         raise SystemExit('the law file lists nothing the town cannot do; that is not this statute')
@@ -99,7 +117,15 @@ def build():
             growth=me['growth'], rank=rank, of=len(peers),
             median_growth=round(statistics.median(growths), 2),
             faster_than_median=round(me['growth'] - statistics.median(growths), 2),
+            # Every ten-year window the town has data for, so "can it be held" is answered
+            # by its own record before anybody else's.
+            rolling=rolling,
+            decades_under_4=len(under),
+            decades=len(rolling),
+            last_decade_under_4=under[-1]['fy'] if under else None,
+            best_decade=min(rolling, key=lambda r: r['growth']) if rolling else None,
         ),
+        achievable=achievable,
         peers=dict(
             span_years=SPAN, from_fy=first, to_fy=latest, count=len(peers),
             fastest=peers[-8:][::-1], slowest=peers[:8], all=peers,

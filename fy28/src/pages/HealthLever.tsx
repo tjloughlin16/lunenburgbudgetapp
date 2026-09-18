@@ -35,7 +35,9 @@ type Option = {
 type Peer = { municipality: string; first: number; last: number; growth: number }
 type Options = {
   options: Option[]; can: string[]; cannot: string[]; comparison_caveat: string
-  town: { fy: number; spent: number; growth: number; rank: number; of: number; median_growth: number; faster_than_median: number; series: { fy: number; spent: number }[] }
+  town: { fy: number; spent: number; growth: number; rank: number; of: number; median_growth: number; faster_than_median: number; series: { fy: number; spent: number }[]
+    rolling: { fy: number; growth: number }[]; decades_under_4: number; decades: number; last_decade_under_4: number | null; best_decade: { fy: number; growth: number } | null }
+  achievable: { threshold: number; towns: number; of: number; share: number }[]
   peers: { span_years: number; from_fy: number; to_fy: number; count: number; fastest: Peer[]; slowest: Peer[]
     histogram: { band: number; low: number; high: number; towns: number; has_town: boolean }[] }
   neighbours: { municipality: string; series: { fy: number; spent: number }[] }[]
@@ -68,19 +70,23 @@ export function HealthLever() {
             headline={<>The health plan is the largest single lever and not a solution on its own: {pct(H.shareOfGap, 0)} of next year&rsquo;s gap is this one line, from {pct(H.shareOfBudget, 0)} of the budget.</>}>
             Hold it to the levy cap and re-run the projection: {usdShort(GAP - Math.round(GAP * (1 - H.shareOfGap)))} of next year&rsquo;s {usdShort(GAP)} gap falls out. Salaries are {ATTRIBUTION.sizeRatio.toFixed(1)}&times; the size and contribute about the same, because they grow {pct(DEFAULT_RATES.salaries, 0)} and this grows {pct(HEALTH.rise, 0)}. Rule 4 on this site: weight times excess rate, not size.
           </Insight>
-          <Insight n={2} figure={usdShort(AT_FOUR.removed)}
-            headline={<>Held to {pct(0.04, 0)} instead of {pct(HEALTH.rise, 0)}, it takes {usdShort(AT_FOUR.removed)} out of the next ten years&rsquo; gaps for good &mdash; the FY{GAPS[GAPS.length - 1].fy} gap is {pct(AT_FOUR.smallerBy, 0)} smaller, not gone.</>}>
-            That is a rate change, so it compounds the right way: {usdShort(AT_FOUR.firstYear)} in the first year, more every year after. At the levy cap itself it would be {usdShort(AT_CAP.removed)}. Neither closes the gap alone &mdash; salaries at {pct(DEFAULT_RATES.salaries, 0)} still outrun the cap &mdash; but it is the single largest rate move on the table, and it is the least painful column on <a className="underline" href="/what-solved-requires">the page that combines them</a>.
+          <Insight n={2} figure={d ? `${d.achievable.find(a => a.threshold === 4)?.share.toFixed(0)}%` : '—'}
+            headline={d ? <>Four per cent is not a wish: {d.achievable.find(a => a.threshold === 4)?.share.toFixed(0)}% of Massachusetts municipalities held health insurance under it for the decade &mdash; and Lunenburg did in {d.town.decades_under_4} of its own {d.town.decades} ten-year windows, the last ending FY{d.town.last_decade_under_4}.</> : <>Whether a lower rate is achievable at all.</>}>
+            {d ? <>Every municipality files what it spends, so the question &ldquo;could we hold it to {pct(0.04, 0)}?&rdquo; has an answer rather than an opinion: {d.achievable.find(a => a.threshold === 4)?.towns} of {d.peers.count} towns did, over FY{d.peers.from_fy}&ndash;FY{d.peers.to_fy}, and the median town grew {d.town.median_growth.toFixed(1)}%. Lunenburg&rsquo;s own ten-year rate was under {pct(0.04, 0)} in every window from FY2016 to FY{d.town.last_decade_under_4} and crossed only in FY2024. <strong>What this does not establish is why.</strong> A premium is claims and a pool, not a policy setting, so the town&rsquo;s own record shows the rate is not fixed &mdash; not that anybody can choose it. The two years since are <a className="underline" href="#peers">on the chart below</a>.</> : null}
           </Insight>
-          <Insight n={3} figure={d ? `${d.can.length} routes` : '—'}
+          <Insight n={3} figure={usdShort(AT_FOUR.removed)}
+            headline={<>What {pct(0.04, 0)} would be worth if it held: {usdShort(AT_FOUR.removed)} out of the next ten years&rsquo; gaps, and the FY{GAPS[GAPS.length - 1].fy} gap {pct(AT_FOUR.smallerBy, 0)} smaller.</>}>
+            A rate change compounds the right way: {usdShort(AT_FOUR.firstYear)} in the first year, more every year after. At the levy cap itself it would be {usdShort(AT_CAP.removed)}. Neither closes the gap alone &mdash; salaries at {pct(DEFAULT_RATES.salaries, 0)} still outrun the cap &mdash; but it is the single largest rate move on the table, and the least painful column on <a className="underline" href="/what-solved-requires">the page that combines them</a>.
+          </Insight>
+          <Insight n={4} figure={d ? `${d.can.length} routes` : '—'}
             headline={<>There are {d ? d.can.length : ''} lawful routes and {d ? d.cannot.length : ''} things the town cannot do at any price &mdash; and the one everyone proposes, cutting the town&rsquo;s {pct(1 - 0.25, 0)} share, is among the latter.</>}>
             The routes: change the plan design up to the state plan&rsquo;s copays and deductibles (a Select Board decision, 30 days with the employee committee, then a binding panel); join the state&rsquo;s Group Insurance Commission, by agreement or without one; move Medicare-eligible retirees, which the town did in part in 2020; pay people with other coverage to decline. What is barred: the employer share may never go below 50% (§7A permits &ldquo;more, but not less&rdquo;), the plan-design process may not touch the split at all (§21(f)), coverage once accepted cannot be revoked (§10), and retirees cannot be dropped (<em>Galenski</em>, 2015). Every route and every bar is <a className="underline" href="#options">below, with the section that says so</a>.
           </Insight>
-          <Insight n={4} figure={d ? `${d.town.growth.toFixed(1)}%` : '—'} tone="var(--status-critical)"
+          <Insight n={5} figure={d ? `${d.town.growth.toFixed(1)}%` : '—'} tone="var(--status-critical)"
             headline={d ? <>Lunenburg&rsquo;s health insurance grew {d.town.growth.toFixed(1)}% a year for a decade while the median town grew {d.town.median_growth.toFixed(1)}% &mdash; {d.town.rank} of {d.town.of}.</> : <>How the town compares with every other in the state.</>}>
             {d ? <>Every municipality files what it spends on Schedule A, so this is all 351 of them, FY{d.peers.from_fy} to FY{d.peers.to_fy}. Lunenburg spent {usd(d.town.spent)} in FY{d.town.fy}. Compare the GROWTH and not the level: {d.comparison_caveat}</> : null}
           </Insight>
-          <Insight n={5} figure={usd(M.kept)}
+          <Insight n={6} figure={usd(M.kept)}
             headline={<>Moving one person off the broadest plan keeps the town {usd(M.kept)} a year, and {n0(M.onBroadest)} are on it &mdash; bargained, not voted.</>}>
             The broadest plan ({M.from}) to the narrower one ({M.to}) saves {usd(M.gross)} a person in premium; state law hands a quarter of the first year&rsquo;s saving back to employees, so the town keeps {usd(M.kept)}. Every enrollee moved: {usdShort(M.ifAll)} a year. The opt-out the committee voted in March 2026 pays {usd(O.incentive)} against a {usd(O.premium)} premium, netting {usd(O.net)} per person who takes it. And the employee share: each point of the premium shifted from the town to its staff is worth {usd(HEALTH.perPoint)} a year to the budget.
           </Insight>
@@ -118,6 +124,20 @@ export function HealthLever() {
                   <a className="underline text-[12px]" href={o.statute_url} target="_blank" rel="noreferrer">{o.statute.replace('M.G.L. c.32B ', '')}</a>
                 </li>))}
             </ul>
+
+            <H2 id="held">Lunenburg's own ten-year rate, window by window</H2>
+            <Body>Each point is the compound annual rate over the ten years ending that fiscal year &mdash; the same measure the statewide comparison uses. The town was under 4% in {d.town.decades_under_4} of {d.town.decades} windows and crossed in FY2024.</Body>
+            <div style={{ width: '100%', height: 240 }} className="mt-4 avoid-break">
+              <ResponsiveContainer>
+                <LineChart data={d.town.rolling.map(r => ({ fy: `FY${String(r.fy).slice(2)}`, growth: r.growth }))} margin={{ top: 8, right: 8, left: 0, bottom: 4 }}>
+                  <CartesianGrid stroke="var(--grid)" vertical={false} />
+                  <XAxis dataKey="fy" tick={AXIS} stroke="var(--axis)" />
+                  <YAxis tick={AXIS} stroke="var(--axis)" tickFormatter={(v: number) => `${v}%`} width={44} />
+                  <Tooltip formatter={(v) => [`${(v as number).toFixed(1)}% a year`, 'ten years to']} contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)', borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }} />
+                  <Line type="monotone" dataKey="growth" stroke="var(--series-cost)" strokeWidth={2} dot={{ r: 2 }} isAnimationActive={false} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
 
             <H2 id="peers">Every town in the state, on growth</H2>
             <Body>{d.comparison_caveat}</Body>

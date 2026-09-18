@@ -50,7 +50,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 34 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 37 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 34 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 38 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -1131,6 +1131,18 @@
    "blurb": "The Division of Local Services publishes a Free Cash Proof for every community: the year-end calculation of what a town may appropriate without raising taxes, broken into its components. Downloaded 30 August 2026. These reconcile to themselves twice over — 81 checks across nine towns and five years, all tying to the dollar. They carry no denominator of any kind, so the absolute figures do not compare between towns of different size; the composition, being a share, does.",
    "items": [
     {
+     "path": "state-dls/health-insurance-expenditures.xlsx",
+     "title": "Health insurance expenditures, every municipality, FY2002–FY2026",
+     "stars": 3,
+     "what": "DLS Gateway export, fetched by script (fetch_dls_property.py): the whole Commonwealth, one figure per town per year, from Schedule A Parts 2 and 6. Extracted to data/dls-health-insurance.csv, where the two warnings DLS prints about what the figure contains are recorded.",
+     "kind": "Spreadsheet",
+     "bytes": 84848,
+     "url": "/docs/state-dls/health-insurance-expenditures.xlsx",
+     "count": 353,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/health-insurance-expenditures.xlsx"
+    },
+    {
      "path": "state-dls/AvgSingleFamTaxBill.xlsx",
      "title": "Average Single-Family Tax Bill, eleven towns, FY1988–FY2026",
      "stars": 3,
@@ -2070,9 +2082,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 116576,
+     "bytes": 117490,
      "url": "/docs/data/money-gaps.csv",
-     "count": 134,
+     "count": 136,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -2543,7 +2555,7 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 2713034,
+     "bytes": 3076501,
      "url": "/docs/data/meeting-register.csv",
      "count": 7032,
      "unit": "rows",
@@ -3259,6 +3271,18 @@
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
     {
+     "path": "data/dls-health-insurance.csv",
+     "title": "What every Massachusetts municipality spends on health insurance, FY2002 onward",
+     "stars": 2,
+     "what": "8,775 rows: one dollar figure per municipality per fiscal year, all 351, as filed on Schedule A Parts 2 and 6 and published by the Division of Local Services. TWO WARNINGS DLS PRINTS ITSELF: for a self-insured town the figure includes the employee share, and a town accounting through a trust may have workers’ compensation and OPEB inside it — and nothing in the file says which town is which, so the LEVEL is not comparable across towns and the growth is. Fetched by scripts/fetch_dls_property.py.",
+     "kind": "Data",
+     "bytes": 1111551,
+     "url": "/docs/data/dls-health-insurance.csv",
+     "count": 8775,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-health-insurance.csv"
+    },
+    {
      "path": "data/fund-owners.csv",
      "title": "The account registry: every accounting measure the town prints, and who owns it",
      "stars": 2,
@@ -3426,6 +3450,18 @@
      "count": 106,
      "unit": "lines",
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fund1301.md"
+    },
+    {
+     "path": "data/health-insurance-law.csv",
+     "title": "What Massachusetts law lets a town do about health insurance, and what it forbids",
+     "stars": 2,
+     "what": "Eleven rows, one per option: the section of M.G.L. c.32B that permits or forbids it, who decides, the threshold, who the change lands on, and a link to the statute so a reader can check the sentence. Four of the eleven are things no town may do — cutting the employer share below 50%, changing the split through the 2011 plan-design process, revoking coverage, dropping retirees. The research behind it is notes/findings/MA-MUNICIPAL-HEALTH-INSURANCE.md.",
+     "kind": "Data",
+     "bytes": 5188,
+     "url": "/docs/data/health-insurance-law.csv",
+     "count": 11,
+     "unit": "rows",
+     "textUrl": "/docs/data/health-insurance-law.csv"
     },
     {
      "path": "data/meeting-watch-events.csv",
@@ -15684,10 +15720,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1360,
+  "documents": 1363,
   "groups": 22,
-  "bytes": 2166406431,
-  "loadBearing": 127
+  "bytes": 2167972399,
+  "loadBearing": 128
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
