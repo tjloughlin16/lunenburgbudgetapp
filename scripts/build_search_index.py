@@ -490,6 +490,14 @@ def build(rebuild=False, quiet=False):
     # A zero-byte file is what an interrupted first run leaves behind, and it is not an
     # index: the refresh tree's 17 September run died on `no such table: indexed_file`.
     fresh = rebuild or not os.path.exists(DB) or os.path.getsize(DB) == 0
+    # ...and so is a file with bytes and no tables, which is what the 17 September run
+    # actually met: `no such table: indexed_file` in the refresh tree, again.
+    if not fresh:
+        try:
+            has = connect(DB, create=False).execute("SELECT 1 FROM sqlite_master WHERE name='indexed_file'").fetchone()
+        except Exception:
+            has = None
+        fresh = not has
     if fresh and os.path.exists(DB):
         os.remove(DB)
     db = connect(DB, create=fresh)
