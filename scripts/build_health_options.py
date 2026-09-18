@@ -100,6 +100,21 @@ def build():
     rolling = [dict(fy=fy, growth=round(100 * cagr(s_town[fy - SPAN], s_town[fy], SPAN), 2))
                for fy in sorted(s_town) if fy - SPAN in s_town and s_town[fy - SPAN] > 0]
     under = [r for r in rolling if r['growth'] < 4]
+    # AND IS THE TOWN UNUSUAL, OR DID EVERYONE TURN? TJ, 18 September 2026: "Are we unique
+    # in our % increasing, or did all towns see it above 4% at FY24" -- a fair question to
+    # put to a card that says the town crossed 4% in FY2024, and the file answers it. Each
+    # of the last four years: what the median municipality's premium did that year, how
+    # many were over 4%, and where Lunenburg sat. The honest answer turns out to be both
+    # things at once, which is why it is a table and not a sentence.
+    recent = []
+    for fy in range(latest - 3, latest + 1):
+        vals = sorted(100 * (s2[fy] / s2[fy - 1] - 1) for s2 in by.values()
+                      if fy in s2 and fy - 1 in s2 and s2[fy - 1] > 0)
+        mine = 100 * (by[TOWN][fy] / by[TOWN][fy - 1] - 1)
+        recent.append(dict(fy=fy, median=round(statistics.median(vals), 2), towns=len(vals),
+                           over_4=sum(1 for v in vals if v > 4),
+                           over_4_share=round(100.0 * sum(1 for v in vals if v > 4) / len(vals), 1),
+                           town=round(mine, 2), rank=sorted(vals).index(min(vals, key=lambda v: abs(v - mine))) + 1))
     law = rows(LAW)
     if not any(r['available_to_lunenburg'] == 'no' for r in law):
         raise SystemExit('the law file lists nothing the town cannot do; that is not this statute')
@@ -126,6 +141,7 @@ def build():
             best_decade=min(rolling, key=lambda r: r['growth']) if rolling else None,
         ),
         achievable=achievable,
+        recent_years=recent,
         peers=dict(
             span_years=SPAN, from_fy=first, to_fy=latest, count=len(peers),
             fastest=peers[-8:][::-1], slowest=peers[:8], all=peers,

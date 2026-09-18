@@ -38,6 +38,7 @@ type Options = {
   town: { fy: number; spent: number; growth: number; rank: number; of: number; median_growth: number; faster_than_median: number; series: { fy: number; spent: number }[]
     rolling: { fy: number; growth: number }[]; decades_under_4: number; decades: number; last_decade_under_4: number | null; best_decade: { fy: number; growth: number } | null }
   achievable: { threshold: number; towns: number; of: number; share: number }[]
+  recent_years: { fy: number; median: number; towns: number; over_4: number; over_4_share: number; town: number; rank: number }[]
   peers: { span_years: number; from_fy: number; to_fy: number; count: number; fastest: Peer[]; slowest: Peer[]
     histogram: { band: number; low: number; high: number; towns: number; has_town: boolean }[] }
   neighbours: { municipality: string; series: { fy: number; spent: number }[] }[]
@@ -72,7 +73,7 @@ export function HealthLever() {
           </Insight>
           <Insight n={2} figure={d ? `${d.achievable.find(a => a.threshold === 4)?.share.toFixed(0)}%` : '—'}
             headline={d ? <>Four per cent is not a wish: {d.achievable.find(a => a.threshold === 4)?.share.toFixed(0)}% of Massachusetts municipalities held health insurance under it for the decade &mdash; and Lunenburg did in {d.town.decades_under_4} of its own {d.town.decades} ten-year windows, the last ending FY{d.town.last_decade_under_4}.</> : <>Whether a lower rate is achievable at all.</>}>
-            {d ? <>Every municipality files what it spends, so the question &ldquo;could we hold it to {pct(0.04, 0)}?&rdquo; has an answer rather than an opinion: {d.achievable.find(a => a.threshold === 4)?.towns} of {d.peers.count} towns did, over FY{d.peers.from_fy}&ndash;FY{d.peers.to_fy}, and the median town grew {d.town.median_growth.toFixed(1)}%. Lunenburg&rsquo;s own ten-year rate was under {pct(0.04, 0)} in every window from FY2016 to FY{d.town.last_decade_under_4} and crossed only in FY2024. <strong>What this does not establish is why.</strong> A premium is claims and a pool, not a policy setting, so the town&rsquo;s own record shows the rate is not fixed &mdash; not that anybody can choose it. The two years since are <a className="underline" href="#peers">on the chart below</a>.</> : null}
+            {d ? <>Every municipality files what it spends, so the question &ldquo;could we hold it to {pct(0.04, 0)}?&rdquo; has an answer rather than an opinion: {d.achievable.find(a => a.threshold === 4)?.towns} of {d.peers.count} towns did, over FY{d.peers.from_fy}&ndash;FY{d.peers.to_fy}, and the median town grew {d.town.median_growth.toFixed(1)}%. Lunenburg&rsquo;s own ten-year rate was under {pct(0.04, 0)} in every window from FY2016 to FY{d.town.last_decade_under_4} and crossed only in FY2024. <strong>What this does not establish is why.</strong> A premium is claims and a pool, not a policy setting, so the town&rsquo;s own record shows the rate is not fixed &mdash; not that anybody can choose it. <strong>And the town is not alone in turning:</strong> the median municipality went from {d.recent_years[0].median.toFixed(1)}% in FY{d.recent_years[0].fy} to {d.recent_years[d.recent_years.length - 1].median.toFixed(1)}% in FY{d.recent_years[d.recent_years.length - 1].fy}, with {d.recent_years[d.recent_years.length - 1].over_4_share.toFixed(0)}% of towns over {pct(0.04, 0)} last year. What is Lunenburg&rsquo;s own is the size of two of those years &mdash; {d.recent_years[1].town.toFixed(1)}% in FY{d.recent_years[1].fy} and {d.recent_years[2].town.toFixed(1)}% in FY{d.recent_years[2].fy} against medians of {d.recent_years[1].median.toFixed(1)}% and {d.recent_years[2].median.toFixed(1)}% &mdash; and then {d.recent_years[3].town.toFixed(1)}% in FY{d.recent_years[3].fy}, below the median of {d.recent_years[3].median.toFixed(1)}%. <a className="underline" href="#recent">Year by year below</a>.</> : null}
           </Insight>
           <Insight n={3} figure={usdShort(AT_FOUR.removed)}
             headline={<>What {pct(0.04, 0)} would be worth if it held: {usdShort(AT_FOUR.removed)} out of the next ten years&rsquo; gaps, and the FY{GAPS[GAPS.length - 1].fy} gap {pct(AT_FOUR.smallerBy, 0)} smaller.</>}>
@@ -124,6 +125,26 @@ export function HealthLever() {
                   <a className="underline text-[12px]" href={o.statute_url} target="_blank" rel="noreferrer">{o.statute.replace('M.G.L. c.32B ', '')}</a>
                 </li>))}
             </ul>
+
+            <H2 id="recent">The last four years, against every other municipality</H2>
+            <Body>Whether the town is unusual or the market turned &mdash; and it is both. Each row is one year&rsquo;s change in what the town spent, beside the median municipality&rsquo;s and the share of all of them over 4%.</Body>
+            <div className="overflow-x-auto mt-4">
+              <table className="text-sm" style={{ minWidth: 560 }}>
+                <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+                  <th className="text-left py-2 pr-6">year</th><th className="text-right py-2 pr-6">Lunenburg</th><th className="text-right py-2 pr-6">the median town</th><th className="text-right py-2 pr-6">towns over 4%</th><th className="text-right py-2">of</th></tr></thead>
+                <tbody>{d.recent_years.map(r => (
+                  <tr key={r.fy} style={{ borderTop: '1px solid var(--grid)' }}>
+                    <td className="py-1.5 pr-6 tnum">FY{r.fy}</td>
+                    <td className="py-1.5 pr-6 text-right tnum font-semibold" style={{ color: r.town > r.median ? 'var(--status-critical)' : 'var(--status-good)' }}>{r.town.toFixed(1)}%</td>
+                    <td className="py-1.5 pr-6 text-right tnum">{r.median.toFixed(1)}%</td>
+                    <td className="py-1.5 pr-6 text-right tnum">{r.over_4} <span style={{ color: 'var(--text-muted)' }}>({r.over_4_share.toFixed(0)}%)</span></td>
+                    <td className="py-1.5 text-right tnum" style={{ color: 'var(--text-muted)' }}>{r.towns}</td>
+                  </tr>))}</tbody>
+              </table>
+            </div>
+            <p className="text-[12.5px] mt-2" style={{ color: 'var(--text-muted)' }}>
+              The whole state turned after FY2022, so a rising premium here is not evidence of anything Lunenburg did. What is the town&rsquo;s own is the SIZE of FY2023 and FY2024 &mdash; about three times the median in both &mdash; and that FY2025 came in below it. Why any of those happened is not in this data: a premium is claims and a pool.
+            </p>
 
             <H2 id="held">Lunenburg's own ten-year rate, window by window</H2>
             <Body>Each point is the compound annual rate over the ten years ending that fiscal year &mdash; the same measure the statewide comparison uses. The town was under 4% in {d.town.decades_under_4} of {d.town.decades} windows and crossed in FY2024.</Body>
