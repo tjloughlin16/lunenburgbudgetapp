@@ -26,6 +26,43 @@
    "towns": 281
   }
  ],
+ "by_funding": {
+  "basis": "Whether the town reports a health TRUST FUND on Schedule A Part 6: a trust means it pays claims itself (self-insured), no trust means it buys premiums (fully insured). The report’s own Y/N flag is not used — it prints N for towns with millions in trust spending.",
+  "not_available": "Which POOL a town buys through — MIIA, a regional joint purchase group, the GIC, a carrier direct — is recorded in no state dataset, so nothing here is a comparison of carriers.",
+  "town_is": "fully insured",
+  "types": [
+   {
+    "funding": "fully insured",
+    "has_town": true,
+    "median": 4.11,
+    "quartile_high": 5.45,
+    "quartile_low": 2.8,
+    "towns": 259,
+    "under_4": 123,
+    "under_4_share": 47.5
+   },
+   {
+    "funding": "self-insured",
+    "has_town": false,
+    "median": 4.86,
+    "quartile_high": 5.79,
+    "quartile_low": 4.12,
+    "towns": 51,
+    "under_4": 12,
+    "under_4_share": 23.5
+   },
+   {
+    "funding": "changed in the window",
+    "has_town": false,
+    "median": 3.93,
+    "quartile_high": 5.12,
+    "quartile_low": 0.35,
+    "towns": 33,
+    "under_4": 20,
+    "under_4_share": 60.6
+   }
+  ]
+ },
  "can": [
   "plan-design",
   "join-gic-agreement",

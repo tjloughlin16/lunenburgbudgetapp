@@ -78,8 +78,13 @@ def migration_saving(from_id, to_id, movers, family_share=DEFAULT_FAMILY_SHARE):
 # Why this lever is slow, in one place.
 CONSTRAINTS = [
  'Plan design changes go through the Public Employee Committee under M.G.L. c.32B '
- '§§21-23, and the district must share 25% of first-year savings with employees as '
- 'mitigation. The saving in year one is therefore 75% of the headline figure.',
+ '§§21-23. A review panel may direct UP TO 25% of the first year’s savings back to '
+ 'subscribers (§21(f)) — a ceiling on what it may order, not a floor the town owes. We '
+ 'assume the full quarter is conceded, so the saving in year one is 75% of the headline '
+ 'figure; that is our assumption about the table, not a rule the statute imposes.',
+ 'And the panel may not touch the SPLIT at all: §21(f) says it “shall not impose any '
+ 'change to contribution ratios.” The 2011 reform moved plan design out of bargaining '
+ 'and left who pays what share inside it, under c.150E and the town’s §19 agreement.',
  'The Town, not the school district, controls the insurance group. The schools cannot '
  'change this on their own.',
  'Contribution splits are bargained with each union. A shift is a pay cut in everything '

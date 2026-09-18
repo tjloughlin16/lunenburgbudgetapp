@@ -38,6 +38,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 LAW = os.path.join(ROOT, 'sources', 'data', 'health-insurance-law.csv')
 SPEND = os.path.join(ROOT, 'sources', 'data', 'dls-health-insurance.csv')
+SELF = os.path.join(ROOT, 'sources', 'data', 'dls-health-self-insured.csv')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'health-options.json')
 TOWN = 'Lunenburg'
 SPAN = 10          # years over which growth is compared
@@ -60,6 +61,40 @@ def series():
     if TOWN not in by:
         raise SystemExit('no %s in %s' % (TOWN, os.path.relpath(SPEND, ROOT)))
     return by
+
+
+def funding_type(first, last):
+    """Self-insured or fully insured, over the window, from the town's own Schedule A.
+
+    TJ, 18 September 2026: "can you create a chart ... based on insurance type? Do we have
+    that?" Partly, and the part we have is the one that matters for reading the money. A
+    town reporting a HEALTH TRUST FUND pays claims itself: DLS says its figure therefore
+    includes the EMPLOYEE share. A town with no trust buys premiums, and its figure is the
+    employer share alone. That is the axis on which the two are not the same quantity.
+
+    WHAT IS NOT AVAILABLE, and it is the question most people mean: which POOL a town buys
+    through -- MIIA, a regional joint purchase group, the GIC, a carrier direct. No state
+    dataset records it (money-gaps.csv), and the GIC's own member list is served only to a
+    browser. So this classifies funding arrangement, never carrier, and says so.
+
+    The report's Y/N flag is NOT used: Abington prints N in every year while reporting
+    millions in trust expenditures. What is used is whether the trust actually moved money.
+    """
+    trust = {}
+    for r in rows(SELF):
+        fy = int(r['fy'])
+        if first <= fy <= last:
+            try:
+                spend = float(r['expenditures'] or 0)
+            except ValueError:
+                spend = 0.0
+            trust.setdefault(r['municipality'], []).append(spend > 0)
+    out = {}
+    for town, years in trust.items():
+        n = sum(1 for y in years if y)
+        out[town] = ('self-insured' if n >= len(years) - 1 and n >= 9
+                     else 'fully insured' if n == 0 else 'changed in the window')
+    return out
 
 
 def cagr(a, b, years):
@@ -115,6 +150,20 @@ def build():
                            over_4=sum(1 for v in vals if v > 4),
                            over_4_share=round(100.0 * sum(1 for v in vals if v > 4) / len(vals), 1),
                            town=round(mine, 2), rank=sorted(vals).index(min(vals, key=lambda v: abs(v - mine))) + 1))
+    kinds = funding_type(first, latest)
+    by_type = {}
+    for p in peers:
+        k = kinds.get(p['municipality'], 'not known')
+        t = by_type.setdefault(k, [])
+        t.append(p['growth'])
+    types = []
+    for k, vals in sorted(by_type.items(), key=lambda kv: -len(kv[1])):
+        vals.sort()
+        types.append(dict(funding=k, towns=len(vals), median=round(statistics.median(vals), 2),
+                          quartile_low=round(vals[len(vals) // 4], 2), quartile_high=round(vals[3 * len(vals) // 4], 2),
+                          under_4=sum(1 for v in vals if v < 4),
+                          under_4_share=round(100.0 * sum(1 for v in vals if v < 4) / len(vals), 1),
+                          has_town=kinds.get(TOWN) == k))
     law = rows(LAW)
     if not any(r['available_to_lunenburg'] == 'no' for r in law):
         raise SystemExit('the law file lists nothing the town cannot do; that is not this statute')
@@ -141,6 +190,12 @@ def build():
             best_decade=min(rolling, key=lambda r: r['growth']) if rolling else None,
         ),
         achievable=achievable,
+        by_funding=dict(
+            town_is=kinds.get(TOWN, 'not known'),
+            basis='Whether the town reports a health TRUST FUND on Schedule A Part 6: a trust means it pays claims itself (self-insured), no trust means it buys premiums (fully insured). The report’s own Y/N flag is not used — it prints N for towns with millions in trust spending.',
+            not_available='Which POOL a town buys through — MIIA, a regional joint purchase group, the GIC, a carrier direct — is recorded in no state dataset, so nothing here is a comparison of carriers.',
+            types=types,
+        ),
         recent_years=recent,
         peers=dict(
             span_years=SPAN, from_fy=first, to_fy=latest, count=len(peers),

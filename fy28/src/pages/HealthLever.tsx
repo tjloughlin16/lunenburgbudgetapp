@@ -39,6 +39,8 @@ type Options = {
     rolling: { fy: number; growth: number }[]; decades_under_4: number; decades: number; last_decade_under_4: number | null; best_decade: { fy: number; growth: number } | null }
   achievable: { threshold: number; towns: number; of: number; share: number }[]
   recent_years: { fy: number; median: number; towns: number; over_4: number; over_4_share: number; town: number; rank: number }[]
+  by_funding: { town_is: string; basis: string; not_available: string
+    types: { funding: string; towns: number; median: number; quartile_low: number; quartile_high: number; under_4: number; under_4_share: number; has_town: boolean }[] }
   peers: { span_years: number; from_fy: number; to_fy: number; count: number; fastest: Peer[]; slowest: Peer[]
     histogram: { band: number; low: number; high: number; towns: number; has_town: boolean }[] }
   neighbours: { municipality: string; series: { fy: number; spent: number }[] }[]
@@ -89,11 +91,11 @@ export function HealthLever() {
           </Insight>
           <Insight n={6} figure={d ? `${d.town.growth.toFixed(1)}%` : '—'} tone="var(--status-critical)"
             headline={d ? <>Lunenburg&rsquo;s health insurance grew {d.town.growth.toFixed(1)}% a year for a decade while the median town grew {d.town.median_growth.toFixed(1)}% &mdash; {d.town.rank} of {d.town.of}.</> : <>How the town compares with every other in the state.</>}>
-            {d ? <>Every municipality files what it spends on Schedule A, so this is all 351 of them, FY{d.peers.from_fy} to FY{d.peers.to_fy}. Lunenburg spent {usd(d.town.spent)} in FY{d.town.fy}. Compare the GROWTH and not the level: {d.comparison_caveat}</> : null}
+            {d ? <>All 351 municipalities file what they spend on Schedule A; Lunenburg spent {usd(d.town.spent)} in FY{d.town.fy}. Read the GROWTH and not the level &mdash; a self-insured town&rsquo;s figure includes the employee share and ours does not, which is <a className="underline" href="#funding">its own section below</a>.</> : null}
           </Insight>
           <Insight n={7} figure={usd(M.kept)}
             headline={<>Moving one person off the broadest plan keeps the town {usd(M.kept)} a year, and {n0(M.onBroadest)} are on it &mdash; bargained, not voted.</>}>
-            The broadest plan ({M.from}) to the narrower one ({M.to}) saves {usd(M.gross)} a person in premium; state law hands a quarter of the first year&rsquo;s saving back to employees, so the town keeps {usd(M.kept)}. Every enrollee moved: {usdShort(M.ifAll)} a year. The opt-out the committee voted in March 2026 pays {usd(O.incentive)} against a {usd(O.premium)} premium, netting {usd(O.net)} per person who takes it. And the employee share: each point of the premium shifted from the town to its staff is worth {usd(HEALTH.perPoint)} a year to the budget.
+            The broadest plan ({M.from}) to the narrower one ({M.to}) saves {usd(M.gross)} a person in premium. We assume a quarter of the first year&rsquo;s saving is conceded back at the table, so the town keeps {usd(M.kept)} &mdash; an assumption, not a rule: the 25% cap in §21(f) governs plan design, and moving people between plans is bargained. Every enrollee moved: {usdShort(M.ifAll)} a year. The opt-out the committee voted in March 2026 pays {usd(O.incentive)} against a {usd(O.premium)} premium, netting {usd(O.net)} per person who takes it. And the employee share: each point of the premium shifted from the town to its staff is worth {usd(HEALTH.perPoint)} a year to the budget.
           </Insight>
         </div>
         <NotShown>
@@ -148,6 +150,40 @@ export function HealthLever() {
             </div>
             <p className="text-[12.5px] mt-2" style={{ color: 'var(--text-muted)' }}>
               The whole state turned after FY2022, so a rising premium here is not evidence of anything Lunenburg did. What is the town&rsquo;s own is the SIZE of FY2023 and FY2024 &mdash; about three times the median in both &mdash; and that FY2025 came in below it. Why any of those happened is not in this data: a premium is claims and a pool.
+            </p>
+
+            <H2 id="funding">By how a town buys it: claims, or premiums</H2>
+            <Body>{d.by_funding.basis} <strong>{d.by_funding.not_available}</strong></Body>
+            <div style={{ width: '100%', height: 230 }} className="mt-4 avoid-break">
+              <ResponsiveContainer>
+                <BarChart layout="vertical" data={d.by_funding.types.map(t => ({ name: `${t.funding} (${t.towns})`, median: t.median, mine: t.has_town }))}
+                  margin={{ top: 8, right: 16, left: 8, bottom: 4 }}>
+                  <CartesianGrid stroke="var(--grid)" horizontal={false} />
+                  <XAxis type="number" tick={AXIS} stroke="var(--axis)" tickFormatter={(v: number) => `${v}%`} />
+                  <YAxis type="category" dataKey="name" tick={AXIS} stroke="var(--axis)" width={170} />
+                  <Tooltip formatter={(v) => [`${(v as number).toFixed(2)}% a year, median town`, '']} contentStyle={{ background: 'var(--surface-1)', border: '1px solid var(--grid)', borderRadius: 10, fontSize: 12, color: 'var(--text-primary)' }} />
+                  <Bar dataKey="median" isAnimationActive={false}>
+                    {d.by_funding.types.map((t, i) => <Cell key={i} fill={t.has_town ? 'var(--series-cost)' : 'var(--text-muted)'} />)}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="overflow-x-auto mt-3">
+              <table className="text-sm" style={{ minWidth: 560 }}>
+                <thead><tr className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+                  <th className="text-left py-2 pr-6">how it is funded</th><th className="text-right py-2 pr-6">towns</th><th className="text-right py-2 pr-6">median a year</th><th className="text-right py-2 pr-6">middle half</th><th className="text-right py-2">under 4%</th></tr></thead>
+                <tbody>{d.by_funding.types.map(t => (
+                  <tr key={t.funding} style={{ borderTop: '1px solid var(--grid)' }} className={t.has_town ? 'font-semibold' : undefined}>
+                    <td className="py-1.5 pr-6">{t.funding}{t.has_town ? ' — Lunenburg' : ''}</td>
+                    <td className="py-1.5 pr-6 text-right tnum">{t.towns}</td>
+                    <td className="py-1.5 pr-6 text-right tnum">{t.median.toFixed(2)}%</td>
+                    <td className="py-1.5 pr-6 text-right tnum" style={{ color: 'var(--text-muted)' }}>{t.quartile_low.toFixed(1)}–{t.quartile_high.toFixed(1)}%</td>
+                    <td className="py-1.5 text-right tnum">{t.under_4} <span style={{ color: 'var(--text-muted)' }}>({t.under_4_share.toFixed(0)}%)</span></td>
+                  </tr>))}</tbody>
+              </table>
+            </div>
+            <p className="text-[12.5px] mt-2" style={{ color: 'var(--text-muted)' }}>
+              The two groups are not measuring quite the same thing &mdash; a self-insured town&rsquo;s figure includes the employee share &mdash; so read the spread within each group rather than the gap between them. Nothing here says one arrangement causes a lower rate: the towns that self-insure are mostly the largest, and size is doing work this table cannot separate.
             </p>
 
             <H2 id="held">Lunenburg's own ten-year rate, window by window</H2>

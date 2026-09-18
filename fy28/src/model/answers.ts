@@ -583,7 +583,9 @@ export const HEALTH_LEVERS = (() => {
       from: broadest.name, to: narrower.name,
       fromNetwork: broadest.network, toNetwork: narrower.network,
       gross: Math.round(perMover),
-      /** 25% of first-year savings go back to employees under c.32B §§21-23. */
+      /** We assume a quarter of the first year's saving is conceded at the table. §21(f)
+       *  caps what a panel may direct back at 25% in a PLAN DESIGN case and bars it from
+       *  touching the split; a plan migration is bargained. An assumption, not a rule. */
       kept: Math.round(perMover * MODEL.health.townShare * 0.75),
       onBroadest: MODEL.health.enrollment.bce,
       ifAll: Math.round(perMover * MODEL.health.townShare * 0.75

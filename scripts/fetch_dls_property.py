@@ -92,6 +92,27 @@ REPORTS = {
         # can be argued with.
         all_towns=True,
     ),
+    # WHO PAYS CLAIMS, AND WHO BUYS A PREMIUM. The companion to the report above, and the
+    # only published axis on which towns' health spending can be told apart: a town
+    # reporting a health trust fund on Schedule A Part 6 is SELF-INSURED and its figure
+    # includes the employee share; a town with no trust buys premiums and its figure is
+    # the employer share alone. Which POOL a town buys through -- MIIA, a regional group,
+    # the GIC, a carrier direct -- is recorded in no state dataset at all (money-gaps).
+    'self-insured': dict(
+        host='dls-gw', report='ScheduleA.HealthInsurance.Self_InsuredFunds',
+        table='TblPt6_HealthFund', export='self_insured', min_years=20,
+        file='health-self-insured-funds.xlsx', csv='dls-health-self-insured.csv',
+        title='Self-insured health trust funds, %s, FY%s–FY%s',
+        head=['DOR Code', 'Municipality', 'Fiscal Year', 'Starting Balance', 'Revenues',
+              'Expenditures', 'Fund Balance', 'Self-insured (Y/N)'],
+        cols=['dor_code', 'municipality', 'fy', 'starting_balance', 'revenues',
+              'expenditures', 'fund_balance', 'flag'],
+        # THE MUNICIPALITY LIST IS NOT IN THIS PAGE. Unlike its companion, this report
+        # fills its checklist by AJAX, so there are no codes to post -- and posting none
+        # is what returns every municipality, which is what this wants. The check that it
+        # worked is the row count in extract_wide's caller.
+        all_towns=True, no_muni_field=True,
+    ),
     'new-growth': dict(
         host='dls-gw', report='NewGrowth.NewGrowth_dash_v2_test',
         table='tblNewGrowth', export='new_growth', min_years=20,
@@ -137,7 +158,9 @@ def fetch(r):
     years = sorted(set(re.findall(r'name="iclYear"[^>]*value="(\d+)"', page)))
     if len(years) < r['min_years']:
         raise SystemExit('%s: the DLS form offered %d years; expected %d or more' % (r['report'], len(years), r['min_years']))
-    if r.get('all_towns'):
+    if r.get('no_muni_field'):
+        fields = [('iclYear', y) for y in years] + [('rdreport', r['report'].lower()), ('lgxver', '')]
+    elif r.get('all_towns'):
         # The control's values are DOR codes, and its labels are the town names; both are
         # taken from the page so a renamed or renumbered municipality cannot go missing.
         codes = re.findall(r'name="iclMuni"[^>]*value="(\d+)"\s*/><span>([^<]+)</span>', page)
@@ -229,6 +252,14 @@ def extract(key):
             continue
         vals = ['' if v in (None, '') else v for v in row]
         out.append(dict(zip(r['cols'] + ['source_file', 'sha256'], list(vals) + [r['file'], digest])))
+    if key == 'self-insured':
+        if len({o['municipality'] for o in out}) < 340:
+            raise SystemExit('%s: only %d municipalities' % (r['file'], len({o['municipality'] for o in out})))
+        # The report's own Y/N flag is not reliable -- Abington prints N in every year
+        # while reporting millions of trust expenditures -- so nothing is asserted from
+        # it here. What the rows carry is the trust's own money, and that is what
+        # build_health_options.py classifies on.
+        return out
     bad = []
     for o in out:
         if o['fy'] and num(o.get('total') if key == 'assessed-values' else o.get('total_value')) is None:

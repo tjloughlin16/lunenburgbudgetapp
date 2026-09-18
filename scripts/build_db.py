@@ -1074,6 +1074,7 @@ REFERENCE = [
     'report-capital-projects', 'report-valuation', 'report-elections',
     'report-officials', 'report-dept-activity', 'report-enrollment-mcas',
     'report-monty-tech', 'report-gross-wages', 'report-vital-records',
+
 ]
 
 VIEWS = """
@@ -1986,6 +1987,17 @@ def load_reference(db):
 # and belongs in the manifests rather than in a database somebody is asking budget
 # questions of.
 UNLOADED = [
+    # THE COMMONWEALTH, FOR COMPARISON. Every municipality's health insurance spending
+    # (Schedule A Parts 2 and 6, FY2002 onward) and which of them pay claims from a trust
+    # rather than buying premiums -- the only published axis on which the first can be told
+    # apart, because DLS warns a self-insured town's figure includes the EMPLOYEE share.
+    # Which POOL a town buys through is in no state dataset at all (money-gaps).
+    ('dls-health-insurance', 'What every Massachusetts municipality spends on health '
+     'insurance, FY2002 onward, as filed on Schedule A. The LEVEL is not comparable across '
+     'towns — a self-insured town’s figure includes the employee share — so compare growth'),
+    ('dls-health-self-insured', 'Which municipalities pay health claims from a trust rather '
+     'than buying premiums, year by year. The report’s own Y/N flag is unreliable; the '
+     'trust’s expenditures are the signal'),
     ('line-history', 'Every budget line, every year, as extracted'),
     ('dese-radar', 'DESE all-funds per-pupil figures, all districts'),
     ('munis-ledger', 'The MUNIS chart of accounts as delivered'),

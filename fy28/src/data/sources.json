@@ -2545,7 +2545,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 33333248,
+     "bytes": 35647488,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2680,6 +2680,18 @@
      "count": 2403,
      "unit": "rows",
      "textUrl": "/docs/data/dese-sped-program.csv"
+    },
+    {
+     "path": "state-dls/health-self-insured-funds.xlsx",
+     "title": "Self-insured health trust funds, every municipality, FY2003–FY2026",
+     "stars": 3,
+     "what": "DLS Gateway export, fetched by script; extracted to data/dls-health-self-insured.csv.",
+     "kind": "Spreadsheet",
+     "bytes": 344209,
+     "url": "/docs/state-dls/health-self-insured-funds.xlsx",
+     "count": 8425,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/health-self-insured-funds.xlsx"
     },
     {
      "path": "data/dese-function-statewide.csv",
@@ -3281,6 +3293,18 @@
      "count": 8775,
      "unit": "rows",
      "textUrl": "/docs/data/dls-health-insurance.csv"
+    },
+    {
+     "path": "data/dls-health-self-insured.csv",
+     "title": "Which municipalities pay health claims from a trust rather than buying premiums",
+     "stars": 2,
+     "what": "8,424 rows, every municipality and fiscal year: the health trust fund’s starting balance, revenues, expenditures and fund balance as filed on Schedule A Part 6. It is the only published axis on which health spending can be told apart — a self-insured town’s expenditure figure includes the employee share. The report’s own Self-insured (Y/N) column is NOT reliable (Abington prints N every year while reporting millions through a trust), so the classification rests on whether the trust moved money. Fetched by scripts/fetch_dls_property.py.",
+     "kind": "Data",
+     "bytes": 1072422,
+     "url": "/docs/data/dls-health-self-insured.csv",
+     "count": 8424,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-health-self-insured.csv"
     },
     {
      "path": "data/fund-owners.csv",
@@ -15720,10 +15744,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1363,
+  "documents": 1365,
   "groups": 22,
-  "bytes": 2167972399,
-  "loadBearing": 128
+  "bytes": 2171703270,
+  "loadBearing": 129
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

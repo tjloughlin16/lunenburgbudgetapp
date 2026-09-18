@@ -30,7 +30,10 @@ export function HealthInsurance({ empShare, setEmpShare, movers, setMovers, onSa
   const migTown = migTotal * H.townShare
 
   const gross = splitSaving + migTown
-  const mitigated = gross * 0.75   // c.32B §§21-23: 25% of first-year savings to employees
+  // OUR ASSUMPTION, NOT THE STATUTE. §21(f) caps at 25% what a review panel MAY direct
+  // back to subscribers in a plan-design case, and bars it from changing the split at all.
+  // We assume the full quarter is conceded at the table; see model/health.py CONSTRAINTS.
+  const mitigated = gross * 0.75
 
   // Only the migration half is reported up: the split half is the health_design lever,
   // which the workbench already counts. Reporting both would double it.

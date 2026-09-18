@@ -1408,6 +1408,18 @@ GROUPS = [
              'compensation and OPEB inside it — and nothing in the file says which town is '
              'which, so the LEVEL is not comparable across towns and the growth is. Fetched by '
              'scripts/fetch_dls_property.py.'),
+            ('data/dls-health-self-insured.csv',
+             'Which municipalities pay health claims from a trust rather than buying premiums', 2,
+             '8,424 rows, every municipality and fiscal year: the health trust fund’s starting '
+             'balance, revenues, expenditures and fund balance as filed on Schedule A Part 6. '
+             'It is the only published axis on which health spending can be told apart — a '
+             'self-insured town’s expenditure figure includes the employee share. The report’s '
+             'own Self-insured (Y/N) column is NOT reliable (Abington prints N every year while '
+             'reporting millions through a trust), so the classification rests on whether the '
+             'trust moved money. Fetched by scripts/fetch_dls_property.py.'),
+            ('state-dls/health-self-insured-funds.xlsx',
+             'Self-insured health trust funds, every municipality, FY2003–FY2026', 3,
+             'DLS Gateway export, fetched by script; extracted to data/dls-health-self-insured.csv.'),
             ('data/health-insurance-law.csv',
              'What Massachusetts law lets a town do about health insurance, and what it forbids', 2,
              'Eleven rows, one per option: the section of M.G.L. c.32B that permits or forbids '
