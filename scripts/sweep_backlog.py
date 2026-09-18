@@ -100,6 +100,7 @@ def main():
     ap.add_argument('--now', action='store_true', help='run even while a session is active')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--max', type=int, default=10_000)
+    ap.add_argument('--parallel', type=int, default=4, help='jobs at once; the first sweep (17 Sep 2026) ran serial and cleared 77 in 65 minutes for 1.4%% of the week -- time, not allowance, was the limit')
     a = ap.parse_args()
     hh, mm = map(int, a.until.split(':'))
     now = dt.datetime.now()
@@ -112,30 +113,51 @@ def main():
         for j in js[:20]:
             print('  ', j['stream'], j['board'], j['date'], 'recent' if j['recent'] else 'older')
         return
-    done = spent = 0.0
+    spent = 0.0
     n = 0
-    for j in js:
-        if dt.datetime.now() >= until:
-            print('reached %s — stopping' % a.until); break
-        if not a.now and tj_active():
-            print('a session is active — stopping so it is not competed with'); break
-        if n >= a.max:
-            break
+    stop_reason = None
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    it = iter(js)
+
+    def run(j):
         r = subprocess.run(j['cmd'], capture_output=True, text=True, cwd=ROOT)
-        out = (r.stdout + r.stderr)
-        cost = cost_of(out)
-        ok = r.returncode == 0
-        log(dict(at=dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), stream=j['stream'], board=j['board'],
-                 date=j['date'], cost_usd='%.4f' % cost if cost is not None else '', result='ok' if ok else 'failed'))
-        n += 1
-        spent += cost or 0
-        print('  %s %s %s  %s%s' % (j['stream'], j['board'], j['date'], 'ok' if ok else 'FAILED', (' $%.2f' % cost) if cost else ''))
-        if not ok:
-            low = out.lower()
-            if any(w in low for w in LIMIT_WORDS):
-                print('the plan refused (a limit) — the week is spent; stopping'); break
-            print(out[-800:])
-            print('a job failed for another reason — stopping rather than guessing'); break
+        return j, r.returncode == 0, r.stdout + r.stderr
+
+    with ThreadPoolExecutor(max_workers=a.parallel) as pool:
+        pending = set()
+        while stop_reason is None:
+            while len(pending) < a.parallel and n + len(pending) < a.max:
+                if dt.datetime.now() >= until:
+                    stop_reason = 'reached %s' % a.until; break
+                if not a.now and tj_active():
+                    stop_reason = 'a session is active'; break
+                j = next(it, None)
+                if j is None:
+                    stop_reason = 'the queue is empty'; break
+                pending.add(pool.submit(run, j))
+            if not pending:
+                break
+            fut = next(as_completed(pending))
+            pending.remove(fut)
+            j, ok, out = fut.result()
+            cost = cost_of(out)
+            log(dict(at=dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), stream=j['stream'], board=j['board'],
+                     date=j['date'], cost_usd='%.4f' % cost if cost is not None else '', result='ok' if ok else 'failed'))
+            n += 1
+            spent += cost or 0
+            print('  %s %s %s  %s%s' % (j['stream'], j['board'], j['date'], 'ok' if ok else 'FAILED', (' $%.2f' % cost) if cost else ''), flush=True)
+            if not ok:
+                low = out.lower()
+                stop_reason = 'the plan refused (a limit) — the week is spent' if any(w in low for w in LIMIT_WORDS) else 'a job failed: ' + out[-600:]
+        # Let what is in flight finish; nothing new is submitted once a reason is set.
+        for fut in pending:
+            j, ok, out = fut.result()
+            cost = cost_of(out)
+            log(dict(at=dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), stream=j['stream'], board=j['board'],
+                     date=j['date'], cost_usd='%.4f' % cost if cost is not None else '', result='ok' if ok else 'failed'))
+            n += 1
+            spent += cost or 0
+    print(stop_reason or 'done', flush=True)
     print('%d jobs, $%.2f API-equivalent (~%.1f%% of the week)' % (n, spent, spent / 5))
 
 

@@ -46,7 +46,7 @@ while true; do
     break
   fi
   left=$(python3 scripts/fetch_youtube_transcripts.py --video-only --status 2>/dev/null \
-         | awk '/video\(s\) in scope/ {print $(NF-1)}')
+         | awk '/video\(s\) in scope/ {for(i=1;i<=NF;i++) if ($i=="not") print $(i-1)}')
   [ -z "${left:-}" ] && left=0
   [ "$left" -eq 0 ] && { echo "$(date -u +%H:%M:%S)  phase 1 complete"; break; }
   echo "$(date -u +%H:%M:%S)  video-only — $left remaining, taking $BATCH"
@@ -56,7 +56,7 @@ while true; do
   python3 scripts/fetch_youtube_transcripts.py --video-only \
       --limit "$BATCH" --sleep "$SLEEP" 2>&1 | tail -5
   after=$(python3 scripts/fetch_youtube_transcripts.py --video-only --status 2>/dev/null \
-          | awk '/video\(s\) in scope/ {print $(NF-1)}')
+          | awk '/video\(s\) in scope/ {for(i=1;i<=NF;i++) if ($i=="not") print $(i-1)}')
   # A batch that moved nothing means the endpoint is refusing. Go away for a while
   # rather than grinding -- hammering a throttle makes the next run worse too.
   if [ "${after:-0}" -ge "${before:-0}" ]; then
@@ -93,10 +93,10 @@ for phase in "2 --since $RECENT" "3"; do
       echo "$(date -u +%H:%M:%S)  phase $label complete"
       break
     fi
-    before=$(python3 scripts/fetch_youtube_transcripts.py $scope --status 2>/dev/null | awk '/video\(s\) in scope/ {print $(NF-1)}')
+    before=$(python3 scripts/fetch_youtube_transcripts.py $scope --status 2>/dev/null | awk '/video\(s\) in scope/ {for(i=1;i<=NF;i++) if ($i=="not") print $(i-1)}')
     echo "$(date -u +%H:%M:%S)  ${before:-?} remaining, taking $BATCH"
     python3 scripts/fetch_youtube_transcripts.py $scope --limit "$BATCH" --sleep "$SLEEP" 2>&1 | tail -3
-    after=$(python3 scripts/fetch_youtube_transcripts.py $scope --status 2>/dev/null | awk '/video\(s\) in scope/ {print $(NF-1)}')
+    after=$(python3 scripts/fetch_youtube_transcripts.py $scope --status 2>/dev/null | awk '/video\(s\) in scope/ {for(i=1;i<=NF;i++) if ($i=="not") print $(i-1)}')
     if [ "${after:-0}" -ge "${before:-0}" ]; then
       echo "$(date -u +%H:%M:%S)  no progress — cooling down ${COOLDOWN}s"
       sleep "$COOLDOWN"
