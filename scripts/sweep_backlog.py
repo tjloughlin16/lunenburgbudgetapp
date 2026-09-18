@@ -44,7 +44,26 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 LEDGER = os.path.join(ROOT, 'sources', 'data', 'agentic-spend.csv')
 ACTIVE_MINUTES = 30
 MAX_FAILURES = 3
-LIMIT_WORDS = ('rate limit', 'usage limit', 'limit reached', 'out of credits', 'quota', 'too many requests', '429', 'overloaded')
+# TWO KINDS OF "NO", AND THEY ARE NOT THE SAME NIGHT.
+#
+# 18 September 2026: one job failed, the word `overloaded` appeared in its output, and
+# the sweep stopped with "the week is spent" -- 17 jobs in, $1.10 spent, two days after
+# the reset. The same job succeeded on the next attempt. A 529 from the API is the
+# SERVER being busy for a moment; it says nothing whatever about the plan's allowance,
+# and neither does a 429 in the rolling five-hour window, which clears by waiting.
+#
+# HARD is the plan saying the money is gone: nothing but the weekly reset fixes it, so
+# stop. TRANSIENT is the service saying not right now: back off and put the job back on
+# the queue. Conflating them cost a night of backlog and, worse, printed a confident
+# wrong sentence about the allowance -- the failure this project calls quoting a
+# rendering rather than the source (rule 13). So the CLI's own words are now printed
+# with the stop, rather than our interpretation of them standing alone.
+HARD_LIMIT_WORDS = ('usage limit', 'limit reached', 'out of credits', 'quota',
+                    'weekly limit', 'insufficient credit')
+TRANSIENT_WORDS = ('rate limit', 'too many requests', '429', '529', 'overloaded',
+                   'timed out', 'timeout', 'connection', 'econnreset', 'socket hang up',
+                   'internal server error', '500', '502', '503')
+BACKOFF = (60, 300, 900, 1800)      # what to wait before retrying a transient refusal
 MY_SESSION = os.environ.get('CLAUDE_SESSION_FILE', '')
 
 
@@ -118,6 +137,8 @@ def main():
     n = 0
     stop_reason = None
     failures = 0          # non-limit failures; a transient one (a timeout, a hiccup) should not end the night
+    transient = 0         # consecutive service refusals (529, 429, a dropped socket)
+    requeue = []          # jobs a transient refusal interrupted, to be tried again
     from concurrent.futures import ThreadPoolExecutor, as_completed
     it = iter(js)
 
@@ -133,7 +154,7 @@ def main():
                     stop_reason = 'reached %s' % a.until; break
                 if not a.now and tj_active():
                     stop_reason = 'a session is active'; break
-                j = next(it, None)
+                j = requeue.pop(0) if requeue else next(it, None)
                 if j is None:
                     stop_reason = 'the queue is empty'; break
                 pending.add(pool.submit(run, j))
@@ -150,13 +171,30 @@ def main():
             print('  %s %s %s  %s%s' % (j['stream'], j['board'], j['date'], 'ok' if ok else 'FAILED', (' $%.2f' % cost) if cost else ''), flush=True)
             if not ok:
                 low = out.lower()
-                if any(w in low for w in LIMIT_WORDS):
-                    stop_reason = 'the plan refused (a limit) — the week is spent'
+                said = out.strip()[-300:].replace('\n', ' ')
+                if any(w in low for w in HARD_LIMIT_WORDS):
+                    stop_reason = ('the plan refused — the allowance is spent. It said: %s'
+                                   % said)
+                elif any(w in low for w in TRANSIENT_WORDS):
+                    # NOT the week. Back off, put the job back, and carry on; only a run
+                    # of them is evidence of anything.
+                    transient += 1
+                    wait = BACKOFF[min(transient, len(BACKOFF)) - 1]
+                    print('    transient (%d): waiting %ds and requeueing — %s'
+                          % (transient, wait, said), flush=True)
+                    requeue.append(j)
+                    if transient > len(BACKOFF):
+                        stop_reason = ('%d transient refusals in a row — the service is '
+                                       'not answering. It said: %s' % (transient, said))
+                    else:
+                        time.sleep(wait)
                 else:
                     failures += 1
-                    print('    failed (%d of %d tolerated): %s' % (failures, MAX_FAILURES, out[-300:].replace('\n', ' ')), flush=True)
+                    print('    failed (%d of %d tolerated): %s' % (failures, MAX_FAILURES, said), flush=True)
                     if failures >= MAX_FAILURES:
                         stop_reason = '%d jobs failed for reasons other than a limit — stopping rather than guessing' % failures
+            else:
+                transient = 0        # a success clears the streak
         # Let what is in flight finish; nothing new is submitted once a reason is set.
         for fut in pending:
             j, ok, out = fut.result()
