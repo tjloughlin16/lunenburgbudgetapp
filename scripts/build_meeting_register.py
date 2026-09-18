@@ -68,7 +68,7 @@ COLS = ['board', 'board_slug', 'date', 'agenda', 'minutes', 'searchable_docs',
         'video_urls', 'video_uploaded', 'video_first_seen', 'captions_disabled',
         'transcript_paths', 'transcript_fetched',
         'our_minutes_path', 'our_minutes_url', 'our_minutes_written', 'our_minutes_headline', 'our_votes',
-        'official_votes_path', 'official_votes', 'last_activity']
+        'official_votes_path', 'official_votes', 'last_activity', 'noticed']
 EVENTS = os.path.join(ROOT, 'sources', 'data', 'meeting-watch-events.csv')
 VIDEO_EVENTS = os.path.join(ROOT, 'sources', 'data', 'youtube-watch-events.csv')
 TRANSCRIPTS = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
@@ -76,6 +76,7 @@ NO_CAPTIONS = os.path.join(ROOT, 'sources', 'data', 'youtube-no-captions.csv')
 OURS = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 VOTES = os.path.join(ROOT, 'sources', 'data', 'official-votes')
 OCR_MARK = '===OCR'
+WATCH_STATE = os.path.join(ROOT, 'sources', 'data', 'meeting-watch-state.csv')
 
 PAGE = re.compile(r'===PAGE \d+===')
 
@@ -157,6 +158,24 @@ def read(p):
         return list(csv.DictReader(fh))
 
 
+def listed_meetings():
+    """Every meeting the town LISTED on its AgendaCenter, by (board, date).
+
+    TJ, 18 September 2026: "just the POSTING on the agenda center makes the meeting real
+    too." The listing is the legal notice (M.G.L. c.30A §20 asks for 48 hours of it); the
+    agenda FILE is a document attached to that listing, and the two are not the same
+    thing -- the watch state holds listings we hold no file for. So `noticed` rests on the
+    listing, and a fetch we failed can never read as a notice the town never gave.
+    """
+    out = {}
+    for r in read(WATCH_STATE):
+        k = (r['board_slug'], r['date'])
+        cur = out.get(k)
+        if not cur or (r['kind'] == 'agenda' and cur['kind'] != 'agenda') or (r['first_seen'] and r['first_seen'] < (cur['first_seen'] or '9')):
+            out[k] = r
+    return out
+
+
 def load_artifacts():
     """Everything else we hold, keyed the same way."""
     import glob
@@ -204,6 +223,7 @@ def build():
             '(board folder, date) and something has stopped lining up. Nothing written.')
 
     ev, vev, vmeta, nocap, tr, ours, ov = load_artifacts()
+    listed = listed_meetings()
     rows = []
     for key in sorted(set(docs) | set(vids)):
         slug, date = key
@@ -245,6 +265,20 @@ def build():
             'our_minutes_headline': o.get('headline', ''), 'our_votes': o.get('votes', '') if o else '',
             'official_votes_path': votes.get('path', ''), 'official_votes': votes.get('votes', '') if votes else '',
             'last_activity': max(acts) if acts else '',
+            # THE AGENDA IS WHERE A MEETING BECOMES REAL. TJ, 18 September 2026: "in 99% of
+            # cases, the town has to legally post on the agenda board. that's the true first
+            # place a meeting will become 'real' ... and if it's not there, they likely are
+            # breaking the law." The Open Meeting Law (M.G.L. c.30A §20) requires notice 48
+            # hours ahead, so an agenda is the legal birth of a meeting and everything else
+            # is a later artifact of one.
+            #
+            # WHAT THIS COLUMN DOES AND DOES NOT SAY (rule 7). `noticed: 0` means WE HOLD NO
+            # AGENDA, which is not the same as none was posted: the town can re-file or
+            # remove a document, a joint meeting is filed under one board, an emergency
+            # meeting is noticed differently, our harvest of older years is thinner than of
+            # recent ones, and the board and date on a video are a MODEL READING A TITLE.
+            # So this is a list to check, never a finding. `--unnoticed` prints it.
+            'noticed': 1 if (slug, date) in listed or d['agenda'] else 0,
         })
     return rows, nofolder, nodate, len(overlap)
 
@@ -288,9 +322,22 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--check', action='store_true')
+    ap.add_argument('--unnoticed', action='store_true',
+                    help='meetings we hold no agenda for — to CHECK against the town’s AgendaCenter, not to conclude from')
+    ap.add_argument('--since', help='with --unnoticed: only meetings on or after this date')
     args = ap.parse_args()
 
     rows, nofolder, nodate, overlap = build()
+    if args.unnoticed:
+        un = [r for r in rows if not r['noticed'] and (not args.since or r['date'] >= args.since)]
+        un.sort(key=lambda r: r['date'], reverse=True)
+        print('%d meeting(s) the town’s AgendaCenter does not list%s. An agenda is the legal notice '
+              '(M.G.L. c.30A §20), so each of these is worth checking on the town’s '
+              'AgendaCenter — our crawl not holding the listing is not proof none was given.\n'
+              % (len(un), ' since ' + args.since if args.since else ''))
+        for r in un:
+            print('  %s  %-42s %s' % (r['date'], r['board'][:42], r['video_urls'] or '(no recording either)'))
+        return 0
     if args.check:
         if not os.path.exists(OUT):
             print('MISSING %s' % os.path.relpath(OUT, ROOT))
