@@ -102,7 +102,7 @@ function Body({ d }: { d: Model }) {
       <h2 className="text-lg font-semibold mt-10">If you read nothing else</h2>
       <ol className="mt-3 space-y-3 max-w-3xl text-[15px] leading-relaxed">
         <li><strong>The fees and trims are worth doing and do not solve it.</strong> Together they close about {Math.round(100 * pkgTotal / gap)}% of the gap without touching a program.</li>
-        <li><strong>{/^Covers one year/.test(extras.sub.split('. ')[1] ?? '') ? 'Cutting the extras buys one year.' : `Cutting the extras does not buy a year: ${extras.value}, ${(extras.sub.match(/Covers (\d+%)/) ?? [])[1] ?? 'part'} of it.`}</strong> {extras.sub.split('.')[0]}. Then the same gap returns with nothing left to cut but classrooms.</li>
+        <li><strong>{/^Covers one year/.test(extras.sub.split('. ')[1] ?? '') ? 'Cutting every extracurricular buys one year.' : `Cutting every extracurricular does not buy a year: ${extras.value}, ${(extras.sub.match(/Covers (\d+%)/) ?? [])[1] ?? 'part'} of it.`}</strong> {extras.sub.split('.')[0]}. Then the same gap returns with nothing left to cut but classrooms.</li>
         <li><strong>Business growth is real and slow.</strong> It needs {business.value} of new commercial value a year, every year, and pays off in about a decade.</li>
         <li><strong>Free cash covers a year, not a problem.</strong> {freeCashC ? freeCashC.body.split(/\.\s/)[0] + '.' : ''}</li>
         <li><strong>Only two things on the table change a rate: the health plan, and the pace of commercial building.</strong> Everything else is an amount, and an amount has to be found again — which is why every option below is priced to five years and to ten.</li>

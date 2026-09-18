@@ -21,7 +21,7 @@ const AFTER = shortfallAfter(E.total, DEFAULT_RATES.other)
 export function ExtrasLever() {
   return (
     <ReportShell tab={TAB} dataUrl="/data/model.json"
-      title="Cutting the extras"
+      title="Extracurriculars: what cutting sports, music and clubs saves"
       standfirst={<>Every sport still being paid for, the band and chorus, every club advisor and every art supply, eliminated entirely, comes to {usdShort(E.total)}. That is {pct(E.total / GAP, 0)} of next year&rsquo;s gap {YEARS ? `— ${YEARS} year${YEARS === 1 ? '' : 's'} of it —` : '— not even one year —'} and then the column is empty for ever while the gap comes back every spring. It is the answer that sounds like nothing is lost, and it is less than a year.</>}>
 
       <Grain>

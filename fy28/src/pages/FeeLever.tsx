@@ -20,7 +20,7 @@ const AFTER = shortfallAfter(FEES.total, DEFAULT_RATES.other)
 export function FeeLever() {
   return (
     <ReportShell tab={TAB} dataUrl="/data/model.json"
-      title="What fees can raise"
+      title="School user and athletic fees: what they can raise"
       standfirst={<>Athletic, activity and bus fees pushed to the most each can ever raise add {usdShort(FEES.total)} against the budget &mdash; {pct(FEES.shareOfGap, 0)} of next year&rsquo;s gap. Every fee has a peak, because past a price families stop paying; {FEES.cases.filter(c => !c.reachable).length === 0 ? 'each of the three' : `${FEES.cases.filter(c => c.reachable).length} of the three`} can reach self-funding. Special education transport, {usdShort(FEES.spedTransport)}, may not be charged for at all.</>}>
 
       <Grain>

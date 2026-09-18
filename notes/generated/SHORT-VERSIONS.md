@@ -9,3 +9,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 
 | page | kind | short / full | the points a reader should take away |
 |---|---|---:|---|
+| [The Lunenburg Budget Project — FY28 and beyond](/) | page | — / 6.6 min | *(none declared)* |
+| [Budget Crisis](/crisis) | page | 2.9 / 34.7 min | 1. Projections show a $633k deficit next year, and one in every year after it.<br>2. The budget in force already cut 9.2 FTE, and the projection reopens anyway.<br>3. Costs grow 5.18% a year and revenue 3.03%: a rate problem, not a bad year.<br>4. Salaries and health insurance are 64% of the budget — the only two lines that can change the direction, and neither is a School Committee vote.<br>5. About $795k a year of free cash could go to the schools, and it is one-time money. |
+| [Straight answers](/straight-answers) | page | 1.2 / 37.7 min | 1. $633k — The schools need $632,876 more next year than the town can give them. That is the whole problem, in one number.<br>2. 2.68% — The things schools buy get 5.18% more expensive each year. State law lets the town collect about 2.5% more each year. Nobody overspent — the two numbers are simply different.<br>3. $571k — That difference opens a brand new hole every year, of roughly $570,844 to $787,015, whether or not you closed the last one.<br>4. 1 yr — So no single cut fixes this. Every answer in the table below — sports, fees, administrators, pay, insurance — buys one year at most, and then the question comes back larger. |
+| [The money](/the-money) | reference | — / 15.9 min | *(none declared)* |
+| [Not found — The Lunenburg Budget Project](/not-found) | page | — / 0.5 min | *(none declared)* |
+| [Find the money](/find-the-money) | tool | — / 11.6 min | *(none declared)* |
+| [Go deeper](/go-deeper) | reference | — / 8.0 min | *(none declared)* |

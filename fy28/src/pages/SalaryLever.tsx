@@ -24,7 +24,7 @@ const CS = CANNOT_SKIP.salaries
 export function SalaryLever() {
   return (
     <ReportShell tab={TAB} dataUrl="/data/model.json"
-      title="What the contract decides"
+      title="Teacher contracts: what the settlement decides"
       standfirst={<>Salaries are {pct(S.shareOfBudget, 0)} of the school budget, bargained three years at a time, and the teachers&rsquo; agreement runs out on {CONTRACT.expires} &mdash; in the middle of the budget this site is about. Each half a point on the next settlement is worth {usd(SETTLEMENT.perHalfPoint)} to next year&rsquo;s gap. Holding the line to the levy cap while the scale still moves is not a pay freeze; it is {SHRINK.positionsPerYear.toFixed(1)} fewer positions a year.</>}>
 
       <Grain>

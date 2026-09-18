@@ -322,8 +322,8 @@ export function Walkthrough() {
           {cutInThings(GAP).positions.toFixed(1)} positions.
         </Say>
         <Doors items={[
-          ['extraslever', 'Cutting the extras', `${usdShort(EXTRACURRICULAR.total)}, once`],
-          ['feelever', 'What fees can raise', `${usdShort(FEES.total)} at every fee’s peak`],
+          ['extraslever', 'Extracurriculars', `${usdShort(EXTRACURRICULAR.total)}, once`],
+          ['feelever', 'School and athletic fees', `${usdShort(FEES.total)} at every fee’s peak`],
           ['positionslever', 'Classroom positions', `${cutInThings(GAP).positions.toFixed(1)} FTE next year`],
         ]} />
       </Room>
@@ -422,7 +422,7 @@ export function Walkthrough() {
         </Say>
         <Doors items={[
           ['healthlever', 'What changing the health plan does', `${pct(ATTRIBUTION.health.shareOfGap, 0)} of the gap; the plan, the pool, the share`],
-          ['salarylever', 'What the contract decides', `${usd(SETTLEMENT.perHalfPoint)} per half a point`],
+          ['salarylever', 'Teacher contracts', `${usd(SETTLEMENT.perHalfPoint)} per half a point`],
           ['solved', 'What “solved” would require', `${PACKAGES.length} priced combinations`],
         ]} />
       </Room>
