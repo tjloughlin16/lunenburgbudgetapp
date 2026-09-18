@@ -182,7 +182,7 @@ def extract_one(e, force=False):
     with open(path, 'w', encoding='utf-8') as fh:
         json.dump(doc, fh, indent=1, ensure_ascii=False)
         fh.write('\n')
-    return 'wrote %d vote(s)%s' % (len(kept), ', dropped %d unquoted' % dropped if dropped else '')
+    return 'wrote %d vote(s)%s ($%.3f)' % (len(kept), ', dropped %d unquoted' % dropped if dropped else '', doc['cost_usd'] or 0)
 
 
 def check():
