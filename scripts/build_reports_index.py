@@ -583,6 +583,144 @@ def generator_for(payload_name):
     return hits[0] if len(hits) == 1 else (hits[0] if hits else None)
 
 
+def finance_index():
+    """Every board and department that owns money, with the address of its finances.
+
+    THE ANALYSES PAGE IS THE DOOR TO THE DATA, NOT ONLY TO THE WRITE-UPS. TJ, 18 September
+    2026: "having a board list at the bottom in a new section, plus a direct link to the
+    Financials will at least give people a way to find these without knowing to go
+    directly to each board ... use this page as a way to find all 'data' not just the
+    individual reports."
+
+    Before this, a board's finance page was reachable only from that board's own page --
+    so a reader had to already know the board existed, and know it had a finance tab, to
+    find the one thing on this site that says what that board spends. That is discovery
+    by prior knowledge, which is the same failure as an index that omits a report.
+
+    Derived from the two payloads that already decide what exists: boards.json says which
+    boards have a finance tab (the same flag the prerenderer routes on) and finance.json
+    carries the departments and the account counts. Nothing here is tabulated by hand, so
+    a board that gains an account appears the day its account does.
+    """
+    fb = os.path.join(DATA_DIR, 'finance.json')
+    bb = os.path.join(DATA_DIR, 'boards.json')
+    for f in (fb, bb):
+        if not os.path.exists(f):
+            raise SystemExit('missing %s -- run build_finance.py and build_boards.py '
+                             'before this' % os.path.relpath(f, ROOT))
+    with open(fb, encoding='utf-8') as fh:
+        fin = json.load(fh)
+    with open(bb, encoding='utf-8') as fh:
+        boards = json.load(fh)['boards']
+
+    owners = fin['owners']
+
+    def measures(slug):
+        o = owners.get(slug)
+        return sum((o or {}).get('counts', {}).values())
+
+    # THE MAGNITUDE IS TWO FIGURES AND THEY MAY NOT BE ADDED.
+    #
+    # TJ, 18 September 2026: "is there a way to put a magnitude for each board/department?
+    # Like, total budget or total funds available per year or something?"
+    #
+    # There is, and the honest answer is a pair rather than a single number, because the
+    # two quantities are different KINDS. An appropriation is a FLOW -- what Town Meeting
+    # authorised this board or department to spend across FY2026, and it resets every
+    # year. A revolving fund or trust balance is a STOCK -- what sat in the account on one
+    # day, accumulated across years and not voted at all. Adding them produces a figure
+    # that is neither: a year of spending plus a pile of savings, with no unit anybody
+    # could name. Rule 7's grain problem in its arithmetic form.
+    #
+    # So both are carried, both are labelled, and the page prints them in separate
+    # columns. Six owners have no appropriation at all and exist only as held funds --
+    # which is itself worth seeing, and would be invisible in a single blended number.
+    #
+    # Rule 11 still applies to the appropriation: it is NET of whatever grants, fees and
+    # reimbursements pay for the same thing, so it is what the town had to raise, not what
+    # the department costs. The page says so where the figure is.
+    #
+    # `agency_held` is deliberately excluded from the stock. Agency funds are money the
+    # town holds FOR SOMEBODY ELSE -- deposits, withholdings, the school lunch clearing
+    # account -- and one of them is negative. It is not this owner's money to spend and
+    # counting it as magnitude would overstate three owners and understate one.
+    def magnitude(slug):
+        t = (owners.get(slug) or {}).get('totals') or {}
+        held = [t.get('special_revenue_held'), t.get('trust_held')]
+        stock = sum(x for x in held if x)
+        return dict(
+            appropriation=t.get('appropriation_revised'),
+            expended=t.get('appropriation_expended'),
+            period=t.get('appropriation_period'),
+            held=stock or None,
+            held_parts=dict(special_revenue=t.get('special_revenue_held'),
+                            trust=t.get('trust_held')),
+        )
+
+    bs = []
+    for b in boards:
+        if not b.get('finance'):
+            continue
+        # The School Committee's finance page is a top-level route; every other board's
+        # is a tab under the board. routes.ts is the authority on both, and the
+        # prerenderer special-cases the same slug.
+        url = ('/boards/school-committee/finance' if b['slug'] == 'school-committee'
+               else '/boards/%s/finance' % b['slug'])
+        bs.append(dict(slug=b['slug'], name=b['name'], url=url,
+                       board_url='/boards/' + b['slug'],
+                       accounts=b['finance'].get('accounts') or measures(b['slug']),
+                       **magnitude(b['slug'])))
+
+    ds = []
+    for d in fin['departments']:
+        if d['slug'] not in owners:
+            continue        # no measure of its own: it has no page to link to
+        # `external` is not a department at all: Worcester Regional Retirement, Monty
+        # Tech, the regional planning commission and the cherry sheet are ASSESSMENTS the
+        # town is billed for, appropriated under the Town Manager's book because the money
+        # has to leave from somewhere. Filing them under "Town Manager departments" would
+        # say the Town Manager runs them, which is the kind of quiet wrongness a label
+        # gets away with for years. The page splits on this.
+        ds.append(dict(slug=d['slug'], name=d['name'],
+                       url='/departments/' + d['slug'], kind=d.get('kind') or 'department',
+                       head=d.get('head') or '', accounts=measures(d['slug']),
+                       **magnitude(d['slug'])))
+
+    # A JOIN THAT MATCHES NOTHING LOOKS EXACTLY LIKE DATA THAT IS ABSENT.
+    if not bs or not ds:
+        raise SystemExit('finance index resolved %d boards and %d departments -- one of '
+                         'the payloads changed shape' % (len(bs), len(ds)))
+
+    # LARGEST FIRST. A magnitude column that is sorted alphabetically is a magnitude
+    # nobody reads -- the whole reason to print the figure is that $26.4M and $500 are
+    # not the same kind of body, and the order is what says so at a glance. Owners with
+    # no appropriation sort on what they hold instead, and land at the foot.
+    def rank(x):
+        return (-(x['appropriation'] or 0), -(x['held'] or 0), x['name'])
+
+    return dict(
+        boards=sorted(bs, key=rank),
+        departments=sorted(ds, key=rank),
+        # THE GRAIN, in the words the page prints beside the figures. Every appropriation
+        # here is FY2026 period 12 -- year end, unaudited -- and every balance is the one
+        # struck on 31 March 2026. Typed nowhere: read from the payload that computed them.
+        appropriation_as_of=fin.get('as_of', {}).get('ledger', ''),
+        held_as_of=fin.get('as_of', {}).get('special_revenue', ''),
+        measures=len(fin['measures']),
+        as_of=fin.get('as_of', {}),
+        doors=[
+            dict(url='/accounts', title='Every account, once',
+                 about='The registry underneath all of this: every fund, appropriation, '
+                       'revolving fund, grant and trust the town\u2019s own reports '
+                       'print, each one assigned to whoever answers for it.'),
+            dict(url='/departments', title='The departments',
+                 about='The Town Manager\u2019s departments, each with the lines it '
+                       'spends and what it held at the close of the period.'),
+        ],
+        generated_by='scripts/build_finance.py',
+    )
+
+
 def main():
     names = sorted(f[:-3] for f in os.listdir(SRC) if f.endswith('.md'))
     ordered = [n for n in ORDER if n in names] + [n for n in names if n not in ORDER]
@@ -711,6 +849,10 @@ def main():
                          'Several of these documents describe their own earlier errors.'),
         ),
         reports=reports,
+        # EVERY BOARD AND DEPARTMENT THAT OWNS MONEY, with the address of its
+        # finances -- so this page is the door to the data and not only to the
+        # write-ups. See finance_index().
+        finance=finance_index(),
         # The reports that are React PAGES rather than documents. Same area, same shell,
         # same print stylesheet; what differs is that a page is computed from a published
         # payload on every build and a document is prose with a verifier beside it.
