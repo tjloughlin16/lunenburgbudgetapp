@@ -75,6 +75,9 @@ function Slot({ label, href, title, tone, had }: { label: string; href?: string 
 
 function ActivityRow({ a }: { a: Recent }) {
   const ours = a.our_minutes
+  // The vote count is a MEASURE of the meeting, not a label on a link: the town's
+  // minutes are the record where they exist, ours where they do not.
+  const votes = a.official_votes ?? (ours ? ours.votes : null)
   return (
     <li className="card p-3">
       <div className="sm:flex sm:items-start sm:gap-4">
@@ -84,23 +87,24 @@ function ActivityRow({ a }: { a: Recent }) {
             <span style={{ color: 'var(--text-secondary)' }}>{longDate(a.date)}</span>
             <span className="text-[11px] tnum" title={`The record of this meeting: ${a.complete} of ${a.complete_of} — the town's listing, agenda, minutes and recording, and our transcript, minutes and reading of its votes.${a.missing.length ? ' Missing: ' + a.missing.join(', ') + '.' : ''}`}
               style={{ color: a.complete_pct >= 85 ? 'var(--status-good)' : a.complete_pct >= 50 ? 'var(--text-muted)' : 'var(--status-critical)' }}>{a.complete}/{a.complete_of} of the record</span>
+            {votes !== null && <span className="text-[11px] tnum" style={{ color: 'var(--text-muted)' }} title={a.official_votes != null ? 'Votes read from the town’s minutes' : 'Substantive votes in our minutes of the recording'}>{votes} vote{votes === 1 ? '' : 's'}</span>}
           </div>
           {/* THE SUMMARY TITLE, where our minutes exist: what the meeting did, on the row. */}
           {ours && ours.headline && (
             <p className="text-[13.5px] mt-1 leading-snug">{ours.headline}{' '}
-              <a className="text-[11.5px] underline" style={{ color: 'var(--text-muted)' }} href={ours.url}>our minutes{ours.votes ? ` · ${ours.votes} vote${ours.votes === 1 ? '' : 's'}` : ''}</a></p>
+              <a className="text-[11.5px] underline" style={{ color: 'var(--text-muted)' }} href={ours.url}>our minutes</a></p>
           )}
         </div>
         {/* Right, and the same five slots on every row so the eye can run down a column. */}
         <div className="grid grid-cols-5 gap-1 mt-2 sm:mt-0 sm:w-[21rem] sm:shrink-0">
           <Slot label="agenda" had={Boolean(a.agenda)} href={a.agenda?.url} title={a.agenda ? 'The agenda the town posted' : 'No agenda in the town’s listing'} />
-          <Slot label={a.minutes?.days_after_meeting_upper_bound != null ? `${a.minutes.days_after_meeting_upper_bound}d` : 'minutes'} had={Boolean(a.minutes)} href={a.minutes?.url} tone="var(--status-good)"
+          <Slot label="minutes" had={Boolean(a.minutes)} href={a.minutes?.url} tone="var(--status-good)"
             title={a.minutes ? `The town’s minutes${a.minutes.days_after_meeting_upper_bound != null ? `, seen within ${a.minutes.days_after_meeting_upper_bound} days of the meeting` : ''}${a.minutes.ocr ? '; read here by OCR' : ''}` : 'The town has posted no minutes for this meeting'} />
           <Slot label="video" had={Boolean(a.recording)} href={a.recording?.url} tone="var(--series-revenue, #b5540f)"
             title={a.recording ? (a.recording.captions_disabled ? 'On the town’s channel; captions are disabled' : 'On the town’s channel') : 'This board’s meetings are not recorded'} />
           <Slot label="captions" had={Boolean(a.transcript)} tone="var(--text-secondary)"
             title={a.transcript ? 'We hold machine captions of the recording' : 'No captions held'} />
-          <Slot label={ours?.votes ? `${ours.votes} votes` : 'ours'} had={Boolean(ours)} href={ours?.url} tone="var(--series-cost)"
+          <Slot label="ours" had={Boolean(ours)} href={ours?.url} tone="var(--series-cost)"
             title={ours ? 'Our minutes, written from the recording' : 'We have not written minutes for this meeting'} />
         </div>
       </div>
