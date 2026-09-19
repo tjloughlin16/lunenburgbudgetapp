@@ -227,7 +227,7 @@
     {
      "board": "Finance Committee",
      "board_slug": "finance-committee",
-     "cycles": 4,
+     "cycles": 5,
      "earliest": "Sep 12",
      "latest": "Apr 25",
      "this_cycle": [
@@ -242,8 +242,8 @@
       "2025-03-20",
       "2025-03-27"
      ],
-     "typical_first": "Nov 13",
-     "typical_last": "Apr 20"
+     "typical_first": "Sep 29",
+     "typical_last": "Mar 27"
     },
     {
      "board": "Select Board",
@@ -390,7 +390,7 @@
   }
  ],
  "counts": {
-  "boards": 30,
+  "boards": 31,
   "by_board": {
    "Architectural Preservation District Commission": 9,
    "Board of Assessors": 15,
@@ -398,6 +398,7 @@
    "Budget Task Force": 1,
    "Capital Planning Committee": 11,
    "Cemetery Commission": 3,
+   "Conservation Commission": 2,
    "Council on Aging": 12,
    "Finance Committee": 24,
    "Finance Committee Public Hearing": 3,
@@ -423,11 +424,11 @@
    "Sewer Commission": 11,
    "Stormwater Task Force": 5
   },
-  "entries": 535,
+  "entries": 537,
   "kinds": {
    "budget item": 114,
-   "official agenda": 69,
-   "official minutes": 151,
+   "official agenda": 49,
+   "official minutes": 173,
    "topic": 185,
    "vote": 16
   },
@@ -656,6 +657,18 @@
    "video_url": "https://www.youtube.com/watch?v=GRGJdd9o4xQ&t=2010s"
   },
   {
+   "board": "Conservation Commission",
+   "board_slug": "conservation-commission",
+   "date": "2025-05-07",
+   "detail": null,
+   "kind": "official minutes",
+   "markers": [
+    "town meeting"
+   ],
+   "page": "/docs/meetings/conservation-commission/2025-05-07-minutes-7208.pdf",
+   "text": "town meeting"
+  },
+  {
    "board": "School Committee Special Meeting - Superintendent Interview Menard",
    "board_slug": "school-committee",
    "date": "2025-05-06",
@@ -734,13 +747,14 @@
    "board_slug": "select-board",
    "date": "2025-05-06",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "town meeting",
+    "override",
     "warrant"
    ],
-   "page": "/docs/meetings/select-board/2025-05-06-agenda-7206.pdf",
-   "text": "town meeting, warrant"
+   "page": "/docs/meetings/select-board/2025-05-06-minutes-rr2026-09-18-draft.pdf",
+   "text": "town meeting, override, warrant"
   },
   {
    "board": "School Committee Special Meeting - Superintendent Interview McCormick",
@@ -837,12 +851,12 @@
    "board_slug": "board-of-assessors",
    "date": "2025-05-05",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "town meeting",
     "warrant"
    ],
-   "page": "/docs/meetings/board-of-assessors/2025-05-05-agenda-7202.pdf",
+   "page": "/docs/meetings/board-of-assessors/2025-05-05-minutes-7202.pdf",
    "text": "town meeting, warrant"
   },
   {
@@ -862,12 +876,15 @@
    "board_slug": "select-board",
    "date": "2025-05-03",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
-    "warrant"
+    "warrant",
+    "free cash",
+    "omnibus",
+    "town meeting"
    ],
-   "page": "/docs/meetings/select-board/2025-05-03-agenda-7204.pdf",
-   "text": "warrant"
+   "page": "/docs/meetings/select-board/2025-05-03-minutes-7204.pdf",
+   "text": "warrant, free cash, omnibus, town meeting"
   },
   {
    "board": "School Committee Special Meeting - Superintendent Interview - Jodi Fortuna",
@@ -1158,14 +1175,15 @@
    "board_slug": "select-board",
    "date": "2025-04-22",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "town meeting",
-    "capital plan",
-    "warrant"
+    "warrant",
+    "override",
+    "capital plan"
    ],
-   "page": "/docs/meetings/select-board/2025-04-22-agenda-7177.pdf",
-   "text": "town meeting, capital plan, warrant"
+   "page": "/docs/meetings/select-board/2025-04-22-minutes-rr2026-09-18.pdf",
+   "text": "town meeting, warrant, override, capital plan"
   },
   {
    "board": "Library Board of Trustees",
@@ -1574,12 +1592,13 @@
    "board_slug": "board-of-assessors",
    "date": "2025-04-16",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
-    "warrant"
+    "warrant",
+    "town meeting"
    ],
-   "page": "/docs/meetings/board-of-assessors/2025-04-16-agenda-7166.pdf",
-   "text": "warrant"
+   "page": "/docs/meetings/board-of-assessors/2025-04-16-minutes-7166.pdf",
+   "text": "warrant, town meeting"
   },
   {
    "board": "School Advisory Councils & Committees",
@@ -1598,14 +1617,15 @@
    "board_slug": "select-board",
    "date": "2025-04-15",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
-    "capital plan",
     "town meeting",
-    "warrant"
+    "capital plan",
+    "warrant",
+    "operating budget"
    ],
-   "page": "/docs/meetings/select-board/2025-04-15-agenda-7174.pdf",
-   "text": "capital plan, town meeting, warrant"
+   "page": "/docs/meetings/select-board/2025-04-15-minutes-rr2026-09-18-draft.pdf",
+   "text": "town meeting, capital plan, warrant, operating budget"
   },
   {
    "board": "Sewer Commission",
@@ -2178,12 +2198,12 @@
    "board_slug": "board-of-assessors",
    "date": "2025-04-02",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "warrant",
     "town meeting"
    ],
-   "page": "/docs/meetings/board-of-assessors/2025-04-02-agenda-7136.pdf",
+   "page": "/docs/meetings/board-of-assessors/2025-04-02-minutes-7136.pdf",
    "text": "warrant, town meeting"
   },
   {
@@ -2191,15 +2211,15 @@
    "board_slug": "select-board",
    "date": "2025-04-01",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
-    "town meeting",
     "override",
-    "warrant",
-    "capital plan"
+    "town meeting",
+    "budget hearing",
+    "warrant"
    ],
-   "page": "/docs/meetings/select-board/2025-04-01-agenda-7132.pdf",
-   "text": "town meeting, override, warrant, capital plan"
+   "page": "/docs/meetings/select-board/2025-04-01-minutes-rr2026-09-18-draft.pdf",
+   "text": "override, town meeting, budget hearing, warrant"
   },
   {
    "board": "Cemetery Commission",
@@ -2543,14 +2563,15 @@
    "board_slug": "select-board",
    "date": "2025-03-18",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "town meeting",
     "warrant",
+    "budget hearing",
     "capital plan"
    ],
-   "page": "/docs/meetings/select-board/2025-03-18-agenda-7105.pdf",
-   "text": "town meeting, warrant, capital plan"
+   "page": "/docs/meetings/select-board/2025-03-18-minutes-rr2026-09-18.pdf",
+   "text": "town meeting, warrant, budget hearing, capital plan"
   },
   {
    "board": "Lunenburg Municipal Building Design Committee",
@@ -3569,12 +3590,13 @@
    "board_slug": "council-on-aging",
    "date": "2025-02-11",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
+    "town budget",
     "capital plan"
    ],
-   "page": "/docs/meetings/council-on-aging/2025-02-11-agenda-7014.pdf",
-   "text": "capital plan"
+   "page": "/docs/meetings/council-on-aging/2025-02-11-minutes-7014.pdf",
+   "text": "town budget, capital plan"
   },
   {
    "board": "School Advisory Councils & Committees",
@@ -3814,13 +3836,13 @@
    "board_slug": "board-of-assessors",
    "date": "2025-02-05",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "capital plan",
     "warrant",
     "town meeting"
    ],
-   "page": "/docs/meetings/board-of-assessors/2025-02-05-agenda-6999.pdf",
+   "page": "/docs/meetings/board-of-assessors/2025-02-05-minutes-6999.pdf",
    "text": "capital plan, warrant, town meeting"
   },
   {
@@ -4081,6 +4103,18 @@
    "video_url": "https://www.youtube.com/watch?v=TCtuISoe8iU&t=317s"
   },
   {
+   "board": "Conservation Commission",
+   "board_slug": "conservation-commission",
+   "date": "2025-01-22",
+   "detail": null,
+   "kind": "official minutes",
+   "markers": [
+    "capital plan"
+   ],
+   "page": "/docs/meetings/conservation-commission/2025-01-22-minutes-6966.pdf",
+   "text": "capital plan"
+  },
+  {
    "board": "Select Board",
    "board_slug": "select-board",
    "date": "2025-01-21",
@@ -4180,15 +4214,15 @@
    "board_slug": "select-board",
    "date": "2025-01-14",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
-    "capital plan",
-    "operating budget",
     "town meeting",
-    "warrant"
+    "free cash",
+    "budget process",
+    "budget discussion"
    ],
-   "page": "/docs/meetings/select-board/2025-01-14-agenda-6957.pdf",
-   "text": "capital plan, operating budget, town meeting, warrant"
+   "page": "/docs/meetings/select-board/2025-01-14-minutes-rr2026-09-18-draft.pdf",
+   "text": "town meeting, free cash, budget process, budget discussion"
   },
   {
    "board": "Planning Board",
@@ -4655,11 +4689,11 @@
    "board_slug": "council-on-aging",
    "date": "2024-12-10",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "capital plan"
    ],
-   "page": "/docs/meetings/council-on-aging/2024-12-10-agenda-6913.pdf",
+   "page": "/docs/meetings/council-on-aging/2024-12-10-minutes-6913.pdf",
    "text": "capital plan"
   },
   {
@@ -4965,13 +4999,14 @@
    "board_slug": "select-board",
    "date": "2024-11-19",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "town meeting",
-    "warrant"
+    "warrant",
+    "capital plan"
    ],
-   "page": "/docs/meetings/select-board/2024-11-19-agenda-6886.pdf",
-   "text": "town meeting, warrant"
+   "page": "/docs/meetings/select-board/2024-11-19-minutes-rr2026-09-18-draft.pdf",
+   "text": "town meeting, warrant, capital plan"
   },
   {
    "board": "Architectural Preservation District Commission",
@@ -5014,14 +5049,15 @@
    "board_slug": "council-on-aging",
    "date": "2024-11-12",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
+    "warrant",
     "town meeting",
     "budget request",
     "capital plan"
    ],
-   "page": "/docs/meetings/council-on-aging/2024-11-12-agenda-6868.pdf",
-   "text": "town meeting, budget request, capital plan"
+   "page": "/docs/meetings/council-on-aging/2024-11-12-minutes-6868.pdf",
+   "text": "warrant, town meeting, budget request, capital plan"
   },
   {
    "board": "Select Board",
@@ -5211,13 +5247,14 @@
    "board_slug": "select-board",
    "date": "2024-11-05",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
+    "warrant",
     "town meeting",
-    "warrant"
+    "capital plan"
    ],
-   "page": "/docs/meetings/select-board/2024-11-05-agenda-6861.pdf",
-   "text": "town meeting, warrant"
+   "page": "/docs/meetings/select-board/2024-11-05-minutes-rr2026-09-18-draft.pdf",
+   "text": "warrant, town meeting, capital plan"
   },
   {
    "board": "Sewer Commission",
@@ -5340,13 +5377,15 @@
    "board_slug": "select-board",
    "date": "2024-10-22",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
+    "warrant",
     "town meeting",
-    "warrant"
+    "chapter 70",
+    "capital plan"
    ],
-   "page": "/docs/meetings/select-board/2024-10-22-agenda-6839.pdf",
-   "text": "town meeting, warrant"
+   "page": "/docs/meetings/select-board/2024-10-22-minutes-rr2026-09-18-draft.pdf",
+   "text": "warrant, town meeting, chapter 70, capital plan"
   },
   {
    "board": "Sewer Commission",
@@ -6095,14 +6134,15 @@
    "board_slug": "council-on-aging",
    "date": "2024-09-10",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "town meeting",
     "budget request",
+    "free cash",
     "capital plan"
    ],
-   "page": "/docs/meetings/council-on-aging/2024-09-10-agenda-6747.pdf",
-   "text": "town meeting, budget request, capital plan"
+   "page": "/docs/meetings/council-on-aging/2024-09-10-minutes-6747.pdf",
+   "text": "town meeting, budget request, free cash, capital plan"
   },
   {
    "board": "Select Board",
@@ -6647,13 +6687,15 @@
    "board_slug": "select-board",
    "date": "2024-08-13",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "town meeting",
-    "warrant"
+    "warrant",
+    "capital budget",
+    "chapter 70"
    ],
-   "page": "/docs/meetings/select-board/2024-08-13-agenda-6703.pdf",
-   "text": "town meeting, warrant"
+   "page": "/docs/meetings/select-board/2024-08-13-minutes-rr2026-09-18.pdf",
+   "text": "town meeting, warrant, capital budget, chapter 70"
   },
   {
    "board": "Planning Board",
@@ -7460,14 +7502,14 @@
    "board_slug": "council-on-aging",
    "date": "2024-06-11",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
+    "capital plan",
     "budget request",
-    "town meeting",
-    "capital plan"
+    "town meeting"
    ],
-   "page": "/docs/meetings/council-on-aging/2024-06-11-agenda-6596.pdf",
-   "text": "budget request, town meeting, capital plan"
+   "page": "/docs/meetings/council-on-aging/2024-06-11-minutes-6596.pdf",
+   "text": "capital plan, budget request, town meeting"
   },
   {
    "board": "Select Board",

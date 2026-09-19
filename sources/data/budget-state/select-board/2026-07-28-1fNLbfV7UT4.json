@@ -7,39 +7,66 @@
   "transcript": "sources/data/youtube-transcripts/select-board/2026-07-28-1fNLbfV7UT4.json"
  },
  "state": {
-  "cuts": [
-   {
-    "amount_as_heard": "120,000 plus",
-    "fiscal_year": 2027,
-    "fte_as_heard": null,
-    "item": "TCP building operating budget funding (facility ops, removed from operating budget)",
-    "scope": "town",
-    "status": "voted",
-    "t": 5580,
-    "who": "the town manager"
-   }
-  ],
+  "cuts": [],
   "nothing_on_the_budget": false,
   "statements": [
    {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "free_cash",
-    "scope": "town",
-    "statement": "Town meeting funded TCP building costs with one-time free cash instead of the operating budget, since the building would not be operated the full year.",
-    "status": "voted",
-    "t": 5591,
-    "who": "the town manager"
-   },
-   {
-    "amount_as_heard": "$1.3 million",
+    "amount_as_heard": "$1.3 million, roughly (maybe $1.4 million with contingency)",
     "fiscal_year": 2028,
     "kind": "other",
     "scope": "town",
-    "statement": "Estimated cost to put a new roof on the undecommissioned section of the TCP building, to be brought to Town Meeting as part of the FY28 capital plan if the building is kept.",
+    "statement": "Facilities staff estimate roughly $1.3-1.4M to replace the TCP roof, to be included in the FY28 capital plan and brought to Town Meeting",
     "status": "proposed",
-    "t": 3045,
-    "who": "the facilities director"
+    "t": 8419,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "over a million",
+    "fiscal_year": null,
+    "kind": "other",
+    "scope": "town",
+    "statement": "If TCP is not kept, demolition (including asbestos remediation first) is estimated at over a million dollars, cost estimate to be prepared for a future Town Meeting warrant article",
+    "status": "proposed",
+    "t": 8632,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "TCP building operations/heat",
+    "condition": null,
+    "fiscal_year": 2027,
+    "prediction": "The TCP building will not be functioning at all this winter",
+    "scope": "town",
+    "t": 7566,
+    "who": "a member"
+   },
+   {
+    "about": "food pantry space at TCP",
+    "condition": "if the building closes because there is no heat by October",
+    "fiscal_year": 2027,
+    "prediction": "The food pantry will be out of business, at least temporarily",
+    "scope": "town",
+    "t": 6735,
+    "who": "a member"
+   },
+   {
+    "about": "teen club gym access at TCP",
+    "condition": "if the building closes because there is no heat by October",
+    "fiscal_year": 2027,
+    "prediction": "The teen club will not have a gym to use",
+    "scope": "town",
+    "t": 6756,
+    "who": "a member"
+   },
+   {
+    "about": "food pantry temporary space",
+    "condition": null,
+    "fiscal_year": 2027,
+    "prediction": "There will not be a temporary facility for the food pantry this winter",
+    "scope": "town",
+    "t": 6777,
+    "who": "a member"
    }
   ]
  },
@@ -47,9 +74,10 @@
  "video_url": "https://www.youtube.com/watch?v=1fNLbfV7UT4",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T17:43:00Z",
+  "at": "2026-09-19T13:04:26Z",
   "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.43485080000000004,
-  "model": "sonnet"
+  "cost_usd": 0.4146822,
+  "model": "sonnet",
+  "schema": 2
  }
 }

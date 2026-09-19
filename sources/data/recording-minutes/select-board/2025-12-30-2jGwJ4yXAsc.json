@@ -1,0 +1,199 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2025-12-30",
+ "video_id": "2jGwJ4yXAsc",
+ "video_url": "https://www.youtube.com/watch?v=2jGwJ4yXAsc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-12-30-2jGwJ4yXAsc.json",
+  "sha256": "070fd34ff2703e504bc318273146773d94aca8bfb1b31cdf69d96d50020645cf",
+  "caption_lines": 6,
+  "segments": 58
+ },
+ "recording": {
+  "duration_s": 114,
+  "duration": "0:01",
+  "spoken_chars": 1612,
+  "words_approx": 268
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12302025-7578",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-12-30-agenda-7578.txt",
+   "path": "sources/meetings/select-board/2025-12-30-agenda-7578.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12302025-7578",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-12-30-minutes-7578.txt",
+   "path": "sources/meetings/select-board/2025-12-30-minutes-7578.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-19T11:49:36Z",
+  "cost_usd": 0.24118
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Glenn",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   }
+  ],
+  "public_comment": [],
+  "tags": [],
+  "votes": [
+   {
+    "t": 67,
+    "motion": "Approve the annual relicenses as presented in the agenda (Blue Sky Golf: weekday entertainment, automatic amusement, jukebox licenses; Bad Larry's: weekday entertainment license)",
+    "outcome": "passed unanimously (roll call: Glenn aye, Brian aye, Renee aye, chair aye)",
+    "procedural": false,
+    "moved_by": ""
+   },
+   {
+    "t": 89,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed unanimously (roll call: Glenn aye, Brian aye, Renee aye, chair aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [],
+  "topics": [
+   {
+    "t_start": 5,
+    "t_end": 45,
+    "topic": "Meeting called to order; open meeting law notice read",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 45,
+    "t_end": 67,
+    "topic": "Annual relicensing for Blue Sky Golf (weekday entertainment, automatic amusement, jukebox licenses) and Bad Larry's (weekday entertainment license)",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 89,
+    "t_end": 109,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The chair's own name is never stated; only Glenn, Brian, and Renee are named in the roll calls, with a fourth 'I' attributed to 'myself' (the chair)."
+  ],
+  "confidence": "high",
+  "headline": "Select Board approved annual relicensing for Blue Sky Golf and Bad Larry's, then adjourned.",
+  "summary": "A brief, five-minute Select Board meeting handled two remaining annual relicensing applications. The board voted unanimously by roll call to approve renewal licenses for Blue Sky Golf and Bad Larry's, then adjourned with no other business."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Select Board voted unanimously by roll call to approve annual relicensing for Blue Sky Golf and Bad Larry's.",
+    "t": 67
+   },
+   {
+    "line": "Blue Sky Golf's renewal covers its weekday entertainment, automatic amusement, and jukebox licenses.",
+    "t": 45
+   },
+   {
+    "line": "Bad Larry's renewal covers its weekday entertainment license.",
+    "t": 45
+   },
+   {
+    "line": "The board took up no other business and adjourned.",
+    "t": 89
+   }
+  ],
+  "why_it_matters": [
+   "Annual relicensing lets these two local businesses keep operating entertainment and amusement offerings for another year.",
+   "This was a routine administrative vote with no budget, policy, or public-comment component."
+  ],
+  "watch_next": [],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-19T11:49:43Z",
+   "cost_usd": 0.21066
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12302025-7578",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-12-30-minutes-7578.txt",
+   "path": "sources/meetings/select-board/2025-12-30-minutes-7578.pdf"
+  },
+  "official_sha256": "87bd90d4e68cf36b2cad21abb8a442f45bc26734000b3aa823c3244e9d1a9b65",
+  "coverage": "full",
+  "summary": "The two records agree closely on the one substantive item — the annual license renewal vote for Blue Sky Golf and Bad Larry's, with an identical unanimous 4-0-0 roll call. The only real gaps are in attendee detail: our minutes never captures the chair's name or Renee's title, and omits that Vice-Chair Amanda Moore was absent, all of which appear only in the official minutes.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 0,
+   "discrepancy": 0,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: annual license renewals",
+    "ours": "Approve the annual relicenses as presented in the agenda (Blue Sky Golf: weekday entertainment, automatic amusement, jukebox licenses; Bad Larry's: weekday entertainment license) — passed unanimously (roll call: Glenn aye, Brian aye, Renee aye, chair aye)",
+    "official": "Motion by Clerk Renee Emkey to renew the annual licenses as printed on the agenda. Seconded by Member Brian Lehtinen. Call for the vote: Member Glenn Mcleod-aye, Member Brian Lehtinen-aye, Clerk Renee Emkey-aye, Chair Caesar Nuzzolo-aye. The motion passed (4-0-0).",
+    "note": "Same licenses, same businesses, same unanimous roll call order and result in both records; nothing to check."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair's name",
+    "ours": "the chair",
+    "official": "Chair Caesar Nuzzolo",
+    "note": "Our minutes never resolves the chair's identity from the audio, just labels him \"the chair\"; the official minutes name him as Caesar Nuzzolo."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Renee's board title",
+    "ours": "Renee (member)",
+    "official": "Clerk Renee Emkey",
+    "note": "Official minutes identify Renee Emkey as Clerk, a role our minutes doesn't capture (listed generically as \"member\")."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "Members Absent: Vice-Chair Amanda Moore",
+    "note": "Our minutes has no attendee list entry noting anyone absent; a reader should check the recording for any reference to Amanda Moore's absence, though it's plausible this was simply never said aloud on camera."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-19T13:09:10Z",
+   "cost_usd": 0.1664956
+  }
+ }
+}
