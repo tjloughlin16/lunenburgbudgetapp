@@ -264,27 +264,25 @@ export function Home() {
           <button type="submit" className="px-3.5 py-2 text-sm font-semibold rounded-lg shrink-0"
             style={{ background: 'var(--series-cost)', color: '#fff' }}>Search</button>
         </form>
-        {/* THE GROUP, ON ONE LINE. TJ, 19 September 2026: "put a JOIN OUR FACEBOOK GROUP
-            link on the home page somewhere obvious. Without being obnoxious."
+        {/* THE GROUP, AS A CHIP. It was a sentence — "Residents discuss this work in the
+            Lunenburg Budget Project group on Facebook — questions, corrections and what
+            people are hearing" — and TJ: "Again, too many words/sentence format for that
+            FB group."
 
-            Obvious is the position, not the volume: it is above the fold, in the header,
-            where a reader is already looking. Not obnoxious is everything else -- one
-            line, no box, no button, no badge and no count. It is deliberately NOT a door:
-            the doors are the four things this site can answer, and a link off the site is
-            not one of them. It sits under the search box because both are things you do
-            with the project rather than things it tells you, and because a door slot given
-            to Facebook is a door taken from the budget.
-
-            The address is the share link the group itself hands out, so it keeps working
-            if the group is renamed. */}
-        <p className="mt-3 text-[13px]" style={{ color: 'var(--text-secondary)' }}>
-          Residents discuss this work in the{' '}
-          <a href="https://www.facebook.com/share/g/1DvbEb9wnW/"
-            target="_blank" rel="noreferrer noopener"
-            className="underline font-semibold" style={{ color: 'var(--series-cost)' }}>
-            Lunenburg Budget Project group on Facebook
-          </a>{' '}&mdash; questions, corrections and what people are hearing.
-        </p>
+            A sentence is the wrong form for a destination. Prose is for things you read;
+            this is a thing you click, and the mark plus three words says everything the
+            sentence did. Outlined rather than filled so it stays quieter than the Search
+            button beside it — it is an exit from the site, and it should not outrank the
+            way in. */}
+        <a href="https://www.facebook.com/share/g/1DvbEb9wnW/"
+          target="_blank" rel="noreferrer noopener"
+          className="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[13px] font-semibold"
+          style={{ borderColor: 'var(--grid)', color: 'var(--series-cost)' }}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.24 22 17.08 22 12.06z"/>
+          </svg>
+          Facebook group
+        </a>
       </header>
 
       {/* TWO COLUMNS BY TEMPO. Left is the map -- the doors, which change monthly. Right

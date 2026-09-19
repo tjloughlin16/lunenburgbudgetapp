@@ -170,6 +170,27 @@ conclusions stacked, which is the page telling us it is an index and not a read.
 - **Five equal doors.** The reader cannot rank them, so we do: the crisis first and
   heavier, the answer beside it, the plumbing quiet.
 - **A button where a link belongs.** Navigation is an anchor. Always. `lib/nav.tsx`.
+- **A SENTENCE WHERE A LABEL BELONGS.** TJ, 19 September 2026: *"lets make a rule to not
+  use long sentences for things that are typically buttons or could be simplified.
+  Especially if its not descriptive text by its nature."*
+
+  **Prose is for things a reader reads. A label is for a thing they click.** The two are
+  different jobs and the second one is finished in three words. The Facebook group shipped
+  as *"Residents discuss this work in the Lunenburg Budget Project group on Facebook —
+  questions, corrections and what people are hearing"* and became a chip reading
+  **Facebook group**; nothing was lost, because every word the sentence spent was
+  explaining what the click already does.
+
+  The test is whether the text is **descriptive by nature**. A standfirst, a caveat, a
+  conclusion, the line under a metric — those carry meaning a reader could not get any
+  other way, and they earn their sentences. A door, a chip, a toggle, a filter, an exit,
+  a "read it" link: those name a destination, and a destination is a noun phrase.
+
+  It is the same failure as rule 7a one level down. 7a says a page opens with the thing
+  rather than the explanation; this says a CONTROL is the thing rather than an explanation
+  of itself. Both come from writing in the order it was built: the author has just decided
+  why the element should exist and writes that down, when the reader only needs to know
+  where it goes.
 - **The same `<title>` on every page.** Each page names itself in the tab; a reader with
   three open should be able to tell them apart. `lib/title.ts`.
 - **Assuming the reader reaches the bottom.** They do not. Whatever is load-bearing goes
