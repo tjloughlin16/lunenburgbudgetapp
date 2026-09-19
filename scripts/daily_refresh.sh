@@ -55,10 +55,48 @@ if [ "$HERE" != "$(cd "$TREE" 2>/dev/null && pwd)" ]; then
 fi
 
 # ---------------------------------------------------------------- the run, inside the tree
+# ---------------------------------------------------------------- telling somebody
+# A FAILURE THAT NOBODY IS TOLD ABOUT IS AN OUTAGE. This ran and failed on 16, 17 and 18
+# September 2026 -- build_search_index.py, `database or disk is full` -- and nothing said
+# so. Three things hid it at once, and each is fixed here or in the status page:
+#
+#   * refresh.py writes its row in refresh-runs.csv at the END, so a run that dies leaves
+#     no row, and no row reads as a quiet day rather than a failure;
+#   * launchd swallows the exit code -- no mail, no badge, nothing;
+#   * the refresh is ADDITIVE, so failing looks exactly like a week the town posted
+#     nothing. No page breaks. No figure goes wrong.
+#
+# TJ, 19 September 2026: "i need to be notified somehow when the refresh fails."
+#
+# So: a macOS notification with a sound, and a sticky file the status page reads, because
+# a notification is gone the moment it is dismissed and the machine may be asleep at 7am.
+# The file is the durable half and the banner stays until the next run succeeds.
+ALERT="$HERE/build/refresh-ALERT.txt"
+notify() {   # notify <title> <message>
+  osascript -e "display notification \"$2\" with title \"$1\" sound name \"Basso\"" \
+    >/dev/null 2>&1 || true
+}
+
 {
   echo "=== daily refresh started $(date) in $HERE on $(git rev-parse --abbrev-ref HEAD) at $(git rev-parse --short HEAD) ==="
   python3 scripts/refresh.py --deploy
-  echo "refresh exit $?"
+  rc=$?
+  echo "refresh exit $rc"
+  if [ "$rc" -ne 0 ]; then
+    # The step that broke, named, so the notification is actionable rather than a shrug.
+    broke=$(grep -o 'step failed:.*' "$LOG" | tail -1 | grep -oE '[a-z_]+\.py' | tail -1)
+    why=$(grep -E 'Error|error:|full|refused|denied' "$LOG" | tail -1 | cut -c1-160)
+    {
+      echo "$(date '+%Y-%m-%d %H:%M')  the daily refresh FAILED (exit $rc)"
+      echo "broke on: ${broke:-unknown step}"
+      echo "$why"
+      echo "log: $LOG"
+    } > "$ALERT"
+    notify "Lunenburg refresh FAILED" "${broke:-a step} — nothing new was ingested today"
+  else
+    # A success clears the banner: an alert that outlives its cause trains you to ignore it.
+    rm -f "$ALERT"
+  fi
   # Commit the observation logs, previews, minutes and payloads. A refresh that is not
   # committed is a refresh the next machine cannot see.
   git add sources/data/meeting-watch-*.csv sources/data/youtube-watch-events.csv \

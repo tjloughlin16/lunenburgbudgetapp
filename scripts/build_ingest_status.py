@@ -539,6 +539,39 @@ def origin_of(top, upstream):
     return 'published' if upstream else 'request'
 
 
+# WHAT KIND OF THING IT IS, in the words somebody would search with. The file extension
+# is not it: .pdf covers a set of minutes, a budget book and a union contract, and those
+# are three different questions. The folder is the better signal, because sources/ is
+# organised by how a document reached us, and within meetings/ the filename says which
+# half of the meeting it is.
+def kind_of(k, top):
+    if top == 'meetings':
+        if '-agenda-' in k:
+            return 'agenda'
+        if '-minutes-' in k:
+            return 'minutes'
+        return 'meeting'
+    if top in ('town-budget', 'district-budget', 'budget-workbooks'):
+        return 'budget'
+    if top in ('town-ledgers', 'munis-ledgers'):
+        return 'ledger'
+    if top.startswith('state-'):
+        return 'state'
+    if top == 'contracts':
+        return 'contract'
+    if top == 'town-annual-reports':
+        return 'annual report'
+    if top == 'correspondence':
+        return 'correspondence'
+    if top == 'analyses':
+        return 'analysis'
+    if top == 'data':
+        return 'dataset'
+    # A file at the root of sources/ has no folder to speak for it, and falling through to
+    # `top` printed the filename as its own kind ("MANIFEST.md").
+    return top if '/' in k else 'archive note'
+
+
 def sources():
     """Every document held, with what is known about it.
 
@@ -567,7 +600,7 @@ def sources():
             top = k.split('/')[0]
             up = (r.get('upstream') or upstream.get(k, '') or '')
             out.append([k, int(r['bytes'] or 0), up, (r.get('sha256') or '')[:12],
-                        top, origin_of(top, up)])
+                        top, origin_of(top, up), kind_of(k, top)])
     return out
 
 
@@ -580,7 +613,8 @@ h1{font-size:19px;margin:0 0 2px}h2{font-size:12px;text-transform:uppercase;lett
 color:#8b949e;margin:26px 0 10px;font-weight:600}
 .sub{color:#8b949e;font-size:12.5px;margin:0 0 4px}
 .card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px;margin-bottom:8px}
-.on{border-left:3px solid #3fb950}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
+.on{border-left:3px solid #3fb950}
+.alert{border:1px solid #f85149;border-left:4px solid #f85149;background:#2b1214}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
 .row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .grow{flex:1;min-width:200px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
 .num{font-variant-numeric:tabular-nums}
@@ -626,6 +660,41 @@ def bar(done, todo):
     cls = '' if not todo else ' class="part"'
     return '<div class="bar"><i%s style="width:%.1f%%"></i></div>' % (cls, 100.0 * done / tot)
 
+def alert():
+    """Failures, named by the day they happened.
+
+    TJ, 19 September 2026: "for 'REFRESH FAILED' i need to see which day it failed."
+    Obvious in hindsight: the sticky file says a run failed and a banner with no date
+    could be this morning or last Tuesday, and those call for different reactions.
+
+    So the days come from the LOGS, which exist per day whether a run succeeded or not,
+    and every recent failure is named -- a four-day outage should read as four days.
+
+    OVERDUE IS ITS OWN ALARM. A run that never starts writes no failure either -- launchd
+    not firing, the worktree gone, the laptop shut -- and that is indistinguishable from a
+    quiet day unless somebody checks the clock.
+    """
+    out = []
+    bad = [r for r in run_history(10) if not r['running']
+           and (r['exit'] not in (0, None) or r['failed'] or not r['finished'])]
+    if bad:
+        days = ', '.join(r['day'] for r in bad)
+        broke = sorted({f for r in bad for f in r['failed']})
+        out.append(dict(kind='failed', days=[r['day'] for r in bad],
+                        head='%d run%s failed: %s' % (len(bad), '' if len(bad) == 1 else 's', days),
+                        text=('broke on ' + ', '.join(broke) + '. ' if broke else '')
+                             + 'Nothing new was ingested on those days.'))
+    today = dt.date.today().isoformat()
+    log = os.path.join(ROOT, 'build', 'refresh-logs', today + '.log')
+    if not os.path.exists(log) and dt.datetime.now().hour >= 10:
+        out.append(dict(kind='overdue', days=[today],
+                        head='No run at all today (%s)' % today,
+                        text='It is past 10am and there is no log for today. Check '
+                             '`launchctl list | grep lunenburg` and that '
+                             '../lunenburgbudgets-refresh still exists.'))
+    return out
+
+
 def page_live(st):
     R, S, F, Q = st['running'], st['streams'], st['refresh'], st['queued']
     h = []
@@ -633,6 +702,13 @@ def page_live(st):
              '<p class="sub">%s &middot; refreshes itself every 20s</p></div>'
              '<div class="tabs"><a class="sel" href="index.html">Running</a>'
              '<a href="sources.html">Documents</a></div></div>' % st['generated'])
+
+    for a in st['alerts']:
+        h.append('<div class="card alert"><div class="row"><span class="pill no">%s</span>'
+                 '<b class="grow">%s</b></div>'
+                 '<div class="tiny" style="margin-top:4px">%s</div></div>'
+                 % ('REFRESH FAILED' if a['kind'] == 'failed' else 'NO RUN TODAY',
+                    html.escape(a['head']), html.escape(a['text'])))
 
     h.append('<h2>Running now</h2>')
     if not R:
@@ -642,9 +718,8 @@ def page_live(st):
             sc = ('<span class="pill go">%d of %d this batch</span>' % (min(r['done'], r['plan']), r['plan'])
                   + bar(r['done'], max(0, r['plan'] - r['done'])))
         elif r['done'] is not None:
-            sc = ('<span class="pill">%d landed since it started</span>' % r['done']
-                  + '<div class="tiny" style="margin-top:4px;color:#586069">'
-                    'this one loops — it has no total of its own</div>')
+            sc = '<span class="pill" title="a looping wrapper: no total of its own">' \
+                 '%d landed</span>' % r['done']
         else:
             sc = ''
         h.append('<div class="card %s"><div class="row"><b class="grow">%s</b>%s'
@@ -777,23 +852,33 @@ def page_live(st):
     h.append('</table></div></div>')
     return ''.join(h)
 
-def page_sources(st, n, counts):
-    chips = ''.join(
-        '<a href="#" class="chip" data-o="%s">%s <b>%s</b></a>' % (k, lbl, '{:,}'.format(counts.get(k, 0)))
-        for k, lbl in (('', 'Everything'), ('published', 'Published by the town, district or state'),
-                       ('ours', 'Ours — written or generated here'),
-                       ('request', 'Obtained by request — no public address')))
+def page_sources(st, n, counts, kinds):
+    def chips(group, items):
+        return ''.join(
+            '<a href="#" class="chip" data-g="%s" data-v="%s">%s <b>%s</b></a>'
+            % (group, k, lbl, '{:,}'.format(cnt))
+            for k, lbl, cnt in items)
+
+    origin = chips('o', [('', 'Everything', counts.get('', 0)),
+                         ('published', 'Published by the town, district or state', counts.get('published', 0)),
+                         ('ours', 'Ours', counts.get('ours', 0)),
+                         ('request', 'By request — no public address', counts.get('request', 0))])
+    # Ordered by how many there are, so the big piles are reachable first and a long tail
+    # does not push them off the row.
+    kind = chips('k', [('', 'Any kind', n)] +
+                 [(k, k, c) for k, c in kinds.most_common(10)])
     return ('<div class="wrap"><div class="row"><div class="grow"><h1>Documents</h1>'
             '<p class="sub">%s held &middot; %s</p></div>'
             '<div class="tabs"><a href="index.html">Running</a>'
             '<a class="sel" href="sources.html">Documents</a></div></div>'
-            '<div class="chips">%s</div>'
+            '<div class="chips" data-g="o">%s</div>'
+            '<div class="chips" data-g="k">%s</div>'
             '<input type="search" id="q" placeholder="filter by path, folder or address — e.g. select-board 2025, or munis, or xlsx">'
             '<p class="tiny" id="c" style="margin:8px 0"></p>'
-            '<table><tr><th>document</th><th class="r">size</th><th>where it came from</th>'
-            '<th>sha256</th></tr><tbody id="t"></tbody></table>'
+            '<table><tr><th>document</th><th>kind</th><th class="r">size</th>'
+            '<th>where it came from</th><th>sha256</th></tr><tbody id="t"></tbody></table>'
             '<p class="tiny" id="more"></p></div>'
-            % ('{:,}'.format(n), st['generated'], chips))
+            % ('{:,}'.format(n), st['generated'], origin, kind))
 
 
 KEEP = """
@@ -827,39 +912,40 @@ JS = """
 const fmt=b=>b>1e6?(b/1e6).toFixed(1)+' MB':b>1e3?Math.round(b/1e3)+' KB':b+' B';
 const t=document.getElementById('t'),q=document.getElementById('q'),c=document.getElementById('c'),
       more=document.getElementById('more');
-const CAP=400; let ORIGIN='';
-/* THREE KINDS OF "no address", AND ONLY ONE IS A GAP. Ours has no publisher because we
-   are the publisher; a records delivery never had a public address and that is rule 12's
-   uncomfortable count; a published document has one and it is a link. Printing all three
-   in red made two of them look broken. */
-const WHERE={
-  ours:'<span class="tag ours">ours</span> <span class="tiny">written or generated here \u2014 no publisher but us</span>',
-  request:'<span class="tag req">by request</span> <span class="tiny">no public address; it came by request or email</span>'
-};
+const CAP=400; const F={o:'',k:''};
+/* THREE KINDS OF "no address" AND ONLY ONE IS A GAP: ours has no publisher but us, a
+   records delivery never had a public address, a published document has one. The chips
+   above carry the explanation, so the cell carries only the tag -- a sentence in a cell
+   is unreadable at a glance and pushes the columns that matter off the screen. */
+const WHERE={ours:'<span class="tag ours">ours</span>',
+             request:'<span class="tag req">by request</span>'};
 function draw(){
   const s=q.value.toLowerCase().split(/\s+/).filter(Boolean);
-  const hit=DOCS.filter(d=>(!ORIGIN||d[5]===ORIGIN)&&
+  const hit=DOCS.filter(d=>(!F.o||d[5]===F.o)&&(!F.k||d[6]===F.k)&&
     s.every(w=>d[0].toLowerCase().includes(w)||(d[2]||'').toLowerCase().includes(w)));
   c.textContent=hit.length.toLocaleString()+' of '+DOCS.length.toLocaleString()+' documents'+
     (hit.length>CAP?' \u2014 showing the first '+CAP:'');
   t.innerHTML=hit.slice(0,CAP).map(d=>
-    '<tr><td class="mono">'+d[0]+'</td><td class="r num">'+fmt(d[1])+'</td><td>'+
-    (d[2]?'<a href="'+d[2]+'" target="_blank">'+d[2].slice(0,62)+'</a>':(WHERE[d[5]]||''))+
+    '<tr><td class="mono">'+d[0]+'</td><td class="tiny">'+d[6]+'</td>'+
+    '<td class="r num">'+fmt(d[1])+'</td><td>'+
+    (d[2]?'<a href="'+d[2]+'" target="_blank">'+d[2].slice(0,52)+'</a>':(WHERE[d[5]]||''))+
     '</td><td class="mono tiny">'+d[3]+'</td></tr>').join('');
   more.textContent=hit.length>CAP?'Narrow the filter to see the rest.':'';
 }
 document.querySelectorAll('.chip').forEach(a=>a.addEventListener('click',e=>{
-  e.preventDefault();ORIGIN=a.dataset.o;
-  document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('sel',x===a));draw();
+  e.preventDefault(); const g=a.dataset.g; F[g]=a.dataset.v;
+  document.querySelectorAll('.chip[data-g="'+g+'"]').forEach(x=>x.classList.toggle('sel',x===a));
+  draw();
 }));
-document.querySelector('.chip').classList.add('sel');
+document.querySelectorAll('.chips').forEach(r=>r.querySelector('.chip').classList.add('sel'));
 q.addEventListener('input',draw);draw();
 """
 
 def write(open_it=False):
     os.makedirs(OUT, exist_ok=True)
     st = dict(generated=dt.datetime.now().strftime('%a %d %b, %H:%M:%S'),
-              running=running(), streams=streams(), refresh=refresh(), queued=queued())
+              running=running(), streams=streams(), refresh=refresh(), queued=queued(),
+              alerts=alert())
     docs = sources()
     shell = ('<!doctype html><meta charset=utf-8><meta name=viewport '
              'content="width=device-width,initial-scale=1"><title>%s</title>'
@@ -874,7 +960,8 @@ def write(open_it=False):
     with open(os.path.join(OUT, 'sources.html'), 'w', encoding='utf-8') as fh:
         counts = collections.Counter(d[5] for d in docs)
         counts[''] = len(docs)
-        fh.write(shell % ('Documents', '', CSS, page_sources(st, len(docs), counts))
+        kinds = collections.Counter(d[6] for d in docs)
+        fh.write(shell % ('Documents', '', CSS, page_sources(st, len(docs), counts, kinds))
                  + '<script src="docs.js"></script><script>' + JS + '</script>')
     return st, len(docs)
 

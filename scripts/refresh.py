@@ -78,10 +78,38 @@ MAX_OCR_PER_RUN = 40             # ~20 minutes of local CPU; nothing charged to 
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 RUN_COLS = ['ran_at', 'as_of', 'new_agendas', 'new_minutes', 'new_videos',
-            'new_transcripts', 'new_our_minutes', 'deployed', 'seconds', 'timings', 'notes']
+            'new_transcripts', 'new_our_minutes', 'deployed', 'seconds', 'timings', 'notes',
+            # `incomplete` until the run reaches its own end. A row that stays incomplete
+            # is a run that died, and that is a fact worth keeping rather than an absence
+            # to be guessed at. Old rows have no value here and read as finished, which
+            # they are.
+            'state']
 
 
 TIMINGS = []          # (step, seconds, exit code) -- printed at the end and written to the run row
+
+
+
+def record_run(a, delta, deployed, state, notes=()):
+    """One row per day in refresh-runs.csv, written TWICE: once before the steps that can
+    die, and again when the run finishes.
+
+    The first write is the tombstone. Until 19 September 2026 this happened only at the
+    end, so three consecutive failures left no trace at all and looked like quiet days.
+    """
+    runs = [r for r in read_csv(RUNS) if r['as_of'] != a.as_of]     # one row per day
+    runs.append({'ran_at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                 'as_of': a.as_of, 'new_agendas': delta['agendas'], 'new_minutes': delta['minutes'],
+                 'new_videos': delta['videos'], 'new_transcripts': delta['transcripts'],
+                 'new_our_minutes': delta['ours'], 'deployed': 'yes' if deployed else 'no',
+                 'seconds': int(sum(t[1] for t in TIMINGS)),
+                 'timings': ' '.join('%s=%d' % (n.replace(' ', '_'), int(sec)) for n, sec, _ in TIMINGS),
+                 'notes': '; '.join(notes), 'state': state})
+    with open(RUNS, 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=RUN_COLS)
+        w.writeheader()
+        for r in sorted(runs, key=lambda r: r['as_of']):
+            w.writerow({c: r.get(c, '') for c in RUN_COLS})
 
 
 def sh(args, check=True, quiet=False, **kw):
@@ -458,25 +486,25 @@ def main():
         sh(['npx', 'wrangler', 'pages', 'deploy'], cwd=os.path.join(ROOT, 'fy28'))
         deployed = True
 
+    # THE ROW GOES IN BEFORE THE RISKY PART, NOT AFTER IT.
+    #
+    # It used to be appended at the very end, so a run that died anywhere earlier left
+    # NOTHING -- and no row reads as a quiet day, not as a failure. The refresh failed on
+    # 16, 17 and 18 September 2026 (build_search_index.py, `database or disk is full`) and
+    # refresh-runs.csv simply stopped at the 15th. Nobody knew for four days.
+    #
+    # A registry written only by success cannot record a failure, which is the one thing
+    # it most needs to record. So the row is written here, marked `incomplete`, and
+    # updated to the finished state at the end. A run that dies now leaves its own
+    # tombstone with what it had found before it went.
     if not a.dry_run:
+        record_run(a, delta, deployed=False, state='incomplete')
         write_to_post(a.as_of)
         payload = whats_new(a.as_of)
         with open(WHATS_NEW, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)
             fh.write('\n')
-        runs = [r for r in read_csv(RUNS) if r['as_of'] != a.as_of]     # one row per day
-        runs.append({'ran_at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                     'as_of': a.as_of, 'new_agendas': delta['agendas'], 'new_minutes': delta['minutes'],
-                     'new_videos': delta['videos'], 'new_transcripts': delta['transcripts'],
-                     'new_our_minutes': delta['ours'], 'deployed': 'yes' if deployed else 'no',
-                     'seconds': int(sum(t[1] for t in TIMINGS)),
-                     'timings': ' '.join('%s=%d' % (n.replace(' ', '_'), int(sec)) for n, sec, _ in TIMINGS),
-                     'notes': '; '.join(notes)})
-        with open(RUNS, 'w', newline='', encoding='utf-8') as fh:
-            w = csv.DictWriter(fh, fieldnames=RUN_COLS)
-            w.writeheader()
-            for r in runs:
-                w.writerow({c: r.get(c, '') for c in RUN_COLS})
+        record_run(a, delta, deployed, 'ok', notes)
 
     total = sum(t[1] for t in TIMINGS)
     print('\n=== refresh %s — %d min %d s ===' % (a.as_of, total // 60, total % 60))
