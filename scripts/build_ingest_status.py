@@ -71,6 +71,73 @@ WATCHED = [
     ('Archive sync',       r'[s]ync_archive\.py',               'hashing or pushing documents to R2'),
 ]
 
+
+def etime_seconds(e):
+    """ps etime — [[dd-]hh:]mm:ss — as seconds."""
+    if not e:
+        return 0
+    days, _, rest = e.partition('-')
+    if not rest:
+        rest, days = days, '0'
+    parts = [int(x) for x in rest.split(':')]
+    while len(parts) < 3:
+        parts.insert(0, 0)
+    return int(days) * 86400 + parts[0] * 3600 + parts[1] * 60 + parts[2]
+
+
+# WHAT PRODUCED FILES EACH RUNNING THING WRITES, so "done this run" can be counted rather
+# than guessed. Both trees: the 7am refresh runs in ../lunenburgbudgets-refresh.
+PRODUCES = {
+    'YouTube captions': ['sources/data/youtube-transcripts/*/*'],
+    'Caption backfill': ['sources/data/youtube-transcripts/*/*'],
+    'OCR of scans':     ['sources/meetings/text/*/*.txt'],
+    'Our minutes':      ['sources/data/recording-minutes/*/*.json'],
+    'Votes':            ['sources/data/official-votes/*/*.json'],
+    'Backlog sweep':    ['sources/data/official-votes/*/*.json',
+                         'sources/data/recording-minutes/*/*.json'],
+    'Daily refresh':    ['sources/data/recording-minutes/*/*.json',
+                         'sources/data/official-votes/*/*.json',
+                         'sources/meetings/*/*.pdf'],
+}
+
+
+def scope(name, cmd, elapsed):
+    """How many this run means to do, and how many it has done.
+
+    TJ, 19 September 2026: "can you put a scope of how many it plans to do in that run,
+    and how many its done? Do we have that info?"
+
+    We do, for the half of it that is knowable. THE PLAN is the job's own `--limit`, read
+    off the command line it is running under rather than from anything we assume about
+    it. THE PROGRESS is counted: files the stream owns whose mtime falls after the
+    process started, which `ps` gives as an elapsed time.
+
+    Two honest limits, and the card says which applies. A wrapper that loops -- the
+    caption backfill -- has no total of its own: it takes 25, sleeps, takes 25 again, so
+    its `--limit` belongs to the child and not to the run. And counting by mtime cannot
+    see a job that overwrote a file in place. Neither is worth a guess, so where there is
+    no number the card says nothing rather than inventing a denominator.
+    """
+    m = re.search(r'--limit\s+(\d+)', cmd or '')
+    plan = int(m.group(1)) if m else None
+    pats = PRODUCES.get(name)
+    if not pats:
+        return dict(plan=plan, done=None)
+    start = time.time() - etime_seconds(elapsed)
+    done = 0
+    for rel in pats:
+        for base in (ROOT, TREE):
+            if base == TREE and not os.path.isdir(TREE):
+                continue
+            for f in glob.glob(os.path.join(base, rel)):
+                try:
+                    if os.path.getmtime(f) >= start:
+                        done += 1
+                except OSError:
+                    pass
+    return dict(plan=plan, done=done)
+
+
 def running():
     out = []
     for name, pat, what in WATCHED:
@@ -89,8 +156,36 @@ def running():
         except Exception:
             pass
         out.append(dict(name=name, what=what, n=len(pids), elapsed=el, cmd=cmd,
-                        costs='COSTS ALLOWANCE' in what))
+                        costs='COSTS ALLOWANCE' in what, **scope(name, cmd, el)))
     return out
+
+
+
+def newest(paths):
+    """The mtime of the most recently written file in a stream, as a timestamp.
+
+    ELAPSED IS NOT ACTIVITY, and the first version of this page only showed elapsed. The
+    caption backfill reads '1d 8h' because that wrapper has been alive since Thursday --
+    it says nothing about whether anything has landed, and the wrapper spends most of its
+    life asleep in a backoff. What a reader actually wants is when this stream last
+    PRODUCED something, which is the newest file it owns.
+    """
+    # BOTH TREES. The 7am refresh runs in ../lunenburgbudgets-refresh and commits from
+    # there, so a stream it drives looks hours stale here until the next pull. The work
+    # happened; this tree just has not seen it yet.
+    best = 0
+    pats = list(paths) + [q.replace(ROOT, TREE, 1) for q in paths if os.path.isdir(TREE)]
+    for pat in pats:
+        for f in glob.glob(pat):
+            try:
+                m = os.path.getmtime(f)
+            except OSError:
+                continue
+            if m > best:
+                best = m
+    if not best:
+        return ''
+    return dt.datetime.fromtimestamp(best, dt.timezone.utc).isoformat()
 
 
 def group(items):
@@ -171,10 +266,11 @@ def streams():
     unclassified = max(0, len(vids) - len(have) - len(dead) - todo)
     by_board = collections.Counter(r['board_slug'] for r in idx)
     s.append(dict(key='captions', name='Captions for recordings',
+                  io='in: the town’s YouTube channel &rarr; out: a timed transcript — a finding aid, never a source',
                   done=len(have), todo=todo,
                   blocked=len(dead), blocked_why='captions disabled by the publisher',
                   cost='free — throttled by YouTube',
-                  last=ago(max([r.get('fetched_at','') for r in idx] or [''])),
+                  last=ago(newest([os.path.join(DATA, 'youtube-transcripts', '*', '*')])),
                   note='%d boards with captions held; %s more uploads carry no board and date, '
                        'so they are not a meeting backlog' % (len(by_board), '{:,}'.format(unclassified)),
                   pending=pend))
@@ -186,9 +282,11 @@ def streams():
                   capture_output=True, text=True, cwd=ROOT, timeout=120).stdout.split()[0])
     except Exception:
         left = None
-    s.append(dict(key='ocr', name='OCR of scanned minutes', done=len(ocr), todo=left,
+    s.append(dict(key='ocr', name='OCR of scanned minutes',
+                  io='in: minutes the town posted as page images &rarr; out: text a search and the vote reader can read',
+                  done=len(ocr), todo=left,
                   blocked=0, blocked_why='', cost='free — macOS Vision, local',
-                  last=ago(max([r.get('ocr_at','') for r in ocr] or [''])),
+                  last=ago(newest([os.path.join(DATA, 'ocr-minutes.csv')])),
                   note='a scan is invisible to search and to the vote reader until this runs',
                   pending=[]))
 
@@ -199,29 +297,127 @@ def streams():
     # finding, and it is not worth guessing at from a dashboard, so the page states the
     # one figure it can stand behind: how many meetings have no file.
     vp = register_pending(lambda r: r.get('minutes') == '1', 'official-votes')
-    s.append(dict(key='votes', name='Votes from the town’s minutes',
+    # NAMED FOR WHAT IT PRODUCES, WHICH IS ONLY VOTES. TJ, 19 September 2026: "why do you
+    # call it 'Votes from the town's minutes'? I assume this means 'Our own minutes'
+    # because its more than votes isnt it that we're processing for?" -- a fair reading,
+    # and the answer is no: these are two different streams over two different inputs, and
+    # the cards did not say so. This one reads the minutes THE TOWN PUBLISHED and takes
+    # votes out of them, each with a verbatim quote. The other writes OUR minutes from OUR
+    # captions of a recording, and that one is the full record -- decisions, transfers,
+    # topics, public comment, budget items -- of which votes are one part. Every card now
+    # prints its input and its output, because a label alone could not carry the
+    # distinction and the distinction is the whole point (rule 13: ours and theirs).
+    s.append(dict(key='votes', name='Votes, from the town’s own minutes',
+                  io='in: the minutes the town published &rarr; out: each vote, with the town’s words quoted verbatim',
                   done=len(glob.glob(os.path.join(DATA, 'official-votes', '*', '*.json'))),
                   todo=sum(p['n'] for p in vp), blocked=0, blocked_why='',
                   cost='~0.03% of the weekly allowance each',
-                  last='', note='every vote carries a quote checked verbatim against the minutes',
+                  last=ago(newest([os.path.join(DATA, 'official-votes', '*', '*.json')])), note='every vote carries a quote checked verbatim against the minutes',
                   pending=vp))
     mp = register_pending(lambda r: bool(r.get('transcript_paths')), 'recording-minutes')
-    s.append(dict(key='ourminutes', name='Our minutes of recordings',
+    s.append(dict(key='ourminutes', name='Our minutes, written from the recordings',
+                  io='in: our machine captions of a video &rarr; out: the whole meeting — decisions, '
+                     'votes, transfers, budget items, topics, public comment',
                   done=len(glob.glob(os.path.join(DATA, 'recording-minutes', '*', '*.json'))),
                   todo=sum(p['n'] for p in mp), blocked=0, blocked_why='',
                   cost='~0.09% of the weekly allowance each',
-                  last='', note='written from our captions; two derived layers from the meeting',
+                  last=ago(newest([os.path.join(DATA, 'recording-minutes', '*', '*.json')])), note='written from our captions; two derived layers from the meeting',
                   pending=mp))
     return s
 
 # -------------------------------------------------------------------- the refresh
-WATCHERS = [
-    ('watch_meetings.py',  'the town’s AgendaCenter — every board’s agendas and minutes'),
-    ('fetch_agendas.py',   'downloads whatever the watcher found that we do not hold'),
-    ('watch_documents.py', 'the district’s budget page and the town’s finance pages'),
-    ('watch_feeds.py',     'the town’s news flash and alert feeds'),
-    ('watch_youtube.py',   'the channel’s RSS feed — new recordings'),
-]
+# WHERE THE PIPELINE LOOKS, AS ADDRESSES A PERSON CAN OPEN.
+#
+# TJ, 19 September 2026: "I don't need the python script name. just a label of the type
+# of material based on the location, and a link to it."
+#
+# Right: the script is our implementation, and what a reader wants to know is which page
+# on the town's website was checked and whether checking it worked. The label names the
+# MATERIAL, the link goes to the place, and the script is kept only as the key that finds
+# the run in today's log.
+#
+# Every address here is read from the same place the watcher reads it -- feed-sources.csv
+# for the feeds, the channel id for YouTube -- rather than typed, so a source that moves
+# moves here too (rule 2).
+def watcher_targets():
+    feeds = [r for r in rows('feed-sources.csv') if r.get('url')]
+    chan = ''
+    try:
+        sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+        import watch_youtube as WY
+        chan = WY.FEED
+    except Exception:
+        pass
+    town = 'https://www.lunenburgma.gov'
+    return [
+        dict(script='watch_meetings.py',
+             label='Agendas and minutes, every board',
+             where='the town’s Agenda Center',
+             links=[(town + '/AgendaCenter', 'AgendaCenter')]),
+        dict(script='fetch_agendas.py',
+             label='Downloading what the watcher found',
+             where='the same Agenda Center, file by file',
+             links=[(town + '/AgendaCenter', 'AgendaCenter')]),
+        dict(script='watch_documents.py',
+             label='Budget documents — district and town',
+             where='the district’s budget pages and the town’s finance pages',
+             links=[('https://www.lunenburgschools.net/school-committee-1/meetings',
+                     'school committee meetings'),
+                    ('https://www.lunenburgschools.net/department-directory/',
+                     'district directory'),
+                    (town + '/199/Finance', 'town finance')]),
+        dict(script='watch_feeds.py',
+             label='Town announcements',
+             where='news flash and alert feeds',
+             links=[(f['url'], f['source'].split('—')[-1].strip() or f['source'])
+                    for f in feeds]),
+        dict(script='watch_youtube.py',
+             label='New meeting recordings',
+             where='the town’s YouTube channel feed',
+             links=[(chan or 'https://www.youtube.com/@LunenburgTV', 'channel feed')]),
+    ]
+
+
+
+def run_history(n=8):
+    """Every day the refresh RAN, from its logs — not from the registry it writes.
+
+    TJ, 19 September 2026: "Recent refresh runs... but i know one ran yesterday?"
+
+    It did. The table was reading sources/data/refresh-runs.csv, and that file's last row
+    is the 15th -- because the run appends its row at the END, and the runs of the 16th,
+    17th and 18th all died before reaching it (`database or disk is full`, from Thursday's
+    full disk). So a registry written only by a successful run reported three failures as
+    SILENCE, which is the one thing a status page must never do.
+
+    The log file is the ground truth that a run happened at all; the registry is the
+    detail of what a run found. Read the first, join the second, and say plainly where a
+    run left no row.
+    """
+    logs = sorted(glob.glob(os.path.join(ROOT, 'build', 'refresh-logs', '*.log')), reverse=True)
+    by_day = {r['as_of']: r for r in rows('refresh-runs.csv')}
+    out = []
+    for f in logs[:n]:
+        day = os.path.basename(f)[:10]
+        try:
+            with open(f, encoding='utf-8', errors='replace') as fh:
+                text = fh.read()
+        except OSError:
+            continue
+        ex = re.findall(r'refresh exit (\d+)', text)
+        # The log prints the whole interpreter command, so the script name is the LAST
+        # .py on the line, not the first token after the colon.
+        fails = re.findall(r'step failed:.*?([a-z_]+\.py)', text)
+        done = '=== finished' in text
+        out.append(dict(day=day, name=os.path.basename(f),
+                        exit=int(ex[-1]) if ex else None, finished=done,
+                        failed=sorted(set(fails)),
+                        running=(not done and day == dt.date.today().isoformat()),
+                        row=by_day.get(day),
+                        mtime=ago(dt.datetime.fromtimestamp(os.path.getmtime(f),
+                                                            dt.timezone.utc).isoformat())))
+    return out
+
 
 def refresh():
     """Today's run: whether it is going, where it looked, what it found, what it will do."""
@@ -238,12 +434,10 @@ def refresh():
     # WHERE IT LOOKED, read off the log rather than assumed. A watcher that did not run
     # is a watcher that did not look, and the difference matters when something is missing.
     looked = []
-    for script, what in WATCHERS:
-        m = re.findall(re.escape(script) + r'[^\n]*?: ([\d.]+)s, exit (\d+)', text)
-        if m:
-            looked.append(dict(script=script, what=what, seconds=float(m[-1][0]), exit=int(m[-1][1]), ran=True))
-        else:
-            looked.append(dict(script=script, what=what, seconds=None, exit=None, ran=False))
+    for t in watcher_targets():
+        m = re.findall(re.escape(t['script']) + r'[^\n]*?: ([\d.]+)s, exit (\d+)', text)
+        looked.append(dict(t, seconds=float(m[-1][0]) if m else None,
+                           exit=int(m[-1][1]) if m else None, ran=bool(m)))
 
     found = []
     for pat, label in ((r'(\d+) new agenda', 'agendas'), (r'(\d+) new minutes', 'minutes'),
@@ -256,7 +450,7 @@ def refresh():
     jobs = re.findall(r'(write_recording_minutes|extract_official_votes)\.py '
                       r'([a-z0-9-]+) (\d{4}-\d{2}-\d{2})', text)
     costs = [float(x) for x in re.findall(r'written \(\$([\d.]+)\)', text)]
-    hist = rows('refresh-runs.csv')[-6:][::-1]
+    hist = run_history()
     return dict(live=live, log=os.path.basename(cur) if cur else None, today=today,
                 looked=looked, found=found,
                 jobs=[dict(script=a, board=b, date=c) for a, b, c in jobs[-6:]][::-1],
@@ -317,6 +511,34 @@ def queued():
 
 
 # ---------------------------------------------------------------------- the sources
+# WHOSE DOCUMENT IS THIS? Rule 3, applied to the one column that was frightening people.
+#
+# TJ, 19 September 2026: "its alarming to see 'no publisher address' for many. but looking
+# closer, its because this is a generated set of docs. I think we need something that
+# indicates that in that column to not be alarming. it looks like info is 'missing' but
+# its not."
+#
+# Exactly right, and the red was mine. A document with no publisher address is one of
+# three completely different things, and printing them identically turns two harmless
+# ones into an alarm:
+#
+#   OURS        we wrote it, so there is no publisher but us. Nothing is missing.
+#   PUBLISHED   somebody else put it on a website, and we hold its address.
+#   BY REQUEST  somebody else's document that never had a public address -- it came by
+#               records request, by email, in a packet. THIS is the one worth a colour,
+#               and it is the count rule 12 says should stay uncomfortable.
+#
+# The folder decides the first, because sources/ is organised by HOW A DOCUMENT REACHED
+# US -- which is precisely this question -- and the presence of an address decides the
+# other two.
+OURS = {'analyses', 'data'}
+
+def origin_of(top, upstream):
+    if top in OURS:
+        return 'ours'
+    return 'published' if upstream else 'request'
+
+
 def sources():
     """Every document held, with what is known about it.
 
@@ -343,9 +565,11 @@ def sources():
             k = r['key']
             if '/text/' in k or k.endswith('.txt'): continue
             top = k.split('/')[0]
-            out.append([k, int(r['bytes'] or 0), (r.get('upstream') or upstream.get(k, '') or ''),
-                        (r.get('sha256') or '')[:12], top])
+            up = (r.get('upstream') or upstream.get(k, '') or '')
+            out.append([k, int(r['bytes'] or 0), up, (r.get('sha256') or '')[:12],
+                        top, origin_of(top, up)])
     return out
+
 
 # --------------------------------------------------------------------------- render
 CSS = """
@@ -379,12 +603,28 @@ border-radius:6px;color:#e6edf3;font-size:13px}
 .tabs a{display:inline-block;padding:5px 11px;border:1px solid #30363d;border-radius:6px;
 margin-right:6px;text-decoration:none;font-size:12.5px}
 .tabs a.sel{background:#1f6feb;border-color:#1f6feb;color:#fff}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.chip{display:inline-block;padding:5px 11px;border:1px solid #30363d;border-radius:14px;
+text-decoration:none;font-size:12px;color:#8b949e}
+.chip.sel{background:#1f6feb;border-color:#1f6feb;color:#fff}
+.chip b{color:inherit;margin-left:3px}
+.tag{font-size:10.5px;padding:1px 6px;border-radius:8px;text-transform:uppercase;letter-spacing:.06em}
+.tag.ours{background:#12243a;color:#6cb6ff}.tag.req{background:#3a2d12;color:#d29922}
 """
 
 def bar(done, todo):
+    """Green means finished. Anything short of finished is amber.
+
+    TJ, 19 September 2026: "none should be green until its done." He is right, and the
+    first version had it backwards: a green bar 60% of the way across reads as healthy,
+    when the only thing it says is that a backlog is 40% unread. Green is a claim about
+    the END STATE, and spending it on progress leaves no colour to mean 'complete'.
+    """
     tot = (done or 0) + (todo or 0)
-    if not tot: return ''
-    return '<div class="bar"><i style="width:%.1f%%"></i></div>' % (100.0 * done / tot)
+    if not tot:
+        return ''
+    cls = '' if not todo else ' class="part"'
+    return '<div class="bar"><i%s style="width:%.1f%%"></i></div>' % (cls, 100.0 * done / tot)
 
 def page_live(st):
     R, S, F, Q = st['running'], st['streams'], st['refresh'], st['queued']
@@ -398,10 +638,19 @@ def page_live(st):
     if not R:
         h.append('<div class="card idle">Nothing is running. No process is fetching, reading or building.</div>')
     for r in R:
-        h.append('<div class="card %s"><div class="row"><b class="grow">%s</b>'
-                 '<span class="pill %s">%s</span><span class="tiny num">%s</span></div>'
+        if r['done'] is not None and r['plan']:
+            sc = ('<span class="pill go">%d of %d this batch</span>' % (min(r['done'], r['plan']), r['plan'])
+                  + bar(r['done'], max(0, r['plan'] - r['done'])))
+        elif r['done'] is not None:
+            sc = ('<span class="pill">%d landed since it started</span>' % r['done']
+                  + '<div class="tiny" style="margin-top:4px;color:#586069">'
+                    'this one loops — it has no total of its own</div>')
+        else:
+            sc = ''
+        h.append('<div class="card %s"><div class="row"><b class="grow">%s</b>%s'
+                 '<span class="pill %s">%s</span><span class="tiny num">up %s</span></div>'
                  '<div class="tiny">%s</div><div class="mono tiny" style="margin-top:4px;color:#586069">%s</div></div>'
-                 % ('cost' if r['costs'] else 'on', html.escape(r['name']),
+                 % ('cost' if r['costs'] else 'on', html.escape(r['name']), sc,
                     'warn' if r['costs'] else 'go',
                     ('%d procs' % r['n']) if r['n'] > 1 else 'running',
                     html.escape(r['elapsed']), html.escape(r['what']), html.escape(r['cmd'])))
@@ -422,8 +671,12 @@ def page_live(st):
     h.append('<div class="card"><div class="tiny" style="margin-bottom:6px"><b>Where it looked today.</b> '
              'A watcher that did not run is a watcher that did not look.</div><table>')
     for w in F['looked']:
-        h.append('<tr><td class="mono">%s</td><td>%s</td><td class="r">%s</td></tr>'
-                 % (w['script'], html.escape(w['what']),
+        links = ' &middot; '.join('<a href="%s" target="_blank">%s</a>'
+                                  % (html.escape(u, quote=True), html.escape(t))
+                                  for u, t in w['links'] if u)
+        h.append('<tr><td><b>%s</b><div class="tiny">%s</div></td>'
+                 '<td class="tiny">%s</td><td class="r">%s</td></tr>'
+                 % (html.escape(w['label']), html.escape(w['where']), links,
                     ('<span class="pill go">%.0fs</span>' % w['seconds']) if w['ran']
                     else '<span class="pill">did not run</span>'))
     h.append('</table></div>')
@@ -443,13 +696,17 @@ def page_live(st):
     for s in S:
         todo = s['todo']
         h.append('<div class="card"><div class="row"><b class="grow">%s</b>'
+                 '<span class="tiny">%s</span>'
                  '<span class="num">%s done</span>'
                  '<span class="pill %s">%s</span></div>%s'
-                 '<div class="tiny" style="margin-top:6px">%s &middot; %s%s</div>'
-                 % (html.escape(s['name']), '{:,}'.format(s['done']),
+                 '<div class="tiny" style="margin-top:6px">%s</div>'
+                 '<div class="tiny" style="margin-top:4px">%s &middot; %s%s</div>'
+                 % (html.escape(s['name']),
+                    ('last landed %s' % html.escape(s['last'])) if s['last'] else '',
+                    '{:,}'.format(s['done']),
                     'go' if todo == 0 else 'warn',
                     'complete' if todo == 0 else ('{:,} left'.format(todo) if todo is not None else 'unknown'),
-                    bar(s['done'], todo or 0), html.escape(s['cost']),
+                    bar(s['done'], todo or 0), s.get('io', ''), html.escape(s['cost']),
                     html.escape(s['note']),
                     (' &middot; %d blocked: %s' % (s['blocked'], html.escape(s['blocked_why']))) if s['blocked'] else ''))
         # THE BREAKDOWN, COLLAPSED. A backlog total says how worried to be; the boards and
@@ -458,11 +715,12 @@ def page_live(st):
         pend = s.get('pending') or []
         if pend:
             n = sum(p['n'] for p in pend)
-            h.append('<details style="margin-top:8px"><summary class="tiny" '
-                     'style="cursor:pointer;color:#6cb6ff">%s across %d board(s) — '
+            h.append('<details data-k="%s" style="margin-top:8px"><summary class="tiny" '
+                     'style="cursor:pointer;color:#6cb6ff">%s across %d board(s) &mdash; '
                      'by board and date</summary><table style="margin-top:8px">'
                      '<tr><th>board</th><th class="r">left</th><th>earliest</th>'
-                     '<th>latest</th><th></th></tr>' % ('{:,}'.format(n), len(pend)))
+                     '<th>latest</th><th></th></tr>'
+                     % (s['key'], '{:,}'.format(n), len(pend)))
             for r in pend:
                 h.append('<tr><td>%s</td><td class="r num">%d</td>'
                          '<td class="mono tiny">%s</td><td class="mono tiny">%s</td>'
@@ -475,7 +733,13 @@ def page_live(st):
             h.append('</table></details>')
         h.append('</div>')
 
-    h.append('<h2>Queued, not yet ingested</h2>')
+    # THE HEADING WAS LYING. TJ, 19 September 2026: "for 'Queued, not yet ingested', i see
+    # things labeled 'ingested'.. not sure what that means." Of course -- the section was
+    # named for one outcome and listed both, so the label contradicted the heading. It is
+    # the INBOX: what is sitting in it, and whether each delivery has been filed.
+    h.append('<h2>The inbox</h2><p class="sub" style="margin:-4px 0 10px">'
+             'Deliveries dropped in <code>build/inbox/</code>. Matched to the archive by '
+             'checksum, so a file renamed on filing is still recognised.</p>')
     if not Q:
         h.append('<div class="card idle">The inbox is empty.</div>')
     for q in Q:
@@ -484,50 +748,111 @@ def page_live(st):
                  '<div class="tiny">%s</div></div>'
                  % (html.escape(q['name']),
                     'go' if q['ingested'] else ('' if q['ingested'] is None else 'no'),
-                    'ingested' if q['ingested'] else ('unreadable' if q['ingested'] is None else 'NOT INGESTED'),
+                    'filed' if q['ingested'] else ('unreadable' if q['ingested'] is None else 'NOT FILED'),
                     '{:,} B'.format(q['bytes']) if q['bytes'] else '', html.escape(q['note'])))
 
     h.append('<h2>Recent refresh runs</h2><div class="card"><table>'
-             '<tr><th>ran</th><th>as of</th><th class="r">agendas</th><th class="r">minutes</th>'
-             '<th class="r">videos</th><th class="r">captions</th><th>deployed</th><th>note</th></tr>')
+             '<tr><th>day</th><th>outcome</th><th class="r">agendas</th><th class="r">minutes</th>'
+             '<th class="r">videos</th><th class="r">captions</th><th>note</th></tr>')
     for r in F['history']:
-        h.append('<tr><td class="mono">%s</td><td class="mono">%s</td>'
+        row = r['row'] or {}
+        if r['running']:
+            state = '<span class="pill go">running</span>'
+        elif r['exit'] == 0 or (r['finished'] and r['exit'] is None and not r['failed']):
+            state = '<span class="pill go">ok</span>'
+        elif r['exit'] is None and not r['finished']:
+            state = '<span class="pill warn">stopped part-way</span>'
+        else:
+            state = '<span class="pill no">FAILED</span>'
+        note = ('broke on ' + ', '.join(r['failed'])) if r['failed'] else (row.get('notes') or '')
+        if not row and not r['running']:
+            note = (note + ' — ' if note else '') + 'wrote no row: it died before recording the run'
+        h.append('<tr><td class="mono">%s<div class="tiny">%s</div></td><td>%s</td>'
                  '<td class="r num">%s</td><td class="r num">%s</td><td class="r num">%s</td>'
-                 '<td class="r num">%s</td><td>%s</td><td class="tiny">%s</td></tr>'
-                 % (ago(r.get('ran_at')), r.get('as_of',''), r.get('new_agendas',''),
-                    r.get('new_minutes',''), r.get('new_videos',''), r.get('new_transcripts',''),
-                    r.get('deployed',''), html.escape((r.get('notes') or '')[:70])))
+                 '<td class="r num">%s</td><td class="tiny">%s</td></tr>'
+                 % (r['day'], r['mtime'], state,
+                    row.get('new_agendas', '·'), row.get('new_minutes', '·'),
+                    row.get('new_videos', '·'), row.get('new_transcripts', '·'),
+                    html.escape(note[:120])))
     h.append('</table></div></div>')
     return ''.join(h)
 
-def page_sources(st, n):
+def page_sources(st, n, counts):
+    chips = ''.join(
+        '<a href="#" class="chip" data-o="%s">%s <b>%s</b></a>' % (k, lbl, '{:,}'.format(counts.get(k, 0)))
+        for k, lbl in (('', 'Everything'), ('published', 'Published by the town, district or state'),
+                       ('ours', 'Ours — written or generated here'),
+                       ('request', 'Obtained by request — no public address')))
     return ('<div class="wrap"><div class="row"><div class="grow"><h1>Documents</h1>'
             '<p class="sub">%s held &middot; %s</p></div>'
             '<div class="tabs"><a href="index.html">Running</a>'
             '<a class="sel" href="sources.html">Documents</a></div></div>'
+            '<div class="chips">%s</div>'
             '<input type="search" id="q" placeholder="filter by path, folder or address — e.g. select-board 2025, or munis, or xlsx">'
             '<p class="tiny" id="c" style="margin:8px 0"></p>'
-            '<table><tr><th>document</th><th class="r">size</th><th>publisher&rsquo;s address</th>'
+            '<table><tr><th>document</th><th class="r">size</th><th>where it came from</th>'
             '<th>sha256</th></tr><tbody id="t"></tbody></table>'
             '<p class="tiny" id="more"></p></div>'
-            % ('{:,}'.format(n), st['generated']))
+            % ('{:,}'.format(n), st['generated'], chips))
+
+
+KEEP = """
+/* THE PAGE RELOADS ITSELF EVERY 20s, AND THAT USED TO THROW AWAY WHAT YOU WERE READING.
+   Any breakdown you expanded collapsed again and the scroll jumped to the top -- so the
+   one thing the detail is for, reading it, was the one thing you could not do.
+
+   fetch() of a local file is blocked by the browser, so there is no swapping content in
+   place without a server. What there is: remember which <details> were open and where the
+   page was, and put both back on the way in. The reload still happens; it stops being
+   visible. */
+(function(){
+  const K='ingest-open', S='ingest-scroll';
+  const all=()=>[...document.querySelectorAll('details[data-k]')];
+  try{
+    const open=new Set(JSON.parse(sessionStorage.getItem(K)||'[]'));
+    all().forEach(d=>{if(open.has(d.dataset.k))d.open=true});
+    const y=+sessionStorage.getItem(S)||0; if(y)window.scrollTo(0,y);
+  }catch(e){}
+  const save=()=>{try{
+    sessionStorage.setItem(K,JSON.stringify(all().filter(d=>d.open).map(d=>d.dataset.k)));
+    sessionStorage.setItem(S,String(window.scrollY));
+  }catch(e){}};
+  document.addEventListener('toggle',save,true);
+  window.addEventListener('scroll',()=>{clearTimeout(window._t);window._t=setTimeout(save,150)});
+  window.addEventListener('beforeunload',save);
+})();
+"""
 
 JS = """
 const fmt=b=>b>1e6?(b/1e6).toFixed(1)+' MB':b>1e3?Math.round(b/1e3)+' KB':b+' B';
 const t=document.getElementById('t'),q=document.getElementById('q'),c=document.getElementById('c'),
       more=document.getElementById('more');
-const CAP=400;
+const CAP=400; let ORIGIN='';
+/* THREE KINDS OF "no address", AND ONLY ONE IS A GAP. Ours has no publisher because we
+   are the publisher; a records delivery never had a public address and that is rule 12's
+   uncomfortable count; a published document has one and it is a link. Printing all three
+   in red made two of them look broken. */
+const WHERE={
+  ours:'<span class="tag ours">ours</span> <span class="tiny">written or generated here \u2014 no publisher but us</span>',
+  request:'<span class="tag req">by request</span> <span class="tiny">no public address; it came by request or email</span>'
+};
 function draw(){
-  const s=q.value.toLowerCase().split(/\\s+/).filter(Boolean);
-  const hit=DOCS.filter(d=>s.every(w=>d[0].toLowerCase().includes(w)||(d[2]||'').toLowerCase().includes(w)));
+  const s=q.value.toLowerCase().split(/\s+/).filter(Boolean);
+  const hit=DOCS.filter(d=>(!ORIGIN||d[5]===ORIGIN)&&
+    s.every(w=>d[0].toLowerCase().includes(w)||(d[2]||'').toLowerCase().includes(w)));
   c.textContent=hit.length.toLocaleString()+' of '+DOCS.length.toLocaleString()+' documents'+
-    (hit.length>CAP?' — showing the first '+CAP:'');
+    (hit.length>CAP?' \u2014 showing the first '+CAP:'');
   t.innerHTML=hit.slice(0,CAP).map(d=>
-    '<tr><td class="mono">'+d[0]+'</td><td class="r num">'+fmt(d[1])+'</td><td class="tiny">'+
-    (d[2]?'<a href="'+d[2]+'">'+d[2].slice(0,64)+'</a>':'<span style="color:#f85149">no address</span>')+
+    '<tr><td class="mono">'+d[0]+'</td><td class="r num">'+fmt(d[1])+'</td><td>'+
+    (d[2]?'<a href="'+d[2]+'" target="_blank">'+d[2].slice(0,62)+'</a>':(WHERE[d[5]]||''))+
     '</td><td class="mono tiny">'+d[3]+'</td></tr>').join('');
   more.textContent=hit.length>CAP?'Narrow the filter to see the rest.':'';
 }
+document.querySelectorAll('.chip').forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault();ORIGIN=a.dataset.o;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('sel',x===a));draw();
+}));
+document.querySelector('.chip').classList.add('sel');
 q.addEventListener('input',draw);draw();
 """
 
@@ -540,13 +865,16 @@ def write(open_it=False):
              'content="width=device-width,initial-scale=1"><title>%s</title>'
              '%s<style>%s</style>%s')
     with open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8') as fh:
-        fh.write(shell % ('Ingestion', '<meta http-equiv="refresh" content="20">', CSS, page_live(st)))
+        fh.write(shell % ('Ingestion', '<meta http-equiv="refresh" content="20">', CSS,
+                          page_live(st)) + '<script>' + KEEP + '</script>')
     # The document list is written as a <script>, not JSON: a browser will not fetch() a
     # local file but will happily <script src> one.
     with open(os.path.join(OUT, 'docs.js'), 'w', encoding='utf-8') as fh:
         fh.write('const DOCS=' + json.dumps(docs, separators=(',', ':')) + ';')
     with open(os.path.join(OUT, 'sources.html'), 'w', encoding='utf-8') as fh:
-        fh.write(shell % ('Documents', '', CSS, page_sources(st, len(docs)))
+        counts = collections.Counter(d[5] for d in docs)
+        counts[''] = len(docs)
+        fh.write(shell % ('Documents', '', CSS, page_sources(st, len(docs), counts))
                  + '<script src="docs.js"></script><script>' + JS + '</script>')
     return st, len(docs)
 
