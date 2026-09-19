@@ -76,6 +76,7 @@ Rules:
 - `fincom` and `select_board`: what each body recommended, as printed -- 'Approval', 'Disapproval', 'No recommendation', or null if the report does not say for this article. These are often printed together in one sentence for both bodies; in that case record the same value for each.
 - `quote`: the Clerk's OWN sentence recording the outcome, copied VERBATIM and exactly, including capitalisation and punctuation. This is checked character-for-character against the source and a paraphrase is a failure. Keep it under 300 characters; if the sentence is longer, STOP COPYING mid-sentence. Do not add a full stop, an ellipsis, a bracket or any other mark the source does not have at that point, and do not close the sentence for tidiness -- an added '.' where the report prints ',' fails the check on an otherwise perfect quote. Copy, never finish.
 - `page`: the ===PAGE N=== marker the article's outcome falls under, as an integer.
+- NEVER QUOTE A SENTENCE THAT MERELY MENTIONS AN ARTICLE NUMBER. Articles cite each other and cite PAST Town Meetings -- "transfer from Article 6 of the 5/5/18 Annual Town Meeting the sum of $139,938.07" appears inside a DIFFERENT article's text and is not article 6's outcome. The quote must be the sentence recording what happened to THIS article, printed under THIS article's own heading. If the only sentence you can find naming the article is a cross-reference, the outcome is not stated: set result 'unclear' and quote the nearest sentence that is actually about this article's disposition.
 - Text may come from OCR and be garbled. If an article's outcome cannot be read, still emit the record with result 'unclear' and quote whatever the outcome sentence renders as.
 - Do NOT include: the warrant's articles where no outcome is printed, election results, committee reports, or anything outside the Town Meeting proceedings.
 - If the pages contain no Town Meeting proceedings at all, return an empty list."""
@@ -101,6 +102,9 @@ SCHEMA = {
     },
     'required': ['articles'],
 }
+
+
+ART_HEAD = re.compile(r'^[ \t]*ARTICLE[ \t]+(\d+)[ \t]*[:.]', re.I | re.M)
 
 
 def pages_of(text):
@@ -151,7 +155,22 @@ def report_text(fy):
     hits = [f for f in os.listdir(TEXT_DIR) if re.search(r'fy[- ]?%s\b' % fy, f, re.I)]
     if len(hits) == 1:
         return os.path.join(TEXT_DIR, hits[0])
-    raise SystemExit('cannot find one annual-report text for FY%s (found %r)' % (fy, hits))
+    # A YEAR CAN PUBLISH MORE THAN ONE FILE, and the tie is broken on CONTENT, never on the
+    # name. FY2016 has a report and an `-addendum`; the addendum is a tax and revenue
+    # listing with ZERO article headings and the report has 71. Choosing by filename would
+    # be the location-as-identity mistake CLAUDE.md names as the commonest defect here --
+    # a file called `-addendum` is not guaranteed to be the one without the proceedings, and
+    # the next year's naming will differ. Count the headings instead; that is the thing we
+    # are actually looking for.
+    with_articles = []
+    for f in hits:
+        n = len(ART_HEAD.findall(open(os.path.join(TEXT_DIR, f), encoding='utf-8', errors='replace').read()))
+        if n:
+            with_articles.append((n, f))
+    if len(with_articles) == 1:
+        return os.path.join(TEXT_DIR, with_articles[0][1])
+    raise SystemExit('cannot pick one annual-report text for FY%s: %r carry Town Meeting '
+                     'articles (of %r)' % (fy, [f for _, f in with_articles], hits))
 
 
 def slice_for(fy):
@@ -268,9 +287,6 @@ def norm(s):
 # punctuation changes between years, and requiring the colon found 6 headings in a report
 # that prints 26 articles. A heading regex that silently matches almost nothing turns
 # every row into a failure and reads exactly like the extraction being wrong.
-ART_HEAD = re.compile(r'^[ \t]*ARTICLE[ \t]+(\d+)[ \t]*[:.]', re.I | re.M)
-
-
 def article_spans(raw):
     """THE TEXT THAT BELONGS TO EACH ARTICLE -- from its own heading to the next one.
 

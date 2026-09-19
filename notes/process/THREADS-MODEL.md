@@ -978,3 +978,29 @@ calendar disposes of several articles in one printed sentence, outside any artic
 Four of the ten are that shape. It is a real feature of the document and not an extraction
 error — and it is still reported separately rather than forgiven, because the remaining six
 are not yet explained.
+
+### 19g. The twelve misfiled quotes are TWO defects, and only one is ours
+
+FY2019 separates them, because it is the weakest year at 82% and small enough to read whole.
+
+**Some articles have no heading in the report at all.** FY2019 prints headings for articles
+1-12, 14-19, 22, 23, 25, 26, 28-31, 34-36, 38, 39, 41, 42 — and not for 13, 20, 21, 24, 27,
+32, 33, 37 or 40. Article 27's outcome is the whole of its record: *"Article 27 was
+DEFEATED."* An article disposed of in a summary block is never read out in full, so there is
+nothing for a heading to open. **This is the document's shape and not an error**, and it is
+the same family as the consent calendar.
+
+**And some are a real extraction error.** Article 6's quote is *"transfer from Article 6 of
+the 5/5/18 Annual Town Meeting the sum of $139,938.07"* — a sentence inside a DIFFERENT
+article's text that cites a PAST Town Meeting's article 6. Articles cross-reference each
+other constantly, and a model looking for "the sentence naming article 6" can find the
+wrong one. **The check caught it, which is the whole point of requiring the quote to sit
+under its own heading** — a document-wide search called this correct.
+
+The system prompt now forbids quoting a sentence that merely mentions an article number.
+Re-running the extraction would improve the rate; it has not been run, so the figures above
+are the untightened ones.
+
+**What this settles about the check.** It is not merely conservative — it has found a real
+defect that no amount of re-reading the output would have surfaced, because the quote is
+verbatim, the figures are right, and only its ATTACHMENT is wrong.
