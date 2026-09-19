@@ -1,0 +1,639 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2025-12-09",
+ "video_id": "Z87KMc--ZoY",
+ "video_url": "https://www.youtube.com/watch?v=Z87KMc--ZoY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-12-09-Z87KMc--ZoY.json",
+  "sha256": "a684a787302cb77424ee46a6b42f4fa5f2b63d88063df6f15e67f5715238a5b3",
+  "caption_lines": 493,
+  "segments": 4854
+ },
+ "recording": {
+  "duration_s": 13700,
+  "duration": "3:48",
+  "spoken_chars": 157976,
+  "words_approx": 26329
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12092025-7554",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-12-09-agenda-7554.txt",
+   "path": "sources/meetings/select-board/2025-12-09-agenda-7554.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12092025-7554",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-12-09-minutes-7554.txt",
+   "path": "sources/meetings/select-board/2025-12-09-minutes-7554.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-19T11:55:37Z",
+  "cost_usd": 0.5919804
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "McCloud",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Leighton",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Em",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Moore",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Melissa",
+    "role": "staff (licensing/administration)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 13599,
+    "speaker_as_heard": "Rondaio (Rhonda)",
+    "stated_role": "resident, 181 Reservoir Road",
+    "topic": "Objected to the board's public rationale for not reappointing a conservation commission member, saying the board did not fact-check his voting record before citing it as a reason."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "chapter-70",
+   "contracts-and-unions",
+   "executive-session",
+   "facilities",
+   "fees",
+   "grants",
+   "hiring",
+   "legal",
+   "library",
+   "msba",
+   "override",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "seniors",
+   "staffing",
+   "state-aid",
+   "superintendent-report",
+   "tax-rate",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "turkey-hill",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "headline": "Board voted 4-1 to send a letter pressing school/finance committees to communicate better ahead of budget season",
+  "summary": "The Select Board handled routine business (license renewals, resignations, a town-manager report) then spent most of the meeting on two policy rewrites (special events, appointments), a letter to the Governor on state aid, and a letter to the tri-board on communication after friction at the recent special town meeting. It also discussed unresolved special-town-meeting items -- Kids Kingdom's design/relocation, a water-billing rate increase, and a mailer-postcard bylaw change -- without final decisions.",
+  "votes": [
+   {
+    "t": 136,
+    "motion": "Enter executive session under MGL c.30 §21A(3) re: litigation strategy (Burden George et al v. Court Manchie et al; Town of Lunenburg v. Burden George et al) and re-enter open session after",
+    "outcome": "passed 5-0 (roll call: McCloud aye, Leighton aye, Em aye, Moore aye, chair aye)",
+    "procedural": true
+   },
+   {
+    "t": 4541,
+    "motion": "Approve the annual license renewals as printed on the agenda",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 11841,
+    "motion": "Approve the tri-board communication letter with three discussed modifications, and authorize the finance/school committee liaison to read it and the town manager to send it to all tri-board members",
+    "outcome": "passed 4-1",
+    "procedural": false
+   },
+   {
+    "t": 13697,
+    "motion": "Adjourn",
+    "outcome": "passed unanimously",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3850,
+    "topic": "DMH Jail and Arrest Diversion Program grant (police, with Lancaster)",
+    "figures_as_heard": [
+     "$19,000",
+     "109"
+    ],
+    "what_was_said": "Town manager reported the grant funds a clinician (via Open Sky Community Services) to assist police with mental-health crises; a board member asked the amount and got a different-sounding figure in response."
+   },
+   {
+    "t": 3955,
+    "topic": "FY26 tax rate",
+    "figures_as_heard": [
+     "$14.39"
+    ],
+    "what_was_said": "Town manager reported the FY26 tax rate has been officially set by DLS; third-quarter actual tax bills are being prepared."
+   },
+   {
+    "t": 4120,
+    "topic": "Town Hall access control project change order",
+    "figures_as_heard": [
+     "$5,750",
+     "$185,000",
+     "$1,766"
+    ],
+    "what_was_said": "A change order is needed because the library, teen center and adult activity center are on a separate network; the shortfall will be covered from the Wallace Park resurfacing project, which came in under budget."
+   },
+   {
+    "t": 4933,
+    "topic": "State/local aid figures cited in draft letter to the Governor",
+    "figures_as_heard": [
+     "31%",
+     "26%",
+     "25%",
+     "$200 million",
+     "$100,000"
+    ],
+    "what_was_said": "Draft letter to the Governor cites MMA figures on the share of municipal revenue from state aid, the decline in unrestricted aid, flat Chapter 90 funding since 2012, and an example earmark amount, as part of an FY27 local-aid advocacy letter."
+   },
+   {
+    "t": 11945,
+    "topic": "Water billing accounts / rate increase (11 account holders, Fitchburg dispute)",
+    "figures_as_heard": [],
+    "what_was_said": "Town manager said a rate increase will be needed for the 11 affected water accounts and that not all recent payments to Fitchburg were applied correctly; a suggestion to ask Fitchburg to pause interest is being pursued."
+   },
+   {
+    "t": 12093,
+    "topic": "Kids Kingdom playground design/relocation",
+    "figures_as_heard": [
+     "$25,000",
+     "under $1,000"
+    ],
+    "what_was_said": "Town manager said an RFP for a full design (funded by town meeting) shouldn't go out without a clear scope, and that a cheap conceptual sketch could be done first rather than spending the larger design sum on something that may not be built."
+   },
+   {
+    "t": 13084,
+    "topic": "Accounts payable warrant",
+    "figures_as_heard": [
+     "$951,67849"
+    ],
+    "what_was_said": "An accounts payable warrant in this amount was presented to the board."
+   },
+   {
+    "t": 13291,
+    "topic": "Forestry/Chapter land rollback taxes, 100 Hobbit Street",
+    "figures_as_heard": [
+     "700,000"
+    ],
+    "what_was_said": "Board of Assessors report: a 44-acre chapter-land parcel sold in October for this amount, and the town is pursuing rollback taxes retroactive up to five years plus interest."
+   }
+  ],
+  "transfers": [
+   {
+    "t": 4141,
+    "description": "Shortfall on the access-control project change order, taken from the Wallace Park resurfacing project (completed under budget)",
+    "amount_as_heard": "$1,766",
+    "outcome": "discussed only, presented as town manager's plan"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 4727,
+    "decision": "Board will wait one more week (to Dec 16) to see which license applicants come into compliance, then consider a contingent vote on remaining renewals; a special meeting may be scheduled in late December if needed."
+   },
+   {
+    "t": 6270,
+    "decision": "Board leaning toward substantially rewriting or scrapping the special events policy, likely splitting it into a large-event policy and a routine/small-event policy, and removing regulation of private-property events; town counsel to be consulted on legality."
+   },
+   {
+    "t": 6989,
+    "decision": "Board will explore digitizing volunteer applications (e.g., via a Microsoft Form feeding a spreadsheet) while keeping a paper option."
+   },
+   {
+    "t": 9705,
+    "decision": "Board agreed to a series of edits to the draft appointment policy: remove fixed May 25th deadline, require a vote of the full board (not one member) to trigger interviews for an appointed body, move annual-report due date from fixed November to 'as requested,' and add training requirements to the policy."
+   },
+   {
+    "t": 10059,
+    "decision": "Board will ask town counsel for input on whether a select board bylaw is even needed and how other towns handle it before recommending changes to the Bylaw Review Committee."
+   },
+   {
+    "t": 12300,
+    "decision": "Board leaning toward sending a letter to the school committee affirming the school committee's care, custody and control of Kids Kingdom, paired with a rough conceptual site sketch to inform further discussion, rather than issuing it unilaterally."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 10,
+    "t_end": 115,
+    "topic": "Pledge of allegiance and announcements (pancake breakfast, Santa mailbox, library angel tree)",
+    "resolution": "informational",
+    "tags": [
+     "seniors",
+     "library"
+    ]
+   },
+   {
+    "t_start": 136,
+    "t_end": 197,
+    "topic": "Vote to enter executive session for litigation strategy",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 3684,
+    "t_end": 3705,
+    "topic": "Return to open session; no public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 3705,
+    "t_end": 3768,
+    "topic": "Resignations: Council on Aging outreach coordinator and young adult staff librarian",
+    "resolution": "acknowledged",
+    "tags": [
+     "seniors",
+     "library",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3768,
+    "t_end": 4307,
+    "topic": "Town manager report: finance director transition, DMH grant, regional dispatch, tax rate, capital planning, facilities projects, recruitments and vacancies",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "public-safety",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4307,
+    "t_end": 4480,
+    "topic": "Follow-up questions on TCP building heat complaints from pickleball players",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 4480,
+    "t_end": 4810,
+    "topic": "Annual license renewal applications: vote to approve completed ones, discussion of delinquent applicants",
+    "resolution": "voted / discussion continued to next meeting",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 4810,
+    "t_end": 6055,
+    "topic": "Draft letter to Governor Healey on FY27 local aid and Chapter 70/Prop 2½",
+    "resolution": "discussed, to be revised and brought back",
+    "tags": [
+     "state-aid",
+     "chapter-70",
+     "override"
+    ]
+   },
+   {
+    "t_start": 6055,
+    "t_end": 6805,
+    "topic": "Special event policy line-by-line review",
+    "resolution": "no resolution, rewrite planned",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 6805,
+    "t_end": 9705,
+    "topic": "Appointment/reappointment policy line-by-line review",
+    "resolution": "discussed, revisions agreed, to be finalized",
+    "tags": [
+     "policy",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 9705,
+    "t_end": 10080,
+    "topic": "Select board bylaw review for Bylaw Review Committee",
+    "resolution": "referred to town counsel for input",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 10080,
+    "t_end": 11883,
+    "topic": "Letter to tri-board on inter-committee communication ahead of budget season",
+    "resolution": "voted 4-1",
+    "tags": [
+     "policy",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 11883,
+    "t_end": 12981,
+    "topic": "Special town meeting follow-up: water billing/Fitchburg rate dispute, Kids Kingdom design, mailer/postcard warrant-article idea, APDC/noise ordinance scheduling",
+    "resolution": "discussed, no formal action",
+    "tags": [
+     "town-meeting",
+     "water-sewer",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 13064,
+    "t_end": 13189,
+    "topic": "Accounts payable warrant presented",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 13189,
+    "t_end": 13558,
+    "topic": "Committee reports: EDC, Board of Assessors, School Committee, Stormwater Task Force, Bylaw Review Committee, Capital Planning, Council on Aging",
+    "resolution": "informational",
+    "tags": [
+     "override",
+     "turkey-hill",
+     "msba"
+    ]
+   },
+   {
+    "t_start": 13578,
+    "t_end": 13686,
+    "topic": "Public comment on conservation commission reappointment rationale",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 13686,
+    "t_end": 13703,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The DMH/Arrest Diversion grant amount was first given as \"$19,000\" and then, in response to a follow-up question, rendered as \"109\" -- unclear which figure (or unit) is correct.",
+   "The accounts payable warrant figure was rendered without a clear decimal point (\"$951,67849\").",
+   "Names were rendered inconsistently: the outgoing librarian was called both \"Caitlyn Hinnelberger\" and \"Katie Himlberger\"/\"Katie McKenna\" region unclear; \"Nashoba Valley\" regional dispatch was rendered \"Nshoba\" throughout.",
+   "Several stretches of the appointment-policy line-editing discussion overlap multiple speakers at once and individual attributions are uncertain.",
+   "The public commenter's phone audio was described by the board as too quiet at first; some of her opening words are not clearly rendered."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The board voted 4-1 to send the school and finance committees a letter pressing for better communication ahead of budget season, after friction at the recent special town meeting.",
+    "t": 11841
+   },
+   {
+    "line": "The board began rewriting its special events and appointment policies, including splitting event rules by size and loosening fixed deadlines for board appointments, without a final vote.",
+    "t": 6270
+   },
+   {
+    "line": "The board held off on remaining delinquent license renewals for one more week and may call a special meeting in late December if applicants have not come into compliance.",
+    "t": 4727
+   },
+   {
+    "line": "The board discussed but did not decide two unresolved items from the special town meeting: a water-billing rate increase for affected accounts and the Kids Kingdom playground redesign.",
+    "t": 11945
+   },
+   {
+    "line": "A resident used public comment to object that the board's stated reason for not reappointing a conservation commission member was not fact-checked.",
+    "t": 13599
+   }
+  ],
+  "why_it_matters": [
+   "The tri-board letter could change how budget information reaches the school committee and finance committee before residents are asked to vote on next year's school budget.",
+   "A water-billing rate increase would land on the bills of the affected account holders, and the license-renewal delay affects local businesses awaiting town approval.",
+   "The Kids Kingdom redesign and the appointment-policy changes touch a town recreation project and the process by which residents get seated on town boards."
+  ],
+  "watch_next": [
+   "December 16 review of remaining license-renewal compliance, with a possible special meeting in late December",
+   "Finalized tri-board communication letter and revised special events and appointment policies coming back to the board"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-19T11:55:54Z",
+   "cost_usd": 0.1568936
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12092025-7554",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-12-09-minutes-7554.txt",
+   "path": "sources/meetings/select-board/2025-12-09-minutes-7554.pdf"
+  },
+  "official_sha256": "27e6d6a4a10f0f6356bd983e4862481466e27192780b710ac45614f72b3f44a7",
+  "coverage": "full",
+  "summary": "The two records agree closely on every non-procedural vote and on nearly every decision and figure once caption garbling is unwound — five names (McLeod, Lehtinen, Emkey, Wallis Park, the $109,000 grant) and one warrant total were simply misheard or mis-formatted by the captions, not actually different facts. The few real discrepancies worth checking are: a possible special meeting for license renewals and an 'add training requirements' edit that appear only in ours with no official counterpart, and a difference in how the Kids Kingdom communication plan is framed (a Select Board letter in ours vs. a held Town Manager communication plus sketch-first sequencing in the official minutes).</summary>\n",
+  "counts": {
+   "agree": 8,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "vote to approve tri-board communication letter",
+    "ours": "Approve the tri-board communication letter with three discussed modifications, and authorize the finance/school committee liaison to read it and the town manager to send it to all tri-board members — passed 4-1",
+    "official": "Chair Nuzzolo moved to approve the letter as presented with the three agreed-upon modifications and to authorize the Board's liaisons to the Finance Committee and School Committee to read the letter on behalf of the full Select Board at their respective upcoming meetings, and to authorize the Town Manager to transmit the letter to all Tri-Board members on behalf of the Select Board. Seconded by Clerk Emkey. Call for Vote: Four - Aye (4), One – No (1) (Member McLeod). Motion passed (4-1-0).",
+    "note": "Same 4-1 vote and same three modifications/authorizations; official additionally names the dissenting member (McLeod).",
+    "t": 11841
+   },
+   {
+    "kind": "caption_error",
+    "about": "source park for $1,766 transfer",
+    "ours": "taken from the Wallace Park resurfacing project (completed under budget) — $1,766",
+    "official": "the resulting $1,766 shortfall will be drawn from the Wallis Park resurfacing project, which was completed under budget",
+    "official_reading": "Wallis Park",
+    "note": "Same transfer and amount; captions misheard 'Wallis' as 'Wallace'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "DMH Jail and Arrest Diversion Program grant amount",
+    "ours": "$19,000, 109",
+    "official": "has been awarded $109,000 in grant funding through the Department of Mental Health Jail and Arrest Diversion Program",
+    "official_reading": "$109,000",
+    "note": "Captions appear to have split '$109,000' into '$19,000' plus a stray '109' fragment; one misheard figure, not two separate amounts — reconfirm against audio.",
+    "t": 3850
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 tax rate",
+    "ours": "$14.39",
+    "official": "The Division of Local Services has officially set the FY26 tax rate at $14.39.",
+    "note": "Matches exactly.",
+    "t": 3955
+   },
+   {
+    "kind": "agree",
+    "about": "UGGA decline and Chapter 90 figures in Governor letter",
+    "ours": "25%, $200 million",
+    "official": "down 25% since 2002 when adjusted for inflation), stagnant Chapter 90 funding at $200 million since 2012",
+    "note": "Both figures match exactly.",
+    "t": 4933
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "additional figures (31%, 26%, $100,000) cited in Governor letter",
+    "ours": "31%, 26%, $100,000",
+    "official": "",
+    "note": "Official minutes summarize the letter's themes but do not restate every number it cited; check the draft letter itself (read fully into the record) to confirm these three figures.",
+    "t": 4933
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cost estimate for Kids Kingdom conceptual sketch",
+    "ours": "under $1,000",
+    "official": "",
+    "note": "Official minutes call the planned sketch 'low-cost' with Facilities Director Ruth preparing it, but give no dollar figure; check the recording for whether a specific number like 'under $1,000' was actually stated.",
+    "t": 12093
+   },
+   {
+    "kind": "caption_error",
+    "about": "accounts payable warrant amount",
+    "ours": "$951,67849",
+    "official": "An Accounts Payable warrant in the amount of $951,678.49 was presented.",
+    "official_reading": "$951,678.49",
+    "note": "Same figure; the decimal point was dropped in the caption-derived digits.",
+    "t": 13084
+   },
+   {
+    "kind": "agree",
+    "about": "100 Hobbit Street sale price / rollback tax basis",
+    "ours": "700,000",
+    "official": "the property at 100 Hobbit Street (44 acres, sold in October for $700,000) is subject to potential rollback taxes of up to five years plus interest",
+    "note": "Matches exactly.",
+    "t": 13291
+   },
+   {
+    "kind": "only_in_official",
+    "about": "100 Hobbit Street parcel size",
+    "ours": "",
+    "official": "44 acres",
+    "note": "Official minutes add the parcel's acreage, which ours did not capture; not a conflict, just an omission on our side.",
+    "t": 13291
+   },
+   {
+    "kind": "discrepancy",
+    "about": "possible special meeting for license renewals",
+    "ours": "a special meeting may be scheduled in late December if needed",
+    "official": "",
+    "note": "Official minutes describe the plan as resolving remaining renewals entirely at the December 16 meeting (approve compliant ones outright, contingent vote for the rest) with no mention of a special meeting; check the recording for whether a special-meeting contingency was actually raised.",
+    "t": 4727
+   },
+   {
+    "kind": "agree",
+    "about": "select board bylaw referral to town counsel",
+    "ours": "ask town counsel for input on whether a select board bylaw is even needed and how other towns handle it before recommending changes to the Bylaw Review Committee",
+    "official": "The Select Board agreed to refer the bylaw to Town Counsel for an opinion on whether it is necessary and for what reasons other communities maintain similar bylaws.",
+    "note": "Matches exactly.",
+    "t": 10059
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: Glenn McLeod",
+    "ours": "McCloud (member)",
+    "official": "Member Glenn McLeod",
+    "official_reading": "Glenn McLeod",
+    "note": "Same person; captions misheard the surname as 'McCloud'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: Brian Lehtinen",
+    "ours": "Leighton (member)",
+    "official": "Member Brian Lehtinen",
+    "official_reading": "Brian Lehtinen",
+    "note": "Same person; captions misheard the surname as 'Leighton'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: Renee Emkey",
+    "ours": "Em (member)",
+    "official": "Clerk Renee Emkey",
+    "official_reading": "Renee Emkey",
+    "note": "Same person; captions truncated 'Emkey' to 'Em'."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: Amanda Moore",
+    "ours": "Moore (member)",
+    "official": "Vice-Chair Amanda Moore",
+    "note": "Same person; ours omits the Vice-Chair title but the surname is correct."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: the chair",
+    "ours": "the chair (chair)",
+    "official": "Chair Caesar Nuzzolo",
+    "note": "Same person, referred to generically by role in ours rather than by name."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: the town manager",
+    "ours": "the town manager (town manager)",
+    "official": "Jennifer Warren-Dyment, Town Manager",
+    "note": "Same person, referred to generically by role in ours rather than by name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee: Melissa, licensing/administration staff",
+    "ours": "Melissa (staff (licensing/administration))",
+    "official": "",
+    "note": "Official minutes' 'Also Present' line names only the Town Manager; check whether a staff member named Melissa actually spoke/was present or this is a captioning artifact."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-19T13:06:31Z",
+   "cost_usd": 0.395604
+  }
+ }
+}
