@@ -160,11 +160,22 @@ def feed_pages():
     return sorted(set(out))
 
 
+# THE PAYLOAD OF AN UNLISTED PAGE IS ALSO UNLISTED. A page kept out of the sitemap while
+# it is tested is not kept out if its data file is listed beside it -- an agent search tool
+# reaches what is INDEXED, and /data/threads.json indexed is /threads exposed by another
+# door. Read from routes.ts's UNLISTED rather than typed here, so the two cannot drift.
+def unlisted_payloads():
+    src = open(ROUTES_TS, encoding='utf-8').read()
+    m = re.search(r"export const UNLISTED[^\n]*new Set<Tab>\(\[([^\]]*)\]", src)
+    return {'%s.json' % t.strip().strip("'\"") for t in (m.group(1).split(',') if m else []) if t.strip()}
+
+
 def published_data():
     """Every dataset published under /data, so each is indexable on its own."""
+    skip = unlisted_payloads()
     out = []
     for p in sorted(glob.glob(os.path.join(PUB, 'data', '*'))):
-        if os.path.isfile(p) and not p.endswith('.db'):
+        if os.path.isfile(p) and not p.endswith('.db') and os.path.basename(p) not in skip:
             out.append('/data/' + os.path.basename(p))
     return out
 

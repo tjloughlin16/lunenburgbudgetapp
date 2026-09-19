@@ -2,8 +2,21 @@
  "about": "Threads: a matter tracked across meetings and boards to a decision. notes/process/THREADS-MODEL.md",
  "generated_by": "scripts/build_threads.py",
  "coverage": {
-  "meetings_readable": 165,
-  "boards_readable": 17,
+  "dated_in_the_future_and_excluded": [
+   {
+    "board": "architectural-preservation-district-commission",
+    "date": "2027-01-16",
+    "file": "sources/data/recording-minutes/architectural-preservation-district-commission/2027-01-16-bpDu97Bl-go.json"
+   },
+   {
+    "board": "board-of-assessors",
+    "date": "2027-11-06",
+    "file": "sources/data/recording-minutes/board-of-assessors/2027-11-06-anpNaB1l9ho.json"
+   }
+  ],
+  "rank_basis": "boards touched, then how recently it moved, then meetings in the record",
+  "meetings_readable": 163,
+  "boards_readable": 16,
   "town_meeting_readable": 10,
   "official_town_meeting_years": [
    "2018",
@@ -17,1588 +30,6 @@
   ]
  },
  "threads": [
-  {
-   "id": "stormwater-fee",
-   "label": "The stormwater fee",
-   "question": "Will every property pay a new stormwater charge, how much, and billed how?",
-   "kind": "money;rule",
-   "groups": "what-i-pay",
-   "tags": "",
-   "boards": "stormwater-task-force",
-   "started": "2026-01-13",
-   "closes": "a Town Meeting votes the stormwater article and the fee is set",
-   "status": "open",
-   "resolved_on": "",
-   "note": "Billed separately from the tax bill, with a quarterly tear-off coupon (Stormwater Task Force, 31 Aug 2026). Five boards. NO #stormwater tag exists on any meeting -- tags cannot discover this one.",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-01-13",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Committee reports: EDC, Municipal Building Design, School Committee, Capital Planning, Board of Assessors, Stormwater, 300th committee, Council on Aging",
-       "outcome": "",
-       "t": 9057,
-       "video_url": "https://www.youtube.com/watch?v=dJJBSRi5z5U"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-02-17",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Committee reports (open space, library, master plan, stormwater, finance committee, capital planning, bylaw review)",
-       "outcome": "",
-       "t": 5057,
-       "video_url": "https://www.youtube.com/watch?v=VfWvWHwTzog"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-02-19",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "DPW budget: drainage, catch basin cleaning/street sweeping for stormwater compliance, recycling program cut, snow and ice",
-       "outcome": "",
-       "t": 9009,
-       "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-03-17",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Hold off including the stormwater utility bylaw article.",
-       "outcome": "",
-       "t": 3672,
-       "video_url": "https://www.youtube.com/watch?v=S3K-268mDJs"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-03-24",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Select Board removed stormwater from the tier two override to bring the number down.",
-       "outcome": "",
-       "t": 1989,
-       "video_url": "https://www.youtube.com/watch?v=lq1UgU1vxNg"
-      },
-      {
-       "kind": "decision",
-       "text": "The boards decided not to pursue a standalone stormwater override article this cycle, deferring to the stormwater task force's meeting the next day.",
-       "outcome": "",
-       "t": 3392,
-       "video_url": "https://www.youtube.com/watch?v=lq1UgU1vxNg"
-      },
-      {
-       "kind": "topic",
-       "text": "Whether to include a stormwater utility/override request, and at what amount",
-       "outcome": "",
-       "t": 1948,
-       "video_url": "https://www.youtube.com/watch?v=lq1UgU1vxNg"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-04-06",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Old business: follow-up tracking, budget process timing, stormwater task force, quarterly reports",
-       "outcome": "",
-       "t": 5069,
-       "video_url": "https://www.youtube.com/watch?v=nyauVYl3zd0"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-05-19",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Committee reports: Stormwater Task Force fee structure work",
-       "outcome": "",
-       "t": 2949,
-       "video_url": "https://www.youtube.com/watch?v=JnVWS4tJouo"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-08-04",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Committee reports (school committee, cable advisory, building design, Fincom, stormwater, 300th anniversary)",
-       "outcome": "",
-       "t": 5232,
-       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-08-18",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Committee reports (Council on Aging, Municipal Building Design Committee, Cable Advisory, Board of Assessors, Stormwater Task Force, Finance Committee)",
-       "outcome": "",
-       "t": 4452,
-       "video_url": "https://www.youtube.com/watch?v=YnQcT2BMWS4"
-      }
-     ]
-    },
-    {
-     "board": "Stormwater Task Force",
-     "board_slug": "stormwater-task-force",
-     "date": "2026-08-31",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Agreed stormwater fees will be billed separately from the property tax bill, with an option for residents to pay quarterly via a tear-off coupon.",
-       "outcome": "",
-       "t": 1580,
-       "video_url": "https://www.youtube.com/watch?v=N5dSxGy3zZs"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-09-01",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Committee reports: finance committee and stormwater task force update",
-       "outcome": "",
-       "t": 6020,
-       "video_url": "https://www.youtube.com/watch?v=kG4KE9VgCdY"
-      }
-     ]
-    },
-    {
-     "board": "Stormwater Task Force",
-     "board_slug": "stormwater-task-force",
-     "date": "2026-09-14",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Vote to accept the stormwater warrant article for special town meeting",
-       "outcome": "",
-       "t": 64,
-       "video_url": "https://www.youtube.com/watch?v=fHuUxPFr0rg"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-09-15",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Refer the special town meeting articles (zoning amendments and stormwater management bylaw fee structure) to the planning board for review and public hearing.",
-       "outcome": "passed unanimously",
-       "t": 4548,
-       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
-      },
-      {
-       "kind": "topic",
-       "text": "November 17th special town meeting: referral of zoning cleanup and stormwater fee bylaw articles to planning board; Brooks House report article",
-       "outcome": "",
-       "t": 4336,
-       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
-      },
-      {
-       "kind": "topic",
-       "text": "Committee reports (bylaw committee, assessors, open space, Council on Aging, library trustees, MPO, EDC, school committee, FinCom, stormwater task force)",
-       "outcome": "",
-       "t": 6879,
-       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
-      }
-     ]
-    }
-   ],
-   "meetings": 13,
-   "boards_touched": 4,
-   "first_seen": "2026-01-13",
-   "last_moved": "2026-09-15"
-  },
-  {
-   "id": "turkey-hill-rebuild",
-   "label": "Turkey Hill: rebuild or renovate",
-   "question": "Does the town rebuild Turkey Hill, renovate it, or neither -- and with what MSBA help?",
-   "kind": "project",
-   "groups": "schools;buildings",
-   "tags": "turkey-hill;msba",
-   "boards": "",
-   "started": "2025-10-15",
-   "closes": "the MSBA statement of interest is submitted or dropped (window opens January, closes April 2027)",
-   "status": "open",
-   "resolved_on": "",
-   "note": "ENTITY vs MATTER: \"Turkey Hill\" alone collects 40 meetings of paraprofessionals, DIBELS scores, solar offsets and intercoms. The qualifier is what makes this a thread.",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2025-10-15",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "The committee will talk with the facilities director about Turkey Hill as a next step.",
-       "outcome": "",
-       "t": 9298,
-       "video_url": "https://www.youtube.com/watch?v=4sOnEhLYjmo"
-      },
-      {
-       "kind": "topic",
-       "text": "School committee draft goals: Turkey Hill direction, capital plan, Kids Kingdom, playgrounds, budget rubric/audit",
-       "outcome": "",
-       "t": 7800,
-       "video_url": "https://www.youtube.com/watch?v=4sOnEhLYjmo"
-      },
-      {
-       "kind": "topic",
-       "text": "Topics for future discussion: Chapter 70 finance formula testimony, audit schedule, Turkey Hill facilities follow-up",
-       "outcome": "",
-       "t": 9238,
-       "video_url": "https://www.youtube.com/watch?v=4sOnEhLYjmo"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2025-11-05",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Agreed on a staged, multi-meeting approach to the Turkey Hill decision: first set the end-goal/needs for the building, then debate rehab vs. rebuild, then address funding options.",
-       "outcome": "",
-       "t": 6015,
-       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
-      },
-      {
-       "kind": "decision",
-       "text": "Decided not to have the facilities director attend the very next meeting on Turkey Hill; instead solicit written feedback on building needs from Turkey Hill staff first.",
-       "outcome": "",
-       "t": 6158,
-       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
-      },
-      {
-       "kind": "decision",
-       "text": "Set five school-committee goals for the year: the future of Turkey Hill, the primary school playground/parking project, a smooth FY budget process, a comprehensive long-term facilities plan for all buildings, and pursuing the turf field alongside the other capital-planning goals.",
-       "outcome": "",
-       "t": 7255,
-       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
-      },
-      {
-       "kind": "topic",
-       "text": "School committee goal-setting: Turkey Hill rebuild/renovate decision process, MSBA funding mechanics, primary school playground/parking, budget process, facilities plan",
-       "outcome": "",
-       "t": 5046,
-       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2025-11-19",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Committee will wait for more information from the superintendent before deciding whether to submit an MSBA statement of interest for Turkey Hill this cycle.",
-       "outcome": "",
-       "t": 6541,
-       "video_url": "https://www.youtube.com/watch?v=6PZ-J-oIAkQ"
-      },
-      {
-       "kind": "topic",
-       "text": "Revised FY27 capital plan and Turkey Hill capital project updates",
-       "outcome": "",
-       "t": 3104,
-       "video_url": "https://www.youtube.com/watch?v=6PZ-J-oIAkQ"
-      },
-      {
-       "kind": "topic",
-       "text": "Turkey Hill / MSBA statement of interest discussion",
-       "outcome": "",
-       "t": 5638,
-       "video_url": "https://www.youtube.com/watch?v=6PZ-J-oIAkQ"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2025-11-24",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Turkey Hill and Middle School interventionist restorations; capacity math for interventionists",
-       "outcome": "",
-       "t": 2641,
-       "video_url": "https://www.youtube.com/watch?v=-J6CegBuG44"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2025-12-03",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "The district will pursue a Massachusetts School Building Authority statement of intent for Turkey Hill targeting an April 2027 (not April 2026) submission.",
-       "outcome": "",
-       "t": 6529,
-       "video_url": "https://www.youtube.com/watch?v=LAK2GHxq2is"
-      },
-      {
-       "kind": "decision",
-       "text": "Staff will try to compile a list of lower-cost Turkey Hill accessibility upgrades, likely by January, to scope near-term spending options.",
-       "outcome": "",
-       "t": 8609,
-       "video_url": "https://www.youtube.com/watch?v=LAK2GHxq2is"
-      },
-      {
-       "kind": "topic",
-       "text": "Turkey Hill building future: MSBA statement of intent, renovation vs. new build, capital needs, debt capacity",
-       "outcome": "",
-       "t": 6507,
-       "video_url": "https://www.youtube.com/watch?v=LAK2GHxq2is"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-07",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Facilities director asked to pull bathroom-accessibility cost figures out of the prior Turkey Hill engineering study to produce a standalone bathroom remodel project proposal.",
-       "outcome": "",
-       "t": 8607,
-       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
-      },
-      {
-       "kind": "decision",
-       "text": "Tony will draft a proposed framework/cost threshold for choosing between rebuilding Turkey Hill and building new under MSBA, to bring back for a vote.",
-       "outcome": "",
-       "t": 8709,
-       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
-      },
-      {
-       "kind": "topic",
-       "text": "Future of Turkey Hill: ADA priorities and MSBA rebuild-vs-new framework",
-       "outcome": "",
-       "t": 7839,
-       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
-      },
-      {
-       "kind": "topic",
-       "text": "Closing remarks and Turkey Hill accessibility figures, DIBELS timing",
-       "outcome": "",
-       "t": 9268,
-       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-01-08",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Primary school (Turkey Hill) driveway expansion and playground design/replacement",
-       "outcome": "",
-       "t": 6100,
-       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-12",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Debt service, exempt vs. non-exempt borrowing, capacity, and Turkey Hill/MSBA timing",
-       "outcome": "",
-       "t": 3087,
-       "video_url": "https://www.youtube.com/watch?v=D34uSOZ8GkY"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-21",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Further discussion of the Turkey Hill directive memo will occur, with a vote planned for a meeting two sessions from now, in part so the absent member can be present.",
-       "outcome": "",
-       "t": 7686,
-       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
-      },
-      {
-       "kind": "topic",
-       "text": "Reading and math screening data presentation (DIBELS, USNS), primary school and Turkey Hill",
-       "outcome": "",
-       "t": 1169,
-       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
-      },
-      {
-       "kind": "topic",
-       "text": "Old business: Turkey Hill Elementary capital planning directive",
-       "outcome": "",
-       "t": 6780,
-       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-27",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Public comment: Turkey Hill special education/MTSS teachers describe split roles, staffing cuts and effect on student services",
-       "outcome": "",
-       "t": 331,
-       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-02-04",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Motion to give the superintendent permission to discuss redirecting the $195,000 earmark (passenger vans) toward Turkey Hill ADA bathrooms with Rep. Scarsdale and Sen. Cronin",
-       "outcome": "passed with one abstention",
-       "t": 2524,
-       "video_url": "https://www.youtube.com/watch?v=akQoA2PejrQ"
-      },
-      {
-       "kind": "topic",
-       "text": "Spending options missed: touch-view screens, Turkey Hill ADA compliance",
-       "outcome": "",
-       "t": 278,
-       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
-      },
-      {
-       "kind": "topic",
-       "text": "Permission to discuss redirecting $195,000 transportation earmark toward Turkey Hill ADA bathrooms",
-       "outcome": "",
-       "t": 1916,
-       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
-      },
-      {
-       "kind": "topic",
-       "text": "School improvement plan updates from primary, Turkey Hill, and middle/high principals covering literacy and math data, staffing cuts impact, chronic absenteeism, and student needs",
-       "outcome": "",
-       "t": 5180,
-       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
-      },
-      {
-       "kind": "topic",
-       "text": "Topics for future discussion: Turkey Hill bathroom, personnel report, updated staffing chart",
-       "outcome": "",
-       "t": 8133,
-       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-02-24",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Proposal to add Turkey Hill/primary intercom upgrades",
-       "outcome": "",
-       "t": 158,
-       "video_url": "https://www.youtube.com/watch?v=JVB4H7xpVUw"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-02-26",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "The business manager will find out how much the school solar installations (high school and Turkey Hill) offset the electric bill.",
-       "outcome": "",
-       "t": 9125,
-       "video_url": "https://www.youtube.com/watch?v=A4dDCncf5cQ"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-03-04",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Facilities update: capital projects completed, BMS server move, Turkey Hill ADA bathrooms, roof leaks, staffing",
-       "outcome": "",
-       "t": 4191,
-       "video_url": "https://www.youtube.com/watch?v=nfSdiKc6yvo"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-04-01",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Wait to begin discussing the Turkey Hill MSBA application until the next (newly seated) committee member joins, to allow a summer runway.",
-       "outcome": "",
-       "t": 6442,
-       "video_url": "https://www.youtube.com/watch?v=4ef6KsOweWs"
-      },
-      {
-       "kind": "topic",
-       "text": "Facilities and grounds report: energy efficiency program, generator relocation, solar array repairs, landscaping bid, staffing changes, Turkey Hill bathrooms",
-       "outcome": "",
-       "t": 4800,
-       "video_url": "https://www.youtube.com/watch?v=4ef6KsOweWs"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-04-02",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "FY27 capital budget, including DPW, public safety, and primary school/Turkey Hill items",
-       "outcome": "",
-       "t": 2305,
-       "video_url": "https://www.youtube.com/watch?v=erUXTd1phSg"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-04-15",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Town meeting warrant articles, override placement, and capital plan items (Turkey Hill, primary school)",
-       "outcome": "",
-       "t": 5736,
-       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
-      },
-      {
-       "kind": "topic",
-       "text": "Review of school committee goals: Turkey Hill future, primary school parking/playground, budget process",
-       "outcome": "",
-       "t": 5906,
-       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-05-06",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Accept the two Turkey Hill memorial donations with gratitude",
-       "outcome": "passed",
-       "t": 798,
-       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
-      },
-      {
-       "kind": "vote",
-       "text": "Accept the Turkey Hill Boxtops for Education donation with gratitude",
-       "outcome": "passed",
-       "t": 860,
-       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
-      },
-      {
-       "kind": "topic",
-       "text": "Warrants and donations (Women's Club, Turkey Hill memorial gifts, Boxtops)",
-       "outcome": "",
-       "t": 673,
-       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-05-20",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Approve to authorize student activity funds for the primary, Turkey Hill, middle and high schools",
-       "outcome": "passed",
-       "t": 4265,
-       "video_url": "https://www.youtube.com/watch?v=WMLR7WqrZPw"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-05-28",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Free cash, OPEB and reserve policy discussion, town debt position and capital needs (Turkey Hill, bleachers)",
-       "outcome": "",
-       "t": 2067,
-       "video_url": "https://www.youtube.com/watch?v=BUB31HGDim4"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-06-03",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Motion to accept the Turkey Hill PTO book fair donation of $255.38.",
-       "outcome": "passed unanimously",
-       "t": 1057,
-       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
-      },
-      {
-       "kind": "topic",
-       "text": "Recognition of retirees and thanks to incoming Turkey Hill principal",
-       "outcome": "",
-       "t": 44,
-       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
-      },
-      {
-       "kind": "topic",
-       "text": "Announcement of Dr. Caitlyn Angulo as new Turkey Hill assistant principal",
-       "outcome": "",
-       "t": 1552,
-       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
-      },
-      {
-       "kind": "topic",
-       "text": "School improvement plan progress: reading/math benchmarks and Turkey Hill state recognition",
-       "outcome": "",
-       "t": 4479,
-       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-06-11",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Committee reports: Municipal Buildings Committee (Ritter building, town hall future, possible dealership purchase, Turkey Hill/community center ideas) and PTO/overtime policy costs",
-       "outcome": "",
-       "t": 1060,
-       "video_url": "https://www.youtube.com/watch?v=UQXjJNVXTC8"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-06-24",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Accept the donation of $196.56 from the author visit to Turkey Hill Elementary",
-       "outcome": "passed",
-       "t": 2064,
-       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
-      },
-      {
-       "kind": "decision",
-       "text": "There will be zero reading interventionist positions at Turkey Hill and zero at the Primary school next year, described as a necessary cut.",
-       "outcome": "",
-       "t": 5174,
-       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
-      },
-      {
-       "kind": "topic",
-       "text": "Donation acceptance - Turkey Hill author visit",
-       "outcome": "",
-       "t": 2008,
-       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-07-14",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Turkey Hill/MSBA process, town buildings overview, public engagement and communication goals",
-       "outcome": "",
-       "t": 4607,
-       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-07-28",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "MSBA accelerated repair program timeline and its bearing on TCP/Turkey Hill decisions",
-       "outcome": "",
-       "t": 6000,
-       "video_url": "https://www.youtube.com/watch?v=1fNLbfV7UT4"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-07-29",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Committee agreed it needs an MSBA primer/presentation for a future meeting and to begin familiarizing itself and the public with the MSBA process for Turkey Hill.",
-       "outcome": "",
-       "t": 7735,
-       "video_url": "https://www.youtube.com/watch?v=wR4gBkOqIaE"
-      },
-      {
-       "kind": "topic",
-       "text": "Public comment (prior issues): Turkey Hill Elementary building needs and MSBA timeline",
-       "outcome": "",
-       "t": 48,
-       "video_url": "https://www.youtube.com/watch?v=wR4gBkOqIaE"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-09-09",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Formal review/vote on school committee goals for the year is deferred to next week; goals discussed include continuing the Turkey Hill MSBA process, implementing the primary school parking lot/playground study, and pursuing financial stability including using audit findings.",
-       "outcome": "",
-       "t": 6165,
-       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
-      },
-      {
-       "kind": "decision",
-       "text": "Two school committee members will serve on a committee for the Turkey Hill Elementary MSBA Statement of Interest (SOI) process, which opens in January and closes in April.",
-       "outcome": "",
-       "t": 6396,
-       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
-      },
-      {
-       "kind": "topic",
-       "text": "Principals' back-to-school updates for primary, Turkey Hill, middle, and high schools (enrollment, staffing, class sizes, school choice concerns)",
-       "outcome": "",
-       "t": 3979,
-       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
-      },
-      {
-       "kind": "topic",
-       "text": "Review of prior-year school committee goals and discussion of new goals (Turkey Hill/MSBA, primary parking lot and playground, budget process, tri-board communication, legislative outreach)",
-       "outcome": "",
-       "t": 6123,
-       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-09-16",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Superintendent's draft FY27 evaluation goals: ELA growth, professional culture, Turkey Hill MSBA SOI, and financial leadership",
-       "outcome": "",
-       "t": 4576,
-       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
-      },
-      {
-       "kind": "topic",
-       "text": "School committee goal-setting: primary parking lot/playground study, MSBA application for Turkey Hill, and financial fidelity goals",
-       "outcome": "",
-       "t": 6559,
-       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
-      }
-     ]
-    }
-   ],
-   "meetings": 28,
-   "boards_touched": 3,
-   "first_seen": "2025-10-15",
-   "last_moved": "2026-09-16"
-  },
-  {
-   "id": "turkey-hill-ada",
-   "label": "Turkey Hill: the ADA bathrooms",
-   "question": "Do the accessible bathrooms at Turkey Hill get funded, and from where?",
-   "kind": "project",
-   "groups": "schools;buildings",
-   "tags": "turkey-hill",
-   "boards": "",
-   "started": "2026-01-07",
-   "closes": "the bathroom project is funded or abandoned",
-   "status": "open",
-   "resolved_on": "",
-   "note": "A $195,000 transportation earmark was floated as the source (School Committee, 4 Feb 2026).",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-07",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Facilities director asked to pull bathroom-accessibility cost figures out of the prior Turkey Hill engineering study to produce a standalone bathroom remodel project proposal.",
-       "outcome": "",
-       "t": 8607,
-       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
-      },
-      {
-       "kind": "decision",
-       "text": "Tony will draft a proposed framework/cost threshold for choosing between rebuilding Turkey Hill and building new under MSBA, to bring back for a vote.",
-       "outcome": "",
-       "t": 8709,
-       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
-      },
-      {
-       "kind": "topic",
-       "text": "Future of Turkey Hill: ADA priorities and MSBA rebuild-vs-new framework",
-       "outcome": "",
-       "t": 7839,
-       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
-      },
-      {
-       "kind": "topic",
-       "text": "Closing remarks and Turkey Hill accessibility figures, DIBELS timing",
-       "outcome": "",
-       "t": 9268,
-       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-01-08",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Primary school (Turkey Hill) driveway expansion and playground design/replacement",
-       "outcome": "",
-       "t": 6100,
-       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-12",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Debt service, exempt vs. non-exempt borrowing, capacity, and Turkey Hill/MSBA timing",
-       "outcome": "",
-       "t": 3087,
-       "video_url": "https://www.youtube.com/watch?v=D34uSOZ8GkY"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-21",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Further discussion of the Turkey Hill directive memo will occur, with a vote planned for a meeting two sessions from now, in part so the absent member can be present.",
-       "outcome": "",
-       "t": 7686,
-       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
-      },
-      {
-       "kind": "topic",
-       "text": "Reading and math screening data presentation (DIBELS, USNS), primary school and Turkey Hill",
-       "outcome": "",
-       "t": 1169,
-       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
-      },
-      {
-       "kind": "topic",
-       "text": "Old business: Turkey Hill Elementary capital planning directive",
-       "outcome": "",
-       "t": 6780,
-       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-27",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Public comment: Turkey Hill special education/MTSS teachers describe split roles, staffing cuts and effect on student services",
-       "outcome": "",
-       "t": 331,
-       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-02-04",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Motion to give the superintendent permission to discuss redirecting the $195,000 earmark (passenger vans) toward Turkey Hill ADA bathrooms with Rep. Scarsdale and Sen. Cronin",
-       "outcome": "passed with one abstention",
-       "t": 2524,
-       "video_url": "https://www.youtube.com/watch?v=akQoA2PejrQ"
-      },
-      {
-       "kind": "topic",
-       "text": "Spending options missed: touch-view screens, Turkey Hill ADA compliance",
-       "outcome": "",
-       "t": 278,
-       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
-      },
-      {
-       "kind": "topic",
-       "text": "Permission to discuss redirecting $195,000 transportation earmark toward Turkey Hill ADA bathrooms",
-       "outcome": "",
-       "t": 1916,
-       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
-      },
-      {
-       "kind": "topic",
-       "text": "School improvement plan updates from primary, Turkey Hill, and middle/high principals covering literacy and math data, staffing cuts impact, chronic absenteeism, and student needs",
-       "outcome": "",
-       "t": 5180,
-       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
-      },
-      {
-       "kind": "topic",
-       "text": "Topics for future discussion: Turkey Hill bathroom, personnel report, updated staffing chart",
-       "outcome": "",
-       "t": 8133,
-       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-02-24",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Proposal to add Turkey Hill/primary intercom upgrades",
-       "outcome": "",
-       "t": 158,
-       "video_url": "https://www.youtube.com/watch?v=JVB4H7xpVUw"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-02-26",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "The business manager will find out how much the school solar installations (high school and Turkey Hill) offset the electric bill.",
-       "outcome": "",
-       "t": 9125,
-       "video_url": "https://www.youtube.com/watch?v=A4dDCncf5cQ"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-03-04",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Facilities update: capital projects completed, BMS server move, Turkey Hill ADA bathrooms, roof leaks, staffing",
-       "outcome": "",
-       "t": 4191,
-       "video_url": "https://www.youtube.com/watch?v=nfSdiKc6yvo"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-04-01",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Wait to begin discussing the Turkey Hill MSBA application until the next (newly seated) committee member joins, to allow a summer runway.",
-       "outcome": "",
-       "t": 6442,
-       "video_url": "https://www.youtube.com/watch?v=4ef6KsOweWs"
-      },
-      {
-       "kind": "topic",
-       "text": "Facilities and grounds report: energy efficiency program, generator relocation, solar array repairs, landscaping bid, staffing changes, Turkey Hill bathrooms",
-       "outcome": "",
-       "t": 4800,
-       "video_url": "https://www.youtube.com/watch?v=4ef6KsOweWs"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-04-02",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "FY27 capital budget, including DPW, public safety, and primary school/Turkey Hill items",
-       "outcome": "",
-       "t": 2305,
-       "video_url": "https://www.youtube.com/watch?v=erUXTd1phSg"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-04-15",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Town meeting warrant articles, override placement, and capital plan items (Turkey Hill, primary school)",
-       "outcome": "",
-       "t": 5736,
-       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
-      },
-      {
-       "kind": "topic",
-       "text": "Review of school committee goals: Turkey Hill future, primary school parking/playground, budget process",
-       "outcome": "",
-       "t": 5906,
-       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-05-06",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Accept the two Turkey Hill memorial donations with gratitude",
-       "outcome": "passed",
-       "t": 798,
-       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
-      },
-      {
-       "kind": "vote",
-       "text": "Accept the Turkey Hill Boxtops for Education donation with gratitude",
-       "outcome": "passed",
-       "t": 860,
-       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
-      },
-      {
-       "kind": "topic",
-       "text": "Warrants and donations (Women's Club, Turkey Hill memorial gifts, Boxtops)",
-       "outcome": "",
-       "t": 673,
-       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-05-20",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Approve to authorize student activity funds for the primary, Turkey Hill, middle and high schools",
-       "outcome": "passed",
-       "t": 4265,
-       "video_url": "https://www.youtube.com/watch?v=WMLR7WqrZPw"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-05-28",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Free cash, OPEB and reserve policy discussion, town debt position and capital needs (Turkey Hill, bleachers)",
-       "outcome": "",
-       "t": 2067,
-       "video_url": "https://www.youtube.com/watch?v=BUB31HGDim4"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-06-03",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Motion to accept the Turkey Hill PTO book fair donation of $255.38.",
-       "outcome": "passed unanimously",
-       "t": 1057,
-       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
-      },
-      {
-       "kind": "topic",
-       "text": "Recognition of retirees and thanks to incoming Turkey Hill principal",
-       "outcome": "",
-       "t": 44,
-       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
-      },
-      {
-       "kind": "topic",
-       "text": "Announcement of Dr. Caitlyn Angulo as new Turkey Hill assistant principal",
-       "outcome": "",
-       "t": 1552,
-       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
-      },
-      {
-       "kind": "topic",
-       "text": "School improvement plan progress: reading/math benchmarks and Turkey Hill state recognition",
-       "outcome": "",
-       "t": 4479,
-       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-06-11",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Committee reports: Municipal Buildings Committee (Ritter building, town hall future, possible dealership purchase, Turkey Hill/community center ideas) and PTO/overtime policy costs",
-       "outcome": "",
-       "t": 1060,
-       "video_url": "https://www.youtube.com/watch?v=UQXjJNVXTC8"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-06-24",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Accept the donation of $196.56 from the author visit to Turkey Hill Elementary",
-       "outcome": "passed",
-       "t": 2064,
-       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
-      },
-      {
-       "kind": "decision",
-       "text": "There will be zero reading interventionist positions at Turkey Hill and zero at the Primary school next year, described as a necessary cut.",
-       "outcome": "",
-       "t": 5174,
-       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
-      },
-      {
-       "kind": "topic",
-       "text": "Donation acceptance - Turkey Hill author visit",
-       "outcome": "",
-       "t": 2008,
-       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-07-14",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Turkey Hill/MSBA process, town buildings overview, public engagement and communication goals",
-       "outcome": "",
-       "t": 4607,
-       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-07-28",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "MSBA accelerated repair program timeline and its bearing on TCP/Turkey Hill decisions",
-       "outcome": "",
-       "t": 6000,
-       "video_url": "https://www.youtube.com/watch?v=1fNLbfV7UT4"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-07-29",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Committee agreed it needs an MSBA primer/presentation for a future meeting and to begin familiarizing itself and the public with the MSBA process for Turkey Hill.",
-       "outcome": "",
-       "t": 7735,
-       "video_url": "https://www.youtube.com/watch?v=wR4gBkOqIaE"
-      },
-      {
-       "kind": "topic",
-       "text": "Public comment (prior issues): Turkey Hill Elementary building needs and MSBA timeline",
-       "outcome": "",
-       "t": 48,
-       "video_url": "https://www.youtube.com/watch?v=wR4gBkOqIaE"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-09-09",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Formal review/vote on school committee goals for the year is deferred to next week; goals discussed include continuing the Turkey Hill MSBA process, implementing the primary school parking lot/playground study, and pursuing financial stability including using audit findings.",
-       "outcome": "",
-       "t": 6165,
-       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
-      },
-      {
-       "kind": "decision",
-       "text": "Two school committee members will serve on a committee for the Turkey Hill Elementary MSBA Statement of Interest (SOI) process, which opens in January and closes in April.",
-       "outcome": "",
-       "t": 6396,
-       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
-      },
-      {
-       "kind": "topic",
-       "text": "Principals' back-to-school updates for primary, Turkey Hill, middle, and high schools (enrollment, staffing, class sizes, school choice concerns)",
-       "outcome": "",
-       "t": 3979,
-       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
-      },
-      {
-       "kind": "topic",
-       "text": "Review of prior-year school committee goals and discussion of new goals (Turkey Hill/MSBA, primary parking lot and playground, budget process, tri-board communication, legislative outreach)",
-       "outcome": "",
-       "t": 6123,
-       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-09-16",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Superintendent's draft FY27 evaluation goals: ELA growth, professional culture, Turkey Hill MSBA SOI, and financial leadership",
-       "outcome": "",
-       "t": 4576,
-       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
-      },
-      {
-       "kind": "topic",
-       "text": "School committee goal-setting: primary parking lot/playground study, MSBA application for Turkey Hill, and financial fidelity goals",
-       "outcome": "",
-       "t": 6559,
-       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
-      }
-     ]
-    }
-   ],
-   "meetings": 23,
-   "boards_touched": 3,
-   "first_seen": "2026-01-07",
-   "last_moved": "2026-09-16"
-  },
-  {
-   "id": "brooks-house",
-   "label": "Brooks House: what becomes of it",
-   "question": "Is Brooks House sold, leased, reused or demolished?",
-   "kind": "asset",
-   "groups": "buildings",
-   "tags": "facilities",
-   "boards": "",
-   "started": "2026-07-14",
-   "closes": "the Select Board adopts a disposition, or Town Meeting votes one",
-   "status": "open",
-   "resolved_on": "",
-   "note": "The town-meeting-directed report on sale or long-term lease was already OVERDUE in July 2026.",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-07-14",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Plan a tour of municipal buildings (Town Hall, Ritter, public safety building, DPW, TCP, Brooks House) for select board members, likely timed for after the August election.",
-       "outcome": "",
-       "t": 1613,
-       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
-      },
-      {
-       "kind": "decision",
-       "text": "Town manager/staff (Director of Planning, with facilities director input) to draft the select board's overdue report on Brooks House sale or long-term lease options, targeted for completion by the fall town meeting.",
-       "outcome": "",
-       "t": 4546,
-       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
-      },
-      {
-       "kind": "topic",
-       "text": "Brooks House: overdue town-meeting-directed report on sale/lease, RFP options, renovation cost estimate",
-       "outcome": "",
-       "t": 3760,
-       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-07-28",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Select Board asked the Building Design Committee to bring back a formal recommendation/vote on the disposition of Brooks House.",
-       "outcome": "",
-       "t": 9664,
-       "video_url": "https://www.youtube.com/watch?v=1fNLbfV7UT4"
-      },
-      {
-       "kind": "topic",
-       "text": "Discussion of the Brooks House and lack of an identified municipal use for it",
-       "outcome": "",
-       "t": 9142,
-       "video_url": "https://www.youtube.com/watch?v=1fNLbfV7UT4"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-08-04",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "A tour of TC Pacios and Brooks House with the Municipal Building Design Committee was scheduled for Tuesday, August 11th at 4:00 p.m., to be posted as a public meeting.",
-       "outcome": "",
-       "t": 3968,
-       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
-      },
-      {
-       "kind": "decision",
-       "text": "TCP/Brooks House will remain a standing weekly select board agenda item rather than being tied to a fall town meeting article.",
-       "outcome": "",
-       "t": 4054,
-       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
-      },
-      {
-       "kind": "topic",
-       "text": "Municipal Building Design Committee discussion: Brooks House and TC Pacios condition, cost estimates, demolition vs. renovation",
-       "outcome": "",
-       "t": 2466,
-       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
-      },
-      {
-       "kind": "topic",
-       "text": "Scheduling tour of TCP and Brooks House",
-       "outcome": "",
-       "t": 4155,
-       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-08-10",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Reminder of a posted meeting the next day at Brooks House then TCB",
-       "outcome": "",
-       "t": 706,
-       "video_url": "https://www.youtube.com/watch?v=UTAi2_3RDYU"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-08-11",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Opening statement and roll call at Brooks House",
-       "outcome": "",
-       "t": 13,
-       "video_url": "https://www.youtube.com/watch?v=7CbIQ2xhEw4"
-      },
-      {
-       "kind": "topic",
-       "text": "Brooks House tour: ADA/doorway width, balloon framing, fire escape issues",
-       "outcome": "",
-       "t": 97,
-       "video_url": "https://www.youtube.com/watch?v=7CbIQ2xhEw4"
-      },
-      {
-       "kind": "topic",
-       "text": "Food pantry representative's concerns about relocating into Brooks House",
-       "outcome": "",
-       "t": 298,
-       "video_url": "https://www.youtube.com/watch?v=7CbIQ2xhEw4"
-      },
-      {
-       "kind": "topic",
-       "text": "Brooks House basement, roof and remaining walkthrough",
-       "outcome": "",
-       "t": 590,
-       "video_url": "https://www.youtube.com/watch?v=7CbIQ2xhEw4"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-08-18",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Old business: Lunenburg municipal buildings (Brooks House, TCP, Ritter tour discussion)",
-       "outcome": "",
-       "t": 4322,
-       "video_url": "https://www.youtube.com/watch?v=YnQcT2BMWS4"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-09-15",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "The Brooks House long-term sale/lease report will be presented by subject-matter experts (planning, economic development and facilities staff) at the November special town meeting, closing out the November 2024 non-binding vote directive.",
-       "outcome": "",
-       "t": 4673,
-       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
-      },
-      {
-       "kind": "topic",
-       "text": "November 17th special town meeting: referral of zoning cleanup and stormwater fee bylaw articles to planning board; Brooks House report article",
-       "outcome": "",
-       "t": 4336,
-       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
-      }
-     ]
-    },
-    {
-     "board": "Architectural Preservation District Commission",
-     "board_slug": "architectural-preservation-district-commission",
-     "date": "2027-01-16",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Chris Riley to talk with Town Counsel Carter on Tuesday to get direction on his role, if any, in preparing the Brooks house disposition work before proceeding.",
-       "outcome": "",
-       "t": 4625,
-       "video_url": "https://www.youtube.com/watch?v=bpDu97Bl-go"
-      },
-      {
-       "kind": "topic",
-       "text": "Brooks house: status of design committee handling the select-board-directed disposition plan, and Chris Riley's possible role",
-       "outcome": "",
-       "t": 4500,
-       "video_url": "https://www.youtube.com/watch?v=bpDu97Bl-go"
-      }
-     ]
-    }
-   ],
-   "meetings": 8,
-   "boards_touched": 2,
-   "first_seen": "2026-07-14",
-   "last_moved": "2027-01-16"
-  },
   {
    "id": "tc-passios-site",
    "label": "TC Passios: the site's future",
@@ -2262,286 +693,49 @@
    "meetings": 24,
    "boards_touched": 5,
    "first_seen": "2026-02-03",
-   "last_moved": "2026-09-15"
+   "last_moved": "2026-09-15",
+   "weight": 550
   },
   {
-   "id": "925-mass-ave",
-   "label": "925 Mass Ave: the RFP",
-   "question": "What happens to the town land at 925 Massachusetts Avenue?",
-   "kind": "asset",
-   "groups": "buildings",
+   "id": "stormwater-fee",
+   "label": "The stormwater fee",
+   "question": "Will every property pay a new stormwater charge, how much, and billed how?",
+   "kind": "money;rule",
+   "groups": "what-i-pay",
    "tags": "",
-   "boards": "",
-   "started": "2026-05-19",
-   "closes": "a proposal is accepted, or the RFP lapses",
+   "boards": "stormwater-task-force",
+   "started": "2026-01-13",
+   "closes": "a Town Meeting votes the stormwater article and the fee is set",
    "status": "open",
    "resolved_on": "",
-   "note": "RFP issued May 2026, responses due July.",
+   "note": "Billed separately from the tax bill, with a quarterly tear-off coupon (Stormwater Task Force, 31 Aug 2026). Five boards. NO #stormwater tag exists on any meeting -- tags cannot discover this one.",
    "closure": null,
    "chronology": [
     {
      "board": "Select Board",
      "board_slug": "select-board",
-     "date": "2026-05-19",
+     "date": "2026-01-13",
      "items": [
       {
-       "kind": "decision",
-       "text": "The town manager will ask Amanda Moore whether she wishes to continue serving on the 925 Mass Ave RFP working group despite her board resignation.",
-       "outcome": "",
-       "t": 2212,
-       "video_url": "https://www.youtube.com/watch?v=JnVWS4tJouo"
-      },
-      {
-       "kind": "decision",
-       "text": "The RFP for 925 Mass Ave will be issued next week with responses due back in July.",
-       "outcome": "",
-       "t": 2254,
-       "video_url": "https://www.youtube.com/watch?v=JnVWS4tJouo"
-      },
-      {
        "kind": "topic",
-       "text": "925 Mass Ave RFP evaluative criteria",
+       "text": "Committee reports: EDC, Municipal Building Design, School Committee, Capital Planning, Board of Assessors, Stormwater, 300th committee, Council on Aging",
        "outcome": "",
-       "t": 1698,
-       "video_url": "https://www.youtube.com/watch?v=JnVWS4tJouo"
-      }
-     ]
-    },
-    {
-     "board": "Sewer Commission",
-     "board_slug": "sewer-commission",
-     "date": "2026-09-08",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Confirmed the 786-796 Mass Ave and 67 Pratt Street privilege-fee properties are fully paid up and hooked up, closing out that item.",
-       "outcome": "",
-       "t": 705,
-       "video_url": "https://www.youtube.com/watch?v=VMfaXMyKBII"
-      },
-      {
-       "kind": "topic",
-       "text": "Privilege fee assessments for 786-796 Mass Ave and 67 Pratt Street",
-       "outcome": "",
-       "t": 620,
-       "video_url": "https://www.youtube.com/watch?v=VMfaXMyKBII"
+       "t": 9057,
+       "video_url": "https://www.youtube.com/watch?v=dJJBSRi5z5U"
       }
      ]
     },
     {
      "board": "Select Board",
      "board_slug": "select-board",
-     "date": "2026-09-15",
+     "date": "2026-02-17",
      "items": [
       {
        "kind": "topic",
-       "text": "Town manager report: 925 Mass Ave RFP, FY26 close-out, municipal aggregation, law training, recruitments and vacancies",
+       "text": "Committee reports (open space, library, master plan, stormwater, finance committee, capital planning, bylaw review)",
        "outcome": "",
-       "t": 3623,
-       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
-      }
-     ]
-    },
-    {
-     "board": "Conservation Commission",
-     "board_slug": "conservation-commission",
-     "date": "2026-09-16",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Continue the Unitil substation NOI at 934 Mass Ave to October 7, 2026",
-       "outcome": "passed",
-       "t": 4597,
-       "video_url": "https://www.youtube.com/watch?v=KXzIph3Demg"
-      },
-      {
-       "kind": "topic",
-       "text": "Continued hearing: Unitil substation/utility pole replacement at 934 Mass Ave",
-       "outcome": "",
-       "t": 4564,
-       "video_url": "https://www.youtube.com/watch?v=KXzIph3Demg"
-      }
-     ]
-    },
-    {
-     "board": "Architectural Preservation District Commission",
-     "board_slug": "architectural-preservation-district-commission",
-     "date": "2027-01-16",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Merger strategy and timeline against the March 17 warrant deadline; drafting bylaw/guideline changes; debate over extending APD/Village District boundaries to include 763 Mass Ave",
-       "outcome": "",
-       "t": 1278,
-       "video_url": "https://www.youtube.com/watch?v=bpDu97Bl-go"
-      },
-      {
-       "kind": "topic",
-       "text": "Status updates: 763 Mass Avenue (no change), 50 Main Street ownership contact, Goodridge and Arnold Leach cemetery restoration projects, preservation grant possibilities",
-       "outcome": "",
-       "t": 4750,
-       "video_url": "https://www.youtube.com/watch?v=bpDu97Bl-go"
-      }
-     ]
-    }
-   ],
-   "meetings": 5,
-   "boards_touched": 4,
-   "first_seen": "2026-05-19",
-   "last_moved": "2027-01-16"
-  },
-  {
-   "id": "monty-tech-assessment",
-   "label": "The Monty Tech assessment",
-   "question": "Why does Lunenburg's Monty Tech assessment rise faster than Monty Tech's own budget?",
-   "kind": "money",
-   "groups": "schools;what-i-pay",
-   "tags": "monty-tech",
-   "boards": "",
-   "started": "2025-09-30",
-   "closes": "NEVER -- the assessment is set again every year; a recurring thread",
-   "status": "open",
-   "resolved_on": "",
-   "note": "ENTITY vs MATTER: Monty Tech is a district; the assessment is the matter.",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2025-09-30",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Motion by the Select Board to appoint Stephanie Quinn to the Montachusett Regional Vocational School Committee",
-       "outcome": "passed",
-       "t": 189,
-       "video_url": "https://www.youtube.com/watch?v=XNXWeO5_wLI"
-      },
-      {
-       "kind": "vote",
-       "text": "Motion to authorize the FY2026-FY2028 agreement between the Town of Lunenburg and the Montachusett Regional Transit Authority (MART) for Council on Aging services",
-       "outcome": "passed",
-       "t": 329,
-       "video_url": "https://www.youtube.com/watch?v=XNXWeO5_wLI"
-      },
-      {
-       "kind": "topic",
-       "text": "Joint meeting to appoint a representative to the Montachusett Regional Vocational (Monty Tech) School Committee; Stephanie Quinn interviewed and appointed by Select Board, School Committee and Moderator",
-       "outcome": "",
-       "t": 64,
-       "video_url": "https://www.youtube.com/watch?v=XNXWeO5_wLI"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2025-11-05",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "First read: Middle School Pathway Exploration policy (Monty Tech)",
-       "outcome": "",
-       "t": 3625,
-       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-01-08",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Bring Monty Tech in earlier in the budget calendar, before their board votes on its assessment, rather than after.",
-       "outcome": "",
-       "t": 2394,
-       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
-      },
-      {
-       "kind": "topic",
-       "text": "Opening, pledge of allegiance, announcements (tri-board and Monty Tech meeting dates)",
-       "outcome": "",
-       "t": 53,
-       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
-      },
-      {
-       "kind": "topic",
-       "text": "Introduction of new Monty Tech representative; public comment invited (none from public)",
-       "outcome": "",
-       "t": 320,
-       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
-      },
-      {
-       "kind": "topic",
-       "text": "Budget calendar review and Monty Tech budget/assessment discussion",
-       "outcome": "",
-       "t": 2351,
-       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
-      },
-      {
-       "kind": "topic",
-       "text": "Committee reports and future agenda topics (committee assignments, Monty Tech next meeting)",
-       "outcome": "",
-       "t": 8087,
-       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-12",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Net new revenue after health insurance and apportionment among school, town and Monty Tech",
-       "outcome": "",
-       "t": 6003,
-       "video_url": "https://www.youtube.com/watch?v=D34uSOZ8GkY"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-27",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Public comment: 24-year district employee on regionalization history, small-school tradeoffs, and staff/health-insurance concessions; board discussion of comparable districts and school choice loss to Monty Tech",
-       "outcome": "",
-       "t": 1659,
-       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-02-05",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Monty Tech superintendent's update: enrollment, programs, grants, MVP Academy, track/bleacher renovation, admissions lottery",
-       "outcome": "",
-       "t": 252,
-       "video_url": "https://www.youtube.com/watch?v=6csHPPkKg7c"
-      },
-      {
-       "kind": "topic",
-       "text": "Monty Tech business manager's FY27 budget walkthrough: foundation budget, chapter 70, required local contributions",
-       "outcome": "",
-       "t": 994,
-       "video_url": "https://www.youtube.com/watch?v=6csHPPkKg7c"
-      },
-      {
-       "kind": "topic",
-       "text": "Committee questions Monty Tech on why Lunenburg's assessment rose far more than the overall Monty Tech budget",
-       "outcome": "",
-       "t": 3296,
-       "video_url": "https://www.youtube.com/watch?v=6csHPPkKg7c"
+       "t": 5057,
+       "video_url": "https://www.youtube.com/watch?v=VfWvWHwTzog"
       }
      ]
     },
@@ -2552,9 +746,9 @@
      "items": [
       {
        "kind": "topic",
-       "text": "Schools (LPS and Monty Tech), culture and recreation (library), intergovernmental (Worcester County retirement), and tax title budgets",
+       "text": "DPW budget: drainage, catch basin cleaning/street sweeping for stormwater compliance, recycling program cut, snow and ice",
        "outcome": "",
-       "t": 10053,
+       "t": 9009,
        "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
       }
      ]
@@ -2562,14 +756,14 @@
     {
      "board": "Select Board",
      "board_slug": "select-board",
-     "date": "2026-03-16",
+     "date": "2026-03-17",
      "items": [
       {
-       "kind": "topic",
-       "text": "Lunenburg Public Schools restoration number and Monty Tech line noted",
+       "kind": "decision",
+       "text": "Hold off including the stormwater utility bylaw article.",
        "outcome": "",
-       "t": 3990,
-       "video_url": "https://www.youtube.com/watch?v=QkqNg9jDIEM"
+       "t": 3672,
+       "video_url": "https://www.youtube.com/watch?v=S3K-268mDJs"
       }
      ]
     },
@@ -2579,10 +773,24 @@
      "date": "2026-03-24",
      "items": [
       {
-       "kind": "topic",
-       "text": "FY27 new revenue available for appropriation, Monty Tech assessment, and the school/town revenue split",
+       "kind": "decision",
+       "text": "Select Board removed stormwater from the tier two override to bring the number down.",
        "outcome": "",
-       "t": 4655,
+       "t": 1989,
+       "video_url": "https://www.youtube.com/watch?v=lq1UgU1vxNg"
+      },
+      {
+       "kind": "decision",
+       "text": "The boards decided not to pursue a standalone stormwater override article this cycle, deferring to the stormwater task force's meeting the next day.",
+       "outcome": "",
+       "t": 3392,
+       "video_url": "https://www.youtube.com/watch?v=lq1UgU1vxNg"
+      },
+      {
+       "kind": "topic",
+       "text": "Whether to include a stormwater utility/override request, and at what amount",
+       "outcome": "",
+       "t": 1948,
        "video_url": "https://www.youtube.com/watch?v=lq1UgU1vxNg"
       }
      ]
@@ -2590,456 +798,135 @@
     {
      "board": "Finance Committee",
      "board_slug": "finance-committee",
-     "date": "2026-03-26",
+     "date": "2026-04-06",
      "items": [
       {
        "kind": "topic",
-       "text": "Town manager's revenue presentation: local receipts, free cash policy, Monty Tech assessment",
+       "text": "Old business: follow-up tracking, budget process timing, stormwater task force, quarterly reports",
        "outcome": "",
-       "t": 3684,
-       "video_url": "https://www.youtube.com/watch?v=tZv6KVIYb9w"
-      }
-     ]
-    }
-   ],
-   "meetings": 10,
-   "boards_touched": 3,
-   "first_seen": "2025-09-30",
-   "last_moved": "2026-03-26"
-  },
-  {
-   "id": "extended-day-fee",
-   "label": "The extended day programme fee",
-   "question": "Does the extended day programme fee go up, and by how much?",
-   "kind": "money",
-   "groups": "schools;what-i-pay",
-   "tags": "fees",
-   "boards": "",
-   "started": "2026-04-15",
-   "closes": "the School Committee votes the new fee",
-   "status": "open",
-   "resolved_on": "",
-   "note": "A direct cost to families.",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-04-15",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Agreed to place an extended day program fee increase on a future meeting agenda rather than let the program run unsustainably.",
-       "outcome": "",
-       "t": 3453,
-       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
-      },
-      {
-       "kind": "topic",
-       "text": "Extended day program sustainability and proposed fee increase",
-       "outcome": "",
-       "t": 3453,
-       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
-      }
-     ]
-    }
-   ],
-   "meetings": 1,
-   "boards_touched": 1,
-   "first_seen": "2026-04-15",
-   "last_moved": "2026-04-15"
-  },
-  {
-   "id": "dpw-union-contract",
-   "label": "The DPW union contract",
-   "question": "What is in the DPW contract, and what were the discrepancies labour counsel was asked to resolve?",
-   "kind": "contract",
-   "groups": "how-the-town-runs",
-   "tags": "contracts-and-unions",
-   "boards": "",
-   "started": "2026-07-07",
-   "closes": "the Select Board ratifies, or it returns to negotiation",
-   "status": "open",
-   "resolved_on": "",
-   "note": "CAN OF WORMS trigger, at n=1: \"Hold off ratifying ... until labor counsel resolves discrepancies.\"",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-07-07",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Hold off ratifying the new DPW union (Teamsters Local 170) contract until labor counsel resolves discrepancies.",
-       "outcome": "",
-       "t": 4523,
-       "video_url": "https://www.youtube.com/watch?v=eqCVy5g-wWE"
-      },
-      {
-       "kind": "topic",
-       "text": "DPW union (Teamsters Local 170) contract ratification",
-       "outcome": "",
-       "t": 4500,
-       "video_url": "https://www.youtube.com/watch?v=eqCVy5g-wWE"
+       "t": 5069,
+       "video_url": "https://www.youtube.com/watch?v=nyauVYl3zd0"
       }
      ]
     },
     {
      "board": "Select Board",
      "board_slug": "select-board",
-     "date": "2026-07-27",
+     "date": "2026-05-19",
      "items": [
       {
-       "kind": "vote",
-       "text": "Ratify the collective bargaining agreement with Teamsters Union Local 170 (DPW).",
-       "outcome": "passed unanimously",
-       "t": 1014,
-       "video_url": "https://www.youtube.com/watch?v=5v_3VPZyn6U"
-      },
-      {
        "kind": "topic",
-       "text": "Ratification of Teamsters Local 170 (DPW) collective bargaining agreement",
+       "text": "Committee reports: Stormwater Task Force fee structure work",
        "outcome": "",
-       "t": 993,
-       "video_url": "https://www.youtube.com/watch?v=5v_3VPZyn6U"
+       "t": 2949,
+       "video_url": "https://www.youtube.com/watch?v=JnVWS4tJouo"
       }
      ]
-    }
-   ],
-   "meetings": 2,
-   "boards_touched": 1,
-   "first_seen": "2026-07-07",
-   "last_moved": "2026-07-27"
-  },
-  {
-   "id": "sap-rewrite",
-   "label": "The Salary Administration Plan rewrite",
-   "question": "Which bylaw changes to the town's pay plan pass, and what does the comp study cost?",
-   "kind": "rule;money",
-   "groups": "how-the-town-runs",
-   "tags": "personnel",
-   "boards": "",
-   "started": "2026-08-31",
-   "closes": "November STM and the spring ATM vote the bylaw changes",
-   "status": "open",
-   "resolved_on": "",
-   "note": "Three deferrals across two meetings, accelerating. Touches every town employee.",
-   "closure": null,
-   "chronology": [
+    },
     {
-     "board": "Personnel Committee",
-     "board_slug": "personnel-committee",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-08-04",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Committee reports (school committee, cable advisory, building design, Fincom, stormwater, 300th anniversary)",
+       "outcome": "",
+       "t": 5232,
+       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-08-18",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Committee reports (Council on Aging, Municipal Building Design Committee, Cable Advisory, Board of Assessors, Stormwater Task Force, Finance Committee)",
+       "outcome": "",
+       "t": 4452,
+       "video_url": "https://www.youtube.com/watch?v=YnQcT2BMWS4"
+      }
+     ]
+    },
+    {
+     "board": "Stormwater Task Force",
+     "board_slug": "stormwater-task-force",
      "date": "2026-08-31",
      "items": [
       {
        "kind": "decision",
-       "text": "Committee will consider a future SAP bylaw amendment exempting job descriptions reviewed and approved within a set prior period (e.g. two years) from re-review before posting, if there is no proposed change.",
+       "text": "Agreed stormwater fees will be billed separately from the property tax bill, with an option for residents to pay quarterly via a tear-off coupon.",
        "outcome": "",
-       "t": 1233,
-       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
-      },
-      {
-       "kind": "decision",
-       "text": "Committee will consider amending the SAP bylaw so votes require a majority rather than unanimous three-in-the-affirmative.",
-       "outcome": "",
-       "t": 3153,
-       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
-      },
-      {
-       "kind": "decision",
-       "text": "The item to align SAP longevity provisions with collective bargaining agreements will be held for the spring town meeting discussion rather than acted on now.",
-       "outcome": "",
-       "t": 3951,
-       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
-      },
-      {
-       "kind": "topic",
-       "text": "Job-description review requirement (SAP 7-7/7-7A) delaying posting of a vacant part-time data collector position; plan to hold a Thursday Zoom meeting",
-       "outcome": "",
-       "t": 273,
-       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
-      },
-      {
-       "kind": "topic",
-       "text": "Timing of comp/classification study, FY28 salary grid, funding via November town meeting and free cash",
-       "outcome": "",
-       "t": 2286,
-       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
-      },
-      {
-       "kind": "topic",
-       "text": "Advice on pacing which SAP amendments to bring to town meeting now versus in spring",
-       "outcome": "",
-       "t": 3260,
-       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
+       "t": 1580,
+       "video_url": "https://www.youtube.com/watch?v=N5dSxGy3zZs"
       }
      ]
     },
     {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-09-09",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-09-01",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Committee reports: finance committee and stormwater task force update",
+       "outcome": "",
+       "t": 6020,
+       "video_url": "https://www.youtube.com/watch?v=kG4KE9VgCdY"
+      }
+     ]
+    },
+    {
+     "board": "Stormwater Task Force",
+     "board_slug": "stormwater-task-force",
+     "date": "2026-09-14",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Vote to accept the stormwater warrant article for special town meeting",
+       "outcome": "",
+       "t": 64,
+       "video_url": "https://www.youtube.com/watch?v=fHuUxPFr0rg"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-09-15",
      "items": [
       {
        "kind": "vote",
-       "text": "Accept/ratify the cafeteria workers' three-year contract (MOA) with new hourly salary schedule",
-       "outcome": "passed",
-       "t": 5388,
-       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+       "text": "Refer the special town meeting articles (zoning amendments and stormwater management bylaw fee structure) to the planning board for review and public hearing.",
+       "outcome": "passed unanimously",
+       "t": 4548,
+       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
+      },
+      {
+       "kind": "topic",
+       "text": "November 17th special town meeting: referral of zoning cleanup and stormwater fee bylaw articles to planning board; Brooks House report article",
+       "outcome": "",
+       "t": 4336,
+       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
+      },
+      {
+       "kind": "topic",
+       "text": "Committee reports (bylaw committee, assessors, open space, Council on Aging, library trustees, MPO, EDC, school committee, FinCom, stormwater task force)",
+       "outcome": "",
+       "t": 6879,
+       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
       }
      ]
     }
    ],
-   "meetings": 2,
-   "boards_touched": 2,
-   "first_seen": "2026-08-31",
-   "last_moved": "2026-09-09"
-  },
-  {
-   "id": "turf-field-study",
-   "label": "The turf field and track study",
-   "question": "Does the town borrow for a feasibility and schematic study of the turf field and track?",
-   "kind": "project;asset",
-   "groups": "schools;buildings",
-   "tags": "athletics;capital",
-   "boards": "",
-   "started": "2026-01-21",
-   "closes": "Town Meeting votes the study; then the study returns",
-   "status": "open",
-   "resolved_on": "",
-   "note": "IRREVERSIBLE: the article asks to BORROW. Re-accelerated 16 Sep 2026 (passed 5-0) after riding alongside Kids Kingdom in January.",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-21",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "The draft turf field and Kids Kingdom warrant articles were treated as discussion only tonight, with the language considered ready for the town to act on; no formal committee vote was taken on the article text.",
-       "outcome": "",
-       "t": 4345,
-       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
-      },
-      {
-       "kind": "topic",
-       "text": "Draft town meeting warrant articles: turf field and Kids Kingdom",
-       "outcome": "",
-       "t": 4201,
-       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
-      }
-     ]
-    },
-    {
-     "board": "Parks Commission",
-     "board_slug": "parks-commission",
-     "date": "2026-02-03",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Chair raises risk concerns, citing the turf field and Marshall Park precedents, and frames the two options on the table",
-       "outcome": "",
-       "t": 1978,
-       "video_url": "https://www.youtube.com/watch?v=jLSVwv2caHM"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-02-12",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Committee member's concern about Capital Planning Committee reviewing an unranked turf field replacement project",
-       "outcome": "",
-       "t": 2379,
-       "video_url": "https://www.youtube.com/watch?v=iGeYk_rpnO4"
-      }
-     ]
-    },
-    {
-     "board": "Conservation Commission",
-     "board_slug": "conservation-commission",
-     "date": "2026-09-16",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "NOI: concrete boat ramp reconstruction and retaining wall at Shady Point, Lake Shirley",
-       "outcome": "",
-       "t": 4650,
-       "video_url": "https://www.youtube.com/watch?v=KXzIph3Demg"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-09-16",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Request the town raise/appropriate/borrow funds for a full feasibility and schematic study of the turf field, track, drainage and retaining wall, as a placeholder warrant article",
-       "outcome": "passed 5-0 (all yes on roll call)",
-       "t": 1829,
-       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
-      }
-     ]
-    }
-   ],
-   "meetings": 5,
+   "meetings": 13,
    "boards_touched": 4,
-   "first_seen": "2026-01-21",
-   "last_moved": "2026-09-16"
-  },
-  {
-   "id": "sewer-pump-procurement",
-   "label": "The sewer pump station contract",
-   "question": "Does one multi-year contract cover sewer pump operations, maintenance and capital repair?",
-   "kind": "contract;project",
-   "groups": "water-sewer-roads",
-   "tags": "water-sewer",
-   "boards": "",
-   "started": "2026-09-08",
-   "closes": "the Special Town Meeting article, then the award",
-   "status": "open",
-   "resolved_on": "",
-   "note": "IRREVERSIBLE: single vendor, multi-year, lands on sewer ratepayers.",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "Sewer Commission",
-     "board_slug": "sewer-commission",
-     "date": "2026-09-08",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Authorize development and advertising of a comprehensive procurement combining sewer pump station operations, maintenance, emergency services, and construction/capital repair work into a single multi-year contract, and recommend a warrant article authorizing the town to enter such a contract at the November 17, 2026 special town meeting.",
-       "outcome": "passed (heard as \"motion carries\")",
-       "t": 324,
-       "video_url": "https://www.youtube.com/watch?v=VMfaXMyKBII"
-      },
-      {
-       "kind": "topic",
-       "text": "Special town meeting article: sewer pump station O&M/construction procurement contract",
-       "outcome": "",
-       "t": 259,
-       "video_url": "https://www.youtube.com/watch?v=VMfaXMyKBII"
-      }
-     ]
-    }
-   ],
-   "meetings": 1,
-   "boards_touched": 1,
-   "first_seen": "2026-09-08",
-   "last_moved": "2026-09-08"
-  },
-  {
-   "id": "veterans-exemption",
-   "label": "The veterans property tax exemption",
-   "question": "Does the veterans property tax exemption increase, and what does it shift onto other taxpayers?",
-   "kind": "money;rule",
-   "groups": "what-i-pay",
-   "tags": "tax-rate",
-   "boards": "",
-   "started": "2026-09-09",
-   "closes": "the November Special Town Meeting votes",
-   "status": "open",
-   "resolved_on": "",
-   "note": "Fired on the SCHEDULED-STEP clause at one mention -- the November STM warrant deadline.",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "date": "2026-09-09",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "A placeholder will be requested for a veterans' exemption increase warrant article for the November 17th special town meeting, with research to be discussed at the September 23rd meeting.",
-       "outcome": "",
-       "t": 2039,
-       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg"
-      },
-      {
-       "kind": "topic",
-       "text": "Veterans property tax exemption increase and November special town meeting warrant article deadline",
-       "outcome": "",
-       "t": 1978,
-       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg"
-      }
-     ]
-    }
-   ],
-   "meetings": 1,
-   "boards_touched": 1,
-   "first_seen": "2026-09-09",
-   "last_moved": "2026-09-09"
-  },
-  {
-   "id": "trust-fund-vacancy",
-   "label": "Trust fund administration during a vacancy",
-   "question": "Who administers the town trust funds when the commission has a vacancy?",
-   "kind": "rule;office",
-   "groups": "how-the-town-runs",
-   "tags": "legal",
-   "boards": "",
-   "started": "2026-09-10",
-   "closes": "the warrant article passes",
-   "status": "open",
-   "resolved_on": "",
-   "note": "The narrowed `office` kind: a deciding post going unfilled, not a routine appointment. A \"breach notice\" is also on the record.",
-   "closure": null,
-   "chronology": [
-    {
-     "board": "Trust Fund Commission",
-     "board_slug": "trust-fund-commission",
-     "date": "2026-09-10",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Approve the rewritten warrant article on continuity of trust fund administration during a vacancy on the board, as amended per the lawyer's comments, for submission to the select board/town meeting warrant",
-       "outcome": "passed unanimously (2-0), roll call: John Bowen aye, Richard Howard aye",
-       "t": 5275,
-       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
-      },
-      {
-       "kind": "decision",
-       "text": "The rewritten warrant article on continuity of trust fund administration will be sent up to replace the version previously submitted to town meeting.",
-       "outcome": "",
-       "t": 5296,
-       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
-      },
-      {
-       "kind": "topic",
-       "text": "Pooled trust fund investment performance and broader town fiscal policy discussion, including a proposed one-time lump-sum payment rate and capital planning tied to development",
-       "outcome": "",
-       "t": 394,
-       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
-      },
-      {
-       "kind": "topic",
-       "text": "School department scholarship/trust fund dispute: reading of a formal letter to the school committee, town manager, town counsel, treasurer and select board chair laying out statutory basis, prior correspondence, and request for a joint meeting and document production",
-       "outcome": "",
-       "t": 969,
-       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
-      },
-      {
-       "kind": "topic",
-       "text": "Full reading and vote on rewritten warrant article: Continuity of Trust Fund Administration During Vacancy on the Board of Commissioners of Trust Funds",
-       "outcome": "",
-       "t": 4933,
-       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
-      }
-     ]
-    }
-   ],
-   "meetings": 1,
-   "boards_touched": 1,
-   "first_seen": "2026-09-10",
-   "last_moved": "2026-09-10"
+   "first_seen": "2026-01-13",
+   "last_moved": "2026-09-15",
+   "weight": 439
   },
   {
    "id": "kids-kingdom",
@@ -3333,133 +1220,8 @@
    "meetings": 12,
    "boards_touched": 4,
    "first_seen": "2025-10-15",
-   "last_moved": "2026-05-02"
-  },
-  {
-   "id": "fourth-fire-shift",
-   "label": "The fourth fire shift",
-   "question": "Does the town fund a fourth fire shift, and out of the override or the regular budget?",
-   "kind": "service",
-   "groups": "how-the-town-runs",
-   "tags": "public-safety",
-   "boards": "",
-   "started": "2025-09-30",
-   "closes": "the budget that funds it is adopted",
-   "status": "resolved",
-   "resolved_on": "2026-04-07",
-   "note": "WHAT THE VOTE SHOWS AND WHAT IT DOES NOT: Article 10 (the FY27 balanced budget) passed, and the budget does not itemise the shift. That the fourth shift was retained rests on the Select Board record of 16 Mar 2026 ('fourth shift retained'), not on this vote. Rule 7: the vote is the fact, the inference is an inference.",
-   "closure": {
-    "basis": "ours",
-    "source": "our minutes of the recording, from machine captions",
-    "meeting": "Town Meeting",
-    "date": "2026-05-02",
-    "article": "10",
-    "result": "passed 340-68",
-    "amount_as_printed": "",
-    "quote": "Article 10: raise and appropriate the FY27 balanced (town manager's) operating budget, approx. $49,963,990.19",
-    "fincom": "",
-    "select_board": "",
-    "document": "https://www.youtube.com/watch?v=F0viGd2yFSU",
-    "page": "",
-    "caveat": "AS HEARD from machine captions. A caption model hears \"fifteen hundred\", \"$1,500\" and \"$50\" alike; check the recording at the second cited. This upgrades to the Town Clerk's printed record when that year's annual report is extracted."
-   },
-   "chronology": [
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-01-27",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Public comment: firefighters' union president calls for an override to fund a fourth fire shift",
-       "outcome": "",
-       "t": 125,
-       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
-      },
-      {
-       "kind": "topic",
-       "text": "Town Manager presents updated FY27 revenue projections, cherry sheet/state aid, and major fixed cost drivers (health insurance, retirement, transportation, fourth fire shift), culminating in a stated multi-million dollar deficit",
-       "outcome": "",
-       "t": 2740,
-       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
-      }
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-02-19",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Fire department will use Noba mitigation one-time funds for added predium (call staff) staffing in FY26 and set aside funds for paramedic training in FY27, rather than offsetting the fourth shift's ongoing cost.",
-       "outcome": "",
-       "t": 1104,
-       "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
-      },
-      {
-       "kind": "decision",
-       "text": "A public presentation on the fire department's fourth shift proposal is scheduled for the following Monday at the Adult Activity Center.",
-       "outcome": "",
-       "t": 10985,
-       "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
-      },
-      {
-       "kind": "topic",
-       "text": "Fire Department FY27 budget presentation and Q&A, including fourth shift proposal, staffing, equipment and grants",
-       "outcome": "",
-       "t": 232,
-       "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-03-16",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Fire Department: fourth shift retained, per diem coverage cuts, chief transition salary reserve, impact statement read",
-       "outcome": "",
-       "t": 3420,
-       "video_url": "https://www.youtube.com/watch?v=QkqNg9jDIEM"
-      }
-     ]
-    },
-    {
-     "board": "School Committee",
-     "board_slug": "school-committee",
-     "date": "2026-03-18",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Chair's report: fourth fire shift moved from override to regular town budget, concerns about override odds and ambulance staffing",
-       "outcome": "",
-       "t": 380,
-       "video_url": "https://www.youtube.com/watch?v=d8UUVRoCwoY"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-04-07",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Article L: FY27 balanced/omnibus budget, including extended debate over the assistant town manager, fourth fire shift, and free cash",
-       "outcome": "",
-       "t": 3707,
-       "video_url": "https://www.youtube.com/watch?v=rPW2ew89EDs"
-      }
-     ]
-    }
-   ],
-   "meetings": 5,
-   "boards_touched": 3,
-   "first_seen": "2026-01-27",
-   "last_moved": "2026-04-07"
+   "last_moved": "2026-05-02",
+   "weight": 438
   },
   {
    "id": "middle-school-sports",
@@ -3620,23 +1382,305 @@
    "meetings": 6,
    "boards_touched": 4,
    "first_seen": "2026-08-13",
-   "last_moved": "2026-09-03"
+   "last_moved": "2026-09-03",
+   "weight": 432
   },
   {
-   "id": "solid-waste-enterprise",
-   "label": "Trash and recycling: the enterprise fund",
-   "question": "Does trash and recycling move to an enterprise fund, and does that change what residents pay?",
-   "kind": "money",
-   "groups": "water-sewer-roads;what-i-pay",
-   "tags": "fees",
+   "id": "turf-field-study",
+   "label": "The turf field and track study",
+   "question": "Does the town borrow for a feasibility and schematic study of the turf field and track?",
+   "kind": "project;asset",
+   "groups": "schools;buildings",
+   "tags": "athletics;capital",
    "boards": "",
-   "started": "2026-01-08",
-   "closes": "a Town Meeting votes the solid waste enterprise fund article",
+   "started": "2026-01-21",
+   "closes": "Town Meeting votes the study; then the study returns",
    "status": "open",
    "resolved_on": "",
-   "note": "CORRECTED 19 Sep 2026. This was filed as resolved on prose I typed ('Article Y ... then carried at Town Meeting'). IT IS NOT IN THE RECORD: the Finance Committee recommended Article Y 5-0 on 2026-03-31, and the 2 May 2026 Annual Town Meeting minutes contain no solid-waste or enterprise-fund vote or topic besides Article 14 (PEG access). What Town Meeting did with it is UNKNOWN to us. -- closes: the FY2026 annual report's Town Meeting proceedings, or the Town Clerk's record.",
+   "note": "IRREVERSIBLE: the article asks to BORROW. Re-accelerated 16 Sep 2026 (passed 5-0) after riding alongside Kids Kingdom in January.",
    "closure": null,
    "chronology": [
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-21",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "The draft turf field and Kids Kingdom warrant articles were treated as discussion only tonight, with the language considered ready for the town to act on; no formal committee vote was taken on the article text.",
+       "outcome": "",
+       "t": 4345,
+       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
+      },
+      {
+       "kind": "topic",
+       "text": "Draft town meeting warrant articles: turf field and Kids Kingdom",
+       "outcome": "",
+       "t": 4201,
+       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
+      }
+     ]
+    },
+    {
+     "board": "Parks Commission",
+     "board_slug": "parks-commission",
+     "date": "2026-02-03",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Chair raises risk concerns, citing the turf field and Marshall Park precedents, and frames the two options on the table",
+       "outcome": "",
+       "t": 1978,
+       "video_url": "https://www.youtube.com/watch?v=jLSVwv2caHM"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-02-12",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Committee member's concern about Capital Planning Committee reviewing an unranked turf field replacement project",
+       "outcome": "",
+       "t": 2379,
+       "video_url": "https://www.youtube.com/watch?v=iGeYk_rpnO4"
+      }
+     ]
+    },
+    {
+     "board": "Conservation Commission",
+     "board_slug": "conservation-commission",
+     "date": "2026-09-16",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "NOI: concrete boat ramp reconstruction and retaining wall at Shady Point, Lake Shirley",
+       "outcome": "",
+       "t": 4650,
+       "video_url": "https://www.youtube.com/watch?v=KXzIph3Demg"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-09-16",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Request the town raise/appropriate/borrow funds for a full feasibility and schematic study of the turf field, track, drainage and retaining wall, as a placeholder warrant article",
+       "outcome": "passed 5-0 (all yes on roll call)",
+       "t": 1829,
+       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
+      }
+     ]
+    }
+   ],
+   "meetings": 5,
+   "boards_touched": 4,
+   "first_seen": "2026-01-21",
+   "last_moved": "2026-09-16",
+   "weight": 431
+  },
+  {
+   "id": "turkey-hill-rebuild",
+   "label": "Turkey Hill: rebuild or renovate",
+   "question": "Does the town rebuild Turkey Hill, renovate it, or neither -- and with what MSBA help?",
+   "kind": "project",
+   "groups": "schools;buildings",
+   "tags": "turkey-hill;msba",
+   "boards": "",
+   "started": "2025-10-15",
+   "closes": "the MSBA statement of interest is submitted or dropped (window opens January, closes April 2027)",
+   "status": "open",
+   "resolved_on": "",
+   "note": "ENTITY vs MATTER: \"Turkey Hill\" alone collects 40 meetings of paraprofessionals, DIBELS scores, solar offsets and intercoms. The qualifier is what makes this a thread.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2025-10-15",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "The committee will talk with the facilities director about Turkey Hill as a next step.",
+       "outcome": "",
+       "t": 9298,
+       "video_url": "https://www.youtube.com/watch?v=4sOnEhLYjmo"
+      },
+      {
+       "kind": "topic",
+       "text": "School committee draft goals: Turkey Hill direction, capital plan, Kids Kingdom, playgrounds, budget rubric/audit",
+       "outcome": "",
+       "t": 7800,
+       "video_url": "https://www.youtube.com/watch?v=4sOnEhLYjmo"
+      },
+      {
+       "kind": "topic",
+       "text": "Topics for future discussion: Chapter 70 finance formula testimony, audit schedule, Turkey Hill facilities follow-up",
+       "outcome": "",
+       "t": 9238,
+       "video_url": "https://www.youtube.com/watch?v=4sOnEhLYjmo"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2025-11-05",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Agreed on a staged, multi-meeting approach to the Turkey Hill decision: first set the end-goal/needs for the building, then debate rehab vs. rebuild, then address funding options.",
+       "outcome": "",
+       "t": 6015,
+       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
+      },
+      {
+       "kind": "decision",
+       "text": "Decided not to have the facilities director attend the very next meeting on Turkey Hill; instead solicit written feedback on building needs from Turkey Hill staff first.",
+       "outcome": "",
+       "t": 6158,
+       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
+      },
+      {
+       "kind": "decision",
+       "text": "Set five school-committee goals for the year: the future of Turkey Hill, the primary school playground/parking project, a smooth FY budget process, a comprehensive long-term facilities plan for all buildings, and pursuing the turf field alongside the other capital-planning goals.",
+       "outcome": "",
+       "t": 7255,
+       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
+      },
+      {
+       "kind": "topic",
+       "text": "School committee goal-setting: Turkey Hill rebuild/renovate decision process, MSBA funding mechanics, primary school playground/parking, budget process, facilities plan",
+       "outcome": "",
+       "t": 5046,
+       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2025-11-19",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Committee will wait for more information from the superintendent before deciding whether to submit an MSBA statement of interest for Turkey Hill this cycle.",
+       "outcome": "",
+       "t": 6541,
+       "video_url": "https://www.youtube.com/watch?v=6PZ-J-oIAkQ"
+      },
+      {
+       "kind": "topic",
+       "text": "Revised FY27 capital plan and Turkey Hill capital project updates",
+       "outcome": "",
+       "t": 3104,
+       "video_url": "https://www.youtube.com/watch?v=6PZ-J-oIAkQ"
+      },
+      {
+       "kind": "topic",
+       "text": "Turkey Hill / MSBA statement of interest discussion",
+       "outcome": "",
+       "t": 5638,
+       "video_url": "https://www.youtube.com/watch?v=6PZ-J-oIAkQ"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2025-11-24",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Turkey Hill and Middle School interventionist restorations; capacity math for interventionists",
+       "outcome": "",
+       "t": 2641,
+       "video_url": "https://www.youtube.com/watch?v=-J6CegBuG44"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2025-12-03",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "The district will pursue a Massachusetts School Building Authority statement of intent for Turkey Hill targeting an April 2027 (not April 2026) submission.",
+       "outcome": "",
+       "t": 6529,
+       "video_url": "https://www.youtube.com/watch?v=LAK2GHxq2is"
+      },
+      {
+       "kind": "decision",
+       "text": "Staff will try to compile a list of lower-cost Turkey Hill accessibility upgrades, likely by January, to scope near-term spending options.",
+       "outcome": "",
+       "t": 8609,
+       "video_url": "https://www.youtube.com/watch?v=LAK2GHxq2is"
+      },
+      {
+       "kind": "topic",
+       "text": "Turkey Hill building future: MSBA statement of intent, renovation vs. new build, capital needs, debt capacity",
+       "outcome": "",
+       "t": 6507,
+       "video_url": "https://www.youtube.com/watch?v=LAK2GHxq2is"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-07",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Facilities director asked to pull bathroom-accessibility cost figures out of the prior Turkey Hill engineering study to produce a standalone bathroom remodel project proposal.",
+       "outcome": "",
+       "t": 8607,
+       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
+      },
+      {
+       "kind": "decision",
+       "text": "Tony will draft a proposed framework/cost threshold for choosing between rebuilding Turkey Hill and building new under MSBA, to bring back for a vote.",
+       "outcome": "",
+       "t": 8709,
+       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
+      },
+      {
+       "kind": "topic",
+       "text": "Future of Turkey Hill: ADA priorities and MSBA rebuild-vs-new framework",
+       "outcome": "",
+       "t": 7839,
+       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
+      },
+      {
+       "kind": "topic",
+       "text": "Closing remarks and Turkey Hill accessibility figures, DIBELS timing",
+       "outcome": "",
+       "t": 9268,
+       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-01-08",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Primary school (Turkey Hill) driveway expansion and playground design/replacement",
+       "outcome": "",
+       "t": 6100,
+       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
+      }
+     ]
+    },
     {
      "board": "School Committee",
      "board_slug": "school-committee",
@@ -3644,10 +1688,1097 @@
      "items": [
       {
        "kind": "topic",
-       "text": "Trash/recycling fee restructuring options (pay-as-you-throw)",
+       "text": "Debt service, exempt vs. non-exempt borrowing, capacity, and Turkey Hill/MSBA timing",
        "outcome": "",
-       "t": 8281,
+       "t": 3087,
        "video_url": "https://www.youtube.com/watch?v=D34uSOZ8GkY"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-21",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Further discussion of the Turkey Hill directive memo will occur, with a vote planned for a meeting two sessions from now, in part so the absent member can be present.",
+       "outcome": "",
+       "t": 7686,
+       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
+      },
+      {
+       "kind": "topic",
+       "text": "Reading and math screening data presentation (DIBELS, USNS), primary school and Turkey Hill",
+       "outcome": "",
+       "t": 1169,
+       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
+      },
+      {
+       "kind": "topic",
+       "text": "Old business: Turkey Hill Elementary capital planning directive",
+       "outcome": "",
+       "t": 6780,
+       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-27",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Public comment: Turkey Hill special education/MTSS teachers describe split roles, staffing cuts and effect on student services",
+       "outcome": "",
+       "t": 331,
+       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-02-04",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Motion to give the superintendent permission to discuss redirecting the $195,000 earmark (passenger vans) toward Turkey Hill ADA bathrooms with Rep. Scarsdale and Sen. Cronin",
+       "outcome": "passed with one abstention",
+       "t": 2524,
+       "video_url": "https://www.youtube.com/watch?v=akQoA2PejrQ"
+      },
+      {
+       "kind": "topic",
+       "text": "Spending options missed: touch-view screens, Turkey Hill ADA compliance",
+       "outcome": "",
+       "t": 278,
+       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
+      },
+      {
+       "kind": "topic",
+       "text": "Permission to discuss redirecting $195,000 transportation earmark toward Turkey Hill ADA bathrooms",
+       "outcome": "",
+       "t": 1916,
+       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
+      },
+      {
+       "kind": "topic",
+       "text": "School improvement plan updates from primary, Turkey Hill, and middle/high principals covering literacy and math data, staffing cuts impact, chronic absenteeism, and student needs",
+       "outcome": "",
+       "t": 5180,
+       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
+      },
+      {
+       "kind": "topic",
+       "text": "Topics for future discussion: Turkey Hill bathroom, personnel report, updated staffing chart",
+       "outcome": "",
+       "t": 8133,
+       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-02-24",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Proposal to add Turkey Hill/primary intercom upgrades",
+       "outcome": "",
+       "t": 158,
+       "video_url": "https://www.youtube.com/watch?v=JVB4H7xpVUw"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-02-26",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "The business manager will find out how much the school solar installations (high school and Turkey Hill) offset the electric bill.",
+       "outcome": "",
+       "t": 9125,
+       "video_url": "https://www.youtube.com/watch?v=A4dDCncf5cQ"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-03-04",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Facilities update: capital projects completed, BMS server move, Turkey Hill ADA bathrooms, roof leaks, staffing",
+       "outcome": "",
+       "t": 4191,
+       "video_url": "https://www.youtube.com/watch?v=nfSdiKc6yvo"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-04-01",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Wait to begin discussing the Turkey Hill MSBA application until the next (newly seated) committee member joins, to allow a summer runway.",
+       "outcome": "",
+       "t": 6442,
+       "video_url": "https://www.youtube.com/watch?v=4ef6KsOweWs"
+      },
+      {
+       "kind": "topic",
+       "text": "Facilities and grounds report: energy efficiency program, generator relocation, solar array repairs, landscaping bid, staffing changes, Turkey Hill bathrooms",
+       "outcome": "",
+       "t": 4800,
+       "video_url": "https://www.youtube.com/watch?v=4ef6KsOweWs"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-04-02",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "FY27 capital budget, including DPW, public safety, and primary school/Turkey Hill items",
+       "outcome": "",
+       "t": 2305,
+       "video_url": "https://www.youtube.com/watch?v=erUXTd1phSg"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-04-15",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Town meeting warrant articles, override placement, and capital plan items (Turkey Hill, primary school)",
+       "outcome": "",
+       "t": 5736,
+       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
+      },
+      {
+       "kind": "topic",
+       "text": "Review of school committee goals: Turkey Hill future, primary school parking/playground, budget process",
+       "outcome": "",
+       "t": 5906,
+       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-05-06",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Accept the two Turkey Hill memorial donations with gratitude",
+       "outcome": "passed",
+       "t": 798,
+       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
+      },
+      {
+       "kind": "vote",
+       "text": "Accept the Turkey Hill Boxtops for Education donation with gratitude",
+       "outcome": "passed",
+       "t": 860,
+       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
+      },
+      {
+       "kind": "topic",
+       "text": "Warrants and donations (Women's Club, Turkey Hill memorial gifts, Boxtops)",
+       "outcome": "",
+       "t": 673,
+       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-05-20",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Approve to authorize student activity funds for the primary, Turkey Hill, middle and high schools",
+       "outcome": "passed",
+       "t": 4265,
+       "video_url": "https://www.youtube.com/watch?v=WMLR7WqrZPw"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-05-28",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Free cash, OPEB and reserve policy discussion, town debt position and capital needs (Turkey Hill, bleachers)",
+       "outcome": "",
+       "t": 2067,
+       "video_url": "https://www.youtube.com/watch?v=BUB31HGDim4"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-06-03",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Motion to accept the Turkey Hill PTO book fair donation of $255.38.",
+       "outcome": "passed unanimously",
+       "t": 1057,
+       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
+      },
+      {
+       "kind": "topic",
+       "text": "Recognition of retirees and thanks to incoming Turkey Hill principal",
+       "outcome": "",
+       "t": 44,
+       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
+      },
+      {
+       "kind": "topic",
+       "text": "Announcement of Dr. Caitlyn Angulo as new Turkey Hill assistant principal",
+       "outcome": "",
+       "t": 1552,
+       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
+      },
+      {
+       "kind": "topic",
+       "text": "School improvement plan progress: reading/math benchmarks and Turkey Hill state recognition",
+       "outcome": "",
+       "t": 4479,
+       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-06-11",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Committee reports: Municipal Buildings Committee (Ritter building, town hall future, possible dealership purchase, Turkey Hill/community center ideas) and PTO/overtime policy costs",
+       "outcome": "",
+       "t": 1060,
+       "video_url": "https://www.youtube.com/watch?v=UQXjJNVXTC8"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-06-24",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Accept the donation of $196.56 from the author visit to Turkey Hill Elementary",
+       "outcome": "passed",
+       "t": 2064,
+       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
+      },
+      {
+       "kind": "decision",
+       "text": "There will be zero reading interventionist positions at Turkey Hill and zero at the Primary school next year, described as a necessary cut.",
+       "outcome": "",
+       "t": 5174,
+       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
+      },
+      {
+       "kind": "topic",
+       "text": "Donation acceptance - Turkey Hill author visit",
+       "outcome": "",
+       "t": 2008,
+       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-07-14",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Turkey Hill/MSBA process, town buildings overview, public engagement and communication goals",
+       "outcome": "",
+       "t": 4607,
+       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-07-28",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "MSBA accelerated repair program timeline and its bearing on TCP/Turkey Hill decisions",
+       "outcome": "",
+       "t": 6000,
+       "video_url": "https://www.youtube.com/watch?v=1fNLbfV7UT4"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-07-29",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Committee agreed it needs an MSBA primer/presentation for a future meeting and to begin familiarizing itself and the public with the MSBA process for Turkey Hill.",
+       "outcome": "",
+       "t": 7735,
+       "video_url": "https://www.youtube.com/watch?v=wR4gBkOqIaE"
+      },
+      {
+       "kind": "topic",
+       "text": "Public comment (prior issues): Turkey Hill Elementary building needs and MSBA timeline",
+       "outcome": "",
+       "t": 48,
+       "video_url": "https://www.youtube.com/watch?v=wR4gBkOqIaE"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-09-09",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Formal review/vote on school committee goals for the year is deferred to next week; goals discussed include continuing the Turkey Hill MSBA process, implementing the primary school parking lot/playground study, and pursuing financial stability including using audit findings.",
+       "outcome": "",
+       "t": 6165,
+       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+      },
+      {
+       "kind": "decision",
+       "text": "Two school committee members will serve on a committee for the Turkey Hill Elementary MSBA Statement of Interest (SOI) process, which opens in January and closes in April.",
+       "outcome": "",
+       "t": 6396,
+       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+      },
+      {
+       "kind": "topic",
+       "text": "Principals' back-to-school updates for primary, Turkey Hill, middle, and high schools (enrollment, staffing, class sizes, school choice concerns)",
+       "outcome": "",
+       "t": 3979,
+       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+      },
+      {
+       "kind": "topic",
+       "text": "Review of prior-year school committee goals and discussion of new goals (Turkey Hill/MSBA, primary parking lot and playground, budget process, tri-board communication, legislative outreach)",
+       "outcome": "",
+       "t": 6123,
+       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-09-16",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Superintendent's draft FY27 evaluation goals: ELA growth, professional culture, Turkey Hill MSBA SOI, and financial leadership",
+       "outcome": "",
+       "t": 4576,
+       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
+      },
+      {
+       "kind": "topic",
+       "text": "School committee goal-setting: primary parking lot/playground study, MSBA application for Turkey Hill, and financial fidelity goals",
+       "outcome": "",
+       "t": 6559,
+       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
+      }
+     ]
+    }
+   ],
+   "meetings": 28,
+   "boards_touched": 3,
+   "first_seen": "2025-10-15",
+   "last_moved": "2026-09-16",
+   "weight": 354
+  },
+  {
+   "id": "turkey-hill-ada",
+   "label": "Turkey Hill: the ADA bathrooms",
+   "question": "Do the accessible bathrooms at Turkey Hill get funded, and from where?",
+   "kind": "project",
+   "groups": "schools;buildings",
+   "tags": "turkey-hill",
+   "boards": "",
+   "started": "2026-01-07",
+   "closes": "the bathroom project is funded or abandoned",
+   "status": "open",
+   "resolved_on": "",
+   "note": "A $195,000 transportation earmark was floated as the source (School Committee, 4 Feb 2026).",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-07",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Facilities director asked to pull bathroom-accessibility cost figures out of the prior Turkey Hill engineering study to produce a standalone bathroom remodel project proposal.",
+       "outcome": "",
+       "t": 8607,
+       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
+      },
+      {
+       "kind": "decision",
+       "text": "Tony will draft a proposed framework/cost threshold for choosing between rebuilding Turkey Hill and building new under MSBA, to bring back for a vote.",
+       "outcome": "",
+       "t": 8709,
+       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
+      },
+      {
+       "kind": "topic",
+       "text": "Future of Turkey Hill: ADA priorities and MSBA rebuild-vs-new framework",
+       "outcome": "",
+       "t": 7839,
+       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
+      },
+      {
+       "kind": "topic",
+       "text": "Closing remarks and Turkey Hill accessibility figures, DIBELS timing",
+       "outcome": "",
+       "t": 9268,
+       "video_url": "https://www.youtube.com/watch?v=pjSX2hx8kwI"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-01-08",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Primary school (Turkey Hill) driveway expansion and playground design/replacement",
+       "outcome": "",
+       "t": 6100,
+       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-12",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Debt service, exempt vs. non-exempt borrowing, capacity, and Turkey Hill/MSBA timing",
+       "outcome": "",
+       "t": 3087,
+       "video_url": "https://www.youtube.com/watch?v=D34uSOZ8GkY"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-21",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Further discussion of the Turkey Hill directive memo will occur, with a vote planned for a meeting two sessions from now, in part so the absent member can be present.",
+       "outcome": "",
+       "t": 7686,
+       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
+      },
+      {
+       "kind": "topic",
+       "text": "Reading and math screening data presentation (DIBELS, USNS), primary school and Turkey Hill",
+       "outcome": "",
+       "t": 1169,
+       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
+      },
+      {
+       "kind": "topic",
+       "text": "Old business: Turkey Hill Elementary capital planning directive",
+       "outcome": "",
+       "t": 6780,
+       "video_url": "https://www.youtube.com/watch?v=NIZgbfhPwD8"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-27",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Public comment: Turkey Hill special education/MTSS teachers describe split roles, staffing cuts and effect on student services",
+       "outcome": "",
+       "t": 331,
+       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-02-04",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Motion to give the superintendent permission to discuss redirecting the $195,000 earmark (passenger vans) toward Turkey Hill ADA bathrooms with Rep. Scarsdale and Sen. Cronin",
+       "outcome": "passed with one abstention",
+       "t": 2524,
+       "video_url": "https://www.youtube.com/watch?v=akQoA2PejrQ"
+      },
+      {
+       "kind": "topic",
+       "text": "Spending options missed: touch-view screens, Turkey Hill ADA compliance",
+       "outcome": "",
+       "t": 278,
+       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
+      },
+      {
+       "kind": "topic",
+       "text": "Permission to discuss redirecting $195,000 transportation earmark toward Turkey Hill ADA bathrooms",
+       "outcome": "",
+       "t": 1916,
+       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
+      },
+      {
+       "kind": "topic",
+       "text": "School improvement plan updates from primary, Turkey Hill, and middle/high principals covering literacy and math data, staffing cuts impact, chronic absenteeism, and student needs",
+       "outcome": "",
+       "t": 5180,
+       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
+      },
+      {
+       "kind": "topic",
+       "text": "Topics for future discussion: Turkey Hill bathroom, personnel report, updated staffing chart",
+       "outcome": "",
+       "t": 8133,
+       "video_url": "https://www.youtube.com/watch?v=HsjpFotE9hc"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-02-24",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Proposal to add Turkey Hill/primary intercom upgrades",
+       "outcome": "",
+       "t": 158,
+       "video_url": "https://www.youtube.com/watch?v=JVB4H7xpVUw"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-02-26",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "The business manager will find out how much the school solar installations (high school and Turkey Hill) offset the electric bill.",
+       "outcome": "",
+       "t": 9125,
+       "video_url": "https://www.youtube.com/watch?v=A4dDCncf5cQ"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-03-04",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Facilities update: capital projects completed, BMS server move, Turkey Hill ADA bathrooms, roof leaks, staffing",
+       "outcome": "",
+       "t": 4191,
+       "video_url": "https://www.youtube.com/watch?v=nfSdiKc6yvo"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-04-01",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Wait to begin discussing the Turkey Hill MSBA application until the next (newly seated) committee member joins, to allow a summer runway.",
+       "outcome": "",
+       "t": 6442,
+       "video_url": "https://www.youtube.com/watch?v=4ef6KsOweWs"
+      },
+      {
+       "kind": "topic",
+       "text": "Facilities and grounds report: energy efficiency program, generator relocation, solar array repairs, landscaping bid, staffing changes, Turkey Hill bathrooms",
+       "outcome": "",
+       "t": 4800,
+       "video_url": "https://www.youtube.com/watch?v=4ef6KsOweWs"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-04-02",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "FY27 capital budget, including DPW, public safety, and primary school/Turkey Hill items",
+       "outcome": "",
+       "t": 2305,
+       "video_url": "https://www.youtube.com/watch?v=erUXTd1phSg"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-04-15",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Town meeting warrant articles, override placement, and capital plan items (Turkey Hill, primary school)",
+       "outcome": "",
+       "t": 5736,
+       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
+      },
+      {
+       "kind": "topic",
+       "text": "Review of school committee goals: Turkey Hill future, primary school parking/playground, budget process",
+       "outcome": "",
+       "t": 5906,
+       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-05-06",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Accept the two Turkey Hill memorial donations with gratitude",
+       "outcome": "passed",
+       "t": 798,
+       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
+      },
+      {
+       "kind": "vote",
+       "text": "Accept the Turkey Hill Boxtops for Education donation with gratitude",
+       "outcome": "passed",
+       "t": 860,
+       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
+      },
+      {
+       "kind": "topic",
+       "text": "Warrants and donations (Women's Club, Turkey Hill memorial gifts, Boxtops)",
+       "outcome": "",
+       "t": 673,
+       "video_url": "https://www.youtube.com/watch?v=x3f-Q2Db_14"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-05-20",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Approve to authorize student activity funds for the primary, Turkey Hill, middle and high schools",
+       "outcome": "passed",
+       "t": 4265,
+       "video_url": "https://www.youtube.com/watch?v=WMLR7WqrZPw"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-05-28",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Free cash, OPEB and reserve policy discussion, town debt position and capital needs (Turkey Hill, bleachers)",
+       "outcome": "",
+       "t": 2067,
+       "video_url": "https://www.youtube.com/watch?v=BUB31HGDim4"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-06-03",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Motion to accept the Turkey Hill PTO book fair donation of $255.38.",
+       "outcome": "passed unanimously",
+       "t": 1057,
+       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
+      },
+      {
+       "kind": "topic",
+       "text": "Recognition of retirees and thanks to incoming Turkey Hill principal",
+       "outcome": "",
+       "t": 44,
+       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
+      },
+      {
+       "kind": "topic",
+       "text": "Announcement of Dr. Caitlyn Angulo as new Turkey Hill assistant principal",
+       "outcome": "",
+       "t": 1552,
+       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
+      },
+      {
+       "kind": "topic",
+       "text": "School improvement plan progress: reading/math benchmarks and Turkey Hill state recognition",
+       "outcome": "",
+       "t": 4479,
+       "video_url": "https://www.youtube.com/watch?v=Iu4Ha9TpRKs"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-06-11",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Committee reports: Municipal Buildings Committee (Ritter building, town hall future, possible dealership purchase, Turkey Hill/community center ideas) and PTO/overtime policy costs",
+       "outcome": "",
+       "t": 1060,
+       "video_url": "https://www.youtube.com/watch?v=UQXjJNVXTC8"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-06-24",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Accept the donation of $196.56 from the author visit to Turkey Hill Elementary",
+       "outcome": "passed",
+       "t": 2064,
+       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
+      },
+      {
+       "kind": "decision",
+       "text": "There will be zero reading interventionist positions at Turkey Hill and zero at the Primary school next year, described as a necessary cut.",
+       "outcome": "",
+       "t": 5174,
+       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
+      },
+      {
+       "kind": "topic",
+       "text": "Donation acceptance - Turkey Hill author visit",
+       "outcome": "",
+       "t": 2008,
+       "video_url": "https://www.youtube.com/watch?v=ZS-tW_drdqE"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-07-14",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Turkey Hill/MSBA process, town buildings overview, public engagement and communication goals",
+       "outcome": "",
+       "t": 4607,
+       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-07-28",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "MSBA accelerated repair program timeline and its bearing on TCP/Turkey Hill decisions",
+       "outcome": "",
+       "t": 6000,
+       "video_url": "https://www.youtube.com/watch?v=1fNLbfV7UT4"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-07-29",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Committee agreed it needs an MSBA primer/presentation for a future meeting and to begin familiarizing itself and the public with the MSBA process for Turkey Hill.",
+       "outcome": "",
+       "t": 7735,
+       "video_url": "https://www.youtube.com/watch?v=wR4gBkOqIaE"
+      },
+      {
+       "kind": "topic",
+       "text": "Public comment (prior issues): Turkey Hill Elementary building needs and MSBA timeline",
+       "outcome": "",
+       "t": 48,
+       "video_url": "https://www.youtube.com/watch?v=wR4gBkOqIaE"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-09-09",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Formal review/vote on school committee goals for the year is deferred to next week; goals discussed include continuing the Turkey Hill MSBA process, implementing the primary school parking lot/playground study, and pursuing financial stability including using audit findings.",
+       "outcome": "",
+       "t": 6165,
+       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+      },
+      {
+       "kind": "decision",
+       "text": "Two school committee members will serve on a committee for the Turkey Hill Elementary MSBA Statement of Interest (SOI) process, which opens in January and closes in April.",
+       "outcome": "",
+       "t": 6396,
+       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+      },
+      {
+       "kind": "topic",
+       "text": "Principals' back-to-school updates for primary, Turkey Hill, middle, and high schools (enrollment, staffing, class sizes, school choice concerns)",
+       "outcome": "",
+       "t": 3979,
+       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+      },
+      {
+       "kind": "topic",
+       "text": "Review of prior-year school committee goals and discussion of new goals (Turkey Hill/MSBA, primary parking lot and playground, budget process, tri-board communication, legislative outreach)",
+       "outcome": "",
+       "t": 6123,
+       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-09-16",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Superintendent's draft FY27 evaluation goals: ELA growth, professional culture, Turkey Hill MSBA SOI, and financial leadership",
+       "outcome": "",
+       "t": 4576,
+       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
+      },
+      {
+       "kind": "topic",
+       "text": "School committee goal-setting: primary parking lot/playground study, MSBA application for Turkey Hill, and financial fidelity goals",
+       "outcome": "",
+       "t": 6559,
+       "video_url": "https://www.youtube.com/watch?v=XY8Ru12S9Xg"
+      }
+     ]
+    }
+   ],
+   "meetings": 23,
+   "boards_touched": 3,
+   "first_seen": "2026-01-07",
+   "last_moved": "2026-09-16",
+   "weight": 349
+  },
+  {
+   "id": "monty-tech-assessment",
+   "label": "The Monty Tech assessment",
+   "question": "Why does Lunenburg's Monty Tech assessment rise faster than Monty Tech's own budget?",
+   "kind": "money",
+   "groups": "schools;what-i-pay",
+   "tags": "monty-tech",
+   "boards": "",
+   "started": "2025-09-30",
+   "closes": "NEVER -- the assessment is set again every year; a recurring thread",
+   "status": "open",
+   "resolved_on": "",
+   "note": "ENTITY vs MATTER: Monty Tech is a district; the assessment is the matter.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2025-09-30",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Motion by the Select Board to appoint Stephanie Quinn to the Montachusett Regional Vocational School Committee",
+       "outcome": "passed",
+       "t": 189,
+       "video_url": "https://www.youtube.com/watch?v=XNXWeO5_wLI"
+      },
+      {
+       "kind": "vote",
+       "text": "Motion to authorize the FY2026-FY2028 agreement between the Town of Lunenburg and the Montachusett Regional Transit Authority (MART) for Council on Aging services",
+       "outcome": "passed",
+       "t": 329,
+       "video_url": "https://www.youtube.com/watch?v=XNXWeO5_wLI"
+      },
+      {
+       "kind": "topic",
+       "text": "Joint meeting to appoint a representative to the Montachusett Regional Vocational (Monty Tech) School Committee; Stephanie Quinn interviewed and appointed by Select Board, School Committee and Moderator",
+       "outcome": "",
+       "t": 64,
+       "video_url": "https://www.youtube.com/watch?v=XNXWeO5_wLI"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2025-11-05",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "First read: Middle School Pathway Exploration policy (Monty Tech)",
+       "outcome": "",
+       "t": 3625,
+       "video_url": "https://www.youtube.com/watch?v=gvMBXdLD8D4"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-01-08",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Bring Monty Tech in earlier in the budget calendar, before their board votes on its assessment, rather than after.",
+       "outcome": "",
+       "t": 2394,
+       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
+      },
+      {
+       "kind": "topic",
+       "text": "Opening, pledge of allegiance, announcements (tri-board and Monty Tech meeting dates)",
+       "outcome": "",
+       "t": 53,
+       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
+      },
+      {
+       "kind": "topic",
+       "text": "Introduction of new Monty Tech representative; public comment invited (none from public)",
+       "outcome": "",
+       "t": 320,
+       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
+      },
+      {
+       "kind": "topic",
+       "text": "Budget calendar review and Monty Tech budget/assessment discussion",
+       "outcome": "",
+       "t": 2351,
+       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
+      },
+      {
+       "kind": "topic",
+       "text": "Committee reports and future agenda topics (committee assignments, Monty Tech next meeting)",
+       "outcome": "",
+       "t": 8087,
+       "video_url": "https://www.youtube.com/watch?v=GykEFtJVvsM"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-12",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Net new revenue after health insurance and apportionment among school, town and Monty Tech",
+       "outcome": "",
+       "t": 6003,
+       "video_url": "https://www.youtube.com/watch?v=D34uSOZ8GkY"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-27",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Public comment: 24-year district employee on regionalization history, small-school tradeoffs, and staff/health-insurance concessions; board discussion of comparable districts and school choice loss to Monty Tech",
+       "outcome": "",
+       "t": 1659,
+       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-02-05",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Monty Tech superintendent's update: enrollment, programs, grants, MVP Academy, track/bleacher renovation, admissions lottery",
+       "outcome": "",
+       "t": 252,
+       "video_url": "https://www.youtube.com/watch?v=6csHPPkKg7c"
+      },
+      {
+       "kind": "topic",
+       "text": "Monty Tech business manager's FY27 budget walkthrough: foundation budget, chapter 70, required local contributions",
+       "outcome": "",
+       "t": 994,
+       "video_url": "https://www.youtube.com/watch?v=6csHPPkKg7c"
+      },
+      {
+       "kind": "topic",
+       "text": "Committee questions Monty Tech on why Lunenburg's assessment rose far more than the overall Monty Tech budget",
+       "outcome": "",
+       "t": 3296,
+       "video_url": "https://www.youtube.com/watch?v=6csHPPkKg7c"
       }
      ]
     },
@@ -3658,9 +2789,9 @@
      "items": [
       {
        "kind": "topic",
-       "text": "DPW budget: drainage, catch basin cleaning/street sweeping for stormwater compliance, recycling program cut, snow and ice",
+       "text": "Schools (LPS and Monty Tech), culture and recreation (library), intergovernmental (Worcester County retirement), and tax title budgets",
        "outcome": "",
-       "t": 9009,
+       "t": 10053,
        "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
       }
      ]
@@ -3671,82 +2802,48 @@
      "date": "2026-03-16",
      "items": [
       {
-       "kind": "decision",
-       "text": "Continue exploring moving the entire trash/recycling program onto an enterprise fund",
-       "outcome": "",
-       "t": 5868,
-       "video_url": "https://www.youtube.com/watch?v=QkqNg9jDIEM"
-      },
-      {
        "kind": "topic",
-       "text": "Recycling program budget drop based on actuals; exploring enterprise fund conversion",
+       "text": "Lunenburg Public Schools restoration number and Monty Tech line noted",
        "outcome": "",
-       "t": 5596,
+       "t": 3990,
        "video_url": "https://www.youtube.com/watch?v=QkqNg9jDIEM"
       }
      ]
     },
     {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-03-31",
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-03-24",
      "items": [
       {
-       "kind": "vote",
-       "text": "Recommend approval of Article Y (solid waste disposal program enterprise fund)",
-       "outcome": "passed 5-0",
-       "t": 3873,
-       "video_url": "https://www.youtube.com/watch?v=ACXm07GcviI"
+       "kind": "topic",
+       "text": "FY27 new revenue available for appropriation, Monty Tech assessment, and the school/town revenue split",
+       "outcome": "",
+       "t": 4655,
+       "video_url": "https://www.youtube.com/watch?v=lq1UgU1vxNg"
       }
      ]
     },
     {
      "board": "Finance Committee",
      "board_slug": "finance-committee",
-     "date": "2026-04-02",
+     "date": "2026-03-26",
      "items": [
       {
-       "kind": "vote",
-       "text": "Recommend approval of the solid waste disposal enterprise fund article",
-       "outcome": "passed",
-       "t": 2989,
-       "video_url": "https://www.youtube.com/watch?v=erUXTd1phSg"
-      },
-      {
        "kind": "topic",
-       "text": "Solid waste disposal enterprise fund",
+       "text": "Town manager's revenue presentation: local receipts, free cash policy, Monty Tech assessment",
        "outcome": "",
-       "t": 2854,
-       "video_url": "https://www.youtube.com/watch?v=erUXTd1phSg"
-      }
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-04-07",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "recommend approval of Article Y, solid waste disposal enterprise fund appropriation",
-       "outcome": "passed unanimously",
-       "t": 5412,
-       "video_url": "https://www.youtube.com/watch?v=rPW2ew89EDs"
-      },
-      {
-       "kind": "topic",
-       "text": "Article Y: solid waste enterprise fund",
-       "outcome": "",
-       "t": 5389,
-       "video_url": "https://www.youtube.com/watch?v=rPW2ew89EDs"
+       "t": 3684,
+       "video_url": "https://www.youtube.com/watch?v=tZv6KVIYb9w"
       }
      ]
     }
    ],
-   "meetings": 6,
+   "meetings": 10,
    "boards_touched": 3,
-   "first_seen": "2026-01-12",
-   "last_moved": "2026-04-07"
+   "first_seen": "2025-09-30",
+   "last_moved": "2026-03-26",
+   "weight": 336
   },
   {
    "id": "fy25-school-surplus",
@@ -3921,7 +3018,750 @@
    "meetings": 7,
    "boards_touched": 3,
    "first_seen": "2025-11-19",
-   "last_moved": "2026-08-18"
+   "last_moved": "2026-08-18",
+   "weight": 333
+  },
+  {
+   "id": "solid-waste-enterprise",
+   "label": "Trash and recycling: the enterprise fund",
+   "question": "Does trash and recycling move to an enterprise fund, and does that change what residents pay?",
+   "kind": "money",
+   "groups": "water-sewer-roads;what-i-pay",
+   "tags": "fees",
+   "boards": "",
+   "started": "2026-01-08",
+   "closes": "a Town Meeting votes the solid waste enterprise fund article",
+   "status": "open",
+   "resolved_on": "",
+   "note": "CORRECTED 19 Sep 2026. This was filed as resolved on prose I typed ('Article Y ... then carried at Town Meeting'). IT IS NOT IN THE RECORD: the Finance Committee recommended Article Y 5-0 on 2026-03-31, and the 2 May 2026 Annual Town Meeting minutes contain no solid-waste or enterprise-fund vote or topic besides Article 14 (PEG access). What Town Meeting did with it is UNKNOWN to us. -- closes: the FY2026 annual report's Town Meeting proceedings, or the Town Clerk's record.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-12",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Trash/recycling fee restructuring options (pay-as-you-throw)",
+       "outcome": "",
+       "t": 8281,
+       "video_url": "https://www.youtube.com/watch?v=D34uSOZ8GkY"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-02-19",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "DPW budget: drainage, catch basin cleaning/street sweeping for stormwater compliance, recycling program cut, snow and ice",
+       "outcome": "",
+       "t": 9009,
+       "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-03-16",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Continue exploring moving the entire trash/recycling program onto an enterprise fund",
+       "outcome": "",
+       "t": 5868,
+       "video_url": "https://www.youtube.com/watch?v=QkqNg9jDIEM"
+      },
+      {
+       "kind": "topic",
+       "text": "Recycling program budget drop based on actuals; exploring enterprise fund conversion",
+       "outcome": "",
+       "t": 5596,
+       "video_url": "https://www.youtube.com/watch?v=QkqNg9jDIEM"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-03-31",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Recommend approval of Article Y (solid waste disposal program enterprise fund)",
+       "outcome": "passed 5-0",
+       "t": 3873,
+       "video_url": "https://www.youtube.com/watch?v=ACXm07GcviI"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-04-02",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Recommend approval of the solid waste disposal enterprise fund article",
+       "outcome": "passed",
+       "t": 2989,
+       "video_url": "https://www.youtube.com/watch?v=erUXTd1phSg"
+      },
+      {
+       "kind": "topic",
+       "text": "Solid waste disposal enterprise fund",
+       "outcome": "",
+       "t": 2854,
+       "video_url": "https://www.youtube.com/watch?v=erUXTd1phSg"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-04-07",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "recommend approval of Article Y, solid waste disposal enterprise fund appropriation",
+       "outcome": "passed unanimously",
+       "t": 5412,
+       "video_url": "https://www.youtube.com/watch?v=rPW2ew89EDs"
+      },
+      {
+       "kind": "topic",
+       "text": "Article Y: solid waste enterprise fund",
+       "outcome": "",
+       "t": 5389,
+       "video_url": "https://www.youtube.com/watch?v=rPW2ew89EDs"
+      }
+     ]
+    }
+   ],
+   "meetings": 6,
+   "boards_touched": 3,
+   "first_seen": "2026-01-12",
+   "last_moved": "2026-04-07",
+   "weight": 332
+  },
+  {
+   "id": "fourth-fire-shift",
+   "label": "The fourth fire shift",
+   "question": "Does the town fund a fourth fire shift, and out of the override or the regular budget?",
+   "kind": "service",
+   "groups": "how-the-town-runs",
+   "tags": "public-safety",
+   "boards": "",
+   "started": "2025-09-30",
+   "closes": "the budget that funds it is adopted",
+   "status": "resolved",
+   "resolved_on": "2026-04-07",
+   "note": "WHAT THE VOTE SHOWS AND WHAT IT DOES NOT: Article 10 (the FY27 balanced budget) passed, and the budget does not itemise the shift. That the fourth shift was retained rests on the Select Board record of 16 Mar 2026 ('fourth shift retained'), not on this vote. Rule 7: the vote is the fact, the inference is an inference.",
+   "closure": {
+    "basis": "ours",
+    "source": "our minutes of the recording, from machine captions",
+    "meeting": "Town Meeting",
+    "date": "2026-05-02",
+    "article": "10",
+    "result": "passed 340-68",
+    "amount_as_printed": "",
+    "quote": "Article 10: raise and appropriate the FY27 balanced (town manager's) operating budget, approx. $49,963,990.19",
+    "fincom": "",
+    "select_board": "",
+    "document": "https://www.youtube.com/watch?v=F0viGd2yFSU",
+    "page": "",
+    "caveat": "AS HEARD from machine captions. A caption model hears \"fifteen hundred\", \"$1,500\" and \"$50\" alike; check the recording at the second cited. This upgrades to the Town Clerk's printed record when that year's annual report is extracted."
+   },
+   "chronology": [
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-01-27",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Public comment: firefighters' union president calls for an override to fund a fourth fire shift",
+       "outcome": "",
+       "t": 125,
+       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
+      },
+      {
+       "kind": "topic",
+       "text": "Town Manager presents updated FY27 revenue projections, cherry sheet/state aid, and major fixed cost drivers (health insurance, retirement, transportation, fourth fire shift), culminating in a stated multi-million dollar deficit",
+       "outcome": "",
+       "t": 2740,
+       "video_url": "https://www.youtube.com/watch?v=1xPyYMnz50E"
+      }
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-02-19",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Fire department will use Noba mitigation one-time funds for added predium (call staff) staffing in FY26 and set aside funds for paramedic training in FY27, rather than offsetting the fourth shift's ongoing cost.",
+       "outcome": "",
+       "t": 1104,
+       "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
+      },
+      {
+       "kind": "decision",
+       "text": "A public presentation on the fire department's fourth shift proposal is scheduled for the following Monday at the Adult Activity Center.",
+       "outcome": "",
+       "t": 10985,
+       "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
+      },
+      {
+       "kind": "topic",
+       "text": "Fire Department FY27 budget presentation and Q&A, including fourth shift proposal, staffing, equipment and grants",
+       "outcome": "",
+       "t": 232,
+       "video_url": "https://www.youtube.com/watch?v=zdeK5iigzNY"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-03-16",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Fire Department: fourth shift retained, per diem coverage cuts, chief transition salary reserve, impact statement read",
+       "outcome": "",
+       "t": 3420,
+       "video_url": "https://www.youtube.com/watch?v=QkqNg9jDIEM"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-03-18",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Chair's report: fourth fire shift moved from override to regular town budget, concerns about override odds and ambulance staffing",
+       "outcome": "",
+       "t": 380,
+       "video_url": "https://www.youtube.com/watch?v=d8UUVRoCwoY"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-04-07",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Article L: FY27 balanced/omnibus budget, including extended debate over the assistant town manager, fourth fire shift, and free cash",
+       "outcome": "",
+       "t": 3707,
+       "video_url": "https://www.youtube.com/watch?v=rPW2ew89EDs"
+      }
+     ]
+    }
+   ],
+   "meetings": 5,
+   "boards_touched": 3,
+   "first_seen": "2026-01-27",
+   "last_moved": "2026-04-07",
+   "weight": 331
+  },
+  {
+   "id": "925-mass-ave",
+   "label": "925 Mass Ave: the RFP",
+   "question": "What happens to the town land at 925 Massachusetts Avenue?",
+   "kind": "asset",
+   "groups": "buildings",
+   "tags": "",
+   "boards": "",
+   "started": "2026-05-19",
+   "closes": "a proposal is accepted, or the RFP lapses",
+   "status": "open",
+   "resolved_on": "",
+   "note": "RFP issued May 2026, responses due July.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-05-19",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "The town manager will ask Amanda Moore whether she wishes to continue serving on the 925 Mass Ave RFP working group despite her board resignation.",
+       "outcome": "",
+       "t": 2212,
+       "video_url": "https://www.youtube.com/watch?v=JnVWS4tJouo"
+      },
+      {
+       "kind": "decision",
+       "text": "The RFP for 925 Mass Ave will be issued next week with responses due back in July.",
+       "outcome": "",
+       "t": 2254,
+       "video_url": "https://www.youtube.com/watch?v=JnVWS4tJouo"
+      },
+      {
+       "kind": "topic",
+       "text": "925 Mass Ave RFP evaluative criteria",
+       "outcome": "",
+       "t": 1698,
+       "video_url": "https://www.youtube.com/watch?v=JnVWS4tJouo"
+      }
+     ]
+    },
+    {
+     "board": "Sewer Commission",
+     "board_slug": "sewer-commission",
+     "date": "2026-09-08",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Confirmed the 786-796 Mass Ave and 67 Pratt Street privilege-fee properties are fully paid up and hooked up, closing out that item.",
+       "outcome": "",
+       "t": 705,
+       "video_url": "https://www.youtube.com/watch?v=VMfaXMyKBII"
+      },
+      {
+       "kind": "topic",
+       "text": "Privilege fee assessments for 786-796 Mass Ave and 67 Pratt Street",
+       "outcome": "",
+       "t": 620,
+       "video_url": "https://www.youtube.com/watch?v=VMfaXMyKBII"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-09-15",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Town manager report: 925 Mass Ave RFP, FY26 close-out, municipal aggregation, law training, recruitments and vacancies",
+       "outcome": "",
+       "t": 3623,
+       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
+      }
+     ]
+    },
+    {
+     "board": "Conservation Commission",
+     "board_slug": "conservation-commission",
+     "date": "2026-09-16",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Continue the Unitil substation NOI at 934 Mass Ave to October 7, 2026",
+       "outcome": "passed",
+       "t": 4597,
+       "video_url": "https://www.youtube.com/watch?v=KXzIph3Demg"
+      },
+      {
+       "kind": "topic",
+       "text": "Continued hearing: Unitil substation/utility pole replacement at 934 Mass Ave",
+       "outcome": "",
+       "t": 4564,
+       "video_url": "https://www.youtube.com/watch?v=KXzIph3Demg"
+      }
+     ]
+    }
+   ],
+   "meetings": 4,
+   "boards_touched": 3,
+   "first_seen": "2026-05-19",
+   "last_moved": "2026-09-16",
+   "weight": 330
+  },
+  {
+   "id": "sap-rewrite",
+   "label": "The Salary Administration Plan rewrite",
+   "question": "Which bylaw changes to the town's pay plan pass, and what does the comp study cost?",
+   "kind": "rule;money",
+   "groups": "how-the-town-runs",
+   "tags": "personnel",
+   "boards": "",
+   "started": "2026-08-31",
+   "closes": "November STM and the spring ATM vote the bylaw changes",
+   "status": "open",
+   "resolved_on": "",
+   "note": "Three deferrals across two meetings, accelerating. Touches every town employee.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "Personnel Committee",
+     "board_slug": "personnel-committee",
+     "date": "2026-08-31",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Committee will consider a future SAP bylaw amendment exempting job descriptions reviewed and approved within a set prior period (e.g. two years) from re-review before posting, if there is no proposed change.",
+       "outcome": "",
+       "t": 1233,
+       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
+      },
+      {
+       "kind": "decision",
+       "text": "Committee will consider amending the SAP bylaw so votes require a majority rather than unanimous three-in-the-affirmative.",
+       "outcome": "",
+       "t": 3153,
+       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
+      },
+      {
+       "kind": "decision",
+       "text": "The item to align SAP longevity provisions with collective bargaining agreements will be held for the spring town meeting discussion rather than acted on now.",
+       "outcome": "",
+       "t": 3951,
+       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
+      },
+      {
+       "kind": "topic",
+       "text": "Job-description review requirement (SAP 7-7/7-7A) delaying posting of a vacant part-time data collector position; plan to hold a Thursday Zoom meeting",
+       "outcome": "",
+       "t": 273,
+       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
+      },
+      {
+       "kind": "topic",
+       "text": "Timing of comp/classification study, FY28 salary grid, funding via November town meeting and free cash",
+       "outcome": "",
+       "t": 2286,
+       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
+      },
+      {
+       "kind": "topic",
+       "text": "Advice on pacing which SAP amendments to bring to town meeting now versus in spring",
+       "outcome": "",
+       "t": 3260,
+       "video_url": "https://www.youtube.com/watch?v=DcEdUB3CsCU"
+      }
+     ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-09-09",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Accept/ratify the cafeteria workers' three-year contract (MOA) with new hourly salary schedule",
+       "outcome": "passed",
+       "t": 5388,
+       "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI"
+      }
+     ]
+    }
+   ],
+   "meetings": 2,
+   "boards_touched": 2,
+   "first_seen": "2026-08-31",
+   "last_moved": "2026-09-09",
+   "weight": 228
+  },
+  {
+   "id": "brooks-house",
+   "label": "Brooks House: what becomes of it",
+   "question": "Is Brooks House sold, leased, reused or demolished?",
+   "kind": "asset",
+   "groups": "buildings",
+   "tags": "facilities",
+   "boards": "",
+   "started": "2026-07-14",
+   "closes": "the Select Board adopts a disposition, or Town Meeting votes one",
+   "status": "open",
+   "resolved_on": "",
+   "note": "The town-meeting-directed report on sale or long-term lease was already OVERDUE in July 2026.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-07-14",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Plan a tour of municipal buildings (Town Hall, Ritter, public safety building, DPW, TCP, Brooks House) for select board members, likely timed for after the August election.",
+       "outcome": "",
+       "t": 1613,
+       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
+      },
+      {
+       "kind": "decision",
+       "text": "Town manager/staff (Director of Planning, with facilities director input) to draft the select board's overdue report on Brooks House sale or long-term lease options, targeted for completion by the fall town meeting.",
+       "outcome": "",
+       "t": 4546,
+       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
+      },
+      {
+       "kind": "topic",
+       "text": "Brooks House: overdue town-meeting-directed report on sale/lease, RFP options, renovation cost estimate",
+       "outcome": "",
+       "t": 3760,
+       "video_url": "https://www.youtube.com/watch?v=tlJWseLMwCE"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-07-28",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Select Board asked the Building Design Committee to bring back a formal recommendation/vote on the disposition of Brooks House.",
+       "outcome": "",
+       "t": 9664,
+       "video_url": "https://www.youtube.com/watch?v=1fNLbfV7UT4"
+      },
+      {
+       "kind": "topic",
+       "text": "Discussion of the Brooks House and lack of an identified municipal use for it",
+       "outcome": "",
+       "t": 9142,
+       "video_url": "https://www.youtube.com/watch?v=1fNLbfV7UT4"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-08-04",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "A tour of TC Pacios and Brooks House with the Municipal Building Design Committee was scheduled for Tuesday, August 11th at 4:00 p.m., to be posted as a public meeting.",
+       "outcome": "",
+       "t": 3968,
+       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
+      },
+      {
+       "kind": "decision",
+       "text": "TCP/Brooks House will remain a standing weekly select board agenda item rather than being tied to a fall town meeting article.",
+       "outcome": "",
+       "t": 4054,
+       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
+      },
+      {
+       "kind": "topic",
+       "text": "Municipal Building Design Committee discussion: Brooks House and TC Pacios condition, cost estimates, demolition vs. renovation",
+       "outcome": "",
+       "t": 2466,
+       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
+      },
+      {
+       "kind": "topic",
+       "text": "Scheduling tour of TCP and Brooks House",
+       "outcome": "",
+       "t": 4155,
+       "video_url": "https://www.youtube.com/watch?v=yz0b6T1GdWA"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-08-10",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Reminder of a posted meeting the next day at Brooks House then TCB",
+       "outcome": "",
+       "t": 706,
+       "video_url": "https://www.youtube.com/watch?v=UTAi2_3RDYU"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-08-11",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Opening statement and roll call at Brooks House",
+       "outcome": "",
+       "t": 13,
+       "video_url": "https://www.youtube.com/watch?v=7CbIQ2xhEw4"
+      },
+      {
+       "kind": "topic",
+       "text": "Brooks House tour: ADA/doorway width, balloon framing, fire escape issues",
+       "outcome": "",
+       "t": 97,
+       "video_url": "https://www.youtube.com/watch?v=7CbIQ2xhEw4"
+      },
+      {
+       "kind": "topic",
+       "text": "Food pantry representative's concerns about relocating into Brooks House",
+       "outcome": "",
+       "t": 298,
+       "video_url": "https://www.youtube.com/watch?v=7CbIQ2xhEw4"
+      },
+      {
+       "kind": "topic",
+       "text": "Brooks House basement, roof and remaining walkthrough",
+       "outcome": "",
+       "t": 590,
+       "video_url": "https://www.youtube.com/watch?v=7CbIQ2xhEw4"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-08-18",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Old business: Lunenburg municipal buildings (Brooks House, TCP, Ritter tour discussion)",
+       "outcome": "",
+       "t": 4322,
+       "video_url": "https://www.youtube.com/watch?v=YnQcT2BMWS4"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-09-15",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "The Brooks House long-term sale/lease report will be presented by subject-matter experts (planning, economic development and facilities staff) at the November special town meeting, closing out the November 2024 non-binding vote directive.",
+       "outcome": "",
+       "t": 4673,
+       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
+      },
+      {
+       "kind": "topic",
+       "text": "November 17th special town meeting: referral of zoning cleanup and stormwater fee bylaw articles to planning board; Brooks House report article",
+       "outcome": "",
+       "t": 4336,
+       "video_url": "https://www.youtube.com/watch?v=kig-BTakGjQ"
+      }
+     ]
+    }
+   ],
+   "meetings": 7,
+   "boards_touched": 1,
+   "first_seen": "2026-07-14",
+   "last_moved": "2026-09-15",
+   "weight": 133
+  },
+  {
+   "id": "dpw-union-contract",
+   "label": "The DPW union contract",
+   "question": "What is in the DPW contract, and what were the discrepancies labour counsel was asked to resolve?",
+   "kind": "contract",
+   "groups": "how-the-town-runs",
+   "tags": "contracts-and-unions",
+   "boards": "",
+   "started": "2026-07-07",
+   "closes": "the Select Board ratifies, or it returns to negotiation",
+   "status": "open",
+   "resolved_on": "",
+   "note": "CAN OF WORMS trigger, at n=1: \"Hold off ratifying ... until labor counsel resolves discrepancies.\"",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-07-07",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Hold off ratifying the new DPW union (Teamsters Local 170) contract until labor counsel resolves discrepancies.",
+       "outcome": "",
+       "t": 4523,
+       "video_url": "https://www.youtube.com/watch?v=eqCVy5g-wWE"
+      },
+      {
+       "kind": "topic",
+       "text": "DPW union (Teamsters Local 170) contract ratification",
+       "outcome": "",
+       "t": 4500,
+       "video_url": "https://www.youtube.com/watch?v=eqCVy5g-wWE"
+      }
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-07-27",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Ratify the collective bargaining agreement with Teamsters Union Local 170 (DPW).",
+       "outcome": "passed unanimously",
+       "t": 1014,
+       "video_url": "https://www.youtube.com/watch?v=5v_3VPZyn6U"
+      },
+      {
+       "kind": "topic",
+       "text": "Ratification of Teamsters Local 170 (DPW) collective bargaining agreement",
+       "outcome": "",
+       "t": 993,
+       "video_url": "https://www.youtube.com/watch?v=5v_3VPZyn6U"
+      }
+     ]
+    }
+   ],
+   "meetings": 2,
+   "boards_touched": 1,
+   "first_seen": "2026-07-07",
+   "last_moved": "2026-07-27",
+   "weight": 128
+  },
+  {
+   "id": "extended-day-fee",
+   "label": "The extended day programme fee",
+   "question": "Does the extended day programme fee go up, and by how much?",
+   "kind": "money",
+   "groups": "schools;what-i-pay",
+   "tags": "fees",
+   "boards": "",
+   "started": "2026-04-15",
+   "closes": "the School Committee votes the new fee",
+   "status": "open",
+   "resolved_on": "",
+   "note": "A direct cost to families.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-04-15",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Agreed to place an extended day program fee increase on a future meeting agenda rather than let the program run unsustainably.",
+       "outcome": "",
+       "t": 3453,
+       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
+      },
+      {
+       "kind": "topic",
+       "text": "Extended day program sustainability and proposed fee increase",
+       "outcome": "",
+       "t": 3453,
+       "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s"
+      }
+     ]
+    }
+   ],
+   "meetings": 1,
+   "boards_touched": 1,
+   "first_seen": "2026-04-15",
+   "last_moved": "2026-04-15",
+   "weight": 127
   },
   {
    "id": "paraprofessional-contract",
@@ -3977,7 +3817,158 @@
    "meetings": 1,
    "boards_touched": 1,
    "first_seen": "2026-09-16",
-   "last_moved": "2026-09-16"
+   "last_moved": "2026-09-16",
+   "weight": 127
+  },
+  {
+   "id": "sewer-pump-procurement",
+   "label": "The sewer pump station contract",
+   "question": "Does one multi-year contract cover sewer pump operations, maintenance and capital repair?",
+   "kind": "contract;project",
+   "groups": "water-sewer-roads",
+   "tags": "water-sewer",
+   "boards": "",
+   "started": "2026-09-08",
+   "closes": "the Special Town Meeting article, then the award",
+   "status": "open",
+   "resolved_on": "",
+   "note": "IRREVERSIBLE: single vendor, multi-year, lands on sewer ratepayers.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "Sewer Commission",
+     "board_slug": "sewer-commission",
+     "date": "2026-09-08",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Authorize development and advertising of a comprehensive procurement combining sewer pump station operations, maintenance, emergency services, and construction/capital repair work into a single multi-year contract, and recommend a warrant article authorizing the town to enter such a contract at the November 17, 2026 special town meeting.",
+       "outcome": "passed (heard as \"motion carries\")",
+       "t": 324,
+       "video_url": "https://www.youtube.com/watch?v=VMfaXMyKBII"
+      },
+      {
+       "kind": "topic",
+       "text": "Special town meeting article: sewer pump station O&M/construction procurement contract",
+       "outcome": "",
+       "t": 259,
+       "video_url": "https://www.youtube.com/watch?v=VMfaXMyKBII"
+      }
+     ]
+    }
+   ],
+   "meetings": 1,
+   "boards_touched": 1,
+   "first_seen": "2026-09-08",
+   "last_moved": "2026-09-08",
+   "weight": 127
+  },
+  {
+   "id": "veterans-exemption",
+   "label": "The veterans property tax exemption",
+   "question": "Does the veterans property tax exemption increase, and what does it shift onto other taxpayers?",
+   "kind": "money;rule",
+   "groups": "what-i-pay",
+   "tags": "tax-rate",
+   "boards": "",
+   "started": "2026-09-09",
+   "closes": "the November Special Town Meeting votes",
+   "status": "open",
+   "resolved_on": "",
+   "note": "Fired on the SCHEDULED-STEP clause at one mention -- the November STM warrant deadline.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-09-09",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "A placeholder will be requested for a veterans' exemption increase warrant article for the November 17th special town meeting, with research to be discussed at the September 23rd meeting.",
+       "outcome": "",
+       "t": 2039,
+       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg"
+      },
+      {
+       "kind": "topic",
+       "text": "Veterans property tax exemption increase and November special town meeting warrant article deadline",
+       "outcome": "",
+       "t": 1978,
+       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg"
+      }
+     ]
+    }
+   ],
+   "meetings": 1,
+   "boards_touched": 1,
+   "first_seen": "2026-09-09",
+   "last_moved": "2026-09-09",
+   "weight": 127
+  },
+  {
+   "id": "trust-fund-vacancy",
+   "label": "Trust fund administration during a vacancy",
+   "question": "Who administers the town trust funds when the commission has a vacancy?",
+   "kind": "rule;office",
+   "groups": "how-the-town-runs",
+   "tags": "legal",
+   "boards": "",
+   "started": "2026-09-10",
+   "closes": "the warrant article passes",
+   "status": "open",
+   "resolved_on": "",
+   "note": "The narrowed `office` kind: a deciding post going unfilled, not a routine appointment. A \"breach notice\" is also on the record.",
+   "closure": null,
+   "chronology": [
+    {
+     "board": "Trust Fund Commission",
+     "board_slug": "trust-fund-commission",
+     "date": "2026-09-10",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Approve the rewritten warrant article on continuity of trust fund administration during a vacancy on the board, as amended per the lawyer's comments, for submission to the select board/town meeting warrant",
+       "outcome": "passed unanimously (2-0), roll call: John Bowen aye, Richard Howard aye",
+       "t": 5275,
+       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
+      },
+      {
+       "kind": "decision",
+       "text": "The rewritten warrant article on continuity of trust fund administration will be sent up to replace the version previously submitted to town meeting.",
+       "outcome": "",
+       "t": 5296,
+       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
+      },
+      {
+       "kind": "topic",
+       "text": "Pooled trust fund investment performance and broader town fiscal policy discussion, including a proposed one-time lump-sum payment rate and capital planning tied to development",
+       "outcome": "",
+       "t": 394,
+       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
+      },
+      {
+       "kind": "topic",
+       "text": "School department scholarship/trust fund dispute: reading of a formal letter to the school committee, town manager, town counsel, treasurer and select board chair laying out statutory basis, prior correspondence, and request for a joint meeting and document production",
+       "outcome": "",
+       "t": 969,
+       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
+      },
+      {
+       "kind": "topic",
+       "text": "Full reading and vote on rewritten warrant article: Continuity of Trust Fund Administration During Vacancy on the Board of Commissioners of Trust Funds",
+       "outcome": "",
+       "t": 4933,
+       "video_url": "https://www.youtube.com/watch?v=7wCeOTdyvdc"
+      }
+     ]
+    }
+   ],
+   "meetings": 1,
+   "boards_touched": 1,
+   "first_seen": "2026-09-10",
+   "last_moved": "2026-09-10",
+   "weight": 127
   }
  ],
  "declined": [

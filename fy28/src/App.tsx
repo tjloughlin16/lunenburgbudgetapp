@@ -42,6 +42,7 @@ import { CourseOfferings } from './pages/CourseOfferings'
 import { LunenburgByTheNumbers } from './pages/LunenburgByTheNumbers'
 import { PropertyOwners } from './pages/PropertyOwners'
 import { Blog } from './pages/Blog'
+import { Threads } from './pages/Threads'
 import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
 import { Boards } from './pages/Boards'
@@ -513,6 +514,7 @@ export default function App() {
       {/* The archive at /blog and every post at /blog/<slug>, one component for both --
           the slug is the second path segment, the same shape /analysis/<id> uses. */}
       {tab === 'blog' && <Blog />}
+      {tab === 'threads' && <Threads />}
       {tab === 'search' && <Search />}
       {tab === 'recorded' && <WhatWasSaid />}
       {tab === 'boards' && (boardFinanceSlugFromPath(window.location.pathname) ? <BoardFinance /> : <Boards />)}

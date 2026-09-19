@@ -50,6 +50,10 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   // segment, `/blog/why-a-school-with-fewer-children-is-not-a-cheaper-school`, and
   // `blogSlugFromPath` below reads it. The bare `/blog` is the archive. See pages/Blog.
   | 'blog'
+  // The third two-segment address. One tab for every thread: the id is the second path
+  // segment, `/threads/stormwater-fee`, and `threadIdFromPath` below reads it. The bare
+  // `/threads` is the landing page. See pages/Threads.
+  | 'threads'
   | 'peers'
   | 'montytech'
   | 'required'
@@ -368,6 +372,15 @@ export const SLUG: Record<Tab, string> = {
   // the town's money. A post is shared into a Facebook group and the address travels with
   // it, so it has to read as an address somebody would click from a feed.
   blog: 'blog',
+  // NOT IN THE NAV AND NOT ON THE FRONT PAGE YET. TJ, 19 September 2026: "I want to test
+  // and not expose it yet." Reachable only by typing the address. When it ships it goes in
+  // NAV_ORDER.analyses immediately after `budgetfeed` -- the budget feed is the thread that
+  // always exists, and these are the ones that come and go.
+  // OUR WORD, AND IT STAYS IN THE URL WHILE NEVER APPEARING ON THE DOOR. READING-FLOW
+  // rules out "a door without scent" -- "the budget feed" was our name for a thing no
+  // resident had heard of, and `threads` is the same shape. The door says what is behind
+  // it ("What the town is deciding now"); the address stays short and stable.
+  threads: 'threads',
   // THE ONE WORD. A search box is the most-understood affordance on the web and it is
   // reached by typing the word; `find` is what the /minutes/find/ endpoint for callers
   // uses and is accepted as an alias.
@@ -438,7 +451,12 @@ export const SLUG: Record<Tab, string> = {
 // front page, beside the crisis. TJ: "The point of the crisis page is not just cost to
 // the tax payers. It's also insight to the board leaders. Hard decisions need to be made.
 // They are looking for the solutions. The crisis page is the context."
-export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis'])
+// `threads` is here while it is being tested. TJ, 19 September 2026: "I want to test and
+// not expose it yet." UNLISTED keeps it out of the sitemap, and therefore out of IndexNow
+// and out of the agent-reachable surface -- being INDEXED is what reaches several agent
+// search tools, so a page in the sitemap is exposed whether or not anything links to it.
+// Remove it from this set and add it to NAV_ORDER.analyses on the same commit that ships.
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'threads'])
 
 /** Pages that are INSTRUMENTS, not reads: an index, a register, a search box, a
  *  catalogue. Nobody reads a register top to bottom; they search it. So these carry no
@@ -447,7 +465,7 @@ export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis'])
  *  "92 min" on /what-we-cannot-answer was true of the words and false of the visit.
  *  Read by components/ReadingTime.tsx and by scripts/build_reading_time.py. */
 export const REFERENCE: ReadonlySet<Tab> = new Set<Tab>([
-  'sources', 'reports', 'database', 'rates', 'gaps', 'recorded', 'boards', 'blog',
+  'sources', 'reports', 'database', 'rates', 'gaps', 'recorded', 'boards', 'blog', 'threads',
   'search', 'agents', 'ask', 'dataroom', 'deeper', 'thisweek', 'budgetfeed',
   // Indexes of other pages, and the question form.
   'sped', 'themoney', 'askus',
@@ -685,6 +703,10 @@ const ALIASES: Record<string, Tab> = {
   'who-lives-here': 'bythenumbers', 'who-lives-in-lunenburg': 'bythenumbers',
   demographics: 'bythenumbers', census: 'bythenumbers', acs: 'bythenumbers',
   blog: 'blog', posts: 'blog', 'the-blog': 'blog', updates: 'blog',
+  threads: 'threads', thread: 'threads', 'open-threads': 'threads',
+  'what-the-town-is-deciding': 'threads', 'being-decided': 'threads',
+  'still-open': 'threads', 'whats-open': 'threads', 'what-is-open': 'threads',
+  'decisions': 'threads', 'pending': 'threads', 'in-progress': 'threads',
   'this-week': 'thisweek', 'this-week-in-town': 'thisweek', feed: 'thisweek', 'meeting-feed': 'thisweek',
   'meeting-minutes': 'recorded', 'what-was-said': 'recorded', 'recording-minutes': 'recorded', 'our-minutes': 'recorded',
   minutes: 'recorded',
@@ -801,6 +823,7 @@ export const LABEL: Record<Tab, string> = {
   bythenumbers: 'Lunenburg by the numbers — who lives here',
   owners: 'Lunenburg’s homes and the tax bill',
   blog: 'The blog — one finding at a time, in two minutes',
+  threads: 'What the town is deciding now',
   required: 'What the state requires us to spend — and where that puts us',
   addsup: 'The One Big Report',
   analysis: 'An analysis',
@@ -849,6 +872,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   bythenumbers: 'reports',
   owners: 'reports',
   blog: 'reports',
+  threads: 'reports',
   recorded: 'reports',
   boards: 'reports',
   budgetfeed: 'reports',
@@ -891,6 +915,8 @@ export function tabFromPath(pathname: string): Tab {
   if (seg.startsWith('analysis/')) return 'analysis'
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'
+  // The third. Every thread shares one page component; the id is in the path.
+  if (seg.startsWith('threads/')) return 'threads'
   if (seg.startsWith('meeting-minutes/') || seg.startsWith('what-was-said/')) return 'recorded'
   if (seg === 'boards/compared') return 'boardcompare'
   if (seg === 'boards/school-committee/finance') return 'schoolfinance'
@@ -952,6 +978,12 @@ export function recordedSlugFromPath(pathname: string): string | null {
 
 export function blogSlugFromPath(pathname: string): string | null {
   const m = /^\/blog\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
+  return m ? m[1] : null
+}
+
+/** The thread a `/threads/<id>` address names, or null for the landing page at `/threads`. */
+export function threadIdFromPath(pathname: string): string | null {
+  const m = /^\/threads\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
   return m ? m[1] : null
 }
 
@@ -1053,6 +1085,7 @@ const AREA_OF: Partial<Record<Tab, Area>> = {
   bythenumbers: 'analyses',
   owners: 'analyses',
   blog: 'analyses',
+  threads: 'analyses',
   recorded: 'analyses',
   boards: 'analyses',
   budgetfeed: 'analyses',

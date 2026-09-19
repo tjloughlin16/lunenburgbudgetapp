@@ -41,6 +41,7 @@ three boards. Votes are keyed on (board, date, motion) and deduped.
 import argparse
 import collections
 import csv
+import datetime as dt
 import glob
 import json
 import os
@@ -64,9 +65,17 @@ def norm_motion(s):
 
 def the_record():
     """Every meeting we can read, one row per (board, date), votes deduped across parts."""
-    by = {}
+    by, future = {}, []
+    today = dt.date.today().isoformat()
     for f in sorted(glob.glob(os.path.join(MINUTES, '*', '*.json'))):
         j = json.load(open(f, encoding='utf-8'))
+        # A MEETING CANNOT HAVE HAPPENED TOMORROW. Three minutes files carry dates a model
+        # read wrong (2027-11-06, 2027-01-16, and a 2021 Parks meeting). Left in, the worst
+        # of them made a thread report `last moved 2027-01-16` and sort to the top of the
+        # page -- a date defect arriving as a ranking, which is the hardest kind to notice.
+        if (j.get('meeting_date') or '') > today:
+            future.append((j['board_slug'], j.get('meeting_date'), os.path.relpath(f, ROOT)))
+            continue
         key = (j['board_slug'], j.get('meeting_date') or '')
         m = j.get('minutes') or {}
         rec = by.setdefault(key, {'board_slug': key[0], 'board': j.get('board') or key[0],
@@ -87,7 +96,7 @@ def the_record():
             rec['items'].append({'kind': 'topic', 'text': t.get('topic') or '', 't': t.get('t_start')})
     for r in by.values():
         r.pop('seen', None)
-    return by
+    return by, future
 
 
 def official_votes():
@@ -168,7 +177,7 @@ def chronology(t, record):
 
 
 def build():
-    record, official = the_record(), official_votes()
+    (record, future), official = the_record(), official_votes()
     threads, problems = [], []
     for t in read_csv(THREADS):
         chron = chronology(t, record)
@@ -178,6 +187,13 @@ def build():
         if not (t.get('closes') or '').strip():
             problems.append('%s has no closure criterion' % t['id'])
         mts = [c['date'] for c in chron]
+        # THE ORDER OF THE TOP BAND, AND IT IS NOT THE §2 BAR. The bar scores a CANDIDATE
+        # from the words of one item; a registered thread has a history, and the history is
+        # better evidence than the sentence that started it. Cross-board spread was the
+        # strongest single predictor in the manual pass -- every confirmed thread reached a
+        # second board early and every false positive stayed put -- so it leads, then how
+        # recently the thread moved, then how much of the record it touches.
+        # It is named `weight` and not `importance`: the page says what it ordered on.
         threads.append(dict(
             {k: t[k] for k in ('id', 'label', 'question', 'kind', 'groups', 'tags', 'boards',
                                'started', 'closes', 'status', 'resolved_on', 'note')},
@@ -187,11 +203,17 @@ def build():
             boards_touched=len({c['board_slug'] for c in chron}),
             first_seen=mts[0] if mts else '',
             last_moved=mts[-1] if mts else '',
+            weight=(len({c['board_slug'] for c in chron}) * 100
+                    + int((mts[-1] if mts else '0000-00-00').replace('-', '')[2:6] or 0) // 100
+                    + min(len(chron), 40)),
         ))
     # THE DENOMINATOR, ON EVERY RUN (THREADS-MODEL §7 and search_minutes.py). A thread that
     # went quiet because the RECORD went quiet is not a thread where nothing happened, and
     # the boards with the thinnest minutes are not the boards with the least happening.
-    cov = {'meetings_readable': len(record),
+    threads.sort(key=lambda t: (-t['weight'], t['label']))
+    cov = {'dated_in_the_future_and_excluded': [{'board': b, 'date': d, 'file': f} for b, d, f in future],
+           'rank_basis': 'boards touched, then how recently it moved, then meetings in the record',
+           'meetings_readable': len(record),
            'boards_readable': len({s for s, _ in record}),
            'town_meeting_readable': len([1 for s, _ in record if s == 'town-meeting']),
            'official_town_meeting_years': sorted({r['fy'] for r in read_csv(TMVOTES)})}

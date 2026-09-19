@@ -222,6 +222,27 @@ export function Home() {
           <button type="submit" className="px-3.5 py-2 text-sm font-semibold rounded-lg shrink-0"
             style={{ background: 'var(--series-cost)', color: '#fff' }}>Search</button>
         </form>
+        {/* THE GROUP, ON ONE LINE. TJ, 19 September 2026: "put a JOIN OUR FACEBOOK GROUP
+            link on the home page somewhere obvious. Without being obnoxious."
+
+            Obvious is the position, not the volume: it is above the fold, in the header,
+            where a reader is already looking. Not obnoxious is everything else -- one
+            line, no box, no button, no badge and no count. It is deliberately NOT a door:
+            the doors are the four things this site can answer, and a link off the site is
+            not one of them. It sits under the search box because both are things you do
+            with the project rather than things it tells you, and because a door slot given
+            to Facebook is a door taken from the budget.
+
+            The address is the share link the group itself hands out, so it keeps working
+            if the group is renamed. */}
+        <p className="mt-3 text-[13px]" style={{ color: 'var(--text-secondary)' }}>
+          Residents discuss this work in the{' '}
+          <a href="https://www.facebook.com/share/g/1DvbEb9wnW/"
+            target="_blank" rel="noreferrer noopener"
+            className="underline font-semibold" style={{ color: 'var(--series-cost)' }}>
+            Lunenburg Budget Project group on Facebook
+          </a>{' '}&mdash; questions, corrections and what people are hearing.
+        </p>
       </header>
 
       {/* TWO COLUMNS BY TEMPO. Left is the map -- the doors, which change monthly. Right
