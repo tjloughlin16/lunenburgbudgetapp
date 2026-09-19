@@ -870,3 +870,111 @@ number.
 resolve to a vote, or if any thread has no closure criterion. Verified by breaking both
 deliberately. A registry that quietly accepts an unresolvable closure is how the typed
 prose survived in the first place.
+
+---
+
+## 19. The QA pass, 19 September 2026 — five defects, and what each one teaches
+
+The registry, the resolver and the pages were built in one sitting and then read
+adversarially. Every finding below was in shipped code.
+
+### 19a. The rule in §2, broken by the person who wrote it
+
+§2 says a thread matches an **entity AND a qualifier**, and gives Turkey Hill as the worked
+example. Both Turkey Hill threads were then seeded matching the bare entity, `turkey hill`,
+because **the schema had no column to put a qualifier in**. The result: the ADA thread's
+items were **46 of 46 shared** with the rebuild thread — one thread rendered twice, on a
+page whose whole purpose is to separate matters.
+
+`qualify` is now a column. Shared items fell to 1.
+
+**The lesson is about schemas, not attention.** A rule written in prose and given no field
+to live in will be broken by whoever fills the file in, including its author on the same
+day. If a rule constrains the data, the data shape has to be able to express it.
+
+### 19b. `started` and `match` were compensating for each other
+
+Every thread's pattern was checked against the whole record rather than its own window, and
+almost all of them claimed items from years before the matter existed:
+
+    sap-rewrite             matched a DIFFERENT YEAR'S salary schedule article, 2022
+    middle-school-sports    matched a citizen petition about the SEWER SERVICE AREA MAP
+    solid-waste-enterprise  matched solid waste removal at Woodruff, 2022
+
+None of those is the matter. None was excluded by a pattern — all were hidden by a date.
+**Two mechanisms, each covering the other's weakness, which is the shape every compensating
+error in this repository has had.**
+
+A pattern general enough to be useful — `surplus`, `salary schedule` — cannot be made
+precise, so the answer is not to fix the patterns. It is to **count what each one would
+claim outside its own window and print it**, so a thread leaning on its start date is
+legible as one. Writing qualifiers took the worst from 56 to 8.
+
+And the check found one genuine error the compensation was hiding: **`kids-kingdom` began
+eight months before the date it was given** — the School Committee was *"split on the Kids
+Kingdom move"* in February 2025.
+
+### 19c. Our vocabulary was rendering to residents
+
+`note` is the registry's own margin — *ENTITY vs MATTER*, *CAN OF WORMS trigger, at n=1*,
+*POLYSEMY*, *IRREVERSIBLE* — and the thread page was drawing it under the heading **"What
+this does not show"**. Rule 7b's second named failure, on the exact page most likely to be
+quoted.
+
+`note` is no longer published at all. `caveat` carries the reader's half, in English, and
+each one says what the record does NOT establish rather than what we found clever about it.
+
+### 19d. The style pass: invented colours, and a second copy of a scale
+
+The page used `--border`, `--ok`, `--warn` and `--bg`. **None exists in this stylesheet**,
+so every hardcoded fallback was what actually rendered — three off-palette values that
+ignore the theme. It also carried its own two-state provenance badge, when
+`components/Basis.tsx` already holds the scale and says why there may only be one: *"two
+copies of a scale is two scales."*
+
+Our captions are `stated` — *a document says so and nothing independent checks it*. The
+Clerk's printed record is `cross-checked` **only where a recording of the same meeting
+exists to set against it**; where the report is the only record it is authoritative and
+still unchecked, so it stays `stated`. Overstating the Clerk is the same failure as
+overstating the captions, pointed the other way.
+
+Three structural fixes came with it: each landing section now means one thing (the groups
+browse OPEN threads; Settled owns the archive) instead of showing one row three times; the
+chronology runs newest-first while open and start-to-finish once settled, which is what
+§14d said and the first cut did not do; and `/threads/<unknown>` says so rather than
+silently rendering the index.
+
+### 19e. A regex that hung for three hours, and left correct data behind
+
+`PAGE_BREAK` was `\s*\d{0,4}\s*===PAGE \d+===\s*` — **two unbounded `\s*` either side of an
+optional number, leading the pattern.** At every position inside a whitespace run the engine
+tries every way of splitting that run before failing to find the literal, and an OCR'd
+annual report is mostly whitespace. On the 648 KB FY2018 report it did not finish in three
+hours.
+
+**The dangerous part is not the hang. It is where the hang was.** It came *after* that
+year's rows were written, so the backfill had correct data on disk, a live process, and no
+output — and was reported as running for three hours. A failure that leaves the data right
+and simply stops is the hardest kind to see.
+
+Two literal-anchored passes replace it: remove `===PAGE \d+===`, then remove lines holding
+nothing but one to four digits. Both start with something fixed, so the engine has one
+place to try per position instead of hundreds. `--check` went from not finishing to **0.38
+seconds**, and it now covers all 263 articles rather than the 143 it had managed before.
+
+> **Never lead a pattern with `\s*` before a literal**, and never let a long-running job's
+> progress travel through a pipe that buffers — the last run went through `grep`, whose 4 KB
+> buffer held a year's output invisibly. `python3 -u`, and the shell writes its own markers.
+
+### 19f. What the check now says, in three numbers
+
+    251 of 263 verbatim UNDER THEIR OWN ARTICLE HEADING
+     10 verbatim, but under another heading
+      2 whose heading could not be located, verified against the document only
+
+The 10 are now a pattern rather than a mystery: *"VOTED TO POSTPONE INDEFINITELY Article
+20."*, *"Article 4 was PASSED OVER."*, *"ARTICLE 10 W AS P ASSED OVER"*. **A consent
+calendar disposes of several articles in one printed sentence, outside any article's span.**
+Four of the ten are that shape. It is a real feature of the document and not an extraction
+error — and it is still reported separately rather than forgiven, because the remaining six
+are not yet explained.
