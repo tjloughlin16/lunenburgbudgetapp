@@ -77,7 +77,7 @@ def ago(ts):
 # which PROCESS is costing money right now.
 #
 # So the parent stays green and names its spend as a figure; the child carries the tag.
-AGENTIC = {'Our minutes', 'Votes', 'Backlog sweep', 'Budget state'}
+AGENTIC = {'Writing up a recorded meeting', 'Reading the votes out of the town’s minutes', 'Backlog sweep', 'Reading what a budget meeting decided'}
 
 # WHAT EACH JOB IS, IN ONE LINE A PERSON WOULD SAY. TJ, 19 September 2026: "I think these
 # steps need descriptions too, short descriptions. the 'votes' one keeps getting me."
@@ -91,24 +91,24 @@ AGENTIC = {'Our minutes', 'Votes', 'Backlog sweep', 'Budget state'}
 # `sleeps` marks a wrapper that spends most of its life waiting: alive is not working, and
 # a page that cannot tell them apart says "running" about a process asleep in a backoff.
 WATCHED = [
-    ('YouTube captions', r'[f]etch_youtube_transcripts\.py',
-     'Downloads the machine captions of one batch of meeting recordings.', False),
+    ('Fetching captions', r'[f]etch_youtube_transcripts\.py',
+     'The machine captions of a recording, so a meeting nobody minuted can still be '
+     'searched. One batch at a time.', False),
     ('Caption backfill', r'[r]un_transcript_backfill\.sh',
      'Works through the recordings with no captions yet, newest first. Backs off for '
      'longer and longer when YouTube refuses, so it is asleep more often than not.', True),
-    ('OCR of scans', r'[o]cr_scanned_minutes\.py|[o]cr_pdf',
-     'Reads minutes the town posted as page images, so they become searchable text.', False),
+    ('Reading scanned minutes', r'[o]cr_scanned_minutes\.py|[o]cr_pdf',
+     'Minutes the town posted as page images are invisible to search until a reader looks '
+     'at the pixels. Local and free.', False),
     ('Daily refresh', r'[r]efresh\.py|[d]aily_refresh\.sh',
      'The 7am run: check the town and the channel, fetch what is new, rebuild, deploy.', False),
-    ('Our minutes', r'[w]rite_recording_minutes\.py',
-     'Writes OUR record of a meeting from our captions of the video — decisions, '
-     'transfers, topics, public comment and votes. Used where the town published no '
-     'minutes at all.', False),
-    ('Votes', r'[e]xtract_official_votes\.py',
-     'Reads the minutes THE TOWN published and pulls out just the votes, each with the '
-     'town’s own words quoted. Nothing else from the document — their minutes are '
-     'already the record.', False),
-    ('Budget state', r'[w]rite_budget_state\.py',
+    ('Writing up a recorded meeting', r'[w]rite_recording_minutes\.py',
+     'Our record of what happened, from our captions: decisions, votes, transfers, '
+     'topics, public comment. Used where the town published no minutes at all.', False),
+    ('Reading the votes out of the town’s minutes', r'[e]xtract_official_votes\.py',
+     'Just the votes, each with the town’s own words quoted. Nothing else from the '
+     'document — their minutes are already the record.', False),
+    ('Reading what a budget meeting decided', r'[w]rite_budget_state\.py',
      'Reads a budget meeting and records what it put on the record: the deficit, the '
      'cuts, the proposals. Feeds the budget season page.', False),
     ('Backlog sweep', r'[s]weep_backlog\.py',
@@ -156,9 +156,9 @@ def etime_seconds(e):
 # Every stream that records WHEN it did a thing is counted from that record. A stream with
 # no such record reports nothing rather than a figure from an adjacent quantity.
 SINCE = {
-    'YouTube captions': ('youtube-transcript-index.csv', 'fetched_at'),
+    'Fetching captions': ('youtube-transcript-index.csv', 'fetched_at'),
     'Caption backfill': ('youtube-transcript-index.csv', 'fetched_at'),
-    'OCR of scans':     ('ocr-minutes.csv', 'ocr_at'),
+    'Reading scanned minutes':     ('ocr-minutes.csv', 'ocr_at'),
 }
 
 
@@ -193,25 +193,83 @@ def scope(name, cmd, elapsed):
 # So anything running out of scripts/ is discovered, whether or not it is described.
 # A described job gets its sentence; an undescribed one still appears, named, which is a
 # visible prompt to describe it rather than an invisible gap.
+# EVERY STEP, IN THE WORDS OF WHAT IT DOES FOR THE TOWN.
+#
+# TJ, 19 September 2026: "Give descriptive titles and descriptions. build_boards.py is a
+# script ;)"
+#
+# Quite. A filename is what WE call the thing; this page is read to find out what the
+# machine is doing, and `tag_document_affinity.py` answers that for nobody. The fallback
+# to a filename stays -- an undescribed step must still appear, because a silent gap is
+# what let write_budget_state.py run unlisted -- but it is a prompt to write a line here,
+# not a place to leave one.
+#
+# Each entry is a TITLE saying what changes in the world, and a sentence saying why a
+# resident would care.
 STEP_WORDS = {
-    'watch_meetings': ('Watching the Agenda Center', 'Checking every board’s page for agendas and minutes we do not hold.'),
-    'watch_documents': ('Watching the budget pages', 'Checking the district’s budget pages and the town’s finance pages for new documents.'),
-    'watch_feeds': ('Watching the town’s feeds', 'The news flash and alert feeds — announcements, closures, warrants.'),
-    'watch_youtube': ('Watching the channel', 'The town’s YouTube feed, for recordings of meetings.'),
-    'fetch_agendas': ('Downloading agendas and minutes', 'Fetching the documents the watcher found that we do not already hold.'),
-    'fetch_town_docs': ('Downloading town documents', 'Fetching what is new on the town’s own pages.'),
-    'fetch_school_budget_docs': ('Downloading district documents', 'Fetching what is new on the district’s budget pages.'),
-    'extract_minutes': ('Extracting text', 'Pulling the words out of newly downloaded PDFs and Word files.'),
-    'build_minutes_searchable': ('Indexing the minutes', 'Making the new text findable by search.'),
-    'build_youtube_classification': ('Matching recordings to meetings', 'Working out which board and date each new video belongs to.'),
-    'write_agenda_preview': ('Previewing agendas', 'A plain-language summary of what an upcoming meeting will cover.'),
-    'write_document_budget_state': ('Reading new budget documents', 'What a new document says about the budget being built.'),
-    'write_budget_state': ('Reading budget meetings', 'What a meeting put on the record: the deficit, the cuts, the proposals.'),
-    'reconcile_minutes': ('Reconciling minutes', 'Ours against the town’s: caption errors resolved, real differences flagged.'),
-    'build_budget_season': ('Rebuilding the budget season', 'The season page, from what the record now says.'),
-    'build_search_index': ('Rebuilding search', 'One index over pages, documents, minutes and captions.'),
-    'extract_document_timestamps': ('Dating the documents', 'When each agenda and set of minutes was MADE, from the file’s own metadata — a lower bound on when the town posted it.'),
-    'watch_feeds': ('Watching the town’s feeds', 'The news flash and alert feeds — announcements, closures, warrants.'),
+    # --- looking
+    'watch_meetings': ('Checking for new agendas and minutes',
+        'Every board’s page on the town’s Agenda Center, for anything posted since the last look.'),
+    'watch_documents': ('Checking the budget pages',
+        'The district’s budget pages and the town’s finance pages, for documents that were not there yesterday.'),
+    'watch_feeds': ('Checking the town’s announcements',
+        'The news flash and alert feeds: closures, warrants, elections.'),
+    'watch_youtube': ('Checking for new recordings',
+        'The town’s YouTube channel, for meetings that have just been posted.'),
+    # --- getting
+    'fetch_agendas': ('Downloading agendas and minutes',
+        'Saving a copy of everything the town posted that this archive does not already hold.'),
+    'fetch_town_docs': ('Downloading town documents',
+        'Saving new documents from the town’s own pages.'),
+    'fetch_school_budget_docs': ('Downloading district documents',
+        'Saving new documents from the district’s budget pages — many of them Google Drive links that die.'),
+    'fetch_youtube_transcripts': ('Fetching captions',
+        'The machine captions of a recording, so a meeting nobody minuted can still be searched.'),
+    # --- reading
+    'extract_minutes': ('Reading the new files',
+        'Pulling the words out of the PDFs and Word files just downloaded, so they can be searched.'),
+    'ocr_scanned_minutes': ('Reading scanned minutes',
+        'Minutes the town posted as page images are invisible to search until a reader looks at the pixels.'),
+    'extract_document_timestamps': ('Dating the documents',
+        'When each agenda and set of minutes was MADE, from the file’s own metadata — a lower bound on when the town could have posted it.'),
+    'build_youtube_classification': ('Matching recordings to meetings',
+        'Working out which board and which date each new video belongs to.'),
+    'tag_document_affinity': ('Tagging documents by subject',
+        'So a search for a subject finds the document about it even when the document never uses that word.'),
+    'reconcile_minutes': ('Comparing our minutes with the town’s',
+        'Where both exist: caption mistakes resolved against the record, real differences flagged.'),
+    # --- writing
+    'write_recording_minutes': ('Writing up a recorded meeting',
+        'Our record of what happened, from our captions: decisions, votes, transfers, topics, public comment.'),
+    'extract_official_votes': ('Reading the votes out of the town’s minutes',
+        'Each vote with the town’s own words quoted, so votes can be counted and checked.'),
+    'write_budget_state': ('Reading what a budget meeting decided',
+        'The deficit, the cuts and the proposals a meeting put on the record.'),
+    'write_document_budget_state': ('Reading what a new budget document says',
+        'What a document just published changes about the budget being built.'),
+    'write_agenda_preview': ('Previewing an upcoming meeting',
+        'A plain-language note on what a meeting is about to cover, before it happens.'),
+    # --- publishing
+    'build_minutes_searchable': ('Indexing the new minutes',
+        'Making the text just read findable by search.'),
+    'build_search_index': ('Rebuilding search',
+        'One index across pages, documents, minutes and captions.'),
+    'build_meeting_register': ('Rebuilding the meeting record',
+        'One row per meeting with every artifact on it — the list every page reads to know what happened.'),
+    'build_boards': ('Rebuilding the board pages',
+        'One page per board: what is coming, what happened, every vote, where the time goes.'),
+    'build_budget_feed': ('Rebuilding the budget feed',
+        'Everything budget-related across every board, on one page.'),
+    'build_budget_season': ('Rebuilding the budget season',
+        'The season as a status board, from what the record now says.'),
+    'build_meeting_feed': ('Rebuilding the meeting feed',
+        'What is coming, and whose minutes have just appeared.'),
+    'build_notices': ('Writing the notices',
+        'What to tell people before a meeting, and what to tell them after.'),
+    'build_recording_minutes': ('Publishing our minutes',
+        'Putting the meetings we wrote up onto the site.'),
+    'build_feeds': ('Rebuilding the subscriptions',
+        'The Atom feeds a resident subscribes to: one per board, one for the budget, one for everything.'),
 }
 
 
@@ -1025,9 +1083,9 @@ def done_today():
         return len(ts), max(ts) if ts else ''
 
     n, last = from_registry('ocr-minutes.csv', 'ocr_at')
-    card('OCR of scans', 'scans read', n, last)
+    card('Reading scanned minutes', 'scans read', n, last)
     n, last = from_registry('youtube-transcript-index.csv', 'fetched_at')
-    card('YouTube captions', 'transcripts fetched', n, last)
+    card('Fetching captions', 'transcripts fetched', n, last)
 
     # The reading jobs print one line each as they finish, in today's run log, and the
     # sweep logs its own to agentic-spend.csv. Both carry a real time.
@@ -1037,9 +1095,9 @@ def done_today():
         with open(log, encoding='utf-8', errors='replace') as fh:
             text = fh.read()
     spend = [r for r in rows('agentic-spend.csv') if (r.get('at') or '').startswith(today)]
-    card('Our minutes', 'meetings written up',
+    card('Writing up a recorded meeting', 'meetings written up',
          len(re.findall(r'written \(\$', text)) + sum(1 for r in spend if r['stream'] == 'minutes'))
-    card('Votes', 'sets of minutes read',
+    card('Reading the votes out of the town’s minutes', 'sets of minutes read',
          len(re.findall(r'wrote \d+ vote', text)) + sum(1 for r in spend if r['stream'] == 'votes'))
 
     # What the WATCHERS found today: seeing, not making, and a different kind of work.
@@ -1060,10 +1118,10 @@ def done_today():
     # same work twice on one panel is the discrepancy this page exists to prevent, and the
     # registry card is the better of the two because it counts what landed.
     named = {c['name'] for c in out}
-    counted = {'write_recording_minutes': 'Our minutes',
-               'extract_official_votes': 'Votes',
-               'ocr_scanned_minutes': 'OCR of scans',
-               'fetch_youtube_transcripts': 'YouTube captions'}
+    counted = {'write_recording_minutes': 'Writing up a recorded meeting',
+               'extract_official_votes': 'Reading the votes out of the town’s minutes',
+               'ocr_scanned_minutes': 'Reading scanned minutes',
+               'fetch_youtube_transcripts': 'Fetching captions'}
     runs = collections.Counter()
     secs = collections.Counter()
     for x in finished(400):
