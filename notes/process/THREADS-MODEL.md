@@ -824,3 +824,49 @@ In §16 the two highest-scored rows were report bundles; those are gone. But the
 contract -- the clearest new thread in the window -- is claimed and so no longer ranked,
 and PFAS scores 2. **The bar is good enough to order a list a person reads and is not good
 enough to cut on.** Do not let a future change quietly turn it into a filter.
+
+
+## 18. A closure is a REFERENCE, not a sentence — and the first four were wrong
+
+Within an hour of seeding `threads.csv` by hand, two of its four resolved threads had
+closures that do not survive contact with the record. Both were prose typed into a cell,
+which is rule 2's territory exactly: *a number typed into a sentence is the only thing here
+that can be silently wrong.*
+
+| filed as | what the record holds |
+|---|---|
+| `solid-waste-enterprise`: *"Article Y recommended 5-0, then carried at Town Meeting"* | **The 2 May 2026 ATM record contains no solid-waste or enterprise-fund vote or topic at all** besides Article 14 (PEG access). The FinCom's 5-0 recommendation on 31 Mar 2026 is real; what Town Meeting did is unknown to us. **Returned to `open`**, with the missing document named. |
+| `fourth-fire-shift`: *"moved off the override into the omnibus and retained"* | Article 10, the FY27 balanced budget, passed 340-68 -- and **the budget does not itemise the shift**. That it was retained rests on the Select Board record of 16 Mar 2026, not on this vote. Kept resolved, with that distinction written into the note (rule 7). |
+
+So the registry stopped carrying sentences about votes. It carries `closed_board`,
+`closed_date`, `closed_article` and `closed_match`, and `scripts/build_threads.py`
+**resolves the motion, the outcome and the tally from the record**. Nothing about a vote is
+typed by a person, and a page renders what the record says rather than what somebody
+believed when they wrote the row.
+
+### 18a. The merge happens by itself
+
+`resolve_closure()` prefers the **official** record -- the Town Clerk's printed proceedings
+in the annual report -- and falls back to **ours** (our minutes of the recording, from
+machine captions) only while the first does not exist. Every closure states which it used
+in `basis`, and a caption-derived one carries the as-heard caveat.
+
+The annual report runs about a year behind, so all three resolved threads today are `ours`
+and each upgrades to `official` the day that year's report is extracted -- **with no edit to
+the registry.** That is TJ's *"accept the transcript version, then merge"* built in rather
+than remembered.
+
+### 18b. Precedence between motions is not cosmetic
+
+Several motions can name one article. At the 3 September 2026 Special Town Meeting the
+School Committee moved to **support** article 3 before Town Meeting moved the transfer
+itself, and matching on the article number alone picked the supporting motion and called it
+the closure. The order is: the number **and** the subject, then the subject, then the
+number.
+
+### 18c. The build refuses rather than writes
+
+`build_threads.py` will not write if a thread says `resolved` and its closure does not
+resolve to a vote, or if any thread has no closure criterion. Verified by breaking both
+deliberately. A registry that quietly accepts an unresolvable closure is how the typed
+prose survived in the first place.
