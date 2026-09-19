@@ -119,6 +119,8 @@ WATCHED = [
 ]
 
 # A wrapper is WORKING only while one of these is alive under it.
+WHAT = {name: what for name, _, what, _ in WATCHED}
+
 CHILD_OF = {'Caption backfill': r'[f]etch_youtube_transcripts\.py',
             'Daily refresh': r'[a-z_]+\.py'}
 
@@ -767,7 +769,8 @@ color:#8b949e;margin:26px 0 10px;font-weight:600}
 .on{border-left:3px solid #3fb950}
 .alert{border:1px solid #f85149;border-left:4px solid #f85149;background:#2b1214}
 .warnbox{border:1px solid #9e6a03;border-left:4px solid #d29922;background:#241c0c}
-.runbox{border:1px solid #2ea043;border-left:4px solid #3fb950;background:#0f1f14}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
+.runbox{border:1px solid #2ea043;border-left:4px solid #3fb950;background:#0f1f14}
+.card.done{border-left:3px solid #30363d}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
 .row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .grow{flex:1;min-width:200px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
 .num{font-variant-numeric:tabular-nums}
@@ -896,6 +899,81 @@ def alert():
 
 
 
+
+# WHAT GOT DONE TODAY, BY CATEGORY. TJ, 19 September 2026: "the 'finished recently' is the
+# individual jobs, but that's too detailed for me to draw insights from it, and it doesnt
+# give me overall COUNTS of what was done and the category (Youtube found X videos. Built
+# 100 transcripts)."
+#
+# Right: a list of fourteen steps with durations is a TRACE, and a trace is what you read
+# when something went wrong. What a person wants on opening the page is the day's result
+# -- how many transcripts, how many scans read, how many votes -- in the same shape as the
+# running cards, so a job reads the same whether it is working or done.
+#
+# Counted from the files themselves rather than from anything a script printed. A log line
+# says what a script believed; a file on disk with today's mtime is what actually landed,
+# and the two have already disagreed on this page once (the refresh's own summary, written
+# at the end, describing runs that never reached it).
+# COUNTED FROM WHAT TIMESTAMPED THE WORK, NEVER FROM mtime.
+#
+# The first version of this counted files whose mtime fell after midnight and reported
+# "11,795 scans read today" against an archive holding 1,687 of them. Two things touch
+# mtimes in bulk and neither is work: extract_minutes.py rewrites every text file it
+# checks, and the refresh tree runs `git reset --hard origin/main` before every run, which
+# restamps everything that changed. A file's mtime answers "when was this last written",
+# and the question here is "when was this DONE" -- adjacent, and not the same (rule 7's
+# proxy trap, in the instrument rather than the analysis).
+#
+# So every count comes from a registry that records when the work happened, or from the
+# run log, which prints each job as it completes. Where neither exists, the category is
+# left out rather than estimated.
+def done_today():
+    """One card per category: how many landed today, and when the last one did."""
+    today = dt.date.today().isoformat()
+    live = {r['name'] for r in running() if not r.get('idle')}
+    out = []
+
+    def card(name, unit, n, last='', what=None):
+        if n:
+            out.append(dict(name=name, unit=unit, n=n, still_running=name in live,
+                            last=ago(last) if last else '',
+                            what=what if what is not None else WHAT.get(name, ''),
+                            costs=name in AGENTIC))
+
+    def from_registry(f, col):
+        ts = [r.get(col, '') for r in rows(f) if (r.get(col) or '').startswith(today)]
+        return len(ts), max(ts) if ts else ''
+
+    n, last = from_registry('ocr-minutes.csv', 'ocr_at')
+    card('OCR of scans', 'scans read', n, last)
+    n, last = from_registry('youtube-transcript-index.csv', 'fetched_at')
+    card('YouTube captions', 'transcripts fetched', n, last)
+
+    # The reading jobs print one line each as they finish, in today's run log, and the
+    # sweep logs its own to agentic-spend.csv. Both carry a real time.
+    log = os.path.join(ROOT, 'build', 'refresh-logs', today + '.log')
+    text = ''
+    if os.path.exists(log):
+        with open(log, encoding='utf-8', errors='replace') as fh:
+            text = fh.read()
+    spend = [r for r in rows('agentic-spend.csv') if (r.get('at') or '').startswith(today)]
+    card('Our minutes', 'meetings written up',
+         len(re.findall(r'written \(\$', text)) + sum(1 for r in spend if r['stream'] == 'minutes'))
+    card('Votes', 'sets of minutes read',
+         len(re.findall(r'wrote \d+ vote', text)) + sum(1 for r in spend if r['stream'] == 'votes'))
+
+    # What the WATCHERS found today: seeing, not making, and a different kind of work.
+    seen = found_by_day().get(today, collections.Counter())
+    for k, label in (('agendas', 'agendas'), ('minutes', 'sets of minutes'),
+                     ('notices', 'town notices')):
+        card('Found on the town’s site', label + ' spotted', seen.get(k, 0), what=
+             'New since the last look — the watcher reports it, then the fetcher '
+             'downloads it.')
+    card('Found on the channel', 'recordings spotted', seen.get('videos', 0), what=
+         'New uploads on the town’s YouTube channel.')
+    return sorted(out, key=lambda r: -r['n'])
+
+
 def finished(n=14):
     """Steps that ran and COMPLETED recently, newest first.
 
@@ -1013,10 +1091,32 @@ def page_live(st):
                     (('%d procs' % r['n']) if r['n'] > 1 else 'working'),
                     html.escape(r['elapsed']), html.escape(r['what']), html.escape(r['cmd'])))
 
-    # WHAT JUST FINISHED. Without this, "nothing is running" cannot be told apart from
-    # "nothing ever started", and the first is fine while the second is an outage.
+    # WHAT JUST FINISHED, in the same shape as what is running. Without this, "nothing is
+    # running" cannot be told apart from "nothing ever started", and the first is fine
+    # while the second is an outage.
+    if st['done']:
+        h.append('<h2>Done today</h2>')
+        for d in st['done']:
+            h.append('<div class="card done"><div class="row">'
+                     '<b class="grow">%s%s</b>'
+                     '<span class="num" style="font-size:16px">%s</span>'
+                     '<span class="tiny" style="min-width:8.5rem">%s</span>'
+                     '<span class="pill %s">%s</span></div>'
+                     '<div class="tiny" style="margin-top:4px">%s</div></div>'
+                     % (html.escape(d['name']),
+                        ' <span class="tag agentic">agentic</span>' if d['costs'] else '',
+                        '{:,}'.format(d['n']), html.escape(d['unit']),
+                        'go' if d['still_running'] else '',
+                        'still going' if d['still_running']
+                        else ('last %s' % d['last'] if d['last'] else 'done'),
+                        html.escape(d['what'])))
+
+    # The step-by-step trace stays, folded: it is what you read when something went wrong,
+    # not what you open the page for.
     if st['finished']:
-        h.append('<h2>Finished recently</h2><div class="card"><table>')
+        h.append('<details data-k="trace" class="card"><summary class="tiny" '
+                 'style="cursor:pointer;color:#6cb6ff">every step that finished, with '
+                 'its duration</summary><table style="margin-top:8px">')
         for x in st['finished']:
             h.append('<tr><td class="mono">%s</td><td class="tiny">%s</td>'
                      '<td class="r num tiny">%s</td><td class="r">%s</td></tr>'
@@ -1025,7 +1125,7 @@ def page_live(st):
                         else '%.0fm' % (x['seconds'] / 60),
                         '<span class="pill go">done</span>' if x['exit'] == 0
                         else '<span class="pill no">exit %d</span>' % x['exit']))
-        h.append('</table></div>')
+        h.append('</table></details>')
 
     h.append('<h2>The daily refresh</h2>')
     h.append('<div class="card %s"><div class="row"><b class="grow">%s</b><span class="pill %s">%s</span></div>'
@@ -1260,7 +1360,7 @@ def write(open_it=False):
     os.makedirs(OUT, exist_ok=True)
     st = dict(generated=dt.datetime.now().strftime('%a %d %b, %H:%M:%S'),
               running=running(), streams=streams(), refresh=refresh(), queued=queued(),
-              alerts=alert(), finished=finished())
+              alerts=alert(), finished=finished(), done=done_today())
     docs = sources()
     shell = ('<!doctype html><meta charset=utf-8><meta name=viewport '
              'content="width=device-width,initial-scale=1"><title>%s</title>'
