@@ -29,6 +29,13 @@ type Payload = {
   totals: { meetings: number; with_minutes: number; share: number; boards_ranked: number }
   boards: Row[]; unmatched: { board: string; documents: number }[]
   not_established: string[]; conclusions: Conclusion[]; sources?: Source[]
+  /** Minutes a board sent us that the town never posted. Attributed, and deliberately
+   *  NOT counted in the figure above — see why_unchanged. */
+  delivered?: {
+    who: string; when: string; n: number; approved: number; draft: number
+    approved_at: string; earliest: string; latest: string
+    what: string; why_unchanged: string; provenance: string
+  }
 }
 const n0 = (n: number) => n.toLocaleString('en-US')
 const pct = (k: number, n: number) => (n ? `${Math.round(100 * k / n)}%` : '—')
@@ -139,6 +146,40 @@ function Report({ d }: { d: Payload }) {
             </>
           )}
         </section>
+
+        {/* THE BOARD ANSWERED THE MEASURE BY PRODUCING THE DOCUMENTS.
+            This app explains how to fix a problem; it is not an audit (rule 8). A board
+            that responds to a posting gap by sending the missing minutes has done the
+            thing the measure exists to encourage, and its account belongs beside the
+            figure rather than in a footnote.
+
+            It does not move the number, and saying so plainly is the point: the figure
+            counts what the town POSTED, and an email is not a posting. */}
+        {d.delivered && (
+          <section data-section="raw">
+            <H2 id="delivered">What the Select Board sent after being asked</H2>
+            <div className="card p-5 mt-3 max-w-3xl"
+              style={{ borderLeft: '4px solid var(--series-cost)' }}>
+              <p className="text-[15px] font-bold mb-1">
+                {d.delivered.n} sets of minutes the town had not published &mdash;{' '}
+                {d.delivered.approved} approved, {d.delivered.draft} still in draft.
+              </p>
+              <p className="text-[13.5px] leading-relaxed mb-2"
+                style={{ color: 'var(--text-secondary)' }}>{d.delivered.what}</p>
+              <p className="text-[13.5px] leading-relaxed mb-2"
+                style={{ color: 'var(--text-secondary)' }}>
+                <strong>The figure above is unchanged.</strong>{' '}
+                {d.delivered.why_unchanged}
+              </p>
+              <p className="text-[12.5px]" style={{ color: 'var(--text-muted)' }}>
+                Sent by {d.delivered.who}, {d.delivered.when}. A draft is not the record:
+                minutes become official when the body votes to approve them, and the
+                Board may amend a draft first. How it reached us, and the three things it
+                does not establish, are in <code>{d.delivered.provenance}</code>.
+              </p>
+            </div>
+          </section>
+        )}
 
         <section data-section="raw">
           <H2 id="how">How this is counted</H2>

@@ -2555,7 +2555,7 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3076501,
+     "bytes": 3127327,
      "url": "/docs/data/meeting-register.csv",
      "count": 7032,
      "unit": "rows",
@@ -2718,6 +2718,18 @@
      "textUrl": "/docs/data/census-acs.csv"
     },
     {
+     "path": "data/ocr-minutes.csv",
+     "title": "Scanned minutes read by OCR: which, when, and from which bytes",
+     "stars": 3,
+     "what": "One row per image-only PDF that scripts/ocr_scanned_minutes.py has read with macOS Vision, with the sha256 of the PDF it read and the characters and pages recovered. The text files it writes begin ===OCR macOS Vision=== so nothing mistakes a reading for an extract.",
+     "kind": "Data",
+     "bytes": 270424,
+     "url": "/docs/data/ocr-minutes.csv",
+     "count": 1580,
+     "unit": "rows",
+     "textUrl": "/docs/data/ocr-minutes.csv"
+    },
+    {
      "path": "data/dese-town-enrollment.csv",
      "title": "Where every town’s children actually go to school, SY2014–SY2026",
      "stars": 3,
@@ -2728,6 +2740,18 @@
      "count": 1488,
      "unit": "rows",
      "textUrl": "/docs/data/dese-town-enrollment.csv"
+    },
+    {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 241892,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "count": 1441,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
     {
      "path": "data/dese-enrollment.csv",
@@ -2766,18 +2790,6 @@
      "textUrl": "/docs/data/line-history-disagreements.csv"
     },
     {
-     "path": "data/youtube-transcript-index.csv",
-     "title": "Which meeting recordings we hold a transcript for",
-     "stars": 3,
-     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
-     "kind": "Data",
-     "bytes": 166729,
-     "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 1023,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-transcript-index.csv"
-    },
-    {
      "path": "data/dese-educator-workforce.csv",
      "title": "Staff HEADCOUNT by job class, with hires and retention, SY2021–SY2023",
      "stars": 3,
@@ -2800,18 +2812,6 @@
      "count": 659,
      "unit": "rows",
      "textUrl": "/docs/data/dese-teacher-program-area.csv"
-    },
-    {
-     "path": "data/ocr-minutes.csv",
-     "title": "Scanned minutes read by OCR: which, when, and from which bytes",
-     "stars": 3,
-     "what": "One row per image-only PDF that scripts/ocr_scanned_minutes.py has read with macOS Vision, with the sha256 of the PDF it read and the characters and pages recovered. The text files it writes begin ===OCR macOS Vision=== so nothing mistakes a reading for an extract.",
-     "kind": "Data",
-     "bytes": 108689,
-     "url": "/docs/data/ocr-minutes.csv",
-     "count": 644,
-     "unit": "rows",
-     "textUrl": "/docs/data/ocr-minutes.csv"
     },
     {
      "path": "data/dese-attrition.csv",
@@ -3432,9 +3432,9 @@
      "stars": 2,
      "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
      "kind": "Data",
-     "bytes": 12608,
+     "bytes": 12743,
      "url": "/docs/data/youtube-no-captions.csv",
-     "count": 102,
+     "count": 103,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-no-captions.csv"
     },
@@ -15576,7 +15576,7 @@
   "boards": [
    {
     "name": "Select Board",
-    "documents": 1396
+    "documents": 1412
    },
    {
     "name": "Planning Board",
@@ -15780,13 +15780,13 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12089,
-  "fetched": 12039,
+  "listed": 12105,
+  "fetched": 12055,
   "agendas": 7424,
-  "minutes": 4665,
+  "minutes": 4681,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12040,
+  "textFiles": 12056,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
@@ -15794,7 +15794,7 @@
  "totals": {
   "documents": 1369,
   "groups": 22,
-  "bytes": 2171795040,
+  "bytes": 2172082899,
   "loadBearing": 131
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

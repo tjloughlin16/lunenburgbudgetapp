@@ -58,6 +58,27 @@ REGISTER = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
 BOARDS = os.path.join(ROOT, 'fy28', 'public', 'data', 'boards.json')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'board-posting.json')
 LAG_DAYS = 60
+
+# POSTED, NOT MERELY HELD. This page measures what the town PUBLISHES -- its own Agenda
+# Center, every agenda and every set of minutes it lists -- and the register's `minutes`
+# flag answers a different question: does this project hold minutes for that meeting.
+#
+# The two were the same thing until 18 September 2026, when the Chair of the Select Board
+# sent sixteen sets of minutes the town had never posted. They belong in the archive and
+# they are the town's own minutes, so the register flags them, and reading that flag here
+# would have moved the Select Board's posting rate on the strength of an EMAIL. The
+# measure would have gone on being called "minutes posted" while quietly meaning
+# "minutes we have somehow".
+#
+# A document the town posted carries its Agenda Center address; one that arrived any other
+# way does not, and that is the whole test. It is also why the delivery does not flatter
+# the board that made it -- which is the property this page most needs.
+def posted(m):
+    """Did the TOWN publish these minutes, as opposed to us holding a copy."""
+    return m['minutes'] == '1' and bool(m.get('minutes_url'))
+
+
+
 YEARS = 4                 # the fiscal years shown: the latest complete-ish one and three before
 MIN_MEETINGS = 20         # a board with fewer meetings across the window is listed, not ranked
 THE_THREE = ('school-committee', 'select-board', 'finance-committee')
@@ -112,7 +133,7 @@ def build(as_of):
         for f in fys:
             ms = [(k, m) for k, m in mt.items() if k[0] == slug and fy_of(k[1]) == f]
             n = len(ms)
-            years.append(dict(fy=f, meetings=n, with_minutes=sum(1 for _, m in ms if m['minutes'] == '1'),
+            years.append(dict(fy=f, meetings=n, with_minutes=sum(1 for _, m in ms if posted(m)),
                               recorded=sum(1 for k, _ in ms if k in recorded),
                               complete=round(sum(int(m['complete']) for _, m in ms) / n, 2) if n else 0))
         n = sum(y['meetings'] for y in years)
@@ -241,10 +262,37 @@ def build(as_of):
         totals=dict(meetings=total_n, with_minutes=total_k, share=round(100 * total_k / total_n, 1), boards_ranked=len(ranked)),
         boards=table,
         unmatched=[dict(board=b, documents=n) for b, n in unmatched.most_common()],
+        # WHAT THE BOARD ITSELF SAYS ABOUT ITS OWN NUMBER. The Chair of the Select Board
+        # sent sixteen sets of minutes the town had never posted, seven of them approved
+        # at one meeting on 15 September 2026 and seven still in draft. This page is not
+        # an audit (rule 8), and a board that answers the measure by producing the missing
+        # documents has done the thing the measure is for -- so its account belongs beside
+        # the figure rather than in a footnote. It is a STATEMENT, attributed, and it does
+        # not move the measure: these did not go on the Agenda Center, which is what this
+        # page counts.
+        delivered=dict(
+            who='the Chair of the Select Board',
+            when='18 September 2026',
+            n=16, approved=9, draft=7,
+            approved_at='15 September 2026',
+            earliest='2024-08-13', latest='2025-11-17',
+            what='Sixteen sets of Select Board minutes the town had not published, sent '
+                 'to this project after a question about the gap. Nine are approved, '
+                 'seven of them at the Board\u2019s meeting of 15 September 2026; seven '
+                 'are still drafts the Board has not voted on.',
+            why_unchanged='The figure above is unchanged, and should be: it counts minutes '
+                          'the town POSTED on its Agenda Center, and these arrived by '
+                          'email. They are now in this archive and searchable, which is a '
+                          'different thing from being published by the town.',
+            provenance='sources/meetings/PROVENANCE-select-board-2026-09-18.md'),
         not_established=[
             'How long after a meeting its minutes appear. The watcher has recorded posting dates only since 8 September 2026; a year of it will say.',
             'Whether an agenda without minutes was a meeting that happened. The Agenda Center does not mark cancellations.',
             'Whether every recording is of the meeting the agenda names; recordings are classified to a board and date by title.',
+            'Whether minutes a board holds but has not posted exist for any other board. '
+            'Sixteen turned up for the Select Board because somebody was asked; nothing '
+            'here samples the other thirty-eight, and a board with no posted minutes may '
+            'have written them.',
         ],
         conclusions=emit('boardcompare', rows_out),
     )
