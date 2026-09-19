@@ -1017,6 +1017,10 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing
     python3 scripts/build_no_captions_report.py           # which meeting recordings have captions disabled, with links
     python3 scripts/build_app_metrics.py --check          # ...and fail if it has drifted
+    bash scripts/status.sh                      # THE INGESTION DASHBOARD: what is running, what is queued,
+                                                #   what is left, and where today's refresh looked. Local,
+                                                #   gitignored, refreshes itself every 20s. --once to just write it
+    python3 scripts/build_ingest_status.py --watch   # ...keep it fresh without opening it
     python3 scripts/refresh.py                  # THE DAILY RUN: watch the town and the channel, fetch what is new,
                                                 #   write minutes inside the policy, rebuild, push the search index
     python3 scripts/refresh.py --deploy         # ...and build and deploy the site (rule 10: only when asked)
