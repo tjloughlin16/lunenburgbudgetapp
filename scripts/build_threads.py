@@ -386,13 +386,25 @@ def build():
             last_moved=mts[-1] if mts else '',
             claims_before_started=looseness(t, record),
             stands=stands,
-            # NEW MEANS NEWLY OPENED BY US, NOT NEWLY STARTED BY THE TOWN. A matter can
-            # have run for a year before anybody names it a thread; what is new to a
-            # returning reader is the THREAD. Fourteen days, because that is about two
-            # meeting cycles -- long enough that somebody checking fortnightly still sees
-            # it, short enough that "new" keeps meaning something.
-            is_new=bool(t.get('registered_on')
-                        and (dt.date.today() - dt.date.fromisoformat(t['registered_on'])).days <= 14),
+            # NEW MEANS THE MATTER IS NEW, not that we only just noticed it. TJ:
+            # "'new' threads means new in existence. not new to us ;) Some of the 'new'
+            # things have LOTS of meetings."
+            #
+            # The first version keyed on `registered_on` -- the day we opened the thread --
+            # which made every thread new on the day the registry was seeded, including
+            # Turkey Hill with fourteen meetings behind it. That is our filing date and it
+            # is not news about the town. A resident wants to know what has just been
+            # RAISED, and the record says that: the first meeting that discussed it.
+            #
+            # 60 days, roughly four meetings of a board that sits fortnightly -- long
+            # enough to survive somebody checking monthly, short enough that a matter with
+            # a year of history can never qualify.
+            # ...and a SETTLED matter is never new, however recently it arose. The
+            # citizens' petition ran from July to Town Meeting in nine meetings and was
+            # decided; putting it under "newly raised" would send a reader to something
+            # already over.
+            is_new=bool(t['status'] != 'resolved' and mts
+                        and (dt.date.today() - dt.date.fromisoformat(mts[0])).days <= 60),
             heat=temp['heat'], stage=temp['stage'], tangled=temp['tangled'],
             momentum=temp['basis'],
             weight=(len({c['board_slug'] for c in chron}) * 100

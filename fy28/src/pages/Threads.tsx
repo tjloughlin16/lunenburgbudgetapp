@@ -251,15 +251,15 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
       {/* RANK FIRST, THEN GROUPS (§14c). A rank serves the reader who does not know what
           they are looking for; a group serves the reader who does. Group first and the
           most important matter in town sits third inside a collapsed section. */}
-      {/* NEWLY OPENED, ABOVE EVERYTHING. TJ: "when a NEW thread is identified, it should
-          show up at the top of the threads page with a big label as NEW". A returning
-          reader's first question is what they have not seen, and that is a different
-          question from what is moving — a thread can be new and quiet, or old and busy. */}
+      {/* NEWLY RAISED, ABOVE EVERYTHING. TJ: "when a NEW thread is identified, it should
+          show up at the top of the threads page with a big label as NEW" — and then, on
+          seeing the first cut: "'new' threads means new in existence. not new to us ;)".
+          What is new is the MATTER, not our filing of it. */}
       {newly.length ? (
         <>
-          <H2>Newly followed</H2>
-          <Body>We started tracking {newly.length === 1 ? 'this' : 'these'} in the last two weeks.
-            Some have been running far longer — what is new is that we are following {newly.length === 1 ? 'it' : 'them'}.</Body>
+          <H2>Newly raised</H2>
+          <Body>{newly.length === 1 ? 'This first came' : 'These first came'} up in the last two
+            months, and {newly.length === 1 ? 'is' : 'are'} still open.</Body>
           <ul className="list-none p-0 m-0 mb-4">
             {newly.map(t => <Card key={t.id} t={t} onGo={onGo} ours={ours} />)}
           </ul>
