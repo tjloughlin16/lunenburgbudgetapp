@@ -225,11 +225,26 @@ FOLD = {'\u201c': '"', '\u201d': '"', '\u2018': "'", '\u2019': "'",
 # accept the provisions of...". A model quoting the sentence quotes the sentence. Rule 13:
 # an instrument that reformats before you see it is part of the finding, so the marker and
 # the footer number immediately before it come out before anything is compared.
-PAGE_BREAK = re.compile(r'\s*\d{0,4}\s*===PAGE \d+===\s*')
+# TWO LITERAL-ANCHORED PASSES, NOT ONE PATTERN THAT LEADS WITH `\s*`.
+#
+# This was `\s*\d{0,4}\s*===PAGE \d+===\s*`, and it CATASTROPHICALLY BACKTRACKS. Two
+# unbounded `\s*` either side of an optional number means that at every position inside a
+# whitespace run the engine tries every way of splitting that run before failing to find
+# the literal -- and an OCR'd annual report is mostly whitespace. On the 648 KB FY2018
+# report it did not finish in three hours, and because it hung AFTER the year's rows were
+# written the backfill looked like it was still working. A hang that leaves correct data
+# behind is the worst kind: nothing is wrong except that nothing is happening.
+#
+# Both replacements below start with something fixed -- a literal, or a line start -- so
+# the engine has one place to try per position instead of hundreds.
+PAGE_MARKER = re.compile(r'===PAGE \d+===')
+# A line holding nothing but one to four digits is the printed page number, which the
+# extractor lifts out of the page header or footer into the middle of the Clerk's sentence.
+PAGE_NUMBER = re.compile(r'(?m)^[ \t]*\d{1,4}[ \t]*$')
 
 
 def norm(s):
-    s = PAGE_BREAK.sub(' ', s or '')
+    s = PAGE_NUMBER.sub(' ', PAGE_MARKER.sub(' ', s or ''))
     for a, b in FOLD.items():
         s = s.replace(a, b)
     # WHITESPACE AND HYPHENATION ARE THE EXTRACTOR'S. THE CHARACTER SEQUENCE IS THE CLERK'S.

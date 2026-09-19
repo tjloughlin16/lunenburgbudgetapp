@@ -146,8 +146,42 @@ def resolve_closure(t, record, official):
     return None
 
 
+def looseness(t, record):
+    """HOW MUCH THIS THREAD'S PATTERN WOULD CLAIM OUTSIDE ITS OWN WINDOW.
+
+    `started` and `match` compensate for each other, and the compensation is invisible
+    until it is counted. `sap-rewrite` matches a salary-schedule article at the 2022 Town
+    Meeting; `middle-school-sports` matches a citizen petition about the SEWER SERVICE AREA
+    MAP; `solid-waste-enterprise` matches solid waste removal at Woodruff. None is the
+    matter, and all three are hidden by a date rather than excluded by a pattern -- two
+    mechanisms each covering the other's weakness, which is the shape every compensating
+    error in this repository has had.
+
+    A pattern general enough to be useful ("surplus", "salary schedule") cannot be made
+    precise, so this does not fail. It COUNTS, so a thread leaning hard on its start date
+    is legible as one, and so a `started` moved earlier cannot quietly drag in years of a
+    different matter."""
+    rx = re.compile(t['match'], re.I) if t.get('match') else None
+    qu = re.compile(t['qualify'], re.I) if t.get('qualify') else None
+    ex = re.compile(t['exclude'], re.I) if t.get('exclude') else None
+    n = 0
+    for (slug, date), rec in record.items():
+        if not t.get('started') or date >= t['started']:
+            continue
+        for x in [v['motion'] for v in rec['votes']] + [i['text'] for i in rec['items']]:
+            if rx and rx.search(x) and (not qu or qu.search(x)) and not (ex and ex.search(x)):
+                n += 1
+    return n
+
+
 def chronology(t, record):
     rx = re.compile(t['match'], re.I) if t.get('match') else None
+    # ENTITY **AND** QUALIFIER (§2). "Turkey Hill" is a PLACE hosting two matters and a lot
+    # of traffic -- paraprofessionals, DIBELS scores, solar offsets, intercoms. Both Turkey
+    # Hill threads first shipped matching the bare entity, and the ADA thread's items were
+    # 46 of 46 shared with the rebuild thread: one thread rendered twice. `qualify` is the
+    # second pattern that must ALSO match, and it is what separates a matter from a place.
+    qu = re.compile(t['qualify'], re.I) if t.get('qualify') else None
     ex = re.compile(t['exclude'], re.I) if t.get('exclude') else None
     board = (t.get('boards') or '').strip()
     out = []
@@ -158,11 +192,13 @@ def chronology(t, record):
         for v in rec['votes']:
             if v['procedural']:
                 continue
-            if rx and rx.search(v['motion']) and not (ex and ex.search(v['motion'])):
+            if (rx and rx.search(v['motion']) and (not qu or qu.search(v['motion']))
+                    and not (ex and ex.search(v['motion']))):
                 hits.append({'kind': 'vote', 'text': v['motion'], 'outcome': v['outcome'],
                              't': v['t'], 'video_url': v['video_url']})
         for it in rec['items']:
-            if rx and rx.search(it['text']) and not (ex and ex.search(it['text'])):
+            if (rx and rx.search(it['text']) and (not qu or qu.search(it['text']))
+                    and not (ex and ex.search(it['text']))):
                 hits.append({'kind': it['kind'], 'text': it['text'], 'outcome': '', 't': it['t'],
                              'video_url': rec['recordings'][0] if rec['recordings'] else ''})
         # §17a: a board talking about its own subject does not repeat the subject's name.
@@ -195,14 +231,21 @@ def build():
         # recently the thread moved, then how much of the record it touches.
         # It is named `weight` and not `importance`: the page says what it ordered on.
         threads.append(dict(
+            # `note` IS NOT PUBLISHED. It is the registry's own margin -- "ENTITY vs
+            # MATTER", "CAN OF WORMS trigger, at n=1", "POLYSEMY" -- written for whoever
+            # maintains the patterns, and every word of it is ours. It was rendering to
+            # residents under "What this does not show", which is rule 7b's second named
+            # failure: precision and jargon are not the same thing, and the second is
+            # usually an unfinished sentence. `caveat` is the reader's half, in English.
             {k: t[k] for k in ('id', 'label', 'question', 'kind', 'groups', 'tags', 'boards',
-                               'started', 'closes', 'status', 'resolved_on', 'note')},
+                               'started', 'closes', 'status', 'resolved_on', 'caveat')},
             closure=closure,
             chronology=chron,
             meetings=len(chron),
             boards_touched=len({c['board_slug'] for c in chron}),
             first_seen=mts[0] if mts else '',
             last_moved=mts[-1] if mts else '',
+            claims_before_started=looseness(t, record),
             weight=(len({c['board_slug'] for c in chron}) * 100
                     + int((mts[-1] if mts else '0000-00-00').replace('-', '')[2:6] or 0) // 100
                     + min(len(chron), 40)),
@@ -250,6 +293,12 @@ def main():
     open(OUT, 'w', encoding='utf-8').write(body)
     st = collections.Counter(t['status'] for t in threads)
     bas = collections.Counter(t['closure']['basis'] for t in threads if t['closure'])
+    loose = sorted((t for t in threads if t['claims_before_started'] >= 5),
+                   key=lambda t: -t['claims_before_started'])
+    if loose:
+        print('LEANING ON `started` — the pattern claims this much before the thread began:')
+        for t in loose[:8]:
+            print('  %4d  %s' % (t['claims_before_started'], t['id']))
     print('wrote %s — %d threads (%s); closures: %s'
           % (os.path.relpath(OUT, ROOT), len(threads), dict(st), dict(bas) or 'none'))
     print('readable record: %d meetings across %d boards; %d Town Meetings; official votes for FY%s'

@@ -94,13 +94,15 @@ def registered():
     out = []
     for r in read_csv(THREADS):
         out.append(dict(r, rx=re.compile(r['match'], re.I) if r.get('match') else None,
+                        qu=re.compile(r['qualify'], re.I) if r.get('qualify') else None,
                         ex=re.compile(r['exclude'], re.I) if r.get('exclude') else None))
     return out
 
 
 def claimed(threads, text):
     for t in threads:
-        if t['rx'] and t['rx'].search(text) and not (t['ex'] and t['ex'].search(text)):
+        if (t['rx'] and t['rx'].search(text) and (not t['qu'] or t['qu'].search(text))
+                and not (t['ex'] and t['ex'].search(text))):
             return t['id']
     return None
 
