@@ -160,6 +160,18 @@
   --subj-3: #0e8a6b;
   --subj-4: #8e3a95;
   --subj-5: #e07fa8;
+  /* THE FIVE THREAD GROUPS. A categorical set, validated rather than chosen -- see
+     components/ThreadKind.tsx. --subj-1..5 was the obvious candidate and FAILS in dark
+     mode (two steps outside the lightness band, one under the chroma floor, and the pair
+     at normal-vision ΔE 8.9, which full-colour readers cannot separate). These pass the
+     lightness band, chroma floor, CVD separation, normal-vision floor and contrast in
+     BOTH modes, in this order -- the order is part of what was validated, so assign in it
+     and never cycle. */
+  --thread-1: #d4541f;
+  --thread-2: #2a78d6;
+  --thread-3: #a6871a;
+  --thread-4: #8e3a95;
+  --thread-5: #0e8a6b;
   --mt-minimum: var(--ath-coaches);
   --mt-transport: var(--ath-transport);
   --mt-capital: var(--ath-officials);
@@ -217,6 +229,11 @@
     --subj-3: #13a37f;
     --subj-4: #d9a3e8;
     --subj-5: #f7b7cd;
+    --thread-1: #d95926;
+    --thread-2: #3987e5;
+    --thread-3: #ab8620;
+    --thread-4: #b673bd;
+    --thread-5: #13a37f;
   }
 }
 :root[data-theme="dark"] {

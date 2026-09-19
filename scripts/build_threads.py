@@ -212,11 +212,150 @@ def chronology(t, record):
     return out
 
 
+SCHEDULED = re.compile(r'\b(warrant article|public hearing|statement of interest|\bRFP\b|'
+                       r'request for proposal|ballot|town meeting|deadline|due back|'
+                       r'placeholder|feasibility study)\b', re.I)
+PLANS = re.compile(r'\b(study|design|schematic|estimate|proposal|draft|plan|report|'
+                   r'recommendation|options|scope)\w*\b', re.I)
+
+
+def temperature(t, chron, today, record):
+    """HOW ALIVE A MATTER IS — derived, never typed.
+
+    TJ, 19 September 2026: "I want to see if something is HOT, COLD, just getting started,
+    [a can of worms] ... Did it recently come up and it looks to have impact? Have MANY
+    boards discussed it with no resolution? Are there plans behind it yet? Just an idea or
+    is there movement and votes yet?"
+
+    Two different questions, so two answers rather than one blended score:
+
+      HEAT  -- how recently and how fast it is moving. A count of meetings and the gaps
+               between them; nothing about importance.
+      STAGE -- how far along it is. Whether anyone has voted, whether anything is
+               scheduled, whether a document exists yet.
+
+    THE LABEL IS A READING OF THE COUNTS AND THE COUNTS TRAVEL WITH IT. `basis` carries
+    the arithmetic to the page, so a reader is never asked to take "picking up" on trust --
+    rule 7: the meetings and the dates are the facts, and the word is our summary of them.
+
+    `tangled` is TJ's "many boards discussed it with no resolution" -- deliberately not
+    called anything more lurid, because the state is ordinary: a matter that has spread
+    across the town's boards and been settled by none of them."""
+    dates = sorted({c['date'] for c in chron})
+    n, boards = len(dates), len({c['board_slug'] for c in chron})
+    votes = sum(1 for c in chron for i in c['items'] if i['kind'] == 'vote')
+    text = ' '.join(i['text'] for c in chron for i in c['items'])
+    days = (dt.date.fromisoformat(today) - dt.date.fromisoformat(dates[-1])).days if dates else 9999
+    span = (dt.date.fromisoformat(dates[-1]) - dt.date.fromisoformat(dates[0])).days if n > 1 else 0
+
+    # meetings in the last 90 days against the rate over the whole life
+    recent = sum(1 for d in dates if (dt.date.fromisoformat(today) - dt.date.fromisoformat(d)).days <= 90)
+    rate = (n / max(span, 1)) * 90 if span else 0
+
+    # HOW MANY TIMES ITS OWN BOARDS HAVE MET SINCE, WITHOUT RAISING IT.
+    #
+    # A day count is the wrong instrument. "Six months" means one thing for a board that
+    # sits twice a month and another for one that sits quarterly, and the Monty Tech
+    # assessment is set every January -- six quiet months there is the calendar, not
+    # neglect. What a resident actually wants to know is whether the matter is being
+    # passed over: the Finance Committee has met eleven times and not returned to it.
+    #
+    # It is a LOWER BOUND, because it counts only meetings we can read. The page prints
+    # the denominator for the same reason search_minutes.py does.
+    mine = {c['board_slug'] for c in chron}
+    last = dates[-1] if dates else '9999-99-99'
+    passed_over = sum(1 for (slug, d) in record if slug in mine and d > last)
+
+    # ORDER MATTERS, AND THE FIRST VERSION GOT IT WRONG. `n == 1` was tested before the
+    # recency tests, so the extended day fee -- ONE meeting, FIVE MONTHS ago -- was
+    # labelled "just started" beside a standing line reading "last moved 5 months ago".
+    # TJ: "this feels conflicting". It was.
+    #
+    # The fix is not a reorder but a distinction: ONE MEETING RECENTLY is a matter getting
+    # under way; ONE MEETING LONG AGO is a matter that was raised and then dropped. Those
+    # are different things and a reader wants to tell them apart -- the second is arguably
+    # the more interesting, because somebody put it on a future agenda and it never came
+    # back.
+    if t['status'] == 'resolved':
+        heat = 'settled'
+    elif n == 1:
+        heat = 'just started' if days <= 90 else 'raised once'
+    # STALE, NOT "GONE QUIET". TJ: "discussed 6 months ago seems 'stale' to me. A BIG open
+    # question with no movement (its not moving) is stale." The two words say different
+    # things: gone quiet reports that discussion stopped, which is neutral; STALE reports
+    # that an open question is not being answered, which is the fact a resident wants.
+    #
+    # BOTH SIGNALS ARE REQUIRED, because either alone lies. A day count alone ignores how
+    # often the board actually sits; a count of meetings passed over alone called the DPW
+    # contract "gone quiet" at FIFTY-FOUR DAYS, because the Select Board happens to meet
+    # weekly. Stale means real time has passed AND the boards have sat repeatedly without
+    # returning to it.
+    elif days > 365:
+        heat = 'gone quiet'
+    elif passed_over >= 4 and days >= 120:
+        heat = 'stale'
+    elif passed_over >= 2 or days >= 60:
+        heat = 'slowing'
+    elif recent >= 2 and recent > rate:
+        heat = 'picking up'
+    else:
+        heat = 'moving'
+
+    tangled = (t['status'] != 'resolved' and boards >= 3 and span >= 180 and n >= 6)
+
+    if t['status'] == 'resolved':
+        stage = 'decided'
+    elif votes:
+        stage = 'voted on, not decided'
+    elif SCHEDULED.search(text):
+        stage = 'a date is set'
+    elif PLANS.search(text):
+        stage = 'plans being drawn'
+    else:
+        stage = 'talked about only'
+
+    return {
+        'heat': heat, 'stage': stage, 'tangled': tangled,
+        'basis': {
+            'meetings': n, 'boards': boards, 'votes': votes,
+            'days_since_last': days, 'span_days': span, 'meetings_last_90': recent,
+            'board_meetings_since': passed_over,
+        },
+    }
+
+
+def where_it_stands(chron):
+    """WHAT WAS LAST DECIDED, VOTED, OR LEFT OPEN — not when it was last mentioned.
+
+    TJ, on /threads/turf-field-study: "'Where it stands' on the thread pages need to be
+    what was last decided, voted, left open. 'Open — last discussed at the School
+    Committee, Sep 16, 3 days ago' is not good enough."
+
+    He is right, and the reason is worth keeping: a date answers *is this current*, which
+    is a question about the PAGE. A resident's question is about the MATTER — what happened
+    at that meeting, and what is now true. Those are different questions and the date was
+    answering the easier one.
+
+    So this returns the most recent thing that actually moved: a VOTE if one was taken,
+    else a DECISION the board recorded, else the topic it was last discussed under. Each
+    carries its board, its date and the second in the recording, so the claim is checkable
+    rather than summarised."""
+    def pick(kinds):
+        for stop in reversed(chron):
+            best = [i for i in stop['items'] if i['kind'] in kinds]
+            if best:
+                return dict(best[-1], board=stop['board'], board_slug=stop['board_slug'], date=stop['date'])
+        return None
+    return {'vote': pick(('vote',)), 'decision': pick(('decision',)), 'any': pick(('vote', 'decision', 'topic'))}
+
+
 def build():
     (record, future), official = the_record(), official_votes()
     threads, problems = [], []
     for t in read_csv(THREADS):
         chron = chronology(t, record)
+        temp = temperature(t, chron, dt.date.today().isoformat(), record)
+        stands = where_it_stands(chron)
         closure = resolve_closure(t, record, official)
         if t['status'] == 'resolved' and not closure:
             problems.append('%s says resolved and its closure does not resolve to a vote' % t['id'])
@@ -238,7 +377,7 @@ def build():
             # failure: precision and jargon are not the same thing, and the second is
             # usually an unfinished sentence. `caveat` is the reader's half, in English.
             {k: t[k] for k in ('id', 'label', 'question', 'kind', 'groups', 'tags', 'boards',
-                               'started', 'closes', 'status', 'resolved_on', 'caveat')},
+                               'registered_on', 'started', 'closes', 'status', 'resolved_on', 'caveat')},
             closure=closure,
             chronology=chron,
             meetings=len(chron),
@@ -246,6 +385,16 @@ def build():
             first_seen=mts[0] if mts else '',
             last_moved=mts[-1] if mts else '',
             claims_before_started=looseness(t, record),
+            stands=stands,
+            # NEW MEANS NEWLY OPENED BY US, NOT NEWLY STARTED BY THE TOWN. A matter can
+            # have run for a year before anybody names it a thread; what is new to a
+            # returning reader is the THREAD. Fourteen days, because that is about two
+            # meeting cycles -- long enough that somebody checking fortnightly still sees
+            # it, short enough that "new" keeps meaning something.
+            is_new=bool(t.get('registered_on')
+                        and (dt.date.today() - dt.date.fromisoformat(t['registered_on'])).days <= 14),
+            heat=temp['heat'], stage=temp['stage'], tangled=temp['tangled'],
+            momentum=temp['basis'],
             weight=(len({c['board_slug'] for c in chron}) * 100
                     + int((mts[-1] if mts else '0000-00-00').replace('-', '')[2:6] or 0) // 100
                     + min(len(chron), 40)),
@@ -253,9 +402,10 @@ def build():
     # THE DENOMINATOR, ON EVERY RUN (THREADS-MODEL §7 and search_minutes.py). A thread that
     # went quiet because the RECORD went quiet is not a thread where nothing happened, and
     # the boards with the thinnest minutes are not the boards with the least happening.
-    threads.sort(key=lambda t: (-t['weight'], t['label']))
-    cov = {'dated_in_the_future_and_excluded': [{'board': b, 'date': d, 'file': f} for b, d, f in future],
-           'rank_basis': 'boards touched, then how recently it moved, then meetings in the record',
+    threads.sort(key=lambda t: (t['last_moved'] or '', t['weight']), reverse=True)
+    cov = {'rank_note': 'newest first — by the date each thread last came up',
+           'dated_in_the_future_and_excluded': [{'board': b, 'date': d, 'file': f} for b, d, f in future],
+           'rank_basis': 'when each last came up, newest first',
            'meetings_readable': len(record),
            'boards_readable': len({s for s, _ in record}),
            'town_meeting_readable': len([1 for s, _ in record if s == 'town-meeting']),

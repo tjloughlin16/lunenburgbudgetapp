@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { boardSlugFromPath, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
+import { BoardGoals } from '../components/BoardGoals'
 import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, daysFromToday, todayIso, type Join } from '../components/BoardsThisWeek'
 
@@ -288,6 +289,11 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
           {b.page.facebook_scope !== 'board' && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>No Facebook page of its own is linked from the board’s page.</p>}
         </div>
       )}
+
+      {/* WHAT THE BOARD SAID IT WOULD DO, near the top because it is the frame every
+          other section on this page is read against: the meetings, the votes and the
+          minutes are how a board got on with what it committed to. */}
+      <BoardGoals slug={b.slug} />
 
       {/* THE COMMITTEE'S OWN RULES FOR ITSELF, shown in full. TJ, 17 September 2026:
           "post the new 'operating procedures' directly on the school committee page in

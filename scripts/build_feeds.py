@@ -181,6 +181,46 @@ def atom(feed_id, title, subtitle, self_path, alt_path, entries):
     return '\n'.join(lines) + '\n'
 
 
+THREADS_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'threads.json')
+
+
+def thread_entries():
+    """A THREAD IS THE MOST SUBSCRIBE-ABLE OBJECT THIS PROJECT HAS. Somebody who cares
+    about the stormwater fee wants to be told when it moves and does not want the Select
+    Board's whole agenda -- which is the only thing a board feed can offer them.
+
+    Two kinds of event, and they are different news:
+      * the thread was OPENED -- a matter is now being followed
+      * the thread MOVED -- a meeting discussed it, and what happened there
+
+    Returns (all-threads entries, {id: entries for that thread})."""
+    if not os.path.exists(THREADS_JSON):
+        return [], {}
+    d = json.load(open(THREADS_JSON, encoding='utf-8'))
+    every, per = [], {}
+    for t in d.get('threads', []):
+        mine = []
+        if t.get('registered_on'):
+            mine.append({'slug': 'threads', 'seen': t['registered_on'],
+                         'id': entry_id('thread', t['id'], 'opened'),
+                         'title': 'Now following: %s' % t['label'],
+                         'link': SITE + '/threads/' + t['id'],
+                         'summary': t['question']})
+        for c in t.get('chronology', []):
+            what = c['items'][0]['text'] if c['items'] else ''
+            votes = [i for i in c['items'] if i['kind'] == 'vote']
+            if votes:
+                what = '%s — %s' % (votes[-1]['text'], votes[-1].get('outcome') or 'outcome not recorded')
+            mine.append({'slug': 'threads', 'seen': c['date'],
+                         'id': entry_id('thread', t['id'], c['board_slug'], c['date']),
+                         'title': '%s: %s, %s' % (t['label'], c['board'], c['date']),
+                         'link': SITE + '/threads/' + t['id'],
+                         'summary': what})
+        per[t['id']] = (t, mine)
+        every += mine
+    return every, per
+
+
 def build():
     names = board_names()
     events = board_events(names)
@@ -195,6 +235,19 @@ def build():
     feeds['budget.xml'] = atom(entry_id('feed', 'budget'), 'The budget feed — Lunenburg Budget Project',
                                'Everything budget-related across every board, as it goes on the record.',
                                '/feeds/budget.xml', '/budget-feed', window(budget_entries()))
+    every, per = thread_entries()
+    if every:
+        feeds['threads.xml'] = atom(
+            entry_id('feed', 'threads'), 'Threads — Lunenburg Budget Project',
+            'Matters the town is deciding, tracked across every board that touches them: '
+            'when one is opened, and every meeting that moves it.',
+            '/feeds/threads.xml', '/threads', window(every))
+        for tid, (t, mine) in per.items():
+            if not mine:
+                continue
+            feeds['threads/%s.xml' % tid] = atom(
+                entry_id('feed', 'thread', tid), '%s — Lunenburg Budget Project' % t['label'],
+                t['question'], '/feeds/threads/%s.xml' % tid, '/threads/' + tid, window(mine))
     feeds['all.xml'] = atom(entry_id('feed', 'all'), 'Every board — Lunenburg Budget Project',
                             'Every change to every board, as the refresh sees it.',
                             '/feeds/all.xml', '/boards', window(list(events)))
@@ -209,17 +262,23 @@ def main():
     if a.check:
         stale = [n for n, body in feeds.items()
                  if not os.path.exists(os.path.join(OUT, n)) or open(os.path.join(OUT, n), encoding='utf-8').read() != body]
-        extra = [os.path.basename(p) for p in glob.glob(os.path.join(OUT, '*.xml')) if os.path.basename(p) not in feeds]
+        extra = [os.path.relpath(p, OUT) for p in
+                 glob.glob(os.path.join(OUT, '*.xml')) + glob.glob(os.path.join(OUT, '*', '*.xml'))
+                 if os.path.relpath(p, OUT) not in feeds]
         if stale or extra:
             print('STALE feeds: %s%s — run build_feeds.py' % (', '.join(stale), (' (and %s no longer produced)' % ', '.join(extra)) if extra else ''))
             return 1
         print('ok — %d feeds reproduce' % len(feeds))
         return 0
     os.makedirs(OUT, exist_ok=True)
-    for p in glob.glob(os.path.join(OUT, '*.xml')):
-        if os.path.basename(p) not in feeds:
+    # A feed no longer produced is removed, INCLUDING the per-thread ones a directory
+    # deep -- a thread that is renamed would otherwise leave its old address serving a
+    # feed forever, which is worse than a 404 because it looks maintained.
+    for p in glob.glob(os.path.join(OUT, '*.xml')) + glob.glob(os.path.join(OUT, '*', '*.xml')):
+        if os.path.relpath(p, OUT) not in feeds:
             os.remove(p)
     for n, body in feeds.items():
+        os.makedirs(os.path.dirname(os.path.join(OUT, n)), exist_ok=True)
         with open(os.path.join(OUT, n), 'w', encoding='utf-8') as fh:
             fh.write(body)
     n_entries = sum(body.count('<entry>') for body in feeds.values())

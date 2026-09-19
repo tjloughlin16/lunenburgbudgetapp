@@ -166,6 +166,48 @@ function Doors() {
   )
 }
 
+/** WHAT THE TOWN IS DECIDING NOW — the door to /threads.
+ *
+ *  IT SAYS "OPEN THREADS", WHICH IS OUR WORD, AND THAT IS A DELIBERATE EXCEPTION.
+ *  READING-FLOW warns against "a door without scent" and this project made that mistake
+ *  once already by labelling a door "the budget feed". The difference here is that the
+ *  destination teaches the word: every card on /threads is one, they are drawn as threads
+ *  at the foot of the page, and "open" carries the state on its own. TJ, 19 September
+ *  2026, having read the alternatives: "Lets just call it 'Open Threads'".
+ *
+ *  It sits in the live column under the budget feed, which is the right relation between
+ *  them: the budget season is the one matter that always exists and is itemised every
+ *  year, and these are the ones that come and go. */
+function ThreadsCard() {
+  const { d } = useReport<{ threads: { status: string; is_new: boolean; label: string; id: string }[] }>('threads.json')
+  if (!d) return null
+  const open = d.threads.filter(t => t.status === 'open')
+  const settled = d.threads.filter(t => t.status === 'resolved')
+  const fresh = d.threads.filter(t => t.is_new)
+  return (
+    <section aria-label="Open threads">
+      <div className="flex items-baseline justify-between gap-3 mb-2">
+        <h2 className="text-[13px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Open threads</h2>
+        <Go to="threads" className="text-[12px] underline" style={{ color: 'var(--series-cost)' }}>all of it &rarr;</Go>
+      </div>
+      <p className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>
+        <strong>{open.length} things still open</strong>, {settled.length} settled — each one
+        followed across every board that touches it.
+        {fresh.length ? <> {fresh.length} newly picked up.</> : null}
+      </p>
+      <ul className="mt-2 space-y-1 text-[13px]">
+        {open.slice(0, 3).map(t => (
+          <li key={t.id}>
+            <a className="underline" href={`/threads/${t.id}`}>{t.label}</a>
+            {t.is_new ? <span className="ml-1.5 text-[10px] font-bold uppercase tracking-widest"
+              style={{ color: 'var(--series-cost)' }}>new</span> : null}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 function BudgetFeedCard() {
   return (
     <section aria-label="The budget feed">
@@ -275,6 +317,7 @@ export function Home() {
             Each board in one place: <a className="underline" href="/boards/school-committee">School Committee</a> · <a className="underline" href="/boards/select-board">Select Board</a> · <a className="underline" href="/boards/finance-committee">Finance Committee</a> · <a className="underline" href="/boards">all boards</a>
           </p>
         </section>
+        <ThreadsCard />
         <HomeRecentMeetings />
         <HomeLatest />
       </div>

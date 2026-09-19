@@ -372,10 +372,6 @@ export const SLUG: Record<Tab, string> = {
   // the town's money. A post is shared into a Facebook group and the address travels with
   // it, so it has to read as an address somebody would click from a feed.
   blog: 'blog',
-  // NOT IN THE NAV AND NOT ON THE FRONT PAGE YET. TJ, 19 September 2026: "I want to test
-  // and not expose it yet." Reachable only by typing the address. When it ships it goes in
-  // NAV_ORDER.analyses immediately after `budgetfeed` -- the budget feed is the thread that
-  // always exists, and these are the ones that come and go.
   // OUR WORD, AND IT STAYS IN THE URL WHILE NEVER APPEARING ON THE DOOR. READING-FLOW
   // rules out "a door without scent" -- "the budget feed" was our name for a thing no
   // resident had heard of, and `threads` is the same shape. The door says what is behind
@@ -451,12 +447,7 @@ export const SLUG: Record<Tab, string> = {
 // front page, beside the crisis. TJ: "The point of the crisis page is not just cost to
 // the tax payers. It's also insight to the board leaders. Hard decisions need to be made.
 // They are looking for the solutions. The crisis page is the context."
-// `threads` is here while it is being tested. TJ, 19 September 2026: "I want to test and
-// not expose it yet." UNLISTED keeps it out of the sitemap, and therefore out of IndexNow
-// and out of the agent-reachable surface -- being INDEXED is what reaches several agent
-// search tools, so a page in the sitemap is exposed whether or not anything links to it.
-// Remove it from this set and add it to NAV_ORDER.analyses on the same commit that ships.
-export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'threads'])
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis'])
 
 /** Pages that are INSTRUMENTS, not reads: an index, a register, a search box, a
  *  catalogue. Nobody reads a register top to bottom; they search it. So these carry no
@@ -1162,7 +1153,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // argument that put `addsup` first.
   // `owners`, `override` and `growth` are the town's shelf: who owns the homes and what
   // the bill does, what an override actually is, and what growing out of it would take.
-  analyses: ['addsup', 'budgetfeed', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'youthsports', 'schoolfinance', 'parks', 'healthlever', 'freecashlever', 'salarylever', 'feelever', 'extraslever', 'positionslever', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
+  analyses: ['addsup', 'budgetfeed', 'threads', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'youthsports', 'schoolfinance', 'parks', 'healthlever', 'freecashlever', 'salarylever', 'feelever', 'extraslever', 'positionslever', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',
