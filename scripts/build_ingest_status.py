@@ -77,7 +77,7 @@ def ago(ts):
 # which PROCESS is costing money right now.
 #
 # So the parent stays green and names its spend as a figure; the child carries the tag.
-AGENTIC = {'Our minutes', 'Votes', 'Backlog sweep'}
+AGENTIC = {'Our minutes', 'Votes', 'Backlog sweep', 'Budget state'}
 
 # WHAT EACH JOB IS, IN ONE LINE A PERSON WOULD SAY. TJ, 19 September 2026: "I think these
 # steps need descriptions too, short descriptions. the 'votes' one keeps getting me."
@@ -108,6 +108,9 @@ WATCHED = [
      'Reads the minutes THE TOWN published and pulls out just the votes, each with the '
      'town’s own words quoted. Nothing else from the document — their minutes are '
      'already the record.', False),
+    ('Budget state', r'[w]rite_budget_state\.py',
+     'Reads a budget meeting and records what it put on the record: the deficit, the '
+     'cuts, the proposals. Feeds the budget season page.', False),
     ('Backlog sweep', r'[s]weep_backlog\.py',
      'Works the votes and minutes backlog in bulk, newest first, until the plan says no.', False),
     ('Text extraction', r'[e]xtract_minutes\.py',
