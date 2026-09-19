@@ -776,6 +776,9 @@ border-radius:8px;text-transform:uppercase;letter-spacing:.06em}
 .chip{white-space:nowrap}
 .tag.ours{background:#12243a;color:#6cb6ff}.tag.req{background:#3a2d12;color:#d29922}
 .tag.agentic{background:#2a1e3d;color:#c09cf5}
+.lnk{display:inline-block;white-space:nowrap;font-size:11px;padding:1px 7px;border-radius:9px;
+border:1px solid #30363d;color:#6cb6ff;text-decoration:none}
+.lnk:hover{border-color:#6cb6ff}
 """
 
 def bar(done, todo):
@@ -1131,6 +1134,13 @@ const CAP=400; const F={o:'',k:''};
    records delivery never had a public address, a published document has one. The chips
    above carry the explanation, so the cell carries only the tag -- a sentence in a cell
    is unreadable at a glance and pushes the columns that matter off the screen. */
+/* The publisher, from the address, so the column says WHOSE it is in one word. The full
+   URL is the link's title, one hover away, and the link itself is the way to open it. */
+const host=u=>{try{const h=new URL(u).hostname.replace(/^www\./,'');
+  return {'lunenburgma.gov':'town','lunenburgschools.net':'district',
+          'lunenburgonline.com':'district','drive.google.com':'drive',
+          'docs.google.com':'drive','doe.mass.edu':'DESE','mass.gov':'state',
+          'youtube.com':'youtube'}[h]||h.split('.').slice(-2)[0];}catch(e){return 'link'}};
 const WHERE={ours:'<span class="tag ours">ours</span>',
              request:'<span class="tag req">by request</span>'};
 function draw(){
@@ -1142,7 +1152,8 @@ function draw(){
   t.innerHTML=hit.slice(0,CAP).map(d=>
     '<tr><td class="mono">'+d[0]+'</td><td class="tiny">'+d[6]+'</td>'+
     '<td class="r num">'+fmt(d[1])+'</td><td>'+
-    (d[2]?'<a href="'+d[2]+'" target="_blank">'+d[2].slice(0,52)+'</a>':(WHERE[d[5]]||''))+
+    (d[2]?'<a class="lnk" href="'+d[2]+'" target="_blank" title="'+d[2]+'">'+host(d[2])+' \u2197</a>'
+         :(WHERE[d[5]]||''))+
     '</td><td class="mono tiny">'+d[3]+'</td></tr>').join('');
   more.textContent=hit.length>CAP?'Narrow the filter to see the rest.':'';
 }
