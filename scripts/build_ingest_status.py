@@ -181,6 +181,70 @@ def scope(name, cmd, elapsed):
     return dict(plan=plan, done=done)
 
 
+
+# EVERY STEP, NOT A LIST SOMEBODY REMEMBERED TO UPDATE.
+#
+# The watched list was typed by hand, and write_budget_state.py ran for two minutes
+# spending the allowance while the page said "Caption backfill" was the only thing going.
+# A hand-kept list fails silently in the one direction that matters: it cannot report a
+# job it was never told about, and its silence is indistinguishable from that job not
+# running.
+#
+# So anything running out of scripts/ is discovered, whether or not it is described.
+# A described job gets its sentence; an undescribed one still appears, named, which is a
+# visible prompt to describe it rather than an invisible gap.
+STEP_WORDS = {
+    'watch_meetings': ('Watching the Agenda Center', 'Checking every board’s page for agendas and minutes we do not hold.'),
+    'watch_documents': ('Watching the budget pages', 'Checking the district’s budget pages and the town’s finance pages for new documents.'),
+    'watch_feeds': ('Watching the town’s feeds', 'The news flash and alert feeds — announcements, closures, warrants.'),
+    'watch_youtube': ('Watching the channel', 'The town’s YouTube feed, for recordings of meetings.'),
+    'fetch_agendas': ('Downloading agendas and minutes', 'Fetching the documents the watcher found that we do not already hold.'),
+    'fetch_town_docs': ('Downloading town documents', 'Fetching what is new on the town’s own pages.'),
+    'fetch_school_budget_docs': ('Downloading district documents', 'Fetching what is new on the district’s budget pages.'),
+    'extract_minutes': ('Extracting text', 'Pulling the words out of newly downloaded PDFs and Word files.'),
+    'build_minutes_searchable': ('Indexing the minutes', 'Making the new text findable by search.'),
+    'build_youtube_classification': ('Matching recordings to meetings', 'Working out which board and date each new video belongs to.'),
+    'write_agenda_preview': ('Previewing agendas', 'A plain-language summary of what an upcoming meeting will cover.'),
+    'write_document_budget_state': ('Reading new budget documents', 'What a new document says about the budget being built.'),
+    'write_budget_state': ('Reading budget meetings', 'What a meeting put on the record: the deficit, the cuts, the proposals.'),
+    'reconcile_minutes': ('Reconciling minutes', 'Ours against the town’s: caption errors resolved, real differences flagged.'),
+    'build_budget_season': ('Rebuilding the budget season', 'The season page, from what the record now says.'),
+    'build_search_index': ('Rebuilding search', 'One index over pages, documents, minutes and captions.'),
+    'extract_document_timestamps': ('Dating the documents', 'When each agenda and set of minutes was MADE, from the file’s own metadata — a lower bound on when the town posted it.'),
+    'watch_feeds': ('Watching the town’s feeds', 'The news flash and alert feeds — announcements, closures, warrants.'),
+}
+
+
+def discovered(known):
+    """Any script of ours running that the watched list does not already name.
+
+    `ps`, not `pgrep -af`: on macOS pgrep's -a prints PIDs only, so the first version
+    parsed an empty command line and discovered nothing -- failing exactly the way the
+    hand-kept list it was written to replace had failed, and just as quietly.
+    """
+    out = []
+    try:
+        r = subprocess.run(['ps', '-Ao', 'pid=,etime=,args='],
+                           capture_output=True, text=True)
+    except Exception:
+        return out
+    for line in r.stdout.splitlines():
+        m = re.search(r'lunenburgbudgets[a-z-]*/scripts/([a-z_]+)\.(py|sh)', line)
+        if not m:
+            continue
+        stem = m.group(1)
+        if stem in known or stem == 'build_ingest_status':
+            continue
+        parts = line.split(None, 2)
+        if len(parts) < 3:
+            continue
+        name, what = STEP_WORDS.get(stem, (stem + '.py', 'A step of the daily run.'))
+        out.append(dict(name=name, what=what, n=1, elapsed=parts[1], idle=False,
+                        cmd=parts[2][:200], plan=None, done=None, stem=stem,
+                        costs=stem.startswith('write_') or stem.startswith('extract_official')))
+    return out
+
+
 def running():
     out = []
     for name, pat, what, sleeps in WATCHED:
@@ -208,6 +272,18 @@ def running():
                                                capture_output=True, text=True).stdout.strip())
         out.append(dict(name=name, what=what, n=len(pids), elapsed=el, cmd=cmd, idle=idle,
                         costs=name in AGENTIC, **scope(name, cmd, el)))
+
+    # ...and anything else of ours that is running, described or not. The patterns above
+    # are bracketed so they cannot match their own argv (`[d]aily_refresh`), so the
+    # leading letter has to be put back before comparing against a real script name.
+    known = {re.sub(r'[\[\]]', '', m) for m in
+             re.findall(r'((?:\[[a-z]\])?[a-z_]+)\\?\.(?:py|sh)',
+                        ' '.join(pat for _, pat, _, _ in WATCHED))}
+    known |= {'refresh', 'daily_refresh'}
+    seen = {x['name'] for x in out}
+    for x in discovered(known):
+        if x['name'] not in seen:
+            out.append(x)
     return out
 
 
@@ -975,6 +1051,38 @@ def done_today():
              'downloads it.')
     card('Found on the channel', 'recordings spotted', seen.get('videos', 0), what=
          'New uploads on the town’s YouTube channel.')
+
+    # AND EVERY OTHER STEP THAT FINISHED TODAY. The four above are the ones that keep a
+    # registry and can say how MANY; the rest of the run is real work too, and leaving it
+    # off made a busy morning look like four things happened. Each is counted in runs --
+    # the honest unit when nothing counts the output -- with the time it took.
+    # A step whose output is already counted above must not appear again as "1 run": the
+    # same work twice on one panel is the discrepancy this page exists to prevent, and the
+    # registry card is the better of the two because it counts what landed.
+    named = {c['name'] for c in out}
+    counted = {'write_recording_minutes': 'Our minutes',
+               'extract_official_votes': 'Votes',
+               'ocr_scanned_minutes': 'OCR of scans',
+               'fetch_youtube_transcripts': 'YouTube captions'}
+    runs = collections.Counter()
+    secs = collections.Counter()
+    for x in finished(400):
+        if x['day'] != today:
+            continue
+        stem = x['step'].split('.py')[0].split()[0]
+        runs[stem] += 1
+        secs[stem] += x['seconds']
+    for stem, n in runs.most_common():
+        if counted.get(stem) in named:
+            continue
+        name, what = STEP_WORDS.get(stem, (stem + '.py', 'A step of the daily run.'))
+        if name in named:
+            continue
+        mins = secs[stem] / 60
+        out.append(dict(name=name, unit=('run' if n == 1 else 'runs') +
+                        (', %.0f min' % mins if mins >= 1 else ''),
+                        n=n, still_running=False, last='', what=what,
+                        costs=stem.startswith('write_') or stem.startswith('extract_official')))
     return sorted(out, key=lambda r: -r['n'])
 
 
@@ -1048,27 +1156,22 @@ def page_live(st):
     live = [x for x in R if x['name'] == 'Daily refresh']
     if live:
         r = live[0]
-        strip = ''.join(
-            '<span class="ph%s">%s%s</span>'
-            % (' now' if F['phase']['now'] == k else (' done' if k in F['phase']['seen'] else ''),
-               lbl, ' <span class="tag agentic">agentic</span>' if k == 'write' else '')
-            for k, lbl, _ in PHASES)
         found = ' &middot; '.join('<b>%d</b> %s' % (f['n'], f['label']) for f in F['found'])
         h.append('<div class="card runbox"><div class="row">'
                  '<span class="pill go">DAILY REFRESH RUNNING</span>'
                  '<b class="grow">%s</b><span class="tiny num">up %s</span></div>'
-                 '<div class="row" style="margin-top:8px;gap:4px">%s</div>'
                  '%s%s%s</div>'
                  % (('now running <code>%s</code>' % html.escape(F['phase']['step']))
                     if F['phase']['step'] else 'between steps',
-                    html.escape(r['elapsed']), strip,
+                    html.escape(r['elapsed']),
                     ('<div class="tiny" style="margin-top:8px">Found so far: %s</div>' % found)
                     if found else '',
                     ('<div class="tiny" style="margin-top:4px">Spent <b style="color:#c09cf5">'
                      '$%.2f</b> today — about %.1f%% of the week, all of it in the writing '
                      'phase.</div>' % (F['spent'], F['spent'] / 5)) if F['spent'] else '',
                     '<div class="tiny" style="margin-top:4px">Its individual steps appear '
-                    'below as they run.</div>'))
+                    'below, under Running now as they go and Done today when they '
+                    'finish.</div>'))
 
     h.append('<h2>Running now</h2>'
              '<p class="sub" style="margin:-4px 0 10px">'
