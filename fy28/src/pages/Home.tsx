@@ -77,6 +77,22 @@ function HomeRecentMeetings() {
  *
  *  The gap figure is READ FROM THE MODEL (rule 2), labelled as a projection (rule 7),
  *  and it is the same `LEVEL_SERVICE.gap` the crisis page's first card shows. */
+/** THE FRONT PAGE SEARCH BOX, OFF. TJ, 19 September 2026: "lets 'hide' the search bar for
+ *  now. I want to try that. Maybe search is too prominent right now. we DO have the
+ *  magnifying glass in the header." And, on seeing it commented out: "dont CUT it. just
+ *  hide for now."
+ *
+ *  So it is a flag, not a comment block and not a deletion. The component below stays
+ *  live, typechecked and rendered by one word — an experiment you can reverse without
+ *  reading a diff to find out what was removed.
+ *
+ *  The box went in on 11 September for a good reason: "We need to put an indicator on the
+ *  home page that users can search", and a text field is the one affordance on the web
+ *  that needs no label. What changed is not the argument but the page around it — the
+ *  header carries a magnifying glass on every page, so the indicator exists without
+ *  spending the front page's most valuable inches on a tool. */
+const SHOW_SEARCH = false
+
 const GAP_NOW = usdShort(LEVEL_SERVICE.gap)
 const GAP_NEXT = usdShort(run(2, DEFAULT_SCENARIO)[1].gap)
 
@@ -244,12 +260,33 @@ export function Home() {
           An independent tool for residents: why the school budget keeps breaking, what the
           town can do about it, and what its boards are deciding this week.
         </p>
+        {/* THE GROUP, UNDER THE STANDFIRST. It has been a sentence, a chip, a quiet link,
+            a filled button in the title row, and is now a plain link near where it
+            started — each move answering a real objection, and the last one only possible
+            because THE SEARCH BOX IS GONE. What made this awkward was never the styling:
+            it was sitting an inch from another button and reading as a second submit.
+            With no form on the page there is nothing left to be mistaken for, so it needs
+            no weight of its own to stay distinct.
+
+            TJ: "No bold background. But use 'Join us on facebook'". The mark and the words
+            both take Facebook's blue, which says where it goes without a filled block
+            shouting it. */}
+        <a href="https://www.facebook.com/share/g/1DvbEb9wnW/"
+          target="_blank" rel="noreferrer noopener"
+          className="mt-3 inline-flex items-center gap-1.5 text-[14px] font-semibold"
+          style={{ color: '#1877F2' }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.24 22 17.08 22 12.06z"/>
+          </svg>
+          Join us on Facebook
+        </a>
         {/* THE SEARCH BOX, ON THE FRONT PAGE. TJ, 11 September, on seeing /search: "We
             need to put an indicator on the home page that users can search." The
             indicator is the box itself: a text field is the one affordance on the web
             that needs no label, and a sentence saying "you can search" would be weaker
             than the thing. It is not a door -- it goes to nowhere in particular -- so it
             sits with the header, above the set, and stays narrow. */}
+        {SHOW_SEARCH && (
         <form className="mt-4 flex gap-2"
           onSubmit={e => {
             e.preventDefault()
@@ -264,25 +301,7 @@ export function Home() {
           <button type="submit" className="px-3.5 py-2 text-sm font-semibold rounded-lg shrink-0"
             style={{ background: 'var(--series-cost)', color: '#fff' }}>Search</button>
         </form>
-        {/* THE GROUP, AS A CHIP. It was a sentence — "Residents discuss this work in the
-            Lunenburg Budget Project group on Facebook — questions, corrections and what
-            people are hearing" — and TJ: "Again, too many words/sentence format for that
-            FB group."
-
-            A sentence is the wrong form for a destination. Prose is for things you read;
-            this is a thing you click, and the mark plus three words says everything the
-            sentence did. Outlined rather than filled so it stays quieter than the Search
-            button beside it — it is an exit from the site, and it should not outrank the
-            way in. */}
-        <a href="https://www.facebook.com/share/g/1DvbEb9wnW/"
-          target="_blank" rel="noreferrer noopener"
-          className="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[13px] font-semibold"
-          style={{ borderColor: 'var(--grid)', color: 'var(--series-cost)' }}>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.24 22 17.08 22 12.06z"/>
-          </svg>
-          Facebook group
-        </a>
+        )}
       </header>
 
       {/* TWO COLUMNS BY TEMPO. Left is the map -- the doors, which change monthly. Right

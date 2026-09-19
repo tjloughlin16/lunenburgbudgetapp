@@ -1,0 +1,105 @@
+{
+ "board": "Select Board",
+ "board_slug": "select-board",
+ "meeting_date": "2025-11-17",
+ "source": {
+  "sha256": "7fbb4e36b1b6b10e10e41fb3aa5cbb063957e91fba01fbfca2c653a7a491ee40",
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-11-17-Nj-LozM-f1A.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$160,00052",
+    "fiscal_year": 2026,
+    "kind": "budget_total",
+    "scope": "town",
+    "statement": "The FY26 town accountant budget supplement grew from an earlier estimate to this new figure.",
+    "status": "announced",
+    "t": 481,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$60,000",
+    "fiscal_year": 2026,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The FY25 audit under a proposed CBIZ agreement will cost more than what was budgeted for FY26, requiring additional funds.",
+    "status": "announced",
+    "t": 544,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$195,790.97",
+    "fiscal_year": 2026,
+    "kind": "levy",
+    "scope": "town",
+    "statement": "The total revenue surplus available for appropriation at special town meeting.",
+    "status": "announced",
+    "t": 1013,
+    "who": "the finance director"
+   },
+   {
+    "amount_as_heard": "$35,321.75",
+    "fiscal_year": 2026,
+    "kind": "levy",
+    "scope": "town",
+    "statement": "If Articles 2 and 3 are both approved, this levy capacity would remain available.",
+    "status": "proposed",
+    "t": 1037,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$90,000",
+    "fiscal_year": 2025,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Special town meeting is being asked to authorize and fund payment of an accrued FY25 Fitchburg water bill including interest.",
+    "status": "proposed",
+    "t": 1284,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$45,000",
+    "fiscal_year": 2026,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The FY26 water enterprise fund budget for this line may not be sufficient and revenue projections are complicated by a prior year of minimal billing.",
+    "status": "announced",
+    "t": 2550,
+    "who": "the finance director"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "the Fitchburg water billing authorization",
+    "condition": "if special town meeting does not approve the funding",
+    "fiscal_year": 2025,
+    "prediction": "the town would likely face litigation with the City of Fitchburg and a possible cherry sheet intercept",
+    "scope": "town",
+    "t": 2656,
+    "who": "the town manager"
+   },
+   {
+    "about": "the water enterprise fund budget",
+    "condition": "if the budgeted amount proves insufficient",
+    "fiscal_year": 2026,
+    "prediction": "further adjustments will likely be needed at a future town meeting",
+    "scope": "town",
+    "t": 2593,
+    "who": "the finance director"
+   }
+  ]
+ },
+ "video_id": "Nj-LozM-f1A",
+ "video_url": "https://www.youtube.com/watch?v=Nj-LozM-f1A",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-09-19T22:19:19Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}
