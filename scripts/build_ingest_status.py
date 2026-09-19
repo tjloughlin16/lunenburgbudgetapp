@@ -431,7 +431,9 @@ def run_history(n=8):
     seen = found_by_day()
     out = []
     for f in logs[:n]:
-        day = os.path.basename(f)[:10]
+        base = os.path.basename(f)[:-4]
+        day = base[:10]
+        again = base[10:].strip('-') or ''      # '', 'rerun', …
         try:
             with open(f, encoding='utf-8', errors='replace') as fh:
                 text = fh.read()
@@ -442,7 +444,7 @@ def run_history(n=8):
         # .py on the line, not the first token after the colon.
         fails = re.findall(r'step failed:.*?([a-z_]+\.py)', text)
         done = '=== finished' in text
-        out.append(dict(day=day, name=os.path.basename(f),
+        out.append(dict(day=day, again=again, name=os.path.basename(f),
                         exit=int(ex[-1]) if ex else None, finished=done,
                         failed=sorted(set(fails)),
                         running=(not done and day == dt.date.today().isoformat()),
@@ -647,16 +649,24 @@ color:#8b949e;margin:26px 0 10px;font-weight:600}
 .sub{color:#8b949e;font-size:12.5px;margin:0 0 4px}
 .card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px;margin-bottom:8px}
 .on{border-left:3px solid #3fb950}
-.alert{border:1px solid #f85149;border-left:4px solid #f85149;background:#2b1214}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
+.alert{border:1px solid #f85149;border-left:4px solid #f85149;background:#2b1214}
+.warnbox{border:1px solid #9e6a03;border-left:4px solid #d29922;background:#241c0c}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
 .row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .grow{flex:1;min-width:200px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
 .num{font-variant-numeric:tabular-nums}
 .bar{height:6px;background:#21262d;border-radius:3px;overflow:hidden;margin-top:6px}
 .bar i{display:block;height:100%;background:#3fb950}
 .bar i.part{background:#d29922}
-.pill{font-size:11px;padding:1px 7px;border-radius:9px;background:#21262d;color:#8b949e}
+/* A PILL IS A LABEL, AND A LABEL THAT WRAPS IS NOT ONE. "stopped part-way" broke across
+   two lines inside its own rounded box, which reads as two damaged pills rather than one
+   phrase. white-space:nowrap keeps it whole; inline-block makes the padding and radius
+   apply to the whole run rather than to each line fragment. */
+.pill{display:inline-block;white-space:nowrap;font-size:11px;padding:1px 7px;
+border-radius:9px;background:#21262d;color:#8b949e}
 .pill.go{background:#1a3a24;color:#3fb950}.pill.warn{background:#3a2d12;color:#d29922}
 .pill.no{background:#3a1d1d;color:#f85149}
+.key{display:inline-block;width:9px;height:9px;border-radius:2px;margin:0 3px 0 10px}
+.key.go{background:#3fb950}.key.warn{background:#d29922}
 table{width:100%;border-collapse:collapse;font-size:12.5px}
 th{text-align:left;color:#8b949e;font-weight:600;padding:5px 8px;border-bottom:1px solid #30363d;
 position:sticky;top:0;background:#0e1116}
@@ -675,7 +685,9 @@ margin-right:6px;text-decoration:none;font-size:12.5px}
 text-decoration:none;font-size:12px;color:#8b949e}
 .chip.sel{background:#1f6feb;border-color:#1f6feb;color:#fff}
 .chip b{color:inherit;margin-left:3px}
-.tag{font-size:10.5px;padding:1px 6px;border-radius:8px;text-transform:uppercase;letter-spacing:.06em}
+.tag{display:inline-block;white-space:nowrap;font-size:10.5px;padding:1px 6px;
+border-radius:8px;text-transform:uppercase;letter-spacing:.06em}
+.chip{white-space:nowrap}
 .tag.ours{background:#12243a;color:#6cb6ff}.tag.req{background:#3a2d12;color:#d29922}
 """
 
@@ -694,34 +706,65 @@ def bar(done, todo):
     return '<div class="bar"><i%s style="width:%.1f%%"></i></div>' % (cls, 100.0 * done / tot)
 
 def alert():
-    """Failures, named by the day they happened.
+    """An alarm about the CURRENT state, not a memorial to past failures.
 
-    TJ, 19 September 2026: "for 'REFRESH FAILED' i need to see which day it failed."
-    Obvious in hindsight: the sticky file says a run failed and a banner with no date
-    could be this morning or last Tuesday, and those call for different reactions.
+    TJ, 19 September 2026: "when one is running, that becomes less important ... 'Failed
+    but rerunning' is a not-alarming thing. we dont want that red alarm on the dash
+    forever now that a refresh is being run."
 
-    So the days come from the LOGS, which exist per day whether a run succeeded or not,
-    and every recent failure is named -- a four-day outage should read as four days.
+    Right, and the first version was a memorial. It listed every recent failure in red for
+    as long as those logs existed, so the banner would still have been shouting about the
+    16th in October. An alarm that cannot go away is an alarm nobody reads -- and the
+    whole point of building this was that four days of real failure went unnoticed.
 
-    OVERDUE IS ITS OWN ALARM. A run that never starts writes no failure either -- launchd
-    not firing, the worktree gone, the laptop shut -- and that is indistinguishable from a
-    quiet day unless somebody checks the clock.
+    So the colour tracks what is true NOW, and there are three states:
+
+      RED       the latest finished run failed and nothing is running. Broken, unattended.
+      AMBER     it failed, and a run is going right now. Being dealt with; worth knowing,
+                not worth alarming about.
+      NOTHING   the latest finished run succeeded. The failures are history and the run
+                table is where history belongs.
+
+    Overdue stays its own alarm: a job that never fires writes no failure either.
     """
     out = []
-    bad = [r for r in run_history(10) if not r['running']
-           and (r['exit'] not in (0, None) or r['failed'] or not r['finished'])]
-    if bad:
-        days = ', '.join(r['day'] for r in bad)
-        broke = sorted({f for r in bad for f in r['failed']})
-        out.append(dict(kind='failed', days=[r['day'] for r in bad],
-                        head='%d run%s failed: %s' % (len(bad), '' if len(bad) == 1 else 's', days),
-                        text=('broke on ' + ', '.join(broke) + '. ' if broke else '')
-                             + 'Nothing new was ingested on those days.'))
+    hist = run_history(10)
+    live = [r for r in hist if r['running']]
+    done = [r for r in hist if not r['running']]
+
+    def broke(r):
+        return r['exit'] not in (0, None) or r['failed'] or not r['finished']
+
+    # THE CONSECUTIVE STREAK ENDING NOW, not every failure in the last ten logs. Listing
+    # "18, 17, 16, 16, 14, 12" folds a live outage together with history somebody already
+    # dealt with, and the reader cannot tell which is which.
+    bad = []
+    for r in done:
+        if not broke(r):
+            break
+        bad.append(r)
+    latest = done[0] if done else None
+
+    if bad and latest and broke(latest):
+        # A day that ran twice and failed twice is ONE broken day, not two.
+        days = ', '.join(sorted({r['day'] for r in bad}, reverse=True))
+        names = sorted({f for r in bad for f in r['failed']})
+        if live:
+            out.append(dict(kind='recovering',
+                            head='Failed on %s — a run is going now' % days,
+                            text=('Last break was in ' + ', '.join(names) + '. ' if names else '')
+                                 + 'Watch it below; this clears when the run finishes.'))
+        else:
+            out.append(dict(kind='failed',
+                            head='%d day%s failed: %s' % (len(set(r['day'] for r in bad)),
+                                 '' if len(set(r['day'] for r in bad)) == 1 else 's', days),
+                            text=('Broke on ' + ', '.join(names) + '. ' if names else '')
+                                 + 'Nothing new has been ingested since, and no run is going.'))
+
     today = dt.date.today().isoformat()
     log = os.path.join(ROOT, 'build', 'refresh-logs', today + '.log')
     if not os.path.exists(log) and dt.datetime.now().hour >= 10:
-        out.append(dict(kind='overdue', days=[today],
-                        head='No run at all today (%s)' % today,
+        out.append(dict(kind='overdue', head='No run at all today (%s)' % today,
                         text='It is past 10am and there is no log for today. Check '
                              '`launchctl list | grep lunenburg` and that '
                              '../lunenburgbudgets-refresh still exists.'))
@@ -737,13 +780,20 @@ def page_live(st):
              '<a href="sources.html">Documents</a></div></div>' % st['generated'])
 
     for a in st['alerts']:
-        h.append('<div class="card alert"><div class="row"><span class="pill no">%s</span>'
+        tone = {'failed': ('alert', 'no', 'REFRESH FAILED'),
+                'recovering': ('warnbox', 'warn', 'FAILED — RERUNNING'),
+                'overdue': ('alert', 'no', 'NO RUN TODAY')}[a['kind']]
+        h.append('<div class="card %s"><div class="row"><span class="pill %s">%s</span>'
                  '<b class="grow">%s</b></div>'
                  '<div class="tiny" style="margin-top:4px">%s</div></div>'
-                 % ('REFRESH FAILED' if a['kind'] == 'failed' else 'NO RUN TODAY',
+                 % (tone[0], tone[1], tone[2],
                     html.escape(a['head']), html.escape(a['text'])))
 
-    h.append('<h2>Running now</h2>')
+    h.append('<h2>Running now</h2>'
+             '<p class="sub" style="margin:-4px 0 10px">'
+             '<span class="key go"></span> free — local work, or just network. '
+             '<span class="key warn"></span> spends the weekly plan allowance '
+             '(<code>claude -p</code>).</p>')
     if not R:
         h.append('<div class="card idle">Nothing is running. No process is fetching, reading or building.</div>')
     for r in R:
@@ -864,7 +914,7 @@ def page_live(st):
              'watchers’ own event logs — which are written the moment something is spotted, '
              'so a run that died later still reports what it found.</p>'
              '<div class="card"><table>'
-             '<tr><th>day</th><th>outcome</th><th class="r">agendas</th><th class="r">minutes</th>'
+             '<tr><th>day</th><th style="width:7.5rem">outcome</th><th class="r">agendas</th><th class="r">minutes</th>'
              '<th class="r">recordings</th><th class="r">notices</th><th>note</th></tr>')
     for r in F['history']:
         row = r['row'] or {}
@@ -879,10 +929,14 @@ def page_live(st):
         note = ('broke on ' + ', '.join(r['failed'])) if r['failed'] else (row.get('notes') or '')
         if not row and not r['running']:
             note = (note + ' — ' if note else '') + 'wrote no row: it died before recording the run'
-        h.append('<tr><td class="mono">%s<div class="tiny">%s</div></td><td>%s</td>'
+        h.append('<tr><td class="mono" style="white-space:nowrap">%s%s'
+                 '<div class="tiny">%s</div></td><td>%s</td>'
                  '<td class="r num">%s</td><td class="r num">%s</td><td class="r num">%s</td>'
                  '<td class="r num">%s</td><td class="tiny">%s</td></tr>'
-                 % (r['day'], r['mtime'], state,
+                 % (r['day'],
+                    ('<span class="tiny" style="color:#d29922"> %s</span>' % r['again'])
+                    if r['again'] else '',
+                    r['mtime'], state,
                     r['seen'].get('agendas') or '·', r['seen'].get('minutes') or '·',
                     r['seen'].get('videos') or '·', r['seen'].get('notices') or '·',
                     html.escape(note[:120])))
