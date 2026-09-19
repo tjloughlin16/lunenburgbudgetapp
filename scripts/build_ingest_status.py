@@ -58,14 +58,19 @@ def ago(ts):
 # pgrep, so a naive check reports itself as a running job -- the self-matching pattern
 # CLAUDE.md warns about, which has cost this project a session's coordination twice.
 # `[s]weep_backlog` cannot match its own argv.
+# THE JOBS THAT SPEND THE PLAN. Named here rather than sniffed out of the description,
+# because a label that depends on a phrase in prose breaks the first time the prose is
+# reworded — which it was, the moment the word changed from a colour to a tag.
+AGENTIC = {'Our minutes', 'Votes', 'Backlog sweep'}
+
 WATCHED = [
     ('YouTube captions',   r'[f]etch_youtube_transcripts\.py',  'fetching machine captions from the channel'),
     ('Caption backfill',   r'[r]un_transcript_backfill\.sh',    'the wrapper: newest first, backs off when YouTube refuses'),
     ('OCR of scans',       r'[o]cr_scanned_minutes\.py|[o]cr_pdf', 'macOS Vision reading image-only PDFs — local and free'),
     ('Daily refresh',      r'[r]efresh\.py|[d]aily_refresh\.sh', 'the 7am run: watch the town, fetch what is new, rebuild'),
-    ('Our minutes',        r'[w]rite_recording_minutes\.py',    'claude -p writing minutes from a transcript — COSTS ALLOWANCE'),
-    ('Votes',              r'[e]xtract_official_votes\.py',     'claude -p reading votes out of the town’s minutes — COSTS ALLOWANCE'),
-    ('Backlog sweep',      r'[s]weep_backlog\.py',              'the pre-reset sweep — COSTS ALLOWANCE'),
+    ('Our minutes',        r'[w]rite_recording_minutes\.py',    'claude -p writing minutes from a transcript'),
+    ('Votes',              r'[e]xtract_official_votes\.py',     'claude -p reading votes out of the town’s minutes'),
+    ('Backlog sweep',      r'[s]weep_backlog\.py',              'the pre-reset sweep, working the backlog'),
     ('Text extraction',    r'[e]xtract_minutes\.py',            'pulling text out of newly fetched PDFs'),
     ('Site build',         r'[v]ite build|[p]rerender\.mjs',    'building the 332 routes'),
     ('Archive sync',       r'[s]ync_archive\.py',               'hashing or pushing documents to R2'),
@@ -156,7 +161,7 @@ def running():
         except Exception:
             pass
         out.append(dict(name=name, what=what, n=len(pids), elapsed=el, cmd=cmd,
-                        costs='COSTS ALLOWANCE' in what, **scope(name, cmd, el)))
+                        costs=name in AGENTIC, **scope(name, cmd, el)))
     return out
 
 
@@ -689,6 +694,7 @@ text-decoration:none;font-size:12px;color:#8b949e}
 border-radius:8px;text-transform:uppercase;letter-spacing:.06em}
 .chip{white-space:nowrap}
 .tag.ours{background:#12243a;color:#6cb6ff}.tag.req{background:#3a2d12;color:#d29922}
+.tag.agentic{background:#2a1e3d;color:#c09cf5}
 """
 
 def bar(done, todo):
@@ -791,9 +797,9 @@ def page_live(st):
 
     h.append('<h2>Running now</h2>'
              '<p class="sub" style="margin:-4px 0 10px">'
-             '<span class="key go"></span> free — local work, or just network. '
-             '<span class="key warn"></span> spends the weekly plan allowance '
-             '(<code>claude -p</code>).</p>')
+             '<span class="tag agentic">agentic</span> spends the weekly plan allowance '
+             '(<code>claude -p</code>). Everything else is free — local work, or just '
+             'network.</p>')
     if not R:
         h.append('<div class="card idle">Nothing is running. No process is fetching, reading or building.</div>')
     for r in R:
@@ -805,11 +811,12 @@ def page_live(st):
                  '%d landed</span>' % r['done']
         else:
             sc = ''
-        h.append('<div class="card %s"><div class="row"><b class="grow">%s</b>%s'
+        h.append('<div class="card on"><div class="row"><b class="grow">%s%s</b>%s'
                  '<span class="pill %s">%s</span><span class="tiny num">up %s</span></div>'
                  '<div class="tiny">%s</div><div class="mono tiny" style="margin-top:4px;color:#586069">%s</div></div>'
-                 % ('cost' if r['costs'] else 'on', html.escape(r['name']), sc,
-                    'warn' if r['costs'] else 'go',
+                 % (html.escape(r['name']),
+                    ' <span class="tag agentic">agentic</span>' if r['costs'] else '',
+                    sc, 'go',
                     ('%d procs' % r['n']) if r['n'] > 1 else 'running',
                     html.escape(r['elapsed']), html.escape(r['what']), html.escape(r['cmd'])))
 
@@ -859,7 +866,9 @@ def page_live(st):
                  '<span class="pill %s">%s</span></div>%s'
                  '<div class="tiny" style="margin-top:6px">%s</div>'
                  '<div class="tiny" style="margin-top:4px">%s &middot; %s%s</div>'
-                 % (html.escape(s['name']),
+                 % (html.escape(s['name']) +
+                    (' <span class="tag agentic">agentic</span>'
+                     if 'allowance' in s['cost'] else ''),
                     ('last landed %s' % html.escape(s['last'])) if s['last'] else '',
                     '{:,}'.format(s['done']),
                     'go' if todo == 0 else 'warn',
