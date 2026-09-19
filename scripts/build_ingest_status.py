@@ -61,6 +61,22 @@ def ago(ts):
 # THE JOBS THAT SPEND THE PLAN. Named here rather than sniffed out of the description,
 # because a label that depends on a phrase in prose breaks the first time the prose is
 # reworded — which it was, the moment the word changed from a colour to a tag.
+# WHICH JOBS SPEND THE ALLOWANCE. The daily refresh is deliberately NOT here, and the
+# reasoning took a wrong turn first.
+#
+# TJ: "the Daily refresh isn't agentic?" -- and it does spend: step 7 writes our minutes
+# of new recordings through `claude -p`, $0.67 on the morning this was written. So the
+# first fix was to tag it. Then: "maybe you split out the recording minutes into a
+# separate bar then?"
+#
+# That is the better answer, and it is already how the page works. The refresh is a
+# WRAPPER around a dozen steps, all but one of them free, and the agentic one --
+# write_recording_minutes.py -- is watched in its own right and appears as its own card
+# whenever it runs, tagged and with its own elapsed time. Tagging the parent as well
+# would count the same spending twice on one screen and blur the thing the tag is for:
+# which PROCESS is costing money right now.
+#
+# So the parent stays green and names its spend as a figure; the child carries the tag.
 AGENTIC = {'Our minutes', 'Votes', 'Backlog sweep'}
 
 WATCHED = [
@@ -459,6 +475,66 @@ def run_history(n=8):
     return out
 
 
+
+# THE REFRESH IS FOUR PHASES, AND KNOWING WHICH ONE IT IS IN IS THE USEFUL FACT.
+#
+# TJ, 19 September 2026: "Daily refresh 'fetch' vs processing steps?"
+#
+# A run takes hours and the card said only "up 01:32:43", which tells you it is alive and
+# nothing about whether it is still finding things or long past that. The phases answer
+# different questions and fail differently:
+#
+#   WATCH    what is new on the town's site and the channel — network, free, fast
+#   FETCH    download what we do not hold — network, free, the slow part when the town
+#            has posted a lot
+#   READ     extract text, OCR, classify — local, free, CPU-bound
+#   WRITE    our minutes, the votes, the budget state — `claude -p`, and the only phase
+#            that spends the allowance
+#   PUBLISH  rebuild the payloads, the search index, the site, deploy
+#
+# A step is mapped by name rather than by position, because the order changes and a
+# position-based label would silently mislabel the day it does (the `v1` mistake, in a
+# different costume).
+PHASES = [
+    ('watch',   'Watching',   ('watch_',)),
+    ('fetch',   'Fetching',   ('fetch_',)),
+    ('read',    'Reading',    ('extract_minutes', 'ocr_', 'build_minutes_searchable',
+                               'build_youtube_classification', 'split_large_text')),
+    ('write',   'Writing',    ('write_recording_minutes', 'write_budget_state',
+                               'extract_official_votes', 'write_document_budget_state',
+                               'write_agenda_preview')),
+    ('publish', 'Publishing', ('build_', 'sync_', 'export_', 'npm', 'wrangler')),
+]
+
+
+def phase_of(script):
+    for key, _, pats in PHASES:
+        if any(script.startswith(x) or x in script for x in pats):
+            return key
+    return 'publish'
+
+
+def refresh_phase(text):
+    """Which phase the run is in now, and which it has been through.
+
+    The log prints `$ <command>` when a step starts and `  [name: 1.2s, exit N]` when it
+    finishes, so the step in flight is the last one started with no completion after it.
+    """
+    steps = re.findall(r'^\$ .*?([a-z_]+\.py)|^\$ .*?(npm|npx) ', text, re.M)
+    names = [a or b for a, b in steps]
+    seen, order = set(), []
+    for n in names:
+        k = phase_of(n)
+        if k not in seen:
+            seen.add(k)
+            order.append(k)
+    last = names[-1] if names else ''
+    tail = text.rsplit('$ ', 1)[-1] if '$ ' in text else ''
+    in_flight = last and ('exit ' not in tail)
+    return dict(now=phase_of(last) if in_flight else None,
+                step=last if in_flight else '', seen=seen)
+
+
 def refresh():
     """Today's run: whether it is going, where it looked, what it found, what it will do."""
     logdir = os.path.join(ROOT, 'build', 'refresh-logs')
@@ -491,7 +567,8 @@ def refresh():
                       r'([a-z0-9-]+) (\d{4}-\d{2}-\d{2})', text)
     costs = [float(x) for x in re.findall(r'written \(\$([\d.]+)\)', text)]
     hist = run_history()
-    return dict(live=live, log=os.path.basename(cur) if cur else None, today=today,
+    ph = refresh_phase(text)
+    return dict(live=live, phase=ph, log=os.path.basename(cur) if cur else None, today=today,
                 looked=looked, found=found,
                 jobs=[dict(script=a, board=b, date=c) for a, b, c in jobs[-6:]][::-1],
                 spent=round(sum(costs), 2), spent_n=len(costs),
@@ -655,7 +732,8 @@ color:#8b949e;margin:26px 0 10px;font-weight:600}
 .card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px;margin-bottom:8px}
 .on{border-left:3px solid #3fb950}
 .alert{border:1px solid #f85149;border-left:4px solid #f85149;background:#2b1214}
-.warnbox{border:1px solid #9e6a03;border-left:4px solid #d29922;background:#241c0c}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
+.warnbox{border:1px solid #9e6a03;border-left:4px solid #d29922;background:#241c0c}
+.runbox{border:1px solid #2ea043;border-left:4px solid #3fb950;background:#0f1f14}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
 .row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .grow{flex:1;min-width:200px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
 .num{font-variant-numeric:tabular-nums}
@@ -672,6 +750,9 @@ border-radius:9px;background:#21262d;color:#8b949e}
 .pill.no{background:#3a1d1d;color:#f85149}
 .key{display:inline-block;width:9px;height:9px;border-radius:2px;margin:0 3px 0 10px}
 .key.go{background:#3fb950}.key.warn{background:#d29922}
+.ph{font-size:11px;padding:2px 8px;border-radius:9px;background:#21262d;color:#586069;
+white-space:nowrap}
+.ph.done{color:#3fb950}.ph.now{background:#1f6feb;color:#fff;font-weight:600}
 table{width:100%;border-collapse:collapse;font-size:12.5px}
 th{text-align:left;color:#8b949e;font-weight:600;padding:5px 8px;border-bottom:1px solid #30363d;
 position:sticky;top:0;background:#0e1116}
@@ -778,6 +859,9 @@ def alert():
 
 
 def page_live(st):
+    # The refresh prints each job's cost as it finishes, so its spend so far is readable
+    # from today's log -- an actual figure beats a tag that only warns it could spend.
+
     R, S, F, Q = st['running'], st['streams'], st['refresh'], st['queued']
     h = []
     h.append('<div class="wrap"><div class="row"><div class="grow"><h1>Ingestion</h1>'
@@ -795,14 +879,39 @@ def page_live(st):
                  % (tone[0], tone[1], tone[2],
                     html.escape(a['head']), html.escape(a['text'])))
 
+    live = [x for x in R if x['name'] == 'Daily refresh']
+    if live:
+        r = live[0]
+        strip = ''.join(
+            '<span class="ph%s">%s%s</span>'
+            % (' now' if F['phase']['now'] == k else (' done' if k in F['phase']['seen'] else ''),
+               lbl, ' <span class="tag agentic">agentic</span>' if k == 'write' else '')
+            for k, lbl, _ in PHASES)
+        found = ' &middot; '.join('<b>%d</b> %s' % (f['n'], f['label']) for f in F['found'])
+        h.append('<div class="card runbox"><div class="row">'
+                 '<span class="pill go">DAILY REFRESH RUNNING</span>'
+                 '<b class="grow">%s</b><span class="tiny num">up %s</span></div>'
+                 '<div class="row" style="margin-top:8px;gap:4px">%s</div>'
+                 '%s%s%s</div>'
+                 % (('now running <code>%s</code>' % html.escape(F['phase']['step']))
+                    if F['phase']['step'] else 'between steps',
+                    html.escape(r['elapsed']), strip,
+                    ('<div class="tiny" style="margin-top:8px">Found so far: %s</div>' % found)
+                    if found else '',
+                    ('<div class="tiny" style="margin-top:4px">Spent <b style="color:#c09cf5">'
+                     '$%.2f</b> today — about %.1f%% of the week, all of it in the writing '
+                     'phase.</div>' % (F['spent'], F['spent'] / 5)) if F['spent'] else '',
+                    '<div class="tiny" style="margin-top:4px">Its individual steps appear '
+                    'below as they run.</div>'))
+
     h.append('<h2>Running now</h2>'
              '<p class="sub" style="margin:-4px 0 10px">'
              '<span class="tag agentic">agentic</span> spends the weekly plan allowance '
              '(<code>claude -p</code>). Everything else is free — local work, or just '
              'network.</p>')
-    if not R:
-        h.append('<div class="card idle">Nothing is running. No process is fetching, reading or building.</div>')
-    for r in R:
+    if not [x for x in R if x['name'] != 'Daily refresh']:
+        h.append('<div class="card idle">No individual job is running.</div>')
+    for r in [x for x in R if x['name'] != 'Daily refresh']:
         if r['done'] is not None and r['plan']:
             sc = ('<span class="pill go">%d of %d this batch</span>' % (min(r['done'], r['plan']), r['plan'])
                   + bar(r['done'], max(0, r['plan'] - r['done'])))
@@ -811,12 +920,17 @@ def page_live(st):
                  '%d landed</span>' % r['done']
         else:
             sc = ''
-        h.append('<div class="card on"><div class="row"><b class="grow">%s%s</b>%s'
+        # The refresh prints each job's cost as it finishes, so its spend so far is
+        # readable from today's log. An actual figure on the wrapper beats a tag: it says
+        # what was spent rather than warning that something might be.
+        spent = (' <span class="tiny" style="color:#c09cf5">$%.2f today, in its agentic '
+                 'step</span>' % F['spent']) if (r['name'] == 'Daily refresh' and F['spent']) else ''
+        h.append('<div class="card on"><div class="row"><b class="grow">%s%s%s</b>%s'
                  '<span class="pill %s">%s</span><span class="tiny num">up %s</span></div>'
                  '<div class="tiny">%s</div><div class="mono tiny" style="margin-top:4px;color:#586069">%s</div></div>'
                  % (html.escape(r['name']),
                     ' <span class="tag agentic">agentic</span>' if r['costs'] else '',
-                    sc, 'go',
+                    spent, sc, 'go',
                     ('%d procs' % r['n']) if r['n'] > 1 else 'running',
                     html.escape(r['elapsed']), html.escape(r['what']), html.escape(r['cmd'])))
 
