@@ -274,11 +274,26 @@ def build():
             'classified_by': by,
             'classified_at': at,
         })
+        # A JOINT BODY IS ITS OWN BODY, AND IT COUNTS FOR ITS CONSTITUENTS. The Tri-Board is
+        # the School Committee, Select Board and Finance Committee sitting together: it owns
+        # its meetings, and each of the three has to be able to find them. So the (video,
+        # board) table carries the owner and one member row per constituent, with `role`
+        # saying which is which -- never the three alone, which made the body disappear, and
+        # never the owner alone, which hid the meeting from the boards that were in it.
+        for s in list(slugs):
+            for c in [x for x in (by_slug[s].get('constituent_boards') or '').split('|') if x]:
+                if c not in by_slug:
+                    raise SystemExit(f'REFUSING: board {s} names constituent {c!r}, '
+                                     f'which is not in youtube-boards.csv')
+                if c not in slugs:
+                    slugs.append(c)
+        owners = {x for x in slugs if (by_slug[x].get('constituent_boards') or '').strip()}
         for s in slugs:
             brows.append({
                 'video_id': v['video_id'],
                 'board_slug': s,
                 'board_name': by_slug[s]['board_name'],
+                'role': ('owner' if (s in owners or not owners) else 'member'),
                 'title_stem': stem,
                 'meetings_folder': by_slug[s]['meetings_folder'],
                 'in_agenda_center': 'yes' if by_slug[s]['meetings_folder'] else 'NO',
@@ -312,7 +327,7 @@ def render(rows, cols):
 VIDEO_COLS = ['video_id', 'channel_rank', 'title', 'url', 'title_stem', 'kind', 'category',
               'board_count', 'meeting_date', 'date_source', 'date_flag', 'note',
               'classification_source', 'classified_by', 'classified_at']
-BOARD_COLS = ['video_id', 'board_slug', 'board_name', 'title_stem',
+BOARD_COLS = ['video_id', 'board_slug', 'board_name', 'role', 'title_stem',
               'meetings_folder', 'in_agenda_center', 'meeting_date',
               'classification_source', 'classified_by', 'classified_at']
 

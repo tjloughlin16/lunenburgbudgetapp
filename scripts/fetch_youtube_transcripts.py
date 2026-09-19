@@ -82,6 +82,13 @@ def load_targets(board, since, until, video_only=False):
         rows = [r for r in csv.DictReader(fh) if r.get('meeting_date')]
     if not rows:
         raise SystemExit('no classified video carries a meeting date. Nothing to fetch.')
+    # ONE FILE PER RECORDING, filed under the body that MET. The (video, board) table
+    # carries a member row for each constituent of a joint body -- a Tri-Board meeting is
+    # findable under the School Committee, the Select Board and the Finance Committee --
+    # and fetching every row would pull the same recording down four times into four
+    # folders. The owner row is the recording; the member rows are how boards find it.
+    if any(r.get('role') for r in rows):
+        rows = [r for r in rows if (r.get('role') or 'owner') == 'owner']
     if board:
         rows = [r for r in rows if r['board_slug'] == board]
         if not rows:

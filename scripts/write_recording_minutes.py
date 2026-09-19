@@ -232,6 +232,34 @@ def sha256_of(path):
     return h.hexdigest()
 
 
+BOARD_NAMES_CSV = os.path.join(ROOT, 'sources', 'data', 'youtube-boards.csv')
+
+
+def board_names():
+    """THE BOARD'S NAME, from the registry -- never from the video's title. A YouTube title
+    is whatever whoever uploaded it typed: 108 recent meetings carried 24 distinct board
+    names for 17 bodies ('Finance Comittee' beside 'Finance Committee', 'Select Board
+    Workshop' and 'Select Board Meeting -' beside 'Select Board'), so any count of how many
+    boards touched a matter was wrong. sources/data/youtube-boards.csv already holds one
+    canonical name per slug, with the variants it has been titled under; this reads it.
+    The video's own title is kept as `video_title` -- it is real, and it is not a name."""
+    out = {}
+    for r in csv.DictReader(open(BOARD_NAMES_CSV, encoding='utf-8')):
+        if r.get('board_slug') and r.get('board_name'):
+            out[r['board_slug']] = r['board_name']
+    return out
+
+
+BOARD_NAME = None
+
+
+def board_name_for(slug):
+    global BOARD_NAME
+    if BOARD_NAME is None:
+        BOARD_NAME = board_names()
+    return BOARD_NAME.get(slug) or slug.replace('-', ' ').title()
+
+
 def transcripts():
     out = []
     for r in csv.DictReader(open(TRANSCRIPT_INDEX, encoding='utf-8', errors='replace')):
@@ -288,7 +316,8 @@ def write_one(entry, docs, force=False):
     lines = lines_for(doc)
     if len(lines) < 5:
         return 'too short'
-    board = (doc.get('title') or entry['board_slug'].replace('-', ' ').title())
+    board = board_name_for(entry['board_slug'])
+    video_title = doc.get('title') or ''
     prompt = ('Meeting: %s, %s. Recording: %s\n\nCaptions (%d lines, [seconds] text):\n\n%s'
               % (board, entry['date'], doc.get('video_url'), len(lines), '\n'.join(lines)))
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
@@ -319,6 +348,7 @@ def write_one(entry, docs, force=False):
         'warning': WARNING,
         'board_slug': entry['board_slug'],
         'board': board,
+        'video_title': video_title,
         'meeting_date': entry['date'],
         'video_id': entry['video_id'],
         'video_url': video_url,

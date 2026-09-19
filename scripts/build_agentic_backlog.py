@@ -34,7 +34,11 @@ def split(dates_done, dates_todo):
 
 
 def transcripts():
+    # ONE ROW PER RECORDING. youtube-video-boards.csv is one row per (video, board), so a
+    # joint body's meeting appears under each board that was in it -- a Tri-Board meeting is
+    # four rows. Counting rows counts that recording four times in a backlog of recordings.
     rows = read(os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv'))
+    rows = list({r['video_id']: r for r in rows}.values())
     have = {os.path.basename(p)[-16:-5] for p in glob.glob(os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts', '*', '*.json'))}
     nocap = {r['video_id'] for r in read(os.path.join(ROOT, 'sources', 'data', 'youtube-no-captions.csv'))}
     done = [r['meeting_date'] for r in rows if r['video_id'] in have]
