@@ -379,6 +379,38 @@ def watcher_targets():
 
 
 
+
+def found_by_day():
+    """What the WATCHERS saw, per day, from their own event logs.
+
+    TJ, 19 September 2026: "it looks like none of the refresh runs found much, but i dont
+    think thats true." It is not true, and it was the same bug one level down.
+
+    The counts were coming from refresh-runs.csv, which refresh.py writes at the END --
+    after the step that died on the 16th, 17th and 18th. So three days that found seven
+    agendas and four recordings between them printed a dash, as if the town had posted
+    nothing.
+
+    The watchers write their events the moment they see them, near the start of the run,
+    and those files survived every failure. They are the honest source for "what did this
+    day turn up": an observation log, written first, rather than a summary written last.
+    """
+    out = collections.defaultdict(collections.Counter)
+    for f, label in (('meeting-watch-events.csv', None),          # kind column: agenda/minutes
+                     ('youtube-watch-events.csv', 'videos'),
+                     ('document-watch-events.csv', 'documents'),
+                     ('feed-watch-events.csv', 'notices')):
+        for r in rows(f):
+            day = (r.get('first_seen') or r.get('seen_at') or '')[:10]
+            if not day:
+                continue
+            # The watcher's own words: 'agenda' and 'minutes'. Blind pluralisation turned
+            # the second into 'minutess' and the column read empty.
+            k = label or {'agenda': 'agendas', 'minutes': 'minutes'}.get(r.get('kind'), 'other')
+            out[day][k] += 1
+    return out
+
+
 def run_history(n=8):
     """Every day the refresh RAN, from its logs — not from the registry it writes.
 
@@ -396,6 +428,7 @@ def run_history(n=8):
     """
     logs = sorted(glob.glob(os.path.join(ROOT, 'build', 'refresh-logs', '*.log')), reverse=True)
     by_day = {r['as_of']: r for r in rows('refresh-runs.csv')}
+    seen = found_by_day()
     out = []
     for f in logs[:n]:
         day = os.path.basename(f)[:10]
@@ -413,7 +446,7 @@ def run_history(n=8):
                         exit=int(ex[-1]) if ex else None, finished=done,
                         failed=sorted(set(fails)),
                         running=(not done and day == dt.date.today().isoformat()),
-                        row=by_day.get(day),
+                        row=by_day.get(day), seen=seen.get(day, collections.Counter()),
                         mtime=ago(dt.datetime.fromtimestamp(os.path.getmtime(f),
                                                             dt.timezone.utc).isoformat())))
     return out
@@ -826,9 +859,13 @@ def page_live(st):
                     'filed' if q['ingested'] else ('unreadable' if q['ingested'] is None else 'NOT FILED'),
                     '{:,} B'.format(q['bytes']) if q['bytes'] else '', html.escape(q['note'])))
 
-    h.append('<h2>Recent refresh runs</h2><div class="card"><table>'
+    h.append('<h2>Recent refresh runs</h2>'
+             '<p class="sub" style="margin:-4px 0 10px">What each run SAW, counted from the '
+             'watchers’ own event logs — which are written the moment something is spotted, '
+             'so a run that died later still reports what it found.</p>'
+             '<div class="card"><table>'
              '<tr><th>day</th><th>outcome</th><th class="r">agendas</th><th class="r">minutes</th>'
-             '<th class="r">videos</th><th class="r">captions</th><th>note</th></tr>')
+             '<th class="r">recordings</th><th class="r">notices</th><th>note</th></tr>')
     for r in F['history']:
         row = r['row'] or {}
         if r['running']:
@@ -846,8 +883,8 @@ def page_live(st):
                  '<td class="r num">%s</td><td class="r num">%s</td><td class="r num">%s</td>'
                  '<td class="r num">%s</td><td class="tiny">%s</td></tr>'
                  % (r['day'], r['mtime'], state,
-                    row.get('new_agendas', '·'), row.get('new_minutes', '·'),
-                    row.get('new_videos', '·'), row.get('new_transcripts', '·'),
+                    r['seen'].get('agendas') or '·', r['seen'].get('minutes') or '·',
+                    r['seen'].get('videos') or '·', r['seen'].get('notices') or '·',
                     html.escape(note[:120])))
     h.append('</table></div></div>')
     return ''.join(h)
