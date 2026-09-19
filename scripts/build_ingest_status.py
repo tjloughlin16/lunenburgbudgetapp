@@ -79,18 +79,49 @@ def ago(ts):
 # So the parent stays green and names its spend as a figure; the child carries the tag.
 AGENTIC = {'Our minutes', 'Votes', 'Backlog sweep'}
 
+# WHAT EACH JOB IS, IN ONE LINE A PERSON WOULD SAY. TJ, 19 September 2026: "I think these
+# steps need descriptions too, short descriptions. the 'votes' one keeps getting me."
+#
+# It kept getting him because the label named the OUTPUT and the confusion was about the
+# INPUT: "Votes" sounds like it should be everything we take from a meeting, when it is
+# one narrow thing taken from the town's own minutes -- the other stream, our minutes,
+# is the one that captures the whole meeting. So each line now says what goes in and what
+# comes out, in that order, because that is the distinction the names could not carry.
+#
+# `sleeps` marks a wrapper that spends most of its life waiting: alive is not working, and
+# a page that cannot tell them apart says "running" about a process asleep in a backoff.
 WATCHED = [
-    ('YouTube captions',   r'[f]etch_youtube_transcripts\.py',  'fetching machine captions from the channel'),
-    ('Caption backfill',   r'[r]un_transcript_backfill\.sh',    'the wrapper: newest first, backs off when YouTube refuses'),
-    ('OCR of scans',       r'[o]cr_scanned_minutes\.py|[o]cr_pdf', 'macOS Vision reading image-only PDFs — local and free'),
-    ('Daily refresh',      r'[r]efresh\.py|[d]aily_refresh\.sh', 'the 7am run: watch the town, fetch what is new, rebuild'),
-    ('Our minutes',        r'[w]rite_recording_minutes\.py',    'claude -p writing minutes from a transcript'),
-    ('Votes',              r'[e]xtract_official_votes\.py',     'claude -p reading votes out of the town’s minutes'),
-    ('Backlog sweep',      r'[s]weep_backlog\.py',              'the pre-reset sweep, working the backlog'),
-    ('Text extraction',    r'[e]xtract_minutes\.py',            'pulling text out of newly fetched PDFs'),
-    ('Site build',         r'[v]ite build|[p]rerender\.mjs',    'building the 332 routes'),
-    ('Archive sync',       r'[s]ync_archive\.py',               'hashing or pushing documents to R2'),
+    ('YouTube captions', r'[f]etch_youtube_transcripts\.py',
+     'Downloads the machine captions of one batch of meeting recordings.', False),
+    ('Caption backfill', r'[r]un_transcript_backfill\.sh',
+     'Works through the recordings with no captions yet, newest first. Backs off for '
+     'longer and longer when YouTube refuses, so it is asleep more often than not.', True),
+    ('OCR of scans', r'[o]cr_scanned_minutes\.py|[o]cr_pdf',
+     'Reads minutes the town posted as page images, so they become searchable text.', False),
+    ('Daily refresh', r'[r]efresh\.py|[d]aily_refresh\.sh',
+     'The 7am run: check the town and the channel, fetch what is new, rebuild, deploy.', False),
+    ('Our minutes', r'[w]rite_recording_minutes\.py',
+     'Writes OUR record of a meeting from our captions of the video — decisions, '
+     'transfers, topics, public comment and votes. Used where the town published no '
+     'minutes at all.', False),
+    ('Votes', r'[e]xtract_official_votes\.py',
+     'Reads the minutes THE TOWN published and pulls out just the votes, each with the '
+     'town’s own words quoted. Nothing else from the document — their minutes are '
+     'already the record.', False),
+    ('Backlog sweep', r'[s]weep_backlog\.py',
+     'Works the votes and minutes backlog in bulk, newest first, until the plan says no.', False),
+    ('Text extraction', r'[e]xtract_minutes\.py',
+     'Pulls the text out of newly downloaded PDFs and Word files.', False),
+    ('Site build', r'[v]ite build|[p]rerender\.mjs',
+     'Rebuilds the 332 pages of the public site.', False),
+    ('Archive sync', r'[s]ync_archive\.py',
+     'Hashes the archive, or uploads new documents to the R2 bucket.', False),
 ]
+
+# A wrapper is WORKING only while one of these is alive under it.
+CHILD_OF = {'Caption backfill': r'[f]etch_youtube_transcripts\.py',
+            'Daily refresh': r'[a-z_]+\.py'}
+
 
 
 def etime_seconds(e):
@@ -125,19 +156,14 @@ PRODUCES = {
 def scope(name, cmd, elapsed):
     """How many this run means to do, and how many it has done.
 
-    TJ, 19 September 2026: "can you put a scope of how many it plans to do in that run,
-    and how many its done? Do we have that info?"
+    THE PLAN is the job's own `--limit`, read off the command line it is running under.
+    THE PROGRESS is counted: files the stream owns whose mtime falls after the process
+    started, which `ps` gives as an elapsed time.
 
-    We do, for the half of it that is knowable. THE PLAN is the job's own `--limit`, read
-    off the command line it is running under rather than from anything we assume about
-    it. THE PROGRESS is counted: files the stream owns whose mtime falls after the
-    process started, which `ps` gives as an elapsed time.
-
-    Two honest limits, and the card says which applies. A wrapper that loops -- the
-    caption backfill -- has no total of its own: it takes 25, sleeps, takes 25 again, so
-    its `--limit` belongs to the child and not to the run. And counting by mtime cannot
-    see a job that overwrote a file in place. Neither is worth a guess, so where there is
-    no number the card says nothing rather than inventing a denominator.
+    Two honest limits. A wrapper that loops has no total of its own -- its `--limit`
+    belongs to the child, not the run. And counting by mtime cannot see a job that
+    overwrote a file in place. Where there is no number the card says nothing rather than
+    inventing a denominator.
     """
     m = re.search(r'--limit\s+(\d+)', cmd or '')
     plan = int(m.group(1)) if m else None
@@ -161,7 +187,7 @@ def scope(name, cmd, elapsed):
 
 def running():
     out = []
-    for name, pat, what in WATCHED:
+    for name, pat, what, sleeps in WATCHED:
         try:
             r = subprocess.run(['pgrep', '-f', pat], capture_output=True, text=True)
             pids = [p for p in r.stdout.split() if p]
@@ -176,7 +202,15 @@ def running():
             cmd = ' '.join(p.split()[1:])[:200]
         except Exception:
             pass
-        out.append(dict(name=name, what=what, n=len(pids), elapsed=el, cmd=cmd,
+        # ALIVE IS NOT WORKING. The caption backfill runs for days and spends most of
+        # them asleep between batches; reporting that as "running" is how a page ends up
+        # implying two things are happening when one is.
+        idle = False
+        if sleeps:
+            kid = CHILD_OF.get(name)
+            idle = not (kid and subprocess.run(['pgrep', '-f', kid],
+                                               capture_output=True, text=True).stdout.strip())
+        out.append(dict(name=name, what=what, n=len(pids), elapsed=el, cmd=cmd, idle=idle,
                         costs=name in AGENTIC, **scope(name, cmd, el)))
     return out
 
@@ -861,6 +895,47 @@ def alert():
     return out
 
 
+
+def finished(n=14):
+    """Steps that ran and COMPLETED recently, newest first.
+
+    TJ, 19 September 2026: "i was surprised that there are no other processes running. i
+    think that means everything else completed? I guess i need to see somehow when things
+    ran but completed too ... otherwise its confusing."
+
+    Exactly the gap. A list of what is running answers half a question: an empty list
+    means either everything finished or nothing ever started, and those are opposite
+    situations that look identical. The page has been showing the half that alarms and
+    hiding the half that reassures.
+
+    The refresh log already records every step it completes -- `[name: 12.3s, exit 0]` --
+    so this is a read, not a new measurement. Steps that took under two seconds are left
+    out: a check that returns instantly is noise beside a fetch that took four minutes.
+    """
+    out = []
+    for f in sorted(glob.glob(os.path.join(ROOT, 'build', 'refresh-logs', '*.log')),
+                    reverse=True)[:2]:
+        day = os.path.basename(f)[:10]
+        try:
+            with open(f, encoding='utf-8', errors='replace') as fh:
+                text = fh.read()
+        except OSError:
+            continue
+        # Newest step first WITHIN the day, and the days are already newest first -- so
+        # today's most recent step leads. Reversing the whole flat list instead put
+        # yesterday's earliest step at the top, which is the least interesting row there is.
+        steps = []
+        for m in re.finditer(r'\[([a-z_]+\.py[^:]*): ([\d.]+)s, exit (\d+)\]', text):
+            secs = float(m.group(2))
+            if secs < 2:
+                continue
+            steps.append(dict(day=day, step=m.group(1), seconds=secs, exit=int(m.group(3))))
+        out.extend(steps[::-1])
+        if len(out) >= n:
+            break
+    return out[:n]
+
+
 def page_live(st):
     # The refresh prints each job's cost as it finishes, so its spend so far is readable
     # from today's log -- an actual figure beats a tag that only warns it could spend.
@@ -928,14 +1003,29 @@ def page_live(st):
         # what was spent rather than warning that something might be.
         spent = (' <span class="tiny" style="color:#c09cf5">$%.2f today, in its agentic '
                  'step</span>' % F['spent']) if (r['name'] == 'Daily refresh' and F['spent']) else ''
-        h.append('<div class="card on"><div class="row"><b class="grow">%s%s%s</b>%s'
+        h.append('<div class="card %s"><div class="row"><b class="grow">%s%s%s</b>%s'
                  '<span class="pill %s">%s</span><span class="tiny num">up %s</span></div>'
                  '<div class="tiny">%s</div><div class="mono tiny" style="margin-top:4px;color:#586069">%s</div></div>'
-                 % (html.escape(r['name']),
+                 % ('' if r['idle'] else 'on', html.escape(r['name']),
                     ' <span class="tag agentic">agentic</span>' if r['costs'] else '',
-                    spent, sc, 'go',
-                    ('%d procs' % r['n']) if r['n'] > 1 else 'running',
+                    spent, sc, '' if r['idle'] else 'go',
+                    'waiting' if r['idle'] else
+                    (('%d procs' % r['n']) if r['n'] > 1 else 'working'),
                     html.escape(r['elapsed']), html.escape(r['what']), html.escape(r['cmd'])))
+
+    # WHAT JUST FINISHED. Without this, "nothing is running" cannot be told apart from
+    # "nothing ever started", and the first is fine while the second is an outage.
+    if st['finished']:
+        h.append('<h2>Finished recently</h2><div class="card"><table>')
+        for x in st['finished']:
+            h.append('<tr><td class="mono">%s</td><td class="tiny">%s</td>'
+                     '<td class="r num tiny">%s</td><td class="r">%s</td></tr>'
+                     % (html.escape(x['step']), x['day'],
+                        ('%.0fs' % x['seconds']) if x['seconds'] < 90
+                        else '%.0fm' % (x['seconds'] / 60),
+                        '<span class="pill go">done</span>' if x['exit'] == 0
+                        else '<span class="pill no">exit %d</span>' % x['exit']))
+        h.append('</table></div>')
 
     h.append('<h2>The daily refresh</h2>')
     h.append('<div class="card %s"><div class="row"><b class="grow">%s</b><span class="pill %s">%s</span></div>'
@@ -1170,7 +1260,7 @@ def write(open_it=False):
     os.makedirs(OUT, exist_ok=True)
     st = dict(generated=dt.datetime.now().strftime('%a %d %b, %H:%M:%S'),
               running=running(), streams=streams(), refresh=refresh(), queued=queued(),
-              alerts=alert())
+              alerts=alert(), finished=finished())
     docs = sources()
     shell = ('<!doctype html><meta charset=utf-8><meta name=viewport '
              'content="width=device-width,initial-scale=1"><title>%s</title>'
