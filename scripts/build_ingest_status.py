@@ -139,51 +139,42 @@ def etime_seconds(e):
     return int(days) * 86400 + parts[0] * 3600 + parts[1] * 60 + parts[2]
 
 
-# WHAT PRODUCED FILES EACH RUNNING THING WRITES, so "done this run" can be counted rather
-# than guessed. Both trees: the 7am refresh runs in ../lunenburgbudgets-refresh.
-PRODUCES = {
-    'YouTube captions': ['sources/data/youtube-transcripts/*/*'],
-    'Caption backfill': ['sources/data/youtube-transcripts/*/*'],
-    'OCR of scans':     ['sources/meetings/text/*/*.txt'],
-    'Our minutes':      ['sources/data/recording-minutes/*/*.json'],
-    'Votes':            ['sources/data/official-votes/*/*.json'],
-    'Backlog sweep':    ['sources/data/official-votes/*/*.json',
-                         'sources/data/recording-minutes/*/*.json'],
-    'Daily refresh':    ['sources/data/recording-minutes/*/*.json',
-                         'sources/data/official-votes/*/*.json',
-                         'sources/meetings/*/*.pdf'],
+# HOW MANY THIS RUN HAS DONE, from the same timestamps "Done today" uses.
+#
+# TJ, 19 September 2026: "running now and done today have metric discrepancies."
+#
+# They did, and it was the mtime bug again -- fixed in done_today() and left here. This
+# counted files whose mtime fell after the process started, across both trees, so the
+# refresh tree's `git reset --hard` inflated it: 33 "landed" against 20 actually read.
+# Two panels on one screen, each confidently reporting a different number for one
+# quantity, is the exact failure this page was built to end, so it may not be measured
+# two ways.
+#
+# Every stream that records WHEN it did a thing is counted from that record. A stream with
+# no such record reports nothing rather than a figure from an adjacent quantity.
+SINCE = {
+    'YouTube captions': ('youtube-transcript-index.csv', 'fetched_at'),
+    'Caption backfill': ('youtube-transcript-index.csv', 'fetched_at'),
+    'OCR of scans':     ('ocr-minutes.csv', 'ocr_at'),
 }
 
 
 def scope(name, cmd, elapsed):
-    """How many this run means to do, and how many it has done.
+    """What this run means to do, and what it has done since it started.
 
     THE PLAN is the job's own `--limit`, read off the command line it is running under.
-    THE PROGRESS is counted: files the stream owns whose mtime falls after the process
-    started, which `ps` gives as an elapsed time.
-
-    Two honest limits. A wrapper that loops has no total of its own -- its `--limit`
-    belongs to the child, not the run. And counting by mtime cannot see a job that
-    overwrote a file in place. Where there is no number the card says nothing rather than
-    inventing a denominator.
+    A wrapper that loops has no total of its own -- its `--limit` belongs to the child --
+    so it reports progress without a denominator rather than inventing one.
     """
     m = re.search(r'--limit\s+(\d+)', cmd or '')
     plan = int(m.group(1)) if m else None
-    pats = PRODUCES.get(name)
-    if not pats:
+    reg = SINCE.get(name)
+    if not reg:
         return dict(plan=plan, done=None)
-    start = time.time() - etime_seconds(elapsed)
-    done = 0
-    for rel in pats:
-        for base in (ROOT, TREE):
-            if base == TREE and not os.path.isdir(TREE):
-                continue
-            for f in glob.glob(os.path.join(base, rel)):
-                try:
-                    if os.path.getmtime(f) >= start:
-                        done += 1
-                except OSError:
-                    pass
+    start = dt.datetime.fromtimestamp(time.time() - etime_seconds(elapsed),
+                                      dt.timezone.utc).isoformat()
+    f, col = reg
+    done = sum(1 for r in rows(f) if (r.get(col) or '') >= start)
     return dict(plan=plan, done=done)
 
 
@@ -1024,6 +1015,13 @@ def finished(n=14):
     return out[:n]
 
 
+
+# ONE TAB BAR, SHARED. Three pages that each wrote their own would drift the first time a
+# fourth was added -- the stale-copy failure this repo has hit with every hand-kept list.
+TABS = ('<div class="tabs"><a%s href="index.html">Running</a>'
+        '<a%s href="backlog.html">Backlog</a>'
+        '<a%s href="sources.html">Documents</a></div>')
+
 def page_live(st):
     # The refresh prints each job's cost as it finishes, so its spend so far is readable
     # from today's log -- an actual figure beats a tag that only warns it could spend.
@@ -1032,8 +1030,7 @@ def page_live(st):
     h = []
     h.append('<div class="wrap"><div class="row"><div class="grow"><h1>Ingestion</h1>'
              '<p class="sub">%s &middot; refreshes itself every 20s</p></div>'
-             '<div class="tabs"><a class="sel" href="index.html">Running</a>'
-             '<a href="sources.html">Documents</a></div></div>' % st['generated'])
+             '%s</div>' % (st['generated'], TABS % (' class="sel"', '', '')))
 
     for a in st['alerts']:
         tone = {'failed': ('alert', 'no', 'REFRESH FAILED'),
@@ -1079,11 +1076,12 @@ def page_live(st):
         h.append('<div class="card idle">No individual job is running.</div>')
     for r in [x for x in R if x['name'] != 'Daily refresh']:
         if r['done'] is not None and r['plan']:
-            sc = ('<span class="pill go">%d of %d this batch</span>' % (min(r['done'], r['plan']), r['plan'])
+            sc = ('<span class="pill go">%d of %d this batch</span>'
+                  % (min(r['done'], r['plan']), r['plan'])
                   + bar(r['done'], max(0, r['plan'] - r['done'])))
         elif r['done'] is not None:
-            sc = '<span class="pill" title="a looping wrapper: no total of its own">' \
-                 '%d landed</span>' % r['done']
+            sc = ('<span class="pill" title="a looping wrapper: no total of its own">'
+                  '%d since it started</span>' % r['done'])
         else:
             sc = ''
         # The refresh prints each job's cost as it finishes, so its spend so far is
@@ -1177,6 +1175,61 @@ def page_live(st):
     h.append('<div class="card"><div class="tiny" style="margin-bottom:6px"><b>Log</b> &mdash; %s</div><pre>%s</pre></div>'
              % (F['log'] or 'none', html.escape('\n'.join(F['tail'])) or 'nothing yet today'))
 
+    h.append('<h2>Recent refresh runs</h2>'
+             '<p class="sub" style="margin:-4px 0 10px">What each run SAW, counted from the '
+             'watchers’ own event logs — which are written the moment something is spotted, '
+             'so a run that died later still reports what it found.</p>'
+             '<div class="card"><table>'
+             '<tr><th>day</th><th style="width:7.5rem">outcome</th><th class="r">agendas</th><th class="r">minutes</th>'
+             '<th class="r">recordings</th><th class="r">notices</th><th>note</th></tr>')
+    for r in F['history']:
+        row = r['row'] or {}
+        if r['running']:
+            state = '<span class="pill go">running</span>'
+        elif r['exit'] == 0 or (r['finished'] and r['exit'] is None and not r['failed']):
+            state = '<span class="pill go">ok</span>'
+        elif r['exit'] is None and not r['finished']:
+            state = '<span class="pill warn">stopped part-way</span>'
+        else:
+            state = '<span class="pill no">FAILED</span>'
+        note = ('broke on ' + ', '.join(r['failed'])) if r['failed'] else (row.get('notes') or '')
+        if not row and not r['running']:
+            note = (note + ' — ' if note else '') + 'wrote no row: it died before recording the run'
+        h.append('<tr><td class="mono" style="white-space:nowrap">%s%s'
+                 '<div class="tiny">%s</div></td><td>%s</td>'
+                 '<td class="r num">%s</td><td class="r num">%s</td><td class="r num">%s</td>'
+                 '<td class="r num">%s</td><td class="tiny">%s</td></tr>'
+                 % (r['day'],
+                    ('<span class="tiny" style="color:#d29922"> %s</span>' % r['again'])
+                    if r['again'] else '',
+                    r['mtime'], state,
+                    r['seen'].get('agendas') or '·', r['seen'].get('minutes') or '·',
+                    r['seen'].get('videos') or '·', r['seen'].get('notices') or '·',
+                    html.escape(note[:120])))
+    h.append('</table></div></div>')
+    return ''.join(h)
+
+def page_backlog(st):
+    """What is still owed: every stream's remainder, and anything waiting in the inbox.
+
+    THE BACKLOG IS A DIFFERENT QUESTION FROM THE PIPELINE. TJ, 19 September 2026: "lets
+    put 'Streams' and 'inbox' in a new tab that is something related to 'open things'."
+
+    Right, and they were on the wrong page. "Running" answers IS IT WORKING -- checked
+    when you want reassurance, or a cause. This answers WHAT IS STILL OWED, which is a
+    planning question asked at a different moment; burying it under a live process list
+    meant scrolling past what is happening to reach what is outstanding.
+    """
+    S, Q = st['streams'], st['queued']
+    left = sum((x['todo'] or 0) for x in S)
+    unfiled = sum(1 for q in Q if q['ingested'] is False)
+    h = []
+    h.append('<div class="wrap"><div class="row"><div class="grow"><h1>Backlog</h1>'
+             '<p class="sub">%s still to process%s &middot; %s</p></div>%s</div>'
+             % ('{:,}'.format(left),
+                (', %d delivery not filed' % unfiled) if unfiled == 1 else
+                (', %d deliveries not filed' % unfiled) if unfiled else '',
+                st['generated'], TABS % ('', ' class="sel"', '')))
     h.append('<h2>Streams</h2>')
     for s in S:
         todo = s['todo']
@@ -1238,38 +1291,7 @@ def page_live(st):
                     'filed' if q['ingested'] else ('unreadable' if q['ingested'] is None else 'NOT FILED'),
                     '{:,} B'.format(q['bytes']) if q['bytes'] else '', html.escape(q['note'])))
 
-    h.append('<h2>Recent refresh runs</h2>'
-             '<p class="sub" style="margin:-4px 0 10px">What each run SAW, counted from the '
-             'watchers’ own event logs — which are written the moment something is spotted, '
-             'so a run that died later still reports what it found.</p>'
-             '<div class="card"><table>'
-             '<tr><th>day</th><th style="width:7.5rem">outcome</th><th class="r">agendas</th><th class="r">minutes</th>'
-             '<th class="r">recordings</th><th class="r">notices</th><th>note</th></tr>')
-    for r in F['history']:
-        row = r['row'] or {}
-        if r['running']:
-            state = '<span class="pill go">running</span>'
-        elif r['exit'] == 0 or (r['finished'] and r['exit'] is None and not r['failed']):
-            state = '<span class="pill go">ok</span>'
-        elif r['exit'] is None and not r['finished']:
-            state = '<span class="pill warn">stopped part-way</span>'
-        else:
-            state = '<span class="pill no">FAILED</span>'
-        note = ('broke on ' + ', '.join(r['failed'])) if r['failed'] else (row.get('notes') or '')
-        if not row and not r['running']:
-            note = (note + ' — ' if note else '') + 'wrote no row: it died before recording the run'
-        h.append('<tr><td class="mono" style="white-space:nowrap">%s%s'
-                 '<div class="tiny">%s</div></td><td>%s</td>'
-                 '<td class="r num">%s</td><td class="r num">%s</td><td class="r num">%s</td>'
-                 '<td class="r num">%s</td><td class="tiny">%s</td></tr>'
-                 % (r['day'],
-                    ('<span class="tiny" style="color:#d29922"> %s</span>' % r['again'])
-                    if r['again'] else '',
-                    r['mtime'], state,
-                    r['seen'].get('agendas') or '·', r['seen'].get('minutes') or '·',
-                    r['seen'].get('videos') or '·', r['seen'].get('notices') or '·',
-                    html.escape(note[:120])))
-    h.append('</table></div></div>')
+    h.append('</div>')
     return ''.join(h)
 
 def page_sources(st, n, counts, kinds):
@@ -1289,8 +1311,7 @@ def page_sources(st, n, counts, kinds):
                  [(k, k, c) for k, c in kinds.most_common(10)])
     return ('<div class="wrap"><div class="row"><div class="grow"><h1>Documents</h1>'
             '<p class="sub">%s held &middot; %s</p></div>'
-            '<div class="tabs"><a href="index.html">Running</a>'
-            '<a class="sel" href="sources.html">Documents</a></div></div>'
+            '%s</div>'
             '<div class="chips" data-g="o">%s</div>'
             '<div class="chips" data-g="k">%s</div>'
             '<input type="search" id="q" placeholder="filter by path, folder or address — e.g. select-board 2025, or munis, or xlsx">'
@@ -1298,7 +1319,8 @@ def page_sources(st, n, counts, kinds):
             '<table><tr><th>document</th><th>kind</th><th class="r">size</th>'
             '<th>where it came from</th><th>sha256</th></tr><tbody id="t"></tbody></table>'
             '<p class="tiny" id="more"></p></div>'
-            % ('{:,}'.format(n), st['generated'], origin, kind))
+            % ('{:,}'.format(n), st['generated'], TABS % ('', '', ' class="sel"'),
+               origin, kind))
 
 
 KEEP = """
@@ -1385,6 +1407,9 @@ def write(open_it=False):
     # local file but will happily <script src> one.
     with open(os.path.join(OUT, 'docs.js'), 'w', encoding='utf-8') as fh:
         fh.write('const DOCS=' + json.dumps(docs, separators=(',', ':')) + ';')
+    with open(os.path.join(OUT, 'backlog.html'), 'w', encoding='utf-8') as fh:
+        fh.write(shell % ('Backlog', '<meta http-equiv="refresh" content="60">', CSS,
+                          page_backlog(st)) + '<script>' + KEEP + '</script>')
     with open(os.path.join(OUT, 'sources.html'), 'w', encoding='utf-8') as fh:
         counts = collections.Counter(d[5] for d in docs)
         counts[''] = len(docs)
