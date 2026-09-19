@@ -770,7 +770,17 @@ color:#8b949e;margin:26px 0 10px;font-weight:600}
 .alert{border:1px solid #f85149;border-left:4px solid #f85149;background:#2b1214}
 .warnbox{border:1px solid #9e6a03;border-left:4px solid #d29922;background:#241c0c}
 .runbox{border:1px solid #2ea043;border-left:4px solid #3fb950;background:#0f1f14}
-.card.done{border-left:3px solid #30363d}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
+.card.done{border-left:3px solid #30363d}
+/* The three right-hand cells share a rail across every card, so the figures read down as
+   a column rather than wandering with the length of the name beside them. */
+.metric{width:5rem;text-align:right;font-size:16px;font-weight:600;
+font-variant-numeric:tabular-nums;flex:0 0 auto}
+.unit{width:10rem;font-size:12px;color:#8b949e;flex:0 0 auto;padding-left:8px}
+.when{width:7rem;text-align:right;flex:0 0 auto}
+@media (max-width:700px){
+  .row{flex-wrap:wrap!important}
+  .metric,.unit,.when{width:auto;text-align:left}
+}.cost{border-left:3px solid #d29922}.idle{color:#8b949e}
 .row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .grow{flex:1;min-width:200px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
 .num{font-variant-numeric:tabular-nums}
@@ -1081,8 +1091,11 @@ def page_live(st):
         # what was spent rather than warning that something might be.
         spent = (' <span class="tiny" style="color:#c09cf5">$%.2f today, in its agentic '
                  'step</span>' % F['spent']) if (r['name'] == 'Daily refresh' and F['spent']) else ''
-        h.append('<div class="card %s"><div class="row"><b class="grow">%s%s%s</b>%s'
-                 '<span class="pill %s">%s</span><span class="tiny num">up %s</span></div>'
+        h.append('<div class="card %s"><div class="row" style="flex-wrap:nowrap">'
+                 '<b class="grow" style="min-width:0">%s%s%s</b>'
+                 '<span class="unit" style="width:11rem;text-align:right">%s</span>'
+                 '<span class="when"><span class="pill %s">%s</span></span>'
+                 '<span class="tiny num" style="width:6.5rem;text-align:right">up %s</span></div>'
                  '<div class="tiny">%s</div><div class="mono tiny" style="margin-top:4px;color:#586069">%s</div></div>'
                  % ('' if r['idle'] else 'on', html.escape(r['name']),
                     ' <span class="tag agentic">agentic</span>' if r['costs'] else '',
@@ -1097,11 +1110,11 @@ def page_live(st):
     if st['done']:
         h.append('<h2>Done today</h2>')
         for d in st['done']:
-            h.append('<div class="card done"><div class="row">'
-                     '<b class="grow">%s%s</b>'
-                     '<span class="num" style="font-size:16px">%s</span>'
-                     '<span class="tiny" style="min-width:8.5rem">%s</span>'
-                     '<span class="pill %s">%s</span></div>'
+            h.append('<div class="card done"><div class="row" style="flex-wrap:nowrap">'
+                     '<b class="grow" style="min-width:0">%s%s</b>'
+                     '<span class="metric">%s</span>'
+                     '<span class="unit">%s</span>'
+                     '<span class="when"><span class="pill %s">%s</span></span></div>'
                      '<div class="tiny" style="margin-top:4px">%s</div></div>'
                      % (html.escape(d['name']),
                         ' <span class="tag agentic">agentic</span>' if d['costs'] else '',
