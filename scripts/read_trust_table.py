@@ -298,8 +298,16 @@ def rows(boxes, fy):
                     if owner(v) is a and abs(Y(v) - Y(a)) < band * 1.6]
             cells = {}
             for v in mine:
-                c = min(cols, key=lambda c: abs(c['x'] - v['x']))
-                if abs(c['x'] - v['x']) > 0.05 or not c['name']:
+                # RIGHT EDGE AGAINST RIGHT EDGE. `columns()` clusters on x0+w because the
+                # figures are right-aligned; matching a value by its LEFT edge against a
+                # column expressed as a right edge compares two different coordinates, and
+                # the error is the width of the number. `$2,254,933.99` begins 0.055 left
+                # of where it ends -- past the 0.05 cap -- so the widest figure in each
+                # column was dropped or handed to the column before it. Six of seven proven
+                # rows disappeared that way, and the one that survived moved page.
+                right = v['x'] + v.get('w', 0.0)
+                c = min(cols, key=lambda c: abs(c['x'] - right))
+                if abs(c['x'] - right) > 0.05 or not c['name']:
                     continue
                 try:
                     cells[c['name']] = money(v['text'])
@@ -331,27 +339,6 @@ def rows(boxes, fy):
         return [], [dict(x=c, name=None) for c in centres]
     got, cols = place(layout)
     return got, cols
-
-    out = []
-    for a in anchors:
-        mine = [v for v in vals if abs(Y(v) - Y(a)) < band]
-        cells = {}
-        for v in mine:
-            if not cols:
-                continue
-            right = v['x'] + v.get('w', 0.0)
-            c = min(cols, key=lambda c: abs(c['x'] - right))
-            if abs(c['x'] - right) > 0.05 or not c['name']:
-                continue
-            try:
-                cells[c['name']] = money(v['text'])
-            except ValueError:
-                pass
-        code = CODE.match(a['text'].split()[0])
-        out.append(dict(code=code.group(0) if code else '',
-                        name=' '.join(a['text'].split()[1:] if code else a['text'].split()),
-                        cells=cells, n_figures=len(mine)))
-    return out, cols
 
 
 def verify(cells, tol=0.02):
