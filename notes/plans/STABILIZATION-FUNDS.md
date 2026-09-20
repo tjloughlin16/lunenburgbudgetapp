@@ -295,3 +295,36 @@ better guarantee than the transcription years get.
 Not done. `scripts/extract_stabilization.py` reads text-layer years and proves rows;
 FY2014 yields two. The OCR years need the anchor assignment above, which is a contained
 piece of work now that the reading, the caching and the verification all exist.
+
+## The technique, proven on FY2020, so nobody has to find it again
+
+The skew is not a nuisance to be tolerated — it is **measurable from the boxes
+themselves**, and once measured it is removable.
+
+**1. Measure it.** For every numeric observation, take its nearest neighbour to the right
+within a plausible column gap, and record the slope between them. The median of those is
+the page rotation. FY2020 page 41: **−0.01033**, from 158 pairs. No constant is needed and
+no page needs to be special-cased.
+
+**2. Remove it.** `Y(box) = box.y − slope × box.x`. In that coordinate a table row shares a
+value, which it does not in raw `y`. This is what turns the problem from "no tolerance
+works" into ordinary clustering — at 0.004 in de-skewed Y, the `STABILIZATION` row goes
+from one value to seven.
+
+**3. Anchor, do not cluster.** A row is a fund: an `81xx` code box, or a name containing
+STABILIZATION, excluding the section headings (`SUBTOTALS`, `GRAND TOTALS`,
+`STABILIZATION FUNDS`, `... HELD BY OTHER BANKS`). A code and its name arrive as two
+observations on the same row and are merged before assignment.
+
+**4. Verify, never trust.** The identities stay the gate. OCR digits are readings.
+
+## What is left, and it is per-year rather than technical
+
+The columns differ between years. FY2014 prints nine in a known order; FY2020's seven
+recovered values do not satisfy the nine-column identity, because the table is not the
+same table. So each image-only year needs its column header read and mapped before its
+rows can be checked — that is the work, and it is seven years of it.
+
+**Do not shortcut it by matching column counts.** Two of this project's worst near-misses
+came from assuming a column meant what its position suggested, and the whole reason
+`column_meaning` exists is that a positional name is not a column name.
