@@ -358,20 +358,23 @@ Each was diagnosed by dumping the page, not guessed at.
 
 - **FY2024, PDF page 34.** The page is **rotated 180°**: the fund names sit to the RIGHT
   of the figures (labels x̄ 0.619, figures x̄ 0.392) and the rows run down an inverted y.
-  Every other page in the run has names on the left. The fix is a detector — if the label
-  centroid is right of the figure centroid, flip `x → 1-x` and `y → 1-y` before reading —
-  and it is the only page in fifteen reports that needs it.
+  Every other page in the run has names on the left. **Implemented** as `upright()`: if the
+  label centroid is right of the figure centroid, flip `x → 1-x` and `y → 1-y`, carrying
+  each box's width and height across so a left edge becomes a right edge. It is the only
+  page in fifteen reports that needs it, and it takes p34 from ten detected columns to
+  fourteen and p29 from two to six. Neither proves a row yet — the flip was necessary and
+  is not sufficient.
 
-- **FY2023, PDF page 49.** Reads correctly and proves exactly one row. The layout is
-  `i=4` (ending cash is the fifth column): ARTS LOTTERY closes both identities,
-  $21,963.71 + $9,827.19 + $0.00 − $12,670.00 = $19,120.90, and the market value beside
-  it is the same figure. It is rejected because `MIN_PROVEN = 4` and the other funds on
-  the page are dormant — OCR kept only their ending cash and ending market, which are
-  equal, so they close trivially under `i=5` and not at all under the true `i=4`.
-  **This is the one place the guards fight each other**: the trivial-closure guard is
-  right to refuse `i=5`, and the four-row minimum is what then refuses `i=4`. A row that
-  closes BOTH identities with three or more non-zero terms is not a coincidence at cent
-  precision, and should be allowed to carry a layout on its own.
+- **FY2023, PDF page 49. DIAGNOSED AND GENUINELY UNPROVABLE FROM THIS SCAN.** The page is
+  the right table, `TRUST AND STABILIZATION FUNDS HELD BY OTHER BANKS`, and it reads. The
+  Zoning Incentive row shows a beginning balance of $231,007.68 -- which is exactly what
+  this extract proved as FY2022's ending balance, from a different report -- and an ending
+  cash of $235,681.11. The $4,673.43 between them is a figure the OCR did not capture, so
+  the cash identity is short a term and cannot close. The second identity DOES close, but
+  only because the fund is carried at cash and the market value repeats the cash figure,
+  which is precisely the trivial closure the guards exist to refuse. The honest answer is
+  that this page cannot prove itself, and the remedy is a better scan or the ledger, not a
+  looser test.
 
 - **FY2017, PDF page 39.** Nine anchors, and the OCR drops most of the figures: the
   Zoning row survives as a beginning balance and an ending value with nothing between.

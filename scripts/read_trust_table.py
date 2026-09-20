@@ -86,6 +86,39 @@ def money(text):
     return -v if neg else v
 
 
+def upright(boxes):
+    """Turn a page the right way up, if the scanner fed it in backwards.
+
+    FY2024's trust table comes off the scanner rotated 180 degrees: the fund names sit to
+    the RIGHT of the figures (label centroid x 0.619 against 0.392) and the rows run down
+    an inverted y. Every other page in fifteen annual reports has the names on the left,
+    so the centroids are the test -- it needs no header, no keyword, and nothing typed in.
+
+    A 180-degree turn is `x -> 1-x`, `y -> 1-y`, and a box's left edge becomes its right,
+    so the width has to be carried across with it or every figure lands a number's width
+    from where it belongs. That is the same coordinate mistake that cost six proven rows
+    once already, which is why it is spelled out here.
+
+    Returns the boxes unchanged where the page is the right way up.
+    """
+    labels = [b for b in boxes
+              if not MONEY.match(b['text'].strip()) and len(b['text'].strip()) > 10]
+    figs = [b for b in boxes if MONEY.match(b['text'].strip())]
+    if len(labels) < 5 or len(figs) < 5:
+        return boxes
+    lx = sum(b['x'] for b in labels) / len(labels)
+    fx = sum(b['x'] for b in figs) / len(figs)
+    if lx <= fx:
+        return boxes
+    out = []
+    for b in boxes:
+        c = dict(b)
+        c['x'] = 1.0 - (b['x'] + b.get('w', 0.0))
+        c['y'] = 1.0 - (b['y'] + b.get('h', 0.0))
+        out.append(c)
+    return out
+
+
 def skew(boxes):
     """The page's rotation, measured from its own figures. See the module docstring."""
     vals = [b for b in boxes if MONEY.match(b['text'].strip())]
@@ -278,17 +311,33 @@ def infer_layout(centres, place):
                 got, cols = place(layout)
                 ok = [verify(r['cells']) for r in got]
                 closed = [r for r, (good, _) in zip(got, ok) if good]
-                if len(closed) < MIN_PROVEN:
-                    continue
+                # ONE ROW IS ENOUGH IF IT IS STRONG ENOUGH. FY2023's page proves
+                # exactly one: ARTS LOTTERY, $21,963.71 + $9,827.19 + $0.00 - $12,670.00
+                # = $19,120.90, with the market value beside it agreeing. Four figures
+                # summing to a fifth at cent precision AND that fifth closing the second
+                # identity is not a coincidence, and the four-row minimum was refusing it
+                # only because the other funds on the page are dormant -- OCR kept their
+                # ending cash and ending market, which are equal, so they close trivially
+                # under the WRONG layout and not at all under the right one. The two
+                # guards were fighting: the trivial-closure test correctly refused the
+                # wrong layout, and the row count then refused the right one.
+                strong_rows = sum(
+                    1 for r, (good, why) in zip(got, ok)
+                    if good and why == 'both identities hold'
+                    and sum(1 for k, v in r['cells'].items()
+                            if k.startswith('activity_') and v) >= 3)
                 rich = sum(1 for r in closed
                            if sum(1 for k, v in r['cells'].items()
                                   if k.startswith('activity_') and v) >= 2)
-                if rich * 2 < len(closed):
-                    continue
+                if strong_rows < 1:
+                    if len(closed) < MIN_PROVEN:
+                        continue
+                    if rich * 2 < len(closed):
+                        continue
                 # Both identities beat one, same as among the written-down candidates.
                 strong = sum(1 for good, why in ok
                              if good and why == 'both identities hold')
-                score = (strong, len(closed), i - s0)
+                score = (strong_rows, strong, len(closed), i - s0)
                 if best is None or score > best[0]:
                     best = (score, got, cols)
     return (best[1], best[2]) if best else ([], [])
@@ -296,6 +345,7 @@ def infer_layout(centres, place):
 
 def rows(boxes, fy):
     """Fund rows of one page: (code, name, {column: value}), before any verification."""
+    boxes = upright(boxes)
     m = skew(boxes)
     Y = lambda b: b['y'] - m * b['x']
     vals = [b for b in boxes if MONEY.match(b['text'].strip())]
