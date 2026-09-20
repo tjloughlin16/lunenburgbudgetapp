@@ -101,6 +101,24 @@ def cagr(a, b, years):
     return (b / a) ** (1.0 / years) - 1 if a > 0 and b > 0 and years else None
 
 
+PEC_HISTORY = os.path.join(ROOT, 'sources', 'data', 'pec-history.csv')
+
+
+def pec_history():
+    """HOW LUNENBURG GOT THE ARRANGEMENT IT HAS. TJ, 19 September 2026, asked for the
+    history of the PEC on this page.
+
+    Six moments, each one a QUOTE from a document rather than a summary of it, because the
+    whole argument about what this town may do turns on what was actually adopted and
+    when. `basis` carries what each entry does NOT establish -- the §19 acceptance vote is
+    not in the record we hold, the 2010 special act is a draft whose fate is unknown, and
+    no vote adopting §§21-23 has been found."""
+    h = rows(PEC_HISTORY)
+    if len(h) < 4:
+        raise SystemExit('pec-history.csv has %d entries; refusing' % len(h))
+    return sorted(h, key=lambda r: r['on'])
+
+
 def build():
     by = series()
     latest = max(by[TOWN])
@@ -173,6 +191,7 @@ def build():
         grain='LAW as the statute states it, linked section by section; DOLLARS as each town filed them on Schedule A. The spending figure is a net appropriation and is not the same quantity in every town — see `comparison_caveat`.',
         research='notes/findings/MA-MUNICIPAL-HEALTH-INSURANCE.md',
         options=law,
+        pec_history=pec_history(),
         can=[r['id'] for r in law if r['available_to_lunenburg'] != 'no'],
         cannot=[r['id'] for r in law if r['available_to_lunenburg'] == 'no'],
         town=dict(

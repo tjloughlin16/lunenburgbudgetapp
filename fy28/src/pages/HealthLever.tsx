@@ -48,6 +48,8 @@ type Options = {
 const AXIS = { fontSize: 11, fill: 'var(--text-muted)' }
 const LINE_COLOURS = ['var(--series-cost)', '#7c8a97', '#9aa7b1', '#b0bac2', '#c2cad0', '#8fa1ae', '#a8b4bd', '#96a3ad', '#bcc5cb', '#aab5bd', '#9ba8b2']
 
+type PecEntry = { on: string; what: string; quote: string; basis: string; source: string; source_url: string }
+
 export function HealthLever() {
   const { d } = useReport<Options>('health-options.json')
   return (
@@ -131,6 +133,42 @@ export function HealthLever() {
                   <a className="underline text-[12px]" href={o.statute_url} target="_blank" rel="noreferrer">{o.statute.replace('M.G.L. c.32B ', '')}</a>
                 </li>))}
             </ul>
+
+            {/* HOW THE TOWN GOT THE ARRANGEMENT IT HAS. TJ asked for the PEC's history
+                on this page, and it belongs immediately after the options: the table above
+                says what the law permits, and this says which of those doors Lunenburg
+                has actually walked through — which is the question every argument about
+                health insurance in this town turns on.
+
+                EVERY ENTRY IS A QUOTE, not a summary, and every entry carries what it
+                does NOT establish. The §19 acceptance vote is not in the record we hold;
+                the 2010 special act is a draft whose fate is unknown; no vote adopting
+                §§21–23 has been found. Rule 7: the document is the fact, and the gap is
+                said out loud rather than filled in. */}
+            <H2 id="history">How Lunenburg got here</H2>
+            <Body>
+              Six moments, each quoted from the document it comes from. Where something is
+              not established, the entry says so rather than reading as settled.
+            </Body>
+            <ol className="mt-4 space-y-4 list-none p-0 max-w-3xl">
+              {((d as unknown as { pec_history?: PecEntry[] }).pec_history ?? []).map(h => (
+                <li key={h.on} className="pl-4 border-l-2" style={{ borderColor: 'var(--series-cost)' }}>
+                  <p className="m-0 text-[12px] font-semibold uppercase tracking-widest"
+                    style={{ color: 'var(--text-muted)' }}>
+                    {new Date(h.on + 'T12:00:00Z').toLocaleDateString('en-US',
+                      { month: 'short', year: 'numeric' })}
+                  </p>
+                  <p className="m-0 text-[15px] font-semibold">{h.what}</p>
+                  <blockquote className="mt-1 mb-1 text-[13.5px]" style={{ color: 'var(--text-secondary)' }}>
+                    &ldquo;{h.quote}&rdquo;
+                  </blockquote>
+                  <p className="m-0 text-[12px]" style={{ color: 'var(--text-muted)' }}>
+                    <a className="underline" href={h.source_url} target="_blank" rel="noreferrer">{h.source}</a>
+                    {' — '}{h.basis}
+                  </p>
+                </li>
+              ))}
+            </ol>
 
             <H2 id="recent">The last four years, against every other municipality</H2>
             <Body>Whether the town is unusual or the market turned &mdash; and it is both. Each row is one year&rsquo;s change in what the town spent, beside the median municipality&rsquo;s and the share of all of them over 4%.</Body>

@@ -280,6 +280,7 @@ export function Home() {
           </svg>
           Join us on Facebook
         </a>
+
         {/* THE SEARCH BOX, ON THE FRONT PAGE. TJ, 11 September, on seeing /search: "We
             need to put an indicator on the home page that users can search." The
             indicator is the box itself: a text field is the one affordance on the web
@@ -317,6 +318,30 @@ export function Home() {
           (TJ, 14 September: "on the home page the budget feed should be at the top of
           the right sidebar"). */}
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-start">
+      {/* WHO MADE THIS, ABOVE THE DOORS. TJ: "a very very short top section above
+          understand the budget but below FB link for ABOUT. Just a sentence or two, then
+          link to about. You were right. we need that."
+
+          TWO SENTENCES AND A LABEL, and the sentences earn their place where the link's
+          did not: a reader deciding whether to trust four doors into a town's finances is
+          owed who built them before they pick one. That is descriptive by nature, which is
+          the test READING-FLOW sets. The LINK stays a label. */}
+      <section aria-label="Who made this" className="mb-7 max-w-2xl">
+        {/* The label the other sections have. Without it this read as loose text floating
+            above the doors rather than a part of the page. "Who made this" rather than
+            "About this project", so the heading and the link underneath are not the same
+            four words twice. */}
+        <h2 className="text-[13px] font-bold uppercase tracking-widest mb-2"
+          style={{ color: 'var(--text-muted)' }}>Who made this</h2>
+        <p className="text-[14px] leading-snug" style={{ color: 'var(--text-secondary)' }}>
+          This is built by one resident, from the town's and the district's own documents —
+          what they publish, and what comes back from records requests. Every figure is
+          meant to be traceable to the page it came from.
+        </p>
+        <a className="mt-1.5 inline-block text-[13px] font-semibold underline"
+          href="/about" style={{ color: 'var(--series-cost)' }}>About this project</a>
+      </section>
+
       <Doors />
       <div className="space-y-8">
         <BudgetFeedCard />

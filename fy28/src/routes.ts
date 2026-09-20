@@ -54,6 +54,10 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   // segment, `/threads/stormwater-fee`, and `threadIdFromPath` below reads it. The bare
   // `/threads` is the landing page. See pages/Threads.
   | 'threads'
+  // WHO MADE THIS. A public budget tool with no author reads as an institution, and this
+  // one is a resident with a records-request account -- saying so is worth more than the
+  // authority the anonymity would borrow.
+  | 'about'
   | 'peers'
   | 'montytech'
   | 'required'
@@ -377,6 +381,11 @@ export const SLUG: Record<Tab, string> = {
   // resident had heard of, and `threads` is the same shape. The door says what is behind
   // it ("What the town is deciding now"); the address stays short and stable.
   threads: 'threads',
+  // NO AREA AND NO SECTION. An About page is not an analysis, and it shipped claiming to
+  // be one -- eyebrow "ANALYSIS: TOWN AND SCHOOLS", breadcrumb "Reports and analyses",
+  // a back link reading "All reports". Both maps are Partial, so leaving `about` out of
+  // them is the fix: no false parent, no crumb to a shelf it does not sit on.
+  about: 'about',
   // THE ONE WORD. A search box is the most-understood affordance on the web and it is
   // reached by typing the word; `find` is what the /minutes/find/ endpoint for callers
   // uses and is accepted as an alias.
@@ -695,6 +704,8 @@ const ALIASES: Record<string, Tab> = {
   demographics: 'bythenumbers', census: 'bythenumbers', acs: 'bythenumbers',
   blog: 'blog', posts: 'blog', 'the-blog': 'blog', updates: 'blog',
   threads: 'threads', thread: 'threads', 'open-threads': 'threads',
+  about: 'about', 'about-us': 'about', 'who-made-this': 'about', whoami: 'about',
+  'the-author': 'about', 'about-this-project': 'about', contact: 'about',
   'what-the-town-is-deciding': 'threads', 'being-decided': 'threads',
   'still-open': 'threads', 'whats-open': 'threads', 'what-is-open': 'threads',
   'decisions': 'threads', 'pending': 'threads', 'in-progress': 'threads',
@@ -815,6 +826,7 @@ export const LABEL: Record<Tab, string> = {
   owners: 'Lunenburg’s homes and the tax bill',
   blog: 'The blog — one finding at a time, in two minutes',
   threads: 'What the town is deciding now',
+  about: 'About this project',
   required: 'What the state requires us to spend — and where that puts us',
   addsup: 'The One Big Report',
   analysis: 'An analysis',

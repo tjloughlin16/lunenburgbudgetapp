@@ -43,6 +43,7 @@ import { LunenburgByTheNumbers } from './pages/LunenburgByTheNumbers'
 import { PropertyOwners } from './pages/PropertyOwners'
 import { Blog } from './pages/Blog'
 import { Threads } from './pages/Threads'
+import { About } from './pages/About'
 import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
 import { Boards } from './pages/Boards'
@@ -515,6 +516,7 @@ export default function App() {
           the slug is the second path segment, the same shape /analysis/<id> uses. */}
       {tab === 'blog' && <Blog />}
       {tab === 'threads' && <Threads />}
+      {tab === 'about' && <About />}
       {tab === 'search' && <Search />}
       {tab === 'recorded' && <WhatWasSaid />}
       {tab === 'boards' && (boardFinanceSlugFromPath(window.location.pathname) ? <BoardFinance /> : <Boards />)}
