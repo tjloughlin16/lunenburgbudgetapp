@@ -127,5 +127,23 @@ Automated by scripts/daily_refresh.sh."
   else
     echo "nothing to commit"
   fi
+  # ------------------------------------------------------------- triage on failure
+  # THE LOOP. TJ, 20 September 2026: "when the refresh kicks off, it should spawn an agent
+  # to review when it fails, and attempt to fix it. Until we get this thing fixed."
+  #
+  # The refresh had failed 8 of its last 10 runs, in four unrelated ways, and none of them
+  # was hard to see in the log -- nobody was reading it. So on a failure, and only on a
+  # failure, hand the log to an agent that can read the repository and try.
+  #
+  # It works on THIS branch in the refresh tree and is forbidden from pushing to main or
+  # deploying: the site is public, and 07:00 is a bad time to break it unattended. The
+  # report lands in build/refresh-triage/<date>.md and is the once-a-day lock.
+  #
+  # `|| true` deliberately: a triage that itself fails must not change the refresh's own
+  # exit code, which is what the dashboard and the run registry read.
+  if grep -q "^refresh exit [1-9]" "$LOG" 2>/dev/null; then
+    echo "--- refresh failed; spawning triage agent ---"
+    python3 "$HERE/scripts/triage_refresh.py" --log "$LOG" || true
+  fi
   echo "=== finished $(date) ==="
 } >> "$LOG" 2>&1
