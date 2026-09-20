@@ -175,7 +175,20 @@ BANKS = ['begin_principal', 'net_earnings', 'transfers_principal', 'disburse_pri
 BANKS_6 = ['begin_principal', 'net_earnings', 'transfers_principal',
            'disburse_principal', 'ending_cash', 'ending_market']
 
-CANDIDATES = [TEN, NINE, BANKS, BANKS_6, EIGHT, SEVEN]
+# FY2019, PDF page 45, "TRUST FUNDS STABILIZATION FUNDS", header:
+#   ACCOUNT NUMBER | FUND NAME | BEGINNING PRINCIPAL | BEGINNING EARNINGS |
+#   NET EARNINGS | TRANSFERS OF PRINCIPAL | TRANSFERS OF EARNINGS |
+#   ENDING CASH VALUE | UNREALIZED GAIN/LOSS
+#
+# Seven figure columns and NO ENDING MARKET VALUE on the page: the header prints one --
+# a lone `E` at x=0.99 is all that survives of it -- and not a single figure sits under
+# it. So the second identity cannot be checked here at all, and `SEVEN` does not fit
+# because it has `ending_market` last and no `transfers_principal`.
+SEVEN_NO_MARKET = ['begin_principal', 'begin_earnings', 'net_earnings',
+                   'transfers_principal', 'transfers_earnings', 'ending_cash',
+                   'unrealized']
+
+CANDIDATES = [TEN, NINE, BANKS, BANKS_6, EIGHT, SEVEN, SEVEN_NO_MARKET]
 MIN_PROVEN = 4
 
 LAYOUTS = {
@@ -217,6 +230,45 @@ def columns(boxes, Y, first_data_y, fy):
     centres = [statistics.median(g) for g in groups]
 
     return centres
+
+
+def infer_layout(centres, place):
+    """Find the ending-cash column by testing every position against the cash identity.
+
+    Returns (rows, cols) if some position closes on at least MIN_PROVEN rows, else ([], []).
+
+    TWO GUARDS AGAINST AN ACCIDENT.
+
+    A single column trivially equals itself, and on these tables a fund carried at cash
+    prints the same figure under ENDING CASH and ENDING MARKET -- so "column 4 equals
+    column 3" closes for a reason that has nothing to do with the arithmetic. Hence a
+    proving row must have at least two non-zero terms on its left, on at least half the
+    rows that close.
+
+    And the more terms an identity has, the less likely it closes by chance, so among
+    positions that tie on rows proven the RIGHTMOST wins.
+    """
+    best = None
+    for i in range(2, len(centres)):
+        layout = ['activity_%d' % k for k in range(i)] + ['ending_cash']
+        # Everything right of ending cash is unrealised-side activity, except the last
+        # column, which the second identity will test as the ending market value.
+        rest = len(centres) - i - 1
+        if rest:
+            layout += ['unreal_%d' % k for k in range(rest - 1)] + ['ending_market']
+        got, cols = place(layout)
+        closed = [r for r in got if verify(r['cells'])[0]]
+        if len(closed) < MIN_PROVEN:
+            continue
+        rich = sum(1 for r in closed
+                   if sum(1 for k, v in r['cells'].items()
+                          if k.startswith('activity_') and v) >= 2)
+        if rich * 2 < len(closed):
+            continue
+        score = (len(closed), i)
+        if best is None or score > best[0]:
+            best = (score, got, cols)
+    return (best[1], best[2]) if best else ([], [])
 
 
 def rows(boxes, fy):
@@ -326,13 +378,42 @@ def rows(boxes, fy):
         if len(layout) != len(centres):
             continue
         got, cols = place(layout)
-        n = sum(1 for r in got if verify(r['cells'])[0])
-        if n >= MIN_PROVEN and (best is None or n > best[0]):
-            best = (n, got, cols)
+        ok = [verify(r['cells']) for r in got]
+        n = sum(1 for good, _ in ok if good)
+        # THE STRONGER BASIS WINS FIRST. Relaxing verify() to accept the cash identity
+        # alone lets more layouts clear MIN_PROVEN, and a layout proving four rows on one
+        # identity must never beat one proving four on two. Ranked on (both, either) so
+        # the relaxation can only ever ADD years, never reinterpret a year that already
+        # reads.
+        strong = sum(1 for good, why in ok if good and why == 'both identities hold')
+        score = (strong, n)
+        if n >= MIN_PROVEN and (best is None or score > best[0]):
+            best = (score, got, cols)
     if best:
         return best[1], best[2]
 
-    # Nothing closed: fall back to the layout recorded for the year, so the caller can see
+    # NOTHING WRITTEN DOWN FITS. Before giving up, let the page's own arithmetic say where
+    # the columns are.
+    #
+    # THE REASON THIS EXISTS. Every candidate above is a header somebody read off a
+    # photograph and typed in, and there are at least five distinct table shapes across
+    # fifteen annual reports -- plus OCR that drops a column here and merges two there, so
+    # the shape ON THE PAGE is not the shape IN THE FILE. Hand-authoring a layout per year
+    # got four years read and left ten unread, and each new one costs an hour of squinting.
+    #
+    # WHAT IT INFERS, AND WHAT IT REFUSES TO. The cash identity says: some column is the
+    # ending cash, and everything to its left sums to it. That is a testable claim about
+    # each candidate position, and on a real table exactly one position closes it across
+    # many rows. So the POSITION of ending cash is established by the document. What is NOT
+    # established is which of the columns to its left is net earnings and which is
+    # transfers of principal -- the identity is a sum and cannot see the difference -- so
+    # they are named `activity_0..n` and stay that way. Rule 13: read `column_meaning`,
+    # and say `not established` where it is not.
+    got, cols = infer_layout(centres, place)
+    if got:
+        return got, cols
+
+    # Fall back to the layout recorded for the year, so the caller can see
     # what it read, and the identities will reject the rows.
     layout = LAYOUTS.get(fy)
     if not layout or len(layout) != len(centres):
@@ -342,23 +423,45 @@ def rows(boxes, fy):
 
 
 def verify(cells, tol=0.02):
-    """The two identities. Returns (ok, why)."""
-    need = ('ending_cash', 'ending_market')
-    if not all(k in cells for k in need):
-        return False, 'no ending cash or ending market to check against'
+    """The document's own identities. Returns (ok, why), and `why` is the BASIS.
+
+    TWO IDENTITIES WHERE THE PAGE PRINTS TWO, ONE WHERE IT PRINTS ONE. Some years' tables
+    carry no ENDING MARKET VALUE column -- FY2019 prints the heading and puts no figure
+    under it on any row -- and demanding both identities there is not rigour, it is
+    refusing to read a table that foots perfectly. The cash identity is what pins
+    `ending_cash`, which is the figure this extract publishes, so a row that closes it is
+    proven for what we take from it.
+
+    What the weaker basis does NOT establish is the meaning of the individual inflow
+    columns: the identity is a SUM, and a sum does not change when its terms are
+    permuted. So a cash-only row fixes which column is ending cash and which set are
+    activity, and says nothing about which of those is net earnings rather than transfers
+    of principal. Rule 13's `column_meaning` distinction, in the one place it bites.
+    """
+    if 'ending_cash' not in cells:
+        return False, 'no ending cash to check against'
+    # A NAMED COLUMN OR AN INFERRED ONE, SUMMED THE SAME WAY. `activity_*` columns come
+    # from infer_layout() below, which knows from the arithmetic that a column is part of
+    # the activity and does NOT know which part. The identity cannot tell them apart --
+    # it is a sum, and a sum is blind to the order of its terms -- so naming them would be
+    # asserting something the document has not said.
     inflow = sum(cells.get(k, 0.0) for k in
                  ('begin_principal', 'begin_earnings', 'net_earnings',
                   'contrib_principal', 'transfers_principal', 'transfers_earnings',
                   'disburse_principal'))
+    inflow += sum(v for k, v in cells.items() if k.startswith('activity_'))
     if abs(inflow - cells['ending_cash']) > tol:
         return False, 'beginning + activity != ending cash (%.2f vs %.2f)' % (
             inflow, cells['ending_cash'])
+    if 'ending_market' not in cells:
+        return True, 'beginning + activity = ending cash'
     opening_unreal = 0.0
     if 'begin_market' in cells:
         opening_unreal = cells['begin_market'] - (cells.get('begin_principal', 0.0)
                                                   + cells.get('begin_earnings', 0.0))
     end = cells['ending_cash'] + opening_unreal + cells.get('change_unrealized',
                                                             cells.get('unrealized', 0.0))
+    end += sum(v for k, v in cells.items() if k.startswith('unreal_'))
     if abs(end - cells['ending_market']) > tol:
         return False, 'ending cash + unrealised != ending market (%.2f vs %.2f)' % (
             end, cells['ending_market'])

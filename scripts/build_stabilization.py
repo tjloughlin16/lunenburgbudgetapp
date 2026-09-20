@@ -242,13 +242,20 @@ def render(rows):
     w('---\n')
     pv = proven()
     if pv:
-        gen = [r for r in pv if r['name'].strip().upper().startswith('STABILIZATION')]
+        gen = [r for r in pv if r['name'].strip().upper().startswith('STABILIZATION')
+               and r['ending_market']]
         w('## What has moved, so far as anything here can prove\n')
         w('These are the only stabilization figures in this archive that have been '
           '**checked**. Each is read off a photograph of the town\u2019s own trust-fund '
-          'table and then verified against two identities the table states about every '
-          'row \u2014 beginning plus activity equals ending cash, and ending cash plus '
-          'unrealised equals ending market. A row that fails is not published.\n')
+          'table and then verified against identities the table states about every row '
+          '\u2014 beginning plus activity equals ending cash, and, where the year prints '
+          'a market value, ending cash plus unrealised equals ending market. A row that '
+          'fails is not published.\n')
+        w('Some years print no ending market value at all: FY2019\u2019s table carries the '
+          'heading and not one figure under it. Those rows are proven on the cash '
+          'identity alone, their market column is left empty rather than filled with the '
+          'cash figure, and the basis column of the published CSV says which proof each '
+          'row rests on.\n')
         if len(gen) >= 2:
             w('**The general Stabilization Fund**, the one Town Meeting may spend on '
               'anything lawful:\n')
@@ -266,11 +273,15 @@ def render(rows):
                  first['fy'], last['fy'],
                  (float(last['ending_market']) / float(first['ending_market']) - 1) * 100))
         w('Every proven row:\n')
-        w('| year | account | fund | ending market |\n|---|---|---|---:|')
+        # ENDING CASH IS THE COLUMN THAT IS ALWAYS PROVEN, so it leads. The market
+        # value is the one that sometimes is not printed, and an em dash there means the
+        # page printed none -- never that the fund held nothing.
+        w('| year | account | fund | ending cash | ending market |\n|---|---|---|---:|---:|')
         for r in sorted(pv, key=lambda r: (r['fy'], r['name'])):
-            w('| FY%s | `%s` | %s | %s |'
+            w('| FY%s | `%s` | %s | %s | %s |'
               % (r['fy'], r['code'] or '\u2014', ' '.join(r['name'].split())[:44],
-                 usd(float(r['ending_market']))))
+                 usd(float(r['ending_cash'])),
+                 usd(float(r['ending_market'])) if r['ending_market'] else '\u2014'))
         w('')
         w('**Coverage is %d rows across %d years, and that is the point rather than a '
           'footnote.** The rest of the run is not missing because nobody looked \u2014 '

@@ -171,7 +171,9 @@ Every Town Meeting article this archive holds that touches a stabilization fund 
 
 ## What has moved, so far as anything here can prove
 
-These are the only stabilization figures in this archive that have been **checked**. Each is read off a photograph of the town’s own trust-fund table and then verified against two identities the table states about every row — beginning plus activity equals ending cash, and ending cash plus unrealised equals ending market. A row that fails is not published.
+These are the only stabilization figures in this archive that have been **checked**. Each is read off a photograph of the town’s own trust-fund table and then verified against identities the table states about every row — beginning plus activity equals ending cash, and, where the year prints a market value, ending cash plus unrealised equals ending market. A row that fails is not published.
+
+Some years print no ending market value at all: FY2019’s table carries the heading and not one figure under it. Those rows are proven on the cash identity alone, their market column is left empty rather than filled with the cash figure, and the basis column of the published CSV says which proof each row rests on.
 
 **The general Stabilization Fund**, the one Town Meeting may spend on anything lawful:
 
@@ -185,20 +187,21 @@ That is **$490,060.54 more between FY2016 and FY2020**, a rise of 32%, in a fund
 
 Every proven row:
 
-| year | account | fund | ending market |
-|---|---|---|---:|
-| FY2014 | `—` | ZONING INCENTIVE STABILIZATION (TL 8129 | $227,201.90 |
-| FY2015 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $227,542.95 |
-| FY2016 | `—` | STABILIZATION | $1,551,001.18 |
-| FY2018 | `—` | STABILIZATION | $1,732,690.98 |
-| FY2020 | `—` | STABILIZATION | $2,041,061.72 |
-| FY2020 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $945,669.29 |
-| FY2020 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $230,431.40 |
-| FY2022 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTI | $231,007.68 |
-| FY2025 | `—` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,598,621.38 |
-| FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 |
+| year | account | fund | ending cash | ending market |
+|---|---|---|---:|---:|
+| FY2014 | `—` | ZONING INCENTIVE STABILIZATION (TL 8129 | $227,201.90 | $227,201.90 |
+| FY2015 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $227,542.95 | $227,542.95 |
+| FY2016 | `—` | STABILIZATION | $1,511,526.92 | $1,551,001.18 |
+| FY2018 | `—` | STABILIZATION | $1,740,279.81 | $1,732,690.98 |
+| FY2019 | `—` | VEHICLE/EQUIPMENT STABILIZATION (N 8136 | $643,788.80 | — |
+| FY2020 | `—` | STABILIZATION | $1,978,347.74 | $2,041,061.72 |
+| FY2020 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $945,669.29 | $945,669.29 |
+| FY2020 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $230,431.40 | $230,431.40 |
+| FY2022 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTI | $231,007.68 | $231,007.68 |
+| FY2025 | `—` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,598,621.38 | $2,598,621.38 |
+| FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 | $249,060.25 |
 
-**Coverage is 10 rows across 7 years, and that is the point rather than a footnote.** The rest of the run is not missing because nobody looked — it is missing because those pages have not yet yielded a row whose arithmetic closes, and publishing one that does not would be worse than publishing nothing.
+**Coverage is 11 rows across 8 years, and that is the point rather than a footnote.** The rest of the run is not missing because nobody looked — it is missing because those pages have not yet yielded a row whose arithmetic closes, and publishing one that does not would be worse than publishing nothing.
 
 ---
 

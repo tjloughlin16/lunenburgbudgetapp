@@ -78,7 +78,13 @@ def extract(fy, path, verbose=False):
     for p in pages:
         pb = [b for b in boxes if b['page'] == p]
         rows, cols = R.rows(pb, fy)
-        if len(cols) < 6:
+        # THREE, NOT SIX. The six was a cheap stand-in for "is this a trust table",
+        # written before the reader could test a layout against the document's own
+        # arithmetic. It is now the thing that decides, and it is far stricter than a
+        # column count: FY2019's "held by other banks" table survives OCR as five columns
+        # -- two of the printed ones lose every figure -- and it still foots, row after
+        # row. A page is kept because its figures add up, not because it is wide.
+        if len(cols) < 3:
             continue
         proven = [r for r in rows if R.verify(r['cells'])[0]]
         stab = [r for r in proven if 'STABIL' in (r['code'] + r['name']).upper()]
@@ -105,8 +111,16 @@ def extract(fy, path, verbose=False):
                                  names[r['code']].split()[0].upper()
                                  not in r['name'].upper() else ''),
                  ending_cash=round(r['cells']['ending_cash'], 2),
-                 ending_market=round(r['cells']['ending_market'], 2),
-                 page=page, basis='both identities hold',
+                 # EMPTY WHERE THE PAGE PRINTS NONE, never the cash value copied across.
+                 # FY2019's table carries no ENDING MARKET VALUE figure on any row, and a
+                 # fund at cash and a fund whose market value we could not read must not
+                 # come out of this file looking the same.
+                 ending_market=(round(r['cells']['ending_market'], 2)
+                                if 'ending_market' in r['cells'] else ''),
+                 # THE BASIS IS WHAT THE CHECK ACTUALLY RETURNED. It was a constant
+                 # string, written when both identities were the only way through, and it
+                 # would now be stating two proofs for a row that has one.
+                 page=page, basis=R.verify(r['cells'])[1],
                  document=os.path.relpath(path, ROOT)) for r in stab], None
 
 
