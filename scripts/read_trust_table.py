@@ -235,39 +235,62 @@ def columns(boxes, Y, first_data_y, fy):
 def infer_layout(centres, place):
     """Find the ending-cash column by testing every position against the cash identity.
 
-    Returns (rows, cols) if some position closes on at least MIN_PROVEN rows, else ([], []).
+    Returns (rows, cols) if some hypothesis closes on at least MIN_PROVEN rows, else
+    ([], []).
 
-    TWO GUARDS AGAINST AN ACCIDENT.
+    WHERE THE SUM ENDS. The cash identity says some column is the ending cash and the
+    activity to its left sums to it. That is a testable claim about each position, and on
+    a real table exactly one closes it across many rows.
 
-    A single column trivially equals itself, and on these tables a fund carried at cash
-    prints the same figure under ENDING CASH and ENDING MARKET -- so "column 4 equals
-    column 3" closes for a reason that has nothing to do with the arithmetic. Hence a
-    proving row must have at least two non-zero terms on its left, on at least half the
-    rows that close.
+    AND WHERE IT STARTS. FY2021's table opens with BEGINNING MARKET VALUE, which is a
+    fact about the fund and not a term of the identity: $1,237.25 + $519.85 + $35.82 =
+    $1,792.92, and the $1,812.80 printed to their left takes no part in it. Summing from
+    column zero meant nothing closed anywhere on that page. So the first column is allowed
+    to sit outside the sum, and `outside_0` is the whole of the claim -- calling it the
+    beginning market value would be naming a column the arithmetic has only told us to
+    leave alone.
 
-    And the more terms an identity has, the less likely it closes by chance, so among
-    positions that tie on rows proven the RIGHTMOST wins.
+    TWO GUARDS AGAINST AN ACCIDENT. A fund carried at cash prints the same figure under
+    ENDING CASH and ENDING MARKET, so "column 4 equals column 3" closes for a reason that
+    has nothing to do with the arithmetic -- a proving row must therefore have two
+    non-zero terms on its left, on at least half the rows that close. And the more terms
+    an identity has the less likely it closed by chance, so among hypotheses tied on rows
+    proven, the one with more terms wins.
     """
     best = None
-    for i in range(2, len(centres)):
-        layout = ['activity_%d' % k for k in range(i)] + ['ending_cash']
-        # Everything right of ending cash is unrealised-side activity, except the last
-        # column, which the second identity will test as the ending market value.
-        rest = len(centres) - i - 1
-        if rest:
-            layout += ['unreal_%d' % k for k in range(rest - 1)] + ['ending_market']
-        got, cols = place(layout)
-        closed = [r for r in got if verify(r['cells'])[0]]
-        if len(closed) < MIN_PROVEN:
-            continue
-        rich = sum(1 for r in closed
-                   if sum(1 for k, v in r['cells'].items()
-                          if k.startswith('activity_') and v) >= 2)
-        if rich * 2 < len(closed):
-            continue
-        score = (len(closed), i)
-        if best is None or score > best[0]:
-            best = (score, got, cols)
+    for s0 in (0, 1):
+        for i in range(s0 + 2, len(centres)):
+            head = (['outside_%d' % k for k in range(s0)]
+                    + ['activity_%d' % k for k in range(s0, i)] + ['ending_cash'])
+            rest = len(centres) - i - 1
+            # AND WHETHER THE LAST COLUMN IS A TOTAL AT ALL. FY2021's table ends at
+            # CHANGE IN UNREALIZED GAIN/LOSS and prints no ending market value, so
+            # reading the last column as one put $1.90 where $1,792.92 belonged and the
+            # second identity refused every row on the page -- a table that foots
+            # perfectly, rejected for having one column fewer than assumed. Both
+            # readings are tried and the arithmetic picks.
+            tails = [['unreal_%d' % k for k in range(rest)]]
+            if rest:
+                tails.insert(0, ['unreal_%d' % k for k in range(rest - 1)]
+                             + ['ending_market'])
+            for tail in tails:
+                layout = head + tail
+                got, cols = place(layout)
+                ok = [verify(r['cells']) for r in got]
+                closed = [r for r, (good, _) in zip(got, ok) if good]
+                if len(closed) < MIN_PROVEN:
+                    continue
+                rich = sum(1 for r in closed
+                           if sum(1 for k, v in r['cells'].items()
+                                  if k.startswith('activity_') and v) >= 2)
+                if rich * 2 < len(closed):
+                    continue
+                # Both identities beat one, same as among the written-down candidates.
+                strong = sum(1 for good, why in ok
+                             if good and why == 'both identities hold')
+                score = (strong, len(closed), i - s0)
+                if best is None or score > best[0]:
+                    best = (score, got, cols)
     return (best[1], best[2]) if best else ([], [])
 
 

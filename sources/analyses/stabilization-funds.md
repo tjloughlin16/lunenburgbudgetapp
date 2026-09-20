@@ -197,11 +197,12 @@ Every proven row:
 | FY2020 | `—` | STABILIZATION | $1,978,347.74 | $2,041,061.72 |
 | FY2020 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $945,669.29 | $945,669.29 |
 | FY2020 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $230,431.40 | $230,431.40 |
+| FY2021 | `—` | STABILIZATION | $2,447,755.21 | — |
 | FY2022 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTI | $231,007.68 | $231,007.68 |
 | FY2025 | `—` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,598,621.38 | $2,598,621.38 |
 | FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 | $249,060.25 |
 
-**Coverage is 11 rows across 8 years, and that is the point rather than a footnote.** The rest of the run is not missing because nobody looked — it is missing because those pages have not yet yielded a row whose arithmetic closes, and publishing one that does not would be worse than publishing nothing.
+**Coverage is 12 rows across 9 years, and that is the point rather than a footnote.** The rest of the run is not missing because nobody looked — it is missing because those pages have not yet yielded a row whose arithmetic closes, and publishing one that does not would be worse than publishing nothing.
 
 ---
 
