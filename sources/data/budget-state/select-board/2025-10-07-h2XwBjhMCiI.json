@@ -1,0 +1,76 @@
+{
+ "board": "Select Board",
+ "board_slug": "select-board",
+ "meeting_date": "2025-10-07",
+ "source": {
+  "sha256": "7cdcd159a287c26ac3ac290829fe70b9583d09a0236a78255d8a84c4787f15e9",
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-10-07-h2XwBjhMCiI.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "2%",
+    "fiscal_year": null,
+    "kind": "other",
+    "scope": "school",
+    "statement": "The special education reserve fund being established (not yet funded) is capped by law at 2% of net school spending.",
+    "status": "announced",
+    "t": 2909,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "over a million dollars",
+    "fiscal_year": null,
+    "kind": "other",
+    "scope": "school",
+    "statement": "A board member noted out-of-district special education placements can cost well over a million dollars, prompting discussion of the reserve fund's limits.",
+    "status": "announced",
+    "t": 3038,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": null,
+    "kind": "state_aid",
+    "scope": "school",
+    "statement": "The school committee discussed pursuing additional Chapter 70 funding but decided not to put forward a warrant article for it.",
+    "status": "withdrawn",
+    "t": 8155,
+    "who": "a member (relaying school committee report)"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2026,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Free cash is expected to be certified by November 18, though possibly not before the warrant goes to print; if uncertified, old capital appropriations would cover one-time items instead.",
+    "status": "announced",
+    "t": 7796,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "the special education budget line",
+    "condition": "if the district intentionally underfunded that line, relying on the reserve fund instead",
+    "fiscal_year": null,
+    "prediction": "the district would most likely run into difficulties and face substantial costs",
+    "scope": "school",
+    "t": 3110,
+    "who": "the town manager"
+   }
+  ]
+ },
+ "video_id": "h2XwBjhMCiI",
+ "video_url": "https://www.youtube.com/watch?v=h2XwBjhMCiI",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-09-20T14:46:36Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}
