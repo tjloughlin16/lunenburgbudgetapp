@@ -150,11 +150,11 @@ The whole thing is also downloadable as SQLite — [https://lunenburgbudgetproje
 
 ## Documents
 
-1369 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
+1377 documents, each downloadable at `https://lunenburgbudgetproject.org/docs/<path>`. `sources.json` lists every one with its path, size and group. Three sections, and the difference matters:
 
 - **Published by the town, the district and the state** — 108 documents. Primary sources.
 - **Held for reference, not used in the analysis** — 1070 documents, the district’s whole budget page mirrored back to FY18. Nothing here feeds a figure on the site.
-- **Written by this project** — 191 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
+- **Written by this project** — 199 documents. Our analyses and machine-readable extracts. These are arguments, not sources.
 
 Fifteen documents came from the Town by records request rather than off a website; they carry `byRequest` in `sources.json` and are the only ones recording money actually spent.
 
@@ -162,7 +162,7 @@ Text has been extracted from nearly every document, including scans that had no 
 
 ## Meeting archive
 
-12,055 agendas and sets of minutes across 51 town boards, 2009-01-05 to 2026-11-17. **The full text of every one of them is published here and is readable without JavaScript.** This is where the town argues about fees, contracts, staffing and overrides, and it is not in any budget document.
+12,079 agendas and sets of minutes across 51 town boards, 2009-01-05 to 2026-11-17. **The full text of every one of them is published here and is readable without JavaScript.** This is where the town argues about fees, contracts, staffing and overrides, and it is not in any budget document.
 
 - **To search a board, fetch one file.** [https://lunenburgbudgetproject.org/minutes/INDEX.txt](https://lunenburgbudgetproject.org/minutes/INDEX.txt) lists a bundle per board — every document for that board concatenated, largest 1MB. The School Committee is [https://lunenburgbudgetproject.org/minutes/school-committee-2021.txt](https://lunenburgbudgetproject.org/minutes/school-committee-2021.txt). You cannot grep a website; you can read one file.
 - **To cite, use the individual document.** Each is at `https://lunenburgbudgetproject.org/docs/minutes/text/<board>/<date>-<kind>-<id>.txt`, and every bundle entry carries that address in its header alongside the town’s scanned original.

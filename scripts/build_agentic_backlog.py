@@ -75,11 +75,58 @@ def ocr():
     return done, todo
 
 
+def extraction():
+    """The annual reports: rows READ against rows RECONCILED.
+
+    TJ, 20 September 2026, after finding the stabilization history unusable only because
+    he asked for it: "we need to surface these gaps so I dont find them with questions
+    like this" -- and then, on this backlog: "we need to add that to the list next.
+    Anytime you have nothing to do, just work on that."
+
+    It is not one of the claude -p streams and it is the largest backlog in the project:
+    13,405 rows off sixteen annual reports, of which about 3% are tied to a total the
+    document itself prints. The counts come from the database so they move the day an
+    extractor improves.
+    """
+    import sqlite3
+    db = sqlite3.connect(os.path.join(ROOT, 'sources', 'data', 'lunenburg.db'))
+    done, todo = [], []
+    for (t,) in db.execute("SELECT name FROM sqlite_master WHERE type='table' "
+                           "AND name LIKE 'report_%'"):
+        try:
+            rows = dict(db.execute('SELECT status, COUNT(*) FROM %s GROUP BY status' % t)
+                        .fetchall())
+        except sqlite3.OperationalError:
+            continue
+        # Dated by the report they came from, so the two-year rule sorts them the same way
+        # every other stream is sorted.
+        try:
+            fys = [r[0] for r in db.execute('SELECT DISTINCT fy FROM %s' % t)]
+        except sqlite3.OperationalError:
+            fys = []
+        for fy in fys:
+            if not fy:
+                continue
+            d = '%d-06-30' % int(fy)
+            n = db.execute('SELECT COUNT(*) FROM %s WHERE fy=?' % t, (fy,)).fetchone()[0]
+            ok = db.execute("SELECT COUNT(*) FROM %s WHERE fy=? AND status='checked'" % t,
+                            (fy,)).fetchone()[0]
+            done += [d] * ok
+            todo += [d] * (n - ok)
+    return done, todo
+
+
 def main():
     streams = [
         ('Captions for recordings', 'fetch_youtube_transcripts.py — free, throttled by YouTube; run_transcript_backfill.sh sweeps the last two years across every board, then the rest; the refresh takes 12 a day', transcripts()),
         ('Our minutes of recordings', 'write_recording_minutes.py — claude -p, ~0.09% of the weekly allowance each; the refresh writes 3 a day, last two years first, then the three budget boards deeper', recording_minutes()),
         ('Votes from the town’s minutes', 'extract_official_votes.py — claude -p on the small model, ~0.03% each, every quote checked verbatim; the refresh reads 40 a day, newest first across every board', official_votes()),
+        ('Reconciling the annual-report tables', 'the largest backlog here and not an '
+         'agentic one: rows are READ, and a row is only usable once it ties to a total '
+         'the document itself prints. Mostly a per-page column ruler putting ACCOUNT '
+         'NUMBER where the first figure belongs, and ten of seventeen trust-fund years '
+         'needing real PDF geometry. Survey: sources/data/extraction-plan.csv',
+         extraction()),
         ('OCR of scanned minutes', 'ocr_scanned_minutes.py — macOS Vision, local and free, ~30 s each; the refresh reads 40 a day, newest first; a scan read here enters search and the votes stream', ocr()),
     ]
     b = io.StringIO()
