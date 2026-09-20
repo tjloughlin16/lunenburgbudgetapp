@@ -1027,6 +1027,19 @@ GROUPS = [
              'question. Loaded as `stated_cuts` and read by /cut-register, which sets '
              'DESE\u2019s teacher counts beside it. '
              'See scripts/extract_stated_cuts.py.'),
+            ('data/stabilization-balances.csv',
+             'What each stabilization and trust fund held, year by year', 2,
+             'The trust-and-agency table the town prints in its annual report, read off '
+             'the page: beginning balance, the year\u2019s activity, ending cash, and for '
+             'the invested funds the market value beside it. Every row carries the fund '
+             'name THE DOCUMENT used \u2014 `registry_name` and `name_disagrees` record '
+             'where that differs from the account registry, because a fund renamed is not '
+             'a fund replaced. A row is only written when the page\u2019s own two '
+             'identities foot: beginning + activity = ending cash, and ending cash + '
+             'opening unrealised + change = ending market. Rows that do not are absent '
+             'rather than estimated, so the file is short of what the reports contain and '
+             'says so. See scripts/extract_stabilization.py and '
+             'scripts/read_trust_table.py.'),
             ('data/money-gaps.csv',
              'What the town\u2019s records cannot answer', 2,
              'Money coming in that cannot be seen, spending that cannot be split, and the '
@@ -2268,7 +2281,18 @@ SKIP_FILES = {'supplemental.csv',
               # Semantics for the CSV datasets that are NOT database tables. A registry
               # ABOUT the archive rather than anything read for a figure, in the same
               # family as the manifest above.
-              'data/dataset-semantics.csv'}
+              'data/dataset-semantics.csv',
+              # COUNTS OF READER QUESTIONS, PULLED FROM D1 FOR THE LOCAL DASHBOARD. It is
+              # gitignored for the same reason notes/feedback is: people who write in did
+              # not publish anything, and a question with a date on it is identifying in a
+              # town this size. The file holds no bodies and no email addresses and it
+              # still does not belong in a public archive.
+              'data/reader-questions.csv',
+              # A CACHE of which page of which annual report holds the trust-and-agency
+              # table, so the extractor does not re-scan sixteen PDFs to find them again.
+              # Rebuilt by scripts/locate_stabilization_pages.py from the reports
+              # themselves; it carries no figure.
+              'data/stabilization-pages.json'}
 
 
 def page_count(path):

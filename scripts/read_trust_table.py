@@ -156,7 +156,26 @@ SEVEN = ['begin_principal', 'begin_earnings', 'net_earnings', 'transfers_earning
 # DOCUMENT'S OWN ARITHMETIC accepts is kept -- and only if it closes on enough rows to
 # mean something. A wrong layout does not make real figures add up, which is what makes
 # this a test rather than a preference.
-CANDIDATES = [TEN, NINE, EIGHT, SEVEN]
+# FY2025, printed page 33, "TRUST & STABILIZATION FUNDS HELD BY OTHER BANKS", header:
+#   FUND NAME | BEGINNING PRINCIPAL | NET EARNINGS | TRANSFERS OF PRINCIPAL |
+#   EXPENDITURES | ENDING CASH VALUE | CHANGE IN UNREALIZED GAIN/LOSS |
+#   UNREALIZED GAIN/LOSS | ENDING MARKET VALUE
+#
+# A SECOND TABLE IN THE SAME REPORT, and the reason FY2025 looked unreadable: the pages
+# I was reading carry a plain `TRUST FUND BALANCE` listing -- fund, balance, receipts,
+# a dash -- which states no arithmetic and so can never prove a row. This one does.
+# TJ found it by searching the PDF for "stabilization" while I was believing my own
+# pipeline's report that the year had no table wide enough to be one.
+BANKS = ['begin_principal', 'net_earnings', 'transfers_principal', 'disburse_principal',
+         'ending_cash', 'change_unrealized', 'unrealized', 'ending_market']
+
+# The same "held by other banks" table with its two unrealised columns empty, which is
+# what FY2025 prints: nothing is carried at anything other than cash value that year, so
+# those columns exist in the header and hold no figure anywhere on the page.
+BANKS_6 = ['begin_principal', 'net_earnings', 'transfers_principal',
+           'disburse_principal', 'ending_cash', 'ending_market']
+
+CANDIDATES = [TEN, NINE, BANKS, BANKS_6, EIGHT, SEVEN]
 MIN_PROVEN = 4
 
 LAYOUTS = {
@@ -176,7 +195,11 @@ def columns(boxes, Y, first_data_y, fy):
     vals = [b for b in boxes if MONEY.match(b['text'].strip()) and Y(b) < first_data_y + 1e-9]
     if not vals:
         return []
-    xs = sorted(b['x'] for b in vals)
+    # THE RIGHT EDGE, NOT THE LEFT. These figures are right-aligned, so `$91.78` and
+    # `$2,254,933.99` in the same column begin thirty thousandths apart and END together.
+    # Clustering on x0 split one column into three and merged others: a nine-column FY2025
+    # page came back as five, all unnamed. Every year was losing columns this way.
+    xs = sorted(b['x'] + b.get('w', 0.0) for b in vals)
     groups, cur = [], [xs[0]]
     for a, b in zip(xs, xs[1:]):
         if b - a > 0.025:
@@ -184,7 +207,14 @@ def columns(boxes, Y, first_data_y, fy):
         else:
             cur.append(b)
     groups.append(cur)
-    centres = [statistics.median(g) for g in groups if len(g) >= 3]
+    # TWO, NOT THREE. A column is a column even if only two funds have a figure in it --
+    # and the "held by other banks" tables are small, eight rows or so, where transfers
+    # and expenditures are used once or twice. Requiring three found five columns on a
+    # nine-column FY2025 page and named none of them.
+    # EVERY GROUP, even one of a single figure. On the "held by other banks" tables
+    # EXPENDITURES is used once in the whole year, and dropping it shifted every column
+    # right of it by one -- which the identities then refused, correctly and unhelpfully.
+    centres = [statistics.median(g) for g in groups]
 
     return centres
 
@@ -216,14 +246,7 @@ def rows(boxes, fy):
     if not anchors:
         return [], []
 
-    # THE BAND IS HALF THE PAGE'S OWN ROW PITCH, not a constant. 0.004 was a guess that
-    # held some rows together and split others -- the STABILIZATION row lost its ending
-    # cash and ending market, which are the two columns the identities are checked
-    # against. Measuring the pitch lets a page set in a larger face, or printed with more
-    # leading, work without a new number.
-    ys = sorted((Y(a) for a in anchors), reverse=True)
-    gaps = [a - b for a, b in zip(ys, ys[1:]) if 0.002 < a - b < 0.05]
-    band = (statistics.median(gaps) / 2) if len(gaps) >= 3 else 0.004
+
 
     # WHERE THE DATA STARTS is the highest anchor that actually has figures beside it --
     # not simply the highest anchor. `TOWN OF LUNENBURG` is a line of text at the top of
@@ -233,7 +256,25 @@ def rows(boxes, fy):
                     if sum(1 for v in vals if abs(Y(v) - Y(a)) < 0.006) >= 2]
     if not with_figures:
         return [], []
-    centres = columns(boxes, Y, max(Y(a) for a in with_figures), fy)
+
+    # THE HEADER IS NOT A ROW. `CHANGE IN`, `NET EARNINGS`, `GAIN/LOSS` all look like fund
+    # names to a name-shaped test, and once they are anchors the nearest-anchor rule hands
+    # them the figures of the first real rows. The data boundary was already computed and
+    # only used to find the header; it has to prune the anchors too.
+    boundary = max(Y(a) for a in with_figures)
+    anchors = [a for a in anchors if Y(a) <= boundary + 1e-9]
+
+    # THE BAND IS HALF THE PAGE'S OWN ROW PITCH, and it has to be measured AFTER the
+    # header is pruned. A column heading set on four tight lines -- `CHANGE IN`,
+    # `GAIN/LOSS`, `NET EARNINGS` -- gives gaps of 0.004 where the real rows sit 0.0101
+    # apart, so including them halved the band, no row kept enough figures to prove, and
+    # the page came back empty rather than wrong. A constant would not have this problem
+    # and would be wrong on any page set differently, which is why it is measured.
+    ys = sorted((Y(a) for a in anchors), reverse=True)
+    gaps = [a - b for a, b in zip(ys, ys[1:]) if 0.002 < a - b < 0.05]
+    band = (statistics.median(gaps) / 2) if len(gaps) >= 3 else 0.004
+
+    centres = columns(boxes, Y, boundary, fy)
     if not centres:
         return [], []
 
@@ -298,8 +339,9 @@ def rows(boxes, fy):
         for v in mine:
             if not cols:
                 continue
-            c = min(cols, key=lambda c: abs(c['x'] - v['x']))
-            if abs(c['x'] - v['x']) > 0.05 or not c['name']:
+            right = v['x'] + v.get('w', 0.0)
+            c = min(cols, key=lambda c: abs(c['x'] - right))
+            if abs(c['x'] - right) > 0.05 or not c['name']:
                 continue
             try:
                 cells[c['name']] = money(v['text'])

@@ -69,8 +69,18 @@ TARGET_LEVY = 1_000_000          # "bring in $1m per year"
 LEVY_CAP = DEFAULT_ASSUMPTIONS['levy_growth']
 HORIZON = 30
 # The one-time override rates.ts prices to hold exactly five years at today's rates, on
-# 13 September 2026. If the two engines drift this fails, and that is the point.
-RATES_TS_FIVE_YEAR_OVERRIDE = 3_100_460
+# 20 September 2026. If the two engines drift this fails, and that is the point.
+#
+# IT FIRED, AND CORRECTLY. The previous value, $3,100,460, was read off rates.ts on 13
+# September. On 20 September the model's FY28 gap moved -- the Special Town Meeting
+# add-backs entered salaries as a recurring $392,264 and the $350,000 appropriation came
+# back out -- and a $3.1M override stopped holding the fifth year. Nothing had drifted
+# between the engines: `least(holdsWith(..., 5))` in rates.ts returns 3,403,695.4990547122
+# and this file's own `years_held` puts the minimum at 3,403,696, which is the same
+# number either side of a rounding. What was stale was the SNAPSHOT, and a snapshot is
+# the only form this check can take -- a value derived at run time from the thing it is
+# checking cannot disagree with it.
+RATES_TS_FIVE_YEAR_OVERRIDE = 3_403_696
 
 LINE_LABEL = dict(salaries='Salaries', health='Health insurance', transport='Transportation',
                   sped='Special education, in district', sped_tuition='Out-of-district special education',

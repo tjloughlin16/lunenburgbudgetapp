@@ -79,6 +79,86 @@ def proven():
     return list(csv.DictReader(open(PROVEN, encoding='utf-8')))
 
 
+def creations():
+    """The Town Meeting articles that created these funds, with what each is FOR.
+
+    TJ, 20 September 2026, reading the report: "for 'what it may be used on' and 'its own
+    stated purpose only', do we have the descriptions of those?"
+
+    We did not. `fund-owners.csv` has a `purpose` and an `authority` column and both are
+    empty for all nine stabilization funds, so the report asserted a restriction whose
+    content it could not state -- the fund NAMES imply a purpose and a name is not the
+    article that created the fund.
+
+    The articles are in the archive: `town-meeting-votes.csv` carries 53 that mention
+    stabilization, five of which create one, each with the town's own words and the
+    statute quoted. That is the purpose and the authority, from the vote rather than from
+    the label.
+    """
+    f = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
+    if not os.path.exists(f):
+        return []
+    out = []
+    for r in csv.DictReader(open(f, encoding='utf-8')):
+        both = (r.get('subject') or '') + ' ' + (r.get('quote') or '')
+        if 'stabiliz' not in both.lower():
+            continue
+        if not re.search(r'\b(creat|establish)', both, re.I):
+            continue
+        out.append(dict(fy=r['fy'], meeting=r['meeting'], article=r['article'],
+                        result=r['result'], subject=(r.get('subject') or '').strip(),
+                        quote=' '.join((r.get('quote') or '').split())))
+    return sorted(out, key=lambda r: r['fy'])
+
+
+# WHICH FUND AN ARTICLE IS ABOUT, matched on the words the town uses in the article.
+# OURS, and stated as ours: the votes file names funds in prose and carries no account
+# code, so this is a reading of each article's subject rather than a join on anything.
+FUND_WORDS = [
+    ('reserve capacity', 'Reserve Capacity Stabilization'),
+    ('inflow', 'Inflow/Infiltration Stabilization'),
+    ('infiltration', 'Inflow/Infiltration Stabilization'),
+    ('health insurance', 'Health Insurance Stabilization'),
+    ('opioid', 'Opioid Settlement Stabilization'),
+    ('town building', 'Town Building Stabilization'),
+    ('vehicle', 'Vehicle/Equipment Stabilization'),
+    ('zoning', 'Zoning Incentive Stabilization'),
+]
+
+
+def history():
+    """Every Town Meeting article that touches a stabilization fund, by fund and year.
+
+    TJ: "can you also give the history of each of the funds if we have it? why it was
+    created, when, which meetings, etc."
+
+    53 articles across FY2011-FY2025, which is as far back as the town-meeting record in
+    this archive reaches. An article that names no particular fund is the GENERAL
+    Stabilization Fund, which is what the town means when it says "the Stabilization
+    Fund" with no qualifier -- that is a reading and it is said out loud on the page.
+    """
+    f = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
+    if not os.path.exists(f):
+        return {}
+    by = {}
+    for r in csv.DictReader(open(f, encoding='utf-8')):
+        both = ((r.get('subject') or '') + ' ' + (r.get('quote') or '')).lower()
+        if 'stabiliz' not in both:
+            continue
+        fund = next((label for word, label in FUND_WORDS if word in both),
+                    'Stabilization Fund (general)')
+        by.setdefault(fund, []).append(dict(
+            fy=r['fy'], meeting=r['meeting'], date=r.get('meeting_date') or '',
+            article=r['article'], result=r['result'],
+            subject=' '.join((r.get('subject') or '').split()),
+            amount=(r.get('amount_as_printed') or '').strip(),
+            fincom=(r.get('fincom') or '').strip(),
+            quote=' '.join((r.get('quote') or '').split())))
+    for v in by.values():
+        v.sort(key=lambda r: (r['fy'], r['article']))
+    return by
+
+
 def render(rows):
     total = sum(r['amount'] for r in rows)
     gen = [r for r in rows if r['code'] in GENERAL]
@@ -113,6 +193,52 @@ def render(rows):
     w('| | **Total** | **%s** | |\n' % usd(total))
     w('**The general/restricted split is ours**, read off each fund’s name. The '
       'annual report prints a balance and never says what may be spent on what.\n')
+    cre = creations()
+    if cre:
+        w('---\n')
+        w('## What each one is FOR, in the town\u2019s own words\n')
+        w('A special purpose fund is restricted to the purpose it was created for, and '
+          'that purpose lives in the article that created it \u2014 not in the '
+          'fund\u2019s name. These are the creating votes this archive holds, each '
+          'quoting **M.G.L. c.40 \u00a75B**, the statute that lets a town keep a '
+          'stabilization fund at all.\n')
+        for c in cre:
+            w('**%s** \u2014 FY%s %s Town Meeting, article %s, %s.\n'
+              % (c['subject'], c['fy'], c['meeting'], c['article'],
+                 c['result'].replace('_', ' ')))
+            if c['quote']:
+                w('> %s\n' % c['quote'][:300])
+        w('**The three largest funds are not here, and that is the gap rather than an '
+          'oversight.** The general Stabilization Fund, Vehicle/Equipment and Zoning '
+          'Incentive were all created before FY2011, which is as far back as the '
+          'town-meeting record in this archive reaches. Their purposes are known only '
+          'from their names, and a name is not an article.\n')
+
+    hist = history()
+    if hist:
+        w('---\n')
+        w('## Each fund, meeting by meeting\n')
+        w('Every Town Meeting article this archive holds that touches a stabilization '
+          'fund \u2014 what was asked, what was voted, and what the Finance Committee '
+          'recommended. The record reaches back to FY2011 and no further, which is why '
+          'three funds have no creation here.\n')
+        w('**Which fund an article belongs to is OUR reading.** The votes name funds in '
+          'prose and carry no account number, so an article saying only \u201cthe '
+          'Stabilization Fund\u201d is taken as the general one \u2014 which is what '
+          'the town means by it, and is still a reading.\n')
+        for fund in sorted(hist, key=lambda k: -len(hist[k])):
+            rs = hist[fund]
+            w('### %s\n' % fund)
+            w('%d article%s, FY%s to FY%s.\n'
+              % (len(rs), '' if len(rs) == 1 else 's', rs[0]['fy'], rs[-1]['fy']))
+            w('| year | meeting | art. | what was asked | amount | FinCom | result |')
+            w('|---|---|---|---|---|---|---|')
+            for r in rs:
+                w('| FY%s | %s | %s | %s | %s | %s | %s |'
+                  % (r['fy'], r['meeting'], r['article'], r['subject'][:76] or '\u2014',
+                     r['amount'] or '\u2014', r['fincom'] or '\u2014',
+                     r['result'].replace('_', ' ')))
+            w('')
     w('---\n')
     pv = proven()
     if pv:

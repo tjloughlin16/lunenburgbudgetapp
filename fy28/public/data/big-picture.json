@@ -28,7 +28,7 @@
   "value": 69492703
  },
  "drivers": {
-  "blended": 0.05178,
+  "blended": 0.05181,
   "cap": 0.025,
   "note": "A line matters in proportion to its share of spending times how far its growth exceeds the 2.5% levy cap (rule 4). Neither number alone means anything: the biggest line is not the biggest driver.",
   "rows": [
@@ -36,36 +36,36 @@
     "amount": 4019071,
     "key": "health",
     "label": "Health insurance",
-    "pull": 0.00967,
+    "pull": 0.00969,
     "rate": 0.09,
-    "share": 0.1487,
+    "share": 0.1491,
     "who": "the Town buys the insurance"
    },
    {
     "amount": 5466201,
     "key": "sped",
     "label": "Special education, in district",
-    "pull": 0.00807,
+    "pull": 0.00808,
     "rate": 0.06487743183668555,
-    "share": 0.2023,
+    "share": 0.2027,
     "who": "each child\u2019s plan, and the law"
    },
    {
-    "amount": 13409674,
+    "amount": 13348216,
     "key": "salaries",
     "label": "Salaries",
-    "pull": 0.00744,
+    "pull": 0.00743,
     "rate": 0.04,
-    "share": 0.4962,
+    "share": 0.495,
     "who": "bargained with the unions"
    },
    {
     "amount": 1053360,
     "key": "transport",
     "label": "Transportation",
-    "pull": 0.00136,
+    "pull": 0.00137,
     "rate": 0.06,
-    "share": 0.039,
+    "share": 0.0391,
     "who": "contracted"
    },
    {
@@ -74,7 +74,7 @@
     "label": "Utilities",
     "pull": 0.00056,
     "rate": 0.05,
-    "share": 0.0224,
+    "share": 0.0225,
     "who": "the market"
    },
    {
@@ -83,7 +83,7 @@
     "label": "Everything else",
     "pull": 0.00033,
     "rate": 0.03,
-    "share": 0.0656,
+    "share": 0.0657,
     "who": "the School Committee"
    },
    {
@@ -92,11 +92,11 @@
     "label": "Out-of-district special education",
     "pull": -0.00065,
     "rate": 0.0,
-    "share": 0.0259,
+    "share": 0.026,
     "who": "state rates and which children enrol"
    }
   ],
-  "spread_over_cap": 0.02678,
+  "spread_over_cap": 0.02681,
   "top2_share": 0.647
  },
  "facts": {
@@ -202,7 +202,7 @@
  "generated_by": "scripts/build_big_picture.py",
  "grain": "Dollars from the model the rest of this site runs on; people and children from DESE\u2019s own district files, ten years apart; residents from the Census Bureau\u2019s five-year survey, with its margins.",
  "hole": {
-  "average": 569654,
+  "average": 660910,
   "note": "Each year\u2019s shortfall after the year before\u2019s cuts stay cut, in the order the School Committee has said it would cut. Level service means the same people, the same programs, the same buildings, one year older.",
   "order": [
    "sped",
@@ -217,70 +217,70 @@
    "arts",
    "athletics"
   ],
-  "total": 2848272,
+  "total": 3304552,
   "years": [
    {
     "cum_fte": 2.9,
-    "cut": 641523,
+    "cut": 939180,
     "fte": 2.9,
     "fy": 2028,
-    "short": 632876,
+    "short": 930273,
     "takes": [
      "Student Device Refresh & Computer Leases",
      "Remaining Athletics Program (all sports)",
-     "High School Band & Chorus Program"
+     "Instructional Technology Contracts (per school)"
     ],
     "unclosed": 0
    },
    {
-    "cum_fte": 3.9,
-    "cut": 603287,
-    "fte": 1.0,
+    "cum_fte": 9.9,
+    "cut": 624436,
+    "fte": 7.0,
     "fy": 2029,
-    "short": 556851,
+    "short": 553726,
     "takes": [
      "Building Maintenance Contracted Services",
-     "Instructional Technology Contracts (per school)",
-     "Grounds Maintenance & Supplies"
+     "Library Staff & Materials \u2014 all four schools",
+     "Custodial Staff (each further 1.0) #1"
     ],
     "unclosed": 0
    },
    {
-    "cum_fte": 14.7,
-    "cut": 793806,
-    "fte": 10.8,
+    "cum_fte": 15.2,
+    "cut": 595400,
+    "fte": 5.3,
     "fy": 2030,
-    "short": 560986,
+    "short": 532715,
     "takes": [
      "Advanced Placement & Upper-Level Electives",
-     "Library Staff & Materials \u2014 all four schools",
-     "Middle School Exploratory & Elective Block"
+     "Middle School Exploratory & Elective Block",
+     "0.5 -> 1.0 Assistant Principal \u2014 High School"
     ],
     "unclosed": 0
    },
    {
-    "cum_fte": 18.2,
-    "cut": 433129,
-    "fte": 3.5,
-    "fy": 2031,
-    "short": 413372,
-    "takes": [
-     "Guidance Counselors (1.0 reduction)",
-     "1.0 Reading Specialist \u2014 Primary",
-     "Social Workers (1.0 reduction)"
-    ],
-    "unclosed": 0
-   },
-   {
-    "cum_fte": 22.2,
-    "cut": 777687,
+    "cum_fte": 19.2,
+    "cut": 587709,
     "fte": 4.0,
-    "fy": 2032,
-    "short": 684187,
+    "fy": 2031,
+    "short": 587110,
     "takes": [
      "52 Ignite Tutoring Seats \u2014 Primary",
+     "Guidance Counselors (1.0 reduction)",
+     "1.0 Reading Specialist \u2014 Primary"
+    ],
+    "unclosed": 0
+   },
+   {
+    "cum_fte": 24.2,
+    "cut": 707727,
+    "fte": 5.0,
+    "fy": 2032,
+    "short": 700728,
+    "takes": [
      "Classroom Instructional Materials & Workbooks",
-     "1.0 Reading Specialist \u2014 Turkey Hill"
+     "Additional Classroom Teachers #1",
+     "Additional Classroom Teachers #2"
     ],
     "unclosed": 0
    }
@@ -292,16 +292,16 @@
   "Which fund pays which teacher. DESE\u2019s FTE counts every assignment whatever pays for it; a grant ending and a position ending look the same in the town\u2019s budget and different here, and nothing joins the two."
  ],
  "overrides": {
-  "first_gap": 632876,
+  "first_gap": 930273,
   "note": "A school-only override: the levy base rises once by this amount, all of it to the schools, and grows 2.5% a year after. It holds while the level-service gap stays under it. A general override has to be larger, because the schools take only their share of the town budget.",
   "rows": [
    {
     "amount": 2000000,
     "on_average_home": 416,
-    "reopens_fy": 2031,
+    "reopens_fy": 2030,
     "townwide": 3760609,
     "townwide_on_average_home": 782,
-    "years": 3
+    "years": 2
    },
    {
     "amount": 5000000,
@@ -384,34 +384,34 @@
    "label": "Health insurance",
    "rate": 0.09
   },
-  "headcount": 151,
+  "headcount": 150,
   "horizons": [
    {
     "every_year": {
-     "cut": 608535,
-     "positions": 6.8,
-     "share": 0.227,
-     "total_positions": 34.2
+     "cut": 894493,
+     "positions": 10.0,
+     "share": 0.335,
+     "total_positions": 50.2
     },
     "once": {
-     "cut": 2812904,
-     "positions": 31.6,
-     "share": 0.21
+     "cut": 3088015,
+     "positions": 34.7,
+     "share": 0.231
     },
     "through_fy": 2032,
     "years": 5
    },
    {
     "every_year": {
-     "cut": 711743,
-     "positions": 8.0,
-     "share": 0.531,
-     "total_positions": 79.9
+     "cut": 894493,
+     "positions": 10.0,
+     "share": 0.67,
+     "total_positions": 100.4
     },
     "once": {
-     "cut": 6003790,
-     "positions": 67.4,
-     "share": 0.448
+     "cut": 6264481,
+     "positions": 70.3,
+     "share": 0.469
     },
     "through_fy": 2037,
     "years": 10
@@ -420,25 +420,25 @@
   "note": "Cuts land on the salary line, so the money saved never gets its raise either. Every other line grows as the model assumes. Positions are at the catalogue\u2019s own cost per position, an estimate; the salary line covers stipends and part-time roles too.",
   "once": [
    {
-    "cut": 1340967,
+    "cut": 1334822,
     "positions": 15,
-    "reopens_fy": 2030,
+    "reopens_fy": 2029,
     "share": 0.1,
-    "years": 2
+    "years": 1
    },
    {
-    "cut": 3352418,
+    "cut": 3337054,
     "positions": 38,
     "reopens_fy": 2033,
     "share": 0.25,
     "years": 5
    },
    {
-    "cut": 6704837,
-    "positions": 76,
-    "reopens_fy": 2039,
+    "cut": 6674108,
+    "positions": 75,
+    "reopens_fy": 2038,
     "share": 0.5,
-    "years": 11
+    "years": 10
    }
   ],
   "target": 0.02826

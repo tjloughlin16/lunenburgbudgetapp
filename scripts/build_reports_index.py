@@ -261,6 +261,20 @@ ABOUT = {
     'budget-vs-actual':
         'Did the money the town budgeted match the money it spent? Careful about what '
         'the documents can and cannot support.',
+    'hiring-here-or-placing-there':
+        'The district\u2019s own argument \u2014 that hiring special education staff in '
+        'district avoids out-of-district placements \u2014 and why this archive cannot yet '
+        'test it. A scoping note, not a finding: what it would take to answer is the '
+        'whole point of it.',
+    'stabilization-funds':
+        'The town\u2019s savings, fund by fund: what each one holds, who may spend it, '
+        'what it may be spent ON, and the meeting that created it. Whether any of it can '
+        'cover a school deficit is a question of purpose and of vote, not of balance.',
+    'spending-compared':
+        'Lunenburg beside the districts people name at meetings \u2014 including the '
+        'regional ones, because "regionalize and we get more money" is a top-five talking '
+        'point about this deficit. Per-pupil spending, what the state pays, what the '
+        'district itself funds, and what the tax bill is in each town.',
     'free-cash':
         'How much of Lunenburg’s certified free cash is genuinely spendable, built from '
         'the state’s own proofs for nine towns.',

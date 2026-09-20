@@ -25,7 +25,7 @@ rewrites it every twenty seconds, so an open tab keeps up without anything liste
 port. The document table is a separate `sources.js` loaded with a <script> tag, because
 `fetch()` of a local file is blocked by the browser and a <script> tag is not.
 """
-import argparse, collections, csv, datetime as dt, glob, html, json, os, re, subprocess, sys, time
+import argparse, collections, csv, datetime as dt, glob, html, json, os, re, subprocess, sqlite3, sys, time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
@@ -437,6 +437,54 @@ def register_pending(want, have_dir):
     return group(out)
 
 
+
+def extraction_pending():
+    """The annual-report tables: rows READ against rows the document's OWN total proves.
+
+    THIS IS NOT A claude -p STREAM AND IT IS THE LARGEST BACKLOG HERE. TJ, 20 September
+    2026, after the stabilization history turned out to be unusable only because he asked
+    for it: "we need to surface these gaps so I dont find them with questions like this."
+    A dashboard that lists only the streams that cost allowance money is a dashboard that
+    hides the free work, and the free work is where the data is.
+
+    The grain is (dataset, fiscal year), because that is the unit somebody sits down and
+    fixes: one table family in one annual report. `status='checked'` means the extract
+    reconciles to a figure the report itself prints -- rule 13's `column_meaning`
+    discipline -- and everything else is read but unproven.
+
+    Counted out of the database rather than off the CSVs so the numbers move the day an
+    extractor improves, not the day somebody remembers to update a note.
+    """
+    db = os.path.join(DATA, 'lunenburg.db')
+    if not os.path.exists(db):
+        return 0, []
+    con = sqlite3.connect('file:%s?mode=ro' % db, uri=True)
+    done, pend = 0, []
+    for (t,) in con.execute("SELECT name FROM sqlite_master WHERE type='table' "
+                            "AND name LIKE 'report_%' ORDER BY name"):
+        cols = {r[1] for r in con.execute('PRAGMA table_info("%s")' % t)}
+        if 'status' not in cols or 'fy' not in cols:
+            continue
+        label = t[len('report_'):].replace('_', ' ')
+        for fy, n, ok in con.execute(
+                'SELECT fy, COUNT(*), SUM(CASE WHEN status=\'checked\' THEN 1 ELSE 0 END) '
+                'FROM "%s" GROUP BY fy' % t):
+            done += ok or 0
+            if not fy:
+                continue
+            pend += [(label, '%d-06-30' % int(fy))] * ((n or 0) - (ok or 0))
+    con.close()
+    out = group(pend)
+    # ONE ENTRY PER FISCAL YEAR, NOT ONE PER ROW. Every other stream's date list is one
+    # meeting each, so printing them all is the breakdown. Here a dataset holds thousands
+    # of rows sharing fifteen fiscal years, and the raw list prints 2011-06-30 four
+    # hundred times -- which is noise wearing the costume of detail.
+    for r in out:
+        r['dates'] = ['%s (%s)' % (d, '{:,}'.format(n))
+                      for d, n in sorted(collections.Counter(r['dates']).items())]
+    return done, out
+
+
 # ------------------------------------------------------------------- the streams
 def streams():
     """One row per ingestion stream: how many done, how many left, measured ONE way.
@@ -526,6 +574,17 @@ def streams():
                   cost='~0.09% of the weekly allowance each',
                   last=ago(newest([os.path.join(DATA, 'recording-minutes', '*', '*.json')])), note='written from our captions; two derived layers from the meeting',
                   pending=mp))
+    # THE ANNUAL REPORTS. Free, ours, and the biggest pile in the project.
+    ex_done, ex_pend = extraction_pending()
+    s.append(dict(key='extraction', name='Reconciling the annual-report tables',
+                  io='in: sixteen annual town reports, read page by page &rarr; out: rows tied to a total the report itself prints',
+                  done=ex_done, todo=sum(p['n'] for p in ex_pend),
+                  blocked=0, blocked_why='', cost='free — our own extractors, local',
+                  last=ago(newest([os.path.join(DATA, 'lunenburg.db')])),
+                  note='a row that does not reconcile is read, not proven; nothing may be '
+                       'aggregated across the two',
+                  pending=ex_pend))
+
     return s
 
 # -------------------------------------------------------------------- the refresh
