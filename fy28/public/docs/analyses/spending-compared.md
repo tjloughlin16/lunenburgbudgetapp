@@ -1,8 +1,5 @@
 # How Lunenburg compares, and what matching would cost
 
-> **Working state:** `notes/HANDOFF.md` carries the current branch and what is
-> established versus assumed. `CLAUDE.md` carries the rules.
-
 **Where Lunenburg sits among all 318 Massachusetts school districts on spending for each pupil — and what it would cost, in dollars, to move.**
 
 Analysis, September 2026. Every figure is DESE’s, for FY2025, and the only arithmetic here is a multiplication.

@@ -1,8 +1,5 @@
 # The stabilization funds, and who may spend them
 
-> **Working state:** `notes/HANDOFF.md` carries the current branch and what is
-> established versus assumed. `CLAUDE.md` carries the rules.
-
 **What the town holds in reserve, which of it could lawfully be spent on an operating deficit, and the four questions about it this archive cannot yet answer.**
 
 Analysis, September 2026. Balances are FY2025 and are **not reconciled** — see the caveat before quoting one.

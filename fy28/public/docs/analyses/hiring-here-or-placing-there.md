@@ -1,8 +1,6 @@
 # Hiring here instead of placing there
 
 
-> **Working state:** `notes/HANDOFF.md` carries the current branch, the open
-> decisions and what is established versus assumed. `CLAUDE.md` carries the rules.
 
 **Whether in-district special education staffing reduces out-of-district placements —
 what the data shows, what it cannot show, and what would be needed to model it.**

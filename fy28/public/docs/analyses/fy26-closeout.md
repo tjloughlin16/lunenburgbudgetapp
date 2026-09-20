@@ -1,7 +1,5 @@
 # FY26, as the books stood in June
 
-> **Working state:** `notes/HANDOFF.md` carries the current branch and what is established
-> versus assumed. `CLAUDE.md` carries the rules.
 
 Analysis, 2 September 2026. Every figure recomputed by
 `scripts/verify_fy26_closeout.py` from `sources/data/lunenburg.db`.

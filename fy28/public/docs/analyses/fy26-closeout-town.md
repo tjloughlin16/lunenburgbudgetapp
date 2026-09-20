@@ -1,7 +1,5 @@
 # FY26 on the town side, as the books stood in June
 
-> **Working state:** `notes/HANDOFF.md` carries the current branch and what is established
-> versus assumed. `CLAUDE.md` carries the rules.
 
 Analysis, 2 September 2026. Companion to `analyses/fy26-closeout.md`, which reads the same
 report for the school department. Every figure recomputed by
