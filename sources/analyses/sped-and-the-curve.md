@@ -1,8 +1,6 @@
 # Special education and the curve
 
 
-> **Working state:** `notes/HANDOFF.md` carries the current branch, the open
-> decisions and what is established versus assumed. `CLAUDE.md` carries the rules.
 
 **How special education bears on the rate problem — using budgets only.**
 

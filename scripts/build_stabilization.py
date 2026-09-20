@@ -87,8 +87,6 @@ def render(rows):
     stot = sum(r['amount'] for r in spec)
     b = []; w = b.append
     w('# The stabilization funds, and who may spend them\n')
-    w('> **Working state:** `notes/HANDOFF.md` carries the current branch and what is\n'
-      '> established versus assumed. `CLAUDE.md` carries the rules.\n')
     w('**What the town holds in reserve, which of it could lawfully be spent on an '
       'operating deficit, and the four questions about it this archive cannot yet '
       'answer.**\n')

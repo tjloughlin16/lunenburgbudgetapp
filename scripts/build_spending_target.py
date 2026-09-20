@@ -144,8 +144,6 @@ def render(d):
     b = []
     w = b.append
     w('# How Lunenburg compares, and what matching would cost\n')
-    w('> **Working state:** `notes/HANDOFF.md` carries the current branch and what is\n'
-      '> established versus assumed. `CLAUDE.md` carries the rules.\n')
     w('**Where Lunenburg sits among all %s Massachusetts school districts on spending '
       'for each pupil \u2014 and what it would cost, in dollars, to move.**\n'
       % st['districts'])

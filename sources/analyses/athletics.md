@@ -1,9 +1,6 @@
 # Athletics: what it costs, who pays, and what the budget line does not say
 
 
-> **Working state:** `notes/HANDOFF.md` carries the current branch and what is established
-> versus assumed. `CLAUDE.md` carries the rules. Fee revenue and fund balances are worked
-> in `sped-and-funds.md` §2.2 and are not restated here.
 
 Analysis, August 2026. Part of the source archive.
 
