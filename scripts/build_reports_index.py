@@ -123,7 +123,7 @@ CATEGORIES = [
             'enrollment', 'attrition', 'outflow', 'montytech', 'leaving', 'families',
         ]),
         ('where the money comes from, and how it compares', [
-            'minaid', 'required', 'peers', 'variance',
+            'minaid', 'required', 'peers', 'spending-compared', 'variance',
         ]),
         # THE RULES EVERYONE ARGUES UNDER, as a subsection here rather than a shelf of
         # their own. TJ, 17 September 2026: "should go under the schools as a subsection".
@@ -145,7 +145,7 @@ CATEGORIES = [
         # report in the index that needs no budget knowledge at all to read.
         ('who lives here', ['bythenumbers', 'owners', 'homestudents']),
         ('the ledger, read', [
-            'fy26-closeout', 'fy26-closeout-town', 'free-cash',
+            'fy26-closeout', 'fy26-closeout-town', 'free-cash', 'stabilization-funds',
         ]),
         ('what the votes decided', [
             'fy27-and-the-override', 'fy27-cut-reconciliation',
