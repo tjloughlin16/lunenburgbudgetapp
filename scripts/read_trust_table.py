@@ -133,6 +133,32 @@ NINE = ['begin_principal', 'begin_earnings', 'contrib_principal', 'net_earnings'
         'disburse_principal', 'transfers_earnings', 'ending_cash', 'unrealized',
         'ending_market']
 
+# FY2020, printed page 41, header reads:
+#   ACCOUNT NUMBER | FUND NAME | BEGINNING MARKET VALUE | BEGINNING PRINCIPAL |
+#   BEGINNING EARNINGS | NET EARNINGS | TRANSFERS OF PRINCIPAL | TRANSFERS OF EARNINGS |
+#   ENDING CASH VALUE | CHANGE IN UNREALIZED GAIN/LOSS | UNREALIZED GAIN/LOSS |
+#   ENDING MARKET VALUE
+TEN = ['begin_market', 'begin_principal', 'begin_earnings', 'net_earnings',
+       'transfers_principal', 'transfers_earnings', 'ending_cash',
+       'change_unrealized', 'unrealized', 'ending_market']
+
+# EIGHT: the same nine without a contributions column, which several years do not print.
+EIGHT = ['begin_principal', 'begin_earnings', 'net_earnings', 'disburse_principal',
+         'transfers_earnings', 'ending_cash', 'unrealized', 'ending_market']
+
+# SEVEN: no contributions and no separate unrealised column.
+SEVEN = ['begin_principal', 'begin_earnings', 'net_earnings', 'transfers_earnings',
+         'ending_cash', 'unrealized', 'ending_market']
+
+# THE CANDIDATES, and why offering several is not guessing. Each was READ off a printed
+# header; what is not known is which report uses which. Rather than assign one per year by
+# eye across fifteen reports, every candidate of the right width is tried and the one the
+# DOCUMENT'S OWN ARITHMETIC accepts is kept -- and only if it closes on enough rows to
+# mean something. A wrong layout does not make real figures add up, which is what makes
+# this a test rather than a preference.
+CANDIDATES = [TEN, NINE, EIGHT, SEVEN]
+MIN_PROVEN = 4
+
 LAYOUTS = {
     2014: NINE, 2015: NINE, 2016: NINE, 2017: NINE, 2022: NINE,
     2020: ['begin_market', 'begin_principal', 'begin_earnings', 'net_earnings',
@@ -160,16 +186,7 @@ def columns(boxes, Y, first_data_y, fy):
     groups.append(cur)
     centres = [statistics.median(g) for g in groups if len(g) >= 3]
 
-    layout = LAYOUTS.get(fy)
-    if not layout:
-        return [dict(x=c, name=None, words='no layout recorded for FY%s' % fy)
-                for c in centres]
-    if len(layout) != len(centres):
-        # Refuse rather than align a layout against a different number of columns.
-        return [dict(x=c, name=None,
-                     words='FY%s layout has %d columns, this page shows %d'
-                           % (fy, len(layout), len(centres))) for c in centres]
-    return [dict(x=c, name=n, words='') for c, n in zip(centres, layout)]
+    return centres
 
 
 def rows(boxes, fy):
@@ -216,7 +233,64 @@ def rows(boxes, fy):
                     if sum(1 for v in vals if abs(Y(v) - Y(a)) < 0.006) >= 2]
     if not with_figures:
         return [], []
-    cols = columns(boxes, Y, max(Y(a) for a in with_figures), fy)
+    centres = columns(boxes, Y, max(Y(a) for a in with_figures), fy)
+    if not centres:
+        return [], []
+
+    # A FIGURE GOES TO ITS NEAREST ROW, within a looser cap than the band.
+    #
+    # A symmetric band cannot serve both failures seen here. Too tight and a tall row
+    # loses its own ending cash and ending market -- the two columns everything is checked
+    # against -- which is FY2015 and FY2017. Too loose and a row steals its neighbours',
+    # arriving with fourteen figures for nine columns, which is FY2022.
+    #
+    # Nearest-anchor stops the stealing because a figure closer to the next fund goes
+    # there; the looser cap catches a wrapped value that sits just outside its own row.
+    def owner(v):
+        return min(anchors, key=lambda a: abs(Y(v) - Y(a)))
+
+    def place(layout):
+        cols = [dict(x=c, name=n) for c, n in zip(centres, layout)]
+        got = []
+        for a in anchors:
+            mine = [v for v in vals
+                    if owner(v) is a and abs(Y(v) - Y(a)) < band * 1.6]
+            cells = {}
+            for v in mine:
+                c = min(cols, key=lambda c: abs(c['x'] - v['x']))
+                if abs(c['x'] - v['x']) > 0.05 or not c['name']:
+                    continue
+                try:
+                    cells[c['name']] = money(v['text'])
+                except ValueError:
+                    pass
+            code = CODE.match(a['text'].split()[0])
+            got.append(dict(code=code.group(0) if code else '',
+                            name=' '.join(a['text'].split()[1:] if code
+                                          else a['text'].split()),
+                            cells=cells, n_figures=len(mine)))
+        return got, cols
+
+    # Try every candidate of this page's width and keep whichever the arithmetic accepts.
+    best = None
+    for layout in CANDIDATES:
+        if len(layout) != len(centres):
+            continue
+        got, cols = place(layout)
+        n = sum(1 for r in got if verify(r['cells'])[0])
+        if n >= MIN_PROVEN and (best is None or n > best[0]):
+            best = (n, got, cols)
+    if best:
+        return best[1], best[2]
+
+    # Nothing closed: fall back to the layout recorded for the year, so the caller can see
+    # what it read, and the identities will reject the rows.
+    layout = LAYOUTS.get(fy)
+    if not layout or len(layout) != len(centres):
+        return [], [dict(x=c, name=None) for c in centres]
+    got, cols = place(layout)
+    return got, cols
+
     out = []
     for a in anchors:
         mine = [v for v in vals if abs(Y(v) - Y(a)) < band]

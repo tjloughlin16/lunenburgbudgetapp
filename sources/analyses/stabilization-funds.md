@@ -34,6 +34,36 @@ So the answer to *can this pay for a school deficit* is **yes for $3,147,179 and
 
 ---
 
+## What has moved, so far as anything here can prove
+
+These are the only stabilization figures in this archive that have been **checked**. Each is read off a photograph of the town’s own trust-fund table and then verified against two identities the table states about every row — beginning plus activity equals ending cash, and ending cash plus unrealised equals ending market. A row that fails is not published.
+
+**The general Stabilization Fund**, the one Town Meeting may spend on anything lawful:
+
+| | ending market value |
+|---|---:|
+| FY2016 | $1,551,001.18 |
+| FY2018 | $1,732,690.98 |
+| FY2020 | $2,041,061.72 |
+
+That is **$490,060.54 more between FY2016 and FY2020**, a rise of 32%, in a fund whose purpose is to be available.
+
+Every proven row:
+
+| year | account | fund | ending market |
+|---|---|---|---:|
+| FY2014 | `—` | ZONING INCENTIVE STABILIZATION (TL 8129 | $227,201.90 |
+| FY2015 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $227,542.95 |
+| FY2016 | `—` | STABILIZATION | $1,551,001.18 |
+| FY2018 | `—` | STABILIZATION | $1,732,690.98 |
+| FY2020 | `—` | STABILIZATION | $2,041,061.72 |
+| FY2020 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $945,669.29 |
+| FY2020 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $230,431.40 |
+
+**Coverage is 7 rows across 5 years, and that is the point rather than a footnote.** The rest of the run is not missing because nobody looked — it is missing because those pages have not yet yielded a row whose arithmetic closes, and publishing one that does not would be worse than publishing nothing.
+
+---
+
 ## What this cannot answer yet, and why
 
 Four of the six questions this report was asked are about MOVEMENT, and the series does not exist in a form anything may aggregate:

@@ -536,6 +536,52 @@ the books is a record of what happened.** They arrive in the same file format, o
 same program, and are not the same kind of thing. Ask which one produced it, never what it
 was saved as.
 
+
+### 13b. Reading a table off a photograph: measure the page, never guess at it
+
+Half the tables in the annual reports are scans. Four rules got FY2020's stabilization
+funds out of one, after every tolerance-based attempt failed, and each replaces a constant
+somebody would otherwise tune by hand.
+
+**1. MEASURE THE ROTATION, DO NOT FIGHT IT.** A scan is slightly turned, so a row's own
+observations do not share a `y` and two adjacent rows do. There is no tolerance that
+works: at 0.004 two funds merge, at 0.003 one fund splits from its own account number.
+The rotation is recoverable from the page itself — take each figure's nearest neighbour
+to the right, take the MEDIAN slope between them. FY2020 page 41: **−0.01033 from 158
+pairs.** Then `Y = y − slope·x`, and in that coordinate a row shares a value and ordinary
+clustering works.
+
+**2. THE BAND IS HALF THE PAGE'S OWN ROW PITCH.** Not a constant. A guessed 0.004 held
+some rows together and split others — and what it lost from the long rows was `ending
+cash` and `ending market`, the two columns everything is checked against. Measure the
+median gap between consecutive rows and halve it; a page set in a larger face then needs
+no new number.
+
+**3. PLACE FIGURES BY COLUMN POSITION, NEVER BY ORDER.** A fund with no activity prints
+nothing in those columns. Take the figures in order and every one lands under the wrong
+heading from the first gap onward. Assign each to the column whose centre it is nearest,
+and let an absent column stay absent.
+
+**4. NAME COLUMNS FROM A HEADER YOU READ AND WROTE DOWN.** Never inferred. Two attempts to
+name them from the heading words automatically produced confident nonsense — three columns
+all claiming to be `begin_principal`, and a proportional word-split turning `TRANSFERS OF
+TRANSFERS OF ENDING CASH` (one OCR observation spanning three columns) into `TRANSFERS
+PRINCIPAL / OF EARNINGS / TRANSFERS VALUE`. This is rule 13's own trap wearing a new coat:
+**a position is not a name**, which is why `column_meaning` exists. Read the printed
+header, write the layout down per year, and let a year whose column count disagrees be
+refused rather than aligned.
+
+**And the layout is a HYPOTHESIS that the document tests.** Nine columns read off FY2014
+were proposed for four other years. FY2015 and FY2016 accepted them — ten to twelve rows a
+page closing. FY2017 and FY2022 refused them, one row and none, so those headers differ
+and wait to be read. **A wrong layout cannot make real arithmetic close**, and that is the
+whole reason any of this is safe to do with OCR: the cache visibly contains
+`S2,041,061.72`, `$1,968,108,91` and `$9,587,16`, and a misread digit does not survive an
+identity the table states about itself.
+
+So the order is: measure, band, place, name, then **prove every row and write only what
+proves**. `scripts/read_trust_table.py` is the worked example.
+
 ---
 
 ## 14. After correcting a large error, re-examine everything it was explaining

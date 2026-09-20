@@ -27,6 +27,7 @@ spend. A scholarship bequest and the town's own reserve sit in the same table an
 the same instrument.
 """
 import argparse
+import csv
 import os
 import re
 import sqlite3
@@ -35,6 +36,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 OUT = os.path.join(ROOT, 'sources', 'analyses', 'stabilization-funds.md')
+PROVEN = os.path.join(ROOT, 'sources', 'data', 'stabilization-balances.csv')
 FY = 2025
 
 usd = lambda x: '${:,.2f}'.format(x)
@@ -62,6 +64,19 @@ def gather():
                          amount=float(r['v1']), status=r['status']))
     rows.sort(key=lambda x: -x['amount'])
     return rows
+
+
+def proven():
+    """Balances read off the reports and verified against the tables' own arithmetic.
+
+    A separate file from the FY2025 balances above and a different KIND of figure: these
+    close on two identities the document states, so they are the only stabilization
+    figures in this archive that anything has checked. See scripts/extract_stabilization.py
+    and rule 13b.
+    """
+    if not os.path.exists(PROVEN):
+        return []
+    return list(csv.DictReader(open(PROVEN, encoding='utf-8')))
 
 
 def render(rows):
@@ -101,6 +116,44 @@ def render(rows):
     w('**The general/restricted split is ours**, read off each fund’s name. The '
       'annual report prints a balance and never says what may be spent on what.\n')
     w('---\n')
+    pv = proven()
+    if pv:
+        gen = [r for r in pv if r['name'].strip().upper().startswith('STABILIZATION')]
+        w('## What has moved, so far as anything here can prove\n')
+        w('These are the only stabilization figures in this archive that have been '
+          '**checked**. Each is read off a photograph of the town\u2019s own trust-fund '
+          'table and then verified against two identities the table states about every '
+          'row \u2014 beginning plus activity equals ending cash, and ending cash plus '
+          'unrealised equals ending market. A row that fails is not published.\n')
+        if len(gen) >= 2:
+            w('**The general Stabilization Fund**, the one Town Meeting may spend on '
+              'anything lawful:\n')
+            w('| | ending market value |\n|---|---:|')
+            for r in sorted(gen, key=lambda r: r['fy']):
+                w('| FY%s | %s |' % (r['fy'], usd(float(r['ending_market']))))
+            w('')
+            # NOT `a, b` -- `b` is the output list this function builds, and rebinding
+            # it made render() return the CSV's field names instead of the report.
+            ordered = sorted(gen, key=lambda r: r['fy'])
+            first, last = ordered[0], ordered[-1]
+            w('That is **%s more between FY%s and FY%s**, a rise of %.0f%%, in a fund '
+              'whose purpose is to be available.\n'
+              % (usd(float(last['ending_market']) - float(first['ending_market'])),
+                 first['fy'], last['fy'],
+                 (float(last['ending_market']) / float(first['ending_market']) - 1) * 100))
+        w('Every proven row:\n')
+        w('| year | account | fund | ending market |\n|---|---|---|---:|')
+        for r in sorted(pv, key=lambda r: (r['fy'], r['name'])):
+            w('| FY%s | `%s` | %s | %s |'
+              % (r['fy'], r['code'] or '\u2014', ' '.join(r['name'].split())[:44],
+                 usd(float(r['ending_market']))))
+        w('')
+        w('**Coverage is %d rows across %d years, and that is the point rather than a '
+          'footnote.** The rest of the run is not missing because nobody looked \u2014 '
+          'it is missing because those pages have not yet yielded a row whose arithmetic '
+          'closes, and publishing one that does not would be worse than publishing '
+          'nothing.\n' % (len(pv), len({r['fy'] for r in pv})))
+        w('---\n')
     w('## What this cannot answer yet, and why\n')
     w('Four of the six questions this report was asked are about MOVEMENT, and the series '
       'does not exist in a form anything may aggregate:\n')
