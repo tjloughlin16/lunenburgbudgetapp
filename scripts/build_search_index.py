@@ -415,6 +415,31 @@ def drift(db):
     # A clone that has never built the site must not report 78 removed files.
     if not os.path.isdir(DIST):
         h = {k: v for k, v in h.items() if v['corpus'] != 'page'}
+    else:
+        # `dist` EXISTING IS NOT `dist` BEING PRERENDERED, and the difference nearly
+        # deleted the index. `vite build` alone -- or a `build:site` whose prerender step
+        # died partway -- empties dist and leaves only the SPA shell plus whatever
+        # `public/` copies verbatim: a dozen files, not one per route.
+        #
+        # On 20 September 2026 the refresh's own build:site died at EADDRINUSE after vite
+        # had already emptied dist, so the next run walked 12 files and concluded that 70
+        # real pages had been removed from the site. They had not; the build never
+        # finished. The affinity check caught it and refused to publish, which is the only
+        # reason a stripped index was not pushed to D1.
+        #
+        # Diagnosed by the triage agent this repository spawns on a failed refresh -- its
+        # first run, and it found this rather than the thing it was pointed at.
+        #
+        # Same treatment as no dist at all: say nothing about pages rather than trust a
+        # build that plainly did not run to completion. Anything actually present still
+        # indexes normally; only the DELETIONS are withheld.
+        found = sum(1 for k in w if w[k]['corpus'] == 'page')
+        had = sum(1 for k in h if h[k]['corpus'] == 'page')
+        if had >= 10 and found < had * 0.5:
+            print('  NOTE: dist holds %d page(s) against %d in the index - this looks '
+                  'like an unfinished build, so no page is treated as removed'
+                  % (found, had), file=sys.stderr)
+            h = {k: v for k, v in h.items() if v['corpus'] != 'page'}
     added = [k for k in w if k not in h]
     changed = [k for k in w if k in h and w[k]['sha256'] != h[k]['sha256']]
     removed = [k for k in h if k not in w]
@@ -597,14 +622,61 @@ def build_affinity(db):
             print('  NOTE: %d affinity row(s) named an alias and were indexed under the '
                   'canonical address: %s' % (len(aliased), ', '.join(aliased[:6])),
                   file=sys.stderr)
-        if still:
+        # A PAGE EXISTS BECAUSE routes.ts DECLARES IT, NOT BECAUSE dist HAPPENED TO
+        # RENDER IT -- and this check had those two confused, which is a different fault
+        # from the alias one above and was hiding behind it.
+        #
+        # The index is built FROM dist. `scripts/refresh.py` builds the search index at
+        # step 8 and only runs `npm run build:site` inside its DEPLOY branch, later. So on
+        # a normal night dist is whatever the last deploy left, every page added since is
+        # absent from it, and their affinity rows look like rows naming nothing. On
+        # 20 September 2026 that was 70 of them and it failed the whole run -- after the
+        # ingestion, so new meetings were committed and the index was not.
+        #
+        # Existence and indexability are different questions:
+        #   declared in routes.ts, not in the index -> real page, not rendered YET. Skip.
+        #   not declared anywhere                   -> names nothing. That is the error.
+        #
+        # The second is the one worth failing on, and it still does.
+        declared = _declared_slugs()
+        unbuilt = [k for k in still
+                   if k.startswith('page:')
+                   and canonical(k) in declared]
+        unknown = [k for k in still if k not in unbuilt]
+
+        if unbuilt:
+            print('  NOTE: %d affinity row(s) name pages routes.ts declares but this '
+                  'dist has not rendered, so they are skipped rather than indexed '
+                  '(build the site to pick them up): %s'
+                  % (len(unbuilt), ', '.join(unbuilt[:6])), file=sys.stderr)
+        if unknown:
             if os.path.isdir(DIST):
                 raise SystemExit(
-                    'search-affinity.csv names %d doc_key(s) the index does not hold, and '
-                    'they are not aliases of anything it does:\n  %s'
-                    % (len(still), '\n  '.join(still[:20])))
+                    'search-affinity.csv names %d doc_key(s) that no page declares and '
+                    'the index does not hold:\n  %s'
+                    % (len(unknown), '\n  '.join(unknown[:20])))
             print('  NOTE: %d affinity rows name pages; fy28/dist is absent so they were '
-                  'skipped' % len(still), file=sys.stderr)
+                  'skipped' % len(unknown), file=sys.stderr)
+
+
+def _declared_slugs():
+    """Every slug the app routes on, listed or not, read from routes.ts.
+
+    Not build_sitemap.routed(), which is SLUG minus UNLISTED -- an unlisted page is still
+    a page, reachable by anybody given the address, and an affinity row naming one is not
+    an error. The sitemap has a reason to exclude them; this check does not.
+    """
+    src = _routes_src()
+    m = re.search(r'export const SLUG: Record<Tab, string> = \{(.*?)\n\}', src, re.S)
+    if not m:
+        raise SystemExit('routes.ts: could not find SLUG')
+    return {v for _, v in re.findall(r"^\s*'?([A-Za-z0-9_-]+)'?:\s*'([^']*)'",
+                                     m.group(1), re.M) if v}
+
+
+def _routes_src():
+    with open(os.path.join(ROOT, 'fy28', 'src', 'routes.ts'), encoding='utf-8') as fh:
+        return fh.read()
 
 
 def _page_aliases():
@@ -613,8 +685,7 @@ def _page_aliases():
     Read rather than duplicated, for the reason build_sitemap.routed() gives about the
     SLUG table: routes.ts is what decides a page's addresses, and a second copy of that
     mapping here would be a latent drift with a date on it."""
-    with open(os.path.join(ROOT, 'fy28', 'src', 'routes.ts'), encoding='utf-8') as fh:
-        src = fh.read()
+    src = _routes_src()
     m = re.search(r'export const SLUG: Record<Tab, string> = \{(.*?)\n\}', src, re.S)
     if not m:
         raise SystemExit('routes.ts: could not find SLUG')
