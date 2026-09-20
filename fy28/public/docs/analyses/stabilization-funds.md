@@ -185,6 +185,18 @@ Some years print no ending market value at all: FY2019’s table carries the hea
 
 That is **$490,060.54 more between FY2016 and FY2020**, a rise of 32%, in a fund whose purpose is to be available.
 
+![Three stabilization funds on one scale, FY2014 to FY2025. The tallest reaches $2,598,621.38 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Dashed segments span years this archive has not yet proven.](charts/stabilization-all.svg)
+
+On one scale the Zoning Incentive fund looks like nothing is happening to it. That is the finding, not a rendering problem — but it hides the shape, so each fund also gets its own panel:
+
+![The same three funds, each panel stretched to its own range, so the shapes are comparable and the heights are not.](charts/stabilization-each.svg)
+
+![How fast each fund moved per year between its first and last proven year: Vehicle/Equipment 40.8% a year over 7 years, Stabilization 10.1% a year over 5 years, Zoning Incentive 0.8% a year over 11 years.](charts/stabilization-growth.svg)
+
+**Three funds, three different things happening.** The Vehicle/Equipment fund moved 40.8% a year and the Stabilization fund 10.1% a year — those are being BUILT, and the Town Meeting articles listed earlier on this page are the votes that did it. The Zoning Incentive fund is not: it moved $21,858.35 in 11 years, which is what a balance does when it is left alone.
+
+*What the charts do not show.* A balance rising does not say how much of the rise is money voted in and how much is interest earned, and nothing in this data separates them. It also does not say a fund is AVAILABLE: what each may be spent on is the section above, and a balance is not a permission.
+
 **Each fund, year by year.** Every figure below is a separate page of a separate annual report, read and checked on its own:
 
 - **Zoning Incentive Stabilization** — FY2014 $227,201.90, FY2015 $227,542.95, FY2016 $227,884.96, FY2018 $228,891.82, FY2020 $230,431.40, FY2022 $231,007.68, FY2025 $249,060.25

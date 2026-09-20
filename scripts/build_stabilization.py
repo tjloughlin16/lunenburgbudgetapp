@@ -41,6 +41,16 @@ PROVEN = os.path.join(ROOT, 'sources', 'data', 'stabilization-balances.csv')
 FY = 2025
 
 usd = lambda x: '${:,.2f}'.format(x)
+# A DERIVED COUNT STILL READS AS A WORD. "3 funds, 3 different things happening" is
+# correct and reads like a log line; spelling the small ones costs nothing and keeps the
+# figure derived, which is the part rule 2 cares about.
+WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+word = lambda n: WORDS[n] if 0 <= n < len(WORDS) else '{:,}'.format(n)
+# The reader is already inside a section about stabilization funds, so a name ending in
+# the word followed by the word again -- "the Zoning Incentive Stabilization fund" -- is
+# the kind of repetition that reads as a machine wrote it. The full printed name is in
+# the table; this is the running prose.
+bare = lambda n: n[:-len(' Stabilization')] if n.endswith(' Stabilization') else n
 usd0 = lambda x: '${:,.0f}'.format(x)
 
 # WHICH FUND IS GENERAL AND WHICH IS RESTRICTED. This is the whole of question 5 and it is
@@ -294,6 +304,65 @@ def render(rows):
             series[fund_key(r)].append(r)
         runs = {k: sorted(v, key=lambda r: r['fy'])
                 for k, v in series.items() if len(v) >= 3}
+        # THE CHARTS GO HERE, ABOVE THE FIGURES THEY DRAW. Three of them, and each
+        # answers a question the other two cannot: how the funds compare in SIZE, what
+        # shape each one has on its OWN scale, and how fast each moved. Drawn by
+        # scripts/build_stabilization_charts.py from this same CSV, so they cannot drift
+        # from the table underneath them.
+        #
+        # EVERY FIGURE IN THIS BLOCK IS DERIVED, INCLUDING THE ONES IN THE ALT TEXT. The
+        # first draft typed "40.8% a year" and "$21,858 in eleven years" into the prose,
+        # which is rule 2 exactly: the extraction is under active improvement, so those
+        # sentences would have gone quietly wrong the next time a year started proving.
+        # Alt text is prose that ships, the same as any other.
+        chart_dir = os.path.join(ROOT, 'sources', 'analyses', 'charts')
+        if runs and os.path.exists(os.path.join(chart_dir, 'stabilization-all.svg')):
+            def rate(v):
+                n = int(v[-1]['fy']) - int(v[0]['fy'])
+                a0, a1 = float(v[0]['ending_cash']), float(v[-1]['ending_cash'])
+                return ((a1 / a0) ** (1.0 / n) - 1) * 100 if n and a0 else 0.0
+
+            def span(v):
+                return int(v[-1]['fy']) - int(v[0]['fy'])
+
+            ranked = sorted(runs.items(), key=lambda kv: -rate(kv[1]))
+            fastest, slowest = ranked[0], ranked[-1]
+            biggest = max(float(v[-1]['ending_cash']) for v in runs.values())
+            allyears = sorted(int(r['fy']) for v in runs.values() for r in v)
+            movers = ', '.join(
+                '%s %.1f%% a year over %d years' % (bare(k), rate(v), span(v))
+                for k, v in ranked)
+            w('![%s on one scale, FY%d to FY%d. The tallest reaches %s by its last '
+              'proven year; %s is a flat line near the axis the whole way. Dashed '
+              'segments span years this archive has not yet proven.]'
+              '(charts/stabilization-all.svg)\n'
+              % ('%s stabilization fund%s' % (word(len(runs)).title(),
+                                               '' if len(runs) == 1 else 's'),
+                 allyears[0], allyears[-1], usd(biggest), bare(slowest[0])))
+            w('On one scale the %s fund looks like nothing is happening to it. That is '
+              'the finding, not a rendering problem \u2014 but it hides the shape, so '
+              'each fund also gets its own panel:\n' % bare(slowest[0]))
+            w('![The same %s funds, each panel stretched to its own range, so the '
+              'shapes are comparable and the heights are not.]'
+              '(charts/stabilization-each.svg)\n' % word(len(runs)))
+            w('![How fast each fund moved per year between its first and last proven '
+              'year: %s.](charts/stabilization-growth.svg)\n' % movers)
+            moved = (float(slowest[1][-1]['ending_cash'])
+                     - float(slowest[1][0]['ending_cash']))
+            w('**%s funds, %s different things happening.** The %s fund moved %s a year '
+              'and the %s fund %s a year \u2014 those are being BUILT, and the Town '
+              'Meeting articles listed earlier on this page are the votes that did it. '
+              'The %s fund is not: it moved %s in %d years, which is what a balance does '
+              'when it is left alone.\n'
+              % (word(len(runs)).title(), word(len(runs)), bare(fastest[0]),
+                 '%.1f%%' % rate(fastest[1]), bare(ranked[1][0]),
+                 '%.1f%%' % rate(ranked[1][1]), bare(slowest[0]),
+                 usd(moved), span(slowest[1])))
+            w('*What the charts do not show.* A balance rising does not say how much of '
+              'the rise is money voted in and how much is interest earned, and nothing '
+              'in this data separates them. It also does not say a fund is AVAILABLE: '
+              'what each may be spent on is the section above, and a balance is not a '
+              'permission.\n')
         if runs:
             w('**Each fund, year by year.** Every figure below is a separate page of a '
               'separate annual report, read and checked on its own:\n')

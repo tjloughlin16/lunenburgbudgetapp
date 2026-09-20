@@ -817,6 +817,24 @@ GROUPS = [
              'out-of-district tuition, budgeted down 46% \u2014 and it rises 6.23%. What that '
              'one-off is doing to the rate, and what it risks for FY28. Budget columns '
              'only; no actual spending is used anywhere in it.'),
+            ('analyses/charts/stabilization-all.svg',
+             'The stabilization funds compared, on one scale', 1,
+             'Ending cash for the three stabilization funds with a long enough proven '
+             'series, at every year this archive has checked against the annual '
+             'report\u2019s own arithmetic. A dashed segment spans years not yet proven, '
+             'so the line never asserts a path through a year nobody has read.'),
+            ('analyses/charts/stabilization-each.svg',
+             'The stabilization funds, each on its own scale', 1,
+             'The same three funds as small multiples on a shared time axis. Each panel '
+             'is stretched to its own range and prints that range, because against a '
+             '$2.6M axis the Zoning Incentive fund is a flat line and its flatness is a '
+             'finding rather than a rendering artefact.'),
+            ('analyses/charts/stabilization-growth.svg',
+             'How fast each stabilization fund moved, per year', 1,
+             'Per cent a year between each fund\u2019s first and last PROVEN year, with '
+             'that span printed on every bar. It is the movement of a balance and not a '
+             'rate of return: these funds rise both when Town Meeting votes money in and '
+             'when they earn interest, and this data cannot separate the two.'),
             ('analyses/charts/fy26-school-budget.svg',
              'FY26 school department: what happened to the budget', 1,
              'One stacked bar \u2014 spent, encumbered, unspent \u2014 as parts of the '

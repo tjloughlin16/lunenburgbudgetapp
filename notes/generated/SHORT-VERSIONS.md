@@ -17,8 +17,8 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [What solved would require](/what-solved-requires) | page | 3.8 / 38.3 min | 1. There is no arrangement of the other five lines that reaches the bar while salaries go on rising 4%. |
 | [Overrides](/override) | page | 1.1 / 15.7 min | 1. A $1.25M school-only override funds 1 year, then the same gap is back<br>2. Five years of stability costs $3.40M — $707 a year on the average home, for ever<br>3. Written townwide, the question has to be $2.35M to do the work of $1.25M for the schools |
 | [The situation](/the-situation) | page | 2.6 / 47.0 min | 1. Cutting every extra still funded — $376,207 — covers 40% of next year’s gap, once.<br>2. ~90% — Contracts, insurance and law set about 90% of the budget; after the extras, only classroom positions are big enough to cut.<br>3. 2.25 pts — The published cost increase is 3.98%; the one that comes back every year is 6.23%. |
-| [The money](/the-money) | reference | — / 16.4 min | *(none declared)* |
-| [The One Big Report](/one-big-report) | page | 0.6 / 76.1 min | 1. $632,876 short next year<br>2. $2,848,272 short over five years<br>3. 22.2 positions gone by FY32<br>4. 33% of households have a child under 18<br>5. 17% of residents are 65 or over<br>6. 1,563 students<br>7. 23% of students are low-income<br>8. 103.4 teacher FTE<br>9. 67 paraprofessional FTE<br>10. 35% of the school budget is state aid<br>11. $18,027 spent for each pupil, all funds<br>12. 649 athletes, by season |
+| [The money](/the-money) | reference | — / 16.6 min | *(none declared)* |
+| [The One Big Report](/one-big-report) | page | 0.6 / 76.1 min | 1. $930,273 short next year<br>2. $3,304,552 short over five years<br>3. 24.2 positions gone by FY32<br>4. 33% of households have a child under 18<br>5. 17% of residents are 65 or over<br>6. 1,563 students<br>7. 23% of students are low-income<br>8. 103.4 teacher FTE<br>9. 67 paraprofessional FTE<br>10. 35% of the school budget is state aid<br>11. $18,027 spent for each pupil, all funds<br>12. 649 athletes, by season |
 | [About this project](/about) | page | — / 6.7 min | *(none declared)* |
 | [Athletics: what it costs, who pays, and what the budget line does not say](/analysis/athletics) | page | — / 35.6 min | *(none declared)* |
 | [The athletics ledger: what a fund&#x27;s cashbook shows that a budget line cannot](/analysis/athletics-ledger) | page | — / 26.3 min | *(none declared)* |
@@ -29,7 +29,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [FY26 on the town side, as the books stood in June](/analysis/fy26-closeout-town) | page | — / 25.0 min | *(none declared)* |
 | [Lunenburg FY28 — What the source data says (research notes, Aug 2026)](/analysis/fy27-and-the-override) | page | — / 12.9 min | *(none declared)* |
 | [Two right numbers](/analysis/fy27-cut-reconciliation) | page | 0.3 / 10.9 min | 1. Both figures are correct. |
-| [Hiring here instead of placing there](/analysis/hiring-here-or-placing-there) | page | 0.7 / 15.1 min | 1. The district argues that hiring behavioural and special education staff in district avoids out-of-district placements, which are far more expensive. |
+| [Hiring here instead of placing there](/analysis/hiring-here-or-placing-there) | page | 0.7 / 15.2 min | 1. The district argues that hiring behavioural and special education staff in district avoids out-of-district placements, which are far more expensive. |
 | [The Monty Tech assessment — the school bill nobody in Lunenburg votes on](/analysis/monty-tech) | page | 3.3 / 21.5 min | 1. 1. Lunenburg paid Montachusett Regional Vocational Technical $1,334,521 in FY2026, and 95.2% of that was a figure the state calculated.<br>2. 2. The required minimum contribution is not apportioned among member towns by their enrollment.<br>3. 3. So a Lunenburg child moving to Monty Tech does not raise the town&#x27;s obligation.<br>4. 4. A Monty Tech pupil carries about half again the foundation budget of a Lunenburg one, which is why the money share runs well ahead of the head share.<br>5. 5. The town&#x27;s own five-year forecast of this line missed FY2026 by $329,057.<br>6. 6. What the town is billed is not what the district spends, and the gap is Chapter 70.<br>7. 7. Monty Tech is the larger of the two routes out of Lunenburg&#x27;s own schools, and it is not a departure.<br>8. 8. Eleven of the twelve figures the annual town reports give for this line fail the extractor&#x27;s own reconciliation, and they should be read as candidates. |
 | [What comparable districts actually cut, and in what order](/analysis/peer-districts) | page | — / 12.9 min | *(none declared)* |
 | [What Lunenburg spends for each pupil, and what that number hides](/analysis/per-pupil-spending) | page | 4.8 / 25.6 min | 1. 1. 145 of the 177 Lunenburg children educated outside Lunenburg Public Schools go to districts that spend more for each pupil than Lunenburg does — 12.0% more at Leominster, and 43.3% more at Montachusett Regional Vocational Technical.<br>2. 2. Lunenburg is in the bottom quarter of Massachusetts districts by total per-pupil spending, and it has been in every one of the seventeen years the state publishes.<br>3. 3. Against five neighbouring districts it has never been higher than fifth of six.<br>4. 4. Most of the spread between these six districts is the denominator, not the money.<br>5. 5. The gap is not spread evenly across the budget.<br>6. 6. Against the whole state the two smallest lines are the extreme ones.<br>7. 7. Lunenburg pays near the top of this set for teachers and employs the fewest of them per pupil.<br>8. 8. A tenth of what DESE counts as Lunenburg&#x27;s school spending is not general-fund money, and that is the smallest share in the set.<br>9. 9. The two Chapter 70 standings that look like a contradiction are not one. |
@@ -37,12 +37,12 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Show your work](/analysis/show-your-work) | page | — / 71.4 min | *(none declared)* |
 | [Special education, and the money outside the operating budget](/analysis/sped-and-funds) | page | — / 23.7 min | *(none declared)* |
 | [Special education and the curve](/analysis/sped-and-the-curve) | page | 0.9 / 34.4 min | 1. The FY27 level-service budget rises 3.98%. |
-| [How Lunenburg compares, and what matching would cost](/analysis/spending-compared) | page | 0.3 / 13.6 min | 1. Lunenburg spent $18,027 for each pupil in FY2025, against a statewide median of $23,520 — 310 of 318 districts. |
-| [The stabilization funds, and who may spend them](/analysis/stabilization-funds) | page | 0.4 / 11.5 min | 1. The town holds $6,444,504 across 7 stabilization funds. |
+| [How Lunenburg compares, and what matching would cost](/analysis/spending-compared) | page | 0.3 / 13.7 min | 1. Lunenburg spent $18,027 for each pupil in FY2025, against a statewide median of $23,520 — 310 of 318 districts. |
+| [The stabilization funds, and who may spend them](/analysis/stabilization-funds) | page | 0.4 / 18.4 min | 1. The town holds $6,444,504 across 7 stabilization funds. |
 | [What you can ask this archive](/analysis/what-you-can-ask) | page | — / 15.6 min | *(none declared)* |
 | [AP exams — who sits them, in what, and how they score](/ap-exams) | page | 2.4 / 11.9 min | 1. 89 students sat at least one AP exam in SY2025 — about 39% of the 11th and 12th grades.<br>2. 88.3% of AP tests scored 3 or better in SY2025, the best of 19 years; the low: 62.1% in SY2009.<br>3. 117 of 154 AP sittings in SY2025 were English or history; science and math were 31. |
 | [Athletics, both sides of the money](/athletics) | page | — / 8.2 min | *(none declared)* |
-| [The boards, compared](/boards/compared) | page | 2.8 / 16.5 min | 1. 97.7% of the Library Board of Trustees’s meetings have posted minutes — The Library Board of Trustees: minutes posted for 43 of 44 meetings, the best of any board.<br>2. The School Committee posted minutes for 66% of its FY2026 meetings (23 of 35); none in FY2023.<br>3. 62 points, FY2023 to FY2026 — The Select Board went from 97% of meetings with minutes in FY2023 to 36% in FY2026. |
+| [The boards, compared](/boards/compared) | page | 2.8 / 16.5 min | 1. 97.7% of the Library Board of Trustees’s meetings have posted minutes — The Library Board of Trustees: minutes posted for 43 of 44 meetings, the best of any board.<br>2. The School Committee posted minutes for 66% of its FY2026 meetings (23 of 35); none in FY2023.<br>3. 33 points, FY2023 to FY2026 — The Select Board went from 97% of meetings with minutes in FY2023 to 64% in FY2026. |
 | [The School Committee’s finances — every fund and line it owns](/boards/school-committee/finance) | page | 2.1 / 17.0 min | 1. The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.<br>2. The 9 school revolving funds took in $1,031,126 and spent $1,119,195 in nine months of FY2026.<br>3. 13 of the 46 school grant funds were overdrawn at 31 March 2026, by $378,942 together. |
 | [Budgets against what was later reported](/budget-vs-actual) | page | 4.3 / 24.6 min | 1. 198 of 576 budget rows landed within two per cent of their own plan.<br>2. 7 of 98 school budget rows miss the same way every year, all by small amounts.<br>3. Out-of-district tuition landed 51.5% below plan in its worst measured year. |
 | [The circuit breaker — what the state reimburses for the costliest placements](/circuit-breaker) | page | 2.6 / 12.8 min | 1. 29 children in the state’s program in FY2013, 9 in FY2026; each cost $67,111, now $139,692.<br>2. The state paid 42.3% of the claim in FY2010 and 75.0% in FY2023; the statute allows up to 75%.<br>3. In FY2026 the state deducted $52,419 per child before reimbursing anything — $471,771 in all. |
@@ -69,7 +69,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Teacher contracts](/salaries) | page | 1.7 / 11.9 min | 1. The contract is the biggest lever the town has not yet pulled: each half a point off the next settlement is $66,741 off the FY28 gap, every year after too.<br>2. 2.2 FTE — Held to the cap by attrition instead of at the table, the line sheds 2.2 positions a year — 14% of the staff in ten.<br>3. A settlement at the cap shrinks the gap and does not close it: raises of 2.5% instead of 3.4% would have made next year’s gap $619k rather than $930k, and FY32’s $3.39M rather than $3.76M. |
 | [School staffing — did it go up, and over which years](/school-staffing) | page | 2.9 / 23.2 min | 1. In 95 of 171 pairs of published years the state counts fewer teachers at the end.<br>2. 6.70 teaching staff for every hundred pupils, near the bottom of the state’s comparison group. |
 | [How many students one special education group may have](/special-education-class-size) | page | 2.9 / 40.8 min | 1. A substantially separate group may not exceed 8 students to one certified special educator.<br>2. The rule sets 0 limits on adults in a room; it is a minimum, and IEPs add on top.<br>3. DESE reports 41 of Lunenburg’s 258 students with disabilities as substantially separate. |
-| [State aid — the part nobody here votes on](/state-aid) | page | 2.6 / 49.5 min | 1. Roughly a third of the school budget is not Lunenburg’s decision, and the budget book never says so.<br>2. Over five years the aid Lunenburg actually received differed from the aid its tax rate was set on by $245,751 in an average year.<br>3. In 4 of 5 years the state-aid surprise was in the town’s favour — the direction is far steadier than the size.<br>4. The state decides both halves of the minimum: what it pays, and what Lunenburg must.<br>5. Where it can be measured, Chapter 70 grew +4.47% a year — more than double what the projection assumes. |
+| [State aid — the part nobody here votes on](/state-aid) | page | 2.6 / 50.0 min | 1. Roughly a third of the school budget is not Lunenburg’s decision, and the budget book never says so.<br>2. Over five years the aid Lunenburg actually received differed from the aid its tax rate was set on by $245,751 in an average year.<br>3. In 4 of 5 years the state-aid surprise was in the town’s favour — the direction is far steadier than the size.<br>4. The state decides both halves of the minimum: what it pays, and what Lunenburg must.<br>5. Where it can be measured, Chapter 70 grew +4.47% a year — more than double what the projection assumes. |
 | [What courses actually ran, subject by subject](/what-courses-actually-ran) | page | 3.0 / 62.6 min | 1. Lunenburg High ran 247 sections in SY2025 against 225 in SY2017, on flat enrolment.<br>2. 57.8% of Lunenburg High students took a foreign language in SY2025, against 70.1% in SY2017.<br>3. 29.3% of Lunenburg Middle School took a world language in SY2025, against 61.0% in SY2023. |
 | [What a family actually pays](/what-families-pay) | page | 4.0 / 37.2 min | 1. Two high schoolers, one sport each, the bus and a club: $1,110 a year.<br>2. Three children playing one sport each pay $812.50 a year at the full rate.<br>3. A second child adds $460 to a family’s school bill. |
 | [What other districts spend, for each pupil](/what-other-districts-spend) | page | 4.1 / 42.0 min | 1. Lunenburg spends $18,027 for each pupil, all funds — $5,493 below the state median of $23,520.<br>2. Lunenburg’s average teacher salary is $97,233, near the top of the neighbouring districts.<br>3. Monty Tech spends $25,827 a pupil to Lunenburg’s $18,027 — $7,800 more. |
@@ -92,14 +92,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Ask us a question](/ask-a-question) | reference | — / 6.5 min | *(none declared)* |
 | [The blog](/blog) | reference | — / 8.0 min | *(none declared)* |
 | [The boards — each one, in one place](/boards) | reference | — / 10.0 min | *(none declared)* |
-| [Agricultural Commission](/boards/agricultural-commission) | reference | — / 16.4 min | *(none declared)* |
-| [Architectural Preservation District Commission](/boards/architectural-preservation-district-commission) | reference | — / 14.7 min | *(none declared)* |
+| [Agricultural Commission](/boards/agricultural-commission) | reference | — / 15.9 min | *(none declared)* |
+| [Architectural Preservation District Commission](/boards/architectural-preservation-district-commission) | reference | — / 14.1 min | *(none declared)* |
 | [Architectural Preservation District Commission — finances](/boards/architectural-preservation-district-commission/finance) | reference | — / 8.8 min | *(none declared)* |
 | [Athletic Advisory Council](/boards/athletic-advisory-council) | reference | — / 6.6 min | *(none declared)* |
 | [BOA Neighborhood ans Site Index Subcommittee](/boards/boa-neighborhood-ans-site-index-subcommittee) | reference | — / 6.5 min | *(none declared)* |
-| [Board of Assessors](/boards/board-of-assessors) | reference | — / 21.7 min | *(none declared)* |
+| [Board of Assessors](/boards/board-of-assessors) | reference | — / 21.2 min | *(none declared)* |
 | [Board of Assessors — finances](/boards/board-of-assessors/finance) | reference | — / 9.5 min | *(none declared)* |
-| [Board of Health](/boards/board-of-health) | reference | — / 24.2 min | *(none declared)* |
+| [Board of Health](/boards/board-of-health) | reference | — / 24.1 min | *(none declared)* |
 | [Board of Health — finances](/boards/board-of-health/finance) | reference | — / 10.3 min | *(none declared)* |
 | [Board of Registrars](/boards/board-of-registrars) | reference | — / 7.3 min | *(none declared)* |
 | [Budget Task Force](/boards/budget-task-force) | reference | — / 10.0 min | *(none declared)* |
@@ -108,20 +108,20 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Cable Advisory Committee](/boards/cable-advisory-committee) | reference | — / 9.2 min | *(none declared)* |
 | [Capital Planning Committee](/boards/capital-planning-committee) | reference | — / 10.3 min | *(none declared)* |
 | [Capital Planning Committee — finances](/boards/capital-planning-committee/finance) | reference | — / 9.8 min | *(none declared)* |
-| [Cemetery Commission](/boards/cemetery-commission) | reference | — / 15.3 min | *(none declared)* |
+| [Cemetery Commission](/boards/cemetery-commission) | reference | — / 13.9 min | *(none declared)* |
 | [Cemetery Commission — finances](/boards/cemetery-commission/finance) | reference | — / 10.4 min | *(none declared)* |
 | [Charter Review Committee](/boards/charter-review-committee) | reference | — / 8.4 min | *(none declared)* |
-| [Conservation Commission](/boards/conservation-commission) | reference | — / 105.6 min | *(none declared)* |
+| [Conservation Commission](/boards/conservation-commission) | reference | — / 101.2 min | *(none declared)* |
 | [Conservation Commission Public Hearing](/boards/conservation-commission-public-hearing) | reference | — / 6.7 min | *(none declared)* |
 | [Conservation Commission — finances](/boards/conservation-commission/finance) | reference | — / 9.9 min | *(none declared)* |
-| [Council on Aging](/boards/council-on-aging) | reference | — / 15.3 min | *(none declared)* |
+| [Council on Aging](/boards/council-on-aging) | reference | — / 15.1 min | *(none declared)* |
 | [Council on Aging — finances](/boards/council-on-aging/finance) | reference | — / 9.5 min | *(none declared)* |
 | [Cultural Council](/boards/cultural-council) | reference | — / 8.3 min | *(none declared)* |
 | [Cultural Council — finances](/boards/cultural-council/finance) | reference | — / 9.1 min | *(none declared)* |
 | [Devens Regional Oversight Committee](/boards/devens-regional-oversight-committee) | reference | — / 7.3 min | *(none declared)* |
 | [Economic Development Committee](/boards/economic-development-committee) | reference | — / 11.0 min | *(none declared)* |
 | [Federal Energy Regulatory Commission](/boards/ferc) | reference | — / 6.4 min | *(none declared)* |
-| [Finance Committee](/boards/finance-committee) | reference | — / 45.0 min | *(none declared)* |
+| [Finance Committee](/boards/finance-committee) | reference | — / 44.3 min | *(none declared)* |
 | [Finance Committee Appointing Committee](/boards/finance-committee-appointing-committee) | reference | — / 8.8 min | *(none declared)* |
 | [Finance Committee Public Hearing](/boards/finance-committee-public-hearing) | reference | — / 7.3 min | *(none declared)* |
 | [Finance Committee — finances](/boards/finance-committee/finance) | reference | — / 8.8 min | *(none declared)* |
@@ -134,7 +134,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Library Board of Trustees — finances](/boards/library-board-of-trustees/finance) | reference | — / 9.8 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee](/boards/lunenburg-300th-anniversary-committee) | reference | — / 10.1 min | *(none declared)* |
 | [Lunenburg Hazard Mitigation Plan Team Committee](/boards/lunenburg-hazard-mitigation-plan-team-committee) | reference | — / 6.5 min | *(none declared)* |
-| [Lunenburg Housing Authority](/boards/lunenburg-housing-authority) | reference | — / 12.5 min | *(none declared)* |
+| [Lunenburg Housing Authority](/boards/lunenburg-housing-authority) | reference | — / 12.1 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee](/boards/lunenburg-municipal-building-design-committee) | reference | — / 10.9 min | *(none declared)* |
 | [Lunenburg Water District](/boards/lunenburg-water-district) | reference | — / 8.1 min | *(none declared)* |
 | [Massachusetts Department of Public Utilities](/boards/ma-dpu) | reference | — / 6.4 min | *(none declared)* |
@@ -146,19 +146,19 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Parks Commission](/boards/parks-commission) | reference | — / 42.3 min | *(none declared)* |
 | [Parks Commission — finances](/boards/parks-commission/finance) | reference | — / 10.4 min | *(none declared)* |
 | [Personnel Committee](/boards/personnel-committee) | reference | — / 10.0 min | *(none declared)* |
-| [Planning Board](/boards/planning-board) | reference | — / 48.7 min | *(none declared)* |
-| [Planning Board Public Hearing](/boards/planning-board-public-hearing) | reference | — / 8.1 min | *(none declared)* |
+| [Planning Board](/boards/planning-board) | reference | — / 45.3 min | *(none declared)* |
+| [Planning Board Public Hearing](/boards/planning-board-public-hearing) | reference | — / 7.5 min | *(none declared)* |
 | [Planning Board — finances](/boards/planning-board/finance) | reference | — / 9.9 min | *(none declared)* |
-| [Public Access Cable Committee (PACC)](/boards/public-access-cable-committee-pacc) | reference | — / 12.8 min | *(none declared)* |
+| [Public Access Cable Committee (PACC)](/boards/public-access-cable-committee-pacc) | reference | — / 12.6 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees](/boards/school-advisory-councils-committees) | reference | — / 8.1 min | *(none declared)* |
 | [School Building Committee](/boards/school-building-committee) | reference | — / 7.1 min | *(none declared)* |
 | [School Building Committee Meeting](/boards/school-building-committee-meeting) | reference | — / 7.4 min | *(none declared)* |
-| [School Committee](/boards/school-committee) | reference | — / 82.5 min | *(none declared)* |
-| [Select Board](/boards/select-board) | reference | — / 96.5 min | *(none declared)* |
+| [School Committee](/boards/school-committee) | reference | — / 82.4 min | *(none declared)* |
+| [Select Board](/boards/select-board) | reference | — / 91.1 min | *(none declared)* |
 | [Select Board Public Hearing](/boards/select-board-public-hearing) | reference | — / 7.0 min | *(none declared)* |
 | [Select Board — finances](/boards/select-board/finance) | reference | — / 12.2 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee](/boards/senior-citizens-tax-work-off-committee) | reference | — / 7.4 min | *(none declared)* |
-| [Sewer Commission](/boards/sewer-commission) | reference | — / 24.3 min | *(none declared)* |
+| [Sewer Commission](/boards/sewer-commission) | reference | — / 23.3 min | *(none declared)* |
 | [Sewer Commission — finances](/boards/sewer-commission/finance) | reference | — / 10.0 min | *(none declared)* |
 | [Stormwater Task Force](/boards/stormwater-task-force) | reference | — / 10.4 min | *(none declared)* |
 | [TCP Building Design Committee](/boards/tcp-building-design-committee) | reference | — / 7.1 min | *(none declared)* |
@@ -382,7 +382,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Trust Fund Commission, September 10, 2026](/meeting-minutes/trust-fund-commission/2026-09-10-7wCeOTdyvdc) | reference | — / 13.6 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.2 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 19.7 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 19.9 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.6 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 17.5 min | *(none declared)* |
 | [Special education — four reports](/special-education) | reference | — / 7.9 min | *(none declared)* |

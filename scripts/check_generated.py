@@ -61,6 +61,11 @@ CHECKS = [
     # Added 6 Sept 2026, after it had already drifted: two analyses were published
     # and /reports went on listing thirteen. Nothing caught it because this file is
     # the thing that catches it, and this generator was not in it.
+    # The stabilization report AND the three charts it embeds, in that order: the charts
+    # are drawn from the same CSV the report tabulates, so a year that starts proving has
+    # to move both or the picture and the table under it disagree.
+    ('build_stabilization.py', ['--check']),
+    ('build_stabilization_charts.py', ['--check']),
     ('build_reports_index.py', ['--check']),
     # How long every page is, measured from the build. It changes whenever a page does,
     # which is the point: a page that grew past the table's top row grew on the record.
