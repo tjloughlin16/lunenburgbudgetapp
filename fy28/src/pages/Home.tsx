@@ -326,6 +326,13 @@ export function Home() {
           did not: a reader deciding whether to trust four doors into a town's finances is
           owed who built them before they pick one. That is descriptive by nature, which is
           the test READING-FLOW sets. The LINK stays a label. */}
+      {/* ONE GRID CHILD, NOT TWO. This section and <Doors /> are the left column
+          together, and leaving them as separate children of a two-column grid put
+          "Who made this" in column one, the doors in column TWO, and everything after
+          them on row two -- which starts below the taller of the pair. On a desktop that
+          was ~400px of dead space under four lines of text, and the live column ended up
+          on the left, which is the opposite of what it is for. */}
+      <div>
       <section aria-label="Who made this" className="mb-7 max-w-2xl">
         {/* The label the other sections have. Without it this read as loose text floating
             above the doors rather than a part of the page. "Who made this" rather than
@@ -343,6 +350,8 @@ export function Home() {
       </section>
 
       <Doors />
+      </div>
+
       <div className="space-y-8">
         <BudgetFeedCard />
         <section aria-label="Meetings this week">
