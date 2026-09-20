@@ -90,7 +90,6 @@ WANTED = re.compile(
     # catch them. The archive held none of them until this was noticed.
     r'annual.?town.?report|fy.\d{4}', re.I)
 
-
 def get(url, tries=3):
     for i in range(tries):
         try:
