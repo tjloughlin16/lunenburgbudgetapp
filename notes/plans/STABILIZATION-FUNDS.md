@@ -243,3 +243,55 @@ only thing that can tell a good OCR pass from a plausible one.
 arithmetic on printed page numbers, and caches the result. Its first version searched the
 raw character order and missed the one page already proven to parse, which is a small
 demonstration of the rule that the locator and the reader must use the same eyes.
+
+---
+
+# Corrected again, later on 20 September: OCR was never the blocker
+
+TJ: *"OCR isn't a showstopper."* He was right, and more so than either of us knew: **it is
+already done.**
+
+`scripts/report_pages.py` has read all sixteen reports and cached every page as lines in
+`sources/town-budget/pages/FY####.txt`, recording which instrument read each one. The raw
+Vision geometry is cached too, with per-line confidence, in
+`sources/town-budget/ocr/*.tsv`. The stabilization rows are legible in both. FY2020:
+
+    8136  VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET)  $643,788.80  ($300.00)  $2,122.47
+
+So the plan's "step 1 is an OCR step" was wrong twice over. What remains is one specific
+problem.
+
+## The real blocker: skewed scans make rows overlap in y
+
+These pages are photographs of a printed table and they are very slightly rotated, so a
+row's own observations do not share a y and two adjacent rows do. There is no tolerance
+that separates them:
+
+    0.004  ->  two funds merge into one line, six values between them
+    0.003  ->  one fund's row splits, the code on one line and the name on the next
+
+The fixed-width cache shows the same thing from the other side: a row's ending values
+appear on the NEXT output line, beside a different fund's name.
+
+## What would fix it
+
+**Anchor on the names, then assign.** A fund name (or its 81xx code) is a row anchor;
+every numeric observation belongs to the anchor nearest it in y, not to a band. That
+converts a clustering problem, which has no right threshold here, into an assignment
+problem, which does.
+
+**And the identities are what make it safe.** OCR digits are readings rather than figures
+-- `S2,041,061.72`, `$1,968,108,91` and `$9,587,16` are all visible in the FY2020 cache --
+but a misread digit almost never leaves both of these true at once:
+
+    beginning + activity = ENDING CASH        ending cash + unrealised = ENDING MARKET
+
+So the extractor keeps refusing what it cannot prove, and a row that survives both checks
+has been verified by the document against itself rather than by anybody's eye. That is a
+better guarantee than the transcription years get.
+
+## Status
+
+Not done. `scripts/extract_stabilization.py` reads text-layer years and proves rows;
+FY2014 yields two. The OCR years need the anchor assignment above, which is a contained
+piece of work now that the reading, the caching and the verification all exist.
