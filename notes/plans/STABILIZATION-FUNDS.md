@@ -328,3 +328,67 @@ rows can be checked — that is the work, and it is seven years of it.
 **Do not shortcut it by matching column counts.** Two of this project's worst near-misses
 came from assuming a column meant what its position suggested, and the whole reason
 `column_meaning` exists is that a positional name is not a column name.
+
+---
+
+## Reading the tables: where it stands, 20 September 2026
+
+**Fifteen proven rows across nine years** (FY2014, 2015, 2016, 2018, 2019, 2020, 2021,
+2022, 2025), in `sources/data/stabilization-balances.csv`. A row is published only when
+the document's own arithmetic closes on it, and `basis` says which proof it rests on.
+
+Three funds now have a series long enough to read:
+
+| fund | years | span |
+|---|---|---|
+| Zoning Incentive Stabilization | 7 | $227,201.90 (FY2014) → $249,060.25 (FY2025) |
+| Stabilization (the general fund) | 4 | $1,511,526.92 (FY2016) → $2,447,755.21 (FY2021) |
+| Vehicle/Equipment Stabilization | 4 | $236,302.39 (FY2018) → $2,598,621.38 (FY2025) |
+
+**The extract checks itself across documents, and nothing was built to make it.** FY2019's
+vehicle fund opens at $236,302.39, which is what FY2018's report prints as its ending
+balance. FY2021's table opens at $2,041,061.72, which is what FY2020's report prints as
+its ending market value. Separate reports, separate pages, separate passes of the reader.
+That is the strongest evidence in the file and it should become an automated check: read
+the beginning column too, and assert it against the previous year's ending.
+
+### The six years still unread, and why each one is unread
+
+Each was diagnosed by dumping the page, not guessed at.
+
+- **FY2024, PDF page 34.** The page is **rotated 180°**: the fund names sit to the RIGHT
+  of the figures (labels x̄ 0.619, figures x̄ 0.392) and the rows run down an inverted y.
+  Every other page in the run has names on the left. The fix is a detector — if the label
+  centroid is right of the figure centroid, flip `x → 1-x` and `y → 1-y` before reading —
+  and it is the only page in fifteen reports that needs it.
+
+- **FY2023, PDF page 49.** Reads correctly and proves exactly one row. The layout is
+  `i=4` (ending cash is the fifth column): ARTS LOTTERY closes both identities,
+  $21,963.71 + $9,827.19 + $0.00 − $12,670.00 = $19,120.90, and the market value beside
+  it is the same figure. It is rejected because `MIN_PROVEN = 4` and the other funds on
+  the page are dormant — OCR kept only their ending cash and ending market, which are
+  equal, so they close trivially under `i=5` and not at all under the true `i=4`.
+  **This is the one place the guards fight each other**: the trivial-closure guard is
+  right to refuse `i=5`, and the four-row minimum is what then refuses `i=4`. A row that
+  closes BOTH identities with three or more non-zero terms is not a coincidence at cent
+  precision, and should be allowed to carry a layout on its own.
+
+- **FY2017, PDF page 39.** Nine anchors, and the OCR drops most of the figures: the
+  Zoning row survives as a beginning balance and an ending value with nothing between.
+  Not a layout problem — a scan problem.
+
+- **FY2011, FY2012, FY2013.** The word STABILIZATION is on a dozen pages of each and the
+  locator finds none of them, because `locate_stabilization_pages.py` reads the PDF text
+  layer through pdfplumber and these years are photographs with no text layer at all.
+  The extractor does not use the locator, so this costs nothing today — but the locator
+  is wrong, and it is wrong in the way TJ named: one criterion gating everything. It
+  should search the OCR TSVs as well and union the hits.
+
+### What would settle it
+
+Not another extractor. The town's accounting system prints these balances — the
+trust-and-agency report behind them is a MUNIS report, and FY2024's page is headed
+`ACCOUNTING METHOD: BOOK VALUE`, which is a system's words rather than a person's.
+Rule 13a: a sheet the accounting system printed is proof, and a photograph of it that we
+re-read is us. **That report, for FY2011–FY2025, is the records request** — and it would
+replace all of this with figures nobody has to prove.
