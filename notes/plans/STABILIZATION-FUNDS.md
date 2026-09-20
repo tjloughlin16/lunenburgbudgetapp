@@ -197,3 +197,49 @@ stopped reporting and started arguing.
 The balance sheet is already good, so this does **not** wait on the trust-fund extractor.
 Build the town page on `balance_sheet` first, link the stabilization report as the reserve
 detail, and let the extraction work improve that link later rather than block the page.
+
+---
+
+# Attempted 20 September 2026: what actually blocks this
+
+An extractor was built and it works. It is `scripts/extract_stabilization.py`, and it
+proves every row against two identities the table itself states:
+
+    beginning + contributions + earnings - disbursements - transfers  =  ENDING CASH
+    ending cash + unrealised gain/loss                                =  ENDING MARKET
+
+A row that does not close is not written. **It yielded two rows, both FY2014, both
+proven.** That is not the series, and here is precisely why — which is worth more than the
+survey's "ten of seventeen need geometry", because that description was not right.
+
+## Three different blockers, not one
+
+**1. Most of the pages are photographs.** The trust-fund pages carry 0 to 6 characters in
+FY2011, FY2012, FY2013, FY2017, FY2019, FY2020 and FY2023. There is no text layer to read
+in any reading order. This is an OCR job, not a geometry job, and `ocr_pdf.swift` already
+in this repo is the tool — but OCR of a financial table then reconciled to its own totals
+is a bigger and riskier piece of work than transcription, because a misread digit still
+foots if two errors compensate.
+
+**2. FY2014 is a quarter turn AND right-to-left.** `extract_text()` returns `TROPER
+YRAMMUS`. The fix works and is in the script: cluster characters into bands of near-equal
+x0, order each band by `top`, reverse each word and the word order. This is the part the
+survey meant, and it is solved.
+
+**3. FY2025 has clean text and prints too few columns to check.** Its rows read
+`8124 Stabilization Fund 3,147,178.96 39,732.22 -` — two figures where the identity needs
+six. The balances are almost certainly right; nothing in the document lets this script
+prove it, so it refuses them. That refusal is correct and it is why those rows still carry
+`no check`.
+
+## What that means for the plan
+
+The order above stands, with one correction: **step 1 is an OCR step for about half the
+years**, not an extraction step. Budget accordingly, and expect the reconciliation to
+carry more weight there than anywhere else in this archive — a printed grand total is the
+only thing that can tell a good OCR pass from a plausible one.
+
+`scripts/locate_stabilization_pages.py` finds the pages by reading them rather than by
+arithmetic on printed page numbers, and caches the result. Its first version searched the
+raw character order and missed the one page already proven to parse, which is a small
+demonstration of the rule that the locator and the reader must use the same eyes.

@@ -61,7 +61,10 @@ COLUMNS = ['begin_principal', 'begin_earnings', 'contrib_principal', 'earnings_n
            'disburse_principal', 'transfers_earnings', 'ending_cash',
            'unrealized_gain_loss', 'ending_market']
 
-MONEY = re.compile(r'\(?\$-?[\d,]+\.\d{2}\)?')
+# THE DOLLAR SIGN IS NOT RELIABLE. FY2014 prints `$1,299,077.98`; FY2025 prints
+# `3,147,178.96` with no sign at all, and requiring one silently returned nothing for
+# every year that dropped it -- seven rows found on the page and none parsed.
+MONEY = re.compile(r'\(?-?\$?-?[\d,]{1,15}\.\d{2}\)?')
 CODE = re.compile(r'^(8\d{3})')
 
 
@@ -160,19 +163,23 @@ def closes(vals):
     return False, 'too few columns to test an identity'
 
 
+PAGES = os.path.join(ROOT, 'sources', 'data', 'stabilization-pages.json')
+
+
 def pages_for(fy):
-    """PDF page indices to read, from the survey's printed pages plus the year's offset."""
-    want = []
-    for r in csv.DictReader(open(PLAN, encoding='utf-8')):
-        if r.get('dataset') == 'trust_funds' and r['fy'] == str(fy):
-            for part in (r['pages'] or '').split(','):
-                part = part.strip()
-                if '-' in part:
-                    a, b = part.split('-')
-                    want += list(range(int(a), int(b) + 1))
-                elif part.isdigit():
-                    want.append(int(part))
-    return sorted(set(want))
+    """PDF page indices to read, found BY CONTENT rather than by arithmetic.
+
+    The survey records PRINTED page numbers and the offset to the PDF index is different
+    in most years and recorded in none of them -- guessing it put the search window six
+    pages past FY2016's table and returned nothing for fourteen of fifteen years. So every
+    report was scanned once for pages naming a stabilization fund, in either reading
+    direction, and the result cached beside this script. Regenerate with
+    `scripts/locate_stabilization_pages.py` if a report is added or replaced.
+    """
+    import json
+    if not os.path.exists(PAGES):
+        return []
+    return json.load(open(PAGES, encoding='utf-8')).get(str(fy), [])
 
 
 def pdf_for(fy):
@@ -188,14 +195,13 @@ def extract(fy, verbose=False):
         return [], 'no annual report PDF held'
     printed = pages_for(fy)
     if not printed:
-        return [], 'no trust-fund pages in the survey'
+        return [], 'no page in this report names a stabilization fund'
     found, seen = [], set()
     with pdfplumber.open(path) as pdf:
         # The survey records PRINTED page numbers; the offset to the PDF index differs by
         # year and is not recorded for every one, so search a window around each rather
         # than trusting a single offset.
-        idxs = sorted({i for p in printed for i in range(p - 6, p + 6)
-                       if 0 <= i < len(pdf.pages)})
+        idxs = [i for i in printed if 0 <= i < len(pdf.pages)]
         for i in idxs:
             try:
                 lines = rows_of(pdf.pages[i])
