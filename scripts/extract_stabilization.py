@@ -1,239 +1,113 @@
 #!/usr/bin/env python3
-"""The stabilization fund balances, read off the annual reports' own trust-fund tables.
+"""Stabilization fund balances, read off the annual reports and proved row by row.
 
-    python3 scripts/extract_stabilization.py            # write sources/data/stabilization-balances.csv
+    python3 scripts/extract_stabilization.py           # write sources/data/stabilization-balances.csv
     python3 scripts/extract_stabilization.py --check
-    python3 scripts/extract_stabilization.py --fy 2014 --verbose
+    python3 scripts/extract_stabilization.py --fy 2020 --verbose
 
-WHY A DEDICATED EXTRACTOR. `report_trust_funds` holds 642 rows of this across FY2011-2025
-and twelve are reconciled. The generic pass could not read these pages, and the per-year
-survey in `sources/data/extraction-plan.csv` says why: ten of seventeen years are marked
-`not without geometry`.
+WHY THIS EXISTS. `report_trust_funds` holds 642 rows of this across FY2011-FY2025 and
+twelve are reconciled to anything. The pages are photographs of a printed table and the
+generic pass could not read them.
 
-THE PAGES ARE ROTATED AND RIGHT-TO-LEFT, which is the whole of the difficulty and is not
-obvious from the text layer. `page.extract_text()` returns `TROPER YRAMMUS` -- "SUMMARY
-REPORT" backwards -- because the characters carry correct coordinates and the wrong
-reading order. So:
+HOW IT READS THEM is in `read_trust_table.py`: measure the page's own rotation from its
+figures and remove it, anchor each row on its fund, place figures by column POSITION
+rather than by order, and name the columns from a layout READ off that year's printed
+header rather than inferred from how many figures a row happens to carry.
 
-  1. a visual ROW is a band of near-equal x0, because the page is turned a quarter turn;
-  2. within a band, characters run right-to-left, so each word is reversed AND the words
-     are in reverse order;
-  3. clustering on real gaps rather than rounded buckets, because a wrapped fund name
-     lands in an adjacent band and a rounded bucket merges the two into
-     `(TD BA$2N2K6,N8O2R1.T9H0)`.
+WHAT MAKES IT TRUSTWORTHY is that nothing is trusted. Every row must satisfy two
+identities the table itself states -- beginning plus activity equals ending cash, and
+ending cash plus unrealised equals ending market. A row that fails is not written. These
+are OCR readings and the cache visibly contains `S2,041,061.72` and `$1,968,108,91`; a
+misread digit does not survive both checks.
 
-EVERY ROW PROVES ITSELF, which is why this can be trusted where the generic pass cannot.
-The table states two identities per row and this refuses any row that fails them:
+THE LAYOUTS ARE HYPOTHESES AND THE IDENTITIES TEST THEM. Nine columns were read off
+FY2014's header and proposed for four other years. FY2015 and FY2016 accepted it -- ten
+to twelve rows a page close. FY2017 and FY2022 rejected it, one row and none, so their
+headers differ and they wait for somebody to read them. That is the check working, not
+failing: a wrong layout cannot make real arithmetic close.
 
-    beginning + contributions + earnings - disbursements - transfers  =  ENDING CASH
-    ending cash + unrealised gain/loss                                =  ENDING MARKET
-
-A row that does not close is not written. That is a stronger guarantee than the usual
-one here: not "the year foots to a printed total" but "this line is internally consistent
-in the way the document itself claims".
-
-WHAT THIS IS NOT. It is the stabilization SECTION of a table the town heads TRUST FUNDS,
-and those are different instruments -- a stabilization fund is the town's own reserve
-under c.40 s5B, a trust is somebody's bequest under conditions. The table groups by where
-the Treasurer holds the money; this file keeps only the rows that are stabilization.
+COVERAGE IS PARTIAL AND SAYS SO. What is written here is proven. What is missing is
+missing because no layout has been read for that year yet, or because the year's pages
+defeat the reader entirely -- FY2012, FY2013, FY2023 and FY2025 show no table with enough
+columns to be one. `--check` fails if the file drifts; it does not claim the series is
+complete.
 """
 import argparse
 import csv
+import io
 import os
 import re
 import sys
 import warnings
 
 warnings.filterwarnings('ignore')
-try:
-    import pdfplumber
-except ImportError:
-    sys.exit('pdfplumber is required: pip install pdfplumber')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import pdf_tables as T            # noqa: E402
+import read_trust_table as R      # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs')
-PLAN = os.path.join(ROOT, 'sources', 'data', 'extraction-plan.csv')
+OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 OUT = os.path.join(ROOT, 'sources', 'data', 'stabilization-balances.csv')
 
-# The nine columns the table prints, in order, from the FY2012 heading which spells them
-# out in full. Earlier and later years print the same nine under shorter names.
-COLUMNS = ['begin_principal', 'begin_earnings', 'contrib_principal', 'earnings_net',
-           'disburse_principal', 'transfers_earnings', 'ending_cash',
-           'unrealized_gain_loss', 'ending_market']
-
-# THE DOLLAR SIGN IS NOT RELIABLE. FY2014 prints `$1,299,077.98`; FY2025 prints
-# `3,147,178.96` with no sign at all, and requiring one silently returned nothing for
-# every year that dropped it -- seven rows found on the page and none parsed.
-MONEY = re.compile(r'\(?-?\$?-?[\d,]{1,15}\.\d{2}\)?')
-CODE = re.compile(r'^(8\d{3})')
+FIELDS = ['fy', 'code', 'name', 'registry_name', 'name_disagrees', 'ending_cash',
+          'ending_market', 'page', 'basis', 'document']
 
 
-def money(tok):
-    neg = tok.startswith('(') or tok.endswith(')')
-    v = float(tok.strip('()$').replace(',', '').replace('$', ''))
-    return -v if neg else v
-
-
-def rows_of(page, xgap=3.0, wgap=2.2):
-    """Visual rows of the page, however it happens to be laid out.
-
-    NOT EVERY YEAR IS TURNED, which cost an hour to discover. FY2014's pages are a quarter
-    turn with right-to-left characters; most other years are ordinary upright text where
-    `extract_text()` is correct and the geometry below would scramble it. `upright` is the
-    flag that tells them apart, and it is read per page rather than per year -- the town
-    changed printer and format more than once across fifteen reports.
-    """
-    chars = page.chars
-    if chars and sum(1 for c in chars if c.get('upright')) > len(chars) * 0.5:
-        return (page.extract_text() or '').split('\n')
-    cs = sorted(chars, key=lambda c: -c['x0'])
-    if not cs:
-        return []
-    bands, cur = [], [cs[0]]
-    for prev, c in zip(cs, cs[1:]):
-        if abs(prev['x0'] - c['x0']) > xgap:
-            bands.append(cur); cur = [c]
-        else:
-            cur.append(c)
-    bands.append(cur)
-    out = []
-    for band in bands:
-        b = sorted(band, key=lambda c: c['top'])
-        words, w = [], [b[0]]
-        for prev, c in zip(b, b[1:]):
-            if c['top'] - prev['bottom'] > wgap:
-                words.append(w); w = [c]
-            else:
-                w.append(c)
-        words.append(w)
-        out.append(''.join(''.join(x['text'] for x in ww)[::-1] for ww in words[::-1]))
+def registry():
+    out = {}
+    f = os.path.join(ROOT, 'sources', 'data', 'fund-owners.csv')
+    if os.path.exists(f):
+        for r in csv.DictReader(open(f, encoding='utf-8')):
+            if (r.get('code') or '').strip():
+                out[r['code'].strip()] = (r.get('name') or '').strip()
     return out
 
 
-def parse(line):
-    """A fund row, or None. Returns (code, name, [values]) with the values in column order."""
-    m = CODE.match(line)
-    if not m:
-        return None
-    rest = line[4:]
-    vals = MONEY.findall(rest)
-    if len(vals) < 3:
-        return None
-    # THE CODE IS THE IDENTITY, NOT THE NAME. A long fund name wraps to a second visual
-    # line, which after the quarter-turn is an adjacent band, and the two interleave --
-    # `ZONING INCENTIVE STABILIZATION (TD BA$2N2K6,N8O2R1.T9H0)`. The figures are
-    # unaffected and prove themselves; only the label is damaged. So the scraped name is
-    # cut at the first `$` and treated as a hint, and the canonical name comes from
-    # fund-owners.csv, which is this project's own registry of what each account is.
-    name = rest.split('$')[0].strip(' $.')
-    return m.group(1), name, [money(v) for v in vals]
+def year_files():
+    for f in sorted(os.listdir(OCR)):
+        m = re.search(r'fy-(\d{4})-annual-town-report\.tsv$', f)
+        if m:
+            yield int(m.group(1)), os.path.join(OCR, f)
 
 
-_REGISTRY = None
-
-
-def canonical(code):
-    global _REGISTRY
-    if _REGISTRY is None:
-        _REGISTRY = {}
-        f = os.path.join(ROOT, 'sources', 'data', 'fund-owners.csv')
-        if os.path.exists(f):
-            for r in csv.DictReader(open(f, encoding='utf-8')):
-                if (r.get('code') or '').strip():
-                    _REGISTRY[r['code'].strip()] = (r.get('name') or '').strip()
-    return _REGISTRY.get(code, '')
-
-
-def closes(vals):
-    """The two identities the table states about every row.
-
-    Short rows are the norm rather than an error: a fund with no activity prints only the
-    columns it has, so the nine are right-aligned and the identity is checked on what is
-    present. A row is accepted only if ONE of the two identities can be tested and holds.
-    """
-    if len(vals) == 9:
-        cash = sum(vals[:4]) - 0 + vals[4] + vals[5]
-        if abs(cash - vals[6]) > 0.02:
-            return False, 'beginning+activity != ending cash'
-        if abs(vals[6] + vals[7] - vals[8]) > 0.02:
-            return False, 'ending cash + unrealised != ending market'
-        return True, 'nine columns, both identities hold'
-    if len(vals) >= 2 and abs(vals[-2] - vals[-1]) < 0.02:
-        return True, 'short row, ending cash equals ending market'
-    return False, 'too few columns to test an identity'
-
-
-PAGES = os.path.join(ROOT, 'sources', 'data', 'stabilization-pages.json')
-
-
-def pages_for(fy):
-    """PDF page indices to read, found BY CONTENT rather than by arithmetic.
-
-    The survey records PRINTED page numbers and the offset to the PDF index is different
-    in most years and recorded in none of them -- guessing it put the search window six
-    pages past FY2016's table and returned nothing for fourteen of fifteen years. So every
-    report was scanned once for pages naming a stabilization fund, in either reading
-    direction, and the result cached beside this script. Regenerate with
-    `scripts/locate_stabilization_pages.py` if a report is added or replaced.
-    """
-    import json
-    if not os.path.exists(PAGES):
-        return []
-    return json.load(open(PAGES, encoding='utf-8')).get(str(fy), [])
-
-
-def pdf_for(fy):
-    for f in os.listdir(DOCS):
-        if re.search(r'fy-%d-annual-town-report\.pdf$' % fy, f):
-            return os.path.join(DOCS, f)
-    return None
-
-
-def extract(fy, verbose=False):
-    path = pdf_for(fy)
-    if not path:
-        return [], 'no annual report PDF held'
-    printed = pages_for(fy)
-    if not printed:
-        return [], 'no page in this report names a stabilization fund'
-    found, seen = [], set()
-    with pdfplumber.open(path) as pdf:
-        # The survey records PRINTED page numbers; the offset to the PDF index differs by
-        # year and is not recorded for every one, so search a window around each rather
-        # than trusting a single offset.
-        idxs = [i for i in printed if 0 <= i < len(pdf.pages)]
-        for i in idxs:
-            try:
-                lines = rows_of(pdf.pages[i])
-            except Exception:
-                continue
-            if not any('STABILIZATION' in l.upper() for l in lines):
-                continue
-            for line in lines:
-                if 'STABILIZATION' not in line.upper():
-                    continue
-                p = parse(line)
-                if not p:
-                    continue
-                code, name, vals = p
-                ok, why = closes(vals)
-                key = (code, round(vals[-1], 2))
-                if key in seen:
-                    continue
-                seen.add(key)
-                if verbose:
-                    print('   %s %-44s %-14s %s' % (code, name[:44],
-                                                    '{:,.2f}'.format(vals[-1]),
-                                                    'OK' if ok else 'REJECT: ' + why))
-                if ok:
-                    found.append(dict(fy=fy, code=code,
-                                      name=canonical(code) or name,
-                                      name_as_read=name,
-                                      ending_cash=vals[6] if len(vals) == 9 else vals[-1],
-                                      ending_market=vals[-1],
-                                      columns_read=len(vals), page_pdf=i,
-                                      basis=why, document=os.path.relpath(path, ROOT)))
-    return found, None
+def extract(fy, path, verbose=False):
+    boxes = T.read_boxes(path)
+    pages = sorted({b['page'] for b in boxes
+                    if 'STABILIZATION' in (b['text'] or '').upper()})
+    best = None
+    for p in pages:
+        pb = [b for b in boxes if b['page'] == p]
+        rows, cols = R.rows(pb, fy)
+        if len(cols) < 6:
+            continue
+        proven = [r for r in rows if R.verify(r['cells'])[0]]
+        stab = [r for r in proven if 'STABIL' in (r['code'] + r['name']).upper()]
+        # The trust-fund table is the page with the most columns that also proves rows.
+        score = (len(stab), len(proven), len(cols))
+        if stab and (best is None or score > best[0]):
+            best = (score, p, stab, len(rows), len(proven))
+    if not best:
+        return [], 'no page proves a stabilization row'
+    _, page, stab, n_rows, n_proven = best
+    if verbose:
+        print('   page %d: %d of %d rows prove themselves' % (page, n_proven, n_rows))
+    # THE DOCUMENT'S NAME WINS, and where the registry disagrees that is recorded rather
+    # than resolved. Substituting the registry silently turned `ZONING INCENTIVE
+    # STABILIZATION (TD BANKNORTH)` -- what FY2020 and FY2025 both print against 8129 --
+    # into `playground fund`, which is what `fund-owners.csv` has for that code. One of
+    # the two is wrong and this file is not the place to decide which; rule 13 says quote
+    # the source, so the source is quoted and the conflict is a column.
+    names = registry()
+    return [dict(fy=fy, code=r['code'],
+                 name=' '.join(r['name'].split()),
+                 registry_name=names.get(r['code'], ''),
+                 name_disagrees=('yes' if names.get(r['code']) and
+                                 names[r['code']].split()[0].upper()
+                                 not in r['name'].upper() else ''),
+                 ending_cash=round(r['cells']['ending_cash'], 2),
+                 ending_market=round(r['cells']['ending_market'], 2),
+                 page=page, basis='both identities hold',
+                 document=os.path.relpath(path, ROOT)) for r in stab], None
 
 
 def main():
@@ -242,35 +116,44 @@ def main():
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--verbose', action='store_true')
     a = ap.parse_args()
-    years = [a.fy] if a.fy else list(range(2011, 2026))
-    rows, notes = [], []
-    for fy in years:
-        got, err = extract(fy, a.verbose)
+
+    rows, missing = [], []
+    for fy, path in year_files():
+        if a.fy and fy != a.fy:
+            continue
+        got, err = extract(fy, path, a.verbose)
+        print('FY%d  %d proven' % (fy, len(got)))
         if err:
-            notes.append('FY%d: %s' % (fy, err))
-        print('FY%d  %d stabilization row(s) that prove themselves' % (fy, len(got)))
+            missing.append('FY%d: %s' % (fy, err))
         rows += got
-    if notes:
-        print('\n'.join('  ' + n for n in notes))
-    rows.sort(key=lambda r: (r['fy'], r['code']))
-    buf = []
-    import io
+
+    rows.sort(key=lambda r: (r['fy'], r['code'] or 'zz', r['name']))
     s = io.StringIO()
-    w = csv.DictWriter(s, fieldnames=['fy', 'code', 'name', 'name_as_read', 'ending_cash',
-                                      'ending_market', 'columns_read', 'page_pdf',
-                                      'basis', 'document'])
+    # `\n`, EXPLICITLY. csv.DictWriter defaults to \r\n, and reading the file back
+    # without newline='' translates it to \n -- so --check compares \r\n against \n and
+    # reports a freshly written file as stale, every time. check_generated.py earned
+    # itself on its first run by finding this exact bug elsewhere in this repository.
+    w = csv.DictWriter(s, fieldnames=FIELDS, lineterminator='\n')
     w.writeheader()
     for r in rows:
         w.writerow(r)
     out = s.getvalue()
+
     if a.check:
         cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
         if out != cur:
-            print('stabilization-balances.csv is stale', file=sys.stderr); return 1
-        print('current'); return 0
+            print('stabilization-balances.csv is stale', file=sys.stderr)
+            return 1
+        print('current: %d proven rows' % len(rows))
+        return 0
     if not a.fy:
         open(OUT, 'w', encoding='utf-8', newline='').write(out)
-        print('\nwrote %s — %d rows' % (os.path.relpath(OUT, ROOT), len(rows)))
+        print('\nwrote %s — %d proven rows across %d year(s)'
+              % (os.path.relpath(OUT, ROOT), len(rows), len({r['fy'] for r in rows})))
+        if missing:
+            print('years with no proven row yet (their header needs reading):')
+            for m in missing:
+                print('  ' + m)
     return 0
 
 
