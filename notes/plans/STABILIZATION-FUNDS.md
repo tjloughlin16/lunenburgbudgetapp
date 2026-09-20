@@ -142,3 +142,58 @@ the figures and not the prose.
   that about free cash. The lever must say so or it contradicts the page next to it.
 - **Assuming the transfer-in is discretionary.** Some of it is OPEB, and some may be
   required by a funding schedule the town has adopted. Check before proposing.
+
+---
+
+# Added 20 September 2026: the wider page this belongs inside
+
+TJ: *"we probably need a general 'full town accounting' page, which shows the operational
+budget, plus all money held in savings, accounts, etc. we can link to the stabilization
+report, but I think a broader lens, with historical trends, can be useful."*
+
+Right, and the good news is that the backbone for it is the one annual-report dataset that
+was built properly.
+
+## `balance_sheet` is trustworthy, and almost nothing else from those reports is
+
+774 rows, FY2011–FY2022, five fund types, and **it reconciles 72 of 72** against the
+`TOTAL ASSETS` row each page prints — `balance_sheet_printed_totals` carries the printed
+figure and a quote naming the page. That is the standard the trust-fund family fails.
+
+What it already shows, excluding capital projects because borrowings make that line lumpy:
+
+| | total held |
+|---|---:|
+| FY2011 | $6,034,847 |
+| FY2016 | $8,175,798 |
+| FY2019 | $11,107,150 |
+| FY2022 | $20,935,227 |
+
+**What the town holds roughly tripled in eleven years**, across general, enterprise,
+trust/agency and special revenue alike. That is a measurement. Why it happened is not, and
+rule 7 governs the difference — a page that states the trend and then explains it has
+stopped reporting and started arguing.
+
+## What the page joins
+
+| layer | source | state |
+|---|---|---|
+| **Held**, FY2011–FY2022 | `balance_sheet` | reconciled, 72/72 |
+| **Held, now** | `fund_activity`, FY2026 opening/closing per fund | MUNIS, system-printed |
+| **Operating** | the omnibus budget | already modelled |
+| **Reserves in detail** | the stabilization report | unreconciled, linked not inlined |
+
+## Two holes to state rather than paper over
+
+- **The balance sheet stops at FY2022.** Three years missing and the reason is not yet
+  established. Find it before building the page, because a trend that ends four years ago
+  invites the reader to assume it continued.
+- **`special_revenue_funds` is 2,387 rows on the same broken `v1` structure** as the trust
+  funds. The fund-by-fund detail beneath the totals is not reconciled, so the page can
+  carry the totals and must not carry the breakdown as though it were checked.
+
+## Order
+
+The balance sheet is already good, so this does **not** wait on the trust-fund extractor.
+Build the town page on `balance_sheet` first, link the stabilization report as the reserve
+detail, and let the extraction work improve that link later rather than block the page.

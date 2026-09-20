@@ -57,7 +57,8 @@ ORDER = [
     'fy26-closeout', 'fy26-closeout-town', 'budget-vs-actual', 'free-cash',
     'athletics', 'athletics-ledger', 'sped-and-the-curve', 'sped-and-funds',
     'fy27-and-the-override', 'fy27-cut-reconciliation', 'per-pupil-spending',
-    'peer-districts',
+    'peer-districts', 'spending-compared', 'stabilization-funds',
+    'hiring-here-or-placing-there',
     'connecting-the-budget', 'show-your-work',
 ]
 
@@ -201,6 +202,18 @@ SUPERSEDED = {
     'sped-and-funds': 'sped',
     'per-pupil-spending': 'peers',
     'peer-districts': 'peers',
+    # Same subject as per-pupil-spending and dependent on it: that report establishes the
+    # rank, this one turns the rank into what closing it would cost.
+    'spending-compared': 'peers',
+    # The ledger read for what the town HOLDS rather than what it spent, so it belongs
+    # beside free cash rather than under the schools -- these are town reserves, and only
+    # one of them could lawfully reach a school deficit.
+    'stabilization-funds': 'free-cash',
+    # A SCOPING NOTE rather than a finished analysis, and filed under special education
+    # because that is its subject. It reaches no conclusion by design: it records why the
+    # in-district-staffing-against-placements question cannot be modelled from anything
+    # published, and what would be needed.
+    'hiring-here-or-placing-there': 'sped',
     'athletics': 'sportsmoney',
     'budget-vs-actual': 'variance',
 }
@@ -212,7 +225,12 @@ SUPERSEDED = {
 # `addsup` (/what-it-all-adds-up-to) is likewise outside the grouping, at the other end:
 # it is the synthesis of what every other report concludes, so it belongs ABOVE the
 # categories rather than inside one. The page renders it first and on its own.
-UNCATEGORISED = {'show-your-work', 'addsup'}
+#
+# `threads` is outside it for a third reason: it reports the STATE of matters still being
+# argued across the boards, not a conclusion about one subject. Filing it under a category
+# would claim the town has settled something it has not, and filing it under all of them
+# is what a tracker already does.
+UNCATEGORISED = {'show-your-work', 'addsup', 'threads'}
 
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.

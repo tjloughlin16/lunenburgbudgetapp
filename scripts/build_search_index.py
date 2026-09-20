@@ -670,8 +670,17 @@ def _declared_slugs():
     m = re.search(r'export const SLUG: Record<Tab, string> = \{(.*?)\n\}', src, re.S)
     if not m:
         raise SystemExit('routes.ts: could not find SLUG')
-    return {v for _, v in re.findall(r"^\s*'?([A-Za-z0-9_-]+)'?:\s*'([^']*)'",
-                                     m.group(1), re.M) if v}
+    slugs = {v for _, v in re.findall(r"^\s*'?([A-Za-z0-9_-]+)'?:\s*'([^']*)'",
+                                      m.group(1), re.M) if v}
+    # NESTED ROUTES EXIST TOO, and the SLUG table does not list them. `/analysis/<id>` is
+    # one route per Markdown analysis on disk -- 20 September 2026 this check passed the
+    # 53 top-level pages and then failed on seventeen of these, which are as real as any
+    # of them. A page's existence is what the app routes on, and the app routes on the
+    # file being there.
+    slugs |= {'analysis/' + os.path.splitext(f)[0]
+              for f in os.listdir(os.path.join(ROOT, 'sources', 'analyses'))
+              if f.endswith('.md')}
+    return slugs
 
 
 def _routes_src():

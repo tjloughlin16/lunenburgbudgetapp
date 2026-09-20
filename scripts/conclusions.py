@@ -451,8 +451,11 @@ TOPICS = [
 # reaches no conclusion of its own, it re-presents what the reports already concluded, and
 # a topic heading over it would file the whole archive under one subject.
 # `recorded` and `thisweek` are announcements and finding aids, not analyses with
-# conclusions to synthesise.
-NOT_A_REPORT = ('analysis', 'sped', 'addsup', 'blog', 'recorded', 'thisweek', 'boards', 'budgetfeed')
+# conclusions to synthesise. `threads` is the same kind again: it tracks matters across
+# boards and reports what is still open, which is a state rather than a conclusion, and a
+# topic heading over it would file every subject the town is arguing about under one.
+NOT_A_REPORT = ('analysis', 'sped', 'addsup', 'blog', 'recorded', 'thisweek', 'boards',
+                'budgetfeed', 'threads')
 
 
 def topic_of(tab):
