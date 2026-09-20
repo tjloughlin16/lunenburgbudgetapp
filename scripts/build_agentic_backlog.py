@@ -90,6 +90,19 @@ def main():
         (dr, do), (tr, to) = split(done, todo)
         b.write('| %s | %d | **%d** | %d | %d | %s |\n' % (name, dr, tr, do, to, how))
     b.write('\n**Not in any stream, by choice:** minutes-writing for boards outside the policy file waits on `sources/data/recording-minutes-policy.csv`; conclusions on the finance pages are a per-owner writing job, not a batch.\n')
+    # PROPOSED, AND NOT COUNTED ABOVE because the extractor does not exist yet -- a row
+    # with no data behind it would read as a stream that is running and at zero.
+    b.write('\n**Proposed, not built:** *Town Meeting vote displays.* Town Meeting runs '
+            'electronic voting and puts the VERBATIM motion text and the counted tally on '
+            'screen, and the whole meeting is on video -- so every appropriation motion is '
+            'recoverable exactly, with a tally arithmetic can check, rather than paraphrased '
+            'from captions. Article 3 of the 3 September 2026 Special Town Meeting is the '
+            'worked case: the display reads `$30,308.00` and `224 / 29 / 0 / 253`, and our '
+            'recording minutes record it as the single word `passed`. `sources/data/'
+            'official-votes/` holds 30-odd boards and no `town-meeting/` at all, so the body '
+            'that actually appropriates is the one captured least precisely. Same machinery '
+            'as `ocr_scanned_minutes.py` (macOS Vision, local, free), pointed at sampled '
+            'frames instead of scanned PDFs.\n')
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, 'w', encoding='utf-8').write(b.getvalue())
     print(b.getvalue())

@@ -24,6 +24,51 @@ read, and it has to match the git tag actually deployed.
 
 RELEASES = [
     dict(
+        tag='v15',
+        date='2026-09-20',
+        title='The projection had been assuming a one-year windfall arrives every year',
+        short='the shortfall is larger because a one-time assumption came out',
+        headline='The projected FY28 school shortfall is now $930,273, up from $632,876. '
+                 'Nothing about the town’s costs changed and nothing got worse. This site '
+                 'had been assuming the town would keep handing the schools an extra '
+                 '$350,000 every year, for ever, when that money arrives once. If you '
+                 'have quoted a shortfall figure from this site, it has moved.',
+        changes=[
+            'What was wrong. In September the town gave the schools $418,056 that the '
+            'state made available because the Governor’s budget came in above what '
+            'Lunenburg had assumed, and moved another $30,308 out of a reserve fund. That '
+            'is one year of money. This site was carrying an early estimate of it — '
+            '$350,000 — as though the town would repeat it every year and grow it with '
+            'revenue each time, which made the shortfall look about $361,000 smaller than '
+            'it is.',
+
+            'Why that matters more than the size of the correction. The money was spent on '
+            'people: a second grade teacher, a reading specialist, half an assistant '
+            'principal, part of a music teacher and an occupational therapy assistant. '
+            'They are still employed next year. The money that paid for them is not there '
+            'next year. That gap — about $392,264 of salary with nothing behind it — is '
+            'now what the projection starts from.',
+
+            'So a restoration paid for with one-time money is not a cut reversed. It is a '
+            'cut deferred, and it makes the following year harder rather than easier. The '
+            'town is not doing anything unusual here, and it is not hidden: the Finance '
+            'Committee argued about exactly this in August, over whether it is wise to '
+            'fund operations with one-time funds at all.',
+
+            'A second, smaller correction pushed the other way. The restored programs are '
+            '$392,264 of salary rather than the $453,722 first recorded — the rest was '
+            'one-off training and a transport line, neither of which is payroll and '
+            'neither of which should grow at the pay rate. That took $63,916 off the '
+            'shortfall. The two corrections together move it by $297,397.',
+
+            'Where the figures come from. The Special Town Meeting warrant of 3 September '
+            '2026 for the amounts, and the meeting’s own electronic voting display for '
+            'what passed: Article 1 at $418,056, 263 to 40; Article 3 at $30,308, 224 to '
+            '29. The warrant had asked for $151,338.38 from free cash for Article 3 and '
+            'the meeting moved a fifth of that from a different fund, so the warrant alone '
+            'would have been wrong.',
+        ]),
+    dict(
         tag='v14',
         date='2026-09-07',
         title='The analyses are on the page that is meant to hold them',

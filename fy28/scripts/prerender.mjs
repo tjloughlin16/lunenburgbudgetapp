@@ -35,7 +35,7 @@
  */
 import { createServer } from 'node:http'
 import { execFile } from 'node:child_process'
-import { readFile, writeFile, mkdir, readdir, stat } from 'node:fs/promises'
+import { readFile, writeFile, mkdir, readdir, stat, rm } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { promisify } from 'node:util'
 import { join, extname, dirname } from 'node:path'
@@ -51,7 +51,16 @@ const SITEMAP = join(APP, 'public', 'sitemap.xml')
 // app's own absolute links are built from, and a second literal here is a latent drift.
 const SITE = JSON.parse(
   await readFile(join(APP, 'src', 'data', 'agent-manifest.json'), 'utf8')).site
-const PORT = 8794
+// NO FIXED PORT. This was 8794, and a fixed port is machine-wide while a worktree is not:
+// the nightly refresh builds from ~/lunenburgbudgets-refresh at the same moment somebody
+// builds from the main checkout, and the second one dies with EADDRINUSE. That is not a
+// theoretical race -- it is why the refresh failed on 20 September 2026, and the standing
+// advice to "check the port before building" cannot fix it, because check-then-bind is
+// itself a race.
+//
+// Port 0 asks the OS for a free one, so two builds can never collide. The real port is
+// read back off the server once it is listening, below.
+let PORT = 0
 
 // A page that renders to less than this much visible text has not rendered. The smallest
 // real page on the site is several times this; the empty shell is zero.
@@ -251,11 +260,41 @@ async function main() {
   const sitemap = await readFile(SITEMAP, 'utf8')
 
   const server = serve(shell)
-  await new Promise(r => server.listen(PORT, r))
+  await new Promise(r => server.listen(0, r))
+  PORT = server.address().port
+  console.log(`serving dist/ on port ${PORT}`)
+  // PREFLIGHT, BECAUSE ENOSPC DOES NOT PRESENT AS A DISK PROBLEM. When the disk filled on
+  // 19 September 2026 the visible symptom was a prerender exiting 1 with no message, then
+  // every unrelated command failing too. Fail here, with the reason, rather than there.
+  await assertSpace()
+  // And sweep what earlier builds leaked, so a machine that already has the problem heals
+  // itself rather than needing somebody to know about it. Only what is a day old: a
+  // concurrent build's profile is not ours to delete.
+  await sweepLeakedProfiles()
+
   console.log(`prerendering ${routes.length} routes with ${chrome}\n`)
+
+  // WHAT CHROME LEAVES BEHIND, AND WHY WE NO LONGER TOUCH HOW IT MAKES IT.
+  //
+  // With no --user-data-dir Chrome mints its own profile under
+  // ~/Library/Caches/Google/Chrome-headless per launch, and never removes it. This loop
+  // launches once per route, so a build left ~332 behind; by 19 September 2026 there were
+  // 35,206 holding 128 GB and the disk hit 572 MB free, which does not present as "the
+  // cache is full" but as every build, script and tool failing with ENOSPC at once.
+  //
+  // THE FIRST FIX WAS WORSE THAN THE BUG. Passing our own --user-data-dir made Chrome run
+  // full first-run profile initialisation on every launch: the render went from seconds a
+  // route to hitting the 300s timeout on EVERY route -- 12 pages in 64 minutes. Chrome's
+  // own scoped dir is fast and was never the problem. The problem was only that nothing
+  // ever deleted it.
+  //
+  // So: leave Chrome's behaviour exactly as it was, note the time we started, and sweep
+  // what this run created once it is done. Add the teardown, do not replace the mechanism.
+  const startedAt = Date.now()
 
   const failures = []
   const rows = []
+  try {
 
   for (const route of routes) {
     const url = `http://localhost:${PORT}${route}`
@@ -268,7 +307,16 @@ async function main() {
         '--virtual-time-budget=10000',
         '--run-all-compositor-stages-before-draw',
         '--dump-dom', url,
-      ], { maxBuffer: 64 * 1024 * 1024 })
+      ], {
+        maxBuffer: 64 * 1024 * 1024,
+        // A HANG MUST FAIL, NOT WAIT. With no timeout a wedged Chrome is awaited for
+        // ever: one sat rendering a single route for two and a half days, holding its
+        // profile open, while the build that started it was long gone. Five minutes is
+        // deliberately loose -- this is here to catch a WEDGE, not to police a slow page,
+        // and 90s was tight enough to fail every transcript page on the site.
+        timeout: 300_000,
+        killSignal: 'SIGKILL',
+      })
       html = preamble + stdout.slice(stdout.indexOf('<html'))
     } catch (e) {
       failures.push(`${route}: chrome failed — ${e.message.split('\n')[0]}`)
@@ -323,6 +371,11 @@ async function main() {
     await writeFile(out, html)
     rows.push({ route, bytes: html.length, text: text.length, text_body: text })
   }
+  } finally {
+    // WHETHER OR NOT THE RUN SUCCEEDED -- a build that dies half way is exactly the one
+    // that used to leave 300 profiles behind.
+    await sweepOurProfiles(startedAt)
+  }
 
   // Two routes rendering identical text means the router did not route -- most likely a
   // stale bundle that predates a page, since tabFromPath falls back to the root tab for
@@ -357,3 +410,70 @@ async function main() {
 }
 
 main().catch(e => { console.error(e); process.exit(1) })
+
+/** Refuse to start a 332-route render with no room to write it.
+ *
+ *  2 GB is arbitrary and deliberately generous: dist/ is far smaller, but Chrome, npm and
+ *  the OS all want scratch space, and the failure mode of running out half way is a
+ *  half-written dist/ that later steps read as though it were complete. */
+async function assertSpace(min = 2 * 1024 * 1024 * 1024) {
+  const { stdout } = await execFileAsync('df', ['-k', DIST.split('/').slice(0, 3).join('/') || '/'])
+  const free = Number(stdout.trim().split('\n').pop().split(/\s+/)[3]) * 1024
+  if (Number.isFinite(free) && free < min) {
+    const gb = n => `${(n / 1024 ** 3).toFixed(1)} GB`
+    throw new Error(
+      `only ${gb(free)} free on disk — refusing to prerender (want ${gb(min)}).\n` +
+      `  Headless Chrome profiles are the usual cause. Check:\n` +
+      `    du -sh ~/Library/Caches/Google/Chrome-headless\n` +
+      `    find ~/Library/Caches/Google/Chrome-headless -maxdepth 1 -name 'scoped_dir*' -mtime +0 -exec rm -rf {} +`)
+  }
+}
+
+/** Remove `scoped_dir*` profiles left by builds that ran before --user-data-dir was
+ *  passed, and by any Chrome that died before cleaning up after itself.
+ *
+ *  Older than a day only. Anything newer may belong to a build running right now -- this
+ *  repo has had four agents in one working tree, and deleting a live profile would fail
+ *  somebody else's build in a way that looks like a bug in their code. */
+async function sweepLeakedProfiles() {
+  const dir = join(process.env.HOME || '', 'Library/Caches/Google/Chrome-headless')
+  if (!existsSync(dir)) return
+  const cutoff = Date.now() - 24 * 60 * 60 * 1000
+  let names
+  try { names = await readdir(dir) } catch { return }
+  let gone = 0
+  for (const name of names) {
+    if (!name.startsWith('scoped_dir')) continue
+    const p = join(dir, name)
+    try {
+      if ((await stat(p)).mtimeMs >= cutoff) continue
+      await rm(p, { recursive: true, force: true })
+      gone++
+    } catch { /* a profile that vanished under us is the outcome we wanted */ }
+  }
+  if (gone) console.log(`swept ${gone} leaked Chrome profile(s) from earlier builds`)
+}
+
+/** Delete the Chrome profiles THIS run created.
+ *
+ *  Keyed on mtime against the run's start, so a build running concurrently in another
+ *  worktree keeps its own -- this repo has had four agents in one tree, and deleting a
+ *  live profile fails somebody else's build in a way that looks like a bug in their code.
+ */
+async function sweepOurProfiles(since) {
+  const dir = join(process.env.HOME || '', 'Library/Caches/Google/Chrome-headless')
+  if (!existsSync(dir)) return
+  let names
+  try { names = await readdir(dir) } catch { return }
+  let gone = 0
+  for (const name of names) {
+    if (!name.startsWith('scoped_dir')) continue
+    const p = join(dir, name)
+    try {
+      if ((await stat(p)).mtimeMs < since) continue
+      await rm(p, { recursive: true, force: true })
+      gone++
+    } catch { /* vanished under us is the outcome we wanted */ }
+  }
+  if (gone) console.log(`cleaned up ${gone} Chrome profile(s) this run created`)
+}

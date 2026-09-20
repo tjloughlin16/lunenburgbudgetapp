@@ -16,6 +16,7 @@ import { FullVersion } from '../components/FullVersion'
 import { Room, Say, Plate, SectionLink, AlreadyCut, Doors } from '../components/walk'
 import { TheRaise } from '../components/TheRaise'
 import { RateBoard } from '../components/RateBoard'
+import { BudgetComposition } from '../components/BudgetComposition'
 import { Note } from '../components/primitives'
 import { Upshot, UpshotMore } from '../components/Upshot'
 
@@ -234,6 +235,12 @@ export function Walkthrough() {
           looks guiltiest, and is not.</>}
         leave={<>The lines that overrun are not the lines anybody in Lunenburg sets. The
           line that fits is the only one they do.</>}>
+        {/* THE WHOLE, BEFORE THE SHARES. Kristina Skrehot, 19 September 2026: the page
+            quoted shares of the budget for two rooms without ever showing what the budget
+            was. Rule 7a — the thing first, and a share is unreadable without its
+            denominator. It sits above the prose that cites those shares rather than below
+            it, so the sentences land against a picture the reader has already seen. */}
+        <BudgetComposition />
         <Say>
           That last chart is the fair version of the question, and it is worth staying with
           for a moment. Salaries take more of the increase than anything else because they

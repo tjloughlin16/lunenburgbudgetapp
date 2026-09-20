@@ -553,13 +553,80 @@ def build_affinity(db):
         db.execute('INSERT INTO affinity (tags, doc_key, corpus, title, cite_url) VALUES (?,?,?,?,?)',
                    (tags, doc_key, hit['corpus'], title, cite))
     if missing:
-        # Pages exist only when the site has been built; without a build, nothing can be
-        # said. With one, a tag naming no page is an error.
-        if os.path.isdir(DIST):
-            raise SystemExit('search-affinity.csv names %d doc_key(s) the index does not hold:\n  %s'
-                             % (len(missing), '\n  '.join(missing[:20])))
-        print('  NOTE: %d affinity rows name pages; fy28/dist is absent so they were skipped'
-              % len(missing), file=sys.stderr)
+        # AN AFFINITY ROW NAMES A PAGE BY ONE OF ITS ADDRESSES, AND PAGES HAVE SEVERAL.
+        #
+        # routes.ts keeps SLUG (tab -> the canonical slug) and ALIASES (an older or
+        # shorter address -> tab). The index holds the canonical one; search-affinity.csv
+        # was written by hand and names whichever address the writer had in mind. So a row
+        # reading `page:what-it-all-adds-up-to` is not a row naming nothing -- it is the
+        # alias of `page:one-big-report`, which is indexed and fine.
+        #
+        # Conflating those two killed the whole nightly refresh twice in three days:
+        # 14 September 2026 on page:what-it-all-adds-up-to and 16 September on
+        # page:the-paraprofessionals (the alias of page:paras). Both pages existed both
+        # times. Nothing was wrong except the address the row used.
+        #
+        # So resolve through ALIASES before deciding, and keep the error for a row that
+        # resolves to nothing at all -- which is the case actually worth failing on.
+        alias_target = _page_aliases()
+        def canonical(key):
+            if not key.startswith('page:'):
+                return None
+            slug = key.split(':', 1)[1]
+            return alias_target.get(slug, slug)
+
+        still = []
+        aliased = []
+        for key in missing:
+            canon = canonical(key)
+            if canon is None or canon == key.split(':', 1)[1]:
+                still.append(key)
+                continue
+            hit = db.execute('SELECT corpus, title, cite_url FROM search WHERE doc_key=? '
+                             'LIMIT 1', ('page:' + canon,)).fetchone()
+            if not hit:
+                still.append(key)
+                continue
+            tags = dict(affinity_rows())[key]
+            db.execute('INSERT INTO affinity (tags, doc_key, corpus, title, cite_url) '
+                       'VALUES (?,?,?,?,?)',
+                       (tags, 'page:' + canon, hit['corpus'], hit['title'], hit['cite_url']))
+            aliased.append('%s -> page:%s' % (key, canon))
+
+        if aliased:
+            print('  NOTE: %d affinity row(s) named an alias and were indexed under the '
+                  'canonical address: %s' % (len(aliased), ', '.join(aliased[:6])),
+                  file=sys.stderr)
+        if still:
+            if os.path.isdir(DIST):
+                raise SystemExit(
+                    'search-affinity.csv names %d doc_key(s) the index does not hold, and '
+                    'they are not aliases of anything it does:\n  %s'
+                    % (len(still), '\n  '.join(still[:20])))
+            print('  NOTE: %d affinity rows name pages; fy28/dist is absent so they were '
+                  'skipped' % len(still), file=sys.stderr)
+
+
+def _page_aliases():
+    """alias slug -> canonical slug, read from routes.ts.
+
+    Read rather than duplicated, for the reason build_sitemap.routed() gives about the
+    SLUG table: routes.ts is what decides a page's addresses, and a second copy of that
+    mapping here would be a latent drift with a date on it."""
+    with open(os.path.join(ROOT, 'fy28', 'src', 'routes.ts'), encoding='utf-8') as fh:
+        src = fh.read()
+    m = re.search(r'export const SLUG: Record<Tab, string> = \{(.*?)\n\}', src, re.S)
+    if not m:
+        raise SystemExit('routes.ts: could not find SLUG')
+    slug = dict(re.findall(r"^\s*'?([A-Za-z0-9_-]+)'?:\s*'([^']*)'", m.group(1), re.M))
+    a = re.search(r'const ALIASES: Record<string, Tab> = \{(.*?)\n\}', src, re.S)
+    if not a:
+        return {}
+    out = {}
+    for alias, tab in re.findall(r"'?([A-Za-z0-9_-]+)'?:\s*'([A-Za-z0-9_]+)'", a.group(1)):
+        if tab in slug and slug[tab] != alias:
+            out[alias] = slug[tab]
+    return out
 
 
 def vocabulary():

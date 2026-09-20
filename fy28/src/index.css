@@ -175,6 +175,45 @@
   --mt-minimum: var(--ath-coaches);
   --mt-transport: var(--ath-transport);
   --mt-capital: var(--ath-officials);
+
+  /* THE BUDGET, WHOLE — the part-to-whole bar in room 5 of the walkthrough.
+     Kristina Skrehot, 19 September 2026, on the rate sliders: "It would help to also show
+     the overall budget with these categories as a pie chart at the start of the information
+     somewhere to ground people's understanding of the budget." She is right, and it is
+     rule 7a: the page showed the parts moving before it ever showed what the whole was.
+
+     FOUR hues and not seven, because seven was MEASURED and failed. The sliders carry seven
+     buckets, and the validator rejects seven categorical hues here: two fall below the
+     chroma floor and read as gray, CVD separation fails (ΔE 5.4 deutan), and so does the
+     normal-vision floor (ΔE 12.8, under 15 — hard to tell apart WITH full colour vision).
+     So the bar groups to four and the TABLE beneath it carries all seven under the sliders'
+     own names, which is the form the guidance asks for past ~7 classes anyway.
+
+     THREE OF THE FOUR ARE THE ATHLETICS TRIPLE, under their own names, for the reason the
+     --fc-* block gives: an alias makes reuse visible where copying the hex would hide it.
+     No chart on this page carries a sport, and no chart on /athletics-money carries a
+     budget bucket.
+
+     Kept OFF --series-cost/--series-revenue deliberately, and this is load-bearing rather
+     than tidy: the walkthrough draws the cost and revenue curves on the same scroll, two
+     rooms below this bar. A hue that means "cost" in the chart a reader is about to drag
+     must not mean "staff pay" in the one above it.
+
+     Validated against this surface in BAR ORDER, which is what adjacency means here:
+     lightness band, chroma floor, CVD separation (worst ΔE 11.9, deutan) and the
+     normal-vision floor all pass. One check needs relief by design — the amber is 2.36:1
+     rather than 3:1 — and the relief is present: every segment is direct-labelled and the
+     bar has a table twin. Same precedent as --ath-* and --fund-*. */
+  --bud-pay: var(--ath-transport);
+  --bud-sped: var(--ath-coaches);
+  --bud-health: var(--ath-officials);
+  /* The residual, and the one new hue. Chromatic rather than achromatic — unlike
+     --fund-other and --fc-other — because "everything else" here is the only line the
+     School Committee actually controls, which room 5 is about to argue is the point. It
+     is an entity, not a leftover. Indigo rather than a blue: it sits next to the amber in
+     bar order, and it must not read as --series-cost two rooms down. */
+  --bud-else: #5b6ab8;
+
   --mt-bonds: var(--text-muted);
 }
 @media (prefers-color-scheme: dark) {
@@ -223,6 +262,11 @@
     --ath-coaches: #13a37f;
     --ath-transport: #b96fc3;
     --ath-officials: #b58e1e;
+    /* Only the residual needs re-stepping; the other three alias --ath-*, which already
+       re-steps above. Validated against #1a1a19 in bar order: all five checks pass
+       (worst adjacent ΔE 9.5 deutan). */
+    --bud-else: #8290dd;
+
     /* The five subject hues, re-stepped for the dark surface. Worst pair 13.1. */
     --subj-1: #3987e5;
     --subj-2: #d95926;
@@ -271,6 +315,11 @@
     --ath-coaches: #13a37f;
     --ath-transport: #b96fc3;
     --ath-officials: #b58e1e;
+    /* Only the residual needs re-stepping; the other three alias --ath-*, which already
+       re-steps above. Validated against #1a1a19 in bar order: all five checks pass
+       (worst adjacent ΔE 9.5 deutan). */
+    --bud-else: #8290dd;
+
 }
 
 /* Anything that pins itself below the header needs to know how tall the header is,

@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-17",
+ "generated": "2026-09-18",
  "origins": [
   {
    "id": "school",
@@ -50,7 +50,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 34 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 37 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 34 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 38 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -1131,6 +1131,18 @@
    "blurb": "The Division of Local Services publishes a Free Cash Proof for every community: the year-end calculation of what a town may appropriate without raising taxes, broken into its components. Downloaded 30 August 2026. These reconcile to themselves twice over — 81 checks across nine towns and five years, all tying to the dollar. They carry no denominator of any kind, so the absolute figures do not compare between towns of different size; the composition, being a share, does.",
    "items": [
     {
+     "path": "state-dls/health-insurance-expenditures.xlsx",
+     "title": "Health insurance expenditures, every municipality, FY2002–FY2026",
+     "stars": 3,
+     "what": "DLS Gateway export, fetched by script (fetch_dls_property.py): the whole Commonwealth, one figure per town per year, from Schedule A Parts 2 and 6. Extracted to data/dls-health-insurance.csv, where the two warnings DLS prints about what the figure contains are recorded.",
+     "kind": "Spreadsheet",
+     "bytes": 84848,
+     "url": "/docs/state-dls/health-insurance-expenditures.xlsx",
+     "count": 353,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/health-insurance-expenditures.xlsx"
+    },
+    {
      "path": "state-dls/AvgSingleFamTaxBill.xlsx",
      "title": "Average Single-Family Tax Bill, eleven towns, FY1988–FY2026",
      "stars": 3,
@@ -1533,9 +1545,9 @@
      "stars": 3,
      "what": "The method document. Every figure this project publishes, with its inputs, the formula, a worked example in real dollars, and — beside each one — whether it is somebody else’s figure, a contract, a statute, our measurement or our assumption. Fifteen sections: the projection itself, why each escalator is what it is, special education, out-of-district tuition, health insurance, free cash, athletic fees, the levers, the cut cascade, the tax base and overrides, an assumption register ranked by what each one moves, and what none of it can compute. GENERATED from the live model by scripts/build_show_your_work.py, so it cannot drift from the code — run it with --check to prove the copy you are reading is current. Written to be usable by an assistant checking a number as well as by a resident following the argument.",
      "kind": "Notes",
-     "bytes": 95621,
+     "bytes": 95881,
      "url": "/docs/analyses/show-your-work.md",
-     "count": 1839,
+     "count": 1840,
      "unit": "lines",
      "textUrl": "/docs/analyses/show-your-work.md"
     },
@@ -1854,7 +1866,7 @@
      "stars": 3,
      "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
      "kind": "Notes",
-     "bytes": 41062,
+     "bytes": 41064,
      "url": "/docs/analyses/questions.md",
      "count": 952,
      "unit": "lines",
@@ -2070,9 +2082,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 115921,
+     "bytes": 120088,
      "url": "/docs/data/money-gaps.csv",
-     "count": 133,
+     "count": 140,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -2533,9 +2545,21 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 33333248,
+     "bytes": 35655680,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
+    },
+    {
+     "path": "data/meeting-register.csv",
+     "title": "Every meeting, and what survives of it",
+     "stars": 3,
+     "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
+     "kind": "Data",
+     "bytes": 3127327,
+     "url": "/docs/data/meeting-register.csv",
+     "count": 7032,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-register.csv"
     },
     {
      "path": "data/dese-teacher-grade-subject.csv",
@@ -2634,18 +2658,6 @@
      "textUrl": "/docs/data/dese-radar.csv"
     },
     {
-     "path": "data/meeting-register.csv",
-     "title": "Every meeting, and what survives of it",
-     "stars": 3,
-     "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
-     "kind": "Data",
-     "bytes": 607161,
-     "url": "/docs/data/meeting-register.csv",
-     "count": 7031,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-register.csv"
-    },
-    {
      "path": "data/dese-class-size.csv",
      "title": "How many classes ran in each subject, and how full they were",
      "stars": 3,
@@ -2668,6 +2680,18 @@
      "count": 2403,
      "unit": "rows",
      "textUrl": "/docs/data/dese-sped-program.csv"
+    },
+    {
+     "path": "state-dls/health-self-insured-funds.xlsx",
+     "title": "Self-insured health trust funds, every municipality, FY2003–FY2026",
+     "stars": 3,
+     "what": "DLS Gateway export, fetched by script; extracted to data/dls-health-self-insured.csv.",
+     "kind": "Spreadsheet",
+     "bytes": 344209,
+     "url": "/docs/state-dls/health-self-insured-funds.xlsx",
+     "count": 8425,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/health-self-insured-funds.xlsx"
     },
     {
      "path": "data/dese-function-statewide.csv",
@@ -2694,6 +2718,18 @@
      "textUrl": "/docs/data/census-acs.csv"
     },
     {
+     "path": "data/ocr-minutes.csv",
+     "title": "Scanned minutes read by OCR: which, when, and from which bytes",
+     "stars": 3,
+     "what": "One row per image-only PDF that scripts/ocr_scanned_minutes.py has read with macOS Vision, with the sha256 of the PDF it read and the characters and pages recovered. The text files it writes begin ===OCR macOS Vision=== so nothing mistakes a reading for an extract.",
+     "kind": "Data",
+     "bytes": 270424,
+     "url": "/docs/data/ocr-minutes.csv",
+     "count": 1580,
+     "unit": "rows",
+     "textUrl": "/docs/data/ocr-minutes.csv"
+    },
+    {
      "path": "data/dese-town-enrollment.csv",
      "title": "Where every town’s children actually go to school, SY2014–SY2026",
      "stars": 3,
@@ -2704,6 +2740,18 @@
      "count": 1488,
      "unit": "rows",
      "textUrl": "/docs/data/dese-town-enrollment.csv"
+    },
+    {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 241892,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "count": 1441,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
     {
      "path": "data/dese-enrollment.csv",
@@ -2742,18 +2790,6 @@
      "textUrl": "/docs/data/line-history-disagreements.csv"
     },
     {
-     "path": "data/youtube-transcript-index.csv",
-     "title": "Which meeting recordings we hold a transcript for",
-     "stars": 3,
-     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
-     "kind": "Data",
-     "bytes": 164590,
-     "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 1010,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-transcript-index.csv"
-    },
-    {
      "path": "data/dese-educator-workforce.csv",
      "title": "Staff HEADCOUNT by job class, with hires and retention, SY2021–SY2023",
      "stars": 3,
@@ -2790,18 +2826,6 @@
      "textUrl": "/docs/data/dese-attrition.csv"
     },
     {
-     "path": "data/board-pages.csv",
-     "title": "Every board’s own page on the town’s site, extracted",
-     "stars": 3,
-     "what": "What the town (or, for the School Committee, the district) says each board is: the overview as printed, the charter or bylaw it cites, when it meets, its members and terms, and a Facebook link where the board’s page carries one. One row per board; the mirrored pages are under town-supplementary/docs/. Rebuild with scripts/fetch_board_pages.py.",
-     "kind": "Data",
-     "bytes": 103673,
-     "url": "/docs/data/board-pages.csv",
-     "count": 1660,
-     "unit": "rows",
-     "textUrl": "/docs/data/board-pages.csv"
-    },
-    {
      "path": "data/free-cash-proof.csv",
      "title": "Free cash, nine towns, five years, line by line",
      "stars": 3,
@@ -2824,6 +2848,18 @@
      "count": 323,
      "unit": "rows",
      "textUrl": "/docs/data/document-basis.csv"
+    },
+    {
+     "path": "data/board-pages.csv",
+     "title": "Every board’s own page on the town’s site, extracted",
+     "stars": 3,
+     "what": "What the town (or, for the School Committee, the district) says each board is: the overview as printed, the charter or bylaw it cites, when it meets, its members and terms, and a Facebook link where the board’s page carries one. One row per board; the mirrored pages are under town-supplementary/docs/. Rebuild with scripts/fetch_board_pages.py.",
+     "kind": "Data",
+     "bytes": 81816,
+     "url": "/docs/data/board-pages.csv",
+     "count": 542,
+     "unit": "rows",
+     "textUrl": "/docs/data/board-pages.csv"
     },
     {
      "path": "data/dese-sped-movement.csv",
@@ -2908,6 +2944,18 @@
      "count": 259,
      "unit": "rows",
      "textUrl": "/docs/data/dese-ch70-formula.csv"
+    },
+    {
+     "path": "data/agentic-spend.csv",
+     "title": "What the scripted reading cost, job by job",
+     "stars": 3,
+     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
+     "kind": "Data",
+     "bytes": 42699,
+     "url": "/docs/data/agentic-spend.csv",
+     "count": 605,
+     "unit": "rows",
+     "textUrl": "/docs/data/agentic-spend.csv"
     },
     {
      "path": "data/minutes-searchable.csv",
@@ -3114,6 +3162,18 @@
      "textUrl": "/docs/data/school-special-revenue-fy26-q3.csv"
     },
     {
+     "path": "correspondence/2026-03-30-ski-coop-invoice.md",
+     "title": "How the ski co-op invoice reached us, and what it does not show",
+     "stars": 3,
+     "what": "The provenance note for the invoice beside it: where it came from, its sha256, why it is `stated` rather than evidence, and the three things it does not establish — it is one season and says nothing about how earlier years split; it is a bill rather than a receipt, so it shows what the other towns were invoiced and not that they paid; and it does not say which account receives a reimbursement, which is what decides whether the money offsets the athletics line at all.",
+     "kind": "Notes",
+     "bytes": 2186,
+     "url": "/docs/correspondence/2026-03-30-ski-coop-invoice.md",
+     "count": 43,
+     "unit": "lines",
+     "textUrl": "/docs/correspondence/2026-03-30-ski-coop-invoice.md"
+    },
+    {
      "path": "data/capital-plan-fy27.csv",
      "title": "The FY27 capital programme, ranked by the town",
      "stars": 3,
@@ -3199,6 +3259,18 @@
      "textUrl": "/docs/data/stated-figures.csv"
     },
     {
+     "path": "data/ski-coop.csv",
+     "title": "The ski co-op invoice, line by line and town by town",
+     "stars": 3,
+     "what": "The invoice extracted: nine cost lines, the printed total and roster, and the four towns’ shares, each row carrying the workbook cell it came from. scripts/build_athletics_charts.py refuses to write unless the line items sum to the printed total, the towns’ shares sum to it, and their athletes sum to the printed roster — reconciling to the document’s own figures rather than to ours (rule 13).",
+     "kind": "Data",
+     "bytes": 982,
+     "url": "/docs/data/ski-coop.csv",
+     "count": 15,
+     "unit": "rows",
+     "textUrl": "/docs/data/ski-coop.csv"
+    },
+    {
      "path": "data/total-expenses-history.csv",
      "title": "District total expenses, budget and actual by year",
      "stars": 3,
@@ -3209,6 +3281,18 @@
      "count": 28,
      "unit": "rows",
      "textUrl": "/docs/data/total-expenses-history.csv"
+    },
+    {
+     "path": "data/meeting-document-timestamps.csv",
+     "title": "When each agenda and each set of minutes was MADE, from the document itself",
+     "stars": 2,
+     "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
+     "kind": "Data",
+     "bytes": 2555631,
+     "url": "/docs/data/meeting-document-timestamps.csv",
+     "count": 12039,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
     {
      "path": "data/meeting-watch-state.csv",
@@ -3223,12 +3307,36 @@
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
     {
+     "path": "data/dls-health-insurance.csv",
+     "title": "What every Massachusetts municipality spends on health insurance, FY2002 onward",
+     "stars": 2,
+     "what": "8,775 rows: one dollar figure per municipality per fiscal year, all 351, as filed on Schedule A Parts 2 and 6 and published by the Division of Local Services. TWO WARNINGS DLS PRINTS ITSELF: for a self-insured town the figure includes the employee share, and a town accounting through a trust may have workers’ compensation and OPEB inside it — and nothing in the file says which town is which, so the LEVEL is not comparable across towns and the growth is. Fetched by scripts/fetch_dls_property.py.",
+     "kind": "Data",
+     "bytes": 1111551,
+     "url": "/docs/data/dls-health-insurance.csv",
+     "count": 8775,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-health-insurance.csv"
+    },
+    {
+     "path": "data/dls-health-self-insured.csv",
+     "title": "Which municipalities pay health claims from a trust rather than buying premiums",
+     "stars": 2,
+     "what": "8,424 rows, every municipality and fiscal year: the health trust fund’s starting balance, revenues, expenditures and fund balance as filed on Schedule A Part 6. It is the only published axis on which health spending can be told apart — a self-insured town’s expenditure figure includes the employee share. The report’s own Self-insured (Y/N) column is NOT reliable (Abington prints N every year while reporting millions through a trust), so the classification rests on whether the trust moved money. Fetched by scripts/fetch_dls_property.py.",
+     "kind": "Data",
+     "bytes": 1072422,
+     "url": "/docs/data/dls-health-self-insured.csv",
+     "count": 8424,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-health-self-insured.csv"
+    },
+    {
      "path": "data/fund-owners.csv",
      "title": "The account registry: every accounting measure the town prints, and who owns it",
      "stars": 2,
      "what": "One row per department line, revenue estimate, special-revenue fund, enterprise fund, trust, stabilization fund, agency account, capital project fund and debt-service line in the reports we hold — 506 at first writing — with the board or department that owns it, what that rests on (the department code the town itself puts on a fund, the department a line is filed under, or the fund’s name), its purpose and authority where a document states them, and the name the annual reports use for it. scripts/build_fund_owners.py --check fails if a held report prints a measure this file lacks. Read by scripts/build_finance.py for /accounts, /departments and every board’s Finance page.",
      "kind": "Data",
-     "bytes": 104405,
+     "bytes": 104495,
      "url": "/docs/data/fund-owners.csv",
      "count": 506,
      "unit": "rows",
@@ -3324,9 +3432,9 @@
      "stars": 2,
      "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
      "kind": "Data",
-     "bytes": 12608,
+     "bytes": 12743,
      "url": "/docs/data/youtube-no-captions.csv",
-     "count": 102,
+     "count": 103,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-no-captions.csv"
     },
@@ -3353,6 +3461,18 @@
      "count": 92,
      "unit": "rows",
      "textUrl": "/docs/data/one-big-report-story.csv"
+    },
+    {
+     "path": "correspondence/2026-03-30-ski-coop-invoice.xlsx",
+     "title": "The ski co-op invoice, 2025-26 season",
+     "stars": 2,
+     "what": "The invoice Lunenburg High School’s athletic department issues to the other towns in the ski co-op, dated 30 March 2026. Lunenburg runs the co-op, pays the mountain and the coach, and bills Littleton, Narragansett and Leominster for their athletes: $12,392 gross, 14 skiers, of whom 3 are Lunenburg’s at $2,655.43 — 21.4% of the bill. It matters because the district’s by-sport workbook prints the whole co-op’s cost as the ski team’s cost, which makes ski the dearest sport per participation the town runs by comparing a four-town total with every other sport’s one-town total. A sheet the department assembled, not an accounting printout, so every figure off it is `stated` (rule 13a) — but it foots: the line items sum to its own printed total and the four towns’ shares sum to it too. Sent to this project by a resident; there is no publisher address, because the town does not publish it.",
+     "kind": "Spreadsheet",
+     "bytes": 11586,
+     "url": "/docs/correspondence/2026-03-30-ski-coop-invoice.xlsx",
+     "count": 46,
+     "unit": "rows",
+     "textUrl": "/docs/correspondence/2026-03-30-ski-coop-invoice.xlsx"
     },
     {
      "path": "data/budget-seasons/fy27-summer-governors-budget.csv",
@@ -3390,6 +3510,18 @@
      "count": 106,
      "unit": "lines",
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fund1301.md"
+    },
+    {
+     "path": "data/health-insurance-law.csv",
+     "title": "What Massachusetts law lets a town do about health insurance, and what it forbids",
+     "stars": 2,
+     "what": "Eleven rows, one per option: the section of M.G.L. c.32B that permits or forbids it, who decides, the threshold, who the change lands on, and a link to the statute so a reader can check the sentence. Four of the eleven are things no town may do — cutting the employer share below 50%, changing the split through the 2011 plan-design process, revoking coverage, dropping retirees. The research behind it is notes/findings/MA-MUNICIPAL-HEALTH-INSURANCE.md.",
+     "kind": "Data",
+     "bytes": 5188,
+     "url": "/docs/data/health-insurance-law.csv",
+     "count": 11,
+     "unit": "rows",
+     "textUrl": "/docs/data/health-insurance-law.csv"
     },
     {
      "path": "data/meeting-watch-events.csv",
@@ -3499,6 +3631,18 @@
      "count": 19,
      "unit": "rows",
      "textUrl": "/docs/data/departments.csv"
+    },
+    {
+     "path": "data/school-field-maintenance.csv",
+     "title": "What the schools say maintaining the fields and grounds costs, FY2024",
+     "stars": 2,
+     "what": "Five rows from the Superintendent’s email of September 2026: about $126,000 of all fields and grounds work in FY2024 (including playgrounds, irrigation and the vehicles that also do snow removal), of which about $29–30,000 is vehicle and equipment maintenance, plus $9,500 autumn and $9,200 spring for the landscaper who mows the athletic grass fields and $19,400 for summer 2023 field repair. Every row is marked `stated`: these are figures a person read back from budget requests, not a printout from the books (rule 13a), and the fund’s own FY2024 expenditure is not in the archive to check them against. The Superintendent also states the outsourced mowing is paid from the Facility Revolving account — fund 1306, where the field rent is deposited.",
+     "kind": "Data",
+     "bytes": 1492,
+     "url": "/docs/data/school-field-maintenance.csv",
+     "count": 5,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-field-maintenance.csv"
     },
     {
      "path": "data/budget-threads.csv",
@@ -15432,7 +15576,7 @@
   "boards": [
    {
     "name": "Select Board",
-    "documents": 1396
+    "documents": 1412
    },
    {
     "name": "Planning Board",
@@ -15636,22 +15780,22 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12089,
-  "fetched": 12039,
+  "listed": 12105,
+  "fetched": 12055,
   "agendas": 7424,
-  "minutes": 4665,
+  "minutes": 4681,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12040,
+  "textFiles": 12056,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1357,
+  "documents": 1369,
   "groups": 22,
-  "bytes": 2161676984,
-  "loadBearing": 125
+  "bytes": 2172082899,
+  "loadBearing": 131
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

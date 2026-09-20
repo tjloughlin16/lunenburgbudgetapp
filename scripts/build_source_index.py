@@ -762,6 +762,14 @@ GROUPS = [
              'decomposed into a numerator and a denominator, into eleven function '
              'categories, and into pay against staffing — and the two Chapter 70 '
              'standings that look like a contradiction and are not one.'),
+            ('analyses/hiring-here-or-placing-there.md',
+             'Hiring here instead of placing there', 3,
+             'Whether in-district special education staffing reduces out-of-district '
+             'placements \u2014 the argument the district put on the record in August 2026, '
+             'and why this project cannot model it. Placements fell from 30 in FY2015 to 10 '
+             'in FY2025 while in-district spending rose; that is a correlation and four '
+             'other explanations fit it equally well. A SCOPING NOTE, not a finished '
+             'analysis: it has no verifier and nothing in it should be quoted as a finding.'),
             ('analyses/sped-and-the-curve.md', 'Special education and the curve', 3,
              'The FY27 level-service budget rises 3.98%. Strip out one line \u2014 '
              'out-of-district tuition, budgeted down 46% \u2014 and it rises 6.23%. What that '

@@ -53,6 +53,24 @@ def ago(ts):
     if n < 86400: return '%dh ago' % int(n / 3600)
     return '%dd ago' % int(n / 86400)
 
+
+def clock(ts):
+    """A timestamp as the wall clock says it, local: '08:12'.
+
+    TJ, 20 September 2026: "Seeing refresh failed and all that done today is not
+    believable." He is right, and `ago()` is why -- "3h ago" is a duration, and a page
+    full of durations beside a failed run reads as a claim rather than a record. A clock
+    time can be checked against the log, the shell history and his own memory of the
+    morning; a relative one cannot.
+    """
+    if not ts: return ''
+    try:
+        d = dt.datetime.fromisoformat(ts.replace('Z', '+00:00'))
+        if d.tzinfo is None: d = d.replace(tzinfo=dt.timezone.utc)
+    except ValueError:
+        return ''
+    return d.astimezone().strftime('%H:%M')
+
 # ---------------------------------------------------------------- what is alive
 # EVERY PATTERN IS BRACKETED. `pgrep -f "sweep_backlog"` matches the shell running the
 # pgrep, so a naive check reports itself as a running job -- the self-matching pattern
@@ -713,17 +731,71 @@ def refresh():
 
     # WHERE IT LOOKED, read off the log rather than assumed. A watcher that did not run
     # is a watcher that did not look, and the difference matters when something is missing.
+    # WHAT EACH STEP FOUND, not just whether it ran.
+    #
+    # TJ, 20 September 2026: "under 'The daily refresh', I want to see the total counts of
+    # what was found in each step." The table said a watcher ran and took 4 seconds, which
+    # answers "did it look" and not "was there anything there" -- and those are different
+    # questions, especially on a morning when the run failed later.
+    #
+    # Counted from the step's OWN slice of the log: everything printed after this script's
+    # invocation and before the next one. Counting the whole file per pattern attributes a
+    # number to whichever step the pattern happened to match first.
+    steps = [t['script'] for t in watcher_targets()]
+    bounds = {}
+    for sc in steps:
+        m = re.search(re.escape(sc), text)
+        bounds[sc] = m.start() if m else None
+    ordered = sorted([(v, k) for k, v in bounds.items() if v is not None])
+    slice_of = {}
+    for i, (pos, sc) in enumerate(ordered):
+        end = ordered[i + 1][0] if i + 1 < len(ordered) else len(text)
+        slice_of[sc] = text[pos:end]
+
+    # READ OFF THE LOG, NOT GUESSED. The first version of this invented the phrases --
+    # "(\d+) new agenda", "(\d+) new document" -- and matched almost nothing, because the
+    # watchers do not say that. watch_meetings.py prints
+    #   "live: 51 boards, 1518 documents listed; 0 new (0 agendas, 0 minutes)"
+    # and the feed watcher prints "N in feed, M new". Those are the sentences to parse,
+    # and they are quoted here so the next person can see what is being matched against.
+    FOUND_PATTERNS = ((r'(\d+) new \((\d+) agendas?, (\d+) minutes?\)', None),
+                      (r'(\d+) in feed, (\d+) new', 'feed items'),
+                      (r'wrote (\d+) vote', 'votes'),
+                      (r'(\d+) new transcript', 'captions'),
+                      (r'(\d+) new recording', 'recordings'))
+
+    def tally(blob):
+        out = []
+        # The meetings watcher reports agendas and minutes inside one sentence, so it is
+        # parsed as a triple rather than three separate patterns that would each match it.
+        for a, ag, mi in re.findall(FOUND_PATTERNS[0][0], blob):
+            for n, label in ((int(ag), 'agendas'), (int(mi), 'sets of minutes')):
+                if n:
+                    out.append(dict(label=label, n=n))
+        for n_in, n_new in re.findall(FOUND_PATTERNS[1][0], blob):
+            if int(n_new):
+                out.append(dict(label='feed items', n=int(n_new)))
+        for pat, label in FOUND_PATTERNS[2:]:
+            hits = [int(x) for x in re.findall(pat, blob)]
+            if sum(hits):
+                out.append(dict(label=label, n=sum(hits)))
+        # Merge duplicates: a step whose sentence appears twice should read once.
+        merged = {}
+        for f in out:
+            merged[f['label']] = merged.get(f['label'], 0) + f['n']
+        return [dict(label=k, n=v) for k, v in merged.items()]
+
     looked = []
     for t in watcher_targets():
         m = re.findall(re.escape(t['script']) + r'[^\n]*?: ([\d.]+)s, exit (\d+)', text)
         looked.append(dict(t, seconds=float(m[-1][0]) if m else None,
-                           exit=int(m[-1][1]) if m else None, ran=bool(m)))
+                           exit=int(m[-1][1]) if m else None, ran=bool(m),
+                           found=tally(slice_of.get(t['script'], ''))))
 
-    found = []
-    for pat, label in ((r'(\d+) new agenda', 'agendas'), (r'(\d+) new minutes', 'minutes'),
-                       (r'(\d+) new video', 'recordings'), (r'(\d+) new transcript', 'captions')):
-        m = re.findall(pat, text)
-        if m: found.append(dict(label=label, n=int(m[-1])))
+    # The run total. SUMMED rather than last-match: a watcher that reports per board
+    # prints the phrase many times, and `m[-1]` quietly published the final board's count
+    # as though it were the morning's.
+    found = tally(text)
 
     # WHAT IT IS ABOUT TO DO. The log prints each claude -p job as it starts, so the last
     # one with no result line after it is the one in flight.
@@ -1074,7 +1146,7 @@ def done_today():
     def card(name, unit, n, last='', what=None):
         if n:
             out.append(dict(name=name, unit=unit, n=n, still_running=name in live,
-                            last=ago(last) if last else '',
+                            last=ago(last) if last else '', at=clock(last),
                             what=what if what is not None else WHAT.get(name, ''),
                             costs=name in AGENTIC))
 
@@ -1095,10 +1167,23 @@ def done_today():
         with open(log, encoding='utf-8', errors='replace') as fh:
             text = fh.read()
     spend = [r for r in rows('agentic-spend.csv') if (r.get('at') or '').startswith(today)]
+    # A TIME, NOT JUST A COUNT. These two were the cards reading "done" with nothing
+    # beside them -- TJ, 20 September 2026: "Seeing refresh failed and all that done today
+    # is not believable." The run log prints these jobs without a clock, but
+    # agentic-spend.csv stamps every one of them, so the last row for the stream is when
+    # the work actually stopped. Where the log counted jobs the registry did not, the time
+    # is still the registry's latest: it is a floor rather than a guess, and a floor is
+    # checkable.
+    def spend_at(stream):
+        ts = [r['at'] for r in spend if r.get('stream') == stream and r.get('at')]
+        return max(ts) if ts else ''
+
     card('Writing up a recorded meeting', 'meetings written up',
-         len(re.findall(r'written \(\$', text)) + sum(1 for r in spend if r['stream'] == 'minutes'))
+         len(re.findall(r'written \(\$', text)) + sum(1 for r in spend if r['stream'] == 'minutes'),
+         spend_at('minutes'))
     card('Reading the votes out of the town’s minutes', 'sets of minutes read',
-         len(re.findall(r'wrote \d+ vote', text)) + sum(1 for r in spend if r['stream'] == 'votes'))
+         len(re.findall(r'wrote \d+ vote', text)) + sum(1 for r in spend if r['stream'] == 'votes'),
+         spend_at('votes'))
 
     # What the WATCHERS found today: seeing, not making, and a different kind of work.
     seen = found_by_day().get(today, collections.Counter())
@@ -1283,7 +1368,9 @@ def page_live(st):
                         '{:,}'.format(d['n']), html.escape(d['unit']),
                         'go' if d['still_running'] else '',
                         'still going' if d['still_running']
-                        else ('last %s' % d['last'] if d['last'] else 'done'),
+                        else ('%s &middot; %s' % (d['at'], d['last'])
+                              if d.get('at') and d['last']
+                              else ('last %s' % d['last'] if d['last'] else 'no time recorded')),
                         html.escape(d['what'])))
 
     # The step-by-step trace stays, folded: it is what you read when something went wrong,
@@ -1321,9 +1408,12 @@ def page_live(st):
         links = ' &middot; '.join('<a href="%s" target="_blank">%s</a>'
                                   % (html.escape(u, quote=True), html.escape(t))
                                   for u, t in w['links'] if u)
+        got = (' &middot; '.join('<b>%d</b> %s' % (f['n'], html.escape(f['label']))
+                                 for f in w.get('found', []))
+               or ('<span style="opacity:.55">nothing new</span>' if w['ran'] else ''))
         h.append('<tr><td><b>%s</b><div class="tiny">%s</div></td>'
-                 '<td class="tiny">%s</td><td class="r">%s</td></tr>'
-                 % (html.escape(w['label']), html.escape(w['where']), links,
+                 '<td class="tiny">%s</td><td class="tiny">%s</td><td class="r">%s</td></tr>'
+                 % (html.escape(w['label']), html.escape(w['where']), links, got,
                     ('<span class="pill go">%.0fs</span>' % w['seconds']) if w['ran']
                     else '<span class="pill">did not run</span>'))
     h.append('</table></div>')

@@ -11,6 +11,7 @@ import {
 } from '../model/cuts'
 import { newGrowthValueFor, type Package } from '../model/rates'
 import { Disclose, Note } from '../components/primitives'
+import { EditNote } from '../components/WhatChanged'
 import { ScenarioBar, type YearRemainder } from '../components/ScenarioBar'
 import { LeverWorkbench } from '../components/Levers'
 import { HealthInsurance } from '../components/HealthInsurance'
@@ -306,6 +307,10 @@ export function Adjust({ seed, option = null, onJump, onDevelopment, newValue,
         years={years} warnings={warnings} onReset={resetAll} onResetItem={resetItem} />
 
       <div className="mx-auto max-w-6xl px-5 pt-8 pb-16 grid gap-8">
+        {/* ABOVE THE FIGURE, not below it. The gap in the heading below moved 47% on
+            20 September 2026, and a reader arriving to quote it needs to meet the reason
+            before they meet the number. */}
+        <EditNote tag="v15" />
         <div>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-[1.1] max-w-3xl">
             Close the {usd(gap)} yourself

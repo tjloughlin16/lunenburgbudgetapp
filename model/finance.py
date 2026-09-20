@@ -98,10 +98,91 @@ FY27 = dict(
     levy_limit=34_133_581.28, excluded_debt=2_199_352.52,
     state_aid=11_404_917 + 471_121, local_receipts=3_508_024,
     omnibus=49_963_990.19, lps_appropriation=26_572_288,
-    stm_addbacks=453_722, monty_tech=1_452_426,
-    # Of the $453,722 plan, $103,722 comes from FY27 health insurance savings and
-    # $350,000 is the article the 3 September 2026 Special Town Meeting votes on.
-    stm_appropriation=350_000,
+    stm_addbacks=392_264, monty_tech=1_452_426,
+    # WHAT THE 3 SEPTEMBER 2026 SPECIAL TOWN MEETING ACTUALLY DID, read off the electronic
+    # voting display in the meeting's own recording rather than off the warrant or the
+    # district's deck -- both of which say something different, and one of them by a factor
+    # of five.
+    #
+    #   ARTICLE 1  $418,056.00 raised and appropriated, 2/3 required, 263-40-0 of 303.
+    #              "as voted under Article 10 of the May 2, 2026 Annual Town Meeting."
+    #   ARTICLE 3  $30,308.00 transferred from the Winter Recovery Assistance Program
+    #              (WRAP) Special Revenue Fund, majority, 224-29-0 of 253.
+    #   ARTICLE 2  passed over.
+    #
+    # The warrant asked $151,338.38 from Certified FREE CASH for Article 3. The motion on
+    # the floor moved $30,308.00 from a special revenue fund instead -- a fifth of the
+    # money and a different source, which also changed the vote threshold. Citing the
+    # warrant alone would have published a figure five times too large. Rule 13: the
+    # warrant is the authoritative ARTICLE, the motion is the authoritative AMOUNT.
+    #
+    # WHAT CARRIES FORWARD, AND WHAT DOES NOT. `stm_addbacks` is the part of the plan that
+    # becomes RECURRING SALARY, and it is $392,264 rather than the $418,000 appropriated:
+    #
+    #   Primary — Second Grade Teacher       103,722   salary, carries
+    #   THES — 1.0 Reading Specialist        103,722   salary, carries
+    #   LHS — .5 Assistant Principal          90,450   salary, carries
+    #   LHS — .4 Music Teacher                26,370   salary, carries
+    #   District — 1.0 COTA                   68,000   salary, carries
+    #   LMHS — Literacy Prof. Development     15,736   one-off, does NOT carry
+    #   Athletics — Transportation            10,000   annual cost, NOT salary; see below
+    #                                        -------
+    #                                        418,000   (the deck's total; the warrant's is
+    #                                                   $418,056, and the split is the
+    #                                                   deck's -- it is the only document
+    #                                                   that gives one)
+    #
+    # The $10,000 of athletic transportation is deliberately out of the salary bucket: it
+    # is an annual operating cost rather than payroll, it does not take the salary
+    # escalator, and whether it recurs at all is a budget decision rather than a fact.
+    # TJ, 19 September 2026, choosing this over carrying the whole $418,000.
+    #
+    # THE CLIFF, which is the reason any of this is in the cost base at all. Article 1 is
+    # one year of state receipts above what the town budgeted -- the Governor signed the
+    # FY27 state budget on 7 July 2026 -- and Article 3 is a transfer from a fund created
+    # by Select Board vote the day before Town Meeting. The money arrives once. The people
+    # it hired are still employed the year after, so $392,264 of salary lands in FY28 with
+    # no recurring revenue behind it and takes the salary rate every year thereafter. A
+    # restoration funded this way is a cut DEFERRED, not a cut reversed.
+    #
+    # 9.2 positions were cut in the FY27 cycle and 3.9 are restored here -- a second grade
+    # teacher, a reading specialist, half an assistant principal, four tenths of a music
+    # teacher and a COTA. The net is 5.3, and the net is the wrong figure to publish,
+    # because it says three point nine came back rather than came back for a year.
+    # ZERO, AND THAT IS THE WHOLE POINT. This field enters `approp`, which then COMPOUNDS
+    # forward every year -- so a non-zero value here asserts that the town hands the schools
+    # that much extra every year from now on. It held $350,000 (an early estimate of
+    # Article 1) and was therefore quietly projecting a one-year state windfall as a
+    # permanent raise, which made the gap look smaller than it is.
+    #
+    # Article 1 is one year of receipts above what the town budgeted, because the Governor
+    # signed the FY27 state budget on 7 July 2026. Article 3 is a transfer from a fund
+    # created by Select Board vote the day before Town Meeting. Neither recurs.
+    #
+    # AND THE REVENUE IS ALREADY HERE ANYWAY, which is the trap this field would spring
+    # twice. `state_aid` above is 11,404,917 + 471,121: the Governor's gross cherry sheet
+    # plus the ENACTED budget's increase over it. The warrant's $418,056 is the
+    # education-specific part of that same enacted increase. Adding it again as
+    # appropriation would count one windfall twice.
+    #
+    # So the money sits in revenue once, for one year, and the $392,264 of salary it bought
+    # sits in the cost base for ever. That asymmetry IS the finding. TJ, 20 September 2026.
+    #
+    # THE TOWN'S OWN FRAMING, and it is the shared premise rather than the argument. The
+    # Finance Committee of 13 August 2026 debates this money in exactly these words --
+    # "we have used one-time funds to fund operations. We did it for fiscal year 26 that we
+    # just ended" (the recording at 0:21:25) and "I for one am not hindered by the use of
+    # one-time funds to fund this ... there is now precedent" (0:22:05). What is CONTESTED
+    # there is whether spending it on operations is wise. That it does not recur is what
+    # both sides assume in order to have the argument at all.
+    #   https://www.youtube.com/watch?v=v4qvpgKlYRg&t=1285s
+    #   https://www.youtube.com/watch?v=v4qvpgKlYRg&t=1325s
+    # Cited as the RECORDING at a timestamp, never as minutes: those lines are our machine
+    # captions, which are a finding aid and not a record. The decision above rests on the
+    # warrant, which is a legal instrument and says the same thing in the town's own hand:
+    # the enacted state budget "made available $418,056.00 more in education-specific
+    # receipts than the Town's FY27 budget initially anticipated."
+    stm_appropriation=0,
 )
 
 

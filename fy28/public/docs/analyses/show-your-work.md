@@ -85,8 +85,8 @@ enacted state budget.
 | Local receipts | $3,508,024 | `published` |
 | Omnibus budget as appropriated | $49,963,990.19 | `published` |
 | School appropriation | $26,572,288 | `published` |
-| September Town Meeting article | $350,000 | `published` |
-| Programs that article restores | $453,722 | `published` |
+| September Town Meeting article | $0 | `published` |
+| Programs that article restores | $392,264 | `published` |
 
 ### How next year’s revenue is worked out
 
@@ -141,30 +141,37 @@ appropriation of $26,572,288 — a difference of
 $2, which is rounding in the
 district’s own workbook and is not corrected here.
 
-The $453,722 of programs restored at the September Special Town
+The $392,264 of programs restored at the September Special Town
 Meeting is added to salaries, because that money is one-time and carrying those
 programs into FY28 is itself a cost the district has to absorb.
 
 | group | FY27 | share of the budget | grows at | that rate is |
 |:--|--:|--:|--:|:--|
-| Salaries, other than special education | $13,409,674 | 49.6% | 4.00% | `contract` |
-| Special education, in district | $5,466,201 | 20.2% | 6.49% | `ours` |
+| Salaries, other than special education | $13,348,216 | 49.5% | 4.00% | `contract` |
+| Special education, in district | $5,466,201 | 20.3% | 6.49% | `ours` |
 | Health insurance and unemployment | $4,019,071 | 14.9% | 9.00% | `published` |
 | Everything else | $1,772,053 | 6.6% | 3.00% | `published` |
 | Transportation, other than special education | $1,053,360 | 3.9% | 6.00% | `ours` |
 | Out-of-district tuition | $700,142 | 2.6% | 0.00% | `ours` |
 | Utilities | $605,511 | 2.2% | 5.00% | `published` |
-| **Total** | **$27,026,012** | **100.0%** | **5.18%** blended |  |
+| **Total** | **$26,964,554** | **100.0%** | **5.18%** blended |  |
 
 **Two things in that table are worth stopping on.**
 
-*The cost side and the revenue side do not get the same addback.* Costs carry the
-whole $453,722 restoration plan. Revenue carries only the
-$350,000 Town Meeting article, because the balance —
-$103,722 — came from health insurance
-savings inside FY27 that do not recur. So the projection begins FY28 already
-carrying that amount as gap. That is deliberate, and it is a judgement; anyone who
-thinks those savings do recur should take it off.
+*The cost side carries the restorations and the revenue side carries nothing.*
+Costs take the whole $392,264 of restored salary. Revenue takes
+none of the money that paid for it, because none of that money recurs: the
+3 September 2026 Special Town Meeting appropriated $418,056 of state receipts the
+Governor’s FY27 budget made available above what the town had assumed, and
+transferred $30,308 from a fund the Select Board created the day before. The town
+debates this money in exactly those terms — the Finance Committee of 13 August 2026
+argues about whether it is wise to fund operations with "one-time funds", which is
+an argument that takes for granted they are one-time.
+
+So the projection begins FY28 already carrying that salary as gap, and that is the
+whole of what a one-time restoration does: the people stay employed and the money
+that hired them does not come back. It is a judgement, and anyone who believes the
+state will repeat the increase should put it back on.
 
 *Unemployment compensation sits in the health insurance group.* It is
 $25,000 of the
@@ -178,18 +185,18 @@ figure they cannot account for.
 
 ```
 School appropriation, FY27                                $26,572,288
-  plus the September Town Meeting article                   +$350,000
-  grown at the town’s revenue growth of 3.23%               +$870,222
+  plus the September Town Meeting article                         +$0
+  grown at the town’s revenue growth of 3.23%               +$858,909
                                                       ---------------
-Money available to the schools, FY28                      $27,792,510
+Money available to the schools, FY28                      $27,431,197
                                                       ---------------
-Cost of the same services, on the FY27 basis              $27,026,012
-  each group grown at its own rate (blended 5.18%)        +$1,399,375
+Cost of the same services, on the FY27 basis              $26,964,554
+  each group grown at its own rate (blended 5.18%)        +$1,396,917
                                                       ---------------
-Cost of the same services, FY28                           $28,425,387
-Money available to the schools, FY28                      $27,792,510
+Cost of the same services, FY28                           $28,361,470
+Money available to the schools, FY28                      $27,431,197
                                                       ---------------
-GAP                                                          $632,876
+GAP                                                          $930,273
 ```
 
 Those figures are recomputed from the steps above and checked against the model
@@ -205,31 +212,31 @@ added together, and each one is not "the extra hole that year" either.
 
 | year | cost of the same services | money available | shortfall that year, if nothing is done first | of which is new that year | town revenue growth |
 |:--|--:|--:|--:|--:|--:|
-| FY28 | $28,425,387 | $27,792,510 | $632,876 | $632,876 | 3.23% |
-| FY29 | $29,908,680 | $28,684,645 | $1,224,035 | $570,844 | 3.21% |
-| FY30 | $31,481,524 | $29,599,248 | $1,882,276 | $619,219 | 3.19% |
-| FY31 | $33,149,963 | $30,536,892 | $2,613,071 | $671,164 | 3.17% |
-| FY32 | $34,920,491 | $31,498,162 | $3,422,328 | $726,998 | 3.15% |
-| FY33 | $36,800,078 | $32,483,659 | $4,316,419 | $787,006 | 3.13% |
+| FY28 | $28,361,470 | $27,431,197 | $930,273 | $930,273 | 3.23% |
+| FY29 | $29,842,207 | $28,311,734 | $1,530,474 | $570,339 | 3.21% |
+| FY30 | $31,412,392 | $29,214,447 | $2,197,945 | $618,679 | 3.19% |
+| FY31 | $33,078,066 | $30,139,901 | $2,938,165 | $670,589 | 3.17% |
+| FY32 | $34,845,718 | $31,088,674 | $3,757,043 | $726,385 | 3.15% |
+| FY33 | $36,722,314 | $32,061,359 | $4,660,955 | $786,354 | 3.13% |
 
 **Three different questions, three different answers, and they get confused for
 each other constantly:**
 
 | the question | answer for FY29 |
 |:--|:--|
-| What is the shortfall in FY29, if the town does nothing in FY28? | **$1,224,035** — the gap column |
-| How much of that is new in FY29, over and above the FY28 hole carried forward? | **$570,844** — the second column |
-| What do the shortfalls come to across FY28–FY33 added together? | **$14,091,005** |
+| What is the shortfall in FY29, if the town does nothing in FY28? | **$1,530,474** — the gap column |
+| How much of that is new in FY29, over and above the FY28 hole carried forward? | **$570,339** — the second column |
+| What do the shortfalls come to across FY28–FY33 added together? | **$16,014,855** |
 
-So FY29’s $1,224,035 is **not**
-$632,876 plus something. It is what FY29 looks like
+So FY29’s $1,530,474 is **not**
+$930,273 plus something. It is what FY29 looks like
 on its own if FY28 was left alone — the earlier shortfall is still
 there, and a year of growth has been added on top of it.
 
 **And the same word means something different in Section 10.** There, every year’s
 gap is what is left *after* the previous years have been cut, which is a much
-smaller number: FY29 is $1,224,035 here and
-$556,851 there — 55% lower. Both are
+smaller number: FY29 is $1,530,474 here and
+$553,726 there — 64% lower. Both are
 correct. They answer different questions, and the distance between them is the
 value of acting early rather than late.
 
@@ -282,8 +289,8 @@ adds up to the amount by which the whole budget outruns Proposition 2½.
 | line | share | grows at | above the cap by | contribution | that rate is |
 |:--|--:|--:|--:|--:|:--|
 | Health insurance and unemployment | 14.9% | 9.00% | 6.50% | **0.97** | `published` |
-| Special education, in district | 20.2% | 6.49% | 3.99% | **0.81** | `ours` |
-| Salaries, other than special education | 49.6% | 4.00% | 1.50% | **0.74** | `contract` |
+| Special education, in district | 20.3% | 6.49% | 3.99% | **0.81** | `ours` |
+| Salaries, other than special education | 49.5% | 4.00% | 1.50% | **0.74** | `contract` |
 | Transportation, other than special education | 3.9% | 6.00% | 3.50% | **0.14** | `ours` |
 | Utilities | 2.2% | 5.00% | 2.50% | **0.06** | `published` |
 | Everything else | 6.6% | 3.00% | 0.50% | **0.03** | `published` |
@@ -296,7 +303,7 @@ and the difference between them is those 2.68 points.
 ### The same fact, two ways
 
 **Salaries, other than special education** is the largest line in the budget at
-$13,409,674 — 49.6% of all spending.
+$13,348,216 — 49.5% of all spending.
 It grows at 4.00%, which is 1.50% above the
 cap, so it contributes 0.74 points.
 
@@ -606,10 +613,10 @@ priced: each row below re-runs the whole projection with tuition set to that amo
 
 | scenario | tuition | FY28 gap | against the budgeted figure |
 |:--|--:|--:|--:|
-| As the district budgeted it for FY27 | $700,142 | $632,876 | — |
-| Midway back | $1,000,000 | $932,734 | +$299,858 |
-| Back to the FY25 budget | $1,164,824 | $1,097,558 | +$464,682 |
-| Back to the FY26 budget | $1,291,293 | $1,224,027 | +$591,151 |
+| As the district budgeted it for FY27 | $700,142 | $930,273 | — |
+| Midway back | $1,000,000 | $1,230,131 | +$299,858 |
+| Back to the FY25 budget | $1,164,824 | $1,394,955 | +$464,682 |
+| Back to the FY26 budget | $1,291,293 | $1,521,424 | +$591,151 |
 
 The full width of that range is $591,151 of FY28
 gap. It is the widest single-assumption range anywhere in this model.
@@ -898,15 +905,15 @@ Six years of gap under each policy:
 
 | keep in reserve | which is | released once | plus, every year | gap remaining, one-off only | gap remaining, with the policy |
 |:--|:--|--:|--:|--:|--:|
-| 8% | above the recommended range | $0 | $2,026,212 | $14,091,005 | $1,933,733 |
-| 7% | top of the recommended range | $0 | $2,026,212 | $14,091,005 | $1,933,733 |
-| 6% | middle of the recommended range | $282,972 | $2,026,212 | $13,808,033 | $1,650,761 |
-| 5% | bottom of the recommended range | $794,872 | $2,026,212 | $13,296,133 | $1,138,861 |
-| 4% | below the range — and about what a normal year generates | $1,306,772 | $2,026,212 | $12,784,233 | $626,961 |
-| 3% | well below the range | $1,818,671 | $2,026,212 | $12,272,334 | $115,062 |
-| 2% | well below the range | $2,330,571 | $2,026,212 | $11,760,434 | -$396,838 |
-| 1% | nearly nothing held back | $2,842,470 | $2,026,212 | $11,248,535 | -$908,737 |
-| 0% | spend everything, hold no reserve | $3,354,370 | $2,026,212 | $10,736,635 | -$1,420,637 |
+| 8% | above the recommended range | $0 | $2,026,212 | $16,014,855 | $3,857,583 |
+| 7% | top of the recommended range | $0 | $2,026,212 | $16,014,855 | $3,857,583 |
+| 6% | middle of the recommended range | $282,972 | $2,026,212 | $15,731,883 | $3,574,611 |
+| 5% | bottom of the recommended range | $794,872 | $2,026,212 | $15,219,983 | $3,062,711 |
+| 4% | below the range — and about what a normal year generates | $1,306,772 | $2,026,212 | $14,708,083 | $2,550,811 |
+| 3% | well below the range | $1,818,671 | $2,026,212 | $14,196,184 | $2,038,912 |
+| 2% | well below the range | $2,330,571 | $2,026,212 | $13,684,284 | $1,527,012 |
+| 1% | nearly nothing held back | $2,842,470 | $2,026,212 | $13,172,385 | $1,015,113 |
+| 0% | spend everything, hold no reserve | $3,354,370 | $2,026,212 | $12,660,485 | $503,213 |
 
 ### Free cash against an override — a one-off against a permanent change
 
@@ -921,18 +928,18 @@ At $794,872:
 
 | FY | gap | free cash applied | gap after free cash | override worth | gap after override |
 |:--|--:|--:|--:|--:|--:|
-| FY28 | $632,876 | $794,872 | -$161,996 | $794,872 | -$161,996 |
-| FY29 | $1,224,035 | $0 | $1,224,035 | $814,744 | $409,291 |
-| FY30 | $1,882,276 | $0 | $1,882,276 | $835,112 | $1,047,164 |
-| FY31 | $2,613,071 | $0 | $2,613,071 | $855,990 | $1,757,081 |
-| FY32 | $3,422,328 | $0 | $3,422,328 | $877,390 | $2,544,938 |
-| FY33 | $4,316,419 | $0 | $4,316,419 | $899,325 | $3,417,094 |
+| FY28 | $930,273 | $794,872 | $135,401 | $794,872 | $135,401 |
+| FY29 | $1,530,474 | $0 | $1,530,474 | $814,744 | $715,730 |
+| FY30 | $2,197,945 | $0 | $2,197,945 | $835,112 | $1,362,833 |
+| FY31 | $2,938,165 | $0 | $2,938,165 | $855,990 | $2,082,175 |
+| FY32 | $3,757,043 | $0 | $3,757,043 | $877,390 | $2,879,653 |
+| FY33 | $4,660,955 | $0 | $4,660,955 | $899,325 | $3,761,630 |
 
 | six-year total gap | amount |
 |:--|--:|
-| Doing nothing | $14,091,005 |
-| With the free cash draw | $13,296,133 |
-| With an override of the same size | $9,013,572 |
+| Doing nothing | $16,014,855 |
+| With the free cash draw | $15,219,983 |
+| With an override of the same size | $10,937,422 |
 
 **Note what this shows, and what it must not be made to say.** An override of this
 size does not close the gap either. It grows at 2.5% while the gap
@@ -1373,11 +1380,11 @@ difference is the whole argument for acting early rather than late.
 
 | FY | shortfall that year, after earlier years have been cut | cut | cumulative positions lost | still unclosed |
 |:--|--:|--:|--:|--:|
-| FY28 | $632,876 | $641,523 | 2.9 | — |
-| FY29 | $556,851 | $603,287 | 3.9 | — |
-| FY30 | $560,986 | $793,806 | 14.7 | — |
-| FY31 | $413,372 | $433,129 | 18.2 | — |
-| FY32 | $684,187 | $777,687 | 22.2 | — |
+| FY28 | $930,273 | $939,180 | 2.9 | — |
+| FY29 | $553,726 | $624,436 | 9.9 | — |
+| FY30 | $532,715 | $595,400 | 15.2 | — |
+| FY31 | $587,110 | $587,709 | 19.2 | — |
+| FY32 | $700,728 | $707,727 | 24.2 | — |
 
 ### Where the cutting stops, which is ours
 
@@ -1472,11 +1479,11 @@ roughly doubles what commercial development appears to be worth.
 
 ```
 A dollar added to the town’s levy limit                         $1.00
-  of which reaches the schools                                  $0.54
+  of which reaches the schools                                  $0.53
                                                       ---------------
-FY28 school gap                                              $632,876
-  levy needed to close it                                  $1,174,529
-  new taxable value needed, in one year                   $81,621,175
+FY28 school gap                                              $930,273
+  levy needed to close it                                  $1,749,196
+  new taxable value needed, in one year                  $121,556,338
 ```
 
 ### The same requirement, in buildings
@@ -1486,11 +1493,11 @@ things a town actually permits.
 
 | unit | assessed value | needed to close the FY28 gap in one year |
 |:--|--:|--:|
-| An average existing Lunenburg business | $907,449 | 48 of them |
-| A typical mixed development | $3,005,000 | 14.6 of them |
-| The town’s entire FY2026 new growth, as certified | $36,117,700 | 1.2 times it |
+| An average existing Lunenburg business | $907,449 | 71 of them |
+| A typical mixed development | $3,005,000 | 21.5 of them |
+| The town’s entire FY2026 new growth, as certified | $36,117,700 | 1.8 times it |
 
-48 average businesses is 21% of
+71 average businesses is 30% of
 every business in town — there are 234, per the 2024 Census
 Business Patterns — added in a single year, and again the next year, because the gap
 grows.
@@ -1514,9 +1521,9 @@ satisfies levy divided by value.
 
 | new commercial value | rate without it | rate with it | effect on the average bill | revenue raised | share of the FY28 gap |
 |--:|--:|--:|--:|--:|--:|
-| $5,000,000 | $14.7498 | $14.7490 | -$0.36 | $71,950 | 11% |
-| $15,000,000 | $14.7498 | $14.7476 | -$1.14 | $215,850 | 34% |
-| $30,000,000 | $14.7498 | $14.7455 | -$2.22 | $431,700 | 68% |
+| $5,000,000 | $14.7498 | $14.7490 | -$0.36 | $71,950 | 8% |
+| $15,000,000 | $14.7498 | $14.7476 | -$1.14 | $215,850 | 23% |
+| $30,000,000 | $14.7498 | $14.7455 | -$2.22 | $431,700 | 46% |
 
 **The benefit of commercial growth is not a lower rate. It is a bill that rises more
 slowly than it otherwise would**, because the alternative to new growth is an
@@ -1530,15 +1537,15 @@ grows at 2.5% a year like the rest of the levy.
 > Cost to one household = the override amount ÷ total taxable value × that home’s value
 
 ```
-An override covering the whole FY28 school gap               $632,876
-  cost to the average home, per year                          $131.52
+An override covering the whole FY28 school gap               $930,273
+  cost to the average home, per year                          $193.32
                                                       ---------------
-The same, if the question is town-wide rather than school-only       $1,174,529
-  cost to the average home, per year                          $244.08
+The same, if the question is town-wide rather than school-only       $1,749,196
+  cost to the average home, per year                          $363.51
 ```
 
 A general override has to be about 1.9 times the size to do the same
-work for the schools, because the schools receive only 53.88% of a levy
+work for the schools, because the schools receive only 53.18% of a levy
 dollar.
 
 ### How much a new override would have to raise, every year
@@ -1552,12 +1559,12 @@ own — the fresh hole, over and above the one already there.
 
 | FY | total gap | the fresh part of it | town-wide question needed to raise that |
 |:--|--:|--:|--:|
-| FY28 | $632,876 | $632,876 | $1,174,529 |
-| FY29 | $1,224,035 | $570,844 | $1,059,406 |
-| FY30 | $1,882,276 | $619,219 | $1,149,183 |
-| FY31 | $2,613,071 | $671,164 | $1,245,586 |
-| FY32 | $3,422,328 | $726,998 | $1,349,206 |
-| FY33 | $4,316,419 | $787,006 | $1,460,572 |
+| FY28 | $930,273 | $930,273 | $1,749,196 |
+| FY29 | $1,530,474 | $570,339 | $1,072,410 |
+| FY30 | $2,197,945 | $618,679 | $1,163,304 |
+| FY31 | $2,938,165 | $670,589 | $1,260,911 |
+| FY32 | $3,757,043 | $726,385 | $1,365,824 |
+| FY33 | $4,660,955 | $786,354 | $1,478,584 |
 
 Each town-wide question is about 1.9 times the fresh school gap,
 because the schools receive only a share of a levy dollar.
@@ -1598,13 +1605,13 @@ produced by running the real projection twice, not estimated.
 
 | assumption | currently | moved by | FY28 gap | FY33 gap | grade | what backs it |
 |:--|--:|--:|--:|--:|:--|:--|
-| Levy growth | 2.50% | +1 point | −$183,923 | −$1,314,411 | `given` | Proposition 2½. Fixed by statute |
-| Salary growth | 4.00% | +1 point | +$134,097 | +$1,002,730 | `given` | The teachers’ agreement — scale increases plus steps |
-| State aid growth | 2.75% | +1 point | −$63,992 | −$450,570 | `derived` | The median annual step in the town’s own Subtotal State Aid line across 23 consecutive budget years, FY2005–FY2027 — see below |
+| Levy growth | 2.50% | +1 point | −$181,532 | −$1,297,324 | `given` | Proposition 2½. Fixed by statute |
+| Salary growth | 4.00% | +1 point | +$133,482 | +$998,135 | `given` | The teachers’ agreement — scale increases plus steps |
+| State aid growth | 2.75% | +1 point | −$63,160 | −$444,712 | `derived` | The median annual step in the town’s own Subtotal State Aid line across 23 consecutive budget years, FY2005–FY2027 — see below |
 | Special education, in district | 6.49% | +1 point | +$54,662 | +$459,768 | `derived` | Two contracts and two measured trends, weighted by share — Section 4, with the trend tests and a five-point range published beside it |
-| New growth per year | $400,000 | +$100,000 | −$53,883 | −$344,193 | `given` | The town’s own FY27 estimate — though its own series has been falling, Section 11 |
+| New growth per year | $400,000 | +$100,000 | −$53,183 | −$339,718 | `given` | The town’s own FY27 estimate — though its own series has been falling, Section 11 |
 | Health insurance | 9.00% | +1 point | +$40,191 | +$379,645 | `given` | The district’s own stated assumption for FY27 |
-| Local receipts growth | 1.00% | +1 point | −$18,902 | −$122,189 | **`BARE`** | Nothing. No stated source and no derivation — see below |
+| Local receipts growth | 1.00% | +1 point | −$18,657 | −$120,601 | **`BARE`** | Nothing. No stated source and no derivation — see below |
 | Everything else | 3.00% | +1 point | +$17,721 | +$126,288 | `given` | The district’s own stated assumption for FY27 |
 | Transportation | 6.00% | +1 point | +$10,534 | +$86,598 | `judged` | The district assumed 10%. This is softer, and ours, and rests on no trend test |
 | Out-of-district tuition | 0.00% | +1 point | +$7,002 | +$43,073 | `derived` | Held flat because eleven budgets show no trend — Section 5. The risk is priced as scenarios instead |
@@ -1642,7 +1649,7 @@ budget — and it is a FORMULA whose inputs move independently, not a trend. Not
 tests whether its next five years resemble its last five.
 
 It remains the largest revenue lever here. It is worth
-$63,992 of FY28 gap for every point it moves —
+$63,160 of FY28 gap for every point it moves —
 larger than the entire transportation growth rate by a factor of
 6.
 

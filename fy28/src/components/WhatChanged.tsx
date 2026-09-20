@@ -240,3 +240,54 @@ function Release({ r, current }: { r: typeof R.items[number]; current: boolean }
     </div>
   )
 }
+
+/** A dated note at the top of a page whose central figure has just moved.
+ *
+ *  THE STRIP AT THE TOP OF EVERY PAGE IS NOT ENOUGH FOR THIS. It is dismissible, it is
+ *  one line, and it appears only to somebody who has been here before — which is exactly
+ *  the wrong audience for a correction. The reader who most needs to know that a number
+ *  moved is the one arriving today to quote it.
+ *
+ *  So: on the page whose headline figure changed, a note that is not dismissible, sits
+ *  above the figure rather than below it, and says by how much and why in the first
+ *  sentence. TJ, 20 September 2026, on the FY28 gap moving 47%: "if we're bumping the gap
+ *  from 600k to 900k we need to explain that as an EDIT note at the top of the page."
+ *
+ *  EVERY WORD OF IT COMES FROM model/releases.py. Rule 2 — a correction notice that
+ *  restates its own figures is the one thing on this site most likely to be left behind
+ *  when the next correction lands, and a stale correction notice is worse than none. */
+export function EditNote({ tag }: { tag?: string }) {
+  const [open, setOpen] = useState(false)
+  const items = (R as unknown as { items: Array<{
+    tag: string; date: string; title: string; headline: string; changes: string[]
+  }> }).items
+  const rel = items?.find(r => (tag ? r.tag === tag : true))
+  if (!rel) return null
+
+  return (
+    <aside className="card p-4 sm:p-5"
+      style={{ borderColor: 'var(--status-warning)', borderWidth: 2 }}>
+      <div className="text-[11px] uppercase tracking-wide font-bold"
+        style={{ color: 'var(--status-warning)' }}>
+        Edited {longDate(rel.date)} — a figure on this page moved
+      </div>
+      <h2 className="text-[16px] sm:text-[17px] font-bold leading-snug mt-1.5">
+        {rel.title}
+      </h2>
+      <p className="text-[14px] leading-relaxed mt-2">{rel.headline}</p>
+      <button type="button" onClick={() => setOpen(o => !o)} aria-expanded={open}
+        className="text-[12.5px] font-semibold mt-2.5"
+        style={{ color: 'var(--series-cost)' }}>
+        {open ? 'Hide' : 'Why, in full'}
+      </button>
+      {open && (
+        <ul className="mt-2.5 grid gap-2.5">
+          {rel.changes.map((c, i) => (
+            <li key={i} className="text-[13.5px] leading-relaxed"
+              style={{ color: 'var(--text-secondary)' }}>{c}</li>
+          ))}
+        </ul>
+      )}
+    </aside>
+  )
+}

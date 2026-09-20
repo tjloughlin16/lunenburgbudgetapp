@@ -171,3 +171,11 @@ sources/data/search-fts.db
 # is tracked, so the whole directory is ignored: an unpublished post must not become
 # committable by somebody adding a file next to these.
 build/
+
+# Reader feedback, and what was said back. LOCAL ONLY, and the reason is the people in it:
+# a resident who emails this project privately has not published anything, and nothing
+# about writing to us should put their name or their words on GitHub. The folder is worth
+# keeping -- it is the only record of how this site reads to somebody who did not build it
+# -- and it is not worth publishing. What it CHANGES belongs in the repo; who said it does
+# not. See notes/feedback/README.md.
+notes/feedback/
