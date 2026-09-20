@@ -24,7 +24,7 @@ each year's calculation equals the next year's opening figure. **81 checks acros
 and five years, all tie to the dollar.** `scripts/extract_free_cash.py` refuses to write
 otherwise.
 
-This closes `notes/DATA-WANTED.md` §5, which had been blocked because DLS sits behind bot
+This closes `notes/findings/DATA-WANTED.md` §5, which had been blocked because DLS sits behind bot
 protection.
 
 ## Certified free cash, 2021 to 2025
@@ -241,7 +241,7 @@ the loss by **131%**.
 losing $300,000 of funding and holding ten unfunded projects in front of it can defer the
 roof and fund $393,949 of smaller queued items instead, or take the four items above the
 roof and stop. Nothing published says whether it would. The site reports both ends and calls
-neither the answer; `notes/DATA-WANTED.md` §3e names the one document that would settle it —
+neither the answer; `notes/findings/DATA-WANTED.md` §3e names the one document that would settle it —
 any prior year's recommended list beside its funded list.
 
 **What this does not show.** It does not show that capital work is lost forever: a project
@@ -293,7 +293,7 @@ its free cash looks the way it does.
 
 **On special education:** *"several paraprofessional salaries were ultimately covered by
 newly identified grants"* is the Town stating, in a published document, the exact mechanism
-`notes/DATA-WANTED.md` §3b calls load-bearing and says the budget cannot distinguish. The
+`notes/findings/DATA-WANTED.md` §3b calls load-bearing and says the budget cannot distinguish. The
 in-district special education escalator is built on a paraprofessional line, and that line
 rising or falling because a grant appeared or ended looks identical, in the budget, to the
 district employing more or fewer people.
@@ -313,7 +313,7 @@ should carry it.
    in the archive.
 3. **Operating budget or total general fund revenue for the eight peers**, so the ratio can
    be compared rather than just computed. DLS Schedule A would carry it —
-   `DATA-WANTED.md` §6, also behind bot protection.
+   `notes/findings/DATA-WANTED.md` §6, also behind bot protection.
 4. **The department-level detail behind the $2,457,761.** The proof gives a town-wide total
    and no breakdown. Which departments turned money back, and whether it is the same ones
    each year, is the difference between a structural pattern and a run of one-offs.

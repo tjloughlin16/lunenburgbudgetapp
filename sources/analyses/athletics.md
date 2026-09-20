@@ -480,7 +480,7 @@ Neither is established.
 The raw GL, requested 29 August 2026: the general fund athletics org `S3066672` (especially
 object `535016`) and fund `1301`, both as native export rather than PDF, plus the RevTrak
 receipts detail and the district's original sport-by-sport file. Recorded in
-`notes/DATA-WANTED.md` §3c.
+`notes/findings/DATA-WANTED.md` §3c.
 
 **If it arrives and holds, the first work is not to publish the new number.** It is to stop
 the deployed note asserting the old one.

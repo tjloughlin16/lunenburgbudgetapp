@@ -331,7 +331,7 @@ magnitude this is a small corner of the budget.
 What travels is the **mechanism**, and it travels to the one question this project has
 repeatedly called load-bearing.
 
-`notes/DATA-WANTED.md` §3b asks how grants and state funding map onto the budget lines,
+`notes/findings/DATA-WANTED.md` §3b asks how grants and state funding map onto the budget lines,
 because the in-district special education escalator is built on a paraprofessional line that
 cannot currently be distinguished from grant money unwinding. That has always been an argument
 from possibility: a line *could* rise because a grant ended.

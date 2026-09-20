@@ -848,7 +848,7 @@ the quantity nobody publishes is a headcount, and the quantity we have is dollar
 ### What would settle it
 
 A list of budgeted positions with their fill dates — the standing question
-`notes/DATA-WANTED.md` calls unanswerable. Failing that, the **payroll register by
+`notes/findings/DATA-WANTED.md` calls unanswerable. Failing that, the **payroll register by
 account**, which would show whether a line paid a person for part of the year or nobody at
 all. Neither is a report the town publishes.
 

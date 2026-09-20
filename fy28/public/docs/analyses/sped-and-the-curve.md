@@ -445,7 +445,7 @@ But a reader should know the alternative and what it is worth, so here it is:
 | Their contract alone | 2.00% | $477,994 |
 
 **What would settle it** is unchanged and now more valuable: DESE's End of Year Financial
-Report separates spending by fund. See `notes/DATA-WANTED.md`.
+Report separates spending by fund. See `notes/findings/DATA-WANTED.md`.
 
 ### The one thing that could undermine this rate, and we cannot see it
 
@@ -474,7 +474,7 @@ not a refutation.
 **What would settle it.** DESE's End of Year Financial Report separates district spending
 by funding source, which is exactly the mapping the district's own budget documents omit.
 The district's grant budgets would do it too. Neither is in this archive; both are
-recorded in `notes/DATA-WANTED.md`.
+recorded in `notes/findings/DATA-WANTED.md`.
 
 **Until then, the rate stands as what it is: what the town has appropriated for this line,
 measured over ten of its own budgets.** That is the right quantity for a model that
