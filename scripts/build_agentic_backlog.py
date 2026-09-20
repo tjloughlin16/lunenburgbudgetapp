@@ -136,7 +136,15 @@ def main():
     for name, how, (done, todo) in streams:
         (dr, do), (tr, to) = split(done, todo)
         b.write('| %s | %d | **%d** | %d | %d | %s |\n' % (name, dr, tr, do, to, how))
-    b.write('\n**Not in any stream, by choice:** minutes-writing for boards outside the policy file waits on `sources/data/recording-minutes-policy.csv`; conclusions on the finance pages are a per-owner writing job, not a batch.\n')
+    # `recording-minutes-policy.csv` READS LIKE A SCOPE FILE AND IS NOT. Its `*` row
+    # covers any board since 2000-01-01, so refresh.covered() matches every transcript:
+    # the file sets PRIORITY -- Town Meeting, then the three budget boards, then the rest
+    # -- and MAX_MINUTES_PER_RUN limits the night. Nothing is excluded, so this footer no
+    # longer says anything is.
+    b.write('\n**Not in any stream, by choice:** conclusions on the finance pages are a '
+            'per-owner writing job rather than a batch. Minutes-writing is NOT in this '
+            'category: `sources/data/recording-minutes-policy.csv` sets the order every '
+            'board is written in, not which boards qualify.\n')
     # PROPOSED, AND NOT COUNTED ABOVE because the extractor does not exist yet -- a row
     # with no data behind it would read as a stream that is running and at zero.
     b.write('\n**Proposed, not built:** *Town Meeting vote displays.* Town Meeting runs '

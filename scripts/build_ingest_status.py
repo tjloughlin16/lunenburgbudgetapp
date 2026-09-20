@@ -1149,10 +1149,15 @@ def held_but_unread():
     not the same -- a transcript we hold is not in any queue until a policy file says the
     board is in scope, so 1,937 of them can sit there looking like nobody's work.
 
-    NOT ALL OF IT IS MEANT TO BE PROCESSED, and the page says so rather than implying a
-    backlog that is really a choice: recording-minutes-policy.csv scopes which boards get
-    written up, and most captions are a finding aid rather than something to derive from.
-    The number worth seeing is the DISTANCE between held and derived, not a target.
+    AND IT IS A REAL BACKLOG, not a choice -- which the first version of this got wrong.
+    recording-minutes-policy.csv looks like a scope file and is not: its `*` row covers
+    any board since 2000-01-01, so `refresh.covered()` matches every transcript. The file
+    sets PRIORITY, not eligibility -- Town Meeting first, then the three budget boards,
+    then everything else -- and MAX_MINUTES_PER_RUN is what actually limits the night.
+    So the queue drains in order and nothing is excluded from it.
+
+    Saying otherwise was the exact failure this section exists to avoid: presenting work
+    as a decision somebody made, when it is work nobody has got to yet.
     """
     import glob as g
     def n(pat):
@@ -1172,8 +1177,9 @@ def held_but_unread():
         dict(held='Machine captions of meetings', n=transcripts,
              made='%s written up as minutes' % '{:,}'.format(minutes),
              left=max(0, transcripts - minutes),
-             note='Captions are a finding aid; only the boards in '
-                  'recording-minutes-policy.csv are written up.'),
+             note='Every board is in scope \u2014 the policy file sets priority, not '
+                  'eligibility. Town Meeting first, then the three budget boards, then '
+                  'the rest, capped per night.'),
         dict(held='Scanned minutes read by OCR', n=ocr_minutes,
              made='%s sets with their votes extracted' % '{:,}'.format(votes),
              left=max(0, ocr_minutes - votes),
