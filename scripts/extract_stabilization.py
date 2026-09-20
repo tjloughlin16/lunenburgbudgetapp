@@ -74,7 +74,19 @@ def extract(fy, path, verbose=False):
     boxes = T.read_boxes(path)
     pages = sorted({b['page'] for b in boxes
                     if 'STABILIZATION' in (b['text'] or '').upper()})
-    best = None
+    # EVERY PAGE THAT PROVES A ROW, NOT THE BEST ONE.
+    #
+    # This used to score the pages and keep the winner, which assumed a year's
+    # stabilization funds live on one table. They do not: the general Stabilization Fund
+    # is in the main trust listing and the Zoning Incentive and Vehicle/Equipment funds
+    # are in "TRUST & STABILIZATION FUNDS HELD BY OTHER BANKS", two pages apart. So
+    # picking a winner meant every year could publish one table's funds and silently drop
+    # the other's -- and it did: FY2018 lost its $1,740,279.81 general fund row to a page
+    # carrying two smaller funds, purely because two beats one.
+    #
+    # There is no need to choose. A row is published because the document's own
+    # arithmetic closes on it, and that test does not care which page it was printed on.
+    found = {}
     for p in pages:
         pb = [b for b in boxes if b['page'] == p]
         rows, cols = R.rows(pb, fy)
@@ -87,16 +99,24 @@ def extract(fy, path, verbose=False):
         if len(cols) < 3:
             continue
         proven = [r for r in rows if R.verify(r['cells'])[0]]
-        stab = [r for r in proven if 'STABIL' in (r['code'] + r['name']).upper()]
-        # The trust-fund table is the page with the most columns that also proves rows.
-        score = (len(stab), len(proven), len(cols))
-        if stab and (best is None or score > best[0]):
-            best = (score, p, stab, len(rows), len(proven))
-    if not best:
+        for r in proven:
+            if 'STABIL' not in (r['code'] + r['name']).upper():
+                continue
+            # ONE ROW PER FUND PER YEAR. The same table is sometimes printed twice in one
+            # report -- a listing and a recap -- and a fund read off both must not appear
+            # twice. Keyed on the account number where the page prints one and on the
+            # name where it does not, and the stronger proof keeps the slot.
+            key = r['code'] or ' '.join(r['name'].split()).upper()[:30]
+            better = (R.verify(r['cells'])[1] == 'both identities hold',
+                      len(r['cells']))
+            if key not in found or better > found[key][0]:
+                found[key] = (better, p, r)
+    if not found:
         return [], 'no page proves a stabilization row'
-    _, page, stab, n_rows, n_proven = best
+    stab = [(p, r) for _, p, r in found.values()]
     if verbose:
-        print('   page %d: %d of %d rows prove themselves' % (page, n_proven, n_rows))
+        for p, r in sorted(stab):
+            print('   page %d: %s' % (p, ' '.join(r['name'].split())[:40]))
     # THE DOCUMENT'S NAME WINS, and where the registry disagrees that is recorded rather
     # than resolved. Substituting the registry silently turned `ZONING INCENTIVE
     # STABILIZATION (TD BANKNORTH)` -- what FY2020 and FY2025 both print against 8129 --
@@ -121,7 +141,7 @@ def extract(fy, path, verbose=False):
                  # string, written when both identities were the only way through, and it
                  # would now be stating two proofs for a row that has one.
                  page=page, basis=R.verify(r['cells'])[1],
-                 document=os.path.relpath(path, ROOT)) for r in stab], None
+                 document=os.path.relpath(path, ROOT)) for page, r in stab], None
 
 
 def main():

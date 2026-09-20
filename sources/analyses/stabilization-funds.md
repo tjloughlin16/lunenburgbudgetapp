@@ -185,6 +185,12 @@ Some years print no ending market value at all: FY2019’s table carries the hea
 
 That is **$490,060.54 more between FY2016 and FY2020**, a rise of 32%, in a fund whose purpose is to be available.
 
+**Each fund, year by year.** Every figure below is a separate page of a separate annual report, read and checked on its own:
+
+- **Zoning Incentive Stabilization** — FY2014 $227,201.90, FY2015 $227,542.95, FY2016 $227,884.96, FY2018 $228,891.82, FY2020 $230,431.40, FY2022 $231,007.68, FY2025 $249,060.25
+- **Stabilization** — FY2016 $1,511,526.92, FY2018 $1,740,279.81, FY2020 $1,978,347.74, FY2021 $2,447,755.21
+- **Vehicle/Equipment Stabilization** — FY2018 $236,302.39, FY2019 $643,788.80, FY2020 $945,669.29, FY2025 $2,598,621.38
+
 Every proven row:
 
 | year | account | fund | ending cash | ending market |
@@ -192,7 +198,10 @@ Every proven row:
 | FY2014 | `—` | ZONING INCENTIVE STABILIZATION (TL 8129 | $227,201.90 | $227,201.90 |
 | FY2015 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $227,542.95 | $227,542.95 |
 | FY2016 | `—` | STABILIZATION | $1,511,526.92 | $1,551,001.18 |
+| FY2016 | `—` | ZONING INCENTIVE STABILIZATION (TD BI 8129 | $227,884.96 | $227,884.96 |
 | FY2018 | `—` | STABILIZATION | $1,740,279.81 | $1,732,690.98 |
+| FY2018 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $236,302.39 | — |
+| FY2018 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $228,891.82 | — |
 | FY2019 | `—` | VEHICLE/EQUIPMENT STABILIZATION (N 8136 | $643,788.80 | — |
 | FY2020 | `—` | STABILIZATION | $1,978,347.74 | $2,041,061.72 |
 | FY2020 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $945,669.29 | $945,669.29 |
@@ -202,7 +211,7 @@ Every proven row:
 | FY2025 | `—` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,598,621.38 | $2,598,621.38 |
 | FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 | $249,060.25 |
 
-**Coverage is 12 rows across 9 years, and that is the point rather than a footnote.** The rest of the run is not missing because nobody looked — it is missing because those pages have not yet yielded a row whose arithmetic closes, and publishing one that does not would be worse than publishing nothing.
+**Coverage is 15 rows across 9 years, and that is the point rather than a footnote.** The rest of the run is not missing because nobody looked — it is missing because those pages have not yet yielded a row whose arithmetic closes, and publishing one that does not would be worse than publishing nothing.
 
 ---
 

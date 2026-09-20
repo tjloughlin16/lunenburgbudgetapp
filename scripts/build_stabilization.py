@@ -27,6 +27,7 @@ spend. A scholarship bequest and the town's own reserve sit in the same table an
 the same instrument.
 """
 import argparse
+import collections
 import csv
 import os
 import re
@@ -272,6 +273,34 @@ def render(rows):
               % (usd(float(last['ending_market']) - float(first['ending_market'])),
                  first['fy'], last['fy'],
                  (float(last['ending_market']) / float(first['ending_market']) - 1) * 100))
+        # EACH FUND'S OWN SERIES, AND WHY IT IS THE STRONGEST THING HERE. Nothing was
+        # built to check the extract across years, and it checks itself: the Zoning
+        # Incentive fund runs FY2014 to FY2025 without a step, read off seven separate
+        # annual reports by seven separate passes of the table reader. And FY2021's table
+        # prints its BEGINNING market value as $2,041,061.72, which is exactly the ENDING
+        # market value this extract proved from FY2020's report -- two independently read
+        # documents agreeing on the balance where one year hands over to the next.
+        def fund_key(r):
+            # The bank is not part of the fund's name, and it moves: 8129 is printed
+            # `(TD BANKNORTH)` in most years, `(TD BI` where the scan clipped it, and
+            # `(TL 8129` where the account number ran into it. Cutting at the bracket
+            # gives the fund, which is what a series is of. The stray account number is
+            # dropped the same way it is elsewhere in this file.
+            n = ' '.join(r['name'].split()).split('(')[0]
+            return ' '.join(w for w in n.split() if not w.isdigit()).strip().title()
+
+        series = collections.defaultdict(list)
+        for r in pv:
+            series[fund_key(r)].append(r)
+        runs = {k: sorted(v, key=lambda r: r['fy'])
+                for k, v in series.items() if len(v) >= 3}
+        if runs:
+            w('**Each fund, year by year.** Every figure below is a separate page of a '
+              'separate annual report, read and checked on its own:\n')
+            for k, v in sorted(runs.items(), key=lambda kv: -len(kv[1])):
+                w('- **%s** \u2014 %s' % (k, ', '.join(
+                    'FY%s %s' % (r['fy'], usd(float(r['ending_cash']))) for r in v)))
+            w('')
         w('Every proven row:\n')
         # ENDING CASH IS THE COLUMN THAT IS ALWAYS PROVEN, so it leads. The market
         # value is the one that sometimes is not printed, and an em dash there means the

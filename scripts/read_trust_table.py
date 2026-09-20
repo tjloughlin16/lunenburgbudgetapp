@@ -349,6 +349,30 @@ def rows(boxes, fy):
     gaps = [a - b for a, b in zip(ys, ys[1:]) if 0.002 < a - b < 0.05]
     band = (statistics.median(gaps) / 2) if len(gaps) >= 3 else 0.004
 
+    # ONE ROW, NOT TWO. The account number and the fund name are printed on the same line
+    # and arrive as separate boxes, and on some years the scan puts them far enough apart
+    # in Y to become two anchors -- so the row's figures are divided between them and
+    # neither half foots. FY2017: `8129` took the ending market value and `ZONING
+    # INCENTIVE STABILIZATION (TD` took the beginning balance, and the page proved nothing.
+    #
+    # It also cost the account numbers. FY2019 and FY2025 published their rows with an
+    # empty `code` for exactly this reason: the code was a whole anchor of its own,
+    # carrying no name, and the row that got written was the nameless one's neighbour.
+    #
+    # A bare code is merged into the nearest named anchor within the row band, and the
+    # code is put at the front of the text where `CODE.match` on the first word will find
+    # it -- which is the shape the writer already expects.
+    bare = [a for a in anchors if CODE.fullmatch(a['text'].strip())]
+    named = [a for a in anchors if a not in bare]
+    for c in bare:
+        near = [a for a in named if abs(Y(a) - Y(c)) < band * 1.6]
+        if not near:
+            continue
+        a = min(near, key=lambda a: abs(Y(a) - Y(c)))
+        a['text'] = '%s %s' % (c['text'].strip(), a['text'].strip())
+    if named:
+        anchors = named
+
     centres = columns(boxes, Y, boundary, fy)
     if not centres:
         return [], []
