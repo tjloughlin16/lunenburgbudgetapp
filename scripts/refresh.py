@@ -448,6 +448,11 @@ def main():
         py('build_search_index.py', '--quiet')
         py('build_app_metrics.py')
         py('build_sitemap.py')
+        # WHAT READERS HAVE ASKED, pulled off the questions database so an unanswered
+        # question cannot sit with no sign of it anywhere a person looks. Counts only --
+        # no bodies, no email addresses. check=False because a courtesy must not fail the
+        # night's ingestion.
+        py('pull_questions.py', check=False)
         py('build_agentic_backlog.py', check=False)     # where every machine-reading stream stands, notes/generated/AGENTIC-BACKLOG.md
         # 9. The search index to D1 -- the analysis database push is NOT run here.
         if not a.no_push:

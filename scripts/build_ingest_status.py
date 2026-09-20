@@ -1137,6 +1137,74 @@ def alert():
 # So every count comes from a registry that records when the work happened, or from the
 # run log, which prints each job as it completes. Where neither exists, the category is
 # left out rather than estimated.
+
+def held_but_unread():
+    """RAW MATERIAL WE HOLD, AGAINST WHAT HAS BEEN MADE FROM IT.
+
+    TJ, 20 September 2026: "can you expose data we have sitting around that hasn't been
+    processed yet? Like if we have OCR data that needs to be processed."
+
+    The streams above answer "what is the job queue". This answers a different question:
+    what is ALREADY ON THIS DISK, fetched and readable, that nothing has read. Those are
+    not the same -- a transcript we hold is not in any queue until a policy file says the
+    board is in scope, so 1,937 of them can sit there looking like nobody's work.
+
+    NOT ALL OF IT IS MEANT TO BE PROCESSED, and the page says so rather than implying a
+    backlog that is really a choice: recording-minutes-policy.csv scopes which boards get
+    written up, and most captions are a finding aid rather than something to derive from.
+    The number worth seeing is the DISTANCE between held and derived, not a target.
+    """
+    import glob as g
+    def n(pat):
+        return len(g.glob(os.path.join(ROOT, pat)))
+
+    transcripts = n('sources/data/youtube-transcripts/*/*.json')
+    minutes = n('sources/data/recording-minutes/*/*.json')
+    ocr_minutes = len([r for r in rows('ocr-minutes.csv') if r.get('ocr_at')])
+    votes = n('sources/data/official-votes/*/*.json')
+    reports_ocr = n('sources/town-budget/ocr/*.tsv')
+    proven_years = 0
+    f = os.path.join(ROOT, 'sources', 'data', 'stabilization-balances.csv')
+    if os.path.exists(f):
+        proven_years = len({r['fy'] for r in csv.DictReader(open(f, encoding='utf-8'))})
+
+    return [
+        dict(held='Machine captions of meetings', n=transcripts,
+             made='%s written up as minutes' % '{:,}'.format(minutes),
+             left=max(0, transcripts - minutes),
+             note='Captions are a finding aid; only the boards in '
+                  'recording-minutes-policy.csv are written up.'),
+        dict(held='Scanned minutes read by OCR', n=ocr_minutes,
+             made='%s sets with their votes extracted' % '{:,}'.format(votes),
+             left=max(0, ocr_minutes - votes),
+             note='An OCR\u2019d scan enters search immediately; the votes are a '
+                  'separate reading.'),
+        dict(held='Annual reports with OCR geometry', n=reports_ocr,
+             made='%d year(s) yielding a PROVEN stabilization row' % proven_years,
+             left=max(0, reports_ocr - proven_years),
+             note='The geometry is cached and the tables are legible. What is missing is '
+                  'a column layout read off each year\u2019s printed header \u2014 see '
+                  'rule 13b.'),
+    ]
+
+
+def reader_questions():
+    """What residents have asked through /ask-a-question.
+
+    Counts only. The bodies and any email addresses stay in the questions database and
+    never reach this machine -- see scripts/pull_questions.py. The refresh pulls them so a
+    question cannot sit unanswered with no sign of it anywhere a person looks.
+    """
+    f = os.path.join(ROOT, 'sources', 'data', 'reader-questions.csv')
+    if not os.path.exists(f):
+        return None
+    rs = list(csv.DictReader(open(f, encoding='utf-8')))
+    open_ = [r for r in rs if (r.get('status') or '') != 'answered']
+    return dict(total=len(rs), open=len(open_), answered=len(rs) - len(open_),
+                newest=max((r.get('asked_at') or '' for r in rs), default=''),
+                oldest_open=min((r.get('asked_at') or '' for r in open_), default=''))
+
+
 def done_today():
     """One card per category: how many landed today, and when the last one did."""
     today = dt.date.today().isoformat()
@@ -1388,6 +1456,45 @@ def page_live(st):
                         '<span class="pill go">done</span>' if x['exit'] == 0
                         else '<span class="pill no">exit %d</span>' % x['exit']))
         h.append('</table></details>')
+
+    # WHAT RESIDENTS HAVE ASKED. Above the refresh because an unanswered question is the
+    # only thing on this page with somebody waiting at the other end of it.
+    q = reader_questions()
+    if q:
+        h.append('<h2>Questions from readers</h2>')
+        h.append('<div class="card %s"><div class="row"><b class="grow">%s open</b>'
+                 '<span class="pill %s">%d answered of %d</span></div>'
+                 % ('on' if q['open'] else '', q['open'],
+                    'go' if q['open'] else '', q['answered'], q['total']))
+        if q['open'] and q['oldest_open']:
+            h.append('<div class="tiny" style="margin-top:6px">Oldest unanswered: <b>%s</b>'
+                     ' &middot; answer at <a href="https://lunenburgbudgetproject.org'
+                     '/ask-a-question" target="_blank">/ask-a-question</a></div>'
+                     % ago(q['oldest_open']))
+        elif q['newest']:
+            h.append('<div class="tiny" style="margin-top:6px">Newest arrived %s. '
+                     'Counts only \u2014 the questions themselves stay in their own '
+                     'database and never reach this machine.</div>' % ago(q['newest']))
+        h.append('</div>')
+
+    # WHAT IS ON THIS DISK THAT NOTHING HAS READ. Different from the backlog above, which
+    # is a job queue: this is raw material already fetched and legible, where the derived
+    # thing does not exist yet.
+    held = held_but_unread()
+    if held:
+        h.append('<h2>Held, and not yet read</h2>')
+        h.append('<div class="card"><div class="tiny" style="margin-bottom:6px">'
+                 'Material already on this disk, against what has been made from it. '
+                 '<b>Not all of it is meant to be processed</b> \u2014 the distance is '
+                 'what is worth seeing, not a target.</div><table>')
+        for x in held:
+            h.append('<tr><td><b>%s</b><div class="tiny">%s</div></td>'
+                     '<td class="r tnum">%s</td><td class="tiny">%s</td>'
+                     '<td class="r"><span class="pill %s">%s unread</span></td></tr>'
+                     % (html.escape(x['held']), html.escape(x['note']),
+                        '{:,}'.format(x['n']), html.escape(x['made']),
+                        'go' if x['left'] else '', '{:,}'.format(x['left'])))
+        h.append('</table></div>')
 
     h.append('<h2>The daily refresh</h2>')
     h.append('<div class="card %s"><div class="row"><b class="grow">%s</b><span class="pill %s">%s</span></div>'
