@@ -1951,6 +1951,18 @@
      "textUrl": "/docs/data/special-revenue-read.csv"
     },
     {
+     "path": "data/annual-report-pages.csv",
+     "title": "Every financial page of every annual report, and what has read it",
+     "stars": 3,
+     "what": "418 pages across fifteen annual town reports that carry a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. 209 read, 195 unread, 14 whose OCR came out upside down and which are a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
+     "kind": "Data",
+     "bytes": 127774,
+     "url": "/docs/data/annual-report-pages.csv",
+     "count": 418,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-pages.csv"
+    },
+    {
      "path": "data/balance-sheet.csv",
      "title": "The combined balance sheet, read from the page",
      "stars": 3,
@@ -1985,18 +1997,6 @@
      "count": 225,
      "unit": "rows",
      "textUrl": "/docs/data/dataset-provenance.csv"
-    },
-    {
-     "path": "data/annual-report-pages.csv",
-     "title": "Every financial page of every annual report, and what has read it",
-     "stars": 3,
-     "what": "418 pages across fifteen annual town reports that carry a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. 209 read, 195 unread, 14 whose OCR came out upside down and which are a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
-     "kind": "Data",
-     "bytes": 50322,
-     "url": "/docs/data/annual-report-pages.csv",
-     "count": 418,
-     "unit": "rows",
-     "textUrl": "/docs/data/annual-report-pages.csv"
     },
     {
      "path": "analyses/questions.md",
@@ -2465,6 +2465,18 @@
      "count": 19,
      "unit": "rows",
      "textUrl": "/docs/data/stabilization-balances.csv"
+    },
+    {
+     "path": "data/ingest-plan.csv",
+     "title": "The plan for the annual-report backlog, in batches",
+     "stars": 2,
+     "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
+     "kind": "Data",
+     "bytes": 2514,
+     "url": "/docs/data/ingest-plan.csv",
+     "count": 7,
+     "unit": "rows",
+     "textUrl": "/docs/data/ingest-plan.csv"
     },
     {
      "path": "data/money-edges.csv",
@@ -15990,9 +16002,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1386,
+  "documents": 1387,
   "groups": 22,
-  "bytes": 2172789714,
+  "bytes": 2172869680,
   "loadBearing": 138
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

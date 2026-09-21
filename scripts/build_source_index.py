@@ -1057,6 +1057,16 @@ GROUPS = [
              'than published. NOTE THE GRAIN: this is CASH HELD BY CUSTODIAN, not a fund '
              'balance \u2014 where it differs from trust-agency-balances.csv, the ledger is '
              'the fund and this is the cash. See scripts/extract_treasurers_cash.py.'),
+            ('data/ingest-plan.csv',
+             'The plan for the annual-report backlog, in batches', 2,
+             'Which of the unread annual-report pages get extracted, in what order, and '
+             'what lands when each batch does. A batch is a TABLE FAMILY rather than a '
+             'set of pages, because the cost is writing an extractor and that is paid '
+             'once per family however many pages it covers \u2014 forty-eight pages of '
+             'special revenue funds are one job, not forty-eight. Page counts are derived '
+             'from annual-report-pages.csv on every run so the plan cannot drift from the '
+             'queue it plans; the batching, the order and the estimates are judgements. '
+             'See scripts/build_ingest_plan.py.'),
             ('data/annual-report-pages.csv',
              'Every financial page of every annual report, and what has read it', 3,
              '418 pages across fifteen annual town reports that carry a table of figures, '

@@ -477,7 +477,9 @@ def annual_report_pages():
             rank[r['subject']] = int(r['priority'])
         except (KeyError, TypeError, ValueError):
             continue
-    out.sort(key=lambda g: (rank.get(g['board'].split(' (')[0], 99), -g['n']))
+    for g in out:
+        g['rank'] = rank.get(g['board'].split(' (')[0], 99)
+    out.sort(key=lambda g: (g['rank'], -g['n']))
     return done, out
 
 
@@ -1740,12 +1742,17 @@ def page_backlog(st):
         pend = s.get('pending') or []
         if pend:
             n = sum(p['n'] for p in pend)
+            # THE RANK IS A COLUMN, because the order of the rows is a claim and a
+            # reader should be able to see what it rests on rather than infer it.
+            ranked = any('rank' in p for p in pend)
             h.append('<details data-k="%s" style="margin-top:8px"><summary class="tiny" '
-                     'style="cursor:pointer;color:#6cb6ff">%s across %d board(s) &mdash; '
-                     'by board and date</summary><table style="margin-top:8px">'
-                     '<tr><th>board</th><th class="r">left</th><th>earliest</th>'
-                     '<th>latest</th><th></th></tr>'
-                     % (s['key'], '{:,}'.format(n), len(pend)))
+                     'style="cursor:pointer;color:#6cb6ff">%s across %d group(s) &mdash; '
+                     'what is left, and in what order</summary>'
+                     '<table style="margin-top:8px">'
+                     '<tr>%s<th>group</th><th class="r">left</th><th>earliest</th>'
+                     '<th>latest</th><th>years</th></tr>'
+                     % (s['key'], '{:,}'.format(n), len(pend),
+                        '<th class="r">rank</th>' if ranked else ''))
             for r in pend:
                 # CHIPS THAT WRAP, NOT A DETAILS INSIDE A DETAILS. TJ: "on the 'dates'
                 # expandable in the backlog, that is poor UX. It expands horitonzally and
@@ -1765,12 +1772,14 @@ def page_backlog(st):
                     for d in r['dates'][:60])
                 more = ('<span class="tiny" style="color:#6e7681"> +%d more</span>'
                         % (len(r['dates']) - 60)) if len(r['dates']) > 60 else ''
-                h.append('<tr><td style="vertical-align:top">%s</td>'
+                rk = ('<td class="r num" style="vertical-align:top;color:#6cb6ff">%s</td>'
+                      % (r['rank'] if r.get('rank', 99) < 99 else '\u2014')) if ranked else ''
+                h.append('<tr>%s<td style="vertical-align:top">%s</td>'
                          '<td class="r num" style="vertical-align:top">%d</td>'
                          '<td class="mono tiny" style="vertical-align:top">%s</td>'
                          '<td class="mono tiny" style="vertical-align:top">%s</td>'
                          '<td style="max-width:460px">%s%s</td></tr>'
-                         % (html.escape(r['board'].replace('-', ' ')), r['n'],
+                         % (rk, html.escape(r['board'].replace('-', ' ')), r['n'],
                             r['first'], r['last'], chips, more))
             h.append('</table></details>')
         h.append('</div>')
@@ -1779,6 +1788,45 @@ def page_backlog(st):
     # things labeled 'ingested'.. not sure what that means." Of course -- the section was
     # named for one outcome and listed both, so the label contradicted the heading. It is
     # the INBOX: what is sitting in it, and whether each delivery has been filed.
+    # ---- THE PLAN, as its own thing above the inbox ------------------------------
+    # TJ: "We need to create a plan (a separate 'thing' on the ingestion page backlog) of
+    # which of these backlog items will be done, and when, as 'batches'. In order to
+    # optimize token spend and delivery time."
+    #
+    # The backlog says what is left. This says what is going to happen to it, in what
+    # order, and what lands when each batch does. They are different questions and the
+    # second one is the one a person actually asks.
+    plan = rows('ingest-plan.csv')
+    if plan:
+        total = sum(int(r['pages'] or 0) for r in plan)
+        h.append('<h2>The plan</h2><p class="sub" style="margin:-4px 0 10px">'
+                 'How the %s pages above get done, in batches. A batch is a TABLE FAMILY, '
+                 'because the cost here is writing an extractor and that is paid once per '
+                 'family however many pages it covers \u2014 48 pages of special revenue '
+                 'funds are one job, not 48. Page counts are derived from the queue, so '
+                 'the plan cannot drift from what it is a plan for.</p>'
+                 % '{:,}'.format(total))
+        h.append('<table><tr><th class="r">#</th><th>batch</th><th>kind</th>'
+                 '<th class="r">pages</th><th>years</th><th>effort</th>'
+                 '<th>what lands</th></tr>')
+        for r in plan:
+            tone = {'done': '#3fb950', 'next': '#6cb6ff'}.get(r['status'], '#8b949e')
+            beside = ('<span class="tiny" style="color:#8b949e"> \u00b7 runs in the '
+                      'background</span>' if r['runs_beside'] else '')
+            h.append('<tr><td class="r num" style="vertical-align:top;color:%s">%s</td>'
+                     '<td style="vertical-align:top"><b>%s</b>%s<div class="tiny" '
+                     'style="color:#8b949e">%s</div></td>'
+                     '<td class="tiny" style="vertical-align:top">%s</td>'
+                     '<td class="r num" style="vertical-align:top">%s</td>'
+                     '<td class="mono tiny" style="vertical-align:top">%s</td>'
+                     '<td class="tiny" style="vertical-align:top">%s</td>'
+                     '<td class="tiny" style="vertical-align:top;max-width:420px">%s</td></tr>'
+                     % (tone, html.escape(r['seq']), html.escape(r['batch']), beside,
+                        html.escape(r['subjects']), html.escape(r['kind']),
+                        html.escape(r['pages']), html.escape(r['years']),
+                        html.escape(r['effort']), html.escape(r['delivers'])))
+        h.append('</table>')
+
     h.append('<h2>The inbox</h2><p class="sub" style="margin:-4px 0 10px">'
              'Deliveries dropped in <code>build/inbox/</code>. Matched to the archive by '
              'checksum, so a file renamed on filing is still recognised.</p>')

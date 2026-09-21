@@ -70,6 +70,8 @@ CHECKS = [
     # findable has to surface as itself rather than as a report quietly losing a row.
     # WHAT IS IN THE ANNUAL REPORTS AND WHAT HAS READ IT, before anything that reads one.
     ('map_annual_report_pages.py', ['--check']),
+    # ...and the plan built on it, so the two cannot disagree about what is left.
+    ('build_ingest_plan.py', ['--check']),
     ('map_stabilization_pages.py', ['--check']),
     ('extract_treasurers_cash.py', ['--check']),
     ('extract_trust_agency.py', ['--check']),
