@@ -12,6 +12,50 @@ The town holds **$6,444,504** across 7 stabilization funds. **$3,147,179 of it i
 
 So the answer to *can this pay for a school deficit* is **yes for $3,147,179 and no for the rest** — and a reserve spent on an operating cost buys one year, exactly as free cash does, which is the argument `free-cash.md` already makes.
 
+**There is a second question, and it is the better one.** Town Meeting has voted **$4,051,527 into these funds** since FY2012, one article at a time. Reducing that is RECURRING money, where spending a balance is a one-off — and a recurring gap is only ever closed by recurring money. What it would cost is whatever the funds were being built for: equipment the town would then have to borrow for, and a reserve that is part of how it is rated when it borrows.
+
+---
+
+## What goes in each year
+
+Town Meeting has voted **$4,051,527 into the stabilization funds** across 39 articles, FY2012 to FY2025 — and **$1,066,000 back out**, in 2 articles.
+
+In the 8 years where every article carries a printed amount, the town voted in between **$35,000 and $770,350 a year, median $393,387**. That is the figure the first question turns on: it is recurring money, it is decided one article at a time at Town Meeting, and it is the same order of magnitude as the gap the schools are projecting.
+
+**Two funds take most of it.** Special Purpose Stabilization and Stabilization Fund (general) together account for $3,274,080 of the $4,051,527. They are where the first question bites — the rest is sewer housekeeping in amounts too small to close an operating gap.
+
+| fund | voted in, total | years | most recent |
+|---|---:|---:|---|
+| Special Purpose Stabilization | $1,807,449 | 6 | FY2023, $250,000 |
+| Stabilization Fund (general) | $1,466,631 | 10 | FY2023, $100,000 |
+| Health Insurance Stabilization | $369,334 | 1 | FY2021, $369,334 |
+| Sewer Capital Reserve Stabilization | $181,046 | 6 | FY2024, $35,000 |
+| Sewer Reserve Capacity Stabilization | $93,462 | 7 | FY2025, $5,133 |
+| Opioid Settlement Stabilization | $84,740 | 1 | FY2023, $84,740 |
+| Inflow/Infiltration Stabilization | $48,864 | 4 | FY2025, $19,104 |
+
+| year | voted in | articles |
+|---|---:|---:|
+| FY2012 | $277,432 — *understated* | 1 |
+| FY2014 | $74,729 | 1 |
+| FY2015 | $105,984 | 3 |
+| FY2016 | $124,039 — *understated* | 3 |
+| FY2018 | $521,677 | 5 |
+| FY2019 | $308,222 | 3 |
+| FY2020 | $770,350 | 5 |
+| FY2021 | $734,210 | 4 |
+| FY2022 | $597,094 — *understated* | 5 |
+| FY2023 | $478,553 | 6 |
+| FY2024 | $35,000 | 1 |
+| FY2025 | $24,238 — *understated* | 2 |
+
+**What has come back out — and this is a FLOOR, not a total.** These are the articles whose SUBJECT is a withdrawal. Money also leaves inside articles about something else: FY2023 article 14 is the sewer enterprise operating budget, and inside that one motion it transfers $35,000 out of the Sewer Capital Reserve fund and $20,962.40 out of the Sewer Reserve Capacity fund. Those are real withdrawals sitting inside an article this classification counts as being about the sewer budget, so the figure below is what can be attributed cleanly and no more.
+
+- FY2023, article 4 — Transfer Special Purpose Stabilization funds for a new ambulance and two dump trucks, **$986,000**
+- FY2023, article 5 — Transfer Opioid Settlement funds for the Police Department's Mental Health Co-Response program, **$80,000**
+
+*How solid is this.* Of the 53 articles mentioning a stabilization fund, 39 are deposits, 2 are withdrawals, 7 print no amount (marked *understated* above), and 5 are sewer enterprise operating budgets that name a fund only in passing — those five total $3,706,189 and counting them as deposits would overstate the money going in by more than the deposits themselves.
+
 ---
 
 ## What is in them, FY2025
@@ -28,144 +72,6 @@ So the answer to *can this pay for a school deficit* is **yes for $3,147,179 and
 | | **Total** | **$6,444,504.08** | |
 
 **The general/restricted split is ours**, read off each fund’s name. The annual report prints a balance and never says what may be spent on what.
-
----
-
-## What each one is FOR, in the town’s own words
-
-A special purpose fund is restricted to the purpose it was created for, and that purpose lives in the article that created it — not in the fund’s name. These are the creating votes this archive holds, each quoting **M.G.L. c.40 §5B**, the statute that lets a town keep a stabilization fund at all.
-
-**Create and fund a Reserve Capacity Stabilization Fund from sewer retained earnings** — FY2015 annual Town Meeting, article 21, passed.
-
-> VOTED UNANIMOUSLY, pursuant to General Laws Chapter 40, Section 5B, to create a Reserve Capacity Stabilization Fund and further to transfer from Sewer Enterprise Retained Earnings, the sum of $617.10 into the Reserve Capacity Stabilization Fund.
-
-**Create an Inflow/Infiltration Stabilization Fund and fund it** — FY2016 annual Town Meeting, article 21, passed.
-
-> VOTED UNANIMOUSLY to create an Inflow/Infiltration Stabilization Fund and further to transfer from Sewer Enterprise Retained Earnings the sum of $14,520 into the Inflow/ Infiltration Stabilization Fund.
-
-**Create the Town Building Stabilization Fund** — FY2016 special Town Meeting, article 4, amended and passed.
-
-> VOTED UNANIMOUSLY with M.G.L. reference changed to Chapter 40 § 5B.
-
-**Create and fund a Health Insurance Stabilization Fund** — FY2021 annual Town Meeting, article 9, passed.
-
-> VOTED UNANIMOUSLY to create a Health Insurance Stabilization Fund pursuant to General Laws Chapter 40 Section 5B and further, to vote to raise and appropriate the sum of $369,334. to deposit into the Health Insurance Stabilization Fund.
-
-**Create the Opioid Settlement Stabilization Fund and deposit settlement proceeds** — FY2023 annual Town Meeting, article 13, passed.
-
-> VOTED (80 YES, 11 NO), pursuant to the provisions of G.L. c.40, Section 5B, to create a new special purpose stabilization fund, to be known as the Opioid Settlement Stabilization Fund, for dedication, without further appropriation, of 100% of opioid litigation settlement
-
-**The three largest funds are not here, and that is the gap rather than an oversight.** The general Stabilization Fund, Vehicle/Equipment and Zoning Incentive were all created before FY2011, which is as far back as the town-meeting record in this archive reaches. Their purposes are known only from their names, and a name is not an article.
-
----
-
-## Each fund, meeting by meeting
-
-Every Town Meeting article this archive holds that touches a stabilization fund — what was asked, what was voted, and what the Finance Committee recommended. The record reaches back to FY2011 and no further, which is why three funds have no creation here.
-
-**Which fund an article belongs to is OUR reading.** The votes name funds in prose and carry no account number, so an article saying only “the Stabilization Fund” is taken as the general one — which is what the town means by it, and is still a reading.
-
-### Stabilization Fund (general)
-
-33 articles, FY2011 to FY2025.
-
-| year | meeting | art. | what was asked | amount | FinCom | result |
-|---|---|---|---|---|---|---|
-| FY2011 | annual | 18 | Appropriate to or from the Stabilization Fund | — | — | passed over |
-| FY2011 | special | 2 | Appropriate to or from the Stabilization Fund | — | — | passed over |
-| FY2012 | annual | 10 | Appropriate to Stabilization Fund contingent on Article 9's override passing | $277,432 | — | passed over |
-| FY2012 | special | 2 | Appropriate to/from the Stabilization Fund | — | — | passed over |
-| FY2014 | annual | 17 | Appropriate funds to the Stabilization Fund | $74,729 | Approval | passed |
-| FY2015 | special | 14 | Appropriate funds to the Stabilization Fund | $7,136.00 | Approval | passed |
-| FY2015 | annual | 16 | Appropriate funds to the Stabilization Fund | $98,231 | Approval | passed |
-| FY2016 | annual | 17 | Appropriate to the Stabilization Fund | $99,851.00 | Approval | passed |
-| FY2017 | special | 1 | Amend the Town's FY2018 budget by transferring sums among various line items | $199,972. | Approval | amended and passed |
-| FY2018 | annual | 12 | Transfer a sum into the Sewer Capital Reserve Stabilization Fund | $29,000 | Approval | passed |
-| FY2018 | special | 2 | Appropriate a sum to the Special Purpose Stabilization Fund | $199,227 | Approval | passed |
-| FY2018 | annual | 8 | Appropriate/transfer a sum into the Stabilization Fund | $87,000 | Approval | passed |
-| FY2019 | special | 2 | Appropriate funds to the Special Purpose Stabilization Fund | $08,222. | Approval | passed |
-| FY2019 | annual | 9 | Transfer funds to the Stabilization Fund | $100,000 | Approval | passed |
-| FY2020 | annual | 10 | Operate the Sewer Enterprise Fund for FY2021 | $943,191.54 | Approval | passed |
-| FY2020 | annual | 11 | Transfer $30,000 into the Sewer Capital Reserve Stabilization Fund | $30,000 | Approval | passed |
-| FY2020 | special | 5 | Transfer funds to the Stabilization Fund | $212,252.00 | Approval | passed |
-| FY2020 | special | 6 | Transfer funds to the Special Purpose Stabilization Fund | $250,000.00 | Approval | passed |
-| FY2020 | annual | 8 | Transfer funds to the Stabilization Fund | $210,000 | Approval | passed |
-| FY2021 | special | 5 | Transfer funds into the Sewer Capital Reserve Stabilization Fund | $14,875.50 | Recommend Approval | passed |
-| FY2021 | annual | 7 | Transfer to Stabilization Fund | $100,000 | Recommend Approval | passed |
-| FY2021 | annual | 8 | Transfer to Special Purpose Stabilization Fund | $250,000 | Recommend Approval | passed |
-| FY2022 | annual | 10 | Transfer funds to the Special Purpose Stabilization Fund | $450,000 | Approval | passed |
-| FY2022 | annual | 13 | Transfer funds to the Sewer Capital Reserve Stabilization Fund | $35,548.86 | Approval | passed |
-| FY2022 | special | 5 | Transfer funds to the Special Purpose Stabilization Fund | — | deferred | passed over |
-| FY2022 | annual | 9 | Transfer funds to the Stabilization Fund | $100,000 | Approval | passed |
-| FY2023 | annual | 10 | Transfer funds to the Stabilization Fund | $100,000 | Approval | passed |
-| FY2023 | annual | 11 | Transfer funds to the Special Purpose Stabilization Fund | $250,000 | Approval | passed |
-| FY2023 | annual | 15 | Transfer funds into the Sewer Capital Reserve Stabilization Fund | $36,621.37 | Approval | passed |
-| FY2023 | special | 4 | Transfer Special Purpose Stabilization funds for a new ambulance and two dum | $986,000 | Disapproval | failed |
-| FY2024 | annual | 16 | Transfer to the Sewer Capital Reserve Stabilization Fund | $35,000 | Approval | passed |
-| FY2025 | annual | 16 | Appropriation to the Stabilization Fund | — | — | passed over |
-| FY2025 | annual | 17 | Appropriation to the Special Purpose Stabilization Fund | — | — | passed over |
-
-### Reserve Capacity Stabilization
-
-9 articles, FY2015 to FY2025.
-
-| year | meeting | art. | what was asked | amount | FinCom | result |
-|---|---|---|---|---|---|---|
-| FY2015 | annual | 21 | Create and fund a Reserve Capacity Stabilization Fund from sewer retained ea | $617.10 | Approval | passed |
-| FY2016 | annual | 22 | Transfer funds into the Reserve Capacity Stabilization Fund | $9,667.90 | — | passed |
-| FY2018 | special | 5 | Transfer Sewer Enterprise retained earnings into the Reserve Capacity Stabil | $6,449.63 | No direct financial impact | passed |
-| FY2019 | special | 3 | Amend the Sewer Enterprise Fund FY2020 appropriation | $9,993. | Approval | passed |
-| FY2020 | special | 11 | Transfer funds into Sewer Reserve Capacity Stabilization Fund | $68,097.59 | Approval | passed |
-| FY2022 | annual | 12 | Fund the Sewer Enterprise Fund for FY2023 | $1,213,182.00 | Approval | passed |
-| FY2022 | special | 6 | Transfer funds to the Sewer Reserve Capacity Stabilization Fund | $1,645.60 | Approval | passed |
-| FY2023 | special | 7 | Transfer sewer funds into the Sewer Reserve Capacity Stabilization Fund | $1,851.30 | Approval | passed |
-| FY2025 | annual | 24 | Transfer funds into the Sewer Reserve Capacity Stabilization Fund | $5,133.15 | Approval | passed |
-
-### Inflow/Infiltration Stabilization
-
-5 articles, FY2016 to FY2025.
-
-| year | meeting | art. | what was asked | amount | FinCom | result |
-|---|---|---|---|---|---|---|
-| FY2016 | annual | 21 | Create an Inflow/Infiltration Stabilization Fund and fund it | $14,520 | — | passed |
-| FY2022 | special | 7 | Transfer funds to the Sewer Inflow/Infiltration Stabilization Fund | $9,900.00 | Approval | passed |
-| FY2023 | annual | 14 | Appropriate funds to operate the Sewer Enterprise Fund for FY2024 | $1,339,850.95 | Approval | passed |
-| FY2023 | special | 8 | Transfer sewer funds into the Sewer Inflow/Infiltration Stabilization Fund | $5,340.00 | Approval | passed |
-| FY2025 | annual | 23 | Transfer funds into the Sewer Inflow/Infiltration Stabilization Fund | $19,104.40 | Approval | passed |
-
-### Vehicle/Equipment Stabilization
-
-2 articles, FY2018 to FY2019.
-
-| year | meeting | art. | what was asked | amount | FinCom | result |
-|---|---|---|---|---|---|---|
-| FY2018 | annual | 9 | Appropriate/transfer a sum into the Special Purpose Stabilization Fund | $200,000 | Approval | passed |
-| FY2019 | annual | 10 | Transfer funds to the Special Purpose Stabilization Fund for future capital  | $200,000 | Approval | passed |
-
-### Opioid Settlement Stabilization
-
-2 articles, FY2023 to FY2023.
-
-| year | meeting | art. | what was asked | amount | FinCom | result |
-|---|---|---|---|---|---|---|
-| FY2023 | annual | 13 | Create the Opioid Settlement Stabilization Fund and deposit settlement proce | $84,740.25 | Approval | passed |
-| FY2023 | special | 5 | Transfer Opioid Settlement funds for the Police Department's Mental Health C | $80,000 | Approval | passed |
-
-### Town Building Stabilization
-
-1 article, FY2016 to FY2016.
-
-| year | meeting | art. | what was asked | amount | FinCom | result |
-|---|---|---|---|---|---|---|
-| FY2016 | special | 4 | Create the Town Building Stabilization Fund | — | Approval | amended and passed |
-
-### Health Insurance Stabilization
-
-1 article, FY2021 to FY2021.
-
-| year | meeting | art. | what was asked | amount | FinCom | result |
-|---|---|---|---|---|---|---|
-| FY2021 | annual | 9 | Create and fund a Health Insurance Stabilization Fund | $369,334 | Recommend Approval | passed |
 
 ---
 
@@ -224,6 +130,162 @@ Every proven row:
 | FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 | $249,060.25 |
 
 **Coverage is 15 rows across 9 years, and that is the point rather than a footnote.** The rest of the run is not missing because nobody looked — it is missing because those pages have not yet yielded a row whose arithmetic closes, and publishing one that does not would be worse than publishing nothing.
+
+---
+
+---
+
+## What each one is FOR, in the town’s own words
+
+A special purpose fund is restricted to the purpose it was created for, and that purpose lives in the article that created it — not in the fund’s name. These are the creating votes this archive holds, each quoting **M.G.L. c.40 §5B**, the statute that lets a town keep a stabilization fund at all.
+
+**This archive holds a creating vote for 5 of the 9 funds that appear in the Town Meeting record, and not for Sewer Capital Reserve Stabilization, Special Purpose Stabilization, Stabilization Fund (general), Vehicle/Equipment Stabilization.** The record here begins at FY2011 and those funds are older than it, so the article that created them — and the purpose that restricts them — is in a warrant nobody here has read. For a restricted fund that is the load-bearing document: without it, what the money may lawfully be spent on rests on the fund’s NAME, which is a reading and not a rule.
+
+**Create and fund a Reserve Capacity Stabilization Fund from sewer retained earnings** — FY2015 annual Town Meeting, article 21, passed.
+
+> VOTED UNANIMOUSLY, pursuant to General Laws Chapter 40, Section 5B, to create a Reserve Capacity Stabilization Fund and further to transfer from Sewer Enterprise Retained Earnings, the sum of $617.10 into the Reserve Capacity Stabilization Fund.
+
+**Create an Inflow/Infiltration Stabilization Fund and fund it** — FY2016 annual Town Meeting, article 21, passed.
+
+> VOTED UNANIMOUSLY to create an Inflow/Infiltration Stabilization Fund and further to transfer from Sewer Enterprise Retained Earnings the sum of $14,520 into the Inflow/ Infiltration Stabilization Fund.
+
+**Create the Town Building Stabilization Fund** — FY2016 special Town Meeting, article 4, amended and passed.
+
+> VOTED UNANIMOUSLY with M.G.L. reference changed to Chapter 40 § 5B.
+
+**Create and fund a Health Insurance Stabilization Fund** — FY2021 annual Town Meeting, article 9, passed.
+
+> VOTED UNANIMOUSLY to create a Health Insurance Stabilization Fund pursuant to General Laws Chapter 40 Section 5B and further, to vote to raise and appropriate the sum of $369,334. to deposit into the Health Insurance Stabilization Fund.
+
+**Create the Opioid Settlement Stabilization Fund and deposit settlement proceeds** — FY2023 annual Town Meeting, article 13, passed.
+
+> VOTED (80 YES, 11 NO), pursuant to the provisions of G.L. c.40, Section 5B, to create a new special purpose stabilization fund, to be known as the Opioid Settlement Stabilization Fund, for dedication, without further appropriation, of 100% of opioid litigation settlement
+
+**The three largest funds are not here, and that is the gap rather than an oversight.** The general Stabilization Fund, Vehicle/Equipment and Zoning Incentive were all created before FY2011, which is as far back as the town-meeting record in this archive reaches. Their purposes are known only from their names, and a name is not an article.
+
+---
+
+## Each fund, meeting by meeting
+
+Every Town Meeting article this archive holds that touches a stabilization fund — what was asked, what was voted, and what the Finance Committee recommended. The record reaches back to FY2011 and no further, which is why three funds have no creation here.
+
+**Which fund an article belongs to is OUR reading.** The votes name funds in prose and carry no account number, so an article saying only “the Stabilization Fund” is taken as the general one — which is what the town means by it, and is still a reading.
+
+### Stabilization Fund (general)
+
+17 articles, FY2011 to FY2025.
+
+| year | meeting | art. | what was asked | amount | FinCom | result |
+|---|---|---|---|---|---|---|
+| FY2011 | annual | 18 | Appropriate to or from the Stabilization Fund | — | — | passed over |
+| FY2011 | special | 2 | Appropriate to or from the Stabilization Fund | — | — | passed over |
+| FY2012 | annual | 10 | Appropriate to Stabilization Fund contingent on Article 9's override passing | $277,432 | — | passed over |
+| FY2012 | special | 2 | Appropriate to/from the Stabilization Fund | — | — | passed over |
+| FY2014 | annual | 17 | Appropriate funds to the Stabilization Fund | $74,729 | Approval | passed |
+| FY2015 | special | 14 | Appropriate funds to the Stabilization Fund | $7,136.00 | Approval | passed |
+| FY2015 | annual | 16 | Appropriate funds to the Stabilization Fund | $98,231 | Approval | passed |
+| FY2016 | annual | 17 | Appropriate to the Stabilization Fund | $99,851.00 | Approval | passed |
+| FY2017 | special | 1 | Amend the Town's FY2018 budget by transferring sums among various line items | $199,972. | Approval | amended and passed |
+| FY2018 | annual | 8 | Appropriate/transfer a sum into the Stabilization Fund | $87,000 | Approval | passed |
+| FY2019 | annual | 9 | Transfer funds to the Stabilization Fund | $100,000 | Approval | passed |
+| FY2020 | special | 5 | Transfer funds to the Stabilization Fund | $212,252.00 | Approval | passed |
+| FY2020 | annual | 8 | Transfer funds to the Stabilization Fund | $210,000 | Approval | passed |
+| FY2021 | annual | 7 | Transfer to Stabilization Fund | $100,000 | Recommend Approval | passed |
+| FY2022 | annual | 9 | Transfer funds to the Stabilization Fund | $100,000 | Approval | passed |
+| FY2023 | annual | 10 | Transfer funds to the Stabilization Fund | $100,000 | Approval | passed |
+| FY2025 | annual | 16 | Appropriation to the Stabilization Fund | — | — | passed over |
+
+### Sewer Reserve Capacity Stabilization
+
+9 articles, FY2015 to FY2025.
+
+| year | meeting | art. | what was asked | amount | FinCom | result |
+|---|---|---|---|---|---|---|
+| FY2015 | annual | 21 | Create and fund a Reserve Capacity Stabilization Fund from sewer retained ea | $617.10 | Approval | passed |
+| FY2016 | annual | 22 | Transfer funds into the Reserve Capacity Stabilization Fund | $9,667.90 | — | passed |
+| FY2018 | special | 5 | Transfer Sewer Enterprise retained earnings into the Reserve Capacity Stabil | $6,449.63 | No direct financial impact | passed |
+| FY2019 | special | 3 | Amend the Sewer Enterprise Fund FY2020 appropriation | $9,993. | Approval | passed |
+| FY2020 | special | 11 | Transfer funds into Sewer Reserve Capacity Stabilization Fund | $68,097.59 | Approval | passed |
+| FY2022 | annual | 12 | Fund the Sewer Enterprise Fund for FY2023 | $1,213,182.00 | Approval | passed |
+| FY2022 | special | 6 | Transfer funds to the Sewer Reserve Capacity Stabilization Fund | $1,645.60 | Approval | passed |
+| FY2023 | special | 7 | Transfer sewer funds into the Sewer Reserve Capacity Stabilization Fund | $1,851.30 | Approval | passed |
+| FY2025 | annual | 24 | Transfer funds into the Sewer Reserve Capacity Stabilization Fund | $5,133.15 | Approval | passed |
+
+### Special Purpose Stabilization
+
+9 articles, FY2018 to FY2025.
+
+| year | meeting | art. | what was asked | amount | FinCom | result |
+|---|---|---|---|---|---|---|
+| FY2018 | special | 2 | Appropriate a sum to the Special Purpose Stabilization Fund | $199,227 | Approval | passed |
+| FY2019 | special | 2 | Appropriate funds to the Special Purpose Stabilization Fund | $08,222. | Approval | passed |
+| FY2020 | special | 6 | Transfer funds to the Special Purpose Stabilization Fund | $250,000.00 | Approval | passed |
+| FY2021 | annual | 8 | Transfer to Special Purpose Stabilization Fund | $250,000 | Recommend Approval | passed |
+| FY2022 | annual | 10 | Transfer funds to the Special Purpose Stabilization Fund | $450,000 | Approval | passed |
+| FY2022 | special | 5 | Transfer funds to the Special Purpose Stabilization Fund | — | deferred | passed over |
+| FY2023 | annual | 11 | Transfer funds to the Special Purpose Stabilization Fund | $250,000 | Approval | passed |
+| FY2023 | special | 4 | Transfer Special Purpose Stabilization funds for a new ambulance and two dum | $986,000 | Disapproval | failed |
+| FY2025 | annual | 17 | Appropriation to the Special Purpose Stabilization Fund | — | — | passed over |
+
+### Sewer Capital Reserve Stabilization
+
+8 articles, FY2018 to FY2024.
+
+| year | meeting | art. | what was asked | amount | FinCom | result |
+|---|---|---|---|---|---|---|
+| FY2018 | annual | 12 | Transfer a sum into the Sewer Capital Reserve Stabilization Fund | $29,000 | Approval | passed |
+| FY2020 | annual | 10 | Operate the Sewer Enterprise Fund for FY2021 | $943,191.54 | Approval | passed |
+| FY2020 | annual | 11 | Transfer $30,000 into the Sewer Capital Reserve Stabilization Fund | $30,000 | Approval | passed |
+| FY2021 | special | 5 | Transfer funds into the Sewer Capital Reserve Stabilization Fund | $14,875.50 | Recommend Approval | passed |
+| FY2022 | annual | 13 | Transfer funds to the Sewer Capital Reserve Stabilization Fund | $35,548.86 | Approval | passed |
+| FY2023 | annual | 14 | Appropriate funds to operate the Sewer Enterprise Fund for FY2024 | $1,339,850.95 | Approval | passed |
+| FY2023 | annual | 15 | Transfer funds into the Sewer Capital Reserve Stabilization Fund | $36,621.37 | Approval | passed |
+| FY2024 | annual | 16 | Transfer to the Sewer Capital Reserve Stabilization Fund | $35,000 | Approval | passed |
+
+### Inflow/Infiltration Stabilization
+
+4 articles, FY2016 to FY2025.
+
+| year | meeting | art. | what was asked | amount | FinCom | result |
+|---|---|---|---|---|---|---|
+| FY2016 | annual | 21 | Create an Inflow/Infiltration Stabilization Fund and fund it | $14,520 | — | passed |
+| FY2022 | special | 7 | Transfer funds to the Sewer Inflow/Infiltration Stabilization Fund | $9,900.00 | Approval | passed |
+| FY2023 | special | 8 | Transfer sewer funds into the Sewer Inflow/Infiltration Stabilization Fund | $5,340.00 | Approval | passed |
+| FY2025 | annual | 23 | Transfer funds into the Sewer Inflow/Infiltration Stabilization Fund | $19,104.40 | Approval | passed |
+
+### Vehicle/Equipment Stabilization
+
+2 articles, FY2018 to FY2019.
+
+| year | meeting | art. | what was asked | amount | FinCom | result |
+|---|---|---|---|---|---|---|
+| FY2018 | annual | 9 | Appropriate/transfer a sum into the Special Purpose Stabilization Fund | $200,000 | Approval | passed |
+| FY2019 | annual | 10 | Transfer funds to the Special Purpose Stabilization Fund for future capital  | $200,000 | Approval | passed |
+
+### Opioid Settlement Stabilization
+
+2 articles, FY2023 to FY2023.
+
+| year | meeting | art. | what was asked | amount | FinCom | result |
+|---|---|---|---|---|---|---|
+| FY2023 | annual | 13 | Create the Opioid Settlement Stabilization Fund and deposit settlement proce | $84,740.25 | Approval | passed |
+| FY2023 | special | 5 | Transfer Opioid Settlement funds for the Police Department's Mental Health C | $80,000 | Approval | passed |
+
+### Town Building Stabilization
+
+1 article, FY2016 to FY2016.
+
+| year | meeting | art. | what was asked | amount | FinCom | result |
+|---|---|---|---|---|---|---|
+| FY2016 | special | 4 | Create the Town Building Stabilization Fund | — | Approval | amended and passed |
+
+### Health Insurance Stabilization
+
+1 article, FY2021 to FY2021.
+
+| year | meeting | art. | what was asked | amount | FinCom | result |
+|---|---|---|---|---|---|---|
+| FY2021 | annual | 9 | Create and fund a Health Insurance Stabilization Fund | $369,334 | Recommend Approval | passed |
 
 ---
 

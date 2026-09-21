@@ -126,7 +126,16 @@ def creations():
 # OURS, and stated as ours: the votes file names funds in prose and carries no account
 # code, so this is a reading of each article's subject rather than a join on anything.
 FUND_WORDS = [
-    ('reserve capacity', 'Reserve Capacity Stabilization'),
+    ('reserve capacity', 'Sewer Reserve Capacity Stabilization'),
+    # TWO FUNDS, NOT ONE NAME USED TWO WAYS -- and it took the town's own balance sheet to
+    # settle it. The warrants say "Sewer Capital Reserve Stabilization Fund" and "Sewer
+    # Reserve Capacity Stabilization Fund", sometimes both in one year for different
+    # amounts, which reads like sloppy naming. FY2024's annual report lists them as
+    # separate rows on separate pages -- `8132 Reserve Capacity Stabilization Fund` and
+    # `Sewer Capital Reserve` -- and FY2023 article 14 transfers out of both in a single
+    # motion, $35,000 from one and $20,962.40 from the other. Folding them together would
+    # have merged two funds on a published page.
+    ('capital reserve', 'Sewer Capital Reserve Stabilization'),
     ('inflow', 'Inflow/Infiltration Stabilization'),
     ('infiltration', 'Inflow/Infiltration Stabilization'),
     ('health insurance', 'Health Insurance Stabilization'),
@@ -134,6 +143,13 @@ FUND_WORDS = [
     ('town building', 'Town Building Stabilization'),
     ('vehicle', 'Vehicle/Equipment Stabilization'),
     ('zoning', 'Zoning Incentive Stabilization'),
+    # LAST, AND IT WAS MISSING. Twelve articles name the SPECIAL PURPOSE Stabilization
+    # Fund and every one of them was falling through to the general fund, because the
+    # fallback is "an article naming no particular fund is the general one" and this list
+    # had no word for it. That put $250,000 and $450,000 deposits, and the $986,000 voted
+    # out for an ambulance, against the wrong fund on a published page. It is last so that
+    # an article naming a specific sewer or opioid fund still matches that one first.
+    ('special purpose', 'Special Purpose Stabilization'),
 ]
 
 
@@ -170,6 +186,91 @@ def history():
     return by
 
 
+# WHAT AN ARTICLE DOES, NOT WHICH FUND IT NAMES. `history()` answers "which fund is this
+# about"; this answers "does money go IN or OUT", which is a different question and the
+# one TJ's two questions turn on: can the town put LESS in each year, and can it take out
+# what is already there.
+#
+# THE TRAP, AND IT IS EXPENSIVE. Of the 53 articles that mention a stabilization fund,
+# five are sewer ENTERPRISE operating budgets -- $943,191.54, $1,213,182.00, $1,339,850.95
+# and two amendments -- that mention a fund in passing in their quote. Summed as deposits
+# they would overstate the total by $3.7M, more than the deposits themselves. So the
+# classification reads the SUBJECT, which says what the article does, and everything it
+# cannot place is counted separately and said out loud rather than folded into a total.
+NOT_ABOUT = re.compile(r'^(operate|fund the sewer|appropriate funds to operate|amend)',
+                       re.I)
+# "to the X Stabilization Fund" or "into the X Stabilization Fund", and a creation that
+# also puts money in.
+# `^create` on its own, because the funding verb can sit on either side of the fund's
+# name: "Create AND FUND a Health Insurance Stabilization Fund" puts it before, "Create an
+# Inflow/Infiltration Stabilization Fund AND FUND IT" after. Requiring it after filed
+# $369,951.10 of real deposits as unclassifiable. A creation article that prints an amount
+# is putting that amount in -- and one that prints none (Town Building) still falls to
+# `unpriced`, because the amount is what is missing, not the intent.
+DEPOSIT = re.compile(r'\b(to|into)\b[^.]{0,45}stabiliz|^create\b[^.]{0,80}stabiliz',
+                     re.I)
+# Money leaving: "from the X Stabilization Fund", or "Transfer X Stabilization funds FOR
+# <a thing>". The order below matters -- DEPOSIT is tested first, because "Transfer funds
+# to the Special Purpose Stabilization Fund for future capital" is a deposit whose
+# sentence happens to contain the word `for`, and testing this pattern first filed
+# $200,000 of deposits as spending.
+SPEND = re.compile(r'\bfrom the\b[^.]{0,40}stabiliz|stabilization funds?\s+for\b'
+                   r'|\bsettlement funds?\s+for\b', re.I)
+
+
+def money(s):
+    s = (s or '').replace('$', '').replace(',', '').strip().rstrip('.')
+    try:
+        return float(s)
+    except ValueError:
+        return None
+
+
+def flows():
+    """Town Meeting articles that put money into a stabilization fund, or take it out.
+
+    Returns dict(deposits=[...], spends=[...], unpriced=[...], not_about=[...],
+                 unclear=[...]) -- every one of the 53 articles lands in exactly one, so
+    the buckets can be counted against the whole and nothing goes missing quietly.
+    """
+    f = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
+    out = dict(deposits=[], spends=[], unpriced=[], not_about=[], unclear=[])
+    if not os.path.exists(f):
+        return out
+    for r in csv.DictReader(open(f, encoding='utf-8')):
+        both = ((r.get('subject') or '') + ' ' + (r.get('quote') or '')).lower()
+        if 'stabiliz' not in both:
+            continue
+        sub = ' '.join((r.get('subject') or '').split())
+        amt = money(r.get('amount_as_printed'))
+        # THE FUND COMES OFF THIS ROW'S OWN SUBJECT, NEVER OFF A JOIN. Keying articles on
+        # (fy, article) collapses the annual and special Town Meeting -- both have an
+        # article 8 -- and silently hands one article's subject to another: it reported
+        # FY2018's $87,000 stabilization deposit as "fund a salary survey". Adding the
+        # meeting type still leaves 18 colliding keys, because a year can hold two special
+        # meetings. There is no join to fix, only a join to delete: the subject is already
+        # on the row being classified.
+        #
+        # The QUOTE is deliberately not consulted here. It routinely names several funds
+        # in one sentence, and matching against it attributed $121,362 of FY2023 deposits
+        # to the Zoning Incentive fund, which received none.
+        fund = next((lbl for word, lbl in FUND_WORDS if word in sub.lower()),
+                    'Stabilization Fund (general)')
+        row = dict(fy=int(r['fy']), article=r['article'], amount=amt, subject=sub,
+                   fund=fund, meeting=r.get('meeting', ''), result=r.get('result', ''))
+        if NOT_ABOUT.match(sub):
+            out['not_about'].append(row)
+        elif amt is None:
+            out['unpriced'].append(row)
+        elif DEPOSIT.search(sub):
+            out['deposits'].append(row)
+        elif SPEND.search(sub):
+            out['spends'].append(row)
+        else:
+            out['unclear'].append(row)
+    return out
+
+
 def render(rows):
     total = sum(r['amount'] for r in rows)
     gen = [r for r in rows if r['code'] in GENERAL]
@@ -177,6 +278,10 @@ def render(rows):
     gtot = sum(r['amount'] for r in gen)
     stot = sum(r['amount'] for r in spec)
     b = []; w = b.append
+    # Needed by the short version, which now answers both of the questions a reader
+    # actually arrives with rather than only the one about the balance.
+    fl = flows()
+    dep_total = sum(d['amount'] for d in fl['deposits'])
     w('# The stabilization funds, and who may spend them\n')
     w('**What the town holds in reserve, which of it could lawfully be spent on an '
       'operating deficit, and the four questions about it this archive cannot yet '
@@ -194,6 +299,107 @@ def render(rows):
       'the rest** — and a reserve spent on an operating cost buys one year, exactly '
       'as free cash does, which is the argument `free-cash.md` already makes.\n'
       % usd0(gtot))
+    # THE OTHER QUESTION, AND THE BETTER ONE. TJ: "1) can we reduce how much goes into
+    # each fund each year to pay for the deficit? And 2) can we use what's in there to
+    # pay for the deficit?" The page answered (2) and never asked (1), which is the wrong
+    # way round: a balance is a one-off and the annual deposit is RECURRING, and a
+    # recurring gap is only ever closed by recurring money.
+    if dep_total:
+        _yrs = {d['fy'] for d in fl['deposits']}
+        w('**There is a second question, and it is the better one.** Town Meeting has '
+          'voted **%s into these funds** since FY%d, one article at a time. Reducing that '
+          'is RECURRING money, where spending a balance is a one-off \u2014 and a '
+          'recurring gap is only ever closed by recurring money. What it would cost is '
+          'whatever the funds were being built for: equipment the town would then have to '
+          'borrow for, and a reserve that is part of how it is rated when it borrows.\n'
+          % (usd0(dep_total), min(_yrs)))
+    # ---- WHAT GOES IN EACH YEAR. TJ's first question, and the one the balances alone
+    # cannot answer: "can we reduce how much goes into each fund each year to pay for the
+    # deficit?" That is a question about the ANNUAL DEPOSIT, not about the balance, and
+    # the deposit is a Town Meeting vote rather than anything the annual report prints.
+    dep, spd = fl['deposits'], fl['spends']
+    if dep:
+        import collections as _c
+        byfy = _c.defaultdict(float)
+        for d in dep:
+            byfy[d['fy']] += d['amount']
+        # ONLY THE YEARS WHERE EVERY ARTICLE CARRIES A PRICE. Seven articles print no
+        # amount -- including BOTH of FY2025's appropriations -- so a mean across all
+        # years would quietly report a collapse in deposits that is really a gap in what
+        # the warrant printed. A year with an unpriced article is excluded from the
+        # range and the exclusion is stated.
+        short_years = {r['fy'] for r in fl['unpriced']}
+        full = sorted(y for y in byfy if y not in short_years)
+        depd = sum(d['amount'] for d in dep)
+        w('---\n')
+        w('## What goes in each year\n')
+        w('Town Meeting has voted **%s into the stabilization funds** across %d articles, '
+          'FY%d to FY%d \u2014 and **%s back out**, in %d articles.\n'
+          % (usd0(depd), len(dep), min(byfy), max(byfy),
+             usd0(sum(x['amount'] for x in spd)), len(spd)))
+        if len(full) >= 3:
+            lo, hi = min(byfy[y] for y in full), max(byfy[y] for y in full)
+            mid = sorted(byfy[y] for y in full)
+            med = (mid[len(mid) // 2] if len(mid) % 2 else
+                   (mid[len(mid) // 2 - 1] + mid[len(mid) // 2]) / 2)
+            w('In the %d years where every article carries a printed amount, the town '
+              'voted in between **%s and %s a year, median %s**. That is the figure the '
+              'first question turns on: it is recurring money, it is decided one article '
+              'at a time at Town Meeting, and it is the same order of magnitude as the '
+              'gap the schools are projecting.\n'
+              % (len(full), usd0(lo), usd0(hi), usd0(med)))
+        # WHICH FUND, BECAUSE THE QUESTION IS ABOUT EACH ONE. TJ: "can we reduce how
+        # much goes into each fund each year." A single yearly total cannot be acted on;
+        # a reader deciding what to stop needs to see that two funds take nearly all of
+        # it and the rest are sewer housekeeping.
+        byfund = _c.defaultdict(lambda: _c.defaultdict(float))
+        for d in dep:
+            byfund[d['fund']][d['fy']] += d['amount']
+        ranked = sorted(byfund.items(), key=lambda kv: -sum(kv[1].values()))
+        top2 = sum(sum(v.values()) for _, v in ranked[:2])
+        # RANKED BY MONEY, AND THE SENTENCE MAY ONLY CLAIM MONEY. The first draft said
+        # these were "the two with a repeating annual article", which is not what the
+        # ranking measures and is not true: the Sewer Reserve Capacity fund appears in
+        # more separate years than either of them, in much smaller amounts.
+        w('**Two funds take most of it.** %s and %s together account for %s of the %s. '
+          'They are where the first question bites \u2014 the rest is sewer '
+          'housekeeping in amounts too small to close an operating gap.\n'
+          % (ranked[0][0], ranked[1][0], usd0(top2), usd0(depd)))
+        w('| fund | voted in, total | years | most recent |\n|---|---:|---:|---|')
+        for fund, yrs in ranked:
+            ys = sorted(yrs)
+            w('| %s | %s | %d | FY%d, %s |'
+              % (fund, usd0(sum(yrs.values())), len(ys), ys[-1], usd0(yrs[ys[-1]])))
+        w('')
+        w('| year | voted in | articles |\n|---|---:|---:|')
+        for y in sorted(byfy):
+            n = sum(1 for d in dep if d['fy'] == y)
+            flag = '' if y not in short_years else ' \u2014 *understated*'
+            w('| FY%d | %s%s | %d |' % (y, usd0(byfy[y]), flag, n))
+        w('')
+        if spd:
+            w('**What has come back out \u2014 and this is a FLOOR, not a total.** These '
+              'are the articles whose SUBJECT is a withdrawal. Money also leaves inside '
+              'articles about something else: FY2023 article 14 is the sewer enterprise '
+              'operating budget, and inside that one motion it transfers $35,000 out of '
+              'the Sewer Capital Reserve fund and $20,962.40 out of the Sewer Reserve '
+              'Capacity fund. Those are real withdrawals sitting inside an article this '
+              'classification counts as being about the sewer budget, so the figure below '
+              'is what can be attributed cleanly and no more.\n')
+            for x in sorted(spd, key=lambda r: (r['fy'], r['article'])):
+                w('- FY%d, article %s \u2014 %s, **%s**'
+                  % (x['fy'], x['article'], x['subject'], usd0(x['amount'])))
+            w('')
+        w('*How solid is this.* Of the %d articles mentioning a stabilization fund, %d '
+          'are deposits, %d are withdrawals, %d print no amount (marked *understated* '
+          'above), and %d are sewer enterprise operating budgets that name a fund only '
+          'in passing \u2014 those five total %s and counting them as deposits would '
+          'overstate the money going in by more than the deposits themselves.\n'
+          % (len(dep) + len(spd) + len(fl['unpriced']) + len(fl['not_about'])
+             + len(fl['unclear']), len(dep), len(spd), len(fl['unpriced']),
+             len(fl['not_about']),
+             usd0(sum(x['amount'] for x in fl['not_about'] if x['amount']))))
+
     w('---\n')
     w('## What is in them, FY%d\n' % FY)
     w('| account | fund | balance | may be spent on |\n|---|---|---:|---|')
@@ -204,15 +410,47 @@ def render(rows):
     w('| | **Total** | **%s** | |\n' % usd(total))
     w('**The general/restricted split is ours**, read off each fund’s name. The '
       'annual report prints a balance and never says what may be spent on what.\n')
+    # ---- THE TWO REFERENCE SECTIONS ARE BUILT HERE AND EMITTED LATER ----
+    # TJ: "What has moved, so far as anything here can prove should be closer to the top.
+    # The history of each fund and meetings should go closer to the bottom."
+    #
+    # Rule 7b, and the page had it backwards: what the funds have DONE is the conclusion,
+    # and the creating votes and the 53 articles are the raw material behind it. A reader
+    # was walking through eight subsections of Town Meeting minutes before reaching a
+    # single figure about whether the money has grown. These two sections are captured
+    # into `later` and re-emitted after the charts.
+    move_from = len(b)
+    # Hoisted above the creations block, which now reports which funds have NO creating
+    # vote and needs the full fund list to do it.
+    hist = history()
     cre = creations()
     if cre:
         w('---\n')
         w('## What each one is FOR, in the town\u2019s own words\n')
+        # WHICH FUNDS HAVE A CREATING VOTE, AND WHICH DO NOT. TJ asked whether we hold
+        # the minutes that justify setting up each of them. Listing the five we have and
+        # staying silent about the rest answers a question nobody asked: the useful
+        # sentence names the funds whose creating article is NOT in this archive, and
+        # says why.
+        def _fund_of(text):
+            return next((lbl for word, lbl in FUND_WORDS if word in (text or '').lower()),
+                        'Stabilization Fund (general)')
+
+        have = {_fund_of(c['subject']) for c in cre}
+        missing = [f for f in sorted(hist) if f not in have]
         w('A special purpose fund is restricted to the purpose it was created for, and '
           'that purpose lives in the article that created it \u2014 not in the '
           'fund\u2019s name. These are the creating votes this archive holds, each '
           'quoting **M.G.L. c.40 \u00a75B**, the statute that lets a town keep a '
           'stabilization fund at all.\n')
+        w('**This archive holds a creating vote for %d of the %d funds that appear in the '
+          'Town Meeting record, and not for %s.** The record here begins at FY2011 and '
+          'those funds are older than it, so the article that created them \u2014 and the '
+          'purpose that restricts them \u2014 is in a warrant nobody here has read. For a '
+          'restricted fund that is the load-bearing document: without it, what the money '
+          'may lawfully be spent on rests on the fund\u2019s NAME, which is a reading and '
+          'not a rule.\n'
+          % (len(have), len(hist), ', '.join(missing) if missing else 'none'))
         for c in cre:
             w('**%s** \u2014 FY%s %s Town Meeting, article %s, %s.\n'
               % (c['subject'], c['fy'], c['meeting'], c['article'],
@@ -225,7 +463,6 @@ def render(rows):
           'town-meeting record in this archive reaches. Their purposes are known only '
           'from their names, and a name is not an article.\n')
 
-    hist = history()
     if hist:
         w('---\n')
         w('## Each fund, meeting by meeting\n')
@@ -250,6 +487,9 @@ def render(rows):
                      r['amount'] or '\u2014', r['fincom'] or '\u2014',
                      r['result'].replace('_', ' ')))
             w('')
+    later = b[move_from:]
+    del b[move_from:]
+
     w('---\n')
     pv = proven()
     if pv:
@@ -387,6 +627,10 @@ def render(rows):
           'closes, and publishing one that does not would be worse than publishing '
           'nothing.\n' % (len(pv), len({r['fy'] for r in pv})))
         w('---\n')
+    # The reference material, after the conclusions it supports.
+    b.extend(later)
+
+    w('---\n')
     w('## What this cannot answer yet, and why\n')
     w('Four of the six questions this report was asked are about MOVEMENT, and the series '
       'does not exist in a form anything may aggregate:\n')

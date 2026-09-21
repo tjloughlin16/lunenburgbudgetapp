@@ -155,6 +155,17 @@ def series():
     return out
 
 
+def fylabel(fy):
+    """`FY14`, not `14`.
+
+    TJ: "make sure the xaxis has FY in the years (i assume they ARE years)." They are
+    fiscal years, and that he had to ask is the whole argument -- a bare `14` beside
+    dollar figures could be a count, an age or a page number, and this project's own rule
+    is that a unitless number in a chart is the one most likely to be quoted wrongly.
+    """
+    return 'FY%s' % str(fy)[2:]
+
+
 def colour(fund):
     return SERIES_COLOUR.get(fund, SECOND)
 
@@ -205,8 +216,12 @@ def nice_top(v):
 # ------------------------------------------------------------ 1. all three, one axis
 
 def chart_all(data):
-    W, H = 640, 300
-    L, R, T, B = 52, 150, 52, 30
+    # PADDING, MEASURED RATHER THAN EYEBALLED. The first version ended 3px below the
+    # last caption on this chart and 23px below it on the next one, which is what reads
+    # as "the padding is off" even when no single number looks wrong. T and BOT are now
+    # the same on all three: 22px of air under the subtitle, 16px under the last text.
+    W, H = 640, 316
+    L, R, T, B = 56, 152, 56, 46
     years = sorted({y for v in data.values() for y, _ in v})
     y0, y1 = years[0], years[-1]
     top = nice_top(max(v for s in data.values() for _, v in s))
@@ -230,7 +245,7 @@ def chart_all(data):
              f'stroke="{AXIS}" stroke-width="1"/>')
     for fy in years:
         b.append(f'<text x="{X(fy):.1f}" y="{H - B + 14}" font-size="9" '
-                 f'text-anchor="middle" fill="{MUTED}">{str(fy)[2:]}</text>')
+                 f'text-anchor="middle" fill="{MUTED}">{fylabel(fy)}</text>')
     b.append(f'<text x="{L}" y="{H - B + 27}" font-size="9" fill="{MUTED}">'
              f'fiscal year — a tick is a year that PROVED, not every year</text>')
 
@@ -257,10 +272,11 @@ def chart_all(data):
 # ------------------------------------------------- 2. each fund on its own scale
 
 def chart_each(data):
-    ROWH, GAP = 96, 20
+    ROWH, GAP = 96, 22
     W = 640
-    L, R, T = 52, 150, 52
-    H = T + len(data) * (ROWH + GAP)
+    L, R, T = 56, 152, 56
+    # 16px under the final row's year ticks, the same as every other chart here.
+    H = T + len(data) * (ROWH + GAP) - GAP + 16
     years = sorted({y for v in data.values() for y, _ in v})
     y0, y1 = years[0], years[-1]
 
@@ -291,7 +307,7 @@ def chart_each(data):
         b.append(f'<line x1="{L}" y1="{base + 6}" x2="{W - R}" y2="{base + 6}" '
                  f'stroke="{GRID}" stroke-width="1"/>')
         b.append(f'<text x="0" y="{top + 10}" font-size="11" font-weight="600" '
-                 f'fill="{c}">{esc(fund)}</text>')
+                 f'fill="{c}">{esc(short(fund))}</text>')
         for seg in path_segments(pts, X, Y):
             b.append(seg % c)
         for fy, v in pts:
@@ -317,7 +333,7 @@ def chart_each(data):
                  f'panel spans {usdk(lo)}–{usdk(hi)}</text>')
         for fy in years:
             b.append(f'<text x="{X(fy):.1f}" y="{base + 19}" font-size="8.5" '
-                     f'text-anchor="middle" fill="{MUTED}">{str(fy)[2:]}</text>')
+                     f'text-anchor="middle" fill="{MUTED}">{fylabel(fy)}</text>')
     return svg(W, H, ''.join(b),
                'The same three funds, each on its own scale',
                'Every panel is stretched to its OWN range, so the shapes are comparable '
@@ -343,7 +359,7 @@ def chart_growth(data):
             rows.append((fund, pts, g))
     rows.sort(key=lambda r: -r[2])
     W = 640
-    L, R, T, ROWH = 0, 130, 56, 52
+    L, R, T, ROWH = 0, 130, 56, 52  # T matches the other two: 22px under the subtitle
     # 56, not 34: the footnote is two lines, and the second needs a descender's worth of
     # room under its baseline or the viewBox clips the tails off 'g' and 'p'.
     H = T + len(rows) * ROWH + 56
@@ -355,7 +371,7 @@ def chart_growth(data):
         c = colour(fund)
         w = max(g / top * (W - BARL - R), 2)
         b.append(f'<text x="0" y="{y + 10}" font-size="11" font-weight="600" '
-                 f'fill="{c}">{esc(fund)}</text>')
+                 f'fill="{c}">{esc(short(fund))}</text>')
         b.append(f'<text x="0" y="{y + 24}" font-size="9" fill="{MUTED}">'
                  f'FY{pts[0][0]}–FY{pts[-1][0]}, {pts[-1][0] - pts[0][0]} years, '
                  f'{len(pts)} proven readings</text>')
