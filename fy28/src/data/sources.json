@@ -1999,6 +1999,18 @@
      "textUrl": "/docs/analyses/questions.md"
     },
     {
+     "path": "data/treasurers-cash.csv",
+     "title": "What the town held in cash, by bank and by fund, every year",
+     "stars": 3,
+     "what": "The `Treasurer’s Cash as of 6/30` page that every annual town report prints: what the town holds and where, with the funds named. It carries `Bartholomew Stabilization Fund` — the GENERAL Stabilization Fund, which the trust-table pages omit entirely. Each page sets this year beside last year, so one report yields two fiscal years and every interior year is read twice from two documents. Every column is footed to the `Total Treasurer Cash` line the page prints and a column that does not tie is dropped rather than published. NOTE THE GRAIN: this is CASH HELD BY CUSTODIAN, not a fund balance — where it differs from trust-agency-balances.csv, the ledger is the fund and this is the cash. See scripts/extract_treasurers_cash.py.",
+     "kind": "Data",
+     "bytes": 20161,
+     "url": "/docs/data/treasurers-cash.csv",
+     "count": 169,
+     "unit": "rows",
+     "textUrl": "/docs/data/treasurers-cash.csv"
+    },
+    {
      "path": "data/enterprise-balance-sheet.csv",
      "title": "The enterprise-funds balance sheet, read from the page",
      "stars": 3,
@@ -15966,10 +15978,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1384,
+  "documents": 1385,
   "groups": 22,
-  "bytes": 2172716964,
-  "loadBearing": 136
+  "bytes": 2172737125,
+  "loadBearing": 137
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

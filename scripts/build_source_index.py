@@ -1045,6 +1045,18 @@ GROUPS = [
              'question. Loaded as `stated_cuts` and read by /cut-register, which sets '
              'DESE\u2019s teacher counts beside it. '
              'See scripts/extract_stated_cuts.py.'),
+            ('data/treasurers-cash.csv',
+             'What the town held in cash, by bank and by fund, every year', 3,
+             'The `Treasurer\u2019s Cash as of 6/30` page that every annual town report '
+             'prints: what the town holds and where, with the funds named. It carries '
+             '`Bartholomew Stabilization Fund` \u2014 the GENERAL Stabilization Fund, which '
+             'the trust-table pages omit entirely. Each page sets this year beside last '
+             'year, so one report yields two fiscal years and every interior year is read '
+             'twice from two documents. Every column is footed to the `Total Treasurer '
+             'Cash` line the page prints and a column that does not tie is dropped rather '
+             'than published. NOTE THE GRAIN: this is CASH HELD BY CUSTODIAN, not a fund '
+             'balance \u2014 where it differs from trust-agency-balances.csv, the ledger is '
+             'the fund and this is the cash. See scripts/extract_treasurers_cash.py.'),
             ('data/stabilization-pages.csv',
              'Where the stabilization funds are printed, page by page', 2,
              'Every page of every annual town report that carries a stabilization or '

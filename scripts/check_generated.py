@@ -69,6 +69,7 @@ CHECKS = [
     # WHERE THE TABLES ARE, before anything that reads one. A page that stops being
     # findable has to surface as itself rather than as a report quietly losing a row.
     ('map_stabilization_pages.py', ['--check']),
+    ('extract_treasurers_cash.py', ['--check']),
     ('extract_trust_agency.py', ['--check']),
     # The annual report's own per-account listing, checked against that ledger.
     ('extract_trust_balance_detail.py', ['--check']),
