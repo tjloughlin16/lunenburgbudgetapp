@@ -70,7 +70,45 @@ def year_files():
             yield int(m.group(1)), os.path.join(OCR, f)
 
 
-def extract(fy, path, verbose=False):
+def fund_keys(code, name):
+    """Every identity a fund can be recognised by, because no single one survives.
+
+    The account number is the best key and the scan loses it: FY2018's Zoning row prints
+    `8129` and FY2019's prints nothing, so keying on the code alone made the same fund
+    two funds and the carry-forward proof could not find last year's reading. The printed
+    NAME survives where the code does not -- and it is truncated differently every year
+    (`ZONING INCENTIVE STABILIZATION (TD BAN`, `... (TD |`), so the bank in brackets has
+    to go before it can match.
+
+    Rule 13c: the format changes year to year, so recognise a thing by several marks and
+    accept any of them, rather than by one mark and report it missing.
+    """
+    keys = []
+    if code:
+        keys.append(code)
+    n = ' '.join((name or '').split()).split('(')[0]
+    n = ' '.join(w for w in n.split() if not w.isdigit()).strip().upper()
+    if n:
+        keys.append(n)
+    return keys
+
+
+def _basis(r, prior):
+    """Which proof actually carried this row -- never a constant.
+
+    A row proven by the prior year's ending cash must not claim the table's own identity:
+    they establish different things, and the weaker one cannot check how the beginning
+    balance splits between principal and earnings.
+    """
+    ok, why = R.verify(r['cells'])
+    if ok:
+        return why
+    last = next((prior[k] for k in fund_keys(r['code'], r['name']) if k in prior), None)
+    return R.verify_from_prior(r['cells'], last)[1]
+
+
+def extract(fy, path, verbose=False, prior=None):
+    prior = prior or {}
     boxes = T.read_boxes(path)
     pages = sorted({b['page'] for b in boxes
                     if 'STABILIZATION' in (b['text'] or '').upper()})
@@ -98,7 +136,28 @@ def extract(fy, path, verbose=False):
         # row. A page is kept because its figures add up, not because it is wide.
         if len(cols) < 3:
             continue
-        proven = [r for r in rows if R.verify(r['cells'])[0]]
+        # A ROW MAY BE PROVEN TWO WAYS. Ordinarily by the table's own identity; failing
+        # that, by last year's PROVEN ending cash plus this year's activity -- see
+        # verify_from_prior(). The second exists because a single scanned digit in
+        # BEGINNING PRINCIPAL sinks an otherwise clean row, and the beginning balance is
+        # a quantity the previous year's page already printed and proved.
+        #
+        # Rule 13c: a row that refuses is a statement about our reading, not about the
+        # town. Before this, FY2019's general Stabilization Fund was reported as absent
+        # because a 6 had been scanned as a 5.
+        proven = []
+        for r in rows:
+            ok, _ = R.verify(r['cells'])
+            if ok:
+                proven.append(r)
+                continue
+            # NOT `p`: that is the page number of the loop this sits inside, and
+            # shadowing it wrote a balance into the page column of every row.
+            last = next((prior[k] for k in fund_keys(r['code'], r['name'])
+                         if k in prior), None)
+            ok2, _ = R.verify_from_prior(r['cells'], last)
+            if ok2:
+                proven.append(r)
         for r in proven:
             if 'STABIL' not in (r['code'] + r['name']).upper():
                 continue
@@ -158,7 +217,7 @@ def extract(fy, path, verbose=False):
                  # THE BASIS IS WHAT THE CHECK ACTUALLY RETURNED. It was a constant
                  # string, written when both identities were the only way through, and it
                  # would now be stating two proofs for a row that has one.
-                 page=page, basis=R.verify(r['cells'])[1],
+                 page=page, basis=_basis(r, prior),
                  document=os.path.relpath(path, ROOT)) for page, r in stab], None
 
 
@@ -170,14 +229,26 @@ def main():
     a = ap.parse_args()
 
     rows, missing = [], []
-    for fy, path in year_files():
+    # OLDEST FIRST, so a year can be proven from the one before it. year_files() does not
+    # promise an order and the carry-forward proof depends on one: FY2019's general fund
+    # closes against FY2018's proven ending cash, which has to exist by then.
+    prior = {}
+    for fy, path in sorted(year_files()):
         if a.fy and fy != a.fy:
             continue
-        got, err = extract(fy, path, a.verbose)
+        got, err = extract(fy, path, a.verbose, prior)
         print('FY%d  %d proven' % (fy, len(got)))
         if err:
             missing.append('FY%d: %s' % (fy, err))
         rows += got
+        # Carry this year's proven endings forward for the next year to lean on.
+        for r in got:
+            try:
+                v = float(r['ending_cash'])
+            except (TypeError, ValueError):
+                continue
+            for k in fund_keys(r['code'], r['name']):
+                prior[k] = v
 
     rows.sort(key=lambda r: (r['fy'], r['code'] or 'zz', r['name']))
     s = io.StringIO()

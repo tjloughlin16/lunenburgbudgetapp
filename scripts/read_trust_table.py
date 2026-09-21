@@ -47,10 +47,20 @@ against itself.
 import re
 import statistics
 
-MONEY = re.compile(r'^\(?-?[$S]?-?[\d,]{1,15}[.,]\d{2}\)?$')
+# A GROUP SEPARATOR MAY BE A COMMA OR A FULL STOP, because a scanner cannot tell them
+# apart and this archive's pages are scans. `money()` below has always coped -- it strips
+# every separator and takes the last two digits as cents -- but this MATCHER accepted only
+# commas in the body, so a figure like `$21.523.05` was never recognised as a figure at
+# all. Not misread: invisible. It was not placed in a column, its row could not close the
+# table's own identity, and the row went unpublished.
+#
+# FY2019's general Stabilization Fund row is the worked example: `$21.523.05` of net
+# earnings and `S1.848.802.86` of ending cash, on a row whose other four figures read
+# perfectly. One unmatched separator cost the year.
+MONEY = re.compile(r'^\(?-?[$S]?-?[\d.,]{1,15}[.,]\d{2}\)?$')
 # The same shape, found ANYWHERE in a string rather than anchored to it, so a box
 # holding two cells can be taken apart. Anchored matching is what silently drops them.
-MONEY_TOKEN = re.compile(r'\(?-?[$S]?-?[\d,]{1,15}[.,]\d{2}\)?')
+MONEY_TOKEN = re.compile(r'\(?-?[$S]?-?[\d.,]{1,15}[.,]\d{2}\)?')
 CODE = re.compile(r'^8\d{3}$')
 
 # Column headings as the reports print them, mapped to one name each. The labels arrive as
@@ -296,6 +306,12 @@ FOURTEEN = ['begin_market', 'begin_principal', 'begin_earnings', 'net_income',
 
 LAYOUTS = {
     2014: NINE, 2015: NINE, 2016: NINE, 2017: NINE, 2022: NINE, 2023: FOURTEEN,
+    # FY2019 WAS READ AND WRITTEN DOWN AND NEVER WIRED IN. SEVEN_NO_MARKET above carries
+    # this year's header, read off the page and commented with it -- and the year was
+    # missing from this dict, so columns() named nothing, rows() built nothing, and the
+    # general Stabilization Fund had no FY2019 reading. The layout existed; the lookup
+    # did not. TJ, pointing at the page: "it's just called 'stabilization'".
+    2019: SEVEN_NO_MARKET,
     2020: ['begin_market', 'begin_principal', 'begin_earnings', 'net_earnings',
            'transfers_principal', 'transfers_earnings', 'ending_cash',
            'change_unrealized', 'unrealized', 'ending_market'],
@@ -587,6 +603,46 @@ def rows(boxes, fy):
         return [], [dict(x=c, name=None) for c in centres]
     got, cols = place(layout)
     return got, cols
+
+
+def verify_from_prior(cells, prior_ending, tol=0.02):
+    """Prove a row from LAST year's proven ending cash instead of this year's beginnings.
+
+    A fund's beginning balance IS the previous year's ending balance. The table prints
+    both -- `BEGINNING PRINCIPAL` + `BEGINNING EARNINGS` this year, `ENDING CASH VALUE`
+    last year -- so they are two printings of one quantity, and where one is misread the
+    other can carry the row.
+
+    THE CASE THIS WAS WRITTEN FOR. FY2019's general Stabilization Fund prints beginning
+    principal as `$1,524,952.91`, and the 6 is a scanned 5: with it the row misses its own
+    identity by exactly $100,000 and was refused, losing the year. Every other figure on
+    the row is clean. Taking FY2018's PROVEN ending cash instead:
+
+        1,740,279.81  (FY2018 ending, proven by its own page's identity)
+      +    21,523.05  (net earnings, as printed)
+      +    87,000.00  (transfers of principal, as printed)
+      = 1,848,802.86  = ENDING CASH as printed, to the cent
+
+    That uses none of the misread figure. It is a stricter test than the ordinary one in
+    one respect and weaker in another, and both matter: stricter because it spans two
+    documents that were produced a year apart and must agree, weaker because it cannot
+    check the beginning split at all. So it returns its own basis and never claims `both
+    identities hold`.
+
+    It is NOT a fallback to reach for whenever a row refuses. It requires a PROVEN prior
+    reading of the same fund, and it must close to the cent; a row that needs any slack
+    stays refused.
+    """
+    if 'ending_cash' not in cells or prior_ending is None:
+        return False, 'no prior proven ending to carry forward'
+    activity = sum(cells.get(k, 0.0) for k in
+                   ('net_earnings', 'transfers_principal', 'transfers_earnings',
+                    'contrib_principal', 'disburse_principal'))
+    activity += sum(v for k, v in cells.items() if k.startswith('activity_'))
+    if abs(prior_ending + activity - cells['ending_cash']) > tol:
+        return False, ('prior ending + activity != ending cash (%.2f vs %.2f)'
+                       % (prior_ending + activity, cells['ending_cash']))
+    return True, 'last year\u2019s proven ending cash + this year\u2019s activity = ending cash'
 
 
 def verify(cells, tol=0.02):

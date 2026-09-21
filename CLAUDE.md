@@ -633,6 +633,60 @@ identity the table states about itself.
 So the order is: measure, band, place, name, then **prove every row and write only what
 proves**. `scripts/read_trust_table.py` is the worked example.
 
+
+### 13c. A PATTERN THAT DOES NOT MATCH IS NOT AN ABSENCE. Go and look at the page
+
+**Every year of these documents is laid out differently, and a reader who assumes
+otherwise reports missing data that is sitting on the page.**
+
+TJ, 21 September 2026, after I told him four separate times that a figure did not exist:
+
+> *"i think this is a recurring problem. yo uare thinking there is standardization when
+> there isn't. every year they produce a different format. or something like that. so we
+> cant lose data because you tried to fit it to a format and couldn't. you have to look
+> just like i do. you have to do your own search when things dont fit the pattern. dont
+> make me do it"*
+
+He was right every time, and the failures were not subtle once anybody opened the page.
+In one afternoon, on one fund:
+
+| what I reported | what was actually true |
+|---|---|
+| "FY2019 has no general Stabilization row" | it is on a different page, labelled just `STABILIZATION` with no bank in front of it |
+| "FY2022–FY2025 are missing" | FY2022 and FY2025 were in the data; I had read the poorer of two code paths |
+| "fourteen pages came out upside down" | none of them had; the test matched round thousands |
+| "the extractor publishes nothing for FY2023" | that report prints TWO trust tables with different headers, and the stabilization funds are on the narrower one |
+| "the column does not foot, so the year is unreadable" | a comma was scanned as a full stop, so a million dollars never matched the money pattern |
+
+**The common shape: a matcher failed, and I reported the failure as a fact about the
+town.** A regex that finds nothing, a heading that is absent, a layout that refuses —
+each of those is a statement about OUR INSTRUMENT. Rule 13 already says an instrument
+that reformats before you see it is part of the finding; this is the same rule for an
+instrument that finds nothing.
+
+**What to do instead, in order.**
+
+1. **Open the page.** Dump every box on it, labels and figures, top to bottom. Not the
+   filtered view the extractor uses — the whole page. Most of these were visible in the
+   first ten lines of that dump.
+2. **Search for the thing, not for the pattern.** `grep -i stabiliz` across every page of
+   the report, then look at what came back. The bare `STABILIZATION` row was two pages
+   from where the extractor was looking and unreachable by any refinement of it.
+3. **Assume the format changed.** Layouts here vary year to year and sometimes WITHIN one
+   report: FY2023 prints a fourteen-column trust summary and an eight-column "held by
+   other banks" table, and `LAYOUTS` was keyed by year, so one of them was always wrong.
+4. **Then, and only then, say a thing is not published** — and say which pages were
+   looked at.
+
+**And never report "missing" from a count.** A dataset with no rows for a year, a queue
+saying `unread`, a payload with a short series: all three are things we built, and each
+was wrong about the archive today. Check the document before describing what the town
+did or did not print.
+
+The cost of getting this wrong is not a slow afternoon. It is telling a resident the town
+does not publish something it publishes every year.
+
+
 ---
 
 ## 14. After correcting a large error, re-examine everything it was explaining
