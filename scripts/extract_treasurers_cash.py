@@ -42,6 +42,7 @@ import glob
 import io
 import os
 import re
+import statistics
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -161,19 +162,50 @@ def is_label(text):
     return bool(NOISE.search(text or ''))
 
 
+def row_band(boxes):
+    """Half this page's own row pitch, as the band that joins a label to its amount.
+
+    RULE 13b's SECOND RULE, WHICH THIS FILE WAS IGNORING. The band was a constant 0.006,
+    and FY2014's `Citizens Bank Investment` sits 0.00655 from its own $159,518.67 -- so
+    the row was dropped for being 0.00055 out, the page missed its printed total by
+    exactly that row, and the whole year went unpublished.
+
+    A constant cannot be right for every page: these are scans at different sizes, and
+    that page's median row pitch is 0.0262, so half of it is 0.0131 -- twice the band
+    that was being applied. Measured, the band fits the page it is measuring.
+
+    Falls back to the old constant only where a page has too few rows to have a pitch.
+    """
+    ys = sorted({round(b['y'], 4) for b in boxes if MONEY.match(b['text'].strip())})
+    gaps = [b - a for a, b in zip(ys, ys[1:]) if b - a > 0.002]
+    if len(gaps) < 3:
+        return 0.006
+    return max(0.006, min(statistics.median(gaps) / 2, 0.02))
+
+
 def read_page(fy, page, boxes, doc):
     cols = columns(boxes)
     if not cols:
         return [], []
+    band = row_band(boxes)
     labels = [b for b in boxes
               if not MONEY.match(b['text'].strip())
-              and len(b['text'].strip()) > 5
+              # LONG ENOUGH TO BE A NAME IS NOT THE SAME AS LONG. `OPEB` is four
+              # characters and is an account the town holds $1.6M in; the old floor of
+              # six discarded it outright, so its row never existed, FY2020 missed its
+              # own total by exactly that row's $368,833.19, and a year of every
+              # stabilization fund on the page went unpublished.
+              #
+              # is_label() is the real test and it is stricter in the way that matters:
+              # a run of three letters, which `tA`, `VA`, `$` and stray digits do not
+              # have and every account name does.
+              and len(b['text'].strip()) >= 3
               and is_label(b['text'])
               and b['x'] < min(c[0] for c in cols)]
     rows, totals = [], [None] * len(cols)
     for lab in labels:
         name = ' '.join(lab['text'].split())
-        near = [b for b in boxes if abs(b['y'] - lab['y']) < 0.006
+        near = [b for b in boxes if abs(b['y'] - lab['y']) < band
                 and MONEY.match(b['text'].strip())]
         vals = []
         for lo, hi in cols:
@@ -192,7 +224,24 @@ def read_page(fy, page, boxes, doc):
                       for v, t in zip(vals + [None] * len(totals), totals)]
             continue
         if all(v is None for v in vals):
-            continue
+            # THE SAME ARGUMENT THE TOTAL ROW ALREADY GETS, and it was being made for one
+            # row and refused to every other. A row whose figures land in none of the
+            # column bands is misaligned, not empty -- and where it carries exactly as
+            # many figures as there are columns, their ORDER settles which is which
+            # without appealing to position at all.
+            #
+            # FY2020's `OPEB` row prints $368,833.19 at x=0.633 and $210,909.79 at 0.778
+            # while the columns run 0.697-0.760 and 0.844-0.906. Both figures were
+            # discarded, the page missed its own total by $368,833.18 -- that row, to the
+            # cent -- and the year went unpublished with every stabilization fund on it.
+            #
+            # Strictly when the counts match. A row with FEWER figures than columns is
+            # genuinely ambiguous about which column is blank, and stays refused.
+            loose = sorted(near, key=lambda b: b['x'])
+            if len(loose) == len(cols):
+                vals = [money(b['text'].strip()) for b in loose]
+            if all(v is None for v in vals):
+                continue
         rows.append((name, vals))
     return rows, totals
 
@@ -211,10 +260,15 @@ def neighbour_diff(fy, labels, by_year):
     remember harder -- it is that a refusal should carry its own diagnosis. A blocker that
     says only the amount asks a person to go and do this by hand every time.
     """
+    # THE NEAREST PUBLISHED YEAR, NOT MERELY THE ADJACENT ONE. Blocked years cluster --
+    # FY2018 through FY2021 were all refused together -- so comparing only against fy+1
+    # and fy-1 gave every one of them an empty diagnosis, which is the case where a
+    # diagnosis is most wanted. Walk outwards until a year that actually published.
     out = []
-    for other in (fy + 1, fy - 1):
+    order = sorted(by_year, key=lambda y: (abs(y - fy), -y))
+    for other in order[:2]:
         theirs = by_year.get(other)
-        if not theirs:
+        if not theirs or other == fy:
             continue
         missing = sorted(t for t in theirs
                          if not any(t.lower()[:18] in m.lower() for m in labels))
@@ -228,7 +282,7 @@ def main():
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
 
-    body, report = [], []
+    body, report, labels = [], [], {}
     for f in sorted(glob.glob(os.path.join(OCR, '*annual-town-report.tsv')), reverse=True):
         m = re.search(r'fy-(\d{4})-', f)
         if not m:
@@ -263,6 +317,8 @@ def main():
                     report.append('FY%d p%d col%d: rows sum to %.2f, page says %s'
                                   % (fy, page, i, got,
                                      '%.2f' % total if total is not None else 'nothing'))
+                    # WHICH ROWS, not just how much. See neighbour_diff().
+                    labels[fy] = {n for n, _ in rows}
                     continue
                 # Column 0 is the year the page is headed with; each column right of it is
                 # one year older.
@@ -333,8 +389,22 @@ def main():
     if report:
         print('  columns that did NOT foot, and were dropped '
               '(recorded in sources/data/extraction-blocked.csv):')
+        # WHICH ROWS, NOT JUST HOW MUCH. A residual is an amount; the useful answer is
+        # the list of accounts the year next door has and this reading does not, and the
+        # town lists roughly the same accounts every year. Printed automatically because
+        # a blocker that only says the amount asks a person to do this by hand.
+        published = collections.defaultdict(set)
+        for r in body:
+            published[r['fy']].add(r['held_as'])
         for r in report:
             print('    ' + r)
+            m = re.match(r'FY(\d{4})', r)
+            if not m:
+                continue
+            fy = int(m.group(1))
+            for other, missing in neighbour_diff(fy, labels.get(fy, set()), published):
+                print('        vs FY%d, this reading is missing %d row(s): %s'
+                      % (other, len(missing), ', '.join(x[:26] for x in missing[:6])))
     return 0
 
 
