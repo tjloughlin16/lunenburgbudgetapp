@@ -157,28 +157,33 @@ def rows_on(path, page, boxes):
 
 
 def read_page(path):
+    """The listing page, if this report has one.
+
+    NOT `csv.DictReader`. These TSVs are unquoted and OCR text routinely contains a double
+    quote, which the csv module treats as opening a quoted field -- it swallows every
+    following line looking for a closing one and then raises `field larger than field
+    limit`. `pdf_tables.read_boxes` splits on tabs line by line, which is why nothing
+    downstream of it has ever lost a row.
+    """
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pdf_tables as T
     by_page = collections.defaultdict(list)
-    with open(path, encoding='utf-8') as fh:
-        for r in csv.DictReader(fh, delimiter='\t'):
-            try:
-                by_page[r['page']].append(dict(
-                    x=float(r['x']), y=float(r['y']), w=float(r['w']),
-                    text=r['text'] or ''))
-            except (TypeError, ValueError):
-                continue
+    for b in T.read_boxes(path):
+        by_page[str(b['page'])].append(
+            dict(x=b['x'], y=b['y'], w=b['w'], text=b['text']))
+
     # THE SAME 180-DEGREE TURN THE OTHER READER HANDLES. FY2024's listing comes off the
     # scanner reversed -- fund names at high x, figures at low -- so "the figure to the
-    # right of the account number" finds nothing and the year reads as absent. The
-    # detector already exists; it is imported rather than rewritten.
+    # right of the account number" finds nothing and the year reads as absent.
     try:
-        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         from read_trust_table import upright
     except Exception:
-        upright = lambda b: b
-    by_page = {p: upright(b) for p, b in by_page.items()}
+        def upright(b):
+            return b
+    by_page = {p: upright(bs) for p, bs in by_page.items()}
+
     titled = {p for p, bs in by_page.items()
               if any(HEADING.search(b['text'] or '') for b in bs)}
-    # ...or the page after one that carries it.
     titled |= {str(int(p) + 1) for p in titled if str(int(p) + 1) in by_page}
     best = None
     for page, boxes in by_page.items():

@@ -73,15 +73,23 @@ def money(t):
 
 
 def read_boxes(path):
+    """Pages of boxes, via the SHARED reader.
+
+    NOT `csv.DictReader`. These TSVs are unquoted and OCR text routinely contains a double
+    quote, which the csv module treats as opening a quoted field -- it then swallows every
+    following line until it finds a closing one, and raises `field larger than field
+    limit` when it does not. `pdf_tables.read_boxes` splits on tabs, line by line, and is
+    the reason nothing downstream of it ever lost a row.
+
+    This function used the csv module until it met an OCR run containing a stray quote,
+    which is the same mistake that made a measurement script report 5,215 rows missing
+    from files that were complete.
+    """
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pdf_tables as T
     by_page = collections.defaultdict(list)
-    with open(path, encoding='utf-8') as fh:
-        for r in csv.DictReader(fh, delimiter='\t'):
-            try:
-                by_page[int(r['page'])].append(dict(
-                    x=float(r['x']), y=float(r['y']), w=float(r['w']),
-                    text=(r['text'] or '')))
-            except (TypeError, ValueError):
-                continue
+    for b in T.read_boxes(path):
+        by_page[b['page']].append(dict(x=b['x'], y=b['y'], w=b['w'], text=b['text']))
     return by_page
 
 
