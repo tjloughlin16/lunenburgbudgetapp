@@ -66,6 +66,9 @@ CHECKS = [
     # to move both or the picture and the table under it disagree.
     # The ledger extract first: the report's balances are read from it, so a drift there
     # has to surface as itself rather than as a stale report.
+    # WHERE THE TABLES ARE, before anything that reads one. A page that stops being
+    # findable has to surface as itself rather than as a report quietly losing a row.
+    ('map_stabilization_pages.py', ['--check']),
     ('extract_trust_agency.py', ['--check']),
     # The annual report's own per-account listing, checked against that ledger.
     ('extract_trust_balance_detail.py', ['--check']),

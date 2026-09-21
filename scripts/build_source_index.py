@@ -1045,6 +1045,17 @@ GROUPS = [
              'question. Loaded as `stated_cuts` and read by /cut-register, which sets '
              'DESE\u2019s teacher counts beside it. '
              'See scripts/extract_stated_cuts.py.'),
+            ('data/stabilization-pages.csv',
+             'Where the stabilization funds are printed, page by page', 2,
+             'Every page of every annual town report that carries a stabilization or '
+             'trust fund table: which report, which page, what KIND of table it is, and '
+             'whether we have read it. Four different tables carry these funds and they '
+             'are not interchangeable \u2014 the `other-banks` table omits the general '
+             'Stabilization Fund entirely, which is why a chart of it once stopped four '
+             'years early. `state` is the work queue: `read`, `unread`, or `reversed` '
+             'for a page whose OCR came out upside down and on which no extractor can '
+             'see a figure at all. Sorted newest report first, because that is the order '
+             'the work is done in. See scripts/map_stabilization_pages.py.'),
             ('data/trust-fund-balances.csv',
              'Every trust fund and its balance, from the annual report\u2019s own listing', 3,
              'The `Trust Fund Balance Detail` page that the FY2024 and FY2025 annual '
@@ -2331,12 +2342,7 @@ SKIP_FILES = {'supplemental.csv',
               # not publish anything, and a question with a date on it is identifying in a
               # town this size. The file holds no bodies and no email addresses and it
               # still does not belong in a public archive.
-              'data/reader-questions.csv',
-              # A CACHE of which page of which annual report holds the trust-and-agency
-              # table, so the extractor does not re-scan sixteen PDFs to find them again.
-              # Rebuilt by scripts/locate_stabilization_pages.py from the reports
-              # themselves; it carries no figure.
-              'data/stabilization-pages.json'}
+              'data/reader-questions.csv'}
 
 
 def page_count(path):
