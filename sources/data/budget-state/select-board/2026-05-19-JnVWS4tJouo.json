@@ -14,31 +14,22 @@
     "amount_as_heard": null,
     "fiscal_year": 2027,
     "kind": "override",
-    "scope": "both",
-    "statement": "Resignation letter read into the record states the recent override failed",
-    "status": "voted",
-    "t": 908,
-    "who": "the vice chair"
-   },
-   {
-    "amount_as_heard": null,
-    "fiscal_year": null,
-    "kind": "override",
-    "scope": "both",
-    "statement": "Member notes that even the balanced-budget option's own slide showed an override would still be needed in coming years",
+    "scope": "town",
+    "statement": "The recent override failed",
     "status": "announced",
+    "t": 908,
+    "who": "a board member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "override",
+    "condition": "even based on the balanced budget (most affordable) option",
+    "fiscal_year": null,
+    "prediction": "there would be an override in the coming years even under that option",
+    "scope": "town",
     "t": 1379,
     "who": "a member"
-   },
-   {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "other",
-    "scope": "both",
-    "statement": "Board discusses whether to call a special town meeting to revisit and continue discussing the balanced budget, pending School Committee and Finance Committee input",
-    "status": "proposed",
-    "t": 1216,
-    "who": "the chair"
    }
   ]
  },
@@ -46,9 +37,10 @@
  "video_url": "https://www.youtube.com/watch?v=JnVWS4tJouo",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T17:59:41Z",
+  "at": "2026-09-21T21:36:28Z",
   "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.2327828,
-  "model": "sonnet"
+  "cost_usd": 0.23822500000000002,
+  "model": "sonnet",
+  "schema": 2
  }
 }

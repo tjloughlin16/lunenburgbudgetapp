@@ -12,7 +12,10 @@ analyses/charts/fy26-town-spend.svg,4607,fd3034d0465102c76b63ec35e902d0d5fe73d9c
 analyses/charts/fy26-town-variance.svg,6483,1dc0bb079b7b2434526baf958c1a6a807c92c5e71f260075f0f02c6162888175,2026-09-05T16:47:43Z
 analyses/charts/stabilization-all.svg,7699,722e8a49f7662ff77e416a253eaf545e59d5abfc336b5e7688c9277de044bd7c,2026-09-21T12:03:30Z
 analyses/charts/stabilization-each.svg,9640,556b70731bb54d77c6613f46c5fd263deb9378f601fcc682ce75ddc580176a57,2026-09-21T12:03:30Z
+analyses/charts/stabilization-flows.svg,4499,a23db16d233cf5996b322f0c026cbd91e523befc3b0f138d72547315270c95d7,2026-09-21T21:47:51Z
 analyses/charts/stabilization-growth.svg,2245,5cf94bef5a52da33b213c89bf87f43bff5d003a9e2fd5b0cda6e38ca8383c555,2026-09-21T12:03:30Z
+analyses/charts/stabilization-option-burndown.svg,3950,2c20b2cc2fed5f5f436f92101df74ea2c5f1aa6b926cf66a148dba445ec6693a,2026-09-21T21:47:53Z
+analyses/charts/stabilization-option-split.svg,4808,28a70bd01f65767414852d07e883857c2239c4de7d173cce34c2878c56373a50,2026-09-21T21:47:53Z
 analyses/connecting-the-budget.md,5588,ae41aa0f390a70bbd4e587cdc2709b76f922d649ffc9c55d054b594dd15e3d2b,2026-09-05T16:47:44Z
 analyses/connecting-the-budget.pdf,173991,d9d8cc4aceee423c858644a287fcf86feeb6bf1130619dd89c0ca7980d085635,2026-09-05T16:47:44Z
 analyses/free-cash.md,17481,daa47e7adb4d77d967c621299ba242977dfeee61eb1035646585ecbac036bb92,2026-09-05T16:47:44Z
@@ -28,6 +31,7 @@ analyses/questions.md,40607,3ba096d55faad5c760a9afb2ea3985f5ad2b7508c06b01ee8fa0
 analyses/show-your-work.md,94205,c91821568ecb80d6334059a60aa72252a9ee09e0f10eba0154ed30d4abfc0723,2026-09-05T16:47:52Z
 analyses/sped-and-funds.md,25359,9e855fdf6a94ae9fb15305cb6e5fcfaaa377440e7a344ea4bbafd965a8c39020,2026-09-05T16:47:52Z
 analyses/sped-and-the-curve.md,39498,0c3e81c711982b360acd1e761500a4773a46c571172c4e7a4888f9e5e2531d29,2026-09-05T16:47:53Z
+analyses/stabilization-option.md,10256,7d2e63c668637e9c66d96c008be3344594a2521f89633ef383837df757c10c6a,2026-09-21T21:47:58Z
 analyses/what-you-can-ask.md,10580,b7cacbdcaba6217adcf6ba17efe07de5bb5c3978124eaf2ed4882e7dc411d26c,2026-09-08T15:44:12Z
 budget-workbooks/PROVENANCE.md,6624,05b33f1461b3655f9d1e87247dbc35f60e49fdf99118d891e10128492161bc55,2026-09-05T16:47:53Z
 budget-workbooks/ch70-fy27-summary.xlsx,59808,cef241f30300c06f443b7a9178efa293105a6104a3d8698f73693b27863713e9,2026-09-05T16:38:00Z
@@ -238,6 +242,7 @@ data/dls-new-growth.csv,41258,8cc0f76c4336fa6e68966e7598c135300a14ccd8c6e684e52f
 data/document-basis.csv,85455,9acf0c69889a341640d7753f02843816bfc289abdc4942a143008152a4e1d395,2026-09-05T16:48:32Z
 data/enterprise-balance-sheet-printed-totals.csv,11424,8cd9637c2a304c9e517ff3a68993993ce2ca216ccfe8651125e9915d0d37c491,2026-09-08T15:44:39Z
 data/enterprise-balance-sheet.csv,17605,d31ddda8b7bf0aa2e2d46ded3ecf60c30cf3824b6e17438b7227fd6fa1025a23,2026-09-08T15:44:41Z
+data/extraction-blocked.csv,272,943862fe88b3938ed96253a2ef1401f6dab8e28e21881c3e1e350d1151c1d3df,2026-09-21T21:48:19Z
 data/extraction-plan.csv,286235,da65195654518c6055a21c537bbb242bacafc21872b993e012e759362dff1061,2026-09-05T16:48:32Z
 data/feed-sources.csv,1064,8ee013cdc4331b896ea47462ef8a2d89c85f97e55a1b2f43071b61fc4a9f4fd8,2026-09-13T19:16:34Z
 data/feed-watch-events.csv,713,e19330ca27eaaa69f59f5f837799be8058caab9e663f7f286b83a02515f647db,2026-09-13T19:16:34Z
@@ -250,6 +255,7 @@ data/grants-history.csv,32896,b3f78dd98635d58ae8b2353b519d5c5e76ba76455a932a9a58
 data/gross-school-budget-fy2026.xlsx,69819,a3ea36ab8c78fb7cdefc02a367209acc94ddac25551eed4feae1bd8c81f821b8,2026-09-05T16:48:39Z
 data/health-insurance-law.csv,5188,0eb50df04086618534634aff04e427845f35663ec3cb899c7135491263813278,2026-09-18T12:24:10Z
 data/indexnow-key.txt,33,3ef3fd14c0d8b4494efe318e891d555971dac104f5a8b132a024bc333878c572,2026-09-08T15:44:43Z
+data/ingest-plan.csv,3540,7e3547fa09dc326174d0ae36c021e094d646f2bec7f6b2fc823e515b765067ca,2026-09-21T21:48:21Z
 data/inventory/FY2011.json,64215,bd6548146efc89983a124f386041fc8ba9d445302d992d2c14ad2483966b1218,2026-09-05T16:48:40Z
 data/inventory/FY2012.json,75142,af4562c1eb99b612032723b162c51877777d8e4c519d58c90556b11e18c323c9,2026-09-05T16:48:40Z
 data/inventory/FY2013.json,71223,27b9e9e53bfac1316648abf858cae3e58fda2cddcaacf89840cf51f8d021eadb,2026-09-05T16:48:41Z
@@ -287,6 +293,9 @@ data/money-gaps.csv,48760,8315cb8b4afae4027f27a29a0b87eeee70c7248c2cbbd3292c4eb1
 data/munis-ledger.csv,230432,b9cbc07f552c9de2ad865bf615bd04f76828c4b76e2160edd6b641e6d9726f75,2026-09-05T16:49:02Z
 data/myths.csv,1353,b0e78dbc45066e64e5e70923824cc02e3c519eb85f45a28f837efbee1f90b759,2026-09-13T19:17:06Z
 data/ocr-minutes.csv,61061,e7460cb4e017975d5a06c403443f3bd1f726741c7fca77b4885ece6025f7f6aa,2026-09-18T12:24:17Z
+data/official-votes/agricultural-commission/2024-06-03-6592.json,2364,f03591074aafd18567fddc6f23b963341b5f546253c6f563b74d6597316e3a32,2026-09-21T21:48:28Z
+data/official-votes/agricultural-commission/2024-06-17-6619.json,1656,96055f49ebc5c9290ed03c635264945ed6d905366d867a96507cef0ede7a53a0,2026-09-21T21:48:28Z
+data/official-votes/agricultural-commission/2024-07-08-6642.json,1315,7b21815fca0d8feaad465cde29798afe69d185f0c968f1e432b00af0c6d9ccc1,2026-09-21T21:48:29Z
 data/official-votes/agricultural-commission/2024-09-23-6778.json,1359,7cc0a3325c43b238a18cc401ba74a3f08c8216d75374a3378778b456d22a64a7,2026-09-18T20:29:15Z
 data/official-votes/agricultural-commission/2024-09-30-6793.json,1318,069941dc16d0dfa4bdbfd13d7378364a38879e5c7b0707e8d11cb80696289c0c,2026-09-18T20:29:16Z
 data/official-votes/agricultural-commission/2024-10-21-6837.json,1722,64b70c82619dbb3a730cedd9737f35b7ad628b0ece089611853aaecf84dfd967,2026-09-18T20:29:16Z
@@ -305,6 +314,8 @@ data/official-votes/agricultural-commission/2025-09-08-7394.json,1710,28f410efe6
 data/official-votes/agricultural-commission/2025-09-22-7412.json,1593,0042254ab3772bef6691e43cbc3c9cd1dd5cbb017f8cb05648365865f8b81994,2026-09-18T12:24:23Z
 data/official-votes/agricultural-commission/2025-10-20-7465.json,1397,ea2504ea0c8e416959c281971b747aad03953a5324e89327a5aa05967a810b32,2026-09-18T12:24:24Z
 data/official-votes/agricultural-commission/2025-12-15-7564.json,1397,739d45e620f30621681dc14942d184fad68898187e6bd3159a0d5e8a188d2717,2026-09-18T12:24:24Z
+data/official-votes/architectural-preservation-district-commission/2024-06-13-6613.json,1320,5285eaa22ad315137efe402dba72c421daf93036cf9db90ebad58ab3fca51f8d,2026-09-21T21:48:33Z
+data/official-votes/architectural-preservation-district-commission/2024-07-11-6650.json,1427,1969d87cfae037d75f42a3bab2f430e602593ac21a4c0c7e1708129ab3ec7550,2026-09-21T21:48:34Z
 data/official-votes/architectural-preservation-district-commission/2024-10-17-6832.json,2404,5ba411f86cc518f4cd838f6ed0f6e47a0a7b23332ac248624db20adfe3939846,2026-09-18T20:29:22Z
 data/official-votes/architectural-preservation-district-commission/2024-11-14-6873.json,1396,5824a172f539059d4d51cd98f2862fc2cde2ac32f1d3940c51604ad011d4a175,2026-09-18T20:29:23Z
 data/official-votes/architectural-preservation-district-commission/2024-12-12-6922.json,1245,58554b98700bb9f2176ef4fe84976c83c0bb9ad5168c10d344f700f9364bd5a2,2026-09-18T20:29:24Z
@@ -322,6 +333,9 @@ data/official-votes/architectural-preservation-district-commission/2025-12-11-75
 data/official-votes/architectural-preservation-district-commission/2026-01-08-7593.json,2340,d61482198350f328ed9659ae42587bea84256fb3421e833e494333719df14a14,2026-09-18T12:24:33Z
 data/official-votes/architectural-preservation-district-commission/2026-02-12-7647.json,1665,cbee1f41a5dfbc783bfa60b062714954d9560581b9d31a8e50fc62acf5e09f47,2026-09-18T12:24:33Z
 data/official-votes/architectural-preservation-district-commission/2026-03-12-7709.json,1349,7ee13b91f12c36ae88c2dcf89f92109bf4ce6af580ff63f496a6242c46b0881b,2026-09-18T12:24:36Z
+data/official-votes/board-of-assessors/2024-06-03-6594.json,2497,8920be47928c9f9439f70041439c62618523845b811808299260d35e4c7b0244,2026-09-21T21:48:35Z
+data/official-votes/board-of-assessors/2024-06-10-6604.json,2015,156c252d070edcedc41a9ea6b506d4f85b1ea60af14f3e4193aee76adc125d57,2026-09-21T21:48:35Z
+data/official-votes/board-of-assessors/2024-06-14-7148.json,1057,038104bf7941b3a356a048af5b84f36c013139c2f82e6544c366c4b0e4057322,2026-09-21T21:48:36Z
 data/official-votes/board-of-assessors/2024-09-18-6767.json,1258,9bd539cb604c54b5b262d2591f99af3fcf89825b2418d661b00c4f2be108d25c,2026-09-18T20:29:30Z
 data/official-votes/board-of-assessors/2024-10-02-6797.json,3547,f37d0592df2aad9a90242d26fbcd250265214c8f295314b99047a2b469d1fcbf,2026-09-18T20:29:32Z
 data/official-votes/board-of-assessors/2024-10-15-6825.json,932,da79cdee69c8417312301c48ccea419051c0e7834629cf7bbb2aaf4d6b7b7714,2026-09-18T20:29:33Z
@@ -361,6 +375,8 @@ data/official-votes/board-of-assessors/2026-06-03-7834.json,1334,d3be3129d76efbf
 data/official-votes/board-of-assessors/2026-07-01-7885.json,916,ba059323b14fdacfa6bd4170e169f45e852c67e6e1b660ade07f252100679907,2026-09-18T12:24:54Z
 data/official-votes/board-of-assessors/2026-08-05-7942.json,2906,b76fc23ce7e596d3d86c04e372b391fb7f3995e5721def7bd61283d27a21dcc8,2026-09-18T12:24:56Z
 data/official-votes/board-of-assessors/2026-08-11-7956.json,1257,baa84a12331f8f3461d1da8239b5b7935be90464d1dc4df46188fd12dacc18d8,2026-09-18T12:24:57Z
+data/official-votes/board-of-health/2024-06-20-6623.json,1302,5e2b7e42ce02a63aa2bf31460fbb6deed4c6b4a540a38cf385207c527649892b,2026-09-21T21:48:40Z
+data/official-votes/board-of-health/2024-07-15-6658.json,1560,24b1e05a70c7092c20cc36a3ac255116f2fb1137c7c4618412703dfa9b225448,2026-09-21T21:48:41Z
 data/official-votes/board-of-health/2024-10-07-6805.json,2701,3aa1309d1366a4b1a3faa8fc8ca0315c47d519e78683afdd3db631600b0620b3,2026-09-18T20:29:46Z
 data/official-votes/board-of-health/2024-11-18-6879.json,2780,b307ab4f5d98766ed62ec01a1965d0e4e741de12a606beb575225dd8f446e451,2026-09-18T20:29:47Z
 data/official-votes/board-of-health/2024-12-16-6925.json,1713,544c56ce4854ea9c4afa2bb2d925b7229046309e91b404d9e92e2f52cec21969,2026-09-18T20:29:47Z
@@ -389,10 +405,12 @@ data/official-votes/board-of-health/2026-07-20-7915.json,2345,946e31969d348ad0eb
 data/official-votes/by-law-committee/2025-09-04-7380.json,1912,dff83cb9d08745d9ec07630121f17144a1513f663ef83d6dd6b2ae5331ff5586,2026-09-18T12:25:15Z
 data/official-votes/by-law-committee/2025-10-02-7434.json,1603,1d0eb5c08f5d4083d55acbab4c84fcd12f9e22d23764c93406eea21fa25e75ed,2026-09-18T12:25:17Z
 data/official-votes/cable-advisory-committee/2026-08-13-7954.json,1239,c83370b479aca74c97f59783cf3e724228d9b90a73e74fec18e4632985e331b0,2026-09-18T12:25:17Z
+data/official-votes/capital-planning-committee/2024-07-10-6649.json,1609,2af510c1773f72f2f14712d050fde69d35ca426d73bad6e75386313869a41690,2026-09-21T21:48:42Z
 data/official-votes/capital-planning-committee/2024-10-09-6819.json,942,0083e21206f843680eb8824983a9166844879c298cb9e3e913f006b49b4ac6c2,2026-09-18T20:29:53Z
 data/official-votes/capital-planning-committee/2024-10-21-6846.json,983,3737ee74b5af14b216a459ce3b3b4958a0357c58c1f8f0cfcbfc34b3dea152fb,2026-09-18T20:29:56Z
 data/official-votes/capital-planning-committee/2024-10-23-6844.json,1414,3ee1bef136d0addc094dc06d8dcfd8f2524ddb211ad25e2c0915ee2c6464bab6,2026-09-18T20:29:56Z
 data/official-votes/capital-planning-committee/2024-11-04-6857.json,755,6cf25441609bcadfb632cff69293a3d203b6c14521248473c0c914621905aa23,2026-09-18T20:29:57Z
+data/official-votes/cemetery-commission/2024-06-20-6616.json,1701,f3e73dd495b5e7492ab4921d579b28582df905cb73ec34f9d9316cfbbd82c0e9,2026-09-21T21:48:43Z
 data/official-votes/cemetery-commission/2025-02-27-7068.json,2441,ca373e340671f594d2213a5ea9325c1ca5de9f97a89d8342f61581082d3a2b3e,2026-09-18T20:29:58Z
 data/official-votes/cemetery-commission/2025-03-27-7124.json,2251,41b353f1b65a963d9a53fd3ba933dbafa04b7e69cd930cf25fb7a8d2e19e242b,2026-09-18T20:29:59Z
 data/official-votes/cemetery-commission/2025-04-24-7169.json,1781,c94c876402f914ec270177a44d0ab5189481bb57c168958e829269ae925fc375,2026-09-18T20:29:59Z
@@ -413,6 +431,8 @@ data/official-votes/cemetery-commission/2026-03-26-7741.json,2858,ca88c14ad7cbfc
 data/official-votes/cemetery-commission/2026-04-23-7777.json,1569,e85b3450ec42a0034468117c48ce202df9b6094a10f7fdefe27efce7b978391d,2026-09-18T12:25:31Z
 data/official-votes/cemetery-commission/2026-05-15-7807.json,1263,bf03f349b243e27349d1f7cb2df51dff02b6a85eb689a0cb9f3a4d2c4f11052b,2026-09-18T12:25:33Z
 data/official-votes/cemetery-commission/2026-06-05-7806.json,1195,3c5aab3653f200a2e4ca58074e7bbbe320377fd89f2fb4a6a6761136baa86842,2026-09-18T12:25:34Z
+data/official-votes/conservation-commission/2024-06-05-6591.json,7585,498e498f8c45fc61e3256230f8fa6656bc3786d12854c4407a7238849e90cbef,2026-09-21T21:48:44Z
+data/official-votes/conservation-commission/2024-07-10-6646.json,7523,bbc572e1e5909c379d5adf8b80a47fd986fd31f70b02215876f2b46bd3470d45,2026-09-21T21:48:45Z
 data/official-votes/conservation-commission/2024-09-18-6772.json,3604,33d238c864c09f9202ec2f6c28959ed751c8afbb25b7770b2a8506103e13e930,2026-09-18T20:30:02Z
 data/official-votes/conservation-commission/2024-10-02-6796.json,1657,1f390dd2986e63453d4f14ea38c3bf0c43d0a0f66ec7666e9137a181ee7b532b,2026-09-18T20:30:03Z
 data/official-votes/conservation-commission/2024-10-16-6829.json,5986,7e229d2b3f53a3f081c15dfd689655587283e89055a52e575c0dca3708955ba1,2026-09-18T20:30:04Z
@@ -459,6 +479,7 @@ data/official-votes/conservation-commission/2026-06-03-7837.json,4919,518e53dcb6
 data/official-votes/conservation-commission/2026-06-17-7861.json,7055,e557f4c665e2db7a143ec95b179b05bb904d22db7894f7b4c9480c5b8b9d8d41,2026-09-18T12:26:01Z
 data/official-votes/conservation-commission/2026-07-01-7880.json,7000,5367c0b0cccabd758208451f1504c3432695c7f7f9f82735a7deaec3081b2bb3,2026-09-18T12:26:03Z
 data/official-votes/conservation-commission/2026-07-15-7909.json,4788,c65be7a39c51524acf4cf5c5f0b0f1d8a141426be93e288740ce034b5d4f6512,2026-09-18T12:26:05Z
+data/official-votes/council-on-aging/2024-06-11-6596.json,1816,e298e1d3bc442171a8f5758bf93ce62af126754809f69f467c3bddd6428683ef,2026-09-21T21:48:49Z
 data/official-votes/council-on-aging/2024-10-08-6802.json,1182,321aaba1218a4310b339537d64e61919c23ac17ac9757f5676706d0038eda4f1,2026-09-18T20:30:18Z
 data/official-votes/council-on-aging/2024-11-12-6868.json,1611,d3f0abd9ef9f2ce3e883b50c152b36e74d3a3bd08dcb9e10625a2bb8e1ff6f6a,2026-09-18T20:30:18Z
 data/official-votes/council-on-aging/2024-12-10-6913.json,1349,7f0f3dd225cd5b4a10747605f8f2af658ac2f3d40509ef6528a065fe630a922d,2026-09-18T20:30:19Z
@@ -481,6 +502,8 @@ data/official-votes/council-on-aging/2026-04-14-7763.json,1364,1df65ce8bfcd87aff
 data/official-votes/council-on-aging/2026-05-12-7799.json,1911,f496952c532a5f2b9969d6df6d0d1dadf189acbdaae1d63823487fa17ebd7ef4,2026-09-18T12:26:17Z
 data/official-votes/council-on-aging/2026-06-09-7844.json,2389,ea1d02dca17dad47811cf6263522fca34fdf2faa97a11b17437b3b92a45ec5ee,2026-09-18T12:26:18Z
 data/official-votes/council-on-aging/2026-07-14-7894.json,1307,eb5c7478e8a344df4b54972c74359d1f36ae4f402f0f49b239834ff94e47f24c,2026-09-18T12:26:18Z
+data/official-votes/economic-development-committee/2024-06-06-6599.json,1634,53eaaceedec4075dbd422f3942860076c50bea2cdd79fff40494679adf6047fe,2026-09-21T21:48:50Z
+data/official-votes/economic-development-committee/2024-06-27-6634.json,1427,847319321264ce17b67fcecb2f6119a10137ec372b22e2a81a9460da90b5630e,2026-09-21T21:48:51Z
 data/official-votes/economic-development-committee/2025-08-18-7352.json,2095,43c4c2cd70f9e0a2034e20839cfcb6010abc81b0496658c2151930fe1825c9f7,2026-09-18T12:26:19Z
 data/official-votes/economic-development-committee/2025-12-09-7526.json,1491,4dc302b536742e7ba4e80bad3f135e23cb5df26a5e38a9bea2e28ab66773327c,2026-09-18T12:26:21Z
 data/official-votes/economic-development-committee/2026-02-10-7613.json,1075,837c49b15a4074304846b7e2e9b744967c82440a7f2fbfee21f4e912f1e48ec0,2026-09-18T12:26:22Z
@@ -488,6 +511,9 @@ data/official-votes/economic-development-committee/2026-04-14-7759.json,1537,9f0
 data/official-votes/finance-committee-appointing-committee/2024-10-22-6836.json,1760,2a98fc02366ded601e78f294af32a5b74daf592ba1f84033ebd8edc8e79a29e6,2026-09-18T20:30:24Z
 data/official-votes/finance-committee-appointing-committee/2025-07-08-7300.json,1728,429e4abca5cb258feaef5ec15e9753b84f738d4b6f3427a5cc9a4e43d384e145,2026-09-18T12:26:24Z
 data/official-votes/finance-committee-appointing-committee/2026-07-06-7886.json,2277,f44c3ec816b1d8d9522c320d95cc75e5131eed6a1d71d026d5edff1f5a842a45,2026-09-18T12:26:24Z
+data/official-votes/finance-committee/2024-06-13-6617.json,1764,9ce26285ecfd35c83cb2b7affb7e912c2cebb2cb739d49930be8dd4d83a05189,2026-09-21T21:48:52Z
+data/official-votes/finance-committee/2024-06-27-6635.json,1297,d6dcdd08a9089718f1493fa79de084868d0a6b660527981f37895be0c8a32906,2026-09-21T21:48:53Z
+data/official-votes/finance-committee/2024-07-11-6656.json,2892,1085c456f16d4715d6582e3c6c26e220fa0751949e7e18ac53418eccf0f396df,2026-09-21T21:48:54Z
 data/official-votes/finance-committee/2024-09-26-6790.json,1619,7c30ac3a979948ec1808f3154cdd8395e34af6461dcc7ade1b9780118f2c6e0d,2026-09-18T20:30:25Z
 data/official-votes/finance-committee/2024-10-10-6820.json,1667,970ea573b8d0e7870f50db3293dcf326d1189595061f2e00915b10d050b78dc8,2026-09-18T20:30:25Z
 data/official-votes/finance-committee/2024-10-24-6838.json,6182,e648e5dfc5c57b398d61b93dce69108e6338b0da87d9c68cceb4571ac768698f,2026-09-18T20:30:27Z
@@ -531,6 +557,8 @@ data/official-votes/finance-committee/2026-04-06-7747.json,4984,8bc0994b41f0f3c1
 data/official-votes/finance-committee/2026-05-28-7828.json,1573,551ed3c42b9298bab89ac6dda21e3255026f361cf5a292b36b6a248a2d2b82f9,2026-09-18T12:26:49Z
 data/official-votes/finance-committee/2026-06-11-7845.json,1211,52675090d1de8ae23262f2ec00bc4f90392b40850a47f4cc3bf806c6a308aba5,2026-09-18T12:26:51Z
 data/official-votes/finance-committee/2026-07-23-7917.json,2836,ae287c821c09f5b4e0815288db81db38d9cf3f85f50f2581b8ffe62ebb0c62e3,2026-09-18T12:26:52Z
+data/official-votes/green-communities-committee/2024-06-03-6590.json,1078,6ccc3be1d9fed626b8360b5fd3aad1667d02fc9919fcb95ee18c89a728c9b43e,2026-09-21T21:48:58Z
+data/official-votes/green-communities-committee/2024-07-15-6657.json,1155,3bfcc7207e76322d8d09f6fb169c2c17879e23256508f9d5cf88909e75573853,2026-09-21T21:48:58Z
 data/official-votes/green-communities-committee/2024-12-09-6911.json,1129,f4bd32e8f8d913a7e4c5d4f0e683892d48a8433f945b05e3c4c6c134df4020a3,2026-09-18T20:30:42Z
 data/official-votes/green-communities-committee/2025-02-03-6997.json,2194,4bc16f94111cb7a1cadcc6223f29d50d5a13ef3169e89338ae5a0a69313a3e66,2026-09-18T20:30:42Z
 data/official-votes/green-communities-committee/2025-03-03-7078.json,1038,9365199541a4d22b44fd0176ce98a9c330004613e9580ab8403051291dbd7444,2026-09-18T20:30:43Z
@@ -538,6 +566,7 @@ data/official-votes/green-communities-committee/2025-04-07-7138.json,1422,3eb7ef
 data/official-votes/green-communities-committee/2025-06-02-7245.json,1121,decaec73540faf2b3ae478ad037696c141291ae82a2c8888bf7aaa3bc04d3ce6,2026-09-18T12:26:53Z
 data/official-votes/green-communities-committee/2025-07-07-7298.json,1561,850b5fb9b4af8438f04ef2faa1e45d51efe201b88a9035071f6d9a17e893b05c,2026-09-18T12:26:54Z
 data/official-votes/green-communities-committee/2025-12-15-7562.json,1559,256c6905d11a5c1219d011c2de8320089d19ede98a9a5e8a1bfa01366bf5abbd,2026-09-18T12:26:54Z
+data/official-votes/historical-commission/2024-06-04-6587.json,876,ef6d8ea248c7e1d54536e269177fe14149f066f9fbc3b1aa295e48f04c1902eb,2026-09-21T21:48:59Z
 data/official-votes/historical-commission/2024-10-08-6801.json,968,777bfdf4fbac8bdab25ba09911b1a877dfe031ec1dd2e2784988baa48e74b4dc,2026-09-18T20:30:45Z
 data/official-votes/historical-commission/2024-12-02-6901.json,730,10b55383a2a724668136e060caafa97446e11a1749c0798bafe3b1c6db792786,2026-09-18T20:30:46Z
 data/official-votes/historical-commission/2025-01-07-6939.json,1137,f07f4954faf25605ff8d9d8a5779b4bcc71c918b771c1430ad9406020ee0e3c8,2026-09-18T20:30:48Z
@@ -552,6 +581,7 @@ data/official-votes/historical-commission/2026-01-06-7582.json,893,415812e87bc66
 data/official-votes/historical-commission/2026-02-05-7636.json,975,778e56c917e15591f8b3421087286f40d4d3515256022005e4c5a97edb29e5f1,2026-09-18T12:27:04Z
 data/official-votes/historical-commission/2026-03-10-7688.json,966,ade0ea03ceb8c3faa4d38776124a8b74b8cd3bc4eccea5aa7b35baf39332baa3,2026-09-18T12:27:05Z
 data/official-votes/historical-commission/2026-04-07-7753.json,1013,a6a9a93134f21187cc906a689b1b80b706660f66eabbcb654646118f9242510b,2026-09-18T12:27:06Z
+data/official-votes/library-board-of-trustees/2024-06-20-6620.json,753,6957023db4d0220758114b4da86cef901c31bb636bad6992d203e1d2890d7066,2026-09-21T21:49:00Z
 data/official-votes/library-board-of-trustees/2024-09-26-6788.json,1081,f220bec4d95bc3d77acbcbd2be31ffb340536ac6d5d4e8fb792fd0dc56366573,2026-09-18T20:30:49Z
 data/official-votes/library-board-of-trustees/2024-10-17-6823.json,1344,d7c2a4944c341aa368ca7d552c4432c749fe916f8a1a5ecc4baa156c57b3b15e,2026-09-18T20:30:49Z
 data/official-votes/library-board-of-trustees/2024-11-21-6880.json,946,8cef3cf4c6ab0b41d7cab52267368db6c70692a820580b43d3dfab8a0def479e,2026-09-18T20:30:50Z
@@ -583,6 +613,7 @@ data/official-votes/lunenburg-300th-anniversary-committee/2026-04-27-7786.json,1
 data/official-votes/lunenburg-300th-anniversary-committee/2026-06-01-7832.json,1165,7b57d8c102cfa0fd5c15abbab1ca975fb852cdf5227da065392248cbf159419e,2026-09-18T12:27:24Z
 data/official-votes/lunenburg-300th-anniversary-committee/2026-06-29-7866.json,936,c8c78be2572fb8a420a8229392ba81a5d5afcf286d8e2bc6be11bc151eaef6fe,2026-09-18T12:27:24Z
 data/official-votes/lunenburg-300th-anniversary-committee/2026-07-27-7920.json,1042,6bf46c47b11eb96719d957c3129a7c2539cd64237424885ba900d40610b8b366,2026-09-18T12:27:25Z
+data/official-votes/lunenburg-housing-authority/2024-06-13-6601.json,2660,c959728d02a7e1f969ca892bfcee083a6b1e08e89bbc76ca8a241402f970f8f8,2026-09-21T21:49:03Z
 data/official-votes/lunenburg-housing-authority/2024-09-19-6755.json,2487,7112ed1c4479875ea5571a83a60d24647a61d29dbc63db0a083f8fedf002ef41,2026-09-18T20:31:00Z
 data/official-votes/lunenburg-housing-authority/2024-10-17-6824.json,2588,93bf790c3bb41e45430297c29295cfbdc1a70e26e1cb1b17ff40de34faf38f75,2026-09-18T20:31:01Z
 data/official-votes/lunenburg-housing-authority/2025-01-23-6963.json,2194,593578be18162909dcbf28586dc464adafa0f13c08ceec402f738c2866520bff,2026-09-18T20:31:01Z
@@ -710,6 +741,10 @@ data/official-votes/parks-commission/2026-03-04-7685.json,2993,1813068aa16edf14b
 data/official-votes/parks-commission/2026-03-25-7733.json,2657,417579e918d255030b3b59fe28b9a0b6da822991159fdd09e72a0115cff5f109,2026-09-17T23:06:54Z
 data/official-votes/parks-commission/2026-05-27-7826.json,3638,73fec0de694cb97cd23ccd280c5e4aa05e0c81e50b9091b7a74c07e960986566,2026-09-17T23:06:57Z
 data/official-votes/parks-commission/2026-06-24-7864.json,1499,a12fc4806478a5273f6d3704fb9cbfebef53521a09c117dd857f81fd47215220,2026-09-17T23:06:58Z
+data/official-votes/planning-board/2024-06-10-6608.json,3068,401d21c1cc6cfbe126ef82d5a815a725e02b869a99223069d784f43b4a09e83d,2026-09-21T21:49:05Z
+data/official-votes/planning-board/2024-06-10-6609.json,3080,c59b293cae3a2aef6ecc897d654d1f926fcf9481a4155c94ad3be2ca75ae778b,2026-09-21T21:49:05Z
+data/official-votes/planning-board/2024-06-24-6628.json,2553,ee5c62309c8341833126277e7d0ece004765f2fc40195ac80135c7bd9f7987fa,2026-09-21T21:49:06Z
+data/official-votes/planning-board/2024-07-08-6640.json,2704,7697a8e667de1c922c08285a2a999dcc7c421ddbd261e3381b2da9a9165d68c5,2026-09-21T21:49:06Z
 data/official-votes/planning-board/2024-09-23-6781.json,4322,33ce834955e4a6bfdd86c01b541e7c05bd2809a5b0d67e839799d30d1ac209be,2026-09-18T20:31:21Z
 data/official-votes/planning-board/2024-10-28-6849.json,6751,1873253c3c7a1b901256072360b7d750ab997d3cc12c3b5368cb0cc9fc787e8b,2026-09-18T20:31:21Z
 data/official-votes/planning-board/2024-11-25-6896.json,2788,2d3453034842ff25ce184ab73beebae9c362161760eabb0f997593a4265dd6ba,2026-09-18T20:31:24Z
@@ -750,6 +785,7 @@ data/official-votes/planning-board/2026-07-13-7906.json,4604,48e1e40e4393075cf7e
 data/official-votes/planning-board/2026-07-20-7910.json,1229,74534b016aa28e2537ffd826e67daaf5d503d7c211a8500bbb0b7f5e9d09a871,2026-09-18T12:28:15Z
 data/official-votes/planning-board/2026-07-27-7922.json,3263,b881bed0df97e605297576669bbfd1f51fb15c6b172baa8b2a2807def37259dc,2026-09-18T12:28:17Z
 data/official-votes/planning-board/2026-08-10-7937.json,1028,95520bcbf625f6c0e2f2ca759a0bfff0ccd66ec11617467aca7255baae59eb8a,2026-09-18T12:28:18Z
+data/official-votes/public-access-cable-committee-pacc/2024-07-01-6624.json,995,59a1df2f33d6c199795522952bc6ae2d40208780e63b0c3bce03e91c8d1a8248,2026-09-21T21:49:11Z
 data/official-votes/public-access-cable-committee-pacc/2024-12-02-6889.json,1350,659f69c0969dac7567bf90a725f00cfe36565a0c0d6dcb1714a95638dd09a4df,2026-09-18T20:31:33Z
 data/official-votes/public-access-cable-committee-pacc/2024-12-09-6918.json,893,57fefb7245884636e5f7d21dc6fb1eb7499255384048e9622130ea9cfca6eaa4,2026-09-18T20:31:35Z
 data/official-votes/public-access-cable-committee-pacc/2025-01-06-6937.json,1110,fe8bd9f7e22951fee9d8e21166bd4b8316373e9a8d33363b2c6ebafc034d7b69,2026-09-18T20:31:37Z
@@ -778,6 +814,9 @@ data/official-votes/school-advisory-councils-committees/2025-10-30-7484.json,103
 data/official-votes/school-advisory-councils-committees/2025-12-11-7558.json,1039,8424670d5f0ac0c289c4a07b9ed26caea62db92cdee31a69411829e8dce9db80,2026-09-18T12:28:35Z
 data/official-votes/school-advisory-councils-committees/2026-02-12-7641.json,964,73c3b9ad875b704439e6e10eb5d639f72c880eb0779adcafb9f1354635371a8d,2026-09-18T12:28:35Z
 data/official-votes/school-advisory-councils-committees/2026-03-26-7726.json,1194,bfdeadfe8e8c6c1e018c84890ab3d3b7e24051b26b5551b755b64885c540d626,2026-09-18T12:28:36Z
+data/official-votes/school-committee/2024-06-05-6597.json,4262,deed937e0eb9897ab37aef567b95472800b6ffd1a57052a8204a877704a37758,2026-09-21T21:49:12Z
+data/official-votes/school-committee/2024-06-12-6615.json,5266,af97b9cdc5f4a3b3b5ea50feda636cd49e7384ebc735b4559eb72cd0bccc4001,2026-09-21T21:49:12Z
+data/official-votes/school-committee/2024-06-26-6632.json,3069,6b314704265862d40c6b3a7b8054bb7aae163756cc62f27ddade73dc0b771205,2026-09-21T21:49:12Z
 data/official-votes/school-committee/2024-09-18-6771.json,3948,379d70393a5149b847c67c22615a1f4451b9876fcfa1adc412cdc242b9b70290,2026-09-18T20:31:43Z
 data/official-votes/school-committee/2024-10-02-6798.json,3153,ac6c66ad387af038a7abb8de334079956fdf1c26f5032f86244e68a854adc127,2026-09-18T20:31:44Z
 data/official-votes/school-committee/2024-10-16-6830.json,2481,93873d34000458e268fc678639c4fe9df2b1b1ddbaea432c8cdb741e2b03ab40,2026-09-18T20:31:45Z
@@ -830,6 +869,10 @@ data/official-votes/school-committee/2026-05-06-7798.json,975,ba43d7af148337be94
 data/official-votes/school-committee/2026-05-20-7821.json,5604,d08ca142025a9fa439f249419db04bf99007d913f22e0e5ae1707f331310bfc0,2026-09-17T23:06:58Z
 data/official-votes/school-committee/2026-06-03-7838.json,2518,617989fd90ce721a11d3989ba365cf654e57ef5caca0e76ce13aec218e34ce5b,2026-09-17T23:07:00Z
 data/official-votes/school-committee/2026-06-24-7869.json,5223,7ff596fd49e51df03fdbe9cda2e656dbe16a677367f020dcd67de5f466beaaec,2026-09-17T23:07:00Z
+data/official-votes/select-board/2024-06-04-6593.json,7367,64a2ddcbfca1d27dc895fc785cc8cd59af50dedced2729d3b2d51f8486915347,2026-09-21T21:49:17Z
+data/official-votes/select-board/2024-06-11-6607.json,4404,4d1c2099a1f5a146b08019c9cfaec7986bacd9dc56c9d3612f839f13cbd4d6da,2026-09-21T21:49:17Z
+data/official-votes/select-board/2024-06-18-6621.json,5966,ee2b92e8c6b2524c7bf87a38b112a3c3fcbeb9cd6f1203d2227a1cdcc20bc789,2026-09-21T21:49:17Z
+data/official-votes/select-board/2024-07-09-6643.json,5774,9002dbb0a0ebf8c0d37e7f8bf2416b8c5a198b2b7632bf4fb13f10b32e74a997,2026-09-21T21:49:18Z
 data/official-votes/select-board/2024-10-08-6808.json,1671,fdb631f56bb6ace81d6aa2a9cbc8116909b7cacf13afa44d34dbc87569442627,2026-09-18T20:32:08Z
 data/official-votes/select-board/2024-11-13-6871.json,3276,94e27c519ee855818f98d964641faec1d6b2b2ec7f58bcb26bfe80deda963524,2026-09-18T20:32:08Z
 data/official-votes/select-board/2024-12-03-6905.json,4549,56f033e2c501ccb84f6592284912b41e47132c64ef10685b4662d4360574f012,2026-09-18T20:32:09Z
@@ -873,6 +916,7 @@ data/official-votes/select-board/2026-04-30-7790.json,3147,99dcf31fe3a3f6724b74d
 data/official-votes/select-board/2026-05-12-7805.json,1279,837cb76390758c4584e3146308190c12a7c913a950154dd2a8028072e860f3fa,2026-09-18T12:29:27Z
 data/official-votes/select-board/2026-05-19-7814.json,5238,c8906891e166bd158d0534fae3c1f61110b726440fd3bb4646594898883b9f5b,2026-09-18T12:29:28Z
 data/official-votes/select-board/2026-06-16-7858.json,2313,723275e1a06e9d17de425665cbf8fa9c02d81a7700c8932340aec95945bf7a1d,2026-09-18T12:29:29Z
+data/official-votes/sewer-commission/2024-06-25-6630.json,2443,64bdde0da421bffad2b51f99f5eeae9dec1c93fa4c07b0e88801186bd7e95c15,2026-09-21T21:49:29Z
 data/official-votes/sewer-commission/2024-09-24-6785.json,2886,83f3914cad3bf13501a110e6358c4d6bddfdf76f9751228285a7b6800e70fc7f,2026-09-18T20:32:24Z
 data/official-votes/sewer-commission/2024-10-08-6807.json,1780,16aa6457cf87e5d2aec213d6da3ac3937c52a5e91b8d46aea53143bc7d884565,2026-09-18T20:32:25Z
 data/official-votes/sewer-commission/2024-10-22-6848.json,2128,259aabff36d70aa21179fe51f6090ec752746905b961ddb6fcd26148e8e980cb,2026-09-18T20:32:25Z
@@ -917,6 +961,8 @@ data/official-votes/sewer-commission/2026-07-14-7900.json,1312,f01329eaca3de2f64
 data/official-votes/sewer-commission/2026-07-28-7927.json,1428,851ea411fc638be5673455dd30d2831cb68f4efda6285f153aeef4479b6f5717,2026-09-18T12:29:57Z
 data/official-votes/sewer-commission/2026-08-11-7953.json,1680,2648bd7132f489661f7d96ae51bb42b0da4f232234e8fefde1c06b22ef92bcb5,2026-09-18T12:29:58Z
 data/official-votes/sewer-commission/2026-08-25-7974.json,1431,88a6da03f710062b7e2e613ed09a4c179ad135df0788d924cfa65243659bfe01,2026-09-18T12:29:59Z
+data/official-votes/stormwater-task-force/2024-06-20-6622.json,1188,8b3ee76447f3dd1cd9b4daf05afadc38a4c82684bd881c8e0d2072abb1f94487,2026-09-21T21:49:31Z
+data/official-votes/town-manager-screening-committee/2024-07-10-6639.json,1327,35be57fae7e8174b1a4ad1084c43be7556b451ab9c6961825a07407429f035d0,2026-09-21T21:49:31Z
 data/official-votes/town-manager-screening-committee/2024-10-07-6804.json,1303,a69352bd06baa61ffa43704abaefeb33252692fea3bd4c81e1c321ece3df07a4,2026-09-18T20:32:37Z
 data/official-votes/trust-fund-commission/2025-06-26-7289.json,1610,880724ec599fecd99110473b142d6a08a22634c9895d60095f3f91c2c175432d,2026-09-18T12:29:59Z
 data/official-votes/trust-fund-commission/2025-07-10-7309.json,1817,e7cdffde5ad8a04d85c2baa5782990d9ff31943a4f72d8596ac0e781ea880dbe,2026-09-18T12:30:00Z
@@ -943,6 +989,7 @@ data/pec-history.csv,2765,c84b4ea18826fd23511056139178f759c972f2abfc7f7a3103ec51
 data/peg-access-identities.csv,1562,72e3ce226d213cc74e47677e4cd46594f93b90985e5451aef239766574285134,2026-09-08T15:44:51Z
 data/peg-access-printed-totals.csv,12260,72d749883510a7a73ee4fc9e2b4a73c386e6b8ebcc1d6feaf1f9ea5863223d05,2026-09-08T15:44:51Z
 data/peg-access.csv,14591,a97fe011dd91006514ddc4e44304f5faa0f6b56e4455dca14f01cf447f370dd8,2026-09-08T15:44:52Z
+data/pipeline-state.csv,14730,641f3c9959306c699258b5a85a993c9f80a0af68f1b030a4fd08e3a0491e4778,2026-09-21T21:49:35Z
 data/placement-counts.csv,2120,072db92dbd43e5009bcbb0acc6f44391d08330620d5f3653688d26ca32af9d85,2026-09-05T16:49:03Z
 data/rate-limit.txt,3,917df3320d778ddbaa5c5c7742bc4046bf803c36ed2b050f30844ed206783469,2026-09-08T15:44:54Z
 data/rate-register.csv,14590,f20dfb3efd9bff607404cc3e975fcdf2833f7d15106b60d66076d8c77e0990e5,2026-09-05T16:49:03Z
@@ -1358,6 +1405,8 @@ data/special-revenue-read.csv,302905,994d04a4a0949b61f5cfd1d9bb78941518667a51b79
 data/sped-para-history.csv,1491,8edfd1ffd5a164a53b203c31b93572d7799b1b89542a76f5c1b2821db7bbfc74,2026-09-05T16:52:39Z
 data/sped-teacher-history.csv,1259,d947ae9d593ed6c514c5e630d3e08a979e811f77b6d208e8387fb04e34ef7393,2026-09-05T16:52:40Z
 data/sped-transport-history.csv,789,222d382e3a84f8c4606b3b4c7c4b0aaf6633d41a5b9e0a37b6bd9586bd01a391,2026-09-05T16:52:40Z
+data/stabilization-flows.csv,5600,6e472259a1f423fcab31b203e8745a8dad2f03e13c1f704f744d4f604faf8163,2026-09-21T21:50:07Z
+data/stabilization-unfooted.csv,1169,4ed572a7b8a2342ac445666fa9ee68de487b115fcd8960d3e0aa867cf7cdba7f,2026-09-21T21:50:07Z
 data/staff-position-map.csv,15131,124fd82859f129e080a6e2b6f163bd55503390cdc40cbc2e72a79da95f667704,2026-09-05T16:52:41Z
 data/staff-roster-counts.csv,23616,88f01926fa28a2703b0dc22c01aed4ecac1425e4c95e7c9b45f14b9662d61679,2026-09-05T16:52:45Z
 data/staff-roster-entries.csv,445869,d429ead287bdbfb034f5f938c0926c027f4f44ebf719d11e9dff29b77673a568,2026-09-05T16:52:46Z
@@ -5098,6 +5147,7 @@ meetings/agricultural-commission/2026-05-04-agenda-7794.pdf,142966,8df5a940292fd
 meetings/agricultural-commission/2026-06-15-agenda-7853.pdf,143160,51b772e1535eaba801006ea212823923649168bd6907468508f8f80da37d1fd5,2026-09-05T16:38:41Z
 meetings/agricultural-commission/2026-07-20-agenda-7913.pdf,143430,bb15d334de5bf8fd6573cfffb37daecb618d5a1618c8bb6f6675d19dc299112a,2026-09-05T16:38:41Z
 meetings/agricultural-commission/2026-08-17-agenda-7967.pdf,143148,faa2766641f960f9088cfbd3afdff60d22ce51d1fbe42c4b497c88e52954dbbd,2026-09-05T16:38:42Z
+meetings/agricultural-commission/2026-09-21-agenda-8024.pdf,142716,d919f8aca5388b01611f00d37c50347b8d99420c89e54ed52de447a3e81613e1,2026-09-21T21:50:07Z
 meetings/architectural-preservation-district-commission/2016-01-04-agenda-526.pdf,2555,2f7e7f1c22dbb5bcb9e91f9b83a935f84d9a5cf70f7ea7b33edc5a57cefe0a44,2026-09-08T15:47:37Z
 meetings/architectural-preservation-district-commission/2016-01-04-minutes-526.pdf,52374,566c7e8c3fd6b10b7f4be557e4cf74af9b6b6c8585972ea98f638b5dc009ed4a,2026-09-08T15:47:37Z
 meetings/architectural-preservation-district-commission/2016-01-19-agenda-525.pdf,2552,dedddceb823dadcc67ec730b8addd4d8e4c94814326b6355adda8db773a2e757,2026-09-08T15:47:37Z
@@ -5808,6 +5858,7 @@ meetings/board-of-assessors/2026-08-05-minutes-7942.pdf,40159,7845b80df91e44c6ba
 meetings/board-of-assessors/2026-08-11-agenda-7956.pdf,61011,398db3269d3ca95064b86b3db72d46853e8b61e532b79e9e1634043001703048,2026-09-05T16:39:05Z
 meetings/board-of-assessors/2026-08-11-minutes-7956.pdf,84659,dc58047fde6a9f12da2a89a719ee0dbf90148b852c0f29a0fee1cb21f553255f,2026-09-13T19:22:49Z
 meetings/board-of-assessors/2026-09-09-agenda-7999.pdf,48210,335a76e33d089a27a1281b6a1ce37ad8f25e43e553bd6b403ec58504762cfc96,2026-09-08T15:59:25Z
+meetings/board-of-assessors/2026-09-23-agenda-8032.pdf,385301,0577d915928037868fcf226e5fc09325f0250e948927de475b033238e58ca913,2026-09-21T21:50:11Z
 meetings/board-of-health/2009-01-05-agenda-818.pdf,2526,90901f134ec8f41109659b5bc38b8bd1e5ac6a989df3fb9738afd95fdd483878,2026-09-08T15:59:26Z
 meetings/board-of-health/2009-01-05-minutes-818.pdf,51674,f32f4c2e032a24e7b61ed2627f0effaf501b689348a86c957aadc3a7b5fd1a7f,2026-09-08T15:59:27Z
 meetings/board-of-health/2009-02-02-agenda-819.pdf,2526,db47e7328a4caba337b6babdf9b8b3ceb36f7cfe65d6ec0105e13b3d153f0121,2026-09-08T15:59:28Z
@@ -6303,6 +6354,7 @@ meetings/board-of-health/2026-07-20-agenda-7915.pdf,44110,230248ac2abc5bb1d6f776
 meetings/board-of-health/2026-07-20-minutes-7915.pdf,204895,c256c697e0cc49a79ddbe96d780b59eec5b681995a8f94b2b165cf10dcb6f42b,2026-09-05T16:39:16Z
 meetings/board-of-health/2026-08-05-agenda-7943.pdf,375765,b14e167d36bf778ac2225241ab9c106762b09336a5fd3ef4dea26e2bd4051b28,2026-09-05T16:39:16Z
 meetings/board-of-health/2026-08-17-agenda-7964.pdf,235070,a69c9d73569e6749139a5a35b909559f4107dfa88f06bee99f496e72d2c27a59,2026-09-05T16:39:16Z
+meetings/board-of-health/2026-09-21-agenda-8023.pdf,233146,4afc8127b48845e66b60fc4ad4d964b2d0ac82be468a0979a977444f20b41dc8,2026-09-21T21:50:11Z
 meetings/board-of-registrars/2013-02-12-agenda-1131.pdf,11972,7b9525c7669be4981132f72cd1dada70e41ea3bf6ee4fd0f7d7c60630d86874e,2026-09-08T16:06:54Z
 meetings/board-of-registrars/2016-09-12-agenda-1132.pdf,23574,be6b667a7d324afa66586b343dd0b6dd1dec1dc9e61c51f9c697ed9eb0cac3de,2026-09-08T16:06:54Z
 meetings/board-of-registrars/2018-08-31-agenda-1133.pdf,167008,03e336f0945f0f0269f639044cef41c4a2e82b56b407335a65b7442bd13005e4,2026-09-08T16:06:55Z
@@ -7048,6 +7100,7 @@ meetings/cemetery-commission/2026-06-05-minutes-7806.pdf,358285,08ffb9d2b4055973
 meetings/cemetery-commission/2026-06-25-agenda-7863.pdf,334948,75d533b886c504cb017e201eb3eb03c7ecce60f22685f4074443350bf1c0d128,2026-09-05T16:39:35Z
 meetings/cemetery-commission/2026-07-30-agenda-7928.pdf,335454,f0edf16e8bd611cf2afb823b6969fb3e88c96a08f09717c8fc3826cdd39c0007,2026-09-05T16:39:35Z
 meetings/cemetery-commission/2026-08-19-agenda-7971.pdf,42281,b6c550f103722ddb2a8d162adfa36504d62e24c37241c273d59f6f845d69613a,2026-09-05T16:39:36Z
+meetings/cemetery-commission/2026-09-24-agenda-8029.pdf,333226,49ecefe99dfde7abfee2b987df5051bbb19ed1b88b0c85de057e266c21606262,2026-09-21T21:50:12Z
 meetings/charter-review-committee/2017-09-06-agenda-1576.pdf,2530,0db0263bf44d49c5960a18f2baaddb0ca45aabdde00f1860dab70cfd7ae77a57,2026-09-08T16:17:53Z
 meetings/charter-review-committee/2017-09-06-minutes-1576.pdf,65250,ff68e6ee30d7e8415b94d28ddcb61e6d051cee8be8616d17b3d5b7d5b056f386,2026-09-08T16:17:54Z
 meetings/charter-review-committee/2017-09-27-agenda-1575.pdf,2534,196f2e82f3a152cf31b536d13553e2f1583b8f2642fc916ea841f65999bfcd3a,2026-09-08T16:17:58Z
@@ -9242,6 +9295,7 @@ meetings/finance-committee/2026-07-23-minutes-7917.pdf,49324,25c2f4164279a64d0e1
 meetings/finance-committee/2026-08-13-agenda-7960.pdf,580783,b4682c4c376a54b2859baa1e7b29a4dc5029776a65842fd225142e49f9c60772,2026-09-05T16:40:58Z
 meetings/finance-committee/2026-08-27-agenda-7970.pdf,578855,4288cdcd34da63564bc4a3b3dc544079bfd450fe52602aa84bc089992af89656,2026-09-05T16:40:58Z
 meetings/finance-committee/2026-09-10-agenda-8005.pdf,583056,65b9edc7b1bdfab96abc247c4b137be7a696e9ebed7c1f03338f8b15c8b3611e,2026-09-13T19:22:49Z
+meetings/finance-committee/2026-09-24-agenda-8027.pdf,555543,0ec8c36e143aba6a8f14772f7eabd6be4eeb9504ef3f3ad0fbecc6edc58e20d8,2026-09-21T21:50:12Z
 meetings/green-communities-committee/2009-03-30-agenda-2506.pdf,95474,d45e562d170be86cbcfc19fac240ce9b3349e0b7953c1167c4e0d41c5713bbf7,2026-09-08T16:50:00Z
 meetings/green-communities-committee/2009-03-30-minutes-2506.pdf,23235,845f17b9f1b9fdf2190af92710d2779b274858561f10fe882b86b4e05eccd96f,2026-09-08T16:50:01Z
 meetings/green-communities-committee/2009-04-08-agenda-2507.pdf,29958,c06b7f4315680b9358b58b93dea31b5a1b51f54bad56c59b1005d0c667d11b16,2026-09-08T16:50:01Z
@@ -11591,6 +11645,7 @@ meetings/personnel-committee/2026-08-03-agenda-7934.pdf,136941,26ec9e69ce0496008
 meetings/personnel-committee/2026-08-24-agenda-7973.pdf,152992,b162730b09b7c3cc58f214dab5826c9ff3dd0f24242a98b2cc0bc92514afd9e1,2026-09-05T17:05:03Z
 meetings/personnel-committee/2026-08-31-agenda-7985.pdf,136892,66f02891588ac3ba03c0056bebb92d5788b4eed3ab6a31eaa2ad701e86b66e21,2026-09-08T17:26:45Z
 meetings/personnel-committee/2026-09-03-agenda-7993.pdf,136937,64e46a245a0eef1d448fb2f885ce82fe4b581a8e0806d8d50646a842c1363cf0,2026-09-08T17:26:45Z
+meetings/personnel-committee/2026-09-21-agenda-8026.pdf,137057,9b04a38e9d3bd39a0abb8840cac65890c79208923b7ba8d582d2a846b681694b,2026-09-21T21:50:12Z
 meetings/planning-board-public-hearing/2023-10-30-agenda-449.pdf,86319,47b8000d0c13a8dac9624f73f187608422b6da1a5b8447ad7519201aa85a671d,2026-09-08T17:26:46Z
 meetings/planning-board-public-hearing/2023-11-13-agenda-1322.pdf,111169,6c0e6364acd0f9cb1b9df4f3ab8605825e4a06dff0faff61de76ea488c80f82d,2026-09-08T17:26:47Z
 meetings/planning-board-public-hearing/2023-12-11-agenda-6088.pdf,274199,172a2d7c5a4e6480d586992de68b273d145c1bf18e0eacd0004d466e6bf7a17b,2026-09-08T17:26:48Z
@@ -15412,6 +15467,7 @@ meetings/select-board/2025-04-15-minutes-rr2026-09-18-draft.pdf,234957,efe51d31f
 meetings/select-board/2025-04-22-agenda-7177.pdf,86321,d8496e317ae83daba9b7b9f08eec742a56593bb68d68ab6e170d6ef9b1668364,2026-09-05T17:11:06Z
 meetings/select-board/2025-04-22-minutes-rr2026-09-18.pdf,185433,d81d15de99179c4bc27d94350512754efdbf7d2de0d71e9bb171990cc47c58b2,2026-09-19T03:50:00Z
 meetings/select-board/2025-05-03-agenda-7204.pdf,9282,d8936edbf166a9e238e5f7b9c39bc41f65eba60cf71b4c1817a25a01ded34daf,2026-09-05T17:11:06Z
+meetings/select-board/2025-05-03-minutes-7204.pdf,141047,8baa829437e6a8430d741ce0f0496bff9f14f266628edbf513cf0153e3596736,2026-09-21T21:50:12Z
 meetings/select-board/2025-05-06-agenda-7206.pdf,91655,edd5239630f5b57c4e3ceb57f39512c1fc083c2dec212ea7d3ae6f00ca78ef23,2026-09-05T17:11:07Z
 meetings/select-board/2025-05-06-minutes-rr2026-09-18-draft.pdf,232290,d4a9bcab4d88ec0e14fa4853e57540cab214eba3ce89a9e3c3d897de3cdd2ec9,2026-09-19T03:50:02Z
 meetings/select-board/2025-05-13-agenda-7219.pdf,90273,ee7d8d8c606492b08ef58ff00ab3ddd447ad8cb0a06373e851811ff9d504b9ac,2026-09-05T17:11:07Z
@@ -15458,19 +15514,26 @@ meetings/select-board/2025-10-14-minutes-rr2026-09-18.pdf,190869,96b36a8d3999bb7
 meetings/select-board/2025-10-21-agenda-7466.pdf,121416,0ef10a29b4ee7705f533013465b1cd3f98e6610c141d33823340ae7638a4ab11,2026-09-05T17:11:46Z
 meetings/select-board/2025-10-21-minutes-rr2026-09-18.pdf,200578,ea12162aacdccd651ce85c4494d133ddb9b520ad8084e99f66d92cfdf1a4d3f7,2026-09-19T03:50:06Z
 meetings/select-board/2025-10-24-agenda-7477.pdf,117696,f86f203cee69285536fb8f5f885e223f8cd4617a47a4fb88ba0629f97e2cef80,2026-09-05T17:11:46Z
+meetings/select-board/2025-10-24-minutes-7477.pdf,164176,9c651d0f4bef44477396e1de3e4f15ed2021edc8c204a85c1b47cbd9aa4457b5,2026-09-21T21:50:12Z
 meetings/select-board/2025-11-04-agenda-7494.pdf,173417,2b0553b5ec20f884fc077e0381f480c7f506f526aa7559ba15f686c84d749e66,2026-09-05T17:11:47Z
 meetings/select-board/2025-11-04-agenda-7497.pdf,156269,eea426d8a778e9f57055db345b088ef85c849e32dea6043cd99483ef4742e8a0,2026-09-05T17:11:47Z
+meetings/select-board/2025-11-04-minutes-7494.pdf,183287,f8bb88d0f0513f83b2730bda37325fd85847b268a40f4640588ee37ba3331b82,2026-09-21T21:50:12Z
 meetings/select-board/2025-11-17-agenda-7510.pdf,210966,435dacf6ad1e09adb4035d96925d8f067d28741919231347a2b2ed7d692c347b,2026-09-05T17:11:47Z
 meetings/select-board/2025-11-17-minutes-rr2026-09-18.pdf,150808,1abf90678f74a033cd322e25161009cc8a158244f545457f1583d8f9dd0443d3,2026-09-19T03:50:08Z
 meetings/select-board/2025-11-18-agenda-7388.pdf,133357,7c863814a8d35b6b4384f54ef39406bc03d8bf51d07474566c658606c4ce2d06,2026-09-05T17:11:48Z
 meetings/select-board/2025-11-18-agenda-7511.pdf,192335,7ee9db56a217875a423957e8430aaa53bbc01275d1578176c896974f32f347a0,2026-09-05T17:11:48Z
+meetings/select-board/2025-11-18-minutes-7511.pdf,143953,856ebefe8a7100ce3a9c678ca36d5d81012717a483f2dd94ac8b6d42aac3d324,2026-09-21T21:50:12Z
 meetings/select-board/2025-11-19-agenda-7522.pdf,142838,c0c2d6f5afddcb4223d674a95b137385ae0530bc22219803a14ea94b3bb31b0e,2026-09-05T17:11:53Z
 meetings/select-board/2025-11-24-agenda-7533.pdf,103052,c63a329d15ec31a715d7356e42eb64d9690fd85b410fbc58c8f27ae3d8c75b28,2026-09-05T17:11:54Z
 meetings/select-board/2025-11-25-agenda-7534.pdf,148537,8273a118bf59f53c543f44a559db5313f11768e4b8d83ae1437724f368debe61,2026-09-05T17:11:54Z
+meetings/select-board/2025-11-25-minutes-7534.pdf,152748,319431ca0b269a604ae8f9bf700c0a374324e77bd7384bef5d8b4ce60ebd4d68,2026-09-21T21:50:12Z
 meetings/select-board/2025-12-02-agenda-7539.pdf,190950,dc6333ce6996b1a355e56cf2d01bf8fc31012869e965ca17e483f650e9ba717c,2026-09-05T17:11:55Z
 meetings/select-board/2025-12-02-agenda-7547.pdf,206645,440ba69568378c6a8c87b4a835e49a3ccd0b0d5a9dad76c8aa370417ebcf1c03,2026-09-05T17:11:55Z
+meetings/select-board/2025-12-02-minutes-7547.pdf,208024,c098ada915bf33946ea9c5fd50b1e3a2aa7b5f4158b09dff57f35f3afedf0608,2026-09-21T21:50:12Z
 meetings/select-board/2025-12-09-agenda-7554.pdf,162447,8f564d9907642bf0bdda00051d5a90300a1a7f122eac5d936b6a74ac4c77984e,2026-09-05T17:11:56Z
+meetings/select-board/2025-12-09-minutes-7554.pdf,208759,96144fd061dad0708f3203869baea0e2faef4de0bc383f4228509561d86fd14f,2026-09-21T21:50:13Z
 meetings/select-board/2025-12-16-agenda-7567.pdf,265579,6441bae3a50905e5bf2de965db13ee6ab95624aaa6612cb6f34a831f1f3a2f00,2026-09-05T17:11:56Z
+meetings/select-board/2025-12-16-minutes-7567.pdf,205349,8f95b151dbd24d6298a6d8c22bbbb9aaa073d478ebdf8499b949dfe9dd3992a0,2026-09-21T21:50:13Z
 meetings/select-board/2025-12-30-agenda-7578.pdf,150974,017e146b4be8ab30762eedfd02b8f8facfc3c6ab6eb5b8944fc919649cbc9c26,2026-09-05T17:11:56Z
 meetings/select-board/2025-12-30-minutes-7578.pdf,151267,73777aa68507213faf23a30f021b55a769bf0b3a8a0119c6e723a8f08842f1b4,2026-09-05T17:12:01Z
 meetings/select-board/2026-01-05-agenda-7583.pdf,122783,0d09e369c11577f8129b4ee6332f68de85d7cc7148c4a2d675fbc4bf3f2af3ae,2026-09-05T17:12:02Z
@@ -15489,29 +15552,39 @@ meetings/select-board/2026-02-03-minutes-7630.pdf,207303,2b6931f2d898707cb4dbab5
 meetings/select-board/2026-02-10-agenda-7643.pdf,157077,f04512ff27d8a688ca2d3c94faf3458c93a24a2f32c38d455fc497081d4428ba,2026-09-05T17:12:11Z
 meetings/select-board/2026-02-10-minutes-7643.pdf,251323,80eaf04af5d17023006b9ae80427e1c728b6dc354c54f59e6ee6e9703a33270b,2026-09-08T18:37:49Z
 meetings/select-board/2026-02-17-agenda-7656.pdf,153770,49f98832ee21ba26b68fb23be12bc9fdb18cfe1e69256097a91df9e7149fe710,2026-09-05T17:12:11Z
+meetings/select-board/2026-02-17-minutes-7656.pdf,218558,88d678ed31fb908168abeecf5abea8550c33ec83bf44e88f80b05eb9b13a2340,2026-09-21T21:50:13Z
 meetings/select-board/2026-02-24-agenda-7670.pdf,139522,74b61dbb8ef62fe955fbdb70c822ed5c74c6dff43d141e182d6c37e0b824dd67,2026-09-05T17:12:11Z
 meetings/select-board/2026-02-24-agenda-7671.pdf,141318,d0bed56bf0a96c8ef9db1175035dc5e65203899683161157979a1008c5f866b7,2026-09-05T17:12:12Z
 meetings/select-board/2026-02-24-minutes-7670.pdf,156998,c0bd4879dbe5a3180535590f70aa3c3332891871b85af5b459fc248da3ca650a,2026-09-08T18:37:49Z
 meetings/select-board/2026-03-03-agenda-7679.pdf,158958,3198959556e3cd4fbb191ed7d7ec208237905028653ccbaba190bdf98f001757,2026-09-05T17:12:12Z
 meetings/select-board/2026-03-03-agenda-7689.pdf,157010,f70e225bde6969ba19117aae262e1e57a74d294230b4b069bc9f97d26fc8d0c9,2026-09-05T17:12:20Z
+meetings/select-board/2026-03-03-minutes-7689.pdf,203486,1309d950d72a77afa3605f55b5b343adb1ba9441c9fec9df538c7d00694e0ee6,2026-09-21T21:50:14Z
 meetings/select-board/2026-03-09-agenda-7696.pdf,112368,ca191f8a216242197e092860c9be63dd5fda8a63bc8d60fdea8075e3ed3b3b1f,2026-09-05T17:12:20Z
 meetings/select-board/2026-03-10-agenda-7697.pdf,153830,88e32353721297b1ab8052cd3d65ada44bd3506530d238a283c98d7aec879476,2026-09-05T17:12:20Z
 meetings/select-board/2026-03-10-agenda-7698.pdf,103906,52ec7856fc3e7c13156a3a8de661bbf22082220825d9b2c491d0cda08356210e,2026-09-05T17:12:20Z
 meetings/select-board/2026-03-10-minutes-7698.pdf,136309,af2f3d14f4e4a7c82fb827f5bd0093912747bdaac7dfd9644b92dd1315b5ec41,2026-09-05T17:12:20Z
 meetings/select-board/2026-03-16-agenda-7716.pdf,123631,9b8fc0ef9cd6c4195d81168660da5b4e479d027ddda40e5f9e4dd96516561dad,2026-09-05T17:12:20Z
+meetings/select-board/2026-03-16-minutes-7716.pdf,187337,260e5c4914d2dbe8e583c34578d61a724521cd27912598a6aa40e964fff871cb,2026-09-21T21:50:14Z
 meetings/select-board/2026-03-17-agenda-7717.pdf,155347,f6459b0b370337cdee7cccdae7825dfd1a23ec0302bbbadb9a20b2553f7c9f91,2026-09-05T17:12:20Z
+meetings/select-board/2026-03-17-minutes-7717.pdf,301206,92f073a80cee415b94f9268a6d116bd347ab04d6e6481361f0d9bfe6eda0e88f,2026-09-21T21:50:15Z
 meetings/select-board/2026-03-19-agenda-7721.pdf,104968,48947f6aa817bd1f3270c38a085d6977086db46a945599aeab61c4c9f0dca2d1,2026-09-05T17:12:20Z
 meetings/select-board/2026-03-23-agenda-7728.pdf,126560,a47e433f5a493ee04ee736e08128993e4347e7e965d857177b091b2c21410c30,2026-09-05T17:12:26Z
+meetings/select-board/2026-03-23-minutes-7728.pdf,163719,21cb13ea0039c2eaf9e5731885af6f21c59a17625b0961f729c68ccd99034e97,2026-09-21T21:50:15Z
 meetings/select-board/2026-03-24-agenda-7729.pdf,104395,deb91fd0c1b028a7ed3c97c6c35e5531f9b391e8be83ed887a3e853344486277,2026-09-05T17:12:26Z
 meetings/select-board/2026-03-31-agenda-7745.pdf,151333,2a7bdd0ec0971636901b2b138516a6d9f0b2c6289fc1f700246bdbb6dab39ea2,2026-09-05T17:12:26Z
+meetings/select-board/2026-03-31-minutes-7745.pdf,224670,d7b6d878cc5410155bddee6d7dcb8a3709cdd70b75141d4d9792f693df1cce61,2026-09-21T21:50:15Z
 meetings/select-board/2026-04-07-agenda-7752.pdf,158369,8003ee31f319667b9d48d6f15bb89d4f8bf094e65c7602eb877fd1fba9fadf02,2026-09-05T17:12:27Z
 meetings/select-board/2026-04-07-minutes-7752.pdf,224113,131342fdda79ca4a64b2eff780bc924c1a2af02309056faa52f2fd7653c2351b,2026-09-08T18:37:49Z
 meetings/select-board/2026-04-14-agenda-7766.pdf,158003,fe8cbef71626fe35f2233e78ec80fbdaffe30d9a7c91129a2f06d8315c4dd43c,2026-09-05T17:12:27Z
+meetings/select-board/2026-04-14-minutes-7766.pdf,207466,d175c37ce13ec02328f60d9726c79b114f3d812e29a7520f562c48efb790a735,2026-09-21T21:50:15Z
 meetings/select-board/2026-04-21-agenda-7778.pdf,158049,78f1d0842f0274438b2cc7b7c434065e3a8e939b30234aef00f9391f847e6cd6,2026-09-05T17:12:27Z
+meetings/select-board/2026-04-21-minutes-7778.pdf,172066,b898c27f69561d9a3ad0174370533e7cac34f5548c7fe0b846b5e855385673f5,2026-09-21T21:50:15Z
 meetings/select-board/2026-04-30-agenda-7790.pdf,121360,e7a5b3bef8e4d32ce4dd7b253a49221b38ed9446081db3f1e94f6387bbd8cddf,2026-09-05T17:12:28Z
 meetings/select-board/2026-04-30-minutes-7790.pdf,111564,ffb8acacb7ef8868c0f1bd10f0c3b45acb0d61ac032f7d8d4e58f3ea38ae3cce,2026-09-05T17:12:28Z
 meetings/select-board/2026-05-02-agenda-7787.pdf,105773,5e800915172ed52691590f14d53068b5f26c8d9db926f64a4f90ca2b7d3f0e4e,2026-09-05T17:12:34Z
+meetings/select-board/2026-05-02-minutes-7787.pdf,141363,7bf824d70482fc423cf645a257f5c1ba4656569794b7a2ac6a5129083962985c,2026-09-21T21:50:16Z
 meetings/select-board/2026-05-05-agenda-7796.pdf,153702,c6d2b103ce2826756c01f505fee661345cf3093e758963fadf338521fb4929b4,2026-09-05T17:12:34Z
+meetings/select-board/2026-05-05-minutes-7796.pdf,166077,20cd99b5c7dd20d578301a1bb1ce5988a25efe84414dc084b585f7840cd1c063,2026-09-21T21:50:16Z
 meetings/select-board/2026-05-12-agenda-7805.pdf,166077,f5d101681ed3d7851d57b7d1d68fa056944c168ca4b4e152f53b1db5469a2bca,2026-09-05T17:12:34Z
 meetings/select-board/2026-05-12-minutes-7805.pdf,122064,fa7cc648d550385219c96278ee9d4a986fca3a92fc16843e3275f16a8a8068d3,2026-09-05T17:12:35Z
 meetings/select-board/2026-05-19-agenda-7814.pdf,168478,fa42f348a405fd59b0d87499ee0c8dfe40e74185550e790b31cb526a469145c7,2026-09-05T17:12:35Z
@@ -15525,9 +15598,11 @@ meetings/select-board/2026-07-07-agenda-7888.pdf,151257,cf20f3262962e1fb495573f3
 meetings/select-board/2026-07-14-agenda-7898.pdf,121949,95424cd4f0a9d90db437b04c156b51848a385768fd92d7a7afec1ee6322a4045,2026-09-05T17:12:44Z
 meetings/select-board/2026-07-21-agenda-7911.pdf,142356,d476e844cd084a0c573687098df26ab55505dffe3681d8f22fcf83dc6691ae83,2026-09-05T17:12:44Z
 meetings/select-board/2026-07-27-agenda-7925.pdf,147482,c604b227c3c575066522a7ade753833159f29c41f3225d79781a4080fda788d0,2026-09-05T17:12:44Z
+meetings/select-board/2026-07-27-minutes-7925.pdf,114536,9f200704beb436956e7e8e5caec80aaec9cecb38b42e60ac13d8aa64318bb9fe,2026-09-21T21:50:16Z
 meetings/select-board/2026-07-28-agenda-7926.pdf,162230,53f4004699ba292b6ecc1d1a961ff4f8b9931a1c085aa552ac4dcd81e089e8e1,2026-09-05T17:12:44Z
 meetings/select-board/2026-08-04-agenda-7941.pdf,133400,9eb76234ae7828ed044c1b657204454964107bc8e0e98daecea6b821ed6008c9,2026-09-05T17:12:50Z
 meetings/select-board/2026-08-10-agenda-7955.pdf,124399,b8eb96e43437779765661d9da275f27f74ecd242ec0bf3f91f742222b625292c,2026-09-05T17:12:50Z
+meetings/select-board/2026-08-10-minutes-7955.pdf,97375,0e077aca672ece4021401c11e329858424aca3af6cfea4cd396173e251f347db,2026-09-21T21:50:17Z
 meetings/select-board/2026-08-11-agenda-7957.pdf,137338,9397f98cb14b9aa5a36d03f5b067a86473d592553200b3e8d43858359daf5892,2026-09-05T17:12:50Z
 meetings/select-board/2026-08-18-agenda-7965.pdf,228011,52dc14bff39a079f679e382c5f68886bd1c90e7638a3637e53248b67dcfb8b89,2026-09-05T17:12:51Z
 meetings/select-board/2026-08-18-agenda-7968.pdf,146189,7f49ee8088d93121f3faf3abe32a9a9018e11d8b01884a6409775fdac904184f,2026-09-05T17:12:51Z
@@ -17433,6 +17508,7 @@ meetings/text/board-of-assessors/2026-08-05-minutes-7942.txt,6122,f6d2ddbbac3bc5
 meetings/text/board-of-assessors/2026-08-11-agenda-7956.txt,1066,dc3fca6d9f00c72fd5b3c75c2aee3fa7dc5449aec26dbef5b827224e67b798bf,2026-09-05T17:16:51Z
 meetings/text/board-of-assessors/2026-08-11-minutes-7956.txt,1978,3b73fc730baa21f8009da79a7447269d948037ad6fccb18cfabc10e79f4f0fbf,2026-09-13T19:22:49Z
 meetings/text/board-of-assessors/2026-09-09-agenda-7999.txt,3724,e5aa6dbd477df1e4d36a2943fda04a86d5bc9029a8f4ccb0b703255e2b0fb088,2026-09-08T19:06:55Z
+meetings/text/board-of-assessors/2026-09-23-agenda-8032.txt,3748,8452d09de12ba5e96f9328a46bd908432f86963b4ba7faf1c5b9ffbe279e58ef,2026-09-21T21:51:27Z
 meetings/text/board-of-health/2009-01-05-agenda-818.txt,38,a7bc3c9e0e6df981856f7203547a57605f6fa4ad7c0105c3d1b8985a475d65db,2026-09-08T19:06:55Z
 meetings/text/board-of-health/2009-01-05-minutes-818.txt,27,de627a87d7c0db883d7c02af3ab0ea431350032bc16814299dfa375652ad7629,2026-09-08T19:06:55Z
 meetings/text/board-of-health/2009-02-02-agenda-819.txt,38,a7bc3c9e0e6df981856f7203547a57605f6fa4ad7c0105c3d1b8985a475d65db,2026-09-08T19:06:57Z
@@ -18674,6 +18750,7 @@ meetings/text/cemetery-commission/2026-06-05-minutes-7806.txt,1825,f555b39a06785
 meetings/text/cemetery-commission/2026-06-25-agenda-7863.txt,1974,b7f4b11a48339f30a9b7ff2d57e816b2d1000eab4de81c46937f88b67858c8fe,2026-09-05T17:18:59Z
 meetings/text/cemetery-commission/2026-07-30-agenda-7928.txt,1949,ad50ff8625b7705011c70b4296a94c638ba29ddf246ebe67599d6f2312776611,2026-09-05T17:18:59Z
 meetings/text/cemetery-commission/2026-08-19-agenda-7971.txt,1854,215109c292c8519a32bdc1780289d5df97c8ded6f59eae234476f4ca4fd09e00,2026-09-05T17:18:59Z
+meetings/text/cemetery-commission/2026-09-24-agenda-8029.txt,1831,31894dbe18189225e048a5e73dc97673ea68edfe6b3ebd6a024db9ffac36abc9,2026-09-21T21:52:28Z
 meetings/text/charter-review-committee/2017-09-06-agenda-1576.txt,47,2f6321ec1ddd1b44c76c4f5e0c61ba99b10c0710944a96fefd3de7535ca9d09b,2026-09-08T19:25:24Z
 meetings/text/charter-review-committee/2017-09-06-minutes-1576.txt,13,c7c9dd6bfcf9f6ae908198b337f2f975c28fc988a3d40008ce57ccd8a93d660d,2026-09-08T19:25:24Z
 meetings/text/charter-review-committee/2017-09-27-agenda-1575.txt,47,2f6321ec1ddd1b44c76c4f5e0c61ba99b10c0710944a96fefd3de7535ca9d09b,2026-09-08T19:25:24Z
@@ -28616,6 +28693,7 @@ meetings/text/zoning-board-of-appeals/2026-08-12-agenda-7919.txt,1609,37c9683f51
 meetings/text/zoning-board-of-appeals/2026-08-26-agenda-7935.txt,1513,2066abe6fabbae200940f019e9cb0bc0fe3e40b1a4ae753e631af0112fe1bd82,2026-09-05T17:40:11Z
 meetings/text/zoning-board-of-appeals/2026-08-26-agenda-7936.txt,1524,bf74b4d10768aab85d2a983aa67cd557470f3e1ce5ca3abe1c9cec84e2e37922,2026-09-05T17:40:11Z
 meetings/text/zoning-board-of-appeals/2026-08-26-agenda-7978.txt,2226,2773fd1801a008a44f829ddb89dbf9da4ab4d2ae50a6aaca0d3515f843205f47,2026-09-05T17:40:12Z
+meetings/text/zoning-board-of-appeals/2026-10-14-agenda-8030.txt,1692,189b49e8a7629cb422bfa3e6fc3efbdda3eac740b91737f775f55a992939c2b2,2026-09-21T22:01:30Z
 meetings/town-manager-screening-committee/2016-08-18-agenda-5814.pdf,66402,8486a61131ef3d188c00c60e85f4de0959fcc45a338af6156a19e8657666a46d,2026-09-08T21:57:40Z
 meetings/town-manager-screening-committee/2016-08-18-minutes-5814.pdf,15322,8af32ff3f8bb7b4b5fa9c1df75e958095ffa5b4a750db8977dac1ec9377b8ec0,2026-09-08T21:57:40Z
 meetings/town-manager-screening-committee/2016-09-01-agenda-5815.pdf,67971,9372376c86512d0f5f83c8ad3c6d02f17e1c9fd06bb9343d4e6795db7bef6cd5,2026-09-08T21:57:40Z
@@ -29050,6 +29128,7 @@ meetings/zoning-board-of-appeals/2026-08-12-agenda-7919.pdf,315834,46e9aaf310e56
 meetings/zoning-board-of-appeals/2026-08-26-agenda-7935.pdf,315696,e437d91fe80221ed2ba33b5a02d5a1e41353448848ae5ae7569ef8eb6fb4785a,2026-09-05T17:41:15Z
 meetings/zoning-board-of-appeals/2026-08-26-agenda-7936.pdf,321658,5a2f18241d6ae06e87ff8e7a731b3512a724ee5201c76608e1c2c17ae782afaf,2026-09-05T17:41:16Z
 meetings/zoning-board-of-appeals/2026-08-26-agenda-7978.pdf,214640,0f50665970d9c17694fa0adef4dda410e50d4f73db9f94838f2ea77fe8f40f1f,2026-09-05T17:41:17Z
+meetings/zoning-board-of-appeals/2026-10-14-agenda-8030.pdf,311375,2d4b71f5165ccfcab3fdd894492c691feb3eb70fd8a74c6b3ca89a6569c1de70,2026-09-21T22:01:30Z
 peer-districts/ashburnham-westminster-fy27-detail.pdf,594023,1f2dd113189625065c393bdbcc51590ce5d57abca971e501161d57c8fa00e5b7,2026-09-05T17:41:18Z
 peer-districts/ashburnham-westminster-fy27-detail.txt,94693,299fe126481ab3b11750e741db4a60617d522811d8763a38d9a29715c8fc46d2,2026-09-05T17:41:18Z
 peer-districts/ashburnham-westminster-fy27-presentation.pdf,478694,5fd2f744bc50deec4db20b9f67011257787e208e3a0866ba611683c1e6ceb404,2026-09-05T17:41:19Z

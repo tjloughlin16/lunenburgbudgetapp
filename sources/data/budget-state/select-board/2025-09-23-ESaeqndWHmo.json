@@ -1,0 +1,76 @@
+{
+ "board": "Select Board",
+ "board_slug": "select-board",
+ "meeting_date": "2025-09-23",
+ "source": {
+  "sha256": "1c94d07dada376b73b43079078576da917f1ca8ac8de1dc43c61300502007a5d",
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-09-23-ESaeqndWHmo.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2026,
+    "kind": "state_aid",
+    "scope": "school",
+    "statement": "An article for additional Chapter 70 funding to schools is already on the fall town meeting warrant, but the town manager has heard no need for the money and is not inclined to transfer it.",
+    "status": "announced",
+    "t": 2204,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$300,000",
+    "fiscal_year": 2027,
+    "kind": "other",
+    "scope": "town",
+    "statement": "A prior Town Meeting warrant article funded partial repair of the TCP roof, over the section of the building being decommissioned.",
+    "status": "announced",
+    "t": 1830,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$1,360,700",
+    "fiscal_year": 2027,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The facilities director's full estimate, including contingency, to replace the entire TCP roof rather than repair it in sections.",
+    "status": "announced",
+    "t": 1851,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$63,000",
+    "fiscal_year": 2026,
+    "kind": "other",
+    "scope": "school",
+    "statement": "The School Committee reported a budget surplus compared to previous estimates, discussed at a community Q&A on the budget and overage.",
+    "status": "announced",
+    "t": 3408,
+    "who": "a member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "TCP roof repair",
+    "condition": "if the roof is repaired in pieces rather than as one full project",
+    "fiscal_year": 2027,
+    "prediction": "Repairing the TCP roof in sections risks a 'jigsaw' effect from seam lines between differently-aged roof areas, potentially causing future issues.",
+    "scope": "town",
+    "t": 1914,
+    "who": "the town manager"
+   }
+  ]
+ },
+ "video_id": "ESaeqndWHmo",
+ "video_url": "https://www.youtube.com/watch?v=ESaeqndWHmo",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-09-21T20:56:03Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}
