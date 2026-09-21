@@ -500,16 +500,20 @@ def render(rows):
          usd(total)))
     w('**The general/restricted split is ours**, read off each fund’s name and '
       'account. The ledger prints a balance and never says what may be spent on what.\n')
-    w('**Where this came from.** A public records request made by Matt Nazarenko to the '
-      'Town Manager, answered by the Town, and sent to this project by him directly. The '
-      'report prints its own program (`glytdbud`), the moment it was generated — 11 '
-      'August 2026 at 11:59 — and the Town Accountant’s name. What is bounded '
-      'rather than known is the date the request was filed: before 14 August 2026, and '
-      'before the reports were produced. We are one remove from the town, so the town’s '
-      'response message is not in this archive, and that matters for one reason — the '
-      'period-12 package came with the Town Manager warning that figures were '
-      '“likely to continue to adjust as we continue the year-end reconciliation '
-      'process”, and nothing here says whether a similar note accompanied these.\n')
+    # THE ROUTE, NOT THE PERSON. TJ: "we dont need to be so specific about where the data
+    # came from on this page. listing Matt here isnt helpful." Right on both counts -- a
+    # reader needs to know the figures came from the town's books by a records request
+    # rather than off a website, and naming the private individual who filed it serves
+    # nobody. The full chain stays in
+    # sources/town-ledgers/expenses/PROVENANCE-fy2026-p09.md, which is what rule 12 asks
+    # for; this is the page.
+    w('**Where this came from.** The town\u2019s own general ledger, obtained by a public '
+      'records request rather than published on a website. The report names its program, '
+      'the moment it was generated and the Town Accountant who ran it. We hold it at one '
+      'remove, so any note the town sent with the figures is not in this archive \u2014 '
+      'and that matters here, because the equivalent package a few months later came with '
+      'the Town Manager warning that figures were \u201clikely to continue to adjust as we '
+      'continue the year-end reconciliation process\u201d.\n')
     w('**Nothing has come out of any of them so far this year.** Every expenditure '
       'column is empty at %s — a fact about nine months, not about whether these '
       'funds get spent. They do: the Health Insurance fund is a third of a million '
@@ -995,11 +999,10 @@ def _sources():
         publisher='Town of Lunenburg — Town Accountant',
         note='The town’s MUNIS trust and agency report at 31 March 2026: every fund’s '
              'beginning balance, revenue, expenditure and remaining balance, with the '
-             'system’s own subtotals. Obtained by a public records request from Matt '
-             'Nazarenko to the Town Manager, answered before 14 August 2026 and sent to '
-             'this project directly; the request is the address, and we are one remove '
-             'from the town. See '
-             'sources/town-ledgers/expenses/PROVENANCE-fy2026-p09.md.'))
+             'system’s own subtotals. Obtained by a public records request rather than '
+             'published on a website, and held at one remove from the town. The full '
+             'chain \u2014 who asked, when, and what is bounded rather than known \u2014 is '
+             'in sources/town-ledgers/expenses/PROVENANCE-fy2026-p09.md.'))
     out.append(dict(
         path='sources/data/town-meeting-votes.csv', sha256='', bytes=0, url='',
         docs_url='/data/town-meeting-votes.csv', filename='town-meeting-votes.csv',

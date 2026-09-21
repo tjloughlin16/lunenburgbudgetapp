@@ -137,6 +137,24 @@ def extract(fy, path, verbose=False):
                  # come out of this file looking the same.
                  ending_market=(round(r['cells']['ending_market'], 2)
                                 if 'ending_market' in r['cells'] else ''),
+                 # INTEREST IS NOT PUBLISHED FROM THESE TABLES, and the reason is
+                 # worth keeping. The reader names a `net_earnings` column and the pages
+                 # print one, so it looks extractable -- but a row is proved by the cash
+                 # identity, and that identity is a SUM. A sum is blind to the order of
+                 # its terms, so two different layouts of the same width both close it
+                 # and the arithmetic cannot say which is right.
+                 #
+                 # It is not hypothetical. FY2025 page 37's vehicle row came out with
+                 # `net_earnings` = $250,000.00 and `begin_earnings` = $93,687.39. The
+                 # true reading is the other way round: $93,687.39 of interest and a
+                 # $250,000 Town Meeting transfer -- a round number that is obviously a
+                 # vote and not a yield, and the row proves identically either way.
+                 #
+                 # Publishing it would have put a transfer on a page about what the town
+                 # EARNS, which is the difference between a choice and a yield. The
+                 # ledger's `revenue` column is labelled by the accounting system and is
+                 # where interest comes from instead; that it covers one year is a real
+                 # limit and is registered as a gap rather than papered over.
                  # THE BASIS IS WHAT THE CHECK ACTUALLY RETURNED. It was a constant
                  # string, written when both identities were the only way through, and it
                  # would now be stating two proofs for a row that has one.

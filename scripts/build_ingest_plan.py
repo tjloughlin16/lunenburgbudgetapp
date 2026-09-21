@@ -48,54 +48,120 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = os.path.join(ROOT, 'sources', 'data', 'annual-report-pages.csv')
 OUT = os.path.join(ROOT, 'sources', 'data', 'ingest-plan.csv')
 
-FIELDS = ['seq', 'batch', 'kind', 'subjects', 'pages', 'years', 'runs_beside',
-          'effort', 'cost', 'status', 'delivers']
+FIELDS = ['seq', 'batch', 'channel', 'kind', 'subjects', 'items', 'years',
+          'runs_beside', 'effort', 'cost', 'status', 'delivers']
 
-# seq, batch, kind, subjects it covers, effort, cost, what lands when it does.
+# THE THREE CHANNELS, because they are limited by completely different things and a plan
+# that mixes them cannot be scheduled.
 #
-# `effort` is in SESSIONS, measured against the two extractors written on 21 September:
-# Treasurer's Cash and the Trust Fund Balance listing were about one session each,
-# including the arguing with the page that is most of the work.
+#   session     I write an extractor. Limited by MY time; costs nothing to run afterwards.
+#   refresh     a claude -p run per item, dripped by the daily refresh at its own caps
+#               (MAX_MINUTES_PER_RUN = 3, MAX_OFFICIAL_VOTES_PER_RUN = 40). Limited by
+#               the PLAN ALLOWANCE, and the only thing here that spends it.
+#   background  local compute -- OCR, fetching. Limited by wall clock and by nothing else,
+#               so it always runs beside something rather than in front of it.
+#
+# The allowance figures are the measured ones in CLAUDE.md: a minutes run is about 0.09%
+# of a week and a votes run about 0.03%, on a plan that buys roughly 100% a week.
+RATE = {'recording-minutes': (3, 0.09), 'official-votes': (40, 0.03)}
+
+
+def drip(n, per_day, pct_each):
+    """How long a dripped stream takes, and what it costs, at the refresh's own cap."""
+    days = -(-n // per_day)
+    return ('%s runs at %d a day' % ('{:,}'.format(n), per_day),
+            '%.0f%% of a week in total, ~%.1f%% a day' % (n * pct_each, per_day * pct_each),
+            days)
+
+# seq, batch, channel, kind, subjects, effort, cost, what lands when it does.
+#
+# `effort` is in SESSIONS for the authoring work, measured against the two extractors
+# written on 21 September: Treasurer's Cash and the Trust Fund Balance listing were about
+# one session each, including the arguing with the page that is most of the work.
 PLAN = [
-    (1, 'Finish trust and stabilization', 'extractor', ['trust-and-stabilization'],
-     '1 session', 'free',
+    (1, 'Finish trust and stabilization', 'session', 'extractor',
+     ['trust-and-stabilization'], '1 session', 'free',
      'The general Stabilization Fund in every year it is still missing from '
      '/analysis/stabilization-funds. The thread is already open and the readers exist; '
      'this closes it rather than leaving it at nine years of twelve.'),
-    (2, 'Re-OCR the pages that came out upside down', 're-OCR', ['__reversed__'],
-     '2 hours of compute', 'free, unattended',
-     'Fourteen pages on which no extractor can currently see a figure at all. Detect the '
-     'reversal, force the opposite rotation, verify. Runs BESIDE batch 1 and 3, because '
-     'it needs a machine rather than a person.'),
-    (3, 'Triage the 73 unclassified pages', 'triage', ['unknown'],
+    (2, 'Re-OCR the pages that came out upside down', 'background', 're-OCR',
+     ['__reversed__'], '2 hours of compute', 'free, unattended',
+     'Pages on which no extractor can currently see a figure at all. Detect the reversal, '
+     'force the opposite rotation, verify. Runs BESIDE batches 1 and 3, because it needs '
+     'a machine rather than a person.'),
+    (3, 'Triage the unclassified pages', 'session', 'triage', ['unknown'],
      '1 session', 'free',
-     'Nothing directly. It turns 73 pages whose heading the scanner lost into ranked '
-     'work, and it is scheduled here rather than last because one of them may be the '
-     'next special-revenue and a plan that never opens them is guessing.'),
-    (4, 'Special revenue funds', 'extractor', ['special-revenue'],
+     'Nothing directly. It turns pages whose heading the scanner lost into ranked work, '
+     'and it is scheduled here rather than last because one of them may be the next '
+     'special-revenue and a plan that never opens them is guessing.'),
+    (4, 'Special revenue funds', 'session', 'extractor', ['special-revenue'],
      '1-2 sessions', 'free',
      'THE BIG ONE. Closes the registered gaps "What any special revenue fund bought" and '
-     '"Grants received in earlier years" outright. Rule 11’s load-bearing uncertainty: '
+     '"Grants received in earlier years" outright. Rule 11\u2019s load-bearing uncertainty: '
      'grants and revolving funds pay for real staff and appear nowhere in the budget, so '
      'a line rising because a grant ended is today indistinguishable from one rising '
      'because the district grew.'),
-    (5, 'Combined balance sheet', 'extractor', ['balance-sheet'],
+    (5, 'Combined balance sheet', 'session', 'extractor', ['balance-sheet'],
      '1 session', 'free',
      'The whole town in one statement, which this project does not have at all. Closes '
      '"What the town held town-wide at 30 June 2024 and 30 June 2025" and bears on the '
      'free-cash discrepancy /free-cash records and cannot explain.'),
-    (6, 'Receivables and tax collection', 'extractor',
+    (6, 'Receivables and tax collection', 'session', 'extractor',
      ['receivables', 'tax-collection'], '1-2 sessions', 'free',
      'What is owed and what was collected, over twelve years. One batch because they are '
      'the two halves of the same question and sit on adjacent pages in the same reports.'),
     (7, 'The tail: payroll, valuation, capital, appropriations, enrolment, elections',
-     'extractor',
+     'session', 'extractor',
      ['payroll', 'valuation', 'capital', 'appropriations', 'enrollment', 'elections',
       'vital-records', 'officials', 'debt'],
      '1 session', 'free',
      'Six small families in one pass. Individually none justifies a session; together '
      'they finish the run and every one of them already has a dataset this tops up.'),
+    # ---- THE OTHER STREAMS. TJ: "make sure the 'plan' pages include ALL open backlog
+    # items, across all categories." They are not annual-report work and they are not
+    # limited by the same thing, which is exactly why they have to be on the same page:
+    # the two below are the ONLY items here that spend the plan allowance, and between
+    # them they are months of it.
+    (8, 'Captions for the recordings still missing them', 'background', 'fetch',
+     ['__captions__'], '', 'free, throttled by YouTube',
+     'Meetings whose only surviving record is a video become searchable. No allowance at '
+     'all -- it is fetching, not thinking -- so it runs beside anything.'),
+    (9, 'Votes out of the town\u2019s own minutes', 'refresh', 'claude -p',
+     ['__votes__'], '', '',
+     'Every vote the town published, each with its quote checked verbatim. Dripped by the '
+     'daily refresh at 40 a day; the cap exists because the alternative is spending a '
+     'week of allowance in an afternoon.'),
+    (10, 'Our minutes, written from the recordings', 'refresh', 'claude -p',
+     ['__minutes__'], '', '',
+     'The full record of meetings the town never minuted -- decisions, transfers, budget '
+     'items, public comment. The most expensive thing this project does per item, and at '
+     'three a day the slowest; that pacing is deliberate.'),
 ]
+
+
+def stream_counts():
+    """How many items are left in the streams that are not annual-report pages."""
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import build_ingest_status as S
+    except Exception:
+        return {}
+    out = {}
+    try:
+        out['__captions__'] = sum(p['n'] for p in S.caption_pending())
+    except Exception:
+        pass
+    try:
+        out['__votes__'] = sum(p['n'] for p in S.register_pending(
+            lambda r: r.get('minutes') == '1', 'official-votes'))
+    except Exception:
+        pass
+    try:
+        out['__minutes__'] = sum(p['n'] for p in S.register_pending(
+            lambda r: bool(r.get('transcript_paths')), 'recording-minutes'))
+    except Exception:
+        pass
+    return out
 
 
 def counts():
@@ -120,24 +186,31 @@ def main():
     a = ap.parse_args()
 
     by, rev = counts()
+    streams = stream_counts()
     rows = []
-    for seq, batch, kind, subjects, effort, cost, delivers in PLAN:
+    for seq, batch, channel, kind, subjects, effort, cost, delivers in PLAN:
+        years, n = [], None
         if subjects == ['__reversed__']:
             years = rev
+            n = len(years)
+        elif subjects and subjects[0].startswith('__'):
+            n = streams.get(subjects[0], 0)
+            if subjects[0] in ('__votes__', '__minutes__'):
+                key = 'official-votes' if subjects[0] == '__votes__' else 'recording-minutes'
+                per_day, pct = RATE[key]
+                effort, cost, days = drip(n, per_day, pct)
+                effort = '%s \u2014 about %d days' % (effort, days)
         else:
             years = [y for s in subjects for y in by.get(s, [])]
-        if not years:
-            status = 'done'
-        else:
-            status = 'next' if seq == 1 else 'planned'
-        beside = 'yes' if kind == 're-OCR' else ''
+            n = len(years)
+        status = 'done' if not n else ('next' if seq == 1 else 'planned')
         rows.append(dict(
-            seq=seq, batch=batch, kind=kind,
-            subjects=' + '.join(s for s in subjects if s != '__reversed__') or 'any page',
-            pages=len(years),
-            years=('FY%d–FY%d' % (min(years), max(years))) if years else '',
-            runs_beside=beside, effort=effort, cost=cost, status=status,
-            delivers=delivers))
+            seq=seq, batch=batch, channel=channel, kind=kind,
+            subjects=' + '.join(s for s in subjects if not s.startswith('__')) or '\u2014',
+            items=n or 0,
+            years=('FY%d\u2013FY%d' % (min(years), max(years))) if years else '',
+            runs_beside='yes' if channel == 'background' else '',
+            effort=effort, cost=cost, status=status, delivers=delivers))
 
     buf = io.StringIO()
     wr = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\n')
@@ -151,18 +224,19 @@ def main():
             print('STALE %s -- run: python3 scripts/build_ingest_plan.py'
                   % os.path.relpath(OUT, ROOT), file=sys.stderr)
             return 1
-        print('ok -- %d batches, %d pages planned'
-              % (len(rows), sum(r['pages'] for r in rows)))
+        print('ok -- %d batches, %s items planned'
+              % (len(rows), '{:,}'.format(sum(r['items'] for r in rows))))
         return 0
 
     with open(OUT, 'w', encoding='utf-8') as fh:
         fh.write(text)
-    print('wrote %s -- %d batches covering %d pages'
-          % (os.path.relpath(OUT, ROOT), len(rows), sum(r['pages'] for r in rows)))
+    print('wrote %s -- %d batches covering %s items'
+          % (os.path.relpath(OUT, ROOT), len(rows),
+             '{:,}'.format(sum(r['items'] for r in rows))))
     for r in rows:
-        print('  %d. %-52s %3d pages  %-16s %s'
-              % (r['seq'], r['batch'][:52], r['pages'], r['effort'],
-                 '(runs in the background)' if r['runs_beside'] else ''))
+        print('  %2d. %-46s %-11s %6s  %s'
+              % (r['seq'], r['batch'][:46], r['channel'],
+                 '{:,}'.format(r['items']), r['effort'][:44]))
     return 0
 
 
