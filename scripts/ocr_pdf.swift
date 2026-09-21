@@ -216,7 +216,24 @@ for i in 0..<doc.pageCount {
             let text = cand.string.replacingOccurrences(of: "\t", with: " ")
             out += String(format: "%d\t%.5f\t%.5f\t%.5f\t%.5f\t%.3f\t",
                           i + 1, b.minX, b.minY, b.width, b.height, cand.confidence)
-            out += text + "\n"
+            // SANITISE BEFORE WRITING, because a recognised line can CONTAIN a newline.
+            //
+            // Vision occasionally returns a single observation whose string spans two
+            // printed lines. Written straight into a TSV that ends each row with a
+            // newline, it terminates the row early and every following row is absorbed
+            // into the last field until the reader recovers -- one observation on FY2017
+            // page 25 swallowed 123,577 characters.
+            //
+            // Silent, and not small: 5,215 rows across the fifteen annual reports were
+            // being lost this way, 2,150 of them in FY2017 alone. Nothing downstream
+            // could see it, because a TSV with fewer rows than the scanner produced looks
+            // exactly like a page with less text on it.
+            let flat = text
+                .replacingOccurrences(of: "\r\n", with: " ")
+                .replacingOccurrences(of: "\n", with: " ")
+                .replacingOccurrences(of: "\r", with: " ")
+                .replacingOccurrences(of: "\t", with: " ")
+            out += flat + "\n"
         }
     } else {
         let lines = (req.results ?? []).compactMap { $0.topCandidates(1).first?.string }
