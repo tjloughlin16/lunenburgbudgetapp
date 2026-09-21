@@ -136,6 +136,36 @@ PLAN = [
      'The full record of meetings the town never minuted -- decisions, transfers, budget '
      'items, public comment. The most expensive thing this project does per item, and at '
      'three a day the slowest; that pacing is deliberate.'),
+    # ---- AT THE END, AND WITH A CLAIM TO TEST. TJ, 21 September 2026: "debt repayment
+    # schedule. This is one of the most misquoted things about our budgets. One year
+    # (youll see in the minutes) people said we were drawing down so much debt that we
+    # could add hundreds to the tax burden and residents would see no change. Which I
+    # dont think is true."
+    #
+    # That is a claim a schedule settles, and it is the reason this batch is worth doing
+    # rather than a nice-to-have: a debt schedule states, year by year, how much service
+    # falls off. Either the fall is large enough to absorb new borrowing invisibly or it
+    # is not, and the document says which.
+    #
+    # THE ARITHMETIC IT HAS TO SUPPORT, so the extract is built for the question: debt
+    # service retiring in a year, against what a given amount of new borrowing would add
+    # in that same year. Both are annual figures and they are comparable; a total
+    # outstanding is neither and is the figure most likely to be quoted instead.
+    #
+    # WE HOLD 354 ROWS AND THE SPLIT IS THE POINT: 74 checked, 98 check failed, 182 no
+    # check -- and eight years of the fifteen have no rows at all (FY2012-FY2016, FY2018,
+    # FY2022). A series with holes cannot answer "how much falls off each year", which is
+    # the whole question.
+    #
+    # AND THE QUOTE IS NOT YET FOUND. Searching the minutes for it turned up budget talk
+    # and not the sentence; rule 15a says find what was actually said before writing about
+    # what a category does, so locating it is part of this batch rather than a footnote.
+    (11, 'Debt repayment schedule', 'session', 'extractor', ['debt'],
+     '1 session', 'free',
+     'Answers a claim this town argues over: that retiring debt leaves room to borrow '
+     'again at no cost to a tax bill. A schedule states how much service falls off each '
+     'year, so the claim is checkable rather than a matter of belief. 23 pages unread '
+     'across FY2011-FY2024, and eight years currently hold no rows at all.'),
 ]
 
 
