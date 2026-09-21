@@ -53,7 +53,20 @@ HEADING = re.compile(r"treasurer.{0,3}s\s+cash\s+as\s+of", re.I)
 # Treasurer 6/30/14`, `Total Treasurer Cash as of 06/30/2020` -- so the test is the two
 # words in either order rather than one phrasing, which matched two reports out of fifteen.
 TOTAL = re.compile(r"total.{0,20}treasurer|treasurer.{0,20}total", re.I)
-MONEY = re.compile(r'^\$?\s*-?\(?[\d,]{1,15}\.\d{2}\)?$')
+# A SCAN READS A COMMA AS A FULL STOP, and it costs whole rows.
+#
+# FY2019's page carries `$1.017,532.36` — one million and seventeen thousand, with the
+# thousands separator read as a period. The old pattern required the separators to be
+# commas and the decimal point to be a period, so a figure like that matched nothing, was
+# not a row, and its money silently left the column. The page then missed its own printed
+# total and every fund on it — including two stabilization funds — went unpublished.
+#
+# So separators are either character, and the LAST one is the decimal point. That is how
+# the number is actually built: groups of three, then two. `1.017,532.36` and
+# `1,017,532.36` are the same figure, and which mark the scanner chose says nothing about
+# the town's money.
+MONEY = re.compile(r'^\$?\s*-?\(?\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\)?$|'
+                   r'^\$?\s*-?\(?\d+[.,]\d{2}\)?$')
 # The heading carries the date the column is measured to.
 ASOF = re.compile(r'(\d{1,2})/(\d{1,2})/(\d{2,4})')
 
@@ -62,7 +75,16 @@ TOL = 1.0
 
 
 def money(t):
-    t = t.replace('$', '').replace(',', '').strip()
+    """The value, with the last separator taken as the decimal point.
+
+    See MONEY above: a scanned comma is often a full stop, so the marks cannot be trusted
+    by TYPE. They can be trusted by POSITION -- the last one separates the cents.
+    """
+    t = t.replace('$', '').strip()
+    cut = max(t.rfind('.'), t.rfind(','))
+    if cut > 0:
+        t = t[:cut].replace('.', '').replace(',', '') + '.' + t[cut + 1:]
+    t = t.replace(',', '').strip()
     neg = t.startswith('(') and t.endswith(')')
     t = t.strip('()')
     try:
