@@ -764,6 +764,7 @@ def extract(dataset):
         # total.
         for run in runs:
             in_run = [r for r in rows[n0:] if r['page'] in run]
+            apply_corrections(in_run, dataset, fy, CORRECTIONS_APPLIED)
             mark_page_furniture(in_run)
             mark_arithmetic_subtotals(in_run)
             mine = [r for r in in_run if r['kind'] == 'row']
@@ -918,6 +919,8 @@ def extract(dataset):
                                   + (f'; {short} partial not checked' if short else ''))
                     ties.append(False)
 
+            groups_tie = group_reconciliation(in_run, checks, ties)
+
             if fam == 'omnibus-budget':
                 # The table numbers its own lines, so it proves its own completeness.
                 #
@@ -940,8 +943,22 @@ def extract(dataset):
                             f'{len(gaps)} numbers we did not read — a missing row, a row '
                             f'read without its number, or one the report does not use ('
                             + ', '.join(str(g) for g in gaps[:12])
-                            + ('…' if len(gaps) > 12 else '') + ')')
-                        ties.append(False)
+                            + ('…' if len(gaps) > 12 else '') + ')'
+                            + ('; every printed total ties, so these are numbers we did '
+                               'not read rather than rows that are not here'
+                               if groups_tie else ''))
+                        # A GAP IN THE NUMBERING IS NOT A MISSING ROW WHEN THE ARITHMETIC
+                        # IS WHOLE. This check exists because FY2021 lost line 79 -- the
+                        # school department, $21.6M -- and nothing else could have said
+                        # so. But a missing row of that kind also breaks its group total,
+                        # and the group totals are the finer instrument: FY2024 reads
+                        # every one of its 109 lines and ties all eighteen of its printed
+                        # totals while failing to read twenty of the line NUMBERS beside
+                        # them, because the numbers sit in their own narrow column and
+                        # Vision drops them. Failing the year for that says our reading of
+                        # the schedule is in doubt when what is in doubt is our reading of
+                        # its margin.
+                        ties.append(bool(groups_tie))
                     else:
                         checks.append(f'line numbering {min(seen)}-{max(seen)}: complete')
                         ties.append(True)
@@ -1103,6 +1120,186 @@ def name_omnibus_page(page_rows, ncols):
             r['_names'] = lookup
 
 
+CORRECTIONS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                           'sources', 'data', 'table-corrections.csv')
+
+
+CORRECTIONS_APPLIED = set()
+
+
+def load_corrections():
+    """Cells read off the rendered page because OCR read them WRONG, not blank.
+
+    A cell OCR loses is harmless: it comes through empty, and the group total it belongs
+    to refuses to close. A cell OCR MISREADS is the dangerous one -- it arrives as a
+    perfectly valid number that says nothing about itself, and the only thing standing
+    between it and publication is an identity the table prints about itself.
+
+    It is deliberately NOT called `report-table-corrections.csv`: `sources/data/report-*.csv`
+    is the namespace of extracted table families, every one of which carries the standard
+    schema, and `verify_report_tables.py` globs it. A file of a different shape inside that
+    namespace is a trap -- it crashed the verifier on a missing `edition` column the first
+    time this was written.
+
+    FY2024's omnibus is the worked example, and it had one of each in the same group:
+
+        17  Annual Town Audit      $  44,100.00   ->  `14.100.00`   parses; $30,000 low
+        21  Town Manager Salary    $ 165,043.60   ->  `165043800`   does not parse; empty
+
+    Together they are $195,043.60, which is exactly what General Government was short.
+    That total is why the two are FINDABLE at all, and it is also the reason not to trust
+    it further than it goes: an identity constrains a SUM, and there were two errors under
+    it, not one. Deriving the missing salary from the residual would have published
+    $195,043.60 for a salary that is $165,043.60 -- a wrong figure justified by arithmetic
+    that ties. So a correction here is always a READING of the page image, never a
+    solution of the equation, and `evidence` has to say which page was looked at.
+
+    Every correction is checked twice over: the value must be one the row did not already
+    hold, and `--check` fails if a correction never matches a row, because a correction
+    for a row that has moved or been re-read is a stale claim sitting in a file nobody
+    reads.
+    """
+    if not os.path.exists(CORRECTIONS):
+        return []
+    with open(CORRECTIONS, encoding='utf-8') as fh:
+        return [r for r in csv.DictReader(fh)]
+
+
+def apply_corrections(rows_in, dataset, fy, applied):
+    """Put the read values in, and mark every row they touch."""
+    for c in load_corrections():
+        if c['dataset'] != dataset or c['fy'] != str(fy):
+            continue
+        want_page, want_label = c['page'].strip(), squash(c['label'])
+        for r in rows_in:
+            if str(r['page']) != want_page or squash(r['label']) != want_label:
+                continue
+            col = f"v{c['column']}"
+            r[col] = f"{float(c['corrected']):.2f}"
+            r['repaired_cells'] = (r.get('repaired_cells') or 0) + 1
+            r['row_check'] = (f"read off the page image: OCR gave `{c['as_read']}`, the "
+                              f"page prints {float(c['corrected']):,.2f}")
+            applied.add((c['dataset'], c['fy'], c['page'], c['label']))
+            break
+
+
+def group_reconciliation(in_run, checks, ties):
+    """Reconcile on the totals the table PRINTS ABOUT ITSELF, group by group.
+
+    A year-level residual is almost useless. FY2024's omnibus came to $43,825,305.59
+    against a printed $44,024,349.19 and reported itself $199,043.60 short -- which could
+    have been one missing department or fifty misread cents, and gave nobody anywhere to
+    look. Twelve hours of this project went into residuals of that shape.
+
+    But these schedules do not print one identity. They print a dozen: every group states
+    its own total, and the grand total states the sum of the groups. So walk the run in
+    printed order, accumulate the line rows, and settle up at each total. FY2024 goes from
+    one useless number to this in a single pass:
+
+        Total Maturing Debt          12 lines   2,941,321.50 = printed
+        Total Gen Gov Unclassified   15 lines   4,293,122.97 = printed
+        Total General Government     22 lines   1,982,920.30 vs 2,177,963.90   -195,043.60
+        ... every other group ties to the cent ...
+
+    ONE group, twenty-two lines, and reading that quarter-page settled it in two minutes:
+    an audit line misread $30,000 low and a salary OCR dropped. Everything the year-level
+    figure was hiding, it was hiding under eleven groups that were already correct.
+
+    **The groups are the check; the flat sum is not.** A year whose groups all tie has
+    proved its reading against every identity the document offers, at a far finer grain
+    than the grand total can. So the tie is recorded per group and the year-level
+    comparison stays in the reconciliation text as a summary of them, not as a separate
+    verdict that can only ever repeat what the groups already said.
+        **THE SCHEDULE NESTS, so the walk has to.** `Total Protection` does not sum any line
+    at all -- it sums `Subtotal Police`, `Subtotal Fire Dept.`, `Subtotal Radio Watch` and
+    `Subtotal Other Protection`, each of which sums its own lines. A flat walk hands a
+    parent total an empty run and reports a $4.6M failure at the one place the table is
+    perfectly readable. So each total is offered two constituencies -- the lines since the
+    last total, and a run of the totals already settled -- and whichever one ties is what
+    it totals. A parent then REPLACES its children, so the grand total at the end meets
+    twelve group totals rather than eighteen overlapping ones.
+    """
+
+    def val(r, col='v1'):
+        v = r.get(col)
+        try:
+            return float(v) if v not in (None, '') else 0.0
+        except ValueError:
+            return 0.0
+
+    lines, subs, groups, bad = [], [], [], []
+    n_lines = sum(1 for r in in_run if r['kind'] == 'row')
+    covered = 0
+    for r in in_run:
+        if r['kind'] == 'footnote':
+            continue
+        if r['kind'] == 'row':
+            lines.append(r)
+            continue
+        if r['kind'] not in ('subtotal', 'grand_total'):
+            continue
+        if r.get('v1') in (None, ''):
+            continue
+        printed = val(r)
+        name = r['label'].strip() or f"unnamed total, page {r['page']}"
+        note = ok = None
+
+        got = round(sum(val(x) for x in lines), 2)
+        if lines and abs(got - printed) <= 0.02:
+            ok, note = True, f'the {len(lines)} lines above it sum to this total'
+            covered += len(lines)
+            lines, subs = [], subs + [r]
+        else:
+            # A run of already-settled totals, longest first: a parent consumes ALL of its
+            # children or none of them, and the longest run that ties is the real one.
+            for k in range(len(subs), 1, -1):
+                if abs(round(sum(val(x) for x in subs[-k:]), 2) - printed) <= 0.02:
+                    ok = True
+                    note = f'the {k} totals above it sum to this total'
+                    subs = subs[:-k] + [r]
+                    lines = []
+                    break
+        if ok is None:
+            ok = False
+            if lines:
+                note = (f'the {len(lines)} lines above it sum to {got:,.2f}, '
+                        f'not the {printed:,.2f} printed')
+                bad.append(f'{name} ({got - printed:+,.2f} over {len(lines)} lines)')
+                covered += len(lines)
+            else:
+                sub_sum = round(sum(val(x) for x in subs), 2)
+                note = (f'no line beneath it ties; the {len(subs)} totals above it come '
+                        f'to {sub_sum:,.2f}, not the {printed:,.2f} printed')
+                bad.append(f'{name} ({sub_sum - printed:+,.2f} over {len(subs)} totals)')
+            lines, subs = [], subs + [r]
+        groups.append(ok)
+        r['row_check'] = ((r.get('row_check') or '')
+                          + ('; ' if r.get('row_check') else '') + note)
+    if not groups:
+        return None
+    # A TOTAL THAT TIES PROVES ONLY THE ROWS UNDER IT.
+    #
+    # The FY2025 report's run holds 82 rows and prints exactly one total, `Total F2026
+    # Capital` -- which ties, over the 21 lines above it. Passing the year on that put
+    # `checked` on 61 further rows that no printed figure in the document tests. A tie is
+    # evidence about its own constituency and about nothing else, so the rows outside
+    # every constituency are reported as what they are: read, and unproven.
+    if covered < n_lines:
+        checks.append(f'{n_lines - covered} of {n_lines} line rows sit beneath no printed '
+                      f'total — read, but nothing in the document tests them')
+        ties.append(False)
+        groups.append(False)
+    if all(groups):
+        checks.append(f'{len(groups)} printed totals: every one equals what the table '
+                      f'prints beneath it')
+        ties.append(True)
+        return True
+    checks.append(f'{len(groups)} printed totals, {len(bad)} do not equal what is printed '
+                  f'beneath them: ' + '; '.join(bad[:4]) + ('…' if len(bad) > 4 else ''))
+    ties.append(False)
+    return False
+
+
 def mark_page_furniture(rows_in):
     """Take the page's furniture back out of the table.
 
@@ -1205,6 +1402,18 @@ def mark_arithmetic_subtotals(rows_in, tol=0.02):
             if rows_in[i]['kind'] != 'row':
                 continue
             labelled = bool(rows_in[i]['label'].strip())
+            # A ROW THAT CARRIES A LINE NUMBER IS A LINE, WHATEVER IT ADDS UP TO.
+            #
+            # These schedules number their items and do not number their totals: across
+            # every omnibus year here, 254 of 255 recognised subtotals have no line number
+            # -- and the one that did was wrong. FY2024 page 142 prints two consecutive
+            # $4,000.00 items, line 41 (its label lost to OCR) and line 42 Police/Fire
+            # Medical Expenses, and the unlabelled-row rule below read the first as the
+            # second's total. That is exactly the coincidence the rule's own comment
+            # admits it is exposed to, and the document settles it: a total is not a
+            # numbered line of the schedule.
+            if (rows_in[i].get('line_no') or '').strip():
+                continue
             hits = {}
             for c in range(1, ncol + 1):
                 v = col(i, c)
@@ -1320,6 +1529,24 @@ def main():
               f'produced rows. NOTHING came out of: ' + ', '.join(empty))
     else:
         print(f'  all {len(planned)} planned edition(s) produced rows')
+
+    # A CORRECTION THAT MATCHES NOTHING IS A STALE CLAIM, and it fails the run.
+    #
+    # Every row in report-table-corrections.csv says the page prints something other than
+    # what OCR returned. If the row it names has since moved, been re-read, or stopped
+    # being extracted at all, that claim is no longer attached to anything -- and a file
+    # of corrections nobody can locate is the silent-zero shape this repo keeps finding:
+    # it would go on sitting there, reading as though it were applied.
+    stale = [c for c in load_corrections()
+             if c['dataset'] == args.dataset
+             and (c['dataset'], c['fy'], c['page'], c['label']) not in CORRECTIONS_APPLIED]
+    if stale:
+        print(f'  {len(stale)} correction(s) matched no row: '
+              + '; '.join(f"FY{c['fy']} p{c['page']} {c['label']}" for c in stale))
+        raise SystemExit(1)
+    if CORRECTIONS_APPLIED:
+        print(f'  {len(CORRECTIONS_APPLIED)} cell(s) read off the page image, '
+              f'from {os.path.relpath(CORRECTIONS, ROOT)}')
 
     rec = sum(1 for l in ledger if l['status'] == 'checked')
     fail = sum(1 for l in ledger if l['status'] == 'check failed')
