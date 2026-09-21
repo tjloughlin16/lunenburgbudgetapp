@@ -41,6 +41,30 @@ export function slugify(text: string): string {
 
 const INLINE = /(`[^`]+`)|(\*\*[^*]+\*\*)|(\[[^\]]*\]\([^)]*\))|(\*[^*]+\*)|(_[^_]+_)/
 
+/** A sibling analysis is a PAGE, not a file.
+ *
+ *  The documents link each other the way markdown does -- `[the stabilization
+ *  funds](stabilization-funds.md)` -- and a bare `.md` href resolves against whatever
+ *  address the reader is on, so from /analysis/stabilization-option it became
+ *  /analysis/stabilization-funds.md: not a page, and the reader lands on the analyses
+ *  index wondering what they clicked. TJ hit it twice.
+ *
+ *  IT LIVES HERE, AT MODULE LEVEL, FOR A REASON WORTH KEEPING. The first attempt put
+ *  this in `resolve()` inside renderMarkdown -- which turns out to be used for IMAGES
+ *  ONLY, one call site, line ~205. Links are rendered by `inline()`, a module-level
+ *  function that never sees that closure, so the fix was real code on a path no link
+ *  takes and the bug was reported fixed while still shipping. A fix belongs where the
+ *  thing it fixes is rendered, and the way to know that is to grep the call sites rather
+ *  than to read the name of the function and assume.
+ *
+ *  Only a bare `<slug>.md`, optionally with an anchor. Anything absolute, external or
+ *  deeper (`charts/foo.svg`) is left exactly as written. */
+function pageHref(href: string): string {
+  const m = /^([a-z0-9][a-z0-9-]*)\.md(#.*)?$/.exec(href)
+  return m ? `/analysis/${m[1]}${m[2] || ''}` : href
+}
+
+
 function inline(text: string, key = 'i'): ReactNode[] {
   const out: ReactNode[] = []
   let rest = text
@@ -59,7 +83,7 @@ function inline(text: string, key = 'i'): ReactNode[] {
     } else if (tok.startsWith('[')) {
       const cut = tok.indexOf('](')
       const label = tok.slice(1, cut)
-      const href = tok.slice(cut + 2, -1)
+      const href = pageHref(tok.slice(cut + 2, -1))
       out.push(
         <a key={k} href={href} className="underline break-words"
           style={{ color: 'var(--series-cost)' }}
@@ -109,20 +133,11 @@ export function renderMarkdown(src: string, base = '/docs/analyses/'): Rendered 
   let k = 0
   const key = () => `b${k++}`
 
-  // A SIBLING ANALYSIS IS A PAGE, NOT A FILE. The documents link each other the way
-  // markdown does -- `[the stabilization funds](stabilization-funds.md)` -- and resolving
-  // that against `base` sent a reader to the raw `.md`, which is not a page and lands
-  // them on the analyses index wondering what they clicked. TJ hit exactly that: "i
-  // clicked a link and was brought to .../stabilization-funds.md".
-  //
-  // So a bare `<slug>.md` (optionally with an anchor) resolves to the ROUTE that renders
-  // it. Everything else still resolves against `base`, because `charts/foo.svg` really is
-  // a file and really does live under /docs/analyses/.
-  const resolve = (href: string) => {
-    if (/^(https?:|\/|#|mailto:)/.test(href)) return href
-    const m = /^([a-z0-9][a-z0-9-]*)\.md(#.*)?$/.exec(href)
-    return m ? `/analysis/${m[1]}${m[2] || ''}` : base + href
-  }
+  // FILES ONLY. This has exactly one call site -- the <img> below -- because an analysis
+  // references `charts/foo.svg`, which is relative to /docs/analyses/. Sibling-document
+  // LINKS are rewritten by pageHref() up in inline(), which is where links are rendered.
+  const resolve = (href: string) =>
+    (/^(https?:|\/|#|mailto:)/.test(href) ? href : base + href)
 
   while (i < lines.length) {
     const line = lines[i]
