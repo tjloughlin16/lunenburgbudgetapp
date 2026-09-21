@@ -438,6 +438,38 @@ def register_pending(want, have_dir):
 
 
 
+def annual_report_pages():
+    """Financial pages of the annual reports, by SUBJECT, and whether anything read them.
+
+    TJ: "I want ot know what is in them and what can be processed from them. So on the
+    backlog, break down the annual report info into the particular data sets that can be
+    extracted."
+
+    The other extraction card counts ROWS in datasets that already exist, which means a
+    table nobody has written an extractor for contributes nothing to it and is invisible.
+    That is how a better stabilization table sat unread in the same reports for weeks. This
+    card counts PAGES and groups them by what is printed on them, so the queue includes
+    the work nobody has started.
+    """
+    f = os.path.join(DATA, 'annual-report-pages.csv')
+    if not os.path.exists(f):
+        return 0, []
+    done, todo = 0, []
+    for r in rows('annual-report-pages.csv'):
+        if r.get('state') == 'read':
+            done += 1
+        else:
+            label = r.get('subject') or 'unknown'
+            if r.get('state') == 'reversed':
+                label += ' (needs re-OCR)'
+            todo.append((label, '%s-06-30' % r['fy']))
+    out = group(todo)
+    for g in out:
+        g['dates'] = ['%s (%s)' % (d, '{:,}'.format(n))
+                      for d, n in sorted(collections.Counter(g['dates']).items())]
+    return done, out
+
+
 def extraction_pending():
     """The annual-report tables: rows READ against rows the document's OWN total proves.
 
@@ -584,6 +616,22 @@ def streams():
                   note='a row that does not reconcile is read, not proven; nothing may be '
                        'aggregated across the two',
                   pending=ex_pend))
+
+    # THE ANNUAL REPORTS, BY WHAT IS ON THE PAGE. Counted from the pages rather than from
+    # the datasets, so a table with no extractor yet is in the queue instead of absent
+    # from it.
+    ar_done, ar_todo = annual_report_pages()
+    if ar_done or ar_todo:
+        s.append(dict(key='annualpages', name='Annual report pages, by what is on them',
+                      io='in: 15 annual town reports, page by page &rarr; out: the tables '
+                         'nobody has extracted yet, grouped by subject',
+                      done=ar_done, todo=sum(p['n'] for p in ar_todo),
+                      blocked=0, blocked_why='', cost='free \u2014 our own extractors, local',
+                      last=ago(newest([os.path.join(DATA, 'annual-report-pages.csv')])),
+                      note='a page counts as read when ANY dataset cites it, which says it '
+                           'was looked at rather than exhausted; the subject is read off '
+                           'the page\u2019s own headings and is a guess',
+                      pending=ar_todo))
 
     return s
 

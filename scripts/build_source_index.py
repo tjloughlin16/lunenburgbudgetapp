@@ -1057,6 +1057,17 @@ GROUPS = [
              'than published. NOTE THE GRAIN: this is CASH HELD BY CUSTODIAN, not a fund '
              'balance \u2014 where it differs from trust-agency-balances.csv, the ledger is '
              'the fund and this is the cash. See scripts/extract_treasurers_cash.py.'),
+            ('data/annual-report-pages.csv',
+             'Every financial page of every annual report, and what has read it', 3,
+             '418 pages across fifteen annual town reports that carry a table of figures, '
+             'each with the SUBJECT read off its own headings and whether any dataset '
+             'cites it. It maps the other direction from the rest of the backlog: from '
+             'the pages to what is on them, rather than from datasets that already exist '
+             '\u2014 so a table nobody has written an extractor for appears in the queue '
+             'instead of being invisible. 209 read, 195 unread, 14 whose OCR came out '
+             'upside down and which are a re-OCR job rather than a reading job. `subject` '
+             'is a GUESS from the headings and is there to group the queue, never to say '
+             'what a figure means. See scripts/map_annual_report_pages.py.'),
             ('data/stabilization-pages.csv',
              'Where the stabilization funds are printed, page by page', 2,
              'Every page of every annual town report that carries a stabilization or '

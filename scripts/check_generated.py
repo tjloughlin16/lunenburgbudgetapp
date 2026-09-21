@@ -68,6 +68,8 @@ CHECKS = [
     # has to surface as itself rather than as a stale report.
     # WHERE THE TABLES ARE, before anything that reads one. A page that stops being
     # findable has to surface as itself rather than as a report quietly losing a row.
+    # WHAT IS IN THE ANNUAL REPORTS AND WHAT HAS READ IT, before anything that reads one.
+    ('map_annual_report_pages.py', ['--check']),
     ('map_stabilization_pages.py', ['--check']),
     ('extract_treasurers_cash.py', ['--check']),
     ('extract_trust_agency.py', ['--check']),

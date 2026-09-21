@@ -1987,6 +1987,18 @@
      "textUrl": "/docs/data/dataset-provenance.csv"
     },
     {
+     "path": "data/annual-report-pages.csv",
+     "title": "Every financial page of every annual report, and what has read it",
+     "stars": 3,
+     "what": "418 pages across fifteen annual town reports that carry a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. 209 read, 195 unread, 14 whose OCR came out upside down and which are a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
+     "kind": "Data",
+     "bytes": 50322,
+     "url": "/docs/data/annual-report-pages.csv",
+     "count": 418,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-pages.csv"
+    },
+    {
      "path": "analyses/questions.md",
      "title": "A hundred questions this archive can answer, each with the query",
      "stars": 3,
@@ -2419,6 +2431,18 @@
      "textUrl": "/docs/data/PROVENANCE-special-revenue-funds.md"
     },
     {
+     "path": "data/stabilization-pages.csv",
+     "title": "Where the stabilization funds are printed, page by page",
+     "stars": 2,
+     "what": "Every page of every annual town report that carries a stabilization or trust fund table: which report, which page, what KIND of table it is, and whether we have read it. Four different tables carry these funds and they are not interchangeable — the `other-banks` table omits the general Stabilization Fund entirely, which is why a chart of it once stopped four years early. `state` is the work queue: `read`, `unread`, or `reversed` for a page whose OCR came out upside down and on which no extractor can see a figure at all. Sorted newest report first, because that is the order the work is done in. See scripts/map_stabilization_pages.py.",
+     "kind": "Data",
+     "bytes": 6212,
+     "url": "/docs/data/stabilization-pages.csv",
+     "count": 64,
+     "unit": "rows",
+     "textUrl": "/docs/data/stabilization-pages.csv"
+    },
+    {
      "path": "data/PROVENANCE-special-revenue-read.md",
      "title": "Why the schedule is read rather than OCR’d",
      "stars": 2,
@@ -2429,18 +2453,6 @@
      "count": 110,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-special-revenue-read.md"
-    },
-    {
-     "path": "data/stabilization-pages.csv",
-     "title": "Where the stabilization funds are printed, page by page",
-     "stars": 2,
-     "what": "Every page of every annual town report that carries a stabilization or trust fund table: which report, which page, what KIND of table it is, and whether we have read it. Four different tables carry these funds and they are not interchangeable — the `other-banks` table omits the general Stabilization Fund entirely, which is why a chart of it once stopped four years early. `state` is the work queue: `read`, `unread`, or `reversed` for a page whose OCR came out upside down and on which no extractor can see a figure at all. Sorted newest report first, because that is the order the work is done in. See scripts/map_stabilization_pages.py.",
-     "kind": "Data",
-     "bytes": 5825,
-     "url": "/docs/data/stabilization-pages.csv",
-     "count": 60,
-     "unit": "rows",
-     "textUrl": "/docs/data/stabilization-pages.csv"
     },
     {
      "path": "data/stabilization-balances.csv",
@@ -15978,10 +15990,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1385,
+  "documents": 1386,
   "groups": 22,
-  "bytes": 2172739005,
-  "loadBearing": 137
+  "bytes": 2172789714,
+  "loadBearing": 138
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
