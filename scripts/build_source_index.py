@@ -1449,7 +1449,7 @@ GROUPS = [
              'Accountant whose name the report prints, year/period 2026/9, and the general '
              'fund run made with `Print totals only: Y`, which is why it carries 67 '
              'department rollups and no accounts. And where they came from: a public '
-             'records request by Matt Nazarenko to the Town Manager, answered before 14 '
+             'records request to the Town Manager, answered before 14 '
              'August 2026 and sent to this project directly. Two things stay bounded '
              'rather than known -- the date the request was filed, and whether the town '
              'sent a caveat with the figures, because we are one remove from the town '
@@ -1457,8 +1457,7 @@ GROUPS = [
             ('town-ledgers/revenue/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 revenue reports', 1,
              'A pointer: these arrived in the same package as the expenditure reports, and '
-             'obtained by a public records request from Matt Nazarenko to the Town '
-             'Manager. The full note is in '
+             'obtained by a public records request to the Town Manager. The full note is in '
              'town-ledgers/expenses/PROVENANCE-fy2026-p09.md.'),
             ('town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 fund balance reports', 1,

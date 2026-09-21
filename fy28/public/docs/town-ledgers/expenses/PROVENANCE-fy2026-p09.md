@@ -19,7 +19,7 @@ described:
 
 ## How it reached us
 
-**A public records request made by Matt Nazarenko to the Town Manager, answered by the
+**A public records request made to the Town Manager by a resident, answered by the
 Town, and sent to this project by him directly.**
 
 There is no URL. These documents were not published; they were asked for under the public

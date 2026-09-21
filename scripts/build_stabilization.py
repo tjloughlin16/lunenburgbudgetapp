@@ -986,7 +986,7 @@ def _sources():
                  'published only where the page’s own arithmetic closes.'))
     # THE LEDGER, AND ITS ADDRESS. This is where the balances on this page come from, so
     # rule 12's three things travel with it. The route was a recorded GAP until TJ
-    # supplied it: a public records request by Matt Nazarenko to the Town Manager,
+    # supplied it: a public records request to the Town Manager,
     # answered before 14 August 2026, sent to this project directly. Two parts of it are
     # worth keeping in the published note rather than only in the provenance file -- the
     # request date is BOUNDED rather than known, and we are one remove from the town, so
