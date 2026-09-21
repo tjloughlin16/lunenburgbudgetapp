@@ -173,6 +173,24 @@ function Report({ d }: { d: Payload }) {
     <>
       {/* ---- rule 7b, first movement: what this page establishes ---------- */}
       <section data-section="conclusions" data-short="">
+        {/* THE CHART IS THE HEADER. TJ, 21 September 2026: *"can you put the chart also
+            at the top of the page? Use it as the pages header image AND data, because it
+            speaks for itself."* And it does: one bar stands several times the height of
+            every other, which is the entire finding, and a reader who takes nothing else
+            off this page has taken the right thing.
+
+            It is the SAME component as the one in "Every grade, averaged over N years"
+            below, from the same payload -- not a picture of it. A header image that is a
+            rendering of the data cannot drift from the data, which is the whole reason
+            this site has no screenshots in it. The copy below keeps the legend, the
+            caption and the twelve-row table a reader who wants the numbers needs; this
+            one is deliberately bare. */}
+        <GradeProfile rows={d.grade_profile} outlier={o.grade} />
+        <Legend items={[
+          { colour: RATE, label: `grade ${o.grade}` },
+          { colour: OTHER, label: 'every other grade' },
+        ]} />
+
         <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
           <Stat value={pct1(o.mean)} tone={RATE}>
             of every eighth grade does not return for grade 9, averaged over{' '}

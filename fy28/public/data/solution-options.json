@@ -23,6 +23,165 @@
    "shortfall": 1511513.04
   }
  ],
+ "conclusions": [
+  {
+   "basis": "The balance is the remaining balance the town’s MUNIS trust and agency report prints for the general Stabilization Fund at 31 March 2026. The gaps are `model/finance.py`. The burndown is arithmetic over the two and models no interest.",
+   "bearing": "lever",
+   "claim": "The $3,147,179 the town may freely spend covers FY28, FY29 and part of FY30.",
+   "detail": "The fund enters FY30 with $686,432 against a $2,197,945 gap and empties partway through the year. And this is the generous reading: it assumes Town Meeting votes the whole balance to the schools in one go, keeping nothing back for a roof, a fire engine or a snow season, which is what the fund is for.",
+   "figure": "bal",
+   "figures": {
+    "a": {
+     "text": "FY28",
+     "unit": "",
+     "value": 28
+    },
+    "b": {
+     "text": "FY29",
+     "unit": "",
+     "value": 29
+    },
+    "bal": {
+     "text": "$3,147,179",
+     "unit": "spendable on anything lawful",
+     "value": 3147178.96
+    },
+    "c": {
+     "text": "FY30",
+     "unit": "",
+     "value": 30
+    },
+    "gap": {
+     "text": "$2,197,945",
+     "unit": "the gap in the year the fund empties",
+     "value": 2197945.0
+    },
+    "left": {
+     "text": "$686,432",
+     "unit": "left entering the third year",
+     "value": 686431.96
+    }
+   },
+   "id": "the-whole-spendable-reserve-buys-two-years",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "What a rating agency would make of a town that spent its stabilization fund, or what the balance was being held against.",
+   "see": [
+    {
+     "label": "The same one-year problem, for free cash",
+     "slug": "/analysis/free-cash"
+    }
+   ],
+   "so_what": "Then it is gone, and FY30 still needs $2,197,945 with no reserve behind it."
+  },
+  {
+   "basis": "`town_meeting_votes`, deposits summed per fiscal year and divided by the span. The restricted/redirectable split is OURS, read off which fund each deposit went to and where that fund’s money comes from.",
+   "bearing": "lever",
+   "claim": "Redirecting the deposits the town could lawfully redirect raises $260,244 a year.",
+   "detail": "Town Meeting votes $289,395 a year into these funds on average, and $260,244 of that is the town’s to send somewhere else. The difference is sewer money — Sewer Enterprise retained earnings, which is ratepayers’ and stays in the sewer system — and an opioid settlement dedicated by the article that created it. A deficit that returns every year is only ever closed by money that arrives every year, which is what this is; it is not enough of it.",
+   "figure": "div",
+   "figures": {
+    "all": {
+     "text": "$289,395",
+     "unit": "a year, voted in",
+     "value": 289394.76071428566
+    },
+    "div": {
+     "text": "$260,244",
+     "unit": "a year, redirectable",
+     "value": 260243.85714285713
+    },
+    "fy": {
+     "text": "FY28",
+     "unit": "",
+     "value": 28
+    },
+    "sh": {
+     "text": "28%",
+     "unit": "of the first year’s gap",
+     "value": 27.974998429800404
+    }
+   },
+   "id": "stopping-the-deposits-is-the-right-shape-and-the-wrong-size",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "What the town gives up by not making the deposits — the equipment, buildings and reserves they were accumulating toward.",
+   "see": [],
+   "so_what": "Recurring money against a recurring gap — and 28% of the FY28 shortfall."
+  },
+  {
+   "basis": "The town’s MUNIS trust and agency report for the balances; the general/restricted split follows the account the ledger itself groups them under.",
+   "bearing": "sizes",
+   "claim": "$5,914,242 of the $9,061,421 held in these funds is restricted to a stated purpose.",
+   "detail": "Only the general Stabilization Fund — $3,147,179 — may be appropriated for any lawful purpose, and that takes a two-thirds vote. A fund created under c.40 §5B may be spent only on the purpose named in the article that created it, and that purpose lives in the article rather than in the fund’s name.",
+   "figure": "res",
+   "figures": {
+    "gen": {
+     "text": "$3,147,179",
+     "unit": "spendable on anything lawful",
+     "value": 3147178.96
+    },
+    "res": {
+     "text": "$5,914,242",
+     "unit": "restricted to a stated purpose",
+     "value": 5914242.28
+    },
+    "tot": {
+     "text": "$9,061,421",
+     "unit": "held across the stabilization funds",
+     "value": 9061421.24
+    }
+   },
+   "id": "most-of-what-the-town-holds-cannot-reach-a-school-deficit",
+   "kind": "measured",
+   "literals": [
+    "c.40 §5B"
+   ],
+   "not_shown": "Whether any restricted purpose is broad enough to reach a school cost. That is a question for Town Counsel and a vote, not for a balance.",
+   "see": [
+    {
+     "label": "What each fund holds, and who may spend it",
+     "slug": "/analysis/stabilization-funds"
+    }
+   ],
+   "so_what": "A school deficit is not that purpose for any of them."
+  },
+  {
+   "basis": "`model/finance.py`, the level-service projection the rest of the site uses. Budget columns only, per rule 1.",
+   "bearing": "sizes",
+   "claim": "The gap grows from $930,273 to $2,197,945 in three years. The reserve does not grow.",
+   "detail": "By FY35 the projection puts it at $6,751,941. Spending a reserve against a series like that buys the years at the small end and leaves the large ones exactly as they were — which is why this page reports what each option COVERS rather than whether it works.",
+   "figure": "g3",
+   "figures": {
+    "fy": {
+     "text": "FY35",
+     "unit": "",
+     "value": 35
+    },
+    "g1": {
+     "text": "$930,273",
+     "unit": "the level-service gap, first year",
+     "value": 930273.0
+    },
+    "g3": {
+     "text": "$2,197,945",
+     "unit": "the same gap three years on",
+     "value": 2197945.0
+    },
+    "gl": {
+     "text": "$6,751,941",
+     "unit": "the gap at the end of the projection",
+     "value": 6751941.0
+    }
+   },
+   "id": "the-gap-grows-and-the-reserve-does-not",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether the projection’s rates hold. Every one of them is backtested against the district’s own later budgets and none of them is a promise.",
+   "see": [],
+   "so_what": "A one-off payment moves the problem into a year where it is bigger."
+  }
+ ],
  "gaps": [
   [
    28,
@@ -59,6 +218,47 @@
  ],
  "generated_by": "scripts/build_solution_options.py",
  "grain": "DOLLARS. The gap is the projection’s level-service shortfall by fiscal year. The balance is what the general ledger says the general Stabilization Fund held at 31 March 2026. The deposits are what Town Meeting VOTED in, which is not the same quantity as what the balances moved.",
+ "not_established": [
+  "Whether Town Meeting would vote for any of it. This is arithmetic about what the money could do, not a prediction about what anybody will do.",
+  "What the funds were being built for, and what the town gives up by not building them.",
+  "What a rating agency would make of a town that spent its stabilization fund.",
+  "Interest. These balances earn about 3.5% a year, which would extend the burndown by months rather than years and is not modelled."
+ ],
+ "sources": [
+  {
+   "bytes": 0,
+   "docs_url": "/docs/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
+   "filename": "trust-agency-fy2026-p09.xlsx",
+   "note": "The town’s MUNIS trust and agency report at 31 March 2026. Every balance on this page is the remaining balance this report prints, and the extract refuses to write unless it foots to the system’s own subtotals. Obtained by a public records request; the chain is in sources/town-ledgers/expenses/PROVENANCE-fy2026-p09.md.",
+   "path": "sources/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx",
+   "publisher": "Town of Lunenburg — Town Accountant",
+   "sha256": "",
+   "table": "trust_agency_balances",
+   "url": ""
+  },
+  {
+   "bytes": 0,
+   "docs_url": "/data/town-meeting-votes.csv",
+   "filename": "town-meeting-votes.csv",
+   "note": "Every Town Meeting article, with the vote quoted verbatim. The deposits this page averages are classified from each article’s own subject line, and the articles that print no amount are counted rather than guessed at.",
+   "path": "sources/data/town-meeting-votes.csv",
+   "publisher": "Town of Lunenburg",
+   "sha256": "",
+   "table": "town_meeting_votes",
+   "url": ""
+  },
+  {
+   "bytes": 0,
+   "docs_url": "/data/model.json",
+   "filename": "model.json",
+   "note": "The projection. Every gap figure on this page is the level-service shortfall model/finance.py computes for that year, on the same rates the rest of the site uses; the burndown is arithmetic over it and assumes nothing else.",
+   "path": "fy28/public/data/model.json",
+   "publisher": "This project — derived",
+   "sha256": "",
+   "table": "",
+   "url": ""
+  }
+ ],
  "stats": [
   {
    "label": "the only balance Town Meeting may spend on anything lawful, of $9,061,421 held",

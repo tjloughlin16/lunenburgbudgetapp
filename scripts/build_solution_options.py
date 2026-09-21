@@ -235,6 +235,176 @@ def render():
         burndown=run, gaps=gaps[:8])
 
 
+# ---- the sources, rule 12's three things -------------------------------------------
+#
+# The markdown carries "Where the figures come from" for a reader; this is the same thing
+# as data, so the source index and anything else that reads payloads sees it too. Both
+# documents came to this project by records request rather than off a website, which IS
+# an address and is written down as one.
+
+def _sources():
+    return [
+        dict(path='sources/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx',
+             sha256='', bytes=0, url='',
+             docs_url='/docs/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx',
+             filename='trust-agency-fy2026-p09.xlsx', table='trust_agency_balances',
+             publisher='Town of Lunenburg \u2014 Town Accountant',
+             note='The town\u2019s MUNIS trust and agency report at 31 March 2026. Every '
+                  'balance on this page is the remaining balance this report prints, and '
+                  'the extract refuses to write unless it foots to the system\u2019s own '
+                  'subtotals. Obtained by a public records request; the chain is in '
+                  'sources/town-ledgers/expenses/PROVENANCE-fy2026-p09.md.'),
+        dict(path='sources/data/town-meeting-votes.csv', sha256='', bytes=0, url='',
+             docs_url='/data/town-meeting-votes.csv', filename='town-meeting-votes.csv',
+             table='town_meeting_votes', publisher='Town of Lunenburg',
+             note='Every Town Meeting article, with the vote quoted verbatim. The '
+                  'deposits this page averages are classified from each article\u2019s own '
+                  'subject line, and the articles that print no amount are counted '
+                  'rather than guessed at.'),
+        dict(path='fy28/public/data/model.json', sha256='', bytes=0, url='',
+             docs_url='/data/model.json', filename='model.json', table='',
+             publisher='This project \u2014 derived',
+             note='The projection. Every gap figure on this page is the level-service '
+                  'shortfall model/finance.py computes for that year, on the same rates '
+                  'the rest of the site uses; the burndown is arithmetic over it and '
+                  'assumes nothing else.'),
+    ]
+
+
+def conclusions_for(data):
+    """What this page establishes, as data rather than as sentences in the markdown.
+
+    Rule 7d: a report is a payload rendered through the shared furniture, and conclusions
+    are the half of that a reader actually meets first. Every figure named here is
+    registered beside the sentence that states it, so `conclusions.py` can strip the
+    renderings out of the prose and fail if a digit is left standing.
+
+    THE BEARINGS ARE THE POINT ON THIS PAGE. Two of these are `lever` -- a reserve Town
+    Meeting may vote, and a deposit it may stop voting -- and two are `sizes`. That is the
+    whole argument of the report: the things you can pull are small or one-off, and the
+    thing that is growing is neither.
+    """
+    import conclusions as C
+    from conclusions import conclusion, emit, figure
+
+    run = data['burndown']
+    first_fy, first_gap = data['first_gap']
+    gen = data['general']
+    exhausted = run[-1]
+    entering = run[-2]['left'] if len(run) > 1 else gen
+    share = 100 * data['avg_divertible'] / first_gap
+    last_gap = data['gaps'][-1]
+
+    rows = [
+        conclusion(
+            id='the-whole-spendable-reserve-buys-two-years',
+            claim='The %s the town may freely spend covers FY%d, FY%d and part of FY%d.'
+                  % (C.usd(gen), run[0]['fy'], run[1]['fy'], exhausted['fy']),
+            so_what='Then it is gone, and FY%d still needs %s with no reserve behind it.'
+                    % (exhausted['fy'], C.usd(exhausted['gap'])),
+            figures={'bal': figure(gen, C.usd(gen), 'spendable on anything lawful'),
+                     'a': figure(run[0]['fy'], 'FY%d' % run[0]['fy']),
+                     'b': figure(run[1]['fy'], 'FY%d' % run[1]['fy']),
+                     'c': figure(exhausted['fy'], 'FY%d' % exhausted['fy']),
+                     'gap': figure(exhausted['gap'], C.usd(exhausted['gap']),
+                                   'the gap in the year the fund empties'),
+                     'left': figure(entering, C.usd(entering),
+                                    'left entering the third year')},
+            figure='bal', kind='measured', bearing='lever',
+            detail='The fund enters FY%d with %s against a %s gap and empties partway '
+                   'through the year. And this is the generous reading: it assumes Town '
+                   'Meeting votes the whole balance to the schools in one go, keeping '
+                   'nothing back for a roof, a fire engine or a snow season, which is '
+                   'what the fund is for.'
+                   % (exhausted['fy'], C.usd(entering), C.usd(exhausted['gap'])),
+            basis='The balance is the remaining balance the town\u2019s MUNIS trust and '
+                  'agency report prints for the general Stabilization Fund at 31 March '
+                  '2026. The gaps are `model/finance.py`. The burndown is arithmetic '
+                  'over the two and models no interest.',
+            not_shown='What a rating agency would make of a town that spent its '
+                      'stabilization fund, or what the balance was being held against.',
+            see=[('/analysis/free-cash', 'The same one-year problem, for free cash')],
+        ),
+        conclusion(
+            id='stopping-the-deposits-is-the-right-shape-and-the-wrong-size',
+            claim='Redirecting the deposits the town could lawfully redirect raises %s a '
+                  'year.' % C.usd(data['avg_divertible']),
+            so_what='Recurring money against a recurring gap \u2014 and %s of the FY%d '
+                    'shortfall.' % (C.pct(share, 0), first_fy),
+            figures={'div': figure(data['avg_divertible'], C.usd(data['avg_divertible']),
+                                   'a year, redirectable'),
+                     'all': figure(data['avg_all'], C.usd(data['avg_all']),
+                                   'a year, voted in'),
+                     'sh': figure(share, C.pct(share, 0), 'of the first year\u2019s gap'),
+                     'fy': figure(first_fy, 'FY%d' % first_fy)},
+            figure='div', kind='measured', bearing='lever',
+            detail='Town Meeting votes %s a year into these funds on average, and %s of '
+                   'that is the town\u2019s to send somewhere else. The difference is sewer '
+                   'money \u2014 Sewer Enterprise retained earnings, which is ratepayers\u2019 '
+                   'and stays in the sewer system \u2014 and an opioid settlement dedicated '
+                   'by the article that created it. A deficit that returns every year is '
+                   'only ever closed by money that arrives every year, which is what this '
+                   'is; it is not enough of it.'
+                   % (C.usd(data['avg_all']), C.usd(data['avg_divertible'])),
+            basis='`town_meeting_votes`, deposits summed per fiscal year and divided by '
+                  'the span. The restricted/redirectable split is OURS, read off which '
+                  'fund each deposit went to and where that fund\u2019s money comes from.',
+            not_shown='What the town gives up by not making the deposits \u2014 the '
+                      'equipment, buildings and reserves they were accumulating toward.',
+        ),
+        conclusion(
+            id='most-of-what-the-town-holds-cannot-reach-a-school-deficit',
+            claim='%s of the %s held in these funds is restricted to a stated purpose.'
+                  % (C.usd(data['restricted']), C.usd(data['total'])),
+            so_what='A school deficit is not that purpose for any of them.',
+            figures={'res': figure(data['restricted'], C.usd(data['restricted']),
+                                   'restricted to a stated purpose'),
+                     'tot': figure(data['total'], C.usd(data['total']),
+                                   'held across the stabilization funds'),
+                     'gen': figure(gen, C.usd(gen), 'spendable on anything lawful')},
+            figure='res', kind='measured', bearing='sizes',
+            detail='Only the general Stabilization Fund \u2014 %s \u2014 may be appropriated '
+                   'for any lawful purpose, and that takes a two-thirds vote. A fund '
+                   'created under c.40 \u00a75B may be spent only on the purpose named in '
+                   'the article that created it, and that purpose lives in the article '
+                   'rather than in the fund\u2019s name.' % C.usd(gen),
+            basis='The town\u2019s MUNIS trust and agency report for the balances; the '
+                  'general/restricted split follows the account the ledger itself groups '
+                  'them under.',
+            not_shown='Whether any restricted purpose is broad enough to reach a school '
+                      'cost. That is a question for Town Counsel and a vote, not for a '
+                      'balance.',
+            allow=('c.40 \u00a75B',),
+            see=[('/analysis/stabilization-funds', 'What each fund holds, and who may spend it')],
+        ),
+        conclusion(
+            id='the-gap-grows-and-the-reserve-does-not',
+            claim='The gap grows from %s to %s in three years. The reserve does not grow.'
+                  % (C.usd(first_gap), C.usd(exhausted['gap'])),
+            so_what='A one-off payment moves the problem into a year where it is bigger.',
+            figures={'g1': figure(first_gap, C.usd(first_gap),
+                                  'the level-service gap, first year'),
+                     'g3': figure(exhausted['gap'], C.usd(exhausted['gap']),
+                                  'the same gap three years on'),
+                     'gl': figure(last_gap[1], C.usd(last_gap[1]),
+                                  'the gap at the end of the projection'),
+                     'fy': figure(last_gap[0], 'FY%d' % last_gap[0])},
+            figure='g3', kind='measured', bearing='sizes',
+            detail='By FY%d the projection puts it at %s. Spending a reserve against a '
+                   'series like that buys the years at the small end and leaves the large '
+                   'ones exactly as they were \u2014 which is why this page reports what '
+                   'each option COVERS rather than whether it works.'
+                   % (last_gap[0], C.usd(last_gap[1])),
+            basis='`model/finance.py`, the level-service projection the rest of the site '
+                  'uses. Budget columns only, per rule 1.',
+            not_shown='Whether the projection\u2019s rates hold. Every one of them is '
+                      'backtested against the district\u2019s own later budgets and none of '
+                      'them is a promise.',
+        ),
+    ]
+    return emit('solution-options', rows)
+
+
 def payload(data):
     first_fy, first_gap = data['first_gap']
     run = data['burndown']
@@ -257,6 +427,18 @@ def payload(data):
                        % (100 * data['avg_divertible'] / first_gap, first_fy)),
         ],
         burndown=run, gaps=data['gaps'],
+        sources=_sources(),
+        not_established=[
+            'Whether Town Meeting would vote for any of it. This is arithmetic about '
+            'what the money could do, not a prediction about what anybody will do.',
+            'What the funds were being built for, and what the town gives up by not '
+            'building them.',
+            'What a rating agency would make of a town that spent its stabilization '
+            'fund.',
+            'Interest. These balances earn about 3.5% a year, which would extend the '
+            'burndown by months rather than years and is not modelled.',
+        ],
+        conclusions=conclusions_for(data),
     )
 
 

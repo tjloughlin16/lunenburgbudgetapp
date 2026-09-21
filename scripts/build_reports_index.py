@@ -90,7 +90,15 @@ CATEGORIES = [
         # In the order a resident weighs them: the two that move the revenue side, the
         # two that move the cost RATE, then the amounts -- free cash, fees, the extras --
         # and last the one every other page exists to avoid.
-        ('', ['override', 'growth', 'healthlever', 'salarylever', 'freecashlever', 'feelever', 'extraslever', 'positionslever']),
+        # `solution-options` sits directly after free cash because it is the same
+        # KIND of lever and fails the same way: money the town has ONCE, set
+        # against a cost it has EVERY year. TJ, 21 September 2026: "i expected
+        # that page to go under 'What the town can do'". It had been filed under
+        # the town's ledger beside the report it is the companion to -- which is
+        # where it was WRITTEN, not where a reader looking for what can be done
+        # would go, and this index exists to tell those two apart.
+        ('', ['override', 'growth', 'healthlever', 'salarylever', 'freecashlever',
+              'solution-options', 'feelever', 'extraslever', 'positionslever']),
     ]),
     # A SHELF WITH ONE THING ON IT, FIRST, AND THE ARGUMENT FOR IT.
     #
@@ -147,7 +155,6 @@ CATEGORIES = [
         ('who lives here', ['bythenumbers', 'owners', 'homestudents']),
         ('the ledger, read', [
             'fy26-closeout', 'fy26-closeout-town', 'free-cash', 'stabilization-funds',
-            'solution-options',
         ]),
         ('what the votes decided', [
             'fy27-and-the-override', 'fy27-cut-reconciliation',
@@ -211,7 +218,6 @@ SUPERSEDED = {
     # beside free cash rather than under the schools -- these are town reserves, and only
     # one of them could lawfully reach a school deficit.
     'stabilization-funds': 'free-cash',
-    'solution-options': 'free-cash',
     # A SCOPING NOTE rather than a finished analysis, and filed under special education
     # because that is its subject. It reaches no conclusion by design: it records why the
     # in-district-staffing-against-placements question cannot be modelled from anything
