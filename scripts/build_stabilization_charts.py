@@ -73,6 +73,7 @@ import argparse
 import collections
 import csv
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -158,6 +159,18 @@ LEDGER_CSV = os.path.join(ROOT, 'sources', 'data', 'trust-agency-balances.csv')
 # noticing. It carries a balance for EVERY fund in the years that print it, so it fills
 # years the other-banks tables never reached.
 LISTING_CSV = os.path.join(ROOT, 'sources', 'data', 'trust-fund-balances.csv')
+# The Treasurer's Cash page, which every annual report prints and which carries the
+# general Stabilization Fund. A DIFFERENT GRAIN from the other three -- cash held by a
+# custodian rather than a fund balance -- so it is used only where nothing else covers the
+# fund-year, and the chart says so.
+CASH_CSV = os.path.join(ROOT, 'sources', 'data', 'treasurers-cash.csv')
+CASH_FOR = (
+    (re.compile(r'bartholomew\s+stabilization\s+fund', re.I), 'Stabilization'),
+    (re.compile(r'vehicle/equipment\s+stabilization', re.I),
+     'Vehicle/Equipment Stabilization'),
+    (re.compile(r'zoning\s+(incentive\s+)?stabilization', re.I),
+     'Zoning Incentive Stabilization'),
+)
 LEDGER_FOR = {
     '8124': 'Stabilization',
     '8136': 'Vehicle/Equipment Stabilization',
@@ -222,6 +235,19 @@ def listing_points():
     return out
 
 
+def cash_points():
+    """{fund: [(fy, cash)]} from the Treasurer's Cash page."""
+    out = {}
+    if not os.path.exists(CASH_CSV):
+        return out
+    for r in csv.DictReader(open(CASH_CSV, encoding='utf-8')):
+        for pat, label in CASH_FOR:
+            if pat.search(r['held_as'] or ''):
+                out.setdefault(label, []).append((int(r['fy']), float(r['amount'])))
+                break
+    return out
+
+
 def series():
     """{fund: [(fy, ending_cash), ...]} for every fund with enough proven years."""
     if not os.path.exists(CSV_IN):
@@ -246,6 +272,14 @@ def series():
     for label, pt in ledger_points().items():
         if label in by and pt[0] not in {fy for fy, _ in by[label]}:
             by[label].append(pt)
+    # LAST, AND ONLY WHERE NOTHING ELSE REACHES. Cash at a custodian is not a fund
+    # balance; for these funds the two have matched to the cent wherever both exist, but
+    # that is a fact about funds held whole in one place rather than a rule, so it fills
+    # gaps and never overrides a balance.
+    for label, pts in cash_points().items():
+        for pt in pts:
+            if label in by and pt[0] not in {fy for fy, _ in by[label]}:
+                by[label].append(pt)
     out = {}
     for k, v in by.items():
         v = sorted(set(v))

@@ -674,6 +674,30 @@ def render(rows):
                     ending_cash=r['balance'], ending_market='',
                     basis='the annual report\u2019s trust fund balance listing',
                     page=r['page'], document=r['document']))
+        # The Treasurer's Cash page, last and only where nothing else reaches. It is cash
+        # held by a custodian rather than a fund balance -- for these funds the two have
+        # matched to the cent wherever both exist, but that is a fact about funds held
+        # whole in one place, not a rule, so it fills gaps and never overrides a balance.
+        cash = os.path.join(ROOT, 'sources', 'data', 'treasurers-cash.csv')
+        CASH_FOR = ((re.compile(r'bartholomew\s+stabilization\s+fund', re.I),
+                     'Stabilization'),
+                    (re.compile(r'vehicle/equipment\s+stabilization', re.I),
+                     'Vehicle/Equipment Stabilization'),
+                    (re.compile(r'zoning\s+(incentive\s+)?stabilization', re.I),
+                     'Zoning Incentive Stabilization'))
+        if os.path.exists(cash):
+            for r in csv.DictReader(open(cash, encoding='utf-8')):
+                label = next((l for pat, l in CASH_FOR
+                              if pat.search(r['held_as'] or '')), None)
+                if not label or label not in series:
+                    continue
+                if any(x['fy'] == r['fy'] for x in series[label]):
+                    continue
+                series[label].append(dict(
+                    fy=r['fy'], code='', name=label, ending_cash=r['amount'],
+                    ending_market='',
+                    basis='the Treasurer\u2019s Cash page (cash held, not a fund balance)',
+                    page=r['page'], document=r['document']))
         for r in rows:
             label = LEDGER_SERIES.get(r['code'])
             if not label or label not in series:
@@ -751,11 +775,20 @@ def render(rows):
         mark('byyear')
         if runs:
             w('## Each fund, year by year\n')
-            w('Each figure below is its own reading: a separate page of a separate '
-              'annual report, checked against that page\u2019s own arithmetic \u2014 '
-              'except the FY%d figures, which are the general ledger\u2019s, printed by '
-              'the accounting system. Where both exist for the same fund and year they '
-              'agree to the cent.\n' % (LEDGER_FY - 1))
+            w('Each figure below is its own reading, and they come from four places: '
+              'the trust tables in the annual reports, checked against each page\u2019s '
+              'own arithmetic; the per-account **Trust Fund Balance Detail** listing '
+              'those reports print from FY2024; the **Treasurer\u2019s Cash** page, which '
+              'every report prints and which is the only one of the four carrying the '
+              'general Stabilization Fund; and the town\u2019s general ledger. **Every '
+              'figure covered by more than one of them has agreed to the cent.**\n')
+            w('*One of the four has a different grain.* The Treasurer\u2019s Cash page '
+              'counts cash held by a custodian, not a fund balance \u2014 the Opioid fund '
+              'shows $233,317.54 of cash at Bartholomew where the ledger puts the fund '
+              'at $241,421.18. For the funds charted here the two have matched wherever '
+              'both exist, because those funds sit whole in one place, but that is a '
+              'fact about them and not a rule. It fills years nothing else reaches and '
+              'never overrides a balance.\n')
             for k, v in sorted(runs.items(), key=lambda kv: -len(kv[1])):
                 w('- **%s** \u2014 %s' % (k, ', '.join(
                     'FY%s %s' % (r['fy'], usd(float(r['ending_cash']))) for r in v)))
