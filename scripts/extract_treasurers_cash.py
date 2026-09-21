@@ -283,6 +283,9 @@ def main():
     a = ap.parse_args()
 
     body, report, labels = [], [], {}
+    printed = {}        # {fy: the grand total that year's own page prints}
+    seen = collections.defaultdict(dict)   # {fy: {row: value}} as READ
+    deferred = []       # prior-year columns with no total of their own
     for f in sorted(glob.glob(os.path.join(OCR, '*annual-town-report.tsv')), reverse=True):
         m = re.search(r'fy-(\d{4})-', f)
         if not m:
@@ -309,10 +312,29 @@ def main():
             rows, totals = read_page(fy, page, boxes, doc)
             if not rows:
                 continue
+            if totals and totals[0] is not None:
+                printed[fy] = totals[0]
+            for _n, _v in rows:
+                if _v and _v[0] is not None:
+                    seen[fy].setdefault(_n, _v[0])
             # RECONCILE EACH COLUMN TO THE TOTAL THE PAGE PRINTS, or take nothing from it.
             kept = []
             for i, total in enumerate(totals):
                 got = sum(v[i] for _, v in rows if v[i] is not None)
+                if total is None and i > 0:
+                    # A PRIOR-YEAR COLUMN IS PROVEN AGAINST THAT YEAR'S OWN PRINTED
+                    # TOTAL, IN ITS OWN REPORT. The page prints one grand total, for the
+                    # year it is headed with, so the column beside it can never foot
+                    # against anything on its own page -- and it is not unprovable, it is
+                    # provable somewhere else. FY2020's second column IS FY2019, and
+                    # FY2019's report prints $15,084,021.00 at the foot of its own page.
+                    #
+                    # That is a stronger check than the ordinary one, not a weaker one:
+                    # two documents produced a year apart have to agree, and a misread in
+                    # either breaks it. Deferred because the other year may not have been
+                    # read yet.
+                    deferred.append((fy, page, doc, i, rows))
+                    continue
                 if total is None or abs(got - total) > TOL:
                     report.append('FY%d p%d col%d: rows sum to %.2f, page says %s'
                                   % (fy, page, i, got,
@@ -330,6 +352,50 @@ def main():
                     body.append(dict(fy=year, held_as=name, amount=round(vals[i], 2),
                                      column='as printed' if i == 0 else 'prior year',
                                      page=page, document=doc))
+    # ---- THE DEFERRED PRIOR-YEAR COLUMNS, against the other year's own total -------
+    #
+    # Blanks are filled from that year's OWN page before footing, and only from it.
+    # FY2020's second column leaves `Petty Cash / Certain Departments` empty and FY2019's
+    # page prints $4,400.00 for it; with that the column comes to $15,084,021.00, which is
+    # FY2019's printed grand total to the cent. Without it the column is $4,400 short and
+    # a whole year of every stabilization fund on the page stays unpublished.
+    #
+    # A blank filled from anywhere other than the year's own published page would be a
+    # guess, so that is the only source allowed.
+    # FILLED FROM WHAT THAT YEAR'S PAGE SAYS, NOT FROM WHAT IT PUBLISHED. FY2019's own
+    # column is refused -- rows are missing from it -- but the rows it DID yield are
+    # still readings of that page, and the fill is not taken on trust: it is the footing
+    # against that year's printed grand total that validates it. A wrong fill cannot make
+    # the column land on the total to the cent.
+    own = seen
+    for fy, page, doc, i, rows in deferred:
+        year = fy - i
+        target = printed.get(year)
+        if target is None:
+            report.append('FY%d p%d col%d: no total on this page and FY%d never read'
+                          % (fy, page, i, year))
+            continue
+        got = sum(v[i] for _, v in rows if v[i] is not None)
+        filled = []
+        for name, vals in rows:
+            if vals[i] is None and name in own.get(year, {}):
+                got += own[year][name]
+                filled.append((name, own[year][name]))
+        if abs(got - target) > TOL:
+            report.append('FY%d p%d col%d (=FY%d): %.2f against FY%d\u2019s own printed '
+                          '%.2f' % (fy, page, i, year, got, year, target))
+            labels[fy] = {n for n, _ in rows}
+            continue
+        print('  FY%d p%d col%d reconciles to FY%d\u2019s own printed total %s%s'
+              % (fy, page, i, year, format(target, ',.2f'),
+                 (' (filling %s from FY%d\u2019s page)'
+                  % (', '.join(n for n, _ in filled), year)) if filled else ''))
+        for name, vals in rows:
+            if vals[i] is None:
+                continue
+            body.append(dict(fy=year, held_as=name, amount=round(vals[i], 2),
+                             column='prior year', page=page, document=doc))
+
     if not body:
         print('no Treasurer\'s Cash page reconciled', file=sys.stderr)
         for r in report:
