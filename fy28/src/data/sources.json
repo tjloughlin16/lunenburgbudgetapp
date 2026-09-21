@@ -1773,7 +1773,7 @@
      "stars": 2,
      "what": "One row per fiscal year and table family, and a step from 1 to 7: the PDF held, OCR run, text present, tables located, extracted to CSV, loaded to the database, used in a report. Every cell is derived from the artefact it describes, so it cannot go stale the way a hand-kept list does. It exists because the same question — which years do we have for this fund — was answered three different ways from three different artefacts in one afternoon, each true about the artefact and false about the archive.",
      "kind": "Data",
-     "bytes": 14910,
+     "bytes": 14814,
      "url": "/docs/data/pipeline-state.csv",
      "count": 225,
      "unit": "rows",
@@ -1845,9 +1845,9 @@
      "stars": 2,
      "what": "When a column will not foot to the total its own page prints, the reading is refused — and this is where the refusal is kept, with the amount it missed by. Without it a year read-and-refused looked exactly like a year nobody had opened, and five of them were being read and dropped on every run with the diagnosis printed to a terminal nobody was watching. A blocked year with a stated residual is a finite piece of work; a blank is a mystery.",
      "kind": "Data",
-     "bytes": 740,
+     "bytes": 626,
      "url": "/docs/data/extraction-blocked.csv",
-     "count": 6,
+     "count": 5,
      "unit": "rows",
      "textUrl": "/docs/data/extraction-blocked.csv"
     },
@@ -2082,9 +2082,9 @@
      "stars": 3,
      "what": "The `Treasurer’s Cash as of 6/30` page that every annual town report prints: what the town holds and where, with the funds named. It carries `Bartholomew Stabilization Fund` — the GENERAL Stabilization Fund, which the trust-table pages omit entirely. Each page sets this year beside last year, so one report yields two fiscal years and every interior year is read twice from two documents. Every column is footed to the `Total Treasurer Cash` line the page prints and a column that does not tie is dropped rather than published. NOTE THE GRAIN: this is CASH HELD BY CUSTODIAN, not a fund balance — where it differs from trust-agency-balances.csv, the ledger is the fund and this is the cash. See scripts/extract_treasurers_cash.py.",
      "kind": "Data",
-     "bytes": 45937,
+     "bytes": 50520,
      "url": "/docs/data/treasurers-cash.csv",
-     "count": 385,
+     "count": 424,
      "unit": "rows",
      "textUrl": "/docs/data/treasurers-cash.csv"
     },
@@ -16094,7 +16094,7 @@
  "totals": {
   "documents": 1395,
   "groups": 22,
-  "bytes": 2172962696,
+  "bytes": 2172967069,
   "loadBearing": 140
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

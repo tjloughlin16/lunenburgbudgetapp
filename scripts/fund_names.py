@@ -73,11 +73,27 @@ BY_CODE = {'8124': 'Stabilization (general)', '8125': 'Conservation Trust',
            '8140': 'Health Insurance', '8141': 'Opioid Settlement'}
 
 
+# CYRILLIC LETTERS THAT LOOK EXACTLY LIKE LATIN ONES, which is what the recogniser
+# sometimes returns. FY2023's page gives `Bartholomew - ОРЕВ` where every one of those
+# four characters is Cyrillic: U+041E, U+0420, U+0415, U+0412. It renders identically to
+# OPEB, compares equal to nothing, and cost that fund a year -- the coverage table said
+# FY2023 was missing when the page prints it plainly.
+#
+# Nothing here can be spotted by reading the output, which is the whole problem: the only
+# way to see it is to look at the codepoints. So they are folded before anything else.
+HOMOGLYPHS = str.maketrans({
+    '\u0410': 'A', '\u0412': 'B', '\u0415': 'E', '\u041a': 'K', '\u041c': 'M',
+    '\u041d': 'H', '\u041e': 'O', '\u0420': 'P', '\u0421': 'C', '\u0422': 'T',
+    '\u0425': 'X', '\u0430': 'a', '\u0435': 'e', '\u043e': 'o', '\u0440': 'p',
+    '\u0441': 'c', '\u0443': 'y', '\u0445': 'x',
+})
+
+
 def canonical(label, code=None):
     """The fund's one name, or None where nothing here recognises it."""
     if code and str(code).strip() in BY_CODE:
         return BY_CODE[str(code).strip()]
-    t = ' '.join((label or '').split())
+    t = ' '.join((label or '').translate(HOMOGLYPHS).split())
     t = CUSTODIANS.sub('', t)
     # `I/1` is `I/I` -- a scanner cannot tell a capital I from a one in this face. It is
     # folded to a plain token FIRST, because the slash then has to go: leaving it in made
