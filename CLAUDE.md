@@ -331,11 +331,28 @@ all arrived in the same register and had to be read closely to tell apart:
 
 Three labels, used in replies to him — not in commits, documents or anything published.
 
-| label | for |
-|---|---|
-| `[TASK-COMPLETE]` | a thing he asked for is DONE and verified. Not "I have finished typing" — the check passed, the count moved, the page renders |
-| `[STATUS-UPDATE]` | something he was told before is now materially different. A number that moved, an approach abandoned, a claim withdrawn |
-| `[TECH-REPORT]` | commentary on a defect, a cause, a limitation. Interesting, and not a change in what is done |
+| label | answers | for |
+|---|---|---|
+| `[TASK-COMPLETE]` | *is it done?* | a thing he asked for is finished and VERIFIED — the check passed, the count moved, the page renders. Not "I have finished typing" |
+| `[STATUS-UPDATE]` | *what moved?* | the work itself advanced or failed, by an amount. Ten pages ingested. Two years still refusing. A claim withdrawn. Progress **or** regress, and both carry a number |
+| `[TECH-REPORT]` | *why?* | a defect, a cause, a limitation. An explanation of something, however interesting, is not a change in what is done |
+
+**The line between the last two is where this goes wrong, and it did.** TJ, 21 September
+2026: *"[STATUS-UPDATE] should only be used if you are saying something was iteratively
+accomplished… You are blurring status-update with tech-report."*
+
+He was right. "The town changed the table format after FY2023" was labelled a status
+update and is nothing of the kind — it explains why a count did not move. The count
+moving is the status.
+
+**The test: can you put a number and a direction in it?**
+
+    [STATUS-UPDATE]  422 financial pages -> 474. FY2025's budget pages now classify.
+    [TECH-REPORT]    they did not before because the money pattern required cents,
+                     and the warrant prints round dollars.
+
+Same work, two sentences, two different labels. If the sentence has no count in it and
+nothing finished, it is a `[TECH-REPORT]` — or it needs no label at all.
 
 **The discipline is in NOT labelling everything.** A label on every paragraph is a label
 on nothing, and the point is that the eye can skip to the ones that matter. Ordinary
