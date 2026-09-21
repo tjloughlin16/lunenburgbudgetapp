@@ -29,6 +29,7 @@ the same instrument.
 import argparse
 import collections
 import csv
+import json
 import os
 import re
 import sqlite3
@@ -290,33 +291,56 @@ def render(rows):
       'the caveat before quoting one.\n' % FY)
     w('---\n')
     w('## The short version\n')
-    w('The town holds **%s** across %d stabilization funds. **%s of it is the general '
-      'Stabilization Fund, which Town Meeting may appropriate for any lawful purpose by a '
-      'two-thirds vote. The remaining %s is restricted to the purpose each fund was '
-      'created for.**\n'
-      % (usd0(total), len(rows), usd0(gtot), usd0(stot)))
-    w('So the answer to *can this pay for a school deficit* is **yes for %s and no for '
-      'the rest** — and a reserve spent on an operating cost buys one year, exactly '
-      'as free cash does, which is the argument `free-cash.md` already makes.\n'
-      % usd0(gtot))
-    # THE OTHER QUESTION, AND THE BETTER ONE. TJ: "1) can we reduce how much goes into
-    # each fund each year to pay for the deficit? And 2) can we use what's in there to
-    # pay for the deficit?" The page answered (2) and never asked (1), which is the wrong
-    # way round: a balance is a one-off and the annual deposit is RECURRING, and a
-    # recurring gap is only ever closed by recurring money.
+    # METRIC-LED, THE WAY THE OTHER REPORTS DO IT. TJ: "we should put metrics into the
+    # short version the same as other reports." Rule 7b's shape -- the METRIC with its
+    # unit, one line saying what it is, one line saying what follows -- and the hard part
+    # is not the trimming: it is that each figure has to carry its own meaning, which is
+    # why every one below has its unit and its denominator attached.
+    w('**%s held, across %d stabilization funds.** This is what the town has in reserve '
+      'outside its operating budget. It is a balance, not an income.\n'
+      % (usd0(total), len(rows)))
+    w('**%s of it can be spent on anything lawful** \u2014 the general Stabilization '
+      'Fund, by a two-thirds Town Meeting vote. The other %s is restricted to the purpose '
+      'each fund was created for, so it cannot be moved to a school deficit whatever '
+      'Town Meeting thinks of the idea.\n' % (usd0(gtot), usd0(stot)))
     if dep_total:
-        _yrs = {d['fy'] for d in fl['deposits']}
-        w('**There is a second question, and it is the better one.** Town Meeting has '
-          'voted **%s into these funds** since FY%d, one article at a time. Reducing that '
-          'is RECURRING money, where spending a balance is a one-off \u2014 and a '
-          'recurring gap is only ever closed by recurring money. What it would cost is '
-          'whatever the funds were being built for: equipment the town would then have to '
-          'borrow for, and a reserve that is part of how it is rated when it borrows.\n'
-          % (usd0(dep_total), min(_yrs)))
+        _by = {}
+        for _d in fl['deposits']:
+            _by[_d['fy']] = _by.get(_d['fy'], 0.0) + _d['amount']
+        _lo, _hi = min(_by), max(_by)
+        _span = _hi - _lo + 1
+        _avg = dep_total / _span
+        # THE RUN OF YEARS ABOVE THAT AVERAGE, DERIVED RATHER THAN CHOSEN. Naming a
+        # window by hand is rule 2 wearing a date range: it would go on saying
+        # "FY2018-FY2023" long after the data moved.
+        _above = sorted(y for y in _by if _by[y] > _avg)
+        _run, _best = [], []
+        for y in _above:
+            _run = _run + [y] if _run and y == _run[-1] + 1 else [y]
+            if len(_run) > len(_best):
+                _best = list(_run)
+        w('**%s voted in since FY%d \u2014 an average of %s a year.** This is the money '
+          'going IN, one Town Meeting article at a time, and it is the figure the '
+          'cheaper question turns on. It is a FLOOR: %d of the articles print no amount.\n'
+          % (usd0(dep_total), _lo, usd0(_avg), len(fl['unpriced'])))
+        if len(_best) >= 3:
+            w('**%s to %s a year in FY%d\u2013FY%d**, the %d straight years that ran above '
+              'that average. Reducing a deposit is RECURRING money where spending a '
+              'balance is a one-off \u2014 and a recurring gap is only ever closed by '
+              'recurring money.\n'
+              % (usd0(min(_by[y] for y in _best)), usd0(max(_by[y] for y in _best)),
+                 _best[0], _best[-1], len(_best)))
+    w('**%s has come back out**, in the articles that say so plainly \u2014 a floor '
+      'again, because money also leaves inside articles about something else.\n'
+      % usd0(sum(x['amount'] for x in fl['spends'])))
+    w('So: *can this pay for a school deficit?* **Yes for %s, no for the rest** \u2014 and '
+      'a reserve spent on an operating cost buys one year, exactly as free cash does, '
+      'which is the argument `free-cash.md` already makes.\n' % usd0(gtot))
+
     # ---- WHAT GOES IN EACH YEAR. TJ's first question, and the one the balances alone
     # cannot answer: "can we reduce how much goes into each fund each year to pay for the
-    # deficit?" That is a question about the ANNUAL DEPOSIT, not about the balance, and
-    # the deposit is a Town Meeting vote rather than anything the annual report prints.
+    # deficit?" That is a question about the ANNUAL DEPOSIT, not the balance, and the
+    # deposit is a Town Meeting vote rather than anything the annual report prints.
     dep, spd = fl['deposits'], fl['spends']
     if dep:
         import collections as _c
@@ -325,9 +349,8 @@ def render(rows):
             byfy[d['fy']] += d['amount']
         # ONLY THE YEARS WHERE EVERY ARTICLE CARRIES A PRICE. Seven articles print no
         # amount -- including BOTH of FY2025's appropriations -- so a mean across all
-        # years would quietly report a collapse in deposits that is really a gap in what
-        # the warrant printed. A year with an unpriced article is excluded from the
-        # range and the exclusion is stated.
+        # years would report a collapse in deposits that is really a gap in what the
+        # warrant printed.
         short_years = {r['fy'] for r in fl['unpriced']}
         full = sorted(y for y in byfy if y not in short_years)
         depd = sum(d['amount'] for d in dep)
@@ -678,14 +701,307 @@ def render(rows):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    out = render(gather())
+    rows = gather()
+    out = render(rows)
+    # BOTH OUTPUTS, FROM ONE PASS OVER ONE SET OF FIGURES. The page renders the payload;
+    # the markdown is what /docs serves, what the PDF is made from, and what an agent
+    # that cannot run JavaScript reads. Generating them separately is how the two would
+    # come to disagree.
+    pay = json.dumps(payload(rows), indent=1, ensure_ascii=False, sort_keys=True) + '\n'
     if a.check:
         cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
-        if out != cur:
-            print('stabilization-funds.md is stale', file=sys.stderr); return 1
-        print('stabilization-funds.md is current'); return 0
+        pcur = open(PAYLOAD, encoding='utf-8').read() if os.path.exists(PAYLOAD) else ''
+        bad = [n for n, (g, c) in (('stabilization-funds.md', (out, cur)),
+                                   ('stabilization.json', (pay, pcur))) if g != c]
+        if bad:
+            print('STALE %s' % ', '.join(bad), file=sys.stderr); return 1
+        print('stabilization-funds.md and stabilization.json are current'); return 0
     open(OUT, 'w', encoding='utf-8').write(out)
-    print('wrote %s' % os.path.relpath(OUT, ROOT)); return 0
+    open(PAYLOAD, 'w', encoding='utf-8').write(pay)
+    print('wrote %s and %s' % (os.path.relpath(OUT, ROOT),
+                               os.path.relpath(PAYLOAD, ROOT))); return 0
+
+
+# ============================================================================
+# THE PAYLOAD. This report is becoming a model-driven page like every other one.
+#
+# TJ, 20 September 2026, after asking why the metrics here did not look like the metrics
+# on the other reports: "this neeeds to be model driven ... is this written and built the
+# same way the other pages are?" It was not. Twenty analyses are markdown rendered
+# generically by Analysis.tsx, which has no way to show a Stat row or an Insight card,
+# while twenty-nine reports are a generated JSON payload rendered through the shared
+# furniture in components/report.tsx. Two kinds of report, and a reader takes a difference
+# in PRESENTATION for a difference in CONFIDENCE -- which is the exact thing report.tsx
+# was written to stop.
+#
+# So the same figures this file already computes for the markdown are emitted as a
+# payload. The markdown stays: it is what /docs serves, what the PDF renders from, and
+# what an agent that cannot run JavaScript reads.
+# ============================================================================
+
+# NAMED FOR THE REPORT'S OWN ID, because that is the whole contract. Analysis.tsx fetches
+# `/data/<id>.json` for whatever report it is showing, and a payload under any other name
+# is simply a report with no payload -- which is silent by design, since most analyses do
+# not have one yet. It cost a build to find: `stabilization.json` against an id of
+# `stabilization-funds` 404s, the page renders exactly as it did before, and nothing
+# anywhere says why.
+PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'stabilization-funds.json')
+MANIFEST_CSV = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
+
+
+def _sources():
+    """The annual report the balances are read off, and the votes file behind the flows."""
+    out = []
+    try:
+        with open(MANIFEST_CSV, encoding='utf-8') as fh:
+            rows = {r['key']: r for r in csv.DictReader(fh)}
+    except OSError:
+        rows = {}
+    key = next((k for k in rows if re.search(r'fy-%d-annual-town-report\.pdf$' % FY, k)),
+               None)
+    if key:
+        r = rows[key]
+        out.append(dict(
+            path='sources/' + key, sha256=r.get('sha256', ''),
+            bytes=int(r.get('bytes') or 0), url=r.get('upstream', ''),
+            docs_url='/docs/' + key, filename=key.split('/')[-1],
+            table='stabilization_balances', publisher='Town of Lunenburg',
+            note='The annual town report. The trust and stabilization balances are a '
+                 'photographed table inside it, read by scripts/read_trust_table.py and '
+                 'published only where the page’s own arithmetic closes.'))
+    out.append(dict(
+        path='sources/data/town-meeting-votes.csv', sha256='', bytes=0, url='',
+        docs_url='/data/town-meeting-votes.csv', filename='town-meeting-votes.csv',
+        table='town_meeting_votes', publisher='Town of Lunenburg',
+        note='Every Town Meeting article, with the vote quoted verbatim. The deposits and '
+             'withdrawals on this page are classified from each article’s own '
+             'subject line.'))
+    return out
+
+
+def payload(rows):
+    import conclusions as C
+    from conclusions import conclusion, emit, figure
+
+    total = sum(r['amount'] for r in rows)
+    gtot = sum(r['amount'] for r in rows if r['code'] in GENERAL)
+    stot = total - gtot
+    fl = flows()
+    dep, spd = fl['deposits'], fl['spends']
+    dep_total = sum(d['amount'] for d in dep)
+    spd_total = sum(d['amount'] for d in spd)
+
+    byfy = {}
+    for d in dep:
+        byfy[d['fy']] = byfy.get(d['fy'], 0.0) + d['amount']
+    lo, hi = min(byfy), max(byfy)
+    span = hi - lo + 1
+    avg = dep_total / span
+    short_years = {r['fy'] for r in fl['unpriced']}
+
+    # The longest run of consecutive years above that average, derived rather than
+    # chosen -- naming a window by hand is rule 2 wearing a date range.
+    run, best = [], []
+    for y in sorted(y for y in byfy if byfy[y] > avg):
+        run = run + [y] if run and y == run[-1] + 1 else [y]
+        if len(run) > len(best):
+            best = list(run)
+
+    byfund = {}
+    for d in dep:
+        byfund.setdefault(d['fund'], {})[d['fy']] = \
+            byfund.setdefault(d['fund'], {}).get(d['fy'], 0.0) + d['amount']
+    funds_ranked = sorted(byfund.items(), key=lambda kv: -sum(kv[1].values()))
+
+    pv = proven()
+    series = {}
+    for r in pv:
+        n = ' '.join(r['name'].split()).split('(')[0]
+        n = ' '.join(w for w in n.split() if not w.isdigit()).strip().title()
+        series.setdefault(n, []).append(
+            dict(fy=int(r['fy']), ending_cash=float(r['ending_cash']),
+                 ending_market=float(r['ending_market']) if r['ending_market'] else None,
+                 basis=r['basis'], page=int(r['page'])))
+    series = {k: sorted(v, key=lambda x: x['fy']) for k, v in series.items()
+              if len(v) >= 3}
+
+    hist = history()
+    cre = creations()
+
+    def _fund_of(t):
+        return next((lbl for word, lbl in FUND_WORDS if word in (t or '').lower()),
+                    'Stabilization Fund (general)')
+
+    have = {_fund_of(c['subject']) for c in cre}
+    missing = [f for f in sorted(hist) if f not in have]
+
+    rank = sorted(series.items(), key=lambda kv: -_rate(kv[1]))
+    fastest, slowest = (rank[0], rank[-1]) if rank else (None, None)
+
+    rws = [
+        conclusion(
+            id='most-of-the-reserve-cannot-be-spent-on-an-operating-deficit',
+            claim='Only %s of the %s reserve may be spent on anything lawful.'
+                  % (C.usd(gtot), C.usd(total)),
+            so_what='The other %s is restricted to the purpose each fund was created '
+                    'for.' % C.usd(stot),
+            figures={'held': figure(total, C.usd(total), 'held in reserve, FY%d' % FY),
+                     'gen': figure(gtot, C.usd(gtot), 'spendable on anything lawful'),
+                     'res': figure(stot, C.usd(stot), 'restricted to a stated purpose'),
+                     'n': figure(len(rows), C.num(len(rows)), 'stabilization funds')},
+            figure='gen', kind='measured', bearing='sizes',
+            detail='The general fund takes a two-thirds Town Meeting vote. A special '
+                   'purpose fund created under c.40 §5B may be spent only on its '
+                   'stated purpose, and that purpose lives in the article that created '
+                   'it rather than in the fund’s name.',
+            basis='`stabilization_balances` for the balances; the general/restricted '
+                  'split is OURS, read off each fund’s name because the annual '
+                  'report prints a balance and never says what may be spent on what.',
+            not_shown='Whether a restricted fund’s stated purpose is narrow or '
+                      'broad. For four funds the creating article is not in this '
+                      'archive at all.',
+            allow=('c.40 \u00a75B',),
+            see=[('/analysis/free-cash', 'The same one-year problem, for free cash')],
+        ),
+        conclusion(
+            id='the-recurring-question-is-the-deposit-not-the-balance',
+            claim='Town Meeting votes an average of %s a year into these funds.'
+                  % C.usd(avg),
+            so_what='Reducing a deposit is recurring money; spending a balance buys one '
+                    'year.',
+            figures={'in': figure(dep_total, C.usd(dep_total),
+                                  'voted in since FY%d' % lo),
+                     'avg': figure(avg, C.usd(avg), 'a year, on average'),
+                     'fy': figure(lo, 'FY%d' % lo),
+                     'last': figure(FY, 'FY%d' % FY),
+                     'out': figure(spd_total, C.usd(spd_total), 'voted back out'),
+                     'unp': figure(len(fl['unpriced']), C.num(len(fl['unpriced'])),
+                                   'articles print no amount')},
+            figure='avg', kind='measured', bearing='lever',
+            detail='%s in total since FY%d, and it is a FLOOR: %s of the articles '
+                   'print no amount, including both of FY%d’s appropriations. %s has '
+                   'been voted back out, and that is a floor too — money also leaves '
+                   'inside articles about something else.'
+                   % (C.usd(dep_total), lo, C.num(len(fl['unpriced'])), FY,
+                      C.usd(spd_total)),
+            basis='`town_meeting_votes`, classified from each article’s own subject '
+                  'line. Five sewer enterprise operating budgets mention a fund in '
+                  'passing and are excluded; counting them would overstate the money '
+                  'going in by more than the deposits themselves.',
+            not_shown='How much of any balance’s rise is a deposit and how much is '
+                      'interest. The two cannot be separated here.',
+        ),
+    ]
+    if best and len(best) >= 3:
+        rws.append(conclusion(
+            id='the-deposits-ran-well-above-average-for-six-straight-years',
+            claim='For %s straight years deposits ran between %s and %s.'
+                  % (C.num(len(best)), C.usd(min(byfy[y] for y in best)),
+                     C.usd(max(byfy[y] for y in best))),
+            so_what='That run is what reducing the deposits would be worth against a '
+                    'gap.',
+            figures={'lo': figure(min(byfy[y] for y in best),
+                                  C.usd(min(byfy[y] for y in best)), 'in the leanest year'),
+                     'hi': figure(max(byfy[y] for y in best),
+                                  C.usd(max(byfy[y] for y in best)), 'in the fullest year'),
+                     'n': figure(len(best), C.num(len(best)), 'straight years'),
+                     'a': figure(best[0], 'FY%d' % best[0]),
+                     'b': figure(best[-1], 'FY%d' % best[-1])},
+            figure='hi', kind='measured', bearing='sizes',
+            detail='FY%d to FY%d: the consecutive years whose deposits exceeded the '
+                   'long-run average, found by walking the series rather than by '
+                   'choosing a window.' % (best[0], best[-1]),
+            basis='`town_meeting_votes`, deposits summed per fiscal year.',
+            not_shown='Whether the later fall is policy or a gap in what the warrant '
+                      'printed — some recent articles carry no amount.',
+        ))
+    if fastest and slowest and fastest[0] != slowest[0]:
+        rws.append(conclusion(
+            id='the-funds-are-doing-three-different-things',
+            claim='%s moved %s a year; %s moved %s.'
+                  % (bare(fastest[0]), C.pct(_rate(fastest[1])), bare(slowest[0]),
+                     C.pct(_rate(slowest[1]))),
+            so_what='Two are being built; one is left alone to earn interest.',
+            figures={'f': figure(_rate(fastest[1]), C.pct(_rate(fastest[1])),
+                                 'a year, the fastest'),
+                     's': figure(_rate(slowest[1]), C.pct(_rate(slowest[1])),
+                                 'a year, the slowest')},
+            figure='f', kind='measured', bearing='sizes',
+            detail='Measured between each fund’s first and last PROVEN year, so the '
+                   'spans differ and each is printed beside its bar. It is the movement '
+                   'of a balance, not a rate of return.',
+            basis='`stabilization_balances`, ending cash at each proven year.',
+            not_shown='How much of either movement is money voted in rather than '
+                      'interest earned.',
+        ))
+
+    data = dict(
+        generated_by='scripts/build_stabilization.py',
+        about='What the town holds in reserve, which of it could lawfully be spent on an '
+              'operating deficit, how much goes in each year, and what the record cannot '
+              'yet answer.',
+        grain='DOLLARS. Balances are ending CASH at 30 June of each fiscal year, read off '
+              'the town’s own trust-fund table and published only where the page’s '
+              'own arithmetic closes. Deposits and withdrawals are what TOWN MEETING VOTED, '
+              'which is not the same quantity and is not reconciled to the balances.',
+        fy=FY,
+        # THE STAT ROW, IN THE SAME SHAPE THE OTHER REPORTS USE. Each is a figure with its
+        # UNIT attached, because a bare number in a stat box is the thing a reader is most
+        # likely to quote and the thing this project's own rules say must never be
+        # unitless -- dollars are not students and a count is not a rate.
+        stats=[
+            dict(value=usd0(gtot), tone='var(--series-cost)',
+                 label='spendable on anything lawful, of %s held across %s funds'
+                       % (usd0(total), len(rows))),
+            dict(value=usd0(avg),
+                 label='voted IN per year on average since FY%d — %s in total' % (lo, usd0(dep_total))),
+            dict(value=usd0(spd_total),
+                 label='voted back out, in the articles that say so plainly — a floor'),
+        ],
+        totals=dict(held=total, general=gtot, restricted=stot, funds=len(rows)),
+        funds=[dict(code=r['code'], name=r['name'], balance=r['amount'],
+                    general=r['code'] in GENERAL) for r in rows],
+        flows=dict(
+            deposits_total=dep_total, deposits_avg=avg, spends_total=spd_total,
+            first_fy=lo, last_fy=hi, run=best,
+            unpriced=len(fl['unpriced']), not_about=len(fl['not_about']),
+            not_about_total=sum(x['amount'] for x in fl['not_about'] if x['amount']),
+            by_year=[dict(fy=y, amount=byfy[y],
+                          articles=sum(1 for d in dep if d['fy'] == y),
+                          understated=y in short_years) for y in sorted(byfy)],
+            by_fund=[dict(fund=f, total=sum(v.values()), years=len(v),
+                          last_fy=max(v), last_amount=v[max(v)])
+                     for f, v in funds_ranked],
+            spends=[dict(fy=x['fy'], article=x['article'], subject=x['subject'],
+                         amount=x['amount']) for x in sorted(spd, key=lambda r: r['fy'])],
+        ),
+        series=[dict(fund=f, rate=_rate(v), points=v) for f, v in
+                sorted(series.items(), key=lambda kv: -kv[1][-1]['ending_cash'])],
+        creations=[dict(fund=_fund_of(c['subject']), fy=int(c['fy']),
+                        meeting=c['meeting'], article=c['article'],
+                        result=c['result'], subject=c['subject'], quote=c['quote'])
+                   for c in cre],
+        missing_creations=missing,
+        history={k: v for k, v in hist.items()},
+        sources=_sources(),
+        not_established=[
+            'How much of any balance’s rise is money voted in and how much is interest.',
+            'What the four funds with no creating article in this archive may lawfully be '
+            'spent on — the limit currently rests on each fund’s NAME.',
+            'Whether the fall in recent deposits is policy or a gap in what the warrant printed.',
+            'The balances for six of the fifteen years; those pages have not yet yielded a '
+            'row whose own arithmetic closes.',
+        ],
+        conclusions=emit('stabilization-funds', rws),
+    )
+    return data
+
+
+def _rate(points):
+    """Per cent a year between the first and last proven reading."""
+    n = points[-1]['fy'] - points[0]['fy']
+    a, b = points[0]['ending_cash'], points[-1]['ending_cash']
+    return ((b / a) ** (1.0 / n) - 1) * 100 if n and a else 0.0
 
 
 if __name__ == '__main__':

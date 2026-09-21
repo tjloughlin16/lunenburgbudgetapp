@@ -266,6 +266,57 @@ limit is already a row in `money-gaps.csv`. If it is, cite it. If it is not, add
 whether something is knowable, the analysis is wrong until the registry is updated —
 because the registry is what the request letter, the API and the gaps page all read.
 
+## 7d. Every report is MODEL-DRIVEN. There is one kind of report, not two
+
+**A report's figures come from a generated payload, and its furniture comes from
+`fy28/src/components/report.tsx`. Nothing else is a report.**
+
+TJ, 20 September 2026, asking why the metrics on the stabilization report did not look
+like the metrics on every other report: *"this neeeds to be model driven... is this
+written and built the same way the other pages are?"* It was not, and the honest answer
+was no.
+
+This site had grown **two** kinds of report:
+
+| | how it was built | what it got |
+|---|---|---|
+| 29 pages | generated JSON payload → React page → `report.tsx` | `Stat` rows, `Insight`/`Conclusions` cards, `Section`, `Grain`, `Provenance` |
+| 20 markdown analyses | a `.md` rendered generically by `Analysis.tsx` | prose |
+
+`report.tsx` says in its own header why that is a defect: *"a reader takes a difference in
+PRESENTATION for a difference in CONFIDENCE. Four readings of one archive must look like
+four readings of one archive."* Two pipelines guarantee that difference.
+
+**The fix was one renderer and many payloads, not twenty hand-written pages.**
+`Analysis.tsx` now fetches `/data/<id>.json` for the report it is showing. If that payload
+exists it renders the stat row, the grain and the conclusion cards through the same
+components every other report uses, above the document. If it does not, the page is
+unchanged. So the conversion proceeds one report at a time and no report is a special
+case.
+
+**What a generator must emit to be a report.** Alongside its markdown:
+
+- `stats` — the row of headline figures. Each is a `value` already formatted by the
+  generator and a `label` that carries its UNIT. A bare number in a stat box is the thing
+  a reader is most likely to quote, and rule 7b forbids it.
+- `grain` — what the figures COUNT, in the report's own words.
+- `conclusions` — built with `scripts/conclusions.py`: `conclusion()`, `figure()`,
+  `emit()`. The validator is the point of it. It enforces the 95-character claim, the
+  110-character supporting line, that every digit in the prose is a registered figure and
+  that every registered figure actually appears. It refuses to emit otherwise, which is
+  rule 7b's *enforce the length in the generator, not by eye* made mechanical.
+- `sources` and `not_established` — rule 12 and rule 7c, in the payload rather than only
+  in the prose.
+
+**The markdown does not go away.** It is what `/docs` serves, what the PDF is rendered
+from, and what an agent that cannot run JavaScript reads. Generate both from ONE pass over
+one set of figures — `build_stabilization.py` is the worked example — because generating
+them separately is exactly how the page and the document come to disagree.
+
+**A new report starts here.** Not from a blank page and not by copying prose: from a
+generator that emits a payload, and the shared components that render it. If a page needs
+furniture `report.tsx` does not have, add it there, where every report gets it.
+
 ## 8. This app explains how to fix the problem. It is not an audit
 
 The job is helping a resident understand what would work, and what each option costs

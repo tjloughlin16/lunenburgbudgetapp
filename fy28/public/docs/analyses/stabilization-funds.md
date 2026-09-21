@@ -8,11 +8,17 @@ Analysis, September 2026. Balances are FY2025 and are **not reconciled** — see
 
 ## The short version
 
-The town holds **$6,444,504** across 7 stabilization funds. **$3,147,179 of it is the general Stabilization Fund, which Town Meeting may appropriate for any lawful purpose by a two-thirds vote. The remaining $3,297,325 is restricted to the purpose each fund was created for.**
+**$6,444,504 held, across 7 stabilization funds.** This is what the town has in reserve outside its operating budget. It is a balance, not an income.
 
-So the answer to *can this pay for a school deficit* is **yes for $3,147,179 and no for the rest** — and a reserve spent on an operating cost buys one year, exactly as free cash does, which is the argument `free-cash.md` already makes.
+**$3,147,179 of it can be spent on anything lawful** — the general Stabilization Fund, by a two-thirds Town Meeting vote. The other $3,297,325 is restricted to the purpose each fund was created for, so it cannot be moved to a school deficit whatever Town Meeting thinks of the idea.
 
-**There is a second question, and it is the better one.** Town Meeting has voted **$4,051,527 into these funds** since FY2012, one article at a time. Reducing that is RECURRING money, where spending a balance is a one-off — and a recurring gap is only ever closed by recurring money. What it would cost is whatever the funds were being built for: equipment the town would then have to borrow for, and a reserve that is part of how it is rated when it borrows.
+**$4,051,527 voted in since FY2012 — an average of $289,395 a year.** This is the money going IN, one Town Meeting article at a time, and it is the figure the cheaper question turns on. It is a FLOOR: 7 of the articles print no amount.
+
+**$308,222 to $770,350 a year in FY2018–FY2023**, the 6 straight years that ran above that average. Reducing a deposit is RECURRING money where spending a balance is a one-off — and a recurring gap is only ever closed by recurring money.
+
+**$1,066,000 has come back out**, in the articles that say so plainly — a floor again, because money also leaves inside articles about something else.
+
+So: *can this pay for a school deficit?* **Yes for $3,147,179, no for the rest** — and a reserve spent on an operating cost buys one year, exactly as free cash does, which is the argument `free-cash.md` already makes.
 
 ---
 

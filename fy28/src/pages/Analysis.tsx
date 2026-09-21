@@ -8,7 +8,8 @@ import { FullVersion } from '../components/FullVersion'
  *  context, and the document keeps its full length until it is edited. */
 const SHORT_HEADING = /^(the short version|what this establishes|in plain terms|what we now hold|where things stand)/i
 import { analysisIdFromPath } from '../routes'
-import { Body, H2, MoreReports, ReportShell, ShortVersion } from '../components/report'
+import { Body, Conclusions, Grain, H2, MoreReports, ReportShell, ShortVersion, Stat, splitConclusions } from '../components/report'
+import type { Conclusion } from '../components/report'
 
 /** THE MARKDOWN ANALYSES, IN THE SAME SHELL AS EVERY OTHER REPORT.
  *
@@ -55,10 +56,32 @@ type Index = { generated: string; reports: Report[] }
 
 const kb = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)} MB` : `${Math.round(n / 1024)} KB`)
 
+/** THE MODEL-DRIVEN HALF OF A MARKDOWN REPORT.
+ *
+ *  WHY THIS EXISTS. This site had two kinds of report and a reader could tell: twenty-nine
+ *  pages built from a generated payload and rendered through components/report.tsx -- stat
+ *  rows, insight cards, the rule 7b rhythm -- and twenty markdown analyses rendered as
+ *  prose, with no way to show any of it. TJ, 20 September 2026, asking why the metrics on
+ *  the stabilization report did not look like the metrics everywhere else: *"this neeeds
+ *  to be model driven ... is this written and built the same way the other pages are?"*
+ *  It was not, and report.tsx exists precisely because a difference in PRESENTATION reads
+ *  as a difference in CONFIDENCE.
+ *
+ *  The fix is not twenty hand-written pages. It is one renderer and twenty payloads: an
+ *  analysis whose generator emits `/data/<id>.json` gets the same furniture as any other
+ *  report, at the same URL, and one that does not is unchanged. So the conversion can
+ *  proceed a report at a time, and nothing is a special case. */
+type Payload = {
+  stats?: { value: string; label: string; tone?: string }[]
+  grain?: string
+  conclusions?: Conclusion[]
+}
+
 export function Analysis() {
   const id = analysisIdFromPath(window.location.pathname)
   const [index, setIndex] = useState<Index | null>(null)
   const [src, setSrc] = useState<string | null>(null)
+  const [model, setModel] = useState<Payload | null>(null)
   const [err, setErr] = useState<string | null>(null)
 
   useEffect(() => {
@@ -69,6 +92,18 @@ export function Analysis() {
       .catch(e => { if (live) setErr(String(e)) })
     return () => { live = false }
   }, [])
+
+  // A MISSING PAYLOAD IS NOT AN ERROR. Most analyses have none yet, and a 404 here must
+  // leave the page exactly as it was rather than showing a reader a failure.
+  useEffect(() => {
+    if (!id) return
+    let live = true
+    fetch(`/data/${id}.json`)
+      .then(r => (r.ok ? r.json() : null))
+      .then(j => { if (live && j) setModel(j as Payload) })
+      .catch(() => { /* no payload for this report yet */ })
+    return () => { live = false }
+  }, [id])
 
   useEffect(() => {
     if (!id) return
@@ -138,6 +173,36 @@ export function Analysis() {
           </ul>
         </nav>
       )}
+
+      {/* THE CONCLUSIONS, IN THE SAME FURNITURE EVERY OTHER REPORT USES. Rendered above
+          the document because rule 7b opens a drill-in with what it MEANS; the prose
+          short version still follows, because the markdown is also what /docs serves and
+          what the PDF is made from, and the two must not drift apart. */}
+      {model && (model.stats?.length || model.conclusions?.length) ? (
+        <section data-section="conclusions" data-short="">
+          {model.stats?.length ? (
+            <div className="flex flex-wrap gap-x-10 gap-y-5 mt-8">
+              {model.stats.map(s => (
+                <Stat key={s.value + s.label} value={s.value} tone={s.tone}>{s.label}</Stat>
+              ))}
+            </div>
+          ) : null}
+          {model.grain ? <Grain>{model.grain}</Grain> : null}
+          {model.conclusions?.length
+            ? <Conclusions rows={splitConclusions(model.conclusions, undefined)[0]} />
+            : null}
+        </section>
+      ) : null}
+
+      {/* THE REST OF THE FINDINGS, BEHIND THE FOLD. `splitConclusions` shows three above
+          it, and a report with four would otherwise drop its fourth without saying so.
+          Same placement the payload-driven pages use. */}
+      {model?.conclusions && splitConclusions(model.conclusions, undefined)[1].length > 0 ? (
+        <FullVersion what="the other findings">
+          <H2 id="more-findings">The other findings</H2>
+          <Conclusions rows={splitConclusions(model.conclusions, undefined)[1]} noAsk short={false} />
+        </FullVersion>
+      ) : null}
 
       {split ? (
         <>
