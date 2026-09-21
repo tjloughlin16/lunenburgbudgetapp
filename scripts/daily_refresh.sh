@@ -99,15 +99,28 @@ notify() {   # notify <title> <message>
   fi
   # Commit the observation logs, previews, minutes and payloads. A refresh that is not
   # committed is a refresh the next machine cannot see.
-  git add sources/data/meeting-watch-*.csv sources/data/youtube-watch-events.csv \
-          sources/data/youtube-videos.csv sources/data/youtube-video-boards.csv \
-          sources/data/youtube-video-classification.csv sources/data/youtube-transcript-index.csv \
-          sources/data/youtube-no-captions.csv sources/data/minutes-searchable.csv \
-          sources/data/refresh-runs.csv sources/data/recording-minutes sources/data/agenda-previews \
-          sources/data/search-affinity.csv sources/data/budget-state \
-          sources/meetings/index.csv sources/meetings/text fy28/public/data fy28/public/docs/data \
-          fy28/public/sitemap.xml fy28/public/version.json fy28/src/data/sources.json \
-          notes/generated/APP-METRICS.md 2>/dev/null
+  # COMMIT WHAT THE RUN PRODUCED, NOT A HAND-LISTED SUBSET OF IT.
+  #
+  # This was a whitelist of data paths, and it had drifted behind what the refresh
+  # actually regenerates -- the defect shape CLAUDE.md names first: a list was written
+  # down, the thing it listed moved, and nothing connected the two. Eight paths were
+  # being regenerated every run and committed by none of them, including
+  # `sources/data/official-votes/`, which is the OUTPUT OF THE MOST EXPENSIVE THING THIS
+  # PROJECT DOES. Forty extracted votes were sitting untracked on 21 September -- about
+  # 1.2% of a week of plan allowance -- with `git clean -fd` at the top of the next run
+  # waiting to delete them. Work was being bought and thrown away on a daily cycle.
+  #
+  # It also broke the push, which is what made it visible. Files left dirty by the run
+  # meant `git pull --rebase` refused with "cannot pull with rebase: You have unstaged
+  # changes" the moment main had moved, and the failure message blamed main moving. Three
+  # triage sessions chased that.
+  #
+  # `-A` IS SAFE HERE FOR A REASON THAT IS LOAD-BEARING AND NOT OBVIOUS: this tree is
+  # `git reset --hard origin/main` at the top of every run, so everything dirty at this
+  # point was produced by this run. And this block runs BEFORE the triage agent is
+  # spawned, so nothing an agent wrote can be swept into a push to main. If either of
+  # those ever stops being true, this line stops being safe -- say so before moving it.
+  git add -A
   if ! git diff --cached --quiet; then
     git commit -q -m "Daily refresh, $(date +%Y-%m-%d)
 
@@ -144,6 +157,25 @@ Automated by scripts/daily_refresh.sh."
   if grep -q "^refresh exit [1-9]" "$LOG" 2>/dev/null; then
     echo "--- refresh failed; spawning triage agent ---"
     python3 "$HERE/scripts/triage_refresh.py" --log "$LOG" || true
+    # KEEP WHAT IT WROTE. The top of every run is `git reset --hard origin/main`, so a fix
+    # the agent leaves in the working tree is destroyed the next morning -- and it then
+    # rewrites the same patch, having no memory of the last one. That happened three times
+    # running on 20-21 September: three sessions, three identical diagnoses of the same
+    # Chrome failure, three copies of the same retry fix, none surviving to be reviewed.
+    #
+    # So its changes are committed onto a dated branch of their own. Not `refresh` (reset
+    # moves that pointer) and never main: these are unreviewed edits written unattended at
+    # 07:00, and the site is public. A branch is durable, reviewable, and costs nothing.
+    if ! git diff --quiet || [ -n "$(git status --porcelain)" ]; then
+      b="triage/$(date +%Y-%m-%d-%H%M)"
+      git add -A
+      git commit -q -m "Refresh triage, $(date +%Y-%m-%d): what the agent changed
+
+Written unattended by scripts/triage_refresh.py. NOT reviewed and NOT on main.
+Review with: git diff origin/main..$b" && git branch -f "$b" HEAD \
+        && git reset -q --hard HEAD~1 \
+        && echo "triage changes kept on branch $b — review with: git diff origin/main..$b"
+    fi
   fi
   echo "=== finished $(date) ==="
 } >> "$LOG" 2>&1

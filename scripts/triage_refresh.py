@@ -27,7 +27,9 @@ that can break a live public budget tool at 07:00 while nobody is awake, so:
   - It works in the REFRESH TREE, on a branch of its own, never on main.
   - It may read anything, run the checks, and edit files.
   - It MUST NOT push to main, deploy, or touch the interactive tree.
-  - It commits to `refresh-fix/<date>` and pushes THAT branch, so the work is visible
+  - It cannot commit or push anything itself -- `acceptEdits` gives it no shell.
+    daily_refresh.sh commits what it leaves onto a dated `triage/` branch, so the
+    work survives the next run's `git reset --hard` and is there to review
     and reviewable from anywhere, and merging stays a person's decision.
 
 ONE ATTEMPT PER DAY. The report file is the lock: if it exists, the day is already
@@ -181,9 +183,11 @@ def main():
         fh.write('# Refresh triage, %s\n\n' % today)
         fh.write('**Failing step:** `%s`  \n**Exit:** %s  \n**Log:** `%s`\n\n' %
                  (fail['step'], fail['exit'], logpath))
-        fh.write('Written by `scripts/triage_refresh.py` with `claude -p` (%s). '
-                 'It may edit and commit on this branch; it may not push to main or '
-                 'deploy.\n\n---\n\n' % MODEL)
+        fh.write('Written by `scripts/triage_refresh.py` with `claude -p` (%s), under '
+                 '`--permission-mode acceptEdits`: it can EDIT files and cannot run '
+                 'commands, so it cannot commit, build or reproduce a failure. '
+                 'daily_refresh.sh commits whatever it leaves onto a dated `triage/` '
+                 'branch afterwards.\n\n---\n\n' % MODEL)
         fh.write(out)
     cost = 0.0
     m = re.search(r'\$([\d.]+)', out)

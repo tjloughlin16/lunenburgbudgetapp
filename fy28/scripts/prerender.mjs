@@ -365,7 +365,24 @@ async function main() {
       }
     }
     if (html === undefined) {
-      failures.push(`${route}: chrome failed twice — ${lastErr.message.split('\n')[0]}`)
+      // LOG WHAT NODE ACTUALLY ATTACHED, not `.message`. Its first line is only ever
+      // "Command failed: <the command we already know>", so every Chrome failure in this
+      // loop read identically: a hang killed by our own timeout, a renderer crash and a
+      // real page bug all produced the same one-line entry with the actual reason thrown
+      // away. That cost three separate triage sessions on 20-21 September, each of which
+      // reached "transient Chrome crash, could not confirm" because the evidence had
+      // already been discarded at the point of failure.
+      //
+      // This block is the refresh triage agent's, adopted from the fix it wrote in the
+      // refresh worktree and could not commit. It is better than the version that was
+      // here and it is kept in its own words.
+      const detail = [
+        lastErr.signal ? `signal ${lastErr.signal}` : null,
+        Number.isInteger(lastErr.code) ? `exit ${lastErr.code}` : null,
+        (lastErr.stderr || '').trim().split('\n').filter(Boolean).slice(0, 2).join(' / '),
+      ].filter(Boolean).join(', ')
+      failures.push(`${route}: chrome failed twice` +
+        (detail ? ` — ${detail}` : ' — no signal, code or stderr on the error'))
       continue
     }
 
