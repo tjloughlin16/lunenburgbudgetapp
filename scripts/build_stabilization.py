@@ -46,6 +46,7 @@ usd = lambda x: '${:,.2f}'.format(x)
 # correct and reads like a log line; spelling the small ones costs nothing and keeps the
 # figure derived, which is the part rule 2 cares about.
 WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+plural_articles = lambda n: ('%d articles' % n) if n != 1 else '1 article'
 word = lambda n: WORDS[n] if 0 <= n < len(WORDS) else '{:,}'.format(n)
 # The reader is already inside a section about stabilization funds, so a name ending in
 # the word followed by the word again -- "the Zoning Incentive Stabilization fund" -- is
@@ -257,6 +258,25 @@ def money(s):
         return None
 
 
+def withdrawals():
+    """Every withdrawal the annual reports print, with the words around it.
+
+    TJ: "we need to put 'What has come back out' in its own section, list the funds, the
+    pull, the year, and list EVERYTHING we know about. peopel wnat to know what thos eare
+    being used on and when."
+
+    And TJ again, on where they live: "the statements of where the money was spent i think
+    i saw in descriptive paragraphs in the town annual report, not in a table, right?" --
+    which is exactly right and is why nothing found them for weeks. A withdrawal is a
+    clause inside a warrant article about something else, in prose, and no table reader
+    was ever going to see it.
+    """
+    f = os.path.join(ROOT, 'sources', 'data', 'stabilization-flows.csv')
+    if not os.path.exists(f):
+        return []
+    return list(csv.DictReader(open(f, encoding='utf-8')))
+
+
 def flows():
     """Town Meeting articles that put money into a stabilization fund, or take it out.
 
@@ -448,18 +468,22 @@ def render(rows):
             flag = '' if y not in short_years else ' \u2014 *understated*'
             w('| FY%d | %s%s | %d |' % (y, usd0(byfy[y]), flag, n))
         w('')
-        if spd:
-            w('**What has come back out \u2014 and this is a FLOOR, not a total.** These '
-              'are the articles whose SUBJECT is a withdrawal. Money also leaves inside '
-              'articles about something else: FY2023 article 14 is the sewer enterprise '
-              'operating budget, and inside that one motion it transfers $35,000 out of '
-              'the Sewer Capital Reserve fund and $20,962.40 out of the Sewer Reserve '
-              'Capacity fund. Those are real withdrawals sitting inside an article this '
-              'classification counts as being about the sewer budget, so the figure below '
-              'is what can be attributed cleanly and no more.\n')
-            for x in sorted(spd, key=lambda r: (r['fy'], r['article'])):
-                w('- FY%d, article %s \u2014 %s, **%s**'
-                  % (x['fy'], x['article'], x['subject'], usd0(x['amount'])))
+        # EVERY DEPOSIT, WITH THE ARTICLE THAT MADE IT. TJ: "can you list the the town
+        # meeting articles (if we have them) and when the money got invested in each ...
+        # we need the fund listed, the article it was added."
+        w('**Every deposit we can price, and the article that made it.** A yearly total '
+          'is a fact about the budget; this is the thing somebody can look up.\n')
+        w('| year | meeting | art. | fund | amount |\n|---|---|---|---|---:|')
+        for d in sorted(dep, key=lambda r: (-r['fy'], -r['amount'])):
+            w('| FY%d | %s | %s | %s | %s |'
+              % (d['fy'], d.get('meeting', '') or '\u2014', d['article'],
+                 bare(d['fund']), usd(d['amount'])))
+        w('')
+        if fl['unpriced']:
+            w('And %s the warrant records without an amount, so they are in none of the '
+              'figures above:\n' % plural_articles(len(fl['unpriced'])))
+            for u in sorted(fl['unpriced'], key=lambda r: -r['fy']):
+                w('- FY%d, article %s \u2014 %s' % (u['fy'], u['article'], u['subject']))
             w('')
         w('*How solid is this.* Of the %d articles mentioning a stabilization fund, %d '
           'are deposits, %d are withdrawals, %d print no amount (marked *understated* '
@@ -470,6 +494,56 @@ def render(rows):
              + len(fl['unclear']), len(dep), len(spd), len(fl['unpriced']),
              len(fl['not_about']),
              usd0(sum(x['amount'] for x in fl['not_about'] if x['amount']))))
+
+    # ---- WHAT HAS COME BACK OUT, on its own ----------------------------------------
+    mark('cameout')
+    wd = withdrawals()
+    if wd:
+        clear = [r for r in wd if r['confidence'] == 'clear']
+        flagged = [r for r in wd if r['confidence'] != 'clear']
+        w('---\n')
+        w('## What has come back out\n')
+        w('**%s withdrawn, in %s the town printed.** Every one of these is a clause '
+          'inside a Town Meeting article about something else \u2014 the sewer budget, an '
+          'omnibus transfer \u2014 written in prose rather than set in any table, which is '
+          'why a page built on the trust tables could not see them.\n'
+          % (usd(sum(float(r['amount']) for r in clear)),
+             plural_articles(len(clear)).replace('articles', 'separate votes')
+             .replace('article', 'vote')))
+        w('| year | fund | amount | what the article was for |\n|---|---|---:|---|')
+        for r in sorted(clear, key=lambda r: (-int(r['fy']), -float(r['amount']))):
+            purpose = r['quote']
+            m = re.search(r'to\s+(operate|fund|purchase|pay)\b[^;]{0,70}', purpose, re.I)
+            gist = m.group(0) if m else '\u2014 see the quote below'
+            w('| FY%s | %s | %s | %s |'
+              % (r['fy'], bare(r['fund']), usd(float(r['amount'])),
+                 ' '.join(gist.split())[:64]))
+        w('')
+        w('**The words, because a withdrawal read out of prose has to be checkable.** '
+          'These are the printed sentences, with the page they are on:\n')
+        for r in sorted(clear, key=lambda r: (-int(r['fy']), -float(r['amount']))):
+            w('- **FY%s, %s, %s** \u2014 page %s of that year\u2019s annual report:'
+              % (r['fy'], bare(r['fund']), usd(float(r['amount'])), r['page']))
+            w('  > %s' % r['quote'])
+        w('')
+        if flagged:
+            w('**And %s this page will not add up**, because the printing does not let '
+              'it. They are here rather than dropped:\n' % plural_articles(len(flagged)))
+            for r in flagged:
+                why = {'combined': 'the figure covers this fund AND another, and the '
+                                   'article does not split it',
+                       'maybe-duplicate': 'the same transaction appears in two '
+                                          'consecutive reports, because each year\u2019s '
+                                          'warrant recites the year before',
+                       'deposit-misread': 'this is money going IN, matched by a pattern '
+                                          'that cannot tell direction from wording alone'}
+                w('- FY%s, %s, %s \u2014 %s'
+                  % (r['fy'], bare(r['fund']), usd(float(r['amount'])),
+                     why.get(r['confidence'], r['confidence'])))
+            w('')
+        w('*What this is not.* A complete account of what left these funds. It is what the '
+          'annual reports PRINT, found by reading their article text; the ledger\u2019s own '
+          'expenditure column would settle it and this archive holds one year of that.\n')
 
     mark('whatsin')
     w('---\n')
@@ -897,7 +971,7 @@ def render(rows):
     # the conclusions beyond the first three, rendered by Analysis.tsx from the payload,
     # and it lands directly after the first section of the fold -- which is why the charts
     # have to be that first section.
-    ORDER = ['short', 'moved', 'whatsin', 'goesin', 'byyear', 'forwhat',
+    ORDER = ['short', 'moved', 'whatsin', 'goesin', 'cameout', 'byyear', 'forwhat',
              'cannot', 'notshow', 'sources']
     head = b[:marks[0][1]] if marks else list(b)
     cut = {name: (start, marks[i + 1][1] if i + 1 < len(marks) else len(b))

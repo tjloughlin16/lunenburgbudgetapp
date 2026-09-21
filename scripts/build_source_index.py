@@ -1045,6 +1045,19 @@ GROUPS = [
              'question. Loaded as `stated_cuts` and read by /cut-register, which sets '
              'DESE\u2019s teacher counts beside it. '
              'See scripts/extract_stated_cuts.py.'),
+            ('data/stabilization-flows.csv',
+             'Money taken back out of the stabilization funds, with the printed words', 3,
+             'Every withdrawal the annual town reports print. These are not in any table: '
+             'a withdrawal is a clause inside a Town Meeting article about something else '
+             '\u2014 the sewer enterprise budget, an omnibus transfer \u2014 written in prose, '
+             'which is why reading the trust tables found two of them and reading the '
+             'article text finds eleven. Every row keeps the SENTENCE it came from, '
+             'because a figure read out of a scan by pattern is a weaker thing than one '
+             'checked against an identity and nothing here should have to be taken on '
+             'trust. `confidence` marks the three that cannot be totalled \u2014 a figure '
+             'covering two funds at once, the same transaction printed in consecutive '
+             'reports, and one deposit whose wording reads like a withdrawal. See '
+             'scripts/extract_stabilization_flows.py.'),
             ('data/treasurers-cash.csv',
              'What the town held in cash, by bank and by fund, every year', 3,
              'The `Treasurer\u2019s Cash as of 6/30` page that every annual town report '

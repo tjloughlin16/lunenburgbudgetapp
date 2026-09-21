@@ -73,6 +73,7 @@ CHECKS = [
     # ...and the plan built on it, so the two cannot disagree about what is left.
     ('build_ingest_plan.py', ['--check']),
     ('map_stabilization_pages.py', ['--check']),
+    ('extract_stabilization_flows.py', ['--check']),
     ('extract_treasurers_cash.py', ['--check']),
     ('extract_trust_agency.py', ['--check']),
     # The annual report's own per-account listing, checked against that ledger.

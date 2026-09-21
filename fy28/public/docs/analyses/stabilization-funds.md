@@ -116,12 +116,105 @@ In the 8 years where every article carries a printed amount, the town voted in b
 | FY2024 | $35,000 | 1 |
 | FY2025 | $24,238 — *understated* | 2 |
 
-**What has come back out — and this is a FLOOR, not a total.** These are the articles whose SUBJECT is a withdrawal. Money also leaves inside articles about something else: FY2023 article 14 is the sewer enterprise operating budget, and inside that one motion it transfers $35,000 out of the Sewer Capital Reserve fund and $20,962.40 out of the Sewer Reserve Capacity fund. Those are real withdrawals sitting inside an article this classification counts as being about the sewer budget, so the figure below is what can be attributed cleanly and no more.
+**Every deposit we can price, and the article that made it.** A yearly total is a fact about the budget; this is the thing somebody can look up.
 
-- FY2023, article 4 — Transfer Special Purpose Stabilization funds for a new ambulance and two dump trucks, **$986,000**
-- FY2023, article 5 — Transfer Opioid Settlement funds for the Police Department's Mental Health Co-Response program, **$80,000**
+| year | meeting | art. | fund | amount |
+|---|---|---|---|---:|
+| FY2025 | annual | 23 | Inflow/Infiltration | $19,104.40 |
+| FY2025 | annual | 24 | Sewer Reserve Capacity | $5,133.15 |
+| FY2024 | annual | 16 | Sewer Capital Reserve | $35,000.00 |
+| FY2023 | annual | 11 | Special Purpose | $250,000.00 |
+| FY2023 | annual | 10 | Stabilization Fund (general) | $100,000.00 |
+| FY2023 | annual | 13 | Opioid Settlement | $84,740.25 |
+| FY2023 | annual | 15 | Sewer Capital Reserve | $36,621.37 |
+| FY2023 | special | 8 | Inflow/Infiltration | $5,340.00 |
+| FY2023 | special | 7 | Sewer Reserve Capacity | $1,851.30 |
+| FY2022 | annual | 10 | Special Purpose | $450,000.00 |
+| FY2022 | annual | 9 | Stabilization Fund (general) | $100,000.00 |
+| FY2022 | annual | 13 | Sewer Capital Reserve | $35,548.86 |
+| FY2022 | special | 7 | Inflow/Infiltration | $9,900.00 |
+| FY2022 | special | 6 | Sewer Reserve Capacity | $1,645.60 |
+| FY2021 | annual | 9 | Health Insurance | $369,334.00 |
+| FY2021 | annual | 8 | Special Purpose | $250,000.00 |
+| FY2021 | annual | 7 | Stabilization Fund (general) | $100,000.00 |
+| FY2021 | special | 5 | Sewer Capital Reserve | $14,875.50 |
+| FY2020 | special | 6 | Special Purpose | $250,000.00 |
+| FY2020 | special | 5 | Stabilization Fund (general) | $212,252.00 |
+| FY2020 | annual | 8 | Stabilization Fund (general) | $210,000.00 |
+| FY2020 | special | 11 | Sewer Reserve Capacity | $68,097.59 |
+| FY2020 | annual | 11 | Sewer Capital Reserve | $30,000.00 |
+| FY2019 | annual | 10 | Special Purpose | $200,000.00 |
+| FY2019 | annual | 9 | Stabilization Fund (general) | $100,000.00 |
+| FY2019 | special | 2 | Special Purpose | $8,222.00 |
+| FY2018 | annual | 9 | Special Purpose | $200,000.00 |
+| FY2018 | special | 2 | Special Purpose | $199,227.00 |
+| FY2018 | annual | 8 | Stabilization Fund (general) | $87,000.00 |
+| FY2018 | annual | 12 | Sewer Capital Reserve | $29,000.00 |
+| FY2018 | special | 5 | Sewer Reserve Capacity | $6,449.63 |
+| FY2016 | annual | 17 | Stabilization Fund (general) | $99,851.00 |
+| FY2016 | annual | 21 | Inflow/Infiltration | $14,520.00 |
+| FY2016 | annual | 22 | Sewer Reserve Capacity | $9,667.90 |
+| FY2015 | annual | 16 | Stabilization Fund (general) | $98,231.00 |
+| FY2015 | special | 14 | Stabilization Fund (general) | $7,136.00 |
+| FY2015 | annual | 21 | Sewer Reserve Capacity | $617.10 |
+| FY2014 | annual | 17 | Stabilization Fund (general) | $74,729.00 |
+| FY2012 | annual | 10 | Stabilization Fund (general) | $277,432.00 |
+
+And 7 articles the warrant records without an amount, so they are in none of the figures above:
+
+- FY2025, article 16 — Appropriation to the Stabilization Fund
+- FY2025, article 17 — Appropriation to the Special Purpose Stabilization Fund
+- FY2022, article 5 — Transfer funds to the Special Purpose Stabilization Fund
+- FY2016, article 4 — Create the Town Building Stabilization Fund
+- FY2012, article 2 — Appropriate to/from the Stabilization Fund
+- FY2011, article 18 — Appropriate to or from the Stabilization Fund
+- FY2011, article 2 — Appropriate to or from the Stabilization Fund
 
 *How solid is this.* Of the 53 articles mentioning a stabilization fund, 39 are deposits, 2 are withdrawals, 7 print no amount (marked *understated* above), and 5 are sewer enterprise operating budgets that name a fund only in passing — those five total $3,706,189 and counting them as deposits would overstate the money going in by more than the deposits themselves.
+
+---
+
+## What has come back out
+
+**$237,391.88 withdrawn, in 8 separate votes the town printed.** Every one of these is a clause inside a Town Meeting article about something else — the sewer budget, an omnibus transfer — written in prose rather than set in any table, which is why a page built on the trust tables could not see them.
+
+| year | fund | amount | what the article was for |
+|---|---|---:|---|
+| FY2024 | Health Insurance | $105,762.48 | — see the quote below |
+| FY2023 | Sewer Capital Reserve | $35,000.00 | to operate the Sewer… |
+| FY2023 | Sewer Reserve Capacity | $20,962.40 | to operate the Sewer Enterprise Fund for F Y24 |
+| FY2023 | Inflow/Infiltration | $9,900.00 | — see the quote below |
+| FY2022 | Sewer Capital Reserve | $20,962.00 | to operate the Sewer Enterprise Fund for FY23, including the amo |
+| FY2022 | Sewer Capital Reserve | $20,000.00 | to operate the Sewer Enterprise… |
+| FY2017 | Inflow/Infiltration | $14,520.00 | to operate the Sewer Enterprise Fund for FY18 |
+| FY2017 | Sewer Reserve Capacity | $10,285.00 | to operate the… |
+
+**The words, because a withdrawal read out of prose has to be checkable.** These are the printed sentences, with the page they are on:
+
+- **FY2024, Health Insurance, $105,762.48** — page 140 of that year’s annual report:
+  > …Turf Revolving Fund, transfer $27,929.97 from the PEG Access and Cable Related Enterprise Fund, transfer $105,762.48 from the Health Insurance Stabilization Account, transfer $100,000 from 140
+- **FY2023, Sewer Capital Reserve, $35,000.00** — page 169 of that year’s annual report:
+  > …transfer from the Inflow/Infiltration Stabilization Fund the sum of $9,900.00; transfer from the Sewer Capital Reserve Stabilization Fund the sum of $35,000.00; transfer from the Sewer Reserve Capacity Stabilization Fund the sum of $20,962.40; and appropriate from Sewer Enterprise retained earnings the sum of $382,096.70 for a total appropriation of $1,339,850.95 to operate the Sewer…
+- **FY2023, Sewer Reserve Capacity, $20,962.40** — page 169 of that year’s annual report:
+  > …transfer from the Sewer Capital Reserve Stabilization Fund the sum of $35,000.00; transfer from the Sewer Reserve Capacity Stabilization Fund the sum of $20,962.40; and appropriate from Sewer Enterprise retained earnings the sum of $382,096.70 for a total appropriation of $1,339,850.95 to operate the Sewer Enterprise Fund for F Y24; and further that $740,368.15 be included in…
+- **FY2023, Inflow/Infiltration, $9,900.00** — page 169 of that year’s annual report:
+  > …VOTED (72 YES, 8 NO) to appropriate from Sewer Enterprise revenues the sum of $89,891.85; transfer from the Inflow/Infiltration Stabilization Fund the sum of $9,900.00; transfer from the Sewer Capital Reserve Stabilization Fund the sum of $35,000.00; transfer from the Sewer Reserve Capacity Stabilization Fund the sum of $20,962.40; and appropriate from Sewer Enterprise retained earnings the sum…
+- **FY2022, Sewer Capital Reserve, $20,962.00** — page 75 of that year’s annual report:
+  > …for FY23, $853,112.53 was appropriated from Sewer Enterprise revenues, $20,000.00 transferred from the Sewer Capital Reserve Stabilization Fund, $20,962.00 was transferred from the Sewer Reserve Capacity Fund and the sum of $319,107.47 was appropriated from Retained Earnings for a total appropriation of $1,213,182.00 to operate the Sewer Enterprise Fund for FY23, including the amount of…
+- **FY2022, Sewer Capital Reserve, $20,000.00** — page 150 of that year’s annual report:
+  > …UNANIMOUS CONSENT to appropriate from Sewer Enterprise revenues the sum of $853,112.53; transfer from the Sewer Capital Reserve Stabilization Fund the sum of $20,000.00; transfer from the Sewer Reserve Capacity Fund the sum of $20,962.00; and appropriate from Sewer Enterprise retained earnings the sum of $319,107.47; for a total appropriation of $1,213,182.00 to operate the Sewer Enterprise…
+- **FY2017, Inflow/Infiltration, $14,520.00** — page 158 of that year’s annual report:
+  > …transfer from the Sewer Reserve Capacity Stabilization Fund the sum of $10,285.00; transfer from the Sewer Inflow/Infiltration Stabilization Fund the sum of $14,520.00; and appropriate from Sewer Enterprise retained earnings the sum of $160,276.94; for a total appropriation of $745,251.00 to operate the Sewer Enterprise Fund for FY18; and further that $911,971.24 be included in…
+- **FY2017, Sewer Reserve Capacity, $10,285.00** — page 158 of that year’s annual report:
+  > …2/3rds DECLARED to appropriate from Sewer Enterprise revenues the sum of $560,169.06; transfer from the Sewer Reserve Capacity Stabilization Fund the sum of $10,285.00; transfer from the Sewer Inflow/Infiltration Stabilization Fund the sum of $14,520.00; and appropriate from Sewer Enterprise retained earnings the sum of $160,276.94; for a total appropriation of $745,251.00 to operate the…
+
+**And 3 articles this page will not add up**, because the printing does not let it. They are here rather than dropped:
+
+- FY2018, Sewer Reserve Capacity, $6,449.63 — this is money going IN, matched by a pattern that cannot tell direction from wording alone
+- FY2023, Sewer Reserve Capacity, $382,096.70 — the figure covers this fund AND another, and the article does not split it
+- FY2023, Sewer Capital Reserve, $20,962.40 — the same transaction appears in two consecutive reports, because each year’s warrant recites the year before
+
+*What this is not.* A complete account of what left these funds. It is what the annual reports PRINT, found by reading their article text; the ledger’s own expenditure column would settle it and this archive holds one year of that.
 
 ## Each fund, year by year
 
