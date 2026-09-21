@@ -202,6 +202,32 @@ def read_page(fy, page, boxes, doc):
               and len(b['text'].strip()) >= 3
               and is_label(b['text'])
               and b['x'] < min(c[0] for c in cols)]
+    # A LABEL THAT WRAPS TAKES ITS AMOUNT WITH IT.
+    #
+    # `Bartholomew-Sewer Capital Reserve Stabili-` sits on one line, `zation` on the
+    # next, and the figure -- $26,866.21 -- is aligned with the CONTINUATION, not with
+    # the line carrying most of the name. Pairing on the first line's y finds nothing, so
+    # the row is dropped, the column misses its own total by that amount, and two sewer
+    # funds lost FY2018 to a hyphen.
+    #
+    # The trailing hyphen is the signal and it is unambiguous: no account in fifteen
+    # years of these pages ends in one. So the two lines are joined and the row keeps the
+    # LOWER y, because that is where the money is.
+    joined, skip = [], set()
+    for i, lab in enumerate(labels):
+        if id(lab) in skip:
+            continue
+        text = lab['text'].strip()
+        if text.endswith('-'):
+            below = [o for o in labels
+                     if 0 < lab['y'] - o['y'] < band * 3 and abs(o['x'] - lab['x']) < 0.05]
+            if below:
+                cont = max(below, key=lambda o: o['y'])
+                skip.add(id(cont))
+                lab = dict(lab, text=text[:-1] + cont['text'].strip(), y=cont['y'])
+        joined.append(lab)
+    labels = joined
+
     rows, totals = [], [None] * len(cols)
     for lab in labels:
         name = ' '.join(lab['text'].split())

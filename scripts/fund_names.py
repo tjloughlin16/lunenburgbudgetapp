@@ -104,9 +104,27 @@ def canonical(label, code=None):
     for keys, name in RULES:
         if keys <= words:
             return name
-    # The general fund is the one with no distinguishing word at all: `Stabilization
-    # Fund`, `STABILIZATION`, `stabilization`. It is matched LAST for that reason --
-    # every other fund also contains the word.
+    # THE BARE WORD IS ONLY THE GENERAL FUND AT THE RIGHT BANK, and getting this wrong
+    # would have published one fund's balance as another's.
+    #
+    # FY2011-FY2013 list `TD BankNorth Stabilization` and no `Bartholomew Stabilization
+    # Fund` at all. Stripping the custodian leaves a bare `Stabilization`, which reads as
+    # the general fund -- and it is not: FY2013's figure is $226,821.90, which is exactly
+    # what FY2014's trust table prints as the ZONING fund's opening balance. From FY2014
+    # the town spells the same row `TD BankNorth Zoning Stabilization`; before that it
+    # left the word out.
+    #
+    # So the custodian decides when nothing else does. TD BankNorth holds 8129 in every
+    # year that can be checked, and Bartholomew holds 8124. A bare `Stabilization` behind
+    # any other custodian is ambiguous and returns None rather than a guess -- which
+    # matters, because in FY2011-FY2013 the general fund is not listed separately at all.
+    # It sits inside `Bartholomew Trust Funds`, and an aggregate is not a balance.
     if 'stabilization' in words or low.strip() in ('stabilization', 'stabilization fund'):
-        return 'Stabilization (general)'
+        raw = ' '.join((label or '').split()).lower()
+        if 'banknorth' in raw.replace(' ', ''):
+            return 'Zoning Incentive'
+        if 'artholomew' in raw or 'atholomew' in raw or not CUSTODIANS.search(
+                ' '.join((label or '').split())):
+            return 'Stabilization (general)'
+        return None
     return None
