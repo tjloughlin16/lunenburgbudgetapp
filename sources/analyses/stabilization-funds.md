@@ -32,27 +32,31 @@ Some years print no ending market value at all: FY2019’s table carries the hea
 
 | | ending market value |
 |---|---:|
+| FY2011 | $1,202,862.85 |
+| FY2012 | $1,005,630.47 |
+| FY2013 | $1,002,847.47 |
 | FY2014 | $1,312,062.64 |
 | FY2015 | $1,398,606.47 |
 | FY2016 | $1,551,001.18 |
 | FY2018 | $1,732,690.98 |
 | FY2020 | $2,041,061.72 |
+| FY2021 | $2,526,388.54 |
 
-That is **$728,999.08 more between FY2014 and FY2020**, a rise of 56%, in a fund whose purpose is to be available.
+That is **$1,323,525.69 more between FY2011 and FY2021**, a rise of 110%, in a fund whose purpose is to be available.
 
-![Three stabilization funds on one scale, FY2014 to FY2025. The tallest reaches $3,147,178.96 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Dashed segments span years this archive has not yet proven.](charts/stabilization-all.svg)
+![Three stabilization funds on one scale, FY2011 to FY2025. The tallest reaches $3,147,178.96 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Dashed segments span years this archive has not yet proven.](charts/stabilization-all.svg)
 
 On one scale the Zoning Incentive fund looks like nothing is happening to it. That is the finding, not a rendering problem — but it hides the shape, so each fund also gets its own panel:
 
 ![The same three funds, each panel stretched to its own range, so the shapes are comparable and the heights are not.](charts/stabilization-each.svg)
 
-![How fast each fund moved per year between its first and last proven year: Vehicle/Equipment 40.8% a year over 7 years, Stabilization 8.4% a year over 11 years, Zoning Incentive 0.8% a year over 11 years.](charts/stabilization-growth.svg)
+![How fast each fund moved per year between its first and last proven year: Vehicle/Equipment 40.8% a year over 7 years, Stabilization 7.2% a year over 14 years, Zoning Incentive 0.8% a year over 11 years.](charts/stabilization-growth.svg)
 
 And both directions at once — how often these funds are drawn on, and for how much:
 
 ![Money voted into the stabilization funds each year, above the line, against money taken back out, below it. Withdrawals are rare and small beside the deposits.](charts/stabilization-flows.svg)
 
-**Three funds, three different things happening.** The Vehicle/Equipment fund moved 40.8% a year and the Stabilization fund 8.4% a year — those are being BUILT, and the Town Meeting articles listed earlier on this page are the votes that did it. The Zoning Incentive fund is not: it moved $21,858.35 in 11 years, which is what a balance does when it is left alone.
+**Three funds, three different things happening.** The Vehicle/Equipment fund moved 40.8% a year and the Stabilization fund 7.2% a year — those are being BUILT, and the Town Meeting articles listed earlier on this page are the votes that did it. The Zoning Incentive fund is not: it moved $21,858.35 in 11 years, which is what a balance does when it is left alone.
 
 *What the charts do not show.* A balance rising does not say how much of the rise is money voted in and how much is interest earned, and nothing in this data separates them. It also does not say a fund is AVAILABLE: what each may be spent on is the section above, and a balance is not a permission.
 
@@ -418,7 +422,7 @@ Each figure below is its own reading, and they come from four places: the trust 
 
 *One of the four has a different grain.* The Treasurer’s Cash page counts cash held by a custodian, not a fund balance — the Opioid fund shows $233,317.54 of cash at Bartholomew where the ledger puts the fund at $241,421.18. For the funds charted here the two have matched wherever both exist, because those funds sit whole in one place, but that is a fact about them and not a rule. It fills years nothing else reaches and never overrides a balance.
 
-- **Stabilization** — FY2014 $1,299,077.98, FY2015 $1,388,105.33, FY2016 $1,511,526.92, FY2017 $1,631,430.63, FY2018 $1,740,279.81, FY2019 $1,848,802.86, FY2020 $1,978,347.74, FY2021 $2,447,755.21, FY2022 $2,574,673.21, FY2023 $2,730,600.73, FY2024 $2,901,157.60, FY2025 $3,147,178.96
+- **Stabilization** — FY2011 $1,186,776.91, FY2012 $989,608.54, FY2013 $999,548.94, FY2014 $1,299,077.98, FY2015 $1,388,105.33, FY2016 $1,511,526.92, FY2017 $1,631,430.63, FY2018 $1,740,279.81, FY2019 $1,848,802.86, FY2020 $1,978,347.74, FY2021 $2,447,755.21, FY2022 $2,574,673.21, FY2023 $2,730,600.73, FY2024 $2,901,157.60, FY2025 $3,147,178.96
 - **Zoning Incentive Stabilization** — FY2014 $227,201.90, FY2015 $227,542.95, FY2016 $227,884.96, FY2017 $228,320.36, FY2018 $228,891.82, FY2019 $229,464.69, FY2020 $230,431.40, FY2021 $230,748.05, FY2022 $231,007.68, FY2023 $235,681.11, FY2024 $243,063.42, FY2025 $249,060.25
 - **Vehicle/Equipment Stabilization** — FY2018 $236,302.39, FY2019 $643,788.80, FY2020 $945,669.29, FY2021 $1,201,170.65, FY2022 $1,457,123.63, FY2023 $1,936,143.89, FY2024 $2,254,933.99, FY2025 $2,598,621.38
 
@@ -426,6 +430,9 @@ Every proven row:
 
 | year | account | fund | ending cash | ending market |
 |---|---|---|---:|---:|
+| FY2011 | `—` | STABILIZATION | $1,186,776.91 | $1,202,862.85 |
+| FY2012 | `—` | STABILIZATION | $989,608.54 | $1,005,630.47 |
+| FY2013 | `—` | STABILIZATION | $999,548.94 | $1,002,847.47 |
 | FY2014 | `—` | STABILIZATION 8124 | $1,299,077.98 | $1,312,062.64 |
 | FY2014 | `—` | ZONING INCENTIVE STABILIZATION (TL 8129 | $227,201.90 | $227,201.90 |
 | FY2015 | `—` | STABILIZATION | $1,388,105.33 | $1,398,606.47 |
@@ -443,15 +450,15 @@ Every proven row:
 | FY2020 | `—` | STABILIZATION | $1,978,347.74 | $2,041,061.72 |
 | FY2020 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $945,669.29 | $945,669.29 |
 | FY2020 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $230,431.40 | $230,431.40 |
-| FY2021 | `—` | STABILIZATION | $2,447,755.21 | — |
+| FY2021 | `—` | STABILIZATION | $2,447,755.21 | $2,526,388.54 |
 | FY2022 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTI | $231,007.68 | $231,007.68 |
 | FY2024 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,254,933.99 | $2,254,933.99 |
 | FY2025 | `—` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,598,621.38 | $2,598,621.38 |
 | FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 | $249,060.25 |
 
-**Nine funds, fifteen years, and most of the grid is empty.** Only 3 of the 9 funds have any history at all; the other 6 are known from one reading, the ledger’s. Across FY2011 to FY2025 that is about 38 of 135 possible fund-years.
+**Nine funds, fifteen years, and most of the grid is empty.** Only 3 of the 9 funds have any history at all; the other 6 are known from one reading, the ledger’s. Across FY2011 to FY2025 that is about 41 of 135 possible fund-years.
 
-**22 of those readings are proved, across 11 years — and that is a limit of OUR reading, not of the town’s record.** The annual reports print the whole trust and stabilization table every year, every fund, and roughly ten times as many fund rows are visible in our scans of them as this page publishes. A row appears here only where the page’s own arithmetic closes on it, because publishing one that does not would be worse than publishing nothing — so the empty cells are a queue of work, not an absence of evidence.
+**25 of those readings are proved, across 14 years — and that is a limit of OUR reading, not of the town’s record.** The annual reports print the whole trust and stabilization table every year, every fund, and roughly ten times as many fund rows are visible in our scans of them as this page publishes. A row appears here only where the page’s own arithmetic closes on it, because publishing one that does not would be worse than publishing nothing — so the empty cells are a queue of work, not an absence of evidence.
 
 Two things would empty that queue, and they are not alternatives. A better reader gets the figures the town has already printed. The MUNIS trust report for earlier years would get them from the accounting system instead, with revenue and expenditure beside every balance — which the annual report tables do not carry at all.
 

@@ -166,6 +166,43 @@ STREAMS = [
 ]
 
 
+def stale_datasets():
+    """Datasets older than the OCR they are derived from.
+
+    THE CHECK LOOP THIS FILE WAS MISSING. TJ, after pointing at a page and finding three
+    years I had just reported as absent: *"why did i have to say that to you for you to
+    find those.... i think you're missing some sort of check loop and keep ending early"*.
+
+    He was right and the failure was mechanical. The FY2011-FY2013 reports were re-OCR'd,
+    the new files adopted, and ONE extractor re-run -- the Treasurer's Cash reader, which
+    was the one I happened to be thinking about. extract_stabilization.py was not, so the
+    trust-table reader never saw the better OCR. I then read its stale output, reported
+    the general Stabilization Fund as missing for three years, and registered a gap in
+    money-gaps.csv for a fund whose balances were sitting on page 74 of the FY2011 report
+    with both identities holding.
+
+    An input moved and an output did not, which is the defect this whole repository is
+    organised against. check_generated.py would have caught it and nobody ran it.
+
+    So the state file says it now, on every run, by comparing modification times: any
+    dataset older than an OCR file it derives from is STALE, and a stale row's coverage
+    is a statement about the last run rather than about the archive.
+    """
+    ocr_newest = 0.0
+    for f in glob.glob(os.path.join(OCR, '*annual-town-report.tsv')):
+        ocr_newest = max(ocr_newest, os.path.getmtime(f))
+    if not ocr_newest:
+        return []
+    out = []
+    for name in ('stabilization-balances.csv', 'treasurers-cash.csv',
+                 'trust-fund-balances.csv', 'annual-report-pages.csv',
+                 'report-appropriations.csv', 'report-trust-funds.csv'):
+        p = os.path.join(ROOT, 'sources', 'data', name)
+        if os.path.exists(p) and os.path.getmtime(p) < ocr_newest - 1:
+            out.append(name)
+    return out
+
+
 def stream_rows():
     """One row per ingestion stream: how much has arrived, and what happens next."""
     import glob as _g
@@ -382,6 +419,13 @@ def main():
         print('wrote %s -- %d rows, one per fiscal year and table family'
           % (os.path.relpath(OUT, ROOT), len(rows)))
 
+    stale = stale_datasets()
+    if stale:
+        print('\nSTALE -- an OCR file is newer than these, so their counts '
+              'describe the last run rather than the archive:')
+        for n in stale:
+            print('   %s' % n)
+        print('   re-run the extractor that writes each, then this file.')
     print('\nINGESTION STREAMS')
     print('  %-22s %7s %8s  %s' % ('stream', 'units', 'rows', 'next action'))
     for st in stream_rows():

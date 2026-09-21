@@ -38,11 +38,16 @@ LATEST = 2025
 # archive's reach this is the year after the creating vote, and that is not a guess: each
 # is confirmed by the following year's table printing a beginning balance of $0.00.
 FIRST_BALANCE = {
-    # THE ONE REAL GAP, and it is the town's listing rather than our reading. FY2011,
-    # FY2012 and FY2013 print no `Bartholomew Stabilization Fund` row at all -- the
-    # general fund sits inside `Bartholomew Trust Funds`, an aggregate of every
-    # Bartholomew-held account. An aggregate is not a balance, and splitting one would be
-    # inventing a figure the page does not state.
+    # FY2011 IS REAL AND I SAID IT WAS NOT. The Treasurer's Cash pages for FY2011-FY2013
+    # do not itemise this fund -- it sits inside `Bartholomew Trust Funds` there -- and I
+    # reported the years missing on that basis. The TRUST TABLE prints all three, and had
+    # done since the rotated-page fix an hour earlier; I had not re-run the reader over
+    # the re-OCR'd files before answering. TJ pointed at FY2011 PDF page 74 and they were
+    # on it: $1,186,776.91, both identities holding.
+    #
+    # Rule 13c again, and this time against my own pipeline: a dataset with no rows for a
+    # year is a thing we built, not a fact about the town, and it is stale the moment its
+    # input changes.
     'Stabilization (general)': 2011,
     'Zoning Incentive': 2011,       # listed as `TD BankNorth Stabilization` until FY2014
     'Sewer Reserve Capacity': 2016,      # created FY2015; FY2015 ends at $0.00
