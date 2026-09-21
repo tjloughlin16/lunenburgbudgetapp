@@ -528,3 +528,128 @@ def repair_label(text, vocabulary, min_ratio=0.82):
     if ratio < min_ratio:
         return text, None, ratio
     return text, best, round(ratio, 3)
+
+
+# ---------------------------------------------------------------------------------
+# READING A SCANNED TABLE: the faults that cost a day, in one place
+#
+# Ten defects were found reading one table family, and NINE of them had nothing to do
+# with that family -- they were faults in how any scanned table gets read. Seven were
+# fixed inside a single extractor, where the next family cannot reach them. This section
+# is those fixes, moved to where they are shared, so the next family starts with them
+# already solved rather than rediscovering each one against a page.
+#
+# See notes/process/INGESTING-A-TABLE-FAMILY.md, step 4: if a fix is about how tables are
+# READ, it belongs here. If it is about what a thing is CALLED, it belongs in a naming
+# module. The question to ask is "would another table family hit this?"
+
+# A GROUP SEPARATOR MAY BE A COMMA OR A FULL STOP, because a scanner cannot tell them
+# apart and these pages are scans. `$1.017,532.36` is one million and seventeen thousand,
+# with the thousands separator read as a period -- and a pattern demanding commas does not
+# merely misread it, it does not SEE it, so the figure never becomes a row and its money
+# leaves the column silently. That cost a whole year on one page.
+SCANNED_MONEY = re.compile(
+    r'^\$?\s*-?\(?\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\)?$|^\$?\s*-?\(?\d+[.,]\d{2}\)?$')
+
+# `S` for `$`, and Cyrillic letters that render exactly like Latin ones. FY2023's page
+# gives `Bartholomew - ОРЕВ` where all four characters are Cyrillic (U+041E, U+0420,
+# U+0415, U+0412). It looks identical to OPEB, compares equal to nothing, and cost that
+# fund a year. Nothing here can be found by reading the output -- only by the codepoints.
+HOMOGLYPHS = str.maketrans({
+    'А': 'A', 'В': 'B', 'Е': 'E', 'К': 'K', 'М': 'M',
+    'Н': 'H', 'О': 'O', 'Р': 'P', 'С': 'C', 'Т': 'T',
+    'Х': 'X', 'а': 'a', 'е': 'e', 'о': 'o', 'р': 'p',
+    'с': 'c', 'у': 'y', 'х': 'x',
+})
+
+_WORDISH = re.compile(r'[A-Za-z]{3,}')
+
+
+def scanned_amount(text):
+    """A figure as printed, with the LAST separator taken as the decimal point.
+
+    The marks cannot be trusted by type -- a scanned comma is often a full stop -- but
+    they can be trusted by position: the last one separates the cents. That is how the
+    number is built, groups of three then two, and which character the scanner chose says
+    nothing about the money.
+    """
+    t = (text or '').translate(HOMOGLYPHS).replace('$', '').replace('S', '').strip()
+    neg = t.startswith('(') and t.endswith(')')
+    t = t.strip('()')
+    cut = max(t.rfind('.'), t.rfind(','))
+    if cut > 0:
+        t = t[:cut].replace('.', '').replace(',', '') + '.' + t[cut + 1:]
+    try:
+        v = float(t.replace(',', '').strip())
+    except ValueError:
+        return None
+    return -v if neg else v
+
+
+def is_row_label(text):
+    """A row label, or OCR noise wearing the shape of one.
+
+    TWO FAULTS THIS CATCHES, both of which cost whole years.
+
+    A stretch of a scanned page comes back as `tA tA tA` or `VA tA tA tA tA.` -- letter
+    pairs, no word -- and the amount beside the REAL label gets read a second time next to
+    that fragment. The column then carries the same figure twice and misses the page's own
+    total by exactly one copy of it, which looks precisely like the town excluding a row.
+    It is a duplicate.
+
+    And a floor of "more than five characters" discarded `OPEB`, an account holding $1.6M.
+    Its row never existed, so a page missed its total by that row's $368,833.19 and the
+    year went with it. Length is the wrong test; a real name carries a run of three
+    letters, and `tA`, `VA` and stray digits do not.
+    """
+    t = (text or '').translate(HOMOGLYPHS).strip()
+    return len(t) >= 3 and bool(_WORDISH.search(t))
+
+
+def row_band(boxes, key='y', default=0.006):
+    """Half this page's own row pitch, as the band that joins a label to its amount.
+
+    RULE 13b's SECOND RULE, which every extractor here was ignoring with a constant. A
+    band of 0.006 dropped a row whose label sat 0.00655 from its own figure -- out by
+    0.00055 -- and the page then missed its printed total by exactly that row. That page's
+    median pitch is 0.0262, so the band should have been 0.0131: twice what was applied.
+
+    A constant cannot be right for every page. These are scans at different sizes, and a
+    page set in a larger face needs a larger band; measured, it fits the page measuring it.
+    """
+    ys = sorted({round(b[key], 4) for b in boxes
+                 if SCANNED_MONEY.match((b.get('text') or '').strip())})
+    gaps = [b - a for a, b in zip(ys, ys[1:]) if b - a > 0.002]
+    if len(gaps) < 3:
+        return default
+    gaps.sort()
+    return max(default, min(gaps[len(gaps) // 2] / 2, 0.02))
+
+
+def join_wrapped(labels, band, key='y', xkey='x'):
+    """Join a label that wraps to its continuation, and keep the LOWER line's position.
+
+    `Bartholomew-Sewer Capital Reserve Stabili-` sits on one line and `zation` on the
+    next, with the figure aligned to the CONTINUATION rather than to the line carrying
+    most of the name. Pairing on the first line finds nothing, the row is dropped, and the
+    column misses its own total by that amount -- two funds lost a year to a hyphen.
+
+    The trailing hyphen is the signal and it is unambiguous: no account in fifteen years
+    of these pages ends in one.
+    """
+    out, used = [], set()
+    for lab in labels:
+        if id(lab) in used:
+            continue
+        text = (lab.get('text') or '').strip()
+        if text.endswith('-'):
+            below = [o for o in labels
+                     if 0 < lab[key] - o[key] < band * 3
+                     and abs(o[xkey] - lab[xkey]) < 0.05]
+            if below:
+                cont = max(below, key=lambda o: o[key])
+                used.add(id(cont))
+                lab = dict(lab, text=text[:-1] + (cont.get('text') or '').strip(),
+                           **{key: cont[key]})
+        out.append(lab)
+    return out
