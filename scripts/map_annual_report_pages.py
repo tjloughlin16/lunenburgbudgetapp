@@ -51,7 +51,14 @@ OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 OUT = os.path.join(ROOT, 'sources', 'data', 'annual-report-pages.csv')
 
-MONEY = re.compile(r'^\(?-?[$S]?-?[\d,]{1,15}[.,]\d{2}\)?$')
+# THE SHARED PATTERN, not a local one. This file had its own, and it required cents --
+# so every page of FY2025's Town Meeting warrant, which is nothing but `$50,000` and
+# `$75,000`, counted as having no figures at all and was never classified as financial.
+# The town writes round sums in the warrant and cents in the ledger tables, and a script
+# that knows only one habit is blind to the other.
+#
+# Every money pattern in this repository should be this one. See pdf_tables.py.
+MONEY = T.SCANNED_MONEY
 MIN_FIGURES = 15
 
 # Ordered: the first that matches wins, so the specific sits above the general.
@@ -73,10 +80,25 @@ SUBJECTS = [
      r'stabilization|trust\s+fund|held\s+by\s+other\s+banks|bartholomew'),
     ('special-revenue', r'special\s+revenue'),
     ('receivables', r'receivable'),
-    ('balance-sheet', r'combined\s+balance\s+sheet|all\s+fund\s+types'),
+    # FY2025 p25 is headed exactly `BALANCE SHEET` and was landing in `unknown`,
+    # because the pattern wanted the FY2011-FY2023 wording. The bare heading is
+    # the newer one.
+    ('balance-sheet',
+     r'combined\\s+balance\\s+sheet|all\\s+fund\\s+types|^\\s*balance\\s+sheet\\s*$'),
     ('tax-collection', r'collection\s+of\s+taxes|taxes\s*&\s*excise|tax\s+liens'),
     ('debt', r'debt\s+(repayment|schedule|limit)|outstanding\s+debt|bonds?\s+payable'),
-    ('appropriations', r'appropriat|budget\s+report|expenditures?\b'),
+    # THE TOWN CHANGED THE TABLE AFTER FY2023, which is why the newest two years
+    # looked like they had no budget in them at all. Through FY2023 the department
+    # figures are a summary section headed `GENERAL FUND APPROPRIATIONS / SUMMARY &
+    # CLASSIFICATION OF ACCOUNTS`; from FY2024 they are the warrant's `FY 2025 Omnibus
+    # Budget` table -- Line No. | Account | VOTED -- and the old heading appears nowhere.
+    #
+    # Same data, different table, different section of the report. `omnibus` is the word
+    # that finds the new one, and it has to sit HERE rather than in a new subject,
+    # because a reader asking what the town appropriated does not care which layout the
+    # year happened to use.
+    ('appropriations',
+     r'appropriat|budget\s+report|expenditures?\b|omnibus\s+budget'),
     ('payroll', r'gross\s+wages|payroll|salar(y|ies)'),
     ('valuation', r'valuation|assessed\s+value|new\s+growth'),
     ('elections', r'election|ballot|precinct'),

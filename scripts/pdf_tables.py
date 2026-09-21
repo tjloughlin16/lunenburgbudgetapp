@@ -548,8 +548,20 @@ def repair_label(text, vocabulary, min_ratio=0.82):
 # with the thousands separator read as a period -- and a pattern demanding commas does not
 # merely misread it, it does not SEE it, so the figure never becomes a row and its money
 # leaves the column silently. That cost a whole year on one page.
+# AND CENTS ARE NOT REQUIRED WHEN A DOLLAR SIGN IS PRESENT. Requiring them reported
+# ZERO figures on every page of FY2025's Town Meeting warrant, which is nothing but
+# amounts -- `$50,000`, `$75,000`, `$1,016,722.36`. The town writes round sums without
+# cents in the warrant and with cents in the omnibus table, and a pattern that knows only
+# one of those habits sees a page of money as a page of prose.
+#
+# The `$` is what makes it safe: a bare `2025` is a year and a bare `50,000` could be a
+# population, but `$50,000` is unambiguous. Cents-bearing figures still match with or
+# without the sign, because that is the form the ledger tables print.
 SCANNED_MONEY = re.compile(
-    r'^\$?\s*-?\(?\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\)?$|^\$?\s*-?\(?\d+[.,]\d{2}\)?$')
+    r'^\$?\s*-?\(?\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\)?$'      # 1,234.56 / 1.234,56
+    r'|^\$?\s*-?\(?\d+[.,]\d{2}\)?$'                        # 1234.56
+    r'|^\$\s*-?\(?\d{1,3}(?:,\d{3})+\)?$'                   # $50,000
+    r'|^\$\s*-?\(?\d+\)?$')                                 # $500
 
 # `S` for `$`, and Cyrillic letters that render exactly like Latin ones. FY2023's page
 # gives `Bartholomew - ОРЕВ` where all four characters are Cyrillic (U+041E, U+0420,
@@ -576,11 +588,18 @@ def scanned_amount(text):
     t = (text or '').translate(HOMOGLYPHS).replace('$', '').replace('S', '').strip()
     neg = t.startswith('(') and t.endswith(')')
     t = t.strip('()')
+    # WHICH SEPARATOR IS THE DECIMAL POINT IS DECIDED BY WHAT FOLLOWS IT, not by which
+    # character it is and not by being last. A decimal point is followed by exactly TWO
+    # digits; a group separator by exactly three. Taking the last mark as the point read
+    # `$50,000` as fifty dollars -- a thousandfold error, silent, in a figure the town
+    # prints all through its warrant.
     cut = max(t.rfind('.'), t.rfind(','))
-    if cut > 0:
+    if cut > 0 and len(t) - cut - 1 == 2:
         t = t[:cut].replace('.', '').replace(',', '') + '.' + t[cut + 1:]
+    else:
+        t = t.replace('.', '').replace(',', '')
     try:
-        v = float(t.replace(',', '').strip())
+        v = float(t.strip())
     except ValueError:
         return None
     return -v if neg else v

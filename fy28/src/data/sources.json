@@ -1773,7 +1773,7 @@
      "stars": 2,
      "what": "One row per fiscal year and table family, and a step from 1 to 7: the PDF held, OCR run, text present, tables located, extracted to CSV, loaded to the database, used in a report. Every cell is derived from the artefact it describes, so it cannot go stale the way a hand-kept list does. It exists because the same question — which years do we have for this fund — was answered three different ways from three different artefacts in one afternoon, each true about the artefact and false about the archive.",
      "kind": "Data",
-     "bytes": 14548,
+     "bytes": 14730,
      "url": "/docs/data/pipeline-state.csv",
      "count": 225,
      "unit": "rows",
@@ -2034,9 +2034,9 @@
      "stars": 3,
      "what": "418 pages across fifteen annual town reports that carry a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. 209 read, 195 unread, 14 whose OCR came out upside down and which are a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 128482,
+     "bytes": 136495,
      "url": "/docs/data/annual-report-pages.csv",
-     "count": 422,
+     "count": 474,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-pages.csv"
     },
@@ -2562,7 +2562,7 @@
      "stars": 2,
      "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
      "kind": "Data",
-     "bytes": 3558,
+     "bytes": 3540,
      "url": "/docs/data/ingest-plan.csv",
      "count": 10,
      "unit": "rows",
@@ -16094,7 +16094,7 @@
  "totals": {
   "documents": 1395,
   "groups": 22,
-  "bytes": 2172981150,
+  "bytes": 2172989327,
   "loadBearing": 140
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
