@@ -75,7 +75,7 @@ Straight from the town’s general ledger: what each account held at the start o
 
 **The general/restricted split is ours**, read off each fund’s name and account. The ledger prints a balance and never says what may be spent on what.
 
-**One thing about this document is not established: how it reached us.** It prints its own program (`glytdbud`), the date it was generated, and the Town Accountant’s name, which is strong evidence about what it IS — and no request, email or meeting packet is recorded for how we came to have it. That is written down rather than papered over, and it is the one reason to ask the Town for this report directly rather than to rely on this copy.
+**Where this came from.** A public records request made by Matt Nazarenko to the Town Manager, answered by the Town, and sent to this project by him directly. The report prints its own program (`glytdbud`), the moment it was generated — 11 August 2026 at 11:59 — and the Town Accountant’s name. What is bounded rather than known is the date the request was filed: before 14 August 2026, and before the reports were produced. We are one remove from the town, so the town’s response message is not in this archive, and that matters for one reason — the period-12 package came with the Town Manager warning that figures were “likely to continue to adjust as we continue the year-end reconciliation process”, and nothing here says whether a similar note accompanied these.
 
 **Nothing has come out of any of them so far this year.** Every expenditure column is empty at 31 March 2026 — a fact about nine months, not about whether these funds get spent. They do: the Health Insurance fund is a third of a million dollars lighter than the article that created it.
 

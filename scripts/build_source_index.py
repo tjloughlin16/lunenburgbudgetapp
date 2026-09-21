@@ -1385,21 +1385,22 @@ GROUPS = [
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
             ('town-ledgers/expenses/PROVENANCE-fy2026-p09.md',
-             'Provenance for the FY26 period 9 ledgers \u2014 and the gap in it', 3,
+             'Provenance for the FY26 period 9 ledgers', 3,
              'Written by us. What the reports say about themselves, quoted from their own '
              'printed footer: program ID glytdbud, generated 08/11/2026 11:59, by the Town '
              'Accountant whose name the report prints, year/period 2026/9, and the general '
              'fund run made with `Print totals only: Y`, which is why it carries 67 '
-             'department rollups and no accounts. And then the part that matters: NOTHING '
-             'in this archive records how these files were obtained. They are not on the '
-             'town\u2019s website and no email, records request or meeting packet is '
-             'recorded for them. Rule 12 says a document that did not come off a website '
-             'still has an address; this one\u2019s is missing, and the note records the '
-             'gap rather than inventing a route.'),
+             'department rollups and no accounts. And where they came from: a public '
+             'records request by Matt Nazarenko to the Town Manager, answered before 14 '
+             'August 2026 and sent to this project directly. Two things stay bounded '
+             'rather than known -- the date the request was filed, and whether the town '
+             'sent a caveat with the figures, because we are one remove from the town '
+             'and its response message is not in this archive.'),
             ('town-ledgers/revenue/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 revenue reports', 1,
              'A pointer: these arrived in the same package as the expenditure reports, and '
-             'how that package was obtained is not recorded. The full note is in '
+             'obtained by a public records request from Matt Nazarenko to the Town '
+             'Manager. The full note is in '
              'town-ledgers/expenses/PROVENANCE-fy2026-p09.md.'),
             ('town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 fund balance reports', 1,

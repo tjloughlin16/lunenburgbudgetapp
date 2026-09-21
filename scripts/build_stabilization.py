@@ -500,12 +500,16 @@ def render(rows):
          usd(total)))
     w('**The general/restricted split is ours**, read off each fund’s name and '
       'account. The ledger prints a balance and never says what may be spent on what.\n')
-    w('**One thing about this document is not established: how it reached us.** It '
-      'prints its own program (`glytdbud`), the date it was generated, and the Town '
-      'Accountant’s name, which is strong evidence about what it IS — and no '
-      'request, email or meeting packet is recorded for how we came to have it. That is '
-      'written down rather than papered over, and it is the one reason to ask the Town '
-      'for this report directly rather than to rely on this copy.\n')
+    w('**Where this came from.** A public records request made by Matt Nazarenko to the '
+      'Town Manager, answered by the Town, and sent to this project by him directly. The '
+      'report prints its own program (`glytdbud`), the moment it was generated — 11 '
+      'August 2026 at 11:59 — and the Town Accountant’s name. What is bounded '
+      'rather than known is the date the request was filed: before 14 August 2026, and '
+      'before the reports were produced. We are one remove from the town, so the town’s '
+      'response message is not in this archive, and that matters for one reason — the '
+      'period-12 package came with the Town Manager warning that figures were '
+      '“likely to continue to adjust as we continue the year-end reconciliation '
+      'process”, and nothing here says whether a similar note accompanied these.\n')
     w('**Nothing has come out of any of them so far this year.** Every expenditure '
       'column is empty at %s — a fact about nine months, not about whether these '
       'funds get spent. They do: the Health Insurance fund is a third of a million '
@@ -870,13 +874,13 @@ def _sources():
             note='The annual town report. The trust and stabilization balances are a '
                  'photographed table inside it, read by scripts/read_trust_table.py and '
                  'published only where the page’s own arithmetic closes.'))
-    # THE LEDGER, AND THE HOLE IN ITS ADDRESS. This is now where the balances on this
-    # page come from, so the one thing not established about it has to travel with it:
-    # rule 12 says a document that did not come off a website still has an address -- a
-    # request and its date, an email, a packet -- and nothing in this archive records how
-    # the FY2026 period-9 package arrived. What the report says about ITSELF is strong
-    # (program glytdbud, generated 08/11/2026, run by the Town Accountant, year/period
-    # 2026/9), and that is evidence about the document rather than about how we got it.
+    # THE LEDGER, AND ITS ADDRESS. This is where the balances on this page come from, so
+    # rule 12's three things travel with it. The route was a recorded GAP until TJ
+    # supplied it: a public records request by Matt Nazarenko to the Town Manager,
+    # answered before 14 August 2026, sent to this project directly. Two parts of it are
+    # worth keeping in the published note rather than only in the provenance file -- the
+    # request date is BOUNDED rather than known, and we are one remove from the town, so
+    # any caveat the town sent with the figures is not in this archive.
     out.append(dict(
         path='sources/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx',
         sha256='', bytes=0, url='',
@@ -885,10 +889,11 @@ def _sources():
         publisher='Town of Lunenburg — Town Accountant',
         note='The town’s MUNIS trust and agency report at 31 March 2026: every fund’s '
              'beginning balance, revenue, expenditure and remaining balance, with the '
-             'system’s own subtotals. HOW IT REACHED US IS NOT RECORDED — it came in '
-             'the FY2026 period-9 package and no request, email or packet is on file for '
-             'it; see sources/town-ledgers/expenses/PROVENANCE-fy2026-p09.md, which '
-             'records the gap rather than inventing a route.'))
+             'system’s own subtotals. Obtained by a public records request from Matt '
+             'Nazarenko to the Town Manager, answered before 14 August 2026 and sent to '
+             'this project directly; the request is the address, and we are one remove '
+             'from the town. See '
+             'sources/town-ledgers/expenses/PROVENANCE-fy2026-p09.md.'))
     out.append(dict(
         path='sources/data/town-meeting-votes.csv', sha256='', bytes=0, url='',
         docs_url='/data/town-meeting-votes.csv', filename='town-meeting-votes.csv',
