@@ -500,6 +500,12 @@ def render(rows):
          usd(total)))
     w('**The general/restricted split is ours**, read off each fund’s name and '
       'account. The ledger prints a balance and never says what may be spent on what.\n')
+    w('**One thing about this document is not established: how it reached us.** It '
+      'prints its own program (`glytdbud`), the date it was generated, and the Town '
+      'Accountant’s name, which is strong evidence about what it IS — and no '
+      'request, email or meeting packet is recorded for how we came to have it. That is '
+      'written down rather than papered over, and it is the one reason to ask the Town '
+      'for this report directly rather than to rely on this copy.\n')
     w('**Nothing has come out of any of them so far this year.** Every expenditure '
       'column is empty at %s — a fact about nine months, not about whether these '
       'funds get spent. They do: the Health Insurance fund is a third of a million '
@@ -864,6 +870,25 @@ def _sources():
             note='The annual town report. The trust and stabilization balances are a '
                  'photographed table inside it, read by scripts/read_trust_table.py and '
                  'published only where the page’s own arithmetic closes.'))
+    # THE LEDGER, AND THE HOLE IN ITS ADDRESS. This is now where the balances on this
+    # page come from, so the one thing not established about it has to travel with it:
+    # rule 12 says a document that did not come off a website still has an address -- a
+    # request and its date, an email, a packet -- and nothing in this archive records how
+    # the FY2026 period-9 package arrived. What the report says about ITSELF is strong
+    # (program glytdbud, generated 08/11/2026, run by the Town Accountant, year/period
+    # 2026/9), and that is evidence about the document rather than about how we got it.
+    out.append(dict(
+        path='sources/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx',
+        sha256='', bytes=0, url='',
+        docs_url='/docs/town-ledgers/fund-balances/trust-agency-fy2026-p09.xlsx',
+        filename='trust-agency-fy2026-p09.xlsx', table='trust_agency_balances',
+        publisher='Town of Lunenburg — Town Accountant',
+        note='The town’s MUNIS trust and agency report at 31 March 2026: every fund’s '
+             'beginning balance, revenue, expenditure and remaining balance, with the '
+             'system’s own subtotals. HOW IT REACHED US IS NOT RECORDED — it came in '
+             'the FY2026 period-9 package and no request, email or packet is on file for '
+             'it; see sources/town-ledgers/expenses/PROVENANCE-fy2026-p09.md, which '
+             'records the gap rather than inventing a route.'))
     out.append(dict(
         path='sources/data/town-meeting-votes.csv', sha256='', bytes=0, url='',
         docs_url='/data/town-meeting-votes.csv', filename='town-meeting-votes.csv',

@@ -75,6 +75,8 @@ Straight from the town’s general ledger: what each account held at the start o
 
 **The general/restricted split is ours**, read off each fund’s name and account. The ledger prints a balance and never says what may be spent on what.
 
+**One thing about this document is not established: how it reached us.** It prints its own program (`glytdbud`), the date it was generated, and the Town Accountant’s name, which is strong evidence about what it IS — and no request, email or meeting packet is recorded for how we came to have it. That is written down rather than papered over, and it is the one reason to ask the Town for this report directly rather than to rely on this copy.
+
 **Nothing has come out of any of them so far this year.** Every expenditure column is empty at 31 March 2026 — a fact about nine months, not about whether these funds get spent. They do: the Health Insurance fund is a third of a million dollars lighter than the article that created it.
 
 ---
