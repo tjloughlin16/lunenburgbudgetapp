@@ -1644,7 +1644,7 @@ def report_year_basis(db, enrol):
         # bounded by a full stop, so joining cannot make it match across two sentences.
         pages = collections.defaultdict(list)
         with open(path, encoding='utf-8', errors='replace') as fh:
-            for row in csv.DictReader(fh, delimiter='\t'):
+            for row in csv.DictReader(fh, delimiter='\t', quoting=csv.QUOTE_NONE):
                 pages[row.get('page')].append((row.get('text') or '').strip())
         for text in (' '.join(t for t in v if t) for v in pages.values()):
             for m in FALL_SENTENCE.finditer(text):

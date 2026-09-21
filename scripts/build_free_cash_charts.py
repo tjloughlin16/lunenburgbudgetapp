@@ -260,7 +260,7 @@ def _read_ocr_page(path, page):
     """Every amount on one OCR'd page, paired to the label tokens on its own row."""
     got = {}
     with open(os.path.join(ROOT, path), encoding='utf-8') as fh:
-        rd = csv.reader(fh, delimiter='\t')
+        rd = csv.reader(fh, delimiter='\t', quoting=csv.QUOTE_NONE)
         next(rd)
         toks = [dict(x=float(r[1]), y=float(r[2]), text=r[6]) for r in rd if r[0] == page]
     if not toks:

@@ -102,7 +102,7 @@ def scan(path):
     pages = collections.defaultdict(lambda: dict(
         funds=0, accounts=0, figs=0, rev=0, text=[]))
     with open(path, encoding='utf-8') as fh:
-        for r in csv.DictReader(fh, delimiter='\t'):
+        for r in csv.DictReader(fh, delimiter='\t', quoting=csv.QUOTE_NONE):
             t = (r['text'] or '').strip()
             if not t:
                 continue
