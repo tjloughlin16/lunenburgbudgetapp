@@ -237,8 +237,24 @@ export function Analysis() {
           {ownsShort ? null : (
             <ShortVersion><div className="report-body">{split.short}</div></ShortVersion>
           )}
-          <FullVersion what="the full analysis">
-            <div className="report-body mt-6">{split.restHead}</div>
+          {/* THE CHARTS STAY ABOVE THE FOLD. `restHead` is the document's first section
+              after its short version, and on every analysis converted so far that is the
+              charts. It used to open the FULL VERSION, which put every chart behind
+              "Read the full analysis" — TJ, looking at the stabilization page: *"where
+              did the line chart go on the repor?! I cant find it"*. It was at character
+              30,280 of the rendered page against a fold at 28,783.
+
+              That was a side effect of going model-driven rather than anyone's decision:
+              the stat row and the conclusion cards took the top, and everything the
+              markdown carried moved down a level with them. A chart is not supporting
+              material on these pages — it is the finding in the form most readers will
+              take it in, and rule 7b puts the organised categorical data in the second
+              movement, not behind a disclosure.
+
+              So the order above the fold is: metrics, grain, conclusions, charts. The
+              fold then opens with "The other findings", which is what it was always for. */}
+          <div className="report-body mt-6">{split.restHead}</div>
+          <FullVersion what="the rest of the analysis">
             {moreRows.length > 0 ? (
               <>
                 <H2 id="more-findings">The other findings</H2>

@@ -215,11 +215,57 @@ def main():
           % (os.path.relpath(OUT, ROOT), len(body), years[0], years[-1]))
     stab = [r for r in body if re.search(r'stabiliz', r['held_as'], re.I)]
     print('  %d of them name a stabilization fund' % len(stab))
+    # A REFUSAL IS A FINDING AND IT HAS TO OUTLIVE THE RUN. These lines were printed to
+    # stdout and nothing kept them, so five years were being read and dropped on every
+    # run, invisibly -- and when asked which years we had, the honest answer "read but
+    # not proven" was not available anywhere. Now it is written down beside the data, and
+    # build_pipeline_state.py reads it into the `blocked` column.
+    #
+    # The distinction it preserves is the one that decides the work: a year nobody has
+    # written an extractor for needs an extractor, and a year whose column missed its own
+    # printed total by a stated amount needs that amount chased. They look identical in
+    # any count of rows.
+    blockers = os.path.join(ROOT, 'sources', 'data', 'extraction-blocked.csv')
+    keep = [r for r in _blockers(blockers) if r['extractor'] != 'treasurers-cash']
+    for r in report:
+        m = re.match(r'FY(\d{4}) p(\d+) (\S+): rows sum to ([\d.]+), page says (.+)', r)
+        if not m:
+            continue
+        fy, page, col, ours, theirs = m.groups()
+        try:
+            diff = '%.2f' % (float(ours) - float(theirs))
+        except ValueError:
+            diff = ''
+        keep.append(dict(
+            extractor='treasurers-cash', fy=fy, page=page, what=col,
+            reason='column does not foot to the page\u2019s own printed total',
+            ours=ours, theirs=theirs, difference=diff))
+    _write_blockers(blockers, keep)
     if report:
-        print('  columns that did NOT foot, and were dropped:')
+        print('  columns that did NOT foot, and were dropped '
+              '(recorded in sources/data/extraction-blocked.csv):')
         for r in report:
             print('    ' + r)
     return 0
+
+
+BLOCK_FIELDS = ['extractor', 'fy', 'page', 'what', 'reason', 'ours', 'theirs',
+                'difference']
+
+
+def _blockers(path):
+    if not os.path.exists(path):
+        return []
+    return list(csv.DictReader(open(path, encoding='utf-8')))
+
+
+def _write_blockers(path, rows):
+    rows.sort(key=lambda r: (r['extractor'], str(r['fy']), str(r['page']), r['what']))
+    with open(path, 'w', encoding='utf-8', newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=BLOCK_FIELDS, lineterminator='\n')
+        w.writeheader()
+        for r in rows:
+            w.writerow({k: r.get(k, '') for k in BLOCK_FIELDS})
 
 
 if __name__ == '__main__':

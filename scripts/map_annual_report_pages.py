@@ -56,9 +56,21 @@ MIN_FIGURES = 15
 
 # Ordered: the first that matches wins, so the specific sits above the general.
 SUBJECTS = [
+    # TREASURER'S CASH FIRST, and the order is the whole point of this list.
+    #
+    # Every Treasurer's Cash page lists the stabilization funds by name -- `Bartholomew
+    # Stabilization Fund`, `TD BankNorth Zoning Stabilization` -- so with
+    # `trust-and-stabilization` above it, every one of them matched that instead and the
+    # queue said the town published four cash pages in fifteen years. It publishes one
+    # almost every year: FY2011, FY2013-FY2025, found by searching the OCR for the
+    # heading directly.
+    #
+    # The rule the ordering encodes: the more SPECIFIC heading wins. "Treasurer's Cash
+    # as of 6/30/2024" names one table; "stabilization" is a word that appears on any
+    # page listing a fund, including this one.
+    ('treasurers-cash', r"treasurer.{0,3}s\s+cash"),
     ('trust-and-stabilization',
      r'stabilization|trust\s+fund|held\s+by\s+other\s+banks|bartholomew'),
-    ('treasurers-cash', r"treasurer.{0,3}s\s+cash"),
     ('special-revenue', r'special\s+revenue'),
     ('receivables', r'receivable'),
     ('balance-sheet', r'combined\s+balance\s+sheet|all\s+fund\s+types'),

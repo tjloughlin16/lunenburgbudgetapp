@@ -322,6 +322,84 @@ def flows():
     return out
 
 
+# THE THREE SOURCES THAT FILL THE GAPS THE TRUST TABLES LEAVE, in one place.
+#
+# This existed twice. render() joined the annual report's per-account listing, the
+# Treasurer's Cash page and the MUNIS ledger onto the proven rows; payload() built its
+# series from the proven rows ALONE and joined nothing. So the chart and its caption
+# carried the general Stabilization Fund to FY2025 at $3,147,178.96 while the payload
+# the page renders its stat row and conclusions from stopped at FY2021 -- and when TJ
+# asked which years we had, the answer came off the payload and was wrong by four years
+# of data this archive already held and had checked.
+#
+# One model, two code paths over it, and the second silently poorer than the first. That
+# is the defect shape CLAUDE.md names: something derived was written down twice, one copy
+# moved, and nothing connected them. So both callers read this function now.
+#
+# Keyed on the ACCOUNT NUMBER: the ledger calls 8129 `playground fund` and the annual
+# report calls it `ZONING INCENTIVE STABILIZATION`, and the number is the only identity
+# both documents share.
+LEDGER_SERIES = {'8124': 'Stabilization',
+                 '8136': 'Vehicle/Equipment Stabilization',
+                 '8129': 'Zoning Incentive Stabilization'}
+
+CASH_FOR = ((re.compile(r'bartholomew\s*-?\s*stabilization\s+fund', re.I),
+             'Stabilization'),
+            (re.compile(r'vehicle/equipment\s+stabilization', re.I),
+             'Vehicle/Equipment Stabilization'),
+            (re.compile(r'zoning\s+(incentive\s+)?stabilization', re.I),
+             'Zoning Incentive Stabilization'))
+
+
+def extra_readings(ledger_rows):
+    """Every balance for a stabilization fund that is NOT a proven trust-table row.
+
+    In the order they are allowed to fill a gap, weakest last:
+
+      the listing   the annual report's own per-account table. A published balance, and
+                    every figure in it that can be checked against the ledger has agreed
+                    to the cent.
+      the ledger    MUNIS. The accounting system's own printout -- rule 13a -- and its
+                    opening balance at 2025-07-01 IS the FY2025 closing balance.
+      the cash page the Treasurer's Cash page. CASH HELD BY A CUSTODIAN, not a fund
+                    balance. For these funds the two have matched to the cent wherever
+                    both exist, but that is a fact about funds held whole in one place
+                    rather than a rule, so it fills a gap and never overrides anything.
+
+    Nothing here invents a fund: a reading is only offered for a label the proven rows
+    already carry, which the caller enforces.
+    """
+    out = []
+    listing = os.path.join(ROOT, 'sources', 'data', 'trust-fund-balances.csv')
+    if os.path.exists(listing):
+        for r in csv.DictReader(open(listing, encoding='utf-8')):
+            label = LEDGER_SERIES.get(r['account'])
+            if label and r.get('balance'):
+                out.append(dict(label=label, fy=str(r['fy']), amount=float(r['balance']),
+                                code=r['account'], page=r['page'],
+                                document=r['document'],
+                                basis='the annual report\u2019s trust fund balance listing'))
+    for r in ledger_rows or []:
+        label = LEDGER_SERIES.get(r['code'])
+        if label:
+            out.append(dict(label=label, fy=str(LEDGER_FY - 1), amount=float(r['amount']),
+                            code=r['code'], page='',
+                            document='sources/town-ledgers/fund-balances/'
+                                     'trust-agency-fy2026-p09.xlsx',
+                            basis='the town\u2019s general ledger'))
+    cash = os.path.join(ROOT, 'sources', 'data', 'treasurers-cash.csv')
+    if os.path.exists(cash):
+        for r in csv.DictReader(open(cash, encoding='utf-8')):
+            label = next((l for pat, l in CASH_FOR
+                          if pat.search(r['held_as'] or '')), None)
+            if label:
+                out.append(dict(label=label, fy=str(r['fy']), amount=float(r['amount']),
+                                code='', page=r['page'], document=r['document'],
+                                basis='the Treasurer\u2019s Cash page (cash held, not a '
+                                      'fund balance)'))
+    return out
+
+
 def render(rows):
     total = sum(r['amount'] for r in rows)
     gen = [r for r in rows if r['code'] in GENERAL]
@@ -763,61 +841,16 @@ def render(rows):
         # annual report calls it `ZONING INCENTIVE STABILIZATION`, and the number is the
         # only identity both documents share. Only funds that already have a series get a
         # point, so nothing new appears and nothing is invented.
-        LEDGER_SERIES = {'8124': 'Stabilization',
-                         '8136': 'Vehicle/Equipment Stabilization',
-                         '8129': 'Zoning Incentive Stabilization'}
-        # The annual report's own per-account listing, for the years that print it. It
-        # reaches funds and years the other-banks tables never did, and every figure in
-        # it that can be checked against the ledger has agreed to the cent.
-        listing = os.path.join(ROOT, 'sources', 'data', 'trust-fund-balances.csv')
-        if os.path.exists(listing):
-            for r in csv.DictReader(open(listing, encoding='utf-8')):
-                label = LEDGER_SERIES.get(r['account'])
-                if not label or label not in series or not r.get('balance'):
-                    continue
-                if any(x['fy'] == r['fy'] for x in series[label]):
-                    continue
-                series[label].append(dict(
-                    fy=r['fy'], code=r['account'], name=label,
-                    ending_cash=r['balance'], ending_market='',
-                    basis='the annual report\u2019s trust fund balance listing',
-                    page=r['page'], document=r['document']))
-        # The Treasurer's Cash page, last and only where nothing else reaches. It is cash
-        # held by a custodian rather than a fund balance -- for these funds the two have
-        # matched to the cent wherever both exist, but that is a fact about funds held
-        # whole in one place, not a rule, so it fills gaps and never overrides a balance.
-        cash = os.path.join(ROOT, 'sources', 'data', 'treasurers-cash.csv')
-        CASH_FOR = ((re.compile(r'bartholomew\s+stabilization\s+fund', re.I),
-                     'Stabilization'),
-                    (re.compile(r'vehicle/equipment\s+stabilization', re.I),
-                     'Vehicle/Equipment Stabilization'),
-                    (re.compile(r'zoning\s+(incentive\s+)?stabilization', re.I),
-                     'Zoning Incentive Stabilization'))
-        if os.path.exists(cash):
-            for r in csv.DictReader(open(cash, encoding='utf-8')):
-                label = next((l for pat, l in CASH_FOR
-                              if pat.search(r['held_as'] or '')), None)
-                if not label or label not in series:
-                    continue
-                if any(x['fy'] == r['fy'] for x in series[label]):
-                    continue
-                series[label].append(dict(
-                    fy=r['fy'], code='', name=label, ending_cash=r['amount'],
-                    ending_market='',
-                    basis='the Treasurer\u2019s Cash page (cash held, not a fund balance)',
-                    page=r['page'], document=r['document']))
-        for r in rows:
-            label = LEDGER_SERIES.get(r['code'])
-            if not label or label not in series:
+        # THE GAP-FILLERS, from extra_readings() so payload() cannot drift from this.
+        for x in extra_readings(rows):
+            if x['label'] not in series:
                 continue
-            fy = str(LEDGER_FY - 1)
-            if any(x['fy'] == fy for x in series[label]):
+            if any(str(pt['fy']) == x['fy'] for pt in series[x['label']]):
                 continue
-            series[label].append(dict(
-                fy=fy, code=r['code'], name=label, ending_cash='%.2f' % r['amount'],
-                ending_market='', basis='the town\u2019s general ledger',
-                page='', document='sources/town-ledgers/fund-balances/'
-                                  'trust-agency-fy2026-p09.xlsx'))
+            series[x['label']].append(dict(
+                fy=x['fy'], code=x['code'], name=x['label'],
+                ending_cash='%.2f' % x['amount'], ending_market='',
+                basis=x['basis'], page=x['page'], document=x['document']))
         runs = {k: sorted(v, key=lambda r: int(r['fy']))
                 for k, v in series.items() if len(v) >= 3}
         # THE CHARTS GO HERE, ABOVE THE FIGURES THEY DRAW. Three of them, and each
@@ -1166,6 +1199,18 @@ def payload(rows):
             dict(fy=int(r['fy']), ending_cash=float(r['ending_cash']),
                  ending_market=float(r['ending_market']) if r['ending_market'] else None,
                  basis=r['basis'], page=int(r['page'])))
+    # THE SAME GAP-FILLERS THE MARKDOWN AND THE CHARTS USE. Without this the payload
+    # carried seven points to FY2021 while the chart beside it carried nine to FY2025 --
+    # see extra_readings(). The page renders its stat row and its conclusions from HERE,
+    # so the poorer copy was the one a reader was told about.
+    for x in extra_readings(rows):
+        if x['label'] not in series:
+            continue
+        if any(pt['fy'] == int(x['fy']) for pt in series[x['label']]):
+            continue
+        series[x['label']].append(dict(
+            fy=int(x['fy']), ending_cash=x['amount'], ending_market=None,
+            basis=x['basis'], page=int(x['page']) if str(x['page']).isdigit() else 0))
     series = {k: sorted(v, key=lambda x: x['fy']) for k, v in series.items()
               if len(v) >= 3}
 

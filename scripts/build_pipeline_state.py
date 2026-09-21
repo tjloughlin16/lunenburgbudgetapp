@@ -1,0 +1,278 @@
+"""Where every fiscal year stands, step by step, in the annual-report pipeline.
+
+    python3 scripts/build_pipeline_state.py
+    python3 scripts/build_pipeline_state.py --check
+    python3 scripts/build_pipeline_state.py --subject trust-and-stabilization
+
+Writes `sources/data/pipeline-state.csv`, one row per (fiscal year, table family).
+
+WHY THIS EXISTS, IN TJ'S WORDS, 21 September 2026:
+
+    "i think you need a way to manage 'state' better to be more accurate. there's a clear
+    process. 1) We found and downloaded the annual report PDF 2) we OCRd them 3) we have
+    hte OCRd text 4) we need to find the correct tables and info in those 5) we need to
+    process the data into csv/table format 6) we need to put that data into our database
+    and 7) we need to use that data to analyze and create the report. you need a state
+    file that manages every year to know where we are for each of those steps for every
+    FY"
+
+He is right, and the reason he had to say it is worth recording. Asked which years the
+general Stabilization Fund had, I answered three times and was wrong twice -- once from
+the published payload (which had 7 points while the chart beside it had 9), once from the
+trust-table CSV (which is one of four sources), and only the third time from the data.
+Each answer was a true statement about an artefact and a false statement about the
+archive. There was no single place that said where a year actually stood, so every
+question re-derived it from whatever was nearest to hand.
+
+THE SEVEN STEPS, AND WHAT EACH IS MEASURED BY. Nothing here is hand-maintained: a state
+file somebody updates is a second thing to keep in sync, and this repository's most common
+defect is exactly that -- something derived written down, the thing it derived from moved,
+nothing connecting the two. Every cell is computed from the artefact it describes.
+
+  1 pdf        the report is on disk, under the name the manifest carries
+  2 ocr        an OCR TSV exists for it
+  3 text       that TSV actually holds boxes for this year (an empty file is not a read)
+  4 located    pages carrying this table family have been identified
+  5 extracted  rows for this year exist in the family's dataset CSV
+  6 database   those rows reached lunenburg.db
+  7 published  a payload or analysis uses them
+
+`blocked` is the column that earns the file. A year can sit at step 4 for two completely
+different reasons -- nobody has written the extractor, or the extractor read the page and
+REFUSED to publish because the page's own total did not foot -- and those need opposite
+work. The second is not a gap in the archive, it is a gap with a diagnosis attached, and
+it was invisible before this: five Treasurer's Cash columns were being read and dropped
+every run, each printing its discrepancy to stdout where nothing kept it.
+"""
+import argparse
+import collections
+import csv
+import glob
+import io
+import os
+import re
+import sqlite3
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+
+OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
+PDFS = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs')
+PAGES = os.path.join(ROOT, 'sources', 'data', 'annual-report-pages.csv')
+DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
+OUT = os.path.join(ROOT, 'sources', 'data', 'pipeline-state.csv')
+
+FIELDS = ['fy', 'subject', 'pdf', 'ocr', 'text', 'located', 'extracted', 'database',
+          'published', 'pages', 'rows', 'blocked']
+
+# Each family: the dataset CSV it lands in, the column naming its fiscal year, the
+# database table, and the payload that publishes it. A family with no extractor yet says
+# so by having no dataset -- which is itself the honest state, not a blank.
+FAMILIES = {
+    'trust-and-stabilization': dict(
+        csv='stabilization-balances.csv', fy='fy',
+        table='report_trust_funds',
+        payload='stabilization-funds.json'),
+    'treasurers-cash': dict(
+        csv='treasurers-cash.csv', fy='fy', table=None,
+        payload='stabilization-funds.json'),
+    'special-revenue': dict(csv=None, fy='fy', table=None, payload=None),
+    'balance-sheet': dict(csv=None, fy='fy', table='report_balance_sheet', payload=None),
+    'receivables': dict(csv=None, fy='fy', table=None, payload=None),
+    'tax-collection': dict(csv=None, fy='fy', table=None, payload=None),
+    'payroll': dict(csv=None, fy='fy', table='report_payroll', payload=None),
+    'appropriations': dict(csv=None, fy='fy', table='report_appropriations',
+                           payload=None),
+}
+
+
+def years():
+    out = {}
+    for f in sorted(glob.glob(os.path.join(OCR, '*annual-town-report.tsv'))):
+        m = re.search(r'fy-(\d{4})-', f)
+        if m:
+            out[int(m.group(1))] = f
+    return out
+
+
+def page_map():
+    """{(fy, subject): [pages]} and which of them any dataset has cited."""
+    found = collections.defaultdict(list)
+    read = collections.defaultdict(list)
+    if not os.path.exists(PAGES):
+        return found, read
+    for r in csv.DictReader(open(PAGES, encoding='utf-8')):
+        key = (int(r['fy']), r['subject'])
+        found[key].append(r['page'])
+        if r['state'] == 'read':
+            read[key].append(r['page'])
+    return found, read
+
+
+def dataset_years(name, fycol):
+    out = collections.Counter()
+    if not name:
+        return out
+    p = os.path.join(ROOT, 'sources', 'data', name)
+    if not os.path.exists(p):
+        return out
+    for r in csv.DictReader(open(p, encoding='utf-8')):
+        try:
+            out[int(r[fycol])] += 1
+        except (KeyError, TypeError, ValueError):
+            continue
+    return out
+
+
+def table_years(table):
+    out = collections.Counter()
+    if not table or not os.path.exists(DB):
+        return out
+    db = sqlite3.connect('file:%s?mode=ro' % DB, uri=True)
+    try:
+        for fy, n in db.execute('SELECT fy, COUNT(*) FROM "%s" GROUP BY fy' % table):
+            try:
+                out[int(fy)] += n
+            except (TypeError, ValueError):
+                continue
+    except sqlite3.Error:
+        pass
+    finally:
+        db.close()
+    return out
+
+
+def published_years(payload, subject):
+    """Fiscal years a payload actually plots or tabulates for this family."""
+    out = set()
+    if not payload:
+        return out
+    p = os.path.join(ROOT, 'fy28', 'public', 'data', payload)
+    if not os.path.exists(p):
+        return out
+    import json
+    try:
+        d = json.load(open(p, encoding='utf-8'))
+    except ValueError:
+        return out
+    for s in d.get('series', []):
+        for pt in s.get('points', []):
+            try:
+                out.add(int(pt['fy']))
+            except (KeyError, TypeError, ValueError):
+                continue
+    return out
+
+
+BLOCKED = os.path.join(ROOT, 'sources', 'data', 'extraction-blocked.csv')
+
+# Which extractor's refusals belong to which table family.
+BLOCK_OWNER = {'treasurers-cash': 'treasurers-cash'}
+
+
+def blockers():
+    """{(fy, subject): 'why the extractor refused'} -- written by the extractors.
+
+    A refusal is a finding. Without this, a year read-and-refused looks exactly like a
+    year nobody has opened, and those need opposite work.
+    """
+    out = {}
+    if not os.path.exists(BLOCKED):
+        return out
+    for r in csv.DictReader(open(BLOCKED, encoding='utf-8')):
+        subject = BLOCK_OWNER.get(r['extractor'])
+        if not subject:
+            continue
+        try:
+            fy = int(r['fy'])
+        except (TypeError, ValueError):
+            continue
+        why = '%s (p%s %s: ours %s, page %s)' % (r['reason'], r['page'], r['what'],
+                                                 r['ours'], r['theirs'])
+        out.setdefault((fy, subject), why)
+    return out
+
+
+def mark(ok):
+    return 'yes' if ok else ''
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--check', action='store_true')
+    ap.add_argument('--subject')
+    a = ap.parse_args()
+
+    ocr = years()
+    found, read = page_map()
+    block = blockers()
+    rows = []
+    for subject, spec in sorted(FAMILIES.items()):
+        ds = dataset_years(spec['csv'], spec['fy'])
+        tb = table_years(spec['table'])
+        pub = published_years(spec['payload'], subject)
+        for fy in sorted(ocr):
+            key = (fy, subject)
+            pages = found.get(key, [])
+            if not pages and not ds.get(fy):
+                continue
+            base = os.path.basename(ocr[fy])[:-4]
+            has_pdf = os.path.exists(os.path.join(PDFS, base + '.pdf'))
+            has_text = os.path.getsize(ocr[fy]) > 1000
+            n_rows = ds.get(fy, 0)
+            # WHY A YEAR IS STUCK, not merely that it is. A family with no extractor and
+            # a family whose extractor refused this page need opposite work.
+            blocked = block.get((fy, subject), '')
+            if blocked:
+                pass
+            elif pages and not n_rows:
+                blocked = ('no extractor for this family yet' if not spec['csv']
+                           else 'extractor runs and publishes nothing for this year')
+            elif not pages and not n_rows:
+                blocked = 'no page carrying this table has been identified'
+            rows.append(dict(
+                fy=fy, subject=subject,
+                pdf=mark(has_pdf), ocr=mark(True), text=mark(has_text),
+                located=mark(bool(pages)), extracted=mark(n_rows > 0),
+                database=mark(tb.get(fy, 0) > 0), published=mark(fy in pub),
+                pages=' '.join(pages), rows=n_rows, blocked=blocked))
+
+    if a.subject:
+        rows = [r for r in rows if r['subject'] == a.subject]
+
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\n')
+    w.writeheader()
+    w.writerows(rows)
+    text = buf.getvalue()
+
+    if a.check:
+        cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
+        if cur != text:
+            print('STALE %s -- run: python3 scripts/build_pipeline_state.py'
+                  % os.path.relpath(OUT, ROOT), file=sys.stderr)
+            return 1
+        print('ok -- %d (year, family) rows' % len(rows))
+        return 0
+
+    if not a.subject:
+        with open(OUT, 'w', encoding='utf-8') as fh:
+            fh.write(text)
+        print('wrote %s -- %d rows' % (os.path.relpath(OUT, ROOT), len(rows)))
+
+    cur = None
+    for r in rows:
+        if r['subject'] != cur:
+            cur = r['subject']
+            print('\n%s' % cur)
+            print('  fy      pdf ocr txt loc ext  db pub   rows  blocked')
+        print('  FY%-6d %3s %3s %3s %3s %3s %3s %3s %6s  %s'
+              % (r['fy'], r['pdf'] and '*', r['ocr'] and '*', r['text'] and '*',
+                 r['located'] and '*', r['extracted'] and '*', r['database'] and '*',
+                 r['published'] and '*', r['rows'], r['blocked'][:46]))
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())
