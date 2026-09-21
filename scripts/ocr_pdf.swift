@@ -44,9 +44,35 @@ let boxes = args.contains("--boxes")
 // orientations, recognise, and keep the one that yields the most boxes wider than they are
 // tall. Horizontal text in horizontal boxes is the only assumption, and it holds for every
 // page in this archive.
+// A ROTATED PAGE WAS BEING CLIPPED, AND IT COST WHOLE ROWS.
+//
+// `PDFPage.bounds(for:)` applies the page's own /Rotate and hands back the box the
+// reader SEES; `PDFPage.draw(with:to:)` lays the content down in the box the file
+// STORES. On a page carrying /Rotate 90 those two differ by the page's aspect --
+// 792x612 against 612x792 -- so the canvas was sized for one and filled from the other,
+// and 180 points fell off an edge.
+//
+// FY2019's Treasurer's Cash page is landscape and rotated, and the four rows that fell
+// off it were `Bank Hometown Investment` and three `Bartholomew` accounts -- which is
+// simply where the alphabet starts. The page then missed its own printed total by their
+// value, so the extractor correctly refused the whole year, and the town's general
+// Stabilization Fund had no FY2019 reading because of a transform.
+//
+// Nothing about resolution fixed it: two passes at 2x and 4x returned byte-identical
+// output. TJ looked at the page and said the rows were there, which is the only reason
+// this was ever found.
+//
+// So the geometry comes from CGPDFPage, where getBoxRect and drawPDFPage agree with each
+// other about what the page is, and the rotation is read explicitly rather than inferred
+// from a box that has already had it applied.
 func render(_ page: PDFPage, _ applied: Int, _ scale: Double) -> CGImage? {
-    let b = page.bounds(for: .mediaBox)
-    let sideways = (applied == 90 || applied == 270)
+    guard let ref = page.pageRef else { return nil }
+    let raw = ref.getBoxRect(.mediaBox)
+    // /Rotate is part of how the page reads, so fold it into the rotation we apply and
+    // let one transform do all of it.
+    let spin = ((applied + Int(ref.rotationAngle)) % 360 + 360) % 360
+    let b = raw
+    let sideways = (spin == 90 || spin == 270)
     let pw = sideways ? b.height : b.width, ph = sideways ? b.width : b.height
     guard let ctx = CGContext(data: nil, width: Int(pw * scale), height: Int(ph * scale),
                               bitsPerComponent: 8, bytesPerRow: 0,
@@ -57,13 +83,14 @@ func render(_ page: PDFPage, _ applied: Int, _ scale: Double) -> CGImage? {
     ctx.setFillColor(CGColor(gray: 1, alpha: 1))
     ctx.fill(CGRect(x: 0, y: 0, width: Int(pw * scale), height: Int(ph * scale)))
     ctx.scaleBy(x: CGFloat(scale), y: CGFloat(scale))
-    switch applied {
-    case 90:  ctx.translateBy(x: 0, y: b.width);            ctx.rotate(by: -.pi / 2)
-    case 180: ctx.translateBy(x: b.width, y: b.height);     ctx.rotate(by: .pi)
-    case 270: ctx.translateBy(x: b.height, y: 0);           ctx.rotate(by: .pi / 2)
+    switch spin {
+    case 90:  ctx.translateBy(x: 0, y: b.width);            ctx.rotate(by: -CGFloat.pi / 2)
+    case 180: ctx.translateBy(x: b.width, y: b.height);     ctx.rotate(by: CGFloat.pi)
+    case 270: ctx.translateBy(x: b.height, y: 0);           ctx.rotate(by: CGFloat.pi / 2)
     default: break
     }
-    page.draw(with: .mediaBox, to: ctx)
+    ctx.translateBy(x: -raw.origin.x, y: -raw.origin.y)
+    ctx.drawPDFPage(ref)
     return ctx.makeImage()
 }
 

@@ -116,6 +116,75 @@ FAMILIES = {
 }
 
 
+# ---- THE OTHER INGESTION STREAMS ---------------------------------------------------
+#
+# TJ: "We'll need to build a pipeline like this for all ingestion sources to make sure we
+# know what to do with ingested data from now on and get it to completion."
+#
+# The annual reports above are one stream of thirteen. The rest arrive differently and
+# fail differently, and the same seven steps describe all of them once "the document" is
+# read as "the unit that arrives": a report, a meeting, a MUNIS run, a state workbook.
+#
+# WHAT A STREAM DECLARES. Where its units live, how many have reached each step, and --
+# the column that matters -- what the NEXT action is when they have not. A stream with no
+# named next action is one nobody has thought about, and saying so is the point.
+STREAMS = [
+    dict(key='annual-reports', title='Annual town reports',
+         detail='Per year and table family; see the rows below.',
+         next_action='Work the blocked years in extraction-blocked.csv, each of which '
+                     'names the amount its page missed by.'),
+    dict(key='meetings', title='Meeting agendas and minutes',
+         glob='sources/meetings/text/*/*.txt',
+         extracted='sources/data/minutes-index.csv',
+         next_action='Covered by the daily refresh; the gap is minutes the town has '
+                     'never posted, which is a records request rather than an extractor '
+                     '(notes/reference/records-requests.csv).'),
+    dict(key='munis-ledgers', title='MUNIS ledger runs',
+         glob='sources/town-ledgers/**/*',
+         extracted='sources/data/munis-ledger.csv',
+         next_action='extract_munis_report.py ties each run to its own GRAND TOTAL. New '
+                     'deliveries need a PROVENANCE file before they are catalogued.'),
+    dict(key='dese', title='DESE state workbooks',
+         glob='sources/state-dese/**/*',
+         next_action='fetch_dese_radar.py and extract_dese_radar.py; checked against '
+                     'DESE\u2019s own printed totals.'),
+    dict(key='dls', title='DLS state files',
+         glob='sources/state-dls/**/*',
+         next_action='fetch_dls_tax_bills.py and fetch_dls_property.py, by script.'),
+    dict(key='district-budget', title='District budget documents',
+         glob='sources/district-budget/**/*',
+         next_action='NO SYSTEMATIC EXTRACTOR. 1,521 files, read one at a time as a '
+                     'question needs them. This is the largest unworked stream and the '
+                     'honest state of it is that nobody has decided what it owes.'),
+    dict(key='contracts', title='Collective bargaining agreements',
+         glob='sources/contracts/**/*',
+         next_action='Read by hand where a rate is needed. The PEC agreement is '
+                     'requested and not held.'),
+    dict(key='town-budget', title='Town budget and finance documents',
+         glob='sources/town-budget/**/*',
+         next_action='Mirrored; extracted per question rather than as a stream.'),
+]
+
+
+def stream_rows():
+    """One row per ingestion stream: how much has arrived, and what happens next."""
+    import glob as _g
+    out = []
+    for st in STREAMS:
+        n = 0
+        if st.get('glob'):
+            n = len([f for f in _g.glob(os.path.join(ROOT, st['glob']), recursive=True)
+                     if os.path.isfile(f)])
+        rows = 0
+        ex = st.get('extracted')
+        if ex and os.path.exists(os.path.join(ROOT, ex)):
+            with open(os.path.join(ROOT, ex), encoding='utf-8') as fh:
+                rows = max(0, sum(1 for _ in fh) - 1)
+        out.append(dict(stream=st['key'], title=st['title'], units=n, rows=rows,
+                        next_action=st['next_action']))
+    return out
+
+
 def years():
     out = {}
     for f in sorted(glob.glob(os.path.join(OCR, '*annual-town-report.tsv'))):
@@ -313,6 +382,14 @@ def main():
         print('wrote %s -- %d rows, one per fiscal year and table family'
           % (os.path.relpath(OUT, ROOT), len(rows)))
 
+    print('\nINGESTION STREAMS')
+    print('  %-22s %7s %8s  %s' % ('stream', 'units', 'rows', 'next action'))
+    for st in stream_rows():
+        print('  %-22s %7s %8s  %s'
+              % (st['stream'], '{:,}'.format(st['units']) if st['units'] else '-',
+                 '{:,}'.format(st['rows']) if st['rows'] else '-',
+                 st['next_action'][:62]))
+    print()
     cur = None
     for r in rows:
         if r['subject'] != cur:
