@@ -160,6 +160,27 @@ PLAN = [
     # AND THE QUOTE IS NOT YET FOUND. Searching the minutes for it turned up budget talk
     # and not the sentence; rule 15a says find what was actually said before writing about
     # what a category does, so locating it is part of this batch rather than a footnote.
+    # ---- NOT AN INGESTION, BUT IT DECIDES WHETHER ANY SEARCH MEANS ANYTHING.
+    #
+    # `search_minutes.py` is meant to print, on every run, how many documents it searched
+    # out of how many the town has published. That line is the whole reason a search can
+    # be cited: a grep that finds nothing prints nothing, and nothing READS AS "nobody
+    # said it" -- which is a claim about the town rather than about our coverage.
+    #
+    # It currently refuses to print it: "the three states do not account for every
+    # document in scope. Refusing to print a coverage line that does not foot." The
+    # refusal is correct -- a wrong denominator is worse than none -- but while it stands,
+    # every rule 15a search in this project is unquantified, including the one that just
+    # failed to find any discussion of the town dropping its appropriations schedule.
+    #
+    # Found 21 September 2026 looking for exactly that. Written down here because it is
+    # the kind of thing that gets rediscovered rather than remembered.
+    (12, 'Fix the minutes-search coverage line', 'session', 'repair', [],
+     'part of a session', 'free',
+     'Nothing is ingested. It restores the denominator on every minutes search \u2014 '
+     '"searched N of M published documents" \u2014 without which a search that finds '
+     'nothing cannot be cited as evidence that nothing was said, which is what rule 15a '
+     'asks every analysis to do.'),
     (11, 'Debt repayment schedule', 'session', 'extractor', ['debt'],
      '1 session', 'free',
      'Answers a claim this town argues over: that retiring debt leaves room to borrow '
