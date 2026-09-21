@@ -63,27 +63,56 @@ PAGES = os.path.join(ROOT, 'sources', 'data', 'annual-report-pages.csv')
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 OUT = os.path.join(ROOT, 'sources', 'data', 'pipeline-state.csv')
 
-FIELDS = ['fy', 'subject', 'pdf', 'ocr', 'text', 'located', 'extracted', 'database',
+FIELDS = ['step', 'fy', 'subject', 'pdf', 'ocr', 'text', 'located', 'extracted', 'database',
           'published', 'pages', 'rows', 'blocked']
 
 # Each family: the dataset CSV it lands in, the column naming its fiscal year, the
 # database table, and the payload that publishes it. A family with no extractor yet says
 # so by having no dataset -- which is itself the honest state, not a blank.
+# Each family: the dataset CSV it lands in, the column naming its fiscal year, the
+# database table, and the payload that publishes it.
+#
+# THE GENERIC EXTRACTS COUNT. The first version listed `csv=None` for six families and
+# reported them as nothing-extracted, while `report-appropriations.csv` held 4,665 rows
+# and `report-gross-wages.csv` 3,545. They are read by scripts/extract_tables.py into
+# `report-<family>.csv`, which is a different pipeline from the purpose-built extractors
+# but is no less real -- and a state file that cannot see half the work done is worse
+# than none, because it sends somebody to redo it.
+#
+# Where a family has BOTH -- trust-and-stabilization has the generic `report-trust-funds`
+# and the identity-proving `stabilization-balances` -- the specific one is what step 5
+# means, because it is what the analysis reads. The generic extract is recorded beside
+# it rather than instead of it.
 FAMILIES = {
     'trust-and-stabilization': dict(
-        csv='stabilization-balances.csv', fy='fy',
-        table='report_trust_funds',
-        payload='stabilization-funds.json'),
+        csv='stabilization-balances.csv', fy='fy', generic='report-trust-funds.csv',
+        table='report_trust_funds', payload='stabilization-funds.json'),
     'treasurers-cash': dict(
-        csv='treasurers-cash.csv', fy='fy', table=None,
+        csv='treasurers-cash.csv', fy='fy', generic=None, table=None,
         payload='stabilization-funds.json'),
-    'special-revenue': dict(csv=None, fy='fy', table=None, payload=None),
-    'balance-sheet': dict(csv=None, fy='fy', table='report_balance_sheet', payload=None),
-    'receivables': dict(csv=None, fy='fy', table=None, payload=None),
-    'tax-collection': dict(csv=None, fy='fy', table=None, payload=None),
-    'payroll': dict(csv=None, fy='fy', table='report_payroll', payload=None),
-    'appropriations': dict(csv=None, fy='fy', table='report_appropriations',
-                           payload=None),
+    'appropriations': dict(csv=None, fy='fy', generic='report-appropriations.csv',
+                           table='report_appropriations', payload=None),
+    'payroll': dict(csv=None, fy='fy', generic='report-gross-wages.csv',
+                    table='report_gross_wages', payload=None),
+    'valuation': dict(csv=None, fy='fy', generic='report-valuation.csv',
+                      table='report_valuation', payload=None),
+    'capital': dict(csv=None, fy='fy', generic='report-capital-projects.csv',
+                    table='report_capital_projects', payload=None),
+    'debt': dict(csv=None, fy='fy', generic='report-debt.csv', table='report_debt',
+                 payload=None),
+    'elections': dict(csv=None, fy='fy', generic='report-elections.csv',
+                      table='report_elections', payload=None),
+    'vital-records': dict(csv=None, fy='fy', generic='report-vital-records.csv',
+                          table='report_vital_records', payload=None),
+    'enrollment': dict(csv=None, fy='fy', generic='report-enrollment-mcas.csv',
+                       table='report_enrollment_mcas', payload=None),
+    'officials': dict(csv=None, fy='fy', generic='report-officials.csv',
+                      table='report_officials', payload=None),
+    # NO EXTRACTOR AT ALL YET. Listed so the queue cannot hide them.
+    'special-revenue': dict(csv=None, fy='fy', generic=None, table=None, payload=None),
+    'balance-sheet': dict(csv=None, fy='fy', generic=None, table=None, payload=None),
+    'receivables': dict(csv=None, fy='fy', generic=None, table=None, payload=None),
+    'tax-collection': dict(csv=None, fy='fy', generic=None, table=None, payload=None),
 }
 
 
@@ -210,17 +239,20 @@ def main():
     rows = []
     for subject, spec in sorted(FAMILIES.items()):
         ds = dataset_years(spec['csv'], spec['fy'])
+        gen = dataset_years(spec.get('generic'), spec['fy'])
         tb = table_years(spec['table'])
         pub = published_years(spec['payload'], subject)
         for fy in sorted(ocr):
             key = (fy, subject)
+            # NO ROW IS SKIPPED. The first version dropped (year, family) pairs with
+            # neither pages nor data, which quietly hid the very thing this file is for:
+            # a family nobody has looked at in a given year is a STATE, not an absence,
+            # and it is the state most likely to stay true for ever if unlisted.
             pages = found.get(key, [])
-            if not pages and not ds.get(fy):
-                continue
             base = os.path.basename(ocr[fy])[:-4]
             has_pdf = os.path.exists(os.path.join(PDFS, base + '.pdf'))
             has_text = os.path.getsize(ocr[fy]) > 1000
-            n_rows = ds.get(fy, 0)
+            n_rows = ds.get(fy, 0) or gen.get(fy, 0)
             # WHY A YEAR IS STUCK, not merely that it is. A family with no extractor and
             # a family whose extractor refused this page need opposite work.
             blocked = block.get((fy, subject), '')
@@ -231,8 +263,20 @@ def main():
                            else 'extractor runs and publishes nothing for this year')
             elif not pages and not n_rows:
                 blocked = 'no page carrying this table has been identified'
+            # THE STEP A YEAR HAS REACHED, as one number. TJ named seven steps and the
+            # question he keeps asking is "where are we for this year" -- which seven
+            # yes/no columns answer only after a reader does the reduction themselves.
+            # The furthest CONSECUTIVE step reached: a year with data in the database but
+            # nothing published is at 6, and a year whose extractor refused is at 4 no
+            # matter what else is true, because that is where the work is.
+            reached = 0
+            for n, ok in enumerate([has_pdf, True, has_text, bool(pages),
+                                    n_rows > 0, tb.get(fy, 0) > 0, fy in pub], start=1):
+                if not ok:
+                    break
+                reached = n
             rows.append(dict(
-                fy=fy, subject=subject,
+                step=reached, fy=fy, subject=subject,
                 pdf=mark(has_pdf), ocr=mark(True), text=mark(has_text),
                 located=mark(bool(pages)), extracted=mark(n_rows > 0),
                 database=mark(tb.get(fy, 0) > 0), published=mark(fy in pub),

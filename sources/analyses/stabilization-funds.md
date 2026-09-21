@@ -418,9 +418,9 @@ Each figure below is its own reading, and they come from four places: the trust 
 
 *One of the four has a different grain.* The Treasurer’s Cash page counts cash held by a custodian, not a fund balance — the Opioid fund shows $233,317.54 of cash at Bartholomew where the ledger puts the fund at $241,421.18. For the funds charted here the two have matched wherever both exist, because those funds sit whole in one place, but that is a fact about them and not a rule. It fills years nothing else reaches and never overrides a balance.
 
-- **Stabilization** — FY2014 $1,299,077.98, FY2015 $1,388,105.33, FY2016 $1,511,526.92, FY2017 $1,631,430.63, FY2018 $1,740,279.81, FY2020 $1,978,347.74, FY2021 $2,447,755.21, FY2022 $2,574,673.21, FY2025 $3,147,178.96
-- **Zoning Incentive Stabilization** — FY2014 $227,201.90, FY2015 $227,542.95, FY2016 $227,884.96, FY2017 $228,320.36, FY2018 $228,891.82, FY2020 $230,431.40, FY2022 $231,007.68, FY2024 $243,063.42, FY2025 $249,060.25
-- **Vehicle/Equipment Stabilization** — FY2018 $236,302.39, FY2019 $643,788.80, FY2020 $945,669.29, FY2022 $1,457,123.63, FY2024 $2,254,933.99, FY2025 $2,598,621.38
+- **Stabilization** — FY2014 $1,299,077.98, FY2015 $1,388,105.33, FY2016 $1,511,526.92, FY2017 $1,631,430.63, FY2018 $1,740,279.81, FY2020 $1,978,347.74, FY2021 $2,447,755.21, FY2022 $2,574,673.21, FY2023 $2,730,600.73, FY2024 $2,901,157.60, FY2025 $3,147,178.96
+- **Zoning Incentive Stabilization** — FY2014 $227,201.90, FY2015 $227,542.95, FY2016 $227,884.96, FY2017 $228,320.36, FY2018 $228,891.82, FY2020 $230,431.40, FY2022 $231,007.68, FY2023 $235,681.11, FY2024 $243,063.42, FY2025 $249,060.25
+- **Vehicle/Equipment Stabilization** — FY2018 $236,302.39, FY2019 $643,788.80, FY2020 $945,669.29, FY2022 $1,457,123.63, FY2023 $1,936,143.89, FY2024 $2,254,933.99, FY2025 $2,598,621.38
 
 Every proven row:
 
@@ -446,7 +446,7 @@ Every proven row:
 | FY2025 | `—` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,598,621.38 | $2,598,621.38 |
 | FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 | $249,060.25 |
 
-**Nine funds, fifteen years, and most of the grid is empty.** Only 3 of the 9 funds have any history at all; the other 6 are known from one reading, the ledger’s. Across FY2011 to FY2025 that is about 30 of 135 possible fund-years.
+**Nine funds, fifteen years, and most of the grid is empty.** Only 3 of the 9 funds have any history at all; the other 6 are known from one reading, the ledger’s. Across FY2011 to FY2025 that is about 34 of 135 possible fund-years.
 
 **19 of those readings are proved, across 11 years — and that is a limit of OUR reading, not of the town’s record.** The annual reports print the whole trust and stabilization table every year, every fund, and roughly ten times as many fund rows are visible in our scans of them as this page publishes. A row appears here only where the page’s own arithmetic closes on it, because publishing one that does not would be worse than publishing nothing — so the empty cells are a queue of work, not an absence of evidence.
 

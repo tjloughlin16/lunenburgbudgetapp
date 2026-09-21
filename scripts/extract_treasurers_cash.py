@@ -113,6 +113,32 @@ def columns(boxes):
     return [(min(g) - 0.03, max(g) + 0.03) for g in groups if len(g) >= 4]
 
 
+NOISE = re.compile(r'[A-Za-z]{3,}')
+
+
+def is_label(text):
+    """A row label, or OCR noise wearing the shape of one.
+
+    THE DUPLICATE THIS CATCHES IS WHY FIVE YEARS WERE UNPUBLISHABLE. Vision reads a
+    stretch of a scanned page as `tA tA tA` or `VA tA tA tA tA.` -- letter pairs, no
+    word -- and the amount beside the real label gets read a SECOND time next to that
+    fragment. So the column carries the same figure twice and misses the page's own
+    total by exactly one copy of it:
+
+        FY2024 p33  `Unibank - Park Revolving Fund` 92,636.63 and `tA tA tA` 92,636.63
+        FY2023 p48  `Batholomew Trust Funds` 895,746.68 and `VA tA tA tA tA.` 895,746.68
+
+    The difference looked like the town excluding a row from its own total, and reading
+    it that way would have published a reconciliation that was not true of the document.
+    It is a duplicate, and the town's arithmetic was right the whole time.
+
+    A real label carries at least one run of three letters. `tA`, `VA`, `$` and the
+    stray digits a scan leaves behind carry none, and no bank or fund in fifteen years
+    of these pages is named in fewer.
+    """
+    return bool(NOISE.search(text or ''))
+
+
 def read_page(fy, page, boxes, doc):
     cols = columns(boxes)
     if not cols:
@@ -120,6 +146,7 @@ def read_page(fy, page, boxes, doc):
     labels = [b for b in boxes
               if not MONEY.match(b['text'].strip())
               and len(b['text'].strip()) > 5
+              and is_label(b['text'])
               and b['x'] < min(c[0] for c in cols)]
     rows, totals = [], [None] * len(cols)
     for lab in labels:
@@ -161,7 +188,21 @@ def main():
         fy = int(m.group(1))
         doc = os.path.relpath(f, ROOT)
         for page, boxes in sorted(read_boxes(f).items()):
-            if not any(HEADING.search(b['text']) for b in boxes):
+            # THE PAGE IS IDENTIFIED BY ITS HEADING *OR* BY ITS OWN TOTAL ROW.
+            #
+            # FY2019's page (p44) carries no `Treasurer's Cash as of` line at all -- the
+            # scan starts mid-table, opening on `Belmont Savings Bank Investment` -- and
+            # it was skipped for fifteen months on that basis while printing `Total
+            # Treasurer Cash as of 06/30/2019` at the foot of itself.
+            #
+            # The total is the BETTER identifier of the two, and not merely an
+            # additional one: a title is what a page calls itself, and this row is the
+            # arithmetic the page states about itself, which is the thing every reading
+            # here is proven against. A page that prints it is a Treasurer's Cash page
+            # whatever its heading survived as, and a page that fools this test still has
+            # to foot before a single row of it is published.
+            if not any(HEADING.search(b['text']) or TOTAL.search(b['text'])
+                       for b in boxes):
                 continue
             rows, totals = read_page(fy, page, boxes, doc)
             if not rows:
