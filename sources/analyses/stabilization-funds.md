@@ -149,9 +149,11 @@ Every proven row:
 | FY2025 | `—` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,598,621.38 | $2,598,621.38 |
 | FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 | $249,060.25 |
 
-**Nine funds, fifteen years, and most of the grid is empty.** Only 3 of the 9 funds have any history at all; the other 6 are known from one reading, the ledger’s. Across FY2011 to FY2025 that is about 22 of 135 possible fund-years — and the missing ones are not missing because nobody looked, but because those pages have not yet yielded a row whose arithmetic closes. One MUNIS trust report per year would fill the whole grid, with revenue and expenditure beside each balance.
+**Nine funds, fifteen years, and most of the grid is empty.** Only 3 of the 9 funds have any history at all; the other 6 are known from one reading, the ledger’s. Across FY2011 to FY2025 that is about 22 of 135 possible fund-years.
 
-**15 of those readings are proved from the photographs, across 9 years.** Publishing a row whose arithmetic does not close would be worse than publishing nothing, which is why the empty cells stay empty.
+**15 of those readings are proved, across 9 years — and that is a limit of OUR reading, not of the town’s record.** The annual reports print the whole trust and stabilization table every year, every fund, and roughly ten times as many fund rows are visible in our scans of them as this page publishes. A row appears here only where the page’s own arithmetic closes on it, because publishing one that does not would be worse than publishing nothing — so the empty cells are a queue of work, not an absence of evidence.
+
+Two things would empty that queue, and they are not alternatives. A better reader gets the figures the town has already printed. The MUNIS trust report for earlier years would get them from the accounting system instead, with revenue and expenditure beside every balance — which the annual report tables do not carry at all.
 
 ---
 

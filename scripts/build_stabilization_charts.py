@@ -161,6 +161,35 @@ LEDGER_FOR = {
 }
 
 
+def creation_years():
+    """{fund: fiscal year} for every fund whose CREATING VOTE this archive holds.
+
+    TJ: "can you put a different symbol if we KNOW (can confirm) the creation of the
+    funds? ... on teh FY that happened."
+
+    It marks WHEN, never HOW MUCH. The creating article prints an amount, and that amount
+    is money voted IN -- not the fund's opening balance, which is only the same number if
+    nothing else touched it that year. Rule 7: plotting a deposit as a balance would be
+    using a proxy as the thing. So the mark sits on the time axis at the fiscal year of
+    the vote, and the value axis is left alone.
+
+    Classification is imported rather than copied, because the fund-word list is the same
+    judgement this page makes everywhere else and two copies of it would drift.
+    """
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from build_stabilization import FUND_WORDS, creations
+    except Exception:
+        return {}
+    out = {}
+    for c in creations():
+        label = next((lbl for word, lbl in FUND_WORDS
+                      if word in (c.get('subject') or '').lower()), None)
+        if label:
+            out[label] = int(c['fy'])
+    return out
+
+
 def ledger_points():
     """{fund: (fy, ending_cash)} from the general ledger's opening balances."""
     out = {}

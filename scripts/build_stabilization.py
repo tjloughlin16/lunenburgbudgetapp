@@ -766,16 +766,28 @@ def render(rows):
         w('**Nine funds, fifteen years, and most of the grid is empty.** Only %d of the '
           '%d funds have any history at all; the other %d are known from one reading, '
           'the ledger\u2019s. Across FY2011 to FY%d that is about %d of %d possible '
-          'fund-years \u2014 and the missing ones are not missing because nobody looked, '
-          'but because those pages have not yet yielded a row whose arithmetic closes. '
-          'One MUNIS trust report per year would fill the whole grid, with revenue and '
-          'expenditure beside each balance.\n'
+          'fund-years.\n'
           % (len(runs), n_funds, n_funds - len(runs), LEDGER_FY - 1, cells,
              n_funds * n_years))
-        w('**%d of those readings are proved from the photographs, across %d years.** '
-          'Publishing a row whose arithmetic does not close would be worse than '
-          'publishing nothing, which is why the empty cells stay empty.\n'
-          % (len(pv), len({r['fy'] for r in pv})))
+        # THE BOTTLENECK IS THE READER, NOT THE RECORD, and the page implied the
+        # opposite for weeks. "Those pages have not yet yielded a row whose arithmetic
+        # closes" is true and reads as "the town did not publish it". TJ, 20 September
+        # 2026: "i can almost guarantee you this data is all in the annual town report.
+        # you prob missed it." He is right, and it is measurable -- about 154 fund rows
+        # are visible in the OCR of twelve annual reports against 15 published here.
+        w('**%d of those readings are proved, across %d years \u2014 and that is a limit of '
+          'OUR reading, not of the town\u2019s record.** The annual reports print the '
+          'whole trust and stabilization table every year, every fund, and roughly ten '
+          'times as many fund rows are visible in our scans of them as this page '
+          'publishes. A row appears here only where the page\u2019s own arithmetic closes '
+          'on it, because publishing one that does not would be worse than publishing '
+          'nothing \u2014 so the empty cells are a queue of work, not an absence of '
+          'evidence.\n' % (len(pv), len({r['fy'] for r in pv})))
+        w('Two things would empty that queue, and they are not alternatives. A better '
+          'reader gets the figures the town has already printed. The MUNIS trust report '
+          'for earlier years would get them from the accounting system instead, with '
+          'revenue and expenditure beside every balance \u2014 which the annual report '
+          'tables do not carry at all.\n')
         w('---\n')
 
     mark('cannot')

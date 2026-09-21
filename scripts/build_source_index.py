@@ -1045,6 +1045,20 @@ GROUPS = [
              'question. Loaded as `stated_cuts` and read by /cut-register, which sets '
              'DESE\u2019s teacher counts beside it. '
              'See scripts/extract_stated_cuts.py.'),
+            ('data/trust-fund-balances.csv',
+             'Every trust fund and its balance, from the annual report\u2019s own listing', 3,
+             'The `Trust Fund Balance Detail` page that the FY2024 and FY2025 annual '
+             'reports print: one line per account number with the fund balance beside it. '
+             'It is the COMPLETE list, where the trust-table pages this archive spent '
+             'weeks on cover only the funds held at other banks and omit the general '
+             'Stabilization Fund entirely. Read only from pages carrying that heading, '
+             'because shape alone is not enough \u2014 the other-banks table is also a grid '
+             'of accounts and money and its leftmost column is the BEGINNING principal, '
+             'which produced a figure $380 wrong before the heading was required. Every '
+             'FY2025 balance is checked against the general ledger and the extract '
+             'refuses to write unless the stabilization accounts tie; where another '
+             'account disagrees that is recorded per row rather than suppressed. See '
+             'scripts/extract_trust_balance_detail.py.'),
             ('data/trust-agency-balances.csv',
              'Every trust and stabilization fund, as the accounting system prints it', 3,
              'MUNIS\u2019s own trust and agency report: account number, fund name, '

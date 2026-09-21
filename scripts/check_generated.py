@@ -67,6 +67,8 @@ CHECKS = [
     # The ledger extract first: the report's balances are read from it, so a drift there
     # has to surface as itself rather than as a stale report.
     ('extract_trust_agency.py', ['--check']),
+    # The annual report's own per-account listing, checked against that ledger.
+    ('extract_trust_balance_detail.py', ['--check']),
     ('build_stabilization.py', ['--check']),
     ('build_stabilization_charts.py', ['--check']),
     ('build_reports_index.py', ['--check']),

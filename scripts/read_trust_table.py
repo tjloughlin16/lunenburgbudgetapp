@@ -48,6 +48,9 @@ import re
 import statistics
 
 MONEY = re.compile(r'^\(?-?[$S]?-?[\d,]{1,15}[.,]\d{2}\)?$')
+# The same shape, found ANYWHERE in a string rather than anchored to it, so a box
+# holding two cells can be taken apart. Anchored matching is what silently drops them.
+MONEY_TOKEN = re.compile(r'\(?-?[$S]?-?[\d,]{1,15}[.,]\d{2}\)?')
 CODE = re.compile(r'^8\d{3}$')
 
 # Column headings as the reports print them, mapped to one name each. The labels arrive as
@@ -84,6 +87,48 @@ def money(text):
         raise ValueError(text)
     v = float(t[:-2] + '.' + t[-2:]) if len(t) > 2 else float(t)
     return -v if neg else v
+
+
+def split_merged(boxes):
+    """Split a box holding several figures into one box per figure.
+
+    THE SINGLE BIGGEST LOSS IN THIS READER, and it is silent. OCR sometimes returns two
+    adjacent cells as one observation -- `$68,790.10 $250,000.00`, `$176.77
+    ($19,111.10)`, `$92,795.20 $226,328.90` -- and every test here asks whether the WHOLE
+    text is a money value. A merged box answers no, so it is not a misread figure, it is
+    no figure at all: the column loses its value, the row loses its arithmetic, and the
+    page is reported as unreadable while being perfectly legible to a person.
+
+    TJ, 20 September 2026, sending the FY2024 page: "i can almost guarantee you this data
+    is all in the annual town report. you prob missed it." It was, and this is how. FY2024
+    page 35 prints ten funds with a GRAND TOTALS line and every row footing exactly, and
+    this reader returned nothing from it.
+
+    THE SPLIT IS BY CHARACTER POSITION, which is an estimate and is stated as one. These
+    are fixed-pitch accounting printouts, so a token's share of the string is a good
+    proxy for its share of the box, and the reader only ever uses the RIGHT EDGE to
+    assign a column -- the end of the last character, which is the part this gets most
+    nearly right. A token that lands in the wrong column cannot invent agreement: the
+    row's identity has to close either way, which is what makes an estimate safe to make
+    here at all.
+    """
+    out = []
+    for b in boxes:
+        t = (b['text'] or '').strip()
+        parts = [m for m in MONEY_TOKEN.finditer(t)]
+        if len(parts) < 2 or not t:
+            out.append(b)
+            continue
+        w = b.get('w', 0.0)
+        n = float(len(t))
+        for m in parts:
+            c = dict(b)
+            c['text'] = m.group(0)
+            c['x'] = b['x'] + w * (m.start() / n)
+            c['w'] = w * ((m.end() - m.start()) / n)
+            c['split_from'] = t
+            out.append(c)
+    return out
 
 
 def upright(boxes):
@@ -345,7 +390,7 @@ def infer_layout(centres, place):
 
 def rows(boxes, fy):
     """Fund rows of one page: (code, name, {column: value}), before any verification."""
-    boxes = upright(boxes)
+    boxes = split_merged(upright(boxes))
     m = skew(boxes)
     Y = lambda b: b['y'] - m * b['x']
     vals = [b for b in boxes if MONEY.match(b['text'].strip())]
