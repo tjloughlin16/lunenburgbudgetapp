@@ -1798,16 +1798,34 @@ def page_backlog(st):
     # second one is the one a person actually asks.
     plan = rows('ingest-plan.csv')
     if plan:
-        total = sum(int(r['pages'] or 0) for r in plan)
+        # THE COLUMN IS `items`, AND THIS READ `pages` UNTIL IT CRASHED THE WHOLE PAGE.
+        #
+        # build_ingest_plan.py writes seq, batch, channel, kind, subjects, ITEMS, years,
+        # runs_beside, effort, cost, status, delivers. Two generators over one file, one
+        # writing `items` and one reading `pages` -- the defect shape CLAUDE.md names
+        # first, and the failure mode was the worst kind: an uncaught KeyError left
+        # backlog.html at ZERO BYTES, so the browser reported a file:// origin error and
+        # the real cause was two frames away from anything a reader could see.
+        #
+        # `.get` with a fallback rather than a rename, because the plan counts pages for
+        # some batches and RUNS for others -- 3,702 votes at 40 a day is not a page count
+        # -- and the column is deliberately called `items` for that reason.
+        def _items(r):
+            try:
+                return int(r.get('items') or r.get('pages') or 0)
+            except (TypeError, ValueError):
+                return 0
+
+        total = sum(_items(r) for r in plan)
         h.append('<h2>The plan</h2><p class="sub" style="margin:-4px 0 10px">'
-                 'How the %s pages above get done, in batches. A batch is a TABLE FAMILY, '
+                 'How the %s items above get done, in batches. A batch is a TABLE FAMILY, '
                  'because the cost here is writing an extractor and that is paid once per '
                  'family however many pages it covers \u2014 48 pages of special revenue '
                  'funds are one job, not 48. Page counts are derived from the queue, so '
                  'the plan cannot drift from what it is a plan for.</p>'
                  % '{:,}'.format(total))
         h.append('<table><tr><th class="r">#</th><th>batch</th><th>kind</th>'
-                 '<th class="r">pages</th><th>years</th><th>effort</th>'
+                 '<th class="r">items</th><th>years</th><th>effort</th>'
                  '<th>what lands</th></tr>')
         for r in plan:
             tone = {'done': '#3fb950', 'next': '#6cb6ff'}.get(r['status'], '#8b949e')
@@ -1823,7 +1841,7 @@ def page_backlog(st):
                      '<td class="tiny" style="vertical-align:top;max-width:420px">%s</td></tr>'
                      % (tone, html.escape(r['seq']), html.escape(r['batch']), beside,
                         html.escape(r['subjects']), html.escape(r['kind']),
-                        html.escape(r['pages']), html.escape(r['years']),
+                        html.escape(str(_items(r))), html.escape(r['years']),
                         html.escape(r['effort']), html.escape(r['delivers'])))
         h.append('</table>')
 
@@ -1957,9 +1975,21 @@ def write(open_it=False):
     # local file but will happily <script src> one.
     with open(os.path.join(OUT, 'docs.js'), 'w', encoding='utf-8') as fh:
         fh.write('const DOCS=' + json.dumps(docs, separators=(',', ':')) + ';')
+    # BUILD IT, THEN OPEN THE FILE. `open(path, 'w')` truncates immediately, so a crash
+    # while the page is still being composed -- inside the write call -- leaves ZERO
+    # BYTES where a working page was. That is what happened: a KeyError in the plan
+    # section emptied backlog.html, and the browser then reported
+    # "Unsafe attempt to load URL file://... 'file:' URLs are treated as unique security
+    # origins", which is what Chrome says about an empty document and names nothing about
+    # the real cause two frames away.
+    #
+    # Composed first, the previous good page survives a failure. A stale dashboard is a
+    # far better failure than a blank one, because a blank one looks like a browser
+    # problem and gets debugged in the wrong place.
+    _backlog = (shell % ('Backlog', '<meta http-equiv="refresh" content="60">', CSS,
+                         page_backlog(st)) + '<script>' + KEEP + '</script>')
     with open(os.path.join(OUT, 'backlog.html'), 'w', encoding='utf-8') as fh:
-        fh.write(shell % ('Backlog', '<meta http-equiv="refresh" content="60">', CSS,
-                          page_backlog(st)) + '<script>' + KEEP + '</script>')
+        fh.write(_backlog)
     with open(os.path.join(OUT, 'sources.html'), 'w', encoding='utf-8') as fh:
         counts = collections.Counter(d[5] for d in docs)
         counts[''] = len(docs)
