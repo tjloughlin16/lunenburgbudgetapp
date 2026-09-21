@@ -173,7 +173,6 @@ export function Analysis() {
       err={src ? null : err}
       loading={!src && !err}
       sourceUrl={`/docs/analyses/${id}.md`}
-      meta={<DocumentBar id={id} meta={meta} />}
     >
       {/* The contents list draws only where there is no fold; the fold carries its own. */}
       {contents.length > 2 && !split && (
@@ -277,13 +276,33 @@ export function Analysis() {
           by <code>{meta.verifier.command}</code>, which fails rather than warns.</> : null}
       </Body>
 
+      <DocumentBar id={id} meta={meta} />
+
       <MoreReports />
     </ReportShell>
   )
 }
 
-/** The document's own address, filename and size, beside the title. Rule 12 rendered for
- *  a document this project wrote: the copy you are reading, and the copy you can keep. */
+/** The document's own address, filename, size and hash. Rule 12 rendered for a document
+ *  this project wrote: the copy you are reading, and the copy you can keep.
+ *
+ *  AT THE BOTTOM, WITH THE REST OF THE PROVENANCE. It used to render in the shell's
+ *  `meta` slot -- the first line under the standfirst, above the conclusions -- and TJ,
+ *  reading the stabilization page: *"Markdown 1,769 words 10 KB last changed sha256
+ *  7d2e63c668637e9c. why do we have that still"*.
+ *
+ *  The answer is that it is load-bearing and it was misplaced, which is why this is a
+ *  MOVE and not a deletion. Rule 12 requires the downloadable copy and its sha256,
+ *  because a file can be replaced in place without its address changing; `/docs` serves
+ *  that .md, the PDF is rendered from it, and llms.txt sends agents that cannot run
+ *  JavaScript straight to it. Deleting the bar would take the only link to any of that
+ *  off the page.
+ *
+ *  But rule 7a says a page opens with the thing, and file metadata is not the thing --
+ *  and no report built from a React page has ever put it up there, so it was also the
+ *  last visible seam between the two kinds of report that rule 7d exists to erase. It
+ *  belongs where every other report keeps its provenance: after the document, next to
+ *  the sentence explaining what the document is. */
 function DocumentBar({ id, meta }: { id: string; meta: Report | null }) {
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-[12.5px]"
