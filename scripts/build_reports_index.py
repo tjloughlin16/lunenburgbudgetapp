@@ -86,7 +86,20 @@ CATEGORIES = [
     # up the page ... in some special section". They are the two things the town can
     # actually do about the gap, and a reader who came from the crisis page is looking
     # for exactly these before any filing question.
-    ('levers', 'What the town can do', [
+    # THE HEADING IS A NOUN, NOT A SENTENCE. TJ, 21 September 2026, on "What the
+    # town can do": *"the sentence is not memborable"*. It is the same correction
+    # that renamed every page on this shelf -- "having sentences as page links is
+    # not a good model at all ... I want people to say 'go to lburg.org and go to
+    # health insurance or fees'" -- arriving one level up, at the shelf those
+    # pages sit on. A predicate cannot be said or pointed at; a noun phrase can,
+    # and the other three headings here are already nouns, so this one read as the
+    # odd one out as well as the long one.
+    #
+    # `The levers` is this project's own word for them, used in the code and in
+    # every one of these reports, and it says exactly what the shelf holds: things
+    # somebody in this town can actually pull. It does not say which to pull --
+    # rule 8.
+    ('levers', 'The levers', [
         # In the order a resident weighs them: the two that move the revenue side, the
         # two that move the cost RATE, then the amounts -- free cash, fees, the extras --
         # and last the one every other page exists to avoid.
