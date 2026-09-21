@@ -137,6 +137,45 @@ def fund_key(name):
     return ' '.join(w for w in n.split() if not w.isdigit()).strip().title()
 
 
+# THE LEDGER'S OPENING BALANCE IS THE PREVIOUS YEAR'S CLOSING BALANCE, and that is a
+# reading of these funds we already hold. Account 8124's photograph-read series stops at
+# FY2021 -- no later page has yielded a general-fund row whose arithmetic closes -- while
+# the page's own headline says $3,147,179 is held, from the general ledger. A chart whose
+# line stops four years before the figure printed above it is the page contradicting
+# itself, and TJ read it straight off the picture: "we dont have data for the
+# stabilization fund beyond FY21?"
+#
+# We do. MUNIS's beginning balance at 2025-07-01 IS the FY2025 year-end balance, printed
+# by the accounting system and tied to its own subtotal -- better evidence than the
+# photographs, not worse. So it joins the series as the most recent point.
+#
+# KEYED ON THE ACCOUNT NUMBER, NEVER THE NAME. The ledger calls 8129 `playground fund`
+# and the annual report calls it `ZONING INCENTIVE STABILIZATION (TD BANKNORTH)`; the
+# account number is the only thing both documents agree on. Only funds that already have
+# a series get a point, so this adds evidence to existing lines and never invents one.
+LEDGER_CSV = os.path.join(ROOT, 'sources', 'data', 'trust-agency-balances.csv')
+LEDGER_FOR = {
+    '8124': 'Stabilization',
+    '8136': 'Vehicle/Equipment Stabilization',
+    '8129': 'Zoning Incentive Stabilization',
+}
+
+
+def ledger_points():
+    """{fund: (fy, ending_cash)} from the general ledger's opening balances."""
+    out = {}
+    if not os.path.exists(LEDGER_CSV):
+        return out
+    for r in csv.DictReader(open(LEDGER_CSV, encoding='utf-8')):
+        label = LEDGER_FOR.get(r['account'])
+        if not label or not r.get('held'):
+            continue
+        # `fy` on the row is the ledger's own fiscal year; its OPENING balance belongs to
+        # the year before.
+        out[label] = (int(r['fy']) - 1, float(r['held']))
+    return out
+
+
 def series():
     """{fund: [(fy, ending_cash), ...]} for every fund with enough proven years."""
     if not os.path.exists(CSV_IN):
@@ -147,6 +186,12 @@ def series():
             if not r.get('ending_cash'):
                 continue
             by[fund_key(r['name'])].append((int(r['fy']), float(r['ending_cash'])))
+    # The ledger reading, added to funds that already have a line. Where the photograph
+    # already proved that year the two agree to the cent -- checked, on all three -- so
+    # the point is deduplicated rather than plotted twice.
+    for label, pt in ledger_points().items():
+        if label in by and pt[0] not in {fy for fy, _ in by[label]}:
+            by[label].append(pt)
     out = {}
     for k, v in by.items():
         v = sorted(set(v))
@@ -174,14 +219,28 @@ def short(fund):
     return SHORT.get(fund, fund)
 
 
+# BREATHING ROOM ON ALL FOUR SIDES. Every coordinate in this file is measured from 0,
+# which put the title hard against the left edge of the image and ran the right-hand
+# series labels into the other one -- TJ: "Titles go to the edges."
+#
+# Adding it to each geometry would mean touching every x in three charts and getting one
+# of them wrong. Instead the whole drawing is translated inside a viewBox grown by twice
+# the pad, so the internal coordinates are untouched and the padding cannot drift between
+# charts: there is one number and all three read it.
+PAD = 18
+
+
 def svg(w, h, body, title, subtitle):
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}"
- height="{h}" role="img" aria-label="{esc(title)}. {esc(subtitle)}"
+    W, H = w + PAD * 2, h + PAD * 2
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}"
+ height="{H}" role="img" aria-label="{esc(title)}. {esc(subtitle)}"
  font-family='{FONT}'>
-<rect width="{w}" height="{h}" fill="{SURFACE}"/>
+<rect width="{W}" height="{H}" fill="{SURFACE}"/>
+<g transform="translate({PAD},{PAD})">
 <text x="0" y="15" font-size="13" font-weight="700" fill="{INK}">{esc(title)}</text>
 <text x="0" y="31" font-size="10.5" fill="{SECOND}">{esc(subtitle)}</text>
 {body}
+</g>
 </svg>
 '''
 
@@ -265,8 +324,8 @@ def chart_all(data):
                  f'fill="{MUTED}">FY{pts[-1][0]} {usdk(v)}</text>')
     return svg(W, H, ''.join(b),
                'Three stabilization funds, on one scale',
-               'Ending cash at each year this archive has PROVEN — a dashed segment '
-               'spans years not yet read')
+               'Ending cash: each annual report reading that proved itself, plus the '
+               'general ledger at FY2025. Dashes span years not yet read')
 
 
 # ------------------------------------------------- 2. each fund on its own scale
@@ -336,8 +395,8 @@ def chart_each(data):
                      f'text-anchor="middle" fill="{MUTED}">{fylabel(fy)}</text>')
     return svg(W, H, ''.join(b),
                'The same three funds, each on its own scale',
-               'Every panel is stretched to its OWN range, so the shapes are comparable '
-               'and the heights are not')
+               'Each panel stretched to its OWN range, so the shapes are comparable and '
+               'the heights are not. Dashes span years not yet read')
 
 
 # ------------------------------------------------------------ 3. how fast each moved
@@ -388,8 +447,8 @@ def chart_growth(data):
              f'and nothing in this data separates the two.</text>')
     return svg(W, H, ''.join(b),
                'How fast each fund moved, per year',
-               'Between the first and last year this archive has proven — the span '
-               'differs per fund and is printed on each')
+               'Between each fund’s first and last reading — the span differs per '
+               'fund and is printed on each')
 
 
 CHARTS = [

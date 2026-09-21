@@ -38,15 +38,15 @@ Some years print no ending market value at all: FY2019’s table carries the hea
 
 That is **$490,060.54 more between FY2016 and FY2020**, a rise of 32%, in a fund whose purpose is to be available.
 
-![Three stabilization funds on one scale, FY2014 to FY2025. The tallest reaches $2,598,621.38 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Dashed segments span years this archive has not yet proven.](charts/stabilization-all.svg)
+![Three stabilization funds on one scale, FY2014 to FY2025. The tallest reaches $3,147,178.96 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Dashed segments span years this archive has not yet proven.](charts/stabilization-all.svg)
 
 On one scale the Zoning Incentive fund looks like nothing is happening to it. That is the finding, not a rendering problem — but it hides the shape, so each fund also gets its own panel:
 
 ![The same three funds, each panel stretched to its own range, so the shapes are comparable and the heights are not.](charts/stabilization-each.svg)
 
-![How fast each fund moved per year between its first and last proven year: Vehicle/Equipment 40.8% a year over 7 years, Stabilization 10.1% a year over 5 years, Zoning Incentive 0.8% a year over 11 years.](charts/stabilization-growth.svg)
+![How fast each fund moved per year between its first and last proven year: Vehicle/Equipment 40.8% a year over 7 years, Stabilization 8.5% a year over 9 years, Zoning Incentive 0.8% a year over 11 years.](charts/stabilization-growth.svg)
 
-**Three funds, three different things happening.** The Vehicle/Equipment fund moved 40.8% a year and the Stabilization fund 10.1% a year — those are being BUILT, and the Town Meeting articles listed earlier on this page are the votes that did it. The Zoning Incentive fund is not: it moved $21,858.35 in 11 years, which is what a balance does when it is left alone.
+**Three funds, three different things happening.** The Vehicle/Equipment fund moved 40.8% a year and the Stabilization fund 8.5% a year — those are being BUILT, and the Town Meeting articles listed earlier on this page are the votes that did it. The Zoning Incentive fund is not: it moved $21,858.35 in 11 years, which is what a balance does when it is left alone.
 
 *What the charts do not show.* A balance rising does not say how much of the rise is money voted in and how much is interest earned, and nothing in this data separates them. It also does not say a fund is AVAILABLE: what each may be spent on is the section above, and a balance is not a permission.
 
@@ -123,10 +123,10 @@ In the 8 years where every article carries a printed amount, the town voted in b
 
 ## Each fund, year by year
 
-Every figure below is a separate page of a separate annual report, read and checked on its own:
+Each figure below is its own reading: a separate page of a separate annual report, checked against that page’s own arithmetic — except the FY2025 figures, which are the general ledger’s, printed by the accounting system. Where both exist for the same fund and year they agree to the cent.
 
 - **Zoning Incentive Stabilization** — FY2014 $227,201.90, FY2015 $227,542.95, FY2016 $227,884.96, FY2018 $228,891.82, FY2020 $230,431.40, FY2022 $231,007.68, FY2025 $249,060.25
-- **Stabilization** — FY2016 $1,511,526.92, FY2018 $1,740,279.81, FY2020 $1,978,347.74, FY2021 $2,447,755.21
+- **Stabilization** — FY2016 $1,511,526.92, FY2018 $1,740,279.81, FY2020 $1,978,347.74, FY2021 $2,447,755.21, FY2025 $3,147,178.96
 - **Vehicle/Equipment Stabilization** — FY2018 $236,302.39, FY2019 $643,788.80, FY2020 $945,669.29, FY2025 $2,598,621.38
 
 Every proven row:
@@ -149,7 +149,9 @@ Every proven row:
 | FY2025 | `—` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,598,621.38 | $2,598,621.38 |
 | FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 | $249,060.25 |
 
-**Coverage is 15 rows across 9 years, and that is the point rather than a footnote.** The rest of the run is not missing because nobody looked — it is missing because those pages have not yet yielded a row whose arithmetic closes, and publishing one that does not would be worse than publishing nothing.
+**Nine funds, fifteen years, and most of the grid is empty.** Only 3 of the 9 funds have any history at all; the other 6 are known from one reading, the ledger’s. Across FY2011 to FY2025 that is about 22 of 135 possible fund-years — and the missing ones are not missing because nobody looked, but because those pages have not yet yielded a row whose arithmetic closes. One MUNIS trust report per year would fill the whole grid, with revenue and expenditure beside each balance.
+
+**15 of those readings are proved from the photographs, across 9 years.** Publishing a row whose arithmetic does not close would be worse than publishing nothing, which is why the empty cells stay empty.
 
 ---
 

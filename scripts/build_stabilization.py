@@ -644,7 +644,33 @@ def render(rows):
         series = collections.defaultdict(list)
         for r in pv:
             series[fund_key(r)].append(r)
-        runs = {k: sorted(v, key=lambda r: r['fy'])
+        # THE LEDGER READING JOINS THE SERIES, because the charts plot it and a caption
+        # computed from a different set of points than the picture above it is the page
+        # arguing with itself. TJ, reading the chart: "we dont have data for the
+        # stabilization fund beyond FY21?" -- we do, and it is the figure in this page's
+        # own headline. MUNIS's opening balance at 2025-07-01 IS the FY2025 closing
+        # balance, printed by the accounting system.
+        #
+        # Keyed on the ACCOUNT NUMBER: the ledger calls 8129 `playground fund` and the
+        # annual report calls it `ZONING INCENTIVE STABILIZATION`, and the number is the
+        # only identity both documents share. Only funds that already have a series get a
+        # point, so nothing new appears and nothing is invented.
+        LEDGER_SERIES = {'8124': 'Stabilization',
+                         '8136': 'Vehicle/Equipment Stabilization',
+                         '8129': 'Zoning Incentive Stabilization'}
+        for r in rows:
+            label = LEDGER_SERIES.get(r['code'])
+            if not label or label not in series:
+                continue
+            fy = str(LEDGER_FY - 1)
+            if any(x['fy'] == fy for x in series[label]):
+                continue
+            series[label].append(dict(
+                fy=fy, code=r['code'], name=label, ending_cash='%.2f' % r['amount'],
+                ending_market='', basis='the town\u2019s general ledger',
+                page='', document='sources/town-ledgers/fund-balances/'
+                                  'trust-agency-fy2026-p09.xlsx'))
+        runs = {k: sorted(v, key=lambda r: int(r['fy']))
                 for k, v in series.items() if len(v) >= 3}
         # THE CHARTS GO HERE, ABOVE THE FIGURES THEY DRAW. Three of them, and each
         # answers a question the other two cannot: how the funds compare in SIZE, what
@@ -709,8 +735,11 @@ def render(rows):
         mark('byyear')
         if runs:
             w('## Each fund, year by year\n')
-            w('Every figure below is a separate page of a separate annual report, read '
-              'and checked on its own:\n')
+            w('Each figure below is its own reading: a separate page of a separate '
+              'annual report, checked against that page\u2019s own arithmetic \u2014 '
+              'except the FY%d figures, which are the general ledger\u2019s, printed by '
+              'the accounting system. Where both exist for the same fund and year they '
+              'agree to the cent.\n' % (LEDGER_FY - 1))
             for k, v in sorted(runs.items(), key=lambda kv: -len(kv[1])):
                 w('- **%s** \u2014 %s' % (k, ', '.join(
                     'FY%s %s' % (r['fy'], usd(float(r['ending_cash']))) for r in v)))
@@ -726,11 +755,27 @@ def render(rows):
                  usd(float(r['ending_cash'])),
                  usd(float(r['ending_market'])) if r['ending_market'] else '\u2014'))
         w('')
-        w('**Coverage is %d rows across %d years, and that is the point rather than a '
-          'footnote.** The rest of the run is not missing because nobody looked \u2014 '
-          'it is missing because those pages have not yet yielded a row whose arithmetic '
-          'closes, and publishing one that does not would be worse than publishing '
-          'nothing.\n' % (len(pv), len({r['fy'] for r in pv})))
+        # HOW MUCH OF THE GRID IS EMPTY, because a reader looking at three lines cannot
+        # tell whether that is three funds or all of them. TJ, reading the chart: "looks
+        # like we are missing a lot of years ... can you tell me what we have for years
+        # for each stabilization fund". Nine funds exist and six of them are a single
+        # dot.
+        n_funds = len(rows)
+        n_years = LEDGER_FY - 1 - 2010
+        cells = sum(len(v) for v in runs.values()) + max(0, n_funds - len(runs))
+        w('**Nine funds, fifteen years, and most of the grid is empty.** Only %d of the '
+          '%d funds have any history at all; the other %d are known from one reading, '
+          'the ledger\u2019s. Across FY2011 to FY%d that is about %d of %d possible '
+          'fund-years \u2014 and the missing ones are not missing because nobody looked, '
+          'but because those pages have not yet yielded a row whose arithmetic closes. '
+          'One MUNIS trust report per year would fill the whole grid, with revenue and '
+          'expenditure beside each balance.\n'
+          % (len(runs), n_funds, n_funds - len(runs), LEDGER_FY - 1, cells,
+             n_funds * n_years))
+        w('**%d of those readings are proved from the photographs, across %d years.** '
+          'Publishing a row whose arithmetic does not close would be worse than '
+          'publishing nothing, which is why the empty cells stay empty.\n'
+          % (len(pv), len({r['fy'] for r in pv})))
         w('---\n')
 
     mark('cannot')
