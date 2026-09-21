@@ -75,8 +75,60 @@ SUBJECTS = [
 ]
 SUBJECTS = [(k, re.compile(v, re.I)) for k, v in SUBJECTS]
 
-FIELDS = ['fy', 'page', 'subject', 'state', 'figures', 'figures_reversed',
-          'read_by', 'heading', 'document']
+# WHAT EACH SUBJECT WOULD BE WORTH, and WHY -- keyed to questions this project has
+# already registered as unanswerable in `money-gaps.csv`, or to a page it already
+# publishes. TJ: "can you classify the annual report info left to bee extract by
+# importance you see? IS there anything that answers any open questions we have, or
+# support anything we already report on?"
+#
+# The ranking is a JUDGEMENT and is written down here so it can be argued with rather
+# than inferred from what somebody happened to work on next. `answers` names a registered
+# gap wherever one exists, because a gap with a named remedy is a plan and one without is
+# a grievance.
+PRIORITY = {
+    'special-revenue': (1,
+        'The load-bearing one. CLAUDE.md rule 11: grants, circuit breaker, school choice, '
+        'revolving funds and gifts pay for real staff and appear NOWHERE in the budget, so '
+        'a line that rises because a grant ended looks identical to one that rises because '
+        'the district grew. Closes the registered gaps "What any special revenue fund '
+        'bought" and "Grants received in earlier years", and bears on "Which fund pays '
+        'which post".'),
+    'balance-sheet': (2,
+        'The whole town in one statement, which this project does not have at all. Closes '
+        '"What the town held town-wide at 30 June 2024 and 30 June 2025" and bears '
+        'directly on "Why the Town\u2019s undesignated fund balance and DLS\u2019s free cash '
+        'differ" \u2014 a discrepancy /free-cash currently records and cannot explain.'),
+    'receivables': (3,
+        'What is owed to the town and has not been collected. Thirty pages over twelve '
+        'years, and nothing here measures it; it is the other half of the tax-collection '
+        'picture the property-owners and tax-bill pages tell from the levy side.'),
+    'trust-and-stabilization': (4,
+        'The thread already being worked. Sixteen pages remain, and they are the years '
+        'where the general Stabilization Fund is still missing from the series on '
+        '/analysis/stabilization-funds.'),
+    'tax-collection': (5,
+        'Collections and liens by year. Supports the same reports as receivables and is '
+        'the series behind "what the town actually took in" as against what it committed.'),
+    'payroll': (6,
+        'Gross wages by name already exist for fifteen years; these are the pages that '
+        'extract did not reach. It bounds "Whether a budgeted position was filled" '
+        'without settling it \u2014 a roster carries no FTE and no funding source.'),
+    'valuation': (7,
+        'Assessed value by class. /commercial-base and /property-owners are built on the '
+        'state\u2019s certification of this; the town\u2019s own printing is the check on it.'),
+    'capital': (8, 'Capital projects and what they cost. Bears on "Debt service by project".'),
+    'appropriations': (9, 'Already the largest dataset here at 4,665 rows; these are stragglers.'),
+    'enrollment': (10, 'DESE publishes this directly and is the better source.'),
+    'elections': (11, 'Complete at 2,012 rows; not a money question.'),
+    'vital-records': (12, 'Complete; not a money question.'),
+    'treasurers-cash': (13, 'Now extracted by scripts/extract_treasurers_cash.py.'),
+    'unknown': (14,
+        'A statement about our SCAN, not about the page: the heading is what the scanner '
+        'lost. These have to be looked at before they can be ranked.'),
+}
+
+FIELDS = ['fy', 'page', 'subject', 'priority', 'state', 'figures', 'figures_reversed',
+          'read_by', 'heading', 'answers', 'document']
 
 
 def unreversed(t):
@@ -153,13 +205,16 @@ def main():
                 top = [unreversed(t) for t in top]
             hits = done.get((fy, page), set())
             state = 'read' if hits else ('reversed' if rev > figs else 'unread')
+            subj = subject_of(top)
+            pri, why = PRIORITY.get(subj, (99, ''))
             rows.append(dict(
-                fy=fy, page=page, subject=subject_of(top), state=state,
+                fy=fy, page=page, subject=subj, priority=pri, answers=why, state=state,
                 figures=figs, figures_reversed=rev,
                 read_by=', '.join(sorted(hits)),
                 heading=(top[0] if top else '')[:60], document=doc))
 
-    rows.sort(key=lambda r: (-r['fy'], r['page']))
+    # PRIORITY FIRST, then newest. The queue is meant to be read top-down.
+    rows.sort(key=lambda r: (r['priority'], -r['fy'], r['page']))
     buf = io.StringIO()
     wr = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\n')
     wr.writeheader()
@@ -186,10 +241,11 @@ def main():
     print()
     print('  what is NOT yet ingested, by subject:')
     todo = collections.Counter(r['subject'] for r in rows if r['state'] != 'read')
-    for s, n in todo.most_common():
+    for s, n in sorted(todo.items(), key=lambda kv: PRIORITY.get(kv[0], (99,))[0]):
         yrs = sorted({r['fy'] for r in rows
                       if r['subject'] == s and r['state'] != 'read'})
-        print('    %-24s %3d pages  FY%d-FY%d' % (s, n, yrs[0], yrs[-1]))
+        print('    %2d. %-24s %3d pages  FY%d-FY%d'
+              % (PRIORITY.get(s, (99,))[0], s, n, yrs[0], yrs[-1]))
     return 0
 
 

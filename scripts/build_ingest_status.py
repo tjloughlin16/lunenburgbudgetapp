@@ -467,6 +467,17 @@ def annual_report_pages():
     for g in out:
         g['dates'] = ['%s (%s)' % (d, '{:,}'.format(n))
                       for d, n in sorted(collections.Counter(g['dates']).items())]
+    # IN PRIORITY ORDER, NOT BY SIZE. `group()` sorts by how many are left, which puts
+    # the 73 unclassifiable pages at the top of a queue whose whole point is what to do
+    # next. The map ranks the subjects by what extracting them would ANSWER, and that is
+    # the order a reader wants.
+    rank = {}
+    for r in rows('annual-report-pages.csv'):
+        try:
+            rank[r['subject']] = int(r['priority'])
+        except (KeyError, TypeError, ValueError):
+            continue
+    out.sort(key=lambda g: (rank.get(g['board'].split(' (')[0], 99), -g['n']))
     return done, out
 
 
@@ -1736,14 +1747,31 @@ def page_backlog(st):
                      '<th>latest</th><th></th></tr>'
                      % (s['key'], '{:,}'.format(n), len(pend)))
             for r in pend:
-                h.append('<tr><td>%s</td><td class="r num">%d</td>'
-                         '<td class="mono tiny">%s</td><td class="mono tiny">%s</td>'
-                         '<td><details><summary class="tiny" style="cursor:pointer;color:#8b949e">'
-                         'dates</summary><div class="mono tiny" style="max-width:420px">%s</div>'
-                         '</details></td></tr>'
+                # CHIPS THAT WRAP, NOT A DETAILS INSIDE A DETAILS. TJ: "on the 'dates'
+                # expandable in the backlog, that is poor UX. It expands horitonzally and
+                # vertically and loooks awful."
+                #
+                # It did. A nested <details> in a table cell opens to a 420px block of
+                # space-separated dates, which widens the column, pushes the table past
+                # the page and leaves a ragged hole where the row used to be -- and it
+                # hid the one thing the breakdown is for behind a second click. The dates
+                # are now inline chips that wrap inside the cell they belong to: the
+                # shape of a backlog is legible at a glance, the table keeps its width,
+                # and nothing has to be opened.
+                chips = ''.join(
+                    '<span style="display:inline-block;padding:1px 6px;margin:1px 3px 1px 0;'
+                    'border-radius:9px;background:#1d2530;color:#9fb4cc;font-size:10px;'
+                    'white-space:nowrap">%s</span>' % html.escape(d)
+                    for d in r['dates'][:60])
+                more = ('<span class="tiny" style="color:#6e7681"> +%d more</span>'
+                        % (len(r['dates']) - 60)) if len(r['dates']) > 60 else ''
+                h.append('<tr><td style="vertical-align:top">%s</td>'
+                         '<td class="r num" style="vertical-align:top">%d</td>'
+                         '<td class="mono tiny" style="vertical-align:top">%s</td>'
+                         '<td class="mono tiny" style="vertical-align:top">%s</td>'
+                         '<td style="max-width:460px">%s%s</td></tr>'
                          % (html.escape(r['board'].replace('-', ' ')), r['n'],
-                            r['first'], r['last'],
-                            ' '.join(r['dates'][:400])))
+                            r['first'], r['last'], chips, more))
             h.append('</table></details>')
         h.append('</div>')
 
