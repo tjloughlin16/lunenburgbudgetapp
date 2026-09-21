@@ -387,6 +387,20 @@ def extra_readings(ledger_rows):
                             document='sources/town-ledgers/fund-balances/'
                                      'trust-agency-fy2026-p09.xlsx',
                             basis='the town\u2019s general ledger'))
+    # LAST, AND WEAKEST: figures printed on a page that could not foot. See
+    # notes/reference/UNFOOTED-READINGS.md — FY2021 lists Vehicle/Equipment and Zoning
+    # only on a Treasurer's Cash page whose column our scan broke, so refusing them says
+    # the town did not publish a number it did publish. Each carries its own
+    # reconciliation and its own basis, and it fills a gap rather than overriding
+    # anything, because everything above it is stronger.
+    unfooted = os.path.join(ROOT, 'sources', 'data', 'stabilization-unfooted.csv')
+    if os.path.exists(unfooted):
+        for r in csv.DictReader(open(unfooted, encoding='utf-8')):
+            out.append(dict(label=r['fund'], fy=str(r['fy']), amount=float(r['amount']),
+                            code=r['account'], page=r['page'], document=r['document'],
+                            basis='printed on a Treasurer\u2019s Cash page that does not '
+                                  'foot \u2014 see notes/reference/UNFOOTED-READINGS.md'))
+
     cash = os.path.join(ROOT, 'sources', 'data', 'treasurers-cash.csv')
     if os.path.exists(cash):
         for r in csv.DictReader(open(cash, encoding='utf-8')):

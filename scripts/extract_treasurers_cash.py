@@ -197,6 +197,32 @@ def read_page(fy, page, boxes, doc):
     return rows, totals
 
 
+def neighbour_diff(fy, labels, by_year):
+    """Which rows a neighbouring year lists that this year's reading does not.
+
+    WHY THIS RUNS AUTOMATICALLY. When a column misses its own printed total, the useful
+    question is never "by how much" -- it is "which rows". And the answer is usually
+    sitting in the year next door, because the town lists roughly the same accounts every
+    year. FY2021 missed by $4,490,793.02, and the nine rows FY2022 lists and FY2021's
+    reading did not are five Bartholomew accounts holding about that much.
+
+    TJ, after supplying the comparison himself: *"you should have done that check yourself
+    without me poking. You are smart enough"*. He is right, and the answer is not to
+    remember harder -- it is that a refusal should carry its own diagnosis. A blocker that
+    says only the amount asks a person to go and do this by hand every time.
+    """
+    out = []
+    for other in (fy + 1, fy - 1):
+        theirs = by_year.get(other)
+        if not theirs:
+            continue
+        missing = sorted(t for t in theirs
+                         if not any(t.lower()[:18] in m.lower() for m in labels))
+        if missing:
+            out.append((other, missing))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')

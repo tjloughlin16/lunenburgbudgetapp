@@ -255,42 +255,33 @@ def cash_points():
 
 
 def series():
-    """{fund: [(fy, ending_cash), ...]} for every fund with enough proven years."""
-    if not os.path.exists(CSV_IN):
+    """{fund: [(fy, ending_cash), ...]}, read from the payload the page is rendered from.
+
+    ONE SOURCE, BECAUSE THIS FILE WAS THE THIRD COPY OF THE SAME JOIN. It re-implemented
+    what build_stabilization.py's render() and payload() each did separately -- the
+    proven rows, then the annual report's listing, then the ledger, then the Treasurer's
+    Cash page -- and the three drifted, which is the only thing three copies of a join
+    ever do. The chart carried the general fund to FY2025 while the payload stopped at
+    FY2021; then the payload was fixed and the CHART was the stale one, still dashing
+    across FY2021 after the gap had been closed.
+
+    So the payload is the source and this draws it. A caption computed from a different
+    set of points than the picture above it is the page arguing with itself, and a chart
+    drawn from a different set again is that argument with a third voice in it.
+
+    It means build_stabilization.py must run first. That is the right dependency: the
+    model decides what is established, and the drawing follows.
+    """
+    import json
+    p = os.path.join(ROOT, 'fy28', 'public', 'data', 'stabilization-funds.json')
+    if not os.path.exists(p):
         return {}
-    by = collections.defaultdict(list)
-    with open(CSV_IN, encoding='utf-8') as fh:
-        for r in csv.DictReader(fh):
-            if not r.get('ending_cash'):
-                continue
-            by[fund_key(r['name'])].append((int(r['fy']), float(r['ending_cash'])))
-    # The ledger reading, added to funds that already have a line. Where the photograph
-    # already proved that year the two agree to the cent -- checked, on all three -- so
-    # the point is deduplicated rather than plotted twice.
-    # The annual report's listing first, then the ledger. Both are keyed on the account
-    # number and both are deduplicated against whatever is already there, so a fund-year
-    # read two ways appears once -- and where two sources do cover the same fund-year they
-    # have agreed to the cent every time it has been checked.
-    for label, pts in listing_points().items():
-        for pt in pts:
-            if label in by and pt[0] not in {fy for fy, _ in by[label]}:
-                by[label].append(pt)
-    for label, pt in ledger_points().items():
-        if label in by and pt[0] not in {fy for fy, _ in by[label]}:
-            by[label].append(pt)
-    # LAST, AND ONLY WHERE NOTHING ELSE REACHES. Cash at a custodian is not a fund
-    # balance; for these funds the two have matched to the cent wherever both exist, but
-    # that is a fact about funds held whole in one place rather than a rule, so it fills
-    # gaps and never overrides a balance.
-    for label, pts in cash_points().items():
-        for pt in pts:
-            if label in by and pt[0] not in {fy for fy, _ in by[label]}:
-                by[label].append(pt)
+    d = json.load(open(p, encoding='utf-8'))
     out = {}
-    for k, v in by.items():
-        v = sorted(set(v))
-        if len(v) >= MIN_POINTS:
-            out[k] = v
+    for s in d.get('series', []):
+        pts = sorted({(int(x['fy']), float(x['ending_cash'])) for x in s['points']})
+        if len(pts) >= MIN_POINTS:
+            out[s['fund']] = pts
     return out
 
 

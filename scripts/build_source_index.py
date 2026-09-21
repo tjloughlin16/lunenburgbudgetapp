@@ -854,6 +854,34 @@ GROUPS = [
              'that span printed on every bar. It is the movement of a balance and not a '
              'rate of return: these funds rise both when Town Meeting votes money in and '
              'when they earn interest, and this data cannot separate the two.'),
+            ('data/extraction-blocked.csv',
+             'Extractions that ran, refused to publish, and why', 2,
+             'When a column will not foot to the total its own page prints, the reading '
+             'is refused — and this is where the refusal is kept, with the amount it '
+             'missed by. Without it a year read-and-refused looked exactly like a year '
+             'nobody had opened, and five of them were being read and dropped on every '
+             'run with the diagnosis printed to a terminal nobody was watching. A '
+             'blocked year with a stated residual is a finite piece of work; a blank is '
+             'a mystery.'),
+            ('data/pipeline-state.csv',
+             'Where every fiscal year stands in the ingestion pipeline', 2,
+             'One row per fiscal year and table family, and a step from 1 to 7: the PDF '
+             'held, OCR run, text present, tables located, extracted to CSV, loaded to '
+             'the database, used in a report. Every cell is derived from the artefact it '
+             'describes, so it cannot go stale the way a hand-kept list does. It exists '
+             'because the same question — which years do we have for this fund — was '
+             'answered three different ways from three different artefacts in one '
+             'afternoon, each true about the artefact and false about the archive.'),
+            ('data/stabilization-unfooted.csv',
+             'Stabilization figures printed on a page whose column does not foot', 1,
+             'The weakest readings this project publishes, kept in their own file so '
+             'they cannot be mistaken for the rest. FY2021 lists Vehicle/Equipment and '
+             'Zoning Incentive only on a Treasurer’s Cash page our scan broke, so the '
+             'column cannot prove itself — and refusing the figures would say the town '
+             'did not publish a number it did publish. Each row carries the full '
+             'reconciliation: the residual, what accounts for it, what does not, and the '
+             'proven neighbours the figure sits between. See '
+             'notes/reference/UNFOOTED-READINGS.md.'),
             ('analyses/charts/stabilization-option-split.svg',
              'The gap each year, and what each stabilization option covers of it', 1,
              'One stacked bar per fiscal year, the whole bar that year\u2019s level-service '
