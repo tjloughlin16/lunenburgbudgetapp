@@ -63,17 +63,47 @@ usd0 = lambda x: '${:,.0f}'.format(x)
 GENERAL = {'8124'}
 
 
+LEDGER = os.path.join(ROOT, 'sources', 'data', 'trust-agency-balances.csv')
+LEDGER_AS_OF = '31 March 2026'
+LEDGER_FY = 2026
+
+
 def gather():
-    db = sqlite3.connect(DB); db.row_factory = sqlite3.Row
+    """What each stabilization fund holds, FROM THE LEDGER.
+
+    THIS USED TO READ A PHOTOGRAPH. `report_trust_funds` is the annual report's
+    trust-fund table, read off a scan of the printed page, and for FY2025 it gave seven
+    funds totalling $6,444,504 with no reconciliation behind it -- which is why the page
+    carried a warning not to quote a balance.
+
+    MUNIS prints the same thing and prints it better: nine accounts under its own
+    `STABILIZATION FUNDS` subtotal, each with the year's revenue and expenditure beside
+    it, and the subtotal ties to the rows. Rule 13a -- a sheet the accounting system
+    printed is proof, a sheet somebody assembled is not, and a photograph of a printed
+    table is neither.
+
+    **The two agree to the cent where they overlap**, on all three funds that can be
+    compared, which is the best evidence this project has that the table reader works.
+    The annual-report series stays where it is used for HISTORY; this is what the funds
+    hold now.
+    """
+    if not os.path.exists(LEDGER):
+        raise SystemExit('missing %s -- run scripts/extract_trust_agency.py'
+                         % os.path.relpath(LEDGER, ROOT))
     rows = []
-    for r in db.execute("SELECT label, v1, status FROM report_trust_funds WHERE fy=? "
-                        "AND lower(label) LIKE '%stabil%'", (FY,)):
-        m = re.search(r'\b(81\d\d)\b', r['label'] or '')
-        name = ' '.join((r['label'] or '').split())
-        if m:
-            name = name.replace(m.group(1), '').strip()
-        rows.append(dict(code=m.group(1) if m else '?', name=name,
-                         amount=float(r['v1']), status=r['status']))
+    for r in csv.DictReader(open(LEDGER, encoding='utf-8')):
+        if (r.get('group') or '').strip().upper() != 'STABILIZATION FUNDS':
+            continue
+        rows.append(dict(
+            code=r['account'], name=' '.join((r['name'] or '').split()),
+            amount=float(r['held']),
+            revenue=-float(r['revenue']) if r['revenue'] else 0.0,
+            expenditure=float(r['expenditure']) if r['expenditure'] else 0.0,
+            remaining=-float(r['remaining']) if r['remaining'] else 0.0,
+            status='ledger'))
+    if not rows:
+        raise SystemExit('no STABILIZATION FUNDS rows in %s'
+                         % os.path.relpath(LEDGER, ROOT))
     rows.sort(key=lambda x: -x['amount'])
     return rows
 
@@ -279,6 +309,14 @@ def render(rows):
     gtot = sum(r['amount'] for r in gen)
     stot = sum(r['amount'] for r in spec)
     b = []; w = b.append
+    # SECTION ORDER IS DECLARED, NOT IMPLIED BY WHERE THE CODE HAPPENS TO SIT.
+    # TJ set it: charts first, then the other findings, what is in them, what goes in
+    # each year, each fund year by year, then everything else as it was. Building the
+    # sections in whatever order is convenient and then emitting them in THIS order means
+    # a future reorder is one line here rather than a careful cut-and-paste through four
+    # hundred lines of generator.
+    marks = []
+    mark = lambda name: marks.append((name, len(b)))
     # Needed by the short version, which now answers both of the questions a reader
     # actually arrives with rather than only the one about the balance.
     fl = flows()
@@ -287,8 +325,15 @@ def render(rows):
     w('**What the town holds in reserve, which of it could lawfully be spent on an '
       'operating deficit, and the four questions about it this archive cannot yet '
       'answer.**\n')
-    w('Analysis, September 2026. Balances are FY%d and are **not reconciled** — see '
-      'the caveat before quoting one.\n' % FY)
+    # THE WARNING CAME OFF, BECAUSE THE FIGURES CHANGED SOURCE. It read "balances are
+    # FY2025 and are not reconciled -- see the caveat before quoting one", which was the
+    # right thing to say about seven figures read off a photograph of a printed table. The
+    # balances are now the general ledger's, tied to the subtotal MUNIS prints for them,
+    # so the honest sentence is the opposite one. Rule 3: say which numbers are ours, and
+    # these are not.
+    w('Analysis, September 2026. Balances are the town\u2019s own general ledger at %s, '
+      'reconciled to the total the accounting system prints for them.\n' % LEDGER_AS_OF)
+    mark('short')
     w('---\n')
     w('## The short version\n')
     # METRIC-LED, THE WAY THE OTHER REPORTS DO IT. TJ: "we should put metrics into the
@@ -296,8 +341,10 @@ def render(rows):
     # unit, one line saying what it is, one line saying what follows -- and the hard part
     # is not the trimming: it is that each figure has to carry its own meaning, which is
     # why every one below has its unit and its denominator attached.
-    w('**%s held, across %d stabilization funds.** This is what the town has in reserve '
-      'outside its operating budget. It is a balance, not an income.\n'
+    w('**%s held, across the %d accounts the ledger groups as stabilization funds.** '
+      'That is what the town has in reserve outside its operating budget \u2014 a '
+      'balance, not an income, and two of the nine are a pension trust and a '
+      'conservation fund rather than anything Town Meeting would call stabilization.\n'
       % (usd0(total), len(rows)))
     w('**%s of it can be spent on anything lawful** \u2014 the general Stabilization '
       'Fund, by a two-thirds Town Meeting vote. The other %s is restricted to the purpose '
@@ -354,6 +401,7 @@ def render(rows):
         short_years = {r['fy'] for r in fl['unpriced']}
         full = sorted(y for y in byfy if y not in short_years)
         depd = sum(d['amount'] for d in dep)
+        mark('goesin')
         w('---\n')
         w('## What goes in each year\n')
         w('Town Meeting has voted **%s into the stabilization funds** across %d articles, '
@@ -423,16 +471,39 @@ def render(rows):
              len(fl['not_about']),
              usd0(sum(x['amount'] for x in fl['not_about'] if x['amount']))))
 
+    mark('whatsin')
     w('---\n')
-    w('## What is in them, FY%d\n' % FY)
-    w('| account | fund | balance | may be spent on |\n|---|---|---:|---|')
+    w('## What is in them, at %s\n' % LEDGER_AS_OF)
+    w('Straight from the town’s general ledger: what each account held at the start '
+      'of FY%d, what has gone into it since, and what has come out. The account numbers '
+      'are the town’s own.\n' % LEDGER_FY)
+    w('| account | fund | held | in, this year | out, this year | may be spent on |'
+      '\n|---|---|---:|---:|---:|---|')
     for r in rows:
         kind = ('**anything lawful**, by a 2/3 Town Meeting vote' if r['code'] in GENERAL
                 else 'its own stated purpose only')
-        w('| `%s` | %s | %s | %s |' % (r['code'], r['name'], usd(r['amount']), kind))
-    w('| | **Total** | **%s** | |\n' % usd(total))
-    w('**The general/restricted split is ours**, read off each fund’s name. The '
-      'annual report prints a balance and never says what may be spent on what.\n')
+        w('| `%s` | %s | %s | %s | %s | %s |'
+          % (r['code'], r['name'], usd(r['amount']),
+             usd(r['revenue']) if r['revenue'] else '—',
+             usd(r['expenditure']) if r['expenditure'] else '—', kind))
+    w('| | **Total** | **%s** | **%s** | **%s** | |\n'
+      % (usd(total), usd(sum(r['revenue'] for r in rows)),
+         usd(sum(r['expenditure'] for r in rows))))
+    w('**Two of these are not stabilization funds in the sense Town Meeting means, and '
+      'they are here because the LEDGER files them here.** `8137 opeb` is the '
+      'other-post-employment-benefits trust and `8125 conservation trust` is a '
+      'conservation fund; together they are %s of the %s above. Quoting the total as '
+      '“the stabilization funds” would be taking the accounting system’s '
+      'filing decision for a statement about what may be spent — so the grouping is '
+      'printed as the ledger prints it, and said out loud here.\n'
+      % (usd(sum(r['amount'] for r in rows if r['code'] in ('8137', '8125'))),
+         usd(total)))
+    w('**The general/restricted split is ours**, read off each fund’s name and '
+      'account. The ledger prints a balance and never says what may be spent on what.\n')
+    w('**Nothing has come out of any of them so far this year.** Every expenditure '
+      'column is empty at %s — a fact about nine months, not about whether these '
+      'funds get spent. They do: the Health Insurance fund is a third of a million '
+      'dollars lighter than the article that created it.\n' % LEDGER_AS_OF)
     # ---- THE TWO REFERENCE SECTIONS ARE BUILT HERE AND EMITTED LATER ----
     # TJ: "What has moved, so far as anything here can prove should be closer to the top.
     # The history of each fund and meetings should go closer to the bottom."
@@ -442,7 +513,7 @@ def render(rows):
     # was walking through eight subsections of Town Meeting minutes before reaching a
     # single figure about whether the money has grown. These two sections are captured
     # into `later` and re-emitted after the charts.
-    move_from = len(b)
+    mark('forwhat')
     # Hoisted above the creations block, which now reports which funds have NO creating
     # vote and needs the full fund list to do it.
     hist = history()
@@ -510,9 +581,7 @@ def render(rows):
                      r['amount'] or '\u2014', r['fincom'] or '\u2014',
                      r['result'].replace('_', ' ')))
             w('')
-    later = b[move_from:]
-    del b[move_from:]
-
+    mark('moved')
     w('---\n')
     pv = proven()
     if pv:
@@ -626,9 +695,12 @@ def render(rows):
               'in this data separates them. It also does not say a fund is AVAILABLE: '
               'what each may be spent on is the section above, and a balance is not a '
               'permission.\n')
+        w('---\n')
+        mark('byyear')
         if runs:
-            w('**Each fund, year by year.** Every figure below is a separate page of a '
-              'separate annual report, read and checked on its own:\n')
+            w('## Each fund, year by year\n')
+            w('Every figure below is a separate page of a separate annual report, read '
+              'and checked on its own:\n')
             for k, v in sorted(runs.items(), key=lambda kv: -len(kv[1])):
                 w('- **%s** \u2014 %s' % (k, ', '.join(
                     'FY%s %s' % (r['fy'], usd(float(r['ending_cash']))) for r in v)))
@@ -650,9 +722,8 @@ def render(rows):
           'closes, and publishing one that does not would be worse than publishing '
           'nothing.\n' % (len(pv), len({r['fy'] for r in pv})))
         w('---\n')
-    # The reference material, after the conclusions it supports.
-    b.extend(later)
 
+    mark('cannot')
     w('---\n')
     w('## What this cannot answer yet, and why\n')
     w('Four of the six questions this report was asked are about MOVEMENT, and the series '
@@ -674,6 +745,7 @@ def render(rows):
     w('That is registered as a gap rather than left here: see the `extraction` rows in '
       '`sources/data/money-gaps.csv`, published at `/what-we-cannot-answer`. The work to '
       'close it is `notes/plans/STABILIZATION-FUNDS.md`.\n')
+    mark('notshow')
     w('---\n')
     w('## What this does not show\n')
     w('- **That the balances are right.** They are unreconciled. A figure here is a place '
@@ -687,6 +759,7 @@ def render(rows):
       % '$392,264')
     w('- **Why any balance is the size it is.** A balance is a fact; a reason is a '
       'hypothesis.\n')
+    mark('sources')
     w('---\n')
     w('## Sources\n')
     w('| | |\n|---|---|')
@@ -695,7 +768,29 @@ def render(rows):
     w('| The general/restricted split | ours, from each fund’s name |')
     w('| What the archive cannot yet say | `sources/data/money-gaps.csv`, side '
       '`extraction` |')
-    return '\n'.join(b) + '\n'
+    # ---- EMIT IN THE DECLARED ORDER ----------------------------------------------
+    # TJ, 20 September 2026: "all charts first. 'The other findings', What is in them,
+    # FY2025, What goes in each year, 'Each fund, year by year' (as a new section) (then
+    # the rest of whats already there in the same order)."
+    #
+    # `The other findings` is not in this list because it is not in this document: it is
+    # the conclusions beyond the first three, rendered by Analysis.tsx from the payload,
+    # and it lands directly after the first section of the fold -- which is why the charts
+    # have to be that first section.
+    ORDER = ['short', 'moved', 'whatsin', 'goesin', 'byyear', 'forwhat',
+             'cannot', 'notshow', 'sources']
+    head = b[:marks[0][1]] if marks else list(b)
+    cut = {name: (start, marks[i + 1][1] if i + 1 < len(marks) else len(b))
+           for i, (name, start) in enumerate(marks)}
+    missing = [n for n in cut if n not in ORDER]
+    if missing:
+        raise SystemExit('section(s) built but never emitted: %s' % ', '.join(missing))
+    out = list(head)
+    for name in ORDER:
+        if name in cut:
+            lo, hi = cut[name]
+            out.extend(b[lo:hi])
+    return '\n'.join(out) + '\n'
 
 
 def main():
@@ -892,6 +987,37 @@ def payload(rows):
                       'interest. The two cannot be separated here.',
         ),
     ]
+    # THE FUND THAT WAS SPENT, which is the whole answer to "can we use what is in
+    # there" -- the town already has. Only visible because the ledger prints the balance
+    # beside the creating article's amount; our own article extraction never saw the
+    # withdrawal, because it sits inside an omnibus transfer about something else.
+    hi_now = next((r['amount'] for r in rows if r['code'] == '8140'), None)
+    hi_made = next((d['amount'] for d in dep
+                    if 'health insurance' in d['subject'].lower()), None)
+    if hi_now is not None and hi_made:
+        rws.append(conclusion(
+            id='a-stabilization-fund-has-already-been-spent-down',
+            claim='The Health Insurance fund was created with %s and holds %s.'
+                  % (C.usd(hi_made), C.usd(hi_now)),
+            so_what='The town does spend these funds, and the articles that did it are '
+                    'not in our record.',
+            figures={'made': figure(hi_made, C.usd(hi_made), 'voted in at creation'),
+                     'now': figure(hi_now, C.usd(hi_now), 'left in the fund'),
+                     'gone': figure(hi_made - hi_now, C.usd(hi_made - hi_now),
+                                    'gone, unexplained by any article we hold')},
+            figure='gone', kind='measured', bearing='lever',
+            detail='%s has left it, and not one article in this archive says so: the '
+                   'withdrawals sit inside omnibus transfer articles about something '
+                   'else. One of them is visible in the annual report as \u201ctransfer '
+                   '$105,762.48 from the Health Insurance Stabilization Account\u201d, '
+                   'inside an article that moves money from five different places at '
+                   'once.' % C.usd(hi_made - hi_now),
+            basis='The town\u2019s general ledger for the balance; `town_meeting_votes` '
+                  'for the creating article.',
+            not_shown='What the rest of the drawdown paid for, or which meeting approved '
+                      'it. Only the ledger shows the money is gone.',
+            allow=('$105,762.48',),
+        ))
     if best and len(best) >= 3:
         rws.append(conclusion(
             id='the-deposits-ran-well-above-average-for-six-straight-years',

@@ -1045,6 +1045,17 @@ GROUPS = [
              'question. Loaded as `stated_cuts` and read by /cut-register, which sets '
              'DESE\u2019s teacher counts beside it. '
              'See scripts/extract_stated_cuts.py.'),
+            ('data/trust-agency-balances.csv',
+             'Every trust and stabilization fund, as the accounting system prints it', 3,
+             'MUNIS\u2019s own trust and agency report: account number, fund name, '
+             'beginning balance, revenue, expenditure and remaining balance for 40 '
+             'accounts, at 31 March 2026. Rule 13a \u2014 this is a printout from the '
+             'books, where every other stabilization figure in this archive is read off a '
+             'PHOTOGRAPH of a table in an annual report, and the two agree to the cent on '
+             'all three funds that can be compared. Balances print as credits, so `held` '
+             'carries the sign flipped and `beginning` keeps it as printed. Both subtotals '
+             'the report prints are recomputed from the rows and the extract refuses to '
+             'write unless they tie. See scripts/extract_trust_agency.py.'),
             ('data/stabilization-balances.csv',
              'What each stabilization and trust fund held, year by year', 2,
              'The trust-and-agency table the town prints in its annual report, read off '

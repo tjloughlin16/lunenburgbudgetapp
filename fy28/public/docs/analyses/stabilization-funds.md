@@ -2,15 +2,15 @@
 
 **What the town holds in reserve, which of it could lawfully be spent on an operating deficit, and the four questions about it this archive cannot yet answer.**
 
-Analysis, September 2026. Balances are FY2025 and are **not reconciled** — see the caveat before quoting one.
+Analysis, September 2026. Balances are the town’s own general ledger at 31 March 2026, reconciled to the total the accounting system prints for them.
 
 ---
 
 ## The short version
 
-**$6,444,504 held, across 7 stabilization funds.** This is what the town has in reserve outside its operating budget. It is a balance, not an income.
+**$9,061,421 held, across the 9 accounts the ledger groups as stabilization funds.** That is what the town has in reserve outside its operating budget — a balance, not an income, and two of the nine are a pension trust and a conservation fund rather than anything Town Meeting would call stabilization.
 
-**$3,147,179 of it can be spent on anything lawful** — the general Stabilization Fund, by a two-thirds Town Meeting vote. The other $3,297,325 is restricted to the purpose each fund was created for, so it cannot be moved to a school deficit whatever Town Meeting thinks of the idea.
+**$3,147,179 of it can be spent on anything lawful** — the general Stabilization Fund, by a two-thirds Town Meeting vote. The other $5,914,242 is restricted to the purpose each fund was created for, so it cannot be moved to a school deficit whatever Town Meeting thinks of the idea.
 
 **$4,051,527 voted in since FY2012 — an average of $289,395 a year.** This is the money going IN, one Town Meeting article at a time, and it is the figure the cheaper question turns on. It is a FLOOR: 7 of the articles print no amount.
 
@@ -19,6 +19,63 @@ Analysis, September 2026. Balances are FY2025 and are **not reconciled** — see
 **$1,066,000 has come back out**, in the articles that say so plainly — a floor again, because money also leaves inside articles about something else.
 
 So: *can this pay for a school deficit?* **Yes for $3,147,179, no for the rest** — and a reserve spent on an operating cost buys one year, exactly as free cash does, which is the argument `free-cash.md` already makes.
+
+---
+
+## What has moved, so far as anything here can prove
+
+These are the only stabilization figures in this archive that have been **checked**. Each is read off a photograph of the town’s own trust-fund table and then verified against identities the table states about every row — beginning plus activity equals ending cash, and, where the year prints a market value, ending cash plus unrealised equals ending market. A row that fails is not published.
+
+Some years print no ending market value at all: FY2019’s table carries the heading and not one figure under it. Those rows are proven on the cash identity alone, their market column is left empty rather than filled with the cash figure, and the basis column of the published CSV says which proof each row rests on.
+
+**The general Stabilization Fund**, the one Town Meeting may spend on anything lawful:
+
+| | ending market value |
+|---|---:|
+| FY2016 | $1,551,001.18 |
+| FY2018 | $1,732,690.98 |
+| FY2020 | $2,041,061.72 |
+
+That is **$490,060.54 more between FY2016 and FY2020**, a rise of 32%, in a fund whose purpose is to be available.
+
+![Three stabilization funds on one scale, FY2014 to FY2025. The tallest reaches $2,598,621.38 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Dashed segments span years this archive has not yet proven.](charts/stabilization-all.svg)
+
+On one scale the Zoning Incentive fund looks like nothing is happening to it. That is the finding, not a rendering problem — but it hides the shape, so each fund also gets its own panel:
+
+![The same three funds, each panel stretched to its own range, so the shapes are comparable and the heights are not.](charts/stabilization-each.svg)
+
+![How fast each fund moved per year between its first and last proven year: Vehicle/Equipment 40.8% a year over 7 years, Stabilization 10.1% a year over 5 years, Zoning Incentive 0.8% a year over 11 years.](charts/stabilization-growth.svg)
+
+**Three funds, three different things happening.** The Vehicle/Equipment fund moved 40.8% a year and the Stabilization fund 10.1% a year — those are being BUILT, and the Town Meeting articles listed earlier on this page are the votes that did it. The Zoning Incentive fund is not: it moved $21,858.35 in 11 years, which is what a balance does when it is left alone.
+
+*What the charts do not show.* A balance rising does not say how much of the rise is money voted in and how much is interest earned, and nothing in this data separates them. It also does not say a fund is AVAILABLE: what each may be spent on is the section above, and a balance is not a permission.
+
+---
+
+---
+
+## What is in them, at 31 March 2026
+
+Straight from the town’s general ledger: what each account held at the start of FY2026, what has gone into it since, and what has come out. The account numbers are the town’s own.
+
+| account | fund | held | in, this year | out, this year | may be spent on |
+|---|---|---:|---:|---:|---|
+| `8124` | stabilization | $3,147,178.96 | $97,299.16 | — | **anything lawful**, by a 2/3 Town Meeting vote |
+| `8136` | vehicle equipment | $2,598,621.38 | $55,142.16 | — | its own stated purpose only |
+| `8137` | opeb | $1,649,190.51 | $280,563.14 | — | its own stated purpose only |
+| `8125` | conservation trust | $967,726.65 | $45,850.68 | — | its own stated purpose only |
+| `8129` | playground fund | $249,060.25 | $6,543.80 | — | its own stated purpose only |
+| `8141` | opiod | $241,421.18 | $46,730.58 | — | its own stated purpose only |
+| `8138` | sewer cap stab | $191,679.20 | $25,030.40 | — | its own stated purpose only |
+| `8140` | Health Ins Stabil | $11,026.88 | $340.90 | — | its own stated purpose only |
+| `8133` | Sewer stabilization | $5,516.23 | $5,238.81 | — | its own stated purpose only |
+| | **Total** | **$9,061,421.24** | **$562,739.63** | **$0.00** | |
+
+**Two of these are not stabilization funds in the sense Town Meeting means, and they are here because the LEDGER files them here.** `8137 opeb` is the other-post-employment-benefits trust and `8125 conservation trust` is a conservation fund; together they are $2,616,917.16 of the $9,061,421.24 above. Quoting the total as “the stabilization funds” would be taking the accounting system’s filing decision for a statement about what may be spent — so the grouping is printed as the ledger prints it, and said out loud here.
+
+**The general/restricted split is ours**, read off each fund’s name and account. The ledger prints a balance and never says what may be spent on what.
+
+**Nothing has come out of any of them so far this year.** Every expenditure column is empty at 31 March 2026 — a fact about nine months, not about whether these funds get spent. They do: the Health Insurance fund is a third of a million dollars lighter than the article that created it.
 
 ---
 
@@ -62,54 +119,9 @@ In the 8 years where every article carries a printed amount, the town voted in b
 
 *How solid is this.* Of the 53 articles mentioning a stabilization fund, 39 are deposits, 2 are withdrawals, 7 print no amount (marked *understated* above), and 5 are sewer enterprise operating budgets that name a fund only in passing — those five total $3,706,189 and counting them as deposits would overstate the money going in by more than the deposits themselves.
 
----
+## Each fund, year by year
 
-## What is in them, FY2025
-
-| account | fund | balance | may be spent on |
-|---|---|---:|---|
-| `8124` | Stabilization Fund | $3,147,178.96 | **anything lawful**, by a 2/3 Town Meeting vote |
-| `8136` | Vehicles/Equipment Stabilization | $2,598,621.38 | its own stated purpose only |
-| `8129` | Zoning Stabilization Fund | $249,060.25 | its own stated purpose only |
-| `8141` | Opioid Settlement Stabilization | $241,421.18 | its own stated purpose only |
-| `8138` | Sewer Capital Reserve Stabilization | $191,679.20 | its own stated purpose only |
-| `8140` | Health Insurance Stabilization | $11,026.88 | its own stated purpose only |
-| `8133` | Sewer I/l Stabilization Fund | $5,516.23 | its own stated purpose only |
-| | **Total** | **$6,444,504.08** | |
-
-**The general/restricted split is ours**, read off each fund’s name. The annual report prints a balance and never says what may be spent on what.
-
----
-
-## What has moved, so far as anything here can prove
-
-These are the only stabilization figures in this archive that have been **checked**. Each is read off a photograph of the town’s own trust-fund table and then verified against identities the table states about every row — beginning plus activity equals ending cash, and, where the year prints a market value, ending cash plus unrealised equals ending market. A row that fails is not published.
-
-Some years print no ending market value at all: FY2019’s table carries the heading and not one figure under it. Those rows are proven on the cash identity alone, their market column is left empty rather than filled with the cash figure, and the basis column of the published CSV says which proof each row rests on.
-
-**The general Stabilization Fund**, the one Town Meeting may spend on anything lawful:
-
-| | ending market value |
-|---|---:|
-| FY2016 | $1,551,001.18 |
-| FY2018 | $1,732,690.98 |
-| FY2020 | $2,041,061.72 |
-
-That is **$490,060.54 more between FY2016 and FY2020**, a rise of 32%, in a fund whose purpose is to be available.
-
-![Three stabilization funds on one scale, FY2014 to FY2025. The tallest reaches $2,598,621.38 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Dashed segments span years this archive has not yet proven.](charts/stabilization-all.svg)
-
-On one scale the Zoning Incentive fund looks like nothing is happening to it. That is the finding, not a rendering problem — but it hides the shape, so each fund also gets its own panel:
-
-![The same three funds, each panel stretched to its own range, so the shapes are comparable and the heights are not.](charts/stabilization-each.svg)
-
-![How fast each fund moved per year between its first and last proven year: Vehicle/Equipment 40.8% a year over 7 years, Stabilization 10.1% a year over 5 years, Zoning Incentive 0.8% a year over 11 years.](charts/stabilization-growth.svg)
-
-**Three funds, three different things happening.** The Vehicle/Equipment fund moved 40.8% a year and the Stabilization fund 10.1% a year — those are being BUILT, and the Town Meeting articles listed earlier on this page are the votes that did it. The Zoning Incentive fund is not: it moved $21,858.35 in 11 years, which is what a balance does when it is left alone.
-
-*What the charts do not show.* A balance rising does not say how much of the rise is money voted in and how much is interest earned, and nothing in this data separates them. It also does not say a fund is AVAILABLE: what each may be spent on is the section above, and a balance is not a permission.
-
-**Each fund, year by year.** Every figure below is a separate page of a separate annual report, read and checked on its own:
+Every figure below is a separate page of a separate annual report, read and checked on its own:
 
 - **Zoning Incentive Stabilization** — FY2014 $227,201.90, FY2015 $227,542.95, FY2016 $227,884.96, FY2018 $228,891.82, FY2020 $230,431.40, FY2022 $231,007.68, FY2025 $249,060.25
 - **Stabilization** — FY2016 $1,511,526.92, FY2018 $1,740,279.81, FY2020 $1,978,347.74, FY2021 $2,447,755.21

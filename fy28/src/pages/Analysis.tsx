@@ -142,8 +142,25 @@ export function Analysis() {
     const first = body[h2s[0]] as React.ReactElement<{ id: string }>
     const head = contents.find(h => h.id === first.props.id)
     if (!head || !SHORT_HEADING.test(head.text)) return null
-    return { short: body.slice(h2s[0], h2s[1]), rest: body.slice(h2s[1]), lead: body.slice(0, h2s[0]) }
+    // `rest` is split again at its own first boundary so the conclusions beyond the
+    // first three can land AFTER the opening section of the fold rather than before it.
+    // TJ set the order and the charts are that opening section: "all charts first. 'The
+    // other findings', What is in them..." A block of findings above the charts reads as
+    // a second short version, which is the thing the single fold just stopped doing.
+    const nextH2 = h2s.length > 2 ? h2s[2] : body.length
+    return {
+      short: body.slice(h2s[0], h2s[1]),
+      rest: body.slice(h2s[1]),
+      restHead: body.slice(h2s[1], nextH2),
+      restTail: body.slice(nextH2),
+      lead: body.slice(0, h2s[0]),
+    }
   })()
+
+  // The generator owns the opening when it shipped a stat row; and the conclusions beyond
+  // the first three go inside the one fold rather than beside it.
+  const ownsShort = !!model?.stats?.length
+  const moreRows = model?.conclusions ? splitConclusions(model.conclusions, undefined)[1] : []
 
   const title = meta?.title
     ?? (rendered?.headings[0]?.depth === 1 ? rendered.headings[0].text : id)
@@ -178,6 +195,27 @@ export function Analysis() {
           the document because rule 7b opens a drill-in with what it MEANS; the prose
           short version still follows, because the markdown is also what /docs serves and
           what the PDF is made from, and the two must not drift apart. */}
+      {/* ONE FOLD, AND THE GENERATOR OWNS THE SHORT VERSION WHEN IT HAS ONE.
+          Two bugs lived here, both introduced with the model block and both found by TJ
+          reading the page rather than by any check:
+
+          TWO EXPANDABLE SECTIONS. The extra conclusions got a `FullVersion` of their own,
+          beside the one the document already had, so the page offered a reader two folds
+          and no way to tell which held what. There is one fold on a report.
+
+          AND THE SHORT VERSION TWICE. When a payload carries `stats` the generator has
+          authored this page's short version -- that IS the stat row and the cards -- and
+          rendering the markdown's own `## The short version` underneath says the same
+          figures again in prose. Worse, pushing it into the fold puts a section headed
+          "The short version" inside the full version, which is the joke TJ made when he
+          saw it.
+
+          So: `stats` present means the generator owns the opening and the markdown's
+          short-version section is dropped FROM THE PAGE. It stays in the .md, which is
+          what /docs serves and what the PDF is made from -- this is a rendering decision,
+          not a deletion. A payload with conclusions but no stats (athletics,
+          budget-vs-actual, monty-tech, whose conclusions are authored for their own React
+          pages) keeps its prose short version, because nothing has replaced it. */}
       {model && (model.stats?.length || model.conclusions?.length) ? (
         <section data-section="conclusions" data-short="">
           {model.stats?.length ? (
@@ -194,22 +232,21 @@ export function Analysis() {
         </section>
       ) : null}
 
-      {/* THE REST OF THE FINDINGS, BEHIND THE FOLD. `splitConclusions` shows three above
-          it, and a report with four would otherwise drop its fourth without saying so.
-          Same placement the payload-driven pages use. */}
-      {model?.conclusions && splitConclusions(model.conclusions, undefined)[1].length > 0 ? (
-        <FullVersion what="the other findings">
-          <H2 id="more-findings">The other findings</H2>
-          <Conclusions rows={splitConclusions(model.conclusions, undefined)[1]} noAsk short={false} />
-        </FullVersion>
-      ) : null}
-
       {split ? (
         <>
           <div className="report-body mt-6">{split.lead}</div>
-          <ShortVersion><div className="report-body">{split.short}</div></ShortVersion>
+          {ownsShort ? null : (
+            <ShortVersion><div className="report-body">{split.short}</div></ShortVersion>
+          )}
           <FullVersion what="the full analysis">
-            <div className="report-body mt-6">{split.rest}</div>
+            <div className="report-body mt-6">{split.restHead}</div>
+            {moreRows.length > 0 ? (
+              <>
+                <H2 id="more-findings">The other findings</H2>
+                <Conclusions rows={moreRows} noAsk short={false} />
+              </>
+            ) : null}
+            <div className="report-body mt-6">{split.restTail}</div>
           </FullVersion>
         </>
       ) : (

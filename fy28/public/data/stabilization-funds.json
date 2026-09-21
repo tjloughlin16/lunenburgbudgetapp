@@ -4,7 +4,7 @@
   {
    "basis": "`stabilization_balances` for the balances; the general/restricted split is OURS, read off each fund’s name because the annual report prints a balance and never says what may be spent on what.",
    "bearing": "sizes",
-   "claim": "Only $3,147,179 of the $6,444,504 reserve may be spent on anything lawful.",
+   "claim": "Only $3,147,179 of the $9,061,421 reserve may be spent on anything lawful.",
    "detail": "The general fund takes a two-thirds Town Meeting vote. A special purpose fund created under c.40 §5B may be spent only on its stated purpose, and that purpose lives in the article that created it rather than in the fund’s name.",
    "figure": "gen",
    "figures": {
@@ -14,19 +14,19 @@
      "value": 3147178.96
     },
     "held": {
-     "text": "$6,444,504",
+     "text": "$9,061,421",
      "unit": "held in reserve, FY2025",
-     "value": 6444504.08
+     "value": 9061421.24
     },
     "n": {
-     "text": "7",
+     "text": "9",
      "unit": "stabilization funds",
-     "value": 7
+     "value": 9
     },
     "res": {
-     "text": "$3,297,325",
+     "text": "$5,914,242",
      "unit": "restricted to a stated purpose",
-     "value": 3297325.12
+     "value": 5914242.28
     }
    },
    "id": "most-of-the-reserve-cannot-be-spent-on-an-operating-deficit",
@@ -41,7 +41,7 @@
      "slug": "/analysis/free-cash"
     }
    ],
-   "so_what": "The other $3,297,325 is restricted to the purpose each fund was created for."
+   "so_what": "The other $5,914,242 is restricted to the purpose each fund was created for."
   },
   {
    "basis": "`town_meeting_votes`, classified from each article’s own subject line. Five sewer enterprise operating budgets mention a fund in passing and are excluded; counting them would overstate the money going in by more than the deposits themselves.",
@@ -87,6 +87,38 @@
    "not_shown": "How much of any balance’s rise is a deposit and how much is interest. The two cannot be separated here.",
    "see": [],
    "so_what": "Reducing a deposit is recurring money; spending a balance buys one year."
+  },
+  {
+   "basis": "The town’s general ledger for the balance; `town_meeting_votes` for the creating article.",
+   "bearing": "lever",
+   "claim": "The Health Insurance fund was created with $369,334 and holds $11,027.",
+   "detail": "$358,307 has left it, and not one article in this archive says so: the withdrawals sit inside omnibus transfer articles about something else. One of them is visible in the annual report as “transfer $105,762.48 from the Health Insurance Stabilization Account”, inside an article that moves money from five different places at once.",
+   "figure": "gone",
+   "figures": {
+    "gone": {
+     "text": "$358,307",
+     "unit": "gone, unexplained by any article we hold",
+     "value": 358307.12
+    },
+    "made": {
+     "text": "$369,334",
+     "unit": "voted in at creation",
+     "value": 369334.0
+    },
+    "now": {
+     "text": "$11,027",
+     "unit": "left in the fund",
+     "value": 11026.88
+    }
+   },
+   "id": "a-stabilization-fund-has-already-been-spent-down",
+   "kind": "measured",
+   "literals": [
+    "$105,762.48"
+   ],
+   "not_shown": "What the rest of the drawdown paid for, or which meeting approved it. Only the ledger shows the money is gone.",
+   "see": [],
+   "so_what": "The town does spend these funds, and the articles that did it are not in our record."
   },
   {
    "basis": "`town_meeting_votes`, deposits summed per fiscal year.",
@@ -363,43 +395,55 @@
    "balance": 3147178.96,
    "code": "8124",
    "general": true,
-   "name": "Stabilization Fund"
+   "name": "stabilization"
   },
   {
    "balance": 2598621.38,
    "code": "8136",
    "general": false,
-   "name": "Vehicles/Equipment Stabilization"
+   "name": "vehicle equipment"
+  },
+  {
+   "balance": 1649190.51,
+   "code": "8137",
+   "general": false,
+   "name": "opeb"
+  },
+  {
+   "balance": 967726.65,
+   "code": "8125",
+   "general": false,
+   "name": "conservation trust"
   },
   {
    "balance": 249060.25,
    "code": "8129",
    "general": false,
-   "name": "Zoning Stabilization Fund"
+   "name": "playground fund"
   },
   {
    "balance": 241421.18,
    "code": "8141",
    "general": false,
-   "name": "Opioid Settlement Stabilization"
+   "name": "opiod"
   },
   {
    "balance": 191679.2,
    "code": "8138",
    "general": false,
-   "name": "Sewer Capital Reserve Stabilization"
+   "name": "sewer cap stab"
   },
   {
    "balance": 11026.88,
    "code": "8140",
    "general": false,
-   "name": "Health Insurance Stabilization"
+   "name": "Health Ins Stabil"
   },
   {
    "balance": 5516.23,
    "code": "8133",
    "general": false,
-   "name": "Sewer I/l Stabilization Fund"
+   "name": "Sewer stabilization"
   }
  ],
  "fy": 2025,
@@ -1171,7 +1215,7 @@
  ],
  "stats": [
   {
-   "label": "spendable on anything lawful, of $6,444,504 held across 7 funds",
+   "label": "spendable on anything lawful, of $9,061,421 held across 9 funds",
    "tone": "var(--series-cost)",
    "value": "$3,147,179"
   },
@@ -1185,9 +1229,9 @@
   }
  ],
  "totals": {
-  "funds": 7,
+  "funds": 9,
   "general": 3147178.96,
-  "held": 6444504.08,
-  "restricted": 3297325.12
+  "held": 9061421.24,
+  "restricted": 5914242.28
  }
 }
