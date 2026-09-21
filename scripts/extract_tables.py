@@ -305,7 +305,15 @@ def looks_like_amount(tok):
     if not t or not re.fullmatch(r'\(?\$?-?[\d.,]+\)?', t):
         return False
     core = t.strip('()').lstrip('$').lstrip('-')
-    return bool(core) and (',' in core or re.search(r'\.\d{2}$', core))
+    # ...and a figure whose separator the scan LOST. FY2023's warrant prints the Building
+    # Inspector at `$ 161,942.40` and Animal Control at `$ 49,000.00`; the scan turned the
+    # commas into points and then dropped one, leaving `161.94240` and `49.00000`. Neither
+    # holds a comma and neither ends in a two-digit decimal, so both failed here -- before
+    # any parser saw them -- and `Subtotal Other Protection` fell short by exactly their
+    # sum, $210,942.40. This gate is the first thing a token meets, so a shape it does not
+    # know is not a value that parses wrong; it is a cell that never existed.
+    return bool(core) and (',' in core or re.search(r'\.\d{2}$', core)
+                           or bool(re.fullmatch(r'\d{1,3}[.,]\d{5}', core)))
 
 
 def read_omnibus_line(line):
@@ -764,6 +772,9 @@ def extract(dataset):
         # total.
         for run in runs:
             in_run = [r for r in rows[n0:] if r['page'] in run]
+            head = HEADINGS.get((edition, run[0]))
+            if head:
+                trim_to_heading(in_run, head)
             apply_corrections(in_run, dataset, fy, CORRECTIONS_APPLIED)
             mark_page_furniture(in_run)
             mark_arithmetic_subtotals(in_run)
@@ -774,7 +785,7 @@ def extract(dataset):
             grand = ([float(grand_row[f'v{i}']) for i in range(1, 9)
                       if grand_row.get(f'v{i}') not in (None, '')]
                      if grand_row else [])
-            checks, ties = [], []
+            checks, ties, groups_tie = [], [], None
             fam = next((r.get('table_family') for r in in_run if r.get('table_family')), '')
             names = (NAMED_COLUMNS.get((dataset, fam))
                      or (('recommended', 'voted') if fam == 'omnibus-budget' else None))
@@ -801,6 +812,9 @@ def extract(dataset):
                     ties.append(ok)
                     checks.append(f'{name}: {got_sum:,.2f} vs {printed:,.2f}'
                                   + ('' if ok else f' ({got_sum - printed:+,.2f})'))
+                    groups_tie = group_reconciliation(
+                        in_run, checks, ties,
+                        lambda r, _n=name: cell(r, _n), name)
             else:
                 # An ordinal must say it is one, EVERY time it is quoted.
                 #
@@ -918,8 +932,6 @@ def extract(dataset):
                     checks.append(f'{ok_rows} full rows tie, {bad_rows} do not'
                                   + (f'; {short} partial not checked' if short else ''))
                     ties.append(False)
-
-            groups_tie = group_reconciliation(in_run, checks, ties)
 
             if fam == 'omnibus-budget':
                 # The table numbers its own lines, so it proves its own completeness.
@@ -1125,6 +1137,7 @@ CORRECTIONS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 
 CORRECTIONS_APPLIED = set()
+HEADINGS = {}
 
 
 def load_corrections():
@@ -1175,15 +1188,82 @@ def apply_corrections(rows_in, dataset, fy, applied):
             if str(r['page']) != want_page or squash(r['label']) != want_label:
                 continue
             col = f"v{c['column']}"
-            r[col] = f"{float(c['corrected']):.2f}"
-            r['repaired_cells'] = (r.get('repaired_cells') or 0) + 1
-            r['row_check'] = (f"read off the page image: OCR gave `{c['as_read']}`, the "
-                              f"page prints {float(c['corrected']):,.2f}")
+            # TWO KINDS OF ROW, and the difference matters more than it looks.
+            #
+            # `read` says OCR got the cell wrong and here is what the page prints; it
+            # replaces the value. `attested` says OCR got the cell RIGHT and the document
+            # is the thing that does not add up -- FY2023's `Total General Government` is
+            # printed $1,974,322.04 over lines that come to $1,974,322.84 -- so it changes
+            # no figure and only writes down that the page was looked at. Without that
+            # distinction the only way to record "we checked, it really is like this" is
+            # to leave no trace at all, and the next person re-reads the same page hunting
+            # an OCR fault that was never there. An attested row that stops matching what
+            # we extract fails the run like any other, which is what keeps it honest.
+            if c.get('kind') == 'attested':
+                held = r.get(col)
+                if held in (None, '') or abs(float(held) - float(c['corrected'])) > 0.005:
+                    print(f"  ATTESTED cell no longer matches: FY{c['fy']} p{c['page']} "
+                          f"{c['label']} holds {held!r}, attested "
+                          f"{float(c['corrected']):,.2f}")
+                    raise SystemExit(1)
+                r['row_check'] = ((r.get('row_check') or '')
+                                  + ('; ' if r.get('row_check') else '')
+                                  + f"checked against the page image: it really does print "
+                                    f"{float(c['corrected']):,.2f}")
+            else:
+                r[col] = f"{float(c['corrected']):.2f}"
+                r['repaired_cells'] = (r.get('repaired_cells') or 0) + 1
+                r['row_check'] = (f"read off the page image: OCR gave `{c['as_read']}`, "
+                                  f"the page prints {float(c['corrected']):,.2f}")
             applied.add((c['dataset'], c['fy'], c['page'], c['label']))
             break
 
 
-def group_reconciliation(in_run, checks, ties):
+def heading_pages(dataset):
+    """(edition, first page) -> the heading the plan says that table is printed under."""
+    out = {}
+    for r in csv.DictReader(open(PLAN)):
+        if r['dataset'] != dataset or not (r.get('printed_heading') or '').strip():
+            continue
+        nums = [int(n) for n in re.findall(r'\d+', r['pages'] or '')]
+        if nums:
+            out[(r['edition'], min(nums))] = r['printed_heading'].strip()
+    return out
+
+
+def trim_to_heading(in_run, heading):
+    """Everything printed ABOVE the table's own heading is a different table.
+
+    A page range cannot separate two tables that share a page, and in the warrant they
+    routinely do. FY2023's omnibus starts halfway down page 164; above it, under Article
+    6, sits the capital plan with its own `TOTAL: $1,360,500.00` and its own funding
+    lines. Read as part of the omnibus those ten lines summed to $6,995,550.00 against
+    that $1,360,500.00 printed beside them -- a $5.6M failure reported against a table
+    that is not the one being extracted, in the one place the extractor had no business
+    looking.
+
+    The heading is the boundary and the plan already records it, so the rows before it are
+    marked rather than dropped: a marked row can be looked at, and the reason it is not
+    part of this table is written on it.
+    """
+    want = squash(heading)
+    first = in_run[0]['page'] if in_run else None
+    cut = None
+    for i, r in enumerate(in_run):
+        if r['page'] != first:
+            break
+        if want and want in squash(r['label']):
+            cut = i
+            break
+    if cut is None:
+        return
+    for r in in_run[:cut + 1]:
+        r['kind'] = 'footnote'
+        r['row_check'] = (f'printed above `{heading}`, which is where this table begins — '
+                          f'another table, or the article that introduces this one')
+
+
+def group_reconciliation(in_run, checks, ties, cell, name):
     """Reconcile on the totals the table PRINTS ABOUT ITSELF, group by group.
 
     A year-level residual is almost useless. FY2024's omnibus came to $43,825,305.59
@@ -1210,7 +1290,16 @@ def group_reconciliation(in_run, checks, ties):
     than the grand total can. So the tie is recorded per group and the year-level
     comparison stays in the reconciliation text as a summary of them, not as a separate
     verdict that can only ever repeat what the groups already said.
-        **THE SCHEDULE NESTS, so the walk has to.** `Total Protection` does not sum any line
+        **IT RUNS ONLY WHERE THE COLUMNS HAVE NAMES.** The first version walked every dataset
+    on `v1`, and `v1` is an ordinal -- the first column of a page that held figures, which
+    is a different printed column on a different page. It duly reported FY2025's debt
+    schedule out by $2.4e22 and turned four `checked` election years into failures by
+    summing one candidate's votes down a column of ballot questions. That is rule 13's own
+    trap, inside the check written to enforce rule 13. So the accessor is passed in, it is
+    the named column the run reconciles on, and a run with no column model gets no group
+    check at all rather than a meaningless one.
+
+    **THE SCHEDULE NESTS, so the walk has to.** `Total Protection` does not sum any line
     at all -- it sums `Subtotal Police`, `Subtotal Fire Dept.`, `Subtotal Radio Watch` and
     `Subtotal Other Protection`, each of which sums its own lines. A flat walk hands a
     parent total an empty run and reports a $4.6M failure at the one place the table is
@@ -1220,12 +1309,8 @@ def group_reconciliation(in_run, checks, ties):
     twelve group totals rather than eighteen overlapping ones.
     """
 
-    def val(r, col='v1'):
-        v = r.get(col)
-        try:
-            return float(v) if v not in (None, '') else 0.0
-        except ValueError:
-            return 0.0
+    def val(r):
+        return cell(r) or 0.0
 
     lines, subs, groups, bad = [], [], [], []
     n_lines = sum(1 for r in in_run if r['kind'] == 'row')
@@ -1238,7 +1323,7 @@ def group_reconciliation(in_run, checks, ties):
             continue
         if r['kind'] not in ('subtotal', 'grand_total'):
             continue
-        if r.get('v1') in (None, ''):
+        if cell(r) is None:
             continue
         printed = val(r)
         name = r['label'].strip() or f"unnamed total, page {r['page']}"
@@ -1285,17 +1370,17 @@ def group_reconciliation(in_run, checks, ties):
     # evidence about its own constituency and about nothing else, so the rows outside
     # every constituency are reported as what they are: read, and unproven.
     if covered < n_lines:
-        checks.append(f'{n_lines - covered} of {n_lines} line rows sit beneath no printed '
-                      f'total — read, but nothing in the document tests them')
+        checks.append(f'{name}: {n_lines - covered} of {n_lines} line rows sit beneath no '
+                      f'printed total — read, but nothing in the document tests them')
         ties.append(False)
         groups.append(False)
     if all(groups):
-        checks.append(f'{len(groups)} printed totals: every one equals what the table '
-                      f'prints beneath it')
+        checks.append(f'{name}: all {len(groups)} printed totals equal what the table '
+                      f'prints beneath them')
         ties.append(True)
         return True
-    checks.append(f'{len(groups)} printed totals, {len(bad)} do not equal what is printed '
-                  f'beneath them: ' + '; '.join(bad[:4]) + ('…' if len(bad) > 4 else ''))
+    checks.append(f'{name}: {len(bad)} of {len(groups)} printed totals do not equal what '
+                  f'is printed beneath them: ' + '; '.join(bad[:4]) + ('…' if len(bad) > 4 else ''))
     ties.append(False)
     return False
 
@@ -1501,6 +1586,7 @@ def main():
               f'of this family is a second, worse copy of the same table and is not '
               f'written.')
         return
+    HEADINGS.update(heading_pages(args.dataset))
     rows, ledger = extract(args.dataset)
     if not rows:
         print(f'{args.dataset}: nothing extracted')
@@ -1545,7 +1631,7 @@ def main():
               + '; '.join(f"FY{c['fy']} p{c['page']} {c['label']}" for c in stale))
         raise SystemExit(1)
     if CORRECTIONS_APPLIED:
-        print(f'  {len(CORRECTIONS_APPLIED)} cell(s) read off the page image, '
+        print(f'  {len(CORRECTIONS_APPLIED)} cell(s) settled against the page image, '
               f'from {os.path.relpath(CORRECTIONS, ROOT)}')
 
     rec = sum(1 for l in ledger if l['status'] == 'checked')

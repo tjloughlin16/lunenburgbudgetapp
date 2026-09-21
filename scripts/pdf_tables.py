@@ -37,7 +37,23 @@ import collections
 import re
 import statistics
 
-MONEY = re.compile(r'\(?-?\$?\s?-?[\d,]+\.\d\d\)?|\(?-?\$?\s?[\d,]{4,}\)?')
+# A FIGURE MUST BE TAKEN WHOLE OR NOT AT ALL.
+#
+# `[\d,]+\.\d\d` is unanchored and knows only the comma, so on a scan that renders
+# thousands separators as points it stopped at the first two digits it liked and let the
+# rest of the number become more tokens. `$497,155.24` arrives as `$497.155.24` and came
+# back as `$497.15` AND `5.24` -- two well-formed figures, both wrong, both summed into
+# whatever total the row belonged to. Across the sixteen reports that happened on 1,098
+# lines and produced 1,945 sub-$10 fragments, every one of them counted as money.
+#
+# So the multi-separator form is matched FIRST and whole, whichever glyph the scanner
+# chose for the marks; then the lost-separator form (`161.94240`, FY2023's Building
+# Inspector); then the ordinary one. Every alternative ends in `(?!\d)`, because a
+# two-digit tail is only the cents if nothing follows it.
+MONEY = re.compile(r'\(?-?\$?\s?-?\d{1,3}(?:[.,]\d{3})+[.,]\d{2}(?!\d)\)?'
+                   r'|\(?-?\$?\s?-?[\d,]+[.,]\d{5}(?!\d)\)?'
+                   r'|\(?-?\$?\s?-?[\d,]+\.\d\d(?!\d)\)?'
+                   r'|\(?-?\$?\s?[\d,]{4,}\)?')
 MONEY_TOKEN = re.compile(r'[\d,]+\.\d\d')
 NUMERIC = re.compile(r'^\(?-?\$?\s*[\d,]*\.?\d*\)?-?$')
 
@@ -185,6 +201,22 @@ def count(text):
     return None
 
 
+# NO FIGURE IN THIS ARCHIVE IS A HUNDRED BILLION DOLLARS. A value that large is always
+# several cells run together -- a scan that lost the whitespace between two columns, or a
+# row read as one token -- and it is never money. FY2025's debt schedule had
+# `$2,254,933.99`, `$93,687.39` and `250,000.00` arrive as one string and become
+# $2,254,933,999,368,739,225,600.00, which then summed into the run's total and matched
+# the grand total read the same broken way. The year passed its check: two pieces of
+# nonsense agreeing is a check with no power to fail, which is the exact shape rule 13
+# exists to stop. Refusing the cell leaves it in `unparsed_cells`, where it is visible and
+# where the total it belongs to will decline to close.
+ABSURD = 1e11
+
+
+def _sane(v):
+    return None if v is None or abs(v) >= ABSURD else v
+
+
 def amount(text):
     """A figure, or None if the cell does not hold one.
 
@@ -221,6 +253,14 @@ def amount(text):
     # is the decimal point; every other separator is a thousands mark.** That is unambiguous
     # for money and is applied only where the shape fits, so a bare `1.234` is still read as
     # one point two three four.
+    # ...and a separator the scan LOST leaves five digits behind the one it kept. Groups
+    # run in threes and cents in twos, so `161.94240` can only be $161,942.40. Read flat
+    # it is $16,194,240 in a town whose entire budget is $42M -- and the proof that the
+    # rule is right is not the rule, it is that FY2023's `Subtotal Other Protection`
+    # closes with these two figures in it and does not close without them.
+    m5 = re.fullmatch(r'(-?\d{1,3})([.,])(\d{3})(\d\d)', t)
+    if m5:
+        t = m5.group(1) + m5.group(3) + '.' + m5.group(4)
     m = re.fullmatch(r'(-?[\d.,]*[\d])([.,])(\d\d)', t)
     if m and re.search(r'[.,]', m.group(1)):
         t = re.sub(r'[.,]', '', m.group(1)) + '.' + m.group(3)
@@ -232,7 +272,7 @@ def amount(text):
         v = float(t)
     except ValueError:
         return None
-    return -abs(v) if neg else v
+    return _sane(-abs(v) if neg else v)
 
 
 def was_repaired(text):
@@ -568,7 +608,8 @@ SCANNED_MONEY = re.compile(
     r'|^\$?\s*-?\(?\d+[.,]\d{2}\)?$'                        # 1234.56
     r'|^\$\s*-?\(?\d{1,3}(?:,\d{3})+\)?$'                   # $50,000
     r'|^\$\s*-?\(?\d+\)?$'                                  # $500
-    r'|^\$?\s*-?\(?\d{1,3}(?:[.,]\s?\d{3})+[.,]\d{2}\)?$')  # 44,024, 349.19
+    r'|^\$?\s*-?\(?\d{1,3}(?:[.,]\s?\d{3})+[.,]\d{2}\)?$'    # 44,024, 349.19
+    r'|^\$?\s*-?\(?\d{1,3}[.,]\d{5}\)?$')                   # 161.94240
 
 # `S` for `$`, and Cyrillic letters that render exactly like Latin ones. FY2023's page
 # gives `Bartholomew - ОРЕВ` where all four characters are Cyrillic (U+041E, U+0420,
@@ -609,7 +650,24 @@ def scanned_amount(text):
     # digits; a group separator by exactly three. Taking the last mark as the point read
     # `$50,000` as fifty dollars -- a thousandfold error, silent, in a figure the town
     # prints all through its warrant.
+    # A SEPARATOR THE SCANNER DROPPED LEAVES FIVE DIGITS BEHIND THE ONE IT KEPT.
+    #
+    # FY2023's warrant prints `$ 161,942.40` and `$ 49,000.00` for the Building Inspector
+    # and Animal Control. The scan turned the commas into points and then lost one of the
+    # two, giving `161.94240` and `49.00000` -- which match no money pattern at all, so
+    # both cells came through EMPTY and `Subtotal Other Protection` fell exactly
+    # $210,942.40 short, the sum of the two.
+    #
+    # Five digits after the only separator can be read one way: groups run in threes and
+    # cents in twos, so the mark is the lost thousands separator and the last two digits
+    # are the cents. Read `16194240` flat and the Building Inspector is budgeted
+    # $16,194,240 -- a hundredfold error in a town whose whole budget is $42M. The proof
+    # that this reading is the right one is not the rule, it is that the two recovered
+    # figures close a total the page prints and did not close before.
     cut = max(t.rfind('.'), t.rfind(','))
+    if cut > 0 and len(t) - cut - 1 == 5 and t.count('.') + t.count(',') == 1:
+        t = t[:cut] + t[cut + 1:-2] + '.' + t[-2:]
+        cut = len(t) - 3
     if cut > 0 and len(t) - cut - 1 == 2:
         t = t[:cut].replace('.', '').replace(',', '') + '.' + t[cut + 1:]
     else:
@@ -618,7 +676,7 @@ def scanned_amount(text):
         v = float(t.strip())
     except ValueError:
         return None
-    return -v if neg else v
+    return _sane(-v if neg else v)
 
 
 def is_row_label(text):

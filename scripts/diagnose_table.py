@@ -31,7 +31,14 @@ import pdf_tables as T  # noqa: E402
 
 OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 BLOCKED = os.path.join(ROOT, 'sources', 'data', 'extraction-blocked.csv')
-MONEY = re.compile(r'^\$?\s*-?\(?\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\)?$|^\$?\s*-?\(?\d+[.,]\d{2}\)?$')
+# THE DIAGNOSTIC MUST AGREE WITH THE EXTRACTOR, or it sends you after the wrong thing.
+# This file carried its own copy of the money pattern, and when pdf_tables learned to read
+# `161.94240` this one had not: it went on reporting `no amount: 'Building Inspector'` for
+# a cell the extractor could by then read perfectly. An hour went into a fault that had
+# already been fixed. Rule 13 -- the instrument that reformats before you see it is part
+# of the finding -- applies hardest to the instrument you reach for when something is
+# wrong, so there is one pattern and it lives with the parser that uses it.
+MONEY = T.SCANNED_MONEY
 
 
 def ocr_file(fy):
