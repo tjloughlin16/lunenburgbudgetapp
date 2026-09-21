@@ -246,8 +246,65 @@
    "not_shown": "Whether the projection’s rates hold. Every one of them is backtested against the district’s own later budgets and none of them is a promise.",
    "see": [],
    "so_what": "A one-off payment moves the problem into a year where it is bigger."
+  },
+  {
+   "basis": "`ledger_snapshot` at FY2026 period 12, departments 423 (snow) and 132 (Reserve Fund) — the same coordinates verify_fy26_closeout_town.py asserts against.",
+   "bearing": "sizes",
+   "claim": "One snow year ran $682,521 over budget; the Reserve Fund behind it holds $185,000.",
+   "detail": "FY2026: $355,571 appropriated for snow removal, $1,038,092 spent. Snow deficit spending needs no vote — under c.44 §31D a town may overspend it and settle up afterwards — so something has to settle it, and the Reserve Fund is the only other declared contingency in the town’s books.",
+   "figure": "over",
+   "figures": {
+    "bud": {
+     "text": "$355,571",
+     "unit": "appropriated for it",
+     "value": 355571.39
+    },
+    "deep": {
+     "text": "4.6",
+     "unit": "such years of cover",
+     "value": 4.611108870236049
+    },
+    "over": {
+     "text": "$682,521",
+     "unit": "over appropriation in one year",
+     "value": 682521.0700000001
+    },
+    "res": {
+     "text": "$185,000",
+     "unit": "in the declared contingency",
+     "value": 185000.0
+    },
+    "spent": {
+     "text": "$1,038,092",
+     "unit": "spent on snow in FY2026",
+     "value": 1038092.4600000001
+    }
+   },
+   "id": "one-bad-snow-year-is-a-fifth-of-the-whole-reserve",
+   "kind": "measured",
+   "literals": [
+    "c.44 §31D",
+    "423",
+    "132",
+    "FY2026"
+   ],
+   "not_shown": "Whether FY2026 was a typical snow year, or what a rating agency would make of a town that spent this fund. This archive holds no bond rating for Lunenburg at all.",
+   "see": [
+    {
+     "label": "The year those figures come from",
+     "slug": "/analysis/fy26-closeout-town"
+    }
+   ],
+   "so_what": "The stabilization fund covers the difference, and it is about 4.6 such years deep."
   }
  ],
+ "contingency": {
+  "reserve": 185000.0,
+  "reserve_spent": 0.0,
+  "snow_budget": 355571.39,
+  "snow_over": 682521.0700000001,
+  "snow_spent": 1038092.4600000001
+ },
  "gaps": [
   [
    28,

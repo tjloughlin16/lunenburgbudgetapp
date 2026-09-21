@@ -61,7 +61,38 @@ Town Meeting voted **$4,051,527** into these funds between FY2012 and FY2025, an
 
 ---
 
-## 3. Then what?
+## 3. What it costs to be wrong
+
+**The fund has never been drawn in anything this archive can read.** Of the 8 withdrawals from any stabilization fund we can read out of the annual reports, 7 are sewer funds and one is Health Insurance. Not one names the general Stabilization Fund. That is a floor rather than a history — money also leaves inside articles about something else — but it means the town has no recent practice of spending this fund, and drawing it to zero would be without precedent in the record we hold.
+
+**And here is what one bad year costs.** In FY2026 the town budgeted $355,571 for snow removal and spent **$1,038,092** — 292% of the appropriation, **$682,521 over**. Snow deficit spending does not require a vote: under M.G.L. c.44 §31D a town may overspend snow and settle up afterwards. Something has to settle it.
+
+| | |
+|---|---:|
+| One snow year over its appropriation, FY2026 | $682,521 |
+| The Reserve Fund, the town’s declared contingency, FY2026 | $185,000 |
+| The general Stabilization Fund today | $3,147,179 |
+| The same fund after the burndown above | $0 |
+
+**The Reserve Fund covers 27% of one snow year’s overrun.** It held $185,000 in FY2026 and spent nothing of it. The stabilization fund is what stands behind it, and it is about 4.6 snow years deep. At zero it is none.
+
+### What has been said about this, in the town’s own rooms
+
+**For keeping it — the Town Manager, in the interview that got her the job.** Asked about her fiscal philosophy by the Select Board on 14 January 2025, Town Manager Warren-Dyment said that “in this post inflationary world, you can’t be as conservative but with that said, making sure one-time funds are put away for rainy days is also critical,” and added “that Lunenburg’s stabilization funds are looking good and that there is a strong commitment from the community to put away money into stabilization funds of various types and that should continue.” ([the minutes](/docs/minutes/text/select-board/2025-01-14-minutes-rr2026-09-18-draft.txt))
+
+**For spending it — a resident, at public comment.** At the Select Board on 14 April 2026, after listing the cuts in the balanced budget: “This budget is going to surgically screw over the children in town while we sit on 3.2 million dollars and not even mention it. If cutting teachers and all this support for kids isn’t a rainy day, then what is? … I hope you speak to why touching the rainy day is a far worse event than the impact on families of young children.” *(our machine captions of the recording, not a minute — [the video at 32:36](https://www.youtube.com/watch?v=sF7yvu2C25w&t=1956s))*
+
+**And the School Committee, weighing this exact lever.** On 12 March 2025, discussing where $500,000 would come from, a member said the town needed to tell the community if it was “going to take this very strange Road of not funding the stabilization funds.” *(our machine captions of the recording, not a minute — [the video at 50:43](https://www.youtube.com/watch?v=b7caO9Kd7VA&t=3043s))*
+
+**The question that was asked and not answered.** At the Finance Committee on 13 March 2025 a resident asked “if there is a direct impact on the town’s bond rating if the town does not contribute to OPEB.” The minutes record the question and no reply. ([the minutes](/docs/minutes/text/finance-committee/2025-03-13-minutes-7009.txt))
+
+*Nothing in this report picks a side between those two. What it can do is make sure both people are arguing over the same figures.*
+
+**What this does NOT establish, and it is the part everyone will assume.** Nothing here says what a rating agency would do. This archive holds no bond rating, no rating report and no official statement for Lunenburg — the documents that would say what the town’s rating is, what the agency said about its reserves, and what it costs per million borrowed if it moves. Nor does it hold any written reserve policy or target for the town, so there is no stated level this fund would be falling below. Both are registered at [what we cannot answer](/what-we-cannot-answer).
+
+---
+
+## 4. Then what?
 
 That is the question the first two exist to set up, and the honest answer is that neither is a solution; they are timing.
 

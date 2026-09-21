@@ -108,6 +108,72 @@ def burndown(balance, gaps):
     return out
 
 
+# THE LEDGER FIGURES BEHIND THE RISK SECTION, read rather than typed.
+#
+# Rule 2 in its sharpest form: the whole downside argument rests on two amounts from the
+# FY26 town books, and both were available as a query. Typing "$682,521" into this
+# generator would have made this page the one file in the repository stating a figure
+# nothing recomputes -- on the section most likely to be quoted at a meeting.
+#
+# `l.fy=2026 AND l.period=12` and the department codes are the same coordinates
+# verify_fy26_closeout_town.py asserts against, so the two cannot drift apart.
+FY26 = "l.fy=2026 AND l.period=12"
+SNOW_DEPT = '423'         # SNOW REMOVAL
+# DEPT 132 ONLY, which is the Reserve Fund proper. 133 is the salary reserve and the
+# retirement buy-back -- real contingency, different purpose, and folding them in
+# would put a figure here that /fy26-closeout-town does not print.
+RESERVE_DEPTS = ('132',)
+
+
+def clear_withdrawals():
+    """Every withdrawal from any stabilization fund the annual reports state plainly.
+
+    `clear` only. The other confidences in that file are a combined figure, a deposit the
+    pattern misread, or the same transaction printed in two consecutive reports -- see
+    extract_stabilization_flows.py, which keeps all of them and marks each. Counting an
+    ambiguous row here would overstate how often these funds are drawn on, which is the
+    one thing this section is for.
+    """
+    f = os.path.join(ROOT, 'sources', 'data', 'stabilization-flows.csv')
+    if not os.path.exists(f):
+        return []
+    return [r for r in csv.DictReader(open(f, encoding='utf-8'))
+            if r.get('confidence') == 'clear' and r.get('direction') == 'out']
+
+
+def contingency():
+    """What one bad year cost the town, and what it keeps on hand for one.
+
+    Returns None where the database is not built, because this section is evidence or it
+    is not written. An argument about risk assembled from remembered figures is the exact
+    thing rule 13 exists to stop.
+    """
+    db_path = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
+    if not os.path.exists(db_path):
+        return None
+    import sqlite3
+    db = sqlite3.connect('file:%s?mode=ro' % db_path, uri=True)
+    db.row_factory = sqlite3.Row
+    try:
+        snow = db.execute(
+            "SELECT SUM(original) o, SUM(expended) e FROM ledger_snapshot l "
+            "JOIN account a USING (account_id) WHERE %s AND a.dept=?" % FY26,
+            (SNOW_DEPT,)).fetchone()
+        res = db.execute(
+            "SELECT SUM(revised) r, SUM(expended) e FROM ledger_snapshot l "
+            "JOIN account a USING (account_id) WHERE %s AND a.dept=?" % FY26,
+            RESERVE_DEPTS).fetchone()
+    except sqlite3.Error:
+        return None
+    finally:
+        db.close()
+    if not snow or snow['o'] is None or not res or res['r'] is None:
+        return None
+    return dict(snow_budget=float(snow['o']), snow_spent=float(snow['e']),
+                snow_over=float(snow['e']) - float(snow['o']),
+                reserve=float(res['r']), reserve_spent=float(res['e']))
+
+
 def both_levers(balance, annual, gaps):
     """Both levers at once: stop the deposits, then spend the balance on what is left.
 
@@ -146,6 +212,8 @@ def render():
     general = bal.get(GENERAL_ACCOUNT, {}).get('held', 0.0)
     total_held = sum(v['held'] for v in bal.values())
     restricted = total_held - general
+    cg = contingency()
+    clear_out = clear_withdrawals()
     run = burndown(general, gaps)
     # EIGHT YEARS, THE SAME EIGHT THE CHARTS DRAW. The projection runs further and
     # the later years are not more informative -- by then every bar is the part
@@ -265,7 +333,107 @@ def render():
       'or a snow season \u2014 which is what the fund is for.\n')
     w('---\n')
 
-    w('## 3. Then what?\n')
+    # ---- THE DOWNSIDE. TJ: "we need to show the downside. What happens, what risks
+    # exist, if we draw the general stabilization to 0? I think it puts our town in huge
+    # risk."
+    #
+    # HE IS PROBABLY RIGHT AND THAT IS EXACTLY WHY THIS SECTION IS BUILT OUT OF LEDGER
+    # FIGURES RATHER THAN OUT OF THE OBVIOUS SENTENCES. "Spending your reserves is risky"
+    # is the kind of claim that writes itself, arrives sounding authoritative, and rests
+    # on nothing -- rule 7's failure mode exactly. So every number here is a query, and
+    # the two things this archive CANNOT establish are named rather than implied:
+    # what a rating agency would do, and whether the town has a written reserve target.
+    # Both are registered in money-gaps.csv.
+    #
+    # The strongest evidence is not an opinion about reserves. It is what ONE BAD YEAR
+    # already cost this town, in its own books, in the most recent year we hold.
+    if cg:
+        w('## 3. What it costs to be wrong\n')
+        w('**The fund has never been drawn in anything this archive can read.** Of the '
+          '%s withdrawals from any stabilization fund we can read out of the annual '
+          'reports, %s are sewer funds and one is Health Insurance. Not one names the '
+          'general Stabilization Fund. That is a floor rather than a history — money '
+          'also leaves inside articles about something else — but it means the town has '
+          'no recent practice of spending this fund, and drawing it to zero would be '
+          'without precedent in the record we hold.\n'
+          % (len(clear_out), len(clear_out) - 1))
+        w('**And here is what one bad year costs.** In FY2026 the town budgeted %s for '
+          'snow removal and spent **%s** — %.0f%% of the appropriation, **%s over**. '
+          'Snow deficit spending does not require a vote: under M.G.L. c.44 §31D a town '
+          'may overspend snow and settle up afterwards. Something has to settle it.\n'
+          % (usd(cg['snow_budget']), usd(cg['snow_spent']),
+             100 * cg['snow_spent'] / cg['snow_budget'], usd(cg['snow_over'])))
+        w('| | |\n|---|---:|')
+        w('| One snow year over its appropriation, FY2026 | %s |' % usd(cg['snow_over']))
+        w('| The Reserve Fund, the town’s declared contingency, FY2026 | %s |'
+          % usd(cg['reserve']))
+        w('| The general Stabilization Fund today | %s |' % usd(general))
+        w('| The same fund after the burndown above | %s |' % usd(0))
+        w('')
+        w('**The Reserve Fund covers %.0f%% of one snow year’s overrun.** It held %s in '
+          'FY2026 and spent %s of it. The stabilization fund is what stands behind it, '
+          'and it is about %.1f snow years deep. At zero it is none.\n'
+          % (100 * cg['reserve'] / cg['snow_over'], usd(cg['reserve']),
+             usd(cg['reserve_spent']) if cg['reserve_spent'] else 'nothing',
+             general / cg['snow_over']))
+        # ---- WHAT WAS ACTUALLY SAID, BOTH WAYS. Rule 15a: for anything a report says
+        # about a category, search the meeting archive for what people said about that
+        # thing. It found the argument already happening, on both sides, in the town's
+        # own rooms -- including from the person who now runs the town's budget, in the
+        # interview that got her the job.
+        #
+        # RULE 8 GOVERNS THE ORDER AND THE SILENCE. Both are quoted, neither is answered,
+        # and this project does not say which is right. It is not our argument to win.
+        #
+        # TWO KINDS OF CITATION, NOT INTERCHANGEABLE. A quote from the town's own minutes
+        # is a document. A quote from our machine captions is a FINDING AID -- a caption
+        # model hears "fifteen hundred", "$1,500" and "$50" alike -- so it is labelled as
+        # captions and cited as the video at its timestamp, never as a record.
+        w('### What has been said about this, in the town\u2019s own rooms\n')
+        w('**For keeping it \u2014 the Town Manager, in the interview that got her the '
+          'job.** Asked about her fiscal philosophy by the Select Board on 14 January '
+          '2025, Town Manager Warren-Dyment said that \u201cin this post inflationary '
+          'world, you can\u2019t be as conservative but with that said, making sure '
+          'one-time funds are put away for rainy days is also critical,\u201d and added '
+          '\u201cthat Lunenburg\u2019s stabilization funds are looking good and that there '
+          'is a strong commitment from the community to put away money into stabilization '
+          'funds of various types and that should continue.\u201d '
+          '([the minutes](/docs/minutes/text/select-board/'
+          '2025-01-14-minutes-rr2026-09-18-draft.txt))\n')
+        w('**For spending it \u2014 a resident, at public comment.** At the Select Board on '
+          '14 April 2026, after listing the cuts in the balanced budget: \u201cThis budget '
+          'is going to surgically screw over the children in town while we sit on 3.2 '
+          'million dollars and not even mention it. If cutting teachers and all this '
+          'support for kids isn\u2019t a rainy day, then what is? \u2026 I hope you speak to '
+          'why touching the rainy day is a far worse event than the impact on families of '
+          'young children.\u201d '
+          '*(our machine captions of the recording, not a minute \u2014 '
+          '[the video at 32:36](https://www.youtube.com/watch?v=sF7yvu2C25w&t=1956s))*\n')
+        w('**And the School Committee, weighing this exact lever.** On 12 March 2025, '
+          'discussing where $500,000 would come from, a member said the town needed to '
+          'tell the community if it was \u201cgoing to take this very strange Road of '
+          'not funding the stabilization funds.\u201d '
+          '*(our machine captions of the recording, not a minute \u2014 '
+          '[the video at 50:43](https://www.youtube.com/watch?v=b7caO9Kd7VA&t=3043s))*\n')
+        w('**The question that was asked and not answered.** At the Finance Committee on '
+          '13 March 2025 a resident asked \u201cif there is a direct impact on the '
+          'town\u2019s bond rating if the town does not contribute to OPEB.\u201d The '
+          'minutes record the question and no reply. '
+          '([the minutes](/docs/minutes/text/finance-committee/'
+          '2025-03-13-minutes-7009.txt))\n')
+        w('*Nothing in this report picks a side between those two. What it can do is '
+          'make sure both people are arguing over the same figures.*\n')
+        w('**What this does NOT establish, and it is the part everyone will assume.** '
+          'Nothing here says what a rating agency would do. This archive holds no bond '
+          'rating, no rating report and no official statement for Lunenburg — the '
+          'documents that would say what the town’s rating is, what the agency said '
+          'about its reserves, and what it costs per million borrowed if it moves. Nor '
+          'does it hold any written reserve policy or target for the town, so there is no '
+          'stated level this fund would be falling below. Both are registered at '
+          '[what we cannot answer](/what-we-cannot-answer).\n')
+        w('---\n')
+
+    w('## 4. Then what?\n')
     w('That is the question the first two exist to set up, and the honest answer is that '
       'neither is a solution; they are timing.\n')
     w('- **Spending the balance is a one-off.** It moves the problem two years and makes '
@@ -304,7 +472,7 @@ def render():
     return '\n'.join(b) + '\n', dict(
         general=general, restricted=restricted, total=total_held,
         avg_all=avg_all, avg_divertible=avg_div, first_gap=first,
-        burndown=run, both=both, gaps=gaps[:8])
+        burndown=run, both=both, gaps=gaps[:8], contingency=cg)
 
 
 # ---- the sources, rule 12's three things -------------------------------------------
@@ -474,6 +642,45 @@ def conclusions_for(data):
                       'them is a promise.',
         ),
     ]
+    # THE DOWNSIDE, AS A CONCLUSION AND NOT ONLY AS A SECTION. A risk written in prose
+    # halfway down a page is not what a reader repeats at a meeting; the card is. It is
+    # `sizes` rather than `lever` on purpose -- it establishes how big the exposure is
+    # and names no decision, because rule 8 says this project states what each option
+    # costs somebody and never which to pick.
+    cg = data.get('contingency')
+    if cg and cg['snow_over'] > 0:
+        deep = gen / cg['snow_over']
+        rows.append(conclusion(
+            id='one-bad-snow-year-is-a-fifth-of-the-whole-reserve',
+            claim='One snow year ran %s over budget; the Reserve Fund behind it holds %s.'
+                  % (C.usd(cg['snow_over']), C.usd(cg['reserve'])),
+            so_what='The stabilization fund covers the difference, and it is about %s '
+                    'such years deep.' % ('%.1f' % deep),
+            figures={'over': figure(cg['snow_over'], C.usd(cg['snow_over']),
+                                    'over appropriation in one year'),
+                     'res': figure(cg['reserve'], C.usd(cg['reserve']),
+                                   'in the declared contingency'),
+                     'deep': figure(deep, '%.1f' % deep, 'such years of cover'),
+                     'spent': figure(cg['snow_spent'], C.usd(cg['snow_spent']),
+                                     'spent on snow in FY2026'),
+                     'bud': figure(cg['snow_budget'], C.usd(cg['snow_budget']),
+                                   'appropriated for it')},
+            figure='over', kind='measured', bearing='sizes',
+            detail='FY2026: %s appropriated for snow removal, %s spent. Snow deficit '
+                   'spending needs no vote \u2014 under c.44 \u00a731D a town may overspend it '
+                   'and settle up afterwards \u2014 so something has to settle it, and the '
+                   'Reserve Fund is the only other declared contingency in the town\u2019s '
+                   'books.'
+                   % (C.usd(cg['snow_budget']), C.usd(cg['snow_spent'])),
+            basis='`ledger_snapshot` at FY2026 period 12, departments 423 (snow) and 132 '
+                  '(Reserve Fund) \u2014 the same coordinates verify_fy26_closeout_town.py '
+                  'asserts against.',
+            not_shown='Whether FY2026 was a typical snow year, or what a rating agency '
+                      'would make of a town that spent this fund. This archive holds no '
+                      'bond rating for Lunenburg at all.',
+            allow=('c.44 \u00a731D', '423', '132', 'FY2026'),
+            see=[('/analysis/fy26-closeout-town', 'The year those figures come from')],
+        ))
     return emit('stabilization-option', rows)
 
 
@@ -499,6 +706,7 @@ def payload(data):
                        % (100 * data['avg_divertible'] / first_gap, first_fy)),
         ],
         burndown=run, both=data['both'], gaps=data['gaps'],
+        contingency=data.get('contingency'),
         sources=_sources(),
         not_established=[
             'Whether Town Meeting would vote for any of it. This is arithmetic about '

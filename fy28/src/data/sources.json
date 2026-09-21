@@ -1636,6 +1636,18 @@
      "textUrl": "/docs/analyses/hiring-here-or-placing-there.md"
     },
     {
+     "path": "analyses/stabilization-option.md",
+     "title": "Solution options: what the stabilization funds could do about the gap",
+     "stars": 3,
+     "what": "The companion to the stabilization report, and deliberately separate from it: that page describes what the town holds, this one is only about what can be done with it. Three questions in order — can the town stop putting money in, can it spend what is already there, and then what. Spending the whole spendable balance closes two years and runs out partway through the third; stopping the deposits is recurring money, which is the right shape, and covers about a quarter of the first year’s gap. Neither closes it. The gap comes from model/finance.py, the balances from the town’s general ledger, the deposits from the articles that made them. See scripts/build_stabilization_option.py.",
+     "kind": "Notes",
+     "bytes": 10256,
+     "url": "/docs/analyses/stabilization-option.md",
+     "count": 130,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/stabilization-option.md"
+    },
+    {
      "path": "analyses/fy27-and-the-override.md",
      "title": "The FY27 budget and the override",
      "stars": 3,
@@ -1658,18 +1670,6 @@
      "count": 124,
      "unit": "lines",
      "textUrl": "/docs/analyses/spending-compared.md"
-    },
-    {
-     "path": "analyses/stabilization-option.md",
-     "title": "Solution options: what the stabilization funds could do about the gap",
-     "stars": 3,
-     "what": "The companion to the stabilization report, and deliberately separate from it: that page describes what the town holds, this one is only about what can be done with it. Three questions in order — can the town stop putting money in, can it spend what is already there, and then what. Spending the whole spendable balance closes two years and runs out partway through the third; stopping the deposits is recurring money, which is the right shape, and covers about a quarter of the first year’s gap. Neither closes it. The gap comes from model/finance.py, the balances from the town’s general ledger, the deposits from the articles that made them. See scripts/build_stabilization_option.py.",
-     "kind": "Notes",
-     "bytes": 6145,
-     "url": "/docs/analyses/stabilization-option.md",
-     "count": 99,
-     "unit": "lines",
-     "textUrl": "/docs/analyses/stabilization-option.md"
     },
     {
      "path": "analyses/fy27-cut-reconciliation.md",
@@ -2310,9 +2310,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 128150,
+     "bytes": 129872,
      "url": "/docs/data/money-gaps.csv",
-     "count": 151,
+     "count": 153,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -16058,7 +16058,7 @@
  "totals": {
   "documents": 1392,
   "groups": 22,
-  "bytes": 2172911015,
+  "bytes": 2172916848,
   "loadBearing": 140
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
