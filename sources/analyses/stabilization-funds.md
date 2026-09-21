@@ -44,7 +44,7 @@ Some years print no ending market value at all: FY2019’s table carries the hea
 
 That is **$1,323,525.69 more between FY2011 and FY2021**, a rise of 110%, in a fund whose purpose is to be available.
 
-![Three stabilization funds on one scale, FY2011 to FY2025. The tallest reaches $3,147,178.96 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Dashed segments span years this archive has not yet proven.](charts/stabilization-all.svg)
+![Three stabilization funds on one scale, FY2011 to FY2025. The tallest reaches $3,147,178.96 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Every year in each fund’s span is a proven reading — no gaps.](charts/stabilization-all.svg)
 
 On one scale the Zoning Incentive fund looks like nothing is happening to it. That is the finding, not a rendering problem — but it hides the shape, so each fund also gets its own panel:
 

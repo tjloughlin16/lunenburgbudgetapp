@@ -193,13 +193,26 @@ def stale_datasets():
         ocr_newest = max(ocr_newest, os.path.getmtime(f))
     if not ocr_newest:
         return []
+    # `report-trust-funds.csv` is deliberately NOT here. It holds 642 rows that reach
+    # the database and the finance pages, it has not been written since 5 September, and
+    # NO SCRIPT IN THIS REPOSITORY GENERATES IT -- `extract_tables.py` does not know the
+    # name. It is orphaned data: published, and not reproducible.
+    #
+    # Listing it as stale would be a permanent false alarm, and silently dropping it
+    # would hide the real problem, so it is named here instead. check_generated.py cannot
+    # catch this class at all -- it checks generators, and the defect is the absence of
+    # one.
+    ORPHANED = {'report-trust-funds.csv': 'no generator in this repository writes it'}
     out = []
     for name in ('stabilization-balances.csv', 'treasurers-cash.csv',
                  'trust-fund-balances.csv', 'annual-report-pages.csv',
-                 'report-appropriations.csv', 'report-trust-funds.csv'):
+                 'report-appropriations.csv'):
         p = os.path.join(ROOT, 'sources', 'data', name)
         if os.path.exists(p) and os.path.getmtime(p) < ocr_newest - 1:
             out.append(name)
+    for name, why in ORPHANED.items():
+        if os.path.exists(os.path.join(ROOT, 'sources', 'data', name)):
+            out.append('%s  (ORPHANED: %s)' % (name, why))
     return out
 
 

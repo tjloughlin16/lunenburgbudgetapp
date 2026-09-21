@@ -317,6 +317,40 @@ them separately is exactly how the page and the document come to disagree.
 generator that emits a payload, and the shared components that render it. If a page needs
 furniture `report.tsx` does not have, add it there, where every report gets it.
 
+
+## 7e. Label what KIND of statement you are making, when it is not obvious
+
+TJ, 21 September 2026, after a day in which findings, status changes and finished work
+all arrived in the same register and had to be read closely to tell apart:
+
+> *"can you LABEL your statements when your commentary is changing? Can you mark
+> [TASK-COMPLETE] when you think something is done? and [STATUS-UPDATE] when something
+> has drastically changed status? BUT, also [TECH-REPORT] When you are just commenting on
+> issues. But you dont need to label literally everything you say. Just when it seems
+> necessary."*
+
+Three labels, used in replies to him — not in commits, documents or anything published.
+
+| label | for |
+|---|---|
+| `[TASK-COMPLETE]` | a thing he asked for is DONE and verified. Not "I have finished typing" — the check passed, the count moved, the page renders |
+| `[STATUS-UPDATE]` | something he was told before is now materially different. A number that moved, an approach abandoned, a claim withdrawn |
+| `[TECH-REPORT]` | commentary on a defect, a cause, a limitation. Interesting, and not a change in what is done |
+
+**The discipline is in NOT labelling everything.** A label on every paragraph is a label
+on nothing, and the point is that the eye can skip to the ones that matter. Ordinary
+answers, questions and working notes carry no label.
+
+**`[TASK-COMPLETE]` is the one with a bar.** It means measured, not felt — rule: a thing
+is done when a script says so. "Nine of nine funds have a balance for every year they
+existed" is a completion; "I have written the extractor" is not, and while the difference
+is invisible in prose it is the whole difference in practice.
+
+And a withdrawal gets `[STATUS-UPDATE]` as loudly as an advance. A claim quietly dropped
+is worse than one never made.
+
+---
+
 ## 8. This app explains how to fix the problem. It is not an audit
 
 The job is helping a resident understand what would work, and what each option costs

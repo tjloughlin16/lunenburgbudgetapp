@@ -932,10 +932,21 @@ def render(rows):
             movers = ', '.join(
                 '%s %.1f%% a year over %d years' % (bare(k), rate(v), span(v))
                 for k, v in ranked)
-            w('![%s on one scale, FY%d to FY%d. The tallest reaches %s by its last '
-              'proven year; %s is a flat line near the axis the whole way. Dashed '
-              'segments span years this archive has not yet proven.]'
-              '(charts/stabilization-all.svg)\n'
+            # THE ALT TEXT IS DERIVED, INCLUDING WHETHER THERE ARE DASHES. It said
+            # "dashed segments span years this archive has not yet proven" as a
+            # CONSTANT, so on the day the last gap closed it described a picture that no
+            # longer exists -- telling a reader to look for dashes on a chart whose whole
+            # news is that there are none. Alt text is prose that ships (rule 2), and it
+            # is the only version of a chart a screen reader or a text-only agent gets.
+            _gapped = any(b - a > 1 for v in runs.values()
+                          for a, b in zip([int(r['fy']) for r in v],
+                                          [int(r['fy']) for r in v][1:]))
+            _dashnote = ('Dashed segments span years this archive has not yet proven.'
+                         if _gapped else 'Every year in each fund\u2019s span is a proven '
+                         'reading \u2014 no gaps.')
+            w(('![%s on one scale, FY%d to FY%d. The tallest reaches %s by its last '
+               'proven year; %s is a flat line near the axis the whole way. ' + _dashnote
+               + '](charts/stabilization-all.svg)\n')
               % ('%s stabilization fund%s' % (word(len(runs)).title(),
                                                '' if len(runs) == 1 else 's'),
                  allyears[0], allyears[-1], usd(biggest), bare(slowest[0])))
@@ -1460,8 +1471,15 @@ def payload(rows):
             'What the four funds with no creating article in this archive may lawfully be '
             'spent on — the limit currently rests on each fund’s NAME.',
             'Whether the fall in recent deposits is policy or a gap in what the warrant printed.',
-            'The balances for six of the fifteen years; those pages have not yet yielded a '
-            'row whose own arithmetic closes.',
+            # WITHDRAWN, 21 September 2026. This said six of fifteen years had no
+            # balance, and it stopped being true: all nine stabilization funds now have
+            # a balance for every year they existed
+            # (scripts/check_stabilization_coverage.py). The years were never absent from
+            # the town's reports -- they were absent from our reading of them, behind a
+            # rotated-page clip, a hardcoded row band, a label filter and six other
+            # faults. A limitation kept past its life is a false claim about the town.
+            'Whether any fund\u2019s balance moved because of a vote or because of '
+            'interest. The two cannot be separated from a balance alone.',
         ],
         conclusions=emit('stabilization-funds', rws),
     )
