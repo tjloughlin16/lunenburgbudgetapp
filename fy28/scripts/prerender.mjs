@@ -229,7 +229,34 @@ async function main() {
     process.exit(1)
   }
 
-  const routes = await readRoutes()
+  const all = await readRoutes()
+
+  // ONLY=/a/route,/another — prerender just these, leaving every other file in dist
+  // alone. Two jobs, and the second is the one that matters:
+  //
+  //   RETRY ONE ROUTE. Chrome fails on a single page occasionally and non-repeatably.
+  //   Without this the only remedy is a full rebuild — 381 routes, fifteen minutes — to
+  //   recover one file, so the tempting alternative is deploying with that page's
+  //   prerendered HTML missing, which silently drops it back to client-side only. That
+  //   costs exactly the readers the prerender exists for: the agents that cannot run
+  //   JavaScript, and the ones whose fetcher only accepts indexed URLs.
+  //
+  //   AND IT IS THE SHAPE THE DAILY REFRESH NEEDS. One page's Chrome death has taken
+  //   down a whole refresh run more than once. A retry pass over the failures is only
+  //   possible if a route can be rendered on its own.
+  //
+  // The shell check below still applies: this reads dist/index.html for the preamble, so
+  // ONLY cannot be used against a dist that has already been prerendered over.
+  const only = (process.env.ONLY || '').split(',').map(s => s.trim()).filter(Boolean)
+  const routes = only.length ? all.filter(r => only.includes(r)) : all
+  if (only.length) {
+    const missing = only.filter(r => !all.includes(r))
+    if (missing.length) {
+      console.error(`ONLY names routes this build does not have: ${missing.join(', ')}`)
+      process.exit(1)
+    }
+    console.log(`ONLY: ${routes.length} of ${all.length} routes`)
+  }
   const shell = await readFile(join(DIST, 'index.html'), 'utf8')
 
   // This script overwrites dist/index.html, so on a second run without an intervening
@@ -299,27 +326,46 @@ async function main() {
   for (const route of routes) {
     const url = `http://localhost:${PORT}${route}`
     let html
-    try {
-      const { stdout } = await execFileAsync(chrome, [
-        '--headless', '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
-        // React and recharts settle on timers; virtual time lets Chrome run them to
-        // completion immediately rather than us guessing at a sleep.
-        '--virtual-time-budget=10000',
-        '--run-all-compositor-stages-before-draw',
-        '--dump-dom', url,
-      ], {
-        maxBuffer: 64 * 1024 * 1024,
-        // A HANG MUST FAIL, NOT WAIT. With no timeout a wedged Chrome is awaited for
-        // ever: one sat rendering a single route for two and a half days, holding its
-        // profile open, while the build that started it was long gone. Five minutes is
-        // deliberately loose -- this is here to catch a WEDGE, not to police a slow page,
-        // and 90s was tight enough to fail every transcript page on the site.
-        timeout: 300_000,
-        killSignal: 'SIGKILL',
-      })
-      html = preamble + stdout.slice(stdout.indexOf('<html'))
-    } catch (e) {
-      failures.push(`${route}: chrome failed — ${e.message.split('\n')[0]}`)
+    // RETRY ONCE, BECAUSE THIS FAILURE IS NOT ABOUT THE PAGE.
+    //
+    // Chrome dies on a single route occasionally and non-repeatably — /boards/board-of-assessors
+    // failed one run and renders fine on the live site from the identical code. Before
+    // this, one such death cost the route its prerendered HTML for the whole build, and
+    // the only remedy was another fifteen-minute run. The tempting alternative was
+    // shipping without it, which silently drops that page to client-side only and costs
+    // exactly the readers the prerender exists for.
+    //
+    // It has also taken down whole daily refreshes. A second attempt is cheap — one
+    // page, seconds — and a route that fails TWICE is a real failure and still reported,
+    // so this buys tolerance of a flake without hiding a break.
+    let lastErr = null
+    for (let attempt = 0; attempt < 2 && html === undefined; attempt++) {
+      try {
+        const { stdout } = await execFileAsync(chrome, [
+          '--headless', '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
+          // React and recharts settle on timers; virtual time lets Chrome run them to
+          // completion immediately rather than us guessing at a sleep.
+          '--virtual-time-budget=10000',
+          '--run-all-compositor-stages-before-draw',
+          '--dump-dom', url,
+        ], {
+          maxBuffer: 64 * 1024 * 1024,
+          // A HANG MUST FAIL, NOT WAIT. With no timeout a wedged Chrome is awaited for
+          // ever: one sat rendering a single route for two and a half days, holding its
+          // profile open, while the build that started it was long gone. Five minutes is
+          // deliberately loose -- this is here to catch a WEDGE, not to police a slow page,
+          // and 90s was tight enough to fail every transcript page on the site.
+          timeout: 300_000,
+          killSignal: 'SIGKILL',
+        })
+        html = preamble + stdout.slice(stdout.indexOf('<html'))
+      } catch (e) {
+        lastErr = e
+        if (attempt === 0) console.log(`  retrying ${route} — chrome failed once`)
+      }
+    }
+    if (html === undefined) {
+      failures.push(`${route}: chrome failed twice — ${lastErr.message.split('\n')[0]}`)
       continue
     }
 
