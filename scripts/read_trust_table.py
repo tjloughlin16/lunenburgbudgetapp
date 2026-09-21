@@ -269,8 +269,33 @@ SEVEN_NO_MARKET = ['begin_principal', 'begin_earnings', 'net_earnings',
 CANDIDATES = [TEN, NINE, BANKS, BANKS_6, EIGHT, SEVEN, SEVEN_NO_MARKET]
 MIN_PROVEN = 4
 
+# FY2023, PDF page 50, "TRUST FUNDS / FISCAL YEAR 2023 SUMMARY", header read off the
+# page and written down here rather than inferred -- rule 13b, rule 4. Fourteen figure
+# columns, the widest table in the run, left to right by the x of each heading:
+#
+#   ACCOUNT NUMBER (.08) | FUND NAME (.16) | BEGINNING MARKET VALUE (.25) |
+#   BEGINNING PRINCIPAL (.31) | BEGINNING EARNINGS (.36) | NET INCOME (.40) |
+#   REALIZED GAIN/LOSS (.44) | NET EARNINGS (.49) | TRANSFERS OF PRINCIPAL (.53) |
+#   TRANSFERS OF EARNINGS (.58) | ENDING PRINCIPAL (.63) | ENDING EARNINGS (.68) |
+#   ENDING CASH VALUE (.72) | CHANGE IN UNREALIZED GAIN/LOSS (.77) |
+#   UNREALIZED GAIN/LOSS (.82) | ENDING MARKET VALUE (.87)
+#
+# `NET INCOME` and `REALIZED GAIN/LOSS` are the two COMPONENTS of `NET EARNINGS`, and
+# `ENDING PRINCIPAL`/`ENDING EARNINGS` are the two components of `ENDING CASH VALUE`.
+# None of the four is in verify()'s inflow list, deliberately: adding them would count
+# the same money twice and no row would ever close. They are named so the extract can
+# say what the column IS, not so the identity can use it.
+#
+# The OCR prints `EY 2023` for `FY 2023` and `GAN LOSS` for `GAIN/LOSS`; both are read
+# through, because the heading is being used to name a position and a misread letter in
+# a heading cannot make wrong arithmetic close.
+FOURTEEN = ['begin_market', 'begin_principal', 'begin_earnings', 'net_income',
+            'realized', 'net_earnings', 'transfers_principal', 'transfers_earnings',
+            'ending_principal', 'ending_earnings', 'ending_cash', 'change_unrealized',
+            'unrealized', 'ending_market']
+
 LAYOUTS = {
-    2014: NINE, 2015: NINE, 2016: NINE, 2017: NINE, 2022: NINE,
+    2014: NINE, 2015: NINE, 2016: NINE, 2017: NINE, 2022: NINE, 2023: FOURTEEN,
     2020: ['begin_market', 'begin_principal', 'begin_earnings', 'net_earnings',
            'transfers_principal', 'transfers_earnings', 'ending_cash',
            'change_unrealized', 'unrealized', 'ending_market'],
