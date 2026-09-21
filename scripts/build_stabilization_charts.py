@@ -154,6 +154,10 @@ def fund_key(name):
 # account number is the only thing both documents agree on. Only funds that already have
 # a series get a point, so this adds evidence to existing lines and never invents one.
 LEDGER_CSV = os.path.join(ROOT, 'sources', 'data', 'trust-agency-balances.csv')
+# The annual report's own per-account listing -- the table this reader spent weeks not
+# noticing. It carries a balance for EVERY fund in the years that print it, so it fills
+# years the other-banks tables never reached.
+LISTING_CSV = os.path.join(ROOT, 'sources', 'data', 'trust-fund-balances.csv')
 LEDGER_FOR = {
     '8124': 'Stabilization',
     '8136': 'Vehicle/Equipment Stabilization',
@@ -205,6 +209,19 @@ def ledger_points():
     return out
 
 
+def listing_points():
+    """{fund: [(fy, balance), ...]} from the annual report's per-account listing."""
+    out = {}
+    if not os.path.exists(LISTING_CSV):
+        return out
+    for r in csv.DictReader(open(LISTING_CSV, encoding='utf-8')):
+        label = LEDGER_FOR.get(r['account'])
+        if not label or not r.get('balance'):
+            continue
+        out.setdefault(label, []).append((int(r['fy']), float(r['balance'])))
+    return out
+
+
 def series():
     """{fund: [(fy, ending_cash), ...]} for every fund with enough proven years."""
     if not os.path.exists(CSV_IN):
@@ -218,6 +235,14 @@ def series():
     # The ledger reading, added to funds that already have a line. Where the photograph
     # already proved that year the two agree to the cent -- checked, on all three -- so
     # the point is deduplicated rather than plotted twice.
+    # The annual report's listing first, then the ledger. Both are keyed on the account
+    # number and both are deduplicated against whatever is already there, so a fund-year
+    # read two ways appears once -- and where two sources do cover the same fund-year they
+    # have agreed to the cent every time it has been checked.
+    for label, pts in listing_points().items():
+        for pt in pts:
+            if label in by and pt[0] not in {fy for fy, _ in by[label]}:
+                by[label].append(pt)
     for label, pt in ledger_points().items():
         if label in by and pt[0] not in {fy for fy, _ in by[label]}:
             by[label].append(pt)

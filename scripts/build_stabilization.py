@@ -658,6 +658,22 @@ def render(rows):
         LEDGER_SERIES = {'8124': 'Stabilization',
                          '8136': 'Vehicle/Equipment Stabilization',
                          '8129': 'Zoning Incentive Stabilization'}
+        # The annual report's own per-account listing, for the years that print it. It
+        # reaches funds and years the other-banks tables never did, and every figure in
+        # it that can be checked against the ledger has agreed to the cent.
+        listing = os.path.join(ROOT, 'sources', 'data', 'trust-fund-balances.csv')
+        if os.path.exists(listing):
+            for r in csv.DictReader(open(listing, encoding='utf-8')):
+                label = LEDGER_SERIES.get(r['account'])
+                if not label or label not in series or not r.get('balance'):
+                    continue
+                if any(x['fy'] == r['fy'] for x in series[label]):
+                    continue
+                series[label].append(dict(
+                    fy=r['fy'], code=r['account'], name=label,
+                    ending_cash=r['balance'], ending_market='',
+                    basis='the annual report\u2019s trust fund balance listing',
+                    page=r['page'], document=r['document']))
         for r in rows:
             label = LEDGER_SERIES.get(r['code'])
             if not label or label not in series:

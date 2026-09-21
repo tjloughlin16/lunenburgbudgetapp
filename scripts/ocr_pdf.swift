@@ -123,6 +123,48 @@ func readsDownward(_ obs: [VNRecognizedTextObservation]) -> Double {
     return sxy / (sxx * syy).squareRoot()
 }
 
+// Does the text read as MONEY forwards, or backwards?
+//
+// `readsDownward` is the only thing separating 0 from 180, and it is a correlation between
+// reading order and vertical position -- which is a good signal on prose and a weak one on
+// a dense numeric table, where Vision's reading order zig-zags across columns. That is
+// exactly where it fails: 31 pages across all fifteen annual reports came out a half turn
+// from correct, and they are disproportionately the trust fund pages and debt schedules.
+//
+// The symptom is unmistakable once you look. `$0.00` read upside down is recognised, at
+// full confidence, as `00'0$`. So on a financial page there is a far stronger signal than
+// reading order: count the tokens that look like money the right way round against those
+// that only look like money REVERSED, with the glyph swaps a mirrored read produces -- S
+// for $, E for 3, Z for 2, B for 8, an apostrophe for a comma.
+//
+// It returns 0 on any page without enough figures to judge, so prose pages are decided
+// exactly as before.
+let MONEY_RE = #"^\(?-?\$?-?[0-9,]{1,15}[.,][0-9]{2}\)?$"#
+
+func looksLikeMoney(_ s: String) -> Bool {
+    return s.range(of: MONEY_RE, options: .regularExpression) != nil
+}
+
+func moneyScore(_ obs: [VNRecognizedTextObservation]) -> Double {
+    var fwd = 0, rev = 0
+    for o in obs {
+        guard let t = o.topCandidates(1).first?.string else { continue }
+        let s = t.trimmingCharacters(in: .whitespaces)
+        if s.isEmpty { continue }
+        if looksLikeMoney(s) { fwd += 1; continue }
+        let r = String(s.reversed())
+            .replacingOccurrences(of: "S", with: "$")
+            .replacingOccurrences(of: "E", with: "3")
+            .replacingOccurrences(of: "Z", with: "2")
+            .replacingOccurrences(of: "B", with: "8")
+            .replacingOccurrences(of: "'", with: ",")
+        if looksLikeMoney(r) { rev += 1 }
+    }
+    let n = Double(fwd + rev)
+    if n < 4 { return 0 }
+    return (Double(fwd) - Double(rev)) / n
+}
+
 func orientation(_ page: PDFPage) -> Int {
     // Both tests are needed, and neither alone is enough.
     //
@@ -140,7 +182,10 @@ func orientation(_ page: PDFPage) -> Int {
         if wide < 0.5 { continue }          // sideways; not a candidate
         // Reading order should run down the page, so the correlation should be negative.
         // Scored as its negation, and weighted by how horizontal the text is.
-        let score = wide - readsDownward(obs)
+        // Money legibility is weighted like the other two: on a page with figures it
+        // swings a full 2.0 between an orientation and its half turn, which is
+        // decisive, and on a page without them it contributes nothing.
+        let score = wide - readsDownward(obs) + moneyScore(obs)
         if score > best.score { best = (applied, score) }
     }
     return best.applied
