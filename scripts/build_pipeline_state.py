@@ -269,8 +269,15 @@ def main():
             # The furthest CONSECUTIVE step reached: a year with data in the database but
             # nothing published is at 6, and a year whose extractor refused is at 4 no
             # matter what else is true, because that is where the work is.
+            # EXTRACTED DATA IS PROOF THE PAGES WERE LOCATED, whatever the page map
+            # says. `elections` showed step 3 with 52 rows extracted, because its pages
+            # carry no heading our classifier matches -- so the state file reported a
+            # family as un-located while publishing its data, which is the exact kind of
+            # false answer this file exists to stop. A step is reached if the step AFTER
+            # it was reached; work is evidence of the work it depended on.
+            located = bool(pages) or n_rows > 0
             reached = 0
-            for n, ok in enumerate([has_pdf, True, has_text, bool(pages),
+            for n, ok in enumerate([has_pdf, True, has_text, located,
                                     n_rows > 0, tb.get(fy, 0) > 0, fy in pub], start=1):
                 if not ok:
                     break
@@ -278,7 +285,7 @@ def main():
             rows.append(dict(
                 step=reached, fy=fy, subject=subject,
                 pdf=mark(has_pdf), ocr=mark(True), text=mark(has_text),
-                located=mark(bool(pages)), extracted=mark(n_rows > 0),
+                located=mark(located), extracted=mark(n_rows > 0),
                 database=mark(tb.get(fy, 0) > 0), published=mark(fy in pub),
                 pages=' '.join(pages), rows=n_rows, blocked=blocked))
 
@@ -303,7 +310,8 @@ def main():
     if not a.subject:
         with open(OUT, 'w', encoding='utf-8') as fh:
             fh.write(text)
-        print('wrote %s -- %d rows' % (os.path.relpath(OUT, ROOT), len(rows)))
+        print('wrote %s -- %d rows, one per fiscal year and table family'
+          % (os.path.relpath(OUT, ROOT), len(rows)))
 
     cur = None
     for r in rows:
