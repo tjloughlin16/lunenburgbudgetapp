@@ -160,6 +160,12 @@ PLAN = [
     # AND THE QUOTE IS NOT YET FOUND. Searching the minutes for it turned up budget talk
     # and not the sentence; rule 15a says find what was actually said before writing about
     # what a category does, so locating it is part of this batch rather than a footnote.
+    (11, 'Debt repayment schedule', 'session', 'extractor', ['debt'],
+     '1 session', 'free',
+     'Answers a claim this town argues over: that retiring debt leaves room to borrow '
+     'again at no cost to a tax bill. A schedule states how much service falls off each '
+     'year, so the claim is checkable rather than a matter of belief. 23 pages unread '
+     'across FY2011-FY2024, and eight years currently hold no rows at all.'),
     # ---- NOT AN INGESTION, BUT IT DECIDES WHETHER ANY SEARCH MEANS ANYTHING.
     #
     # `search_minutes.py` is meant to print, on every run, how many documents it searched
@@ -181,12 +187,6 @@ PLAN = [
      '"searched N of M published documents" \u2014 without which a search that finds '
      'nothing cannot be cited as evidence that nothing was said, which is what rule 15a '
      'asks every analysis to do.'),
-    (11, 'Debt repayment schedule', 'session', 'extractor', ['debt'],
-     '1 session', 'free',
-     'Answers a claim this town argues over: that retiring debt leaves room to borrow '
-     'again at no cost to a tax bill. A schedule states how much service falls off each '
-     'year, so the claim is checkable rather than a matter of belief. 23 pages unread '
-     'across FY2011-FY2024, and eight years currently hold no rows at all.'),
 ]
 
 
