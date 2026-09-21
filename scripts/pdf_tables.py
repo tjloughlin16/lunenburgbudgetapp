@@ -204,6 +204,12 @@ def amount(text):
         return 0.0
     neg = t.startswith('(') or t.endswith(')') or t.endswith('-')
     t = t.strip('()').lstrip('$').strip().rstrip('-').replace('$', '').strip()
+    # A SPACE INSIDE A NUMBER IS THE SCANNER, NOT THE TOWN. FY2024 prints its grand total
+    # as `Total Omnibus 44,024, 349.19` -- one figure, split after a group separator --
+    # and unclosed it parses as nothing, so the page's own total cannot be read and the
+    # year has nothing to be proven against. Only gaps BETWEEN digits and separators are
+    # closed, so `1 234` in prose is still two numbers.
+    t = re.sub(r'(?<=[\d.,])\s+(?=[\d.,])', '', t)
 
     # Separators, whichever glyph OCR produced for them.
     #
@@ -561,7 +567,8 @@ SCANNED_MONEY = re.compile(
     r'^\$?\s*-?\(?\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\)?$'      # 1,234.56 / 1.234,56
     r'|^\$?\s*-?\(?\d+[.,]\d{2}\)?$'                        # 1234.56
     r'|^\$\s*-?\(?\d{1,3}(?:,\d{3})+\)?$'                   # $50,000
-    r'|^\$\s*-?\(?\d+\)?$')                                 # $500
+    r'|^\$\s*-?\(?\d+\)?$'                                  # $500
+    r'|^\$?\s*-?\(?\d{1,3}(?:[.,]\s?\d{3})+[.,]\d{2}\)?$')  # 44,024, 349.19
 
 # `S` for `$`, and Cyrillic letters that render exactly like Latin ones. FY2023's page
 # gives `Bartholomew - ОРЕВ` where all four characters are Cyrillic (U+041E, U+0420,
@@ -585,7 +592,16 @@ def scanned_amount(text):
     number is built, groups of three then two, and which character the scanner chose says
     nothing about the money.
     """
-    t = (text or '').translate(HOMOGLYPHS).replace('$', '').replace('S', '').strip()
+    # A SPACE INSIDE A NUMBER IS THE SCANNER, NOT THE TOWN. FY2024's report prints
+    # `Total Omnibus 44,024, 349.19` -- one figure, split after a group separator -- and
+    # a parser that will not close that gap reads the page's own grand total as nothing,
+    # so the year cannot be reconciled against the one number that would prove it.
+    #
+    # Only spaces INSIDE a run of digits and separators are closed, which is why this
+    # happens after the pattern has already decided the token is a figure: `1 234` in
+    # prose is two numbers, `$44,024, 349.19` in an amount column is one.
+    t = (text or '').translate(HOMOGLYPHS).replace('$', '').replace('S', '')
+    t = re.sub(r'(?<=[\d.,])\s+(?=[\d.,])', '', t).strip()
     neg = t.startswith('(') and t.endswith(')')
     t = t.strip('()')
     # WHICH SEPARATOR IS THE DECIMAL POINT IS DECIDED BY WHAT FOLLOWS IT, not by which
