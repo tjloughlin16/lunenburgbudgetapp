@@ -55,7 +55,7 @@ SITE = 'https://lunenburgbudgetproject.org'
 # here, and appears in the wrong place, which is a visible prompt to order it.
 ORDER = [
     'fy26-closeout', 'fy26-closeout-town', 'budget-vs-actual', 'free-cash',
-    'solution-options',
+    'stabilization-option',
     'athletics', 'athletics-ledger', 'sped-and-the-curve', 'sped-and-funds',
     'fy27-and-the-override', 'fy27-cut-reconciliation', 'per-pupil-spending',
     'peer-districts', 'spending-compared', 'stabilization-funds',
@@ -95,15 +95,18 @@ CATEGORIES = [
     # and the other three headings here are already nouns, so this one read as the
     # odd one out as well as the long one.
     #
-    # `The levers` is this project's own word for them, used in the code and in
-    # every one of these reports, and it says exactly what the shelf holds: things
-    # somebody in this town can actually pull. It does not say which to pull --
-    # rule 8.
-    ('levers', 'The levers', [
+    # `Solution options` is TJ's phrase and it is the right one for the shelf: it
+    # says these are OPTIONS -- things that could be done -- without saying which
+    # to do, which is rule 8 exactly. `The levers` was tried first and is this
+    # project's internal word for them; a reader is not inside the project.
+    #
+    # The report that used to hold this name is now `The stabilization option`,
+    # since a shelf and an item on it cannot be called the same thing.
+    ('levers', 'Solution options', [
         # In the order a resident weighs them: the two that move the revenue side, the
         # two that move the cost RATE, then the amounts -- free cash, fees, the extras --
         # and last the one every other page exists to avoid.
-        # `solution-options` sits directly after free cash because it is the same
+        # `stabilization-option` sits directly after free cash because it is the same
         # KIND of lever and fails the same way: money the town has ONCE, set
         # against a cost it has EVERY year. TJ, 21 September 2026: "i expected
         # that page to go under 'What the town can do'". It had been filed under
@@ -111,7 +114,7 @@ CATEGORIES = [
         # where it was WRITTEN, not where a reader looking for what can be done
         # would go, and this index exists to tell those two apart.
         ('', ['override', 'growth', 'healthlever', 'salarylever', 'freecashlever',
-              'solution-options', 'feelever', 'extraslever', 'positionslever']),
+              'stabilization-option', 'feelever', 'extraslever', 'positionslever']),
     ]),
     # A SHELF WITH ONE THING ON IT, FIRST, AND THE ARGUMENT FOR IT.
     #
@@ -288,7 +291,7 @@ ABOUT = {
         'district avoids out-of-district placements \u2014 and why this archive cannot yet '
         'test it. A scoping note, not a finding: what it would take to answer is the '
         'whole point of it.',
-    'solution-options':
+    'stabilization-option':
         'What the stabilization funds could actually do about the school budget gap. '
         'Spending the whole spendable balance buys two years; stopping the deposits is '
         'permanent and covers a quarter of the first year. Neither closes it, and they '

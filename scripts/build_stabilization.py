@@ -412,11 +412,11 @@ def render(rows):
     # close the deficit." It kept drifting -- a description of nine funds that turned
     # into an argument about the schools every few paragraphs. Those are two documents
     # for two readers, and this one is the description. The arithmetic is now in
-    # solution-options.md and this is a pointer rather than a summary of it, because a
+    # stabilization-option.md and this is a pointer rather than a summary of it, because a
     # summary here would drift back.
     w('*Whether any of this could close the school budget gap, and for how long, is a '
       'different question with a different answer.* It has its own report: '
-      '[Solution options](solution-options.md).\n')
+      '[The stabilization option](stabilization-option.md).\n')
 
     # ---- WHAT GOES IN EACH YEAR. TJ's first question, and the one the balances alone
     # cannot answer: "can we reduce how much goes into each fund each year to pay for the

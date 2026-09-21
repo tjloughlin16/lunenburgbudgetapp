@@ -1,4 +1,4 @@
-# Solution options
+# The stabilization option
 
 **What the stabilization funds could actually do about the school budget gap, and for how long.**
 
@@ -15,6 +15,18 @@ Analysis, September 2026. The companion to [the stabilization funds](stabilizati
 **Stopping the deposits instead raises about $260,244 a year**, which is recurring money against a recurring gap — the right SHAPE of answer. It covers 28% of the FY28 gap and 12% of FY30’s.
 
 So: **neither closes the gap, and they fail differently.** One buys two years and then nothing. The other is permanent and is a quarter of what is needed.
+
+---
+
+## Both options, against the gap
+
+![Stacked bars, one per fiscal year from FY28 to FY35. Each bar is that year’s level-service gap, from $930,273 to $6,751,941. The redirected deposits cover $260,244 of every bar; the reserve covers the rest of FY28 and FY29 and part of FY30, and after that every bar is almost entirely the part still short.](charts/stabilization-option-split.svg)
+
+*Both levers pulled at once, which is the most favourable case there is. The deposits are redirected every year and the reserve is spent on whatever they do not cover. It covers FY28 and FY29 outright; by FY35 the gap is $6,751,941 and everything the town has done here covers $260,244 of it.*
+
+![A falling bar chart. The fund opens at $3,147,179, is drawn down by $670,029 and then $1,270,230, and is empty from FY30 onward.](charts/stabilization-option-burndown.svg)
+
+*The same scenario, from the fund’s side. It does not taper — it stops. $670,029 is drawn in FY28 and $1,270,230 in FY29, and from FY30 there is nothing left to draw and the deposits are doing it alone.*
 
 ---
 

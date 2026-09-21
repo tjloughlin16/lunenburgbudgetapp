@@ -18,7 +18,7 @@ Analysis, September 2026. Balances are the town’s own general ledger at 31 Mar
 
 **$237,392 has come back out**, across 8 votes — and every one is a clause inside an article about something else, so this is a floor.
 
-*Whether any of this could close the school budget gap, and for how long, is a different question with a different answer.* It has its own report: [Solution options](solution-options.md).
+*Whether any of this could close the school budget gap, and for how long, is a different question with a different answer.* It has its own report: [The stabilization option](stabilization-option.md).
 
 ---
 

@@ -109,8 +109,20 @@ export function renderMarkdown(src: string, base = '/docs/analyses/'): Rendered 
   let k = 0
   const key = () => `b${k++}`
 
-  const resolve = (href: string) =>
-    (/^(https?:|\/|#|mailto:)/.test(href) ? href : base + href)
+  // A SIBLING ANALYSIS IS A PAGE, NOT A FILE. The documents link each other the way
+  // markdown does -- `[the stabilization funds](stabilization-funds.md)` -- and resolving
+  // that against `base` sent a reader to the raw `.md`, which is not a page and lands
+  // them on the analyses index wondering what they clicked. TJ hit exactly that: "i
+  // clicked a link and was brought to .../stabilization-funds.md".
+  //
+  // So a bare `<slug>.md` (optionally with an anchor) resolves to the ROUTE that renders
+  // it. Everything else still resolves against `base`, because `charts/foo.svg` really is
+  // a file and really does live under /docs/analyses/.
+  const resolve = (href: string) => {
+    if (/^(https?:|\/|#|mailto:)/.test(href)) return href
+    const m = /^([a-z0-9][a-z0-9-]*)\.md(#.*)?$/.exec(href)
+    return m ? `/analysis/${m[1]}${m[2] || ''}` : base + href
+  }
 
   while (i < lines.length) {
     const line = lines[i]

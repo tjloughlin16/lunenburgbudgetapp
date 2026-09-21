@@ -1,10 +1,10 @@
 """Solution options: what the stabilization funds could actually do about the gap.
 
-    python3 scripts/build_solution_options.py
-    python3 scripts/build_solution_options.py --check
+    python3 scripts/build_stabilization_option.py
+    python3 scripts/build_stabilization_option.py --check
 
-Writes `sources/analyses/solution-options.md` and
-`fy28/public/data/solution-options.json`.
+Writes `sources/analyses/stabilization-option.md` and
+`fy28/public/data/stabilization-option.json`.
 
 WHY THIS IS A SEPARATE REPORT.
 
@@ -48,8 +48,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'model'))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 
-OUT = os.path.join(ROOT, 'sources', 'analyses', 'solution-options.md')
-PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'solution-options.json')
+OUT = os.path.join(ROOT, 'sources', 'analyses', 'stabilization-option.md')
+PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'stabilization-option.json')
 LEDGER = os.path.join(ROOT, 'sources', 'data', 'trust-agency-balances.csv')
 
 # Deposits that come from somewhere the town could NOT redirect to a school deficit. Sewer
@@ -108,6 +108,33 @@ def burndown(balance, gaps):
     return out
 
 
+def both_levers(balance, annual, gaps):
+    """Both levers at once: stop the deposits, then spend the balance on what is left.
+
+    TJ: *"something that shows redirecting funds away (no more growth into these funds,
+    then the burndown) ... then burning them down and how it changes the deficits."*
+
+    THE ORDER IS THE ARGUMENT. The redirected deposit is applied FIRST because it is
+    recurring -- it arrives every year whether or not there is a balance left -- and the
+    reserve is drawn only against what the deposit did not cover. Doing it the other way
+    round would spend a one-off asset on a cost the recurring money was already covering,
+    and would make the reserve look shorter-lived than it is.
+
+    It runs to the END of the projection rather than stopping when the fund empties,
+    because the years after it empties are the point: the deposit keeps arriving and it
+    keeps being a smaller share of a larger gap.
+    """
+    left, out = balance, []
+    for fy, g in gaps:
+        redirected = min(annual, g)
+        rest = g - redirected
+        drawn = min(left, rest)
+        left -= drawn
+        out.append(dict(fy=fy, gap=g, redirected=redirected, drawn=drawn,
+                        shortfall=rest - drawn, left=left))
+    return out
+
+
 def render():
     gaps = gap_series()
     bal = balances()
@@ -120,12 +147,18 @@ def render():
     total_held = sum(v['held'] for v in bal.values())
     restricted = total_held - general
     run = burndown(general, gaps)
+    # EIGHT YEARS, THE SAME EIGHT THE CHARTS DRAW. The projection runs further and
+    # the later years are not more informative -- by then every bar is the part
+    # still short -- but an alt text describing FY41 for a chart that stops at FY35
+    # is a caption for a different picture, and alt text is the only version of the
+    # chart some readers get.
+    both = both_levers(general, avg_div, gaps)[:8]
     exhausted = run[-1]
     first = gaps[0]
 
     b = []
     w = b.append
-    w('# Solution options\n')
+    w('# The stabilization option\n')
     w('**What the stabilization funds could actually do about the school budget gap, '
       'and for how long.**\n')
     w('Analysis, September 2026. The companion to '
@@ -150,6 +183,45 @@ def render():
          100 * avg_div / gaps[2][1], gaps[2][0]))
     w('So: **neither closes the gap, and they fail differently.** One buys two years and '
       'then nothing. The other is permanent and is a quarter of what is needed.\n')
+    w('---\n')
+
+    # ---- THE CHARTS, FIRST. TJ, on the stabilization page and again here: charts go
+    # above the prose that explains them. Both are drawn by
+    # scripts/build_stabilization_option_charts.py from the payload this same function
+    # writes, so a chart cannot disagree with the table under it.
+    #
+    # EVERY FIGURE IN THE ALT TEXT AND THE CAPTIONS IS DERIVED. Alt text is prose that
+    # ships -- rule 2 -- and it is the only version of the chart a screen reader or a
+    # text-only agent ever gets, so a typed figure there is wrong for exactly the readers
+    # who cannot check it against the picture.
+    chart_dir = os.path.join(ROOT, 'sources', 'analyses', 'charts')
+    gone = next((r for r in both if r['left'] <= 0), None)
+    if os.path.exists(os.path.join(chart_dir, 'stabilization-option-split.svg')):
+        w('## Both options, against the gap\n')
+        w('![Stacked bars, one per fiscal year from FY%d to FY%d. Each bar is that '
+          'year\u2019s level-service gap, from %s to %s. The redirected deposits cover %s '
+          'of every bar; the reserve covers the rest of FY%d and FY%d and part of FY%d, '
+          'and after that every bar is almost entirely the part still short.]'
+          '(charts/stabilization-option-split.svg)\n'
+          % (both[0]['fy'], both[-1]['fy'], usd(both[0]['gap']), usd(both[-1]['gap']),
+             usd(avg_div), both[0]['fy'], both[1]['fy'], both[2]['fy']))
+        w('*Both levers pulled at once, which is the most favourable case there is. The '
+          'deposits are redirected every year and the reserve is spent on whatever they '
+          'do not cover. It covers FY%d and FY%d outright; by FY%d the gap is %s and '
+          'everything the town has done here covers %s of it.*\n'
+          % (both[0]['fy'], both[1]['fy'], both[-1]['fy'], usd(both[-1]['gap']),
+             usd(both[-1]['redirected'] + both[-1]['drawn'])))
+    if os.path.exists(os.path.join(chart_dir, 'stabilization-option-burndown.svg')):
+        w('![A falling bar chart. The fund opens at %s, is drawn down by %s and then %s, '
+          'and is empty from FY%d onward.]'
+          '(charts/stabilization-option-burndown.svg)\n'
+          % (usd(general), usd(both[0]['drawn']), usd(both[1]['drawn']),
+             gone['fy'] if gone else both[-1]['fy']))
+        w('*The same scenario, from the fund\u2019s side. It does not taper \u2014 it stops. '
+          '%s is drawn in FY%d and %s in FY%d, and from FY%d there is nothing left to '
+          'draw and the deposits are doing it alone.*\n'
+          % (usd(both[0]['drawn']), both[0]['fy'], usd(both[1]['drawn']), both[1]['fy'],
+             gone['fy'] if gone else both[-1]['fy']))
     w('---\n')
 
     w('## 1. Can the town stop putting money in?\n')
@@ -232,7 +304,7 @@ def render():
     return '\n'.join(b) + '\n', dict(
         general=general, restricted=restricted, total=total_held,
         avg_all=avg_all, avg_divertible=avg_div, first_gap=first,
-        burndown=run, gaps=gaps[:8])
+        burndown=run, both=both, gaps=gaps[:8])
 
 
 # ---- the sources, rule 12's three things -------------------------------------------
@@ -402,14 +474,14 @@ def conclusions_for(data):
                       'them is a promise.',
         ),
     ]
-    return emit('solution-options', rows)
+    return emit('stabilization-option', rows)
 
 
 def payload(data):
     first_fy, first_gap = data['first_gap']
     run = data['burndown']
     return dict(
-        generated_by='scripts/build_solution_options.py',
+        generated_by='scripts/build_stabilization_option.py',
         about='What the stabilization funds could do about the school budget gap, and for '
               'how long.',
         grain='DOLLARS. The gap is the projection’s level-service shortfall by fiscal '
@@ -426,7 +498,7 @@ def payload(data):
                  label='a year if the town stopped putting money in — %.0f%% of the FY%d gap'
                        % (100 * data['avg_divertible'] / first_gap, first_fy)),
         ],
-        burndown=run, gaps=data['gaps'],
+        burndown=run, both=data['both'], gaps=data['gaps'],
         sources=_sources(),
         not_established=[
             'Whether Town Meeting would vote for any of it. This is arithmetic about '
@@ -451,12 +523,12 @@ def main():
     if a.check:
         cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
         pcur = open(PAYLOAD, encoding='utf-8').read() if os.path.exists(PAYLOAD) else ''
-        bad = [n for n, (g, c) in (('solution-options.md', (md, cur)),
-                                   ('solution-options.json', (pay, pcur))) if g != c]
+        bad = [n for n, (g, c) in (('stabilization-option.md', (md, cur)),
+                                   ('stabilization-option.json', (pay, pcur))) if g != c]
         if bad:
             print('STALE %s' % ', '.join(bad), file=sys.stderr)
             return 1
-        print('solution-options is current')
+        print('stabilization-option is current')
         return 0
     open(OUT, 'w', encoding='utf-8').write(md)
     open(PAYLOAD, 'w', encoding='utf-8').write(pay)
