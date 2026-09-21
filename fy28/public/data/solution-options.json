@@ -1,0 +1,77 @@
+{
+ "about": "What the stabilization funds could do about the school budget gap, and for how long.",
+ "burndown": [
+  {
+   "covered": 930273.0,
+   "fy": 28,
+   "gap": 930273.0,
+   "left": 2216905.96,
+   "shortfall": 0.0
+  },
+  {
+   "covered": 1530474.0,
+   "fy": 29,
+   "gap": 1530474.0,
+   "left": 686431.96,
+   "shortfall": 0.0
+  },
+  {
+   "covered": 686431.96,
+   "fy": 30,
+   "gap": 2197945.0,
+   "left": 0.0,
+   "shortfall": 1511513.04
+  }
+ ],
+ "gaps": [
+  [
+   28,
+   930273.0
+  ],
+  [
+   29,
+   1530474.0
+  ],
+  [
+   30,
+   2197945.0
+  ],
+  [
+   31,
+   2938165.0
+  ],
+  [
+   32,
+   3757043.0
+  ],
+  [
+   33,
+   4660955.0
+  ],
+  [
+   34,
+   5656780.0
+  ],
+  [
+   35,
+   6751941.0
+  ]
+ ],
+ "generated_by": "scripts/build_solution_options.py",
+ "grain": "DOLLARS. The gap is the projection’s level-service shortfall by fiscal year. The balance is what the general ledger says the general Stabilization Fund held at 31 March 2026. The deposits are what Town Meeting VOTED in, which is not the same quantity as what the balances moved.",
+ "stats": [
+  {
+   "label": "the only balance Town Meeting may spend on anything lawful, of $9,061,421 held",
+   "tone": "var(--series-cost)",
+   "value": "$3,147,179"
+  },
+  {
+   "label": "that it buys against the gap before it is gone",
+   "value": "2 years"
+  },
+  {
+   "label": "a year if the town stopped putting money in — 28% of the FY28 gap",
+   "value": "$260,244"
+  }
+ ]
+}

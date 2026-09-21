@@ -16,9 +16,9 @@ Analysis, September 2026. Balances are the town’s own general ledger at 31 Mar
 
 **$308,222 to $770,350 a year in FY2018–FY2023**, the 6 straight years that ran above that average. Reducing a deposit is RECURRING money where spending a balance is a one-off — and a recurring gap is only ever closed by recurring money.
 
-**$1,066,000 has come back out**, in the articles that say so plainly — a floor again, because money also leaves inside articles about something else.
+**$237,392 has come back out**, across 8 votes — and every one is a clause inside an article about something else, so this is a floor.
 
-So: *can this pay for a school deficit?* **Yes for $3,147,179, no for the rest** — and a reserve spent on an operating cost buys one year, exactly as free cash does, which is the argument `free-cash.md` already makes.
+*Whether any of this could close the school budget gap, and for how long, is a different question with a different answer.* It has its own report: [Solution options](solution-options.md).
 
 ---
 
@@ -47,6 +47,10 @@ On one scale the Zoning Incentive fund looks like nothing is happening to it. Th
 ![The same three funds, each panel stretched to its own range, so the shapes are comparable and the heights are not.](charts/stabilization-each.svg)
 
 ![How fast each fund moved per year between its first and last proven year: Vehicle/Equipment 40.8% a year over 7 years, Stabilization 8.4% a year over 11 years, Zoning Incentive 0.8% a year over 11 years.](charts/stabilization-growth.svg)
+
+And both directions at once — how often these funds are drawn on, and for how much:
+
+![Money voted into the stabilization funds each year, above the line, against money taken back out, below it. Withdrawals are rare and small beside the deposits.](charts/stabilization-flows.svg)
 
 **Three funds, three different things happening.** The Vehicle/Equipment fund moved 40.8% a year and the Stabilization fund 8.4% a year — those are being BUILT, and the Town Meeting articles listed earlier on this page are the votes that did it. The Zoning Incentive fund is not: it moved $21,858.35 in 11 years, which is what a balance does when it is left alone.
 
@@ -118,47 +122,239 @@ In the 8 years where every article carries a printed amount, the town voted in b
 
 **Every deposit we can price, and the article that made it.** A yearly total is a fact about the budget; this is the thing somebody can look up.
 
-| year | meeting | art. | fund | amount |
-|---|---|---|---|---:|
-| FY2025 | annual | 23 | Inflow/Infiltration | $19,104.40 |
-| FY2025 | annual | 24 | Sewer Reserve Capacity | $5,133.15 |
-| FY2024 | annual | 16 | Sewer Capital Reserve | $35,000.00 |
-| FY2023 | annual | 11 | Special Purpose | $250,000.00 |
-| FY2023 | annual | 10 | Stabilization Fund (general) | $100,000.00 |
-| FY2023 | annual | 13 | Opioid Settlement | $84,740.25 |
-| FY2023 | annual | 15 | Sewer Capital Reserve | $36,621.37 |
-| FY2023 | special | 8 | Inflow/Infiltration | $5,340.00 |
-| FY2023 | special | 7 | Sewer Reserve Capacity | $1,851.30 |
-| FY2022 | annual | 10 | Special Purpose | $450,000.00 |
-| FY2022 | annual | 9 | Stabilization Fund (general) | $100,000.00 |
-| FY2022 | annual | 13 | Sewer Capital Reserve | $35,548.86 |
-| FY2022 | special | 7 | Inflow/Infiltration | $9,900.00 |
-| FY2022 | special | 6 | Sewer Reserve Capacity | $1,645.60 |
-| FY2021 | annual | 9 | Health Insurance | $369,334.00 |
-| FY2021 | annual | 8 | Special Purpose | $250,000.00 |
-| FY2021 | annual | 7 | Stabilization Fund (general) | $100,000.00 |
-| FY2021 | special | 5 | Sewer Capital Reserve | $14,875.50 |
-| FY2020 | special | 6 | Special Purpose | $250,000.00 |
-| FY2020 | special | 5 | Stabilization Fund (general) | $212,252.00 |
-| FY2020 | annual | 8 | Stabilization Fund (general) | $210,000.00 |
-| FY2020 | special | 11 | Sewer Reserve Capacity | $68,097.59 |
-| FY2020 | annual | 11 | Sewer Capital Reserve | $30,000.00 |
-| FY2019 | annual | 10 | Special Purpose | $200,000.00 |
-| FY2019 | annual | 9 | Stabilization Fund (general) | $100,000.00 |
-| FY2019 | special | 2 | Special Purpose | $8,222.00 |
-| FY2018 | annual | 9 | Special Purpose | $200,000.00 |
-| FY2018 | special | 2 | Special Purpose | $199,227.00 |
-| FY2018 | annual | 8 | Stabilization Fund (general) | $87,000.00 |
-| FY2018 | annual | 12 | Sewer Capital Reserve | $29,000.00 |
-| FY2018 | special | 5 | Sewer Reserve Capacity | $6,449.63 |
-| FY2016 | annual | 17 | Stabilization Fund (general) | $99,851.00 |
-| FY2016 | annual | 21 | Inflow/Infiltration | $14,520.00 |
-| FY2016 | annual | 22 | Sewer Reserve Capacity | $9,667.90 |
-| FY2015 | annual | 16 | Stabilization Fund (general) | $98,231.00 |
-| FY2015 | special | 14 | Stabilization Fund (general) | $7,136.00 |
-| FY2015 | annual | 21 | Sewer Reserve Capacity | $617.10 |
-| FY2014 | annual | 17 | Stabilization Fund (general) | $74,729.00 |
-| FY2012 | annual | 10 | Stabilization Fund (general) | $277,432.00 |
+**FY2025 · annual · article 23 — Inflow/Infiltration, $19,104.40**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Sewer Retained Earnings the sum of $19,104.40 to the Sewer Inflow/Infiltration Stabilization Fund.
+```
+
+**FY2025 · annual · article 24 — Sewer Reserve Capacity, $5,133.15**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Sewer Enterprise Retained Earnings the sum of $5,133.15 to the Sewer Reserve Capacity Stabilization Fund.
+```
+
+**FY2024 · annual · article 16 — Sewer Capital Reserve, $35,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Sewer Enterprise Retained Earnings the sum of $35,000 into the Sewer Capital Reserve Stabilization Fund.
+```
+
+**FY2023 · annual · article 11 — Special Purpose, $250,000.00**
+
+```quote what Town Meeting voted
+VOTED (63 YES, 26 NO) to transfer from Free Cash the sum of $250,000 to the Special Purpose Stabilization fund.
+```
+
+**FY2023 · annual · article 10 — Stabilization Fund (general), $100,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Free Cash the sum of $100,000 to the Stabilization Fund.
+```
+
+**FY2023 · annual · article 13 — Opioid Settlement, $84,740.25**
+
+```quote what Town Meeting voted
+VOTED (80 YES, 11 NO), pursuant to the provisions of G.L. c.40, Section 5B, to create a new special purpose stabilization fund, to be known as the Opioid Settlement Stabilization Fund, for dedication, without further appropriation, of 100% of opioid litigation settlement
+```
+
+**FY2023 · annual · article 15 — Sewer Capital Reserve, $36,621.37**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Sewer Enterprise Retained Earnings the sum of $36,621.37 into the Sewer Capital Reserve Stabilization Fund.
+```
+
+**FY2023 · special · article 8 — Inflow/Infiltration, $5,340.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS (but one) CONSENT to transfer the sum of $5,340.00 from Sewer Enterprise Retained Earnings to the Sewer Inflow/Infiltration Stabilization Fund.
+```
+
+**FY2023 · special · article 7 — Sewer Reserve Capacity, $1,851.30**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS (but one) CONSENT to transfer the sum of $1,851.30 from Sewer Enterprise Retained Earnings to the Sewer Reserve Capacity Stabilization Fund.
+```
+
+**FY2022 · annual · article 10 — Special Purpose, $450,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Free Cash the sum of $450,000 to the Special Purpose Stabilization Fund.
+```
+
+**FY2022 · annual · article 9 — Stabilization Fund (general), $100,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Free Cash the sum of $100,000 to the Stabilization Fund.
+```
+
+**FY2022 · annual · article 13 — Sewer Capital Reserve, $35,548.86**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Sewer Enterprise Retained Earnings the sum of $35,548.86 into the Sewer Capital Reserve Stabilization Fund.
+```
+
+**FY2022 · special · article 7 — Inflow/Infiltration, $9,900.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to see if the Town will vote to transfer from available funds $9,900.00 into the Sewer Inflow/Infiltration Stabilization Fund.
+```
+
+**FY2022 · special · article 6 — Sewer Reserve Capacity, $1,645.60**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to see if the Town will vote to transfer from available funds $1,645.60 into the Sewer Reserve Capacity Stabilization Fund.
+```
+
+**FY2021 · annual · article 9 — Health Insurance, $369,334.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to create a Health Insurance Stabilization Fund pursuant to General Laws Chapter 40 Section 5B and further, to vote to raise and appropriate the sum of $369,334. to deposit into the Health Insurance Stabilization Fund.
+```
+
+**FY2021 · annual · article 8 — Special Purpose, $250,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Free Cash the sum of $250,000. to the Special Purpose Stabilization Fund.
+```
+
+**FY2021 · annual · article 7 — Stabilization Fund (general), $100,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Free Cash the sum of $100,000. to the Stabilization Fund.
+```
+
+**FY2021 · special · article 5 — Sewer Capital Reserve, $14,875.50**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Sewer Enterprise Retained Earnings the sum of $14,875.50 into the Capital Reserve Stabilization Fund.
+```
+
+**FY2020 · special · article 6 — Special Purpose, $250,000.00**
+
+```quote what Town Meeting voted
+VOTED (2/3rds Declared) to raise and appropriate the sum of $250,000.00 to the Special Purpose Stabilization Fund.
+```
+
+**FY2020 · special · article 5 — Stabilization Fund (general), $212,252.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to raise and appropriate the sum of $212,252.00 to the Stabilization Fund.
+```
+
+**FY2020 · annual · article 8 — Stabilization Fund (general), $210,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to transfer from Free Cash the sum of $210,000 to the Stabilization Fund.
+```
+
+**FY2020 · special · article 11 — Sewer Reserve Capacity, $68,097.59**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Sewer Enterprise Retained Earnings the sum of $68,097.59 into the Sewer Reserve Capacity Stabilization Fund.
+```
+
+**FY2020 · annual · article 11 — Sewer Capital Reserve, $30,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUS CONSENT to transfer from Sewer Enterprise Retained Earnings the sum of $30,000.00 into the Sewer Capital Reserve Stabilization Fund.
+```
+
+**FY2019 · annual · article 10 — Special Purpose, $200,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to transfer $200,000 from Free Cash to this Special Purpose Stabilization Fund for the purpose of funding future capital needs for vehicles and equipment.
+```
+
+**FY2019 · annual · article 9 — Stabilization Fund (general), $100,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to transfer $100,000 from Free Cash to the Stabilization
+```
+
+**FY2019 · special · article 2 — Special Purpose, $8,222.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to raise and appropriate the sum of $08,222. to the Special Purpose Stabilization Fund.
+```
+
+**FY2018 · annual · article 9 — Special Purpose, $200,000.00**
+
+```quote what Town Meeting voted
+VOTED to transfer $200,000 from Free Cash to this Special Purpose Stabilization Fund for the purpose of funding future capital needs for vehicles and equipment.
+```
+
+**FY2018 · special · article 2 — Special Purpose, $199,227.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to raise and appropriate the sum of $199,227 to the special Purpose Stabilization Fund.
+```
+
+**FY2018 · annual · article 8 — Stabilization Fund (general), $87,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to transfer $87,000 from Free Cash to the Stabilization Fund.
+```
+
+**FY2018 · annual · article 12 — Sewer Capital Reserve, $29,000.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to transfer from Sewer Enterprise Retained Earnings the sum of $29,000 into the Sewer Capital Reserve Stabilization Fund.
+```
+
+**FY2018 · special · article 5 — Sewer Reserve Capacity, $6,449.63**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to transfer $6,449.63 from the Sewer Enterprise Retained Earnings to the Reserve Capacity Stabilization Fund.
+```
+
+**FY2016 · annual · article 17 — Stabilization Fund (general), $99,851.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to raise and appropriate the sum of $99,851.00 to be transferred to the Stabilization Fund.
+```
+
+**FY2016 · annual · article 21 — Inflow/Infiltration, $14,520.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to create an Inflow/Infiltration Stabilization Fund and further to transfer from Sewer Enterprise Retained Earnings the sum of $14,520 into the Inflow/ Infiltration Stabilization Fund.
+```
+
+**FY2016 · annual · article 22 — Sewer Reserve Capacity, $9,667.90**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to transfer from Sewer Enterprise Retained Earnings the sum of $9,667.90 into the Reserve Capacity Stabilization Fund.
+```
+
+**FY2015 · annual · article 16 — Stabilization Fund (general), $98,231.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to raise and appropriate the sum of $48,231 and appropriate from free cash the sum of $50,000 for a total of $98,231 to be transferred to the Stabilization Fund.
+```
+
+**FY2015 · special · article 14 — Stabilization Fund (general), $7,136.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to raise $7,136.00.
+```
+
+**FY2015 · annual · article 21 — Sewer Reserve Capacity, $617.10**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY, pursuant to General Laws Chapter 40, Section 5B, to create a Reserve Capacity Stabilization Fund and further to transfer from Sewer Enterprise Retained Earnings, the sum of $617.10 into the Reserve Capacity Stabilization Fund.
+```
+
+**FY2014 · annual · article 17 — Stabilization Fund (general), $74,729.00**
+
+```quote what Town Meeting voted
+VOTED UNANIMOUSLY to appropriate the sum of $74,729 from Free Cash to be transferred to the Stabilization Fund.
+```
+
+**FY2012 · annual · article 10 — Stabilization Fund (general), $277,432.00**
+
+```quote what Town Meeting voted
+Article 10 was PASSED OVER.
+```
 
 And 7 articles the warrant records without an amount, so they are in none of the figures above:
 

@@ -55,6 +55,7 @@ SITE = 'https://lunenburgbudgetproject.org'
 # here, and appears in the wrong place, which is a visible prompt to order it.
 ORDER = [
     'fy26-closeout', 'fy26-closeout-town', 'budget-vs-actual', 'free-cash',
+    'solution-options',
     'athletics', 'athletics-ledger', 'sped-and-the-curve', 'sped-and-funds',
     'fy27-and-the-override', 'fy27-cut-reconciliation', 'per-pupil-spending',
     'peer-districts', 'spending-compared', 'stabilization-funds',
@@ -146,6 +147,7 @@ CATEGORIES = [
         ('who lives here', ['bythenumbers', 'owners', 'homestudents']),
         ('the ledger, read', [
             'fy26-closeout', 'fy26-closeout-town', 'free-cash', 'stabilization-funds',
+            'solution-options',
         ]),
         ('what the votes decided', [
             'fy27-and-the-override', 'fy27-cut-reconciliation',
@@ -209,6 +211,7 @@ SUPERSEDED = {
     # beside free cash rather than under the schools -- these are town reserves, and only
     # one of them could lawfully reach a school deficit.
     'stabilization-funds': 'free-cash',
+    'solution-options': 'free-cash',
     # A SCOPING NOTE rather than a finished analysis, and filed under special education
     # because that is its subject. It reaches no conclusion by design: it records why the
     # in-district-staffing-against-placements question cannot be modelled from anything
@@ -266,6 +269,11 @@ ABOUT = {
         'district avoids out-of-district placements \u2014 and why this archive cannot yet '
         'test it. A scoping note, not a finding: what it would take to answer is the '
         'whole point of it.',
+    'solution-options':
+        'What the stabilization funds could actually do about the school budget gap. '
+        'Spending the whole spendable balance buys two years; stopping the deposits is '
+        'permanent and covers a quarter of the first year. Neither closes it, and they '
+        'fail differently.',
     'stabilization-funds':
         'The town\u2019s savings, fund by fund: what each one holds, who may spend it, '
         'what it may be spent ON, and the meeting that created it. Whether any of it can '

@@ -397,12 +397,26 @@ def render(rows):
               'recurring money.\n'
               % (usd0(min(_by[y] for y in _best)), usd0(max(_by[y] for y in _best)),
                  _best[0], _best[-1], len(_best)))
-    w('**%s has come back out**, in the articles that say so plainly \u2014 a floor '
-      'again, because money also leaves inside articles about something else.\n'
-      % usd0(sum(x['amount'] for x in fl['spends'])))
-    w('So: *can this pay for a school deficit?* **Yes for %s, no for the rest** \u2014 and '
-      'a reserve spent on an operating cost buys one year, exactly as free cash does, '
-      'which is the argument `free-cash.md` already makes.\n' % usd0(gtot))
+    # FROM THE FLOWS DATASET, not the article subjects. The short version was still
+    # quoting $1,066,000 from two articles whose SUBJECT is a withdrawal, while the
+    # section below it lists eight found by reading the article TEXT. A page that
+    # disagrees with itself between the summary and the table is worse than one that
+    # under-reports.
+    _wd = [r for r in withdrawals() if r['confidence'] == 'clear']
+    if _wd:
+        w('**%s has come back out**, across %d votes \u2014 and every one is a clause '
+          'inside an article about something else, so this is a floor.\n'
+          % (usd0(sum(float(r['amount']) for r in _wd)), len(_wd)))
+    # THE DEFICIT ARGUMENT MOVED OUT. TJ: "the current stabilization page should be more
+    # focused on info about the stabilization not necessarily focused on using it to
+    # close the deficit." It kept drifting -- a description of nine funds that turned
+    # into an argument about the schools every few paragraphs. Those are two documents
+    # for two readers, and this one is the description. The arithmetic is now in
+    # solution-options.md and this is a pointer rather than a summary of it, because a
+    # summary here would drift back.
+    w('*Whether any of this could close the school budget gap, and for how long, is a '
+      'different question with a different answer.* It has its own report: '
+      '[Solution options](solution-options.md).\n')
 
     # ---- WHAT GOES IN EACH YEAR. TJ's first question, and the one the balances alone
     # cannot answer: "can we reduce how much goes into each fund each year to pay for the
@@ -473,12 +487,28 @@ def render(rows):
         # we need the fund listed, the article it was added."
         w('**Every deposit we can price, and the article that made it.** A yearly total '
           'is a fact about the budget; this is the thing somebody can look up.\n')
-        w('| year | meeting | art. | fund | amount |\n|---|---|---|---|---:|')
+        # THE MOTION, UNDER EACH DEPOSIT, CLOSED. TJ: "I wnt to read how these things get
+        # approved and the public likely will too." The figures are the page and twenty
+        # motions inline is a wall nobody reads, so each one is a disclosure -- the
+        # ```quote fence that lib/markdown.tsx renders as a <details>. In the raw .md and
+        # in the PDF it degrades to a labelled block, which is the right fallback.
+        quotes = {}
+        for r in csv.DictReader(open(os.path.join(
+                ROOT, 'sources', 'data', 'town-meeting-votes.csv'), encoding='utf-8')):
+            quotes[(int(r['fy']), r.get('meeting', ''), r['article'])] = \
+                ' '.join((r.get('quote') or '').split())
         for d in sorted(dep, key=lambda r: (-r['fy'], -r['amount'])):
-            w('| FY%d | %s | %s | %s | %s |'
-              % (d['fy'], d.get('meeting', '') or '\u2014', d['article'],
+            w('**FY%d \u00b7 %s \u00b7 article %s \u2014 %s, %s**\n'
+              % (d['fy'], (d.get('meeting') or 'Town Meeting').strip(), d['article'],
                  bare(d['fund']), usd(d['amount'])))
-        w('')
+            q = quotes.get((d['fy'], d.get('meeting', ''), d['article']), '')
+            if q:
+                w('```quote what Town Meeting voted')
+                w(q)
+                w('```')
+            else:
+                w('*The warrant text for this article is not in the archive.*')
+            w('')
         if fl['unpriced']:
             w('And %s the warrant records without an amount, so they are in none of the '
               'figures above:\n' % plural_articles(len(fl['unpriced'])))
@@ -833,6 +863,12 @@ def render(rows):
               '(charts/stabilization-each.svg)\n' % word(len(runs)))
             w('![How fast each fund moved per year between its first and last proven '
               'year: %s.](charts/stabilization-growth.svg)\n' % movers)
+            if os.path.exists(os.path.join(chart_dir, 'stabilization-flows.svg')):
+                w('And both directions at once \u2014 how often these funds are drawn on, '
+                  'and for how much:\n')
+                w('![Money voted into the stabilization funds each year, above the line, '
+                  'against money taken back out, below it. Withdrawals are rare and '
+                  'small beside the deposits.](charts/stabilization-flows.svg)\n')
             moved = (float(slowest[1][-1]['ending_cash'])
                      - float(slowest[1][0]['ending_cash']))
             w('**%s funds, %s different things happening.** The %s fund moved %s a year '

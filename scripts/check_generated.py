@@ -79,6 +79,7 @@ CHECKS = [
     # The annual report's own per-account listing, checked against that ledger.
     ('extract_trust_balance_detail.py', ['--check']),
     ('build_stabilization.py', ['--check']),
+    ('build_solution_options.py', ['--check']),
     ('build_stabilization_charts.py', ['--check']),
     ('build_reports_index.py', ['--check']),
     # How long every page is, measured from the build. It changes whenever a page does,

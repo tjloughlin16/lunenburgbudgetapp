@@ -118,12 +118,39 @@ export function renderMarkdown(src: string, base = '/docs/analyses/'): Rendered 
     // blank
     if (!line.trim()) { i++; continue }
 
-    // fenced code
+    // fenced code -- and one fence that is not code.
+    //
+    // ```quote <summary>  renders a DISCLOSURE holding the verbatim words of a document,
+    // closed by default. TJ, on the deposits table: "can ou add the article language ...
+    // probably expandable or as a clickable popup on the article? I wnt to read how these
+    // things get approved and the public likely will too."
+    //
+    // He is right that people want it and right that it cannot sit open: twenty Town
+    // Meeting motions inline is a wall nobody reads, and the figures are the page. A
+    // disclosure is the standard answer and it costs nothing when closed.
+    //
+    // IT IS A MARKDOWN CONVENTION, NOT RAW HTML. This file emits no HTML from the
+    // document by design -- see the header -- so the fence is PARSED and a React element
+    // is built from it. The document never gets to say what tag it wants.
     if (/^\s*```/.test(line)) {
+      const label = line.replace(/^\s*```/, '').trim()
       const body: string[] = []
       i++
       while (i < lines.length && !/^\s*```/.test(lines[i])) body.push(lines[i++])
       i++ // the closing fence
+      if (/^quote\b/.test(label)) {
+        const summary = label.replace(/^quote\s*/, '') || 'the words, in full'
+        nodes.push(
+          <details key={key()} className="mt-3 max-w-3xl">
+            <summary className="cursor-pointer text-[13px]"
+              style={{ color: 'var(--series-cost)' }}>{summary}</summary>
+            <blockquote className="mt-2 pl-4 border-l-4 text-[13.5px] leading-relaxed"
+              style={{ borderColor: 'var(--surface-3)', color: 'var(--text-secondary)' }}>
+              {body.join('\n')}
+            </blockquote>
+          </details>)
+        continue
+      }
       nodes.push(
         <pre key={key()} className="card p-4 mt-4 overflow-x-auto text-[12.5px] leading-relaxed"
           style={{ color: 'var(--text-secondary)' }}><code>{body.join('\n')}</code></pre>)

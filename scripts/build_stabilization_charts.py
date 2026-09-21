@@ -164,6 +164,12 @@ LISTING_CSV = os.path.join(ROOT, 'sources', 'data', 'trust-fund-balances.csv')
 # custodian rather than a fund balance -- so it is used only where nothing else covers the
 # fund-year, and the chart says so.
 CASH_CSV = os.path.join(ROOT, 'sources', 'data', 'treasurers-cash.csv')
+FLOWS_CSV = os.path.join(ROOT, 'sources', 'data', 'stabilization-flows.csv')
+
+# A DIVERGING PAIR, for a signed quantity where the direction is the whole point. Money in
+# above the line, money out below. Validated: adjacent CVD dE 21.6 protan, normal-vision
+# 32.3, both above 3:1 on the surface.
+IN_COLOUR, OUT_COLOUR = '#2a78d6', '#e34948'
 CASH_FOR = (
     (re.compile(r'bartholomew\s+stabilization\s+fund', re.I), 'Stabilization'),
     (re.compile(r'vehicle/equipment\s+stabilization', re.I),
@@ -539,10 +545,97 @@ def chart_growth(data):
                'fund and is printed on each')
 
 
+
+def chart_flows(_data):
+    """Deposits above the line, withdrawals below, by year.
+
+    TJ: "is there a chart type that can show both the increase and draw on the funds? ...
+    i want to see how often they are drawn from and how much at a time."
+
+    A DIVERGING BAR is the form for that: one axis, zero in the middle, and the thing a
+    reader is actually asking -- how often, and how big -- is the shape of the bars below
+    the line rather than any number in a table.
+
+    WHAT IS DELIBERATELY NOT ON IT: the BALANCE. It is the same unit and about thirty
+    times the size, so putting it here needs a second y-scale, and a dual axis is the one
+    chart mistake that is never worth making. Levels are the other chart; this is flows.
+    """
+    import build_stabilization as B
+    fl = B.flows()
+    ins = collections.defaultdict(float)
+    for d in fl['deposits']:
+        ins[d['fy']] += d['amount']
+    outs = collections.defaultdict(float)
+    nout = collections.Counter()
+    if os.path.exists(FLOWS_CSV):
+        for r in csv.DictReader(open(FLOWS_CSV, encoding='utf-8')):
+            if r['confidence'] != 'clear':
+                continue
+            outs[int(r['fy'])] += float(r['amount'])
+            nout[int(r['fy'])] += 1
+    years = sorted(set(ins) | set(outs))
+    if not years:
+        return None
+    W, H = 640, 300
+    L, R, T, B_ = 62, 18, 58, 46
+    # ONE SCALE FOR BOTH HALVES, and it is tight to the data rather than rounded up to a
+    # comfortable number. Scaling the halves independently would make a $106k withdrawal
+    # look like a $770k deposit, which is the opposite of what this chart is for: that
+    # the withdrawals are RARE and SMALL against the deposits is the finding, not an
+    # inconvenience of the drawing.
+    import math
+    raw = max(max(ins.values(), default=0), max(outs.values(), default=0))
+    step = 10 ** max(0, len(str(int(raw))) - 2)
+    top = math.ceil(raw / step) * step
+    mid = T + (H - T - B_) * (top / (top * 2))
+
+    def X(fy):
+        return L + (fy - years[0]) / max(years[-1] - years[0], 1) * (W - L - R)
+
+    def Y(v):
+        return mid - (v / top) * (H - T - B_) / 2
+
+    b = []
+    for i in range(-2, 3):
+        v = top * i / 2
+        b.append(f'<line x1="{L}" y1="{Y(v):.1f}" x2="{W - R}" y2="{Y(v):.1f}" '
+                 f'stroke="{GRID if i else AXIS}" stroke-width="1"/>')
+        b.append(f'<text x="{L - 6}" y="{Y(v) + 3.5:.1f}" font-size="9" text-anchor="end" '
+                 f'fill="{MUTED}">{usdk(abs(v)) if i else "0"}</text>')
+    bw = max(6, (W - L - R) / (len(years) * 1.7))
+    for fy in years:
+        x = X(fy) - bw / 2
+        if ins.get(fy):
+            h = abs(Y(ins[fy]) - mid)
+            b.append(f'<rect x="{x:.1f}" y="{Y(ins[fy]):.1f}" width="{bw:.1f}" '
+                     f'height="{h:.1f}" fill="{IN_COLOUR}" rx="2"/>')
+        if outs.get(fy):
+            h = abs(Y(-outs[fy]) - mid)
+            b.append(f'<rect x="{x:.1f}" y="{mid:.1f}" width="{bw:.1f}" height="{h:.1f}" '
+                     f'fill="{OUT_COLOUR}" rx="2"/>')
+            # DIRECT-LABELLED, because the withdrawals are the rare event and the reason
+            # for the chart; a reader should not have to measure one against an axis.
+            b.append(f'<text x="{X(fy):.1f}" y="{Y(-outs[fy]) + 11:.1f}" font-size="8.5" '
+                     f'text-anchor="middle" fill="{OUT_COLOUR}">{usdk(outs[fy])}</text>')
+        b.append(f'<text x="{X(fy):.1f}" y="{H - B_ + 22}" font-size="8.5" '
+                 f'text-anchor="middle" fill="{MUTED}">{fylabel(fy)}</text>')
+    b.append(f'<text x="{L}" y="{T - 8}" font-size="10" font-weight="600" '
+             f'fill="{IN_COLOUR}">voted IN</text>')
+    b.append(f'<text x="{L}" y="{H - B_ + 38}" font-size="10" font-weight="600" '
+             f'fill="{OUT_COLOUR}">taken OUT</text>')
+    drawn = sum(nout.values())
+    b.append(f'<text x="{W - R}" y="{H - B_ + 38}" font-size="9" text-anchor="end" '
+             f'fill="{MUTED}">{drawn} withdrawals in {len(years)} years</text>')
+    return svg(W, H, ''.join(b), 'Money in and money out, by year',
+               'Deposits above the line, withdrawals below. Balances are the other chart: '
+               'they are thirty times the size and would need a second axis')
+
+
 CHARTS = [
     ('stabilization-all.svg', chart_all),
     ('stabilization-each.svg', chart_each),
     ('stabilization-growth.svg', chart_growth),
+    ('stabilization-flows.svg', chart_flows),
 ]
 
 
@@ -558,6 +651,8 @@ def main():
     stale = []
     for name, fn in CHARTS:
         got = fn(data)
+        if got is None:
+            continue
         p = os.path.join(OUT, name)
         if a.check:
             old = open(p, encoding='utf-8').read() if os.path.exists(p) else None
