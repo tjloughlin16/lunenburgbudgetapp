@@ -138,6 +138,46 @@ def unreversed(t):
     return r
 
 
+# WORDS DECIDE WHETHER A PAGE IS MIRRORED. NUMBERS CANNOT.
+#
+# The test used to be "more tokens look like money when reversed than look like money
+# upright", and it is worthless, for a reason that is arithmetic rather than a tuning
+# problem: `28,915,000` does not match the money pattern upright, because that pattern
+# wants exactly two digits after the last separator — and REVERSED it is `000,519,82`,
+# which does. So every figure printed in round thousands counts as evidence of
+# reversal, and none of them counts as evidence against it.
+#
+# A debt schedule is nothing but round thousands. That is how "FIVE YEARS OUTSTANDING
+# DEBT" came to be listed as mirrored in six different years while reading perfectly
+# upright in the OCR — `28,915,000`, `15,000`, `31,763,200`. The queue then printed its
+# heading through unreversed(), so it appeared in the backlog as `T83D GNIDNAT$TUO
+# $RA3Y 3VIF` and looked exactly like the thing it was not. A derived classification
+# quoted back as an observation, which is rule 13 in one line, and it sent two hours of
+# re-OCR at seven reports that had nothing wrong with them.
+#
+# Mirrored TEXT is unambiguous in a way mirrored numbers never are: `Town` reverses to
+# `nwoT`, and no page of English contains that. So look for common words, in both
+# directions, and let the count decide. These nine appear on essentially every financial
+# page the town prints, and a page carrying none of them either way is left `unread`
+# rather than guessed at.
+WORDS = ('the', 'and', 'total', 'town', 'fund', 'school', 'year', 'department', 'debt')
+REVERSED_WORDS = tuple(w[::-1] for w in WORDS)
+
+
+def reading_direction(texts):
+    """`upright`, `reversed`, or None when the page says neither.
+
+    Counts whole words rather than substrings: `eht` is inside nothing, but `dna` sits
+    inside plenty of real tokens, and a substring test on short words finds itself.
+    """
+    toks = re.findall(r'[a-z]{3,}', ' '.join(texts).lower())
+    fwd = sum(t in WORDS for t in toks)
+    rev = sum(t in REVERSED_WORDS for t in toks)
+    if fwd == rev:
+        return None
+    return 'reversed' if rev > fwd else 'upright'
+
+
 def read_pages():
     """{(fy, page): 'dataset, dataset'} for every page some dataset cites."""
     out = collections.defaultdict(set)
@@ -199,12 +239,18 @@ def main():
             top = [' '.join((b['text'] or '').split())
                    for b in sorted(boxes, key=lambda b: -b['y'])[:10]]
             top = [t for t in top if len(t) > 6 and not MONEY.match(t)]
-            if rev > figs:
+            # THE WORDS DECIDE, and only where they actually speak. `figures_reversed`
+            # is still recorded because it is a real count, but it no longer classifies
+            # anything: see reading_direction() for why a round-thousands table made it
+            # say `reversed` about six perfectly upright debt schedules.
+            direction = reading_direction(
+                [' '.join((b['text'] or '').split()) for b in boxes])
+            if direction == 'reversed':
                 # Nothing on a mirrored page can be classified; its headings are as
-                # mangled as its figures. Try the unreversed reading before giving up.
+                # mangled as its figures. Read them the other way round.
                 top = [unreversed(t) for t in top]
             hits = done.get((fy, page), set())
-            state = 'read' if hits else ('reversed' if rev > figs else 'unread')
+            state = 'read' if hits else ('reversed' if direction == 'reversed' else 'unread')
             subj = subject_of(top)
             pri, why = PRIORITY.get(subj, (99, ''))
             rows.append(dict(
