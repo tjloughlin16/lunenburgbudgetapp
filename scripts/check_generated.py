@@ -79,6 +79,10 @@ CHECKS = [
     # The annual report's own per-account listing, checked against that ledger.
     ('extract_trust_balance_detail.py', ['--check']),
     ('build_stabilization.py', ['--check']),
+    ('extract_personnel.py', ['--check']),
+    ('build_town_budgets.py', ['--check']),
+    ('build_town_budgets_charts.py', ['--check']),
+    ('build_town_personnel.py', ['--check']),
     ('build_stabilization_option.py', ['--check']),
     ('build_stabilization_option_charts.py', ['--check']),
     ('build_stabilization_charts.py', ['--check']),

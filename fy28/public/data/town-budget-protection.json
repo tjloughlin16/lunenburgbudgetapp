@@ -1,0 +1,81 @@
+{
+ "about": "What Town Meeting voted for Protection, line by line.",
+ "conclusions": [],
+ "department": {
+  "change": 404362.1099999994,
+  "first": 4239354.99,
+  "last": 4643717.1,
+  "name": "Protection",
+  "pull": 0.22789551765909027,
+  "rate": 4.6605432958565896,
+  "series": {
+   "2023": 4239354.99,
+   "2024": 4478848.28,
+   "2025": 4643717.1
+  },
+  "share": 10.548065298952348,
+  "slug": "protection"
+ },
+ "detail_years": [
+  2023,
+  2024,
+  2025
+ ],
+ "generated_by": "scripts/build_town_budgets.py",
+ "grain": "DOLLARS VOTED at Town Meeting for the year ahead — not requested, not spent, and not a service level.",
+ "lines": {
+  "2023": [],
+  "2024": [
+   {
+    "amount": null,
+    "label": "Protection",
+    "line_no": "",
+    "page": 166
+   }
+  ],
+  "2025": []
+ },
+ "movers": [],
+ "not_established": [
+  "What any department ASKED for. The omnibus is what Town Meeting voted, which is already balanced — the difference between a request and a vote is where a cut lives, and the annual report prints only the second.",
+  "What was actually spent. Voted and spent are different quantities and rule 1 forbids mixing them in one calculation.",
+  "Whether any department reduced SERVICE. A department can hold its dollars and cut its hours, and a dollar figure will not say so.",
+  "Why any line moved. The omnibus states an amount and gives no reason for it, so every explanation of a movement here would be a hypothesis.",
+  "Anything about FY2026 below the total. The FY2025 annual report prints no department figures at all."
+ ],
+ "sources": [
+  {
+   "basis": "published",
+   "note": "Every one of these reconciles against every total the table prints about itself. FY2023 and FY2024 land on the town’s own +$0.80, recorded as an attested reading rather than a defect in ours.",
+   "what": "The FY2023, FY2024 and FY2025 omnibus budgets, department by department",
+   "where": "The annual town reports for FY2022, FY2023 and FY2024 — each prints the omnibus for the year AHEAD, as voted at that spring’s Town Meeting"
+  },
+  {
+   "basis": "published",
+   "note": "A single printed figure per year. The department detail beneath it is only reconciled for the last three.",
+   "what": "The voted total for every year from FY2012 to FY2025",
+   "where": "The GRAND TOTAL each annual report prints at the foot of its omnibus"
+  },
+  {
+   "basis": "published",
+   "note": "No department table is printed for FY2026 in any form. The five funding sources the article names sum to the total exactly, which is the only check available on it, and it passes.",
+   "what": "The FY2026 total",
+   "where": "Article 10 of the 3 May 2025 Annual Town Meeting, printed as prose on page 140 of the FY2025 annual report"
+  }
+ ],
+ "stats": [
+  {
+   "label": "voted for Protection in FY2025",
+   "value": "$4,643,717"
+  },
+  {
+   "label": "a year, against the 2.5% the levy may rise by",
+   "tone": "var(--series-cost)",
+   "value": "4.7%"
+  },
+  {
+   "label": "points of the whole budget’s growth it accounts for",
+   "value": "+0.23"
+  }
+ ]
+}

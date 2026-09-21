@@ -212,6 +212,30 @@ CATEGORIES = [
     # the top of this index and TJ, 17 September 2026, found them "very misplaced" there.
     # They stay listed so the index is complete, at the end, under a heading that says
     # what they are.
+    # BUDGETS ACROSS TOWN. TJ asked for this shelf by name: "We may need a new section on
+    # the reports page for 'Budgets Across Town' and show each department, plus an
+    # individual report that crosses across all deparmtents and draws overall insights."
+    #
+    # The cross-department report goes FIRST and alone, because it is the one that answers
+    # the question people arrive with and the twelve beneath it are reference. A reader who
+    # opens `Public Works` first learns what Public Works was voted; a reader who opens the
+    # cross-department report first learns that ten of twelve departments outgrew the levy
+    # cap, which is the thing that changes how they read all twelve.
+    #
+    # The departments are listed in the town's own printed order rather than by size or by
+    # pull. Ranking them here would make the shelf an argument, and the ranking already
+    # has a page of its own directly above it.
+    ('townbudgets', 'Budgets across town', [
+        ('', ['town-budgets']),
+        # PERSONNEL SITS ON THIS SHELF and not on a shelf of its own, because it is here
+        # to answer a question the budget pages raise and cannot answer: a line that falls
+        # is not a cut, and a cut is a service reduction. Filed anywhere else, a reader who
+        # has just seen twelve departments' dollars would never meet the one page that
+        # says what those departments are made of.
+        ('', ['town-personnel']),
+        ('Department by department, as Town Meeting voted it',
+         ['town-budget-maturing-debt', 'town-budget-unclassified', 'town-budget-general-government', 'town-budget-central-purchasing', 'town-budget-protection', 'town-budget-health-sanitation', 'town-budget-public-works', 'town-budget-facilities-grounds', 'town-budget-solid-waste', 'town-budget-assistance', 'town-budget-schools', 'town-budget-library']),
+    ]),
     ('live', 'Not reports — the pages that change every day', [
         ('', ['blog', 'budgetfeed', 'thisweek', 'boards', 'recorded']),
     ]),
@@ -260,6 +284,65 @@ UNCATEGORISED = {'show-your-work', 'addsup', 'threads'}
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.
 ABOUT = {
+    'town-personnel':
+        'Every elected seat, appointed board seat and appointed officer the town prints '
+        'in its annual report, FY2022 to FY2025. Two thirds of the posts are unpaid seats '
+        'on boards. It is not a headcount of town employees, and it says so: the wage '
+        'list that would give one stopped naming departments after FY2016.',
+    'town-budgets':
+        'What Town Meeting voted for each of the twelve town departments, and which '
+        'of them actually move the total. It refuses the question it is most often '
+        'asked — an omnibus budget cannot show a deficit, because a town may not vote '
+        'one — and answers the useful version: ten of twelve departments grew faster '
+        'than the levy cap, and the biggest line is not the fastest.',
+    'town-budget-maturing-debt':
+        "The town’s debt service — the only line in the voted budget that falls, and it falls by a third in three years. Where that room went is the cross-department report’s question, not this page’s. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-unclassified':
+        "Printed `Gen Gov Unclassified`, and seven tenths of it is group health insurance. The fastest-growing large line in the budget, and the one that moves the total more than the schools do. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-general-government':
+        "The town’s own administration — the Select Board, the Town Manager, the Accountant, the Clerk, the Assessors, IT and legal. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-central-purchasing':
+        "The smallest line in the budget and the flattest. It is here because a department that does not move is a finding about the ones that do. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-protection':
+        "Police, Fire, Radio Watch and the inspectors, each with its own printed subtotal beneath the department total. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-health-sanitation':
+        "Board of Health, the Nashoba association, nursing and mental health — under a fifth of a percent of the budget. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-public-works':
+        "Highway, vehicle maintenance for three departments, the Park and Cemetery departments, and snow removal. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-facilities-grounds':
+        "The buildings the town owns and the grounds around them. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-solid-waste':
+        "Trash and recycling — the fastest-growing line in the budget by rate, and small enough that the rate moves the total very little. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-assistance':
+        "The Council on Aging and Veterans’ services, each with its own printed subtotal. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-schools':
+        "The largest line in the town budget by a long way, and not the fastest growing one. Lunenburg Public Schools and the Monty Tech assessment. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
+    'town-budget-library':
+        "One line, one library. "
+        "Every budget line the town prints beneath it, FY2023 to FY2025, reconciled "
+        "against the department total on the same page.",
     'what-you-can-ask':
         'Every question this archive can answer, in plain English and without a line of '
         'SQL. The list a resident should start from: pick the question you actually have '

@@ -1,0 +1,147 @@
+{
+ "about": "What Town Meeting voted for Library, line by line.",
+ "conclusions": [
+  {
+   "basis": "The department’s own printed lines in the FY2023 and FY2025 omnibus budgets, joined on the printed label.",
+   "bearing": "sizes",
+   "claim": "Lunenburg Public Library is the line that moved most inside Library",
+   "detail": "The lines a department is made of move at different speeds, and one usually carries the department. Lunenburg Public Library went from $492,984 to $583,890 between FY2023 and FY2025, a move of $90,906. The department as a whole moved $90,906 over the same period.",
+   "figure": "moved",
+   "figures": {
+    "dept": {
+     "text": "$90,906",
+     "unit": "the department’s own move",
+     "value": 90905.85000000003
+    },
+    "moved": {
+     "text": "$90,906",
+     "unit": "the largest move of any line in Library",
+     "value": 90905.85000000003
+    },
+    "now": {
+     "text": "$583,890",
+     "unit": "",
+     "value": 583889.77
+    },
+    "was": {
+     "text": "$492,984",
+     "unit": "",
+     "value": 492983.92
+    }
+   },
+   "id": "largest-move",
+   "kind": "measured",
+   "literals": [
+    "FY2023",
+    "FY2025"
+   ],
+   "not_shown": "Why it moved, or whether the service behind it changed.",
+   "see": [],
+   "so_what": "Most of what this department did is one line, not the department."
+  }
+ ],
+ "department": {
+  "change": 90905.85000000003,
+  "first": 492983.92,
+  "last": 583889.77,
+  "name": "Library",
+  "pull": 0.08395546552490606,
+  "rate": 8.830107017763765,
+  "series": {
+   "2023": 492983.92,
+   "2024": 539126.28,
+   "2025": 583889.77
+  },
+  "share": 1.32628824898706,
+  "slug": "library"
+ },
+ "detail_years": [
+  2023,
+  2024,
+  2025
+ ],
+ "generated_by": "scripts/build_town_budgets.py",
+ "grain": "DOLLARS VOTED at Town Meeting for the year ahead — not requested, not spent, and not a service level.",
+ "lines": {
+  "2023": [
+   {
+    "amount": 492983.92,
+    "label": "Lunenburg Public Library",
+    "line_no": "",
+    "page": 149
+   }
+  ],
+  "2024": [
+   {
+    "amount": 539126.28,
+    "label": "Lunenburg Public",
+    "line_no": "82",
+    "page": 168
+   }
+  ],
+  "2025": [
+   {
+    "amount": 583889.77,
+    "label": "Lunenburg Public Library",
+    "line_no": "",
+    "page": 144
+   }
+  ]
+ },
+ "movers": [
+  {
+   "change": 90905.85000000003,
+   "first": 492983.92,
+   "key": "lunenburg public library",
+   "label": "Lunenburg Public Library",
+   "last": 583889.77,
+   "series": {
+    "2023": 492983.92,
+    "2024": null,
+    "2025": 583889.77
+   }
+  }
+ ],
+ "not_established": [
+  "What any department ASKED for. The omnibus is what Town Meeting voted, which is already balanced — the difference between a request and a vote is where a cut lives, and the annual report prints only the second.",
+  "What was actually spent. Voted and spent are different quantities and rule 1 forbids mixing them in one calculation.",
+  "Whether any department reduced SERVICE. A department can hold its dollars and cut its hours, and a dollar figure will not say so.",
+  "Why any line moved. The omnibus states an amount and gives no reason for it, so every explanation of a movement here would be a hypothesis.",
+  "Anything about FY2026 below the total. The FY2025 annual report prints no department figures at all."
+ ],
+ "sources": [
+  {
+   "basis": "published",
+   "note": "Every one of these reconciles against every total the table prints about itself. FY2023 and FY2024 land on the town’s own +$0.80, recorded as an attested reading rather than a defect in ours.",
+   "what": "The FY2023, FY2024 and FY2025 omnibus budgets, department by department",
+   "where": "The annual town reports for FY2022, FY2023 and FY2024 — each prints the omnibus for the year AHEAD, as voted at that spring’s Town Meeting"
+  },
+  {
+   "basis": "published",
+   "note": "A single printed figure per year. The department detail beneath it is only reconciled for the last three.",
+   "what": "The voted total for every year from FY2012 to FY2025",
+   "where": "The GRAND TOTAL each annual report prints at the foot of its omnibus"
+  },
+  {
+   "basis": "published",
+   "note": "No department table is printed for FY2026 in any form. The five funding sources the article names sum to the total exactly, which is the only check available on it, and it passes.",
+   "what": "The FY2026 total",
+   "where": "Article 10 of the 3 May 2025 Annual Town Meeting, printed as prose on page 140 of the FY2025 annual report"
+  }
+ ],
+ "stats": [
+  {
+   "label": "voted for Library in FY2025",
+   "value": "$583,890"
+  },
+  {
+   "label": "a year, against the 2.5% the levy may rise by",
+   "tone": "var(--series-cost)",
+   "value": "8.8%"
+  },
+  {
+   "label": "points of the whole budget’s growth it accounts for",
+   "value": "+0.08"
+  }
+ ]
+}

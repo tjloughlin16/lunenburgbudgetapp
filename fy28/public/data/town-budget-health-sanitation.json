@@ -1,0 +1,255 @@
+{
+ "about": "What Town Meeting voted for Health & Sanitation, line by line.",
+ "conclusions": [
+  {
+   "basis": "The department’s own printed lines in the FY2023 and FY2025 omnibus budgets, joined on the printed label.",
+   "bearing": "sizes",
+   "claim": "General Health Expense is the line that moved most inside Health & Sanitation",
+   "detail": "The lines a department is made of move at different speeds, and one usually carries the department. General Health Expense went from $44,652 to $53,427 between FY2023 and FY2025, a move of $8,775. The department as a whole moved $18,559 over the same period.",
+   "figure": "moved",
+   "figures": {
+    "dept": {
+     "text": "$18,559",
+     "unit": "the department’s own move",
+     "value": 18559.14
+    },
+    "moved": {
+     "text": "$8,775",
+     "unit": "the largest move of any line in Health & Sanitation",
+     "value": 8775.36
+    },
+    "now": {
+     "text": "$53,427",
+     "unit": "",
+     "value": 53427.16
+    },
+    "was": {
+     "text": "$44,652",
+     "unit": "",
+     "value": 44651.8
+    }
+   },
+   "id": "largest-move",
+   "kind": "measured",
+   "literals": [
+    "FY2023",
+    "FY2025"
+   ],
+   "not_shown": "Why it moved, or whether the service behind it changed.",
+   "see": [],
+   "so_what": "The department’s change is spread across its lines rather than sitting in one."
+  }
+ ],
+ "department": {
+  "change": 18559.14,
+  "first": 99259.6,
+  "last": 117818.74,
+  "name": "Health & Sanitation",
+  "pull": 0.01725736880412257,
+  "rate": 8.948417546591525,
+  "series": {
+   "2023": 99259.6,
+   "2024": 104961.15,
+   "2025": 117818.74
+  },
+  "share": 0.26762176424577827,
+  "slug": "health-sanitation"
+ },
+ "detail_years": [
+  2023,
+  2024,
+  2025
+ ],
+ "generated_by": "scripts/build_town_budgets.py",
+ "grain": "DOLLARS VOTED at Town Meeting for the year ahead — not requested, not spent, and not a service level.",
+ "lines": {
+  "2023": [
+   {
+    "amount": 44651.8,
+    "label": "General Health Expense",
+    "line_no": "",
+    "page": 148
+   },
+   {
+    "amount": 36759.84,
+    "label": "Nashoba Assoc. Board of Health",
+    "line_no": "55",
+    "page": 148
+   },
+   {
+    "amount": 16848.26,
+    "label": "Nashoba Nursing",
+    "line_no": "56",
+    "page": 148
+   },
+   {
+    "amount": null,
+    "label": "Mental Health",
+    "line_no": "57",
+    "page": 148
+   },
+   {
+    "amount": 1000.0,
+    "label": "Animal Inspector Salary",
+    "line_no": "",
+    "page": 148
+   }
+  ],
+  "2024": [
+   {
+    "amount": 46332.44,
+    "label": "General Health",
+    "line_no": "54",
+    "page": 166
+   },
+   {
+    "amount": null,
+    "label": "Expense",
+    "line_no": "",
+    "page": 166
+   },
+   {
+    "amount": 39516.83,
+    "label": "",
+    "line_no": "55",
+    "page": 166
+   },
+   {
+    "amount": null,
+    "label": "Neatoba Board of",
+    "line_no": "",
+    "page": 166
+   },
+   {
+    "amount": 18111.88,
+    "label": "Nasheba Nursing",
+    "line_no": "",
+    "page": 166
+   },
+   {
+    "amount": null,
+    "label": "Mental Health",
+    "line_no": "57",
+    "page": 166
+   },
+   {
+    "amount": 1000.0,
+    "label": "Animal Inspector Salary",
+    "line_no": "58",
+    "page": 166
+   }
+  ],
+  "2025": [
+   {
+    "amount": 53427.16,
+    "label": "General Health Expense",
+    "line_no": "",
+    "page": 143
+   },
+   {
+    "amount": 43468.51,
+    "label": "Nashoba Board of Health",
+    "line_no": "55",
+    "page": 143
+   },
+   {
+    "amount": 19923.07,
+    "label": "Nashoba Nursing",
+    "line_no": "56",
+    "page": 143
+   },
+   {
+    "amount": null,
+    "label": "Mental Health",
+    "line_no": "57",
+    "page": 143
+   },
+   {
+    "amount": 1000.0,
+    "label": "Animal Inspector Salary",
+    "line_no": "58",
+    "page": 143
+   }
+  ]
+ },
+ "movers": [
+  {
+   "change": 8775.36,
+   "first": 44651.8,
+   "key": "general health expense",
+   "label": "General Health Expense",
+   "last": 53427.16,
+   "series": {
+    "2023": 44651.8,
+    "2024": null,
+    "2025": 53427.16
+   }
+  },
+  {
+   "change": 3074.8100000000013,
+   "first": 16848.26,
+   "key": "nashoba nursing",
+   "label": "Nashoba Nursing",
+   "last": 19923.07,
+   "series": {
+    "2023": 16848.26,
+    "2024": null,
+    "2025": 19923.07
+   }
+  },
+  {
+   "change": 0.0,
+   "first": 1000.0,
+   "key": "animal inspector salary",
+   "label": "Animal Inspector Salary",
+   "last": 1000.0,
+   "series": {
+    "2023": 1000.0,
+    "2024": 1000.0,
+    "2025": 1000.0
+   }
+  }
+ ],
+ "not_established": [
+  "What any department ASKED for. The omnibus is what Town Meeting voted, which is already balanced — the difference between a request and a vote is where a cut lives, and the annual report prints only the second.",
+  "What was actually spent. Voted and spent are different quantities and rule 1 forbids mixing them in one calculation.",
+  "Whether any department reduced SERVICE. A department can hold its dollars and cut its hours, and a dollar figure will not say so.",
+  "Why any line moved. The omnibus states an amount and gives no reason for it, so every explanation of a movement here would be a hypothesis.",
+  "Anything about FY2026 below the total. The FY2025 annual report prints no department figures at all."
+ ],
+ "sources": [
+  {
+   "basis": "published",
+   "note": "Every one of these reconciles against every total the table prints about itself. FY2023 and FY2024 land on the town’s own +$0.80, recorded as an attested reading rather than a defect in ours.",
+   "what": "The FY2023, FY2024 and FY2025 omnibus budgets, department by department",
+   "where": "The annual town reports for FY2022, FY2023 and FY2024 — each prints the omnibus for the year AHEAD, as voted at that spring’s Town Meeting"
+  },
+  {
+   "basis": "published",
+   "note": "A single printed figure per year. The department detail beneath it is only reconciled for the last three.",
+   "what": "The voted total for every year from FY2012 to FY2025",
+   "where": "The GRAND TOTAL each annual report prints at the foot of its omnibus"
+  },
+  {
+   "basis": "published",
+   "note": "No department table is printed for FY2026 in any form. The five funding sources the article names sum to the total exactly, which is the only check available on it, and it passes.",
+   "what": "The FY2026 total",
+   "where": "Article 10 of the 3 May 2025 Annual Town Meeting, printed as prose on page 140 of the FY2025 annual report"
+  }
+ ],
+ "stats": [
+  {
+   "label": "voted for Health & Sanitation in FY2025",
+   "value": "$117,819"
+  },
+  {
+   "label": "a year, against the 2.5% the levy may rise by",
+   "tone": "var(--series-cost)",
+   "value": "8.9%"
+  },
+  {
+   "label": "points of the whole budget’s growth it accounts for",
+   "value": "+0.02"
+  }
+ ]
+}

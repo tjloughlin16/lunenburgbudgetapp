@@ -36,8 +36,10 @@ import argparse
 import collections
 import csv
 import glob
+import io
 import os
 import re
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = os.path.join(ROOT, 'sources', 'town-budget', 'pages')
@@ -48,6 +50,9 @@ SIZE = re.compile(r'\(\s*(?:no less than \d+ and no more than\s*)?(\d+)\s*member
 TERM = re.compile(r'[-–]\s*(20\d\d)\s*$')
 APPOINTED_NOTE = re.compile(r'[-–]\s*(appointed|resigned|retired|deceased|term|vacan)', re.I)
 PAGENO = re.compile(r'^\d{1,3}$')
+
+FIELDS = ['fy', 'page', 'order', 'post', 'kind', 'section', 'stated_members',
+          'person', 'term_expires', 'note', 'size_check']
 
 
 def raw_pages(path):
@@ -292,16 +297,32 @@ def main():
     kinds = collections.Counter(f"{r['section']} {r['kind']}" for r in rows)
     print('  by check: ' + ', '.join(f'{v} {k}' for k, v in state.most_common()))
     print('  by kind : ' + ', '.join(f'{v} {k}' for k, v in kinds.most_common()))
-    if args.check and refused:
-        raise SystemExit(1)
+    # A CHECK NEVER WRITES. The first version printed its findings, exited non-zero on a
+    # refusal, and then wrote the file anyway -- so `--check` repaired the thing it was
+    # asked to inspect and could never report a stale file twice.
+    if args.check:
+        # READ IT WITH newline='' OR THE COMPARISON IS AGAINST A DIFFERENT FILE. csv
+        # writes CRLF; a plain read translates it to LF, so every byte after the first
+        # line differs and a current file reports stale forever. This exact bug is written
+        # down in CLAUDE.md, from check_generated.py's first run, and I wrote it again.
+        cur = (open(OUT, encoding='utf-8', newline='').read()
+               if os.path.exists(OUT) else '')
+        buf = io.StringIO()
+        w = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\r\n')
+        w.writeheader()
+        w.writerows(rows)
+        if refused or buf.getvalue() != cur:
+            print('  STALE or refused — run: python3 scripts/extract_personnel.py')
+            return 1
+        print('  town-personnel.csv is current')
+        return 0
     with open(OUT, 'w', encoding='utf-8', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=['fy', 'page', 'order', 'post', 'kind',
-                                           'section', 'stated_members', 'person',
-                                           'term_expires', 'note', 'size_check'])
+        w = csv.DictWriter(fh, fieldnames=FIELDS)
         w.writeheader()
         w.writerows(rows)
     print(f'wrote {os.path.relpath(OUT, ROOT)}')
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
