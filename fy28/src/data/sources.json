@@ -1660,6 +1660,18 @@
      "textUrl": "/docs/analyses/spending-compared.md"
     },
     {
+     "path": "analyses/stabilization-option.md",
+     "title": "Solution options: what the stabilization funds could do about the gap",
+     "stars": 3,
+     "what": "The companion to the stabilization report, and deliberately separate from it: that page describes what the town holds, this one is only about what can be done with it. Three questions in order — can the town stop putting money in, can it spend what is already there, and then what. Spending the whole spendable balance closes two years and runs out partway through the third; stopping the deposits is recurring money, which is the right shape, and covers about a quarter of the first year’s gap. Neither closes it. The gap comes from model/finance.py, the balances from the town’s general ledger, the deposits from the articles that made them. See scripts/build_stabilization_option.py.",
+     "kind": "Notes",
+     "bytes": 6145,
+     "url": "/docs/analyses/stabilization-option.md",
+     "count": 99,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/stabilization-option.md"
+    },
+    {
      "path": "analyses/fy27-cut-reconciliation.md",
      "title": "Two right numbers: reconciling the FY27 cut",
      "stars": 3,
@@ -1670,18 +1682,6 @@
      "count": 130,
      "unit": "lines",
      "textUrl": "/docs/analyses/fy27-cut-reconciliation.md"
-    },
-    {
-     "path": "analyses/stabilization-option.md",
-     "title": "Solution options: what the stabilization funds could do about the gap",
-     "stars": 3,
-     "what": "The companion to the stabilization report, and deliberately separate from it: that page describes what the town holds, this one is only about what can be done with it. Three questions in order — can the town stop putting money in, can it spend what is already there, and then what. Spending the whole spendable balance closes two years and runs out partway through the third; stopping the deposits is recurring money, which is the right shape, and covers about a quarter of the first year’s gap. Neither closes it. The gap comes from model/finance.py, the balances from the town’s general ledger, the deposits from the articles that made them. See scripts/build_stabilization_option.py.",
-     "kind": "Notes",
-     "bytes": 5075,
-     "url": "/docs/analyses/stabilization-option.md",
-     "count": 87,
-     "unit": "lines",
-     "textUrl": "/docs/analyses/stabilization-option.md"
     },
     {
      "path": "data/town-meeting-votes.csv",
@@ -1868,6 +1868,16 @@
      "textUrl": "/docs/analyses/charts/fy26-town-variance.svg"
     },
     {
+     "path": "analyses/charts/stabilization-option-split.svg",
+     "title": "The gap each year, and what each stabilization option covers of it",
+     "stars": 1,
+     "what": "One stacked bar per fiscal year, the whole bar that year’s level-service gap, split into the part the redirected deposits cover, the part the reserve covers, and the part still short. Both levers are pulled at once, which is the most favourable case there is; from FY31 the bar is almost entirely the part still short.",
+     "kind": "SVG",
+     "bytes": 4808,
+     "url": "/docs/analyses/charts/stabilization-option-split.svg",
+     "textUrl": "/docs/analyses/charts/stabilization-option-split.svg"
+    },
+    {
      "path": "analyses/charts/fy26-town-spend.svg",
      "title": "FY26 town: where the money went",
      "stars": 1,
@@ -1896,6 +1906,16 @@
      "bytes": 4499,
      "url": "/docs/analyses/charts/stabilization-flows.svg",
      "textUrl": "/docs/analyses/charts/stabilization-flows.svg"
+    },
+    {
+     "path": "analyses/charts/stabilization-option-burndown.svg",
+     "title": "The stabilization reserve, drawn down against the school gap",
+     "stars": 1,
+     "what": "The general Stabilization Fund from its opening general-ledger balance to empty, one column a year, with each year’s draw printed under the year. It does not taper — it stops, and the years after it stops are the point of the chart rather than padding on the end of it.",
+     "kind": "SVG",
+     "bytes": 3950,
+     "url": "/docs/analyses/charts/stabilization-option-burndown.svg",
+     "textUrl": "/docs/analyses/charts/stabilization-option-burndown.svg"
     },
     {
      "path": "analyses/charts/stabilization-growth.svg",
@@ -16036,9 +16056,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1390,
+  "documents": 1392,
   "groups": 22,
-  "bytes": 2172901187,
+  "bytes": 2172911015,
   "loadBearing": 140
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

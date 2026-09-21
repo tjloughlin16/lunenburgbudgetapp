@@ -854,6 +854,19 @@ GROUPS = [
              'that span printed on every bar. It is the movement of a balance and not a '
              'rate of return: these funds rise both when Town Meeting votes money in and '
              'when they earn interest, and this data cannot separate the two.'),
+            ('analyses/charts/stabilization-option-split.svg',
+             'The gap each year, and what each stabilization option covers of it', 1,
+             'One stacked bar per fiscal year, the whole bar that year\u2019s level-service '
+             'gap, split into the part the redirected deposits cover, the part the '
+             'reserve covers, and the part still short. Both levers are pulled at once, '
+             'which is the most favourable case there is; from FY31 the bar is almost '
+             'entirely the part still short.'),
+            ('analyses/charts/stabilization-option-burndown.svg',
+             'The stabilization reserve, drawn down against the school gap', 1,
+             'The general Stabilization Fund from its opening general-ledger balance to '
+             'empty, one column a year, with each year\u2019s draw printed under the year. '
+             'It does not taper \u2014 it stops, and the years after it stops are the point '
+             'of the chart rather than padding on the end of it.'),
             ('analyses/charts/fy26-school-budget.svg',
              'FY26 school department: what happened to the budget', 1,
              'One stacked bar \u2014 spent, encumbered, unspent \u2014 as parts of the '
