@@ -761,11 +761,48 @@ def render(rows):
                  c['result'].replace('_', ' ')))
             if c['quote']:
                 w('> %s\n' % c['quote'][:300])
-        w('**The three largest funds are not here, and that is the gap rather than an '
-          'oversight.** The general Stabilization Fund, Vehicle/Equipment and Zoning '
-          'Incentive were all created before FY2011, which is as far back as the '
-          'town-meeting record in this archive reaches. Their purposes are known only '
-          'from their names, and a name is not an article.\n')
+        # A CORRECTION, AND THE EVIDENCE FOR IT. This paragraph used to say the general
+        # Stabilization Fund, Vehicle/Equipment and Zoning Incentive were "all created
+        # before FY2011". For Vehicle/Equipment that is wrong, and the archive says so
+        # in three places at once:
+        #
+        #   * the name `Vehicle/Equipment Stabilization` appears in NO annual report
+        #     before FY2018, and in every one from FY2018 on;
+        #   * `Special Purpose Stabilization` appears in the Town Meeting articles and
+        #     NEVER on a Treasurer's Cash page, in the MUNIS ledger or in a trust table
+        #     -- and `Vehicle/Equipment` never appears in an article. Each name lives in
+        #     exactly one kind of document;
+        #   * the FY2018 article says what the fund is for: "to this Special Purpose
+        #     Stabilization Fund for the purpose of funding future capital needs for
+        #     vehicles and equipment."
+        #
+        # And the money agrees: FY2018's two articles total $399,227, and the balance
+        # goes from $236,302.39 to $643,788.80 -- a rise of $407,486, leaving about
+        # $8,259 of interest on a fund that size.
+        #
+        # RULE 7 STILL GOVERNS. That the two names are one fund is the reading the
+        # evidence supports; it is not a statement either document makes, so it is
+        # offered as what it is. What IS established is the negative: nothing here
+        # supports a pre-FY2011 creation for Vehicle/Equipment.
+        w('**Two of the three largest funds have no creating article here, and the '
+          'third turns out to have one under another name.** The general Stabilization '
+          'Fund and Zoning Incentive were both in use before FY2011, which is as far '
+          'back as the town-meeting record in this archive reaches, so their purposes '
+          'are known only from their names \u2014 and a name is not an article.\n')
+        w('**Vehicle/Equipment is different, and the report said otherwise until now.** '
+          'Its name appears in no annual report before FY2018 and in every one after. '
+          'Meanwhile `Special Purpose Stabilization` appears in the Town Meeting '
+          'articles and never once on a Treasurer\u2019s Cash page, in the MUNIS ledger '
+          'or in a trust table; `Vehicle/Equipment` never appears in an article. Each '
+          'name lives in exactly one kind of document, and the FY2018 article says what '
+          'the fund is for: *\u201cto this Special Purpose Stabilization Fund for the '
+          'purpose of funding future capital needs for vehicles and equipment.\u201d* '
+          'The balances agree too \u2014 FY2018\u2019s two articles total %s and the fund '
+          'rises %s that year, leaving about %s of interest.\n'
+          % (usd0(399227), usd0(407486), usd0(8259)))
+        w('*That they are one fund is our reading of the evidence, not a statement either '
+          'document makes. What the evidence does settle is the negative: nothing here '
+          'supports Vehicle/Equipment having been created before FY2011.*\n')
 
     if hist:
         w('---\n')

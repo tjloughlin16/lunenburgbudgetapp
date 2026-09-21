@@ -485,7 +485,11 @@ A special purpose fund is restricted to the purpose it was created for, and that
 
 > VOTED (80 YES, 11 NO), pursuant to the provisions of G.L. c.40, Section 5B, to create a new special purpose stabilization fund, to be known as the Opioid Settlement Stabilization Fund, for dedication, without further appropriation, of 100% of opioid litigation settlement
 
-**The three largest funds are not here, and that is the gap rather than an oversight.** The general Stabilization Fund, Vehicle/Equipment and Zoning Incentive were all created before FY2011, which is as far back as the town-meeting record in this archive reaches. Their purposes are known only from their names, and a name is not an article.
+**Two of the three largest funds have no creating article here, and the third turns out to have one under another name.** The general Stabilization Fund and Zoning Incentive were both in use before FY2011, which is as far back as the town-meeting record in this archive reaches, so their purposes are known only from their names — and a name is not an article.
+
+**Vehicle/Equipment is different, and the report said otherwise until now.** Its name appears in no annual report before FY2018 and in every one after. Meanwhile `Special Purpose Stabilization` appears in the Town Meeting articles and never once on a Treasurer’s Cash page, in the MUNIS ledger or in a trust table; `Vehicle/Equipment` never appears in an article. Each name lives in exactly one kind of document, and the FY2018 article says what the fund is for: *“to this Special Purpose Stabilization Fund for the purpose of funding future capital needs for vehicles and equipment.”* The balances agree too — FY2018’s two articles total $399,227 and the fund rises $407,486 that year, leaving about $8,259 of interest.
+
+*That they are one fund is our reading of the evidence, not a statement either document makes. What the evidence does settle is the negative: nothing here supports Vehicle/Equipment having been created before FY2011.*
 
 ---
 

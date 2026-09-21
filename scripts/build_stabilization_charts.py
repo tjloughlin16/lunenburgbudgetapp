@@ -204,11 +204,40 @@ def creation_years():
         from build_stabilization import FUND_WORDS, creations
     except Exception:
         return {}
-    out = {}
+    # A CREATING VOTE THE VOTES FILE DOES NOT HOLD, read straight off the annual report.
+    #
+    # FY2017's article extraction stops at article 7. The creating vote is ARTICLE 10,
+    # printed on page 158 of the FY2017 annual town report:
+    #
+    #   "ARTICLE 10. To see if the Town will vote pursuant to General Laws Chapter 40
+    #    Section 5B, to create a Special Purpose Stabilization Fund ...
+    #    VOTED UNANIMOUSLY to create a Special Purpose Stabilization Fund and further to
+    #    transfer $200,000 from Free Cash"
+    #
+    # That is the fund the Treasurer's Cash page calls Vehicle/Equipment from FY2018 on,
+    # and it is the ONE fund on these charts whose creation the archive can confirm. The
+    # report said all three were created before FY2011; for this one that was wrong.
+    #
+    # Recorded here rather than left out because the alternative is a chart that says
+    # nothing about a creation the town printed. It carries its page so a reader can
+    # check it, and the underlying fix -- finishing FY2017's article extraction -- is a
+    # row in extraction-blocked.csv rather than something this file should wait for.
+    out = {'Vehicle/Equipment Stabilization': 2017}
     for c in creations():
-        label = next((lbl for word, lbl in FUND_WORDS
-                      if word in (c.get('subject') or '').lower()), None)
-        if label:
+        subj = (c.get('subject') or '').lower()
+        label = next((lbl for word, lbl in FUND_WORDS if word in subj), None)
+        # `Special Purpose Stabilization` is the warrant's name for the fund the
+        # Treasurer's page calls `Vehicle/Equipment` -- see the analysis -- and it is
+        # mapped across so a creating vote filed under one name can mark the other.
+        #
+        # IT CHANGES NOTHING TODAY, and that is worth stating rather than leaving as a
+        # silent no-op: the archive holds no article CREATING that fund. FY2018's says
+        # "to THIS Special Purpose Stabilization Fund", which is a fund already standing.
+        # The earliest thing known about it is that its name first appears in FY2018,
+        # which is a fact about the record and not about the vote.
+        if label == 'Special Purpose Stabilization':
+            label = 'Vehicle/Equipment Stabilization'
+        if label and label not in out:
             out[label] = int(c['fy'])
     return out
 
@@ -359,6 +388,76 @@ def nice_top(v):
 
 # ------------------------------------------------------------ 1. all three, one axis
 
+def first_seen():
+    """{fund: the earliest fiscal year its NAME appears in any annual report}.
+
+    A WEAKER MARK THAN A CREATING VOTE, AND IT SAYS SO. The archive holds a creating
+    article for five funds and none of them is on these charts -- the three plotted here
+    are older than the town-meeting record, or their creating warrant is one nobody has
+    read. So a "creation confirmed" mark would render on nothing, and the question a
+    reader actually has when a line starts partway across is still unanswered.
+
+    This answers it with what the record can support: the first year the fund is NAMED in
+    an annual report. Vehicle/Equipment appears in no report before FY2018 and in every
+    one after, which is why its line starts there.
+
+    WHAT IT IS NOT. It is not the year the fund was created, and the two must never be
+    drawn the same. A fund can exist for years before it is printed anywhere we hold, and
+    this archive begins at FY2011 -- so an earliest appearance of FY2011 means "as far
+    back as we can see", not "this is where it began". Those are marked differently for
+    that reason: only a fund whose first appearance is AFTER the archive opens gets the
+    mark at all, because for the others the mark would be an artefact of our own coverage.
+    """
+    import glob as _g
+    import re as _re
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pdf_tables as T
+    # THE PATTERNS ARE DELIBERATELY GENEROUS, because a narrow one dates our SPELLING
+    # rather than the fund. `bartholomew stabilization` is the Treasurer's Cash wording
+    # and it first matches in FY2014 -- which marked the general fund as entering the
+    # record that year, when it is older than the archive and the report says so. The
+    # mark has to survive the town renaming things, so it looks for the least specific
+    # form each fund can take.
+    names = {'Stabilization': _re.compile(r'stabiliz', _re.I),
+             'Vehicle/Equipment Stabilization':
+                 _re.compile(r'vehicle\s*/?\s*equip|special\s+purpose\s+stabiliz', _re.I),
+             'Zoning Incentive Stabilization': _re.compile(r'zoning', _re.I)}
+    out = {}
+    years = []
+    for f in sorted(_g.glob(os.path.join(ROOT, 'sources', 'town-budget', 'ocr',
+                                         '*annual-town-report.tsv'))):
+        m = _re.search(r'fy-(\d{4})-', f)
+        if m:
+            years.append((int(m.group(1)), f))
+    if not years:
+        return {}
+    opens = min(y for y, _ in years)
+    for label, pat in names.items():
+        for fy, f in sorted(years):
+            if any(pat.search(b['text'] or '') for b in T.read_boxes(f)):
+                # A first appearance in the archive's own first year says nothing.
+                if fy > opens:
+                    out[label] = fy
+                break
+    return out
+
+
+def gaps_note(data):
+    """The dash sentence, only where there ARE dashes.
+
+    It was a constant, and the day every gap closed it became a caption describing a
+    picture that no longer existed -- telling a reader to look for dashes that are not
+    there, on a chart whose whole news is that there are none. Rule 2 covers captions:
+    a sentence about the data is a figure in prose.
+
+    And when the dashes are gone the caption has something better to say, so it says it.
+    """
+    dashed = any(b - a > 1 for pts in data.values()
+                 for a, b in zip([fy for fy, _ in pts], [fy for fy, _ in pts][1:]))
+    return ('Dashes span years not yet read' if dashed
+            else 'Every year in each fund\u2019s span is a reading \u2014 no gaps')
+
+
 def chart_all(data):
     # PADDING, MEASURED RATHER THAN EYEBALLED. The first version ended 3px below the
     # last caption on this chart and 23px below it on the next one, which is what reads
@@ -376,6 +475,8 @@ def chart_all(data):
     def Y(v):
         return H - B - v / top * (H - T - B)
 
+    seen = first_seen()
+    made = creation_years()
     b = []
     # Grid and the money axis. Recessive: the data is the thing.
     for i in range(5):
@@ -402,6 +503,28 @@ def chart_all(data):
             # A 2px surface ring, so a marker crossing another series stays legible.
             b.append(f'<circle cx="{X(fy):.1f}" cy="{Y(v):.1f}" r="4" fill="{c}" '
                      f'stroke="{SURFACE}" stroke-width="2"/>')
+        # THE FIRST-APPEARANCE MARK: a hollow ring on the point where this fund enters
+        # the record, so a line that starts partway across says why. Hollow and not
+        # filled, because a filled marker on this chart means a proven reading and this
+        # says something about the ARCHIVE rather than about the money.
+        # A CONFIRMED CREATION IS A FILLED DIAMOND ON THE AXIS, at the year of the vote.
+        # It sits on the time axis rather than on the line because the creating article
+        # states an amount VOTED IN, which is not the fund's balance -- rule 7, and the
+        # same reason creation_years() has always refused to plot the figure.
+        cy = made.get(fund)
+        if cy is not None and y0 <= cy <= y1:
+            cx = X(cy)
+            b.append(f'<path d="M {cx:.1f} {H - B - 4} l 4 -5 l -4 -5 l -4 5 z" '
+                     f'fill="{c}"/>')
+            b.append(f'<text x="{cx:.1f}" y="{H - B - 14:.1f}" font-size="8.5" '
+                     f'text-anchor="middle" fill="{c}">created</text>')
+        fs = seen.get(fund)
+        if fs is not None and any(fy0 == fs for fy0, _ in pts):
+            v0 = next(v0 for fy0, v0 in pts if fy0 == fs)
+            b.append(f'<circle cx="{X(fs):.1f}" cy="{Y(v0):.1f}" r="7.5" fill="none" '
+                     f'stroke="{c}" stroke-width="1.5"/>')
+            b.append(f'<text x="{X(fs):.1f}" y="{Y(v0) - 12:.1f}" font-size="8.5" '
+                     f'text-anchor="middle" fill="{MUTED}">first in the record</text>')
         fy, v = pts[-1]
         b.append(f'<text x="{X(fy) + 10:.1f}" y="{Y(v) - 1:.1f}" font-size="10.5" '
                  f'font-weight="600" fill="{c}">{esc(short(fund))}</text>')
@@ -410,7 +533,7 @@ def chart_all(data):
     return svg(W, H, ''.join(b),
                'Three stabilization funds, on one scale',
                'Ending cash: each annual report reading that proved itself, plus the '
-               'general ledger at FY2025. Dashes span years not yet read')
+               'general ledger at FY2025. ' + gaps_note(data))
 
 
 # ------------------------------------------------- 2. each fund on its own scale
@@ -481,7 +604,7 @@ def chart_each(data):
     return svg(W, H, ''.join(b),
                'The same three funds, each on its own scale',
                'Each panel stretched to its OWN range, so the shapes are comparable and '
-               'the heights are not. Dashes span years not yet read')
+               'the heights are not. ' + gaps_note(data))
 
 
 # ------------------------------------------------------------ 3. how fast each moved
