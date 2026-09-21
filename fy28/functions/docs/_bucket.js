@@ -47,7 +47,7 @@ export async function fromBucket(context, path) {
     head.writeHttpMetadata(headers)
     headers.set('etag', head.httpEtag)
     headers.set('content-length', String(head.size))
-    headers.set('cache-control', CACHE)
+    headers.set('cache-control', cacheFor(key))
     headers.set('x-archive-source', 'r2')
     asDocumentNotPage(headers, key)
     return new Response(null, { headers })
@@ -73,7 +73,7 @@ export async function fromBucket(context, path) {
   const headers = new Headers()
   object.writeHttpMetadata(headers)
   headers.set('etag', object.httpEtag)
-  headers.set('cache-control', CACHE)
+  headers.set('cache-control', cacheFor(key))
   headers.set('x-archive-source', 'r2')
   headers.set('accept-ranges', 'bytes')
   asDocumentNotPage(headers, key)
@@ -130,3 +130,23 @@ function asDocumentNotPage(headers, key) {
 // the roster dumps -- and a reader holding a year-old copy of one of those has no way to
 // find out. One rule has to cover both, so it is set by the shorter-lived half.
 const CACHE = 'public, max-age=604800'
+
+// ONE RULE COULD NOT COVER BOTH, AND THE WEEK WAS WRONG FOR HALF OF IT.
+//
+// Everything under `analyses/` is written by this project and rewritten whenever a
+// generator improves -- the analysis documents, and the chart SVGs they embed. On 21
+// September the stabilization charts were corrected to show every year proven, deployed,
+// and a reader was still being served a 5.7-hour-old copy with dashed segments across
+// gaps that no longer exist. Cached for a week, that is a week of a chart contradicting
+// the page around it.
+//
+// A published document genuinely does not change -- the bucket lock forbids overwriting
+// it, and a difference would be a defect rather than a revision -- so a week is right
+// for those and stays. Our own derived files get an hour, which is the same bound the
+// moved-document redirect already uses and for the same reason: an hour is how long this
+// site may be wrong about something it controls.
+const DERIVED_CACHE = 'public, max-age=3600'
+
+export function cacheFor(key) {
+  return key.startsWith('analyses/') ? DERIVED_CACHE : CACHE
+}
