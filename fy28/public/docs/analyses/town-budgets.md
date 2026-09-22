@@ -1,6 +1,8 @@
 # Budgets across town
 What Town Meeting voted for every department, and which departments move the total.
 
+![The voted budget drawn as a town: schoolhouses, police cars, dump trucks, a town hall and a library, one icon for every $100,000, coloured by department.](charts/town-budgets-town.svg)
+
 ## Who gets the money
 
 ![A pie of the FY2025 voted budget split twelve ways. Schools is 57.1% of it; the next three are Protection of persons & property at 10.5%, Employee benefits & reserves at 9.8% and Maturing Debt & Interest at 6.7%; five departments are under two per cent each.](charts/town-budgets-share.svg)

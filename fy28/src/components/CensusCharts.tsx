@@ -124,7 +124,8 @@ export function TableTwin({ head, rows, caption, note }: {
 
 const TIP = {
   background: 'var(--surface-1)', border: '1px solid var(--grid)',
-  borderRadius: 8, fontSize: 12.5,
+  borderRadius: 8, fontSize: 12.5, color: 'var(--text-primary)',
+  boxShadow: '0 2px 10px rgba(0,0,0,.12)', opacity: 1,
 }
 
 /** THE TOWN BY AGE, with every bar's margin on it. */

@@ -115,12 +115,32 @@ export function Analysis() {
     return () => { live = false }
   }, [id])
 
+  // A CHART OPENS THE PAGE, ABOVE THE METRICS. TJ: *"for the pages with charts in the
+  // 'short' section, put them above the metrics, just after the summary."*
+  //
+  // Everything the markdown carries renders BELOW the generated furniture -- that is what
+  // going model-driven did -- so a chart written at the top of the document still came
+  // out under the stat row and the conclusion cards. On a page whose finding IS the
+  // shape, that is the wrong way round: the reader meets three numbers and six cards
+  // before the one image that carries the answer.
+  //
+  // So any figure in the document's LEAD or in its short-version block is hoisted above
+  // the metrics and rendered directly under the summary, and removed from where it was
+  // so it appears once. Prose in those blocks does not move -- only figures, because a
+  // paragraph above the metrics is the block of context rule 7a spent four pages getting
+  // rid of.
+  const isFigure = (n: React.ReactNode) => isValidElement(n) && n.type === 'figure'
+
   // No document named: the bare /analysis address. Unlisted, and it exists only so that
   // somebody who truncates a link lands somewhere useful rather than on the front page.
   if (!id) return <AnalysisIndex index={index} err={err} />
 
   const meta = index?.reports.find(r => r.id === id) ?? null
-  const rendered = src ? renderMarkdown(src, '/docs/analyses/') : null
+  // THE PAYLOAD GOES TO THE RENDERER, so a chart image with a component registered for
+  // it is drawn rather than pictured (rule 7f). Passing `model` also means the charts and
+  // the stat row read the SAME figures -- there is no second source for a picture to
+  // drift from.
+  const rendered = src ? renderMarkdown(src, '/docs/analyses/', model) : null
 
   // The document's own H1 is the report's title, and the shell has already set it. Drop
   // it from the body rather than printing the title twice.
@@ -159,6 +179,16 @@ export function Analysis() {
 
   // The generator owns the opening when it shipped a stat row; and the conclusions beyond
   // the first three go inside the one fold rather than beside it.
+  // The figures that open the page: everything before the document's first H2, plus its
+  // short-version block where it has one. `split` is null on a report with no
+  // `## The short version` heading -- town-personnel and town-budgets are both like that
+  // -- so this cannot be read off `split` alone, which is how the first attempt moved
+  // nothing on the two pages the request was made about.
+  const firstH2 = body ? body.findIndex(n => isValidElement(n) && n.type === 'h2') : -1
+  const leadNodes = body ? (firstH2 < 0 ? body : body.slice(0, firstH2)) : []
+  const heroFigures = [...leadNodes, ...(split?.short ?? [])].filter(isFigure)
+  const isHero = (n: React.ReactNode) => heroFigures.includes(n)
+
   const ownsShort = !!model?.stats?.length
   const moreRows = model?.conclusions ? splitConclusions(model.conclusions, undefined)[1] : []
 
@@ -215,6 +245,14 @@ export function Analysis() {
           not a deletion. A payload with conclusions but no stats (athletics,
           budget-vs-actual, monty-tech, whose conclusions are authored for their own React
           pages) keeps its prose short version, because nothing has replaced it. */}
+      {/* The opening chart, hoisted out of the document so it sits under the summary and
+          above the metrics. See `isFigure` above for why. */}
+      {/* The signature image is not read, so it is not held to the reading measure:
+          `max-w-3xl` is right for prose and wrong for a picture. */}
+      {heroFigures.length ? (
+        <div className="report-body mt-6 [&>figure]:max-w-none">{heroFigures}</div>
+      ) : null}
+
       {model && (model.stats?.length || model.conclusions?.length) ? (
         <section data-section="conclusions" data-short="">
           {model.stats?.length ? (
@@ -233,9 +271,11 @@ export function Analysis() {
 
       {split ? (
         <>
-          <div className="report-body mt-6">{split.lead}</div>
+          <div className="report-body mt-6">{split.lead.filter(n => !isHero(n))}</div>
           {ownsShort ? null : (
-            <ShortVersion><div className="report-body">{split.short}</div></ShortVersion>
+            <ShortVersion>
+              <div className="report-body">{split.short.filter(n => !isHero(n))}</div>
+            </ShortVersion>
           )}
           {/* THE CHARTS STAY ABOVE THE FOLD. `restHead` is the document's first section
               after its short version, and on every analysis converted so far that is the
@@ -265,7 +305,7 @@ export function Analysis() {
           </FullVersion>
         </>
       ) : (
-        <div className="report-body mt-6">{body}</div>
+        <div className="report-body mt-6">{body?.filter(n => !isHero(n))}</div>
       )}
 
       {/* AFTER the document, not above it. Rule 7a: the page leads with the thing, and

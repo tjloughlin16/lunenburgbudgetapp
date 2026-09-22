@@ -95,10 +95,87 @@ FORMS = [
      'Operators`; FY2024 says `3 Heavy Equipment Operators, 2 Driver/Laborers`. Read as '
      'counts that is two operators lost; read as printed it is the same five people with '
      'two titles reclassified. The sentence is stored verbatim for exactly this reason.'),
-    ('Building Department', 'prose, a list of names inline',
-     '`The Building Department consists of the following personnel:` followed by names.',
-     'Neither a count nor a table. Captured as a statement with `parsed=no` — evidence the '
-     'town said something, which is not a number.'),
+    ('Building Department', 'prose, a list of names — laid out TWO ways in two years',
+     'FY2020: `The Building Department consists of the following personnel:` and then one '
+     'line per person, `Electrical Inspector-Jack Biery`. FY2021: the same four people as '
+     'flowing prose, `Casey Burlingame serves as the Building Commissioner as well as the '
+     'Zoning Officer. Lisa Normandin serves as…`.',
+     'The HYPHEN in the FY2020 form is the separator, and a name matcher that allows '
+     'hyphenated surnames reads `Officer-Casey` as one token — four people came back as '
+     'one. Opened up only where the word in front of the hyphen is a job word, because '
+     '`Smith-Jones` has the identical shape and is somebody’s name.'),
+    ('Council on Aging', 'prose, a named roster in one sentence — twelve years of it',
+     '`The FY24 Council on Aging staff consisted of Susan Doherty, Director; Michele '
+     'Beauvais, Administrative Assistant and Transportation; … Jim McGuigan, David '
+     'Gallagher, & Kimberly Moore, MART Van Drivers.` Separators change year to year: `;` '
+     'in some, `,` in others, `&` inside one person’s title.',
+     'COUNT THE NAMES, NEVER THE JOB WORDS. FY2024 names TEN people and contains five role '
+     'words, because `Elsa Watson and Ann Penney, Meal Site Assistants` is two people under '
+     'one title. Three other traps, each of which cost a year: the sentence is PAST tense, '
+     'so a present-tense trigger missed every one of them; FY2022 is set in two columns and '
+     'the gutter falls between `staff` and `consisted of`, so a literal space in the '
+     'pattern hid it; and FY2023 was cut at `Sandra Ricci, Asst.` by a sentence-end rule '
+     'that did not know an abbreviation, publishing five people against eleven. The '
+     'roster is also followed by `Board Members during this period were…` in the same '
+     'paragraph, and those volunteers must not be counted as employees.'),
+    ('Board of Assessors', 'prose, an establishment with no numerals in it',
+     '`the Assessor’s office staff consists of a full time Principal Assessor and a full '
+     'time Assessors Clerk` (FY2023); `Our staff includes a full time Principal Assessor, '
+     'a 19-hour Data Collector and a 32-hour Assessing Administrative Assistant` (FY2025).',
+     'Every post is introduced by an ARTICLE rather than a count, so nothing in it is a '
+     'digit and nothing is a name — it fell through both the post reader and the name '
+     'reader. The same page also says `The Board of Assessors is elected and consists of '
+     'three members`, which is the BOARD and not the payroll; the two sentences sit four '
+     'lines apart and must not be added together.'),
+    ('Facilities', 'A DEPARTMENT THAT DID NOT EXIST, then one that files no report',
+     'Until 2022 `FACILITIES MANAGEMENT` is a SECTION INSIDE THE DPW\u2019S OWN REPORT \u2014 the '
+     'heading is followed by `The following is a list of buildings and properties '
+     'maintained by the DPW`. The one number it gives, `A facilities staff of two '
+     'individuals remains on-call 24 hours a day 365 days per year` (FY2017, FY2018, '
+     'FY2019), counts who is REACHABLE overnight, not who works there.',
+     'THE SPLIT HAS A DATE AND A VOTE. Article 7 of the 2022 Annual Town Meeting adopted '
+     'the `Administrative Organization Plan` dated 5 April 2022, under Article 5 \u00a71(b) of '
+     'the Town Charter: VOTED Yes-136, No-28. The plan says what the arrangement had '
+     'been \u2014 *\u201cCurrently the Town Manager delegates the responsibility of town '
+     'facilities, excluding School and Conservation properties, to the DPW Director\u201d* \u2014 '
+     'and creates *\u201ca new Facilities Director position that will be responsible for all '
+     'town facilities and grounds maintenance\u201d*. It had been a stated goal of the Town '
+     'Manager and Select Board since November 2020. The charter basis is \u00a74-4, the Town '
+     'Manager\u2019s jurisdiction over all town property `except property under the control '
+     'of the school committee and the conservation commission`, delegated under \u00a74-3.\n\n'
+     'TWO CONSEQUENCES FOR READING THE DATA. First, a Facilities headcount before FY2023 '
+     'is not missing, it is INSIDE the DPW\u2019s \u2014 which is why the DPW establishment still '
+     'reads `one Executive Assistant (shared with Facilities)`. Second, the new '
+     'department files NO ANNUAL REPORT OF ITS OWN: it appears on no contents page in '
+     'FY2023, FY2024 or FY2025, so there is nothing to read. Its Director turns up only '
+     'in other departments\u2019 reports.\n\n'
+     'AND `SCHOOL FACILITIES` IS A DIFFERENT DEPARTMENT, excluded from the town\u2019s by the '
+     'same charter clause. FY2012 prints `John Londa, Facilities Director` under a '
+     '`SCHOOL FACILITIES` heading, and a name-matching rule on `facilit` folded the two '
+     'into one row of the coverage grid \u2014 the district\u2019s buildings counted as the '
+     'town\u2019s.\n\n'
+     'THE TITLE IS THE TRAP, AND IT IS A BAD ONE. Londa signs the SCHOOL facilities '
+     'report *\u201cJohn Londa, Director of Facilities and Grounds\u201d* \u2014 a report about '
+     'asbestos removal at Turkey Hill and the school phone system \u2014 while the TOWN\u2019S '
+     'budget votes a group named `Facilities & Grounds`, $1,022,711 in FY2025. The same '
+     'three words name a district post and a town appropriation, and they are not '
+     'related. Anything joining people to money on that string is joining the school\u2019s '
+     'buildings to the town\u2019s budget.\n\n'
+     'AND THE POST ITSELF IS UNFINDABLE IN BOTH PLACES WE READ PEOPLE FROM. There is no '
+     '`FACILITIES DIRECTOR` post in the APPOINTED OFFICIALS listing in ANY year. Chris '
+     'Ruth, who does the job and is named in three years of other departments\u2019 reports, '
+     'appears in the listing exactly once \u2014 FY2025, as a MEMBER of the Lunenburg '
+     'Municipal Building Design Committee, titled `Town Facility Manager`. Three titles '
+     'for one job, and a department created by a recorded Town Meeting vote that shows '
+     'up in neither the contents page nor the officials listing. Neither absence is a '
+     'reading failure and neither should ever be reported as the town employing nobody.'),
+    ('Library', 'prose, a headcount in an ASIDE, once in fifteen years',
+     '`Retirements and graduations mean that five people working at the library are new to '
+     'their jobs in 2019-we only employ ten total-and the staff is happier than ever.`',
+     'The only number the Library publishes about its own staff, in a subordinate clause, '
+     'inside a sentence about turnover, under a CEMETERY running header — so the heading '
+     'above it names the wrong department and the sentence has to name itself. Reported '
+     'for a day as a department that publishes nothing.'),
     ('Boards and committees', 'a listing, nine pages a year',
      'ELECTED OFFICIALS and APPOINTED OFFICIALS, each post with its holders and their '
      'term-expiry years, and its own membership stated in the heading.',
@@ -111,8 +188,10 @@ FORMS = [
     ('every other department', 'nothing published',
      'No roster, no establishment sentence, no count.',
      'The gross-wages list tagged each name with a department through FY2016 and stopped. '
-     'So a DPW labourer, a library assistant and a town hall clerk appear in no published '
-     'headcount at all after that year.'),
+     'So a DPW labourer, a town hall clerk and a Health agent appear in no published '
+     'headcount at all after that year. Treat this row as PROVISIONAL: it has been wrong '
+     'twice. Every department on it was checked once and five of them turned out to be '
+     'printing a figure in a form nothing was looking for.'),
 ]
 
 

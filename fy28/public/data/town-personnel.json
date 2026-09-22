@@ -4,14 +4,14 @@
   {
    "basis": "The per-school staff rosters in the annual report, against the Fire and Police rosters and the DPW establishment.",
    "bearing": "sizes",
-   "claim": "The schools employ more people than the rest of the town put together, six times over",
-   "detail": "Before any question about who is growing: this is the scale of the town’s workforce, and one part of it is nearly all of it. The schools name 250 members of staff in FY2025. Every other part of the town that publishes a count — the Fire Department, the Police Department and the Department of Public Works — comes to 79 between them.",
+   "claim": "The schools employ more than twice as many people as the rest of the town put together",
+   "detail": "Before any question about who is growing: this is the scale of the town’s workforce, and one part of it is nearly all of it. The schools name 250 members of staff in FY2025. Every other part of the town that publishes a count — Fire Department, Police Department, Department of Public Works, Council on Aging, Library, Building Department, Board of Assessors and Information Technology — comes to 114 between them.",
    "figure": "schools",
    "figures": {
     "others": {
-     "text": "79",
+     "text": "114",
      "unit": "in every other department that publishes a count",
-     "value": 79
+     "value": 114
     },
     "schools": {
      "text": "250",
@@ -31,39 +31,34 @@
   {
    "basis": "Each department’s own published count, first published year against last, with any year reading under half its predecessor dropped as a short read rather than a cut.",
    "bearing": "sizes",
-   "claim": "One department has fewer people than it did. The rest are flat or larger",
-   "detail": "Who added staff and who lost it, over the years each one publishes. The Fire Department is down 5, from 45 to 40, all of it in the on-call roll while its career staff doubled. The schools are up 34 since FY2011, the Police Department up 3, and the Department of Public Works unchanged at 14 posts.",
-   "figure": "fire",
+   "claim": "One department has fewer people than when it first published. The rest are flat or larger",
+   "detail": "Who added staff and who lost it, over the years each one publishes. Information Technology is down 1, from 4 to 3. The other eight departments are larger or unchanged.",
+   "figure": "shrank",
    "figures": {
-    "dpw": {
-     "text": "14",
-     "unit": "posts at the DPW, unchanged",
-     "value": 14
+    "d0": {
+     "text": "1",
+     "unit": "fewer at Information Technology",
+     "value": 1
     },
-    "fire": {
-     "text": "5",
-     "unit": "fewer at the Fire Department",
-     "value": 5
+    "f0": {
+     "text": "4",
+     "unit": "at Information Technology when it first published",
+     "value": 4
     },
-    "now": {
-     "text": "40",
-     "unit": "now",
-     "value": 40
-    },
-    "pol": {
+    "n0": {
      "text": "3",
-     "unit": "more police officers",
+     "unit": "at Information Technology now",
      "value": 3
     },
-    "sch": {
-     "text": "34",
-     "unit": "more school staff",
-     "value": 34
+    "rest": {
+     "text": "eight",
+     "unit": "flat or larger",
+     "value": 8
     },
-    "was": {
-     "text": "45",
-     "unit": "then",
-     "value": 45
+    "shrank": {
+     "text": "One",
+     "unit": "departments with fewer people than when they started",
+     "value": 1
     }
    },
    "id": "who-grew-who-cut",
@@ -88,164 +83,454 @@
    "series": [
     {
      "fy": "2011",
-     "people": 216
+     "people": 216,
+     "suspect": false
     },
     {
      "fy": "2012",
-     "people": 202
+     "people": 202,
+     "suspect": false
     },
     {
      "fy": "2013",
-     "people": 172
+     "people": 172,
+     "suspect": false
     },
     {
      "fy": "2014",
-     "people": 232
+     "people": 232,
+     "suspect": false
     },
     {
      "fy": "2015",
-     "people": 252
+     "people": 252,
+     "suspect": false
     },
     {
      "fy": "2016",
-     "people": 276
+     "people": 276,
+     "suspect": false
     },
     {
      "fy": "2017",
-     "people": 294
+     "people": 294,
+     "suspect": false
     },
     {
      "fy": "2018",
-     "people": 277
+     "people": 277,
+     "suspect": false
     },
     {
      "fy": "2019",
-     "people": 257
+     "people": 257,
+     "suspect": false
     },
     {
      "fy": "2020",
-     "people": 249
+     "people": 249,
+     "suspect": false
     },
     {
      "fy": "2021",
-     "people": 245
+     "people": 245,
+     "suspect": false
     },
     {
      "fy": "2022",
-     "people": 285
+     "people": 285,
+     "suspect": false
     },
     {
      "fy": "2023",
-     "people": 265
+     "people": 265,
+     "suspect": false
     },
     {
      "fy": "2024",
-     "people": 343
+     "people": 279,
+     "suspect": false
     },
     {
      "fy": "2025",
-     "people": 250
+     "people": 250,
+     "suspect": false
     }
    ],
    "suspect": [],
    "years": 15
   },
   {
-   "change": -5,
+   "change": 6,
    "department": "Fire Department",
-   "first": 45,
-   "first_fy": "2017",
+   "first": 34,
+   "first_fy": "2011",
    "kind": "career staff plus the low end of the on-call range",
    "last_fy": "2025",
    "people": 40,
    "series": [
     {
+     "fy": "2011",
+     "people": 34,
+     "suspect": false
+    },
+    {
+     "fy": "2012",
+     "people": 39,
+     "suspect": false
+    },
+    {
+     "fy": "2013",
+     "people": 40,
+     "suspect": false
+    },
+    {
+     "fy": "2014",
+     "people": 43,
+     "suspect": false
+    },
+    {
+     "fy": "2015",
+     "people": 44,
+     "suspect": false
+    },
+    {
+     "fy": "2016",
+     "people": 38,
+     "suspect": false
+    },
+    {
      "fy": "2017",
-     "people": 45
+     "people": 45,
+     "suspect": false
     },
     {
      "fy": "2018",
-     "people": 47
+     "people": 47,
+     "suspect": false
     },
     {
      "fy": "2019",
-     "people": 47
+     "people": 38,
+     "suspect": false
     },
     {
      "fy": "2020",
-     "people": 47
+     "people": 47,
+     "suspect": false
     },
     {
      "fy": "2021",
-     "people": 48
+     "people": 37,
+     "suspect": false
     },
     {
      "fy": "2022",
-     "people": 40
+     "people": 40,
+     "suspect": false
     },
     {
      "fy": "2023",
-     "people": 40
+     "people": 40,
+     "suspect": false
     },
     {
      "fy": "2024",
-     "people": 40
+     "people": 40,
+     "suspect": false
     },
     {
      "fy": "2025",
-     "people": 40
+     "people": 40,
+     "suspect": false
     }
    ],
    "suspect": [],
-   "years": 9
+   "years": 15
   },
   {
-   "change": 3,
+   "change": 16,
    "department": "Police Department",
-   "first": 22,
-   "first_fy": "2021",
-   "kind": "officers named on the roster",
-   "last_fy": "2023",
-   "people": 25,
+   "first": 13,
+   "first_fy": "2012",
+   "kind": "every member of staff, named on its roster",
+   "last_fy": "2025",
+   "people": 29,
    "series": [
     {
+     "fy": "2012",
+     "people": 13,
+     "suspect": false
+    },
+    {
+     "fy": "2014",
+     "people": 29,
+     "suspect": true
+    },
+    {
+     "fy": "2015",
+     "people": 14,
+     "suspect": true
+    },
+    {
+     "fy": "2016",
+     "people": 19,
+     "suspect": false
+    },
+    {
+     "fy": "2017",
+     "people": 25,
+     "suspect": false
+    },
+    {
+     "fy": "2018",
+     "people": 27,
+     "suspect": false
+    },
+    {
+     "fy": "2019",
+     "people": 20,
+     "suspect": false
+    },
+    {
+     "fy": "2020",
+     "people": 18,
+     "suspect": false
+    },
+    {
      "fy": "2021",
-     "people": 22
+     "people": 20,
+     "suspect": false
     },
     {
      "fy": "2022",
-     "people": 20
+     "people": 26,
+     "suspect": false
     },
     {
      "fy": "2023",
-     "people": 25
+     "people": 25,
+     "suspect": false
+    },
+    {
+     "fy": "2024",
+     "people": 26,
+     "suspect": false
+    },
+    {
+     "fy": "2025",
+     "people": 29,
+     "suspect": false
     }
    ],
    "suspect": [
-    "2024"
+    "2015",
+    "2014"
    ],
-   "years": 3
+   "years": 11
   },
   {
    "change": 0,
-   "department": "Department Of Public Works",
+   "department": "Department of Public Works",
    "first": 14,
    "first_fy": "2023",
-   "kind": "posts in the establishment it states",
-   "last_fy": "2024",
+   "kind": "an establishment, post by post",
+   "last_fy": "2025",
    "people": 14,
    "series": [
     {
      "fy": "2023",
-     "people": 14
+     "people": 14,
+     "suspect": false
     },
     {
      "fy": "2024",
-     "people": 14
+     "people": 14,
+     "suspect": false
+    },
+    {
+     "fy": "2025",
+     "people": 14,
+     "suspect": false
+    }
+   ],
+   "suspect": [],
+   "years": 3
+  },
+  {
+   "change": 4,
+   "department": "Council on Aging",
+   "first": 7,
+   "first_fy": "2011",
+   "kind": "a named staff list",
+   "last_fy": "2025",
+   "people": 11,
+   "series": [
+    {
+     "fy": "2011",
+     "people": 7,
+     "suspect": false
+    },
+    {
+     "fy": "2014",
+     "people": 9,
+     "suspect": false
+    },
+    {
+     "fy": "2015",
+     "people": 10,
+     "suspect": false
+    },
+    {
+     "fy": "2016",
+     "people": 11,
+     "suspect": false
+    },
+    {
+     "fy": "2017",
+     "people": 8,
+     "suspect": false
+    },
+    {
+     "fy": "2018",
+     "people": 8,
+     "suspect": false
+    },
+    {
+     "fy": "2019",
+     "people": 9,
+     "suspect": false
+    },
+    {
+     "fy": "2020",
+     "people": 9,
+     "suspect": false
+    },
+    {
+     "fy": "2022",
+     "people": 10,
+     "suspect": false
+    },
+    {
+     "fy": "2023",
+     "people": 11,
+     "suspect": false
+    },
+    {
+     "fy": "2024",
+     "people": 10,
+     "suspect": false
+    },
+    {
+     "fy": "2025",
+     "people": 11,
+     "suspect": false
+    }
+   ],
+   "suspect": [],
+   "years": 12
+  },
+  {
+   "change": 0,
+   "department": "Library",
+   "first": 10,
+   "first_fy": "2019",
+   "kind": "a stated headcount",
+   "last_fy": "2019",
+   "people": 10,
+   "series": [
+    {
+     "fy": "2019",
+     "people": 10,
+     "suspect": false
+    }
+   ],
+   "suspect": [],
+   "years": 1
+  },
+  {
+   "change": 0,
+   "department": "Building Department",
+   "first": 4,
+   "first_fy": "2020",
+   "kind": "a named staff list",
+   "last_fy": "2022",
+   "people": 4,
+   "series": [
+    {
+     "fy": "2020",
+     "people": 4,
+     "suspect": false
+    },
+    {
+     "fy": "2021",
+     "people": 4,
+     "suspect": false
+    },
+    {
+     "fy": "2022",
+     "people": 4,
+     "suspect": false
+    }
+   ],
+   "suspect": [],
+   "years": 3
+  },
+  {
+   "change": 1,
+   "department": "Board of Assessors",
+   "first": 2,
+   "first_fy": "2023",
+   "kind": "an establishment, one post at a time",
+   "last_fy": "2025",
+   "people": 3,
+   "series": [
+    {
+     "fy": "2023",
+     "people": 2,
+     "suspect": false
+    },
+    {
+     "fy": "2025",
+     "people": 3,
+     "suspect": false
     }
    ],
    "suspect": [],
    "years": 2
+  },
+  {
+   "change": -1,
+   "department": "Information Technology",
+   "first": 4,
+   "first_fy": "2016",
+   "kind": "a named roster, one biography per person",
+   "last_fy": "2020",
+   "people": 3,
+   "series": [
+    {
+     "fy": "2016",
+     "people": 4,
+     "suspect": false
+    },
+    {
+     "fy": "2017",
+     "people": 4,
+     "suspect": false
+    },
+    {
+     "fy": "2018",
+     "people": 4,
+     "suspect": false
+    },
+    {
+     "fy": "2020",
+     "people": 3,
+     "suspect": false
+    }
+   ],
+   "suspect": [],
+   "years": 4
   }
  ],
  "fire": [
@@ -318,7 +603,7 @@
  "last": "2025",
  "not_established": [
   "What anybody is paid. No salary is read here, and none is inferred from a post’s name.",
-  "How many people the town employs. A DPW labourer, a library assistant and a town hall clerk hold no appointed post and appear in no roster — the wage list that would give a headcount stopped naming departments after FY2016.",
+  "How many people the town employs. Nine departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2016.",
   "FTE. A career post and an on-call post are not the same job and cannot be netted against each other.",
   "A town total. The departments that describe their staffing do it in whichever form that year’s department head chose — a count, a range, an establishment post by post, a list of names — and those are different quantities."
  ],
@@ -364,30 +649,487 @@
    "officers": 60
   }
  ],
+ "pictogram": {
+  "glyph": "M12 2.6a3.4 3.4 0 110 6.8 3.4 3.4 0 010-6.8zM6.2 21.4v-6.1c0-2.7 2.6-4.4 5.8-4.4s5.8 1.7 5.8 4.4v6.1h-3.3v-5.2h-1v5.2h-3v-5.2h-1v5.2z",
+  "unit": 10,
+  "unit_label": "people"
+ },
  "publishes": [
   {
-   "department": "Department Of Public Works",
+   "department": "Board of Assessors",
    "forms": [
-    "an establishment, post by post"
+    "0",
+    "2",
+    "2",
+    "5"
+   ]
+  },
+  {
+   "department": "Building Department",
+   "forms": [
+    "0",
+    "0",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Building Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Building Department",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "1",
+    "1",
+    "2"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "5"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "6"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "7"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "8"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "9"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "0",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "5"
+   ]
+  },
+  {
+   "department": "Department of Public Works",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "department": "Department of Public Works",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "5"
    ]
   },
   {
    "department": "Fire Department",
    "forms": [
-    "a named roster",
-    "a stated strength"
+    "0",
+    "1",
+    "2",
+    "7"
    ]
   },
   {
-   "department": "Lunenburg Public Schools",
+   "department": "Fire Department",
    "forms": [
-    "a named roster"
+    "0",
+    "1",
+    "2",
+    "8"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "0",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "5"
+   ]
+  },
+  {
+   "department": "Information Technology",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "6"
+   ]
+  },
+  {
+   "department": "Information Technology",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "7"
+   ]
+  },
+  {
+   "department": "Information Technology",
+   "forms": [
+    "0",
+    "0",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Library",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "9"
+   ]
+  },
+  {
+   "department": "Information Technology",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "8"
+   ]
+  },
+  {
+   "department": "Board of Assessors",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "department": "Council on Aging",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "department": "Department of Public Works",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "1",
+    "1",
+    "2"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "2"
    ]
   },
   {
    "department": "Police Department",
    "forms": [
-    "a named roster"
+    "0",
+    "1",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "5"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "5"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "6"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "6"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "7"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "8"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "9"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "9"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "0",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "0",
+    "2",
+    "2",
+    "5"
    ]
   }
  ],
@@ -396,7 +1138,31 @@
    "agrees": "",
    "department": "Fire Department",
    "fy": "2011",
-   "named": 36,
+   "named": 34,
+   "stated_high": "",
+   "stated_low": ""
+  },
+  {
+   "agrees": "",
+   "department": "Fire Department",
+   "fy": "2012",
+   "named": 39,
+   "stated_high": "",
+   "stated_low": ""
+  },
+  {
+   "agrees": "",
+   "department": "Police Department",
+   "fy": "2012",
+   "named": 13,
+   "stated_high": "",
+   "stated_low": ""
+  },
+  {
+   "agrees": "",
+   "department": "Fire Department",
+   "fy": "2013",
+   "named": 40,
    "stated_high": "",
    "stated_low": ""
   },
@@ -404,7 +1170,15 @@
    "agrees": "",
    "department": "Fire Department",
    "fy": "2014",
-   "named": 44,
+   "named": 43,
+   "stated_high": "",
+   "stated_low": ""
+  },
+  {
+   "agrees": "",
+   "department": "Police Department",
+   "fy": "2014",
+   "named": 29,
    "stated_high": "",
    "stated_low": ""
   },
@@ -418,9 +1192,25 @@
   },
   {
    "agrees": "",
+   "department": "Police Department",
+   "fy": "2015",
+   "named": 14,
+   "stated_high": "",
+   "stated_low": ""
+  },
+  {
+   "agrees": "",
    "department": "Fire Department",
    "fy": "2016",
    "named": 38,
+   "stated_high": "",
+   "stated_low": ""
+  },
+  {
+   "agrees": "",
+   "department": "Police Department",
+   "fy": "2016",
+   "named": 19,
    "stated_high": "",
    "stated_low": ""
   },
@@ -433,12 +1223,28 @@
    "stated_low": 45
   },
   {
+   "agrees": "",
+   "department": "Police Department",
+   "fy": "2017",
+   "named": 25,
+   "stated_high": "",
+   "stated_low": ""
+  },
+  {
    "agrees": "no",
    "department": "Fire Department",
    "fy": "2018",
-   "named": 40,
+   "named": 39,
    "stated_high": 52,
    "stated_low": 47
+  },
+  {
+   "agrees": "",
+   "department": "Police Department",
+   "fy": "2018",
+   "named": 27,
+   "stated_high": "",
+   "stated_low": ""
   },
   {
    "agrees": "no",
@@ -449,12 +1255,28 @@
    "stated_low": 47
   },
   {
+   "agrees": "",
+   "department": "Police Department",
+   "fy": "2019",
+   "named": 20,
+   "stated_high": "",
+   "stated_low": ""
+  },
+  {
    "agrees": "no",
    "department": "Fire Department",
    "fy": "2020",
-   "named": 41,
+   "named": 40,
    "stated_high": 52,
    "stated_low": 47
+  },
+  {
+   "agrees": "",
+   "department": "Police Department",
+   "fy": "2020",
+   "named": 18,
+   "stated_high": "",
+   "stated_low": ""
   },
   {
    "agrees": "no",
@@ -468,23 +1290,15 @@
    "agrees": "",
    "department": "Police Department",
    "fy": "2021",
-   "named": 22,
+   "named": 20,
    "stated_high": "",
    "stated_low": ""
-  },
-  {
-   "agrees": "no",
-   "department": "Fire Department",
-   "fy": "2022",
-   "named": 11,
-   "stated_high": 45,
-   "stated_low": 40
   },
   {
    "agrees": "",
    "department": "Police Department",
    "fy": "2022",
-   "named": 20,
+   "named": 26,
    "stated_high": "",
    "stated_low": ""
   },
@@ -508,7 +1322,7 @@
    "agrees": "no",
    "department": "Fire Department",
    "fy": "2024",
-   "named": 35,
+   "named": 34,
    "stated_high": 45,
    "stated_low": 40
   },
@@ -516,7 +1330,23 @@
    "agrees": "",
    "department": "Police Department",
    "fy": "2024",
-   "named": 7,
+   "named": 26,
+   "stated_high": "",
+   "stated_low": ""
+  },
+  {
+   "agrees": "no",
+   "department": "Fire Department",
+   "fy": "2025",
+   "named": 35,
+   "stated_high": 45,
+   "stated_low": 40
+  },
+  {
+   "agrees": "",
+   "department": "Police Department",
+   "fy": "2025",
+   "named": 29,
    "stated_high": "",
    "stated_low": ""
   }
@@ -621,7 +1451,7 @@
   },
   {
    "basis": "published",
-   "note": "Read by scripts/extract_department_staffing.py. Stored as printed, because the forms do not agree with each other and may not be summed.",
+   "note": "Read by scripts/extract_department_staffing.py. Stored as printed, because the forms do not agree with each other and may not be summed. Eight forms so far, and the department head chooses: a list of names, an establishment post by post, the same establishment written one article at a time, a career count beside an on-call range, a number spelled out in words, and — the Library’s only one — a headcount in an aside inside a sentence about turnover.",
    "what": "What each department says it employs",
    "where": "the prose of each department’s own report; no heading names it in any year"
   },
@@ -634,8 +1464,20 @@
  ],
  "staffing": [
   {
-   "career": "",
-   "department": "Department Of Public Works",
+   "career": "2",
+   "department": "Board of Assessors",
+   "fy": "2023",
+   "measure": "an establishment, one post at a time",
+   "on_call_high": "",
+   "on_call_low": "",
+   "page": "45",
+   "parsed": "yes",
+   "positions": "Principal Assessor; Assessors Clerk",
+   "statement": "assessing board members). In the Town of Lunenburg, the Assessor's office staff consists of a full time Principal Assessor and a full time Assessors Clerk."
+  },
+  {
+   "career": "14",
+   "department": "Department of Public Works",
    "fy": "2023",
    "measure": "establishment, post by post",
    "on_call_high": "",
@@ -646,8 +1488,8 @@
    "statement": "of life for the citizens of Lunenburg. The staff consists of one Director, one Executive Assistant (shared with the Facilities Department), one Highway Superintendent, 5 Heavy Equipment Operators, one Mechanic, one Cemetery Superintendent, two Seasonal Cemetery Laborers, one Sewer Business Manager, and one Assistant to the Sewer Business Manager."
   },
   {
-   "career": "",
-   "department": "Department Of Public Works",
+   "career": "14",
+   "department": "Department of Public Works",
    "fy": "2024",
    "measure": "establishment, post by post",
    "on_call_high": "",
@@ -656,21 +1498,45 @@
    "parsed": "yes",
    "positions": "1 Director; 1 Executive Assistant; 1 Highway Superintendent; 3 Heavy Equipment Operators; 2 Driver; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant",
    "statement": "welfare of the citizens of Lunenburg. The staff consists of one Director, one Executive Assistant (shared with the Facilities Department), one Highway Superintendent, 3 Heavy Equipment Operators, 2 Driver/Laborers, one Mechanic, one Cemetery Superintendent, two Seasonal Cemetery Laborers, one Sewer Business Manager, and one Assistant to the Sewer Business Manager."
+  },
+  {
+   "career": "3",
+   "department": "Board of Assessors",
+   "fy": "2025",
+   "measure": "an establishment, one post at a time",
+   "on_call_high": "",
+   "on_call_low": "",
+   "page": "33",
+   "parsed": "yes",
+   "positions": "Principal Assessor; Data Collector; Assessing Administrative Assistant",
+   "statement": "• We continue to be fully staffed after several years of being understaffed. Our staff includes a full time Principal Assessor, a 19-hour Data Collector and a 32-hour Assessing Administrative Assistant."
+  },
+  {
+   "career": "14",
+   "department": "Department of Public Works",
+   "fy": "2025",
+   "measure": "establishment, post by post",
+   "on_call_high": "",
+   "on_call_low": "",
+   "page": "48",
+   "parsed": "yes",
+   "positions": "1 Director; 1 Executive Assistant; 1 Highway Superintendent; 3 Heavy Equipment Operators; 2 Driver; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant",
+   "statement": "Our staff includes one Director, one Executive Assistant (shared with Facilities), one Highway Superintendent, three Heavy Equipment Operators, two Driver/Laborers, one Mechanic, one Cemetery Superintendent, two Seasonal Cemetery Laborers, one Sewer Business Manager, and one Assistant to the Sewer Business Manager."
   }
  ],
  "stats": [
   {
-   "label": "school staff — more people than the rest of the town put together, six times over",
+   "label": "school staff — more than twice as many as everywhere else that publishes a count, put together",
    "value": "250"
   },
   {
-   "label": "in every other part of the town that publishes a count: Fire, Police and the DPW",
-   "value": "79"
+   "label": "in the other eight parts of the town that publish a count, added up",
+   "value": "114"
   },
   {
    "label": "parts of the town that publish any staff count at all",
    "tone": "var(--series-cost)",
-   "value": "4 of 60"
+   "value": "9 of 60"
   }
  ],
  "years": [

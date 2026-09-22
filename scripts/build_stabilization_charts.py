@@ -745,7 +745,69 @@ def chart_flows(_data):
                'they are thirty times the size and would need a second axis')
 
 
+def chart_holdings(d):
+    """The whole reserve, in proportion, fund by fund -- this page's signature image.
+
+    TJ: *"for stabilization funds, we should show a chart of the largest funds with the
+    most money in them... conceptually (but in proportion)."*
+
+    AREA RATHER THAN LENGTH, because the subject is one pot being carved up. Nine bars of
+    different lengths do not read as a whole; nine blocks filling one rectangle do, and
+    the Health Insurance fund at $11,027 of nine million is then visibly a sliver.
+
+    AND THE COLOUR CARRIES THE ARGUMENT. One fund may be spent on anything lawful and
+    eight are restricted to the purpose their creating article named, which is this
+    page's entire point -- whether any of it can cover a school deficit is a question of
+    PURPOSE, not of balance. So the reader sees at a glance that the larger part of the
+    pot is the part that is not available.
+    """
+    # The balances come from the report's PAYLOAD rather than from `series()`, which
+    # carries the proven year-by-year readings and not the ledger's current balances.
+    import json
+    pay = os.path.join(ROOT, 'fy28', 'public', 'data', 'stabilization-funds.json')
+    if not os.path.exists(pay):
+        return None
+    pd = json.load(open(pay, encoding='utf-8'))
+    funds = sorted(pd['funds'], key=lambda f: -f['balance'])
+    held = pd['totals']['held']
+    d = pd
+    rows = [funds[:2], funds[2:4], funds[4:]]
+    rows = [r for r in rows if r]
+    W, H = 720, 300
+    gap = 4.0
+    b = []
+    y = 0.0
+    weights = [sum(f['balance'] for f in r) for r in rows]
+    tw = sum(weights) or 1
+    for r, wt in zip(rows, weights):
+        rh = (H - gap * (len(rows) - 1)) * wt / tw
+        rh = max(rh, 34.0)
+        x = 0.0
+        rt = sum(f['balance'] for f in r) or 1
+        for f in r:
+            bw = (W - gap * (len(r) - 1)) * f['balance'] / rt
+            fill = '#184f95' if f['general'] else '#7ea6d8'
+            ink = '#ffffff' if f['general'] else '#0d2340'
+            b.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{max(bw, 2):.1f}" '
+                     f'height="{rh:.1f}" rx="3" fill="{fill}"/>')
+            if bw > 62:
+                name = f['name'].title().replace('Opeb', 'OPEB').replace('Opiod', 'Opioid')
+                b.append(f'<text x="{x + 8:.1f}" y="{y + 16:.1f}" font-size="11.5" '
+                         f'font-weight="700" fill="{ink}">{esc(name[:26])}</text>')
+                b.append(f'<text x="{x + 8:.1f}" y="{y + rh - 8:.1f}" font-size="11" '
+                         f'fill="{ink}">{usdk(f["balance"])} \u00b7 '
+                         f'{f["balance"] / held * 100:.1f}%</text>')
+            x += bw + gap
+        y += rh + gap
+    return svg(W, y - gap, ''.join(b),
+               'The whole reserve, fund by fund, in proportion',
+               '%s held across %d funds. The dark block is the only one Town Meeting may '
+               'spend on anything lawful; the rest are restricted to the purpose each '
+               'was created for.' % (usd(held), d['totals']['funds']))
+
+
 CHARTS = [
+    ('stabilization-holdings.svg', chart_holdings),
     ('stabilization-all.svg', chart_all),
     ('stabilization-each.svg', chart_each),
     ('stabilization-growth.svg', chart_growth),

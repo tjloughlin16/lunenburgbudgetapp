@@ -48,8 +48,32 @@ OUT = os.path.join(ROOT, 'sources', 'analyses', 'charts')
 ELECTED = '#184f95'
 APPOINTED = '#e08214'
 OFFICER = '#2a8c6a'
-SLICES = ['#12325f', '#184f95', '#3f78bd', '#7ea6d8', '#8a5210', '#b86d15',
-          '#e08214', '#eeb069', '#17563f', '#22795a', '#9aa4ad']
+# A CATEGORICAL PALETTE, VALIDATED RATHER THAN CHOSEN. TJ: *"the colors have to be
+# distinct enough. the personel page is hard to see the differences."* The old one ran
+# four BLUES in a row -- #12325f, #184f95, #3f78bd, #7ea6d8 -- so the four biggest
+# departments, which are the four a reader cares most about telling apart, were four
+# shades of one hue.
+#
+# Checked with the dataviz validator rather than by eye (`scripts/validate_palette.js`
+# in the bundled skill), against this surface, in this ORDER -- the checks are on
+# ADJACENT pairs and these charts are ranked by size, so adjacent means adjacent in rank:
+#
+#   lightness band       all 12 inside L 0.43-0.77      PASS
+#   chroma floor         all 12 >= 0.1                  PASS
+#   CVD separation       worst adjacent dE 8.4 protan   PASS
+#   normal-vision floor  worst adjacent dE 19.6         PASS
+#   contrast vs surface  three below 3:1                WARN -- see below
+#
+# The contrast warning is not dismissable and is not dismissed: it obliges visible labels
+# or a table view, and every chart using this palette carries a legend naming each series
+# with its value, plus the same figures as a table further down the page.
+#
+# DARK MODE IS NOT THIS PALETTE FLIPPED. Three of these fall outside the band the
+# validator wants against the dark surface, and the honest fix is a second set of steps
+# chosen for that surface rather than a reuse of these. These SVGs are fixed-colour files
+# served to /docs and to the PDF, so they use the light set; picking the dark steps is
+# open work.
+SLICES = ['#2b6cb0', '#dc2626', '#ea8c00', '#2f8f4e', '#7c3aed', '#0d9488', '#92400e', '#c026d3', '#38bdf8', '#a3a324', '#e0558a', '#3b5bbf']
 
 
 def svg(w, h, body, title, subtitle):

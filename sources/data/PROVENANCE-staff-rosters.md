@@ -20,7 +20,7 @@ line on the page is claimed as an entry or a heading, and the leftovers are
 counted. A page where a third of the lines vanished looks exactly like a smaller
 school unless somebody counts.
 
-**3721 of 3721 lines accounted for** across 100 pages, 3815 entries, 15 years.
+**3721 of 3721 lines accounted for** across 100 pages, 3751 entries, 15 years.
 
 | page | FY | school | lines | claimed | unaccounted | entries | misattributed |
 |---|---|---|---:|---:|---:|---:|---:|

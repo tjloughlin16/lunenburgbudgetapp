@@ -139,7 +139,11 @@ WHAT_IT_IS = {
         'departments and tree removal sit here too.',
     'facilities-grounds':
         'The buildings the town owns and the grounds around them, including the Park '
-        'department’s grounds and utilities for the library.',
+        'department’s grounds and utilities for the library. It became a department in '
+        'its own right by a recorded vote — Article 7 of the 2022 Annual Town Meeting, '
+        'Yes-136 No-28 — which moved town facilities out from under the DPW Director. It '
+        'has filed no annual report since, so this is a department the town votes more '
+        'than a million dollars a year and publishes nothing else about.',
     'solid-waste':
         'Trash and recycling. The fastest-growing line in the budget by rate, and small '
         'enough that the rate moves the total very little.',

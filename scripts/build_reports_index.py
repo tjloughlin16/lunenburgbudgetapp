@@ -293,10 +293,11 @@ ABOUT = {
         'and whether the establishment is growing. The seats barely move; about a third '
         'of the people in them change every year.',
     'town-personnel':
-        'Every elected seat, appointed board seat and appointed officer the town prints '
-        'in its annual report, FY2022 to FY2025. Two thirds of the posts are unpaid seats '
-        'on boards. It is not a headcount of town employees, and it says so: the wage '
-        'list that would give one stopped naming departments after FY2016.',
+        'How many people each part of the town employs, department by department, from '
+        'the counts the town states in its own annual reports — a named roster, an '
+        'establishment of posts, or a figure spelled out in prose. A minority of '
+        'departments publish one and the rest publish nothing, and the page says which '
+        'is which and why. The seats people volunteer for are on the board-composition report.',
     'town-budgets':
         'What Town Meeting voted for each of the twelve town departments, and which '
         'of them actually move the total. It refuses the question it is most often '

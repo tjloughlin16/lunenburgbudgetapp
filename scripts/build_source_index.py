@@ -956,6 +956,46 @@ GROUPS = [
              'book gives the same quantity twice and `roster_check` records whether the two '
              'agree \u2014 in most years they do not, and the difference is published '
              'rather than averaged away.'),
+            ('data/gross-wages.csv',
+             'The town\u2019s wage list, name by name \u2014 AN INCOMPLETE READ', 2,
+             'Every name and amount the annual report\u2019s `Town & School Employee Gross '
+             'Wages` list prints, for the years it reads. NOTHING ON THE SITE USES IT AND '
+             'nothing should until it reads in full: four years come back near-complete '
+             '(FY2017, FY2020, FY2021, FY2025) and six read badly or not at all, and the '
+             'list is set in two columns whose second column loses its given names, so a '
+             'third to a half of the entries cannot be matched to a person. A department '
+             'total built on it would rank the scan rather than the payroll. TJ: *\u201cif we '
+             'dont have the data, we shouldn\u2019t show partial data. that may be '
+             'misleading\u201d* \u2014 so it is held here as working material, and the two things '
+             'it would answer are registered in money-gaps.csv instead.'),
+            ('data/report-index.csv',
+             'Every department the town lists, and where its report is', 2,
+             'The CONTENTS PAGE of each annual report, read as data: one row per '
+             'department per year, with the pages its report occupies \u2014 or the town\u2019s '
+             'own words, `No Report Submitted`, where there is none. This is the town\u2019s '
+             'department list rather than ours, which is why Facilities is on it; every '
+             'list in this project before it was typed from memory. The page numbers are '
+             'PRINTED page numbers and the offset to the PDF differs per year, so it is '
+             'measured from the numbers each book prints at its own feet.'),
+            ('data/staffing-by-section.csv',
+             'What each department says about its own staff, on its own pages', 2,
+             'For every department-year in `report-index.csv`, its own pages read for a '
+             'headcount in any of the six forms the town uses. Where there is no number '
+             'the row carries a REASON \u2014 `mentions staff, states no number` or `no '
+             'mention of staff on its own pages` \u2014 because those are different problems '
+             'and a blank cannot tell them apart.'),
+            ('data/staffing-coverage.csv',
+             'Where a department publishes and we still have no number', 2,
+             'The audit of the two readers above, one row per department per year. Every '
+             'cell that is not a number is a to-do or an explanation, never a finding '
+             'about the town. Rendered as a grid in notes/generated/STAFFING-COVERAGE.md.'),
+            ('data/debt-outstanding.csv',
+             'Debt outstanding, as the annual report prints it', 2,
+             'HEADER ONLY — no year reads yet. The outstanding-debt table was located in '
+             'all fifteen annual reports and the extractor does not yet find a year header '
+             'row in any of them. Catalogued while empty deliberately, so that the file '
+             'stands as a piece of work in progress rather than as a dataset that came '
+             'back with nothing to say.'),
             ('data/town-personnel.csv',
              'Every town post and who held it, FY2022 to FY2025', 2,
              'Read out of the ELECTED OFFICIALS and APPOINTED OFFICIALS listing in each '
@@ -1070,17 +1110,62 @@ GROUPS = [
              'Elected seats, appointed seats and officers over FY2016-FY2025. The shape IS '
              'the finding: the establishment barely changes while about a third of the '
              'people in it turn over every year.'),
-            ('analyses/charts/town-personnel-employers.svg',
+            ('analyses/charts/town-personnel-people.svg',
              'How many people each part of the town employs', 1,
-             'One bar per part of the town that publishes a staff count, ranked, with the '
-             'change beside it. The schools bar is six times the rest together. Four parts '
-             'of the town publish a count; the other departments publish none.'),
+             'The same data the ranked bars used to carry, drawn in figures: one row per '
+             'department, one figure for every ten people, a PART figure where a '
+             'department does not reach ten. TJ: the icon one is more interesting than '
+             'the basic bar chart and is identical data wise.'),
+            ('analyses/charts/town-personnel-crowd.svg',
+             'Everyone the town publishes a count for', 1,
+             'This report\u2019s SIGNATURE image, and the one a reader remembers: every '
+             'department that publishes a headcount drawn as rows of figures, one figure '
+             'for every ten people. Repeated rather than scaled, because nobody can judge '
+             'area \u2014 twenty-five school figures beside four fire figures is a ratio '
+             'anyone can count. A department short of a whole unit is drawn as a PART '
+             'figure rather than rounded, so the three-person Assessing office is neither '
+             'inflated to ten nor erased.'),
+            ('analyses/charts/stabilization-holdings.svg',
+             'The whole reserve, fund by fund, in proportion', 1,
+             'The stabilization report\u2019s signature image: $9,061,421 across nine funds '
+             'as one rectangle carved by balance, so the smallest fund is visibly a '
+             'sliver. Colour carries the argument rather than decorating it \u2014 the one '
+             'fund Town Meeting may spend on anything lawful is drawn apart from the '
+             'eight restricted to the purpose their creating article named.'),
+            ('analyses/charts/town-personnel-share.svg',
+             'Who the town employs, where it publishes a count', 1,
+             'A pie at the head of the personnel report, the counterpart to the budget '
+             'page\u2019s. The whole is NOT the town: it is the people the town publishes a '
+             'count for, and the subtitle says so, because a pie whose whole is unnamed '
+             'is the shape that misleads.'),
+            ('analyses/charts/town-personnel-all.svg',
+             'Every department that publishes a headcount, on one axis', 1,
+             'The companion to the small multiples, and the one that answers SIZE rather '
+             'than movement: every department on one people axis, so the schools dwarf '
+             'the rest the way they do in the budget. Spaced by YEAR and broken at any '
+             'year a department published no figure, because these series have holes in '
+             'them and an unbroken line would draw a record the town never printed.'),
+            ('analyses/charts/town-personnel-counts.svg',
+             'Headcount over time, where the town publishes one', 1,
+             'One small panel per department with two or more published years, each on its '
+             'own scale and spaced by YEAR so a year the department printed no figure — '
+             'the Council on Aging in FY2012, FY2013 and FY2021 — shows as the gap it '
+             'is. A hollow point is a year dropped as a misreading and is never drawn '
+             'through.'),
             ('analyses/charts/town-personnel-fire.svg',
              'The Fire Department grew and shrank at the same time', 1,
              'Career firefighters as a line against the on-call roll as a BAND, because '
              'the town states it as a range \u2014 a line through the middle of `30-35` '
              'would be a number the town never printed. The two move in opposite '
              'directions, which no single figure shows.'),
+            ('analyses/charts/town-budgets-town.svg',
+             'What the town votes for, as a town', 1,
+             'The budget report\u2019s SIGNATURE image: each voted department drawn as a thing '
+             'it buys \u2014 a schoolhouse, a police car, a dump truck \u2014 one icon for every '
+             'million dollars. Repeated rather than scaled, because nobody can judge area. '
+             'It makes the RANGE legible in a way a pie cannot: the largest department is '
+             '313 times the smallest, so four of the twelve are drawn as a fraction of a '
+             'single icon.'),
             ('analyses/charts/town-budgets-share.svg',
              'Who gets the money: the voted budget split twelve ways', 1,
              'A pie of one fiscal year\u2019s omnibus budget by department, ranked, every '

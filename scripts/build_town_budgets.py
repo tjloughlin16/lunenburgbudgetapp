@@ -333,6 +333,19 @@ def render_main(data, rows):
     big = max((r for r in rows if r['last']), key=lambda r: r['last'])
     small = min((r for r in rows if r['last']), key=lambda r: r['last'])
     tot_last = sum(data['groups'][ys[-1]].values())
+    # THE SIGNATURE IMAGE FIRST, AND IT IS NOT THE PIE. TJ: *"a conceptual image that
+    # shows some stereotypical image that represents each department (a police car for
+    # police, fire truck for fire, construction vehicle for DPW, etc) in size proportion
+    # to the dollar amounts"*, and *"moving pie chart down below for data"*.
+    #
+    # Rule 7f's signature note: a reader remembers one image per page, and the one that
+    # sticks is drawn in the units the subject is made of. Twenty-five schoolhouses beside
+    # one wrench is the budget; a pie of the same numbers is correct and forgettable. The
+    # pie keeps its job under the heading, beside the table, where a reader has come for
+    # the split rather than for the impression.
+    t.append('\n![The voted budget drawn as a town: schoolhouses, police cars, dump '
+             'trucks, a town hall and a library, one icon for every $100,000, coloured by '
+             'department.](charts/town-budgets-town.svg)\n')
     t.append('\n## Who gets the money\n')
     t.append('\n![A pie of the FY%d voted budget split twelve ways. %s is %s of it; the '
              'next three are %s at %s, %s at %s and %s at %s; five departments are under '
@@ -419,7 +432,14 @@ def payload_main(data, rows):
     tot_last = sum(data['groups'][ys[-1]].values())
     big = max((r for r in rows if r['last']), key=lambda r: r['last'])
     small = min((r for r in rows if r['last']), key=lambda r: r['last'])
+    import build_town_budgets_charts as C
+    import pictograms as G
     return dict(
+        # THE GLYPHS TRAVEL WITH THE DATA, so the printed SVG in the markdown and the
+        # interactive chart on the page cannot disagree about what a fire truck is.
+        pictogram=dict(unit=1000000, unit_label='dollars',
+                       glyphs={slug: G.GLYPHS[name]
+                               for slug, name in C.GROUP_GLYPH.items()}),
         biggest=big, smallest=small, voted_total=tot_last,
         generated_by='scripts/build_town_budgets.py',
         about='What Town Meeting voted for every town department, and which departments '

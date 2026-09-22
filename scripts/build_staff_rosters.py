@@ -221,6 +221,31 @@ def load_pages(pages_dir):
     return out
 
 
+def _one_printing_per_school(entries):
+    """Drop the duplicate printing where a book prints one school's roster twice."""
+    by_page = collections.defaultdict(list)
+    for e in entries:
+        by_page[(e['fy'], e['school'], e['page'])].append(e)
+    heads = collections.defaultdict(list)
+    for key, rows in by_page.items():
+        if any(r['position'] == 'Principal' for r in rows):
+            heads[(key[0], key[1])].append(key)
+    drop = set()
+    for (fy, school), keys in heads.items():
+        if len(keys) < 2 or not school or school == 'unknown':
+            continue
+        keep = max(keys, key=lambda k: len(by_page[k]))
+        for k in keys:
+            if k != keep:
+                drop.add(k)
+    if drop:
+        for fy, school, page in sorted(drop):
+            print('  FY%s %s page %s -- a second printing of the same roster, dropped'
+                  % (fy, school, page))
+    return [e for e in entries
+            if (e['fy'], e['school'], e['page']) not in drop]
+
+
 def line_accounting(page):
     """Lines on the page, lines claimed, and what was left over.
 
@@ -294,6 +319,23 @@ def main():
         w.writerows(sorted(entries, key=lambda r: (str(r['fy']), str(r['school']),
                                                    r['line'] or 0)))
 
+    # ONE ROSTER PER SCHOOL PER YEAR, even when the book prints two. The FY2024 report
+    # carries the Turkey Hill roster TWICE -- page 107 headed `Turkey Hill Elementary
+    # School Staff Roster` with Norman Yvon as Principal, and page 108 with no school
+    # heading at all and Heidi Champagne as Principal, each a complete roster with its
+    # own Administration, Health, Special Areas and Grades 3, 4 and 5. Summed, Turkey
+    # Hill came out at 135 against 59 the year before and 64 the year after, which
+    # carried the whole district to 343 and got FY2024 dropped as a misreading. The year
+    # was never missing; we were adding two printings of one list.
+    #
+    # A PRINCIPAL PER PAGE IS THE TELL. A school has one, so two pages that each name a
+    # Principal are two printings of one roster, and the longer is kept -- a reprint that
+    # differs is usually the shorter of the two. Which printing the book MEANT is not
+    # established: page 107 carries the school's name and page 108 does not, but page 108
+    # is the fuller list, and nothing in the report says which is current. The difference
+    # is nine people either way and both sit inside the range the school has held for a
+    # decade, so it is recorded here rather than argued over.
+    entries = _one_printing_per_school(entries)
     agg = collections.Counter()
     for e in entries:
         agg[(e['fy'], e['school'], e['position'] or '(unmapped)')] += 1

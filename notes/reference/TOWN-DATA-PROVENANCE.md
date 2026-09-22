@@ -20,9 +20,21 @@ The counts in this file are derived from the data. This table is not — it is w
 | Fire Department | BOTH — prose and a named table | A sentence states strength as a count plus a RANGE (`10 Career and 30-35 On Call/Per Diem`), and a `Roster of the Lunenburg Fire Department` names everyone a few pages later, in two columns split A Shift / B Shift, then Call Firefighters. | The two disagree by seven to twelve in most years and are NOT reconciled — rule 13a. The roster is two-column, so it needs the word geometry; read as flat lines the A and B shift names merge into one person. Rank comes before the name here (`Scott Dillon, Lieutenant/EMT` puts it after) so both forms are parsed. |
 | Police Department | a named table only | A `Department Personnel:` heading, then Administration, the Patrol Bureau split into Day / Evening / Split shifts, the Investigative Bureau and the Community Policing Bureau, every officer by rank. | Two columns, same as Fire. States no total anywhere, so there is NOTHING to check the roster against — where Fire has a stated strength to disagree with, Police has only the names. A short year therefore looks identical to a small year: FY2024 reads 7 officers against 25 the year before, and that is a page this reader did not find. |
 | Department of Public Works | prose only, an establishment post by post | `The staff consists of one Director, one Executive Assistant (shared with the Facilities Department), one Highway Superintendent, 5 Heavy Equipment Operators...` — counts as words AND numerals in the same sentence, wrapping across three lines. | NOT a headcount and not comparable to Fire’s. FY2023 says `5 Heavy Equipment Operators`; FY2024 says `3 Heavy Equipment Operators, 2 Driver/Laborers`. Read as counts that is two operators lost; read as printed it is the same five people with two titles reclassified. The sentence is stored verbatim for exactly this reason. |
-| Building Department | prose, a list of names inline | `The Building Department consists of the following personnel:` followed by names. | Neither a count nor a table. Captured as a statement with `parsed=no` — evidence the town said something, which is not a number. |
+| Building Department | prose, a list of names — laid out TWO ways in two years | FY2020: `The Building Department consists of the following personnel:` and then one line per person, `Electrical Inspector-Jack Biery`. FY2021: the same four people as flowing prose, `Casey Burlingame serves as the Building Commissioner as well as the Zoning Officer. Lisa Normandin serves as…`. | The HYPHEN in the FY2020 form is the separator, and a name matcher that allows hyphenated surnames reads `Officer-Casey` as one token — four people came back as one. Opened up only where the word in front of the hyphen is a job word, because `Smith-Jones` has the identical shape and is somebody’s name. |
+| Council on Aging | prose, a named roster in one sentence — twelve years of it | `The FY24 Council on Aging staff consisted of Susan Doherty, Director; Michele Beauvais, Administrative Assistant and Transportation; … Jim McGuigan, David Gallagher, & Kimberly Moore, MART Van Drivers.` Separators change year to year: `;` in some, `,` in others, `&` inside one person’s title. | COUNT THE NAMES, NEVER THE JOB WORDS. FY2024 names TEN people and contains five role words, because `Elsa Watson and Ann Penney, Meal Site Assistants` is two people under one title. Three other traps, each of which cost a year: the sentence is PAST tense, so a present-tense trigger missed every one of them; FY2022 is set in two columns and the gutter falls between `staff` and `consisted of`, so a literal space in the pattern hid it; and FY2023 was cut at `Sandra Ricci, Asst.` by a sentence-end rule that did not know an abbreviation, publishing five people against eleven. The roster is also followed by `Board Members during this period were…` in the same paragraph, and those volunteers must not be counted as employees. |
+| Board of Assessors | prose, an establishment with no numerals in it | `the Assessor’s office staff consists of a full time Principal Assessor and a full time Assessors Clerk` (FY2023); `Our staff includes a full time Principal Assessor, a 19-hour Data Collector and a 32-hour Assessing Administrative Assistant` (FY2025). | Every post is introduced by an ARTICLE rather than a count, so nothing in it is a digit and nothing is a name — it fell through both the post reader and the name reader. The same page also says `The Board of Assessors is elected and consists of three members`, which is the BOARD and not the payroll; the two sentences sit four lines apart and must not be added together. |
+| Facilities | A DEPARTMENT THAT DID NOT EXIST, then one that files no report | Until 2022 `FACILITIES MANAGEMENT` is a SECTION INSIDE THE DPW’S OWN REPORT — the heading is followed by `The following is a list of buildings and properties maintained by the DPW`. The one number it gives, `A facilities staff of two individuals remains on-call 24 hours a day 365 days per year` (FY2017, FY2018, FY2019), counts who is REACHABLE overnight, not who works there. | THE SPLIT HAS A DATE AND A VOTE. Article 7 of the 2022 Annual Town Meeting adopted the `Administrative Organization Plan` dated 5 April 2022, under Article 5 §1(b) of the Town Charter: VOTED Yes-136, No-28. The plan says what the arrangement had been — *“Currently the Town Manager delegates the responsibility of town facilities, excluding School and Conservation properties, to the DPW Director”* — and creates *“a new Facilities Director position that will be responsible for all town facilities and grounds maintenance”*. It had been a stated goal of the Town Manager and Select Board since November 2020. The charter basis is §4-4, the Town Manager’s jurisdiction over all town property `except property under the control of the school committee and the conservation commission`, delegated under §4-3.
+
+TWO CONSEQUENCES FOR READING THE DATA. First, a Facilities headcount before FY2023 is not missing, it is INSIDE the DPW’s — which is why the DPW establishment still reads `one Executive Assistant (shared with Facilities)`. Second, the new department files NO ANNUAL REPORT OF ITS OWN: it appears on no contents page in FY2023, FY2024 or FY2025, so there is nothing to read. Its Director turns up only in other departments’ reports.
+
+AND `SCHOOL FACILITIES` IS A DIFFERENT DEPARTMENT, excluded from the town’s by the same charter clause. FY2012 prints `John Londa, Facilities Director` under a `SCHOOL FACILITIES` heading, and a name-matching rule on `facilit` folded the two into one row of the coverage grid — the district’s buildings counted as the town’s.
+
+THE TITLE IS THE TRAP, AND IT IS A BAD ONE. Londa signs the SCHOOL facilities report *“John Londa, Director of Facilities and Grounds”* — a report about asbestos removal at Turkey Hill and the school phone system — while the TOWN’S budget votes a group named `Facilities & Grounds`, $1,022,711 in FY2025. The same three words name a district post and a town appropriation, and they are not related. Anything joining people to money on that string is joining the school’s buildings to the town’s budget.
+
+AND THE POST ITSELF IS UNFINDABLE IN BOTH PLACES WE READ PEOPLE FROM. There is no `FACILITIES DIRECTOR` post in the APPOINTED OFFICIALS listing in ANY year. Chris Ruth, who does the job and is named in three years of other departments’ reports, appears in the listing exactly once — FY2025, as a MEMBER of the Lunenburg Municipal Building Design Committee, titled `Town Facility Manager`. Three titles for one job, and a department created by a recorded Town Meeting vote that shows up in neither the contents page nor the officials listing. Neither absence is a reading failure and neither should ever be reported as the town employing nobody. |
+| Library | prose, a headcount in an ASIDE, once in fifteen years | `Retirements and graduations mean that five people working at the library are new to their jobs in 2019-we only employ ten total-and the staff is happier than ever.` | The only number the Library publishes about its own staff, in a subordinate clause, inside a sentence about turnover, under a CEMETERY running header — so the heading above it names the wrong department and the sentence has to name itself. Reported for a day as a department that publishes nothing. |
 | Boards and committees | a listing, nine pages a year | ELECTED OFFICIALS and APPOINTED OFFICIALS, each post with its holders and their term-expiry years, and its own membership stated in the heading. | The heading is the CHECK: `COUNCIL ON AGING-(11 members)` should be followed by eleven names. But the heading is stated four different ways — `(5 members)`, `3 year terms` PLURAL, `(5 members as of Nov. 2021)` with text before the bracket, and `(no less than 5 and no more than 22 members)` which is a RANGE and not a size. Each of those four, missed, turned a heading into a person and gave the post above it somebody else’s members. |
-| every other department | nothing published | No roster, no establishment sentence, no count. | The gross-wages list tagged each name with a department through FY2016 and stopped. So a DPW labourer, a library assistant and a town hall clerk appear in no published headcount at all after that year. |
+| every other department | nothing published | No roster, no establishment sentence, no count. | The gross-wages list tagged each name with a department through FY2016 and stopped. So a DPW labourer, a town hall clerk and a Health agent appear in no published headcount at all after that year. Treat this row as PROVISIONAL: it has been wrong twice. Every department on it was checked once and five of them turned out to be printing a figure in a form nothing was looking for. |
 
 ## Reading the money, and what goes wrong
 
@@ -211,30 +223,45 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 
 | department | years | how it states it |
 |---|---|---|
-| Board Of Assessors | FY2023 | prose, not counted |
-| Building Department | FY2020–FY2022 | prose, not counted |
+| Board of Assessors | FY2023, FY2025 | an establishment, one post at a time |
+| Building Department | FY2020–FY2022 | a named staff list |
 | Cougare | FY2020 | prose, not counted |
-| Council on Aging | FY2014 | prose, not counted |
-| Department Of Public Works | FY2023–FY2024 | establishment, post by post |
+| Council on Aging | FY2011, FY2014–FY2020, FY2022–FY2025 | a named staff list; board membership, not staff |
+| Department of Public Works | FY2023–FY2025 | establishment, post by post |
+| Education | FY2018, FY2020, FY2023 | prose, not counted |
+| Facilities Management | FY2017–FY2019 | on-call availability, not a headcount |
 | Finance Committee | FY2025 | prose, not counted |
-| Fire Department | FY2016–FY2025 | career and on-call firefighters |
+| Fire Department | FY2012, FY2016–FY2025 | career and on-call firefighters |
 | Fire Rescue | FY2020 | prose, not counted |
+| Green Communities Committee | FY2021 | prose, not counted |
+| Historical Commission | FY2013, FY2017–FY2018 | board membership, not staff |
 | Incidents | FY2013 | prose, not counted |
+| Information Technology | FY2016–FY2018, FY2020 | a named roster, one biography per person |
 | Letter From Leadership | FY2025 | prose, not counted |
+| Library | FY2018–FY2019 | a stated headcount |
 | Lulldon | FY2018 | prose, not counted |
+| Lunenburg High School | FY2011 | prose, not counted |
+| Lunenburg Primary School | FY2022, FY2024 | prose, not counted |
+| Mcas Results | FY2024 | prose, not counted |
 | Monty Bha | FY2022 | prose, not counted |
 | Our School Community | FY2024 | prose, not counted |
-| Police Department | FY2018–FY2019 | prose, not counted |
+| Planning | FY2019 | board membership, not staff |
+| Planning Board | FY2017–FY2018, FY2024 | board membership, not staff |
+| Police Department | FY2017–FY2019, FY2022 | prose, not counted |
 | Property | FY2021 | prose, not counted |
+| Sewer Commission | FY2024 | prose, not counted |
 | Student Support Services | FY2025 | prose, not counted |
 | Superintendent- Director Report | FY2016 | prose, not counted |
+| T.C. Passios Elementary School | FY2011 | prose, not counted |
+| Turkey Hill Elementary School | FY2016 | prose, not counted |
+| Zoning Board of Appeals | FY2012–FY2014, FY2016, FY2020–FY2022, FY2024–FY2025 | board membership, not staff |
 
 ## Named rosters
 
 | department | years | names | agrees with the stated strength |
 |---|---|---:|---|
-| Fire Department | FY2011, FY2014–FY2024 | 444 | 2 of 12 years |
-| Police Department | FY2021–FY2024 | 74 | 0 of 4 years |
+| Fire Department | FY2011–FY2021, FY2023–FY2025 | 541 | 2 of 14 years |
+| Police Department | FY2012, FY2014–FY2025 | 291 | 0 of 13 years |
 
 ## What is missing, and from whom
 

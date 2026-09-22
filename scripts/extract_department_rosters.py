@@ -30,6 +30,7 @@ assignments exist at all in a given year.
 """
 import argparse
 import collections
+import glob
 import csv
 import glob
 import io
@@ -70,21 +71,83 @@ TRAILING = re.compile(r'^(.+?),\s*([A-Za-z/\s]*(?:Chief|Lieutenant|Captain|Serge
 TITLED = re.compile(r'^([A-Z][A-Za-z\-\s]{3,40}?):\s*(.+)$')   # `Public Safety Desk Clerk: Evelyn`
 
 NAMEISH = re.compile(r'^[A-Z][A-Za-z.\'\-]+(?:\s+[A-Z][A-Za-z.\'\-]+){1,3}$')
-NOISE = re.compile(r'comfort dog|accompanied by|mission statement|^values?$|^\W*$', re.I)
+# `Lunenburg Fire Department.` is three capitalised words and matched NAMEISH, so it was
+# filed as a person -- and as the ONLY person on FY2011's Police roster, which then
+# published a police force of one.
+NOISE = re.compile(r'comfort dog|accompanied by|mission statement|^values?$|^\W*$'
+                   r'|\b(?:department|town|lunenburg|commission|committee|board)\b\s*\.?$',
+                   re.I)
 
 
 def pages_of(fy):
-    """Word rows for the roster pages of one year, from the rosters TSV."""
-    path = os.path.join(WORDS, 'fy%s.rosters.tsv' % fy)
-    if not os.path.exists(path):
+    """Word rows for the roster pages of one year.
+
+    EVERY word file for the year, not one. The original `fy<y>.rosters.tsv` files were cut
+    to page ranges somebody typed, and `scripts/ocr_roster_pages.py` now finds the roster
+    pages from the text of the book and reads whatever those ranges missed into
+    `fy<y>.extraN.tsv`. Twenty-three pages had never been read at all, including every
+    roster in FY2012, FY2013 and FY2025.
+    """
+    paths = [os.path.join(WORDS, 'fy%s.rosters.tsv' % fy)]
+    paths += sorted(glob.glob(os.path.join(WORDS, 'fy%s.extra*.tsv' % fy)))
+    paths = [p_ for p_ in paths if os.path.exists(p_)]
+    if not paths:
         return {}
     out = collections.defaultdict(list)
-    with open(path, encoding='utf-8') as fh:
-        for r in csv.DictReader(fh, delimiter='\t'):
-            x, y, w, h = float(r['x']), float(r['y']), float(r['w']), float(r['h'])
-            out[int(r['page'])].append(dict(page=int(r['page']), x0=x, x1=x + w,
-                                            cy=y + h / 2, text=r['text']))
+    seen = set()
+    for path in paths:
+        with open(path, encoding='utf-8') as fh:
+            for r in csv.DictReader(fh, delimiter='\t'):
+                key = (int(r['page']), r['x'], r['y'], r['text'])
+                if key in seen:
+                    continue
+                seen.add(key)
+                x, y = float(r['x']), float(r['y'])
+                w, h = float(r['w']), float(r['h'])
+                out[int(r['page'])].append(dict(page=int(r['page']), x0=x, x1=x + w,
+                                                cy=y + h / 2, text=r['text']))
     return out
+
+
+# WHICH DEPARTMENT A ROSTER PAGE BELONGS TO, decided by the PAGE and not by one heading.
+# `POLICE_START` wanted the words `Department Personnel`, which FY2016 does not print --
+# that year runs `POLICE DEPARTMENT`, then `Administrative`, `Patrol Supervisors`,
+# `Detectives`. So a roster in a year that words its heading differently was read as no
+# roster at all, and the report said the town published nothing.
+PAGE_FIRE = re.compile(r'lunenburg fire department|roster of the lunenburg fire'
+                       r'|call firefighters?|career firefighters?|fire chief', re.I)
+PAGE_POLICE = re.compile(r'lunenburg police department|police department'
+                         r'|department personnel|patrol (?:bureau|supervisors?|officers?)'
+                         r'|reserve (?:intermittent|police) officers?|chief of police', re.I)
+
+
+def department_of_page(fy, page):
+    """'Fire Department' / 'Police Department' / '' from the page's own text."""
+    text = _page_text(fy).get(page, '')
+    fire, police = len(PAGE_FIRE.findall(text)), len(PAGE_POLICE.findall(text))
+    if not fire and not police:
+        return ''
+    return 'Fire Department' if fire > police else 'Police Department'
+
+
+_PAGE_TEXT_CACHE = {}
+
+
+def _page_text(fy):
+    if fy in _PAGE_TEXT_CACHE:
+        return _PAGE_TEXT_CACHE[fy]
+    path = os.path.join(ROOT, 'sources', 'town-budget', 'pages', 'FY%s.ocr.txt' % fy)
+    by_page, page = collections.defaultdict(list), None
+    if os.path.exists(path):
+        for line in open(path, encoding='utf-8', errors='replace'):
+            m = re.match(r'^===PAGE (\d+)===', line)
+            if m:
+                page = int(m.group(1))
+                continue
+            if page:
+                by_page[page].append(re.sub(r'^\s*\d+\|', '', line).rstrip())
+    _PAGE_TEXT_CACHE[fy] = {p: '\n'.join(v) for p, v in by_page.items()}
+    return _PAGE_TEXT_CACHE[fy]
 
 
 def parse(line):
@@ -107,11 +170,23 @@ def parse(line):
 
 
 def read_year(fy):
+    # ONLY THE PAGES THE FINDER ENDORSES. The word files are appended to as pages are
+    # read, and an early run of `ocr_roster_pages.py` captured the front-of-book officials
+    # listing before that was excluded -- FY2014's Police roster came back as 62 people
+    # and FY2023's as 53, each the department's own roster plus the listing. Filtering
+    # here means a page captured in error stops counting the moment the finder stops
+    # asking for it, rather than having to be deleted by hand.
+    import ocr_roster_pages as F
+    wanted = set(F.pages_with_rosters(fy))
     rows = []
     for page, words in sorted(pages_of(fy).items()):
+        if wanted and page not in wanted:
+            continue
         wrows = P.rows_of(words)
         entries = P.read_order(page, P.cells_of(wrows))
-        dept, section = '', ''
+        # The page decides the department; an inline heading can still switch it, because
+        # one page occasionally carries the end of one roster and the start of the next.
+        dept, section = department_of_page(fy, page), ''
         for _col, t in entries:
             if FIRE_START.search(t):
                 dept, section = 'Fire Department', ''
@@ -160,9 +235,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
+    # EVERY YEAR THE TOWN PUBLISHED A BOOK, not every year somebody happened to make a
+    # `rosters.tsv`. FY2012 and FY2013 have no such file and were therefore not in this
+    # loop at all -- two years silently outside the run, which is the join-that-matches-
+    # nothing failure in its purest form.
     rows = []
-    for f in sorted(glob.glob(os.path.join(WORDS, 'fy*.rosters.tsv'))):
-        rows += read_year(re.search(r'fy(\d{4})\.rosters', f).group(1))
+    for f in sorted(glob.glob(os.path.join(ROOT, 'sources', 'town-budget', 'pages',
+                                           'FY*.ocr.txt'))):
+        m = re.search(r'FY(\d{4})\.ocr', f)   # FY2016-addendum.ocr.txt is not a year
+        if m:
+            rows += read_year(m.group(1))
     # Same name twice on one page is the scanner, not two officers.
     seen, uniq = set(), []
     for r in rows:
@@ -172,6 +254,15 @@ def main():
         seen.add(k)
         uniq.append(r)
     rows = uniq
+    # A HANDFUL OF NAMES IS NOT A ROSTER. Either the page was misread or it was never a
+    # roster; either way publishing it would say the department shrank to almost nothing.
+    MIN_ROSTER = 5
+    counts = collections.Counter((r['fy'], r['department']) for r in rows)
+    dropped = sorted(k for k, n in counts.items() if n < MIN_ROSTER)
+    rows = [r for r in rows if counts[(r['fy'], r['department'])] >= MIN_ROSTER]
+    for fy, dept in dropped:
+        print('  dropped FY%s %s -- only %d name(s), not a roster'
+              % (fy, dept, counts[(fy, dept)]))
     # Reconcile the Fire roster against the Fire Department's own stated strength.
     stated = stated_fire()
     per_dept = collections.Counter((r['fy'], r['department']) for r in rows)

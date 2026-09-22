@@ -4,7 +4,7 @@ One of twelve departments in the omnibus budget Town Meeting votes each spring. 
 
 ## What it is
 
-The buildings the town owns and the grounds around them, including the Park department’s grounds and utilities for the library.
+The buildings the town owns and the grounds around them, including the Park department’s grounds and utilities for the library. It became a department in its own right by a recorded vote — Article 7 of the 2022 Annual Town Meeting, Yes-136 No-28 — which moved town facilities out from under the DPW Director. It has filed no annual report since, so this is a department the town votes more than a million dollars a year and publishes nothing else about.
 
 ## The department
 

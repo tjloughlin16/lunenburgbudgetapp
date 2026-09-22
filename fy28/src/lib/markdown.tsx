@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { chartFor } from '../components/analysisCharts'
 
 /** A markdown renderer for the analyses, and a deliberately small one.
  *
@@ -123,8 +124,15 @@ const isTableSep = (s: string) => /^\|?[\s:-]*-[\s:|-]*\|?$/.test(s) && s.includ
 export type Rendered = { nodes: ReactNode[]; headings: Heading[] }
 
 /** Render a whole document. `base` is where a relative image or link resolves against --
- *  the analyses reference `charts/foo.svg`, which is relative to /docs/analyses/. */
-export function renderMarkdown(src: string, base = '/docs/analyses/'): Rendered {
+ *  the analyses reference `charts/foo.svg`, which is relative to /docs/analyses/.
+ *
+ *  `payload` is the report's own /data/<id>.json, when the caller has it. Where a chart
+ *  image has a component registered for it (rule 7f), the component is rendered from
+ *  that payload IN THE IMAGE'S PLACE, caption and all; where it has none, the image
+ *  renders exactly as before. So charts convert one at a time and an unconverted one is
+ *  never invisible. */
+export function renderMarkdown(src: string, base = '/docs/analyses/',
+                               payload?: unknown): Rendered {
   const lines = src.replace(/\r\n/g, '\n').split('\n')
   const nodes: ReactNode[] = []
   const headings: Heading[] = []
@@ -215,10 +223,17 @@ export function renderMarkdown(src: string, base = '/docs/analyses/'): Rendered 
     // image on its own line -- the closeout analyses head their sections with a chart
     const img = /^!\[([^\]]*)\]\(([^)]+)\)\s*$/.exec(line.trim())
     if (img) {
+      // A CHART IS A COMPONENT WHERE ONE EXISTS. An image of a chart carries no value
+      // under the cursor, no series to isolate and nothing for a screen reader but its
+      // alt text, and it does not reflow on a phone -- all of which the data can answer
+      // and the picture cannot. Rule 7f.
+      const Chart = payload ? chartFor(img[2]) : undefined
       nodes.push(
         <figure key={key()} className="mt-6 max-w-3xl figure">
-          <img src={resolve(img[2])} alt={img[1]} className="w-full rounded-lg border"
-            style={{ borderColor: 'var(--grid)' }} />
+          {Chart
+            ? <Chart data={payload} alt={img[1]} />
+            : <img src={resolve(img[2])} alt={img[1]} className="w-full rounded-lg border"
+                style={{ borderColor: 'var(--grid)' }} />}
           {img[1] && (
             <figcaption className="text-[12.5px] leading-relaxed mt-2"
               style={{ color: 'var(--text-muted)' }}>{inline(img[1], `f${k}`)}</figcaption>

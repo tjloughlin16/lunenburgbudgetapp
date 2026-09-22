@@ -44,6 +44,8 @@ from build_stabilization_charts import (  # noqa: E402
     AXIS, FONT, GRID, INK, MUTED, PAD, SECOND, SURFACE, esc, nice_top, usdk,
 )
 
+import pictograms as P                                            # noqa: E402
+
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'town-budgets.json')
 OUT = os.path.join(ROOT, 'sources', 'analyses', 'charts')
 
@@ -170,9 +172,32 @@ def chart_pull(d):
 # TWELVE STEPS FOR TWELVE DEPARTMENTS. There were eleven, and `SLICES[i % len(SLICES)]` gave the
 # twelfth department the first one's colour -- Central Purchasing wearing the school line's
 # navy in a legend ranked by size, which is the one place two identical swatches mislead.
-SLICES = ['#12325f', '#184f95', '#3f78bd', '#7ea6d8',
-          '#8a5210', '#b86d15', '#e08214', '#eeb069',
-          '#17563f', '#22795a', '#2a8c6a', '#6fb79c']
+# A CATEGORICAL PALETTE, VALIDATED RATHER THAN CHOSEN. TJ: *"the colors have to be
+# distinct enough. the personel page is hard to see the differences."* The old one ran
+# four BLUES in a row -- #12325f, #184f95, #3f78bd, #7ea6d8 -- so the four biggest
+# departments, which are the four a reader cares most about telling apart, were four
+# shades of one hue.
+#
+# Checked with the dataviz validator rather than by eye (`scripts/validate_palette.js`
+# in the bundled skill), against this surface, in this ORDER -- the checks are on
+# ADJACENT pairs and these charts are ranked by size, so adjacent means adjacent in rank:
+#
+#   lightness band       all 12 inside L 0.43-0.77      PASS
+#   chroma floor         all 12 >= 0.1                  PASS
+#   CVD separation       worst adjacent dE 8.4 protan   PASS
+#   normal-vision floor  worst adjacent dE 19.6         PASS
+#   contrast vs surface  three below 3:1                WARN -- see below
+#
+# The contrast warning is not dismissable and is not dismissed: it obliges visible labels
+# or a table view, and every chart using this palette carries a legend naming each series
+# with its value, plus the same figures as a table further down the page.
+#
+# DARK MODE IS NOT THIS PALETTE FLIPPED. Three of these fall outside the band the
+# validator wants against the dark surface, and the honest fix is a second set of steps
+# chosen for that surface rather than a reuse of these. These SVGs are fixed-colour files
+# served to /docs and to the PDF, so they use the light set; picking the dark steps is
+# open work.
+SLICES = ['#2b6cb0', '#dc2626', '#ea8c00', '#2f8f4e', '#7c3aed', '#0d9488', '#92400e', '#c026d3', '#38bdf8', '#a3a324', '#e0558a', '#3b5bbf']
 
 
 def chart_share(d):
@@ -281,8 +306,14 @@ def chart_trends(d):
         cap_pts = ' '.join('%.1f,%.1f' % (X(k), Y(v)) for k, v in enumerate(cap_vals)
                            if lo <= v <= hi)
         if cap_pts.count(',') >= 2:
-            b.append(f'<polyline points="{cap_pts}" fill="none" stroke="{AXIS}" '
-                     f'stroke-width="1" stroke-dasharray="3 3" opacity="0.55"/>')
+            # A LITTLE MORE PRESENT. TJ: *"for the prop 2.5 line, ut needs to stand out a
+            # TINY bit more. its too faded as that gray."* It is a reference line, so it
+            # must not compete with the department's own line -- but at 0.55 opacity in
+            # axis grey it read as a printing artefact rather than a deliberate mark. The
+            # secondary ink at full weight, a slightly longer dash and a hair more width
+            # is visible without pulling the eye off the data.
+            b.append(f'<polyline points="{cap_pts}" fill="none" stroke="{SECOND}" '
+                     f'stroke-width="1.3" stroke-dasharray="4 3" opacity="0.9"/>')
         up = vals[-1] >= vals[0]
         colour = VOTED if up else DOWN
         b.append(f'<text x="{cx0 + 6}" y="{cy0 + 10:.1f}" font-size="9.5" '
@@ -421,7 +452,108 @@ def chart_all(d):
                'share the floor.')
 
 
-CHARTS = [('town-budgets-share.svg', chart_share),
+# WHAT EACH DEPARTMENT LOOKS LIKE. TJ: *"a conceptual image that shows some stereotypical
+# image that represents each department (a police car for police, fire truck for fire,
+# construction vehicle for DPW, etc) in size proportion to the dollar amounts."*
+#
+# One glyph per voted GROUP, not per office, because the groups are what the budget
+# actually votes. `Protection of persons & property` holds the Police and the Fire
+# Department together and is drawn as a police car, which is a compromise the caption
+# states rather than hides.
+GROUP_GLYPH = {
+    'schools': 'school',
+    'protection': 'police',
+    'unclassified': 'cross',
+    'maturing-debt': 'coins',
+    'public-works': 'truck',
+    'general-government': 'hall',
+    'facilities-grounds': 'wrench',
+    'library': 'book',
+    'solid-waste': 'bin',
+    'assistance': 'care',
+    'health-sanitation': 'cross',
+    'central-purchasing': 'box',
+}
+
+
+def chart_town(d):
+    """THE SIGNATURE IMAGE: the voted budget as a town you can look at.
+
+    TJ: *"there are a bunch of school buildings next to police cars, or something like
+    that"* -- concept art in the manner of `GrowthCubes` on /commercial-development, not
+    a chart with rows.
+
+    ONE ICON IS $100,000, which is the unit that lets every department appear: at a
+    million, four of the twelve would be drawn as nothing, and a picture that silently
+    omits the smallest departments is making a claim the budget does not. Four hundred
+    and forty icons, each department in its own thing and its own colour, scattered on
+    one ground. The schools are a quarter of the picture before a number is read.
+
+    Seeded, so it is the same town in every build and in print.
+    """
+    rows_in = sorted([r for r in d['departments'] if r.get('last')],
+                     key=lambda r: -r['last'])
+    unit = 100_000
+    items, legend = [], []
+    for i, r in enumerate(rows_in):
+        colour = SLICES[i % len(SLICES)]
+        n = max(1, int(round(r['last'] / unit)))
+        items += [(GROUP_GLYPH.get(r['slug'], 'box'), colour)] * n
+        legend.append((r['name'], usdk(r['last']), colour))
+    cols, cell = 50, 26.0
+    body, h, W = P.scene(items, cols, cell, cols * cell)
+    TOP = 46.0
+    body = f'<g transform="translate(0,{TOP})">{body}</g>'
+    x, y = 0.0, TOP + h + 26
+    for name, amt, colour in legend:
+        body += (f'<rect x="{x:.1f}" y="{y - 9:.1f}" width="10" height="10" rx="2" '
+                 f'fill="{colour}"/>')
+        body += (f'<text x="{x + 15:.1f}" y="{y:.1f}" font-size="11" fill="#0b0b0b">'
+                 f'{P._esc(name)}</text>')
+        body += (f'<text x="{x + 15 + len(name) * 5.9 + 6:.1f}" y="{y:.1f}" '
+                 f'font-size="11" fill="#52514e">{amt}</text>')
+        x += 15 + len(name) * 5.9 + 52
+        if x > W - 240:
+            x, y = 0.0, y + 18
+    return svg(W, y + 10, body,
+               'What the town votes for, as a town',
+               'One icon is $100,000 of the FY%d budget, %d in all, each department drawn '
+               'in a thing it buys.' % (d['detail_years'][-1], len(items)))
+
+
+def chart_icons(d):
+    """THE SIGNATURE IMAGE: each department drawn in a thing it buys, in proportion.
+
+    ONE ICON IS A MILLION DOLLARS, printed on the chart, because the unit is the whole
+    contract between the picture and the number.
+
+    REPEATED RATHER THAN SCALED. A fire truck drawn twice as tall is four times the ink
+    and reads as some number between two and four; twenty-five school glyphs beside four
+    is a ratio a reader can count. It also makes the range legible in a way no pie can:
+    the largest department here is 313 times the smallest, and at this unit the smallest
+    four are visibly a fraction of one icon.
+    """
+    rows_in = sorted([r for r in d['departments'] if r.get('last')],
+                     key=lambda r: -r['last'])
+    unit = 1_000_000
+    rows = [(r['name'], r['last'], GROUP_GLYPH.get(r['slug'], 'box'), usdk(r['last']))
+            for r in rows_in]
+    TOP = 46.0
+    # THE WIDEST ROW HAS TO FIT ITS OWN LABEL. Twenty-five icons plus a 196px name plus
+    # `$25.13M` at the end ran off a 740px canvas and the figure was cut in half.
+    body, h, _ = P.pictogram(rows, unit, '', SLICES, cols=25, size=16.0, gap=2.4,
+                             label_w=190.0)
+    body = f'<g transform="translate(0,{TOP})">{body}</g>'
+    return svg(740, h + TOP + 4, body,
+               'What the town votes for, drawn in what it buys',
+               'One icon is $1 million of the FY%d voted budget. `Protection of persons & '
+               'property` is the Police and the Fire Department together, drawn as one. A '
+               'part-icon is a department that does not reach a million.'
+               % d['detail_years'][-1])
+
+
+CHARTS = [('town-budgets-town.svg', chart_town),
+          ('town-budgets-share.svg', chart_share),
           ('town-budgets-all.svg', chart_all),
           ('town-budgets-rates.svg', chart_rates),
           ('town-budgets-trends.svg', chart_trends),

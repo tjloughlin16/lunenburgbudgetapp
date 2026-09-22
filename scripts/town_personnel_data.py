@@ -247,10 +247,25 @@ def load():
     # flattered by its own vagueness.
     staff_counts = collections.defaultdict(dict)
     school = os.path.join(ROOT, 'sources', 'data', 'staff-roster-counts.csv')
+    school_bad = set()
     if os.path.exists(school):
         per_year = collections.Counter()
+        per_school = collections.defaultdict(collections.Counter)
         for r in csv.DictReader(open(school, encoding='utf-8')):
             per_year[r['fy']] += int(r['count'] or 0)
+            per_school[r['fy']][r['school']] += int(r['count'] or 0)
+        # THE TELL IS AT SCHOOL LEVEL, not in the total. FY2024 reads 343 against 265 and
+        # 250 -- 29% above one neighbour, under any sane year-level threshold -- and the
+        # whole excess is one school: Turkey Hill goes 59, 135, 64. A school does not
+        # double its staff and halve it again. Looking a level down finds it where looking
+        # at the total cannot, and this is the same lesson as reconciling on group totals
+        # rather than a year-end residual.
+        fys = sorted(per_school)
+        for a, b, c in zip(fys, fys[1:], fys[2:]):
+            for sch, n in per_school[b].items():
+                before, after = per_school[a].get(sch, 0), per_school[c].get(sch, 0)
+                if before and after and n > before * 1.8 and n > after * 1.8:
+                    school_bad.add(b)
         for fy, n in per_year.items():
             staff_counts['Schools'][fy] = dict(people=n, kind='every member of staff, named')
     for f in fire_series:
@@ -263,12 +278,35 @@ def load():
     for fy, n in police.items():
         staff_counts['Police Department'][fy] = dict(
             people=n, kind='officers named on the roster')
-    for r in staff:
-        if 'establishment' in r['measure'] and r['positions']:
-            n = sum(int(x.split()[0]) for x in r['positions'].split(';')
-                    if x.strip().split()[0].isdigit())
-            staff_counts[r['department']][r['fy']] = dict(
-                people=n, kind='posts in the establishment it states')
+    # EVERY FORM THE TOWN ACTUALLY USES, not the two we happened to parse first. TJ:
+    # *"i expect every department on town-personell to show up with data here"*, and the
+    # check that followed found five more departments already printing a headcount in
+    # prose -- the Council on Aging in twelve years of rosters, the Building Department's
+    # list of personnel, the Assessing office's posts written out one article at a time,
+    # and Facilities stating a number in words.
+    #
+    # THESE ARE NOT THE SAME QUANTITY and are never summed. Each carries the town's own
+    # form as its kind, so a reader can see that an establishment of posts and a list of
+    # names are different answers to the same question.
+    KINDS = {
+        'a named staff list': 'every member of staff, named in its report',
+        'establishment, post by post': 'posts in the establishment it states',
+        'an establishment, one post at a time': 'posts in the establishment it states',
+        'a stated headcount': 'the number of staff it states, in words',
+        'a named roster, one biography per person':
+            'every member of staff, named with a short biography',
+    }
+    # ONE MERGED SOURCE, SHARED WITH THE COVERAGE GRID. Each reader is good at a
+    # different shape -- the section reader visits every department the town lists and
+    # reads its own pages; the sentence reader catches a statement wherever it falls; the
+    # roster reader counts names off a two- or three-column page. Merging them here, in
+    # the same function the audit page uses, is what stops the report and the audit of
+    # the report disagreeing about the same archive.
+    import build_staffing_coverage as COV
+    merged, forms = COV.counts(with_form=True)
+    for (dept, fy), n in merged.items():
+        staff_counts[dept][fy] = dict(people=n, kind=forms.get((dept, fy))
+                                      or 'as the department states it')
     # A COUNT THAT HALVES IN A YEAR IS A SHORT READ, NOT A COLLAPSE. The Police roster
     # comes back as 7 names in FY2024 against 25 in FY2023 -- a page this reader did not
     # find, and publishing it would say the town cut three quarters of its police force.
@@ -278,9 +316,19 @@ def load():
     employers = []
     for dept, by_year in staff_counts.items():
         ys = sorted(by_year)
-        dropped = []
+        dropped = list(school_bad) if dept == 'Schools' else []
         for a, b in zip(ys, ys[1:]):
             if by_year[b]['people'] < by_year[a]['people'] * 0.5:
+                dropped.append(b)
+        # AND A SPIKE IS AS SUSPECT AS A COLLAPSE. The schools read 343 in FY2024 against
+        # 265 before and 250 after, and the whole excess is one school: Turkey Hill goes
+        # 59, 135, 64. A school does not double its staff and halve it again -- that is a
+        # roster read twice, or another school's page absorbed into it. A point standing
+        # more than 40% above BOTH its neighbours is dropped and named, because plotted as
+        # a count over time it would show as a hiring spree that did not happen.
+        for a, b, c in zip(ys, ys[1:], ys[2:]):
+            mid = by_year[b]['people']
+            if mid > by_year[a]['people'] * 1.4 and mid > by_year[c]['people'] * 1.4:
                 dropped.append(b)
         ys = [y for y in ys if y not in dropped]
         if not ys:
@@ -292,7 +340,11 @@ def load():
             first=first['people'], people=last_['people'],
             change=last_['people'] - first['people'],
             kind=last_['kind'],
-            series=[dict(fy=y, people=by_year[y]['people']) for y in ys]))
+            # THE DROPPED YEARS STAY IN THE SERIES, marked. Removing them entirely makes
+            # a chart that cannot show where a year was refused, and a reader who sees an
+            # unbroken line has been told the record is complete when it is not.
+            series=[dict(fy=y, people=by_year[y]['people'], suspect=y in dropped)
+                    for y in sorted(by_year)]))
     employers.sort(key=lambda e: -e['people'])
 
     return dict(rows=rows, years=years, per=per, checks=checks, posts=posts,

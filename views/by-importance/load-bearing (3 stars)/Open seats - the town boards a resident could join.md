@@ -1,0 +1,1 @@
+../../../sources/analyses/open-seats.md
