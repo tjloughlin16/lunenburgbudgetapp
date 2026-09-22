@@ -995,6 +995,20 @@ GROUPS = [
              '`Thomas R. Browne, Superintendent-Director` signs the Montachusett Regional '
              'report inside Lunenburg\u2019s book and is a different district\u2019s '
              'superintendent.'),
+            ('data/board-chairs.csv',
+             'Who chaired each board, from the body\u2019s own report', 2,
+             'The officials listing marks its chairs with asterisks under a footnote '
+             'reading `** denotes chairperson`, and stops printing it after FY2016 \u2014 '
+             'which left 274 bodies in the org chart with members and nobody at the top. '
+             'The chairs did not stop being published; they moved into the reports: '
+             '`Richard Letarte, Chairman`, `Chairperson Deb Lincoln`. 200 mentions '
+             'across fourteen years and 46 bodies, attributed by the town\u2019s own '
+             'contents page. A CHAIR NAMED IN A REPORT IS A CHAIR THE REPORT NAMES: it '
+             'is not a term of office and it is undated within the year, so a body that '
+             'changed chair mid-year keeps two rows rather than being resolved. 53 '
+             'bodies \u2014 the School Committee, the Library Trustees, the Board of '
+             'Health \u2014 name no chair anywhere, which is registered as a gap rather '
+             'than filled in.'),
             ('data/report-index.csv',
              'Every department the town lists, and where its report is', 2,
              'The CONTENTS PAGE of each annual report, read as data: one row per '
