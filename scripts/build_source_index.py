@@ -981,6 +981,20 @@ GROUPS = [
              'and it found seven classes of defect nothing that COUNTS things had: a '
              'listing footnote read as a post, sub-headings promoted to bodies, and one '
              'post under four spellings. Rendered at /org-charts.'),
+            ('data/report-signatures.csv',
+             'Who signed each department\u2019s report \u2014 the head of every body, by year', 2,
+             'The block that ends a department\u2019s report: `Respectfully submitted, Sheila '
+             'M. Harrity, Ed.D., Superintendent`. 184 of them across fourteen years, each '
+             'a person, a title and a page. It is the ONLY place the town names the person '
+             'in charge of a body that publishes no roster \u2014 the Library, the Town Clerk, '
+             'Conservation, the Sewer Commission \u2014 and it exists because a claim that the '
+             'district published no Superintendent after FY2012 was challenged and turned '
+             'out to be about our extractor rather than about the town. INCOMPLETE: 104 '
+             'rows carry the department, from the contents page; 80 do not, and those are '
+             'attributable rather than absent (see A11 in notes/QUEUE.md). A TRAP: '
+             '`Thomas R. Browne, Superintendent-Director` signs the Montachusett Regional '
+             'report inside Lunenburg\u2019s book and is a different district\u2019s '
+             'superintendent.'),
             ('data/report-index.csv',
              'Every department the town lists, and where its report is', 2,
              'The CONTENTS PAGE of each annual report, read as data: one row per '

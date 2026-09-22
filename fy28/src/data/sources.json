@@ -2044,6 +2044,18 @@
      "textUrl": "/docs/analyses/fy26-closeout-town.md"
     },
     {
+     "path": "data/report-signatures.csv",
+     "title": "Who signed each department’s report — the head of every body, by year",
+     "stars": 2,
+     "what": "The block that ends a department’s report: `Respectfully submitted, Sheila M. Harrity, Ed.D., Superintendent`. 184 of them across fourteen years, each a person, a title and a page. It is the ONLY place the town names the person in charge of a body that publishes no roster — the Library, the Town Clerk, Conservation, the Sewer Commission — and it exists because a claim that the district published no Superintendent after FY2012 was challenged and turned out to be about our extractor rather than about the town. INCOMPLETE: 104 rows carry the department, from the contents page; 80 do not, and those are attributable rather than absent (see A11 in notes/QUEUE.md). A TRAP: `Thomas R. Browne, Superintendent-Director` signs the Montachusett Regional report inside Lunenburg’s book and is a different district’s superintendent.",
+     "kind": "Data",
+     "bytes": 16456,
+     "url": "/docs/data/report-signatures.csv",
+     "count": 184,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-signatures.csv"
+    },
+    {
      "path": "data/board-goals.csv",
      "title": "What each board adopted as its goals, and when",
      "stars": 2,
@@ -3477,9 +3489,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 380735,
+     "bytes": 383399,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2223,
+     "count": 2238,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -16582,9 +16594,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1439,
+  "documents": 1440,
   "groups": 22,
-  "bytes": 2181468442,
+  "bytes": 2181487562,
   "loadBearing": 156
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
