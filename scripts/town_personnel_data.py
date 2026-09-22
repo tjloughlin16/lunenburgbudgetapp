@@ -196,7 +196,29 @@ def load():
                          agrees=('' if not lo_hi else
                                  'yes' if lo_hi[0] - 3 <= n <= lo_hi[1] + 3 else 'no')))
 
+    # WHAT EACH PART OF THE TOWN PUBLISHES ABOUT ITS OWN STAFF, which is the cross-cutting
+    # question the personnel page exists to answer. TJ: *"town-personnel is super focusd on
+    # the fire department. we need to generalize here. This is supposed to be an overall
+    # lens."* It was: one department states its strength in a form that can be plotted, so
+    # the page filled with that department. What is true of the TOWN is that four different
+    # things are published about staffing and most departments get none of them.
+    publishes = {}
+    for r in staff:
+        d_ = r['department']
+        cur = publishes.setdefault(d_, set())
+        if r['measure'].startswith('career'):
+            cur.add('a stated strength')
+        elif 'establishment' in r['measure']:
+            cur.add('an establishment, post by post')
+        else:
+            cur.add('a sentence that cannot be counted')
+    for r in roster:
+        publishes.setdefault(r['department'], set()).add('a named roster')
+    publishes.setdefault('Lunenburg Public Schools', set()).add('a named roster')
+    forms = sorted(publishes.items())
+
     return dict(rows=rows, years=years, per=per, checks=checks, posts=posts,
+                publishes=[dict(department=k, forms=sorted(v)) for k, v in forms],
                 roster=rost,
                 last=last, named=named, vacancies=vac, vac_how=vac_how, terms=terms,
                 ahead=ahead,

@@ -2,94 +2,51 @@
  "about": "The posts the town hires or appoints somebody into, and what each department says it employs.",
  "conclusions": [
   {
-   "basis": "The Fire Department’s own staffing sentence in each annual report, FY2017 to FY2025.",
+   "basis": "Every department report in the annual reports, read for a roster, a stated strength or an establishment.",
    "bearing": "sizes",
-   "claim": "The Fire Department doubled its career staff while its on-call roll shrank",
-   "detail": "The one department that states its staffing the same way every year, and it has changed a great deal. Career firefighters went from 5 in FY2017 to 10 by FY2025. Over the same period the on-call and per-diem roll fell from 40–45 to 30–35. The department states both in the prose of its own report, and nothing else in the annual report counts either.",
-   "figure": "now",
+   "claim": "Three parts of the town name their staff. Every other department names none",
+   "detail": "What the town publishes about who works for it, taken as a whole rather than one department at a time. Three parts of the town — the Police Department, the Fire Department and the schools — print every member of staff by name, in every annual report. No other department does. The Department of Public Works states an establishment post by post instead, and the rest state nothing at all — so of the 60 appointed posts the town lists in FY2025, most belong to departments whose staff appear in no published count.",
+   "figure": "named",
    "figures": {
-    "chi": {
-     "text": "45",
-     "unit": "on call, high end",
-     "value": 45
+    "named": {
+     "text": "Three",
+     "unit": "parts of the town naming their staff",
+     "value": 3
     },
-    "clo": {
-     "text": "40",
-     "unit": "on call, low end",
-     "value": 40
-    },
-    "nhi": {
-     "text": "35",
-     "unit": "on call now, high",
-     "value": 35
-    },
-    "nlo": {
-     "text": "30",
-     "unit": "on call now, low",
-     "value": 30
-    },
-    "now": {
-     "text": "10",
-     "unit": "career firefighters now",
-     "value": 10
-    },
-    "was": {
-     "text": "5",
-     "unit": "career firefighters at the start",
-     "value": 5
+    "posts": {
+     "text": "60",
+     "unit": "appointed posts the town lists",
+     "value": 60
     }
    },
-   "id": "fire-doubled",
+   "id": "three-of-them",
    "kind": "measured",
    "literals": [
-    "FY2017",
     "FY2025"
    ],
-   "not_shown": "Hours. A career post and an on-call post are not the same job and the report gives no FTE for either.",
+   "not_shown": "Whether an unnamed department is large or small. Publishing nothing is not evidence of either.",
    "see": [],
-   "so_what": "A department can grow and shrink at the same time, in different kinds of staff."
+   "so_what": "Most of the town’s workforce appears in no published count at all."
   },
   {
-   "basis": "The named roster against the strength stated in prose, per year.",
+   "basis": "The form each department uses in its own annual-report section.",
    "bearing": "sizes",
-   "claim": "The Fire Department is counted twice in one book and the two counts differ",
-   "detail": "A sentence states the strength and a roster names everybody, a few pages apart. They should agree. In FY2024 the roster names 35 firefighters against a strength the same report states as 40 to 45. It runs short in 6 of the 8 years where both are printed, so this page shows both rather than averaging them into a third figure the town never published.",
-   "figure": "bad",
+   "claim": "What the town says about its staff comes in four forms that cannot be added",
+   "detail": "Not a single figure anywhere: four different kinds of quantity, chosen department by department. A named roster, a stated strength given as a count and a RANGE, an establishment listed post by post, and a sentence with no number in it. Those are four different quantities and no arithmetic joins them, so this project publishes no town staffing total and there is no honest way to produce one from what is printed.",
+   "figure": "forms",
    "figures": {
-    "bad": {
-     "text": "6",
-     "unit": "years they differ",
-     "value": 6
-    },
-    "hi": {
-     "text": "45",
-     "unit": "stated, high",
-     "value": 45
-    },
-    "lo": {
-     "text": "40",
-     "unit": "stated, low",
-     "value": 40
-    },
-    "named": {
-     "text": "35",
-     "unit": "names printed",
-     "value": 35
-    },
-    "yrs": {
-     "text": "8",
-     "unit": "years where both are printed",
-     "value": 8
+    "forms": {
+     "text": "four",
+     "unit": "kinds of quantity, none addable to another",
+     "value": 4
     }
    },
-   "id": "the-book-disagrees",
+   "id": "four-forms",
    "kind": "measured",
-   "literals": [
-    "FY2024"
-   ],
-   "not_shown": "Which of the two is right. Either the roster omits people the sentence counts, or our reading of it does.",
+   "literals": [],
+   "not_shown": "A town headcount. It is not that nobody has added these up; it is that adding them would be wrong.",
    "see": [],
-   "so_what": "Quote the range, not either end of it."
+   "so_what": "Anybody quoting one town staffing number is quoting something nobody published."
   }
  ],
  "fire": [
@@ -206,6 +163,33 @@
   {
    "fy": "2025",
    "officers": 60
+  }
+ ],
+ "publishes": [
+  {
+   "department": "Department Of Public Works",
+   "forms": [
+    "an establishment, post by post"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "a named roster",
+    "a stated strength"
+   ]
+  },
+  {
+   "department": "Lunenburg Public Schools",
+   "forms": [
+    "a named roster"
+   ]
+  },
+  {
+   "department": "Police Department",
+   "forms": [
+    "a named roster"
+   ]
   }
  ],
  "roster": [
@@ -386,17 +370,17 @@
  ],
  "stats": [
   {
-   "label": "career firefighters in FY2025, from 5 in FY2017",
-   "value": "10"
+   "label": "parts of the town that name their staff: Police, Fire and the schools — every other department names none",
+   "tone": "var(--series-cost)",
+   "value": "3"
   },
   {
    "label": "appointed posts in FY2025 — directors, chiefs, inspectors, clerks",
    "value": "60"
   },
   {
-   "label": "departments that publish a named roster: Police and Fire",
-   "tone": "var(--series-cost)",
-   "value": "2 of 60"
+   "label": "kinds of quantity the town publishes about staffing, none of them addable to another",
+   "value": "four"
   }
  ],
  "years": [

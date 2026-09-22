@@ -1,66 +1,66 @@
 # Who works for the town
 
-The posts the town hires or appoints somebody into, and what each department says it employs, FY2016 to FY2025. The seats people volunteer for are [board composition](/analysis/board-composition); the ones going spare are [open seats](/analysis/open-seats).
+What the town publishes about the people who work for it, FY2016 to FY2025. The seats people volunteer for are [board composition](/analysis/board-composition); the ones going spare are [open seats](/analysis/open-seats).
 
-## The Fire Department, the one that states its own strength
+## What each part of the town publishes
 
-![The Fire Department’s career firefighters as a rising line against the on-call roll drawn as a band, because the town states it as a range. The two move in opposite directions.](charts/town-personnel-fire.svg)
+Four different kinds of quantity, chosen department by department, and none of them addable to another.
 
-| fiscal year | career | on call | page |
-|---|---:|---:|---:|
-| FY2017 | 5 | 40–45 | 79 |
-| FY2018 | 7 | 40–45 | 96 |
-| FY2019 | 7 | 40–45 | 96 |
-| FY2020 | 7 | 40–45 | 86 |
-| FY2021 | 8 | 40–45 | 87 |
-| FY2022 | 10 | 30–35 | 84 |
-| FY2023 | 10 | 30–35 | 92 |
-| FY2024 | 10 | 30–35 | 76 |
-| FY2025 | 10 | 30–35 | 75 |
+| part of the town | what it publishes |
+|---|---|
+| Department Of Public Works | an establishment, post by post |
+| Fire Department | a named roster; a stated strength |
+| Lunenburg Public Schools | a named roster |
+| Police Department | a named roster |
+| every other department | nothing |
 
-Career firefighters went from 5 to 10 while the on-call roll fell from 40–45 to 30–35.
+That last row is most of the town. A DPW labourer, a library assistant and a town hall clerk hold no appointed post and appear in no roster, and the gross-wages list that once tagged each name with a department stopped doing so after FY2016.
 
-## The two departments that print every name
+## The appointed posts
 
-Police and Fire list their staff by name and assignment in every annual report. The Fire Department also states its strength in a sentence, so the book gives the same quantity twice — and the two do not agree.
+Posts that state no membership and no term: the directors, chiefs, inspectors and clerks the town appoints rather than elects. These are posts, not people employed — a department of twenty may appear here once.
 
-| fiscal year | department | names printed | strength stated | agree |
-|---|---|---:|---:|---|
-| FY2011 | Fire Department | 36 | — | — |
-| FY2014 | Fire Department | 44 | — | — |
-| FY2015 | Fire Department | 44 | — | — |
-| FY2016 | Fire Department | 38 | — | — |
-| FY2017 | Fire Department | 42 | 45–50 | yes |
-| FY2018 | Fire Department | 40 | 47–52 | NO |
-| FY2019 | Fire Department | 38 | 47–52 | NO |
-| FY2020 | Fire Department | 41 | 47–52 | NO |
-| FY2021 | Fire Department | 37 | 48–53 | NO |
-| FY2021 | Police Department | 22 | — | — |
-| FY2022 | Fire Department | 11 | 40–45 | NO |
-| FY2022 | Police Department | 20 | — | — |
-| FY2023 | Fire Department | 38 | 40–45 | yes |
-| FY2023 | Police Department | 25 | — | — |
-| FY2024 | Fire Department | 35 | 40–45 | NO |
-| FY2024 | Police Department | 7 | — | — |
-
-The named roster runs below the stated strength in most years. Either it omits people the sentence counts, or this reading of it does — and until that is settled the count to quote is the range, not either end.
+| | FY2016 | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| appointed posts | 115 | 87 | 98 | 81 | 61 | 66 | 59 | 55 | 58 | 60 |
 
 ## Stated post by post
+
+The Department of Public Works is the only department that lists its establishment in prose.
 
 | fiscal year | department | as printed |
 |---|---|---|
 | FY2023 | Department Of Public Works | 1 Director; 1 Executive Assistant; 1 Highway Superintendent; 5 Heavy Equipment Operators; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant |
 | FY2024 | Department Of Public Works | 1 Director; 1 Executive Assistant; 1 Highway Superintendent; 3 Heavy Equipment Operators; 2 Driver; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant |
 
-Read carelessly the Department of Public Works loses two heavy equipment operators between those two years. It does not: FY2024 prints `3 Heavy Equipment Operators, 2 Driver/Laborers` where FY2023 printed `5 Heavy Equipment Operators`. Same five people, two titles reclassified — which is why the sentence is stored as printed.
+Read carelessly it loses two heavy equipment operators between those two years. It does not: FY2024 prints `3 Heavy Equipment Operators, 2 Driver/Laborers` where FY2023 printed `5 Heavy Equipment Operators`. Same five people, two titles reclassified — which is why the sentence is stored as printed.
 
-## The appointed posts
+## The named rosters
 
-Posts that state no membership and no term: the directors, chiefs, inspectors and clerks the town appoints rather than elects.
+Police and Fire list their staff by rank and assignment. The schools list theirs per school, read by a different extractor into `staff-roster-counts.csv`.
 
-| | FY2016 | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| appointed officers | 115 | 87 | 98 | 81 | 61 | 66 | 59 | 55 | 58 | 60 |
+| fiscal year | department | names read |
+|---|---|---:|
+| FY2011 | Fire Department | 36 |
+| FY2014 | Fire Department | 44 |
+| FY2015 | Fire Department | 44 |
+| FY2016 | Fire Department | 38 |
+| FY2017 | Fire Department | 42 |
+| FY2018 | Fire Department | 40 |
+| FY2019 | Fire Department | 38 |
+| FY2020 | Fire Department | 41 |
+| FY2021 | Fire Department | 37 |
+| FY2021 | Police Department | 22 |
+| FY2022 | Fire Department | 11 |
+| FY2022 | Police Department | 20 |
+| FY2023 | Fire Department | 38 |
+| FY2023 | Police Department | 25 |
+| FY2024 | Fire Department | 35 |
+| FY2024 | Police Department | 7 |
+
+THESE COUNTS RUN SHORT AND THE SHORTFALL IS OURS. This page said for a day that the book counted the Fire Department twice and disagreed with itself — a serious thing to publish about somebody’s accounts, and wrong. The rosters are set in two columns, and on FY2023 page 94 the right-hand column of the call-firefighter list is simply absent from the line-level reading; the word-level pass has it. The names were printed and we did not read them. Where a department also states a strength, that is the better figure.
+
+The Fire Department states its own strength every year, and what has happened to it is on [Protection of persons & property](/analysis/town-budget-protection), beside the money.
 
 ## What this cannot show
 

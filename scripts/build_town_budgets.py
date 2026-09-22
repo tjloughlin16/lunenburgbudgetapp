@@ -49,6 +49,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 
 import town_budget_data as D                                        # noqa: E402
+import town_personnel_data as P                                     # noqa: E402
 from conclusions import conclusion, emit, figure, usd, pct          # noqa: E402
 
 ANALYSES = os.path.join(ROOT, 'sources', 'analyses')
@@ -571,6 +572,36 @@ def render_dept(data, row, lines, moves):
                         'The lines above come to the same.' if not d
                         else 'The lines above come to %s, a difference of %+.2f.'
                              % (usd(got), d)))
+    # THE PEOPLE, BESIDE THE MONEY, on the department page rather than the aggregate one.
+    # TJ: *"town-personnel is super focusd on the fire department ... I would expect some
+    # of this fire-department focused charts on the fire deparmtnet page directly, not this
+    # aggregate page."* Right: a cross-town lens filled up with the one department that
+    # states its strength in a plottable form, which is a page organised around what is
+    # easy to draw rather than what the reader came for.
+    if row['slug'] == 'protection':
+        fire = P.load().get('fire') or []
+        if fire:
+            a, b = fire[0], fire[-1]
+            t.append('\n## The people behind the money: the Fire Department\n\nThe Fire '
+                     'Department is the only part of this group that states its own '
+                     'strength, in the prose of its annual report, the same way every '
+                     'year.\n')
+            t.append('\n![The Fire Department’s career firefighters as a rising line '
+                     'against the on-call roll drawn as a band, because the town states it '
+                     'as a range. The two move in opposite directions.]'
+                     '(charts/town-personnel-fire.svg)\n')
+            t.append('\n| fiscal year | career | on call |\n|---|---:|---:|\n')
+            for r in fire:
+                t.append('| FY%s | %s | %s–%s |\n'
+                         % (r['fy'], r['career'], r['on_call_low'], r['on_call_high']))
+            t.append('\nCareer firefighters went from %s to %s while the on-call roll fell '
+                     'from %s–%s to %s–%s: the department grew and shrank at once, in '
+                     'different kinds of staff. Police states no strength at all, so the '
+                     'other half of this budget group has no published headcount to set '
+                     'beside its money.\n'
+                     % (a['career'], b['career'], a['on_call_low'], a['on_call_high'],
+                        b['on_call_low'], b['on_call_high']))
+
     if row['slug'] == 'maturing-debt' and moves:
         prin = next((m for m in moves if m['label'].lower().startswith('principal')), None)
         intr = next((m for m in moves if 'interest' in m['label'].lower()
