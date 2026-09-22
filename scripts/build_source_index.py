@@ -1000,6 +1000,12 @@ GROUPS = [
              'reconciliation: the residual, what accounts for it, what does not, and the '
              'proven neighbours the figure sits between. See '
              'notes/reference/UNFOOTED-READINGS.md.'),
+            ('analyses/charts/town-budgets-share.svg',
+             'Who gets the money: the voted budget split twelve ways', 1,
+             'A pie of one fiscal year\u2019s omnibus budget by department, ranked, every '
+             'share also printed in the legend and in the table beneath. It answers the '
+             'question a resident opens the page with \u2014 which department is biggest '
+             '\u2014 which the pull chart deliberately does not.'),
             ('analyses/charts/town-budgets-pull.svg',
              'Which town departments move the budget total', 1,
              'Diverging bars, one per department, ranked by share of the budget times how '

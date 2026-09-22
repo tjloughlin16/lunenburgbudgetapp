@@ -96,6 +96,11 @@ def _not_established():
         'every explanation of a movement here would be a hypothesis.',
         'Anything about FY2026 below the total. The FY2025 annual report prints no '
         'department figures at all.',
+        'That growing faster than the levy cap is a problem. Proposition 2½ limits the '
+        'LEVY, not the budget: the budget is the levy plus state aid, local receipts and '
+        'transfers, and new growth raises the levy limit on top of the 2.5%. The cap is '
+        'used here as a common reference point every board in town already uses — it is '
+        'not a ceiling anybody breached.',
     ]
 
 
@@ -109,12 +114,49 @@ def conclusions_for(data, rows):
     schools = next(r for r in rows if r['slug'] == 'schools')
     top = max((r for r in rows if r['pull'] is not None), key=lambda r: r['pull'])
     debt = next(r for r in rows if r['slug'] == 'maturing-debt')
+    T = {y: sum(data['groups'][y].values()) for y in ys}
+    sch = {y: data['groups'][y]['schools'] for y in ys}
+    non = {y: T[y] - sch[y] for y in ys}
+    nond = {y: non[y] - data['groups'][y]['maturing-debt'] for y in ys}
+    r_sch = D.rate(sch[first], sch[last], last - first)
+    r_non = D.rate(non[first], non[last], last - first)
+    r_nond = D.rate(nond[first], nond[last], last - first)
     totals = data['totals']
     yrs = sorted(totals)
     steps = [(y, (totals[y] / totals[y - 1] - 1) * 100) for y in yrs[1:] if y - 1 in totals]
     biggest = max(steps, key=lambda s: s[1])
 
+    big = max((r for r in rows if r['last']), key=lambda r: r['last'])
+    small = min((r for r in rows if r['last']), key=lambda r: r['last'])
+    ratio = big['last'] / small['last']
+    four = sorted((r for r in rows if r['share']), key=lambda r: -r['share'])[:4]
+    four_share = sum(r['share'] for r in four)
     out = []
+    out.append(conclusion(
+        id='who-gets-it',
+        claim='More than half the town budget is the schools, and four departments are five sixths of it',
+        lede='Before any question about growth: this is how one voted budget divides '
+             'between the twelve departments that share it.',
+        detail='%s takes %s of the FY%d voted budget. Adding Protection, employee '
+               'benefits and debt service brings four departments to %s of the whole. The '
+               'largest department is %s times the size of the smallest.'
+               % (big['name'], pct(big['share']), last, pct(four_share),
+                  format(int(round(ratio)), ',d')),
+        figures={'share': figure(big['share'], pct(big['share']),
+                                 'of the voted budget, the school line'),
+                 'four': figure(four_share, pct(four_share),
+                                'in the four largest departments'),
+                 'ratio': figure(ratio, format(int(round(ratio)), ',d'),
+                                 'times: the largest department against the smallest')},
+        figure='share',
+        kind='measured',
+        bearing='sizes',
+        basis='The twelve group totals the FY%d omnibus prints, as shares of the grand '
+              'total on the same page.' % last,
+        not_shown='What any department buys with it, or how many people it employs.',
+        so_what='Most of what the town votes on is one department, and most of the rest is three.',
+        allow=('FY%d' % last,),
+    ))
     out.append(conclusion(
         id='not-one-department',
         claim='Ten of the twelve departments grew faster than the levy cap, not one of them',
@@ -213,6 +255,31 @@ def conclusions_for(data, rows):
         allow=(),
     ))
     out.append(conclusion(
+        id='town-side-without-debt',
+        claim='Take retiring debt out and the town side grew more than twice as fast as the schools',
+        lede='The non-school budget looks restrained until you notice that most of its '
+             'restraint is bonds being paid off rather than anything anybody decided.',
+        detail='Everything except the schools grew %s a year — below the levy cap, and a '
+               'figure that invites the conclusion the town side held the line. It did '
+               'not: that average contains debt service falling as bonds retire. Debt is '
+               'not a service. Excluding it, the rest of the town grew %s a year against '
+               'the schools’ %s.'
+               % (pct(r_non), pct(r_nond), pct(r_sch)),
+        figures={'non': figure(r_non, pct(r_non), 'a year, everything but the schools'),
+                 'nond': figure(r_nond, pct(r_nond),
+                                'a year, once retiring debt is taken out'),
+                 'sch': figure(r_sch, pct(r_sch), 'a year, the schools')},
+        figure='nond',
+        kind='measured',
+        bearing='sizes',
+        basis='The twelve group totals, FY%d against FY%d, aggregated three ways.'
+              % (first, last),
+        not_shown='Why the town side grew. This says where the money went, not what it '
+                  'bought or whether anybody got more of anything.',
+        so_what='An average that contains debt rolling off will understate every service in it.',
+        allow=(),
+    ))
+    out.append(conclusion(
         id='detail-stopped',
         claim='The largest rise in fifteen years is also the first year with no detail published',
         lede='FY2026 is a single number. The table that would show which departments it '
@@ -261,13 +328,33 @@ def render_main(data, rows):
     measured = [r for r in rows if r['rate'] is not None]
     top = max((r for r in rows if r['pull'] is not None), key=lambda r: r['pull'])
     schools = next(r for r in rows if r['slug'] == 'schools')
+    big = max((r for r in rows if r['last']), key=lambda r: r['last'])
+    small = min((r for r in rows if r['last']), key=lambda r: r['last'])
+    tot_last = sum(data['groups'][ys[-1]].values())
+    t.append('\n## Who gets the money\n')
+    t.append('\n![A pie of the FY%d voted budget split twelve ways. %s is %s of it; the '
+             'next three are %s at %s, %s at %s and %s at %s; five departments are under '
+             'two per cent each.](charts/town-budgets-share.svg)\n'
+             % (ys[-1], big['name'], pct(big['share']),
+                *sum(([r['name'], pct(r['share'])] for r in
+                      sorted((x for x in rows if x['share']),
+                             key=lambda x: -x['share'])[1:4]), [])))
+    t.append('\n| department | FY%d | share of the budget |\n|---|---:|---:|\n' % ys[-1])
+    for r in sorted((x for x in rows if x['last']), key=lambda x: -x['last']):
+        t.append('| %s | %s | %s |\n' % (r['name'], usd(r['last']), pct(r['share'])))
+    t.append('| **all twelve** | **%s** | **100%%** |\n' % usd(tot_last))
+    t.append('\n%s is the largest department and %s the smallest — %s times the size, in '
+             'the same budget.\n'
+             % (big['name'], small['name'],
+                format(int(round(big['last'] / small['last'])), ',d')))
+    t.append('\n## Which departments move the total\n')
     t.append('\n![Diverging bars, one per department, ranked by how much of the budget’s '
              'growth each accounts for. %s runs furthest right at %+.2f, ahead of Schools '
              'at %+.2f; Maturing Debt & Interest is the only bar on the left, at %+.2f.]'
              '(charts/town-budgets-pull.svg)\n'
              % (top['name'], top['pull'], schools['pull'],
                 next(r for r in rows if r['slug'] == 'maturing-debt')['pull']))
-    t.append('\n## What the numbers say\n')
+    t.append('\n## Every department, every measure\n')
     t.append('\n%s\n' % md_table(rows, ys))
     t.append('\n`pull` is a department’s share of the budget times how far its growth '
              'exceeds the %s the levy may rise by, in points of total growth. It is the '
@@ -312,7 +399,10 @@ def payload_main(data, rows):
     above = [r for r in rows if r['rate'] is not None and r['rate'] > D.LEVY_CAP]
     measured = [r for r in rows if r['rate'] is not None]
     tot_last = sum(data['groups'][ys[-1]].values())
+    big = max((r for r in rows if r['last']), key=lambda r: r['last'])
+    small = min((r for r in rows if r['last']), key=lambda r: r['last'])
     return dict(
+        biggest=big, smallest=small, voted_total=tot_last,
         generated_by='scripts/build_town_budgets.py',
         about='What Town Meeting voted for every town department, and which departments '
               'move the total.',
@@ -321,11 +411,12 @@ def payload_main(data, rows):
               'level. A voted budget is already balanced, so it records who absorbed the '
               'pressure rather than who is short.',
         stats=[
+            dict(value=pct(big['share']),
+                 label='of the voted budget goes to %s, the largest department'
+                       % big['name']),
             dict(value='%d of %d' % (len(above), len(measured)),
                  label='departments growing faster than the %s the levy may rise by'
                        % pct(D.LEVY_CAP)),
-            dict(value=usd(tot_last),
-                 label='voted across twelve departments in FY%d' % ys[-1]),
             dict(value=usd(data['totals'][max(data['totals'])]),
                  tone='var(--series-cost)',
                  label='voted for FY%d — a total with no department detail published'

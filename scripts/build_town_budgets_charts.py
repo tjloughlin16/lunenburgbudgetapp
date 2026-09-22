@@ -149,7 +149,73 @@ def chart_pull(d):
                % (d['levy_cap'], d['detail_years'][0], d['detail_years'][-1]))
 
 
-CHARTS = [('town-budgets-total.svg', chart_total),
+# Twelve steps, assigned in a fixed order by SIZE so the same department is the same
+# colour on every redraw. Three hues, four lightnesses each -- a categorical ramp of
+# twelve fully distinct hues would be unreadable at 2% of a circle, and the slices that
+# small are labelled in the table rather than on the chart anyway.
+SLICES = ['#12325f', '#184f95', '#3f78bd', '#7ea6d8',
+          '#8a5210', '#b86d15', '#e08214', '#eeb069',
+          '#17563f', '#22795a', '#2a8c6a', '#6fb79c']
+
+
+def chart_share(d):
+    """A pie: how the voted budget divides between the twelve departments.
+
+    TJ asked for this twice -- *"pie charts. which dept is biggest."* -- and the first
+    version of the page did not have it, which was a mistake dressed up as good practice.
+    The page led with PULL, which is share times excess growth, and pull is the subtle
+    finding rather than the obvious question. A resident opens a page about the town budget
+    wanting to know who gets the money. Answer that first; the clever ranking keeps.
+
+    A pie is the right form here for a reason that does not always hold: this is a
+    part-to-whole split of ONE quantity, the parts are mutually exclusive and exhaust the
+    total, and one slice is 57% -- so the shape carries the finding before any label is
+    read. What a pie is bad at is comparing the small slices to each other, and five of
+    these are under 2%. So every slice is also a row in the table underneath, ranked, with
+    its share printed: the chart answers "who is biggest" and the table answers "by how
+    much", and neither is asked to do the other's job.
+    """
+    rows = sorted([r for r in d['departments'] if r.get('last')],
+                  key=lambda r: -r['last'])
+    total = sum(r['last'] for r in rows)
+    W, H = 720, 400
+    cx, cy, R = 232.0, 232.0, 142.0
+    b, ang = [], -90.0
+    import math
+    for i, r in enumerate(rows):
+        frac = r['last'] / total
+        sweep = frac * 360.0
+        a0, a1 = math.radians(ang), math.radians(ang + sweep)
+        x0, y0 = cx + R * math.cos(a0), cy + R * math.sin(a0)
+        x1, y1 = cx + R * math.cos(a1), cy + R * math.sin(a1)
+        big = 1 if sweep > 180 else 0
+        b.append(f'<path d="M{cx:.1f},{cy:.1f} L{x0:.1f},{y0:.1f} '
+                 f'A{R},{R} 0 {big},1 {x1:.1f},{y1:.1f} Z" fill="{SLICES[i % 12]}" '
+                 f'stroke="{SURFACE}" stroke-width="2"/>')
+        if frac >= 0.04:
+            am = math.radians(ang + sweep / 2)
+            lx, ly = cx + R * 0.62 * math.cos(am), cy + R * 0.62 * math.sin(am)
+            b.append(f'<text x="{lx:.1f}" y="{ly + 4:.1f}" font-size="11" '
+                     f'font-weight="700" text-anchor="middle" fill="#ffffff">'
+                     f'{frac * 100:.0f}%</text>')
+        ang += sweep
+    lx = 430
+    for i, r in enumerate(rows):
+        ly = 74 + i * 25.0
+        b.append(f'<rect x="{lx}" y="{ly - 9:.1f}" width="11" height="11" rx="2" '
+                 f'fill="{SLICES[i % 12]}"/>')
+        b.append(f'<text x="{lx + 18}" y="{ly:.1f}" font-size="10.5" fill="{INK}">'
+                 f'{esc(r["name"])}</text>')
+        b.append(f'<text x="{W}" y="{ly:.1f}" font-size="10.5" text-anchor="end" '
+                 f'fill="{SECOND}">{r["last"] / total * 100:.1f}%</text>')
+    return svg(W, H, ''.join(b),
+               'Who gets the money: the voted budget, FY%d' % d['detail_years'][-1],
+               'The twelve departments as shares of one %s budget. Slices under 4%% are '
+               'labelled in the legend only.' % usdk(total))
+
+
+CHARTS = [('town-budgets-share.svg', chart_share),
+          ('town-budgets-total.svg', chart_total),
           ('town-budgets-pull.svg', chart_pull)]
 
 

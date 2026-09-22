@@ -44,3 +44,4 @@ The page prints **$340,898** for this department. The lines above come to $0, a 
 - Whether any department reduced SERVICE. A department can hold its dollars and cut its hours, and a dollar figure will not say so.
 - Why any line moved. The omnibus states an amount and gives no reason for it, so every explanation of a movement here would be a hypothesis.
 - Anything about FY2026 below the total. The FY2025 annual report prints no department figures at all.
+- That growing faster than the levy cap is a problem. Proposition 2½ limits the LEVY, not the budget: the budget is the levy plus state aid, local receipts and transfers, and new growth raises the levy limit on top of the 2.5%. The cap is used here as a common reference point every board in town already uses — it is not a ceiling anybody breached.

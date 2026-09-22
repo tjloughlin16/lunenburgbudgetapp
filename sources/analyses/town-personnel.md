@@ -1,6 +1,113 @@
 # Who runs the town
 
-Every elected seat, appointed board seat and appointed officer the town prints, FY2022 to FY2025.
+Every elected seat, appointed board seat and appointed officer the town prints, FY2022 to FY2025 — where the empty ones are, when they come open, and how often they change hands.
+
+## Where you could serve
+
+Seats the town printed as empty in FY2025.
+
+| board or committee | empty seats |
+|---|---:|
+| PERSONNEL COMMITTEE | 5 |
+| GREEN COMMUNITIES COMMITTEE | 2 |
+| MONTACHUSETT JOINT TRANSPORTATION COMMITTEE | 2 |
+| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 1 |
+| Associate Members | 1 |
+| PARKS COMMISSION | 1 |
+| PLANNING BOARD - 2 - 5 year terms | 1 |
+| POUND KEEPER | 1 |
+| PUBLIC ACCESS CABLE COMMITTEE | 1 |
+| RECREATION DIRECTOR | 1 |
+| TRUST FUND COMMISSION | 1 |
+| ZONING BOARD OF APPEALS (5 members/3 associate members | 1 |
+| **total** | **18** |
+
+## When a seat comes open
+
+The year each filled seat’s term runs out, as printed beside the name.
+
+| term runs out | seats |
+|---|---:|
+| 2026 | 35 |
+| 2027 | 34 |
+| 2028 | 33 |
+| 2029 | 1 |
+| 2030 | 2 |
+
+## How often seats change hands
+
+| | FY2023 | FY2024 | FY2025 |
+|---|---:|---:|---:|
+| stayed from the year before | 118 | 98 | 105 |
+| new that year | 60 | 75 | 69 |
+| gone from the year before | 55 | 80 | 68 |
+
+46 of the 359 people listed at any point across the four years appear in all four.
+
+## The bodies, by size
+
+FY2025, filled seats only.
+
+| board, committee or post | people |
+|---|---:|
+| COUNCIL ON AGING | 11 |
+| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 9 |
+| ECONOMIC DEVELOPMENT COMMITTEE | 8 |
+| PUBLIC RECORDS ACCESS OFFICERS | 8 |
+| CULTURAL COUNCIL | 7 |
+| FINANCE COMMITTEE | 7 |
+| LIBRARY TRUSTEES | 7 |
+| LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE | 7 |
+| RECREATION DIRECTOR | 6 |
+| BOARD OF HEALTH | 5 |
+| CONSERVATION COMMISSION | 5 |
+| ELECTION WORKERS | 5 |
+| HOUSING AUTHORITY | 5 |
+| SELECT BOARD | 5 |
+| SEWER COMMISSION - 1/2/3 year terms | 5 |
+| TOWN CLOCKWINDERS | 5 |
+| AGRICULTURAL COMMISSION | 4 |
+| AMERICANS WITH DISABILITIES COMMITTEE | 4 |
+| GREEN COMMUNITIES COMMITTEE | 4 |
+| HISTORICAL COMMISSION (not less than 3 nor more than 7 members | 4 |
+| PARKS COMMISSION | 4 |
+| PLANNING BOARD - 2 - 5 year terms | 4 |
+| PUBLIC ACCESS CABLE COMMITTEE | 4 |
+| SCHOOL COMMITTEE | 4 |
+| ZONING BOARD OF APPEALS (5 members/3 associate members | 4 |
+| BOARD OF ASSESSORS | 3 |
+| CAPITAL PLANNING COMMITTEE | 3 |
+| CEMETERY COMMISSION | 3 |
+| Associate Members | 2 |
+| TOWN COUNSEL | 2 |
+| TRUST FUND COMMISSION | 2 |
+| ASSISTANT DAM KEEPER | 1 |
+| ASSISTANT TAX COLLECTOR/TREASURER | 1 |
+| ASSISTANT TOWN CLERK | 1 |
+| ASST. INSPECTOR OF PLUMBING/GAS | 1 |
+| ASST. INSPECTOR OF WIRING | 1 |
+| Associate Members (2) Kira McClellan-Associate -2025 | 1 |
+| BUILDING COMMISSIONER/ZONING ENFORCEMENT OFFICER | 1 |
+| CONSTABLE | 1 |
+| COUNCIL ON AGING DIRECTOR | 1 |
+| DAM KEEPER | 1 |
+| DPW DIRECTOR | 1 |
+| FIELD DRIVER | 1 |
+| FIRE CHIEF/ EMERGENCY MANAGEMENTDIRECTOR/ FOREST WARDEN | 1 |
+| HAZARDOUS WASTE COORDINATOR | 1 |
+| HEARINGS OFFICER | 1 |
+| INSPECTOR OF PLUMBING/GAS | 1 |
+| INSPECTOR OF WEIGHTS & MEASURES | 1 |
+| INSPECTOR OF WIRING | 1 |
+| LOCAL CENSUS LIAISON | 1 |
+| MART ADVISORY BOARD | 1 |
+| MODERATOR | 1 |
+| MONTACHUSETT METROPOLITAN PLANNING ORGANIZATION | 1 |
+| POLICE CHIEF | 1 |
+| TAX COLLECTOR/TREASURER/TAX CUSTODIAN | 1 |
+| TOWN CLERK | 1 |
+| TREE WARDEN | 1 |
+| VETERANS SERVICES AGENT | 1 |
 
 ## The posts
 
@@ -9,113 +116,6 @@ Every elected seat, appointed board seat and appointed officer the town prints, 
 | Elected seats — filled by the voters | 53 | 56 | 50 | 53 |
 | Appointed board seats — filled by the Select Board | 69 | 77 | 77 | 78 |
 | Appointed officers — posts somebody is hired or named into | 60 | 59 | 65 | 65 |
-| **all posts listed** | 182 | 192 | 192 | 196 |
-
-## Does it add up
-
-Most headings state their own membership, so the page checks itself. The rows split three ways on it, and nothing here may be counted without saying which.
-
-| | rows |
-|---|---:|
-| checked | 231 |
-| check failed | 176 |
-| no check | 355 |
-
-`checked` means the heading states a size and that many names follow it. `check failed` means it states one and a different number follow — a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a two-column page. `no check` means the heading states no size, which is most single-holder posts and is not a doubt about anything.
-
-## Every post
-
-| post | how it is filled | years listed |
-|---|---|---|
-| AGRICULTURAL COMMISSION | appointed board seat | FY2022, FY2023, FY2024, FY2025 |
-| AMERICANS WITH DISABILITIES COMMITTEE | appointed board seat | FY2024, FY2025 |
-| ANIMAL CONTROL OFFICER | appointed officer | FY2024 |
-| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | appointed board seat | FY2022, FY2023, FY2025 |
-| ASSISTANT DAM KEEPER | appointed officer | FY2024, FY2025 |
-| ASSISTANT TAX COLLECTOR/TREASURER | appointed officer | FY2024, FY2025 |
-| ASSISTANT TAX COLLECTOR/TREASURER ASSISTANT TOWN CLERK | appointed officer | FY2022, FY2023 |
-| ASSISTANT TOWN CLERK | appointed officer | FY2024, FY2025 |
-| ASST. INSPECTOR OF PLUMBING/GAS | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| ASST. INSPECTOR OF WIRING | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| Associate Members | appointed board seat | FY2024, FY2025 |
-| Associate Members (2) Kira McClellan-Associate -2025 | appointed board seat | FY2025 |
-| Associate Members—(2 | appointed board seat | FY2022, FY2024 |
-| BOARD OF ASSESSORS | elected board seat | FY2025 |
-| BOARD OF HEALTH | elected board seat | FY2025 |
-| BUILDING COMMISSIONER/ZONING ENFORCEMENT OFFICER | appointed officer | FY2022, FY2024, FY2025 |
-| BULDING COMMISSIONER/ZONING ENFORCEMENT OFFICER | appointed officer | FY2023 |
-| Board of Assessors | elected board seat | FY2022, FY2023, FY2024 |
-| Board of Health | elected board seat | FY2022, FY2023, FY2024 |
-| CAPITAL PLANNING COMMITTEE | appointed board seat | FY2022, FY2023, FY2024, FY2025 |
-| CEMETERY COMMISSION | elected board seat | FY2025 |
-| CONSERVATION COMMISSION | appointed board seat | FY2022, FY2023, FY2024, FY2025 |
-| CONSTABLE | elected board seat | FY2025 |
-| COUNCIL ON AGING | appointed board seat | FY2024, FY2025 |
-| COUNCIL ON AGING DIRECTOR | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| COUNCIL ON AGING- - (11 members | appointed board seat | FY2022, FY2023 |
-| CULTURAL COUNCIL | appointed board seat | FY2022, FY2023, FY2024, FY2025 |
-| Cemetery Commission | elected board seat | FY2022, FY2023, FY2024 |
-| Constable | elected board seat | FY2022, FY2023, FY2024 |
-| DAM KEEPER | appointed officer | FY2024, FY2025 |
-| DAM KEEPER ASSISTANT DAM KEEPER | appointed officer | FY2022, FY2023 |
-| DPW DIRECTOR | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| ECONOMIC DEVELOPMENT COMMITTEE | appointed board seat | FY2024, FY2025 |
-| ELECTION WORKERS | appointed officer | FY2022, FY2024, FY2025 |
-| FIELD DRIVER | appointed officer | FY2022, FY2024, FY2025 |
-| FINANCE COMMITTEE | appointed board seat | FY2024, FY2025 |
-| FIRE CHIEF/ EMERGENCY MANAGEMENTDIRECTOR/ FOREST WARDEN | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| GREEN COMMUNITIES COMMITTEE | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| HAZARDOUS WASTE COORDINATOR | appointed officer | FY2023, FY2024, FY2025 |
-| HEARINGS OFFICER | appointed officer | FY2022, FY2024, FY2025 |
-| HISTORICAL COMMISSION (not less than 3 nor more than 7 members | appointed board seat | FY2024, FY2025 |
-| HISTORICAL COMMISSION- (not less than 3 nor more than 7 members | appointed board seat | FY2022, FY2023 |
-| HOUSING AUTHORITY | elected board seat | FY2025 |
-| Housing Authority | elected board seat | FY2022, FY2023, FY2024 |
-| INSPECTOR OF PLUMBING/GAS | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| INSPECTOR OF WEIGHTS & MEASURES | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| INSPECTOR OF WIRING | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| INTERIM VETERANS SERVICES AGENT | appointed officer | FY2022, FY2023 |
-| LIBRARY TRUSTEES | elected board seat | FY2025 |
-| LOCAL CENSUS LIAISON | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE | appointed officer | FY2023, FY2024, FY2025 |
-| LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE (eff. 1/4/2022 | appointed officer | FY2022 |
-| Library Trustees | elected board seat | FY2022, FY2023, FY2024 |
-| MART ADVISORY BOARD | appointed officer | FY2022, FY2023, FY2025 |
-| MERICANS WITH DISABILITIES COMMITTEE - - 3 year terı | appointed board seat | FY2023 |
-| MODERATOR | elected board seat | FY2025 |
-| MONTACHUSETT JOINT TRANSPORTATION COMMITTEE | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| MONTACHUSETT METROPOLITAN PLANNING ORGANIZATION | appointed officer | FY2022, FY2023, FY2025 |
-| MONTACHUSETT REGIONAL PLANNING COMMISSION | appointed officer | FY2022, FY2023 |
-| MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL REPRESENTATIVE | appointed board seat | FY2022, FY2023 |
-| Moderator | elected board seat | FY2022, FY2023, FY2024 |
-| PARKS COMMISSION | elected board seat | FY2025 |
-| PERSONNEL COMMITTEE | appointed board seat | FY2022, FY2023, FY2024, FY2025 |
-| PLANNING BOARD - 2 - 5 year terms | elected board seat | FY2025 |
-| POLICE CHIEF | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| POUND KEEPER | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| PUBLIC ACCESS CABLE COMMITTEE | appointed board seat | FY2022, FY2023, FY2024, FY2025 |
-| PUBLIC RECORDS ACCESS OFFICERS | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| Parks Commission | elected board seat | FY2022, FY2023, FY2024 |
-| Planning Board - 2 - 5 year terms | elected board seat | FY2022, FY2023, FY2024 |
-| RECREATION DIRECTOR | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| SCHOOL COMMITTEE | elected board seat | FY2025 |
-| SELECT BOARD | elected board seat | FY2025 |
-| SEWER COMMISSION - 1/2/3 year terms | elected board seat | FY2025 |
-| School Committee | elected board seat | FY2022, FY2023, FY2024 |
-| Select Board | elected board seat | FY2022, FY2023 |
-| Select Board - Thomas Alonzo-2025 | elected board seat | FY2024 |
-| Sewer Commission - 1/2/3 year terms | elected board seat | FY2022, FY2023, FY2024 |
-| TAX COLLECTOR/TREASURER/TAX CUSTODIAN | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| TOWN CLERK | elected board seat | FY2025 |
-| TOWN CLOCKWINDERS | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| TOWN COUNSEL | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| TREE WARDEN | appointed officer | FY2022, FY2023, FY2024, FY2025 |
-| TRUST FUND COMMISSION | elected board seat | FY2025 |
-| Town Clerk | elected board seat | FY2022, FY2023, FY2024 |
-| Trust Fund Commission | elected board seat | FY2022, FY2023, FY2024 |
-| VETERANS SERVICES AGENT | appointed officer | FY2024, FY2025 |
-| ZBA ASSOCIATE MEMBER | appointed board seat | FY2022, FY2023 |
-| ZONING BOARD OF APPEALS (5 members/3 associate members | appointed board seat | FY2022, FY2023, FY2024, FY2025 |
 
 ## What this cannot show
 
@@ -123,6 +123,10 @@ Most headings state their own membership, so the page checks itself. The rows sp
 - What anybody is paid. The listing never says, and no salary is inferred here from a post’s name.
 - Hours. A board seat and a full-time directorship are one row each.
 - Whether a post was actually filled for the whole year. The listing is a point in time and an appointment note is the only sign of a change within one.
+
+## How well we read it
+
+Most headings state their own membership, so the page checks itself: 232 rows sit under a board where the stated size and the printed names agree, 175 where they differ, and 355 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — and this is a note about our extraction rather than about the town.
 
 ## Where it comes from
 

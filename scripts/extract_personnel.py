@@ -51,8 +51,19 @@ TERM = re.compile(r'[-–]\s*(20\d\d)\s*$')
 APPOINTED_NOTE = re.compile(r'[-–]\s*(appointed|resigned|retired|deceased|term|vacan)', re.I)
 PAGENO = re.compile(r'^\d{1,3}$')
 
+# AN EMPTY SEAT IS NOT A PERSON NAMED `Vacancy`, and counting it as one was inflating
+# every figure on the page. The town prints its empty seats, in eight spellings across
+# four years -- `Vacant`, `Vacancy`, `1Vacancy`, `1 Vacancy`, `Vacancies`,
+# `2 Associate Member Vacancies`, `Vacant-Select Board Representative`, `Vacant-
+# Conservation Commission` -- and some carry a count in front of the word.
+#
+# It is worth getting right rather than filtering out, because it is the most actionable
+# thing in the whole listing: an empty seat is a seat a resident can ask to fill, and the
+# town publishes exactly where they are.
+VACANCY = re.compile(r'^\s*(\d+)?\s*(?:associate member\s+)?vacan(?:t|cy|cies)\b', re.I)
+
 FIELDS = ['fy', 'page', 'order', 'post', 'kind', 'section', 'stated_members',
-          'person', 'term_expires', 'note', 'size_check']
+          'person', 'vacancies', 'term_expires', 'note', 'size_check']
 
 
 def raw_pages(path):
@@ -237,6 +248,17 @@ def read_year(fy, path):
             continue
         kind = kind if post else ''
         # A person. The term year and any note travel with them, never into the name.
+        vac = VACANCY.match(t)
+        if vac:
+            n = int(vac.group(1)) if vac.group(1) else 1
+            seen += n
+            order += 1
+            rows.append({'fy': fy, 'page': page, 'order': order, 'post': post,
+                         'section': section, 'kind': kind,
+                         'stated_members': stated if stated is not None else '',
+                         'person': '', 'vacancies': n,
+                         'term_expires': '', 'note': t.strip(), 'size_check': ''})
+            continue
         term = TERM.search(t)
         note = ''
         name = t
@@ -251,7 +273,7 @@ def read_year(fy, path):
         order += 1
         rows.append({'fy': fy, 'page': page, 'order': order, 'post': post,
                      'section': section, 'kind': kind, 'stated_members': stated if stated is not None else '',
-                     'person': re.sub(r'\s+', ' ', name),
+                     'person': re.sub(r'\s+', ' ', name), 'vacancies': 0,
                      'term_expires': term.group(1) if term else '', 'note': note,
                      'size_check': ''})
     close_post(rows, post, stated, seen, problems, fy)
@@ -279,10 +301,12 @@ def main():
         rows += got
         problems += probs
 
-    by_fy = collections.Counter(r['fy'] for r in rows)
+    by_fy = collections.Counter(r['fy'] for r in rows if not r['vacancies'])
+    vac = sum(r['vacancies'] for r in rows)
     posts = collections.Counter(fy for fy, _ in {(r['fy'], r['post']) for r in rows})
     checked = sum(1 for r in rows if r['stated_members'])
-    print(f'{len(rows)} people across {len(by_fy)} years')
+    print(f'{sum(by_fy.values())} people and {vac} printed vacancies '
+          f'across {len(by_fy)} years')
     for fy in sorted(by_fy):
         print(f'  FY{fy}: {by_fy[fy]:4} people in {posts[fy]:3} posts')
     print(f'  {checked} of {len(rows)} sit under a post that states its own size')

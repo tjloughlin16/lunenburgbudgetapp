@@ -1,67 +1,137 @@
 {
- "about": "Every elected seat, appointed board seat and appointed officer the town prints in its annual report, and how the three have moved.",
+ "about": "Every elected seat, appointed board seat and appointed officer the town prints — where the empty ones are, when they come open, and how often they change hands.",
  "checks": {
-  "check failed": 176,
-  "checked": 231,
+  "check failed": 175,
+  "checked": 232,
   "no check": 355
  },
+ "churn": [
+  {
+   "arrived": 60,
+   "fy": "2023",
+   "left": 55,
+   "stayed": 118
+  },
+  {
+   "arrived": 75,
+   "fy": "2024",
+   "left": 80,
+   "stayed": 98
+  },
+  {
+   "arrived": 69,
+   "fy": "2025",
+   "left": 68,
+   "stayed": 105
+  }
+ ],
  "conclusions": [
   {
-   "basis": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing in the FY2025 annual report.",
-   "bearing": "sizes",
-   "claim": "Two thirds of the posts the town lists are unpaid seats on boards",
-   "detail": "The listing is dominated by board and committee seats rather than by the officers who run the departments. Of 196 posts the town listed in FY2025, 131 are seats on boards and committees and 65 are appointed officers. The ratio has held within a narrow band across all four years.",
+   "basis": "The APPOINTED and ELECTED OFFICIALS listing in the FY2025 annual report, where a vacancy is printed in place of a name.",
+   "bearing": "lever",
+   "claim": "The town printed empty seats on a dozen of its boards, and says which",
+   "detail": "An empty seat is the one thing on this page a resident can act on today, and the town publishes exactly where they are. The FY2025 listing prints 18 seats empty across 12 different boards and committees. They are named rather than counted: the listing puts the word where the person would go.",
    "figure": "seats",
    "figures": {
-    "officers": {
-     "text": "65",
-     "unit": "appointed officers",
-     "value": 65
+    "bodies": {
+     "text": "12",
+     "unit": "boards and committees",
+     "value": 12
     },
     "seats": {
-     "text": "131",
-     "unit": "board and committee seats",
-     "value": 131
-    },
-    "total": {
-     "text": "196",
-     "unit": "posts listed",
-     "value": 196
+     "text": "18",
+     "unit": "empty seats the town printed",
+     "value": 18
     }
    },
-   "id": "mostly-volunteers",
+   "id": "seats-are-open",
    "kind": "measured",
    "literals": [
     "FY2025"
    ],
-   "not_shown": "How many people the town employs. A post in this listing is not a job, and most town jobs are not posts in it.",
+   "not_shown": "Whether a seat was still empty by the time the report was printed, or how long it had been.",
    "see": [],
-   "so_what": "The town’s committee work rests on far more people than its payroll does."
+   "so_what": "These are seats a resident can ask to fill, named by the town itself."
   },
   {
-   "basis": "Each heading’s stated membership against the names printed under it, FY2022 to FY2025.",
+   "basis": "Names matched between consecutive years of the listing, FY2022 to FY2025.",
    "bearing": "sizes",
-   "claim": "Where a board states how many seats it has, the names beneath it often differ",
-   "detail": "Most headings in the listing state a membership, which makes the page check itself — and the check does not always pass. 231 of the rows sit under a board that states its own size and are matched by the names printed beneath it. 176 sit under one where the count differs. A seat left vacant and a mid-year replacement printed beside the person it replaced both look like this.",
-   "figure": "bad",
+   "claim": "About a third of the people on the town’s boards change every year",
+   "detail": "The listing is not a stable roster. It is a heavy annual churn of arrivals and departures around a small core. Between FY2024 and FY2025, 69 arrived and 68 left, against 105 who stayed — roughly 37% of the seats changing hands in a single year. Of 359 people listed at any point across the four years, 46 appear in all four.",
+   "figure": "turn",
    "figures": {
-    "bad": {
-     "text": "176",
-     "unit": "rows where the count differs",
-     "value": 176
+    "all4": {
+     "text": "46",
+     "unit": "who served all four years",
+     "value": 46
     },
-    "ok": {
-     "text": "231",
-     "unit": "rows that match a stated size",
-     "value": 231
+    "ever": {
+     "text": "359",
+     "unit": "people listed at all",
+     "value": 359
+    },
+    "in": {
+     "text": "69",
+     "unit": "arrived",
+     "value": 69
+    },
+    "out": {
+     "text": "68",
+     "unit": "left",
+     "value": 68
+    },
+    "stay": {
+     "text": "105",
+     "unit": "stayed",
+     "value": 105
+    },
+    "turn": {
+     "text": "37%",
+     "unit": "of seats changing hands in a year",
+     "value": 37.43169398907104
     }
    },
-   "id": "seats-against-stated",
+   "id": "seats-turn-over",
    "kind": "measured",
-   "literals": [],
-   "not_shown": "Which differences are vacancies, which are replacements, and which are our reading of a two-column page.",
+   "literals": [
+    "FY2024",
+    "FY2025"
+   ],
+   "not_shown": "Why anybody left. A term ending, a resignation and a move out of town look identical here.",
    "see": [],
-   "so_what": "A board roster cannot be counted without saying which of the three it is."
+   "so_what": "Keeping the boards staffed is a recurring job, not a solved one."
+  },
+  {
+   "basis": "Distinct names against rows in the FY2025 listing.",
+   "bearing": "sizes",
+   "claim": "It is not a small group wearing many hats — almost everyone holds one seat",
+   "detail": "A common assumption about small-town boards, and this listing does not support it. 174 distinct people hold the 183 posts listed in FY2025. 9 of them hold more than one, and none holds more than two.",
+   "figure": "people",
+   "figures": {
+    "multi": {
+     "text": "9",
+     "unit": "holding more than one",
+     "value": 9
+    },
+    "people": {
+     "text": "174",
+     "unit": "distinct people",
+     "value": 174
+    },
+    "posts": {
+     "text": "183",
+     "unit": "posts listed",
+     "value": 183
+    }
+   },
+   "id": "not-a-clique",
+   "kind": "measured",
+   "literals": [
+    "FY2025"
+   ],
+   "not_shown": "Anything about influence. Holding one seat and holding two says nothing about what either person decides.",
+   "see": [],
+   "so_what": "The work is spread across many residents rather than concentrated in a few."
   }
  ],
  "counts": [
@@ -90,8 +160,50 @@
    "fy": "2025"
   }
  ],
+ "distinct": 174,
+ "ever": 359,
  "generated_by": "scripts/build_town_personnel.py",
- "grain": "POSTS IN THE LISTING, not people employed. One row is one named holder of one post in one year. A DPW labourer or a town hall clerk holds no appointed post and is not here.",
+ "grain": "POSTS IN THE LISTING, not people employed. One row is one named holder of one post in one year, or one empty seat the town printed. A DPW labourer or a town hall clerk holds no appointed post and is not here.",
+ "held": 183,
+ "last": "2025",
+ "multi": [
+  {
+   "person": "Ana Lockwood",
+   "posts": 2
+  },
+  {
+   "person": "Anthony Sculimbrene",
+   "posts": 2
+  },
+  {
+   "person": "David Blatt",
+   "posts": 2
+  },
+  {
+   "person": "Glenn McLeod",
+   "posts": 2
+  },
+  {
+   "person": "Jennifer Sanderson",
+   "posts": 2
+  },
+  {
+   "person": "Jennifer Warren-Dyment",
+   "posts": 2
+  },
+  {
+   "person": "Karen Kemp",
+   "posts": 2
+  },
+  {
+   "person": "Matthew Brenner-Planning Board",
+   "posts": 2
+  },
+  {
+   "person": "William Bernard",
+   "posts": 2
+  }
+ ],
  "not_established": [
   "How many people the town EMPLOYS. This counts posts in the listing, and a DPW labourer, a library assistant and a town hall clerk hold no appointed post. The gross-wages list would give a headcount and it stopped naming departments after FY2016.",
   "What anybody is paid. The listing never says, and no salary is inferred here from a post’s name.",
@@ -955,6 +1067,241 @@
    ]
   }
  ],
+ "served_all": 46,
+ "sizes": [
+  {
+   "people": 11,
+   "post": "COUNCIL ON AGING"
+  },
+  {
+   "people": 9,
+   "post": "ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC"
+  },
+  {
+   "people": 8,
+   "post": "ECONOMIC DEVELOPMENT COMMITTEE"
+  },
+  {
+   "people": 8,
+   "post": "PUBLIC RECORDS ACCESS OFFICERS"
+  },
+  {
+   "people": 7,
+   "post": "CULTURAL COUNCIL"
+  },
+  {
+   "people": 7,
+   "post": "FINANCE COMMITTEE"
+  },
+  {
+   "people": 7,
+   "post": "LIBRARY TRUSTEES"
+  },
+  {
+   "people": 7,
+   "post": "LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE"
+  },
+  {
+   "people": 6,
+   "post": "RECREATION DIRECTOR"
+  },
+  {
+   "people": 5,
+   "post": "BOARD OF HEALTH"
+  },
+  {
+   "people": 5,
+   "post": "CONSERVATION COMMISSION"
+  },
+  {
+   "people": 5,
+   "post": "ELECTION WORKERS"
+  },
+  {
+   "people": 5,
+   "post": "HOUSING AUTHORITY"
+  },
+  {
+   "people": 5,
+   "post": "SELECT BOARD"
+  },
+  {
+   "people": 5,
+   "post": "SEWER COMMISSION - 1/2/3 year terms"
+  },
+  {
+   "people": 5,
+   "post": "TOWN CLOCKWINDERS"
+  },
+  {
+   "people": 4,
+   "post": "AGRICULTURAL COMMISSION"
+  },
+  {
+   "people": 4,
+   "post": "AMERICANS WITH DISABILITIES COMMITTEE"
+  },
+  {
+   "people": 4,
+   "post": "GREEN COMMUNITIES COMMITTEE"
+  },
+  {
+   "people": 4,
+   "post": "HISTORICAL COMMISSION (not less than 3 nor more than 7 members"
+  },
+  {
+   "people": 4,
+   "post": "PARKS COMMISSION"
+  },
+  {
+   "people": 4,
+   "post": "PLANNING BOARD - 2 - 5 year terms"
+  },
+  {
+   "people": 4,
+   "post": "PUBLIC ACCESS CABLE COMMITTEE"
+  },
+  {
+   "people": 4,
+   "post": "SCHOOL COMMITTEE"
+  },
+  {
+   "people": 4,
+   "post": "ZONING BOARD OF APPEALS (5 members/3 associate members"
+  },
+  {
+   "people": 3,
+   "post": "BOARD OF ASSESSORS"
+  },
+  {
+   "people": 3,
+   "post": "CAPITAL PLANNING COMMITTEE"
+  },
+  {
+   "people": 3,
+   "post": "CEMETERY COMMISSION"
+  },
+  {
+   "people": 2,
+   "post": "Associate Members"
+  },
+  {
+   "people": 2,
+   "post": "TOWN COUNSEL"
+  },
+  {
+   "people": 2,
+   "post": "TRUST FUND COMMISSION"
+  },
+  {
+   "people": 1,
+   "post": "ASSISTANT DAM KEEPER"
+  },
+  {
+   "people": 1,
+   "post": "ASSISTANT TAX COLLECTOR/TREASURER"
+  },
+  {
+   "people": 1,
+   "post": "ASSISTANT TOWN CLERK"
+  },
+  {
+   "people": 1,
+   "post": "ASST. INSPECTOR OF PLUMBING/GAS"
+  },
+  {
+   "people": 1,
+   "post": "ASST. INSPECTOR OF WIRING"
+  },
+  {
+   "people": 1,
+   "post": "Associate Members (2) Kira McClellan-Associate -2025"
+  },
+  {
+   "people": 1,
+   "post": "BUILDING COMMISSIONER/ZONING ENFORCEMENT OFFICER"
+  },
+  {
+   "people": 1,
+   "post": "CONSTABLE"
+  },
+  {
+   "people": 1,
+   "post": "COUNCIL ON AGING DIRECTOR"
+  },
+  {
+   "people": 1,
+   "post": "DAM KEEPER"
+  },
+  {
+   "people": 1,
+   "post": "DPW DIRECTOR"
+  },
+  {
+   "people": 1,
+   "post": "FIELD DRIVER"
+  },
+  {
+   "people": 1,
+   "post": "FIRE CHIEF/ EMERGENCY MANAGEMENTDIRECTOR/ FOREST WARDEN"
+  },
+  {
+   "people": 1,
+   "post": "HAZARDOUS WASTE COORDINATOR"
+  },
+  {
+   "people": 1,
+   "post": "HEARINGS OFFICER"
+  },
+  {
+   "people": 1,
+   "post": "INSPECTOR OF PLUMBING/GAS"
+  },
+  {
+   "people": 1,
+   "post": "INSPECTOR OF WEIGHTS & MEASURES"
+  },
+  {
+   "people": 1,
+   "post": "INSPECTOR OF WIRING"
+  },
+  {
+   "people": 1,
+   "post": "LOCAL CENSUS LIAISON"
+  },
+  {
+   "people": 1,
+   "post": "MART ADVISORY BOARD"
+  },
+  {
+   "people": 1,
+   "post": "MODERATOR"
+  },
+  {
+   "people": 1,
+   "post": "MONTACHUSETT METROPOLITAN PLANNING ORGANIZATION"
+  },
+  {
+   "people": 1,
+   "post": "POLICE CHIEF"
+  },
+  {
+   "people": 1,
+   "post": "TAX COLLECTOR/TREASURER/TAX CUSTODIAN"
+  },
+  {
+   "people": 1,
+   "post": "TOWN CLERK"
+  },
+  {
+   "people": 1,
+   "post": "TREE WARDEN"
+  },
+  {
+   "people": 1,
+   "post": "VETERANS SERVICES AGENT"
+  }
+ ],
  "sources": [
   {
    "basis": "published",
@@ -965,17 +1312,89 @@
  ],
  "stats": [
   {
-   "label": "board and committee seats listed in FY2025",
-   "value": "131"
-  },
-  {
-   "label": "appointed officers — the posts somebody is hired into",
-   "value": "65"
-  },
-  {
-   "label": "rows under a board whose stated size and printed names differ",
+   "label": "seats the town printed EMPTY in FY2025, across 12 boards",
    "tone": "var(--series-cost)",
-   "value": "176"
+   "value": "18"
+  },
+  {
+   "label": "seats whose term runs out in 2026 — the next chance to join",
+   "value": "35"
+  },
+  {
+   "label": "of seats changing hands in a single year",
+   "value": "37%"
+  }
+ ],
+ "terms": [
+  {
+   "seats": 35,
+   "year": "2026"
+  },
+  {
+   "seats": 34,
+   "year": "2027"
+  },
+  {
+   "seats": 33,
+   "year": "2028"
+  },
+  {
+   "seats": 1,
+   "year": "2029"
+  },
+  {
+   "seats": 2,
+   "year": "2030"
+  }
+ ],
+ "vacancies": [
+  {
+   "post": "PERSONNEL COMMITTEE",
+   "seats": 5
+  },
+  {
+   "post": "GREEN COMMUNITIES COMMITTEE",
+   "seats": 2
+  },
+  {
+   "post": "MONTACHUSETT JOINT TRANSPORTATION COMMITTEE",
+   "seats": 2
+  },
+  {
+   "post": "ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC",
+   "seats": 1
+  },
+  {
+   "post": "Associate Members",
+   "seats": 1
+  },
+  {
+   "post": "PARKS COMMISSION",
+   "seats": 1
+  },
+  {
+   "post": "PLANNING BOARD - 2 - 5 year terms",
+   "seats": 1
+  },
+  {
+   "post": "POUND KEEPER",
+   "seats": 1
+  },
+  {
+   "post": "PUBLIC ACCESS CABLE COMMITTEE",
+   "seats": 1
+  },
+  {
+   "post": "RECREATION DIRECTOR",
+   "seats": 1
+  },
+  {
+   "post": "TRUST FUND COMMISSION",
+   "seats": 1
+  },
+  {
+   "post": "ZONING BOARD OF APPEALS (5 members/3 associate members",
+   "seats": 1
   }
  ],
  "years": [

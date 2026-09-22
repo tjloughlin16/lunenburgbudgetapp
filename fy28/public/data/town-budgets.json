@@ -1,6 +1,53 @@
 {
  "about": "What Town Meeting voted for every town department, and which departments move the total.",
+ "biggest": {
+  "change": 1730183.0,
+  "first": 23397371.0,
+  "last": 25127554.0,
+  "name": "Schools",
+  "pull": 0.6457922292972955,
+  "rate": 3.6314504629767264,
+  "series": {
+   "2023": 23397371.0,
+   "2024": 24082518.0,
+   "2025": 25127554.0
+  },
+  "share": 57.076491674083954,
+  "slug": "schools"
+ },
  "conclusions": [
+  {
+   "basis": "The twelve group totals the FY2025 omnibus prints, as shares of the grand total on the same page.",
+   "bearing": "sizes",
+   "claim": "More than half the town budget is the schools, and four departments are five sixths of it",
+   "detail": "Before any question about growth: this is how one voted budget divides between the twelve departments that share it. Schools takes 57.1% of the FY2025 voted budget. Adding Protection, employee benefits and debt service brings four departments to 84.1% of the whole. The largest department is 313 times the size of the smallest.",
+   "figure": "share",
+   "figures": {
+    "four": {
+     "text": "84.1%",
+     "unit": "in the four largest departments",
+     "value": 84.05738245054111
+    },
+    "ratio": {
+     "text": "313",
+     "unit": "times: the largest department against the smallest",
+     "value": 312.9209713574097
+    },
+    "share": {
+     "text": "57.1%",
+     "unit": "of the voted budget, the school line",
+     "value": 57.076491674083954
+    }
+   },
+   "id": "who-gets-it",
+   "kind": "measured",
+   "literals": [
+    "FY2025"
+   ],
+   "not_shown": "What any department buys with it, or how many people it employs.",
+   "see": [],
+   "so_what": "Most of what the town votes on is one department, and most of the rest is three."
+  },
   {
    "basis": "The twelve group totals each omnibus prints, FY2023 against FY2025.",
    "bearing": "sizes",
@@ -130,6 +177,36 @@
    "not_shown": "Which lines the freed money went to. The budget does not trace it.",
    "see": [],
    "so_what": "Debt coming off a budget is real room, and it is already spent here."
+  },
+  {
+   "basis": "The twelve group totals, FY2023 against FY2025, aggregated three ways.",
+   "bearing": "sizes",
+   "claim": "Take retiring debt out and the town side grew more than twice as fast as the schools",
+   "detail": "The non-school budget looks restrained until you notice that most of its restraint is bonds being paid off rather than anything anybody decided. Everything except the schools grew 2.0% a year — below the levy cap, and a figure that invites the conclusion the town side held the line. It did not: that average contains debt service falling as bonds retire. Debt is not a service. Excluding it, the rest of the town grew 8.0% a year against the schools’ 3.6%.",
+   "figure": "nond",
+   "figures": {
+    "non": {
+     "text": "2.0%",
+     "unit": "a year, everything but the schools",
+     "value": 1.9765227428735432
+    },
+    "nond": {
+     "text": "8.0%",
+     "unit": "a year, once retiring debt is taken out",
+     "value": 8.022100316658044
+    },
+    "sch": {
+     "text": "3.6%",
+     "unit": "a year, the schools",
+     "value": 3.6314504629767264
+    }
+   },
+   "id": "town-side-without-debt",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Why the town side grew. This says where the money went, not what it bought or whether anybody got more of anything.",
+   "see": [],
+   "so_what": "An average that contains debt rolling off will understate every service in it."
   },
   {
    "basis": "The printed grand total of every omnibus, FY2012 to FY2025, and Article 10 of the 3 May 2025 Annual Town Meeting for FY2026.",
@@ -356,7 +433,8 @@
   "What was actually spent. Voted and spent are different quantities and rule 1 forbids mixing them in one calculation.",
   "Whether any department reduced SERVICE. A department can hold its dollars and cut its hours, and a dollar figure will not say so.",
   "Why any line moved. The omnibus states an amount and gives no reason for it, so every explanation of a movement here would be a hypothesis.",
-  "Anything about FY2026 below the total. The FY2025 annual report prints no department figures at all."
+  "Anything about FY2026 below the total. The FY2025 annual report prints no department figures at all.",
+  "That growing faster than the levy cap is a problem. Proposition 2½ limits the LEVY, not the budget: the budget is the levy plus state aid, local receipts and transfers, and new growth raises the levy limit on top of the 2.5%. The cap is used here as a common reference point every board in town already uses — it is not a ceiling anybody breached."
  ],
  "prose": {
   "book": 2025,
@@ -406,6 +484,21 @@
    "printed": 44024349.19
   }
  },
+ "smallest": {
+  "change": 2500.0,
+  "first": 77800.0,
+  "last": 80300.0,
+  "name": "Central Purchasing",
+  "pull": -0.0016525720836368483,
+  "rate": 1.5939799443128955,
+  "series": {
+   "2023": 77800.0,
+   "2024": 80300.0,
+   "2025": 80300.0
+  },
+  "share": 0.18239906205868434,
+  "slug": "central-purchasing"
+ },
  "sources": [
   {
    "basis": "published",
@@ -428,12 +521,12 @@
  ],
  "stats": [
   {
-   "label": "departments growing faster than the 2.5% the levy may rise by",
-   "value": "10 of 12"
+   "label": "of the voted budget goes to Schools, the largest department",
+   "value": "57.1%"
   },
   {
-   "label": "voted across twelve departments in FY2025",
-   "value": "$44,024,349"
+   "label": "departments growing faster than the 2.5% the levy may rise by",
+   "value": "10 of 12"
   },
   {
    "label": "voted for FY2026 — a total with no department detail published",
@@ -517,5 +610,6 @@
    "status": "stated in prose — no department table printed",
    "voted": 49374465.0
   }
- ]
+ ],
+ "voted_total": 44024349.190000005
 }
