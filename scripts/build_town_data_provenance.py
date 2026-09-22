@@ -65,6 +65,135 @@ SOURCES = [
 ]
 
 
+# HOW EACH ONE IS PRINTED, AND WHAT MAKES IT HARD. TJ: *"for provenance, did you capture
+# the complexities of getting the satffing per board? Some have tables. some in prose.
+# keeping track of all that can help us in the future"*. This is that -- and it is the part
+# that cannot be derived, because it is what was learned by getting each one wrong. The
+# counts elsewhere in this file come off the data; these came off the pages.
+FORMS = [
+    ('Fire Department', 'BOTH — prose and a named table',
+     'A sentence states strength as a count plus a RANGE (`10 Career and 30-35 On Call/Per '
+     'Diem`), and a `Roster of the Lunenburg Fire Department` names everyone a few pages '
+     'later, in two columns split A Shift / B Shift, then Call Firefighters.',
+     'The two disagree by seven to twelve in most years and are NOT reconciled — rule 13a. '
+     'The roster is two-column, so it needs the word geometry; read as flat lines the A '
+     'and B shift names merge into one person. Rank comes before the name here (`Scott '
+     'Dillon, Lieutenant/EMT` puts it after) so both forms are parsed.'),
+    ('Police Department', 'a named table only',
+     'A `Department Personnel:` heading, then Administration, the Patrol Bureau split into '
+     'Day / Evening / Split shifts, the Investigative Bureau and the Community Policing '
+     'Bureau, every officer by rank.',
+     'Two columns, same as Fire. States no total anywhere, so there is NOTHING to check the '
+     'roster against — where Fire has a stated strength to disagree with, Police has only '
+     'the names. A short year therefore looks identical to a small year: FY2024 reads 7 '
+     'officers against 25 the year before, and that is a page this reader did not find.'),
+    ('Department of Public Works', 'prose only, an establishment post by post',
+     '`The staff consists of one Director, one Executive Assistant (shared with the '
+     'Facilities Department), one Highway Superintendent, 5 Heavy Equipment Operators...` '
+     '— counts as words AND numerals in the same sentence, wrapping across three lines.',
+     'NOT a headcount and not comparable to Fire\u2019s. FY2023 says `5 Heavy Equipment '
+     'Operators`; FY2024 says `3 Heavy Equipment Operators, 2 Driver/Laborers`. Read as '
+     'counts that is two operators lost; read as printed it is the same five people with '
+     'two titles reclassified. The sentence is stored verbatim for exactly this reason.'),
+    ('Building Department', 'prose, a list of names inline',
+     '`The Building Department consists of the following personnel:` followed by names.',
+     'Neither a count nor a table. Captured as a statement with `parsed=no` — evidence the '
+     'town said something, which is not a number.'),
+    ('Boards and committees', 'a listing, nine pages a year',
+     'ELECTED OFFICIALS and APPOINTED OFFICIALS, each post with its holders and their '
+     'term-expiry years, and its own membership stated in the heading.',
+     'The heading is the CHECK: `COUNCIL ON AGING-(11 members)` should be followed by '
+     'eleven names. But the heading is stated four different ways — `(5 members)`, `3 year '
+     'terms` PLURAL, `(5 members as of Nov. 2021)` with text before the bracket, and `(no '
+     'less than 5 and no more than 22 members)` which is a RANGE and not a size. Each of '
+     'those four, missed, turned a heading into a person and gave the post above it '
+     'somebody else\u2019s members.'),
+    ('every other department', 'nothing published',
+     'No roster, no establishment sentence, no count.',
+     'The gross-wages list tagged each name with a department through FY2016 and stopped. '
+     'So a DPW labourer, a library assistant and a town hall clerk appear in no published '
+     'headcount at all after that year.'),
+]
+
+
+# THE SAME THING FOR THE MONEY, because the budget tables were read wrong in more ways than
+# the staffing was. TJ: *"same with stabilization problems"*, *"and town budget info"*.
+MONEY_TRAPS = [
+    ('the omnibus budget', 'THE BOOK IS NOT THE YEAR',
+     'The omnibus printed in an annual report is the year AHEAD: the FY2024 book carries '
+     '`FY 2025 Omnibus Budget`, voted that spring. Reading a book\u2019s omnibus as its own '
+     'year puts every figure one year out, and FY2024\u2019s own budget is in the FY2023 '
+     'book, which is why it read as absent for months.'),
+    ('the omnibus budget', 'THE TOTALS NEST',
+     '`Total Protection` sums no line at all — it sums Police, Fire, Radio Watch and Other '
+     'Protection, each of which sums its own lines. A flat walk hands it an empty run and '
+     'reports a $4.6M failure at the one place the table is perfectly readable.'),
+    ('the omnibus budget', 'A NUMBERED ROW IS A LINE, NOT A TOTAL',
+     'Across every omnibus year, 254 of 255 recognised subtotals carry no line number. The '
+     'one that did was two consecutive $4,000.00 items where the first was read as the '
+     'second\u2019s total.'),
+    ('the omnibus budget', 'A GAP IN THE NUMBERING IS NOT A MISSING ROW',
+     'FY2024 reads all 109 lines and ties all nineteen printed totals while failing to read '
+     'twenty of the line NUMBERS beside them — they sit in their own narrow column and '
+     'Vision drops them. Only fail on numbering when the arithmetic does not already prove '
+     'completeness.'),
+    ('the omnibus budget', 'EVERYTHING ABOVE THE HEADING IS A DIFFERENT TABLE',
+     'FY2023\u2019s omnibus starts halfway down page 164; above it sits the capital plan '
+     'with its own `TOTAL: $1,360,500.00`. Ten of its rows summed as omnibus lines produced '
+     'a $5.6M failure against a table nobody was extracting.'),
+    ('any scanned money column', 'A FIGURE MUST BE TAKEN WHOLE',
+     '`$497,155.24` scans as `$497.155.24` and an unanchored pattern returns `$497.15` AND '
+     '`5.24` — two well-formed figures, both wrong, both summed. 1,098 lines across the '
+     'sixteen reports, 1,945 sub-$10 fragments all counted as money.'),
+    ('any scanned money column', 'A LOST SEPARATOR LEAVES FIVE DIGITS',
+     '`$161,942.40` scans as `161.94240`. Groups run in threes and cents in twos, so the '
+     'mark is the lost thousands separator — read flat it is $16,194,240 in a town whose '
+     'whole budget is $42M.'),
+    ('any scanned money column', 'THE LAST SEPARATOR IS NOT THE DECIMAL POINT',
+     '`$50,000` read that way is fifty dollars — a thousandfold error, silent, in a figure '
+     'the town prints all through its warrant. What follows the mark decides: two digits is '
+     'a decimal, three is a group separator.'),
+    ('any scanned money column', 'NOTHING HERE IS A HUNDRED BILLION DOLLARS',
+     'Merged cells produced $2,254,933,999,368,739,225,600 in FY2025\u2019s debt schedule, '
+     'which then matched a grand total read the same broken way, so the year PASSED its '
+     'check. Two pieces of nonsense agreeing is a check with no power to fail.'),
+    ('the omnibus budget', 'SOME OF THE ERROR IS THE TOWN\u2019S',
+     'FY2022 and FY2023 both print `Total General Government` 80 cents under their own '
+     'lines, and in both the odd amount is on `Town Clerk Salary`. FY2022 prints `Total '
+     'Health & Sanitation` 30 cents under its five lines and foots its GRAND total on the '
+     'correct figure. Recorded as `attested` rows in `table-corrections.csv` so nobody '
+     're-reads those pages hunting an OCR fault that was never there.'),
+    ('the stabilization funds', 'A BARE `STABILIZATION` IS NOT THE GENERAL FUND',
+     'FY2011\u2013FY2013 print `TD BankNorth Stabilization`, which is ZONING: $226,821.90, '
+     'Zoning\u2019s own opening balance. Publishing it as the general Stabilization Fund '
+     'was caught one step before shipping.'),
+    ('the stabilization funds', 'THE LETTERS ARE NOT ALWAYS LATIN',
+     'FY2023 prints `Bartholomew - \u041e\u0420\u0415\u0412` where all four characters '
+     'are CYRILLIC. It looks identical to OPEB, compares equal to nothing, and cost that '
+     'fund a year. Only the codepoints show it.'),
+    ('the stabilization funds', 'THE LAYOUT IS A HYPOTHESIS THE DOCUMENT TESTS',
+     'Nine columns read off FY2014 were proposed for four other years; FY2015 and FY2016 '
+     'accepted them, FY2017 and FY2022 refused. And ONE REPORT CAN HOLD TWO LAYOUTS: FY2023 '
+     'prints a fourteen-column trust summary and an eight-column `held by other banks` '
+     'table, so a layout keyed by year alone is always wrong about one of them.'),
+    ('any scanned table', 'MEASURE THE PAGE, DO NOT TUNE A CONSTANT',
+     'A scan is slightly turned, so a row\u2019s observations do not share a `y`. The '
+     'rotation is recoverable from the page — the median slope between each figure and its '
+     'nearest neighbour, \u22120.01033 from 158 pairs on FY2020 page 41 — and the row band '
+     'is half the page\u2019s own row pitch. No tolerance works: at 0.004 two funds merge, '
+     'at 0.003 one splits from its own account number.'),
+    ('any scanned page', 'THE RENDERER CAN CLIP A FIFTH OF THE PAGE',
+     '`PDFPage.bounds(for:)` applies `/Rotate` and `PDFPage.draw(with:to:)` does not, so a '
+     'canvas sized for one and filled from the other lost about 20% of every landscape '
+     'document — identically at 2x and 4x, which is why resolution never fixed it.'),
+    ('any OCR box', 'A LINE BOX CANNOT SEE A COLUMN',
+     'Vision returns one observation per LINE, so on a two-column page its box spans both: '
+     '27 observations for 27 lines, every x-centre between 0.495 and 0.500. '
+     '`ocr_words.swift` asks for a box per WORD, and the column break is then measurable — '
+     'median word gap 0.0028 of the page, a break over 0.05.'),
+]
+
+
 def read(name):
     p = os.path.join(DATA, name)
     if not os.path.exists(p):
@@ -104,6 +233,21 @@ def build():
              '|---|---|---|---|---|\n')
     for what, ds, gen, frm, chk in SOURCES:
         t.append('| %s | `%s` | `%s` | %s | %s |\n' % (what, ds, gen, frm, chk))
+
+    t.append('\n## How each one is printed, and what makes it hard\n\n'
+             'The counts in this file are derived from the data. This table is not — it is '
+             'what was learned by getting each of these wrong, and it is the part that '
+             'saves the next reader a day.\n\n'
+             '| department | form | how it is printed | what to watch |\n|---|---|---|---|\n')
+    for dept, form, printed, watch in FORMS:
+        t.append('| %s | %s | %s | %s |\n' % (dept, form, printed, watch))
+
+    t.append('\n## Reading the money, and what goes wrong\n\n'
+             'Same kind of table, for the budget and the funds. Every line here is a defect '
+             'that reached a figure before it was caught.\n\n'
+             '| where | the trap | what happened |\n|---|---|---|\n')
+    for where, trap, what in MONEY_TRAPS:
+        t.append('| %s | %s | %s |\n' % (where, trap, what))
 
     # ---- money, by department -------------------------------------------------------
     t.append('\n## Money, department by department\n\n'
