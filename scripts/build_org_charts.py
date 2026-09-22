@@ -53,8 +53,73 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 DATA = os.path.join(ROOT, 'sources', 'data')
 OUT_CSV = os.path.join(DATA, 'org-chart.csv')
 OUT_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'org-charts.json')
-FIELDS = ['fy', 'unit', 'unit_kind', 'subunit', 'section', 'tier', 'role', 'person',
-          'status', 'source']
+FIELDS = ['fy', 'unit', 'unit_kind', 'subunit', 'section', 'section_group', 'tier',
+          'role', 'person', 'status', 'source']
+
+# ---------------------------------------------------------------------------
+# THE GRADE AND THE DEPARTMENT. TJ, 22 September 2026: *"so for the school, dont we hav
+# grade and department info?! ... we should group by those."*
+#
+# We do: 3,460 of 3,847 school rows carry the block heading the roster was printed under.
+# What stopped it being a grouping is that there are 203 distinct values and most of them
+# are the same dozen things -- `Cafeteria`, `Cafeteria:`, `Cafeteria Services` and
+# `Cafeteria Manager`; `Grade 4`, `4th Grade:` and `Fourth Grade Teachers`; `Special
+# Education`, `SPECIAL EDUCATION` and `Special Ed. Middle School:`.
+#
+# `section` KEEPS WHAT THE PAGE SAYS and `section_group` is the normalisation, in a
+# column of its own. Rule 13: the printed heading is the observation and the grouping is
+# ours, so they do not get to be the same field.
+#
+# WHAT IS MERGED IS TYPOGRAPHY, NOT MEANING. Case, trailing punctuation, an ordinal
+# spelled out, and the building name repeated inside a heading that already sits under
+# that building. The families below are collapsed as well, and each is a department that
+# every school prints under two or three names across fifteen years. `Specialists`,
+# `Unified Arts` and `Special Areas` are NOT merged into each other: they plausibly name
+# the same staff and nothing in the reports says so.
+ORDINAL = {'first': 1, 'second': 2, 'third': 3, 'fourth': 4, 'fifth': 5, 'sixth': 6,
+           'seventh': 7, 'eighth': 8, 'ninth': 9, 'tenth': 10, 'eleventh': 11,
+           'twelfth': 12}
+GRADE = re.compile(r'^(?:grade\s*(\d{1,2})\b|(\d{1,2})(?:st|nd|rd|th)\s+grade\b'
+                   r'|(%s)\s+grade\b)' % '|'.join(ORDINAL), re.I)
+# A heading that repeats the building it is already sitting under.
+BUILDING_TAIL = re.compile(r'\s*[:,\-]?\s*(?:at\s+)?(?:the\s+)?'
+                           r'(?:lunenburg\s+)?(?:middle|high|primary|elementary)'
+                           r'\s+school\s*$', re.I)
+SECTION_FAMILY = [
+    (re.compile(r'cafeteria|food service|cook', re.I), 'Cafeteria and food service'),
+    (re.compile(r'custod', re.I), 'Custodial'),
+    (re.compile(r'parapro', re.I), 'Paraprofessionals'),
+    (re.compile(r'special ed|\bsped\b|learning c(?:en)?t', re.I), 'Special education'),
+    (re.compile(r'special services', re.I), 'Special services'),
+    (re.compile(r'guidance|adjustment counsel', re.I), 'Guidance'),
+    (re.compile(r'health office|^health$|nurse', re.I), 'Health office'),
+    (re.compile(r'^achieve', re.I), 'Achieve'),
+    (re.compile(r'central office', re.I), 'Central office'),
+    (re.compile(r'administration|main office', re.I), 'Administration and office'),
+    (re.compile(r'facilities|grounds|maintenance', re.I), 'Facilities and grounds'),
+    (re.compile(r'technology|network', re.I), 'Technology'),
+    (re.compile(r'tutor', re.I), 'Tutors and aides'),
+]
+
+
+def canon_section(text):
+    """The block heading, normalised into something a page can group on."""
+    t = re.sub(r'\s+', ' ', (text or '')).strip().strip(':_.,;- ')
+    if not t:
+        return ''
+    t = BUILDING_TAIL.sub('', t).strip(':_.,;- ') or t
+    m = GRADE.match(t)
+    if m:
+        n = m.group(1) or m.group(2) or ORDINAL[m.group(3).lower()]
+        return 'Grade %d' % int(n)
+    if re.match(r'^(pre[- ]?school|preschool|pre[- ]?k)', t, re.I):
+        return 'Pre-school'
+    if re.match(r'^kindergarten', t, re.I):
+        return 'Kindergarten'
+    for pat, name in SECTION_FAMILY:
+        if pat.search(t):
+            return name
+    return t[:1].upper() + t[1:]
 
 # ---------------------------------------------------------------------------
 # THE LADDER. A flat list of forty names is not an org chart, and the town prints the
@@ -72,9 +137,12 @@ FIELDS = ['fy', 'unit', 'unit_kind', 'subunit', 'section', 'tier', 'role', 'pers
 #
 # ORDER MATTERS AND IS THE WHOLE TRICK: `Deputy Chief` must be tested before `Chief` and
 # `Assistant Principal` before `Principal`, or every deputy in the town becomes a head.
+# `INTERIM` IS NOT A DEMOTION. `Interim Chief Jeffrey Thibodeau` ran the Police
+# Department for the back half of FY2024 and the first draft filed him one band below
+# himself, because the word sat in the deputy list beside `acting` and `assistant`.
 TIERS = [
     (1, re.compile(r'\bdeputy|\bassistant\b|\basst\.?\b|\bvice[- ]?chair|\bcapt\.?\b'
-                   r'|\bcaptain\b|\binterim\b|\bassoc(?:iate)?\b', re.I)),
+                   r'|\bcaptain\b|\bassoc(?:iate)?\b', re.I)),
     (0, re.compile(r'\bsuperintendent\b|\btown manager\b|\bchief\b|\bprincipal\b'
                    r'|\bdirector\b|\bchair(?:man|person|woman)?\b|\blibrarian\b'
                    r'|\btown clerk\b|\btreasurer\b|\bcollector\b|\bcommissioner\b'
@@ -180,16 +248,44 @@ def _rows_officials():
     return out, bad
 
 
+# THE RANK IS IN THE NAME, in the years the Police roster prints it that way. 114 of 291
+# Police rows carry an empty `rank` and a name reading `Off. Jeffrey Hill` -- so every
+# officer in those years arrived unranked, fell into the bottom band, and the only
+# grouping left was the printed shift. TJ, seeing the FY2024 chart: *"you put the police
+# chief under admins... group by RANK or department or SOMETHING, there are very natural
+# groupings to all these departments."* There are, and the department prints both: a RANK
+# and a BUREAU OR SHIFT. This recovers the first so the second can be what it is.
+EMBEDDED_RANK = re.compile(
+    r'^(Off\.|Ofc\.|Officer|Det\.|Detective|Sgt\.|Sergeant|Lt\.|Lieutenant|'
+    r'Chief|Deputy Chief|Capt\.|Captain|Patrolman|Part-Time Clerk|Clerk|'
+    r'Animal Control Officer|K-?9 Officer|Reserve Officer)\s+(?=[A-Z])', re.I)
+
+# A SUB-HEADING IS NOT A PERSON. The roster prints `Traffic Bureau`, `Reserve Police
+# Officers` and `Animal Control Officer` as headings over the names beneath them, and the
+# column reader takes them for names. A person has at least two name-shaped words once
+# the rank in front is removed.
+NAME_SHAPE = re.compile(r"^[A-Z][A-Za-z'\-]+\.?(?:\s+[A-Z][A-Za-z'\-]*\.?){1,3}$")
+NOT_A_NAME = re.compile(r'\b(bureau|shift|officers?|firefighters?|division|department|'
+                        r'retired|resigned|appointed|vacan\w*|review|mission|statement)\b',
+                        re.I)
+
+
 def _rows_rosters():
     p = os.path.join(DATA, 'department-rosters.csv')
     out = []
     if not os.path.exists(p):
         return out
     for r in csv.DictReader(open(p, encoding='utf-8')):
-        who = (r['name'] or '').strip()
+        who, rank = (r['name'] or '').strip(), (r['rank'] or '').strip()
+        m = EMBEDDED_RANK.match(who)
+        if m and not rank:
+            rank, who = m.group(1), who[m.end():].strip()
+        if not VACANT.match(who) and (NOT_A_NAME.search(who)
+                                      or not NAME_SHAPE.match(who)):
+            continue                    # a heading, or a sentence, never a person
         out.append(dict(fy=r['fy'], unit=r['department'], unit_kind='department',
                         subunit='',
-                        section=(r['section'] or '').strip(), role=(r['rank'] or '').strip(),
+                        section=(r['section'] or '').strip(), role=rank,
                         person='' if VACANT.match(who) else who,
                         status='vacant' if VACANT.match(who) else 'filled',
                         source='department roster p%s' % r['page']))
@@ -429,6 +525,7 @@ def build():
     rows, bad = _rows_officials()
     rows += _rows_rosters() + _rows_schools() + _rows_prose() + _rows_signatures()
     for r in rows:
+        r['section_group'] = canon_section(r['section'])
         # AN APPOINTED POST IS ITS OWN HEAD. A one-post unit like the Dam Keeper has
         # nobody under it, and banding it with the staff of a forty-person department
         # would read as a rank it does not have.
@@ -444,7 +541,7 @@ def build():
         seen.add(k)
         uniq.append(r)
     uniq.sort(key=lambda r: (r['unit'].lower(), r['fy'], r['subunit'].lower(),
-                             r['tier'], r['section'].lower(), r['role'].lower(),
+                             r['tier'], r['section_group'].lower(), r['role'].lower(),
                              r['person'].lower()))
     return uniq, bad
 

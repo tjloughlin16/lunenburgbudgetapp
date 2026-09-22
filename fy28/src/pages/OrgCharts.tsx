@@ -23,6 +23,7 @@ import { ReportShell, Body, Grain, H2, Stat } from '../components/report'
 type Row = {
   fy: string; unit: string; unit_kind: string; subunit: string; section: string
   role: string; person: string; status: string; source: string; tier: string
+  section_group: string
 }
 type Unit = {
   unit: string; kind: string; rows: number; years: string[]; subunits: string[]
@@ -82,28 +83,34 @@ export function OrgCharts() {
   // it as well produced blocks of ONE — "Lunenburg High School · Athletic Director" with
   // a single name under it — because `grade_or_dept` is as fine as `Grade 3`.
   const blocks = useMemo(() => {
-    const g = new Map<string, Map<string, Row[]>>()
+    const g = new Map<string, Map<string, Map<string, Row[]>>>()
     for (const r of rows) {
       const k = r.subunit || ''
       if (!g.has(k)) g.set(k, new Map())
       const bands = g.get(k)!
       const t = r.tier || '3'
-      if (!bands.has(t)) bands.set(t, [])
-      bands.get(t)!.push(r)
+      if (!bands.has(t)) bands.set(t, new Map())
+      const groups = bands.get(t)!
+      // THE GRADE AND THE DEPARTMENT. TJ: *"so for the school, dont we hav grade and
+      // department info?! ... we should group by those."* We do, on every roster row —
+      // the block heading the name was printed under. `section_group` is that heading
+      // normalised; `section` is what the page actually said and stays on the row.
+      const sg = r.section_group || ''
+      if (!groups.has(sg)) groups.set(sg, [])
+      groups.get(sg)!.push(r)
     }
-    for (const bands of g.values()) {
-      for (const rs of bands.values()) {
-        rs.sort((a, b) => (a.role + a.section + a.person)
-          .localeCompare(b.role + b.section + b.person))
-      }
-    }
-    // The district's own offices carry no building, so their block sorts FIRST rather
-    // than by size: a superintendent above four schools is the shape of the thing.
+    const order = (x: string) => (x ? 1 : 0)   // the unlabelled rows lead each band
     return [...g.entries()]
-      .map(([k, bands]) => [k, [...bands.entries()].sort()] as const)
-      .sort((a, b) => (a[0] ? 1 : 0) - (b[0] ? 1 : 0)
-        || b[1].reduce((n, x) => n + x[1].length, 0)
-         - a[1].reduce((n, x) => n + x[1].length, 0))
+      .map(([k, bands]) => [k, [...bands.entries()].sort()
+        .map(([t, groups]) => [t, [...groups.entries()]
+          .sort((p, q) => order(p[0]) - order(q[0]) || p[0].localeCompare(q[0]))
+          .map(([sg, rs]) => [sg, rs.sort((x, y) => (x.role + x.person)
+            .localeCompare(y.role + y.person))] as const)] as const)] as const)
+      // The district's own offices carry no building, so their block sorts FIRST rather
+      // than by size: a superintendent above four schools is the shape of the thing.
+      .sort((x, y) => order(x[0]) - order(y[0])
+        || y[1].reduce((n, t) => n + t[1].reduce((m, s) => m + s[1].length, 0), 0)
+         - x[1].reduce((n, t) => n + t[1].reduce((m, s) => m + s[1].length, 0), 0))
   }, [rows])
 
   if (!d) return null
@@ -193,9 +200,10 @@ export function OrgCharts() {
       ) : blocks.map(([name, bands]) => (
         <section key={name || '_'} className="mt-7">
           {name ? <H2 id={`s-${name}`}>{name}</H2> : null}
-          {bands.map(([tier, rs]) => (
-            <div key={tier} className="mt-3"
-              style={{ marginLeft: INSET[tier] ?? 42 }}>
+          {bands.map(([tier, groups]) => {
+            const n = groups.reduce((m, x) => m + x[1].length, 0)
+            return (
+            <div key={tier} className="mt-3" style={{ marginLeft: INSET[tier] ?? 42 }}>
               <div className="text-[11px] uppercase tracking-wide mb-1 flex items-center gap-2"
                 style={{ color: 'var(--text-muted)' }}>
                 <span style={{
@@ -203,32 +211,42 @@ export function OrgCharts() {
                   background: tier === '3' ? 'var(--grid)' : 'var(--series-1)',
                 }} />
                 {BAND[tier] ?? BAND['3']}
-                <span style={{ opacity: 0.7 }}>{rs.length}</span>
+                <span style={{ opacity: 0.7 }}>{n}</span>
               </div>
-              <ul className="list-none p-0 m-0 grid gap-x-8 gap-y-1"
-                style={{
-                  gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))',
-                  borderLeft: tier === '0' ? 'none' : '1px solid var(--grid)',
-                  paddingLeft: tier === '0' ? 0 : 10,
-                }}>
-                {rs.map((r, i) => (
-                  <li key={i} className="text-[13.5px] flex gap-2 items-baseline py-0.5"
-                    style={{ borderBottom: '1px solid var(--grid)' }}>
-                    <span style={{
-                      color: r.person ? 'var(--text-primary)' : 'var(--text-muted)',
-                      fontWeight: tier === '0' ? 600 : 400,
-                    }}>
-                      {r.person || (r.status === 'vacant' ? 'vacant' : '— unnamed post —')}
-                    </span>
-                    <span className="ml-auto text-right text-[12px] shrink-0"
-                      style={{ color: 'var(--text-muted)' }}>
-                      {[r.role, r.section].filter(Boolean).join(' \u00b7 ')}
-                    </span>
-                  </li>
+              <div style={{
+                borderLeft: tier === '0' ? 'none' : '1px solid var(--grid)',
+                paddingLeft: tier === '0' ? 0 : 10,
+              }}>
+                {groups.map(([sg, rs]) => (
+                  <div key={sg || '_'} className={sg ? 'mt-2' : ''}>
+                    {sg ? (
+                      <div className="text-[12.5px] font-medium mb-0.5"
+                        style={{ color: 'var(--text-secondary)' }}>
+                        {sg} <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
+                          {rs.length}</span>
+                      </div>
+                    ) : null}
+                    <ul className="list-none p-0 m-0 grid gap-x-8 gap-y-1"
+                      style={{ gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))' }}>
+                      {rs.map((r, i) => (
+                        <li key={i} className="text-[13.5px] flex gap-2 items-baseline py-0.5"
+                          style={{ borderBottom: '1px solid var(--grid)' }}>
+                          <span style={{
+                            color: r.person ? 'var(--text-primary)' : 'var(--text-muted)',
+                            fontWeight: tier === '0' ? 600 : 400,
+                          }}>
+                            {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
+                          </span>
+                          <span className="ml-auto text-right text-[12px] shrink-0"
+                            style={{ color: 'var(--text-muted)' }}>{r.role}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
-          ))}
+          )})}
         </section>
       ))}
 
