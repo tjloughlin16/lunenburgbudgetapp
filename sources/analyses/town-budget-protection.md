@@ -1,6 +1,10 @@
-# Protection: what the town votes for it
+# Protection of persons & property: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+Police, Fire, Radio Watch and the inspectors — wiring, plumbing and gas, building, sealer of weights and measures — plus emergency management and animal control. The town prints it as `Protection`, and its contents page as `PROTECTION OF PERSONS & PROPERTY`. Each of Police, Fire, Radio Watch and Other Protection has its own printed subtotal beneath the group total.
 
 ## The department
 

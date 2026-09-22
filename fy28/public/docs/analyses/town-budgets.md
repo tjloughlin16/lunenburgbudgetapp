@@ -3,22 +3,22 @@ What Town Meeting voted for every department, and which departments move the tot
 
 ## Who gets the money
 
-![A pie of the FY2025 voted budget split twelve ways. Schools is 57.1% of it; the next three are Protection at 10.5%, Employee benefits & reserves at 9.8% and Maturing Debt & Interest at 6.7%; five departments are under two per cent each.](charts/town-budgets-share.svg)
+![A pie of the FY2025 voted budget split twelve ways. Schools is 57.1% of it; the next three are Protection of persons & property at 10.5%, Employee benefits & reserves at 9.8% and Maturing Debt & Interest at 6.7%; five departments are under two per cent each.](charts/town-budgets-share.svg)
 
 | department | FY2025 | share of the budget |
 |---|---:|---:|
-| Schools | $25,127,554 | 57.1% |
-| Protection | $4,643,717 | 10.5% |
-| Employee benefits & reserves | $4,293,123 | 9.8% |
-| Maturing Debt & Interest | $2,941,322 | 6.7% |
-| Public Works | $2,225,277 | 5.1% |
-| General Government | $2,177,964 | 4.9% |
-| Facilities & Grounds | $1,022,711 | 2.3% |
-| Library | $583,890 | 1.3% |
-| Solid Waste & Recycling | $469,775 | 1.1% |
-| Assistance | $340,898 | 0.8% |
-| Health & Sanitation | $117,819 | 0.3% |
-| Central Purchasing | $80,300 | 0.2% |
+| [Schools](/analysis/town-budget-schools) | $25,127,554 | 57.1% |
+| [Protection of persons & property](/analysis/town-budget-protection) | $4,643,717 | 10.5% |
+| [Employee benefits & reserves](/analysis/town-budget-unclassified) | $4,293,123 | 9.8% |
+| [Maturing Debt & Interest](/analysis/town-budget-maturing-debt) | $2,941,322 | 6.7% |
+| [Public Works](/analysis/town-budget-public-works) | $2,225,277 | 5.1% |
+| [General Government](/analysis/town-budget-general-government) | $2,177,964 | 4.9% |
+| [Facilities & Grounds](/analysis/town-budget-facilities-grounds) | $1,022,711 | 2.3% |
+| [Library](/analysis/town-budget-library) | $583,890 | 1.3% |
+| [Solid Waste & Recycling](/analysis/town-budget-solid-waste) | $469,775 | 1.1% |
+| [Assistance](/analysis/town-budget-assistance) | $340,898 | 0.8% |
+| [Health & Sanitation](/analysis/town-budget-health-sanitation) | $117,819 | 0.3% |
+| [Central Purchasing](/analysis/town-budget-central-purchasing) | $80,300 | 0.2% |
 | **all twelve** | **$44,024,349** | **100%** |
 
 Schools is the largest department and Central Purchasing the smallest — 313 times the size, in the same budget.
@@ -26,6 +26,10 @@ Schools is the largest department and Central Purchasing the smallest — 313 ti
 ## How each department is growing
 
 ![Twelve small panels, one per department, each showing its voted budget across FY2023, FY2024 and FY2025 on its own vertical scale. Eleven rise; only Maturing Debt & Interest falls.](charts/town-budgets-trends.svg)
+
+![Twelve lines on one dollar axis across three years. The school line runs far above the rest; ten departments are crowded near the floor.](charts/town-budgets-all.svg)
+
+![Horizontal bars, one per department, of compound annual growth, with a dashed line at the 2.5% the levy may rise by. Ten of the twelve bars extend past it.](charts/town-budgets-rates.svg)
 
 ## Which departments outgrow the levy cap
 
@@ -38,7 +42,7 @@ Schools is the largest department and Central Purchasing the smallest — 313 ti
 | Employee benefits & reserves | $3,378,711 | $3,968,170 | $4,293,123 | 12.7% | 9.8% | +$438,870/yr |
 | Schools | $23,397,371 | $24,082,518 | $25,127,554 | 3.6% | 57.1% | +$284,306/yr |
 | General Government | $1,792,492 | $1,974,322 | $2,177,964 | 10.2% | 4.9% | +$168,340/yr |
-| Protection | $4,239,355 | $4,478,848 | $4,643,717 | 4.7% | 10.5% | +$100,330/yr |
+| Protection of persons & property | $4,239,355 | $4,478,848 | $4,643,717 | 4.7% | 10.5% | +$100,330/yr |
 | Solid Waste & Recycling | $312,634 | $352,775 | $469,775 | 22.6% | 1.1% | +$94,340/yr |
 | Facilities & Grounds | $884,566 | $981,645 | $1,022,711 | 7.5% | 2.3% | +$51,396/yr |
 | Library | $492,984 | $539,126 | $583,890 | 8.8% | 1.3% | +$36,961/yr |

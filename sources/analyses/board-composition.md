@@ -8,9 +8,20 @@ How the town’s boards are made up, how big they are and how fast they turn ove
 
 COUNCIL ON AGING is the biggest body in the town at 11 seats. 26 posts have a single holder.
 
-## The seats barely move. The people in them do
+## Are the chartered seats filled?
 
-![Two lines over ten fiscal years — elected seats and appointed board seats. Both are close to flat.](charts/board-composition-over-time.svg)
+![Names printed against the seats the charters create, FY2020 to FY2025. The line starts above the every-seat mark and ends at 87%.](charts/board-composition-fill.svg)
+
+| fiscal year | chartered seats | names printed | filled |
+|---|---:|---:|---:|
+| FY2020 | 138 | 148 | 107% |
+| FY2021 | 115 | 118 | 103% |
+| FY2022 | 93 | 95 | 102% |
+| FY2023 | 98 | 103 | 105% |
+| FY2024 | 111 | 103 | 93% |
+| FY2025 | 116 | 101 | 87% |
+
+A board’s charter fixes how many seats it has, so the seat COUNT is not a trend — it is the charter. Whether the seats have anybody in them is the part that moves, and it has moved a long way. Above 100%% is not an overfull board: it is a mid-year replacement printed beside the person replaced.
 
 | | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -22,24 +33,23 @@ COUNCIL ON AGING is the biggest body in the town at 11 seats. 26 posts have a si
 
 ## Which boards change most
 
-Seats changing hands each year, over bodies of three seats or more that appear in both years of at least two consecutive pairs. A one-seat post whose holder changed reads as a hundred per cent and is one person leaving a job, so it is left out. The median across the 37 bodies here is 31%.
+Seats changing hands each year, over bodies of three seats or more. `years compared` is how many times the body appears in two consecutive years and can therefore be differenced — the listing is readable for ten years but not consecutively in all of them, so a body with 5 has been measured five times and one with 2 twice. A one-seat post whose holder changed reads as a hundred per cent and is one person leaving a job, so it is left out. The median across the 36 bodies here is 31%.
 
-| board or committee | seats | year pairs | churn |
+| board or committee | seats | years compared | seats changing hands |
 |---|---:|---:|---:|
 | GCTF ADVISORS | 3.5 | 3 | 71% |
 | MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL REPRESENTATIVE | 8.0 | 3 | 67% |
-| HISTORICAL COMMISSION- (not less than 3 nor more than 7 members) | 3.5 | 3 | 62% |
 | STORM WATER TASK FORCE | 3.4 | 7 | 57% |
 | AMERICANS WITH DISABILITIES COMMITTEE | 3.8 | 3 | 56% |
 | ECONOMIC DEVELOPMENT COMMITTEE | 4.0 | 4 | 56% |
 | GREEN COMMUNITIES COMMITTEE | 3.7 | 3 | 54% |
 | PUBLIC RECORDS ACCESS OFFICERS | 8.8 | 8 | 49% |
 | LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE | 5.5 | 2 | 46% |
+| HISTORICAL COMMISSION | 4.1 | 9 | 42% |
 | Sewer Commission - 1/2 | 5.4 | 8 | 40% |
 | CAPITAL PLANNING COMMITTEE | 6.2 | 9 | 39% |
 | AGRICULTURAL COMMISSION | 5.7 | 7 | 38% |
 | TAXATION AID COMMITTEE | 4.8 | 4 | 37% |
-| HISTORICAL COMMISSION | 4.7 | 3 | 36% |
 | FINANCE COMMITTEE | 7.2 | 6 | 36% |
 | CULTURAL COUNCIL | 7.8 | 7 | 34% |
 | Board of Selectmen | 5.0 | 3 | 33% |
@@ -88,7 +98,7 @@ FY2025, filled seats only.
 | AGRICULTURAL COMMISSION | 4 |
 | ELECTION WORKERS | 4 |
 | GREEN COMMUNITIES COMMITTEE | 4 |
-| HISTORICAL COMMISSION (not less than 3 nor more than 7 members) | 4 |
+| HISTORICAL COMMISSION | 4 |
 | PARKS COMMISSION | 4 |
 | PLANNING BOARD | 4 |
 | PUBLIC ACCESS CABLE COMMITTEE | 4 |
@@ -135,8 +145,8 @@ FY2025, filled seats only.
 
 | | FY2016 | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Elected seats — filled by the voters | 57 | 58 | 56 | 0 | 59 | 56 | 53 | 56 | 51 | 53 |
-| Appointed board seats — filled by the Select Board | 69 | 72 | 72 | 0 | 103 | 106 | 86 | 92 | 79 | 79 |
+| Elected seats — filled by the voters | 57 | 58 | 56 | 41 | 59 | 56 | 53 | 56 | 51 | 53 |
+| Appointed board seats — filled by the Select Board | 69 | 72 | 72 | 58 | 103 | 106 | 86 | 92 | 79 | 79 |
 
 ## What this cannot show
 

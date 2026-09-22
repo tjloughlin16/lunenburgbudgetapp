@@ -47,6 +47,15 @@ FY2026_PROSE = dict(
 # The twelve groups the schedule totals, in the town's own printed order, with the name
 # this project uses for each.
 #
+# `Protection of persons & property` is what the report's own CONTENTS page calls this
+# group; the budget table itself prints the single word `Protection`, and `Total
+# Protection`. TJ asked whether `Protection` was the town's word or ours -- it is theirs,
+# in the table -- and also that people say `Public Safety`. They do, and the town does not:
+# `Public Safety` appears only in narrative, as the Public Safety Building and the Public
+# Safety Desk Clerk, never as the name of this budget group. So the longer form the town
+# itself prints is used, because bare `Protection` is rule 7b's insider vocabulary and
+# `Public Safety` would be a word the document does not use for this thing.
+#
 # `Employee benefits & reserves` is printed `Gen Gov Unclassified`, and the rename is not
 # cosmetic. `Unclassified` tells a resident nothing -- rule 7b: insider vocabulary is an
 # unfinished sentence -- and the first draft of this report guessed at what it meant and
@@ -69,7 +78,7 @@ GROUPS = [
     ('unclassified', 'Employee benefits & reserves', 'gen go'),
     ('general-government', 'General Government', 'general'),
     ('central-purchasing', 'Central Purchasing', 'central'),
-    ('protection', 'Protection', 'protection'),
+    ('protection', 'Protection of persons & property', 'protection'),
     ('health-sanitation', 'Health & Sanitation', 'health'),
     ('public-works', 'Public Works', 'dpw'),
     ('facilities-grounds', 'Facilities & Grounds', 'facilit'),
@@ -80,6 +89,72 @@ GROUPS = [
 ]
 BY_SLUG = {g[0]: g for g in GROUPS}
 
+# WHAT EACH DEPARTMENT IS, in a sentence, so a reader meeting `Maturing Debt & Interest`
+# for the first time is not left to infer it from four line items. TJ: *"i need an
+# expalanation (from our materials) on what 'Maturing Debt' is"* and *"Maturing debt
+# dropping by 600k is interesting but i dont understand it. thats the context."*
+#
+# EACH ONE IS GROUNDED IN THE LINES THE GROUP ITSELF HOLDS -- they are named in the text,
+# so a reader can check the sentence against the table beneath it. Where a sentence goes
+# beyond naming the lines it says what KIND of claim it is; none of it is read off a
+# document that explains the town's accounting, because the town publishes no such
+# document. That absence is itself in money-gaps.csv.
+WHAT_IT_IS = {
+    'maturing-debt':
+        'The town’s annual bill for money it has already borrowed. The group holds '
+        '`Principal-Loans` and `Interest-Loans` — repaying the capital on bonds issued to '
+        'build things, and the interest on them — plus interest on temporary borrowing, '
+        'loan administration fees and bond issuance costs. It buys no service in the year '
+        'it is paid: the thing it paid for was built earlier. It falls when bonds finish '
+        'and the town has not issued new ones to replace them, which is what has happened '
+        'here — almost all of the fall is PRINCIPAL rather than interest.',
+    'unclassified':
+        'Costs that belong to no single department, printed by the town as `Gen Gov '
+        'Unclassified`. Seven tenths of it is `Group Health Insurance` for town and school '
+        'employees together; the rest is Medicare, liability and workers’ compensation '
+        'insurance, group life, and two reserve funds the town holds against the '
+        'unexpected — the `Reserve Fund` and the `Salary Reserve Fund`.',
+    'general-government':
+        'The town’s own administration: the Select Board, the Town Manager, the Town '
+        'Accountant, the Treasurer, the Tax Collector, the Assessors, the Town Clerk, '
+        'elections and registration, Information Technology, legal expenses, and the '
+        'Planning Board, Zoning Board of Appeals and Conservation Commission.',
+    'central-purchasing':
+        'One line, for buying things centrally rather than department by department. It is '
+        'the smallest group in the budget and the flattest.',
+    'protection':
+        'Police, Fire, Radio Watch and the inspectors — wiring, plumbing and gas, building, '
+        'sealer of weights and measures — plus emergency management and animal control. '
+        'The town prints it as `Protection`, and its contents page as `PROTECTION OF '
+        'PERSONS & PROPERTY`. Each of Police, Fire, Radio Watch and Other Protection has '
+        'its own printed subtotal beneath the group total.',
+    'health-sanitation':
+        'The Board of Health and the services the town buys in with it — the Nashoba '
+        'Associated Boards of Health, nursing, and mental health. Under a fifth of one per '
+        'cent of the budget.',
+    'public-works':
+        'The Highway division and what it runs: labour and overtime, general highway '
+        'maintenance, the town garage, traffic signs, snow removal, and vehicle '
+        'maintenance for the Highway, Police and Fire fleets. The Park and Cemetery '
+        'departments and tree removal sit here too.',
+    'facilities-grounds':
+        'The buildings the town owns and the grounds around them, including the Park '
+        'department’s grounds and utilities for the library.',
+    'solid-waste':
+        'Trash and recycling. The fastest-growing line in the budget by rate, and small '
+        'enough that the rate moves the total very little.',
+    'assistance':
+        'The Council on Aging and Veterans’ services — veterans’ benefits, the veterans’ '
+        'agent, the registrar of veterans’ graves and Memorial Day. Each has its own '
+        'printed subtotal.',
+    'schools':
+        'Lunenburg Public Schools and the town’s assessment for Montachusett Regional '
+        'Vocational Technical School, plus curriculum updates and school vehicle '
+        'maintenance. The largest group in the budget by a long way.',
+    'library':
+        'One line: the Lunenburg Public Library.',
+}
+
 # Proposition 2½ lets the levy rise 2.5% a year before new growth. It is the line every
 # one of these rates is measured against, and it is statute rather than an assumption.
 LEVY_CAP = 2.5
@@ -88,6 +163,17 @@ LEVY_CAP = 2.5
 # FY2023 land on +$0.80, which is the TOWN's arithmetic and is recorded as an `attested`
 # row in table-corrections.csv, not ours.
 DETAIL_BOOKS = ('2022', '2023', '2024')
+
+
+def _norm_label(s):
+    """A line's label with the scanner's spacing taken out.
+
+    `Interest -Loans`, `Interest-Loans` and `Interest- Loans` are one line in three years,
+    and joined on the raw string they are three lines that each appear once — so the
+    biggest single movement in the whole budget, principal and interest falling together,
+    showed as a set of lines that appeared and vanished.
+    """
+    return re.sub(r'\s*-\s*', '-', re.sub(r'\s+', ' ', (s or '').strip()))
 
 
 def _squash(s):

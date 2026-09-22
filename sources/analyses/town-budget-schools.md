@@ -1,6 +1,10 @@
 # Schools: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+Lunenburg Public Schools and the town’s assessment for Montachusett Regional Vocational Technical School, plus curriculum updates and school vehicle maintenance. The largest group in the budget by a long way.
 
 ## The department
 

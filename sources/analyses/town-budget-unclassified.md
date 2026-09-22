@@ -1,6 +1,10 @@
 # Employee benefits & reserves: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+Costs that belong to no single department, printed by the town as `Gen Gov Unclassified`. Seven tenths of it is `Group Health Insurance` for town and school employees together; the rest is Medicare, liability and workers’ compensation insurance, group life, and two reserve funds the town holds against the unexpected — the `Reserve Fund` and the `Salary Reserve Fund`.
 
 ## The department
 

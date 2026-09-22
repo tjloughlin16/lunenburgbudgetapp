@@ -1,6 +1,10 @@
 # Maturing Debt & Interest: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+The town’s annual bill for money it has already borrowed. The group holds `Principal-Loans` and `Interest-Loans` — repaying the capital on bonds issued to build things, and the interest on them — plus interest on temporary borrowing, loan administration fees and bond issuance costs. It buys no service in the year it is paid: the thing it paid for was built earlier. It falls when bonds finish and the town has not issued new ones to replace them, which is what has happened here — almost all of the fall is PRINCIPAL rather than interest.
 
 ## The department
 
@@ -58,6 +62,17 @@ The page prints **$3,518,013** for this department. The lines above come to the 
 | | **total** | **$2,941,322** |
 
 The page prints **$2,941,322** for this department. The lines above come to the same.
+
+## Why it is falling
+
+Debt service drops when bonds finish and the town has not issued new ones to replace them. Almost all of the fall here is PRINCIPAL — the capital being repaid — rather than interest:
+
+| | FY2023 | FY2025 | change |
+|---|---:|---:|---:|
+| Principal-Loans | $3,220,579 | $1,832,253 | −$1,388,326 |
+| Interest-Loans | $1,272,701 | $1,101,717 | −$170,984 |
+
+What this does NOT say is WHICH bonds finished. That is in the town’s debt repayment schedule, which the annual report prints and this project has not yet read properly — the FY2025 extract of it is the trust-fund table by mistake.
 
 ## What moved
 

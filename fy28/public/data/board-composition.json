@@ -16,13 +16,6 @@
    "seats": 8.0
   },
   {
-   "changes": 13,
-   "churn": 61.9,
-   "pairs": 3,
-   "post": "HISTORICAL COMMISSION- (not less than 3 nor more than 7 members)",
-   "seats": 3.5
-  },
-  {
    "changes": 27,
    "churn": 57.4,
    "pairs": 7,
@@ -65,6 +58,13 @@
    "seats": 5.5
   },
   {
+   "changes": 31,
+   "churn": 42.5,
+   "pairs": 9,
+   "post": "HISTORICAL COMMISSION",
+   "seats": 4.1
+  },
+  {
    "changes": 35,
    "churn": 40.2,
    "pairs": 8,
@@ -91,13 +91,6 @@
    "pairs": 4,
    "post": "TAXATION AID COMMITTEE",
    "seats": 4.8
-  },
-  {
-   "changes": 10,
-   "churn": 35.7,
-   "pairs": 3,
-   "post": "HISTORICAL COMMISSION",
-   "seats": 4.7
   },
   {
    "changes": 31,
@@ -324,43 +317,52 @@
  ],
  "conclusions": [
   {
-   "basis": "Posts by kind for each of the ten years, against names matched between consecutive years.",
-   "bearing": "sizes",
-   "claim": "The number of seats has barely moved in ten years. Who sits in them has",
-   "detail": "Two trends that look like one number until they are drawn: a stable establishment, and a population turning over inside it. Elected seats and appointed board seats are both close to flat across FY2016 to FY2025. Underneath that, 67 people arrived and 65 left in the last year alone, out of 182 posts.",
-   "figure": "in",
+   "basis": "Seats stated in each body’s own heading against the names printed beneath it, over bodies whose membership is a number rather than a range.",
+   "bearing": "lever",
+   "claim": "The boards are getting harder to fill: full six years ago, short today",
+   "detail": "A charter fixes how many seats a board has. Whether anybody is in them is the part that moves. Across the 22 bodies that state a plain membership, 101 names are printed against 116 chartered seats in FY2025 — 87%. Six years earlier the same measure ran at 107%, with more names printed than seats because mid-year replacements are listed beside the people they replaced.",
+   "figure": "now",
    "figures": {
-    "in": {
-     "text": "67",
-     "unit": "arrived in a single year",
-     "value": 67
+    "bodies": {
+     "text": "22",
+     "unit": "bodies stating a plain size",
+     "value": 22
     },
-    "out": {
-     "text": "65",
-     "unit": "left",
-     "value": 65
+    "names": {
+     "text": "101",
+     "unit": "names printed",
+     "value": 101
     },
-    "posts": {
-     "text": "182",
-     "unit": "posts in total",
-     "value": 182
+    "now": {
+     "text": "87%",
+     "unit": "of chartered seats filled now",
+     "value": 87.1
+    },
+    "seats": {
+     "text": "116",
+     "unit": "chartered seats",
+     "value": 116
+    },
+    "then": {
+     "text": "107%",
+     "unit": "filled six years earlier",
+     "value": 107.2
     }
    },
-   "id": "seats-flat-people-not",
+   "id": "harder-to-fill",
    "kind": "measured",
    "literals": [
-    "FY2016",
     "FY2025"
    ],
-   "not_shown": "Whether a seat sat empty between one holder and the next.",
+   "not_shown": "Whether a seat was filled later in the year. The listing is a snapshot taken once.",
    "see": [],
-   "so_what": "The town is not adding committees. It is refilling the ones it has."
+   "so_what": "Empty chairs are the constraint on what the boards can do, not the seat count."
   },
   {
    "basis": "Names matched between consecutive years of the listing, per body, over bodies appearing in both years of at least two pairs.",
    "bearing": "sizes",
    "claim": "Some boards replace half their seats a year while others barely change",
-   "detail": "The town-wide turnover figure hides a wide spread: the churn is not shared evenly across the boards. Across 37 boards of three seats or more, the median is 31% of seats changing hands a year. GCTF ADVISORS runs highest at 71%; CABLE ADVISORY COMMITTEE is among the steadiest at 0%.",
+   "detail": "The town-wide turnover figure hides a wide spread: the churn is not shared evenly across the boards. Across 36 boards of three seats or more, the median is 31% of seats changing hands a year. GCTF ADVISORS runs highest at 71%; CABLE ADVISORY COMMITTEE is among the steadiest at 0%.",
    "figure": "med",
    "figures": {
     "hi": {
@@ -379,9 +381,9 @@
      "value": 31.3
     },
     "n": {
-     "text": "37",
+     "text": "36",
      "unit": "boards",
-     "value": 37
+     "value": 36
     }
    },
    "id": "churn-is-uneven",
@@ -441,8 +443,8 @@
    "fy": "2018"
   },
   {
-   "appointed board seat": 0,
-   "elected board seat": 0,
+   "appointed board seat": 58,
+   "elected board seat": 41,
    "fy": "2019"
   },
   {
@@ -477,6 +479,50 @@
   }
  ],
  "ever": 694,
+ "fill": [
+  {
+   "bodies": 26,
+   "filled": 148,
+   "fy": "2020",
+   "pct": 107.2,
+   "seats": 138
+  },
+  {
+   "bodies": 23,
+   "filled": 118,
+   "fy": "2021",
+   "pct": 102.6,
+   "seats": 115
+  },
+  {
+   "bodies": 19,
+   "filled": 95,
+   "fy": "2022",
+   "pct": 102.2,
+   "seats": 93
+  },
+  {
+   "bodies": 20,
+   "filled": 103,
+   "fy": "2023",
+   "pct": 105.1,
+   "seats": 98
+  },
+  {
+   "bodies": 21,
+   "filled": 103,
+   "fy": "2024",
+   "pct": 92.8,
+   "seats": 111
+  },
+  {
+   "bodies": 22,
+   "filled": 101,
+   "fy": "2025",
+   "pct": 87.1,
+   "seats": 116
+  }
+ ],
  "generated_by": "scripts/build_board_composition.py",
  "grain": "SEATS IN THE LISTING. One row is one named holder of one seat in one year. Not employees: a post somebody is hired into is on the town personnel report instead.",
  "last": "2025",
@@ -600,7 +646,7 @@
   },
   {
    "people": 4,
-   "post": "HISTORICAL COMMISSION (not less than 3 nor more than 7 members)"
+   "post": "HISTORICAL COMMISSION"
   },
   {
    "people": 4,
@@ -777,8 +823,9 @@
  ],
  "stats": [
   {
-   "label": "seats on COUNCIL ON AGING, the largest body in the town",
-   "value": "11"
+   "label": "of the seats the charters create are filled — 101 of 116",
+   "tone": "var(--series-cost)",
+   "value": "87%"
   },
   {
    "label": "of seats changing hands in a single year",

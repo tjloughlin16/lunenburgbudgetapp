@@ -59,6 +59,11 @@ SIZE = re.compile(r'\(\s*(?:no less than \d+ and no more than\s*)?(\d+)\s*member
 # 3 year term (not less than 3 nor more than 7 members)` -- and testing the names against
 # the ceiling reported a perfectly legal ten-member council as a failure. Where the
 # heading states a range the check is that the count falls INSIDE it.
+# The whole bracket, for stripping. RANGE above captures the two numbers; this removes
+# what it matched, closing paren and all.
+RANGE_FULL = re.compile(r'\(\s*(?:no|not)\s+less\s+than\s+\d+\s+(?:and|nor)\s+'
+                        r'(?:no|not)?\s*more\s+than\s+\d+[^)]*\)', re.I)
+
 RANGE = re.compile(r'\(?\s*(?:no|not)\s+less\s+than\s+(\d+)\s+(?:and|nor)\s+'
                    r'(?:no|not)?\s*more\s+than\s+(\d+)', re.I)
 TERM = re.compile(r'[-–]\s*(20\d\d)\s*$')
@@ -115,8 +120,8 @@ APPOINTED_NOTE = re.compile(r'[-–]\s*(appointed|resigned|retired|deceased|term
                             re.I)
 
 
-FIELDS = ['fy', 'page', 'order', 'post', 'kind', 'section', 'stated_members',
-          'person', 'vacancies', 'term_expires', 'note', 'size_check']
+FIELDS = ['fy', 'page', 'order', 'post', 'kind', 'section', 'section_basis',
+          'stated_members', 'person', 'vacancies', 'term_expires', 'note', 'size_check']
 
 
 WORDS = os.path.join(ROOT, 'sources', 'town-budget', 'ocr', 'words')
@@ -460,7 +465,11 @@ def post_name(t):
     called `()` -- so it strips repeatedly until nothing more comes off, and only closes a
     bracket that has something inside it.
     """
-    t = re.sub(r'\s+', ' ', TERMLEN.sub('', SIZE.sub('', t))).strip()
+    # STRIP THE RANGE TOO, or a body becomes two bodies. `HISTORICAL COMMISSION- (not
+    # less than 3 nor more than 7 members)` keeps its bracket where `HISTORICAL COMMISSION-
+    # (5 members)` loses it, so the same commission appears under two names, counts as two
+    # posts, and shows up in a later year as a committee the town has just created.
+    t = re.sub(r'\s+', ' ', TERMLEN.sub('', RANGE_FULL.sub('', SIZE.sub('', t)))).strip()
     for _ in range(4):
         before = t
         t = re.sub(r'[-–,;:\s]+$', '', t)          # trailing punctuation
@@ -656,7 +665,7 @@ def read_year(fy, path):
                 order += 1
                 rows.append({'fy': fy, 'page': page, 'order': order, 'post': post,
                              'section': section, 'kind': kind,
-                             'stated_members': stated if stated is not None else '',
+                             'stated_members': _says(stated),
                              'person': '', 'vacancies': n,
                              'term_expires': '', 'note': t.strip(), 'size_check': ''})
                 continue
@@ -673,7 +682,7 @@ def read_year(fy, path):
             seen += 1
             order += 1
             rows.append({'fy': fy, 'page': page, 'order': order, 'post': post,
-                         'section': section, 'kind': kind, 'stated_members': stated if stated is not None else '',
+                         'section': section, 'kind': kind, 'stated_members': _says(stated),
                          'person': re.sub(r'\s+', ' ', name), 'vacancies': 0,
                          'term_expires': term.group(1) if term else '', 'note': note,
                          'size_check': ''})
@@ -706,6 +715,29 @@ def main():
             continue
         rows += got
         problems += probs
+
+    # A POST DOES NOT CHANGE HOW IT IS FILLED BETWEEN ONE YEAR AND THE NEXT, and five
+    # years print the listing with no running header, so every row in them has a blank
+    # section. FY2019 came out with zero elected seats and zero appointed ones -- which a
+    # chart drew as a line falling to the floor, saying the town had no boards that year.
+    #
+    # The section is recoverable: `Board of Assessors` is elected in the nine years that
+    # DO carry a header, so it was elected in the year that does not. Filled from the
+    # post's own commonest section across every other year, and only where that is
+    # unambiguous. A post that appears in no headed year keeps its blank, and anything
+    # counting by section must skip it rather than call it zero.
+    seen_section = collections.defaultdict(collections.Counter)
+    for r in rows:
+        if r['section']:
+            seen_section[r['post']][r['section']] += 1
+    carried = 0
+    for r in rows:
+        if not r['section'] and seen_section.get(r['post']):
+            r['section'] = seen_section[r['post']].most_common(1)[0][0]
+            r['section_basis'] = 'carried from a year whose pages carry the header'
+            carried += 1
+    if carried:
+        print(f'  {carried} row(s) took their section from the same post in another year')
 
     by_fy = collections.Counter(r['fy'] for r in rows if not r['vacancies'])
     vac = sum(r['vacancies'] for r in rows)

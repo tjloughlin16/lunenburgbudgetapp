@@ -1,6 +1,10 @@
 # Central Purchasing: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+One line, for buying things centrally rather than department by department. It is the smallest group in the budget and the flattest.
 
 ## The department
 

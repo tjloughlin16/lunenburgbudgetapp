@@ -813,10 +813,24 @@ GROUPS = [
              'A pie of every filled post, ten largest named and the long tail grouped. It '
              'found a defect the table had hidden: a body called `MILES` with 27 members, '
              'which was the town PROFILE page read as a roster.'),
-            ('analyses/charts/board-composition-over-time.svg',
-             'Board seats by kind, ten years \u2014 two nearly flat lines', 1,
-             'Elected and appointed board seats over FY2016-FY2025. The shape IS the '
-             'finding: the establishment barely changes while the people in it turn over.'),
+            ('analyses/charts/board-composition-fill.svg',
+             'Are the chartered seats filled?', 1,
+             'Names printed against the seats each board\u2019s charter creates, FY2020 to '
+             'FY2025 \u2014 107% to 87%. It replaced a chart of seat COUNTS over time, '
+             'which TJ correctly objected to: a charter fixes the number, so a line that '
+             'moves there is measuring our reading rather than the town. Above 100% is a '
+             'mid-year replacement printed beside the person replaced.'),
+            ('analyses/charts/town-budgets-rates.svg',
+             'How fast each department grows, against the levy cap', 1,
+             'Compound annual change per department on one axis, with Proposition 2\u00bd '
+             'drawn on it. Ten of twelve bars extend past the cap. The cap limits the '
+             'LEVY, not the budget \u2014 it is drawn because it is the line every board '
+             'in this town argues against.'),
+            ('analyses/charts/town-budgets-all.svg',
+             'All twelve departments on one axis', 1,
+             'The same figures as the small multiples, on ONE dollar scale, which is the '
+             'point: the school line is most of the budget and ten departments share the '
+             'floor. Growth is read on separate scales; size is read here.'),
             ('analyses/charts/town-budgets-trends.svg',
              'Every department, year by year', 1,
              'Twelve small panels, one per department, each on its OWN vertical scale so '

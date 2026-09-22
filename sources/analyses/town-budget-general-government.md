@@ -1,6 +1,10 @@
 # General Government: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+The town’s own administration: the Select Board, the Town Manager, the Town Accountant, the Treasurer, the Tax Collector, the Assessors, the Town Clerk, elections and registration, Information Technology, legal expenses, and the Planning Board, Zoning Board of Appeals and Conservation Commission.
 
 ## The department
 

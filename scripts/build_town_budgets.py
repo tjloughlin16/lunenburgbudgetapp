@@ -342,7 +342,11 @@ def render_main(data, rows):
                              key=lambda x: -x['share'])[1:4]), [])))
     t.append('\n| department | FY%d | share of the budget |\n|---|---:|---:|\n' % ys[-1])
     for r in sorted((x for x in rows if x['last']), key=lambda x: -x['last']):
-        t.append('| %s | %s | %s |\n' % (r['name'], usd(r['last']), pct(r['share'])))
+        # LINKED, because a reader who wants to know what `Maturing Debt & Interest` IS
+        # should not have to find its page. TJ: *"I want the departments in the first table
+        # to be clickable to go to their page, that describes what each dept is."*
+        t.append('| [%s](/analysis/town-budget-%s) | %s | %s |\n'
+                 % (r['name'], r['slug'], usd(r['last']), pct(r['share'])))
     t.append('| **all twelve** | **%s** | **100%%** |\n' % usd(tot_last))
     t.append('\n%s is the largest department and %s the smallest — %s times the size, in '
              'the same budget.\n'
@@ -353,6 +357,12 @@ def render_main(data, rows):
              'across FY%d, FY%d and FY%d on its own vertical scale. Eleven rise; only '
              'Maturing Debt & Interest falls.](charts/town-budgets-trends.svg)\n'
              % (ys[0], ys[1], ys[2]))
+    t.append('\n![Twelve lines on one dollar axis across three years. The school line '
+             'runs far above the rest; ten departments are crowded near the floor.]'
+             '(charts/town-budgets-all.svg)\n')
+    t.append('\n![Horizontal bars, one per department, of compound annual growth, with a '
+             'dashed line at the %s the levy may rise by. Ten of the twelve bars extend '
+             'past it.](charts/town-budgets-rates.svg)\n' % pct(D.LEVY_CAP))
     t.append('\n## Which departments outgrow the levy cap\n')
     t.append('\n![Diverging bars, one per department, ranked by how much of the budget’s '
              'growth each accounts for. %s runs furthest right at %+.2f, ahead of Schools '
@@ -529,7 +539,11 @@ def conclusions_for_dept(data, row, moves):
 def render_dept(data, row, lines, moves):
     ys = data['detail_years']
     t = ['# %s: what the town votes for it\n' % row['name'],
-         '\nOne of twelve departments in the omnibus budget Town Meeting votes each spring.\n']
+         '\nOne of twelve departments in the omnibus budget Town Meeting votes each '
+         'spring. [All twelve together](/analysis/town-budgets).\n']
+    gloss = D.WHAT_IT_IS.get(row['slug'])
+    if gloss:
+        t.append('\n## What it is\n\n%s\n' % gloss)
     t.append('\n## The department\n\n| | %s |\n|---|%s\n'
              % (' | '.join('FY%d' % y for y in ys), '---:|' * len(ys)))
     t.append('| voted | %s |\n' % ' | '.join(
@@ -557,6 +571,26 @@ def render_dept(data, row, lines, moves):
                         'The lines above come to the same.' if not d
                         else 'The lines above come to %s, a difference of %+.2f.'
                              % (usd(got), d)))
+    if row['slug'] == 'maturing-debt' and moves:
+        prin = next((m for m in moves if m['label'].lower().startswith('principal')), None)
+        intr = next((m for m in moves if 'interest' in m['label'].lower()
+                     and 'temporary' not in m['label'].lower()), None)
+        if prin:
+            t.append('\n## Why it is falling\n\nDebt service drops when bonds finish and '
+                     'the town has not issued new ones to replace them. Almost all of the '
+                     'fall here is PRINCIPAL — the capital being repaid — rather than '
+                     'interest:\n\n| | FY%d | FY%d | change |\n|---|---:|---:|---:|\n'
+                     % (ys[0], ys[-1]))
+            for m in (prin, intr):
+                if m:
+                    t.append('| %s | %s | %s | %s%s |\n'
+                             % (m['label'], usd(m['first']), usd(m['last']),
+                                '+' if m['change'] >= 0 else '\u2212',
+                                usd(abs(m['change']))))
+            t.append('\nWhat this does NOT say is WHICH bonds finished. That is in the '
+                     'town’s debt repayment schedule, which the annual report prints and '
+                     'this project has not yet read properly — the FY2025 extract of it is '
+                     'the trust-fund table by mistake.\n')
     if moves:
         t.append('\n## What moved\n\nLines that appear in FY%d and FY%d under the same '
                  'printed label, biggest move first.\n\n| line | FY%d | FY%d | change |\n'

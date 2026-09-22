@@ -108,6 +108,31 @@ def load():
 
     sizes = collections.Counter(r['post'] for r in named)
 
+    # ARE THE CHARTERED SEATS FILLED? TJ, 22 September 2026: *"The boards have a charter
+    # that says how many seats are in them. why would that chagne?!"* -- which is the
+    # right objection to a chart of seat COUNTS over time. A charter fixes the number, so
+    # a line that moves is measuring our reading, not the town. What does move, and is
+    # worth asking, is whether the seats a charter creates have somebody in them.
+    #
+    # Only bodies that state a plain size count: a body constituted as a RANGE (`no less
+    # than 5 and no more than 22`) has no target to be short of. And a year can come out
+    # ABOVE 100%, which is not an overfull board -- it is a mid-year replacement printed
+    # beside the person replaced, so the figure is reported rather than capped.
+    fill = []
+    for y in years:
+        seats, filled, bodies = 0, 0, set()
+        for r in rows:
+            if r['fy'] != y or not r['stated_members'] or '-' in r['stated_members']:
+                continue
+            if r['post'] not in bodies:
+                bodies.add(r['post'])
+                seats += int(r['stated_members'])
+            if r['person'].strip():
+                filled += 1
+        if seats and len(bodies) >= 8:
+            fill.append(dict(fy=y, seats=seats, filled=filled, bodies=len(bodies),
+                             pct=round(filled / seats * 100, 1)))
+
     # WHAT THE DEPARTMENTS SAY ABOUT THEMSELVES. A separate quantity from the listing and
     # kept separate: the listing counts POSTS, this counts the people a department says it
     # employs. They may not be added together.
@@ -176,6 +201,7 @@ def load():
                 last=last, named=named, vacancies=vac, vac_how=vac_how, terms=terms,
                 ahead=ahead,
                 body_churn=body, body_big=big, staffing=staff, fire=fire_series,
+                fill=fill,
                 distinct=len(who), held=len(named), multi=multi, churn=churn,
                 ever=len(ever), served_all=served_all, sizes=sizes)
 

@@ -167,6 +167,9 @@ def chart_pull(d):
 # colour on every redraw. Three hues, four lightnesses each -- a categorical ramp of
 # twelve fully distinct hues would be unreadable at 2% of a circle, and the slices that
 # small are labelled in the table rather than on the chart anyway.
+# TWELVE STEPS FOR TWELVE DEPARTMENTS. There were eleven, and `SLICES[i % len(SLICES)]` gave the
+# twelfth department the first one's colour -- Central Purchasing wearing the school line's
+# navy in a legend ranked by size, which is the one place two identical swatches mislead.
 SLICES = ['#12325f', '#184f95', '#3f78bd', '#7ea6d8',
           '#8a5210', '#b86d15', '#e08214', '#eeb069',
           '#17563f', '#22795a', '#2a8c6a', '#6fb79c']
@@ -268,6 +271,18 @@ def chart_trends(d):
         def Y(v):
             return cy0 + 22 + gh - (v - lo) / (hi - lo) * gh
 
+        # WHAT THE CAP WOULD HAVE ALLOWED, faintly, from the same starting point. TJ:
+        # *"I think we need a prop 2.5% line on each chart subtle."* On a panel of DOLLARS
+        # a rate has no axis of its own, so the cap is drawn as the line this department
+        # would have traced had it grown at 2.5% a year from where it started. Where the
+        # real line sits above it, the department outgrew the cap, and by how much is the
+        # gap between them.
+        cap_vals = [vals[0] * (1 + d['levy_cap'] / 100.0) ** k for k in range(len(vals))]
+        cap_pts = ' '.join('%.1f,%.1f' % (X(k), Y(v)) for k, v in enumerate(cap_vals)
+                           if lo <= v <= hi)
+        if cap_pts.count(',') >= 2:
+            b.append(f'<polyline points="{cap_pts}" fill="none" stroke="{AXIS}" '
+                     f'stroke-width="1" stroke-dasharray="3 3" opacity="0.55"/>')
         up = vals[-1] >= vals[0]
         colour = VOTED if up else DOWN
         b.append(f'<text x="{cx0 + 6}" y="{cy0 + 10:.1f}" font-size="9.5" '
@@ -283,11 +298,132 @@ def chart_trends(d):
             b.append(f'<circle cx="{X(k):.1f}" cy="{Y(v):.1f}" r="2.8" fill="{colour}"/>')
     return svg(W, H, ''.join(b),
                'Every department, year by year',
-               'FY%d to FY%d. Each panel has its OWN vertical scale, so shape is '
-               'legible at any size; the rate is printed on it.' % (ys[0], ys[-1]))
+               'FY%d to FY%d, each panel on its OWN scale. The faint dashed line is what '
+               '%s%% a year \u2014 the levy cap \u2014 would have allowed.'
+               % (ys[0], ys[-1], d['levy_cap']))
+
+
+def chart_rates(d):
+    """Each department's growth RATE against Proposition 2 1/2, on one axis.
+
+    TJ: *"I want to see the growth RATE, esp to compare against Prop 2.5 ... its just not
+    in the chart."* The small multiples print each rate as text on its panel, which is
+    readable and is not comparable -- twelve numbers in twelve boxes ask the reader to do
+    the sorting. One axis with the cap drawn on it does the comparison for them, and the
+    only thing worth seeing is which side of that line a department falls on.
+
+    The cap is a REFERENCE, not a limit that was breached: Proposition 2 1/2 caps the
+    LEVY, and the budget is the levy plus state aid, local receipts and transfers. It is
+    drawn because every board in this town already argues against it.
+    """
+    rows = sorted([r for r in d['departments'] if r.get('rate') is not None],
+                  key=lambda r: -r['rate'])
+    cap = d['levy_cap']
+    W, H = 720, 360
+    top, label_w, bottom = 62, 210, 40
+    plot_h, plot_w = H - top - bottom, W - label_w - 40
+    lo = min(min(r['rate'] for r in rows), 0) * 1.1
+    hi = max(r['rate'] for r in rows) * 1.12
+    rh = plot_h / len(rows)
+    bh = min(16.0, rh * 0.66)
+
+    def X(v):
+        return label_w + plot_w * (v - lo) / (hi - lo)
+
+    b = [f'<line x1="{X(0):.1f}" y1="{top - 8:.1f}" x2="{X(0):.1f}" '
+         f'y2="{top + plot_h:.1f}" stroke="{AXIS}" stroke-width="1"/>']
+    for i, r in enumerate(rows):
+        cy = top + rh * (i + 0.5)
+        x0, x1 = X(min(0, r['rate'])), X(max(0, r['rate']))
+        over = r['rate'] > cap
+        b.append(f'<rect x="{x0:.1f}" y="{cy - bh / 2:.1f}" width="{max(x1 - x0, 0.8):.1f}" '
+                 f'height="{bh:.1f}" fill="{NODETAIL if over else DOWN}" rx="2"/>')
+        b.append(f'<text x="{label_w - 8}" y="{cy + 3.5:.1f}" font-size="10" '
+                 f'text-anchor="end" fill="{INK}">{esc(r["name"][:34])}</text>')
+        b.append(f'<text x="{x1 + 6:.1f}" y="{cy + 3.5:.1f}" font-size="9.5" '
+                 f'fill="{SECOND}">{r["rate"]:+.1f}%</text>')
+    xc = X(cap)
+    b.append(f'<line x1="{xc:.1f}" y1="{top - 14:.1f}" x2="{xc:.1f}" '
+             f'y2="{top + plot_h + 4:.1f}" stroke="{VOTED}" stroke-width="2" '
+             f'stroke-dasharray="5 3"/>')
+    b.append(f'<text x="{xc + 5:.1f}" y="{top - 18:.1f}" font-size="10" '
+             f'font-weight="700" fill="{VOTED}">Proposition 2\u00bd \u2014 {cap}%</text>')
+    return svg(W, H, ''.join(b),
+               'How fast each department grows, against the levy cap',
+               'Compound annual change, FY%d to FY%d. The cap limits the LEVY, not the '
+               'budget \u2014 it is drawn because every board here argues against it.'
+               % (d['detail_years'][0], d['detail_years'][-1]))
+
+
+def chart_all(d):
+    """All twelve on ONE axis, which is the point: the schools dwarf everything.
+
+    TJ: *"and a graph that puts them all together in one place. the schools will dwarf the
+    others."* They do, and that is worth one chart. The small multiples deliberately give
+    every department its own scale so the SHAPE of a $80,000 line is legible beside a $25M
+    one -- which is the right way to read growth and the wrong way to read size. Put them
+    on one axis and the honest relation returns: one line at $25M, one at $4.6M, and ten
+    crowded along the floor.
+
+    Both are true and neither is sufficient, so the page carries both and says which
+    question each answers.
+    """
+    rows = sorted([r for r in d['departments'] if r.get('series')],
+                  key=lambda r: -(r['last'] or 0))
+    ys = d['detail_years']
+    W, H = 720, 380
+    top, left, bottom, right = 58, 56, 40, 238
+    plot_h, plot_w = H - top - bottom, W - left - right
+    hi = nice_top(max(r['last'] for r in rows))
+
+    def cx(i):
+        return left + plot_w * i / max(len(ys) - 1, 1)
+
+    def Y(v):
+        return top + plot_h - (v / hi) * plot_h
+
+    b = []
+    for k in range(6):
+        v = hi * k / 5.0
+        y = Y(v)
+        b.append(f'<line x1="{left}" y1="{y:.1f}" x2="{left + plot_w}" y2="{y:.1f}" '
+                 f'stroke="{GRID}" stroke-width="1"/>')
+        b.append(f'<text x="{left - 6}" y="{y + 3.5:.1f}" font-size="9.5" '
+                 f'text-anchor="end" fill="{MUTED}">{usdk(v)}</text>')
+    for i, y in enumerate(ys):
+        b.append(f'<text x="{cx(i):.1f}" y="{top + plot_h + 15:.1f}" font-size="9.5" '
+                 f'text-anchor="middle" fill="{MUTED}">FY{y}</text>')
+    # A LEGEND, NOT LINE-END LABELS. Ten of the twelve lines finish within a few pixels of
+    # each other along the floor, so labelling each at its own line collided them into an
+    # unreadable stack that ran off the bottom of the panel. Ranked down the side, they are
+    # legible and they also say the thing the chart is for: the order of size.
+    lx = left + plot_w + 12
+    for i, r in enumerate(rows):
+        vals = [r['series'].get(str(y), r['series'].get(y)) for y in ys]
+        if not all(vals):
+            continue
+        colour = SLICES[i % len(SLICES)]
+        pts = ' '.join('%.1f,%.1f' % (cx(k), Y(v)) for k, v in enumerate(vals))
+        b.append(f'<polyline points="{pts}" fill="none" stroke="{colour}" '
+                 f'stroke-width="2"/>')
+        ly = top + 6 + i * 24.0
+        b.append(f'<rect x="{lx}" y="{ly - 8:.1f}" width="10" height="10" rx="2" '
+                 f'fill="{colour}"/>')
+        b.append(f'<text x="{lx + 15}" y="{ly:.1f}" font-size="9.5" fill="{INK}">'
+                 f'{esc(r["name"][:22])}</text>')
+        b.append(f'<text x="{W}" y="{ly:.1f}" font-size="9.5" text-anchor="end" '
+                 f'fill="{SECOND}">{usdk(vals[-1])}</text>')
+    b.append(f'<line x1="{left}" y1="{top + plot_h:.1f}" x2="{left + plot_w}" '
+             f'y2="{top + plot_h:.1f}" stroke="{AXIS}" stroke-width="1"/>')
+    return svg(W, H, ''.join(b),
+               'All twelve departments on one axis',
+               'The same figures, on one scale. One line is most of the budget and ten '
+               'share the floor.')
 
 
 CHARTS = [('town-budgets-share.svg', chart_share),
+          ('town-budgets-all.svg', chart_all),
+          ('town-budgets-rates.svg', chart_rates),
           ('town-budgets-trends.svg', chart_trends),
           ('town-budgets-total.svg', chart_total),
           ('town-budgets-pull.svg', chart_pull)]

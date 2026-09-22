@@ -75,31 +75,39 @@ def conclusions_for(d):
     last = d['last']
     churn = d['churn'][-1]
     turn = (churn['arrived'] + churn['left']) / 2.0 / d['held'] * 100
+    f0, f1 = d['fill'][0], d['fill'][-1]
     big = d['body_big'][0]
     small = d['body_big'][-1]
     return emit('board-composition', [
         conclusion(
-            id='seats-flat-people-not',
-            claim='The number of seats has barely moved in ten years. Who sits in them has',
-            lede='Two trends that look like one number until they are drawn: a stable '
-                 'establishment, and a population turning over inside it.',
-            detail='Elected seats and appointed board seats are both close to flat '
-                   'across FY%s to FY%s. Underneath that, %s people arrived and %s left in '
-                   'the last year alone, out of %s posts.'
-                   % (d['years'][0], last, num(churn['arrived']), num(churn['left']),
-                      num(d['held'])),
-            figures={'in': figure(churn['arrived'], num(churn['arrived']),
-                                  'arrived in a single year'),
-                     'out': figure(churn['left'], num(churn['left']), 'left'),
-                     'posts': figure(d['held'], num(d['held']), 'posts in total')},
-            figure='in',
+            id='harder-to-fill',
+            claim='The boards are getting harder to fill: full six years ago, short today',
+            lede='A charter fixes how many seats a board has. Whether anybody is in them '
+                 'is the part that moves.',
+            detail='Across the %s bodies that state a plain membership, %s names are '
+                   'printed against %s chartered seats in FY%s — %s. Six years earlier the '
+                   'same measure ran at %s, with more names printed than seats because '
+                   'mid-year replacements are listed beside the people they replaced.'
+                   % (num(f1['bodies']), num(f1['filled']), num(f1['seats']), f1['fy'],
+                      pct(f1['pct'], 0), pct(f0['pct'], 0)),
+            figures={'now': figure(f1['pct'], pct(f1['pct'], 0),
+                                   'of chartered seats filled now'),
+                     'then': figure(f0['pct'], pct(f0['pct'], 0),
+                                    'filled six years earlier'),
+                     'names': figure(f1['filled'], num(f1['filled']), 'names printed'),
+                     'seats': figure(f1['seats'], num(f1['seats']), 'chartered seats'),
+                     'bodies': figure(f1['bodies'], num(f1['bodies']),
+                                      'bodies stating a plain size')},
+            figure='now',
             kind='measured',
-            bearing='sizes',
-            basis='Posts by kind for each of the ten years, against names matched between '
-                  'consecutive years.',
-            not_shown='Whether a seat sat empty between one holder and the next.',
-            so_what='The town is not adding committees. It is refilling the ones it has.',
-            allow=('FY%s' % d['years'][0], 'FY%s' % last),
+            bearing='lever',
+            basis='Seats stated in each body’s own heading against the names printed '
+                  'beneath it, over bodies whose membership is a number rather than a '
+                  'range.',
+            not_shown='Whether a seat was filled later in the year. The listing is a '
+                      'snapshot taken once.',
+            so_what='Empty chairs are the constraint on what the boards can do, not the seat count.',
+            allow=('FY%s' % f1['fy'],),
         ),
         conclusion(
             id='churn-is-uneven',
@@ -168,9 +176,21 @@ def render(d):
     t.append('\n%s is the biggest body in the town at %s seats. %s posts have a single '
              'holder.\n' % (ranked[0][0], num(ranked[0][1]), num(ones)))
 
-    t.append('\n## The seats barely move. The people in them do\n')
-    t.append('\n![Two lines over ten fiscal years — elected seats and appointed board '
-             'seats. Both are close to flat.](charts/board-composition-over-time.svg)\n')
+    f0, f1 = d['fill'][0], d['fill'][-1]
+    t.append('\n## Are the chartered seats filled?\n')
+    t.append('\n![Names printed against the seats the charters create, FY%s to FY%s. The '
+             'line starts above the every-seat mark and ends at %s.]'
+             '(charts/board-composition-fill.svg)\n'
+             % (f0['fy'], f1['fy'], pct(f1['pct'], 0)))
+    t.append('\n| fiscal year | chartered seats | names printed | filled |\n'
+             '|---|---:|---:|---:|\n')
+    for f in d['fill']:
+        t.append('| FY%s | %s | %s | %s |\n'
+                 % (f['fy'], num(f['seats']), num(f['filled']), pct(f['pct'], 0)))
+    t.append('\nA board’s charter fixes how many seats it has, so the seat COUNT is not a '
+             'trend — it is the charter. Whether the seats have anybody in them is the part '
+             'that moves, and it has moved a long way. Above 100%% is not an overfull '
+             'board: it is a mid-year replacement printed beside the person replaced.\n')
     t.append('\n| | %s |\n|---|%s\n'
              % (' | '.join('FY%s' % c['fy'] for c in d['churn']),
                 '---:|' * len(d['churn'])))
@@ -181,11 +201,14 @@ def render(d):
              'of them.\n' % (num(len(d['served_all'])), num(d['ever'])))
 
     t.append('\n## Which boards change most\n\nSeats changing hands each year, over bodies '
-             'of three seats or more that appear in both years of at least two consecutive '
-             'pairs. A one-seat post whose holder changed reads as a hundred per cent and '
-             'is one person leaving a job, so it is left out. The median across the %s '
-             'bodies here is %s.\n\n'
-             '| board or committee | seats | year pairs | churn |\n|---|---:|---:|---:|\n'
+             'of three seats or more. `years compared` is how many times the body appears '
+             'in two consecutive years and can therefore be differenced — the listing is '
+             'readable for ten years but not consecutively in all of them, so a body with '
+             '5 has been measured five times and one with 2 twice. A one-seat post whose '
+             'holder changed reads as a hundred per cent and is one person leaving a job, '
+             'so it is left out. The median across the %s bodies here is %s.\n\n'
+             '| board or committee | seats | years compared | seats changing hands |\n'
+             '|---|---:|---:|---:|\n'
              % (num(len(d['body_big'])), pct(_med(d), 0)))
     for b in d['body_big']:
         t.append('| %s | %s | %s | %s |\n'
@@ -232,14 +255,16 @@ def payload(d):
               'Not employees: a post somebody is hired into is on the town personnel '
               'report instead.',
         stats=[
-            dict(value=num(ranked[0][1]),
-                 label='seats on %s, the largest body in the town' % ranked[0][0]),
+            dict(value=pct(d['fill'][-1]['pct'], 0), tone='var(--series-cost)',
+                 label='of the seats the charters create are filled — %s of %s'
+                       % (num(d['fill'][-1]['filled']), num(d['fill'][-1]['seats']))),
             dict(value=pct(turn, 0),
                  label='of seats changing hands in a single year'),
             dict(value='%s of %s' % (num(len(d['multi'])), num(d['distinct'])),
                  label='people holding more than one seat'),
         ],
         years=years_of(d), last=last,
+        fill=d['fill'],
         counts=[dict(fy=y, **{k: d['per'][(y, k)] for k, _l, _g in KINDS})
                 for y in d['years']],
         churn=d['churn'], body_churn=d['body_big'],

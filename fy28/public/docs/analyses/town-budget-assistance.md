@@ -1,6 +1,10 @@
 # Assistance: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+The Council on Aging and Veterans’ services — veterans’ benefits, the veterans’ agent, the registrar of veterans’ graves and Memorial Day. Each has its own printed subtotal.
 
 ## The department
 

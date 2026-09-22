@@ -57,7 +57,7 @@ The omnibus budget in an annual report is the year AHEAD. Detail reconciles for 
 | Employee benefits & reserves | FY2023–FY2025 | $4,293,122 | group totals tie to the printed grand total |
 | General Government | FY2023–FY2025 | $2,177,963 | group totals tie to the printed grand total |
 | Central Purchasing | FY2023–FY2025 | $80,300 | group totals tie to the printed grand total |
-| Protection | FY2023–FY2025 | $4,643,717 | group totals tie to the printed grand total |
+| Protection of persons & property | FY2023–FY2025 | $4,643,717 | group totals tie to the printed grand total |
 | Health & Sanitation | FY2023–FY2025 | $117,818 | group totals tie to the printed grand total |
 | Public Works | FY2023–FY2025 | $2,225,277 | group totals tie to the printed grand total |
 | Facilities & Grounds | FY2023–FY2025 | $1,022,711 | group totals tie to the printed grand total |
@@ -70,7 +70,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 
 ## Posts and boards
 
-`town-personnel.csv`, FY2016–FY2025, 2,118 rows across 134 distinct posts. Checks: 492 checked, 299 check failed, 1327 no check — and nothing may be counted without splitting on that column.
+`town-personnel.csv`, FY2016–FY2025, 2,118 rows across 132 distinct posts. Checks: 492 checked, 299 check failed, 1327 no check — and nothing may be counted without splitting on that column.
 
 | board, committee or post | years listed | how it is filled | states its size |
 |---|---|---|---|
@@ -111,7 +111,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | COUNCIL ON AGING | FY2016–FY2020, FY2024–FY2025 | appointed board seat | 11 |
 | COUNCIL ON AGING DIRECTOR | FY2016–FY2025 | appointed officer | no |
 | COUNCIL ON AGING- - (11 members) | FY2021–FY2023 | appointed board seat | no |
-| CULTURAL COUNCIL | FY2016–FY2019, FY2021–FY2025 | appointed board seat | (5, 22) |
+| CULTURAL COUNCIL | FY2016–FY2019, FY2021–FY2025 | appointed board seat | 5-22 |
 | Cemetery Commission | FY2016–FY2024 | elected board seat | 3 |
 | Constable | FY2016–FY2024 | elected board seat | no |
 | DAM KEEPER | FY2016–FY2025 | appointed officer | no |
@@ -133,9 +133,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | GREEN COMMUNITY TASK FORCE | FY2016–FY2021 | appointed officer | 5 |
 | HAZARDOUS WASTE COORDINATOR | FY2016–FY2025 | appointed officer | no |
 | HEARINGS OFFICER | FY2016–FY2025 | appointed officer | no |
-| HISTORICAL COMMISSION | FY2016–FY2019 | appointed board seat | no |
-| HISTORICAL COMMISSION (not less than 3 nor more than 7 members) | FY2024–FY2025 | appointed board seat | (3, 7) |
-| HISTORICAL COMMISSION- (not less than 3 nor more than 7 members) | FY2020–FY2023 | appointed board seat | (3, 7) |
+| HISTORICAL COMMISSION | FY2016–FY2025 | appointed board seat | 3-7 |
 | HOUSING AUTHORITY | FY2025 | elected board seat | 5 |
 | Housing Authority | FY2016–FY2024 | elected board seat | 5 |
 | INSPECTOR OF PLUMBING & GAS FITTINGS | FY2016–FY2018, FY2020–FY2021 | appointed officer | no |
@@ -160,7 +158,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | MONTACHUSETT JOINT TRANSPORTATION COMMITTEE | FY2016–FY2025 | appointed officer | no |
 | MONTACHUSETT METROPOLITAN PLANNING ORGANIZATION | FY2020–FY2025 | appointed officer | no |
 | MONTACHUSETT REGIONAL PLANNING COMMISSION | FY2016–FY2023 | appointed officer | no |
-| MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL COMMITTEE | FY2016–FY2019 |  officer | no |
+| MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL COMMITTEE | FY2016–FY2019 | appointed officer | no |
 | MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL REPRESENTATIVE | FY2020–FY2023 | appointed board seat | no |
 | Moderator | FY2017–FY2024 | elected board seat | no |
 | OCAL CENSUS LIAISON | FY2017 | appointed officer | no |

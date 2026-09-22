@@ -1,6 +1,10 @@
 # Public Works: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+The Highway division and what it runs: labour and overtime, general highway maintenance, the town garage, traffic signs, snow removal, and vehicle maintenance for the Highway, Police and Fire fleets. The Park and Cemetery departments and tree removal sit here too.
 
 ## The department
 

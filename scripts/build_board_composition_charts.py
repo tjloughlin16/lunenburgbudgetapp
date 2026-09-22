@@ -122,51 +122,61 @@ def _lines(b, series, xs, Y, cx, colours, labels):
                  f'font-size="10.5" fill="{colour}">{esc(labels[key])}</text>')
 
 
-def chart_over_time(d):
-    """Three kinds of post, ten years, one line each."""
-    years = d['years']
-    counts = {c['fy']: c for c in d['counts']}
-    # ONLY THE BOARD SEATS. Officers -- the posts somebody is hired into -- moved to the
-    # town personnel report when TJ split the two, and drawing them here would put paid
-    # staff on a chart about volunteers.
-    series = {k: [counts[y][k] for y in years]
-              for k in ('elected board seat', 'appointed board seat')}
-    W, H = 720, 320
-    top, left, bottom, right = 58, 46, 42, 176
+def chart_fill(d):
+    """Names printed against the seats the charters create.
+
+    NOT a chart of seat COUNTS. TJ: *"The boards have a charter that says how many seats
+    are in them. why would that chagne?!"* -- exactly, and the first version of this panel
+    drew those counts over ten years and called their flatness a finding. A charter fixes
+    the number; a line that moves is measuring our reading of the listing, not the town.
+
+    What the town can change, and has, is whether those seats have anybody in them. Above
+    100% is not an overfull board: it is a mid-year replacement printed beside the person
+    replaced, so the figure is drawn as it falls rather than capped, with the line marked.
+    """
+    fill = d['fill']
+    W, H = 720, 300
+    top, left, bottom, right = 58, 52, 42, 92
     plot_h, plot_w = H - top - bottom, W - left - right
-    hi = max(max(v) for v in series.values()) * 1.15
+    hi = max(max(f['pct'] for f in fill) * 1.12, 110)
 
     def cx(i):
-        return left + (plot_w * i / max(len(years) - 1, 1))
+        return left + (plot_w * i / max(len(fill) - 1, 1))
 
     def Y(v):
         return top + plot_h - (v / hi) * plot_h
 
     b = []
-    for i in range(5):
-        v = hi * i / 4.0
+    for v in (0, 25, 50, 75, 100):
         y = Y(v)
         b.append(f'<line x1="{left}" y1="{y:.1f}" x2="{left + plot_w}" y2="{y:.1f}" '
                  f'stroke="{GRID}" stroke-width="1"/>')
         b.append(f'<text x="{left - 6}" y="{y + 3.5:.1f}" font-size="9.5" '
-                 f'text-anchor="end" fill="{MUTED}">{v:.0f}</text>')
-    for i, y in enumerate(years):
+                 f'text-anchor="end" fill="{MUTED}">{v}%</text>')
+    b.append(f'<line x1="{left}" y1="{Y(100):.1f}" x2="{left + plot_w}" y2="{Y(100):.1f}" '
+             f'stroke="{AXIS}" stroke-width="1.5" stroke-dasharray="4 3"/>')
+    b.append(f'<text x="{left + plot_w + 6}" y="{Y(100) + 3.5:.1f}" font-size="9.5" '
+             f'fill="{SECOND}">every seat</text>')
+    pts = ' '.join('%.1f,%.1f' % (cx(i), Y(f['pct'])) for i, f in enumerate(fill))
+    b.append(f'<polyline points="{pts}" fill="none" stroke="{ELECTED}" stroke-width="2.5"/>')
+    for i, f in enumerate(fill):
+        colour = ELECTED if f['pct'] >= 100 else APPOINTED
+        b.append(f'<circle cx="{cx(i):.1f}" cy="{Y(f["pct"]):.1f}" r="3.6" fill="{colour}"/>')
         b.append(f'<text x="{cx(i):.1f}" y="{top + plot_h + 15:.1f}" font-size="9" '
-                 f'text-anchor="middle" fill="{MUTED}">{y[2:]}</text>')
-    _lines(b, series, years, Y, cx, [ELECTED, APPOINTED],
-           {'elected board seat': 'elected seats',
-            'appointed board seat': 'appointed seats'})
-    b.append(f'<line x1="{left}" y1="{top + plot_h:.1f}" x2="{left + plot_w}" '
-             f'y2="{top + plot_h:.1f}" stroke="{AXIS}" stroke-width="1"/>')
-    churn = d['churn'][-1]
-    return svg(W, H, ''.join(b), 'The seats barely move. The people in them do',
-               'Posts by kind, FY%s to FY%s — three nearly flat lines, while %d '
-               'people arrived and %d left in the last year alone.'
-               % (years[0], years[-1], churn['arrived'], churn['left']))
+                 f'text-anchor="middle" fill="{MUTED}">{f["fy"][2:]}</text>')
+    last = fill[-1]
+    b.append(f'<text x="{cx(len(fill) - 1):.1f}" y="{Y(last["pct"]) - 9:.1f}" '
+             f'font-size="10.5" font-weight="700" text-anchor="middle" '
+             f'fill="{APPOINTED}">{last["pct"]:.0f}%</text>')
+    return svg(W, H, ''.join(b),
+               'Are the chartered seats filled?',
+               'Names printed against the seats the charters create, over the %d bodies '
+               'that state a plain size. Above 100%% is a mid-year replacement printed '
+               'beside the person replaced.' % last['bodies'])
 
 
 CHARTS = [('board-composition-where.svg', chart_where),
-          ('board-composition-over-time.svg', chart_over_time)]
+          ('board-composition-fill.svg', chart_fill)]
 
 
 def main():

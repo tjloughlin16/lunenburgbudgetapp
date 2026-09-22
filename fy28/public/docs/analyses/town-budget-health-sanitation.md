@@ -1,6 +1,10 @@
 # Health & Sanitation: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+The Board of Health and the services the town buys in with it — the Nashoba Associated Boards of Health, nursing, and mental health. Under a fifth of one per cent of the budget.
 
 ## The department
 

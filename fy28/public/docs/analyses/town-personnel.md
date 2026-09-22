@@ -60,7 +60,7 @@ Posts that state no membership and no term: the directors, chiefs, inspectors an
 
 | | FY2016 | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| appointed officers | 115 | 87 | 98 | 0 | 61 | 66 | 59 | 55 | 58 | 60 |
+| appointed officers | 115 | 87 | 98 | 81 | 61 | 66 | 59 | 55 | 58 | 60 |
 
 ## What this cannot show
 

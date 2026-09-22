@@ -1,6 +1,10 @@
 # Library: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+One line: the Lunenburg Public Library.
 
 ## The department
 

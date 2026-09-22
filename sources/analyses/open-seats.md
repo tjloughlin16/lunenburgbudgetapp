@@ -50,8 +50,8 @@ Filled seats, by the year the term runs out. A seat with a term ending is a seat
 | COUNCIL ON AGING | Diane Nowd | appointed — by the Select Board |
 | FINANCE COMMITTEE | Chris Menard | appointed — by the Select Board |
 | FINANCE COMMITTEE | Jay Simeone | appointed — by the Select Board |
-| HISTORICAL COMMISSION (not less than 3 nor more than 7 members) | Kevin Boussom | appointed — by the Select Board |
-| HISTORICAL COMMISSION (not less than 3 nor more than 7 members) | Jennifer Sanderson | appointed — by the Select Board |
+| HISTORICAL COMMISSION | Kevin Boussom | appointed — by the Select Board |
+| HISTORICAL COMMISSION | Jennifer Sanderson | appointed — by the Select Board |
 | HOUSING AUTHORITY | Deborah A.H. Christen- Governor's Appointee | elected — annual town election, third Saturday in May |
 | HOUSING AUTHORITY | Nicole Waters | elected — annual town election, third Saturday in May |
 | LIBRARY TRUSTEES | Harry Kubetz | elected — annual town election, third Saturday in May |
@@ -98,7 +98,7 @@ Filled seats, by the year the term runs out. A seat with a term ending is a seat
 | FINANCE COMMITTEE | Thomas Gray | appointed — by the Select Board |
 | FINANCE COMMITTEE | Mike Rupp | appointed — by the Select Board |
 | FINANCE COMMITTEE | Ana Lockwood | appointed — by the Select Board |
-| HISTORICAL COMMISSION (not less than 3 nor more than 7 members) | Richard McGrath | appointed — by the Select Board |
+| HISTORICAL COMMISSION | Richard McGrath | appointed — by the Select Board |
 | LIBRARY TRUSTEES | Laura Boussom | elected — annual town election, third Saturday in May |
 | LIBRARY TRUSTEES | Maia Wentrup | elected — annual town election, third Saturday in May |
 | LIBRARY TRUSTEES | Robin Venezia | elected — annual town election, third Saturday in May |
@@ -135,7 +135,7 @@ Filled seats, by the year the term runs out. A seat with a term ending is a seat
 | CULTURAL COUNCIL | Tiffany Warren | appointed — by the Select Board |
 | FINANCE COMMITTEE | Jean Russell | appointed — by the Select Board |
 | FINANCE COMMITTEE | Tanya Dall | appointed — by the Select Board |
-| HISTORICAL COMMISSION (not less than 3 nor more than 7 members) | C. William Lakso | appointed — by the Select Board |
+| HISTORICAL COMMISSION | C. William Lakso | appointed — by the Select Board |
 | LIBRARY TRUSTEES | David Niose | elected — annual town election, third Saturday in May |
 | LIBRARY TRUSTEES | Stephanie Trudel | elected — annual town election, third Saturday in May |
 | PARKS COMMISSION | Marianne Mascari | elected — annual town election, third Saturday in May |

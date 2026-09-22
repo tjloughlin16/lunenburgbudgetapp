@@ -1,6 +1,10 @@
 # Facilities & Grounds: what the town votes for it
 
-One of twelve departments in the omnibus budget Town Meeting votes each spring.
+One of twelve departments in the omnibus budget Town Meeting votes each spring. [All twelve together](/analysis/town-budgets).
+
+## What it is
+
+The buildings the town owns and the grounds around them, including the Park department’s grounds and utilities for the library.
 
 ## The department
 
