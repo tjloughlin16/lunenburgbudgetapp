@@ -142,8 +142,16 @@ def _superseded():
     p = os.path.join(ROOT, 'sources', 'data', 'town-personnel.csv')
     if os.path.exists(p):
         posts = sum(1 for _ in open(p, encoding='utf-8')) - 1
+    trust = count('report_trust_funds')
+    trust_ok = count('report_trust_funds', "WHERE status='checked'")
+    stab_rows = stab_years = 0
+    p = os.path.join(ROOT, 'sources', 'data', 'stabilization-balances.csv')
+    if os.path.exists(p):
+        import csv as _csv
+        rs = list(_csv.DictReader(open(p, encoding='utf-8')))
+        stab_rows, stab_years = len(rs), len({r['fy'] for r in rs})
     return (
-        '\n**Counted above and NOT really work.** Two of the generic table extracts inside '
+        '\n**Counted above and NOT really work.** Three of the generic table extracts inside '
         '`Reconciling the annual-report tables` should not be read as a backlog anybody '
         'will clear:\n\n'
         '- **`report_officials`, %d rows, none checked.** It is not the officials listing. '
@@ -157,10 +165,18 @@ def _superseded():
         'NEITHER is published and both are honest about why: the town stopped printing the '
         'department beside each name after FY2016, so the list cannot be split by '
         'department, and the two-column layout loses a third to a half of the given names. '
-        'Registered in `money-gaps.csv` rather than shown.\n\n'
+        'Registered in `money-gaps.csv` rather than shown.\n'
+        '- **`report_trust_funds`, %d rows, %d checked** — and the part of it anybody asks '
+        'about is already read. The STABILIZATION funds are in '
+        '`stabilization-balances.csv`: %d fund-years across %d years, every one proven '
+        'against an identity the table states about itself, published at '
+        '`/analysis/stabilization-funds`. What is genuinely unreconciled is the REST of '
+        'the trust table — the cemetery, library and scholarship funds — so this row is a '
+        'real backlog, but it is not the stabilization backlog it reads as.\n\n'
         'Left in the count deliberately rather than quietly subtracted — a number that '
         'moves because somebody changed what it counts is worse than one that is too big '
-        'and says so.\n' % (off, off_junk, posts, wages, ours))
+        'and says so.\n'
+        % (off, off_junk, posts, wages, ours, trust, trust_ok, stab_rows, stab_years))
 
 
 def main():

@@ -35,6 +35,48 @@ enrollment, circuit breaker, AP coursework; affinity tags for the 273 archive do
 
 ---
 
+## THE ANNUAL-REPORT ROADMAP — set 22 September 2026
+
+Everything below came out of one stretch of work on the annual reports, and every item is
+here because it was FOUND rather than planned. The rule that produced them, TJ's:
+
+> *"we HAVE to assume every department and every annual report contains the same
+> information. That's the baseline. no more assuming the data isnt there. it IS there. it
+> has been every single time. we just haven't found it."*
+
+He was right every time, so the ordering principle is: chase the things the town has
+already printed before chasing anything it has not.
+
+**The live gap register is `notes/generated/STAFFING-COVERAGE.md`** — every department the
+town lists on its own contents page, every year, and for each blank which KIND of blank it
+is. That file is the work list; this is the order.
+
+| # | item | why it is worth it | where it stands |
+|---|---|---|---|
+| A1 | **FY2022 schools reads 285 against DESE's 245** | The other two DESE years agree within 2.5% and 4.7%. A 16% gap in one year has the same signature as the FY2024 Turkey Hill fault — one school's roster printed twice in the same book — which was found and fixed the same day. | open, and the cheapest item here: one page to look at |
+| A2 | **120 department-years where a report discusses its own staff and states no number** | The richest seam left. `staffing-by-section.csv` marks each one `mentions staff, states no number`, so they are enumerated rather than hunted. Six shapes of the same statement have turned up so far and each new one lit up several years at once. | open, enumerated |
+| A3 | **The FY2011–FY2016 wage list, with its department column** | Six years of a real town-wide headcount BY DEPARTMENT — the quantity every caveat on `/analysis/town-personnel` says does not exist. The department stopped being printed after FY2016, so this is the only window there will ever be. | open; `extract_gross_wages.py` reads the list, the early years' department tag is not parsed |
+| A4 | **FY2023's list of every position filled that year** | `Police Officers (3), Reserve Police Officer, Facilities Director (2), Heavy Equipment Operators (4)…` — the only TURNOVER evidence in the whole archive, and TJ asked for turnover months ago. One paragraph in the Town Manager's report. | open, located, unextracted |
+| A5 | **The Assessors' named roster, FY2011–FY2015** | Takes the office from two years to seven, and shows it going from REGIONAL (Regional Resource Group, Harald Scheid) to in-house — a real change in how the town is run, not just a count. | open, located |
+| A6 | **An outsourcing report** | What the town BUYS rather than staffs, which is why four budget groups employ nobody. Already found: solid waste contracted (Casella, then E.L. Harvey from 1 July 2021), health via the Nashoba Associated Boards of Health, assessing regional until about FY2016, Monty Tech. | queued by TJ, end of the line |
+| A7 | **The six closeout charts** | `fy26-closeout` and `fy26-closeout-town` are the only analyses whose charts are still images, and they cannot convert because those two reports emit NO payload. It is a rule 7d conversion, not a chart swap. | blocked on the payload |
+| A8 | **Dark-mode steps for the chart palette** | The categorical palette passes every check against the light surface and three of its twelve fall outside the band against the dark one. The honest fix is a second set of steps chosen for that surface, not a flip of these. | open, recorded in the palette comment |
+| A9 | **The rest of the trust table** | The stabilization funds inside it ARE read and published; the cemetery, library and scholarship funds are not. See the backlog's note — this is a real backlog that reads as a bigger one than it is. | open |
+
+**Two things that are NOT on this list, deliberately.**
+
+*A department ranking by gross wages.* TJ asked for it and the answer is that we cannot
+build it honestly yet: the town stopped printing the department after FY2016, and joining
+the names to the rosters matches a third to a half of them, so any ranking would rank our
+reading of the scan rather than the town's payroll. TJ: *"if we dont have the data, we
+shouldn't show partial data. that may be misleading."* Registered in `money-gaps.csv`
+instead, with the document that would close it.
+
+*Facilities & Grounds' headcount.* Not missing — the department files no annual report at
+all since Article 7 of the 2022 Annual Town Meeting created it, and holds no post in the
+appointed-officials listing. Nothing to extract; it is a records request or nothing.
+
+
 ## THE ORDER, RESET BY TJ ON 11 SEPTEMBER 2026
 
 This supersedes the 8 September order below, which is kept because its reasoning about
