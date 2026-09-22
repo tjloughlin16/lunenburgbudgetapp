@@ -364,6 +364,29 @@ def conclusions_for(d):
             allow=('FY%s' % d['fire'][0]['fy'], 'FY%s' % d['fire'][-1]['fy']),
         ),
         conclusion(
+            id='seats-flat-people-not',
+            claim='The number of seats has barely moved in ten years. Who sits in them has',
+            lede='Two trends that look like one number until they are drawn: a stable '
+                 'establishment, and a population turning over inside it.',
+            detail='Elected seats, appointed seats and appointed officers are all close to '
+                   'flat across FY%s to FY%s. Underneath that, %s people arrived and %s '
+                   'left in the last year alone, out of %s posts.'
+                   % (d['years'][0], last, num(churn['arrived']), num(churn['left']),
+                      num(d['held'])),
+            figures={'in': figure(churn['arrived'], num(churn['arrived']),
+                                  'arrived in a single year'),
+                     'out': figure(churn['left'], num(churn['left']), 'left'),
+                     'posts': figure(d['held'], num(d['held']), 'posts in total')},
+            figure='in',
+            kind='measured',
+            bearing='sizes',
+            basis='Posts by kind for each of the ten years, against names matched between '
+                  'consecutive years.',
+            not_shown='Whether a seat sat empty between one holder and the next.',
+            so_what='The town is not adding committees. It is refilling the ones it has.',
+            allow=('FY%s' % d['years'][0], 'FY%s' % last),
+        ),
+        conclusion(
             id='not-a-clique',
             claim='It is not a small group wearing many hats — almost everyone holds one seat',
             lede='A common assumption about small-town boards, and this listing does not '
@@ -394,6 +417,18 @@ def render(d):
          'prints, FY%s to FY%s — where the empty ones are, when they come open, and how '
          'often they change hands.\n' % (years[0], last)]
 
+    ranked = sorted(d['sizes'].items(), key=lambda a: (-a[1], a[0]))
+    big = ranked[0] if ranked else None
+    ones = sum(1 for _p, n in ranked if n == 1)
+    if big:
+        t.append('\n## Where the seats are\n')
+        t.append('\n![A pie of every filled post in FY%s by body. %s is the largest at '
+                 '%s people; the ten largest are named and %s smaller bodies and '
+                 'single-holder posts are grouped together.]'
+                 '(charts/town-personnel-where.svg)\n'
+                 % (last, big[0], num(big[1]), num(max(len(ranked) - 10, 0))))
+        t.append('\n%s is the biggest body in the town at %s seats. %s posts have a '
+                 'single holder.\n' % (big[0], num(big[1]), num(ones)))
     t.append('\n## Where you could serve\n\nSeats the town printed as empty in FY%s.\n\n'
              '| board or committee | empty seats |\n|---|---:|\n' % last)
     for post, n in sorted(d['vacancies'].items(), key=lambda a: (-a[1], a[0])):
@@ -405,6 +440,10 @@ def render(d):
     for y in sorted(d['terms']):
         t.append('| %s | %s |\n' % (y, num(d['terms'][y])))
 
+    t.append('\n## The seats barely move. The people in them do\n')
+    t.append('\n![Three lines over ten fiscal years — elected seats, appointed seats and '
+             'appointed officers. All three are close to flat.]'
+             '(charts/town-personnel-over-time.svg)\n')
     t.append('\n## How often seats change hands\n\n| | %s |\n|---|%s\n'
              % (' | '.join('FY%s' % c['fy'] for c in d['churn']),
                 '---:|' * len(d['churn'])))
@@ -450,6 +489,9 @@ def render(d):
                  'Not the same quantity as the listing above, and not addable to it: this '
                  'is what a department says it EMPLOYS, written in the prose of its own '
                  'report. No heading names it in any year.\n')
+        t.append('\n![The Fire Department’s career firefighters as a rising line against '
+                 'the on-call roll drawn as a band, because the town states it as a range. '
+                 'The two move in opposite directions.](charts/town-personnel-fire.svg)\n')
         t.append('\n### The Fire Department, year by year\n\n'
                  '| fiscal year | career | on call | page |\n|---|---:|---:|---:|\n')
         for r in d['fire']:

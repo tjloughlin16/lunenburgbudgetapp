@@ -70,7 +70,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 
 ## Posts and boards
 
-`town-personnel.csv`, FY2016–FY2025, 2,420 rows across 136 distinct posts. Checks: 492 checked, 307 check failed, 1621 no check — and nothing may be counted without splitting on that column.
+`town-personnel.csv`, FY2016–FY2025, 2,118 rows across 134 distinct posts. Checks: 492 checked, 299 check failed, 1327 no check — and nothing may be counted without splitting on that column.
 
 | board, committee or post | years listed | how it is filled | states its size |
 |---|---|---|---|
@@ -117,7 +117,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | DAM KEEPER | FY2016–FY2025 | appointed officer | no |
 | DPW DIRECTOR | FY2022–FY2025 | appointed officer | no |
 | ECONOMIC DEVELOPMENT COMMITTEE | FY2021–FY2025 | appointed board seat | no |
-| ELECTION OFFICERS | FY2017–FY2019 | appointed officer | no |
+| ELECTION OFFICERS | FY2018–FY2019 | appointed officer | no |
 | ELECTION WORKERS | FY2020–FY2022, FY2024–FY2025 | appointed officer | no |
 | Ex Officio Members | FY2022–FY2025 | appointed officer | no |
 | Ex Officio Members- Tom Alonzo-Select Board | FY2021 | appointed officer | no |
@@ -175,9 +175,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | Park Commission | FY2016–FY2018, FY2020 | elected board seat | 5 |
 | Parks Commission | FY2021–FY2024 | elected board seat | 5 |
 | Planning Board | FY2016–FY2018, FY2020–FY2024 | elected board seat | 5 |
-| RECREATION DIRECTOR | FY2022–FY2025 | appointed officer | no |
-| ROAD MILES- ABOUT 100 | FY2016–FY2018, FY2020 |  officer | no |
-| ROAD MILES—ABOUT 100 | FY2021 |  officer | no |
+| RECREATION DIRECTOR | FY2023–FY2025 | appointed officer | no |
 | SCHOOL BUILDING COMMITTEE | FY2016 | appointed officer | no |
 | SCHOOL COMMITTEE | FY2025 | elected board seat | 5 |
 | SELECT BOARD | FY2025 | elected board seat | 5 |
@@ -193,7 +191,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | TC PASSIOS BUILDING DESIGN COMMITTEE | FY2020–FY2021 | appointed board seat | 7 |
 | TERMS ARE FOR ONE YEAR UNLESS OTHERWISE INDICATED | FY2021 | appointed officer | no |
 | TERMS ARE FOR ONE YEAR UNLESS OTHERWISE INDICATED. | FY2016–FY2017 | appointed officer | no |
-| TOTAL AREA- 26.63 MILES | FY2022–FY2024 |  officer | no |
+| TOTAL AREA- 26.63 MILES | FY2022, FY2024 |  officer | no |
 | TOWN CLERK | FY2025 | elected board seat | no |
 | TOWN CLOCK WINDERS | FY2017–FY2019 | appointed officer | no |
 | TOWN CLOCKWINDERS | FY2020–FY2025 | appointed officer | no |

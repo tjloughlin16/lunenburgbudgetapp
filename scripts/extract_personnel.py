@@ -428,6 +428,26 @@ def is_heading(t):
     return upper > 0.85 and bool(re.search(r'[A-Z]{3}', head))
 
 
+# A PERSON IS NOT A SENTENCE. FY2025 page 9 is the town profile -- `ROAD MILES- ABOUT
+# 100` in capitals, then prose about Lunenburg -- and the page-finder took `MILES` for a
+# board and twenty-seven lines of that prose for its members. It came out as the LARGEST
+# body in the town, which the table never showed and the pie chart showed instantly.
+#
+# A name is short and has no grammar in it. These are the words that only appear when a
+# line is a sentence; a roster line has none of them.
+PROSE = re.compile(r'\b(the|of the|is|are|was|were|and the|in the|by the|from|which|that|'
+                   r'approximately|located|bordered|made by|consists)\b', re.I)
+
+
+def looks_like_person(t):
+    t = (t or '').strip()
+    if len(t) < 3 or len(t) > 70:
+        return False
+    if len(t.split()) > 8:
+        return False
+    return not PROSE.search(t)
+
+
 def post_name(t):
     """The post, with the constitution it stated taken back off the end.
 
@@ -490,7 +510,7 @@ def listing_pages(path):
             pages[page][2] += 1
         elif is_heading(t):
             pages[page][2] += 1
-        elif len(re.findall(r'[A-Za-z]', t)) >= 5:
+        elif looks_like_person(t):
             pages[page][1] += 1
     # BOTH SIGNALS, UNIONED. The running header is the better test where a year prints one
     # -- it catches a page of single-holder posts that states no membership anywhere, and
@@ -648,7 +668,7 @@ def read_year(fy, path):
             elif APPOINTED_NOTE.search(t):
                 i = APPOINTED_NOTE.search(t).start()
                 name, note = t[:i].strip(' -–'), t[i:].strip(' -–')
-            if len(re.findall(r'[A-Za-z]', name)) < 3:
+            if not looks_like_person(name):
                 continue
             seen += 1
             order += 1

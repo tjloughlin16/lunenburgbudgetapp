@@ -1,9 +1,33 @@
 # Budgets across town
 What Town Meeting voted for every department, and which departments move the total.
 
+## Who gets the money
+
+![A pie of the FY2025 voted budget split twelve ways. Schools is 57.1% of it; the next three are Protection at 10.5%, Employee benefits & reserves at 9.8% and Maturing Debt & Interest at 6.7%; five departments are under two per cent each.](charts/town-budgets-share.svg)
+
+| department | FY2025 | share of the budget |
+|---|---:|---:|
+| Schools | $25,127,554 | 57.1% |
+| Protection | $4,643,717 | 10.5% |
+| Employee benefits & reserves | $4,293,123 | 9.8% |
+| Maturing Debt & Interest | $2,941,322 | 6.7% |
+| Public Works | $2,225,277 | 5.1% |
+| General Government | $2,177,964 | 4.9% |
+| Facilities & Grounds | $1,022,711 | 2.3% |
+| Library | $583,890 | 1.3% |
+| Solid Waste & Recycling | $469,775 | 1.1% |
+| Assistance | $340,898 | 0.8% |
+| Health & Sanitation | $117,819 | 0.3% |
+| Central Purchasing | $80,300 | 0.2% |
+| **all twelve** | **$44,024,349** | **100%** |
+
+Schools is the largest department and Central Purchasing the smallest — 313 times the size, in the same budget.
+
+## Which departments move the total
+
 ![Diverging bars, one per department, ranked by how much of the budget’s growth each accounts for. Employee benefits & reserves runs furthest right at +1.00, ahead of Schools at +0.65; Maturing Debt & Interest is the only bar on the left, at -1.45.](charts/town-budgets-pull.svg)
 
-## What the numbers say
+## Every department, every measure
 
 | department | FY2023 | FY2024 | FY2025 | a year | share | pull |
 |---|---:|---:|---:|---:|---:|---:|
@@ -64,6 +88,7 @@ FY2023 is thirty cents short and the thirty cents are the town’s: it prints `T
 - Whether any department reduced SERVICE. A department can hold its dollars and cut its hours, and a dollar figure will not say so.
 - Why any line moved. The omnibus states an amount and gives no reason for it, so every explanation of a movement here would be a hypothesis.
 - Anything about FY2026 below the total. The FY2025 annual report prints no department figures at all.
+- That growing faster than the levy cap is a problem. Proposition 2½ limits the LEVY, not the budget: the budget is the levy plus state aid, local receipts and transfers, and new growth raises the levy limit on top of the 2.5%. The cap is used here as a common reference point every board in town already uses — it is not a ceiling anybody breached.
 
 ## Where it comes from
 
