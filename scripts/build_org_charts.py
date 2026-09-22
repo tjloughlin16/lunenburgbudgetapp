@@ -162,6 +162,7 @@ TIERS = [
                    r'|\bclerk\b|\bsecretary\b|\badministrator\b'
                    r'|\bdetective\b|\bdet\.', re.I)),
 ]
+TIER_SUPERVISOR = 2
 TIER_STAFF = 3
 # A FIFTH BAND, BELOW THE MEMBERS. The Planning Board and the Zoning Board of Appeals
 # both seat ASSOCIATE members, and several boards seat somebody ex officio, honorary or
@@ -289,6 +290,14 @@ ALIAS = {
     'bulding commissioner/zoning enforcement officer':
         'Building Commissioner/Zoning Enforcement Officer',
     'ocal census liaison': 'Local Census Liaison',
+    'inspector of plumbing & gas fittings': 'Inspector Of Plumbing/Gas',
+    'asst. inspector of plumbing & gas fittings': 'Asst. Inspector Of Plumbing/Gas',
+    'election officers': 'Election Workers',
+    'open space committee (ad hoc)': 'Ad Hoc Open Space Advisory Committee',
+    'lunenburg municipal building design committee (eff. 9/26/23)':
+        'Lunenburg Municipal Building Design Committee',
+    'montachusett regional vocational technical school committee':
+        'Montachusett Regional Vocational Technical School Representative',
     'interim town manager': 'Town Manager',
     'interim veterans services agent': 'Veterans Services Agent',
     'veterans services agent': "Veterans' Services",
@@ -312,6 +321,32 @@ FOLD_INTO = {
     'zba associates': ('Zoning Board Of Appeals', 'Associate Member'),
     'zba associate member': ('Zoning Board Of Appeals', 'Associate Member'),
 }
+# THE HEAD OF A DEPARTMENT BELONGS IN THE DEPARTMENT. The officials listing appoints the
+# Police Chief, the DPW Director, the Fire Chief and the Council on Aging Director as
+# POSTS, so each arrived as its own unit -- and the dropdown offered `Police Chief` and
+# `Police Department` as two bodies while the department's own chart had the chief in it
+# anyway. The appointment is real and worth keeping; it is a row in the department, not a
+# department of one. The post's own name stays as the role, because
+# `Fire Chief / Emergency Management Director / Forest Warden` is three jobs the town
+# gives one person and no roster prints it that way.
+HEAD_POST = {
+    'police chief': ('Police Department', 'department', 'Police Chief'),
+    'dpw director': ('Department of Public Works', 'department', 'DPW Director'),
+    'council on aging director': ('Council on Aging', 'department',
+                                  'Council on Aging Director'),
+    'fire chief / emergency management director / forest warden':
+        ('Fire Department', 'department',
+         'Fire Chief / Emergency Management Director / Forest Warden'),
+    'building commissioner': ('Building Department', 'department',
+                              'Building Commissioner'),
+    'building commissioner/zoning enforcement officer':
+        ('Building Department', 'department',
+         'Building Commissioner / Zoning Enforcement Officer'),
+    'bulding commissioner/zoning enforcement officer':
+        ('Building Department', 'department',
+         'Building Commissioner / Zoning Enforcement Officer'),
+}
+
 # A PERSON IS NOT A BODY, and neither is a listing sub-heading.
 NOT_A_UNIT = re.compile(r'^(ex officio members|john palumbo|got advisors)', re.I)
 # A FRAGMENT OF THE LISTING IS NOT A PERSON. `Serving until next annual`, `ssociate
@@ -779,6 +814,11 @@ def _rows_signatures():
                         role=_sig_title(r['title'], r['person']),
                         person=r['person'].strip(), status='filled',
                         source='report signature p%s' % r['page']))
+    # A BODY'S NAME IS NOT A SIGNER. `Information Technology` came through as a person
+    # who had `signed the report`, off a block whose name line was the heading above it.
+    out = [x for x in out if not re.search(
+        r'\b(department|committee|commission|school|services|technology|office)\b',
+        x['person'], re.I)]
     return out
 
 
@@ -875,7 +915,15 @@ def _disambiguate(rows):
         # Water Task Force, the Taxation Aid Committee, the Constables and the Green
         # Community Task Force as pairs of half-empty units. Where the split is not real,
         # the majority kind wins and the body stays whole.
-        if 'department' in seen and len(seen) > 1:
+        # A ONE-ROW DEPARTMENT BESIDE A REAL BOARD IS A MISATTRIBUTION. One signature
+        # read off a page the contents page gave to the wrong body invented
+        # `Conservation Commission (staff)` -- a department of one, in one year, holding
+        # the Council on Aging's director. A body that publishes staff publishes them
+        # more than once.
+        if 'department' in seen and len(seen) > 1 and seen['department'] < 3:
+            r['unit_kind'] = sorted(((k, v) for k, v in seen.items() if k != 'department'),
+                                    key=lambda kv: (-kv[1], kv[0]))[0][0]
+        elif 'department' in seen and len(seen) > 1:
             r['unit'] = '%s (%s)' % (r['unit'], KIND_SUFFIX.get(r['unit_kind'],
                                                                 r['unit_kind']))
         elif len(seen) > 1:
@@ -888,6 +936,21 @@ def build():
     roster, lost_prose = _rows_rosters()
     rows += roster + _rows_schools() + _rows_prose() + _rows_signatures()
     # THE CHAIRS COME IN BEFORE THE BANDS ARE ASSIGNED, because a chair is the top band.
+    # A POST ONE PERSON HOLDS IS NOT A BOARD. The Moderator, the Constable and the Town
+    # Clerk were coming through as boards with a single `board seat`, because the
+    # listing's own wording varies and the majority vote followed it.
+    peak = collections.Counter()
+    for r in rows:
+        peak[(r['unit'], r['fy'])] += 1
+    most = collections.defaultdict(int)
+    for (unit, _fy), n in peak.items():
+        most[unit] = max(most[unit], n)
+    for r in rows:
+        if r['unit_kind'] == 'board' and most[r['unit']] == 1:
+            r['unit_kind'] = 'officer'
+            if r['role'] == 'board seat':
+                r['role'] = 'officer'
+
     chairs, unmatched = _rows_chairs({(r['unit'], r['unit_kind']) for r in rows})
     rows += chairs
     solo = collections.Counter((r['fy'], r['unit']) for r in rows)
@@ -913,6 +976,10 @@ def build():
         if NOT_A_UNIT.match(key):
             bad += 1
             continue
+        if key in HEAD_POST:
+            r['unit'], r['unit_kind'], label = HEAD_POST[key]
+            if r['role'] in ('officer', ''):
+                r['role'] = label
         if key in FOLD_INTO:
             r['unit'], r['role'] = FOLD_INTO[key][0], FOLD_INTO[key][1]
             r['unit_kind'] = 'board'
@@ -948,7 +1015,8 @@ def build():
     # principal's row inside it was banding the whole council under him. TJ, earlier:
     # *"make sure to show the committees separately than the departments they run."*
     for r in rows:
-        if re.search(r'council|advisory|committee', r['section_group'], re.I):
+        if re.search(r'council|advisory|committee', r['section_group'], re.I) \
+                and not re.search(r'principal|superintendent|chair', r['role'], re.I):
             r['tier'] = TIER_STAFF
 
     # A TITLE THAT NAMES ANOTHER BODY IS A DELEGATE'S SEAT. The Taxation Aid Committee
@@ -956,6 +1024,41 @@ def build():
     # Assistant Town Manager, and read as ranks they made a principal clerk the head of
     # the committee and two directors its deputies. Nobody sent by another body outranks
     # anybody here; the committee's own head is whoever it calls Chair.
+    # INSIDE A SCHOOL BUILDING, THE HIERARCHY IS THE PRINCIPAL AND THE ASSISTANT
+    # PRINCIPAL. A `Director` on a primary-school roster runs the after-school programme
+    # or the district's facilities; neither is second in command of the building.
+    for r in rows:
+        if r['unit_kind'] == 'school' and r['subunit'] and r['tier'] < TIER_STAFF \
+                and not re.search(r'principal|head', r['role'], re.I):
+            r['tier'] = TIER_SUPERVISOR if r['section_group'] else TIER_STAFF
+
+    # A CHAIR OF A BOARD SITS ON THAT BOARD. Where a body-year has several people
+    # called chair and only some of them are among its members, the others were read off
+    # a page the contents attributed to the wrong body -- the Planning Board and the
+    # Zoning Board of Appeals print back to back, and the ZBA's chairman arrived as the
+    # Planning Board's third. Only dropped when a member-chair exists to prefer.
+    # MATCHED ON SURNAME AND FIRST INITIAL, because the two sources spell people
+    # differently: the listing says `Timothy Russell Willsmer` and the report says
+    # `Timothy Willsmer`, and an exact match finds neither in the other.
+    def _who(name):
+        parts = [x for x in re.split(r'\s+', name.strip()) if x]
+        return (parts[-1].lower().strip('.,'), parts[0][:1].lower()) if parts else ('', '')
+
+    members = collections.defaultdict(set)
+    for r in rows:
+        if r['role'] in ('board seat', 'officer') or not re.search(r'chair', r['role'],
+                                                                   re.I):
+            members[(r['fy'], r['unit'])].add(_who(r['person']))
+    drop = set()
+    for (fy, unit), _ in list(members.items()):
+        cand = [r for r in rows if r['fy'] == fy and r['unit'] == unit
+                and re.search(r'^chair', r['role'], re.I)]
+        if len({c['person'] for c in cand}) > 1:
+            inside = [c for c in cand if _who(c['person']) in members[(fy, unit)]]
+            if inside:
+                drop |= {id(c) for c in cand if c not in inside}
+    rows = [r for r in rows if id(r) not in drop]
+
     strong = {(r['fy'], r['unit'], r['subunit']) for r in rows
               if r['tier'] == 0 and STRONG_HEAD.search(r['role'])}
     for r in rows:

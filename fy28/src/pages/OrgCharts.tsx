@@ -215,8 +215,11 @@ export function OrgCharts() {
             const n = groups.reduce((m, x) => m + x[1].length, 0)
             return (
             <div key={tier} className="mt-3" style={{ marginLeft: INSET[tier] ?? 42 }}>
+              {/* A ONE-PERSON BODY HAS NO BANDS. `Heads the body — 1` over the Dam
+                  Keeper is a label explaining a hierarchy of one. */}
               <div className="text-[11px] uppercase tracking-wide mb-1 flex items-center gap-2"
-                style={{ color: 'var(--text-muted)' }}>
+                style={{ color: 'var(--text-muted)' }}
+                hidden={rows.length <= 1}>
                 <span style={{
                   display: 'inline-block', width: 6, height: 6, borderRadius: 6,
                   background: tier === '3' ? 'var(--grid)' : 'var(--series-1)',
