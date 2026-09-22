@@ -968,6 +968,19 @@ GROUPS = [
              'dont have the data, we shouldn\u2019t show partial data. that may be '
              'misleading\u201d* \u2014 so it is held here as working material, and the two things '
              'it would answer are registered in money-gaps.csv instead.'),
+            ('data/org-chart.csv',
+             'Who held which role, in every department, board and school', 2,
+             'One row per person per role per year, assembled from four readings of the '
+             'annual reports: the officials listing for boards and appointed posts, the '
+             'Police and Fire rosters, the four schools\u2019 rosters, and the departments '
+             'that name their staff in prose. `status` keeps PEOPLE and POSTS apart \u2014 '
+             '`filled` is a named person, `vacant` is a seat the town prints as empty, and '
+             '`post` is an establishment position a department states without ever saying '
+             'who fills it, which is how the DPW and the Assessing office publish. '
+             'Building it was a test of the data model rather than a presentation of it, '
+             'and it found seven classes of defect nothing that COUNTS things had: a '
+             'listing footnote read as a post, sub-headings promoted to bodies, and one '
+             'post under four spellings. Rendered at /org-charts.'),
             ('data/report-index.csv',
              'Every department the town lists, and where its report is', 2,
              'The CONTENTS PAGE of each annual report, read as data: one row per '

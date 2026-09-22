@@ -42,7 +42,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'growth'
   | 'homestudents'
   | 'boardcompare' | 'youthsports'
-  | 'schoolfinance' | 'accounts' | 'departments' | 'parks'
+  | 'schoolfinance' | 'accounts' | 'departments' | 'parks' | 'orgcharts'
   | 'healthlever' | 'freecashlever' | 'salarylever' | 'feelever' | 'extraslever' | 'positionslever'
   | 'bythenumbers'
   | 'owners'
@@ -348,6 +348,7 @@ export const SLUG: Record<Tab, string> = {
   schoolfinance: 'boards/school-committee/finance',
   parks: 'parks-and-recreation',
   accounts: 'accounts',
+  orgcharts: 'org-charts',
   departments: 'departments',
   // THE LEVERS: one report per thing the town can actually decide (TJ, 17 September
   // 2026, the first shelf of /reports, "What the town can do"). Each answers what pulling
@@ -477,6 +478,9 @@ export const REFERENCE: ReadonlySet<Tab> = new Set<Tab>([
   'sped', 'themoney', 'askus',
   // The account registry's doors: every measure once, and the departments.
   'accounts', 'departments',
+  // Every department, board and school as a chart of who held which role. A reference
+  // you look somebody up in, not a page you read.
+  'orgcharts',
 ])
 
 /** Pages that are BOARDS -- dials, sliders, a cascade to reorder. They are used, not
@@ -820,6 +824,7 @@ export const LABEL: Record<Tab, string> = {
   schoolfinance: 'The School Committee’s finances — every fund and line it owns',
   parks: 'Parks & Recreation — the department, its fund, its sales, its grounds',
   accounts: 'Every account, once',
+  orgcharts: 'Town-wide org charts',
   departments: 'The departments',
   healthlever: 'Health insurance',
   freecashlever: 'Free cash — can it fill the gap?',
@@ -1121,7 +1126,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // order a board member needs it: why this keeps happening, what can be done, the
   // objections, everything else.
   crisis: ['walk', 'solutions', 'answers', 'deeper'],
-  money: ['themoney', 'stateaid', 'funds', 'accounts', 'departments', 'gaps', 'askus'],
+  money: ['themoney', 'stateaid', 'funds', 'accounts', 'departments', 'orgcharts', 'gaps', 'askus'],
   // `sped` is ONE entry for FOUR reports, and that is deliberate twice over. The comment
   // above warns that a bar with fourteen entries is a sitemap; adding the four reports
   // individually would have made it exactly that. And the four belong behind one door

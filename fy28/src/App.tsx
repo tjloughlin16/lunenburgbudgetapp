@@ -48,6 +48,7 @@ import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
 import { Boards } from './pages/Boards'
 import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
+import { OrgCharts } from './pages/OrgCharts'
 import { Parks } from './pages/Parks'
 import { BudgetFeed } from './pages/BudgetFeed'
 import { ThisWeek } from './pages/ThisWeek'
@@ -523,6 +524,7 @@ export default function App() {
       {tab === 'schoolfinance' && <SchoolFinance />}
       {tab === 'departments' && <Departments />}
       {tab === 'accounts' && <Accounts />}
+      {tab === 'orgcharts' && <OrgCharts />}
       {tab === 'parks' && <Parks />}
       {tab === 'budgetfeed' && <BudgetFeed />}
       {tab === 'thisweek' && <ThisWeek />}
