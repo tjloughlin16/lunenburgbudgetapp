@@ -1,5 +1,11 @@
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts'
 
+/* Recharts hands a tooltip value as `ValueType | undefined` -- a string, a number or an
+ * array of either. Every formatter here wants a number, so it is coerced once, here,
+ * rather than asserted at each call site. */
+const N = (v: unknown) => (Array.isArray(v) ? Number(v[0]) : Number(v))
+
+
 /* ONE PIE, BUILT ONCE, BECAUSE THE DEFAULT ONE HAD FOUR FAULTS AND THREE PAGES USE IT.
  *
  * TJ, 22 September 2026, with a screenshot: *"make sure the charts look good."* On the
@@ -70,8 +76,8 @@ export function PieWithLegend({
               }}
               itemStyle={{ color: 'var(--text-primary)' }}
               labelStyle={{ color: 'var(--text-primary)' }}
-              formatter={(v: number, n: string) =>
-                [`${format(v)} · ${pct(v).toFixed(1)}%`, n]} />
+              formatter={(v, n) =>
+                [`${format(N(v))} · ${pct(N(v)).toFixed(1)}%`, n]} />
           </PieChart>
         </ResponsiveContainer>
       </div>

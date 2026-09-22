@@ -5,6 +5,11 @@ import {
 import type { ChartProps } from './analysisCharts'
 import { PieWithLegend } from './PieWithLegend'
 
+/* Recharts hands a tooltip value as `ValueType | undefined` -- a string, a number or an
+ * array of either. Every formatter here wants a number, so it is coerced once, here,
+ * rather than asserted at each call site. */
+const N = (v: unknown) => (Array.isArray(v) ? Number(v[0]) : Number(v))
+
 /* The charts for /analysis/board-composition, from /data/board-composition.json.
  * Rule 7f: a chart is a component, never an image. Nothing here computes a figure. */
 
@@ -63,7 +68,7 @@ export function BoardCompositionWhere({ data }: ChartProps) {
   ]
   return (
     <PieWithLegend rows={rows} colours={SLICES} height={320}
-      format={(v: number) => `${v} ${v === 1 ? 'person' : 'people'}`} />
+      format={(v: number) => `${N(v)} ${v === 1 ? 'person' : 'people'}`} />
   )
 }
 
@@ -80,11 +85,11 @@ export function BoardCompositionFill({ data }: ChartProps) {
         <LineChart data={fill} margin={{ top: 8, right: 16, left: 0, bottom: 4 }}>
           <CartesianGrid stroke="var(--grid)" vertical={false} />
           <XAxis dataKey="label" tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
-          <YAxis tickFormatter={(v: number) => `${v}%`} width={48}
+          <YAxis tickFormatter={(v: number) => `${N(v)}%`} width={48}
             tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
           <Tooltip contentStyle={box}
-            formatter={(v: number, _n: string, p: { payload?: Fill }) =>
-              [`${v.toFixed(1)}% — ${p.payload?.filled} names against ${p.payload?.seats} `
+            formatter={(v, _n, p: { payload?: Fill }) =>
+              [`${N(v).toFixed(1)}% — ${p.payload?.filled} names against ${p.payload?.seats} `
                + `seats across ${p.payload?.bodies} bodies`, 'filled']} />
           <ReferenceLine y={100} stroke="#8a5210" strokeDasharray="4 3"
             label={{ value: 'every seat filled', position: 'right', fontSize: 11,

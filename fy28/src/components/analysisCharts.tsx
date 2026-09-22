@@ -37,33 +37,57 @@ import {
 
 export type ChartProps = { data: unknown; alt: string }
 
-export const ANALYSIS_CHARTS: Record<string, (p: ChartProps) => ReactNode> = {
-  'town-personnel-crowd': TownPersonnelCrowd,
-  'town-personnel-share': TownPersonnelShare,
-  'town-personnel-counts': TownPersonnelCounts,
-  'town-personnel-all': TownPersonnelAll,
-  'town-personnel-people': TownPersonnelPeople,
-  'town-personnel-fire': TownPersonnelFire,
-  'town-budgets-town': TownBudgetsTown,
-  'town-budgets-share': TownBudgetsShare,
-  'town-budgets-all': TownBudgetsAll,
-  'town-budgets-rates': TownBudgetsRates,
-  'town-budgets-pull': TownBudgetsPull,
-  'town-budgets-trends': TownBudgetsTrends,
-  'town-budgets-total': TownBudgetsTotal,
-  'board-composition-where': BoardCompositionWhere,
-  'board-composition-fill': BoardCompositionFill,
-  'stabilization-all': StabilizationAll,
-  'stabilization-each': StabilizationEach,
-  'stabilization-growth': StabilizationGrowth,
-  'stabilization-flows': StabilizationFlows,
-  'stabilization-holdings': StabilizationHoldings,
-  'stabilization-option-split': StabilizationOptionSplit,
-  'stabilization-option-burndown': StabilizationOptionBurndown,
+/* A CHART MUST SAY WHAT IT NEEDS, and the build caught why.
+ *
+ * `town-budget-protection` embeds `town-personnel-fire.svg` -- the same picture, on a
+ * different report -- and this registry matched it by CHART NAME and handed the component
+ * that page's own payload, which has no `fire` in it. The component read `.fire.map` on
+ * undefined, threw, and the whole page prerendered as ZERO characters. One chart shared
+ * between two reports took the report down.
+ *
+ * So every entry declares what it needs from the payload, and a chart whose data is not
+ * there falls back to the image exactly as an unconverted chart does. That is the same
+ * rule as the fallback itself: a chart that cannot be drawn must be a picture, never an
+ * empty page. And it is the repo's own lesson about joins -- something that matches
+ * nothing has to say so rather than quietly producing nothing. */
+type Entry = {
+  render: (p: ChartProps) => ReactNode
+  needs: (d: Record<string, unknown>) => boolean
 }
 
-/** The chart registered for `charts/foo.svg`, or undefined to fall back to the image. */
-export function chartFor(src: string) {
+const has = (...keys: string[]) => (d: Record<string, unknown>) =>
+  keys.every(k => d?.[k] != null)
+
+export const ANALYSIS_CHARTS: Record<string, Entry> = {
+  'town-personnel-crowd': { render: TownPersonnelCrowd, needs: has('employers','pictogram') },
+  'town-personnel-share': { render: TownPersonnelShare, needs: has('employers') },
+  'town-personnel-counts': { render: TownPersonnelCounts, needs: has('employers') },
+  'town-personnel-all': { render: TownPersonnelAll, needs: has('employers') },
+  'town-personnel-people': { render: TownPersonnelPeople, needs: has('employers','pictogram') },
+  'town-personnel-fire': { render: TownPersonnelFire, needs: has('fire') },
+  'town-budgets-town': { render: TownBudgetsTown, needs: has('departments','pictogram') },
+  'town-budgets-share': { render: TownBudgetsShare, needs: has('departments') },
+  'town-budgets-all': { render: TownBudgetsAll, needs: has('departments','detail_years') },
+  'town-budgets-rates': { render: TownBudgetsRates, needs: has('departments','levy_cap') },
+  'town-budgets-pull': { render: TownBudgetsPull, needs: has('departments') },
+  'town-budgets-trends': { render: TownBudgetsTrends, needs: has('departments','detail_years','levy_cap') },
+  'town-budgets-total': { render: TownBudgetsTotal, needs: has('totals') },
+  'board-composition-where': { render: BoardCompositionWhere, needs: has('sizes') },
+  'board-composition-fill': { render: BoardCompositionFill, needs: has('fill') },
+  'stabilization-all': { render: StabilizationAll, needs: has('series') },
+  'stabilization-each': { render: StabilizationEach, needs: has('series') },
+  'stabilization-growth': { render: StabilizationGrowth, needs: has('series') },
+  'stabilization-flows': { render: StabilizationFlows, needs: has('flows') },
+  'stabilization-holdings': { render: StabilizationHoldings, needs: has('funds','totals') },
+  'stabilization-option-split': { render: StabilizationOptionSplit, needs: has('both') },
+  'stabilization-option-burndown': { render: StabilizationOptionBurndown, needs: has('burndown') },
+}
+
+/** The chart registered for `charts/foo.svg` IF this payload can feed it, else undefined
+ *  so the caller renders the image. */
+export function chartFor(src: string, data: unknown) {
   const m = /([a-z0-9-]+)\.svg$/i.exec(src)
-  return m ? ANALYSIS_CHARTS[m[1]] : undefined
+  const e = m ? ANALYSIS_CHARTS[m[1]] : undefined
+  if (!e) return undefined
+  return e.needs((data ?? {}) as Record<string, unknown>) ? e.render : undefined
 }

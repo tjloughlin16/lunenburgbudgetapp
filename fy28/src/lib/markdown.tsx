@@ -227,7 +227,7 @@ export function renderMarkdown(src: string, base = '/docs/analyses/',
       // under the cursor, no series to isolate and nothing for a screen reader but its
       // alt text, and it does not reflow on a phone -- all of which the data can answer
       // and the picture cannot. Rule 7f.
-      const Chart = payload ? chartFor(img[2]) : undefined
+      const Chart = payload ? chartFor(img[2], payload) : undefined
       nodes.push(
         <figure key={key()} className="mt-6 max-w-3xl figure">
           {Chart

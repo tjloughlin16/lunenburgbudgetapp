@@ -6,6 +6,11 @@ import type { ChartProps } from './analysisCharts'
 import { PieWithLegend } from './PieWithLegend'
 import { Scene } from './Scene'
 
+/* Recharts hands a tooltip value as `ValueType | undefined` -- a string, a number or an
+ * array of either. Every formatter here wants a number, so it is coerced once, here,
+ * rather than asserted at each call site. */
+const N = (v: unknown) => (Array.isArray(v) ? Number(v[0]) : Number(v))
+
 /* The charts for /analysis/town-budgets, from /data/town-budgets.json. Rule 7f. */
 
 // A CATEGORICAL PALETTE, VALIDATED RATHER THAN CHOSEN. TJ: *"the colors have to be
@@ -52,8 +57,8 @@ const box = {
   boxShadow: '0 2px 10px rgba(0,0,0,.12)', opacity: 1,
 }
 const usdk = (v: number) =>
-  Math.abs(v) >= 1e6 ? `$${(v / 1e6).toFixed(1)}M`
-    : Math.abs(v) >= 1e3 ? `$${Math.round(v / 1e3)}k` : `$${Math.round(v)}`
+  Math.abs(N(v)) >= 1e6 ? `$${(v / 1e6).toFixed(1)}M`
+    : Math.abs(N(v)) >= 1e3 ? `$${Math.round(v / 1e3)}k` : `$${Math.round(v)}`
 
 const usd = (v: number) => '$' + Math.round(v).toLocaleString()
 
@@ -104,7 +109,7 @@ export function TownBudgetsAll({ data }: ChartProps) {
           <XAxis dataKey="fy" tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
           <YAxis tickFormatter={usdk} width={52}
             tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
-          <Tooltip contentStyle={box} formatter={(v: number) => usd(v)} />
+          <Tooltip contentStyle={box} formatter={(v) => usd(N(v))} />
           <Legend wrapperStyle={{ fontSize: 12 }} iconType="plainline" />
           {rows.map((r, i) => (
             <Line key={r.slug} dataKey={r.name} type="linear"
@@ -130,12 +135,12 @@ export function TownBudgetsRates({ data }: ChartProps) {
         <BarChart data={rows} layout="vertical"
           margin={{ top: 4, right: 24, left: 8, bottom: 4 }}>
           <CartesianGrid stroke="var(--grid)" horizontal={false} />
-          <XAxis type="number" tickFormatter={(v: number) => `${v.toFixed(0)}%`}
+          <XAxis type="number" tickFormatter={(v: number) => `${N(v).toFixed(0)}%`}
             tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
           <YAxis type="category" dataKey="name" width={188}
             tick={{ fontSize: 11, fill: 'var(--text-primary)' }} />
           <Tooltip contentStyle={box}
-            formatter={(v: number) => [`${v.toFixed(1)}% a year`, 'growth']} />
+            formatter={(v) => [`${N(v).toFixed(1)}% a year`, 'growth']} />
           <ReferenceLine x={d.levy_cap} stroke="#8a5210" strokeDasharray="4 3"
             label={{ value: `Prop 2½ · ${d.levy_cap}%`, position: 'top',
                      fontSize: 11, fill: '#8a5210' }} />
@@ -164,7 +169,7 @@ export function TownBudgetsPull({ data }: ChartProps) {
           <YAxis type="category" dataKey="name" width={188}
             tick={{ fontSize: 11, fill: 'var(--text-primary)' }} />
           <Tooltip contentStyle={box}
-            formatter={(v: number) => [`${usd(v)} a year above the cap`, '']} />
+            formatter={(v) => [`${usd(N(v))} a year above the cap`, '']} />
           <ReferenceLine x={0} stroke="var(--text-muted)" />
           <Bar dataKey="excess" isAnimationActive={false} radius={[0, 3, 3, 0]}>
             {rows.map(r => (
@@ -213,8 +218,8 @@ export function TownBudgetsTrends({ data }: ChartProps) {
                   domain={['dataMin', 'dataMax']}
                   tick={{ fontSize: 10, fill: 'var(--text-muted)' }} />
                 <Tooltip contentStyle={box}
-                  formatter={(v: number, n: string) =>
-                    [usd(v), n === 'cap' ? `at the ${d.levy_cap}% levy cap` : 'voted']} />
+                  formatter={(v, n) =>
+                    [usd(N(v)), n === 'cap' ? `at the ${d.levy_cap}% levy cap` : 'voted']} />
                 <Line dataKey="cap" name="cap" type="linear" dot={false}
                   stroke="#8a5210" strokeWidth={1.4} strokeDasharray="4 3"
                   isAnimationActive={false} />
@@ -254,8 +259,8 @@ export function TownBudgetsTotal({ data }: ChartProps) {
           <YAxis tickFormatter={usdk} width={52}
             tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
           <Tooltip contentStyle={box}
-            formatter={(v: number, _n: string, p: { payload?: typeof rows[number] }) =>
-              [`${usd(v)}${p.payload?.change === null || p.payload?.change === undefined
+            formatter={(v, _n, p: { payload?: typeof rows[number] }) =>
+              [`${usd(N(v))}${p.payload?.change === null || p.payload?.change === undefined
                 ? '' : ` · ${p.payload.change >= 0 ? '+' : ''}${p.payload.change.toFixed(1)}%`}`,
                p.payload?.prose ? 'voted — printed as prose, no department table' : 'voted']} />
           <Bar dataKey="voted" isAnimationActive={false} radius={[3, 3, 0, 0]}>

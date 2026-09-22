@@ -3,6 +3,11 @@ import {
 } from 'recharts'
 import type { ChartProps } from './analysisCharts'
 
+/* Recharts hands a tooltip value as `ValueType | undefined` -- a string, a number or an
+ * array of either. Every formatter here wants a number, so it is coerced once, here,
+ * rather than asserted at each call site. */
+const N = (v: unknown) => (Array.isArray(v) ? Number(v[0]) : Number(v))
+
 /* The charts for /analysis/stabilization-option, from /data/stabilization-option.json.
  * Rule 7f. EVERY FIGURE HERE IS MODELLED, not measured -- this page asks what would
  * happen if the reserve were spent on the school gap -- so the axis labels and the
@@ -15,8 +20,8 @@ const box = {
   boxShadow: '0 2px 10px rgba(0,0,0,.12)', opacity: 1,
 }
 const usdk = (v: number) =>
-  Math.abs(v) >= 1e6 ? `$${(v / 1e6).toFixed(1)}M`
-    : Math.abs(v) >= 1e3 ? `$${Math.round(v / 1e3)}k` : `$${Math.round(v)}`
+  Math.abs(N(v)) >= 1e6 ? `$${(v / 1e6).toFixed(1)}M`
+    : Math.abs(N(v)) >= 1e3 ? `$${Math.round(v / 1e3)}k` : `$${Math.round(v)}`
 const usd = (v: number) => '$' + Math.round(v).toLocaleString()
 
 type Both = {
@@ -43,7 +48,7 @@ export function StabilizationOptionSplit({ data }: ChartProps) {
           <XAxis dataKey="fy" tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
           <YAxis tickFormatter={usdk} width={54}
             tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
-          <Tooltip contentStyle={box} formatter={(v: number) => usd(v)} />
+          <Tooltip contentStyle={box} formatter={(v) => usd(N(v))} />
           <Legend wrapperStyle={{ fontSize: 12 }} />
           <Bar dataKey="redirected" stackId="g" name="redirected deposits"
             fill="#22795a" isAnimationActive={false} />
@@ -71,8 +76,8 @@ export function StabilizationOptionBurndown({ data }: ChartProps) {
           <YAxis tickFormatter={usdk} width={54}
             tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
           <Tooltip contentStyle={box}
-            formatter={(v: number, n: string) =>
-              [usd(v), n === 'left' ? 'left in the fund, modelled' : 'drawn that year']} />
+            formatter={(v, n) =>
+              [usd(N(v)), n === 'left' ? 'left in the fund, modelled' : 'drawn that year']} />
           <Bar dataKey="left" name="left in the fund" isAnimationActive={false}
             radius={[3, 3, 0, 0]}>
             {rows.map(r => (

@@ -4,6 +4,11 @@ import {
 } from 'recharts'
 import type { ChartProps } from './analysisCharts'
 
+/* Recharts hands a tooltip value as `ValueType | undefined` -- a string, a number or an
+ * array of either. Every formatter here wants a number, so it is coerced once, here,
+ * rather than asserted at each call site. */
+const N = (v: unknown) => (Array.isArray(v) ? Number(v[0]) : Number(v))
+
 /* The charts for /analysis/stabilization-funds, from /data/stabilization-funds.json.
  * Rule 7f. Nothing here computes a figure — every number arrives from the payload that
  * scripts/build_stabilization.py writes and the stat row already reads. */
@@ -40,8 +45,8 @@ const box = {
   boxShadow: '0 2px 10px rgba(0,0,0,.12)', opacity: 1,
 }
 const usdk = (v: number) =>
-  Math.abs(v) >= 1e6 ? `$${(v / 1e6).toFixed(1)}M`
-    : Math.abs(v) >= 1e3 ? `$${Math.round(v / 1e3)}k` : `$${Math.round(v)}`
+  Math.abs(N(v)) >= 1e6 ? `$${(v / 1e6).toFixed(1)}M`
+    : Math.abs(N(v)) >= 1e3 ? `$${Math.round(v / 1e3)}k` : `$${Math.round(v)}`
 const usd = (v: number) => '$' + Math.round(v).toLocaleString()
 
 type Point = { fy: number; ending_cash: number; ending_market: number; basis: string }
@@ -84,7 +89,7 @@ export function StabilizationAll({ data }: ChartProps) {
             interval="preserveStartEnd" />
           <YAxis tickFormatter={usdk} width={54}
             tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
-          <Tooltip contentStyle={box} formatter={(v: number) => usd(v)} />
+          <Tooltip contentStyle={box} formatter={(v) => usd(N(v))} />
           <Legend wrapperStyle={{ fontSize: 12 }} iconType="plainline" />
           {series.map((s, i) => (
             <Line key={s.fund} dataKey={s.fund} type="linear" connectNulls={false}
@@ -122,7 +127,7 @@ export function StabilizationEach({ data }: ChartProps) {
                   interval="preserveStartEnd" />
                 <YAxis tickFormatter={usdk} width={48} domain={['dataMin', 'dataMax']}
                   tick={{ fontSize: 10, fill: 'var(--text-muted)' }} />
-                <Tooltip contentStyle={box} formatter={(v: number) => usd(v)} />
+                <Tooltip contentStyle={box} formatter={(v) => usd(N(v))} />
                 <Line dataKey="cash" type="linear" dot={{ r: 2.5 }}
                   stroke={SLICES[i % SLICES.length]} strokeWidth={2}
                   isAnimationActive={false} />
@@ -152,13 +157,13 @@ export function StabilizationGrowth({ data }: ChartProps) {
         <BarChart data={rows} layout="vertical"
           margin={{ top: 4, right: 40, left: 8, bottom: 4 }}>
           <CartesianGrid stroke="var(--grid)" horizontal={false} />
-          <XAxis type="number" tickFormatter={(v: number) => `${v.toFixed(0)}%`}
+          <XAxis type="number" tickFormatter={(v: number) => `${N(v).toFixed(0)}%`}
             tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
           <YAxis type="category" dataKey="fund" width={196}
             tick={{ fontSize: 11, fill: 'var(--text-primary)' }} />
           <Tooltip contentStyle={box}
-            formatter={(v: number, _n: string, p: { payload?: { years: number } }) =>
-              [`${v.toFixed(1)}% a year over ${p.payload?.years} years`, 'growth']} />
+            formatter={(v, _n, p: { payload?: { years: number } }) =>
+              [`${N(v).toFixed(1)}% a year over ${p.payload?.years} years`, 'growth']} />
           <Bar dataKey="rate" isAnimationActive={false} radius={[0, 3, 3, 0]}>
             {rows.map((r, i) => <Cell key={r.fund} fill={SLICES[i % SLICES.length]} />)}
           </Bar>
@@ -196,8 +201,8 @@ export function StabilizationFlows({ data }: ChartProps) {
           <YAxis tickFormatter={usdk} width={54}
             tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
           <Tooltip contentStyle={box}
-            formatter={(v: number, n: string, p: { payload?: { understated: boolean } }) =>
-              [`${usd(Math.abs(v))}${n === 'voted_in' && p.payload?.understated
+            formatter={(v, n, p: { payload?: { understated: boolean } }) =>
+              [`${usd(Math.abs(N(v)))}${n === 'voted_in' && p.payload?.understated
                 ? ' — a floor: an article printed no amount' : ''}`,
                n === 'voted_in' ? 'voted in' : 'voted out']} />
           <Legend wrapperStyle={{ fontSize: 12 }} />

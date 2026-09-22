@@ -215,7 +215,11 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
     <div className="card p-3 mb-4">
       <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>When it meets</p>
       <p className="text-[15px] font-bold leading-snug mt-1">
-        {j.weekday_share >= 0.6 ? `${j.weekday}s` : `Usually ${j.weekday}s`}{j.time ? `, ${j.time}` : ''}
+        {/* THE GUARD ABOVE TESTS `j.weekday`, NOT `j.weekday_share`. A board with a
+            weekday and no share is possible in the payload, and under the strict build
+            that is an error rather than a runtime surprise -- an absent share means we
+            do not know how consistent the day is, which is `Usually`. */}
+        {(j.weekday_share ?? 0) >= 0.6 ? `${j.weekday}s` : `Usually ${j.weekday}s`}{j.time ? `, ${j.time}` : ''}
       </p>
       {j.place && <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-secondary)' }}>{j.place}</p>}
       {(j.zoom || j.cable) && (

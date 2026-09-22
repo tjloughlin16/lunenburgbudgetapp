@@ -7,6 +7,11 @@ import { PieWithLegend } from './PieWithLegend'
 import { Scene } from './Scene'
 import { Pictogram } from './Pictogram'
 
+/* Recharts hands a tooltip value as `ValueType | undefined` -- a string, a number or an
+ * array of either. Every formatter here wants a number, so it is coerced once, here,
+ * rather than asserted at each call site. */
+const N = (v: unknown) => (Array.isArray(v) ? Number(v[0]) : Number(v))
+
 /* The charts for /analysis/town-personnel, rendered from /data/town-personnel.json --
  * the same payload that feeds the stat row and the conclusions, so there is one set of
  * figures and not one for the page and another for a picture (rules 2 and 7f).
@@ -83,7 +88,7 @@ export function TownPersonnelShare({ data }: ChartProps) {
     .map(e => ({ key: e.department, name: e.department, value: e.people }))
   return (
     <PieWithLegend rows={rows} colours={SLICES} height={320}
-      format={(v: number) => `${v} ${v === 1 ? 'person' : 'people'}`} />
+      format={(v: number) => `${N(v)} ${v === 1 ? 'person' : 'people'}`} />
   )
 }
 
@@ -204,7 +209,7 @@ export function TownPersonnelFire({ data }: ChartProps) {
           <XAxis dataKey="fy" tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
           <YAxis tick={{ fontSize: 11, fill: 'var(--text-muted)' }} width={36} />
           <Tooltip contentStyle={box}
-            formatter={(v: number | number[], n: string) =>
+            formatter={(v, n) =>
               [Array.isArray(v) ? `${v[0]}\u2013${v[1]}` : v,
                n === 'band' ? 'on call, as printed' : 'career']} />
           <Legend wrapperStyle={{ fontSize: 12 }} />

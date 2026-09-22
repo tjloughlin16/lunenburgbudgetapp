@@ -116,6 +116,53 @@ def extraction():
     return done, todo
 
 
+def _superseded():
+    """The rows inside the extraction backlog that are not really work.
+
+    Derived, so it cannot go stale the way a typed sentence would: the counts come from
+    the same database the stream above is measured from.
+    """
+    import sqlite3
+    db = sqlite3.connect(os.path.join(ROOT, 'sources', 'data', 'lunenburg.db'))
+
+    def count(t, where=''):
+        try:
+            return db.execute('SELECT COUNT(*) FROM %s %s' % (t, where)).fetchone()[0]
+        except sqlite3.OperationalError:
+            return 0
+
+    off = count('report_officials')
+    off_junk = count('report_officials', "WHERE (label IS NULL OR label='') AND v1=page")
+    wages = count('report_gross_wages')
+    ours = 0
+    p = os.path.join(ROOT, 'sources', 'data', 'gross-wages.csv')
+    if os.path.exists(p):
+        ours = sum(1 for _ in open(p, encoding='utf-8')) - 1
+    posts = 0
+    p = os.path.join(ROOT, 'sources', 'data', 'town-personnel.csv')
+    if os.path.exists(p):
+        posts = sum(1 for _ in open(p, encoding='utf-8')) - 1
+    return (
+        '\n**Counted above and NOT really work.** Two of the generic table extracts inside '
+        '`Reconciling the annual-report tables` should not be read as a backlog anybody '
+        'will clear:\n\n'
+        '- **`report_officials`, %d rows, none checked.** It is not the officials listing. '
+        'Its FY2011 rows are `Nancy L Woodruff 79` and `Robert E. Tucker WWII 82` — a '
+        'memorial page — and %d of its rows carry NO LABEL and a value equal to their own '
+        'page number. The listing itself is read properly by `extract_personnel.py` into '
+        '`town-personnel.csv`, %d rows, every one tied to a post and a year, with a '
+        '`size_check` against the membership each heading states.\n'
+        '- **`report_gross_wages`, %d rows, none checked.** The same pages are read by '
+        '`extract_gross_wages.py` into `gross-wages.csv`, %d rows of name and amount. '
+        'NEITHER is published and both are honest about why: the town stopped printing the '
+        'department beside each name after FY2016, so the list cannot be split by '
+        'department, and the two-column layout loses a third to a half of the given names. '
+        'Registered in `money-gaps.csv` rather than shown.\n\n'
+        'Left in the count deliberately rather than quietly subtracted — a number that '
+        'moves because somebody changed what it counts is worse than one that is too big '
+        'and says so.\n' % (off, off_junk, posts, wages, ours))
+
+
 def main():
     streams = [
         ('Captions for recordings', 'fetch_youtube_transcripts.py — free, throttled by YouTube; run_transcript_backfill.sh sweeps the last two years across every board, then the rest; the refresh takes 12 a day', transcripts()),
@@ -141,6 +188,14 @@ def main():
     # the file sets PRIORITY -- Town Meeting, then the three budget boards, then the rest
     # -- and MAX_MINUTES_PER_RUN limits the night. Nothing is excluded, so this footer no
     # longer says anything is.
+    # NOT EVERY ROW IN THE BACKLOG IS WORK. TJ, 22 September 2026: *"can you also update
+    # the backlog status? I 'think' we have things listed there that we already
+    # processed, but lets just check it."* Checked, and the answer is not staleness --
+    # rebuilding the database moved none of these numbers. Two of the generic table
+    # extracts are counted as outstanding when one has been REPLACED and the other is
+    # largely noise, and a backlog that counts either as work to do is lying about its
+    # own size.
+    b.write(_superseded())
     b.write('\n**Not in any stream, by choice:** conclusions on the finance pages are a '
             'per-owner writing job rather than a batch. Minutes-writing is NOT in this '
             'category: `sources/data/recording-minutes-policy.csv` sets the order every '
