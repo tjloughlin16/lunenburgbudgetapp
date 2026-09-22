@@ -375,6 +375,54 @@
    "so_what": "A seat is far easier to get on some boards than on others."
   },
   {
+   "basis": "The Fire Department’s own staffing sentence in each annual report, FY2017 to FY2025.",
+   "bearing": "sizes",
+   "claim": "The Fire Department doubled its career staff while its on-call roll shrank",
+   "detail": "The one department that states its staffing the same way every year, and it has changed a great deal. Career firefighters went from 5 in FY2017 to 10 by FY2025. Over the same period the on-call and per-diem roll fell from 40–45 to 30–35. The department states both figures in the prose of its own report, and nothing else in the annual report counts them.",
+   "figure": "now",
+   "figures": {
+    "chi": {
+     "text": "45",
+     "unit": "on call, high end",
+     "value": 45
+    },
+    "clo": {
+     "text": "40",
+     "unit": "on call, low end",
+     "value": 40
+    },
+    "nhi": {
+     "text": "35",
+     "unit": "on call now, high",
+     "value": 35
+    },
+    "nlo": {
+     "text": "30",
+     "unit": "on call now, low",
+     "value": 30
+    },
+    "now": {
+     "text": "10",
+     "unit": "career firefighters now",
+     "value": 10
+    },
+    "was": {
+     "text": "5",
+     "unit": "career firefighters at the start",
+     "value": 5
+    }
+   },
+   "id": "fire-doubled",
+   "kind": "measured",
+   "literals": [
+    "FY2017",
+    "FY2025"
+   ],
+   "not_shown": "Hours. A career post and an on-call post are not the same job, and the report gives no FTE for either, so the two cannot be netted.",
+   "see": [],
+   "so_what": "A department can grow and shrink at the same time, in different kinds of staff."
+  },
+  {
    "basis": "Distinct names against rows in the FY2025 listing.",
    "bearing": "sizes",
    "claim": "It is not a small group wearing many hats — almost everyone holds one seat",
@@ -459,6 +507,71 @@
  ],
  "distinct": 173,
  "ever": 649,
+ "fire": [
+  {
+   "career": 5,
+   "fy": "2017",
+   "on_call_high": 45,
+   "on_call_low": 40,
+   "page": "79"
+  },
+  {
+   "career": 7,
+   "fy": "2018",
+   "on_call_high": 45,
+   "on_call_low": 40,
+   "page": "96"
+  },
+  {
+   "career": 7,
+   "fy": "2019",
+   "on_call_high": 45,
+   "on_call_low": 40,
+   "page": "96"
+  },
+  {
+   "career": 7,
+   "fy": "2020",
+   "on_call_high": 45,
+   "on_call_low": 40,
+   "page": "86"
+  },
+  {
+   "career": 8,
+   "fy": "2021",
+   "on_call_high": 45,
+   "on_call_low": 40,
+   "page": "87"
+  },
+  {
+   "career": 10,
+   "fy": "2022",
+   "on_call_high": 35,
+   "on_call_low": 30,
+   "page": "84"
+  },
+  {
+   "career": 10,
+   "fy": "2023",
+   "on_call_high": 35,
+   "on_call_low": 30,
+   "page": "92"
+  },
+  {
+   "career": 10,
+   "fy": "2024",
+   "on_call_high": 35,
+   "on_call_low": 30,
+   "page": "76"
+  },
+  {
+   "career": 10,
+   "fy": "2025",
+   "on_call_high": 35,
+   "on_call_low": 30,
+   "page": "75"
+  }
+ ],
  "generated_by": "scripts/build_town_personnel.py",
  "grain": "POSTS IN THE LISTING, not people employed. One row is one named holder of one post in one year, or one empty seat the town printed. A DPW labourer or a town hall clerk holds no appointed post and is not here.",
  "held": 182,
@@ -504,7 +617,8 @@
  "not_established": [
   "How many people the town EMPLOYS. This counts posts in the listing, and a DPW labourer, a library assistant and a town hall clerk hold no appointed post. The gross-wages list would give a headcount and it stopped naming departments after FY2016.",
   "What anybody is paid. The listing never says, and no salary is inferred here from a post’s name.",
-  "Hours. A board seat and a full-time directorship are one row each.",
+  "Hours. A board seat and a full-time directorship are one row each, and the departments that state their staffing state no FTE either — a career post and an on-call post are not the same job and cannot be netted against each other.",
+  "A town total. The departments that describe their staffing do it in whichever form that year’s department head chose — a count, a range, an establishment post by post, a list of names — and those are different quantities that may not be summed.",
   "Whether a post was actually filled for the whole year. The listing is a point in time and an appointment note is the only sign of a change within one."
  ],
  "posts": [
@@ -2153,6 +2267,32 @@
    "note": "Read by scripts/extract_personnel.py. The format is not the same every year: the elected pages set their headings in title case and the appointed pages in capitals, and two or three pages a year are set in two columns.",
    "what": "Every elected and appointed post in the town, FY2016 to FY2025",
    "where": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing in each annual town report — nine pages a year"
+  }
+ ],
+ "staffing": [
+  {
+   "career": "",
+   "department": "Department Of Public Works",
+   "fy": "2023",
+   "measure": "establishment, post by post",
+   "on_call_high": "",
+   "on_call_low": "",
+   "page": "65",
+   "parsed": "yes",
+   "positions": "1 Director; 1 Executive Assistant; 1 Highway Superintendent; 5 Heavy Equipment Operators; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant",
+   "statement": "of life for the citizens of Lunenburg. The staff consists of one Director, one Executive Assistant (shared with the Facilities Department), one Highway Superintendent, 5 Heavy Equipment Operators, one Mechanic, one Cemetery Superintendent, two Seasonal Cemetery Laborers, one Sewer Business Manager, and one Assistant to the Sewer Business Manager."
+  },
+  {
+   "career": "",
+   "department": "Department Of Public Works",
+   "fy": "2024",
+   "measure": "establishment, post by post",
+   "on_call_high": "",
+   "on_call_low": "",
+   "page": "49",
+   "parsed": "yes",
+   "positions": "1 Director; 1 Executive Assistant; 1 Highway Superintendent; 3 Heavy Equipment Operators; 2 Driver; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant",
+   "statement": "welfare of the citizens of Lunenburg. The staff consists of one Director, one Executive Assistant (shared with the Facilities Department), one Highway Superintendent, 3 Heavy Equipment Operators, 2 Driver/Laborers, one Mechanic, one Cemetery Superintendent, two Seasonal Cemetery Laborers, one Sewer Business Manager, and one Assistant to the Sewer Business Manager."
   }
  ],
  "stats": [

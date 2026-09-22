@@ -84,6 +84,35 @@ Seats changing hands each year, over bodies of three seats or more that appear i
 | CABLE ADVISORY COMMITTEE | 3.0 | 2 | 0% |
 | GREEN COMMUNITY TASK FORCE | 3.0 | 2 | 0% |
 
+## What the departments say about their own staffing
+
+Not the same quantity as the listing above, and not addable to it: this is what a department says it EMPLOYS, written in the prose of its own report. No heading names it in any year.
+
+### The Fire Department, year by year
+
+| fiscal year | career | on call | page |
+|---|---:|---:|---:|
+| FY2017 | 5 | 40–45 | 79 |
+| FY2018 | 7 | 40–45 | 96 |
+| FY2019 | 7 | 40–45 | 96 |
+| FY2020 | 7 | 40–45 | 86 |
+| FY2021 | 8 | 40–45 | 87 |
+| FY2022 | 10 | 30–35 | 84 |
+| FY2023 | 10 | 30–35 | 92 |
+| FY2024 | 10 | 30–35 | 76 |
+| FY2025 | 10 | 30–35 | 75 |
+
+Career firefighters went from 5 to 10 while the on-call roll fell from 40–45 to 30–35.
+
+### Stated post by post
+
+| fiscal year | department | as printed |
+|---|---|---|
+| FY2023 | Department Of Public Works | 1 Director; 1 Executive Assistant; 1 Highway Superintendent; 5 Heavy Equipment Operators; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant |
+| FY2024 | Department Of Public Works | 1 Director; 1 Executive Assistant; 1 Highway Superintendent; 3 Heavy Equipment Operators; 2 Driver; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant |
+
+Read carelessly the Department of Public Works loses two heavy equipment operators between those two years. It does not: FY2024 prints `3 Heavy Equipment Operators, 2 Driver/Laborers` where FY2023 printed `5 Heavy Equipment Operators`. Same five people, two titles reclassified — which is why the sentence is stored as printed.
+
 ## The bodies, by size
 
 FY2025, filled seats only.
@@ -162,7 +191,8 @@ FY2025, filled seats only.
 
 - How many people the town EMPLOYS. This counts posts in the listing, and a DPW labourer, a library assistant and a town hall clerk hold no appointed post. The gross-wages list would give a headcount and it stopped naming departments after FY2016.
 - What anybody is paid. The listing never says, and no salary is inferred here from a post’s name.
-- Hours. A board seat and a full-time directorship are one row each.
+- Hours. A board seat and a full-time directorship are one row each, and the departments that state their staffing state no FTE either — a career post and an on-call post are not the same job and cannot be netted against each other.
+- A town total. The departments that describe their staffing do it in whichever form that year’s department head chose — a count, a range, an establishment post by post, a list of names — and those are different quantities that may not be summed.
 - Whether a post was actually filled for the whole year. The listing is a point in time and an appointment note is the only sign of a change within one.
 
 ## How well we read it

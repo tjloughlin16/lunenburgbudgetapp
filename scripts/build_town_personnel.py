@@ -64,6 +64,7 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from conclusions import conclusion, emit, figure, num, pct   # noqa: E402
 
 SRC = os.path.join(ROOT, 'sources', 'data', 'town-personnel.csv')
+STAFFING = os.path.join(ROOT, 'sources', 'data', 'department-staffing.csv')
 OUT = os.path.join(ROOT, 'sources', 'analyses', 'town-personnel.md')
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'town-personnel.json')
 
@@ -132,6 +133,25 @@ def load():
 
     sizes = collections.Counter(r['post'] for r in named)
 
+    # WHAT THE DEPARTMENTS SAY ABOUT THEMSELVES. A separate quantity from the listing and
+    # kept separate: the listing counts POSTS, this counts the people a department says it
+    # employs. They may not be added together.
+    staff = []
+    if os.path.exists(STAFFING):
+        staff = [r for r in csv.DictReader(open(STAFFING, encoding='utf-8'))
+                 if r['parsed'] == 'yes']
+    fire = sorted([r for r in staff if r['measure'].startswith('career')],
+                  key=lambda r: r['fy'])
+    seen, fire_series = set(), []
+    for r in fire:
+        if r['fy'] in seen:
+            continue
+        seen.add(r['fy'])
+        fire_series.append(dict(fy=r['fy'], career=int(r['career']),
+                                on_call_low=int(r['on_call_low']),
+                                on_call_high=int(r['on_call_high']),
+                                page=r['page']))
+
     # TURNOVER BY BODY, over CONSECUTIVE years only and over bodies present in both ends
     # of a pair. A body seen in one year of a pair and not the other tells us nothing about
     # its churn -- it tells us the listing changed -- so it is skipped rather than counted
@@ -162,7 +182,7 @@ def load():
 
     return dict(rows=rows, years=years, per=per, checks=checks, posts=posts,
                 last=last, named=named, vacancies=vac, terms=terms, ahead=ahead,
-                body_churn=body, body_big=big,
+                body_churn=body, body_big=big, staffing=staff, fire=fire_series,
                 distinct=len(who), held=len(named), multi=multi, churn=churn,
                 ever=len(ever), served_all=served_all, sizes=sizes)
 
@@ -187,7 +207,13 @@ def _not_established():
         'FY2016.',
         'What anybody is paid. The listing never says, and no salary is inferred here '
         'from a post’s name.',
-        'Hours. A board seat and a full-time directorship are one row each.',
+        'Hours. A board seat and a full-time directorship are one row each, and the '
+        'departments that state their staffing state no FTE either — a career post and an '
+        'on-call post are not the same job and cannot be netted against each other.',
+        'A town total. The departments that describe their staffing do it in whichever '
+        'form that year’s department head chose — a count, a range, an establishment post '
+        'by post, a list of names — and those are different quantities that may not be '
+        'summed.',
         'Whether a post was actually filled for the whole year. The listing is a point in '
         'time and an appointment note is the only sign of a change within one.',
     ]
@@ -285,6 +311,41 @@ def conclusions_for(d):
             allow=(),
         ),
         conclusion(
+            id='fire-doubled',
+            claim='The Fire Department doubled its career staff while its on-call roll shrank',
+            lede='The one department that states its staffing the same way every year, and '
+                 'it has changed a great deal.',
+            detail='Career firefighters went from %s in FY%s to %s by FY%s. Over the same '
+                   'period the on-call and per-diem roll fell from %s–%s to %s–%s. The '
+                   'department states both figures in the prose of its own report, and '
+                   'nothing else in the annual report counts them.'
+                   % (num(d['fire'][0]['career']), d['fire'][0]['fy'],
+                      num(d['fire'][-1]['career']), d['fire'][-1]['fy'],
+                      num(d['fire'][0]['on_call_low']), num(d['fire'][0]['on_call_high']),
+                      num(d['fire'][-1]['on_call_low']), num(d['fire'][-1]['on_call_high'])),
+            figures={'was': figure(d['fire'][0]['career'], num(d['fire'][0]['career']),
+                                   'career firefighters at the start'),
+                     'now': figure(d['fire'][-1]['career'], num(d['fire'][-1]['career']),
+                                   'career firefighters now'),
+                     'clo': figure(d['fire'][0]['on_call_low'],
+                                   num(d['fire'][0]['on_call_low']), 'on call, low end'),
+                     'chi': figure(d['fire'][0]['on_call_high'],
+                                   num(d['fire'][0]['on_call_high']), 'on call, high end'),
+                     'nlo': figure(d['fire'][-1]['on_call_low'],
+                                   num(d['fire'][-1]['on_call_low']), 'on call now, low'),
+                     'nhi': figure(d['fire'][-1]['on_call_high'],
+                                   num(d['fire'][-1]['on_call_high']), 'on call now, high')},
+            figure='now',
+            kind='measured',
+            bearing='sizes',
+            basis='The Fire Department\u2019s own staffing sentence in each annual report, '
+                  'FY%s to FY%s.' % (d['fire'][0]['fy'], d['fire'][-1]['fy']),
+            not_shown='Hours. A career post and an on-call post are not the same job, and '
+                      'the report gives no FTE for either, so the two cannot be netted.',
+            so_what='A department can grow and shrink at the same time, in different kinds of staff.',
+            allow=('FY%s' % d['fire'][0]['fy'], 'FY%s' % d['fire'][-1]['fy']),
+        ),
+        conclusion(
             id='not-a-clique',
             claim='It is not a small group wearing many hats — almost everyone holds one seat',
             lede='A common assumption about small-town boards, and this listing does not '
@@ -347,6 +408,34 @@ def render(d):
         for b in d['body_big']:
             t.append('| %s | %s | %s | %s |\n'
                      % (b['post'], b['seats'], b['pairs'], pct(b['churn'], 0)))
+    if d['fire']:
+        a, b = d['fire'][0], d['fire'][-1]
+        t.append('\n## What the departments say about their own staffing\n\n'
+                 'Not the same quantity as the listing above, and not addable to it: this '
+                 'is what a department says it EMPLOYS, written in the prose of its own '
+                 'report. No heading names it in any year.\n')
+        t.append('\n### The Fire Department, year by year\n\n'
+                 '| fiscal year | career | on call | page |\n|---|---:|---:|---:|\n')
+        for r in d['fire']:
+            t.append('| FY%s | %s | %s–%s | %s |\n'
+                     % (r['fy'], r['career'], r['on_call_low'], r['on_call_high'],
+                        r['page']))
+        t.append('\nCareer firefighters went from %s to %s while the on-call roll fell '
+                 'from %s–%s to %s–%s.\n'
+                 % (a['career'], b['career'], a['on_call_low'], a['on_call_high'],
+                    b['on_call_low'], b['on_call_high']))
+        est = [r for r in d['staffing'] if 'establishment' in r['measure']]
+        if est:
+            t.append('\n### Stated post by post\n\n| fiscal year | department | as '
+                     'printed |\n|---|---|---|\n')
+            for r in est:
+                t.append('| FY%s | %s | %s |\n'
+                         % (r['fy'], r['department'], r['positions']))
+            t.append('\nRead carelessly the Department of Public Works loses two heavy '
+                     'equipment operators between those two years. It does not: FY2024 '
+                     'prints `3 Heavy Equipment Operators, 2 Driver/Laborers` where FY2023 '
+                     'printed `5 Heavy Equipment Operators`. Same five people, two titles '
+                     'reclassified — which is why the sentence is stored as printed.\n')
     t.append('\n## The bodies, by size\n\nFY%s, filled seats only.\n\n'
              '| board, committee or post | people |\n|---|---:|\n' % last)
     for post, n in sorted(d['sizes'].items(), key=lambda a: (-a[1], a[0])):
@@ -413,6 +502,8 @@ def payload(d):
         checks=dict(d['checks']),
         posts=sorted(d['posts'].values(), key=lambda p: p['post']),
         body_churn=d['body_big'],
+        fire=d['fire'],
+        staffing=[r for r in d['staffing'] if 'establishment' in r['measure']],
         sources=_sources(d),
         not_established=_not_established(),
         conclusions=conclusions_for(d),
