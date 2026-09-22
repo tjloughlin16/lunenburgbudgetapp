@@ -1241,6 +1241,11 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_dataset_provenance.py  # every dataset row joined to the document it came from
     python3 scripts/build_api.py                 # publish the database and the read-only JSON API
     python3 scripts/build_agent_endpoints.py     # regenerate llms.txt and the published data endpoints
+    python3 scripts/extract_department_rosters.py  # Police and Fire by name and RANK, off the column pages
+    python3 scripts/extract_board_chairs.py     # who chaired each board, from the body's own report
+    python3 scripts/build_org_charts.py         # every department, board and school as an org chart, by year
+    python3 scripts/check_org_charts.py         # ...and the SHAPE of every body asserted: headless, many-heads,
+                                                #   doubled, a heading read as a person, a grouping with one value
     python3 scripts/classify_roster_roles.py    # what job each printed roster title is
     python3 scripts/classify_roster_roles.py --check   # ...and fail if it is stale
     python3 scripts/sync_d1.py                  # push the database to D1 — SKIPS if unchanged;

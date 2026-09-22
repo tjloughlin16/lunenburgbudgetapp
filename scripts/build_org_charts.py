@@ -108,6 +108,9 @@ def canon_section(text):
     if not t:
         return ''
     t = BUILDING_TAIL.sub('', t).strip(':_.,;- ') or t
+    # `Ith Grade:` is the scanner's `7th Grade:` -- an I for a 7 -- and it published a
+    # grade that does not exist beside the one it belongs to.
+    t = re.sub(r'^[Il]th\s+Grade', '7th Grade', t)
     m = GRADE.match(t)
     if m:
         n = m.group(1) or m.group(2) or ORDINAL[m.group(3).lower()]
@@ -160,6 +163,15 @@ TIER_STAFF = 3
 # beside a full one loses the only distinction the town draws between them. The first
 # draft had `associate` in the DEPUTY band, which put them above the members instead.
 TIER_ASSOCIATE = 4
+# ONE PERSON RUNS A BODY, AND THE REST OF THE TOP BAND REPORTS TO THEM. The School
+# Central Office publishes a Superintendent beside a Director of Facilities, a Director
+# of Special Services, a Food Service Director and a Business Manager, and all five read
+# as heads -- nine of them in FY2017. A Director IS the head of the Library, of IT and of
+# the Council on Aging, so the post cannot be demoted by name. It is demoted by CONTEXT:
+# where a body already has a Superintendent, a Chief, a Town Manager, a Principal or a
+# Chair, everyone else in the top band is a rank below.
+STRONG_HEAD = re.compile(r'\bsuperintendent\b|\btown manager\b|\bchief\b|\bprincipal\b'
+                         r'|\bchair(?:man|person|woman)?\b|\btown clerk\b', re.I)
 ASSOCIATE = re.compile(r'\bassoc(?:iate)?\b|\bhonorary\b|\bnon-?voting\b|\bex[- ]officio\b'
                        r'|\balternate\b|\bdesignee\b', re.I)
 
@@ -210,7 +222,43 @@ ALIAS = {
         'Fire Chief / Emergency Management Director / Forest Warden',
     'mericans with disabilities committee - - 3 yea':
         'Americans with Disabilities Committee',
+    'mericans with disabilities committee': 'Americans with Disabilities Committee',
+    # ONE BODY UNDER TWO SPELLINGS, OR TWO NAMES FOR THE SAME SEAT. Every pair was found
+    # by reading the dropdown, which is what the dropdown is for.
+    'park commission': 'Parks Commission',
+    'sewer commission - 1/2': 'Sewer Commission',
+    'architectural preservation district commission (apdc)':
+        'Architectural Preservation District Commission',
+    'bulding commissioner/zoning enforcement officer':
+        'Building Commissioner/Zoning Enforcement Officer',
+    'ocal census liaison': 'Local Census Liaison',
+    'interim town manager': 'Town Manager',
+    'interim veterans services agent': 'Veterans Services Agent',
+    'veterans services agent': "Veterans' Services",
+    'lunenburg municipal building design committee (eff. 9/26/23)':
+        'Lunenburg Municipal Building Design Committee',
+    # THE TOWN RENAMED ITS SELECTMEN. `Board of Selectmen` became `Select Board` at the
+    # 2019 annual town meeting; it is one body and a reader looking for its history
+    # should not have to know the date of the vote.
+    'board of selectmen': 'Select Board',
+    'board of selectmen representative': 'Select Board',
 }
+
+# A SEAT ON A BOARD IS NOT A BODY OF ITS OWN. The listing prints `ZBA Associates` and
+# `Associate Members` as sub-headings inside a board, and they arrived as separate units
+# with their own dropdown entries -- so the Zoning Board of Appeals was published in two
+# pieces, its full members in one and its associates in another.
+FOLD_INTO = {
+    'zba associates': ('Zoning Board Of Appeals', 'Associate Member'),
+    'zba associate member': ('Zoning Board Of Appeals', 'Associate Member'),
+}
+# A PERSON IS NOT A BODY, and neither is a listing sub-heading.
+NOT_A_UNIT = re.compile(r'^(ex officio members|john palumbo|got advisors)', re.I)
+# A FRAGMENT OF THE LISTING IS NOT A PERSON. `Serving until next annual`, `ssociate
+# Members-(2) 2 year`, `elect Board Representative-R` -- a sub-heading or a footnote the
+# column reader took for a name, with the first letter eaten by the bullet before it.
+NOT_A_MEMBER = re.compile(r'^(serving|term|vacan|assoc|ssociate|elect board|members?\b|'
+                          r'\W|\d)|denotes|until next|\bmembers\s*[-\u2014(]', re.I)
 
 
 # THE MEMBERSHIP IS NOT PART OF THE NAME. The listing prints `COUNCIL ON AGING- - (11
@@ -277,6 +325,11 @@ def _seat(raw):
     # Jeffreys- Select Board` has two, and taking the first made the member `Michael`
     # and his seat `Ray Jeffreys-Select Board`.
     cuts = [m.start() for m in SEAT_SPLIT.finditer(t)]
+    # THE SEPARATOR IS SOMETIMES A COMMA. `Damon McQuaid, Planning Board` and `Mark
+    # Erickson, Finance Committee` -- the Building Reuse Committee prints its seats that
+    # way, and the whole string was going in as the person's name.
+    cuts += [m.start() for m in re.finditer(r',\s+(?=[A-Z])', t)]
+    cuts.sort()
     best = None
     for i in cuts:
         left, right = t[:i].strip(), SEAT_SPLIT.sub('', t[i:], count=1).strip(' .,')
@@ -308,6 +361,9 @@ def _rows_officials():
             continue
         kind = ('board' if 'board seat' in r['kind'] else 'officer')
         name, seat, note = _seat(who)
+        if name and NOT_A_MEMBER.match(name):
+            bad += 1
+            continue
         # ELECTED OR APPOINTED is the listing's own division and it is on every row.
         band = (r['section'] or '').strip().title()
         if who:
@@ -665,6 +721,53 @@ def _rows_signatures():
     return out
 
 
+def _norm_body(u):
+    """A body's name reduced to what does not vary: no case, no punctuation, no filler."""
+    u = re.sub(r'\s*\((staff|board|schools|appointed post)\)$', '', u, flags=re.I)
+    return re.sub(r'[^a-z]', '',
+                  re.sub(r'\b(the|of|and|lunenburg|department|town|report|committee)\b',
+                         '', u.lower()))
+
+
+def _rows_chairs(units):
+    """THE CHAIR OF EVERY BOARD, from the body's own report.
+
+    A QA pass over all 104 units found 274 bodies with members and NOBODY AT THE TOP --
+    the Planning Board, the Finance Committee, the School Committee, the Board of Health,
+    every one of them headless. The officials listing marks its chairs with asterisks and
+    a footnote saying so, and stops doing it after about FY2015.
+
+    The chairs never stopped being published; they moved into the reports. 263 mentions
+    across fourteen years, read by `extract_board_chairs.py`.
+
+    MATCHED AGAINST BODIES THAT ALREADY EXIST, never used to invent one. The contents page
+    is scanned text, so it yields `Sewer Commission 70,` and `105 Capital Planning
+    Committe lanning Boar` alongside the clean names; a chair whose body cannot be matched
+    to a unit the chart already holds is counted and dropped rather than published under a
+    body nobody can find.
+    """
+    p = os.path.join(DATA, 'board-chairs.csv')
+    out, unmatched = [], []
+    if not os.path.exists(p):
+        return out, unmatched
+    # SORTED, BECAUSE A SET IS NOT AN ORDER. Two units can normalise to the same key,
+    # and whichever arrived first won -- which made the output depend on Python's
+    # per-process string hashing, so `--check` failed at random.
+    index = {}
+    for u, kind in sorted(units):
+        index.setdefault(_norm_body(u), (u, kind))
+    for r in csv.DictReader(open(p, encoding='utf-8')):
+        hit = index.get(_norm_body(r['department']))
+        if not hit:
+            unmatched.append((r['fy'], r['department'], r['person']))
+            continue
+        unit, kind = hit
+        out.append(dict(fy=r['fy'], unit=unit, unit_kind=kind, subunit='', section='',
+                        role=r['title'], person=r['person'].strip(), status='filled',
+                        source='report p%s, names its own chair' % r['page']))
+    return out, unmatched
+
+
 KIND_SUFFIX = {'department': 'staff', 'board': 'board', 'officer': 'appointed post',
                'school': 'schools'}
 
@@ -682,7 +785,10 @@ def _one_spelling(rows):
     weight = collections.defaultdict(collections.Counter)
     for r in rows:
         weight[r['unit'].lower()][r['unit']] += 1
-    best = {k: c.most_common(1)[0][0] for k, c in weight.items()}
+    # Most rows wins, and the alphabet breaks ties -- `most_common` leaves equal counts
+    # in insertion order, which is not stable across runs.
+    best = {k: sorted(c.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+            for k, c in weight.items()}
     for r in rows:
         r['unit'] = best[r['unit'].lower()]
     return rows
@@ -697,13 +803,22 @@ def _disambiguate(rows):
     2025 gross wages list, and `Council On Aging` the BOARD is eleven appointed
     volunteers. Two real bodies, one name, told apart by a capital O.
     """
-    kinds = collections.defaultdict(set)
+    kinds = collections.defaultdict(collections.Counter)
     for r in rows:
-        kinds[r['unit'].lower()].add(r['unit_kind'])
+        kinds[r['unit'].lower()][r['unit_kind']] += 1
     for r in rows:
-        if len(kinds[r['unit'].lower()]) > 1:
+        seen = kinds[r['unit'].lower()]
+        # ONLY A DEPARTMENT AND A BOARD ARE TWO BODIES. `board` and `officer` are two
+        # words the officials listing uses for the same committee depending on which
+        # part of the page it was printed in, and splitting on them published the Storm
+        # Water Task Force, the Taxation Aid Committee, the Constables and the Green
+        # Community Task Force as pairs of half-empty units. Where the split is not real,
+        # the majority kind wins and the body stays whole.
+        if 'department' in seen and len(seen) > 1:
             r['unit'] = '%s (%s)' % (r['unit'], KIND_SUFFIX.get(r['unit_kind'],
                                                                 r['unit_kind']))
+        elif len(seen) > 1:
+            r['unit_kind'] = sorted(seen.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
     return rows
 
 
@@ -711,30 +826,75 @@ def build():
     rows, bad = _rows_officials()
     roster, lost_prose = _rows_rosters()
     rows += roster + _rows_schools() + _rows_prose() + _rows_signatures()
+    # THE CHAIRS COME IN BEFORE THE BANDS ARE ASSIGNED, because a chair is the top band.
+    chairs, unmatched = _rows_chairs({(r['unit'], r['unit_kind']) for r in rows})
+    rows += chairs
+    solo = collections.Counter((r['fy'], r['unit']) for r in rows)
     for r in rows:
         r['section_group'] = canon_section(r['section'])
-        # AN APPOINTED POST IS ITS OWN HEAD. A one-post unit like the Dam Keeper has
-        # nobody under it, and banding it with the staff of a forty-person department
-        # would read as a rank it does not have.
-        r['tier'] = 0 if r['unit_kind'] == 'officer' else tier_of(r['role'],
-                                                                 r['unit_kind'])
-    rows = _disambiguate(_one_spelling(rows))
+        # AN APPOINTED POST IS ITS OWN HEAD -- BUT ONLY WHEN IT IS ONE POST. The
+        # listing files whole committees under `officer` (the Charter Review Committee,
+        # the Election Workers, the Building Design Committee), and calling every row a
+        # head printed nine people as nine heads of one body. A unit holding one person
+        # in a year has a head; a unit holding nine has members.
+        r['tier'] = tier_of(r['role'], r['unit_kind'])
+        if r['unit_kind'] == 'officer' and r['tier'] == TIER_STAFF \
+                and solo[(r['fy'], r['unit'])] == 1:
+            r['tier'] = 0
+    keep = []
+    for r in rows:
+        key = r['unit'].lower()
+        if NOT_A_UNIT.match(key):
+            bad += 1
+            continue
+        if key in FOLD_INTO:
+            r['unit'], r['role'] = FOLD_INTO[key][0], FOLD_INTO[key][1]
+            r['unit_kind'] = 'board'
+        keep.append(r)
+    rows = _disambiguate(_one_spelling(keep))
     # ONE ROW PER PERSON PER BAND. `Chief` off the roster and `Chief P` off the signature
     # block are the same post, and both were drawn. Where a person appears twice in one
     # body, one year and one band, the tidier role wins -- shortest that still names a
     # post -- because the duplicate is always a worse scan of the same words.
+    # ONE ROW PER PERSON PER BODY PER YEAR, ACROSS THE BANDS. A chair is also a member,
+    # and the listing prints them as one of the seats -- so adding the chairs put every
+    # one of them in the chart twice, once at the top and once among the members. Where
+    # one row names a real post and the other says only `board seat`, the post wins; the
+    # person is one person either way.
+    GENERIC = ('', 'board seat', 'officer')
+
+    def _rank(r):
+        return (r['role'].strip().lower() in GENERIC, len(r['role']), r['tier'])
     best = {}
     for r in rows:
-        k = (r['fy'], r['unit'], r['subunit'], r['person'].lower(), r['tier'])
         if not r['person']:
             continue
+        k = (r['fy'], r['unit'], r['subunit'], r['person'].lower())
         cur = best.get(k)
-        if cur is None or (len(r['role']) < len(cur['role']) and r['role']):
+        if cur is None or _rank(r) < _rank(cur):
             best[k] = r
     rows = [r for r in rows
             if not r['person']
-            or best[(r['fy'], r['unit'], r['subunit'], r['person'].lower(),
-                     r['tier'])] is r]
+            or best[(r['fy'], r['unit'], r['subunit'],
+                     r['person'].lower())] is r]
+    strong = {(r['fy'], r['unit'], r['subunit']) for r in rows
+              if r['tier'] == 0 and STRONG_HEAD.search(r['role'])}
+    for r in rows:
+        if r['tier'] == 0 and not STRONG_HEAD.search(r['role']) \
+                and (r['fy'], r['unit'], r['subunit']) in strong:
+            r['tier'] = 1
+
+    # A GROUPING WITH ONE VALUE IS A HEADING THAT SAYS NOTHING. `Elected` written over
+    # every member of an elected board, `Appointed` over every member of an appointed
+    # one -- 191 unit-years of it. The division is real where a body holds both; where
+    # it does not, it is a line of type between the reader and the names.
+    spread = collections.defaultdict(set)
+    for r in rows:
+        if r['tier'] == TIER_STAFF:          # the staff band is the only one grouped
+            spread[(r['fy'], r['unit'], r['subunit'])].add(r['section_group'])
+    for r in rows:
+        if len(spread[(r['fy'], r['unit'], r['subunit'])]) <= 1:
+            r['section_group'] = ''
     seen, uniq = set(), []
     for r in rows:
         k = (r['fy'], r['unit'], r['subunit'], r['section'], r['role'], r['person'],
@@ -746,7 +906,7 @@ def build():
     uniq.sort(key=lambda r: (r['unit'].lower(), r['fy'], r['subunit'].lower(),
                              r['tier'], r['section_group'].lower(), r['role'].lower(),
                              r['person'].lower()))
-    return uniq, bad, lost_prose
+    return uniq, bad, lost_prose, unmatched
 
 
 def payload(rows):
@@ -772,7 +932,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    rows, bad, lost = build()
+    rows, bad, lost, unmatched = build()
     pay = payload(rows)
     if a.check:
         old = list(csv.DictReader(open(OUT_CSV, encoding='utf-8'))) \
@@ -800,6 +960,7 @@ def main():
     print('  %d roster lines read as prose, not people:' % len(lost))
     for fy, dept, txt in lost[:200]:
         print('      FY%s %-18s %s' % (fy, dept[:18], txt[:88]))
+    print('  %d chair mentions could not be matched to a body in the chart' % len(unmatched))
     thin = [u for u in pay['units'] if len(u['years']) == 1]
     print('  %d unit(s) appear in ONE year only — read them before trusting them'
           % len(thin))
