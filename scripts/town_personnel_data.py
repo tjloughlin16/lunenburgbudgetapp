@@ -42,20 +42,39 @@ KINDS = [('elected board seat', 'Elected seats', 'filled by the voters'),
 
 
 def _school_detail():
-    """The schools broken out, because they are six times the next employer."""
-    path = os.path.join(ROOT, 'sources', 'data', 'staff-roster-counts.csv')
+    """The schools broken out, in PEOPLE.
+
+    COUNTED DISTINCT, the same way the district figure is. Summing the counts file adds a
+    person once per row, so a teacher listed under two grades was two members of staff and
+    a specialist who works at two schools was two people -- which is how FY2025 came to
+    publish 250 for a district that employs 232.
+
+    The school columns still need not sum to the district total, and that is not an error
+    to be tidied away: somebody who teaches at the Primary and at Turkey Hill IS staff at
+    both schools and is one employee of the district. The page says so rather than
+    reconciling two different questions into one number.
+    """
+    path = os.path.join(ROOT, 'sources', 'data', 'staff-roster-entries.csv')
     if not os.path.exists(path):
-        return dict(by_school=[], by_position=[], fy=None)
+        return dict(by_school=[], by_position=[], fy=None, district=0, sums_to=0)
     rows = list(csv.DictReader(open(path, encoding='utf-8')))
     fy = max(r['fy'] for r in rows)
-    school, pos = collections.Counter(), collections.Counter()
+    school = collections.defaultdict(set)
+    pos = collections.defaultdict(set)
+    district = set()
     for r in rows:
-        if r['fy'] == fy:
-            school[r['school']] += int(r['count'] or 0)
-            pos[r['position']] += int(r['count'] or 0)
-    return dict(fy=fy,
-                by_school=[dict(school=k, people=v) for k, v in school.most_common()],
-                by_position=[dict(position=k, people=v) for k, v in pos.most_common()])
+        if r['fy'] != fy:
+            continue
+        who = r['name'].strip().lower()
+        district.add(who)
+        school[r['school']].add(who)
+        pos[r['position'] or '(unmapped)'].add(who)
+    by_school = sorted(((k, len(v)) for k, v in school.items()), key=lambda kv: -kv[1])
+    by_pos = sorted(((k, len(v)) for k, v in pos.items()), key=lambda kv: -kv[1])
+    return dict(fy=fy, district=len(district),
+                sums_to=sum(n for _k, n in by_school),
+                by_school=[dict(school=k, people=v) for k, v in by_school],
+                by_position=[dict(position=k, people=v) for k, v in by_pos])
 
 
 def load():
@@ -246,14 +265,36 @@ def load():
     # recorded per row -- and the low end of a range is used, so a department is never
     # flattered by its own vagueness.
     staff_counts = collections.defaultdict(dict)
+    # A PERSON IS ONE PERSON, however many rows the roster gives them. The counts file is
+    # one row per (school, position), so summing it counts a specialist who works at two
+    # schools once at EACH -- and FY2025 published 250 where the district employs 232
+    # people. Twenty of FY2022's twenty-one repeats are the same thing: shared staff,
+    # legitimately printed twice, wrongly added twice.
+    #
+    # So the district figure is DISTINCT NAMES, read off the entries. The per-school
+    # figures stay per-school -- somebody who teaches at two schools is a member of staff
+    # at both, and the page says the school columns need not sum to the district total.
+    entries_p = os.path.join(ROOT, 'sources', 'data', 'staff-roster-entries.csv')
     school = os.path.join(ROOT, 'sources', 'data', 'staff-roster-counts.csv')
     school_bad = set()
     if os.path.exists(school):
         per_year = collections.Counter()
         per_school = collections.defaultdict(collections.Counter)
-        for r in csv.DictReader(open(school, encoding='utf-8')):
-            per_year[r['fy']] += int(r['count'] or 0)
-            per_school[r['fy']][r['school']] += int(r['count'] or 0)
+        if os.path.exists(entries_p):
+            names = collections.defaultdict(set)
+            sch_names = collections.defaultdict(set)
+            for r in csv.DictReader(open(entries_p, encoding='utf-8')):
+                who = r['name'].strip().lower()
+                names[r['fy']].add(who)
+                sch_names[(r['fy'], r['school'])].add(who)
+            for fy, who in names.items():
+                per_year[fy] = len(who)
+            for (fy, sc), who in sch_names.items():
+                per_school[fy][sc] = len(who)
+        else:
+            for r in csv.DictReader(open(school, encoding='utf-8')):
+                per_year[r['fy']] += int(r['count'] or 0)
+                per_school[r['fy']][r['school']] += int(r['count'] or 0)
         # THE TELL IS AT SCHOOL LEVEL, not in the total. FY2024 reads 343 against 265 and
         # 250 -- 29% above one neighbour, under any sane year-level threshold -- and the
         # whole excess is one school: Turkey Hill goes 59, 135, 64. A school does not

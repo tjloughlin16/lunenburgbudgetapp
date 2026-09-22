@@ -449,9 +449,16 @@ def render(d):
     if sd['by_school']:
         t.append('\n## The schools, in detail\n\n%s times the next employer, so worth '
                  'breaking out. FY%s.\n\n| school | staff |\n|---|---:|\n'
-                 % (word(round(emp[0]['people'] / emp[1]['people'])), sd['fy']))
+                 % (word(round(emp[0]['people'] / emp[1]['people'])).capitalize(),
+                    sd['fy']))
         for r in sd['by_school']:
             t.append('| %s | %s |\n' % (r['school'].replace('-', ' ').title(), num(r['people'])))
+        if sd.get('district') and sd.get('sums_to') and sd['sums_to'] != sd['district']:
+            t.append('\nThe school columns come to %s and the district employs %s. That is '
+                     'not an error to tidy away: somebody who teaches at two schools is '
+                     'staff at both and one employee of the district, so the two answer '
+                     'different questions and are counted differently.\n'
+                     % (num(sd['sums_to']), num(sd['district'])))
         t.append('\n| what they do | staff |\n|---|---:|\n')
         for r in sd['by_position'][:12]:
             t.append('| %s | %s |\n' % (r['position'], num(r['people'])))

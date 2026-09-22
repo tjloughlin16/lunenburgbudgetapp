@@ -1665,9 +1665,9 @@
      "stars": 3,
      "what": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing read as data, FY2022 to FY2025. Two thirds of the posts the town lists are unpaid seats on boards. It is NOT a headcount of town employees — a DPW labourer or a town hall clerk holds no appointed post — and it says so, because the wage list that would give a headcount stopped naming departments after FY2016.",
      "kind": "Notes",
-     "bytes": 9668,
+     "bytes": 9935,
      "url": "/docs/analyses/town-personnel.md",
-     "count": 114,
+     "count": 116,
      "unit": "lines",
      "textUrl": "/docs/analyses/town-personnel.md"
     },
@@ -2165,7 +2165,7 @@
      "stars": 1,
      "what": "This report’s SIGNATURE image, and the one a reader remembers: every department that publishes a headcount drawn as rows of figures, one figure for every ten people. Repeated rather than scaled, because nobody can judge area — twenty-five school figures beside four fire figures is a ratio anyone can count. A department short of a whole unit is drawn as a PART figure rather than rounded, so the three-person Assessing office is neither inflated to ten nor erased.",
      "kind": "SVG",
-     "bytes": 86622,
+     "bytes": 82464,
      "url": "/docs/analyses/charts/town-personnel-crowd.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-crowd.svg"
     },
@@ -2185,7 +2185,7 @@
      "stars": 1,
      "what": "The same data the ranked bars used to carry, drawn in figures: one row per department, one figure for every ten people, a PART figure where a department does not reach ten. TJ: the icon one is more interesting than the basic bar chart and is identical data wise.",
      "kind": "SVG",
-     "bytes": 11375,
+     "bytes": 11276,
      "url": "/docs/analyses/charts/town-personnel-people.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-people.svg"
     },
@@ -2205,7 +2205,7 @@
      "stars": 1,
      "what": "The companion to the small multiples, and the one that answers SIZE rather than movement: every department on one people axis, so the schools dwarf the rest the way they do in the budget. Spaced by YEAR and broken at any year a department published no figure, because these series have holes in them and an unbroken line would draw a record the town never printed.",
      "kind": "SVG",
-     "bytes": 9636,
+     "bytes": 9634,
      "url": "/docs/analyses/charts/town-personnel-all.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-all.svg"
     },
@@ -2345,7 +2345,7 @@
      "stars": 1,
      "what": "A pie at the head of the personnel report, the counterpart to the budget page’s. The whole is NOT the town: it is the people the town publishes a count for, and the subtitle says so, because a pie whose whole is unnamed is the shape that misleads.",
      "kind": "SVG",
-     "bytes": 4228,
+     "bytes": 4332,
      "url": "/docs/analyses/charts/town-personnel-share.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-share.svg"
     },
@@ -2488,9 +2488,9 @@
      "stars": 3,
      "what": "3,815 entries across 15 years, 7 schools and 100 pages. This BOUNDS the question of whether budgeted positions were filled; it does not settle it. A roster carries no FTE, so a 0.4 music teacher and a full-timer are one row each; no funding source, which is the question that actually matters; and it is a point in time, undated within the year. A count of names the town printed is a real quantity and it is not a staffing level.",
      "kind": "Data",
-     "bytes": 445869,
+     "bytes": 437706,
      "url": "/docs/data/staff-roster-entries.csv",
-     "count": 3815,
+     "count": 3751,
      "unit": "rows",
      "textUrl": "/docs/data/staff-roster-entries.csv"
     },
@@ -3465,9 +3465,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 362682,
+     "bytes": 370254,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2121,
+     "count": 2164,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -4210,9 +4210,9 @@
      "stars": 2,
      "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
      "kind": "Data",
-     "bytes": 13291,
+     "bytes": 13412,
      "url": "/docs/data/youtube-no-captions.csv",
-     "count": 107,
+     "count": 108,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-no-captions.csv"
     },
@@ -16572,7 +16572,7 @@
  "totals": {
   "documents": 1438,
   "groups": 22,
-  "bytes": 2180668504,
+  "bytes": 2180664146,
   "loadBearing": 156
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

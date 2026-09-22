@@ -311,6 +311,12 @@ def main():
                        'missing_lines': ' '.join(str(m) for m in missing[:20]),
                        'entries': len(page.get('entries', []))})
 
+    # THE FILTER RUNS BEFORE THE FILE IS WRITTEN, not between the file and the counts.
+    # It ran after, so `staff-roster-entries.csv` kept the duplicate printing that
+    # `staff-roster-counts.csv` dropped -- the published rows and the published counts
+    # disagreed about FY2024 by 64 people, which is the exact shape of defect this repo
+    # catalogues: two derived things from one source, and nothing comparing them.
+    entries = _one_printing_per_school(entries)
     with open(ENTRIES, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=['fy', 'school', 'page', 'name', 'role_raw',
                                            'position', 'position_from', 'grade_or_dept',
@@ -335,7 +341,6 @@ def main():
     # is the fuller list, and nothing in the report says which is current. The difference
     # is nine people either way and both sit inside the range the school has held for a
     # decade, so it is recorded here rather than argued over.
-    entries = _one_printing_per_school(entries)
     agg = collections.Counter()
     for e in entries:
         agg[(e['fy'], e['school'], e['position'] or '(unmapped)')] += 1

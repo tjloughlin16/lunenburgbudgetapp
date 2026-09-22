@@ -12,7 +12,7 @@ How many people each part of the town employs, which are growing and which have 
 
 | part of the town | people | as of | first published | change | a year | what it counts |
 |---|---:|---|---:|---:|---:|---|
-| Schools | 250 | FY2025 | 216 in FY2011 | +34 | +2.4 | every member of staff, named |
+| Schools | 232 | FY2025 | 200 in FY2011 | +32 | +2.3 | every member of staff, named |
 | Fire Department | 40 | FY2025 | 34 in FY2011 | +6 | +0.4 | career staff plus the low end of the on-call range |
 | Police Department | 29 | FY2025 | 13 in FY2012 | +16 | +1.2 | every member of staff, named on its roster |
 | Department of Public Works | 14 | FY2025 | 14 in FY2023 | +0 | +0.0 | an establishment, post by post |
@@ -24,7 +24,7 @@ How many people each part of the town employs, which are growing and which have 
 
 These are not identical measures — a named roster, a career count plus the low end of an on-call range, and an establishment of posts — and they are all answers to how many people work here. Where a department states a range the LOW end is used, so none is flattered by its own vagueness.
 
-**change** is measured over each department’s own record, and those records do not line up: the Schools record spans 14 years and the Board of Assessors’s 2, so +34 and +1 are not the same claim. No year is published by all 9 — the fullest is FY2020, with 6 of them — and standardising on that would drop the three that STOPPED publishing, which is the part worth seeing. **a year** is the change divided by the years it spans, and that column compares.
+**change** is measured over each department’s own record, and those records do not line up: the Schools record spans 14 years and the Board of Assessors’s 2, so +32 and +1 are not the same claim. No year is published by all 9 — the fullest is FY2020, with 6 of them — and standardising on that would drop the three that STOPPED publishing, which is the part worth seeing. **a year** is the change divided by the years it spans, and that column compares.
 
 A year whose count reads under half the year before it is dropped as a short read rather than published as a cut: Police Department FY2015, FY2014. The Police roster comes back as seven officers in FY2024 against twenty-five in FY2023, which is a page this reader did not find, not three quarters of a police force.
 
@@ -36,33 +36,35 @@ On one scale the relation is plain, and it is the one the panels below deliberat
 
 ![Eight small panels, one per part of the town that publishes a staff count, each showing headcount year by year on its own scale. A hollow point marks a year dropped as a misreading.](charts/town-personnel-counts.svg)
 
-Schools moves between 172 and 294 across 15 published years; Fire Department moves between 34 and 47 across 15 published years; Council on Aging moves between 7 and 11 across 12 published years. Library and Board of Assessors publish too few years to show a trend at all.
+Schools moves between 170 and 272 across 15 published years; Fire Department moves between 34 and 47 across 15 published years; Council on Aging moves between 7 and 11 across 12 published years. Library and Board of Assessors publish too few years to show a trend at all.
 
 ## The schools, in detail
 
-six times the next employer, so worth breaking out. FY2025.
+Six times the next employer, so worth breaking out. FY2025.
 
 | school | staff |
 |---|---:|
 | Primary | 73 |
-| High | 64 |
-| Turkey Hill | 64 |
+| High | 62 |
+| Turkey Hill | 60 |
 | Middle | 49 |
+
+The school columns come to 244 and the district employs 232. That is not an error to tidy away: somebody who teaches at two schools is staff at both and one employee of the district, so the two answer different questions and are counted differently.
 
 | what they do | staff |
 |---|---:|
-| Classroom Teacher | 77 |
-| Paraprofessional | 52 |
-| (unmapped) | 42 |
-| Specialist Teacher | 13 |
+| Classroom Teacher | 72 |
+| Paraprofessional | 51 |
+| (unmapped) | 41 |
 | Custodial / Facilities | 11 |
+| Specialist Teacher | 10 |
 | Food Service | 8 |
-| Speech / OT / PT | 8 |
-| Assistant Principal | 6 |
+| Speech / OT / PT | 6 |
 | Administrative Staff | 5 |
 | Guidance / Adjustment Counselor | 5 |
-| Principal | 5 |
+| Assistant Principal | 5 |
 | Nurse | 4 |
+| Special Education Teacher | 4 |
 
 ## Which parts of the budget have a headcount behind them
 
