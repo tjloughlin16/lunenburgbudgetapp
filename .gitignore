@@ -185,3 +185,7 @@ notes/feedback/
 # who wrote to this project privately should not have even the shape of it committed, and
 # a file that is never tracked cannot be published by accident. scripts/pull_questions.py.
 sources/data/reader-questions.csv
+
+# Spotlight: keep it out of directories the ingestion writes hundreds of small files
+# into. Not repo content -- a local index hint, and it differs per machine.
+.metadata_never_index
