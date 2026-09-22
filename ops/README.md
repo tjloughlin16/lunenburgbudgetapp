@@ -40,3 +40,28 @@ work; the sweep spends what is left rather than letting it lapse.
 
     cp ops/org.lunenburgbudgetproject.sweep.plist ~/Library/LaunchAgents/
     launchctl load ~/Library/LaunchAgents/org.lunenburgbudgetproject.sweep.plist
+
+
+# The ingestion dashboard, without a watcher
+
+`bash scripts/status.sh` opens the dashboard AND starts a watcher that rewrites it every
+20 seconds -- and that watcher dies with its terminal. TJ, 22 September 2026: *"i need
+this dash to not need YOU to run a watcher"*, after the page had sat frozen since the
+previous afternoon while looking exactly like a dashboard of a busy machine.
+
+**That is the failure worth naming: a stale dashboard and a live one are identical unless
+you check the file's timestamp.** It read as a refresh still running; the refresh had
+stopped nineteen hours earlier.
+
+    cp ops/org.lunenburgbudgetproject.status.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/org.lunenburgbudgetproject.status.plist
+
+It rewrites `build/status/index.html` every 60 seconds, at login and after a reboot, with
+nobody at the keyboard. Stop it the same way as the others:
+
+    launchctl unload ~/Library/LaunchAgents/org.lunenburgbudgetproject.status.plist
+
+Check it is actually updating -- which is the whole point, so check it properly, by
+watching the mtime MOVE rather than by seeing that it is recent:
+
+    B=$(stat -f %m build/status/index.html); sleep 70; stat -f %m build/status/index.html

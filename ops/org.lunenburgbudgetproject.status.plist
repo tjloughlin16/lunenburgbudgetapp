@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>org.lunenburgbudgetproject.status</string>
+  <!-- THE DASHBOARD MUST NOT DEPEND ON ANYBODY BEING AT THE KEYBOARD. TJ, 22 September
+       2026: "i need this dash to not need YOU to run a watcher". `status.sh` starts a
+       watcher that dies with its terminal, so the page silently froze -- and a frozen
+       dashboard and a busy one look identical unless you check the timestamp. This
+       rewrites it every minute, at login and after a reboot, with nobody involved. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/tj/lunenburgbudgets/scripts/build_ingest_status.py</string>
+  </array>
+  <key>WorkingDirectory</key><string>/Users/tj/lunenburgbudgets</string>
+  <key>RunAtLoad</key><true/>
+  <key>StartInterval</key><integer>60</integer>
+  <key>StandardOutPath</key><string>/Users/tj/lunenburgbudgets/build/refresh-logs/status.out</string>
+  <key>StandardErrorPath</key><string>/Users/tj/lunenburgbudgets/build/refresh-logs/status.err</string>
+</dict>
+</plist>
