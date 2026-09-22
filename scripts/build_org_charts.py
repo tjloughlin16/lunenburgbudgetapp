@@ -142,16 +142,25 @@ def canon_section(text):
 # himself, because the word sat in the deputy list beside `acting` and `assistant`.
 TIERS = [
     (1, re.compile(r'\bdeputy|\bassistant\b|\basst\.?\b|\bvice[- ]?chair|\bcapt\.?\b'
-                   r'|\bcaptain\b|\bassoc(?:iate)?\b', re.I)),
+                   r'|\bcaptain\b', re.I)),
     (0, re.compile(r'\bsuperintendent\b|\btown manager\b|\bchief\b|\bprincipal\b'
                    r'|\bdirector\b|\bchair(?:man|person|woman)?\b|\blibrarian\b'
                    r'|\btown clerk\b|\btreasurer\b|\bcollector\b|\bcommissioner\b'
-                   r'|\badministrator\b', re.I)),
+                   r'|\btown administrator\b|\bbusiness administrator\b', re.I)),
     (2, re.compile(r'\blieutenant\b|\blt\.?\b|\bsergeant\b|\bsgt\.?\b'
                    r'|\bdepartment head\b|\bdept\.? head\b|\bsupervisor\b'
-                   r'|\bmanager\b|\bcoordinator\b|\bforeman\b|\bhead\b', re.I)),
+                   r'|\bmanager\b|\bcoordinator\b|\bforeman\b|\bhead\b'
+                   r'|\bclerk\b|\bsecretary\b|\badministrator\b', re.I)),
 ]
 TIER_STAFF = 3
+# A FIFTH BAND, BELOW THE MEMBERS. The Planning Board and the Zoning Board of Appeals
+# both seat ASSOCIATE members, and several boards seat somebody ex officio, honorary or
+# expressly non-voting. The listing says so on the seat, and an associate member filed
+# beside a full one loses the only distinction the town draws between them. The first
+# draft had `associate` in the DEPUTY band, which put them above the members instead.
+TIER_ASSOCIATE = 4
+ASSOCIATE = re.compile(r'\bassoc(?:iate)?\b|\bhonorary\b|\bnon-?voting\b|\bex[- ]officio\b'
+                       r'|\balternate\b|\bdesignee\b', re.I)
 
 
 def tier_of(role, kind):
@@ -163,6 +172,8 @@ def tier_of(role, kind):
     t = (role or '').strip()
     if not t:
         return TIER_STAFF
+    if ASSOCIATE.search(t):
+        return TIER_ASSOCIATE
     for band, pat in TIERS:
         if pat.search(t):
             return band
@@ -223,6 +234,67 @@ def canon_unit(name, kind):
     return name
 
 
+# WHAT IS PRINTED ON A BOARD SEAT, and was going into the org chart as part of the
+# person's name. TJ: *"make sure you apply this thinking to EVERY dropdown
+# department/comission. if there are natural groupings and hierarchy use those."*
+#
+# Every board looked flat, and none of them is. 400 of 2,118 listing rows carry a seat
+# role after a hyphen -- `Carolyn Rossi-Member at Large`, `John Rabbitt- Conservation
+# Commission Representative`, `Julie Belliveau- Town Employee, Non-voting Member` -- and
+# the listing marks its chairs with asterisks and says so in its own footnote:
+# `** denotes chairperson`.
+#
+# THE SUFFIX IS NOT ALWAYS A ROLE, WHICH IS WHY THIS IS A WHITELIST. `Michael-Ray
+# Jeffreys`, `Joanna Bilotta-Simeone` and `State Appointee-Karin Menard` all have a
+# hyphen with a capitalised word after it, and two of those are surnames. A suffix
+# becomes a seat only when it contains a word that names a seat or a body; otherwise the
+# name is left exactly as printed. Nobody is dropped either way.
+SEAT_WORD = re.compile(
+    r'\b(member|members|large|represent\w*|rep|designee|assoc\w*|honorary|voting|'
+    r'officio|chair\w*|clerk|secretary|director|supervisor|coordinator|appointee|'
+    r'commissioner|selectman|selectmen|employee|operator|alternate|liaison|'
+    r'board|committee|commission|authority|council|department|dpw|trustee)\b', re.I)
+SEAT_SPLIT = re.compile(r'\s*[-\u2013\u2014]\s*(?=[A-Za-z(])')
+CHAIR_MARK = re.compile(r'\s*\*+\s*')
+TERM_TAIL = re.compile(r'\s*[-\u2013\u2014,]?\s*(?:19|20)\d\d\s*$')
+NOTE_TAIL = re.compile(r'\s*[-\u2013\u2014(]?\s*((?:resign|retir|deceas|appoint|term|'
+                       r'elect)\w*[^)]*)\)?\s*$', re.I)
+
+
+def _seat(raw):
+    """(name, seat role, note) off one printed listing entry. Additive: never a drop."""
+    t = re.sub(r'\s+', ' ', raw or '').strip()
+    chair = '*' in t
+    t = CHAIR_MARK.sub(' ', t).strip(' ,')
+    note = ''
+    m = NOTE_TAIL.search(t)
+    if m and not NAME_SHAPE.match(t):
+        note, t = m.group(1).strip(' ).'), NOTE_TAIL.sub('', t).strip(' ,(')
+    t = TERM_TAIL.sub('', t).strip(' ,')
+    seat = ''
+    # SPLIT AT THE HYPHEN THAT LEAVES A NAME, not at the first one. `Michael-Ray
+    # Jeffreys- Select Board` has two, and taking the first made the member `Michael`
+    # and his seat `Ray Jeffreys-Select Board`.
+    cuts = [m.start() for m in SEAT_SPLIT.finditer(t)]
+    best = None
+    for i in cuts:
+        left, right = t[:i].strip(), SEAT_SPLIT.sub('', t[i:], count=1).strip(' .,')
+        if SEAT_WORD.search(right) and (NAME_SHAPE.match(left) or best is None):
+            best = (left, right)
+            if NAME_SHAPE.match(left):
+                break
+    if best:
+        t, seat = best
+    elif cuts:
+        left, right = t[:cuts[0]].strip(' .,'), SEAT_SPLIT.sub('', t[cuts[0]:], 1).strip()
+        if SEAT_WORD.search(left) and NAME_SHAPE.match(right):
+            # `State Appointee-Karin Menard` -- the seat is printed FIRST.
+            seat, t = left, right
+    if chair and not re.search(r'chair', seat, re.I):
+        seat = ('Chairperson' if not seat else '%s, chairperson' % seat)
+    return t.strip(), seat, note
+
+
 def _rows_officials():
     p = os.path.join(DATA, 'town-personnel.csv')
     out, bad = [], 0
@@ -234,62 +306,129 @@ def _rows_officials():
             bad += 1
             continue
         kind = ('board' if 'board seat' in r['kind'] else 'officer')
+        name, seat, note = _seat(who)
+        # ELECTED OR APPOINTED is the listing's own division and it is on every row.
+        band = (r['section'] or '').strip().title()
         if who:
             out.append(dict(fy=r['fy'], unit=canon_unit(post.title(), kind),
-                            unit_kind=kind, subunit='', section='',
-                            role=r['kind'], person=who,
-                            status='vacant' if VACANT.match(who) else 'filled',
-                            source='officials listing p%s' % r['page']))
+                            unit_kind=kind, subunit='', section=band,
+                            role=seat or r['kind'],
+                            # A NAME THAT WILL NOT PARSE KEEPS ITS PRINTED FORM. The
+                            # seat reader is additive: if it cannot find a role it
+                            # changes nothing, and nobody falls out of the chart for
+                            # failing to match a pattern.
+                            person=name or who,
+                            status='vacant' if VACANT.match(name or who) else 'filled',
+                            source='officials listing p%s%s'
+                                   % (r['page'], ' (%s)' % note if note else '')))
         for _ in range(int(r['vacancies'] or 0)):
             out.append(dict(fy=r['fy'], unit=canon_unit(post.title(), kind),
-                            unit_kind=kind, subunit='', section='',
+                            unit_kind=kind, subunit='', section=band,
                             role=r['kind'], person='', status='vacant',
                             source='officials listing p%s' % r['page']))
     return out, bad
 
 
 # THE RANK IS IN THE NAME, in the years the Police roster prints it that way. 114 of 291
-# Police rows carry an empty `rank` and a name reading `Off. Jeffrey Hill` -- so every
+# Police rows carry an empty `rank` and a name reading `Off. Jeffrey Hill`, so every
 # officer in those years arrived unranked, fell into the bottom band, and the only
 # grouping left was the printed shift. TJ, seeing the FY2024 chart: *"you put the police
 # chief under admins... group by RANK or department or SOMETHING, there are very natural
-# groupings to all these departments."* There are, and the department prints both: a RANK
-# and a BUREAU OR SHIFT. This recovers the first so the second can be what it is.
+# groupings to all these departments."* The department prints BOTH a rank and a bureau or
+# shift; this recovers the first so the second can be what it is.
 EMBEDDED_RANK = re.compile(
-    r'^(Off\.|Ofc\.|Officer|Det\.|Detective|Sgt\.|Sergeant|Lt\.|Lieutenant|'
-    r'Chief|Deputy Chief|Capt\.|Captain|Patrolman|Part-Time Clerk|Clerk|'
-    r'Animal Control Officer|K-?9 Officer|Reserve Officer)\s+(?=[A-Z])', re.I)
+    r'^(Desk Officer|Reserve Officer|Part-Time Clerk|Animal Control Officer|'
+    r'K-?9 Officer|Deputy Chief|Off\.|Ofc\.|Officer|Det\.|Detective|Sgt\.|Sergeant|'
+    r'Lt\.|Lieutenant|Chief|Capt\.|Captain|Patrolman|Clerk)\s+(?=[A-Z])', re.I)
 
-# A SUB-HEADING IS NOT A PERSON. The roster prints `Traffic Bureau`, `Reserve Police
-# Officers` and `Animal Control Officer` as headings over the names beneath them, and the
-# column reader takes them for names. A person has at least two name-shaped words once
-# the rank in front is removed.
-NAME_SHAPE = re.compile(r"^[A-Z][A-Za-z'\-]+\.?(?:\s+[A-Z][A-Za-z'\-]*\.?){1,3}$")
-NOT_A_NAME = re.compile(r'\b(bureau|shift|officers?|firefighters?|division|department|'
-                        r'retired|resigned|appointed|vacan\w*|review|mission|statement)\b',
-                        re.I)
+# SEVERAL OFFICERS IN ONE ROW. Before FY2020 the Police roster is set as a paragraph, so
+# the column reader hands back `Charles Deming Jr., Officer Patrick Barney, Officer Robert
+# Diconza, Officer Sean Zrate,` as ONE name. Four officers. The first version of this
+# rejected the row for not being name-shaped and lost all four -- which is the failure TJ
+# named before it was found: *"make sure if the data is 'bad' we dont lose people because
+# they dont match the hierarchy."*
+# The comma is not always there -- `Bob Diconza Officer Ben Campbell` is two people and
+# one space.
+SPLIT_MULTI = re.compile(r',?\s+(?=(?:Off\.|Ofc\.|Officer|Det\.|Detective|Sgt\.|Sergeant|'
+                         r'Lt\.|Lieutenant|FF|Firefighter)\s+[A-Z][a-z])')
+# A RANK LEFT BEHIND BY A LINE BREAK. The roster runs on, so a name ends `Jonathan Broc,
+# Officer` with the next officer's name on the following line.
+TRAILING_RANK = re.compile(r',?\s+(?:Off|Ofc|Officer|Det|Detective|Sgt|Sergeant|Lt|'
+                           r'Lieutenant|FF|Firefighter)\.?\s*$', re.I)
+# `J.Gregory Massak` -- the scanner drops the space after an initial.
+TIGHT_INITIAL = re.compile(r'\b([A-Z])\.(?=[A-Z][a-z])')
+# `(K9-Jerry)`, `(Full Time Officer)`, `(Reserve Officer)`, `(FY21)` -- a note about the
+# post, printed after the name. Not part of it, and not a reason to throw the name away.
+PAREN_NOTE = re.compile(r'\s*\(([^)]*)\)\s*$')
+
+# A NAME, ALLOWING INITIALS. The first version required a word of two or more letters
+# first, so `J. Gregory Massak` -- a Fire lieutenant in five separate years -- failed the
+# test and was dropped five times.
+NAME_SHAPE = re.compile(r"^[A-Z](?:[A-Za-z'\-]+)?\.?(?:\s*[A-Z]\.)*"
+                        r"(?:\s+(?:[A-Z]\.|[A-Z][A-Za-z'\-]+\.?)){1,3}"
+                        r"(?:,?\s+(?:Jr|Sr|II|III)\.?)?$")
+# A SENTENCE ABOUT SOMEBODY IS NOT A ROSTER ENTRY. `Alphone J. Baron was hired by the
+# Lunenburg Police Department as a full time officer on October 18, 1971. He retired`.
+PROSE = re.compile(r'\b(?:retired|resigned|graduated|began|started|served|obtained|'
+                   r'elevated|hired|wish|would|was|were|has|have|will|from|with|the)\b')
+# A HEADING OVER THE NAMES BENEATH IT: `Patrol Officers`, `Reserve Intermittent Officers`,
+# `Traffic Bureau`, `Newly Appointed`. The first version dropped these too. They are not
+# people and they are not noise -- they are the department's OWN grouping, so they become
+# the section the names under them belong to.
+ROSTER_HEADING = re.compile(r'\b(officers|firefighters|bureau|shift|division|newly '
+                            r'appointed|reserve|patrol|administration|call|career)\b', re.I)
+
+
+def _roster_name(raw):
+    """(kind, name, note) for one printed roster entry. Never silently a nobody."""
+    note = ''
+    raw = TIGHT_INITIAL.sub(r'\1. ', TRAILING_RANK.sub('', raw.strip()))
+    m = PAREN_NOTE.search(raw)
+    if m:
+        note, raw = m.group(1).strip(), PAREN_NOTE.sub('', raw).strip()
+    raw = raw.strip(' ,.;')
+    if not raw:
+        return ('empty', '', note)
+    if VACANT.match(raw) or VACANT.match(note):
+        return ('vacant', '', note or raw)
+    if NAME_SHAPE.match(raw):
+        return ('person', raw, note)
+    if ROSTER_HEADING.search(raw) and len(raw.split()) <= 4 and not PROSE.search(raw):
+        return ('heading', raw, note)
+    return ('prose', raw, note)
 
 
 def _rows_rosters():
     p = os.path.join(DATA, 'department-rosters.csv')
-    out = []
+    out, lost, heading = [], [], {}
     if not os.path.exists(p):
-        return out
+        return out, lost
     for r in csv.DictReader(open(p, encoding='utf-8')):
-        who, rank = (r['name'] or '').strip(), (r['rank'] or '').strip()
-        m = EMBEDDED_RANK.match(who)
-        if m and not rank:
-            rank, who = m.group(1), who[m.end():].strip()
-        if not VACANT.match(who) and (NOT_A_NAME.search(who)
-                                      or not NAME_SHAPE.match(who)):
-            continue                    # a heading, or a sentence, never a person
-        out.append(dict(fy=r['fy'], unit=r['department'], unit_kind='department',
-                        subunit='',
-                        section=(r['section'] or '').strip(), role=rank,
-                        person='' if VACANT.match(who) else who,
-                        status='vacant' if VACANT.match(who) else 'filled',
-                        source='department roster p%s' % r['page']))
-    return out
+        rank = (r['rank'] or '').strip()
+        key = (r['fy'], r['department'], r['page'])
+        for part in SPLIT_MULTI.split((r['name'] or '').strip()):
+            role = rank
+            m = EMBEDDED_RANK.match(part.strip())
+            if m:
+                role = rank or m.group(1)
+                part = part.strip()[m.end():]
+            kind, who, note = _roster_name(part)
+            if kind == 'empty':
+                continue
+            if kind == 'heading':
+                # The department's own grouping, kept for the names that follow it.
+                heading[key] = who
+                continue
+            if kind == 'prose':
+                lost.append((r['fy'], r['department'], who))
+                continue
+            out.append(dict(fy=r['fy'], unit=r['department'], unit_kind='department',
+                            subunit='',
+                            section=(r['section'] or '').strip() or heading.get(key, ''),
+                            role=role, person=who,
+                            status='vacant' if kind == 'vacant' else 'filled',
+                            source='department roster p%s' % r['page']))
+    return out, lost
 
 
 MONTY = 'Montachusett Regional Vocational Technical School'
@@ -348,11 +487,20 @@ def _rows_prose():
         for part in parts:
             m = re.match(r'^(\d+)\s+(.*)$', part)
             n, label = (int(m.group(1)), m.group(2)) if m else (1, part)
+            title = ''
+            if not establishment and ',' in label:
+                # `Steve Malandrinos, Information Technology Director` -- the IT
+                # department prints a title beside every name and it was going into the
+                # chart as part of the name. The Council on Aging prints names ALONE,
+                # which is why that one stays flat: a fact about the report, not about us.
+                head, rest = label.split(',', 1)
+                if NAME_SHAPE.match(head.strip()) and rest.strip():
+                    label, title = head.strip(), rest.strip()
             for _ in range(n):
                 out.append(dict(
                     fy=r['fy'], unit=r['department'], unit_kind='department',
                     subunit='', section='',
-                    role=label if establishment else '',
+                    role=label if establishment else title,
                     person='' if establishment else label,
                     # AN ESTABLISHMENT POST IS NOT A PERSON. The DPW and the Assessing
                     # office publish posts and never say who fills them, and the Assessing
@@ -461,7 +609,18 @@ def _rows_signatures():
                 kind, sub, sect = 'school', '', ''
             elif unit == MONTY:
                 kind, sub, sect = 'school', '', ''
-            elif re.search(r'commission|committee|board|authority|council', unit, re.I):
+            # THE SIGNER'S TITLE DECIDES WHAT KIND OF BODY IT IS, not the body's name.
+            # `Council on Aging` has the word `council` in it and is a DEPARTMENT with
+            # eleven paid staff -- the mistake TJ caught the first time round: *"council
+            # on aging... you said they were all paid positions?! They are showing as
+            # board spots."* Its report is signed by a Director. A Chairperson heads a
+            # board; a Director, Chief or Superintendent heads a department.
+            elif re.search(r'chair|moderator', r['title'], re.I):
+                kind, sub, sect = 'board', '', ''
+            elif re.search(r'director|chief|superintendent|manager|librarian|agent|'
+                           r'administrator|principal', r['title'], re.I):
+                kind, sub, sect = 'department', '', ''
+            elif re.search(r'commission|committee|board|authority', unit, re.I):
                 kind, sub, sect = 'board', '', ''
             else:
                 kind, sub, sect = 'department', '', ''
@@ -523,7 +682,8 @@ def _disambiguate(rows):
 
 def build():
     rows, bad = _rows_officials()
-    rows += _rows_rosters() + _rows_schools() + _rows_prose() + _rows_signatures()
+    roster, lost_prose = _rows_rosters()
+    rows += roster + _rows_schools() + _rows_prose() + _rows_signatures()
     for r in rows:
         r['section_group'] = canon_section(r['section'])
         # AN APPOINTED POST IS ITS OWN HEAD. A one-post unit like the Dam Keeper has
@@ -543,7 +703,7 @@ def build():
     uniq.sort(key=lambda r: (r['unit'].lower(), r['fy'], r['subunit'].lower(),
                              r['tier'], r['section_group'].lower(), r['role'].lower(),
                              r['person'].lower()))
-    return uniq, bad
+    return uniq, bad, lost_prose
 
 
 def payload(rows):
@@ -569,7 +729,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    rows, bad = build()
+    rows, bad, lost = build()
     pay = payload(rows)
     if a.check:
         old = list(csv.DictReader(open(OUT_CSV, encoding='utf-8'))) \
@@ -591,6 +751,12 @@ def main():
     print('  filled %d, vacant %d, establishment posts %d'
           % (st['filled'], st['vacant'], st['post']))
     print('  REJECTED %d rows: town-profile text, listing footnotes, sub-headings' % bad)
+    # NAMED, SO A LOST PERSON IS VISIBLE RATHER THAN MISSING. Every line below is a
+    # SENTENCE the column reader handed back as a name; if a real name is ever in this
+    # list it is a defect, and the only way anybody finds out is by printing them.
+    print('  %d roster lines read as prose, not people:' % len(lost))
+    for fy, dept, txt in lost[:200]:
+        print('      FY%s %-18s %s' % (fy, dept[:18], txt[:88]))
     thin = [u for u in pay['units'] if len(u['years']) == 1]
     print('  %d unit(s) appear in ONE year only — read them before trusting them'
           % len(thin))

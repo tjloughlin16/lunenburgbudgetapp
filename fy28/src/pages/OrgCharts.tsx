@@ -36,9 +36,11 @@ type Payload = { years: string[]; units: Unit[]; rows: Row[] }
 // called bands and drawn as indentation rather than as a tree with lines in it.
 const BAND: Record<string, string> = {
   '0': 'Heads the body', '1': 'Deputy and assistant',
-  '2': 'Supervisors and ranked posts', '3': 'Staff, seats and everyone else',
+  '2': 'Supervisors, ranked posts and the clerk',
+  '3': 'Members, seats and staff',
+  '4': 'Associate, honorary, ex officio and non-voting',
 }
-const INSET: Record<string, number> = { '0': 0, '1': 14, '2': 28, '3': 42 }
+const INSET: Record<string, number> = { '0': 0, '1': 14, '2': 28, '3': 42, '4': 56 }
 
 const KIND_LABEL: Record<string, string> = {
   department: 'Department', board: 'Board or committee',
