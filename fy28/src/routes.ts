@@ -456,7 +456,13 @@ export const SLUG: Record<Tab, string> = {
 // front page, beside the crisis. TJ: "The point of the crisis page is not just cost to
 // the tax payers. It's also insight to the board leaders. Hard decisions need to be made.
 // They are looking for the solutions. The crisis page is the context."
-export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis'])
+// `addsup` is unlisted again from 21 September 2026. TJ: "can you actually hide the
+// section and report for 'one big report'. its not useful and the name is bad." Both
+// halves are fair -- the page is a synthesis of other pages that each say it better, and
+// `The One Big Report` promises a size rather than a subject, which is the one thing a
+// title on this site must not do. Unlisted rather than deleted: the address has been
+// shared and keeps resolving, which is the whole point of this mechanism.
+export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 'addsup'])
 
 /** Pages that are INSTRUMENTS, not reads: an index, a register, a search box, a
  *  catalogue. Nobody reads a register top to bottom; they search it. So these carry no
@@ -1165,7 +1171,7 @@ export const AREA_TABS: Record<Area, Tab[]> = {
   // argument that put `addsup` first.
   // `owners`, `override` and `growth` are the town's shelf: who owns the homes and what
   // the bill does, what an override actually is, and what growing out of it would take.
-  analyses: ['addsup', 'budgetfeed', 'threads', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'youthsports', 'schoolfinance', 'parks', 'healthlever', 'freecashlever', 'salarylever', 'feelever', 'extraslever', 'positionslever', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
+  analyses: ['budgetfeed', 'threads', 'blog', 'thisweek', 'boards', 'recorded', 'reports', 'bythenumbers', 'owners', 'homestudents', 'boardcompare', 'youthsports', 'schoolfinance', 'parks', 'healthlever', 'freecashlever', 'salarylever', 'feelever', 'extraslever', 'positionslever', 'override', 'growth', 'sped', 'classsize', 'circuitbreaker',
              'peers',
              'required', 'minaid',
              'formula',
