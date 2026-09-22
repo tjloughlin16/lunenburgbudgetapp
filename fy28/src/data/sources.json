@@ -1624,6 +1624,18 @@
      "textUrl": "/docs/analyses/free-cash.md"
     },
     {
+     "path": "analyses/town-personnel.md",
+     "title": "Who runs the town: every elected seat, appointed seat and officer",
+     "stars": 3,
+     "what": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing read as data, FY2022 to FY2025. Two thirds of the posts the town lists are unpaid seats on boards. It is NOT a headcount of town employees — a DPW labourer or a town hall clerk holds no appointed post — and it says so, because the wage list that would give a headcount stopped naming departments after FY2016.",
+     "kind": "Notes",
+     "bytes": 13336,
+     "url": "/docs/analyses/town-personnel.md",
+     "count": 141,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-personnel.md"
+    },
+    {
      "path": "analyses/open-seats.md",
      "title": "Open seats: the town boards a resident could join",
      "stars": 3,
@@ -1634,18 +1646,6 @@
      "count": 169,
      "unit": "lines",
      "textUrl": "/docs/analyses/open-seats.md"
-    },
-    {
-     "path": "analyses/town-personnel.md",
-     "title": "Who runs the town: every elected seat, appointed seat and officer",
-     "stars": 3,
-     "what": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing read as data, FY2022 to FY2025. Two thirds of the posts the town lists are unpaid seats on boards. It is NOT a headcount of town employees — a DPW labourer or a town hall clerk holds no appointed post — and it says so, because the wage list that would give a headcount stopped naming departments after FY2016.",
-     "kind": "Notes",
-     "bytes": 11101,
-     "url": "/docs/analyses/town-personnel.md",
-     "count": 120,
-     "unit": "lines",
-     "textUrl": "/docs/analyses/town-personnel.md"
     },
     {
      "path": "analyses/hiring-here-or-placing-there.md",
@@ -1924,6 +1924,18 @@
      "textUrl": "/docs/data/town-meeting-votes.csv"
     },
     {
+     "path": "data/tenure.csv",
+     "title": "How long each named person stayed, by body and year",
+     "stars": 2,
+     "what": "One row per person per body: the first and last year their name appears, how many years the BODY published in between, the years inside that span it published nothing, and whether they are CENSORED at either edge of the archive. Half of them are: somebody in a body’s first published year began before FY2011 and nothing here can say when, and somebody in its last is still there as far as this can see — so their tenure is a LOWER BOUND, not a length. Identity is surname plus first initial within one body, which merges `Josh`/`Joshua Tocci` and `Steve`/`Stephen McKenna`; the 79 pairs that choice joins are printed on every run and are nicknames rather than collisions.",
+     "kind": "Data",
+     "bytes": 155450,
+     "url": "/docs/data/tenure.csv",
+     "count": 1832,
+     "unit": "rows",
+     "textUrl": "/docs/data/tenure.csv"
+    },
+    {
      "path": "data/department-rosters.csv",
      "title": "The Police and Fire rosters, by name, as the town prints them",
      "stars": 2,
@@ -2018,6 +2030,18 @@
      "count": 711,
      "unit": "lines",
      "textUrl": "/docs/analyses/budget-vs-actual.md"
+    },
+    {
+     "path": "data/turnover.csv",
+     "title": "How many names stop appearing, by body and year",
+     "stars": 2,
+     "what": "One row per body per published year: the people in it, how many of them are absent from the NEXT year the body published, and the rate. MEASURED ACROSS PUBLISHED YEARS, never calendar years, because 27 of 86 bodies skip a year inside their own span and a naive count reads a missed report as the whole staff leaving and returning. A NAME LEAVING A ROSTER IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut post, and not a separation rate.",
+     "kind": "Data",
+     "bytes": 29726,
+     "url": "/docs/data/turnover.csv",
+     "count": 582,
+     "unit": "rows",
+     "textUrl": "/docs/data/turnover.csv"
     },
     {
      "path": "analyses/sped-and-funds.md",
@@ -3484,6 +3508,18 @@
      "textUrl": "/docs/data/dese-class-size.csv"
     },
     {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 426401,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "count": 2487,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
+    },
+    {
      "path": "data/dese-sped-program.csv",
      "title": "What the students with disabilities are, SY2020–SY2026",
      "stars": 3,
@@ -3494,18 +3530,6 @@
      "count": 2403,
      "unit": "rows",
      "textUrl": "/docs/data/dese-sped-program.csv"
-    },
-    {
-     "path": "data/youtube-transcript-index.csv",
-     "title": "Which meeting recordings we hold a transcript for",
-     "stars": 3,
-     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
-     "kind": "Data",
-     "bytes": 405891,
-     "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2367,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
     {
      "path": "state-dls/health-self-insured-funds.xlsx",
@@ -4246,9 +4270,9 @@
      "stars": 2,
      "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
      "kind": "Data",
-     "bytes": 13808,
+     "bytes": 14442,
      "url": "/docs/data/youtube-no-captions.csv",
-     "count": 111,
+     "count": 116,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-no-captions.csv"
     },
@@ -16606,9 +16630,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1441,
+  "documents": 1443,
   "groups": 22,
-  "bytes": 2181598743,
+  "bytes": 2181807298,
   "loadBearing": 156
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

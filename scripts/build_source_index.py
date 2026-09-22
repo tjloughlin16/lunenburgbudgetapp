@@ -995,6 +995,27 @@ GROUPS = [
              '`Thomas R. Browne, Superintendent-Director` signs the Montachusett Regional '
              'report inside Lunenburg\u2019s book and is a different district\u2019s '
              'superintendent.'),
+            ('data/tenure.csv',
+             'How long each named person stayed, by body and year', 2,
+             'One row per person per body: the first and last year their name appears, '
+             'how many years the BODY published in between, the years inside that span '
+             'it published nothing, and whether they are CENSORED at either edge of the '
+             'archive. Half of them are: somebody in a body\u2019s first published year '
+             'began before FY2011 and nothing here can say when, and somebody in its '
+             'last is still there as far as this can see \u2014 so their tenure is a '
+             'LOWER BOUND, not a length. Identity is surname plus first initial within '
+             'one body, which merges `Josh`/`Joshua Tocci` and `Steve`/`Stephen '
+             'McKenna`; the 79 pairs that choice joins are printed on every run and are '
+             'nicknames rather than collisions.'),
+            ('data/turnover.csv',
+             'How many names stop appearing, by body and year', 2,
+             'One row per body per published year: the people in it, how many of them '
+             'are absent from the NEXT year the body published, and the rate. '
+             'MEASURED ACROSS PUBLISHED YEARS, never calendar years, because 27 of 86 '
+             'bodies skip a year inside their own span and a naive count reads a missed '
+             'report as the whole staff leaving and returning. A NAME LEAVING A ROSTER '
+             'IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut '
+             'post, and not a separation rate.'),
             ('data/board-chairs.csv',
              'Who chaired each board, from the body\u2019s own report', 2,
              'The officials listing marks its chairs with asterisks under a footnote '

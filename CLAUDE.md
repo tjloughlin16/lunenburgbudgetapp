@@ -1246,6 +1246,10 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/extract_department_rosters.py  # Police and Fire by name and RANK, off the column pages
     python3 scripts/extract_board_chairs.py     # who chaired each board, from the body's own report
     python3 scripts/build_org_charts.py         # every department, board and school as an org chart, by year
+    python3 scripts/build_tenure.py             # how long people stay and how many leave, by body — counted in
+                                                #   the years each body PUBLISHED, with both edges of the archive
+                                                #   marked as censored rather than short
+    python3 scripts/build_tenure.py --check
     python3 scripts/check_org_charts.py         # ...and the SHAPE of every body asserted: headless, many-heads,
                                                 #   doubled, a heading read as a person, a grouping with one value
     python3 scripts/classify_roster_roles.py    # what job each printed roster title is

@@ -546,6 +546,42 @@ def render(d):
              'FY2016 and stopped, so there has been no town-wide headcount by department '
              'since.\n')
 
+    ten = _tenure()
+    if ten:
+        t.append('\n## How long people stay, and how many leave\n\n')
+        t.append('A person’s tenure here is the number of years their name appears under '
+                 'a department **in the years that department published anything** — not '
+                 'calendar years, because 27 of 86 bodies skip at least one year inside '
+                 'their own span and a naive count reads a missed report as the whole '
+                 'staff leaving and coming back.\n\n')
+        t.append('| department | people | years published | median | median, uncensored | '
+                 'longest | still there | names not reappearing |\n')
+        t.append('|---|---:|---:|---:|---:|---:|---:|---:|\n')
+        for u in ten:
+            t.append('| %s | %d | %d | %s | %s | %d — %s | %d | %.0f%% a year |\n'
+                     % (u['unit'], u['people'], u['published_years'],
+                        u['median_all'],
+                        u['median_settled'] if u['median_settled'] is not None else '—',
+                        u['longest'], u['longest_person'], u['still_there'],
+                        100 * (u['turnover'] or 0)))
+        cens = sum(u['people'] - u['settled'] for u in ten)
+        tot = sum(u['people'] for u in ten)
+        t.append('\n**Half of these people are CENSORED and their tenure is a lower '
+                 'bound, not a length.** %d of %d are present in their department’s '
+                 'first published year — so they started before the archive begins and '
+                 'nothing here can say when — or in its last, so they are still there as '
+                 'far as anything here can see. That is why two medians are given: the '
+                 'first counts everybody, the second only the people whose arrival AND '
+                 'departure both fall inside the record, which is the only one that '
+                 'means what it says.\n' % (cens, tot))
+        t.append('\n**A name leaving a roster is a name leaving a roster.** It is not a '
+                 'resignation, a retirement or a cut post. Somebody may have moved '
+                 'between departments, been left off a page, or held a post the town '
+                 'stopped printing. The last column is the rate at which names stop '
+                 'appearing, and it is not a separation rate.\n')
+        t.append('\nA roster is also a point in time and undated within its year, so N '
+                 'appearances is at most N years of service and at least N−1.\n')
+
     t.append('\n## What this cannot show\n\n')
     for n in _not_established(d):
         t.append('- %s\n' % n)
@@ -553,6 +589,16 @@ def render(d):
     for s_ in _sources(d):
         t.append('- **%s** — %s. %s\n' % (s_['what'], s_['where'], s_['note']))
     return ''.join(t)
+
+
+def _tenure():
+    """The tenure table, read from `build_tenure.py`'s own output."""
+    path = os.path.join(ROOT, 'fy28', 'public', 'data', 'tenure.json')
+    if not os.path.exists(path):
+        return []
+    import json as _json
+    units = _json.load(open(path, encoding='utf-8'))['units']
+    return [u for u in units if u['kind'] in ('department', 'school') and u['people'] >= 5]
 
 
 def payload(d):
@@ -592,6 +638,7 @@ def payload(d):
         sources=_sources(d),
         not_established=_not_established(d),
         conclusions=conclusions_for(d),
+        tenure=_tenure(),
     )
 
 

@@ -4,14 +4,14 @@
   {
    "basis": "The per-school staff rosters in the annual report, against the Fire and Police rosters and the DPW establishment.",
    "bearing": "sizes",
-   "claim": "The schools employ more than twice as many people as the rest of the town put together",
-   "detail": "Before any question about who is growing: this is the scale of the town’s workforce, and one part of it is nearly all of it. The schools name 232 members of staff in FY2025. Every other part of the town that publishes a count — Fire Department, Police Department, Department of Public Works, Council on Aging, Library, Building Department, Board of Assessors and Information Technology — comes to 114 between them.",
+   "claim": "The schools employ more people as the rest of the town put together",
+   "detail": "Before any question about who is growing: this is the scale of the town’s workforce, and one part of it is nearly all of it. The schools name 232 members of staff in FY2025. Every other part of the town that publishes a count — Veterans' Services, Fire Department, Police Department, Department of Public Works, Council on Aging, Library, Building Department, Board of Assessors and Information Technology — comes to 161 between them.",
    "figure": "schools",
    "figures": {
     "others": {
-     "text": "114",
+     "text": "161",
      "unit": "in every other department that publishes a count",
-     "value": 114
+     "value": 161
     },
     "schools": {
      "text": "232",
@@ -32,7 +32,7 @@
    "basis": "Each department’s own published count, first published year against last, with any year reading under half its predecessor dropped as a short read rather than a cut.",
    "bearing": "sizes",
    "claim": "One department has fewer people than when it first published. The rest are flat or larger",
-   "detail": "How many people each department printed, first year against last. A change here is people present, not a decision about posts. Information Technology is down 1, from 4 to 3. The other eight departments are larger or unchanged.",
+   "detail": "How many people each department printed, first year against last. A change here is people present, not a decision about posts. Information Technology is down 1, from 4 to 3. The other nine departments are larger or unchanged.",
    "figure": "shrank",
    "figures": {
     "d0": {
@@ -51,9 +51,9 @@
      "value": 3
     },
     "rest": {
-     "text": "eight",
+     "text": "nine",
      "unit": "flat or larger",
-     "value": 8
+     "value": 9
     },
     "shrank": {
      "text": "One",
@@ -161,9 +161,27 @@
    "years": 15
   },
   {
-   "change": 6,
+   "change": 0,
+   "department": "Veterans' Services",
+   "first": 47,
+   "first_fy": "2019",
+   "kind": "career staff plus the low end of the on-call range",
+   "last_fy": "2019",
+   "people": 47,
+   "series": [
+    {
+     "fy": "2019",
+     "people": 47,
+     "suspect": false
+    }
+   ],
+   "suspect": [],
+   "years": 1
+  },
+  {
+   "change": 5,
    "department": "Fire Department",
-   "first": 34,
+   "first": 35,
    "first_fy": "2011",
    "kind": "career staff plus the low end of the on-call range",
    "last_fy": "2025",
@@ -171,22 +189,22 @@
    "series": [
     {
      "fy": "2011",
-     "people": 34,
+     "people": 35,
      "suspect": false
     },
     {
      "fy": "2012",
-     "people": 39,
+     "people": 38,
      "suspect": false
     },
     {
      "fy": "2013",
-     "people": 40,
+     "people": 41,
      "suspect": false
     },
     {
      "fy": "2014",
-     "people": 43,
+     "people": 44,
      "suspect": false
     },
     {
@@ -221,7 +239,7 @@
     },
     {
      "fy": "2021",
-     "people": 37,
+     "people": 48,
      "suspect": false
     },
     {
@@ -264,13 +282,13 @@
     },
     {
      "fy": "2014",
-     "people": 29,
+     "people": 26,
      "suspect": true
     },
     {
      "fy": "2015",
      "people": 14,
-     "suspect": true
+     "suspect": false
     },
     {
      "fy": "2016",
@@ -284,7 +302,7 @@
     },
     {
      "fy": "2018",
-     "people": 27,
+     "people": 25,
      "suspect": false
     },
     {
@@ -314,7 +332,7 @@
     },
     {
      "fy": "2024",
-     "people": 26,
+     "people": 25,
      "suspect": false
     },
     {
@@ -324,10 +342,9 @@
     }
    ],
    "suspect": [
-    "2015",
     "2014"
    ],
-   "years": 11
+   "years": 12
   },
   {
    "change": 0,
@@ -603,7 +620,7 @@
  "last": "2025",
  "not_established": [
   "What anybody is paid. No salary is read here, and none is inferred from a post’s name.",
-  "How many people the town employs. Nine departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2016.",
+  "How many people the town employs. Ten departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2016.",
   "FTE. A career post and an on-call post are not the same job and cannot be netted against each other.",
   "Whether a post was CUT. A roster is people IN post and a cut removes a POST, and those come apart both ways: someone retires and the post sits vacant but funded, so the count falls and nothing was cut; or a post is eliminated and its holder moves to another vacancy, so the count holds and something was. The town’s own words for it are in the Assessing office’s FY2024 report — “we are fully staffed for the first time in over a year” — a year of posts that existed and were empty. A rise or a fall here is a change in PEOPLE PRESENT, never a decision about establishment.",
   "When in the year anybody was counted. A roster is a point in time and is undated within its year, so a September departure and a June one are the same figure.",
@@ -841,6 +858,15 @@
    "department": "Fire Department",
    "forms": [
     "0",
+    "1",
+    "2",
+    "2"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
     "2",
     "2",
     "2"
@@ -902,6 +928,15 @@
   },
   {
    "department": "Library",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "9"
+   ]
+  },
+  {
+   "department": "Veterans' Services",
    "forms": [
     "0",
     "1",
@@ -1081,15 +1116,6 @@
    ]
   },
   {
-   "department": "Fire Department",
-   "forms": [
-    "0",
-    "1",
-    "2",
-    "2"
-   ]
-  },
-  {
    "department": "Police Department",
    "forms": [
     "0",
@@ -1140,7 +1166,7 @@
    "agrees": "",
    "department": "Fire Department",
    "fy": "2011",
-   "named": 34,
+   "named": 35,
    "stated_high": "",
    "stated_low": ""
   },
@@ -1148,7 +1174,7 @@
    "agrees": "",
    "department": "Fire Department",
    "fy": "2012",
-   "named": 39,
+   "named": 38,
    "stated_high": "",
    "stated_low": ""
   },
@@ -1164,7 +1190,7 @@
    "agrees": "",
    "department": "Fire Department",
    "fy": "2013",
-   "named": 40,
+   "named": 41,
    "stated_high": "",
    "stated_low": ""
   },
@@ -1172,7 +1198,7 @@
    "agrees": "",
    "department": "Fire Department",
    "fy": "2014",
-   "named": 43,
+   "named": 44,
    "stated_high": "",
    "stated_low": ""
   },
@@ -1180,7 +1206,7 @@
    "agrees": "",
    "department": "Police Department",
    "fy": "2014",
-   "named": 29,
+   "named": 26,
    "stated_high": "",
    "stated_low": ""
   },
@@ -1236,7 +1262,7 @@
    "agrees": "no",
    "department": "Fire Department",
    "fy": "2018",
-   "named": 39,
+   "named": 40,
    "stated_high": 52,
    "stated_low": 47
   },
@@ -1244,7 +1270,7 @@
    "agrees": "",
    "department": "Police Department",
    "fy": "2018",
-   "named": 27,
+   "named": 25,
    "stated_high": "",
    "stated_low": ""
   },
@@ -1268,7 +1294,7 @@
    "agrees": "no",
    "department": "Fire Department",
    "fy": "2020",
-   "named": 40,
+   "named": 41,
    "stated_high": 52,
    "stated_low": 47
   },
@@ -1324,7 +1350,7 @@
    "agrees": "no",
    "department": "Fire Department",
    "fy": "2024",
-   "named": 34,
+   "named": 35,
    "stated_high": 45,
    "stated_low": 40
   },
@@ -1332,7 +1358,7 @@
    "agrees": "",
    "department": "Police Department",
    "fy": "2024",
-   "named": 26,
+   "named": 25,
    "stated_high": "",
    "stated_low": ""
   },
@@ -1530,17 +1556,124 @@
  ],
  "stats": [
   {
-   "label": "school staff — more than twice as many as everywhere else that publishes a count, put together",
+   "label": "school staff — more as everywhere else that publishes a count, put together",
    "value": "232"
   },
   {
-   "label": "in the other eight parts of the town that publish a count, added up",
-   "value": "114"
+   "label": "in the other nine parts of the town that publish a count, added up",
+   "value": "161"
   },
   {
    "label": "parts of the town that publish any staff count at all",
    "tone": "var(--series-cost)",
-   "value": "9 of 60"
+   "value": "10 of 60"
+  }
+ ],
+ "tenure": [
+  {
+   "first_fy": 2011,
+   "kind": "school",
+   "last_fy": 2025,
+   "longest": 15,
+   "longest_person": "Alexis Pukaite",
+   "median_all": 2.0,
+   "median_settled": 1,
+   "people": 968,
+   "published_years": 15,
+   "settled": 577,
+   "still_there": 233,
+   "turnover": 0.3327,
+   "unit": "Lunenburg Public Schools"
+  },
+  {
+   "first_fy": 2011,
+   "kind": "department",
+   "last_fy": 2025,
+   "longest": 15,
+   "longest_person": "Austin Flagg",
+   "median_all": 4.0,
+   "median_settled": 3,
+   "people": 116,
+   "published_years": 15,
+   "settled": 53,
+   "still_there": 34,
+   "turnover": 0.2674,
+   "unit": "Fire Department"
+  },
+  {
+   "first_fy": 2012,
+   "kind": "department",
+   "last_fy": 2025,
+   "longest": 13,
+   "longest_person": "Jeffrey Thibodeau",
+   "median_all": 3,
+   "median_settled": 1,
+   "people": 67,
+   "published_years": 13,
+   "settled": 27,
+   "still_there": 26,
+   "turnover": 0.2805,
+   "unit": "Police Department"
+  },
+  {
+   "first_fy": 2011,
+   "kind": "department",
+   "last_fy": 2025,
+   "longest": 13,
+   "longest_person": "Susan Doherty",
+   "median_all": 4.0,
+   "median_settled": 2,
+   "people": 26,
+   "published_years": 13,
+   "settled": 9,
+   "still_there": 11,
+   "turnover": 0.2019,
+   "unit": "Council on Aging (staff)"
+  },
+  {
+   "first_fy": 2016,
+   "kind": "department",
+   "last_fy": 2025,
+   "longest": 3,
+   "longest_person": "Brian Gingras",
+   "median_all": 3.0,
+   "median_settled": 3.0,
+   "people": 8,
+   "published_years": 10,
+   "settled": 6,
+   "still_there": 1,
+   "turnover": 0.3684,
+   "unit": "Building Department"
+  },
+  {
+   "first_fy": 2013,
+   "kind": "school",
+   "last_fy": 2025,
+   "longest": 7,
+   "longest_person": "Thomas R. Browne",
+   "median_all": 1.0,
+   "median_settled": 1.0,
+   "people": 8,
+   "published_years": 10,
+   "settled": 6,
+   "still_there": 1,
+   "turnover": 0.5333,
+   "unit": "Montachusett Regional Vocational Technical School"
+  },
+  {
+   "first_fy": 2016,
+   "kind": "department",
+   "last_fy": 2020,
+   "longest": 4,
+   "longest_person": "Daniel Nadareski",
+   "median_all": 3,
+   "median_settled": null,
+   "people": 5,
+   "published_years": 4,
+   "settled": 0,
+   "still_there": 3,
+   "turnover": 0.1667,
+   "unit": "Information Technology"
   }
  ],
  "years": [
