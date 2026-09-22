@@ -150,6 +150,12 @@ def canon_section(text):
 # Department for the back half of FY2024 and the first draft filed him one band below
 # himself, because the word sat in the deputy list beside `acting` and `assistant`.
 TIERS = [
+    # AN ADMINISTRATIVE ASSISTANT IS NOT A DEPUTY CHIEF. `Part-Time Admin Assistant`
+    # and `Police Executive Assistant` were ranked above the Lieutenant and every
+    # Sergeant, because the word `assistant` is in both a deputy's title and a
+    # secretary's. A deputy is an assistant TO A POST, never to an office.
+    (3, re.compile(r'\b(?:admin(?:istrative)?|executive|office|clerical|staff)\s+'
+                   r'assistant\b|\bassistant\s+to\b', re.I)),
     (1, re.compile(r'\bdeputy|\bassistant\b|\basst\.?\b|\bvice[- ]?chair|\bcapt\.?\b'
                    r'|\bcaptain\b', re.I)),
     (0, re.compile(r'\bsuperintendent\b|\btown manager\b|\bchief\b|\bprincipal\b'
@@ -293,6 +299,12 @@ ALIAS = {
     'inspector of plumbing & gas fittings': 'Inspector Of Plumbing/Gas',
     'asst. inspector of plumbing & gas fittings': 'Asst. Inspector Of Plumbing/Gas',
     'election officers': 'Election Workers',
+    'veterans services agent': "Veterans' Services",
+    'interim veterans services agent': "Veterans' Services",
+    'tax custodian': 'Tax Collector/Treasurer/Tax Custodian',
+    'technology department': 'Information Technology',
+    'gctf advisors': 'Green Community Task Force Advisors',
+    'got advisors': 'Green Community Task Force Advisors',
     'open space committee (ad hoc)': 'Ad Hoc Open Space Advisory Committee',
     'lunenburg municipal building design committee (eff. 9/26/23)':
         'Lunenburg Municipal Building Design Committee',
@@ -348,7 +360,12 @@ HEAD_POST = {
 }
 
 # A PERSON IS NOT A BODY, and neither is a listing sub-heading.
-NOT_A_UNIT = re.compile(r'^(ex officio members|john palumbo|got advisors)', re.I)
+# A ROUTING TABLE IS NOT A BODY. `Public Records Access Officers` lists which officer
+# handles which KIND OF REQUEST -- `General Requests: Jennifer Warren-Dyment`, `Fire
+# Dept.: Karen Weller, Admin. Asst.` -- so half its rows have the subject where the name
+# goes. It is a real and useful table and it is not an org unit.
+NOT_A_UNIT = re.compile(r'^(ex officio members|john palumbo|'
+                        r'public records access officers)', re.I)
 # A FRAGMENT OF THE LISTING IS NOT A PERSON. `Serving until next annual`, `ssociate
 # Members-(2) 2 year`, `elect Board Representative-R` -- a sub-heading or a footnote the
 # column reader took for a name, with the first letter eaten by the bullet before it.
@@ -364,6 +381,11 @@ SIZE_SUFFIX = re.compile(r'\s*[-—,]*\s*\(?\s*(?:no less than\s*)?\d+\s*'
                          r'(?:members?|member|yrs?|years?)[^)]*\)?\s*$', re.I)
 
 
+# A COMMITTEE DOES NOT CHANGE INTO A DIFFERENT COMMITTEE BECAUSE THE LISTING PRINTED ITS
+# EFFECTIVE DATE. `Lunenburg Municipal Building Design Committee (Eff. 9/26/23)`.
+EFFECTIVE_SUFFIX = re.compile(r'\s*\((?:eff\.?|effective|as of)[^)]*\)?\s*$', re.I)
+
+
 def canon_unit(name, kind):
     """One name per body. Case is not a distinction; `kind` is.
 
@@ -371,7 +393,8 @@ def canon_unit(name, kind):
     things -- paid staff and an appointed volunteer board -- and they must not be told
     apart by a capital O. The kind carries the difference and the name is normalised.
     """
-    name = SIZE_SUFFIX.sub('', re.sub(r'\s+', ' ', name).strip()).strip(' -—,')
+    name = EFFECTIVE_SUFFIX.sub(
+        '', SIZE_SUFFIX.sub('', re.sub(r'\s+', ' ', name).strip())).strip(' -—,')
     key = name.lower()
     if key in ALIAS:
         return ALIAS[key]
@@ -457,6 +480,9 @@ def _rows_officials():
             continue
         kind = ('board' if 'board seat' in r['kind'] else 'officer')
         name, seat, note = _seat(who)
+        # `Steve Archambault-202 /`, `Michelle Durkee.` -- the term year half-scanned off
+        # the end of a name, and a full stop the listing puts after it.
+        name = re.sub(r'[\s,/\\-]*\d[\d/ .-]*$', '', name).strip(' .,/-')
         if name and NOT_A_MEMBER.match(name):
             bad += 1
             continue
@@ -1090,32 +1116,103 @@ def build():
                 and not re.search(r'principal|head', r['role'], re.I):
             r['tier'] = TIER_SUPERVISOR if r['section_group'] else TIER_STAFF
 
+    # A CHAIR OF A BOARD SITS ON THAT BOARD. Matched on surname and first initial,
+    # because the listing says `Timothy Russell Willsmer` and the report says `Timothy
+    # Willsmer`, and an exact match finds neither in the other.
+    def _who(name):
+        parts = [x for x in re.split(r'\s+', name.strip()) if x]
+        return (parts[-1].lower().strip('.,'), parts[0][:1].lower()) if parts else ('', '')
+
     # A CHAIR OF A BOARD SITS ON THAT BOARD. Where a body-year has several people
     # called chair and only some of them are among its members, the others were read off
     # a page the contents attributed to the wrong body -- the Planning Board and the
     # Zoning Board of Appeals print back to back, and the ZBA's chairman arrived as the
     # Planning Board's third. Only dropped when a member-chair exists to prefer.
-    # MATCHED ON SURNAME AND FIRST INITIAL, because the two sources spell people
-    # differently: the listing says `Timothy Russell Willsmer` and the report says
-    # `Timothy Willsmer`, and an exact match finds neither in the other.
-    def _who(name):
-        parts = [x for x in re.split(r'\s+', name.strip()) if x]
-        return (parts[-1].lower().strip('.,'), parts[0][:1].lower()) if parts else ('', '')
-
     members = collections.defaultdict(set)
+    seats = collections.defaultdict(set)
     for r in rows:
         if r['role'] in ('board seat', 'officer') or not re.search(r'chair', r['role'],
                                                                    re.I):
             members[(r['fy'], r['unit'])].add(_who(r['person']))
+            seats[(r['fy'],) + _who(r['person'])].add(r['unit'])
+
+    # A DELEGATE'S TITLE NAMES THE BODY THEY COME FROM, and that is a membership this
+    # archive states out loud: the Storm Water Task Force seats `Jenny Pewtherer -
+    # Conservation Commission`, which is the Conservation Commission saying she is one of
+    # theirs. Without reading it, she and a chair who belongs to somebody else were
+    # indistinguishable -- both seated on some other body, neither seated here.
+    byname = {}
+    for r in rows:
+        byname.setdefault(_norm_body(r['unit']), r['unit'])
+    for r in rows:
+        if not r['person'] or not r['role']:
+            continue
+        home = byname.get(_norm_body(r['role']))
+        if home and home != r['unit']:
+            members[(r['fy'], home)].add(_who(r['person']))
+            seats[(r['fy'],) + _who(r['person'])].add(home)
+
     drop = set()
-    for (fy, unit), _ in list(members.items()):
-        cand = [r for r in rows if r['fy'] == fy and r['unit'] == unit
-                and re.search(r'^chair', r['role'], re.I)]
-        if len({c['person'] for c in cand}) > 1:
-            inside = [c for c in cand if _who(c['person']) in members[(fy, unit)]]
-            if inside:
-                drop |= {id(c) for c in cand if c not in inside}
+    chairs_by = collections.defaultdict(list)
+    for r in rows:
+        if re.search(r'^chair', r['role'], re.I):
+            chairs_by[(r['fy'], r['unit'])].append(r)
+    for (fy, unit), cand in chairs_by.items():
+        if len({c['person'] for c in cand}) < 2:
+            continue
+        inside = [c for c in cand if _who(c['person']) in members[(fy, unit)]]
+        if inside:
+            drop |= {id(c) for c in cand if c not in inside}
+            continue
+        # NOBODY IS A MEMBER OF THIS BODY, so ask where they ARE one. Deb Lincoln
+        # chaired the Council on Aging and arrived as a second chair of the Conservation
+        # Commission, because the two reports share a page and the contents page hands
+        # whole spreads to one body.
+        # NOBODY HERE IS A SEATED MEMBER, so ask who is seated SOMEWHERE ELSE. Deb
+        # Lincoln holds a seat on the Council on Aging and none on the Conservation
+        # Commission, and she arrived as its second chair because FY2025 pages 47-48
+        # carry the Council's report inside the Commission's stated range. Only ever
+        # applied when another candidate remains, so a chair whose own seat this archive
+        # missed is not deleted for sitting on something else.
+        elsewhere = [c for c in cand
+                     if seats.get((fy,) + _who(c['person']), set()) - {unit}]
+        if elsewhere and len(elsewhere) < len(cand):
+            drop |= {id(c) for c in elsewhere}
+            continue
+        # THREE CHAIRS IS NOT A SUCCESSION. Two can be: a board that changes chair
+        # mid-year prints both, and the reports do. Three means the page range covered
+        # somebody else's report, and nothing here can say which one is ours -- so the
+        # body is published headless rather than with a guess at the top.
+        if len({c['person'] for c in cand}) > 2:
+            drop |= {id(c) for c in cand}
     rows = [r for r in rows if id(r) not in drop]
+
+    # ONE PERSON, ONE CHAIR. Somebody who turns up chairing two bodies in one year is
+    # chairing the one they sit on. Deb Lincoln chaired the Council on Aging and arrived
+    # as a second chair of the Conservation Commission, because FY2025 pages 47 and 48
+    # carry the Council's report inside the Commission's stated range.
+    chairing = collections.defaultdict(list)
+    for r in rows:
+        if re.search(r'^chair', r['role'], re.I):
+            chairing[(r['fy'],) + _who(r['person'])].append(r)
+    gone = set()
+    for k, cand in chairing.items():
+        if len({c['unit'] for c in cand}) < 2:
+            continue
+        home = [c for c in cand if c['unit'] in seats.get(k, set())]
+        if home:
+            gone |= {id(c) for c in cand if c not in home}
+    rows = [r for r in rows if id(r) not in gone]
+
+    # A BOARD HAS NO DIRECTOR AND NO CHIEF. Where a signature block lands on a board --
+    # the contents page hands whole spreads to one body, and FY2025 pages 47-48 carry the
+    # Council on Aging's report inside the Conservation Commission's stated range -- the
+    # giveaway is the TITLE. A board elects a chair, a vice-chair and a clerk; anybody
+    # arriving at one with `Director` after their name came off somebody else's page.
+    rows = [r for r in rows
+            if not (r['unit_kind'] == 'board'
+                    and r['source'].startswith(('report signature', 'report p'))
+                    and not re.search(r'chair|clerk|secretary', r['role'], re.I))]
 
     strong = {(r['fy'], r['unit'], r['subunit']) for r in rows
               if r['tier'] == 0 and STRONG_HEAD.search(r['role'])}
