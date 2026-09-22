@@ -132,8 +132,37 @@ def load():
 
     sizes = collections.Counter(r['post'] for r in named)
 
+    # TURNOVER BY BODY, over CONSECUTIVE years only and over bodies present in both ends
+    # of a pair. A body seen in one year of a pair and not the other tells us nothing about
+    # its churn -- it tells us the listing changed -- so it is skipped rather than counted
+    # as a total replacement.
+    #
+    # A one-seat post whose holder changed reads as 100% turnover, which is true and
+    # useless: it is one person leaving a job. So the page reports bodies of three seats or
+    # more and says that is what it is doing.
+    seats_by = collections.defaultdict(lambda: collections.defaultdict(set))
+    for r in rows:
+        if r['person'].strip():
+            seats_by[r['post']][r['fy']].add(r['person'].strip())
+    body = []
+    for post, held in seats_by.items():
+        ch = seats = obs = 0
+        for a, b in zip(years, years[1:]):
+            if int(b) - int(a) != 1 or a not in held or b not in held:
+                continue
+            ch += len(held[b] - held[a]) + len(held[a] - held[b])
+            seats += len(held[a]) + len(held[b])
+            obs += 1
+        if obs < 2 or not seats:
+            continue
+        body.append(dict(post=post, seats=round(seats / (2.0 * obs), 1), pairs=obs,
+                         changes=ch, churn=round(ch / seats * 100, 1)))
+    body.sort(key=lambda b: -b['churn'])
+    big = [b for b in body if b['seats'] >= 3]
+
     return dict(rows=rows, years=years, per=per, checks=checks, posts=posts,
                 last=last, named=named, vacancies=vac, terms=terms, ahead=ahead,
+                body_churn=body, body_big=big,
                 distinct=len(who), held=len(named), multi=multi, churn=churn,
                 ever=len(ever), served_all=served_all, sizes=sizes)
 
@@ -162,6 +191,11 @@ def _not_established():
         'Whether a post was actually filled for the whole year. The listing is a point in '
         'time and an appointment note is the only sign of a change within one.',
     ]
+
+
+def _med(d):
+    b = sorted(x['churn'] for x in d['body_big'])
+    return b[len(b) // 2]
 
 
 def conclusions_for(d):
@@ -223,6 +257,34 @@ def conclusions_for(d):
             allow=('FY%s' % str(int(last) - 1), 'FY%s' % last),
         ),
         conclusion(
+            id='churn-is-uneven',
+            claim='Some boards replace half their seats a year while others barely change',
+            lede='The town-wide turnover figure hides a wide spread: the churn is not '
+                 'shared evenly across the boards.',
+            detail='Across %s boards of three seats or more, the median is %s of seats '
+                   'changing hands a year. %s runs highest at %s; %s is among the '
+                   'steadiest at %s.'
+                   % (num(len(d['body_big'])), pct(_med(d), 0), d['body_big'][0]['post'],
+                      pct(d['body_big'][0]['churn'], 0), d['body_big'][-1]['post'],
+                      pct(d['body_big'][-1]['churn'], 0)),
+            figures={'n': figure(len(d['body_big']), num(len(d['body_big'])), 'boards'),
+                     'med': figure(_med(d), pct(_med(d), 0),
+                                   'of seats changing hands a year, the median board'),
+                     'hi': figure(d['body_big'][0]['churn'],
+                                  pct(d['body_big'][0]['churn'], 0), 'at the top'),
+                     'lo': figure(d['body_big'][-1]['churn'],
+                                  pct(d['body_big'][-1]['churn'], 0), 'at the bottom')},
+            figure='med',
+            kind='measured',
+            bearing='sizes',
+            basis='Names matched between consecutive years of the listing, per body, over '
+                  'bodies appearing in both years of at least two pairs.',
+            not_shown='Why any board turns over faster. A board people leave and a board '
+                      'whose terms are short look identical here.',
+            so_what='A seat is far easier to get on some boards than on others.',
+            allow=(),
+        ),
+        conclusion(
             id='not-a-clique',
             claim='It is not a small group wearing many hats — almost everyone holds one seat',
             lede='A common assumption about small-town boards, and this listing does not '
@@ -273,6 +335,18 @@ def render(d):
     t.append('\n%s of the %s people listed at any point across the four years appear in '
              'all four.\n' % (num(len(d['served_all'])), num(d['ever'])))
 
+    if d['body_big']:
+        med = sorted(b['churn'] for b in d['body_big'])[len(d['body_big']) // 2]
+        t.append('\n## Which boards change most\n\nSeats changing hands each year, over '
+                 'bodies of three seats or more that appear in both years of at least two '
+                 'consecutive pairs. A one-seat post whose holder changed reads as a '
+                 'hundred per cent and is one person leaving a job, so it is left out. The '
+                 'median across the %s bodies here is %s.\n\n'
+                 '| board or committee | seats | year pairs | churn |\n|---|---:|---:|---:|\n'
+                 % (num(len(d['body_big'])), pct(med, 0)))
+        for b in d['body_big']:
+            t.append('| %s | %s | %s | %s |\n'
+                     % (b['post'], b['seats'], b['pairs'], pct(b['churn'], 0)))
     t.append('\n## The bodies, by size\n\nFY%s, filled seats only.\n\n'
              '| board, committee or post | people |\n|---|---:|\n' % last)
     for post, n in sorted(d['sizes'].items(), key=lambda a: (-a[1], a[0])):
@@ -338,6 +412,7 @@ def payload(d):
         served_all=len(d['served_all']), ever=d['ever'],
         checks=dict(d['checks']),
         posts=sorted(d['posts'].values(), key=lambda p: p['post']),
+        body_churn=d['body_big'],
         sources=_sources(d),
         not_established=_not_established(),
         conclusions=conclusions_for(d),

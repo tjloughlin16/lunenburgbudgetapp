@@ -45,6 +45,45 @@ The year each filled seat’s term runs out, as printed beside the name.
 
 19 of the 649 people listed at any point across the four years appear in all four.
 
+## Which boards change most
+
+Seats changing hands each year, over bodies of three seats or more that appear in both years of at least two consecutive pairs. A one-seat post whose holder changed reads as a hundred per cent and is one person leaving a job, so it is left out. The median across the 32 bodies here is 29%.
+
+| board or committee | seats | year pairs | churn |
+|---|---:|---:|---:|
+| STORM WATER TASK FORCE | 4.0 | 5 | 65% |
+| PUBLIC RECORDS ACCESS OFFICERS | 6.0 | 4 | 62% |
+| HISTORICAL COMMISSION | 4.5 | 2 | 56% |
+| GREEN COMMUNITIES COMMITTEE | 3.7 | 3 | 54% |
+| ECONOMIC DEVELOPMENT COMMITTEE | 4.3 | 3 | 46% |
+| LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE | 5.5 | 2 | 46% |
+| Sewer Commission - 1/2/ | 5.4 | 4 | 44% |
+| AGRICULTURAL COMMISSION | 6.0 | 5 | 43% |
+| Planning Board - 2 | 5.8 | 4 | 39% |
+| FINANCE COMMITTEE | 7.5 | 3 | 33% |
+| Cemetery Commission | 3.6 | 4 | 31% |
+| CAPITAL PLANNING COMMITTEE | 5.8 | 5 | 31% |
+| Board of Selectmen | 5.0 | 2 | 30% |
+| CULTURAL COUNCIL | 8.0 | 5 | 30% |
+| Parks Commission | 5.0 | 2 | 30% |
+| CONSERVATION COMMISSION | 7.0 | 5 | 29% |
+| Library Trustees | 7.2 | 4 | 28% |
+| Select Board | 5.5 | 2 | 27% |
+| School Committee | 5.1 | 4 | 27% |
+| PERSONNEL COMMITTEE | 4.8 | 4 | 26% |
+| Board of Assessors | 3.0 | 4 | 25% |
+| Park Commission | 4.0 | 2 | 25% |
+| ZONING BOARD OF APPEALS | 4.6 | 5 | 22% |
+| Board of Health | 5.5 | 4 | 18% |
+| PUBLIC ACCESS CABLE COMMITTEE | 4.4 | 5 | 18% |
+| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 8.8 | 3 | 17% |
+| Housing Authority | 4.4 | 4 | 14% |
+| COUNCIL ON AGING | 11.3 | 3 | 12% |
+| TAXATION AID COMMITTEE | 4.5 | 2 | 11% |
+| TOWN CLOCKWINDERS | 5.2 | 3 | 10% |
+| CABLE ADVISORY COMMITTEE | 3.0 | 2 | 0% |
+| GREEN COMMUNITY TASK FORCE | 3.0 | 2 | 0% |
+
 ## The bodies, by size
 
 FY2025, filled seats only.
