@@ -35,6 +35,71 @@ enrollment, circuit breaker, AP coursework; affinity tags for the 273 archive do
 
 ---
 
+## A SERVER TO RUN THE INGESTION — decided 22 September 2026, build AFTER the annual-report roadmap
+
+TJ: *"i think we need a server hosting this site now. we've outgrown the metadata refresh
+mechanism. build that after. but lets use what you just did for now."*
+
+**What we outgrew, precisely.** Everything that ingests runs as a launchd agent on TJ's
+Mac. That was right while the work was one refresh a day that finishes in minutes. It is
+no longer right, and three things on 22 September showed why in the same afternoon:
+
+- the votes backfill measured at **about seven meetings an hour**, so 3,899 unread minutes
+  is **three weeks of wall-clock** — longer than a laptop stays up
+- the caption backfill is another **738 fetches** at roughly 25 an hour, deliberately slow
+  because the throttle is YouTube's patience rather than ours
+- the status dashboard had been **frozen for nineteen hours** because its watcher died with
+  a terminal, and a stale dashboard looks exactly like a busy one
+
+A laptop sleeps, reboots, closes its lid and goes to a coffee shop. Every one of those
+silently stops a multi-week job, and none of them leaves a mark that distinguishes
+"finished" from "killed".
+
+**What the launchd agents already do well, and should not be thrown away.** They are
+idempotent and restartable: `daily_refresh.sh` refuses to run twice in a day, the votes
+and caption runners skip anything already done, and the refresh has its own git worktree
+so it cannot collide with somebody working in this one. A server inherits that design
+rather than replacing it.
+
+### The one hard problem: `claude -p` is not an API key
+
+Every agentic stream here — our minutes of recordings, the official votes, the agenda
+previews — runs `claude -p` against TJ's **Max plan login**, not an Anthropic API key.
+That is why the costs in this repo are quoted as a share of a weekly allowance rather than
+in dollars. A headless server cannot simply be handed that: it either runs Claude Code
+signed in as him, or the work switches to an API key and the cost model changes from
+*a share of a fixed allowance* to *per-token billing*, which is a different decision and
+a different number.
+
+**Decide that before choosing a host**, because it is the only part that is not ordinary
+devops. The free, local streams — caption fetching, macOS Vision OCR — have the opposite
+constraint: `ocr_scanned_minutes.py` and `ocr_words.swift` use macOS Vision and do not run
+on Linux at all.
+
+### So the shape is probably split, not lifted
+
+| runs where | why |
+|---|---|
+| **a small always-on Linux box** | the refresh, the votes backfill, caption fetching, the site build and deploy — everything that is Python, network and patience |
+| **stays on a Mac** | anything using macOS Vision: `ocr_scanned_minutes.py`, `ocr_words.swift`, `render_page.swift`. There is no Linux equivalent in this project and the OCR quality is load-bearing |
+| **decided, not assumed** | the `claude -p` streams, per above |
+
+### What it must keep
+
+- **The archive is 1.38 GB in R2** and a fresh checkout pulls it with `sync_archive.py --pull`. A server needs that or a mount, and the frozen-object rule still applies.
+- **D1's write budget is shared**: 100,000 writes a day across `sync_d1.py` and
+  `sync_search_d1.py`, and a full replace is ~51,000. Two machines pushing on the same day
+  exhausts it. Only one thing may sync.
+- **One builder.** `npm run build:site` spawns Chrome on a fixed port and writes a shared
+  `dist/`; it is not parallel-safe and cannot be made safe by asking.
+- **Nothing deploys without being asked** (rule 10) still holds, and a server makes it
+  easier to break that accidentally than a laptop does.
+
+**Until then:** the launchd agents are the mechanism, including the new
+`org.lunenburgbudgetproject.status` one. They are good enough for a day's work and are
+honest about stopping — which is the part that was missing this morning.
+
+
 ## THE ANNUAL-REPORT ROADMAP — set 22 September 2026
 
 Everything below came out of one stretch of work on the annual reports, and every item is
