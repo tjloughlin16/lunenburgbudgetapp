@@ -150,7 +150,8 @@ TIERS = [
     (2, re.compile(r'\blieutenant\b|\blt\.?\b|\bsergeant\b|\bsgt\.?\b'
                    r'|\bdepartment head\b|\bdept\.? head\b|\bsupervisor\b'
                    r'|\bmanager\b|\bcoordinator\b|\bforeman\b|\bhead\b'
-                   r'|\bclerk\b|\bsecretary\b|\badministrator\b', re.I)),
+                   r'|\bclerk\b|\bsecretary\b|\badministrator\b'
+                   r'|\bdetective\b|\bdet\.', re.I)),
 ]
 TIER_STAFF = 3
 # A FIFTH BAND, BELOW THE MEMBERS. The Planning Board and the Zoning Board of Appeals
@@ -375,8 +376,9 @@ PROSE = re.compile(r'\b(?:retired|resigned|graduated|began|started|served|obtain
 # `Traffic Bureau`, `Newly Appointed`. The first version dropped these too. They are not
 # people and they are not noise -- they are the department's OWN grouping, so they become
 # the section the names under them belong to.
-ROSTER_HEADING = re.compile(r'\b(officers|firefighters|bureau|shift|division|newly '
-                            r'appointed|reserve|patrol|administration|call|career)\b', re.I)
+ROSTER_HEADING = re.compile(r'\b(officers|firefighters|bureau|shift|division|newly|'
+                            r'arrivals|reserve|patrol|administration|call|career|'
+                            r'intermittent|animal control|supervisors)\b', re.I)
 
 
 def _roster_name(raw):
@@ -391,10 +393,14 @@ def _roster_name(raw):
         return ('empty', '', note)
     if VACANT.match(raw) or VACANT.match(note):
         return ('vacant', '', note or raw)
+    # THE HEADING TEST COMES FIRST. `Patrol Officers` is two capitalised words and
+    # passes any name-shape test ever written, so testing for a name first filed the
+    # department's own section headings as members of staff -- `Patrol Officers`,
+    # `New Arrivals`, `Animal Control`, `Reserve Intermittent O`.
+    if ROSTER_HEADING.search(raw) and not PROSE.search(raw) and len(raw.split()) <= 4:
+        return ('heading', raw, note)
     if NAME_SHAPE.match(raw):
         return ('person', raw, note)
-    if ROSTER_HEADING.search(raw) and len(raw.split()) <= 4 and not PROSE.search(raw):
-        return ('heading', raw, note)
     return ('prose', raw, note)
 
 
@@ -413,6 +419,13 @@ def _rows_rosters():
                 role = rank or m.group(1)
                 part = part.strip()[m.end():]
             kind, who, note = _roster_name(part)
+            # A ROLE THAT CONTAINS A NAME IS TWO ROWS STUCK TOGETHER. `Sergeant Sean
+            # Connery` as a RANK, beside `Patrol Supervisors` as a NAME, is one printed
+            # line read across a column boundary.
+            if kind == 'person' and role and NAME_SHAPE.match(
+                    EMBEDDED_RANK.sub('', role).strip()):
+                lost.append((r['fy'], r['department'], '%s / %s' % (role, who)))
+                continue
             if kind == 'empty':
                 continue
             if kind == 'heading':
@@ -583,6 +596,21 @@ SIG_ALIAS = {
 SIG_DROP = re.compile(r'town meeting|town election|collection of taxes|omnibus|'
                       r'revenue funds|capital projects|vital records|excerpts', re.I)
 
+def _sig_title(title, person):
+    """The post, with the person's own name taken back out of it.
+
+    `Chief James P. Marino` is what the block prints and it is a RANK plus a NAME, so the
+    chart read `Chief James P. Marino — James P. Marino`. And `nham, Superintendent` is
+    the tail of `Kate Burnham` landing in front of the title.
+    """
+    t = re.sub(r'^[a-z]{2,12},\s*', '', (title or '').strip())
+    for part in sorted(person.split(), key=len, reverse=True):
+        if len(part) > 2:
+            t = re.sub(r'\b%s\b\.?' % re.escape(part), '', t)
+    t = re.sub(r'\s{2,}', ' ', t).strip(' ,.')
+    return t or 'signed the report'
+
+
 def _rows_signatures():
     """The head of every body that signs its own report."""
     p = os.path.join(DATA, 'report-signatures.csv')
@@ -631,8 +659,7 @@ def _rows_signatures():
                         # report` is the only thing we can say about them.
                         # `nham, Superintendent` -- the scanner cuts the name in half
                         # and the tail of it lands in front of the title.
-                        role=re.sub(r'^[a-z]{2,12},\s*', '',
-                                    (r['title'] or 'signed the report').strip()),
+                        role=_sig_title(r['title'], r['person']),
                         person=r['person'].strip(), status='filled',
                         source='report signature p%s' % r['page']))
     return out
@@ -692,6 +719,22 @@ def build():
         r['tier'] = 0 if r['unit_kind'] == 'officer' else tier_of(r['role'],
                                                                  r['unit_kind'])
     rows = _disambiguate(_one_spelling(rows))
+    # ONE ROW PER PERSON PER BAND. `Chief` off the roster and `Chief P` off the signature
+    # block are the same post, and both were drawn. Where a person appears twice in one
+    # body, one year and one band, the tidier role wins -- shortest that still names a
+    # post -- because the duplicate is always a worse scan of the same words.
+    best = {}
+    for r in rows:
+        k = (r['fy'], r['unit'], r['subunit'], r['person'].lower(), r['tier'])
+        if not r['person']:
+            continue
+        cur = best.get(k)
+        if cur is None or (len(r['role']) < len(cur['role']) and r['role']):
+            best[k] = r
+    rows = [r for r in rows
+            if not r['person']
+            or best[(r['fy'], r['unit'], r['subunit'], r['person'].lower(),
+                     r['tier'])] is r]
     seen, uniq = set(), []
     for r in rows:
         k = (r['fy'], r['unit'], r['subunit'], r['section'], r['role'], r['person'],

@@ -97,7 +97,13 @@ export function OrgCharts() {
       // department info?! ... we should group by those."* We do, on every roster row —
       // the block heading the name was printed under. `section_group` is that heading
       // normalised; `section` is what the page actually said and stays on the row.
-      const sg = r.section_group || ''
+      // THE SECTION GROUPS THE STAFF, NEVER THE HEADS. TJ: *"For the police depatment,
+      // you are putting the police chief under open shift roles and admins. thats just
+      // awkward. You should recognize how this hierarchy works right? I think it's
+      // pretty clear in their titles."* It is: the Chief's printed section is
+      // `Administration`, which is where the roster sets his desk, not a rank. Above the
+      // staff band the title IS the structure, so those bands render as a plain list.
+      const sg = t === '3' ? (r.section_group || '') : ''
       if (!groups.has(sg)) groups.set(sg, [])
       groups.get(sg)!.push(r)
     }
@@ -221,11 +227,26 @@ export function OrgCharts() {
               }}>
                 {groups.map(([sg, rs]) => (
                   <div key={sg || '_'} className={sg ? 'mt-2' : ''}>
+                    {/* A SHIFT IS NOT A PERSON. TJ: *"the 'shifts' for police need to be
+                        organized more clearly. hard to read those vs the people names."*
+                        They were set in the same size and weight as the names directly
+                        under them, so `Day Shift` read as somebody called Day Shift.
+                        Small, spaced capitals with a rule: the eye sorts it before it
+                        reads it. */}
                     {sg ? (
-                      <div className="text-[12.5px] font-medium mb-0.5"
-                        style={{ color: 'var(--text-secondary)' }}>
-                        {sg} <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
-                          {rs.length}</span>
+                      <div className="flex items-center gap-2 mt-3 mb-1">
+                        <span className="text-[10.5px] uppercase shrink-0"
+                          style={{
+                            color: 'var(--text-muted)', letterSpacing: '0.09em',
+                            fontWeight: 600,
+                          }}>
+                          {sg}
+                        </span>
+                        <span className="text-[10.5px] shrink-0"
+                          style={{ color: 'var(--text-muted)', opacity: 0.75 }}>
+                          {rs.length}
+                        </span>
+                        <span className="grow" style={{ borderTop: '1px solid var(--grid)' }} />
                       </div>
                     ) : null}
                     <ul className="list-none p-0 m-0 grid gap-x-8 gap-y-1"

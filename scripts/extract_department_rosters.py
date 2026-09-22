@@ -74,9 +74,22 @@ NAMEISH = re.compile(r'^[A-Z][A-Za-z.\'\-]+(?:\s+[A-Z][A-Za-z.\'\-]+){1,3}$')
 # `Lunenburg Fire Department.` is three capitalised words and matched NAMEISH, so it was
 # filed as a person -- and as the ONLY person on FY2011's Police roster, which then
 # published a police force of one.
-NOISE = re.compile(r'comfort dog|accompanied by|mission statement|^values?$|^\W*$'
-                   r'|\b(?:department|town|lunenburg|commission|committee|board)\b\s*\.?$',
-                   re.I)
+NOISE = re.compile(r'comfort dog|accompanied by|mission statement|^values?$|^\W*$', re.I)
+# A SENTENCE ABOUT SOMEBODY IS NOT A ROSTER ENTRY. FY2012's Fire chief came out as
+# `Chief | Scott Glenny retired in August`, off a paragraph two columns away from the
+# roster, while the roster's own `Patrick A. Sullivan` / `Chief of Department*` sat in
+# two separate cells and never joined up.
+SENTENCE = re.compile(r'\b(?:retired|resigned|graduated|began|started|served|obtained|'
+                      r'elevated|hired|after|during|following)\b', re.I)
+# A BODY'S NAME IS NOT A PERSON'S NAME -- but it is only ever tested against the NAME,
+# never against the whole line. Applied to the line it rejected
+# `Patrick A. Sullivan, Chief of Department`, which is the first row of the Fire
+# Department roster in every single year, so the CHIEF was missing from seven of the
+# fourteen charts while his deputy stood at the top. Rule 13c: a line that fails a
+# matcher is a fact about the matcher.
+BODY_NAME = re.compile(r'^(?:[A-Z][A-Za-z.\'\-]+\s+){0,3}'
+                       r'(?:department|town|lunenburg|commission|committee|board)\s*\.?$',
+                       re.I)
 
 
 def pages_of(fy):
@@ -155,18 +168,23 @@ def parse(line):
     t = re.sub(r'\s+', ' ', line).strip().strip('*+')
     if not t or NOISE.search(t) or SECTIONS.match(t):
         return None
+    got = None
     m = LEADING.match(t)
     if m:
-        return ((m.group(1) or '').strip() + ' ' + m.group(2)).strip(), m.group(3).strip()
-    m = TITLED.match(t)
-    if m and NAMEISH.match(m.group(2).strip()):
-        return m.group(1).strip(), m.group(2).strip()
-    m = TRAILING.match(t)
-    if m and NAMEISH.match(m.group(1).strip()):
-        return m.group(2).strip(), m.group(1).strip()
-    if NAMEISH.match(t):
-        return '', t
-    return None
+        got = (((m.group(1) or '').strip() + ' ' + m.group(2)).strip(), m.group(3).strip())
+    if got is None:
+        m = TITLED.match(t)
+        if m and NAMEISH.match(m.group(2).strip()):
+            got = (m.group(1).strip(), m.group(2).strip())
+    if got is None:
+        m = TRAILING.match(t)
+        if m and NAMEISH.match(m.group(1).strip()):
+            got = (m.group(2).strip(), m.group(1).strip())
+    if got is None and NAMEISH.match(t):
+        got = ('', t)
+    if got is None or BODY_NAME.match(got[1]) or SENTENCE.search(got[1]):
+        return None
+    return got
 
 
 def read_year(fy):
@@ -187,7 +205,12 @@ def read_year(fy):
         # The page decides the department; an inline heading can still switch it, because
         # one page occasionally carries the end of one roster and the start of the next.
         dept, section = department_of_page(fy, page), ''
-        for _col, t in entries:
+        # THE NAME AND THE RANK ON TWO SEPARATE LINES. FY2012 prints the chief as
+        # `Patrick A. Sullivan` and `Chief of Department*` in two cells, so the name
+        # arrived rankless and the year's chart had no chief at all. A bare rank
+        # directly after a bare name belongs to that name.
+        texts = [t for _c, t in entries]
+        for i, t in enumerate(texts):
             if FIRE_START.search(t):
                 dept, section = 'Fire Department', ''
                 continue
@@ -200,10 +223,44 @@ def read_year(fy):
                 section = re.sub(r'\s+', ' ', t.strip()).title()
                 continue
             got = parse(t)
+            if got and not got[0] and i + 1 < len(texts):
+                nxt = re.sub(r'\s+', ' ', texts[i + 1]).strip().strip('*+')
+                if RANK_ONLY.match(nxt):
+                    got = (CHIEF_OF.sub('Chief of Department', nxt), got[1])
             if got:
                 rows.append(dict(fy=fy, page=page, department=dept, section=section,
-                                 rank=got[0], name=got[1], as_printed=t.strip()[:120]))
-    return rows
+                                 rank=CHIEF_OF.sub('Chief of Department', got[0]),
+                                 name=got[1], as_printed=t.strip()[:120]))
+    return _prefer_ranked(rows)
+
+
+# A LINE THAT IS NOTHING BUT A RANK.
+RANK_ONLY = re.compile(r'^(?:Chief of(?:\s+Departmen\w*)?|Deputy Chief(?:/\w+)?|Chief|'
+                       r'(?:Capt(?:ain)?|Lt\.?|Lieutenant|Sgt\.?|Sergeant|Det(?:ective)?|'
+                       r'Officer|Firefighter|FF|EMT|AEMT|Paramedic)(?:[/\w. -]{0,14})?)$',
+                       re.I)
+
+# `Chief of`, `Chief of Departmentt`, `Chief of Department+*` -- one post, four scans.
+CHIEF_OF = re.compile(r'^chief\s+of(?:\s+departmen\w*)?$', re.I)
+
+
+def _prefer_ranked(rows):
+    """One row per person per page, and the one carrying a RANK wins.
+
+    THE LETTERHEAD IS NOT A ROSTER ENTRY. Every Fire Department page opens with the
+    department's own letterhead -- `FIRE DEPARTMENT / CHIEF / Patrick A. Sullivan / 655
+    Massachusetts Ave` -- and the column reader hands back `Patrick A. Sullivan` with no
+    rank beside it, three cells before the roster's own `Patrick A. Sullivan, Chief of
+    Department*`. Deduplicating on the name alone kept whichever came first, which is the
+    letterhead, so FY2017's chart had the Deputy Chief at the top of the department.
+    """
+    best = {}
+    for r in rows:
+        k = (r['fy'], r['department'], r['page'], r['name'].lower())
+        if k not in best or (not best[k]['rank'] and r['rank']):
+            best[k] = r
+    return [r for r in rows if best[(r['fy'], r['department'], r['page'],
+                                    r['name'].lower())] is r]
 
 
 def stated_fire():
