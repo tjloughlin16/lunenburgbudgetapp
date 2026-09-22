@@ -46,7 +46,21 @@ PAGES = os.path.join(ROOT, 'sources', 'town-budget', 'pages')
 OUT = os.path.join(ROOT, 'sources', 'data', 'town-personnel.csv')
 
 SECTION = re.compile(r'^(ELECTED|APPOINTED)\s+OFFICIALS\b', re.I)
-SIZE = re.compile(r'\(\s*(?:no less than \d+ and no more than\s*)?(\d+)\s*members?\s*\)', re.I)
+# THE PARENTHESIS DOES NOT ALWAYS CLOSE AFTER `members`. `STORM WATER TASK FORCE (5
+# members as of Nov. 2021)` states its size as plainly as any other heading, and a pattern
+# demanding `members)` refused it -- so the task force was read as a PERSON standing under
+# `RECREATION DIRECTOR`, which is how a one-person post came to list six. Take the count
+# where it is stated and ignore whatever else the town put inside the brackets.
+SIZE = re.compile(r'\(\s*(?:no less than \d+ and no more than\s*)?(\d+)\s*members?\b'
+                  r'[^)]*\)', re.I)
+
+# A RANGE IS NOT A SIZE. Several bodies are constituted with a floor and a ceiling --
+# `CULTURAL COUNCIL (no less than 5 and no more than 22 members)`, `HISTORICAL COMMISSION-
+# 3 year term (not less than 3 nor more than 7 members)` -- and testing the names against
+# the ceiling reported a perfectly legal ten-member council as a failure. Where the
+# heading states a range the check is that the count falls INSIDE it.
+RANGE = re.compile(r'\(?\s*(?:no|not)\s+less\s+than\s+(\d+)\s+(?:and|nor)\s+'
+                   r'(?:no|not)?\s*more\s+than\s+(\d+)', re.I)
 TERM = re.compile(r'[-–]\s*(20\d\d)\s*$')
 APPOINTED_NOTE = re.compile(r'[-–]\s*(appointed|resigned|retired|deceased|term|vacan)', re.I)
 PAGENO = re.compile(r'^\d{1,3}$')
@@ -131,13 +145,42 @@ def lines_of(path):
         head = next((l.strip() for l in lines if l.strip()), '')
         m = SECTION.match(head)
         section = m.group(1).lower() if m else ''
-        for col in split_columns(lines):
+        for ci, col in enumerate(split_columns(lines)):
             for t in col:
                 if t.strip():
-                    yield page, section, t.strip()
+                    yield (page, ci), section, t
 
 
-TERMLEN = re.compile(r'\b\d+\s*year\s*term\b', re.I)
+# `terms`, PLURAL, and it cost a dozen headings. `\bterm\b` does not match `(3 year
+# terms)`, so ECONOMIC DEVELOPMENT COMMITTEE failed the constitution test, fell through to
+# the capitals test -- where `year terms` in lower case drags the ratio to 0.75 -- and was
+# read as a PERSON standing under whatever heading came before it. That is how `DPW
+# DIRECTOR`, a post held by one person, came to list nine.
+TERMLEN = re.compile(r'\b\d+\s*years?\s*terms?\b', re.I)
+
+# `Ex Officio Members`, `Associate Members` -- a roster WITHIN a body, printed in title
+# case with no membership stated. Read as people they inflate the body above them; read as
+# headings they are what they are, a separate roster with its own members.
+SUBROSTER = re.compile(r'^(?:ex[- ]officio|associate|alternate|student|honorary)\s+'
+                       r'members?\b', re.I)
+
+
+def split_entries(raw):
+    """One printed line, into the entries actually on it.
+
+    Some pages set two or three names across the width and the flattened text runs them
+    together: `Maryrae Holman-Agricultural Commission Cathy Clark-Member at Large` is two
+    people, and `Louis Franco-Select Board Adam Burney-Land Use Director Matthew
+    Brenner-Planning` is three. The gutter detector does not catch these because the
+    columns on such a page are not separated by a blank channel on enough lines to
+    measure.
+
+    What IS still in the text is the run of spaces between them, so split on three or
+    more. Two spaces is not enough -- proportional text flattened to a monospace grid puts
+    two spaces inside ordinary names -- and a line with no such run comes back whole.
+    """
+    parts = [p for p in re.split(r'\s{3,}', raw.strip()) if p.strip()]
+    return parts or ['']
 
 
 def is_heading(t):
@@ -159,7 +202,7 @@ def is_heading(t):
     what it is: the Agricultural Commission states five members and lists four plus two
     associates, and reading the associates into the commission was what made it nine.
     """
-    if SIZE.search(t) or TERMLEN.search(t):
+    if SIZE.search(t) or TERMLEN.search(t) or SUBROSTER.match(t):
         return True
     head = post_name(t)
     letters = [c for c in head if c.isalpha()]
@@ -184,12 +227,19 @@ def listing_pages(path):
     FY2022 came out with 1,104 people in a nine-page listing.
     """
     first, pages = {}, set()
-    for page, _sec, t in lines_of(path):
-        first.setdefault(page, t)
+    for col, _sec, t in lines_of(path):
+        if t.strip():
+            first.setdefault(col[0], t.strip())
     for page, t in first.items():
         if SECTION.match(t):
             pages.add(page)
     return pages
+
+
+def _says(stated):
+    if stated is None:
+        return ''
+    return f'{stated[0]}-{stated[1]}' if isinstance(stated, tuple) else str(stated)
 
 
 def close_post(rows, post, stated, seen, problems, fy):
@@ -205,13 +255,18 @@ def close_post(rows, post, stated, seen, problems, fy):
     """
     if not post:
         return
-    state = ('no check' if stated is None
-             else 'checked' if seen == stated else 'check failed')
+    if stated is None:
+        state = 'no check'
+    elif isinstance(stated, tuple):
+        state = 'checked' if stated[0] <= seen <= stated[1] else 'check failed'
+    else:
+        state = 'checked' if seen == stated else 'check failed'
     for r in rows:
         if r['post'] == post and r['fy'] == fy and not r['size_check']:
             r['size_check'] = state
     if state == 'check failed':
-        problems.append(f'FY{fy} {post}: states {stated} members, {seen} named')
+        says = (f'{stated[0]}-{stated[1]}' if isinstance(stated, tuple) else stated)
+        problems.append(f'FY{fy} {post}: states {says} members, {seen} named')
 
 
 def read_year(fy, path):
@@ -221,61 +276,78 @@ def read_year(fy, path):
         return [], []
     post, stated, seen, kind = None, None, 0, ''
     order = 0
-    for page, section, t in lines_of(path):
+    where = None
+    for col, section, raw in lines_of(path):
+        page = col[0]
         if page not in keep:
             continue
-        if PAGENO.match(t) or SECTION.match(t):
-            continue
-        if is_heading(t):
+        # A HEADING CANNOT OWN NAMES IN ANOTHER COLUMN. This is how a one-person
+        # directorship collected eight people: `DPW DIRECTOR` sits near the foot of the
+        # left column, the right column opens with a committee's worth of names, and the
+        # columns are read one after the other -- so every name at the top of column two
+        # landed under the last heading of column one. Closing the post at each boundary
+        # is the whole fix, and it is the same rule the page itself obeys: a column starts
+        # a new run.
+        if where != col:
             close_post(rows, post, stated, seen, problems, fy)
-            m = SIZE.search(t)
-            # A POST THAT STATES A MEMBERSHIP IS A BOARD SEAT; one that does not is an
-            # OFFICER. That is the document's own distinction -- `Board of Assessors - (3
-            # members) 3 year term` against `DPW DIRECTOR` -- and it is the only one here
-            # that is read rather than assumed. It is NOT paid against unpaid: this listing
-            # never says what anybody is paid, and the wage list stopped naming departments
-            # after FY2016, so any split on salary would be us inventing one. Rule 7.
-            kind = 'board seat' if (m or TERMLEN.search(t)) else 'officer'
-            # elected + board seat -> a seat the voters fill.
-            # appointed + board seat -> a seat the Select Board fills: a volunteer member.
-            # appointed + officer   -> a post somebody is HIRED into: the Town Manager,
-            #                          the DPW Director, the Superintendent's office.
-            # All three are the town's own distinction, read off the section header and
-            # off whether the post states a membership.
-            post, stated, seen = post_name(t), int(m.group(1)) if m else None, 0
-            continue
-        if not post:
-            continue
-        kind = kind if post else ''
-        # A person. The term year and any note travel with them, never into the name.
-        vac = VACANCY.match(t)
-        if vac:
-            n = int(vac.group(1)) if vac.group(1) else 1
-            seen += n
+            post, stated, seen, kind, where = None, None, 0, '', col
+        for t in split_entries(raw):
+            t = t.strip()
+            if PAGENO.match(t) or SECTION.match(t):
+                    continue
+            if is_heading(t):
+                close_post(rows, post, stated, seen, problems, fy)
+                m = SIZE.search(t)
+                rng = RANGE.search(t)
+                # A POST THAT STATES A MEMBERSHIP IS A BOARD SEAT; one that does not is an
+                # OFFICER. That is the document's own distinction -- `Board of Assessors - (3
+                # members) 3 year term` against `DPW DIRECTOR` -- and it is the only one here
+                # that is read rather than assumed. It is NOT paid against unpaid: this listing
+                # never says what anybody is paid, and the wage list stopped naming departments
+                # after FY2016, so any split on salary would be us inventing one. Rule 7.
+                kind = 'board seat' if (m or TERMLEN.search(t)) else 'officer'
+                # elected + board seat -> a seat the voters fill.
+                # appointed + board seat -> a seat the Select Board fills: a volunteer member.
+                # appointed + officer   -> a post somebody is HIRED into: the Town Manager,
+                #                          the DPW Director, the Superintendent's office.
+                # All three are the town's own distinction, read off the section header and
+                # off whether the post states a membership.
+                post, seen = post_name(t), 0
+                stated = ((int(rng.group(1)), int(rng.group(2))) if rng
+                          else int(m.group(1)) if m else None)
+                continue
+            if not post:
+                continue
+            kind = kind if post else ''
+            # A person. The term year and any note travel with them, never into the name.
+            vac = VACANCY.match(t)
+            if vac:
+                n = int(vac.group(1)) if vac.group(1) else 1
+                seen += n
+                order += 1
+                rows.append({'fy': fy, 'page': page, 'order': order, 'post': post,
+                             'section': section, 'kind': kind,
+                             'stated_members': stated if stated is not None else '',
+                             'person': '', 'vacancies': n,
+                             'term_expires': '', 'note': t.strip(), 'size_check': ''})
+                continue
+            term = TERM.search(t)
+            note = ''
+            name = t
+            if term:
+                name = t[:term.start()].strip(' -–')
+            elif APPOINTED_NOTE.search(t):
+                i = APPOINTED_NOTE.search(t).start()
+                name, note = t[:i].strip(' -–'), t[i:].strip(' -–')
+            if len(re.findall(r'[A-Za-z]', name)) < 3:
+                continue
+            seen += 1
             order += 1
             rows.append({'fy': fy, 'page': page, 'order': order, 'post': post,
-                         'section': section, 'kind': kind,
-                         'stated_members': stated if stated is not None else '',
-                         'person': '', 'vacancies': n,
-                         'term_expires': '', 'note': t.strip(), 'size_check': ''})
-            continue
-        term = TERM.search(t)
-        note = ''
-        name = t
-        if term:
-            name = t[:term.start()].strip(' -–')
-        elif APPOINTED_NOTE.search(t):
-            i = APPOINTED_NOTE.search(t).start()
-            name, note = t[:i].strip(' -–'), t[i:].strip(' -–')
-        if len(re.findall(r'[A-Za-z]', name)) < 3:
-            continue
-        seen += 1
-        order += 1
-        rows.append({'fy': fy, 'page': page, 'order': order, 'post': post,
-                     'section': section, 'kind': kind, 'stated_members': stated if stated is not None else '',
-                     'person': re.sub(r'\s+', ' ', name), 'vacancies': 0,
-                     'term_expires': term.group(1) if term else '', 'note': note,
-                     'size_check': ''})
+                         'section': section, 'kind': kind, 'stated_members': stated if stated is not None else '',
+                         'person': re.sub(r'\s+', ' ', name), 'vacancies': 0,
+                         'term_expires': term.group(1) if term else '', 'note': note,
+                         'size_check': ''})
     close_post(rows, post, stated, seen, problems, fy)
     return rows, problems
 

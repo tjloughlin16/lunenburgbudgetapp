@@ -14,12 +14,12 @@ Seats the town printed as empty in FY2025.
 | ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 1 |
 | Associate Members | 1 |
 | PARKS COMMISSION | 1 |
-| PLANNING BOARD - 2 - 5 year terms | 1 |
+| PLANNING BOARD - 2 | 1 |
 | POUND KEEPER | 1 |
 | PUBLIC ACCESS CABLE COMMITTEE | 1 |
 | RECREATION DIRECTOR | 1 |
 | TRUST FUND COMMISSION | 1 |
-| ZONING BOARD OF APPEALS (5 members/3 associate members | 1 |
+| ZONING BOARD OF APPEALS | 1 |
 | **total** | **18** |
 
 ## When a seat comes open
@@ -38,11 +38,11 @@ The year each filled seat’s term runs out, as printed beside the name.
 
 | | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|
-| stayed from the year before | 118 | 98 | 105 |
-| new that year | 60 | 75 | 69 |
-| gone from the year before | 55 | 80 | 68 |
+| stayed from the year before | 134 | 115 | 103 |
+| new that year | 55 | 55 | 69 |
+| gone from the year before | 56 | 74 | 67 |
 
-46 of the 359 people listed at any point across the four years appear in all four.
+56 of the 354 people listed at any point across the four years appear in all four.
 
 ## The bodies, by size
 
@@ -52,33 +52,34 @@ FY2025, filled seats only.
 |---|---:|
 | COUNCIL ON AGING | 11 |
 | ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 9 |
-| ECONOMIC DEVELOPMENT COMMITTEE | 8 |
 | PUBLIC RECORDS ACCESS OFFICERS | 8 |
 | CULTURAL COUNCIL | 7 |
 | FINANCE COMMITTEE | 7 |
 | LIBRARY TRUSTEES | 7 |
 | LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE | 7 |
-| RECREATION DIRECTOR | 6 |
 | BOARD OF HEALTH | 5 |
 | CONSERVATION COMMISSION | 5 |
+| ECONOMIC DEVELOPMENT COMMITTEE | 5 |
 | ELECTION WORKERS | 5 |
 | HOUSING AUTHORITY | 5 |
 | SELECT BOARD | 5 |
-| SEWER COMMISSION - 1/2/3 year terms | 5 |
+| SEWER COMMISSION - 1/2/ | 5 |
+| STORM WATER TASK FORCE | 5 |
 | TOWN CLOCKWINDERS | 5 |
 | AGRICULTURAL COMMISSION | 4 |
 | AMERICANS WITH DISABILITIES COMMITTEE | 4 |
 | GREEN COMMUNITIES COMMITTEE | 4 |
 | HISTORICAL COMMISSION (not less than 3 nor more than 7 members | 4 |
 | PARKS COMMISSION | 4 |
-| PLANNING BOARD - 2 - 5 year terms | 4 |
+| PLANNING BOARD - 2 | 4 |
 | PUBLIC ACCESS CABLE COMMITTEE | 4 |
 | SCHOOL COMMITTEE | 4 |
-| ZONING BOARD OF APPEALS (5 members/3 associate members | 4 |
+| ZONING BOARD OF APPEALS | 4 |
 | BOARD OF ASSESSORS | 3 |
 | CAPITAL PLANNING COMMITTEE | 3 |
 | CEMETERY COMMISSION | 3 |
 | Associate Members | 2 |
+| Ex Officio Members | 2 |
 | TOWN COUNSEL | 2 |
 | TRUST FUND COMMISSION | 2 |
 | ASSISTANT DAM KEEPER | 1 |
@@ -114,8 +115,8 @@ FY2025, filled seats only.
 | | FY2022 | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|---:|
 | Elected seats — filled by the voters | 53 | 56 | 50 | 53 |
-| Appointed board seats — filled by the Select Board | 69 | 77 | 77 | 78 |
-| Appointed officers — posts somebody is hired or named into | 60 | 59 | 65 | 65 |
+| Appointed board seats — filled by the Select Board | 88 | 94 | 79 | 80 |
+| Appointed officers — posts somebody is hired or named into | 62 | 57 | 60 | 61 |
 
 ## What this cannot show
 
@@ -126,7 +127,7 @@ FY2025, filled seats only.
 
 ## How well we read it
 
-Most headings state their own membership, so the page checks itself: 232 rows sit under a board where the stated size and the printed names agree, 175 where they differ, and 355 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — and this is a note about our extraction rather than about the town.
+Most headings state their own membership, so the page checks itself: 304 rows sit under a board where the stated size and the printed names agree, 163 where they differ, and 326 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — and this is a note about our extraction rather than about the town.
 
 ## Where it comes from
 
