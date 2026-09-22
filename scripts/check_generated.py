@@ -81,6 +81,7 @@ CHECKS = [
     ('build_stabilization.py', ['--check']),
     ('extract_personnel.py', ['--check']),
     ('extract_department_staffing.py', ['--check']),
+    ('extract_department_rosters.py', ['--check']),
     ('build_town_budgets.py', ['--check']),
     ('build_town_budgets_charts.py', ['--check']),
     ('build_town_personnel.py', ['--check']),

@@ -93,6 +93,31 @@ Seats changing hands each year, over bodies of three seats or more that appear i
 | ROAD MILES- ABOUT 100 | 27.2 | 2 | 10% |
 | CABLE ADVISORY COMMITTEE | 3.0 | 2 | 0% |
 
+## The two departments that print every name
+
+Police and Fire list their staff by name and assignment in every annual report. The Fire Department also states its strength in a sentence, so the book gives the same quantity twice — and the two do not agree.
+
+| fiscal year | department | names printed | strength stated | agree |
+|---|---|---:|---:|---|
+| FY2011 | Fire Department | 36 | — | — |
+| FY2014 | Fire Department | 44 | — | — |
+| FY2015 | Fire Department | 44 | — | — |
+| FY2016 | Fire Department | 38 | — | — |
+| FY2017 | Fire Department | 42 | 45–50 | yes |
+| FY2018 | Fire Department | 40 | 47–52 | NO |
+| FY2019 | Fire Department | 38 | 47–52 | NO |
+| FY2020 | Fire Department | 41 | 47–52 | NO |
+| FY2021 | Fire Department | 37 | 48–53 | NO |
+| FY2021 | Police Department | 22 | — | — |
+| FY2022 | Fire Department | 11 | 40–45 | NO |
+| FY2022 | Police Department | 20 | — | — |
+| FY2023 | Fire Department | 38 | 40–45 | yes |
+| FY2023 | Police Department | 25 | — | — |
+| FY2024 | Fire Department | 35 | 40–45 | NO |
+| FY2024 | Police Department | 7 | — | — |
+
+The named roster runs below the stated strength in most years. Rule 13a: two published figures for one quantity are not averaged into a third. Either the roster omits people the sentence counts, or this reading of it does — and until that is settled the count you should quote is the range, not either end of it.
+
 ## What the departments say about their own staffing
 
 Not the same quantity as the listing above, and not addable to it: this is what a department says it EMPLOYS, written in the prose of its own report. No heading names it in any year.

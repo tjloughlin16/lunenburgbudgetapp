@@ -65,6 +65,7 @@ from conclusions import conclusion, emit, figure, num, pct   # noqa: E402
 
 SRC = os.path.join(ROOT, 'sources', 'data', 'town-personnel.csv')
 STAFFING = os.path.join(ROOT, 'sources', 'data', 'department-staffing.csv')
+ROSTERS = os.path.join(ROOT, 'sources', 'data', 'department-rosters.csv')
 OUT = os.path.join(ROOT, 'sources', 'analyses', 'town-personnel.md')
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'town-personnel.json')
 
@@ -180,7 +181,24 @@ def load():
     body.sort(key=lambda b: -b['churn'])
     big = [b for b in body if b['seats'] >= 3]
 
+    # THE NAMED ROSTERS, and the spread between them and what the department states.
+    roster = []
+    if os.path.exists(ROSTERS):
+        roster = list(csv.DictReader(open(ROSTERS, encoding='utf-8')))
+    rcount = collections.Counter((r['fy'], r['department']) for r in roster)
+    stated = {f['fy']: (f['career'] + f['on_call_low'], f['career'] + f['on_call_high'])
+              for f in fire_series}
+    rost = []
+    for (fy, dept), n in sorted(rcount.items()):
+        lo_hi = stated.get(fy) if dept == 'Fire Department' else None
+        rost.append(dict(fy=fy, department=dept, named=n,
+                         stated_low=lo_hi[0] if lo_hi else '',
+                         stated_high=lo_hi[1] if lo_hi else '',
+                         agrees=('' if not lo_hi else
+                                 'yes' if lo_hi[0] - 3 <= n <= lo_hi[1] + 3 else 'no')))
+
     return dict(rows=rows, years=years, per=per, checks=checks, posts=posts,
+                roster=rost,
                 last=last, named=named, vacancies=vac, terms=terms, ahead=ahead,
                 body_churn=body, body_big=big, staffing=staff, fire=fire_series,
                 distinct=len(who), held=len(named), multi=multi, churn=churn,
@@ -408,6 +426,24 @@ def render(d):
         for b in d['body_big']:
             t.append('| %s | %s | %s | %s |\n'
                      % (b['post'], b['seats'], b['pairs'], pct(b['churn'], 0)))
+    if d.get('roster'):
+        t.append('\n## The two departments that print every name\n\nPolice and Fire list '
+                 'their staff by name and assignment in every annual report. The Fire '
+                 'Department also states its strength in a sentence, so the book gives the '
+                 'same quantity twice — and the two do not agree.\n\n'
+                 '| fiscal year | department | names printed | strength stated | agree |\n'
+                 '|---|---|---:|---:|---|\n')
+        for r in d['roster']:
+            st = ('%s–%s' % (r['stated_low'], r['stated_high'])
+                  if r['stated_low'] != '' else '—')
+            t.append('| FY%s | %s | %s | %s | %s |\n'
+                     % (r['fy'], r['department'], num(r['named']), st,
+                        {'yes': 'yes', 'no': 'NO', '': '—'}[r['agrees']]))
+        t.append('\nThe named roster runs below the stated strength in most years. Rule '
+                 '13a: two published figures for one quantity are not averaged into a '
+                 'third. Either the roster omits people the sentence counts, or this '
+                 'reading of it does — and until that is settled the count you should '
+                 'quote is the range, not either end of it.\n')
     if d['fire']:
         a, b = d['fire'][0], d['fire'][-1]
         t.append('\n## What the departments say about their own staffing\n\n'
@@ -502,6 +538,7 @@ def payload(d):
         checks=dict(d['checks']),
         posts=sorted(d['posts'].values(), key=lambda p: p['post']),
         body_churn=d['body_big'],
+        roster=d['roster'],
         fire=d['fire'],
         staffing=[r for r in d['staffing'] if 'establishment' in r['measure']],
         sources=_sources(d),
