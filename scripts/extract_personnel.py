@@ -130,6 +130,17 @@ WORDS = os.path.join(ROOT, 'sources', 'town-budget', 'ocr', 'words')
 # that looks at it.
 csv.field_size_limit(10_000_000)
 
+# The listing is always in the front of the book; the budget tables that would
+# otherwise look like it by capitals alone are never this early.
+FRONT_MATTER = 30
+
+# A CONTENTS PAGE LOOKS EXACTLY LIKE THE LISTING to any test that counts capitals and
+# title case: `ELECTED OFFICIALS`, `PROTECTION OF PERSONS & PROPERTY` over `Town Manager`,
+# `Board of Health`, `Fire Department`. It swept 115 phantom people into FY2022 alone. It
+# also says what it is at the top of itself, which is cheaper and surer than any shape
+# test on the lines beneath.
+CONTENTS = re.compile(r'table\s+of\s+cont', re.I)
+
 
 def word_rows(fy):
     """Every recognised WORD on the listing pages of one year, with its own box.
@@ -422,23 +433,78 @@ def post_name(t):
 
 
 def listing_pages(path):
-    """The pages of the listing itself, found from its RUNNING HEADER.
+    """The pages of the listing, found from what is ON them, not from a running header.
 
-    `ELECTED OFFICIALS` and `APPOINTED OFFICIALS` are printed at the top of every page of
-    the listing and nowhere else -- except the contents page, which names them in a list
-    of sections. So the test is not that the words appear on the page, it is that they are
-    the FIRST thing on it. Taking any page that mentions them pulled in the contents page
-    and then, because the range was filled in between, twenty pages of departmental prose:
-    FY2022 came out with 1,104 people in a nine-page listing.
+    The first version looked for `ELECTED OFFICIALS` or `APPOINTED OFFICIALS` as the first
+    line of a page, because that is how FY2016 onward print it. Five years do not:
+    FY2019 and FY2021 open the section on a page headed `MASSACHUSETTS CONGRESSIONAL
+    DELEGATION`, and FY2011 to FY2013 print the listing with NO running header anywhere.
+    Reading the header's absence as the section's absence lost five years -- rule 13c,
+    which is the rule I have broken most often in this repo.
+
+    So a listing page is one that LOOKS like the listing: several posts, each stating a
+    membership or a term or printed in capitals, with names under them. Restricted to the
+    front matter, because a budget page carries plenty of capitals and no people.
     """
-    first, pages = {}, set()
+    pages = collections.defaultdict(lambda: [0, 0, 0])
+    header, first, contents = set(), {}, set()
     for col, _sec, t in lines_of(path):
-        if t.strip():
-            first.setdefault(col[0], t.strip())
-    for page, t in first.items():
-        if SECTION.match(t):
-            pages.add(page)
-    return pages
+        page = col[0]
+        if page > FRONT_MATTER:
+            continue
+        if page not in first and t.strip():
+            first[page] = t.strip()
+            if SECTION.match(t.strip()):
+                header.add(page)
+            if CONTENTS.search(t):
+                contents.add(page)
+        # THE SIGNATURE IS A POST STATING HOW IT IS CONSTITUTED, not capitals. Counting
+        # any capitalised line pulled in the warrant, the dedication and the meeting
+        # schedule -- all front matter, all shouty -- and doubled every year's count.
+        # `Board of Assessors - (3 members) 3 year term` appears on no other kind of page.
+        if SIZE.search(t) or TERMLEN.search(t):
+            pages[page][0] += 1
+            pages[page][2] += 1
+        elif is_heading(t):
+            pages[page][2] += 1
+        elif len(re.findall(r'[A-Za-z]', t)) >= 5:
+            pages[page][1] += 1
+    # BOTH SIGNALS, UNIONED. The running header is the better test where a year prints one
+    # -- it catches a page of single-holder posts that states no membership anywhere, and
+    # requiring two constituted posts lost 54 people in FY2016 alone. The content test is
+    # the only test where a year prints no header at all. Neither is sufficient and each
+    # is sound, so a page qualifying under either is a listing page.
+    content = {pg for pg, (constituted, people, _posts) in pages.items()
+               if constituted >= 2 and people >= 3}
+    seed = (header | content) - contents
+    if not seed:
+        return seed
+    # THEN GROW THE RUN. The strict test FINDS the section; it does not measure it. A page
+    # of single-holder officers -- `INSPECTOR OF WIRING`, `LOCAL CENSUS LIAISON`, a name
+    # under each -- states no membership anywhere and fails the test that found the
+    # section, so FY2019 stopped at page 16 and left page 17 of its own listing unread.
+    # The listing is contiguous, so extend outward from the seed while the next page still
+    # looks like the listing at all, and stop at the first page that does not.
+    # AND THE WALK STOPS AT A PAGE WITH NO POST ON IT. Growing on `enough lines that look
+    # like names` walked FY2025 back from its listing at page 10 to page 3 -- the profile
+    # and dedication pages, where `Lunenburg Profile` and a list of department names read
+    # as posts and people. A page of the listing always carries at least one thing
+    # constituted or capitalised as a post; front matter carries none.
+    # THE WALK GROWS ON POSTS, NOT ON NAMES. FY2019 page 17 is the listing -- `INSPECTOR
+    # OF WIRING`, `LOCAL CENSUS LIAISON`, a name under each -- and states no membership
+    # anywhere, so growing on `constituted` alone stopped at page 16 and lost 71 people.
+    # Growing on anything name-shaped instead walked FY2025 back into its profile and
+    # dedication pages. A page of the listing is a page of POSTS: several lines that are
+    # headings, whether or not any of them states a size.
+    loose = {pg for pg, (_c, people, posts) in pages.items()
+             if posts >= 4 and people >= 3}
+    out = set(seed)
+    for step in (1, -1):
+        pg = (max(seed) if step == 1 else min(seed)) + step
+        while 0 < pg <= FRONT_MATTER and pg in loose and pg not in contents:
+            out.add(pg)
+            pg += step
+    return out
 
 
 def _says(stated):
@@ -579,8 +645,13 @@ def main():
     args = ap.parse_args()
 
     rows, problems, refused = [], [], []
-    for path in sorted(glob.glob(os.path.join(WORDS, 'fy*.words.tsv'))):
-        m = re.search(r'fy(\d{4})\.words', path)
+    # DRIVEN BY THE LINE TSVs, NOT THE WORD ONES. The word pass supplies geometry and
+    # every year does not have it yet; a year without it reads with its lines whole, which
+    # is what every year did before the word pass existed. Iterating the word files meant
+    # five years with a perfectly readable listing were never opened at all.
+    for path in sorted(glob.glob(os.path.join(ROOT, 'sources', 'town-budget', 'ocr',
+                                              '*annual-town-report.tsv'))):
+        m = re.search(r'fy-(\d{4})-annual', path)
         if not m or int(m.group(1)) < args.since:
             continue
         fy = int(m.group(1))

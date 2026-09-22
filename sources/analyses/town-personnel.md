@@ -37,52 +37,61 @@ The year each filled seat’s term runs out, as printed beside the name.
 
 ## How often seats change hands
 
-| | FY2017 | FY2018 | FY2023 | FY2024 | FY2025 |
-|---|---:|---:|---:|---:|---:|
-| stayed from the year before | 147 | 163 | 134 | 116 | 104 |
-| new that year | 61 | 48 | 54 | 54 | 69 |
-| gone from the year before | 75 | 45 | 55 | 72 | 66 |
+| | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| stayed from the year before | 172 | 187 | 140 | 102 | 168 | 124 | 143 | 137 | 119 |
+| new that year | 63 | 52 | 39 | 138 | 70 | 99 | 77 | 65 | 81 |
+| gone from the year before | 77 | 48 | 99 | 77 | 72 | 114 | 80 | 83 | 83 |
 
-19 of the 649 people listed at any point across the four years appear in all four.
+18 of the 857 people listed at any point across the four years appear in all four.
 
 ## Which boards change most
 
-Seats changing hands each year, over bodies of three seats or more that appear in both years of at least two consecutive pairs. A one-seat post whose holder changed reads as a hundred per cent and is one person leaving a job, so it is left out. The median across the 32 bodies here is 29%.
+Seats changing hands each year, over bodies of three seats or more that appear in both years of at least two consecutive pairs. A one-seat post whose holder changed reads as a hundred per cent and is one person leaving a job, so it is left out. The median across the 41 bodies here is 31%.
 
 | board or committee | seats | year pairs | churn |
 |---|---:|---:|---:|
-| STORM WATER TASK FORCE | 4.0 | 5 | 65% |
-| PUBLIC RECORDS ACCESS OFFICERS | 6.0 | 4 | 62% |
-| HISTORICAL COMMISSION | 4.5 | 2 | 56% |
+| GCTF ADVISORS | 3.5 | 3 | 71% |
+| MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL REPRESENTATIVE | 8.0 | 3 | 67% |
+| HISTORICAL COMMISSION- (not less than 3 nor more than 7 members | 3.5 | 3 | 62% |
+| STORM WATER TASK FORCE | 3.6 | 7 | 61% |
+| AMERICANS WITH DISABILITIES COMMITTEE | 4.0 | 3 | 58% |
+| ECONOMIC DEVELOPMENT COMMITTEE | 4.0 | 4 | 56% |
 | GREEN COMMUNITIES COMMITTEE | 3.7 | 3 | 54% |
-| ECONOMIC DEVELOPMENT COMMITTEE | 4.3 | 3 | 46% |
+| TOTAL AREA- 26.63 MILES | 32.5 | 2 | 54% |
+| PUBLIC RECORDS ACCESS OFFICERS | 8.8 | 8 | 49% |
 | LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE | 5.5 | 2 | 46% |
-| Sewer Commission - 1/2/ | 5.4 | 4 | 44% |
-| AGRICULTURAL COMMISSION | 6.0 | 5 | 43% |
-| Planning Board - 2 | 5.8 | 4 | 39% |
-| FINANCE COMMITTEE | 7.5 | 3 | 33% |
-| Cemetery Commission | 3.6 | 4 | 31% |
-| CAPITAL PLANNING COMMITTEE | 5.8 | 5 | 31% |
-| Board of Selectmen | 5.0 | 2 | 30% |
-| CULTURAL COUNCIL | 8.0 | 5 | 30% |
-| Parks Commission | 5.0 | 2 | 30% |
-| CONSERVATION COMMISSION | 7.0 | 5 | 29% |
-| Library Trustees | 7.2 | 4 | 28% |
-| Select Board | 5.5 | 2 | 27% |
-| School Committee | 5.1 | 4 | 27% |
-| PERSONNEL COMMITTEE | 4.8 | 4 | 26% |
-| Board of Assessors | 3.0 | 4 | 25% |
+| ELECTION OFFICERS | 4.5 | 2 | 44% |
+| Sewer Commission - 1/2/ | 5.4 | 8 | 40% |
+| CAPITAL PLANNING COMMITTEE | 6.2 | 9 | 39% |
+| AGRICULTURAL COMMISSION | 5.7 | 7 | 38% |
+| TAXATION AID COMMITTEE | 4.8 | 4 | 37% |
+| HISTORICAL COMMISSION | 4.7 | 3 | 36% |
+| FINANCE COMMITTEE | 7.2 | 6 | 36% |
+| CULTURAL COUNCIL | 7.8 | 7 | 34% |
+| Board of Selectmen | 5.0 | 3 | 33% |
+| School Committee | 5.1 | 8 | 32% |
+| Planning Board - 2 | 5.6 | 6 | 31% |
+| Housing Authority | 4.3 | 8 | 30% |
+| Parks Commission | 5.0 | 3 | 27% |
+| Board of Assessors | 3.2 | 6 | 26% |
+| PERSONNEL COMMITTEE | 5.4 | 6 | 26% |
 | Park Commission | 4.0 | 2 | 25% |
-| ZONING BOARD OF APPEALS | 4.6 | 5 | 22% |
-| Board of Health | 5.5 | 4 | 18% |
-| PUBLIC ACCESS CABLE COMMITTEE | 4.4 | 5 | 18% |
-| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 8.8 | 3 | 17% |
-| Housing Authority | 4.4 | 4 | 14% |
-| COUNCIL ON AGING | 11.3 | 3 | 12% |
-| TAXATION AID COMMITTEE | 4.5 | 2 | 11% |
-| TOWN CLOCKWINDERS | 5.2 | 3 | 10% |
+| Cemetery Commission | 3.3 | 8 | 24% |
+| Select Board | 5.2 | 4 | 24% |
+| CONSERVATION COMMISSION | 7.1 | 9 | 23% |
+| ELECTION WORKERS | 4.3 | 3 | 23% |
+| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 7.8 | 7 | 19% |
+| Board of Health | 5.2 | 8 | 19% |
+| Library Trustees | 7.2 | 8 | 19% |
+| PUBLIC ACCESS CABLE COMMITTEE | 4.7 | 9 | 18% |
+| COUNCIL ON AGING- - (11 members | 11.5 | 2 | 17% |
+| COUNCIL ON AGING | 11.3 | 5 | 15% |
+| ZONING BOARD OF APPEALS | 4.9 | 9 | 15% |
+| TOWN CLOCK WINDERS | 6.2 | 2 | 12% |
+| TOWN CLOCKWINDERS | 5.4 | 5 | 11% |
+| ROAD MILES- ABOUT 100 | 27.2 | 2 | 10% |
 | CABLE ADVISORY COMMITTEE | 3.0 | 2 | 0% |
-| GREEN COMMUNITY TASK FORCE | 3.0 | 2 | 0% |
 
 ## What the departments say about their own staffing
 
@@ -119,6 +128,7 @@ FY2025, filled seats only.
 
 | board, committee or post | people |
 |---|---:|
+| MILES | 27 |
 | COUNCIL ON AGING | 11 |
 | ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 9 |
 | PUBLIC RECORDS ACCESS OFFICERS | 8 |
@@ -181,11 +191,11 @@ FY2025, filled seats only.
 
 ## The posts
 
-| | FY2016 | FY2017 | FY2018 | FY2020 | FY2022 | FY2023 | FY2024 | FY2025 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Elected seats — filled by the voters | 57 | 58 | 56 | 59 | 53 | 56 | 51 | 53 |
-| Appointed board seats — filled by the Select Board | 70 | 73 | 72 | 104 | 88 | 94 | 79 | 81 |
-| Appointed officers — posts somebody is hired or named into | 116 | 92 | 103 | 65 | 62 | 57 | 60 | 61 |
+| | FY2016 | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Elected seats — filled by the voters | 57 | 58 | 56 | 0 | 59 | 56 | 53 | 56 | 51 | 53 |
+| Appointed board seats — filled by the Select Board | 70 | 73 | 72 | 0 | 104 | 107 | 88 | 94 | 79 | 81 |
+| Appointed officers — posts somebody is hired or named into | 116 | 92 | 103 | 0 | 65 | 69 | 62 | 57 | 60 | 61 |
 
 ## What this cannot show
 
@@ -197,7 +207,7 @@ FY2025, filled seats only.
 
 ## How well we read it
 
-Most headings state their own membership, so the page checks itself: 391 rows sit under a board where the stated size and the printed names agree, 264 where they differ, and 1,065 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — and this is a note about our extraction rather than about the town.
+Most headings state their own membership, so the page checks itself: 492 rows sit under a board where the stated size and the printed names agree, 307 where they differ, and 1,621 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — and this is a note about our extraction rather than about the town.
 
 ## Where it comes from
 
