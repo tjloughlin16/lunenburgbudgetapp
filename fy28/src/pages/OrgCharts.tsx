@@ -42,6 +42,20 @@ const BAND: Record<string, string> = {
 }
 const INSET: Record<string, number> = { '0': 0, '1': 14, '2': 28, '3': 42, '4': 56 }
 
+// INSIDE A BAND, THE TOWN'S OWN LADDER, NOT THE ALPHABET. Sorting by role put
+// `Captain/AEMT` above `Deputy Chief` and `Assistant Principal` above `Deputy
+// Superintendent`. These are the printed ranks in the order the departments use them;
+// anything not listed keeps its place after them, alphabetically.
+const LADDER = [
+  /deputy\s+(chief|superintendent)/i, /\bdeputy\b/i,
+  /assistant\s+principal/i, /\bcapt/i, /vice[- ]?chair/i,
+  /\blieutenant\b|\blt\b/i, /\bsergeant\b|\bsgt\b/i, /\bdetective\b|\bdet\./i,
+]
+const ladder = (role: string) => {
+  const i = LADDER.findIndex(re => re.test(role))
+  return i === -1 ? LADDER.length : i
+}
+
 const KIND_LABEL: Record<string, string> = {
   department: 'Department', board: 'Board or committee',
   school: 'School', officer: 'Appointed post',
@@ -115,8 +129,8 @@ export function OrgCharts() {
       .map(([k, bands]) => [k, [...bands.entries()].sort()
         .map(([t, groups]) => [t, [...groups.entries()]
           .sort((p, q) => order(p[0]) - order(q[0]) || p[0].localeCompare(q[0]))
-          .map(([sg, rs]) => [sg, rs.sort((x, y) => (x.role + x.person)
-            .localeCompare(y.role + y.person))] as const)] as const)] as const)
+          .map(([sg, rs]) => [sg, rs.sort((x, y) => ladder(x.role) - ladder(y.role)
+            || (x.role + x.person).localeCompare(y.role + y.person))] as const)] as const)] as const)
       // The district's own offices carry no building, so their block sorts FIRST rather
       // than by size: a superintendent above four schools is the shape of the thing.
       .sort((x, y) => order(x[0]) - order(y[0])
@@ -195,17 +209,6 @@ export function OrgCharts() {
         </Stat> : null}
       </div>
 
-      <Grain>
-        FOUR BANDS, and they are a reading of the ranks the town prints rather than a
-        reporting line. Nobody publishes who reports to whom, so a Business Manager and a
-        Principal both sit in the top band and the page does not claim one is above the
-        other. PEOPLE AND POSTS, kept apart. A name is somebody the town printed in that role that
-        year. A POST is an establishment position a department states and never says who
-        fills — the DPW and the Assessing office publish that way. A roster is a point in
-        time and undated within its year, so nobody here can be dated more precisely than
-        the book they appear in.
-      </Grain>
-
       {rows.length === 0 ? (
         <Body>Nothing is published for {unit} in FY{shownFy}.</Body>
       ) : blocks.map(([name, bands]) => (
@@ -283,6 +286,37 @@ export function OrgCharts() {
           )})}
         </section>
       ))}
+
+      {/* THE KEY COMES AFTER THE THING IT IS A KEY TO. TJ: *"can you put 'What this
+          report counts' as context at the bottom, not the first big block of text."*
+          Rule 7a, and this page was breaking it — a reader arrives for a department's
+          chart and met nine lines explaining how to read one first. */}
+      <Grain>
+        A NAME is somebody the town printed in that role that year. A POST is an
+        establishment position a department states and never says who fills — the DPW and
+        the Assessing office publish that way. A roster is a point in time and undated
+        within its year, so nobody here can be dated more precisely than the book they
+        appear in.
+      </Grain>
+
+      <Body>
+        <strong>The bands are ours; the ranks are the town’s.</strong> Chief, Deputy
+        Chief, Captain, Lieutenant, Sergeant are printed beside the names. Sorting them
+        into levels is our reading, and nothing published says who reports to whom — so a
+        Business Manager and a Principal both sit in the top band and this page does not
+        claim one is above the other. A board is ranked only by the officers it elects:
+        chair, vice-chair, clerk. A member who is a director somewhere else is not that
+        board’s deputy.
+      </Body>
+
+      <Body>
+        <strong>Why so many boards have nobody at the top.</strong> The town’s officials
+        listing marked its chairs with asterisks under a footnote reading “** denotes
+        chairperson”, and stopped printing it after FY2016. 46 bodies name a chair
+        somewhere in their own report and the rest never do, so a board can appear here
+        as a list of members with no chair — which is what the record shows, not what the
+        board looked like.
+      </Body>
 
       <Body>
         <strong>What this cannot show.</strong> Whether a post was cut. A name missing from

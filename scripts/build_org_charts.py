@@ -574,8 +574,13 @@ def _rows_rosters():
             # A ROLE THAT CONTAINS A NAME IS TWO ROWS STUCK TOGETHER. `Sergeant Sean
             # Connery` as a RANK, beside `Patrol Supervisors` as a NAME, is one printed
             # line read across a column boundary.
-            if kind == 'person' and role and NAME_SHAPE.match(
-                    EMBEDDED_RANK.sub('', role).strip()):
+            # ONLY WHEN A RANK IS ACTUALLY IN FRONT OF A NAME. The first version
+            # tested whether the whole ROLE looked like a name, and `Deputy Chief` is
+            # two capitalised words -- so Peter J. Hyatt, Deputy Chief of the Fire
+            # Department in every year from FY2012, was thrown away fourteen times and
+            # the department was published with a Lieutenant as its second officer.
+            if kind == 'person' and role and EMBEDDED_RANK.match(role) \
+                    and NAME_SHAPE.match(EMBEDDED_RANK.sub('', role).strip()):
                 lost.append((r['fy'], r['department'], '%s / %s' % (role, who)))
                 continue
             if kind == 'empty':
@@ -859,6 +864,13 @@ def _rows_chairs(units):
         index.setdefault(_norm_body(u), (u, kind))
     for r in csv.DictReader(open(p, encoding='utf-8')):
         hit = index.get(_norm_body(r['department']))
+        # A DEPARTMENT HAS NO CHAIR. The Fire Department's own pages carry the Board of
+        # Health's chairman and the Police Chief's signature block, and the contents page
+        # hands whole spreads to one body -- so a `Chair` landing on a department is an
+        # attribution error every time, never a post.
+        if hit and hit[1] not in ('board', 'officer'):
+            unmatched.append((r['fy'], r['department'], r['person']))
+            continue
         if not hit:
             unmatched.append((r['fy'], r['department'], r['person']))
             continue
@@ -935,6 +947,42 @@ def build():
     rows, bad = _rows_officials()
     roster, lost_prose = _rows_rosters()
     rows += roster + _rows_schools() + _rows_prose() + _rows_signatures()
+    # A PRINCIPAL BELONGS TO A BUILDING. A signature block says `Respectfully submitted,
+    # Chad Adams, Principal` and the contents page gives the whole education section to
+    # `Lunenburg Public Schools`, so three principals and a superintendent arrived in the
+    # district bucket with no school between them -- and FY2021 had four buildings with
+    # nobody at the top of any of them. The title names the building where it can
+    # (`Principal, THES`, `LMHS Principal`); where it does not, the person's own name on
+    # ONE building's roster THAT YEAR does. Same year only: a join, not a guess about
+    # where somebody probably was.
+    def _who2(name):
+        parts = [x for x in re.split(r'\s+', name.strip()) if x]
+        return (parts[-1].lower().strip('.,'), parts[0][:1].lower()) if parts else ('', '')
+
+    where = collections.defaultdict(set)
+    for r in rows:
+        if r['unit_kind'] == 'school' and r['subunit'] and r['person']:
+            # Surname and first initial: the roster says `Steve McKenna` and the
+            # signature says `Stephen McKenna`.
+            where[(r['fy'],) + _who2(r['person'])].add(r['subunit'])
+    abbrev = [('lmhs', 'Lunenburg High School'), ('lhs', 'Lunenburg High School'),
+              ('lms', 'Lunenburg Middle School'), ('thes', 'Turkey Hill Elementary School'),
+              ('turkey hill', 'Turkey Hill Elementary School'),
+              ('high school', 'Lunenburg High School'),
+              ('middle school', 'Lunenburg Middle School'),
+              ('primary', 'Lunenburg Primary School')]
+    for r in rows:
+        if r['unit_kind'] != 'school' or r['subunit'] or not r['person']:
+            continue
+        for key, school in abbrev:
+            if re.search(r'\b%s\b' % re.escape(key), r['role'], re.I):
+                r['subunit'] = school
+                break
+        else:
+            seen = where.get((r['fy'],) + _who2(r['person']), set())
+            if len(seen) == 1 and re.search(r'principal', r['role'], re.I):
+                r['subunit'] = next(iter(seen))
+
     # THE CHAIRS COME IN BEFORE THE BANDS ARE ASSIGNED, because a chair is the top band.
     # A POST ONE PERSON HOLDS IS NOT A BOARD. The Moderator, the Constable and the Town
     # Clerk were coming through as boards with a single `board seat`, because the
@@ -997,19 +1045,29 @@ def build():
     GENERIC = ('', 'board seat', 'officer')
 
     def _rank(r):
-        return (r['role'].strip().lower() in GENERIC, len(r['role']), r['tier'])
+        return (r['role'].strip().lower() in GENERIC, r['tier'], -len(r['person']),
+                len(r['role']))
+
+    # ONE PERSON, TWO SPELLINGS. `Patrick A. Sullivan` off the roster and `Patrick
+    # Sullivan` off the appointed-post listing are the same fire chief, and both were
+    # drawn at the top of the department. Keyed on surname and first initial, within one
+    # body and one year, which is as loose as this can safely go: two people in one
+    # small department sharing both is not something these books contain.
+    def _who(name):
+        parts = [x for x in re.split(r'\s+', name.strip()) if x]
+        return (parts[-1].lower().strip('.,'), parts[0][:1].lower()) if parts else ('', '')
+
     best = {}
     for r in rows:
         if not r['person']:
             continue
-        k = (r['fy'], r['unit'], r['subunit'], r['person'].lower())
+        k = (r['fy'], r['unit'], r['subunit']) + _who(r['person'])
         cur = best.get(k)
         if cur is None or _rank(r) < _rank(cur):
             best[k] = r
     rows = [r for r in rows
             if not r['person']
-            or best[(r['fy'], r['unit'], r['subunit'],
-                     r['person'].lower())] is r]
+            or best[(r['fy'], r['unit'], r['subunit']) + _who(r['person'])] is r]
     # A COUNCIL SOMEBODY SITS ON IS NOT A RANK THEY HOLD. The Turkey Hill roster prints
     # its School Council -- the principal, two teachers and three parents -- and the
     # principal's row inside it was banding the whole council under him. TJ, earlier:

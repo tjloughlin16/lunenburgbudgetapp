@@ -47,6 +47,8 @@ SRC = os.path.join(ROOT, 'sources', 'data', 'org-chart.csv')
 HEADISH = re.compile(r'\b(bureau|shift|division|officers|firefighters|patrol|reserve|'
                      r'arrivals|supervisors|members|trustees|personnel|staff|program|'
                      r'committee|commission|department|council|board)\b', re.I)
+SECOND = re.compile(r'\bdeputy\b|\bassistant\b|\basst\b|\bvice[- ]?chair|\binterim\b|'
+                    r'\bacting\b|\blieutenant\b|\blt\b|\bsergeant\b|\bsgt\b', re.I)
 SENTENCE = re.compile(r'\b(?:retired|resigned|graduated|began|served|hired|appointed|'
                       r'until|denotes|vacan\w*)\b', re.I)
 
@@ -84,6 +86,18 @@ def check(rows, want_unit=None, want_fy=None):
         chairs = {h['person'] for h in rs if re.search(r'^chair', h['role'], re.I)}
         if len(chairs) > 1:
             out['TWO-CHAIRS'].append('%-58s %s' % (where, ', '.join(sorted(chairs))[:70]))
+        # A DEPUTY AT THE TOP OF A BODY. TJ caught this twice by eye -- a Deputy Chief
+        # above the Chief, an Assistant Principal above the Principal -- and both times
+        # the head had been thrown away by a matcher rather than demoted. If the highest
+        # band a body has is occupied by a rank whose own name says it is second, the
+        # first is missing.
+        if len(people) > 1:
+            top = min(r['tier'] for r in rs)
+            inv = [r for r in rs if r['tier'] == top and SECOND.search(r['role'])]
+            if inv:
+                out['INVERTED'].append('%-58s top band is %s'
+                                       % (where, ', '.join(sorted({r['role'][:26]
+                                                                   for r in inv}))[:56]))
         if len(heads) > 3:
             out['MANY-HEADS'].append('%-58s %d in the top band: %s'
                                      % (where, len(heads),
@@ -124,7 +138,7 @@ def check(rows, want_unit=None, want_fy=None):
     return out
 
 
-ORDER = ['NOT-A-PERSON', 'TWIN-UNIT', 'TWO-CHAIRS', 'HEADLESS', 'MANY-HEADS', 'DOUBLED',
+ORDER = ['NOT-A-PERSON', 'INVERTED', 'TWIN-UNIT', 'TWO-CHAIRS', 'HEADLESS', 'MANY-HEADS', 'DOUBLED',
          'DEAD-GROUP', 'NO-ROLE']
 
 
