@@ -24,7 +24,7 @@ cd "$(dirname "$0")/.." || exit 1
 
 BATCH=12        # meetings per board per pass, then move on so no board starves
 PAUSE=5         # between launches
-JOBS=4          # boards read AT ONCE
+JOBS=2          # boards read AT ONCE
 
 # WHY IT RUNS BOARDS IN PARALLEL. Measured 22 September 2026: one meeting takes 14
 # seconds on a short set of minutes and just over two MINUTES on a Select Board set that

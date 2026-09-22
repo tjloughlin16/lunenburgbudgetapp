@@ -53,7 +53,8 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 DATA = os.path.join(ROOT, 'sources', 'data')
 OUT_CSV = os.path.join(DATA, 'org-chart.csv')
 OUT_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'org-charts.json')
-FIELDS = ['fy', 'unit', 'unit_kind', 'section', 'role', 'person', 'status', 'source']
+FIELDS = ['fy', 'unit', 'unit_kind', 'subunit', 'section', 'role', 'person',
+          'status', 'source']
 
 # THE PROFILE PAGE IS NOT A BOARD. `TOTAL AREA- 26.63 MILES` and `Follow us on Facebook`
 # come off the town's own statistics page, which sits inside the front matter the
@@ -88,6 +89,14 @@ ALIAS = {
 }
 
 
+# THE MEMBERSHIP IS NOT PART OF THE NAME. The listing prints `COUNCIL ON AGING- - (11
+# MEMBERS)` in some years and `COUNCIL ON AGING` in others, so the same board arrived as
+# two bodies with 78 and 35 rows. The stated size is already read into `stated_members`
+# by extract_personnel.py; carrying it in the title as well splits the board in half.
+SIZE_SUFFIX = re.compile(r'\s*[-—,]*\s*\(?\s*(?:no less than\s*)?\d+\s*'
+                         r'(?:members?|member|yrs?|years?)[^)]*\)?\s*$', re.I)
+
+
 def canon_unit(name, kind):
     """One name per body. Case is not a distinction; `kind` is.
 
@@ -95,10 +104,11 @@ def canon_unit(name, kind):
     things -- paid staff and an appointed volunteer board -- and they must not be told
     apart by a capital O. The kind carries the difference and the name is normalised.
     """
-    key = re.sub(r'\s+', ' ', name).strip().lower()
+    name = SIZE_SUFFIX.sub('', re.sub(r'\s+', ' ', name).strip()).strip(' -—,')
+    key = name.lower()
     if key in ALIAS:
         return ALIAS[key]
-    return re.sub(r'\s+', ' ', name).strip()
+    return name
 
 
 def _rows_officials():
@@ -114,13 +124,13 @@ def _rows_officials():
         kind = ('board' if 'board seat' in r['kind'] else 'officer')
         if who:
             out.append(dict(fy=r['fy'], unit=canon_unit(post.title(), kind),
-                            unit_kind=kind, section='',
+                            unit_kind=kind, subunit='', section='',
                             role=r['kind'], person=who,
                             status='vacant' if VACANT.match(who) else 'filled',
                             source='officials listing p%s' % r['page']))
         for _ in range(int(r['vacancies'] or 0)):
             out.append(dict(fy=r['fy'], unit=canon_unit(post.title(), kind),
-                            unit_kind=kind, section='',
+                            unit_kind=kind, subunit='', section='',
                             role=r['kind'], person='', status='vacant',
                             source='officials listing p%s' % r['page']))
     return out, bad
@@ -134,6 +144,7 @@ def _rows_rosters():
     for r in csv.DictReader(open(p, encoding='utf-8')):
         who = (r['name'] or '').strip()
         out.append(dict(fy=r['fy'], unit=r['department'], unit_kind='department',
+                        subunit='',
                         section=(r['section'] or '').strip(), role=(r['rank'] or '').strip(),
                         person='' if VACANT.match(who) else who,
                         status='vacant' if VACANT.match(who) else 'filled',
@@ -148,14 +159,33 @@ SCHOOL = {'primary': 'Lunenburg Primary School', 'turkey-hill': 'Turkey Hill Ele
 
 
 def _rows_schools():
+    """The district as ONE unit, each school a SUBUNIT inside it.
+
+    TJ: *"the school org chart needs to be the FULL school, with sub-selections for each
+    school. i want to see the whole thing in one place."* He is right about the shape:
+    Lunenburg Public Schools is one organisation with four buildings, and splitting it
+    into four units made the district the only body on this page you could not see whole.
+    A principal belongs to a school; a superintendent belongs to none of them.
+
+    Montachusett Regional is NOT folded in. It is a separate district that Lunenburg sends
+    students to, and putting its staff inside Lunenburg's chart would be a claim about who
+    employs whom.
+    """
     p = os.path.join(DATA, 'staff-roster-entries.csv')
     out = []
     if not os.path.exists(p):
         return out
     for r in csv.DictReader(open(p, encoding='utf-8')):
         who = (r['name'] or '').strip()
-        out.append(dict(fy=r['fy'], unit=SCHOOL.get(r['school'], r['school'].title()),
-                        unit_kind='school', section=(r['grade_or_dept'] or '').strip(),
+        school = SCHOOL.get(r['school'], r['school'].title())
+        # The key is `monty-tech`, not `montachusett` -- checking for the long
+        # form silently folded a separate district into Lunenburg's chart.
+        regional = re.search(r'monty|montachusett', r['school'], re.I) is not None
+        out.append(dict(fy=r['fy'],
+                        unit=school if regional else 'Lunenburg Public Schools',
+                        unit_kind='school',
+                        subunit='' if regional else school,
+                        section=(r['grade_or_dept'] or '').strip(),
                         role=(r['position'] or r['role_raw'] or '').strip(),
                         person='' if VACANT.match(who) else who,
                         status='vacant' if VACANT.match(who) else 'filled',
@@ -179,7 +209,8 @@ def _rows_prose():
             n, label = (int(m.group(1)), m.group(2)) if m else (1, part)
             for _ in range(n):
                 out.append(dict(
-                    fy=r['fy'], unit=r['department'], unit_kind='department', section='',
+                    fy=r['fy'], unit=r['department'], unit_kind='department',
+                    subunit='', section='',
                     role=label if establishment else '',
                     person='' if establishment else label,
                     # AN ESTABLISHMENT POST IS NOT A PERSON. The DPW and the Assessing
@@ -191,33 +222,62 @@ def _rows_prose():
     return out
 
 
+KIND_SUFFIX = {'department': 'staff', 'board': 'board', 'officer': 'appointed post',
+               'school': 'schools'}
+
+
+def _disambiguate(rows):
+    """A name that exists under two KINDS gets the kind in its title.
+
+    TJ: *"im confused. council on aging... you said they were all paid positions?! They
+    are showing as board spots."* Both are true and the page could not say so: `Council
+    on Aging` the DEPARTMENT is eleven paid staff, every one of whom is on the town's
+    2025 gross wages list, and `Council On Aging` the BOARD is eleven appointed
+    volunteers. Two real bodies, one name, told apart by a capital O.
+    """
+    kinds = collections.defaultdict(set)
+    for r in rows:
+        kinds[r['unit'].lower()].add(r['unit_kind'])
+    for r in rows:
+        if len(kinds[r['unit'].lower()]) > 1:
+            r['unit'] = '%s (%s)' % (r['unit'], KIND_SUFFIX.get(r['unit_kind'],
+                                                                r['unit_kind']))
+    return rows
+
+
 def build():
     rows, bad = _rows_officials()
     rows += _rows_rosters() + _rows_schools() + _rows_prose()
+    rows = _disambiguate(rows)
     seen, uniq = set(), []
     for r in rows:
-        k = (r['fy'], r['unit'], r['section'], r['role'], r['person'], r['status'])
+        k = (r['fy'], r['unit'], r['subunit'], r['section'], r['role'], r['person'],
+             r['status'])
         if k in seen:
             continue
         seen.add(k)
         uniq.append(r)
-    uniq.sort(key=lambda r: (r['unit'].lower(), r['fy'], r['section'].lower(),
-                             r['role'].lower(), r['person'].lower()))
+    uniq.sort(key=lambda r: (r['unit'].lower(), r['fy'], r['subunit'].lower(),
+                             r['section'].lower(), r['role'].lower(),
+                             r['person'].lower()))
     return uniq, bad
 
 
 def payload(rows):
     years = sorted({r['fy'] for r in rows})
-    units = collections.defaultdict(lambda: dict(years=set(), kind='', n=0))
+    units = collections.defaultdict(lambda: dict(years=set(), kind='', n=0, subs=set()))
     for r in rows:
         u = units[r['unit']]
         u['years'].add(r['fy'])
         u['kind'] = u['kind'] or r['unit_kind']
         u['n'] += 1
+        if r['subunit']:
+            u['subs'].add(r['subunit'])
     return dict(
         generated_by='scripts/build_org_charts.py',
         years=years,
-        units=[dict(unit=k, kind=v['kind'], rows=v['n'], years=sorted(v['years']))
+        units=[dict(unit=k, kind=v['kind'], rows=v['n'], years=sorted(v['years']),
+                    subunits=sorted(v['subs']))
                for k, v in sorted(units.items(), key=lambda kv: (-kv[1]['n'], kv[0]))],
         rows=rows)
 

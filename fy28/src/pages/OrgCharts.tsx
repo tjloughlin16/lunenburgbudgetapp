@@ -21,10 +21,12 @@ import { ReportShell, Body, Grain, H2, Stat } from '../components/report'
  * been public. None of it has ever been assembled. */
 
 type Row = {
-  fy: string; unit: string; unit_kind: string; section: string
+  fy: string; unit: string; unit_kind: string; subunit: string; section: string
   role: string; person: string; status: string; source: string
 }
-type Unit = { unit: string; kind: string; rows: number; years: string[] }
+type Unit = {
+  unit: string; kind: string; rows: number; years: string[]; subunits: string[]
+}
 type Payload = { years: string[]; units: Unit[]; rows: Row[] }
 
 const KIND_LABEL: Record<string, string> = {
@@ -36,6 +38,10 @@ export function OrgCharts() {
   const [d, setD] = useState<Payload | null>(null)
   const [unit, setUnit] = useState('')
   const [fy, setFy] = useState('')
+  // '' means every building. TJ: *"i want to see the whole thing in one place."* The
+  // district is one organisation with four buildings, so ALL is the default and the
+  // sub-selection narrows it rather than being something you must choose first.
+  const [sub, setSub] = useState('')
 
   useEffect(() => {
     fetch('/data/org-charts.json').then(r => r.json()).then((j: Payload) => {
@@ -51,22 +57,38 @@ export function OrgCharts() {
   // that published in four years should not offer eleven empty ones.
   const years = chosen?.years ?? []
   const shownFy = years.includes(fy) ? fy : years[years.length - 1] ?? ''
+  const subs = chosen?.subunits ?? []
   const rows = useMemo(
-    () => (d?.rows ?? []).filter(r => r.unit === unit && r.fy === shownFy),
-    [d, unit, shownFy])
+    () => (d?.rows ?? []).filter(r => r.unit === unit && r.fy === shownFy
+      && (!sub || r.subunit === sub)),
+    [d, unit, shownFy, sub])
 
+  // ONE BLOCK PER BUILDING, and the section carried on the row rather than as its own
+  // heading. Grouping on section as well produced blocks of ONE -- "Lunenburg High School
+  // · Athletic Director" with a single name under it -- because `grade_or_dept` is as fine
+  // as `Grade 3` and `Athletic Secretary`. The building is the org unit; the section is an
+  // attribute of the person's row.
   const sections = useMemo(() => {
     const g = new Map<string, Row[]>()
     for (const r of rows) {
-      const k = r.section || ''
+      const k = r.subunit || ''
       if (!g.has(k)) g.set(k, [])
       g.get(k)!.push(r)
+    }
+    for (const rs of g.values()) {
+      rs.sort((a, b) => (a.section + a.role + a.person)
+        .localeCompare(b.section + b.role + b.person))
     }
     return [...g.entries()].sort((a, b) => b[1].length - a[1].length)
   }, [rows])
 
   if (!d) return null
-  const filled = rows.filter(r => r.status === 'filled').length
+  // PEOPLE, NOT ROWS. Somebody who teaches two grades is one member of staff, and the
+  // personnel report counts them that way -- 232 for FY2025, not 250. Two pages counting
+  // the same archive differently is the defect this project catalogues.
+  const filled = new Set(rows.filter(r => r.status === 'filled')
+    .map(r => r.person.trim().toLowerCase())).size
+  const roleRows = rows.filter(r => r.status === 'filled').length
   const vacant = rows.filter(r => r.status === 'vacant').length
   const posts = rows.filter(r => r.status === 'post').length
   const sel: React.CSSProperties = {
@@ -85,7 +107,8 @@ export function OrgCharts() {
       <div className="flex flex-wrap gap-3 mt-6 mb-2">
         <label className="flex flex-col gap-1 text-[12px]" style={{ color: 'var(--text-muted)' }}>
           Department, board or school
-          <select value={unit} onChange={e => setUnit(e.target.value)} style={sel}>
+          <select value={unit} onChange={e => { setUnit(e.target.value); setSub('') }}
+            style={sel}>
             {(['department', 'school', 'board', 'officer'] as const).map(k => (
               <optgroup key={k} label={KIND_LABEL[k]}>
                 {d.units.filter(u => u.kind === k).map(u => (
@@ -97,6 +120,16 @@ export function OrgCharts() {
             ))}
           </select>
         </label>
+        {subs.length > 0 ? (
+          <label className="flex flex-col gap-1 text-[12px]"
+            style={{ color: 'var(--text-muted)' }}>
+            Building
+            <select value={sub} onChange={e => setSub(e.target.value)} style={sel}>
+              <option value="">All ({subs.length})</option>
+              {subs.map(x => <option key={x} value={x}>{x}</option>)}
+            </select>
+          </label>
+        ) : null}
         <label className="flex flex-col gap-1 text-[12px]" style={{ color: 'var(--text-muted)' }}>
           Fiscal year
           <select value={shownFy} onChange={e => setFy(e.target.value)} style={sel}>
@@ -106,7 +139,12 @@ export function OrgCharts() {
       </div>
 
       <div className="flex flex-wrap gap-x-10 gap-y-5 mt-6">
-        <Stat value={String(filled)}>named in post</Stat>
+        <Stat value={String(filled)}>people named</Stat>
+        {roleRows > filled ? (
+          <Stat value={String(roleRows)}>
+            roles between them — some hold more than one
+          </Stat>
+        ) : null}
         {vacant > 0 ? <Stat value={String(vacant)} tone="var(--series-cost)">
           printed as vacant
         </Stat> : null}
@@ -136,10 +174,10 @@ export function OrgCharts() {
                 <span style={{ color: r.person ? 'var(--text-primary)' : 'var(--text-muted)' }}>
                   {r.person || (r.status === 'vacant' ? 'vacant' : '— unnamed post —')}
                 </span>
-                {r.role ? (
-                  <span className="ml-auto text-right text-[12px]"
-                    style={{ color: 'var(--text-muted)' }}>{r.role}</span>
-                ) : null}
+                <span className="ml-auto text-right text-[12px] shrink-0"
+                  style={{ color: 'var(--text-muted)' }}>
+                  {[r.role, r.section].filter(Boolean).join(' \u00b7 ')}
+                </span>
               </li>
             ))}
           </ul>

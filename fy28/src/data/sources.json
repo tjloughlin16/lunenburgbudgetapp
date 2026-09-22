@@ -1881,7 +1881,7 @@
      "stars": 2,
      "what": "One row per person per role per year, assembled from four readings of the annual reports: the officials listing for boards and appointed posts, the Police and Fire rosters, the four schools’ rosters, and the departments that name their staff in prose. `status` keeps PEOPLE and POSTS apart — `filled` is a named person, `vacant` is a seat the town prints as empty, and `post` is an establishment position a department states without ever saying who fills it, which is how the DPW and the Assessing office publish. Building it was a test of the data model rather than a presentation of it, and it found seven classes of defect nothing that COUNTS things had: a listing footnote read as a post, sub-headings promoted to bodies, and one post under four spellings. Rendered at /org-charts.",
      "kind": "Data",
-     "bytes": 692270,
+     "bytes": 791704,
      "url": "/docs/data/org-chart.csv",
      "count": 6741,
      "unit": "rows",
@@ -3477,9 +3477,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 378627,
+     "bytes": 380735,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2211,
+     "count": 2223,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -16584,7 +16584,7 @@
  "totals": {
   "documents": 1439,
   "groups": 22,
-  "bytes": 2181366900,
+  "bytes": 2181468442,
   "loadBearing": 156
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
