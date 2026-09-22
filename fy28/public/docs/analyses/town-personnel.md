@@ -22,7 +22,9 @@ How many people each part of the town employs, which are growing and which have 
 | Board of Assessors | 3 | FY2025 | 2 in FY2023 | +1 | +0.5 | an establishment, one post at a time |
 | Information Technology | 3 | FY2020 | 4 in FY2016 | −1 | −0.2 | a named roster, one biography per person |
 
-These are not identical measures — a named roster, a career count plus the low end of an on-call range, and an establishment of posts — and they are all answers to how many people work here. Where a department states a range the LOW end is used, so none is flattered by its own vagueness.
+Department of Public Works and Board of Assessors report an ESTABLISHMENT rather than a headcount — the posts the department states it has, not the people standing in them. A post can sit vacant and still be printed here, and the Assessing office says so itself: in FY2024 it reported being “fully staffed for the first time in over a year”.
+
+These are not identical measures — a named roster, a career count plus the low end of an on-call range, and an establishment of posts — and they are answers to two different questions: how many people are there, and how many posts the department says it has. Where a department states a range the LOW end is used, so none is flattered by its own vagueness.
 
 **change** is measured over each department’s own record, and those records do not line up: the Schools record spans 14 years and the Board of Assessors’s 2, so +32 and +1 are not the same claim. No year is published by all 9 — the fullest is FY2020, with 6 of them — and standardising on that would drop the three that STOPPED publishing, which is the part worth seeing. **a year** is the change divided by the years it spans, and that column compares.
 
@@ -107,6 +109,8 @@ The gross-wages list named a department beside each employee through FY2016 and 
 - What anybody is paid. No salary is read here, and none is inferred from a post’s name.
 - How many people the town employs. Nine departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2016.
 - FTE. A career post and an on-call post are not the same job and cannot be netted against each other.
+- Whether a post was CUT. A roster is people IN post and a cut removes a POST, and those come apart both ways: someone retires and the post sits vacant but funded, so the count falls and nothing was cut; or a post is eliminated and its holder moves to another vacancy, so the count holds and something was. The town’s own words for it are in the Assessing office’s FY2024 report — “we are fully staffed for the first time in over a year” — a year of posts that existed and were empty. A rise or a fall here is a change in PEOPLE PRESENT, never a decision about establishment.
+- When in the year anybody was counted. A roster is a point in time and is undated within its year, so a September departure and a June one are the same figure.
 - A town total. The departments that describe their staffing do it in whichever form that year’s department head chose — a count, a range, an establishment post by post, a list of names — and those are different quantities.
 
 ## Where it comes from

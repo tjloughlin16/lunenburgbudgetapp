@@ -201,6 +201,16 @@ def _not_established(d=None):
         % (word(len(emp)).capitalize(), word(len(forms))),
         'FTE. A career post and an on-call post are not the same job and cannot be netted '
         'against each other.',
+        'Whether a post was CUT. A roster is people IN post and a cut removes a POST, and '
+        'those come apart both ways: someone retires and the post sits vacant but funded, '
+        'so the count falls and nothing was cut; or a post is eliminated and its holder '
+        'moves to another vacancy, so the count holds and something was. The town\u2019s own '
+        'words for it are in the Assessing office\u2019s FY2024 report \u2014 \u201cwe are fully '
+        'staffed for the first time in over a year\u201d \u2014 a year of posts that existed and '
+        'were empty. A rise or a fall here is a change in PEOPLE PRESENT, never a '
+        'decision about establishment.',
+        'When in the year anybody was counted. A roster is a point in time and is undated '
+        'within its year, so a September departure and a June one are the same figure.',
         'A town total. The departments that describe their staffing do it in whichever '
         'form that year’s department head chose — a count, a range, an establishment post '
         'by post, a list of names — and those are different quantities.',
@@ -254,7 +264,8 @@ def conclusions_for(d):
                               if len(shrank) == 1 else
                               '%s departments have' % word(len(shrank)).capitalize(),
                               'it' if len(shrank) == 1 else 'they'),
-            lede='Who added staff and who lost it, over the years each one publishes.',
+            lede='How many people each department printed, first year against last. A '
+                 'change here is people present, not a decision about posts.',
             # ALSO DERIVED, AND THIS ONE WAS PUBLISHING A WRONG FIGURE. It read the last
             # row of the table as the DPW and said `the Department of Public Works
             # unchanged at 1 posts` -- the DPW has fourteen, and the last row had become
@@ -287,9 +298,15 @@ def conclusions_for(d):
             basis='Each department’s own published count, first published year against '
                   'last, with any year reading under half its predecessor dropped as a '
                   'short read rather than a cut.',
-            not_shown='Hours or FTE. A call firefighter and a classroom teacher are one '
-                      'person each here.',
-            so_what='Only one part of the town has visibly shed people, and not the part usually named.',
+            not_shown='Whether any POST was cut. A count falls when somebody leaves a post '
+                      'that is still funded, and holds when a post is eliminated and its '
+                      'holder moves into another vacancy — the Assessing office reported '
+                      'being “fully staffed for the first time in over a year” in FY2024, '
+                      'which is a year of posts that existed and stood empty. Nor hours or '
+                      'FTE: a call firefighter and a classroom teacher are one person each '
+                      'here.',
+            so_what='Only one part of the town has visibly fewer people, which is not the '
+                    'same as a post being cut.',
             allow=('FY%s' % grew[0]['first_fy'],),
         ),
     ])
@@ -349,9 +366,25 @@ def render(d):
                     '%s%.1f' % ('+' if e['change'] >= 0 else '\u2212',
                                 abs(e['change']) / span),
                     e['kind']))
+    # POSTS AND PEOPLE ARE NOT ONE QUANTITY, and this table used to say they were: "they
+    # are all answers to how many people work here". TJ: *"our headcount are people hired.
+    # thats not to say their positions were cut if someone left... it could be unfilled
+    # positions."* Seven departments report PEOPLE and two report POSTS, and the Assessing
+    # office's own FY2024 report proves the difference matters -- "we are fully staffed for
+    # the first time in over a year" is a year of posts that existed and stood empty.
+    posts = [e for e in emp if 'establishment' in e['kind']]
+    if posts:
+        t.append('\n%s %s an ESTABLISHMENT rather than a headcount — the posts the '
+                 'department states it has, not the people standing in them. A post can '
+                 'sit vacant and still be printed here, and the Assessing office says so '
+                 'itself: in FY2024 it reported being “fully staffed for the first time in '
+                 'over a year”.\n'
+                 % (' and '.join(e['department'] for e in posts),
+                    'reports' if len(posts) == 1 else 'report'))
     t.append('\nThese are not identical measures — a named roster, a career count plus the '
-             'low end of an on-call range, and an establishment of posts — and they are all '
-             'answers to how many people work here. Where a department states a range the '
+             'low end of an on-call range, and an establishment of posts — and they are '
+             'answers to two different questions: how many people are there, and how many '
+             'posts the department says it has. Where a department states a range the '
              'LOW end is used, so none is flattered by its own vagueness.\n')
 
     # WHY EACH ROW COUNTS FROM A DIFFERENT YEAR, asked by TJ looking at the column:
