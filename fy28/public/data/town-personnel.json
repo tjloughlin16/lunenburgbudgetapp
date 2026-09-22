@@ -1,28 +1,40 @@
 {
  "about": "Every elected seat, appointed board seat and appointed officer the town prints — where the empty ones are, when they come open, and how often they change hands.",
  "checks": {
-  "check failed": 163,
-  "checked": 304,
-  "no check": 326
+  "check failed": 264,
+  "checked": 391,
+  "no check": 1065
  },
  "churn": [
   {
-   "arrived": 55,
+   "arrived": 61,
+   "fy": "2017",
+   "left": 75,
+   "stayed": 147
+  },
+  {
+   "arrived": 48,
+   "fy": "2018",
+   "left": 45,
+   "stayed": 163
+  },
+  {
+   "arrived": 54,
    "fy": "2023",
-   "left": 56,
+   "left": 55,
    "stayed": 134
   },
   {
-   "arrived": 55,
+   "arrived": 54,
    "fy": "2024",
-   "left": 74,
-   "stayed": 115
+   "left": 72,
+   "stayed": 116
   },
   {
    "arrived": 69,
    "fy": "2025",
-   "left": 67,
-   "stayed": 103
+   "left": 66,
+   "stayed": 104
   }
  ],
  "conclusions": [
@@ -54,21 +66,21 @@
    "so_what": "These are seats a resident can ask to fill, named by the town itself."
   },
   {
-   "basis": "Names matched between consecutive years of the listing, FY2022 to FY2025.",
+   "basis": "Names matched between consecutive years of the listing, FY2016 to FY2025.",
    "bearing": "sizes",
    "claim": "About a third of the people on the town’s boards change every year",
-   "detail": "The listing is not a stable roster. It is a heavy annual churn of arrivals and departures around a small core. Between FY2024 and FY2025, 69 arrived and 67 left, against 103 who stayed — roughly 38% of the seats changing hands in a single year. Of 354 people listed at any point across the four years, 56 appear in all four.",
+   "detail": "The listing is not a stable roster. It is a heavy annual churn of arrivals and departures around a small core. Between FY2024 and FY2025, 69 arrived and 66 left, against 104 who stayed — roughly 37% of the seats changing hands in a single year. Of 649 people listed at any point across the four years, 19 appear in all four.",
    "figure": "turn",
    "figures": {
     "all4": {
-     "text": "56",
+     "text": "19",
      "unit": "who served all four years",
-     "value": 56
+     "value": 19
     },
     "ever": {
-     "text": "354",
+     "text": "649",
      "unit": "people listed at all",
-     "value": 354
+     "value": 649
     },
     "in": {
      "text": "69",
@@ -76,19 +88,19 @@
      "value": 69
     },
     "out": {
-     "text": "67",
+     "text": "66",
      "unit": "left",
-     "value": 67
+     "value": 66
     },
     "stay": {
-     "text": "103",
+     "text": "104",
      "unit": "stayed",
-     "value": 103
+     "value": 104
     },
     "turn": {
-     "text": "38%",
+     "text": "37%",
      "unit": "of seats changing hands in a year",
-     "value": 37.569060773480665
+     "value": 37.08791208791209
     }
    },
    "id": "seats-turn-over",
@@ -105,7 +117,7 @@
    "basis": "Distinct names against rows in the FY2025 listing.",
    "bearing": "sizes",
    "claim": "It is not a small group wearing many hats — almost everyone holds one seat",
-   "detail": "A common assumption about small-town boards, and this listing does not support it. 172 distinct people hold the 181 posts listed in FY2025. 9 of them hold more than one, and none holds more than two.",
+   "detail": "A common assumption about small-town boards, and this listing does not support it. 173 distinct people hold the 182 posts listed in FY2025. 9 of them hold more than one, and none holds more than two.",
    "figure": "people",
    "figures": {
     "multi": {
@@ -114,14 +126,14 @@
      "value": 9
     },
     "people": {
-     "text": "172",
+     "text": "173",
      "unit": "distinct people",
-     "value": 172
+     "value": 173
     },
     "posts": {
-     "text": "181",
+     "text": "182",
      "unit": "posts listed",
-     "value": 181
+     "value": 182
     }
    },
    "id": "not-a-clique",
@@ -135,6 +147,30 @@
   }
  ],
  "counts": [
+  {
+   "appointed board seat": 70,
+   "appointed officer": 116,
+   "elected board seat": 57,
+   "fy": "2016"
+  },
+  {
+   "appointed board seat": 73,
+   "appointed officer": 92,
+   "elected board seat": 58,
+   "fy": "2017"
+  },
+  {
+   "appointed board seat": 72,
+   "appointed officer": 103,
+   "elected board seat": 56,
+   "fy": "2018"
+  },
+  {
+   "appointed board seat": 104,
+   "appointed officer": 65,
+   "elected board seat": 59,
+   "fy": "2020"
+  },
   {
    "appointed board seat": 88,
    "appointed officer": 62,
@@ -150,21 +186,21 @@
   {
    "appointed board seat": 79,
    "appointed officer": 60,
-   "elected board seat": 50,
+   "elected board seat": 51,
    "fy": "2024"
   },
   {
-   "appointed board seat": 80,
+   "appointed board seat": 81,
    "appointed officer": 61,
    "elected board seat": 53,
    "fy": "2025"
   }
  ],
- "distinct": 172,
- "ever": 354,
+ "distinct": 173,
+ "ever": 649,
  "generated_by": "scripts/build_town_personnel.py",
  "grain": "POSTS IN THE LISTING, not people employed. One row is one named holder of one post in one year, or one empty seat the town printed. A DPW labourer or a town hall clerk holds no appointed post and is not here.",
- "held": 181,
+ "held": 182,
  "last": "2025",
  "multi": [
   {
@@ -212,10 +248,22 @@
  ],
  "posts": [
   {
+   "kind": "appointed officer",
+   "post": "'AX CUSTODIAI",
+   "stated": "",
+   "years": [
+    "2017"
+   ]
+  },
+  {
    "kind": "appointed board seat",
    "post": "AGRICULTURAL COMMISSION",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -227,6 +275,7 @@
    "post": "AMERICANS WITH DISABILITIES COMMITTEE",
    "stated": "5",
    "years": [
+    "2020",
     "2024",
     "2025"
    ]
@@ -242,10 +291,25 @@
    ]
   },
   {
+   "kind": "appointed officer",
+   "post": "ANIMAL CONTROL OFFICER/",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020"
+   ]
+  },
+  {
    "kind": "appointed board seat",
    "post": "ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2025"
@@ -253,9 +317,21 @@
   },
   {
    "kind": "appointed officer",
+   "post": "ASSISTANT BUILDING INSPECTOR",
+   "stated": "",
+   "years": [
+    "2016"
+   ]
+  },
+  {
+   "kind": "appointed officer",
    "post": "ASSISTANT DAM KEEPER",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -267,6 +343,8 @@
    "post": "ASSISTANT TAX COLLECTOR/TREASURER",
    "stated": "",
    "years": [
+    "2022",
+    "2023",
     "2024",
     "2025"
    ]
@@ -276,6 +354,8 @@
    "post": "ASSISTANT TOWN CLERK",
    "stated": "",
    "years": [
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -287,6 +367,10 @@
    "post": "ASST. INSPECTOR OF PLUMBING/GAS",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -298,6 +382,9 @@
    "post": "ASST. INSPECTOR OF WIRING",
    "stated": "",
    "years": [
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -315,10 +402,18 @@
   },
   {
    "kind": "appointed board seat",
-   "post": "Associate Members (2) Kira McClellan-Associate -2025",
+   "post": "Associate Members (2",
    "stated": "",
    "years": [
     "2025"
+   ]
+  },
+  {
+   "kind": "appointed board seat",
+   "post": "Associate Members—",
+   "stated": "",
+   "years": [
+    "2020"
    ]
   },
   {
@@ -348,12 +443,39 @@
   },
   {
    "kind": "appointed officer",
+   "post": "BUILDING COMMISSIONER",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020"
+   ]
+  },
+  {
+   "kind": "appointed officer",
    "post": "BUILDING COMMISSIONER/ZONING ENFORCEMENT OFFICER",
    "stated": "",
    "years": [
     "2022",
     "2024",
     "2025"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "BUILDING INSPECTOR (ALTERNATE",
+   "stated": "",
+   "years": [
+    "2016"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "BUILDING REUSE COMMITTEE",
+   "stated": "",
+   "years": [
+    "2016"
    ]
   },
   {
@@ -365,10 +487,22 @@
    ]
   },
   {
+   "kind": "appointed officer",
+   "post": "BYLAW REVIEW COMMITTEE",
+   "stated": "",
+   "years": [
+    "2016"
+   ]
+  },
+  {
    "kind": "elected board seat",
    "post": "Board of Assessors",
-   "stated": "3",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
@@ -379,16 +513,44 @@
    "post": "Board of Health",
    "stated": "5",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
    ]
   },
   {
+   "kind": "elected board seat",
+   "post": "Board of Selectmen",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "CABLE ADVISORY COMMITTEE",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018"
+   ]
+  },
+  {
    "kind": "appointed board seat",
    "post": "CAPITAL PLANNING COMMITTEE",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -404,10 +566,31 @@
    ]
   },
   {
+   "kind": "appointed officer",
+   "post": "CHARTER REVIEW COMMITTEE",
+   "stated": "",
+   "years": [
+    "2017",
+    "2018"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "CLOCK WINDERS",
+   "stated": "",
+   "years": [
+    "2016"
+   ]
+  },
+  {
    "kind": "appointed board seat",
    "post": "CONSERVATION COMMISSION",
-   "stated": "7",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -415,18 +598,26 @@
    ]
   },
   {
-   "kind": "elected board seat",
+   "kind": "appointed officer",
    "post": "CONSTABLE",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2025"
    ]
   },
   {
    "kind": "appointed board seat",
    "post": "COUNCIL ON AGING",
-   "stated": "11",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2024",
     "2025"
    ]
@@ -436,6 +627,10 @@
    "post": "COUNCIL ON AGING DIRECTOR",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -454,8 +649,11 @@
   {
    "kind": "appointed board seat",
    "post": "CULTURAL COUNCIL",
-   "stated": "(5, 22)",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
     "2022",
     "2023",
     "2024",
@@ -465,8 +663,12 @@
   {
    "kind": "elected board seat",
    "post": "Cemetery Commission",
-   "stated": "3",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
@@ -477,6 +679,10 @@
    "post": "Constable",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
@@ -487,6 +693,12 @@
    "post": "DAM KEEPER",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
+    "2022",
+    "2023",
     "2024",
     "2025"
    ]
@@ -515,9 +727,19 @@
   },
   {
    "kind": "appointed officer",
+   "post": "ELECTION OFFICERS",
+   "stated": "",
+   "years": [
+    "2017",
+    "2018"
+   ]
+  },
+  {
+   "kind": "appointed officer",
    "post": "ELECTION WORKERS",
    "stated": "",
    "years": [
+    "2020",
     "2022",
     "2024",
     "2025"
@@ -536,9 +758,24 @@
   },
   {
    "kind": "appointed officer",
+   "post": "FENCE VIEWERS",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020"
+   ]
+  },
+  {
+   "kind": "appointed officer",
    "post": "FIELD DRIVER",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2024",
     "2025"
@@ -547,10 +784,24 @@
   {
    "kind": "appointed board seat",
    "post": "FINANCE COMMITTEE",
-   "stated": "7",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2024",
     "2025"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "FIRE CHIEF/ EMERGENCY MANAGEMENT DIRECTOR/ FOREST WARDEN",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018"
    ]
   },
   {
@@ -566,6 +817,32 @@
   },
   {
    "kind": "appointed officer",
+   "post": "FIRE CHIEF/EMERGENCY MANAGEMENTDIRECTOR/FOREST WARDEN",
+   "stated": "",
+   "years": [
+    "2020"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "GCTF ADVISORS",
+   "stated": "",
+   "years": [
+    "2016",
+    "2018",
+    "2020"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "GOT ADVISORS",
+   "stated": "",
+   "years": [
+    "2017"
+   ]
+  },
+  {
+   "kind": "appointed officer",
    "post": "GREEN COMMUNITIES COMMITTEE",
    "stated": "",
    "years": [
@@ -577,9 +854,25 @@
   },
   {
    "kind": "appointed officer",
+   "post": "GREEN COMMUNITY TASK FORCE",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020"
+   ]
+  },
+  {
+   "kind": "appointed officer",
    "post": "HAZARDOUS WASTE COORDINATOR",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
+    "2022",
     "2023",
     "2024",
     "2025"
@@ -590,9 +883,24 @@
    "post": "HEARINGS OFFICER",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
+    "2023",
     "2024",
     "2025"
+   ]
+  },
+  {
+   "kind": "appointed board seat",
+   "post": "HISTORICAL COMMISSION",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018"
    ]
   },
   {
@@ -609,6 +917,7 @@
    "post": "HISTORICAL COMMISSION- (not less than 3 nor more than 7 members",
    "stated": "(3, 7)",
    "years": [
+    "2020",
     "2022",
     "2023"
    ]
@@ -626,9 +935,24 @@
    "post": "Housing Authority",
    "stated": "5",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "INSPECTOR OF PLUMBING & GAS FITTINGS",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020"
    ]
   },
   {
@@ -647,6 +971,10 @@
    "post": "INSPECTOR OF WEIGHTS & MEASURES",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -658,10 +986,22 @@
    "post": "INSPECTOR OF WIRING",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
     "2025"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "INTERIM TOWN MANAGER",
+   "stated": "",
+   "years": [
+    "2016"
    ]
   },
   {
@@ -683,9 +1023,21 @@
   },
   {
    "kind": "appointed officer",
+   "post": "LOCAL BUILDING INSPECTOR",
+   "stated": "",
+   "years": [
+    "2017",
+    "2018"
+   ]
+  },
+  {
+   "kind": "appointed officer",
    "post": "LOCAL CENSUS LIAISON",
    "stated": "",
    "years": [
+    "2016",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -713,8 +1065,12 @@
   {
    "kind": "elected board seat",
    "post": "Library Trustees",
-   "stated": "7",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
@@ -725,8 +1081,13 @@
    "post": "MART ADVISORY BOARD",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
+    "2024",
     "2025"
    ]
   },
@@ -751,6 +1112,10 @@
    "post": "MONTACHUSETT JOINT TRANSPORTATION COMMITTEE",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -762,8 +1127,10 @@
    "post": "MONTACHUSETT METROPOLITAN PLANNING ORGANIZATION",
    "stated": "",
    "years": [
+    "2020",
     "2022",
     "2023",
+    "2024",
     "2025"
    ]
   },
@@ -772,8 +1139,22 @@
    "post": "MONTACHUSETT REGIONAL PLANNING COMMISSION",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL COMMITTEE",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018"
    ]
   },
   {
@@ -781,6 +1162,7 @@
    "post": "MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL REPRESENTATIVE",
    "stated": "",
    "years": [
+    "2020",
     "2022",
     "2023"
    ]
@@ -790,9 +1172,28 @@
    "post": "Moderator",
    "stated": "",
    "years": [
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "OCAL CENSUS LIAISON",
+   "stated": "",
+   "years": [
+    "2017"
+   ]
+  },
+  {
+   "kind": "appointed board seat",
+   "post": "OPEN SPACE COMMITTEE (ad hoc",
+   "stated": "7",
+   "years": [
+    "2020"
    ]
   },
   {
@@ -806,8 +1207,12 @@
   {
    "kind": "appointed board seat",
    "post": "PERSONNEL COMMITTEE",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -827,6 +1232,10 @@
    "post": "POLICE CHIEF",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -838,6 +1247,10 @@
    "post": "POUND KEEPER",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -847,8 +1260,12 @@
   {
    "kind": "appointed board seat",
    "post": "PUBLIC ACCESS CABLE COMMITTEE",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -860,10 +1277,24 @@
    "post": "PUBLIC RECORDS ACCESS OFFICERS",
    "stated": "",
    "years": [
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
     "2025"
+   ]
+  },
+  {
+   "kind": "elected board seat",
+   "post": "Park Commission",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020"
    ]
   },
   {
@@ -879,8 +1310,12 @@
   {
    "kind": "elected board seat",
    "post": "Planning Board - 2",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
@@ -895,6 +1330,14 @@
     "2023",
     "2024",
     "2025"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "SCHOOL BUILDING COMMITTEE",
+   "stated": "",
+   "years": [
+    "2016"
    ]
   },
   {
@@ -922,10 +1365,14 @@
    ]
   },
   {
-   "kind": "appointed board seat",
+   "kind": "appointed officer",
    "post": "STORM WATER TASK FORCE",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -935,8 +1382,12 @@
   {
    "kind": "elected board seat",
    "post": "School Committee",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
@@ -947,23 +1398,21 @@
    "post": "Select Board",
    "stated": "5",
    "years": [
+    "2020",
     "2022",
-    "2023"
-   ]
-  },
-  {
-   "kind": "elected board seat",
-   "post": "Select Board - Thomas Alonzo-2025",
-   "stated": "5",
-   "years": [
+    "2023",
     "2024"
    ]
   },
   {
    "kind": "elected board seat",
    "post": "Sewer Commission - 1/2/",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
@@ -974,10 +1423,47 @@
    "post": "TAX COLLECTOR/TREASURER/TAX CUSTODIAN",
    "stated": "",
    "years": [
+    "2020",
     "2022",
     "2023",
     "2024",
     "2025"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "TAX CUSTODIAN",
+   "stated": "",
+   "years": [
+    "2018"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "TAXATION AID COMMITTEE",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020"
+   ]
+  },
+  {
+   "kind": "appointed board seat",
+   "post": "TC PASSIOS BUILDING DESIGN COMMITTEE",
+   "stated": "7",
+   "years": [
+    "2020"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "TERMS ARE FOR ONE YEAR UNLESS OTHERWISE INDICATED.",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017"
    ]
   },
   {
@@ -990,9 +1476,19 @@
   },
   {
    "kind": "appointed officer",
+   "post": "TOWN CLOCK WINDERS",
+   "stated": "",
+   "years": [
+    "2017",
+    "2018"
+   ]
+  },
+  {
+   "kind": "appointed officer",
    "post": "TOWN CLOCKWINDERS",
    "stated": "",
    "years": [
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -1004,6 +1500,10 @@
    "post": "TOWN COUNSEL",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -1012,9 +1512,40 @@
   },
   {
    "kind": "appointed officer",
+   "post": "TOWN FOREST COMMITTEE",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "TOWN HALL CLOCKWINDERS",
+   "stated": "",
+   "years": [
+    "2016"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "TOWN MANAGER SCREENING COMMITTEE",
+   "stated": "",
+   "years": [
+    "2016"
+   ]
+  },
+  {
+   "kind": "appointed officer",
    "post": "TREE WARDEN",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -1034,6 +1565,10 @@
    "post": "Town Clerk",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
@@ -1042,8 +1577,12 @@
   {
    "kind": "elected board seat",
    "post": "Trust Fund Commission",
-   "stated": "3",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024"
@@ -1054,8 +1593,22 @@
    "post": "VETERANS SERVICES AGENT",
    "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2024",
     "2025"
+   ]
+  },
+  {
+   "kind": "appointed officer",
+   "post": "WELLNESS COORDINATOR",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018"
    ]
   },
   {
@@ -1063,15 +1616,30 @@
    "post": "ZBA ASSOCIATE MEMBER",
    "stated": "",
    "years": [
+    "2020",
     "2022",
     "2023"
    ]
   },
   {
+   "kind": "appointed officer",
+   "post": "ZBA ASSOCIATES",
+   "stated": "",
+   "years": [
+    "2016",
+    "2017",
+    "2018"
+   ]
+  },
+  {
    "kind": "appointed board seat",
    "post": "ZONING BOARD OF APPEALS",
-   "stated": "5",
+   "stated": "",
    "years": [
+    "2016",
+    "2017",
+    "2018",
+    "2020",
     "2022",
     "2023",
     "2024",
@@ -1079,7 +1647,7 @@
    ]
   }
  ],
- "served_all": 56,
+ "served_all": 19,
  "sizes": [
   {
    "people": 11,
@@ -1199,6 +1767,10 @@
   },
   {
    "people": 2,
+   "post": "Associate Members (2"
+  },
+  {
+   "people": 2,
    "post": "Ex Officio Members"
   },
   {
@@ -1228,10 +1800,6 @@
   {
    "people": 1,
    "post": "ASST. INSPECTOR OF WIRING"
-  },
-  {
-   "people": 1,
-   "post": "Associate Members (2) Kira McClellan-Associate -2025"
   },
   {
    "people": 1,
@@ -1322,7 +1890,7 @@
   {
    "basis": "published",
    "note": "Read by scripts/extract_personnel.py. The format is not the same every year: the elected pages set their headings in title case and the appointed pages in capitals, and two or three pages a year are set in two columns.",
-   "what": "Every elected and appointed post in the town, FY2022 to FY2025",
+   "what": "Every elected and appointed post in the town, FY2016 to FY2025",
    "where": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing in each annual town report — nine pages a year"
   }
  ],
@@ -1338,10 +1906,14 @@
   },
   {
    "label": "of seats changing hands in a single year",
-   "value": "38%"
+   "value": "37%"
   }
  ],
  "terms": [
+  {
+   "seats": 1,
+   "year": "2025"
+  },
   {
    "seats": 35,
    "year": "2026"
@@ -1414,6 +1986,10 @@
   }
  ],
  "years": [
+  "2016",
+  "2017",
+  "2018",
+  "2020",
   "2022",
   "2023",
   "2024",

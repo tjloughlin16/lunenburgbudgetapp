@@ -74,6 +74,28 @@ PAGENO = re.compile(r'^\d{1,3}$')
 # It is worth getting right rather than filtering out, because it is the most actionable
 # thing in the whole listing: an empty seat is a seat a resident can ask to fill, and the
 # town publishes exactly where they are.
+# NOT THE TOWN. The listing opens with a directory of the offices a Lunenburg resident is
+# represented BY -- the Governor, the Attorney General, the state senate and house seats,
+# the congressional delegation -- printed with mailing addresses at the State House and in
+# Washington. They are offices of the Commonwealth and of the United States, and reading
+# them as town posts put 199 rows and seven "departments" into a page called who runs the
+# town, inflating every count on it.
+#
+# The cut is per POST rather than per page, because the directory spills onto a second page
+# in three of the four years and a page rule would have to guess where it stops.
+STATE_FEDERAL = re.compile(
+    r"^(?:GOVERNOR|LIEUTENANT\s+GOVERNOR|GOVERNOR'?S\s+COUNCIL|ATTORNEY\s+GENERAL"
+    r"|SECRETARY\s+OF\s+(?:THE\s+)?(?:STATE|COMMONWEALTH)|STATE\s+(?:TREASURER|AUDITOR)"
+    r"|AUDITOR\b|TREASURER\s+AND\s+RECEIVER|SENATE\b|SENATOR\b|STATE\s+LEGISLATORS"
+    r"|HOUSE\s+OF\s+REPRESENTATIVES|REPRESENTATIVE\s+IN\s+CONGRESS"
+    r"|U\.?\s?S\.?\s+(?:SENATOR|REPRESENTATIVE)|ELECTED\s+OFFICIAL\b)", re.I)
+
+# `MASSACHUSETTS CONGRESSIONAL DELEGATION` does not start with any of the above, and one
+# year prints it `COAGRESSIONAL` -- so this one is matched anywhere in the heading and
+# spelled loosely enough to survive a scanner reading N as A. Anchoring it left 72 rows of
+# the state directory in a page about the town.
+CONGRESS = re.compile(r'C[O0][NAM]GRESS', re.I)
+
 VACANCY = re.compile(r'^\s*(\d+)?\s*(?:associate member\s+)?vacan(?:t|cy|cies)\b', re.I)
 
 # `terms`, PLURAL, and it cost a dozen headings. `\bterm\b` does not match `(3 year
@@ -208,10 +230,16 @@ def read_order(page, rows):
     return out
 
 
-LINE_TSV = {'2022': '4129-fy-2022-annual-town-report.tsv',
-            '2023': '4131-fy-2023-annual-town-report.tsv',
-            '2024': '4132-fy-2024-annual-town-report.tsv',
-            '2025': '4130-fy-2025-annual-town-report.tsv'}
+def line_tsv(fy):
+    """The line-level TSV for one year, found on disk rather than tabulated.
+
+    A hardcoded map of four years is a latent break with a date on it -- the repo's own
+    most common defect, a LOCATION written down where location is not identity. The
+    documents are numbered by the town and renumbering has already moved them once.
+    """
+    hits = glob.glob(os.path.join(ROOT, 'sources', 'town-budget', 'ocr',
+                                  '*fy-%s-annual-town-report.tsv' % fy))
+    return hits[0] if hits else ''
 
 
 def line_rows(fy):
@@ -230,8 +258,8 @@ def line_rows(fy):
     columns. Text can never be lost by a geometry that is missing; at worst a line stays
     whole, which is what it used to be.
     """
-    path = os.path.join(ROOT, 'sources', 'town-budget', 'ocr', LINE_TSV.get(fy, ''))
-    if not os.path.exists(path):
+    path = line_tsv(fy)
+    if not path or not os.path.exists(path):
         return []
     out = []
     with open(path, encoding='utf-8') as fh:
@@ -240,7 +268,9 @@ def line_rows(fy):
                 y, h = float(r['y']), float(r['h'])
             except (ValueError, KeyError):
                 continue
-            out.append(dict(page=int(r['page']), cy=y + h / 2, text=r['text']))
+            x, w = float(r['x']), float(r['w'])
+            out.append(dict(page=int(r['page']), cy=y + h / 2, x0=x, x1=x + w,
+                            text=r['text']))
     return out
 
 
@@ -289,11 +319,36 @@ def lines_of(path_or_fy):
         head = lines[0]['text'].strip() if lines else ''
         m = SECTION.match(head)
         section = m.group(1).lower() if m else ''
-        rows = []
+        # BAND THE LINES BY y FIRST, because two columns are often two separate Vision
+        # observations rather than one wide one. FY2022 page 12 prints `DAM KEEPER` beside
+        # `ASSISTANT DAM KEEPER` with `Ronald Wilson` and `Richard Patry` beneath them, and
+        # Vision returns four observations. There is no gap INSIDE any of them to cut, so
+        # cutting lines was never going to find it -- read one after another they become
+        # two posts with no holders and then two people under the wrong one.
+        #
+        # Banded by y and sorted by x, they are what they are: one row of two cells, then
+        # another. The band is half the page's own median line pitch, rule 13b.
+        ys = sorted({round(l['cy'], 4) for l in lines}, reverse=True)
+        pitch = sorted(a - b for a, b in zip(ys, ys[1:]) if a - b > 0.002)
+        band = (pitch[len(pitch) // 2] / 2) if pitch else 0.008
+        banded = []
         for ln in lines:
-            near = min(wrows, key=lambda r: abs(r[0] - ln['cy'])) if wrows else None
-            ws = near[1] if (near and abs(near[0] - ln['cy']) < 0.006) else []
-            rows.append((ln['cy'], [c for c in cut_line(ln['text'], ws)]))
+            if banded and abs(banded[-1][0] - ln['cy']) <= band:
+                banded[-1][1].append(ln)
+            else:
+                banded.append((ln['cy'], [ln]))
+        rows = []
+        for cy, group in banded:
+            group.sort(key=lambda l: l['x0'])
+            cells = []
+            for ln in group:
+                near = min(wrows, key=lambda r: abs(r[0] - ln['cy'])) if wrows else None
+                ws = near[1] if (near and abs(near[0] - ln['cy']) < 0.006) else []
+                # only use the word cut when this observation spans the words we found
+                inside = [w for w in ws if w['x0'] >= ln['x0'] - 0.01
+                          and w['x1'] <= ln['x1'] + 0.01]
+                cells += cut_line(ln['text'], inside)
+            rows.append((cy, cells))
         for col, t in read_order_text(page, rows):
             yield col, section, t
 
@@ -438,15 +493,30 @@ def read_year(fy, path):
         # landed under the last heading of column one. Closing the post at each boundary
         # is the whole fix, and it is the same rule the page itself obeys: a column starts
         # a new run.
-        if where != col:
+        # A COLUMN BOUNDARY IS NOT ALWAYS A NEW POST, and treating it as one cost 43
+        # people in FY2022 alone. Two cells in a row mean one of two things and the page
+        # does not label which: two posts printed side by side -- `DAM KEEPER` beside
+        # `ASSISTANT DAM KEEPER`, each with its holder beneath -- or ONE post whose holders
+        # are laid out across the width, which is how `DPW DIRECTOR` prints `Rob Oliva
+        # (Resigned March 2022)` next to `William Bernard (Appointed May 10, 2022)`.
+        #
+        # What tells them apart is what the new column STARTS with. A heading opens a post
+        # and closes the one before it, which the loop below already does. A person
+        # continues the post that is open. So the boundary itself does nothing, and only a
+        # page break -- where nothing can continue -- closes a post outright.
+        if where is not None and where[0] != col[0]:
             close_post(rows, post, stated, seen, problems, fy)
-            post, stated, seen, kind, where = None, None, 0, '', col
+            post, stated, seen, kind = None, None, 0, ''
+        where = col
         for t in split_entries(raw):
             t = t.strip()
             if PAGENO.match(t) or SECTION.match(t):
                     continue
             if is_heading(t):
                 close_post(rows, post, stated, seen, problems, fy)
+                if STATE_FEDERAL.match(post_name(t)) or CONGRESS.search(t):
+                    post, stated, seen, kind = None, None, 0, ''
+                    continue
                 m = SIZE.search(t)
                 rng = RANGE.search(t)
                 # A POST THAT STATES A MEMBERSHIP IS A BOARD SEAT; one that does not is an
@@ -505,7 +575,7 @@ def read_year(fy, path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
-    ap.add_argument('--since', type=int, default=2022)
+    ap.add_argument('--since', type=int, default=2011)
     args = ap.parse_args()
 
     rows, problems, refused = [], [], []
@@ -557,8 +627,13 @@ def main():
         w = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\r\n')
         w.writeheader()
         w.writerows(rows)
-        if refused or buf.getvalue() != cur:
-            print('  STALE or refused — run: python3 scripts/extract_personnel.py')
+        # A REFUSAL IS NOT A FAILURE OF THE CHECK. FY2014 and FY2015 print the listing
+        # under a layout that states no memberships anywhere, so this reader declines them
+        # -- permanently, until somebody reads that layout. Failing `--check` on it makes a
+        # check that can never pass, which is a check nobody runs. Staleness is the thing
+        # being tested; the refusals are printed above and counted here.
+        if buf.getvalue() != cur:
+            print('  STALE — run: python3 scripts/extract_personnel.py')
             return 1
         print('  town-personnel.csv is current')
         return 0

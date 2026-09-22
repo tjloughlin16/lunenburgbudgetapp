@@ -1,6 +1,6 @@
 # Who runs the town
 
-Every elected seat, appointed board seat and appointed officer the town prints, FY2022 to FY2025 — where the empty ones are, when they come open, and how often they change hands.
+Every elected seat, appointed board seat and appointed officer the town prints, FY2016 to FY2025 — where the empty ones are, when they come open, and how often they change hands.
 
 ## Where you could serve
 
@@ -28,6 +28,7 @@ The year each filled seat’s term runs out, as printed beside the name.
 
 | term runs out | seats |
 |---|---:|
+| 2025 | 1 |
 | 2026 | 35 |
 | 2027 | 34 |
 | 2028 | 33 |
@@ -36,13 +37,13 @@ The year each filled seat’s term runs out, as printed beside the name.
 
 ## How often seats change hands
 
-| | FY2023 | FY2024 | FY2025 |
-|---|---:|---:|---:|
-| stayed from the year before | 134 | 115 | 103 |
-| new that year | 55 | 55 | 69 |
-| gone from the year before | 56 | 74 | 67 |
+| | FY2017 | FY2018 | FY2023 | FY2024 | FY2025 |
+|---|---:|---:|---:|---:|---:|
+| stayed from the year before | 147 | 163 | 134 | 116 | 104 |
+| new that year | 61 | 48 | 54 | 54 | 69 |
+| gone from the year before | 75 | 45 | 55 | 72 | 66 |
 
-56 of the 354 people listed at any point across the four years appear in all four.
+19 of the 649 people listed at any point across the four years appear in all four.
 
 ## The bodies, by size
 
@@ -79,6 +80,7 @@ FY2025, filled seats only.
 | CAPITAL PLANNING COMMITTEE | 3 |
 | CEMETERY COMMISSION | 3 |
 | Associate Members | 2 |
+| Associate Members (2 | 2 |
 | Ex Officio Members | 2 |
 | TOWN COUNSEL | 2 |
 | TRUST FUND COMMISSION | 2 |
@@ -87,7 +89,6 @@ FY2025, filled seats only.
 | ASSISTANT TOWN CLERK | 1 |
 | ASST. INSPECTOR OF PLUMBING/GAS | 1 |
 | ASST. INSPECTOR OF WIRING | 1 |
-| Associate Members (2) Kira McClellan-Associate -2025 | 1 |
 | BUILDING COMMISSIONER/ZONING ENFORCEMENT OFFICER | 1 |
 | CONSTABLE | 1 |
 | COUNCIL ON AGING DIRECTOR | 1 |
@@ -112,11 +113,11 @@ FY2025, filled seats only.
 
 ## The posts
 
-| | FY2022 | FY2023 | FY2024 | FY2025 |
-|---|---:|---:|---:|---:|
-| Elected seats — filled by the voters | 53 | 56 | 50 | 53 |
-| Appointed board seats — filled by the Select Board | 88 | 94 | 79 | 80 |
-| Appointed officers — posts somebody is hired or named into | 62 | 57 | 60 | 61 |
+| | FY2016 | FY2017 | FY2018 | FY2020 | FY2022 | FY2023 | FY2024 | FY2025 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Elected seats — filled by the voters | 57 | 58 | 56 | 59 | 53 | 56 | 51 | 53 |
+| Appointed board seats — filled by the Select Board | 70 | 73 | 72 | 104 | 88 | 94 | 79 | 81 |
+| Appointed officers — posts somebody is hired or named into | 116 | 92 | 103 | 65 | 62 | 57 | 60 | 61 |
 
 ## What this cannot show
 
@@ -127,8 +128,8 @@ FY2025, filled seats only.
 
 ## How well we read it
 
-Most headings state their own membership, so the page checks itself: 304 rows sit under a board where the stated size and the printed names agree, 163 where they differ, and 326 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — and this is a note about our extraction rather than about the town.
+Most headings state their own membership, so the page checks itself: 391 rows sit under a board where the stated size and the printed names agree, 264 where they differ, and 1,065 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — and this is a note about our extraction rather than about the town.
 
 ## Where it comes from
 
-- **Every elected and appointed post in the town, FY2022 to FY2025** — The ELECTED OFFICIALS and APPOINTED OFFICIALS listing in each annual town report — nine pages a year. Read by scripts/extract_personnel.py. The format is not the same every year: the elected pages set their headings in title case and the appointed pages in capitals, and two or three pages a year are set in two columns.
+- **Every elected and appointed post in the town, FY2016 to FY2025** — The ELECTED OFFICIALS and APPOINTED OFFICIALS listing in each annual town report — nine pages a year. Read by scripts/extract_personnel.py. The format is not the same every year: the elected pages set their headings in title case and the appointed pages in capitals, and two or three pages a year are set in two columns.

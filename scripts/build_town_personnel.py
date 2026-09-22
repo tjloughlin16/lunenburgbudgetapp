@@ -99,7 +99,11 @@ def load():
             vac[r['post']] += r['vacancies']
 
     # 2. WHEN. The year each seat's term runs out.
+    # THE NEXT CHANCE TO JOIN IS A FUTURE YEAR. Taking the earliest term year in the data
+    # picked a seat already expiring in the report's own year -- one seat, presented as the
+    # next opportunity, when thirty-five come up the year after.
     terms = collections.Counter(r['term_expires'] for r in named if r['term_expires'])
+    ahead = sorted(y for y in terms if y.isdigit() and int(y) > int(last))
 
     # 3. HOW CONCENTRATED. Distinct people against posts held.
     who = collections.Counter(r['person'].strip() for r in named)
@@ -108,8 +112,15 @@ def load():
     # 4. DOES ANYBODY STAY. Names carried over, arrived and gone, year to year.
     names = {y: {r['person'].strip() for r in rows
                  if r['fy'] == y and r['person'].strip()} for y in years}
+    # ONLY CONSECUTIVE YEARS. The listing is readable for FY2016-18, FY2020 and FY2022-25,
+    # and the gaps are real -- FY2019 and FY2021 print the section under a heading this
+    # reader does not recognise, and FY2014-15 state no memberships at all. Differencing
+    # FY2018 against FY2020 and calling it a year's churn would count two years of
+    # arrivals as one and overstate the turnover by roughly double.
     churn = []
     for a, b in zip(years, years[1:]):
+        if int(b) - int(a) != 1:
+            continue
         churn.append(dict(fy=b, stayed=len(names[a] & names[b]),
                           arrived=len(names[b] - names[a]),
                           left=len(names[a] - names[b])))
@@ -122,7 +133,7 @@ def load():
     sizes = collections.Counter(r['post'] for r in named)
 
     return dict(rows=rows, years=years, per=per, checks=checks, posts=posts,
-                last=last, named=named, vacancies=vac, terms=terms,
+                last=last, named=named, vacancies=vac, terms=terms, ahead=ahead,
                 distinct=len(who), held=len(named), multi=multi, churn=churn,
                 ever=len(ever), served_all=served_all, sizes=sizes)
 
@@ -307,9 +318,9 @@ def payload(d):
             dict(value=num(vac), tone='var(--series-cost)',
                  label='seats the town printed EMPTY in FY%s, across %s boards'
                        % (last, num(len(d['vacancies'])))),
-            dict(value=num(d['terms'][sorted(d['terms'])[0]]) if d['terms'] else '—',
+            dict(value=num(d['terms'][d['ahead'][0]]) if d['ahead'] else '—',
                  label='seats whose term runs out in %s — the next chance to join'
-                       % (sorted(d['terms'])[0] if d['terms'] else '')),
+                       % (d['ahead'][0] if d['ahead'] else '')),
             dict(value=pct(turn, 0),
                  label='of seats changing hands in a single year'),
         ],
