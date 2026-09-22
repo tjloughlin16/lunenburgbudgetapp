@@ -11,10 +11,10 @@ Seats the town printed as empty in FY2025.
 | PERSONNEL COMMITTEE | 5 |
 | GREEN COMMUNITIES COMMITTEE | 2 |
 | MONTACHUSETT JOINT TRANSPORTATION COMMITTEE | 2 |
-| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 1 |
+| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC) | 1 |
 | Associate Members | 1 |
 | PARKS COMMISSION | 1 |
-| PLANNING BOARD - 2 | 1 |
+| PLANNING BOARD | 1 |
 | POUND KEEPER | 1 |
 | PUBLIC ACCESS CABLE COMMITTEE | 1 |
 | RECREATION DIRECTOR | 1 |
@@ -53,7 +53,7 @@ Seats changing hands each year, over bodies of three seats or more that appear i
 |---|---:|---:|---:|
 | GCTF ADVISORS | 3.5 | 3 | 71% |
 | MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL REPRESENTATIVE | 8.0 | 3 | 67% |
-| HISTORICAL COMMISSION- (not less than 3 nor more than 7 members | 3.5 | 3 | 62% |
+| HISTORICAL COMMISSION- (not less than 3 nor more than 7 members) | 3.5 | 3 | 62% |
 | STORM WATER TASK FORCE | 3.6 | 7 | 61% |
 | AMERICANS WITH DISABILITIES COMMITTEE | 4.0 | 3 | 58% |
 | ECONOMIC DEVELOPMENT COMMITTEE | 4.0 | 4 | 56% |
@@ -62,7 +62,7 @@ Seats changing hands each year, over bodies of three seats or more that appear i
 | PUBLIC RECORDS ACCESS OFFICERS | 8.8 | 8 | 49% |
 | LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE | 5.5 | 2 | 46% |
 | ELECTION OFFICERS | 4.5 | 2 | 44% |
-| Sewer Commission - 1/2/ | 5.4 | 8 | 40% |
+| Sewer Commission - 1/2 | 5.4 | 8 | 40% |
 | CAPITAL PLANNING COMMITTEE | 6.2 | 9 | 39% |
 | AGRICULTURAL COMMISSION | 5.7 | 7 | 38% |
 | TAXATION AID COMMITTEE | 4.8 | 4 | 37% |
@@ -71,7 +71,7 @@ Seats changing hands each year, over bodies of three seats or more that appear i
 | CULTURAL COUNCIL | 7.8 | 7 | 34% |
 | Board of Selectmen | 5.0 | 3 | 33% |
 | School Committee | 5.1 | 8 | 32% |
-| Planning Board - 2 | 5.6 | 6 | 31% |
+| Planning Board | 5.6 | 6 | 31% |
 | Housing Authority | 4.3 | 8 | 30% |
 | Parks Commission | 5.0 | 3 | 27% |
 | Board of Assessors | 3.2 | 6 | 26% |
@@ -81,11 +81,11 @@ Seats changing hands each year, over bodies of three seats or more that appear i
 | Select Board | 5.2 | 4 | 24% |
 | CONSERVATION COMMISSION | 7.1 | 9 | 23% |
 | ELECTION WORKERS | 4.3 | 3 | 23% |
-| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 7.8 | 7 | 19% |
+| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC) | 7.8 | 7 | 19% |
 | Board of Health | 5.2 | 8 | 19% |
 | Library Trustees | 7.2 | 8 | 19% |
 | PUBLIC ACCESS CABLE COMMITTEE | 4.7 | 9 | 18% |
-| COUNCIL ON AGING- - (11 members | 11.5 | 2 | 17% |
+| COUNCIL ON AGING- - (11 members) | 11.5 | 2 | 17% |
 | COUNCIL ON AGING | 11.3 | 5 | 15% |
 | ZONING BOARD OF APPEALS | 4.9 | 9 | 15% |
 | TOWN CLOCK WINDERS | 6.2 | 2 | 12% |
@@ -155,7 +155,7 @@ FY2025, filled seats only.
 |---|---:|
 | MILES | 27 |
 | COUNCIL ON AGING | 11 |
-| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC | 9 |
+| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC) | 9 |
 | PUBLIC RECORDS ACCESS OFFICERS | 8 |
 | CULTURAL COUNCIL | 7 |
 | FINANCE COMMITTEE | 7 |
@@ -167,15 +167,15 @@ FY2025, filled seats only.
 | ELECTION WORKERS | 5 |
 | HOUSING AUTHORITY | 5 |
 | SELECT BOARD | 5 |
-| SEWER COMMISSION - 1/2/ | 5 |
+| SEWER COMMISSION - 1/2 | 5 |
 | STORM WATER TASK FORCE | 5 |
 | TOWN CLOCKWINDERS | 5 |
 | AGRICULTURAL COMMISSION | 4 |
 | AMERICANS WITH DISABILITIES COMMITTEE | 4 |
 | GREEN COMMUNITIES COMMITTEE | 4 |
-| HISTORICAL COMMISSION (not less than 3 nor more than 7 members | 4 |
+| HISTORICAL COMMISSION (not less than 3 nor more than 7 members) | 4 |
 | PARKS COMMISSION | 4 |
-| PLANNING BOARD - 2 | 4 |
+| PLANNING BOARD | 4 |
 | PUBLIC ACCESS CABLE COMMITTEE | 4 |
 | SCHOOL COMMITTEE | 4 |
 | ZONING BOARD OF APPEALS | 4 |
@@ -183,7 +183,7 @@ FY2025, filled seats only.
 | CAPITAL PLANNING COMMITTEE | 3 |
 | CEMETERY COMMISSION | 3 |
 | Associate Members | 2 |
-| Associate Members (2 | 2 |
+| Associate Members (2) | 2 |
 | Ex Officio Members | 2 |
 | TOWN COUNSEL | 2 |
 | TRUST FUND COMMISSION | 2 |

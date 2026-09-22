@@ -429,7 +429,30 @@ def is_heading(t):
 
 
 def post_name(t):
-    return re.sub(r'\s+', ' ', TERMLEN.sub('', SIZE.sub('', t))).strip(' -–,()')
+    """The post, with the constitution it stated taken back off the end.
+
+    Stripping `(5 members)` and `3 year term` leaves debris a resident then reads in the
+    vacancies table, which is the first thing on the page: `PLANNING BOARD - 2` out of
+    `- 2 - 5 year terms`, and `ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC` with
+    the bracket never closed because the membership pattern took the closing paren with it.
+
+    The first repair was worse than the fault -- balancing brackets blindly produced a post
+    called `()` -- so it strips repeatedly until nothing more comes off, and only closes a
+    bracket that has something inside it.
+    """
+    t = re.sub(r'\s+', ' ', TERMLEN.sub('', SIZE.sub('', t))).strip()
+    for _ in range(4):
+        before = t
+        t = re.sub(r'[-–,;:\s]+$', '', t)          # trailing punctuation
+        t = re.sub(r'\(\s*\)$', '', t)             # an empty bracket
+        t = re.sub(r'\(\s*$', '', t)               # a bracket with nothing after it
+        t = re.sub(r'[-–]\s*\d+$', '', t)          # an orphan `- 2`
+        t = re.sub(r'\s*/\s*$', '', t)
+        if t == before:
+            break
+    if t.count('(') > t.count(')') and re.search(r'\([^)]{2,}$', t):
+        t += ')'
+    return t.strip(' -–,')
 
 
 def listing_pages(path):
