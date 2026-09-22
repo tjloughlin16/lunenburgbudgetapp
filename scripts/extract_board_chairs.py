@@ -54,7 +54,8 @@ LEADING = re.compile(r'\b%s\s+(%s)' % (TITLE, NAME))
 # A TITLE IS NOT A NAME, and the leading form will happily take one. `Chairman of the
 # Board`, `Chairperson and the Town`, `Vice Chairman Report`.
 NOT_NAME = re.compile(r'\b(board|committee|commission|report|town|department|the|of|and|'
-                      r'school|select|finance|meeting|member|members|said|will|has)\b',
+                      r'school|select|finance|meeting|member|members|said|will|has|'
+                      r'commissioners|trustees|officials|association|authority)\b',
                       re.I)
 # The sentence the listing's own footnote prints; not a person.
 FOOTNOTE = re.compile(r'denotes\s+chair', re.I)
@@ -98,7 +99,12 @@ def read_year(fy, rows_idx, pages):
             for pat, ni, ti in ((TRAILING, 1, 2), (LEADING, 2, 1)):
                 for m in pat.finditer(t):
                     who, title = m.group(ni).strip(), m.group(ti).strip()
-                    if NOT_NAME.search(who):
+                    # A TITLE IS NOT A NAME, AND THE LINE OFTEN HOLDS BOTH. `...were
+                    # Chairperson Deb Lincoln, Vice-Chairperson Jane Rabbitt` gave a
+                    # vice-chair called `Chairperson Deb Lincoln`, because the pattern
+                    # takes whatever follows the title and the previous person's title
+                    # was sitting there.
+                    if NOT_NAME.search(who) or re.search(TITLE, who, re.I):
                         continue
                     out.append(dict(fy=fy, department=dept, person=who,
                                     title=title.title(), page=p, as_printed=t[:120]))

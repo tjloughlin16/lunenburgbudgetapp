@@ -87,7 +87,11 @@ BUILDING_TAIL = re.compile(r'\s*[:,\-]?\s*(?:at\s+)?(?:the\s+)?'
                            r'\s+school\s*$', re.I)
 SECTION_FAMILY = [
     (re.compile(r'cafeteria|food service|cook', re.I), 'Cafeteria and food service'),
-    (re.compile(r'custod', re.I), 'Custodial'),
+    # THE TOWN'S TWO NAMES FOR ONE FUNCTION. A school prints `Custodians` and
+    # `Facilities & Grounds` in the same roster with the same job titles under both.
+    (re.compile(r'custod|facilities|grounds|maintenance', re.I),
+     'Custodial and facilities'),
+    (re.compile(r'athletic', re.I), 'Athletics'),
     (re.compile(r'parapro', re.I), 'Paraprofessionals'),
     (re.compile(r'special ed|\bsped\b|learning c(?:en)?t', re.I), 'Special education'),
     (re.compile(r'special services', re.I), 'Special services'),
@@ -96,7 +100,6 @@ SECTION_FAMILY = [
     (re.compile(r'^achieve', re.I), 'Achieve'),
     (re.compile(r'central office', re.I), 'Central office'),
     (re.compile(r'administration|main office', re.I), 'Administration and office'),
-    (re.compile(r'facilities|grounds|maintenance', re.I), 'Facilities and grounds'),
     (re.compile(r'technology|network', re.I), 'Technology'),
     (re.compile(r'tutor', re.I), 'Tutors and aides'),
 ]
@@ -104,7 +107,10 @@ SECTION_FAMILY = [
 
 def canon_section(text):
     """The block heading, normalised into something a page can group on."""
-    t = re.sub(r'\s+', ' ', (text or '')).strip().strip(':_.,;- ')
+    # `Career Firefighters+`, `Department+*` -- the roster's own footnote markers, which
+    # made one service look like two.
+    t = re.sub(r'[+*\u2020\u2021]+\s*$', '',
+               re.sub(r'\s+', ' ', (text or '')).strip()).strip(':_.,;- ')
     if not t:
         return ''
     t = BUILDING_TAIL.sub('', t).strip(':_.,;- ') or t
@@ -170,10 +176,59 @@ TIER_ASSOCIATE = 4
 # the Council on Aging, so the post cannot be demoted by name. It is demoted by CONTEXT:
 # where a body already has a Superintendent, a Chief, a Town Manager, a Principal or a
 # Chair, everyone else in the top band is a rank below.
-STRONG_HEAD = re.compile(r'\bsuperintendent\b|\btown manager\b|\bchief\b|\bprincipal\b'
-                         r'|\bchair(?:man|person|woman)?\b|\btown clerk\b', re.I)
+# A HIGHWAY SUPERINTENDENT IS NOT THE SUPERINTENDENT. The DPW prints a Cemetery
+# Superintendent and a Highway Superintendent under a Director, and reading the word
+# alone put both of them above the man who runs the department.
+STRONG_HEAD = re.compile(r'^(?:superintendent\b(?!\s+of\s+(?:cemeter|highway|street|water))'
+                         r'|superintendent[- ]director)'
+                         r'|\btown manager\b|\bchief\b|\bprincipal\b'
+                         r'|\bchair(?:man|person|woman)?\b|\btown clerk\b'
+                         r'|\bsuperintendent of schools\b', re.I)
+# A DESIGNEE IS A FULL MEMBER. The School Committee and the Town Moderator each SEND
+# somebody to the Charter Review Committee, and that person votes like anybody else --
+# `designee` names who sent them, not a lesser seat.
 ASSOCIATE = re.compile(r'\bassoc(?:iate)?\b|\bhonorary\b|\bnon-?voting\b|\bex[- ]officio\b'
-                       r'|\balternate\b|\bdesignee\b', re.I)
+                       r'|\balternate\b', re.I)
+
+
+# A COMMITTEE OF DELEGATES HAS NO INTERNAL RANK. The Storm Water Task Force, the
+# Taxation Aid Committee and the Building Design Committee are made of people sent by
+# other bodies, and their printed title names the body they come FROM -- `Council on
+# Aging Director`, `Assessors' Principal Clerk`, `Planning Board Representative`. Read as
+# ranks they made a Principal Clerk the head of a committee and a Director its deputy.
+DELEGATE = re.compile(r'\brepresentative\b|\bdesignee\b|\bliaison\b|\bmember at large\b'
+                      r'|\bcitizen at large\b|\bex[- ]officio\b', re.I)
+
+
+# A BOARD'S HIERARCHY IS CHAIR, VICE-CHAIR, CLERK. NOTHING ELSE.
+#
+# This is the rule that had to be written per TYPE of body rather than per word. A board
+# member who is a Director somewhere else is not the board's deputy, and the Taxation Aid
+# Committee proved it three ways at once: it seats the Assessors' Principal Clerk, the
+# Council on Aging Director and the Assistant Town Manager, and reading their titles as
+# ranks made a principal clerk the head of the committee and two directors its deputies.
+# Their titles say which body SENT them; the committee's own officers are the ones it
+# elects, and a body that elects none is a body of equals.
+BOARD_RANKS = [
+    (0, re.compile(r'\bchair(?:man|person|woman)?\b', re.I)),
+    (1, re.compile(r'\bvice[- ]?chair', re.I)),
+    # THE BOARD'S OWN CLERK, not somebody who is a clerk for a living. `Assessors'
+    # Principal Clerk` is a job in the Assessing office and its holder sits on the
+    # Taxation Aid Committee as an ordinary member.
+    (2, re.compile(r'^(?:board\s+)?(?:clerk|secretary|treasurer)$'
+                   r'|\b(?:clerk|secretary|treasurer)\s+of\s+the\b', re.I)),
+    (4, ASSOCIATE),
+]
+
+
+def board_tier(role):
+    """Where a seat sits on a board. Officers only; everybody else is a member."""
+    t = (role or '').strip()
+    for band, pat in ((1, BOARD_RANKS[1][1]), (0, BOARD_RANKS[0][1]),
+                      (2, BOARD_RANKS[2][1]), (4, BOARD_RANKS[3][1])):
+        if pat.search(t):
+            return band
+    return TIER_STAFF
 
 
 def tier_of(role, kind):
@@ -185,8 +240,10 @@ def tier_of(role, kind):
     t = (role or '').strip()
     if not t:
         return TIER_STAFF
-    if ASSOCIATE.search(t):
+    if ASSOCIATE.search(t) and not DELEGATE.search(t):
         return TIER_ASSOCIATE
+    if DELEGATE.search(t):
+        return TIER_STAFF
     for band, pat in TIERS:
         if pat.search(t):
             return band
@@ -243,6 +300,9 @@ ALIAS = {
     'board of selectmen': 'Select Board',
     'board of selectmen representative': 'Select Board',
 }
+# The scanner's `Select Board`.
+SEAT_FIX = {'slain board': 'Select Board', 'board of s': 'Select Board',
+            'select boara kepresentative': 'Select Board Representative'}
 
 # A SEAT ON A BOARD IS NOT A BODY OF ITS OWN. The listing prints `ZBA Associates` and
 # `Associate Members` as sub-headings inside a board, and they arrived as separate units
@@ -344,6 +404,7 @@ def _seat(raw):
         if SEAT_WORD.search(left) and NAME_SHAPE.match(right):
             # `State Appointee-Karin Menard` -- the seat is printed FIRST.
             seat, t = left, right
+    seat = SEAT_FIX.get(seat.lower(), seat)
     if chair and not re.search(r'chair', seat, re.I):
         seat = ('Chairperson' if not seat else '%s, chairperson' % seat)
     return t.strip(), seat, note
@@ -837,10 +898,15 @@ def build():
         # the Election Workers, the Building Design Committee), and calling every row a
         # head printed nine people as nine heads of one body. A unit holding one person
         # in a year has a head; a unit holding nine has members.
-        r['tier'] = tier_of(r['role'], r['unit_kind'])
-        if r['unit_kind'] == 'officer' and r['tier'] == TIER_STAFF \
-                and solo[(r['fy'], r['unit'])] == 1:
-            r['tier'] = 0
+        r['tier'] = (board_tier(r['role']) if r['unit_kind'] == 'board'
+                     else tier_of(r['role'], r['unit_kind']))
+        # `Cemetery Superintendent`, `Highway Superintendent` -- heads of a DIVISION,
+        # under the Director who heads the department.
+        if r['tier'] == 0 and re.search(r'\w\s+superintendent\b', r['role'], re.I):
+            r['tier'] = 2
+        if r['unit_kind'] == 'officer':
+            r['tier'] = (0 if solo[(r['fy'], r['unit'])] == 1
+                         else board_tier(r['role']))
     keep = []
     for r in rows:
         key = r['unit'].lower()
@@ -877,6 +943,19 @@ def build():
             if not r['person']
             or best[(r['fy'], r['unit'], r['subunit'],
                      r['person'].lower())] is r]
+    # A COUNCIL SOMEBODY SITS ON IS NOT A RANK THEY HOLD. The Turkey Hill roster prints
+    # its School Council -- the principal, two teachers and three parents -- and the
+    # principal's row inside it was banding the whole council under him. TJ, earlier:
+    # *"make sure to show the committees separately than the departments they run."*
+    for r in rows:
+        if re.search(r'council|advisory|committee', r['section_group'], re.I):
+            r['tier'] = TIER_STAFF
+
+    # A TITLE THAT NAMES ANOTHER BODY IS A DELEGATE'S SEAT. The Taxation Aid Committee
+    # seats the Assessors' Principal Clerk, the Council on Aging Director and the
+    # Assistant Town Manager, and read as ranks they made a principal clerk the head of
+    # the committee and two directors its deputies. Nobody sent by another body outranks
+    # anybody here; the committee's own head is whoever it calls Chair.
     strong = {(r['fy'], r['unit'], r['subunit']) for r in rows
               if r['tier'] == 0 and STRONG_HEAD.search(r['role'])}
     for r in rows:
@@ -884,16 +963,16 @@ def build():
                 and (r['fy'], r['unit'], r['subunit']) in strong:
             r['tier'] = 1
 
-    # A GROUPING WITH ONE VALUE IS A HEADING THAT SAYS NOTHING. `Elected` written over
-    # every member of an elected board, `Appointed` over every member of an appointed
-    # one -- 191 unit-years of it. The division is real where a body holds both; where
-    # it does not, it is a line of type between the reader and the names.
+    # A GROUPING IS KEPT ONLY WHERE IT DIVIDES A BAND. `Elected` written over every
+    # member of an elected board, `Administration` over a Police Chief who is the only
+    # person in his band -- a line of type between the reader and the names. Per BAND
+    # rather than per body, which is what keeps `Career` and `Call` beside each other at
+    # every rank of the Fire Department while the Chief above them stands ungrouped.
     spread = collections.defaultdict(set)
     for r in rows:
-        if r['tier'] == TIER_STAFF:          # the staff band is the only one grouped
-            spread[(r['fy'], r['unit'], r['subunit'])].add(r['section_group'])
+        spread[(r['fy'], r['unit'], r['subunit'], r['tier'])].add(r['section_group'])
     for r in rows:
-        if len(spread[(r['fy'], r['unit'], r['subunit'])]) <= 1:
+        if len(spread[(r['fy'], r['unit'], r['subunit'], r['tier'])]) <= 1:
             r['section_group'] = ''
     seen, uniq = set(), []
     for r in rows:

@@ -97,13 +97,16 @@ export function OrgCharts() {
       // department info?! ... we should group by those."* We do, on every roster row —
       // the block heading the name was printed under. `section_group` is that heading
       // normalised; `section` is what the page actually said and stays on the row.
-      // THE SECTION GROUPS THE STAFF, NEVER THE HEADS. TJ: *"For the police depatment,
+      // GROUPED WHERE THE GROUPING DIVIDES THE BAND, and the builder has already
+      // blanked a heading that would stand alone over a whole band — so the Police
+      // Chief's printed `Administration` does not become a heading of one, while the
+      // Fire Department keeps `Career` and `Call` beside each other at every rank. TJ: *"For the police depatment,
       // you are putting the police chief under open shift roles and admins. thats just
       // awkward. You should recognize how this hierarchy works right? I think it's
       // pretty clear in their titles."* It is: the Chief's printed section is
       // `Administration`, which is where the roster sets his desk, not a rank. Above the
       // staff band the title IS the structure, so those bands render as a plain list.
-      const sg = t === '3' ? (r.section_group || '') : ''
+      const sg = r.section_group || ''
       if (!groups.has(sg)) groups.set(sg, [])
       groups.get(sg)!.push(r)
     }
@@ -261,7 +264,12 @@ export function OrgCharts() {
                             {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
                           </span>
                           <span className="ml-auto text-right text-[12px] shrink-0"
-                            style={{ color: 'var(--text-muted)' }}>{r.role}</span>
+                            style={{ color: 'var(--text-muted)' }}>
+                            {/* `board seat` and `officer` are what the listing calls a
+                                row when it prints no title. Repeating it beside every
+                                name is a column of one word. */}
+                            {r.role === 'board seat' || r.role === 'officer' ? '' : r.role}
+                          </span>
                         </li>
                       ))}
                     </ul>

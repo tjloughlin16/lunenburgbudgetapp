@@ -78,6 +78,12 @@ def check(rows, want_unit=None, want_fy=None):
 
         if len(people) >= 3 and not heads:
             out['HEADLESS'].append('%-58s %d people, nobody at the top' % (where, len(people)))
+        # A BODY HAS ONE CHAIR. Two means a mid-year change the reports print both
+        # sides of -- or a chair read off a page the contents page attributed to the
+        # wrong body, which is the likelier of the two and the reason this is checked.
+        chairs = {h['person'] for h in rs if re.search(r'^chair', h['role'], re.I)}
+        if len(chairs) > 1:
+            out['TWO-CHAIRS'].append('%-58s %s' % (where, ', '.join(sorted(chairs))[:70]))
         if len(heads) > 3:
             out['MANY-HEADS'].append('%-58s %d in the top band: %s'
                                      % (where, len(heads),
@@ -90,11 +96,15 @@ def check(rows, want_unit=None, want_fy=None):
             p = r['person'].strip()
             if (HEADISH.search(p) or SENTENCE.search(p)) and len(p.split()) <= 5:
                 out['NOT-A-PERSON'].append('%-58s %-28s role=%s' % (where, p[:28], r['role'][:24]))
-        staff = [r for r in rs if r['tier'] == '3']
-        groups = {r['section_group'] for r in staff}
-        if len(staff) >= 4 and len(groups) == 1 and groups != {''}:
-            out['DEAD-GROUP'].append('%-58s every one of %d under %r'
-                                     % (where, len(staff), list(groups)[0]))
+        # A BAND IS GROUPED ONLY IF THE GROUPING DIVIDES IT. One heading over a whole
+        # band is a line of type between the reader and the names, and the page applies
+        # the same rule -- so the check has to be per BAND, not per unit-year.
+        for t in {r['tier'] for r in rs}:
+            band = [r for r in rs if r['tier'] == t]
+            groups = {r['section_group'] for r in band}
+            if len(band) >= 4 and len(groups) == 1 and groups != {''}:
+                out['DEAD-GROUP'].append('%-58s band %s: every one of %d under %r'
+                                         % (where, t, len(band), list(groups)[0]))
         n0 = sum(1 for r in rs if not r['role'].strip() or r['role'] in ('board seat',
                                                                         'officer'))
         if n0 and n0 == len(rs) and len(rs) >= 3:
@@ -114,7 +124,7 @@ def check(rows, want_unit=None, want_fy=None):
     return out
 
 
-ORDER = ['NOT-A-PERSON', 'TWIN-UNIT', 'HEADLESS', 'MANY-HEADS', 'DOUBLED',
+ORDER = ['NOT-A-PERSON', 'TWIN-UNIT', 'TWO-CHAIRS', 'HEADLESS', 'MANY-HEADS', 'DOUBLED',
          'DEAD-GROUP', 'NO-ROLE']
 
 
