@@ -22,12 +22,22 @@ import { ReportShell, Body, Grain, H2, Stat } from '../components/report'
 
 type Row = {
   fy: string; unit: string; unit_kind: string; subunit: string; section: string
-  role: string; person: string; status: string; source: string
+  role: string; person: string; status: string; source: string; tier: string
 }
 type Unit = {
   unit: string; kind: string; rows: number; years: string[]; subunits: string[]
 }
 type Payload = { years: string[]; units: Unit[]; rows: Row[] }
+
+// THE BANDS ARE OURS AND THE RANKS ARE THE TOWN'S. `Chief`, `Deputy Chief`, `Captain`,
+// `Lieutenant`, `Sergeant` are printed beside the names; sorting them into four levels is
+// our reading, and nothing published says who reports to whom — which is why these are
+// called bands and drawn as indentation rather than as a tree with lines in it.
+const BAND: Record<string, string> = {
+  '0': 'Heads the body', '1': 'Deputy and assistant',
+  '2': 'Supervisors and ranked posts', '3': 'Staff, seats and everyone else',
+}
+const INSET: Record<string, number> = { '0': 0, '1': 14, '2': 28, '3': 42 }
 
 const KIND_LABEL: Record<string, string> = {
   department: 'Department', board: 'Board or committee',
@@ -63,23 +73,37 @@ export function OrgCharts() {
       && (!sub || r.subunit === sub)),
     [d, unit, shownFy, sub])
 
-  // ONE BLOCK PER BUILDING, and the section carried on the row rather than as its own
-  // heading. Grouping on section as well produced blocks of ONE -- "Lunenburg High School
-  // · Athletic Director" with a single name under it -- because `grade_or_dept` is as fine
-  // as `Grade 3` and `Athletic Secretary`. The building is the org unit; the section is an
-  // attribute of the person's row.
-  const sections = useMemo(() => {
-    const g = new Map<string, Row[]>()
+  // ONE BLOCK PER BUILDING, AND BANDS INSIDE IT. TJ, 22 September 2026: *"i think the
+  // org chart needs some hierarchy. flat lists are hard to read, and i know there's
+  // hierarchy in here. ESP for the schools. but other depts have chiefs, captains, etc
+  // so it exists there too."*
+  //
+  // The section stays on the row rather than becoming a heading of its own. Grouping on
+  // it as well produced blocks of ONE — "Lunenburg High School · Athletic Director" with
+  // a single name under it — because `grade_or_dept` is as fine as `Grade 3`.
+  const blocks = useMemo(() => {
+    const g = new Map<string, Map<string, Row[]>>()
     for (const r of rows) {
       const k = r.subunit || ''
-      if (!g.has(k)) g.set(k, [])
-      g.get(k)!.push(r)
+      if (!g.has(k)) g.set(k, new Map())
+      const bands = g.get(k)!
+      const t = r.tier || '3'
+      if (!bands.has(t)) bands.set(t, [])
+      bands.get(t)!.push(r)
     }
-    for (const rs of g.values()) {
-      rs.sort((a, b) => (a.section + a.role + a.person)
-        .localeCompare(b.section + b.role + b.person))
+    for (const bands of g.values()) {
+      for (const rs of bands.values()) {
+        rs.sort((a, b) => (a.role + a.section + a.person)
+          .localeCompare(b.role + b.section + b.person))
+      }
     }
-    return [...g.entries()].sort((a, b) => b[1].length - a[1].length)
+    // The district's own offices carry no building, so their block sorts FIRST rather
+    // than by size: a superintendent above four schools is the shape of the thing.
+    return [...g.entries()]
+      .map(([k, bands]) => [k, [...bands.entries()].sort()] as const)
+      .sort((a, b) => (a[0] ? 1 : 0) - (b[0] ? 1 : 0)
+        || b[1].reduce((n, x) => n + x[1].length, 0)
+         - a[1].reduce((n, x) => n + x[1].length, 0))
   }, [rows])
 
   if (!d) return null
@@ -154,7 +178,10 @@ export function OrgCharts() {
       </div>
 
       <Grain>
-        PEOPLE AND POSTS, kept apart. A name is somebody the town printed in that role that
+        FOUR BANDS, and they are a reading of the ranks the town prints rather than a
+        reporting line. Nobody publishes who reports to whom, so a Business Manager and a
+        Principal both sit in the top band and the page does not claim one is above the
+        other. PEOPLE AND POSTS, kept apart. A name is somebody the town printed in that role that
         year. A POST is an establishment position a department states and never says who
         fills — the DPW and the Assessing office publish that way. A roster is a point in
         time and undated within its year, so nobody here can be dated more precisely than
@@ -163,24 +190,45 @@ export function OrgCharts() {
 
       {rows.length === 0 ? (
         <Body>Nothing is published for {unit} in FY{shownFy}.</Body>
-      ) : sections.map(([name, rs]) => (
-        <section key={name || '_'} className="mt-6">
+      ) : blocks.map(([name, bands]) => (
+        <section key={name || '_'} className="mt-7">
           {name ? <H2 id={`s-${name}`}>{name}</H2> : null}
-          <ul className="list-none p-0 m-0 grid gap-x-8 gap-y-1"
-            style={{ gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))' }}>
-            {rs.map((r, i) => (
-              <li key={i} className="text-[13.5px] flex gap-2 items-baseline py-0.5"
-                style={{ borderBottom: '1px solid var(--grid)' }}>
-                <span style={{ color: r.person ? 'var(--text-primary)' : 'var(--text-muted)' }}>
-                  {r.person || (r.status === 'vacant' ? 'vacant' : '— unnamed post —')}
-                </span>
-                <span className="ml-auto text-right text-[12px] shrink-0"
-                  style={{ color: 'var(--text-muted)' }}>
-                  {[r.role, r.section].filter(Boolean).join(' \u00b7 ')}
-                </span>
-              </li>
-            ))}
-          </ul>
+          {bands.map(([tier, rs]) => (
+            <div key={tier} className="mt-3"
+              style={{ marginLeft: INSET[tier] ?? 42 }}>
+              <div className="text-[11px] uppercase tracking-wide mb-1 flex items-center gap-2"
+                style={{ color: 'var(--text-muted)' }}>
+                <span style={{
+                  display: 'inline-block', width: 6, height: 6, borderRadius: 6,
+                  background: tier === '3' ? 'var(--grid)' : 'var(--series-1)',
+                }} />
+                {BAND[tier] ?? BAND['3']}
+                <span style={{ opacity: 0.7 }}>{rs.length}</span>
+              </div>
+              <ul className="list-none p-0 m-0 grid gap-x-8 gap-y-1"
+                style={{
+                  gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))',
+                  borderLeft: tier === '0' ? 'none' : '1px solid var(--grid)',
+                  paddingLeft: tier === '0' ? 0 : 10,
+                }}>
+                {rs.map((r, i) => (
+                  <li key={i} className="text-[13.5px] flex gap-2 items-baseline py-0.5"
+                    style={{ borderBottom: '1px solid var(--grid)' }}>
+                    <span style={{
+                      color: r.person ? 'var(--text-primary)' : 'var(--text-muted)',
+                      fontWeight: tier === '0' ? 600 : 400,
+                    }}>
+                      {r.person || (r.status === 'vacant' ? 'vacant' : '— unnamed post —')}
+                    </span>
+                    <span className="ml-auto text-right text-[12px] shrink-0"
+                      style={{ color: 'var(--text-muted)' }}>
+                      {[r.role, r.section].filter(Boolean).join(' \u00b7 ')}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </section>
       ))}
 

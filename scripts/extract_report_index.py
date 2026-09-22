@@ -50,8 +50,13 @@ NONE = re.compile(r'no\s+report', re.I)
 # Board 97`, `Fire Department aaaaaaaaaaaado, 86-88` -- a name, then leader dots the
 # scanner turns into letters, then the page numbers at the end of the line. Anchored to
 # the END so a figure inside a department's name cannot be read as its page.
-TAIL = re.compile(r'(\d{1,3})\s*[-\u2013\u2014]\s*(\d{1,3})\s*$')
-TAIL_ONE = re.compile(r'(\d{1,3})\s*$')
+# A FOUR-DIGIT YEAR IS NOT A THREE-DIGIT PAGE. `Michael J. Mackin 2014` ends in `014`
+# under `\d{1,3}$`, so every line of the APPOINTED OFFICIALS listing read as a contents
+# entry pointing at page 14 -- which is how FY2012 came back with 58 `departments` that
+# were people, and how the contents detector needed a contiguity rule to fence the
+# listing off. The lookbehind removes the cause rather than the symptom.
+TAIL = re.compile(r'(?<![\d\u2013\u2014-])(\d{1,3})\s*[-\u2013\u2014]\s*(\d{1,3})\s*$')
+TAIL_ONE = re.compile(r'(?<!\d)(\d{1,3})\s*$')
 WORDS2 = re.compile(r'[A-Za-z]{3,}')
 # The all-capitals group headings inside the contents, which are not departments.
 GROUP = re.compile(r'^[A-Z][A-Z &\'.,/-]{4,}$')
@@ -111,32 +116,33 @@ def _ref(t):
 
 
 def contents_pages(lines):
-    """The pages of the contents listing: where `Pages N-M` entries cluster."""
-    hits = collections.Counter(p for p, t in lines if _ref(t))
-    if not hits:
-        return []
-    # A CONTENTS PAGE IS DENSE AND NEAR THE FRONT, and it carries no money. Without the
-    # last two tests every budget table in the book qualified -- a column of figures ends
-    # in a number as surely as a contents entry does -- and FY2016 came back with 161
-    # `departments`.
-    money = collections.Counter()
+    """The pages of the contents listing: where page references cluster.
+
+    THREE POSITIVE TESTS, AND NO CONTIGUITY RULE. The old version took the first dense
+    page and everything adjacent to it, because the APPOINTED OFFICIALS listing a few
+    pages later was just as dense -- every post followed by its holders and their term
+    years. That rule cost FY2019 its whole second contents page (a blank page 6 sits
+    between the two halves), which is why the back of that book had no index at all and
+    eleven signatures could not be attributed.
+
+    The listing is no longer a problem, because `2014` is no longer read as page 14. So
+    a contents page is simply one that is DENSE in page references, near the front,
+    carries no money, and whose references are PLAUSIBLE PAGE NUMBERS -- 80% of them
+    inside the book. A burial list of ages and a Nashoba report of activity counts both
+    fail the density test; the officials listing fails the plausibility test.
+    """
+    npages = max(p for p, _ in lines)
+    vals, money = collections.defaultdict(list), collections.Counter()
     for p, t in lines:
         money[p] += t.count('$')
-    dense = sorted(p for p, n in hits.items()
-                   if n >= 8 and p <= 14 and money[p] <= 2)
-    if not dense:
-        return []
-    # CONTIGUOUS FROM THE FIRST DENSE PAGE. The APPOINTED OFFICIALS listing a few pages
-    # later is just as dense in trailing numbers -- every post is followed by its
-    # holders and their term-expiry years -- so `Faye Silva 2013` reads exactly like a
-    # contents entry. The contents is the run at the front; it does not resume.
-    run = [dense[0]]
-    for p in dense[1:]:
-        if p == run[-1] + 1:
-            run.append(p)
-        else:
-            break
-    return run
+        ref = _ref(t)
+        if ref == 'none':
+            vals[p].append(1)
+        elif ref:
+            vals[p].append(ref[0])
+    return [p for p in sorted(vals)
+            if len(vals[p]) >= 12 and p <= 16 and money[p] <= 2
+            and sum(1 for v in vals[p] if v <= npages) / len(vals[p]) >= 0.8]
 
 
 def entries(fy):
@@ -179,7 +185,12 @@ def entries(fy):
         # Public Works`. Same for a whole entry swallowed mid-line.
         name = re.sub(r'^(?:No\s+Report\s+)?Submitted\s+', '', name).strip()
         name = re.sub(r'\s+(?:No\s+Report\s+)?Submitted$', '', name).strip()
-        if not name or len(name) < 3 or GROUP.match(name):
+        # A DEPARTMENT PRINTED IN CAPITALS IS STILL A DEPARTMENT. `LUNENBURG PUBLIC
+        # SCHOOLS 111-134` and `TOWN MANAGER REPORT 18` were thrown away as group
+        # headings, which is why the EDUCATION block of several books had no index at
+        # all and every principal's signature fell outside every range. A group heading
+        # carries no page reference, and we only reach this line because one was found.
+        if not name or len(name) < 3:
             continue
         if b < a:                       # `Pages 44-43` -- the town's own transposition
             a, b = b, a
@@ -187,6 +198,44 @@ def entries(fy):
                         printed_from=a, printed_to=b,
                         pdf_from=a + off, pdf_to=b + off,
                         state='report', as_printed=whole[:160]))
+    return _extend_single(out, off)
+
+
+# A report that runs to the next one is not a ONE-PAGE report. How far to carry it before
+# calling the number a misread rather than a long report -- the longest range any contents
+# page states for itself is under thirty pages.
+MAX_RUN = 30
+
+
+def _extend_single(out, off):
+    """`Public Library 71` means the Library report BEGINS on 71, not that it is one page.
+
+    THIS WAS THE LARGEST SINGLE CAUSE OF UNATTRIBUTED SIGNATURES. Before FY2024 the
+    contents prints one number for most entries and a range for a few, and the extractor
+    read `Building Department 58` as pages 58-58. A department's report ends where the
+    next one starts, and the contents states that in the very next line -- so a signature
+    three pages into a six-page report fell outside every range in the book and was filed
+    under nothing.
+
+    ONLY WHERE THE CONTENTS RUNS IN PAGE ORDER. FY2011 and FY2012 print an ALPHABETICAL
+    index instead, where the next line is a different part of the book entirely, and
+    carrying an entry forward to it would invent a range. The order is measured, not
+    assumed.
+    """
+    rep = [r for r in out if r['state'] == 'report']
+    if len(rep) < 3:
+        return out
+    steps = [(rep[i + 1]['printed_from'] - rep[i]['printed_from']) for i in range(len(rep) - 1)]
+    if sum(1 for d in steps if d >= 0) / len(steps) < 0.7:
+        return out
+    for i, r in enumerate(rep[:-1]):
+        if r['printed_to'] != r['printed_from']:
+            continue                    # the contents stated a range; believe it
+        nxt = rep[i + 1]['printed_from']
+        end = nxt - 1
+        if r['printed_from'] < end <= r['printed_from'] + MAX_RUN:
+            r['printed_to'] = end
+            r['pdf_to'] = end + off
     return out
 
 

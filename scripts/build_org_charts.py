@@ -53,8 +53,52 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 DATA = os.path.join(ROOT, 'sources', 'data')
 OUT_CSV = os.path.join(DATA, 'org-chart.csv')
 OUT_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'org-charts.json')
-FIELDS = ['fy', 'unit', 'unit_kind', 'subunit', 'section', 'role', 'person',
+FIELDS = ['fy', 'unit', 'unit_kind', 'subunit', 'section', 'tier', 'role', 'person',
           'status', 'source']
+
+# ---------------------------------------------------------------------------
+# THE LADDER. A flat list of forty names is not an org chart, and the town prints the
+# hierarchy on every roster it publishes: Chief, Deputy Chief, Captain, Lieutenant,
+# Sergeant, Officer. TJ, 22 September 2026: *"i think the org chart needs some hierarchy.
+# flat lists are hard to read, and i know there's hierarchy in here. ESP for the schools.
+# but other depts have chiefs, captains, etc so it exists there too."*
+#
+# RULE 7 APPLIES TO THIS TABLE. The RANK is a fact -- the town printed it beside the name.
+# The ORDER of the ranks is our reading of them, and two of these are genuinely arguable:
+# a Business Manager and a Director of Facilities do not report to a Principal, and a
+# board Chair is first among equals rather than anybody's superior. So the page calls
+# these BANDS and not a reporting line, because nothing published says who reports to
+# whom.
+#
+# ORDER MATTERS AND IS THE WHOLE TRICK: `Deputy Chief` must be tested before `Chief` and
+# `Assistant Principal` before `Principal`, or every deputy in the town becomes a head.
+TIERS = [
+    (1, re.compile(r'\bdeputy|\bassistant\b|\basst\.?\b|\bvice[- ]?chair|\bcapt\.?\b'
+                   r'|\bcaptain\b|\binterim\b|\bassoc(?:iate)?\b', re.I)),
+    (0, re.compile(r'\bsuperintendent\b|\btown manager\b|\bchief\b|\bprincipal\b'
+                   r'|\bdirector\b|\bchair(?:man|person|woman)?\b|\blibrarian\b'
+                   r'|\btown clerk\b|\btreasurer\b|\bcollector\b|\bcommissioner\b'
+                   r'|\badministrator\b', re.I)),
+    (2, re.compile(r'\blieutenant\b|\blt\.?\b|\bsergeant\b|\bsgt\.?\b'
+                   r'|\bdepartment head\b|\bdept\.? head\b|\bsupervisor\b'
+                   r'|\bmanager\b|\bcoordinator\b|\bforeman\b|\bhead\b', re.I)),
+]
+TIER_STAFF = 3
+
+
+def tier_of(role, kind):
+    """Which band a printed role sits in. 0 head, 1 deputy, 2 supervisor, 3 everyone else.
+
+    A BOARD SEAT IS NOT THE BOTTOM OF ANYTHING, but it has to sort somewhere, and putting
+    members below the chair is the way every set of minutes in this town reads.
+    """
+    t = (role or '').strip()
+    if not t:
+        return TIER_STAFF
+    for band, pat in TIERS:
+        if pat.search(t):
+            return band
+    return TIER_STAFF
 
 # THE PROFILE PAGE IS NOT A BOARD. `TOTAL AREA- 26.63 MILES` and `Follow us on Facebook`
 # come off the town's own statistics page, which sits inside the front matter the
@@ -152,6 +196,7 @@ def _rows_rosters():
     return out
 
 
+MONTY = 'Montachusett Regional Vocational Technical School'
 SCHOOL = {'primary': 'Lunenburg Primary School', 'turkey-hill': 'Turkey Hill Elementary School',
           'middle': 'Lunenburg Middle School', 'high': 'Lunenburg High School',
           'central-office': 'School Central Office', 'passios': 'T.C. Passios Elementary School',
@@ -222,8 +267,143 @@ def _rows_prose():
     return out
 
 
+# ---------------------------------------------------------------------------
+# THE FIFTH SOURCE: WHO SIGNED THE REPORT.
+#
+# Most bodies in this town publish no roster at all. The Library, the Town Clerk, the
+# Sewer Commission, Conservation, Veterans' Services -- fifteen years of reports and not
+# one list of staff between them. What every one of them DOES print is the block that
+# ends the report:
+#
+#     Respectfully submitted,
+#     Muir Haman, Director, Lunenburg Public Library
+#
+# That is the head of the body, named, dated to the year, in the town's own words. It is
+# the top layer of the chart for about thirty bodies that otherwise have nobody in it at
+# all, and `extract_report_signatures.py` has 182 of them across thirteen years.
+#
+# THE NAMES NEED NORMALISING AND THAT IS OCR WORK, NOT INTERPRETATION. Every key below
+# is a spelling of a body the contents page already names somewhere else in the same
+# archive -- `LUNENBURG PUBLIC SCHOOLS` in capitals, `Lunenburg Public Library` with the
+# town in front, `Veteran's Agent` where a later year says `Veterans' Services`.
+SIG_SCHOOL = {
+    'primary school': 'Lunenburg Primary School',
+    'lunenburg primary school': 'Lunenburg Primary School',
+    'turkey hill elementary': 'Turkey Hill Elementary School',
+    'turkey hill elementary school': 'Turkey Hill Elementary School',
+    'turkey hill middle school': 'Turkey Hill Elementary School',
+    'middle school': 'Lunenburg Middle School',
+    'lunenburg middle school': 'Lunenburg Middle School',
+    'high school': 'Lunenburg High School',
+    'lunenburg high school': 'Lunenburg High School',
+}
+# The district's own offices. They are not buildings, and the annual report files each
+# under its own heading -- so they become SECTIONS of the central office rather than
+# schools, which is what they are.
+SIG_CENTRAL = {
+    'superintendent message': 'Superintendent',
+    "superintendent's message": 'Superintendent',
+    'school facilities': 'Facilities and Grounds',
+    'special services': 'Special Services',
+    'special services department': 'Special Services',
+    'review special services department': 'Special Services',
+    'school lunch program': 'Food Service',
+    'lunenburg school food service': 'Food Service',
+    'pd update lunenburg school food service': 'Food Service',
+    'teaching & learning models and pd update': 'Teaching and Learning',
+    'teaching & learning models and': 'Teaching and Learning',
+}
+SIG_ALIAS = {
+    'lunenburg public schools': 'Lunenburg Public Schools',
+    'town manager': 'Town Manager', 'town manager report': 'Town Manager',
+    'report of the town manager': 'Town Manager',
+    'town manager report-heather r. lemieux': 'Town Manager',
+    'public library': 'Public Library', 'lunenburg public library': 'Public Library',
+    'public library 67,': 'Public Library',
+    'housing authority submitted lunenburg public library': 'Public Library',
+    "veteran's agent": "Veterans' Services", 'veterans services': "Veterans' Services",
+    "veterans' services": "Veterans' Services",
+    'police department **•': 'Police Department',
+    'committee submitted zoning board of appeals': 'Zoning Board of Appeals',
+    'ad hoc open space advisory committee to the planning board':
+        'Ad Hoc Open Space Advisory Committee',
+    'montachusett regional vocational': MONTY,
+    'montachusett regional vocational technical school': MONTY,
+    'montachusett regional vocational technical school district': MONTY,
+    'montachusett regional vocational technical school ooooooooooo a o': MONTY,
+    'technical school': MONTY,
+}
+# A TOWN MEETING IS NOT A DEPARTMENT. These are contents entries the signature extractor
+# attributes a signing block to because the block sits on their pages -- the moderator's
+# name at the end of a warrant, a line of an election return. Dropped rather than drawn.
+SIG_DROP = re.compile(r'town meeting|town election|collection of taxes|omnibus|'
+                      r'revenue funds|capital projects|vital records|excerpts', re.I)
+
+def _rows_signatures():
+    """The head of every body that signs its own report."""
+    p = os.path.join(DATA, 'report-signatures.csv')
+    out = []
+    if not os.path.exists(p):
+        return out
+    for r in csv.DictReader(open(p, encoding='utf-8')):
+        raw = re.sub(r'\s+', ' ', (r['department'] or '')).strip()
+        # The orphaned `Submitted` of the PREVIOUS contents entry lands at the front of
+        # the next name often enough to be worth cutting here as well as there.
+        raw = re.sub(r'^.*\bSubmitted\b\s*', '', raw).strip() or raw
+        if not raw or SIG_DROP.search(raw):
+            continue
+        key = raw.lower()
+        if key in SIG_SCHOOL:
+            unit, kind, sub, sect = ('Lunenburg Public Schools', 'school',
+                                     SIG_SCHOOL[key], '')
+        elif key in SIG_CENTRAL:
+            unit, kind, sub, sect = ('Lunenburg Public Schools', 'school',
+                                     'School Central Office', SIG_CENTRAL[key])
+        else:
+            unit = SIG_ALIAS.get(key, raw.title() if raw.isupper() else raw)
+            if unit == 'Lunenburg Public Schools':
+                kind, sub, sect = 'school', '', ''
+            elif unit == MONTY:
+                kind, sub, sect = 'school', '', ''
+            elif re.search(r'commission|committee|board|authority|council', unit, re.I):
+                kind, sub, sect = 'board', '', ''
+            else:
+                kind, sub, sect = 'department', '', ''
+        out.append(dict(fy=r['fy'], unit=canon_unit(unit, kind), unit_kind=kind,
+                        subunit=sub, section=sect,
+                        # THE TITLE IS THE TOWN'S, NOT OURS. Where the block prints no
+                        # title the person still signed the report, and `signed the
+                        # report` is the only thing we can say about them.
+                        # `nham, Superintendent` -- the scanner cuts the name in half
+                        # and the tail of it lands in front of the title.
+                        role=re.sub(r'^[a-z]{2,12},\s*', '',
+                                    (r['title'] or 'signed the report').strip()),
+                        person=r['person'].strip(), status='filled',
+                        source='report signature p%s' % r['page']))
+    return out
+
+
 KIND_SUFFIX = {'department': 'staff', 'board': 'board', 'officer': 'appointed post',
                'school': 'schools'}
+
+
+def _one_spelling(rows):
+    """One spelling per body, chosen by weight of rows rather than by a table.
+
+    Four sources name the same bodies and none of them agrees on capitals: the officials
+    listing is read through `.title()` so it says `Board Of Assessors`, the contents page
+    says `Board of Assessors`, and the two arrived as two bodies sitting next to each
+    other in the dropdown. Case is not a distinction the town draws, so the most-used
+    spelling wins and every row takes it. `_disambiguate` still splits on KIND afterwards,
+    which is a real distinction and survives this.
+    """
+    weight = collections.defaultdict(collections.Counter)
+    for r in rows:
+        weight[r['unit'].lower()][r['unit']] += 1
+    best = {k: c.most_common(1)[0][0] for k, c in weight.items()}
+    for r in rows:
+        r['unit'] = best[r['unit'].lower()]
+    return rows
 
 
 def _disambiguate(rows):
@@ -247,8 +427,14 @@ def _disambiguate(rows):
 
 def build():
     rows, bad = _rows_officials()
-    rows += _rows_rosters() + _rows_schools() + _rows_prose()
-    rows = _disambiguate(rows)
+    rows += _rows_rosters() + _rows_schools() + _rows_prose() + _rows_signatures()
+    for r in rows:
+        # AN APPOINTED POST IS ITS OWN HEAD. A one-post unit like the Dam Keeper has
+        # nobody under it, and banding it with the staff of a forty-person department
+        # would read as a rank it does not have.
+        r['tier'] = 0 if r['unit_kind'] == 'officer' else tier_of(r['role'],
+                                                                 r['unit_kind'])
+    rows = _disambiguate(_one_spelling(rows))
     seen, uniq = set(), []
     for r in rows:
         k = (r['fy'], r['unit'], r['subunit'], r['section'], r['role'], r['person'],
@@ -258,7 +444,7 @@ def build():
         seen.add(k)
         uniq.append(r)
     uniq.sort(key=lambda r: (r['unit'].lower(), r['fy'], r['subunit'].lower(),
-                             r['section'].lower(), r['role'].lower(),
+                             r['tier'], r['section'].lower(), r['role'].lower(),
                              r['person'].lower()))
     return uniq, bad
 
