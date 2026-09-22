@@ -212,23 +212,24 @@ def conclusions_for(data, rows):
         lede='Weight times excess growth, not weight alone: a small line growing fast can '
              'push the total harder than a huge line growing slowly.',
         detail='Employee benefits and reserves are %s of the voted budget and grew %s a '
-               'year, which adds %s to the total’s growth. The schools are %s of it and '
-               'grew more slowly, adding %s. The smaller line does more of the pushing, '
-               'and seven tenths of it is group health insurance.'
-               % (pct(top['share']), pct(top['rate']), pct(top['pull'], 2),
-                  pct(schools['share']), pct(schools['pull'], 2)),
+               'year, which is %s a year more than the levy cap would carry. The schools '
+               'are %s of it and grew more slowly, at %s a year above the cap. The '
+               'smaller line does more of the pushing, and seven tenths of it is group '
+               'health insurance.'
+               % (pct(top['share']), pct(top['rate']), usd(top['excess']),
+                  pct(schools['share']), usd(schools['excess'])),
         figures={'tshare': figure(top['share'], pct(top['share'])),
                  'trate': figure(top['rate'], pct(top['rate']), 'a year'),
-                 'tpull': figure(top['pull'], pct(top['pull'], 2),
-                                 'of the budget’s growth, from employee benefits'),
+                 'tpull': figure(top['excess'], usd(top['excess']),
+                                 'a year above the cap, from employee benefits'),
                  'sshare': figure(schools['share'], pct(schools['share'])),
-                 'spull': figure(schools['pull'], pct(schools['pull'], 2),
-                                 'of total growth')},
+                 'spull': figure(schools['excess'], usd(schools['excess']),
+                                 'a year above the cap, from the schools')},
         figure='tpull',
         kind='measured',
         bearing='sizes',
-        basis='Each group’s share of the FY%d total times how far its growth exceeds the '
-              'levy cap.' % last,
+        basis='Each group’s own FY%d figure times how far its growth exceeds the levy '
+              'cap — dollars a year, not an index.' % last,
         not_shown='How much of the health insurance is school staff. The budget does not split it.',
         so_what='Ranking departments by size points at the wrong one to ask questions about.',
         allow=(),
@@ -306,7 +307,7 @@ def conclusions_for(data, rows):
 
 def md_table(rows, ys):
     head = '| department | ' + ' | '.join('FY%d' % y for y in ys) + \
-           ' | a year | share | pull |\n|---|' + '---:|' * (len(ys) + 3) + '\n'
+           ' | a year | share | above the cap |\n|---|' + '---:|' * (len(ys) + 3) + '\n'
     body = ''
     for r in rows:
         cells = [usd(r['series'][y]) if r['series'].get(y) else '—' for y in ys]
@@ -314,7 +315,7 @@ def md_table(rows, ys):
             r['name'], ' | '.join(cells),
             pct(r['rate']) if r['rate'] is not None else '—',
             pct(r['share']) if r['share'] is not None else '—',
-('%+.2f' % (r['pull'] + 0.0)) if r['pull'] is not None else '—')
+(('+' if r['excess'] >= 0 else '\u2212') + usd(abs(r['excess'])) + '/yr') if r.get('excess') is not None else '—')
     return head + body
 
 
@@ -347,7 +348,12 @@ def render_main(data, rows):
              'the same budget.\n'
              % (big['name'], small['name'],
                 format(int(round(big['last'] / small['last'])), ',d')))
-    t.append('\n## Which departments move the total\n')
+    t.append('\n## How each department is growing\n')
+    t.append('\n![Twelve small panels, one per department, each showing its voted budget '
+             'across FY%d, FY%d and FY%d on its own vertical scale. Eleven rise; only '
+             'Maturing Debt & Interest falls.](charts/town-budgets-trends.svg)\n'
+             % (ys[0], ys[1], ys[2]))
+    t.append('\n## Which departments outgrow the levy cap\n')
     t.append('\n![Diverging bars, one per department, ranked by how much of the budget’s '
              'growth each accounts for. %s runs furthest right at %+.2f, ahead of Schools '
              'at %+.2f; Maturing Debt & Interest is the only bar on the left, at %+.2f.]'
@@ -356,10 +362,11 @@ def render_main(data, rows):
                 next(r for r in rows if r['slug'] == 'maturing-debt')['pull']))
     t.append('\n## Every department, every measure\n')
     t.append('\n%s\n' % md_table(rows, ys))
-    t.append('\n`pull` is a department’s share of the budget times how far its growth '
-             'exceeds the %s the levy may rise by, in points of total growth. It is the '
-             'only ranking on this page: neither size nor rate means anything alone.\n'
-             % pct(D.LEVY_CAP))
+    t.append('\n**above the cap** is the department’s own money times how far its growth '
+             'exceeds the %s the levy may rise by — dollars a year, and the ranking this '
+             'page uses, because neither size nor rate means anything alone. The twelve '
+             'net to %s a year.\n'
+             % (pct(D.LEVY_CAP), usd(sum(r['excess'] or 0 for r in rows))))
     yrs = sorted(totals)
     t.append('\n## The voted total, FY%d to FY%d\n' % (yrs[0], yrs[-1]))
     t.append('\n![One column per fiscal year from FY%d to FY%d, rising from %s to %s. '

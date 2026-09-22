@@ -2,6 +2,7 @@
  "about": "What Town Meeting voted for every town department, and which departments move the total.",
  "biggest": {
   "change": 1730183.0,
+  "excess": 284305.8260677269,
   "first": 23397371.0,
   "last": 25127554.0,
   "name": "Schools",
@@ -109,16 +110,16 @@
    "so_what": "Size and growth are different questions and the school line answers them differently."
   },
   {
-   "basis": "Each group’s share of the FY2025 total times how far its growth exceeds the levy cap.",
+   "basis": "Each group’s own FY2025 figure times how far its growth exceeds the levy cap — dollars a year, not an index.",
    "bearing": "sizes",
    "claim": "Employee benefits move the total more than the schools do",
-   "detail": "Weight times excess growth, not weight alone: a small line growing fast can push the total harder than a huge line growing slowly. Employee benefits and reserves are 9.8% of the voted budget and grew 12.7% a year, which adds 1.00% to the total’s growth. The schools are 57.1% of it and grew more slowly, adding 0.65%. The smaller line does more of the pushing, and seven tenths of it is group health insurance.",
+   "detail": "Weight times excess growth, not weight alone: a small line growing fast can push the total harder than a huge line growing slowly. Employee benefits and reserves are 9.8% of the voted budget and grew 12.7% a year, which is $438,870 a year more than the levy cap would carry. The schools are 57.1% of it and grew more slowly, at $284,306 a year above the cap. The smaller line does more of the pushing, and seven tenths of it is group health insurance.",
    "figure": "tpull",
    "figures": {
     "spull": {
-     "text": "0.65%",
-     "unit": "of total growth",
-     "value": 0.6457922292972955
+     "text": "$284,306",
+     "unit": "a year above the cap, from the schools",
+     "value": 284305.8260677269
     },
     "sshare": {
      "text": "57.1%",
@@ -126,9 +127,9 @@
      "value": 57.076491674083954
     },
     "tpull": {
-     "text": "1.00%",
-     "unit": "of the budget’s growth, from employee benefits",
-     "value": 0.996880930778496
+     "text": "$438,870",
+     "unit": "a year above the cap, from employee benefits",
+     "value": 438870.34197444736
     },
     "trate": {
      "text": "12.7%",
@@ -241,6 +242,7 @@
  "departments": [
   {
    "change": 914411.8999999999,
+   "excess": 438870.34197444736,
    "first": 3378711.07,
    "last": 4293122.97,
    "name": "Employee benefits & reserves",
@@ -256,6 +258,7 @@
   },
   {
    "change": 1730183.0,
+   "excess": 284305.8260677269,
    "first": 23397371.0,
    "last": 25127554.0,
    "name": "Schools",
@@ -271,6 +274,7 @@
   },
   {
    "change": 385472.25,
+   "excess": 168339.80699548218,
    "first": 1792491.65,
    "last": 2177963.9,
    "name": "General Government",
@@ -286,6 +290,7 @@
   },
   {
    "change": 404362.1099999994,
+   "excess": 100329.51848259603,
    "first": 4239354.99,
    "last": 4643717.1,
    "name": "Protection",
@@ -301,6 +306,7 @@
   },
   {
    "change": 157141.0,
+   "excess": 94340.40662314523,
    "first": 312634.0,
    "last": 469775.0,
    "name": "Solid Waste & Recycling",
@@ -316,6 +322,7 @@
   },
   {
    "change": 138145.08999999997,
+   "excess": 51396.06816531321,
    "first": 884566.03,
    "last": 1022711.12,
    "name": "Facilities & Grounds",
@@ -331,6 +338,7 @@
   },
   {
    "change": 90905.85000000003,
+   "excess": 36960.84730677471,
    "first": 492983.92,
    "last": 583889.77,
    "name": "Library",
@@ -346,6 +354,7 @@
   },
   {
    "change": 46493.919999999984,
+   "excess": 17409.484062218933,
    "first": 294404.08,
    "last": 340898.0,
    "name": "Assistance",
@@ -361,6 +370,7 @@
   },
   {
    "change": 123832.15999999968,
+   "excess": 8994.258544365237,
    "first": 2101444.93,
    "last": 2225277.09,
    "name": "Public Works",
@@ -376,6 +386,7 @@
   },
   {
    "change": 18559.14,
+   "excess": 7597.444303333048,
    "first": 99259.6,
    "last": 117818.74,
    "name": "Health & Sanitation",
@@ -391,6 +402,7 @@
   },
   {
    "change": 2500.0,
+   "excess": -727.5341047167449,
    "first": 77800.0,
    "last": 80300.0,
    "name": "Central Purchasing",
@@ -406,6 +418,7 @@
   },
   {
    "change": -1556401.8499999996,
+   "excess": -636276.6520567131,
    "first": 4497723.35,
    "last": 2941321.5,
    "name": "Maturing Debt & Interest",
@@ -486,6 +499,7 @@
  },
  "smallest": {
   "change": 2500.0,
+  "excess": -727.5341047167449,
   "first": 77800.0,
   "last": 80300.0,
   "name": "Central Purchasing",

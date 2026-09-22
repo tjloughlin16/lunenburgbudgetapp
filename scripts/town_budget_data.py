@@ -186,11 +186,23 @@ def rate(a, b, years):
 def table(data):
     """One row per department: the three voted years, its rate, its share and its PULL.
 
-    PULL is rule 4 and it is the only ranking this page uses: a department's share of the
-    budget times how far its growth exceeds the levy cap, in points of total growth. It is
-    the difference between `the schools are the biggest line` (true, and not the finding)
-    and `insurance and retirement moves the total more than the schools do` (also true,
-    and the finding).
+    PULL is rule 4 and it is the ranking this page uses: a department's share of the budget
+    times how far its growth exceeds the levy cap. It is the difference between `the
+    schools are the biggest line` (true, and not the finding) and `employee benefits move
+    the total more than the schools do` (also true, and the finding).
+
+    BUT IT IS AN INDEX, NOT A DECOMPOSITION, and the page said otherwise for a day. TJ:
+    *"'which departments move the total' i dont know what units these are."* He was right
+    to ask and the honest answer was worse than a missing label: the twelve pulls sum to
+    +1.30 while the budget exceeds the cap by +0.41, because the weight is the END-YEAR
+    share and the rate is compound. Calling the unit `points of total growth` claimed an
+    additivity that does not hold, which is rule 13's shape -- a derived quantity quoted as
+    if it were the thing.
+
+    So `excess` is carried beside it and is what the chart now draws: the department's own
+    money times how far its growth exceeds the cap, in DOLLARS A YEAR. Same ranking, a unit
+    a resident can check, and it sums to something real -- what the town spends above what
+    the levy alone would carry.
     """
     ys = data['detail_years']
     first, last = ys[0], ys[-1]
@@ -206,6 +218,7 @@ def table(data):
             slug=slug, name=name, series=series, first=a, last=b,
             change=(b - a) if (a and b) else None,
             rate=g, share=share,
-            pull=(share * (g - LEVY_CAP) / 100) if (g is not None and share) else None))
-    rows.sort(key=lambda r: (r['pull'] is None, -(r['pull'] or 0)))
+            pull=(share * (g - LEVY_CAP) / 100) if (g is not None and share) else None,
+            excess=(b * (g - LEVY_CAP) / 100) if (g is not None and b) else None))
+    rows.sort(key=lambda r: (r['excess'] is None, -(r['excess'] or 0)))
     return rows

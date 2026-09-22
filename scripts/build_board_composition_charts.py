@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""The chart for the town's paid staff: the one department that states its strength.
+"""Two charts for board composition: where the seats are, and how they move.
 
-    python3 scripts/build_town_personnel_charts.py
-    python3 scripts/build_town_personnel_charts.py --check
+    python3 scripts/build_board_composition_charts.py
+    python3 scripts/build_board_composition_charts.py --check
 
-Writes `sources/analyses/charts/town-personnel-*.svg`.
+Writes `sources/analyses/charts/board-composition-*.svg`.
 
 TJ asked for these twice -- *"Pie charts of which departments have the most personel or
 least. Biggest and smallest elected boards"* and *"line charts of personel over time per
@@ -42,7 +42,7 @@ from build_stabilization_charts import (  # noqa: E402
     AXIS, FONT, GRID, INK, MUTED, PAD, SECOND, SURFACE, esc,
 )
 
-PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'town-personnel.json')
+PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'board-composition.json')
 OUT = os.path.join(ROOT, 'sources', 'analyses', 'charts')
 
 ELECTED = '#184f95'
@@ -67,6 +67,50 @@ def svg(w, h, body, title, subtitle):
 '''
 
 
+def chart_where(d):
+    """A pie of the town's seats by body, with the long tail grouped."""
+    rows = sorted(d['sizes'], key=lambda r: -r['people'])
+    top = rows[:10]
+    tail = rows[10:]
+    parts = [(r['post'], r['people']) for r in top]
+    if tail:
+        parts.append(('%d smaller bodies and single-holder posts' % len(tail),
+                      sum(r['people'] for r in tail)))
+    total = sum(n for _p, n in parts)
+    W, H = 720, 400
+    cx, cy, R = 210.0, 236.0, 140.0
+    b, ang = [], -90.0
+    for i, (_name, n) in enumerate(parts):
+        frac = n / total
+        sweep = frac * 360.0
+        a0, a1 = math.radians(ang), math.radians(ang + sweep)
+        x0, y0 = cx + R * math.cos(a0), cy + R * math.sin(a0)
+        x1, y1 = cx + R * math.cos(a1), cy + R * math.sin(a1)
+        big = 1 if sweep > 180 else 0
+        b.append(f'<path d="M{cx:.1f},{cy:.1f} L{x0:.1f},{y0:.1f} '
+                 f'A{R},{R} 0 {big},1 {x1:.1f},{y1:.1f} Z" fill="{SLICES[i % 11]}" '
+                 f'stroke="{SURFACE}" stroke-width="2"/>')
+        if frac >= 0.05:
+            am = math.radians(ang + sweep / 2)
+            lx, ly = cx + R * 0.64 * math.cos(am), cy + R * 0.64 * math.sin(am)
+            b.append(f'<text x="{lx:.1f}" y="{ly + 4:.1f}" font-size="11" '
+                     f'font-weight="700" text-anchor="middle" fill="#ffffff">{n}</text>')
+        ang += sweep
+    lx = 400
+    for i, (name, n) in enumerate(parts):
+        ly = 70 + i * 26.0
+        b.append(f'<rect x="{lx}" y="{ly - 9:.1f}" width="11" height="11" rx="2" '
+                 f'fill="{SLICES[i % 11]}"/>')
+        b.append(f'<text x="{lx + 18}" y="{ly:.1f}" font-size="10.5" fill="{INK}">'
+                 f'{esc(name[:38])}</text>')
+        b.append(f'<text x="{W}" y="{ly:.1f}" font-size="10.5" text-anchor="end" '
+                 f'fill="{SECOND}">{n}</text>')
+    return svg(W, H, ''.join(b),
+               'Where the town’s seats are, FY%s' % d['last'],
+               'Every filled post in the listing, by body. The ten largest are named; the '
+               'rest are grouped, and the table beneath ranks all of them.')
+
+
 def _lines(b, series, xs, Y, cx, colours, labels):
     for key, colour in zip(series, colours):
         pts = ' '.join('%.1f,%.1f' % (cx(i), Y(v)) for i, v in enumerate(series[key]))
@@ -78,14 +122,19 @@ def _lines(b, series, xs, Y, cx, colours, labels):
                  f'font-size="10.5" fill="{colour}">{esc(labels[key])}</text>')
 
 
-def chart_fire(d):
-    """Career against on-call, the one department that states both for nine years."""
-    fire = d['fire']
-    years = [f['fy'] for f in fire]
+def chart_over_time(d):
+    """Three kinds of post, ten years, one line each."""
+    years = d['years']
+    counts = {c['fy']: c for c in d['counts']}
+    # ONLY THE BOARD SEATS. Officers -- the posts somebody is hired into -- moved to the
+    # town personnel report when TJ split the two, and drawing them here would put paid
+    # staff on a chart about volunteers.
+    series = {k: [counts[y][k] for y in years]
+              for k in ('elected board seat', 'appointed board seat')}
     W, H = 720, 320
-    top, left, bottom, right = 58, 46, 42, 150
+    top, left, bottom, right = 58, 46, 42, 176
     plot_h, plot_w = H - top - bottom, W - left - right
-    hi = max(f['on_call_high'] for f in fire) * 1.2
+    hi = max(max(v) for v in series.values()) * 1.15
 
     def cx(i):
         return left + (plot_w * i / max(len(years) - 1, 1))
@@ -104,32 +153,20 @@ def chart_fire(d):
     for i, y in enumerate(years):
         b.append(f'<text x="{cx(i):.1f}" y="{top + plot_h + 15:.1f}" font-size="9" '
                  f'text-anchor="middle" fill="{MUTED}">{y[2:]}</text>')
-    # The on-call roll is a RANGE, so it is drawn as a band and never as a line: a line
-    # through the middle of `30-35` would be a number the town never printed.
-    up = ' '.join('%.1f,%.1f' % (cx(i), Y(f['on_call_high'])) for i, f in enumerate(fire))
-    dn = ' '.join('%.1f,%.1f' % (cx(i), Y(f['on_call_low']))
-                  for i, f in reversed(list(enumerate(fire))))
-    b.append(f'<polygon points="{up} {dn}" fill="{APPOINTED}" fill-opacity="0.30"/>')
-    b.append(f'<text x="{cx(len(years) - 1) + 8:.1f}" '
-             f'y="{Y((fire[-1]["on_call_low"] + fire[-1]["on_call_high"]) / 2) + 4:.1f}" '
-             f'font-size="10.5" fill="#8a5210">on call (a range)</text>')
-    pts = ' '.join('%.1f,%.1f' % (cx(i), Y(f['career'])) for i, f in enumerate(fire))
-    b.append(f'<polyline points="{pts}" fill="none" stroke="{ELECTED}" stroke-width="2.5"/>')
-    for i, f in enumerate(fire):
-        b.append(f'<circle cx="{cx(i):.1f}" cy="{Y(f["career"]):.1f}" r="3.4" '
-                 f'fill="{ELECTED}"/>')
-    b.append(f'<text x="{cx(len(years) - 1) + 8:.1f}" y="{Y(fire[-1]["career"]) + 4:.1f}" '
-             f'font-size="10.5" fill="{ELECTED}">career</text>')
+    _lines(b, series, years, Y, cx, [ELECTED, APPOINTED],
+           {'elected board seat': 'elected seats',
+            'appointed board seat': 'appointed seats'})
     b.append(f'<line x1="{left}" y1="{top + plot_h:.1f}" x2="{left + plot_w}" '
              f'y2="{top + plot_h:.1f}" stroke="{AXIS}" stroke-width="1"/>')
-    return svg(W, H, ''.join(b),
-               'The Fire Department grew and shrank at the same time',
-               'Career firefighters against the on-call roll, FY%s to FY%s, as the '
-               'department states them. The two move in opposite directions.'
-               % (years[0], years[-1]))
+    churn = d['churn'][-1]
+    return svg(W, H, ''.join(b), 'The seats barely move. The people in them do',
+               'Posts by kind, FY%s to FY%s — three nearly flat lines, while %d '
+               'people arrived and %d left in the last year alone.'
+               % (years[0], years[-1], churn['arrived'], churn['left']))
 
 
-CHARTS = [('town-personnel-fire.svg', chart_fire)]
+CHARTS = [('board-composition-where.svg', chart_where),
+          ('board-composition-over-time.svg', chart_over_time)]
 
 
 def main():
@@ -137,7 +174,7 @@ def main():
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
     if not os.path.exists(PAYLOAD):
-        print('missing %s -- run scripts/build_town_personnel.py first'
+        print('missing %s -- run scripts/build_board_composition.py first'
               % os.path.relpath(PAYLOAD, ROOT), file=sys.stderr)
         return 1
     d = json.load(open(PAYLOAD, encoding='utf-8'))

@@ -54,6 +54,37 @@ LOCATION_RE = re.compile(r'^\s*Location:\s*([^\n]+)', re.I | re.M)
 PLACE_RE = re.compile(r'^[^\n]*\b(?:Room|Hall|Library|Conference|Building|Office)\b[^\n]*$', re.I | re.M)
 
 
+def open_seats():
+    """{board slug: seats the town printed EMPTY}, from its own annual-report listing.
+
+    TJ, 22 September 2026: *"on each board page, if it has open spot, show that 'One Open
+    Board Seat Available'"*. The town prints its vacancies -- a word where a name would go
+    -- and a resident reading one board\u2019s page is the person best placed to fill one.
+
+    Joined on a SLUG made the same way the board slugs are made, which is the only join
+    available: the listing names a body and the board pages name a body, and nothing
+    carries an id. A body in one and not the other simply does not match, and the count
+    stays at zero rather than being guessed at -- so this can under-report a vacancy and
+    cannot invent one, which is the right direction to fail in for a page that tells
+    somebody a seat is free.
+    """
+    path = os.path.join(ROOT, 'sources', 'data', 'town-personnel.csv')
+    if not os.path.exists(path):
+        return {}
+    latest, rows = None, []
+    with open(path, encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            rows.append(r)
+            latest = max(latest or r['fy'], r['fy'])
+    out = collections.Counter()
+    for r in rows:
+        n = int(r.get('vacancies') or 0)
+        if n and r['fy'] == latest:
+            slug = re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', r['post'].lower())).strip('-')
+            out[slug] += n
+    return dict(out), latest
+
+
 def how_to_join(slug, docs, as_of):
     """WHAT A PERSON NEEDS TO JOIN LIVE, read off the last few agendas rather than the
     board's boilerplate. TJ, 17 September 2026: "if someone wants to join live, what
@@ -276,6 +307,7 @@ def build(as_of=None):
     # publisher's words, its members, when it meets, and a Facebook link where the page
     # carries one. fetch_board_pages.py mirrors and extracts; nothing is paraphrased here.
     pages = {r['slug']: r for r in read_csv(PAGES)}
+    OPEN = open_seats() or ({}, None)
 
     boards = []
     for slug in sorted(set(docs) | set(vids)):
@@ -415,6 +447,11 @@ def build(as_of=None):
                         recordings=dict(meetings=len(v_elig), have=sum(1 for d in v_elig if d in vids[slug])))
         scorecard = dict(this=score(this_fy), last=score(this_fy - 1), minutes_lag_days=MINUTES_LAG_DAYS, video_lag_days=VIDEO_LAG_DAYS)
         join = how_to_join(slug, docs[slug], as_of)
+        if join is None and OPEN[0].get(slug):
+            join = {}
+        if join is not None:
+            join['open_seats'] = OPEN[0].get(slug, 0)
+            join['open_seats_fy'] = OPEN[1]
         boards.append(dict(
             slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard, join=join,
             finance=finance_counts().get(slug),

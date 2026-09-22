@@ -113,12 +113,23 @@ def chart_total(d):
 
 
 def chart_pull(d):
-    """Diverging bars: how much of the budget's growth each department accounts for."""
-    rows = [r for r in d['departments'] if r.get('pull') is not None]
+    """Diverging bars in DOLLARS A YEAR, because `+1.00` is not a unit.
+
+    TJ: *"'which departments move the total' i dont know what units these are."* The first
+    version drew `pull` -- share times excess rate -- and called it points of total growth.
+    That was worse than unlabelled: the twelve pulls sum to +1.30 while the budget exceeds
+    the cap by +0.41, because the weight is the end-year share and the rate is compound, so
+    it never decomposed anything. An index presented as a share is rule 13 in a chart.
+
+    What is drawn now is the department\u2019s own money times how far its growth exceeds
+    the cap: dollars a year, a quantity a reader can check against the budget line beside
+    it, ranking identically and summing to something real.
+    """
+    rows = [r for r in d['departments'] if r.get('excess') is not None]
     W, H = 720, 330
     top, label_w, bottom = 58, 168, 34
     plot_h = H - top - bottom
-    span = max(abs(r['pull']) for r in rows) * 1.15 or 1.0
+    span = max(abs(r['excess']) for r in rows) * 1.15 or 1.0
     zero = label_w + (W - label_w) * (span / (2 * span))
     half = (W - label_w) / 2.0
     rh = plot_h / len(rows)
@@ -128,25 +139,28 @@ def chart_pull(d):
          f'y2="{top + plot_h:.1f}" stroke="{AXIS}" stroke-width="1"/>']
     for i, r in enumerate(rows):
         cy = top + rh * (i + 0.5)
-        w = abs(r['pull']) / span * half
-        up = r['pull'] >= 0
+        w = abs(r['excess']) / span * half
+        up = r['excess'] >= 0
         x = zero if up else zero - w
         b.append(f'<rect x="{x:.1f}" y="{cy - bh / 2:.1f}" width="{max(w, 0.8):.1f}" '
                  f'height="{bh:.1f}" fill="{VOTED if up else DOWN}" rx="2"/>')
         b.append(f'<text x="{label_w - 8}" y="{cy + 3.5:.1f}" font-size="10" '
                  f'text-anchor="end" fill="{INK}">{esc(r["name"])}</text>')
+        sign = '+' if up else '\u2212'
         tx = (x + w + 6) if up else (x - 6)
         b.append(f'<text x="{tx:.1f}" y="{cy + 3.5:.1f}" font-size="9.5" '
                  f'text-anchor="{"start" if up else "end"}" fill="{SECOND}">'
-                 f'{r["pull"]:+.2f}</text>')
+                 f'{sign}{usdk(abs(r["excess"]))}</text>')
     b.append(f'<text x="{zero + 8:.1f}" y="{top + plot_h + 20:.1f}" font-size="9.5" '
-             f'fill="{MUTED}">pushes the total up</text>')
+             f'fill="{MUTED}">spends more than the cap would carry</text>')
     b.append(f'<text x="{zero - 8:.1f}" y="{top + plot_h + 20:.1f}" font-size="9.5" '
-             f'text-anchor="end" fill="{MUTED}">pulls it down</text>')
-    return svg(W, H, ''.join(b), 'Which departments move the total',
-               'Share of the budget times how far growth exceeds the %.1f%% levy cap, in '
-               'points of total growth. FY%d to FY%d.'
-               % (d['levy_cap'], d['detail_years'][0], d['detail_years'][-1]))
+             f'text-anchor="end" fill="{MUTED}">spends less</text>')
+    net = sum(r['excess'] for r in rows)
+    return svg(W, H, ''.join(b),
+               'Which departments outgrow the levy cap, in dollars a year',
+               'Each department\u2019s own money times how far its growth exceeds the '
+               '%.1f%% cap, FY%d to FY%d. The twelve net to %s a year.'
+               % (d['levy_cap'], d['detail_years'][0], d['detail_years'][-1], usdk(net)))
 
 
 # Twelve steps, assigned in a fixed order by SIZE so the same department is the same
@@ -214,7 +228,67 @@ def chart_share(d):
                'labelled in the legend only.' % usdk(total))
 
 
+def chart_trends(d):
+    """Twelve small panels, one per department: where its money went, year by year.
+
+    TJ: *"one major thing missing is: how are each departments budgets GROWING over time.
+    I want to see that visualy."* Twelve series on one pair of axes is unreadable at any
+    scale -- the school line is 57% of the budget and everything else is a flat smear
+    along the bottom. Small multiples is the form for this: each department gets its own
+    panel and its own vertical scale, so the SHAPE of its change is legible whatever its
+    size, and the rate is printed on the panel so nobody mistakes a steep small line for a
+    big movement.
+
+    Three years is a short series, and in this town three years is also more forward
+    visibility than most boards use -- so the span is stated on every panel rather than
+    implied.
+    """
+    rows = [r for r in d['departments'] if r.get('series')]
+    ys = d['detail_years']
+    cols, rowsn = 4, 3
+    pw, ph = 168.0, 96.0
+    W = int(cols * pw + 24)
+    H = int(rowsn * ph + 96)
+    b = []
+    for i, r in enumerate(rows[:cols * rowsn]):
+        cx0 = 8 + (i % cols) * pw
+        cy0 = 62 + (i // cols) * ph
+        vals = [r['series'].get(str(y), r['series'].get(y)) for y in ys]
+        vals = [v for v in vals if v]
+        if len(vals) < 2:
+            continue
+        lo, hi = min(vals), max(vals)
+        pad = (hi - lo) * 0.35 or max(hi * 0.02, 1)
+        lo, hi = lo - pad, hi + pad
+        gw, gh = pw - 30, ph - 46
+
+        def X(k, n=len(vals)):
+            return cx0 + 6 + gw * k / max(n - 1, 1)
+
+        def Y(v):
+            return cy0 + 22 + gh - (v - lo) / (hi - lo) * gh
+
+        up = vals[-1] >= vals[0]
+        colour = VOTED if up else DOWN
+        b.append(f'<text x="{cx0 + 6}" y="{cy0 + 10:.1f}" font-size="9.5" '
+                 f'font-weight="700" fill="{INK}">{esc(r["name"][:26])}</text>')
+        b.append(f'<text x="{cx0 + 6}" y="{cy0 + 21:.1f}" font-size="8.5" '
+                 f'fill="{SECOND}">{r["rate"]:+.1f}% a year · {usdk(vals[-1])}</text>')
+        b.append(f'<line x1="{cx0 + 6}" y1="{cy0 + 22 + gh:.1f}" x2="{X(len(vals) - 1):.1f}" '
+                 f'y2="{cy0 + 22 + gh:.1f}" stroke="{GRID}" stroke-width="1"/>')
+        pts = ' '.join('%.1f,%.1f' % (X(k), Y(v)) for k, v in enumerate(vals))
+        b.append(f'<polyline points="{pts}" fill="none" stroke="{colour}" '
+                 f'stroke-width="2.2" stroke-linejoin="round"/>')
+        for k, v in enumerate(vals):
+            b.append(f'<circle cx="{X(k):.1f}" cy="{Y(v):.1f}" r="2.8" fill="{colour}"/>')
+    return svg(W, H, ''.join(b),
+               'Every department, year by year',
+               'FY%d to FY%d. Each panel has its OWN vertical scale, so shape is '
+               'legible at any size; the rate is printed on it.' % (ys[0], ys[-1]))
+
+
 CHARTS = [('town-budgets-share.svg', chart_share),
+          ('town-budgets-trends.svg', chart_trends),
           ('town-budgets-total.svg', chart_total),
           ('town-budgets-pull.svg', chart_pull)]
 

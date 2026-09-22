@@ -30,7 +30,7 @@ type Board = {
   about_itself?: { key: string; label: string; school_year: string; url: string; upstream: string; sha256: string; text: string }[]
   scorecard?: { this: Score; last: Score; minutes_lag_days: number; video_lag_days: number }
   finance?: { accounts: number; funds: number; related: number } | null
-  join?: { weekday: string; weekday_share: number; meetings_sampled: number; time: string | null; place: string | null; zoom: boolean; cable: boolean; agendas_read: number } | null
+  join?: { weekday?: string; weekday_share?: number; meetings_sampled?: number; time?: string | null; place?: string | null; zoom?: boolean; cable?: boolean; agendas_read?: number; open_seats?: number; open_seats_fy?: string } | null
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; official_votes_read: number; votes: number; vote_conflicts: number; first: string | null; last: string | null }
   upcoming: Upcoming[]; recent: Recent[]; votes: Vote[]
   time_by_tag: { tag: string; label: string; seconds: number; share: number | null }[]; time_meetings: number; time_span_s: number
@@ -65,6 +65,8 @@ export function Boards() {
 function Index({ d }: { d: Payload }) {
   const three = d.boards.filter(b => b.the_three)
   const rest = d.boards.filter(b => !b.the_three)
+  const openTotal = d.boards.reduce((n, b) => n + (b.join?.open_seats ?? 0), 0)
+  const openBoards = d.boards.filter(b => (b.join?.open_seats ?? 0) > 0).length
   const Card = ({ b }: { b: Board }) => (
     <a href={`/boards/${b.slug}`} className="card block p-4 transition-opacity hover:opacity-90">
       <p className="text-[15px] font-bold leading-snug" style={{ color: 'var(--series-cost)' }}>{b.name} &rarr;</p>
@@ -78,6 +80,18 @@ function Index({ d }: { d: Payload }) {
     <ReportShell tab={TAB} title="The boards — each one, in one place"
       standfirst={`${d.boards.length} boards and committees the town posts for. What is coming, what happened, every vote we have minutes for, where the time goes, and when budget planning lands — one page each.`}
       dataUrl={DATA}>
+      {/* OPEN SEATS FIRST. TJ, 22 September 2026: "put the link to open spots here". Of
+          everything on this index it is the only line that asks the reader to DO
+          something, and a resident who came here wondering how to get involved should not
+          have to read sixty cards to find out they can. */}
+      {openTotal > 0 && (
+        <p className="text-[14px] mt-5 max-w-3xl">
+          <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/analysis/open-seats">
+            {openTotal === 1 ? 'One open seat on a town board' : `${openTotal} open seats across ${openBoards} town boards`} &rarr;
+          </a>
+          <span style={{ color: 'var(--text-secondary)' }}> &mdash; the boards with a chair going spare, and when the filled ones come up.</span>
+        </p>
+      )}
       <p className="text-[14px] mt-5 max-w-3xl">
         <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/boards/compared">The boards, compared &rarr;</a>
         <span style={{ color: 'var(--text-secondary)' }}> &mdash; every board beside the others on what the record measures, starting with which meetings got minutes.</span>
@@ -178,7 +192,24 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
   // context and stays in the infobox below.
   const j = b.join
   const next = b.upcoming[0]
-  const joinBlock = j ? (
+  // AN OPEN SEAT GOES ABOVE EVERYTHING ELSE ON THE PAGE. TJ, 22 September 2026: "on each
+  // board page, if it has open spot, show that 'One Open Board Seat Available'". It is the
+  // only thing here a reader can act on today, and it is perishable -- so it says which
+  // annual report it came from rather than implying it is live.
+  const openSeats = j?.open_seats ?? 0
+  const seatBanner = openSeats > 0 ? (
+    <a href="/analysis/open-seats" className="card p-3 mb-4 block no-underline"
+       style={{ borderColor: 'var(--series-cost)', borderWidth: 2 }}>
+      <p className="text-[15px] font-bold leading-snug" style={{ color: 'var(--series-cost)' }}>
+        {openSeats === 1 ? 'One open board seat available' : `${openSeats} open board seats available`}
+      </p>
+      <p className="text-[12px] mt-1" style={{ color: 'var(--text-secondary)' }}>
+        The town printed {openSeats === 1 ? 'a vacancy' : 'vacancies'} on this board in its FY{j?.open_seats_fy} annual
+        report. Appointed seats are filled by the Select Board. See every open seat in town →
+      </p>
+    </a>
+  ) : null
+  const joinBlock = j && j.weekday ? (
     <div className="card p-3 mb-4">
       <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>When it meets</p>
       <p className="text-[15px] font-bold leading-snug mt-1">
@@ -196,6 +227,7 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
   ) : null
   const body = (
     <>
+      {seatBanner}
       {joinBlock}
       <p className="text-[10px] font-bold uppercase tracking-widest px-1" style={{ color: 'var(--text-muted)' }}>On this page</p>
       <div className="mt-1.5 space-y-1.5">{jump.filter(j => j[2]).map(([h, l]) => <Btn key={h} href={h}>{l}</Btn>)}</div>

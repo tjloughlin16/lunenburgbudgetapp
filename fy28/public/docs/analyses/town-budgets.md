@@ -23,29 +23,33 @@ What Town Meeting voted for every department, and which departments move the tot
 
 Schools is the largest department and Central Purchasing the smallest — 313 times the size, in the same budget.
 
-## Which departments move the total
+## How each department is growing
+
+![Twelve small panels, one per department, each showing its voted budget across FY2023, FY2024 and FY2025 on its own vertical scale. Eleven rise; only Maturing Debt & Interest falls.](charts/town-budgets-trends.svg)
+
+## Which departments outgrow the levy cap
 
 ![Diverging bars, one per department, ranked by how much of the budget’s growth each accounts for. Employee benefits & reserves runs furthest right at +1.00, ahead of Schools at +0.65; Maturing Debt & Interest is the only bar on the left, at -1.45.](charts/town-budgets-pull.svg)
 
 ## Every department, every measure
 
-| department | FY2023 | FY2024 | FY2025 | a year | share | pull |
+| department | FY2023 | FY2024 | FY2025 | a year | share | above the cap |
 |---|---:|---:|---:|---:|---:|---:|
-| Employee benefits & reserves | $3,378,711 | $3,968,170 | $4,293,123 | 12.7% | 9.8% | +1.00 |
-| Schools | $23,397,371 | $24,082,518 | $25,127,554 | 3.6% | 57.1% | +0.65 |
-| General Government | $1,792,492 | $1,974,322 | $2,177,964 | 10.2% | 4.9% | +0.38 |
-| Protection | $4,239,355 | $4,478,848 | $4,643,717 | 4.7% | 10.5% | +0.23 |
-| Solid Waste & Recycling | $312,634 | $352,775 | $469,775 | 22.6% | 1.1% | +0.21 |
-| Facilities & Grounds | $884,566 | $981,645 | $1,022,711 | 7.5% | 2.3% | +0.12 |
-| Library | $492,984 | $539,126 | $583,890 | 8.8% | 1.3% | +0.08 |
-| Assistance | $294,404 | $335,082 | $340,898 | 7.6% | 0.8% | +0.04 |
-| Public Works | $2,101,445 | $2,168,288 | $2,225,277 | 2.9% | 5.1% | +0.02 |
-| Health & Sanitation | $99,260 | $104,961 | $117,819 | 8.9% | 0.3% | +0.02 |
-| Central Purchasing | $77,800 | $80,300 | $80,300 | 1.6% | 0.2% | -0.00 |
-| Maturing Debt & Interest | $4,497,723 | $3,518,013 | $2,941,322 | -19.1% | 6.7% | -1.45 |
+| Employee benefits & reserves | $3,378,711 | $3,968,170 | $4,293,123 | 12.7% | 9.8% | +$438,870/yr |
+| Schools | $23,397,371 | $24,082,518 | $25,127,554 | 3.6% | 57.1% | +$284,306/yr |
+| General Government | $1,792,492 | $1,974,322 | $2,177,964 | 10.2% | 4.9% | +$168,340/yr |
+| Protection | $4,239,355 | $4,478,848 | $4,643,717 | 4.7% | 10.5% | +$100,330/yr |
+| Solid Waste & Recycling | $312,634 | $352,775 | $469,775 | 22.6% | 1.1% | +$94,340/yr |
+| Facilities & Grounds | $884,566 | $981,645 | $1,022,711 | 7.5% | 2.3% | +$51,396/yr |
+| Library | $492,984 | $539,126 | $583,890 | 8.8% | 1.3% | +$36,961/yr |
+| Assistance | $294,404 | $335,082 | $340,898 | 7.6% | 0.8% | +$17,409/yr |
+| Public Works | $2,101,445 | $2,168,288 | $2,225,277 | 2.9% | 5.1% | +$8,994/yr |
+| Health & Sanitation | $99,260 | $104,961 | $117,819 | 8.9% | 0.3% | +$7,597/yr |
+| Central Purchasing | $77,800 | $80,300 | $80,300 | 1.6% | 0.2% | −$728/yr |
+| Maturing Debt & Interest | $4,497,723 | $3,518,013 | $2,941,322 | -19.1% | 6.7% | −$636,277/yr |
 
 
-`pull` is a department’s share of the budget times how far its growth exceeds the 2.5% the levy may rise by, in points of total growth. It is the only ranking on this page: neither size nor rate means anything alone.
+**above the cap** is the department’s own money times how far its growth exceeds the 2.5% the levy may rise by — dollars a year, and the ranking this page uses, because neither size nor rate means anything alone. The twelve net to $571,540 a year.
 
 ## The voted total, FY2012 to FY2026
 
