@@ -90,56 +90,68 @@ def _not_established():
 
 
 def conclusions_for(d):
-    last = d['last']
-    pub = d['publishes']
-    officers = d['per'][(last, 'appointed officer')]
-    named = [p for p in pub if 'a named roster' in p['forms']]
+    emp = d['employers']
+    big, rest = emp[0], emp[1:]
+    others = sum(e['people'] for e in rest)
+    grew = [e for e in emp if e['change'] > 0]
+    shrank = [e for e in emp if e['change'] < 0]
     return emit('town-personnel', [
         conclusion(
-            id='three-of-them',
-            claim='Three parts of the town name their staff. Every other department names none',
-            lede='What the town publishes about who works for it, taken as a whole rather '
-                 'than one department at a time.',
-            detail='Three parts of the town — the Police Department, the Fire Department '
-                   'and the schools — print every member of staff by name, in every annual '
-                   'report. No other department does. The Department of Public Works states an establishment post by '
-                   'post instead, and the rest state nothing at all — so of the %s '
-                   'appointed posts the town lists in FY%s, most belong to departments '
-                   'whose staff appear in no published count.'
-                   % (num(officers), last),
-            figures={'named': figure(len(named), 'Three',
-                                     'parts of the town naming their staff'),
-                     'posts': figure(officers, num(officers),
-                                     'appointed posts the town lists')},
-            figure='named',
+            id='schools-are-the-employer',
+            claim='The schools employ more people than the rest of the town put together, six times over',
+            lede='Before any question about who is growing: this is the scale of the '
+                 'town’s workforce, and one part of it is nearly all of it.',
+            detail='The schools name %s members of staff in FY%s. Every other part of the '
+                   'town that publishes a count — the Fire Department, the Police '
+                   'Department and the Department of Public Works — comes to %s between '
+                   'them.'
+                   % (num(big['people']), big['last_fy'], num(others)),
+            figures={'schools': figure(big['people'], num(big['people']),
+                                       'school staff, named'),
+                     'others': figure(others, num(others),
+                                      'in every other department that publishes a count')},
+            figure='schools',
             kind='measured',
             bearing='sizes',
-            basis='Every department report in the annual reports, read for a roster, a '
-                  'stated strength or an establishment.',
-            not_shown='Whether an unnamed department is large or small. Publishing nothing '
-                      'is not evidence of either.',
-            so_what='Most of the town’s workforce appears in no published count at all.',
-            allow=('FY%s' % last,),
+            basis='The per-school staff rosters in the annual report, against the Fire and '
+                  'Police rosters and the DPW establishment.',
+            not_shown='The departments that publish nothing. Their staff are in no count '
+                      'here and their absence is not a small number.',
+            so_what='A conversation about town staffing is mostly a conversation about the schools.',
+            allow=('FY%s' % big['last_fy'],),
         ),
         conclusion(
-            id='four-forms',
-            claim='What the town says about its staff comes in four forms that cannot be added',
-            lede='Not a single figure anywhere: four different kinds of quantity, chosen '
-                 'department by department.',
-            detail='A named roster, a stated strength given as a count and a RANGE, an '
-                   'establishment listed post by post, and a sentence with no number in '
-                   'it. Those are four different quantities and no arithmetic joins them, '
-                   'so this project publishes no town staffing total and there is no '
-                   'honest way to produce one from what is printed.',
-            figures={'forms': figure(4, 'four', 'kinds of quantity, none addable to another')},
-            figure='forms',
+            id='who-grew-who-cut',
+            claim='One department has fewer people than it did. The rest are flat or larger',
+            lede='Who added staff and who lost it, over the years each one publishes.',
+            detail='The Fire Department is down %s, from %s to %s, all of it in the on-call '
+                   'roll while its career staff doubled. The schools are up %s since '
+                   'FY%s, the Police Department up %s, and the Department of Public Works '
+                   'unchanged at %s posts.'
+                   % (num(abs(shrank[0]['change'])), num(shrank[0]['first']),
+                      num(shrank[0]['people']), num(grew[0]['change']),
+                      grew[0]['first_fy'], num(grew[1]['change']),
+                      num(emp[-1]['people'])),
+            figures={'fire': figure(abs(shrank[0]['change']), num(abs(shrank[0]['change'])),
+                                    'fewer at the Fire Department'),
+                     'was': figure(shrank[0]['first'], num(shrank[0]['first']), 'then'),
+                     'now': figure(shrank[0]['people'], num(shrank[0]['people']), 'now'),
+                     'sch': figure(grew[0]['change'], num(grew[0]['change']),
+                                   'more school staff'),
+                     'pol': figure(grew[1]['change'], num(grew[1]['change']),
+                                   'more police officers'),
+                     'dpw': figure(emp[-1]['people'], num(emp[-1]['people']),
+                                   'posts at the DPW, unchanged')},
+            figure='fire',
             kind='measured',
             bearing='sizes',
-            basis='The form each department uses in its own annual-report section.',
-            not_shown='A town headcount. It is not that nobody has added these up; it is '
-                      'that adding them would be wrong.',
-            so_what='Anybody quoting one town staffing number is quoting something nobody published.',
-            allow=(),
+            basis='Each department’s own published count, first published year against '
+                  'last, with any year reading under half its predecessor dropped as a '
+                  'short read rather than a cut.',
+            not_shown='Hours or FTE. A call firefighter and a classroom teacher are one '
+                      'person each here.',
+            so_what='Only one part of the town has visibly shed people, and not the part usually named.',
+            allow=('FY%s' % grew[0]['first_fy'],),
         ),
     ])
 
@@ -159,60 +171,52 @@ def latest_both(d):
 
 def render(d):
     years, last = d['years'], d['last']
+    emp = d['employers']
+    sd = d['school_detail']
     t = ['# Who works for the town\n',
-         '\nWhat the town publishes about the people who work for it, FY%s to FY%s. The '
-         'seats people volunteer for are [board composition](/analysis/board-composition); '
-         'the ones going spare are [open seats](/analysis/open-seats).\n'
-         % (years[0], last)]
+         '\nHow many people each part of the town employs, which are growing and which '
+         'have shed staff. The seats people volunteer for are '
+         '[board composition](/analysis/board-composition).\n']
 
-    t.append('\n## What each part of the town publishes\n\nFour different kinds of '
-             'quantity, chosen department by department, and none of them addable to '
-             'another.\n\n| part of the town | what it publishes |\n|---|---|\n')
-    for p_ in d['publishes']:
-        t.append('| %s | %s |\n' % (p_['department'], '; '.join(p_['forms'])))
-    t.append('| every other department | nothing |\n')
-    t.append('\nThat last row is most of the town. A DPW labourer, a library assistant and '
-             'a town hall clerk hold no appointed post and appear in no roster, and the '
-             'gross-wages list that once tagged each name with a department stopped doing '
-             'so after FY2016.\n')
+    t.append('\n## How many people each part of the town employs\n')
+    t.append('\n![Bars, one per part of the town that publishes a staff count. The school '
+             'bar is far longer than the rest put together.]'
+             '(charts/town-personnel-employers.svg)\n')
+    t.append('\n| part of the town | people | as of | first published | change | what it counts |\n'
+             '|---|---:|---|---:|---:|---|\n')
+    for e in emp:
+        t.append('| %s | %s | FY%s | %s in FY%s | %s%s | %s |\n'
+                 % (e['department'], num(e['people']), e['last_fy'], num(e['first']),
+                    e['first_fy'], '+' if e['change'] >= 0 else '\u2212',
+                    num(abs(e['change'])), e['kind']))
+    t.append('\nThese are not identical measures — a named roster, a career count plus the '
+             'low end of an on-call range, and an establishment of posts — and they are all '
+             'answers to how many people work here. Where a department states a range the '
+             'LOW end is used, so none is flattered by its own vagueness.\n')
+    susp = [e for e in emp if e['suspect']]
+    if susp:
+        t.append('\nA year whose count reads under half the year before it is dropped as a '
+                 'short read rather than published as a cut: %s. The Police roster comes '
+                 'back as seven officers in FY2024 against twenty-five in FY2023, which is '
+                 'a page this reader did not find, not three quarters of a police force.\n'
+                 % '; '.join('%s FY%s' % (e['department'], ', FY'.join(e['suspect']))
+                             for e in susp))
 
-    t.append('\n## The appointed posts\n\nPosts that state no membership and no term: the '
-             'directors, chiefs, inspectors and clerks the town appoints rather than '
-             'elects. These are posts, not people employed — a department of twenty may '
-             'appear here once.\n\n| | %s |\n|---|%s\n'
-             % (' | '.join('FY%s' % y for y in years), '---:|' * len(years)))
-    t.append('| appointed posts | %s |\n'
-             % ' | '.join(str(d['per'][(y, 'appointed officer')]) for y in years))
+    if sd['by_school']:
+        t.append('\n## The schools, in detail\n\nSix times the next employer, so worth '
+                 'breaking out. FY%s.\n\n| school | staff |\n|---|---:|\n' % sd['fy'])
+        for r in sd['by_school']:
+            t.append('| %s | %s |\n' % (r['school'].replace('-', ' ').title(), num(r['people'])))
+        t.append('\n| what they do | staff |\n|---|---:|\n')
+        for r in sd['by_position'][:12]:
+            t.append('| %s | %s |\n' % (r['position'], num(r['people'])))
 
-    est = [r for r in d['staffing'] if 'establishment' in r['measure']]
-    if est:
-        t.append('\n## Stated post by post\n\nThe Department of Public Works is the only '
-                 'department that lists its establishment in prose.\n\n'
-                 '| fiscal year | department | as printed |\n|---|---|---|\n')
-        for r in est:
-            t.append('| FY%s | %s | %s |\n' % (r['fy'], r['department'], r['positions']))
-        t.append('\nRead carelessly it loses two heavy equipment operators between those '
-                 'two years. It does not: FY2024 prints `3 Heavy Equipment Operators, 2 '
-                 'Driver/Laborers` where FY2023 printed `5 Heavy Equipment Operators`. '
-                 'Same five people, two titles reclassified — which is why the sentence is '
-                 'stored as printed.\n')
-
-    t.append('\n## The named rosters\n\nPolice and Fire list their staff by rank and '
-             'assignment. The schools list theirs per school, read by a different '
-             'extractor into `staff-roster-counts.csv`.\n\n'
-             '| fiscal year | department | names read |\n|---|---|---:|\n')
-    for r in d['roster']:
-        t.append('| FY%s | %s | %s |\n' % (r['fy'], r['department'], num(r['named'])))
-    t.append('\nTHESE COUNTS RUN SHORT AND THE SHORTFALL IS OURS. This page said for a day '
-             'that the book counted the Fire Department twice and disagreed with itself — '
-             'a serious thing to publish about somebody’s accounts, and wrong. The rosters '
-             'are set in two columns, and on FY2023 page 94 the right-hand column of the '
-             'call-firefighter list is simply absent from the line-level reading; the '
-             'word-level pass has it. The names were printed and we did not read them. '
-             'Where a department also states a strength, that is the better figure.\n')
-    t.append('\nThe Fire Department states its own strength every year, and what has '
-             'happened to it is on [Protection of persons & property]'
-             '(/analysis/town-budget-protection), beside the money.\n')
+    t.append('\n## Who publishes nothing\n\nEvery other department. A DPW labourer '
+             'appears because the DPW states an establishment; a library assistant, a town '
+             'hall clerk, an assessor’s clerk and a Council on Aging driver appear in no '
+             'published count at all. The gross-wages list named a department beside each '
+             'employee through FY2016 and stopped, so there has been no town-wide headcount '
+             'by department since.\n')
 
     t.append('\n## What this cannot show\n\n')
     for n in _not_established():
@@ -233,22 +237,19 @@ def payload(d):
         grain='POSTS AND NAMED STAFF, never a payroll. One row is one appointed post, or '
               'one person named on a department roster. No salary is read or inferred.',
         stats=[
-            dict(value='3', tone='var(--series-cost)',
-                 label='parts of the town that name their staff: Police, Fire and the '
-                       'schools — every other department names none'),
-            dict(value=num(officers),
-                 label='appointed posts in FY%s — directors, chiefs, inspectors, clerks'
-                       % last),
-            # THREE, NOT TWO. TJ: *"this cant be true. schools publish too"* -- and they
-            # do, per school, in every annual report FY2011 to FY2025, already extracted
-            # into staff-roster-counts.csv. Counting only the two this page happens to
-            # read was counting our own attention and publishing it as the town's habit.
-            dict(value='four',
-                 label='kinds of quantity the town publishes about staffing, none of them '
-                       'addable to another'),
+            dict(value=num(d['employers'][0]['people']),
+                 label='school staff — more people than the rest of the town put '
+                       'together, six times over'),
+            dict(value=num(sum(e['people'] for e in d['employers'][1:])),
+                 label='in every other part of the town that publishes a count: Fire, '
+                       'Police and the DPW'),
+            dict(value='%s of %s' % (num(len(d['employers'])), num(len(d['sizes']))),
+                 tone='var(--series-cost)',
+                 label='parts of the town that publish any staff count at all'),
         ],
         years=d['years'], last=last,
         fire=fire, roster=d['roster'], publishes=d['publishes'],
+        employers=d['employers'], school_detail=d['school_detail'],
         staffing=[r for r in d['staffing'] if 'establishment' in r['measure']],
         officers=[dict(fy=y, officers=d['per'][(y, 'appointed officer')])
                   for y in d['years']],

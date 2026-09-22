@@ -1,66 +1,51 @@
 # Who works for the town
 
-What the town publishes about the people who work for it, FY2016 to FY2025. The seats people volunteer for are [board composition](/analysis/board-composition); the ones going spare are [open seats](/analysis/open-seats).
+How many people each part of the town employs, which are growing and which have shed staff. The seats people volunteer for are [board composition](/analysis/board-composition).
 
-## What each part of the town publishes
+## How many people each part of the town employs
 
-Four different kinds of quantity, chosen department by department, and none of them addable to another.
+![Bars, one per part of the town that publishes a staff count. The school bar is far longer than the rest put together.](charts/town-personnel-employers.svg)
 
-| part of the town | what it publishes |
-|---|---|
-| Department Of Public Works | an establishment, post by post |
-| Fire Department | a named roster; a stated strength |
-| Lunenburg Public Schools | a named roster |
-| Police Department | a named roster |
-| every other department | nothing |
+| part of the town | people | as of | first published | change | what it counts |
+|---|---:|---|---:|---:|---|
+| Schools | 250 | FY2025 | 216 in FY2011 | +34 | every member of staff, named |
+| Fire Department | 40 | FY2025 | 45 in FY2017 | −5 | career staff plus the low end of the on-call range |
+| Police Department | 25 | FY2023 | 22 in FY2021 | +3 | officers named on the roster |
+| Department Of Public Works | 14 | FY2024 | 14 in FY2023 | +0 | posts in the establishment it states |
 
-That last row is most of the town. A DPW labourer, a library assistant and a town hall clerk hold no appointed post and appear in no roster, and the gross-wages list that once tagged each name with a department stopped doing so after FY2016.
+These are not identical measures — a named roster, a career count plus the low end of an on-call range, and an establishment of posts — and they are all answers to how many people work here. Where a department states a range the LOW end is used, so none is flattered by its own vagueness.
 
-## The appointed posts
+A year whose count reads under half the year before it is dropped as a short read rather than published as a cut: Police Department FY2024. The Police roster comes back as seven officers in FY2024 against twenty-five in FY2023, which is a page this reader did not find, not three quarters of a police force.
 
-Posts that state no membership and no term: the directors, chiefs, inspectors and clerks the town appoints rather than elects. These are posts, not people employed — a department of twenty may appear here once.
+## The schools, in detail
 
-| | FY2016 | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| appointed posts | 115 | 87 | 98 | 81 | 61 | 66 | 59 | 55 | 58 | 60 |
+Six times the next employer, so worth breaking out. FY2025.
 
-## Stated post by post
+| school | staff |
+|---|---:|
+| Primary | 73 |
+| High | 64 |
+| Turkey Hill | 64 |
+| Middle | 49 |
 
-The Department of Public Works is the only department that lists its establishment in prose.
+| what they do | staff |
+|---|---:|
+| Classroom Teacher | 77 |
+| Paraprofessional | 52 |
+| (unmapped) | 42 |
+| Specialist Teacher | 13 |
+| Custodial / Facilities | 11 |
+| Food Service | 8 |
+| Speech / OT / PT | 8 |
+| Assistant Principal | 6 |
+| Administrative Staff | 5 |
+| Guidance / Adjustment Counselor | 5 |
+| Principal | 5 |
+| Nurse | 4 |
 
-| fiscal year | department | as printed |
-|---|---|---|
-| FY2023 | Department Of Public Works | 1 Director; 1 Executive Assistant; 1 Highway Superintendent; 5 Heavy Equipment Operators; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant |
-| FY2024 | Department Of Public Works | 1 Director; 1 Executive Assistant; 1 Highway Superintendent; 3 Heavy Equipment Operators; 2 Driver; 1 Mechanic; 1 Cemetery Superintendent; 2 Seasonal Cemetery Laborers; 1 Sewer Business Manager; 1 Assistant |
+## Who publishes nothing
 
-Read carelessly it loses two heavy equipment operators between those two years. It does not: FY2024 prints `3 Heavy Equipment Operators, 2 Driver/Laborers` where FY2023 printed `5 Heavy Equipment Operators`. Same five people, two titles reclassified — which is why the sentence is stored as printed.
-
-## The named rosters
-
-Police and Fire list their staff by rank and assignment. The schools list theirs per school, read by a different extractor into `staff-roster-counts.csv`.
-
-| fiscal year | department | names read |
-|---|---|---:|
-| FY2011 | Fire Department | 36 |
-| FY2014 | Fire Department | 44 |
-| FY2015 | Fire Department | 44 |
-| FY2016 | Fire Department | 38 |
-| FY2017 | Fire Department | 42 |
-| FY2018 | Fire Department | 40 |
-| FY2019 | Fire Department | 38 |
-| FY2020 | Fire Department | 41 |
-| FY2021 | Fire Department | 37 |
-| FY2021 | Police Department | 22 |
-| FY2022 | Fire Department | 11 |
-| FY2022 | Police Department | 20 |
-| FY2023 | Fire Department | 38 |
-| FY2023 | Police Department | 25 |
-| FY2024 | Fire Department | 35 |
-| FY2024 | Police Department | 7 |
-
-THESE COUNTS RUN SHORT AND THE SHORTFALL IS OURS. This page said for a day that the book counted the Fire Department twice and disagreed with itself — a serious thing to publish about somebody’s accounts, and wrong. The rosters are set in two columns, and on FY2023 page 94 the right-hand column of the call-firefighter list is simply absent from the line-level reading; the word-level pass has it. The names were printed and we did not read them. Where a department also states a strength, that is the better figure.
-
-The Fire Department states its own strength every year, and what has happened to it is on [Protection of persons & property](/analysis/town-budget-protection), beside the money.
+Every other department. A DPW labourer appears because the DPW states an establishment; a library assistant, a town hall clerk, an assessor’s clerk and a Council on Aging driver appear in no published count at all. The gross-wages list named a department beside each employee through FY2016 and stopped, so there has been no town-wide headcount by department since.
 
 ## What this cannot show
 

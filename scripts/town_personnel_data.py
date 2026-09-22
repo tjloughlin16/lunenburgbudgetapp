@@ -41,6 +41,23 @@ KINDS = [('elected board seat', 'Elected seats', 'filled by the voters'),
          ('appointed officer', 'Appointed officers', 'posts somebody is hired or named into')]
 
 
+def _school_detail():
+    """The schools broken out, because they are six times the next employer."""
+    path = os.path.join(ROOT, 'sources', 'data', 'staff-roster-counts.csv')
+    if not os.path.exists(path):
+        return dict(by_school=[], by_position=[], fy=None)
+    rows = list(csv.DictReader(open(path, encoding='utf-8')))
+    fy = max(r['fy'] for r in rows)
+    school, pos = collections.Counter(), collections.Counter()
+    for r in rows:
+        if r['fy'] == fy:
+            school[r['school']] += int(r['count'] or 0)
+            pos[r['position']] += int(r['count'] or 0)
+    return dict(fy=fy,
+                by_school=[dict(school=k, people=v) for k, v in school.most_common()],
+                by_position=[dict(position=k, people=v) for k, v in pos.most_common()])
+
+
 def load():
     rows = list(csv.DictReader(open(SRC, encoding='utf-8')))
     for r in rows:
@@ -217,7 +234,70 @@ def load():
     publishes.setdefault('Lunenburg Public Schools', set()).add('a named roster')
     forms = sorted(publishes.items())
 
+    # HOW MANY PEOPLE EACH PART OF THE TOWN EMPLOYS -- the cross-department count, which
+    # is what the personnel report is for. TJ: *"which departments have the most employees.
+    # which have the least. which are growing in employee count the most ... who has made
+    # cuts, who hasnt ... and i expect the schools to be on this too."*
+    #
+    # FOUR SOURCES, ONE QUESTION. The schools name every member of staff per school; Fire
+    # states a career count and an on-call RANGE; Police names its officers; the DPW lists
+    # an establishment post by post. They are not identical measures and they are all
+    # answers to `how many people work here`, so they are carried together with the KIND
+    # recorded per row -- and the low end of a range is used, so a department is never
+    # flattered by its own vagueness.
+    staff_counts = collections.defaultdict(dict)
+    school = os.path.join(ROOT, 'sources', 'data', 'staff-roster-counts.csv')
+    if os.path.exists(school):
+        per_year = collections.Counter()
+        for r in csv.DictReader(open(school, encoding='utf-8')):
+            per_year[r['fy']] += int(r['count'] or 0)
+        for fy, n in per_year.items():
+            staff_counts['Schools'][fy] = dict(people=n, kind='every member of staff, named')
+    for f in fire_series:
+        staff_counts['Fire Department'][f['fy']] = dict(
+            people=f['career'] + f['on_call_low'],
+            kind='career staff plus the low end of the on-call range')
+    # `roster` here is the RAW rows, one per name; the per-year counts are built from it.
+    police = collections.Counter(r['fy'] for r in roster
+                                 if r['department'] == 'Police Department')
+    for fy, n in police.items():
+        staff_counts['Police Department'][fy] = dict(
+            people=n, kind='officers named on the roster')
+    for r in staff:
+        if 'establishment' in r['measure'] and r['positions']:
+            n = sum(int(x.split()[0]) for x in r['positions'].split(';')
+                    if x.strip().split()[0].isdigit())
+            staff_counts[r['department']][r['fy']] = dict(
+                people=n, kind='posts in the establishment it states')
+    # A COUNT THAT HALVES IN A YEAR IS A SHORT READ, NOT A COLLAPSE. The Police roster
+    # comes back as 7 names in FY2024 against 25 in FY2023 -- a page this reader did not
+    # find, and publishing it would say the town cut three quarters of its police force.
+    # That is the same error, in the same week, that TJ caught on the Fire roster. So a
+    # year under HALF its predecessor is dropped from the series and counted as suspect,
+    # and the department's change is measured between years that survive.
+    employers = []
+    for dept, by_year in staff_counts.items():
+        ys = sorted(by_year)
+        dropped = []
+        for a, b in zip(ys, ys[1:]):
+            if by_year[b]['people'] < by_year[a]['people'] * 0.5:
+                dropped.append(b)
+        ys = [y for y in ys if y not in dropped]
+        if not ys:
+            continue
+        first, last_ = by_year[ys[0]], by_year[ys[-1]]
+        employers.append(dict(
+            department=dept, first_fy=ys[0], last_fy=ys[-1], years=len(ys),
+            suspect=dropped,
+            first=first['people'], people=last_['people'],
+            change=last_['people'] - first['people'],
+            kind=last_['kind'],
+            series=[dict(fy=y, people=by_year[y]['people']) for y in ys]))
+    employers.sort(key=lambda e: -e['people'])
+
     return dict(rows=rows, years=years, per=per, checks=checks, posts=posts,
+                employers=employers,
+                school_detail=_school_detail(),
                 publishes=[dict(department=k, forms=sorted(v)) for k, v in forms],
                 roster=rost,
                 last=last, named=named, vacancies=vac, vac_how=vac_how, terms=terms,

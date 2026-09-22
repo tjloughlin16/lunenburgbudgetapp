@@ -2,51 +2,250 @@
  "about": "The posts the town hires or appoints somebody into, and what each department says it employs.",
  "conclusions": [
   {
-   "basis": "Every department report in the annual reports, read for a roster, a stated strength or an establishment.",
+   "basis": "The per-school staff rosters in the annual report, against the Fire and Police rosters and the DPW establishment.",
    "bearing": "sizes",
-   "claim": "Three parts of the town name their staff. Every other department names none",
-   "detail": "What the town publishes about who works for it, taken as a whole rather than one department at a time. Three parts of the town — the Police Department, the Fire Department and the schools — print every member of staff by name, in every annual report. No other department does. The Department of Public Works states an establishment post by post instead, and the rest state nothing at all — so of the 60 appointed posts the town lists in FY2025, most belong to departments whose staff appear in no published count.",
-   "figure": "named",
+   "claim": "The schools employ more people than the rest of the town put together, six times over",
+   "detail": "Before any question about who is growing: this is the scale of the town’s workforce, and one part of it is nearly all of it. The schools name 250 members of staff in FY2025. Every other part of the town that publishes a count — the Fire Department, the Police Department and the Department of Public Works — comes to 79 between them.",
+   "figure": "schools",
    "figures": {
-    "named": {
-     "text": "Three",
-     "unit": "parts of the town naming their staff",
-     "value": 3
+    "others": {
+     "text": "79",
+     "unit": "in every other department that publishes a count",
+     "value": 79
     },
-    "posts": {
-     "text": "60",
-     "unit": "appointed posts the town lists",
-     "value": 60
+    "schools": {
+     "text": "250",
+     "unit": "school staff, named",
+     "value": 250
     }
    },
-   "id": "three-of-them",
+   "id": "schools-are-the-employer",
    "kind": "measured",
    "literals": [
     "FY2025"
    ],
-   "not_shown": "Whether an unnamed department is large or small. Publishing nothing is not evidence of either.",
+   "not_shown": "The departments that publish nothing. Their staff are in no count here and their absence is not a small number.",
    "see": [],
-   "so_what": "Most of the town’s workforce appears in no published count at all."
+   "so_what": "A conversation about town staffing is mostly a conversation about the schools."
   },
   {
-   "basis": "The form each department uses in its own annual-report section.",
+   "basis": "Each department’s own published count, first published year against last, with any year reading under half its predecessor dropped as a short read rather than a cut.",
    "bearing": "sizes",
-   "claim": "What the town says about its staff comes in four forms that cannot be added",
-   "detail": "Not a single figure anywhere: four different kinds of quantity, chosen department by department. A named roster, a stated strength given as a count and a RANGE, an establishment listed post by post, and a sentence with no number in it. Those are four different quantities and no arithmetic joins them, so this project publishes no town staffing total and there is no honest way to produce one from what is printed.",
-   "figure": "forms",
+   "claim": "One department has fewer people than it did. The rest are flat or larger",
+   "detail": "Who added staff and who lost it, over the years each one publishes. The Fire Department is down 5, from 45 to 40, all of it in the on-call roll while its career staff doubled. The schools are up 34 since FY2011, the Police Department up 3, and the Department of Public Works unchanged at 14 posts.",
+   "figure": "fire",
    "figures": {
-    "forms": {
-     "text": "four",
-     "unit": "kinds of quantity, none addable to another",
-     "value": 4
+    "dpw": {
+     "text": "14",
+     "unit": "posts at the DPW, unchanged",
+     "value": 14
+    },
+    "fire": {
+     "text": "5",
+     "unit": "fewer at the Fire Department",
+     "value": 5
+    },
+    "now": {
+     "text": "40",
+     "unit": "now",
+     "value": 40
+    },
+    "pol": {
+     "text": "3",
+     "unit": "more police officers",
+     "value": 3
+    },
+    "sch": {
+     "text": "34",
+     "unit": "more school staff",
+     "value": 34
+    },
+    "was": {
+     "text": "45",
+     "unit": "then",
+     "value": 45
     }
    },
-   "id": "four-forms",
+   "id": "who-grew-who-cut",
    "kind": "measured",
-   "literals": [],
-   "not_shown": "A town headcount. It is not that nobody has added these up; it is that adding them would be wrong.",
+   "literals": [
+    "FY2011"
+   ],
+   "not_shown": "Hours or FTE. A call firefighter and a classroom teacher are one person each here.",
    "see": [],
-   "so_what": "Anybody quoting one town staffing number is quoting something nobody published."
+   "so_what": "Only one part of the town has visibly shed people, and not the part usually named."
+  }
+ ],
+ "employers": [
+  {
+   "change": 34,
+   "department": "Schools",
+   "first": 216,
+   "first_fy": "2011",
+   "kind": "every member of staff, named",
+   "last_fy": "2025",
+   "people": 250,
+   "series": [
+    {
+     "fy": "2011",
+     "people": 216
+    },
+    {
+     "fy": "2012",
+     "people": 202
+    },
+    {
+     "fy": "2013",
+     "people": 172
+    },
+    {
+     "fy": "2014",
+     "people": 232
+    },
+    {
+     "fy": "2015",
+     "people": 252
+    },
+    {
+     "fy": "2016",
+     "people": 276
+    },
+    {
+     "fy": "2017",
+     "people": 294
+    },
+    {
+     "fy": "2018",
+     "people": 277
+    },
+    {
+     "fy": "2019",
+     "people": 257
+    },
+    {
+     "fy": "2020",
+     "people": 249
+    },
+    {
+     "fy": "2021",
+     "people": 245
+    },
+    {
+     "fy": "2022",
+     "people": 285
+    },
+    {
+     "fy": "2023",
+     "people": 265
+    },
+    {
+     "fy": "2024",
+     "people": 343
+    },
+    {
+     "fy": "2025",
+     "people": 250
+    }
+   ],
+   "suspect": [],
+   "years": 15
+  },
+  {
+   "change": -5,
+   "department": "Fire Department",
+   "first": 45,
+   "first_fy": "2017",
+   "kind": "career staff plus the low end of the on-call range",
+   "last_fy": "2025",
+   "people": 40,
+   "series": [
+    {
+     "fy": "2017",
+     "people": 45
+    },
+    {
+     "fy": "2018",
+     "people": 47
+    },
+    {
+     "fy": "2019",
+     "people": 47
+    },
+    {
+     "fy": "2020",
+     "people": 47
+    },
+    {
+     "fy": "2021",
+     "people": 48
+    },
+    {
+     "fy": "2022",
+     "people": 40
+    },
+    {
+     "fy": "2023",
+     "people": 40
+    },
+    {
+     "fy": "2024",
+     "people": 40
+    },
+    {
+     "fy": "2025",
+     "people": 40
+    }
+   ],
+   "suspect": [],
+   "years": 9
+  },
+  {
+   "change": 3,
+   "department": "Police Department",
+   "first": 22,
+   "first_fy": "2021",
+   "kind": "officers named on the roster",
+   "last_fy": "2023",
+   "people": 25,
+   "series": [
+    {
+     "fy": "2021",
+     "people": 22
+    },
+    {
+     "fy": "2022",
+     "people": 20
+    },
+    {
+     "fy": "2023",
+     "people": 25
+    }
+   ],
+   "suspect": [
+    "2024"
+   ],
+   "years": 3
+  },
+  {
+   "change": 0,
+   "department": "Department Of Public Works",
+   "first": 14,
+   "first_fy": "2023",
+   "kind": "posts in the establishment it states",
+   "last_fy": "2024",
+   "people": 14,
+   "series": [
+    {
+     "fy": "2023",
+     "people": 14
+    },
+    {
+     "fy": "2024",
+     "people": 14
+    }
+   ],
+   "suspect": [],
+   "years": 2
   }
  ],
  "fire": [
@@ -322,6 +521,97 @@
    "stated_low": ""
   }
  ],
+ "school_detail": {
+  "by_position": [
+   {
+    "people": 77,
+    "position": "Classroom Teacher"
+   },
+   {
+    "people": 52,
+    "position": "Paraprofessional"
+   },
+   {
+    "people": 42,
+    "position": "(unmapped)"
+   },
+   {
+    "people": 13,
+    "position": "Specialist Teacher"
+   },
+   {
+    "people": 11,
+    "position": "Custodial / Facilities"
+   },
+   {
+    "people": 8,
+    "position": "Food Service"
+   },
+   {
+    "people": 8,
+    "position": "Speech / OT / PT"
+   },
+   {
+    "people": 6,
+    "position": "Assistant Principal"
+   },
+   {
+    "people": 5,
+    "position": "Administrative Staff"
+   },
+   {
+    "people": 5,
+    "position": "Guidance / Adjustment Counselor"
+   },
+   {
+    "people": 5,
+    "position": "Principal"
+   },
+   {
+    "people": 4,
+    "position": "Nurse"
+   },
+   {
+    "people": 4,
+    "position": "Special Education Teacher"
+   },
+   {
+    "people": 3,
+    "position": "Department Head"
+   },
+   {
+    "people": 3,
+    "position": "School Psychologist"
+   },
+   {
+    "people": 2,
+    "position": "Behaviour / BCBA"
+   },
+   {
+    "people": 2,
+    "position": "Director"
+   }
+  ],
+  "by_school": [
+   {
+    "people": 73,
+    "school": "primary"
+   },
+   {
+    "people": 64,
+    "school": "high"
+   },
+   {
+    "people": 64,
+    "school": "turkey-hill"
+   },
+   {
+    "people": 49,
+    "school": "middle"
+   }
+  ],
+  "fy": "2025"
+ },
  "sources": [
   {
    "basis": "published",
@@ -370,17 +660,17 @@
  ],
  "stats": [
   {
-   "label": "parts of the town that name their staff: Police, Fire and the schools — every other department names none",
+   "label": "school staff — more people than the rest of the town put together, six times over",
+   "value": "250"
+  },
+  {
+   "label": "in every other part of the town that publishes a count: Fire, Police and the DPW",
+   "value": "79"
+  },
+  {
+   "label": "parts of the town that publish any staff count at all",
    "tone": "var(--series-cost)",
-   "value": "3"
-  },
-  {
-   "label": "appointed posts in FY2025 — directors, chiefs, inspectors, clerks",
-   "value": "60"
-  },
-  {
-   "label": "kinds of quantity the town publishes about staffing, none of them addable to another",
-   "value": "four"
+   "value": "4 of 60"
   }
  ],
  "years": [

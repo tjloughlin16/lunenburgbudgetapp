@@ -1070,6 +1070,11 @@ GROUPS = [
              'Elected seats, appointed seats and officers over FY2016-FY2025. The shape IS '
              'the finding: the establishment barely changes while about a third of the '
              'people in it turn over every year.'),
+            ('analyses/charts/town-personnel-employers.svg',
+             'How many people each part of the town employs', 1,
+             'One bar per part of the town that publishes a staff count, ranked, with the '
+             'change beside it. The schools bar is six times the rest together. Four parts '
+             'of the town publish a count; the other departments publish none.'),
             ('analyses/charts/town-personnel-fire.svg',
              'The Fire Department grew and shrank at the same time', 1,
              'Career firefighters as a line against the on-call roll as a BAND, because '

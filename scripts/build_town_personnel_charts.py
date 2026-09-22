@@ -43,6 +43,8 @@ from build_stabilization_charts import (  # noqa: E402
 )
 
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'town-personnel.json')
+
+BAR = '#184f95'
 OUT = os.path.join(ROOT, 'sources', 'analyses', 'charts')
 
 ELECTED = '#184f95'
@@ -129,7 +131,47 @@ def chart_fire(d):
                % (years[0], years[-1]))
 
 
-CHARTS = [('town-personnel-fire.svg', chart_fire)]
+def chart_employers(d):
+    """How many people each part of the town employs, on one axis.
+
+    TJ, after three versions of this page that were not it: *"I wanted it to be a cross
+    department report. which departments have the most employees. which have the least.
+    which are growing in employee count the most ... who has made cuts, who hasnt ... and
+    i expect the schools to be on this too."*
+
+    One bar each, ranked, with the change beside it. The schools bar is six times the rest
+    together and that is the first thing the chart should say -- the earlier versions of
+    this page led with what the town PUBLISHES about staffing, which is a page about
+    documents wearing a report's clothes.
+    """
+    emp = d['employers']
+    W, H = 720, 74 + 46 * len(emp)
+    top, label_w, right = 62, 200, 150
+    plot_w = W - label_w - right
+    hi = max(e['people'] for e in emp) * 1.05
+    b = []
+    for i, e in enumerate(emp):
+        cy = top + 46 * i + 14
+        w = e['people'] / hi * plot_w
+        b.append(f'<rect x="{label_w}" y="{cy - 11:.1f}" width="{max(w, 1):.1f}" '
+                 f'height="22" fill="{BAR}" rx="2"/>')
+        b.append(f'<text x="{label_w - 8}" y="{cy + 4:.1f}" font-size="11" '
+                 f'text-anchor="end" fill="{INK}">{esc(e["department"][:26])}</text>')
+        b.append(f'<text x="{label_w + w + 8:.1f}" y="{cy + 4:.1f}" font-size="11" '
+                 f'font-weight="700" fill="{INK}">{e["people"]}</text>')
+        ch = e['change']
+        sign = '+' if ch >= 0 else '\u2212'
+        colour = OFFICER if ch > 0 else (APPOINTED if ch < 0 else MUTED)
+        b.append(f'<text x="{label_w + w + 8:.1f}" y="{cy + 18:.1f}" font-size="9.5" '
+                 f'fill="{colour}">{sign}{abs(ch)} since FY{e["first_fy"]}</text>')
+    return svg(W, H - 2 * PAD, ''.join(b),
+               'How many people each part of the town employs',
+               'Every part of the town that publishes a staff count. Four do; the other '
+               'departments publish none, and their staff are in no figure here.')
+
+
+CHARTS = [('town-personnel-employers.svg', chart_employers),
+          ('town-personnel-fire.svg', chart_fire)]
 
 
 def main():
