@@ -76,13 +76,14 @@ def open_seats():
         for r in csv.DictReader(fh):
             rows.append(r)
             latest = max(latest or r['fy'], r['fy'])
-    out = collections.Counter()
+    out, how = collections.Counter(), {}
     for r in rows:
         n = int(r.get('vacancies') or 0)
         if n and r['fy'] == latest:
             slug = re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', r['post'].lower())).strip('-')
             out[slug] += n
-    return dict(out), latest
+            how.setdefault(slug, r.get('section') or '')
+    return dict(out), latest, how
 
 
 def how_to_join(slug, docs, as_of):
@@ -307,7 +308,7 @@ def build(as_of=None):
     # publisher's words, its members, when it meets, and a Facebook link where the page
     # carries one. fetch_board_pages.py mirrors and extracts; nothing is paraphrased here.
     pages = {r['slug']: r for r in read_csv(PAGES)}
-    OPEN = open_seats() or ({}, None)
+    OPEN = open_seats() or ({}, None, {})
 
     boards = []
     for slug in sorted(set(docs) | set(vids)):
@@ -452,6 +453,7 @@ def build(as_of=None):
         if join is not None:
             join['open_seats'] = OPEN[0].get(slug, 0)
             join['open_seats_fy'] = OPEN[1]
+            join['open_seats_filled_by'] = OPEN[2].get(slug, '')
         boards.append(dict(
             slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard, join=join,
             finance=finance_counts().get(slug),

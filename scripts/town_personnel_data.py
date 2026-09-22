@@ -62,10 +62,17 @@ def load():
     named = [r for r in cur if r['person'].strip()]
 
     # 1. WHERE CAN I SERVE. The town's own printed vacancies, by body.
+    # WHICH WAY A SEAT IS FILLED TRAVELS WITH IT. TJ, 22 September 2026: *"for open seats,
+    # we should say whether or not its elected or appointed"*. It is the difference between
+    # standing for election in May and writing to the Select Board, so a list of vacancies
+    # that does not say which is telling somebody where to go and not how to get there.
+    # The section header above the post is the town's own answer and it was already read.
     vac = collections.Counter()
+    vac_how = {}
     for r in cur:
         if r['vacancies']:
             vac[r['post']] += r['vacancies']
+            vac_how.setdefault(r['post'], r['section'])
 
     # 2. WHEN. The year each seat's term runs out.
     # THE NEXT CHANCE TO JOIN IS A FUTURE YEAR. Taking the earliest term year in the data
@@ -166,7 +173,8 @@ def load():
 
     return dict(rows=rows, years=years, per=per, checks=checks, posts=posts,
                 roster=rost,
-                last=last, named=named, vacancies=vac, terms=terms, ahead=ahead,
+                last=last, named=named, vacancies=vac, vac_how=vac_how, terms=terms,
+                ahead=ahead,
                 body_churn=body, body_big=big, staffing=staff, fire=fire_series,
                 distinct=len(who), held=len(named), multi=multi, churn=churn,
                 ever=len(ever), served_all=served_all, sizes=sizes)

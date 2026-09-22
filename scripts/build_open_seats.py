@@ -47,6 +47,13 @@ PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'open-seats.json')
 
 TOWN = 'https://www.lunenburgma.gov'
 
+HOW_LABEL = {'elected': 'elected — annual town election, third Saturday in May',
+             'appointed': 'appointed — by the Select Board'}
+
+
+def how_text(d, post):
+    return HOW_LABEL.get(d['vac_how'].get(post, ''), 'not stated')
+
 
 def render(d):
     last = d['last']
@@ -57,11 +64,13 @@ def render(d):
          'up. From the FY%s annual town report — the town’s own listing, not ours.\n'
          % last]
 
-    t.append('\n## Empty now\n\nThe town printed a vacancy where a name would go.\n\n'
-             '| board or committee | seats open |\n|---|---:|\n')
+    t.append('\n## Empty now\n\nThe town printed a vacancy where a name would go. How a '
+             'seat is filled decides what you do about it: an APPOINTED seat is filled by '
+             'the Select Board, and an ELECTED one at the annual town election.\n\n'
+             '| board or committee | seats open | how it is filled |\n|---|---:|---|\n')
     for post, n in sorted(d['vacancies'].items(), key=lambda a: (-a[1], a[0])):
-        t.append('| %s | %s |\n' % (post, n))
-    t.append('| **total** | **%s** |\n' % num(vac))
+        t.append('| %s | %s | %s |\n' % (post, n, how_text(d, post)))
+    t.append('| **total** | **%s** | |\n' % num(vac))
 
     t.append('\n## Coming up\n\nFilled seats, by the year the term runs out. A seat with a '
              'term ending is a seat to ask about before it does.\n')
@@ -73,10 +82,11 @@ def render(d):
         if not y.isdigit() or int(y) < int(last):
             continue
         rows = sorted(by_year[y], key=lambda r: r['post'])
-        t.append('\n### %s — %s seats\n\n| board or committee | seat held by |\n|---|---|\n'
-                 % (y, num(len(rows))))
+        t.append('\n### %s — %s seats\n\n| board or committee | seat held by | how it '
+                 'is filled |\n|---|---|---|\n' % (y, num(len(rows))))
         for r in rows:
-            t.append('| %s | %s |\n' % (r['post'], r['person']))
+            t.append('| %s | %s | %s |\n'
+                     % (r['post'], r['person'], HOW_LABEL.get(r['section'], '—')))
 
     t.append('\n## How to ask\n\nAppointed seats are filled by the Select Board; elected '
              'seats are filled at the annual town election, third Saturday in May. The '
@@ -91,11 +101,16 @@ def payload(d):
     last = d['last']
     vac = sum(d['vacancies'].values())
     soon = d['ahead'][0] if d['ahead'] else None
+    elected = sum(n for p, n in d['vacancies'].items()
+                  if d['vac_how'].get(p) == 'elected')
+    appointed = vac - elected
     by_year = {}
     for r in d['named']:
         y = r['term_expires']
         if y.isdigit() and int(y) >= int(last):
-            by_year.setdefault(y, []).append(dict(post=r['post'], person=r['person']))
+                by_year.setdefault(y, []).append(
+                dict(post=r['post'], person=r['person'], filled_by=r['section'],
+                     how=HOW_LABEL.get(r['section'], '')))
     return dict(
         generated_by='scripts/build_open_seats.py',
         about='Boards and committees with a seat going spare, and when the filled ones '
@@ -104,14 +119,16 @@ def payload(d):
               'by the town, or filled with the year its term runs out printed beside it.',
         stats=[
             dict(value=num(vac), tone='var(--series-cost)',
-                 label='seats printed EMPTY across %s boards' % num(len(d['vacancies']))),
+                 label='seats printed EMPTY across %s boards — %s appointed, %s elected'
+                       % (num(len(d['vacancies'])), num(appointed), num(elected))),
             dict(value=num(d['terms'][soon]) if soon else '—',
                  label='seats whose term runs out in %s' % (soon or '')),
             dict(value=num(len(d['sizes'])),
                  label='boards, committees and posts in the town’s listing'),
         ],
         fy=last,
-        vacancies=[dict(post=p, seats=n)
+        vacancies=[dict(post=p, seats=n, filled_by=d['vac_how'].get(p, ''),
+                        how=how_text(d, p))
                    for p, n in sorted(d['vacancies'].items(), key=lambda a: (-a[1], a[0]))],
         expiring=[dict(year=y, seats=v) for y, v in sorted(by_year.items())],
         sources=[dict(what='Every board, committee and post, with its holders and their '
