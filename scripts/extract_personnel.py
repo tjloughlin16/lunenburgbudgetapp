@@ -76,81 +76,6 @@ PAGENO = re.compile(r'^\d{1,3}$')
 # town publishes exactly where they are.
 VACANCY = re.compile(r'^\s*(\d+)?\s*(?:associate member\s+)?vacan(?:t|cy|cies)\b', re.I)
 
-FIELDS = ['fy', 'page', 'order', 'post', 'kind', 'section', 'stated_members',
-          'person', 'vacancies', 'term_expires', 'note', 'size_check']
-
-
-def raw_pages(path):
-    """{page: [line, ...]} with the `  12|` gutter taken off and COLUMNS PRESERVED."""
-    page, out = None, collections.defaultdict(list)
-    for raw in open(path, encoding='utf-8', errors='replace'):
-        m = re.match(r'^===PAGE (\d+)===', raw)
-        if m:
-            page = int(m.group(1))
-            continue
-        if page is not None:
-            out[page].append(re.sub(r'^\s*\d+\|', '', raw.rstrip('\n')))
-    return out
-
-
-def split_columns(lines):
-    """One stream per printed COLUMN, with the gutter MEASURED off the page.
-
-    Two or three of the nine listing pages in every year are set in two columns, and a
-    line-based reader runs them together: FY2022 page 9 prints `ANIMAL CONTROL OFFICER`
-    beside `ANIMAL INSPECTOR`, and read as one line it is one post with the wrong name and
-    two people's worth of names beneath it. `FINANCE COMMITTEE (7 members)` came out with
-    ZERO members that way -- its seven names were in the other column.
-
-    The gutter is not guessed. Take the share of lines blank at each character position,
-    and a run of six or more positions blank on 97% of them, away from the margins, is the
-    gap between columns. Rule 13b for a page with no boxes: measure it, do not tune a
-    constant. A page with no such run is one column and is left alone.
-    """
-    body = [l for l in lines if l.strip()]
-    if len(body) < 6:
-        return [lines]
-    width = max(len(l) for l in body)
-    blank = [sum(1 for l in body if i >= len(l) or l[i] == ' ') / len(body)
-             for i in range(width)]
-    runs, cur = [], 0
-    for i, f in enumerate(blank + [0.0]):
-        if f >= 0.97:
-            cur += 1
-            continue
-        if cur >= 6 and width * 0.25 < i - cur / 2 < width * 0.75:
-            runs.append(i - cur)
-        cur = 0
-    if not runs:
-        return [lines]
-    cuts = [0] + runs + [width]
-    return [[l[a:b] for l in lines] for a, b in zip(cuts, cuts[1:])]
-
-
-def lines_of(path):
-    """(page, section, text) in READING ORDER: each column of each page, top to bottom.
-
-    THE REPORT ALREADY SAYS WHETHER A POST IS ELECTED OR APPOINTED, and I threw it away.
-    The listing is printed in two sections with a running header on every page -- ELECTED
-    OFFICIALS, then APPOINTED OFFICIALS -- and I was matching that header only to skip it.
-
-    TJ, on being told we could not tell how these posts are filled: *"its not OUR
-    classification. its theirs."* and *"we KNOW the select board is elected. We know the
-    finance committted is appointed. we know the superintendent of shcools is hired."* He
-    is right twice over: it is a known fact about how the town works, and the town prints
-    it. Inventing an `our_kind` column for it was hedging about something the document
-    states on every single page.
-    """
-    for page, lines in sorted(raw_pages(path).items()):
-        head = next((l.strip() for l in lines if l.strip()), '')
-        m = SECTION.match(head)
-        section = m.group(1).lower() if m else ''
-        for ci, col in enumerate(split_columns(lines)):
-            for t in col:
-                if t.strip():
-                    yield (page, ci), section, t
-
-
 # `terms`, PLURAL, and it cost a dozen headings. `\bterm\b` does not match `(3 year
 # terms)`, so ECONOMIC DEVELOPMENT COMMITTEE failed the constitution test, fell through to
 # the capitals test -- where `year terms` in lower case drags the ratio to 0.75 -- and was
@@ -159,10 +84,235 @@ def lines_of(path):
 TERMLEN = re.compile(r'\b\d+\s*years?\s*terms?\b', re.I)
 
 # `Ex Officio Members`, `Associate Members` -- a roster WITHIN a body, printed in title
-# case with no membership stated. Read as people they inflate the body above them; read as
-# headings they are what they are, a separate roster with its own members.
+# case with no membership stated. Read as people they inflate the body above them.
 SUBROSTER = re.compile(r'^(?:ex[- ]officio|associate|alternate|student|honorary)\s+'
                        r'members?\b', re.I)
+
+# What follows a name and is not part of it: an appointment, a resignation, a role.
+APPOINTED_NOTE = re.compile(r'[-–]\s*(appointed|resigned|retired|deceased|term|vacan)',
+                            re.I)
+
+
+FIELDS = ['fy', 'page', 'order', 'post', 'kind', 'section', 'stated_members',
+          'person', 'vacancies', 'term_expires', 'note', 'size_check']
+
+
+WORDS = os.path.join(ROOT, 'sources', 'town-budget', 'ocr', 'words')
+
+# THE ARCHIVED LINE TSVs CONTAIN A 123,577-CHARACTER FIELD, and csv refuses it by default.
+# ocr_pdf.swift's own comment records why: a Vision observation can CONTAIN a newline, and
+# written straight into a TSV it terminates the row early so every following row is
+# absorbed into the last field until the reader recovers. The writer sanitises now; the
+# files on disk were produced before it did. Raising the limit reads them as they are
+# rather than rewriting history, and a field that large is visible as nonsense to anything
+# that looks at it.
+csv.field_size_limit(10_000_000)
+
+
+def word_rows(fy):
+    """Every recognised WORD on the listing pages of one year, with its own box.
+
+    `ocr_pdf.swift --boxes` writes one row per Vision OBSERVATION and an observation is a
+    LINE, so on a two-column page its box spans both columns: FY2022 page 9 came back as
+    27 observations for 27 printed lines with every x-centre between 0.495 and 0.500.
+    There was nothing to cluster on, and rule 13b's method -- measure the page, place by
+    position -- had no position to measure. `ocr_words.swift` asks Vision for a box per
+    word instead, which it will give for any character range, and the same nine pages come
+    back as 1,205 boxes.
+    """
+    path = os.path.join(WORDS, 'fy%s.words.tsv' % fy)
+    if not os.path.exists(path):
+        return []
+    out = []
+    with open(path, encoding='utf-8') as fh:
+        for r in csv.DictReader(fh, delimiter='\t'):
+            x, y, w, h = (float(r['x']), float(r['y']), float(r['w']), float(r['h']))
+            out.append(dict(page=int(r['page']), x0=x, x1=x + w, cy=y + h / 2,
+                            text=r['text']))
+    return out
+
+
+def rows_of(words):
+    """Words grouped into printed ROWS, with the band measured off the page.
+
+    Rule 13b: the band is half the page's own median row pitch, never a constant. A page
+    set in a larger face then needs no new number.
+    """
+    words = sorted(words, key=lambda w: -w['cy'])
+    ys = sorted({round(w['cy'], 4) for w in words}, reverse=True)
+    gaps = sorted(a - b for a, b in zip(ys, ys[1:]) if a - b > 0.002)
+    band = (gaps[len(gaps) // 2] / 2) if gaps else 0.008
+    rows = []
+    for w in words:
+        if rows and abs(rows[-1][0] - w['cy']) <= band:
+            rows[-1][1].append(w)
+        else:
+            rows.append([w['cy'], [w]])
+    return [(cy, sorted(ws, key=lambda w: w['x0'])) for cy, ws in rows]
+
+
+def cells_of(rows):
+    """Each row split into CELLS at the column breaks, measured against the page itself.
+
+    A column break is whitespace, and whitespace is measurable now that boxes are words:
+    the median gap between adjacent words on these pages is 0.0028 of the page width and a
+    break is over 0.05 -- eighteen times. So the threshold is derived from the page (ten
+    times its own median) rather than picked, and a page with no such gap yields one cell
+    per row and is left exactly as it was.
+    """
+    gaps = [b['x0'] - a['x1'] for _cy, ws in rows for a, b in zip(ws, ws[1:])]
+    gaps = [g for g in gaps if g > 0]
+    med = sorted(gaps)[len(gaps) // 2] if gaps else 0.003
+    cut = max(med * 10, 0.02)
+    out = []
+    for cy, ws in rows:
+        cells, cur = [], [ws[0]]
+        for a, b in zip(ws, ws[1:]):
+            if b['x0'] - a['x1'] > cut:
+                cells.append(cur)
+                cur = []
+            cur.append(b)
+        cells.append(cur)
+        out.append((cy, cells))
+    return out
+
+
+def read_order(page, rows):
+    """(column-id, text) in the order a person reads the page.
+
+    A LISTING PAGE IS NOT UNIFORMLY TWO-COLUMN. Most of it runs down the middle in one
+    column and then a handful of rows put two posts side by side -- `ANIMAL CONTROL
+    OFFICER` beside `ANIMAL INSPECTOR`, each with its own holder beneath. Treating the
+    whole page as two columns splits the single-column rows down the middle; treating it
+    as one runs the pairs together into one post with the wrong name.
+
+    So a RUN of consecutive rows that all split into the same number of cells is a block,
+    and a block of width two is read column-wise: every left cell, then every right cell.
+    A block of width one is read straight down. The column id is returned with each entry
+    because a heading may not own names in another column, and the boundary is where a
+    post is closed.
+    """
+    out, i = [], 0
+    while i < len(rows):
+        width = len(rows[i][1])
+        j = i
+        while j < len(rows) and len(rows[j][1]) == width:
+            j += 1
+        for c in range(width):
+            for k in range(i, j):
+                cell = rows[k][1][c]
+                t = ' '.join(w['text'] for w in cell).strip()
+                if t:
+                    out.append(((page, i, c), t))
+        i = j
+    return out
+
+
+LINE_TSV = {'2022': '4129-fy-2022-annual-town-report.tsv',
+            '2023': '4131-fy-2023-annual-town-report.tsv',
+            '2024': '4132-fy-2024-annual-town-report.tsv',
+            '2025': '4130-fy-2025-annual-town-report.tsv'}
+
+
+def line_rows(fy):
+    """The LINE observations, which are the authority for TEXT.
+
+    TWO INSTRUMENTS, EACH DOING WHAT IT IS GOOD AT. The word pass exists because a line
+    box spans both columns and cannot place anything; but the word pass does not read the
+    page as WELL. On FY2022 page 8 it returns no Housing Authority members at all, while
+    the line pass has Catherine J. Clark, Linda M. McDonald and Dale Proulx sitting there
+    -- and it is not a dropped box, because the fallback that would have caught that fires
+    zero times. Vision simply recognises differently under a different render.
+
+    A board that states five members and yields none is the worst possible failure here,
+    because it is indistinguishable from a board nobody joined. So the line pass supplies
+    the words and the word pass supplies only the x positions used to cut a line into
+    columns. Text can never be lost by a geometry that is missing; at worst a line stays
+    whole, which is what it used to be.
+    """
+    path = os.path.join(ROOT, 'sources', 'town-budget', 'ocr', LINE_TSV.get(fy, ''))
+    if not os.path.exists(path):
+        return []
+    out = []
+    with open(path, encoding='utf-8') as fh:
+        for r in csv.DictReader(fh, delimiter='\t'):
+            try:
+                y, h = float(r['y']), float(r['h'])
+            except (ValueError, KeyError):
+                continue
+            out.append(dict(page=int(r['page']), cy=y + h / 2, text=r['text']))
+    return out
+
+
+def cut_line(text, words):
+    """One printed line, cut into cells wherever its own words leave a column gap.
+
+    The words are the ruler and the line is the reading. Where no words are found for a
+    line -- the two passes disagree about what is on the page -- the line is returned
+    whole rather than guessed at.
+    """
+    if len(words) < 2:
+        return [text]
+    gaps = [(b['x0'] - a['x1'], a, b) for a, b in zip(words, words[1:])]
+    pos = [g for g in gaps if g[0] > 0]
+    if not pos:
+        return [text]
+    med = sorted(g[0] for g in pos)[len(pos) // 2]
+    cut = max(med * 10, 0.02)
+    breaks = [i for i, (g, _a, _b) in enumerate(gaps) if g > cut]
+    if not breaks:
+        return [text]
+    # Cut the TEXT at the same word ordinals the geometry broke at.
+    toks = text.split()
+    if len(toks) != len(words):
+        return [text]
+    cells, prev = [], 0
+    for b in breaks:
+        cells.append(' '.join(toks[prev:b + 1]))
+        prev = b + 1
+    cells.append(' '.join(toks[prev:]))
+    return [c for c in cells if c.strip()]
+
+
+def lines_of(path_or_fy):
+    """(column-id, section, text) in reading order: line text, word geometry."""
+    words = word_rows(path_or_fy)
+    wpage = collections.defaultdict(list)
+    for w in words:
+        wpage[w['page']].append(w)
+    lpage = collections.defaultdict(list)
+    for r in line_rows(path_or_fy):
+        lpage[r['page']].append(r)
+    for page in sorted(lpage):
+        lines = sorted(lpage[page], key=lambda r: -r['cy'])
+        wrows = rows_of(wpage.get(page, []))
+        head = lines[0]['text'].strip() if lines else ''
+        m = SECTION.match(head)
+        section = m.group(1).lower() if m else ''
+        rows = []
+        for ln in lines:
+            near = min(wrows, key=lambda r: abs(r[0] - ln['cy'])) if wrows else None
+            ws = near[1] if (near and abs(near[0] - ln['cy']) < 0.006) else []
+            rows.append((ln['cy'], [c for c in cut_line(ln['text'], ws)]))
+        for col, t in read_order_text(page, rows):
+            yield col, section, t
+
+
+def read_order_text(page, rows):
+    """As read_order, over cells that are already text."""
+    out, i = [], 0
+    while i < len(rows):
+        width = len(rows[i][1])
+        j = i
+        while j < len(rows) and len(rows[j][1]) == width:
+            j += 1
+        for c in range(width):
+            for k in range(i, j):
+                t = rows[k][1][c].strip()
+                if t:
+                    out.append(((page, i, c), t))
+        i = j
+    return out
 
 
 def split_entries(raw):
@@ -359,12 +509,12 @@ def main():
     args = ap.parse_args()
 
     rows, problems, refused = [], [], []
-    for path in sorted(glob.glob(os.path.join(PAGES, 'FY*.ocr.txt'))):
-        m = re.search(r'FY(\d{4})\.ocr', path)
+    for path in sorted(glob.glob(os.path.join(WORDS, 'fy*.words.tsv'))):
+        m = re.search(r'fy(\d{4})\.words', path)
         if not m or int(m.group(1)) < args.since:
             continue
         fy = int(m.group(1))
-        got, probs = read_year(fy, path)
+        got, probs = read_year(fy, str(fy))
         # A YEAR WITH NO STATED SIZE ANYWHERE IS A LAYOUT WE DO NOT UNDERSTAND, not a year
         # with no boards. Every year read so far prints eighteen to twenty of them.
         if not any(r['stated_members'] for r in got):
