@@ -23,7 +23,18 @@ set -u
 cd "$(dirname "$0")/.." || exit 1
 
 BATCH=12        # meetings per board per pass, then move on so no board starves
-PAUSE=20        # between boards
+PAUSE=5         # between launches
+JOBS=4          # boards read AT ONCE
+
+# WHY IT RUNS BOARDS IN PARALLEL. Measured 22 September 2026: one meeting takes 14
+# seconds on a short set of minutes and just over two MINUTES on a Select Board set that
+# yields seven votes -- at 8% CPU. The time is the model answering, not this machine
+# working, so doing one board at a time leaves the box idle almost all of it.
+#
+# Boards are independent and each meeting writes its own file, so there is nothing to
+# coordinate. Four at once is a deliberate ceiling rather than a maximum: every call
+# spends the plan's shared allowance, and the same allowance is what an interactive
+# session runs on.
 FIRST="select-board finance-committee school-committee"
 
 pass=0
@@ -50,9 +61,19 @@ while true; do
   done
   n=$(echo "$LEFT" | wc -w | tr -d ' ')
   echo "$(date -u +%H:%M:%S)  pass $pass — $n board(s) with unread minutes"
+  # bash 3.2 has no `wait -n`, so this runs in waves of $JOBS and waits for each wave.
+  # Slightly less efficient than a rolling pool and enormously simpler to reason about.
+  running=0
   for b in $ORDER; do
     echo "$(date -u +%H:%M:%S)  $b — up to $BATCH"
-    python3 scripts/extract_official_votes.py --board "$b" --limit "$BATCH" 2>&1 | tail -3
+    python3 scripts/extract_official_votes.py --board "$b" --limit "$BATCH" 2>&1 \
+      | sed "s/^/  [$b] /" &
+    running=$((running + 1))
     sleep "$PAUSE"
+    if [ "$running" -ge "$JOBS" ]; then
+      wait
+      running=0
+    fi
   done
+  wait
 done

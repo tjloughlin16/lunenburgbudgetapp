@@ -44,8 +44,13 @@ mechanism. build that after. but lets use what you just did for now."*
 Mac. That was right while the work was one refresh a day that finishes in minutes. It is
 no longer right, and three things on 22 September showed why in the same afternoon:
 
-- the votes backfill measured at **about seven meetings an hour**, so 3,899 unread minutes
-  is **three weeks of wall-clock** — longer than a laptop stays up
+- the votes backfill runs at **about ninety meetings an hour** across four parallel
+  boards, so 3,899 unread minutes is **a day or two of continuous running** — longer than
+  a laptop reliably stays awake, and long enough that a reboot loses the run
+  *(an earlier version of this note said seven an hour and three weeks. That was measured
+  in the first hour, serially, while the slowest board was mid-batch, and it was wrong by
+  more than an order of magnitude. The argument for a server does not rest on it: a
+  laptop sleeps and closes its lid whether the job takes two days or twenty.)*
 - the caption backfill is another **738 fetches** at roughly 25 an hour, deliberately slow
   because the throttle is YouTube's patience rather than ours
 - the status dashboard had been **frozen for nineteen hours** because its watcher died with
