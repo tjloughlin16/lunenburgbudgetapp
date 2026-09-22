@@ -160,7 +160,8 @@ TIERS = [
                    r'|\bcaptain\b', re.I)),
     (0, re.compile(r'\bsuperintendent\b|\btown manager\b|\bchief\b|\bprincipal\b'
                    r'|\bdirector\b|\bchair(?:man|person|woman)?\b|\blibrarian\b'
-                   r'|\btown clerk\b|\btreasurer\b|\bcollector\b|\bcommissioner\b'
+                   r'|\btown clerk\b|\btreasurer\b|\bcommissioner\b'
+                   r'|\btax collector\b|^collector\b'
                    r'|\btown administrator\b|\bbusiness administrator\b', re.I)),
     (2, re.compile(r'\blieutenant\b|\blt\.?\b|\bsergeant\b|\bsgt\.?\b'
                    r'|\bdepartment head\b|\bdept\.? head\b|\bsupervisor\b'
@@ -369,8 +370,11 @@ NOT_A_UNIT = re.compile(r'^(ex officio members|john palumbo|'
 # A FRAGMENT OF THE LISTING IS NOT A PERSON. `Serving until next annual`, `ssociate
 # Members-(2) 2 year`, `elect Board Representative-R` -- a sub-heading or a footnote the
 # column reader took for a name, with the first letter eaten by the bullet before it.
-NOT_A_MEMBER = re.compile(r'^(serving|term|vacan|assoc|ssociate|elect board|members?\b|'
-                          r'\W|\d)|denotes|until next|\bmembers\s*[-\u2014(]', re.I)
+NOT_A_MEMBER = re.compile(r'^(serving|term|vacan|assoc|ssociate|elect board|'
+                          r'members?\b|clerks?:|wardens?:|inspectors?:|'
+                          r'deputy warden|general requests|community policing|'
+                          r'open space committee|ritter memorial|\W|\d)'
+                          r'|denotes|until next|\bmembers\s*[-\u2014(]', re.I)
 
 
 # THE MEMBERSHIP IS NOT PART OF THE NAME. The listing prints `COUNCIL ON AGING- - (11
@@ -483,7 +487,14 @@ def _rows_officials():
         # `Steve Archambault-202 /`, `Michelle Durkee.` -- the term year half-scanned off
         # the end of a name, and a full stop the listing puts after it.
         name = re.sub(r'[\s,/\\-]*\d[\d/ .-]*$', '', name).strip(' .,/-')
-        if name and NOT_A_MEMBER.match(name):
+        # `Mike Mackin-until next annual`, `elect Board Representative-R` -- a note or a
+        # sub-heading the seat reader could not split off because it is not a seat.
+        name = re.sub(r'\s*[-\u2013\u2014]\s*(?:until|serving|term|elect)\b.*$', '',
+                      name, flags=re.I).strip(' .,/-')
+        # TESTED AGAINST WHAT WILL BE PUBLISHED. Where the seat reader finds no name it
+        # falls back to the printed string, so checking only `name` let the fragments
+        # straight through under the fallback.
+        if NOT_A_MEMBER.match(name or who):
             bad += 1
             continue
         # ELECTED OR APPOINTED is the listing's own division and it is on every row.
@@ -654,6 +665,19 @@ def _rows_schools():
     for r in csv.DictReader(open(p, encoding='utf-8')):
         who = (r['name'] or '').strip()
         school = SCHOOL.get(r['school'], r['school'].title())
+        # THE SCHOOL COMMITTEE IS PRINTED INSIDE THE CENTRAL OFFICE BLOCK and is not
+        # staff of it. Six years of the district's own chart opened with a
+        # `Vice-Chairperson` because the committee that HIRES the superintendent was
+        # being read as somebody who works for him. TJ, earlier: *"make sure to show the
+        # committees separately than the departments they run."*
+        if re.search(r'chair', (r['position'] or r['role_raw'] or ''), re.I) \
+                and 'central' in r['school']:
+            out.append(dict(fy=r['fy'], unit='School Committee', unit_kind='board',
+                            subunit='', section='',
+                            role=(r['position'] or r['role_raw'] or '').strip(),
+                            person=who, status='filled',
+                            source='school roster p%s' % r['page']))
+            continue
         # The key is `monty-tech`, not `montachusett` -- checking for the long
         # form silently folded a separate district into Lunenburg's chart.
         regional = re.search(r'monty|montachusett', r['school'], re.I) is not None
@@ -1087,6 +1111,12 @@ def build():
     for r in rows:
         if not r['person']:
             continue
+        # ONE PERSON, ONE ROW, AT THEIR MOST SENIOR POST. Keying on the section as well
+        # was tried, so the high school's Athletic Director -- who is also an assistant
+        # principal -- would appear under Athletics too. It brought back 178 duplicates
+        # across the archive, which is far worse for a reader than Athletics showing its
+        # secretary. The page says plainly that a person under two roles is one person
+        # doing two jobs.
         k = (r['fy'], r['unit'], r['subunit']) + _who(r['person'])
         cur = best.get(k)
         if cur is None or _rank(r) < _rank(cur):
@@ -1158,6 +1188,15 @@ def build():
         if re.search(r'^chair', r['role'], re.I):
             chairs_by[(r['fy'], r['unit'])].append(r)
     for (fy, unit), cand in chairs_by.items():
+        # `Christine C.` and `Christine C. Higdon` are one person with the surname
+        # scanned off the end, so the surname test cannot pair them. A name that is a
+        # prefix of another name on the same body in the same year is that name.
+        full = sorted({c['person'] for c in cand}, key=len, reverse=True)
+        for c in cand:
+            for f in full:
+                if f != c['person'] and f.lower().startswith(c['person'].lower().rstrip(' .')):
+                    c['person'] = f
+                    break
         if len({c['person'] for c in cand}) < 2:
             continue
         inside = [c for c in cand if _who(c['person']) in members[(fy, unit)]]
@@ -1213,6 +1252,31 @@ def build():
             if not (r['unit_kind'] == 'board'
                     and r['source'].startswith(('report signature', 'report p'))
                     and not re.search(r'chair|clerk|secretary', r['role'], re.I))]
+
+    # AN UNNAMED POST AND THE PERSON APPOINTED TO IT ARE ONE JOB. The DPW publishes an
+    # ESTABLISHMENT -- `Director`, with no name, because that is how the department
+    # states its strength -- and the officials listing appoints William Bernard as DPW
+    # Director. Both are true and drawing both puts two directors at the top of the
+    # department. The post keeps its place and the name fills it.
+    named = collections.defaultdict(set)
+    for r in rows:
+        if r['person'] and r['role']:
+            named[(r['fy'], r['unit'], r['subunit'])].add(
+                re.sub(r'[^a-z]', '', r['role'].lower()))
+    rows = [r for r in rows
+            if r['status'] != 'post'
+            or not any(k and (k in re.sub(r'[^a-z]', '', r['role'].lower())
+                              or re.sub(r'[^a-z]', '', r['role'].lower()) in k)
+                       for k in named[(r['fy'], r['unit'], r['subunit'])])]
+
+    # ONLY A SUPERINTENDENT HEADS THE DISTRICT. FY2019 opened with four Directors in
+    # the top band because no superintendent row reached that year; a Director of Food
+    # Service does not run Lunenburg Public Schools in any year, including the ones where
+    # we have not found the superintendent.
+    for r in rows:
+        if r['unit_kind'] == 'school' and not r['subunit'] and r['tier'] == 0 \
+                and not re.search(r'superintendent', r['role'], re.I):
+            r['tier'] = 1
 
     strong = {(r['fy'], r['unit'], r['subunit']) for r in rows
               if r['tier'] == 0 and STRONG_HEAD.search(r['role'])}

@@ -55,7 +55,7 @@ LEADING = re.compile(r'\b%s\s+(%s)' % (TITLE, NAME))
 # Board`, `Chairperson and the Town`, `Vice Chairman Report`.
 NOT_NAME = re.compile(r'\b(board|committee|commission|report|town|department|the|of|and|'
                       r'school|select|finance|meeting|member|members|said|will|has|'
-                      r'commissioners|trustees|officials|association|authority)\b',
+                      r'commissioners|trustees|officials|association|authority|club|building|memorial|hall|center|centre|room|library)\b',
                       re.I)
 # The sentence the listing's own footnote prints; not a person.
 FOOTNOTE = re.compile(r'denotes\s+chair', re.I)
@@ -96,7 +96,14 @@ def read_year(fy, rows_idx, pages):
             t = re.sub(r'\s+', ' ', ln).strip()
             if not t or FOOTNOTE.search(t):
                 continue
-            for pat, ni, ti in ((TRAILING, 1, 2), (LEADING, 2, 1)):
+            # ONE LINE, ONE READING. A board often prints its whole slate on one line:
+            # `Brian Laffond, Chair Sarah Cammer, Vice-Chair John Rabbitt, Clerk`. The
+            # `Name, Title` reading gets that exactly right. The `Title Name` reading,
+            # applied to the SAME line, shifts everything by one -- `Chair Sarah Cammer`,
+            # `Vice-Chair John Rabbitt` -- and every board that printed its slate this
+            # way came out with two chairs, the real one and the vice-chair.
+            forms = ((TRAILING, 1, 2),) if TRAILING.search(t) else ((LEADING, 2, 1),)
+            for pat, ni, ti in forms:
                 for m in pat.finditer(t):
                     who, title = m.group(ni).strip(), m.group(ti).strip()
                     # A TITLE IS NOT A NAME, AND THE LINE OFTEN HOLDS BOTH. `...were
@@ -104,7 +111,9 @@ def read_year(fy, rows_idx, pages):
                     # vice-chair called `Chairperson Deb Lincoln`, because the pattern
                     # takes whatever follows the title and the previous person's title
                     # was sitting there.
-                    if NOT_NAME.search(who) or re.search(TITLE, who, re.I):
+                    # `Christine C.` is a name the scanner cut in half.
+                    if NOT_NAME.search(who) or re.search(TITLE, who, re.I) \
+                            or re.search(r'\b[A-Z]\.?$', who):
                         continue
                     out.append(dict(fy=fy, department=dept, person=who,
                                     title=title.title(), page=p, as_printed=t[:120]))

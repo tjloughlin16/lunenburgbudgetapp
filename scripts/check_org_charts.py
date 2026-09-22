@@ -47,8 +47,10 @@ SRC = os.path.join(ROOT, 'sources', 'data', 'org-chart.csv')
 HEADISH = re.compile(r'\b(bureau|shift|division|officers|firefighters|patrol|reserve|'
                      r'arrivals|supervisors|members|trustees|personnel|staff|program|'
                      r'committee|commission|department|council|board)\b', re.I)
-SECOND = re.compile(r'\bdeputy\b|\bassistant\b|\basst\b|\bvice[- ]?chair|\binterim\b|'
-                    r'\bacting\b|\blieutenant\b|\blt\b|\bsergeant\b|\bsgt\b', re.I)
+# INTERIM AND ACTING ARE NOT SECOND. An Interim Chief runs the department; the word says
+# how long, not how far down.
+SECOND = re.compile(r'\bdeputy\b|\bassistant\b|\basst\b|\bvice[- ]?chair|'
+                    r'\blieutenant\b|\blt\b|\bsergeant\b|\bsgt\b', re.I)
 SENTENCE = re.compile(r'\b(?:retired|resigned|graduated|began|served|hired|appointed|'
                       r'until|denotes|vacan\w*)\b', re.I)
 
@@ -83,17 +85,27 @@ def check(rows, want_unit=None, want_fy=None):
         # A BODY HAS ONE CHAIR. Two means a mid-year change the reports print both
         # sides of -- or a chair read off a page the contents page attributed to the
         # wrong body, which is the likelier of the two and the reason this is checked.
+        # TWO CHAIRS WHO BOTH SIT ON THE BODY IS A SUCCESSION, and the reports print
+        # both sides of one: a board that changes chair mid-year names the old one in the
+        # narrative and the new one in the signature. What is wrong is a chair who is not
+        # a member, and those are removed upstream — so this now flags only what is left.
+        seated = {r['person'] for r in rs
+                  if r['role'] in ('board seat', 'officer')
+                  or not re.search(r'chair', r['role'], re.I)}
         chairs = {h['person'] for h in rs if re.search(r'^chair', h['role'], re.I)}
-        if len(chairs) > 1:
+        if len(chairs) > 1 and not chairs <= seated:
             out['TWO-CHAIRS'].append('%-58s %s' % (where, ', '.join(sorted(chairs))[:70]))
         # A DEPUTY AT THE TOP OF A BODY. TJ caught this twice by eye -- a Deputy Chief
         # above the Chief, an Assistant Principal above the Principal -- and both times
         # the head had been thrown away by a matcher rather than demoted. If the highest
         # band a body has is occupied by a rank whose own name says it is second, the
         # first is missing.
+        # ONLY IN THE HEAD BAND. A vice-chair in the DEPUTY band with nothing above is
+        # the record -- several bodies name a vice-chair in their report and never a
+        # chair -- and a flat body whose members happen to be assistants elsewhere is not
+        # inverted at all. What is wrong is a second-in-command standing at the TOP.
         if len(people) > 1:
-            top = min(r['tier'] for r in rs)
-            inv = [r for r in rs if r['tier'] == top and SECOND.search(r['role'])]
+            inv = [r for r in rs if r['tier'] == '0' and SECOND.search(r['role'])]
             if inv:
                 out['INVERTED'].append('%-58s top band is %s'
                                        % (where, ', '.join(sorted({r['role'][:26]
