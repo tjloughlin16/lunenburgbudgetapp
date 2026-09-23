@@ -1016,6 +1016,26 @@ GROUPS = [
              'report as the whole staff leaving and returning. A NAME LEAVING A ROSTER '
              'IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut '
              'post, and not a separation rate.'),
+            ('data/staff-directory.csv',
+             'Who works for the town TODAY, off its own staff directory', 2,
+             '147 people across 27 departments, each with the title the town prints '
+             'beside their name, from 28 pages at `/m/directory/department?did=N`. THE '
+             'ONLY PEOPLE SOURCE HERE NOT READ OUT OF AN ANNUAL REPORT, which is why it '
+             'was fetched: a department that files no report is invisible to both of the '
+             'others and they share the blind spot. Four departments appear here and in '
+             'neither \u2014 Accounting, Human Resources, Facilities/Grounds/Recreation '
+             'and Public Access Cable. IT IS A CONTACT LIST, NOT AN ORG CHART: no rank '
+             'order, no reporting line and NO DATE, so it is a snapshot rather than a '
+             'series and a later fetch will silently differ.'),
+            ('data/report-filing.csv',
+             'Which bodies file an annual report, and which say they did not', 2,
+             'One row per body: the years it filed, and the years the contents page '
+             'printed `No Report Submitted` beside its name in the town\u2019s own '
+             'words. 612 filings and 40 of those refusals across fourteen books. THE '
+             'THIRD STATE IS THE ONE THAT MATTERS: a body that is not on the contents '
+             'page at all has refused nothing, and four real departments are on none in '
+             'any year, so reading their silence as a refusal would be a statement about '
+             'them rather than about the document.'),
             ('data/board-chairs.csv',
              'Who chaired each board, from the body\u2019s own report', 2,
              'The officials listing marks its chairs with asterisks under a footnote '
