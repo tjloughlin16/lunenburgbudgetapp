@@ -538,7 +538,7 @@
  "counts": {
   "meetings": 187,
   "boards": 17,
-  "without_official_minutes": 74
+  "without_official_minutes": 63
  },
  "boards": {
   "board-of-assessors": {
@@ -564,7 +564,7 @@
   "select-board": {
    "board": "Select Board",
    "meetings": 48,
-   "without_official_minutes": 23
+   "without_official_minutes": 13
   },
   "stormwater-task-force": {
    "board": "Stormwater Task Force",
@@ -614,7 +614,7 @@
   "lunenburg-municipal-building-design-committee": {
    "board": "Lunenburg Municipal Building Design Committee",
    "meetings": 1,
-   "without_official_minutes": 1
+   "without_official_minutes": 0
   },
   "finance-committee": {
    "board": "Finance Committee",
@@ -6061,7 +6061,45 @@
     ]
    },
    "reconciliation": null,
-   "digest": null
+   "digest": {
+    "what_happened": [
+     {
+      "line": "Council on Aging agreed to seek capital-plan funding for a parking lot redesign at the senior center.",
+      "t": 2764
+     },
+     {
+      "line": "Board decided to write its own entry for the town report, separate from the director's operational report.",
+      "t": 1039
+     },
+     {
+      "line": "Board turned down joining a multi-town \"friendly neighbors\" program and will instead expand its own friendly visitors program.",
+      "t": 1667
+     },
+     {
+      "line": "Director will send the board the FY26 year-end financial report after confusion over the current gift fund balance.",
+      "t": 2217
+     },
+     {
+      "line": "Chair will ask whether Lunenburg can be added to the ambulance catchment area of a new UMass emergency facility in Groton.",
+      "t": 3500
+     }
+    ],
+    "why_it_matters": [
+     "A capital-plan request puts the senior center parking lot and ADA access into the town's capital budget process, where it will compete with other town projects for funding.",
+     "The gift fund balance confusion and the push for regular financial reports touch how residents can track money donated to the Council on Aging.",
+     "Whether Lunenburg joins the new Groton facility's EMS catchment area could affect ambulance response for seniors and others in town."
+    ],
+    "watch_next": [
+     "Next Council on Aging meeting: review of the policies and procedures packet before it is reposted online",
+     "The parking lot capital planning request as it moves into the town's capital budget process"
+    ],
+    "written": {
+     "by": "scripts/write_recording_minutes.py --digest",
+     "model": "sonnet",
+     "at": "2026-09-23T14:27:48Z",
+     "cost_usd": 0.214806
+    }
+   }
   },
   {
    "time_by_tag_s": {
@@ -6852,7 +6890,45 @@
     ]
    },
    "reconciliation": null,
-   "digest": null
+   "digest": {
+    "what_happened": [
+     {
+      "line": "PACC voted to prepare a warrant article seeking more money at the November special town meeting to cover an anticipated FY27 shortfall.",
+      "t": 2273
+     },
+     {
+      "line": "The manager said the FY27 salary line is tight because he took his vacation time as a payout this year instead of spreading it over three years.",
+      "t": 1938
+     },
+     {
+      "line": "The committee reprioritized its FY27 goals, moving a studio and storage space solution to the top of the list.",
+      "t": 1631
+     },
+     {
+      "line": "A cable licensing/advisory committee update covered legal counsel and survey work ahead of an eventual Comcast contract renegotiation.",
+      "t": 2398
+     },
+     {
+      "line": "The committee set its next meeting for October 5.",
+      "t": 3651
+     }
+    ],
+    "why_it_matters": [
+     "A warrant article at the November special town meeting means residents will be asked to approve additional funds for the cable access budget.",
+     "A tight FY27 salary line tied to a one-time vacation payout is a budget mechanism worth watching as the committee finalizes its funding request.",
+     "Ongoing work toward a Comcast contract renegotiation, and the legal cap on the franchise fee, will shape how public access programming is funded going forward."
+    ],
+    "watch_next": [
+     "The warrant article for the November special town meeting, once drafted with a dollar figure",
+     "PACC's next meeting, October 5"
+    ],
+    "written": {
+     "by": "scripts/write_recording_minutes.py --digest",
+     "model": "sonnet",
+     "at": "2026-09-23T14:28:16Z",
+     "cost_usd": 0.1784984
+    }
+   }
   },
   {
    "time_by_tag_s": {
@@ -7178,7 +7254,44 @@
     "summary": "The Sewer Commission approved minutes, voted to pursue a comprehensive multi-year contract combining pump station operations, maintenance and capital repair work, to be recommended as a warrant article for the November 17, 2026 special town meeting. It also closed out privilege fee assessments on two properties, kept its fee rate unchanged after input from town counsel, and recognized two commissioners for long service on the commission's 20th anniversary."
    },
    "reconciliation": null,
-   "digest": null
+   "digest": {
+    "what_happened": [
+     {
+      "line": "The commission voted to seek one combined multi-year contract for pump station operations, maintenance, emergency service and capital repair, to be recommended as a warrant article at the November 17 special town meeting.",
+      "t": 324
+     },
+     {
+      "line": "Two privilege-fee assessments, at 786-796 Massachusetts Avenue and 67 Pratt Street, were closed out as paid and hooked up.",
+      "t": 705
+     },
+     {
+      "line": "The commission kept its connection and privilege fee rate unchanged after hearing from town counsel.",
+      "t": 776
+     },
+     {
+      "line": "A related operations and maintenance contract due to expire was extended to November 25 to allow more time to finish the procurement work.",
+      "t": 429
+     },
+     {
+      "line": "The commission corrected its next meeting date from September 22 to September 29 at 6pm via Zoom.",
+      "t": 1071
+     }
+    ],
+    "why_it_matters": [
+     "Combining pump station operations and capital repair into one multi-year contract is the mechanism voters will be asked to authorize as a warrant article at the November 17 special town meeting, shaping sewer service costs and reliability for years.",
+     "The connection and privilege fee rate staying unchanged means the cost of a new sewer hookup is not changing for now."
+    ],
+    "watch_next": [
+     "November 17, 2026 special town meeting warrant article on the combined pump station contract",
+     "September 29, 2026, 6pm, Sewer Commission meeting via Zoom"
+    ],
+    "written": {
+     "by": "scripts/write_recording_minutes.py --digest",
+     "model": "sonnet",
+     "at": "2026-09-23T14:28:31Z",
+     "cost_usd": 0.1799324
+    }
+   }
   },
   {
    "time_by_tag_s": {
@@ -8130,7 +8243,44 @@
     "summary": "This special town meeting was called by citizen petition mainly to decide how to allocate unanticipated state education aid and to restore cut middle-school sports. After an extended dispute over which vote threshold applies to different kinds of money articles and a lengthy sound-system delay, the meeting rejected a select-board amendment to reduce the school department's requested state-aid appropriation and approved the full amount for staffing, literacy and athletics needs. A second article was passed over, and a smaller transfer from a winter-recovery special revenue fund to restore middle-school sports and transportation was separately approved after the school committee and select board both endorsed it."
    },
    "reconciliation": null,
-   "digest": null
+   "digest": {
+    "what_happened": [
+     {
+      "line": "Town meeting voted down a select-board amendment to cut the school department's requested state-aid appropriation, then approved the full amount.",
+      "t": 3623
+     },
+     {
+      "line": "The approved funds are earmarked for school staffing, K-12 literacy programming, and high school athletics transportation.",
+      "t": 3394
+     },
+     {
+      "line": "A second article was passed over after its goals were folded into the other two articles that passed.",
+      "t": 6021
+     },
+     {
+      "line": "A separate transfer from the Winter Recovery Assistance Program fund to restore middle school sports and their transportation was approved after both the school committee and select board endorsed it.",
+      "t": 6093
+     },
+     {
+      "line": "The moderator ruled, on town counsel's advice, that raise-and-appropriate articles need a two-thirds vote while fund transfers need only a majority, settling a procedural dispute that opened the meeting.",
+      "t": 775
+     }
+    ],
+    "why_it_matters": [
+     "This decides how new, unanticipated state education aid gets spent -- toward school staffing, literacy programs and athletics -- rather than sitting unallocated in town free cash.",
+     "The vote-threshold ruling (two-thirds for raise-and-appropriate articles, majority for fund transfers) sets the procedure future money articles at town meeting will be judged against.",
+     "The WRAP fund transfer restores middle school sports and busing that had been cut from the school budget."
+    ],
+    "watch_next": [
+     "Town's free cash total and unspent FY27 budget figures, expected to be reported before the November town meeting"
+    ],
+    "written": {
+     "by": "scripts/write_recording_minutes.py --digest",
+     "model": "sonnet",
+     "at": "2026-09-23T14:29:04Z",
+     "cost_usd": 0.1875004
+    }
+   }
   },
   {
    "time_by_tag_s": {
@@ -9300,9 +9450,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08312026-7983",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-08-31-agenda-7983.txt",
      "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-08-31-agenda-7983.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08312026-7983",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.txt",
+     "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -10102,7 +10258,45 @@
     "confidence": "moderate"
    },
    "reconciliation": null,
-   "digest": null
+   "digest": {
+    "what_happened": [
+     {
+      "line": "The task force will ask a non-binding straw poll of town meeting to choose between a stormwater utility fee and continuing to fund stormwater work through the operating budget.",
+      "t": 2223
+     },
+     {
+      "line": "Members settled on billing every property a flat fee based on its impervious surface (an ERU approach) rather than tiered rates, if a utility is chosen.",
+      "t": 2287
+     },
+     {
+      "line": "Fees would be billed separately from the property tax bill, payable quarterly by tear-off coupon; municipal land would not be billed but churches and nonprofits would be.",
+      "t": 1580
+     },
+     {
+      "line": "A warrant article is due September 17, with two task force meetings around September 8 and 14 to draft and vote on its language before sending it to town counsel.",
+      "t": 5142
+     },
+     {
+      "line": "FinCom hears the proposal October 8, the Select Board October 20, and a public information session is planned around November 3, ahead of the November 17 special town meeting.",
+      "t": 5328
+     }
+    ],
+    "why_it_matters": [
+     "Depending on which funding path town meeting favors in the non-binding vote, residents could see stormwater costs shift from the tax bill to a new separate utility bill tied to a property's paved and roofed area.",
+     "Churches, nonprofits and large commercial parcels would be billed under a utility approach even though they are often exempt from property tax, while town-owned land would not be billed.",
+     "The vote at town meeting is advisory only; the operating-budget alternative includes a stormwater engineer position that failed as an override once already."
+    ],
+    "watch_next": [
+     "Warrant article language due September 17, after task force votes on it around September 8 and 14",
+     "November 17 special town meeting: non-binding straw poll on utility vs. operating-budget funding"
+    ],
+    "written": {
+     "by": "scripts/write_recording_minutes.py --digest",
+     "model": "sonnet",
+     "at": "2026-09-23T14:28:47Z",
+     "cost_usd": 0.1830404
+    }
+   }
   },
   {
    "time_by_tag_s": {
@@ -10519,7 +10713,45 @@
     "summary": "The Lunenburg Personnel Committee met with the town manager, HR director and labor counsel to clarify its role under the SAP bylaw, focusing on a job-description review that was delaying the posting of a vacant part-time data collector position. The committee agreed to hold a Thursday Zoom meeting to clear that posting, and discussed possible future bylaw amendments -- exempting recently-reviewed job descriptions, using executive session for above-step-four pay decisions, and changing the three-member unanimous vote requirement to a majority -- to be brought as warrant articles, with a classification/compensation study proposed for future town-meeting funding."
    },
    "reconciliation": null,
-   "digest": null
+   "digest": {
+    "what_happened": [
+     {
+      "line": "Committee will hold a special Zoom meeting Thursday to clear a job-description review that has stalled posting a vacant data collector position.",
+      "t": 774
+     },
+     {
+      "line": "Committee plans to pursue SAP bylaw amendments: exempting recently-reviewed job descriptions from re-review, and changing its unanimous three-vote requirement to a majority.",
+      "t": 3153
+     },
+     {
+      "line": "For hires above step four on the pay scale, the committee will use executive session rather than change the bylaw.",
+      "t": 2723
+     },
+     {
+      "line": "A placeholder warrant article will be voted on before September 17 to reserve space for these bylaw changes and for salary/classification study funding.",
+      "t": 3193
+     },
+     {
+      "line": "A longevity-pay item meant to align the personnel bylaw with union contracts was held for the spring town meeting instead of acted on now.",
+      "t": 3951
+     }
+    ],
+    "why_it_matters": [
+     "A warrant article on this committee's voting rules and hiring authority will come before a town meeting, likely the one before September 17.",
+     "Any classification/compensation study funding, if it goes forward, would depend on certified free cash and could shape FY29 pay decisions.",
+     "Changes to when the committee must review a job description or use executive session affect how quickly the town can fill open positions."
+    ],
+    "watch_next": [
+     "Special Zoom meeting Thursday to clear the data collector job description",
+     "Committee vote on the placeholder warrant article before September 17"
+    ],
+    "written": {
+     "by": "scripts/write_recording_minutes.py --digest",
+     "model": "sonnet",
+     "at": "2026-09-23T14:28:02Z",
+     "cost_usd": 0.249312
+    }
+   }
   },
   {
    "time_by_tag_s": {
@@ -14828,9 +15060,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08102026-7955",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-08-10-agenda-7955.txt",
      "path": "sources/meetings/select-board/2026-08-10-agenda-7955.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08102026-7955",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-08-10-minutes-7955.txt",
+     "path": "sources/meetings/select-board/2026-08-10-minutes-7955.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -17213,9 +17451,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07272026-7925",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-07-27-agenda-7925.txt",
      "path": "sources/meetings/select-board/2026-07-27-agenda-7925.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07272026-7925",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-07-27-minutes-7925.txt",
+     "path": "sources/meetings/select-board/2026-07-27-minutes-7925.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -31153,9 +31397,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05052026-7796",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-05-05-agenda-7796.txt",
      "path": "sources/meetings/select-board/2026-05-05-agenda-7796.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05052026-7796",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-05-05-minutes-7796.txt",
+     "path": "sources/meetings/select-board/2026-05-05-minutes-7796.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -34915,9 +35165,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04212026-7778",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-21-agenda-7778.txt",
      "path": "sources/meetings/select-board/2026-04-21-agenda-7778.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04212026-7778",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-21-minutes-7778.txt",
+     "path": "sources/meetings/select-board/2026-04-21-minutes-7778.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -36500,9 +36756,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04142026-7766",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-14-agenda-7766.txt",
      "path": "sources/meetings/select-board/2026-04-14-agenda-7766.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142026-7766",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-14-minutes-7766.txt",
+     "path": "sources/meetings/select-board/2026-04-14-minutes-7766.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -41720,9 +41982,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03312026-7745",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-31-agenda-7745.txt",
      "path": "sources/meetings/select-board/2026-03-31-agenda-7745.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03312026-7745",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-31-minutes-7745.txt",
+     "path": "sources/meetings/select-board/2026-03-31-minutes-7745.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -47353,9 +47621,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03172026-7717",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-17-agenda-7717.txt",
      "path": "sources/meetings/select-board/2026-03-17-agenda-7717.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03172026-7717",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-17-minutes-7717.txt",
+     "path": "sources/meetings/select-board/2026-03-17-minutes-7717.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -48062,9 +48336,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03162026-7716",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-16-agenda-7716.txt",
      "path": "sources/meetings/select-board/2026-03-16-agenda-7716.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03162026-7716",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-16-minutes-7716.txt",
+     "path": "sources/meetings/select-board/2026-03-16-minutes-7716.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -54927,9 +55207,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03032026-7689",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-03-agenda-7689.txt",
      "path": "sources/meetings/select-board/2026-03-03-agenda-7689.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03032026-7689",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-03-03-minutes-7689.txt",
+     "path": "sources/meetings/select-board/2026-03-03-minutes-7689.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {
@@ -61293,9 +61579,15 @@
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02172026-7656",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-02-17-agenda-7656.txt",
      "path": "sources/meetings/select-board/2026-02-17-agenda-7656.pdf"
+    },
+    {
+     "kind": "minutes",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02172026-7656",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-02-17-minutes-7656.txt",
+     "path": "sources/meetings/select-board/2026-02-17-minutes-7656.pdf"
     }
    ],
-   "has_official_minutes": false,
+   "has_official_minutes": true,
    "discrepancies": 0,
    "caption_errors": 0,
    "source": {

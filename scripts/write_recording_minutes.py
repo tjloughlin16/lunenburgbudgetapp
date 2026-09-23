@@ -541,6 +541,31 @@ RETAG_SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['t
                                    'tags': {'type': 'array', 'items': {'type': 'string', 'enum': TAGS}, 'maxItems': 3}}}}}}
 
 
+def relink(path, docs):
+    """Bring a minutes file's list of the town's own documents up to date. FREE.
+
+    `town_published` is a pure LOOKUP -- the agendas and minutes the town has posted for
+    that board and date -- so when the town posts one late, or replaces a draft, every
+    minutes file for that meeting is out of date about it and `--check` says so. Nothing
+    about the recording changed, so re-reading the captions would spend about $0.50 to
+    rewrite a field that costs nothing to recompute.
+
+    The source hash is deliberately untouched: it hashes the TRANSCRIPT, and the
+    transcript did not move. Bumping it would tell the next run to write the meeting
+    again.
+    """
+    m = json.load(open(path, encoding='utf-8'))
+    want = docs.get((m['board_slug'], m['meeting_date']), [])
+    if m.get('town_published') == want:
+        return 'current'
+    had = len(m.get('town_published') or [])
+    m['town_published'] = want
+    with open(path, 'w', encoding='utf-8') as fh:
+        json.dump(m, fh, ensure_ascii=False, indent=2)
+        fh.write('\n')
+    return 'relinked (%d -> %d document(s))' % (had, len(want))
+
+
 def retag(path):
     """Add topic tags to a minutes file written before topics carried them. One small
     model call over the topic titles alone -- a few cents, not another $0.50 read of the
@@ -644,9 +669,17 @@ def main():
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--status', action='store_true')
     ap.add_argument('--retag', action='store_true', help='add topic tags to minutes written before topics carried them')
+    ap.add_argument('--relink', action='store_true', help="refresh each file's list of the town's own documents for that meeting; no model call")
     a = ap.parse_args()
     if a.check:
         return check()
+    if a.relink:
+        docs = town_documents()
+        for f in sorted(glob.glob(os.path.join(OUT, '*', '*.json'))):
+            r = relink(f, docs)
+            if r != 'current':
+                print('%s  %s' % (os.path.relpath(f, OUT), r), flush=True)
+        return 0
     if a.retag:
         for f in sorted(glob.glob(os.path.join(OUT, '*', '*.json'))):
             print('%s  %s' % (os.path.relpath(f, OUT), retag(f)), flush=True)
