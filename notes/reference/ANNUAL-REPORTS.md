@@ -28,9 +28,9 @@ prints no total. **Nothing here may be aggregated without splitting on `status` 
 | `ballot-questions.csv` | 9 | 2012–2025 | every tally against its own precinct figures | yes | — | yes |
 | `annual-report-receipts.csv` | 1,137 | 2011–2023 | 504 checked / 85 failed / 548 no check | yes | yes | yes |
 | `special-revenue-funds.csv` | 2,387 | 2011–2025 | 0 checked / 2,058 failed / 328 no check | yes | yes | yes |
-| `staff-roster-entries.csv` | 3,815 | 2011–2025 | every line of every page accounted for | yes | — | yes |
-| `staff-roster-counts.csv` | 699 | 2011–2025 | derived from the above | yes | — | yes |
-| `staff-position-map.csv` | 534 | — | a hypothesis about which titles are the same job | yes | — | yes |
+| `staff-roster-entries.csv` | 3,751 | 2011–2025 | every line of every page accounted for | yes | — | yes |
+| `staff-roster-counts.csv` | 698 | 2011–2025 | derived from the above | yes | — | yes |
+| `staff-position-map.csv` | 525 | — | a hypothesis about which titles are the same job | yes | — | yes |
 
 ### Built by the generic extractor (`scripts/extract_tables.py`)
 
@@ -39,17 +39,20 @@ Read `column_meaning` before reading a value.
 
 | dataset | rows | years | state | in db | provenance | published |
 |---|---:|---|---|---|---|---|
-| `report-appropriations.csv` | 4,665 | 2011–2025 | 0 checked / 4,530 failed / 135 no check | yes | shared | yes |
+| `report-appropriations.csv` | 5,027 | 2011–2025 | 157 checked / 4,870 failed / 0 no check | yes | shared | yes |
 | `report-capital-projects.csv` | 616 | 2011–2025 | 0 checked / 529 failed / 87 no check | yes | shared | yes |
-| `report-debt.csv` | 354 | 2011–2025 | 74 checked / 98 failed / 182 no check | yes | shared | yes |
+| `report-debt.csv` | 366 | 2011–2025 | 75 checked / 99 failed / 192 no check | yes | shared | yes |
 | `report-dept-activity.csv` | 515 | 2011–2025 | 0 checked / 0 failed / 515 no check | yes | shared | yes |
 | `report-elections.csv` | 2,012 | 2011–2025 | 323 checked / 1,688 failed / 1 no check | yes | shared | yes |
-| `report-enrollment-mcas.csv` | 337 | 2011–2025 | 0 checked / 0 failed / 337 no check | yes | shared | yes |
-| `report-gross-wages.csv` | 3,545 | 2011–2025 | 0 checked / 0 failed / 3,545 no check | yes | shared | yes |
+| `report-enrollment-mcas.csv` | 338 | 2011–2025 | 0 checked / 0 failed / 338 no check | yes | shared | yes |
+| `report-filing.csv` | 104 | — | — | **no** | shared | yes |
+| `report-gross-wages.csv` | 3,547 | 2011–2025 | 0 checked / 0 failed / 3,547 no check | yes | shared | yes |
+| `report-index.csv` | 652 | 2011–2025 | — | **no** | shared | yes |
 | `report-monty-tech.csv` | 70 | 2017–2017 | 0 checked / 0 failed / 70 no check | yes | shared | yes |
 | `report-officials.csv` | 237 | 2011–2024 | 0 checked / 0 failed / 237 no check | yes | shared | yes |
-| `report-trust-funds.csv` | 642 | 2011–2025 | 12 checked / 417 failed / 213 no check | yes | shared | yes |
-| `report-valuation.csv` | 316 | 2011–2019 | 0 checked / 0 failed / 316 no check | yes | shared | yes |
+| `report-signatures.csv` | 182 | 2013–2025 | — | **no** | shared | yes |
+| `report-trust-funds.csv` | 644 | 2011–2025 | 12 checked / 418 failed / 214 no check | yes | shared | yes |
+| `report-valuation.csv` | 321 | 2011–2019 | 0 checked / 0 failed / 321 no check | yes | shared | yes |
 | `report-vital-records.csv` | 96 | 2011–2025 | 0 checked / 0 failed / 96 no check | yes | shared | yes |
 
 ### About the documents rather than the town
@@ -59,15 +62,15 @@ Read `column_meaning` before reading a value.
 | `annual-report-catalogue.csv` | 866 | 2011–2025 | Every table in every report, with its PRINTED heading |
 | `annual-report-contents.csv` | 199 | 2011–2025 | What each report contains, section by section |
 | `annual-report-survey.csv` | 2,751 | 2011–2025 | Every page, and which instrument recovers it |
-| `extraction-plan.csv` | 553 | 2011–2025 | Which pages each dataset is read from |
+| `extraction-plan.csv` | 555 | 2011–2025 | Which pages each dataset is read from |
 | `dataset-provenance.csv` | 225 | 2011–2025 | Every dataset joined to the document it came from |
 | `report-anomalies.csv` | 521 | 2011–2025 | Where a reading is not credible, and where to look |
 
 ## What is NOT captured
 
-### 1. 278 of 866 catalogued tables sit on pages no dataset reads
+### 1. 277 of 866 catalogued tables sit on pages no dataset reads
 
-About 6,228 rows by the catalogue's own estimate. Much of it is furniture — tables of
+About 6,168 rows by the catalogue's own estimate. Much of it is furniture — tables of
 contents, pie-chart labels, phone directories. These are the substantial ones, all marked
 `clean` in the catalogue:
 

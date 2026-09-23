@@ -9,13 +9,13 @@ path that exists only in the working tree is one disk failure from gone.
 | path | copies | size | files | what it is | cost to lose |
 |---|---|---:|---:|---|---|
 | `sources/town-budget/docs/` | tree + git + bucket | 284 MB | 152 | The town's PDFs. The primary source, and the only thing here that is not a function of something else. | re-download from two published addresses — **if they still resolve** |
-| `sources/town-budget/ocr/` | tree + git + bucket | 14 MB | 17 | OCR geometry: `page, x, y, w, h, conf, text` per recognised line, Apple Vision at raster scale 6.0 with per-page orientation calibration. | **~2 hours of compute** |
+| `sources/town-budget/ocr/` | tree + git + bucket | 18 MB | 62 | OCR geometry: `page, x, y, w, h, conf, text` per recognised line, Apple Vision at raster scale 6.0 with per-page orientation calibration. | **~2 hours of compute** |
 | `sources/town-budget/pages/` | tree + git + bucket | 22 MB | 32 | Each page as text, in two renderings — the PDF's own text layer, and the OCR geometry rebuilt into a fixed-width page. | ~5 minutes, given the OCR |
 | `sources/town-budget/text/` | tree + git + bucket | 5 MB | 147 | Extracted plain text per document, what `search_minutes.py` and the classifiers read. | minutes |
 | `sources/data/inventory/` | tree + git + bucket | 1 MB | 16 | Per-report table catalogues — every table found by reading all sixteen reports end to end, printed heading verbatim. | **many hours of agent reading** |
 | `sources/data/rosters/` | tree + git + bucket | 1 MB | 200 | Roster page dumps and parsed JSON — 100 pages, every line numbered and accounted for. | **many hours of agent reading** |
-| `sources/data/` | tree; **1 of 147 nowhere else** | 46 MB | 147 | The datasets themselves, plus provenance and the extraction plan. CSV only — the directory total below includes the two above. | seconds, given everything above |
-| `sources/data/lunenburg.db` | tree + bucket | 36 MB | 1 | Derived read model. Dropped and rebuilt from the CSVs on every run, never edited. | seconds — `python3 scripts/build_db.py` |
+| `sources/data/` | tree; **6 of 183 nowhere else** | 53 MB | 183 | The datasets themselves, plus provenance and the extraction plan. CSV only — the directory total below includes the two above. | seconds, given everything above |
+| `sources/data/lunenburg.db` | tree + bucket | 39 MB | 1 | Derived read model. Dropped and rebuilt from the CSVs on every run, never edited. | seconds — `python3 scripts/build_db.py` |
 
 ## The files that exist in exactly one place
 
