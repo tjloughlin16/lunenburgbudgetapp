@@ -51,6 +51,19 @@ def who(name):
     return (parts[-1].lower().strip('.,'), parts[0][:1].lower())
 
 
+# THE WAGE LIST PRINTS THE SURNAME FIRST, and in capitals: `SULLIVAN PATRICK`,
+# `THIBODEAU JEFFREY`. Joining it with the same surname-last rule as everything else
+# matched almost nobody — and the first thing that produced was a spectacular false
+# finding, that 54 of the town's current staff appear in no record this project holds.
+# They do; the join was backwards. A sanity check on two names anybody would recognise
+# is what caught it, and it is now run on every build.
+def who_wage(name):
+    parts = [p for p in re.split(r'\s+', (name or '').strip()) if p]
+    if len(parts) < 2:
+        return None
+    return (parts[0].lower().strip('.,'), parts[1][:1].lower())
+
+
 def load(path):
     p = os.path.join(DATA, path)
     return list(csv.DictReader(open(p, encoding='utf-8'))) if os.path.exists(p) else []
@@ -105,12 +118,25 @@ def build():
              % (last_fy, len(org_ever)))
     t.append('| the staff directory | the town’s own list, today, undated | %d |\n'
              % len(dir_by))
-    t.append('| the gross wages | every name paid, by year | %d |\n\n'
-             % len({who(r['name']) for r in wages if r['name'].strip()}))
+    paid = {who_wage(r['name']) for r in wages if r['name'].strip()}
+    paid.discard(None)
+    t.append('| the gross wages | every name paid, by year | %d |\n\n' % len(paid))
+
+    # THE JOIN IS CHECKED BEFORE ANYTHING IS SAID OFF IT. Two people anybody in town
+    # could name; if the town's fire chief and police chief are not in the list of
+    # everybody the town paid, the join is broken and every count below it is fiction.
+    canary = [n for n in ('Patrick A. Sullivan', 'Jeffrey Thibodeau')
+              if who(n) not in paid]
+    if canary:
+        t.append('> **THE WAGE JOIN IS BROKEN** and nothing below that uses it can be '
+                 'trusted: %s should be in the list of everybody the town paid and '
+                 '%s not.\n\n' % (' and '.join(canary),
+                                   'is' if len(canary) == 1 else 'are'))
 
     # 1. In the directory and in no roster, ever.
     never = [r for k, r in sorted(dir_by.items(), key=lambda kv: kv[1]['department'])
              if k not in org_ever]
+    unpaid = [r for r in never if who(r['person']) not in paid]
     t.append('## In the staff directory and in no annual report, ever\n\n')
     t.append('**%d of %d.** The strongest signal here, and mostly not a defect: a '
              'department that files no annual report cannot put anybody in one. Read the '
@@ -122,6 +148,10 @@ def build():
     for d, n in bydept.most_common():
         total = sum(1 for r in dirs if r['department'] == d)
         t.append('| %s | %d | **%d** |\n' % (d, total, n))
+    t.append('\n**%d of those %d are not in the gross-wages list either** — in no '
+             'record this project holds except the directory. The wage list runs to '
+             'FY2025 and the directory is today, so a recent hire is the ordinary '
+             'explanation and not a finding.\n' % (len(unpaid), len(never)))
     t.append('\n<details><summary>the %d people</summary>\n\n' % len(never))
     for r in never:
         t.append('- %s — %s, %s\n' % (r['person'], r['title'], r['department']))
