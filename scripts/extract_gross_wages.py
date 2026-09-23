@@ -170,26 +170,202 @@ def read_year(fy):
     return rows
 
 
+# ======================================================================================
+# THE PAGES THE PAGE CACHE LOSES -- read from the Vision boxes instead
+# ======================================================================================
+#
+# `sources/town-budget/pages/FY<year>.ocr.txt` is a fixed-width rendering of the Vision
+# boxes, and everything above reads it. On two wage pages that rendering is empty of
+# money where the boxes are full of it:
+#
+#     FY2011 page  98 -- 138 money boxes in the OCR, 0 in the page cache
+#     FY2012 page 114 -- 133 money boxes in the OCR, 0 in the page cache
+#
+# The cache's FY2011 page 98 is not blank, which is worse than blank: it is that page
+# rendered UPSIDE DOWN, so line 1 reads `L9'SLÉE$` and `T00 HOS`, which is `$338.27` and
+# `SCHOOL` turned over. Nothing downstream could tell that from a page of bad OCR.
+#
+# RULE 13c: A MATCHER THAT FINDS NOTHING IS A STATEMENT ABOUT OUR INSTRUMENT. Two of
+# them here -- the cache for both pages, and Vision itself for half of one -- and neither
+# is a statement about the town, which printed both pages in full.
+#
+# What the boxes actually hold, which is the reason only one of the two pages publishes:
+#
+#   FY2011 page 98 is set in FOUR columns -- name, department, amount, then the same
+#   again. Vision reads the RIGHT half completely (74 names against 75 amounts) and gives
+#   up on the LEFT name column two thirds of the way down the page: 19 names against 63
+#   amounts. So the right half pairs and most of the left half is amounts with nobody to
+#   attach them to.
+#
+#   FY2012 page 114 has no names on it AT ALL. 338 boxes, of which 133 are money and the
+#   rest are department words -- `SCHOOL`, `FIRE`, `SEWER`, `POLICE`. Both name columns
+#   are unread. A department and an amount is not a wage row: it cannot be attributed to
+#   anybody, it cannot be matched to a roster, and summing it would double-count against
+#   the pages either side. That page is REFUSED.
+#
+# A WAGE PAGE PRINTS NO TOTAL -- not on any of the eight pages of the two lists, checked
+# box by box -- so there is no identity to foot a row against, which is why every row in
+# `report-gross-wages.csv` already carries `no check`. What stands in for it here is the
+# PAIRING: a row is written only where one name and one amount sit in the same printed
+# row on the same side of the page. An amount with two candidate names, or none, is
+# counted and refused rather than attached to the nearest one.
+
+OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
+OUT_REFUSED = os.path.join(ROOT, 'sources', 'data', 'gross-wages-refused.csv')
+REFUSED_FIELDS = ['report_fy', 'document', 'page', 'subject', 'reason', 'evidence']
+
+# fy -> document, pages. Kept explicit, and checked at run time against the cache: if a
+# page here ever starts rendering, the script says so rather than reading it twice.
+OCR_ONLY = {
+    '2011': ('4117-fy-2011-annual-town-report.pdf', [98]),
+    '2012': ('4118-fy-2012-annual-town-report.pdf', [114]),
+}
+
+OCR_MONEY = re.compile(r'^\$?\s?([\d,]+\.\d\d)$')
+OCR_NAME = re.compile(r"^[A-Z][A-Za-z'\- ]{1,30},\s*[A-Z][A-Za-z'\- ]{1,30}$")
+OCR_DEPT = re.compile(r'^(FIRE|POLICE|SCHOOL|DPW|LIBRARY|HIGHWAY|CEMETERY|WATER|SEWER'
+                      r'|COA|SENIOR|BUILDING|PARK|RECREATION|TOWN HALL)$', re.I)
+
+
+def ocr_boxes(doc, page):
+    """One page of Vision boxes. Split on tabs -- csv may not be used on these files."""
+    path = os.path.join(OCR, doc[:-4] + '.tsv')
+    out = []
+    if not os.path.exists(path):
+        return out
+    with open(path, encoding='utf-8', errors='replace') as fh:
+        for i, line in enumerate(fh):
+            f = line.rstrip('\n').split('\t')
+            if i == 0 or len(f) < 7:
+                continue
+            try:
+                p, x, y = int(f[0]), float(f[1]), float(f[2])
+            except ValueError:
+                continue
+            if p == page:
+                out.append({'x': x, 'y': y, 't': '\t'.join(f[6:]).strip()})
+    return out
+
+
+def _bands(boxes):
+    """Printed rows, banded at HALF the page's own median row pitch -- rule 13b."""
+    ys = sorted({round(b['y'], 4) for b in boxes}, reverse=True)
+    gaps = sorted(a - b for a, b in zip(ys, ys[1:]) if 0.002 < a - b < 0.05)
+    band = (gaps[len(gaps) // 2] / 2.0) if gaps else 0.005
+    rows = []
+    for b in sorted(boxes, key=lambda b: (-b['y'], b['x'])):
+        if rows and abs(b['y'] - rows[-1][0]['y']) < band:
+            rows[-1].append(b)
+        else:
+            rows.append([b])
+    for r in rows:
+        r.sort(key=lambda b: b['x'])
+    return rows
+
+
+def read_ocr_page(fy, doc, page, cache, refused):
+    """Name-and-amount pairs off the boxes, and a refusal for everything that will not
+    pair. The page is split at the middle because it is printed in two halves; a name in
+    one half is never attached to an amount in the other.
+    """
+    boxes = ocr_boxes(doc, page)
+    if not boxes:
+        refused.append({'report_fy': fy, 'document': doc, 'page': page,
+                        'subject': 'payroll',
+                        'reason': 'the page has no Vision reading in the archive',
+                        'evidence': '0 boxes'})
+        return []
+    cached_money = sum(len(MONEY.findall(t)) for t in cache.get(page, []))
+    money = [b for b in boxes if OCR_MONEY.match(b['t'])]
+    if cached_money > 5:
+        refused.append({'report_fy': fy, 'document': doc, 'page': page,
+                        'subject': 'payroll',
+                        'reason': 'this page now renders in the page cache and is being '
+                                  'read twice; take it out of OCR_ONLY',
+                        'evidence': '%d money figures in the cache, %d in the boxes'
+                                    % (cached_money, len(money))})
+        return []
+    rows, unpaired = [], 0
+    for band in _bands(boxes):
+        for lo, hi in ((0.0, 0.5), (0.5, 1.0)):
+            half = [b for b in band if lo <= b['x'] < hi]
+            names = [b for b in half if OCR_NAME.match(b['t'])]
+            amts = [b for b in half if OCR_MONEY.match(b['t'])]
+            depts = [b for b in half if OCR_DEPT.match(b['t'])]
+            if len(names) == 1 and len(amts) == 1:
+                rows.append(dict(fy=fy, page=page, name=names[0]['t'].strip(),
+                                 amount='%.2f' % float(
+                                     OCR_MONEY.match(amts[0]['t']).group(1).replace(',', '')),
+                                 department=depts[0]['t'].title() if len(depts) == 1 else '',
+                                 as_printed=' '.join(b['t'] for b in half)[:160]))
+            elif names or amts:
+                unpaired += 1
+    if not rows:
+        refused.append({'report_fy': fy, 'document': doc, 'page': page,
+                        'subject': 'payroll',
+                        'reason': 'no name on the page could be paired with an amount',
+                        'evidence': '%d boxes, %d of them money, %d of them a personal '
+                                    'name; the department words that remain (%s) cannot '
+                                    'be attributed to anybody'
+                                    % (len(boxes), len(money),
+                                       sum(1 for b in boxes if OCR_NAME.match(b['t'])),
+                                       ', '.join(sorted({b['t'].upper() for b in boxes
+                                                         if OCR_DEPT.match(b['t'])})[:6]))})
+    elif unpaired:
+        refused.append({'report_fy': fy, 'document': doc, 'page': page,
+                        'subject': 'payroll',
+                        'reason': 'a half-row held a name without an amount, or an amount '
+                                  'without a name, and was not guessed at',
+                        'evidence': '%d half-rows paired, %d refused; Vision reads %d '
+                                    'names against %d money figures on the page'
+                                    % (len(rows), unpaired,
+                                       sum(1 for b in boxes if OCR_NAME.match(b['t'])),
+                                       len(money))})
+    return rows
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    rows = []
+    rows, refused = [], []
     for f in sorted(glob.glob(os.path.join(PAGES, 'FY*.ocr.txt'))):
         m = re.search(r'FY(\d{4})\.ocr', f)
         if m:
             rows += read_year(m.group(1))
+    for fy in sorted(OCR_ONLY):
+        doc, want = OCR_ONLY[fy]
+        cache = pages(fy)
+        for page in want:
+            rows += read_ocr_page(fy, doc, page, cache, refused)
+    rows.sort(key=lambda r: (r['fy'], int(r['page']), r['name']))
+    refused.sort(key=lambda r: (r['report_fy'], int(r['page']), r['reason']))
     if a.check:
+        rc = 0
         old = list(csv.DictReader(open(OUT, encoding='utf-8'))) if os.path.exists(OUT) else []
         if len(old) != len(rows) or any(
                 any(str(r[k]) != o[k] for k in FIELDS) for r, o in zip(rows, old)):
             print('STALE %s' % OUT)
-            return 1
-        return 0
+            rc = 1
+        oldr = (list(csv.DictReader(open(OUT_REFUSED, encoding='utf-8')))
+                if os.path.exists(OUT_REFUSED) else [])
+        if len(oldr) != len(refused) or any(
+                any(str(r[k]) != o[k] for k in REFUSED_FIELDS)
+                for r, o in zip(refused, oldr)):
+            print('STALE %s' % OUT_REFUSED)
+            rc = 1
+        return rc
     with open(OUT, 'w', encoding='utf-8', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=FIELDS)
         w.writeheader()
         w.writerows(rows)
+    with open(OUT_REFUSED, 'w', encoding='utf-8', newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=REFUSED_FIELDS)
+        w.writeheader()
+        w.writerows(refused)
+    for r in refused:
+        print('  REFUSED FY%s page %s: %s -- %s'
+              % (r['report_fy'], r['page'], r['reason'], r['evidence']))
     per = collections.Counter(r['fy'] for r in rows)
     tot = collections.defaultdict(float)
     for r in rows:
