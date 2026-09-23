@@ -1250,6 +1250,12 @@ immediately before writing, and preserve the file's existing newline convention.
                                                 #   the years each body PUBLISHED, with both edges of the archive
                                                 #   marked as censored rather than short
     python3 scripts/build_tenure.py --check
+    python3 scripts/extract_staff_directory.py  # who works for the town TODAY, off its own staff directory —
+                                                #   the only people source here not read out of an annual report
+    python3 scripts/build_report_filing.py      # which bodies file an annual report, which say `No Report
+                                                #   Submitted`, and which the town never asked
+    python3 scripts/build_personnel_discrepancies.py  # ...and where the three people records cannot be
+                                                #   reconciled — INTERNAL, notes/generated/
     node fy28/../scripts/check_org_html.mjs     # ...and every unit RENDERED and read back out of the HTML, from
                                                 #   fy28/, as a citizen sees it: heads first, nobody above their chief
     python3 scripts/check_org_charts.py         # ...and the SHAPE of every body asserted: headless, many-heads,
