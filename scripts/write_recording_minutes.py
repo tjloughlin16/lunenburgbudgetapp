@@ -48,6 +48,7 @@ import json
 import os
 import re
 import subprocess
+import time
 import sys
 import datetime as dt
 
@@ -301,6 +302,34 @@ def lines_for(doc):
     return out
 
 
+def claude_run(argv, prompt, timeout):
+    """`claude -p`, retried ONCE when the binary is not there.
+
+    THE CLI REPLACES ITSELF IN PLACE. `~/.nvm/.../bin/claude` is a symlink that Claude
+    Code rewrites when it auto-updates, so there is a window of a second or two in which
+    the name resolves to nothing and `subprocess` raises FileNotFoundError. On 23
+    September 2026 the 07:00 refresh landed in that window and all three of its minutes
+    failed, which is the WHOLE of `MAX_MINUTES_PER_RUN` -- three slots consumed, nothing
+    written, and 2,474 recordings still waiting at three a day.
+
+    FileNotFoundError HERE IS THE ONE ERROR THAT IS ALWAYS SAFE TO RETRY. It says the
+    binary was not on disk; it can never mean the captions were bad or the model refused.
+    Every other failure is a real answer and is left to the caller, because retrying those
+    would spend the budget twice on the same wrong thing.
+    """
+    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
+    for attempt in (1, 2):
+        try:
+            return subprocess.run(argv, input=prompt, capture_output=True, text=True,
+                                  env=env, timeout=timeout)
+        except FileNotFoundError:
+            if attempt == 2:
+                raise
+            print('  claude is not on PATH -- it is probably mid-update; retrying in 20s',
+                  flush=True)
+            time.sleep(20)
+
+
 def out_path(entry):
     return os.path.join(OUT, entry['board_slug'], '%s-%s.json' % (entry['date'], entry['video_id']))
 
@@ -320,12 +349,11 @@ def write_one(entry, docs, force=False):
     video_title = doc.get('title') or ''
     prompt = ('Meeting: %s, %s. Recording: %s\n\nCaptions (%d lines, [seconds] text):\n\n%s'
               % (board, entry['date'], doc.get('video_url'), len(lines), '\n'.join(lines)))
-    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL,
+    r = claude_run(['claude', '-p', '--tools', '', '--model', MODEL,
                         '--system-prompt', system_for(entry['board_slug']),
                         '--json-schema', json.dumps(schema_for(entry['board_slug'])),
                         '--output-format', 'json', '--max-budget-usd', '2'],
-                       input=prompt, capture_output=True, text=True, env=env, timeout=900)
+                       prompt, 900)
     if r.returncode != 0:
         raise SystemExit('claude failed on %s:\n%s' % (entry['rel'], (r.stdout + r.stderr)[-3000:]))
     res = json.loads(r.stdout)
@@ -398,11 +426,10 @@ def headline(path):
               % (m['board'], m['meeting_date'], mm['summary'],
                  '\n'.join('- %s — %s' % (v['motion'], v['outcome']) for v in votes) or '- none',
                  '\n'.join('- ' + d['decision'] for d in mm.get('decisions', [])) or '- none'))
-    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL,
+    r = claude_run(['claude', '-p', '--tools', '', '--model', MODEL,
                         '--json-schema', json.dumps(HEADLINE_SCHEMA), '--output-format', 'json',
                         '--max-budget-usd', '0.3'],
-                       input=prompt, capture_output=True, text=True, env=env, timeout=300)
+                       prompt, 300)
     # THE CLI'S OWN WORDS, NOT OURS. These two sites printed only "claude failed on X",
     # so a 429 saying "You've hit your session limit · resets 4:30pm" reached the sweep as
     # an unclassifiable failure and stopped a run that should have waited five minutes.
@@ -465,10 +492,9 @@ def digest(path):
                  '\n'.join('- [t=%d] %s: %s' % (b['t'], b['topic'], b['what_was_said']) for b in mm.get('budget_items', [])[:12]) or '- none',
                  '\n'.join('- [t=%d] %s' % (p['t'], p['topic']) for p in mm.get('public_comment', [])) or '- none',
                  '\n'.join('- [t=%d–%d] %s — %s' % (t['t_start'], t['t_end'], t['topic'], t['resolution']) for t in mm.get('topics', []))))
-    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', DIGEST_SYSTEM,
+    r = claude_run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', DIGEST_SYSTEM,
                         '--json-schema', json.dumps(DIGEST_SCHEMA), '--output-format', 'json', '--max-budget-usd', '0.5'],
-                       input=prompt, capture_output=True, text=True, env=env, timeout=300)
+                       prompt, 300)
     # THE CLI'S OWN WORDS, NOT OURS. These two sites printed only "claude failed on X",
     # so a 429 saying "You've hit your session limit · resets 4:30pm" reached the sweep as
     # an unclassifiable failure and stopped a run that should have waited five minutes.
@@ -528,11 +554,10 @@ def retag(path):
               'interview of a candidate is hiring, a board member speaking is not public comment. '
               'Tags: %s\n\nTopics:\n%s' % (', '.join(TAGS),
               '\n'.join('%d. %s — %s' % (i, t['topic'], t['resolution']) for i, t in enumerate(topics))))
-    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL,
+    r = claude_run(['claude', '-p', '--tools', '', '--model', MODEL,
                         '--json-schema', json.dumps(RETAG_SCHEMA), '--output-format', 'json',
                         '--max-budget-usd', '0.5'],
-                       input=prompt, capture_output=True, text=True, env=env, timeout=300)
+                       prompt, 300)
     if r.returncode != 0:
         raise SystemExit('claude failed retagging %s' % path)
     res = json.loads(r.stdout)

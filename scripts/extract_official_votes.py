@@ -40,6 +40,8 @@ TEXT = os.path.join(ROOT, 'sources', 'meetings', 'text')
 OUT = os.path.join(ROOT, 'sources', 'data', 'official-votes')
 INDEX = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
 NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
+# How long one meeting may take before it is skipped and left for the next run.
+TIMEOUT = 600
 MODEL = os.environ.get('VOTES_MODEL', 'haiku')
 MIN_CHARS = 400          # a minutes file shorter than this is a stub or a scan with no text
 
@@ -138,7 +140,7 @@ def extract_one(e, force=False):
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
     r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
                         '--json-schema', json.dumps(SCHEMA), '--output-format', 'json', '--max-budget-usd', '1'],
-                       input=prompt, capture_output=True, text=True, env=env, timeout=600)
+                       input=prompt, capture_output=True, text=True, env=env, timeout=TIMEOUT)
     if r.returncode != 0:
         raise SystemExit('claude failed on %s:\n%s' % (e['rel'], (r.stdout + r.stderr)[-2000:]))
     res = json.loads(r.stdout)
@@ -236,14 +238,38 @@ def main():
     files = minutes_files(board)
     if a.date:
         files = [e for e in files if e['date'] == a.date]
-    done = 0
+    done, failed = 0, []
     for e in files:
-        r = extract_one(e, force=a.force)
+        # ONE BAD MEETING MUST NOT END THE RUN. `extract_one` raises SystemExit on a
+        # non-zero exit or missing structured output, and `subprocess.run(timeout=600)`
+        # raises TimeoutExpired -- none of which was caught, so the first meeting the
+        # model chewed on for ten minutes killed the loop and everything behind it.
+        #
+        # On 23 September 2026 that cost 19 of the run's 40 meetings: 21 written, one
+        # slow minute set, and the process gone. The queue is capped precisely BECAUSE
+        # this stream is metered, so there is no slack to absorb a whole run.
+        #
+        # The term for what was missing is a POISON PILL guard: one item a consumer
+        # cannot digest must not be able to stop the consumer. The failure is recorded
+        # against the meeting and the loop moves on -- and because a meeting is only
+        # written when it succeeds, a skipped one is simply first in line next time.
+        try:
+            r = extract_one(e, force=a.force)
+        except subprocess.TimeoutExpired:
+            r = 'TIMED OUT after %ds -- skipped, will be retried next run' % TIMEOUT
+            failed.append((e['board_slug'], e['date'], 'timeout'))
+        except SystemExit as exc:
+            r = 'FAILED -- skipped, will be retried next run: %s' % str(exc)[:160]
+            failed.append((e['board_slug'], e['date'], 'failed'))
         print('  %s %s  %s' % (e['board_slug'], e['date'], r))
         if r.startswith('wrote'):
             done += 1
             if a.limit and done >= a.limit:
                 break
+    if failed:
+        print('\n%d meeting(s) skipped and still queued:' % len(failed))
+        for b, d, why in failed:
+            print('  %-44s %s  %s' % (b, d, why))
 
 
 if __name__ == '__main__':
