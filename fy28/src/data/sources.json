@@ -1881,9 +1881,9 @@
      "stars": 2,
      "what": "One row per person per role per year, assembled from four readings of the annual reports: the officials listing for boards and appointed posts, the Police and Fire rosters, the four schools’ rosters, and the departments that name their staff in prose. `status` keeps PEOPLE and POSTS apart — `filled` is a named person, `vacant` is a seat the town prints as empty, and `post` is an establishment position a department states without ever saying who fills it, which is how the DPW and the Assessing office publish. Building it was a test of the data model rather than a presentation of it, and it found seven classes of defect nothing that COUNTS things had: a listing footnote read as a post, sub-headings promoted to bodies, and one post under four spellings. Rendered at /org-charts.",
      "kind": "Data",
-     "bytes": 886170,
+     "bytes": 894654,
      "url": "/docs/data/org-chart.csv",
-     "count": 6745,
+     "count": 6815,
      "unit": "rows",
      "textUrl": "/docs/data/org-chart.csv"
     },
@@ -1929,9 +1929,9 @@
      "stars": 2,
      "what": "One row per person per body: the first and last year their name appears, how many years the BODY published in between, the years inside that span it published nothing, and whether they are CENSORED at either edge of the archive. Half of them are: somebody in a body’s first published year began before FY2011 and nothing here can say when, and somebody in its last is still there as far as this can see — so their tenure is a LOWER BOUND, not a length. Identity is surname plus first initial within one body, which merges `Josh`/`Joshua Tocci` and `Steve`/`Stephen McKenna`; the 79 pairs that choice joins are printed on every run and are nicknames rather than collisions.",
      "kind": "Data",
-     "bytes": 162928,
+     "bytes": 164085,
      "url": "/docs/data/tenure.csv",
-     "count": 1885,
+     "count": 1903,
      "unit": "rows",
      "textUrl": "/docs/data/tenure.csv"
     },
@@ -1941,9 +1941,9 @@
      "stars": 2,
      "what": "Both departments list every officer and firefighter by rank and assignment in every annual report. Read from the WORD geometry because both are set in two columns. The Fire Department also states its strength in a sentence, so the book gives the same quantity twice and `roster_check` records whether the two agree — in most years they do not, and the difference is published rather than averaged away.",
      "kind": "Data",
-     "bytes": 87754,
+     "bytes": 96214,
      "url": "/docs/data/department-rosters.csv",
-     "count": 831,
+     "count": 894,
      "unit": "rows",
      "textUrl": "/docs/data/department-rosters.csv"
     },
@@ -2061,9 +2061,9 @@
      "stars": 2,
      "what": "One row per body per published year: the people in it, how many of them are absent from the NEXT year the body published, and the rate. MEASURED ACROSS PUBLISHED YEARS, never calendar years, because 27 of 86 bodies skip a year inside their own span and a naive count reads a missed report as the whole staff leaving and returning. A NAME LEAVING A ROSTER IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut post, and not a separation rate.",
      "kind": "Data",
-     "bytes": 23446,
+     "bytes": 23504,
      "url": "/docs/data/turnover.csv",
-     "count": 448,
+     "count": 449,
      "unit": "rows",
      "textUrl": "/docs/data/turnover.csv"
     },
@@ -2164,6 +2164,18 @@
      "textUrl": "/docs/analyses/peer-districts.md"
     },
     {
+     "path": "data/roster-completeness.csv",
+     "title": "How many of a body’s people the org chart holds, against the town’s own count",
+     "stars": 2,
+     "what": "A shortfall is only a fact when something the town SAID supplies the denominator, so every row carries its basis and the sentence it was read from: a stated headcount (the Library, FY2019 — *“we only employ ten total”*), a stated career-and-on-call strength (the Fire Department, low end always), or an establishment of posts with no names (the DPW, the Assessing office). The gross-wages list would be the best denominator here and is EXCLUDED: its department column is read for 156 rows of 2,866, and against it the Fire Department shows five paid and forty-five named — a statement about our extractor, not about the town.",
+     "kind": "Data",
+     "bytes": 6125,
+     "url": "/docs/data/roster-completeness.csv",
+     "count": 38,
+     "unit": "rows",
+     "textUrl": "/docs/data/roster-completeness.csv"
+    },
+    {
      "path": "analyses/connecting-the-budget.md",
      "title": "What connects the school budget to the Town’s books, and what does not",
      "stars": 2,
@@ -2210,6 +2222,18 @@
      "count": 11,
      "unit": "rows",
      "textUrl": "/docs/data/threads-declined.csv"
+    },
+    {
+     "path": "data/document-defects.csv",
+     "title": "Where a document the town published is itself incomplete",
+     "stars": 2,
+     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
+     "kind": "Data",
+     "bytes": 664,
+     "url": "/docs/data/document-defects.csv",
+     "count": 1,
+     "unit": "rows",
+     "textUrl": "/docs/data/document-defects.csv"
     },
     {
      "path": "data/extraction-blocked.csv",
@@ -2908,9 +2932,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 138263,
+     "bytes": 139597,
      "url": "/docs/data/money-gaps.csv",
-     "count": 164,
+     "count": 166,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3520,6 +3544,18 @@
      "textUrl": "/docs/data/dese-radar.csv"
     },
     {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 451369,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "count": 2634,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
+    },
+    {
      "path": "data/dese-class-size.csv",
      "title": "How many classes ran in each subject, and how full they were",
      "stars": 3,
@@ -3530,18 +3566,6 @@
      "count": 3160,
      "unit": "rows",
      "textUrl": "/docs/data/dese-class-size.csv"
-    },
-    {
-     "path": "data/youtube-transcript-index.csv",
-     "title": "Which meeting recordings we hold a transcript for",
-     "stars": 3,
-     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
-     "kind": "Data",
-     "bytes": 447466,
-     "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2611,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
     {
      "path": "data/dese-sped-program.csv",
@@ -4258,9 +4282,9 @@
      "stars": 2,
      "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
      "kind": "Data",
-     "bytes": 24033,
+     "bytes": 24420,
      "url": "/docs/data/youtube-no-captions.csv",
-     "count": 192,
+     "count": 195,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-no-captions.csv"
     },
@@ -16955,9 +16979,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1475,
+  "documents": 1477,
   "groups": 22,
-  "bytes": 2185603753,
+  "bytes": 2185634325,
   "loadBearing": 156
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

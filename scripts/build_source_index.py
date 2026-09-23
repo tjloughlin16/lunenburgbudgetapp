@@ -1016,6 +1016,29 @@ GROUPS = [
              'report as the whole staff leaving and returning. A NAME LEAVING A ROSTER '
              'IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut '
              'post, and not a separation rate.'),
+            ('data/document-defects.csv',
+             'Where a document the town published is itself incomplete', 2,
+             'TYPED BY HAND, because a defect in somebody else\u2019s printing cannot be '
+             'derived \u2014 it has to be found by a person and written down with its '
+             'evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in '
+             'the document proves it. The first is the FY2022 annual report, whose Fire '
+             'Department roster stops mid-entry at the foot of page 85 and omits the call '
+             'firefighters entirely \u2014 twelve names against a strength the same report '
+             'states as forty. Read alongside `roster-completeness.csv`, which measures the '
+             'shortfall, and `money-gaps.csv`, which holds the questions nobody published an '
+             'answer to. Keeping the three apart is the point: a defective document, a thin '
+             'reading of ours, and an unpublished fact are three different things.'),
+            ('data/roster-completeness.csv',
+             'How many of a body\u2019s people the org chart holds, against the town\u2019s own count', 2,
+             'A shortfall is only a fact when something the town SAID supplies the '
+             'denominator, so every row carries its basis and the sentence it was read '
+             'from: a stated headcount (the Library, FY2019 \u2014 *\u201cwe only employ ten '
+             'total\u201d*), a stated career-and-on-call strength (the Fire Department, low '
+             'end always), or an establishment of posts with no names (the DPW, the '
+             'Assessing office). The gross-wages list would be the best denominator here '
+             'and is EXCLUDED: its department column is read for 156 rows of 2,866, and '
+             'against it the Fire Department shows five paid and forty-five named \u2014 a '
+             'statement about our extractor, not about the town.'),
             ('data/staff-directory.csv',
              'Who works for the town TODAY, off its own staff directory', 2,
              '147 people across 27 departments, each with the title the town prints '
