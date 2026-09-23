@@ -1570,9 +1570,17 @@ def layout_of(unit_rows):
     # A group that holds more than one rank is a real division of the body, not a label
     # on one row -- a shift with its sergeant and its officers, a service with its
     # captain and its firefighters.
+    #
+    # ELECTED AND APPOINTED ARE NOT DIVISIONS. They are how somebody GOT the post, an
+    # attribute of the seat rather than a part of the body, and they span every rank by
+    # definition -- so the Building Department, the Town Clerk and the Treasurer were all
+    # typed `shifts` on the strength of a word that tells a reader nothing about how the
+    # department is arranged. Then FY2027, which has no groups at all, rendered through
+    # the shift layout and put an Assistant Electrical Inspector above the Building
+    # Commissioner.
     by_group = collections.defaultdict(set)
     for r in unit_rows:
-        if r['section_group']:
+        if r['section_group'] and r['section_group'] not in ('Elected', 'Appointed'):
             by_group[r['section_group']].add(r['tier'])
     if any(len(t) > 1 for t in by_group.values()):
         return 'shifts'

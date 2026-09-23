@@ -156,7 +156,21 @@ export function OrgCharts() {
   // The body says which shape it is. The page does not guess — a guess that is right
   // for the Police Department is wrong for the district, and it was: laying the schools
   // out a group at a time threw the four buildings away.
-  const shiftLike = chosen?.layout === 'shifts'
+  // ...AND ONLY WHERE THE YEAR ON SCREEN ACTUALLY HAS THOSE DIVISIONS. The layout is a
+  // property of the BODY, decided across every year it appears in — but a body can be
+  // built out of shifts in the years its roster was printed and be a flat list in a year
+  // that comes from the staff directory, which carries no divisions at all. Rendering
+  // FY2027 through a layout earned by FY2019 put assistants above their own heads.
+  const shiftLike = useMemo(() => {
+    if (chosen?.layout !== 'shifts') return false
+    const spans = new Map<string, Set<string>>()
+    for (const r of rows) {
+      if (!r.section_group) continue
+      if (!spans.has(r.section_group)) spans.set(r.section_group, new Set())
+      spans.get(r.section_group)!.add(String(r.tier))
+    }
+    return [...spans.values()].some(t => t.size > 1)
+  }, [chosen, rows])
 
   // The leadership sits above the groups, exactly as the department draws it: whoever
   // heads the body, their deputy, and the office that works to them.

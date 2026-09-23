@@ -85,7 +85,18 @@ function serve() {
 function blocks(html) {
   // The chart ends where the key to it begins. Rule 7a put that block at the foot.
   const end = html.indexOf('What this report counts')
-  const chart = end === -1 ? html : html.slice(0, end)
+  let chart = end === -1 ? html : html.slice(0, end)
+  // ...AND IT BEGINS AFTER THE WARNING CARDS. `This chart is not complete` quotes the
+  // town's own sentence about how many people a body had, and that sentence contains the
+  // word `heads` often enough to be read as a chart row — the reader reported the
+  // Assessing office as having a head below its own head band, out of a caption.
+  for (const card of ['This chart is not complete', 'is the town’s own staff directory']) {
+    const at = chart.indexOf(card)
+    if (at !== -1) {
+      const close = chart.indexOf('</div>', chart.indexOf('</p>', at))
+      if (close !== -1) chart = chart.slice(0, at) + chart.slice(close)
+    }
+  }
   const parts = chart.split(/<section\b/i).slice(1)
   return (parts.length ? parts : [chart]).map(parse).filter(b => b.length)
 }
@@ -136,7 +147,12 @@ async function main() {
       html.indexOf('What this report counts'))
     const names = body.replace(/<[^>]+>/g, SEP).split(SEP)
       .map(t => t.trim()).filter(Boolean)
-    if (names.length < 2) {
+    // A ONE-PERSON BODY RENDERS ONE NAME AND NO BAND LABEL, by design — so `fewer than
+    // two strings` is what a correct one-person chart looks like, not an empty one. The
+    // Town Forest Committee has a single member in FY2020 and was reported as blank.
+    const people = payload.rows.filter(r => r.unit === u.unit && r.fy === fy
+      && r.person.trim()).length
+    if (names.length < Math.min(2, people)) {
       problems.push(`${u.unit} FY${fy}: the chart is empty`)
       continue
     }
