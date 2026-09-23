@@ -419,8 +419,11 @@ POST_IN = {
     # Jennifer Warren-Dyment hold the post across ten years and all three are the Town
     # Manager of their year -- it is a function of the office, not a body of its own.
     'hearings officer': 'Town Manager',
-    # The department the town votes a budget to and runs a fund for since FY2011.
-    'recreation director': 'Parks and Recreation',
+    # THE TOWN'S OWN NAME FOR IT, off its staff directory: Facilities, Grounds and
+    # Recreation are ONE department, and it is the one Chris Ruth directs. We had it as
+    # `Parks and Recreation` holding a single Recreation Director, which is a third of
+    # the department under a name the town does not use.
+    'recreation director': 'Facilities, Grounds & Recreation',
     # TJ: *"Town Counsel can go into Town Manager group."* The firm is retained by the
     # town and works to the Town Manager; it is not a body and it is not five people.
     'town counsel': 'Town Manager',
