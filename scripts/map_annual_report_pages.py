@@ -212,6 +212,20 @@ def reading_direction(texts):
     return 'reversed' if rev > fwd else 'upright'
 
 
+# A PAGE IS READ WHEN SOMETHING EXTRACTED FIGURES FROM IT, and `report_` is a naming
+# convention rather than a fact about a table. Ten tables carry `fy` and `page` and do not
+# start with it -- `special_revenue_read`, `staff_roster_entries`, `stated_cuts`,
+# `placement_counts` -- so 353 pages that had been read were counted as backlog, 50 of
+# them in the one subject that looked like the largest thing left to do.
+#
+# THE EXCEPTION IS A CATALOGUE. `annual_report_survey` holds a row per page saying what is
+# printed on it, which is how this map knows the pages exist at all. Counting it as a
+# reading would mark every page in the archive read and leave a backlog of nothing --
+# the same error in the other direction, and a far worse one, because an empty queue
+# looks like success.
+CATALOGUES = {'annual_report_survey'}
+
+
 def read_pages():
     """{(fy, page): 'dataset, dataset'} for every page some dataset cites."""
     out = collections.defaultdict(set)
@@ -219,14 +233,16 @@ def read_pages():
         return out
     db = sqlite3.connect('file:%s?mode=ro' % DB, uri=True)
     try:
-        for (t,) in db.execute("SELECT name FROM sqlite_master WHERE type='table' "
-                               "AND name LIKE 'report_%'"):
+        for (t,) in db.execute("SELECT name FROM sqlite_master WHERE type='table'"):
+            if t in CATALOGUES:
+                continue
             cols = {r[1] for r in db.execute('PRAGMA table_info("%s")' % t)}
             if not {'fy', 'page'} <= cols:
                 continue
             for fy, pg in db.execute('SELECT DISTINCT fy, page FROM "%s"' % t):
                 try:
-                    out[(int(fy), int(pg))].add(t[len('report_'):])
+                    out[(int(fy), int(pg))].add(
+                        t[len('report_'):] if t.startswith('report_') else t)
                 except (TypeError, ValueError):
                     continue
     finally:
