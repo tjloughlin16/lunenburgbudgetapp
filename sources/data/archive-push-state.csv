@@ -260,6 +260,7 @@ data/dls-health-insurance.csv,1111551,a11c52efa6731f255bd71dbdb6e0da370089dc3828
 data/dls-health-self-insured.csv,1072422,1bedf5f656a07ccc5c8b99301167a3fbb71b8802051f757fc79078320e5927ef,2026-09-18T12:52:21Z
 data/dls-new-growth.csv,41258,8cc0f76c4336fa6e68966e7598c135300a14ccd8c6e684e52ffa63d1208d8ac8,2026-09-16T17:42:49Z
 data/document-basis.csv,85455,9acf0c69889a341640d7753f02843816bfc289abdc4942a143008152a4e1d395,2026-09-05T16:48:32Z
+data/document-defects.csv,1845,6009666033a3239cccc569171cbb62c9483971df8c7eb535e3fecd0289bc23d8,2026-09-23T12:51:56Z
 data/enterprise-balance-sheet-printed-totals.csv,11424,8cd9637c2a304c9e517ff3a68993993ce2ca216ccfe8651125e9915d0d37c491,2026-09-08T15:44:39Z
 data/enterprise-balance-sheet.csv,17605,d31ddda8b7bf0aa2e2d46ded3ecf60c30cf3824b6e17438b7227fd6fa1025a23,2026-09-08T15:44:41Z
 data/extraction-blocked.csv,272,943862fe88b3938ed96253a2ef1401f6dab8e28e21881c3e1e350d1151c1d3df,2026-09-21T21:48:19Z
@@ -336,6 +337,7 @@ data/official-votes/agricultural-commission/2025-09-08-7394.json,1710,28f410efe6
 data/official-votes/agricultural-commission/2025-09-22-7412.json,1593,0042254ab3772bef6691e43cbc3c9cd1dd5cbb017f8cb05648365865f8b81994,2026-09-18T12:24:23Z
 data/official-votes/agricultural-commission/2025-10-20-7465.json,1397,ea2504ea0c8e416959c281971b747aad03953a5324e89327a5aa05967a810b32,2026-09-18T12:24:24Z
 data/official-votes/agricultural-commission/2025-12-15-7564.json,1397,739d45e620f30621681dc14942d184fad68898187e6bd3159a0d5e8a188d2717,2026-09-18T12:24:24Z
+data/official-votes/architectural-preservation-district-commission/2024-04-09-6518.json,1079,b7535c96bc7b7b0b9c524a314d0eeac4c75fccacf3aee1f49af84c1151f97cb6,2026-09-23T12:52:06Z
 data/official-votes/architectural-preservation-district-commission/2024-06-13-6613.json,1320,5285eaa22ad315137efe402dba72c421daf93036cf9db90ebad58ab3fca51f8d,2026-09-21T21:48:33Z
 data/official-votes/architectural-preservation-district-commission/2024-07-11-6650.json,1427,1969d87cfae037d75f42a3bab2f430e602593ac21a4c0c7e1708129ab3ec7550,2026-09-21T21:48:34Z
 data/official-votes/architectural-preservation-district-commission/2024-10-17-6832.json,2404,5ba411f86cc518f4cd838f6ed0f6e47a0a7b23332ac248624db20adfe3939846,2026-09-18T20:29:22Z
@@ -474,6 +476,8 @@ data/official-votes/cemetery-commission/2026-03-26-7741.json,2858,ca88c14ad7cbfc
 data/official-votes/cemetery-commission/2026-04-23-7777.json,1569,e85b3450ec42a0034468117c48ce202df9b6094a10f7fdefe27efce7b978391d,2026-09-18T12:25:31Z
 data/official-votes/cemetery-commission/2026-05-15-7807.json,1263,bf03f349b243e27349d1f7cb2df51dff02b6a85eb689a0cb9f3a4d2c4f11052b,2026-09-18T12:25:33Z
 data/official-votes/cemetery-commission/2026-06-05-7806.json,1195,3c5aab3653f200a2e4ca58074e7bbbe320377fd89f2fb4a6a6761136baa86842,2026-09-18T12:25:34Z
+data/official-votes/cemetery-commission/2026-06-25-7863.json,2627,7562e11e8ba493c66b55cfb438050d8d38e837e33bd7c2c66430ebef868de805,2026-09-23T12:52:13Z
+data/official-votes/cemetery-commission/2026-07-30-7928.json,2609,3734471edce2838b8c88170384b5d7e1951ab01a0b0310c2671982d8ee784649,2026-09-23T12:52:13Z
 data/official-votes/conservation-commission/2023-05-17-58.json,4421,9afcf46c5a836aa6a5f5ab820ec15caed8c780f1b740ddaf42d75e6f1e3d494d,2026-09-23T03:13:01Z
 data/official-votes/conservation-commission/2023-06-07-59.json,4236,0ff5ccf3e24044f7e5f83bd7197c3109705124bc1aa1b165ee98085a4c0d9281,2026-09-23T03:13:01Z
 data/official-votes/conservation-commission/2023-07-05-381.json,4986,b1cb9d2b20c015b2ecf8c4aca1beaab783e50f5ea56f9187c72f67338aec2621,2026-09-23T03:13:01Z
@@ -730,6 +734,7 @@ data/official-votes/library-board-of-trustees/2026-03-19-7714.json,1739,aae1b7f6
 data/official-votes/library-board-of-trustees/2026-04-16-7764.json,1494,957b8a5873846a29d7a708dba6016bddb7061b51205e743c06327a19cdbbd5a6,2026-09-18T12:27:16Z
 data/official-votes/library-board-of-trustees/2026-05-21-7809.json,4308,7655d3cb306975194a088a93baac28e1f8583024a7f9106aac5ee68f62677142,2026-09-18T12:27:17Z
 data/official-votes/library-board-of-trustees/2026-06-18-7852.json,1343,c5eb249e40329a9c7b1a3edf9e1d7b0d840b54cc0914a2e640b36c17cc21e6ad,2026-09-18T12:27:18Z
+data/official-votes/library-board-of-trustees/2026-07-10-7893.json,2264,a6f1bed5d04c0f33fae7b95c92be2e85d156b4b2120e25414e88705f95b8ca5a,2026-09-23T12:52:25Z
 data/official-votes/lunenburg-300th-anniversary-committee/2024-12-09-6910.json,946,4f8b4d497c3f93f333e7295aa829fd5cf0ed866c5abffe02a3a9511bf4a7c2c5,2026-09-18T20:30:58Z
 data/official-votes/lunenburg-300th-anniversary-committee/2025-04-28-7186.json,1367,397ace8c51be8bbad53825485fc882f4546ae51342525a60350724cb4b795dbc,2026-09-18T20:30:58Z
 data/official-votes/lunenburg-300th-anniversary-committee/2025-08-25-7347.json,1272,ecf0f770b8555595236c815445cd4031165b6467eabacc68cc92bad647016387,2026-09-18T12:27:18Z
@@ -776,6 +781,8 @@ data/official-votes/lunenburg-municipal-building-design-committee/2026-06-15-785
 data/official-votes/lunenburg-municipal-building-design-committee/2026-06-29-7877.json,1075,833a7641147f38c858f95913ccdc2a75358a26184805a53c9133af06780cc899,2026-09-18T12:27:39Z
 data/official-votes/lunenburg-municipal-building-design-committee/2026-07-28-7924.json,1296,5d105627bf9b53d723c184835784fe658bb7ceb5400253f97d62cda6cf563481,2026-09-18T12:27:39Z
 data/official-votes/lunenburg-municipal-building-design-committee/2026-08-17-7962.json,1517,c596705712fbfb5473cb69c0843ef8a7b242392709785e0befcd85589180d7e1,2026-09-18T12:27:41Z
+data/official-votes/lunenburg-municipal-building-design-committee/2026-08-31-7983.json,1757,79fd5dcad3ac38119ac3f237fb4afbe504524c13a88118ce3fddf56634b432ef,2026-09-23T12:52:26Z
+data/official-votes/master-plan-steering-committee/2024-04-05-6494.json,1031,bfdeb4b62168f40981e0137a247df150e863d354c6f56981b893fdd970b048de,2026-09-23T12:52:27Z
 data/official-votes/master-plan-steering-committee/2025-06-25-7279.json,1848,69962b5fac2f56e0ca768ede281675c0266be9f7c7369eee4ed7664073328d33,2026-09-18T12:27:42Z
 data/official-votes/master-plan-steering-committee/2025-07-23-7321.json,1440,a70de7d2fb9a61b532dc304c76c0ada51576bb81348acb426480668dbb250c8d,2026-09-18T12:27:43Z
 data/official-votes/master-plan-steering-committee/2025-08-13-7348.json,2567,5ac2fa424d976a7b604293234d776a0f64d020d98f04d0eb80d3ef4774ed5e0a,2026-09-18T12:27:44Z
@@ -1213,6 +1220,7 @@ data/official-votes/trust-fund-commission/2026-07-24-7923.json,1810,80f88cefe5c2
 data/official-votes/zoning-board-of-appeals/2025-11-12-7472.json,1333,1487dfdfad2dec51b9a655b21eec39ef616e71c94aec7db50c44433699325367,2026-09-18T12:30:17Z
 data/one-big-report-story.csv,12208,89b9a42ff6c12db0f2cc13f5e9b8ba5150f0abc7a81f8722d97168d51e3714ab,2026-09-14T14:25:16Z
 data/ood-tuition-history.csv,1166,e3b57b085895a0c7113edb8b2a93fce7f5a594f03028b89df6c4dd61bece5d1c,2026-09-05T16:49:03Z
+data/org-chart.csv,894654,74d0be395a7b34bec1ea310c683940723c327a7e7236511a32ba0ac1cf4073ab,2026-09-23T12:52:46Z
 data/parks-myrec-sales-fy2025.csv,3207,b9203e56aa18a952c66650ca65c5f2f0d6cd4650787fe4a038c16abe37beb34d,2026-09-17T19:30:56Z
 data/pec-history.csv,2765,c84b4ea18826fd23511056139178f759c972f2abfc7f7a3103ec51db788e1148,2026-09-21T12:04:19Z
 data/peg-access-identities.csv,1562,72e3ce226d213cc74e47677e4cd46594f93b90985e5451aef239766574285134,2026-09-08T15:44:51Z
@@ -1426,6 +1434,7 @@ data/report-valuation.csv,77521,9203f8a4dc07aea39c742bba6f3bfb67b52370a6c4ed8b85
 data/report-vital-records.csv,19040,bb9c89eb771564e7eb683578389d6ce1fa13c1075fb8a3a4cc66436bceecc490,2026-09-05T16:49:18Z
 data/role-classification-caveat.txt,1173,44725af675b7fc629e78201070b8f267c9c77002a65b588ee78833d71a1a7807,2026-09-08T15:44:55Z
 data/role-classification.csv,56718,4f872af03bd49a30b50ec0eb098e75778be206a9c471a89b2e596f99eef6d4b2,2026-09-08T15:44:56Z
+data/roster-completeness.csv,6125,6e45867a6774b50f3120dc9e49370aebb69e9ff741c7dfdc70c44beafd42cade,2026-09-23T12:53:20Z
 data/rosters/FY2011-p032-unknown.json,3981,fa23ecba314f8caf183591aeabd50f38c9b09c0ae00575ff40de04c1bce65934,2026-09-05T16:49:19Z
 data/rosters/FY2011-p032-unknown.txt,3055,c4dec76d0fca58b03e0f5cb9f6774e03f7194a7c53ab46931606b4fe16220801,2026-09-05T16:49:19Z
 data/rosters/FY2011-p037-unknown.json,6428,85fe4ad703e6696343fb0c41deddf63c0d72db6c957901247e00da8357077a60,2026-09-05T16:49:19Z
@@ -1649,6 +1658,7 @@ data/stated-cuts.csv,108639,57a79fb8267a4cc7085dae0b66185d5dc0209eef493038a84f99
 data/stated-figures.csv,984,f909a39fd7732dd2534f5fb038fcc365cb01199875a83d11a126d9df6d7fcfaa,2026-09-05T16:52:47Z
 data/table-corrections.csv,3399,3d481f5fa569dc630f909b2ad831ada60ae84c195afe2dc28f67d7427ef80abc,2026-09-23T03:17:12Z
 data/table-semantics.csv,51655,d8ccb074c81250a441d09b58e2f8cba47db926517fbb7ed9fa13bf61d41b517b,2026-09-08T15:45:02Z
+data/tenure.csv,164085,7305ca4bf0eb8436b43c54d2297e39bbc3fe77edd3dd510854e1e3983ea28d8c,2026-09-23T12:53:20Z
 data/threads-declined.csv,2247,5f950db096fe7e62661978c004645e5ba9849d79cfc9be1b071358dc38eb3d09,2026-09-21T12:04:55Z
 data/threads.csv,13317,8e4f78dcd3961fd96156fc18f8d5258be619516351bffa20f8d8b3c8abd98559,2026-09-21T12:04:55Z
 data/total-expenses-history.csv,934,0a1cfec65c7dbf2017f4c7ae2656762fdc6dc33d7dfdb1ebb5db8f42306b96a6,2026-09-05T16:52:47Z
@@ -1661,6 +1671,7 @@ data/transcribed/balance-sheet-fy2023.txt,2690,9071416e9fc0d6bdacf14c1202d59f9f0
 data/treasurers-cash.csv,20161,2619413b3c8c596f35f0bb9c92f8f9f0db5ab94cc3623eb0f7b485ab9e05d182,2026-09-21T12:04:56Z
 data/trust-agency-balances.csv,6485,0f6ea4dbf5c606cbf88612a386a2ee62d8bd6f1aa0f744ab768b692056774a52,2026-09-21T12:04:57Z
 data/trust-fund-balances.csv,6846,580503fa2a0aaefd359cbe90c45d32477232a2027a1038834c8e4e8101c7d9b0,2026-09-21T12:04:57Z
+data/turnover.csv,23504,d642ce62520bf5aefed55eb26540ba3e9cffaec342e9222fe35a5de656c33051,2026-09-23T12:53:22Z
 data/variance-by-group.csv,4929,88e5c6054dfb3433680e557512153f74c37f6846822b687a8e06951bacd7e188,2026-09-05T16:52:48Z
 data/verify/capital_projects-FY2021-p037.md,3949,f43eae6bbc7324acf33f529d31c4461753be825ce24b0de8d5707f9226fa2f5d,2026-09-05T16:52:49Z
 data/verify/capital_projects-FY2021-p037.png,3302307,28e0881eb56a90deb85586d6709f05855103e1e614ba310b1d872579c227f16b,2026-09-05T16:52:54Z
@@ -7988,7 +7999,9 @@ meetings/cemetery-commission/2026-05-15-minutes-7807.pdf,345882,659cdb0dd1d77e92
 meetings/cemetery-commission/2026-06-05-agenda-7806.pdf,302643,190b2e1d3dbaa0c623aa1db88d84cf46dceb8f8090f3d1b6ff9d61e71c5baa85,2026-09-05T16:39:35Z
 meetings/cemetery-commission/2026-06-05-minutes-7806.pdf,358285,08ffb9d2b4055973128b4f5d0ee52d0693e6e288e646f9dadc477a1249e3f48a,2026-09-05T16:39:35Z
 meetings/cemetery-commission/2026-06-25-agenda-7863.pdf,334948,75d533b886c504cb017e201eb3eb03c7ecce60f22685f4074443350bf1c0d128,2026-09-05T16:39:35Z
+meetings/cemetery-commission/2026-06-25-minutes-7863.pdf,408154,3b62ad28fba1cc74fa099cc196120b095fb5531a42d72781427eb37b7a4b62af,2026-09-23T12:53:32Z
 meetings/cemetery-commission/2026-07-30-agenda-7928.pdf,335454,f0edf16e8bd611cf2afb823b6969fb3e88c96a08f09717c8fc3826cdd39c0007,2026-09-05T16:39:35Z
+meetings/cemetery-commission/2026-07-30-minutes-7928.pdf,336622,787dd40f43b0dd2e2d935fae9a1671345c844549b8be0cfb8ac1d51d5b9cb8b4,2026-09-23T12:53:32Z
 meetings/cemetery-commission/2026-08-19-agenda-7971.pdf,42281,b6c550f103722ddb2a8d162adfa36504d62e24c37241c273d59f6f845d69613a,2026-09-05T16:39:36Z
 meetings/cemetery-commission/2026-09-24-agenda-8029.pdf,333226,49ecefe99dfde7abfee2b987df5051bbb19ed1b88b0c85de057e266c21606262,2026-09-21T21:50:12Z
 meetings/charter-review-committee/2017-09-06-agenda-1576.pdf,2530,0db0263bf44d49c5960a18f2baaddb0ca45aabdde00f1860dab70cfd7ae77a57,2026-09-08T16:17:53Z
@@ -11188,6 +11201,7 @@ meetings/library-board-of-trustees/2026-05-21-minutes-7809.pdf,5168997,8012c81ae
 meetings/library-board-of-trustees/2026-06-18-agenda-7852.pdf,185212,e8b647f7e1888223288ee2f470eb539c111f623c5630b3088d7b3200a8ee13f1,2026-09-05T17:02:19Z
 meetings/library-board-of-trustees/2026-06-18-minutes-7852.pdf,5019774,05a2cf0ee3b2e56f875078a30c7ee11bd78897cf02aed983c8202e7f5b480260,2026-09-05T17:02:19Z
 meetings/library-board-of-trustees/2026-07-10-agenda-7893.pdf,161935,1b8e9d884121d05983274c8a74669961036ffc5eb4aec092f3b0b3a59eacbe0e,2026-09-05T17:02:19Z
+meetings/library-board-of-trustees/2026-07-10-minutes-7893.pdf,142723,2ab5260d37df0c2ae0fcf2eb5b4268a0379afbef5a535c64a6083f31a9ba756e,2026-09-23T12:53:32Z
 meetings/library-board-of-trustees/2026-09-17-agenda-8017.pdf,189349,f5e100e13f98eb400ec99c09b2a9bca29b7f2f9ab39743db7f63a97208759679,2026-09-16T17:43:39Z
 meetings/library-board-of-trustees/2026-09-18-agenda-8018.pdf,160037,4c522b1ae129adfcbc1dff3f36019748f6c32c49030d79603f48373749b72bab,2026-09-16T17:43:39Z
 meetings/lunenburg-300th-anniversary-committee/2023-09-18-agenda-334.pdf,48012,965a38c7a53499728d66d84df64f78b2f20525d83f312c38df14819e15978a5c,2026-09-08T17:07:03Z
@@ -11219,6 +11233,7 @@ meetings/lunenburg-300th-anniversary-committee/2026-06-29-minutes-7866.pdf,11872
 meetings/lunenburg-300th-anniversary-committee/2026-07-27-agenda-7920.pdf,60412,7b7d49985f98518d38f78b5bc911707b365f3d95917a9520a5876c1032c100bd,2026-09-05T17:02:35Z
 meetings/lunenburg-300th-anniversary-committee/2026-07-27-minutes-7920.pdf,26247,0567c27c7bd3c66e8aa97ef8437c5692a0034b1b5e04e7a83a7a758c91453f87,2026-09-08T17:07:21Z
 meetings/lunenburg-300th-anniversary-committee/2026-08-31-agenda-7981.pdf,61788,3568634ab4f9171b04c2c751a47ba3433688f3f1c4b4c506b3b9c44c930aa586,2026-09-08T17:07:21Z
+meetings/lunenburg-300th-anniversary-committee/2026-09-28-agenda-8033.pdf,60987,7bb12bfb4010c27ca99cf1d54d4aa769699a1697afb72c5ec210288ef6ad67cc,2026-09-23T12:53:32Z
 meetings/lunenburg-hazard-mitigation-plan-team-committee/2012-08-20-agenda-2903.pdf,15278,04a73aa1ba8053b79dded3232aaead5d5aa68c29fe9a0a2277821214e6645c32,2026-09-08T17:07:21Z
 meetings/lunenburg-hazard-mitigation-plan-team-committee/2012-09-24-agenda-2904.pdf,37928,f5d7bc03b0f93845b378934213e6b949d8e315ed61c4f74750a9464edfa3ab8a,2026-09-08T17:07:21Z
 meetings/lunenburg-hazard-mitigation-plan-team-committee/2012-09-24-minutes-2904.pdf,71180,420e8c94d2727222688cc9e3a5c44dd3b8cbda77d70552ef28c0a7ba8ed7f3d8,2026-09-08T17:07:21Z
@@ -11639,6 +11654,7 @@ meetings/lunenburg-municipal-building-design-committee/2026-08-03-agenda-7933.pd
 meetings/lunenburg-municipal-building-design-committee/2026-08-17-agenda-7962.pdf,79831,1e3cb7b7c9ef8788414785fdf1a2ab96efcc4458933ba4227d0151a4c89e9c2b,2026-09-05T17:03:40Z
 meetings/lunenburg-municipal-building-design-committee/2026-08-17-minutes-7962.pdf,121284,b4260433bcf1f47e3f03e39cc391b3badadc2f5fff022d13d68234395e92ba6e,2026-09-08T17:13:07Z
 meetings/lunenburg-municipal-building-design-committee/2026-08-31-agenda-7983.pdf,78940,8b7d4390a130aa705fb07921270256a3b71a441c5528b5c02388cf331d086864,2026-09-08T17:13:10Z
+meetings/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.pdf,138212,2e9889cfc38f24675c1c950ca826addac20cd6a4fdb6a1ebe41be36b9ba876e6,2026-09-23T12:53:32Z
 meetings/lunenburg-municipal-building-design-committee/2026-09-21-agenda-8021.pdf,79564,bd56ea33a951ab9f514549cc1aa95fd8f4abfa15aa52459826be9500ecdde94a,2026-09-16T17:43:40Z
 meetings/master-plan-steering-committee/2023-09-18-agenda-332.pdf,85884,0c9e49bf30d6f3270b0cc6bda9206385a9a21a89c72e4775dd312287b0998c88,2026-09-08T17:13:16Z
 meetings/master-plan-steering-committee/2023-09-18-minutes-332.pdf,39770,3908ad3a4590553ba30a7b30082f49785eb9a96d3a4c38b4bef4bc8ddc9a6f22,2026-09-08T17:13:16Z
@@ -19638,7 +19654,9 @@ meetings/text/cemetery-commission/2026-05-15-minutes-7807.txt,893,81a7cfd4496a47
 meetings/text/cemetery-commission/2026-06-05-agenda-7806.txt,769,bf40e920c6e815a63af84666e4c5f796b152814e29659e81cadf5f100ee90d88,2026-09-05T17:18:58Z
 meetings/text/cemetery-commission/2026-06-05-minutes-7806.txt,1825,f555b39a06785645b43344593f1e7c0c7e29217492de2e389b8c2506a970a874,2026-09-05T17:18:58Z
 meetings/text/cemetery-commission/2026-06-25-agenda-7863.txt,1974,b7f4b11a48339f30a9b7ff2d57e816b2d1000eab4de81c46937f88b67858c8fe,2026-09-05T17:18:59Z
+meetings/text/cemetery-commission/2026-06-25-minutes-7863.txt,2997,a3e8b722288798fcf4e7fc75f07c5089259c9af401ccb3a040d8ea4496955135,2026-09-23T12:55:42Z
 meetings/text/cemetery-commission/2026-07-30-agenda-7928.txt,1949,ad50ff8625b7705011c70b4296a94c638ba29ddf246ebe67599d6f2312776611,2026-09-05T17:18:59Z
+meetings/text/cemetery-commission/2026-07-30-minutes-7928.txt,2605,6a662eca3c49524065ae8957335626fdfbab1149279a1ba9504688ff56dea8aa,2026-09-23T12:55:42Z
 meetings/text/cemetery-commission/2026-08-19-agenda-7971.txt,1854,215109c292c8519a32bdc1780289d5df97c8ded6f59eae234476f4ca4fd09e00,2026-09-05T17:18:59Z
 meetings/text/cemetery-commission/2026-09-24-agenda-8029.txt,1831,31894dbe18189225e048a5e73dc97673ea68edfe6b3ebd6a024db9ffac36abc9,2026-09-21T21:52:28Z
 meetings/text/charter-review-committee/2017-09-06-agenda-1576.txt,47,2f6321ec1ddd1b44c76c4f5e0c61ba99b10c0710944a96fefd3de7535ca9d09b,2026-09-08T19:25:24Z
@@ -22837,6 +22855,7 @@ meetings/text/library-board-of-trustees/2026-05-21-minutes-7809.txt,31458,441040
 meetings/text/library-board-of-trustees/2026-06-18-agenda-7852.txt,1121,33887715de45d6ed529529cce5af5449fd9295f7e38a5f4f0361cedbad9ad759,2026-09-05T17:26:38Z
 meetings/text/library-board-of-trustees/2026-06-18-minutes-7852.txt,22646,04b132d881d8800298d5c78a1f11595f2e5701a55189fec631b86882ddc7ba0c,2026-09-05T17:26:42Z
 meetings/text/library-board-of-trustees/2026-07-10-agenda-7893.txt,700,32fdbf2d508e0024be1d6722b371d5d1c7102b909ccf4dd89a41d6c7ec7f1e34,2026-09-05T17:26:43Z
+meetings/text/library-board-of-trustees/2026-07-10-minutes-7893.txt,6479,a1af92a5a09fff85a7a2cc75a5eec66f391838e6357e053ca9cf40547dc49bc8,2026-09-23T12:58:26Z
 meetings/text/library-board-of-trustees/2026-09-17-agenda-8017.txt,1133,57aac2f489e1dd1584afbf6512ec01efb9a9b7ee3af9ccc65372ac4ca5b91447,2026-09-16T17:43:46Z
 meetings/text/library-board-of-trustees/2026-09-18-agenda-8018.txt,585,a0d9f11cc6761340dbc1f752c2ae2b65d6b70f24720383657bb97a53e5d6e9de,2026-09-16T17:43:47Z
 meetings/text/lunenburg-300th-anniversary-committee/2023-09-18-agenda-334.txt,634,bc519708e2d4e1111a1801777583d959b14ac4c517b286fcd79c0a23ee509449,2026-09-08T20:15:14Z
@@ -22868,6 +22887,7 @@ meetings/text/lunenburg-300th-anniversary-committee/2026-06-29-minutes-7866.txt,
 meetings/text/lunenburg-300th-anniversary-committee/2026-07-27-agenda-7920.txt,867,b61408fb8f3cb3a506ad5b8ae674fd55989310ff47b6e68474d02d5dcab63748,2026-09-05T17:26:59Z
 meetings/text/lunenburg-300th-anniversary-committee/2026-07-27-minutes-7920.txt,2362,8e0c2862b83b72ee0abd50d4ac69fb34d95716eab4d66046a423132b42e7295c,2026-09-08T20:15:26Z
 meetings/text/lunenburg-300th-anniversary-committee/2026-08-31-agenda-7981.txt,1045,707bc3a5b7edd8148012a2d6f8519674fd75e54ca3b7d36b9edac6e46cea93d9,2026-09-08T20:15:28Z
+meetings/text/lunenburg-300th-anniversary-committee/2026-09-28-agenda-8033.txt,978,ace386a2e1d0bc29d1e0ebf47a82279b038d413321692b9d49558efa724560ce,2026-09-23T12:58:27Z
 meetings/text/lunenburg-hazard-mitigation-plan-team-committee/2012-08-20-agenda-2903.txt,13,c7c9dd6bfcf9f6ae908198b337f2f975c28fc988a3d40008ce57ccd8a93d660d,2026-09-08T20:15:28Z
 meetings/text/lunenburg-hazard-mitigation-plan-team-committee/2012-09-24-agenda-2904.txt,828,13ebd01314e34f6cca8ebd25271aef35c8cdae03c47255dda067ebe460d2e5ad,2026-09-08T20:15:28Z
 meetings/text/lunenburg-hazard-mitigation-plan-team-committee/2012-09-24-minutes-2904.txt,9149,5db72489afa6d193bab00581662af1bd9d689e478ee408b3f45682ecdba4b944,2026-09-08T20:15:28Z
@@ -23287,6 +23307,7 @@ meetings/text/lunenburg-municipal-building-design-committee/2026-08-03-agenda-79
 meetings/text/lunenburg-municipal-building-design-committee/2026-08-17-agenda-7962.txt,3036,3fed176be88a6ec9ab57c16dd3def517ddf1a1daf4e9a3b204d7782920897b1e,2026-09-05T17:28:04Z
 meetings/text/lunenburg-municipal-building-design-committee/2026-08-17-minutes-7962.txt,6128,d92be23d21a73fda7cf3c6115f656111ace2d5556930f49bcd1f825bb8ed330f,2026-09-08T20:21:18Z
 meetings/text/lunenburg-municipal-building-design-committee/2026-08-31-agenda-7983.txt,3045,10cfdc1a5bcc18b457e586bfda89e0d2b0419ecd6a83a067e09b46fc058bdcb0,2026-09-08T20:21:19Z
+meetings/text/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.txt,5533,e3b3d014f531a1747181d9cde8173445da7abe329153df757e41254d43d59d68,2026-09-23T12:58:35Z
 meetings/text/lunenburg-municipal-building-design-committee/2026-09-21-agenda-8021.txt,3073,3914c1612093fa8ca8b4c17f1e15d1b2acfe4ae7cc11c73ffd36b620ad1b4a1b,2026-09-16T17:43:47Z
 meetings/text/master-plan-steering-committee/2023-09-18-agenda-332.txt,2186,064fe038d83cca3718b5ed554e61101646b79e5cdb6e244a7006c070951c6890,2026-09-08T20:21:20Z
 meetings/text/master-plan-steering-committee/2023-09-18-minutes-332.txt,4378,adc26919a22ab900784bf526ef016f07a8aa7d6a4db8e4272a438dfa9da43373,2026-09-08T20:21:21Z
@@ -29228,6 +29249,7 @@ meetings/text/trust-fund-commission/2026-07-24-agenda-7923.txt,4411,cc4a306d540b
 meetings/text/trust-fund-commission/2026-07-24-minutes-7923.txt,4101,39b7a2368aeccd7a426f040aff41da476ba689bb0652fdfef1c683ad584593aa,2026-09-08T21:50:15Z
 meetings/text/trust-fund-commission/2026-08-27-agenda-7982.txt,4308,9d0ccd4029afda154d899daf4b69b252a6bb541b9efae8c33ded0b4f455b5508,2026-09-08T21:50:16Z
 meetings/text/trust-fund-commission/2026-09-10-agenda-8008.txt,4901,20ef1c439d1016a31e5895b723e73dece1547b30c13a655e5ff86d87fbd6794f,2026-09-13T19:22:49Z
+meetings/text/trust-fund-commission/2026-09-24-agenda-8034.txt,4935,a35076feacb13769592a7e77af6a4be4ca02ac20582d1eb274c0ac90c7f6b835,2026-09-23T13:08:53Z
 meetings/text/zoning-board-of-appeals/2010-04-14-agenda-5834.txt,1640,d84024408b6646d2df52dfffec19a6c3ceef879dbab075444ccb26ee2316ddc8,2026-09-08T21:50:16Z
 meetings/text/zoning-board-of-appeals/2010-04-28-agenda-5835.txt,1303,bcedacab899269addcea32b4284da3975ed28117eba4fe0738c6680ef71913d2,2026-09-08T21:50:17Z
 meetings/text/zoning-board-of-appeals/2010-08-11-agenda-5836.txt,1462,e394c8c71e8b6393d023cb2a841fa33dd5530cb64db7bd6108c4ad517a5e289d,2026-09-08T21:50:17Z
@@ -29663,6 +29685,7 @@ meetings/trust-fund-commission/2026-07-24-agenda-7923.pdf,215519,7458f5c5099c67e
 meetings/trust-fund-commission/2026-07-24-minutes-7923.pdf,78700,2a4694104c8ba38f9b295a2dda758651b5ec6d113951d8f63192442179bd8dec,2026-09-08T21:58:25Z
 meetings/trust-fund-commission/2026-08-27-agenda-7982.pdf,214796,28dd95404df44cc4741a102726e9e55f5d571d92678f9fc6c6000fa5038edf61,2026-09-08T21:58:26Z
 meetings/trust-fund-commission/2026-09-10-agenda-8008.pdf,122031,c30076cd012c2a266c21f6fba7cf258d28db50056cc06b0aa80873c219c188af,2026-09-13T19:22:49Z
+meetings/trust-fund-commission/2026-09-24-agenda-8034.pdf,71621,cd8d838373c4a734e139ecfdc6162f9e700bd26ce6cb2527f64f412affb64c7e,2026-09-23T13:09:02Z
 meetings/zoning-board-of-appeals/2010-04-14-agenda-5834.pdf,28393,4b2349356e33f092bb2cb762d554206dda12205722c42758a7a15cd218d70d66,2026-09-08T21:58:26Z
 meetings/zoning-board-of-appeals/2010-04-28-agenda-5835.pdf,23023,9d7cfbd25db9ccc5535749b6cce6b19233ac77190a87021145d7deca29752e38,2026-09-08T21:58:27Z
 meetings/zoning-board-of-appeals/2010-08-11-agenda-5836.pdf,23721,d91eb73b2331e57a18947889e39042e8833877a3cbbddb2cfa4b5fbc6ecee591,2026-09-08T21:58:29Z
@@ -30677,6 +30700,7 @@ town-supplementary/docs/staff-directory/2026-09-22/did-49.html,92576,e8c12c3f9ea
 town-supplementary/docs/staff-directory/2026-09-22/did-6.html,96251,2cbe6b53a56d6dd977c519d2b6570a8f2924e7add491b1ce59f7c87edf241b30,2026-09-23T03:38:35Z
 town-supplementary/docs/staff-directory/2026-09-22/did-8.html,94889,8cfddda8156485feabdd1d51cfc777e379e4e76348efd31b1d3e51829b6abfd7,2026-09-23T03:38:39Z
 town-supplementary/docs/staff-directory/2026-09-22/did-9.html,97234,1d0ceff6cd71b2ada9004136aac79d70d20e69a378505992cc8cd0d5eccba5e1,2026-09-23T03:38:39Z
+town-supplementary/docs/staff-directory/PROVENANCE.md,2375,003f491eadcda83185bb7f5c09bb49c7d80853563fc02acd39f21a4bdd3d18e7,2026-09-23T13:09:04Z
 town-supplementary/docs/town-2026-election-unofficial-results.pdf,198773,debac7c42071824fd76b237d09f986f12c08c5cf13dd0bdf6a83887f69a7d255,2026-09-05T17:49:59Z
 town-supplementary/index.csv,9421,bc3f68cd5ebb4c3260eaf469b34dedc246eb9dd1d0c1123a569c8ce39593b220,2026-09-05T17:50:00Z
 town-supplementary/text/1352-fy25-snow-and-ice-vendor-agreement.txt,19613,2923d432c8448277ac2ba7df2c0b6b03514feffcbeecd3c06d9b0d4aacc26c58,2026-09-05T17:50:00Z

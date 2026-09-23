@@ -14,7 +14,7 @@ How many people each part of the town employs, which are growing and which have 
 |---|---:|---|---:|---:|---:|---|
 | Schools | 232 | FY2025 | 200 in FY2011 | +32 | +2.3 | every member of staff, named |
 | Veterans' Services | 47 | FY2019 | 47 in FY2019 | +0 | — | career staff plus the low end of the on-call range |
-| Fire Department | 40 | FY2025 | 35 in FY2011 | +5 | +0.4 | career staff plus the low end of the on-call range |
+| Fire Department | 40 | FY2025 | 36 in FY2011 | +4 | +0.3 | career staff plus the low end of the on-call range |
 | Police Department | 29 | FY2025 | 13 in FY2012 | +16 | +1.2 | every member of staff, named on its roster |
 | Department of Public Works | 14 | FY2025 | 14 in FY2023 | +0 | +0.0 | an establishment, post by post |
 | Council on Aging | 11 | FY2025 | 7 in FY2011 | +4 | +0.3 | a named staff list |
@@ -39,7 +39,7 @@ On one scale the relation is plain, and it is the one the panels below deliberat
 
 ![Eight small panels, one per part of the town that publishes a staff count, each showing headcount year by year on its own scale. A hollow point marks a year dropped as a misreading.](charts/town-personnel-counts.svg)
 
-Schools moves between 170 and 272 across 15 published years; Fire Department moves between 35 and 48 across 15 published years; Police Department moves between 13 and 29 across 12 published years. Veterans' Services, Library and Board of Assessors publish too few years to show a trend at all.
+Schools moves between 170 and 272 across 15 published years; Fire Department moves between 36 and 48 across 15 published years; Police Department moves between 13 and 33 across 13 published years. Veterans' Services, Library and Board of Assessors publish too few years to show a trend at all.
 
 ## The schools, in detail
 
@@ -112,14 +112,18 @@ A person’s tenure here is the number of years their name appears under a depar
 | department | people | years published | median | median, uncensored | longest | still there | names not reappearing |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Lunenburg Public Schools | 968 | 15 | 2.0 | 1 | 15 — Alexis Pukaite | 233 | 33% a year |
-| Fire Department | 116 | 15 | 4.0 | 3 | 15 — Austin Flagg | 34 | 27% a year |
-| Police Department | 67 | 13 | 3 | 1 | 13 — Jeffrey Thibodeau | 26 | 28% a year |
+| Fire Department | 122 | 16 | 4.0 | 2 | 16 — Austin Flagg | 44 | 25% a year |
+| Police Department | 90 | 15 | 2.0 | 1 | 15 — Jeffrey Thibodeau | 27 | 29% a year |
 | Council on Aging (staff) | 26 | 13 | 4.0 | 2 | 13 — Susan Doherty | 11 | 20% a year |
-| Building Department | 8 | 10 | 3.0 | 3.0 | 3 — Brian Gingras | 1 | 37% a year |
+| Department of Public Works | 22 | 11 | 1.0 | 2 | 10 — Richard Patry | 13 | 24% a year |
+| Building Department | 20 | 11 | 2.5 | 2.5 | 10 — Gary Williams | 7 | 25% a year |
+| Town Manager | 17 | 11 | 1 | 5 | 9 — Heather R. Lemieux | 4 | 23% a year |
 | Montachusett Regional Vocational Technical School | 8 | 10 | 1.0 | 1.0 | 7 — Thomas R. Browne | 1 | 53% a year |
-| Information Technology | 5 | 4 | 3 | — | 4 — Daniel Nadareski | 3 | 17% a year |
+| Information Technology | 6 | 5 | 3.0 | 1 | 4 — Daniel Nadareski | 1 | 33% a year |
+| Town Clerk | 6 | 11 | 2.0 | 2.0 | 11 — Kathyrn M. Herrick | 2 | 16% a year |
+| Facilities, Grounds & Recreation | 5 | 3 | 1 | — | 2 — Angela Clement | 4 | 50% a year |
 
-**Half of these people are CENSORED and their tenure is a lower bound, not a length.** 520 of 1198 are present in their department’s first published year — so they started before the archive begins and nothing here can say when — or in its last, so they are still there as far as anything here can see. That is why two medians are given: the first counts everybody, the second only the people whose arrival AND departure both fall inside the record, which is the only one that means what it says.
+**Half of these people are CENSORED and their tenure is a lower bound, not a length.** 579 of 1290 are present in their department’s first published year — so they started before the archive begins and nothing here can say when — or in its last, so they are still there as far as anything here can see. That is why two medians are given: the first counts everybody, the second only the people whose arrival AND departure both fall inside the record, which is the only one that means what it says.
 
 **A name leaving a roster is a name leaving a roster.** It is not a resignation, a retirement or a cut post. Somebody may have moved between departments, been left off a page, or held a post the town stopped printing. The last column is the rate at which names stop appearing, and it is not a separation rate.
 
