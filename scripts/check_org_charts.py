@@ -125,10 +125,21 @@ def check(rows, want_unit=None, want_fy=None):
         # A BAND IS GROUPED ONLY IF THE GROUPING DIVIDES IT. One heading over a whole
         # band is a line of type between the reader and the names, and the page applies
         # the same rule -- so the check has to be per BAND, not per unit-year.
+        # ...UNLESS THE GROUP RUNS ACROSS THE RANKS. The Fire Department's `Career
+        # Firefighters` holds its lieutenant in one band and its firefighters in another,
+        # and the page draws a body like that a SERVICE at a time rather than a rank at a
+        # time. A lone group that appears in another band is carrying that structure, not
+        # labelling one row.
+        spans = collections.Counter()
+        for r in rs:
+            spans[r['section_group']] += 0
+        for g in {r['section_group'] for r in rs}:
+            spans[g] = len({r['tier'] for r in rs if r['section_group'] == g})
         for t in {r['tier'] for r in rs}:
             band = [r for r in rs if r['tier'] == t]
             groups = {r['section_group'] for r in band}
-            if len(band) >= 4 and len(groups) == 1 and groups != {''}:
+            if len(band) >= 4 and len(groups) == 1 and groups != {''} \
+                    and spans[list(groups)[0]] <= 1:
                 out['DEAD-GROUP'].append('%-58s band %s: every one of %d under %r'
                                          % (where, t, len(band), list(groups)[0]))
         n0 = sum(1 for r in rs if not r['role'].strip() or r['role'] in ('board seat',

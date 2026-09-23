@@ -27,6 +27,10 @@ type Row = {
 }
 type Unit = {
   unit: string; kind: string; rows: number; years: string[]; subunits: string[]
+  // HOW THIS BODY IS DRAWN, decided by `build_org_charts.py` from the body's own shape
+  // and published beside it. TJ: *"every department needs their own way to generate
+  // their org chart based on their structure."* See LAYOUTS there for what each means.
+  layout?: 'buildings' | 'shifts' | 'board' | 'ranks'
 }
 type Payload = { years: string[]; units: Unit[]; rows: Row[] }
 
@@ -61,24 +65,51 @@ const KIND_LABEL: Record<string, string> = {
   school: 'School', officer: 'Appointed post',
 }
 
+// A DEPARTMENT'S CHART HAS ITS OWN ADDRESS. `?unit=Fire%20Department&fy=2019` — so a
+// resident can send somebody the Fire Department in 2019 rather than a page and an
+// instruction, and so every one of the 87 units can be FETCHED and checked as a citizen
+// sees it. Until this existed only the default unit was ever rendered into HTML, so the
+// other 86 could not be verified at all: a payload was being checked and a page reported
+// on, which is how a Fire Chief spent a day filed under `Members, seats and staff`.
+function fromUrl(key: string) {
+  if (typeof window === 'undefined') return ''
+  return new URLSearchParams(window.location.search).get(key) ?? ''
+}
+
 export function OrgCharts() {
   const [d, setD] = useState<Payload | null>(null)
-  const [unit, setUnit] = useState('')
-  const [fy, setFy] = useState('')
+  const [unit, setUnit] = useState(fromUrl('unit'))
+  const [fy, setFy] = useState(fromUrl('fy'))
   // '' means every building. TJ: *"i want to see the whole thing in one place."* The
   // district is one organisation with four buildings, so ALL is the default and the
   // sub-selection narrows it rather than being something you must choose first.
-  const [sub, setSub] = useState('')
+  const [sub, setSub] = useState(fromUrl('building'))
 
   useEffect(() => {
     fetch('/data/org-charts.json').then(r => r.json()).then((j: Payload) => {
       setD(j)
-      setUnit(j.units[0]?.unit ?? '')
-      setFy(j.years[j.years.length - 1])
+      // The URL wins where it names a unit this payload actually holds; a stale or
+      // mistyped link falls back to the default rather than to an empty page.
+      const want = fromUrl('unit')
+      const hit = j.units.find(u => u.unit === want || u.unit.toLowerCase() === want.toLowerCase())
+      setUnit(hit?.unit ?? j.units[0]?.unit ?? '')
+      const wantFy = fromUrl('fy')
+      setFy(j.years.includes(wantFy) ? wantFy : j.years[j.years.length - 1])
     }).catch(() => { /* no payload yet */ })
   }, [])
 
   const chosen = useMemo(() => d?.units.find(u => u.unit === unit) ?? null, [d, unit])
+
+  // The address follows the dropdowns, so copying the URL copies what is on screen.
+  // `replaceState` rather than `push`: changing a filter is not a new page to go back to.
+  useEffect(() => {
+    if (!d || !unit) return
+    const p = new URLSearchParams()
+    p.set('unit', unit)
+    if (fy) p.set('fy', fy)
+    if (sub) p.set('building', sub)
+    window.history.replaceState(null, '', `${window.location.pathname}?${p}`)
+  }, [d, unit, fy, sub])
 
   // THE YEAR MENU IS THE UNIT'S OWN YEARS, not every year the archive holds. A department
   // that published in four years should not offer eleven empty ones.
@@ -98,6 +129,45 @@ export function OrgCharts() {
   // The section stays on the row rather than becoming a heading of its own. Grouping on
   // it as well produced blocks of ONE — "Lunenburg High School · Athletic Director" with
   // a single name under it — because `grade_or_dept` is as fine as `Grade 3`.
+  // DOES THE GROUPING RUN ACROSS THE RANKS? TJ: *"'shifts' and 'investigative' are
+  // categories but they show up in multiple places"* — and he is right that this is the
+  // wrong way round for a department built out of shifts. The Police Department publishes
+  // its own chart in its FY27 budget presentation (19 February 2026) and it is a shift at
+  // a time, not a rank at a time: the Chief, then an Administrative Lieutenant and the
+  // office, then nine parallel columns headed `Day Shift 0700-1500`, `Evening Shift
+  // 1500-2300`, `Investigative Bureau`, `Community Policing Bureau` — each with its
+  // sergeant at the top and its officers under him.
+  //
+  // So where a group holds people of MORE THAN ONE rank, the group is the container and
+  // the rank orders what is inside it. Where it does not — a board whose members are all
+  // members — the bands stay as they were. The shape follows the body.
+  // The body says which shape it is. The page does not guess — a guess that is right
+  // for the Police Department is wrong for the district, and it was: laying the schools
+  // out a group at a time threw the four buildings away.
+  const shiftLike = chosen?.layout === 'shifts'
+
+  // The leadership sits above the groups, exactly as the department draws it: whoever
+  // heads the body, their deputy, and the office that works to them.
+  const OFFICE = /administration|office/i
+  const leadership = useMemo(
+    () => rows.filter(r => Number(r.tier) <= 1 || OFFICE.test(r.section_group)),
+    [rows])
+  const groups = useMemo(() => {
+    const g = new Map<string, Row[]>()
+    for (const r of rows) {
+      if (leadership.includes(r)) continue
+      const k = r.section_group || 'Elsewhere in the department'
+      if (!g.has(k)) g.set(k, [])
+      g.get(k)!.push(r)
+    }
+    for (const rs of g.values()) {
+      rs.sort((a, b) => Number(a.tier) - Number(b.tier)
+        || ladder(a.role) - ladder(b.role)
+        || (a.role + a.person).localeCompare(b.role + b.person))
+    }
+    return [...g.entries()].sort((a, b) => a[0].localeCompare(b[0]))
+  }, [rows, leadership])
+
   const blocks = useMemo(() => {
     const g = new Map<string, Map<string, Map<string, Row[]>>>()
     for (const r of rows) {
@@ -215,6 +285,61 @@ export function OrgCharts() {
 
       {rows.length === 0 ? (
         <Body>Nothing is published for {unit} in FY{shownFy}.</Body>
+      ) : shiftLike ? (
+        /* THE BODY'S OWN SHAPE: leadership, then one block per shift or bureau, each
+           with its supervisor at the top. Drawn the way the department draws it. */
+        <section className="mt-7">
+          {leadership.length ? (
+            <ul className="list-none p-0 m-0 mb-5 grid gap-x-8 gap-y-1"
+              style={{ gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))' }}>
+              {[...leadership].sort((a, b) => Number(a.tier) - Number(b.tier)
+                || ladder(a.role) - ladder(b.role)
+                || (a.role + a.person).localeCompare(b.role + b.person)).map((r, i) => (
+                <li key={i} className="text-[13.5px] flex gap-2 items-baseline py-0.5"
+                  style={{ borderBottom: '1px solid var(--grid)' }}>
+                  <span style={{
+                    color: r.person ? 'var(--text-primary)' : 'var(--text-muted)',
+                    fontWeight: Number(r.tier) === 0 ? 600 : 400,
+                  }}>
+                    {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
+                  </span>
+                  <span className="ml-auto text-right text-[12px] shrink-0"
+                    style={{ color: 'var(--text-muted)' }}>{r.role}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          <div className="grid gap-x-8 gap-y-5"
+            style={{ gridTemplateColumns: 'repeat(auto-fill,minmax(250px,1fr))' }}>
+            {groups.map(([name, rs]) => (
+              <div key={name}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[10.5px] uppercase shrink-0"
+                    style={{ color: 'var(--text-muted)', letterSpacing: '0.09em',
+                             fontWeight: 600 }}>{name}</span>
+                  <span className="text-[10.5px] shrink-0"
+                    style={{ color: 'var(--text-muted)', opacity: 0.75 }}>{rs.length}</span>
+                  <span className="grow" style={{ borderTop: '1px solid var(--grid)' }} />
+                </div>
+                <ul className="list-none p-0 m-0">
+                  {rs.map((r, i) => (
+                    <li key={i} className="text-[13.5px] flex gap-2 items-baseline py-0.5"
+                      style={{ borderBottom: '1px solid var(--grid)' }}>
+                      <span style={{
+                        color: r.person ? 'var(--text-primary)' : 'var(--text-muted)',
+                        fontWeight: Number(r.tier) <= 2 ? 600 : 400,
+                      }}>
+                        {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
+                      </span>
+                      <span className="ml-auto text-right text-[12px] shrink-0"
+                        style={{ color: 'var(--text-muted)' }}>{r.role}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
       ) : blocks.map(([name, bands]) => (
         <section key={name || '_'} className="mt-7">
           {name ? <H2 id={`s-${name}`}>{name}</H2> : null}

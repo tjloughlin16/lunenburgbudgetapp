@@ -567,7 +567,7 @@ PROSE = re.compile(r'\b(?:retired|resigned|graduated|began|started|served|obtain
 # the section the names under them belong to.
 ROSTER_HEADING = re.compile(r'\b(officers|firefighters|bureau|shift|division|newly|'
                             r'arrivals|reserve|patrol|administration|call|career|'
-                            r'intermittent|animal control|supervisors)\b', re.I)
+                            r'intermittent|animal control|supervisors|community policing|traffic|school resource)\b', re.I)
 
 
 def _roster_name(raw):
@@ -1293,8 +1293,20 @@ def build():
     spread = collections.defaultdict(set)
     for r in rows:
         spread[(r['fy'], r['unit'], r['subunit'], r['tier'])].add(r['section_group'])
+    # ...UNLESS THE GROUP RUNS ACROSS THE RANKS. A band holding one group is usually a
+    # heading of one -- `Administration` over a Police Chief standing alone. But the Fire
+    # Department's `Career Firefighters` holds its lieutenant in one band and its
+    # firefighters in another, and blanking the lone lieutenant's group broke the
+    # department in half: the page could no longer see that Career and Call run through
+    # every rank, and drew it a rank at a time instead of a service at a time.
+    elsewhere = collections.defaultdict(set)
     for r in rows:
-        if len(spread[(r['fy'], r['unit'], r['subunit'], r['tier'])]) <= 1:
+        elsewhere[(r['fy'], r['unit'], r['subunit'], r['section_group'])].add(r['tier'])
+    for r in rows:
+        alone = len(spread[(r['fy'], r['unit'], r['subunit'], r['tier'])]) <= 1
+        spans = len(elsewhere[(r['fy'], r['unit'], r['subunit'],
+                               r['section_group'])]) > 1
+        if alone and not spans:
             r['section_group'] = ''
     seen, uniq = set(), []
     for r in rows:
@@ -1308,6 +1320,49 @@ def build():
                              r['tier'], r['section_group'].lower(), r['role'].lower(),
                              r['person'].lower()))
     return uniq, bad, lost_prose, unmatched
+
+
+# HOW A BODY IS DRAWN IS A PROPERTY OF THE BODY. TJ: *"every department needs their own
+# way to generate their org chart based on their structure."*
+#
+# The first version had the page guess, from whether a grouping happened to cross two
+# bands — and a guess that is right for the Police Department is wrong for the schools:
+# laying the district out a group at a time threw the four buildings away and printed
+# four principals in a row. So the LAYOUT is decided here, per body, published in the
+# payload beside it, and the page switches on it. It can be read, checked and argued
+# with, which a heuristic buried in a component cannot.
+#
+#   buildings  a body made of places before anything else. The district is four schools,
+#              each with its own principal; the building is the container and the ranks
+#              sit inside it.
+#   shifts     a body made of parallel units that each run through every rank. The Police
+#              Department publishes its own chart this way in its FY27 budget
+#              presentation: the Chief, then the Administrative Lieutenant and the office,
+#              then `Day Shift 0700-1500`, `Evening Shift`, `Night Shift`, `Investigative
+#              Bureau`, `Community Policing Bureau` side by side, each headed by its
+#              sergeant. The Fire Department is the same shape with Career and Call.
+#   board      a body that elects officers and is otherwise equals — chair, vice-chair,
+#              clerk, then the members.
+#   ranks      everything else: a head, a deputy, supervisors, staff.
+LAYOUTS = ('buildings', 'shifts', 'board', 'ranks')
+
+
+def layout_of(unit_rows):
+    """Which of the four shapes this body is drawn in, and why."""
+    if any(r['subunit'] for r in unit_rows):
+        return 'buildings'
+    if unit_rows[0]['unit_kind'] in ('board', 'officer'):
+        return 'board'
+    # A group that holds more than one rank is a real division of the body, not a label
+    # on one row -- a shift with its sergeant and its officers, a service with its
+    # captain and its firefighters.
+    by_group = collections.defaultdict(set)
+    for r in unit_rows:
+        if r['section_group']:
+            by_group[r['section_group']].add(r['tier'])
+    if any(len(t) > 1 for t in by_group.values()):
+        return 'shifts'
+    return 'ranks'
 
 
 def payload(rows):
@@ -1332,7 +1387,8 @@ def payload(rows):
         generated_by='scripts/build_org_charts.py',
         years=years,
         units=[dict(unit=k, kind=v['kind'], rows=v['n'], years=sorted(v['years']),
-                    subunits=sorted(v['subs']))
+                    subunits=sorted(v['subs']),
+                    layout=layout_of([r for r in rows if r['unit'] == k]))
                for k, v in sorted(units.items(), key=lambda kv: (-kv[1]['n'], kv[0]))],
         rows=rows)
 

@@ -1250,6 +1250,8 @@ immediately before writing, and preserve the file's existing newline convention.
                                                 #   the years each body PUBLISHED, with both edges of the archive
                                                 #   marked as censored rather than short
     python3 scripts/build_tenure.py --check
+    node fy28/../scripts/check_org_html.mjs     # ...and every unit RENDERED and read back out of the HTML, from
+                                                #   fy28/, as a citizen sees it: heads first, nobody above their chief
     python3 scripts/check_org_charts.py         # ...and the SHAPE of every body asserted: headless, many-heads,
                                                 #   doubled, a heading read as a person, a grouping with one value
     python3 scripts/classify_roster_roles.py    # what job each printed roster title is
