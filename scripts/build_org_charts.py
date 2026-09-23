@@ -239,6 +239,16 @@ def board_tier(role):
     return TIER_STAFF
 
 
+# AN APPOINTED POST RANKS BY THE POST, NOT BY THE WORD `ASSISTANT`. Folding the posts
+# into their departments put `Assistant Dam Keeper` in the deputy band and the Dam Keeper
+# himself among the staff, because `assistant` is tested before anything else. The
+# Inspector of Wiring is not the Building Commissioner's deputy and his assistant is not
+# above him: the post sits with the supervisors and the assistant to it sits below.
+APPOINTED_POST = re.compile(r'\binspector\b|\bkeeper\b|\bwarden\b|\bclockwinder\b|'
+                            r'\bfield driver\b|\bcensus liaison\b|\bcustodian\b', re.I)
+ASSISTANT_TO = re.compile(r'\bassistant\b|\basst\.?\b|\bdeputy\b|\balternate\b', re.I)
+
+
 def tier_of(role, kind):
     """Which band a printed role sits in. 0 head, 1 deputy, 2 supervisor, 3 everyone else.
 
@@ -248,6 +258,8 @@ def tier_of(role, kind):
     t = (role or '').strip()
     if not t:
         return TIER_STAFF
+    if APPOINTED_POST.search(t):
+        return TIER_STAFF if ASSISTANT_TO.search(t) else TIER_SUPERVISOR
     if ASSOCIATE.search(t) and not DELEGATE.search(t):
         return TIER_ASSOCIATE
     if DELEGATE.search(t):
@@ -358,7 +370,59 @@ HEAD_POST = {
     'bulding commissioner/zoning enforcement officer':
         ('Building Department', 'department',
          'Building Commissioner / Zoning Enforcement Officer'),
+    # THE POST AND THE OFFICE ARE ONE BODY. The listing appoints a Town Clerk and the
+    # department is called Town Clerk, so the two arrived as `Town Clerk (appointed
+    # post)` beside `Town Clerk (staff)` -- one of them holding the clerk and the other
+    # her own office.
+    'town clerk': ('Town Clerk', 'department', 'Town Clerk'),
+    'town manager': ('Town Manager', 'department', 'Town Manager'),
+    'tax collector/treasurer/tax custodian':
+        ('Tax Collector/Treasurer/Tax Custodian', 'department',
+         'Tax Collector / Treasurer / Tax Custodian'),
+    "veterans' services": ("Veterans' Services", 'department', 'Veterans’ Services Agent'),
+    'veterans services agent': ("Veterans' Services", 'department',
+                                'Veterans’ Services Agent'),
 }
+
+# AN APPOINTED POST IS A JOB IN A DEPARTMENT, NOT A DEPARTMENT OF ONE. TJ: *"'appointed
+# post' makes no sense. They must go into departments."*
+#
+# The officials listing appoints the Inspector of Wiring, the Dam Keeper, the Animal
+# Control Officer and forty-three others, and each arrived in the dropdown as its own
+# body — so a resident looking for the building inspectors had to know to look under
+# `Asst. Inspector Of Wiring` rather than under Building. They are posts the town APPOINTS
+# into a department, and the department is where a reader looks for them. The post keeps
+# its own name as the role, because that is what the town appoints somebody to.
+POST_IN = {
+    'inspector of wiring': 'Building Department',
+    'asst. inspector of wiring': 'Building Department',
+    'assistant inspector of wiring': 'Building Department',
+    'inspector of plumbing/gas': 'Building Department',
+    'asst. inspector of plumbing/gas': 'Building Department',
+    'local building inspector': 'Building Department',
+    'assistant building inspector': 'Building Department',
+    'building inspector (alternate)': 'Building Department',
+    'inspector of weights & measures': 'Building Department',
+    'inspector of animals': 'Building Department',
+    'animal control officer': 'Police Department',
+    'field driver': 'Police Department',
+    'pound keeper': 'Police Department',
+    'dam keeper': 'Department of Public Works',
+    'assistant dam keeper': 'Department of Public Works',
+    'tree warden': 'Department of Public Works',
+    'hazardous waste coordinator': 'Department of Public Works',
+    'assistant town clerk': 'Town Clerk',
+    'local census liaison': 'Town Clerk',
+    'assistant tax collector/treasurer': 'Tax Collector/Treasurer/Tax Custodian',
+    'tax custodian': 'Tax Collector/Treasurer/Tax Custodian',
+}
+
+# AND A COMMITTEE IS A COMMITTEE, whichever part of the listing printed it. The Charter
+# Review Committee, the Building Reuse Committee, the MART Advisory Board and the three
+# Montachusett bodies were all typed `appointed post` because of where they sat on the
+# page, and were then ranked as though somebody ran them.
+IS_A_COMMITTEE = re.compile(r'\b(committee|task force|advisors?|advisory|commission|'
+                            r'organization|board)\b', re.I)
 
 # A PERSON IS NOT A BODY, and neither is a listing sub-heading.
 # A ROUTING TABLE IS NOT A BODY. `Public Records Access Officers` lists which officer
@@ -997,6 +1061,29 @@ def build():
     rows, bad = _rows_officials()
     roster, lost_prose = _rows_rosters()
     rows += roster + _rows_schools() + _rows_prose() + _rows_signatures()
+    keep = []
+    for r in rows:
+        key = r['unit'].lower()
+        if NOT_A_UNIT.match(key):
+            bad += 1
+            continue
+        if key in POST_IN and r['unit_kind'] == 'officer':
+            post = r['unit']
+            r['unit'], r['unit_kind'] = POST_IN[key], 'department'
+            if r['role'] in ('officer', 'board seat', ''):
+                r['role'] = post
+        elif r['unit_kind'] == 'officer' and IS_A_COMMITTEE.search(r['unit']):
+            r['unit_kind'] = 'board'
+        if key in HEAD_POST:
+            r['unit'], r['unit_kind'], label = HEAD_POST[key]
+            if r['role'] in ('officer', ''):
+                r['role'] = label
+        if key in FOLD_INTO:
+            r['unit'], r['role'] = FOLD_INTO[key][0], FOLD_INTO[key][1]
+            r['unit_kind'] = 'board'
+        keep.append(r)
+    rows = _disambiguate(_one_spelling(keep))
+
     # A PRINCIPAL BELONGS TO A BUILDING. A signature block says `Respectfully submitted,
     # Chad Adams, Principal` and the contents page gives the whole education section to
     # `Lunenburg Public Schools`, so three principals and a superintendent arrived in the
@@ -1044,7 +1131,12 @@ def build():
     for (unit, _fy), n in peak.items():
         most[unit] = max(most[unit], n)
     for r in rows:
-        if r['unit_kind'] == 'board' and most[r['unit']] == 1:
+        # ...but a body whose NAME says it is a committee stays one, however few people
+        # the listing printed for it in a given year. The MART Advisory Board and the
+        # Town Forest Committee were being converted back into appointed posts for
+        # having a single member in a thin year.
+        if r['unit_kind'] == 'board' and most[r['unit']] == 1 \
+                and not IS_A_COMMITTEE.search(r['unit']):
             r['unit_kind'] = 'officer'
             if r['role'] == 'board seat':
                 r['role'] = 'officer'
@@ -1068,21 +1160,7 @@ def build():
         if r['unit_kind'] == 'officer':
             r['tier'] = (0 if solo[(r['fy'], r['unit'])] == 1
                          else board_tier(r['role']))
-    keep = []
-    for r in rows:
-        key = r['unit'].lower()
-        if NOT_A_UNIT.match(key):
-            bad += 1
-            continue
-        if key in HEAD_POST:
-            r['unit'], r['unit_kind'], label = HEAD_POST[key]
-            if r['role'] in ('officer', ''):
-                r['role'] = label
-        if key in FOLD_INTO:
-            r['unit'], r['role'] = FOLD_INTO[key][0], FOLD_INTO[key][1]
-            r['unit_kind'] = 'board'
-        keep.append(r)
-    rows = _disambiguate(_one_spelling(keep))
+
     # ONE ROW PER PERSON PER BAND. `Chief` off the roster and `Chief P` off the signature
     # block are the same post, and both were drawn. Where a person appears twice in one
     # body, one year and one band, the tidier role wins -- shortest that still names a
