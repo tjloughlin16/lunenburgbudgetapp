@@ -267,7 +267,14 @@ export function OrgCharts() {
         <label className="flex flex-col gap-1 text-[12px]" style={{ color: 'var(--text-muted)' }}>
           Fiscal year
           <select value={shownFy} onChange={e => setFy(e.target.value)} style={sel}>
-            {years.map(y => <option key={y} value={y}>FY{y}</option>)}
+            {/* `today` is the town's own staff directory, which carries no year at all
+                — whoever it was publishing on the day it was fetched. Labelling it FY
+                anything would give a snapshot the standing of an annual report. */}
+            {years.map(y => (
+              <option key={y} value={y}>
+                {y === 'today' ? 'Today — the town’s staff directory' : `FY${y}`}
+              </option>
+            ))}
           </select>
         </label>
       </div>

@@ -158,7 +158,11 @@ TIERS = [
                    r'assistant\b|\bassistant\s+to\b', re.I)),
     (1, re.compile(r'\bdeputy|\bassistant\b|\basst\.?\b|\bvice[- ]?chair|\bcapt\.?\b'
                    r'|\bcaptain\b', re.I)),
-    (0, re.compile(r'\bsuperintendent\b|\btown manager\b|\bchief\b|\bprincipal\b'
+    # A PRINCIPAL CLERK IS NOT A PRINCIPAL. The word heads a school and, in the DPW and
+    # the Assessing office, grades a clerk -- and matching it bare put the DPW's
+    # principal clerk above the director who runs the department.
+    (0, re.compile(r'\bsuperintendent\b|\btown manager\b|\bchief\b'
+                   r'|\bprincipal\b(?!\s+clerk)'
                    r'|\bdirector\b|\bchair(?:man|person|woman)?\b|\blibrarian\b'
                    r'|\btown clerk\b|\btreasurer\b|\bcommissioner\b'
                    r'|\btax collector\b|^collector\b'
@@ -189,7 +193,7 @@ TIER_ASSOCIATE = 4
 # alone put both of them above the man who runs the department.
 STRONG_HEAD = re.compile(r'^(?:superintendent\b(?!\s+of\s+(?:cemeter|highway|street|water))'
                          r'|superintendent[- ]director)'
-                         r'|\btown manager\b|\bchief\b|\bprincipal\b'
+                         r'|\btown manager\b|\bchief\b|\bprincipal\b(?!\s+clerk)'
                          r'|\bchair(?:man|person|woman)?\b|\btown clerk\b'
                          r'|\bsuperintendent of schools\b', re.I)
 # A DESIGNEE IS A FULL MEMBER. The School Committee and the Town Moderator each SEND
@@ -245,7 +249,8 @@ def board_tier(role):
 # Inspector of Wiring is not the Building Commissioner's deputy and his assistant is not
 # above him: the post sits with the supervisors and the assistant to it sits below.
 APPOINTED_POST = re.compile(r'\binspector\b|\bkeeper\b|\bwarden\b|\bclockwinder\b|'
-                            r'\bfield driver\b|\bcensus liaison\b|\bcustodian\b', re.I)
+                            r'\bfield driver\b|\bcensus liaison\b|\btax custodian\b',
+                            re.I)
 ASSISTANT_TO = re.compile(r'\bassistant\b|\basst\.?\b|\bdeputy\b|\balternate\b', re.I)
 
 
@@ -258,7 +263,14 @@ def tier_of(role, kind):
     t = (role or '').strip()
     if not t:
         return TIER_STAFF
-    if APPOINTED_POST.search(t):
+    # ...UNLESS THE SAME TITLE ALSO NAMES A HEAD. `Director & Tree Warden` is the man
+    # who runs the DPW and happens to hold the Tree Warden appointment; matching the
+    # appointment first put him two bands below his own principal clerk.
+    # BY BAND, NOT BY POSITION IN THE LIST. `TIERS` is ordered so that `Deputy Chief`
+    # is tested before `Chief`, which means the band-0 pattern is not TIERS[0] and
+    # indexing by position picked up the deputy pattern instead.
+    head_words = next(pat for band, pat in TIERS if band == 0)
+    if APPOINTED_POST.search(t) and not head_words.search(t):
         return TIER_STAFF if ASSISTANT_TO.search(t) else TIER_SUPERVISOR
     if ASSOCIATE.search(t) and not DELEGATE.search(t):
         return TIER_ASSOCIATE
@@ -898,6 +910,75 @@ SIG_ALIAS = {
 SIG_DROP = re.compile(r'town meeting|town election|collection of taxes|omnibus|'
                       r'revenue funds|capital projects|vital records|excerpts', re.I)
 
+# THE TOWN'S OWN DIRECTORY, AS A SIXTH SOURCE. TJ, after it had been fetched, extracted,
+# catalogued and hashed: *"I still dont see Chris Ruth."* He was right -- it was a dataset
+# and not yet a source, which is the difference between holding a document and reading it.
+#
+# IT CARRIES NO YEAR, so it does not get one. Every other row here is dated by the annual
+# report it came out of; this is whoever the town was publishing on the day it was
+# fetched, and calling that FY2027 would give a snapshot the standing of a book. It is
+# filed under `today` and the page says so.
+#
+# AND IT COVERS ONLY WHAT IT COVERS. The directory lists no teacher, no board member and
+# no volunteer, so `today` appears in the year menu of the bodies it holds and nowhere
+# else -- a reader who picks it for the schools would otherwise get an empty page.
+DIRECTORY_FY = 'today'
+
+# THE FOLDINGS THE DIRECTORY DOES NOT KNOW ABOUT. It files Animal Control and the three
+# inspectorates as their own entries because they have their own phone numbers; the
+# Police Department's own FY27 chart puts `ACO Kathy Comeau` under the Chief, and the
+# inspectors work to the Building Commissioner. A contact list is not an org chart.
+DIRECTORY_INTO = {
+    'animal control department': 'Police Department',
+    'electrical inspector': 'Building Department',
+    'plumbing / gas inspector': 'Building Department',
+    'weight & measures': 'Building Department',
+    'select board': 'Town Manager',
+    'planning board department': 'Planning Board',
+}
+
+
+def _rows_directory(units):
+    """Who the town publishes today, matched to bodies the chart already holds."""
+    p = os.path.join(DATA, 'staff-directory.csv')
+    out, unmatched = [], []
+    if not os.path.exists(p):
+        return out, unmatched
+
+    def words(name):
+        n = re.sub(r"\s*\((staff|board|schools|appointed post)\)$", '', name or '',
+                   flags=re.I)
+        ws = re.findall(r'[a-z]+', n.lower().replace("'s", 's'))
+        return {w.rstrip('s') for w in ws
+                if w not in ('the', 'of', 'and', 'lunenburg', 'department', 'town',
+                             'office', 'pac') and len(w) > 2}
+
+    index = [(words(u), u, k) for u, k in sorted(units)]
+    for r in csv.DictReader(open(p, encoding='utf-8')):
+        dept = DIRECTORY_INTO.get(r['department'].strip().lower(), r['department'])
+        mine = words(dept)
+        hit = None
+        for theirs, unit, kind in index:
+            if mine and theirs and len(mine & theirs) >= min(2, len(mine), len(theirs)):
+                hit = (unit, kind)
+                break
+        if not hit:
+            # A DEPARTMENT THE TOWN PUBLISHES AND THIS PROJECT HAS NEVER HELD. Accounting
+            # and Human Resources file no annual report and neither head is an APPOINTED
+            # OFFICIAL, so both of the other sources miss them and always will. The
+            # directory is the town's own list and it is enough on its own to say the
+            # department exists.
+            unmatched.append((dept, r['person']))
+            hit = (dept.strip(), 'department')
+        unit, kind = hit
+        out.append(dict(fy=DIRECTORY_FY, unit=unit, unit_kind=kind, subunit='',
+                        section='', role=r['title'].strip(),
+                        person=re.sub(r'\s{2,}', ' ', r['person']).strip(),
+                        status='filled',
+                        source='town staff directory, did=%s' % r['did']))
+    return out, unmatched
+
+
 def _sig_title(title, person):
     """The post, with the person's own name taken back out of it.
 
@@ -1161,6 +1242,10 @@ def build():
             seen = where.get((r['fy'],) + _who2(r['person']), set())
             if len(seen) == 1 and re.search(r'principal', r['role'], re.I):
                 r['subunit'] = next(iter(seen))
+
+    directory, unmatched_dir = _rows_directory({(r['unit'], r['unit_kind'])
+                                                for r in rows})
+    rows += directory
 
     # THE CHAIRS COME IN BEFORE THE BANDS ARE ASSIGNED, because a chair is the top band.
     # A POST ONE PERSON HOLDS IS NOT A BOARD. The Moderator, the Constable and the Town
@@ -1441,7 +1526,7 @@ def build():
     uniq.sort(key=lambda r: (r['unit'].lower(), r['fy'], r['subunit'].lower(),
                              r['tier'], r['section_group'].lower(), r['role'].lower(),
                              r['person'].lower()))
-    return uniq, bad, lost_prose, unmatched
+    return uniq, bad, lost_prose, unmatched, unmatched_dir
 
 
 # HOW A BODY IS DRAWN IS A PROPERTY OF THE BODY. TJ: *"every department needs their own
@@ -1522,7 +1607,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    rows, bad, lost, unmatched = build()
+    rows, bad, lost, unmatched, unmatched_dir = build()
     pay = payload(rows)
     if a.check:
         old = list(csv.DictReader(open(OUT_CSV, encoding='utf-8'))) \
@@ -1551,6 +1636,9 @@ def main():
     for fy, dept, txt in lost[:200]:
         print('      FY%s %-18s %s' % (fy, dept[:18], txt[:88]))
     print('  %d chair mentions could not be matched to a body in the chart' % len(unmatched))
+    print('  %d staff-directory people could not be matched to a body:' % len(unmatched_dir))
+    for dept, who_ in unmatched_dir[:12]:
+        print('      %-42s %s' % (dept[:42], who_))
     thin = [u for u in pay['units'] if len(u['years']) == 1]
     print('  %d unit(s) appear in ONE year only — read them before trusting them'
           % len(thin))
