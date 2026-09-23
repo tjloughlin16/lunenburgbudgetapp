@@ -66,8 +66,15 @@ LEADING = re.compile(
     r'^((?:K9|Traffic|Acting|Interim)\s+)?'
     r'(Chief|Deputy\s+Chief|Lt\.?|Lieutenant|Sgt\.?|Sergeant|Ofc\.?|Officer|Det\.?'
     r'|Detective|Capt\.?|Captain|SRO|EMT|AEMT|Paramedic|Firefighter|FF)\.?\s+(.+)$', re.I)
+# THE NON-FIGHTING POSTS ARE ON THE ROSTER TOO, and the rank vocabulary had only ranks
+# in it. `Karen Weller, Administrative Assistant/EMS Coordinator` and `Rev. Andrew C.
+# Burr, Chaplain` are printed among the firefighters in every year and were read as
+# nobody -- and in FY2022, where the page break cuts her title to `Karen Weller,
+# Administrative`, she was the twelfth of twelve people on the page.
 TRAILING = re.compile(r'^(.+?),\s*([A-Za-z/\s]*(?:Chief|Lieutenant|Captain|Sergeant|EMT'
-                      r'|AEMT|Paramedic|Firefighter|Officer)[A-Za-z/\s]*)$', re.I)
+                      r'|AEMT|Paramedic|Firefighter|Officer|Administrative|Admin\.?'
+                      r'|Coordinator|Chaplain|Clerk|Dispatcher|Warden|Mechanic)'
+                      r'[A-Za-z/\s]*)$', re.I)
 TITLED = re.compile(r'^([A-Z][A-Za-z\-\s]{3,40}?):\s*(.+)$')   # `Public Safety Desk Clerk: Evelyn`
 
 NAMEISH = re.compile(r'^[A-Z][A-Za-z.\'\-]+(?:\s+[A-Z][A-Za-z.\'\-]+){1,3}$')

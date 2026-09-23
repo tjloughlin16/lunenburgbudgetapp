@@ -1254,6 +1254,8 @@ immediately before writing, and preserve the file's existing newline convention.
                                                 #   the only people source here not read out of an annual report
     python3 scripts/build_report_filing.py      # which bodies file an annual report, which say `No Report
                                                 #   Submitted`, and which the town never asked
+    python3 scripts/build_roster_completeness.py # how many of a body's people the chart HOLDS against a count
+                                                #   the town itself published — the only way to KNOW a chart is short
     python3 scripts/build_personnel_discrepancies.py  # ...and where the three people records cannot be
                                                 #   reconciled — INTERNAL, notes/generated/
     node fy28/../scripts/check_org_html.mjs     # ...and every unit RENDERED and read back out of the HTML, from

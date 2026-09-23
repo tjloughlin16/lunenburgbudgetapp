@@ -175,7 +175,17 @@ def pages_with_rosters(fy):
         # Facilities Director (2), Conservation Administrator...` -- and it matched four
         # rank words inside one paragraph. Counting ranks only on lines a roster could
         # actually be set in separates the two without naming either page.
-        if _rank_lines(lines) < MIN_RANKS:
+        # A PAGE THAT ANNOUNCES A ROSTER IS A ROSTER PAGE, however short the list on it.
+        # FY2022 prints `Roster of the Lunenburg Fire Department- 2022` at the foot of
+        # page 85 with the Chief, the Deputy and nine career firefighters under it, and
+        # then the book moves to the Police Department -- the call firefighters are not
+        # in that year's report at all. Two rank-bearing lines is under the threshold, so
+        # the page was skipped and the department published with ONE name against a
+        # stated forty. The density test exists to reject PROSE that happens to contain
+        # rank words, and prose does not carry the heading: FY2023 page 19, the one it
+        # was written for, has the opener and ZERO rank lines.
+        floor = 1 if START.search(text) else MIN_RANKS
+        if _rank_lines(lines) < floor:
             continue
         m = START.search(text)
         out[p] = m.group(0).strip()[:40] if m else 'rank-dense, no heading'

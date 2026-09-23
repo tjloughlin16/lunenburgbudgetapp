@@ -33,6 +33,14 @@ type Unit = {
   layout?: 'buildings' | 'shifts' | 'board' | 'ranks'
 }
 type Payload = { years: string[]; units: Unit[]; rows: Row[] }
+// HOW MANY OF A BODY'S PEOPLE THIS CHART HOLDS, and how we know — from
+// `build_roster_completeness.py`. A shortfall is only a fact when something the town
+// itself said supplies the denominator, so every row carries the basis and the sentence
+// it was read from.
+type Complete = {
+  fy: string; unit: string; named: string; stated: string; basis: string
+  shortfall: string; as_printed: string
+}
 
 // THE BANDS ARE OURS AND THE RANKS ARE THE TOWN'S. `Chief`, `Deputy Chief`, `Captain`,
 // `Lieutenant`, `Sergeant` are printed beside the names; sorting them into four levels is
@@ -78,6 +86,7 @@ function fromUrl(key: string) {
 
 export function OrgCharts() {
   const [d, setD] = useState<Payload | null>(null)
+  const [complete, setComplete] = useState<Complete[]>([])
   const [unit, setUnit] = useState(fromUrl('unit'))
   const [fy, setFy] = useState(fromUrl('fy'))
   // '' means every building. TJ: *"i want to see the whole thing in one place."* The
@@ -96,6 +105,9 @@ export function OrgCharts() {
       const wantFy = fromUrl('fy')
       setFy(j.years.includes(wantFy) ? wantFy : j.years[j.years.length - 1])
     }).catch(() => { /* no payload yet */ })
+    fetch('/data/roster-completeness.json').then(r => r.json())
+      .then(j => setComplete(j.rows ?? []))
+      .catch(() => { /* the flag is additive; without it the page is unchanged */ })
   }, [])
 
   const chosen = useMemo(() => d?.units.find(u => u.unit === unit) ?? null, [d, unit])
@@ -431,6 +443,26 @@ export function OrgCharts() {
           report counts' as context at the bottom, not the first big block of text."*
           Rule 7a, and this page was breaking it — a reader arrives for a department's
           chart and met nine lines explaining how to read one first. */}
+      {(() => {
+        const c = complete.find(x => x.unit === unit && x.fy === shownFy
+          && Number(x.shortfall) > 0)
+        if (!c) return null
+        return (
+          <div className="card p-3.5 mt-6 max-w-2xl"
+            style={{ borderLeft: '4px solid var(--series-cost)' }}>
+            <p className="text-[11px] font-semibold uppercase tracking-widest mb-1"
+              style={{ color: 'var(--text-muted)' }}>This chart is not complete</p>
+            <p className="text-[13.5px] leading-relaxed"
+              style={{ color: 'var(--text-secondary)' }}>
+              It names <strong>{c.named} of the {c.stated}</strong> people this body had in
+              FY{c.fy} — because {c.basis}, and the two are not the same number. That is
+              the town’s own count, not an estimate: “{c.as_printed}”. The missing names
+              are missing from the record, not from the department.
+            </p>
+          </div>
+        )
+      })()}
+
       {rows.length > 0 && rows.every(r => r.source.startsWith('town staff directory')) ? (
         <Body>
           <strong>FY{shownFy} here is the town’s own staff directory, not an annual
