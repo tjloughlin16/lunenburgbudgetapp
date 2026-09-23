@@ -41,7 +41,12 @@ const BANDS = ['HEADS THE BODY', 'DEPUTY AND ASSISTANT',
 // solve, and this reader walked straight into it: the DPW's Cemetery and Highway
 // Superintendents are heads of a DIVISION, under the Director who heads the department,
 // and matching the bare word reported the department as upside down when it is right.
-const HEAD = /(^|\s)(chief of department|chief|superintendent|principal|town manager|chair(man|person|woman)?|library director)\b/i
+// A PRINCIPAL CLERK IS NOT A PRINCIPAL — the builder learned that hours ago and this
+// reader did not, because the rule for `what counts as a head` lives in two files and
+// they drift. Same class as the Cemetery Superintendent it also walked into. The honest
+// fix is to publish the ladder from the builder and have the checker read it; until that
+// exists, the exception is written in both places and this comment is the reason why.
+const HEAD = /(^|\s)(chief of department|chief|superintendent|principal(?!\s+clerk)|town manager|chair(man|person|woman)?|library director)\b/i
 const DIVISION = /\b(cemetery|highway|street|water|sewer|building|grounds|facilities)\s+superintendent\b/i
 // A printed title that says its holder is SECOND.
 const SECOND = /\b(deputy|assistant|asst\.?|vice[- ]?chair|lieutenant|lt\.?|sergeant|sgt\.?|interim|acting)\b/i
