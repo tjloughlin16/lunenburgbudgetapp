@@ -316,6 +316,24 @@ CATALOGUES = {'annual_report_survey', 'annual_report_pages', 'extraction_plan',
 # and stabilization queue from 13 to 3 on paper and changed nothing in the archive.
 CATALOGUE_COLUMNS = {'state', 'rows_published', 'figures_reversed'}
 
+# WHICH COLUMN HOLDS THE YEAR OF THE BOOK THE PAGE IS IN. Requiring the literal name `fy`
+# made `outstanding-debt.csv` invisible: it names that column `report_fy`, so 1,038 proven
+# rows across 34 pages joined to nothing and the queue went on printing `debt 34 pages
+# unread` the day after the debt tables were read. A join that matches nothing looks
+# exactly like data that is absent -- which CLAUDE.md names as the shape of four of the
+# thirteen defects found in one day, and this is the fifth.
+#
+# THE ORDER MATTERS AND THE OMISSIONS ARE THE POINT. A page belongs to the report it was
+# printed in. `as_of_fy` and `due_fy` are years a ROW is about -- the debt tables carry
+# both, five as-of years per page and a schedule running to FY2047 -- and joining on
+# either would credit pages in books that do not exist yet.
+YEAR_COLUMNS = ('fy', 'report_fy')
+
+
+def _year_column(cols):
+    """The first year-of-the-book column a table has, or None."""
+    return next((c for c in YEAR_COLUMNS if c in cols), None)
+
 
 def _label(name):
     """One name per dataset. `report_appropriations` the table and
@@ -346,11 +364,12 @@ def read_pages():
             with open(f, encoding='utf-8', errors='replace') as fh:
                 r = csv.DictReader(fh)
                 cols = set(r.fieldnames or ())
-                if not {'fy', 'page'} <= cols or cols & CATALOGUE_COLUMNS:
+                year = _year_column(cols)
+                if not year or 'page' not in cols or cols & CATALOGUE_COLUMNS:
                     continue
                 for row in r:
                     try:
-                        out[(int(row['fy']), int(row['page']))].add(_label(name))
+                        out[(int(row[year]), int(row['page']))].add(_label(name))
                     except (TypeError, ValueError):
                         continue
         except OSError:
@@ -363,9 +382,11 @@ def read_pages():
             if t in CATALOGUES:
                 continue
             cols = {r[1] for r in db.execute('PRAGMA table_info("%s")' % t)}
-            if not {'fy', 'page'} <= cols:
+            year = _year_column(cols)
+            if not year or 'page' not in cols:
                 continue
-            for fy, pg in db.execute('SELECT DISTINCT fy, page FROM "%s"' % t):
+            for fy, pg in db.execute(
+                    'SELECT DISTINCT "%s", page FROM "%s"' % (year, t)):
                 try:
                     out[(int(fy), int(pg))].add(_label(t))
                 except (TypeError, ValueError):
