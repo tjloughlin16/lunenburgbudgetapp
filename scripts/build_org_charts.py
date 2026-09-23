@@ -421,7 +421,29 @@ POST_IN = {
     'hearings officer': 'Town Manager',
     # The department the town votes a budget to and runs a fund for since FY2011.
     'recreation director': 'Parks and Recreation',
+    # TJ: *"Town Counsel can go into Town Manager group."* The firm is retained by the
+    # town and works to the Town Manager; it is not a body and it is not five people.
+    'town counsel': 'Town Manager',
+    # TJ: *"same as Constable."* Appointed by the town and working to the manager's
+    # office; the listing prints the post as elected in some years and appointed in
+    # others, which is why it never settled anywhere on its own.
+    'constable': 'Town Manager',
 }
+
+# THE FIVE THAT BELONG TO NOBODY GO IN ONE PLACE. TJ: *"lets not list all the appointed
+# ones as individuals then. Group them all together into one Group."*
+#
+# A Constable, a Town Clockwinder, the Moderator, Town Counsel and a Wellness Coordinator
+# are five separate lines in a dropdown of sixty-five bodies, and none of them is a body:
+# they are posts the town fills that sit in no department. The annual report heads six
+# pages `APPOINTED OFFICIALS` and names no appointing authority on any of them, and the
+# charter that would say which belong to the Select Board and which to the Town Manager
+# is not in this archive -- so grouping them under a department would be inventing a
+# reporting line the town has not published. They go together, under what they actually
+# have in common, with each post as its own block inside.
+NO_DEPARTMENT = 'Officers in no department'
+LOOSE_POST = {'moderator', 'town clockwinders', 'wellness coordinator',
+              'town clock winders'}
 
 # AND A COMMITTEE IS A COMMITTEE, whichever part of the listing printed it. The Charter
 # Review Committee, the Building Reuse Committee, the MART Advisory Board and the three
@@ -1073,7 +1095,18 @@ def build():
         if NOT_A_UNIT.match(key):
             bad += 1
             continue
-        if key in POST_IN and r['unit_kind'] == 'officer':
+        # NOT GATED ON THE KIND. The Constable and the Moderator are typed `board` at
+        # this point -- the listing prints them among the elected -- and the conversion
+        # to `officer` happens further down, so testing for it here left both of them
+        # standing alone in the dropdown after everything else had been grouped.
+        if key in LOOSE_POST:
+            post = r['unit']
+            r['unit'], r['section'] = NO_DEPARTMENT, post
+            if r['role'] in ('officer', 'board seat', ''):
+                r['role'] = post
+        # Not gated on the kind either, for the same reason: the listing prints the
+        # Constable among the ELECTED in some years, so it never reached this branch.
+        elif key in POST_IN:
             post = r['unit']
             r['unit'], r['unit_kind'] = POST_IN[key], 'department'
             if r['role'] in ('officer', 'board seat', ''):
@@ -1387,6 +1420,8 @@ def build():
     for r in rows:
         elsewhere[(r['fy'], r['unit'], r['subunit'], r['section_group'])].add(r['tier'])
     for r in rows:
+        if r['unit'] == NO_DEPARTMENT:
+            continue                      # the post IS the grouping here
         alone = len(spread[(r['fy'], r['unit'], r['subunit'], r['tier'])]) <= 1
         spans = len(elsewhere[(r['fy'], r['unit'], r['subunit'],
                                r['section_group'])]) > 1
@@ -1435,6 +1470,9 @@ def layout_of(unit_rows):
     """Which of the four shapes this body is drawn in, and why."""
     if any(r['subunit'] for r in unit_rows):
         return 'buildings'
+    if unit_rows[0]['unit'] == NO_DEPARTMENT:
+        # Not a hierarchy at all: five unrelated posts that happen to share a page.
+        return 'shifts'
     if unit_rows[0]['unit_kind'] in ('board', 'officer'):
         return 'board'
     # A group that holds more than one rank is a real division of the body, not a label
