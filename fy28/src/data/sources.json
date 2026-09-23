@@ -2229,9 +2229,9 @@
      "stars": 2,
      "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
      "kind": "Data",
-     "bytes": 664,
+     "bytes": 1845,
      "url": "/docs/data/document-defects.csv",
-     "count": 1,
+     "count": 3,
      "unit": "rows",
      "textUrl": "/docs/data/document-defects.csv"
     },
@@ -3549,9 +3549,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 451369,
+     "bytes": 456003,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2634,
+     "count": 2661,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -4282,9 +4282,9 @@
      "stars": 2,
      "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
      "kind": "Data",
-     "bytes": 24420,
+     "bytes": 24816,
      "url": "/docs/data/youtube-no-captions.csv",
-     "count": 195,
+     "count": 198,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-no-captions.csv"
     },
@@ -16981,7 +16981,7 @@
  "totals": {
   "documents": 1477,
   "groups": 22,
-  "bytes": 2185634325,
+  "bytes": 2185640536,
   "loadBearing": 156
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
