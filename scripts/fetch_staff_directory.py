@@ -40,6 +40,18 @@ import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS = os.path.join(ROOT, 'sources', 'town-supplementary', 'docs', 'staff-directory')
+
+# EVERY FETCH IS KEPT, IN A FOLDER NAMED FOR ITS DAY. TJ: *"staff directory will be
+# updated every year -- it has no historical lens so WE have to keep it."*
+#
+# That is the whole reason this is in an archive rather than a cache. The town overwrites
+# its directory in place: there is no FY2026 version of it anywhere, and the day somebody
+# updates a page the person who held that job before is gone from the internet. A fetcher
+# that writes `did-6.html` and overwrites it next year would destroy exactly the record
+# it exists to keep -- and it would do it silently, which is worse.
+#
+# So the path carries the date, the catalogue carries the date, and the extractor reads
+# EVERY snapshot rather than the newest. Nothing is ever written over.
 INDEX = os.path.join(ROOT, 'sources', 'town-supplementary', 'index.csv')
 LANDING = 'https://www.lunenburgma.gov/m/directory'
 PAGE = 'https://www.lunenburgma.gov/m/directory/department?did=%s'
@@ -103,15 +115,15 @@ def main():
     if a.check:
         have = {r['local']: r for r in csv.DictReader(open(INDEX, encoding='utf-8'))}
         bad = []
-        for f in sorted(os.listdir(DOCS)):
-            if not f.endswith('.html'):
-                continue
-            rel = os.path.relpath(os.path.join(DOCS, f), ROOT)
+        held = [os.path.join(dp, f) for dp, _d, fs in os.walk(DOCS)
+                for f in fs if f.endswith('.html')]
+        for full in sorted(held):
+            rel = os.path.relpath(full, ROOT)
             row = have.get(rel)
             if not row:
                 bad.append('%s is on disk and in no catalogue' % rel)
                 continue
-            got = hashlib.sha256(open(os.path.join(DOCS, f), 'rb').read()).hexdigest()
+            got = hashlib.sha256(open(full, 'rb').read()).hexdigest()
             if got != row['sha256']:
                 bad.append('%s has changed since it was catalogued' % rel)
         for b in bad:
@@ -122,8 +134,16 @@ def main():
     rows = []
     for did in dids():
         blob = _get(PAGE % did)
-        path = os.path.join(DOCS, 'did-%d.html' % did)
-        open(path, 'wb').write(blob)
+        day = os.path.join(DOCS, today)
+        os.makedirs(day, exist_ok=True)
+        path = os.path.join(day, 'did-%d.html' % did)
+        # A SNAPSHOT IS NEVER OVERWRITTEN, not even by a second run on the same day --
+        # the town may have changed a page between them, and the first bytes are the ones
+        # the catalogue already carries a sha256 for.
+        if os.path.exists(path):
+            print('  %s already held; left alone' % os.path.relpath(path, ROOT))
+        else:
+            open(path, 'wb').write(blob)
         name = department_of(blob) or 'department %d' % did
         rows.append(dict(
             label='%s (staff directory, fetched %s)' % (name, today),

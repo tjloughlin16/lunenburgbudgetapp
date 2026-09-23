@@ -914,37 +914,17 @@ SIG_DROP = re.compile(r'town meeting|town election|collection of taxes|omnibus|'
 # catalogued and hashed: *"I still dont see Chris Ruth."* He was right -- it was a dataset
 # and not yet a source, which is the difference between holding a document and reading it.
 #
-# IT CARRIES NO YEAR OF ITS OWN, AND IT IS STILL A YEAR. TJ: *"today IS a FY... it's this
-# FY, the current one."* He is right and the first version was wrong: it filed the
-# directory under `today`, which made a fiscal year into a special case and left it
-# uncomparable with everything around it. The Massachusetts fiscal year runs 1 July to
-# 30 June, so a fetch in September 2026 is FY2027 -- the year the town is in.
+# THE YEAR COMES WITH THE ROW. `extract_staff_directory.py` stamps every row with the
+# date the pages were fetched and the fiscal year that falls in -- so this reads a column
+# rather than computing a date a second time. TJ: *"so just to be clear, you are labeling
+# the directory departments and personnel dataset as FY27. and then joining"* -- that is
+# the right order, and the first version had it the wrong way round: the dataset was
+# undated and the JOIN applied a year, which left `staff-directory.csv` unable to say when
+# it was from when anything else read it.
 #
-# THE FETCH DATE IS THE ONLY DATE THIS SOURCE HAS, so the year is DERIVED from it rather
-# than typed, and it is read out of the CATALOGUE -- `fetch_staff_directory.py` writes
-# `(staff directory, fetched YYYY-MM-DD)` into the label of every page it holds. A
-# re-fetch next July moves these rows to FY2028 without anybody editing a constant, which
-# is rule 2 applied to a date instead of a figure.
-#
-# WHAT IS NOT A YEAR IS WHAT IT COVERS. The directory lists PAID STAFF ONLY -- no teacher,
-# no board member, no volunteer -- so its year appears in the menu of the bodies it holds
-# and nowhere else, and the page says what a reader is looking at.
-def directory_fy():
-    """The fiscal year the staff directory was fetched in, read off the catalogue."""
-    idx = os.path.join(ROOT, 'sources', 'town-supplementary', 'index.csv')
-    when = ''
-    if os.path.exists(idx):
-        for r in csv.DictReader(open(idx, encoding='utf-8')):
-            m = re.search(r'staff directory, fetched (\d{4})-(\d{2})-\d{2}', r['label'])
-            if m:
-                when = max(when, '%s-%s' % m.groups())
-    if not when:
-        return ''
-    y, mth = (int(x) for x in when.split('-'))
-    return str(y + 1 if mth >= 7 else y)
-
-
-DIRECTORY_FY = directory_fy()
+# WHAT IS NOT A YEAR IS WHAT THE SOURCE COVERS. The directory lists PAID STAFF ONLY -- no
+# teacher, no board member, no volunteer -- so its year appears in the menu of the bodies
+# it holds and nowhere else, and the page says what a reader is looking at.
 
 # THE FOLDINGS THE DIRECTORY DOES NOT KNOW ABOUT. It files Animal Control and the three
 # inspectorates as their own entries because they have their own phone numbers; the
@@ -964,7 +944,7 @@ def _rows_directory(units):
     """Who the town publishes today, matched to bodies the chart already holds."""
     p = os.path.join(DATA, 'staff-directory.csv')
     out, unmatched = [], []
-    if not os.path.exists(p) or not DIRECTORY_FY:
+    if not os.path.exists(p):
         return out, unmatched
 
     def words(name):
@@ -993,7 +973,9 @@ def _rows_directory(units):
             unmatched.append((dept, r['person']))
             hit = (dept.strip(), 'department')
         unit, kind = hit
-        out.append(dict(fy=DIRECTORY_FY, unit=unit, unit_kind=kind, subunit='',
+        if not r.get('fy'):
+            continue                    # an undated row cannot be placed in a year
+        out.append(dict(fy=r['fy'], unit=unit, unit_kind=kind, subunit='',
                         section='', role=r['title'].strip(),
                         person=re.sub(r'\s{2,}', ' ', r['person']).strip(),
                         status='filled',

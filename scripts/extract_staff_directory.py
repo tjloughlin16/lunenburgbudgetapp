@@ -38,7 +38,33 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = os.path.join(ROOT, 'sources', 'town-supplementary', 'docs', 'staff-directory')
 OUT = os.path.join(ROOT, 'sources', 'data', 'staff-directory.csv')
-FIELDS = ['department', 'person', 'title', 'did', 'source']
+FIELDS = ['fy', 'fetched', 'department', 'person', 'title', 'did', 'source']
+
+# THE DATASET CARRIES ITS OWN DATE. The first version left the year to whoever joined it,
+# so `staff-directory.csv` read on its own could not say when it was from -- and a
+# personnel dataset with no date is the thing this project spends its time warning other
+# people about. The fetch date is the only date this source has; the fiscal year follows
+# from it, because the Massachusetts year runs 1 July to 30 June.
+#
+# BOTH ARE READ OFF THE CATALOGUE rather than typed or taken from a file's mtime:
+# `fetch_staff_directory.py` writes `(staff directory, fetched YYYY-MM-DD)` into the label
+# of every page it holds, so a re-fetch moves the dataset's year by itself.
+INDEX = os.path.join(ROOT, 'sources', 'town-supplementary', 'index.csv')
+
+
+def fetched_on(path):
+    """The day a snapshot was taken, off the folder it is kept in."""
+    m = re.search(r'/(\d{4}-\d{2}-\d{2})/', path.replace(os.sep, '/'))
+    return m.group(1) if m else ''
+
+
+
+def fiscal_year(when):
+    """The fiscal year a date falls in. 1 July starts the next one."""
+    if not when:
+        return ''
+    y, m, _d = (int(x) for x in when.split('-'))
+    return str(y + 1 if m >= 7 else y)
 
 # The directory renders each person as a two-letter avatar, then the name, then the title.
 INITIALS = re.compile(r'^[A-Z][A-Z]$')
@@ -70,6 +96,8 @@ def department_of(rows):
 
 def read(path):
     rows = lines(path)
+    when = fetched_on(path)
+    fy = fiscal_year(when)
     dept = department_of(rows)
     did = re.search(r'did-(\d+)', os.path.basename(path)).group(1)
     out, seen = [], set()
@@ -86,17 +114,22 @@ def read(path):
         if key in seen:
             continue
         seen.add(key)
-        out.append(dict(department=dept, person=name, title=title, did=did,
+        out.append(dict(fy=fy, fetched=when, department=dept, person=name,
+                        title=title, did=did,
                         source='town staff directory, /m/directory/department?did=%s' % did))
     return out
 
 
 def build():
+    """EVERY SNAPSHOT, not the newest. The town overwrites its directory in place, so the
+    only history of who worked for Lunenburg is the one this archive keeps -- one folder
+    per fetch, and a row per person per fetch. A year missing from the output is a year
+    nobody fetched, and it will stay missing for ever.
+    """
     out = []
-    for p in sorted(glob.glob(os.path.join(PAGES, 'did-*.html')),
-                    key=lambda p: int(re.search(r'did-(\d+)', p).group(1))):
+    for p in sorted(glob.glob(os.path.join(PAGES, '*', 'did-*.html'))):
         out += read(p)
-    out.sort(key=lambda r: (r['department'].lower(), r['person'].lower()))
+    out.sort(key=lambda r: (r['fy'], r['department'].lower(), r['person'].lower()))
     return out
 
 
@@ -118,7 +151,10 @@ def main():
         w.writerows(rows)
     import collections
     per = collections.Counter(r['department'] for r in rows)
-    print('%d people across %d departments' % (len(rows), len(per)))
+    snaps = sorted({(r['fetched'], r['fy']) for r in rows})
+    print('%d people across %d departments, from %d snapshot(s): %s'
+          % (len(rows), len(per), len(snaps),
+             ', '.join('%s \u2192 FY%s' % s for s in snaps)))
     for d, n in per.most_common():
         print('  %-44s %3d' % (d[:44], n))
     return 0

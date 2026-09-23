@@ -12,6 +12,14 @@ those render fully, so what is held here is one page per department:
 lunenburgma.gov. Built on CivicEngage; the `did` is the town's own department identifier
 and is what a later fetch should use to compare like with like.
 
+**ONE FOLDER PER FETCH, AND NOTHING IS EVER OVERWRITTEN.** The town updates this page in
+place. There is no FY2026 version of it anywhere, and the day somebody edits a page the
+person who held that job before is gone from the internet — so the only history of who
+worked for Lunenburg is the one kept here. Snapshots live under
+`staff-directory/<fetch-date>/did-N.html`, the catalogue carries the date in every label,
+and `extract_staff_directory.py` reads EVERY snapshot rather than the newest. A year
+missing from the dataset is a year nobody fetched, and it will stay missing for ever.
+
 **What we read out of it.** `sources/data/staff-directory.csv` — 147 people across 27
 departments, each with the title the town prints beside their name, by
 `scripts/extract_staff_directory.py`.

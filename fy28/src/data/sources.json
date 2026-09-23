@@ -1881,9 +1881,9 @@
      "stars": 2,
      "what": "One row per person per role per year, assembled from four readings of the annual reports: the officials listing for boards and appointed posts, the Police and Fire rosters, the four schools’ rosters, and the departments that name their staff in prose. `status` keeps PEOPLE and POSTS apart — `filled` is a named person, `vacant` is a seat the town prints as empty, and `post` is an establishment position a department states without ever saying who fills it, which is how the DPW and the Assessing office publish. Building it was a test of the data model rather than a presentation of it, and it found seven classes of defect nothing that COUNTS things had: a listing footnote read as a post, sub-headings promoted to bodies, and one post under four spellings. Rendered at /org-charts.",
      "kind": "Data",
-     "bytes": 869206,
+     "bytes": 886170,
      "url": "/docs/data/org-chart.csv",
-     "count": 6600,
+     "count": 6745,
      "unit": "rows",
      "textUrl": "/docs/data/org-chart.csv"
     },
@@ -1929,9 +1929,9 @@
      "stars": 2,
      "what": "One row per person per body: the first and last year their name appears, how many years the BODY published in between, the years inside that span it published nothing, and whether they are CENSORED at either edge of the archive. Half of them are: somebody in a body’s first published year began before FY2011 and nothing here can say when, and somebody in its last is still there as far as this can see — so their tenure is a LOWER BOUND, not a length. Identity is surname plus first initial within one body, which merges `Josh`/`Joshua Tocci` and `Steve`/`Stephen McKenna`; the 79 pairs that choice joins are printed on every run and are nicknames rather than collisions.",
      "kind": "Data",
-     "bytes": 155450,
+     "bytes": 162928,
      "url": "/docs/data/tenure.csv",
-     "count": 1832,
+     "count": 1885,
      "unit": "rows",
      "textUrl": "/docs/data/tenure.csv"
     },
@@ -2032,18 +2032,6 @@
      "textUrl": "/docs/analyses/budget-vs-actual.md"
     },
     {
-     "path": "data/turnover.csv",
-     "title": "How many names stop appearing, by body and year",
-     "stars": 2,
-     "what": "One row per body per published year: the people in it, how many of them are absent from the NEXT year the body published, and the rate. MEASURED ACROSS PUBLISHED YEARS, never calendar years, because 27 of 86 bodies skip a year inside their own span and a naive count reads a missed report as the whole staff leaving and returning. A NAME LEAVING A ROSTER IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut post, and not a separation rate.",
-     "kind": "Data",
-     "bytes": 29726,
-     "url": "/docs/data/turnover.csv",
-     "count": 582,
-     "unit": "rows",
-     "textUrl": "/docs/data/turnover.csv"
-    },
-    {
      "path": "analyses/sped-and-funds.md",
      "title": "Special education and the funds outside the budget",
      "stars": 2,
@@ -2068,6 +2056,18 @@
      "textUrl": "/docs/analyses/fy26-closeout-town.md"
     },
     {
+     "path": "data/turnover.csv",
+     "title": "How many names stop appearing, by body and year",
+     "stars": 2,
+     "what": "One row per body per published year: the people in it, how many of them are absent from the NEXT year the body published, and the rate. MEASURED ACROSS PUBLISHED YEARS, never calendar years, because 27 of 86 bodies skip a year inside their own span and a naive count reads a missed report as the whole staff leaving and returning. A NAME LEAVING A ROSTER IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut post, and not a separation rate.",
+     "kind": "Data",
+     "bytes": 23446,
+     "url": "/docs/data/turnover.csv",
+     "count": 448,
+     "unit": "rows",
+     "textUrl": "/docs/data/turnover.csv"
+    },
+    {
      "path": "data/board-chairs.csv",
      "title": "Who chaired each board, from the body’s own report",
      "stars": 2,
@@ -2080,6 +2080,18 @@
      "textUrl": "/docs/data/board-chairs.csv"
     },
     {
+     "path": "data/staff-directory.csv",
+     "title": "Who works for the town TODAY, off its own staff directory",
+     "stars": 2,
+     "what": "147 people across 27 departments, each with the title the town prints beside their name, from 28 pages at `/m/directory/department?did=N`. THE ONLY PEOPLE SOURCE HERE NOT READ OUT OF AN ANNUAL REPORT, which is why it was fetched: a department that files no report is invisible to both of the others and they share the blind spot. Four departments appear here and in neither — Accounting, Human Resources, Facilities/Grounds/Recreation and Public Access Cable. IT IS A CONTACT LIST, NOT AN ORG CHART: no rank order, no reporting line and NO DATE, so it is a snapshot rather than a series and a later fetch will silently differ.",
+     "kind": "Data",
+     "bytes": 19824,
+     "url": "/docs/data/staff-directory.csv",
+     "count": 148,
+     "unit": "rows",
+     "textUrl": "/docs/data/staff-directory.csv"
+    },
+    {
      "path": "data/report-signatures.csv",
      "title": "Who signed each department’s report — the head of every body, by year",
      "stars": 2,
@@ -2090,18 +2102,6 @@
      "count": 182,
      "unit": "rows",
      "textUrl": "/docs/data/report-signatures.csv"
-    },
-    {
-     "path": "data/staff-directory.csv",
-     "title": "Who works for the town TODAY, off its own staff directory",
-     "stars": 2,
-     "what": "147 people across 27 departments, each with the title the town prints beside their name, from 28 pages at `/m/directory/department?did=N`. THE ONLY PEOPLE SOURCE HERE NOT READ OUT OF AN ANNUAL REPORT, which is why it was fetched: a department that files no report is invisible to both of the others and they share the blind spot. Four departments appear here and in neither — Accounting, Human Resources, Facilities/Grounds/Recreation and Public Access Cable. IT IS A CONTACT LIST, NOT AN ORG CHART: no rank order, no reporting line and NO DATE, so it is a snapshot rather than a series and a later fetch will silently differ.",
-     "kind": "Data",
-     "bytes": 17445,
-     "url": "/docs/data/staff-directory.csv",
-     "count": 148,
-     "unit": "rows",
-     "textUrl": "/docs/data/staff-directory.csv"
     },
     {
      "path": "data/board-goals.csv",
@@ -3537,9 +3537,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 445291,
+     "bytes": 447466,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2598,
+     "count": 2611,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -4258,9 +4258,9 @@
      "stars": 2,
      "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
      "kind": "Data",
-     "bytes": 23646,
+     "bytes": 24033,
      "url": "/docs/data/youtube-no-captions.csv",
-     "count": 189,
+     "count": 192,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-no-captions.csv"
     },
@@ -15245,13 +15245,13 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/443"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-6.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-6.html",
      "title": "Accounting Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 96251,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-6.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-6.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=6"
     },
     {
@@ -15275,23 +15275,23 @@
      "upstream": "https://www.lunenburgma.gov/202/Americans-with-Disabilities-Committee"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-49.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-49.html",
      "title": "Americans with Disabilities Committee (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 92576,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-49.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-49.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=49"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-8.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-8.html",
      "title": "Animal Control Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 94889,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-8.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-8.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=8"
     },
     {
@@ -15305,13 +15305,13 @@
      "upstream": "https://www.lunenburgma.gov/203/Architectural-Preservation-District-Comm"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-9.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-9.html",
      "title": "Assessor's Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 97234,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-9.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-9.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=9"
     },
     {
@@ -15357,13 +15357,13 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3541"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-16.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-16.html",
      "title": "Board of Health Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 96643,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-16.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-16.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=16"
     },
     {
@@ -15398,13 +15398,13 @@
      "upstream": "https://www.lunenburgma.gov/719/Budget-Task-Force"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-10.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-10.html",
      "title": "Building Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 97286,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-10.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-10.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=10"
     },
     {
@@ -15448,13 +15448,13 @@
      "upstream": "https://www.lunenburgma.gov/217/Cemetery-Commission"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-18.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-18.html",
      "title": "Cemetery Commission (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 96211,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-18.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-18.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=18"
     },
     {
@@ -15489,13 +15489,13 @@
      "upstream": "https://www.lunenburgma.gov/225/Conservation-Commission"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-24.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-24.html",
      "title": "Conservation Commission (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 95762,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-24.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-24.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=24"
     },
     {
@@ -15509,13 +15509,13 @@
      "upstream": "https://www.lunenburgma.gov/229/Council-On-Aging"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-25.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-25.html",
      "title": "Council on Aging (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 100388,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-25.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-25.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=25"
     },
     {
@@ -15529,13 +15529,13 @@
      "upstream": "https://www.lunenburgma.gov/247/Cultural-Council"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-26.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-26.html",
      "title": "Department of Public Works (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 112248,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-26.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-26.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=26"
     },
     {
@@ -15549,13 +15549,13 @@
      "upstream": "https://www.lunenburgma.gov/250/Economic-Development-Committee"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-11.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-11.html",
      "title": "Electrical Inspector (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 98448,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-11.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-11.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=11"
     },
     {
@@ -15625,13 +15625,13 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4285"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-12.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-12.html",
      "title": "Facilities, Grounds, & Recreation Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 99304,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-12.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-12.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=12"
     },
     {
@@ -15645,13 +15645,13 @@
      "upstream": "https://www.lunenburgma.gov/252/Finance-Committee"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-13.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-13.html",
      "title": "Fire Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 149868,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-13.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-13.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=13"
     },
     {
@@ -15675,33 +15675,33 @@
      "upstream": "https://www.lunenburgma.gov/261/Historical-Commission"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-14.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-14.html",
      "title": "Human Resources Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 98063,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-14.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-14.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=14"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-19.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-19.html",
      "title": "Information Technology Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 95051,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-19.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-19.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=19"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-20.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-20.html",
      "title": "Land Use Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 92498,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-20.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-20.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=20"
     },
     {
@@ -15819,13 +15819,13 @@
      "upstream": "https://www.lunenburgma.gov/283/Parks-Commission"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-38.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-38.html",
      "title": "Parks Commission (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 103330,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-38.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-38.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=38"
     },
     {
@@ -15839,13 +15839,13 @@
      "upstream": "https://www.lunenburgma.gov/284/Personnel-Committee"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-39.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-39.html",
      "title": "Personnel Committee (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 93257,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-39.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-39.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=39"
     },
     {
@@ -15859,43 +15859,43 @@
      "upstream": "https://www.lunenburgma.gov/285/Planning-Board"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-40.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-40.html",
      "title": "Planning Board Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 97240,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-40.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-40.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=40"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-21.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-21.html",
      "title": "Plumbing / Gas Inspector (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 98127,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-21.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-21.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=21"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-22.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-22.html",
      "title": "Police Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 138536,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-22.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-22.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=22"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-41.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-41.html",
      "title": "Public Access Cable (PAC) (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 100516,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-41.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-41.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=41"
     },
     {
@@ -15952,13 +15952,13 @@
      "upstream": "https://www.lunenburgma.gov/295/Select-Board"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-42.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-42.html",
      "title": "Select Board (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 96100,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-42.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-42.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=42"
     },
     {
@@ -16026,23 +16026,23 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/786"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-32.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-32.html",
      "title": "Town Clerk (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 97134,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-32.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-32.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=32"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-36.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-36.html",
      "title": "Town Manager (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 100320,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-36.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-36.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=36"
     },
     {
@@ -16056,13 +16056,13 @@
      "upstream": "https://www.lunenburgma.gov/716/Town-Manager-Screening-Committee"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-43.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-43.html",
      "title": "Treasurer And Tax Collector Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 99444,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-43.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-43.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=43"
     },
     {
@@ -16086,13 +16086,13 @@
      "upstream": "https://www.lunenburgma.gov/224/Trust-Fund-Commission"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-44.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-44.html",
      "title": "Veteran's Services Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 96280,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-44.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-44.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=44"
     },
     {
@@ -16107,13 +16107,13 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/182"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-45.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-45.html",
      "title": "Weight & Measures (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 94382,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-45.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-45.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=45"
     },
     {
@@ -16127,13 +16127,13 @@
      "upstream": "https://www.lunenburgma.gov/322/Zoning-Board-of-Appeals"
     },
     {
-     "path": "town-supplementary/docs/staff-directory/did-47.html",
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-47.html",
      "title": "Zoning Board of Appeals (staff directory, fetched 2026-09-22)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
      "bytes": 97351,
-     "url": "/docs/town-supplementary/docs/staff-directory/did-47.html",
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-47.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=47"
     }
    ]
@@ -16957,7 +16957,7 @@
  "totals": {
   "documents": 1475,
   "groups": 22,
-  "bytes": 2185580650,
+  "bytes": 2185603753,
   "loadBearing": 156
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
