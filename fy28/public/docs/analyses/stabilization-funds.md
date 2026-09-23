@@ -41,8 +41,10 @@ Some years print no ending market value at all: FY2019’s table carries the hea
 | FY2018 | $1,732,690.98 |
 | FY2020 | $2,041,061.72 |
 | FY2021 | $2,526,388.54 |
+| FY2022 | $2,572,737.97 |
+| FY2024 | $2,967,682.91 |
 
-That is **$1,323,525.69 more between FY2011 and FY2021**, a rise of 110%, in a fund whose purpose is to be available.
+That is **$1,764,820.06 more between FY2011 and FY2024**, a rise of 147%, in a fund whose purpose is to be available.
 
 ![Three stabilization funds on one scale, FY2011 to FY2025. The tallest reaches $3,147,178.96 by its last proven year; Zoning Incentive is a flat line near the axis the whole way. Every year in each fund’s span is a proven reading — no gaps.](charts/stabilization-all.svg)
 
@@ -385,7 +387,7 @@ And 7 articles the warrant records without an amount, so they are in none of the
 | FY2023 | Sewer Reserve Capacity | $20,962.40 | to operate the Sewer Enterprise Fund for F Y24 |
 | FY2023 | Inflow/Infiltration | $9,900.00 | — see the quote below |
 | FY2022 | Sewer Capital Reserve | $20,962.00 | to operate the Sewer Enterprise Fund for FY23, including the amo |
-| FY2022 | Sewer Capital Reserve | $20,000.00 | to operate the Sewer Enterprise… |
+| FY2021 | Sewer Capital Reserve | $20,000.00 | to operate the Sewer Enterprise… |
 | FY2017 | Inflow/Infiltration | $14,520.00 | to operate the Sewer Enterprise Fund for FY18 |
 | FY2017 | Sewer Reserve Capacity | $10,285.00 | to operate the… |
 
@@ -401,16 +403,17 @@ And 7 articles the warrant records without an amount, so they are in none of the
   > …VOTED (72 YES, 8 NO) to appropriate from Sewer Enterprise revenues the sum of $89,891.85; transfer from the Inflow/Infiltration Stabilization Fund the sum of $9,900.00; transfer from the Sewer Capital Reserve Stabilization Fund the sum of $35,000.00; transfer from the Sewer Reserve Capacity Stabilization Fund the sum of $20,962.40; and appropriate from Sewer Enterprise retained earnings the sum…
 - **FY2022, Sewer Capital Reserve, $20,962.00** — page 75 of that year’s annual report:
   > …for FY23, $853,112.53 was appropriated from Sewer Enterprise revenues, $20,000.00 transferred from the Sewer Capital Reserve Stabilization Fund, $20,962.00 was transferred from the Sewer Reserve Capacity Fund and the sum of $319,107.47 was appropriated from Retained Earnings for a total appropriation of $1,213,182.00 to operate the Sewer Enterprise Fund for FY23, including the amount of…
-- **FY2022, Sewer Capital Reserve, $20,000.00** — page 150 of that year’s annual report:
-  > …UNANIMOUS CONSENT to appropriate from Sewer Enterprise revenues the sum of $853,112.53; transfer from the Sewer Capital Reserve Stabilization Fund the sum of $20,000.00; transfer from the Sewer Reserve Capacity Fund the sum of $20,962.00; and appropriate from Sewer Enterprise retained earnings the sum of $319,107.47; for a total appropriation of $1,213,182.00 to operate the Sewer Enterprise…
+- **FY2021, Sewer Capital Reserve, $20,000.00** — page 144 of that year’s annual report:
+  > …UNANIMOUS CONSENT to appropriate from Sewer Enterprise revenues the sum of $831,406.99; transfer from the Sewer Capital Reserve Stabilization Fund the sum of $20,000.00; transfer from the Sewer Reserve Capacity Fund the sum of $20,965.40; and appropriate from Sewer Enterprise Retained Earnings the sum of $301,113.71; for a total appropriation of $1,173,486.10 to operate the Sewer Enterprise…
 - **FY2017, Inflow/Infiltration, $14,520.00** — page 158 of that year’s annual report:
   > …transfer from the Sewer Reserve Capacity Stabilization Fund the sum of $10,285.00; transfer from the Sewer Inflow/Infiltration Stabilization Fund the sum of $14,520.00; and appropriate from Sewer Enterprise retained earnings the sum of $160,276.94; for a total appropriation of $745,251.00 to operate the Sewer Enterprise Fund for FY18; and further that $911,971.24 be included in…
 - **FY2017, Sewer Reserve Capacity, $10,285.00** — page 158 of that year’s annual report:
   > …2/3rds DECLARED to appropriate from Sewer Enterprise revenues the sum of $560,169.06; transfer from the Sewer Reserve Capacity Stabilization Fund the sum of $10,285.00; transfer from the Sewer Inflow/Infiltration Stabilization Fund the sum of $14,520.00; and appropriate from Sewer Enterprise retained earnings the sum of $160,276.94; for a total appropriation of $745,251.00 to operate the…
 
-**And 3 articles this page will not add up**, because the printing does not let it. They are here rather than dropped:
+**And 4 articles this page will not add up**, because the printing does not let it. They are here rather than dropped:
 
 - FY2018, Sewer Reserve Capacity, $6,449.63 — this is money going IN, matched by a pattern that cannot tell direction from wording alone
+- FY2022, Sewer Capital Reserve, $20,000.00 — the same transaction appears in two consecutive reports, because each year’s warrant recites the year before
 - FY2023, Sewer Reserve Capacity, $382,096.70 — the figure covers this fund AND another, and the article does not split it
 - FY2023, Sewer Capital Reserve, $20,962.40 — the same transaction appears in two consecutive reports, because each year’s warrant recites the year before
 
@@ -440,7 +443,7 @@ Every proven row:
 | FY2016 | `—` | STABILIZATION | $1,511,526.92 | $1,551,001.18 |
 | FY2016 | `8129` | ZONING INCENTIVE STABILIZATION (TD BI | $227,884.96 | $227,884.96 |
 | FY2017 | `—` | STABILIZATION | $1,631,430.63 | — |
-| FY2017 | `8129` | ZONING INCENTIVE STABILIZATION (TD E $227,88 | $228,320.36 | $228,320.36 |
+| FY2017 | `8129` | ZONING INCENTIVE STABILIZATION (TD E | $228,320.36 | $228,320.36 |
 | FY2018 | `—` | STABILIZATION | $1,740,279.81 | $1,732,690.98 |
 | FY2018 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $236,302.39 | — |
 | FY2018 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $228,891.82 | — |
@@ -451,14 +454,19 @@ Every proven row:
 | FY2020 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $945,669.29 | $945,669.29 |
 | FY2020 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $230,431.40 | $230,431.40 |
 | FY2021 | `—` | STABILIZATION | $2,447,755.21 | $2,526,388.54 |
+| FY2022 | `—` | HEALTH INSURANCE STABILIZATION | $372,940.88 | $372,660.58 |
+| FY2022 | `—` | STABILIZATION | $2,574,673.21 | $2,572,737.97 |
+| FY2022 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREE* | $1,457,123.63 | $1,457,123.63 |
 | FY2022 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTI | $231,007.68 | $231,007.68 |
+| FY2024 | `—` | OPIOID STABILIZATION | $176,302.50 | $180,345.23 |
+| FY2024 | `—` | STABILIZATION | $2,901,157.60 | $2,967,682.91 |
 | FY2024 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,254,933.99 | $2,254,933.99 |
 | FY2025 | `—` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,598,621.38 | $2,598,621.38 |
 | FY2025 | `—` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $249,060.25 | $249,060.25 |
 
 **Nine funds, fifteen years, and most of the grid is empty.** Only 3 of the 9 funds have any history at all; the other 6 are known from one reading, the ledger’s. Across FY2011 to FY2025 that is about 41 of 135 possible fund-years.
 
-**25 of those readings are proved, across 14 years — and that is a limit of OUR reading, not of the town’s record.** The annual reports print the whole trust and stabilization table every year, every fund, and roughly ten times as many fund rows are visible in our scans of them as this page publishes. A row appears here only where the page’s own arithmetic closes on it, because publishing one that does not would be worse than publishing nothing — so the empty cells are a queue of work, not an absence of evidence.
+**30 of those readings are proved, across 14 years — and that is a limit of OUR reading, not of the town’s record.** The annual reports print the whole trust and stabilization table every year, every fund, and roughly ten times as many fund rows are visible in our scans of them as this page publishes. A row appears here only where the page’s own arithmetic closes on it, because publishing one that does not would be worse than publishing nothing — so the empty cells are a queue of work, not an absence of evidence.
 
 Two things would empty that queue, and they are not alternatives. A better reader gets the figures the town has already printed. The MUNIS trust report for earlier years would get them from the accounting system instead, with revenue and expenditure beside every balance — which the annual report tables do not carry at all.
 

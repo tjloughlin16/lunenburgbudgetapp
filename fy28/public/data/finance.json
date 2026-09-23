@@ -664,6 +664,56 @@
    "side": "money_out",
    "what": "What each of the town’s 500-odd accounting measures did before FY2026, line by line — the appropriation history of every department and the year-by-year activity of every fund",
    "why": "The registry (fund-owners.csv) lists every measure the FY26 reports print, but only the special-revenue funds have a read, tied history (FY2011–FY2023); the appropriation lines’ history sits in the annual reports where the extract cannot yet say which printed column is which, and FY2024–FY2025 fund activity was never printed — closes: the year-to-date budget reports and special-revenue reports for FY2023–FY2025 from the Town Accountant."
+  },
+  {
+   "side": "money_out",
+   "what": "Whether the schools’ stated field and grounds costs match the books — about $126,000 of grounds work in FY2024 and $38,100 of outsourced mowing and field repair, paid, the Superintendent says, from the same revolving fund the field rent goes into",
+   "why": "The figures are the district’s own, read back from FY24 budget requests in an email of September 2026, and nothing in the archive tests them: fund 1306’s FY2024 expenditure is not published and the fund’s journal is not held — closes: the journal detail for fund 1306, FY2024–FY2026, and the FY2024 and FY2025 special-revenue reports."
+  },
+  {
+   "side": "money_in",
+   "what": "What put $62,231 into the School Facilities Use fund (1306) in FY2025 — the balance went from $3,010.67 at 30 June 2024 to $65,241.82 at 30 June 2025, more than the fund has taken in in any of the thirteen years the annual reports print",
+   "why": "Rent alone cannot produce the rise: the best receipts year on record is $39,944. Either revenue arrived that is not field rent — a transfer, a reimbursement, an insurance recovery — or something that had been charged to the fund stopped being charged to it, and the two balances cannot tell those apart. FY2025 is the one year no special-revenue schedule is published for. THE TEST WHEN THE DATA ARRIVES: read FY2025 line by line, total the receipts that are field or building rent, and see whether the remainder is a transfer in or an expenditure that moved elsewhere — closes: the journal detail for fund 1306, FY2024–FY2026, and the FY2025 special-revenue report."
+  },
+  {
+   "side": "money_in",
+   "what": "Where do the other towns’ ski co-op reimbursements land when they are paid?",
+   "why": "Lunenburg bills Littleton, Narragansett and Leominster for their skiers’ shares — $9,736.57 for 2025-26 — and which account receives the money decides whether it offsets the athletics line, the athletic revolving fund, or general revenue. The invoice is a bill and does not show receipt — closes: the revenue detail for the account the checks are deposited to, or the athletic revolving fund cashbook for the season"
+  },
+  {
+   "side": "money_out",
+   "what": "What each town department was appropriated and spent in FY2024 and FY2025",
+   "why": "The town published a General Fund Appropriations / Summary & Classification of Accounts schedule in every annual report through FY2023 — every department, appropriated against expended, with a printed GRAND TOTAL — and STOPPED. Its own contents pages show it: the FY2023 Accountant section lists the schedule and the General Fund Revenue and Expenditures charts; FY2024 lists a balance sheet, receivables, special revenue, capital, enterprise, trust and undesignated fund balance, and no appropriations at all; FY2025 is shorter again. FY2024 still prints the warrant’s FY 2025 Omnibus Budget, which is what was VOTED and not what was spent; FY2025 prints no department figures in any form, only Article 10’s total of $49,374,465.00 split across five funding sources. So for two consecutive years there is no published answer to what any single department was given or used — the question this archive answers for FY2011 through FY2023. — closes: the Town Accountant’s general fund appropriation and expenditure report for FY2024 and FY2025, the same schedule the annual report printed through FY2023, or the MUNIS year-end expense report by department for those years."
+  },
+  {
+   "side": "people",
+   "what": "Who are the ten people the Public Library employs?",
+   "why": "the Library told the town in FY2019 that it employs ten — *“we only employ ten total”* — and it has never printed a roster. Its annual report is signed by the Director and names a colleague only in passing prose (a Young Adult Services Librarian in FY2024, a Digital Services Librarian the same year), so the org chart holds ONE of ten. The town staff directory does not carry the Library at all: it is governed by elected Trustees rather than run from Town Hall, and has no category on lunenburgma.gov — closes: the Library’s own staff page, or the Trustees’ minutes, which record appointments"
+  },
+  {
+   "side": "extraction",
+   "what": "Can we trust what Town Meeting appropriated, article by article enough to chart what the town voted to spend, year over year?",
+   "why": "157 of 5,027 rows in `report_appropriations` are reconciled to a total the document itself prints — 4,870 failed that check and 0 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 30 years, 1 need real PDF geometry rather than text, 16 are messy and 13 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 30 of 30 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+  },
+  {
+   "side": "extraction",
+   "what": "Can we trust the capital projects and what they cost enough to chart what the town has built and what it paid?",
+   "why": "0 of 616 rows in `report_capital_projects` are reconciled to a total the document itself prints — 529 failed that check and 87 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 19 years, 2 need real PDF geometry rather than text, 9 are messy and 8 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 19 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+  },
+  {
+   "side": "extraction",
+   "what": "Can we trust the debt schedule enough to chart what the town owes and when it falls due?",
+   "why": "75 of 366 rows in `report_debt` are reconciled to a total the document itself prints — 99 failed that check and 192 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 43 years, 11 need real PDF geometry rather than text, 13 are messy and 19 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 40 of 43 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+  },
+  {
+   "side": "extraction",
+   "what": "Can we trust gross wages, name by name enough to chart what the town pays its people in total?",
+   "why": "0 of 3,547 rows in `report_gross_wages` are reconciled to a total the document itself prints — 0 failed that check and 3,547 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 16 years, 6 need real PDF geometry rather than text, 9 are messy and 1 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 0 of 16 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+  },
+  {
+   "side": "extraction",
+   "what": "Can we trust the stabilization and trust fund balances enough to chart how much the town holds in reserve, and how that has moved?",
+   "why": "12 of 644 rows in `report_trust_funds` are reconciled to a total the document itself prints — 418 failed that check and 214 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 17 years, 10 need real PDF geometry rather than text, 5 are messy and 2 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 17 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
   }
  ],
  "generated_by": "scripts/build_finance.py",

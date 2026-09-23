@@ -8273,258 +8273,148 @@
      }
     },
     {
-     "cross_check": null,
-     "delta_from_fy": null,
-     "delta_unavailable": "the town printed two rosters for this school in FY2024, so neither end of the step is one year",
-     "grade_span": "3\u20135",
-     "groups": null,
-     "name": "Turkey Hill Elementary School",
-     "names": 135,
-     "names_band": {
-      "high": 70,
-      "low": 61,
-      "pages": [
-       "107",
-       "108"
-      ],
-      "rosters": [
-       {
-        "leaders": [
-         {
-          "also": [
-           2025
-          ],
-          "name": "Bethann Cormier"
-         },
-         {
-          "also": [
-           2025
-          ],
-          "name": "Norman Yvon"
-         }
-        ],
-        "names": 64,
-        "page": "107",
-        "rows": [
-         {
-          "group": "teach",
-          "key": "teacher",
-          "label": "Teachers",
-          "names": 25
-         },
-         {
-          "group": "support",
-          "key": "paraprofessional",
-          "label": "Paraprofessionals",
-          "names": 15
-         },
-         {
-          "group": "run",
-          "key": "custodian",
-          "label": "Custodial and maintenance",
-          "names": 6
-         },
-         {
-          "group": "run",
-          "key": "cafeteria",
-          "label": "Kitchen",
-          "names": 4
-         },
-         {
-          "group": "teach",
-          "key": "specialist",
-          "label": "Specialist teachers",
-          "names": 3
-         },
-         {
-          "group": "lead",
-          "key": "administrator",
-          "label": "Principals and administrators",
-          "names": 2
-         },
-         {
-          "group": "lead",
-          "key": "secretary",
-          "label": "Office staff",
-          "names": 2
-         },
-         {
-          "group": "support",
-          "key": "speech_therapist",
-          "label": "Speech therapists",
-          "names": 2
-         },
-         {
-          "group": "support",
-          "key": "nurse",
-          "label": "Nurses",
-          "names": 1
-         },
-         {
-          "group": "support",
-          "key": "counselor",
-          "label": "Counsellors",
-          "names": 1
-         },
-         {
-          "group": "support",
-          "key": "psychologist",
-          "label": "School psychologists",
-          "names": 1
-         },
-         {
-          "group": "support",
-          "key": "social_worker",
-          "label": "Social workers",
-          "names": 1
-         },
-         {
-          "group": "teach",
-          "key": "librarian",
-          "label": "Librarians",
-          "names": 1
-         }
-        ]
-       },
-       {
-        "leaders": [
-         {
-          "also": [
-           2011,
-           2012,
-           2013,
-           2014,
-           2015,
-           2022
-          ],
-          "name": "Annica Scott"
-         },
-         {
-          "also": [
-           2022
-          ],
-          "name": "Deidre McLean"
-         },
-         {
-          "also": [
-           2011,
-           2012,
-           2013,
-           2014,
-           2015,
-           2016,
-           2017,
-           2018,
-           2020,
-           2021,
-           2022
-          ],
-          "name": "Heidi Champagne"
-         },
-         {
-          "also": [
-           2021,
-           2022
-          ],
-          "name": "John Palumbo"
-         }
-        ],
-        "names": 71,
-        "page": "108",
-        "rows": [
-         {
-          "group": "teach",
-          "key": "teacher",
-          "label": "Teachers",
-          "names": 28
-         },
-         {
-          "group": "support",
-          "key": "paraprofessional",
-          "label": "Paraprofessionals",
-          "names": 14
-         },
-         {
-          "group": "run",
-          "key": "custodian",
-          "label": "Custodial and maintenance",
-          "names": 7
-         },
-         {
-          "group": "teach",
-          "key": "specialist",
-          "label": "Specialist teachers",
-          "names": 5
-         },
-         {
-          "group": "lead",
-          "key": "administrator",
-          "label": "Principals and administrators",
-          "names": 4
-         },
-         {
-          "group": "run",
-          "key": "cafeteria",
-          "label": "Kitchen",
-          "names": 3
-         },
-         {
-          "group": "lead",
-          "key": "secretary",
-          "label": "Office staff",
-          "names": 2
-         },
-         {
-          "group": "support",
-          "key": "nurse",
-          "label": "Nurses",
-          "names": 2
-         },
-         {
-          "group": "support",
-          "key": "counselor",
-          "label": "Counsellors",
-          "names": 1
-         },
-         {
-          "group": "support",
-          "key": "psychologist",
-          "label": "School psychologists",
-          "names": 1
-         },
-         {
-          "group": "support",
-          "key": "social_worker",
-          "label": "Social workers",
-          "names": 1
-         },
-         {
-          "group": "teach",
-          "key": "librarian",
-          "label": "Librarians",
-          "names": 1
-         },
-         {
-          "group": "support",
-          "key": "therapist",
-          "label": "Occupational and physical therapists",
-          "names": 1
-         },
-         {
-          "group": "support",
-          "key": "speech_therapist",
-          "label": "Speech therapists",
-          "names": 1
-         }
-        ]
-       }
-      ],
-      "shared": 33,
-      "summed": 135
+     "cross_check": {
+      "flag": null,
+      "fte": 21.9,
+      "fy": 2024,
+      "heads": 34,
+      "ratio": 1.5525114155251143,
+      "school": "turkey-hill"
      },
+     "delta_from_fy": 2022,
+     "delta_unavailable": null,
+     "grade_span": "3\u20135",
+     "groups": [
+      {
+       "delta": 0,
+       "key": "teach",
+       "label": "Who teaches",
+       "names": 34
+      },
+      {
+       "delta": 0,
+       "key": "support",
+       "label": "Who supports children",
+       "names": 21
+      },
+      {
+       "delta": 0,
+       "key": "lead",
+       "label": "Who runs the building",
+       "names": 6
+      },
+      {
+       "delta": 0,
+       "key": "run",
+       "label": "Who keeps the building running",
+       "names": 10
+      }
+     ],
+     "name": "Turkey Hill Elementary School",
+     "names": 71,
+     "names_band": null,
      "org_code": "01620025",
-     "per_adult": null,
-     "rows": null,
+     "per_adult": 5.211267605633803,
+     "rows": [
+      {
+       "delta": 0,
+       "group": "teach",
+       "key": "teacher",
+       "label": "Teachers",
+       "names": 28
+      },
+      {
+       "delta": 0,
+       "group": "teach",
+       "key": "specialist",
+       "label": "Specialist teachers",
+       "names": 5
+      },
+      {
+       "delta": 0,
+       "group": "teach",
+       "key": "librarian",
+       "label": "Librarians",
+       "names": 1
+      },
+      {
+       "delta": 0,
+       "group": "support",
+       "key": "paraprofessional",
+       "label": "Paraprofessionals",
+       "names": 14
+      },
+      {
+       "delta": 0,
+       "group": "support",
+       "key": "counselor",
+       "label": "Counsellors",
+       "names": 1
+      },
+      {
+       "delta": 0,
+       "group": "support",
+       "key": "psychologist",
+       "label": "School psychologists",
+       "names": 1
+      },
+      {
+       "delta": 0,
+       "group": "support",
+       "key": "social_worker",
+       "label": "Social workers",
+       "names": 1
+      },
+      {
+       "delta": 0,
+       "group": "support",
+       "key": "speech_therapist",
+       "label": "Speech therapists",
+       "names": 1
+      },
+      {
+       "delta": 0,
+       "group": "support",
+       "key": "therapist",
+       "label": "Occupational and physical therapists",
+       "names": 1
+      },
+      {
+       "delta": 0,
+       "group": "support",
+       "key": "nurse",
+       "label": "Nurses",
+       "names": 2
+      },
+      {
+       "delta": 0,
+       "group": "lead",
+       "key": "administrator",
+       "label": "Principals and administrators",
+       "names": 4
+      },
+      {
+       "delta": 0,
+       "group": "lead",
+       "key": "secretary",
+       "label": "Office staff",
+       "names": 2
+      },
+      {
+       "delta": 0,
+       "group": "run",
+       "key": "custodian",
+       "label": "Custodial and maintenance",
+       "names": 7
+      },
+      {
+       "delta": 0,
+       "group": "run",
+       "key": "cafeteria",
+       "label": "Kitchen",
+       "names": 3
+      }
+     ],
      "school": "turkey-hill",
      "students": 370.0,
      "students_with_plans": 57.0,
@@ -9710,7 +9600,7 @@
     {
      "school": "turkey-hill",
      "short": 5,
-     "years": 14
+     "years": 15
     }
    ],
    "categories": [
@@ -9718,39 +9608,8 @@
     "specialist",
     "librarian"
    ],
-   "compared": 54,
-   "doubled": [
-    {
-     "each_ratio": [
-      1.3242009132420092,
-      1.5525114155251143
-     ],
-     "fte": 21.9,
-     "fte_either_side": [
-      {
-       "fte": 22.0,
-       "fy": 2023
-      },
-      {
-       "fte": 21.9,
-       "fy": 2024
-      },
-      {
-       "fte": 19.0,
-       "fy": 2025
-      }
-     ],
-     "fy": 2024,
-     "heads": [
-      29,
-      34
-     ],
-     "outside_every_other_year": true,
-     "school": "turkey-hill",
-     "summed": 63,
-     "summed_ratio": 2.8767123287671237
-    }
-   ],
+   "compared": 55,
+   "doubled": [],
    "flagged": 25,
    "group": "teach",
    "highest": {
@@ -9769,7 +9628,7 @@
     "ratio": 0.4017857142857143,
     "school": "passios"
    },
-   "median_ratio": 1.0407791590783118,
+   "median_ratio": 1.0410958904109588,
    "short": [
     {
      "flag": "fewer-names-than-posts",
@@ -11589,9 +11448,9 @@
         "names": 8
        },
        {
-        "doubled": true,
+        "doubled": false,
         "fy": 2024,
-        "names": 9
+        "names": 8
        },
        {
         "doubled": false,
@@ -11601,9 +11460,9 @@
       ],
       "role": "counselor",
       "steps": 14,
-      "total": 106,
+      "total": 105,
       "trough": 5,
-      "up": 7
+      "up": 6
      },
      {
       "change": 2,
@@ -11611,7 +11470,7 @@
       "first_fy": 2011,
       "last": 3,
       "last_fy": 2025,
-      "peak": 5,
+      "peak": 4,
       "points": [
        {
         "doubled": false,
@@ -11679,9 +11538,9 @@
         "names": 4
        },
        {
-        "doubled": true,
+        "doubled": false,
         "fy": 2024,
-        "names": 5
+        "names": 4
        },
        {
         "doubled": false,
@@ -11691,9 +11550,9 @@
       ],
       "role": "psychologist",
       "steps": 14,
-      "total": 37,
+      "total": 36,
       "trough": 1,
-      "up": 5
+      "up": 4
      },
      {
       "change": 2,
@@ -11769,9 +11628,9 @@
         "names": 3
        },
        {
-        "doubled": true,
+        "doubled": false,
         "fy": 2024,
-        "names": 4
+        "names": 3
        },
        {
         "doubled": false,
@@ -11781,9 +11640,9 @@
       ],
       "role": "social_worker",
       "steps": 14,
-      "total": 22,
+      "total": 21,
       "trough": 0,
-      "up": 4
+      "up": 3
      },
      {
       "change": 0,
@@ -11859,9 +11718,9 @@
         "names": 4
        },
        {
-        "doubled": true,
+        "doubled": false,
         "fy": 2024,
-        "names": 5
+        "names": 4
        },
        {
         "doubled": false,
@@ -11871,9 +11730,9 @@
       ],
       "role": "nurse",
       "steps": 14,
-      "total": 60,
+      "total": 59,
       "trough": 2,
-      "up": 6
+      "up": 5
      },
      {
       "change": 2,
@@ -11881,7 +11740,7 @@
       "first_fy": 2011,
       "last": 5,
       "last_fy": 2025,
-      "peak": 7,
+      "peak": 5,
       "points": [
        {
         "doubled": false,
@@ -11949,9 +11808,9 @@
         "names": 4
        },
        {
-        "doubled": true,
+        "doubled": false,
         "fy": 2024,
-        "names": 7
+        "names": 5
        },
        {
         "doubled": false,
@@ -11961,7 +11820,7 @@
       ],
       "role": "speech_therapist",
       "steps": 14,
-      "total": 60,
+      "total": 58,
       "trough": 2,
       "up": 5
      },
@@ -12039,7 +11898,7 @@
         "names": 2
        },
        {
-        "doubled": true,
+        "doubled": false,
         "fy": 2024,
         "names": 2
        },
@@ -12061,7 +11920,7 @@
       "first_fy": 2011,
       "last": 3,
       "last_fy": 2025,
-      "peak": 4,
+      "peak": 3,
       "points": [
        {
         "doubled": false,
@@ -12129,9 +11988,9 @@
         "names": 1
        },
        {
-        "doubled": true,
+        "doubled": false,
         "fy": 2024,
-        "names": 4
+        "names": 3
        },
        {
         "doubled": false,
@@ -12141,7 +12000,7 @@
       ],
       "role": "librarian",
       "steps": 14,
-      "total": 23,
+      "total": 22,
       "trough": 0,
       "up": 3
      }
@@ -16755,20 +16614,20 @@
  },
  "minutes": {
   "first_date": "2009-01-05",
-  "held": 12055,
+  "held": 12066,
   "image_scan": 1118,
   "last_date": "2026-11-17",
-  "published": 12129,
-  "searchable": 10919,
-  "searchable_share": 0.9058,
-  "text_files_present": 12078,
+  "published": 12132,
+  "searchable": 10930,
+  "searchable_share": 0.9059,
+  "text_files_present": 12081,
   "unsearchable": 1136
  },
  "not_established": [
   "What Lunenburg\u2019s counsellors, social workers, psychologists and nurses do as a series. None of them is a teacher on these returns; the state\u2019s workforce file reaches them for three years only and puts them in two residual buckets; the town\u2019s rosters name them and carry no FTE. The district DOES hold a per-building social worker caseload \u2014 it said so to the School Committee on 6 December 2023 while deciding what to cut \u2014 and it is not published.",
   "What share of a post any NON-TEACHING adult in a school holds. DESE publishes a full-time equivalent for teachers at school level and for nobody else \u2014 not for a paraprofessional, an administrator, a nurse, a counsellor, a custodian or a kitchen post, at any school, in any year. So the difference between a school panel\u2019s roster count and its teaching FTE is not part-timers: it is everybody the FTE file does not reach.",
   "Which school year a printed staff roster describes. The rosters carry no date, and the town\u2019s own prose suggests the school section may run a year ahead of the cover \u2014 three sentences across fifteen reports name a fall and a student count, and matched against the state\u2019s October enrolment two are closer to the year after the report\u2019s fiscal year and one to the year on it. The panels pair each roster with the year it is labelled with, and that pairing is not established.",
-  "Which of two documents is short where a school printed fewer teaching names than the state counts teaching posts. It happens in 25 of the 54 school-years that have both, and it is concentrated in the two schools that share a building. Our reading of a scanned page, what the town chose to print, and an assignment the state counts at one co-located school whose holder the town printed under the other all fit the same numbers.",
+  "Which of two documents is short where a school printed fewer teaching names than the state counts teaching posts. It happens in 25 of the 55 school-years that have both, and it is concentrated in the two schools that share a building. Our reading of a scanned page, what the town chose to print, and an assignment the state counts at one co-located school whose holder the town printed under the other all fit the same numbers.",
   "How much of a post any individual holds. The headcount and the FTE together give an average share for a whole job class and nothing else: one full-timer beside one half-timer and two people at three quarters are the same figure."
  ],
  "peers": [
@@ -17799,23 +17658,9 @@
     }
    ]
   },
-  "doubled": [
-   {
-    "fy": 2024,
-    "names": [
-     61,
-     70
-    ],
-    "pages": [
-     "107",
-     "108"
-    ],
-    "school": "turkey-hill",
-    "shared": 33
-   }
-  ],
-  "entries_in_panel": 3651,
-  "entries_total": 3815,
+  "doubled": [],
+  "entries_in_panel": 3587,
+  "entries_total": 3751,
   "excluded": [
    {
     "entries": 6,
@@ -17842,7 +17687,7 @@
    }
   ],
   "first_fy": 2011,
-  "grade_headed_rows": 586,
+  "grade_headed_rows": 565,
   "last_fy": 2025,
   "ocr_defects": [
    {
@@ -17970,9 +17815,9 @@
       "names": 98
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 120
+      "names": 95
      },
      {
       "doubled": false,
@@ -17981,7 +17826,7 @@
      }
     ],
     "role": "teacher",
-    "total": 1357
+    "total": 1332
    },
    {
     "first_fy": 2011,
@@ -18053,9 +17898,9 @@
       "names": 58
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 81
+      "names": 66
      },
      {
       "doubled": false,
@@ -18064,7 +17909,7 @@
      }
     ],
     "role": "paraprofessional",
-    "total": 721
+    "total": 706
    },
    {
     "first_fy": 2011,
@@ -18136,9 +17981,9 @@
       "names": 25
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 22
+      "names": 19
      },
      {
       "doubled": false,
@@ -18147,7 +17992,7 @@
      }
     ],
     "role": "specialist",
-    "total": 303
+    "total": 300
    },
    {
     "first_fy": 2011,
@@ -18219,7 +18064,7 @@
       "names": 21
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
       "names": 21
      },
@@ -18302,9 +18147,9 @@
       "names": 11
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 13
+      "names": 11
      },
      {
       "doubled": false,
@@ -18313,7 +18158,7 @@
      }
     ],
     "role": "administrator",
-    "total": 210
+    "total": 208
    },
    {
     "first_fy": 2011,
@@ -18385,9 +18230,9 @@
       "names": 12
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 20
+      "names": 14
      },
      {
       "doubled": false,
@@ -18396,7 +18241,7 @@
      }
     ],
     "role": "custodian",
-    "total": 185
+    "total": 179
    },
    {
     "first_fy": 2011,
@@ -18468,9 +18313,9 @@
       "names": 7
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 19
+      "names": 15
      },
      {
       "doubled": false,
@@ -18479,7 +18324,7 @@
      }
     ],
     "role": "cafeteria",
-    "total": 173
+    "total": 169
    },
    {
     "first_fy": 2011,
@@ -18551,9 +18396,9 @@
       "names": 8
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 9
+      "names": 8
      },
      {
       "doubled": false,
@@ -18562,7 +18407,7 @@
      }
     ],
     "role": "counselor",
-    "total": 106
+    "total": 105
    },
    {
     "first_fy": 2011,
@@ -18634,9 +18479,9 @@
       "names": 6
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 8
+      "names": 6
      },
      {
       "doubled": false,
@@ -18645,7 +18490,7 @@
      }
     ],
     "role": "secretary",
-    "total": 77
+    "total": 75
    },
    {
     "first_fy": 2011,
@@ -18717,9 +18562,9 @@
       "names": 4
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 5
+      "names": 4
      },
      {
       "doubled": false,
@@ -18728,7 +18573,7 @@
      }
     ],
     "role": "nurse",
-    "total": 60
+    "total": 59
    },
    {
     "first_fy": 2011,
@@ -18800,9 +18645,9 @@
       "names": 4
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 7
+      "names": 5
      },
      {
       "doubled": false,
@@ -18811,7 +18656,7 @@
      }
     ],
     "role": "speech_therapist",
-    "total": 60
+    "total": 58
    },
    {
     "first_fy": 2011,
@@ -18883,9 +18728,9 @@
       "names": 4
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 5
+      "names": 4
      },
      {
       "doubled": false,
@@ -18894,7 +18739,7 @@
      }
     ],
     "role": "psychologist",
-    "total": 37
+    "total": 36
    },
    {
     "first_fy": 2011,
@@ -18966,7 +18811,7 @@
       "names": 2
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
       "names": 2
      },
@@ -19049,9 +18894,9 @@
       "names": 1
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 4
+      "names": 3
      },
      {
       "doubled": false,
@@ -19060,7 +18905,7 @@
      }
     ],
     "role": "librarian",
-    "total": 23
+    "total": 22
    },
    {
     "first_fy": 2016,
@@ -19132,9 +18977,9 @@
       "names": 3
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
-      "names": 4
+      "names": 3
      },
      {
       "doubled": false,
@@ -19143,7 +18988,7 @@
      }
     ],
     "role": "social_worker",
-    "total": 22
+    "total": 21
    },
    {
     "first_fy": 2011,
@@ -19215,7 +19060,7 @@
       "names": 1
      },
      {
-      "doubled": true,
+      "doubled": false,
       "fy": 2024,
       "names": 3
      },
@@ -19284,7 +19129,7 @@
    },
    {
     "fy": 2024,
-    "names": 9
+    "names": 3
    },
    {
     "fy": 2025,
@@ -19292,7 +19137,7 @@
    }
   ],
   "unclassified": 266,
-  "unclassified_share": 0.07285675157491098,
+  "unclassified_share": 0.07415667688876498,
   "years": [
    {
     "central_office_printed": true,
@@ -19500,19 +19345,19 @@
    },
    {
     "central_office_printed": false,
-    "doubled": true,
+    "doubled": false,
     "fy": 2024,
-    "names": 272,
-    "names_high": 279,
-    "names_if_summed": 343,
-    "pages": 8,
+    "names": 279,
+    "names_high": null,
+    "names_if_summed": null,
+    "pages": 7,
     "schools": [
      "high",
      "middle",
      "primary",
      "turkey-hill"
     ],
-    "shared_names": 9
+    "shared_names": 3
    },
    {
     "central_office_printed": false,
@@ -20567,12 +20412,12 @@
    },
    {
     "fy": 2020,
-    "rows": 568,
+    "rows": 569,
     "school_tagged": 0
    },
    {
     "fy": 2021,
-    "rows": 476,
+    "rows": 477,
     "school_tagged": 0
    },
    {
@@ -20596,7 +20441,7 @@
     "school_tagged": 0
    }
   ],
-  "rows": 3545,
+  "rows": 3547,
   "school_tagged": 414,
   "statuses": [
    "no check"

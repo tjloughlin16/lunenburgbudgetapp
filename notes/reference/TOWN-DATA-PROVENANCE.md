@@ -260,8 +260,8 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 
 | department | years | names | agrees with the stated strength |
 |---|---|---:|---|
-| Fire Department | FY2011–FY2021, FY2023–FY2025 | 541 | 2 of 14 years |
-| Police Department | FY2012, FY2014–FY2025 | 291 | 0 of 13 years |
+| Fire Department | FY2011–FY2025 | 577 | 2 of 15 years |
+| Police Department | FY2012–FY2025 | 317 | 0 of 14 years |
 
 ## What is missing, and from whom
 
