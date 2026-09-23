@@ -75,18 +75,74 @@ SUBJECTS = [
     # The rule the ordering encodes: the more SPECIFIC heading wins. "Treasurer's Cash
     # as of 6/30/2024" names one table; "stabilization" is a word that appears on any
     # page listing a fund, including this one.
-    ('treasurers-cash', r"treasurer.{0,3}s\s+cash"),
-    ('trust-and-stabilization',
-     r'stabilization|trust\s+fund|held\s+by\s+other\s+banks|bartholomew'),
-    ('special-revenue', r'special\s+revenue'),
-    ('receivables', r'receivable'),
+    #
+    # AND THE APOSTROPHE IS NOT RELIABLE. FY2019 p44 is the same table and prints
+    # `Total Treasurer Cash as of 06/30/2019` -- no `'s` -- so a pattern that required
+    # one reported that year as having no cash page.
+    ('treasurers-cash', r"treasurer\S{0,3}\s+cash"),
     # FY2025 p25 is headed exactly `BALANCE SHEET` and was landing in `unknown`,
     # because the pattern wanted the FY2011-FY2023 wording. The bare heading is
     # the newer one.
+    #
+    # AND THE PATTERN MATCHED NOTHING AT ALL FOR ANY YEAR. It was written with `\\s`
+    # inside an r-string, which is a literal backslash followed by `s` -- so it wanted
+    # the characters `combined\s+balance`, which no page prints. The whole subject was
+    # empty: sixteen COMBINED BALANCE SHEET pages, FY2011-FY2025, one in almost every
+    # report, all sitting in `unknown` while the subject that names them held zero rows.
+    # A count of zero read as *the town does not print one*; it meant our regex could
+    # not be matched by any text.
+    #
+    # `combining` is the FY2024-FY2025 wording (`Combining Balance Sheet - Enterprise
+    # Funds`), and the bare `balance sheet` is anchored to nothing because the headings
+    # arrive joined with ` | ` rather than as lines.
+    # AND FY2019 p28 CARRIES NO HEADING AT ALL -- the banner did not survive the scan,
+    # so the only words on the town's FY2019 balance sheet are the ones the statement
+    # itself must print: `TOTAL ASSETS` and `LIABILITIES and FUND EQUITY`. Rule 13c:
+    # the heading was missing from our OCR, not from the page.
     ('balance-sheet',
-     r'combined\\s+balance\\s+sheet|all\\s+fund\\s+types|^\\s*balance\\s+sheet\\s*$'),
-    ('tax-collection', r'collection\s+of\s+taxes|taxes\s*&\s*excise|tax\s+liens'),
-    ('debt', r'debt\s+(repayment|schedule|limit)|outstanding\s+debt|bonds?\s+payable'),
+     r'combin(?:ed|ing)\s+balance\s+sheet|all\s+fund\s+types'
+     r'|\bbalance\s+sheet\b|liabilities\s+and\s+fund\s+equity'
+     r'|total\s+assets'),
+    # AND IT SITS ABOVE THE FUND SUBJECTS, not below them. A combined balance sheet
+    # lists every fund type the town has, so `DUE FROM/TO TRUST FUNDS/SRF/ENTERPRISE`
+    # -- one LINE on FY2019 p28 -- filed the whole statement as a trust table. The
+    # statement outranks any fund named inside it.
+    # `opeb` because FY2021 heads both pages of the summary `TRUST AND OPEB FUNDS` --
+    # not `trust funds` -- and page 1 of 2 carries no fund with `stabilization` in its
+    # name, so only page 2 was ever classified.
+    ('trust-and-stabilization',
+     r'stabilization|trust\s+fund|held\s+by\s+other\s+banks|bartholomew|\bopeb\b'),
+    # A REVOLVING FUND IS A SPECIAL REVENUE FUND, and the town's own table of them --
+    # `Revolving Fund | FY19 Spending Limit`, voted at Town Meeting -- never uses the
+    # words `special revenue` anywhere on the page.
+    #
+    # IT HAS TO BE THE HEADER ROW, NOT THE WORDS. A bare `revolving fund` took FY2021
+    # p140 -- the omnibus budget article -- away from `appropriations`, because the
+    # vote transfers $44,318.19 from the Artificial Turf Revolving Fund and says so in
+    # a sentence. A fund named in prose is not a table of funds.
+    ('special-revenue',
+     r'special\s+revenue|revolving\s+funds?\s*\|\s*(?:fy\s*\d|department|spending)'),
+    ('receivables', r'receivable'),
+    ('tax-collection',
+     r'collection\s+of\s+taxes|taxes\s*&\s*excise|tax\s+liens|tax\s+recap'),
+    # MONTY TECH IS A DIFFERENT DISTRICT and its pages sit inside Lunenburg's report.
+    # They have to be their own subject or they silently join Lunenburg's own series:
+    # the assessment tables carry sixteen OTHER towns' figures, and `Net School
+    # Spending` on a Monty Tech budget summary is not Lunenburg's net school spending.
+    # Above `debt` because a Monty Tech budget summary prints `BONDS (Principal &
+    # Interest)` and would otherwise be filed as the town's debt.
+    ('regional-school',
+     r'monty\s+tech|montachusett|community\s+assessments|assessment\s+history'
+     r'|net\s+school\s+spending'),
+    # THE DEBT SCHEDULES NAME THE BORROWING, NOT THE TABLE. Eleven pages across six
+    # years print `MASS WATER POOL 5*`, `MEADOW WOODS-SEWER GENERAL OBLIGATION`,
+    # `GRAND TOTAL PRINCIPAL & INTEREST` and `Total Outstanding Indebtedness` and
+    # never the words `debt schedule`.
+    ('debt',
+     r'debt\s+(repayment|schedule|limit)|outstanding\s+debt|bonds?\s+payable'
+     r'|indebtedness|general\s+obligation|mass\s+water\s+pool'
+     r'|water\s+pol+ution\s+abatement|grand\s+total\s+principal'
+     r'|principal\s*(?:&|and)\s*interest'),
     # THE TOWN CHANGED THE TABLE AFTER FY2023, which is why the newest two years
     # looked like they had no budget in them at all. Through FY2023 the department
     # figures are a summary section headed `GENERAL FUND APPROPRIATIONS / SUMMARY &
@@ -99,12 +155,17 @@ SUBJECTS = [
     # year happened to use.
     ('appropriations',
      r'appropriat|budget\s+report|expenditures?\b|omnibus\s+budget'),
-    ('payroll', r'gross\s+wages|payroll|salar(y|ies)'),
+    # `\bwages\b` alone, because FY2011 p98 heads its column just `WAGES`, and
+    # `salary schedule` is the FY2015 grade-and-step table. Below `appropriations`
+    # deliberately: a budget page full of `Payroll-Clerical` lines is an
+    # appropriations page.
+    ('payroll', r'gross\s+wages|\bwages\b|payroll|salar(y|ies)'),
     ('valuation', r'valuation|assessed\s+value|new\s+growth'),
     ('elections', r'election|ballot|precinct'),
     ('vital-records', r'births?\b|deaths?\b|marriages?'),
     ('officials', r'town\s+officials|appointed|elected\s+officials'),
     ('capital', r'capital\s+(project|plan|outlay)'),
+    ('cultural-council', r'cultural\s+council'),
     ('enrollment', r'enrollment|mcas'),
 ]
 SUBJECTS = [(k, re.compile(v, re.I)) for k, v in SUBJECTS]
@@ -132,6 +193,17 @@ PRIORITY = {
         '"What the town held town-wide at 30 June 2024 and 30 June 2025" and bears '
         'directly on "Why the Town\u2019s undesignated fund balance and DLS\u2019s free cash '
         'differ" \u2014 a discrepancy /free-cash currently records and cannot explain.'),
+    'debt': (3,
+        'IT HAD NO ENTRY AT ALL and fell through to 99, so 34 unread pages \u2014 the '
+        'second-largest block here \u2014 were sorting below `unknown`. The reason to '
+        'rank it high is one line of `model/finance.py`: `excluded_debt=2_199_352.52`, a '
+        'figure TYPED INTO THE MODEL, and debt-excluded borrowing is a real component of '
+        'the levy the town raises. The repayment schedules state principal and interest '
+        'BY YEAR and BY BORROWING, which makes debt service the one large expense that is '
+        'knowable years ahead rather than projected \u2014 rule 3\u2019s "set by '
+        'contract" category, of which this project currently derives none. Two printed '
+        'tables wear this label: the repayment schedule and the five-year outstanding '
+        'statement; they are different grains and must not be summed together.'),
     'receivables': (3,
         'What is owed to the town and has not been collected. Thirty pages over twelve '
         'years, and nothing here measures it; it is the other half of the tax-collection '
@@ -151,11 +223,20 @@ PRIORITY = {
         'Assessed value by class. /commercial-base and /property-owners are built on the '
         'state\u2019s certification of this; the town\u2019s own printing is the check on it.'),
     'capital': (8, 'Capital projects and what they cost. Bears on "Debt service by project".'),
+    'regional-school': (8,
+        'Monty Tech: the OTHER school district Lunenburg pays into, and a line the town '
+        'budget carries as a single assessment. These pages print the assessment for '
+        'every member town and twenty years of assessment history, which is the only '
+        'published basis for asking whether Lunenburg\u2019s share is moving with its '
+        'enrolment. It is NOT Lunenburg district money and must never be summed with it.'),
     'appropriations': (9, 'Already the largest dataset here at 4,665 rows; these are stragglers.'),
     'enrollment': (10, 'DESE publishes this directly and is the better source.'),
     'elections': (11, 'Complete at 2,012 rows; not a money question.'),
     'vital-records': (12, 'Complete; not a money question.'),
     'treasurers-cash': (13, 'Now extracted by scripts/extract_treasurers_cash.py.'),
+    'cultural-council': (13,
+        'Grant awards of a few hundred dollars each, published in full. Small, and '
+        'complete as printed.'),
     'unknown': (14,
         'A statement about our SCAN, not about the page: the heading is what the scanner '
         'lost. These have to be looked at before they can be ranked.'),
@@ -250,11 +331,27 @@ def read_pages():
     return out
 
 
-def subject_of(texts):
-    joined = ' | '.join(texts)
-    for name, pat in SUBJECTS:
-        if pat.search(joined):
-            return name
+def subject_of(texts, whole_page=()):
+    """The headings first; the WHOLE PAGE only if the headings said nothing.
+
+    THE BANNER IS NOT THE TABLE. Forty-seven pages were `unknown` and forty-five of
+    them named themselves perfectly well -- three inches further down. The town heads a
+    balance sheet `TOWN OF LUNENBURG, MASSACHUSETTS`, a debt schedule `FISCAL YEAR`,
+    and its bank-by-bank cash listing with an account number the scanner read as
+    `0037140404`. Reading only the top ten boxes and then reporting the result as
+    `unknown` is rule 13c in one line: a matcher found nothing and the finding was
+    written down as a fact about the town.
+
+    The fallback is deliberately SECOND rather than merged. Classifying on the whole
+    page would change what every already-classified page is called -- any page
+    mentioning `appropriated` anywhere would move -- so this can only ever turn
+    `unknown` into something, and never move a page between two named subjects.
+    """
+    for texts in (texts, whole_page):
+        joined = ' | '.join(texts)
+        for name, pat in SUBJECTS:
+            if pat.search(joined):
+                return name
     return 'unknown'
 
 
@@ -301,7 +398,10 @@ def main():
                 top = [unreversed(t) for t in top]
             hits = done.get((fy, page), set())
             state = 'read' if hits else ('reversed' if direction == 'reversed' else 'unread')
-            subj = subject_of(top)
+            page_text = [' '.join((b['text'] or '').split()) for b in boxes]
+            if direction == 'reversed':
+                page_text = [unreversed(t) for t in page_text]
+            subj = subject_of(top, page_text)
             pri, why = PRIORITY.get(subj, (99, ''))
             rows.append(dict(
                 fy=fy, page=page, subject=subj, priority=pri, answers=why, state=state,

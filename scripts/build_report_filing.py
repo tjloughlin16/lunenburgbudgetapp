@@ -56,6 +56,15 @@ NOT_A_BODY = re.compile(r'balance|receipt|indebted|collection of taxes|revenue f
 
 
 def slugify(name):
+    """The slug the BOARD PAGES use, which is the only thing this can join on.
+
+    The org chart marks a body that exists twice -- `Council on Aging (board)` beside
+    `Council on Aging (staff)` -- and that suffix is a disambiguation for a dropdown, not
+    part of the body's name. Carried into the slug it produced `board-of-assessors-board`
+    against the board page's `board-of-assessors`, and the Assessors, the Conservation
+    Commission and the Sewer Commission all silently lost their filing record.
+    """
+    name = re.sub(r"\s*\((staff|board|schools|appointed post)\)$", '', name, flags=re.I)
     return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', name.lower())).strip('-')
 
 

@@ -30,6 +30,13 @@ type Board = {
   about_itself?: { key: string; label: string; school_year: string; url: string; upstream: string; sha256: string; text: string }[]
   scorecard?: { this: Score; last: Score; minutes_lag_days: number; video_lag_days: number }
   finance?: { accounts: number; funds: number; related: number } | null
+  // HOW THIS BODY HAS ANSWERED THE TOWN'S ANNUAL CALL FOR A REPORT, from the contents
+  // page of each annual report — the only place the town records it. Absent where the
+  // town never listed the body at all, which is not the same as a body that declined.
+  annual_report?: {
+    filed: number; said_none: number; of_years: number
+    first: string; last: string; years_filed: string[]; years_said_none: string[]
+  } | null
   join?: { weekday?: string; weekday_share?: number; meetings_sampled?: number; time?: string | null; place?: string | null; zoom?: boolean; cable?: boolean; agendas_read?: number; open_seats?: number; open_seats_fy?: string; open_seats_filled_by?: string } | null
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; official_votes_read: number; votes: number; vote_conflicts: number; first: string | null; last: string | null }
   upcoming: Upcoming[]; recent: Recent[]; votes: Vote[]
@@ -369,6 +376,26 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
       )}
       <p className="text-[13px] mt-4"><a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href="/boards/compared">How the {b.name} compares with the other boards &rarr;</a></p>
       {/* THE FINANCE TAB. TJ, 17 September 2026: "Every board should have a 'Finance' tab". */}
+      {b.annual_report && (
+        <p className="text-[13px] mt-2" style={{ color: 'var(--text-secondary)' }}>
+          <strong>Annual report:</strong>{' '}
+          {b.annual_report.filed === 0
+            ? <>has filed none in the {b.annual_report.of_years} years the town has
+                asked{b.annual_report.said_none > 0 && <>, and the contents page printed
+                “No&nbsp;Report&nbsp;Submitted” beside it {b.annual_report.said_none}{' '}
+                time{b.annual_report.said_none === 1 ? '' : 's'}</>}.</>
+            : <>filed in {b.annual_report.filed} of the {b.annual_report.of_years} years
+                the town has asked, FY{b.annual_report.first}–FY{b.annual_report.last}
+                {b.annual_report.said_none > 0 && <>; the contents page printed
+                “No&nbsp;Report&nbsp;Submitted” beside it {b.annual_report.said_none}{' '}
+                time{b.annual_report.said_none === 1 ? '' : 's'}
+                {' '}({b.annual_report.years_said_none.map(y => `FY${y}`).join(', ')})</>}.</>}
+          {' '}
+          <span style={{ color: 'var(--text-muted)' }}>
+            The town’s own words, off the contents page of each annual report.
+          </span>
+        </p>
+      )}
       {b.finance && <p className="text-[13px] mt-2"><a className="underline font-semibold" style={{ color: 'var(--series-revenue)' }} href={`/boards/${b.slug}/finance`}>Finance: the {b.finance.accounts} account{b.finance.accounts === 1 ? '' : 's'} the {b.name} owns{b.finance.funds ? `, ${b.finance.funds} of them funds` : ''} &rarr;</a></p>}
       <Subscribe path={`/feeds/${b.slug}.xml`} what={`the ${b.name} posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in`} />
 

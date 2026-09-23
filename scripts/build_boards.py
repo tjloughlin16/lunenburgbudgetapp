@@ -86,6 +86,42 @@ def open_seats():
     return dict(out), latest, how
 
 
+def annual_report_filing():
+    """{slug: how a body has answered the town's annual call for a report}.
+
+    TJ, 22 September 2026: *"on each board/commission/department page, lets have a label
+    if they file an Annual Report."*
+
+    THE TOWN ALREADY ANSWERS THIS AND NOWHERE ELSE DOES. The contents page of each annual
+    report lists every body it asked, and prints `No Report Submitted` beside the ones
+    that sent nothing -- in the town's own words, not our inference. 612 filings and 40 of
+    those refusals across fourteen books, read by `build_report_filing.py`.
+
+    THREE STATES, AND THE THIRD IS THE ONE TO BE CAREFUL WITH. A body that is not on the
+    contents page AT ALL has refused nothing: the town did not ask it. Four real
+    departments -- Accounting, Human Resources, Land Use, Facilities -- are on no contents
+    page in any year while plainly existing, so a missing label means WE HAVE NOTHING TO
+    SAY, and the page says nothing rather than implying a failure.
+    """
+    path = os.path.join(ROOT, 'sources', 'data', 'report-filing.csv')
+    out = {}
+    if not os.path.exists(path):
+        return out
+    for r in csv.DictReader(open(path, encoding='utf-8')):
+        filed = [y for y in r['years_filed'].split(';') if y]
+        none = [y for y in r['years_said_none'].split(';') if y]
+        if not filed and not none:
+            continue
+        out[r['slug']] = dict(
+            filed=len(filed), said_none=len(none), of_years=int(r['of_years']),
+            first=filed[0] if filed else '', last=filed[-1] if filed else '',
+            years_filed=filed, years_said_none=none)
+    return out
+
+
+FILING = annual_report_filing()
+
+
 def how_to_join(slug, docs, as_of):
     """WHAT A PERSON NEEDS TO JOIN LIVE, read off the last few agendas rather than the
     board's boilerplate. TJ, 17 September 2026: "if someone wants to join live, what
@@ -457,6 +493,7 @@ def build(as_of=None):
         boards.append(dict(
             slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard, join=join,
             finance=finance_counts().get(slug),
+            annual_report=FILING.get(slug),
             counts=dict(agendas=sum(1 for d in docs[slug] if 'agenda' in docs[slug][d]),
                         minutes=sum(1 for d in docs[slug] if 'minutes' in docs[slug][d]),
                         recordings=len(vids[slug]),
