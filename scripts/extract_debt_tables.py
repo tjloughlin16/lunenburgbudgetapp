@@ -675,7 +675,7 @@ def write(path, fields, rows, check):
     return 0
 
 
-def provenance(five, repay, problems):
+def provenance(five, repay, detail, refused, problems):
     """The note beside the data, with every count DERIVED. Rule 2 covers this file too."""
     L = []
     A = L.append
@@ -741,11 +741,39 @@ def provenance(five, repay, problems):
       % (len(repay), len(rrep), len({r['due_fy'] for r in repay})))
     A('- Reports represented: %s.' % ', '.join('FY' + r for r in rrep))
     A('')
-    A('**The per-ISSUE detail is deliberately unread.** It is twenty to twenty-five narrow')
-    A('columns of small type on a scan, and Apple Vision returns it as runs like')
-    A('`52782335 52547440 52531098`. No issue-level row can be footed to the printed grand')
-    A('total in that state, and an unfooted row is not evidence. That is a statement about')
-    A('the scans, not about the town: the schedule is printed in full in every report.')
+    A('## DEBT REPAYMENT SCHEDULE — the per-issue detail')
+    A('')
+    A('`sources/data/debt-repayment-detail.csv`, and what would not read in')
+    A('`sources/data/debt-repayment-detail-refused.csv`.')
+    A('')
+    A('**On a scan this table cannot be read, and that was taken for a fact about the')
+    A('archive.** It is twenty to twenty-five narrow columns of small type, and Apple')
+    A('Vision returns it as runs like `52782335 52547440 52531098`. What was never checked')
+    A('is whether every report IS a scan. Five are not: their PDFs carry a real text layer')
+    A('and the schedule reads exact to the dollar out of it, with no OCR anywhere.')
+    A('')
+    dpages = sorted({(r['report_fy'], int(r['page'])) for r in detail})
+    drep = sorted({r['report_fy'] for r in detail})
+    A('- **%d rows** off **%d pages** in **%d** reports: %s.'
+      % (len(detail), len(dpages), len(drep), ', '.join('FY' + r for r in drep)))
+    A('- **%d issues** and **%d due years**, plus the TOTAL column each schedule prints.'
+      % (len({(r['report_fy'], r['issue_seq']) for r in detail}),
+         len({r['due_fy'] for r in detail if r['due_fy'] != 'TOTAL'})))
+    A('- Every row closes the identity its own table states: **principal + interest')
+    A('  (+ MWPAT admin fee where one is printed) = the issue total**, to the dollar. '
+      '%d of them also sit in a year column whose issues sum to the page\'s own printed '
+      'GRAND TOTAL.' % sum(1 for r in detail if r['column_foots'] == 'yes'))
+    A('- **%d pages are refused**, listed in the refusal file with what is actually on'
+      % len(refused))
+    A('  them. %d of them are scans with no text layer at all.'
+      % sum(1 for r in refused if 'scanned image' in r['reason']))
+    A('')
+    A('**Where a column does not foot, the shortfall is printed rather than hidden behind')
+    A('a no.** Two kinds turn up and they are not alike. FY2014, FY2016 and FY2025 are out')
+    A('by one dollar in some columns — the town rounding its own total. FY2015 is out by')
+    A('exactly the two MS-HS CONSTRUCTION bonds: $625,000 in 2016, $640,000 in 2017,')
+    A('$665,000 in 2018, and so on down the row. Those bonds are printed in the table and')
+    A('left out of the line that totals it. Nothing here tests why.')
     A('')
     A('**A due year is not cross-checkable between reports.** A year of OUTSTANDING debt is')
     A('history and two books must agree; a year of future debt SERVICE moves every time the')
@@ -761,13 +789,475 @@ def provenance(five, repay, problems):
     return '\n'.join(L)
 
 
+
+# ======================================================================================
+# THE PER-ISSUE DETAIL, OFF THE PDF'S OWN TEXT LAYER
+# ======================================================================================
+#
+# The docstring above says the issue-level schedule is unread because twenty-odd narrow
+# columns of small type come back from Vision as `52782335 52547440 52531098`. That was a
+# statement about the SCANS, and rule 13c says a matcher that finds nothing is a statement
+# about our instrument. It is: five of the sixteen reports did not arrive as scans at all.
+#
+#     python3 -c "import pdfplumber; ..." on FY2016 page 44 returns 4,531 characters and
+#     628 words. `A row of it: PRINCIPAL $10,651` -- exact, to the dollar, no OCR anywhere.
+#
+# So the schedule is read TWICE by this script, from two different instruments:
+#
+#   * the GRAND-TOTAL block, from the Vision boxes, for every report -- `read_repayment`.
+#   * the PER-ISSUE detail, from the PDF text layer, for the reports that HAVE one --
+#     this section. Where a report is image-only the detail stays unread and the page is
+#     written to `debt-repayment-detail-refused.csv` with what is actually on it.
+#
+# Three things about the text layer that are not obvious.
+#
+# 1. **Most of these pages are landscape content on a portrait page, drawn ROTATED, and
+#    the page's own `/Rotate` is 0.** The characters carry the rotation in their text
+#    matrix instead: `(0.0, 0.418, -0.335, 0.0, ...)` on FY2014 page 40. Read without
+#    normalising that, a row comes out as a vertical column of single letters and
+#    `extract_text()` returns `RAEY LACSIF` -- FISCAL YEAR, backwards. Nothing about this
+#    is a tolerance to tune: the matrix says which way the glyph faces, so the transform
+#    is exact. Rule 13b's "measure the rotation, do not fight it" has an easy form here --
+#    the document states it.
+#
+# 2. **A label and the figure beside it can be drawn with no gap at all.** FY2018 page 49
+#    holds `OBLIGATIO$N82,060` -- the `$` of $82,060 is positioned between the O and the N
+#    of OBLIGATION. Grouping characters into words by spacing therefore cannot be trusted
+#    to separate the two. Figures are matched on the LINE, by `\$[\d,]+`, and placed by
+#    the right edge of the last character of the match, which that overlap does not move.
+#
+# 3. **A page may print the same year column twice.** FY2016 page 46 is headed
+#    `FISC AL YEAR 2030 2031 2032 2040 ... 2047 TOTAL`, and its first three columns repeat
+#    what page 45 already printed for 2030-2032 -- MUNICIPAL PURPOSE SEWER principal reads
+#    $43,109 / $44,995 / $46,963 in both places. They are not a misread header: they agree
+#    to the dollar with the other page. They are published from both pages, and the
+#    agreement is reported, because two printings agreeing is a check and not a problem.
+#
+# WHAT PROVES A ROW. The table states an identity about every cell it prints:
+#
+#     PRINCIPAL + INTEREST = TOTAL <issue>,  in each year column, for each issue
+#
+# and a row is written only where that closes TO THE DOLLAR. No tolerance. Where a column
+# prints two of the three the third is taken as zero and `cells_printed` says so, because
+# an issue that has retired its interest prints nothing rather than `$0` on some rows and
+# `$0` on others -- MASS WATER POOL 13 prints twelve zeros against thirteen principals.
+#
+# And then the page's own foot, which is the guard against a compensating error: the issue
+# principals in a column must sum to GRAND TOTAL PRINCIPAL, and the interests to GRAND
+# TOTAL INTEREST. A figure placed in the wrong column breaks its own row identity AND that
+# sum, in two places at once, which is why placing by right edge is safe to do at all.
+# `column_foots` records the result per cell. A continuation page whose earlier issues are
+# on an image-only page -- FY2018 page 49 is exactly that -- cannot foot, and says so
+# rather than being dropped: its own row identities still hold.
+
+DETAIL_FIELDS = ['report_fy', 'document', 'page', 'as_of', 'issue_seq', 'issue', 'due_fy',
+                 'principal', 'interest', 'admin_fee', 'total', 'cells_printed',
+                 'rows_offset', 'column_foots']
+REFUSED_FIELDS = ['report_fy', 'document', 'page', 'subject', 'reason', 'evidence']
+
+OUT_DETAIL = os.path.join(ROOT, 'sources', 'data', 'debt-repayment-detail.csv')
+OUT_DETAIL_REFUSED = os.path.join(ROOT, 'sources', 'data', 'debt-repayment-detail-refused.csv')
+
+DOCS = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs')
+
+# A FIGURE ON THESE PAGES IS `$n,nnn` AND NEVER CARRIES CENTS, and the trailing guard is
+# load-bearing: `MS-HS CONSTRUCTION $9,000,000.00` prints the bond's FACE amount beside
+# the issue's name, and a looser pattern reads `$9` out of it. That is not a harmless
+# stray -- a label line that appears to hold a figure is not treated as the start of a new
+# issue, so the two school bonds folded into the block above them and every year column on
+# the page stopped footing to its own printed grand total. The foot is what caught it.
+FIGURE = re.compile(r'\$\d{1,3}(?:,\d{3})*(?![\d,.])')
+ROW_KINDS = ('PRINCIPAL', 'INTEREST', 'TOTAL', 'GRAND')
+
+
+def _orientation(chars):
+    """Which way the glyphs face, from the text matrix -- 0, 90, 180 or 270."""
+    c = collections.Counter()
+    for ch in chars:
+        if not ch['text'].strip():
+            continue
+        m = ch.get('matrix')
+        if not m:
+            continue
+        a, b = m[0], m[1]
+        if abs(a) >= abs(b):
+            c['0' if a > 0 else '180'] += 1
+        else:
+            c['90' if b > 0 else '270'] += 1
+    return c.most_common(1)[0][0] if c else '0'
+
+
+def _char_orientation(ch):
+    m = ch.get('matrix')
+    if not m:
+        return '0'
+    a, b = m[0], m[1]
+    if abs(a) >= abs(b):
+        return '0' if a > 0 else '180'
+    return '90' if b > 0 else '270'
+
+
+def _upright_chars(page):
+    """Every character on the page in reading coordinates: x rightward, y downward.
+
+    ONLY the characters that face the way the TABLE does. FY2025 page 39 prints its
+    running head, `DEBT REPAYMENT SCHEDULE`, upright on a page whose schedule is turned
+    270 degrees. Rotate the page to read the table and those 27 characters scatter through
+    it, one per row, which is why that page reads `EPRINCIPAL`, `STOTAL SCH GENERAL
+    OBLIGATION` and `NINTEREST`. A glyph's own matrix says which way it faces, so the ones
+    that do not belong to the table can be dropped exactly rather than by a size threshold.
+    """
+    chars = page.dedupe_chars(tolerance=0.5).chars
+    o = _orientation(chars)
+    chars = [c for c in chars if not c['text'].strip() or _char_orientation(c) == o]
+    out = []
+    for ch in chars:
+        x0, x1, y0, y1 = ch['x0'], ch['x1'], ch['y0'], ch['y1']
+        if o == '0':
+            nx0, nx1, nt, nb = x0, x1, -y1, -y0
+        elif o == '180':
+            nx0, nx1, nt, nb = -x1, -x0, y0, y1
+        elif o == '90':
+            nx0, nx1, nt, nb = y0, y1, x0, x1
+        else:
+            nx0, nx1, nt, nb = -y1, -y0, -x1, -x0
+        out.append({'t': ch['text'], 'x0': nx0, 'x1': nx1, 'top': nt, 'bot': nb})
+    out.sort(key=lambda c: (round(c['top'], 1), c['x0']))
+    return out, o
+
+
+def _lines(chars):
+    """Characters banded into printed lines, each carrying its string and its char boxes.
+
+    The band is the page's own median line pitch, halved -- rule 13b. It is not a constant:
+    FY2014 sets the schedule at 4.1pt and FY2022's warrant at 11pt, and a guessed band that
+    holds one together splits the other.
+    """
+    if not chars:
+        return []
+    tops = sorted({round(c['top'], 1) for c in chars})
+    gaps = [b - a for a, b in zip(tops, tops[1:]) if 0.5 < b - a < 40]
+    band = (statistics.median(gaps) / 2.0) if gaps else 2.0
+    rows = []
+    for c in chars:
+        if rows and abs(c['top'] - rows[-1][0]['top']) < band:
+            rows[-1].append(c)
+        else:
+            rows.append([c])
+    out = []
+    for r in rows:
+        r.sort(key=lambda c: c['x0'])
+        s, boxes = [], []
+        prev = None
+        for c in r:
+            if prev is not None and c['x0'] - prev > 1.2:
+                s.append(' ')
+                boxes.append(None)
+            s.append(c['t'])
+            boxes.append(c)
+            prev = c['x1']
+        out.append({'text': ''.join(s), 'boxes': boxes, 'top': r[0]['top']})
+    return out
+
+
+def _figures(line):
+    """Every `$n,nnn` on a line, with the right edge of its last character."""
+    figs = []
+    for m in FIGURE.finditer(line['text']):
+        boxes = [b for b in line['boxes'][m.start():m.end()] if b]
+        if not boxes:
+            continue
+        figs.append({'v': float(m.group(0)[1:].replace(',', '')),
+                     'x1': max(b['x1'] for b in boxes),
+                     'start': m.start()})
+    return figs
+
+
+def _header_years(lines):
+    """The year columns, NAMED off the printed header. Never inferred from order.
+
+    Rule 13c, in its smallest form: the header is not printed the same way twice.
+    FY2016 page 46 breaks the word itself -- `FISC AL YEAR` -- and FY2014 page 42, the
+    last sheet of that year's schedule, prints no FISCAL YEAR at all: its two remaining
+    year headings sit on the same line as the first issue's name,
+    `MASS WATER POOL 3* 2046 2047   TOTAL`. So the header is whichever line first carries
+    two or more four-digit years, and whatever is printed to the LEFT of the first of them
+    is handed back as a label, because on that page it is one.
+    """
+    for i, ln in enumerate(lines):
+        cols = []
+        for m in re.finditer(r'\b(20[0-9]{2})\b|\bTOTAL\b', ln['text']):
+            boxes = [b for b in ln['boxes'][m.start():m.end()] if b]
+            if boxes:
+                cols.append({'name': m.group(0), 'start': m.start(),
+                             'c': (min(b['x0'] for b in boxes) + max(b['x1'] for b in boxes)) / 2})
+        # THE TITLE LINE ALSO HOLDS YEARS. FY2014 page 40 prints its title twice --
+        # `...AS OF JUNE 30, 2014 TOWN OF LUNENBURG ... JUNE 30 2014` -- so a rule of
+        # "two four-digit years makes a header" picks the title and reads no column at
+        # all. A column header's years are DISTINCT and ascend; a date repeated does
+        # neither.
+        years = [c for c in cols if c['name'] != 'TOTAL']
+        years.sort(key=lambda c: c['c'])
+        vals = [int(c['name']) for c in years]
+        if len(vals) < 2 or len(set(vals)) != len(vals) or vals != sorted(vals):
+            continue
+        cols.sort(key=lambda c: c['c'])
+        head = re.sub(r'\s+', ' ', ln['text'][:min(c['start'] for c in cols)]).strip()
+        if head.upper().startswith('FISC'):
+            head = ''
+        return cols, i, head
+    return None, None, None
+
+
+def _place(figs, cols, pitch):
+    """A figure belongs to the column its RIGHT EDGE is nearest, or to none at all.
+
+    Accounting figures are right-aligned and a `$` widens some of them, so the left edge
+    and the centre both move with the digit count and the right edge does not. A figure
+    further than half the column pitch from every heading is refused rather than pushed
+    into the closest one -- placing by order is what puts every later figure in a row with
+    a gap under the wrong year.
+    """
+    out = {}
+    for f in figs:
+        best = min(cols, key=lambda c: abs(c['c'] - f['x1']))
+        if abs(best['c'] - f['x1']) > pitch * 0.75:
+            continue
+        out.setdefault(best['name'], []).append(f['v'])
+    return {k: v[0] for k, v in out.items() if len(v) == 1}
+
+
+def read_repayment_detail(fy, doc, pdf_path, catalogue_pages, ocr, problems, refused):
+    """The issue-level schedule off the text layer, where the report has one."""
+    rows = []
+    try:
+        import pdfplumber
+    except ImportError:
+        problems.append('pdfplumber is not installed; the per-issue detail cannot be read')
+        return rows
+    want = set()
+    for p in catalogue_pages:
+        want.update((p - 1, p, p + 1))
+    with pdfplumber.open(pdf_path) as pdf:
+        n = len(pdf.pages)
+        for page_no in sorted(p for p in want if 1 <= p <= n):
+            page = pdf.pages[page_no - 1]
+            # RULE 13c: SAY WHAT IS ACTUALLY ON THE PAGE, not that a matcher found nothing.
+            # A page the catalogue files under `debt` with no text layer is a scan, and
+            # the refusal carries the evidence -- how many characters the PDF holds and
+            # how many images are drawn on it -- so nobody has to take it on trust.
+            # Which page IS a repayment schedule is decided from the Vision reading of
+            # it, not from the catalogue's heading: five of these headings are the first
+            # line the scanner happened to recognise (`FISCAL YEAR`, `40021012`, blank).
+            # A FIVE YEARS OUTSTANDING page is read by `read_five_years` and is not
+            # refused here -- a refusal has to mean something.
+            seen = ' '.join(b['text'] for b in ocr.get(page_no, [])).upper()
+            is_schedule = page_no in catalogue_pages and (
+                'REPAYMENT' in seen or 'GRAND TOTAL' in seen or 'TOTAL DEBT' in seen)
+            if len(page.chars) < 30:
+                if is_schedule:
+                    refused.append({
+                        'report_fy': fy, 'document': doc, 'page': page_no,
+                        'subject': 'debt',
+                        'reason': 'the page is a scanned image; there is no text layer to '
+                                  'read, and the issue columns are too narrow for Vision',
+                        'evidence': '%d characters and %d image(s) in the PDF; Vision reads '
+                                    '%d boxes, e.g. %r'
+                                    % (len(page.chars), len(page.images),
+                                       len(ocr.get(page_no, [])),
+                                       next((b['text'] for b in ocr.get(page_no, [])
+                                             if money(b['text']) is not None), ''))})
+                continue
+            chars, orient = _upright_chars(page)
+            lines = _lines(chars)
+            flat = ' '.join(ln['text'] for ln in lines).upper().replace(' ', '')
+            if 'GRANDTOTALPRINCIPAL' not in flat:
+                if is_schedule:
+                    refused.append({
+                        'report_fy': fy, 'document': doc, 'page': page_no,
+                        'subject': 'debt',
+                        'reason': 'the page carries a text layer but no repayment '
+                                  'schedule in it; the table is a scanned image on top',
+                        'evidence': 'the whole text layer reads %r'
+                                    % ' '.join(l['text'] for l in lines)[:90]})
+                continue
+            cols, hidx, hlabel = _header_years(lines)
+            if not cols:
+                refused.append({'report_fy': fy, 'document': doc, 'page': page_no,
+                                'subject': 'debt',
+                                'reason': 'the year header could not be read off the page',
+                                'evidence': 'first line: %r' % lines[0]['text'][:80]})
+                continue
+            centres = [c['c'] for c in cols]
+            pitch = statistics.median([b - a for a, b in zip(centres, centres[1:])]) \
+                if len(centres) > 1 else 40.0
+            names = [c['name'] for c in cols]
+            as_of = ''
+            m = re.search(r'JUNE\s*30,?\s*(\d{4})',
+                          (' '.join(l['text'] for l in lines) + ' '
+                           + (page.extract_text() or '')).upper())
+            if m:
+                as_of = 'June 30, %s' % m.group(1)
+
+            # A PAGE MAY PRINT ITS FIGURES ONE ROW BELOW THEIR LABELS, and FY2014 page 42
+            # does: `PRINCIPAL` is bare, `INTEREST $31,011` carries MASS WATER POOL 3's
+            # TOTAL PRINCIPAL, and the last figure line has no label at all. Read straight
+            # off the line, nothing on that page closes. Read one row up, everything does:
+            # $22,140,229 + $6,338,637 = $28,478,866, the grand total the page prints for
+            # itself. So both readings are built and the DOCUMENT chooses between them --
+            # a wrong alignment cannot make an identity close 57 times and foot as well,
+            # which is the whole reason this is safe to attempt rather than a tuned guess.
+            best = None
+            for shift in (0, 1):
+                got = _walk(lines, hidx, hlabel, cols, pitch, names, shift)
+                if best is None or got['closed'] > best['closed']:
+                    best = got
+            if best['shift'] and not best['grand_closes']:
+                refused.append({'report_fy': fy, 'document': doc, 'page': page_no,
+                                'subject': 'debt',
+                                'reason': 'the figures are printed out of line with their '
+                                          'labels and the shifted reading does not foot',
+                                'evidence': '%d of %d cells close at the printed alignment'
+                                            % (best['closed'], best['closed'] + best['open'])})
+                continue
+            if not best['cells']:
+                refused.append({'report_fy': fy, 'document': doc, 'page': page_no,
+                                'subject': 'debt',
+                                'reason': 'no issue block on the page held a readable row',
+                                'evidence': 'header columns: %s' % ' '.join(names)})
+                continue
+            for c in best['cells']:
+                c.update({'report_fy': fy, 'document': doc, 'page': page_no, 'as_of': as_of})
+                rows.append(c)
+            if best['open']:
+                problems.append('FY%s page %d: %d of %d issue cells do not close '
+                                'principal + interest (+ admin fee) = total'
+                                % (fy, page_no, best['open'], best['open'] + best['closed']))
+    return rows
+
+
+def _walk(lines, hidx, hlabel, cols, pitch, names, shift):
+    """One reading of a schedule page: issue blocks, their cells, and what closes.
+
+    `shift` is how many printed lines separate a label from the figures that belong to
+    it -- 0 everywhere but the pages where the figure column was pasted a row low.
+    """
+    issue, seq = '', 0
+    if hlabel:
+        seq, issue = 1, hlabel.upper()
+    blocks = collections.OrderedDict()
+    grand = {}
+    for i in range(hidx + 1, len(lines)):
+        own = _figures(lines[i])
+        src = lines[i + shift] if i + shift < len(lines) else None
+        figs = _figures(src) if src is not None else []
+        head = lines[i]['text'][:own[0]['start']].strip() if own else lines[i]['text'].strip()
+        head = re.sub(r'\s+', ' ', head).upper().strip(' $')
+        if not head:
+            continue
+        if head.startswith('GRAND TOTAL') or head.startswith('TOTAL DEBT'):
+            grand[head] = _place(figs, cols, pitch)
+            continue
+        for word, kind in (('PRINCIPAL', 'PRINCIPAL'), ('INTEREST', 'INTEREST'),
+                           ('ADMIN FEE', 'ADMIN'), ('MWPAT ADMIN', 'ADMIN')):
+            if head.startswith(word):
+                blocks.setdefault((seq, issue), {}).setdefault(kind, {}).update(
+                    _place(figs, cols, pitch))
+                break
+        else:
+            if head.startswith('TOTAL'):
+                blocks.setdefault((seq, issue), {}).setdefault('TOTAL', {}).update(
+                    _place(figs, cols, pitch))
+            # A NEW ISSUE STARTS AT A LABEL THAT CARRIES NO FIGURE OF ITS OWN -- except
+            # on a shifted page, where every label line carries the PREVIOUS row's
+            # figure and that test would find no issues at all after the first.
+            elif len(head) > 3 and not head.startswith('*') and (shift or not own):
+                seq += 1
+                issue = re.sub(r'\s*\$[\d,.]+$', '', head).strip()
+
+    # The page's own foot, per column: the issues must sum to the grand total.
+    # THE FOOT SAYS BY HOW MUCH, not merely yes or no, because the differences here are
+    # the finding. FY2016 page 44 is out by exactly $1 in two of its twelve columns --
+    # the town's own rounding. FY2015 page 42 is out by exactly $625,000 in 2016,
+    # $640,000 in 2017, $665,000 in 2018: in every column the shortfall is precisely the
+    # two MS-HS CONSTRUCTION bonds' principal for that year, which are printed in the
+    # table and left out of the row that totals it. An `out by` that is a round number
+    # equal to a block on the same page is a different animal from one that is a dollar,
+    # and collapsing both to `no` would hide it.
+    foots = {}
+    for name in names:
+        parts, missing = [], False
+        for letter, kind, key in (('principal', 'PRINCIPAL', 'GRAND TOTAL PRINCIPAL'),
+                                  ('interest', 'INTEREST', 'GRAND TOTAL INTEREST')):
+            tot = grand.get(key, {}).get(name)
+            if tot is None:
+                missing = True
+                continue
+            got = sum(b.get(kind, {}).get(name, 0.0) for b in blocks.values())
+            if abs(got - tot) >= 0.5:
+                parts.append('%s out by %s' % (letter, format(got - tot, '+,.0f')))
+        foots[name] = ('; '.join(parts) if parts
+                       else 'no grand total printed' if missing else 'yes')
+
+    # GRAND TOTAL PRINCIPAL + GRAND TOTAL INTEREST = TOTAL DEBT, the identity the block
+    # states about itself. It is what decides between two readings of the same page.
+    gp, gi = grand.get('GRAND TOTAL PRINCIPAL', {}), grand.get('GRAND TOTAL INTEREST', {})
+    gd = grand.get('TOTAL DEBT', {})
+    ga = grand.get('GRAND TOTAL MWPAT ADMIN FEES', {})
+    checked = [abs(gp[k] + gi[k] + ga.get(k, 0.0) - gd[k]) < 0.5
+               for k in gd if k in gp and k in gi]
+    grand_closes = bool(checked) and all(checked)
+
+    cells, closed, still_open = [], 0, 0
+    for (sq, name), kinds in blocks.items():
+        for col in names:
+            pr = kinds.get('PRINCIPAL', {}).get(col)
+            it = kinds.get('INTEREST', {}).get(col)
+            ad = kinds.get('ADMIN', {}).get(col)
+            tt = kinds.get('TOTAL', {}).get(col)
+            printed = ''.join(k for k, v in (('P', pr), ('I', it), ('A', ad), ('T', tt))
+                              if v is not None)
+            if len(printed) < 2 or 'T' not in printed:
+                if printed:
+                    still_open += 1
+                continue
+            if abs((pr or 0.0) + (it or 0.0) + (ad or 0.0) - tt) >= 0.5:
+                still_open += 1
+                continue
+            closed += 1
+            cells.append({'issue_seq': sq, 'issue': name, 'due_fy': col,
+                          'principal': '%.0f' % (pr or 0.0),
+                          'interest': '%.0f' % (it or 0.0),
+                          'admin_fee': '%.0f' % (ad or 0.0) if ad is not None else '',
+                          'total': '%.0f' % tt,
+                          'cells_printed': printed,
+                          'rows_offset': shift,
+                          'column_foots': foots.get(col, '')})
+    return {'cells': cells, 'closed': closed, 'open': still_open, 'shift': shift,
+            'grand_closes': grand_closes}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--verbose', action='store_true')
     a = ap.parse_args()
 
-    five, repay, problems = [], [], []
+    five, repay, detail, problems, refused = [], [], [], [], []
+    # WHERE THE ISSUE-LEVEL SCHEDULE IS PRINTED. The catalogue is the index into the
+    # reports and is consulted rather than a page number being typed in -- its `debt`
+    # pages, widened by one either side, because a schedule that runs onto a fourth page
+    # has been filed under a heading the cataloguer read as something else (FY2014 page
+    # 41 is a repayment page that the catalogue does not list as one).
+    debt_pages = collections.defaultdict(set)
+    cat = os.path.join(ROOT, 'sources', 'data', 'annual-report-pages.csv')
+    with open(cat, encoding='utf-8') as fh:
+        head = fh.readline().rstrip('\n').split(',')
+        fh.seek(0)
+        rdr = csv.DictReader(fh)
+        for r in rdr:
+            if r.get('subject') == 'debt':
+                debt_pages[r['fy']].add(int(r['page']))
     # THE ADDENDUM IS A REPORT. FY2016 was published in two volumes and the second holds
     # a debt repayment schedule of its own -- twelve proven year columns that a glob
     # ending `annual-town-report.tsv` walks straight past.
@@ -777,9 +1267,16 @@ def main():
         pages = load(path)
         five += read_five_years(fy, doc, pages, problems)
         repay += read_repayment(fy, doc, pages, problems)
+        pdf_path = os.path.join(DOCS, doc)
+        if debt_pages.get(fy) and os.path.exists(pdf_path):
+            detail += read_repayment_detail(fy, doc, pdf_path, sorted(debt_pages[fy]),
+                                            pages, problems, refused)
     five.sort(key=lambda r: (r['report_fy'], r['document'], -int(r['as_of_fy']),
                              r['section'], r['category']))
     repay.sort(key=lambda r: (r['report_fy'], r['document'], r['due_fy']))
+    detail.sort(key=lambda r: (r['report_fy'], int(r['page']), int(r['issue_seq']),
+                               r['due_fy']))
+    refused.sort(key=lambda r: (r['report_fy'], int(r['page'])))
 
     # THE CROSS-REPORT CHECK: one fiscal year, printed in up to five different books.
     seen = collections.defaultdict(dict)
@@ -830,9 +1327,19 @@ def main():
     if len(problems) > len(shown):
         print('  ...and %d more (--verbose)' % (len(problems) - len(shown)))
 
+    print('DEBT REPAYMENT SCHEDULE (issue detail): %d rows, %d reports, %d pages; '
+          '%d rows sit in a column that foots to the page\'s own grand total'
+          % (len(detail), len({r['report_fy'] for r in detail}),
+             len({(r['report_fy'], r['page']) for r in detail}),
+             sum(1 for r in detail if r['column_foots'] == 'yes')))
+    print('  %d pages refused, in %d reports'
+          % (len(refused), len({r['report_fy'] for r in refused})))
+
     rc = write(OUT_OUTSTANDING, OUTSTANDING_FIELDS, five, a.check)
+    rc |= write(OUT_DETAIL, DETAIL_FIELDS, detail, a.check)
+    rc |= write(OUT_DETAIL_REFUSED, REFUSED_FIELDS, refused, a.check)
     rc |= write(OUT_REPAYMENT, REPAYMENT_FIELDS, repay, a.check)
-    note = provenance(five, repay, problems)
+    note = provenance(five, repay, detail, refused, problems)
     if a.check:
         cur = open(OUT_NOTE, encoding='utf-8').read() if os.path.exists(OUT_NOTE) else ''
         if cur != note:

@@ -589,9 +589,24 @@ def main():
     # than summed, and the overlap that establishes it is recomputed here.
     doubled = [(int(k), p) for k, ps in b['by_fy'].items() for p in ps
                if p['names_band']]
-    true('no double-printed roster is reported. The FY2024 report prints two complete '
-         'Turkey Hill rosters and a panel that sums them says 135 people at a school of '
-         '64.', len(doubled) >= 1)
+    # THE DOUBLING IS NO LONGER REPORTED BECAUSE IT IS NO LONGER PUBLISHED, and this
+    # check was left asserting a world that had been deliberately changed out from under
+    # it. FY2024 printed two complete Turkey Hill rosters, and a panel that summed them
+    # said 135 people at a school of about 64. On 22 September 2026
+    # `_one_printing_per_school` was moved so it runs BEFORE the entries file as well as
+    # the counts -- until then the two published files disagreed about FY2024 by exactly
+    # 64 people -- and the second printing stopped reaching the data at all.
+    #
+    # So the assertion is inverted rather than dropped. Demanding that the defect still
+    # be REPORTED fails the moment it is fixed, which is a check that punishes the repair;
+    # what has to stay true is that the school resolves to ONE printing and a headcount a
+    # school of that size could have. Deleting it outright would leave nothing watching
+    # the collapse, and a silent re-doubling is precisely what nobody would notice.
+    th = [r for r in ents if int(r['fy']) == 2024 and r['school'] == 'turkey-hill']
+    true('FY2024 Turkey Hill resolves to ONE printed roster, not the two the report '
+         'prints', len({r['page'] for r in th}) == 1)
+    true('FY2024 Turkey Hill does not publish a summed, doubled headcount',
+         0 < len({r['name'] for r in th if r['name']}) < 100)
     for fyy, p in doubled:
         pages = p['names_band']['pages']
         sets = [{r['name'] for r in ents if int(r['fy']) == fyy

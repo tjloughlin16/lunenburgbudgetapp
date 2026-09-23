@@ -382,8 +382,15 @@ def read_pages():
             if t in CATALOGUES:
                 continue
             cols = {r[1] for r in db.execute('PRAGMA table_info("%s")' % t)}
+            # THE SAME CATALOGUE TEST AS THE CSV HALF, which this branch did not apply.
+            # `capital_plans_refused` is loaded by `build_db.py` and is not in the named
+            # `CATALOGUES` set, so a table whose every row says a page REFUSED was
+            # crediting those pages as read -- FY2013 p12 came out `read_by=
+            # capital-plans-refused`, a page nothing holds a figure for. A refusal is not
+            # a reading, and keeping the test in one half of a two-half join is how it
+            # stopped being true in the other.
             year = _year_column(cols)
-            if not year or 'page' not in cols:
+            if not year or 'page' not in cols or cols & CATALOGUE_COLUMNS:
                 continue
             for fy, pg in db.execute(
                     'SELECT DISTINCT "%s", page FROM "%s"' % (year, t)):

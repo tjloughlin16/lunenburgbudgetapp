@@ -232,6 +232,14 @@ ROLE_LABEL = {
     # holds 9 and 12, so it returns nothing and always will until the year-end close
     # arrives.
     'view': 'view',
+    # A REGISTER RECORDS WHAT WAS NOT READ, and it is not a fact table with no facts.
+    # `receivables_reconciliation`, `tax_collection_unreconciled` and
+    # `capital_plans_refused` each hold one row per year or page that REFUSED, with the
+    # reason -- and the reasons are not interchangeable: a cropped page, a torn scan and
+    # a year another extractor already proved need three different remedies. Without
+    # these, a year absent from the data is indistinguishable from a year the town never
+    # printed, which is rule 13c's error with nowhere to look it up.
+    'register': 'what refused',
 }
 
 # The three grains SCHEMA.md names. Called out because confusing them is how a budget gets

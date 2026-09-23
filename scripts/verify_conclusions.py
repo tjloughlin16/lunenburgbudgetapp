@@ -62,11 +62,17 @@ CHECKS = [0]
 # own by construction, so it is not a hole in its own coverage.
 SELF = 'addsup'
 
-# The two tabs in this area that are not reports: the Markdown renderer, and the four-way
-# chooser at /special-education. Named identically in build_master_report.py, and this
-# file asserts the two lists agree so a tab cannot be excluded in one and expected in the
-# other.
-NOT_A_REPORT = ('analysis', 'sped', 'blog', 'recorded', 'thisweek', 'boards', 'budgetfeed')
+# WHICH TABS ARE NOT REPORTS -- `conclusions.py` holds it, and all three files now read
+# that one definition. There were THREE copies of this tuple: here, in
+# build_master_report.py and in conclusions.py. They drifted, exactly as a duplicated
+# constant does -- `threads` was added to one with its reasoning and to neither of the
+# others, so the tab was filtered out of the page by one list and then reported as an
+# unplaced report by another, which refused to write the synthesis at all.
+#
+# This file used to ASSERT that two of the three agreed, which is the right instinct
+# aimed at the wrong target: a check that two copies match is a check that has accepted
+# there are two copies. One definition cannot disagree with itself.
+NOT_A_REPORT = C.NOT_A_REPORT
 
 
 def head(t):
@@ -168,11 +174,15 @@ def main():
     # The two exclusion lists must agree, or a report is dropped from the synthesis by one
     # file and expected by the other -- which is a silent hole wearing the shape of a
     # deliberate one.
+    # The exclusion lists can no longer disagree -- all three files read
+    # `conclusions.NOT_A_REPORT`. What CAN still drift is `SELF`, which is named
+    # separately in each, so that is what is asserted now.
     CHECKS[0] += 1
     import build_master_report as B
-    if tuple(sorted(B.NOT_A_REPORT)) != tuple(sorted(NOT_A_REPORT)) or B.SELF != SELF:
-        FAILS.append('build_master_report.py and this file disagree about which tabs are '
-                     'not reports: %r against %r' % (B.NOT_A_REPORT, NOT_A_REPORT))
+    if B.NOT_A_REPORT is not NOT_A_REPORT or B.SELF != SELF:
+        FAILS.append('build_master_report.py no longer reads conclusions.NOT_A_REPORT, or '
+                     'disagrees about which tab this page IS: %r against %r'
+                     % (B.SELF, SELF))
 
     by_id = {r['id']: r for r in m['reports']}
     for tab, rows in seen.items():

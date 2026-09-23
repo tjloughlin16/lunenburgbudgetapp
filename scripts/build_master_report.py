@@ -81,7 +81,12 @@ SELF = 'addsup'
 # rather than detected -- without this it resolves to sped-students.json and this page
 # prints that report's conclusions twice under two different titles. The four are each
 # covered on their own below.
-NOT_A_REPORT = ('analysis', 'sped', 'blog', 'recorded', 'thisweek', 'boards', 'budgetfeed')
+# ...AND THE LIST ITSELF LIVES IN `conclusions.py`, not here. This file kept its own copy
+# and the two drifted: `threads` was added there, with the reasoning for it, and never
+# here -- so the tab was filtered out of the page's CONTENT by one list and then reported
+# as an unplaced report by the other, which refused the whole synthesis. Two copies of one
+# idea is the defect this repository names more often than any other.
+NOT_A_REPORT = C.NOT_A_REPORT
 
 
 def payload_of(rep):
@@ -190,7 +195,13 @@ def build():
                                reports=got,
                                conclusions=sum(r['count'] for r in got)))
     placed = {t for _k, _t, _b, tabs in C.TOPICS for t in tabs}
-    stray = sorted(r['id'] for r in rows if r['id'] not in placed)
+    # ...AND THE TABS THAT ARE DELIBERATELY IN NO TOPIC. `conclusions.NOT_A_REPORT`
+    # exists to answer exactly this question and this check never asked it, so `threads`
+    # -- which tracks what is still open across boards, a STATE rather than a conclusion
+    # -- refused the whole synthesis page. The constant carries the reasoning per tab;
+    # duplicating a second list here is how the two would drift.
+    stray = sorted(r['id'] for r in rows
+                   if r['id'] not in placed and r['id'] not in C.NOT_A_REPORT)
     if stray:
         raise SystemExit(
             'these reports are in no topic in conclusions.TOPICS, so this page would '
