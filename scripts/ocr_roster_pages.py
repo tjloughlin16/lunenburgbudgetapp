@@ -206,7 +206,15 @@ def have(fy):
     if not os.path.exists(path):
         return set()
     with open(path, encoding='utf-8') as fh:
-        return {int(r['page']) for r in csv.DictReader(fh, delimiter='\t')}
+        # A `"` IN A RECOGNISED WORD SWALLOWS EVERY LINE UNTIL THE NEXT ONE. csv honours
+        # quotes by default; these are OCR dumps of scanned pages, the scanner emits real
+        # double quotes, and each one makes a field run on to the next quote somewhere
+        # further down the file. Across the sixteen annual-report TSVs that hides 9,848
+        # boxes -- 5.19%% of the archive, in 15 of the 16 files, 2,540 in FY2023 alone.
+        # Not always silently: the swallowed field can pass csv's 128KB limit and raise.
+        # They are TAB-separated and nothing in them is ever quoted, so there is nothing
+        # for csv to honour.
+        return {int(r['page']) for r in csv.DictReader(fh, delimiter='\t', quoting=csv.QUOTE_NONE)}
 
 
 def pdf_for(fy):
