@@ -1073,6 +1073,39 @@ GROUPS = [
              'bodies \u2014 the School Committee, the Library Trustees, the Board of '
              'Health \u2014 name no chair anywhere, which is registered as a gap rather '
              'than filled in.'),
+            ('data/outstanding-debt.csv',
+             'What the town owed on 30 June, by purpose, FY2007\u2013FY2025', 3,
+             'The FIVE YEARS OUTSTANDING DEBT table out of fifteen annual reports \u2014 '
+             'principal outstanding by purpose, split inside and outside the Chapter 44 '
+             'debt limit. Each report prints five as-of years, so the series carries UP '
+             'TO FIVE INDEPENDENT READINGS OF EVERY YEAR, taken up to four years apart, '
+             'and they agree to the dollar in 18 of 19 years. The exception is FY2017, '
+             'whose own report prints $51,797,859 six times and whose four successors all '
+             'print $51,797,860; nothing here settles which is right, so both are kept. '
+             'Publication is per column AND per section, because a scan that starts '
+             'part-way down the table can carry every printed total while three purposes '
+             'are physically off the image.'),
+            ('data/debt-repayment.csv',
+             'What falls due in each future year, out to FY2047', 2,
+             'THE OTHER HALF OF THE SAME QUANTITY, AND KEPT APART FROM IT. Outstanding '
+             'debt is principal owed on a date; this is debt service falling due in a '
+             'year \u2014 a different stage, and flattening the two would be rule 1\u2019s '
+             'error in a new coat. Only the GRAND TOTAL block publishes: twenty-odd '
+             'narrow columns of small type come back from the scanner as '
+             '`52782335 52547440 52531098`, so no individual bond issue can be footed. '
+             'And the overlap between reports is MOVEMENT, not disagreement: FY2011 shows '
+             '$155,945 due in FY2032 and FY2021 shows $2,303,500, because two school '
+             'bonds were issued in between.'),
+            ('data/PROVENANCE-debt-tables.md',
+             'Where both debt tables came from, and every page that refused', 2,
+             'Written by us, and generated, so its counts cannot drift. It lists the '
+             'refusals rather than only the successes \u2014 including the one that '
+             'matters most: FY2017 page 42 reads a currency sign as a `3` in two figures '
+             'on one column, both gain exactly $30,000,000, and '
+             '`principal + interest = TOTAL DEBT` then closes PERFECTLY at twenty times '
+             'every other year on the page. An identity cannot see a compensating error, '
+             'so the extractor refuses a figure more than eight times the median of its '
+             'own row and calls that a guard rather than a proof.'),
             ('data/report-index.csv',
              'Every department the town lists, and where its report is', 2,
              'The CONTENTS PAGE of each annual report, read as data: one row per '
