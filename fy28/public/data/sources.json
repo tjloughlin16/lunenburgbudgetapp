@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20",
+ "generated": "2026-09-23",
  "origins": [
   {
    "id": "school",
@@ -54,7 +54,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 1054 of these 1070 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 1084 of these 1100 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -1529,6 +1529,18 @@
      "unit": "pages"
     },
     {
+     "path": "data/outstanding-debt.csv",
+     "title": "What the town owed on 30 June, by purpose, FY2007–FY2025",
+     "stars": 3,
+     "what": "The FIVE YEARS OUTSTANDING DEBT table out of fifteen annual reports — principal outstanding by purpose, split inside and outside the Chapter 44 debt limit. Each report prints five as-of years, so the series carries UP TO FIVE INDEPENDENT READINGS OF EVERY YEAR, taken up to four years apart, and they agree to the dollar in 18 of 19 years. The exception is FY2017, whose own report prints $51,797,859 six times and whose four successors all print $51,797,860; nothing here settles which is right, so both are kept. Publication is per column AND per section, because a scan that starts part-way down the table can carry every printed total while three purposes are physically off the image.",
+     "kind": "Data",
+     "bytes": 297890,
+     "url": "/docs/data/outstanding-debt.csv",
+     "count": 1038,
+     "unit": "rows",
+     "textUrl": "/docs/data/outstanding-debt.csv"
+    },
+    {
      "path": "analyses/connecting-the-budget.pdf",
      "title": "The same analysis, rendered for reading on paper",
      "stars": 3,
@@ -1552,14 +1564,62 @@
      "textUrl": "/docs/analyses/show-your-work.md"
     },
     {
+     "path": "data/receivables.csv",
+     "title": "What the town was still owed on 30 June, levy by levy",
+     "stars": 3,
+     "what": "The Collector’s RECEIVABLES SUMMARY out of the annual reports: one row per tax levy and charge, eight columns from BALANCE FORWARD through COMMITTMENTS, ABATEMENTS, PAYMENTS, REFUNDS, TRANSFER and ADJUSTMENTS to BALANCES, ending in the town’s own printed GRAND TOTAL. 522 rows, and every one closes the table’s per-row identity. THE COLUMN ORDER CHANGES MID-ARCHIVE — FY2016-FY2018 print ADJUSTMENTS REFUNDS PAYMENTS ABATEMENTS and FY2019 onward print ABATEMENTS PAYMENTS REFUNDS TRANSFER ADJUSTMENTS — so four columns transpose silently for anyone who assumes one layout. And FY2023 and FY2024 are both headed `FY2021 COLLECTION OF TAXES`, a stale template; the fiscal year cannot be read off the heading.",
+     "kind": "Data",
+     "bytes": 72145,
+     "url": "/docs/data/receivables.csv",
+     "count": 522,
+     "unit": "rows",
+     "textUrl": "/docs/data/receivables.csv"
+    },
+    {
+     "path": "data/valuation-by-class.csv",
+     "title": "What the town is worth, by class, and the levy on it",
+     "stars": 3,
+     "what": "The Assessors’ tables out of FY2011-FY2025: valuation and levy by major class, new growth, average values, the LA4 totals and the levy build-up. 170 rows, 144 checked against three statements the tables make about themselves — the printed TOTALS row, the percent column summing to 100.0000, and `valuation x rate / 1000 = levy` on every class row. IT IS A SECOND READING OF A FAMILY ALREADY EXTRACTED, deliberately: `report-valuation.csv` covers the same pages and every one of its 321 rows is `no check`, because the Assessors print three or four tables on one page and one column ruler cannot serve them — FY2018 came out with a Commercial valuation of `6603477819.70`, which is the valuation and the tax rate run together. THE FY2021 PAGE REPRINTS FY2020’S TOTALS ROW: its four class rows are consistent to the penny and sum $194,412,308 above the total printed beneath them, which is FY2020’s figure exactly. Written `check failed` rather than corrected.",
+     "kind": "Data",
+     "bytes": 67466,
+     "url": "/docs/data/valuation-by-class.csv",
+     "count": 170,
+     "unit": "rows",
+     "textUrl": "/docs/data/valuation-by-class.csv"
+    },
+    {
+     "path": "analyses/stabilization-funds.md",
+     "title": "The stabilization funds, and who may spend them",
+     "stars": 3,
+     "what": "What the town holds in reserve, which of it could lawfully go to an operating deficit — the general Stabilization Fund may, by a two-thirds Town Meeting vote, and the special purpose funds may not — and the four questions about movement the archive cannot yet answer because the balances are extracted but unreconciled. Generated by scripts/build_stabilization.py.",
+     "kind": "Notes",
+     "bytes": 45306,
+     "url": "/docs/analyses/stabilization-funds.md",
+     "count": 662,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/stabilization-funds.md"
+    },
+    {
+     "path": "data/peg-access-fund.csv",
+     "title": "The cable fund: what Comcast pays, and what it buys",
+     "stars": 3,
+     "what": "FY2015-FY2025, and NOTHING IN THIS ARCHIVE HELD ANY OF IT until now — it was found because two of its pages had been classified as enrollment and one as payroll. It is rule 11 in miniature: cable licence money paying real salaries, in no budget line anybody votes on, so a reader of the town’s appropriations cannot see the people it employs. 147 of 165 rows tie to a printed total. Three years disagree with themselves and are recorded rather than reconciled: FY2017’s printed TOTAL omits a $450.00 vendor expense, FY2025’s ending balance is beginning less expenses and ignores the year’s own $262,565 of revenue, and FY2020 and FY2024 each print their expenses twice on one page with the two copies disagreeing.",
+     "kind": "Data",
+     "bytes": 44479,
+     "url": "/docs/data/peg-access-fund.csv",
+     "count": 165,
+     "unit": "rows",
+     "textUrl": "/docs/data/peg-access-fund.csv"
+    },
+    {
      "path": "analyses/sped-and-the-curve.md",
      "title": "Special education and the curve",
      "stars": 3,
      "what": "The FY27 level-service budget rises 3.98%. Strip out one line — out-of-district tuition, budgeted down 46% — and it rises 6.23%. What that one-off is doing to the rate, and what it risks for FY28. Budget columns only; no actual spending is used anywhere in it.",
      "kind": "Notes",
-     "bytes": 39802,
+     "bytes": 39660,
      "url": "/docs/analyses/sped-and-the-curve.md",
-     "count": 802,
+     "count": 800,
      "unit": "lines",
      "textUrl": "/docs/analyses/sped-and-the-curve.md"
     },
@@ -1581,7 +1641,7 @@
      "stars": 3,
      "what": "Written from the records request answered on 17 June 2026 — the first dated record of money moving that this project has held for anything touching the school budget. The fund’s cash for three years, tied end to end against the opening balances the town itself prints. Four journal entries, described only as an adjustment made per a memo we do not hold, carry 65% of one year’s receipts. What the district’s own workbook says athletics cost, against what the town appropriated for it: 44% in FY2024. And why none of that measures special education, while still changing what we should believe about it. Every figure recomputed by scripts/verify_records_request_2026_06.py.",
      "kind": "Notes",
-     "bytes": 26498,
+     "bytes": 26507,
      "url": "/docs/analyses/athletics-ledger.md",
      "count": 447,
      "unit": "lines",
@@ -1605,11 +1665,35 @@
      "stars": 3,
      "what": "Two claims about the same number — that the town is too conservative, and that its free cash is not up to standard — set against the DLS proof for nine towns. It does not settle the argument, and says why in the first paragraph: a standard for free cash is a ratio and these files are a numerator. What it does establish is the shape. Two thirds of Lunenburg’s 2025 free cash is money appropriated and not spent, up from 31% in 2023 — a balance built from underspending is a different thing from one built from revenue beating forecast, and they imply different remedies.",
      "kind": "Notes",
-     "bytes": 17481,
+     "bytes": 17523,
      "url": "/docs/analyses/free-cash.md",
      "count": 329,
      "unit": "lines",
      "textUrl": "/docs/analyses/free-cash.md"
+    },
+    {
+     "path": "analyses/town-personnel.md",
+     "title": "Who runs the town: every elected seat, appointed seat and officer",
+     "stars": 3,
+     "what": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing read as data, FY2022 to FY2025. Two thirds of the posts the town lists are unpaid seats on boards. It is NOT a headcount of town employees — a DPW labourer or a town hall clerk holds no appointed post — and it says so, because the wage list that would give a headcount stopped naming departments after FY2016.",
+     "kind": "Notes",
+     "bytes": 13336,
+     "url": "/docs/analyses/town-personnel.md",
+     "count": 141,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-personnel.md"
+    },
+    {
+     "path": "analyses/open-seats.md",
+     "title": "Open seats: the town boards a resident could join",
+     "stars": 3,
+     "what": "A LIST rather than a report — the one page here somebody reads and then does something about. Seats the town printed empty, then every filled seat by the year its term runs out. Regenerated by the daily refresh, and published as `/data/open-seats.json` so an assistant can answer the question directly.",
+     "kind": "Notes",
+     "bytes": 11857,
+     "url": "/docs/analyses/open-seats.md",
+     "count": 169,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/open-seats.md"
     },
     {
      "path": "analyses/hiring-here-or-placing-there.md",
@@ -1617,11 +1701,23 @@
      "stars": 3,
      "what": "Whether in-district special education staffing reduces out-of-district placements — the argument the district put on the record in August 2026, and why this project cannot model it. Placements fell from 30 in FY2015 to 10 in FY2025 while in-district spending rose; that is a correlation and four other explanations fit it equally well. A SCOPING NOTE, not a finished analysis: it has no verifier and nothing in it should be quoted as a finding.",
      "kind": "Notes",
-     "bytes": 10854,
+     "bytes": 10694,
      "url": "/docs/analyses/hiring-here-or-placing-there.md",
-     "count": 198,
+     "count": 196,
      "unit": "lines",
      "textUrl": "/docs/analyses/hiring-here-or-placing-there.md"
+    },
+    {
+     "path": "analyses/stabilization-option.md",
+     "title": "Solution options: what the stabilization funds could do about the gap",
+     "stars": 3,
+     "what": "The companion to the stabilization report, and deliberately separate from it: that page describes what the town holds, this one is only about what can be done with it. Three questions in order — can the town stop putting money in, can it spend what is already there, and then what. Spending the whole spendable balance closes two years and runs out partway through the third; stopping the deposits is recurring money, which is the right shape, and covers about a quarter of the first year’s gap. Neither closes it. The gap comes from model/finance.py, the balances from the town’s general ledger, the deposits from the articles that made them. See scripts/build_stabilization_option.py.",
+     "kind": "Notes",
+     "bytes": 10256,
+     "url": "/docs/analyses/stabilization-option.md",
+     "count": 130,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/stabilization-option.md"
     },
     {
      "path": "analyses/fy27-and-the-override.md",
@@ -1641,11 +1737,47 @@
      "stars": 3,
      "what": "Lunenburg spends less for each pupil than almost every district in the state — 310th of 318 in FY2025 — and this turns that rank into dollars: what reaching the median, or matching any named district, would cost. Also what the town itself is REQUIRED to raise for each pupil beside what the state sends, which is the figure the regionalisation argument actually turns on. Generated by scripts/build_spending_target.py.",
      "kind": "Notes",
-     "bytes": 8970,
+     "bytes": 8829,
      "url": "/docs/analyses/spending-compared.md",
-     "count": 127,
+     "count": 124,
      "unit": "lines",
      "textUrl": "/docs/analyses/spending-compared.md"
+    },
+    {
+     "path": "analyses/town-budgets.md",
+     "title": "Budgets across town: every department, and which ones move the total",
+     "stars": 3,
+     "what": "What Town Meeting voted for each of the twelve departments in the omnibus budget, for the three years the detail reconciles, beside the voted total for every year from FY2012. It refuses the question it is most often asked — an omnibus budget cannot show a deficit, because a town may not vote one — and answers the useful version instead: ten of twelve departments grew faster than the levy cap, and the schools are the biggest line without being the fastest.",
+     "kind": "Notes",
+     "bytes": 7673,
+     "url": "/docs/analyses/town-budgets.md",
+     "count": 107,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budgets.md"
+    },
+    {
+     "path": "analyses/board-composition.md",
+     "title": "Board composition: how the boards are made up, and how they turn over",
+     "stars": 3,
+     "what": "Which bodies are biggest, how fast each changes hands, and whether the establishment is growing. The finding the charts exist for: the seats are nearly flat across ten years while about a third of the PEOPLE in them change every year, and the town-wide figure hides a spread from 65% to nothing.",
+     "kind": "Notes",
+     "bytes": 7576,
+     "url": "/docs/analyses/board-composition.md",
+     "count": 164,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/board-composition.md"
+    },
+    {
+     "path": "analyses/town-budget-general-government.md",
+     "title": "General Government: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 5728,
+     "url": "/docs/analyses/town-budget-general-government.md",
+     "count": 136,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-general-government.md"
     },
     {
      "path": "analyses/fy27-cut-reconciliation.md",
@@ -1660,16 +1792,172 @@
      "textUrl": "/docs/analyses/fy27-cut-reconciliation.md"
     },
     {
-     "path": "analyses/stabilization-funds.md",
-     "title": "The stabilization funds, and who may spend them",
+     "path": "analyses/town-budget-unclassified.md",
+     "title": "Employee benefits & reserves: what the town votes for it",
      "stars": 3,
-     "what": "What the town holds in reserve, which of it could lawfully go to an operating deficit — the general Stabilization Fund may, by a two-thirds Town Meeting vote, and the special purpose funds may not — and the four questions about movement the archive cannot yet answer because the balances are extracted but unreconciled. Generated by scripts/build_stabilization.py.",
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
      "kind": "Notes",
-     "bytes": 4098,
-     "url": "/docs/analyses/stabilization-funds.md",
+     "bytes": 4984,
+     "url": "/docs/analyses/town-budget-unclassified.md",
+     "count": 118,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-unclassified.md"
+    },
+    {
+     "path": "analyses/town-budget-public-works.md",
+     "title": "Public Works: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 4555,
+     "url": "/docs/analyses/town-budget-public-works.md",
+     "count": 112,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-public-works.md"
+    },
+    {
+     "path": "analyses/town-budget-maturing-debt.md",
+     "title": "Maturing Debt & Interest: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 4312,
+     "url": "/docs/analyses/town-budget-maturing-debt.md",
+     "count": 94,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-maturing-debt.md"
+    },
+    {
+     "path": "analyses/town-budget-protection.md",
+     "title": "Protection: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 3483,
+     "url": "/docs/analyses/town-budget-protection.md",
      "count": 72,
      "unit": "lines",
-     "textUrl": "/docs/analyses/stabilization-funds.md"
+     "textUrl": "/docs/analyses/town-budget-protection.md"
+    },
+    {
+     "path": "analyses/town-budget-facilities-grounds.md",
+     "title": "Facilities & Grounds: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 3325,
+     "url": "/docs/analyses/town-budget-facilities-grounds.md",
+     "count": 74,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-facilities-grounds.md"
+    },
+    {
+     "path": "analyses/town-budget-schools.md",
+     "title": "Schools: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 3201,
+     "url": "/docs/analyses/town-budget-schools.md",
+     "count": 78,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-schools.md"
+    },
+    {
+     "path": "analyses/town-budget-health-sanitation.md",
+     "title": "Health & Sanitation: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 3146,
+     "url": "/docs/analyses/town-budget-health-sanitation.md",
+     "count": 78,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-health-sanitation.md"
+    },
+    {
+     "path": "analyses/town-budget-solid-waste.md",
+     "title": "Solid Waste & Recycling: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 2659,
+     "url": "/docs/analyses/town-budget-solid-waste.md",
+     "count": 67,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-solid-waste.md"
+    },
+    {
+     "path": "analyses/town-budget-central-purchasing.md",
+     "title": "Central Purchasing: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 2604,
+     "url": "/docs/analyses/town-budget-central-purchasing.md",
+     "count": 66,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-central-purchasing.md"
+    },
+    {
+     "path": "analyses/town-budget-library.md",
+     "title": "Library: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 2409,
+     "url": "/docs/analyses/town-budget-library.md",
+     "count": 62,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-library.md"
+    },
+    {
+     "path": "analyses/town-budget-assistance.md",
+     "title": "Assistance: what the town votes for it",
+     "stars": 3,
+     "what": "One of the twelve departments in the omnibus budget, with every budget line the town prints beneath it for FY2023, FY2024 and FY2025, the lines reconciled against the department total the page prints, and the lines that moved most between the first year and the last. Generated by scripts/build_town_budgets.py.",
+     "kind": "Notes",
+     "bytes": 2256,
+     "url": "/docs/analyses/town-budget-assistance.md",
+     "count": 51,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/town-budget-assistance.md"
+    },
+    {
+     "path": "data/org-chart.csv",
+     "title": "Who held which role, in every department, board and school",
+     "stars": 2,
+     "what": "One row per person per role per year, assembled from four readings of the annual reports: the officials listing for boards and appointed posts, the Police and Fire rosters, the four schools’ rosters, and the departments that name their staff in prose. `status` keeps PEOPLE and POSTS apart — `filled` is a named person, `vacant` is a seat the town prints as empty, and `post` is an establishment position a department states without ever saying who fills it, which is how the DPW and the Assessing office publish. Building it was a test of the data model rather than a presentation of it, and it found seven classes of defect nothing that COUNTS things had: a listing footnote read as a post, sub-headings promoted to bodies, and one post under four spellings. Rendered at /org-charts.",
+     "kind": "Data",
+     "bytes": 894654,
+     "url": "/docs/data/org-chart.csv",
+     "count": 6815,
+     "unit": "rows",
+     "textUrl": "/docs/data/org-chart.csv"
+    },
+    {
+     "path": "data/gross-wages.csv",
+     "title": "The town’s wage list, name by name — AN INCOMPLETE READ",
+     "stars": 2,
+     "what": "Every name and amount the annual report’s `Town & School Employee Gross Wages` list prints, for the years it reads. NOTHING ON THE SITE USES IT AND nothing should until it reads in full: four years come back near-complete (FY2017, FY2020, FY2021, FY2025) and six read badly or not at all, and the list is set in two columns whose second column loses its given names, so a third to a half of the entries cannot be matched to a person. A department total built on it would rank the scan rather than the payroll. TJ: *“if we dont have the data, we shouldn’t show partial data. that may be misleading”* — so it is held here as working material, and the two things it would answer are registered in money-gaps.csv instead.",
+     "kind": "Data",
+     "bytes": 233852,
+     "url": "/docs/data/gross-wages.csv",
+     "count": 2866,
+     "unit": "rows",
+     "textUrl": "/docs/data/gross-wages.csv"
+    },
+    {
+     "path": "data/town-personnel.csv",
+     "title": "Every town post and who held it, FY2022 to FY2025",
+     "stars": 2,
+     "what": "Read out of the ELECTED OFFICIALS and APPOINTED OFFICIALS listing in each annual report: every board and appointed post, its holders and their term-expiry years. Split the town’s own way — elected board seat, appointed board seat, appointed officer — from the section header and from whether the post states a membership. `size_check` splits the rows three ways against the size each heading states, and nothing may be counted without splitting on it.",
+     "kind": "Data",
+     "bytes": 211413,
+     "url": "/docs/data/town-personnel.csv",
+     "count": 2118,
+     "unit": "rows",
+     "textUrl": "/docs/data/town-personnel.csv"
     },
     {
      "path": "data/town-meeting-votes.csv",
@@ -1684,16 +1972,100 @@
      "textUrl": "/docs/data/town-meeting-votes.csv"
     },
     {
+     "path": "data/tenure.csv",
+     "title": "How long each named person stayed, by body and year",
+     "stars": 2,
+     "what": "One row per person per body: the first and last year their name appears, how many years the BODY published in between, the years inside that span it published nothing, and whether they are CENSORED at either edge of the archive. Half of them are: somebody in a body’s first published year began before FY2011 and nothing here can say when, and somebody in its last is still there as far as this can see — so their tenure is a LOWER BOUND, not a length. Identity is surname plus first initial within one body, which merges `Josh`/`Joshua Tocci` and `Steve`/`Stephen McKenna`; the 79 pairs that choice joins are printed on every run and are nicknames rather than collisions.",
+     "kind": "Data",
+     "bytes": 164085,
+     "url": "/docs/data/tenure.csv",
+     "count": 1903,
+     "unit": "rows",
+     "textUrl": "/docs/data/tenure.csv"
+    },
+    {
+     "path": "data/department-rosters.csv",
+     "title": "The Police and Fire rosters, by name, as the town prints them",
+     "stars": 2,
+     "what": "Both departments list every officer and firefighter by rank and assignment in every annual report. Read from the WORD geometry because both are set in two columns. The Fire Department also states its strength in a sentence, so the book gives the same quantity twice and `roster_check` records whether the two agree — in most years they do not, and the difference is published rather than averaged away.",
+     "kind": "Data",
+     "bytes": 96226,
+     "url": "/docs/data/department-rosters.csv",
+     "count": 894,
+     "unit": "rows",
+     "textUrl": "/docs/data/department-rosters.csv"
+    },
+    {
+     "path": "data/report-index.csv",
+     "title": "Every department the town lists, and where its report is",
+     "stars": 2,
+     "what": "The CONTENTS PAGE of each annual report, read as data: one row per department per year, with the pages its report occupies — or the town’s own words, `No Report Submitted`, where there is none. This is the town’s department list rather than ours, which is why Facilities is on it; every list in this project before it was typed from memory. The page numbers are PRINTED page numbers and the offset to the PDF differs per year, so it is measured from the numbers each book prints at its own feet.",
+     "kind": "Data",
+     "bytes": 67405,
+     "url": "/docs/data/report-index.csv",
+     "count": 652,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-index.csv"
+    },
+    {
+     "path": "data/capital-plans.csv",
+     "title": "What the Capital Planning Committee asked for, ranked, FY2015-FY2023",
+     "stars": 2,
+     "what": "The Committee’s own ranked recommendation, which EXTENDS `capital-plan-fy27.csv` back nine years. A different table from `report-capital-projects.csv`, which is the fund balance schedule. Every year’s layout differs, so no column is named by position and none by heading: THE COST COLUMN IS THE ONE THAT FOOTS TO THE TOTAL THE PAGE PRINTS. 201 of 203 rows checked. FY2016 prints two totals — the Committee’s $780,975 for twelve projects and the Town Manager’s $619,475 for the first ten — and this holds the Committee list, so what was ASKED and what was FUNDED stay separate quantities.",
+     "kind": "Data",
+     "bytes": 57984,
+     "url": "/docs/data/capital-plans.csv",
+     "count": 201,
+     "unit": "rows",
+     "textUrl": "/docs/data/capital-plans.csv"
+    },
+    {
+     "path": "data/staffing-by-section.csv",
+     "title": "What each department says about its own staff, on its own pages",
+     "stars": 2,
+     "what": "For every department-year in `report-index.csv`, its own pages read for a headcount in any of the six forms the town uses. Where there is no number the row carries a REASON — `mentions staff, states no number` or `no mention of staff on its own pages` — because those are different problems and a blank cannot tell them apart.",
+     "kind": "Data",
+     "bytes": 54653,
+     "url": "/docs/data/staffing-by-section.csv",
+     "count": 401,
+     "unit": "rows",
+     "textUrl": "/docs/data/staffing-by-section.csv"
+    },
+    {
      "path": "analyses/fy26-closeout.md",
      "title": "FY26, as the books stood in June",
      "stars": 2,
      "what": "The first account-level ledger this project has held, read line by line. The school department was $482,101 under budget at period 12 — the small remainder of $1,683,534 unspent across 160 accounts against $1,201,433 overspent across 56. Carries the kindergarten paraprofessional question: the FY26 approved budget published a −100% cut to that line, $99,064 was spent on it anyway with no appropriation and no transfer, and three readings fit the record equally well. Period 12 is NOT the year-end close, so nothing in it is a surplus. Every figure is recomputed by scripts/verify_fy26_closeout.py; a PDF is published beside it.",
      "kind": "Notes",
-     "bytes": 51989,
+     "bytes": 51858,
      "url": "/docs/analyses/fy26-closeout.md",
-     "count": 1021,
+     "count": 1019,
      "unit": "lines",
      "textUrl": "/docs/analyses/fy26-closeout.md"
+    },
+    {
+     "path": "data/department-staffing.csv",
+     "title": "What each town department says about its own staffing, verbatim",
+     "stars": 2,
+     "what": "Departments describe their staffing in the PROSE of their annual-report sections — no heading names it in any year, which is why it went unread. The sentence is stored as printed because that is the source; counts are parsed into their own columns only where the form is unambiguous, and a statement that cannot be counted still gets a row with `parsed=no`. The forms do not agree with each other — a count and a range from the Fire Department, an establishment post by post from the DPW, a list of names from the Building Department — so `measure` says which kind each row is and nothing may be summed across kinds.",
+     "kind": "Data",
+     "bytes": 43731,
+     "url": "/docs/data/department-staffing.csv",
+     "count": 102,
+     "unit": "rows",
+     "textUrl": "/docs/data/department-staffing.csv"
+    },
+    {
+     "path": "data/tax-collection.csv",
+     "title": "The same Collector’s table, for the years read off a TEXT LAYER",
+     "stars": 2,
+     "what": "The other half of `receivables.csv` and deliberately not a rival to it: it skips at runtime every year that file publishes, so the two partition the archive and together nine of fifteen years tie to the town’s own printed GRAND TOTAL in all eight columns. WHAT MADE THESE YEARS READABLE IS A SECOND INSTRUMENT, not a better parser — FY2014, FY2015 and FY2025 carry a real text layer, exact to the cent, and FY2014 is drawn sideways with no `/Rotate` so the rotation had to be measured. FY2025’s OCR returns 10 figures off a page holding 194. Every year read off a text layer ties; no year read off OCR does.",
+     "kind": "Data",
+     "bytes": 42015,
+     "url": "/docs/data/tax-collection.csv",
+     "count": 250,
+     "unit": "rows",
+     "textUrl": "/docs/data/tax-collection.csv"
     },
     {
      "path": "analyses/athletics.md",
@@ -1701,11 +2073,23 @@
      "stars": 2,
      "what": "The one program where both sides of the money are visible, and therefore a test case for the whole budget: how far is an appropriation from what a thing costs? Very far. The district published athletics against the revolving fund once, for FY19, and in every year that document reports as actual the fund paid more of athletic transportation than the town did. Also what an \"actual\" on this line really is — in the one ledger view we have, a purchase order with nothing yet paid. Verify with scripts/verify_athletics.py.",
      "kind": "Notes",
-     "bytes": 42124,
+     "bytes": 41894,
      "url": "/docs/analyses/athletics.md",
-     "count": 747,
+     "count": 744,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics.md"
+    },
+    {
+     "path": "data/staffing-coverage.csv",
+     "title": "Where a department publishes and we still have no number",
+     "stars": 2,
+     "what": "The audit of the two readers above, one row per department per year. Every cell that is not a number is a to-do or an explanation, never a finding about the town. Rendered as a grid in notes/generated/STAFFING-COVERAGE.md.",
+     "kind": "Data",
+     "bytes": 35893,
+     "url": "/docs/data/staffing-coverage.csv",
+     "count": 600,
+     "unit": "rows",
+     "textUrl": "/docs/data/staffing-coverage.csv"
     },
     {
      "path": "analyses/budget-vs-actual.md",
@@ -1713,23 +2097,11 @@
      "stars": 2,
      "what": "Did what the town budgeted match what it spent? Written for two readers — plain terms and the evidence, side by side. Deliberately separate from the app’s projection, and it says why. Unfinished: it names what it cannot see without the town’s accounting records.",
      "kind": "Notes",
-     "bytes": 34387,
+     "bytes": 34227,
      "url": "/docs/analyses/budget-vs-actual.md",
-     "count": 713,
+     "count": 711,
      "unit": "lines",
      "textUrl": "/docs/analyses/budget-vs-actual.md"
-    },
-    {
-     "path": "analyses/fy26-closeout-town.md",
-     "title": "FY26 on the town side, as the books stood in June",
-     "stars": 2,
-     "what": "The same account-level ledger read for the other 67 departments. Snow removal cost $1,038,092 against an appropriation of $355,571 — 292% — while the town’s $185,000 Reserve Fund went entirely unused. $3.3M left the operating budget for capital and stabilization. And $1,262,376 of school retiree health insurance sits in a town department, invisible in the school budget, which is part of why DESE’s all-funds figure exceeds the appropriation. The town overspends on 18 of 376 accounts where the schools overspend on 57 of 259 — a fact with four explanations and no way here to choose between them. Period 12, so nothing in it is a surplus. Verified by scripts/verify_fy26_closeout_town.py.",
-     "kind": "Notes",
-     "bytes": 25399,
-     "url": "/docs/analyses/fy26-closeout-town.md",
-     "count": 537,
-     "unit": "lines",
-     "textUrl": "/docs/analyses/fy26-closeout-town.md"
     },
     {
      "path": "analyses/sped-and-funds.md",
@@ -1744,6 +2116,66 @@
      "textUrl": "/docs/analyses/sped-and-funds.md"
     },
     {
+     "path": "analyses/fy26-closeout-town.md",
+     "title": "FY26 on the town side, as the books stood in June",
+     "stars": 2,
+     "what": "The same account-level ledger read for the other 67 departments. Snow removal cost $1,038,092 against an appropriation of $355,571 — 292% — while the town’s $185,000 Reserve Fund went entirely unused. $3.3M left the operating budget for capital and stabilization. And $1,262,376 of school retiree health insurance sits in a town department, invisible in the school budget, which is part of why DESE’s all-funds figure exceeds the appropriation. The town overspends on 18 of 376 accounts where the schools overspend on 57 of 259 — a fact with four explanations and no way here to choose between them. Period 12, so nothing in it is a surplus. Verified by scripts/verify_fy26_closeout_town.py.",
+     "kind": "Notes",
+     "bytes": 25259,
+     "url": "/docs/analyses/fy26-closeout-town.md",
+     "count": 535,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/fy26-closeout-town.md"
+    },
+    {
+     "path": "data/turnover.csv",
+     "title": "How many names stop appearing, by body and year",
+     "stars": 2,
+     "what": "One row per body per published year: the people in it, how many of them are absent from the NEXT year the body published, and the rate. MEASURED ACROSS PUBLISHED YEARS, never calendar years, because 27 of 86 bodies skip a year inside their own span and a naive count reads a missed report as the whole staff leaving and returning. A NAME LEAVING A ROSTER IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut post, and not a separation rate.",
+     "kind": "Data",
+     "bytes": 23504,
+     "url": "/docs/data/turnover.csv",
+     "count": 449,
+     "unit": "rows",
+     "textUrl": "/docs/data/turnover.csv"
+    },
+    {
+     "path": "data/board-chairs.csv",
+     "title": "Who chaired each board, from the body’s own report",
+     "stars": 2,
+     "what": "The officials listing marks its chairs with asterisks under a footnote reading `** denotes chairperson`, and stops printing it after FY2016 — which left 274 bodies in the org chart with members and nobody at the top. The chairs did not stop being published; they moved into the reports: `Richard Letarte, Chairman`, `Chairperson Deb Lincoln`. 200 mentions across fourteen years and 46 bodies, attributed by the town’s own contents page. A CHAIR NAMED IN A REPORT IS A CHAIR THE REPORT NAMES: it is not a term of office and it is undated within the year, so a body that changed chair mid-year keeps two rows rather than being resolved. 53 bodies — the School Committee, the Library Trustees, the Board of Health — name no chair anywhere, which is registered as a gap rather than filled in.",
+     "kind": "Data",
+     "bytes": 22600,
+     "url": "/docs/data/board-chairs.csv",
+     "count": 200,
+     "unit": "rows",
+     "textUrl": "/docs/data/board-chairs.csv"
+    },
+    {
+     "path": "data/staff-directory.csv",
+     "title": "Who works for the town TODAY, off its own staff directory",
+     "stars": 2,
+     "what": "147 people across 27 departments, each with the title the town prints beside their name, from 28 pages at `/m/directory/department?did=N`. THE ONLY PEOPLE SOURCE HERE NOT READ OUT OF AN ANNUAL REPORT, which is why it was fetched: a department that files no report is invisible to both of the others and they share the blind spot. Four departments appear here and in neither — Accounting, Human Resources, Facilities/Grounds/Recreation and Public Access Cable. IT IS A CONTACT LIST, NOT AN ORG CHART: no rank order, no reporting line and NO DATE, so it is a snapshot rather than a series and a later fetch will silently differ.",
+     "kind": "Data",
+     "bytes": 19824,
+     "url": "/docs/data/staff-directory.csv",
+     "count": 148,
+     "unit": "rows",
+     "textUrl": "/docs/data/staff-directory.csv"
+    },
+    {
+     "path": "data/report-signatures.csv",
+     "title": "Who signed each department’s report — the head of every body, by year",
+     "stars": 2,
+     "what": "The block that ends a department’s report: `Respectfully submitted, Sheila M. Harrity, Ed.D., Superintendent`. 184 of them across fourteen years, each a person, a title and a page. It is the ONLY place the town names the person in charge of a body that publishes no roster — the Library, the Town Clerk, Conservation, the Sewer Commission — and it exists because a claim that the district published no Superintendent after FY2012 was challenged and turned out to be about our extractor rather than about the town. INCOMPLETE: 104 rows carry the department, from the contents page; 80 do not, and those are attributable rather than absent (see A11 in notes/QUEUE.md). A TRAP: `Thomas R. Browne, Superintendent-Director` signs the Montachusett Regional report inside Lunenburg’s book and is a different district’s superintendent.",
+     "kind": "Data",
+     "bytes": 17982,
+     "url": "/docs/data/report-signatures.csv",
+     "count": 182,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-signatures.csv"
+    },
+    {
      "path": "data/board-goals.csv",
      "title": "What each board adopted as its goals, and when",
      "stars": 2,
@@ -1754,6 +2186,18 @@
      "count": 30,
      "unit": "rows",
      "textUrl": "/docs/data/board-goals.csv"
+    },
+    {
+     "path": "data/pipeline-state.csv",
+     "title": "Where every fiscal year stands in the ingestion pipeline",
+     "stars": 2,
+     "what": "One row per fiscal year and table family, and a step from 1 to 7: the PDF held, OCR run, text present, tables located, extracted to CSV, loaded to the database, used in a report. Every cell is derived from the artefact it describes, so it cannot go stale the way a hand-kept list does. It exists because the same question — which years do we have for this fund — was answered three different ways from three different artefacts in one afternoon, each true about the artefact and false about the archive.",
+     "kind": "Data",
+     "bytes": 14703,
+     "url": "/docs/data/pipeline-state.csv",
+     "count": 225,
+     "unit": "rows",
+     "textUrl": "/docs/data/pipeline-state.csv"
     },
     {
      "path": "data/threads.csv",
@@ -1768,6 +2212,18 @@
      "textUrl": "/docs/data/threads.csv"
     },
     {
+     "path": "data/report-filing.csv",
+     "title": "Which bodies file an annual report, and which say they did not",
+     "stars": 2,
+     "what": "One row per body: the years it filed, and the years the contents page printed `No Report Submitted` beside its name in the town’s own words. 612 filings and 40 of those refusals across fourteen books. THE THIRD STATE IS THE ONE THAT MATTERS: a body that is not on the contents page at all has refused nothing, and four real departments are on none in any year, so reading their silence as a refusal would be a statement about them rather than about the document.",
+     "kind": "Data",
+     "bytes": 11127,
+     "url": "/docs/data/report-filing.csv",
+     "count": 104,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-filing.csv"
+    },
+    {
      "path": "analyses/peer-districts.md",
      "title": "What other districts did",
      "stars": 2,
@@ -1780,6 +2236,30 @@
      "textUrl": "/docs/analyses/peer-districts.md"
     },
     {
+     "path": "data/PROVENANCE-debt-tables.md",
+     "title": "Where both debt tables came from, and every page that refused",
+     "stars": 2,
+     "what": "Written by us, and generated, so its counts cannot drift. It lists the refusals rather than only the successes — including the one that matters most: FY2017 page 42 reads a currency sign as a `3` in two figures on one column, both gain exactly $30,000,000, and `principal + interest = TOTAL DEBT` then closes PERFECTLY at twenty times every other year on the page. An identity cannot see a compensating error, so the extractor refuses a figure more than eight times the median of its own row and calls that a guard rather than a proof.",
+     "kind": "Notes",
+     "bytes": 7702,
+     "url": "/docs/data/PROVENANCE-debt-tables.md",
+     "count": 117,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-debt-tables.md"
+    },
+    {
+     "path": "data/roster-completeness.csv",
+     "title": "How many of a body’s people the org chart holds, against the town’s own count",
+     "stars": 2,
+     "what": "A shortfall is only a fact when something the town SAID supplies the denominator, so every row carries its basis and the sentence it was read from: a stated headcount (the Library, FY2019 — *“we only employ ten total”*), a stated career-and-on-call strength (the Fire Department, low end always), or an establishment of posts with no names (the DPW, the Assessing office). The gross-wages list would be the best denominator here and is EXCLUDED: its department column is read for 156 rows of 2,866, and against it the Fire Department shows five paid and forty-five named — a statement about our extractor, not about the town.",
+     "kind": "Data",
+     "bytes": 6125,
+     "url": "/docs/data/roster-completeness.csv",
+     "count": 38,
+     "unit": "rows",
+     "textUrl": "/docs/data/roster-completeness.csv"
+    },
+    {
      "path": "analyses/connecting-the-budget.md",
      "title": "What connects the school budget to the Town’s books, and what does not",
      "stars": 2,
@@ -1790,6 +2270,54 @@
      "count": 104,
      "unit": "lines",
      "textUrl": "/docs/analyses/connecting-the-budget.md"
+    },
+    {
+     "path": "data/receivables-reconciliation.csv",
+     "title": "Every year of that table, published or refused, with the reason",
+     "stars": 2,
+     "what": "Written by us. Twelve readings: six tie to their printed GRAND TOTAL on all eight columns, and six are refused with the instrument failure named — a header returned as one box, a scan that stops before BALANCES, a dropped BALANCE FORWARD column. Each is our reading failing, not the town declining to print: all of them publish the table and all of them print a total. IT ALSO CARRIES THE ONLY CHECK HERE THAT TESTS A YEAR AGAINST SOMETHING OUTSIDE ITSELF — articulation, where one year’s closing balance must be the next year’s opening. Every consecutive pair ties to the cent except one: FY2018 opens $13,300.00 above where FY2017 closed, in two printed grand totals in two different books. Recorded, not explained.",
+     "kind": "Data",
+     "bytes": 4512,
+     "url": "/docs/data/receivables-reconciliation.csv",
+     "count": 12,
+     "unit": "rows",
+     "textUrl": "/docs/data/receivables-reconciliation.csv"
+    },
+    {
+     "path": "data/debt-repayment.csv",
+     "title": "What falls due in each future year, out to FY2047",
+     "stars": 2,
+     "what": "THE OTHER HALF OF THE SAME QUANTITY, AND KEPT APART FROM IT. Outstanding debt is principal owed on a date; this is debt service falling due in a year — a different stage, and flattening the two would be rule 1’s error in a new coat. Only the GRAND TOTAL block publishes: twenty-odd narrow columns of small type come back from the scanner as `52782335 52547440 52531098`, so no individual bond issue can be footed. And the overlap between reports is MOVEMENT, not disagreement: FY2011 shows $155,945 due in FY2032 and FY2021 shows $2,303,500, because two school bonds were issued in between.",
+     "kind": "Data",
+     "bytes": 3780,
+     "url": "/docs/data/debt-repayment.csv",
+     "count": 37,
+     "unit": "rows",
+     "textUrl": "/docs/data/debt-repayment.csv"
+    },
+    {
+     "path": "data/tax-collection-unreconciled.csv",
+     "title": "The thirteen years it will not publish, and why each refuses",
+     "stars": 2,
+     "what": "Written by us, one line of reason each, and the reasons are not interchangeable. Six are refused because another extractor already proved them. FY2016 and FY2019 are CROPPED rather than faint — the BALANCES column is off the right edge of every page of FY2019 — which is a different remedy from the OCR losses, and asking the Town for an uncropped copy is the one that would work. Three more are torn by non-linear scan distortion at the foot of the page, exactly where the GRAND TOTAL row is, so the control that would prove them is the thing the scan destroyed.",
+     "kind": "Data",
+     "bytes": 3436,
+     "url": "/docs/data/tax-collection-unreconciled.csv",
+     "count": 13,
+     "unit": "rows",
+     "textUrl": "/docs/data/tax-collection-unreconciled.csv"
+    },
+    {
+     "path": "data/table-corrections.csv",
+     "title": "Cells read off the page image, and cells checked against it",
+     "stars": 2,
+     "what": "Two kinds of row. `read` says OCR got a cell wrong and gives what the page prints, with the page that was looked at. `attested` says OCR got it RIGHT and the DOCUMENT is what does not add up — FY2023 prints a General Government total 80 cents under its own lines — so nobody re-reads a page hunting a fault that was never there. A row matching nothing fails the extractor.",
+     "kind": "Data",
+     "bytes": 3399,
+     "url": "/docs/data/table-corrections.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/table-corrections.csv"
     },
     {
      "path": "data/pec-history.csv",
@@ -1816,6 +2344,110 @@
      "textUrl": "/docs/data/threads-declined.csv"
     },
     {
+     "path": "data/document-defects.csv",
+     "title": "Where a document the town published is itself incomplete",
+     "stars": 2,
+     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
+     "kind": "Data",
+     "bytes": 1845,
+     "url": "/docs/data/document-defects.csv",
+     "count": 3,
+     "unit": "rows",
+     "textUrl": "/docs/data/document-defects.csv"
+    },
+    {
+     "path": "data/extraction-blocked.csv",
+     "title": "Extractions that ran, refused to publish, and why",
+     "stars": 2,
+     "what": "When a column will not foot to the total its own page prints, the reading is refused — and this is where the refusal is kept, with the amount it missed by. Without it a year read-and-refused looked exactly like a year nobody had opened, and five of them were being read and dropped on every run with the diagnosis printed to a terminal nobody was watching. A blocked year with a stated residual is a finite piece of work; a blank is a mystery.",
+     "kind": "Data",
+     "bytes": 272,
+     "url": "/docs/data/extraction-blocked.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/extraction-blocked.csv"
+    },
+    {
+     "path": "analyses/charts/town-budgets-town.svg",
+     "title": "What the town votes for, as a town",
+     "stars": 1,
+     "what": "The budget report’s SIGNATURE image: each voted department drawn as a thing it buys — a schoolhouse, a police car, a dump truck — one icon for every million dollars. Repeated rather than scaled, because nobody can judge area. It makes the RANGE legible in a way a pie cannot: the largest department is 313 times the smallest, so four of the twelve are drawn as a fraction of a single icon.",
+     "kind": "SVG",
+     "bytes": 107943,
+     "url": "/docs/analyses/charts/town-budgets-town.svg",
+     "textUrl": "/docs/analyses/charts/town-budgets-town.svg"
+    },
+    {
+     "path": "analyses/charts/town-personnel-crowd.svg",
+     "title": "Everyone the town publishes a count for",
+     "stars": 1,
+     "what": "This report’s SIGNATURE image, and the one a reader remembers: every department that publishes a headcount drawn as rows of figures, one figure for every ten people. Repeated rather than scaled, because nobody can judge area — twenty-five school figures beside four fire figures is a ratio anyone can count. A department short of a whole unit is drawn as a PART figure rather than rounded, so the three-person Assessing office is neither inflated to ten nor erased.",
+     "kind": "SVG",
+     "bytes": 82464,
+     "url": "/docs/analyses/charts/town-personnel-crowd.svg",
+     "textUrl": "/docs/analyses/charts/town-personnel-crowd.svg"
+    },
+    {
+     "path": "analyses/charts/stabilization-each.svg",
+     "title": "The stabilization funds, each on its own scale",
+     "stars": 1,
+     "what": "The same three funds as small multiples on a shared time axis. Each panel is stretched to its own range and prints that range, because against a $2.6M axis the Zoning Incentive fund is a flat line and its flatness is a finding rather than a rendering artefact.",
+     "kind": "SVG",
+     "bytes": 12732,
+     "url": "/docs/analyses/charts/stabilization-each.svg",
+     "textUrl": "/docs/analyses/charts/stabilization-each.svg"
+    },
+    {
+     "path": "analyses/charts/town-personnel-people.svg",
+     "title": "How many people each part of the town employs",
+     "stars": 1,
+     "what": "The same data the ranked bars used to carry, drawn in figures: one row per department, one figure for every ten people, a PART figure where a department does not reach ten. TJ: the icon one is more interesting than the basic bar chart and is identical data wise.",
+     "kind": "SVG",
+     "bytes": 11276,
+     "url": "/docs/analyses/charts/town-personnel-people.svg",
+     "textUrl": "/docs/analyses/charts/town-personnel-people.svg"
+    },
+    {
+     "path": "analyses/charts/stabilization-all.svg",
+     "title": "The stabilization funds compared, on one scale",
+     "stars": 1,
+     "what": "Ending cash for the three stabilization funds with a long enough proven series, at every year this archive has checked against the annual report’s own arithmetic. A dashed segment spans years not yet proven, so the line never asserts a path through a year nobody has read.",
+     "kind": "SVG",
+     "bytes": 10225,
+     "url": "/docs/analyses/charts/stabilization-all.svg",
+     "textUrl": "/docs/analyses/charts/stabilization-all.svg"
+    },
+    {
+     "path": "analyses/charts/town-personnel-all.svg",
+     "title": "Every department that publishes a headcount, on one axis",
+     "stars": 1,
+     "what": "The companion to the small multiples, and the one that answers SIZE rather than movement: every department on one people axis, so the schools dwarf the rest the way they do in the budget. Spaced by YEAR and broken at any year a department published no figure, because these series have holes in them and an unbroken line would draw a record the town never printed.",
+     "kind": "SVG",
+     "bytes": 9634,
+     "url": "/docs/analyses/charts/town-personnel-all.svg",
+     "textUrl": "/docs/analyses/charts/town-personnel-all.svg"
+    },
+    {
+     "path": "analyses/charts/town-personnel-counts.svg",
+     "title": "Headcount over time, where the town publishes one",
+     "stars": 1,
+     "what": "One small panel per department with two or more published years, each on its own scale and spaced by YEAR so a year the department printed no figure — the Council on Aging in FY2012, FY2013 and FY2021 — shows as the gap it is. A hollow point is a year dropped as a misreading and is never drawn through.",
+     "kind": "SVG",
+     "bytes": 9446,
+     "url": "/docs/analyses/charts/town-personnel-counts.svg",
+     "textUrl": "/docs/analyses/charts/town-personnel-counts.svg"
+    },
+    {
+     "path": "analyses/charts/town-budgets-trends.svg",
+     "title": "Every department, year by year",
+     "stars": 1,
+     "what": "Twelve small panels, one per department, each on its OWN vertical scale so the shape of a $80,000 line is as legible as a $25M one. Eleven rise; only maturing debt falls.",
+     "kind": "SVG",
+     "bytes": 9112,
+     "url": "/docs/analyses/charts/town-budgets-trends.svg",
+     "textUrl": "/docs/analyses/charts/town-budgets-trends.svg"
+    },
+    {
      "path": "analyses/charts/fy26-school-variance.svg",
      "title": "FY26 school department: the biggest misses, both directions",
      "stars": 1,
@@ -1834,6 +2466,66 @@
      "bytes": 6483,
      "url": "/docs/analyses/charts/fy26-town-variance.svg",
      "textUrl": "/docs/analyses/charts/fy26-town-variance.svg"
+    },
+    {
+     "path": "analyses/charts/town-budgets-all.svg",
+     "title": "All twelve departments on one axis",
+     "stars": 1,
+     "what": "The same figures as the small multiples, on ONE dollar scale, which is the point: the school line is most of the budget and ten departments share the floor. Growth is read on separate scales; size is read here.",
+     "kind": "SVG",
+     "bytes": 6023,
+     "url": "/docs/analyses/charts/town-budgets-all.svg",
+     "textUrl": "/docs/analyses/charts/town-budgets-all.svg"
+    },
+    {
+     "path": "analyses/charts/town-budgets-share.svg",
+     "title": "Who gets the money: the voted budget split twelve ways",
+     "stars": 1,
+     "what": "A pie of one fiscal year’s omnibus budget by department, ranked, every share also printed in the legend and in the table beneath. It answers the question a resident opens the page with — which department is biggest — which the pull chart deliberately does not.",
+     "kind": "SVG",
+     "bytes": 5597,
+     "url": "/docs/analyses/charts/town-budgets-share.svg",
+     "textUrl": "/docs/analyses/charts/town-budgets-share.svg"
+    },
+    {
+     "path": "analyses/charts/town-personnel-over-time.svg",
+     "title": "Posts by kind, ten years — three nearly flat lines",
+     "stars": 1,
+     "what": "Elected seats, appointed seats and officers over FY2016-FY2025. The shape IS the finding: the establishment barely changes while about a third of the people in it turn over every year.",
+     "kind": "SVG",
+     "bytes": 4940,
+     "url": "/docs/analyses/charts/town-personnel-over-time.svg",
+     "textUrl": "/docs/analyses/charts/town-personnel-over-time.svg"
+    },
+    {
+     "path": "analyses/charts/board-composition-where.svg",
+     "title": "Where the town’s seats are, by body",
+     "stars": 1,
+     "what": "A pie of every filled post, ten largest named and the long tail grouped. It found a defect the table had hidden: a body called `MILES` with 27 members, which was the town PROFILE page read as a roster.",
+     "kind": "SVG",
+     "bytes": 4899,
+     "url": "/docs/analyses/charts/board-composition-where.svg",
+     "textUrl": "/docs/analyses/charts/board-composition-where.svg"
+    },
+    {
+     "path": "analyses/charts/town-personnel-where.svg",
+     "title": "Where the town’s seats are, by body",
+     "stars": 1,
+     "what": "A pie of every filled post in the listing, ten largest named and the long tail grouped. It found a defect the table had hidden: a body called `MILES` with 27 members, which was the town PROFILE page — `ROAD MILES- ABOUT 100` read as a heading and the prose beneath it read as people.",
+     "kind": "SVG",
+     "bytes": 4899,
+     "url": "/docs/analyses/charts/town-personnel-where.svg",
+     "textUrl": "/docs/analyses/charts/town-personnel-where.svg"
+    },
+    {
+     "path": "analyses/charts/stabilization-option-split.svg",
+     "title": "The gap each year, and what each stabilization option covers of it",
+     "stars": 1,
+     "what": "One stacked bar per fiscal year, the whole bar that year’s level-service gap, split into the part the redirected deposits cover, the part the reserve covers, and the part still short. Both levers are pulled at once, which is the most favourable case there is; from FY31 the bar is almost entirely the part still short.",
+     "kind": "SVG",
+     "bytes": 4808,
+     "url": "/docs/analyses/charts/stabilization-option-split.svg",
+     "textUrl": "/docs/analyses/charts/stabilization-option-split.svg"
     },
     {
      "path": "analyses/charts/fy26-town-spend.svg",
@@ -1856,6 +2548,106 @@
      "textUrl": "/docs/analyses/charts/fy26-school-spend.svg"
     },
     {
+     "path": "analyses/charts/stabilization-flows.svg",
+     "title": "Money in and money out of the stabilization funds, by year",
+     "stars": 1,
+     "what": "A diverging bar: deposits above the zero line, withdrawals below, one axis. It answers how OFTEN these funds are drawn on and for how much — eight withdrawals in thirteen years, none of them large beside the deposits. The balances are deliberately NOT on it: they are the same unit and thirty times the size, so showing them here would need a second y-axis.",
+     "kind": "SVG",
+     "bytes": 4499,
+     "url": "/docs/analyses/charts/stabilization-flows.svg",
+     "textUrl": "/docs/analyses/charts/stabilization-flows.svg"
+    },
+    {
+     "path": "analyses/charts/town-personnel-share.svg",
+     "title": "Who the town employs, where it publishes a count",
+     "stars": 1,
+     "what": "A pie at the head of the personnel report, the counterpart to the budget page’s. The whole is NOT the town: it is the people the town publishes a count for, and the subtitle says so, because a pie whose whole is unnamed is the shape that misleads.",
+     "kind": "SVG",
+     "bytes": 4332,
+     "url": "/docs/analyses/charts/town-personnel-share.svg",
+     "textUrl": "/docs/analyses/charts/town-personnel-share.svg"
+    },
+    {
+     "path": "analyses/charts/town-budgets-pull.svg",
+     "title": "Which town departments move the budget total",
+     "stars": 1,
+     "what": "Diverging bars, one per department, in DOLLARS A YEAR above what the 2.5% levy cap would carry — the first version drew an index and called it points of total growth, which claimed an additivity it never had. It is the only chart on the page that puts employee benefits above the schools, which is the finding — a chart of SIZE would put the schools on top and say nothing.",
+     "kind": "SVG",
+     "bytes": 4216,
+     "url": "/docs/analyses/charts/town-budgets-pull.svg",
+     "textUrl": "/docs/analyses/charts/town-budgets-pull.svg"
+    },
+    {
+     "path": "analyses/charts/town-budgets-rates.svg",
+     "title": "How fast each department grows, against the levy cap",
+     "stars": 1,
+     "what": "Compound annual change per department on one axis, with Proposition 2½ drawn on it. Ten of twelve bars extend past the cap. The cap limits the LEVY, not the budget — it is drawn because it is the line every board in this town argues against.",
+     "kind": "SVG",
+     "bytes": 4021,
+     "url": "/docs/analyses/charts/town-budgets-rates.svg",
+     "textUrl": "/docs/analyses/charts/town-budgets-rates.svg"
+    },
+    {
+     "path": "analyses/charts/town-budgets-total.svg",
+     "title": "What Town Meeting voted, every year from FY2012",
+     "stars": 1,
+     "what": "One column per fiscal year, from the GRAND TOTAL each annual report prints at the foot of its omnibus. The last column is amber because FY2026 is a total and nothing else: no department table is printed for it anywhere.",
+     "kind": "SVG",
+     "bytes": 3974,
+     "url": "/docs/analyses/charts/town-budgets-total.svg",
+     "textUrl": "/docs/analyses/charts/town-budgets-total.svg"
+    },
+    {
+     "path": "analyses/charts/stabilization-option-burndown.svg",
+     "title": "The stabilization reserve, drawn down against the school gap",
+     "stars": 1,
+     "what": "The general Stabilization Fund from its opening general-ledger balance to empty, one column a year, with each year’s draw printed under the year. It does not taper — it stops, and the years after it stops are the point of the chart rather than padding on the end of it.",
+     "kind": "SVG",
+     "bytes": 3950,
+     "url": "/docs/analyses/charts/stabilization-option-burndown.svg",
+     "textUrl": "/docs/analyses/charts/stabilization-option-burndown.svg"
+    },
+    {
+     "path": "analyses/charts/town-personnel-fire.svg",
+     "title": "The Fire Department grew and shrank at the same time",
+     "stars": 1,
+     "what": "Career firefighters as a line against the on-call roll as a BAND, because the town states it as a range — a line through the middle of `30-35` would be a number the town never printed. The two move in opposite directions, which no single figure shows.",
+     "kind": "SVG",
+     "bytes": 3495,
+     "url": "/docs/analyses/charts/town-personnel-fire.svg",
+     "textUrl": "/docs/analyses/charts/town-personnel-fire.svg"
+    },
+    {
+     "path": "analyses/charts/board-composition-fill.svg",
+     "title": "Are the chartered seats filled?",
+     "stars": 1,
+     "what": "Names printed against the seats each board’s charter creates, FY2020 to FY2025 — 107% to 87%. It replaced a chart of seat COUNTS over time, which TJ correctly objected to: a charter fixes the number, so a line that moves there is measuring our reading rather than the town. Above 100% is a mid-year replacement printed beside the person replaced.",
+     "kind": "SVG",
+     "bytes": 2859,
+     "url": "/docs/analyses/charts/board-composition-fill.svg",
+     "textUrl": "/docs/analyses/charts/board-composition-fill.svg"
+    },
+    {
+     "path": "analyses/charts/stabilization-holdings.svg",
+     "title": "The whole reserve, fund by fund, in proportion",
+     "stars": 1,
+     "what": "The stabilization report’s signature image: $9,061,421 across nine funds as one rectangle carved by balance, so the smallest fund is visibly a sliver. Colour carries the argument rather than decorating it — the one fund Town Meeting may spend on anything lawful is drawn apart from the eight restricted to the purpose their creating article named.",
+     "kind": "SVG",
+     "bytes": 2758,
+     "url": "/docs/analyses/charts/stabilization-holdings.svg",
+     "textUrl": "/docs/analyses/charts/stabilization-holdings.svg"
+    },
+    {
+     "path": "analyses/charts/stabilization-growth.svg",
+     "title": "How fast each stabilization fund moved, per year",
+     "stars": 1,
+     "what": "Per cent a year between each fund’s first and last PROVEN year, with that span printed on every bar. It is the movement of a balance and not a rate of return: these funds rise both when Town Meeting votes money in and when they earn interest, and this data cannot separate the two.",
+     "kind": "SVG",
+     "bytes": 2247,
+     "url": "/docs/analyses/charts/stabilization-growth.svg",
+     "textUrl": "/docs/analyses/charts/stabilization-growth.svg"
+    },
+    {
      "path": "analyses/charts/fy26-town-budget.svg",
      "title": "FY26 town: what happened to the budget",
      "stars": 1,
@@ -1874,6 +2666,40 @@
      "bytes": 1835,
      "url": "/docs/analyses/charts/fy26-school-budget.svg",
      "textUrl": "/docs/analyses/charts/fy26-school-budget.svg"
+    },
+    {
+     "path": "data/stabilization-unfooted.csv",
+     "title": "Stabilization figures printed on a page whose column does not foot",
+     "stars": 1,
+     "what": "The weakest readings this project publishes, kept in their own file so they cannot be mistaken for the rest. FY2021 lists Vehicle/Equipment and Zoning Incentive only on a Treasurer’s Cash page our scan broke, so the column cannot prove itself — and refusing the figures would say the town did not publish a number it did publish. Each row carries the full reconciliation: the residual, what accounts for it, what does not, and the proven neighbours the figure sits between. See notes/reference/UNFOOTED-READINGS.md.",
+     "kind": "Data",
+     "bytes": 1169,
+     "url": "/docs/data/stabilization-unfooted.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/stabilization-unfooted.csv"
+    },
+    {
+     "path": "data/capital-plans-refused.csv",
+     "title": "The capital-plan pages that would not read, and why each refused",
+     "stars": 1,
+     "what": "Written by us. Two pages: FY2013, whose table runs onto the next page, and FY2024 p87, where three of ten project rows print no cost in the OCR at all. Each carries the total the page states and the columns as printed, so the refusal is a reading somebody can pick up rather than a year that quietly is not there.",
+     "kind": "Data",
+     "bytes": 693,
+     "url": "/docs/data/capital-plans-refused.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/capital-plans-refused.csv"
+    },
+    {
+     "path": "data/valuation-refused.csv",
+     "title": "Valuation pages that would not read — currently none",
+     "stars": 1,
+     "what": "Written by us, and EMPTY ON PURPOSE. Every valuation page attempted was read; the file exists so that the next one that refuses has somewhere to be recorded, rather than becoming a year nobody notices is missing. A header with no rows is a claim that nothing refused; no file at all is no claim.",
+     "kind": "Data",
+     "bytes": 68,
+     "url": "/docs/data/valuation-refused.csv",
+     "textUrl": "/docs/data/valuation-refused.csv"
     }
    ]
   },
@@ -1902,9 +2728,9 @@
      "stars": 3,
      "what": "3,815 entries across 15 years, 7 schools and 100 pages. This BOUNDS the question of whether budgeted positions were filled; it does not settle it. A roster carries no FTE, so a 0.4 music teacher and a full-timer are one row each; no funding source, which is the question that actually matters; and it is a point in time, undated within the year. A count of names the town printed is a real quantity and it is not a staffing level.",
      "kind": "Data",
-     "bytes": 445869,
+     "bytes": 437706,
      "url": "/docs/data/staff-roster-entries.csv",
-     "count": 3815,
+     "count": 3751,
      "unit": "rows",
      "textUrl": "/docs/data/staff-roster-entries.csv"
     },
@@ -1919,6 +2745,18 @@
      "count": 1882,
      "unit": "rows",
      "textUrl": "/docs/data/special-revenue-read.csv"
+    },
+    {
+     "path": "data/annual-report-pages.csv",
+     "title": "Every financial page of every annual report, and what has read it",
+     "stars": 3,
+     "what": "418 pages across fifteen annual town reports that carry a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. 209 read, 195 unread, 14 whose OCR came out upside down and which are a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
+     "kind": "Data",
+     "bytes": 188404,
+     "url": "/docs/data/annual-report-pages.csv",
+     "count": 474,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-pages.csv"
     },
     {
      "path": "data/balance-sheet.csv",
@@ -1955,6 +2793,18 @@
      "count": 225,
      "unit": "rows",
      "textUrl": "/docs/data/dataset-provenance.csv"
+    },
+    {
+     "path": "data/treasurers-cash.csv",
+     "title": "What the town held in cash, by bank and by fund, every year",
+     "stars": 3,
+     "what": "The `Treasurer’s Cash as of 6/30` page that every annual town report prints: what the town holds and where, with the funds named. It carries `Bartholomew Stabilization Fund` — the GENERAL Stabilization Fund, which the trust-table pages omit entirely. Each page sets this year beside last year, so one report yields two fiscal years and every interior year is read twice from two documents. Every column is footed to the `Total Treasurer Cash` line the page prints and a column that does not tie is dropped rather than published. NOTE THE GRAIN: this is CASH HELD BY CUSTODIAN, not a fund balance — where it differs from trust-agency-balances.csv, the ledger is the fund and this is the cash. See scripts/extract_treasurers_cash.py.",
+     "kind": "Data",
+     "bytes": 59439,
+     "url": "/docs/data/treasurers-cash.csv",
+     "count": 502,
+     "unit": "rows",
+     "textUrl": "/docs/data/treasurers-cash.csv"
     },
     {
      "path": "analyses/questions.md",
@@ -2017,6 +2867,18 @@
      "textUrl": "/docs/analyses/what-you-can-ask.md"
     },
     {
+     "path": "data/trust-fund-balances.csv",
+     "title": "Every trust fund and its balance, from the annual report’s own listing",
+     "stars": 3,
+     "what": "The `Trust Fund Balance Detail` page that the FY2024 and FY2025 annual reports print: one line per account number with the fund balance beside it. It is the COMPLETE list, where the trust-table pages this archive spent weeks on cover only the funds held at other banks and omit the general Stabilization Fund entirely. Read only from pages carrying that heading, because shape alone is not enough — the other-banks table is also a grid of accounts and money and its leftmost column is the BEGINNING principal, which produced a figure $380 wrong before the heading was required. Every FY2025 balance is checked against the general ledger and the extract refuses to write unless the stabilization accounts tie; where another account disagrees that is recorded per row rather than suppressed. See scripts/extract_trust_balance_detail.py.",
+     "kind": "Data",
+     "bytes": 6846,
+     "url": "/docs/data/trust-fund-balances.csv",
+     "count": 58,
+     "unit": "rows",
+     "textUrl": "/docs/data/trust-fund-balances.csv"
+    },
+    {
      "path": "data/PROVENANCE-youtube-classification.md",
      "title": "What the video classification is, and what it is not",
      "stars": 3,
@@ -2029,6 +2891,18 @@
      "textUrl": "/docs/data/PROVENANCE-youtube-classification.md"
     },
     {
+     "path": "data/trust-agency-balances.csv",
+     "title": "Every trust and stabilization fund, as the accounting system prints it",
+     "stars": 3,
+     "what": "MUNIS’s own trust and agency report: account number, fund name, beginning balance, revenue, expenditure and remaining balance for 40 accounts, at 31 March 2026. Rule 13a — this is a printout from the books, where every other stabilization figure in this archive is read off a PHOTOGRAPH of a table in an annual report, and the two agree to the cent on all three funds that can be compared. Balances print as credits, so `held` carries the sign flipped and `beginning` keeps it as printed. Both subtotals the report prints are recomputed from the rows and the extract refuses to write unless they tie. See scripts/extract_trust_agency.py.",
+     "kind": "Data",
+     "bytes": 6485,
+     "url": "/docs/data/trust-agency-balances.csv",
+     "count": 40,
+     "unit": "rows",
+     "textUrl": "/docs/data/trust-agency-balances.csv"
+    },
+    {
      "path": "data/PROVENANCE-report-tables.md",
      "title": "What the twelve generic extracts are, and what may not be done with them",
      "stars": 3,
@@ -2039,6 +2913,18 @@
      "count": 107,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-report-tables.md"
+    },
+    {
+     "path": "data/stabilization-flows.csv",
+     "title": "Money taken back out of the stabilization funds, with the printed words",
+     "stars": 3,
+     "what": "Every withdrawal the annual town reports print. These are not in any table: a withdrawal is a clause inside a Town Meeting article about something else — the sewer enterprise budget, an omnibus transfer — written in prose, which is why reading the trust tables found two of them and reading the article text finds eleven. Every row keeps the SENTENCE it came from, because a figure read out of a scan by pattern is a weaker thing than one checked against an identity and nothing here should have to be taken on trust. `confidence` marks the three that cannot be totalled — a figure covering two funds at once, the same transaction printed in consecutive reports, and one deposit whose wording reads like a withdrawal. See scripts/extract_stabilization_flows.py.",
+     "kind": "Data",
+     "bytes": 5600,
+     "url": "/docs/data/stabilization-flows.csv",
+     "count": 11,
+     "unit": "rows",
+     "textUrl": "/docs/data/stabilization-flows.csv"
     },
     {
      "path": "data/PROVENANCE-placement-counts.md",
@@ -2082,9 +2968,9 @@
      "stars": 2,
      "what": "4,665 rows and the largest of these extracts. It holds TWO different tables — the Town Accountant’s schedule of the year that closed, and the town meeting omnibus budget for the year ahead — told apart by the table_family column, because averaging one against the other would be a confident wrong answer. Read column_meaning before reading a value: the v columns are ordinals, and where the table states an identity that fixes them they are named. No year currently ties to its own printed total.",
      "kind": "Data",
-     "bytes": 3060276,
+     "bytes": 6075124,
      "url": "/docs/data/report-appropriations.csv",
-     "count": 4665,
+     "count": 5027,
      "unit": "rows",
      "textUrl": "/docs/data/report-appropriations.csv"
     },
@@ -2094,9 +2980,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1042113,
+     "bytes": 1042357,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4689,
+     "count": 4690,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -2118,9 +3004,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 589160,
+     "bytes": 589289,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4689,
+     "count": 4690,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -2154,9 +3040,9 @@
      "stars": 2,
      "what": "553 rows joining a dataset and an edition to the pages it was taken off. This is what makes a figure findable in the original.",
      "kind": "Data",
-     "bytes": 286238,
+     "bytes": 290709,
      "url": "/docs/data/extraction-plan.csv",
-     "count": 553,
+     "count": 555,
      "unit": "rows",
      "textUrl": "/docs/data/extraction-plan.csv"
     },
@@ -2178,9 +3064,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 127512,
+     "bytes": 145881,
      "url": "/docs/data/money-gaps.csv",
-     "count": 150,
+     "count": 175,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -2262,9 +3148,9 @@
      "stars": 2,
      "what": "699 rows: how many names appear on each school’s roster in each year. The same caveat governs it — see data/PROVENANCE-staff-rosters.md.",
      "kind": "Data",
-     "bytes": 23616,
+     "bytes": 23582,
      "url": "/docs/data/staff-roster-counts.csv",
-     "count": 699,
+     "count": 698,
      "unit": "rows",
      "textUrl": "/docs/data/staff-roster-counts.csv"
     },
@@ -2353,6 +3239,18 @@
      "textUrl": "/docs/data/PROVENANCE-special-revenue-funds.md"
     },
     {
+     "path": "data/stabilization-pages.csv",
+     "title": "Where the stabilization funds are printed, page by page",
+     "stars": 2,
+     "what": "Every page of every annual town report that carries a stabilization or trust fund table: which report, which page, what KIND of table it is, and whether we have read it. Four different tables carry these funds and they are not interchangeable — the `other-banks` table omits the general Stabilization Fund entirely, which is why a chart of it once stopped four years early. `state` is the work queue: `read`, `unread`, or `reversed` for a page whose OCR came out upside down and on which no extractor can see a figure at all. Sorted newest report first, because that is the order the work is done in. See scripts/map_stabilization_pages.py.",
+     "kind": "Data",
+     "bytes": 6212,
+     "url": "/docs/data/stabilization-pages.csv",
+     "count": 64,
+     "unit": "rows",
+     "textUrl": "/docs/data/stabilization-pages.csv"
+    },
+    {
      "path": "data/PROVENANCE-special-revenue-read.md",
      "title": "Why the schedule is read rather than OCR’d",
      "stars": 2,
@@ -2363,6 +3261,30 @@
      "count": 110,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-special-revenue-read.md"
+    },
+    {
+     "path": "data/stabilization-balances.csv",
+     "title": "What each stabilization and trust fund held, year by year",
+     "stars": 2,
+     "what": "The trust-and-agency table the town prints in its annual report, read off the page: beginning balance, the year’s activity, ending cash, and for the invested funds the market value beside it. Every row carries the fund name THE DOCUMENT used — `registry_name` and `name_disagrees` record where that differs from the account registry, because a fund renamed is not a fund replaced. A row is only written when the page’s own two identities foot: beginning + activity = ending cash, and ending cash + opening unrealised + change = ending market. Rows that do not are absent rather than estimated, so the file is short of what the reports contain and says so. See scripts/extract_stabilization.py and scripts/read_trust_table.py.",
+     "kind": "Data",
+     "bytes": 4729,
+     "url": "/docs/data/stabilization-balances.csv",
+     "count": 30,
+     "unit": "rows",
+     "textUrl": "/docs/data/stabilization-balances.csv"
+    },
+    {
+     "path": "data/ingest-plan.csv",
+     "title": "The plan for the annual-report backlog, in batches",
+     "stars": 2,
+     "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
+     "kind": "Data",
+     "bytes": 4303,
+     "url": "/docs/data/ingest-plan.csv",
+     "count": 12,
+     "unit": "rows",
+     "textUrl": "/docs/data/ingest-plan.csv"
     },
     {
      "path": "data/money-edges.csv",
@@ -2418,9 +3340,9 @@
      "stars": 1,
      "what": "642 rows. 12 tie; the rest do not, and two years read their own grand total as $7.00 and −$19.00, which is our reading and not the town’s figure.",
      "kind": "Data",
-     "bytes": 488913,
+     "bytes": 524684,
      "url": "/docs/data/report-trust-funds.csv",
-     "count": 642,
+     "count": 644,
      "unit": "rows",
      "textUrl": "/docs/data/report-trust-funds.csv"
     },
@@ -2430,9 +3352,9 @@
      "stars": 1,
      "what": "3,545 rows. The town publishes every employee’s gross wage; nothing in it says which fund paid, which is the question rule 11 keeps asking. No arithmetic check is available — these pages print no total.",
      "kind": "Data",
-     "bytes": 478182,
+     "bytes": 478406,
      "url": "/docs/data/report-gross-wages.csv",
-     "count": 3545,
+     "count": 3547,
      "unit": "rows",
      "textUrl": "/docs/data/report-gross-wages.csv"
     },
@@ -2442,7 +3364,7 @@
      "stars": 1,
      "what": "616 rows. None tie yet.",
      "kind": "Data",
-     "bytes": 410405,
+     "bytes": 409728,
      "url": "/docs/data/report-capital-projects.csv",
      "count": 616,
      "unit": "rows",
@@ -2454,9 +3376,9 @@
      "stars": 1,
      "what": "354 rows, 74 of which tie to a printed total.",
      "kind": "Data",
-     "bytes": 268522,
+     "bytes": 276030,
      "url": "/docs/data/report-debt.csv",
-     "count": 354,
+     "count": 366,
      "unit": "rows",
      "textUrl": "/docs/data/report-debt.csv"
     },
@@ -2478,7 +3400,7 @@
      "stars": 1,
      "what": "515 rows of counts departments publish about their own year.",
      "kind": "Data",
-     "bytes": 158335,
+     "bytes": 158461,
      "url": "/docs/data/report-dept-activity.csv",
      "count": 515,
      "unit": "rows",
@@ -2502,9 +3424,9 @@
      "stars": 1,
      "what": "337 rows. No arithmetic check available.",
      "kind": "Data",
-     "bytes": 85533,
+     "bytes": 85825,
      "url": "/docs/data/report-enrollment-mcas.csv",
-     "count": 337,
+     "count": 338,
      "unit": "rows",
      "textUrl": "/docs/data/report-enrollment-mcas.csv"
     },
@@ -2514,9 +3436,9 @@
      "stars": 1,
      "what": "316 rows. No printed totals, so no arithmetic check.",
      "kind": "Data",
-     "bytes": 77521,
+     "bytes": 82863,
      "url": "/docs/data/report-valuation.csv",
-     "count": 316,
+     "count": 321,
      "unit": "rows",
      "textUrl": "/docs/data/report-valuation.csv"
     },
@@ -2550,7 +3472,7 @@
      "stars": 1,
      "what": "70 rows. The vocational assessment is one of the largest single lines the town votes and one of the least discussed.",
      "kind": "Data",
-     "bytes": 28515,
+     "bytes": 28513,
      "url": "/docs/data/report-monty-tech.csv",
      "count": 70,
      "unit": "rows",
@@ -2574,9 +3496,9 @@
      "stars": 1,
      "what": "534 rows mapping the position titles printed on the rosters onto groups. A hypothesis about which titles are the same job, not a fact about the town.",
      "kind": "Data",
-     "bytes": 15131,
+     "bytes": 14911,
      "url": "/docs/data/staff-position-map.csv",
-     "count": 534,
+     "count": 525,
      "unit": "rows",
      "textUrl": "/docs/data/staff-position-map.csv"
     },
@@ -2641,7 +3563,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 35659776,
+     "bytes": 39170048,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -2651,9 +3573,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3188297,
+     "bytes": 3197118,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7036,
+     "count": 7039,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -2754,6 +3676,18 @@
      "textUrl": "/docs/data/dese-radar.csv"
     },
     {
+     "path": "data/youtube-transcript-index.csv",
+     "title": "Which meeting recordings we hold a transcript for",
+     "stars": 3,
+     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
+     "kind": "Data",
+     "bytes": 456003,
+     "url": "/docs/data/youtube-transcript-index.csv",
+     "count": 2661,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-transcript-index.csv"
+    },
+    {
      "path": "data/dese-class-size.csv",
      "title": "How many classes ran in each subject, and how full they were",
      "stars": 3,
@@ -2776,18 +3710,6 @@
      "count": 2403,
      "unit": "rows",
      "textUrl": "/docs/data/dese-sped-program.csv"
-    },
-    {
-     "path": "data/youtube-transcript-index.csv",
-     "title": "Which meeting recordings we hold a transcript for",
-     "stars": 3,
-     "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
-     "kind": "Data",
-     "bytes": 362682,
-     "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2121,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
     {
      "path": "state-dls/health-self-insured-funds.xlsx",
@@ -3258,6 +4180,19 @@
      "textUrl": "/docs/data/school-special-revenue-fy26-q3.csv"
     },
     {
+     "path": "town-ledgers/expenses/PROVENANCE-fy2026-p09.md",
+     "title": "Provenance for the FY26 period 9 ledgers",
+     "stars": 3,
+     "what": "Written by us. What the reports say about themselves, quoted from their own printed footer: program ID glytdbud, generated 08/11/2026 11:59, by the Town Accountant whose name the report prints, year/period 2026/9, and the general fund run made with `Print totals only: Y`, which is why it carries 67 department rollups and no accounts. And where they came from: a public records request to the Town Manager, answered before 14 August 2026 and sent to this project directly. Two things stay bounded rather than known -- the date the request was filed, and whether the town sent a caveat with the figures, because we are one remove from the town and its response message is not in this archive.",
+     "byRequest": true,
+     "kind": "Notes",
+     "bytes": 3484,
+     "url": "/docs/town-ledgers/expenses/PROVENANCE-fy2026-p09.md",
+     "count": 64,
+     "unit": "lines",
+     "textUrl": "/docs/town-ledgers/expenses/PROVENANCE-fy2026-p09.md"
+    },
+    {
      "path": "correspondence/2026-03-30-ski-coop-invoice.md",
      "title": "How the ski co-op invoice reached us, and what it does not show",
      "stars": 3,
@@ -3280,19 +4215,6 @@
      "count": 22,
      "unit": "rows",
      "textUrl": "/docs/data/capital-plan-fy27.csv"
-    },
-    {
-     "path": "town-ledgers/expenses/PROVENANCE-fy2026-p09.md",
-     "title": "Provenance for the FY26 period 9 ledgers — and the gap in it",
-     "stars": 3,
-     "what": "Written by us. What the reports say about themselves, quoted from their own printed footer: program ID glytdbud, generated 08/11/2026 11:59, by the Town Accountant whose name the report prints, year/period 2026/9, and the general fund run made with `Print totals only: Y`, which is why it carries 67 department rollups and no accounts. And then the part that matters: NOTHING in this archive records how these files were obtained. They are not on the town’s website and no email, records request or meeting packet is recorded for them. Rule 12 says a document that did not come off a website still has an address; this one’s is missing, and the note records the gap rather than inventing a route.",
-     "byRequest": true,
-     "kind": "Notes",
-     "bytes": 1995,
-     "url": "/docs/town-ledgers/expenses/PROVENANCE-fy2026-p09.md",
-     "count": 41,
-     "unit": "lines",
-     "textUrl": "/docs/town-ledgers/expenses/PROVENANCE-fy2026-p09.md"
     },
     {
      "path": "data/sped-para-history.csv",
@@ -3384,9 +4306,9 @@
      "stars": 2,
      "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
      "kind": "Data",
-     "bytes": 2559357,
+     "bytes": 2561378,
      "url": "/docs/data/meeting-document-timestamps.csv",
-     "count": 12055,
+     "count": 12066,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
@@ -3396,9 +4318,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1766341,
+     "bytes": 1766815,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12115,
+     "count": 12118,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -3487,6 +4409,18 @@
      "textUrl": "/docs/MANIFEST.md"
     },
     {
+     "path": "data/youtube-no-captions.csv",
+     "title": "Recordings whose captions are switched off",
+     "stars": 2,
+     "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
+     "kind": "Data",
+     "bytes": 24816,
+     "url": "/docs/data/youtube-no-captions.csv",
+     "count": 198,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-no-captions.csv"
+    },
+    {
      "path": "data/budget-seasons/fy27.csv",
      "title": "The FY27 budget season as a status board: the gap’s path, the choices, every cut, the override, what took effect",
      "stars": 2,
@@ -3521,18 +4455,6 @@
      "count": 65,
      "unit": "rows",
      "textUrl": "/docs/data/budget-seasons/fy26.csv"
-    },
-    {
-     "path": "data/youtube-no-captions.csv",
-     "title": "Recordings whose captions are switched off",
-     "stars": 2,
-     "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
-     "kind": "Data",
-     "bytes": 13291,
-     "url": "/docs/data/youtube-no-captions.csv",
-     "count": 107,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-no-captions.csv"
     },
     {
      "path": "contracts/CONTRACTS.md",
@@ -3583,6 +4505,18 @@
      "textUrl": "/docs/data/budget-seasons/fy27-summer-governors-budget.csv"
     },
     {
+     "path": "data/meeting-watch-events.csv",
+     "title": "What appeared on the town’s site between one crawl and the next",
+     "stars": 2,
+     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 7939,
+     "url": "/docs/data/meeting-watch-events.csv",
+     "count": 53,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-events.csv"
+    },
+    {
      "path": "data/budget-seasons/fy27-lines.csv",
      "title": "Every budget line the FY27 scenarios differ on, school and town",
      "stars": 2,
@@ -3593,18 +4527,6 @@
      "count": 47,
      "unit": "rows",
      "textUrl": "/docs/data/budget-seasons/fy27-lines.csv"
-    },
-    {
-     "path": "data/meeting-watch-events.csv",
-     "title": "What appeared on the town’s site between one crawl and the next",
-     "stars": 2,
-     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 7489,
-     "url": "/docs/data/meeting-watch-events.csv",
-     "count": 50,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-events.csv"
     },
     {
      "path": "town-ledgers/account-details/PROVENANCE-fund1301.md",
@@ -3630,6 +4552,18 @@
      "count": 11,
      "unit": "rows",
      "textUrl": "/docs/data/health-insurance-law.csv"
+    },
+    {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 4758,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 5,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "town-ledgers/account-details/PROVENANCE-field-rental-lysa.md",
@@ -3669,18 +4603,6 @@
      "textUrl": "/docs/data/search-vocabulary.csv"
     },
     {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 2672,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 4,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
-    },
-    {
      "path": "data/budget-seasons/fy28.csv",
      "title": "The FY28 budget season, live: what is on the record so far, and the moments not yet come with when they usually do",
      "stars": 2,
@@ -3698,9 +4620,9 @@
      "stars": 2,
      "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
      "kind": "Data",
-     "bytes": 2093,
+     "bytes": 2210,
      "url": "/docs/data/youtube-watch-events.csv",
-     "count": 18,
+     "count": 19,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-watch-events.csv"
     },
@@ -3801,6 +4723,18 @@
      "textUrl": "/docs/data/recording-minutes-policy.csv"
     },
     {
+     "path": "data/feed-watch-events.csv",
+     "title": "What appeared in those feeds",
+     "stars": 2,
+     "what": "Written by us. One row per item first seen, with when.",
+     "kind": "Data",
+     "bytes": 867,
+     "url": "/docs/data/feed-watch-events.csv",
+     "count": 5,
+     "unit": "rows",
+     "textUrl": "/docs/data/feed-watch-events.csv"
+    },
+    {
      "path": "data/field-rental-receipts-lysa.csv",
      "title": "Field rental receipts from Lunenburg Youth Soccer, FY2024–FY2026",
      "stars": 2,
@@ -3825,18 +4759,6 @@
      "textUrl": "/docs/data/sped-transport-history.csv"
     },
     {
-     "path": "data/feed-watch-events.csv",
-     "title": "What appeared in those feeds",
-     "stars": 2,
-     "what": "Written by us. One row per item first seen, with when.",
-     "kind": "Data",
-     "bytes": 713,
-     "url": "/docs/data/feed-watch-events.csv",
-     "count": 4,
-     "unit": "rows",
-     "textUrl": "/docs/data/feed-watch-events.csv"
-    },
-    {
      "path": "data/capital-funding-history.csv",
      "title": "How the capital programme has been paid for",
      "stars": 2,
@@ -3854,9 +4776,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 427,
+     "bytes": 458,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 11,
+     "count": 12,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -3888,12 +4810,12 @@
      "path": "town-ledgers/revenue/PROVENANCE-fy2026-p09.md",
      "title": "Provenance for the FY26 period 9 revenue reports",
      "stars": 1,
-     "what": "A pointer: these arrived in the same package as the expenditure reports, and how that package was obtained is not recorded. The full note is in town-ledgers/expenses/PROVENANCE-fy2026-p09.md.",
+     "what": "A pointer: these arrived in the same package as the expenditure reports, and obtained by a public records request to the Town Manager. The full note is in town-ledgers/expenses/PROVENANCE-fy2026-p09.md.",
      "byRequest": true,
      "kind": "Notes",
-     "bytes": 272,
+     "bytes": 453,
      "url": "/docs/town-ledgers/revenue/PROVENANCE-fy2026-p09.md",
-     "count": 5,
+     "count": 8,
      "unit": "lines",
      "textUrl": "/docs/town-ledgers/revenue/PROVENANCE-fy2026-p09.md"
     },
@@ -3904,9 +4826,9 @@
      "what": "The same pointer, filed with the fund balance reports.",
      "byRequest": true,
      "kind": "Notes",
-     "bytes": 272,
+     "bytes": 453,
      "url": "/docs/town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md",
-     "count": 5,
+     "count": 8,
      "unit": "lines",
      "textUrl": "/docs/town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md"
     }
@@ -14410,7 +15332,7 @@
    "id": "town-supplementary",
    "origin": "town",
    "title": "The town’s supplementary documents, mirrored",
-   "blurb": "The other 63 documents from the same town pages: tax billing and exemption forms, the senior work-off programme, police policies, HR forms, grant notices and an infrastructure assessment. Split out because a folder called budget should hold budgets — data, spreadsheets and plans — and these are supplementary to it. Nothing was discarded: they are mirrored on the same terms as everything else, and several bear on the budget indirectly.",
+   "blurb": "The other 93 documents from the same town pages: tax billing and exemption forms, the senior work-off programme, police policies, HR forms, grant notices and an infrastructure assessment. Split out because a folder called budget should hold budgets — data, spreadsheets and plans — and these are supplementary to it. Nothing was discarded: they are mirrored on the same terms as everything else, and several bear on the budget indirectly.",
    "items": [
     {
      "path": "town-supplementary/docs/394-1-40-school-resource-officer-pdf.pdf",
@@ -14479,6 +15401,16 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/443"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-6.html",
+     "title": "Accounting Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96251,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-6.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=6"
+    },
+    {
      "path": "town-supplementary/docs/board-159-agricultural-commission.html",
      "title": "Agricultural Commission (board page)",
      "stars": 1,
@@ -14499,6 +15431,26 @@
      "upstream": "https://www.lunenburgma.gov/202/Americans-with-Disabilities-Committee"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-49.html",
+     "title": "Americans with Disabilities Committee (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 92576,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-49.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=49"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-8.html",
+     "title": "Animal Control Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 94889,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-8.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=8"
+    },
+    {
      "path": "town-supplementary/docs/board-203-architectural-preservation-district-commission.html",
      "title": "Architectural Preservation District Commission (board page)",
      "stars": 1,
@@ -14507,6 +15459,16 @@
      "bytes": 103267,
      "url": "/docs/town-supplementary/docs/board-203-architectural-preservation-district-commission.html",
      "upstream": "https://www.lunenburgma.gov/203/Architectural-Preservation-District-Comm"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-9.html",
+     "title": "Assessor's Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97234,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-9.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=9"
     },
     {
      "path": "town-supplementary/docs/344-bencor-financial-wellness-pdf.pdf",
@@ -14551,6 +15513,16 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3541"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-16.html",
+     "title": "Board of Health Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96643,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-16.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=16"
+    },
+    {
      "path": "town-supplementary/docs/board-398-board-of-registrars.html",
      "title": "Board of Registrars (board page)",
      "stars": 1,
@@ -14580,6 +15552,16 @@
      "bytes": 177655,
      "url": "/docs/town-supplementary/docs/board-719-budget-task-force.html",
      "upstream": "https://www.lunenburgma.gov/719/Budget-Task-Force"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-10.html",
+     "title": "Building Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97286,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-10.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=10"
     },
     {
      "path": "town-supplementary/docs/board-210-by-law-review-committee.html",
@@ -14622,6 +15604,16 @@
      "upstream": "https://www.lunenburgma.gov/217/Cemetery-Commission"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-18.html",
+     "title": "Cemetery Commission (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96211,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-18.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=18"
+    },
+    {
      "path": "town-supplementary/docs/board-219-charter-review-committee.html",
      "title": "Charter Review Committee (board page)",
      "stars": 1,
@@ -14653,6 +15645,16 @@
      "upstream": "https://www.lunenburgma.gov/225/Conservation-Commission"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-24.html",
+     "title": "Conservation Commission (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 95762,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-24.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=24"
+    },
+    {
      "path": "town-supplementary/docs/board-229-council-on-aging.html",
      "title": "Council On Aging (board page)",
      "stars": 1,
@@ -14661,6 +15663,16 @@
      "bytes": 106390,
      "url": "/docs/town-supplementary/docs/board-229-council-on-aging.html",
      "upstream": "https://www.lunenburgma.gov/229/Council-On-Aging"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-25.html",
+     "title": "Council on Aging (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 100388,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-25.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=25"
     },
     {
      "path": "town-supplementary/docs/board-247-cultural-council.html",
@@ -14673,6 +15685,16 @@
      "upstream": "https://www.lunenburgma.gov/247/Cultural-Council"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-26.html",
+     "title": "Department of Public Works (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 112248,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-26.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=26"
+    },
+    {
      "path": "town-supplementary/docs/board-250-economic-development-committee.html",
      "title": "Economic Development Committee (board page)",
      "stars": 1,
@@ -14681,6 +15703,16 @@
      "bytes": 186980,
      "url": "/docs/town-supplementary/docs/board-250-economic-development-committee.html",
      "upstream": "https://www.lunenburgma.gov/250/Economic-Development-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-11.html",
+     "title": "Electrical Inspector (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 98448,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-11.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=11"
     },
     {
      "path": "town-supplementary/docs/2499-fy25-governor-awards-lunenburg-fd-state-firefighter-safety-grant-pdf.pdf",
@@ -14703,6 +15735,17 @@
      "url": "/docs/town-supplementary/docs/1352-fy25-snow-and-ice-vendor-agreement.pdf",
      "textUrl": "/docs/town-supplementary/text/1352-fy25-snow-and-ice-vendor-agreement.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/1352"
+    },
+    {
+     "path": "town-supplementary/docs/3584-fy27-police-department-budget-presentation.pdf",
+     "title": "FY27 Police Department Budget Presentation (PDF)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 784388,
+     "url": "/docs/town-supplementary/docs/3584-fy27-police-department-budget-presentation.pdf",
+     "textUrl": "/docs/town-supplementary/text/3584-fy27-police-department-budget-presentation.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/3584"
     },
     {
      "path": "town-supplementary/docs/4284-fy27-real-estate-exemption-flyer.pdf",
@@ -14738,6 +15781,16 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4285"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-12.html",
+     "title": "Facilities, Grounds, & Recreation Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 99304,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-12.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=12"
+    },
+    {
      "path": "town-supplementary/docs/board-252-finance-committee.html",
      "title": "Finance Committee (board page)",
      "stars": 1,
@@ -14746,6 +15799,16 @@
      "bytes": 99533,
      "url": "/docs/town-supplementary/docs/board-252-finance-committee.html",
      "upstream": "https://www.lunenburgma.gov/252/Finance-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-13.html",
+     "title": "Fire Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 149868,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-13.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=13"
     },
     {
      "path": "town-supplementary/docs/board-257-green-communities-committee.html",
@@ -14766,6 +15829,36 @@
      "bytes": 99176,
      "url": "/docs/town-supplementary/docs/board-261-historical-commission.html",
      "upstream": "https://www.lunenburgma.gov/261/Historical-Commission"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-14.html",
+     "title": "Human Resources Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 98063,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-14.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=14"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-19.html",
+     "title": "Information Technology Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 95051,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-19.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=19"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-20.html",
+     "title": "Land Use Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 92498,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-20.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=20"
     },
     {
      "path": "town-supplementary/docs/board-264-library-board-of-trustees.html",
@@ -14882,6 +15975,16 @@
      "upstream": "https://www.lunenburgma.gov/283/Parks-Commission"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-38.html",
+     "title": "Parks Commission (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 103330,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-38.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=38"
+    },
+    {
      "path": "town-supplementary/docs/board-284-personnel-committee.html",
      "title": "Personnel Committee (board page)",
      "stars": 1,
@@ -14892,6 +15995,16 @@
      "upstream": "https://www.lunenburgma.gov/284/Personnel-Committee"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-39.html",
+     "title": "Personnel Committee (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 93257,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-39.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=39"
+    },
+    {
      "path": "town-supplementary/docs/board-285-planning-board.html",
      "title": "Planning Board (board page)",
      "stars": 1,
@@ -14900,6 +16013,46 @@
      "bytes": 111064,
      "url": "/docs/town-supplementary/docs/board-285-planning-board.html",
      "upstream": "https://www.lunenburgma.gov/285/Planning-Board"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-40.html",
+     "title": "Planning Board Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97240,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-40.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=40"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-21.html",
+     "title": "Plumbing / Gas Inspector (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 98127,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-21.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=21"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-22.html",
+     "title": "Police Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 138536,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-22.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=22"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-41.html",
+     "title": "Public Access Cable (PAC) (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 100516,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-41.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=41"
     },
     {
      "path": "town-supplementary/docs/board-293-public-access-cable-committee-pacc.html",
@@ -14953,6 +16106,16 @@
      "bytes": 103495,
      "url": "/docs/town-supplementary/docs/board-295-select-board.html",
      "upstream": "https://www.lunenburgma.gov/295/Select-Board"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-42.html",
+     "title": "Select Board (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96100,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-42.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=42"
     },
     {
      "path": "town-supplementary/docs/493-senior-citizen-property-tax-work-off-program-application-form-pdf.pdf",
@@ -15019,6 +16182,26 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/786"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-32.html",
+     "title": "Town Clerk (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97134,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-32.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=32"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-36.html",
+     "title": "Town Manager (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 100320,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-36.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=36"
+    },
+    {
      "path": "town-supplementary/docs/board-716-town-manager-screening-committee.html",
      "title": "Town Manager Screening Committee (board page)",
      "stars": 1,
@@ -15027,6 +16210,16 @@
      "bytes": 171713,
      "url": "/docs/town-supplementary/docs/board-716-town-manager-screening-committee.html",
      "upstream": "https://www.lunenburgma.gov/716/Town-Manager-Screening-Committee"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-43.html",
+     "title": "Treasurer And Tax Collector Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 99444,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-43.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=43"
     },
     {
      "path": "town-supplementary/docs/board-766-tri-board.html",
@@ -15049,6 +16242,16 @@
      "upstream": "https://www.lunenburgma.gov/224/Trust-Fund-Commission"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-44.html",
+     "title": "Veteran's Services Department (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96280,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-44.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=44"
+    },
+    {
      "path": "town-supplementary/docs/182-w-4-federal-tax-form-pdf.pdf",
      "title": "W-4 Federal Tax Form (PDF)",
      "stars": 1,
@@ -15060,6 +16263,16 @@
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/182"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-45.html",
+     "title": "Weight & Measures (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 94382,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-45.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=45"
+    },
+    {
      "path": "town-supplementary/docs/board-322-zoning-board-of-appeals.html",
      "title": "Zoning Board of Appeals (board page)",
      "stars": 1,
@@ -15068,6 +16281,16 @@
      "bytes": 118730,
      "url": "/docs/town-supplementary/docs/board-322-zoning-board-of-appeals.html",
      "upstream": "https://www.lunenburgma.gov/322/Zoning-Board-of-Appeals"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-09-22/did-47.html",
+     "title": "Zoning Board of Appeals (staff directory, fetched 2026-09-22)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97351,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-09-22/did-47.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=47"
     }
    ]
   },
@@ -15696,7 +16919,7 @@
    },
    {
     "name": "Board Of Assessors",
-    "documents": 492
+    "documents": 493
    },
    {
     "name": "Library Board Of Trustees",
@@ -15712,7 +16935,7 @@
    },
    {
     "name": "Zoning Board Of Appeals",
-    "documents": 355
+    "documents": 356
    },
    {
     "name": "School Advisory Councils & Committees",
@@ -15740,7 +16963,7 @@
    },
    {
     "name": "Cemetery Commission",
-    "documents": 259
+    "documents": 260
    },
    {
     "name": "Lunenburg Housing Authority",
@@ -15876,22 +17099,22 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12129,
-  "fetched": 12079,
-  "agendas": 7428,
+  "listed": 12132,
+  "fetched": 12082,
+  "agendas": 7431,
   "minutes": 4701,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12080,
+  "textFiles": 12083,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1377,
+  "documents": 1488,
   "groups": 22,
-  "bytes": 2172645167,
-  "loadBearing": 134
+  "bytes": 2186326157,
+  "loadBearing": 160
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

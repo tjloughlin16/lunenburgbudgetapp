@@ -1081,6 +1081,39 @@ REFERENCE = [
     'report-officials', 'report-dept-activity', 'report-enrollment-mcas',
     'report-monty-tech', 'report-gross-wages', 'report-vital-records',
 
+    # THE PROVEN READINGS, each tied to an identity its own table states. These are a
+    # different kind of thing from the `report-*` extracts above and must not be read as
+    # the same: those are transcriptions carrying a `status`, and a row here exists ONLY
+    # because the arithmetic the document states about itself closed. Where both cover a
+    # page, this is the one to quote.
+    #
+    # `receivables` and `tax-collection` are ONE TABLE read by two extractors, partitioned
+    # by year with no overlap -- the second skips at runtime every year the first proves.
+    # Nine of fifteen years tie to the Collector's own printed GRAND TOTAL across all
+    # eight columns. UNION them; never join them.
+    #
+    # `outstanding-debt` carries up to FIVE independent readings of each year, because
+    # every report reprints five years of history. They agree to the dollar in 18 of 19
+    # years. So `report_fy` is which book it was read from and `as_of_fy` is the year the
+    # figure is about, and aggregating without splitting on both counts one year five
+    # times.
+    #
+    # `peg-access-fund` is cable licence money paying real salaries, in no line anybody
+    # votes on -- so it appears in no appropriation, and a reader of the budget alone
+    # cannot see the people it employs. Rule 11.
+    'outstanding-debt', 'debt-repayment', 'receivables', 'tax-collection',
+    'valuation-by-class', 'capital-plans', 'peg-access-fund',
+    'stabilization-balances',
+
+    # And the REFUSAL registers beside them, because a year that is not published is a
+    # fact somebody needs to be able to look up. Each says which years refused and WHY,
+    # and the reasons are not interchangeable: a cropped page, a torn scan and a year
+    # already proved by the other reader need three different remedies. Without these, an
+    # absent year is indistinguishable from a year the town never printed -- rule 13c, in
+    # the one place an agent will actually query.
+    'receivables-reconciliation', 'tax-collection-unreconciled',
+    'capital-plans-refused', 'valuation-refused',
+
 ]
 
 VIEWS = """

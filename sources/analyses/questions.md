@@ -516,7 +516,7 @@ Returns `category`, `rates`, `with_a_document` — for example: category=athleti
 SELECT edition, status, COUNT(*) AS rows FROM report_appropriations GROUP BY edition, status ORDER BY edition, rows DESC
 ```
 
-Returns `edition`, `status`, `rows` — for example: edition=FY2011, status=check failed, rows=298
+Returns `edition`, `status`, `rows` — for example: edition=FY2011, status=check failed, rows=299
 
 > ALWAYS split on `status`. `checked`, `check failed` and `no check` are three different claims and nothing may be aggregated across them.
 
@@ -534,7 +534,7 @@ Returns `edition`, `status`, `rows` — for example: edition=FY2011, status=no c
 SELECT edition, COUNT(*) AS rows, SUM(CASE WHEN status='checked' THEN 1 ELSE 0 END) AS checked FROM report_debt GROUP BY edition ORDER BY edition
 ```
 
-Returns `edition`, `rows`, `checked` — for example: edition=FY2011, rows=20, checked=0
+Returns `edition`, `rows`, `checked` — for example: edition=FY2011, rows=22, checked=0
 
 **What capital projects did the reports list?**
 
@@ -672,7 +672,7 @@ Returns `fy`, `group`, `rows` — for example: fy=2025, group=, rows=177
 SELECT edition, COUNT(*) AS rows, SUM(CASE WHEN status='checked' THEN 1 ELSE 0 END) AS checked FROM report_appropriations GROUP BY edition ORDER BY edition
 ```
 
-Returns `edition`, `rows`, `checked` — for example: edition=FY2011, rows=298, checked=0
+Returns `edition`, `rows`, `checked` — for example: edition=FY2011, rows=299, checked=0
 
 **Which report tables print a total we can reconcile to?**
 
@@ -818,7 +818,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=1045
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=1075
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -888,7 +888,7 @@ Returns `edition`, `rows` — for example: edition=FY2014, rows=90
 SELECT 'appropriations' AS t, status, COUNT(*) AS rows FROM report_appropriations GROUP BY status UNION ALL SELECT 'gross_wages', status, COUNT(*) FROM report_gross_wages GROUP BY status ORDER BY t, rows DESC
 ```
 
-Returns `t`, `status`, `rows` — for example: t=appropriations, status=check failed, rows=4530
+Returns `t`, `status`, `rows` — for example: t=appropriations, status=check failed, rows=4870
 
 **Which documents were obtained by records request rather than published?**
 
@@ -896,7 +896,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=check fa
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=1045
+Returns `source_type`, `documents` — for example: source_type=primary, documents=1075
 
 **What basis does each document have for the figures it prints?**
 
