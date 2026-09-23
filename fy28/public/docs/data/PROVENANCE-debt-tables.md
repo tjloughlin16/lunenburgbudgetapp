@@ -61,11 +61,30 @@ right: the difference is below what either scan can settle, and nothing here tes
 - **37 rows**, from **8** reports, for **28** distinct due years.
 - Reports represented: FY2011, FY2014, FY2015, FY2016, FY2017, FY2019, FY2021, FY2022.
 
-**The per-ISSUE detail is deliberately unread.** It is twenty to twenty-five narrow
-columns of small type on a scan, and Apple Vision returns it as runs like
-`52782335 52547440 52531098`. No issue-level row can be footed to the printed grand
-total in that state, and an unfooted row is not evidence. That is a statement about
-the scans, not about the town: the schedule is printed in full in every report.
+## DEBT REPAYMENT SCHEDULE — the per-issue detail
+
+`sources/data/debt-repayment-detail.csv`, and what would not read in
+`sources/data/debt-repayment-detail-refused.csv`.
+
+**On a scan this table cannot be read, and that was taken for a fact about the
+archive.** It is twenty to twenty-five narrow columns of small type, and Apple
+Vision returns it as runs like `52782335 52547440 52531098`. What was never checked
+is whether every report IS a scan. Five are not: their PDFs carry a real text layer
+and the schedule reads exact to the dollar out of it, with no OCR anywhere.
+
+- **831 rows** off **10 pages** in **5** reports: FY2014, FY2015, FY2016, FY2018, FY2025.
+- **61 issues** and **33 due years**, plus the TOTAL column each schedule prints.
+- Every row closes the identity its own table states: **principal + interest
+  (+ MWPAT admin fee where one is printed) = the issue total**, to the dollar. 299 of them also sit in a year column whose issues sum to the page's own printed GRAND TOTAL.
+- **24 pages are refused**, listed in the refusal file with what is actually on
+  them. 24 of them are scans with no text layer at all.
+
+**Where a column does not foot, the shortfall is printed rather than hidden behind
+a no.** Two kinds turn up and they are not alike. FY2014, FY2016 and FY2025 are out
+by one dollar in some columns — the town rounding its own total. FY2015 is out by
+exactly the two MS-HS CONSTRUCTION bonds: $625,000 in 2016, $640,000 in 2017,
+$665,000 in 2018, and so on down the row. Those bonds are printed in the table and
+left out of the line that totals it. Nothing here tests why.
 
 **A due year is not cross-checkable between reports.** A year of OUTSTANDING debt is
 history and two books must agree; a year of future debt SERVICE moves every time the
@@ -73,7 +92,7 @@ town issues a bond. Both readings are right.
 
 ## Everything refused, and why
 
-40 refusals and warnings. This list is the dataset as much as the rows are.
+49 refusals and warnings. This list is the dataset as much as the rows are.
 
 - FY2011 2008: the outside the debt limit purposes sum to 1,790,436, printed total 2,629,564 -- those rows are not published
 - FY2011 page 76: no year column in the grand-total block foots
@@ -85,14 +104,22 @@ town issues a bond. Both readings are right.
 - FY2014 page 41: 2 of 11 header years misread or unread; the grid is fitted at a 0.039 pitch, 2029-2045
 - FY2014 page 41: no year column in the grand-total block foots
 - FY2014 page 42: the FISCAL YEAR header did not read (2 years)
+- FY2014 page 40: 4 of 121 issue cells do not close principal + interest (+ admin fee) = total
+- FY2014 page 42: 2 of 18 issue cells do not close principal + interest (+ admin fee) = total
 - FY2015 2013: the short-term purposes sum to 115,000, printed total unreadable -- those rows are not published
+- FY2015 page 42: 1 of 151 issue cells do not close principal + interest (+ admin fee) = total
+- FY2015 page 43: 1 of 71 issue cells do not close principal + interest (+ admin fee) = total
 - FY2016: no FIVE YEARS OUTSTANDING DEBT page
+- FY2016 page 44: 4 of 134 issue cells do not close principal + interest (+ admin fee) = total
+- FY2016 page 45: 1 of 64 issue cells do not close principal + interest (+ admin fee) = total
+- FY2016 page 46: 1 of 67 issue cells do not close principal + interest (+ admin fee) = total
 - FY2017 2016: a short-term total is printed but Total Outstanding did not read, so the short-term rows are not published
 - FY2017 2013: the short-term purposes sum to 115,000, printed total unreadable -- those rows are not published
 - FY2017 page 42: 2 of 17 header years misread or unread; the grid is fitted at a 0.033 pitch, 2029-2046
 - FY2017 due 2034: principal is 31,399,353, more than eight times the median of its row -- a currency sign read as a digit; REFUSED
 - FY2017 due 2036: principal is 51,485,908, more than eight times the median of its row -- a currency sign read as a digit; REFUSED
 - FY2018 2016: the outside the debt limit purposes sum to 35,835,089, printed total 36,889,530 -- those rows are not published
+- FY2018 page 49: 2 of 34 issue cells do not close principal + interest (+ admin fee) = total
 - FY2019 page 50: 1 of 13 header years misread or unread; the grid is fitted at a 0.049 pitch, 2020-2032
 - FY2019 page 50: no year column in the grand-total block foots
 - FY2020 page 44: no year column in the grand-total block foots
@@ -114,4 +141,5 @@ town issues a bond. Both readings are right.
 - FY2022 page 48: no year column in the grand-total block foots
 - FY2025 2025: the inside the debt limit purposes sum to 3,176,307, printed total 3,176,807 -- those rows are not published
 - FY2025 2024: the inside the debt limit purposes sum to 2,770,000, printed total 3,696,561 -- those rows are not published
+- FY2025 page 39: 7 of 159 issue cells do not close principal + interest (+ admin fee) = total
 - FY2017 total long-term indebtedness is printed 51,797,859 and 51,797,860 by FY4124-fy-2017-annual-town-report.pdf and FY4125-fy-2018-annual-town-report.pdf and FY4126-fy-2019-annual-town-report.pdf and FY4127-fy-2020-annual-town-report.pdf and FY4128-fy-2021-annual-town-report.pdf
