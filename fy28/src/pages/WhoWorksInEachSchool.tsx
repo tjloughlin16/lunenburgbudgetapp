@@ -619,9 +619,9 @@ export function WhoWorksInEachSchool() {
           : view === 'moved'
             ? 'The eight roles whose first and last printed counts are furthest apart. That is a difference between two documents, not a trend.'
             : `All ${d.roster.roles.length} categories, including the titles no rule recognised.`}
-        {' '}Every panel is on the same vertical scale. The amber bar is{' '}
-        {fy(doubled?.fy)}, where one school&rsquo;s roster was printed twice and there is no
-        way to split a role between the two.
+        {' '}Every panel is on the same vertical scale.
+        {doubled && <>{' '}The amber bar is {fy(doubled.fy)}, where one school&rsquo;s
+        roster was printed twice and there is no way to split a role between the two.</>}
       </p>
       <RoleGrid rows={roles} format={role} />
       <TableTwin caption="Every role category, first printed year to last"
@@ -677,6 +677,12 @@ export function WhoWorksInEachSchool() {
         the counts move when the extraction improves instead of going quietly stale.
       </Body>
 
+      {/* ONLY WHILE THERE IS ONE. `roster.doubled` emptied when the second printing
+          stopped reaching the data, and this block still read `doubled.fy` off
+          `undefined` -- so the whole page threw and prerendered to nothing. A caveat
+          about a defect must disappear when the defect does, or it outlives what it
+          describes; what must NOT happen is the page dying with it. */}
+      {doubled && (
       <div className="card p-4 mt-6 max-w-2xl" style={{ borderLeft: '4px solid var(--status-warning)' }}>
         <p className="text-[14.5px] font-bold mb-1.5">
           {fy(doubled.fy)}: {school(doubled.school)}&rsquo;s roster is printed twice
@@ -690,6 +696,7 @@ export function WhoWorksInEachSchool() {
           and the range is the honest answer rather than a caveat under a single bar.
         </p>
       </div>
+      )}
 
       <div className="card p-4 mt-4 max-w-2xl" style={{ borderLeft: '4px solid var(--status-warning)' }}>
         <p className="text-[14.5px] font-bold mb-1.5">
