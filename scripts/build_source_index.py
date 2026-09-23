@@ -1073,6 +1073,30 @@ GROUPS = [
              'bodies \u2014 the School Committee, the Library Trustees, the Board of '
              'Health \u2014 name no chair anywhere, which is registered as a gap rather '
              'than filled in.'),
+            ('data/receivables.csv',
+             'What the town was still owed on 30 June, levy by levy', 3,
+             'The Collector\u2019s RECEIVABLES SUMMARY out of the annual reports: one row '
+             'per tax levy and charge, eight columns from BALANCE FORWARD through '
+             'COMMITTMENTS, ABATEMENTS, PAYMENTS, REFUNDS, TRANSFER and ADJUSTMENTS to '
+             'BALANCES, ending in the town\u2019s own printed GRAND TOTAL. 522 rows, and '
+             'every one closes the table\u2019s per-row identity. THE COLUMN ORDER '
+             'CHANGES MID-ARCHIVE \u2014 FY2016-FY2018 print ADJUSTMENTS REFUNDS PAYMENTS '
+             'ABATEMENTS and FY2019 onward print ABATEMENTS PAYMENTS REFUNDS TRANSFER '
+             'ADJUSTMENTS \u2014 so four columns transpose silently for anyone who assumes '
+             'one layout. And FY2023 and FY2024 are both headed `FY2021 COLLECTION OF '
+             'TAXES`, a stale template; the fiscal year cannot be read off the heading.'),
+            ('data/receivables-reconciliation.csv',
+             'Every year of that table, published or refused, with the reason', 2,
+             'Written by us. Twelve readings: six tie to their printed GRAND TOTAL on all '
+             'eight columns, and six are refused with the instrument failure named \u2014 '
+             'a header returned as one box, a scan that stops before BALANCES, a dropped '
+             'BALANCE FORWARD column. Each is our reading failing, not the town declining '
+             'to print: all of them publish the table and all of them print a total. IT '
+             'ALSO CARRIES THE ONLY CHECK HERE THAT TESTS A YEAR AGAINST SOMETHING '
+             'OUTSIDE ITSELF \u2014 articulation, where one year\u2019s closing balance '
+             'must be the next year\u2019s opening. Every consecutive pair ties to the '
+             'cent except one: FY2018 opens $13,300.00 above where FY2017 closed, in two '
+             'printed grand totals in two different books. Recorded, not explained.'),
             ('data/outstanding-debt.csv',
              'What the town owed on 30 June, by purpose, FY2007\u2013FY2025', 3,
              'The FIVE YEARS OUTSTANDING DEBT table out of fifteen annual reports \u2014 '
@@ -1127,13 +1151,6 @@ GROUPS = [
              'The audit of the two readers above, one row per department per year. Every '
              'cell that is not a number is a to-do or an explanation, never a finding '
              'about the town. Rendered as a grid in notes/generated/STAFFING-COVERAGE.md.'),
-            ('data/debt-outstanding.csv',
-             'Debt outstanding, as the annual report prints it', 2,
-             'HEADER ONLY — no year reads yet. The outstanding-debt table was located in '
-             'all fifteen annual reports and the extractor does not yet find a year header '
-             'row in any of them. Catalogued while empty deliberately, so that the file '
-             'stands as a piece of work in progress rather than as a dataset that came '
-             'back with nothing to say.'),
             ('data/town-personnel.csv',
              'Every town post and who held it, FY2022 to FY2025', 2,
              'Read out of the ELECTED OFFICIALS and APPOINTED OFFICIALS listing in each '
