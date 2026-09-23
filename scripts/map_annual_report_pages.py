@@ -47,6 +47,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pdf_tables as T  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA = os.path.join(ROOT, 'sources', 'data')
 OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 OUT = os.path.join(ROOT, 'sources', 'data', 'annual-report-pages.csv')
@@ -304,12 +305,56 @@ def reading_direction(texts):
 # reading would mark every page in the archive read and leave a backlog of nothing --
 # the same error in the other direction, and a far worse one, because an empty queue
 # looks like success.
-CATALOGUES = {'annual_report_survey'}
+CATALOGUES = {'annual_report_survey', 'annual_report_pages', 'extraction_plan',
+              'stabilization_pages'}
+
+# A CATALOGUE DESCRIBES ITSELF, so it does not have to be listed by name. A file that
+# carries a `state` column is tracking whether something has been READ; a file that
+# carries `rows_published` is counting what somebody else produced. Neither is a reading.
+# `stabilization-pages.csv` is the worked example and it is almost funny: it credited 59
+# pages as read while its own `state` column called them `unread`, which took the trust
+# and stabilization queue from 13 to 3 on paper and changed nothing in the archive.
+CATALOGUE_COLUMNS = {'state', 'rows_published', 'figures_reversed'}
+
+
+def _label(name):
+    """One name per dataset. `report_appropriations` the table and
+    `report-appropriations.csv` the file are the same reading, and listing both made every
+    page look twice-read."""
+    return re.sub(r'^report[-_]', '', name).replace('_', '-')
 
 
 def read_pages():
-    """{(fy, page): 'dataset, dataset'} for every page some dataset cites."""
+    """{(fy, page): 'dataset, dataset'} for every page some dataset cites.
+
+    BOTH THE CSVs AND THE DATABASE, and the CSVs matter more. CLAUDE.md is explicit that
+    the CSVs are the source of truth and the database is a DERIVED read model rebuilt from
+    scratch every run -- so a dataset that has just been written is real, and a dataset
+    that has reached the database is merely one that has also been loaded.
+
+    Reading only the database meant a new extractor's output was invisible to the backlog
+    until somebody ran `build_db.py`, which is a step nobody remembers between finishing a
+    reader and looking at the queue. With six extractors being written at once that gap is
+    the difference between a live count and a stale one.
+    """
     out = collections.defaultdict(set)
+    for f in sorted(glob.glob(os.path.join(DATA, '*.csv'))):
+        name = os.path.basename(f)[:-4]
+        if name.replace('-', '_') in CATALOGUES or name == 'annual-report-pages':
+            continue
+        try:
+            with open(f, encoding='utf-8', errors='replace') as fh:
+                r = csv.DictReader(fh)
+                cols = set(r.fieldnames or ())
+                if not {'fy', 'page'} <= cols or cols & CATALOGUE_COLUMNS:
+                    continue
+                for row in r:
+                    try:
+                        out[(int(row['fy']), int(row['page']))].add(_label(name))
+                    except (TypeError, ValueError):
+                        continue
+        except OSError:
+            continue
     if not os.path.exists(DB):
         return out
     db = sqlite3.connect('file:%s?mode=ro' % DB, uri=True)
@@ -322,8 +367,7 @@ def read_pages():
                 continue
             for fy, pg in db.execute('SELECT DISTINCT fy, page FROM "%s"' % t):
                 try:
-                    out[(int(fy), int(pg))].add(
-                        t[len('report_'):] if t.startswith('report_') else t)
+                    out[(int(fy), int(pg))].add(_label(t))
                 except (TypeError, ValueError):
                     continue
     finally:
