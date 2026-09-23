@@ -126,11 +126,41 @@ def split_merged(boxes):
     for b in boxes:
         t = (b['text'] or '').strip()
         parts = [m for m in MONEY_TOKEN.finditer(t)]
-        if len(parts) < 2 or not t:
+        if not t or not parts:
+            out.append(b)
+            continue
+        # A FUND NAME AND ITS FIRST FIGURE ARRIVE AS ONE OBSERVATION TOO, and that case
+        # needs no second figure to be worth splitting. Vision runs the name into the
+        # column beside it where the table's rule is faint:
+        #
+        #   `VEHICLE/EQUIPMENT STABILIZATION (MAIN STREE* $1,201,170.65`   FY2022 p43
+        #   `ZONING INCENTIVE STABILIZATION (TD E $227,884.96`             FY2017 p39
+        #
+        # One money token and a name in front of it, so the `< 2` test above left the box
+        # whole -- and a box whose whole text is not a figure carries no figure at all.
+        # Both rows lost their BEGINNING PRINCIPAL, which is the first term of the cash
+        # identity, so both were refused on a page where every other row closed. FY2022's
+        # vehicle/equipment stabilization fund -- $1,457,123.63, the second largest
+        # balance the town holds -- went unpublished for exactly this reason.
+        #
+        # THE LABEL IS KEPT, NOT DISCARDED. Splitting used to emit only the figures, so a
+        # merged box surrendered the fund NAME as well; the row then had no anchor of its
+        # own and its figures were handed to the fund above. Three letters of prose in
+        # front of the first figure is the test, which `S2,041,061.72` and `(580,568.57)`
+        # both fail -- a currency mark misread as a letter is not a fund name.
+        prefix = t[:parts[0].start()]
+        label = sum(c.isalpha() for c in prefix) >= 3
+        if len(parts) < 2 and not label:
             out.append(b)
             continue
         w = b.get('w', 0.0)
         n = float(len(t))
+        if label:
+            c = dict(b)
+            c['text'] = prefix.strip()
+            c['w'] = w * (parts[0].start() / n)
+            c['split_from'] = t
+            out.append(c)
         for m in parts:
             c = dict(b)
             c['text'] = m.group(0)
@@ -276,7 +306,6 @@ SEVEN_NO_MARKET = ['begin_principal', 'begin_earnings', 'net_earnings',
                    'transfers_principal', 'transfers_earnings', 'ending_cash',
                    'unrealized']
 
-CANDIDATES = [TEN, NINE, BANKS, BANKS_6, EIGHT, SEVEN, SEVEN_NO_MARKET]
 MIN_PROVEN = 4
 
 # FY2023, PDF page 50, "TRUST FUNDS / FISCAL YEAR 2023 SUMMARY", header read off the
@@ -304,8 +333,55 @@ FOURTEEN = ['begin_market', 'begin_principal', 'begin_earnings', 'net_income',
             'ending_principal', 'ending_earnings', 'ending_cash', 'change_unrealized',
             'unrealized', 'ending_market']
 
+CANDIDATES = [FOURTEEN, TEN, NINE, BANKS, BANKS_6, EIGHT, SEVEN, SEVEN_NO_MARKET]
+
+# WHY FOURTEEN IS A CANDIDATE AND NOT ONLY A YEAR'S ENTRY BELOW. It was read off FY2023
+# and recorded against FY2023 alone, and `LAYOUTS` is consulted only AFTER every
+# candidate and the inference have failed -- so the four later years that print the same
+# fourteen columns had no way to reach it. FY2022, FY2024 and FY2025 each came back as
+# `14 centres, all unnamed` off a table that foots to the cent on every row.
+#
+# Offering it as a candidate is not loosening anything: a candidate is accepted only when
+# the DOCUMENT'S OWN arithmetic closes on at least MIN_PROVEN rows under it, and a
+# fourteen-column layout applied to a nine-column page is never even tried, because the
+# widths must match. It is the same test the other seven pass.
+
 LAYOUTS = {
-    2014: NINE, 2015: NINE, 2016: NINE, 2017: NINE, 2022: NINE, 2023: FOURTEEN,
+    2014: NINE, 2015: NINE, 2016: NINE, 2017: NINE,
+    # FY2023 IS READ AND STILL REFUSES, AND THE REASON IS NOT THE LAYOUT. PDF page 51 --
+    # the page carrying STABILIZATION, SEWER CAPITAL RESERVE, HEALTH INSURANCE, OPEB and
+    # SEWER OPEB -- prints these same fourteen columns; the page was rendered and read by
+    # eye to be sure. Vision did not read those five rows: their whole figure block came
+    # back as two tokens, `5=5=2255225229` and `4883322 1833332`, while the SUBTOTALS
+    # line under them reads perfectly. Nothing about the columns can fix that. The
+    # remedy is a re-OCR of that page, not a new header.
+    2023: FOURTEEN,
+    # FY2022 PRINTS THE FOURTEEN-COLUMN TABLE, NOT THE NINE. CLAUDE.md recorded that
+    # FY2022 "refused" the nine columns proposed from FY2014 -- no row closed -- and read
+    # that as a year waiting for somebody to look at the page. Somebody has now. PDF page
+    # 41, "TRUST FUNDS / FISCAL YEAR 2022 SUMMARY", header read off the page:
+    #
+    #   ACCOUNT NUMBER | FUND NAME | BEGINNING MARKET VALUE | BEGINNING PRINCIPAL |
+    #   BEGINNING EARNINGS | NET INCOME | REALIZED GAIN/LOSS | NET EARNINGS |
+    #   TRANSFERS OF PRINCIPAL | TRANSFERS OF EARNINGS | ENDING PRINCIPAL |
+    #   ENDING EARNINGS | ENDING CASH VALUE | CHANGE IN UNREALIZED GAIN/LOSS |
+    #   UNREALIZED GAIN/LOSS | ENDING MARKET VALUE
+    #
+    # The refusal was right about the layout and wrong about the remedy: nothing was
+    # missing from the page, the wrong header had been proposed for it. Rule 13c.
+    2022: FOURTEEN,
+    # FY2024, PDF page 34, and FY2025, PDF page 36, print the same fourteen. FY2025
+    # sub-labels two of them -- `BEGINNING PRINCIPAL (Non-Expend)` and `BEGINNING
+    # EARNINGS (Expendable)` -- which says what the money may be spent on and is not a
+    # different column.
+    #
+    # FY2025 PRINTS NO STABILIZATION SECTION IN THIS TABLE AT ALL. Its trust summary is
+    # one page, running CEMETERY to MISCELLANEOUS to GRAND TOTALS, and the Bartholomew
+    # stabilization and OPEB funds that FY2021-FY2024 all carry here are simply not on
+    # it. They appear on PDF page 35 as bank balances, with no arithmetic beside them,
+    # so nothing on that page can prove a row. That is a fact about the FY2025 report,
+    # not a gap in this reader.
+    2024: FOURTEEN, 2025: FOURTEEN,
     # FY2019 WAS READ AND WRITTEN DOWN AND NEVER WIRED IN. SEVEN_NO_MARKET above carries
     # this year's header, read off the page and commented with it -- and the year was
     # missing from this dict, so columns() named nothing, rows() built nothing, and the

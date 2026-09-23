@@ -22,9 +22,17 @@ misread digit does not survive both checks.
 
 THE LAYOUTS ARE HYPOTHESES AND THE IDENTITIES TEST THEM. Nine columns were read off
 FY2014's header and proposed for four other years. FY2015 and FY2016 accepted it -- ten
-to twelve rows a page close. FY2017 and FY2022 rejected it, one row and none, so their
-headers differ and they wait for somebody to read them. That is the check working, not
-failing: a wrong layout cannot make real arithmetic close.
+to twelve rows a page close. FY2017 and FY2022 rejected it, one row and none. That is the
+check working, not failing: a wrong layout cannot make real arithmetic close.
+
+AND FY2022'S REFUSAL WAS A LAYOUT WE HAD ALREADY READ AND COULD NOT REACH. It prints the
+same FOURTEEN columns FY2023 does, and those were recorded -- but `LAYOUTS` is consulted
+only after every candidate has failed, so a header known for one year was invisible to
+the three others that print it. FY2022, FY2024 and FY2025 now name it, and FY2022 went
+from none to seventeen rows on one page. Two refusals that looked alike are not alike:
+one is a LAYOUT we had not read, and one is our INSTRUMENT failing on a page we can see
+(rule 13c). FY2023 is the second kind -- the header is right, and Vision returns its
+stabilization block as `5=5=2255225229`, so it closes only after a re-OCR.
 
 COVERAGE IS PARTIAL AND SAYS SO. What is written here is proven. What is missing is
 missing because no layout has been read for that year yet, or because the year's pages
@@ -174,7 +182,10 @@ def extract(fy, path, verbose=False, prior=None):
         return [], 'no page proves a stabilization row'
     stab = [(p, r) for _, p, r in found.values()]
     if verbose:
-        for p, r in sorted(stab):
+        # SORT ON A KEY, never on the tuple. Two rows on one page fall through to
+        # comparing the dicts themselves, which raises -- so `--verbose` crashed on
+        # every year that proves more than one fund from a single page.
+        for p, r in sorted(stab, key=lambda t: (t[0], t[1]['name'])):
             print('   page %d: %s' % (p, ' '.join(r['name'].split())[:40]))
     # THE DOCUMENT'S NAME WINS, and where the registry disagrees that is recorded rather
     # than resolved. Substituting the registry silently turned `ZONING INCENTIVE
