@@ -415,6 +415,12 @@ POST_IN = {
     'local census liaison': 'Town Clerk',
     'assistant tax collector/treasurer': 'Tax Collector/Treasurer/Tax Custodian',
     'tax custodian': 'Tax Collector/Treasurer/Tax Custodian',
+    # THE HEARINGS OFFICER IS THE TOWN MANAGER. Kerry A. Lafleur, Heather Lemieux and
+    # Jennifer Warren-Dyment hold the post across ten years and all three are the Town
+    # Manager of their year -- it is a function of the office, not a body of its own.
+    'hearings officer': 'Town Manager',
+    # The department the town votes a budget to and runs a fund for since FY2011.
+    'recreation director': 'Parks and Recreation',
 }
 
 # AND A COMMITTEE IS A COMMITTEE, whichever part of the listing printed it. The Charter
