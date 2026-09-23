@@ -1311,6 +1311,14 @@ def build():
 
 
 def payload(rows):
+    # TIER TRAVELS AS A STRING, because the CSV has always carried it as one and the page
+    # compares against `'0'`. Emitting an int here made two bugs at once in JavaScript:
+    # `r.tier || '3'` treats the integer 0 as MISSING, so every head in the archive was
+    # filed with the staff -- Patrick A. Sullivan, Chief of Department, under `Members,
+    # seats and staff`, below his own deputy -- and `tier === '0'` never matched, so the
+    # band that should have had no indent got one and rendered as a second staff band.
+    # Nothing could catch it from the data, which was right the whole time.
+    rows = [dict(r, tier=str(r['tier'])) for r in rows]
     years = sorted({r['fy'] for r in rows})
     units = collections.defaultdict(lambda: dict(years=set(), kind='', n=0, subs=set()))
     for r in rows:

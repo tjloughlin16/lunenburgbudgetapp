@@ -150,8 +150,33 @@ def check(rows, want_unit=None, want_fy=None):
     return out
 
 
-ORDER = ['NOT-A-PERSON', 'INVERTED', 'TWIN-UNIT', 'TWO-CHAIRS', 'HEADLESS', 'MANY-HEADS', 'DOUBLED',
+ORDER = ['PAYLOAD', 'NOT-A-PERSON', 'INVERTED', 'TWIN-UNIT', 'TWO-CHAIRS', 'HEADLESS', 'MANY-HEADS', 'DOUBLED',
          'DEAD-GROUP', 'NO-ROLE']
+
+
+def payload_shape():
+    """The PUBLISHED payload, checked for the things a page can trip over.
+
+    Every check above reads the CSV, and the CSV was right the whole time a reader was
+    looking at a Fire Chief filed under `Members, seats and staff` below his own deputy.
+    The defect was that the JSON carried `tier` as a NUMBER while the page compared
+    against `'0'` -- and in JavaScript the integer 0 is falsy, so `r.tier || '3'` read
+    every head in the archive as missing. No check on the data could have caught it, so
+    the check is on the payload's SHAPE.
+    """
+    path = os.path.join(ROOT, 'fy28', 'public', 'data', 'org-charts.json')
+    if not os.path.exists(path):
+        return []
+    import json
+    rows = json.load(open(path, encoding='utf-8'))['rows']
+    bad = []
+    kinds = {type(r.get('tier')).__name__ for r in rows}
+    if kinds != {'str'}:
+        bad.append('tier is published as %s; the page compares it against strings, and '
+                   'a numeric 0 is FALSY in JavaScript' % ' and '.join(sorted(kinds)))
+    if any(str(r.get('tier')) not in ('0', '1', '2', '3', '4') for r in rows):
+        bad.append('a tier outside 0-4 is published; the page has no band for it')
+    return bad
 
 
 def main():
@@ -163,6 +188,8 @@ def main():
     a = ap.parse_args()
     rows = load()
     out = check(rows, a.unit, a.fy)
+    for msg in payload_shape():
+        out['PAYLOAD'].append(msg)
     total = sum(len(v) for v in out.values())
     print('%d rows, %d units, %d years'
           % (len(rows), len({r['unit'] for r in rows}), len({r['fy'] for r in rows})))

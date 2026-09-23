@@ -104,7 +104,11 @@ export function OrgCharts() {
       const k = r.subunit || ''
       if (!g.has(k)) g.set(k, new Map())
       const bands = g.get(k)!
-      const t = r.tier || '3'
+      // `?? `, NEVER `||`. Tier 0 is a real band and a falsy value, so `r.tier || '3'`
+      // put every head of every body in the archive into the staff band. String() as
+      // well, because a payload that ever emits a number must not silently make a second
+      // band keyed on 3 beside the one keyed on '3'.
+      const t = String(r.tier ?? 3)
       if (!bands.has(t)) bands.set(t, new Map())
       const groups = bands.get(t)!
       // THE GRADE AND THE DEPARTMENT. TJ: *"so for the school, dont we hav grade and
