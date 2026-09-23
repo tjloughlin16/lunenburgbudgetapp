@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-22",
+ "generated": "2026-09-23",
  "origins": [
   {
    "id": "school",
@@ -1529,6 +1529,18 @@
      "unit": "pages"
     },
     {
+     "path": "data/outstanding-debt.csv",
+     "title": "What the town owed on 30 June, by purpose, FY2007–FY2025",
+     "stars": 3,
+     "what": "The FIVE YEARS OUTSTANDING DEBT table out of fifteen annual reports — principal outstanding by purpose, split inside and outside the Chapter 44 debt limit. Each report prints five as-of years, so the series carries UP TO FIVE INDEPENDENT READINGS OF EVERY YEAR, taken up to four years apart, and they agree to the dollar in 18 of 19 years. The exception is FY2017, whose own report prints $51,797,859 six times and whose four successors all print $51,797,860; nothing here settles which is right, so both are kept. Publication is per column AND per section, because a scan that starts part-way down the table can carry every printed total while three purposes are physically off the image.",
+     "kind": "Data",
+     "bytes": 297890,
+     "url": "/docs/data/outstanding-debt.csv",
+     "count": 1038,
+     "unit": "rows",
+     "textUrl": "/docs/data/outstanding-debt.csv"
+    },
+    {
      "path": "analyses/connecting-the-budget.pdf",
      "title": "The same analysis, rendered for reading on paper",
      "stars": 3,
@@ -1552,6 +1564,30 @@
      "textUrl": "/docs/analyses/show-your-work.md"
     },
     {
+     "path": "data/receivables.csv",
+     "title": "What the town was still owed on 30 June, levy by levy",
+     "stars": 3,
+     "what": "The Collector’s RECEIVABLES SUMMARY out of the annual reports: one row per tax levy and charge, eight columns from BALANCE FORWARD through COMMITTMENTS, ABATEMENTS, PAYMENTS, REFUNDS, TRANSFER and ADJUSTMENTS to BALANCES, ending in the town’s own printed GRAND TOTAL. 522 rows, and every one closes the table’s per-row identity. THE COLUMN ORDER CHANGES MID-ARCHIVE — FY2016-FY2018 print ADJUSTMENTS REFUNDS PAYMENTS ABATEMENTS and FY2019 onward print ABATEMENTS PAYMENTS REFUNDS TRANSFER ADJUSTMENTS — so four columns transpose silently for anyone who assumes one layout. And FY2023 and FY2024 are both headed `FY2021 COLLECTION OF TAXES`, a stale template; the fiscal year cannot be read off the heading.",
+     "kind": "Data",
+     "bytes": 72145,
+     "url": "/docs/data/receivables.csv",
+     "count": 522,
+     "unit": "rows",
+     "textUrl": "/docs/data/receivables.csv"
+    },
+    {
+     "path": "data/valuation-by-class.csv",
+     "title": "What the town is worth, by class, and the levy on it",
+     "stars": 3,
+     "what": "The Assessors’ tables out of FY2011-FY2025: valuation and levy by major class, new growth, average values, the LA4 totals and the levy build-up. 170 rows, 144 checked against three statements the tables make about themselves — the printed TOTALS row, the percent column summing to 100.0000, and `valuation x rate / 1000 = levy` on every class row. IT IS A SECOND READING OF A FAMILY ALREADY EXTRACTED, deliberately: `report-valuation.csv` covers the same pages and every one of its 321 rows is `no check`, because the Assessors print three or four tables on one page and one column ruler cannot serve them — FY2018 came out with a Commercial valuation of `6603477819.70`, which is the valuation and the tax rate run together. THE FY2021 PAGE REPRINTS FY2020’S TOTALS ROW: its four class rows are consistent to the penny and sum $194,412,308 above the total printed beneath them, which is FY2020’s figure exactly. Written `check failed` rather than corrected.",
+     "kind": "Data",
+     "bytes": 67466,
+     "url": "/docs/data/valuation-by-class.csv",
+     "count": 170,
+     "unit": "rows",
+     "textUrl": "/docs/data/valuation-by-class.csv"
+    },
+    {
      "path": "analyses/stabilization-funds.md",
      "title": "The stabilization funds, and who may spend them",
      "stars": 3,
@@ -1562,6 +1598,18 @@
      "count": 662,
      "unit": "lines",
      "textUrl": "/docs/analyses/stabilization-funds.md"
+    },
+    {
+     "path": "data/peg-access-fund.csv",
+     "title": "The cable fund: what Comcast pays, and what it buys",
+     "stars": 3,
+     "what": "FY2015-FY2025, and NOTHING IN THIS ARCHIVE HELD ANY OF IT until now — it was found because two of its pages had been classified as enrollment and one as payroll. It is rule 11 in miniature: cable licence money paying real salaries, in no budget line anybody votes on, so a reader of the town’s appropriations cannot see the people it employs. 147 of 165 rows tie to a printed total. Three years disagree with themselves and are recorded rather than reconciled: FY2017’s printed TOTAL omits a $450.00 vendor expense, FY2025’s ending balance is beginning less expenses and ignores the year’s own $262,565 of revenue, and FY2020 and FY2024 each print their expenses twice on one page with the two copies disagreeing.",
+     "kind": "Data",
+     "bytes": 44479,
+     "url": "/docs/data/peg-access-fund.csv",
+     "count": 165,
+     "unit": "rows",
+     "textUrl": "/docs/data/peg-access-fund.csv"
     },
     {
      "path": "analyses/sped-and-the-curve.md",
@@ -1905,7 +1953,7 @@
      "stars": 2,
      "what": "Read out of the ELECTED OFFICIALS and APPOINTED OFFICIALS listing in each annual report: every board and appointed post, its holders and their term-expiry years. Split the town’s own way — elected board seat, appointed board seat, appointed officer — from the section header and from whether the post states a membership. `size_check` splits the rows three ways against the size each heading states, and nothing may be counted without splitting on it.",
      "kind": "Data",
-     "bytes": 211365,
+     "bytes": 211413,
      "url": "/docs/data/town-personnel.csv",
      "count": 2118,
      "unit": "rows",
@@ -1941,7 +1989,7 @@
      "stars": 2,
      "what": "Both departments list every officer and firefighter by rank and assignment in every annual report. Read from the WORD geometry because both are set in two columns. The Fire Department also states its strength in a sentence, so the book gives the same quantity twice and `roster_check` records whether the two agree — in most years they do not, and the difference is published rather than averaged away.",
      "kind": "Data",
-     "bytes": 96214,
+     "bytes": 96226,
      "url": "/docs/data/department-rosters.csv",
      "count": 894,
      "unit": "rows",
@@ -1958,6 +2006,18 @@
      "count": 652,
      "unit": "rows",
      "textUrl": "/docs/data/report-index.csv"
+    },
+    {
+     "path": "data/capital-plans.csv",
+     "title": "What the Capital Planning Committee asked for, ranked, FY2015-FY2023",
+     "stars": 2,
+     "what": "The Committee’s own ranked recommendation, which EXTENDS `capital-plan-fy27.csv` back nine years. A different table from `report-capital-projects.csv`, which is the fund balance schedule. Every year’s layout differs, so no column is named by position and none by heading: THE COST COLUMN IS THE ONE THAT FOOTS TO THE TOTAL THE PAGE PRINTS. 201 of 203 rows checked. FY2016 prints two totals — the Committee’s $780,975 for twelve projects and the Town Manager’s $619,475 for the first ten — and this holds the Committee list, so what was ASKED and what was FUNDED stay separate quantities.",
+     "kind": "Data",
+     "bytes": 57984,
+     "url": "/docs/data/capital-plans.csv",
+     "count": 201,
+     "unit": "rows",
+     "textUrl": "/docs/data/capital-plans.csv"
     },
     {
      "path": "data/staffing-by-section.csv",
@@ -1994,6 +2054,18 @@
      "count": 102,
      "unit": "rows",
      "textUrl": "/docs/data/department-staffing.csv"
+    },
+    {
+     "path": "data/tax-collection.csv",
+     "title": "The same Collector’s table, for the years read off a TEXT LAYER",
+     "stars": 2,
+     "what": "The other half of `receivables.csv` and deliberately not a rival to it: it skips at runtime every year that file publishes, so the two partition the archive and together nine of fifteen years tie to the town’s own printed GRAND TOTAL in all eight columns. WHAT MADE THESE YEARS READABLE IS A SECOND INSTRUMENT, not a better parser — FY2014, FY2015 and FY2025 carry a real text layer, exact to the cent, and FY2014 is drawn sideways with no `/Rotate` so the rotation had to be measured. FY2025’s OCR returns 10 figures off a page holding 194. Every year read off a text layer ties; no year read off OCR does.",
+     "kind": "Data",
+     "bytes": 42015,
+     "url": "/docs/data/tax-collection.csv",
+     "count": 250,
+     "unit": "rows",
+     "textUrl": "/docs/data/tax-collection.csv"
     },
     {
      "path": "analyses/athletics.md",
@@ -2145,7 +2217,7 @@
      "stars": 2,
      "what": "One row per body: the years it filed, and the years the contents page printed `No Report Submitted` beside its name in the town’s own words. 612 filings and 40 of those refusals across fourteen books. THE THIRD STATE IS THE ONE THAT MATTERS: a body that is not on the contents page at all has refused nothing, and four real departments are on none in any year, so reading their silence as a refusal would be a statement about them rather than about the document.",
      "kind": "Data",
-     "bytes": 11139,
+     "bytes": 11127,
      "url": "/docs/data/report-filing.csv",
      "count": 104,
      "unit": "rows",
@@ -2162,6 +2234,18 @@
      "count": 150,
      "unit": "lines",
      "textUrl": "/docs/analyses/peer-districts.md"
+    },
+    {
+     "path": "data/PROVENANCE-debt-tables.md",
+     "title": "Where both debt tables came from, and every page that refused",
+     "stars": 2,
+     "what": "Written by us, and generated, so its counts cannot drift. It lists the refusals rather than only the successes — including the one that matters most: FY2017 page 42 reads a currency sign as a `3` in two figures on one column, both gain exactly $30,000,000, and `principal + interest = TOTAL DEBT` then closes PERFECTLY at twenty times every other year on the page. An identity cannot see a compensating error, so the extractor refuses a figure more than eight times the median of its own row and calls that a guard rather than a proof.",
+     "kind": "Notes",
+     "bytes": 7702,
+     "url": "/docs/data/PROVENANCE-debt-tables.md",
+     "count": 117,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-debt-tables.md"
     },
     {
      "path": "data/roster-completeness.csv",
@@ -2186,6 +2270,42 @@
      "count": 104,
      "unit": "lines",
      "textUrl": "/docs/analyses/connecting-the-budget.md"
+    },
+    {
+     "path": "data/receivables-reconciliation.csv",
+     "title": "Every year of that table, published or refused, with the reason",
+     "stars": 2,
+     "what": "Written by us. Twelve readings: six tie to their printed GRAND TOTAL on all eight columns, and six are refused with the instrument failure named — a header returned as one box, a scan that stops before BALANCES, a dropped BALANCE FORWARD column. Each is our reading failing, not the town declining to print: all of them publish the table and all of them print a total. IT ALSO CARRIES THE ONLY CHECK HERE THAT TESTS A YEAR AGAINST SOMETHING OUTSIDE ITSELF — articulation, where one year’s closing balance must be the next year’s opening. Every consecutive pair ties to the cent except one: FY2018 opens $13,300.00 above where FY2017 closed, in two printed grand totals in two different books. Recorded, not explained.",
+     "kind": "Data",
+     "bytes": 4512,
+     "url": "/docs/data/receivables-reconciliation.csv",
+     "count": 12,
+     "unit": "rows",
+     "textUrl": "/docs/data/receivables-reconciliation.csv"
+    },
+    {
+     "path": "data/debt-repayment.csv",
+     "title": "What falls due in each future year, out to FY2047",
+     "stars": 2,
+     "what": "THE OTHER HALF OF THE SAME QUANTITY, AND KEPT APART FROM IT. Outstanding debt is principal owed on a date; this is debt service falling due in a year — a different stage, and flattening the two would be rule 1’s error in a new coat. Only the GRAND TOTAL block publishes: twenty-odd narrow columns of small type come back from the scanner as `52782335 52547440 52531098`, so no individual bond issue can be footed. And the overlap between reports is MOVEMENT, not disagreement: FY2011 shows $155,945 due in FY2032 and FY2021 shows $2,303,500, because two school bonds were issued in between.",
+     "kind": "Data",
+     "bytes": 3780,
+     "url": "/docs/data/debt-repayment.csv",
+     "count": 37,
+     "unit": "rows",
+     "textUrl": "/docs/data/debt-repayment.csv"
+    },
+    {
+     "path": "data/tax-collection-unreconciled.csv",
+     "title": "The thirteen years it will not publish, and why each refuses",
+     "stars": 2,
+     "what": "Written by us, one line of reason each, and the reasons are not interchangeable. Six are refused because another extractor already proved them. FY2016 and FY2019 are CROPPED rather than faint — the BALANCES column is off the right edge of every page of FY2019 — which is a different remedy from the OCR losses, and asking the Town for an uncropped copy is the one that would work. Three more are torn by non-linear scan distortion at the foot of the page, exactly where the GRAND TOTAL row is, so the control that would prove them is the thing the scan destroyed.",
+     "kind": "Data",
+     "bytes": 3436,
+     "url": "/docs/data/tax-collection-unreconciled.csv",
+     "count": 13,
+     "unit": "rows",
+     "textUrl": "/docs/data/tax-collection-unreconciled.csv"
     },
     {
      "path": "data/table-corrections.csv",
@@ -2246,16 +2366,6 @@
      "count": 2,
      "unit": "rows",
      "textUrl": "/docs/data/extraction-blocked.csv"
-    },
-    {
-     "path": "data/debt-outstanding.csv",
-     "title": "Debt outstanding, as the annual report prints it",
-     "stars": 2,
-     "what": "HEADER ONLY — no year reads yet. The outstanding-debt table was located in all fifteen annual reports and the extractor does not yet find a year header row in any of them. Catalogued while empty deliberately, so that the file stands as a piece of work in progress rather than as a dataset that came back with nothing to say.",
-     "kind": "Data",
-     "bytes": 62,
-     "url": "/docs/data/debt-outstanding.csv",
-     "textUrl": "/docs/data/debt-outstanding.csv"
     },
     {
      "path": "analyses/charts/town-budgets-town.svg",
@@ -2568,6 +2678,28 @@
      "count": 2,
      "unit": "rows",
      "textUrl": "/docs/data/stabilization-unfooted.csv"
+    },
+    {
+     "path": "data/capital-plans-refused.csv",
+     "title": "The capital-plan pages that would not read, and why each refused",
+     "stars": 1,
+     "what": "Written by us. Two pages: FY2013, whose table runs onto the next page, and FY2024 p87, where three of ten project rows print no cost in the OCR at all. Each carries the total the page states and the columns as printed, so the refusal is a reading somebody can pick up rather than a year that quietly is not there.",
+     "kind": "Data",
+     "bytes": 693,
+     "url": "/docs/data/capital-plans-refused.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/capital-plans-refused.csv"
+    },
+    {
+     "path": "data/valuation-refused.csv",
+     "title": "Valuation pages that would not read — currently none",
+     "stars": 1,
+     "what": "Written by us, and EMPTY ON PURPOSE. Every valuation page attempted was read; the file exists so that the next one that refuses has somewhere to be recorded, rather than becoming a year nobody notices is missing. A header with no rows is a claim that nothing refused; no file at all is no claim.",
+     "kind": "Data",
+     "bytes": 68,
+     "url": "/docs/data/valuation-refused.csv",
+     "textUrl": "/docs/data/valuation-refused.csv"
     }
    ]
   },
@@ -2620,7 +2752,7 @@
      "stars": 3,
      "what": "418 pages across fifteen annual town reports that carry a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. 209 read, 195 unread, 14 whose OCR came out upside down and which are a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 136495,
+     "bytes": 188356,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 474,
      "unit": "rows",
@@ -2932,9 +3064,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 139597,
+     "bytes": 143970,
      "url": "/docs/data/money-gaps.csv",
-     "count": 166,
+     "count": 172,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3131,6 +3263,18 @@
      "textUrl": "/docs/data/PROVENANCE-special-revenue-read.md"
     },
     {
+     "path": "data/stabilization-balances.csv",
+     "title": "What each stabilization and trust fund held, year by year",
+     "stars": 2,
+     "what": "The trust-and-agency table the town prints in its annual report, read off the page: beginning balance, the year’s activity, ending cash, and for the invested funds the market value beside it. Every row carries the fund name THE DOCUMENT used — `registry_name` and `name_disagrees` record where that differs from the account registry, because a fund renamed is not a fund replaced. A row is only written when the page’s own two identities foot: beginning + activity = ending cash, and ending cash + opening unrealised + change = ending market. Rows that do not are absent rather than estimated, so the file is short of what the reports contain and says so. See scripts/extract_stabilization.py and scripts/read_trust_table.py.",
+     "kind": "Data",
+     "bytes": 4729,
+     "url": "/docs/data/stabilization-balances.csv",
+     "count": 30,
+     "unit": "rows",
+     "textUrl": "/docs/data/stabilization-balances.csv"
+    },
+    {
      "path": "data/ingest-plan.csv",
      "title": "The plan for the annual-report backlog, in batches",
      "stars": 2,
@@ -3141,18 +3285,6 @@
      "count": 12,
      "unit": "rows",
      "textUrl": "/docs/data/ingest-plan.csv"
-    },
-    {
-     "path": "data/stabilization-balances.csv",
-     "title": "What each stabilization and trust fund held, year by year",
-     "stars": 2,
-     "what": "The trust-and-agency table the town prints in its annual report, read off the page: beginning balance, the year’s activity, ending cash, and for the invested funds the market value beside it. Every row carries the fund name THE DOCUMENT used — `registry_name` and `name_disagrees` record where that differs from the account registry, because a fund renamed is not a fund replaced. A row is only written when the page’s own two identities foot: beginning + activity = ending cash, and ending cash + opening unrealised + change = ending market. Rows that do not are absent rather than estimated, so the file is short of what the reports contain and says so. See scripts/extract_stabilization.py and scripts/read_trust_table.py.",
-     "kind": "Data",
-     "bytes": 4033,
-     "url": "/docs/data/stabilization-balances.csv",
-     "count": 25,
-     "unit": "rows",
-     "textUrl": "/docs/data/stabilization-balances.csv"
     },
     {
      "path": "data/money-edges.csv",
@@ -16979,10 +17111,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1477,
+  "documents": 1488,
   "groups": 22,
-  "bytes": 2185640536,
-  "loadBearing": 156
+  "bytes": 2186299622,
+  "loadBearing": 160
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

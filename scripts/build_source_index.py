@@ -1125,6 +1125,27 @@ GROUPS = [
              'FY2025\u2019s ending balance is beginning less expenses and ignores the '
              'year\u2019s own $262,565 of revenue, and FY2020 and FY2024 each print their '
              'expenses twice on one page with the two copies disagreeing.'),
+            ('data/tax-collection.csv',
+             'The same Collector\u2019s table, for the years read off a TEXT LAYER', 2,
+             'The other half of `receivables.csv` and deliberately not a rival to it: it '
+             'skips at runtime every year that file publishes, so the two partition the '
+             'archive and together nine of fifteen years tie to the town\u2019s own '
+             'printed GRAND TOTAL in all eight columns. WHAT MADE THESE YEARS READABLE IS '
+             'A SECOND INSTRUMENT, not a better parser \u2014 FY2014, FY2015 and FY2025 '
+             'carry a real text layer, exact to the cent, and FY2014 is drawn sideways '
+             'with no `/Rotate` so the rotation had to be measured. FY2025\u2019s OCR '
+             'returns 10 figures off a page holding 194. Every year read off a text layer '
+             'ties; no year read off OCR does.'),
+            ('data/tax-collection-unreconciled.csv',
+             'The thirteen years it will not publish, and why each refuses', 2,
+             'Written by us, one line of reason each, and the reasons are not '
+             'interchangeable. Six are refused because another extractor already proved '
+             'them. FY2016 and FY2019 are CROPPED rather than faint \u2014 the BALANCES '
+             'column is off the right edge of every page of FY2019 \u2014 which is a '
+             'different remedy from the OCR losses, and asking the Town for an uncropped '
+             'copy is the one that would work. Three more are torn by non-linear scan '
+             'distortion at the foot of the page, exactly where the GRAND TOTAL row is, '
+             'so the control that would prove them is the thing the scan destroyed.'),
             ('data/receivables.csv',
              'What the town was still owed on 30 June, levy by levy', 3,
              'The Collector\u2019s RECEIVABLES SUMMARY out of the annual reports: one row '
