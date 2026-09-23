@@ -1073,6 +1073,58 @@ GROUPS = [
              'bodies \u2014 the School Committee, the Library Trustees, the Board of '
              'Health \u2014 name no chair anywhere, which is registered as a gap rather '
              'than filled in.'),
+            ('data/valuation-by-class.csv',
+             'What the town is worth, by class, and the levy on it', 3,
+             'The Assessors\u2019 tables out of FY2011-FY2025: valuation and levy by major '
+             'class, new growth, average values, the LA4 totals and the levy build-up. '
+             '170 rows, 144 checked against three statements the tables make about '
+             'themselves \u2014 the printed TOTALS row, the percent column summing to '
+             '100.0000, and `valuation x rate / 1000 = levy` on every class row. IT IS A '
+             'SECOND READING OF A FAMILY ALREADY EXTRACTED, deliberately: `report-'
+             'valuation.csv` covers the same pages and every one of its 321 rows is '
+             '`no check`, because the Assessors print three or four tables on one page '
+             'and one column ruler cannot serve them \u2014 FY2018 came out with a '
+             'Commercial valuation of `6603477819.70`, which is the valuation and the tax '
+             'rate run together. THE FY2021 PAGE REPRINTS FY2020\u2019S TOTALS ROW: its '
+             'four class rows are consistent to the penny and sum $194,412,308 above the '
+             'total printed beneath them, which is FY2020\u2019s figure exactly. Written '
+             '`check failed` rather than corrected.'),
+            ('data/capital-plans-refused.csv',
+             'The capital-plan pages that would not read, and why each refused', 1,
+             'Written by us. Two pages: FY2013, whose table runs onto the next page, and '
+             'FY2024 p87, where three of ten project rows print no cost in the OCR at '
+             'all. Each carries the total the page states and the columns as printed, so '
+             'the refusal is a reading somebody can pick up rather than a year that '
+             'quietly is not there.'),
+            ('data/valuation-refused.csv',
+             'Valuation pages that would not read \u2014 currently none', 1,
+             'Written by us, and EMPTY ON PURPOSE. Every valuation page attempted was '
+             'read; the file exists so that the next one that refuses has somewhere to be '
+             'recorded, rather than becoming a year nobody notices is missing. A header '
+             'with no rows is a claim that nothing refused; no file at all is no claim.'),
+            ('data/capital-plans.csv',
+             'What the Capital Planning Committee asked for, ranked, FY2015-FY2023', 2,
+             'The Committee\u2019s own ranked recommendation, which EXTENDS '
+             '`capital-plan-fy27.csv` back nine years. A different table from '
+             '`report-capital-projects.csv`, which is the fund balance schedule. Every '
+             'year\u2019s layout differs, so no column is named by position and none by '
+             'heading: THE COST COLUMN IS THE ONE THAT FOOTS TO THE TOTAL THE PAGE '
+             'PRINTS. 201 of 203 rows checked. FY2016 prints two totals \u2014 the '
+             'Committee\u2019s $780,975 for twelve projects and the Town Manager\u2019s '
+             '$619,475 for the first ten \u2014 and this holds the Committee list, so '
+             'what was ASKED and what was FUNDED stay separate quantities.'),
+            ('data/peg-access-fund.csv',
+             'The cable fund: what Comcast pays, and what it buys', 3,
+             'FY2015-FY2025, and NOTHING IN THIS ARCHIVE HELD ANY OF IT until now \u2014 '
+             'it was found because two of its pages had been classified as enrollment and '
+             'one as payroll. It is rule 11 in miniature: cable licence money paying real '
+             'salaries, in no budget line anybody votes on, so a reader of the town\u2019s '
+             'appropriations cannot see the people it employs. 147 of 165 rows tie to a '
+             'printed total. Three years disagree with themselves and are recorded rather '
+             'than reconciled: FY2017\u2019s printed TOTAL omits a $450.00 vendor expense, '
+             'FY2025\u2019s ending balance is beginning less expenses and ignores the '
+             'year\u2019s own $262,565 of revenue, and FY2020 and FY2024 each print their '
+             'expenses twice on one page with the two copies disagreeing.'),
             ('data/receivables.csv',
              'What the town was still owed on 30 June, levy by levy', 3,
              'The Collector\u2019s RECEIVABLES SUMMARY out of the annual reports: one row '
