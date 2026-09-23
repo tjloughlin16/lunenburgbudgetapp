@@ -267,13 +267,13 @@ export function OrgCharts() {
         <label className="flex flex-col gap-1 text-[12px]" style={{ color: 'var(--text-muted)' }}>
           Fiscal year
           <select value={shownFy} onChange={e => setFy(e.target.value)} style={sel}>
-            {/* `today` is the town's own staff directory, which carries no year at all
-                — whoever it was publishing on the day it was fetched. Labelling it FY
-                anything would give a snapshot the standing of an annual report. */}
-            {years.map(y => (
-              <option key={y} value={y}>
-                {y === 'today' ? 'Today — the town’s staff directory' : `FY${y}`}
-              </option>
+            {/* NEWEST FIRST, because that is the end of the list a reader wants, and
+                every entry is a fiscal year — including the one that comes from the
+                staff directory rather than from a book. A year with no annual report
+                behind it is still that year; what it is made of is said below the chart
+                rather than smuggled into the label. */}
+            {years.slice().reverse().map(y => (
+              <option key={y} value={y}>FY{y}</option>
             ))}
           </select>
         </label>
@@ -431,6 +431,18 @@ export function OrgCharts() {
           report counts' as context at the bottom, not the first big block of text."*
           Rule 7a, and this page was breaking it — a reader arrives for a department's
           chart and met nine lines explaining how to read one first. */}
+      {rows.length > 0 && rows.every(r => r.source.startsWith('town staff directory')) ? (
+        <Body>
+          <strong>FY{shownFy} here is the town’s own staff directory, not an annual
+          report.</strong>{' '}
+          No annual report has been published for it yet, so this is who the town lists on
+          its own website — a snapshot taken when the page was last fetched, rather than a
+          roster a department printed and stood behind. It carries <em>paid staff only</em>:
+          no teacher, no board member and no volunteer is in it, so a body made of
+          volunteers is empty here and is not empty.
+        </Body>
+      ) : null}
+
       <Grain>
         A NAME is somebody the town printed in that role that year. A POST is an
         establishment position a department states and never says who fills — the DPW and

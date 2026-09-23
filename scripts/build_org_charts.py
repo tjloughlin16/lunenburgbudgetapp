@@ -914,15 +914,37 @@ SIG_DROP = re.compile(r'town meeting|town election|collection of taxes|omnibus|'
 # catalogued and hashed: *"I still dont see Chris Ruth."* He was right -- it was a dataset
 # and not yet a source, which is the difference between holding a document and reading it.
 #
-# IT CARRIES NO YEAR, so it does not get one. Every other row here is dated by the annual
-# report it came out of; this is whoever the town was publishing on the day it was
-# fetched, and calling that FY2027 would give a snapshot the standing of a book. It is
-# filed under `today` and the page says so.
+# IT CARRIES NO YEAR OF ITS OWN, AND IT IS STILL A YEAR. TJ: *"today IS a FY... it's this
+# FY, the current one."* He is right and the first version was wrong: it filed the
+# directory under `today`, which made a fiscal year into a special case and left it
+# uncomparable with everything around it. The Massachusetts fiscal year runs 1 July to
+# 30 June, so a fetch in September 2026 is FY2027 -- the year the town is in.
 #
-# AND IT COVERS ONLY WHAT IT COVERS. The directory lists no teacher, no board member and
-# no volunteer, so `today` appears in the year menu of the bodies it holds and nowhere
-# else -- a reader who picks it for the schools would otherwise get an empty page.
-DIRECTORY_FY = 'today'
+# THE FETCH DATE IS THE ONLY DATE THIS SOURCE HAS, so the year is DERIVED from it rather
+# than typed, and it is read out of the CATALOGUE -- `fetch_staff_directory.py` writes
+# `(staff directory, fetched YYYY-MM-DD)` into the label of every page it holds. A
+# re-fetch next July moves these rows to FY2028 without anybody editing a constant, which
+# is rule 2 applied to a date instead of a figure.
+#
+# WHAT IS NOT A YEAR IS WHAT IT COVERS. The directory lists PAID STAFF ONLY -- no teacher,
+# no board member, no volunteer -- so its year appears in the menu of the bodies it holds
+# and nowhere else, and the page says what a reader is looking at.
+def directory_fy():
+    """The fiscal year the staff directory was fetched in, read off the catalogue."""
+    idx = os.path.join(ROOT, 'sources', 'town-supplementary', 'index.csv')
+    when = ''
+    if os.path.exists(idx):
+        for r in csv.DictReader(open(idx, encoding='utf-8')):
+            m = re.search(r'staff directory, fetched (\d{4})-(\d{2})-\d{2}', r['label'])
+            if m:
+                when = max(when, '%s-%s' % m.groups())
+    if not when:
+        return ''
+    y, mth = (int(x) for x in when.split('-'))
+    return str(y + 1 if mth >= 7 else y)
+
+
+DIRECTORY_FY = directory_fy()
 
 # THE FOLDINGS THE DIRECTORY DOES NOT KNOW ABOUT. It files Animal Control and the three
 # inspectorates as their own entries because they have their own phone numbers; the
@@ -942,7 +964,7 @@ def _rows_directory(units):
     """Who the town publishes today, matched to bodies the chart already holds."""
     p = os.path.join(DATA, 'staff-directory.csv')
     out, unmatched = [], []
-    if not os.path.exists(p):
+    if not os.path.exists(p) or not DIRECTORY_FY:
         return out, unmatched
 
     def words(name):
