@@ -896,8 +896,13 @@ three are written down:
 - **`v1` is an ordinal, not a column.** Read `column_meaning`.
 - **`status` splits the rows into three.** `checked`, `check failed`, `no check` -- and
   nothing may be aggregated without splitting on it.
-- **Six of the sixteen source PDFs exist only in this working tree.**
-  `notes/reference/BACKUP.md` lists every path with how many copies of it exist.
+- **How many copies of each thing exist is in `notes/reference/BACKUP.md`, and it is
+  GENERATED.** Do not restate the count here. This line used to read *six of the sixteen
+  source PDFs exist only in this working tree*, which was true until the archive moved to
+  R2 on 5 September 2026 and false every day after — and on 23 September it made somebody
+  raise a false alarm about the annual reports being unbacked. They are all in the bucket,
+  byte-verified. Rule 2 is not only about the model: a figure typed into prose is the one
+  thing here that can be silently wrong, and this file is prose that ships.
 
 ## Where the bytes are: git holds what changes, R2 holds what must not
 
