@@ -239,13 +239,17 @@ export function OrgCharts() {
           Department, board or school
           <select value={unit} onChange={e => { setUnit(e.target.value); setSub('') }}
             style={sel}>
+            {/* ALPHABETICAL INSIDE EACH CATEGORY, and no year count beside the name.
+                The payload is ordered by size, which is the right order for a builder
+                reading its own output and the wrong one for somebody hunting for their
+                own department in a list of sixty-one. */}
             {(['department', 'school', 'board', 'officer'] as const).map(k => (
               <optgroup key={k} label={KIND_LABEL[k]}>
-                {d.units.filter(u => u.kind === k).map(u => (
-                  <option key={u.unit} value={u.unit}>
-                    {u.unit} ({u.years.length} yr)
-                  </option>
-                ))}
+                {d.units.filter(u => u.kind === k)
+                  .slice().sort((a, b) => a.unit.localeCompare(b.unit))
+                  .map(u => (
+                    <option key={u.unit} value={u.unit}>{u.unit}</option>
+                  ))}
               </optgroup>
             ))}
           </select>
