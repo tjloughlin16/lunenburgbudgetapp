@@ -437,7 +437,20 @@ def main():
         body = re.sub(r'/\*.*?\*/', '', src, flags=re.S)
         body = re.sub(r'className="[^"]*"', '', body)
         body = re.sub(r"'[^']*'", '', body)
-        stray = sorted(set(re.findall(r'>\s*[^<>{}]*?(\d[\d,.]*)%?[^<>{}]*?<', body)))
+        # ...AND A `>` IS NOT ALWAYS THE END OF A TAG. This matched
+        # `{moreRows.length > 0 && (` and reported `0` as a figure typed into the page --
+        # a JSX conditional render, where the `>` is a comparison operator and the 0 is
+        # code. The check was reporting on its own reading rather than on the page, which
+        # is the failure this repository names most often.
+        #
+        # A text node cannot contain JavaScript, so a candidate carrying an operator is
+        # not prose. This narrows what is scanned; it does not lower the bar -- a figure
+        # genuinely typed into a sentence has no `&&`, `=>` or `(` beside it.
+        CODE = re.compile(r'&&|\|\||=>|\?\.|\(')
+        stray = sorted({m.group(1) for m in
+                        re.finditer(r'>\s*([^<>{}]*?\d[\d,.]*%?[^<>{}]*?)<', body)
+                        if not CODE.search(m.group(1))})
+        stray = sorted({re.search(r'\d[\d,.]*', x).group(0) for x in stray})
         check(not stray,
               'literal figures are typed into the page: %s. Rule 2: every figure comes '
               'out of the payload.' % stray[:6])
