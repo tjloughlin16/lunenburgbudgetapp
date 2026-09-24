@@ -217,14 +217,46 @@ PLAN = [
     #
     # It does not settle rule 11's standing question. A directory is who the town lists,
     # not who is funded by what, and a name is not an FTE.
-    (13, 'The town and school staff directories', 'session', 'fetch + extractor', [],
-     'part of a session', 'free',
-     'Who works for the town and for the district TODAY, from two sheets the town '
-     'publishes itself — the first source here covering school staff outside an '
-     'annual report. Snapshotted per fetch, because the publisher overwrites it and the '
-     'only history of it will be the one we keep. '
-     'https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykE'
-     'XoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pubhtml'),
+    # AND EVERY SCHOOL PUBLISHES ITS OWN LISTING TOO, given 24 September 2026 with the
+    # reason they matter separately -- TJ: *"the reason the individual matters is to show
+    # 'shared' resources across school, and sometimes there's more details."*
+    #
+    # THAT IS A QUESTION THIS ARCHIVE HAS ALREADY TRIPPED OVER AND COULD NOT SETTLE. The
+    # FY2022 roster hunt found twenty apparent duplicates and concluded they were people
+    # at TWO SCHOOLS -- shared specialists, legitimately printed twice -- which is why
+    # `who-works-in-each-school` counts district staff as distinct NAMES while keeping the
+    # school columns per-school. That conclusion rests on OUR names matching across two
+    # printed rosters. Per-school directories would establish it from the schools' own
+    # lists instead.
+    #
+    # DO NOT MERGE THEM INTO ONE LIST WHEN THIS IS BUILT. A person on two school
+    # directories is the FINDING; deduplicating on the way in destroys the one thing
+    # these five addresses were given for.
+    #
+    # One of the five is an `/edit?gid=0` address rather than a published `pubhtml` one,
+    # so it may not read the same way, or at all. Recorded as given; nothing here has
+    # opened any of them.
+    (13, 'The town, district and per-school staff directories', 'session',
+     'fetch + extractor', [], 'part of a session', 'free',
+     'Who works for the town and for the district TODAY, from the sheets the town and '
+     'the schools publish themselves \u2014 the first source here covering school staff '
+     'outside an annual report, and the first that could establish SHARED staff from the '
+     'schools\u2019 own lists rather than by matching names across two printed rosters. '
+     'Snapshotted per fetch, because the publisher overwrites it and the only history of '
+     'it will be the one we keep. '
+     'town+school https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNE'
+     'l9iAIlHjOykEXoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pubhtml | '
+     'district https://www.lunenburgschools.net/contact | '
+     'school https://docs.google.com/spreadsheets/d/e/2PACX-1vQcd-h-MVa9GRDdMx_sXKEk9uxK'
+     'uks2Cfc4LGmRtaMMn7zHOYeMFvQ-GVV-kAWAzm-kwWn6Kw94sAbG/pubhtml | '
+     'school https://docs.google.com/spreadsheets/d/e/2PACX-1vTAcMEzPhIJYS4H5JX1zFrrt-BJ'
+     'UTfQaKOvVP1i5f23ShyZ7jlwrqccO_n2fZnTLhblortPS9Urq0nL/pubhtml | '
+     'school https://docs.google.com/spreadsheets/d/1aTMJoGPb4-j1oJAZs1oOvbZdYz7yvY9R0Yy'
+     'iC3j8KxA/edit?gid=0 | '
+     'school https://docs.google.com/spreadsheets/d/e/2PACX-1vTwLEex6hF6OOegk9jx7XiCa57S'
+     'TXqESMtLq61rQuuv5jGBX1XLLS3mK0tEwcyYlCwEoDlClN3lZiAO/pubhtml | '
+     'school https://docs.google.com/spreadsheets/d/e/2PACX-1vTAH5iEk29z7eJh0XDI0GGr9cTM'
+     'RDZB_aEfruqiKohLwwEAW8XPgVavo26J8C3XYgZScmPWNsgY_2Fp/pubhtml'),
 ]
 
 
