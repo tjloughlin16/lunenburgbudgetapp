@@ -187,6 +187,44 @@ PLAN = [
      '"searched N of M published documents" \u2014 without which a search that finds '
      'nothing cannot be cited as evidence that nothing was said, which is what rule 15a '
      'asks every analysis to do.'),
+    # TWO STAFF DIRECTORIES THE TOWN PUBLISHES AS ONE SPREADSHEET, given by TJ on 24
+    # September 2026: one sheet of TOWN staff and one of SCHOOL staff, at a Google
+    # `pubhtml` address.
+    #
+    # WHY IT IS `permanent` AND NOT A ONE-OFF READ. A published Google Sheet is
+    # overwritten in place. It carries TODAY and no history, exactly like the town's own
+    # `/m/directory` -- and that source taught this project the rule: if we do not keep a
+    # dated snapshot per fetch, nobody can ever say who worked here in a given year,
+    # because the publisher will have overwritten the only copy. `fetch_staff_directory.py`
+    # already holds the pattern: one folder per fetch date, and the fiscal year derived
+    # from it rather than typed.
+    #
+    # AND THE EXISTING DIRECTORY IS NOT ON A SCHEDULE EITHER, which is the larger half of
+    # this job. `fetch_staff_directory.py` is named in no scheduled script -- not
+    # `refresh.py`, not `daily_refresh.sh`, not `weekly_sweep.sh`; only its own extractor
+    # and this plan mention it. There is exactly ONE snapshot on disk, 2026-09-22. So the
+    # town's people are a single photograph with nothing arranged to take the next one,
+    # and the failure mode is silent: the file keeps answering, correctly, about a day
+    # that recedes. Both directories belong on the same recurring fetch, and that is what
+    # makes this entry `permanent` rather than another extractor to write.
+    #
+    # WHAT IT IS WORTH. The org charts are built from annual-report rosters, the officials
+    # listing and the town directory -- and every one of those is a list of NAMES with no
+    # FTE and no funding source. A school-staff directory is the first source here that
+    # covers the district's people outside the annual report, which is where /org-charts
+    # is thinnest: the Library shows one person and employs ten, and four departments
+    # appear in no annual report at all.
+    #
+    # It does not settle rule 11's standing question. A directory is who the town lists,
+    # not who is funded by what, and a name is not an FTE.
+    (13, 'The town and school staff directories', 'session', 'fetch + extractor', [],
+     'part of a session', 'free',
+     'Who works for the town and for the district TODAY, from two sheets the town '
+     'publishes itself — the first source here covering school staff outside an '
+     'annual report. Snapshotted per fetch, because the publisher overwrites it and the '
+     'only history of it will be the one we keep. '
+     'https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykE'
+     'XoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pubhtml'),
 ]
 
 
