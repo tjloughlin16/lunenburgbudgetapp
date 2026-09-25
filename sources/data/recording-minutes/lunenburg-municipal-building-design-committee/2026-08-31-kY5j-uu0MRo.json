@@ -1,379 +1,555 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "lunenburg-municipal-building-design-committee",
-  "board": "Lunenburg Municipal Building Design Committee",
-  "video_title": "Municipal Building Design Committee",
-  "meeting_date": "2026-08-31",
-  "video_id": "kY5j-uu0MRo",
-  "video_url": "https://www.youtube.com/watch?v=kY5j-uu0MRo",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/lunenburg-municipal-building-design-committee/2026-08-31-kY5j-uu0MRo.json",
-    "sha256": "6de6f3a2e30af6b133727ca16512db6bf095f28d299c27ac42f9586b7baed918",
-    "caption_lines": 259,
-    "segments": 2378
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "lunenburg-municipal-building-design-committee",
+ "board": "Lunenburg Municipal Building Design Committee",
+ "video_title": "Municipal Building Design Committee",
+ "meeting_date": "2026-08-31",
+ "video_id": "kY5j-uu0MRo",
+ "video_url": "https://www.youtube.com/watch?v=kY5j-uu0MRo",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/lunenburg-municipal-building-design-committee/2026-08-31-kY5j-uu0MRo.json",
+  "sha256": "6de6f3a2e30af6b133727ca16512db6bf095f28d299c27ac42f9586b7baed918",
+  "caption_lines": 259,
+  "segments": 2378
+ },
+ "recording": {
+  "duration_s": 5401,
+  "duration": "1:30",
+  "spoken_chars": 76452,
+  "words_approx": 12742
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08312026-7983",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-08-31-agenda-7983.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-08-31-agenda-7983.pdf"
   },
-  "recording": {
-    "duration_s": 5401,
-    "duration": "1:30",
-    "spoken_chars": 76452,
-    "words_approx": 12742
-  },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08312026-7983",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-08-31-agenda-7983.txt",
-      "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-08-31-agenda-7983.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08312026-7983",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.txt",
-      "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.pdf"
-    }
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08312026-7983",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-18T18:23:31Z",
+  "cost_usd": 0.3285596
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Dave",
+    "role": "chair (addressed directly during discussion)"
+   },
+   {
+    "name_as_heard": "Stephen Wallace (introduced as \"Mr. Wallace,\" also called \"Stephen\"/\"Steve\")",
+    "role": "guest presenter, town official working with the Planning Board on housing/zoning"
+   },
+   {
+    "name_as_heard": "Tom Gray",
+    "role": "Finance Committee member (attending, introduced himself)"
+   },
+   {
+    "name_as_heard": "Tony",
+    "role": "committee member (referenced by name, master-plan advocate)"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "capital",
+   "facilities",
+   "housing",
+   "planning-and-zoning",
+   "seniors",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 47,
+    "motion": "Approve the prior meeting's minutes",
+    "moved_by": "",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3382,
+    "motion": "That the Ritter Building's current square footage is insufficient for all town functions",
+    "moved_by": "",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5378,
+    "motion": "Adjourn the meeting",
+    "moved_by": "",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1090,
+    "topic": "Feasibility study for TC Pasios senior housing/community center site",
+    "what_was_said": "The guest presenter said he could contact firms for ballpark estimates on a feasibility study covering three scoped options (senior housing alone; plus community center; plus town green). He estimated a rough range for such a study.",
+    "figures_as_heard": [
+     "50 to $75,000"
+    ]
+   },
+   {
+    "t": 1982,
+    "topic": "MassWorks infrastructure grant matching requirement",
+    "what_was_said": "Discussion suggested the town might need to provide a matching share if it secures a MassWorks grant, with a member noting the town's likely available match funds on hand.",
+    "figures_as_heard": [
+     "25%",
+     "7 or $800,000"
+    ]
+   },
+   {
+    "t": 2005,
+    "topic": "2019 committee study cost estimate for Ritter Building renovation (prior iteration)",
+    "what_was_said": "The chair recalled that when this committee first looked at renovating the Ritter Building for town offices, school department, and a community center, the study came up with a total project cost.",
+    "figures_as_heard": [
+     "30 million"
+    ]
+   },
+   {
+    "t": 2786,
+    "topic": "Cost per square foot from the prior (PM&C) study",
+    "what_was_said": "The chair cited the prior study's per-square-foot costs for renovation versus new construction, used to estimate what an addition to the Ritter Building would cost.",
+    "figures_as_heard": [
+     "$360",
+     "$363",
+     "$472"
+    ]
+   },
+   {
+    "t": 4334,
+    "topic": "Renovation cost comparison: town meeting house vs. Ritter Building",
+    "what_was_said": "The chair recalled two renovation cost figures from a prior study, one for the meeting house and one for this building, and summed them to illustrate the scale of a combined project.",
+    "figures_as_heard": [
+     "2625",
+     "2100",
+     "4.8",
+     "$49 million"
+    ]
+   },
+   {
+    "t": 4397,
+    "topic": "Rough estimate for a new annex addition and its renovation counterpart",
+    "what_was_said": "The chair ran informal calculations using the per-square-foot figures from the prior study to estimate what a new annex of a given size, plus renovation, might cost.",
+    "figures_as_heard": [
+     "4,000 square ft",
+     "472",
+     "475",
+     "1.9",
+     "3,000 times",
+     "1.12 million"
+    ]
+   },
+   {
+    "t": 4440,
+    "topic": "Soft costs (design, escalation, bonding) on the combined prior project estimate",
+    "what_was_said": "A member noted the earlier $2.6 million figure for the meeting house did not include design, escalation, and bonding costs, and gave a rough total for those soft costs across the projects.",
+    "figures_as_heard": [
+     "5 million",
+     "four and a half million"
+    ]
+   },
+   {
+    "t": 4691,
+    "topic": "TC Pasios utilities funding through FY27",
+    "what_was_said": "The presenter said the town has funds budgeted to cover utilities at TC Pasios through the end of June of the coming fiscal year, but two tenant organizations cannot operate there once it gets cold unless the boilers are fixed.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4734,
+    "topic": "Comparable boiler replacement cost, St. Bernard's Elementary",
+    "what_was_said": "As a benchmark, the presenter cited what the town recently paid a union contractor to replace two boilers at St. Bernard's Elementary School, covering that work and other items.",
+    "figures_as_heard": [
+     "$300,000"
+    ]
+   },
+   {
+    "t": 4794,
+    "topic": "Estimated repair cost for TC Pasios boiler safety valve",
+    "what_was_said": "The presenter estimated the cost to replace the defective steam safety/pressure relief valve at TC Pasios, suggesting the tenant organizations (teen center, food pantry) might be asked to fund it themselves.",
+    "figures_as_heard": [
+     "five grand"
+    ]
+   },
+   {
+    "t": 5008,
+    "topic": "Comparable roof replacement cost, St. Bernard's multi-purpose room",
+    "what_was_said": "The presenter cited the cost of a 20-year roof recently installed on a comparably sized room at St. Bernard's as a benchmark for what a TC Pasios gym roof repair might cost, noting visible roof damage there too.",
+    "figures_as_heard": [
+     "80 grand"
+    ]
+   },
+   {
+    "t": 5091,
+    "topic": "Prevailing wage impact on project costs (skate park comparison)",
+    "what_was_said": "A member noted that requiring prevailing wage roughly doubled or more the cost on a comparable town project (the skate park), as context for whether TC Pasios repairs would trigger prevailing wage.",
+    "figures_as_heard": [
+     "2.1"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1630,
+    "decision": "Committee agreed to ask the feasibility study to scope three options for the TC Pasios site: senior housing alone, senior housing plus a community center, and senior housing plus community center plus a town green."
+   },
+   {
+    "t": 1917,
+    "decision": "Presenter (Stephen Wallace) agreed to contact several firms to get ballpark estimates for the feasibility study cost before the next meeting."
+   },
+   {
+    "t": 3903,
+    "decision": "Committee agreed to work up a shared spreadsheet/document combining square footage assumptions (employees, storage, meeting rooms) to bring to the Select Board and Town Manager."
+   },
+   {
+    "t": 5325,
+    "decision": "Next meeting set for September 21st."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 46,
+    "topic": "Call to order; no public comment",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 47,
+    "t_end": 108,
+    "topic": "Approval of prior meeting's minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 88,
+    "t_end": 2131,
+    "topic": "Guest presentation on affordable senior housing options, inclusionary zoning, and the town's 40B threshold",
+    "resolution": "informational; discussion, no vote",
+    "tags": [
+     "housing",
+     "seniors",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1152,
+    "t_end": 2131,
+    "topic": "TC Pasios site as possible location for senior housing, community center, and town green; feasibility study scope",
+    "resolution": "referred to feasibility study; presenter to gather cost estimates",
+    "tags": [
+     "facilities",
+     "housing",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 2131,
+    "t_end": 2358,
+    "topic": "Committee discussion of TC Pasios site advantages (walkability, density, master plan alignment) after guest departs",
+    "resolution": "informational",
+    "tags": [
+     "housing",
+     "planning-and-zoning",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 2358,
+    "t_end": 3389,
+    "topic": "Assessing whether the Ritter Building can accommodate town hall functions in its current footprint or needs expansion",
+    "resolution": "discussion leading to vote",
+    "tags": [
+     "facilities",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 3382,
+    "t_end": 3410,
+    "topic": "Vote: current Ritter Building square footage is insufficient for all town functions",
+    "resolution": "voted, passed",
+    "tags": [
+     "facilities",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 3410,
+    "t_end": 4231,
+    "topic": "Design options for an addition/annex to the Ritter Building, including elevator placement, floor levels, and entrance location",
+    "resolution": "informational; to be referred to an architect",
+    "tags": [
+     "facilities",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4231,
+    "t_end": 4647,
+    "topic": "Square footage range estimate and cost comparison for renovation vs. new construction; plan to draft a document for the Select Board",
+    "resolution": "decision to prepare a joint document; no vote",
+    "tags": [
+     "facilities",
+     "capital",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4647,
+    "t_end": 5325,
+    "topic": "TC Pasios building conditions (failed boilers, roof, storage) and future of teen center/food pantry tenancy",
+    "resolution": "discussion only; select board seen as ultimate decision-maker",
+    "tags": [
+     "facilities",
+     "capital",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5325,
+    "t_end": 5388,
+    "topic": "Setting next meeting date and adjournment",
+    "resolution": "voted (adjournment); date set informally",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Individual speakers are frequently not identifiable by name; many statements are attributed only by cross-talk pattern.",
+   "Several dollar figures are ambiguous or possibly truncated (e.g., \"2625,\" \"2100,\" \"4.8,\" \"$49 million\") and cannot be confirmed as the intended amounts.",
+   "No roll-call vote counts are audible for any of the three votes; outcomes are inferred from \"all in favor\"/\"any opposed\" exchanges only.",
+   "The full name and title of the guest presenter (heard as both \"Mr. Wallace\" and \"Stephen\"/\"Steve\") is not clearly established.",
+   "Portions of the cost-calculation cross-talk around t=4355-4460 are garbled and the exact final combined estimate is not clear."
+  ],
+  "confidence": "moderate",
+  "headline": "Committee voted the current town hall (Ritter) building is too small and needs an addition.",
+  "summary": "A guest presenter briefed the committee on how the town could pursue affordable senior housing, including using the TC Pasios site for senior housing, a community center, and a town green, with a feasibility study to be scoped and estimated. The committee then voted that the Ritter Building's current square footage cannot accommodate all town hall functions and discussed addition/annex design options, cost comparisons, and next steps for a document to bring to the Select Board; TC Pasios's failing boilers and the fate of its teen center and food pantry tenants were also discussed without a vote."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The committee voted that the Ritter Building's current square footage cannot fit all town hall functions.",
+    "t": 3382
+   },
+   {
+    "line": "A guest presenter outlined using the TC Pasios site for senior housing, a community center, and a town green.",
+    "t": 1630
+   },
+   {
+    "line": "Committee agreed to have a feasibility study scope three versions of the TC Pasios plan before the next meeting.",
+    "t": 1917
+   },
+   {
+    "line": "Committee agreed to draft a joint square-footage and cost document, comparing renovation to a new addition, for the Select Board.",
+    "t": 3903
+   },
+   {
+    "line": "Failing boilers at TC Pasios were discussed as threatening its teen center and food pantry tenants once it gets cold, with no vote taken.",
+    "t": 4691
+   }
+  ],
+  "why_it_matters": [
+   "The vote that the Ritter Building is too small moves the committee toward proposing an addition, a project that would eventually need Select Board and town meeting approval.",
+   "The TC Pasios feasibility study could determine whether that site becomes senior housing, a community center, a town green, or some combination -- a choice residents may later vote to fund.",
+   "Unrepaired boilers at TC Pasios put the building's teen center and food pantry programs at risk of losing usable space this winter."
+  ],
+  "watch_next": [
+   "Next meeting: September 21",
+   "Joint square-footage/cost document to the Select Board and Town Manager"
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-18T18:23:31Z",
-    "cost_usd": 0.3285596
-  },
-  "minutes": {
-    "attendees": [
-      {
-        "name_as_heard": "Dave",
-        "role": "chair (addressed directly during discussion)"
-      },
-      {
-        "name_as_heard": "Stephen Wallace (introduced as \"Mr. Wallace,\" also called \"Stephen\"/\"Steve\")",
-        "role": "guest presenter, town official working with the Planning Board on housing/zoning"
-      },
-      {
-        "name_as_heard": "Tom Gray",
-        "role": "Finance Committee member (attending, introduced himself)"
-      },
-      {
-        "name_as_heard": "Tony",
-        "role": "committee member (referenced by name, master-plan advocate)"
-      }
-    ],
-    "public_comment": [],
-    "tags": [
-      "budget",
-      "capital",
-      "facilities",
-      "housing",
-      "planning-and-zoning",
-      "seniors",
-      "town-departments"
-    ],
-    "votes": [
-      {
-        "t": 47,
-        "motion": "Approve the prior meeting's minutes",
-        "moved_by": "",
-        "outcome": "passed",
-        "procedural": true
-      },
-      {
-        "t": 3382,
-        "motion": "That the Ritter Building's current square footage is insufficient for all town functions",
-        "moved_by": "",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 5378,
-        "motion": "Adjourn the meeting",
-        "moved_by": "",
-        "outcome": "passed",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 1090,
-        "topic": "Feasibility study for TC Pasios senior housing/community center site",
-        "what_was_said": "The guest presenter said he could contact firms for ballpark estimates on a feasibility study covering three scoped options (senior housing alone; plus community center; plus town green). He estimated a rough range for such a study.",
-        "figures_as_heard": [
-          "50 to $75,000"
-        ]
-      },
-      {
-        "t": 1982,
-        "topic": "MassWorks infrastructure grant matching requirement",
-        "what_was_said": "Discussion suggested the town might need to provide a matching share if it secures a MassWorks grant, with a member noting the town's likely available match funds on hand.",
-        "figures_as_heard": [
-          "25%",
-          "7 or $800,000"
-        ]
-      },
-      {
-        "t": 2005,
-        "topic": "2019 committee study cost estimate for Ritter Building renovation (prior iteration)",
-        "what_was_said": "The chair recalled that when this committee first looked at renovating the Ritter Building for town offices, school department, and a community center, the study came up with a total project cost.",
-        "figures_as_heard": [
-          "30 million"
-        ]
-      },
-      {
-        "t": 2786,
-        "topic": "Cost per square foot from the prior (PM&C) study",
-        "what_was_said": "The chair cited the prior study's per-square-foot costs for renovation versus new construction, used to estimate what an addition to the Ritter Building would cost.",
-        "figures_as_heard": [
-          "$360",
-          "$363",
-          "$472"
-        ]
-      },
-      {
-        "t": 4334,
-        "topic": "Renovation cost comparison: town meeting house vs. Ritter Building",
-        "what_was_said": "The chair recalled two renovation cost figures from a prior study, one for the meeting house and one for this building, and summed them to illustrate the scale of a combined project.",
-        "figures_as_heard": [
-          "2625",
-          "2100",
-          "4.8",
-          "$49 million"
-        ]
-      },
-      {
-        "t": 4397,
-        "topic": "Rough estimate for a new annex addition and its renovation counterpart",
-        "what_was_said": "The chair ran informal calculations using the per-square-foot figures from the prior study to estimate what a new annex of a given size, plus renovation, might cost.",
-        "figures_as_heard": [
-          "4,000 square ft",
-          "472",
-          "475",
-          "1.9",
-          "3,000 times",
-          "1.12 million"
-        ]
-      },
-      {
-        "t": 4440,
-        "topic": "Soft costs (design, escalation, bonding) on the combined prior project estimate",
-        "what_was_said": "A member noted the earlier $2.6 million figure for the meeting house did not include design, escalation, and bonding costs, and gave a rough total for those soft costs across the projects.",
-        "figures_as_heard": [
-          "5 million",
-          "four and a half million"
-        ]
-      },
-      {
-        "t": 4691,
-        "topic": "TC Pasios utilities funding through FY27",
-        "what_was_said": "The presenter said the town has funds budgeted to cover utilities at TC Pasios through the end of June of the coming fiscal year, but two tenant organizations cannot operate there once it gets cold unless the boilers are fixed.",
-        "figures_as_heard": []
-      },
-      {
-        "t": 4734,
-        "topic": "Comparable boiler replacement cost, St. Bernard's Elementary",
-        "what_was_said": "As a benchmark, the presenter cited what the town recently paid a union contractor to replace two boilers at St. Bernard's Elementary School, covering that work and other items.",
-        "figures_as_heard": [
-          "$300,000"
-        ]
-      },
-      {
-        "t": 4794,
-        "topic": "Estimated repair cost for TC Pasios boiler safety valve",
-        "what_was_said": "The presenter estimated the cost to replace the defective steam safety/pressure relief valve at TC Pasios, suggesting the tenant organizations (teen center, food pantry) might be asked to fund it themselves.",
-        "figures_as_heard": [
-          "five grand"
-        ]
-      },
-      {
-        "t": 5008,
-        "topic": "Comparable roof replacement cost, St. Bernard's multi-purpose room",
-        "what_was_said": "The presenter cited the cost of a 20-year roof recently installed on a comparably sized room at St. Bernard's as a benchmark for what a TC Pasios gym roof repair might cost, noting visible roof damage there too.",
-        "figures_as_heard": [
-          "80 grand"
-        ]
-      },
-      {
-        "t": 5091,
-        "topic": "Prevailing wage impact on project costs (skate park comparison)",
-        "what_was_said": "A member noted that requiring prevailing wage roughly doubled or more the cost on a comparable town project (the skate park), as context for whether TC Pasios repairs would trigger prevailing wage.",
-        "figures_as_heard": [
-          "2.1"
-        ]
-      }
-    ],
-    "transfers": [],
-    "decisions": [
-      {
-        "t": 1630,
-        "decision": "Committee agreed to ask the feasibility study to scope three options for the TC Pasios site: senior housing alone, senior housing plus a community center, and senior housing plus community center plus a town green."
-      },
-      {
-        "t": 1917,
-        "decision": "Presenter (Stephen Wallace) agreed to contact several firms to get ballpark estimates for the feasibility study cost before the next meeting."
-      },
-      {
-        "t": 3903,
-        "decision": "Committee agreed to work up a shared spreadsheet/document combining square footage assumptions (employees, storage, meeting rooms) to bring to the Select Board and Town Manager."
-      },
-      {
-        "t": 5325,
-        "decision": "Next meeting set for September 21st."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 3,
-        "t_end": 46,
-        "topic": "Call to order; no public comment",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 47,
-        "t_end": 108,
-        "topic": "Approval of prior meeting's minutes",
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "t_start": 88,
-        "t_end": 2131,
-        "topic": "Guest presentation on affordable senior housing options, inclusionary zoning, and the town's 40B threshold",
-        "resolution": "informational; discussion, no vote",
-        "tags": [
-          "housing",
-          "seniors",
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 1152,
-        "t_end": 2131,
-        "topic": "TC Pasios site as possible location for senior housing, community center, and town green; feasibility study scope",
-        "resolution": "referred to feasibility study; presenter to gather cost estimates",
-        "tags": [
-          "facilities",
-          "housing",
-          "seniors"
-        ]
-      },
-      {
-        "t_start": 2131,
-        "t_end": 2358,
-        "topic": "Committee discussion of TC Pasios site advantages (walkability, density, master plan alignment) after guest departs",
-        "resolution": "informational",
-        "tags": [
-          "housing",
-          "planning-and-zoning",
-          "economic-development"
-        ]
-      },
-      {
-        "t_start": 2358,
-        "t_end": 3389,
-        "topic": "Assessing whether the Ritter Building can accommodate town hall functions in its current footprint or needs expansion",
-        "resolution": "discussion leading to vote",
-        "tags": [
-          "facilities",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 3382,
-        "t_end": 3410,
-        "topic": "Vote: current Ritter Building square footage is insufficient for all town functions",
-        "resolution": "voted, passed",
-        "tags": [
-          "facilities",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 3410,
-        "t_end": 4231,
-        "topic": "Design options for an addition/annex to the Ritter Building, including elevator placement, floor levels, and entrance location",
-        "resolution": "informational; to be referred to an architect",
-        "tags": [
-          "facilities",
-          "capital"
-        ]
-      },
-      {
-        "t_start": 4231,
-        "t_end": 4647,
-        "topic": "Square footage range estimate and cost comparison for renovation vs. new construction; plan to draft a document for the Select Board",
-        "resolution": "decision to prepare a joint document; no vote",
-        "tags": [
-          "facilities",
-          "capital",
-          "budget"
-        ]
-      },
-      {
-        "t_start": 4647,
-        "t_end": 5325,
-        "topic": "TC Pasios building conditions (failed boilers, roof, storage) and future of teen center/food pantry tenancy",
-        "resolution": "discussion only; select board seen as ultimate decision-maker",
-        "tags": [
-          "facilities",
-          "capital",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 5325,
-        "t_end": 5388,
-        "topic": "Setting next meeting date and adjournment",
-        "resolution": "voted (adjournment); date set informally",
-        "tags": []
-      }
-    ],
-    "not_audible": [
-      "Individual speakers are frequently not identifiable by name; many statements are attributed only by cross-talk pattern.",
-      "Several dollar figures are ambiguous or possibly truncated (e.g., \"2625,\" \"2100,\" \"4.8,\" \"$49 million\") and cannot be confirmed as the intended amounts.",
-      "No roll-call vote counts are audible for any of the three votes; outcomes are inferred from \"all in favor\"/\"any opposed\" exchanges only.",
-      "The full name and title of the guest presenter (heard as both \"Mr. Wallace\" and \"Stephen\"/\"Steve\") is not clearly established.",
-      "Portions of the cost-calculation cross-talk around t=4355-4460 are garbled and the exact final combined estimate is not clear."
-    ],
-    "confidence": "moderate",
-    "headline": "Committee voted the current town hall (Ritter) building is too small and needs an addition.",
-    "summary": "A guest presenter briefed the committee on how the town could pursue affordable senior housing, including using the TC Pasios site for senior housing, a community center, and a town green, with a feasibility study to be scoped and estimated. The committee then voted that the Ritter Building's current square footage cannot accommodate all town hall functions and discussed addition/annex design options, cost comparisons, and next steps for a document to bring to the Select Board; TC Pasios's failing boilers and the fate of its teen center and food pantry tenants were also discussed without a vote."
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "The committee voted that the Ritter Building's current square footage cannot fit all town hall functions.",
-        "t": 3382
-      },
-      {
-        "line": "A guest presenter outlined using the TC Pasios site for senior housing, a community center, and a town green.",
-        "t": 1630
-      },
-      {
-        "line": "Committee agreed to have a feasibility study scope three versions of the TC Pasios plan before the next meeting.",
-        "t": 1917
-      },
-      {
-        "line": "Committee agreed to draft a joint square-footage and cost document, comparing renovation to a new addition, for the Select Board.",
-        "t": 3903
-      },
-      {
-        "line": "Failing boilers at TC Pasios were discussed as threatening its teen center and food pantry tenants once it gets cold, with no vote taken.",
-        "t": 4691
-      }
-    ],
-    "why_it_matters": [
-      "The vote that the Ritter Building is too small moves the committee toward proposing an addition, a project that would eventually need Select Board and town meeting approval.",
-      "The TC Pasios feasibility study could determine whether that site becomes senior housing, a community center, a town green, or some combination -- a choice residents may later vote to fund.",
-      "Unrepaired boilers at TC Pasios put the building's teen center and food pantry programs at risk of losing usable space this winter."
-    ],
-    "watch_next": [
-      "Next meeting: September 21",
-      "Joint square-footage/cost document to the Select Board and Town Manager"
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-18T18:23:46Z",
-      "cost_usd": 0.1542816
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-18T18:23:46Z",
+   "cost_usd": 0.1542816
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08312026-7983",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-08-31-minutes-7983.pdf"
+  },
+  "official_sha256": "e3b3d014f531a1747181d9cde8173445da7abe329153df757e41254d43d59d68",
+  "coverage": "partial",
+  "summary": "The two records agree on the substantive vote (Ritter Building insufficient) and on the three logged decisions (feasibility-study scope, Wallace contacting firms, Sept 21 next meeting), with a couple of names/figures garbled by captions rather than genuinely differing. Where they diverge it's mostly coverage, not conflict: ours captures far more of the specific dollar figures cited in discussion that the official minutes simply omitted, while the official minutes capture whole topics (TC Passios funding arrangement with the Teen Center/Food Pantry, senior-housing zoning/tax-title-property details, the full attendee roster) that never surface in ours at all.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 10,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Ritter Building square footage insufficient",
+    "ours": "[t=3382] That the Ritter Building's current square footage is insufficient for all town functions — passed",
+    "official": "Motion: The Committee concluded that the building in its present configuration is insufficient to accommodate all Town functions and would require additions and/or significant modifications. Motion seconded and approved unanimously.",
+    "note": "Same motion, same outcome; official adds the 'additions/modifications' framing but the vote itself matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: feasibility study to scope three TC Pasios options",
+    "ours": "[t=1630] Committee agreed to ask the feasibility study to scope three options: senior housing alone, senior housing plus community center, senior housing plus community center plus town green.",
+    "official": "The Committee agreed that a feasibility study should examine three potential concepts: 1. Senior housing only; 2. Senior housing with a community center; and 3. Senior housing with a community center and town green.",
+    "note": "Identical three-option scope in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Wallace to contact firms for feasibility cost estimate",
+    "ours": "[t=1917] Presenter (Stephen Wallace) agreed to contact several firms to get ballpark estimates for the feasibility study cost before the next meeting.",
+    "official": "Mr. Wallace agreed to contact firms regarding the potential feasibility study and provide the Committee with estimated costs.",
+    "note": "Same commitment; official omits the 'before the next meeting' deadline detail, not a conflict."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: TC Pasios feasibility study cost estimate",
+    "ours": "[t=1090] Feasibility study for TC Pasios senior housing/community center site: 50 to $75,000",
+    "official": "A preliminary estimate of approximately $50,000–$75,000 was discussed.",
+    "note": "Same range; caption just dropped the thousands suffix on '50', not a substantive error."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Cost per square foot from prior (PM&C) study",
+    "ours": "[t=2786] Cost per square foot from the prior (PM&C) study: $360, $363, $472",
+    "official": "Previous cost estimates of approximately $360–$375 per square foot for renovation and approximately $472 per square foot for new construction were discussed.",
+    "official_reading": "$360–$375 (renovation) and $472 (new construction)",
+    "note": "The '$363' is very likely a mis-heard '$375' — the renovation range's upper bound; $360 and $472 already match exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: committee chair 'Dave'",
+    "ours": "Dave (chair (addressed directly during discussion))",
+    "official": "Members Present: David Blatt, Tom Gray, Matthew Brenner, Anthony Sculimbrene, Greg Roy",
+    "official_reading": "David Blatt",
+    "note": "Captions caught only the first name; official gives the full name — same person, no conflict."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Stephen Wallace's affiliation/role",
+    "ours": "Stephen Wallace ... guest presenter, town official working with the Planning Board on housing/zoning",
+    "official": "Town Employees: Steven Wallace / Community Guests: NA",
+    "note": "Ours frames him partly as a 'guest presenter' while the official minutes classify him strictly as a Town Employee, not a guest — worth checking his actual employment status/title with the town."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees present not mentioned in ours",
+    "ours": "",
+    "official": "Members Present: David Blatt, Tom Gray, Matthew Brenner, Anthony Sculimbrene, Greg Roy",
+    "note": "Matthew Brenner and Greg Roy are listed as present in the official minutes but never referenced in ours; check whether they spoke or were simply silent attendees the captions didn't name."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members list",
+    "ours": "",
+    "official": "Members Absent: Brian Lehtinen, Laura Brzozoski, Kristina Masaitis",
+    "note": "Ours does not track absences at all; not a conflict, just a gap in scope."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MassWorks matching requirement figures",
+    "ours": "[t=1982] MassWorks infrastructure grant matching requirement: 25%, 7 or $800,000",
+    "official": "The Committee also discussed potential MassWorks funding opportunities.",
+    "note": "Official gives no figures for MassWorks at all, so the 25%/$700-800k figures can't be checked against it; verify these against the recording or a follow-up document."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "2019 study cost estimate for Ritter renovation",
+    "ours": "[t=2005] 2019 committee study cost estimate for Ritter Building renovation (prior iteration): 30 million",
+    "official": "",
+    "note": "No $30 million total appears anywhere in the official minutes even though the per-square-foot figures from the same study are recorded; check the 2019 study document directly for this total."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town meeting house vs. Ritter Building renovation comparison",
+    "ours": "[t=4334] Renovation cost comparison: town meeting house vs. Ritter Building: 2625, 2100, 4.8, $49 million",
+    "official": "",
+    "note": "This entire comparison (including the $49 million figure) is absent from the official minutes; verify the numbers against the recording since they can't be cross-checked here."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Rough estimate for annex addition vs. renovation",
+    "ours": "[t=4397] Rough estimate for a new annex addition and its renovation counterpart: 4,000 square ft, 472, 475, 1.9, 3,000 times, 1.12 million",
+    "official": "",
+    "note": "Official does not carry these annex figures; the square-footage figures it does carry (5,600 current, 6,300–7,000 target) are different numbers for a different purpose — don't conflate them."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Soft costs on combined prior project estimate",
+    "ours": "[t=4440] Soft costs (design, escalation, bonding) on the combined prior project estimate: 5 million, four and a half million",
+    "official": "",
+    "note": "No soft-cost figures in the official minutes; check the recording to confirm which number ($5M or $4.5M) was the actual estimate."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "St. Bernard's Elementary boiler replacement comparable",
+    "ours": "[t=4734] Comparable boiler replacement cost, St. Bernard's Elementary: $300,000",
+    "official": "Various repair costs were discussed, including examples of boiler work, roof repairs, and a potential minor boiler/valve repair.",
+    "note": "Official acknowledges boiler/roof cost examples were discussed but gives no dollar figures; ours' $300,000 figure can't be verified against it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "TC Pasios boiler safety valve repair estimate",
+    "ours": "[t=4794] Estimated repair cost for TC Pasios boiler safety valve: five grand",
+    "official": "Various repair costs were discussed, including examples of boiler work, roof repairs, and a potential minor boiler/valve repair.",
+    "note": "Official confirms a 'minor boiler/valve repair' was discussed but omits the $5,000 figure ours captured."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "St. Bernard's multi-purpose room roof replacement comparable",
+    "ours": "[t=5008] Comparable roof replacement cost, St. Bernard's multi-purpose room: 80 grand",
+    "official": "Various repair costs were discussed, including examples of boiler work, roof repairs, and a potential minor boiler/valve repair.",
+    "note": "Official's generic 'roof repairs' reference likely corresponds to this $80,000 figure but doesn't state it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prevailing wage impact (skate park comparison)",
+    "ours": "[t=5091] Prevailing wage impact on project costs (skate park comparison): 2.1",
+    "official": "",
+    "note": "No mention of prevailing wage or a skate park comparison anywhere in the official minutes; confirm this figure and its unit (multiplier? percent?) against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Shared spreadsheet to be brought to Select Board/Town Manager",
+    "ours": "[t=3903] Committee agreed to work up a shared spreadsheet/document combining square footage assumptions (employees, storage, meeting rooms) to bring to the Select Board and Town Manager.",
+    "official": "The Committee discussed developing a detailed spreadsheet identifying employee workspace, storage, meeting rooms, circulation, and other space requirements.",
+    "note": "Core agreement to build the spreadsheet matches; official omits that it would be brought to the Select Board and Town Manager — check whether that step was actually agreed to or is our addition."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "TC Passios: organizations funding limited repairs / Select Board authority",
+    "ours": "",
+    "official": "The Committee noted that the Select Board has ultimate authority regarding the building. The Committee discussed supporting limited repairs if the organizations propose funding them and receive appropriate Select Board concurrence.",
+    "note": "This entire arrangement — conditional support for repairs funded by the Teen Center/Food Pantry with Select Board sign-off — is missing from ours; it reads like a substantive discussion outcome worth capturing."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "TC Passios: no definitive commitment on comprehensive repairs",
+    "ours": "",
+    "official": "No definitive commitment was made regarding comprehensive repairs to the TC Passios Building.",
+    "note": "An explicit non-decision recorded officially; ours has no corresponding note that repairs remained undecided."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-25T11:57:10Z",
+   "cost_usd": 0.32929200000000003
+  }
+ }
 }

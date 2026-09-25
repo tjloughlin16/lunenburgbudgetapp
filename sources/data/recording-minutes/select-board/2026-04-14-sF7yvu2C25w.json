@@ -1,716 +1,985 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "select-board",
-  "board": "Select Board",
-  "meeting_date": "2026-04-14",
-  "video_id": "sF7yvu2C25w",
-  "video_url": "https://www.youtube.com/watch?v=sF7yvu2C25w",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/select-board/2026-04-14-sF7yvu2C25w.json",
-    "sha256": "a9055b68e688d66e306bd6acdd11af9e8e8611f79d7fcbe3a32a4ee3e1d7257a",
-    "caption_lines": 293,
-    "segments": 2881
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-04-14",
+ "video_id": "sF7yvu2C25w",
+ "video_url": "https://www.youtube.com/watch?v=sF7yvu2C25w",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-04-14-sF7yvu2C25w.json",
+  "sha256": "a9055b68e688d66e306bd6acdd11af9e8e8611f79d7fcbe3a32a4ee3e1d7257a",
+  "caption_lines": 293,
+  "segments": 2881
+ },
+ "recording": {
+  "duration_s": 6145,
+  "duration": "1:42",
+  "spoken_chars": 93219,
+  "words_approx": 15536
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04142026-7766",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-14-agenda-7766.txt",
+   "path": "sources/meetings/select-board/2026-04-14-agenda-7766.pdf"
   },
-  "recording": {
-    "duration_s": 6145,
-    "duration": "1:42",
-    "spoken_chars": 93219,
-    "words_approx": 15536
-  },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04142026-7766",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-14-agenda-7766.txt",
-      "path": "sources/meetings/select-board/2026-04-14-agenda-7766.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142026-7766",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-14-minutes-7766.txt",
-      "path": "sources/meetings/select-board/2026-04-14-minutes-7766.pdf"
-    }
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142026-7766",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-14-minutes-7766.txt",
+   "path": "sources/meetings/select-board/2026-04-14-minutes-7766.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-14T13:16:15Z",
+  "cost_usd": 0.5613630000000001
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the Chair",
+    "role": "Select Board Chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. McCloud",
+    "role": "Select Board member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Leitnen",
+    "role": "Select Board member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Ms. Empty",
+    "role": "Select Board member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Ms. Moore",
+    "role": "Select Board member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Jen",
+    "role": "Town Manager",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Melissa",
+    "role": "staff (scheduling/Zoom support)",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 385,
+    "speaker_as_heard": "John Rabbit",
+    "stated_role": "former Board of Assessors member, resident",
+    "topic": "Reminds the public that the 41A senior tax deferral program still exists though it is not well publicized, relevant to concerns about affording taxes if an override passes."
+   },
+   {
+    "t": 532,
+    "speaker_as_heard": "Patrick Sullivan",
+    "stated_role": "Fire Chief",
+    "topic": "Defends the fire department's fourth-shift and per diem staffing proposal against accusations made at a prior meeting, says the plan has not changed since last July."
+   },
+   {
+    "t": 792,
+    "speaker_as_heard": "Brad McNamara",
+    "stated_role": "president of the Lunenburg Police Union, NEPBA Local 353",
+    "topic": "Disputes a Finance Committee member's statements about police staffing, SRO reassignment, and a claimed town surplus; explains the department's staffing shortfall and cybercrime caseload."
+   },
+   {
+    "t": 1374,
+    "speaker_as_heard": "Christos Lakedidis",
+    "stated_role": "president of the Lunenburg Professional Firefighters Local 5369",
+    "topic": "Defends the fire department's fourth-shift proposal and ambulance staffing, disputes comparisons made to another town's fire department."
+   },
+   {
+    "t": 1725,
+    "speaker_as_heard": "Michael Wright Jeffries",
+    "stated_role": "resident, co-author of Lunenburg Ledger budget articles",
+    "topic": "Presents findings from a series of Ledger articles on budget cost drivers, argues the town and schools need more money and supports the override."
+   },
+   {
+    "t": 2038,
+    "speaker_as_heard": "Laura Brzowsky",
+    "stated_role": "resident, parent, voter (not speaking as a School Committee member)",
+    "topic": "Argues the balanced budget's cuts disproportionately affect children and youth services and urges the board to weigh children's needs as constituents."
+   },
+   {
+    "t": 2266,
+    "speaker_as_heard": "Mr. Alonzo",
+    "stated_role": "resident",
+    "topic": "Announces an upcoming trivia fundraiser, memorializes a late community member, and offers advisory remarks urging voters not to view the override debate as driven by bad intent."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "contracts-and-unions",
+   "economic-development",
+   "elections",
+   "executive-session",
+   "free-cash",
+   "hiring",
+   "housing",
+   "legal",
+   "override",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "recreation",
+   "roads-and-dpw",
+   "seniors",
+   "staffing",
+   "state-aid",
+   "tax-rate",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 4182,
+    "motion": "Approve business name change on class two license for 360 Auto Group Incorporated (formerly Unique Motors Group), 40 Summer Street.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4411,
+    "motion": "Approve special event application for Lions Cruise Night and Car Show, May 20 2026, rain date May 27 2026.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4580,
+    "motion": "Approve application for change of LLC managers on liquor license for Victory Distributors LLC d/b/a Hannaford Supermarket and Pharmacy #8388.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4491,
+    "motion": "Put the town hall photo on the front cover and the drone photo of the middle high school campus on the back cover of the annual town report.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5700,
+    "motion": "Approve the minutes of March 31, 2026.",
+    "outcome": "passed unanimously",
+    "procedural": true
+   },
+   {
+    "t": 6096,
+    "motion": "Enter executive session under MGL c.30 §21A(3) to discuss litigation strategy (opioid litigation remnant settlement participation) and not reenter open session afterward.",
+    "moved_by": "the chair",
+    "outcome": "passed 5-0 (roll call: McCloud, Leitnen, Empty, Moore, chair all aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 175,
+    "topic": "LEAF (Lunenburg education foundation) donations raised",
+    "figures_as_heard": [
+     "$8,366"
+    ],
+    "what_was_said": "The foundation's founder reports funds raised since the fall to support directed teacher grants, distinct from the town/school operating budget."
+   },
+   {
+    "t": 317,
+    "topic": "LEAF matching donation challenge",
+    "figures_as_heard": [
+     "$5,000",
+     "$10,000"
+    ],
+    "what_was_said": "A local philanthropist will match donations dollar-for-dollar up to a cap through May 31, potentially doubling grant funding for teachers next year."
+   },
+   {
+    "t": 701,
+    "topic": "Fire department call firefighter salary line",
+    "figures_as_heard": [
+     "$225,000"
+    ],
+    "what_was_said": "The fire chief says removing this amount from the budget, as some have proposed, would defund the entire call force, not just per diem coverage."
+   },
+   {
+    "t": 1160,
+    "topic": "Reported town free cash / surplus",
+    "figures_as_heard": [
+     "$3.3 million"
+    ],
+    "what_was_said": "The police union president disputes a newspaper's characterization of this figure as an available surplus, saying it is one-time money used for capital needs."
+   },
+   {
+    "t": 1786,
+    "topic": "School department funding shortfall vs. balanced budget",
+    "figures_as_heard": [
+     "1.6 million dollars",
+     "1.9 million dollars"
+    ],
+    "what_was_said": "A resident states the school department needs at least this much more than the balanced budget provides."
+   },
+   {
+    "t": 1850,
+    "topic": "Warrant Article 28: stabilization fund transfer",
+    "figures_as_heard": [
+     "$250,000",
+     "3.2 million"
+    ],
+    "what_was_said": "A resident describes Article 28 as moving this amount into a stabilization fund that already holds this balance."
+   },
+   {
+    "t": 1850,
+    "topic": "Warrant Article 29: health insurance stabilization fund transfer",
+    "figures_as_heard": [
+     "$250,000"
+    ],
+    "what_was_said": "Described as another transfer into a stabilization fund, this one for health insurance."
+   },
+   {
+    "t": 1871,
+    "topic": "Warrant Article 30: vacation transition liability fund transfer",
+    "figures_as_heard": [
+     "$270,000"
+    ],
+    "what_was_said": "Described as a transfer into a vacation transition liability fund."
+   },
+   {
+    "t": 1871,
+    "topic": "OPEB trust fund increase",
+    "figures_as_heard": [
+     "$335,000",
+     "1.1 million"
+    ],
+    "what_was_said": "A resident cites an increase to the OPEB trust fund and totals it with the three stabilization transfers."
+   },
+   {
+    "t": 1871,
+    "topic": "New Assistant Town Manager position cost",
+    "figures_as_heard": [
+     "$123,120,000",
+     "25,000"
+    ],
+    "what_was_said": "A resident cites a salary-plus-benefits figure for the new position and a historical benefits comparison figure."
+   },
+   {
+    "t": 1892,
+    "topic": "Fire department fourth shift cost",
+    "figures_as_heard": [
+     "464,000"
+    ],
+    "what_was_said": "A resident cites this as the cost of adding a fourth fire department shift within the balanced budget."
+   },
+   {
+    "t": 1892,
+    "topic": "Salary reserve fund",
+    "figures_as_heard": [
+     "210"
+    ],
+    "what_was_said": "A resident says this amount is being put into a salary reserve fund he says provides no transparency into staffing increases elsewhere."
+   },
+   {
+    "t": 1914,
+    "topic": "Operating budget contribution to capital budget",
+    "figures_as_heard": [
+     "over $200,000"
+    ],
+    "what_was_said": "A resident says the operating budget appears to be providing this amount to the capital budget, pending clarification."
+   },
+   {
+    "t": 1954,
+    "topic": "Rainy day / free cash balance",
+    "figures_as_heard": [
+     "3.2 million dollars"
+    ],
+    "what_was_said": "A resident argues the town is sitting on this balance while proposing cuts to school programs."
+   },
+   {
+    "t": 3891,
+    "topic": "Health insurance budget line increase",
+    "figures_as_heard": [
+     "$682,718"
+    ],
+    "what_was_said": "The Town Manager cites this as a fixed-cost increase that is part of the structural deficit, rebutting a characterization of the deficit as a wish list."
+   },
+   {
+    "t": 3891,
+    "topic": "Worcester County retirement assessment increase",
+    "figures_as_heard": [
+     "$238,170"
+    ],
+    "what_was_said": "Cited by the Town Manager as another fixed-cost driver of the deficit."
+   },
+   {
+    "t": 3912,
+    "topic": "Town non-attrition-related budget cuts",
+    "figures_as_heard": [
+     "$220,000"
+    ],
+    "what_was_said": "The Town Manager says a newspaper article omitted this amount of town-side cuts not restored in any budget version."
+   },
+   {
+    "t": 3912,
+    "topic": "School budget cuts not restored",
+    "figures_as_heard": [
+     "$163,835"
+    ],
+    "what_was_said": "The Town Manager says this amount of school cuts was also omitted from the article and is not restored in any budget version."
+   },
+   {
+    "t": 4621,
+    "topic": "Accounts payable warrant",
+    "figures_as_heard": [
+     "700,088,255.82"
+    ],
+    "what_was_said": "The board passed an accounts payable warrant in this amount as read into the record; the figure appears to be a captioning error."
+   },
+   {
+    "t": 5940,
+    "topic": "State exemption reimbursements to the town",
+    "figures_as_heard": [
+     "approximately $113,000"
+    ],
+    "what_was_said": "Reported in the Board of Assessors committee report as expected state reimbursement for exemptions."
+   },
+   {
+    "t": 5971,
+    "topic": "Assessors overlay release for FY27 valuation work",
+    "figures_as_heard": [
+     "$27,500"
+    ],
+    "what_was_said": "The Board of Assessors approved releasing this amount from overlay to fund continued neighborhood review/valuation work into FY27."
+   }
+  ],
+  "transfers": [
+   {
+    "t": 1850,
+    "description": "Warrant Article 28: transfer into a general stabilization fund (balance as heard $3.2 million)",
+    "amount_as_heard": "$250,000",
+    "outcome": "discussed only (town meeting warrant article, not voted at this meeting)"
+   },
+   {
+    "t": 1850,
+    "description": "Warrant Article 29: transfer into a health insurance stabilization fund",
+    "amount_as_heard": "$250,000",
+    "outcome": "discussed only (town meeting warrant article, not voted at this meeting)"
+   },
+   {
+    "t": 1871,
+    "description": "Warrant Article 30: transfer into a vacation transition liability fund",
+    "amount_as_heard": "$270,000",
+    "outcome": "discussed only (town meeting warrant article, not voted at this meeting)"
+   },
+   {
+    "t": 5971,
+    "description": "Board of Assessors overlay release to fund FY27 neighborhood/valuation review work",
+    "amount_as_heard": "$27,500",
+    "outcome": "voted (by the Board of Assessors, reported to Select Board as a committee update)"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 2989,
+    "decision": "A board member directed the Town Manager to follow up after town meeting on a list of pending items: the TC Passios abatement, Adult Activity Center parking, Northfield Road/Chestnut Street sidewalks, the trash/recycling contract, Munis licensing alternatives, FY25 closeout documentation gaps, and service-consolidation efficiencies with the superintendent."
+   },
+   {
+    "t": 5038,
+    "decision": "The board agreed to hold off deciding whether to sell or retain the two tax-title Hollis Road parcels until members can drive by the properties, revisiting the item the following week."
+   },
+   {
+    "t": 5658,
+    "decision": "The board agreed the town manager review process and timeline does not need to be modified."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 7,
+    "t_end": 131,
+    "topic": "Opening, Pledge of Allegiance, and announcements (trivia night, public forums, Earth Day, yard waste, town meeting reminder)",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 131,
+    "t_end": 364,
+    "topic": "LEAF education foundation update on fundraising and matching challenge",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 364,
+    "t_end": 511,
+    "topic": "Public comment: senior tax deferral (41A) program awareness",
+    "resolution": "informational",
+    "tags": [
+     "seniors",
+     "tax-rate",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 511,
+    "t_end": 792,
+    "topic": "Public comment: Fire Chief responds to criticism of staffing plan",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "override",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 792,
+    "t_end": 1374,
+    "topic": "Public comment: Police union president disputes staffing/override claims",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 1374,
+    "t_end": 1725,
+    "topic": "Public comment: Firefighters union president defends fourth-shift proposal",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 1725,
+    "t_end": 2038,
+    "topic": "Public comment (Zoom): resident/Ledger co-author presents budget cost-driver findings, backs override",
+    "resolution": "informational",
+    "tags": [
+     "override",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 2038,
+    "t_end": 2266,
+    "topic": "Public comment (Zoom): parent argues budget deprioritizes children's services",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 2266,
+    "t_end": 2516,
+    "topic": "Public comment: announcements, tribute, and advisory remarks on override debate tone",
+    "resolution": "informational",
+    "tags": [
+     "override",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 2516,
+    "t_end": 2617,
+    "topic": "Board discussion rebutting omissions in Ledger article coverage",
+    "resolution": "no resolution",
+    "tags": [
+     "budget-fy27",
+     "override"
+    ]
+   },
+   {
+    "t_start": 2617,
+    "t_end": 3217,
+    "topic": "Board member's detailed rebuttal on Assistant Town Manager position, police/fire staffing history, and to-do directives to Town Manager",
+    "resolution": "decision issued (directives to Town Manager)",
+    "tags": [
+     "personnel",
+     "public-safety",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 3217,
+    "t_end": 3579,
+    "topic": "Board member (single-mom, budget team member) rebuts claims that the balanced budget is designed to scare or hurt residents",
+    "resolution": "no resolution",
+    "tags": [
+     "budget-fy27",
+     "override"
+    ]
+   },
+   {
+    "t_start": 3579,
+    "t_end": 3623,
+    "topic": "Chair's closing remarks on override debate and confirms town meeting/election dates",
+    "resolution": "informational",
+    "tags": [
+     "override",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 3623,
+    "t_end": 4058,
+    "topic": "Town Manager's detailed public rebuttal to Ledger article on free cash, deficit, and factual errors",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "free-cash",
+     "override"
+    ]
+   },
+   {
+    "t_start": 4058,
+    "t_end": 4245,
+    "topic": "Public hearing: 360 Auto Group business name change on class two license",
+    "resolution": "voted",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 4245,
+    "t_end": 4454,
+    "topic": "Public hearing: Lions Cruise Night and Car Show special event license",
+    "resolution": "voted",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 4454,
+    "t_end": 4621,
+    "topic": "Liquor license change of LLC managers, Hannaford Supermarket",
+    "resolution": "voted",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 4621,
+    "t_end": 4849,
+    "topic": "Town Manager report: 925 Mass Ave cleanup/RFP, town meeting prep, project updates, staff recruitment",
+    "resolution": "informational",
+    "tags": [
+     "housing",
+     "capital",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 4849,
+    "t_end": 5058,
+    "topic": "New business: vote to sell or hold tax-title parcels at 250 and 356 Hollis Road",
+    "resolution": "tabled pending a site visit, to be revisited",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5058,
+    "t_end": 5511,
+    "topic": "Vote on annual town report cover photo (front and back)",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 5511,
+    "t_end": 5638,
+    "topic": "Old business: FY26/FY27 budget, capital plan, town meeting articles, and lack of state investment",
+    "resolution": "no resolution",
+    "tags": [
+     "budget-fy27",
+     "state-aid",
+     "override"
+    ]
+   },
+   {
+    "t_start": 5638,
+    "t_end": 5680,
+    "topic": "Discussion of town manager review process and timeline",
+    "resolution": "no resolution (kept as is)",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 5680,
+    "t_end": 5721,
+    "topic": "Approval of minutes, March 31, 2026",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 5721,
+    "t_end": 5742,
+    "topic": "Warrants: accounts payable warrant",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 5742,
+    "t_end": 6076,
+    "topic": "Committee reports: Planning Board, EDC, Board of Assessors, School Committee, Bylaw Review, Council on Aging",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "economic-development",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 6076,
+    "t_end": 6096,
+    "topic": "Discussion of upcoming meeting schedule",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 6096,
+    "t_end": 6138,
+    "topic": "Vote to enter executive session on opioid litigation settlement strategy",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "legal"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Exact spellings of several Select Board members' surnames, heard as 'McCloud', 'Leitnen', 'Empty', and 'Moore' at the executive-session roll call, could not be confirmed.",
+   "Cross-talk and a Zoom screen-share audio delay during the cover-photo vote (~5058-5279) made it hard to attribute some remarks to specific speakers (first names heard as 'Renee', 'Amanda', 'Caesar').",
+   "The accounts payable warrant figure ('$700,088,255.82') is almost certainly a captioning error; the true amount is not audible.",
+   "The Assistant Town Manager salary-plus-benefits figure ('$123,120,000') is almost certainly a captioning error; the true amount is not audible.",
+   "Individual vote tallies for the license approvals, minutes, and cover-photo vote were given only as unanimous voice votes, not a counted tally."
+  ],
+  "confidence": "moderate",
+  "headline": "Public comment turned into a pitched fight over the FY27 override, staffing cuts, and a disputed Ledger story.",
+  "summary": "The bulk of this meeting was public comment: the fire chief, both police and fire union presidents, a school committee member speaking as a parent, and residents disputed a local newspaper's coverage of the FY27 balanced budget, override, and staffing cuts, followed by lengthy rebuttals from board members and the Town Manager. The board also handled routine license and event-permit hearings, a town manager's report, tax-title property and cover-photo votes, committee reports, and voted to enter executive session over opioid-litigation settlement strategy; no vote was taken on the override itself."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Public comment and board rebuttals covered the FY27 override, staffing cuts, and disputed newspaper coverage, but no vote was taken on the override.",
+    "t": 2516
+   },
+   {
+    "line": "The fire chief and firefighters' union president defended a proposed fourth fire shift, saying the staffing plan has not changed since last July.",
+    "t": 1374
+   },
+   {
+    "line": "The police union president disputed characterizations of town free cash as an available surplus, calling it one-time money for capital needs.",
+    "t": 792
+   },
+   {
+    "line": "The Town Manager publicly rebutted a newspaper's article point by point on free cash, the deficit, and other disputed claims.",
+    "t": 3623
+   },
+   {
+    "line": "The board tabled a decision on selling two tax-title Hollis Road parcels until members can visit the properties.",
+    "t": 4849
+   }
+  ],
+  "why_it_matters": [
+   "The dispute over budget figures and staffing plans bears directly on how residents weigh the FY27 override at town meeting.",
+   "Fire and police staffing levels discussed here affect emergency response coverage funded by the override.",
+   "Whether the town sells or keeps the Hollis Road parcels affects future town land use and potential revenue."
+  ],
+  "watch_next": [
+   "Board revisit of the Hollis Road tax-title parcel decision the following week",
+   "FY27 override and warrant articles going before annual town meeting"
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-14T13:16:15Z",
-    "cost_usd": 0.5613630000000001
-  },
-  "minutes": {
-    "attendees": [
-      {
-        "name_as_heard": "the Chair",
-        "role": "Select Board Chair",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Mr. McCloud",
-        "role": "Select Board member",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Mr. Leitnen",
-        "role": "Select Board member",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Ms. Empty",
-        "role": "Select Board member",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Ms. Moore",
-        "role": "Select Board member",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Jen",
-        "role": "Town Manager",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Melissa",
-        "role": "staff (scheduling/Zoom support)",
-        "remote": true
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 385,
-        "speaker_as_heard": "John Rabbit",
-        "stated_role": "former Board of Assessors member, resident",
-        "topic": "Reminds the public that the 41A senior tax deferral program still exists though it is not well publicized, relevant to concerns about affording taxes if an override passes."
-      },
-      {
-        "t": 532,
-        "speaker_as_heard": "Patrick Sullivan",
-        "stated_role": "Fire Chief",
-        "topic": "Defends the fire department's fourth-shift and per diem staffing proposal against accusations made at a prior meeting, says the plan has not changed since last July."
-      },
-      {
-        "t": 792,
-        "speaker_as_heard": "Brad McNamara",
-        "stated_role": "president of the Lunenburg Police Union, NEPBA Local 353",
-        "topic": "Disputes a Finance Committee member's statements about police staffing, SRO reassignment, and a claimed town surplus; explains the department's staffing shortfall and cybercrime caseload."
-      },
-      {
-        "t": 1374,
-        "speaker_as_heard": "Christos Lakedidis",
-        "stated_role": "president of the Lunenburg Professional Firefighters Local 5369",
-        "topic": "Defends the fire department's fourth-shift proposal and ambulance staffing, disputes comparisons made to another town's fire department."
-      },
-      {
-        "t": 1725,
-        "speaker_as_heard": "Michael Wright Jeffries",
-        "stated_role": "resident, co-author of Lunenburg Ledger budget articles",
-        "topic": "Presents findings from a series of Ledger articles on budget cost drivers, argues the town and schools need more money and supports the override."
-      },
-      {
-        "t": 2038,
-        "speaker_as_heard": "Laura Brzowsky",
-        "stated_role": "resident, parent, voter (not speaking as a School Committee member)",
-        "topic": "Argues the balanced budget's cuts disproportionately affect children and youth services and urges the board to weigh children's needs as constituents."
-      },
-      {
-        "t": 2266,
-        "speaker_as_heard": "Mr. Alonzo",
-        "stated_role": "resident",
-        "topic": "Announces an upcoming trivia fundraiser, memorializes a late community member, and offers advisory remarks urging voters not to view the override debate as driven by bad intent."
-      }
-    ],
-    "tags": [
-      "budget",
-      "budget-fy27",
-      "capital",
-      "contracts-and-unions",
-      "economic-development",
-      "elections",
-      "executive-session",
-      "free-cash",
-      "hiring",
-      "housing",
-      "legal",
-      "override",
-      "personnel",
-      "planning-and-zoning",
-      "policy",
-      "public-comment",
-      "public-safety",
-      "recreation",
-      "roads-and-dpw",
-      "seniors",
-      "staffing",
-      "state-aid",
-      "tax-rate",
-      "town-meeting"
-    ],
-    "votes": [
-      {
-        "t": 4182,
-        "motion": "Approve business name change on class two license for 360 Auto Group Incorporated (formerly Unique Motors Group), 40 Summer Street.",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 4411,
-        "motion": "Approve special event application for Lions Cruise Night and Car Show, May 20 2026, rain date May 27 2026.",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 4580,
-        "motion": "Approve application for change of LLC managers on liquor license for Victory Distributors LLC d/b/a Hannaford Supermarket and Pharmacy #8388.",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 4491,
-        "motion": "Put the town hall photo on the front cover and the drone photo of the middle high school campus on the back cover of the annual town report.",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 5700,
-        "motion": "Approve the minutes of March 31, 2026.",
-        "outcome": "passed unanimously",
-        "procedural": true
-      },
-      {
-        "t": 6096,
-        "motion": "Enter executive session under MGL c.30 §21A(3) to discuss litigation strategy (opioid litigation remnant settlement participation) and not reenter open session afterward.",
-        "moved_by": "the chair",
-        "outcome": "passed 5-0 (roll call: McCloud, Leitnen, Empty, Moore, chair all aye)",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 175,
-        "topic": "LEAF (Lunenburg education foundation) donations raised",
-        "figures_as_heard": [
-          "$8,366"
-        ],
-        "what_was_said": "The foundation's founder reports funds raised since the fall to support directed teacher grants, distinct from the town/school operating budget."
-      },
-      {
-        "t": 317,
-        "topic": "LEAF matching donation challenge",
-        "figures_as_heard": [
-          "$5,000",
-          "$10,000"
-        ],
-        "what_was_said": "A local philanthropist will match donations dollar-for-dollar up to a cap through May 31, potentially doubling grant funding for teachers next year."
-      },
-      {
-        "t": 701,
-        "topic": "Fire department call firefighter salary line",
-        "figures_as_heard": [
-          "$225,000"
-        ],
-        "what_was_said": "The fire chief says removing this amount from the budget, as some have proposed, would defund the entire call force, not just per diem coverage."
-      },
-      {
-        "t": 1160,
-        "topic": "Reported town free cash / surplus",
-        "figures_as_heard": [
-          "$3.3 million"
-        ],
-        "what_was_said": "The police union president disputes a newspaper's characterization of this figure as an available surplus, saying it is one-time money used for capital needs."
-      },
-      {
-        "t": 1786,
-        "topic": "School department funding shortfall vs. balanced budget",
-        "figures_as_heard": [
-          "1.6 million dollars",
-          "1.9 million dollars"
-        ],
-        "what_was_said": "A resident states the school department needs at least this much more than the balanced budget provides."
-      },
-      {
-        "t": 1850,
-        "topic": "Warrant Article 28: stabilization fund transfer",
-        "figures_as_heard": [
-          "$250,000",
-          "3.2 million"
-        ],
-        "what_was_said": "A resident describes Article 28 as moving this amount into a stabilization fund that already holds this balance."
-      },
-      {
-        "t": 1850,
-        "topic": "Warrant Article 29: health insurance stabilization fund transfer",
-        "figures_as_heard": [
-          "$250,000"
-        ],
-        "what_was_said": "Described as another transfer into a stabilization fund, this one for health insurance."
-      },
-      {
-        "t": 1871,
-        "topic": "Warrant Article 30: vacation transition liability fund transfer",
-        "figures_as_heard": [
-          "$270,000"
-        ],
-        "what_was_said": "Described as a transfer into a vacation transition liability fund."
-      },
-      {
-        "t": 1871,
-        "topic": "OPEB trust fund increase",
-        "figures_as_heard": [
-          "$335,000",
-          "1.1 million"
-        ],
-        "what_was_said": "A resident cites an increase to the OPEB trust fund and totals it with the three stabilization transfers."
-      },
-      {
-        "t": 1871,
-        "topic": "New Assistant Town Manager position cost",
-        "figures_as_heard": [
-          "$123,120,000",
-          "25,000"
-        ],
-        "what_was_said": "A resident cites a salary-plus-benefits figure for the new position and a historical benefits comparison figure."
-      },
-      {
-        "t": 1892,
-        "topic": "Fire department fourth shift cost",
-        "figures_as_heard": [
-          "464,000"
-        ],
-        "what_was_said": "A resident cites this as the cost of adding a fourth fire department shift within the balanced budget."
-      },
-      {
-        "t": 1892,
-        "topic": "Salary reserve fund",
-        "figures_as_heard": [
-          "210"
-        ],
-        "what_was_said": "A resident says this amount is being put into a salary reserve fund he says provides no transparency into staffing increases elsewhere."
-      },
-      {
-        "t": 1914,
-        "topic": "Operating budget contribution to capital budget",
-        "figures_as_heard": [
-          "over $200,000"
-        ],
-        "what_was_said": "A resident says the operating budget appears to be providing this amount to the capital budget, pending clarification."
-      },
-      {
-        "t": 1954,
-        "topic": "Rainy day / free cash balance",
-        "figures_as_heard": [
-          "3.2 million dollars"
-        ],
-        "what_was_said": "A resident argues the town is sitting on this balance while proposing cuts to school programs."
-      },
-      {
-        "t": 3891,
-        "topic": "Health insurance budget line increase",
-        "figures_as_heard": [
-          "$682,718"
-        ],
-        "what_was_said": "The Town Manager cites this as a fixed-cost increase that is part of the structural deficit, rebutting a characterization of the deficit as a wish list."
-      },
-      {
-        "t": 3891,
-        "topic": "Worcester County retirement assessment increase",
-        "figures_as_heard": [
-          "$238,170"
-        ],
-        "what_was_said": "Cited by the Town Manager as another fixed-cost driver of the deficit."
-      },
-      {
-        "t": 3912,
-        "topic": "Town non-attrition-related budget cuts",
-        "figures_as_heard": [
-          "$220,000"
-        ],
-        "what_was_said": "The Town Manager says a newspaper article omitted this amount of town-side cuts not restored in any budget version."
-      },
-      {
-        "t": 3912,
-        "topic": "School budget cuts not restored",
-        "figures_as_heard": [
-          "$163,835"
-        ],
-        "what_was_said": "The Town Manager says this amount of school cuts was also omitted from the article and is not restored in any budget version."
-      },
-      {
-        "t": 4621,
-        "topic": "Accounts payable warrant",
-        "figures_as_heard": [
-          "700,088,255.82"
-        ],
-        "what_was_said": "The board passed an accounts payable warrant in this amount as read into the record; the figure appears to be a captioning error."
-      },
-      {
-        "t": 5940,
-        "topic": "State exemption reimbursements to the town",
-        "figures_as_heard": [
-          "approximately $113,000"
-        ],
-        "what_was_said": "Reported in the Board of Assessors committee report as expected state reimbursement for exemptions."
-      },
-      {
-        "t": 5971,
-        "topic": "Assessors overlay release for FY27 valuation work",
-        "figures_as_heard": [
-          "$27,500"
-        ],
-        "what_was_said": "The Board of Assessors approved releasing this amount from overlay to fund continued neighborhood review/valuation work into FY27."
-      }
-    ],
-    "transfers": [
-      {
-        "t": 1850,
-        "description": "Warrant Article 28: transfer into a general stabilization fund (balance as heard $3.2 million)",
-        "amount_as_heard": "$250,000",
-        "outcome": "discussed only (town meeting warrant article, not voted at this meeting)"
-      },
-      {
-        "t": 1850,
-        "description": "Warrant Article 29: transfer into a health insurance stabilization fund",
-        "amount_as_heard": "$250,000",
-        "outcome": "discussed only (town meeting warrant article, not voted at this meeting)"
-      },
-      {
-        "t": 1871,
-        "description": "Warrant Article 30: transfer into a vacation transition liability fund",
-        "amount_as_heard": "$270,000",
-        "outcome": "discussed only (town meeting warrant article, not voted at this meeting)"
-      },
-      {
-        "t": 5971,
-        "description": "Board of Assessors overlay release to fund FY27 neighborhood/valuation review work",
-        "amount_as_heard": "$27,500",
-        "outcome": "voted (by the Board of Assessors, reported to Select Board as a committee update)"
-      }
-    ],
-    "decisions": [
-      {
-        "t": 2989,
-        "decision": "A board member directed the Town Manager to follow up after town meeting on a list of pending items: the TC Passios abatement, Adult Activity Center parking, Northfield Road/Chestnut Street sidewalks, the trash/recycling contract, Munis licensing alternatives, FY25 closeout documentation gaps, and service-consolidation efficiencies with the superintendent."
-      },
-      {
-        "t": 5038,
-        "decision": "The board agreed to hold off deciding whether to sell or retain the two tax-title Hollis Road parcels until members can drive by the properties, revisiting the item the following week."
-      },
-      {
-        "t": 5658,
-        "decision": "The board agreed the town manager review process and timeline does not need to be modified."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 7,
-        "t_end": 131,
-        "topic": "Opening, Pledge of Allegiance, and announcements (trivia night, public forums, Earth Day, yard waste, town meeting reminder)",
-        "resolution": "informational",
-        "tags": [
-          "town-meeting"
-        ]
-      },
-      {
-        "t_start": 131,
-        "t_end": 364,
-        "topic": "LEAF education foundation update on fundraising and matching challenge",
-        "resolution": "informational",
-        "tags": [
-          "grants",
-          "budget-fy27"
-        ]
-      },
-      {
-        "t_start": 364,
-        "t_end": 511,
-        "topic": "Public comment: senior tax deferral (41A) program awareness",
-        "resolution": "informational",
-        "tags": [
-          "seniors",
-          "tax-rate",
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 511,
-        "t_end": 792,
-        "topic": "Public comment: Fire Chief responds to criticism of staffing plan",
-        "resolution": "informational",
-        "tags": [
-          "public-safety",
-          "override",
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 792,
-        "t_end": 1374,
-        "topic": "Public comment: Police union president disputes staffing/override claims",
-        "resolution": "informational",
-        "tags": [
-          "public-safety",
-          "contracts-and-unions"
-        ]
-      },
-      {
-        "t_start": 1374,
-        "t_end": 1725,
-        "topic": "Public comment: Firefighters union president defends fourth-shift proposal",
-        "resolution": "informational",
-        "tags": [
-          "public-safety",
-          "contracts-and-unions"
-        ]
-      },
-      {
-        "t_start": 1725,
-        "t_end": 2038,
-        "topic": "Public comment (Zoom): resident/Ledger co-author presents budget cost-driver findings, backs override",
-        "resolution": "informational",
-        "tags": [
-          "override",
-          "budget-fy27"
-        ]
-      },
-      {
-        "t_start": 2038,
-        "t_end": 2266,
-        "topic": "Public comment (Zoom): parent argues budget deprioritizes children's services",
-        "resolution": "informational",
-        "tags": [
-          "budget-fy27",
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 2266,
-        "t_end": 2516,
-        "topic": "Public comment: announcements, tribute, and advisory remarks on override debate tone",
-        "resolution": "informational",
-        "tags": [
-          "override",
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 2516,
-        "t_end": 2617,
-        "topic": "Board discussion rebutting omissions in Ledger article coverage",
-        "resolution": "no resolution",
-        "tags": [
-          "budget-fy27",
-          "override"
-        ]
-      },
-      {
-        "t_start": 2617,
-        "t_end": 3217,
-        "topic": "Board member's detailed rebuttal on Assistant Town Manager position, police/fire staffing history, and to-do directives to Town Manager",
-        "resolution": "decision issued (directives to Town Manager)",
-        "tags": [
-          "personnel",
-          "public-safety",
-          "budget-fy27"
-        ]
-      },
-      {
-        "t_start": 3217,
-        "t_end": 3579,
-        "topic": "Board member (single-mom, budget team member) rebuts claims that the balanced budget is designed to scare or hurt residents",
-        "resolution": "no resolution",
-        "tags": [
-          "budget-fy27",
-          "override"
-        ]
-      },
-      {
-        "t_start": 3579,
-        "t_end": 3623,
-        "topic": "Chair's closing remarks on override debate and confirms town meeting/election dates",
-        "resolution": "informational",
-        "tags": [
-          "override",
-          "elections"
-        ]
-      },
-      {
-        "t_start": 3623,
-        "t_end": 4058,
-        "topic": "Town Manager's detailed public rebuttal to Ledger article on free cash, deficit, and factual errors",
-        "resolution": "informational",
-        "tags": [
-          "budget-fy27",
-          "free-cash",
-          "override"
-        ]
-      },
-      {
-        "t_start": 4058,
-        "t_end": 4245,
-        "topic": "Public hearing: 360 Auto Group business name change on class two license",
-        "resolution": "voted",
-        "tags": [
-          "economic-development"
-        ]
-      },
-      {
-        "t_start": 4245,
-        "t_end": 4454,
-        "topic": "Public hearing: Lions Cruise Night and Car Show special event license",
-        "resolution": "voted",
-        "tags": [
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 4454,
-        "t_end": 4621,
-        "topic": "Liquor license change of LLC managers, Hannaford Supermarket",
-        "resolution": "voted",
-        "tags": [
-          "economic-development"
-        ]
-      },
-      {
-        "t_start": 4621,
-        "t_end": 4849,
-        "topic": "Town Manager report: 925 Mass Ave cleanup/RFP, town meeting prep, project updates, staff recruitment",
-        "resolution": "informational",
-        "tags": [
-          "housing",
-          "capital",
-          "hiring"
-        ]
-      },
-      {
-        "t_start": 4849,
-        "t_end": 5058,
-        "topic": "New business: vote to sell or hold tax-title parcels at 250 and 356 Hollis Road",
-        "resolution": "tabled pending a site visit, to be revisited",
-        "tags": [
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 5058,
-        "t_end": 5511,
-        "topic": "Vote on annual town report cover photo (front and back)",
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "t_start": 5511,
-        "t_end": 5638,
-        "topic": "Old business: FY26/FY27 budget, capital plan, town meeting articles, and lack of state investment",
-        "resolution": "no resolution",
-        "tags": [
-          "budget-fy27",
-          "state-aid",
-          "override"
-        ]
-      },
-      {
-        "t_start": 5638,
-        "t_end": 5680,
-        "topic": "Discussion of town manager review process and timeline",
-        "resolution": "no resolution (kept as is)",
-        "tags": [
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 5680,
-        "t_end": 5721,
-        "topic": "Approval of minutes, March 31, 2026",
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "t_start": 5721,
-        "t_end": 5742,
-        "topic": "Warrants: accounts payable warrant",
-        "resolution": "informational",
-        "tags": [
-          "budget"
-        ]
-      },
-      {
-        "t_start": 5742,
-        "t_end": 6076,
-        "topic": "Committee reports: Planning Board, EDC, Board of Assessors, School Committee, Bylaw Review, Council on Aging",
-        "resolution": "informational",
-        "tags": [
-          "planning-and-zoning",
-          "economic-development",
-          "tax-rate"
-        ]
-      },
-      {
-        "t_start": 6076,
-        "t_end": 6096,
-        "topic": "Discussion of upcoming meeting schedule",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 6096,
-        "t_end": 6138,
-        "topic": "Vote to enter executive session on opioid litigation settlement strategy",
-        "resolution": "voted",
-        "tags": [
-          "executive-session",
-          "legal"
-        ]
-      }
-    ],
-    "not_audible": [
-      "Exact spellings of several Select Board members' surnames, heard as 'McCloud', 'Leitnen', 'Empty', and 'Moore' at the executive-session roll call, could not be confirmed.",
-      "Cross-talk and a Zoom screen-share audio delay during the cover-photo vote (~5058-5279) made it hard to attribute some remarks to specific speakers (first names heard as 'Renee', 'Amanda', 'Caesar').",
-      "The accounts payable warrant figure ('$700,088,255.82') is almost certainly a captioning error; the true amount is not audible.",
-      "The Assistant Town Manager salary-plus-benefits figure ('$123,120,000') is almost certainly a captioning error; the true amount is not audible.",
-      "Individual vote tallies for the license approvals, minutes, and cover-photo vote were given only as unanimous voice votes, not a counted tally."
-    ],
-    "confidence": "moderate",
-    "headline": "Public comment turned into a pitched fight over the FY27 override, staffing cuts, and a disputed Ledger story.",
-    "summary": "The bulk of this meeting was public comment: the fire chief, both police and fire union presidents, a school committee member speaking as a parent, and residents disputed a local newspaper's coverage of the FY27 balanced budget, override, and staffing cuts, followed by lengthy rebuttals from board members and the Town Manager. The board also handled routine license and event-permit hearings, a town manager's report, tax-title property and cover-photo votes, committee reports, and voted to enter executive session over opioid-litigation settlement strategy; no vote was taken on the override itself."
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "Public comment and board rebuttals covered the FY27 override, staffing cuts, and disputed newspaper coverage, but no vote was taken on the override.",
-        "t": 2516
-      },
-      {
-        "line": "The fire chief and firefighters' union president defended a proposed fourth fire shift, saying the staffing plan has not changed since last July.",
-        "t": 1374
-      },
-      {
-        "line": "The police union president disputed characterizations of town free cash as an available surplus, calling it one-time money for capital needs.",
-        "t": 792
-      },
-      {
-        "line": "The Town Manager publicly rebutted a newspaper's article point by point on free cash, the deficit, and other disputed claims.",
-        "t": 3623
-      },
-      {
-        "line": "The board tabled a decision on selling two tax-title Hollis Road parcels until members can visit the properties.",
-        "t": 4849
-      }
-    ],
-    "why_it_matters": [
-      "The dispute over budget figures and staffing plans bears directly on how residents weigh the FY27 override at town meeting.",
-      "Fire and police staffing levels discussed here affect emergency response coverage funded by the override.",
-      "Whether the town sells or keeps the Hollis Road parcels affects future town land use and potential revenue."
-    ],
-    "watch_next": [
-      "Board revisit of the Hollis Road tax-title parcel decision the following week",
-      "FY27 override and warrant articles going before annual town meeting"
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-14T13:16:38Z",
-      "cost_usd": 0.179374
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-14T13:16:38Z",
+   "cost_usd": 0.179374
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142026-7766",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-04-14-minutes-7766.txt",
+   "path": "sources/meetings/select-board/2026-04-14-minutes-7766.pdf"
+  },
+  "official_sha256": "492e89d76a68150782d3ef59a286cfdfcbed64f00e1ecafccd6d83b7cf67c445",
+  "coverage": "full",
+  "summary": "The two records agree closely on every dollar figure and vote outcome that both happened to record — LEAF, fire, health insurance, retirement, budget-cut, and warrant figures all match exactly, as do the three license votes and the cover-photo and Hollis Road decisions. The main things worth checking are: a badly garbled Assistant Town Manager cost figure in our captions (official says ~$145,000), a possible mislabeling of a $3.2M figure as \"free cash\" when it matches the official's stabilization fund balance, two votes (minutes approval, executive session entry) missing entirely from our minutes, and a town-manager-review \"no changes needed\" conclusion in ours that the official minutes don't explicitly state.",
+  "counts": {
+   "agree": 17,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 8,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: 360 Auto Group Inc. business name change on Class II license",
+    "ours": "passed unanimously",
+    "official": "Call for the vote: Five-aye. The motion passed unanimously (5-0-0).",
+    "note": "Same outcome, same applicant/location.",
+    "t": 4182
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Lions Cruise Night and Car Show special event application",
+    "ours": "passed unanimously",
+    "official": "Call for the vote: Five-aye. The motion passed unanimously (5-0-0).",
+    "note": "Same dates (May 20, rain date May 27) and outcome.",
+    "t": 4411
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Hannaford (Victory Distributors LLC) liquor license manager change",
+    "ours": "passed unanimously",
+    "official": "Call for the vote: Five-aye. The motion passed unanimously (5-0-0).",
+    "note": "Same outcome.",
+    "t": 4580
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote: enter Executive Session (opioid litigation settlement strategy)",
+    "ours": "",
+    "official": "Roll Call Vote: Vice-Chair Moore-aye; Clerk Emkey-Aye; Member Lehtinen-Aye; Member McLeod-Aye; Chair Nuzzolo-aye. The motion passed unanimously (5-0-0).",
+    "note": "A real roll-call vote with a stated purpose (litigation strategy); missing entirely from our minutes, likely because the recording ends at or before this point — check whether the recording covers the end of the meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant Article 29: health insurance stabilization fund transfer, itemized amount",
+    "ours": "$250,000",
+    "official": "",
+    "note": "Official minutes give only the aggregate figure (~$1.1 million to stabilization/reserve funds); the $250,000 breakdown is not itemized in the official text."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant Article 30: vacation transition liability fund transfer, itemized amount",
+    "ours": "$270,000",
+    "official": "",
+    "note": "Not itemized in official minutes; part of the ~$1.1 million aggregate a reader could check against the warrant book."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "OPEB trust fund increase, itemized amount",
+    "ours": "$335,000",
+    "official": "",
+    "note": "Not itemized in official minutes; combined with the other three transfers ($250k+$250k+$270k+$335k=$1,105,000) it accounts for official's ~$1.1 million aggregate — worth confirming against the warrant book that these are the same four components."
+   },
+   {
+    "kind": "agree",
+    "about": "Aggregate stabilization/reserve fund transfers total",
+    "ours": "components sum to approximately $1.105 million (see WA28-30 and OPEB lines)",
+    "official": "approximately $1.1 million being directed to various Stabilization and Reserve Funds",
+    "note": "The official's rounded aggregate is consistent with the sum of our itemized transfer figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Board of Assessors overlay release for FY27 valuation work",
+    "ours": "$27,500, voted by the Board of Assessors, reported as committee update",
+    "official": "The BoA approved a $27,500 overlay release to fund continued work in FY27.",
+    "note": "Amount and description match."
+   },
+   {
+    "kind": "agree",
+    "about": "LEAF donations raised",
+    "ours": "$8,366",
+    "official": "LEAF has raised $8,366 in contributions",
+    "note": "Exact match."
+   },
+   {
+    "kind": "agree",
+    "about": "Fire department call firefighter salary line",
+    "ours": "$225,000",
+    "official": "the $225,000 call firefighter salary line",
+    "note": "Exact match, cited by Fire Chief Sullivan in public comment."
+   },
+   {
+    "kind": "agree",
+    "about": "Reported town free cash",
+    "ours": "$3.3 million",
+    "official": "$3.3 million in Free Cash",
+    "note": "Exact match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School department funding shortfall vs. balanced budget",
+    "ours": "$1.6 million / $1.9 million",
+    "official": "",
+    "note": "No matching figure appears anywhere in the official minutes; check the recording context (t=1786) against the budget hub materials to confirm these figures."
+   },
+   {
+    "kind": "caption_error",
+    "about": "New Assistant Town Manager position cost",
+    "ours": "$123,120,000, 25,000",
+    "official": "",
+    "official_reading": "approximately $145,000 including benefits",
+    "note": "Captions garbled a mid-five-figure salary/benefits figure into a nonsensical nine-digit number; the official figure (from Jeffreys' public comment) is ~$145,000 including benefits — a person should listen at t=1871 to confirm the true salary/benefits split.",
+    "t": 1871
+   },
+   {
+    "kind": "agree",
+    "about": "Fire department fourth shift cost",
+    "ours": "$464,000",
+    "official": "the fourth shift addition for the Fire Department at $464,000",
+    "note": "Exact match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Salary reserve fund figure",
+    "ours": "210 (unit unclear, likely $210,000)",
+    "official": "",
+    "note": "No matching specific figure in official minutes, which only mentions 'Salary Reserve Accounts' in the context of a mischaracterization dispute; check the recording at t=1892 for the full figure and unit."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Operating budget contribution to capital budget",
+    "ours": "over $200,000",
+    "official": "",
+    "note": "No corresponding figure in official minutes; check the recording at t=1914 against the capital plan documents."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "'Rainy day / free cash balance' figure",
+    "ours": "$3.2 million, labeled rainy day/free cash balance",
+    "official": "$3.2 million Stabilization Fund balance",
+    "note": "Our minutes label this figure as free cash, but $3.2 million matches official's stabilization fund balance (free cash was separately reported at $3.3 million) — a person should check the recording at t=1954 to confirm which fund this figure actually refers to.",
+    "t": 1954
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance budget line increase",
+    "ours": "$682,718",
+    "official": "$682,718 in health insurance",
+    "note": "Exact match."
+   },
+   {
+    "kind": "agree",
+    "about": "Worcester County retirement assessment increase",
+    "ours": "$238,170",
+    "official": "$238,170 in the Worcester County retirement assessment",
+    "note": "Exact match."
+   },
+   {
+    "kind": "agree",
+    "about": "Town non-attrition-related budget cuts",
+    "ours": "$220,000",
+    "official": "$220,000 in non-attrition related cuts to the Town",
+    "note": "Exact match."
+   },
+   {
+    "kind": "agree",
+    "about": "School budget cuts not restored",
+    "ours": "$163,835",
+    "official": "$163,835 in cuts to the School Department that are not restored",
+    "note": "Exact match."
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable warrant amount",
+    "ours": "700,088,255.82",
+    "official": "Accounts Payable warrant in the amount of ($700,088,255.82)",
+    "note": "Both records state the identical figure verbatim, even though it appears anomalously large for a town warrant — a person should check the warrant document itself for a possible source-side error, since both records agree on it independently."
+   },
+   {
+    "kind": "agree",
+    "about": "State exemption reimbursements to the town",
+    "ours": "approximately $113,000",
+    "official": "State exemption reimbursements are estimated at approximately $113,000",
+    "note": "Exact match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town Manager follow-up list after Town Meeting",
+    "ours": "Directed the Town Manager to follow up on TC Passios abatement, Adult Activity Center parking, Northfield Road/Chestnut Street sidewalks, trash/recycling contract, Munis licensing alternatives, FY25 closeout gaps, and service-consolidation efficiencies",
+    "official": "",
+    "note": "None of these follow-up items appear in the official minutes; check the recording at t=2989 to confirm this discussion took place as described."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision to hold Hollis Road tax-title parcels for a week",
+    "ours": "held off deciding whether to sell or retain the two parcels until members can drive by; revisit next week",
+    "official": "the members agreed to hold the item for one week to allow time to view the properties",
+    "note": "Matches, including the reason (viewing the properties) and timeframe."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Town Manager review process/timeline decision",
+    "ours": "The board agreed the town manager review process and timeline does not need to be modified",
+    "official": "Chair Nuzzolo noted that the Town Manager's self-evaluation is forthcoming and requested that all Board members complete their individual reviews and meet with the Town Manager by April 30, 2026, so that he may compile the results and move the review process forward.",
+    "note": "Official minutes describe the timeline being reiterated but do not record an explicit board agreement that no changes are needed — a person should check the recording at t=5658 to confirm whether that conclusion was actually stated or is an inference from the discussion continuing unchanged.",
+    "t": 5658
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member name: McLeod",
+    "ours": "Mr. McCloud",
+    "official": "",
+    "official_reading": "Glenn McLeod",
+    "note": "Misheard surname; same board seat."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member name: Lehtinen",
+    "ours": "Mr. Leitnen",
+    "official": "",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname; same board seat."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board Clerk name: Emkey",
+    "ours": "Ms. Empty",
+    "official": "",
+    "official_reading": "Renee Emkey",
+    "note": "Misheard surname ('Empty' for 'Emkey'); same board seat (Clerk)."
+   },
+   {
+    "kind": "agree",
+    "about": "Select Board member name: Moore",
+    "ours": "Ms. Moore",
+    "official": "Vice-Chair Amanda Moore",
+    "note": "Surname matches; ours omits the first name and Vice-Chair title but the identity is correct."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town Manager name",
+    "ours": "Jen",
+    "official": "",
+    "official_reading": "Jennifer Warren-Dyment",
+    "note": "Captions captured only a shortened first name; official gives the full name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Staff attendee: Melissa (scheduling/Zoom support)",
+    "ours": "Melissa (staff, scheduling/Zoom support)",
+    "official": "",
+    "note": "Official minutes list only Members Present and Jennifer Warren-Dyment under 'Also Present'; Melissa does not appear, likely because official minutes only name principals, not support staff."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-25T12:15:53Z",
+   "cost_usd": 0.3256132
+  }
+ }
 }
