@@ -69,6 +69,21 @@ def manifest_keys():
         return {r['key'] for r in csv.DictReader(fh) if r.get('key')}
 
 
+def in_flight():
+    """Documents staged by `ingest.py` and not yet in the bucket.
+
+    A pending row is the ONLY legitimate state in which a document exists once, and it is
+    legitimate precisely because it is written down: `ingest.stage()` registers it before
+    the push and `ingest.secure()` clears it after the read-back. So a non-empty register
+    means a fetch is mid-flight or a push failed, and neither is a moment to clean a tree.
+    """
+    p = os.path.join(ROOT, 'sources', 'data', 'ingest-pending.csv')
+    if not os.path.exists(p):
+        return []
+    with open(p, encoding='utf-8') as fh:
+        return [r for r in csv.DictReader(fh) if r.get('key')]
+
+
 def audit():
     """(held_unbacked, indexed_unbacked) -- both lists of frozen keys."""
     safe = pushed_keys()
@@ -86,13 +101,25 @@ def main():
     ap.add_argument('--quiet', action='store_true')
     a = ap.parse_args()
 
+    flight = in_flight()
     held, indexed = audit()
+    if a.push and (held or flight):
+        if flight:
+            print('%d document(s) in flight -- securing them first' % len(flight))
+            subprocess.run([sys.executable, os.path.join(HERE, 'ingest.py'), '--secure'],
+                           cwd=ROOT, check=False)
+            flight = in_flight()
     if a.push and held:
         print('%d document(s) held and unbacked -- pushing before anything else' % len(held))
         subprocess.run([sys.executable, os.path.join(HERE, 'sync_archive.py'),
                         '--push', '--frozen'], cwd=ROOT, check=False)
         held, indexed = audit()
 
+    if flight:
+        print('%d DOCUMENT(S) IN FLIGHT -- staged and not yet in the bucket:' % len(flight))
+        for r in flight[:20]:
+            print('    %-10s %s' % (r.get('state', ''), r['key']))
+        print('  Run: python3 scripts/ingest.py --secure')
     if held:
         print('%d DOCUMENT(S) HELD ON THIS DISK AND NOWHERE ELSE:' % len(held))
         for k in held[:20]:
@@ -107,11 +134,11 @@ def main():
             print('   ', k)
         print('  These cannot be repaired from here. Find the tree that still holds them '
               'BEFORE it is cleaned; `git worktree list` is where to start.')
-    if not held and not indexed and not a.quiet:
+    if not held and not indexed and not flight and not a.quiet:
         n = len([k for k in A.walk_sources() if A.frozen(k)])
         print('ok: all %d document(s) this tree holds are in the bucket, read back and '
               'compared. Safe to clean.' % n)
-    return 1 if (held or indexed) else 0
+    return 1 if (held or indexed or flight) else 0
 
 
 if __name__ == '__main__':

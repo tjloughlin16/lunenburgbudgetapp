@@ -416,6 +416,27 @@ OURS_DIRS = {'text', 'ocr', 'pages'}
 DATED_SNAPSHOT = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 
 
+def incomplete(manifest_path=None):
+    """Documents the index names that THIS TREE does not hold.
+
+    A COUNT COMPUTED IN A PARTIAL TREE IS AN UNDERSTATEMENT, and nothing said so. On 25
+    September 2026 the sentence *"N meeting documents this archive holds are searchable"*
+    had three defensible values at once -- 12,055 here, 12,072 in a payload committed two
+    days earlier, 12,088 from a complete tree -- because `build_minutes_searchable.py`
+    defines `held` as *index rows whose file exists on disk*. Every one was correct about
+    its own tree, which is exactly what made it useless. Two hours went into "33 documents
+    are missing" before that was understood; they were in the other worktree.
+
+    So a generator that publishes a corpus count asks this first and REFUSES rather than
+    understating. The remedy is one command -- `sync_archive.py --pull` -- which is why
+    refusing costs nothing and publishing a low number costs a correction later.
+
+    Frozen keys only: our derived files legitimately come and go.
+    """
+    rows = read_manifest(manifest_path or MANIFEST)
+    return sorted(k for k in rows if frozen(k) and not os.path.exists(local_path(k)))
+
+
 def frozen(key):
     """Is this key one of the publisher's own files, rather than one of our renderings?
 

@@ -11,7 +11,10 @@ own tab has 80), so this walks board x year directly instead.
 Resumable: a file already on disk with a non-zero size is skipped. --inventory lists what
 would be fetched without downloading anything.
 """
-import argparse, csv, datetime as dt, pathlib, re, sys, time, urllib.parse, urllib.request
+import argparse, csv, datetime as dt, os, pathlib, re, sys, time, urllib.parse, urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import ingest          # noqa: E402 -- the one door every document arrives through
 
 BASE = 'https://www.lunenburgma.gov'
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -110,6 +113,7 @@ def backfill() -> int:
     todo = [r for r in rows if not r['path'].strip()]
     print(f'{len(todo)} of {len(rows)} index rows have no local file')
     got, still = 0, []
+    staged: list[tuple[dict, str]] = []
     for r in todo:
         blob = get(r['url'])
         ext = sniff(blob)
@@ -118,13 +122,29 @@ def backfill() -> int:
             print(f'  gone     {r["board"][:32]:<32} {r["date"]} {r["kind"]}')
             continue
         rel = f'{slug(r["board"])}/{r["date"]}-{r["kind"]}-{r["file_id"]}{ext}'
-        p = OUT / rel
-        p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_bytes(blob)
-        r['path'] = rel
+        # THROUGH `ingest`, for the reason the main loop does -- and this is the path that
+        # matters most, because `refresh.py` calls `--backfill` every morning. The index
+        # row's `path` is set only once the document is in the bucket AND filed, so a
+        # document still in flight keeps an empty path and stays a backfill candidate
+        # tomorrow. A catalogue that names a file nobody holds is the state this project
+        # spent 25 September chasing.
+        ok, why = ingest.stage('meetings/' + rel, blob, upstream=r['url'])
+        if not ok:
+            still.append(r)
+            print(f'  refused  {r["board"][:32]:<32} {r["date"]} {r["kind"]}  {why[:48]}')
+            continue
+        staged.append((r, rel))
         got += 1
         print(f'  {ext:<8} {r["board"][:32]:<32} {r["date"]} {r["kind"]}  {len(blob):,}b')
         time.sleep(0.15)
+
+    if staged:
+        ingest.secure()
+        for r, rel in staged:
+            if (OUT / rel).exists():
+                r['path'] = rel
+            else:
+                print(f'  in flight, path left blank: {rel}')
     with idx.open('w', newline='') as f:
         w = csv.DictWriter(f, ['board', 'board_id', 'date', 'kind', 'file_id', 'path', 'url'])
         w.writeheader()
@@ -168,6 +188,7 @@ def main() -> None:
         return
 
     got = 0
+    staged: list[tuple[dict, str]] = []
     for r in rows:
         p = OUT / r['path']
         if p.exists() and p.stat().st_size > 0:
@@ -192,11 +213,38 @@ def main() -> None:
             r['path'] = r['path'][:-4] + kind_of
             p = OUT / r['path']
             p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_bytes(blob)
+        # THROUGH `ingest`, NOT STRAIGHT TO DISK. This used to be `p.write_bytes(blob)`:
+        # a non-atomic write to the document's real archival path, an hour before anything
+        # backed it up. A crash mid-write left a truncated file at the real name, and a run
+        # that died before the refresh's last step left the morning's documents in one
+        # place -- six agendas were sitting exactly that way on 25 September 2026.
+        #
+        # `stage` validates, writes atomically into build/ingest/ and registers the document
+        # as IN FLIGHT; `secure` below pushes it, reads it back and only then files it into
+        # sources/ and catalogues it. So a document is in the archive if and only if it is
+        # in the bucket, and nothing destructive can run while one is in flight.
+        key = 'meetings/' + r['path']
+        ok, why = ingest.stage(key, blob, upstream=r['url'])
+        if not ok:
+            print(f'  ?? refused {r["path"]}: {why}')
+            r['path'] = ''
+            continue
+        staged.append((r, key))
         got += 1
         if got % 25 == 0:
             print(f'  {got} downloaded')
         time.sleep(0.15)
+
+    # SECURE THE BATCH, THEN LET THE INDEX NAME ONLY WHAT IS ACTUALLY HELD. A row whose
+    # document is still in flight keeps an EMPTY path, which is exactly what `--backfill`
+    # looks for -- so the next run picks it up and `stage` is idempotent about it. That is
+    # what stops the catalogue from naming a document nobody holds, which is the state this
+    # project spent hours chasing on 25 September.
+    if staged:
+        secured, failed = ingest.secure()
+        for r, key in staged:
+            if not (OUT / r['path']).exists():
+                r['path'] = ''
 
     # MERGE INTO THE INDEX. NEVER REPLACE IT. A walk of one year used to rewrite the whole
     # file with that year's rows -- the daily refresh's first run (11 September 2026) took

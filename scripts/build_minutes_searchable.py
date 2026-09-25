@@ -81,6 +81,9 @@ warnings.filterwarnings('ignore')
 logging.getLogger('pypdf').setLevel(logging.CRITICAL)
 logging.getLogger('pypdf._reader').setLevel(logging.CRITICAL)
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import archive_storage as A          # noqa: E402 -- for the completeness test below
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MIN = os.path.join(ROOT, 'sources', 'meetings')
 TEXT = os.path.join(MIN, 'text')
@@ -228,6 +231,22 @@ def measure(diagnose_unsearchable=True):
         else:
             cell['unsearchable'] += 1
             cell[diagnose(src) if diagnose_unsearchable else 'image_scan'] += 1
+
+    # A PARTIAL TREE MAY NOT PUBLISH A COUNT. `held` is *index rows whose file exists on
+    # disk*, so this number is a fact about THIS CHECKOUT and reads as a fact about the
+    # archive. On 25 September 2026 the same published sentence had three defensible values
+    # -- 12,055, 12,072 and 12,088 -- because three trees held different subsets, and the
+    # low one sent somebody hunting for 33 documents that were in another worktree.
+    #
+    # Refusing costs one command (`sync_archive.py --pull`). Publishing an understatement
+    # costs a correction in every payload that carries it, and this one feeds ten.
+    short = A.incomplete()
+    if short:
+        raise SystemExit(
+            '%d document(s) the archive index names are not in this tree, so `held` would '
+            'understate the corpus and every payload reading it would publish a low '
+            'number.\n  e.g. %s\n  Run: python3 scripts/sync_archive.py --pull'
+            % (len(short), '\n       '.join(short[:5])))
 
     if not joined:
         raise SystemExit('not one indexed document joined to an extracted text file. '
