@@ -88,9 +88,37 @@ function serve() {
 // nothing, which is not the same as rendering nothing, so the caller checks the layout
 // the payload declares before deciding what absence means.
 function blocks(html) {
-  // The chart ends where the key to it begins. Rule 7a put that block at the foot.
-  const end = html.indexOf('What this report counts')
-  let chart = end === -1 ? html : html.slice(0, end)
+  // THE PAGE MARKS ITS OWN CHART: `<div data-org-chart>` wraps it, and everything outside
+  // that -- the controls, the trend, the key, the caveats -- is not the chart.
+  //
+  // This used to find the end by searching for `What this report counts`, the `Grain`
+  // component's own heading, and that is a positional name (rule 13b). The moment `Grain`
+  // was reused for a chart caption ABOVE the chart, this truncated the page to nothing and
+  // reported `no bands rendered at all` for 51 of 63 bodies. Every one was fine. A reader
+  // that locates a section by a string living inside a component breaks whenever anybody
+  // reuses that component, and it breaks by reporting defects in the DATA.
+  //
+  // The fallback keeps the old behaviour so a page that has not declared the marker still
+  // reads, rather than silently checking nothing -- but it says so, because a checker that
+  // quietly stops checking is worse than one that fails.
+  let chart = html
+  const open = html.indexOf('data-org-chart')
+  if (open !== -1) {
+    const from = html.lastIndexOf('<div', open)
+    let depth = 0
+    const re = /<(\/?)div\b[^>]*>/g
+    re.lastIndex = from
+    let m
+    while ((m = re.exec(html))) {
+      depth += m[1] ? -1 : 1
+      if (depth === 0) { chart = html.slice(from, m.index + m[0].length); break }
+    }
+  } else {
+    const end = html.indexOf('What this report counts')
+    chart = end === -1 ? html : html.slice(0, end)
+    console.log('  note: the page declares no data-org-chart marker; '
+      + 'falling back to the old heading search')
+  }
   // ...AND IT BEGINS AFTER THE WARNING CARDS. `This chart is not complete` quotes the
   // town's own sentence about how many people a body had, and that sentence contains the
   // word `heads` often enough to be read as a chart row — the reader reported the

@@ -253,7 +253,55 @@ def main():
         FAILS.append('the measured and hypothesis counts do not sum to the total')
     print('  OK    %d conclusions — %d measured, %d offered as an explanation'
           % (t['conclusions'], t['measured'], t['hypothesis']))
+    check_folds()
     return report()
+
+
+def check_folds():
+    """A page may not render MORE THAN THREE conclusions into its short version.
+
+    TWO HABITS GREW IN THIS CODEBASE and one of them is a trap. About ten report pages split
+    their conclusions with `splitConclusions` -- three above the fold, the rest inside it --
+    and about fifteen render `rows={d.conclusions}`, all of them, into the `data-short`
+    block. The second is fine while a generator emits three and wrong the moment it emits a
+    fourth, and NOTHING IN THE PAGE CHANGES when that happens.
+
+    It happened on 25 September 2026: monty-tech's generator went from three conclusions to
+    six, and `/monty-tech`'s declared short version went from 902 words to 1,613 against a
+    1,150 budget without a line of `MontyTech.tsx` being touched.
+
+    WHY THE READING-TIME RATCHET IS NOT ENOUGH. It catches the SYMPTOM, and only once a page
+    crosses its word budget -- so a page can quietly cram six conclusions into a short
+    version at 1,100 words and pass. This catches the SHAPE, and it is zero today: every
+    page in that group currently has three or fewer. Converting all fifteen now would change
+    nothing visible and risk fifteen typos, so the convention is asserted instead of
+    retrofitted, and the day a generator earns a fourth conclusion this says which page to
+    convert.
+    """
+    import glob
+    import re as _re
+    pages = {}
+    for f in sorted(glob.glob(os.path.join(ROOT, 'fy28', 'src', 'pages', '*.tsx'))):
+        text = open(f, encoding='utf-8').read()
+        if 'rows={d.conclusions}' not in text:
+            continue
+        m = _re.search(r"DATA = '/data/([a-z0-9-]+)\.json'", text)
+        if m:
+            pages[os.path.basename(f)] = m.group(1)
+    for page, rid in sorted(pages.items()):
+        path = os.path.join(ROOT, 'fy28', 'public', 'data', rid + '.json')
+        if not os.path.exists(path):
+            continue
+        n = len(json.load(open(path, encoding='utf-8')).get('conclusions', []))
+        CHECKS[0] += 1
+        if n > 3:
+            FAILS.append(
+            '%s renders rows={d.conclusions} -- ALL of them -- into its data-short block, '
+            'and %s.json now has %d. Use splitConclusions(d.conclusions) and put the rest '
+            'inside the page\u2019s FullVersion, the way /analysis/* and ten other report '
+            'pages already do. Left as it is, the short version grows silently and the '
+            'reading-time ratchet reports it as a length problem rather than a shape one.'
+            % (page, rid, n))
 
 
 def report():

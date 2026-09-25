@@ -904,6 +904,58 @@ three are written down:
   byte-verified. Rule 2 is not only about the model: a figure typed into prose is the one
   thing here that can be silently wrong, and this file is prose that ships.
 
+## Nothing is downloaded without being saved: `ingest.land`
+
+TJ, 25 September 2026: *"i want to make sure any file we downoad is ALWAYS saved before we
+can even think of deleting it or cleaning a repo..."*
+
+**THE INVARIANT: a document is in `sources/` if and only if it is in the bucket.** One
+sentence, and it is an invariant rather than a procedure -- which is the difference between
+a guarantee and a habit. `check_archive_backed_up.py` answers it offline in under a second.
+
+`scripts/ingest.py` is the one door. `stage()` validates and writes atomically into
+gitignored `build/ingest/`, and registers the document as IN FLIGHT in the TRACKED
+`sources/data/ingest-pending.csv`. `secure()` pushes it, reads it back, compares, and only
+then moves it into `sources/` and writes the manifest row. A failed push leaves it staged
+and pending, and the gate refuses every destructive operation while that is true -- so the
+next run retries rather than the next run destroying.
+
+**What it replaced, and why every part of it mattered.** Fifteen fetchers wrote straight
+into `sources/` -- a git working directory -- and the durable copy was step 10 of 10 of the
+daily run, with its failure ignored. So the archive made its promise when bytes hit the
+disk and only kept it an hour later. In that window: six agendas sat unbacked for days, 39
+documents were orphaned in the bucket, `git clean -fd` would have deleted a fetched `.csv`
+(untracked AND not ignored), and the write was not atomic, so a crash left a truncated file
+at the real archival name.
+
+**And the catalogue only ever names what is held.** A document still in flight keeps an
+EMPTY `path` in `sources/meetings/index.csv`, which is exactly what `fetch_agendas.py
+--backfill` looks for -- so tomorrow retries it. That is what stops *catalogued but not on
+disk*, which cost an afternoon on 25 September.
+
+**A PARTIAL TREE MAY NOT PUBLISH A COUNT.** `build_minutes_searchable.py` defines `held` as
+*index rows whose file exists on disk*, so the figure is about THIS CHECKOUT and reads as a
+figure about the archive: the same published sentence had three defensible values in one day
+-- 12,055, 12,072 and 12,088 -- across three trees. It now calls `archive_storage.incomplete()`
+and REFUSES, naming the file and `sync_archive.py --pull`. Any other generator publishing a
+corpus count should do the same.
+
+**A RENAME ORPHANS AN OBJECT AND CANNOT BE UNDONE.** The bucket forbids deletion for ten
+years, so changing a document's filename leaves the old object there forever, unfindable
+because the bucket cannot be listed. Eleven went that way when a slug changed how it renders
+an apostrophe (`town-manager-s` to `town-manager-39-s`). `sources/data/archive-orphans.csv`
+is the register, matched by **sha256** rather than by name, and it says `superseded_by` where
+the same bytes are held under another key -- the only possible remedy, and the same move
+`document-defects.csv` makes for a document that cannot be corrected.
+
+**The refresh is VERIFIED, not forced.** `daily_refresh.sh` used to open with `git reset
+--hard` and `git clean -fd`, and the reason was stated 120 lines below at the commit: `-A` is
+safe because the top of the run destroyed anything else. So the destruction was not
+protecting anything -- it was buying an assumption. Both scripts now STOP if the refresh tree
+is not pristine and change nothing at all, which buys the same assumption for free. There is
+no `git clean` in either any more. A dirty tree is abnormal and gets a person, because
+self-healing is exactly what let two weeks of manifest drops go unnoticed.
+
 ## Where the bytes are: git holds what changes, R2 holds what must not
 
 **The documents are not in this repository.** Every PDF, spreadsheet, Word file and
@@ -1359,7 +1411,17 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/split_large_text.py --check  # ...and fail if a long one has no parts
     python3 scripts/build_readme.py             # the repository's front door, counts derived
     python3 scripts/build_readme.py --check      # ...and every path it promises is in git
-    python3 scripts/sync_archive.py --manifest   # hash every file in sources/; rewrite the manifest
+    python3 scripts/check_archive_backed_up.py   # THE GATE: is every document this tree holds in the
+                                                #   bucket, read back and compared? Nothing destructive may
+                                                #   run while one is not. Offline, under a second
+    python3 scripts/check_archive_backed_up.py --push   # ...and back up whatever is not
+    python3 scripts/ingest.py --status          # documents in flight: staged, not yet in the bucket
+    python3 scripts/ingest.py --secure          # ...finish them (push, read back, file, catalogue)
+    python3 scripts/check_manifest_history.py   # has any document LEFT the index? A dropped row does not
+                                                #   delete an object, it ORPHANS it — the bucket cannot be
+                                                #   listed, so the manifest is the only thing that names it
+    python3 scripts/check_manifest_history.py --record   # ...register an orphan that cannot be undone
+    python3 scripts/sync_archive.py --manifest   # hash every file in sources/; APPEND-ONLY for documents
     python3 scripts/sync_archive.py --push       # upload what is new, read it back, compare sha256
     python3 scripts/sync_archive.py --pull       # a fresh clone gets the documents themselves
     python3 scripts/check_archive_storage.py     # manifest vs bucket, reconciled both ways

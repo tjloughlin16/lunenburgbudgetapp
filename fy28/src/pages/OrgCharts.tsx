@@ -450,6 +450,15 @@ export function OrgCharts() {
           ask of a dropdown. */}
       {chosen ? <PeopleOverTime u={chosen} fy={shownFy} onPick={setFy} /> : null}
 
+      {/* `data-org-chart` IS A CONTRACT WITH `check_org_html.mjs`, which reads this page
+          back and asserts the shape of every body -- heads first, bands in order, nobody
+          above their chief. It used to find the end of the chart by searching for the
+          string `What this report counts`, which is the `Grain` component's own heading.
+          That is a POSITIONAL NAME in rule 13b's sense, and it broke the moment `Grain` was
+          reused above the chart: the checker truncated the page and reported `no bands
+          rendered at all` for 51 of 63 bodies, none of which had anything wrong with it.
+          An explicit marker cannot be broken by reusing a component elsewhere. */}
+      <div data-org-chart="">
       {rows.length === 0 ? (
         <Body>Nothing is published for {unit} in FY{shownFy}.</Body>
       ) : shiftLike ? (
@@ -618,6 +627,8 @@ export function OrgCharts() {
           volunteers is empty here and is not empty.
         </Body>
       ) : null}
+
+      </div>{/* /data-org-chart -- the key and the caveats below are not the chart */}
 
       <Grain>
         A NAME is somebody the town printed in that role that year. A POST is an
