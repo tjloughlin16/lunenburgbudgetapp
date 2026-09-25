@@ -411,11 +411,37 @@ OURS_TOP = {'analyses', 'data'}
 OURS_DIRS = {'text', 'ocr', 'pages'}
 
 
+# A DATED SNAPSHOT FOLDER IS FROZEN WHATEVER IS IN IT. `2026-09-25/` is a statement that
+# these are the bytes a publisher was serving on that day, and a day does not happen twice.
+DATED_SNAPSHOT = re.compile(r'^\d{4}-\d{2}-\d{2}$')
+
+
 def frozen(key):
-    """Is this key one of the publisher's own files, rather than one of our renderings?"""
+    """Is this key one of the publisher's own files, rather than one of our renderings?
+
+    THE EXTENSION IS A PROXY AND IT LEAKED. `ORIGINAL_EXTS` decides this, which means a
+    document the publisher happened to serve as CSV was classified as OURS -- so nothing
+    required it to be backed up, and `--push --frozen` skipped it. The district publishes
+    its staff directories as Google Sheets, and the CSV export is the ROWS: the thing every
+    figure in `school-staff-directory.csv` is computed from. Six files, held in one place,
+    that the archive's own promise did not cover.
+
+    That is rule 13a's lesson pointed at backup policy: *ask which produced it, never what
+    it was saved as.* `.csv` cannot simply be added to `ORIGINAL_EXTS` -- every
+    `sources/*/index.csv` is OUR catalogue and changes constantly, and freezing one would
+    make the manifest refuse to write the moment it did.
+
+    So the second test is the PATH, not the name: a file inside a dated snapshot folder is
+    the publisher's, on that date, whatever its extension. Those folders exist precisely
+    because the publisher overwrites in place and the snapshot is the only record -- which
+    is the strongest possible reason to require a backup. A `checked.csv` at the root of
+    such a tree is ours and is not caught, correctly, because it appends on every run.
+    """
     parts = key.split('/')
     if parts[0] in OURS_TOP:
         return False
     if OURS_DIRS & set(parts[:-1]):
         return False
+    if any(DATED_SNAPSHOT.match(p) for p in parts[:-1]):
+        return True
     return os.path.splitext(parts[-1])[1].lower() in ORIGINAL_EXTS

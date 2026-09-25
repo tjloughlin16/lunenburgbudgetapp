@@ -90,6 +90,32 @@ TIMINGS = []          # (step, seconds, exit code) -- printed at the end and wri
 
 
 
+DIRECTORY_EVERY_DAYS = 7
+TOWN_DIRECTORY = os.path.join(ROOT, 'sources', 'town-supplementary', 'docs',
+                              'staff-directory')
+SCHOOL_DIRECTORY = os.path.join(ROOT, 'sources', 'district-budget', 'docs', 'personnel',
+                                'staff-directory')
+
+
+def directory_due(root, as_of):
+    """Has it been a week since anybody looked at this directory?
+
+    READ OFF `checked.csv`, WHICH RECORDS EVERY LOOK -- not off the newest snapshot folder,
+    which records only the looks that found a change. Using the snapshot would re-fetch
+    every single day the moment a directory went a week without being edited, which is most
+    weeks, and would be worse the better behaved the publisher was.
+    """
+    p = os.path.join(root, 'checked.csv')
+    if not os.path.exists(p):
+        return True
+    days = [r['checked'] for r in csv.DictReader(open(p, encoding='utf-8'))
+            if r.get('checked')]
+    if not days:
+        return True
+    gap = dt.date.fromisoformat(as_of) - dt.date.fromisoformat(max(days))
+    return gap.days >= DIRECTORY_EVERY_DAYS
+
+
 def record_run(a, delta, deployed, state, notes=()):
     """One row per day in refresh-runs.csv, written TWICE: once before the steps that can
     die, and again when the run finishes.
@@ -294,6 +320,36 @@ def write_to_post(as_of):
         print('  NEW  happened  %s %s — %d vote(s), %d transfer(s)' % (r['board'], r['date'], r['votes'], r['transfers']))
 
 
+def back_up_documents(notes, why):
+    """Put every document this tree holds into the bucket, NOW, and say so if it fails.
+
+    TJ, 25 September 2026: *"i want to make sure any file we downoad is ALWAYS saved before
+    we can even think of deleting it or cleaning a repo..."*
+
+    THIS USED TO BE STEP 10 OF 10 AND ITS FAILURE WAS IGNORED. The comment beside it already
+    knew the failure mode -- it names a Stormwater agenda that went that way on 17 September
+    2026 -- and it was still the last thing the run did, with `check=False`, so a run that
+    died anywhere earlier left the morning's documents on one disk and reported a clean day.
+    Six agendas were in that state on 25 September.
+
+    So it is called the moment documents land, not at the end. A run that dies after this
+    has already saved what it fetched, and the next run's `git reset --hard` and `git clean`
+    cannot take anything with them.
+
+    AND A FAILED BACKUP IS NOW A NOTE, which reaches `refresh-runs.csv` and the
+    notification. It does not abort the run: the documents are still on disk and the gate at
+    the top of the NEXT run refuses to destroy anything while that is true, so the safe
+    thing is to carry on ingesting and tell somebody. A backup that fails silently is the
+    only version of this that loses a document.
+    """
+    rc = py('sync_archive.py', '--manifest', check=False).returncode
+    rc += py('sync_archive.py', '--push', '--frozen', check=False).returncode
+    if rc:
+        notes.append('ARCHIVE BACKUP FAILED (%s) -- documents may be held in one place; '
+                     'run check_archive_backed_up.py' % why)
+    return rc == 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--deploy', action='store_true')
@@ -332,6 +388,9 @@ def main():
         n = adopt_new_meeting_documents(a.as_of)
         if n:
             py('fetch_agendas.py', '--backfill')
+            # THE MOMENT THEY LAND. Not at the end of the run -- see back_up_documents.
+            if not a.no_push:
+                back_up_documents(notes, 'after fetching agendas and minutes')
         py('extract_minutes.py')
         py('build_minutes_searchable.py')
         if not a.no_minutes:
@@ -342,12 +401,43 @@ def main():
     # refused. TJ: "look for new documents posted from the school committee (budget
     # related), as well as on the town pages from the areas we've found."
     py('watch_documents.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
+    if not a.dry_run and not a.no_push:
+        back_up_documents(notes, 'after the document watcher')
     # 4a. A NEW BUDGET DOCUMENT IS READ THE MORNING IT APPEARS. TJ, 16 September 2026:
     # "anytime a new doc is 'found', we need to identify if it impacts the budget feed and
     # process it right then and there." One read per document, page-cited, into the same
     # budget-state shape the feed and the season boards already draw from.
     if not a.dry_run:
         py('write_document_budget_state.py', '--new', '--as-of', a.as_of, '--limit', '3', check=False)
+
+    # 3e. THE TWO STAFF DIRECTORIES, WEEKLY. Who works for the town and who works for the
+    # district, off the pages they publish themselves -- and the only sources here that
+    # cease to exist if nobody re-fetches them: both publishers overwrite in place, so
+    # there is no FY2026 copy of either anywhere and the archive's snapshots are the only
+    # history that will ever exist.
+    #
+    # THIS IS THE GAP THAT PROMPTED IT. `fetch_staff_directory.py` was named in no
+    # scheduled script -- not here, not the daily wrapper, not the weekly sweep -- so the
+    # town's people were ONE photograph taken on 22 September 2026 with nothing arranged to
+    # take the next. The failure mode is silent: the file goes on answering correctly about
+    # a day that recedes.
+    #
+    # WEEKLY, NOT DAILY, AND A SNAPSHOT ONLY WHEN SOMETHING MOVED. A directory does not
+    # change daily, an unchanged snapshot is frozen in the bucket for ten years, and
+    # `--if-changed` writes nothing when the pages match the last one while still logging
+    # that it looked. So `checked.csv` answers how current the snapshot is, which a missing
+    # snapshot cannot.
+    #
+    # GATED ON THE LOG RATHER THAN ON THE WEEKDAY: a run missed on its day would otherwise
+    # wait a full week, and this project has had a scheduled job hand back its own window
+    # once already.
+    if not a.dry_run:
+        for script, root in (('fetch_staff_directory.py', TOWN_DIRECTORY),
+                             ('fetch_school_staff_directory.py', SCHOOL_DIRECTORY)):
+            if directory_due(root, a.as_of):
+                py(script, '--if-changed', check=False)
+        py('extract_staff_directory.py', check=False)
+        py('extract_school_staff_directory.py', check=False)
 
     # 3c. The town's and the community's feeds -- news, alerts, registrations. Linked and
     # attributed, never republished (QUEUE 13, 14).
@@ -471,8 +561,9 @@ def main():
         # so a document fetched here and never pushed exists on one disk and nowhere
         # else (a Stormwater agenda went that way on 17 September 2026). New keys only.
         if not a.no_push:
-            py('sync_archive.py', '--manifest', check=False)
-            py('sync_archive.py', '--push', check=False)
+            # The final sweep, for anything a later step fetched. Backups now also happen
+            # as documents land, so this is a backstop rather than the only chance.
+            back_up_documents(notes, 'the end-of-run sweep')
 
     after = {
         'agendas': sum(1 for e in read_csv(MEETING_EVENTS) if e['kind'] == 'agenda'),

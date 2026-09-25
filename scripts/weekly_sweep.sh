@@ -19,6 +19,13 @@
 set -u
 TREE=/Users/tj/lunenburgbudgets-refresh
 cd "$TREE" || exit 1
+# THE SAME GATE THE DAILY RUN HAS, for the same reason: `git reset --hard` is on the next
+# line. A document held in one place is not backed up, and nothing here may destroy tree
+# state until it is. See scripts/check_archive_backed_up.py.
+if ! python3 scripts/check_archive_backed_up.py --push --quiet; then
+  echo "=== sweep BLOCKED $(date): a document is held in only one place; nothing was reset ==="
+  exit 1
+fi
 git fetch -q origin && git reset -q --hard origin/main
 echo "=== weekly sweep started $(date) at $(git rev-parse --short HEAD) ==="
 python3 scripts/sweep_backlog.py --until 10:55 --parallel 4

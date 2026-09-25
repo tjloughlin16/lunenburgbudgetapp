@@ -28,6 +28,9 @@ mkdir -p "$LOGDIR"
 # is running -- the hand-off passes the path down.
 LOG="${REFRESH_LOG:-$LOGDIR/$(date +%Y-%m-%d).log}"
 export REFRESH_LOG="$LOG"
+# The sticky banner for a run that refused to start, written before the hand-off because
+# the gate that can refuse runs before the tree is touched at all.
+ALERT_EARLY="$HERE/build/refresh-ALERT.txt"
 
 # ---------------------------------------------------------------- hand-off
 if [ "$HERE" != "$(cd "$TREE" 2>/dev/null && pwd)" ]; then
@@ -44,12 +47,52 @@ if [ "$HERE" != "$(cd "$TREE" 2>/dev/null && pwd)" ]; then
   {
     echo "=== bringing the refresh tree to origin/main $(date) ==="
     cd "$TREE" || exit 1
+    # ------------------------------------------------------------------ THE GATE
+    # NOTHING BELOW THIS LINE RUNS WHILE A DOCUMENT IS HELD IN ONE PLACE.
+    #
+    # TJ, 25 September 2026: *"i want to make sure any file we downoad is ALWAYS saved
+    # before we can even think of deleting it or cleaning a repo..."*
+    #
+    # `git reset --hard` and `git clean` are below, and a previous run may have died after
+    # fetching and before pushing -- which is not hypothetical: six agendas were sitting in
+    # exactly that state when this was written. So the tree is asked, offline and in under a
+    # second, whether every publisher document it holds is in the bucket and was read back.
+    # If it is not, this run backs them up and asks again; if it still is not, the run STOPS
+    # having changed nothing, and says so where a person will see it.
+    if ! python3 scripts/check_archive_backed_up.py --push --quiet; then
+      {
+        echo "$(date '+%Y-%m-%d %H:%M')  refresh BLOCKED before it touched anything"
+        echo "a document is held in only one place and could not be backed up."
+        echo "run: python3 scripts/check_archive_backed_up.py"
+        echo "log: $LOG"
+      } > "$ALERT_EARLY"
+      osascript -e 'display notification "a document is held in one place -- nothing was cleaned" with title "Lunenburg refresh BLOCKED" sound name "Basso"' >/dev/null 2>&1 || true
+      echo "BLOCKED: unbacked document(s); refusing to reset or clean this tree"
+      exit 1
+    fi
     git fetch -q origin
     # Anything left in the tree from a run that died is discarded: the tree's whole
     # contract is that it starts every run at main. Gitignored state (the archive's
     # binaries, the database, node_modules) is untouched by a reset.
     git reset -q --hard origin/main
-    git clean -q -fd   # untracked files only; ignored state (binaries, .db, node_modules) stays
+    # `git clean` NEVER REACHES sources/. TJ, 25 September 2026: *"if you have ANY thought
+    # that refresh destroys things, we need to make that a guarantee to never even be
+    # possible."*
+    #
+    # THIS LINE COULD DELETE FRESHLY FETCHED DOCUMENTS, and the comment it replaces said it
+    # could not. The reasoning was that documents are gitignored and `-fd` skips ignored
+    # files -- true for every extension .gitignore names (*.pdf, *.xlsx, *.docx, *.html).
+    # It is NOT true for `.csv`, which is tracked-by-default under sources/ so the data
+    # files can be versioned. A fetched CSV is therefore untracked AND not ignored, which
+    # is precisely what `git clean -fd` removes. Asked directly -- `git clean -nd sources/`
+    # -- git offered to delete six of the seven staff-directory sheets ingested that day.
+    #
+    # It only bites a run that dies between fetching and committing, which is not rare:
+    # runs died on 16, 17 and 18 September, and one was killed on the 25th.
+    #
+    # An exclusion, not a narrower path list: a path list has to be kept in step with what
+    # the build writes, and the whole point here is a guarantee that cannot rot.
+    git clean -q -fd -e '/sources/'   # untracked build state only -- NEVER the archive
   } >> "$LOG" 2>&1
   exec bash "$TREE/scripts/daily_refresh.sh"
 fi

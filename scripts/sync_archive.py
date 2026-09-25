@@ -45,25 +45,89 @@ STATE_COLS = ['key', 'bytes', 'sha256', 'verified_at']
 
 
 def build_manifest(quiet=False):
-    """Hash every file under sources/ and write the manifest.
+    """Hash every file under sources/ and write the manifest -- NEVER dropping a document.
 
     The manifest is the index into the bucket, and it is the reason it stays in git while
     the binaries leave: held only in R2, a fresh clone would have to ask the network what
     exists before it could ask for any of it.
+
+    IT IS APPEND-ONLY FOR FROZEN KEYS, AND THAT IS THE WHOLE POINT OF THIS FUNCTION.
+
+    TJ, 25 September 2026: *"i want to make sure any file we downoad is ALWAYS saved before
+    we can even think of deleting it or cleaning a repo..."*
+
+    This used to rebuild the manifest from whatever the CURRENT TREE happened to hold, and
+    that is structurally wrong for an index into an immutable bucket. A pushed object can
+    never be un-pushed -- the bucket policy blocks deletion and overwriting for ten years --
+    so a key that leaves the manifest is not deleted, it is ORPHANED: the bytes stay in a
+    bucket that does not allow listing, and nothing left can name them.
+
+    IT HAPPENED TWICE, in the same shape both times:
+
+        ac033301  Daily refresh, 2026-09-21   ADDED 27 meeting documents
+        c28c8d2b  an interactive session      REMOVED them
+        8fba3d31  Daily refresh, 2026-09-23   ADDED 33 more
+        712f2009  an interactive session      REMOVED them
+
+    The refresh fetches into its own worktree; the documents are gitignored, so only the
+    manifest row travels to main. Then a session in the OTHER tree runs `--manifest`, which
+    rehashes what IT holds -- and a document the refresh downloaded an hour ago is simply
+    not there, so its row went away. 39 documents lost their index that way. 33 were already
+    byte-verified in R2 and became unreachable; 6 had never been pushed at all.
+
+    So there are now two rules, and neither is optional:
+
+      * A FROZEN KEY IN THE MANIFEST AND ABSENT FROM DISK KEEPS ITS ROW. It is not missing
+        data, it is a document this tree has not pulled -- which is exactly what `--pull`
+        is for. Whichever tree runs this, the index only ever grows.
+      * A FROZEN KEY WHOSE BYTES DISAGREE WITH THE MANIFEST REFUSES THE WRITE. The
+        publisher's own file does not change; if our copy differs from what we recorded,
+        that is a defect to look at, not a revision to record. `document-defects.csv` is
+        where a known-unstable document is declared.
+
+    Derived files -- everything `archive_storage.frozen()` says is ours -- keep the old
+    behaviour, because they legitimately change and legitimately go away.
     """
     upstream = A.upstream_urls()
     keys = A.walk_sources()
-    rows, total = [], 0
+    held = set(keys)
+    before = {}
+    if os.path.exists(A.MANIFEST):
+        before = {r['key']: r for r in csv.DictReader(open(A.MANIFEST, encoding='utf-8'))}
+
+    rows, total, changed = [], 0, []
     for i, key in enumerate(keys, 1):
         sha, md5, n = A.hash_file(A.local_path(key))
+        was = before.get(key)
+        if was and A.frozen(key) and was.get('sha256') and was['sha256'] != sha:
+            changed.append((key, was['sha256'], sha))
         rows.append({'key': key, 'bytes': n, 'sha256': sha, 'etag_md5': md5,
                      'upstream': upstream.get(key, '')})
         total += n
         if not quiet and i % 500 == 0:
             print(f'  hashed {i}/{len(keys)}', flush=True)
+
+    if changed:
+        for key, old_sha, new_sha in changed[:10]:
+            print(f'  !! {key}\n     manifest {old_sha[:16]}  disk {new_sha[:16]}')
+        sys.exit(f'{len(changed)} frozen document(s) no longer match the manifest. A '
+                 f"publisher's own file does not change: that is a defect, not a revision. "
+                 f'Refusing to rewrite the index. Declare it in '
+                 f'sources/data/document-defects.csv if the publisher really did replace it.')
+
+    # EVERY FROZEN KEY THIS TREE DOES NOT HOLD KEEPS ITS ROW, verbatim.
+    kept = [r for k, r in sorted(before.items()) if k not in held and A.frozen(k)]
+    dropped = [k for k in sorted(before) if k not in held and not A.frozen(k)]
+    rows = sorted(rows + kept, key=lambda r: r['key'])
+
     A.write_manifest(rows)
     if not quiet:
         print(f'{A.MANIFEST}: {len(rows)} files, {total / 1e9:.2f} GB')
+        if kept:
+            print(f'  {len(kept)} document(s) indexed and not on this disk -- rows kept; '
+                  f'`--pull` fetches them')
+        if dropped:
+            print(f'  {len(dropped)} derived file(s) no longer here -- rows dropped')
     return rows
 
 
