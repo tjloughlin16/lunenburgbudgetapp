@@ -329,10 +329,26 @@ CATALOGUE_COLUMNS = {'state', 'rows_published', 'figures_reversed'}
 # either would credit pages in books that do not exist yet.
 YEAR_COLUMNS = ('fy', 'report_fy')
 
+# AND WHICH COLUMN HOLDS THE PAGE. The same bug, one column over, and it hid three pages
+# that had already been read: `enterprise-balance-sheet.csv` names its page `page_pdf`, so
+# the balance-sheet queue went on asking for FY2019 p47, FY2020 p45 and FY2021 p47 while
+# the enterprise sheet on each of them was extracted, checked and in the archive.
+#
+# `page_printed` IS EXCLUDED, and for the same reason `as_of_fy` is. It is the number the
+# town printed in the corner of the page, which is not the page's index in the PDF -- the
+# front matter is unnumbered, so the two differ by four to six depending on the year.
+# Joining on it would credit the wrong page and there would be nothing to notice it by.
+PAGE_COLUMNS = ('page', 'page_pdf')
+
 
 def _year_column(cols):
     """The first year-of-the-book column a table has, or None."""
     return next((c for c in YEAR_COLUMNS if c in cols), None)
+
+
+def _page_column(cols):
+    """The first PDF-page column a table has, or None."""
+    return next((c for c in PAGE_COLUMNS if c in cols), None)
 
 
 def _label(name):
@@ -364,12 +380,12 @@ def read_pages():
             with open(f, encoding='utf-8', errors='replace') as fh:
                 r = csv.DictReader(fh)
                 cols = set(r.fieldnames or ())
-                year = _year_column(cols)
-                if not year or 'page' not in cols or cols & CATALOGUE_COLUMNS:
+                year, page = _year_column(cols), _page_column(cols)
+                if not year or not page or cols & CATALOGUE_COLUMNS:
                     continue
                 for row in r:
                     try:
-                        out[(int(row[year]), int(row['page']))].add(_label(name))
+                        out[(int(row[year]), int(row[page]))].add(_label(name))
                     except (TypeError, ValueError):
                         continue
         except OSError:
@@ -389,11 +405,11 @@ def read_pages():
             # capital-plans-refused`, a page nothing holds a figure for. A refusal is not
             # a reading, and keeping the test in one half of a two-half join is how it
             # stopped being true in the other.
-            year = _year_column(cols)
-            if not year or 'page' not in cols or cols & CATALOGUE_COLUMNS:
+            year, page = _year_column(cols), _page_column(cols)
+            if not year or not page or cols & CATALOGUE_COLUMNS:
                 continue
             for fy, pg in db.execute(
-                    'SELECT DISTINCT "%s", page FROM "%s"' % (year, t)):
+                    'SELECT DISTINCT "%s", "%s" FROM "%s"' % (year, page, t)):
                 try:
                     out[(int(fy), int(pg))].add(_label(t))
                 except (TypeError, ValueError):

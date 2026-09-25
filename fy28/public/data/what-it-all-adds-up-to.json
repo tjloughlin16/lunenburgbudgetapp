@@ -83,7 +83,7 @@
    "id": "monty-tech",
    "title": "The Monty Tech assessment \u2014 the school bill nobody in Lunenburg votes on",
    "url": "/analysis/monty-tech",
-   "words": 3243
+   "words": 3241
   },
   {
    "doc_url": "/docs/analyses/open-seats.md",
@@ -10167,9 +10167,170 @@
       }
      ],
      "so_what": "This is set by a state formula, not by a price, so it cannot be planned like an ordinary cost."
+    },
+    {
+     "basis": "the district\u2019s own budget book, which prints the three parts of each member town\u2019s assessment on one sheet, against the required minimum DESE publishes for the same year. A sheet somebody assembled rather than a printout from the books \u2014 but the three parts sum to the total the Town\u2019s own ledger carries, which is the check that makes it usable.",
+     "bearing": "lever",
+     "claim": "Of Lunenburg\u2019s $1,334,521 Monty Tech bill, $63,810 is anything a member town negotiates.",
+     "detail": "The bill is not one negotiated figure. It is a state-calculated minimum with two much smaller assessments on top, and the district prints the three parts separately. In FY2026 the required minimum contribution was $1,270,711, the transportation and other operating assessment $47,577 and the capital assessment $16,233, and the three sum to $1,334,521 exactly. The minimum is 95.2% of the bill and is set by Chapter 70 from the town\u2019s property wealth and resident income; only the other $63,810 is set by anything the district\u2019s eighteen member towns decide between them. A town looking for room in this line has $63,810 to look in.",
+     "figure": "negotiable",
+     "figures": {
+      "capital": {
+       "text": "$16,233",
+       "unit": "",
+       "value": 16233
+      },
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "negotiable": {
+       "text": "$63,810",
+       "unit": "",
+       "value": 63810
+      },
+      "required": {
+       "text": "$1,270,711",
+       "unit": "",
+       "value": 1270711
+      },
+      "required_share": {
+       "text": "95.2%",
+       "unit": "",
+       "value": 95.21849999999999
+      },
+      "total": {
+       "text": "$1,334,521",
+       "unit": "",
+       "value": 1334521
+      },
+      "transport": {
+       "text": "$47,577",
+       "unit": "",
+       "value": 47577
+      }
+     },
+     "id": "only-a-twentieth-of-the-bill-is-negotiable",
+     "kind": "measured",
+     "literals": [
+      "70"
+     ],
+     "not_shown": "That the negotiable part is where a saving would come from, or that it could be reduced at all. It pays for transportation and for capital, both of which are real obligations; what is established is its SIZE against the rest of the bill, not that anything in it is discretionary.",
+     "see": [
+      {
+       "label": "how state aid is set",
+       "slug": "/state-aid"
+      },
+      {
+       "label": "why the formula lands where it does",
+       "slug": "/why-we-only-get-minimum-aid"
+      }
+     ],
+     "so_what": "Arguing the assessment down means arguing about a twentieth of it; the rest is state arithmetic."
+    },
+    {
+     "basis": "DESE\u2019s Chapter 70 key factors workbook for the year: the foundation budget and foundation enrollment sheets for Lunenburg Public Schools and for Montachusett, divided one by the other. Both halves are the state\u2019s own published figures.",
+     "bearing": "sizes",
+     "claim": "The state sets $20,827 a year for a Monty Tech pupil and $13,770 for a Lunenburg one.",
+     "detail": "A vocational place is a larger place in the state\u2019s own arithmetic, which is why Monty Tech is a bigger fraction of the town\u2019s bill than of its enrollment. In FY2026 the foundation budget is $20,827 for each Lunenburg resident at Monty Tech and $13,770 for each one in the town\u2019s own schools. Monty Tech is 5.9% of the town\u2019s foundation enrollment and 8.7% of its foundation budget, and because the split of the town-wide required contribution follows the BUDGET share rather than the head share, that is the fraction that reaches the bill. A child moving between the two therefore moves more than a proportionate slice.",
+     "figure": "monty_tech_per_pupil",
+     "figures": {
+      "budget_share": {
+       "text": "8.7%",
+       "unit": "",
+       "value": 8.7003
+      },
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "head_share": {
+       "text": "5.9%",
+       "unit": "",
+       "value": 5.9272
+      },
+      "lunenburg_per_pupil": {
+       "text": "$13,770",
+       "unit": "",
+       "value": 13770.4
+      },
+      "monty_tech_per_pupil": {
+       "text": "$20,827",
+       "unit": "",
+       "value": 20826.89
+      }
+     },
+     "id": "a-vocational-pupil-carries-a-larger-foundation-budget",
+     "kind": "measured",
+     "literals": [
+      "70"
+     ],
+     "not_shown": "What either place COSTS. A foundation budget is what the state\u2019s formula assumes a place requires, which is an input to an aid calculation and not a measurement of spending \u2014 rule 11 again, one layer further back.",
+     "see": [
+      {
+       "label": "how state aid is set",
+       "slug": "/state-aid"
+      },
+      {
+       "label": "what moves when a child leaves",
+       "slug": "/if-students-leave"
+      }
+     ],
+     "so_what": "So the money share runs ahead of the head share, and a move between them is not one-for-one."
+    },
+    {
+     "basis": "DESE\u2019s enrollment of town residents by district and by programme, which states where every Lunenburg resident schoolchild is enrolled and by which route, year by year.",
+     "bearing": "sizes",
+     "claim": "97 Lunenburg residents attend Monty Tech, against 58 under school choice.",
+     "detail": "Monty Tech is the largest of the routes Lunenburg children take out of the town\u2019s own schools \u2014 and the only one that is not a departure at all. In FY2026, 97 of the town\u2019s 1,730 resident schoolchildren attend Monty Tech, against 58 under school choice and 22 at charter schools. DESE reports them as resident MEMBERS of a district Lunenburg belongs to, not as children leaving it: the town is a member of the regional district and no Lunenburg vote admits or refuses any of them. That is the difference between this route and the other two, and it is the reason the assessment is not something the town opts out of.",
+     "figure": "monty_tech",
+     "figures": {
+      "all_resident": {
+       "text": "1,730",
+       "unit": "Lunenburg resident schoolchildren",
+       "value": 1730.0
+      },
+      "charter": {
+       "text": "22",
+       "unit": "Lunenburg residents enrolled",
+       "value": 22.0
+      },
+      "fy": {
+       "text": "FY2026",
+       "unit": "",
+       "value": 2026
+      },
+      "monty_tech": {
+       "text": "97",
+       "unit": "Lunenburg residents enrolled",
+       "value": 97.0
+      },
+      "school_choice": {
+       "text": "58",
+       "unit": "Lunenburg residents enrolled",
+       "value": 58.0
+      }
+     },
+     "id": "monty-tech-is-the-largest-route-out",
+     "kind": "measured",
+     "literals": [],
+     "not_shown": "Why the count has moved. A count is the outcome of families applying and of Monty Tech admitting, and nothing published separates the two \u2014 how many Lunenburg applicants are turned away is registered as a gap rather than answered here.",
+     "see": [
+      {
+       "label": "the both-directions record",
+       "slug": "/if-students-leave"
+      },
+      {
+       "label": "what nobody publishes",
+       "slug": "/what-we-cannot-answer"
+      }
+     ],
+     "so_what": "It is the biggest route out of the town\u2019s own schools, and no Lunenburg vote governs it."
     }
    ],
-   "count": 3,
+   "count": 6,
    "data": "/data/monty-tech.json",
    "generator": "scripts/build_monty_tech.py",
    "id": "montytech",
@@ -16334,7 +16495,7 @@
   },
   {
    "about": "Which grades they leave in, who is taught outside Lunenburg, what the town is assessed for them, and what more leaving would cost.",
-   "conclusions": 20,
+   "conclusions": 23,
    "key": "children",
    "reports": [
     {
@@ -17376,9 +17537,170 @@
         }
        ],
        "so_what": "This is set by a state formula, not by a price, so it cannot be planned like an ordinary cost."
+      },
+      {
+       "basis": "the district\u2019s own budget book, which prints the three parts of each member town\u2019s assessment on one sheet, against the required minimum DESE publishes for the same year. A sheet somebody assembled rather than a printout from the books \u2014 but the three parts sum to the total the Town\u2019s own ledger carries, which is the check that makes it usable.",
+       "bearing": "lever",
+       "claim": "Of Lunenburg\u2019s $1,334,521 Monty Tech bill, $63,810 is anything a member town negotiates.",
+       "detail": "The bill is not one negotiated figure. It is a state-calculated minimum with two much smaller assessments on top, and the district prints the three parts separately. In FY2026 the required minimum contribution was $1,270,711, the transportation and other operating assessment $47,577 and the capital assessment $16,233, and the three sum to $1,334,521 exactly. The minimum is 95.2% of the bill and is set by Chapter 70 from the town\u2019s property wealth and resident income; only the other $63,810 is set by anything the district\u2019s eighteen member towns decide between them. A town looking for room in this line has $63,810 to look in.",
+       "figure": "negotiable",
+       "figures": {
+        "capital": {
+         "text": "$16,233",
+         "unit": "",
+         "value": 16233
+        },
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "negotiable": {
+         "text": "$63,810",
+         "unit": "",
+         "value": 63810
+        },
+        "required": {
+         "text": "$1,270,711",
+         "unit": "",
+         "value": 1270711
+        },
+        "required_share": {
+         "text": "95.2%",
+         "unit": "",
+         "value": 95.21849999999999
+        },
+        "total": {
+         "text": "$1,334,521",
+         "unit": "",
+         "value": 1334521
+        },
+        "transport": {
+         "text": "$47,577",
+         "unit": "",
+         "value": 47577
+        }
+       },
+       "id": "only-a-twentieth-of-the-bill-is-negotiable",
+       "kind": "measured",
+       "literals": [
+        "70"
+       ],
+       "not_shown": "That the negotiable part is where a saving would come from, or that it could be reduced at all. It pays for transportation and for capital, both of which are real obligations; what is established is its SIZE against the rest of the bill, not that anything in it is discretionary.",
+       "see": [
+        {
+         "label": "how state aid is set",
+         "slug": "/state-aid"
+        },
+        {
+         "label": "why the formula lands where it does",
+         "slug": "/why-we-only-get-minimum-aid"
+        }
+       ],
+       "so_what": "Arguing the assessment down means arguing about a twentieth of it; the rest is state arithmetic."
+      },
+      {
+       "basis": "DESE\u2019s Chapter 70 key factors workbook for the year: the foundation budget and foundation enrollment sheets for Lunenburg Public Schools and for Montachusett, divided one by the other. Both halves are the state\u2019s own published figures.",
+       "bearing": "sizes",
+       "claim": "The state sets $20,827 a year for a Monty Tech pupil and $13,770 for a Lunenburg one.",
+       "detail": "A vocational place is a larger place in the state\u2019s own arithmetic, which is why Monty Tech is a bigger fraction of the town\u2019s bill than of its enrollment. In FY2026 the foundation budget is $20,827 for each Lunenburg resident at Monty Tech and $13,770 for each one in the town\u2019s own schools. Monty Tech is 5.9% of the town\u2019s foundation enrollment and 8.7% of its foundation budget, and because the split of the town-wide required contribution follows the BUDGET share rather than the head share, that is the fraction that reaches the bill. A child moving between the two therefore moves more than a proportionate slice.",
+       "figure": "monty_tech_per_pupil",
+       "figures": {
+        "budget_share": {
+         "text": "8.7%",
+         "unit": "",
+         "value": 8.7003
+        },
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "head_share": {
+         "text": "5.9%",
+         "unit": "",
+         "value": 5.9272
+        },
+        "lunenburg_per_pupil": {
+         "text": "$13,770",
+         "unit": "",
+         "value": 13770.4
+        },
+        "monty_tech_per_pupil": {
+         "text": "$20,827",
+         "unit": "",
+         "value": 20826.89
+        }
+       },
+       "id": "a-vocational-pupil-carries-a-larger-foundation-budget",
+       "kind": "measured",
+       "literals": [
+        "70"
+       ],
+       "not_shown": "What either place COSTS. A foundation budget is what the state\u2019s formula assumes a place requires, which is an input to an aid calculation and not a measurement of spending \u2014 rule 11 again, one layer further back.",
+       "see": [
+        {
+         "label": "how state aid is set",
+         "slug": "/state-aid"
+        },
+        {
+         "label": "what moves when a child leaves",
+         "slug": "/if-students-leave"
+        }
+       ],
+       "so_what": "So the money share runs ahead of the head share, and a move between them is not one-for-one."
+      },
+      {
+       "basis": "DESE\u2019s enrollment of town residents by district and by programme, which states where every Lunenburg resident schoolchild is enrolled and by which route, year by year.",
+       "bearing": "sizes",
+       "claim": "97 Lunenburg residents attend Monty Tech, against 58 under school choice.",
+       "detail": "Monty Tech is the largest of the routes Lunenburg children take out of the town\u2019s own schools \u2014 and the only one that is not a departure at all. In FY2026, 97 of the town\u2019s 1,730 resident schoolchildren attend Monty Tech, against 58 under school choice and 22 at charter schools. DESE reports them as resident MEMBERS of a district Lunenburg belongs to, not as children leaving it: the town is a member of the regional district and no Lunenburg vote admits or refuses any of them. That is the difference between this route and the other two, and it is the reason the assessment is not something the town opts out of.",
+       "figure": "monty_tech",
+       "figures": {
+        "all_resident": {
+         "text": "1,730",
+         "unit": "Lunenburg resident schoolchildren",
+         "value": 1730.0
+        },
+        "charter": {
+         "text": "22",
+         "unit": "Lunenburg residents enrolled",
+         "value": 22.0
+        },
+        "fy": {
+         "text": "FY2026",
+         "unit": "",
+         "value": 2026
+        },
+        "monty_tech": {
+         "text": "97",
+         "unit": "Lunenburg residents enrolled",
+         "value": 97.0
+        },
+        "school_choice": {
+         "text": "58",
+         "unit": "Lunenburg residents enrolled",
+         "value": 58.0
+        }
+       },
+       "id": "monty-tech-is-the-largest-route-out",
+       "kind": "measured",
+       "literals": [],
+       "not_shown": "Why the count has moved. A count is the outcome of families applying and of Monty Tech admitting, and nothing published separates the two \u2014 how many Lunenburg applicants are turned away is registered as a gap rather than answered here.",
+       "see": [
+        {
+         "label": "the both-directions record",
+         "slug": "/if-students-leave"
+        },
+        {
+         "label": "what nobody publishes",
+         "slug": "/what-we-cannot-answer"
+        }
+       ],
+       "so_what": "It is the biggest route out of the town\u2019s own schools, and no Lunenburg vote governs it."
       }
      ],
-     "count": 3,
+     "count": 6,
      "data": "/data/monty-tech.json",
      "generator": "scripts/build_monty_tech.py",
      "id": "montytech",
@@ -19794,15 +20116,15 @@
  ],
  "totals": {
   "bearing": {
-   "lever": 20,
-   "sizes": 105,
+   "lever": 21,
+   "sizes": 107,
    "unclassified": 0
   },
-  "conclusions": 125,
-  "document_words": 108455,
+  "conclusions": 128,
+  "document_words": 108453,
   "documents": 37,
   "hypothesis": 2,
-  "measured": 123,
+  "measured": 126,
   "reports": 41,
   "with_conclusions": 34,
   "without_conclusions": 7

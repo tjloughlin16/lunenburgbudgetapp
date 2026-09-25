@@ -39,6 +39,8 @@ Read `column_meaning` before reading a value.
 
 | dataset | rows | years | state | in db | provenance | published |
 |---|---:|---|---|---|---|---|
+| `report-appropriations-supplement-refused.csv` | 3 | — | — | **no** | shared | yes |
+| `report-appropriations-supplement.csv` | 32 | — | — | **no** | shared | yes |
 | `report-appropriations.csv` | 5,027 | 2011–2025 | 157 checked / 4,870 failed / 0 no check | yes | shared | yes |
 | `report-capital-projects.csv` | 616 | 2011–2025 | 0 checked / 529 failed / 87 no check | yes | shared | yes |
 | `report-debt.csv` | 366 | 2011–2025 | 75 checked / 99 failed / 192 no check | yes | shared | yes |

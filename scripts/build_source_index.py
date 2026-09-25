@@ -968,6 +968,42 @@ GROUPS = [
              'dont have the data, we shouldn\u2019t show partial data. that may be '
              'misleading\u201d* \u2014 so it is held here as working material, and the two things '
              'it would answer are registered in money-gaps.csv instead.'),
+            ('data/gross-wages-refused.csv',
+             'Payroll pages that would not read, and why each refused', 1,
+             'Written by us. Two pages, both a PAIRING failure rather than a faint scan: '
+             'FY2011 p98 pairs 80 half-rows and refuses 71, reading 93 names against 138 '
+             'money figures; FY2012 p114 reads 131 money figures and not one personal '
+             'name, so the department words left on it cannot be attributed to anybody. '
+             'Neither was guessed at \u2014 an amount beside the wrong name is worse than an '
+             'amount nobody has.'),
+            ('data/salary-schedule.csv',
+             'The town\u2019s wage grid \u2014 grade by step, as the annual reports print it', 2,
+             '939 rates. EVERY ONE CARRIES WHAT CONFIRMS IT in `confirmed_by`, because the '
+             'pages are scans and a schedule prints no total to foot against: the check is '
+             'a SECOND printing of the same grid, usually the following year\u2019s town '
+             'meeting booklet at that year\u2019s stated cost-of-living article. A rate no '
+             'second document confirms is in the refusals file instead of here.'),
+            ('data/salary-schedule-refused.csv',
+             'Wage-grid rates that nothing confirms, and the rows that came up short', 1,
+             'Written by us. Two pages: FY2015 p198, where 13 rates are read and no second '
+             'printing confirms them, and FY2016 p150, where a grade row holds seven rates '
+             'and a grade row has eight. Both are recorded rather than published, so a '
+             'rate the archive cannot stand behind is not sitting in a table looking like '
+             'one it can.'),
+            ('data/body-crosswalk.csv',
+             'Every body, its org chart and its money page \u2014 the join between the two', 1,
+             'Written by us. 63 bodies; 34 reach a money page and 32 a board page, so '
+             '/org-charts and /departments link both ways instead of a reader having to know '
+             'the other exists. THE JOIN IS ON A NAME, which is the weakest kind there is, so '
+             'every row states its `basis` and the generator FAILS if the match count falls '
+             '\u2014 a join that silently matches less is indistinguishable from a body that '
+             'stopped existing. Ten pairs are matched by hand and say so: the chart names the '
+             'office (`Accounting Department`) and the finance registry names the officer who '
+             'owns the account (`Town Accountant`), and no normalisation reaches from one to '
+             'the other. A BODY WITH NO MONEY PAGE CARRIES THE REASON rather than a blank \u2014 '
+             'most of the 23 are advisory committees the town votes nothing to, and which of '
+             'them are that against a name spelled two ways is printed on every run and not '
+             'guessed at.'),
             ('data/org-chart.csv',
              'Who held which role, in every department, board and school', 2,
              'One row per person per role per year, assembled from four readings of the '
@@ -1050,6 +1086,30 @@ GROUPS = [
              'and Public Access Cable. IT IS A CONTACT LIST, NOT AN ORG CHART: no rank '
              'order, no reporting line and NO DATE, so it is a snapshot rather than a '
              'series and a later fetch will silently differ.'),
+            ('data/school-staff-directory.csv',
+             'Who works for the DISTRICT today, off the six sheets the schools publish', 2,
+             '527 rows across six listings: the district\u2019s roll-up of every employee and '
+             'the five the District Office and the four schools keep themselves. THE GRAIN '
+             'IS A PERSON AS ONE LISTING PRINTS THEM, never a person \u2014 somebody two '
+             'buildings both list has two rows, which is the whole reason the per-school '
+             'addresses were gathered, and folding them together would delete the finding. '
+             'The first people-source here covering the district from OUTSIDE an annual '
+             'report, and the first carrying an identifier rather than a name: 450 rows '
+             'have an address the sheet prints, 55 one derived from the rule Turkey Hill\u2019s '
+             'own sheet states, and 22 nothing but a name. IT IS A CONTACT LIST \u2014 no FTE, '
+             'no funding source, no reporting line, and no date beyond the day it was '
+             'fetched, which is the only date any of the six has.'),
+            ('data/school-staff-shared.csv',
+             'The people more than one Lunenburg school lists as its own', 2,
+             'Written by us, from the row above. 28 people in FY2027, one of them on four '
+             'listings. TWO ENCODINGS, BOTH KEPT: the roll-up writes sharing into a '
+             'free-text school column (`Primary School & THES`) and the buildings write it '
+             'by repetition, and they agree about five of the 28. Most of the apparent '
+             'disagreement is the roll-up\u2019s combined value `Lunenburg Middle High School` '
+             'for the building the two upper schools share \u2014 structure, not noise. WHAT '
+             'IS MEASURED IS THE REPETITION; \u201ca shared specialist\u201d is a hypothesis and '
+             'nothing here tests it, since no sheet says what fraction of a post sits in '
+             'which building.'),
             ('data/report-filing.csv',
              'Which bodies file an annual report, and which say they did not', 2,
              'One row per body: the years it filed, and the years the contents page '
@@ -1102,6 +1162,48 @@ GROUPS = [
              'read; the file exists so that the next one that refuses has somewhere to be '
              'recorded, rather than becoming a year nobody notices is missing. A header '
              'with no rows is a claim that nothing refused; no file at all is no claim.'),
+            ('data/balance-sheet-refused.csv',
+             'Combined balance sheets that would not publish, and what each failed', 1,
+             'Written by us. Four pages, and the interesting ones are not faint scans. '
+             'FY2023 p24 transcribes cleanly and passes three of four checks \u2014 every '
+             'column foots to its own printed totals to the cent \u2014 and fails the fourth: '
+             'its special revenue plus enterprise fund equity is $9,943,805.92 where the '
+             'same report\u2019s special revenue schedule prints $10,031,099.78 carried '
+             'forward, a difference of $87,293.86 in a year four others agree to the cent. '
+             'FY2024 p21 is the ENTERPRISE combining sheet, which is read and published '
+             'elsewhere; the book\u2019s own contents page sends a reader there for a '
+             'town-wide sheet that is not in it. Every row names the document that would '
+             'settle it.'),
+            ('data/debt-repayment-detail.csv',
+             'Every debt issue\u2019s repayment schedule, year by year to maturity', 2,
+             '831 rows off the annual reports\u2019 debt pages. `column_foots` states, per '
+             'row, whether the printed columns add up \u2014 and says `interest out by -1` '
+             'where they miss by a dollar rather than smoothing it, because a rounding '
+             'difference the town printed is the town\u2019s. `due_fy` is the year a payment '
+             'falls due and runs past this archive to FY2047; `report_fy` is the book it '
+             'was printed in. Joining on the wrong one of those credits pages in reports '
+             'that do not exist yet.'),
+            ('data/debt-repayment-detail-refused.csv',
+             'Debt pages that would not read \u2014 24 of them, all one cause', 1,
+             'Written by us. Every row is a scanned page with no text layer whose issue '
+             'columns are too narrow for Vision to separate: FY2011 p76 returns 356 boxes '
+             'and none of them a column. The evidence column carries the character count, '
+             'the image count and a sample box, so the refusal is a reading somebody can '
+             'pick up rather than a year quietly absent.'),
+            ('data/report-appropriations-supplement.csv',
+             'Appropriation lines from the pages the main extract could not take whole', 2,
+             '32 lines. THE PROOF IS ON EVERY ROW and names which columns were tested and '
+             'which were not \u2014 a subtotal often prints an encumbrance and a balance that '
+             'the lines above it do not, so those two are untested by construction and the '
+             'row says so instead of implying otherwise.'),
+            ('data/report-appropriations-supplement-refused.csv',
+             'Appropriation programs whose lines do not sum to their own subtotal', 1,
+             'Written by us. Three programs, none published: where the lines above a '
+             'subtotal do not add to it, NONE of them is written out, because the one that '
+             'is wrong cannot be identified. One is a currency sign read as a digit \u2014 '
+             'appropriated $55,500.00 against funds available of $5,500.00 \u2014 which is '
+             'exactly the kind of error a column that foots would have caught and this one '
+             'does not.'),
             ('data/capital-plans.csv',
              'What the Capital Planning Committee asked for, ranked, FY2015-FY2023', 2,
              'The Committee\u2019s own ranked recommendation, which EXTENDS '

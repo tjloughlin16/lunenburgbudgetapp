@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-23",
+ "generated": "2026-09-25",
  "origins": [
   {
    "id": "school",
@@ -54,7 +54,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 1084 of these 1100 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 1097 of these 1113 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -1653,7 +1653,7 @@
      "stars": 3,
      "what": "Montachusett Regional Vocational Technical is the larger of the two routes out of Lunenburg’s own schools and the only school line the town does not vote. What sets the assessment: the Chapter 70 minimum required local contribution, derived from DESE’s own workbook for FY2007–FY2026 and checked against DESE’s printed apportionment sheet and five figures stated at three public meetings. The four parts of the bill where the district publishes them, the twenty-year series with its eleven check-failed candidates drawn as candidates, and the town’s own forecast of the line against what it did. Every figure recomputed by scripts/verify_monty_tech.py.",
      "kind": "Notes",
-     "bytes": 19472,
+     "bytes": 19465,
      "url": "/docs/analyses/monty-tech.md",
      "count": 323,
      "unit": "lines",
@@ -1929,9 +1929,9 @@
      "stars": 2,
      "what": "One row per person per role per year, assembled from four readings of the annual reports: the officials listing for boards and appointed posts, the Police and Fire rosters, the four schools’ rosters, and the departments that name their staff in prose. `status` keeps PEOPLE and POSTS apart — `filled` is a named person, `vacant` is a seat the town prints as empty, and `post` is an establishment position a department states without ever saying who fills it, which is how the DPW and the Assessing office publish. Building it was a test of the data model rather than a presentation of it, and it found seven classes of defect nothing that COUNTS things had: a listing footnote read as a post, sub-headings promoted to bodies, and one post under four spellings. Rendered at /org-charts.",
      "kind": "Data",
-     "bytes": 894654,
+     "bytes": 953046,
      "url": "/docs/data/org-chart.csv",
-     "count": 6815,
+     "count": 7125,
      "unit": "rows",
      "textUrl": "/docs/data/org-chart.csv"
     },
@@ -1941,9 +1941,9 @@
      "stars": 2,
      "what": "Every name and amount the annual report’s `Town & School Employee Gross Wages` list prints, for the years it reads. NOTHING ON THE SITE USES IT AND nothing should until it reads in full: four years come back near-complete (FY2017, FY2020, FY2021, FY2025) and six read badly or not at all, and the list is set in two columns whose second column loses its given names, so a third to a half of the entries cannot be matched to a person. A department total built on it would rank the scan rather than the payroll. TJ: *“if we dont have the data, we shouldn’t show partial data. that may be misleading”* — so it is held here as working material, and the two things it would answer are registered in money-gaps.csv instead.",
      "kind": "Data",
-     "bytes": 233852,
+     "bytes": 239735,
      "url": "/docs/data/gross-wages.csv",
-     "count": 2866,
+     "count": 2946,
      "unit": "rows",
      "textUrl": "/docs/data/gross-wages.csv"
     },
@@ -1958,6 +1958,18 @@
      "count": 2118,
      "unit": "rows",
      "textUrl": "/docs/data/town-personnel.csv"
+    },
+    {
+     "path": "data/school-staff-directory.csv",
+     "title": "Who works for the DISTRICT today, off the six sheets the schools publish",
+     "stars": 2,
+     "what": "527 rows across six listings: the district’s roll-up of every employee and the five the District Office and the four schools keep themselves. THE GRAIN IS A PERSON AS ONE LISTING PRINTS THEM, never a person — somebody two buildings both list has two rows, which is the whole reason the per-school addresses were gathered, and folding them together would delete the finding. The first people-source here covering the district from OUTSIDE an annual report, and the first carrying an identifier rather than a name: 450 rows have an address the sheet prints, 55 one derived from the rule Turkey Hill’s own sheet states, and 22 nothing but a name. IT IS A CONTACT LIST — no FTE, no funding source, no reporting line, and no date beyond the day it was fetched, which is the only date any of the six has.",
+     "kind": "Data",
+     "bytes": 197055,
+     "url": "/docs/data/school-staff-directory.csv",
+     "count": 527,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-staff-directory.csv"
     },
     {
      "path": "data/town-meeting-votes.csv",
@@ -1982,6 +1994,30 @@
      "count": 1903,
      "unit": "rows",
      "textUrl": "/docs/data/tenure.csv"
+    },
+    {
+     "path": "data/salary-schedule.csv",
+     "title": "The town’s wage grid — grade by step, as the annual reports print it",
+     "stars": 2,
+     "what": "939 rates. EVERY ONE CARRIES WHAT CONFIRMS IT in `confirmed_by`, because the pages are scans and a schedule prints no total to foot against: the check is a SECOND printing of the same grid, usually the following year’s town meeting booklet at that year’s stated cost-of-living article. A rate no second document confirms is in the refusals file instead of here.",
+     "kind": "Data",
+     "bytes": 154640,
+     "url": "/docs/data/salary-schedule.csv",
+     "count": 939,
+     "unit": "rows",
+     "textUrl": "/docs/data/salary-schedule.csv"
+    },
+    {
+     "path": "data/debt-repayment-detail.csv",
+     "title": "Every debt issue’s repayment schedule, year by year to maturity",
+     "stars": 2,
+     "what": "831 rows off the annual reports’ debt pages. `column_foots` states, per row, whether the printed columns add up — and says `interest out by -1` where they miss by a dollar rather than smoothing it, because a rounding difference the town printed is the town’s. `due_fy` is the year a payment falls due and runs past this archive to FY2047; `report_fy` is the book it was printed in. Joining on the wrong one of those credits pages in reports that do not exist yet.",
+     "kind": "Data",
+     "bytes": 109008,
+     "url": "/docs/data/debt-repayment-detail.csv",
+     "count": 831,
+     "unit": "rows",
+     "textUrl": "/docs/data/debt-repayment-detail.csv"
     },
     {
      "path": "data/department-rosters.csv",
@@ -2200,6 +2236,18 @@
      "textUrl": "/docs/data/pipeline-state.csv"
     },
     {
+     "path": "data/report-appropriations-supplement.csv",
+     "title": "Appropriation lines from the pages the main extract could not take whole",
+     "stars": 2,
+     "what": "32 lines. THE PROOF IS ON EVERY ROW and names which columns were tested and which were not — a subtotal often prints an encumbrance and a balance that the lines above it do not, so those two are untested by construction and the row says so instead of implying otherwise.",
+     "kind": "Data",
+     "bytes": 14464,
+     "url": "/docs/data/report-appropriations-supplement.csv",
+     "count": 32,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-appropriations-supplement.csv"
+    },
+    {
      "path": "data/threads.csv",
      "title": "The matters this project tracks across boards",
      "stars": 2,
@@ -2224,6 +2272,18 @@
      "textUrl": "/docs/data/report-filing.csv"
     },
     {
+     "path": "data/PROVENANCE-debt-tables.md",
+     "title": "Where both debt tables came from, and every page that refused",
+     "stars": 2,
+     "what": "Written by us, and generated, so its counts cannot drift. It lists the refusals rather than only the successes — including the one that matters most: FY2017 page 42 reads a currency sign as a `3` in two figures on one column, both gain exactly $30,000,000, and `principal + interest = TOTAL DEBT` then closes PERFECTLY at twenty times every other year on the page. An identity cannot see a compensating error, so the extractor refuses a figure more than eight times the median of its own row and calls that a guard rather than a proof.",
+     "kind": "Notes",
+     "bytes": 9754,
+     "url": "/docs/data/PROVENANCE-debt-tables.md",
+     "count": 145,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-debt-tables.md"
+    },
+    {
      "path": "analyses/peer-districts.md",
      "title": "What other districts did",
      "stars": 2,
@@ -2234,18 +2294,6 @@
      "count": 150,
      "unit": "lines",
      "textUrl": "/docs/analyses/peer-districts.md"
-    },
-    {
-     "path": "data/PROVENANCE-debt-tables.md",
-     "title": "Where both debt tables came from, and every page that refused",
-     "stars": 2,
-     "what": "Written by us, and generated, so its counts cannot drift. It lists the refusals rather than only the successes — including the one that matters most: FY2017 page 42 reads a currency sign as a `3` in two figures on one column, both gain exactly $30,000,000, and `principal + interest = TOTAL DEBT` then closes PERFECTLY at twenty times every other year on the page. An identity cannot see a compensating error, so the extractor refuses a figure more than eight times the median of its own row and calls that a guard rather than a proof.",
-     "kind": "Notes",
-     "bytes": 7702,
-     "url": "/docs/data/PROVENANCE-debt-tables.md",
-     "count": 117,
-     "unit": "lines",
-     "textUrl": "/docs/data/PROVENANCE-debt-tables.md"
     },
     {
      "path": "data/roster-completeness.csv",
@@ -2284,6 +2332,18 @@
      "textUrl": "/docs/data/receivables-reconciliation.csv"
     },
     {
+     "path": "data/school-staff-shared.csv",
+     "title": "The people more than one Lunenburg school lists as its own",
+     "stars": 2,
+     "what": "Written by us, from the row above. 28 people in FY2027, one of them on four listings. TWO ENCODINGS, BOTH KEPT: the roll-up writes sharing into a free-text school column (`Primary School & THES`) and the buildings write it by repetition, and they agree about five of the 28. Most of the apparent disagreement is the roll-up’s combined value `Lunenburg Middle High School` for the building the two upper schools share — structure, not noise. WHAT IS MEASURED IS THE REPETITION; “a shared specialist” is a hypothesis and nothing here tests it, since no sheet says what fraction of a post sits in which building.",
+     "kind": "Data",
+     "bytes": 3852,
+     "url": "/docs/data/school-staff-shared.csv",
+     "count": 28,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-staff-shared.csv"
+    },
+    {
      "path": "data/debt-repayment.csv",
      "title": "What falls due in each future year, out to FY2047",
      "stars": 2,
@@ -2320,6 +2380,18 @@
      "textUrl": "/docs/data/table-corrections.csv"
     },
     {
+     "path": "data/document-defects.csv",
+     "title": "Where a document the town published is itself incomplete",
+     "stars": 2,
+     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
+     "kind": "Data",
+     "bytes": 2787,
+     "url": "/docs/data/document-defects.csv",
+     "count": 4,
+     "unit": "rows",
+     "textUrl": "/docs/data/document-defects.csv"
+    },
+    {
      "path": "data/pec-history.csv",
      "title": "The Public Employees Committee agreement, event by event",
      "stars": 2,
@@ -2342,18 +2414,6 @@
      "count": 11,
      "unit": "rows",
      "textUrl": "/docs/data/threads-declined.csv"
-    },
-    {
-     "path": "data/document-defects.csv",
-     "title": "Where a document the town published is itself incomplete",
-     "stars": 2,
-     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
-     "kind": "Data",
-     "bytes": 1845,
-     "url": "/docs/data/document-defects.csv",
-     "count": 3,
-     "unit": "rows",
-     "textUrl": "/docs/data/document-defects.csv"
     },
     {
      "path": "data/extraction-blocked.csv",
@@ -2386,6 +2446,18 @@
      "bytes": 93539,
      "url": "/docs/analyses/charts/town-personnel-crowd.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-crowd.svg"
+    },
+    {
+     "path": "data/body-crosswalk.csv",
+     "title": "Every body, its org chart and its money page — the join between the two",
+     "stars": 1,
+     "what": "Written by us. 63 bodies; 34 reach a money page and 32 a board page, so /org-charts and /departments link both ways instead of a reader having to know the other exists. THE JOIN IS ON A NAME, which is the weakest kind there is, so every row states its `basis` and the generator FAILS if the match count falls — a join that silently matches less is indistinguishable from a body that stopped existing. Ten pairs are matched by hand and say so: the chart names the office (`Accounting Department`) and the finance registry names the officer who owns the account (`Town Accountant`), and no normalisation reaches from one to the other. A BODY WITH NO MONEY PAGE CARRIES THE REASON rather than a blank — most of the 23 are advisory committees the town votes nothing to, and which of them are that against a name spelled two ways is printed on every run and not guessed at.",
+     "kind": "Data",
+     "bytes": 16516,
+     "url": "/docs/data/body-crosswalk.csv",
+     "count": 63,
+     "unit": "rows",
+     "textUrl": "/docs/data/body-crosswalk.csv"
     },
     {
      "path": "analyses/charts/stabilization-each.svg",
@@ -2476,6 +2548,18 @@
      "bytes": 6023,
      "url": "/docs/analyses/charts/town-budgets-all.svg",
      "textUrl": "/docs/analyses/charts/town-budgets-all.svg"
+    },
+    {
+     "path": "data/debt-repayment-detail-refused.csv",
+     "title": "Debt pages that would not read — 24 of them, all one cause",
+     "stars": 1,
+     "what": "Written by us. Every row is a scanned page with no text layer whose issue columns are too narrow for Vision to separate: FY2011 p76 returns 356 boxes and none of them a column. The evidence column carries the character count, the image count and a sample box, so the refusal is a reading somebody can pick up rather than a year quietly absent.",
+     "kind": "Data",
+     "bytes": 5802,
+     "url": "/docs/data/debt-repayment-detail-refused.csv",
+     "count": 24,
+     "unit": "rows",
+     "textUrl": "/docs/data/debt-repayment-detail-refused.csv"
     },
     {
      "path": "analyses/charts/town-budgets-share.svg",
@@ -2608,6 +2692,18 @@
      "textUrl": "/docs/analyses/charts/stabilization-option-burndown.svg"
     },
     {
+     "path": "data/balance-sheet-refused.csv",
+     "title": "Combined balance sheets that would not publish, and what each failed",
+     "stars": 1,
+     "what": "Written by us. Four pages, and the interesting ones are not faint scans. FY2023 p24 transcribes cleanly and passes three of four checks — every column foots to its own printed totals to the cent — and fails the fourth: its special revenue plus enterprise fund equity is $9,943,805.92 where the same report’s special revenue schedule prints $10,031,099.78 carried forward, a difference of $87,293.86 in a year four others agree to the cent. FY2024 p21 is the ENTERPRISE combining sheet, which is read and published elsewhere; the book’s own contents page sends a reader there for a town-wide sheet that is not in it. Every row names the document that would settle it.",
+     "kind": "Data",
+     "bytes": 3792,
+     "url": "/docs/data/balance-sheet-refused.csv",
+     "count": 4,
+     "unit": "rows",
+     "textUrl": "/docs/data/balance-sheet-refused.csv"
+    },
+    {
      "path": "analyses/charts/town-personnel-fire.svg",
      "title": "The Fire Department grew and shrank at the same time",
      "stars": 1,
@@ -2668,6 +2764,18 @@
      "textUrl": "/docs/analyses/charts/fy26-school-budget.svg"
     },
     {
+     "path": "data/report-appropriations-supplement-refused.csv",
+     "title": "Appropriation programs whose lines do not sum to their own subtotal",
+     "stars": 1,
+     "what": "Written by us. Three programs, none published: where the lines above a subtotal do not add to it, NONE of them is written out, because the one that is wrong cannot be identified. One is a currency sign read as a digit — appropriated $55,500.00 against funds available of $5,500.00 — which is exactly the kind of error a column that foots would have caught and this one does not.",
+     "kind": "Data",
+     "bytes": 1311,
+     "url": "/docs/data/report-appropriations-supplement-refused.csv",
+     "count": 3,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-appropriations-supplement-refused.csv"
+    },
+    {
      "path": "data/stabilization-unfooted.csv",
      "title": "Stabilization figures printed on a page whose column does not foot",
      "stars": 1,
@@ -2680,6 +2788,18 @@
      "textUrl": "/docs/data/stabilization-unfooted.csv"
     },
     {
+     "path": "data/salary-schedule-refused.csv",
+     "title": "Wage-grid rates that nothing confirms, and the rows that came up short",
+     "stars": 1,
+     "what": "Written by us. Two pages: FY2015 p198, where 13 rates are read and no second printing confirms them, and FY2016 p150, where a grade row holds seven rates and a grade row has eight. Both are recorded rather than published, so a rate the archive cannot stand behind is not sitting in a table looking like one it can.",
+     "kind": "Data",
+     "bytes": 738,
+     "url": "/docs/data/salary-schedule-refused.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/salary-schedule-refused.csv"
+    },
+    {
      "path": "data/capital-plans-refused.csv",
      "title": "The capital-plan pages that would not read, and why each refused",
      "stars": 1,
@@ -2690,6 +2810,18 @@
      "count": 2,
      "unit": "rows",
      "textUrl": "/docs/data/capital-plans-refused.csv"
+    },
+    {
+     "path": "data/gross-wages-refused.csv",
+     "title": "Payroll pages that would not read, and why each refused",
+     "stars": 1,
+     "what": "Written by us. Two pages, both a PAIRING failure rather than a faint scan: FY2011 p98 pairs 80 half-rows and refuses 71, reading 93 names against 138 money figures; FY2012 p114 reads 131 money figures and not one personal name, so the department words left on it cannot be attributed to anybody. Neither was guessed at — an amount beside the wrong name is worse than an amount nobody has.",
+     "kind": "Data",
+     "bytes": 564,
+     "url": "/docs/data/gross-wages-refused.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/gross-wages-refused.csv"
     },
     {
      "path": "data/valuation-refused.csv",
@@ -2752,7 +2884,7 @@
      "stars": 3,
      "what": "418 pages across fifteen annual town reports that carry a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. 209 read, 195 unread, 14 whose OCR came out upside down and which are a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 188423,
+     "bytes": 190502,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 474,
      "unit": "rows",
@@ -2764,7 +2896,7 @@
      "stars": 3,
      "what": "What the town HOLDS at 30 June — cash, receivables, warrants payable, reserves and undesignated fund balance — by fund type, transcribed by reading the rendered page rather than by OCR, which recovers zero of this page’s money tokens. Every other dataset here measures money moving; this one measures a stock. FY2011 so far: 61 figures, every column footing to the report’s own printed total, the identity the table states, and the special revenue plus enterprise fund equity tying to the special revenue schedule’s printed carried forward. See data/PROVENANCE-balance-sheet.md.",
      "kind": "Data",
-     "bytes": 115230,
+     "bytes": 121437,
      "url": "/docs/data/balance-sheet.csv",
      "count": 774,
      "unit": "rows",
@@ -2980,9 +3112,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1042357,
+     "bytes": 1043222,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4690,
+     "count": 4694,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -3004,9 +3136,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 589289,
+     "bytes": 589804,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4690,
+     "count": 4694,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -3016,9 +3148,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 452442,
+     "bytes": 453018,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2895,
+     "count": 2898,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -3064,9 +3196,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 145881,
+     "bytes": 144629,
      "url": "/docs/data/money-gaps.csv",
-     "count": 175,
+     "count": 172,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3088,9 +3220,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 82618,
+     "bytes": 84592,
      "url": "/docs/data/table-semantics.csv",
-     "count": 130,
+     "count": 133,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -3100,9 +3232,9 @@
      "stars": 2,
      "what": "The town’s name for the same job changed five times in fifteen years — Tutor, Aide, Tutors/Aides, Paraprofessional, Para, (para), Sped Para — so filtering a roster on its printed title measures the house style rather than the staffing. This is a dictionary over the 1,030 distinct (title, section heading) pairs, giving each a category and, where the page says one, a grade. It is OUR inference, kept in a separate column from `role_raw`, which is what the town actually printed; `classified_by` names the rule that decided each one, and 8% are left `unknown` rather than guessed. Join it, or use the `v_staff_roster` view in the database.",
      "kind": "Data",
-     "bytes": 56718,
+     "bytes": 55865,
      "url": "/docs/data/role-classification.csv",
-     "count": 1030,
+     "count": 1016,
      "unit": "rows",
      "textUrl": "/docs/data/role-classification.csv"
     },
@@ -3263,6 +3395,18 @@
      "textUrl": "/docs/data/PROVENANCE-special-revenue-read.md"
     },
     {
+     "path": "data/ingest-plan.csv",
+     "title": "The plan for the annual-report backlog, in batches",
+     "stars": 2,
+     "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
+     "kind": "Data",
+     "bytes": 5712,
+     "url": "/docs/data/ingest-plan.csv",
+     "count": 13,
+     "unit": "rows",
+     "textUrl": "/docs/data/ingest-plan.csv"
+    },
+    {
      "path": "data/stabilization-balances.csv",
      "title": "What each stabilization and trust fund held, year by year",
      "stars": 2,
@@ -3273,18 +3417,6 @@
      "count": 30,
      "unit": "rows",
      "textUrl": "/docs/data/stabilization-balances.csv"
-    },
-    {
-     "path": "data/ingest-plan.csv",
-     "title": "The plan for the annual-report backlog, in batches",
-     "stars": 2,
-     "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
-     "kind": "Data",
-     "bytes": 4296,
-     "url": "/docs/data/ingest-plan.csv",
-     "count": 12,
-     "unit": "rows",
-     "textUrl": "/docs/data/ingest-plan.csv"
     },
     {
      "path": "data/money-edges.csv",
@@ -3563,7 +3695,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 39862272,
+     "bytes": 39866368,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -3573,9 +3705,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3197118,
+     "bytes": 3253843,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7039,
+     "count": 7041,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -3681,9 +3813,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 456003,
+     "bytes": 456572,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2661,
+     "count": 2664,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -3981,7 +4113,7 @@
      "stars": 3,
      "what": "Per board and year: how many documents the town listed, how many we hold, and how many contain text a search can match — which is a quarter fewer than hold a text file at all. The unsearchable ones are split by CAUSE rather than lumped: image scans, pages whose text was converted to vector outlines (which OCR cannot read either until they are rasterised), blank files, our own extractor failing on a real text layer, and documents the town lists that we do not hold. The threshold is not a guess — it is calibrated against whether the PDF carries a font resource at all, and the two agree at zero characters and nowhere else. It exists because rule 15a tells everyone here to search the archive before concluding a thing was never discussed, and an unreadable document and a subject nobody raised produce the identical empty result. Rebuild with scripts/build_minutes_searchable.py.",
      "kind": "Data",
-     "bytes": 41711,
+     "bytes": 41713,
      "url": "/docs/data/minutes-searchable.csv",
      "count": 514,
      "unit": "rows",
@@ -4306,9 +4438,9 @@
      "stars": 2,
      "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
      "kind": "Data",
-     "bytes": 2559357,
+     "bytes": 2566442,
      "url": "/docs/data/meeting-document-timestamps.csv",
-     "count": 12055,
+     "count": 12088,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
@@ -4318,9 +4450,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1766815,
+     "bytes": 1767863,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12118,
+     "count": 12124,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -4510,9 +4642,9 @@
      "stars": 2,
      "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 7939,
+     "bytes": 8947,
      "url": "/docs/data/meeting-watch-events.csv",
-     "count": 53,
+     "count": 59,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-events.csv"
     },
@@ -4527,6 +4659,18 @@
      "count": 47,
      "unit": "rows",
      "textUrl": "/docs/data/budget-seasons/fy27-lines.csv"
+    },
+    {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 6900,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "town-ledgers/account-details/PROVENANCE-fund1301.md",
@@ -4552,18 +4696,6 @@
      "count": 11,
      "unit": "rows",
      "textUrl": "/docs/data/health-insurance-law.csv"
-    },
-    {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 4758,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 5,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "town-ledgers/account-details/PROVENANCE-field-rental-lysa.md",
@@ -4603,6 +4735,18 @@
      "textUrl": "/docs/data/search-vocabulary.csv"
     },
     {
+     "path": "data/youtube-watch-events.csv",
+     "title": "What appeared on the town’s YouTube channel between one check and the next",
+     "stars": 2,
+     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
+     "kind": "Data",
+     "bytes": 2677,
+     "url": "/docs/data/youtube-watch-events.csv",
+     "count": 23,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-watch-events.csv"
+    },
+    {
      "path": "data/budget-seasons/fy28.csv",
      "title": "The FY28 budget season, live: what is on the record so far, and the moments not yet come with when they usually do",
      "stars": 2,
@@ -4613,18 +4757,6 @@
      "count": 15,
      "unit": "rows",
      "textUrl": "/docs/data/budget-seasons/fy28.csv"
-    },
-    {
-     "path": "data/youtube-watch-events.csv",
-     "title": "What appeared on the town’s YouTube channel between one check and the next",
-     "stars": 2,
-     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
-     "kind": "Data",
-     "bytes": 2210,
-     "url": "/docs/data/youtube-watch-events.csv",
-     "count": 19,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-watch-events.csv"
     },
     {
      "path": "data/budget-episodes.csv",
@@ -4776,9 +4908,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 458,
+     "bytes": 489,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 12,
+     "count": 13,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -4839,7 +4971,7 @@
    "id": "district-page",
    "origin": "school",
    "title": "The district budget page, mirrored in full",
-   "blurb": "Every document linked from the district’s budget information page — 805 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
+   "blurb": "Every document linked from the district’s budget information page — 818 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
    "items": [
     {
      "path": "district-budget/docs/additional-town-revenue-spending-plan.pdf",
@@ -7203,6 +7335,36 @@
      "upstream": "https://drive.google.com/file/d/1afU5q_gB3fE2Mpss3iBC-PQo82qXJ1ob/view?usp=drive_link"
     },
     {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff.html",
+     "title": "Directory of Staff (the district's own index of the listings), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 118162,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff.html",
+     "upstream": "https://www.lunenburgschools.net/contact"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.html",
+     "title": "Directory of Staff - All Lunenburg Public Schools Staff (school staff directory), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 48482,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykEXoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pubhtml"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.csv",
+     "title": "Directory of Staff - All Lunenburg Public Schools Staff (school staff directory, rows), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 23831,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykEXoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pub?gid=1144400950&single=true&output=csv"
+    },
+    {
      "path": "district-budget/docs/sc-meetings/2023-09-06-district-improvement-goal-family-engagement.pdf",
      "title": "District Improvement Goal-Family Engagement",
      "stars": 1,
@@ -7256,6 +7418,26 @@
      "url": "/docs/district-budget/docs/sc-meetings/2023-09-06-district-model-of-tiered-supports.pdf",
      "textUrl": "/docs/district-budget/text/sc-meetings/2023-09-06-district-model-of-tiered-supports.txt",
      "upstream": "https://drive.google.com/file/d/1jZgHZwObqs4T6dfc8HU92Lj5MwH7Ws0N/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/district-office.html",
+     "title": "District Office (school staff directory), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 53369,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/district-office.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcd-h-MVa9GRDdMx_sXKEk9uxKuks2Cfc4LGmRtaMMn7zHOYeMFvQ-GVV-kAWAzm-kwWn6Kw94sAbG/pubhtml"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/district-office.csv",
+     "title": "District Office (school staff directory, rows), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 1591,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/district-office.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcd-h-MVa9GRDdMx_sXKEk9uxKuks2Cfc4LGmRtaMMn7zHOYeMFvQ-GVV-kAWAzm-kwWn6Kw94sAbG/pub?gid=641141508&single=true&output=csv"
     },
     {
      "path": "district-budget/docs/sc-meetings/2023-09-06-district-safety-team-presentation.pdf",
@@ -9840,6 +10022,66 @@
      "url": "/docs/district-budget/docs/sc-meetings/2024-2025-lunenburg-dese-imr-report.pdf",
      "textUrl": "/docs/district-budget/text/sc-meetings/2024-2025-lunenburg-dese-imr-report.txt",
      "upstream": "https://drive.google.com/file/d/1fVhSpHYVAi4lPotM73jor-NlxdzDD97A/view?usp=drive_link"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-high-school.html",
+     "title": "Lunenburg High School (school staff directory), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 53096,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-high-school.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAH5iEk29z7eJh0XDI0GGr9cTMRDZB_aEfruqiKohLwwEAW8XPgVavo26J8C3XYgZScmPWNsgY_2Fp/pubhtml"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-high-school.csv",
+     "title": "Lunenburg High School (school staff directory, rows), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 5244,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-high-school.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAH5iEk29z7eJh0XDI0GGr9cTMRDZB_aEfruqiKohLwwEAW8XPgVavo26J8C3XYgZScmPWNsgY_2Fp/pub?gid=1151319678&single=true&output=csv"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-middle-school.html",
+     "title": "Lunenburg Middle School (school staff directory), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 53187,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-middle-school.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwLEex6hF6OOegk9jx7XiCa57STXqESMtLq61rQuuv5jGBX1XLLS3mK0tEwcyYlCwEoDlClN3lZiAO/pubhtml"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-middle-school.csv",
+     "title": "Lunenburg Middle School (school staff directory, rows), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 4739,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-middle-school.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwLEex6hF6OOegk9jx7XiCa57STXqESMtLq61rQuuv5jGBX1XLLS3mK0tEwcyYlCwEoDlClN3lZiAO/pub?gid=674457793&single=true&output=csv"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-primary-school.html",
+     "title": "Lunenburg Primary School (school staff directory), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 53300,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-primary-school.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAcMEzPhIJYS4H5JX1zFrrt-BJUTfQaKOvVP1i5f23ShyZ7jlwrqccO_n2fZnTLhblortPS9Urq0nL/pubhtml"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-primary-school.csv",
+     "title": "Lunenburg Primary School (school staff directory, rows), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 3953,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-primary-school.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAcMEzPhIJYS4H5JX1zFrrt-BJUTfQaKOvVP1i5f23ShyZ7jlwrqccO_n2fZnTLhblortPS9Urq0nL/pub?gid=658881324&single=true&output=csv"
     },
     {
      "path": "district-budget/docs/sc-meetings/2023-09-06-lunenburg-public-schools-appreciation-resolutions.pdf",
@@ -13471,6 +13713,26 @@
      "upstream": "https://drive.google.com/file/d/1-clsugSHIzcB3ITRznYSsguOUb6lNJhU/view?usp=sharing"
     },
     {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/turkey-hill-elementary-school.html",
+     "title": "Turkey Hill Elementary School (school staff directory), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 285328,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/turkey-hill-elementary-school.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/1aTMJoGPb4-j1oJAZs1oOvbZdYz7yvY9R0YyiC3j8KxA/edit?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-09-25/turkey-hill-elementary-school.csv",
+     "title": "Turkey Hill Elementary School (school staff directory, rows), fetched 2026-09-25",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 2303,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-09-25/turkey-hill-elementary-school.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/1aTMJoGPb4-j1oJAZs1oOvbZdYz7yvY9R0YyiC3j8KxA/export?format=csv"
+    },
+    {
      "path": "district-budget/docs/sc-meetings/2024-2025-updated-draft-thes-ada-study.pdf",
      "title": "UPDATED DRAFT THES ADA Study",
      "stars": 1,
@@ -16923,7 +17185,7 @@
    },
    {
     "name": "Library Board Of Trustees",
-    "documents": 439
+    "documents": 440
    },
    {
     "name": "Council On Aging",
@@ -16963,7 +17225,7 @@
    },
    {
     "name": "Cemetery Commission",
-    "documents": 260
+    "documents": 262
    },
    {
     "name": "Lunenburg Housing Authority",
@@ -16991,7 +17253,7 @@
    },
    {
     "name": "Lunenburg Municipal Building Design Committee",
-    "documents": 162
+    "documents": 163
    },
    {
     "name": "School Building Committee Meeting",
@@ -17023,7 +17285,7 @@
    },
    {
     "name": "Trust Fund Commission",
-    "documents": 53
+    "documents": 54
    },
    {
     "name": "Finance  Committee Appointing  Committee",
@@ -17046,12 +17308,12 @@
     "documents": 36
    },
    {
-    "name": "Nashoba Valley Reginal Dispatch Committee",
+    "name": "Lunenburg 300Th Anniversary Committee",
     "documents": 31
    },
    {
-    "name": "Lunenburg 300Th Anniversary Committee",
-    "documents": 30
+    "name": "Nashoba Valley Reginal Dispatch Committee",
+    "documents": 31
    },
    {
     "name": "Devens Regional Oversight Committee",
@@ -17099,21 +17361,21 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12132,
-  "fetched": 12082,
-  "agendas": 7431,
-  "minutes": 4701,
+  "listed": 12138,
+  "fetched": 12088,
+  "agendas": 7433,
+  "minutes": 4705,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12083,
+  "textFiles": 12089,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1488,
+  "documents": 1512,
   "groups": 22,
-  "bytes": 2187034354,
+  "bytes": 2188400643,
   "loadBearing": 160
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

@@ -386,7 +386,7 @@ Returns `role_raw`, `grade_or_dept`, `rows` — for example: role_raw=, grade_or
 SELECT classified_by, role_category, SUM(rows) AS rows FROM role_classification GROUP BY classified_by, role_category ORDER BY rows DESC
 ```
 
-Returns `classified_by`, `role_category`, `rows` — for example: classified_by=heading-department, role_category=teacher, rows=1103
+Returns `classified_by`, `role_category`, `rows` — for example: classified_by=heading-department, role_category=teacher, rows=1084
 
 > A rule beginning `heading-` read the section heading rather than a printed title, which is weaker evidence.
 
@@ -818,7 +818,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=1075
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=1088
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -896,7 +896,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=check fa
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=1075
+Returns `source_type`, `documents` — for example: source_type=primary, documents=1088
 
 **What basis does each document have for the figures it prints?**
 

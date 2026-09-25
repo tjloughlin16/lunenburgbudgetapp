@@ -1255,8 +1255,21 @@ immediately before writing, and preserve the file's existing newline convention.
                                                 #   the years each body PUBLISHED, with both edges of the archive
                                                 #   marked as censored rather than short
     python3 scripts/build_tenure.py --check
+    python3 scripts/fetch_staff_directory.py --if-changed   # the TOWN's directory; a snapshot only when it moved
     python3 scripts/extract_staff_directory.py  # who works for the town TODAY, off its own staff directory —
                                                 #   the only people source here not read out of an annual report
+    python3 scripts/fetch_school_staff_directory.py --if-changed  # the DISTRICT's six sheets, discovered off its
+                                                #   own directory page; both fetchers run WEEKLY from refresh.py,
+                                                #   because both publishers overwrite in place and the archive's
+                                                #   snapshots are the only history of either that will exist
+    python3 scripts/fetch_school_staff_directory.py --check
+    python3 scripts/extract_school_staff_directory.py   # the district's people as each listing prints them, and
+                                                #   who is printed TWICE — never merged, which is the point
+    python3 scripts/extract_school_staff_directory.py --check
+    python3 scripts/build_body_crosswalk.py      # one body, two pages: the org chart joined to the money page, so
+                                                #   /org-charts and /departments link both ways. The name join
+                                                #   lives HERE and both payloads read it
+    python3 scripts/build_body_crosswalk.py --check   # ...and fails if the join matches fewer bodies than it did
     python3 scripts/build_report_filing.py      # which bodies file an annual report, which say `No Report
                                                 #   Submitted`, and which the town never asked
     python3 scripts/build_data_problems.py      # EVERY KNOWN PROBLEM WITH THE DATA in one place: a defective
