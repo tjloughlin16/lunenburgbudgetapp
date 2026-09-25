@@ -10,7 +10,7 @@ import {
 import {
   Conclusions,
   Body, H2, H3, Insight, NotShown, Quote, Stat,
-  ReportShell,
+  ReportShell, splitConclusions,
 } from '../components/report'
 import type { Conclusion } from '../components/report'
 
@@ -228,6 +228,7 @@ export function MontyTech() {
   if (!d) return <Shell loading />
 
   const H = d.headline
+  const [topConclusions, restConclusions] = splitConclusions(d.conclusions)
   const M = d.assessment_meta
   const F = d.forecast
   const A = d.apportionment
@@ -333,10 +334,25 @@ export function MontyTech() {
           payload, computed by the generator that computed the figures -- see
           scripts/conclusions.py. The same rows appear on /what-it-all-adds-up-to, read
           from the same file, so the two cannot drift apart. */}
+      {/* THREE ABOVE THE FOLD, THE REST INSIDE IT. This rendered ALL of them in the short
+          version, which was fine while the generator emitted three and wrong the moment it
+          emitted six: the page's declared short version went from 902 words to 1,613 against
+          a 1,150 budget, without a line of this file changing. A page that renders "however
+          many the payload has" into its short version has no length budget at all.
+
+          `splitConclusions` is what /analysis/* already uses for exactly this, so the two
+          renderings of one report stay the same shape. */}
       <H2 id="conclusions">If you read nothing else</H2>
-      <Conclusions rows={d.conclusions} />
+      <Conclusions rows={topConclusions} />
       {/* Everything below the short version is behind the fold -- see components/FullVersion.tsx. */}
       <FullVersion>
+
+      {restConclusions.length > 0 && (
+        <>
+          <H2 id="more-findings">The other findings</H2>
+          <Conclusions rows={restConclusions} noAsk short={false} />
+        </>
+      )}
 
       <H2 id="findings">What this page establishes</H2>
       <div className="grid gap-4 mt-6"

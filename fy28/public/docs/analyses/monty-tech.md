@@ -290,9 +290,9 @@ All six are registered in `sources/data/money-gaps.csv` and appear at
 
 The meeting archive was searched for `Monty Tech`, `Montachusett`, `vocational`,
 `assessment`, `regional`, `foundation enrollment` and `required minimum contribution`.
-**8,899 of the 12,015 meeting documents this archive holds are searchable — 74%.** The rest
-are image scans awaiting OCR, three whose text is drawn as vector outlines, fourteen blank,
-and fifty the town lists that we do not hold. An empty result is therefore *unproven*, not
+**10,952 of the 12,088 meeting documents this archive holds are searchable — 91%.** The
+other 1,136 are almost all image scans awaiting OCR — 1,118 of them — and the remainder are
+documents whose text will not extract. An empty result is therefore *unproven*, not
 disproven.
 
 The searches found the Finance Committee taking a Monty Tech budget presentation in March in

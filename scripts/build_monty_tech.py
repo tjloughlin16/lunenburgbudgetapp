@@ -1240,6 +1240,22 @@ def build():
     # them. Neither is a price, and that is the point of the conclusion.
     fc_base = next(r for r in req if r['fy'] == fc['base_fy'])
 
+    # THE YEAR WHOSE ASSESSMENT IS SPLIT INTO ITS PARTS, and the latest year of routes out
+    # of the town's own schools. Both were in the payload and in the document's prose and
+    # in no conclusion, which is what put this page's short version over its budget: the
+    # cards carried three of the eight claims and the markdown carried all eight, so a
+    # reader met the same three twice and the page declared 1,661 words of short version.
+    # The fix is the shape rule 7d already sets -- the payload owns the conclusions -- so
+    # the claims the prose had alone are cards now, and the fold holds the ones past three.
+    # THE SAME YEAR THE REST OF THE CARDS USE, not the latest one that happens to print
+    # its parts. `assess` runs a year further than the figures the other conclusions are
+    # built on, so taking the last row with a four-part split put one card on FY2027 and
+    # its neighbours on FY2026 -- two years of one bill side by side, which is the mistake
+    # rule 1 is about wearing different clothes.
+    parts = next((r for r in assess if r['fy'] == last['fy']
+                  and r['capital'] is not None and r['transport'] is not None), None)
+    routes = stu[-1] if stu else None
+
     return {
         'about': 'What Lunenburg is assessed for Montachusett Regional Vocational '
                  'Technical, what sets that figure, and what neither the town nor the '
@@ -1406,6 +1422,142 @@ def build():
                 allow=('70', '2021'),
                 see=[('/rate-register', 'every rate this project uses, and its source'),
                      ('/why-we-only-get-minimum-aid', 'why the formula lands where it does')],
+            ),
+            conclusion(
+                id='only-a-twentieth-of-the-bill-is-negotiable',
+                bearing='lever',
+                claim='Of Lunenburg\u2019s %s Monty Tech bill, %s is anything a member town negotiates.'
+                      % (C.usd(parts['total']), C.usd(parts['above_minimum'])),
+                so_what='Arguing the assessment down means arguing about a twentieth of it; the rest is state arithmetic.',
+                lede='The bill is not one negotiated figure. It is a state-calculated '
+                      'minimum with two much smaller assessments on top, and the district '
+                      'prints the three parts separately.',
+                detail='In %s the required minimum contribution was %s, the transportation '
+                       'and other operating assessment %s and the capital assessment %s, '
+                       'and the three sum to %s exactly. The minimum is %s of the bill and '
+                       'is set by Chapter 70 from the town\u2019s property wealth and '
+                       'resident income; only the other %s is set by anything the '
+                       'district\u2019s eighteen member towns decide between them. A town '
+                       'looking for room in this line has %s to look in.'
+                       % (C.fy(parts['fy']), C.usd(parts['required']),
+                          C.usd(parts['transport']), C.usd(parts['capital']),
+                          C.usd(parts['total']), C.pct(parts['required_share'] * 100),
+                          C.usd(parts['above_minimum']), C.usd(parts['above_minimum'])),
+                figures={
+                    'fy': figure(parts['fy'], C.fy(parts['fy'])),
+                    'total': figure(parts['total'], C.usd(parts['total'])),
+                    'required': figure(parts['required'], C.usd(parts['required'])),
+                    'transport': figure(parts['transport'], C.usd(parts['transport'])),
+                    'capital': figure(parts['capital'], C.usd(parts['capital'])),
+                    'negotiable': figure(parts['above_minimum'],
+                                         C.usd(parts['above_minimum'])),
+                    'required_share': figure(parts['required_share'] * 100,
+                                             C.pct(parts['required_share'] * 100)),
+                },
+                figure='negotiable',
+                kind='measured',
+                basis='the district\u2019s own budget book, which prints the three parts of '
+                      'each member town\u2019s assessment on one sheet, against the required '
+                      'minimum DESE publishes for the same year. A sheet somebody '
+                      'assembled rather than a printout from the books \u2014 but the three '
+                      'parts sum to the total the Town\u2019s own ledger carries, which is '
+                      'the check that makes it usable.',
+                not_shown='That the negotiable part is where a saving would come from, or '
+                          'that it could be reduced at all. It pays for transportation and '
+                          'for capital, both of which are real obligations; what is '
+                          'established is its SIZE against the rest of the bill, not that '
+                          'anything in it is discretionary.',
+                allow=('70',),
+                see=[('/state-aid', 'how state aid is set'),
+                     ('/why-we-only-get-minimum-aid', 'why the formula lands where it does')],
+            ),
+            conclusion(
+                id='a-vocational-pupil-carries-a-larger-foundation-budget',
+                bearing='sizes',
+                claim='The state sets %s a year for a Monty Tech pupil and %s for a Lunenburg one.'
+                      % (C.usd(last['mt_fb_per_pupil']), C.usd(last['lps_fb_per_pupil'])),
+                so_what='So the money share runs ahead of the head share, and a move between them is not one-for-one.',
+                lede='A vocational place is a larger place in the state\u2019s own '
+                      'arithmetic, which is why Monty Tech is a bigger fraction of the '
+                      'town\u2019s bill than of its enrollment.',
+                detail='In %s the foundation budget is %s for each Lunenburg resident at '
+                       'Monty Tech and %s for each one in the town\u2019s own schools. '
+                       'Monty Tech is %s of the town\u2019s foundation enrollment and %s of '
+                       'its foundation budget, and because the split of the town-wide '
+                       'required contribution follows the BUDGET share rather than the head '
+                       'share, that is the fraction that reaches the bill. A child moving '
+                       'between the two therefore moves more than a proportionate slice.'
+                       % (C.fy(last['fy']), C.usd(last['mt_fb_per_pupil']),
+                          C.usd(last['lps_fb_per_pupil']), C.pct(last['fe_share'] * 100),
+                          C.pct(last['fb_share'] * 100)),
+                figures={
+                    'fy': figure(last['fy'], C.fy(last['fy'])),
+                    'monty_tech_per_pupil': figure(last['mt_fb_per_pupil'],
+                                                   C.usd(last['mt_fb_per_pupil'])),
+                    'lunenburg_per_pupil': figure(last['lps_fb_per_pupil'],
+                                                  C.usd(last['lps_fb_per_pupil'])),
+                    'head_share': figure(last['fe_share'] * 100,
+                                         C.pct(last['fe_share'] * 100)),
+                    'budget_share': figure(last['fb_share'] * 100,
+                                           C.pct(last['fb_share'] * 100)),
+                },
+                figure='monty_tech_per_pupil',
+                kind='measured',
+                basis='DESE\u2019s Chapter 70 key factors workbook for the year: the '
+                      'foundation budget and foundation enrollment sheets for Lunenburg '
+                      'Public Schools and for Montachusett, divided one by the other. Both '
+                      'halves are the state\u2019s own published figures.',
+                not_shown='What either place COSTS. A foundation budget is what the state\u2019s '
+                          'formula assumes a place requires, which is an input to an aid '
+                          'calculation and not a measurement of spending \u2014 rule 11 '
+                          'again, one layer further back.',
+                allow=('70',),
+                see=[('/state-aid', 'how state aid is set'),
+                     ('/if-students-leave', 'what moves when a child leaves')],
+            ),
+            conclusion(
+                id='monty-tech-is-the-largest-route-out',
+                bearing='sizes',
+                claim='%s Lunenburg residents attend Monty Tech, against %s under school choice.'
+                      % (C.num(routes['monty_tech']), C.num(routes['school_choice'])),
+                so_what='It is the biggest route out of the town\u2019s own schools, and no Lunenburg vote governs it.',
+                lede='Monty Tech is the largest of the routes Lunenburg children take out '
+                      'of the town\u2019s own schools \u2014 and the only one that is not a '
+                      'departure at all.',
+                detail='In %s, %s of the town\u2019s %s resident schoolchildren attend Monty '
+                       'Tech, against %s under school choice and %s at charter schools. DESE '
+                       'reports them as resident MEMBERS of a district Lunenburg belongs to, '
+                       'not as children leaving it: the town is a member of the regional '
+                       'district and no Lunenburg vote admits or refuses any of them. That '
+                       'is the difference between this route and the other two, and it is '
+                       'the reason the assessment is not something the town opts out of.'
+                       % (C.fy(routes['fy']), C.num(routes['monty_tech']),
+                          C.num(routes['all_resident']), C.num(routes['school_choice']),
+                          C.num(routes['charter'])),
+                figures={
+                    'fy': figure(routes['fy'], C.fy(routes['fy'])),
+                    'monty_tech': figure(routes['monty_tech'], C.num(routes['monty_tech']),
+                                         unit='Lunenburg residents enrolled'),
+                    'school_choice': figure(routes['school_choice'],
+                                            C.num(routes['school_choice']),
+                                            unit='Lunenburg residents enrolled'),
+                    'charter': figure(routes['charter'], C.num(routes['charter']),
+                                      unit='Lunenburg residents enrolled'),
+                    'all_resident': figure(routes['all_resident'],
+                                           C.num(routes['all_resident']),
+                                           unit='Lunenburg resident schoolchildren'),
+                },
+                figure='monty_tech',
+                kind='measured',
+                basis='DESE\u2019s enrollment of town residents by district and by '
+                      'programme, which states where every Lunenburg resident '
+                      'schoolchild is enrolled and by which route, year by year.',
+                not_shown='Why the count has moved. A count is the outcome of families '
+                          'applying and of Monty Tech admitting, and nothing published '
+                          'separates the two \u2014 how many Lunenburg applicants are '
+                          'turned away is registered as a gap rather than answered here.',
+                see=[('/if-students-leave', 'the both-directions record'),
+                     ('/what-we-cannot-answer', 'what nobody publishes')],
             ),
         ]),
         'required': req,

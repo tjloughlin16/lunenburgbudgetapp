@@ -189,7 +189,19 @@ export function Analysis() {
   const heroFigures = [...leadNodes, ...(split?.short ?? [])].filter(isFigure)
   const isHero = (n: React.ReactNode) => heroFigures.includes(n)
 
-  const ownsShort = !!model?.stats?.length
+  // THE GENERATOR OWNS THE OPENING WHEN IT SHIPPED CONCLUSIONS, not only when it shipped a
+  // stat row. Gating on `stats` alone left /analysis/monty-tech rendering its short version
+  // TWICE -- the payload's conclusion cards above, the markdown's `## What this establishes`
+  // below, the same claims in two voices -- and the reading measure said so: 1,661 words of
+  // declared short version against a 1,150 budget, 902 of them the cards and 759 the prose.
+  // The comment below already named this defect and fixed it for stat-bearing reports; the
+  // gate was simply narrower than the reason for it.
+  //
+  // IT WAS SAFE TO WIDEN BECAUSE ONLY ONE PAGE MOVES. The payloads with conclusions and no
+  // stats are athletics, budget-vs-actual and monty-tech, and the first two open their
+  // documents with `Why this is a separate document...` -- so `split` is null for them and
+  // they have no prose short version to drop. Checked before changing it rather than after.
+  const ownsShort = !!(model?.stats?.length || model?.conclusions?.length)
   const moreRows = model?.conclusions ? splitConclusions(model.conclusions, undefined)[1] : []
 
   const title = meta?.title
@@ -239,12 +251,18 @@ export function Analysis() {
           "The short version" inside the full version, which is the joke TJ made when he
           saw it.
 
-          So: `stats` present means the generator owns the opening and the markdown's
-          short-version section is dropped FROM THE PAGE. It stays in the .md, which is
-          what /docs serves and what the PDF is made from -- this is a rendering decision,
-          not a deletion. A payload with conclusions but no stats (athletics,
-          budget-vs-actual, monty-tech, whose conclusions are authored for their own React
-          pages) keeps its prose short version, because nothing has replaced it. */}
+          So: a payload carrying `stats` OR `conclusions` means the generator owns the
+          opening and the markdown's short-version section is dropped FROM THE PAGE. It
+          stays in the .md, which is what /docs serves and what the PDF is made from --
+          this is a rendering decision, not a deletion.
+
+          THIS USED TO SAY `stats`, AND NAMED monty-tech as a page that keeps its prose
+          short version "because nothing has replaced it". Something had: its three
+          conclusion cards were on the page, above the prose, saying three of the same
+          eight things. The claims the prose carried ALONE are conclusions now -- the
+          negotiable share of the bill, the per-pupil foundation gap, the routes out --
+          so widening the gate moved them into the fold rather than off the page, which
+          is what `moreRows` is for. */}
       {/* The opening chart, hoisted out of the document so it sits under the summary and
           above the metrics. See `isFigure` above for why. */}
       {/* The signature image is not read, so it is not held to the reading measure:
