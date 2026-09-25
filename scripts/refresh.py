@@ -580,11 +580,39 @@ def main():
     # Pages sends any other branch to a preview alias and the log would still say
     # "deployed" -- which is exactly what happened on 15 September 2026.
     if a.deploy and not a.dry_run:
+        # DEPLOY WHEN THE CONTENT IS MAIN'S, NOT WHEN THE BRANCH IS NAMED main.
+        #
+        # This used to test `git rev-parse --abbrev-ref HEAD` against ('main', 'refresh'),
+        # and the refresh worktree sits on a DETACHED HEAD on purpose so it cannot move
+        # main's pointer. A detached HEAD reports as `HEAD`, which matched neither -- so the
+        # refresh committed and pushed to main and then silently refused to deploy, in every
+        # run from 23 September 2026 onward. Production served 21 September's site for four
+        # days while the data kept moving, and both runs exited 0 saying `committed and
+        # pushed to main`.
+        #
+        # A NAME IS NOT THE FACT. What matters is whether the tree's commit is the one main
+        # points at, so that is what is tested: Cloudflare Pages sends anything else to a
+        # preview alias while the log still says "deployed", which is what happened on 15
+        # September. A branch called `main` that has drifted from origin/main is no safer
+        # than a detached HEAD that has not.
+        head = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
+                              capture_output=True, text=True).stdout.strip()
+        origin_main = subprocess.run(['git', 'rev-parse', 'origin/main'], cwd=ROOT,
+                                     capture_output=True, text=True).stdout.strip()
         branch = subprocess.run(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], cwd=ROOT,
                                 capture_output=True, text=True).stdout.strip()
-        if branch not in ('main', 'refresh'):
-            print('  NOT deploying: on branch %r, and only main deploys to production. '
-                  'Run the refresh from the refresh tree (scripts/daily_refresh.sh) or check out main.' % branch)
+        if not head or head != origin_main:
+            # A NOTE, NOT JUST A PRINTED LINE. The old refusal was one line in a 1,600-line
+            # log and the run still exited 0 -- which is the shape of every silent failure
+            # this project has been bitten by. A note reaches refresh-runs.csv, the status
+            # dashboard and the notification.
+            notes.append('DID NOT DEPLOY: this tree is at %s and origin/main is at %s, so '
+                         'the build would go to a preview alias rather than production'
+                         % (head[:8] or '?', origin_main[:8] or '?'))
+            print('  NOT deploying: HEAD is %s and origin/main is %s (branch %r). Only '
+                  'main\u2019s own commit deploys to production; anything else lands on a '
+                  'preview alias while the log says "deployed".'
+                  % (head[:8] or '?', origin_main[:8] or '?', branch))
             a.deploy = False
     if a.deploy and not a.dry_run:
         sh(['npm', 'run', 'build:site'], cwd=os.path.join(ROOT, 'fy28'))
