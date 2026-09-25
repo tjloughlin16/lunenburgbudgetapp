@@ -378,6 +378,23 @@ def main():
     }
     notes = []
 
+    # 0. THE TREE IS MADE WHOLE BEFORE ANYTHING COUNTS IT.
+    #
+    # `build_minutes_searchable.py` refuses to publish a corpus count from a tree that is
+    # missing documents the index names, because that count is published in ten payloads and
+    # a partial tree understates it -- the same figure had three defensible values on 25
+    # September 2026. That refusal is right and it is only half a design: the first refresh
+    # run after it was added STOPPED, 57 documents short, because the interactive tree had
+    # ingested the district's staff directories and this tree had never pulled them.
+    #
+    # A REFUSAL NEEDS A REPAIR PATH IN THE SAME RUN. The documents are all in the bucket --
+    # that is what the gate guarantees before anything gets this far -- so completeness is
+    # one command away and there is no reason to make a person type it. What must never be
+    # self-healed is DESTRUCTION (see the pristine check); fetching what we already own is
+    # the opposite of that.
+    if not a.dry_run:
+        py('sync_archive.py', '--pull', check=False)
+
     # 1-3. The town's documents.
     py('watch_meetings.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))
     if not a.dry_run:
