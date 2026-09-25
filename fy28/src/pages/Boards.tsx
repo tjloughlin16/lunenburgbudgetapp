@@ -30,6 +30,10 @@ type Board = {
   about_itself?: { key: string; label: string; school_year: string; url: string; upstream: string; sha256: string; text: string }[]
   scorecard?: { this: Score; last: Score; minutes_lag_days: number; video_lag_days: number }
   finance?: { accounts: number; funds: number; related: number } | null
+  // THE CHART THAT NAMES ITS PEOPLE, from `body-crosswalk.csv` by way of build_boards.py.
+  // A list, because two charts can sit behind one board -- the Board of Assessors is drawn
+  // once as the board and once as the office that staffs it.
+  people?: { unit: string; chart_url: string; fy: string; named: number; years: number }[] | null
   // HOW THIS BODY HAS ANSWERED THE TOWN'S ANNUAL CALL FOR A REPORT, from the contents
   // page of each annual report — the only place the town records it. Absent where the
   // town never listed the body at all, which is not the same as a body that declined.
@@ -397,6 +401,16 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
         </p>
       )}
       {b.finance && <p className="text-[13px] mt-2"><a className="underline font-semibold" style={{ color: 'var(--series-revenue)' }} href={`/boards/${b.slug}/finance`}>Finance: the {b.finance.accounts} account{b.finance.accounts === 1 ? '' : 's'} the {b.name} owns{b.finance.funds ? `, ${b.finance.funds} of them funds` : ''} &rarr;</a></p>}
+      {/* WHO SAT ON IT, YEAR BY YEAR. The money link above and this one are the two halves of
+          the same question about a board, and until now only one of them was on this page.
+          The YEAR travels with the count because the rosters end at FY2025 for most bodies
+          and FY2027 for the ones read off the officials listing -- a bare headcount would
+          read as a claim about today. */}
+      {b.people?.length ? <p className="text-[13px] mt-2">{b.people.map((p, i) => (
+        <span key={p.unit}>{i > 0 ? ' · ' : ''}
+          <a className="underline" href={p.chart_url}>The people: {p.named} named in {p.unit} in FY{p.fy}, across {p.years} years of charts &rarr;</a>
+        </span>
+      ))}</p> : null}
       <Subscribe path={`/feeds/${b.slug}.xml`} what={`the ${b.name} posts or changes an agenda, or a meeting’s recording, transcript and our minutes are all in`} />
 
       {/* ---------------------------------------------------------------- upcoming */}

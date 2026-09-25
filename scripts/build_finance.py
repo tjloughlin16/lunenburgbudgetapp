@@ -300,6 +300,45 @@ def build():
         o['owns'].sort(key=lambda i: (KIND_ORDER.index(measures[i]['kind']), measures[i]['code']))
         o['relates'].sort()
 
+    # WHO WORKS THERE, AND THE ADDRESS OF THE CHART THAT NAMES THEM. TJ, 25 September 2026:
+    # *"i would like to cross link the org chart and the personell pages for each
+    # department, so we can see the trends over time when needed, or directly se the people
+    # when needed."* This page had the money and no route to the people.
+    #
+    # READ OFF `body-crosswalk.csv`, WHICH OWNS THE NAME JOIN. `build_org_charts.py` reads
+    # the same file for the link in the other direction, so the two pages cannot come to
+    # disagree about which body is which -- and the crosswalk's own `--check` is what holds
+    # the join's match count up.
+    #
+    # A MISSING FILE LEAVES THE PAGE AS IT WAS. This is a cross-reference, not a figure; a
+    # finance page that cannot find the crosswalk should publish the money it always did
+    # rather than fail to build.
+    for row in people_crosswalk():
+        o = owners.get(row['money_slug'])
+        if not o or not row['money_slug']:
+            continue
+        # The LAST year the chart holds people for, not the current fiscal year: the
+        # rosters run to FY2025 for most bodies and FY2027 for the ones read off the
+        # officials listing, so naming the year is the difference between a headcount and
+        # a claim about today.
+        # A LIST, BECAUSE ONE MONEY PAGE CAN HAVE TWO CHARTS BEHIND IT. The School
+        # Committee owns the district's accounts, and this project draws two bodies against
+        # them: the committee itself (its seats) and Lunenburg Public Schools (its staff).
+        # Writing one `people` dict let whichever row came last win, which quietly published
+        # `4 people` for the body that employs several hundred. Both are named instead, and
+        # the page can say which is which.
+        # AN EMPTY CHART IS NOT A LINK. `Board Of Assessors (staff)` is a real unit with
+        # nobody ever read into it, and a link reading `the 0 people named in ... in FY`
+        # sends a reader to a blank page and looks like a defect in the chart.
+        if not int(row['people_last_fy'] or 0):
+            continue
+        o.setdefault('people', []).append(
+            dict(unit=row['unit'], chart_url=row['chart_url'],
+                 fy=row['last_fy'], named=int(row['people_last_fy'] or 0),
+                 years=int(row['years'] or 0), basis=row['basis']))
+    for o in owners.values():
+        o.get('people', []).sort(key=lambda p: -p['named'])
+
     unresolved = sorted(i for i, m in measures.items() if m['owner'] == 'unresolved')
     sc = emit('schoolfinance', school_conclusions(measures, sr_asof))
     departments = [r for r in csv.DictReader(io.open(DEPTS, encoding='utf-8'))]
@@ -321,6 +360,16 @@ def build():
         conclusions=sc,
         conclusions_by_owner={'school-committee': sc},
     )
+
+
+CROSSWALK = os.path.join(ROOT, 'sources', 'data', 'body-crosswalk.csv')
+
+
+def people_crosswalk():
+    """The org chart's row for each body, or nothing at all if the crosswalk is absent."""
+    if not os.path.exists(CROSSWALK):
+        return []
+    return list(csv.DictReader(io.open(CROSSWALK, encoding='utf-8')))
 
 
 KIND_ORDER = ['appropriation', 'revenue', 'special-revenue', 'enterprise', 'trust',

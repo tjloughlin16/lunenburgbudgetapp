@@ -36,7 +36,13 @@ type Measure = { id: string; kind: string; subkind: string; code: string; name: 
   purpose: string; authority: string; trend_label: string; report: string; current: Current | null; history: Hist[]; notes: string[]; snapshots?: Snap[] }
 type Owner = { slug: string; name: string; kind: string; owns: string[]; relates: string[]; counts: Record<string, number>
   totals: { appropriation_revised: number | null; appropriation_expended: number | null; appropriation_period: number | null; special_revenue_held: number | null
-    special_revenue_in: number | null; special_revenue_out: number | null; trust_held: number | null; agency_held: number | null; revenue_estimate: number | null } }
+    special_revenue_in: number | null; special_revenue_out: number | null; trust_held: number | null; agency_held: number | null; revenue_estimate: number | null }
+  // WHO WORKS THERE, and the address of the chart that names them -- from
+  // `body-crosswalk.csv`, which `build_org_charts.py` reads for the link the other way.
+  // A LIST because one money page can have two charts behind it: the School Committee owns
+  // the district's accounts, and this project draws both the committee's seats and the
+  // district's staff against them.
+  people?: { unit: string; chart_url: string; fy: string; named: number; years: number; basis: string }[] }
 type Dept = { slug: string; name: string; kind: string; dept_codes: string; board: string; head: string }
 type Payload = { about: string; grain: string; as_of: { ledger: string; special_revenue: string; trusts: string }; kinds: Record<string, string>
   measures: Record<string, Measure>; owners: Record<string, Owner>; departments: Dept[]; unresolved: string[]
@@ -147,6 +153,28 @@ function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclus
     <>
       <Grain>{d.grain}</Grain>
       {isBoard && <p className="text-[13px] mt-3"><a className="underline" href={`/boards/${slug}`}>&larr; the {o.name}&rsquo;s board page</a> · <a className="underline" href="/accounts">every account, once</a></p>}
+      {/* THE PEOPLE BEHIND THE MONEY. TJ, 25 September 2026: *"i would like to cross link the
+          org chart and the personell pages for each department, so we can see the trends over
+          time when needed, or directly se the people when needed."*
+          The count and the YEAR travel together on purpose: the rosters run to FY2025 for
+          most bodies and FY2027 for the ones read off the officials listing, so a headcount
+          with no year attached would read as a claim about today. And it is NAMES the town
+          printed, not full-time equivalents -- a roster carries no FTE, which is why this
+          links to the chart rather than reprinting a figure as though it were a staffing
+          level. */}
+      {o.people?.length ? (
+        <p className="text-[13px] mt-3">
+          {o.people.map((p, i) => (
+            <span key={p.unit}>
+              {i > 0 ? ' · ' : ''}
+              <a className="underline" href={p.chart_url}>
+                the {p.named} people named in {p.unit} in FY{p.fy}
+              </a>
+            </span>
+          ))}
+          {' '}&mdash; names the town printed, across {o.people[0].years} years of charts; no FTE.
+        </p>
+      ) : null}
       <div className="mt-8 flex flex-wrap gap-x-12 gap-y-6">
         {t.appropriation_revised !== null && <Stat value={short(t.appropriation_revised)}>voted for FY2026 across {(o.counts.appropriation ?? 0) + (o.counts.debt ?? 0)} line{(o.counts.appropriation ?? 0) + (o.counts.debt ?? 0) === 1 ? '' : 's'}, as revised{t.appropriation_period === 12 ? '; ' + short(t.appropriation_expended ?? 0) + ' spent by year end' : ''}</Stat>}
         {t.special_revenue_held !== null && <Stat value={short(t.special_revenue_held)} tone="var(--series-revenue)">held in {o.counts['special-revenue']} funds outside the budget at {d.as_of.special_revenue}</Stat>}

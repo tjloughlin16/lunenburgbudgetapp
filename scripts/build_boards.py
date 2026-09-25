@@ -290,6 +290,41 @@ def plain_fy(date):
 _FINANCE = None
 
 
+_PEOPLE = None
+
+
+def people_charts():
+    """Each board's org chart, from `body-crosswalk.csv` -- the address and how many names.
+
+    TJ, 25 September 2026: *"i would like to cross link the org chart and the personell pages
+    for each department, so we can see the trends over time when needed, or directly se the
+    people when needed."* The board page is where a resident actually lands for a board, and
+    it was the one surface of the three with no route to the chart.
+
+    KEYED ON `board_slug`, WHICH THE CROSSWALK RESOLVED. This does not do its own name
+    matching: `build_body_crosswalk.py` owns that join and both other payloads read the same
+    file, so three pages cannot come to disagree about which body is which.
+
+    A LIST, because two charts can sit behind one board -- the Board of Assessors is drawn
+    twice, once as the board and once as the office that staffs it, and they are different
+    bodies with different people.
+    """
+    global _PEOPLE
+    if _PEOPLE is None:
+        _PEOPLE = {}
+        p = os.path.join(ROOT, 'sources', 'data', 'body-crosswalk.csv')
+        if os.path.exists(p):
+            for r in csv.DictReader(open(p, encoding='utf-8', newline='')):
+                if not r['board_slug'] or not int(r['people_last_fy'] or 0):
+                    continue     # a unit nobody has ever been read into is not a link
+                _PEOPLE.setdefault(r['board_slug'], []).append(dict(
+                    unit=r['unit'], chart_url=r['chart_url'], fy=r['last_fy'],
+                    named=int(r['people_last_fy'] or 0), years=int(r['years'] or 0)))
+            for v in _PEOPLE.values():
+                v.sort(key=lambda x: -x['named'])
+    return _PEOPLE
+
+
 def finance_counts():
     """How many accounting measures each board owns, from the registry -- enough for the
     board page to carry a Finance link and say what is behind it. The figures are on
@@ -493,6 +528,7 @@ def build(as_of=None):
         boards.append(dict(
             slug=slug, name=name, the_three=slug in THE_THREE, page=page, about_itself=about_itself(slug), scorecard=scorecard, join=join,
             finance=finance_counts().get(slug),
+            people=people_charts().get(slug),
             annual_report=FILING.get(slug),
             counts=dict(agendas=sum(1 for d in docs[slug] if 'agenda' in docs[slug][d]),
                         minutes=sum(1 for d in docs[slug] if 'minutes' in docs[slug][d]),

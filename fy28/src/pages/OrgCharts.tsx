@@ -25,8 +25,17 @@ type Row = {
   role: string; person: string; status: string; source: string; tier: string
   section_group: string
 }
+type Links = {
+  money_url: string; money_slug: string; money_kind: string
+  board_url: string; board_slug: string; basis: string; why: string
+}
 type Unit = {
   unit: string; kind: string; rows: number; years: string[]; subunits: string[]
+  // HOW MANY NAMED PEOPLE THIS BODY HOLDS PER YEAR, and where its money is. Both come from
+  // `body-crosswalk.csv` by way of the payload -- see build_body_crosswalk.py for why the
+  // name join lives in a dataset and not in this file.
+  people?: Record<string, number>
+  links?: Links
   // HOW THIS BODY IS DRAWN, decided by `build_org_charts.py` from the body's own shape
   // and published beside it. TJ: *"every department needs their own way to generate
   // their org chart based on their structure."* See LAYOUTS there for what each means.
@@ -82,6 +91,111 @@ const KIND_LABEL: Record<string, string> = {
 function fromUrl(key: string) {
   if (typeof window === 'undefined') return ''
   return new URLSearchParams(window.location.search).get(key) ?? ''
+}
+
+/* ---- one body, two pages ---------------------------------------------------------- */
+
+/* THE MONEY FOR THE BODY ON SCREEN. TJ, 25 September 2026: *"i would like to cross link the
+ * org chart and the personell pages for each department, so we can see the trends over time
+ * when needed, or directly se the people when needed."*
+ *
+ * The chart knew who; /departments/<slug> knew what they are voted and spend; nothing joined
+ * them. A reader comparing a headcount to a payroll had to know the other page existed.
+ *
+ * WHERE THERE IS NO MONEY PAGE, THE REASON IS PRINTED. Twenty-three of sixty-three bodies
+ * have no account in the finance registry -- most are advisory committees the town votes
+ * nothing to -- and a link that is simply absent reads as a page that forgot. `why` comes
+ * from the crosswalk, so this says which, and never guesses. */
+function OtherPages({ u }: { u: Unit }) {
+  const l = u.links
+  if (!l) return null
+  if (!l.money_url && !l.board_url) {
+    return l.why ? (
+      <p className="mt-5 text-[12.5px] max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+        No money page for {u.unit}: {l.why}
+      </p>
+    ) : null
+  }
+  return (
+    <p className="mt-5 text-[13px] flex flex-wrap gap-x-5 gap-y-1">
+      {l.money_url ? (
+        <a className="underline" href={l.money_url}>
+          What {u.unit} is voted, holds and raises
+        </a>
+      ) : null}
+      {l.board_url ? (
+        <a className="underline" href={l.board_url}>
+          Its meetings, votes and calendar
+        </a>
+      ) : null}
+    </p>
+  )
+}
+
+/* HOW MANY PEOPLE THIS BODY HELD, YEAR BY YEAR -- and a way to jump to any of them.
+ *
+ * A COMPONENT, NOT A PICTURE (rule 7f): every bar carries its year and its count, and
+ * clicking one moves the chart to that year, which is the thing a reader actually wants
+ * from a trend on this page. An image of the same series could do neither.
+ *
+ * IT IS WHAT THE CHART HOLDS, NOT A STAFFING LEVEL, and the caption says so rather than
+ * leaving a reader to assume. A year the rosters were read badly is a short bar and not a
+ * department that shrank: the Fire Department reads 12 in FY2022 against 38 the year before
+ * and 40 the year after, which is a statement about one page of one book. This is exactly
+ * the distinction rule 7 is about -- the count is the measurement, "they cut people" is a
+ * hypothesis -- so the series is drawn and not narrated.
+ *
+ * THREE YEARS IS A TREND HERE. The span is printed on the chart because a reader must not
+ * mistake sixteen years for a continuous sixteen: a body with gaps shows them as gaps. */
+function PeopleOverTime({ u, fy, onPick }: {
+  u: Unit; fy: string; onPick: (fy: string) => void
+}) {
+  const series = Object.entries(u.people ?? {}).sort((a, b) => a[0].localeCompare(b[0]))
+  if (series.length < 2) return null
+  const top = Math.max(...series.map(([, n]) => n))
+  const first = series[0][0]; const last = series[series.length - 1][0]
+  const gaps = Number(last) - Number(first) + 1 - series.length
+  return (
+    <section className="mt-8">
+      <H2 id="people-over-time">People named, year by year</H2>
+      <div className="flex items-end gap-1 mt-4" style={{ height: 96 }}>
+        {series.map(([y, n]) => (
+          <button key={y} type="button" onClick={() => onPick(y)} title={`FY${y}: ${n} named`}
+            aria-label={`FY${y}, ${n} people named`}
+            aria-current={y === fy ? 'true' : undefined}
+            className="flex-1 flex flex-col justify-end items-center gap-1 cursor-pointer"
+            style={{ background: 'none', border: 0, padding: 0, minWidth: 14 }}>
+            <span className="text-[10px] tabular-nums"
+              style={{ color: y === fy ? 'var(--text-primary)' : 'var(--text-muted)' }}>{n}</span>
+            <span style={{
+              width: '100%', height: Math.max(2, Math.round(64 * n / top)),
+              background: y === fy ? 'var(--series-1)' : 'var(--grid)',
+              borderRadius: 2,
+            }} />
+            <span className="text-[9.5px] tabular-nums"
+              style={{ color: 'var(--text-muted)' }}>{y.slice(2)}</span>
+          </button>
+        ))}
+      </div>
+      {/* A CAPTION, NOT A `Grain`. A report has ONE grain block and this is a chart's
+          caption -- and using `Grain` here broke something invisible: `check_org_html.mjs`
+          finds the end of the chart by searching for the phrase `What this report counts`,
+          which is `Grain`'s own heading, so a second one ABOVE the chart truncated the
+          page the check reads and reported `no bands rendered at all` for 51 of 63 bodies.
+          Nothing was wrong with any of them. An instrument that reformats before you see
+          it is part of the finding (rule 13) -- and a checker that locates a section by a
+          phrase inside a component is a positional name, which is the trap rule 13b names.
+          Worth hardening; not the same task. */}
+      <p className="text-[12.5px] leading-relaxed mt-3 max-w-2xl"
+        style={{ color: 'var(--text-muted)' }}>
+        NAMED PEOPLE the charts hold for {u.unit}, FY{first} to FY{last}
+        {gaps > 0 ? `, with ${gaps} year${gaps === 1 ? '' : 's'} in that span the reports print nothing for` : ''}.
+        Distinct people, not roles, and not full-time equivalents &mdash; a roster gives no
+        FTE, so this counts names the town printed and is not a staffing level. A year read
+        badly is a short bar, not a department that shrank.
+      </p>
+    </section>
+  )
 }
 
 export function OrgCharts() {
@@ -261,7 +375,12 @@ export function OrgCharts() {
         + 'been put in one place.'}>
 
       <div className="flex flex-wrap gap-3 mt-6 mb-2">
-        <label className="flex flex-col gap-1 text-[12px]" style={{ color: 'var(--text-muted)' }}>
+        {/* `max-w-full min-w-0`: the select is as wide as its longest option name and this
+            label is a flex item sized by its content, so `maxWidth: '100%'` on the select
+            was measured against a box that had already grown. Sixty-three body names, the
+            longest being `Montachusett Regional Vocational Technical School Representative`. */}
+        <label className="flex flex-col gap-1 text-[12px] max-w-full min-w-0"
+          style={{ color: 'var(--text-muted)' }}>
           Department, board or school
           <select value={unit} onChange={e => { setUnit(e.target.value); setSub('') }}
             style={sel}>
@@ -320,6 +439,17 @@ export function OrgCharts() {
         </Stat> : null}
       </div>
 
+      {/* THE CROSS-LINKS SIT UNDER THE METRICS AND ABOVE THE CHART, because they are about
+          the body a reader has just chosen -- putting them at the foot of a page that can
+          run to two hundred names is putting them where nobody arrives. */}
+      {chosen ? <OtherPages u={chosen} /> : null}
+
+      {/* THE TREND BEFORE THE YEAR. Rule 7b's second movement is the organised categorical
+          data, and one body's sixteen years is exactly that; the named chart below is the
+          raw. It also answers "which year should I be looking at?", which a reader cannot
+          ask of a dropdown. */}
+      {chosen ? <PeopleOverTime u={chosen} fy={shownFy} onPick={setFy} /> : null}
+
       {rows.length === 0 ? (
         <Body>Nothing is published for {unit} in FY{shownFy}.</Body>
       ) : shiftLike ? (
@@ -340,7 +470,7 @@ export function OrgCharts() {
                   }}>
                     {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
                   </span>
-                  <span className="ml-auto text-right text-[12px] shrink-0"
+                  <span className="ml-auto text-right text-[12px] min-w-0 break-words"
                     style={{ color: 'var(--text-muted)' }}>{r.role}</span>
                 </li>
               ))}
@@ -368,7 +498,7 @@ export function OrgCharts() {
                       }}>
                         {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
                       </span>
-                      <span className="ml-auto text-right text-[12px] shrink-0"
+                      <span className="ml-auto text-right text-[12px] min-w-0 break-words"
                         style={{ color: 'var(--text-muted)' }}>{r.role}</span>
                     </li>
                   ))}
@@ -435,7 +565,7 @@ export function OrgCharts() {
                           }}>
                             {r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
                           </span>
-                          <span className="ml-auto text-right text-[12px] shrink-0"
+                          <span className="ml-auto text-right text-[12px] min-w-0 break-words"
                             style={{ color: 'var(--text-muted)' }}>
                             {/* `board seat` and `officer` are what the listing calls a
                                 row when it prints no title. Repeating it beside every

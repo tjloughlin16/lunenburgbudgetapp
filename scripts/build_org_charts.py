@@ -800,6 +800,75 @@ def _rows_schools():
     return out
 
 
+# THE DISTRICT'S OWN SUBUNIT NAMES, ONTO THE ONES THIS CHART ALREADY DRAWS. The school
+# directories name four buildings and an office; the chart has been calling the office
+# `School Central Office` since it was read out of the annual reports, and inventing a
+# second name for it would split one body in two.
+#
+# `Lunenburg Middle High School` IS LEFT AS ITS OWN SUBUNIT, deliberately. It is the
+# building the middle and high schools share and the district's roll-up uses it as a
+# value of its own -- so mapping it to either school would be us deciding which of the two
+# a person works for, which is the question, not the answer.
+DIRECTORY_SUBUNIT = {
+    'district office': 'School Central Office',
+    'district': 'School Central Office',
+    'district (office at thes)': 'School Central Office',
+    'district (office at lmhs)': 'School Central Office',
+    'district (office at primary)': 'School Central Office',
+}
+
+
+def _rows_school_directory():
+    """The district's people as the schools themselves list them, today.
+
+    WHY THIS IS NOT JUST ANOTHER ROSTER. Every other people-source feeding this chart is
+    read out of an annual report, so the district's staff arrive a year or more late and
+    only in the shape the report printed. These are the buildings' own contact sheets, and
+    they carry a GROUPING the reports do not -- Turkey Hill prints `Grade 4`, `Achieve/TLC`,
+    `Custodians` over its people, which is what `section` draws a band from.
+
+    A SHARED PERSON BECOMES TWO ROWS, AND THE SCHEMA WANTS THAT. `org-chart.csv` is keyed
+    on (fy, unit, subunit, person), so somebody the high school and the middle school both
+    list lands in two subunits by construction -- no merge, no dedup, and `check_org_charts`
+    groups by subunit so its DOUBLED test does not fire on the finding. That is the whole
+    reason TJ gave the five per-school addresses, and it needed nothing added here to work.
+
+    THE ROLL-UP FILLS IN ONLY WHO THE BUILDINGS LEAVE OUT. It names 45 people no school
+    listing does -- Primary omits its own paraprofessionals from the sheet the school
+    keeps -- so dropping it would lose them, and using it for everybody would draw
+    everyone twice. Neither list is a superset of the other, which is a fact about the
+    district's record-keeping and is registered as a gap rather than resolved here.
+
+    AND NOBODY IS RANKED BY IT. A contact sheet publishes no reporting line, so every row
+    arrives with its printed title and `tier_of` bands it exactly as it bands a roster --
+    a principal to the top because the word `Principal` is in the title, not because this
+    source claims to know who reports to whom.
+    """
+    p = os.path.join(DATA, 'school-staff-directory.csv')
+    out = []
+    if not os.path.exists(p):
+        return out
+    rows = list(csv.DictReader(open(p, encoding='utf-8')))
+    placed = {(r['fy'], r['person_key']) for r in rows if r['listing_kind'] == 'school'}
+    for r in rows:
+        if r['listing_kind'] == 'school':
+            named = r['listing']
+        elif (r['fy'], r['person_key']) in placed:
+            continue                    # a building already lists them; the roll-up repeats it
+        else:
+            named = r['school'] or r['school_as_printed']
+        sub = DIRECTORY_SUBUNIT.get(named.strip().lower(), named.strip())
+        who = re.sub(r'\s{2,}', ' ', r['person']).strip()
+        if not who:
+            continue
+        out.append(dict(fy=r['fy'], unit='Lunenburg Public Schools', unit_kind='school',
+                        subunit=sub, section=r['section'],
+                        role=(r['title'] or '').strip(), person=who, status='filled',
+                        source='school staff directory (%s), fetched %s'
+                               % (r['listing'], r['fetched'])))
+    return out
+
+
 def _rows_prose():
     """The departments that NAME their staff in prose, and the two that state posts."""
     p = os.path.join(DATA, 'department-staffing.csv')
@@ -1177,6 +1246,7 @@ def build():
     rows, bad = _rows_officials()
     roster, lost_prose = _rows_rosters()
     rows += roster + _rows_schools() + _rows_prose() + _rows_signatures()
+    rows += _rows_school_directory()
     keep = []
     for r in rows:
         key = r['unit'].lower()
@@ -1587,6 +1657,33 @@ def layout_of(unit_rows):
     return 'ranks'
 
 
+CROSSWALK = os.path.join(DATA, 'body-crosswalk.csv')
+
+
+def crosswalk():
+    """Each body's money page and its headcount by year, read off `body-crosswalk.csv`.
+
+    NOT COMPUTED HERE. `build_body_crosswalk.py` owns the name join and both payloads read
+    its output, because the chart needs to send a reader to the money and the finance page
+    needs to send one to the people -- and a map written once in each is the defect
+    CLAUDE.md names sixth. If the file is absent the chart simply carries no links, which
+    is the same page it was before, rather than a build that fails.
+
+    THE SERIES IS THE CHART'S OWN COUNT. `people` is recomputed here from these very rows
+    rather than copied from the crosswalk, so a reader following a link can never meet two
+    different headcounts for one body and one year -- and `--check` on the crosswalk is what
+    says the two agree.
+    """
+    if not os.path.exists(CROSSWALK):
+        return {}
+    out = {}
+    for r in csv.DictReader(open(CROSSWALK, encoding='utf-8')):
+        out[r['unit']] = {k: r[k] for k in
+                          ('money_url', 'money_slug', 'money_kind', 'board_url',
+                           'board_slug', 'basis', 'why')}
+    return out
+
+
 def payload(rows):
     # TIER TRAVELS AS A STRING, because the CSV has always carried it as one and the page
     # compares against `'0'`. Emitting an int here made two bugs at once in JavaScript:
@@ -1605,11 +1702,22 @@ def payload(rows):
         u['n'] += 1
         if r['subunit']:
             u['subs'].add(r['subunit'])
+    # HOW MANY NAMED PEOPLE EACH BODY HOLDS, YEAR BY YEAR -- the trend, drawn from the same
+    # rows the chart draws. Distinct PEOPLE, not rows: somebody who holds two posts in one
+    # body is one person, and counting rows made the Select Board look twice its size in the
+    # years its members also sat as sewer commissioners. A vacancy is a post, not a person.
+    people = collections.defaultdict(lambda: collections.defaultdict(set))
+    for r in rows:
+        if r['status'] == 'filled' and r['person'].strip():
+            people[r['unit']][r['fy']].add(r['person'].strip().lower())
+    link = crosswalk()
     return dict(
         generated_by='scripts/build_org_charts.py',
         years=years,
         units=[dict(unit=k, kind=v['kind'], rows=v['n'], years=sorted(v['years']),
                     subunits=sorted(v['subs']),
+                    people={fy: len(who) for fy, who in sorted(people[k].items())},
+                    links=link.get(k, {}),
                     layout=layout_of([r for r in rows if r['unit'] == k]))
                for k, v in sorted(units.items(), key=lambda kv: (-kv[1]['n'], kv[0]))],
         rows=rows)
