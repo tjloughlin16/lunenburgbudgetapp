@@ -453,8 +453,22 @@ function HomeLatest() {
       </p>
 
       {post ? (
+        /* SOMETHING TO READ: A RULE ACROSS THE TOP, no left edge.
+         *
+         * The third member of the card system TJ asked for on 25 September 2026 -- *"esp
+         * beteween upcoming meetings and recent, and then diff for reports"*. The EDGE'S
+         * POSITION carries the kind, so the three stay apart in greyscale and for a reader
+         * who cannot separate the hues:
+         *
+         *   a meeting you can still attend   LEFT edge, blue   (BoardsThisWeek)
+         *   a meeting that has happened      no edge, tinted   (RecentMeetings)
+         *   something to read                TOP rule          (here)
+         *
+         * `report.tsx` already uses a top rule for a card that has no headline figure, so
+         * this is the existing vocabulary rather than a fourth idea. */
         <a href={`/blog/${post.slug}`}
-          className="card block p-5 mt-4 transition-opacity hover:opacity-90">
+          className="card block p-5 mt-4 transition-opacity hover:opacity-90"
+          style={{ borderTop: '3px solid var(--series-revenue)' }}>
           <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <span className="text-[11px] font-semibold uppercase tracking-widest"
               style={{ color: 'var(--text-secondary)' }}>{post.label}</span>

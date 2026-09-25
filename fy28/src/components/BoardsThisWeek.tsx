@@ -121,18 +121,49 @@ export function BoardsStrip({ days = 7 }: { days?: number }) {
     for (const m of ms) rows.push({ name, m, p: notices.d?.upcoming.find(u => u.board_slug === m.board_slug && u.date === m.date) })
   }
   return (
-    <ul>
+    /* A CARD PER MEETING, on the phone. TJ, 25 September 2026, looking at this on mobile:
+     * *"the meetings dont look discrete enough. just seems like text on a page, not a
+     * 'thing' packaged together... maybe the meetings need some type of wrapper."*
+     *
+     * The principle is COMMON REGION: a shared enclosure groups a block far more strongly
+     * than proximity or a divider does. These rows were separated by a 1px hairline -- the
+     * weakest grouping signal there is -- directly below the FY28 budget card, which has a
+     * border and a coloured left edge and therefore reads as an object. Same page, two
+     * different amounts of "thingness", and the meetings lost.
+     *
+     * AND THE TITLE LINE WAS WRAPPING. The board name and the date shared one line with a
+     * left margin, so on a 390px screen `School Committee  Today · Fri, Sep 25 9:30 a.m.`
+     * broke mid-date and a title-plus-label read as a run-on sentence. The date is its own
+     * line now -- an eyebrow above the name -- so it cannot collide with it at any width.
+     *
+     * The card, the radius and the 4px left edge are the ones the budget card already uses.
+     * A new visual vocabulary for one list would be a second way of saying "this is a
+     * thing", which is the problem rather than the fix. */
+    <ul className="space-y-2">
       {rows.map(({ name, m, p }) => (
-        <li key={m.file_id} style={{ borderBottom: '1px solid var(--grid)' }}>
-          <a href={`/this-week#m-${m.board_slug}-${m.date}`} className="block py-2.5">
-            <span className="text-[13.5px] font-semibold">{name}</span>
-            <span className="text-[13px] font-semibold ml-2" style={{ color: 'var(--series-cost)' }}>{dayLabel(m.date, f.as_of)}{p?.time && p.time !== 'not stated' ? ` ${p.time}` : ''}</span>
-            {(p?.hook || p?.one_line) && <span className="block text-[13px] mt-0.5 leading-snug" style={{ color: 'var(--text-secondary)' }}>{p!.hook || p!.one_line}</span>}
+        <li key={m.file_id}>
+          <a href={`/this-week#m-${m.board_slug}-${m.date}`}
+            className="card px-3.5 py-3 block transition-opacity hover:opacity-90"
+            style={{ borderLeft: '4px solid var(--series-cost)' }}>
+            <span className="block text-[11.5px] font-bold uppercase tracking-widest"
+              style={{ color: 'var(--series-cost)' }}>
+              {dayLabel(m.date, f.as_of)}{p?.time && p.time !== 'not stated' ? ` \u00b7 ${p.time}` : ''}
+            </span>
+            <span className="block text-[15px] font-bold leading-tight mt-0.5">{name}</span>
+            {(p?.hook || p?.one_line) && (
+              <span className="block text-[13px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
+                {p!.hook || p!.one_line}
+              </span>
+            )}
           </a>
         </li>
       ))}
       {quiet.length > 0 && (
-        <li className="py-2.5 text-[12.5px]" style={{ color: 'var(--text-muted)' }}>
+        /* OUTSIDE THE CARDS, deliberately. "Nothing posted" is the absence of a meeting and
+         * must not be dressed as one -- a dashed, unfilled row says not-a-thing at a
+         * glance, which is the same distinction the cards above are drawing. */
+        <li className="px-3.5 py-2 text-[12.5px] rounded-xl"
+          style={{ color: 'var(--text-muted)', border: '1px dashed var(--grid)' }}>
           {quiet.join(' and ')}: nothing posted for the next {days} days.
         </li>
       )}

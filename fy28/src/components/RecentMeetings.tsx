@@ -60,18 +60,49 @@ export function RecentMeetings({ days = 7, min = 3, compact = false }: { days?: 
   const rows = inWindow.length >= min ? inWindow : all.slice(0, min)
   if (!rows.length) return null
   const link = 'underline'
+  // A MEETING THAT HAS HAPPENED: A CARD WITH NO EDGE, ON A TINT.
+  //
+  // TJ, 25 September 2026: *"its all the same style, for the reports, meetings,
+  // etc.. maybe some way to differentiate would be nice, esp between upcoming
+  // meetings and recent, and then diff for reports."*
+  //
+  // THE EDGE'S POSITION CARRIES THE KIND, not its colour -- so the difference
+  // survives greyscale, a high-contrast mode and colour blindness, which a palette
+  // alone does not:
+  //
+  //   a meeting you can still attend   LEFT edge, blue   (BoardsThisWeek)
+  //   a meeting that has happened      no edge, tinted   (here)
+  //   something to read                TOP rule          (HomeLatest)
+  //
+  // A tint says settled: the thing is closed, and what is live about it is the
+  // record inside rather than the date. It also stops these competing with the
+  // upcoming cards directly above them on the front page, which was the complaint.
+  //
+  // `lg:card` WAS THE BUG. The card only appeared at large widths, so on a phone --
+  // the only place TJ reads this -- these were bare text under a hairline while the
+  // budget card above sat in a box. Same page, two amounts of "thingness".
   return (
     <ol className={compact ? 'space-y-2' : 'space-y-3'} aria-label="Recent meetings">
       {rows.map(({ board, slug, r }) => (
-        <li key={slug + r.date} className={compact ? 'lg:card lg:px-3 lg:py-2.5 py-2' : 'card px-4 py-3'}
-          style={compact ? { borderTop: '1px solid var(--grid)' } : undefined}>
+        <li key={slug + r.date} className={compact ? 'card px-3.5 py-3' : 'card px-4 py-3'}
+          /* `--surface-3`, NOT `--surface-2`. The PAGE's own background is `--surface-2`
+           * (index.css, `body`), so tinting with it would have made the card vanish into
+           * the page and left a bare 1px outline -- the opposite of the intent. Checked
+           * rather than assumed. `--surface-3` is distinct from both the page and a normal
+           * `--surface-1` card, and in both themes: darker in light, lighter in dark. */
+          style={{ background: 'var(--surface-3)' }}>
           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+            <span className="block w-full text-[11.5px] font-bold uppercase tracking-widest"
+              style={{ color: 'var(--text-muted)' }}>
+              {fmt(r.date)}
+              {r.ours && typeof r.ours.votes === 'number'
+                ? ` \u00b7 ${r.ours.votes} vote${r.ours.votes === 1 ? '' : 's'}` : ''}
+            </span>
+            {/* The board name is the title and the link, on its own line -- the date used
+              * to share the line with it and wrapped mid-date on a phone. */}
             {r.ours
-              ? <a className={`text-[13px] font-semibold ${link}`} href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{board}, {fmt(r.date)}</a>
-              : <a className={`text-[13px] font-semibold ${link}`} href={`/boards/${slug}`} style={{ color: 'var(--series-cost)' }}>{board}, {fmt(r.date)}</a>}
-            {r.ours && typeof r.ours.votes === 'number' && (
-              <span className="text-[11.5px]" style={{ color: 'var(--text-muted)' }}>{r.ours.votes} vote{r.ours.votes === 1 ? '' : 's'}</span>
-            )}
+              ? <a className={`text-[15px] font-bold leading-tight ${link}`} href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{board}</a>
+              : <a className={`text-[15px] font-bold leading-tight ${link}`} href={`/boards/${slug}`} style={{ color: 'var(--series-cost)' }}>{board}</a>}
           </div>
           {/* WHAT WE HAVE, as links, IN THE ORDER WE WANT THEM USED. TJ, 17 September
               2026: "our meetings should be the most obvious clickable thing and come
