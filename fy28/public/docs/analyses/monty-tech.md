@@ -290,7 +290,7 @@ All six are registered in `sources/data/money-gaps.csv` and appear at
 
 The meeting archive was searched for `Monty Tech`, `Montachusett`, `vocational`,
 `assessment`, `regional`, `foundation enrollment` and `required minimum contribution`.
-**10,952 of the 12,088 meeting documents this archive holds are searchable — 91%.** The
+**10,958 of the 12,094 meeting documents this archive holds are searchable — 91%.** The
 other 1,136 are almost all image scans awaiting OCR — 1,118 of them — and the remainder are
 documents whose text will not extract. An empty result is therefore *unproven*, not
 disproven.
