@@ -9,6 +9,22 @@ live when `v5` was, and it once said an athletics sentence was "fixed on this br
 it had never been fixed anywhere. Check anything load-bearing against the repo.
 
 ---
+---
+
+## The current plan — `notes/HANDOFF-INGESTION-PLAN.md`, 25 September 2026
+
+Where the work stands and what is next, written at TJ's request before a context reset.
+Read it before picking anything up. Three things in it are urgent enough to repeat here:
+
+- **The daily refresh and the weekly sweep are UNLOADED** at TJ's instruction (99% weekly
+  usage). Only the free local `status` job is loaded. They will not run until somebody
+  loads them.
+- **The weekly reset is THURSDAY AT 11:00.** The sweep believed 22:59 on Wednesday for as
+  long as it existed and quit twelve hours early every week. Corrected 24 September; the
+  fix has never run.
+- **Do not run `check_generated.py` beside other work.** Eight Python processes, and it
+  rebuilds the database on every pass. Run it once, at the end, `--serial`.
+
 
 ## 17 September 2026 — the account registry, the finance pages, share metadata
 
