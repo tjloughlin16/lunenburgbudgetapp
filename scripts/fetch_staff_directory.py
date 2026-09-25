@@ -38,6 +38,9 @@ import re
 import sys
 import urllib.request
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import snapshot_log
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS = os.path.join(ROOT, 'sources', 'town-supplementary', 'docs', 'staff-directory')
 
@@ -109,6 +112,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true',
                     help='every held page is catalogued and its sha256 still matches')
+    ap.add_argument('--if-changed', action='store_true',
+                    help='keep a snapshot only when the pages differ from the last one '
+                         '(what the scheduled run uses); the check is logged either way')
     a = ap.parse_args()
     today = datetime.date.today().isoformat()
 
@@ -131,9 +137,32 @@ def main():
         return 1 if bad else 0
 
     os.makedirs(DOCS, exist_ok=True)
+
+    # EVERY PAGE IS FETCHED BEFORE ANY IS KEPT, so a run that dies partway leaves no
+    # half-snapshot -- and so `--if-changed` can compare the whole set rather than
+    # deciding one page at a time, which would keep 27 pages to record one edit.
+    #
+    # THIS PAGE IS BYTE-REPRODUCIBLE, unlike the district's sheets: the town's directory
+    # returns the same bytes on consecutive requests, so the comparison is the strict one
+    # and needs no `only=`. Checked before relying on it, because the district's pages
+    # looked the same way and are not.
+    # ONE LISTING OF THE DEPARTMENTS, NOT TWO. `dids()` fetches the landing page, and
+    # calling it again for the write loop asked the town for it twice per run.
+    numbers = dids()
+    pages = {'did-%d.html' % did: _get(PAGE % did) for did in numbers}
+    if a.if_changed:
+        last, same = snapshot_log.same_as_latest(DOCS, pages)
+        if same:
+            snapshot_log.record(DOCS, today, False, snapshot=last, files=len(pages),
+                                note='identical to %s; nothing written' % last)
+            print('unchanged since %s -- no snapshot written; logged in checked.csv' % last)
+            return 0
+    snapshot_log.record(DOCS, today, True, snapshot=today, files=len(pages),
+                        note='snapshot written')
+
     rows = []
-    for did in dids():
-        blob = _get(PAGE % did)
+    for did in numbers:
+        blob = pages['did-%d.html' % did]
         day = os.path.join(DOCS, today)
         os.makedirs(day, exist_ok=True)
         path = os.path.join(day, 'did-%d.html' % did)
