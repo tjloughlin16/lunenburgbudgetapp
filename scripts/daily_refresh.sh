@@ -53,7 +53,7 @@ if [ "$HERE" != "$(cd "$TREE" 2>/dev/null && pwd)" ]; then
     # TJ, 25 September 2026: *"i want to make sure any file we downoad is ALWAYS saved
     # before we can even think of deleting it or cleaning a repo..."*
     #
-    # `git reset --hard` and `git clean` are below, and a previous run may have died after
+    # `git reset --hard` is below, and a previous run may have died after
     # fetching and before pushing -- which is not hypothetical: six agendas were sitting in
     # exactly that state when this was written. So the tree is asked, offline and in under a
     # second, whether every publisher document it holds is in the bucket and was read back.
@@ -71,28 +71,53 @@ if [ "$HERE" != "$(cd "$TREE" 2>/dev/null && pwd)" ]; then
       exit 1
     fi
     git fetch -q origin
-    # Anything left in the tree from a run that died is discarded: the tree's whole
-    # contract is that it starts every run at main. Gitignored state (the archive's
-    # binaries, the database, node_modules) is untouched by a reset.
+    # ------------------------------------------------ THE TREE IS VERIFIED, NOT FORCED
+    # TJ, 25 September 2026: *"i think we need a new model. not a full git clean."*
+    #
+    # THIS BLOCK USED TO BE `git reset --hard origin/main` FOLLOWED BY `git clean -fd`, and
+    # the reason was never stated here -- it is stated at the commit, 120 lines down: `-A`
+    # IS SAFE HERE BECAUSE this tree is reset at the top of every run, so everything dirty
+    # at that point was produced by this run. So the destruction was not protecting
+    # anything. It was BUYING an assumption, and paying for it with whatever else was in
+    # the tree: asked directly, `git clean -nd` offered to delete two scripts that had not
+    # been committed yet.
+    #
+    # The assumption can be had for nothing by CHECKING it instead. If the tree is pristine,
+    # `add -A` is exactly as safe as it always claimed to be -- and nothing had to be
+    # deleted to make it true.
+    #
+    # SO: IF THE TREE IS NOT PRISTINE, THE RUN STOPS AND CHANGES NOTHING. That is the
+    # strongest of the options considered, for two reasons beyond safety. A dirty refresh
+    # tree is ABNORMAL -- a run died, or something wrote here -- and self-healing is
+    # precisely what let two weeks of manifest drops go unnoticed: the system quietly
+    # repaired its symptom every morning and nobody saw the cause. And a quarantine-then-
+    # overwrite would mean writing the code that preserves your data on the same day as the
+    # code that overwrites it, which is the worst place to have a bug.
+    #
+    # The cost is real and is the thing to watch: the refresh stays down until a person
+    # clears it. The sticky banner and the notification are how it says so.
+    dirty="$(git status --porcelain --untracked-files=normal)"
+    if [ -n "$dirty" ]; then
+      {
+        echo "$(date '+%Y-%m-%d %H:%M')  refresh STOPPED before it touched anything"
+        echo "the refresh tree is not pristine, so this run changed nothing at all."
+        echo "a previous run may have died, or something wrote into $TREE."
+        echo
+        echo "$dirty"
+        echo
+        echo "review it, then commit or remove what is there by hand. Nothing is discarded"
+        echo "automatically: an abnormal tree is a thing to look at, not to paper over."
+        echo "log: $LOG"
+      } > "$ALERT_EARLY"
+      osascript -e 'display notification "the refresh tree is not pristine -- nothing was touched" with title "Lunenburg refresh STOPPED" sound name "Basso"' >/dev/null 2>&1 || true
+      echo "STOPPED: refresh tree not pristine; changed nothing"
+      echo "$dirty"
+      exit 1
+    fi
+    # Pristine, so this only moves the pointer: there is no content to discard. NO
+    # `git clean` -- there is nothing for it to remove that this has not already refused
+    # to proceed past.
     git reset -q --hard origin/main
-    # `git clean` NEVER REACHES sources/. TJ, 25 September 2026: *"if you have ANY thought
-    # that refresh destroys things, we need to make that a guarantee to never even be
-    # possible."*
-    #
-    # THIS LINE COULD DELETE FRESHLY FETCHED DOCUMENTS, and the comment it replaces said it
-    # could not. The reasoning was that documents are gitignored and `-fd` skips ignored
-    # files -- true for every extension .gitignore names (*.pdf, *.xlsx, *.docx, *.html).
-    # It is NOT true for `.csv`, which is tracked-by-default under sources/ so the data
-    # files can be versioned. A fetched CSV is therefore untracked AND not ignored, which
-    # is precisely what `git clean -fd` removes. Asked directly -- `git clean -nd sources/`
-    # -- git offered to delete six of the seven staff-directory sheets ingested that day.
-    #
-    # It only bites a run that dies between fetching and committing, which is not rare:
-    # runs died on 16, 17 and 18 September, and one was killed on the 25th.
-    #
-    # An exclusion, not a narrower path list: a path list has to be kept in step with what
-    # the build writes, and the whole point here is a guarantee that cannot rot.
-    git clean -q -fd -e '/sources/'   # untracked build state only -- NEVER the archive
   } >> "$LOG" 2>&1
   exec bash "$TREE/scripts/daily_refresh.sh"
 fi
@@ -158,11 +183,16 @@ notify() {   # notify <title> <message>
   # changes" the moment main had moved, and the failure message blamed main moving. Three
   # triage sessions chased that.
   #
-  # `-A` IS SAFE HERE FOR A REASON THAT IS LOAD-BEARING AND NOT OBVIOUS: this tree is
-  # `git reset --hard origin/main` at the top of every run, so everything dirty at this
-  # point was produced by this run. And this block runs BEFORE the triage agent is
+  # `-A` IS SAFE HERE FOR A REASON THAT IS LOAD-BEARING AND NOT OBVIOUS: everything dirty
+  # at this point was produced by this run. And this block runs BEFORE the triage agent is
   # spawned, so nothing an agent wrote can be swept into a push to main. If either of
   # those ever stops being true, this line stops being safe -- say so before moving it.
+  #
+  # WHAT MAKES THE FIRST HALF TRUE CHANGED ON 25 SEPTEMBER 2026, and it is worth knowing
+  # which way round it now is. It used to be true because the top of the run DESTROYED
+  # anything else -- `reset --hard` plus `git clean -fd`. It is now true because the top of
+  # the run CHECKS that there was nothing else and stops if there was. Same guarantee for
+  # `-A`, nothing deleted to get it.
   git add -A
   if ! git diff --cached --quiet; then
     git commit -q -m "Daily refresh, $(date +%Y-%m-%d)
@@ -182,6 +212,17 @@ Automated by scripts/daily_refresh.sh."
     fi
   else
     echo "nothing to commit"
+  fi
+  # AND THE TREE MUST BE EMPTY AGAIN. `add -A` should have taken everything this run
+  # produced, so anything still dirty is something the commit did not cover -- and left
+  # unsaid it becomes TOMORROW's problem, because tomorrow's run refuses to start on a
+  # tree that is not pristine. Say it now, in the run that made it, while the log still
+  # has the context.
+  left="$(git status --porcelain --untracked-files=normal)"
+  if [ -n "$left" ]; then
+    echo "WARNING: the tree is still dirty after committing. Tomorrow's run will REFUSE"
+    echo "to start until this is cleared:"
+    echo "$left"
   fi
   # ------------------------------------------------------------- triage on failure
   # THE LOOP. TJ, 20 September 2026: "when the refresh kicks off, it should spawn an agent

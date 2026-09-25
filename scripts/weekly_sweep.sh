@@ -26,6 +26,15 @@ if ! python3 scripts/check_archive_backed_up.py --push --quiet; then
   echo "=== sweep BLOCKED $(date): a document is held in only one place; nothing was reset ==="
   exit 1
 fi
+# AND THE TREE IS VERIFIED, NOT FORCED -- the same change the daily run got, for the same
+# reason: `reset --hard` below discards tracked modifications, and this sweep shares the
+# tree with the daily refresh. If a run died leaving work here, that is a thing to look at.
+dirty="$(git status --porcelain --untracked-files=normal)"
+if [ -n "$dirty" ]; then
+  echo "=== sweep STOPPED $(date): the tree is not pristine; nothing was reset ==="
+  echo "$dirty"
+  exit 1
+fi
 git fetch -q origin && git reset -q --hard origin/main
 echo "=== weekly sweep started $(date) at $(git rev-parse --short HEAD) ==="
 python3 scripts/sweep_backlog.py --until 10:55 --parallel 4
