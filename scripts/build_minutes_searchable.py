@@ -240,7 +240,11 @@ def measure(diagnose_unsearchable=True):
     #
     # Refusing costs one command (`sync_archive.py --pull`). Publishing an understatement
     # costs a correction in every payload that carries it, and this one feeds ten.
-    short = A.incomplete()
+    # SCOPED TO WHAT THIS COUNTS. `held` is a count of MEETING documents, so a missing
+    # DLS spreadsheet cannot understate it -- and blocking on one would make this
+    # permanently red, because two of them are declared in document-defects.csv as
+    # documents whose publisher replaced the bytes and which therefore cannot be pulled.
+    short = A.incomplete(prefix='meetings/')
     if short:
         raise SystemExit(
             '%d document(s) the archive index names are not in this tree, so `held` would '

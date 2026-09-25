@@ -416,8 +416,16 @@ OURS_DIRS = {'text', 'ocr', 'pages'}
 DATED_SNAPSHOT = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 
 
-def incomplete(manifest_path=None):
+def incomplete(prefix=None, manifest_path=None):
     """Documents the index names that THIS TREE does not hold.
+
+    `prefix` SCOPES IT TO WHAT THE CALLER ACTUALLY COUNTS, and passing it is the difference
+    between a useful check and one that gets ignored. The first version took no prefix, so
+    `build_minutes_searchable.py` -- which counts MEETING documents -- refused to run
+    because three `state-dls` and `district-budget` files were absent. Those cannot affect a
+    count of minutes, and two of them are registered in `document-defects.csv` as documents
+    whose publisher replaced the bytes, so they can never be pulled and the check would have
+    been permanently red. A check that is always failing is a check nobody reads.
 
     A COUNT COMPUTED IN A PARTIAL TREE IS AN UNDERSTATEMENT, and nothing said so. On 25
     September 2026 the sentence *"N meeting documents this archive holds are searchable"*
@@ -434,7 +442,10 @@ def incomplete(manifest_path=None):
     Frozen keys only: our derived files legitimately come and go.
     """
     rows = read_manifest(manifest_path or MANIFEST)
-    return sorted(k for k in rows if frozen(k) and not os.path.exists(local_path(k)))
+    return sorted(k for k in rows
+                  if frozen(k)
+                  and (prefix is None or k.startswith(prefix))
+                  and not os.path.exists(local_path(k)))
 
 
 def frozen(key):
