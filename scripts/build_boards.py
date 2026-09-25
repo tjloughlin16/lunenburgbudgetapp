@@ -45,6 +45,12 @@ RECORDED = os.path.join(ROOT, 'fy28', 'public', 'data', 'recording-minutes.json'
 FEED = os.path.join(ROOT, 'fy28', 'public', 'data', 'meeting-feed.json')
 NOTICES = os.path.join(ROOT, 'fy28', 'public', 'data', 'notices.json')
 PAGES = os.path.join(ROOT, 'sources', 'data', 'board-pages.csv')
+# THE MEETING RECORD -- one row per board and date, whatever artifacts exist. This page used
+# to build its own list of meeting dates from the documents, videos and our own minutes it
+# happened to find, which meant a meeting the town had NOTICED but for which nothing had
+# arrived yet did not exist here at all. `build_meeting_feed.py` already reads this file;
+# this page did not, and two views of one fact is the defect rule 7d is about.
+REGISTER = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
 DISTRICT_INDEX = os.path.join(ROOT, 'sources', 'district-budget', 'index.csv')
 MINUTES_LAG_DAYS = 60   # minutes are approved at the next meeting and posted after it
 WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -189,7 +195,10 @@ def about_itself(slug):
 CHARTER_URL = 'https://www.lunenburgma.gov/323/Charter-Town-Bylaws'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'boards.json')
 SITE = 'https://lunenburgbudgetproject.org'
-RECENT = 15
+# HOW MANY DATED MEETING ROWS TRAVEL PER BOARD. It has to cover the future ones AND enough
+# history for the page to show its recent list, because the page -- not this script -- now
+# decides which is which. 40 is generous for both: the busiest board posts about 45 a year.
+MEETINGS = 40
 MATCH = 0.5      # share of the shorter motion's words found in the other, above which the two records describe one vote
 
 STOP = {'the', 'a', 'an', 'to', 'of', 'and', 'for', 'on', 'in', 'at', 'as', 'by', 'with', 'that', 'be', 'is', 'it', 'from',
@@ -372,6 +381,22 @@ def build(as_of=None):
         official[ov['board_slug']][ov['meeting_date']] = ov
     for m in rec['meetings']:
         ours[m['board_slug']][m['date']] = m
+    # THE REGISTER: one row per board and date, the single record both this page and
+    # build_meeting_feed.py now read. `reg_dates` is every meeting the town has noticed,
+    # including ones with nothing attached yet.
+    reg, reg_dates = {}, collections.defaultdict(set)
+    for r in read_csv(REGISTER):
+        if not r.get('board_slug') or not r.get('date'):
+            continue
+        reg[(r['board_slug'], r['date'])] = r
+        reg_dates[r['board_slug']].add(r['date'])
+        names.setdefault(r['board_slug'], r.get('board') or r['board_slug'])
+    if not reg:
+        raise SystemExit('meeting-register.csv is empty or unreadable, and every board page '
+                         'now draws its meeting dates from it. Run '
+                         'scripts/build_meeting_register.py. Refusing to publish board pages '
+                         'whose meeting lists would silently fall back to the documents we '
+                         'happen to hold.')
     feed = json.load(open(FEED, encoding='utf-8'))
     notices = json.load(open(NOTICES, encoding='utf-8'))
     previews = {(n['board_slug'], n['date']): n for n in notices.get('upcoming', [])}
@@ -382,35 +407,64 @@ def build(as_of=None):
     OPEN = open_seats() or ({}, None, {})
 
     boards = []
-    for slug in sorted(set(docs) | set(vids)):
+    for slug in sorted(set(docs) | set(vids) | set(reg_dates)):
         if not slug:
             continue
         name = names.get(slug, slug)
-        dates = sorted(set(docs[slug]) | set(vids[slug]) | set(ours[slug]), reverse=True)
-        past = [d for d in dates if d <= as_of]
-        # --- upcoming: the feed's rows for this board, with our preview where one exists
-        upcoming = []
-        for u in feed['upcoming']['meetings']:
-            if u['board_slug'] != slug:
-                continue
-            pv = previews.get((slug, u['date']))
-            upcoming.append(dict(date=u['date'], days_away=u['days_away'], agenda_url=u['agenda_url'],
-                                 hook=pv and pv.get('hook'), time=pv and pv.get('time'), where=pv and pv.get('where'),
-                                 attend=pv and pv.get('attend'), important=pv and pv.get('important'),
-                                 items=pv and pv.get('items'), join=pv and pv.get('join')))
-        # --- recent meetings, one row each
-        recent = []
-        for d in past[:RECENT]:
-            a = docs[slug][d].get('agenda'); mn = docs[slug][d].get('minutes'); v = vids[slug].get(d); o = ours[slug].get(d)
-            recent.append(dict(
+        # --- EVERY KNOWN MEETING, ONE DATED LIST, NOT SPLIT HERE.
+        #
+        # TJ, 25 September 2026: *"i want the site to change even if I forget to deploy
+        # everyday, just based on known meetings and dates already fetched on it"* and
+        # *"they automatically shift from upcoming to recent, based on dates, without a
+        # deploy, and if we get info like minutes, it just 'fills in' with a deploy."*
+        #
+        # THIS USED TO EMIT TWO LISTS SPLIT AGAINST THE BUILD DATE -- `past = [d for d in
+        # dates if d <= as_of]` for `recent`, and the feed's `upcoming` for the rest. So a
+        # meeting did not move as time passed; only a rebuild moved it. The Finance
+        # Committee's 24 September meeting sat in `upcoming` with `days_away: 1` on a payload
+        # built the 23rd, and the page filters upcoming by today's date -- so on the 25th it
+        # was filtered out of one bucket and had never been in the other. It vanished from a
+        # site whose data held it the whole time.
+        #
+        # One list, and the PAGE decides. `fy28/src/lib/meetings.ts` does the comparison
+        # against the reader's own clock, so the shift needs no deploy; new meetings and
+        # newly arrived minutes still need one, which is what a deploy is for.
+        #
+        # AND THE DATES COME FROM THE REGISTER, so a meeting the town noticed with nothing
+        # attached yet is here too -- it is a meeting that happened whether or not anybody
+        # has posted minutes for it.
+        dates = sorted(reg_dates.get(slug, set())
+                       | set(docs[slug]) | set(vids[slug]) | set(ours[slug]), reverse=True)
+        meetings = []
+        for d in dates[:MEETINGS]:
+            a = docs[slug][d].get('agenda') if d in docs[slug] else None
+            mn = docs[slug][d].get('minutes') if d in docs[slug] else None
+            v = vids[slug].get(d)
+            o = ours[slug].get(d)
+            rg = reg.get((slug, d), {})
+            pv = previews.get((slug, d))
+            meetings.append(dict(
                 date=d,
-                agenda_url=a and a['url'], agenda_doc=a and ('/docs/meetings/' + a['path']),
-                minutes_url=mn and mn['url'], minutes_doc=mn and ('/docs/meetings/' + mn['path']),
-                video_url=v and ('https://www.youtube.com/watch?v=' + v['video_id']),
-                transcript=(slug, d) in trans, captions_disabled=(slug, d) in nocap,
+                agenda_url=(a and a['url']) or rg.get('agenda_url') or None,
+                agenda_doc=('/docs/meetings/' + a['path']) if a else
+                           ('/docs/meetings/' + rg['agenda_path']) if rg.get('agenda_path') else None,
+                minutes_url=(mn and mn['url']) or rg.get('minutes_url') or None,
+                minutes_doc=('/docs/meetings/' + mn['path']) if mn else
+                            ('/docs/meetings/' + rg['minutes_path']) if rg.get('minutes_path') else None,
+                video_url=('https://www.youtube.com/watch?v=' + v['video_id']) if v
+                          else ((rg.get('video_urls') or '').split(' ')[0] or None),
+                transcript=((slug, d) in trans) or rg.get('transcript') == '1',
+                captions_disabled=((slug, d) in nocap) or rg.get('captions_disabled') == '1',
                 ours=o and dict(slug=o['slug'], headline=o.get('headline'), digest=o.get('digest'),
                                 votes=o['counts'].get('votes'), reconciled=o.get('has_official_minutes'),
-                                discrepancies=o.get('discrepancies'))))
+                                discrepancies=o.get('discrepancies')),
+                # The preview, where write_agenda_preview.py wrote one. It is only ever
+                # available BEFORE a meeting, so it travels on the row rather than in a
+                # separate `upcoming` list -- the row is the meeting, whenever it is read.
+                hook=pv and pv.get('hook'), time=pv and pv.get('time'),
+                where=pv and pv.get('where'), attend=pv and pv.get('attend'),
+                important=pv and pv.get('important'), items=pv and pv.get('items'),
+                join=pv and pv.get('join')))
         # --- every vote, from BOTH records, joined per meeting and deduplicated.
         #
         # TJ, 17 September 2026: "I assumed votes would be a combination of the transcript
@@ -536,8 +590,14 @@ def build(as_of=None):
                         transcripts=sum(1 for d in vids[slug] if (slug, d) in trans),
                         captions_disabled=sum(1 for d in vids[slug] if (slug, d) in nocap),
                         our_minutes=len(ours[slug]), official_votes_read=len(official[slug]), votes=len(votes), vote_conflicts=conflicts,
-                        first=min(dates) if dates else None, last=max(past) if past else None),
-            upcoming=upcoming, recent=recent, votes=votes, time_by_tag=time_by_tag, time_meetings=time_meetings, time_span_s=span,
+                        # `last` is the newest meeting that has actually HAPPENED, which is
+                        # still a build-time statement -- it is a count of the record, not a
+                        # thing a reader sees shift. `dates` now includes the future, so it
+                        # is filtered here rather than taken from a `past` list that no
+                        # longer exists.
+                        first=min(dates) if dates else None,
+                        last=max([d for d in dates if d <= as_of], default=None)),
+            meetings=meetings, votes=votes, time_by_tag=time_by_tag, time_meetings=time_meetings, time_span_s=span,
             calendar=cal, calendar_cycles=[fy for fy in fys],
             urls=dict(minutes_text='/minutes/%s.txt' % slug, what_was_said='/meeting-minutes', this_week='/this-week#m-%s' % slug)))
     # The three in their fixed order; every other board alphabetically, so a resident can find theirs.
@@ -569,7 +629,7 @@ def main():
         fh.write('\n')
     b = data['boards']
     print('%s: %d boards; %s' % (os.path.relpath(OUT, ROOT), len(b),
-          '; '.join('%s %d votes, %d recent' % (x['slug'], x['counts']['votes'], len(x['recent'])) for x in b[:3])))
+          '; '.join('%s %d votes, %d meetings' % (x['slug'], x['counts']['votes'], len(x['meetings'])) for x in b[:3])))
     return 0
 
 

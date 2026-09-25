@@ -1,4 +1,5 @@
 import { useReport } from './report'
+import { splitMeetings, todayIso } from '../lib/meetings'
 
 /** RECENT MEETINGS: what we have for each, whatever that is.
  *
@@ -24,7 +25,7 @@ type Recent = {
   transcript?: boolean; captions_disabled?: boolean
   ours?: { slug: string; headline?: string; votes?: number } | null
 }
-type Board = { slug: string; name: string; the_three?: boolean; recent: Recent[] }
+type Board = { slug: string; name: string; the_three?: boolean; meetings: Recent[] }
 type Boards = { as_of: string; boards: Board[] }
 
 const fmt = (iso: string) => {
@@ -42,13 +43,20 @@ function pending(r: Recent): string {
 export function RecentMeetings({ days = 7, min = 3, compact = false }: { days?: number; min?: number; compact?: boolean }) {
   const { d } = useReport<Boards>('boards.json')
   if (!d) return null
+  // WHICH MEETINGS HAVE HAPPENED IS DECIDED HERE, from the reader's clock, over the one
+  // dated list the payload carries. This used to read a pre-split `recent` that the
+  // generator built against the BUILD date -- so a meeting held after the last deploy was
+  // in neither list and appeared nowhere. See ../lib/meetings.ts.
+  //
+  // `toISOString()` IS GONE FROM THE CUTOFF TOO: it converts to UTC first, which rolls the
+  // date forward after 8pm for a reader in Lunenburg and would drop a meeting held that
+  // evening out of a 7-day window.
   const today = new Date(); today.setHours(0, 0, 0, 0)
   const cutoff = new Date(today); cutoff.setDate(cutoff.getDate() - days)
-  const iso = (x: Date) => x.toISOString().slice(0, 10)
   const all = d.boards.filter(b => b.the_three)
-    .flatMap(b => b.recent.filter(r => r.date <= iso(today)).map(r => ({ board: b.name, slug: b.slug, r })))
+    .flatMap(b => splitMeetings(b.meetings).past.map(r => ({ board: b.name, slug: b.slug, r })))
     .sort((a, b) => b.r.date.localeCompare(a.r.date))
-  const inWindow = all.filter(x => x.r.date >= iso(cutoff))
+  const inWindow = all.filter(x => x.r.date >= todayIso(cutoff))
   const rows = inWindow.length >= min ? inWindow : all.slice(0, min)
   if (!rows.length) return null
   const link = 'underline'

@@ -3,7 +3,8 @@ import { boardSlugFromPath, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
 import { BoardGoals } from '../components/BoardGoals'
 import { Subscribe, useFeedLink } from '../components/Subscribe'
-import { JoinLinks, daysFromToday, todayIso, type Join } from '../components/BoardsThisWeek'
+import { JoinLinks, type Join } from '../components/BoardsThisWeek'
+import { daysAway as daysFromToday, splitMeetings } from '../lib/meetings'
 
 const TAB: Tab = 'boards'
 const DATA = '/data/boards.json'
@@ -18,9 +19,25 @@ const DATA = '/data/boards.json'
  *  three budget boards come first and carry the most; every other board gets the same
  *  page with whatever the town has posted for it. */
 
-type Upcoming = { date: string; days_away: number; agenda_url: string; join?: Join | null; hook?: string | null; time?: string | null; where?: string | null; attend?: string | null; important?: unknown; items?: { agenda_line: string; why_it_matters?: string; important?: boolean }[] | null }
+/* ONE TYPE FOR A MEETING, past or to come. There were two -- `Upcoming` and `Recent` --
+ * because the generator split them against the BUILD date, and a meeting could therefore
+ * belong to neither: the Finance Committee's 24 September meeting was `upcoming` in a
+ * payload built the 23rd and filtered out of it on the 25th, while never being in `recent`.
+ * The payload now carries one dated list and ../lib/meetings.ts decides which is which from
+ * the reader's clock, so the shift happens without a deploy. */
+type Meeting = {
+  date: string
+  agenda_url?: string | null; agenda_doc?: string | null
+  minutes_url?: string | null; minutes_doc?: string | null
+  video_url?: string | null; transcript: boolean; captions_disabled: boolean
+  ours?: { slug: string; headline?: string | null; digest?: string | null; votes?: number; reconciled?: boolean; discrepancies?: number } | null
+  // Written before the meeting by write_agenda_preview.py, so only ever present on one that
+  // has not happened yet -- carried on the row rather than in a separate list.
+  join?: Join | null; hook?: string | null; time?: string | null; where?: string | null
+  attend?: string | null; important?: unknown
+  items?: { agenda_line: string; why_it_matters?: string; important?: boolean }[] | null
+}
 type Score = { fy: number; minutes: { meetings: number; have: number }; recordings: { meetings: number; have: number } }
-type Recent = { date: string; agenda_url?: string | null; agenda_doc?: string | null; minutes_url?: string | null; minutes_doc?: string | null; video_url?: string | null; transcript: boolean; captions_disabled: boolean; ours?: { slug: string; headline?: string | null; digest?: string | null; votes?: number; reconciled?: boolean; discrepancies?: number } | null }
 type Vote = { date: string; t?: number | null; motion?: string; outcome?: string; procedural: boolean; moved_by?: string | null; page: string | null; video_url: string | null
   source: 'minutes' | 'recording' | 'both'; quote?: string | null; conflict?: string | null; minutes_doc?: string | null; minutes_url?: string | null }
 type Cal = { key: string; label: string; cycles: { fy: number; dates: string[] }[]; earliest: string; latest: string; typical_first: string; typical_last: string; meetings: number }
@@ -43,7 +60,7 @@ type Board = {
   } | null
   join?: { weekday?: string; weekday_share?: number; meetings_sampled?: number; time?: string | null; place?: string | null; zoom?: boolean; cable?: boolean; agendas_read?: number; open_seats?: number; open_seats_fy?: string; open_seats_filled_by?: string } | null
   counts: { agendas: number; minutes: number; recordings: number; transcripts: number; captions_disabled: number; our_minutes: number; official_votes_read: number; votes: number; vote_conflicts: number; first: string | null; last: string | null }
-  upcoming: Upcoming[]; recent: Recent[]; votes: Vote[]
+  meetings: Meeting[]; votes: Vote[]
   time_by_tag: { tag: string; label: string; seconds: number; share: number | null }[]; time_meetings: number; time_span_s: number
   calendar: Cal[]; calendar_cycles: number[]
   urls: { minutes_text: string; what_was_said: string; this_week: string }
@@ -82,7 +99,8 @@ function Index({ d }: { d: Payload }) {
     <a href={`/boards/${b.slug}`} className="card block p-4 transition-opacity hover:opacity-90">
       <p className="text-[15px] font-bold leading-snug" style={{ color: 'var(--series-cost)' }}>{b.name} &rarr;</p>
       <p className="text-xs mt-1.5 tnum" style={{ color: 'var(--text-secondary)' }}>
-        {b.upcoming.length ? <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>next {mmdd(b.upcoming[0].date)} · </span> : null}
+        {splitMeetings(b.meetings).upcoming[0]
+          ? <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>next {mmdd(splitMeetings(b.meetings).upcoming[0].date)} · </span> : null}
         {n0(b.counts.agendas)} agendas · {n0(b.counts.minutes)} minutes · {n0(b.counts.recordings)} recordings{b.counts.our_minutes ? ` · ${n0(b.counts.our_minutes)} of ours, ${n0(b.counts.votes)} votes` : ''}
       </p>
     </a>
@@ -202,7 +220,9 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
   // (build_boards.how_to_join), not the board's boilerplate; the rebroadcast schedule is
   // context and stays in the infobox below.
   const j = b.join
-  const next = b.upcoming[0]
+  // ONE SPLIT, DECIDED NOW, used by both sections below. Not two lists handed over by the
+  // generator -- see ../lib/meetings.ts for the meeting that fell between them.
+  const next = splitMeetings(b.meetings).upcoming[0]
   // AN OPEN SEAT GOES ABOVE EVERYTHING ELSE ON THE PAGE. TJ, 22 September 2026: "on each
   // board page, if it has open spot, show that 'One Open Board Seat Available'". It is the
   // only thing here a reader can act on today, and it is perishable -- so it says which
@@ -315,6 +335,10 @@ function Chip({ what, sc, title }: { what: 'minutes' | 'recordings'; sc: { this:
 }
 
 function BoardPage({ b, d }: { b: Board; d: Payload }) {
+  // The same one split, decided from the reader's clock. `Sidebar` computes its own for the
+  // "next meeting" line; both call the one function in ../lib/meetings.ts rather than each
+  // deciding what "today" means.
+  const { upcoming, past } = splitMeetings(b.meetings)
   const [open, setOpen] = useState(false)
   const [allVotes, setAllVotes] = useState(false)
   const substantive = b.votes.filter(v => !v.procedural)
@@ -415,9 +439,9 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
 
       {/* ---------------------------------------------------------------- upcoming */}
       <H2 id="up">Upcoming meetings</H2>
-      {b.upcoming.length === 0 ? (
-        <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>No agenda posted for a future date, as of {d.as_of}. Agendas usually appear two days before a meeting.</p>
-      ) : b.upcoming.filter(u => u.date >= todayIso()).map(u => (
+      {upcoming.length === 0 ? (
+        <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>Nothing on the calendar for a future date. The site was last updated {d.as_of}; a meeting noticed since then appears when it is next built, and one that has already happened moves to <a className="underline" href="#recent">recent meetings</a> by itself.</p>
+      ) : upcoming.map(u => (
         <div key={u.date} className="card p-4 mt-3">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <span className="font-bold">{dateText(u.date)}</span>
@@ -435,7 +459,12 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
                 <li key={i} style={{ fontWeight: it.important ? 600 : 400 }}>{it.agenda_line}{it.why_it_matters ? <span style={{ color: 'var(--text-muted)' }}> — {it.why_it_matters}</span> : null}</li>))}</ul>
             </details>
           )}
-          <a className="text-xs underline mt-2 inline-block" style={{ color: 'var(--text-muted)' }} href={u.agenda_url}>the posted agenda</a>
+          {/* A MEETING CAN BE KNOWN BEFORE ITS AGENDA IS POSTED, now that the list comes
+              from the meeting register rather than from the documents we hold -- so the
+              link is conditional where it used to be guaranteed. */}
+          {u.agenda_url
+            ? <a className="text-xs underline mt-2 inline-block" style={{ color: 'var(--text-muted)' }} href={u.agenda_url}>the posted agenda</a>
+            : <span className="text-xs mt-2 inline-block" style={{ color: 'var(--text-muted)' }}>No agenda posted yet.</span>}
         </div>
       ))}
 
@@ -447,7 +476,7 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
             {/* COLUMNS IN THE ORDER WE WANT THEM USED -- our minutes, the recording, the
                 agenda, the town's minutes (TJ, 17 September 2026). */}
             <th className="text-left py-1.5 pr-3">date</th><th className="text-left py-1.5 pr-3">our minutes</th><th className="text-left py-1.5 pr-3">recording</th><th className="text-left py-1.5 pr-3">agenda</th><th className="text-left py-1.5">official minutes</th></tr></thead>
-          <tbody>{b.recent.map(r => (
+          <tbody>{past.slice(0, 15).map(r => (
             <tr key={r.date} style={{ borderTop: '1px solid var(--grid)' }}>
               <td className="py-2 pr-3 tnum font-semibold whitespace-nowrap align-top">{mmdd(r.date)} {r.date.slice(0, 4)}</td>
               <td className="py-2 pr-3 align-top">{r.ours ? <><a className="font-semibold" href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{r.ours.headline || 'our minutes'}</a><span className="text-xs" style={{ color: 'var(--text-muted)' }}> · {r.ours.votes ?? 0} votes{r.ours.reconciled ? (r.ours.discrepancies ? ` · ${r.ours.discrepancies} difference${r.ours.discrepancies === 1 ? '' : 's'} from the official minutes` : ' · agrees with the official minutes') : ''}</span></> : r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}>transcript held; minutes not yet written</span> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
@@ -457,7 +486,7 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
             </tr>))}</tbody>
         </table>
       </div>
-      <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>The last {b.recent.length} dates the town posted anything for this board. For a program, every agenda and set of minutes as one text file: <a className="underline" href={b.urls.minutes_text}>{b.urls.minutes_text}</a>.</p>
+      <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>The last {Math.min(past.length, 15)} dates this board met, by today&rsquo;s date rather than the day the site was built &mdash; so a meeting moves here on its own. For a program, every agenda and set of minutes as one text file: <a className="underline" href={b.urls.minutes_text}>{b.urls.minutes_text}</a>.</p>
 
       {/* ------------------------------------------------------------------- votes */}
       {b.votes.length > 0 && (

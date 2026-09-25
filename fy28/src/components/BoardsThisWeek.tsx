@@ -61,24 +61,20 @@ export const THE_THREE: [string, string][] = [
  *  need to show the day of the week and the date)." The payload carries the day it was
  *  built; a page read two days later must not call that day "today". So 'today' is the
  *  browser's clock, and the label is "Today, Tue Sep 15" -- never a bare "Tomorrow". */
-export function todayIso() {
-  const n = new Date()
-  return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`
-}
-export function daysFromToday(iso: string) {
-  const [y, m, d] = iso.split('-').map(Number)
-  const n = new Date()
-  return Math.round((new Date(y, m - 1, d).getTime() - new Date(n.getFullYear(), n.getMonth(), n.getDate()).getTime()) / 86400000)
-}
-export function dayLabel(iso: string, _asOf?: string) {
-  const [y, m, d] = iso.split('-').map(Number)
-  const date = new Date(y, m - 1, d)
-  const diff = daysFromToday(iso)
-  const full = date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
-  if (diff === 0) return `Today · ${full}`
-  if (diff === 1) return `Tomorrow · ${full}`
-  return full
-}
+// THE DATE LOGIC LIVES IN ../lib/meetings.ts, and these three lines are the whole reason:
+// there were two copies of `todayIso` in this codebase before 25 September 2026 -- this one
+// and a third about to be written -- and seven components deciding for themselves whether a
+// meeting had happened. One comparison, one home, re-exported here only so the pages that
+// already import from this file keep working.
+// IMPORTED for this file's own use AND re-exported for the pages that already import these
+// from here. A bare `export ... from` does NOT bring the names into this module's scope --
+// it only forwards them -- so the first attempt at this compiled to `Cannot find name
+// 'todayIso'` in six places inside this very file.
+import { todayIso, dayLabel, daysAway } from '../lib/meetings'
+// `daysFromToday` is what three pages already import from here, so the old name is kept as
+// the exported one while the library owns the single implementation.
+const daysFromToday = daysAway
+export { todayIso, dayLabel, daysFromToday }
 
 function Chip({ children, tone }: { children: React.ReactNode; tone?: 'strong' }) {
   return (
