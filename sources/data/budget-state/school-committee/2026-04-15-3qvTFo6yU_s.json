@@ -15,30 +15,41 @@
     "fiscal_year": 2027,
     "kind": "override",
     "scope": "both",
-    "statement": "Superintendent addressed the upcoming town budget and Proposition 2 1/2 override votes, urged unity, and invited residents to a community information night on the budget",
+    "statement": "Superintendent addressed the upcoming town budget and the Proposition 2 1/2 override votes, framing school and municipal budgets as one town effort.",
     "status": "announced",
     "t": 348,
     "who": "the superintendent"
    },
    {
-    "amount_as_heard": "$160 per pupil more",
+    "amount_as_heard": "$160 per person per kid more",
     "fiscal_year": 2027,
     "kind": "state_aid",
     "scope": "school",
-    "statement": "the state House budget released today includes about $160 more per pupil in Chapter 70 aid",
+    "statement": "The state House budget released today includes $160 more per pupil (Chapter 70) than previously expected.",
     "status": "announced",
     "t": 6010,
-    "who": "the chair"
+    "who": "a member"
    },
    {
     "amount_as_heard": null,
     "fiscal_year": 2027,
     "kind": "state_aid",
     "scope": "school",
-    "statement": "the House budget also includes a little more money for the special education circuit breaker, exact amount not yet known pending the cherry sheet",
+    "statement": "The House budget also includes a little more money for the special education circuit breaker, exact amount not yet known pending the cherry sheet.",
     "status": "announced",
-    "t": 6020,
-    "who": "the chair"
+    "t": 6010,
+    "who": "a member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "expanding unified sports program offerings",
+    "condition": "if we don't get an override (as heard: 'if we don't get an overhead')",
+    "fiscal_year": 2027,
+    "prediction": "may not have coaches, time, logistics, fields, and transportation needed to expand unified sports offerings",
+    "scope": "school",
+    "t": 2312,
+    "who": "a member"
    }
   ]
  },
@@ -46,9 +57,10 @@
  "video_url": "https://www.youtube.com/watch?v=3qvTFo6yU_s",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T18:04:14Z",
+  "at": "2026-09-25T11:55:51Z",
   "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.30668179999999995,
-  "model": "sonnet"
+  "cost_usd": 0.34905379999999997,
+  "model": "sonnet",
+  "schema": 2
  }
 }
