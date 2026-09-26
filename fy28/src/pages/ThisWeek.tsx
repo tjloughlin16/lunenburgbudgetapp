@@ -1,6 +1,7 @@
 import type { Tab } from '../routes'
 import { ReportShell, useReport, H2, MoreReports } from '../components/report'
-import { BoardsThisWeek, THE_THREE, daysFromToday, todayIso } from '../components/BoardsThisWeek'
+import { BoardsThisWeek, THE_THREE } from '../components/BoardsThisWeek'
+import { daysAway as daysFromToday, meetingBody, todayIso } from '../lib/meetings'
 
 const TAB: Tab = 'thisweek'
 const FEED = 'meeting-feed.json'
@@ -20,7 +21,7 @@ const NEW = 'whats-new.json'
  *  Rule 7a: the thing first. The next seven days, then what was just posted, then our
  *  minutes of the recordings, then the caveats. */
 
-type Upcoming = { agenda_url: string; board: string; board_slug: string; date: string; days_away: number; file_id: string }
+type Upcoming = { agenda_url: string; board: string; board_slug: string; date: string; days_away: number; file_id: string; body_as_printed?: string | null }
 type Announced = { board: string; board_slug: string; first_seen: string; kind: string; meeting_date: string; url: string; days_after_meeting_upper_bound: number | null }
 type Awaiting = { agenda_url: string; board: string; board_slug: string; date: string; days_since_meeting: number }
 type Feed = {
@@ -154,7 +155,7 @@ export function ThisWeek() {
       })()}
       {later.length > 0 && (
         <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>
-          And within {f.upcoming.horizon_days} days: {later.map((m, i) => <span key={m.file_id}>{i ? '; ' : ''}{m.board} <a className="underline" href={m.agenda_url} target="_blank" rel="noreferrer">{longDate(m.date)}</a></span>)}.
+          And within {f.upcoming.horizon_days} days: {later.map((m, i) => <span key={m.file_id}>{i ? '; ' : ''}{meetingBody(m.board, m.body_as_printed)} <a className="underline" href={m.agenda_url} target="_blank" rel="noreferrer">{longDate(m.date)}</a></span>)}.
         </p>
       )}
 

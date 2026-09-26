@@ -90,9 +90,22 @@ def build():
                          'nothing looks exactly like a town that publishes no minutes -- '
                          'refusing to write.')
 
+    # WHAT THE AGENDA CALLS THE BODY, where that is not the board it is filed under. The
+    # town files its School Committee Policy Sub-Committee under `School Committee`, so this
+    # feed announced one of the three budget boards as meeting on a morning when three
+    # people met in the superintendent's office. The document names itself; the folder is
+    # the town's filing decision. See build_meeting_register.body_as_printed.
+    printed = {}
+    if os.path.exists(REGISTER):
+        with open(REGISTER, encoding='utf-8', errors='replace') as fh:
+            for r in csv.DictReader(fh):
+                if r.get('body_as_printed'):
+                    printed[(r['board_slug'], r['date'])] = r['body_as_printed']
+
     upcoming = sorted(
         ({'board': r['board'], 'board_slug': r['board_slug'], 'date': r['date'],
           'days_away': days(r['date'], as_of), 'agenda_url': r['url'],
+          'body_as_printed': printed.get((r['board_slug'], r['date']), ''),
           'file_id': r['file_id']}
          for r in agendas
          if r['date'] >= as_of and days(r['date'], as_of) <= UPCOMING_HORIZON_DAYS),

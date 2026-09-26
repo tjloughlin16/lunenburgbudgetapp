@@ -95,3 +95,25 @@ export function whenPhrase(date: string, now: Date = new Date()): string {
   if (n > 1) return `in ${n} days`
   return `${-n} days ago`
 }
+
+
+/** What to call the body that is actually meeting.
+ *
+ *  TJ, 25 September 2026: *"Quick major bug. School committee shows a meeting for today
+ *  which is wrong."* There was a meeting; its agenda read `SCHOOL COMMITTEE POLICY
+ *  SUB-COMMITTEE` and three people attended. The town files those under its School
+ *  Committee category, so the front page announced one of the three budget boards.
+ *
+ *  THE DOCUMENT OUTRANKS THE FOLDER. Where the agenda names a sub-committee of the board it
+ *  is filed under, that printed name is what a reader is shown -- title-cased, because the
+ *  notices are typed in full capitals and a shouted line in a list of meetings reads as an
+ *  error rather than as emphasis. The board's own name stays available as `board` for the
+ *  link and the grouping; only the label changes.
+ */
+export function meetingBody(board: string, printed?: string | null): string {
+  if (!printed) return board
+  const t = printed.trim()
+  const shouty = t === t.toUpperCase()
+  if (!shouty) return t
+  return t.toLowerCase().replace(/\b([a-z])/g, (_m, c: string) => c.toUpperCase())
+}

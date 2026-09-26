@@ -4,7 +4,7 @@ import { Body, H2, ReportShell, useReport } from '../components/report'
 import { BoardGoals } from '../components/BoardGoals'
 import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
-import { daysAway as daysFromToday, splitMeetings } from '../lib/meetings'
+import { daysAway as daysFromToday, meetingBody, splitMeetings } from '../lib/meetings'
 
 const TAB: Tab = 'boards'
 const DATA = '/data/boards.json'
@@ -33,6 +33,7 @@ type Meeting = {
   ours?: { slug: string; headline?: string | null; digest?: string | null; votes?: number; reconciled?: boolean; discrepancies?: number } | null
   // Written before the meeting by write_agenda_preview.py, so only ever present on one that
   // has not happened yet -- carried on the row rather than in a separate list.
+  body_as_printed?: string | null
   join?: Join | null; hook?: string | null; time?: string | null; where?: string | null
   attend?: string | null; important?: unknown
   items?: { agenda_line: string; why_it_matters?: string; important?: boolean }[] | null
@@ -445,6 +446,12 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
         <div key={u.date} className="card p-4 mt-3">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <span className="font-bold">{dateText(u.date)}</span>
+            {/* The body that is actually meeting, when the agenda names a sub-committee of
+                this board. The page is the board's, so the name is not repeated when they
+                are the same. */}
+            {u.body_as_printed
+              ? <span className="text-[13px] font-semibold" style={{ color: 'var(--series-cost)' }}>{meetingBody(b.name, u.body_as_printed)}</span>
+              : null}
             {u.time && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.time}</span>}
             {u.where && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.where}</span>}
             {u.attend && <span className="text-xs px-2 py-0.5 rounded" style={{ background: 'var(--surface-3)' }}>{u.attend}</span>}

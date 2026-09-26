@@ -14,7 +14,7 @@ import { useReport } from './report'
  *  is ON the agenda and predicts nothing. A board with no meeting in the window says so,
  *  which is the fast answer the row exists to give. */
 
-type Upcoming = { agenda_url: string; board: string; board_slug: string; date: string; days_away: number; file_id: string }
+type Upcoming = { agenda_url: string; board: string; board_slug: string; date: string; days_away: number; file_id: string; body_as_printed?: string | null }
 type Feed = { as_of: string; upcoming: { horizon_days: number; meetings: Upcoming[] } }
 type PreviewItem = { agenda_line: string; why_it_matters: string; kind: string; vote_expected?: boolean; important?: boolean }
 export type Join = { zoom?: string | null; facebook?: string | null; youtube?: string | null; meeting_id?: string | null; passcode?: string | null; phone?: string | null; facebook_live?: string | null; facebook_live_url?: string | null }
@@ -70,7 +70,7 @@ export const THE_THREE: [string, string][] = [
 // from here. A bare `export ... from` does NOT bring the names into this module's scope --
 // it only forwards them -- so the first attempt at this compiled to `Cannot find name
 // 'todayIso'` in six places inside this very file.
-import { todayIso, dayLabel, daysAway } from '../lib/meetings'
+import { todayIso, dayLabel, daysAway, meetingBody } from '../lib/meetings'
 // `daysFromToday` is what three pages already import from here, so the old name is kept as
 // the exported one while the library owns the single implementation.
 const daysFromToday = daysAway
@@ -149,7 +149,7 @@ export function BoardsStrip({ days = 7 }: { days?: number }) {
               style={{ color: 'var(--series-cost)' }}>
               {dayLabel(m.date, f.as_of)}{p?.time && p.time !== 'not stated' ? ` \u00b7 ${p.time}` : ''}
             </span>
-            <span className="block text-[15px] font-bold leading-tight mt-0.5">{name}</span>
+            <span className="block text-[15px] font-bold leading-tight mt-0.5">{meetingBody(name, m.body_as_printed)}</span>
             {(p?.hook || p?.one_line) && (
               <span className="block text-[13px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
                 {p!.hook || p!.one_line}
@@ -219,8 +219,13 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
                 {/* The board's own page, from the expanded card only: the compact card is
                     itself a link, and an anchor inside an anchor is invalid HTML. */}
-                {compact ? <span className="text-[13px] font-semibold w-36 shrink-0">{name}</span>
-                  : <a href={`/boards/${slug}`} className="text-[13px] font-semibold w-36 shrink-0 underline decoration-dotted" title={`Everything about the ${name}`}>{name}</a>}
+                {/* THE BODY THAT IS ACTUALLY MEETING. Where the agenda names a
+                    sub-committee of this board, that is what is shown -- the town files
+                    those under the parent board, and announcing the parent told a reader
+                    the School Committee was meeting when three people were. The link still
+                    goes to the board's page, which is where the sub-committee belongs. */}
+                {compact ? <span className="text-[13px] font-semibold w-36 shrink-0">{meetingBody(name, m.body_as_printed)}</span>
+                  : <a href={`/boards/${slug}`} className="text-[13px] font-semibold w-36 shrink-0 underline decoration-dotted" title={`Everything about the ${name}`}>{meetingBody(name, m.body_as_printed)}</a>}
                 <span className="text-[13px] font-bold" style={{ color: 'var(--series-cost)' }}>{dayLabel(m.date, f.as_of)}</span>
                 {p?.time && p.time !== 'not stated' && <Chip tone="strong">{p.time}</Chip>}
                 {p?.where && p.where !== 'not stated' && <Chip>{p.where}</Chip>}

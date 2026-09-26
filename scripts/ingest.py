@@ -64,6 +64,7 @@ file does not change and that is a defect to look at rather than a revision to r
 """
 import argparse
 import csv
+import datetime
 import hashlib
 import io
 import os
@@ -76,6 +77,13 @@ import archive_storage as A  # noqa: E402
 ROOT = os.path.dirname(HERE)
 STAGE = os.path.join(ROOT, 'build', 'ingest')
 PENDING = os.path.join(ROOT, 'sources', 'data', 'ingest-pending.csv')
+# THE RECORD OF WHAT HAS BEEN PUSHED AND READ BACK. `check_archive_backed_up.py` reads this
+# file and nothing else, so a document secured here must be written into it -- the first run
+# of this module filed a document into sources/ and into the manifest and the gate still
+# reported it as held in one place, correctly, because this row was missing. Two halves of
+# one day's work that did not agree about where the evidence lives.
+PUSH_STATE = os.path.join(ROOT, 'sources', 'data', 'archive-push-state.csv')
+PUSH_FIELDS = ['key', 'bytes', 'sha256', 'verified_at']
 FIELDS = ['key', 'bytes', 'sha256', 'upstream', 'staged_at', 'state', 'note']
 
 # WHAT A REAL DOCUMENT LOOKS LIKE AT ITS FIRST BYTES. Moved here out of
@@ -200,12 +208,26 @@ def secure(quiet=False):
             failed.append(r)
             continue
         try:
-            A.put_object(key, sp)
-            back = hashlib.sha256()
-            A.get_object(key, sink=back)
-            if back.hexdigest() != r['sha256']:
+            try:
+                A.put_object(key, sp)
+            except Exception as exc:                   # noqa: BLE001
+                # 409 MEANS THE OBJECT IS ALREADY THERE AND LOCKED, which is not a failure
+                # to be retried -- it is the bucket enforcing exactly what it promises. It
+                # happens whenever a previous attempt uploaded the bytes and then died
+                # before recording it, which is precisely the case this register exists for.
+                # The right move is to verify by READING IT BACK, not to push again: a
+                # re-PUT can only ever be refused.
+                if '409' not in str(exc) and 'locked' not in str(exc).lower():
+                    raise
+            # `get_object` returns (sha256, md5, bytes) and hashes as it streams -- it does
+            # NOT take a hashlib object as `sink`, which wants `.write()`. Passing one was a
+            # real bug in this file's first run: the PUT had already succeeded, the read-back
+            # raised AttributeError, and a document that was safely in the bucket was
+            # recorded as push-failed.
+            got, _md5, _n = A.get_object(key)
+            if got != r['sha256']:
                 r['state'] = 'push-failed'
-                r['note'] = 'read-back does not match what was sent'
+                r['note'] = 'read-back %s does not match what was sent %s' % (got[:12], r['sha256'][:12])
                 failed.append(r)
                 continue
         except Exception as exc:                       # noqa: BLE001 -- reported, not raised
@@ -222,6 +244,23 @@ def secure(quiet=False):
         done.append(r)
     if done:
         A.write_manifest(sorted(manifest.values(), key=lambda r: r['key']))
+        # APPEND, NEVER REWRITE: this file is a cumulative record of verified pushes and
+        # several things write it (sync_archive.py --push as well as this), so it is read
+        # immediately before writing and merged by key.
+        have = {}
+        if os.path.exists(PUSH_STATE):
+            with open(PUSH_STATE, encoding='utf-8') as fh:
+                have = {r['key']: r for r in csv.DictReader(fh) if r.get('key')}
+        now = datetime.datetime.now().isoformat(timespec='seconds')
+        for r in done:
+            have[r['key']] = {'key': r['key'], 'bytes': r['bytes'],
+                              'sha256': r['sha256'], 'verified_at': now}
+        buf = io.StringIO()
+        w = csv.DictWriter(buf, fieldnames=PUSH_FIELDS, lineterminator='\n')
+        w.writeheader()
+        for k in sorted(have):
+            w.writerow({c: have[k].get(c, '') for c in PUSH_FIELDS})
+        open(PUSH_STATE, 'w', encoding='utf-8', newline='').write(buf.getvalue())
     _write([r for r in rows if r['key'] not in {d['key'] for d in done}])
     if not quiet:
         print('secured %d, failed %d' % (len(done), len(failed)))

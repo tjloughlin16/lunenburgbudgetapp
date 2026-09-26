@@ -445,6 +445,9 @@ def build(as_of=None):
             pv = previews.get((slug, d))
             meetings.append(dict(
                 date=d,
+                # What the agenda calls the body, where that is not the board it is filed
+                # under -- a sub-committee of it. See build_meeting_register.body_as_printed.
+                body_as_printed=rg.get('body_as_printed') or None,
                 agenda_url=(a and a['url']) or rg.get('agenda_url') or None,
                 agenda_doc=('/docs/meetings/' + a['path']) if a else
                            ('/docs/meetings/' + rg['agenda_path']) if rg.get('agenda_path') else None,

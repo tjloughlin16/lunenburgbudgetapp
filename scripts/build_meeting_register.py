@@ -65,6 +65,7 @@ COLS = ['board', 'board_slug', 'date', 'agenda', 'minutes', 'searchable_docs',
         # it. That record knows which artifacts have been produced." Every artifact we hold
         # for the meeting, by its address, so a page joins THIS and never re-derives the
         # meeting from five sources. Empty means we do not hold it.
+        'body_as_printed',
         'agenda_path', 'agenda_url', 'agenda_first_seen',
         'minutes_path', 'minutes_url', 'minutes_first_seen', 'minutes_lag_upper_bound', 'minutes_ocr',
         'video_urls', 'video_uploaded', 'video_first_seen', 'captions_disabled',
@@ -250,6 +251,57 @@ def load_artifacts():
     return ev, vev, vmeta, nocap, tr, ours, ov
 
 
+SUBCOMMITTEE = re.compile(
+    r"([A-Z][A-Za-z &/'\-]{6,70}?(?:SUB-?COMMITTEE|Sub-?[Cc]ommittee))")
+
+
+def _norm(s):
+    return re.sub(r'[^a-z]', '', (s or '').lower())
+
+
+def body_as_printed(agenda_path, board=None, _cache={}):
+    """The body the agenda's OWN notice names, when that is not the board it is filed under.
+
+    TJ, 25 September 2026: *"Quick major bug. School committee shows a meeting for today
+    which is wrong."*
+
+    There WAS a meeting that day. Its agenda reads `SCHOOL COMMITTEE POLICY SUB-COMMITTEE
+    MEETING ... Friday, September 25, 2026, 9:30 a.m.` and lists three people. The town
+    files it in its `School Committee` AgendaCenter category -- category 24, checked -- so
+    this project mirrored the filing faithfully and the front page told a resident that one
+    of the three budget boards was meeting that morning. It was not.
+
+    THE DOCUMENT OUTRANKS THE FOLDER IT IS FILED IN. The category is the town's filing
+    decision; the notice is the body naming itself, and rule 13 says quote the source rather
+    than our rendering of it. So the register carries the printed name where the two differ,
+    and every page that shows a meeting can say which body is actually meeting.
+
+    IT IS ONLY SET WHEN THE PRINTED NAME CONTAINS THE BOARD'S OWN NAME AND IS LONGER. That
+    keeps it to the real case -- a sub-committee OF the board it is filed under -- and
+    leaves alone a body whose own name simply contains the word, like the Stormwater Task
+    Force, where the folder and the notice already agree. Across the whole archive it
+    matches 41 documents on four boards, 28 of them the School Committee's.
+    """
+    if not agenda_path:
+        return ''
+    if agenda_path in _cache:
+        return _cache[agenda_path]
+    txt = os.path.join(ROOT, 'sources', 'meetings', 'text',
+                       os.path.splitext(agenda_path)[0] + '.txt')
+    out = ''
+    if os.path.exists(txt):
+        head = open(txt, encoding='utf-8', errors='replace').read(900)
+        m = SUBCOMMITTEE.search(head)
+        if m:
+            printed = re.sub(r'\s+', ' ', m.group(1)).strip()
+            slug = agenda_path.split('/')[0]
+            name = board or slug.replace('-', ' ')
+            if _norm(name) and _norm(name) in _norm(printed) and _norm(printed) != _norm(name):
+                out = printed
+    _cache[agenda_path] = out
+    return out
+
+
 def build():
     docs, names = load_documents()
     vids, nofolder, nodate = load_videos()
@@ -309,6 +361,8 @@ def build():
             # what stops the second being read as the first.
             'evidence': ('document+video' if have_doc and v
                          else 'document' if have_doc else 'video only'),
+            'body_as_printed': body_as_printed(d['paths'].get('agenda', ''),
+                                               names.get(slug, slug)),
             'agenda_path': d['paths'].get('agenda', ''), 'agenda_url': d['urls'].get('agenda', ''), 'agenda_first_seen': ea.get('first_seen', ''),
             'minutes_path': d['paths'].get('minutes', ''), 'minutes_url': d['urls'].get('minutes', ''), 'minutes_first_seen': em.get('first_seen', ''),
             'minutes_lag_upper_bound': em.get('days_after_meeting_upper_bound', ''), 'minutes_ocr': d['ocr'],
