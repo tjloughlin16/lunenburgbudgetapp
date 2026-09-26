@@ -108,9 +108,17 @@ def written_analyses():
     rule 13 is about -- the document says what it says, and the honest thing is to name it
     and link to it.
     """
+    # MINUS THE UNLISTED ONES. This page is public and links every analysis it names, so
+    # enumerating the directory put a door on a report that is meant to have none -- the
+    # FOURTH generator to enumerate `sources/analyses` independently, after the /reports
+    # index, the sitemap and the prerenderer. `sources/analyses/UNLISTED` is the one
+    # declared set all four read.
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    from build_reports_index import unlisted_ids
+    hidden = unlisted_ids(ANALYSES)
     out = []
     for f in sorted(os.listdir(ANALYSES)):
-        if not f.endswith('.md'):
+        if not f.endswith('.md') or f[:-3] in hidden:
             continue
         text = open(os.path.join(ANALYSES, f), encoding='utf-8').read()
         title = text.split('\n', 1)[0].lstrip('# ').strip()

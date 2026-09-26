@@ -218,6 +218,49 @@ right figures are there.
 One line per report, with what the review CHANGED. A review that changed nothing is
 recorded as that, because it is a claim worth being able to disbelieve.
 
+### `/analysis/towns-like-us` — how Lunenburg compares, 26 September 2026
+
+Four comparison sets — the six towns computed from boundary polygons, the five peers this
+project chose, two cohorts the math picks out of all 351, and where Lunenburg children are
+actually schooled. **The review changed the report in four places and the archive in one.**
+
+Reader 1 (already decided the schools are not straight with them) can find the worst fact
+inside thirty seconds — it is the third stat in the row, *158th of 161 comparable districts
+on spending per pupil* — but it cuts toward the schools rather than against them, and the
+report had left the reader's obvious next question ("we spend the least and pay a middling
+bill: where does it go?") unanswered and unpointed. Now pointed, at `/state-aid` and the
+per-pupil analysis.
+
+Reader 4 (Finance Committee) asked the question that changed the most: *does it tell them
+one thing they could do differently next year?* It did not. Searching the record for
+`comparable communities` found that **the town has never published a comparison set** — a
+2023 Finance Committee minute cites "the 8 communities that were surveyed" for a salary
+study and never names them — so every "compared with similar towns" claim on either side of
+any argument rests on a set nobody has agreed. Registered in `money-gaps.csv` with the
+document that closes it.
+
+**And the step that cannot be done by re-reading your own work found the report's best
+section.** Searching the record for `commercial tax base` turned up the Select Board's tax
+classification hearing of 25 November 2025, where the Principal Assessor had already priced
+the exact question the report's central correlation implies — for this town, at this year's
+values: at the maximum shift the statute allows, **$224.25** off a $350,000 home and about
+$2,336.75 onto a comparable commercial property. Her average bill and average value
+reconcile to the state's file to the cent. The report now quotes her rather than only
+correlating, and `build_town_comparison.py` re-reads the minute on every run and refuses to
+build if a quoted sentence has moved.
+
+The same search found a per-pupil figure a Lunenburg reader has actually heard and this
+report does not publish: Monty Tech's superintendent telling the Finance Committee on
+6 March 2025 that *"The foundational budget per pupil spent is $20,827."* A foundation
+budget is not spending, and the report now says so beside its own $18,027 rather than
+leaving a reader to collide with the difference.
+
+Two errors the review did not catch and the verifier did: the report called home value THE
+strongest driver of a tax bill when income per capita is marginally stronger (+0.92 against
++0.91) — an ordering the data does not support, asserted in the claim, in the chart's alt
+text and in the verifier's own check — and a supporting line began "She recommended against
+it" where, standing alone in a list of conclusions, "she" had no antecedent.
+
 ### `/budget-feed` — the FY28 season, live, 14 September 2026
 
 The same board, ten days into a season: 'expected' rows render as dashed "not yet" lines

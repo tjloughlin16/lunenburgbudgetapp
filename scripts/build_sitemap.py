@@ -87,9 +87,17 @@ def analysis_pages():
     the documents are on: the .md files decide which analyses exist, so the sitemap can
     know the addresses before anything has been built.
     """
+    # MINUS THE UNLISTED ONES. An analysis in sources/analyses/UNLISTED is published at
+    # its ordinary address and linked from nowhere, so it must not be offered to a crawler
+    # or pushed to IndexNow by `check_sitemap.py --submit`. Unlinked and indexed is not
+    # unlisted. It is still PRERENDERED -- `prerender.mjs` reads the same file and treats
+    # these as known routes rather than refusing them for being absent from here.
+    hidden = _hidden_analyses()
     out = []
     for p in sorted(glob.glob(os.path.join(PUB, 'docs', 'analyses', '*.md'))):
-        out.append('/analysis/' + os.path.basename(p)[:-3])
+        name = os.path.basename(p)[:-3]
+        if name not in hidden:
+            out.append('/analysis/' + name)
     return out
 
 
@@ -167,7 +175,18 @@ def feed_pages():
 def unlisted_payloads():
     src = open(ROUTES_TS, encoding='utf-8').read()
     m = re.search(r"export const UNLISTED[^\n]*new Set<Tab>\(\[([^\]]*)\]", src)
-    return {'%s.json' % t.strip().strip("'\"") for t in (m.group(1).split(',') if m else []) if t.strip()}
+    out = {'%s.json' % t.strip().strip("'\"") for t in (m.group(1).split(',') if m else []) if t.strip()}
+    # AND THE UNLISTED ANALYSES. The page was already excluded above and its PAYLOAD was
+    # not, so /data/<id>.json was offered to crawlers and pushed to IndexNow -- the same
+    # `indexed by another door` this function exists to close, through a door nobody had
+    # noticed. Its markdown at /docs/analyses/<id>.md is the third door; see `analyses()`.
+    return out | {'%s.json' % n for n in _hidden_analyses()}
+
+
+def _hidden_analyses():
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    from build_reports_index import unlisted_ids
+    return unlisted_ids(os.path.join(ROOT, 'sources', 'analyses'))
 
 
 def published_data():
@@ -186,8 +205,11 @@ def feeds():
 
 
 def analyses():
+    hidden = _hidden_analyses()
     out = []
     for p in sorted(glob.glob(os.path.join(PUB, 'docs', 'analyses', '*.md'))):
+        if os.path.basename(p)[:-3] in hidden:
+            continue
         out.append('/docs/analyses/' + os.path.basename(p))
     return out
 

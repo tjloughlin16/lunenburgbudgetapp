@@ -1,0 +1,36 @@
+# ANALYSES THAT EXIST, ARE PUBLISHED, AND ARE NOT LINKED FROM ANYWHERE.
+#
+# One id per line -- the `.md` basename, so `towns-like-us` means
+# `sources/analyses/towns-like-us.md` at `/analysis/towns-like-us`.
+#
+# WHY THIS FILE EXISTS. TJ has twice asked for a report he can read and pass on before it
+# joins the site: *"feel free to publish it when you're ready, but not linked to any reports
+# page. Just give me the link to read it."* The first time, that was done by not adding it to
+# the index -- which is not a decision anybody can find, and which FOUR other generators
+# were about to undo, because `build_reports_index.py`, `build_sitemap.py`,
+# `fy28/scripts/prerender.mjs` and `build_master_report.py` each enumerate
+# `sources/analyses/*.md` independently.
+#
+# THREE OF THE FOUR DID UNDO IT, and each was found only by looking for it: the report's
+# `/data/<id>.json` payload and its `/docs/analyses/<id>.md` copy were in the sitemap while
+# the page itself was not; this file was catalogued and published at /docs/analyses/UNLISTED,
+# naming the slug; and /what-it-all-adds-up-to, a public page, listed the report with a link.
+#
+# WHAT UNLISTED MEANS HERE, exactly, because two of the three are not obvious:
+#
+#   * NOT in /reports, and nothing on the site links to it. This is the whole of what is
+#     being asked for -- it is reached only by somebody given the address.
+#   * NOT in sitemap.xml, so it is not pushed to IndexNow and not offered to a crawler.
+#     Unlinked and indexed is not unlisted.
+#   * NO STATIC TWIN in dist. It is not prerendered, for the reason `prerender.mjs`
+#     already gives about unlisted routes and draft posts: a prerendered file is exactly
+#     what an unlisted page should not leave lying in dist for a crawler that guesses. The
+#     page still WORKS -- the SPA fallback serves index.html and React routes it -- so a
+#     reader without JavaScript does not get it, which for a page handed to named people is
+#     the trade this site already makes twice.
+#   * STILL SERVED AND STILL CITABLE at its ordinary address, with its payload, its PDF and
+#     its `/docs/analyses/<id>.md` copy. Rule 12 does not bend for a draft: the document is
+#     published, hashed and quotable. It simply has no door on the site.
+#
+# Removing a line here is how a report becomes part of the site. Nothing else changes.
+towns-like-us

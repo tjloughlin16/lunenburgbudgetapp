@@ -1004,6 +1004,33 @@ of it. It is published at `/data/archive-manifest.csv` and deliberately **not** 
 the bucket: an object there cannot be updated once written, so a manifest inside it would
 be permanently out of date about its own contents.
 
+## A report can be published and linked from nowhere
+
+`sources/analyses/UNLISTED` names the analyses that exist, are served at their ordinary
+address, and have no door on the site. TJ has twice asked for one: *"feel free to publish
+it when you're ready, but not linked to any reports page. Just give me the link to read
+it."*
+
+The first time that was done by not adding it to the index, which is not a decision anybody
+can find -- and FOUR generators enumerate `sources/analyses/*.md` independently, so the next
+run of any of them would have relisted it. `build_reports_index.py`, `build_sitemap.py`,
+`fy28/scripts/prerender.mjs` and `build_master_report.py` all read that one file now.
+
+**Unlisted means three doors shut, not one.** Not in `/reports` and linked from nowhere; not
+in `sitemap.xml`, so it is never pushed to IndexNow -- unlinked and indexed is not unlisted;
+and no static twin in `dist/`, the same trade the site already makes for unlisted routes and
+draft posts. It IS still served, hashed and citable, because rule 12 does not bend for a
+draft. Deleting its line is how a report joins the site.
+
+**Four doors were open at first, and each was found only by looking for it.** The page was
+out of the sitemap while its `/data/<id>.json` payload and its `/docs/analyses/<id>.md` copy
+were still in it; the control file itself was catalogued and published at
+`/docs/analyses/UNLISTED`, naming the slug; and `/what-it-all-adds-up-to` -- a public page --
+listed the report with a link, because the master report enumerates the directory too.
+
+A PDF and the `/docs` copy are NOT doors. They are serving formats for a document meant to be
+readable and citable; what makes a report listed is something LINKING to it.
+
 ## The budget feed has its own guideline
 
 `notes/process/BUDGET-FEED-GUIDELINES.md` is how a budget season page is read before it
@@ -1386,6 +1413,15 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_health_options.py               # what c.32B lets a town do about health insurance, each option linked to its section, beside every town's spending
     python3 scripts/build_health_options.py --check
     python3 scripts/build_commercial_base.py             # the commercial base as the state certifies it: size, share, and what was BUILT, with conclusions
+    python3 scripts/extract_dls_overrides.py            # every Proposition 2.5 question the state records, 351 towns
+    python3 scripts/extract_dls_overrides.py --check    # ...tied to the identity the workbook states about itself
+    python3 scripts/build_town_comparison.py            # HOW LUNENBURG COMPARES: the six towns it borders (computed from
+                                                        #   boundary polygons), the peers this project chose, the towns the
+                                                        #   MATH picks out of all 351 -- matched twice, on what a town IS and
+                                                        #   on what it DOES -- and where its children are actually schooled
+    python3 scripts/build_town_comparison.py --check
+    python3 scripts/verify_towns_like_us.py            # ...every headline figure recomputed by a different route, and
+                                                        #   every sentence it QUOTES still verbatim in the minute it cites
     python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing
     python3 scripts/build_no_captions_report.py           # which meeting recordings have captions disabled, with links
     python3 scripts/build_app_metrics.py --check          # ...and fail if it has drifted

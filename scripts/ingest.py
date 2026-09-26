@@ -146,8 +146,21 @@ def pending():
     return _rows()
 
 
+def _pushed():
+    """Keys a push has verified by reading back. The gate reads this; so must staging."""
+    if not os.path.exists(PUSH_STATE):
+        return set()
+    with open(PUSH_STATE, encoding='utf-8') as fh:
+        return {r['key'] for r in csv.DictReader(fh) if r.get('key')}
+
+
 def _staged_path(key):
-    return os.path.join(STAGE, key)
+    """Where the bytes are waiting. A document a fetcher already wrote to its archival
+    path is pushed from there rather than copied into staging and moved back onto itself."""
+    p = os.path.join(STAGE, key)
+    if not os.path.exists(p) and os.path.exists(A.local_path(key)):
+        return A.local_path(key)
+    return p
 
 
 def _atomic_write(path, blob):
@@ -172,7 +185,24 @@ def stage(key, blob, upstream='', when=''):
     if os.path.exists(held):
         have = A.hash_file(held)[0]
         if have == sha:
-            return True, 'already held, identical'
+            # ON DISK IS NOT IN THE BUCKET, and conflating the two made `land()` a no-op for
+            # the exact case it exists to cover: a fetcher writes the file to its archival
+            # path itself, then hands the bytes here. It returned `already held, identical`
+            # and pushed nothing, and only the gate noticed the document was in one place.
+            #
+            # So the question is whether the PUSH STATE has it -- the record of a push that
+            # was read back -- not whether the filesystem does. If it does not, the row is
+            # registered against the file WHERE IT ALREADY IS, and `secure()` pushes from
+            # there without moving it.
+            if key in _pushed():
+                return True, 'already held and already in the bucket'
+            rows = [r for r in _rows() if r['key'] != key]
+            rows.append({'key': key, 'bytes': str(len(blob)), 'sha256': sha,
+                         'upstream': upstream,
+                         'staged_at': when or datetime.datetime.now().isoformat(timespec='seconds'),
+                         'state': 'staged', 'note': 'already at its archival path; push only'})
+            _write(rows)
+            return True, ''
         return False, ('the archive already holds %s with different bytes (%s on disk, %s '
                        'arriving). A publisher’s own file does not change: that is a '
                        'defect, not a revision.' % (key, have[:12], sha[:12]))
@@ -237,8 +267,9 @@ def secure(quiet=False):
             continue
         # Durable. Only now does it become part of the archive.
         dest = A.local_path(key)
-        os.makedirs(os.path.dirname(dest), exist_ok=True)
-        os.replace(sp, dest)
+        if os.path.abspath(sp) != os.path.abspath(dest):
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            os.replace(sp, dest)
         manifest[key] = {'key': key, 'bytes': r['bytes'], 'sha256': r['sha256'],
                          'etag_md5': A.hash_file(dest)[1], 'upstream': r.get('upstream', '')}
         done.append(r)

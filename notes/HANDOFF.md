@@ -26,6 +26,50 @@ Read it before picking anything up. Three things in it are urgent enough to repe
   rebuilds the database on every pass. Run it once, at the end, `--serial`.
 
 
+## 26 September 2026 — how Lunenburg compares, and the archive went statewide
+
+**`/analysis/towns-like-us` is published and UNLISTED.** Built at TJ's request: *"compare
+every bordering town's school district, and then some of our comparative towns… put a map,
+a real map, with the real town pinpoints… then break down how much they pay, their
+overrides, their cost per pupil, and their commercial ratios and see if we can find a
+trend."* Four comparison sets, because they answer four questions — six towns computed from
+Census boundary polygons, five peers this project chose, two cohorts the MATH picks out of
+all 351, and where Lunenburg children are actually schooled.
+
+**`sources/analyses/UNLISTED` is the declared set of published-but-unlinked reports**, read
+by `build_reports_index.py`, `build_sitemap.py`, `prerender.mjs` and
+`build_master_report.py`. Four doors were open before it existed and three of them had
+already relisted the report; each was found only by looking for it. Deleting a line there
+is how a report joins the site.
+
+**THE DLS ARCHIVE IS NOW ALL 351 TOWNS**, not twelve — tax bills FY1988 onward, assessed
+values, new growth, and every Proposition 2½ override the state records (4,743 questions,
+305 municipalities). A comparison that has to FIND the towns resembling Lunenburg cannot be
+made from a file that only ever held twelve. Two consequences already bit:
+
+- **A DLS export can never reuse a key.** They are frozen objects; two fetches on one day
+  collided on a date-only name and the bytes on disk silently stopped being the bytes in
+  the bucket. Every export is now `<stem>-<date>-<sha12><ext>`, unique by construction, and
+  `build_source_index.py` treats a dated file as an EDITION of its catalogued stem so the
+  catalogue does not grow a paragraph a quarter.
+- **`build_commercial_base.py` inherited its peer set from the fetch** and began publishing
+  a 352-row peer table. The set is named in the analysis now, where it can be argued with.
+
+**What is NOT established, and must not be restated as fact:**
+
+- That either twin cohort is the right one. A distance is a statement about the chosen
+  measures given EQUAL WEIGHT; a different weighting gives different towns.
+- Which way any correlation runs. Every figure is one year read across many towns.
+- That Lunenburg spends less on each child than its look-alikes. Its per-pupil is 158th of
+  161 and its TOTAL spending growth is mid-pack; the gap is largely the denominator, and it
+  kept its pupils while they did not.
+- What any destination costs. 177 children are schooled outside the district and only 32
+  attend a school one town's taxpayers fund; nothing says what any of it costs.
+
+**Still open:** `sync_d1.py` — the local database is ahead of the live one (176 money_gaps
+against 173, 1,419 documents against 1,398). Deferred by TJ on 25 September; it only
+affects `/api/query`, since the pages read the static payloads.
+
 ## 17 September 2026 — the account registry, the finance pages, share metadata
 
 **The registry is `sources/data/fund-owners.csv`** — one row per accounting measure the

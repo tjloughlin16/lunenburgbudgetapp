@@ -4,30 +4,30 @@
 
 ## What the town and the state published — and we hold
 
-- **13,152 documents** — PDFs, spreadsheets, Word files and slide decks — 31,020 files and 5.79 GB in all, each with its address, its publisher’s filename and a checksum.
+- **13,159 documents** — PDFs, spreadsheets, Word files and slide decks — 31,029 files and 5.84 GB in all, each with its address, its publisher’s filename and a checksum.
 - **14 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, meetings, peer-districts, state-census, state-dese, state-dls, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,144 meeting documents** from **51 town boards**: 4,705 sets of minutes and 7,439 agendas, 2009-01-05 to 2026-09-25 — **18 years**.
-- **4,665 annual town report appropriation lines**, FY2011–FY2025, read page by page.
-- **3,815 names** on the town’s printed staff rosters, FY2011–FY2025.
+- **5,027 annual town report appropriation lines**, FY2011–FY2025, read page by page.
+- **3,751 names** on the town’s printed staff rosters, FY2011–FY2025.
 - **9,503 school budget line-years**, FY2014–FY2027, and **983 ledger lines** from the town’s own accounting system.
 - **22 state (DESE) data tables** — enrollment, staffing, class size, special education, Chapter 70, per-pupil spending.
 
 ## What we made from it
 
-- **4,485 hours of meeting recordings transcribed** — 2,667 meetings, 186.9 days of audio end to end, 2012-05-02 to 2026-09-24. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
-- **193 meetings with our own minutes** written from those recordings — **999 substantive votes** and **319 transfers** logged, each linked to the second of the video.
-- **A database of 150,776 rows in 105 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
-- **37 analyses** and **177 published conclusions**, every figure recomputed by a script before it ships.
+- **4,480 hours of meeting recordings transcribed** — 2,663 meetings, 186.7 days of audio end to end, 2012-05-02 to 2026-09-24. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
+- **190 meetings with our own minutes** written from those recordings — **997 substantive votes** and **319 transfers** logged, each linked to the second of the video.
+- **A database of 153,632 rows in 117 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
+- **37 analyses** and **185 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.
-- **173 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
-- **202 pages** on the site.
+- **176 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
+- **? pages** on the site.
 
 ## Where it came from
 
 - `www.lunenburgma.gov` — 12,522 files
 - `drive.google.com` — 1,496 files
 - `docs.google.com` — 40 files
-- `educationtocareer.data.mass.gov` — 21 files
+- `educationtocareer.data.mass.gov` — 23 files
 - `profiles.doe.mass.edu` — 11 files
 - `www.doe.mass.edu` — 9 files
 

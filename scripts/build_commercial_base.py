@@ -87,14 +87,40 @@ def growth():
     return out
 
 
+# WHOSE SHARE SITS BESIDE LUNENBURG'S, decided HERE rather than inherited from the fetch.
+#
+# This read every municipality the extract happened to contain, which was sixteen towns
+# while the fetcher asked for sixteen. On 26 September 2026 the DLS fetchers went statewide
+# -- because a comparison that has to find the towns resembling Lunenburg cannot be made
+# from a file that only ever held twelve -- and this page silently began publishing a
+# 352-row peer table. No figure moved; the page simply stopped being about a comparison
+# anybody chose.
+#
+# `fetch_dls_property.py` says in its own comment why the archive is statewide: *a peer set
+# chosen in the fetcher is a judgment baked into the archive, and this way the judgment
+# stays in the analysis where it can be argued with.* This is the analysis. So the set is
+# named here, and it is the same one `fetch_dls_tax_bills.TOWNS` declares -- Lunenburg, the
+# six towns it borders and the peers this project uses -- imported rather than retyped so
+# the two cannot drift.
 def peers():
-    """Business's share of the base in the latest year, the eleven towns, so Lunenburg's
-    share has something beside it. A share, so it compares across towns of different size."""
+    """Business's share of the base in the latest year, for Lunenburg and the towns this
+    project compares it with, so Lunenburg's share has something beside it. A share, so it
+    compares across towns of very different size."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from fetch_dls_tax_bills import TOWNS
+    want = set(TOWNS)
     by = {}
     for r in rows(AV, 'total'):
-        by.setdefault(r['municipality'], []).append((int(r['fy']), float(r['cip_pct'])))
+        if r['municipality'] in want:
+            by.setdefault(r['municipality'], []).append((int(r['fy']), float(r['cip_pct'])))
+    missing = want - set(by)
+    if missing:
+        raise SystemExit('no assessed-value rows for %s -- the peer join matched nothing, '
+                         'which looks exactly like a town with no commercial base'
+                         % ', '.join(sorted(missing)))
     latest = min(max(v)[0] for v in by.values())
-    out = [dict(town=t, fy=latest, cip_share=round(dict(v)[latest], 2)) for t, v in by.items() if latest in dict(v)]
+    out = [dict(town=t, fy=latest, cip_share=round(dict(v)[latest], 2))
+           for t, v in by.items() if latest in dict(v)]
     out.sort(key=lambda r: -r['cip_share'])
     return out
 

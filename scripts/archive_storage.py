@@ -476,4 +476,19 @@ def frozen(key):
         return False
     if any(DATED_SNAPSHOT.match(p) for p in parts[:-1]):
         return True
+    # A PUBLISHER'S API RESPONSE, SAVED AS RETURNED, IS A DOCUMENT. `sources/state-census/`
+    # is described in the archive's own folder map as exactly that, and its fourteen `.json`
+    # files were classified as OURS purely because `.json` is not in `ORIGINAL_EXTS` -- so
+    # nothing required the Census's own answers to be backed up. The same hole the staff
+    # directories fell through, one extension over, and found the same way: by trying to
+    # ingest one and watching the gate not care.
+    #
+    # NARROW ON PURPOSE. Only `.json` sitting DIRECTLY under a `state-*` mirror, which is
+    # where a saved API response lives. A blanket rule over the mirror folders would have
+    # swept in 72 files including our own PROVENANCE.md, CONTRACTS.md and extracted text,
+    # all of which legitimately change -- and freezing a file that changes makes the
+    # manifest refuse to write.
+    if (len(parts) == 2 and parts[0].startswith('state-')
+            and parts[-1].lower().endswith('.json')):
+        return True
     return os.path.splitext(parts[-1])[1].lower() in ORIGINAL_EXTS

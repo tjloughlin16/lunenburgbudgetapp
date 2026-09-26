@@ -54,7 +54,7 @@ import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from fetch_dls_tax_bills import TOWNS, INDEX   # noqa: E402  the same eleven towns, the same catalogue
+from fetch_dls_tax_bills import TOWNS, INDEX, export_name, newest_export   # noqa: E402
 
 UA = {'User-Agent': 'Mozilla/5.0 (lunenburgbudgetproject.org research)'}
 
@@ -68,6 +68,12 @@ REPORTS = {
               'Personal Property', 'Total', 'RO% of Total', 'CIP% of Total'],
         cols=['dor_code', 'municipality', 'fy', 'residential', 'open_space', 'commercial', 'industrial',
               'personal_property', 'total', 'ro_pct', 'cip_pct'],
+        # EVERY MUNICIPALITY, for the reason spelled out under health-insurance below: a peer
+        # set chosen in the fetcher is a judgment baked into the archive. It became load-bearing
+        # on 26 September 2026, when `build_town_comparison.py` had to find the districts that
+        # resemble Lunenburg across all 351 towns rather than inside a list of twelve -- which
+        # cannot be done from an archive that only ever held twelve.
+        all_towns=True,
     ),
     # HEALTH INSURANCE, TOWN BY TOWN. TJ, 18 September 2026, on finding it: "we should
     # build analysis into the health insurance report that compares!" Schedule A Parts 2
@@ -124,6 +130,7 @@ REPORTS = {
               "Prior Year's Levy Limit", 'Total New Growth Applied to Limit as a % of PY Levy Limit'],
         cols=['dor_code', 'municipality', 'fy', 'res_value', 'res_levy', 'total_value', 'total_levy',
               'res_pct_of_total', 'prior_levy_limit', 'levy_pct_of_prior_limit'],
+        all_towns=True,
     ),
 }
 
@@ -145,8 +152,14 @@ def export_url(r):
             '&rdShowGridlines=True&rdExcelOutputFormat=Excel2007' % (r['table'], r['export']))
 
 
-def xlsx_path(r):
-    return os.path.join(ROOT, 'sources', 'state-dls', r['file'])
+def xlsx_path(r, blob=None):
+    """Where one export lands. Hashed into the name -- see `export_name` in
+    fetch_dls_tax_bills.py for why a DLS export may never reuse a key."""
+    stem, ext = os.path.splitext(r['file'])
+    d = os.path.join(ROOT, 'sources', 'state-dls')
+    if blob is None:
+        return newest_export(d, stem, ext, legacy=r['file'])
+    return os.path.join(d, export_name(stem, ext, blob))
 
 
 def csv_path(r):
@@ -163,14 +176,27 @@ def fetch(r):
     elif r.get('all_towns'):
         # The control's values are DOR codes, and its labels are the town names; both are
         # taken from the page so a renamed or renumbered municipality cannot go missing.
+        # THE CONTROL IS KEYED DIFFERENTLY ON DIFFERENT REPORTS, and assuming one shape
+        # made this refuse to fetch at all. The Schedule A reports key it by DOR CODE with
+        # the town name in a following <span>; Assessed Values by Class and New Growth key
+        # it by the town NAME itself. Read whichever the page offers and check the same
+        # invariant either way -- that Lunenburg is in the list and the list is 351 long.
         codes = re.findall(r'name="iclMuni"[^>]*value="(\d+)"\s*/><span>([^<]+)</span>', page)
-        if len(codes) < 340:
-            raise SystemExit('%s: the DLS form listed %d municipalities; expected 351' % (r['report'], len(codes)))
-        names = {c: n.strip() for c, n in codes}
-        if names.get('162') != 'Lunenburg':
-            raise SystemExit('%s: DOR code 162 is %r, not Lunenburg -- the codes have moved'
-                             % (r['report'], names.get('162')))
-        fields = ([('iclMuni', c) for c, _ in codes] + [('iclYear', y) for y in years]
+        if codes:
+            values = [c for c, _ in codes]
+            names = {n.strip() for _, n in codes}
+            if {c for c, n in codes if n.strip() == 'Lunenburg'} != {'162'}:
+                raise SystemExit('%s: DOR code 162 is not Lunenburg -- the codes have moved' % r['report'])
+        else:
+            values = sorted(set(re.findall(r'name="iclMuni"[^>]*value="([^"]*)"', page)))
+            values = [v for v in values if v]
+            names = set(values)
+        if len(values) < 340:
+            raise SystemExit('%s: the DLS form listed %d municipalities; expected 351'
+                             % (r['report'], len(values)))
+        if 'Lunenburg' not in names:
+            raise SystemExit('%s: the DLS form does not list Lunenburg' % r['report'])
+        fields = ([('iclMuni', v) for v in values] + [('iclYear', y) for y in years]
                   + [('rdreport', r['report'].lower()), ('lgxver', '')])
     else:
         offered = set(re.findall(r'name="iclMuni"[^>]*value="([^"]*)"', page))
@@ -185,8 +211,10 @@ def fetch(r):
     data = resp.read()
     if not data.startswith(b'PK'):
         raise SystemExit('%s: the export was not a workbook (%s, %d bytes)' % (r['report'], resp.headers.get('Content-Type'), len(data)))
-    with open(xlsx_path(r), 'wb') as fh:
+    path = xlsx_path(r, data)
+    with open(path, 'wb') as fh:
         fh.write(data)
+    print('  wrote %s (%d bytes)' % (os.path.relpath(path, ROOT), len(data)))
     return years
 
 
@@ -227,7 +255,7 @@ def extract_wide(key):
                             # DLS prints 0 for a year whose Schedule A is not yet filed --
                             # an empty cell, not a town that spent nothing. Kept as blank.
                             expenditure='' if v in (None, '', 0) else v,
-                            source_file=r['file'], sha256=digest))
+                            source_file=os.path.basename(xlsx_path(r)), sha256=digest))
     if 'Lunenburg' not in towns:
         raise SystemExit('%s: no Lunenburg row' % r['file'])
     if len(towns) < 340:
@@ -251,7 +279,7 @@ def extract(key):
         if not row or row[1] is None:
             continue
         vals = ['' if v in (None, '') else v for v in row]
-        out.append(dict(zip(r['cols'] + ['source_file', 'sha256'], list(vals) + [r['file'], digest])))
+        out.append(dict(zip(r['cols'] + ['source_file', 'sha256'], list(vals) + [os.path.basename(xlsx_path(r)), digest])))
     if key == 'self-insured':
         if len({o['municipality'] for o in out}) < 340:
             raise SystemExit('%s: only %d municipalities' % (r['file'], len({o['municipality'] for o in out})))
@@ -295,7 +323,10 @@ def write_csv(key, rows):
 
 def write_index(key, years):
     r = REPORTS[key]
-    local = 'state-dls/' + r['file']
+    # NAME THE FILE WE ACTUALLY READ. `r['file']` is the stem's legacy name; the export
+    # on disk carries a date and a content hash, and a catalogue row for a name nobody
+    # fetched is rule 12's first requirement missed by a constant.
+    local = 'state-dls/' + os.path.basename(xlsx_path(r))
     rows = [x for x in csv.DictReader(open(INDEX, encoding='utf-8'))] if os.path.exists(INDEX) else []
     rows = [x for x in rows if x['local'] != local]
     who = 'every municipality' if r.get('all_towns') else ', '.join(TOWNS)

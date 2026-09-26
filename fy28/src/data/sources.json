@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-25",
+ "generated": "2026-09-26",
  "origins": [
   {
    "id": "school",
@@ -50,7 +50,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 34 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 38 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 34 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 44 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -693,6 +693,26 @@
      "bytes": 388,
      "url": "/docs/state-census/acs5-2018-B25039-lunenburg.json",
      "textUrl": "/docs/state-census/acs5-2018-B25039-lunenburg.json"
+    },
+    {
+     "path": "state-census/tigerweb-cousub-massachusetts.json",
+     "title": "Town boundaries and centroids, every Massachusetts municipality",
+     "stars": 1,
+     "what": "The Census Bureau’s county subdivisions for the whole state, as GeoJSON. It answers two questions no list can: which towns actually share a border with Lunenburg, and where each town is on a map. Every shape and pin on /analysis/towns-like-us comes out of this file.",
+     "kind": "JSON",
+     "bytes": 4023924,
+     "url": "/docs/state-census/tigerweb-cousub-massachusetts.json",
+     "textUrl": "/docs/state-census/tigerweb-cousub-massachusetts.json"
+    },
+    {
+     "path": "state-census/tigerweb-cousub-worcester-middlesex.json",
+     "title": "Town boundaries, Worcester and Middlesex counties",
+     "stars": 1,
+     "what": "The first, narrower fetch of the same service — the one the six bordering towns were computed from by shared boundary vertices, which is how Ashby was found to have been missing from every earlier comparison.",
+     "kind": "JSON",
+     "bytes": 1937878,
+     "url": "/docs/state-census/tigerweb-cousub-worcester-middlesex.json",
+     "textUrl": "/docs/state-census/tigerweb-cousub-worcester-middlesex.json"
     }
    ]
   },
@@ -1136,11 +1156,23 @@
      "stars": 3,
      "what": "DLS Gateway export, fetched by script (fetch_dls_property.py): the whole Commonwealth, one figure per town per year, from Schedule A Parts 2 and 6. Extracted to data/dls-health-insurance.csv, where the two warnings DLS prints about what the figure contains are recorded.",
      "kind": "Spreadsheet",
-     "bytes": 84848,
+     "bytes": 84916,
      "url": "/docs/state-dls/health-insurance-expenditures.xlsx",
      "count": 353,
      "unit": "rows",
      "textUrl": "/docs/state-dls/health-insurance-expenditures.xlsx"
+    },
+    {
+     "path": "state-dls/assessedvalues.xlsx",
+     "title": "Assessed Values by Class, eleven towns, FY2002–FY2026",
+     "stars": 3,
+     "what": "DLS Gateway export, fetched by script on 16 September 2026 (fetch_dls_property.py records the exact POST). Per town per year: residential, open space, commercial, industrial and personal property value, the total, and the residential and CIP shares. How big the commercial base IS — a revaluation moves it as much as a building does, so read it with new_growth.xlsx, which is what was added.",
+     "kind": "Spreadsheet",
+     "bytes": 44269,
+     "url": "/docs/state-dls/assessedvalues.xlsx",
+     "count": 417,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/assessedvalues.xlsx"
     },
     {
      "path": "state-dls/AvgSingleFamTaxBill.xlsx",
@@ -1155,26 +1187,14 @@
      "textUrl": "/docs/state-dls/AvgSingleFamTaxBill.xlsx"
     },
     {
-     "path": "state-dls/assessedvalues.xlsx",
-     "title": "Assessed Values by Class, eleven towns, FY2002–FY2026",
-     "stars": 3,
-     "what": "DLS Gateway export, fetched by script on 16 September 2026 (fetch_dls_property.py records the exact POST). Per town per year: residential, open space, commercial, industrial and personal property value, the total, and the residential and CIP shares. How big the commercial base IS — a revaluation moves it as much as a building does, so read it with new_growth.xlsx, which is what was added.",
-     "kind": "Spreadsheet",
-     "bytes": 32909,
-     "url": "/docs/state-dls/assessedvalues.xlsx",
-     "count": 287,
-     "unit": "rows",
-     "textUrl": "/docs/state-dls/assessedvalues.xlsx"
-    },
-    {
      "path": "state-dls/new_growth.xlsx",
      "title": "New Growth, residential and total, eleven towns, FY2003–FY2026",
      "stars": 3,
      "what": "DLS Gateway export, fetched by script on 16 September 2026 (fetch_dls_property.py). Per town per year: residential new-growth value and the levy dollars it added, the same for all classes together, the prior year’s levy limit and the addition as a share of it. Total minus residential is what was BUILT that was not housing. The town’s own six-year series in model/taxbase.py is these figures, to the dollar.",
      "kind": "Spreadsheet",
-     "bytes": 28879,
+     "bytes": 38614,
      "url": "/docs/state-dls/new_growth.xlsx",
-     "count": 276,
+     "count": 401,
      "unit": "rows",
      "textUrl": "/docs/state-dls/new_growth.xlsx"
     },
@@ -1191,6 +1211,18 @@
      "textUrl": "/docs/state-dls/free-cash-proof-lunenburg.xlsx"
     },
     {
+     "path": "data/dls-override-votes.csv",
+     "title": "Override and underride votes, extracted",
+     "stars": 2,
+     "what": "The workbook above as a CSV, reconciled to an identity it states about itself: `Win / Loss` is WIN exactly when the yes votes exceed the no votes, in all 4,743 rows. scripts/extract_dls_overrides.py refuses to write if that ever stops holding.",
+     "kind": "Data",
+     "bytes": 967878,
+     "url": "/docs/data/dls-override-votes.csv",
+     "count": 4743,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-override-votes.csv"
+    },
+    {
      "path": "state-dls/PROVENANCE.md",
      "title": "Where these came from, and what they cannot do",
      "stars": 2,
@@ -1201,6 +1233,40 @@
      "count": 100,
      "unit": "lines",
      "textUrl": "/docs/state-dls/PROVENANCE.md"
+    },
+    {
+     "path": "data/archive-orphans.csv",
+     "title": "Objects in the bucket that the index no longer names",
+     "stars": 2,
+     "what": "The bucket forbids deletion for ten years and cannot be listed, so a document that leaves the manifest — usually a rename — leaves an object behind that nothing can find or remove. This register names each one, matched by sha256 rather than by name, and says `superseded_by` where the same bytes are held under another key. That is the only remedy there is.",
+     "kind": "Data",
+     "bytes": 4983,
+     "url": "/docs/data/archive-orphans.csv",
+     "count": 11,
+     "unit": "rows",
+     "textUrl": "/docs/data/archive-orphans.csv"
+    },
+    {
+     "path": "data/ingest-pending.csv",
+     "title": "Documents in flight: fetched, not yet in the bucket",
+     "stars": 2,
+     "what": "The register `scripts/ingest.py` writes when it stages a document and clears when the bucket has read it back and matched its sha256. It is TRACKED on purpose: while a row is in it, `check_archive_backed_up.py` refuses every destructive operation, so a failed push means the next run retries rather than the next run destroying.",
+     "kind": "Data",
+     "bytes": 47,
+     "url": "/docs/data/ingest-pending.csv",
+     "textUrl": "/docs/data/ingest-pending.csv"
+    },
+    {
+     "path": "state-dls/OverrideUnderrideVotes.xlsx",
+     "title": "Override and Underride Votes, every municipality",
+     "stars": 1,
+     "what": "Every Proposition 2½ question the state records — 4,743 of them across 305 municipalities — with the date, the tallies, the department and the result. NO export address is recorded: the report is not linked from the Gateway front page and we did not make the request, so the publisher’s own filename is what a resident asks DLS for.",
+     "kind": "Spreadsheet",
+     "bytes": 377826,
+     "url": "/docs/state-dls/OverrideUnderrideVotes.xlsx",
+     "count": 4744,
+     "unit": "rows",
+     "textUrl": "/docs/state-dls/OverrideUnderrideVotes.xlsx"
     },
     {
      "path": "state-dls/free-cash-proof-littleton.xlsx",
@@ -1646,6 +1712,18 @@
      "count": 447,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics-ledger.md"
+    },
+    {
+     "path": "analyses/towns-like-us.md",
+     "title": "How Lunenburg compares: neighbours, peers, look-alikes and destinations",
+     "stars": 3,
+     "what": "Four comparison sets, because they answer four questions: the six towns that share a border (computed from Census boundary polygons, not remembered), the five this project uses as peers, the towns the math picks out of all 351, and the places Lunenburg children are actually schooled. The finding the two cohorts exist for: no town is among the ten closest to Lunenburg on both what it IS and what it DOES.",
+     "kind": "Notes",
+     "bytes": 20445,
+     "url": "/docs/analyses/towns-like-us.md",
+     "count": 191,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/towns-like-us.md"
     },
     {
      "path": "analyses/monty-tech.md",
@@ -2428,6 +2506,16 @@
      "textUrl": "/docs/data/extraction-blocked.csv"
     },
     {
+     "path": "analyses/charts/towns-like-us-map.svg",
+     "title": "Who Lunenburg is compared with, and where they are",
+     "stars": 1,
+     "what": "Every Massachusetts town outlined from the Census TIGER polygons, with the towns this report names filled and pinned at their published centroids. Nothing on it is placed by eye.",
+     "kind": "SVG",
+     "bytes": 173984,
+     "url": "/docs/analyses/charts/towns-like-us-map.svg",
+     "textUrl": "/docs/analyses/charts/towns-like-us-map.svg"
+    },
+    {
      "path": "analyses/charts/town-budgets-town.svg",
      "title": "What the town votes for, as a town",
      "stars": 1,
@@ -2712,6 +2800,16 @@
      "bytes": 3495,
      "url": "/docs/analyses/charts/town-personnel-fire.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-fire.svg"
+    },
+    {
+     "path": "analyses/charts/towns-like-us-drivers.svg",
+     "title": "What actually moves a tax bill",
+     "stars": 1,
+     "what": "Eight correlations across the 161 towns that run their own K–12 district. Average home value against the bill is much the strongest; certified new growth against the bill is effectively nothing.",
+     "kind": "SVG",
+     "bytes": 3290,
+     "url": "/docs/analyses/charts/towns-like-us-drivers.svg",
+     "textUrl": "/docs/analyses/charts/towns-like-us-drivers.svg"
     },
     {
      "path": "analyses/charts/board-composition-fill.svg",
@@ -3112,9 +3210,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1043222,
+     "bytes": 1044370,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4694,
+     "count": 4699,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -3136,9 +3234,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 589804,
+     "bytes": 590479,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4694,
+     "count": 4699,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -3148,9 +3246,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 453018,
+     "bytes": 453632,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2898,
+     "count": 2902,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -3196,9 +3294,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 144629,
+     "bytes": 148241,
      "url": "/docs/data/money-gaps.csv",
-     "count": 172,
+     "count": 180,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3695,7 +3793,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 39866368,
+     "bytes": 40316928,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -3705,11 +3803,47 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3253843,
+     "bytes": 3268272,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7041,
+     "count": 7047,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
+    },
+    {
+     "path": "data/dls-avg-tax-bill.csv",
+     "title": "Average single-family tax bill, eleven towns, FY1988–FY2026",
+     "stars": 3,
+     "what": "Extracted from the DLS Gateway export in state-dls/. Per town per year: parcels, average value, average bill, the bill as a share of value and of income, rank. Rebuild with scripts/fetch_dls_tax_bills.py.",
+     "kind": "Data",
+     "bytes": 2438533,
+     "url": "/docs/data/dls-avg-tax-bill.csv",
+     "count": 14040,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-avg-tax-bill.csv"
+    },
+    {
+     "path": "data/dls-assessed-values.csv",
+     "title": "Assessed value by class, eleven towns, FY2002–FY2026",
+     "stars": 3,
+     "what": "Extracted from the DLS Gateway export in state-dls/, footed to its own totals. Rebuild with scripts/fetch_dls_property.py.",
+     "kind": "Data",
+     "bytes": 1761483,
+     "url": "/docs/data/dls-assessed-values.csv",
+     "count": 9152,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-assessed-values.csv"
+    },
+    {
+     "path": "data/dls-new-growth.csv",
+     "title": "New growth, residential and total, eleven towns, FY2003–FY2026",
+     "stars": 3,
+     "what": "Extracted from the DLS Gateway export in state-dls/, footed to its own shares. Rebuild with scripts/fetch_dls_property.py.",
+     "kind": "Data",
+     "bytes": 1519229,
+     "url": "/docs/data/dls-new-growth.csv",
+     "count": 8775,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-new-growth.csv"
     },
     {
      "path": "data/dese-teacher-grade-subject.csv",
@@ -3813,9 +3947,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 456572,
+     "bytes": 457276,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2664,
+     "count": 2668,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -3849,7 +3983,7 @@
      "stars": 3,
      "what": "DLS Gateway export, fetched by script; extracted to data/dls-health-self-insured.csv.",
      "kind": "Spreadsheet",
-     "bytes": 344209,
+     "bytes": 344220,
      "url": "/docs/state-dls/health-self-insured-funds.xlsx",
      "count": 8425,
      "unit": "rows",
@@ -4024,18 +4158,6 @@
      "textUrl": "/docs/data/dese-sped-movement.csv"
     },
     {
-     "path": "data/dls-avg-tax-bill.csv",
-     "title": "Average single-family tax bill, eleven towns, FY1988–FY2026",
-     "stars": 3,
-     "what": "Extracted from the DLS Gateway export in state-dls/. Per town per year: parcels, average value, average bill, the bill as a share of value and of income, rank. Rebuild with scripts/fetch_dls_tax_bills.py.",
-     "kind": "Data",
-     "bytes": 66329,
-     "url": "/docs/data/dls-avg-tax-bill.csv",
-     "count": 440,
-     "unit": "rows",
-     "textUrl": "/docs/data/dls-avg-tax-bill.csv"
-    },
-    {
      "path": "data/athletics-by-sport.csv",
      "title": "Athletics by sport, long form",
      "stars": 3,
@@ -4072,18 +4194,6 @@
      "textUrl": "/docs/data/minutes-coverage.csv"
     },
     {
-     "path": "data/dls-assessed-values.csv",
-     "title": "Assessed value by class, eleven towns, FY2002–FY2026",
-     "stars": 3,
-     "what": "Extracted from the DLS Gateway export in state-dls/, footed to its own totals. Rebuild with scripts/fetch_dls_property.py.",
-     "kind": "Data",
-     "bytes": 48553,
-     "url": "/docs/data/dls-assessed-values.csv",
-     "count": 286,
-     "unit": "rows",
-     "textUrl": "/docs/data/dls-assessed-values.csv"
-    },
-    {
      "path": "data/dese-ch70-formula.csv",
      "title": "The Chapter 70 formula, term by term, FY1993–FY2026",
      "stars": 3,
@@ -4118,18 +4228,6 @@
      "count": 514,
      "unit": "rows",
      "textUrl": "/docs/data/minutes-searchable.csv"
-    },
-    {
-     "path": "data/dls-new-growth.csv",
-     "title": "New growth, residential and total, eleven towns, FY2003–FY2026",
-     "stars": 3,
-     "what": "Extracted from the DLS Gateway export in state-dls/, footed to its own shares. Rebuild with scripts/fetch_dls_property.py.",
-     "kind": "Data",
-     "bytes": 41258,
-     "url": "/docs/data/dls-new-growth.csv",
-     "count": 275,
-     "unit": "rows",
-     "textUrl": "/docs/data/dls-new-growth.csv"
     },
     {
      "path": "data/dese-sped-trajectory.csv",
@@ -4438,9 +4536,9 @@
      "stars": 2,
      "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
      "kind": "Data",
-     "bytes": 2566442,
+     "bytes": 2567690,
      "url": "/docs/data/meeting-document-timestamps.csv",
-     "count": 12088,
+     "count": 12094,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
@@ -4450,9 +4548,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1767863,
+     "bytes": 1768791,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12124,
+     "count": 12130,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -4462,7 +4560,7 @@
      "stars": 2,
      "what": "8,775 rows: one dollar figure per municipality per fiscal year, all 351, as filed on Schedule A Parts 2 and 6 and published by the Division of Local Services. TWO WARNINGS DLS PRINTS ITSELF: for a self-insured town the figure includes the employee share, and a town accounting through a trust may have workers’ compensation and OPEB inside it — and nothing in the file says which town is which, so the LEVEL is not comparable across towns and the growth is. Fetched by scripts/fetch_dls_property.py.",
      "kind": "Data",
-     "bytes": 1111551,
+     "bytes": 1322228,
      "url": "/docs/data/dls-health-insurance.csv",
      "count": 8775,
      "unit": "rows",
@@ -4474,7 +4572,7 @@
      "stars": 2,
      "what": "8,424 rows, every municipality and fiscal year: the health trust fund’s starting balance, revenues, expenditures and fund balance as filed on Schedule A Part 6. It is the only published axis on which health spending can be told apart — a self-insured town’s expenditure figure includes the employee share. The report’s own Self-insured (Y/N) column is NOT reliable (Abington prints N every year while reporting millions through a trust), so the classification rests on whether the trust moved money. Fetched by scripts/fetch_dls_property.py.",
      "kind": "Data",
-     "bytes": 1072422,
+     "bytes": 1274638,
      "url": "/docs/data/dls-health-self-insured.csv",
      "count": 8424,
      "unit": "rows",
@@ -4486,9 +4584,9 @@
      "stars": 2,
      "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
      "kind": "Data",
-     "bytes": 128696,
+     "bytes": 128894,
      "url": "/docs/data/search-affinity.csv",
-     "count": 989,
+     "count": 990,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
     },
@@ -4642,11 +4740,23 @@
      "stars": 2,
      "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 8947,
+     "bytes": 9828,
      "url": "/docs/data/meeting-watch-events.csv",
-     "count": 59,
+     "count": 65,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-events.csv"
+    },
+    {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 9041,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 7,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "data/budget-seasons/fy27-lines.csv",
@@ -4659,18 +4769,6 @@
      "count": 47,
      "unit": "rows",
      "textUrl": "/docs/data/budget-seasons/fy27-lines.csv"
-    },
-    {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 6900,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 6,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "town-ledgers/account-details/PROVENANCE-fund1301.md",
@@ -4696,6 +4794,18 @@
      "count": 11,
      "unit": "rows",
      "textUrl": "/docs/data/health-insurance-law.csv"
+    },
+    {
+     "path": "data/youtube-watch-events.csv",
+     "title": "What appeared on the town’s YouTube channel between one check and the next",
+     "stars": 2,
+     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
+     "kind": "Data",
+     "bytes": 3292,
+     "url": "/docs/data/youtube-watch-events.csv",
+     "count": 28,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-watch-events.csv"
     },
     {
      "path": "town-ledgers/account-details/PROVENANCE-field-rental-lysa.md",
@@ -4733,18 +4843,6 @@
      "count": 44,
      "unit": "rows",
      "textUrl": "/docs/data/search-vocabulary.csv"
-    },
-    {
-     "path": "data/youtube-watch-events.csv",
-     "title": "What appeared on the town’s YouTube channel between one check and the next",
-     "stars": 2,
-     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
-     "kind": "Data",
-     "bytes": 2677,
-     "url": "/docs/data/youtube-watch-events.csv",
-     "count": 23,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-watch-events.csv"
     },
     {
      "path": "data/budget-seasons/fy28.csv",
@@ -4908,9 +5006,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 489,
+     "bytes": 520,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 13,
+     "count": 14,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -17157,11 +17255,11 @@
   "boards": [
    {
     "name": "Select Board",
-    "documents": 1432
+    "documents": 1433
    },
    {
     "name": "Planning Board",
-    "documents": 1352
+    "documents": 1353
    },
    {
     "name": "Finance Committee",
@@ -17169,7 +17267,7 @@
    },
    {
     "name": "Sewer Commission",
-    "documents": 744
+    "documents": 745
    },
    {
     "name": "Conservation Commission",
@@ -17201,7 +17299,7 @@
    },
    {
     "name": "School Advisory Councils & Committees",
-    "documents": 332
+    "documents": 333
    },
    {
     "name": "Historical Commission",
@@ -17209,7 +17307,7 @@
    },
    {
     "name": "Parks Commission",
-    "documents": 328
+    "documents": 329
    },
    {
     "name": "Personnel Committee",
@@ -17217,7 +17315,7 @@
    },
    {
     "name": "School Committee",
-    "documents": 283
+    "documents": 284
    },
    {
     "name": "Capital Planning Committee",
@@ -17361,22 +17459,22 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12138,
-  "fetched": 12088,
-  "agendas": 7433,
+  "listed": 12144,
+  "fetched": 12094,
+  "agendas": 7439,
   "minutes": 4705,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12089,
+  "textFiles": 12095,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1512,
+  "documents": 1521,
   "groups": 22,
-  "bytes": 2188400643,
-  "loadBearing": 160
+  "bytes": 2202385854,
+  "loadBearing": 161
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

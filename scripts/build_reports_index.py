@@ -875,8 +875,27 @@ def finance_index():
     )
 
 
+def unlisted_ids(analyses_dir=None):
+    """The analyses that are published but linked from nowhere. See sources/analyses/UNLISTED.
+
+    Read by this generator, by `build_sitemap.py` and by `fy28/scripts/prerender.mjs`, so
+    that an unlinked report cannot be quietly relisted by whichever of the three happens to
+    enumerate the directory next."""
+    path = os.path.join(analyses_dir or SRC, 'UNLISTED')
+    if not os.path.exists(path):
+        return set()
+    out = set()
+    for line in open(path, encoding='utf-8'):
+        line = line.split('#', 1)[0].strip()
+        if line:
+            out.add(line)
+    return out
+
+
 def main():
-    names = sorted(f[:-3] for f in os.listdir(SRC) if f.endswith('.md'))
+    hidden = unlisted_ids()
+    names = sorted(f[:-3] for f in os.listdir(SRC)
+                   if f.endswith('.md') and f[:-3] not in hidden)
     ordered = [n for n in ORDER if n in names] + [n for n in names if n not in ORDER]
 
     reports, unlisted = [], []

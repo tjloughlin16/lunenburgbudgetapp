@@ -130,9 +130,21 @@ async function readRoutes() {
   // this script follows: the routes come from the thing that decides them, never from a
   // list kept beside it. A document added to public/docs/analyses is prerendered the
   // same day, and `build_reports_index.py --check` fails if it is missing from /reports.
+  //
+  // MINUS THE UNLISTED ONES, for the same reason an unlisted Tab gets no static twin: a
+  // prerendered file is what an unlisted page should not leave in dist for a crawler that
+  // guesses, and the route is absent from sitemap.xml so the assertion below would fail on
+  // it anyway. The declared set is sources/analyses/UNLISTED, read here and by
+  // build_sitemap.py and build_reports_index.py, so one file decides it.
+  const hiddenDocs = new Set(
+    (existsSync(join(APP, '..', 'sources', 'analyses', 'UNLISTED'))
+      ? (await readFile(join(APP, '..', 'sources', 'analyses', 'UNLISTED'), 'utf8')).split('\n')
+      : []).map(l => l.split('#')[0].trim()).filter(Boolean))
   const docs = (await readdir(join(APP, 'public', 'docs', 'analyses')))
-    .filter(f => f.endsWith('.md')).map(f => f.slice(0, -3)).sort()
+    .filter(f => f.endsWith('.md')).map(f => f.slice(0, -3))
+    .filter(d => !hiddenDocs.has(d)).sort()
   if (!docs.length) throw new Error('no analyses in public/docs/analyses — nothing to render')
+  if (hiddenDocs.size) console.log(`  ${hiddenDocs.size} unlisted analysis(es) not rendered: ${[...hiddenDocs].join(', ')}`)
   console.log(`  ${docs.length} markdown analyses at /analysis/<id>`)
 
   // THE BLOG POSTS THAT HAVE BEEN PUBLISHED, and only those.
