@@ -15,7 +15,10 @@ import {
   TownBudgetsShare, TownBudgetsAll, TownBudgetsRates, TownBudgetsPull,
   TownBudgetsTrends, TownBudgetsTotal, TownBudgetsTown,
 } from './TownBudgetsCharts'
-import { TownsLikeUsMap, TownsLikeUsDrivers } from './TownComparisonCharts'
+import {
+  TownsLikeUsMap, TownsLikeUsDrivers, TownsLikeUsFunding, TownsLikeUsPositions,
+  TownsLikeUsHeat,
+} from './TownComparisonCharts'
 
 /* THE REGISTRY THAT LETS A CHART STOP BEING A PICTURE.
  *
@@ -62,6 +65,9 @@ const has = (...keys: string[]) => (d: Record<string, unknown>) =>
 export const ANALYSIS_CHARTS: Record<string, Entry> = {
   'towns-like-us-map': { render: TownsLikeUsMap, needs: has('map','local','twins') },
   'towns-like-us-drivers': { render: TownsLikeUsDrivers, needs: has('correlations') },
+  'towns-like-us-funding': { render: TownsLikeUsFunding, needs: has('funding') },
+  'towns-like-us-positions': { render: TownsLikeUsPositions, needs: has('distributions') },
+  'towns-like-us-heat': { render: TownsLikeUsHeat, needs: has('heatmap') },
   'town-personnel-crowd': { render: TownPersonnelCrowd, needs: has('employers','pictogram') },
   'town-personnel-share': { render: TownPersonnelShare, needs: has('employers') },
   'town-personnel-counts': { render: TownPersonnelCounts, needs: has('employers') },

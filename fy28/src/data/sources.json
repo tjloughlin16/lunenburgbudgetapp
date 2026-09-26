@@ -50,7 +50,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 34 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 44 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 34 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 46 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -1151,6 +1151,18 @@
    "blurb": "The Division of Local Services publishes a Free Cash Proof for every community: the year-end calculation of what a town may appropriate without raising taxes, broken into its components. Downloaded 30 August 2026. These reconcile to themselves twice over — 81 checks across nine towns and five years, all tying to the dollar. They carry no denominator of any kind, so the absolute figures do not compare between towns of different size; the composition, being a share, does.",
    "items": [
     {
+     "path": "data/dls-cherry-sheet.csv",
+     "title": "The cherry sheet: every line of state aid and every state assessment",
+     "stars": 3,
+     "what": "All 351 municipalities and all 87 regional school districts, FY2010–FY2027, receipts and assessments, 40 programmes — 235,254 figures. It answers what nothing else here could: REGIONAL TRANSPORTATION, $88.2M statewide in FY2026 and paid only to regional districts, which is the money behind the regionalisation argument. It also carries school choice tuition received and paid, and charter sending tuition and reimbursement, which is where a large part of the difference between districts’ grant and revolving income turns out to live. Long, a row per place per programme, because which programmes exist changes by year.",
+     "kind": "Data",
+     "bytes": 16426368,
+     "url": "/docs/data/dls-cherry-sheet.csv",
+     "count": 235254,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-cherry-sheet.csv"
+    },
+    {
      "path": "state-dls/health-insurance-expenditures.xlsx",
      "title": "Health insurance expenditures, every municipality, FY2002–FY2026",
      "stars": 3,
@@ -1221,6 +1233,18 @@
      "count": 4743,
      "unit": "rows",
      "textUrl": "/docs/data/dls-override-votes.csv"
+    },
+    {
+     "path": "data/dls-cherry-sheet-sources.csv",
+     "title": "Which workbook each cherry sheet figure came from",
+     "stars": 2,
+     "what": "One row per export rather than per figure. A year, a population and a direction identify a workbook, so repeating its name and sha256 on all 235,254 data rows cost 30 MB of a 46 MB file to say 72 things. `fetch_dls_cherry_sheet.py --check` refuses if any row’s group is missing from here.",
+     "kind": "Data",
+     "bytes": 12572,
+     "url": "/docs/data/dls-cherry-sheet-sources.csv",
+     "count": 72,
+     "unit": "rows",
+     "textUrl": "/docs/data/dls-cherry-sheet-sources.csv"
     },
     {
      "path": "state-dls/PROVENANCE.md",
@@ -1654,6 +1678,18 @@
      "textUrl": "/docs/data/valuation-by-class.csv"
     },
     {
+     "path": "analyses/towns-like-us.md",
+     "title": "How Lunenburg compares: neighbours, peers, look-alikes and destinations",
+     "stars": 3,
+     "what": "Four comparison sets, because they answer four questions: the six towns that share a border (computed from Census boundary polygons, not remembered), the five this project uses as peers, the towns the math picks out of all 351, and the places Lunenburg children are actually schooled. The finding the two cohorts exist for: no town is among the ten closest to Lunenburg on both what it IS and what it DOES.",
+     "kind": "Notes",
+     "bytes": 67226,
+     "url": "/docs/analyses/towns-like-us.md",
+     "count": 665,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/towns-like-us.md"
+    },
+    {
      "path": "analyses/stabilization-funds.md",
      "title": "The stabilization funds, and who may spend them",
      "stars": 3,
@@ -1712,18 +1748,6 @@
      "count": 447,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics-ledger.md"
-    },
-    {
-     "path": "analyses/towns-like-us.md",
-     "title": "How Lunenburg compares: neighbours, peers, look-alikes and destinations",
-     "stars": 3,
-     "what": "Four comparison sets, because they answer four questions: the six towns that share a border (computed from Census boundary polygons, not remembered), the five this project uses as peers, the towns the math picks out of all 351, and the places Lunenburg children are actually schooled. The finding the two cohorts exist for: no town is among the ten closest to Lunenburg on both what it IS and what it DOES.",
-     "kind": "Notes",
-     "bytes": 20445,
-     "url": "/docs/analyses/towns-like-us.md",
-     "count": 191,
-     "unit": "lines",
-     "textUrl": "/docs/analyses/towns-like-us.md"
     },
     {
      "path": "analyses/monty-tech.md",
@@ -2506,14 +2530,34 @@
      "textUrl": "/docs/data/extraction-blocked.csv"
     },
     {
+     "path": "analyses/charts/towns-like-us-positions.svg",
+     "title": "Where Lunenburg sits, measure by measure",
+     "stars": 1,
+     "what": "Twelve measures, each drawn as the full spread of the 161 towns that run their own K–12 district, with the middle half shaded. A rank is a fact; whether that position is remarkable needs the spread, and this is the spread.",
+     "kind": "SVG",
+     "bytes": 222120,
+     "url": "/docs/analyses/charts/towns-like-us-positions.svg",
+     "textUrl": "/docs/analyses/charts/towns-like-us-positions.svg"
+    },
+    {
      "path": "analyses/charts/towns-like-us-map.svg",
      "title": "Who Lunenburg is compared with, and where they are",
      "stars": 1,
      "what": "Every Massachusetts town outlined from the Census TIGER polygons, with the towns this report names filled and pinned at their published centroids. Nothing on it is placed by eye.",
      "kind": "SVG",
-     "bytes": 173984,
+     "bytes": 158351,
      "url": "/docs/analyses/charts/towns-like-us-map.svg",
      "textUrl": "/docs/analyses/charts/towns-like-us-map.svg"
+    },
+    {
+     "path": "analyses/charts/towns-like-us-heat.svg",
+     "title": "Every Massachusetts town, shaded by one measure",
+     "stars": 1,
+     "what": "The whole state as a choropleth, Lunenburg outlined in red. Shaded by RANK rather than by amount, because on nearly every measure here a handful of towns hold most of the total and the raw range would leave the other 350 an identical pale. The web version switches between thirteen measures; this is the one the report is about, spending per pupil, where Lunenburg is among the palest towns in the state.",
+     "kind": "SVG",
+     "bytes": 143361,
+     "url": "/docs/analyses/charts/towns-like-us-heat.svg",
+     "textUrl": "/docs/analyses/charts/towns-like-us-heat.svg"
     },
     {
      "path": "analyses/charts/town-budgets-town.svg",
@@ -2566,6 +2610,16 @@
      "bytes": 12615,
      "url": "/docs/analyses/charts/town-personnel-people.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-people.svg"
+    },
+    {
+     "path": "analyses/charts/towns-like-us-funding.svg",
+     "title": "Where each town’s school money comes from",
+     "stars": 1,
+     "what": "Pupils, then dollars spent on each pupil split four ways: what the town must raise from homes, from business, what the state adds, and what it spends above the figure the state calculates for it. The four parts sum exactly to the spending they explain, and the last is the one a town meeting decides.",
+     "kind": "SVG",
+     "bytes": 11888,
+     "url": "/docs/analyses/charts/towns-like-us-funding.svg",
+     "textUrl": "/docs/analyses/charts/towns-like-us-funding.svg"
     },
     {
      "path": "analyses/charts/stabilization-all.svg",
@@ -3210,9 +3264,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1044370,
+     "bytes": 1044573,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4699,
+     "count": 4700,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -3234,9 +3288,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 590479,
+     "bytes": 590604,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4699,
+     "count": 4700,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -3246,9 +3300,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 453632,
+     "bytes": 453790,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2902,
+     "count": 2903,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -3294,9 +3348,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 148241,
+     "bytes": 150425,
      "url": "/docs/data/money-gaps.csv",
-     "count": 180,
+     "count": 182,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3793,7 +3847,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 40316928,
+     "bytes": 40321024,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -3803,7 +3857,7 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3268272,
+     "bytes": 3271791,
      "url": "/docs/data/meeting-register.csv",
      "count": 7047,
      "unit": "rows",
@@ -3947,9 +4001,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 457276,
+     "bytes": 457447,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2668,
+     "count": 2669,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -4699,6 +4753,18 @@
      "textUrl": "/docs/contracts/CONTRACTS.md"
     },
     {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 11695,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 8,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
+    },
+    {
      "path": "data/one-big-report-story.csv",
      "title": "The editor’s spec for /one-big-report",
      "stars": 2,
@@ -4747,18 +4813,6 @@
      "textUrl": "/docs/data/meeting-watch-events.csv"
     },
     {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 9041,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 7,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
-    },
-    {
      "path": "data/budget-seasons/fy27-lines.csv",
      "title": "Every budget line the FY27 scenarios differ on, school and town",
      "stars": 2,
@@ -4801,9 +4855,9 @@
      "stars": 2,
      "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
      "kind": "Data",
-     "bytes": 3292,
+     "bytes": 3405,
      "url": "/docs/data/youtube-watch-events.csv",
-     "count": 28,
+     "count": 29,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-watch-events.csv"
     },
@@ -5006,9 +5060,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 520,
+     "bytes": 551,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 14,
+     "count": 15,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -17471,10 +17525,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1521,
+  "documents": 1526,
   "groups": 22,
-  "bytes": 2202385854,
-  "loadBearing": 161
+  "bytes": 2219246565,
+  "loadBearing": 162
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

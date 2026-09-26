@@ -218,7 +218,127 @@ right figures are there.
 One line per report, with what the review CHANGED. A review that changed nothing is
 recorded as that, because it is a claim worth being able to disbelieve.
 
-### `/analysis/towns-like-us` — how Lunenburg compares, 26 September 2026
+### `/analysis/towns-like-us` — THIRD PASS: the question was wrong, 26 September 2026
+
+The second pass made every metric readable and TJ still could not use the page: *"im having
+a hard time really understanding the top level conclusions... all the metrics conclusions
+seem like tertiary metrics, not the things im looking for."* Then he named what he wanted:
+*"are the towns with the lowest citizen tax bill able to fund their schools with per pupil
+cost without the tax payers? If so, how? Which towns have the highest per pupil and lowest
+tax bills, and how?"*
+
+**Readable is not the same as relevant, and that is the whole lesson of this pass.** Every
+card was true, sourced, checked and carried its own unit. They were about correlations,
+rankings and ratios -- the shape the DATA arrives in -- and not one of them answered the
+question a resident actually walks in with. A persona review that asks "can they read it?"
+will pass a page that answers nobody.
+
+**The report now opens with the answer.** Cross-tabulate the cheapest quarter of towns by
+tax bill against the top quarter by spending per pupil: **8 of 161** are in both, and every
+one of them is named in a table. The "how" is decided by the data rather than asserted --
+each is tested against twice the frame median for state dollars per child and for houses
+per pupil. **Six are carried by Chapter 70 because the state's formula finds the least local
+effort available to them; two are resort towns with
+up to 6.0 homes per pupil against a median of 1.8; none is unexplained.**
+
+The honest conclusion is a deflating one, and it is the most useful sentence on the page:
+**there are exactly two routes and Lunenburg has neither**, because one requires being poor
+and the other requires three times the usual number of houses per child. What the table
+rules out is the hope that somewhere a town has found a third way.
+
+**That also made the right lever findable.** If neither route is available, the only
+remaining question is how far above the state's own adequacy figure a town chooses to go --
+Lunenburg **1.27x**, the middle district **1.46x**, Harvard **1.95x** -- and that one IS a
+town meeting vote. It is the first lever now, and the same ratio appears against every town
+in the comparison and in the map readout.
+
+And the regional towns stopped being a shrug. TJ: *"regional towns need an answer. HOW do
+they do it, mathematically"*. The earlier version said the question could not be asked of
+them, which was asking it at the wrong LEVEL: Chapter 70 is computed per municipality
+whatever district its children attend, so what each is required to raise per child and what
+the state adds are published for Ashby exactly as for Lunenburg. `money-gaps.csv` was
+narrowed accordingly -- rule 7c says the registry outranks the page, so a page that can now
+answer something has to go and correct the registry that said it could not.
+
+#### A note on vocabulary: use the publisher's words, and check that they are theirs
+
+TJ, reading the draft: *"is this a PC phrase: 'poor enough'"* and then *"Does the state use
+the phrase 'poor'?"*
+
+**It does not, and the second question is the one worth copying.** DESE's own Chapter 70
+workbooks say `Lowinc enro`, `Lowinc %` and `Lowinc Group` -- and only ever of STUDENTS,
+never of a town. For a town's capacity the columns are `equalized_valuation`, `income`,
+`property_local_effort`, `income_local_effort` and `combined_effort_yield`. The state's word
+for what a town is expected to put in is EFFORT, derived from its property wealth and its
+residents' income.
+
+`poor enough that the state pays` was neither euphemism nor bluntness; it was ours, and it
+framed having little property value as a qualification somebody had earned -- while naming
+Lawrence, Holyoke and Springfield, where people live. The fix is not a softer word. It is
+the publisher's word, which is also the more precise one, and the way to find it is to go
+and read the column headings rather than reason about tone.
+
+### `/analysis/towns-like-us` — SECOND PASS, 26 September 2026
+
+**The first pass passed the report and TJ failed it.** He read the published cards and
+could not read them, on four separately: *"citizens do not understand what this means:
++0.91, correlation between average home value and average tax bill, 161 towns"*; *"dont
+even understand the meaning of this: 224.25, a year off a $350,000 home, at the largest
+shift onto commercial the statute permits"*; *"how does THIS even mathematically make
+sense: Of the towns most like Lunenburg, 9 of 10 spend more per pupil and 7 charge less.
+9 of 10 and 7 of 10?!"*; and *"0 of 10 ... 10 of what?!?!"* Also *"'Avg bill FY2026' needs
+to have units. bill of what?!"* and *"what does 'rank' mean"*.
+
+**Every one is rule 7b, in a report whose generator cites rule 7b.** That is the lesson
+worth keeping: a persona review done by the author, on the author's own prose, checks
+whether the sentences are DEFENSIBLE and not whether they are READABLE. The first pass
+asked "is this true and sourced?" of every card and never once asked "would somebody who
+has not read the method know what this number is?"
+
+**What changed:**
+
+- **No correlation coefficient survives as a card.** `r +0.91` is a real measurement and
+  an unusable metric; it belongs in the chart and the table. The card carries the SLOPE
+  instead — about **$995** more on a town's average bill for every extra $100,000 its
+  average home is worth — which is the same finding in the units a tax bill is printed
+  in. Same for the override card: **$10,641** average bill where three or more have passed,
+  **$6,809** where none has.
+- **Two figures never share a card.** `9 of 10 ... and 7 charge less` read as a partition of
+  ten. They are two facts about the same ten towns, and the second is now in the supporting
+  line saying plainly it is the same ten. `charge` is gone; a town does not charge, it has a
+  tax bill.
+- **Every count names its denominator.** `0 of 10` became `Not one`, with the unit saying of
+  what. Every table header now says what is being measured and which end of a rank is first.
+- **TJ then gave the report its actual job**, which the first pass had not asked for at all:
+  *"we are trying to answer the questions: what are OTHER districts doing right that we
+  aren't, and how do we know?"* and *"conclusions for the other districts... are they better
+  off, tax payers but not students, students but not tax payers"*. Two new sections answer
+  it: five LEVERS, each marked whether the town could decide it and how sure the evidence
+  is, and a VERDICT for every comparison town in four plain groups — pays less/more,
+  spends less/more — with the arithmetic that lets them, and a fifth group for the six
+  towns in regional districts where the question cannot be asked at all.
+- **Two of the five levers turned out to be things Lunenburg already has**, which is the
+  finding reader 1 and reader 3 both needed: the state covers **40%** of its foundation
+  budget against 24% for the middle district, and it has **2.2** homes per pupil against
+  1.8. So the low spending is not thin state aid and not a thin tax base. What it IS is not
+  established, and the card says so.
+- **The map became usable.** TJ: *"hovering makes me scroll to see the info. it should popup
+  somewhere on the map. i cant see it"* and *"that page is NOT mobile friendly"*. The readout
+  is pinned inside the map; a tap selects and stays selected. A first attempt gave the map a
+  620px minimum and let it scroll sideways, which made it WORSE — a 390px window opens on
+  western Massachusetts, where none of the compared towns are.
+
+**The tests, run against the second version.** Reader 1 finds the worst fact — 158th of
+161 — third in the stat row, and finds credit given in the same section. Reader 2's
+repeatable sentence is *"we spend $4,281 less per pupil than comparable towns, and it is not
+because the state shortchanges us"*, which is true and is the card. Reader 3: no person is
+named except the Principal Assessor, quoted approvingly, and every shortfall is described as
+a mechanism. Reader 4 now has five things to weigh, three marked as decisions. And the
+archive search found that Lunenburg's own Budget Task Force was discussing per-pupil
+expenditure as THE comparison measure on 19 August 2024 — linked as a recording, not
+quoted, because the only transcript is machine captions.
+
+### `/analysis/towns-like-us` — first pass, 26 September 2026
 
 Four comparison sets — the six towns computed from boundary polygons, the five peers this
 project chose, two cohorts the math picks out of all 351, and where Lunenburg children are

@@ -605,6 +605,22 @@ GROUPS = [
              'behind that nothing can find or remove. This register names each one, matched '
              'by sha256 rather than by name, and says `superseded_by` where the same bytes '
              'are held under another key. That is the only remedy there is.'),
+            ('data/dls-cherry-sheet.csv',
+             'The cherry sheet: every line of state aid and every state assessment', 3,
+             'All 351 municipalities and all 87 regional school districts, FY2010–FY2027, '
+             'receipts and assessments, 40 programmes — 235,254 figures. It answers what '
+             'nothing else here could: REGIONAL TRANSPORTATION, $88.2M statewide in FY2026 and '
+             'paid only to regional districts, which is the money behind the regionalisation '
+             'argument. It also carries school choice tuition received and paid, and charter '
+             'sending tuition and reimbursement, which is where a large part of the difference '
+             'between districts’ grant and revolving income turns out to live. Long, a row '
+             'per place per programme, because which programmes exist changes by year.'),
+            ('data/dls-cherry-sheet-sources.csv',
+             'Which workbook each cherry sheet figure came from', 2,
+             'One row per export rather than per figure. A year, a population and a direction '
+             'identify a workbook, so repeating its name and sha256 on all 235,254 data rows '
+             'cost 30 MB of a 46 MB file to say 72 things. `fetch_dls_cherry_sheet.py --check` '
+             'refuses if any row’s group is missing from here.'),
             ('data/dls-override-votes.csv',
              'Override and underride votes, extracted', 2,
              'The workbook above as a CSV, reconciled to an identity it states about itself: '
@@ -853,6 +869,25 @@ GROUPS = [
              'Every Massachusetts town outlined from the Census TIGER polygons, with the '
              'towns this report names filled and pinned at their published centroids. '
              'Nothing on it is placed by eye.'),
+            ('analyses/charts/towns-like-us-heat.svg',
+             'Every Massachusetts town, shaded by one measure', 1,
+             'The whole state as a choropleth, Lunenburg outlined in red. Shaded by RANK '
+             'rather than by amount, because on nearly every measure here a handful of towns '
+             'hold most of the total and the raw range would leave the other 350 an identical '
+             'pale. The web version switches between thirteen measures; this is the one the '
+             'report is about, spending per pupil, where Lunenburg is among the palest towns '
+             'in the state.'),
+            ('analyses/charts/towns-like-us-positions.svg',
+             'Where Lunenburg sits, measure by measure', 1,
+             'Twelve measures, each drawn as the full spread of the 161 towns that run their '
+             'own K–12 district, with the middle half shaded. A rank is a fact; whether '
+             'that position is remarkable needs the spread, and this is the spread.'),
+            ('analyses/charts/towns-like-us-funding.svg',
+             'Where each town’s school money comes from', 1,
+             'Pupils, then dollars spent on each pupil split four ways: what the town must '
+             'raise from homes, from business, what the state adds, and what it spends above '
+             'the figure the state calculates for it. The four parts sum exactly to the '
+             'spending they explain, and the last is the one a town meeting decides.'),
             ('analyses/charts/towns-like-us-drivers.svg',
              'What actually moves a tax bill', 1,
              'Eight correlations across the 161 towns that run their own K–12 district. '
@@ -3101,6 +3136,28 @@ def is_edition(rel, catalogued):
     return bool(m) and (m.group('stem') + m.group('ext')) in catalogued
 
 
+# A FAMILY OF EXPORTS THAT IS ONE DOCUMENT IN SEVENTY-TWO PIECES.
+#
+# The DLS cherry sheet form takes a year, a population and a direction, and there is no
+# export that covers all three at once -- so the whole cherry sheet arrives as 72 workbooks
+# whose only differences are the parameters in their names. Cataloguing them one by one
+# would add 72 near-identical paragraphs and another four every year, which is the same
+# problem `is_edition` exists to stop, one level up: there the repetition is over TIME, here
+# it is over the form's own parameters.
+#
+# The family is described once, in `sources/state-dls/index.csv`, under the pattern that
+# names it. The manifest still holds every file with its own sha256, and
+# `dls-cherry-sheet-sources.csv` says which one every figure came from.
+_FAMILIES = (
+    re.compile(r'^state-dls/CherrySheet-\d{4}-(Municipalities|RegionalSchools)-'
+               r'(Receipts|Assessments)-\d{4}-\d{2}-\d{2}-[0-9a-f]{12}\.xlsx$'),
+)
+
+
+def in_family(rel):
+    return any(p.match(rel) for p in _FAMILIES)
+
+
 SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              'town-budget', 'town-supplementary', 'town-annual-reports', 'state-dese',
              # Working files, one per page, that the catalogue and the datasets summarise.
@@ -3773,7 +3830,8 @@ def main():
         for fn in filenames:
             rel = os.path.join(rel_dir, fn).replace(os.sep, '/')
             if (fn.startswith('.') or fn in SKIP_FILES or rel in SKIP_FILES
-                    or rel in catalogued or is_edition(rel, catalogued)):
+                    or rel in catalogued or is_edition(rel, catalogued)
+                    or in_family(rel)):
                 continue
             if os.path.splitext(fn)[1].lower() in ('.txt',):
                 continue
