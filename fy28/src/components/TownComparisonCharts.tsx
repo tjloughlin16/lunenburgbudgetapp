@@ -443,8 +443,24 @@ export function TownsLikeUsFunding({ data, alt }: ChartProps) {
   const maxPup = Math.max(...rows.map(r => r.pupils))
   const maxSpend = Math.max(...rows.map(r => r.per_pupil))
   const hot = over ? rows.find(r => r.town === over) ?? null : null
+  /* ONE GRID TEMPLATE, DECLARED ONCE. The header row and every data row read it, because a
+   * header that drifts a column away from what it heads is worse than no header at all. */
+  const COLS = 'minmax(84px,132px) minmax(48px,74px) minmax(0,1fr)'
   return (
     <>
+      {/* A TITLE AND COLUMN HEADS.
+        *
+        * TJ: *"this chart needs a title, and column headers. the gray bars are not
+        * obvious"*. The grey bar is the PUPIL COUNT -- the half of `pupils beside spend`
+        * that this chart was built for -- and it carried no heading, no unit and no number,
+        * so it read as decoration. A bar with no label is not a weak encoding, it is an
+        * unlabelled one: rule 7b's bare number, drawn instead of printed. */}
+      <h4 style={{ margin: '0 0 .15rem', fontSize: 15 }}>
+        How many children, and what is spent on each
+      </h4>
+      <p style={{ margin: '0 0 .5rem', fontSize: 12.5, color: 'var(--text-secondary)' }}>
+        Every bar is per pupil except the first, which is how many pupils there are.
+      </p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.3rem .8rem', marginBottom: '.5rem' }}>
         {FUND_PARTS.map(([, label, colour]) => (
           <span key={label} style={{
@@ -457,6 +473,16 @@ export function TownsLikeUsFunding({ data, alt }: ChartProps) {
         ))}
       </div>
       <div style={{ display: 'grid', gap: 2 }}>
+        <div style={{
+          display: 'grid', gridTemplateColumns: COLS, alignItems: 'end', gap: '.4rem',
+          padding: '0 .3rem .25rem', borderBottom: '1px solid var(--grid)',
+          fontSize: 11, letterSpacing: '.03em', textTransform: 'uppercase',
+          color: 'var(--text-secondary)',
+        }}>
+          <span>Town</span>
+          <span>Pupils</span>
+          <span>Spent per pupil, by where the money comes from</span>
+        </div>
         {rows.map(r => {
           const me = r.town === 'Lunenburg'
           return (
@@ -466,18 +492,23 @@ export function TownsLikeUsFunding({ data, alt }: ChartProps) {
                    display: 'grid',
                    /* Name, pupils, then the stack. The stack is a fraction so the whole row
                       reflows at phone width instead of pushing the page sideways. */
-                   gridTemplateColumns: 'minmax(84px,132px) minmax(48px,74px) minmax(0,1fr)',
+                   gridTemplateColumns: COLS,
                    alignItems: 'center', gap: '.4rem',
                    padding: '.2rem .3rem', borderRadius: 4,
                    background: me ? 'var(--surface-2)' : over === r.town ? 'var(--surface-3)' : 'transparent',
                  }}>
               <span style={{ fontSize: 12, fontWeight: me ? 700 : 400 }}>{r.town}</span>
-              <span style={{ position: 'relative', height: 12 }}>
+              <span style={{ position: 'relative', height: 14, display: 'flex', alignItems: 'center' }}
+                    title={`${r.pupils.toLocaleString('en-US')} pupils`}>
                 <span style={{
-                  position: 'absolute', left: 0, top: 1, height: 10, borderRadius: 2,
+                  position: 'absolute', left: 0, top: 2, height: 10, borderRadius: 2,
                   width: `${(100 * r.pupils) / maxPup}%`, background: 'var(--text-muted)',
-                  opacity: 0.45,
+                  opacity: 0.4,
                 }} />
+                <span style={{
+                  position: 'relative', fontSize: 10.5, fontWeight: me ? 700 : 400,
+                  fontVariantNumeric: 'tabular-nums', color: 'var(--text-primary)',
+                }}>{r.pupils.toLocaleString('en-US')}</span>
               </span>
               <span style={{ position: 'relative', height: 16, display: 'flex' }}>
                 {FUND_PARTS.map(([key, label, colour]) => (

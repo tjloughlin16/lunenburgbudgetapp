@@ -861,14 +861,25 @@ def build_conclusions(frame, corr, twins_is, twins_does, overlap10, overlap25, d
     E['ratio_t'] = '%.2f' % E['ratio']
     E['med_ratio_t'] = '%.2f' % E['med_ratio']
     G = cheap_and_generous(frame, effort, parcels)
-    PR = predictors(frame, taxable_value(), effort)
+    TV = taxable_value()
+    # THE SAME DIVISION THE PAYLOAD PUBLISHES, not a second one that happens to agree
+    # today. `value_per_pupil` in the payload is total taxable value over frame FTE.
+    V_PP = {t: TV[t]['total'] / frame[t]['fte']
+            for t in TV if t in frame and frame[t].get('fte')}
+    PR = predictors(frame, TV, effort)
     RG = regional_picture(frame, sets['dese'])
     CH = cherry_sheet(sets['dese'])
 
     rows_out = [
         conclusion(
             id='what-predicts-spending',
-            claim='Wealth per child predicts school spending. State aid, size and poverty do not.',
+            # NAME THE MEASURE, DO NOT NICKNAME IT. TJ: *"this metric 'Wealth per child
+            # predicts school spending.' doesnt answer what 'wealth' means"*. `Wealth` is
+            # our shorthand for a specific published quantity -- the town's total taxable
+            # assessed value divided by its foundation enrolment -- and a reader cannot
+            # check a nickname. Rule 7b: precision and jargon are not the same thing, and
+            # the second is usually an unfinished sentence.
+            claim='Taxable property per child predicts school spending. Aid and poverty do not.',
             detail=(
                 'Twelve things were tested against what a district spends per pupil, across '
                 'all %d towns that run their own K–12 school. The strongest by a long '
@@ -897,6 +908,13 @@ def build_conclusions(frame, corr, twins_is, twins_does, overlap10, overlap25, d
                 'unexplained': figure(PR['unexplained'], pct(PR['unexplained'], 0)),
                 'n': figure(PR['n'], str(PR['n'])),
                 'twelve': figure(12, 'Twelve'),
+                'lunvalue': figure(V_PP['Lunenburg'], _m(V_PP['Lunenburg']),
+                                   'of taxable assessed value stands behind each Lunenburg '
+                                   'pupil — the town’s whole property tax base divided by '
+                                   'the pupils actually enrolled (FTE). The choropleth '
+                                   'divides the same base by FOUNDATION enrolment, the '
+                                   'children the state funds the town for, which is a '
+                                   'larger count and so a smaller figure'),
             },
             figure='best',
             kind='measured',
@@ -915,8 +933,18 @@ def build_conclusions(frame, corr, twins_is, twins_does, overlap10, overlap25, d
                 'people reach for. Special education caseload, debt service, contract '
                 'history and regional structure are all candidates this report does not '
                 'hold.' % pct(PR['unexplained'], 0)),
-            so_what=('%s of the difference is none of wealth, aid, size, poverty or tax base.'
-                     % pct(PR['unexplained'], 0)),
+            # AND THE SUPPORTING LINE LISTED THE SAME THING TWICE -- `wealth` and `tax
+            # base` are one measure, which is exactly the confusion the nickname caused.
+            # NAME THE DENOMINATOR. This figure and the choropleth's `Taxable value behind
+            # each child` are the same numerator over DIFFERENT divisors, and the page
+            # publishes both: the map divides by FOUNDATION enrolment, which exists for all
+            # 351 towns, and the predictor divides by enrolled FTE, because it is regressed
+            # against DESE per-pupil spending and that is computed on FTE -- rule 6, like
+            # for like. So they differ, legitimately, and an unlabelled pair of figures for
+            # one quantity reads as an error. Each says which children it counted.
+            so_what=('Lunenburg has %s behind each enrolled pupil. Even so, %s of the gap '
+                     'is none of the five.'
+                     % (_m(V_PP['Lunenburg']), pct(PR['unexplained'], 0))),
             see=[('/analysis/per-pupil-spending', 'Per-pupil spending, in full')]),
 
         conclusion(
@@ -3237,6 +3265,26 @@ def positions_svg(payload):
     return '\n'.join(o) + '\n'
 
 
+def _m(v):
+    """$1.4M, $521M, $1.18B. A magnitude, for somewhere a nine-digit figure cannot be read.
+
+    TJ, on the commercial table: *"i think you have a decimal problem: 10,552,361
+    +$520,968,939"* and then *"oh this might be hundreds of millions.... hmm. it just
+    reads weird somehow"*. The arithmetic was right both times. What was wrong is that the
+    column beside it is an ANNUAL LEVY and that one is an ASSESSED VALUE -- different
+    units, fifty times apart, set in identical `$1,234,567` formatting and read across as
+    though they were comparable. Nine digits is past what anybody scans; the magnitude is
+    the readable form and the exact figure stays in the machine-readable payload."""
+    a = abs(v)
+    if a >= 1e9:
+        return '%s$%.2fB' % ('-' if v < 0 else '', a / 1e9)
+    if a >= 1e8:
+        return '%s$%.0fM' % ('-' if v < 0 else '', a / 1e6)
+    if a >= 1e6:
+        return '%s$%.1fM' % ('-' if v < 0 else '', a / 1e6)
+    return usd(v)
+
+
 def funding_svg(payload):
     """Two bars a town: how many pupils, and what is spent on each, by where it comes from.
 
@@ -3278,10 +3326,15 @@ def funding_svg(payload):
         o.append("<text x='%.1f' y='77' font-size='10.5' fill='#374151'>%s</text>"
                  % (lx + 14, esc(label)))
         lx += 20 + 5.9 * len(label) + 12
-    o.append("<text x='%d' y='%d' font-size='10' fill='#6b7280'>pupils</text>"
-             % (name_w + 2, top - 6))
-    o.append("<text x='%d' y='%d' font-size='10' fill='#6b7280'>spent on each pupil</text>"
-             % (bar_x, top - 6))
+    # THE SAME THREE HEADS THE COMPONENT USES. The picture carried heads and the web
+    # version had none, which is rule 7f's usual failure running backwards; keeping the
+    # words identical is what stops the two drifting once both have them.
+    o.append("<text x='8' y='%d' font-size='10' fill='#6b7280' letter-spacing='0.4'>TOWN"
+             "</text>" % (top - 6))
+    o.append("<text x='%d' y='%d' font-size='10' fill='#6b7280' letter-spacing='0.4'>PUPILS"
+             "</text>" % (name_w, top - 6))
+    o.append("<text x='%d' y='%d' font-size='10' fill='#6b7280' letter-spacing='0.4'>SPENT "
+             "PER PUPIL, BY WHERE THE MONEY COMES FROM</text>" % (bar_x, top - 6))
 
     for i, r in enumerate(rows_):
         y = top + i * rowh
@@ -3420,6 +3473,138 @@ def markdown(payload, frame):
          'into what the town must raise from homes, what it raises from business, what the '
          'state adds, and what it spends above the figure the state calculates for it.'))
     w('')
+    # THE ANSWER SITS UNDER THE CHART THAT RAISES IT.
+    #
+    # TJ, on the funding chart's fourth segment: *"oh maybe we just move 'And what IS the
+    # money outside the school budget?' up?"* -- cheaper and better than the complementary
+    # chart that was about to be built for it. The question the PICTURE asks -- where does
+    # the money above the state's figure come from -- was answered two sections later, and
+    # the part naming the sources was filed under `Does regionalising save money?`, which
+    # it was never about. Rule 7a: what qualifies a figure belongs beside the figure.
+
+    A = P['above_requirement']
+    w('## Where the money above the state\u2019s figure actually comes from')
+    w('')
+    w('The chart above splits spending by the state\u2019s formula \u2014 what a town is '
+      'REQUIRED to raise and what the state adds. It cannot say where the rest comes from, '
+      'and it should not be read as though it could. This can, for the districts where DESE '
+      'publishes actual net school spending for FY%d.' % P['fy'])
+    w('')
+    w('| District | Pupils | Spent per pupil, all funds | Required of it per pupil | '
+      'Appropriated ABOVE the requirement | From outside the school budget | Actual against '
+      'required |')
+    w('|---|---:|---:|---:|---:|---:|---:|')
+    for r in A:
+        w('| %s%s | %s | %s | %s | %s | %s | %.2fx |'
+          % (r['district'], ' *(regional)*' if r['regional'] else '',
+             '{:,}'.format(r['pupils']), money(r['all_funds_pp']),
+             money(r['required_nss_pp']), money(r['above_requirement_pp']),
+             money(r['outside_nss_pp']), r['multiple']))
+    w('')
+    lun_a = [r for r in A if r['district'] == 'Lunenburg']
+    top_a = A[0]
+    if lun_a:
+        w('**Two different things, and both matter.** %s appropriates %s a pupil above what '
+          'the state requires; Lunenburg appropriates %s. And %s brings in %s a pupil from '
+          'outside the school appropriation entirely, against Lunenburg\u2019s %s \u2014 '
+          'what THAT is gets its own section below, because an earlier draft of this '
+          'sentence listed what it assumed was in it rather than what a file says.'
+          % (top_a['district'], money(top_a['above_requirement_pp']),
+             money(lun_a[0]['above_requirement_pp']), top_a['district'],
+             money(top_a['outside_nss_pp']), money(lun_a[0]['outside_nss_pp'])))
+        w('')
+    w('*What this does not show.* What is inside that last column. Net school spending '
+      'excludes transport, capital and most grants, so the figure is a mix and nothing here '
+      'splits it. That needs DESE\u2019s End of Year Financial Report, which separates '
+      'spending by fund \u2014 already the named remedy on the money-gaps row about funding '
+      'sources. And actual net school spending is published statewide only through SY2022, '
+      'so this table is the districts whose current figures this archive holds.')
+    w('')
+
+    OU = P['outside']
+    w('### And what IS the money outside the school budget?')
+    w('')
+    w('It is **grants and revolving funds**, and DESE publishes it. Its function-code file '
+      'reports every district\u2019s spending split two ways at once \u2014 by what it buys, '
+      'and by whether the general fund or a grant or revolving account paid for it.')
+    w('')
+    w('| District | Pupils | General fund | Grants and revolving | Per pupil | Share of its '
+      'spending | Of which, teacher pay per pupil |')
+    w('|---|---:|---:|---:|---:|---:|---:|')
+    for r in OU:
+        me = r['district'] == 'Lunenburg'
+        w('| %s%s%s | %s | %s | %s | %s | %s | %s |'
+          % ('**' if me else '', r['district'], '**' if me else '',
+             '{:,}'.format(r['pupils']), money(r['general']), money(r['grants_revolving']),
+             money(r['per_pupil']), pct(r['share'], 1), money(r['parts']['Teachers'])))
+    w('')
+    lun_o = [r for r in OU if r['district'] == 'Lunenburg']
+    top_o = OU[0]
+    if lun_o:
+        w('**It reconciles, which is why it can be trusted.** Lunenburg\u2019s grants and '
+          'revolving come to %s here; this report derives %s a completely different way, as '
+          'all-funds spending less net school spending. Two files, two routes, the same '
+          'answer.'
+          % (money(lun_o[0]['grants_revolving']),
+             money([r for r in P['above_requirement'] if r['district'] == 'Lunenburg'][0]
+                   ['outside_nss_pp'] * lun_o[0]['pupils'])))
+        w('')
+        # ONE LINE IS THE WHOLE DIFFERENCE, and it was a sentence inside a paragraph.
+        # TJ: *"this seems... very important"*. It is: 98% of the gap between what the
+        # best-funded district here draws from outside its appropriation and what
+        # Lunenburg draws is a single function code. Rule 5 -- follow magnitude -- says
+        # that gets a heading, not a clause.
+        # DERIVED, NOT TYPED. `187` sat in prose in two places; it is enrolled FTE less
+        # the FOUNDATION enrolment the state funds, and both are already in the payload.
+        FND = [m['values'] for m in P['heatmap']['measures'] if m['key'] == 'children'][0]
+        _ht = top_o['parts']['Teachers']
+        _lt = lun_o[0]['parts']['Teachers']
+        _gap = top_o['per_pupil'] - lun_o[0]['per_pupil']
+        _tgap = _ht - _lt
+        w('#### One function code is almost the whole difference')
+        w('')
+        w('%s charges **%s a pupil of TEACHER salaries** to grants and revolving '
+          'accounts. Lunenburg charges **%s**. The two districts differ by %s a pupil in '
+          'what they draw from outside the appropriation altogether, and %s of that — '
+          '**%s of it** — is this one line.'
+          % (top_o['district'], money(_ht), money(_lt), money(_gap), money(_tgap),
+             pct(100.0 * _tgap / _gap, 0)))
+        w('')
+        w('In whole dollars: %s of teacher pay in %s, against %s in Lunenburg. At %s’s '
+          'rate Lunenburg would charge %s a year of teacher salaries to funds outside its '
+          'school appropriation — %s more than it does.'
+          % (money(round(_ht * top_o['pupils'])), top_o['district'],
+             money(round(_lt * lun_o[0]['pupils'])), top_o['district'],
+             money(round(_ht * lun_o[0]['pupils'])),
+             money(round(_tgap * lun_o[0]['pupils']))))
+        w('')
+        w('*Three things this does not show, and they are not the same thing.* '
+          '**It does not show '
+          'that Lunenburg could do the same.** A salary can only be charged to a revolving '
+          'fund that has receipts in it, and this file does not say what any district’s '
+          'funds take in. **It does not show that the money is additional.** %s enrols %d '
+          'more pupils than the state funds it for, and tuition received for a '
+          'non-resident child is a revolving fund — payment for a service rendered, '
+          'not a windfall. **And it does not '
+          'show that the two districts code the same work the same way.** One district’s '
+          'grant-funded teacher may be another’s general-fund teacher with a grant '
+          'paying for something else. Nothing here distinguishes the three, and the '
+          'difference between them is the difference between a lever and an artefact.'
+          % (top_o['district'], round(top_o['pupils'] - FND[top_o['district']])))
+        w('')
+    w('*What this does not show, and it is the question the table raises.* WHICH fund. A '
+      'grant is money won from outside; a revolving fund is money the district itself takes '
+      'in and may spend without an appropriation. Two kinds are evidenced directly in this '
+      'archive \u2014 the athletics revolving fund, whose cashbook is held, and school '
+      'choice tuition RECEIVED, which is a cherry sheet line; others such as preschool, food '
+      'service and rentals are the usual sort and are named as examples, not as a claim '
+      'about any district\u2019s mix. This file does not separate them, '
+      'so a district with a large school-choice intake looks identical here to one that '
+      'writes successful grant applications, and those are not the same opportunity. '
+      '[Registered](/what-we-cannot-answer), with DESE\u2019s End of Year Pupil and '
+      'Financial Report as the document that would settle it.')
+    w('')
+
     w('## Can a town fund its schools well without taxing its residents? Only %d of %d can '
       '\u2014 and here is how' % (len(G['towns']), G['n']))
     w('')
@@ -3555,45 +3740,6 @@ def markdown(payload, frame):
       'not hold.' % pct(PR['unexplained'], 0))
     w('')
 
-    A = P['above_requirement']
-    w('## Where the money above the state\u2019s figure actually comes from')
-    w('')
-    w('The chart above splits spending by the state\u2019s formula \u2014 what a town is '
-      'REQUIRED to raise and what the state adds. It cannot say where the rest comes from, '
-      'and it should not be read as though it could. This can, for the districts where DESE '
-      'publishes actual net school spending for FY%d.' % P['fy'])
-    w('')
-    w('| District | Pupils | Spent per pupil, all funds | Required of it per pupil | '
-      'Appropriated ABOVE the requirement | From outside the school budget | Actual against '
-      'required |')
-    w('|---|---:|---:|---:|---:|---:|---:|')
-    for r in A:
-        w('| %s%s | %s | %s | %s | %s | %s | %.2fx |'
-          % (r['district'], ' *(regional)*' if r['regional'] else '',
-             '{:,}'.format(r['pupils']), money(r['all_funds_pp']),
-             money(r['required_nss_pp']), money(r['above_requirement_pp']),
-             money(r['outside_nss_pp']), r['multiple']))
-    w('')
-    lun_a = [r for r in A if r['district'] == 'Lunenburg']
-    top_a = A[0]
-    if lun_a:
-        w('**Two different things, and both matter.** %s appropriates %s a pupil above what '
-          'the state requires; Lunenburg appropriates %s. And %s brings in %s a pupil from '
-          'outside the school appropriation entirely, against Lunenburg\u2019s %s \u2014 '
-          'what THAT is gets its own section below, because an earlier draft of this '
-          'sentence listed what it assumed was in it rather than what a file says.'
-          % (top_a['district'], money(top_a['above_requirement_pp']),
-             money(lun_a[0]['above_requirement_pp']), top_a['district'],
-             money(top_a['outside_nss_pp']), money(lun_a[0]['outside_nss_pp'])))
-        w('')
-    w('*What this does not show.* What is inside that last column. Net school spending '
-      'excludes transport, capital and most grants, so the figure is a mix and nothing here '
-      'splits it. That needs DESE\u2019s End of Year Financial Report, which separates '
-      'spending by fund \u2014 already the named remedy on the money-gaps row about funding '
-      'sources. And actual net school spending is published statewide only through SY2022, '
-      'so this table is the districts whose current figures this archive holds.')
-    w('')
-
     RG = P['regional']
     w('## Does regionalising save money?')
     w('')
@@ -3621,53 +3767,6 @@ def markdown(payload, frame):
       % ('{:,}'.format(RG['small_pupils']), money(RG['small_admin']),
          '{:,}'.format(RG['big_pupils']), money(RG['big_admin']),
          money(RG['lun_admin']), ordinal(RG['lun_rank']), RG['n']))
-    w('')
-
-    OU = P['outside']
-    w('### And what IS the money outside the school budget?')
-    w('')
-    w('It is **grants and revolving funds**, and DESE publishes it. Its function-code file '
-      'reports every district\u2019s spending split two ways at once \u2014 by what it buys, '
-      'and by whether the general fund or a grant or revolving account paid for it.')
-    w('')
-    w('| District | Pupils | General fund | Grants and revolving | Per pupil | Share of its '
-      'spending | Of which, teacher pay per pupil |')
-    w('|---|---:|---:|---:|---:|---:|---:|')
-    for r in OU:
-        me = r['district'] == 'Lunenburg'
-        w('| %s%s%s | %s | %s | %s | %s | %s | %s |'
-          % ('**' if me else '', r['district'], '**' if me else '',
-             '{:,}'.format(r['pupils']), money(r['general']), money(r['grants_revolving']),
-             money(r['per_pupil']), pct(r['share'], 1), money(r['parts']['Teachers'])))
-    w('')
-    lun_o = [r for r in OU if r['district'] == 'Lunenburg']
-    top_o = OU[0]
-    if lun_o:
-        w('**It reconciles, which is why it can be trusted.** Lunenburg\u2019s grants and '
-          'revolving come to %s here; this report derives %s a completely different way, as '
-          'all-funds spending less net school spending. Two files, two routes, the same '
-          'answer.'
-          % (money(lun_o[0]['grants_revolving']),
-             money([r for r in P['above_requirement'] if r['district'] == 'Lunenburg'][0]
-                   ['outside_nss_pp'] * lun_o[0]['pupils'])))
-        w('')
-        w('**And one line does most of the work.** %s charges %s a pupil of TEACHER salaries '
-          'to grants and revolving accounts. Lunenburg charges %s. That single difference is '
-          'most of the gap between what the two draw from outside their appropriations.'
-          % (top_o['district'], money(top_o['parts']['Teachers']),
-             money(lun_o[0]['parts']['Teachers'])))
-        w('')
-    w('*What this does not show, and it is the question the table raises.* WHICH fund. A '
-      'grant is money won from outside; a revolving fund is money the district itself takes '
-      'in and may spend without an appropriation. Two kinds are evidenced directly in this '
-      'archive \u2014 the athletics revolving fund, whose cashbook is held, and school '
-      'choice tuition RECEIVED, which is a cherry sheet line; others such as preschool, food '
-      'service and rentals are the usual sort and are named as examples, not as a claim '
-      'about any district\u2019s mix. This file does not separate them, '
-      'so a district with a large school-choice intake looks identical here to one that '
-      'writes successful grant applications, and those are not the same opportunity. '
-      '[Registered](/what-we-cannot-answer), with DESE\u2019s End of Year Pupil and '
-      'Financial Report as the document that would settle it.')
     w('')
 
     C3 = P['cherry']
@@ -3779,18 +3878,37 @@ def markdown(payload, frame):
          money([r for r in C2['towns'] if r['town'] == 'Westford'][0]['vs_lunenburg'])
          if any(r['town'] == 'Westford' for r in C2['towns']) else 'n/a'))
     w('')
-    w('| Town | Business, industrial and personal value | Share of its tax base | Per pupil | '
-      'Levy it pays at %s per $1,000 | Against Lunenburg |' % usd2(C2['rate']))
-    w('|---|---:|---:|---:|---:|---:|')
+    # EACH DIFFERENCE BESIDE THE THING IT DIFFERENCES, AND EVERY COLUMN NAMES ITS UNIT.
+    #
+    # TJ read this table twice and it misled him twice. First as arithmetic -- *"i think
+    # you have a decimal problem: 10,552,361 +$520,968,939"* -- and then, having worked it
+    # out himself: *"oh 'against lunenburg' is the total business value, not the diff in
+    # levy"*. That is exactly what it was, and nothing said so: a difference in ASSESSED
+    # VALUE printed immediately after a column of ANNUAL LEVY, both as `$1,234,567`, fifty
+    # times apart in size and read across as if comparable.
+    #
+    # Three fixes, and the third is the one that matters. The value difference moves next
+    # to the value it comes from. Every heading now carries its unit and its period. And
+    # the LEVY difference -- what that base would actually be worth to the town in a year,
+    # which is the column a reader thinks they are looking at -- is computed and printed,
+    # instead of leaving them to divide two nine-digit numbers in their head.
+    lun_levy = [r for r in C2['towns'] if r['town'] == 'Lunenburg'][0]['levy']
+    w('| Town | Business value | Share of its tax base | Value per pupil | '
+      'More business VALUE than Lunenburg | Levy that base pays A YEAR at %s per $1,000 | '
+      'More LEVY A YEAR than Lunenburg |' % usd2(C2['rate']))
+    w('|---|---:|---:|---:|---:|---:|---:|')
     for r in C2['towns']:
-        w('| %s%s | %s | %s | %s | %s | %s |'
-          % ('**' if r['town'] == 'Lunenburg' else '', r['town']
-             + ('**' if r['town'] == 'Lunenburg' else ''),
-             money(r['business']), pct(r['share'], 1), money(r['per_pupil']),
+        me = r['town'] == 'Lunenburg'
+
+        def signed(v, fmt):
+            return '\u2014' if me else '%s%s' % ('+' if v > 0 else '\u2212', fmt(abs(v)))
+
+        w('| %s | %s | %s | %s | %s | %s | %s |'
+          % ('**%s**' % r['town'] if me else r['town'],
+             _m(r['business']), pct(r['share'], 1), money(r['per_pupil']),
+             signed(r['vs_lunenburg'], _m),
              money(r['levy']),
-             '\u2014' if r['town'] == 'Lunenburg'
-             else ('%s%s' % ('+' if r['vs_lunenburg'] > 0 else '\u2212',
-                             money(abs(r['vs_lunenburg']))))))
+             signed(r['levy'] - lun_levy, money)))
     w('')
     w('**What Lunenburg would need.** Its business base is %s per pupil against a median of '
       '%s across the %d towns. Reaching that median means **%s of new business value** '

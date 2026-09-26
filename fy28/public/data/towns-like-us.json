@@ -610,7 +610,7 @@
   {
    "basis": "Pearson correlation of each measure against DESE per-pupil total expenditure SY2025, over the 161-town frame; then standardised least squares on the five that are not near-duplicates of one another.",
    "bearing": "sizes",
-   "claim": "Wealth per child predicts school spending. State aid, size and poverty do not.",
+   "claim": "Taxable property per child predicts school spending. Aid and poverty do not.",
    "detail": "Twelve things were tested against what a district spends per pupil, across all 161 towns that run their own K–12 school. The strongest by a long way is how much taxable property stands behind each child: r +0.54, which accounts for 29% of the difference between districts. How much the state sends per child accounts for 1%. How many pupils a district has accounts for 0%. The share of children from low-income families, 0%. The share of the tax base that is business, 0%. Put the five together and they account for 39% of the difference — so 61% of what separates a district spending the most from one spending the least is none of those things.",
    "figure": "best",
    "figures": {
@@ -633,6 +633,11 @@
      "text": "0%",
      "unit": "",
      "value": 0.0
+    },
+    "lunvalue": {
+     "text": "$1.5M",
+     "unit": "of taxable assessed value stands behind each Lunenburg pupil — the town’s whole property tax base divided by the pupils actually enrolled (FTE). The choropleth divides the same base by FOUNDATION enrolment, the children the state funds the town for, which is a larger count and so a smaller figure",
+     "value": 1463438.8258598954
     },
     "n": {
      "text": "161",
@@ -677,7 +682,7 @@
      "slug": "/analysis/per-pupil-spending"
     }
    ],
-   "so_what": "61% of the difference is none of wealth, aid, size, poverty or tax base."
+   "so_what": "Lunenburg has $1.5M behind each enrolled pupil. Even so, 61% of the gap is none of the five."
   },
   {
    "basis": "DESE per-pupil expenditure by category, SY2025: Administration and Instructional Leadership, across every district operating a school through grade 12.",
