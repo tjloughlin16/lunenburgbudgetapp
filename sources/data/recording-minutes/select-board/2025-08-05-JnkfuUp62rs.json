@@ -1,0 +1,280 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2025-08-05",
+ "video_id": "JnkfuUp62rs",
+ "video_url": "https://www.youtube.com/watch?v=JnkfuUp62rs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-08-05-JnkfuUp62rs.json",
+  "sha256": "ac1ce7d6f7479ab9a6b7eea585e0a22d3f6beda35047219a59b428e0c62501fd",
+  "caption_lines": 19,
+  "segments": 180
+ },
+ "recording": {
+  "duration_s": 390,
+  "duration": "0:06",
+  "spoken_chars": 4935,
+  "words_approx": 822
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08052025-7332",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-08-05-agenda-7332.txt",
+   "path": "sources/meetings/select-board/2025-08-05-agenda-7332.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08052025-7332",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-08-05-minutes-7332.txt",
+   "path": "sources/meetings/select-board/2025-08-05-minutes-7332.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-26T11:12:13Z",
+  "cost_usd": 0.2304848
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Amanda",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Glenn",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 151,
+    "topic": "Shrieks and Creeks Haunted House fundraiser proceeds",
+    "what_was_said": "The Teen Center representative said the event is the organization's second-biggest fundraiser and last year it raised money for the after-school program, which serves about 150 kids in grades 6-12.",
+    "figures_as_heard": [
+     "$16,000"
+    ]
+   }
+  ],
+  "confidence": "high",
+  "decisions": [],
+  "headline": "Select Board approved a special event license for the Teen Center's Shrieks and Creeks fall fundraiser.",
+  "not_audible": [
+   "No board member or chair was identified by name in the captions except Amanda, Glenn, and Renee; the chair's own name is never stated.",
+   "Vote counts are given only as individual roll-call 'I' responses, never as a stated tally like '3-0'.",
+   "The identity of the person who said 'all of the documentation is in order' (possibly a licensing officer or town clerk) is not clear from the captions."
+  ],
+  "public_comment": [
+   {
+    "t": 141,
+    "topic": "Presented and requested approval of the Shrieks and Creeks Haunted House and Hayride Fall Festival special event license, a fundraiser for the Club Lunenburg Teen Center's after-school program, including a new family-friendly (non-scary) early time slot.",
+    "stated_role": "representative of the Club Lunenburg Teen Center"
+   }
+  ],
+  "summary": "The Select Board, sitting as the Licensing Authority, held a public hearing on a special event license for the Club Lunenburg Teen Center's Shrieks and Creeks Haunted House and Hayride Fall Festival, a fundraiser for its after-school program. The board closed the hearing and approved the license by roll call vote, with a rain date set, and then adjourned after noting upcoming meeting dates.",
+  "tags": [
+   "legal",
+   "recreation"
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 21,
+    "topic": "Call to order and pledge of allegiance",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 21,
+    "t_end": 338,
+    "topic": "Public hearing: special event license for Shrieks and Creeks Haunted House and Hayride Fall Festival",
+    "resolution": "hearing closed and license approved by roll call vote",
+    "tags": [
+     "recreation",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 338,
+    "t_end": 380,
+    "topic": "Upcoming meetings and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "transfers": [],
+  "votes": [
+   {
+    "t": 254,
+    "motion": "Motion to close the public hearing on the Shrieks and Creeks Haunted House special event license.",
+    "moved_by": "a board member",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 307,
+    "motion": "Motion to approve the special event license for Shrieks and Creeks Haunted House and Hayride Fall Festival on Saturday, October 18, 2025, 4:30-9:30 p.m., with a rain date of October 25, 2025.",
+    "moved_by": "the chair",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 359,
+    "motion": "Motion to adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Select Board, sitting as licensing authority, approved a special event license for the Teen Center's Shrieks and Creeks fall fundraiser.",
+    "t": 307
+   },
+   {
+    "line": "The board closed the public hearing on the license before voting to approve it.",
+    "t": 254
+   },
+   {
+    "line": "The event was described as the Teen Center's second-largest fundraiser, supporting its after-school program.",
+    "t": 151
+   },
+   {
+    "line": "The application included a new non-scary early time slot aimed at families.",
+    "t": 141
+   }
+  ],
+  "why_it_matters": [
+   "This is a routine licensing vote, the mechanism the town uses to approve public fundraising events.",
+   "The approved event funds the Teen Center's after-school program, a service some residents rely on directly."
+  ],
+  "watch_next": [
+   "The fundraiser itself, held under the approved license, with a rain date on the books"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-26T11:12:34Z",
+   "cost_usd": 0.188974
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08052025-7332",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-08-05-minutes-7332.txt",
+   "path": "sources/meetings/select-board/2025-08-05-minutes-7332.pdf"
+  },
+  "official_sha256": "c8e442934543b8664bb0bd5876c7556bc516cfcf83f78bafaa02e6b1bf6c18c1",
+  "coverage": "partial",
+  "summary": "The two records agree on both substantive votes' outcomes (unanimous approval to close the hearing and to grant the special event license) and on the event's date/time/rain-date, but ours is missing all roll-call/mover-seconder detail, the applicant's name, and the Town Manager's presence, while official omits the $16,000 fundraiser-proceeds figure ours captured. The one thing worth checking is the \"chair\" attendee: our minutes list \"the chair\" as present, but the official minutes name Chair Caesar Nuzzolo as absent with Clerk Emkey presiding.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "event name",
+    "ours": "Shrieks and Creeks Haunted House and Hayride Fall Festival",
+    "official": "“Shrieks and Krieks Haunted House and Hayride Fall Festival”",
+    "official_reading": "Shrieks and Krieks Haunted House and Hayride Fall Festival",
+    "note": "Captions rendered “Krieks” as “Creeks”; same event (application of The Club: Lunenburg Teen Center), same date/time/rain-date in both records, so this is a mishearing rather than a substantive difference.",
+    "t": 151
+   },
+   {
+    "kind": "agree",
+    "about": "vote to close the public hearing",
+    "ours": "Motion to close the public hearing on the Shrieks and Creeks Haunted House special event license. — passed",
+    "official": "Motion by Member Glenn McLeod to close the public hearing. Seconded by Vice-Chair Amanda Moore. Vice-Chair Moore–aye, Member McLeod-aye, Clerk Emkey–aye. The motion passed unanimously (3-0-0).",
+    "note": "Both records agree the motion to close the hearing passed unanimously.",
+    "t": 254
+   },
+   {
+    "kind": "only_in_official",
+    "about": "mover/seconder and roll-call tally for the close-hearing vote",
+    "ours": "",
+    "official": "Motion by Member Glenn McLeod to close the public hearing. Seconded by Vice-Chair Amanda Moore. Vice-Chair Moore–aye, Member McLeod-aye, Clerk Emkey–aye.",
+    "note": "Our minutes captured only the outcome, not who moved/seconded or the individual roll-call ayes; this is a level-of-detail gap, not a conflicting fact, so nothing needs checking beyond confirming the recording shows the same three ayes."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to approve the special event license",
+    "ours": "Motion to approve the special event license for Shrieks and Creeks Haunted House and Hayride Fall Festival on Saturday, October 18, 2025, 4:30-9:30 p.m., with a rain date of October 25, 2025. — passed",
+    "official": "Motion by Clerk Emkey to approve the special event license for the “Shrieks and Krieks Haunted House and Hayride Fall Festival” on Saturday, October 18, 2025 from 4:30 PM to 9:30 PM with a rain date of October 25, 2025. Seconded by Vice-Chair Moore. Roll call vote: Vice-Chair Moore–aye, Member McLeod-aye, Clerk Emkey–aye. The motion passed unanimously (3-0-0).",
+    "note": "Both records agree the license was approved unanimously with the same date, hours, and rain date.",
+    "t": 307
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Shrieks and Krieks fundraiser proceeds figure",
+    "ours": "$16,000",
+    "official": "",
+    "note": "Official minutes describe the fundraiser only as “their second biggest fundraiser” with no dollar figure, so there is nothing to check this against in the official text — verify $16,000 against the recording at t=151 or against the Club's own financial report if one is on file.",
+    "t": 151
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager's attendance",
+    "ours": "",
+    "official": "Also Present: Jennifer Warren-Dyment, Town Manager",
+    "note": "Our attendee list has no entry for the Town Manager; likely just not flagged as a speaker by the captions."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "attendance of the Board chair",
+    "ours": "the chair (chair)",
+    "official": "Members Absent: Chair Caesar Nuzzolo and Member Brian Lehtinen",
+    "note": "Official minutes state the chair (Caesar Nuzzolo) was ABSENT and that Clerk Emkey called the meeting to order and presided; check the recording near the opening to see whether the captions labeled Renee Emkey as ‘the chair’ while she was presiding in his absence, versus a fourth attendee being present that the official minutes omitted."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Amanda's name and title",
+    "ours": "Amanda (member)",
+    "official": "Vice-Chair Amanda Moore (via Zoom)",
+    "official_reading": "Vice-Chair Amanda Moore",
+    "note": "Captions caught only the first name and defaulted her role to ‘member’; official gives her full name and her actual title, Vice-Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Glenn's surname",
+    "ours": "Glenn (member)",
+    "official": "Member Glenn McLeod",
+    "official_reading": "Glenn McLeod",
+    "note": "Role matches (member); only the surname is missing from the captioned name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Renee's name and title",
+    "ours": "Renee (member)",
+    "official": "Clerk Renee Emkey",
+    "official_reading": "Clerk Renee Emkey",
+    "note": "Captions caught only the first name and defaulted her role to ‘member’; official gives her full name and her actual title, Clerk."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-26T11:56:30Z",
+   "cost_usd": 0.246096
+  }
+ }
+}
