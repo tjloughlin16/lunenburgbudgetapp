@@ -412,4 +412,4 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 18.3 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 17.5 min | *(none declared)* |
 | [Try growth](/try-growth) | tool | — / 21.5 min | *(none declared)* |
-| [What we cannot answer](/what-we-cannot-answer) | reference | — / 122.1 min | *(none declared)* |
+| [What we cannot answer](/what-we-cannot-answer) | reference | — / 122.4 min | *(none declared)* |

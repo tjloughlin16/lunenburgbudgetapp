@@ -582,6 +582,19 @@ def main():
             # as documents land, so this is a backstop rather than the only chance.
             back_up_documents(notes, 'the end-of-run sweep')
 
+    # HOW MANY DAYS NOBODY LOOKED. A gap in the crawl silently becomes a gap in what this
+    # project can say: a document `first seen` after a four-day hole could have been posted
+    # on any of those days, and the figure reads like a posting time. TJ, 25 September 2026:
+    # *"Can you be sure we processed the agenda and would know if it was posted wed or
+    # Thurs?"* -- the answer was no, and nothing said so. It is a note rather than a failure
+    # because a missed day cannot be recovered; the point is that it is visible while the
+    # documents are still fresh enough to reason about.
+    if not a.dry_run:
+        gaps = py('check_watch_gaps.py', '--as-of', a.as_of, check=False)
+        if gaps.returncode:
+            notes.append('the meeting watcher has missed days recently -- run '
+                         'check_watch_gaps.py; `first seen` is no better than the gap')
+
     after = {
         'agendas': sum(1 for e in read_csv(MEETING_EVENTS) if e['kind'] == 'agenda'),
         'minutes': sum(1 for e in read_csv(MEETING_EVENTS) if e['kind'] == 'minutes'),
