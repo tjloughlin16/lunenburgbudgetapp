@@ -638,7 +638,12 @@ def heatmap(frame, val, effort, parcels, shapes_src=SHAPES):
         ('low_income', 'Share of children from low-income families', 'pct',
          lambda t: frame[t]['lowinc'] if t in frame else None,
          'only towns running their own K–12 district, SY%d' % SY),
-        ('homes_pp', 'Single-family homes per child', 'ratio',
+        # A RATE, NOT A RATIO. This printed `2.14\u00d7` -- a multiplication sign on a
+        # quantity that multiplies nothing. `above` is a real ratio (spending OVER the
+        # foundation, so 1.27\u00d7 means 27% more than the state's figure); homes per child
+        # is 2.14 houses for every one child, and the \u00d7 made it unreadable. The label
+        # carries the unit, so the figure is the bare number -- rule 7b.
+        ('homes_pp', 'Single-family homes per child', 'rate',
          lambda t: (parcels[t] / town_kids(t))
          if (t in parcels and town_kids(t)) else None,
          'all 351 towns, FY%d' % FY),

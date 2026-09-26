@@ -433,6 +433,7 @@ const fmtKind = (v: number, kind: string) =>
     : kind === 'pct' ? `${v.toFixed(1)}%`
       : kind === 'pctdiff' ? `${v >= 0 ? '+' : ''}${v.toFixed(1)}%`
         : kind === 'ratio' ? `${v.toFixed(2)}×`
+          : kind === 'rate' ? v.toFixed(2)
           : Math.round(v).toLocaleString('en-US')
 
 /** Two bars a town: how many pupils, and what is spent on each, by where it comes from. */
@@ -763,15 +764,19 @@ export function TownsLikeUsHeat({ data }: ChartProps) {
           const fill = v == null ? '#eef0f3'
             : scale === 'linear' ? linearColour(v, m.lo, m.hi)
               : heatColour(ranked.rank[name], ranked.n)
+          /* ONE TOWN IS OUTLINED, AND IT IS OURS.
+           * Thirty-two comparison towns each carried a role-coloured border, and TJ:
+           * *"lets also remove the highlighting for the comparison towns. the highlighting
+           * looks odd. just show lunenburg in red highlighted"*. He is right -- a second
+           * encoding competing with the fill turned a choropleth into a scatter of
+           * outlines, and the eye read the borders as the data. The roles still carry the
+           * signature map above, which is the picture they were built for. */
           const me = name === 'Lunenburg'
-          const role = d.map.roles[name]
-          const marked = !!role && !me
           const stroke = me ? '#dc2626'
             : over === name ? '#111827'
-              : marked ? ROLE_FILL[role]
-                : v == null ? '#dde1e6'
-                  : '#ffffff'
-          const width = me ? 2.4 : over === name ? 1.8 : marked ? 1.4 : 0.4
+              : v == null ? '#dde1e6'
+                : '#ffffff'
+          const width = me ? 2.4 : over === name ? 1.8 : 0.4
           return rings.map((ring, i) => (
             <polygon key={name + i}
                      points={ring.map(([x, y]) => proj.px(x, y).join(',')).join(' ')}
@@ -785,43 +790,6 @@ export function TownsLikeUsHeat({ data }: ChartProps) {
           ))
         })}
       </svg>
-
-      <div style={{
-        display: 'flex', alignItems: 'center', gap: '.5rem', flex: '0 0 auto',
-        marginTop: '.25rem',
-        fontSize: 11.5, color: 'var(--text-secondary)', flexWrap: 'wrap',
-      }}>
-        <span>{fmtKind(m.lo, m.kind)}</span>
-        {HEAT.map(c => (
-          <span key={c} style={{ width: 26, height: 11, background: c, border: '1px solid var(--grid)' }} />
-        ))}
-        <span>{fmtKind(m.hi, m.kind)}</span>
-        <span style={{ marginLeft: '.4rem' }}>
-          middle town {fmtKind(m.median, m.kind)} · shaded
-        </span>
-        {/* THE CONTROL SITS IN THE LEGEND, because it is a statement about what the colours
-          * mean and that is what a legend is for. It also costs no row of the one screen. */}
-        <span style={{ display: 'inline-flex', border: '1px solid var(--grid)', borderRadius: 999 }}>
-          {([['rank', 'by RANK'], ['linear', 'by AMOUNT']] as const).map(([k, lab], i) => (
-            <button key={k} onClick={() => setScale(k)} aria-pressed={scale === k}
-                    style={{
-                      padding: '.1rem .5rem', minHeight: 22, cursor: 'pointer', fontSize: 11,
-                      border: 0, borderRadius: 999,
-                      background: scale === k ? '#1d4ed8' : 'transparent',
-                      color: scale === k ? '#fff' : 'var(--text-secondary)',
-                      fontWeight: scale === k ? 600 : 400,
-                      marginLeft: i ? 0 : undefined,
-                    }}>
-              {lab}
-            </button>
-          ))}
-        </span>
-        <span>
-          {scale === 'rank'
-            ? 'each shade holds the same NUMBER of towns'
-            : 'each shade holds the same WIDTH of the range'}
-        </span>
-      </div>
 
       {/* THE READOUT SITS ON THE MAP, as it does on the signature map above.
         * TJ: *"hovering the choropleth needs to show the town and the relevant metric ... in
@@ -888,6 +856,50 @@ export function TownsLikeUsHeat({ data }: ChartProps) {
         )}
       </div>
      </div>
+
+      {/* THE LEGEND IS A SIBLING OF THE MAP, not a child of it.
+        * It was nested inside the map container, which is sized by the SVG -- so the
+        * legend and its scale switch were laid out BELOW the drawing, past the column’s
+        * `overflow: hidden`, and simply were not on the page. Measured: the column was
+        * 846px with a scrollHeight of 899, and the 53px missing was exactly this row.
+        * A control clipped out of existence looks identical to a control never built,
+        * which is how it got reported as a lost feature rather than a layout bug. */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: '.5rem', flex: '0 0 auto',
+        marginTop: '.25rem',
+        fontSize: 11.5, color: 'var(--text-secondary)', flexWrap: 'wrap',
+      }}>
+        <span>{fmtKind(m.lo, m.kind)}</span>
+        {HEAT.map(c => (
+          <span key={c} style={{ width: 26, height: 11, background: c, border: '1px solid var(--grid)' }} />
+        ))}
+        <span>{fmtKind(m.hi, m.kind)}</span>
+        <span style={{ marginLeft: '.4rem' }}>
+          middle town {fmtKind(m.median, m.kind)} · shaded
+        </span>
+        {/* THE CONTROL SITS IN THE LEGEND, because it is a statement about what the colours
+          * mean and that is what a legend is for. It also costs no row of the one screen. */}
+        <span style={{ display: 'inline-flex', border: '1px solid var(--grid)', borderRadius: 999 }}>
+          {([['rank', 'by RANK'], ['linear', 'by AMOUNT']] as const).map(([k, lab], i) => (
+            <button key={k} onClick={() => setScale(k)} aria-pressed={scale === k}
+                    style={{
+                      padding: '.1rem .5rem', minHeight: 22, cursor: 'pointer', fontSize: 11,
+                      border: 0, borderRadius: 999,
+                      background: scale === k ? '#1d4ed8' : 'transparent',
+                      color: scale === k ? '#fff' : 'var(--text-secondary)',
+                      fontWeight: scale === k ? 600 : 400,
+                      marginLeft: i ? 0 : undefined,
+                    }}>
+              {lab}
+            </button>
+          ))}
+        </span>
+        <span>
+          {scale === 'rank'
+            ? 'each shade holds the same NUMBER of towns'
+            : 'each shade holds the same WIDTH of the range'}
+        </span>
+      </div>
     </div>
   )
 }
