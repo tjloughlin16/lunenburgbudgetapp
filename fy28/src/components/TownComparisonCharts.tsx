@@ -434,6 +434,7 @@ const fmtKind = (v: number, kind: string) =>
       : kind === 'pctdiff' ? `${v >= 0 ? '+' : ''}${v.toFixed(1)}%`
         : kind === 'ratio' ? `${v.toFixed(2)}×`
           : kind === 'rate' ? v.toFixed(2)
+            : kind === 'pct2' ? `${v.toFixed(2)}%`
           : Math.round(v).toLocaleString('en-US')
 
 /** Two bars a town: how many pupils, and what is spent on each, by where it comes from. */

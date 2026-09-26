@@ -327,6 +327,55 @@ def main():
       len([v for v in HM['foundation_pp'].values() if v is not None]),
       len([v for v in HM['state_share'].values() if v is not None]))
 
+    # THE COMMERCIAL FORK, RECOMPUTED FROM THE PUBLISHED INPUTS BY A DIFFERENT ROUTE.
+    # Every figure in that section is the argument, so none of it may rest on the
+    # generator agreeing with itself.
+    CC = P.get('commercial_choice')
+    if CC:
+        TW = {r['town']: r for r in P['commercial']['towns']}
+        FU = {f['town']: f for f in P['funding']}
+        HV = {m['key']: m['values'] for m in P['heatmap']['measures']}
+        lun = TW['Lunenburg']
+        c('the benchmark is the most business value per pupil of the towns compared',
+          CC['bench'],
+          max((r for r in P['commercial']['towns']
+               if r['town'] in FU and r['town'] != 'Lunenburg'),
+              key=lambda r: r['per_pupil'])['town'])
+        c('the extra base is that town\u2019s business less Lunenburg\u2019s',
+          CC['extra'], TW[CC['bench']]['business'] - lun['business'])
+        # (a) the relief: the same levy over a bigger base is a proportionally smaller bill
+        c('relief: the new bill is the old one scaled by the base it is spread over',
+          CC['new_bill'],
+          round(CC['bill'] * CC['total'] / (CC['total'] + CC['extra'])))
+        c('...and the saving is the difference', CC['saving'], CC['bill'] - CC['new_bill'])
+        c('...and the cut is that as a percentage',
+          round(CC['cut_pct']), round(100.0 * CC['saving'] / CC['bill']))
+        # (b) the money: the extra base at the town's own rate
+        c('money: the gross is the extra base at the published rate',
+          CC['gross'], round(CC['extra'] * CC['rate'] / 1000.0))
+        c('...the aid given up is the two towns\u2019 state aid per pupil, over our pupils',
+          CC['aid_lost'],
+          round((FU['Lunenburg']['from_state'] - FU[CC['bench']]['from_state'])
+                * FU['Lunenburg']['pupils']))
+        c('...and the net is one less the other', CC['net'], CC['gross'] - CC['aid_lost'])
+        c('the net is smaller than the gross, so the clawback is real and stated',
+          CC['net'] < CC['gross'], True)
+        # the effort comparison the section turns on
+        c('the benchmark town pays a SMALLER share of its home value than Lunenburg',
+          CC['bench_effort'] < CC['lun_effort'], True)
+        c('...while its DOLLAR bill is larger, which is the whole point of the paragraph',
+          CC['bench_bill'] > CC['bill'], True)
+        c('every gap share is that gap over the net', [],
+          [g['name'] for g in CC['gaps']
+           if abs(g['share'] - 100.0 * g['gap'] / CC['net']) > 0.05])
+        c('the gaps are the model\u2019s own scenarios over its balanced budget',
+          [g['gap'] for g in CC['gaps']],
+          [json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'model.json')))
+           ['scenarios'][k] -
+           json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'model.json')))
+           ['scenarios']['balanced']
+           for k in ('level_service', 'core', 'restoration')])
+
     print('\nAnd every lever says how sure it is:')
     c('each lever carries a confidence and a caveat',
       all(l.get('confidence') and l.get('caveat') for l in P['levers']), True)

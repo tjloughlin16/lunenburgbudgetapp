@@ -75,6 +75,11 @@ OUT_MD = os.path.join(ROOT, 'sources', 'analyses', 'towns-like-us.md')
 REPORT = 'towns-like-us'
 
 BILLS = os.path.join(ROOT, 'sources', 'data', 'dls-avg-tax-bill.csv')
+# The town's own projection, so the gap this report sizes commercial growth against is the
+# same gap every other page of this site argues about rather than a second one.
+MODEL = os.path.join(ROOT, 'fy28', 'public', 'data', 'model.json')
+# Proposition 2 1/2: the levy limit rises this much a year before new growth is added.
+LEVY_CAP = 0.025
 VALUES = os.path.join(ROOT, 'sources', 'data', 'dls-assessed-values.csv')
 GROWTH = os.path.join(ROOT, 'sources', 'data', 'dls-new-growth.csv')
 OVERRIDES = os.path.join(ROOT, 'sources', 'data', 'dls-override-votes.csv')
@@ -570,6 +575,23 @@ def heatmap(frame, val, effort, parcels, shapes_src=SHAPES):
     ch = {r['municipality']: r for r in rows(CH70) if r['fy'] == str(FY)}
     bills = {r['municipality']: num(r['avg_sf_bill']) for r in rows(BILLS)
              if r['fy'] == str(FY) and r['avg_sf_bill']}
+    # EFFORT, NOT THE BILL. Both are published by DLS in the same file this report already
+    # holds and hashes, for all 351 towns, and neither had reached the map.
+    #
+    # TJ, on being shown that Littleton's bill is $3,356 higher than Lunenburg's while its
+    # commercial base is four times ours: *"i dont know what to conclude ... whats the
+    # point of running business in a town then"*. The point was hidden by the measure. An
+    # average single-family tax bill is a DOLLAR AMOUNT and it moves with house prices, so
+    # two towns taxing themselves identically post wildly different bills. Littleton's bill
+    # is higher because its houses are worth $253,060 more; against what a resident owns
+    # its people pay 1.40% where Lunenburg's pay 1.44%, and against what they earn 14.56%
+    # against 15.55%. On EFFORT, Littleton's residents pay less than ours -- and their
+    # schools still get more per pupil. That is the commercial base doing exactly what
+    # people claim for it, and the dollar bill could not show it.
+    eff_rate = {r['municipality']: num(r['bill_pct_of_value']) for r in rows(BILLS)
+                if r['fy'] == str(FY) and r['bill_pct_of_value']}
+    eff_inc = {r['municipality']: num(r['bill_pct_of_income']) for r in rows(BILLS)
+               if r['fy'] == str(FY) and r['bill_pct_of_income']}
 
     def town_kids(t):
         r = ch.get(t)
@@ -583,6 +605,13 @@ def heatmap(frame, val, effort, parcels, shapes_src=SHAPES):
     specs = [
         ('bill', 'Average tax bill on a home', 'usd',
          lambda t: bills.get(t), 'all 351 towns, FY%d' % FY),
+        ('effort_value', 'The bill as a share of what the home is worth', 'pct2',
+         lambda t: eff_rate.get(t),
+         'the effective tax rate — what a resident pays per dollar of house, which the '
+         'dollar bill cannot show; all 351 towns, FY%d' % FY),
+        ('effort_income', 'The bill as a share of income per head', 'pct2',
+         lambda t: eff_inc.get(t),
+         'how hard the bill lands on what people earn; all 351 towns, FY%d' % FY),
         ('children', 'Children the town is funded for', 'count',
          town_kids, 'foundation enrolment, all 351 towns, FY%d' % FY),
         ('state_pp', 'State money per child', 'usd',
@@ -806,6 +835,51 @@ def sources_block():
 
 # ---- what it means -----------------------------------------------------------------
 
+def _eff_rank(frame, compared):
+    """Lunenburg's place on EFFORT, and the town that makes the point best.
+
+    Ranked over every town DLS covers, not over the 161-town frame, because the dollar-bill
+    rank printed beside it is out of 351 and two ranks on different denominators sitting
+    together is exactly the confusion this card exists to remove.
+
+    The benchmark is chosen by the data: of the towns compared here, the one whose DOLLAR
+    bill is highest against Lunenburg's while its EFFORT is lower -- the sharpest available
+    instance of a bigger bill being a smaller ask.
+    """
+    prate = {t: r['bill_pct_of_value'] for t, r in _bill_rows().items()}
+    pinc = {t: r['bill_pct_of_income'] for t, r in _bill_rows().items()}
+    L = frame['Lunenburg']
+    hi_v = sorted((v for v in prate.values() if v is not None), reverse=True)
+    hi_i = sorted((v for v in pinc.values() if v is not None), reverse=True)
+    # THE BENCHMARK COMES FROM THE TOWNS THIS REPORT COMPARES, not from all 161. The
+    # first version took the largest absolute gap and landed on Weston -- $26,313 against
+    # $7,444, which is arithmetically the sharpest case and rhetorically useless: a reader
+    # learns nothing about Lunenburg from a town whose average house is worth $2.4M, and
+    # the report has no other reason to mention it. Restricted to the set already on the
+    # page, the example is a town the reader has just seen five times.
+    cands = [t for t in compared
+             if t in frame and t != 'Lunenburg' and prate.get(t) is not None
+             and frame[t]['bill'] > L['bill'] and prate[t] < L['prate']]
+    bench = max(cands, key=lambda t: frame[t]['bill'] - L['bill']) if cands else None
+    return dict(value=hi_v.index(L['prate']) + 1, income=hi_i.index(L['pinc']) + 1,
+                n=len(hi_v), bench=bench,
+                bench_bill=frame[bench]['bill'] if bench else None,
+                bench_prate=prate[bench] if bench else None,
+                bench_value=frame[bench]['value'] if bench else None)
+
+
+def _bill_rows():
+    """The FY of interest from the DLS bill file, by municipality, numbers parsed."""
+    out = {}
+    for r in rows(BILLS):
+        if r['fy'] != str(FY) or not r['avg_sf_bill']:
+            continue
+        out[r['municipality']] = {k: num(r[k]) for k in
+                                  ('avg_sf_bill', 'avg_sf_value', 'bill_pct_of_value',
+                                   'bill_pct_of_income')}
+    return out
+
+
 def build_conclusions(frame, corr, twins_is, twins_does, overlap10, overlap25, dest, sets,
                       effort=None, parcels=None):
     """The eight cards, written so the METRIC carries its own meaning.
@@ -870,7 +944,72 @@ def build_conclusions(frame, corr, twins_is, twins_does, overlap10, overlap25, d
     RG = regional_picture(frame, sets['dese'])
     CH = cherry_sheet(sets['dese'])
 
+    ER = _eff_rank(frame, set(sets['neighbours']) | set(PEERS)
+                   | {c['town'] for c in twins_is} | {c['town'] for c in twins_does})
     rows_out = [
+        # THE MEASURE THE WHOLE COMPARISON RESTED ON WAS THE WRONG ONE.
+        #
+        # TJ, on being told Littleton's bill is $3,356 higher than Lunenburg's: *"i dont
+        # know what to conclude ... whats the point of running business in a town then.
+        # why would littleton even grow"*. The confusion was the report's, not his. An
+        # average single-family tax bill is a DOLLAR AMOUNT, so it ranks house prices as
+        # much as tax policy, and this report led with it. DLS publishes the effort
+        # measures in the same file, for all 351 towns, and nothing here used them.
+        conclusion(
+            id='bill-is-not-effort',
+            claim='Lunenburg is middling on the tax bill and in the top quarter of the '
+                  'state on tax EFFORT.',
+            detail=(
+                'The average single-family tax bill in Lunenburg is %s, which is %s of the '
+                '351 Massachusetts towns — the middle of the state. But a bill is a '
+                'dollar amount and it moves with what houses are worth, so it measures the '
+                'housing market as much as it measures the town. Measured as EFFORT '
+                '— the bill as a share of what the home is worth — Lunenburg is '
+                '%s, at %s of value. Against income per head it is %s, at %s. Two towns '
+                'taxing themselves identically post completely different bills, and the '
+                'clearest case is a town already on this page: %s’s bill is %s against '
+                'Lunenburg’s '
+                '%s, and its residents pay %s of what their homes are worth against '
+                'Lunenburg’s %s. The larger bill is the smaller effort, because the '
+                'average %s home is worth %s more.'
+                % (usd(L['bill']), ordinal(L['rank']), ordinal(ER['value']),
+                   pct(L['prate'], 2), ordinal(ER['income']), pct(L['pinc'], 2),
+                   ER['bench'], usd(round(ER['bench_bill'])), usd(L['bill']),
+                   pct(ER['bench_prate'], 2), pct(L['prate'], 2),
+                   ER['bench'], usd(round(ER['bench_value'] - L['value'])))),
+            figures={
+                'rank': figure(ER['value'], ordinal(ER['value']),
+                               'of the 351 Massachusetts towns on the bill as a share of '
+                               'what the home is worth, where 1st asks the most'),
+                'bill_rank': figure(L['rank'], ordinal(L['rank'])),
+                'towns': figure(351, '351'),
+                'prate': figure(L['prate'], pct(L['prate'], 2)),
+                'pinc': figure(L['pinc'], pct(L['pinc'], 2)),
+                'inc_rank': figure(ER['income'], ordinal(ER['income'])),
+                'bill': figure(L['bill'], usd(L['bill'])),
+                'bench_bill': figure(round(ER['bench_bill']), usd(round(ER['bench_bill']))),
+                'bench_prate': figure(ER['bench_prate'], pct(ER['bench_prate'], 2)),
+                'gapv': figure(round(ER['bench_value'] - L['value']),
+                               usd(round(ER['bench_value'] - L['value']))),
+            },
+            figure='rank',
+            kind='measured',
+            bearing='sizes',
+            basis=('dls-avg-tax-bill.csv at FY%d: `avg_sf_bill`, `bill_pct_of_value` and '
+                   '`bill_pct_of_income` as DLS certifies them, ranked over every one of '
+                   'the 351 towns the file covers.' % FY),
+            not_shown=(
+                'Which measure a resident should care about. A household writes the DOLLAR '
+                'cheque, and effort is what compares one town to another — they are '
+                'different questions and this report needs both. Nor does it show WHY the '
+                'effort is what it is: a town with a thin tax base must ask more of each '
+                'home to raise the same money, and this says nothing about whether the '
+                'money raised is well spent.'),
+            so_what='%s of 351 on dollars, %s on the share of a home’s value. House '
+                    'prices, not tax policy.'
+                    % (ordinal(L['rank']), ordinal(ER['value'])),
+            see=[('/analysis/towns-like-us', 'The same towns, measured both ways')]),
+
         conclusion(
             id='what-predicts-spending',
             # NAME THE MEASURE, DO NOT NICKNAME IT. TJ: *"this metric 'Wealth per child
@@ -1043,6 +1182,12 @@ def build_conclusions(frame, corr, twins_is, twins_does, overlap10, overlap25, d
                 'n': figure(G['n'], str(G['n'])),
                 'by_state': figure(G['by_state'], str(G['by_state'])),
                 'by_houses': figure(G['by_houses'], str(G['by_houses'])),
+                'by_rich': figure(G['by_rich_homes'], str(G['by_rich_homes']),
+                                  'of the towns get there on houses that are WORTH a great '
+                                  'deal each rather than on having many of them'),
+                'unexp': figure(len([r for r in G['towns'] if r['how'] == 'unexplained']),
+                                str(len([r for r in G['towns'] if r['how'] == 'unexplained'])),
+                                'fit none of the routes this report can test'),
                 'cheap_cut': figure(G['cheap_cut'], usd(G['cheap_cut'])),
                 'spend_cut': figure(G['spend_cut'], usd(G['spend_cut'])),
                 'med_state': figure(G['med_state'], usd(G['med_state'])),
@@ -1078,9 +1223,15 @@ def build_conclusions(frame, corr, twins_is, twins_does, overlap10, overlap25, d
                 'has found a way to fund schools well without either taxing residents or '
                 'being carried; within these %d towns, none has. It also says nothing about '
                 'what those schools achieve.' % G['n']),
-            so_what=('%d have the least property value and income behind each child, so the '
-                     'state covers it. %d have many houses.'
-                     % (G['by_state'], G['by_houses'])),
+            # THE SUPPORTING LINE MUST ADD UP TO THE CLAIM, and once the test moved to
+            # effort it stopped: two routes accounted for nine of twenty. The others are
+            # towns whose houses are WORTH a lot rather than numerous, one with an unusual
+            # business base, and six this report cannot explain at all -- which is a
+            # finding and is said, not rounded away.
+            so_what=('%d on houses, %d on what houses are worth, %d on the state. '
+                     '%d are unexplained.'
+                     % (G['by_houses'], G['by_rich_homes'], G['by_state'],
+                        len([r for r in G['towns'] if r['how'] == 'unexplained']))),
             see=[('/state-aid', 'What the state actually sends')]),
 
         conclusion(
@@ -2036,6 +2187,62 @@ def cherry_sheet(dese):
                                    'Chart Sch Sending Tuition').get('Lunenburg') or 0))
 
 
+def commercial_choice(commercial, funding, effort_value, bills):
+    """RELIEF OR MONEY: what a commercial base the size of the best-endowed town's is worth.
+
+    TJ worked this out row by row and then said of it: *"this is really easy to
+    understand"*. It is the whole commercial-development argument, and the reason the town
+    argues past itself about it: the people who say growth lowers their bill and the people
+    who say it funds the schools are both right, about MUTUALLY EXCLUSIVE choices.
+
+    (a) Hold the levy and spread it over a bigger base -- the rate falls, every bill falls,
+        the town receives not one dollar more.
+    (b) Let the levy limit rise with the new growth -- the town receives more, every year,
+        and no bill moves.
+
+    The benchmark town is chosen by the data: most business value per pupil among the towns
+    this report has spending, aid and effort for in the same year.
+
+    WHAT IS APPROXIMATE, and it is one thing. The Chapter 70 offset is taken as the actual
+    difference in state aid between the two towns, which is driven by ALL of their property
+    and income rather than by the commercial share alone. It is the right order of
+    magnitude and it is not a computed Chapter 70 result; running the published formula
+    against a hypothetical valuation is what would settle it.
+    """
+    towns = {r['town']: r for r in commercial['towns']}
+    lun = towns['Lunenburg']
+    cands = [r for r in commercial['towns']
+             if r['town'] in funding and r['town'] in effort_value
+             and r['town'] != 'Lunenburg']
+    if not cands:
+        return None
+    bench = max(cands, key=lambda r: r['per_pupil'])['town']
+    rate = commercial['rate']
+    total = lun['business'] / (lun['share'] / 100.0)
+    levy = total * rate / 1000.0
+    extra = towns[bench]['business'] - lun['business']
+    new_rate = levy / (total + extra) * 1000.0
+    bill = bills['Lunenburg']
+    gross = extra * rate / 1000.0
+    aid_lost = ((funding['Lunenburg']['from_state'] - funding[bench]['from_state'])
+                * funding['Lunenburg']['pupils'])
+    sc = json.load(open(MODEL))['scenarios']
+    net = gross - aid_lost
+    return dict(
+        bench=bench, extra=round(extra), rate=rate, total=round(total), levy=round(levy),
+        new_rate=round(new_rate, 4), bill=round(bill), new_bill=round(bill * new_rate / rate),
+        saving=round(bill - bill * new_rate / rate),
+        cut_pct=round(100 * (1 - new_rate / rate), 2),
+        gross=round(gross), aid_lost=round(aid_lost), net=round(net),
+        bench_pp_more=funding[bench]['per_pupil'] - funding['Lunenburg']['per_pupil'],
+        bench_effort=effort_value[bench], lun_effort=effort_value['Lunenburg'],
+        bench_bill=round(bills[bench]),
+        gaps=[dict(name=n, gap=sc[k] - sc['balanced'],
+                   share=round(100.0 * (sc[k] - sc['balanced']) / net, 1))
+              for n, k in (('level service', 'level_service'), ('core', 'core'),
+                           ('restoration', 'restoration'))])
+
+
 def outside_the_appropriation(dese):
     """WHAT THE MONEY OUTSIDE THE SCHOOL APPROPRIATION ACTUALLY IS, and who gets more of it.
 
@@ -2368,17 +2575,34 @@ def cheap_and_generous(frame, effort, parcels):
     `unexplained` rather than a default.
     """
     towns = [t for t in sorted(frame) if t in effort and t in parcels]
+    # CHEAP MEANS LOW EFFORT, NOT A SMALL NUMBER OF DOLLARS.
+    #
+    # This function's own first paragraph asks about a town that funds its schools
+    # 'without taxing its residents HARD', and then measured the average single-family
+    # bill, which is a dollar amount that moves with house prices. So the test did not ask
+    # the question it stated. On the dollar bill the answer is eight towns and six of them
+    # are the state paying for schools in places where houses are cheap; on EFFORT -- the
+    # bill as a share of what the home is worth -- it is a different and much larger set,
+    # and only three towns are in both. Both are real and they answer different questions,
+    # so both are computed and the contrast is published.
+    efforts = sorted(frame[t]['prate'] for t in towns if frame[t].get('prate'))
     bills = sorted(frame[t]['bill'] for t in towns)
     pps = sorted(frame[t]['pp'] for t in towns)
+    effort_cut = efforts[len(efforts) // 4]
     cheap_cut = bills[len(bills) // 4]
     spend_cut = pps[3 * len(pps) // 4]
     homes = {t: parcels[t] / frame[t]['fte'] for t in towns}
+    values = {t: frame[t]['value'] for t in towns if frame[t].get('value')}
     med_state = st.median(effort[t]['state_pp'] for t in towns)
     med_homes = st.median(homes.values())
     med_cip = st.median(frame[t]['cip'] for t in towns)
+    med_value = st.median(values.values())
 
+    by_bill = [t for t in towns
+               if frame[t]['bill'] <= cheap_cut and frame[t]['pp'] >= spend_cut]
     both = [t for t in towns
-            if frame[t]['bill'] <= cheap_cut and frame[t]['pp'] >= spend_cut]
+            if frame[t].get('prate') and frame[t]['prate'] <= effort_cut
+            and frame[t]['pp'] >= spend_cut]
     rows_out = []
     for t in sorted(both, key=lambda t: -frame[t]['pp']):
         state_heavy = effort[t]['state_pp'] >= 2 * med_state
@@ -2389,17 +2613,29 @@ def cheap_and_generous(frame, effort, parcels):
         # median share of the tax base -- NO town in this set qualifies, which is a finding
         # rather than an omission and is reported as one.
         biz_heavy = frame[t]['cip'] >= 2 * med_cip
+        # A FOURTH ROUTE, AND IT WAS MISSING: houses that are WORTH more, rather than more
+        # houses. The classifier counted PARCELS per child and never what a parcel is
+        # worth, so Newton and Needham -- which raise a great deal per home at a low rate
+        # because the homes are expensive -- came out `unexplained` alongside towns nobody
+        # can explain. A count is not a value; that is rule 7 in this report's own words.
+        rich_homes = values.get(t, 0) >= 1.5 * med_value
         how = ('the state' if state_heavy and not homes_heavy
                else 'houses' if homes_heavy and not state_heavy
                else 'both' if state_heavy and homes_heavy
                else 'business' if biz_heavy
+               else 'expensive houses' if rich_homes
                else 'unexplained')
         rows_out.append(dict(
             town=t, bill=round(frame[t]['bill']), pp=round(frame[t]['pp']),
             state_pp=round(effort[t]['state_pp']), homes_per_pupil=round(homes[t], 2),
-            cip=round(frame[t]['cip'], 1), how=how, biz_heavy=biz_heavy))
+            cip=round(frame[t]['cip'], 1), how=how, biz_heavy=biz_heavy,
+            prate=frame[t].get('prate'), value=round(values.get(t, 0))))
     return dict(
         towns=rows_out, n=len(towns),
+        by_bill=sorted(by_bill), n_by_bill=len(by_bill),
+        in_both_tests=sorted(set(by_bill) & set(both)),
+        effort_cut=round(effort_cut, 2), med_value=round(med_value),
+        by_rich_homes=len([r for r in rows_out if r['how'] == 'expensive houses']),
         cheap_cut=round(cheap_cut), spend_cut=round(spend_cut),
         med_state=round(med_state), med_homes=round(med_homes, 2),
         by_state=len([r for r in rows_out if r['how'] in ('the state', 'both')]),
@@ -2779,6 +3015,7 @@ def table_row(frame, raw, t, role, district):
     return dict(
         town=t, role=role, district=district,
         bill=bill, value=raw['value'].get((t, FY)), pinc=raw['pinc'].get((t, FY)),
+        prate=raw['prate'].get((t, FY)),
         rank=raw['rank'].get((t, FY)), cip=raw['cip'].get((t, FY)),
         pp=(raw['dese'].get(str(SY), {}).get(district, {})
             .get(('Expenditures Per Pupil', 'Total Expenditures'))),
@@ -2876,6 +3113,14 @@ def build():
                                     if y == FY},
                              effort=effort, districts=DISTRICT_OF, raw_pp=dist_pp)
 
+    # WHERE LUNENBURG SITS ON EFFORT, out of all 351 towns, 1st asking the most. The
+    # dollar-bill rank is published by DLS; this one is not, so it is computed here over
+    # every town the file covers rather than over the 161-town frame -- the stat beside it
+    # is out of 351 and the two must be comparable.
+    _eff_all = sorted((v for (t, y), v in raw['prate'].items() if y == FY and v is not None),
+                      reverse=True)
+    EFFORT_RANK = _eff_all.index(frame['Lunenburg']['prate']) + 1
+
     payload = dict(
         generated_by='scripts/build_town_comparison.py',
         about=('How Lunenburg compares with the towns it borders, the towns this project '
@@ -2897,6 +3142,15 @@ def build():
             dict(value='%s of 351' % ordinal(L['rank']),
                  label='where that bill ranks among the 351 Massachusetts towns — '
                        '1st is the highest bill in the state'),
+            # THE SAME TOWN, MEASURED AS EFFORT, IS IN A DIFFERENT PLACE ENTIRELY.
+            # The dollar bill ranks house prices as much as tax policy, and this report
+            # led with it. Lunenburg is middling on dollars and in the top quarter of the
+            # state on what it asks of a home's value -- which is the honest answer to
+            # `do we pay more than other towns`.
+            dict(value='%s of 351' % ordinal(EFFORT_RANK),
+                 label='where Lunenburg ranks on the bill as a SHARE of what the home is '
+                       'worth — %s of value, and 1st asks the most'
+                       % pct(L['prate'], 2)),
             dict(value=usd(L['pp']),
                  label='spent per pupil in SY%d, all funds \u2014 %s of %d comparable '
                        'districts, where 1st spends the most'
@@ -2923,6 +3177,7 @@ def build():
         verdicts=town_verdicts,
         cheap_and_generous=cheap,
         commercial=comm,
+        commercial_choice=None,   # filled below, once the heatmap has been built
         by_dimension=by_dimension(frame, val, effort, parcels),
         distributions=distributions(frame, val, effort, parcels),
         above_requirement=above_the_requirement(frame, raw['dese']),
@@ -2976,6 +3231,14 @@ def build():
             'from a town able to afford one.',
         ],
     )
+    # THE FORK, COMPUTED ONCE AND PUBLISHED. It was written inline in the markdown, which
+    # put every figure in it beyond reach of the verifier -- rule 7d and rule 9 both: a
+    # report's figures come from the payload, and every figure in a finished document gets
+    # recomputed by a script rather than re-read.
+    _hv = {m['key']: m['values'] for m in payload['heatmap']['measures']}
+    payload['commercial_choice'] = commercial_choice(
+        payload['commercial'], {f['town']: f for f in payload['funding']},
+        _hv['effort_value'], _hv['bill'])
     return payload, frame, raw, corr, twins_is, twins_does, overlap10, overlap25, dest
 
 
@@ -3609,17 +3872,34 @@ def markdown(payload, frame):
       '\u2014 and here is how' % (len(G['towns']), G['n']))
     w('')
     w('This is the question underneath every comparison anybody makes, so it goes first. '
-      'Take the cheapest quarter of these %d towns by average single-family tax bill \u2014 '
-      '**%s or less** \u2014 and the top quarter by spending per pupil \u2014 **%s or '
-      'more**. %d towns are in both.'
-      % (G['n'], money(G['cheap_cut']), money(G['spend_cut']), len(G['towns'])))
+      '**Cheap here means low EFFORT, not a small number of dollars** \u2014 the bill as a '
+      'share of what the home is worth, because a dollar bill measures the housing market '
+      'as much as it measures the town. Take the lightest-taxed quarter of these %d towns '
+      'on that measure \u2014 **%s of the home\u2019s value or less** \u2014 and the top '
+      'quarter by spending per pupil \u2014 **%s or more**. %d towns are in both.'
+      % (G['n'], pct(G['effort_cut'], 2), money(G['spend_cut']), len(G['towns'])))
+    w('')
+    # THE SAME TEST ON THE DOLLAR BILL GIVES A DIFFERENT ANSWER, and publishing only one
+    # of them would hide that the choice of measure IS the finding here.
+    w('**Asked the other way it is a different set of towns.** On the cheapest quarter by '
+      'the dollar bill \u2014 %s or less \u2014 %d towns qualify, and only %d of them are '
+      'in both lists: %s. The dollar test finds places where houses are inexpensive and '
+      'the state therefore funds the schools; the effort test finds places that raise a '
+      'great deal from each home without asking much of it. Both are real. They are not '
+      'the same question, and this report asked the second one.'
+      % (money(G['cheap_cut']), G['n_by_bill'], len(G['in_both_tests']),
+         ', '.join(G['in_both_tests']) or 'none'))
     w('')
     w('| Town | Average tax bill on a home | Spent per pupil | State money per child | '
       'Homes per pupil | How |')
     w('|---|---:|---:|---:|---:|---|')
+    _near = [r for r in G['towns']
+             if r['how'] == 'unexplained' and r['cip'] >= 1.5 * G['med_cip']]
     how_words = {'the state': 'the state pays', 'houses': 'a great many houses per child',
                  'both': 'the state pays, and many houses per child',
-                 'unexplained': '**neither \u2014 unexplained**'}
+                 'business': 'an unusually large business base',
+                 'expensive houses': 'houses that are worth a great deal each',
+                 'unexplained': '**none of these \u2014 unexplained**'}
     for r in G['towns']:
         w('| %s | %s | %s | %s | %.1f | %s |'
           % (r['town'], money(r['bill']), money(r['pp']), money(r['state_pp']),
@@ -3628,25 +3908,51 @@ def markdown(payload, frame):
       % (money(G['lun']['bill']), money(G['lun']['pp']), money(G['lun']['state_pp']),
          G['lun']['homes_per_pupil']))
     w('')
-    w('**There are exactly two ways, and Lunenburg has neither.** %d of the %d are among the '
-      'communities where the state\u2019s own formula finds the least LOCAL EFFORT '
-      'available \u2014 Chapter 70 measures a town by its equalized property valuation and '
-      'its residents\u2019 income, and covers what those two cannot reach: the state puts '
-      'in a median of %s per child across them, against %s for the '
-      'middle town here. The other %d are resort and retirement towns \u2014 a great many '
-      'houses, very few children \u2014 so a modest bill spread over %.1f homes per pupil '
-      'still raises a great deal for each child. None of the %d is doing something a town '
-      'could simply decide to do.'
+    if _near:
+        # NEAR MISSES ARE NAMED, NOT TUNED AWAY. The right response to a threshold that
+        # just excludes three towns is to say so; moving it until the answer looks tidier
+        # is fitting the rule to the result.
+        w('')
+        w('**About those unexplained ones.** %s %s business shares of %s \u2014 close to '
+          'twice the %s median of these towns, which is the test used above, but not '
+          'quite twice it: the test needs %s. They are counted as unexplained because the '
+          'rule was set before the answer was seen, and the honest report of a town that '
+          'misses a threshold by %s is that it missed the threshold.'
+          % (', '.join(r['town'] for r in _near),
+             'has a' if len(_near) == 1 else 'have',
+             ', '.join(pct(r['cip'], 1) for r in _near), pct(G['med_cip'], 1),
+             pct(2 * G['med_cip'], 1),
+             pct(2 * G['med_cip'] - max(r['cip'] for r in _near), 1)))
+    # FOUR ROUTES, NOT TWO, once the test asks about effort rather than dollars -- and six
+    # towns that fit none of them. The paragraph used to say `exactly two ways`, which was
+    # true of the eight towns the dollar test found and is false of these twenty. A count
+    # that no longer sums to the set is the most quotable kind of wrong.
+    w('**Four ways, and Lunenburg has none of them.** %d of the %d are communities where '
+      'the state\u2019s own formula finds the least LOCAL EFFORT available \u2014 Chapter '
+      '70 measures a town by its equalized property valuation and its residents\u2019 '
+      'income and covers what those two cannot reach, putting in a median of %s per child '
+      'across them against %s for the middle town here. %d are resort and retirement '
+      'towns \u2014 a great many houses and very few children \u2014 so a modest bill '
+      'spread over %.1f homes per pupil still raises a great deal for each child. %d have '
+      'houses that are simply WORTH a great deal each, which raises more per home at a '
+      'lower rate. %d has an unusually large business base. And %d fit none of these, '
+      'which is the honest count of what this report cannot explain.'
       % (G['by_state'], len(G['towns']),
          money(P['their_state_median']), money(G['med_state']), G['by_houses'],
-         max(r['homes_per_pupil'] for r in G['towns']), len(G['towns'])))
+         max(r['homes_per_pupil'] for r in G['towns']), G['by_rich_homes'],
+         len([r for r in G['towns'] if r['how'] == 'business']),
+         len([r for r in G['towns'] if r['how'] == 'unexplained'])))
     w('')
     B = G.get('band')
     if B:
-        w('**And business base is not a third way \u2014 which is worth saying plainly, '
-          'because it is the lever people reach for first.** Tested on the same rule as the '
-          'other two (twice the frame\u2019s median share of the tax base, %s), **%d of the '
-          '%d** qualify. Nor does it do much quietly: among the %d towns whose average home '
+        # THIS SAID `NOT A THIRD WAY` AND MEANT IT: under the dollar-bill test NO town in
+        # the set had an unusual business base. On effort one does, and three more sit
+        # just under the threshold, so the flat negative is no longer true and the
+        # paragraph says the smaller thing that still is.
+        w('**And a business base is the rarest of the four \u2014 which is worth saying '
+          'plainly, because it is the lever people reach for first.** Tested on the same '
+          'rule as the others (twice the frame\u2019s median share of the tax base, %s), '
+          '**%d of the %d** qualifies, with three more just under it. Nor does it do much quietly: among the %d towns whose average home '
           'is between %s and %s \u2014 the band Lunenburg\u2019s %s sits in \u2014 those '
           'with more business than the median charge %s against %s and spend %s per pupil '
           'against %s. Real, and small. The town\u2019s own assessor put the same question '
@@ -3928,8 +4234,75 @@ def markdown(payload, frame):
       '\u2014 shifting tax onto the business already here \u2014 at %s a year.'
       % (money(C2['levy_if_matched']), usd2(CLASSIFICATION['saving'])))
     w('')
-    w('*What this does not show.* Whether that development is wanted, what it would cost in '
-      'services, roads and schools of its own, or where it would go. This is arithmetic on '
+    # RELIEF OR MONEY. NOT BOTH.
+    #
+    # TJ, after working through Littleton row by row: *"this is really easy to understand"*,
+    # of exactly this fork. It is the whole commercial-development argument in two
+    # scenarios, and the reason the town has argued past itself about it for years: the
+    # people who say growth will lower their bill and the people who say it will fund the
+    # schools are both right, about DIFFERENT AND MUTUALLY EXCLUSIVE choices.
+    #
+    # Every figure below is derived. Rule 2 -- and this section in particular, because the
+    # numbers are the argument.
+    CC = P['commercial_choice']
+    if CC:
+        BENCH = CC['bench']
+        w('### What a commercial base is actually worth: relief OR money, never both')
+        w('')
+        w('%s has %s more business value than Lunenburg. Suppose Lunenburg had it. There '
+          'are two things the town could do with it and it can only do one.'
+          % (BENCH, _m(CC['extra'])))
+        w('')
+        w('**(a) Take the relief.** Hold the levy where it is today, %s, and spread it '
+          'across the bigger base. The rate falls from %s to %s per $1,000 and the average '
+          'single-family bill goes from %s to **%s** \u2014 %s a year cheaper, %s.'
+          % (money(CC['levy']), usd2(CC['rate']), usd2(CC['new_rate']), money(CC['bill']),
+             money(CC['new_bill']), money(CC['saving']), pct(CC['cut_pct'], 1)))
+        w('')
+        w('**(b) Take the money.** Let the levy limit rise with the new growth instead. '
+          'That is **%s a year** of extra capacity, gross \u2014 and the bill does not '
+          'move at all. Against it, Chapter 70 equalises on property valuation, so a '
+          'bigger base means a larger required local contribution and less aid: %s '
+          'receives %s a year less state aid than Lunenburg does. Netting the one against '
+          'the other leaves roughly **%s a year**.'
+          % (money(CC['gross']), BENCH, money(CC['aid_lost']), _m(CC['net'])))
+        w('')
+        w('**You cannot have both, and %s chose (b).** Its schools get %s more per pupil '
+          'than Lunenburg\u2019s. Its residents still pay a *lower* share of what their '
+          'homes are worth than Lunenburg\u2019s do \u2014 %s against %s \u2014 which is '
+          'why the dollar bill, %s against our %s, reads as though they pay more.'
+          % (BENCH, money(CC['bench_pp_more']), pct(CC['bench_effort'], 2),
+             pct(CC['lun_effort'], 2), money(CC['bench_bill']), money(CC['bill'])))
+        w('')
+        w('**And how much of it would the town actually need?** Against the FY%d scenarios '
+          'the model carries, measured from the balanced budget:' % (FY + 1))
+        w('')
+        w('| To fund | The gap | Share of %s\u2019s extra business base |' % BENCH)
+        w('|---|---:|---:|')
+        for _g in CC['gaps']:
+            w('| %s | %s | %s |' % (_g['name'], money(_g['gap']), pct(_g['share'], 0)))
+        w('')
+        w('**A base that arrives once closes a level, not a rate.** Proposition 2\u00bd '
+          'lifts the levy limit %s a year, and this town\u2019s school costs have run '
+          'faster than that, so a base large enough to close today\u2019s gap is not a '
+          'base large enough to keep it closed. It has to be new growth CONTINUING. '
+          '[What commercial growth would have to look like](/commercial-development) '
+          'reaches the same conclusion from the opposite direction \u2014 from the '
+          'town\u2019s own certified build rate rather than from another town\u2019s '
+          'finished base \u2014 and puts it in buildings a year, for ever.'
+          % pct(100 * LEVY_CAP, 1))
+        w('')
+        w('*What this does not show.* That either number is achievable, or free. **(a) is '
+          'a ceiling, not a forecast** — it holds the levy flat while the town grows, '
+          'which no town in this comparison has actually done, and it counts none of the '
+          'services that development requires. **(b)’s netting is approximate**: the '
+          'aid difference between two towns is driven by all of their property and income, '
+          'not by the commercial share alone, so it is the right order of magnitude and '
+          'not a computed Chapter 70 result. Running the published formula against a '
+          'hypothetical valuation would settle it, and is not done here.')
+        w('')
+    w('*And what none of this shows.* Whether that development is wanted, what it would '
+      'cost in services, roads and schools of its own, or where it would go. This is arithmetic on '
       'the tax base and nothing else. `/commercial-development` translates the same '
       'quantity into buildings at the town\u2019s own archetype values \u2014 see '
       '[what commercial growth would have to look like](/commercial-development).')
@@ -4031,14 +4404,18 @@ def markdown(payload, frame):
     w('')
     w('| Town | Why it is here | School district | Average single-family tax bill, FY%d | '
       'Where that bill ranks among the 351 Massachusetts towns (1 = highest) | That bill as '
-      'a share of income per head | Spending per pupil, all funds, SY%d | Share of the tax '
+      'a share of WHAT THE HOME IS WORTH | That bill as a share of income per head | '
+      'Spending per pupil, all funds, SY%d | Share of the tax '
       'base that is business rather than housing | Overrides won of those put to voters |'
       % (P['fy'], P['sy']))
-    w('|---|---|---|---:|---:|---:|---:|---:|---:|')
+    w('|---|---|---|---:|---:|---:|---:|---:|---:|---:|')
     for r in P['local']:
-        w('| %s | %s | %s | %s | %s | %s | %s | %s | %d of %d |'
+        # THE DOLLAR BILL AND THE EFFORT SIDE BY SIDE. They disagree about who pays
+        # most, and reading either alone misleads -- see the `bill-is-not-effort` card.
+        w('| %s | %s | %s | %s | %s | %s | %s | %s | %s | %d of %d |'
           % (r['town'], ROLE_LABEL[r['role']], r['district'], money(r['bill']),
-             r['rank'] if r['rank'] else '—', num_or_dash(r['pinc'], '%.2f%%'),
+             r['rank'] if r['rank'] else '—',
+             num_or_dash(r.get('prate'), '%.2f%%'), num_or_dash(r['pinc'], '%.2f%%'),
              money(r['pp']), num_or_dash(r['cip'], '%.1f%%'), r['won'], r['put']))
     w('')
     others = [r for r in P['local'] if r['town'] != 'Lunenburg' and r['pp']]
