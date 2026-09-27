@@ -5,6 +5,46 @@ work inside it did. Read this before doing any ingest or extraction work.
 
 ---
 
+## 0. WHAT WE ARE TRYING TO GET THROUGH
+
+**The goal is to read what the town has already published.** Every stream below turns a
+document the town put out into rows somebody can query, cite and check. The backlog is
+what has not been read yet.
+
+Counts at the time of writing, from `bash scripts/status.sh --once`:
+
+| stream | read | left | who does it | what one unit is |
+|---|---:|---:|---|---|
+| Captions for recordings | 2,669 | **0** | itself, free | one meeting recording |
+| OCR of scanned minutes | 1,687 | **0** | itself, free | one scanned minutes PDF |
+| Votes, from the town's own minutes | 1,519 | **2,953** | the sweep, $0.15 each | one meeting's minutes |
+| Our minutes, written from recordings | 506 | **1,924** | the sweep, ~$0.45 each | one recording |
+| Annual report pages, by what is on them | 458 | **16** | isolated runs, $0.32 each | one PAGE of a report |
+| Reconciling the annual-report tables | 567 | **13,222** | isolated runs | one ROW that must tie to a printed total |
+
+**The order to work them, and why.**
+
+1. **Leave the first two alone.** They are clear.
+2. **Votes and minutes need nothing from anybody.** The sweeps run them on a schedule and
+   they cost about 1% of a week per 30 jobs. Do not do these by hand; do not sit watching
+   them. Confirm they are producing and stop.
+3. **Annual report pages are nearly done** -- 16 left, about $5 and half an hour, run in
+   isolation. These are the only ones where refusals are expected: several pages cannot be
+   read because OCR merged their header cells, and they are left unread on purpose.
+4. **Reconciling the annual-report tables is the real remaining work**, and it is not a
+   batch. 13,222 rows, mostly a per-page column ruler putting ACCOUNT NUMBER where the
+   first figure belongs, and trust-fund years needing real PDF geometry. The survey is in
+   `sources/data/extraction-plan.csv`. Three of its generic extracts are counted but are
+   NOT work anybody will clear -- `notes/generated/AGENTIC-BACKLOG.md` says which and why.
+
+**What "done" means for a row:** it ties to a total the document itself prints, or to an
+identity the table states about itself. Nothing is written that does not prove. A count
+that goes up without the archive going up is the failure mode this whole system is built
+against.
+
+**What this is all FOR.** The archive exists so a resident can check a figure back to the
+document it came from. A row nobody can trace is worth less than no row.
+
 ## 1. THE RULE THAT MATTERS MOST
 
 **Never do ingest work in a context-heavy session.** Every turn re-sends the whole
