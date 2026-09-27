@@ -478,6 +478,25 @@ no process exists for, a decision that needs judgement, and a defect a check can
 Writing the extractor was legitimate. Narrating nine pages of box dumps while doing it was
 not, and neither was staying in the loop once the sweeps were confirmed healthy.
 
+**AND NEVER DO INGEST WORK IN A CONTEXT-HEAVY SESSION.** TJ, 27 September 2026:
+*"You should NEVER invest with a context heavy session. All the ingest data can be done in
+isolation."*
+
+The mechanism is the part worth holding on to: **every turn re-sends the whole
+conversation**, so the same work costs several times more late in a long session than it
+does in a fresh one. Reading a page of OCR at turn 200 is not the same purchase as reading
+it at turn 3. That is why today's attended work cost roughly four times what a thousand
+unattended jobs did -- not because extraction is expensive, but because of WHERE it was
+done.
+
+Ingest and extraction have no dependency on a conversation's history. They take a page and
+a rule and produce rows. So they run in ISOLATION -- a fresh session, a subagent, or a
+`claude -p` script -- and the long session does the thing only it can do: decide what to
+build and judge whether the answer is honest.
+
+The test before starting any ingest work: *could this run with none of this conversation
+in front of it?* If yes, it must not run here.
+
 **When in doubt, say what it will cost before starting.** `1% of the week ~ $5
 API-equivalent`; a batch is quoted in % of the week and a session is worth quoting the
 same way.
