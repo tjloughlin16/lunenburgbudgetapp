@@ -393,6 +393,13 @@ def write_one(entry, docs, force=False):
                     'cost_usd': res.get('total_cost_usd')},
         'minutes': body,
     }
+    # THE COST, PRINTED WHERE THE SWEEP CAN READ IT. It was already captured from
+    # `claude -p --output-format json` and written into this file, and nowhere else --
+    # so `sweep_backlog.py`, which scrapes stdout for a `$`, logged an EMPTY cost for
+    # every run it has ever made. Its own docstring promises the week's scripted spend
+    # is `a number and not a feeling`; it was a feeling. One line fixes it.
+    if res.get('total_cost_usd') is not None:
+        print('cost $%.4f' % res['total_cost_usd'])
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, 'w', encoding='utf-8') as fh:
         json.dump(minutes, fh, indent=1, ensure_ascii=False)

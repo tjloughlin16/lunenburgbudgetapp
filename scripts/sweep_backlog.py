@@ -42,6 +42,45 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 LEDGER = os.path.join(ROOT, 'sources', 'data', 'agentic-spend.csv')
+# THE CALIBRATION, from CLAUDE.md: 1% of the weekly allowance is about $5 of the
+# API-equivalent cost the CLI reports, measured twice over 49 overnight runs.
+PCT_DOLLARS = 5.0
+
+
+def week_start():
+    """The most recent Thursday 11:00 America/New_York, as a UTC datetime.
+
+    The plan's weekly allowance resets then. This file's own sibling had it as Wednesday
+    22:59 for weeks and handed back half of every sweep window as a result, so the day is
+    read from one place and not retyped.
+    """
+    now = dt.datetime.now().astimezone()
+    back = (now.weekday() - 3) % 7          # Thursday is 3
+    start = (now - dt.timedelta(days=back)).replace(hour=11, minute=0, second=0,
+                                                    microsecond=0)
+    if start > now:
+        start -= dt.timedelta(days=7)
+    return start.astimezone(dt.timezone.utc)
+
+
+def spend_this_week():
+    """What every scripted run has cost since that reset, in API-equivalent dollars."""
+    if not os.path.exists(LEDGER):
+        return 0.0
+    cut = week_start()
+    total = 0.0
+    with open(LEDGER, encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            if not r.get('cost_usd'):
+                continue
+            try:
+                at = dt.datetime.strptime(r['at'], '%Y-%m-%dT%H:%M:%SZ').replace(
+                    tzinfo=dt.timezone.utc)
+            except ValueError:
+                continue
+            if at >= cut:
+                total += float(r['cost_usd'])
+    return total
 ACTIVE_MINUTES = 30
 MAX_FAILURES = 3
 # TWO KINDS OF "NO", AND THEY ARE NOT THE SAME NIGHT.
@@ -119,6 +158,11 @@ def main():
     ap.add_argument('--until', required=True, help='local time HH:MM to stop at')
     ap.add_argument('--now', action='store_true', help='run even while a session is active')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--budget-pct', type=float, default=None,
+                    help='stop once the WEEK\u2019s scripted spend reaches this share of '
+                         'the plan\u2019s weekly allowance (1%% ~ $5 API-equivalent). '
+                         'Counted across every run since the Thursday 11:00 reset, not '
+                         'just this one, so several nights add up to one ceiling.')
     ap.add_argument('--max', type=int, default=10_000)
     ap.add_argument('--parallel', type=int, default=4, help='jobs at once; the first sweep (17 Sep 2026) ran serial and cleared 77 in 65 minutes for 1.4%% of the week -- time, not allowance, was the limit')
     a = ap.parse_args()
@@ -136,6 +180,22 @@ def main():
     spent = 0.0
     n = 0
     stop_reason = None
+    # A CEILING THE SWEEP STOPS AT, rather than one the plan enforces by refusing.
+    #
+    # TJ, 26 September 2026, going away for the week: *"i want to burn a bunch of credits
+    # ... leaving around 80% before tues morning"* -- he chose SPENDING about 80%. Until
+    # now the only stop was a hard refusal from the CLI, which is 100% by definition and
+    # leaves nothing for the interactive work he comes back to.
+    #
+    # It counts the WHOLE WEEK, not this run, because reaching a total across several
+    # nights is the thing being asked for; a per-run cap would be three separate 80%s.
+    # The week begins at the Thursday 11:00 reset (America/New_York) -- see
+    # weekly_sweep.sh for why that date is written down rather than assumed.
+    week_before = spend_this_week()
+    budget = (a.budget_pct * PCT_DOLLARS) if a.budget_pct else None
+    if budget is not None:
+        print('   week so far: $%.2f API-equivalent (~%.1f%%); ceiling $%.2f (~%.0f%%)'
+              % (week_before, week_before / PCT_DOLLARS, budget, a.budget_pct))
     failures = 0          # non-limit failures; a transient one (a timeout, a hiccup) should not end the night
     transient = 0         # consecutive service refusals (529, 429, a dropped socket)
     requeue = []          # jobs a transient refusal interrupted, to be tried again
@@ -152,6 +212,9 @@ def main():
             while len(pending) < a.parallel and n + len(pending) < a.max:
                 if dt.datetime.now() >= until:
                     stop_reason = 'reached %s' % a.until; break
+                if budget is not None and week_before + spent >= budget:
+                    stop_reason = ('the %.0f%% ceiling for the week ($%.2f spent)'
+                                   % (a.budget_pct, week_before + spent)); break
                 if not a.now and tj_active():
                     stop_reason = 'a session is active'; break
                 j = requeue.pop(0) if requeue else next(it, None)
