@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-26",
+ "generated": "2026-09-27",
  "origins": [
   {
    "id": "school",
@@ -1654,16 +1654,16 @@
      "textUrl": "/docs/analyses/show-your-work.md"
     },
     {
-     "path": "data/receivables.csv",
-     "title": "What the town was still owed on 30 June, levy by levy",
+     "path": "analyses/towns-like-us.md",
+     "title": "How Lunenburg compares: neighbours, peers, look-alikes and destinations",
      "stars": 3,
-     "what": "The Collector’s RECEIVABLES SUMMARY out of the annual reports: one row per tax levy and charge, eight columns from BALANCE FORWARD through COMMITTMENTS, ABATEMENTS, PAYMENTS, REFUNDS, TRANSFER and ADJUSTMENTS to BALANCES, ending in the town’s own printed GRAND TOTAL. 522 rows, and every one closes the table’s per-row identity. THE COLUMN ORDER CHANGES MID-ARCHIVE — FY2016-FY2018 print ADJUSTMENTS REFUNDS PAYMENTS ABATEMENTS and FY2019 onward print ABATEMENTS PAYMENTS REFUNDS TRANSFER ADJUSTMENTS — so four columns transpose silently for anyone who assumes one layout. And FY2023 and FY2024 are both headed `FY2021 COLLECTION OF TAXES`, a stale template; the fiscal year cannot be read off the heading.",
-     "kind": "Data",
-     "bytes": 72145,
-     "url": "/docs/data/receivables.csv",
-     "count": 522,
-     "unit": "rows",
-     "textUrl": "/docs/data/receivables.csv"
+     "what": "Four comparison sets, because they answer four questions: the six towns that share a border (computed from Census boundary polygons, not remembered), the five this project uses as peers, the towns the math picks out of all 351, and the places Lunenburg children are actually schooled. The finding the two cohorts exist for: no town is among the ten closest to Lunenburg on both what it IS and what it DOES.",
+     "kind": "Notes",
+     "bytes": 74491,
+     "url": "/docs/analyses/towns-like-us.md",
+     "count": 712,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/towns-like-us.md"
     },
     {
      "path": "data/valuation-by-class.csv",
@@ -1676,18 +1676,6 @@
      "count": 170,
      "unit": "rows",
      "textUrl": "/docs/data/valuation-by-class.csv"
-    },
-    {
-     "path": "analyses/towns-like-us.md",
-     "title": "How Lunenburg compares: neighbours, peers, look-alikes and destinations",
-     "stars": 3,
-     "what": "Four comparison sets, because they answer four questions: the six towns that share a border (computed from Census boundary polygons, not remembered), the five this project uses as peers, the towns the math picks out of all 351, and the places Lunenburg children are actually schooled. The finding the two cohorts exist for: no town is among the ten closest to Lunenburg on both what it IS and what it DOES.",
-     "kind": "Notes",
-     "bytes": 67226,
-     "url": "/docs/analyses/towns-like-us.md",
-     "count": 665,
-     "unit": "lines",
-     "textUrl": "/docs/analyses/towns-like-us.md"
     },
     {
      "path": "analyses/stabilization-funds.md",
@@ -1748,6 +1736,18 @@
      "count": 447,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics-ledger.md"
+    },
+    {
+     "path": "data/receivables.csv",
+     "title": "What the town was still owed on 30 June, levy by levy",
+     "stars": 3,
+     "what": "The Collector’s RECEIVABLES SUMMARY out of the annual reports: one row per tax levy and charge, eight columns from BALANCE FORWARD through COMMITTMENTS, ABATEMENTS, PAYMENTS, REFUNDS, TRANSFER and ADJUSTMENTS to BALANCES, ending in the town’s own printed GRAND TOTAL. 522 rows, and every one closes the table’s per-row identity. THE COLUMN ORDER CHANGES MID-ARCHIVE — FY2016-FY2018 print ADJUSTMENTS REFUNDS PAYMENTS ABATEMENTS and FY2019 onward print ABATEMENTS PAYMENTS REFUNDS TRANSFER ADJUSTMENTS — so four columns transpose silently for anyone who assumes one layout. And FY2023 and FY2024 are both headed `FY2021 COLLECTION OF TAXES`, a stale template; the fiscal year cannot be read off the heading.",
+     "kind": "Data",
+     "bytes": 23632,
+     "url": "/docs/data/receivables.csv",
+     "count": 180,
+     "unit": "rows",
+     "textUrl": "/docs/data/receivables.csv"
     },
     {
      "path": "analyses/monty-tech.md",
@@ -2617,7 +2617,7 @@
      "stars": 1,
      "what": "Pupils, then dollars spent on each pupil split four ways: what the town must raise from homes, from business, what the state adds, and what it spends above the figure the state calculates for it. The four parts sum exactly to the spending they explain, and the last is the one a town meeting decides.",
      "kind": "SVG",
-     "bytes": 11888,
+     "bytes": 12039,
      "url": "/docs/analyses/charts/towns-like-us-funding.svg",
      "textUrl": "/docs/analyses/charts/towns-like-us-funding.svg"
     },
@@ -3034,9 +3034,9 @@
      "path": "data/annual-report-pages.csv",
      "title": "Every financial page of every annual report, and what has read it",
      "stars": 3,
-     "what": "418 pages across fifteen annual town reports that carry a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. 209 read, 195 unread, 14 whose OCR came out upside down and which are a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
+     "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 190502,
+     "bytes": 190787,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 474,
      "unit": "rows",
@@ -3259,6 +3259,18 @@
      "textUrl": "/docs/data/report-appropriations.csv"
     },
     {
+     "path": "data/annual-report-reads.csv",
+     "title": "What a model read off each annual-report page, folded into one table",
+     "stars": 2,
+     "what": "One row per figure read out of an annual-report page by scripts/benchmark_ingest.py, folded out of the per-page JSON by scripts/build_annual_report_reads.py. It is the artefact that makes a page count as READ: annual-report-pages.csv flips a page only when a CSV carrying `fy` and `page` cites it, and the JSON alone moves nothing. A page whose header could not be read contributes NO rows and is left unread on purpose, because naming a column from its position is the trap rule 13b exists to stop. The reading is ours, not the town’s; the annual report is the source and it is catalogued separately.",
+     "kind": "Data",
+     "bytes": 1378484,
+     "url": "/docs/data/annual-report-reads.csv",
+     "count": 4370,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-reads.csv"
+    },
+    {
      "path": "data/youtube-video-classification.csv",
      "title": "One row per video, with what we think it is",
      "stars": 2,
@@ -3348,9 +3360,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 150425,
+     "bytes": 151279,
      "url": "/docs/data/money-gaps.csv",
-     "count": 182,
+     "count": 183,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3552,7 +3564,7 @@
      "stars": 2,
      "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
      "kind": "Data",
-     "bytes": 5712,
+     "bytes": 5675,
      "url": "/docs/data/ingest-plan.csv",
      "count": 13,
      "unit": "rows",
@@ -3847,7 +3859,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 40321024,
+     "bytes": 40271872,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -3857,7 +3869,7 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3271791,
+     "bytes": 3378807,
      "url": "/docs/data/meeting-register.csv",
      "count": 7047,
      "unit": "rows",
@@ -4212,6 +4224,18 @@
      "textUrl": "/docs/data/dese-sped-movement.csv"
     },
     {
+     "path": "data/agentic-spend.csv",
+     "title": "What the scripted reading cost, job by job",
+     "stars": 3,
+     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
+     "kind": "Data",
+     "bytes": 72857,
+     "url": "/docs/data/agentic-spend.csv",
+     "count": 1019,
+     "unit": "rows",
+     "textUrl": "/docs/data/agentic-spend.csv"
+    },
+    {
      "path": "data/athletics-by-sport.csv",
      "title": "Athletics by sport, long form",
      "stars": 3,
@@ -4258,18 +4282,6 @@
      "count": 259,
      "unit": "rows",
      "textUrl": "/docs/data/dese-ch70-formula.csv"
-    },
-    {
-     "path": "data/agentic-spend.csv",
-     "title": "What the scripted reading cost, job by job",
-     "stars": 3,
-     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
-     "kind": "Data",
-     "bytes": 42699,
-     "url": "/docs/data/agentic-spend.csv",
-     "count": 605,
-     "unit": "rows",
-     "textUrl": "/docs/data/agentic-spend.csv"
     },
     {
      "path": "data/minutes-searchable.csv",
@@ -17525,9 +17537,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1526,
+  "documents": 1527,
   "groups": 22,
-  "bytes": 2219246565,
+  "bytes": 2220673076,
   "loadBearing": 162
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

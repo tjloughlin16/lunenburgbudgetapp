@@ -1,0 +1,17 @@
+{
+ "fy": 2023,
+ "page": 51,
+ "model": "claude-sonnet-5",
+ "boxes": 68,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T19:34:32Z",
+ "cost_usd": 0.044058799999999995,
+ "columns": [
+  "ACCOUNT NUMBER",
+  "FUND NAME"
+ ],
+ "rows": [],
+ "proved": "The page prints SUBTOTALS, then GENERAL FUNDS subtotals, then GRAND TOTALS — so an identity is stated. It could not be checked: with no legible money-column headers there is no way to know which figures the totals are summing, so verifying \"do the rows add to the total\" would require guessing what each column IS. Not proved.",
+ "note": "Only two header words are actually legible on this page: \"ACCOUNT NUMBER\" (split across two boxes, y=0.633/0.624, x≈0.094–0.096) and \"FUND NAME\" (y=0.629, x=0.176). Everything else in the header band is OCR garbage, not words: \"CAN GES\" at (0.624, 0.767) and \"5=5=2255225229\" at (0.613, 0.258) are not readable text, and no other header tokens appear anywhere between x=0.176 and x=0.875 — the zone that covers roughly fourteen numeric columns (the SUBTOTALS row alone prints 14 dollar figures, and the notes for this repo record that FY2023 in particular prints two trust tables side by side with different headers, which this looks like). Fund names (STABILIZATION, SEWER CAPITAL RESERVE STABILIZATION, HEALTH INSURANCE STABILIZATION, OPEB TRUST, SEWER OPEB TRUST, PEG ACCESS ENTERPRISE FUND) and the SUBTOTALS/GENERAL FUNDS/GRAND TOTALS row labels are visible, but I cannot place any of the dollar figures under a named money column because no legible header word exists for any of them — doing so would be assigning a position a name, which is exactly the error this page's own documented history warns about. Returning no rows rather than guessing labels like \"beginning balance\" or \"earnings\" for columns whose headers are illegible.",
+ "table": "FISCAL YEAR 2023 SUMMARY — TRUST FUNDS"
+}

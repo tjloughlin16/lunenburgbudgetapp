@@ -4,11 +4,11 @@
  "model": "claude-sonnet-5",
  "boxes": 239,
  "read_by": "scripts/benchmark_ingest.py",
- "at": "2026-09-27T18:48:59Z",
- "cost_usd": 0.2084604,
+ "at": "2026-09-27T19:48:16Z",
+ "cost_usd": 0.0626994,
  "columns": [],
- "note": "No header or table title is present anywhere in the OCR boxes for this page. Every box is either a surname, a first name, or a dollar amount (consistent with a payroll/salary listing run in two side-by-side name+amount columns), but there is no printed label like \"NAME,\" \"GROSS PAY,\" or \"SALARY,\" and no title text — only a stray \"196\" at the top that looks like a page/column artifact, not a header. Per the rule, when the header can't be read no columns are named and no rows are extracted, since naming columns from x-position alone (left name-pair vs. right name-pair, left amount vs. right amount) would be inferring from position rather than from a header actually printed on the page.",
- "proved": "none — no printed total or identity appears among the OCR boxes to check the figures against",
+ "table": "Unknown — no title or column header box appears on this page",
  "rows": [],
- "table": "unreadable — no title or header text appears in the OCR boxes for this page"
+ "proved": "none — no total or identity is printed on this page",
+ "note": "This page (198) is mid-table: it is a continuous block of employee names and dollar amounts, alphabetically descending (FAIOLA...CORRIGAN down to CARL...CUIN), printed in two side-by-side name/amount blocks, but no header row, column titles, or page title appear anywhere in the OCR boxes supplied — the header that would name these columns (e.g. \"Name\" / \"Gross Pay\" or similar, as used elsewhere in this salary schedule) must sit on an earlier page of the same table and was not included here. Per the rule that a column may only be named from a header actually present on the page, and with no header present at all, no columns can be named and no rows are returned. Separately, the row/column geometry itself is ambiguous without a header to anchor it: amount figures sit both to the left (~x=0.347) and right (~x=0.616) of two first-name/last-name pairs per visual row, and rows are skewed (the same logical row spans a y-range of ~0.002–0.003 rather than a single y), so even the pairing of a given amount to a given name cannot be established with confidence absent the header/column structure from the prior page."
 }

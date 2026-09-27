@@ -1,0 +1,657 @@
+{
+ "fy": 2025,
+ "page": 36,
+ "model": "claude-sonnet-5",
+ "boxes": 544,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T19:29:56Z",
+ "cost_usd": 0.49837780000000004,
+ "columns": [
+  "BEGINNING MARKET VALUE",
+  "BEGINNING PRINCIPAL (Non-Expend)",
+  "BEGINNING EARNINGS (Expendable)",
+  "NET INCOME",
+  "REALIZED GAIN/LOSS",
+  "NET EARNINGS",
+  "TRANSFERS OF PRINCIPAL (Non-Expend)",
+  "TRANSFERS OF EARNINGS (Expendable)",
+  "ENDING PRINCIPAL (Non-Expend)",
+  "ENDING EARNINGS (Expendable)",
+  "ENDING CASH VALUE",
+  "CHANGE IN UNREALIZED GAIN/LOSS",
+  "UNREALIZED GAIN/LOSS",
+  "ENDING MARKET VALUE"
+ ],
+ "table": "TOWN OF LUNENBURG TRUST FUNDS, FY 2025",
+ "proved": "GRAND TOTALS: every one of the 14 columns reconciles exactly to the sum of the four section subtotals (Cemetery, Conservation, Scholarship, Miscellaneous Funds), and each section subtotal reconciles exactly to the sum of its own fund rows. Held for all 14 columns, including the section identity ENDING PRINCIPAL + ENDING EARNINGS = ENDING CASH VALUE, and ENDING CASH VALUE + UNREALIZED GAIN/LOSS = ENDING MARKET VALUE, which held on every single fund row.",
+ "note": "Two figures are almost certainly OCR digit errors, caught only because the subtotal arithmetic pinned them down: Ryan Busque Scholarship's Beginning Market Value prints as $10,401.817 (three decimal digits) but reconciliation to the Scholarship subtotal requires $10,401.81, off by $0.007. Beth N Curtis Memorial Scholar's Beginning Principal prints as $1.873.04 (period where a comma belongs); reconciliation confirms it is $1,873.04. The CONSERVATION FUNDS section subtotal row's label ('SUBTOTALS') was not captured anywhere in the OCR boxes -- its 14 figures ARE present (at y=0.549-0.553, interleaved with and partly concatenated onto the Shawn H Kelley Estate figures above them) and were separated out and verified: every one matches the sum of the six conservation fund rows above it, and the reconstructed row in turn is exactly what the Grand Totals row requires. Two stray one/two-word OCR fragments ('H' near Joseph Harwood School, 'TR' near Dora Haven Cowdry Scholarship) are not data and were dropped as truncated fund-name text. Joseph Harwood School's NET EARNINGS and CHANGE IN UNREALIZED GAIN/LOSS cells have no OCR box at all -- arithmetic on that fund's other cells implies a Net Earnings figure near $17.11, but nothing was printed/scanned for either cell, so both are left blank rather than filled in by inference. A few small funds (American Legion Poor, J&M Howard Sdwlk/Grds, Worthy Poor Income, Gazebo Restoration) print nothing in the two TRANSFERS columns, consistent with no transfer activity that year.",
+ "rows": [
+  {
+   "label": "PERPETUAL CARE BEQUEST",
+   "values": [
+    "$236,634.32",
+    "$214,102.91",
+    "$17,226.88",
+    "$4,991.17",
+    "$1,264.69",
+    "$6,255.86",
+    "$19,500.00",
+    "$0.00",
+    "$233,602.91",
+    "$23,482.74",
+    "$257,085.65",
+    "$31,969.36",
+    "$37,273.89",
+    "$294,359.54"
+   ]
+  },
+  {
+   "label": "C. ALLEN HEADSTONE",
+   "values": [
+    "$409.32",
+    "$100.00",
+    "$300.14",
+    "$8.46",
+    "$2.03",
+    "$10.49",
+    "$0.00",
+    "($250.00)",
+    "$100.00",
+    "$60.63",
+    "$160.63",
+    "$1.42",
+    "$10.60",
+    "$171.23"
+   ]
+  },
+  {
+   "label": "SALE OF CEMETERY LOTS",
+   "values": [
+    "$88,007.00",
+    "$75,596.32",
+    "$10,437.86",
+    "$1,862.45",
+    "$474.50",
+    "$2,336.95",
+    "$8,600.00",
+    "$0.00",
+    "$84,196.32",
+    "$12,774.81",
+    "$96,971.13",
+    "$12,086.66",
+    "$14,059.48",
+    "$111,030.61"
+   ]
+  },
+  {
+   "label": "SUBTOTALS (Cemetery Funds)",
+   "values": [
+    "$325,050.64",
+    "$289,799.23",
+    "$27,964.88",
+    "$6,862.08",
+    "$1,741.22",
+    "$8,603.30",
+    "$28,100.00",
+    "($250.00)",
+    "$317,899.23",
+    "$36,318.18",
+    "$354,217.41",
+    "$44,057.44",
+    "$51,343.97",
+    "$405,561.38"
+   ]
+  },
+  {
+   "label": "CONSERVATION LAND PURCHASE",
+   "values": [
+    "$57,773.05",
+    "$21,650.00",
+    "$34,827.98",
+    "$1,196.83",
+    "$294.11",
+    "$1,490.94",
+    "$0.00",
+    "$0.00",
+    "$21,650.00",
+    "$36,318.92",
+    "$57,968.92",
+    "$7,109.63",
+    "$8,404.70",
+    "$66,373.62"
+   ]
+  },
+  {
+   "label": "R. BURTON CONSERVATION",
+   "values": [
+    "$542.70",
+    "$501.48",
+    "$29.05",
+    "$11.26",
+    "$2.76",
+    "$14.02",
+    "$0.00",
+    "$0.00",
+    "$501.48",
+    "$43.07",
+    "$544.55",
+    "$66.78",
+    "$78.95",
+    "$623.50"
+   ]
+  },
+  {
+   "label": "H. BENJAMIN CONSERVATION",
+   "values": [
+    "$251.86",
+    "$232.72",
+    "$13.49",
+    "$5.21",
+    "$1.28",
+    "$6.49",
+    "$0.00",
+    "$0.00",
+    "$232.72",
+    "$19.98",
+    "$252.70",
+    "$30.98",
+    "$36.63",
+    "$289.33"
+   ]
+  },
+  {
+   "label": "G. HUBBARD CONSERVATION",
+   "values": [
+    "$174.96",
+    "$161.70",
+    "$9.34",
+    "$3.64",
+    "$0.89",
+    "$4.53",
+    "$0.00",
+    "$0.00",
+    "$161.70",
+    "$13.87",
+    "$175.57",
+    "$21.53",
+    "$25.45",
+    "$201.02"
+   ]
+  },
+  {
+   "label": "I. KIMBALL CONSERVATION",
+   "values": [
+    "$98.39",
+    "$90.85",
+    "$5.33",
+    "$2.03",
+    "$0.50",
+    "$2.53",
+    "$0.00",
+    "$0.00",
+    "$90.85",
+    "$7.86",
+    "$98.71",
+    "$12.10",
+    "$14.31",
+    "$113.02"
+   ]
+  },
+  {
+   "label": "SHAWN H KELLEY ESTATE",
+   "values": [
+    "$901,948.03",
+    "$869,830.41",
+    "$11,899.03",
+    "$18,760.73",
+    "$4,610.19",
+    "$23,370.92",
+    "$3,585.84",
+    "$0.00",
+    "$873,416.25",
+    "$35,269.95",
+    "$908,686.20",
+    "$111,528.43",
+    "$131,747.02",
+    "$1,040,433.22"
+   ]
+  },
+  {
+   "label": "SUBTOTALS (Conservation Funds) — label not present in OCR, reconstructed from its figures and verified",
+   "values": [
+    "$960,788.99",
+    "$892,467.16",
+    "$46,784.22",
+    "$19,979.70",
+    "$4,909.73",
+    "$24,889.43",
+    "$3,585.84",
+    "$0.00",
+    "$896,053.00",
+    "$71,673.65",
+    "$967,726.65",
+    "$118,769.45",
+    "$140,307.06",
+    "$1,108,033.71"
+   ]
+  },
+  {
+   "label": "CHESTER MOSSMAN TEEN CENTER",
+   "values": [
+    "$1,940.20",
+    "$1,237.25",
+    "$659.46",
+    "$40.20",
+    "$9.88",
+    "$50.08",
+    "$0.00",
+    "$0.00",
+    "$1,237.25",
+    "$709.54",
+    "$1,946.79",
+    "$238.77",
+    "$282.26",
+    "$2,229.05"
+   ]
+  },
+  {
+   "label": "GEORGE WAKEFIELD SCHOLARSHIP",
+   "values": [
+    "$249.45",
+    "$210.48",
+    "$33.38",
+    "$4.76",
+    "$1.24",
+    "$6.00",
+    "($62.29)",
+    "($37.71)",
+    "$148.19",
+    "$1.67",
+    "$149.86",
+    "$11.04",
+    "$16.63",
+    "$166.49"
+   ]
+  },
+  {
+   "label": "MABEL ALLEN SCHOOL PRIZE",
+   "values": [
+    "$855.30",
+    "$133.43",
+    "$702.70",
+    "$18.35",
+    "$4.71",
+    "$23.06",
+    "$0.00",
+    "($63.75)",
+    "$133.43",
+    "$662.01",
+    "$795.44",
+    "$88.51",
+    "$107.68",
+    "$903.12"
+   ]
+  },
+  {
+   "label": "JOSEPH HARWOOD SCHOOL",
+   "values": [
+    "$625.05",
+    "$16.77",
+    "$594.27",
+    "$13.60",
+    "$3.51",
+    "",
+    "$0.00",
+    "($213.75)",
+    "$16.77",
+    "$397.63",
+    "$414.40",
+    "",
+    "$44.82",
+    "$459.22"
+   ]
+  },
+  {
+   "label": "LUNENBURG ATHLETIC BOOSTER",
+   "values": [
+    "$15,101.40",
+    "$14,067.50",
+    "$695.38",
+    "$304.60",
+    "$76.41",
+    "$381.01",
+    "($1,042.08)",
+    "($957.92)",
+    "$13,025.42",
+    "$118.47",
+    "$13,143.89",
+    "$1,465.19",
+    "$1,803.71",
+    "$14,947.60"
+   ]
+  },
+  {
+   "label": "TIMOTHY J STANLEY SCHOLARSHIP",
+   "values": [
+    "$14.33",
+    "$12.78",
+    "$1.23",
+    "$0.31",
+    "$0.07",
+    "$0.38",
+    "$0.00",
+    "$0.00",
+    "$12.78",
+    "$1.61",
+    "$14.39",
+    "$1.77",
+    "$2.09",
+    "$16.48"
+   ]
+  },
+  {
+   "label": "RYAN BUSQUE SCHOLARSHIP",
+   "values": [
+    "$10,401.81 (OCR printed $10,401.817)",
+    "$9,145.00",
+    "$1,023.64",
+    "$215.47",
+    "$52.95",
+    "$268.42",
+    "$0.00",
+    "$0.00",
+    "$9,145.00",
+    "$1,292.06",
+    "$10,437.06",
+    "$1,280.06",
+    "$1,513.23",
+    "$11,950.29"
+   ]
+  },
+  {
+   "label": "PHILIP CROUSE",
+   "values": [
+    "$80.69",
+    "$66.69",
+    "$12.19",
+    "$1.67",
+    "$0.41",
+    "$2.08",
+    "$0.00",
+    "$0.00",
+    "$66.69",
+    "$14.27",
+    "$80.96",
+    "$9.92",
+    "$11.73",
+    "$92.69"
+   ]
+  },
+  {
+   "label": "DORA HAVEN COWDRY SCHOLARSHIP",
+   "values": [
+    "$434,986.10",
+    "$383,523.07",
+    "$41,712.13",
+    "$8,994.74",
+    "$2,212.96",
+    "$11,207.70",
+    "$0.00",
+    "($6,000.00)",
+    "$383,523.07",
+    "$46,919.83",
+    "$430,442.90",
+    "$52,351.92",
+    "$62,102.82",
+    "$492,545.72"
+   ]
+  },
+  {
+   "label": "BETH N CURTIS MEMORIAL SCHOLAR",
+   "values": [
+    "$2,011.20",
+    "$1,873.04 (OCR printed $1.873.04)",
+    "$93.08",
+    "$37.55",
+    "$10.00",
+    "$47.55",
+    "($871.96)",
+    "($128.04)",
+    "$1,001.08",
+    "$12.59",
+    "$1,013.67",
+    "$50.91",
+    "$95.99",
+    "$1,109.66"
+   ]
+  },
+  {
+   "label": "BARBARA NELSON SCHOLARSHIP",
+   "values": [
+    "$926.70",
+    "$862.74",
+    "$43.19",
+    "$16.31",
+    "$3.19",
+    "$19.50",
+    "($840.70)",
+    "($59.30)",
+    "$22.04",
+    "$3.39",
+    "$25.43",
+    "($42.73)",
+    "($21.96)",
+    "$3.47"
+   ]
+  },
+  {
+   "label": "SCOTT CZELUSNIAK MEMORIAL AWARD",
+   "values": [
+    "$12.98",
+    "$10.77",
+    "$1.92",
+    "$0.27",
+    "$0.07",
+    "$0.34",
+    "$0.00",
+    "$0.00",
+    "$10.77",
+    "$2.26",
+    "$13.03",
+    "$1.60",
+    "$1.89",
+    "$14.92"
+   ]
+  },
+  {
+   "label": "PETE LINCOLN SCHOLARSHIP",
+   "values": [
+    "$14,865.47",
+    "$13,848.26",
+    "$683.98",
+    "$303.54",
+    "$75.30",
+    "$378.84",
+    "($632.57)",
+    "($942.43)",
+    "$13,215.69",
+    "$120.39",
+    "$13,336.08",
+    "$1,520.13",
+    "$1,853.36",
+    "$15,189.44"
+   ]
+  },
+  {
+   "label": "VINCENT JOSEPH SCHOLARSHIP",
+   "values": [
+    "$0.00",
+    "$0.00",
+    "$0.00",
+    "$61.67",
+    "$3.39",
+    "$65.06",
+    "$14,500.00",
+    "$0.00",
+    "$14,500.00",
+    "$65.06",
+    "$14,565.06",
+    "$2,851.12",
+    "$2,851.12",
+    "$17,416.18"
+   ]
+  },
+  {
+   "label": "SUBTOTALS (Scholarship Funds)",
+   "values": [
+    "$482,070.68",
+    "$425,007.78",
+    "$46,256.55",
+    "$10,013.04",
+    "$2,454.09",
+    "$12,467.13",
+    "$11,050.40",
+    "($8,402.90)",
+    "$436,058.18",
+    "$50,320.78",
+    "$486,378.96",
+    "$59,859.02",
+    "$70,665.37",
+    "$557,044.33"
+   ]
+  },
+  {
+   "label": "AMERICAN LEGION POOR",
+   "values": [
+    "$11,948.73",
+    "$500.00",
+    "$11,180.88",
+    "$247.54",
+    "$60.83",
+    "$308.37",
+    "",
+    "",
+    "$500.00",
+    "$11,489.25",
+    "$11,989.25",
+    "$1,470.43",
+    "$1,738.28",
+    "$13,727.53"
+   ]
+  },
+  {
+   "label": "J & M HOWARD SDWLK / GRDS",
+   "values": [
+    "$21,249.81",
+    "$5,000.00",
+    "$15,773.46",
+    "$440.24",
+    "$108.18",
+    "$548.42",
+    "",
+    "",
+    "$5,000.00",
+    "$16,321.88",
+    "$21,321.88",
+    "$2,615.03",
+    "$3,091.38",
+    "$24,413.26"
+   ]
+  },
+  {
+   "label": "WORTHY POOR INCOME",
+   "values": [
+    "$21,896.23",
+    "$1,200.00",
+    "$20,205.39",
+    "$453.59",
+    "$111.46",
+    "$565.05",
+    "",
+    "",
+    "$1,200.00",
+    "$20,770.44",
+    "$21,970.44",
+    "$2,694.57",
+    "$3,185.41",
+    "$25,155.85"
+   ]
+  },
+  {
+   "label": "GAZEBO RESTORATION",
+   "values": [
+    "$10,261.05",
+    "$100.00",
+    "$9,931.03",
+    "$212.59",
+    "$52.24",
+    "$264.83",
+    "",
+    "",
+    "$100.00",
+    "$10,195.86",
+    "$10,295.86",
+    "$1,262.74",
+    "$1,492.76",
+    "$11,788.62"
+   ]
+  },
+  {
+   "label": "LUNENBURG POST #283",
+   "values": [
+    "$8,313.84",
+    "$6,941.18",
+    "$1,186.29",
+    "$172.20",
+    "$42.32",
+    "$214.52",
+    "$0.00",
+    "$0.00",
+    "$6,941.18",
+    "$1,400.81",
+    "$8,341.99",
+    "$1,023.11",
+    "$1,209.48",
+    "$9,551.47"
+   ]
+  },
+  {
+   "label": "SUBTOTALS (Miscellaneous Funds)",
+   "values": [
+    "$73,669.66",
+    "$13,741.18",
+    "$58,277.05",
+    "$1,526.16",
+    "$375.03",
+    "$1,901.19",
+    "$0.00",
+    "$0.00",
+    "$13,741.18",
+    "$60,178.24",
+    "$73,919.42",
+    "$9,065.88",
+    "$10,717.31",
+    "$84,636.73"
+   ]
+  },
+  {
+   "label": "GRAND TOTALS",
+   "values": [
+    "$1,841,579.97",
+    "$1,621,015.35",
+    "$179,282.70",
+    "$38,380.98",
+    "$9,480.07",
+    "$47,861.05",
+    "$42,736.24",
+    "($8,652.90)",
+    "$1,663,751.59",
+    "$218,490.85",
+    "$1,882,242.44",
+    "$231,751.79",
+    "$273,033.71",
+    "$2,155,276.15"
+   ]
+  }
+ ]
+}

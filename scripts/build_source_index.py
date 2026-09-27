@@ -1863,15 +1863,27 @@ GROUPS = [
              'from annual-report-pages.csv on every run so the plan cannot drift from the '
              'queue it plans; the batching, the order and the estimates are judgements. '
              'See scripts/build_ingest_plan.py.'),
+            ('data/annual-report-reads.csv',
+             'What a model read off each annual-report page, folded into one table', 2,
+             'One row per figure read out of an annual-report page by '
+             'scripts/benchmark_ingest.py, folded out of the per-page JSON by '
+             'scripts/build_annual_report_reads.py. It is the artefact that makes a page '
+             'count as READ: annual-report-pages.csv flips a page only when a CSV carrying '
+             '`fy` and `page` cites it, and the JSON alone moves nothing. A page whose '
+             'header could not be read contributes NO rows and is left unread on purpose, '
+             'because naming a column from its position is the trap rule 13b exists to '
+             'stop. The reading is ours, not the town\u2019s; the annual report is the '
+             'source and it is catalogued separately.'),
             ('data/annual-report-pages.csv',
              'Every financial page of every annual report, and what has read it', 3,
-             '418 pages across fifteen annual town reports that carry a table of figures, '
+             'Every page across fifteen annual town reports that carries a table of figures, '
              'each with the SUBJECT read off its own headings and whether any dataset '
              'cites it. It maps the other direction from the rest of the backlog: from '
              'the pages to what is on them, rather than from datasets that already exist '
              '\u2014 so a table nobody has written an extractor for appears in the queue '
-             'instead of being invisible. 209 read, 195 unread, 14 whose OCR came out '
-             'upside down and which are a re-OCR job rather than a reading job. `subject` '
+             'instead of being invisible. `state` is the work queue \u2014 `read`, `unread`, or '
+             '`reversed` for a page whose OCR came out upside down, which is a re-OCR job '
+             'rather than a reading job. `subject` '
              'is a GUESS from the headings and is there to group the queue, never to say '
              'what a figure means. See scripts/map_annual_report_pages.py.'),
             ('data/stabilization-pages.csv',
@@ -3186,6 +3198,12 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # JSON per set of minutes, each vote with its verbatim quote. A reading of a
              # document the archive already catalogues, not a document; the minutes are.
              'data/official-votes',
+             # One JSON per PAGE of an annual report: the table a model read out of that
+             # page's OCR boxes, with the identity it was proved against and a `note` where
+             # it refused. The same kind of thing as the votes above -- a reading of a
+             # document the archive already catalogues, never a document. The CSV folded out
+             # of them, annual-report-reads.csv, is what anything downstream reads.
+             'data/annual-report-reads',
              # The site's own brand assets: the favicon and the Facebook cover, with a README.
              'data/brand'}
 # Bookkeeping about the R2 archive rather than anything read for a figure:
@@ -3200,6 +3218,12 @@ SKIP_FILES = {'supplemental.csv',
               # is documented in CLAUDE.md, which is where it belongs.
               'analyses/UNLISTED',
               'data/archive-manifest.csv', 'data/archive-push-state.csv',
+              # WHAT A PAGE OF INGEST COST, one row per attempt: model, boxes, rows
+              # returned, dollars and seconds. Bookkeeping about the reading rather than
+              # anything read for a figure, in the same family as the manifest above -- and
+              # it carries `fy` and `page`, so map_annual_report_pages.py excludes it on
+              # purpose lest an ATTEMPT count as a reading.
+              'data/ingest-benchmark.csv',
               # A derived full-text index over the minutes and the captions, rebuilt from
               # them in ten seconds. Not a document, not versioned, and it carries no
               # figure of its own -- everything in it is a copy of text catalogued

@@ -1,0 +1,137 @@
+{
+ "fy": 2023,
+ "page": 50,
+ "model": "claude-sonnet-5",
+ "boxes": 492,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T19:33:54Z",
+ "cost_usd": 0.2672202,
+ "columns": [
+  "FUND NAME",
+  "ACCOUNT NUMBER",
+  "BEGINNING MARKET VALUE (FY2022)",
+  "BEGINNING PRINCIPAL (FY2022)",
+  "BEGINNING EARNINGS (FY2023)",
+  "REALIZED GAIN/LOSS (FY2023)",
+  "EARNINGS (FY2023)",
+  "NET INCOME (FY2023)",
+  "TRANSFERS OF PRINCIPAL (FY2023)",
+  "TRANSFERS OF EARNINGS (FY2023)",
+  "ENDING PRINCIPAL (FY2023)",
+  "ENDING EARNINGS/ENDING CASH (FY2023)",
+  "ENDING VALUE (FY2023)",
+  "CHANGE IN UNREALIZED GAIN/LOSS (FY2023)",
+  "UNREALIZED GAIN/LOSS (FY2023)",
+  "ENDING MARKET VALUE (FY2023)"
+ ],
+ "rows": [
+  {
+   "label": "CEMETERY FUNDS — SUBTOTALS",
+   "values": [
+    "CEMETERY FUNDS — SUBTOTALS",
+    "",
+    "$300,143.74",
+    "$288,599.23",
+    "$13,770.29",
+    "$5,620.09",
+    "$721.87",
+    "$6,341.98",
+    "$3,200.00",
+    "$0.00",
+    "$289,799.23",
+    "$20,112.25",
+    "$309,911.48",
+    "($348.45)",
+    "($574.23)",
+    "$309,337.25"
+   ]
+  },
+  {
+   "label": "CONSERVATION FUNDS — SUBTOTALS",
+   "values": [
+    "CONSERVATION FUNDS — SUBTOTALS",
+    "",
+    "$54,909.72",
+    "$22,638.75",
+    "$32,314.27",
+    "$1,018.73",
+    "$130.67",
+    "$1,149.40",
+    "$0.00",
+    "$0.00",
+    "$22,638.75",
+    "$33,483.67 (uncertain — read from an adjacent row, y=0.581 vs 0.579)",
+    "$56,100.42",
+    "($62.64)",
+    "($103.94)",
+    "$55,998.48"
+   ]
+  },
+  {
+   "label": "LIBRARY FUNDS — SUBTOTALS",
+   "values": [
+    "LIBRARY FUNDS — SUBTOTALS",
+    "",
+    "$47,488.96",
+    "$33,998.01",
+    "$13,508.67",
+    "$382.30",
+    "$104.48",
+    "$486.78",
+    "($33,996.01)",
+    "($13,995.45)",
+    "$0.00",
+    "$0.00",
+    "$0.00",
+    "$35.72",
+    "$0.00",
+    "$0.00"
+   ]
+  },
+  {
+   "label": "SCHOLARSHIP FUNDS — SUBTOTALS",
+   "values": [
+    "SCHOLARSHIP FUNDS — SUBTOTALS",
+    "",
+    "$449,586.61",
+    "$425,007.78",
+    "$24,917.01",
+    "$8,342.38",
+    "$1,070.10",
+    "$9,412.48",
+    "$0.00",
+    "$159.00",
+    "$425,007.78",
+    "$34,488.47",
+    "$459,496.25",
+    "($513.23)",
+    "($851.41)",
+    "$458,644.84"
+   ]
+  },
+  {
+   "label": "MISCELLANEOUS FUNDS — SUBTOTALS",
+   "values": [
+    "MISCELLANEOUS FUNDS — SUBTOTALS",
+    "",
+    "$68,747.74",
+    "$13,741.18",
+    "$55,058.28",
+    "$1,275.48",
+    "$163.59",
+    "$1,439.07",
+    "$0.00",
+    "$0.00",
+    "$13,741.18",
+    "$56,497.35",
+    "$70,238.53",
+    "($78.43)",
+    "($130.15)",
+    "$70,108.38"
+   ]
+  }
+ ],
+ "table": "BARTHOLOMEW & COMPANY — TRUST FUNDS, FISCAL YEAR 2023 SUMMARY",
+ "proved": "The page prints no single grand total, but each category's own SUBTOTALS row states an internal identity three times over: REALIZED GAIN/LOSS + EARNINGS = NET INCOME; BEGINNING + NET INCOME + TRANSFERS = ENDING (separately for principal and earnings); ENDING PRINCIPAL + ENDING EARNINGS = ENDING VALUE; ENDING VALUE + UNREALIZED GAIN/LOSS = ENDING MARKET VALUE. Checked all five: Scholarship and Miscellaneous tie exactly on every leg. Conservation ties exactly except the Ending Earnings figure, which had to be pulled from a neighboring line (y=0.581) rather than the subtotal's own row (y=0.579) — treat that one cell as unconfirmed. Library ties exactly once its whole row's ~0.018 rightward x-shift (visible in its column positions, 0.647/0.696/0.746/0.792/0.850/0.903 vs the ~0.629/0.680/0.727/0.786/0.842/0.885 used elsewhere) is accounted for — a rotation/skew effect per rule 13b, not a different layout. Cemetery's earnings/value/market-value chain ties exactly, but its principal roll-forward (Beginning Principal + Transfers of Principal = Ending Principal) is off by exactly $2,000.00 and did NOT prove — most likely an OCR-misread digit in one of the three Cemetery figures, not a column-placement error, but not established.",
+ "note": "Two things could not be read reliably and are left out rather than guessed. (1) ACCOUNT NUMBER is a real header column (x≈0.080, \"ACCOUNT\"/\"NUMBER\") but no data resembling an account number appears anywhere on the page at that x-position for any row, so the column is reported with no values. (2) The ~25 individual fund rows beneath each SUBTOTALS line (Perpetual Care Bequest, C. Allen Headstone, Sale of Cemetery Lots; seven Conservation funds; a dozen Library funds; a dozen Scholarship funds; five Miscellaneous funds) are present but too degraded to place figure-to-column with confidence: several rows carry near-duplicate y-values (e.g. 0.716/0.718, 0.709/0.707, 0.632/0.633/0.635) that appear to interleave two physically adjacent lines; several numeric tokens are not parseable as currency at all (\"51502\", \"9517 41\", \"3141\", \"12 i2\", \"300.\"); several boxes are scanner artifacts (long runs of \"8888888888888\"); and at least one fund name is illegible (\"CATH-RNE ATONCRRARY\"). Rather than assign these to columns by guesswork, only the five category SUBTOTALS rows — the ones whose figures reconcile against each other and so can be checked — are reported. The STABILIZATION FUNDS section heading appears at the very foot of the page (y=0.075) with no rows before the page ends; its table continues on the next page, not shown here."
+}

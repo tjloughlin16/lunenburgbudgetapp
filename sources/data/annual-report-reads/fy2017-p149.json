@@ -4,8 +4,8 @@
  "model": "claude-sonnet-5",
  "boxes": 419,
  "read_by": "scripts/benchmark_ingest.py",
- "at": "2026-09-27T18:46:48Z",
- "cost_usd": 0.07135,
+ "at": "2026-09-27T19:47:17Z",
+ "cost_usd": 0.24322239999999998,
  "columns": [
   "SCHOOL YEAR",
   "BARRE",
@@ -28,7 +28,7 @@
   "% CHANGE"
  ],
  "rows": [],
- "table": "ASSESSMENT HISTORY 1998-2017",
- "proved": "none — no rows were extracted, so the implied identity (16 town figures summing to TOTAL, and TOTAL's year-over-year change matching the printed % CHANGE) was never checked",
- "note": "The header names all 18 columns (SCHOOL YEAR, 16 member towns, TOTAL, % CHANGE) and the words are genuinely present on the page — but OCR only returned bounding boxes for CLUSTERS of town names (e.g. one box for \"HARVARD HUBBARDSTON LUNENBURG ROYALSTON\"), not one box per town. There is no observed x-center for any individual town column, only for these merged clusters, while each data row prints 18 separate figures across that same span. Assigning each figure to a specific town would require slicing a cluster's box proportionally into however many data columns fall beneath it — an inferred position standing in for a read one, which is not a header reading, it's a guess. Rule (2) (nearest-center placement) cannot be honestly satisfied for 16 of the 18 columns, so no rows are returned. SCHOOL YEAR, TOTAL, and % CHANGE do have individually boxed, unambiguous headers/positions and could be read on their own if that partial extraction (year + total + % change only, omitting all 16 town columns) would be useful instead."
+ "proved": "none — the page prints a TOTAL and a % CHANGE column per school year (an implicit identity: the 16 town figures should sum to TOTAL), but this could not be checked because no row could be assigned to individual town columns in the first place",
+ "note": "Header is legible as text but not usable as a column map: 16 town names occupy only 8 distinct OCR x-positions (e.g. the single box at x=0.304 reads \"HARVARD HUBBARDSTON LUNENBURG ROYALSTON,\" and the box at x=0.583 reads \"ATHOL PETERSHAM PHILLIPSTON PRINCETON TEMPLETON WESTMINSTER\"). The page gives no boundary between towns sharing a merged header box, so any per-town assignment of the body figures would have to be inferred from the numbers' own x-positions rather than read off the header — which is the \"position is not a name\" error this task is designed to catch. Returning no rows rather than guessing town boundaries.",
+ "table": "ASSESSMENT HISTORY 1998-2017"
 }

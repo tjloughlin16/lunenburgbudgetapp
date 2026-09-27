@@ -1,0 +1,91 @@
+{
+ "fy": 2025,
+ "page": 115,
+ "model": "claude-sonnet-5",
+ "boxes": 67,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T20:00:39Z",
+ "cost_usd": 0.0972954,
+ "columns": [
+  "FY23",
+  "FY24",
+  "FY25"
+ ],
+ "rows": [
+  {
+   "label": "District Expenses (total)",
+   "values": [
+    "$34,366,287",
+    "$35,296,006",
+    "$38,062,317"
+   ]
+  },
+  {
+   "label": "Grants",
+   "values": [
+    "$3,734,533",
+    "$2,760,905",
+    "$4,728,144"
+   ]
+  },
+  {
+   "label": "Transfer to Reserves",
+   "values": [
+    "$35,000",
+    "$40,000",
+    "$40,000"
+   ]
+  },
+  {
+   "label": "Student Services",
+   "values": [
+    "$3,891,883",
+    "$3,716,631",
+    "$4,047,734"
+   ]
+  },
+  {
+   "label": "Operations & Maintenance",
+   "values": [
+    "$3,969,960",
+    "$4,010,265",
+    "$4,211,094"
+   ]
+  },
+  {
+   "label": "Instruction",
+   "values": [
+    "$16,176,552",
+    "$17,360,292",
+    "$17,540,043"
+   ]
+  },
+  {
+   "label": "Fixed Charges",
+   "values": [
+    "$5,303,233",
+    "$5,776,116",
+    "$5,745,804"
+   ]
+  },
+  {
+   "label": "Fixed Assets",
+   "values": [
+    "$94,234",
+    "$460,000",
+    "$470,000"
+   ]
+  },
+  {
+   "label": "District Leadership",
+   "values": [
+    "$1,160,892",
+    "$1,171,797",
+    "$1,279,498"
+   ]
+  }
+ ],
+ "proved": "Checked: \"District Expenses\" equals the sum of the other eight category rows in every column — left column sums to $34,366,287, middle to $35,296,006, right to $38,062,317 — all exact matches to the printed totals. Held.",
+ "table": "District Expenses (Monty Tech budget by category and fiscal year)",
+ "note": "This page is a grouped horizontal bar chart, not a printed table: the header is the legend \"• FY23 FY24 • FY25\", one OCR box with no separate coordinate per year, so which of the three value-clusters is which fiscal year is not given directly by position. I assigned columns by verifying two things instead of guessing from x-order: (1) the prose states FY25 grants = $4,728,144, which lands in the rightmost x-cluster; (2) each column's \"District Expenses\" figure exactly equals the sum of that same column's other eight rows, confirming the three x-clusters (~0.30, ~0.53, ~0.78) are self-consistent columns, and their values rise monotonically left→right/FY23→FY25. All nine category labels and all 27 figures were legible; nothing on the page was unreadable."
+}

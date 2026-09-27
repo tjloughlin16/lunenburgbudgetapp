@@ -1,0 +1,203 @@
+{
+ "fy": 2017,
+ "page": 141,
+ "model": "claude-sonnet-5",
+ "boxes": 88,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T20:02:05Z",
+ "cost_usd": 0.1141412,
+ "columns": [
+  "APPROVED EY'2017",
+  "FINAL APPROVED FY'2018",
+  "DIFF"
+ ],
+ "rows": [
+  {
+   "label": "Net School Spending",
+   "values": [
+    "22,997,641",
+    "23,339,672",
+    "342,031"
+   ]
+  },
+  {
+   "label": "Transportation & Above NSS",
+   "values": [
+    "1,837,158",
+    "2,029,745",
+    "192,587"
+   ]
+  },
+  {
+   "label": "Capital Budget ~ Equipment",
+   "values": [
+    "290,000",
+    "290,000",
+    ""
+   ]
+  },
+  {
+   "label": "Vehicles",
+   "values": [
+    "45,000",
+    "35,000",
+    "(10,000)"
+   ]
+  },
+  {
+   "label": "BONDS (Principal & Interest)",
+   "values": [
+    "1,204,669",
+    "1,201,263",
+    "(3,406)"
+   ]
+  },
+  {
+   "label": "Total Budget",
+   "values": [
+    "$26,374,468",
+    "$26,895,680",
+    "$521,212"
+   ]
+  },
+  {
+   "label": "Less Revenues:",
+   "values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "Estimated Ch. 70",
+   "values": [
+    "13,920,325",
+    "14,144,811",
+    "224,486"
+   ]
+  },
+  {
+   "label": "(1) FY 18 REQUIRED MINIMUM CONTRIBUTION",
+   "values": [
+    "$9,077,316",
+    "$9,194,861",
+    "$117,545"
+   ]
+  },
+  {
+   "label": "Transportation & Other Operating Budget",
+   "values": [
+    "$1,837,158",
+    "$2,029,745",
+    "$192,587"
+   ]
+  },
+  {
+   "label": "Less:",
+   "values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "Estimated Transportation Aid",
+   "values": [
+    "1,090,000",
+    "1,232,580",
+    "142,580"
+   ]
+  },
+  {
+   "label": "Excess & Deficiency",
+   "values": [
+    "0",
+    "118,500",
+    "118,500"
+   ]
+  },
+  {
+   "label": "(2) NET TRANSPORTATION & OTHER OPERATING",
+   "values": [
+    "$747,158",
+    "$678,665",
+    "($68,493)"
+   ]
+  },
+  {
+   "label": "Capital Budget ~ (Equipment & Vehicles)",
+   "values": [
+    "$335,000",
+    "$325,000",
+    "($10,000)"
+   ]
+  },
+  {
+   "label": "Less:",
+   "values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "Excess & Deficiency",
+   "values": [
+    "295,000",
+    "137,500",
+    "(157,500)"
+   ]
+  },
+  {
+   "label": "(3) NET CAPITAL ASSESSMENT",
+   "values": [
+    "$40,000",
+    "$187,500",
+    "$147,500"
+   ]
+  },
+  {
+   "label": "BONDS",
+   "values": [
+    "$1,204,669",
+    "$1,201,263",
+    "($3,406)"
+   ]
+  },
+  {
+   "label": "Less:",
+   "values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "School Building Authority Aid",
+   "values": [
+    "948,213",
+    "948,213",
+    ""
+   ]
+  },
+  {
+   "label": "(4) NET BONDS",
+   "values": [
+    "$256,456",
+    "$253,050",
+    "($3,406)"
+   ]
+  },
+  {
+   "label": "TOTAL ASSESSMENT (All Budgets)",
+   "values": [
+    "$10,120,930",
+    "$10,314,076",
+    "$193,146"
+   ]
+  }
+ ],
+ "proved": "The page states TOTAL ASSESSMENT (All Budgets) at the bottom. Checked as the sum of the four numbered net lines — (1) NET MINIMUM CONTRIBUTION + (2) NET TRANSPORTATION & OTHER OPERATING + (3) NET CAPITAL ASSESSMENT + (4) NET BONDS. It holds exactly in all three columns: FY'2017 9,077,316+747,158+40,000+256,456=10,120,930; FY'2018 9,194,861+678,665+187,500+253,050=10,314,076; DIFF 117,545−68,493+147,500−3,406=193,146. Every intermediate \"Net\" line was also checked against its own subtraction (line minus its \"Less:\" deduction(s)) and all reconcile.",
+ "note": "The FY'2017 header box OCR'd as \"EY'2017\" (0.770, x=0.568) — almost certainly a misread of \"FY'2017\" given it pairs with \"APPROVED\" (0.792, x=0.549) directly above and mirrors \"FY'2018\"/\"FINAL APPROVED\" on the other side; reproduced verbatim per the rule against inferring headers, but the intended reading is FY'2017. One figure, \"0\" at (y=0.442, x=0.611), sits almost exactly between the FY'2017 column center (~0.556) and the FY'2018 column center (~0.674) rather than clearly under either; it was placed under FY'2017 as nearest-by-a-small-margin, a placement then confirmed exactly by the arithmetic identity for the \"Excess & Deficiency\" / \"(2) NET TRANSPORTATION\" rows (0 as FY'2017 makes 118,500 the correct DIFF and FY'2018 value, and the downstream (2) NET line balances to the cent). All other figures matched one of the three declared column centers unambiguously.",
+ "table": "FISCAL YEAR 2018 BUDGET SUMMARY"
+}

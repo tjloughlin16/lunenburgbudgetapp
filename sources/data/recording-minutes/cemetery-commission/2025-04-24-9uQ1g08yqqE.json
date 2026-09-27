@@ -1,0 +1,376 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "cemetery-commission",
+ "board": "Cemetery Commission",
+ "video_title": "Cemetery Commission",
+ "meeting_date": "2025-04-24",
+ "video_id": "9uQ1g08yqqE",
+ "video_url": "https://www.youtube.com/watch?v=9uQ1g08yqqE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/cemetery-commission/2025-04-24-9uQ1g08yqqE.json",
+  "sha256": "edbaa3aa2ed3d4f9a391003bcf4838d8bc981f26526502f636488076bbc88b33",
+  "caption_lines": 210,
+  "segments": 1624
+ },
+ "recording": {
+  "duration_s": 4411,
+  "duration": "1:13",
+  "spoken_chars": 56289,
+  "words_approx": 9381
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04242025-7169",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-04-24-agenda-7169.txt",
+   "path": "sources/meetings/cemetery-commission/2025-04-24-agenda-7169.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04242025-7169",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-04-24-minutes-7169.txt",
+   "path": "sources/meetings/cemetery-commission/2025-04-24-minutes-7169.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T19:43:59Z",
+  "cost_usd": 0.344662
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Madame Chairman (name not stated)",
+    "role": "chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Bill",
+    "role": "commissioner (Bill Tyler, former chair)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Dave",
+    "role": "commissioner",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mike",
+    "role": "DPW director / cemetery report presenter",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Ezekiel Anala",
+    "role": "town finance director, presenter",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Jennifer Warren",
+    "role": "town manager, attending as guest",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 3858,
+    "speaker_as_heard": "John Bowen",
+    "stated_role": "resident, 162 Highland Street",
+    "topic": "Argued the town is improperly throwing out cemetery records, that DD214s and other federal veteran records are only on loan to the town and restricted by federal (not just state) law, and that RainMaker back-end access to scanned records has been improperly granted; referenced his own prior presentation on a cemetery mutual benefit corporation."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "facilities",
+   "legal",
+   "personnel",
+   "policy",
+   "public-comment",
+   "town-departments",
+   "transfers"
+  ],
+  "votes": [
+   {
+    "t": 259,
+    "motion": "Accept the minutes of the March 27, 2025 meeting",
+    "moved_by": "the chair",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 1563,
+    "motion": "Use up to $2,000 from the sale of lots fund to procure a secure file cabinet for recordkeeping for the DPW",
+    "moved_by": "the chair",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4390,
+    "motion": "Adjourn the meeting",
+    "moved_by": "a commissioner",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 365,
+    "topic": "Sale of lots fund (fund 8115)",
+    "what_was_said": "The finance director explained the fund, established under Chapter 114 sec. 25, receives proceeds from lot sales and is used for cemetery land, care and improvement, managed day-to-day by the cemetery superintendent with commission approval required for refunds/expenses.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 470,
+    "topic": "Capital article fund (fund 3006)",
+    "what_was_said": "Explained as the mechanism for larger cemetery capital projects funded via town meeting warrant articles, transferred from the sale of lots account once voted; discussed as distinct from day-to-day sale-of-lots spending, with a placeholder article used for the back lot expansion.",
+    "figures_as_heard": [
+     "50K",
+     "10,000",
+     "20 to 25,000"
+    ]
+   },
+   {
+    "t": 880,
+    "topic": "Cemetery perpetual care trust fund (principal fund 801, interest fund 8000)",
+    "what_was_said": "Described as split between non-expendable principal and expendable interest; only interest earnings (including prior years') may be spent on cemetery operations or capital improvements, under the commission's sole purview.",
+    "figures_as_heard": [
+     "33125",
+     "17,000",
+     "2,800",
+     "20,78"
+    ]
+   },
+   {
+    "t": 1073,
+    "topic": "Per-plot fee split between sale of lots and perpetual care",
+    "what_was_said": "Discussion of how the roughly $800 per-plot fee is divided between the sale of lots fund and perpetual care fund; initial guess of a 500/300 split was corrected to a half-and-half split.",
+    "figures_as_heard": [
+     "$800",
+     "500",
+     "300",
+     "400",
+     "400"
+    ]
+   },
+   {
+    "t": 1156,
+    "topic": "Cemetery gift fund (fund 1548)",
+    "what_was_said": "Gifts/bequests for cemetery maintenance go into this separate town treasury fund per Chapter 114 sec. 25, with commission vote required for any expenses or refunds; a family-restricted trust account was also discussed.",
+    "figures_as_heard": [
+     "200 and something dollars"
+    ]
+   },
+   {
+    "t": 1799,
+    "topic": "Fire-resistant file cabinets for DD214/records storage",
+    "what_was_said": "DPW-provided options and a WB Mason state-contract quote were compared for a 1-hour fire-resistant, water-resistant cabinet in black or tan; the commission favored the lighter, cheaper tan model.",
+    "figures_as_heard": [
+     "$2,879",
+     "$1,744",
+     "$1,000",
+     "58 lb",
+     "445 lb"
+    ]
+   },
+   {
+    "t": 1585,
+    "topic": "File cabinet purchase from sale of lots fund",
+    "what_was_said": "The chair moved to spend up to a stated amount from the sale of lots fund to buy a secure file cabinet for DPW recordkeeping; the finance director confirmed pulling from that fund was acceptable.",
+    "figures_as_heard": [
+     "$2,000"
+    ]
+   },
+   {
+    "t": 2115,
+    "topic": "Cost/time to digitize old DD214 and grave record boxes into RainMaker",
+    "what_was_said": "The chair asked the DPW director to scope out how many hours or what cost it would take to hire someone (possibly a student at minimum wage) to review and enter remaining paper records into the RainMaker software, as a possible second project phase.",
+    "figures_as_heard": [
+     "60 hours",
+     "100 hours"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 1585,
+    "description": "Sale of lots fund to purchase of a secure fire-resistant file cabinet for DPW recordkeeping",
+    "amount_as_heard": "up to $2,000",
+    "outcome": "voted"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 3263,
+    "decision": "Start with purchasing one file cabinet for DD214/veteran records now, and treat digitizing/organizing the remaining record boxes as a separate second project to be scoped later."
+   },
+   {
+    "t": 3390,
+    "decision": "DD214 records in the new locked file cabinet will not be accessible to commissioners, only to DPW, to protect personal veteran information."
+   },
+   {
+    "t": 1736,
+    "decision": "DPW to keep following up with contractor Richard McGrath on pricing for the Fish/Fist Street wall project."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 19,
+    "t_end": 259,
+    "topic": "Recording start, pledge of allegiance, Open Meeting Law and recording notices",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 259,
+    "t_end": 301,
+    "topic": "Approval of March 27, 2025 minutes",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 302,
+    "t_end": 1505,
+    "topic": "Finance director's presentation on cemetery fund structure: sale of lots, capital article, perpetual care trust, and gift funds",
+    "resolution": "informational, with clarifying discussion of a family gift/trust situation referred to the town manager",
+    "tags": [
+     "budget",
+     "transfers",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1528,
+    "t_end": 1799,
+    "topic": "DPW/cemetery superintendent progress report: burials, marker repairs, seasonal hiring, Memorial Day prep, flagpole and Fish Street wall projects",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 1799,
+    "t_end": 1563,
+    "topic": "File cabinet options and cost comparison for secure records storage",
+    "resolution": "discussed, led to vote",
+    "tags": [
+     "facilities",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 1563,
+    "t_end": 1608,
+    "topic": "Vote to fund file cabinet purchase from sale of lots fund",
+    "resolution": "voted",
+    "tags": [
+     "transfers",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 1949,
+    "t_end": 3608,
+    "topic": "Discussion of record boxes, DD214 digitization scope, RainMaker software privacy/locking of images, and Massachusetts records retention rules (town manager and finance director weigh in)",
+    "resolution": "no vote; DPW asked to scope digitization project and report back",
+    "tags": [
+     "policy",
+     "legal",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 3628,
+    "t_end": 3858,
+    "topic": "DPW director presents a written cemetery operations summary/snapshot (GIS data, project status, burial trends, future space needs)",
+    "resolution": "informational, to be shared with town manager and other committees",
+    "tags": [
+     "town-departments",
+     "facilities",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 3858,
+    "t_end": 4043,
+    "topic": "Public comment from John Bowen on records retention and RainMaker/DD214 access concerns",
+    "resolution": "no resolution, remarks entered into record",
+    "tags": [
+     "public-comment",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4043,
+    "t_end": 4320,
+    "topic": "Outgoing chair's farewell remarks and commissioner tributes as her term ends",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 4320,
+    "t_end": 4404,
+    "topic": "Closing thanks and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "No formal vote counts (e.g., unanimous, roll call tallies) were stated for any of the three votes; captions only say 'motion passed'.",
+   "The perpetual care interest total was rendered as '20,78' — likely a garbled '$20,780' or similar, not clearly resolvable from captions alone.",
+   "File cabinet weights were captioned as '58 lb' and '445 lb', which appear to be caption errors (the latter is implausible for a filing cabinet) rather than reliable figures.",
+   "The number of RainMaker images/records was captioned ambiguously as '10,900 or 10,500'.",
+   "Individual speakers on the finance-fund Q&A segment (roughly 450–1500s) are not clearly attributable by name from captions alone; roles are inferred from context."
+  ],
+  "confidence": "moderate",
+  "headline": "Commission voted to spend up to $2,000 on a locked file cabinet for veterans' burial records; chair's term ends.",
+  "summary": "The Cemetery Commission heard a detailed review from the town finance director of its four cemetery funds (sale of lots, capital article, perpetual care trust, and gift fund) and how money can be moved between them, then voted to spend up to a stated amount from the sale-of-lots fund on a secure, fire-resistant file cabinet to protect veterans' DD214 records after DPW disclosed some old paper records had been discarded. A resident raised concerns in public comment about records retention and access controls in the RainMaker software, and the meeting closed with tributes to the outgoing chair, whose term ends in May."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Commission voted to spend an amount from the sale-of-lots fund on a locked, fire-resistant cabinet for veterans' burial records.",
+    "t": 1563
+   },
+   {
+    "line": "The purchase followed DPW's disclosure that some old paper veteran records had been discarded.",
+    "t": 1799
+   },
+   {
+    "line": "The finance director walked the Commission through the four cemetery funds and the rules for moving money between them.",
+    "t": 302
+   },
+   {
+    "line": "A resident challenged the town in public comment over records retention and software access to veterans' files.",
+    "t": 3858
+   },
+   {
+    "line": "The meeting closed with tributes to the chair, whose term ends in May.",
+    "t": 4043
+   }
+  ],
+  "why_it_matters": [
+   "The purchase is meant to protect veterans' DD214 and burial records after some paper records were reported discarded.",
+   "The fund walkthrough clarifies which cemetery account -- lot sales, a capital article, perpetual care trust, or gifts -- can pay for what, and who must approve it.",
+   "The Commission will soon have a new chair, and a second, larger project to digitize remaining paper cemetery records is still unscoped."
+  ],
+  "watch_next": [
+   "DPW's estimate of the hours or cost to digitize the remaining paper DD214 and grave records",
+   "Selection of a new Cemetery Commission chair after the current chair's term ends in May"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T19:44:13Z",
+   "cost_usd": 0.19674799999999998
+  }
+ }
+}

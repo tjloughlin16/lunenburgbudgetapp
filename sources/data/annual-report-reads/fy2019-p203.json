@@ -4,11 +4,11 @@
  "model": "claude-sonnet-5",
  "boxes": 75,
  "read_by": "scripts/benchmark_ingest.py",
- "at": "2026-09-27T18:49:36Z",
- "cost_usd": 0.2093624,
+ "at": "2026-09-27T19:49:31Z",
+ "cost_usd": 0.075341,
  "columns": [],
- "note": "Header row not legible. The page clearly contains an alphabetical name list (last name ~x=0.79–0.85, first name ~x=0.70–0.73) with a dollar-amount column (~x=0.606–0.608) — consistent with a town employee pay schedule — but no OCR box gives a readable column caption. The only text near a header position is 'ZRATE' at y=0.568, x=0.843, which sits at the last-name column's x-coordinate (not a separate header band) and is not a real column word (likely a garbled OCR fragment, possibly of 'RATE', but not trustworthy enough to name a column from). '201' at the very top is a page number, not a title. Per rule, since the header cannot be confidently read, no column names are asserted and no rows are extracted, even though the underlying name/amount data (e.g. WALKER, JESSICA, 58,654.57; WATSON, ELSA, 5,284.51; etc.) is otherwise legible.",
- "proved": "none — no printed total or identity appears on this page, and no rows were extracted to check against one",
  "rows": [],
- "table": "none — no title is printed on this page; '201' is a page number only"
+ "proved": "none — no total or identity is printed on this page",
+ "table": "unreadable — no header row present",
+ "note": "This page (203) has no legible column header. The boxes are page number \"201\" plus what reads as a continuation of an alphabetically-ordered name list (surname, given name, dollar figure per row: e.g. WALKER/JESSICA/58,654.57, WARDWELL/CARYN/90,288.16, WHITAKER/MARY/79,818.65, etc.), running ...W, X, Y, and a top entry \"ZRATE\" that sits in the surname column's x-position (0.843) rather than at the dollar-column x (~0.606) or anywhere else — so it reads as a surname continuing the sequence, not a column header. No word matching a plausible header (e.g. NAME, RATE, GROSS, EMPLOYEE) appears at all on this page; whatever header exists must be on a preceding page of this table. Per the rule that an unreadable header means no rows, I'm returning none rather than assigning the visible last-name/first-name/amount positions to guessed column names."
 }

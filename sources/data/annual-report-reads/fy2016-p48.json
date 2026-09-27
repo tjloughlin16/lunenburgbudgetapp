@@ -1,0 +1,201 @@
+{
+ "fy": 2016,
+ "page": 48,
+ "model": "claude-sonnet-5",
+ "boxes": 79,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T19:20:04Z",
+ "cost_usd": 0.2075774,
+ "columns": [
+  "FISCAL YEAR",
+  "FORWARD",
+  "COMMITTMENTS ADJUSTMENTS",
+  "REFUNDS",
+  "PAYMENTS"
+ ],
+ "rows": [
+  {
+   "label": "LEVY OF 1997",
+   "values": [
+    "$1,690.95",
+    "",
+    "($1,690.95)",
+    ""
+   ]
+  },
+  {
+   "label": "LEVY OF 1998",
+   "values": [
+    "$1,603.12",
+    "",
+    "($1,603.12)",
+    ""
+   ]
+  },
+  {
+   "label": "LEVY OF 1999",
+   "values": [
+    "$2,923.97",
+    "",
+    "($2,923.97)",
+    ""
+   ]
+  },
+  {
+   "label": "LEVY OF 2000",
+   "values": [
+    "$4,131.99",
+    "",
+    "($4,131.99)",
+    ""
+   ]
+  },
+  {
+   "label": "LEVY OF 2001",
+   "values": [
+    "$4,644.37",
+    "",
+    "($4,644.37)",
+    ""
+   ]
+  },
+  {
+   "label": "LEVY OF 2002",
+   "values": [
+    "$9,350.22",
+    "",
+    "($9,350.22)",
+    ""
+   ]
+  },
+  {
+   "label": "LEVY OF 2003",
+   "values": [
+    "$6,453.05",
+    "",
+    "",
+    "($20.00)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2004",
+   "values": [
+    "$6,326.91",
+    "",
+    "",
+    "($20.00)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2005",
+   "values": [
+    "$5,690.10",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "LEVY OF 2006",
+   "values": [
+    "$8,623.99",
+    "",
+    "",
+    "($66.56)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2007",
+   "values": [
+    "$9,688.84",
+    "",
+    "",
+    "($211.88)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2008",
+   "values": [
+    "$4,051.03",
+    "",
+    "",
+    "($320.21)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2009",
+   "values": [
+    "$4,430.54",
+    "",
+    "",
+    "($325.00)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2010",
+   "values": [
+    "$3,686.29",
+    "",
+    "",
+    "($322.50)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2011",
+   "values": [
+    "$6,731.58",
+    "",
+    "",
+    "($375.43)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2012",
+   "values": [
+    "$6,004.05",
+    "",
+    "$7.35",
+    "($1,193.19)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2013",
+   "values": [
+    "$9,296.43",
+    "",
+    "$3.64",
+    "($3,379.49)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2014",
+   "values": [
+    "$25,974.18",
+    "",
+    "$5.11 / $2,317.38",
+    "($14,748.16)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2015",
+   "values": [
+    "$137,933.42",
+    "$198,787.38",
+    "$10.38 / $17,552.36",
+    "($307,704.50)"
+   ]
+  },
+  {
+   "label": "LEVY OF 2016",
+   "values": [
+    "$0.00",
+    "$1,535,999.55",
+    "$15,223.97",
+    "($1,372,785.43)"
+   ]
+  }
+ ],
+ "proved": "none — no total, subtotal, or stated identity appears among the OCR boxes given for this table (the last box, \"OTHER EXCISE TAXES\" at y=0.105, is the heading of the next section, not a total row for this one)",
+ "table": "TOWN OF LUNENBURG — FY2016 Collection of Taxes, Receivables Summary, Motor Vehicle Excise, as of June 30, 2016",
+ "note": "The header \"COMMITTMENTS ADJUSTMENTS\" is one OCR box covering two words at a single coordinate; treated as one column name rather than split into two, since splitting it would be a positional guess. For LEVY OF 2014 and LEVY OF 2015, two figures each sit nearer the REFUNDS header than any other (both closer to REFUNDS's x=0.715 than to COMMITTMENTS ADJUSTMENTS's x=0.485) and are both kept in that cell rather than one being discarded."
+}

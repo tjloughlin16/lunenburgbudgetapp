@@ -1,0 +1,174 @@
+{
+ "fy": 2016,
+ "page": 49,
+ "model": "claude-sonnet-5",
+ "boxes": 49,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T19:23:21Z",
+ "cost_usd": 0.221658,
+ "columns": [
+  "FISCAL YEAR",
+  "FORWARD",
+  "COMMITTMENTS",
+  "ADJUSTMENTS",
+  "REFUNDS"
+ ],
+ "rows": [
+  {
+   "label": "DEFERRED PROPERTY TAX",
+   "values": [
+    "$15,549.95",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "DEFERRED SEWER PRI",
+   "values": [
+    "$4,474.53",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "DEFERRED SEWER INT",
+   "values": [
+    "$1,717.33",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "WATER USER CHARGES",
+   "values": [
+    "$1,396.14",
+    "$27,618.93",
+    "$150.00",
+    ""
+   ]
+  },
+  {
+   "label": "SEWER USER CHARGES",
+   "values": [
+    "$90,368.83",
+    "$738,717.51",
+    "($4,090.34)",
+    "$276.06"
+   ]
+  },
+  {
+   "label": "UTILITY LIENS ADDED TO TAXES",
+   "values": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "SLIEN COMM TO RE PRIN",
+   "values": [
+    "$15,686.00",
+    "$61,054.73",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "SLIEN COMM TO RE INT",
+   "values": [
+    "$1,542.66",
+    "$5,443.91",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "UNAPPORTIONED ASSESSMENTS",
+   "values": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "SEWER BETTERMENT",
+   "values": [
+    "$5,571,395.68",
+    "$51,981.62",
+    "($12,497.24)",
+    ""
+   ]
+  },
+  {
+   "label": "MEADOW WOODS WATER BETTERMENT",
+   "values": [
+    "$1,070,392.14",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "STREET BETTERMENT",
+   "values": [
+    "$3,600.00",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "SEPTIC BETTERMENT",
+   "values": [
+    "$0.00",
+    "$4,378.24",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "WATER BETTERMENT",
+   "values": [
+    "$0.00",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "APPORTIONED ASSESSMENT ADDED TO TAXES",
+   "values": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "SEWER COMMITTED PRIN",
+   "values": [
+    "",
+    "$324,101.23",
+    "",
+    ""
+   ]
+  },
+  {
+   "label": "SEWER COMMITTED INT",
+   "values": [
+    "$76,435.85",
+    "$183,036.89",
+    "",
+    ""
+   ]
+  }
+ ],
+ "table": "FY2016 Collection of Taxes — Receivables Summary, June 30, 2016",
+ "proved": "No total or stated identity appears anywhere in the boxes given for this page — no GRAND TOTAL line, no row that sums the others. Nothing to check the rows against; proved = none.",
+ "note": "Row placement was done by y-banding (half the ~0.025 row pitch), not by row label proximity alone, and this moved one figure: the REFUNDS value \"$276.06\" at y=0.451 sits inside SEWER USER CHARGES's band (label y=0.449), not WATER USER CHARGES's (label y=0.474, whose own band tops out at y=0.461) — an earlier read-by-eye would have misassigned it. Two things I could not resolve cleanly: (1) The header row prints \"COMMITTMENTS ADJUSTMENTS\" as one OCR box at x=0.555, but the data clearly needs two columns there — every row with activity in that region shows two independent, differently-valued figures at x≈0.573 and x≈0.688 (e.g. WATER USER CHARGES: $27,618.93 and $150.00 in the same row). I split it into \"COMMITTMENTS\" and \"ADJUSTMENTS\" in that left-to-right order since both are complete, correctly-ordered words matching two really-distinct columns — not a proportional/character split of a phrase — but the printed page never labels these as two separate boxes, so treat the individual names as inferred from a merged header, only the fact that two columns exist as certain. (2) MEADOW WOODS WATER BETTERMENT prints as a single OCR box \"MEADOW WOODS WATER BETTERMEI $1,070,392.14\" with only the label's x (0.215) given — no independent x for the figure itself, so I cannot place it by nearest-centre as the rule requires. I put it under FORWARD by analogy with the adjacent SEWER BETTERMENT row (also a large balance in that column), but this one is a guess, not a placement. Also: the label-column header reads \"FISCAL YEAR\" but every row it sits above is a receivable-type name (DEFERRED PROPERTY TAX, SEWER BETTERMENT, etc.), never a year — the header word is printed as given, but it does not describe what the column actually holds. Finally, the rightmost data at x≈0.795 (REFUNDS) may not be the true right edge of the printed table; the boxes provided stop there, so if the source page has further columns (abatements, collections, balance outstanding — typical of this report type) they are not represented here."
+}

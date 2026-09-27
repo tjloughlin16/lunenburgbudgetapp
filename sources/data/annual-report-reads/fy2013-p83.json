@@ -1,0 +1,24 @@
+{
+ "fy": 2013,
+ "page": 83,
+ "model": "claude-sonnet-5",
+ "boxes": 278,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T19:50:22Z",
+ "cost_usd": 0.14289780000000002,
+ "columns": [
+  "COLLECTION OF TAXES",
+  "FORWARD",
+  "COMMITTMENTS",
+  "REFUNDS",
+  "ADJUSTMENTS",
+  "PAYMENTS",
+  "ABATEMENTS",
+  "TRANSFER",
+  "BALANCES"
+ ],
+ "rows": [],
+ "proved": "A GRAND TOTAL row is printed at the foot of the table, but I could not check the rows against it: the total row's own figures cannot be reliably separated from the SEWER USAGE row above it (see note), so no identity check was possible. Not established.",
+ "table": "FY2013 COLLECTION OF TAXES",
+ "note": "The header is legible and gives the 8 money columns above, plus a left-hand category column whose labels (1997 MVE...2013 MVE, 1999-2013 PP, 2007-2013 RE, 2010-2013 SUPPLEMENTAL, TAX LIENS, ROLLBACK TAXES, STR/WATER/SEPTIC/SEWER BETT COMM, STR/WATER/SEPTIC/SEWER INT COMM, STREET/WATER BETTERMENT, SEWER USAGE, GRAND TOTAL) I can read. I am not returning row values because the page is rotated and that rotation was not measured (per the project's own rule for reading a scanned table off a photograph: measure the rotation from the page before banding rows, never guess at it). Concrete evidence: the value 1,690.95 appears once under the FORWARD-column x-position on the \"1997 MVE\" line, then reappears under the BALANCES-column x-position (x=0.844, far right) on the very next y-band, the one nearest the \"1998 MVE\" label — i.e. a single row's own figures are landing in two different row-bands because the far-right columns are vertically displaced relative to the near-left label column. That is exactly the row-bleed pattern that requires measuring the page's slope (nearest-neighbor median) before a y-band can be trusted, and I have no way to compute that slope reliably from a flat list of box coordinates without running the correction as code, nor to verify it against this page. Lower on the page it is worse: SEWER USAGE and GRAND TOTAL each show duplicate values landing at nearly the same x (e.g. two different PAYMENTS-column figures, two different TRANSFER-column figures, two different BALANCES-column figures, all within one nominal row-band each), meaning those two rows' figures are interleaved across roughly 3-4 normal row-heights of y instead of one — I cannot tell which of a duplicated pair belongs to SEWER USAGE and which to GRAND TOTAL without guessing. A large number of boxes are also OCR garbage rather than numbers (\"len en en\", \"es en\", \"canesen\", \"les es\", \"en en\", stray \"$\"/\"S\"/\"5\" glyphs merged into digit strings), which further blocks confident column assignment for the rows they fall in. Rather than force each figure into a column by eye and risk exactly the kind of confident-but-wrong placement this project has been burned by before, I am reporting the columns and row labels only and withholding the numeric cells."
+}
