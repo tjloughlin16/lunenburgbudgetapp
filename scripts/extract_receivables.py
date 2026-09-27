@@ -290,7 +290,13 @@ def wanted():
     out = collections.defaultdict(list)
     with open(PAGES, encoding='utf-8') as fh:
         for r in csv.DictReader(fh):
-            if r.get('subject') == 'receivables':
+            # TAX-COLLECTION IS THE SAME TABLE UNDER ANOTHER NAME. The page map assigns
+            # a subject from the page's own headings, and `FY2011 COLLECTION OF TAXES`
+            # lands under `tax-collection` while `FY2016 COLLECTION OF TAXES /
+            # RECEIVABLES SUMMARY` lands under `receivables`. One table, two labels,
+            # because the town added a second heading line in 2014. The reader keys on
+            # what the page PRINTS, so it needs both subjects offered to it.
+            if r.get('subject') in ('receivables', 'tax-collection'):
                 out[int(r['fy'])].append(int(r['page']))
     return out
 
