@@ -41,11 +41,32 @@ if alive; then log "killing a stalled sweep"; pkill -f "[s]weep_backlog.py"; fi
 if votes_alive; then log "killing a stalled votes backfill"; pkill -f "[r]un_official_votes_backfill"; pkill -f "[e]xtract_official_votes.py"; fi
 sleep 5
 
-# --until is a clock time and the tool rolls it to tomorrow when it has already passed, so
-# passing the current time gives very nearly a full day and no arithmetic here.
-UNTIL="$(date '+%H:%M')"
-nohup python3 scripts/sweep_backlog.py --until "$UNTIL" --now --parallel 3 \
-  >> /tmp/sweep-supervised.log 2>&1 &
-log "sweep restarted, running until $UNTIL tomorrow"
-nohup bash scripts/run_official_votes_backfill.sh >> /tmp/official-votes-supervised.log 2>&1 &
-log "votes backfill restarted"
+# THE WORK RUNS IN THE FOREGROUND, AND THAT IS THE WHOLE FIX.
+#
+# The first version launched `nohup ... &` and exited. launchd REAPS THE JOB'S ENTIRE
+# PROCESS GROUP when the script returns, so both children died instantly every time --
+# the supervisor logged `restarted` on the half hour for hours while both logs stayed
+# zero bytes and the counters did not move. A restart that cannot outlive its own
+# supervisor is worse than no supervisor: it reports success.
+#
+# So the sweep runs here, in front, for a window SHORTER than the launchd interval that
+# starts this script. launchd will not run a second copy while this one is alive, and
+# when the window closes this exits and the next firing starts a fresh one. That makes
+# self-healing structural rather than something to remember: every half hour is a new
+# sweep whatever happened to the last.
+WINDOW_MIN=25
+UNTIL="$(date -v+${WINDOW_MIN}M '+%H:%M' 2>/dev/null || date -d "+${WINDOW_MIN} minutes" '+%H:%M')"
+log "running a ${WINDOW_MIN}-minute sweep, until $UNTIL"
+
+# The votes backfill is a long loop of its own; it runs as a child of THIS script so it
+# lives exactly as long as the window and dies with it. Both streams skip work already
+# done, so being cut mid-window repeats nothing.
+bash scripts/run_official_votes_backfill.sh >> /tmp/official-votes-supervised.log 2>&1 &
+VOTES=$!
+python3 scripts/sweep_backlog.py --until "$UNTIL" --now --parallel 3 \
+  >> /tmp/sweep-supervised.log 2>&1
+log "sweep window closed"
+kill "$VOTES" 2>/dev/null
+pkill -P "$VOTES" 2>/dev/null
+wait "$VOTES" 2>/dev/null
+python3 scripts/sweep_health.py --stale-minutes "$STALE" || true
