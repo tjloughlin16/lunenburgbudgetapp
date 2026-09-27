@@ -36,7 +36,12 @@ echo "=== away sweep started $(date) at $(git rev-parse --short HEAD) ==="
 # --now because nobody is at the keyboard: the active-session check looks at whether a
 # transcript under ~/.claude/projects changed recently, and an agent session that started
 # this work would otherwise stop it.
-python3 scripts/sweep_backlog.py --until 10:45 --parallel 4 --now --budget-pct 80
+# NO CEILING. TJ set one at 80% and then, an hour later: *"just run it untli we hit the
+# session limit"*. So the stop is the plan refusing, which sweep_backlog already handles
+# as a clean end rather than a failure. `--budget-pct` stays in the tool because the
+# ceiling is the right default for a mid-week run with somebody coming back to the
+# account; this particular week is not that.
+python3 scripts/sweep_backlog.py --until 10:45 --parallel 4 --now
 python3 scripts/build_agentic_backlog.py >/dev/null
 git add -A sources/data/official-votes sources/data/recording-minutes sources/data/budget-state sources/data/agentic-spend.csv notes/generated/AGENTIC-BACKLOG.md 2>/dev/null
 git commit -q -m "Away sweep, $(date +%Y-%m-%d): the backlog worked to the week's ceiling" && git push -q origin main
