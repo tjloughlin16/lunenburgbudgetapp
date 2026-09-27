@@ -1,0 +1,324 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2025-11-25",
+ "video_id": "IHuJoN0gDeI",
+ "video_url": "https://www.youtube.com/watch?v=IHuJoN0gDeI",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2025-11-25-IHuJoN0gDeI.json",
+  "sha256": "51f91502234f609a186e591cda074924cfc013ecbe3c3ec0a97c9dc3b93cc345",
+  "caption_lines": 138,
+  "segments": 1281
+ },
+ "recording": {
+  "duration_s": 2892,
+  "duration": "0:48",
+  "spoken_chars": 39586,
+  "words_approx": 6597
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11252025-7530",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-11-25-agenda-7530.txt",
+   "path": "sources/meetings/sewer-commission/2025-11-25-agenda-7530.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11252025-7530",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-11-25-minutes-7530.txt",
+   "path": "sources/meetings/sewer-commission/2025-11-25-minutes-7530.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T11:44:39Z",
+  "cost_usd": 0.3186584
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Brett Ramston (also heard as Brent Ramson)",
+    "role": "chairman"
+   },
+   {
+    "name_as_heard": "Dan Proctor",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Arthur Cadis",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Scott D",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "director/business manager"
+   },
+   {
+    "name_as_heard": "Andrew Valerie",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "June Ranley",
+    "role": "clerk (thanked as \"Jane\" for the minutes)"
+   },
+   {
+    "name_as_heard": "Dan Shane (also heard as Daniel Sheen)",
+    "role": "presenter, engineer with Haley Ward"
+   },
+   {
+    "name_as_heard": "Steve Ballard",
+    "role": "engineer, referenced as having briefed the commission previously"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "capital",
+   "contracts-and-unions",
+   "fees",
+   "housing",
+   "planning-and-zoning",
+   "policy",
+   "water-sewer"
+  ],
+  "headline": "Commission voted down a sewer easement waiver for the 763 Massachusetts Ave duplex project",
+  "summary": "The Sewer Commission held a continued public hearing on a waiver/easement request for a 763 Massachusetts Avenue project converting a funeral home into duplexes, ultimately voting to deny the waiver over concerns about setting a precedent for easements instead of requiring direct street tie-ins. The commission also voted to adopt an ADU sewer connection charge policy, discussed an extension for a manhole-replacement contractor, and agreed to explore requiring future sewer connections to run to a property's own street rather than through easements.",
+  "votes": [
+   {
+    "t": 1878,
+    "motion": "Vote on the 763 Massachusetts Ave waiver/easement request (yay or nay on accepting it)",
+    "outcome": "failed — all members present voted nay; motion does not carry",
+    "procedural": false
+   },
+   {
+    "t": 1961,
+    "motion": "Accept the minutes of 10/28/25",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 2107,
+    "motion": "Accept the sewer connection charge policy for ADUs ($2/gallon based on Title 5 flow, one-time connection charge)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2867,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 997,
+    "topic": "Cost of running three separate sewer connections to Massachusetts Ave vs. extending up Chestnut Street",
+    "what_was_said": "Members tried to compare the cost of three individual Mass Ave tie-ins against extending the main up Chestnut Street; the figures given were garbled and inconsistent.",
+    "figures_as_heard": [
+     "200 something",
+     "about 500",
+     "1968",
+     "280",
+     "7"
+    ]
+   },
+   {
+    "t": 1203,
+    "topic": "Estimated cost per foot to extend sewer up Chestnut Street",
+    "what_was_said": "A commissioner cited a ballpark figure per foot for running sewer main up Chestnut Street, not including engineering costs, and multiplied it against an estimated run length.",
+    "figures_as_heard": [
+     "$200 a foot",
+     "500 ft",
+     "$100,000"
+    ]
+   },
+   {
+    "t": 1348,
+    "topic": "Cost to tie a Chestnut Street property into the extended sewer",
+    "what_was_said": "A member said a homeowner would be unlikely to pay the cost to connect once the main was extended.",
+    "figures_as_heard": [
+     "100 grand",
+     "120 grand"
+    ]
+   },
+   {
+    "t": 2043,
+    "topic": "ADU sewer connection charge policy",
+    "what_was_said": "The commission clarified that the per-gallon charge based on Title 5 flow for accessory dwelling units is a one-time connection charge, not recurring.",
+    "figures_as_heard": [
+     "$2 per gallon"
+    ]
+   },
+   {
+    "t": 2168,
+    "topic": "Manhole frame and cover replacement contract",
+    "what_was_said": "The contractor ordered manhole frames and covers in the wrong size and had to reorder; the commission is granting a time extension because roads cannot be opened after mid-November.",
+    "figures_as_heard": [
+     "June 30th, 2026"
+    ]
+   },
+   {
+    "t": 2776,
+    "topic": "Sewer/water rate increase",
+    "what_was_said": "A member raised that a surrounding town's sewer and water rates had risen sharply, prompting discussion that Lunenburg will likely need to raise its own rates soon; no figures were given.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2168,
+    "decision": "Grant the manhole-replacement contractor a time extension to June 30, 2026 to finish work in the spring, since roads cannot be opened after November 15."
+   },
+   {
+    "t": 2441,
+    "decision": "Put drafting a regulation requiring sewer tie-ins to a property's own street (rather than via easement) on a future agenda for the commission to start putting together."
+   },
+   {
+    "t": 2690,
+    "decision": "Keep the ADU item off future agendas until spring; bring the manhole update back on the spring agenda."
+   },
+   {
+    "t": 2818,
+    "decision": "Set meeting schedule: December 9 at 7pm (hybrid), January 13 at 7pm (hybrid), January 27 by Zoom, with a fourth meeting in February."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 7,
+    "t_end": 214,
+    "topic": "Pledge of Allegiance, open meeting law notice, roll call, and ground rules",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 214,
+    "t_end": 1919,
+    "topic": "Continued public hearing on the 763 Massachusetts Ave duplex project: sewer stub tie-in, bedroom/flow capacity, and whether to require Chestnut Street extension instead of an easement",
+    "resolution": "voted - waiver request denied",
+    "tags": [
+     "water-sewer",
+     "planning-and-zoning",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 1940,
+    "t_end": 1980,
+    "topic": "Approval of prior meeting minutes (10/28/25)",
+    "resolution": "voted - passed",
+    "tags": []
+   },
+   {
+    "t_start": 2002,
+    "t_end": 2148,
+    "topic": "ADU sewer connection charge policy: finalizing and voting on the $2/gallon one-time connection charge and ADU definition questions",
+    "resolution": "voted - passed",
+    "tags": [
+     "fees",
+     "housing",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2148,
+    "t_end": 2253,
+    "topic": "Manhole frame/cover replacement project update and contractor time extension",
+    "resolution": "informational / decision made administratively",
+    "tags": [
+     "capital",
+     "contracts-and-unions",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2253,
+    "t_end": 2690,
+    "topic": "Future agenda: proposal to require sewer connections tie into a property's own street rather than via easement, prompted by the 763 Mass Ave case",
+    "resolution": "referred to future agenda for drafting",
+    "tags": [
+     "policy",
+     "planning-and-zoning",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2732,
+    "t_end": 2818,
+    "topic": "Comment period: reminder against flushing wipes, and a member raising a neighboring town's sewer/water rate increases",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2818,
+    "t_end": 2858,
+    "topic": "Upcoming meeting schedule for December, January, and February",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 2858,
+    "t_end": 2878,
+    "topic": "Motion to adjourn",
+    "resolution": "voted - passed",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Arthur's individual roll-call vote on the 763 Mass Ave waiver denial is not distinctly heard, though the motion is stated to fail unanimously",
+   "The precise cost figures compared for Chestnut Street extension vs. three Mass Ave connections (heard as \"200 something\", \"500\", \"1968\", \"280\", \"7\") are garbled and cannot be reconciled",
+   "Whether any members of the public attended or commented is unclear; the person raising sewer/water rate increases and the person making the flushing-wipes remark are not clearly identified as public vs. commissioners/staff",
+   "The name \"Daniel Chief\" during the anticipated-speakers roll call is unclear and may be a mangling of another name already listed"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Sewer Commission voted down a sewer easement waiver for the 763 Massachusetts Ave duplex conversion project.",
+    "t": 1878
+   },
+   {
+    "line": "All members present voted against the waiver, denying the developer's request to use an easement instead of a direct street tie-in.",
+    "t": 1878
+   },
+   {
+    "line": "The commission adopted a new one-time connection charge policy for accessory dwelling units, based on Title 5 flow.",
+    "t": 2107
+   },
+   {
+    "line": "Members agreed to draft a future regulation requiring sewer connections to run to a property's own street rather than through an easement.",
+    "t": 2441
+   },
+   {
+    "line": "The commission granted the manhole-replacement contractor an extension to June 30, 2026, since roads cannot be reopened after mid-November.",
+    "t": 2168
+   }
+  ],
+  "why_it_matters": [
+   "The denied waiver means the 763 Massachusetts Ave duplex project cannot proceed with an easement-based sewer connection and would need a different, likely costlier, tie-in approach.",
+   "A future regulation requiring direct street tie-ins instead of easements could affect how other properties near shared sewer mains are allowed to connect going forward.",
+   "Owners adding accessory dwelling units will now face a one-time sewer connection charge calculated per gallon under Title 5 flow standards."
+  ],
+  "watch_next": [
+   "A future Sewer Commission agenda item drafting the street-tie-in-only regulation",
+   "Next meeting: December 9 at 7pm (hybrid)"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T11:44:53Z",
+   "cost_usd": 0.187766
+  }
+ }
+}

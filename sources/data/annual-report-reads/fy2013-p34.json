@@ -1,0 +1,104 @@
+{
+ "fy": 2013,
+ "page": 34,
+ "model": "claude-sonnet-5",
+ "boxes": 90,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T18:48:11Z",
+ "cost_usd": 0.2159744,
+ "columns": [
+  "Grade",
+  "Subject",
+  "Lunenburg",
+  "State"
+ ],
+ "rows": [
+  {
+   "label": "Grade 3 – Reading",
+   "values": [
+    "77.5",
+    "64.7"
+   ]
+  },
+  {
+   "label": "Grade 3 – Mathematics",
+   "values": [
+    "67.5",
+    "60.2"
+   ]
+  },
+  {
+   "label": "Grade 4 – Reading",
+   "values": [
+    "65.2",
+    "57.6"
+   ]
+  },
+  {
+   "label": "Grade 4 – Mathematics",
+   "values": [
+    "63.6",
+    "60.0"
+   ]
+  },
+  {
+   "label": "Grade 5 – ELA",
+   "values": [
+    "65.4",
+    "60.5"
+   ]
+  },
+  {
+   "label": "Grade 5 – Mathematics",
+   "values": [
+    "70.2",
+    "54.6"
+   ]
+  },
+  {
+   "label": "Grade 5 – Science",
+   "values": [
+    "76.0",
+    "59.0"
+   ]
+  },
+  {
+   "label": "Grade 6 – ELA",
+   "values": [
+    "72.1",
+    "62.9"
+   ]
+  },
+  {
+   "label": "Grade 6 – Mathematics",
+   "values": [
+    "63.9",
+    "55.9"
+   ]
+  },
+  {
+   "label": "Grade 7 – ELA",
+   "values": [
+    "76.7",
+    "67.7"
+   ]
+  },
+  {
+   "label": "Grade 7 – Mathematics",
+   "values": [
+    "57.8",
+    "49.4"
+   ]
+  },
+  {
+   "label": "Grade 8 – ELA",
+   "values": [
+    "78.4",
+    "74.5"
+   ]
+  }
+ ],
+ "proved": "none — the page states no total or identity for this CPI table (it is a list of per-grade/subject scores, not a sum), so nothing was checked against a printed total.",
+ "note": "Header read directly from the boxes at y=0.273–0.275: \"Grade\", \"Subject\", \"Lunenburg\", \"State\" (in that left-to-right x order), under the intro line \"Indicator 3C – Proficiency Rate for Students with IEPs on MCAS... CPI ratings were as follows:\". The table appears to be cut off at the bottom of the page: Grade 8 shows only an ELA row, with no Grade 8 Mathematics row present in the OCR boxes (likely continues on the next page). The box \"0.064 0.468 31\" is a page number, not a table figure, and was excluded from the rows. All figures were placed by nearest column-centre (Grade ~x0.20, Subject ~x0.36–0.38, Lunenburg ~x0.53–0.55, State ~x0.72), never by order of appearance.",
+ "table": "CPI Ratings — Indicator 3C, Proficiency Rate for Students with IEPs on MCAS (2012 MCAS)"
+}

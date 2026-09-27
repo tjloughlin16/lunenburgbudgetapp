@@ -1,0 +1,155 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2025-06-24",
+ "video_id": "gDQ9AowUxXU",
+ "video_url": "https://www.youtube.com/watch?v=gDQ9AowUxXU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-06-24-gDQ9AowUxXU.json",
+  "sha256": "c7b2681b6f839627ced68da9e7138d463929bb15fe8345b06816970606308cf1",
+  "caption_lines": 7,
+  "segments": 64
+ },
+ "recording": {
+  "duration_s": 137,
+  "duration": "0:02",
+  "spoken_chars": 2215,
+  "words_approx": 369
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06242025-7284",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-06-24-agenda-7284.txt",
+   "path": "sources/meetings/select-board/2025-06-24-agenda-7284.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T18:05:13Z",
+  "cost_usd": 0.2065868
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Glenn",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Amanda",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "member"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "contracts-and-unions",
+   "executive-session",
+   "hiring",
+   "personnel",
+   "planning-and-zoning",
+   "public-safety",
+   "staffing",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 84,
+    "motion": "Ratify the town manager's appointment of Jennifer Dagel as assistant administrative for planning, effective July 1st, 2025",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 105,
+    "motion": "Enter executive session and not reenter open session, per MGL c.30 s.21A(3), to discuss collective bargaining strategy for New England Police Benevolent Association Local 353",
+    "outcome": "passed (roll call: Glenn aye, Amanda aye, Brian aye, Renee aye, chair aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 42,
+    "topic": "Call to order, pledge of allegiance, open meeting law notice",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 42,
+    "t_end": 105,
+    "topic": "Ratification of town manager's appointment of Jennifer Dagel as assistant administrative for planning, replacing Logan O'Connell",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 105,
+    "t_end": 126,
+    "topic": "Motion to enter executive session to discuss collective bargaining strategy with NEPBA Local 353",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "contracts-and-unions",
+     "public-safety"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Captions end as the board enters executive session at 126 seconds; no record of what followed.",
+   "The transition/replacement detail around 'Logan O'Connell' at t=42-62 is somewhat garbled in the captions."
+  ],
+  "confidence": "moderate",
+  "headline": "Select Board ratified a new planning department hire, then entered executive session on police union bargaining",
+  "summary": "The Select Board opened with the pledge and standard meeting notice, then unanimously ratified the town manager's appointment of Jennifer Dagel as assistant administrative for planning, replacing Logan O'Connell. The board then voted by roll call to enter executive session to discuss collective bargaining strategy with the New England Police Benevolent Association Local 353, and the captions end there."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Select Board voted to enter executive session on collective bargaining strategy with the police union.",
+    "t": 105
+   },
+   {
+    "line": "Board unanimously ratified the town manager's appointment of a new assistant administrative for planning.",
+    "t": 42
+   }
+  ],
+  "why_it_matters": [
+   "A change in planning department staffing can affect how quickly permit and project reviews move for residents and developers.",
+   "Executive session on police union bargaining touches contract terms that eventually show up in the town's public safety budget lines."
+  ],
+  "watch_next": [
+   "Outcome of collective bargaining strategy session with NEPBA Local 353, if disclosed in future minutes"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T18:05:21Z",
+   "cost_usd": 0.181126
+  }
+ }
+}

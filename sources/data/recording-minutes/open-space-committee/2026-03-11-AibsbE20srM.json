@@ -1,0 +1,177 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "open-space-committee",
+ "board": "Open Space Committee",
+ "video_title": "Open Space Committee",
+ "meeting_date": "2026-03-11",
+ "video_id": "AibsbE20srM",
+ "video_url": "https://www.youtube.com/watch?v=AibsbE20srM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/open-space-committee/2026-03-11-AibsbE20srM.json",
+  "sha256": "b261136f8df8c970ad54e670ab8af16c2fafab84119d0f1df7dfb87f9234820a",
+  "caption_lines": 32,
+  "segments": 263
+ },
+ "recording": {
+  "duration_s": 660,
+  "duration": "0:11",
+  "spoken_chars": 7808,
+  "words_approx": 1301
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03112026-7691",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2026-03-11-agenda-7691.txt",
+   "path": "sources/meetings/open-space-committee/2026-03-11-agenda-7691.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03112026-7691",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2026-03-11-minutes-7691.txt",
+   "path": "sources/meetings/open-space-committee/2026-03-11-minutes-7691.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T02:54:54Z",
+  "cost_usd": 0.21614
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Anna Lockwood",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Chris",
+    "role": "member (notetaker/minutes)"
+   },
+   {
+    "name_as_heard": "Colleen",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tim",
+    "role": "member"
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 282,
+    "topic": "1083 Northfield Road property value",
+    "what_was_said": "The chair said she believed the conservation agent had discussed a figure with the property owner, but was unsure if it covered the whole property or was per lot.",
+    "figures_as_heard": [
+     "$600,000"
+    ]
+   }
+  ],
+  "confidence": "moderate",
+  "decisions": [
+   {
+    "t": 135,
+    "decision": "The chair will email a Slack board member (Caesar) to clarify that the committee has a formal mandate to update the town's state-required open space plan, rather than acting ad hoc."
+   },
+   {
+    "t": 520,
+    "decision": "Next meetings set for April 8 and May 13; the committee may become an official town board by May 13."
+   },
+   {
+    "t": 596,
+    "decision": "A member who resigned from the Conservation Commission will continue attending Open Space Committee meetings as its representative until the seat status (at-large vs. conservation liaison) is resolved."
+   }
+  ],
+  "headline": "Committee voted not to exercise its first right of refusal on a 1083 Northfield Road parcel",
+  "not_audible": [
+   "The technical explanation of the conservation agent's NRI/parcel-creation process and the loophole around registering an order of conditions is garbled and hard to follow precisely.",
+   "Whether the $600,000 figure discussed applied to the whole property or per lot was not established even by the speakers themselves.",
+   "Exact final vote tallies on all three motions are inferred from a garbled roll call rather than a clearly stated count.",
+   "Details of the bylaw/open space plan language from 'Mike' were not available at this meeting."
+  ],
+  "public_comment": [],
+  "summary": "The Open Space Committee approved prior minutes, discussed progress on formalizing its mandate to update the town's state-required open space plan, and reviewed a parcel at 1083 Northfield Road that had come before the Conservation Commission and Planning Board. The committee decided the parcel did not meet its size/ecological criteria and voted not to exercise its first right of refusal on it.",
+  "tags": [
+   "planning-and-zoning",
+   "policy",
+   "town-departments"
+  ],
+  "topics": [
+   {
+    "t_start": 9,
+    "t_end": 31,
+    "topic": "Call to order and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 31,
+    "t_end": 73,
+    "topic": "Approval of previous meeting's minutes",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 73,
+    "t_end": 158,
+    "topic": "Open space plan bylaw / formalizing the committee's mandate",
+    "resolution": "no resolution (awaiting final language and feedback)",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 158,
+    "t_end": 510,
+    "topic": "Review of 1083 Northfield Road parcel and first right of refusal",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 510,
+    "t_end": 616,
+    "topic": "Meeting schedule, no citizen comment, and a member's status representing conservation",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 616,
+    "t_end": 657,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "transfers": [],
+  "votes": [
+   {
+    "t": 55,
+    "motion": "Motion to approve the meeting minutes",
+    "moved_by": "a member (as heard)",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 488,
+    "motion": "Motion to not act on the committee's first right of refusal on the 1083 Northfield Road parcel",
+    "moved_by": "Chris",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 616,
+    "motion": "Motion to adjourn",
+    "moved_by": "Colleen",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ]
+ }
+}

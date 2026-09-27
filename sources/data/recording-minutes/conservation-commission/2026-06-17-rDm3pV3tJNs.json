@@ -1,0 +1,691 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2026-06-17",
+ "video_id": "rDm3pV3tJNs",
+ "video_url": "https://www.youtube.com/watch?v=rDm3pV3tJNs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2026-06-17-rDm3pV3tJNs.json",
+  "sha256": "5e4de90a276cd9750e75cb4581ab0d599622586af95ad28f51c3f4f4c8019931",
+  "caption_lines": 468,
+  "segments": 4458
+ },
+ "recording": {
+  "duration_s": 9789,
+  "duration": "2:43",
+  "spoken_chars": 122588,
+  "words_approx": 20431
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06172026-7861",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-06-17-agenda-7861.txt",
+   "path": "sources/meetings/conservation-commission/2026-06-17-agenda-7861.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06172026-7861",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-06-17-minutes-7861.txt",
+   "path": "sources/meetings/conservation-commission/2026-06-17-minutes-7861.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T02:20:51Z",
+  "cost_usd": 0.52002
+ },
+ "minutes": {
+  "headline": "Commission approved five wetlands permits, set FY27 fund budgets, and resolved a driveway wetlands violation without a fine",
+  "summary": "The Conservation Commission acted on a full slate of wetlands hearings — approving several driveway, septic and carport projects, continuing others pending planning-board or DEP action — and resolved an unpermitted driveway culvert at 314 Highland Street with remediation (riprap and on-site wetland replication) rather than a fine. The commission also set FY2027 budgets for its Hollis Road, Timber Rights and Wetlands Bylaw Fees accounts, while flagging unresolved confusion over the Mass Trails grant account balance, ARPA matching funds, and a town-manager-held bequest fund with no visibility to the commission.",
+  "attendees": [
+   {
+    "name_as_heard": "Jenny Puthaw",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Andrea Vernat (also heard as Burnett/Burnap/Barnaby/Bernett/Bernat/Bernhardt)",
+    "role": "commissioner"
+   },
+   {
+    "name_as_heard": "Mike Lariush (also heard as Larish/LeRouche/Laroche/Rouche)",
+    "role": "commissioner"
+   },
+   {
+    "name_as_heard": "Mary Wilson",
+    "role": "commissioner"
+   },
+   {
+    "name_as_heard": "Teddy Doucette (also heard as Dusett/Dziedzic/Dusat/Dusseault/Eaton)",
+    "role": "commissioner",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Harlan (also heard as Herlin/Harland/Hurlin/Arlene/Earlene/Kerlin/Carolyn)",
+    "role": "Conservation Agent"
+   },
+   {
+    "name_as_heard": "Greg Roy",
+    "role": "presenter (engineer, Dilts and Roy / Wilson Roy / Olson Roy)"
+   },
+   {
+    "name_as_heard": "Dan Wolf",
+    "role": "presenter (David Ross Associates)"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "facilities",
+   "fees",
+   "grants",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "town-departments",
+   "transfers"
+  ],
+  "votes": [
+   {
+    "t": 940,
+    "motion": "Negative determination for Edward Kukula, open carport at 44 Peninsula Drive",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 1388,
+    "motion": "Negative determination for Jeffrey Wilson, driveway reconstruction at 71 Chestnut Street",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 1965,
+    "motion": "Continue Cowdry Nature Center ADA parking/trail hearing to July 15, 2026",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 2131,
+    "motion": "Continue Brackett common driveway hearing (816 New West Townsend Road) to July 1, 2026",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 3251,
+    "motion": "Approve Benjamin Builders common driveway with drainage basin, 56 Ruth Street",
+    "moved_by": "Teddy Doucette",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 3312,
+    "motion": "Continue Unitil notice of intent (934 Mass Ave) to July 1, 2026",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 3752,
+    "motion": "Approve 18 Oak Ridge Road demolition/reconstruction with condition that debris and staging stay outside 100-ft buffer",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 4233,
+    "motion": "Approve failed septic system replacement at 146 Youngs Road",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 4354,
+    "motion": "Continue 507 West Townsend Road hearing to July 1, 2026; office to notify applicant",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 5306,
+    "motion": "Approve remediation actions (riprap fill and restoration area) for the 314 Highland Street violation",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6701,
+    "motion": "Approve FY2027 Hollis Road revolving fund budget allocation",
+    "moved_by": "the chair",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6994,
+    "motion": "Approve FY2027 Timber Rights fund budget allocation",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7330,
+    "motion": "Approve FY2027 Wetlands Protection Bylaw Fees fund allocation",
+    "moved_by": "Teddy Doucette",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 9764,
+    "motion": "Adjourn",
+    "outcome": "passed 5-0",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 543,
+    "topic": "Town social media management",
+    "what_was_said": "The commission noted the town no longer has a dedicated social media manager after the new budget. Office staff have reportedly been trained to handle social media instead, including for the invasives event."
+   },
+   {
+    "t": 1531,
+    "topic": "Mass Trails grant budget status",
+    "what_was_said": "Commissioners asked for an update on where the Mass Trails grant budget stands, since the volunteer tracking it and town finance had not reported back. No figures were given at this point."
+   },
+   {
+    "t": 1730,
+    "topic": "Mass Trails grant fund balance",
+    "what_was_said": "The agent reported the revised fund balance on the year-to-date report appears negative, raising questions about how drawdowns and reimbursements are being recorded."
+   },
+   {
+    "t": 5100,
+    "topic": "Proposed fine for 314 Highland Street violation",
+    "what_was_said": "The agent floated a possible fine for the unpermitted culvert and driveway work, but most commissioners favored remediation only given it appeared an honest mistake.",
+    "figures_as_heard": [
+     "$300"
+    ]
+   },
+   {
+    "t": 6017,
+    "topic": "Sean Kelly bequest fund",
+    "what_was_said": "A bequest fund held for the commission is tracked by the town manager directly through a bank rather than through MUNIS, so the commission has no visibility into its balance or usage rules."
+   },
+   {
+    "t": 6350,
+    "topic": "Hollis Road revolving fund FY27 balance",
+    "what_was_said": "The agent presented the prior fund balance, this year's changes, and the current balance to use as the basis for next year's Hollis Road budget.",
+    "figures_as_heard": [
+     "27,000"
+    ]
+   },
+   {
+    "t": 6391,
+    "topic": "Hollis Road purchase-of-service line, prior year",
+    "what_was_said": "Last year's purchase-of-service sub-account was set at one figure with a chunk left unspent, prompting discussion of whether to keep that split given custodian income has stopped.",
+    "figures_as_heard": [
+     "$10,000",
+     "$7,000"
+    ]
+   },
+   {
+    "t": 6473,
+    "topic": "Hollis Road FY27 sub-account split",
+    "what_was_said": "The agent proposed putting a fixed amount into purchase of service and the remainder into maintenance of grounds, noting the full balance would be available since custodian income had stopped.",
+    "figures_as_heard": [
+     "10,000"
+    ]
+   },
+   {
+    "t": 6680,
+    "topic": "Hollis Road FY27 budget vote",
+    "what_was_said": "The commission voted to set the Hollis Road sub-account budgets for fiscal year 2027 at the proposed figures.",
+    "figures_as_heard": [
+     "10,000",
+     "17,000 2654"
+    ]
+   },
+   {
+    "t": 6722,
+    "topic": "Timber Rights fund, prior year split",
+    "what_was_said": "Last year's Timber Rights budget put a small amount to purchase of service and the rest to supplies, out of a fund with roughly this total balance.",
+    "figures_as_heard": [
+     "1,000",
+     "9,000",
+     "40,000"
+    ]
+   },
+   {
+    "t": 6742,
+    "topic": "Timber Rights procurement cap",
+    "what_was_said": "A town official confirmed that anything over a stated dollar threshold in services must go out to bid with prevailing wages, which caps how much can go to the purchase-of-service line.",
+    "figures_as_heard": [
+     "$10,000"
+    ]
+   },
+   {
+    "t": 6803,
+    "topic": "Matching funds for Table Rock/Reno trail grants",
+    "what_was_said": "Commissioners discussed needing matching funds, likely from Timber Rights, if pending grant applications for parking area work at Table Rock and Reno are awarded.",
+    "figures_as_heard": [
+     "15,000"
+    ]
+   },
+   {
+    "t": 6972,
+    "topic": "Timber Rights FY27 budget vote",
+    "what_was_said": "The commission voted to set the FY2027 Timber Rights sub-account budgets between purchase of service and supplies at the proposed figures.",
+    "figures_as_heard": [
+     "10,000",
+     "30,329.11"
+    ]
+   },
+   {
+    "t": 7245,
+    "topic": "Wetlands Bylaw Fees fund balance",
+    "what_was_said": "The agent reported the fund's current balance from permitting fees and recommended budgeting about half of it for now, pending a planned guided-hike program and flyers.",
+    "figures_as_heard": [
+     "93 53 16"
+    ]
+   },
+   {
+    "t": 7310,
+    "topic": "Wetlands Bylaw Fees FY27 budget vote",
+    "what_was_said": "The commission voted to set the Wetlands Protection Bylaw Fees fund budget at the proposed figure to cover items like flyers and guided-hike materials.",
+    "figures_as_heard": [
+     "93 50"
+    ]
+   },
+   {
+    "t": 7412,
+    "topic": "Mass Trails grant spending to date",
+    "what_was_said": "The year-to-date report showed spending against the grant's budgeted amount, plus an unexplained encumbrance that commissioners could not immediately identify.",
+    "figures_as_heard": [
+     "13,548",
+     "29,530"
+    ]
+   },
+   {
+    "t": 7453,
+    "topic": "Mass Trails matching fund percentage",
+    "what_was_said": "Commissioners tried to reconcile the encumbrance against the total grant request and the matching-fund percentage the commission had committed to.",
+    "figures_as_heard": [
+     "61,000",
+     "20%",
+     "25%",
+     "15"
+    ]
+   },
+   {
+    "t": 7705,
+    "topic": "Mass Trails/DCR reimbursement and ARPA match",
+    "what_was_said": "Reading from an old email, commissioners noted a partial reimbursement received from the state and a separate ARPA-funded matching amount the town had allocated.",
+    "figures_as_heard": [
+     "28,639.07",
+     "71,597",
+     "71,597.7"
+    ]
+   },
+   {
+    "t": 7856,
+    "topic": "ARPA matching funds remaining",
+    "what_was_said": "Only a small amount of ARPA funding was left showing against the grant when the town's ARPA spending deadline passed, and it is unclear whether obligations already contracted for were properly covered before those funds expired.",
+    "figures_as_heard": [
+     "$100",
+     "101.35"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 666,
+    "decision": "Minutes from the June 3, 2026 meeting were tabled to the next meeting because a quorum of members who attended that meeting was not present to vote."
+   },
+   {
+    "t": 606,
+    "decision": "This year's invasive-plant removal effort will use manual removal only, since no one is currently licensed to apply herbicide on public land."
+   },
+   {
+    "t": 1901,
+    "decision": "Agreed to arrange a meeting among the agent, the chair, the town's grant volunteer and the finance/grants staffer to sort out the Mass Trails grant account before the fiscal year closes."
+   },
+   {
+    "t": 5183,
+    "decision": "Commissioners agreed informally to pursue riprap fill in the culvert plus an on-site wetland replication area at 314 Highland Street rather than requiring removal of the pipe or imposing a fine."
+   },
+   {
+    "t": 5810,
+    "decision": "Commission will revisit updating the wetlands bylaw and permitting fee structure once the agent meets with town legal counsel about the process."
+   },
+   {
+    "t": 8595,
+    "decision": "Agreed to set up a meeting between the town manager, the chair, and possibly a commissioner regarding a new custodial agreement for the Hollis Road property."
+   },
+   {
+    "t": 9280,
+    "decision": "Commission will consider adding a recurring 'commissioner updates' or property-updates subsection to future agendas."
+   },
+   {
+    "t": 9077,
+    "decision": "Agent will informally raise with the Select Board the idea of an Eagle Scout project to re-seed and plant natives at the town-owned Zero Reservoir Road parcel where a past encroachment was cleared."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 80,
+    "topic": "Call to order, open meeting law notice, and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 80,
+    "t_end": 100,
+    "topic": "Public comment period",
+    "resolution": "no comments offered",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 100,
+    "t_end": 480,
+    "topic": "Pollinator habitat update (Hollis Road)",
+    "resolution": "informational",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 481,
+    "t_end": 646,
+    "topic": "Invasive plant removal planning with consultant",
+    "resolution": "informational, no vote",
+    "tags": [
+     "policy",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 646,
+    "t_end": 668,
+    "topic": "Approval of June 3, 2026 minutes",
+    "resolution": "tabled for lack of quorum on that vote",
+    "tags": []
+   },
+   {
+    "t_start": 668,
+    "t_end": 979,
+    "topic": "RDA hearing: Edward Kukula, carport at 44 Peninsula Drive",
+    "resolution": "voted, negative determination",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1021,
+    "t_end": 1430,
+    "topic": "RDA hearing: Jeffrey Wilson, driveway at 71 Chestnut Street",
+    "resolution": "voted, negative determination",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1431,
+    "t_end": 1995,
+    "topic": "Continued NOI: Cowdry Nature Center ADA parking/trail, incl. Mass Trails grant budget confusion",
+    "resolution": "continued to July 15, 2026",
+    "tags": [
+     "grants",
+     "budget",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 2005,
+    "t_end": 2160,
+    "topic": "NOI: Brackett common driveway, 816 New West Townsend Road",
+    "resolution": "continued to July 1, 2026",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2170,
+    "t_end": 3272,
+    "topic": "NOI: Benjamin Builders common driveway/drainage, 56 Ruth Street",
+    "resolution": "voted, approved",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3282,
+    "t_end": 3342,
+    "topic": "NOI: Unitil, 934 Mass Ave",
+    "resolution": "continued to July 1, 2026 pending DEP",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3415,
+    "t_end": 3782,
+    "topic": "Continued NOI: 18 Oak Ridge Road, demolition/reconstruction with new septic",
+    "resolution": "voted, approved with condition",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3792,
+    "t_end": 4253,
+    "topic": "NOI: 146 Youngs Road septic system replacement",
+    "resolution": "voted, approved",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4272,
+    "t_end": 4394,
+    "topic": "NOI: 507 West Townsend Road, Jenky Jenk Construction",
+    "resolution": "continued to July 1, 2026",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4394,
+    "t_end": 4478,
+    "topic": "Enforcement update on prior violation (1168)",
+    "resolution": "informational, awaiting owner response to DEP",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4478,
+    "t_end": 5327,
+    "topic": "Enforcement action: unpermitted driveway culvert at 314 Highland Street",
+    "resolution": "voted, approved remediation without fine",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5350,
+    "t_end": 5748,
+    "topic": "Topics unknown: statehouse environmental bond bill and home-rule concerns",
+    "resolution": "informational, commission to consider advocacy",
+    "tags": [
+     "legal",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5768,
+    "t_end": 5892,
+    "topic": "Wetland bylaw and permitting fee structure discussion",
+    "resolution": "no resolution, pending meeting with legal counsel",
+    "tags": [
+     "fees",
+     "policy",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 5892,
+    "t_end": 6017,
+    "topic": "Overview of conservation accounts and land-use budget structure",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 6017,
+    "t_end": 6287,
+    "topic": "Sean Kelly bequest fund oversight and transparency",
+    "resolution": "no resolution, agent to follow up with town manager",
+    "tags": [
+     "budget",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 6287,
+    "t_end": 6722,
+    "topic": "Hollis Road revolving fund FY2027 budget",
+    "resolution": "voted, approved",
+    "tags": [
+     "budget",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 6722,
+    "t_end": 6994,
+    "topic": "Timber Rights fund FY2027 budget",
+    "resolution": "voted, approved",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 7055,
+    "t_end": 7350,
+    "topic": "Wetlands Protection Bylaw Fees fund FY2027 budget",
+    "resolution": "voted, approved",
+    "tags": [
+     "budget",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 7350,
+    "t_end": 8003,
+    "topic": "Mass Trails Grant account: expenses, revenue, and ARPA matching-fund confusion",
+    "resolution": "no resolution, referred to future meeting with finance director",
+    "tags": [
+     "grants",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 8023,
+    "t_end": 8320,
+    "topic": "Encroachment issues and Hollis Road ATV signage response",
+    "resolution": "informational, signs already posted",
+    "tags": [
+     "public-safety",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 8406,
+    "t_end": 8742,
+    "topic": "Hollis Road custodial house cleaning schedule and custodial agreement discussion",
+    "resolution": "informational, meeting with town manager to be scheduled",
+    "tags": [
+     "facilities",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 8742,
+    "t_end": 8864,
+    "topic": "Committee reports: master plan and invasive plant/open space liaison updates",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 8864,
+    "t_end": 9744,
+    "topic": "Communications: NHS/Eagle Scout volunteer projects, Zero Reservoir Road parcel restoration idea, new commissioner appointments",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "recreation",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 9744,
+    "t_end": 9784,
+    "topic": "Adjournment",
+    "resolution": "voted, approved",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The conservation agent's actual name — rendered inconsistently across the captions as Harlan, Herlin, Harland, Hurlin, Arlene, Earlene, Kerlin and Carolyn",
+   "The commissioner surnames for 'Andrea' and 'Mike' — rendered differently at nearly every roll call (Vernat/Burnett/Burnap/Barnaby/Bernett/Bernat/Bernhardt; Lariush/Larish/LeRouche/Laroche/Rouche)",
+   "The exact combined Hollis Road fund balance and sub-account figures (heard fragmented as '27,000' and '17,000 2654')",
+   "Whether the ARPA funds allocated to the Mass Trails grant matching requirement were fully applied before the town's ARPA spending deadline, or where the additional ~$71,597 figure originated",
+   "What DEP's specific comment or timeline was for the '1168' enforcement matter beyond a general reference to a requested timeline",
+   "Whether the statehouse environmental bond bill discussed under 'topics unknown' was ultimately voted on"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Commission approved remediation (riprap and wetland replication) rather than a fine for an unpermitted driveway culvert at 314 Highland Street.",
+    "t": 5306
+   },
+   {
+    "line": "Commission approved wetlands permits for projects including a common driveway with a drainage basin, a demolition/reconstruction, and a failed septic system replacement, while continuing several others to July for planning-board or state review.",
+    "t": 3251
+   },
+   {
+    "line": "Commission voted to set FY2027 budgets for the Hollis Road, Timber Rights, and Wetlands Protection Bylaw Fees funds.",
+    "t": 6701
+   },
+   {
+    "line": "Commission flagged an apparently negative Mass Trails grant fund balance and a commission-held bequest fund tracked by the town manager outside normal accounting, with no resolution reached.",
+    "t": 1730
+   }
+  ],
+  "why_it_matters": [
+   "Resolving a wetlands violation with remediation instead of a fine sets a visible precedent for how the town handles unpermitted work discovered near wetlands.",
+   "The permit votes clear or delay specific driveway, septic and construction projects for the property owners involved.",
+   "The Mass Trails grant and bequest-fund questions concern how public conservation money is tracked, which the commission says it currently cannot fully see."
+  ],
+  "watch_next": [
+   "Continued hearings on July 1 and July 15, 2026 (Brackett driveway, Unitil, 507 West Townsend Road, Cowdry Nature Center)",
+   "A planned meeting among the agent, chair, town grant volunteer and finance staff to reconcile the Mass Trails grant account before fiscal year-end"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T02:21:08Z",
+   "cost_usd": 0.198658
+  }
+ }
+}

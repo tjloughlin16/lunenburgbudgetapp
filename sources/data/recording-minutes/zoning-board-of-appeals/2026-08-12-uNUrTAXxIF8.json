@@ -1,0 +1,162 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "zoning-board-of-appeals",
+ "board": "Zoning Board of Appeals",
+ "video_title": "Zoning Board of Appeals",
+ "meeting_date": "2026-08-12",
+ "video_id": "uNUrTAXxIF8",
+ "video_url": "https://www.youtube.com/watch?v=uNUrTAXxIF8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/zoning-board-of-appeals/2026-08-12-uNUrTAXxIF8.json",
+  "sha256": "532246d781215acef5223e22995c7f3b4b8357ff3afdc5c4f2029e9ba4a38d0e",
+  "caption_lines": 6,
+  "segments": 56
+ },
+ "recording": {
+  "duration_s": 117,
+  "duration": "0:01",
+  "spoken_chars": 1319,
+  "words_approx": 219
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08122026-7919",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2026-08-12-agenda-7919.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2026-08-12-agenda-7919.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T02:01:50Z",
+  "cost_usd": 0.19939800000000002
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the Chairman",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Lee Bane",
+    "role": "board secretary"
+   },
+   {
+    "name_as_heard": "David Blat",
+    "role": "board member"
+   },
+   {
+    "name_as_heard": "Tony Niccastro",
+    "role": "board member"
+   },
+   {
+    "name_as_heard": "Karen Manard",
+    "role": "board member"
+   },
+   {
+    "name_as_heard": "Donald Gurnie",
+    "role": "board member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 94,
+    "topic": "Chair called for public comment; none was offered."
+   }
+  ],
+  "tags": [
+   "planning-and-zoning"
+  ],
+  "votes": [
+   {
+    "t": 74,
+    "motion": "Motion to continue the public hearing on the petition of Ivan Elenichuk (149 Summer Street) until August 26, 2026",
+    "moved_by": "Donald Gurnie",
+    "outcome": "passed (all in favor, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 100,
+    "motion": "Motion to adjourn",
+    "moved_by": "the Chairman",
+    "outcome": "passed (all in favor)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 74,
+    "decision": "The board continued the public hearing on Ivan Elenichuk's petition for 149 Summer Street to a later date, stated in discussion as August 26, 2026."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 42,
+    "topic": "Chair opens the hearing, notes it is recorded/broadcast, and introduces the board members",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 43,
+    "t_end": 103,
+    "topic": "Petition of Ivan Elenichuk of 13 Woreren Road, Lexington, MA, regarding property at 149 Summer Street, Lunenburg; board votes to continue the hearing",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 104,
+    "t_end": 110,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The exact reason the hearing needed a continuance is not stated in the captions.",
+   "The continuance date is contradictory: discussion at t=74-84 settles on 'the 26th' (August 26, 2026), but the closing statement at t=104 says the meeting is 'continued until August 22' -- captions do not resolve which date is correct.",
+   "Who seconded the motion to continue is not clearly identified by name.",
+   "Exact vote counts are not stated; only 'all in favor' and 'no one opposed' are heard for both votes."
+  ],
+  "confidence": "moderate",
+  "headline": "ZBA continued the Elenichuk hearing on 149 Summer Street, though captions give conflicting dates for it",
+  "summary": "The Zoning Board of Appeals opened a hearing on Ivan Elenichuk's petition concerning property at 149 Summer Street, Lunenburg, but the board was not ready to hear it and voted to continue it to a later date. No public comment was offered, and the board then adjourned."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Zoning Board of Appeals voted unanimously to continue Ivan Elenichuk's hearing on 149 Summer Street to a later date.",
+    "t": 74
+   },
+   {
+    "line": "No members of the public offered comment before the continuance.",
+    "t": 94
+   },
+   {
+    "line": "The board adjourned shortly after voting to continue the matter.",
+    "t": 104
+   }
+  ],
+  "why_it_matters": [
+   "This is a zoning petition affecting a specific Summer Street property; abutters and interested residents will need to track the rescheduled hearing date to weigh in.",
+   "No decision on the petition's merits was made at this meeting, so the underlying zoning question remains open."
+  ],
+  "watch_next": [
+   "The rescheduled hearing on Ivan Elenichuk's petition for 149 Summer Street; the minutes give a date in discussion, but caption evidence on the exact date is conflicting -- check the town's posted agenda to confirm it."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T02:02:03Z",
+   "cost_usd": 0.182176
+  }
+ }
+}

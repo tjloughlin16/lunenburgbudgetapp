@@ -1,0 +1,413 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2026-02-24",
+ "video_id": "pwsuBm1qjGY",
+ "video_url": "https://www.youtube.com/watch?v=pwsuBm1qjGY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2026-02-24-pwsuBm1qjGY.json",
+  "sha256": "429f216d5d209aa9777244c2a30cfb7ae7cec0794018e32c7450b6f98239a62d",
+  "caption_lines": 168,
+  "segments": 1468
+ },
+ "recording": {
+  "duration_s": 3487,
+  "duration": "0:58",
+  "spoken_chars": 45163,
+  "words_approx": 7527
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02242026-7662",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-02-24-agenda-7662.txt",
+   "path": "sources/meetings/sewer-commission/2026-02-24-agenda-7662.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02242026-7662",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-02-24-minutes-7662.txt",
+   "path": "sources/meetings/sewer-commission/2026-02-24-minutes-7662.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T11:07:56Z",
+  "cost_usd": 0.316106
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Brett Ramson",
+    "role": "chairman",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Scott Dale",
+    "role": "commissioner",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dan Proctor",
+    "role": "commissioner",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Arthur Cadis",
+    "role": "commissioner (absent)"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "director",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Andrew Valer",
+    "role": "billing/business staff",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Jane Rainley",
+    "role": "staff (recording clerk, addressed once as \"Jean\")",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Chip Wilson",
+    "role": "prospective commission member / guest",
+    "remote": true
+   }
+  ],
+  "headline": "Sewer Commission voted to approve its FY27 budget, which raises user rates to close a revenue gap.",
+  "summary": "The commission voted to approve prior minutes and its FY27 self-funded sewer enterprise budget, which raises the minimum charge and regular user rate because retained earnings and betterment revenue are declining. It also introduced a prospective fifth commissioner, discussed a proposed town-wide storm water utility headed to the May town meeting ballot, and reviewed FY26 delinquency rates and a draft sewer-connection policy to be finalized at a future meeting.",
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "fees",
+   "personnel",
+   "policy",
+   "roads-and-dpw",
+   "town-meeting",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 235,
+    "motion": "Motion to accept the minutes of the 2/12/26 meeting as written",
+    "outcome": "passed (Dan aye, Scott aye, chair aye)",
+    "procedural": true
+   },
+   {
+    "t": 1794,
+    "motion": "Motion to accept the FY27 sewer budget proposal",
+    "outcome": "passed, described as \"the motion carries\" (Scott aye, Dan aye, chair aye)",
+    "procedural": false
+   },
+   {
+    "t": 3462,
+    "motion": "Motion to adjourn the meeting",
+    "outcome": "passed (Dan aye, Scott aye, chair aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1104,
+    "topic": "FY27 capital plan",
+    "figures_as_heard": [
+     "$200,000"
+    ],
+    "what_was_said": "The director said the budget includes capital funding for planned repairs, building on recent major repair work; the amount was requested higher than needed on the reasoning that it can be cut back but not increased later."
+   },
+   {
+    "t": 1124,
+    "topic": "FY27 user charge revenue estimate",
+    "figures_as_heard": [
+     "$1.2 million"
+    ],
+    "what_was_said": "User charges were originally estimated at this figure before adjustments to close the projected deficit."
+   },
+   {
+    "t": 1144,
+    "topic": "FY27 projected deficit before rate action",
+    "figures_as_heard": [
+     "almost $200,000"
+    ],
+    "what_was_said": "Without a rate increase the budget would run this deficit, which in past years was covered by drawing down retained earnings."
+   },
+   {
+    "t": 1188,
+    "topic": "Sewer betterment revenue decline",
+    "figures_as_heard": [],
+    "what_was_said": "Betterment payments from 20-year financing plans taken out when the system was built are ending, so that revenue source is shrinking and can no longer be relied on."
+   },
+   {
+    "t": 1230,
+    "topic": "FY27 rate increase scenario",
+    "figures_as_heard": [
+     "5%",
+     "133",
+     "139"
+    ],
+    "what_was_said": "Of about ten rate scenarios considered, the preferred one raises the minimum charge by 5% (described around $133 to $139) so low-usage customers subsidize large users less."
+   },
+   {
+    "t": 1274,
+    "topic": "FY27 regular user rate increase",
+    "figures_as_heard": [
+     "16%"
+    ],
+    "what_was_said": "Along with the minimum-charge change, the regular user rate would rise 16%, together closing the funding gap."
+   },
+   {
+    "t": 1295,
+    "topic": "FY27 projected budget surplus",
+    "figures_as_heard": [
+     "about $26,000"
+    ],
+    "what_was_said": "With the combined rate changes the budget shows an estimated surplus rather than a deficit."
+   },
+   {
+    "t": 1356,
+    "topic": "Sewer privilege/connection fee revenue",
+    "figures_as_heard": [
+     "$40,000",
+     "30,000",
+     "48,000"
+    ],
+    "what_was_said": "Estimated privilege fees were put at $40,000, partly anticipating more ADU tie-ins; the sewer connection charge line was set around 30,000 versus a recent three-year average near 48,000, which spiked in a prior year when rates rose and people paid early."
+   },
+   {
+    "t": 1479,
+    "topic": "Enterprise fund self-funding status",
+    "figures_as_heard": [],
+    "what_was_said": "The sewer budget is independent of the town's general budget; as an enterprise fund its revenues must equal or exceed its expenses with no town subsidy, though the sewer pays the town for shared accounting services."
+   },
+   {
+    "t": 2394,
+    "topic": "Town pavement management budget (context for storm water utility argument)",
+    "figures_as_heard": [
+     "$50,000",
+     "$600,000",
+     "$279,000"
+    ],
+    "what_was_said": "The director cited pavement management, which had been growing $50,000 a year and should be $600,000 this year but was cut to $279,000, as evidence that money placed in the general operating budget is not guaranteed to be spent on its intended purpose."
+   },
+   {
+    "t": 2103,
+    "topic": "Proposed storm water utility fee",
+    "figures_as_heard": [
+     "under $100 per year"
+    ],
+    "what_was_said": "A single-family home would pay under $100 per year under the proposed storm water utility; commercial properties would pay based on impervious surface area."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 960,
+    "decision": "Set up a joint meeting between the Select Board and Sewer Commission to consider appointing Chip Wilson to the vacant fifth commissioner seat."
+   },
+   {
+    "t": 1772,
+    "decision": "Proceed with a vote on the FY27 budget that same evening rather than waiting, since the numbers were considered settled."
+   },
+   {
+    "t": 3062,
+    "decision": "Hold review and possible finalization of draft sewer connection policy/bylaw wording at the March 10th meeting, in time for the town meeting warrant deadline."
+   },
+   {
+    "t": 3373,
+    "decision": "Both monthly meetings will be held at 6 p.m. (rather than alternating 7 p.m. in-person / 6 p.m. Zoom) for the next couple of months to accommodate the director's budget-season schedule."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 128,
+    "topic": "Opening, pledge of allegiance, open meeting law statement, remote participation instructions",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 128,
+    "t_end": 213,
+    "topic": "Roll call of commissioners and staff; no public comment offered",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 213,
+    "t_end": 255,
+    "topic": "Review and approval of prior meeting minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 255,
+    "t_end": 960,
+    "topic": "Introduction of Chip Wilson as a prospective fifth commissioner; discussion of commission's role, current board composition, and members' backgrounds",
+    "resolution": "informational, no vote taken",
+    "tags": [
+     "personnel",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 960,
+    "t_end": 1042,
+    "topic": "Process for appointing a new commissioner via joint meeting with the Select Board",
+    "resolution": "decision to schedule a joint meeting",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1042,
+    "t_end": 1479,
+    "topic": "FY27 sewer budget presentation: expenses, capital plan, declining revenues, and proposed rate increase",
+    "resolution": "informational discussion",
+    "tags": [
+     "budget",
+     "budget-fy27",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 1479,
+    "t_end": 1603,
+    "topic": "Enterprise fund structure and finance committee review timeline for the FY27 budget",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1603,
+    "t_end": 1837,
+    "topic": "Vote on the FY27 sewer budget proposal, including the rate increase",
+    "resolution": "voted",
+    "tags": [
+     "budget-fy27",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 1837,
+    "t_end": 2062,
+    "topic": "FY26 delinquency rate discussion and complaints about the online billing (MUNIS) system",
+    "resolution": "informational, no vote",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2062,
+    "t_end": 2810,
+    "topic": "Proposed town-wide storm water utility: MS4 permit requirements, fee structure, funding rationale, and a possible joint sewer/storm water commission, headed to the May town meeting ballot",
+    "resolution": "informational, no vote; a public hearing and ballot question are planned",
+    "tags": [
+     "water-sewer",
+     "town-meeting",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 2810,
+    "t_end": 2960,
+    "topic": "Director departs meeting; prospective commissioner Chip Wilson reflects on the meeting",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2960,
+    "t_end": 3124,
+    "topic": "Draft sewer connection policy and bylaw language, including possible fee updates",
+    "resolution": "tabled to next meeting for finalization",
+    "tags": [
+     "policy",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 3124,
+    "t_end": 3331,
+    "topic": "Future agenda planning, including storm water billing logistics via the existing MUNIS system",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 3331,
+    "t_end": 3455,
+    "topic": "Upcoming meeting schedule and temporary shift to 6 p.m. start times",
+    "resolution": "decision announced",
+    "tags": []
+   },
+   {
+    "t_start": 3455,
+    "t_end": 3476,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Bill Bernard's audio cut out repeatedly during the storm water discussion around 2124-2165 seconds",
+   "The roll-call name heard as \"Billier\" at 148-169 seconds could not be identified with confidence",
+   "Who specifically moved the motions to approve the minutes, the FY27 budget, and to adjourn is not clearly attributable to a single named speaker",
+   "The exact minimum-charge figures (\"133\", \"139\") and usage unit (\"800\" of unspecified cubic feet) around 1230-1274 seconds were unclear in the captions"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Sewer Commission voted to approve its FY27 enterprise budget, raising the minimum charge and regular user rate to close a revenue gap.",
+    "t": 1794
+   },
+   {
+    "line": "The commission said declining betterment payments, as 20-year financing plans from the system's original construction wind down, are driving the gap.",
+    "t": 1188
+   },
+   {
+    "line": "Commissioners moved to schedule a joint meeting with the Select Board to consider appointing a fifth commissioner.",
+    "t": 960
+   },
+   {
+    "line": "A proposed town-wide storm water utility, billing based on impervious surface for most properties, was discussed ahead of a May town meeting ballot question.",
+    "t": 2103
+   },
+   {
+    "line": "A draft sewer-connection policy was tabled, with review and possible finalization set for the March 10 meeting to meet the town meeting warrant deadline.",
+    "t": 3062
+   }
+  ],
+  "why_it_matters": [
+   "Sewer customers will see higher minimum and usage charges on their bills as the self-funded sewer enterprise fund raises rates to replace declining betterment revenue.",
+   "Residents will be asked to vote on a separate storm water utility fee at May town meeting, in addition to their sewer and property tax bills.",
+   "The sewer-connection policy under review could set new terms for future hookups before the next town meeting warrant closes."
+  ],
+  "watch_next": [
+   "March 10 Sewer Commission meeting: review and possible finalization of the draft sewer-connection policy",
+   "May town meeting: storm water utility ballot question"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T11:08:14Z",
+   "cost_usd": 0.195088
+  }
+ }
+}

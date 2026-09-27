@@ -1,0 +1,139 @@
+{
+ "fy": 2021,
+ "page": 57,
+ "model": "claude-sonnet-5",
+ "boxes": 50,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T18:48:35Z",
+ "cost_usd": 0.2063384,
+ "columns": [
+  "Organization/Person",
+  "Project",
+  "Amount"
+ ],
+ "rows": [
+  {
+   "label": "1",
+   "values": [
+    "St. Bernard's High School",
+    "Student Video Production, STB-TV",
+    "$250.00"
+   ]
+  },
+  {
+   "label": "2",
+   "values": [
+    "Susan Elbag (Library)",
+    "Art Class with the Pop Up Art School",
+    "$275.00"
+   ]
+  },
+  {
+   "label": "3",
+   "values": [
+    "Susan Elbag (Library)",
+    "The Whalemobile with Cynde",
+    "$125.00"
+   ]
+  },
+  {
+   "label": "4",
+   "values": [
+    "Susan Elbag (Library)",
+    "Henna Alchemy",
+    "$200.00"
+   ]
+  },
+  {
+   "label": "5",
+   "values": [
+    "Lydia Gravell (Library)",
+    "In the Groves. Storytelling event with Diane Edgecomb",
+    "$575.00"
+   ]
+  },
+  {
+   "label": "6",
+   "values": [
+    "Dr. \"The Machine\" Jesse Green",
+    "CHAINSAWS, CHEESEBURGERS AND ROCK N' ROLL- LIVE!",
+    "$500.00"
+   ]
+  },
+  {
+   "label": "7",
+   "values": [
+    "Clear Path for Veterans New England",
+    "Photography for Beginners",
+    "$500.00"
+   ]
+  },
+  {
+   "label": "8",
+   "values": [
+    "Steven Hurlbut",
+    "Jumpin' Juba concert at Lunenburg COA",
+    "$325.00"
+   ]
+  },
+  {
+   "label": "9",
+   "values": [
+    "Brianne Carter",
+    "Expressive Arts Therapy",
+    "$500.00"
+   ]
+  },
+  {
+   "label": "10",
+   "values": [
+    "Rebecca Wright",
+    "Regional Exhibition of Art and Craft",
+    "$400.00"
+   ]
+  },
+  {
+   "label": "11",
+   "values": [
+    "Lynn Protasowicki",
+    "Open Door Connections",
+    "$300.00"
+   ]
+  },
+  {
+   "label": "12",
+   "values": [
+    "Debra Laffond (Library)",
+    "Curious Creatures",
+    "$350.00"
+   ]
+  },
+  {
+   "label": "13",
+   "values": [
+    "Debra Laffond (Library)",
+    "\"Spectacular Science Show\" with Kosmic Kelly",
+    "$250.00"
+   ]
+  },
+  {
+   "label": "14",
+   "values": [
+    "Rondae Drafts",
+    "Hip Hop Dance Chair Exercise for Seniors!",
+    "$280.00"
+   ]
+  },
+  {
+   "label": "15",
+   "values": [
+    "Winchendon Music Festival, Inc.",
+    "Winchendon Music Festival",
+    "$500.00"
+   ]
+  }
+ ],
+ "proved": "none — the page prints no total or grand-total line and states no identity for these awards, so nothing was checked against a stated sum",
+ "note": "The header row reads clearly: \"Organization/Person\" (x≈0.19–0.22), \"Project\" (x≈0.38–0.55), \"Amount\" (x≈0.78) — all three names taken directly from the printed header boxes. One stray OCR box, \"56\" at y=0.489/x=0.042, is a page-footer number, not part of the table, and was excluded. All 15 award rows were placeable by nearest-column-centre with no ambiguity.",
+ "table": "CULTURAL COUNCIL FUNDING AWARDS"
+}

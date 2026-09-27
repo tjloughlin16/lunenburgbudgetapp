@@ -1,0 +1,162 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2025-08-20",
+ "video_id": "LsGmMsNrlQM",
+ "video_url": "https://www.youtube.com/watch?v=LsGmMsNrlQM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2025-08-20-LsGmMsNrlQM.json",
+  "sha256": "b14767f6537dd804cd6b9a74119e38b5be0361ffe4c10701e49f85f28509e5fc",
+  "caption_lines": 19,
+  "segments": 149
+ },
+ "recording": {
+  "duration_s": 406,
+  "duration": "0:06",
+  "spoken_chars": 4222,
+  "words_approx": 703
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08202025-7357",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-08-20-agenda-7357.txt",
+   "path": "sources/meetings/planning-board/2025-08-20-agenda-7357.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08202025-7357",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-08-20-minutes-7357.txt",
+   "path": "sources/meetings/planning-board/2025-08-20-minutes-7357.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T12:40:24Z",
+  "cost_usd": 0.19864600000000002
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Tim",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Amanda",
+    "role": "member"
+   }
+  ],
+  "budget_items": [],
+  "confidence": "high",
+  "decisions": [
+   {
+    "t": 182,
+    "decision": "If a board member later finds an error in executive-session minutes, the board will vote to re-enter executive session to discuss the error rather than raise it publicly."
+   }
+  ],
+  "headline": "Planning Board voted to release its March 24 executive session minutes to the public.",
+  "not_audible": [
+   "The chair's name is never stated for the record.",
+   "Whether any other board members were absent, or the board's full membership, is not established from the roll calls (only Tim, Amanda and the chair are heard voting)."
+  ],
+  "public_comment": [],
+  "summary": "This was a short, virtual-only special meeting of the Lunenburg Planning Board held solely to review and vote on releasing minutes from its March 24th executive session. The board found no need for redaction or further executive session and voted unanimously to release the minutes, then adjourned after about seven minutes with no public in attendance.",
+  "tags": [
+   "executive-session",
+   "planning-and-zoning",
+   "policy"
+  ],
+  "topics": [
+   {
+    "t_start": 7,
+    "t_end": 51,
+    "topic": "Call to order and public comment (none present)",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 51,
+    "t_end": 306,
+    "topic": "Approval and release of March 24th executive session minutes, including explanation of the release/redaction/no-release process",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 306,
+    "t_end": 350,
+    "topic": "Agenda review: upcoming meetings August 25th and September 8th at town hall; further call for public and board comment",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 350,
+    "t_end": 406,
+    "topic": "Closing remarks and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "transfers": [],
+  "votes": [
+   {
+    "t": 285,
+    "motion": "Motion to approve and release the March 24th executive session minutes",
+    "moved_by": "not audible",
+    "outcome": "passed (roll call: Tim - I, Amanda - I, chair - I)",
+    "procedural": true
+   },
+   {
+    "t": 370,
+    "motion": "Motion to close (adjourn) the meeting",
+    "moved_by": "not audible",
+    "outcome": "passed (roll call: Tim - I, Amanda - I, chair - I)",
+    "procedural": true
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Planning Board voted unanimously to release its March 24 executive session minutes without redaction.",
+    "t": 182
+   },
+   {
+    "line": "The board found no error or sensitive content requiring further executive session before releasing them.",
+    "t": 182
+   },
+   {
+    "line": "Board members agreed that any future error found in released executive-session minutes would be handled by voting to re-enter executive session, not raised publicly.",
+    "t": 182
+   },
+   {
+    "line": "The meeting was virtual-only, drew no public attendance or comment, and lasted about seven minutes.",
+    "t": 7
+   }
+  ],
+  "why_it_matters": [
+   "This makes a previously closed-door Planning Board discussion from March 24 part of the public record, which residents can now request or review.",
+   "The vote itself sets no budget, policy or project outcome -- it only governs disclosure of past closed-session discussion."
+  ],
+  "watch_next": [
+   "The released March 24 executive session minutes, once posted",
+   "Planning Board meetings scheduled for August 25 and September 8 at town hall"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T12:40:35Z",
+   "cost_usd": 0.1807
+  }
+ }
+}

@@ -1,0 +1,701 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "stormwater-task-force",
+ "board": "Stormwater Task Force",
+ "video_title": "Stormwater Task Force",
+ "meeting_date": "2026-02-19",
+ "video_id": "AJ_D9dIdV_0",
+ "video_url": "https://www.youtube.com/watch?v=AJ_D9dIdV_0",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/stormwater-task-force/2026-02-19-AJ_D9dIdV_0.json",
+  "sha256": "1a93bd8f965b9d4d7baf0de195409c1eb8bbb9f6c9e1dc7820f7f50ec9e6517c",
+  "caption_lines": 427,
+  "segments": 3981
+ },
+ "recording": {
+  "duration_s": 9099,
+  "duration": "2:31",
+  "spoken_chars": 113210,
+  "words_approx": 18868
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02192026-7655",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/stormwater-task-force/2026-02-19-agenda-7655.txt",
+   "path": "sources/meetings/stormwater-task-force/2026-02-19-agenda-7655.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T11:09:35Z",
+  "cost_usd": 0.48945800000000006
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "unidentified chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "John",
+    "role": "task force member"
+   },
+   {
+    "name_as_heard": "Bill",
+    "role": "task force member / DPW-related presenter"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "task force member"
+   },
+   {
+    "name_as_heard": "Jenny",
+    "role": "task force member"
+   },
+   {
+    "name_as_heard": "Jesice",
+    "role": "engineer / presenter for March 5th session",
+    "remote": false
+   }
+  ],
+  "public_comment": [],
+  "headline": "Task force preps stormwater fee bylaw and March 5 info session; still undecided on override size, engineer hire",
+  "summary": "The Stormwater Task Force reviewed how recent FinCom and Select Board meetings went, and spent most of the meeting stress-testing whether to hire an in-house engineer/admin versus outsourcing billing and inspections to keep overhead down. Members worked through sample commercial-property fee calculations, a town-budget-versus-utility cost comparison, and logistics for a March 5th public information session ahead of the town meeting where the stormwater bylaw is the only article; no substantive votes were taken, only routine approval of minutes and adjournment.",
+  "confidence": "moderate",
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "economic-development",
+   "fees",
+   "health-insurance",
+   "housing",
+   "override",
+   "policy",
+   "roads-and-dpw",
+   "staffing",
+   "tax-rate",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 9014,
+    "motion": "Approve the minutes from January 8th (and possibly 29th)",
+    "moved_by": "",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 9034,
+    "motion": "Adjourn the meeting",
+    "moved_by": "",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 116,
+    "topic": "Overhead share of proposed stormwater budget",
+    "what_was_said": "FinCom flagged the overhead portion of the initial proposed budget as too large and pushed to outsource work to reduce it.",
+    "figures_as_heard": [
+     "30%"
+    ]
+   },
+   {
+    "t": 616,
+    "topic": "Project manager/engineer line vs. outsourcing",
+    "what_was_said": "Group discussed replacing the project manager/engineer position with an outsourced percentage of the sewer business manager's role or a consultant, debating what share of salary that would be.",
+    "figures_as_heard": [
+     "85,000",
+     "8500",
+     "10%"
+    ]
+   },
+   {
+    "t": 656,
+    "topic": "Entry-level engineer salary comparison",
+    "what_was_said": "Members compared the proposed engineer salary to what entry-level civil engineers are actually paid, defending the estimate as reasonable.",
+    "figures_as_heard": [
+     "85K",
+     "less than 100k"
+    ]
+   },
+   {
+    "t": 949,
+    "topic": "Sewer business manager taking on stormwater billing",
+    "what_was_said": "Idea floated that the sewer business manager could absorb stormwater billing for a percentage of his salary/time, since he already runs Munis billing four times a year.",
+    "figures_as_heard": [
+     "10, 15, 20%"
+    ]
+   },
+   {
+    "t": 1115,
+    "topic": "UniPay online payment fee",
+    "what_was_said": "Members looked up their own UniPay transactions to estimate what a per-payment fee would cost the town if used for stormwater billing.",
+    "figures_as_heard": [
+     "50 cents",
+     "27.50",
+     "2750"
+    ]
+   },
+   {
+    "t": 1412,
+    "topic": "Enterprise fund subsidy for office space/equipment",
+    "what_was_said": "It was noted the town currently subsidizes enterprise funds for office space and equipment like computers, and stormwater would only owe a fraction of that.",
+    "figures_as_heard": [
+     "$6,000",
+     "3,000",
+     "15%"
+    ]
+   },
+   {
+    "t": 1622,
+    "topic": "Average single-family home stormwater share",
+    "what_was_said": "Members each calculated, using different methods (DLS override calculator vs. their own tax-rate math), what an average single-family home currently contributes toward the stormwater line.",
+    "figures_as_heard": [
+     "$27",
+     "33",
+     "29",
+     "30",
+     "517,296",
+     "$14"
+    ]
+   },
+   {
+    "t": 1705,
+    "topic": "Override calculator projection for added funding",
+    "what_was_said": "Using the Prop 2½ override calculator, members estimated how much an average single-family tax bill would rise if the added stormwater money were structured as an override.",
+    "figures_as_heard": [
+     "340,000",
+     "$72",
+     "55"
+    ]
+   },
+   {
+    "t": 2319,
+    "topic": "Value of stormwater infrastructure",
+    "what_was_said": "For public messaging, a member argued the town's stormwater infrastructure is worth roughly as much as the middle-high school, to help residents grasp its scale.",
+    "figures_as_heard": [
+     "$50 million"
+    ]
+   },
+   {
+    "t": 2422,
+    "topic": "Chapter 90 exclusion from stormwater funding",
+    "what_was_said": "The group agreed to clarify publicly that the money being requested is not eligible for Chapter 90 reimbursement, since Chapter 90 doesn't cover maintenance.",
+    "figures_as_heard": [
+     "$110,000"
+    ]
+   },
+   {
+    "t": 3336,
+    "topic": "Sample commercial property contribution (Walmart parcel)",
+    "what_was_said": "A spot-check showed the Walmart-anchored parcel's current tax-based contribution to stormwater versus what a tiered utility fee might collect from it.",
+    "figures_as_heard": [
+     "148,591",
+     "0.00357",
+     "$530",
+     "$10,000"
+    ]
+   },
+   {
+    "t": 3506,
+    "topic": "Equivalent Residential Unit (ERU) rate",
+    "what_was_said": "The task force cited a consultant-provided ERU value and noted 700 parcels are being analyzed by Weston & Sampson to assign ERUs for large properties.",
+    "figures_as_heard": [
+     "$4,200",
+     "700 parcels",
+     "$10,000 per year",
+     "$30,000"
+    ]
+   },
+   {
+    "t": 3736,
+    "topic": "UNIL (utility company) contribution comparison",
+    "what_was_said": "Members compared what the utility company currently pays toward stormwater via property tax against what its share would be if distributed under the new fee.",
+    "figures_as_heard": [
+     "$27 a year",
+     "$217 a year",
+     "$60,000 and $9.99"
+    ]
+   },
+   {
+    "t": 3901,
+    "topic": "Other commercial parcel examples",
+    "what_was_said": "Several other commercial properties (a church, a lumber yard, a fitness club) were checked to see how little they currently contribute compared to their impervious footprint.",
+    "figures_as_heard": [
+     "0",
+     "64 a year",
+     "157 a year"
+    ]
+   },
+   {
+    "t": 4006,
+    "topic": "Emerald Place / Carousel Lane apartment complex assessment",
+    "what_was_said": "The group examined how a 150-unit apartment complex is assessed and discussed whether to bill it as one integrated property.",
+    "figures_as_heard": [
+     "547,900",
+     "549,000",
+     "200 to 300,000"
+    ]
+   },
+   {
+    "t": 4528,
+    "topic": "Line-item budget scenario (town budget vs. utility)",
+    "what_was_said": "A chart compared the current town-budget line for stormwater against a proposed scenario that strips out the engineer/vendor costs, showing the resulting per-resident change either way.",
+    "figures_as_heard": [
+     "125,000",
+     "119,000",
+     "$33",
+     "336,650",
+     "340",
+     "319800",
+     "88",
+     "55"
+    ]
+   },
+   {
+    "t": 4716,
+    "topic": "Utility scenario resident vs. commercial burden split",
+    "what_was_said": "Under a stormwater utility funded by ERUs, the commercial/industrial/other share was estimated to cover a portion of costs, shifting the residential share down from the town-budget scenario.",
+    "figures_as_heard": [
+     "40%",
+     "35",
+     "323",
+     "95%",
+     "65%"
+    ]
+   },
+   {
+    "t": 5106,
+    "topic": "Annual consulting cost from CI (current engineering contractor)",
+    "what_was_said": "Members tried to total what the town currently pays CI for consulting work, to compare against hiring an in-house engineer.",
+    "figures_as_heard": [
+     "25,000"
+    ]
+   },
+   {
+    "t": 5296,
+    "topic": "In-house engineer full cost with benefits",
+    "what_was_said": "The group estimated the fully-loaded cost of an in-house engineer including benefits, to weigh against outsourcing.",
+    "figures_as_heard": [
+     "over a hundred grand",
+     "76,000",
+     "25,000"
+    ]
+   },
+   {
+    "t": 5398,
+    "topic": "CI/MS4 compliance line items",
+    "what_was_said": "Specific outsourced tasks and their costs were pulled from a CI contract to see what could move in-house, including a report, BMP design, and plan updates.",
+    "figures_as_heard": [
+     "3500",
+     "18,000",
+     "50,000",
+     "12,000"
+    ]
+   },
+   {
+    "t": 5698,
+    "topic": "Weston & Sampson contract precedent",
+    "what_was_said": "Members noted town meeting had approved paying an engineering firm despite not unanimous support, as a precedent for getting the stormwater bylaw approved.",
+    "figures_as_heard": [
+     "$50,000"
+    ]
+   },
+   {
+    "t": 5824,
+    "topic": "Paraprofessional salary and health benefit comparison",
+    "what_was_said": "As an aside on the cost of benefits driving hiring reluctance, a school paraprofessional's salary was compared to the cost of a family health insurance plan, which reportedly exceeded the salary itself.",
+    "figures_as_heard": [
+     "20 some thousand",
+     "$30,000",
+     "$31,000"
+    ]
+   },
+   {
+    "t": 6041,
+    "topic": "Restoration of a budget line",
+    "what_was_said": "A discussion referenced a partial, not full, restoration of an unspecified budget line, with several unclear figures exchanged.",
+    "figures_as_heard": [
+     "300 and something thousand",
+     "79",
+     "650",
+     "27"
+    ]
+   },
+   {
+    "t": 6041,
+    "topic": "Sewer bill late fee and minimum charge",
+    "what_was_said": "Members noted the sewer enterprise fund's late-payment demand-notice fee and its minimum annual charge, as a model for stormwater billing enforcement.",
+    "figures_as_heard": [
+     "$10",
+     "133"
+    ]
+   },
+   {
+    "t": 6238,
+    "topic": "Prior Proposition 2½ override history",
+    "what_was_said": "A past override for the schools was recalled, including how much was raised and that a portion was later returned as surplus.",
+    "figures_as_heard": [
+     "$938,136",
+     "60%"
+    ]
+   },
+   {
+    "t": 6338,
+    "topic": "Possible inclusion of stormwater in a town-wide override",
+    "what_was_said": "The group debated whether to fold stormwater utility funding into a broader Prop 2½ override and what percentage of that override stormwater should represent, worried about it looking disproportionate.",
+    "figures_as_heard": [
+     "125,000",
+     "210,000",
+     "340,000",
+     "250,000",
+     "50%",
+     "30%"
+    ]
+   },
+   {
+    "t": 6504,
+    "topic": "FY26 levy limit and 2.5% increase",
+    "what_was_said": "A member cited the FY26 levy limit and what a 2.5% override increase would amount to, to gauge how large a stormwater ask would be relative to it.",
+    "figures_as_heard": [
+     "32.9 million",
+     "822,000"
+    ]
+   },
+   {
+    "t": 7103,
+    "topic": "Salt cost versus plowing cost",
+    "what_was_said": "It was noted that road salt is nearly as large a winter expense as plowing itself, relevant to whether stormwater-related sand reduction saves real money.",
+    "figures_as_heard": [
+     "almost equal"
+    ]
+   },
+   {
+    "t": 8793,
+    "topic": "Water district building's exemption from the fee",
+    "what_was_said": "Members checked the property-use code for the water district building to determine whether it would be billed under the stormwater fee, concluding it is likely a tax-exempt municipal/utility authority.",
+    "figures_as_heard": [
+     "9711",
+     "971"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 719,
+    "decision": "Bring the stormwater proposal to the sewer commission's next meeting (in about three weeks) to ask whether the sewer business manager can also handle stormwater billing and whether the sewer commission will also serve as the stormwater commission."
+   },
+   {
+    "t": 2199,
+    "decision": "Confirmed the bylaw draft should say the stormwater commission (not the select board) approves fee changes, correcting an earlier draft."
+   },
+   {
+    "t": 2599,
+    "decision": "Jesice will lead the presentation at the March 5th public information session, with the task force backing her up on technical points."
+   },
+   {
+    "t": 8090,
+    "decision": "The public information session time was corrected to 7:15–8:30 PM on Thursday, March 5th, following another group's earlier session in the same space."
+   },
+   {
+    "t": 8192,
+    "decision": "This March 5th session will be the only public info session held before this town meeting, since the bylaw is the only article going forward."
+   },
+   {
+    "t": 8880,
+    "decision": "Release Cara's flyer version first and hold Teresa's version as a secondary option, to be revisited later."
+   },
+   {
+    "t": 8940,
+    "decision": "Next task force meeting set for Tuesday, February 24th, focused on finalizing the bylaw ahead of the public hearing."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 11,
+    "t_end": 96,
+    "topic": "Recap of recent FinCom and Select Board meetings on the stormwater proposal",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 96,
+    "t_end": 344,
+    "topic": "Cost-reduction ideas: outsourcing fieldwork/engineering and having the sewer business manager handle billing",
+    "resolution": "discussed only",
+    "tags": [
+     "budget",
+     "staffing",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 344,
+    "t_end": 719,
+    "topic": "UniPay/autopay fees and detailed review of proposed personnel/engineering budget lines",
+    "resolution": "discussed only",
+    "tags": [
+     "fees",
+     "budget",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 719,
+    "t_end": 1052,
+    "topic": "Plan to ask sewer commission to take on stormwater billing and commission duties; inspection/credit process",
+    "resolution": "referred",
+    "tags": [
+     "budget",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1052,
+    "t_end": 1519,
+    "topic": "Further UniPay fee investigation and enterprise fund office-space/equipment subsidy",
+    "resolution": "discussed only",
+    "tags": [
+     "fees",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 1519,
+    "t_end": 2216,
+    "topic": "Comparison to other towns, average single-family cost estimates, and review of bylaw fee-approval process",
+    "resolution": "discussed only",
+    "tags": [
+     "override",
+     "tax-rate",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2216,
+    "t_end": 2493,
+    "topic": "Building an FAQ; infrastructure-value messaging; clarifying Chapter 90 does not cover this funding",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2493,
+    "t_end": 3038,
+    "topic": "Reviewing a member's presentation comparing town-budget vs. utility funding, and ERU/tier billing structure options",
+    "resolution": "discussed only",
+    "tags": [
+     "budget",
+     "fees",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 3038,
+    "t_end": 3736,
+    "topic": "Sample commercial property fee calculations (Walmart parcel, ERU rate, utility company) to gauge fairness/business impact",
+    "resolution": "discussed only",
+    "tags": [
+     "fees",
+     "tax-rate",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 3736,
+    "t_end": 4244,
+    "topic": "More commercial property spot-checks (church, lumber yard, fitness club, Carousel Lane apartments) for fee modeling",
+    "resolution": "discussed only",
+    "tags": [
+     "fees",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 4244,
+    "t_end": 4980,
+    "topic": "Chart review: distribution of costs under a town-budget line item versus a stormwater utility, and abatement concept",
+    "resolution": "discussed only",
+    "tags": [
+     "budget",
+     "fees",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 4980,
+    "t_end": 5723,
+    "topic": "Business-friendliness debate and cost-benefit of hiring an in-house engineer versus outsourcing to CI/Weston & Sampson",
+    "resolution": "discussed only",
+    "tags": [
+     "budget",
+     "staffing",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 5723,
+    "t_end": 6041,
+    "topic": "Messaging strategy for FinCom/residents; benefits costs and paraprofessional salary aside",
+    "resolution": "discussed only",
+    "tags": [
+     "budget",
+     "health-insurance",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 6041,
+    "t_end": 6238,
+    "topic": "Enterprise fund billing enforcement mechanics (late fees, liens, tax rollover) and past override recalled",
+    "resolution": "informational",
+    "tags": [
+     "fees",
+     "override"
+    ]
+   },
+   {
+    "t_start": 6238,
+    "t_end": 6525,
+    "topic": "Whether to fold stormwater utility funding into a broader Prop 2½ override for this town meeting",
+    "resolution": "no resolution",
+    "tags": [
+     "override",
+     "town-meeting",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 6525,
+    "t_end": 7228,
+    "topic": "Bylaw abatement-process item and unrelated DPW winter operations/salt-treatment discussion",
+    "resolution": "discussed only",
+    "tags": [
+     "policy",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 7228,
+    "t_end": 7900,
+    "topic": "Business-friendliness debate continued; town's own responsibility for stormwater on its properties; personal flooding anecdotes",
+    "resolution": "discussed only",
+    "tags": [
+     "economic-development",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 7900,
+    "t_end": 8090,
+    "topic": "Litter/illegal dumping as a stormwater issue; sharing task force slides with Jerice ahead of March 5th",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 8090,
+    "t_end": 8543,
+    "topic": "Logistics for the March 5th public information session: time, format, flyer, Zoom",
+    "resolution": "voted informally/agreed",
+    "tags": [
+     "policy",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 8543,
+    "t_end": 8961,
+    "topic": "Flyer posting locations under the town warrant, fund/fee bylaw language edits, session content overview, and upcoming meeting schedule",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 8961,
+    "t_end": 9014,
+    "topic": "Whether the water district building is exempt from the proposed stormwater fee",
+    "resolution": "no resolution",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 9014,
+    "t_end": 9055,
+    "topic": "Approval of minutes and adjournment",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 9055,
+    "t_end": 9095,
+    "topic": "Off-topic note on fire department shift schedule change",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Several numeric figures around t514 ('39'), t6014-6041 ('79', '650 this year', '27'), and t6338-6525 (exact override percentage and dollar figures) are garbled or ambiguous in the captions.",
+   "Speaker identities are frequently unclear; many exchanges are cross-talk with no name given.",
+   "The exact assessed value figure for Emerald Place/Carousel Lane (547,900 vs 549,000) is inconsistent between two mentions.",
+   "The precise outcome of the vote on minutes (whether January 29th minutes were also approved at that motion) is unclear/contradictory in the captions."
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The task force will ask the sewer commission to take on stormwater billing and possibly serve as the stormwater commission, to avoid hiring a dedicated engineer or admin.",
+    "t": 719
+   },
+   {
+    "line": "The bylaw draft was corrected so the stormwater commission, not the select board, approves future fee changes.",
+    "t": 2199
+   },
+   {
+    "line": "A public information session on the stormwater bylaw is set for 7:15-8:30 PM Thursday, March 5th, the only such session before town meeting.",
+    "t": 8090
+   },
+   {
+    "line": "Members ran sample fee calculations for commercial properties and compared funding the work through the town budget versus a utility fee, without settling on either approach or on hiring in-house staff.",
+    "t": 3038
+   },
+   {
+    "line": "The next task force meeting is set for Tuesday, February 24th, to finalize the bylaw before a public hearing.",
+    "t": 8940
+   }
+  ],
+  "why_it_matters": [
+   "The stormwater bylaw is the only article going to this town meeting, so how it funds fee billing and inspections -- through the sewer department or new staff -- will shape what residents and businesses are asked to pay.",
+   "Whether the fee is structured as a utility charge or folded into a Prop 2½ override changes who approves future rate increases and how it shows up on a resident's tax bill.",
+   "The March 5th session is the only public briefing before the vote, so residents wanting to weigh in on the bylaw or its fee structure have one scheduled chance to do so."
+  ],
+  "watch_next": [
+   "March 5, 7:15-8:30 PM: public information session on the stormwater bylaw",
+   "February 24 task force meeting: finalizing bylaw language ahead of the public hearing"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T11:10:22Z",
+   "cost_usd": 0.2135162
+  }
+ }
+}

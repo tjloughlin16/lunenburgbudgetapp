@@ -1,0 +1,139 @@
+{
+ "fy": 2013,
+ "page": 12,
+ "model": "claude-sonnet-5",
+ "boxes": 110,
+ "read_by": "scripts/benchmark_ingest.py",
+ "at": "2026-09-27T18:47:46Z",
+ "cost_usd": 0.2472604,
+ "columns": [
+  "DEPARTMENT",
+  "AMOUNT",
+  "ITEM"
+ ],
+ "rows": [
+  {
+   "label": "Chimney Repair, Town Hall",
+   "values": [
+    "Historical Commission",
+    "$ 18,500",
+    "Chimney Repair, Town Hall"
+   ]
+  },
+  {
+   "label": "Utility Vehicle, Marked Cruiser",
+   "values": [
+    "Police Department",
+    "$ 45,000",
+    "Utility Vehicle, Marked Cruiser"
+   ]
+  },
+  {
+   "label": "Pistols and Holsters, 40 sets",
+   "values": [
+    "Police Department",
+    "$ 20,583",
+    "Pistols and Holsters, 40 sets"
+   ]
+  },
+  {
+   "label": "Demolition of Buildings - Cemetery & Parks",
+   "values": [
+    "Department of Public Works",
+    "$ 15,000",
+    "Demolition of Buildings - Cemetery & Parks"
+   ]
+  },
+  {
+   "label": "HVAC Controls, District-wide",
+   "values": [
+    "School Department",
+    "$ 41,400",
+    "[HV]AC Controls, District-wide"
+   ]
+  },
+  {
+   "label": "Technology, Mobile Media Cart",
+   "values": [
+    "School Department",
+    "$ 55,000",
+    "Technology, Mobile Media Cart"
+   ]
+  },
+  {
+   "label": "(item illegible)",
+   "values": [
+    "School Department",
+    "$ 16,000",
+    ""
+   ]
+  },
+  {
+   "label": "(item illegible)",
+   "values": [
+    "School Department",
+    "$ 15,000",
+    ""
+   ]
+  },
+  {
+   "label": "(item illegible)",
+   "values": [
+    "Technology",
+    "$ 45,000",
+    ""
+   ]
+  },
+  {
+   "label": "(item illegible)",
+   "values": [
+    "Fire Department",
+    "$215,000",
+    ""
+   ]
+  },
+  {
+   "label": "(item illegible)",
+   "values": [
+    "Fire Department",
+    "$ 37,000",
+    ""
+   ]
+  },
+  {
+   "label": "Unmarked Cruiser",
+   "values": [
+    "Police Department",
+    "$ 40,000",
+    "Unmarked Cruiser"
+   ]
+  },
+  {
+   "label": "Intersection Improvements, Townsend Harbor & Mulpus Road",
+   "values": [
+    "Department of Public Works",
+    "$ 30,000",
+    "Intersection Improvements, Townsend Harbor & Mulpus Road"
+   ]
+  },
+  {
+   "label": "Demolition of Buildings, Cemetery, Parks & Town-owned building on Flat Hill Road",
+   "values": [
+    "Department of Public Works",
+    "$ 19,000",
+    "Demolition of Buildings, Cemetery, Parks & Town-owned building on Flat Hill Road"
+   ]
+  },
+  {
+   "label": "Exterior Improvements, refasten shingles, caulking & painting",
+   "values": [
+    "Library",
+    "$ 40,000",
+    "Exterior Improvements, refasten shingles, caulking & painting"
+   ]
+  }
+ ],
+ "proved": "Page states two totals: the FY14 Capital Plan is \"$523,483\" and the Town Manager's additional recommendations total \"$129,000.\" Checked: the first 11 rows (Historical Commission through the second Fire Department line) sum to exactly $523,483 — held. The last 4 rows (Unmarked Cruiser through Library exterior work) sum to exactly $129,000 — held.",
+ "table": "FY14 Capital Improvement Plan (Capital Planning)",
+ "note": "Header row prints DEPARTMENT (leftmost), AMOUNT, ITEM (rightmost) — used that left-to-right order for columns. Three rows (School Dept $16,000; School Dept $15,000; Technology $45,000) have a DEPARTMENT and AMOUNT box but no legible ITEM text in the OCR dump, and two Fire Department rows ($215,000, $37,000) likewise have no legible ITEM text — left blank rather than guessed, though the totals still tie exactly, so no figure is misplaced. Numerous stray OCR fragments at the far right edge (e.g. \"Th\", \"Ma\", \"Ca\", \"Chi\", \"Joa\", \"Dar\", \"libri\") sit outside any column (x>0.9) and read as bleed-through from an adjacent page rather than table content; they were excluded. \"IVAC Controls\" is almost certainly a misread of \"HVAC Controls\" but is transcribed with the correction bracketed rather than silently fixed."
+}

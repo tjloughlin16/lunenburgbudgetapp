@@ -374,7 +374,13 @@ def read_pages():
     out = collections.defaultdict(set)
     for f in sorted(glob.glob(os.path.join(DATA, '*.csv'))):
         name = os.path.basename(f)[:-4]
-        if name.replace('-', '_') in CATALOGUES or name == 'annual-report-pages':
+        # A LEDGER ABOUT READING IS NOT A READING. `ingest-benchmark.csv` records what it
+        # cost to attempt a page and carries `fy` and `page`, so the map counted the
+        # attempt as the result -- including FY2017 p149, which returned no rows and
+        # refused. That moves the number without moving the archive, which is the one
+        # thing this count must never do.
+        if name.replace('-', '_') in CATALOGUES or name in (
+                'annual-report-pages', 'ingest-benchmark'):
             continue
         try:
             with open(f, encoding='utf-8', errors='replace') as fh:

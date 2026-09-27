@@ -577,7 +577,7 @@ def streams():
                   io='in: the town’s YouTube channel &rarr; out: a timed transcript — a finding aid, never a source',
                   done=len(have), todo=todo,
                   blocked=len(dead), blocked_why='captions disabled by the publisher',
-                  cost='no model, unattended \u2014 throttled by YouTube',
+                  cost='no model, runs by itself \u2014 throttled by YouTube',
                   last=ago(newest([os.path.join(DATA, 'youtube-transcripts', '*', '*')])),
                   note='%d boards with captions held; %s more uploads carry no board and date, '
                        'so they are not a meeting backlog' % (len(by_board), '{:,}'.format(unclassified)),
@@ -593,7 +593,7 @@ def streams():
     s.append(dict(key='ocr', name='OCR of scanned minutes',
                   io='in: minutes the town posted as page images &rarr; out: text a search and the vote reader can read',
                   done=len(ocr), todo=left,
-                  blocked=0, blocked_why='', cost='no model, unattended \u2014 macOS Vision, local',
+                  blocked=0, blocked_why='', cost='no model, runs by itself \u2014 macOS Vision, local',
                   last=ago(newest([os.path.join(DATA, 'ocr-minutes.csv')])),
                   note='a scan is invisible to search and to the vote reader until this runs',
                   pending=[]))
@@ -619,7 +619,7 @@ def streams():
                   io='in: the minutes the town published &rarr; out: each vote, with the town’s words quoted verbatim',
                   done=len(glob.glob(os.path.join(DATA, 'official-votes', '*', '*.json'))),
                   todo=sum(p['n'] for p in vp), blocked=0, blocked_why='',
-                  cost='~0.03% of the week each, unattended',
+                  cost='~0.03% of the week each, runs by itself',
                   last=ago(newest([os.path.join(DATA, 'official-votes', '*', '*.json')])), note='every vote carries a quote checked verbatim against the minutes',
                   pending=vp))
     mp = register_pending(lambda r: bool(r.get('transcript_paths')), 'recording-minutes')
@@ -628,7 +628,7 @@ def streams():
                      'votes, transfers, budget items, topics, public comment',
                   done=len(glob.glob(os.path.join(DATA, 'recording-minutes', '*', '*.json'))),
                   todo=sum(p['n'] for p in mp), blocked=0, blocked_why='',
-                  cost='~0.09% of the week each, unattended',
+                  cost='~0.09% of the week each, runs by itself',
                   last=ago(newest([os.path.join(DATA, 'recording-minutes', '*', '*.json')])), note='written from our captions; two derived layers from the meeting',
                   pending=mp))
     # THE ANNUAL REPORTS. Free, ours, and the biggest pile in the project.
@@ -636,7 +636,7 @@ def streams():
     s.append(dict(key='extraction', name='Reconciling the annual-report tables',
                   io='in: sixteen annual town reports, read page by page &rarr; out: rows tied to a total the report itself prints',
                   done=ex_done, todo=sum(p['n'] for p in ex_pend),
-                  blocked=0, blocked_why='', cost='no model \u2014 but NEEDS A SESSION, which is the expensive kind',
+                  blocked=0, blocked_why='', cost='~0.12% of the week a page if run on its own; far more if done in a conversation',
                   last=ago(newest([os.path.join(DATA, 'lunenburg.db')])),
                   note='a row that does not reconcile is read, not proven; nothing may be '
                        'aggregated across the two',
@@ -651,7 +651,7 @@ def streams():
                       io='in: 15 annual town reports, page by page &rarr; out: the tables '
                          'nobody has extracted yet, grouped by subject',
                       done=ar_done, todo=sum(p['n'] for p in ar_todo),
-                      blocked=0, blocked_why='', cost='no model \u2014 but NEEDS A SESSION, which is the expensive kind',
+                      blocked=0, blocked_why='', cost='~0.12% of the week a page if run on its own; far more if done in a conversation',
                       last=ago(newest([os.path.join(DATA, 'annual-report-pages.csv')])),
                       note='a page counts as read when ANY dataset cites it, which says it '
                            'was looked at rather than exhausted; the subject is read off '

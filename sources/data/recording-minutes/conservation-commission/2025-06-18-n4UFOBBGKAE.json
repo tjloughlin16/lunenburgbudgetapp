@@ -1,0 +1,422 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2025-06-18",
+ "video_id": "n4UFOBBGKAE",
+ "video_url": "https://www.youtube.com/watch?v=n4UFOBBGKAE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2025-06-18-n4UFOBBGKAE.json",
+  "sha256": "2ed61ae3948ffb4dff93ef8ac958a498e5cf8849fd080575de419c08a0b80f53",
+  "caption_lines": 146,
+  "segments": 1079
+ },
+ "recording": {
+  "duration_s": 3078,
+  "duration": "0:51",
+  "spoken_chars": 36267,
+  "words_approx": 6044
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06182025-7278",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-06-18-agenda-7278.txt",
+   "path": "sources/meetings/conservation-commission/2025-06-18-agenda-7278.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06182025-7278",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-06-18-minutes-7278.txt",
+   "path": "sources/meetings/conservation-commission/2025-06-18-minutes-7278.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T18:09:18Z",
+  "cost_usd": 0.35943400000000003
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Richard Bersi",
+    "role": "Chair"
+   },
+   {
+    "name_as_heard": "Mary Wilson",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike LaRouche",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jeff Viviano",
+    "role": "member (last meeting; did not seek reappointment)"
+   },
+   {
+    "name_as_heard": "Chris St. Germaine",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Peter Stella",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Teddy",
+    "role": "newly appointed commissioner (not yet participating in votes)"
+   },
+   {
+    "name_as_heard": "Matt",
+    "role": "speaking on behalf of the town"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 321,
+    "speaker_as_heard": "Kevin",
+    "stated_role": "property manager",
+    "topic": "Joined the hearing on behalf of 5 Electric Ave to help the presenter connect."
+   },
+   {
+    "t": 371,
+    "speaker_as_heard": "Kim",
+    "topic": "Presented and answered questions on the 5 Electric Ave stone patio replacement project (access, erosion protection, pavers, drainage)."
+   }
+  ],
+  "tags": [
+   "budget",
+   "fees",
+   "grants",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 1234,
+    "motion": "Negative determination of applicability for 5 Electric Ave (Kenneth Culture) stone patio replacement, with conditions: erosion controls (hay bales/silt fence at 50-ft line), no stone storage within the 50-ft zone, permeable poly sand, contractor's construction description posted to OpenGov.",
+    "outcome": "passed (roll call, all present voted aye; Peter Stella not present)",
+    "procedural": false
+   },
+   {
+    "t": 1340,
+    "motion": "Continue the 67 Island Road (Melissa Canavino) request for determination of applicability to July 9.",
+    "moved_by": "Mike LaRouche",
+    "outcome": "passed (roll call, all aye)",
+    "procedural": false
+   },
+   {
+    "t": 1599,
+    "motion": "Accept Harland's determination for 5 Park Street Terrace (rolled clover seed) that the work did not require a filing.",
+    "moved_by": "Mary Wilson",
+    "outcome": "passed (roll call aye; chair not participating due to a family connection to the applicant)",
+    "procedural": false
+   },
+   {
+    "t": 1871,
+    "motion": "Approve the certificate of compliance for 564 Page Street.",
+    "moved_by": "Mary Wilson",
+    "outcome": "passed (roll call, all aye)",
+    "procedural": false
+   },
+   {
+    "t": 2393,
+    "motion": "Approve $320 payment of MACC membership dues.",
+    "outcome": "passed (roll call aye; Jeff Viviano's vote briefly garbled by connection)",
+    "procedural": false
+   },
+   {
+    "t": 2484,
+    "motion": "Approve $525 for MACC membership dues, amended from the earlier $320 motion to add handbook and admin access.",
+    "moved_by": "Mary Wilson",
+    "outcome": "passed (roll call, all aye)",
+    "procedural": false
+   },
+   {
+    "t": 2980,
+    "motion": "Adjourn the meeting.",
+    "moved_by": "Mike LaRouche",
+    "outcome": "passed (roll call, all aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2373,
+    "topic": "MACC (Mass Association of Conservation Commissioners) annual dues",
+    "what_was_said": "The chair proposed the annual membership payment the town makes for all commissioners, initially moved as one figure.",
+    "figures_as_heard": [
+     "$320"
+    ]
+   },
+   {
+    "t": 2436,
+    "topic": "MACC dues, amended to add administrator access",
+    "what_was_said": "Mary Wilson amended her motion to include access for the admin as well as the commissioners.",
+    "figures_as_heard": [
+     "385"
+    ]
+   },
+   {
+    "t": 2451,
+    "topic": "MACC dues, further amended for handbook and admin",
+    "what_was_said": "The total was built up in steps to cover the handbook and admin access before a final motion.",
+    "figures_as_heard": [
+     "140",
+     "460",
+     "65",
+     "525"
+    ]
+   },
+   {
+    "t": 2183,
+    "topic": "390 Howard Street refiling fee",
+    "what_was_said": "The commission discussed refiling the application without charging the applicant the filing fee again if the case must restart as a clean filing."
+   },
+   {
+    "t": 2506,
+    "topic": "Town grant for parking areas",
+    "what_was_said": "Mary Wilson reported she is applying for reimbursement on a town grant for the parking areas and is waiting on cancelled checks from the treasury office for the consulting engineering firm's payments."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 191,
+    "decision": "Moved the July meeting schedule from the 2nd/16th to the 9th and 23rd to ensure a quorum for a continuation hearing."
+   },
+   {
+    "t": 2117,
+    "decision": "On town counsel's advice, the 390 Howard Street applicant will be told to renotify abutters and the commission will 'recommission' to rule on the application once a quorum exists again; the chair will decide whether to renotify under the existing filing or have the applicant refile as a clean, no-additional-fee filing."
+   },
+   {
+    "t": 3007,
+    "decision": "Confirmed for a departing member that his RDA decision needs no closing process once the permitted work is complete; it simply expires if unused after three years."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 24,
+    "topic": "Meeting setup, host/co-host authorization, start recording",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 24,
+    "t_end": 45,
+    "topic": "Public comment period opened",
+    "resolution": "no comments from the public",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 45,
+    "t_end": 191,
+    "topic": "Commissioners' tributes marking Jeff Viviano's final meeting",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 191,
+    "t_end": 257,
+    "topic": "July meeting schedule change discussed",
+    "resolution": "decided informally",
+    "tags": []
+   },
+   {
+    "t_start": 277,
+    "t_end": 1255,
+    "topic": "Public hearing: 5 Electric Ave (Kenneth Culture) stone patio replacement request for determination of applicability",
+    "resolution": "voted (negative determination with conditions)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1298,
+    "t_end": 1362,
+    "topic": "Continued public hearing: 67 Island Road (Melissa Canavino) patio/stairs/walkway renovation",
+    "resolution": "voted (continued to July 9)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1362,
+    "t_end": 1620,
+    "topic": "Administrative determination: 5 Park Street Terrace clover seeding, ratification of Harland's site determination",
+    "resolution": "voted (ratified)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1620,
+    "t_end": 1871,
+    "topic": "Certificate of compliance: 564 Page Street restoration plantings, Oxbow Associates botanical report",
+    "resolution": "voted (approved)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1871,
+    "t_end": 2053,
+    "topic": "Enforcement status updates: Mass Ave addresses, Fire Road, Howard Street, Meadow Lane, Highland Street",
+    "resolution": "informational, no resolution",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 2053,
+    "t_end": 2269,
+    "topic": "390 Howard Street: loss of quorum and next steps (renotify/recommission or refile)",
+    "resolution": "referred to chair's decision",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2269,
+    "t_end": 2311,
+    "topic": "Old business: peer review process research from other towns",
+    "resolution": "no resolution, ongoing",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2311,
+    "t_end": 2506,
+    "topic": "MACC membership dues discussion and vote",
+    "resolution": "voted (approved at $525)",
+    "tags": [
+     "fees",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2506,
+    "t_end": 2546,
+    "topic": "Grants update: town parking-area grant reimbursement",
+    "resolution": "informational",
+    "tags": [
+     "grants"
+    ]
+   },
+   {
+    "t_start": 2546,
+    "t_end": 2609,
+    "topic": "Hollis Road lease/lawn maintenance update",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2609,
+    "t_end": 2630,
+    "topic": "Butterfly habitat report",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 2630,
+    "t_end": 2695,
+    "topic": "Committee reports: Open Space Committee quorum issues, Stormwater Committee",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2695,
+    "t_end": 2843,
+    "topic": "Welcome to new commissioner Teddy; conflict-of-interest note on 390 Howard Street",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2843,
+    "t_end": 2965,
+    "topic": "Further farewell remarks to Jeff Viviano",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2965,
+    "t_end": 3070,
+    "topic": "Adjournment and closing remarks, RDA closure question answered",
+    "resolution": "voted (adjourned)",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The opening minute of host/co-host authorization is garbled and speakers are not clearly identifiable.",
+   "Jeff Viviano's aye vote in the $320 MACC dues roll call (~t=2393) is partly cut off by a connection issue ('Did I say I? ... Broke up there').",
+   "The figure heard as '6:55' (~t=2413) for per-person MACC access appears to be a caption mis-hearing of a dollar figure.",
+   "The exact addresses '10 Massav', '1168 rear Mass A', and '199 Massav' during enforcement updates are heard only as partial street names with no further detail.",
+   "Who exactly said 'so moved' for the 5 Electric Ave negative determination (~t=1151-1234) is not clearly attributable to one speaker.",
+   "Whether Peter Stella was absent or simply not reachable during the 5 Electric Ave vote is not stated outright, only 'I still don't see' him."
+  ],
+  "confidence": "moderate",
+  "headline": "Losing a quorum member forces the 390 Howard Street wetlands case to be renotified, possibly refiled",
+  "summary": "The Conservation Commission held hearings and administrative reviews for several wetlands filings, approving a negative determination for a restaurant patio, a continuance for another patio project, ratification of a landscaping determination, and a certificate of compliance for restored plantings. Members marked departing commissioner Jeff Viviano's final meeting and welcomed a new commissioner, discussed how to handle the 390 Howard Street case after losing a quorum, and voted to renew MACC membership dues at an amended figure."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Losing a quorum member forced the 390 Howard Street wetlands applicant to renotify abutters, and possibly refile the case, before it can be decided.",
+    "t": 2117
+   },
+   {
+    "line": "The commission approved a negative determination allowing a stone patio replacement at 5 Electric Ave, with erosion-control and posting conditions.",
+    "t": 1234
+   },
+   {
+    "line": "A request for determination at 67 Island Road was continued to July 9, and a certificate of compliance was approved for restored plantings at 564 Page Street.",
+    "t": 1340
+   },
+   {
+    "line": "Members raised the annual MACC membership dues payment, amending the motion twice to add handbook and administrator access before final approval.",
+    "t": 2484
+   },
+   {
+    "line": "The July meeting schedule was shifted from the 2nd and 16th to the 9th and 23rd to ensure a quorum for the continued hearing.",
+    "t": 191
+   }
+  ],
+  "why_it_matters": [
+   "A wetlands applicant at 390 Howard Street may face renotification or a full refiling because the board lost a quorum member, which can add delay and possibly cost depending on the chair's decision.",
+   "Conditions attached to the 5 Electric Ave patio approval and the closeout at 564 Page Street show how the commission manages construction near protected wetland buffers.",
+   "The rescheduled July meeting dates matter for anyone tracking the continued 67 Island Road case or planning to attend or comment."
+  ],
+  "watch_next": [
+   "July 9 meeting: continuation of the 67 Island Road request for determination",
+   "Chair's decision on whether 390 Howard Street is renotified under its existing filing or refiled"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T18:09:36Z",
+   "cost_usd": 0.19877
+  }
+ }
+}

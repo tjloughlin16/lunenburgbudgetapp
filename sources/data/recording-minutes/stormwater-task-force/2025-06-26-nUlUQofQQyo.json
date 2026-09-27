@@ -1,0 +1,442 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "stormwater-task-force",
+ "board": "Stormwater Task Force",
+ "video_title": "Stormwater Task Force",
+ "meeting_date": "2025-06-26",
+ "video_id": "nUlUQofQQyo",
+ "video_url": "https://www.youtube.com/watch?v=nUlUQofQQyo",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/stormwater-task-force/2025-06-26-nUlUQofQQyo.json",
+  "sha256": "61d5028ce5097ce856a9dc3736e6147605705554f677107b31de9fe76148fac1",
+  "caption_lines": 213,
+  "segments": 1730
+ },
+ "recording": {
+  "duration_s": 4505,
+  "duration": "1:15",
+  "spoken_chars": 57984,
+  "words_approx": 9664
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06262025-7286",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/stormwater-task-force/2025-06-26-agenda-7286.txt",
+   "path": "sources/meetings/stormwater-task-force/2025-06-26-agenda-7286.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T18:00:43Z",
+  "cost_usd": 0.428674
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair, unnamed in captions"
+   },
+   {
+    "name_as_heard": "Tim",
+    "role": "task force member"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "task force member"
+   },
+   {
+    "name_as_heard": "John",
+    "role": "task force member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Jenny",
+    "role": "task force member"
+   },
+   {
+    "name_as_heard": "Nick",
+    "role": "stormwater utility consultant, from CI (engineering firm), presenter"
+   }
+  ],
+  "headline": "Task force caught a tier-pricing error in its draft stormwater fee tables and set a fall rollout timeline",
+  "summary": "The Lunenburg Stormwater Task Force met with its consultant Nick (of CI) to work through open questions on the draft Stormwater Utility Report: how vacant, multifamily, and tax-exempt parcels are classified, whether to add tiers for the largest properties (Walmart, Unitil, storage facilities), and a pricing error discovered live where alternative fee tables did not match across tiers. The task force set a goal of presenting to the Select Board and Finance Committee in September and giving an update at the November town meeting, ahead of a planned FY2026 annual town meeting vote, and scheduled its next meeting for July 17.",
+  "public_comment": [
+   {
+    "t": 71,
+    "topic": "A resident asked about a stormwater approval mixup for new construction on Arbor Street; the board clarified stormwater approvals are handled by the Planning Board, not the task force."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "fees",
+   "planning-and-zoning",
+   "public-comment",
+   "roads-and-dpw",
+   "town-departments",
+   "town-meeting",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 4453,
+    "motion": "Motion to adjourn the meeting",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 446,
+    "topic": "Single-family ERU fee basis",
+    "figures_as_heard": [
+     "60 bucks",
+     "80 bucks",
+     "100 bucks"
+    ],
+    "what_was_said": "The consultant explained the utility fee is based on impervious area equivalent to a typical single-family residential property (one ERU), with the annual fee amount still to be decided among examples like these figures."
+   },
+   {
+    "t": 1285,
+    "topic": "Tier pricing tables (3-1 vs 3-3)",
+    "figures_as_heard": [
+     "$60",
+     "75"
+    ],
+    "what_was_said": "Board members found the per-tier prices in table 3-1 and table 3-3 for alternatives 1-4 did not match for several tiers; the consultant confirmed a drafting error and said table 3-1 has the correct numbers."
+   },
+   {
+    "t": 1411,
+    "topic": "Tier 10 impervious area cap vs actual",
+    "figures_as_heard": [
+     "210,000 square ft",
+     "600 to 800 square ft"
+    ],
+    "what_was_said": "The task force compared the tier 10 threshold to the actual size of a large commercial parking lot, finding it far exceeded the cap, prompting discussion of a new higher tier."
+   },
+   {
+    "t": 1453,
+    "topic": "Possible new tier above tier 10",
+    "figures_as_heard": [
+     "400,000 square feet"
+    ],
+    "what_was_said": "The board discussed whether to create an additional tier above the current top tier to better capture the very largest properties."
+   },
+   {
+    "t": 1599,
+    "topic": "ERU ranges across tiers",
+    "figures_as_heard": [
+     "8 to 10",
+     "11 to 15",
+     "16 to 25",
+     "26 to 50",
+     "51 to 100"
+    ],
+    "what_was_said": "The consultant and board reviewed the ERU ranges assigned to each tier, noting tier 9's range was unusually wide and should be narrowed by splitting tiers 9 and 10 into three tiers."
+   },
+   {
+    "t": 2076,
+    "topic": "Amesbury stormwater fee example",
+    "figures_as_heard": [
+     "25 bucks a quarter"
+    ],
+    "what_was_said": "The consultant described a comparable town's flat quarterly stormwater charge applied to every user regardless of property type, cited as context for Lunenburg's fee design."
+   },
+   {
+    "t": 2220,
+    "topic": "Potential large-property fee under a progressive tier structure",
+    "figures_as_heard": [
+     "1,500 to 2,000 a month"
+    ],
+    "what_was_said": "A member raised concern that large properties could face a very large new quarterly or annual charge if tiers were weighted progressively, calling it a potential 'sticker shock.'"
+   },
+   {
+    "t": 2261,
+    "topic": "Proposed fee cap discussed previously",
+    "figures_as_heard": [
+     "25",
+     "25 a quarter"
+    ],
+    "what_was_said": "The board recalled that $25 a quarter had been discussed previously as roughly the upper level being considered, referencing the Amesbury comparison."
+   },
+   {
+    "t": 2601,
+    "topic": "Small property tax bills (fee-exempt/edge-case parcels)",
+    "figures_as_heard": [
+     "$17 a quarter",
+     "33 cents a quarter"
+    ],
+    "what_was_said": "Members noted some parcels generate very small property tax bills, raising the question of how tiny utility bills would be handled and whether it costs more to mail than to collect."
+   },
+   {
+    "t": 3599,
+    "topic": "Illustrative single-family annual surcharge",
+    "figures_as_heard": [
+     "under $100 a year",
+     "90 bucks a year"
+    ],
+    "what_was_said": "The board recalled that an earlier presentation used a placeholder figure for what a typical single-family home might pay annually under the proposed utility."
+   },
+   {
+    "t": 1861,
+    "topic": "CI engineering contract for next fiscal year",
+    "figures_as_heard": [],
+    "what_was_said": "The consultant and chair discussed needing to finalize a new contract with CI for the coming fiscal year, which starts imminently, continuing the notice-to-proceed arrangement used previously."
+   },
+   {
+    "t": 3874,
+    "topic": "DPW capital equipment/project list funded by the utility",
+    "figures_as_heard": [],
+    "what_was_said": "The board noted the DPW director had already provided a capital equipment list of projects the stormwater utility revenue would fund, and wants more cost detail added before public presentations."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1663,
+    "decision": "Ask the consultant to provide a list of the specific properties in tiers 8, 9, and 10 for review."
+   },
+   {
+    "t": 2918,
+    "decision": "Ask the consultant to also provide a list of the 17 'unknown/miscellaneous' parcels and any near-zero-impervious parcels for a possible exclusion review."
+   },
+   {
+    "t": 3026,
+    "decision": "Ask the consultant's GIS staff to calculate impervious area on town roads and town-owned property versus privately owned property, to help justify the fee to residents."
+   },
+   {
+    "t": 3496,
+    "decision": "Task force decided not to pursue a stormwater fee exemption/waiver process for properties claiming no runoff, citing administrative overhead."
+   },
+   {
+    "t": 3680,
+    "decision": "Target presenting the draft utility to the Select Board and Finance Committee, aiming for September/early October, before the November town meeting update."
+   },
+   {
+    "t": 3936,
+    "decision": "Give a more detailed update at the November town meeting, with a goal of proposing the stormwater utility at the 2026 annual town meeting."
+   },
+   {
+    "t": 4185,
+    "decision": "Investigate why the May 29th meeting minutes were never received/posted and place them on the next agenda."
+   },
+   {
+    "t": 4401,
+    "decision": "Set the next task force meeting for July 17th, and consider adding extra meetings over the summer if needed to stay on the September/November timeline."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 7,
+    "t_end": 71,
+    "topic": "Opening, quorum confirmed, public comment invited",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 71,
+    "t_end": 217,
+    "topic": "Public comment: Arbor Street construction/stormwater approval mixup, redirected to Planning Board",
+    "resolution": "referred",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 218,
+    "t_end": 382,
+    "topic": "Consultant Nick reintroduced; agenda set to work through Bill's list of open questions on the March 17, 2025 Stormwater Utility Report",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 383,
+    "t_end": 965,
+    "topic": "Vacant/forest/agricultural land classifications, definition of impervious area, and plan to verify the 257 'vacant' parcels",
+    "resolution": "discussed only, follow-up planned",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 967,
+    "t_end": 1220,
+    "topic": "How multifamily/apartment complexes and duplexes will be classified and billed",
+    "resolution": "no resolution, open question",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 1221,
+    "t_end": 1390,
+    "topic": "Discrepancy found between tier pricing tables 3-1 and 3-3; consultant confirms error, will correct",
+    "resolution": "resolved (error identified, correction pending)",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1390,
+    "t_end": 1840,
+    "topic": "Whether to add tiers above tier 10 for the largest properties, and a request for the list of top-tier properties",
+    "resolution": "discussed only, data requested",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1840,
+    "t_end": 2050,
+    "topic": "Contract/authorization process for CI's continued work into the next fiscal year; recent town manager transition noted",
+    "resolution": "informational",
+    "tags": [
+     "contracts-and-unions",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2050,
+    "t_end": 2400,
+    "topic": "Fee structure design: flat vs. tiered/progressive fees, Amesbury comparison, and billing mechanism (property tax vs. utility bill)",
+    "resolution": "discussed only, no decision on structure",
+    "tags": [
+     "fees",
+     "water-sewer",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 2384,
+    "t_end": 2960,
+    "topic": "Vacant land assessor codes, tax-exempt vs fee-exempt parcel counts, nonprofits, chapter 61 land, and unclassified 'unknown' parcels",
+    "resolution": "discussed only, follow-up research assigned",
+    "tags": [
+     "fees",
+     "water-sewer",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2963,
+    "t_end": 3230,
+    "topic": "Requesting impervious-area data for town roads vs. private property to help justify the fee to the public",
+    "resolution": "referred, data to be produced",
+    "tags": [
+     "water-sewer",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 3288,
+    "t_end": 3660,
+    "topic": "Next steps: public engagement, prior town meeting reaction to Bill's presentation, and decision against creating an exemption process",
+    "resolution": "decided against exemptions; public engagement planned",
+    "tags": [
+     "public-comment",
+     "water-sewer",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 3660,
+    "t_end": 3936,
+    "topic": "Timeline: presenting to Select Board and Finance Committee before a November town meeting update, targeting 2026 annual town meeting for adoption",
+    "resolution": "target dates set, not finalized",
+    "tags": [
+     "town-meeting",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 3936,
+    "t_end": 4145,
+    "topic": "Consultant's experience on adoption success rates elsewhere and messaging around a dedicated funding source",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4145,
+    "t_end": 4273,
+    "topic": "Missing May 29th meeting minutes; investigation and re-agending",
+    "resolution": "referred to next agenda",
+    "tags": []
+   },
+   {
+    "t_start": 4273,
+    "t_end": 4453,
+    "topic": "Scheduling additional meetings over the summer and confirming July 17th as the next meeting date",
+    "resolution": "decided",
+    "tags": []
+   },
+   {
+    "t_start": 4453,
+    "t_end": 4495,
+    "topic": "Motion to adjourn and roll call vote",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The chair's own name was never stated in the captions.",
+   "Whether Tim was included in or absent from the final roll-call adjournment vote.",
+   "Most specific dollar figures for the proposed ERU fee tiers beyond the illustrative examples given.",
+   "The name of the resident who raised the Arbor Street stormwater question during public comment.",
+   "Exact figures in tables 2-1, 3-1, 3-2, and 3-3 referenced repeatedly but not read aloud in full."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The consultant confirmed a drafting error had made two draft fee tables disagree on tier pricing, and said one table holds the correct numbers.",
+    "t": 1285
+   },
+   {
+    "line": "The task force decided against creating an exemption or waiver process for properties claiming no stormwater runoff, citing administrative overhead.",
+    "t": 3496
+   },
+   {
+    "line": "The task force set a timeline: present the draft utility to the Select Board and Finance Committee around September, then update November town meeting, ahead of a vote planned for the 2026 annual town meeting.",
+    "t": 3680
+   },
+   {
+    "line": "Members asked the consultant for lists of the parcels in the largest fee tiers and the unclassified parcels, plus a comparison of town-owned versus private impervious area, to support the case for the fee.",
+    "t": 1663
+   },
+   {
+    "line": "The next task force meeting was set for July 17, with additional summer meetings possible to stay on the September/November schedule.",
+    "t": 4401
+   }
+  ],
+  "why_it_matters": [
+   "This is early work on a proposed stormwater utility fee that would eventually appear as a charge to property owners, sized by how much impervious surface -- driveways, parking lots, roofs -- a parcel has.",
+   "Residents will be asked to vote on adopting the utility, with the task force aiming for the 2026 annual town meeting, so how tiers, exemptions and large-property caps are set now shapes what different property owners would eventually pay.",
+   "The tier-pricing table correction and the decision not to offer runoff exemptions are still draft choices, not a finalized fee -- both remain open to public review before any vote."
+  ],
+  "watch_next": [
+   "Next task force meeting, July 17, 2025",
+   "Draft utility presentation to the Select Board and Finance Committee, targeted for September/early October 2025"
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T18:01:00Z",
+   "cost_usd": 0.270746
+  }
+ }
+}
