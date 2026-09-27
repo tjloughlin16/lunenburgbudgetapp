@@ -445,6 +445,43 @@ projection in dollars becomes a number of BUILDINGS, at the town's own archetype
 and that is what makes it stick. A generic chart of a specific finding is a missed
 opportunity; the best signature is drawn in the units the subject is actually made of.
 
+## 7g. IF A PROCESS ALREADY DOES IT, LET THE PROCESS DO IT
+
+TJ, 27 September 2026, after a morning in which the backlog counters moved by about 790
+items for **$49.56 of scripted spend** while an interactive session ran all day beside
+them:
+
+> *"If we have processes in place, there's no need to do your own token usage unless we
+> agree. If you're telling me we have tooling to limit token usage and you just burned 25%
+> of my weekly spend for no good reason, that's awful."*
+
+He is right, and the shape of the mistake is worth stating exactly, because it does not
+feel like a mistake while it is happening.
+
+**The scripted streams are cheap and the session is not.** A votes run is ~$0.15, a
+minutes run ~$0.45, and `sweep_backlog.py` is scheduled, supervised every 30 minutes and
+restarts itself. A long interactive session at high context is the dominant consumer on
+this account -- the measured case in this file is one session at **$329 API-equivalent,
+about 65% of a week**. So the agent watching the work costs more than the work.
+
+**And the counters do not care.** Reading OCR dumps, surveying pages and writing an
+extractor with a person in the loop moves an ingestion count by two, at session prices,
+while the batch beside it moves it by 790 at batch prices.
+
+**The rule.** When a scheduled process already covers a job, DO NOT DO THAT JOB BY HAND,
+and do not sit watching it. Start it, confirm it is producing -- `sweep_health.py` answers
+that in one line -- and stop. Interactive work on something a process covers needs TJ to
+agree to it first, in that turn, not inferred from an earlier `keep going`.
+
+**What still belongs in a session**, so this does not become a reason to do nothing: work
+no process exists for, a decision that needs judgement, and a defect a check cannot see.
+Writing the extractor was legitimate. Narrating nine pages of box dumps while doing it was
+not, and neither was staying in the loop once the sweeps were confirmed healthy.
+
+**When in doubt, say what it will cost before starting.** `1% of the week ~ $5
+API-equivalent`; a batch is quoted in % of the week and a session is worth quoting the
+same way.
+
 ## 8. This app explains how to fix the problem. It is not an audit
 
 The job is helping a resident understand what would work, and what each option costs
