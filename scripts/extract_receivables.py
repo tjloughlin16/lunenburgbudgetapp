@@ -49,6 +49,7 @@ import io
 import glob
 import os
 import re
+import statistics
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -69,7 +70,12 @@ COLUMNS = [
     ('payments',    r'PAYMENTS?',                    +1),
     ('refunds',     r'REFUNDS?',                     +1),
     ('transfers',   r'TRANSFERS?',                   +1),
-    ('adjustments', r'ADJUSTM?E?N?T?S?',             +1),
+    # `AD[JI]` because the scanner reads the J of ADJUSTMENTS as an I: FY2021 page 47
+    # prints `ADIUSTMENTS` and the column went unnamed, so every figure under it was
+    # dropped and fifteen rows on that page failed to sum to their own printed balance.
+    # A conservative widening of ONE character that the scanner is known to confuse --
+    # not a looser pattern.
+    ('adjustments', r'AD[JI]USTM?E?N?T?S?',           +1),
     ('balance',     r'BALANCES?',                    +1),
 ]
 LEVY = re.compile(r'LEVY\s+OF\s+(\d{4})', re.I)
@@ -100,21 +106,41 @@ def band(boxes):
     the long rows is the balance column every check depends on.
     """
     ys = sorted({round(b['y'], 4) for b in boxes})
-    gaps = [b - a for a, b in zip(ys, ys[1:]) if 0.002 < (b - a) < 0.05]
+    # THE TWO POPULATIONS HAVE TO BE SEPARATED BEFORE THE PITCH IS MEASURED. On a scan a
+    # printed row's boxes do not share a `y`, so the gaps between consecutive readings are
+    # a mixture: the jitter WITHIN a row and the pitch BETWEEN rows. Taking the median of
+    # the mixture returns the jitter, because there are more boxes in a row than rows on
+    # the page -- 0.0036 on FY2017 page 43 and FY2020 page 49 against true pitches of
+    # 0.0097 and 0.0226. The band came out smaller than the scatter it exists to absorb,
+    # so a label and its balance landed in different rows and seven pages were refused for
+    # `no row on the page carries both a label and a balance figure`.
+    #
+    # The page's own TYPE SIZE tells them apart: boxes of one printed row share a baseline
+    # and rows are set more than a line apart. So gaps under six tenths of the median box
+    # height are jitter and are dropped, and the pitch is the median of what is left.
+    # Measured from the page, not chosen -- the same correction the debt schedules and the
+    # FY2019 wage pages both needed, which is three extractors making one mistake.
+    hs = [b['h'] for b in boxes if b['h'] > 0]
+    floor = (statistics.median(hs) * 0.6) if hs else 0.004
+    gaps = sorted(b - a for a, b in zip(ys, ys[1:]) if floor < (b - a) < 0.05)
     if not gaps:
-        return 0.006
-    gaps.sort()
+        return max(floor, 0.003)
     return max(gaps[len(gaps) // 2] / 2.0, 0.003)
+
+
+def pat_of(name):
+    return next(p for n, p, _ in COLUMNS if n == name)
 
 
 def header_of(boxes):
     """The column names AS PRINTED, and where each sits. None if they cannot be read."""
-    hits = []
+    hits, width_of = [], {}
     for b in boxes:
         t = (b['text'] or '').upper()
         for name, pat, sign in COLUMNS:
             if re.search(pat, t):
                 hits.append((b['y'], b['x'], name, sign, b['text']))
+                width_of[id(b['text'])] = b['w']
     if not hits:
         return None
     # The header is the y that carries the most of those words.
@@ -124,8 +150,22 @@ def header_of(boxes):
         return None
     cols = {}
     for y, x, name, sign, raw in hits:
-        if abs(y - hy) < 0.025 and name not in cols:
-            cols[name] = dict(x=x, sign=sign, printed=raw)
+        if abs(y - hy) >= 0.025 or name in cols:
+            continue
+        # A MERGED HEADING GIVES EVERY NAME IN IT THE SAME x, WHICH IS NOT A POSITION.
+        # FY2017 page 43 returns `FORWARD COMMITTMENTS ADJUSTMENTS REFUNDS PAYMENTS` as
+        # ONE observation, so five columns were all recorded at x=0.307 and every figure
+        # on the page was placed against the same coordinate. The box spans the columns it
+        # names, so each name's own x is recoverable by where it sits INSIDE the string --
+        # the same character-position split `split_merged` does for figures in the debt
+        # schedules. Interpolated, and exact enough: what matters is the ORDER and spacing
+        # of the headings, which is what the placement compares against.
+        m = re.search(pat_of(name), (raw or '').upper())
+        w = width_of.get(id(raw), None)
+        if m and w and len(raw) > 0:
+            mid = (m.start() + m.end()) / 2.0
+            x = x + w * (mid / len(raw))
+        cols[name] = dict(x=x, sign=sign, printed=raw)
     return dict(y=hy, cols=cols) if len(cols) >= 3 else None
 
 
@@ -135,13 +175,23 @@ def place(figs, cols):
     A levy with no activity prints nothing in those columns, so taking the figures in
     order puts every one after the first gap under the wrong heading.
     """
-    out = {}
+    # AND WHERE TWO FIGURES CLAIM ONE COLUMN, THE NEARER ONE TAKES IT. `setdefault` kept
+    # whichever came first, which is printed order -- the very thing this function exists
+    # to avoid, reintroduced one line below the docstring that forbids it. On FY2021 page
+    # 47 a row printed figures at 0.269, 0.779 and 0.849 where the page has no TRANSFERS
+    # heading, so both of the last two were nearest to BALANCE and the leftmost won:
+    # balance read 4.85 against a printed 3,276.19, and 3,271.34 + 4.85 = 3,276.19 says
+    # which of the two it is. Fifteen rows on that page failed for this, which took it
+    # under the threshold that proves a page, which refused the page whole.
+    best = {}
     for x, v in figs:
         name = min(cols, key=lambda k: abs(cols[k]['x'] - x))
-        if abs(cols[name]['x'] - x) > 0.09:
+        d = abs(cols[name]['x'] - x)
+        if d > 0.09:
             continue
-        out.setdefault(name, v)
-    return out
+        if name not in best or d < best[name][0]:
+            best[name] = (d, v)
+    return {k: v for k, (_, v) in best.items()}
 
 
 def ageing_page(fy, page, boxes):
@@ -201,6 +251,41 @@ def ageing_page(fy, page, boxes):
     # convention by which one proves its rows, and it has to prove essentially all of
     # them -- a convention that works for half a page is not a convention, it is a
     # coincidence, and the page is refused.
+    # A ROW'S LABEL IS NOT ALWAYS A LEVY YEAR, and assuming it was refused seven legible
+    # pages. FY2018 page 54 prints the same eight columns under the same header and names
+    # its rows `SEPTIC COMMITTED INT`, `WATER COMMITTED DUE W.D. PRI` -- committed accounts
+    # rather than tax levies -- and every one of them states the page's own identity:
+    # 0.00 + 1,094.56 - 547.28 = 547.28. Rule 13c: the town does not print one table shape
+    # every year, and a matcher that finds no levy year is saying something about our
+    # pattern, not about the page.
+    #
+    # It runs ONLY where the levy path found nothing, so no page that already reads can
+    # change, and a named row has to clear the same bar: place a balance, place at least
+    # two other columns, and prove under the page's single sign convention.
+    if not candidates:
+        for bx in sorted(boxes, key=lambda z: -z['y']):
+            t = re.sub(r'\s+', ' ', (bx['text'] or '')).strip()
+            if bx['x'] >= 0.30 or len(t) < 4 or not re.search(r'[A-Za-z]{3}', t):
+                continue
+            if SECTION.match(t) or t.upper().startswith(('GRAND TOTAL', 'TOTAL')):
+                continue
+            if head['y'] - 0.02 <= bx['y'] <= head['y'] + 0.02:
+                continue
+            figs = []
+            for o in boxes:
+                if abs(o['y'] - bx['y']) > b or o['x'] <= 0.25:
+                    continue
+                v = T.amount((o['text'] or '').strip())
+                if v is not None:
+                    figs.append((o['x'], v))
+            got = place(figs, cols)
+            if 'balance' not in got or len(got) < 3:
+                continue
+            parts = {k: got.get(k, 0.0) for k in
+                     ('forward', 'committed', 'refunds', 'payments', 'abatements',
+                      'transfers', 'adjustments')}
+            candidates.append((t.upper(), section or 'not stated', parts, got['balance']))
+
     if not candidates:
         # A page that yields no candidate row at all was still READ, and silently
         # returning nothing is what made it indistinguishable from an unopened page.

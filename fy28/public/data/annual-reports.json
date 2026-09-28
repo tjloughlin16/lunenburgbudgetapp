@@ -43,8 +43,8 @@
   {
    "means": "what is owed TO the town, account by account",
    "pages": 28,
-   "proven": 11,
-   "refused": 10,
+   "proven": 18,
+   "refused": 3,
    "subject": "receivables",
    "unproven": 7
   },
@@ -153,7 +153,7 @@
   {
    "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
    "bearing": "sizes",
-   "claim": "162 of 478 pages tie to a total the page itself prints.",
+   "claim": "169 of 478 pages tie to a total the page itself prints.",
    "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
    "figure": "proven",
    "figures": {
@@ -163,14 +163,14 @@
      "value": 478
     },
     "proven": {
-     "text": "162",
+     "text": "169",
      "unit": "pages tied to a printed total",
-     "value": 162
+     "value": 169
     },
     "rest": {
-     "text": "316",
+     "text": "309",
      "unit": "pages with no such check",
-     "value": 316
+     "value": 309
     }
    },
    "id": "a-third-of-the-pages-are-checked-against-the-page-itself",
@@ -178,7 +178,7 @@
    "literals": [],
    "not_shown": "That an UNPROVEN figure is wrong. It means nothing has checked it, which is a different claim and the reason the column exists.",
    "see": [],
-   "so_what": "The other 316 carry real figures that no arithmetic has confirmed."
+   "so_what": "The other 309 carry real figures that no arithmetic has confirmed."
   },
   {
    "basis": "`annual-report-pages.csv` grouped by subject and state.",
@@ -625,7 +625,7 @@
   },
   {
    "label": "pages tied to a total the page prints",
-   "value": "162 of 478"
+   "value": "169 of 478"
   },
   {
    "label": "rows read out of them",
