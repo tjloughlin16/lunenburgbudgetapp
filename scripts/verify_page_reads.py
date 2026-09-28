@@ -120,7 +120,14 @@ def main():
             if not (r.get('value') or '').strip():
                 continue
             if (r.get('kind') or 'fund') == 'attested':
-                attested[key][r['fund_number']] = r.get('proof', '') or r['value']
+                # Keyed BOTH ways, because a document can disagree with itself down a row
+                # or down a COLUMN. FY2024's levy build-up fails one row of three; FY2023's
+                # tax recapitulation fails its single column total, and attesting one and
+                # not the other would have meant the second class silently staying a
+                # failure of ours.
+                note = r.get('proof', '') or r['value']
+                attested[key][r['fund_number']] = note
+                attested[key]['column:' + r['column']] = note
                 continue
             if (r.get('kind') or 'fund') == 'check':
                 declared[key][r['column']] = r['value']
@@ -156,10 +163,14 @@ def main():
         for col, printed in sorted(want[key].items()):
             g = round(got[key].get(col, 0.0), 2)
             ok = abs(g - printed) <= tol.get(key, DEFAULT_TOL)
+            att_note = attested[key].get('column:' + col)
             print('    %-22s %16s   printed %16s   %s'
                   % (col, format(g, ','), format(printed, ','),
-                     'ties' if ok else 'OFF BY %s' % format(round(g - printed, 2), ',')))
-            if not ok:
+                     'ties' if ok else
+                     ('ATTESTED, the town\u2019s own arithmetic: out by %s -- %s'
+                      % (format(round(g - printed, 2), ','), att_note) if att_note
+                      else 'OFF BY %s' % format(round(g - printed, 2), ','))))
+            if not ok and not att_note:
                 bad.append('FY%s %s %s: %s against a printed %s'
                            % (key[0], key[1], col, format(g, ','), format(printed, ',')))
 
@@ -172,6 +183,7 @@ def main():
         key = (name.split('-')[0][2:], '-'.join(name.split('-')[2:]).replace('.csv', ''))
         if key in want:
             ok = all(abs(round(got[key].get(c, 0.0), 2) - p) <= tol.get(key, DEFAULT_TOL)
+                     or ('column:' + c) in attested[key]
                      for c, p in want[key].items())
             verdict = 'checked' if ok else 'check failed'
             why = '%s: %s' % (printed_on[key],
