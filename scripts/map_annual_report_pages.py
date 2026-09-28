@@ -430,6 +430,12 @@ PROOF = {
     'dept-activity': ('status', VERDICT),
     'elections': ('status', VERDICT),
     'enrollment-mcas': ('status', VERDICT),
+    # `gross-wages.csv` AND `report-gross-wages.csv` share this label (`_label` strips the
+    # `report-` prefix), and both now carry `status`. The dedicated extractor grades a wage
+    # page on COVERAGE -- every money figure printed on it is captured and paired with a
+    # name on its own printed row -- because a wage list prints no total to foot against.
+    # TJ, 28 September 2026: *"yes there is no total, but that's fine. this table doesnt
+    # intend to do that and print totals. that shouldnt be a blocker."*
     'gross-wages': ('status', VERDICT),
     'monty-tech': ('status', VERDICT),
     'officials': ('status', VERDICT),

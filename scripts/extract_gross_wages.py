@@ -41,7 +41,8 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = os.path.join(ROOT, 'sources', 'town-budget', 'pages')
 OUT = os.path.join(ROOT, 'sources', 'data', 'gross-wages.csv')
-FIELDS = ['fy', 'page', 'name', 'amount', 'department', 'as_printed']
+FIELDS = ['fy', 'page', 'name', 'amount', 'department', 'as_printed', 'status',
+          'reconciliation']
 
 # THE DOLLAR SIGN IS NOT ALWAYS THERE. FY2025 prints `$64,696.14` and FY2018 prints
 # `13,757.44` bare, so a pattern anchored on `$` read FY2018's wage page as empty. The
@@ -308,7 +309,15 @@ def read_ocr_page(fy, doc, page, cache, refused):
         return []
     cached_money = sum(len(MONEY.findall(t)) for t in cache.get(page, []))
     money = [b for b in boxes if OCR_MONEY.match(b['t'])]
-    if cached_money > 5:
+    # THE PAGE RENDERING IS NOT THE SAME FACT AS THE PAGE BEING READ, and conflating them
+    # cost FY2011 all 80 of its wage rows on 28 September 2026. The page cache was rebuilt
+    # that day against OCR four weeks newer, so p98 started rendering -- 138 money figures
+    # -- and this guard refused it for "being read twice". It was not: `wage_pages()` never
+    # finds that page, because its heading OCRs as `N H H WAGES` and the pattern wants
+    # `gross wages`. So the line path reads nothing there and this was the only reader.
+    #
+    # Ask the question that matters instead: does the LINE PATH actually claim this page?
+    if cached_money > 5 and page in wage_pages(cache, fy):
         refused.append({'report_fy': fy, 'document': doc, 'page': page,
                         'subject': 'payroll',
                         'reason': 'this page now renders in the page cache and is being '
@@ -401,6 +410,12 @@ def read_ocr_page(fy, doc, page, cache, refused):
 #   figure taken from the wrong half of the page, breaks the order. So the order is
 #   asserted per column and a page that breaks it is refused rather than published. It
 #   proves the ASSIGNMENT. It says nothing about whether a digit was read correctly.
+
+# The reports that are BORN DIGITAL, with the pages their wage list is printed on. A
+# year listed here is read from the text layer and never recognised.
+TEXT_LAYER = {
+    '2025': ('4130-fy-2025-annual-town-report.pdf', list(range(177, 183))),
+}
 
 SPLIT_NAME = {
     '2019': ('4126-fy-2019-annual-town-report.pdf', list(range(197, 204))),
@@ -591,6 +606,119 @@ def read_words_page(fy, doc, page, refused):
     return rows
 
 
+
+
+# ======================================================================================
+# HALF THESE REPORTS ARE NOT SCANS, AND WE WERE RECOGNISING THEM ANYWAY
+# ======================================================================================
+#
+# TJ, 28 September 2026, on FY2025's wage pages reading 532 names where the page prints
+# 612: *"i want to know how we read pages 177, 178 and 179, but didnt read 180, 181, and
+# 182"* -- the six pages being identical in form.
+#
+# They are identical. The difference was never the pages. FY2025's report is BORN DIGITAL:
+# every one of those pages carries an exact text layer, 301 to 315 words with exact
+# coordinates, and we were rendering each to an image and running character recognition
+# over it. Vision happened to read three of the six well and dropped most of page 181's
+# right-hand NAME column -- not because the print is faint, but because recognition is a
+# guess and the characters were sitting in the file all along.
+#
+# Eight of the sixteen annual reports are digital: FY2014, FY2015, FY2016, FY2017, FY2018,
+# FY2020, FY2024, FY2025. The other eight are scans and still need Vision.
+#
+# The cost of not asking: 80 people and $3,728,578 missing from FY2025 alone, and days
+# spent hunting figures that were never lost.
+#
+# So the text layer is tried FIRST and OCR is the fallback. That is not a tuning change --
+# it is a different instrument, and on a digital page it is the right one: there is
+# nothing to misread.
+
+
+def text_layer_pages(doc, pages):
+    """Wage rows straight off a digital PDF. {} when the page has no text layer."""
+    try:
+        import pdfplumber
+    except ImportError:
+        return {}
+    path = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs', doc)
+    if not os.path.exists(path):
+        return {}
+    out = {}
+    with pdfplumber.open(path) as pdf:
+        for n in pages:
+            if n < 1 or n > len(pdf.pages):
+                continue
+            words = pdf.pages[n - 1].extract_words()
+            if len(words) < 40:          # a scan: nothing to read here
+                continue
+            lines = {}
+            for w in words:
+                lines.setdefault(round(w['top']), []).append(w)
+            rows = []
+            for top in sorted(lines):
+                ws = sorted(lines[top], key=lambda w: w['x0'])
+                # The list prints TWO records per line, side by side. Split at the gutter
+                # rather than pairing by order: a line with one record on it would
+                # otherwise take the next line's figure.
+                for lo, hi in ((0, 300), (300, 10000)):
+                    cell = [w for w in ws if lo <= w['x0'] < hi]
+                    money = [w for w in cell if w['text'].startswith('$')]
+                    names = [w for w in cell if not w['text'].startswith('$')]
+                    if len(money) == 1 and names:
+                        rows.append({
+                            'name': ' '.join(w['text'] for w in names),
+                            'amount': float(money[0]['text'].replace('$', '').replace(',', '')),
+                            'as_printed': ' '.join(w['text'] for w in cell)[:160],
+                            'printed_money': sum(1 for w in words
+                                                 if w['text'].startswith('$')),
+                        })
+            if rows:
+                out[n] = rows
+    return out
+
+
+def grade(rows):
+    """What a WAGE LIST can be checked against, which is not a total.
+
+    TJ: *"yes there is no total, but that's fine. this table doesnt intend to do that and
+    print totals. that shouldnt be a blocker."* Right -- demanding a footing was the wrong
+    test for the wrong kind of table.
+
+    THE CHECK THAT DOES FIT IS COVERAGE: every money figure PRINTED on the page is in the
+    data, paired with a name on its own printed row. That has real power to fail -- before
+    the text layer was used, FY2025 pages 180-182 covered 87 of 104, 54 of 104 and 89 of
+    102, and this would have failed all three.
+
+    An earlier version of this graded whether SURNAMES ASCEND down the page. That test is
+    wrong here and the first run showed it: these pages print TWO records per line, so
+    reading order alternates between the columns and the sequence is not monotonic even
+    when every row is right. It marked 3,388 correct rows as failures. The ordering only
+    means something WITHIN a column, which needs the x position -- and coverage is the
+    better check anyway, because it catches a row that was never read at all.
+    """
+    by = collections.defaultdict(list)
+    for r in rows:
+        by[(r['fy'], int(r['page']))].append(r)
+    for (fy, page), page_rows in by.items():
+        printed = max((r.pop('_printed_money', 0) or 0) for r in page_rows)
+        got = len(page_rows)
+        if not printed:
+            verdict = 'no check'
+            why = ('%d row(s); the count of money figures printed on the page is not '
+                   'established, so coverage cannot be asserted' % got)
+        elif got >= printed:
+            verdict = 'checked'
+            why = ('%d of %d money figures printed on the page are captured, each paired '
+                   'with a name on its own printed row. A wage list prints no total, so '
+                   'this proves COVERAGE and the pairing, not the digits' % (got, printed))
+        else:
+            verdict = 'check failed'
+            why = ('%d of %d money figures printed on the page are captured; %d are not '
+                   'accounted for' % (got, printed, printed - got))
+        for r in page_rows:
+            r['status'], r['reconciliation'] = verdict, why
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
@@ -609,6 +737,21 @@ def main():
         doc, want = SPLIT_NAME[fy]
         for page in want:
             rows += read_words_page(fy, doc, page, refused)
+    # THE TEXT LAYER WINS WHERE THERE IS ONE, and it REPLACES whatever OCR produced for
+    # that page rather than adding to it -- two readings of one page are not more data.
+    for fy in sorted(TEXT_LAYER):
+        doc, want = TEXT_LAYER[fy]
+        got = text_layer_pages(doc, want)
+        if not got:
+            continue
+        rows = [r for r in rows if not (r['fy'] == fy and int(r['page']) in got)]
+        for page, found in sorted(got.items()):
+            for r in found:
+                rows.append(dict(fy=fy, page=page, name=r['name'],
+                                 amount='%.2f' % r['amount'], department='',
+                                 as_printed=r['as_printed'],
+                                 _printed_money=r['printed_money']))
+    grade(rows)
     rows.sort(key=lambda r: (r['fy'], int(r['page']), r['name']))
     refused.sort(key=lambda r: (r['report_fy'], int(r['page']), r['reason']))
     if a.check:

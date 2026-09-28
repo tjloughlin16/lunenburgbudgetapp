@@ -5,7 +5,7 @@ Sixteen documents, 477 pages of financial tables, 23,602 rows read out of them.
 ## The short version
 
 - Every financial page in every report has been read. **None is unread.**
-- **186 of 477** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
+- **192 of 477** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
 - **10 pages** an extractor reached and wrote nothing from. Each says why.
 - What is left is **code, not reading**.
 
@@ -40,11 +40,11 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 |---|---|---:|---:|---:|---:|
 | appropriations | what Town Meeting voted to spend, article by article | 95 | 16 | 78 | 1 |
 | special revenue | the funds that sit outside the budget — grants, gifts, revolving | 68 | 51 | 17 | 0 |
-| payroll | what the town paid its people, name by name | 65 | 4 | 60 | 1 |
+| payroll | what the town paid its people, name by name | 65 | 5 | 59 | 1 |
 | debt | what the town owes and when it falls due | 46 | 14 | 31 | 1 |
 | trust and stabilization | the reserves, and how much is in each | 39 | 22 | 16 | 1 |
 | receivables | what is owed TO the town, account by account | 28 | 18 | 7 | 3 |
-| unknown | a financial table whose heading we could not classify | 27 | 5 | 22 | 0 |
+| unknown | a financial table whose heading we could not classify | 27 | 10 | 17 | 0 |
 | tax collection | what was committed, collected and abated | 21 | 9 | 11 | 1 |
 | regional school | the assessment from the regional school district | 18 | 1 | 16 | 1 |
 | balance sheet | what the town held and owed at year end | 17 | 13 | 4 | 0 |
@@ -54,7 +54,7 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | enrollment | how many children are in the schools | 6 | 3 | 3 | 0 |
 | elections | how the town voted | 2 | 1 | 1 | 0 |
 | cultural council | the grants the cultural council made | 1 | 0 | 1 | 0 |
-| **total** |  | **477** | **186** | **281** | **10** |
+| **total** |  | **477** | **192** | **275** | **10** |
 
 ## By report
 
@@ -74,7 +74,7 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | FY2022 | 33 | 18 | 15 | 0 |
 | FY2023 | 34 | 15 | 17 | 2 |
 | FY2024 | 22 | 8 | 14 | 0 |
-| FY2025 | 23 | 5 | 18 | 0 |
+| FY2025 | 23 | 11 | 12 | 0 |
 
 ## The datasets read out of them
 

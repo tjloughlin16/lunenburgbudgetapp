@@ -19,10 +19,10 @@
   {
    "means": "what the town paid its people, name by name",
    "pages": 65,
-   "proven": 4,
+   "proven": 5,
    "refused": 1,
    "subject": "payroll",
-   "unproven": 60
+   "unproven": 59
   },
   {
    "means": "what the town owes and when it falls due",
@@ -51,10 +51,10 @@
   {
    "means": "a financial table whose heading we could not classify",
    "pages": 27,
-   "proven": 5,
+   "proven": 10,
    "refused": 0,
    "subject": "unknown",
-   "unproven": 22
+   "unproven": 17
   },
   {
    "means": "what was committed, collected and abated",
@@ -153,7 +153,7 @@
   {
    "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
    "bearing": "sizes",
-   "claim": "186 of 477 pages tie to a total the page itself prints.",
+   "claim": "192 of 477 pages tie to a total the page itself prints.",
    "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
    "figure": "proven",
    "figures": {
@@ -163,14 +163,14 @@
      "value": 477
     },
     "proven": {
-     "text": "186",
+     "text": "192",
      "unit": "pages tied to a printed total",
-     "value": 186
+     "value": 192
     },
     "rest": {
-     "text": "291",
+     "text": "285",
      "unit": "pages with no such check",
-     "value": 291
+     "value": 285
     }
    },
    "id": "a-third-of-the-pages-are-checked-against-the-page-itself",
@@ -178,7 +178,7 @@
    "literals": [],
    "not_shown": "That an UNPROVEN figure is wrong. It means nothing has checked it, which is a different claim and the reason the column exists.",
    "see": [],
-   "so_what": "The other 291 carry real figures that no arithmetic has confirmed."
+   "so_what": "The other 285 carry real figures that no arithmetic has confirmed."
   },
   {
    "basis": "`annual-report-pages.csv` grouped by subject and state.",
@@ -625,7 +625,7 @@
   },
   {
    "label": "pages tied to a total the page prints",
-   "value": "186 of 477"
+   "value": "192 of 477"
   },
   {
    "label": "rows read out of them",
