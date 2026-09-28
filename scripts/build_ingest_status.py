@@ -2170,7 +2170,90 @@ def page_backlog(st):
     h.append('</div>')
     return ''.join(h)
 
-def page_sources(st, n, counts, kinds):
+
+# -------------------------------------------------- what we HOLD, by fiscal year
+#
+# TJ, 28 September 2026: *"can you generate a similar bar chart on the DOCUMENTS tab of the
+# dash that shows the FY breakdown of what we have?"*
+#
+# The Backlog chart is what is LEFT; this is what is HELD, and the two are read together.
+# Stacked by ORIGIN rather than by kind, because that is the distinction the tab's own
+# chips already make and the one that matters to a reader: what the town, district or
+# state PUBLISHED, what is OURS (extracted text, transcripts, our minutes), and what came
+# by request with no public address.
+#
+# THE YEAR COMES OFF THE DOCUMENT'S OWN NAME. A meeting document carries its date, a
+# budget document usually carries an FY; 31,081 of 32,110 keys yield one. What does not is
+# counted as `no date` and shown, because dropping it would make the bars add to less than
+# the total with nothing saying why.
+DOC_FY_DATE = re.compile(r'(?:^|[/_-])(20[0-2][0-9])-(\d{2})-\d{2}')
+DOC_FY_NAME = re.compile(r'\bfy[-_ ]?(20[0-2][0-9]|[0-2][0-9])\b', re.I)
+ORIGIN_COLOUR = [('published', '#6cb6ff', 'published by the town, district or state'),
+                 ('ours', '#a371f7', 'ours \u2014 extracted text, transcripts, our minutes'),
+                 ('request', '#d29922', 'by request \u2014 no public address')]
+
+
+def doc_fiscal_year(key):
+    m = DOC_FY_DATE.search(key)
+    if m:
+        y, mo = int(m.group(1)), int(m.group(2))
+        return 'FY%d' % (y + 1 if mo >= 7 else y)
+    m = DOC_FY_NAME.search(key)
+    if m:
+        v = m.group(1)
+        return 'FY%d' % (int(v) if len(v) == 4 else 2000 + int(v))
+    return ''
+
+
+def docs_fy_chart(docs):
+    """One stacked bar per fiscal year of what the archive HOLDS, by origin."""
+    by = collections.defaultdict(lambda: collections.Counter())
+    undated = collections.Counter()
+    for d in docs:
+        fy = doc_fiscal_year(d[0] or '')   # d[0] is the full key; d[4] is its top folder
+        (by[fy] if fy else undated)[d[5]] += 1
+    rows = [(fy, by[fy]) for fy in sorted(by)]
+    if not rows:
+        return ''
+    hi = max(sum(c.values()) for _, c in rows)
+    W, H, PAD, GAP = 1000, 200, 26, 4
+    bw = max(6.0, (W - PAD * 2) / max(len(rows), 1) - GAP)
+    out = ['<div class="card"><div class="row"><b class="grow">What we hold, by fiscal '
+           'year of the document</b><span class="tiny">%s documents &middot; tallest bar '
+           '%s</span></div>' % (format(len(docs), ','), format(hi, ','))]
+    out.append('<svg viewBox="0 0 %d %d" width="100%%" height="%d" '
+               'style="display:block;margin:8px 0 2px">' % (W, H, H))
+    base = H - 26
+    for i, (fy, c) in enumerate(rows):
+        x = PAD + i * (bw + GAP)
+        y = base
+        for name, col, _ in ORIGIN_COLOUR:
+            n = c.get(name, 0)
+            if not n:
+                continue
+            bh = (base - 14) * n / hi
+            y -= bh
+            out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="%s">'
+                       '<title>%s %s: %s</title></rect>'
+                       % (x, y, bw, bh, col, fy, name, format(n, ',')))
+        out.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="10" '
+                   'text-anchor="middle">\u2019%s</text>' % (x + bw / 2, base + 12, fy[-2:]))
+        out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" '
+                   'text-anchor="middle">%s</text>'
+                   % (x + bw / 2, y - 3, format(sum(c.values()), ',')))
+    out.append('</svg>')
+    out.append('<div class="tiny">%s</div>'
+               % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, lbl)
+                                 for _, c, lbl in ORIGIN_COLOUR))
+    out.append('<div class="tiny" style="margin-top:4px">The year is read off the '
+               'document\u2019s own name \u2014 a meeting document carries its date, a '
+               'budget document an FY. %s carry neither and are not in a bar, which is why '
+               'the bars come to less than the total. This is what we HOLD; the Backlog '
+               'tab is what is left to do with it.</div></div>'
+               % format(sum(undated.values()), ','))
+    return ''.join(out)
+
+def page_sources(st, n, counts, kinds, docs=()):
     def chips(group, items):
         return ''.join(
             '<a href="#" class="chip" data-g="%s" data-v="%s">%s <b>%s</b></a>'
@@ -2188,6 +2271,7 @@ def page_sources(st, n, counts, kinds):
     return ('<div class="wrap"><div class="row"><div class="grow"><h1>Documents</h1>'
             '<p class="sub">%s held &middot; %s</p></div>'
             '%s</div>'
+            '%s'
             '<div class="chips" data-g="o">%s</div>'
             '<div class="chips" data-g="k">%s</div>'
             '<input type="search" id="q" placeholder="filter by path, folder or address — e.g. select-board 2025, or munis, or xlsx">'
@@ -2196,7 +2280,7 @@ def page_sources(st, n, counts, kinds):
             '<th>where it came from</th><th>sha256</th></tr><tbody id="t"></tbody></table>'
             '<p class="tiny" id="more"></p></div>'
             % ('{:,}'.format(n), st['generated'], TABS % ('', '', ' class="sel"'),
-               origin, kind))
+               docs_fy_chart(docs), origin, kind))
 
 
 KEEP = """
@@ -2302,7 +2386,8 @@ def write(open_it=False):
         counts = collections.Counter(d[5] for d in docs)
         counts[''] = len(docs)
         kinds = collections.Counter(d[6] for d in docs)
-        fh.write(shell % ('Documents', '', CSS, page_sources(st, len(docs), counts, kinds))
+        fh.write(shell % ('Documents', '', CSS,
+                                 page_sources(st, len(docs), counts, kinds, docs))
                  + '<script src="docs.js"></script><script>' + JS + '</script>')
     return st, len(docs)
 
