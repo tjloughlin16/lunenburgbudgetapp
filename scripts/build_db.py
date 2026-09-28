@@ -44,6 +44,7 @@ and back out of any query. A figure that cannot name its document does not get l
 import argparse
 import csv
 import glob
+import datetime as dt
 import hashlib
 import os
 import sqlite3
@@ -1305,8 +1306,32 @@ FROM   workbook_figure w LEFT JOIN document d ON d.doc_id = w.doc_id GROUP BY w.
 """
 
 
+# WHAT THIS DATABASE WAS BUILT FROM, so anything reading it can tell it has gone stale.
+#
+# The database is a derived read model and every count on the dashboard comes out of it.
+# It held a four-day-old import of receivables.csv -- 342 rows that had already been
+# deleted for not proving -- and went on crediting the ten annual-report pages those rows
+# came from, so the page queue published 469 read when 459 was true. Nothing was wrong
+# with the database except its age, and nothing anywhere could say so.
+#
+# Every CSV read during a build is hashed and written into `build_inputs`. A reader calls
+# db_freshness.require_fresh() and finds out, offline, whether what it is about to quote
+# still matches the files it came from.
+_INPUTS = {}
+
+
+def _note(path):
+    """Record a file this build read, by sha256. See _INPUTS."""
+    try:
+        with open(path, 'rb') as fh:
+            _INPUTS[os.path.relpath(path, ROOT)] = hashlib.sha256(fh.read()).hexdigest()
+    except OSError:
+        pass
+    return path
+
+
 def rows(name):
-    path = os.path.join(DATA, name + '.csv')
+    path = _note(os.path.join(DATA, name + '.csv'))
     with open(path, encoding='utf-8') as fh:
         return list(csv.DictReader(fh))
 
@@ -1378,7 +1403,7 @@ def load_documents(db):
     # that broke build_dataset_provenance.py, in a second place.
     crawled = {}
     for path in sorted(glob.glob(os.path.join(ROOT, 'sources', '*', 'index.csv'))):
-        with open(path, encoding='utf-8') as fh:
+        with open(_note(path), encoding='utf-8') as fh:
             for r in csv.DictReader(fh):
                 if r.get('local'):
                     crawled[r['local']] = r
@@ -2458,7 +2483,7 @@ def check_stored_queries(db):
     """
     import csv as _csv
     bad = []
-    path = os.path.join(DATA, 'table-semantics.csv')
+    path = _note(os.path.join(DATA, 'table-semantics.csv'))
     for r in _csv.DictReader(open(path, encoding='utf-8')):
         q = (r.get('default_query') or '').strip()
         if not q:
@@ -2908,6 +2933,35 @@ def reconcile(db):
         "SELECT COUNT(*) FROM workbook_figure WHERE doc_id IS NULL OR doc_id=''"), 0)
 
 
+PROVENANCE_SCHEMA = """
+CREATE TABLE IF NOT EXISTS build_inputs (
+  path   TEXT PRIMARY KEY,   -- repo-relative, as read
+  sha256 TEXT NOT NULL       -- of the bytes this build imported
+);
+CREATE TABLE IF NOT EXISTS build_meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+"""
+
+
+def write_build_inputs(db):
+    """Write what this build read, by sha256, so a reader can tell the db is stale.
+
+    The tables are created with the SCHEMA, not here. `table-semantics.csv` publishes a
+    worked query for every table and build_db.py executes all of them mid-build, so a table
+    that does not exist until the last step fails its own example and the build refuses --
+    correctly, because a published query that errors is worse than none.
+    """
+    db.execute('DELETE FROM build_inputs')
+    db.execute('DELETE FROM build_meta')
+    db.executemany('INSERT INTO build_inputs VALUES (?,?)', sorted(_INPUTS.items()))
+    db.execute('INSERT INTO build_meta VALUES (?,?)',
+               ('built_at', dt.datetime.now(dt.timezone.utc)
+                .strftime('%Y-%m-%dT%H:%M:%SZ')))
+    db.execute('INSERT INTO build_meta VALUES (?,?)',
+               ('inputs', str(len(_INPUTS))))
+    db.commit()
+    return len(_INPUTS)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true',
@@ -2918,6 +2972,7 @@ def main():
         os.remove(DB)                     # rebuilt from scratch, always
     db = sqlite3.connect(DB)
     db.executescript(SCHEMA)
+    db.executescript(PROVENANCE_SCHEMA)
     db.executemany('INSERT INTO fiscal_period VALUES (?,?,?,?)', PERIODS)
 
     print('Building %s' % os.path.relpath(DB, ROOT))
@@ -3002,6 +3057,8 @@ def main():
 
     reconcile(db)
     bad = [c for c in CHECKS if not c[0]]
+    print('  build inputs     %5d csv file(s) hashed into build_inputs'
+          % write_build_inputs(db))
     print('\n%d of %d reconciliations tie' % (len(CHECKS) - len(bad), len(CHECKS)))
 
     # The crosswalk is empty and that is the honest state, not an oversight.

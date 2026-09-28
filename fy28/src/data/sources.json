@@ -3036,7 +3036,7 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 190787,
+     "bytes": 190802,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 474,
      "unit": "rows",
@@ -3583,6 +3583,18 @@
      "textUrl": "/docs/data/stabilization-balances.csv"
     },
     {
+     "path": "data/receivables-refused.csv",
+     "title": "The receivables pages an extractor read and refused, and why",
+     "stars": 2,
+     "what": "One row per page of an annual town report whose receivables table was read and then NOT written: the fiscal year, the page, and the reason in the extractor’s own words — an unreadable header, no BALANCES column, no row carrying both a label and a balance, or no single sign convention that proves the page. It exists because a refusal printed to a terminal is lost, and a page read-and-refused then looks identical to a page nobody opened: the queue carried ten of these as `unread` for four days, which describes a job nobody has started rather than an extractor that needs fixing. `state` is always `refused`, which is also what stops this file being counted as a reading. See scripts/extract_receivables.py.",
+     "kind": "Data",
+     "bytes": 3759,
+     "url": "/docs/data/receivables-refused.csv",
+     "count": 39,
+     "unit": "rows",
+     "textUrl": "/docs/data/receivables-refused.csv"
+    },
+    {
      "path": "data/money-edges.csv",
      "title": "Which source of money pays which use, and whether that can be shown",
      "stars": 2,
@@ -3859,7 +3871,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 40271872,
+     "bytes": 40312832,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -17537,9 +17549,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1527,
+  "documents": 1528,
   "groups": 22,
-  "bytes": 2220673076,
+  "bytes": 2220717810,
   "loadBearing": 162
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

@@ -223,10 +223,10 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 </header>
 
 <div class="metrics">
-  <div class="metric"><div class="v">133</div><div class="l">tables</div></div>
+  <div class="metric"><div class="v">135</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">166,519</div><div class="l">rows</div></div>
-  <div class="metric"><div class="v">1698</div><div class="l">columns</div></div>
+  <div class="metric"><div class="v">166,639</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">1702</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">66%</div><div class="l">columns described</div></div>
 </div>
 
@@ -3238,8 +3238,36 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>10 tables &middot; 6,889 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 7,009 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
+<p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
+<details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">116 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
+<p class="ans">Which files, by sha256, produced the figures in this database — so a reader can tell whether it still matches them. The database is a derived read model rebuilt from the CSVs; this is the only thing that records WHEN and FROM WHAT, which is what makes staleness detectable.</p>
+<p class="warn">A hash here is of the bytes at build time. It says nothing about whether those bytes were correct, only whether they have since changed. Ask scripts/db_freshness.py rather than reading this by hand.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>path</code></td><td class="ty">TEXT</td><td>Where our copy lives in the archive.</td></tr>
+<tr><td><code>sha256</code></td><td class="ty">TEXT</td><td>Checksum of our copy.<br><span class="ccaut">Here because a file can be replaced at the same URL without the URL changing.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>path</th><th>sha256</th></tr>
+<tr><td>sources/data/enterprise-balance-sheet-print…</td><td>8cd9637c2a304c9e517ff3a68993993ce2ca216ccfe…</td></tr>
+<tr><td>sources/data/money-edges.csv</td><td>0b05cefe4369e8d6a1ab4d5310f3e9a80bd95d0c8da…</td></tr>
+<tr><td>sources/data/munis-ledger.csv</td><td>b9cbc07f552c9de2ad865bf615bd04f76828c4b76e2…</td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>build_meta</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">2 rows</span><button class="open" data-t="build_meta" data-q="SELECT key, value FROM build_meta ORDER BY key">Query table</button></span><span class="gr">one row per fact about this build (key, value)</span></summary>
+<p class="ans">When this database was built, and how many input files it hashed. It exists because a four-day-old copy of receivables.csv went on crediting ten annual-report pages as read after the rows were deleted for not proving, and nothing anywhere recorded the copy’s age.</p>
+<p class="warn">built_at is when the build ran, not when the underlying documents were published. Values are stored as text.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>key</code></td><td class="ty">TEXT</td><td>The row&#x27;s join key.</td></tr>
+<tr><td><code>value</code></td><td class="ty">TEXT</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
+</table></div>
+<p class="cap sm">First 2 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>key</th><th>value</th></tr>
+<tr><td>built_at</td><td>2026-09-28T00:17:01Z</td></tr>
+<tr><td>inputs</td><td>116</td></tr>
+</table></div>
+</details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
 <details class="t"><summary><span class="srow"><code>annual_report_catalogue</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">866 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="annual_report_catalogue">Query table</button></span><span class="gr">one row per table per annual report</span></summary>
 <p class="ans">A catalogue of what EXISTS, not of what has been extracted. Every table found by reading all sixteen annual reports end to end: its printed heading verbatim, its pages, its grain, its printed total, and whether it is extractable.</p>
@@ -3422,7 +3450,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2020</td><td>FY2020</td><td>4127-fy-2020-annual-town-report.pdf</td><td>40-41</td><td>Trust funds fiscal year 2020 summary</td><td>unreadable / OCR damage</td><td>table note</td><td>Here the table is transposed into column ru…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">133 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
+<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">135 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
 <p class="ans">This page&#x27;s own source. One row per table: its role, whose money it is, how finely it resolves money, its grain, what it holds, and what goes wrong if it is used carelessly.</p>
 <p class="warn">Self-describing, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>

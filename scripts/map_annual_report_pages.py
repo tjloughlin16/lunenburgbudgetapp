@@ -37,6 +37,9 @@ import argparse
 import collections
 import csv
 import glob
+import json
+
+import db_freshness
 import io
 import os
 import re
@@ -425,6 +428,52 @@ def read_pages():
     return out
 
 
+def refusals():
+    """Pages an extractor READ and then refused, and who refused them.
+
+    A THIRD STATE, because `unread` was carrying two facts that need different work.
+    Ten receivables pages sat in the queue as `unread` after their rows were deleted for
+    not summing to the totals the pages themselves print. Nobody had to go and read those
+    pages: somebody had, and the reading failed. Calling that `unread` loses the most
+    useful thing known about them -- that the page is legible, an extractor exists, and
+    what is wrong is the extractor -- and it reads to anybody looking at the queue as work
+    nobody has started.
+
+    Two sources, both already written and neither previously consulted here:
+      * `sources/data/*-refused.csv` -- the convention seven extractors already follow,
+        one row per page with the printed total it could not close and the reason.
+      * `sources/data/annual-report-reads/*.json` -- a model reading that returned no rows
+        and said why in `note`. A refusal is a correct answer and is not written as data,
+        so nothing else records that the page was looked at.
+    """
+    out = collections.defaultdict(set)
+    for f in sorted(glob.glob(os.path.join(DATA, '*-refused.csv'))):
+        name = _label(os.path.basename(f)[:-4])
+        try:
+            with open(f, encoding='utf-8', errors='replace') as fh:
+                r = csv.DictReader(fh)
+                cols = set(r.fieldnames or ())
+                year, page = _year_column(cols), _page_column(cols)
+                if not year or not page:
+                    continue
+                for row in r:
+                    try:
+                        out[(int(row[year]), int(row[page]))].add(name)
+                    except (TypeError, ValueError):
+                        continue
+        except OSError:
+            continue
+    for f in sorted(glob.glob(os.path.join(DATA, 'annual-report-reads', '*.json'))):
+        try:
+            with open(f, encoding='utf-8') as fh:
+                d = json.load(fh)
+            if not (d.get('rows') or []):
+                out[(int(d['fy']), int(d['page']))].add('read-and-refused')
+        except (OSError, ValueError, KeyError):
+            continue
+    return out
+
+
 def subject_of(texts, whole_page=()):
     """The headings first; the WHOLE PAGE only if the headings said nothing.
 
@@ -455,6 +504,7 @@ def main():
     a = ap.parse_args()
 
     done = read_pages()
+    refused = refusals()
     rows = []
     for f in sorted(glob.glob(os.path.join(OCR, '*annual-town-report.tsv'))):
         m = re.search(r'fy-(\d{4})-', f)
@@ -491,7 +541,16 @@ def main():
                 # mangled as its figures. Read them the other way round.
                 top = [unreversed(t) for t in top]
             hits = done.get((fy, page), set())
-            state = 'read' if hits else ('reversed' if direction == 'reversed' else 'unread')
+            # `refused` outranks `unread` and never outranks `read`: a page some dataset
+            # cites IS read, whatever else also refused part of it.
+            if hits:
+                state = 'read'
+            elif direction == 'reversed':
+                state = 'reversed'
+            elif (fy, page) in refused:
+                state = 'refused'
+            else:
+                state = 'unread'
             page_text = [' '.join((b['text'] or '').split()) for b in boxes]
             if direction == 'reversed':
                 page_text = [unreversed(t) for t in page_text]
@@ -521,15 +580,30 @@ def main():
               % (len(rows), len({r['fy'] for r in rows})))
         return 0
 
+    # A COUNT PARTLY DERIVED FROM THE DATABASE MAY NOT BE PUBLISHED WHILE THE DATABASE
+    # DISAGREES WITH ITS OWN INPUTS. `read_by()` credits a page when a CSV *or* a table in
+    # lunenburg.db cites its fy and page, and on 27 September 2026 the database still held
+    # 342 receivables rows that had already been deleted for not proving -- so this file
+    # said `469 read, 5 left` when 459 and 15 were true, for four days, and a person found
+    # it rather than a check.
+    db_freshness.require_fresh(what='the annual-report page queue')
+
     with open(OUT, 'w', encoding='utf-8') as fh:
         fh.write(text)
     st = collections.Counter(r['state'] for r in rows)
     print('wrote %s -- %d financial pages across %d reports'
           % (os.path.relpath(OUT, ROOT), len(rows), len({r['fy'] for r in rows})))
-    print('  read %d, unread %d, reversed %d'
-          % (st['read'], st['unread'], st['reversed']))
+    # UNITS, because these get quoted. `459 done` says nothing about what was counted
+    # or what `done` means, and the queue published `469 read` off a stale database for
+    # four days without anybody being able to see what the number was about.
+    print('  %d of %d pages READ -- a page is read when a dataset cites its fy and page'
+          % (st['read'], len(rows)))
+    print('  %d of %d pages READ AND REFUSED -- an extractor read them and the rows '
+          'would not prove' % (st['refused'], len(rows)))
+    print('  %d of %d pages NOT YET READ; %d whose OCR came out reversed'
+          % (st['unread'], len(rows), st['reversed']))
     print()
-    print('  what is NOT yet ingested, by subject:')
+    print('  what carries no proven rows yet, by subject (not read OR refused):')
     todo = collections.Counter(r['subject'] for r in rows if r['state'] != 'read')
     for s, n in sorted(todo.items(), key=lambda kv: PRIORITY.get(kv[0], (99,))[0]):
         yrs = sorted({r['fy'] for r in rows

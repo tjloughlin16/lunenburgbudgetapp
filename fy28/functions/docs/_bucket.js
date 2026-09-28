@@ -114,6 +114,22 @@ export async function fromBucket(context, path) {
  * we hold, not a page of this site.
  */
 function asDocumentNotPage(headers, key) {
+  // NOT A SEARCH RESULT. Everything under /docs/ is a source document or one of our own
+  // markdown renderings, and a person who arrives at one from a search engine sees raw
+  // text -- pipes, hashes, front matter -- and concludes the site is broken.
+  //
+  // TJ, 27 September 2026: *"people are finding markdown (from search?!) and saying 'I see
+  // code... I am overwhelmed'"*. 147 of 967 sitemap URLs were raw .md and .csv files and
+  // were pushed to IndexNow on every run.
+  //
+  // `noindex` is the precise tool: the document stays fetchable, citable and hashed, so
+  // rule 12 is untouched and llms.txt can go on pointing agents here -- it simply stops
+  // appearing in results, and, unlike removing it from the sitemap, it REMOVES the copies
+  // already indexed. Removal needs the crawler to fetch the URL and see this header, which
+  // is exactly why /docs/ is not disallowed in robots.txt: a blocked URL is never re-read,
+  // so a noindex on it is never seen and a stale result can sit there for months.
+  headers.set('x-robots-tag', 'noindex')
+
   const type = headers.get('content-type') || ''
   if (!type.includes('text/html')) return
   headers.set('content-type', 'application/octet-stream')

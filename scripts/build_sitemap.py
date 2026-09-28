@@ -205,13 +205,28 @@ def feeds():
 
 
 def analyses():
-    hidden = _hidden_analyses()
-    out = []
-    for p in sorted(glob.glob(os.path.join(PUB, 'docs', 'analyses', '*.md'))):
-        if os.path.basename(p)[:-3] in hidden:
-            continue
-        out.append('/docs/analyses/' + os.path.basename(p))
-    return out
+    """DELIBERATELY EMPTY. The markdown is served and citable; it is not ADVERTISED.
+
+    TJ, 27 September 2026: *"people are finding markdown (from search?!) and saying 'I see
+    code... I am overwhelmed'"*.
+
+    They were, and this function is why: 147 of 967 sitemap URLs were raw `.md` and `.csv`
+    files, submitted to IndexNow on every run, so a resident searching for the town's
+    athletics spending could land on `#### FY24 Programmatic Cost` and conclude the site was
+    broken. A markdown document is a SERVING FORMAT -- for the PDF renderer, for /docs, and
+    for an agent that cannot run JavaScript -- and it is a bad first impression of a page
+    that exists in a designed version at /analysis/<id>.
+
+    Nothing is hidden and nothing is withdrawn: every document still answers at its address,
+    still carries its sha256, and rule 12 is untouched. `llms.txt` still points agents
+    straight at them, and it IS in the sitemap, which is the right door for a program.
+    What changes is that a person is no longer sent to the raw file by a search engine.
+    The `/docs/` responses also carry `X-Robots-Tag: noindex`, which is what removes the
+    ones already indexed -- a sitemap omission alone does not un-index anything.
+
+    The analysis PAGES remain in the sitemap; `analysis_pages()` emits those.
+    """
+    return []
 
 
 def reference():
@@ -224,9 +239,12 @@ def reference():
     static file at a real address is not enough on its own; being INDEXED is what reaches
     them, and the sitemap is where that starts.
     """
+    # ...but not the raw markdown, for the reason given in `analyses()`: a person arriving
+    # at LEDGER-STRUCTURE.md from a search result sees a wall of pipes and hashes. The HTML
+    # reference pages beside them are the same content, designed to be read.
     return ['/reference/' + os.path.basename(p)
             for p in sorted(glob.glob(os.path.join(PUB, 'reference', '*')))
-            if os.path.isfile(p)]
+            if os.path.isfile(p) and not p.endswith('.md')]
 
 
 def render():

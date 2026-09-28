@@ -1863,6 +1863,18 @@ GROUPS = [
              'from annual-report-pages.csv on every run so the plan cannot drift from the '
              'queue it plans; the batching, the order and the estimates are judgements. '
              'See scripts/build_ingest_plan.py.'),
+            ('data/receivables-refused.csv',
+             'The receivables pages an extractor read and refused, and why', 2,
+             'One row per page of an annual town report whose receivables table was read '
+             'and then NOT written: the fiscal year, the page, and the reason in the '
+             'extractor\u2019s own words \u2014 an unreadable header, no BALANCES column, '
+             'no row carrying both a label and a balance, or no single sign convention '
+             'that proves the page. It exists because a refusal printed to a terminal is '
+             'lost, and a page read-and-refused then looks identical to a page nobody '
+             'opened: the queue carried ten of these as `unread` for four days, which '
+             'describes a job nobody has started rather than an extractor that needs '
+             'fixing. `state` is always `refused`, which is also what stops this file '
+             'being counted as a reading. See scripts/extract_receivables.py.'),
             ('data/annual-report-reads.csv',
              'What a model read off each annual-report page, folded into one table', 2,
              'One row per figure read out of an annual-report page by '

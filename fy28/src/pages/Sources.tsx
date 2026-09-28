@@ -22,7 +22,7 @@ export function Sources() {
         <p className="text-xs font-semibold uppercase tracking-widest mb-3"
           style={{ color: 'var(--text-muted)' }}>Check us</p>
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] max-w-3xl">
-          Every document this is built on
+          Source documents
         </h1>
         <p className="mt-5 text-lg leading-relaxed max-w-2xl"
           style={{ color: 'var(--text-secondary)' }}>

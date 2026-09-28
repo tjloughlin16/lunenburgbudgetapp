@@ -4,3 +4,27 @@
 /feeds/*
   Content-Type: application/atom+xml; charset=utf-8
   Cache-Control: public, max-age=900
+
+# MARKDOWN AND RAW DATA ARE NOT SEARCH RESULTS.
+#
+# TJ, 27 September 2026: "people are finding markdown (from search?!) and saying 'I see
+# code... I am overwhelmed'". They were: 147 of 967 sitemap URLs were raw .md and .csv,
+# submitted to IndexNow on every run, so a resident searching for the town's athletics
+# spending could land on a wall of pipes and hashes and conclude the site was broken.
+#
+# A markdown document is a SERVING FORMAT -- for the PDF renderer, for /docs, and for an
+# agent that cannot run JavaScript. The same content exists as a designed page at
+# /analysis/<id>, and that is what a person should be sent to.
+#
+# noindex, not a robots.txt block. The document stays fetchable, citable and hashed, so
+# rule 12 is untouched and llms.txt can go on pointing agents straight at it. And removal
+# of what is ALREADY indexed needs the crawler to fetch the URL and read this header --
+# a disallowed URL is never re-read, so a noindex on it is never seen.
+#
+# The .md files under /docs/ get the same header from fy28/functions/docs/_bucket.js when
+# they are served from the bucket rather than from disk. Both doors, one rule.
+/*.md
+  X-Robots-Tag: noindex
+
+/docs/*
+  X-Robots-Tag: noindex

@@ -45,6 +45,7 @@ is the only thing that can tell a short read from a complete one.
 import argparse
 import collections
 import csv
+import io
 import glob
 import os
 import re
@@ -147,12 +148,12 @@ def ageing_page(fy, page, boxes):
     """One COLLECTION OF TAXES page: rows that prove, and the ones that do not."""
     head = header_of(boxes)
     if not head:
-        return [], ['fy%d p%d: the header could not be read; refused rather than aligned'
-                    % (fy, page)]
+        return [], [_refuse(fy, page, 'the header could not be read; refused rather '
+                                     'than aligned')]
     cols = head['cols']
     if 'balance' not in cols:
-        return [], ['fy%d p%d: no BALANCES column printed, so no row can be proved'
-                    % (fy, page)]
+        return [], [_refuse(fy, page, 'no BALANCES column printed, so no row can be '
+                                     'proved')]
     b = band(boxes)
     rows, notes, candidates = [], [], []
     section = ''
@@ -201,7 +202,10 @@ def ageing_page(fy, page, boxes):
     # them -- a convention that works for half a page is not a convention, it is a
     # coincidence, and the page is refused.
     if not candidates:
-        return [], notes
+        # A page that yields no candidate row at all was still READ, and silently
+        # returning nothing is what made it indistinguishable from an unopened page.
+        return [], notes + [_refuse(fy, page, 'no row on the page carries both a label '
+                                              'and a balance figure')]
     best, best_sign, best_n = None, None, -1
     for sign in (1, -1):
         proved = [c for c in candidates
@@ -209,9 +213,9 @@ def ageing_page(fy, page, boxes):
         if len(proved) > best_n:
             best, best_sign, best_n = proved, sign, len(proved)
     if best_n < 3 or best_n < 0.8 * len(candidates):
-        notes.append('fy%d p%d: no single sign convention proves the page '
-                     '(%d of %d rows at best); refused'
-                     % (fy, page, best_n, len(candidates)))
+        notes.append(_refuse(fy, page, 'no single sign convention proves the page '
+                                       '(%d of %d rows at best); refused'
+                                       % (best_n, len(candidates))))
         return [], notes
     for levy, section_, parts, balance in best:
         rows.append(dict(fy=fy, page=page, table='collection of taxes',
@@ -227,6 +231,30 @@ def ageing_page(fy, page, boxes):
         notes.append('fy%d p%d: %d of %d rows did not prove under the page\u2019s own '
                      'convention and were not written' % (fy, page, skipped, len(candidates)))
     return rows, notes
+
+
+# A REFUSAL IS A FINDING AND IT HAS TO BE WRITTEN DOWN.
+#
+# This extractor refused ten pages and said so on stdout, where it was read once and lost.
+# Nothing downstream could tell those ten pages from pages nobody had ever opened, so the
+# annual-report queue carried them as `unread` -- work nobody has started -- when the truth
+# is that the page is legible, an extractor exists, and the extractor is what is wrong.
+# That is a different job, for a different person, and the queue could not say which.
+#
+# Seven other extractors here already write `<dataset>-refused.csv`. This one now does too.
+# The `state` column is what keeps it honest: map_annual_report_pages.py treats any file
+# carrying `state` as a catalogue rather than a reading, so recording a refusal cannot
+# accidentally credit the page as read.
+_REFUSED = []
+REFUSED = os.path.join(ROOT, 'sources', 'data', 'receivables-refused.csv')
+REFUSED_FIELDS = ['dataset', 'edition', 'report_fy', 'page', 'state', 'reason']
+
+
+def _refuse(fy, page, reason):
+    """Record that this page was read and refused, and return the note to print."""
+    _REFUSED.append(dict(dataset='receivables', edition='FY%d' % fy, report_fy=fy,
+                         page=page, state='refused', reason=reason))
+    return 'fy%d p%d: %s' % (fy, page, reason)
 
 
 DETAIL_COLS = [('receivable', r'Accounts|Receivable'), ('deferred', r'Deferred|Revenue'),
@@ -311,7 +339,7 @@ def run(show=None):
         for page in sorted(want[fy]):
             boxes = pages.get(page) or []
             if not boxes:
-                notes.append('fy%d p%d: no OCR boxes for the page' % (fy, page))
+                notes.append(_refuse(fy, page, 'no OCR boxes for the page'))
                 continue
             title = ' '.join(z['text'] for z in sorted(boxes, key=lambda z: -z['y'])[:6])
             if show and show == 'fy%d:%d' % (fy, page):
@@ -341,21 +369,39 @@ def main():
     buf = []
     for r in rows:
         buf.append([str(r.get(k, '')) for k in FIELDS])
-    import io
     s = io.StringIO()
     w = csv.writer(s, lineterminator='\n')
     w.writerow(FIELDS)
     w.writerows(buf)
     text = s.getvalue()
+
+    # THE REFUSALS ARE AN OUTPUT, not a log line. Rendered here beside the rows so that
+    # --check covers both: a refusal that quietly stops being recorded would put its page
+    # back to looking like one nobody ever opened.
+    _REFUSED.sort(key=lambda r: (r['report_fy'], r['page']))
+    rs = io.StringIO()
+    rw = csv.writer(rs, lineterminator='\n')
+    rw.writerow(REFUSED_FIELDS)
+    rw.writerows([[str(r.get(k, '')) for k in REFUSED_FIELDS] for r in _REFUSED])
+    rtext = rs.getvalue()
+
     if a.check:
         have = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
+        rhave = open(REFUSED, encoding='utf-8').read() if os.path.exists(REFUSED) else ''
         if have != text:
             print('receivables.csv is stale; re-run without --check')
             return 1
-        print('%d row(s), reproduces' % len(rows))
+        if rhave != rtext:
+            print('receivables-refused.csv is stale; re-run without --check')
+            return 1
+        print('%d row(s) and %d refusal(s), both reproduce' % (len(rows), len(_REFUSED)))
         return 0
     with open(OUT, 'w', encoding='utf-8', newline='') as fh:
         fh.write(text)
+    with open(REFUSED, 'w', encoding='utf-8', newline='') as fh:
+        fh.write(rtext)
+    print('%d page(s) read and REFUSED, written to %s'
+          % (len(_REFUSED), os.path.relpath(REFUSED, ROOT)))
     by_t = collections.Counter(r['table'] for r in rows)
     print('%d row(s) written to %s' % (len(rows), os.path.relpath(OUT, ROOT)))
     for k, v in by_t.items():

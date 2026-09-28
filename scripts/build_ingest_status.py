@@ -454,15 +454,31 @@ def annual_report_pages():
     f = os.path.join(DATA, 'annual-report-pages.csv')
     if not os.path.exists(f):
         return 0, []
-    done, todo = 0, []
+    # REMAINING WORK IS TWO DIFFERENT JOBS AND THE COUNT MUST SAY WHICH.
+    #
+    # A page nobody has opened needs somebody to read it. A page an extractor READ and then
+    # REFUSED needs the extractor fixed -- the page is legible, the reader exists, and what
+    # is wrong is ours. Ten receivables pages sat here as plain `unread` for four days after
+    # their rows were deleted for not summing to the totals the pages print, which reads as
+    # work nobody has started and is the opposite of true.
+    #
+    # Both are remaining, so both stay in the count a reader watches go down. What changes
+    # is that the label says which kind, so "let's work on X" picks a real job.
+    done, refused, todo = 0, 0, []
     for r in rows('annual-report-pages.csv'):
-        if r.get('state') == 'read':
+        st = r.get('state')
+        if st == 'read':
             done += 1
+            continue
+        label = r.get('subject') or 'unknown'
+        if st == 'reversed':
+            label += ' \u2014 needs re-OCR'
+        elif st == 'refused':
+            refused += 1
+            label += ' \u2014 read & REFUSED, fix the extractor'
         else:
-            label = r.get('subject') or 'unknown'
-            if r.get('state') == 'reversed':
-                label += ' (needs re-OCR)'
-            todo.append((label, '%s-06-30' % r['fy']))
+            label += ' \u2014 not yet read'
+        todo.append((label, '%s-06-30' % r['fy']))
     out = group(todo)
     for g in out:
         g['dates'] = ['%s (%s)' % (d, '{:,}'.format(n))
@@ -480,7 +496,7 @@ def annual_report_pages():
     for g in out:
         g['rank'] = rank.get(g['board'].split(' (')[0], 99)
     out.sort(key=lambda g: (g['rank'], -g['n']))
-    return done, out
+    return done, refused, out
 
 
 def extraction_pending():
@@ -543,6 +559,29 @@ def extraction_pending():
 #
 # So the column now states two things: what one item costs to run, and WHO HAS TO BE
 # THERE. `unattended` is the cheap word. `needs a session` is the expensive one.
+def _counted(n, unit, total=None, remaining=False):
+    """A figure with its UNIT, never bare.
+
+    TJ, 27 September 2026, after the page queue had spent a day saying `459 done` and a
+    reader could not tell what had been done to what: *"we need units on the numbers...
+    numbers need to mean numbers"*. This is rule 7b applied to the dashboard: a bare number
+    in a stat box is exactly the figure somebody quotes, and ten children, ten documents
+    and ten budget lines must not look alike.
+
+    `total` renders `459 of 474`, which is the form that cannot be misread as a rate.
+    """
+    if n is None:
+        return 'unknown'
+    unit = unit or ('item', 'items', 'items')
+    # index 2 is the REMAINING phrase, and it is a different sentence about a different
+    # set: `15 pages with proven rows left` said the opposite of the truth about those
+    # fifteen pages, which have no proven rows at all and are why the queue is not empty.
+    word = unit[2] if remaining else unit[0 if n == 1 else 1]
+    if total:
+        return '%s of %s %s' % ('{:,}'.format(n), '{:,}'.format(total), word)
+    return '%s %s' % ('{:,}'.format(n), word)
+
+
 def streams():
     """One row per ingestion stream: how many done, how many left, measured ONE way.
 
@@ -573,7 +612,7 @@ def streams():
     # Patriot Day remembrance, multi-part uploads with no date. Not a backlog.
     unclassified = max(0, len(vids) - len(have) - len(dead) - todo)
     by_board = collections.Counter(r['board_slug'] for r in idx)
-    s.append(dict(key='captions', name='Captions for recordings',
+    s.append(dict(key='captions', unit=('recording with captions held', 'recordings with captions held', 'recordings still to fetch'), name='Captions for recordings',
                   io='in: the town’s YouTube channel &rarr; out: a timed transcript — a finding aid, never a source',
                   done=len(have), todo=todo,
                   blocked=len(dead), blocked_why='captions disabled by the publisher',
@@ -590,7 +629,7 @@ def streams():
                   capture_output=True, text=True, cwd=ROOT, timeout=120).stdout.split()[0])
     except Exception:
         left = None
-    s.append(dict(key='ocr', name='OCR of scanned minutes',
+    s.append(dict(key='ocr', unit=('scanned set of minutes read', 'scanned sets of minutes read', 'scans still to read'), name='OCR of scanned minutes',
                   io='in: minutes the town posted as page images &rarr; out: text a search and the vote reader can read',
                   done=len(ocr), todo=left,
                   blocked=0, blocked_why='', cost='no model, runs by itself \u2014 macOS Vision, local',
@@ -615,7 +654,7 @@ def streams():
     # topics, public comment, budget items -- of which votes are one part. Every card now
     # prints its input and its output, because a label alone could not carry the
     # distinction and the distinction is the whole point (rule 13: ours and theirs).
-    s.append(dict(key='votes', name='Votes, from the town’s own minutes',
+    s.append(dict(key='votes', unit=('set of minutes read for votes', 'sets of minutes read for votes', 'sets of minutes still to read'), name='Votes, from the town’s own minutes',
                   io='in: the minutes the town published &rarr; out: each vote, with the town’s words quoted verbatim',
                   done=len(glob.glob(os.path.join(DATA, 'official-votes', '*', '*.json'))),
                   todo=sum(p['n'] for p in vp), blocked=0, blocked_why='',
@@ -623,7 +662,7 @@ def streams():
                   last=ago(newest([os.path.join(DATA, 'official-votes', '*', '*.json')])), note='every vote carries a quote checked verbatim against the minutes',
                   pending=vp))
     mp = register_pending(lambda r: bool(r.get('transcript_paths')), 'recording-minutes')
-    s.append(dict(key='ourminutes', name='Our minutes, written from the recordings',
+    s.append(dict(key='ourminutes', unit=('recording written up', 'recordings written up', 'recordings still to write up'), name='Our minutes, written from the recordings',
                   io='in: our machine captions of a video &rarr; out: the whole meeting — decisions, '
                      'votes, transfers, budget items, topics, public comment',
                   done=len(glob.glob(os.path.join(DATA, 'recording-minutes', '*', '*.json'))),
@@ -633,7 +672,7 @@ def streams():
                   pending=mp))
     # THE ANNUAL REPORTS. Free, ours, and the biggest pile in the project.
     ex_done, ex_pend = extraction_pending()
-    s.append(dict(key='extraction', name='Reconciling the annual-report tables',
+    s.append(dict(key='extraction', unit=('row that ties to a printed total', 'rows that tie to a printed total', 'rows still to reconcile'), name='Reconciling the annual-report tables',
                   io='in: sixteen annual town reports, read page by page &rarr; out: rows tied to a total the report itself prints',
                   done=ex_done, todo=sum(p['n'] for p in ex_pend),
                   blocked=0, blocked_why='', cost='~0.12% of the week a page if run on its own; far more if done in a conversation',
@@ -645,17 +684,22 @@ def streams():
     # THE ANNUAL REPORTS, BY WHAT IS ON THE PAGE. Counted from the pages rather than from
     # the datasets, so a table with no extractor yet is in the queue instead of absent
     # from it.
-    ar_done, ar_todo = annual_report_pages()
+    ar_done, ar_refused, ar_todo = annual_report_pages()
     if ar_done or ar_todo:
-        s.append(dict(key='annualpages', name='Annual report pages, by what is on them',
+        s.append(dict(key='annualpages', unit=('page with proven rows', 'pages with proven rows', 'pages still to prove'), name='Annual report pages, by what is on them',
                       io='in: 15 annual town reports, page by page &rarr; out: the tables '
                          'nobody has extracted yet, grouped by subject',
                       done=ar_done, todo=sum(p['n'] for p in ar_todo),
-                      blocked=0, blocked_why='', cost='~0.12% of the week a page if run on its own; far more if done in a conversation',
+                      blocked=0, blocked_why='',
+                      cost='~0.12% of the week a page if run on its own; far more if done in a conversation',
                       last=ago(newest([os.path.join(DATA, 'annual-report-pages.csv')])),
-                      note='a page counts as read when ANY dataset cites it, which says it '
-                           'was looked at rather than exhausted; the subject is read off '
-                           'the page\u2019s own headings and is a guess',
+                      note='%d of the remaining pages were READ AND REFUSED \u2014 an '
+                           'extractor reached them and the rows would not prove against '
+                           'the totals the page itself prints, so the work is fixing the '
+                           'extractor, not a first reading. A page counts as read when ANY '
+                           'dataset cites it, which says it was looked at rather than '
+                           'exhausted; the subject is read off the page\u2019s own '
+                           'headings and is a guess' % ar_refused,
                       pending=ar_todo))
 
     return s
@@ -1720,12 +1764,22 @@ def page_backlog(st):
     meant scrolling past what is happening to reach what is outstanding.
     """
     S, Q = st['streams'], st['queued']
-    left = sum((x['todo'] or 0) for x in S)
+    # NO CROSS-UNIT TOTAL. This line said `18,001 still to process`, which added 13,222
+    # ROWS to 2,880 SETS OF MINUTES to 1,884 RECORDINGS to 15 PAGES. Nothing in the world
+    # is 18,001 of anything, and the figure sat in the largest type on the page -- exactly
+    # where a reader takes a number to quote it. Rule 7b: ten children, ten documents and
+    # ten budget lines must not look alike, and adding them is the same error committed
+    # once rather than four times.
+    open_streams = [x for x in S if (x['todo'] or 0) > 0]
+    biggest = max(open_streams, key=lambda x: x['todo']) if open_streams else None
     unfiled = sum(1 for q in Q if q['ingested'] is False)
     h = []
     h.append('<div class="wrap"><div class="row"><div class="grow"><h1>Backlog</h1>'
-             '<p class="sub">%s still to process%s &middot; %s</p></div>%s</div>'
-             % ('{:,}'.format(left),
+             '<p class="sub">%s%s &middot; %s</p></div>%s</div>'
+             % (('%d of %d streams have work outstanding; the largest is %s'
+                 % (len(open_streams), len(S),
+                    _counted(biggest['todo'], biggest.get('unit'), remaining=True)))
+                if biggest else 'every stream is complete',
                 (', %d delivery not filed' % unfiled) if unfiled == 1 else
                 (', %d deliveries not filed' % unfiled) if unfiled else '',
                 st['generated'], TABS % ('', ' class="sel"', '')))
@@ -1734,7 +1788,7 @@ def page_backlog(st):
         todo = s['todo']
         h.append('<div class="card"><div class="row"><b class="grow">%s</b>'
                  '<span class="tiny">%s</span>'
-                 '<span class="num">%s done</span>'
+                 '<span class="num">%s</span>'
                  '<span class="pill %s">%s</span></div>%s'
                  '<div class="tiny" style="margin-top:6px">%s</div>'
                  '<div class="tiny" style="margin-top:4px">%s &middot; %s%s</div>'
@@ -1742,9 +1796,11 @@ def page_backlog(st):
                     (' <span class="tag agentic">agentic</span>'
                      if 'allowance' in s['cost'] else ''),
                     ('last landed %s' % html.escape(s['last'])) if s['last'] else '',
-                    '{:,}'.format(s['done']),
+                    _counted(s['done'], s.get('unit'), total=(s['done'] + (todo or 0))),
                     'go' if todo == 0 else 'warn',
-                    'complete' if todo == 0 else ('{:,} left'.format(todo) if todo is not None else 'unknown'),
+                    'complete' if todo == 0 else
+                    (_counted(todo, s.get('unit'), remaining=True)
+                     if todo is not None else 'unknown'),
                     bar(s['done'], todo or 0), s.get('io', ''), html.escape(s['cost']),
                     html.escape(s['note']),
                     (' &middot; %d blocked: %s' % (s['blocked'], html.escape(s['blocked_why']))) if s['blocked'] else ''))
