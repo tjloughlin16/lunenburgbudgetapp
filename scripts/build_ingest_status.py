@@ -788,7 +788,11 @@ def streams():
                  'work comes off the queue',
             pending=pend))
 
-    return s
+    # THE DEPTH GOES FIRST ON A PAGE CALLED BACKLOG. It is the only panel that describes
+    # the whole page rather than one stream, and appended in build order it landed at the
+    # bottom, below six streams -- so the overview was the last thing a reader reached.
+    # Rule 7a: the thing first.
+    return sorted(s, key=lambda p: 0 if p['key'] == 'backlogdepth' else 1)
 
 
 
