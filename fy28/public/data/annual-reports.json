@@ -1,0 +1,636 @@
+{
+ "categories": [
+  {
+   "means": "what Town Meeting voted to spend, article by article",
+   "pages": 94,
+   "proven": 15,
+   "refused": 1,
+   "subject": "appropriations",
+   "unproven": 78
+  },
+  {
+   "means": "the funds that sit outside the budget — grants, gifts, revolving",
+   "pages": 68,
+   "proven": 51,
+   "refused": 0,
+   "subject": "special-revenue",
+   "unproven": 17
+  },
+  {
+   "means": "what the town paid its people, name by name",
+   "pages": 66,
+   "proven": 2,
+   "refused": 1,
+   "subject": "payroll",
+   "unproven": 63
+  },
+  {
+   "means": "what the town owes and when it falls due",
+   "pages": 46,
+   "proven": 14,
+   "refused": 8,
+   "subject": "debt",
+   "unproven": 24
+  },
+  {
+   "means": "the reserves, and how much is in each",
+   "pages": 39,
+   "proven": 22,
+   "refused": 1,
+   "subject": "trust-and-stabilization",
+   "unproven": 16
+  },
+  {
+   "means": "what is owed TO the town, account by account",
+   "pages": 28,
+   "proven": 11,
+   "refused": 10,
+   "subject": "receivables",
+   "unproven": 7
+  },
+  {
+   "means": "a financial table whose heading we could not classify",
+   "pages": 27,
+   "proven": 5,
+   "refused": 0,
+   "subject": "unknown",
+   "unproven": 22
+  },
+  {
+   "means": "what was committed, collected and abated",
+   "pages": 21,
+   "proven": 9,
+   "refused": 1,
+   "subject": "tax-collection",
+   "unproven": 11
+  },
+  {
+   "means": "the assessment from the regional school district",
+   "pages": 19,
+   "proven": 1,
+   "refused": 1,
+   "subject": "regional-school",
+   "unproven": 17
+  },
+  {
+   "means": "what the town held and owed at year end",
+   "pages": 17,
+   "proven": 13,
+   "refused": 0,
+   "subject": "balance-sheet",
+   "unproven": 4
+  },
+  {
+   "means": "what the town is worth, by class of property",
+   "pages": 16,
+   "proven": 8,
+   "refused": 0,
+   "subject": "valuation",
+   "unproven": 8
+  },
+  {
+   "means": "the cash the Treasurer held",
+   "pages": 15,
+   "proven": 0,
+   "refused": 1,
+   "subject": "treasurers-cash",
+   "unproven": 14
+  },
+  {
+   "means": "the capital projects and what they cost",
+   "pages": 13,
+   "proven": 7,
+   "refused": 0,
+   "subject": "capital",
+   "unproven": 6
+  },
+  {
+   "means": "how many children are in the schools",
+   "pages": 6,
+   "proven": 3,
+   "refused": 0,
+   "subject": "enrollment",
+   "unproven": 3
+  },
+  {
+   "means": "how the town voted",
+   "pages": 2,
+   "proven": 1,
+   "refused": 0,
+   "subject": "elections",
+   "unproven": 1
+  },
+  {
+   "means": "the grants the cultural council made",
+   "pages": 1,
+   "proven": 0,
+   "refused": 0,
+   "subject": "cultural-council",
+   "unproven": 1
+  }
+ ],
+ "conclusions": [
+  {
+   "basis": "`annual-report-pages.csv`, which is generated from what the extractors actually wrote and refuses to publish a count off a stale database.",
+   "bearing": "sizes",
+   "claim": "All 478 pages holding a financial table have been read.",
+   "detail": "Sixteen documents, opened page by page. A page counted here is one that holds a financial table, not every page of the book.",
+   "figure": "pages",
+   "figures": {
+    "pages": {
+     "text": "478",
+     "unit": "pages holding a financial table",
+     "value": 478
+    }
+   },
+   "id": "every-financial-page-has-been-read",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether a page holds a table we have not recognised as financial. The classifier reads headings, and the pages whose heading did not classify are filed as `unknown` rather than dropped.",
+   "see": [],
+   "so_what": "None is unread, so the work left is checking rather than reading."
+  },
+  {
+   "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
+   "bearing": "sizes",
+   "claim": "162 of 478 pages tie to a total the page itself prints.",
+   "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
+   "figure": "proven",
+   "figures": {
+    "all": {
+     "text": "478",
+     "unit": "pages holding a financial table",
+     "value": 478
+    },
+    "proven": {
+     "text": "162",
+     "unit": "pages tied to a printed total",
+     "value": 162
+    },
+    "rest": {
+     "text": "316",
+     "unit": "pages with no such check",
+     "value": 316
+    }
+   },
+   "id": "a-third-of-the-pages-are-checked-against-the-page-itself",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "That an UNPROVEN figure is wrong. It means nothing has checked it, which is a different claim and the reason the column exists.",
+   "see": [],
+   "so_what": "The other 316 carry real figures that no arithmetic has confirmed."
+  },
+  {
+   "basis": "`annual-report-pages.csv` grouped by subject and state.",
+   "bearing": "lever",
+   "claim": "Appropriations is the least checked: 78 of its 94 pages have no check at all.",
+   "detail": "These pages print what Town Meeting voted, article by article. 15 of them do tie to a printed total; the rest are read and unconfirmed.",
+   "figure": "un",
+   "figures": {
+    "ok": {
+     "text": "15",
+     "unit": "pages tied to a printed total",
+     "value": 15
+    },
+    "tot": {
+     "text": "94",
+     "unit": "pages in this category",
+     "value": 94
+    },
+    "un": {
+     "text": "78",
+     "unit": "pages with no check",
+     "value": 78
+    }
+   },
+   "id": "the-largest-unchecked-category-is-what-town-meeting-voted",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Which of those pages COULD be checked. A page printing no total can never reach PROVEN however good the extractor gets.",
+   "see": [],
+   "so_what": "It is also the category a resident is most likely to quote."
+  },
+  {
+   "basis": "the dataset inventory in `scripts/build_archive_guide.py`, read here rather than restated, so the two cannot disagree.",
+   "bearing": "sizes",
+   "claim": "17 of the 24 datasets are read by a generic extractor that cannot name its columns.",
+   "detail": "The generic extractor records a column as `v1`, `v2`, `v3` -- an ORDINAL, the first column of THAT page that held figures. The ruler is rebuilt per page, so the same name means different columns on different pages.",
+   "figure": "gen",
+   "figures": {
+    "all": {
+     "text": "24",
+     "unit": "datasets from these reports",
+     "value": 24
+    },
+    "ded": {
+     "text": "7",
+     "unit": "datasets with a dedicated extractor",
+     "value": 7
+    },
+    "gen": {
+     "text": "17",
+     "unit": "datasets read generically",
+     "value": 17
+    }
+   },
+   "id": "two-extractors-read-these-tables-and-they-are-not-equal",
+   "kind": "measured",
+   "literals": [
+    "v1",
+    "v2",
+    "v3"
+   ],
+   "not_shown": "Which printed column a given `v1` is on any particular page, except where `column_meaning` names it from an identity the table states about itself.",
+   "see": [],
+   "so_what": "Read `column_meaning` before quoting a value from one of those."
+  }
+ ],
+ "datasets": [
+  {
+   "built_by": "generic",
+   "checked": 157,
+   "failed": 4870,
+   "name": "report-appropriations",
+   "nocheck": 0,
+   "rows": 5027,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "dedicated",
+   "checked": 0,
+   "failed": 0,
+   "name": "staff-roster-entries",
+   "nocheck": 0,
+   "rows": 3751,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-gross-wages",
+   "nocheck": 3547,
+   "rows": 3547,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "dedicated",
+   "checked": 0,
+   "failed": 2058,
+   "name": "special-revenue-funds",
+   "nocheck": 328,
+   "rows": 2387,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 323,
+   "failed": 1688,
+   "name": "report-elections",
+   "nocheck": 1,
+   "rows": 2012,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "dedicated",
+   "checked": 504,
+   "failed": 85,
+   "name": "annual-report-receipts",
+   "nocheck": 548,
+   "rows": 1137,
+   "years": "2011–2023"
+  },
+  {
+   "built_by": "dedicated",
+   "checked": 0,
+   "failed": 0,
+   "name": "staff-roster-counts",
+   "nocheck": 0,
+   "rows": 698,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-index",
+   "nocheck": 0,
+   "rows": 652,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 12,
+   "failed": 418,
+   "name": "report-trust-funds",
+   "nocheck": 214,
+   "rows": 644,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 529,
+   "name": "report-capital-projects",
+   "nocheck": 87,
+   "rows": 616,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "dedicated",
+   "checked": 0,
+   "failed": 0,
+   "name": "staff-position-map",
+   "nocheck": 0,
+   "rows": 525,
+   "years": "—"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-dept-activity",
+   "nocheck": 515,
+   "rows": 515,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 75,
+   "failed": 99,
+   "name": "report-debt",
+   "nocheck": 192,
+   "rows": 366,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-enrollment-mcas",
+   "nocheck": 338,
+   "rows": 338,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-valuation",
+   "nocheck": 321,
+   "rows": 321,
+   "years": "2011–2019"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-officials",
+   "nocheck": 237,
+   "rows": 237,
+   "years": "2011–2024"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-signatures",
+   "nocheck": 0,
+   "rows": 182,
+   "years": "2013–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-filing",
+   "nocheck": 0,
+   "rows": 104,
+   "years": "—"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-vital-records",
+   "nocheck": 96,
+   "rows": 96,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-monty-tech",
+   "nocheck": 70,
+   "rows": 70,
+   "years": "2017–2017"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-appropriations-supplement",
+   "nocheck": 0,
+   "rows": 32,
+   "years": "—"
+  },
+  {
+   "built_by": "dedicated",
+   "checked": 0,
+   "failed": 0,
+   "name": "placement-counts",
+   "nocheck": 0,
+   "rows": 15,
+   "years": "2011–2025"
+  },
+  {
+   "built_by": "dedicated",
+   "checked": 0,
+   "failed": 0,
+   "name": "ballot-questions",
+   "nocheck": 0,
+   "rows": 9,
+   "years": "2012–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-appropriations-supplement-refused",
+   "nocheck": 0,
+   "rows": 3,
+   "years": "—"
+  }
+ ],
+ "documents": [
+  {
+   "addendum": false,
+   "file": "4117-fy-2011-annual-town-report.pdf",
+   "fy": "2011",
+   "sha256": "551f9edd75d051ae4d863a5d5c13925c0b9a2f93459e63268c507c5226398b81",
+   "size": "30.2 MB",
+   "url": "/docs/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4118-fy-2012-annual-town-report.pdf",
+   "fy": "2012",
+   "sha256": "75d645ee7055f68c6a7adc0d32f534f49a1fd2a81a421d79536b14e683d25f6a",
+   "size": "54.0 MB",
+   "url": "/docs/town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4119-fy-2013-annual-town-report.pdf",
+   "fy": "2013",
+   "sha256": "00670845b7d322166015c1b6ce4d3cef6ac2007d1085f326c44ebc9ac6d418bd",
+   "size": "36.1 MB",
+   "url": "/docs/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4120-fy-2014-annual-town-report.pdf",
+   "fy": "2014",
+   "sha256": "f5ef6e9aec7866f7a32d140b047e5604ccf417e2e44c93fc25eb6540ecf1641a",
+   "size": "5.5 MB",
+   "url": "/docs/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4121-fy-2015-annual-town-report.pdf",
+   "fy": "2015",
+   "sha256": "712afbb458b2a452a1c4b3ce618478c8f59a31d7f046d349d5307f97fb8bef69",
+   "size": "7.2 MB",
+   "url": "/docs/town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4123-fy-2016-annual-town-report.pdf",
+   "fy": "2016",
+   "sha256": "f13af7a7c78d4a14be7897a5a039b189197ea94b9aa752bf913aa2185bf77438",
+   "size": "5.2 MB",
+   "url": "/docs/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf"
+  },
+  {
+   "addendum": true,
+   "file": "4122-fy-2016-annual-town-report-addendum.pdf",
+   "fy": "2016",
+   "sha256": "b354a3941e2451f71ccaa1278156189ba3e0b5d68dd1391044368ab34d0e4d0d",
+   "size": "2.1 MB",
+   "url": "/docs/town-annual-reports/docs/4122-fy-2016-annual-town-report-addendum.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4124-fy-2017-annual-town-report.pdf",
+   "fy": "2017",
+   "sha256": "4c6fbf70d0aff247bc2e18914ec1b0dcfddeeb33da85d5411dc44170eec61579",
+   "size": "35.4 MB",
+   "url": "/docs/town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4125-fy-2018-annual-town-report.pdf",
+   "fy": "2018",
+   "sha256": "364a1138df754668ee59a499cf3d76b6ac006d47a4ae7d273b7ff9bbfea18409",
+   "size": "7.7 MB",
+   "url": "/docs/town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4126-fy-2019-annual-town-report.pdf",
+   "fy": "2019",
+   "sha256": "220f1c778148feb90489cf65c6615569db118f8a4eade1e72a40574058e89582",
+   "size": "8.9 MB",
+   "url": "/docs/town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4127-fy-2020-annual-town-report.pdf",
+   "fy": "2020",
+   "sha256": "c3bf67f1259a5c19f553baefa18e02f16f2bf33c73c5f067a600daf21603ab5d",
+   "size": "19.6 MB",
+   "url": "/docs/town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4128-fy-2021-annual-town-report.pdf",
+   "fy": "2021",
+   "sha256": "7ec4740034a2b9bd3aa7450f63c91d10e6ead472450edc5fbe9c0da327fb94d3",
+   "size": "78.8 MB",
+   "url": "/docs/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4129-fy-2022-annual-town-report.pdf",
+   "fy": "2022",
+   "sha256": "d1673d634dba15c2783107f2642703270bbced41a875fd530b4f617bfd6cfbe7",
+   "size": "16.1 MB",
+   "url": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4131-fy-2023-annual-town-report.pdf",
+   "fy": "2023",
+   "sha256": "d273ebb71360e30df1327fa02cc755cc00da98265dc3f28ce841dbc3bc51d4fa",
+   "size": "17.4 MB",
+   "url": "/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4132-fy-2024-annual-town-report.pdf",
+   "fy": "2024",
+   "sha256": "46f14ff8459ec81fb3f21dcda473709c1d03af423abbf7c7633f7d5005f2907a",
+   "size": "49.8 MB",
+   "url": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4130-fy-2025-annual-town-report.pdf",
+   "fy": "2025",
+   "sha256": "a9ee7b51154d94fd5551f934ce629a2929cc4e5efd8c48cd4bdb8224b8907158",
+   "size": "6.9 MB",
+   "url": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf"
+  }
+ ],
+ "grain": "One row per page of an annual town report that holds a financial table, and the datasets read out of those pages. A page is counted once per report; a figure is counted once per row.",
+ "id": "annual-reports",
+ "not_established": [
+  "That an UNPROVEN figure is wrong. Nothing has checked it.",
+  "What a generic `v1` column is on any page where `column_meaning` says `not established`.",
+  "Whether a page we filed as `unknown` holds a table worth reading."
+ ],
+ "sources": [
+  {
+   "what": "The sixteen reports themselves",
+   "where": "/docs/town-annual-reports/docs/, each with its sha256 in /data/archive-manifest.csv"
+  },
+  {
+   "what": "What is on each page and what proved it",
+   "where": "/data/annual-report-pages.csv"
+  },
+  {
+   "what": "What a column means before you quote it",
+   "where": "sources/data/PROVENANCE-report-tables.md and `column_meaning`"
+  }
+ ],
+ "stats": [
+  {
+   "label": "annual town reports, FY2011–FY2025",
+   "value": "16"
+  },
+  {
+   "label": "pages holding a financial table",
+   "value": "478"
+  },
+  {
+   "label": "pages tied to a total the page prints",
+   "value": "162 of 478"
+  },
+  {
+   "label": "rows read out of them",
+   "value": "23,284"
+  }
+ ],
+ "title": "The annual town reports"
+}

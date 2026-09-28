@@ -240,7 +240,10 @@ CATEGORIES = [
         ('', ['blog', 'budgetfeed', 'thisweek', 'boards', 'recorded']),
     ]),
     ('method', 'How to check any of it', [
-        ('', ['connecting-the-budget', 'what-you-can-ask', 'questions']),
+        # `annual-reports` leads this shelf because it is the DOCUMENTS themselves --
+        # sixteen files, downloadable, each with its sha256 -- and the state of what we
+        # read out of them. A reader checking a figure starts at the page it came from.
+        ('', ['annual-reports', 'connecting-the-budget', 'what-you-can-ask', 'questions']),
     ]),
 ]
 
@@ -284,6 +287,11 @@ UNCATEGORISED = {'show-your-work', 'addsup', 'threads'}
 # One line on what each answers. Editorial, so written here rather than derived -- but
 # every one is checked against the document's own opening below.
 ABOUT = {
+    'annual-reports':
+        'The sixteen annual town reports, FY2011\u2013FY2025, every one downloadable with '
+        'the sha256 of the bytes we hold \u2014 and what we read out of them, by category. '
+        'Says plainly which pages tie to a total the page itself prints and which carry '
+        'figures nothing has ever checked, because those are not the same thing.',
     'open-seats':
         'Which of the town’s boards and committees has a seat going spare, and when the '
         'filled ones come up. A list rather than a report: the one page here somebody '
