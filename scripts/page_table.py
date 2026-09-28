@@ -258,23 +258,38 @@ def declare(ws, band, layout):
 def place(row, cols, tolerance=0.06):
     """`{column: value}` for one row: each figure under the column it is printed in.
 
-    A figure further than `tolerance` from every column centre is NOT placed and is returned
-    under `None`, so a caller can refuse the row rather than file it under its nearest
-    neighbour. Silence there is how a deficits column ends up added into fund balances.
+    TWO PROBLEMS ARE REPORTED, NOT SWALLOWED, both under the key `None`:
+
+    `('stray', x, text)` -- a figure further than `tolerance` from every column centre. It
+    is NOT placed, so a caller can refuse the row rather than have it filed under its
+    nearest neighbour. Silence there is how a deficits column ends up added into fund
+    balances.
+
+    `('collision', column, kept, dropped)` -- TWO figures landing in ONE column, which means
+    the band holds two printed rows, not one. This was a plain dict assignment and the
+    second figure simply overwrote the first: FY2024 page 26 bands eleven printed rows into
+    eight, and the section came out $6,736 short with nothing to say where it went. A row
+    silently half-read is the worst failure in this archive because it looks exactly like a
+    row that was read.
+
+    A caller that ignores `None` gets the old behaviour and deserves what it gets; a caller
+    that checks it finds out its banding is wrong.
     """
-    out, stray = {}, []
+    out, problems = {}, []
     for w in row:
         v = amount(w['text'])
         if v is None:
             continue
         mid = w['x'] + w['w'] / 2
         near = min(cols, key=lambda k: abs(cols[k] - mid)) if cols else None
-        if near is not None and abs(cols[near] - mid) <= tolerance:
-            out[near] = v
+        if near is None or abs(cols[near] - mid) > tolerance:
+            problems.append(('stray', round(mid, 4), w['text']))
+        elif near in out:
+            problems.append(('collision', near, out[near], v))
         else:
-            stray.append((round(mid, 4), w['text']))
-    if stray:
-        out[None] = stray
+            out[near] = v
+    if problems:
+        out[None] = problems
     return out
 
 
