@@ -131,7 +131,7 @@ Step 0 asked *"was this OCR'd too?"* and then said nothing about what to do when
 answer is yes, so it read as a diagnostic curiosity rather than a stop. A question with no
 consequence attached gets answered and walked past.
 
-`READING-A-DIGITAL-PAGE.md` now opens the process with a gate instead: a text layer
+`READING-A-REPORT-PAGE.md` now opens the process with a gate instead: a text layer
 supersedes OCR, the OCR reading of that page is discarded rather than reconciled, and the
 one-line word-count test that decides it. TJ: *"this process needs to throw out OCR data
 if we have a digital text layer for the data. its more reliable. OCR is a fallback."*
@@ -139,6 +139,34 @@ if we have a digital text layer for the data. its more reliable. OCR is a fallba
 **The cost, counted:** ten of forty rows silently absent, and a wrong conclusion about the
 town nearly written up. **What it buys:** the test is one second and half the archive is
 born-digital.
+
+### 8. The extractor FORMAT is what I keep failing on, not the tables
+
+TJ, 28 September 2026: *"i think we may need an updated extractor format. you fail very
+often on the extractor and spin a lot."*
+
+The afternoon is a controlled experiment. Four extractors, one archive, one reader. Three
+were written on word boxes carrying x and y -- the trust matrix, Monty Tech, the capital
+plans -- and each took about twenty minutes and closed on the page's own arithmetic. The
+fourth extended `extract_special_revenue.py`, which is built on the page flattened to TEXT
+LINES, and ate the rest of the day without closing.
+
+**The tables were not the difficulty.** The trust matrix prints its fund names SIDEWAYS and
+closed first time. Special revenue is a plain grid.
+
+**What differs is whether the coordinates survive.** `layout_from_boxes` turns each word's x
+into a character offset, and after that a column is a run of spaces most rows agree on --
+so a column no row fills does not exist, and a CENTRED heading never lines up with a
+RIGHT-ALIGNED figure. Three attempts to recover the names from that failed. The headings sit
+at x=0.554 on all four pages, to three decimals, in the boxes I had all along.
+
+**The cost:** an afternoon, three wrong explanations offered to TJ before anybody opened the
+page, and a half-finished migration reverted. **What it buys:** `notes/process/AN-EXTRACTOR.md`,
+and the rule that a new extractor starts from the boxes.
+
+**And the migration is its own work.** Trying it inside a page fix is exactly what went
+wrong; `extract_special_revenue.py` is 2,422 rows across sixteen editions and five of them
+tie today.
 
 ### What is now proven to work, end to end
 An agent reads the page, writes a `read` or `attested` row into

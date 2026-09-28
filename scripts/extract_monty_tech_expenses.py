@@ -7,7 +7,7 @@ Writes `sources/data/monty-tech-expenses.csv`.
 
 WHY THIS ONE IS READ FROM OCR, WHEN THE PAGE IS BORN-DIGITAL
 
-The gate in `notes/process/READING-A-DIGITAL-PAGE.md` says a text layer outranks OCR and
+The gate in `notes/process/READING-A-REPORT-PAGE.md` says a text layer outranks OCR and
 the OCR reading is discarded. This page is the exception the gate allows for, and it has to
 be checked rather than assumed: FY2025 page 115 carries its own text, and the table is NOT
 in it. The page embeds a single IMAGE from x 25 to 597 and y 194 to 530 -- a chart, with the

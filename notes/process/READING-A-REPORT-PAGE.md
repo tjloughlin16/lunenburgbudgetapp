@@ -1,18 +1,28 @@
-# Reading a page the town published DIGITALLY
+# Reading a page out of an annual town report
 
-**28 September 2026.** Eight of the sixteen annual town reports are BORN DIGITAL and this
-pipeline was running character recognition over every one of them.
-
-| | |
-|---|---|
-| **digital** | FY2014 FY2015 FY2016 FY2017 FY2018 FY2020 FY2024 FY2025 |
-| **scanned** | FY2011 FY2012 FY2013 FY2019 FY2021 FY2022 FY2023 FY2016-addendum |
-
-One command answers which, and nobody had run it:
+**28 September 2026.** Every page in this archive is one of two things, and which one
+decides everything that follows. Ask first, in one command, per PAGE:
 
     python3 -c "import pdfplumber; print(len(pdfplumber.open(PDF).pages[N].extract_words()))"
 
-Under ~40 words is a scan. Three hundred is a page whose characters are IN THE FILE.
+Under ~40 words is a photograph. Three hundred is a page whose characters are IN THE FILE.
+
+| the page carries its own text | **the gate**: read it, discard the OCR |
+|---|---|
+| **the page is a photograph** | **the other half of the gate**: count what you hold against what it prints, and LOOK at it |
+
+**IT IS A PROPERTY OF THE PAGE, NOT OF THE REPORT.** This file used to open with a table of
+eight digital reports against eight scanned ones, and that table was used to choose a year's
+work and chose wrong. FY2024 carries its own text on page 53 and is a photograph on the ten
+other pages that are unfinished; FY2020, FY2022 and FY2023 are mixed the same way. A report
+can be typeset for most of its length and paste in a photographed section, which is exactly
+what the Treasurer's and payroll sections are in several years. The counts live in
+`notes/generated/TEXT-LAYER-COVERAGE.md`, which is GENERATED, because a figure typed into
+prose is the one thing here that can be silently wrong.
+
+**And the screen is not a proof.** A page can pass the word count and still hold its TABLE as
+an image -- FY2025 page 115 does, and it is the only reason that chart got read. Apply the
+test to the REGION the figures are in, not only to the page.
 
 ## What it cost to not ask
 
@@ -96,6 +106,91 @@ FY2017, FY2018, FY2020, FY2024, FY2025 -- so this is half the archive, not an ed
 **Re-check every verdict that rested on an OCR read of a digital page.** A check that passed
 on a short read passed on less than the page, and a check that failed may have been failing
 on ink, not on arithmetic.
+
+## THE OTHER HALF OF THE GATE -- IF THERE IS NO TEXT LAYER, LOOK AT THE PAGE
+
+TJ, 28 September 2026: *"for non digital text data, even with OCR data, the agent should
+review the pages directly to see if there is anything to learn about the page, to match it
+to what is found on the OCR data. using pure OCR data is not working when there are
+mismatches."*
+
+The first half of the gate says a text layer supersedes OCR. This is what to do when there
+is no text layer, and it is not *trust the OCR*. **Recognition is a reading, and a reading
+gets checked against the page.**
+
+**WHAT HAPPENED, BECAUSE IT IS THE WHOLE ARGUMENT.** FY2024 pages 23-26, the special revenue
+listing. Placing figures by column instead of by order made four of five columns tie to the
+town's own printed totals to the penny. The fifth was short by $15,101.86, and three
+explanations were offered for it before anybody opened the page: that blank cells were
+shifting the columns, that the scan had been rendered too small and figures destroyed, that
+the town's own total might not foot. All three were wrong.
+
+The page is clean, printed and completely legible. **It prints 60 fund rows and our OCR held
+figures for 14.** Re-running recognition at six resolutions never got close, and worse, the
+scales disagreed with each other on the DIGITS -- `90.61` at one scale and `0.61` at
+another, `94.65` and `4.65`, `214.00` and `211.00` -- so there was no majority to take and
+merging the passes could not help. Read off the render by eye, the 60 rows summed to
+$46,940.59 and the section landed on $4,963,068.15 exactly, which is a total the town
+printed and nothing here had ever used.
+
+**Two steps, and the first is free.**
+
+### 1. COUNT THE ROWS THE PAGE PRINTS AGAINST THE ROWS YOU HOLD
+
+Mechanical, instant, and it would have caught this before any of the three wrong
+explanations. Count something the page has one of per row that OCR reads reliably -- here
+the four-digit fund number, which came through perfectly on every row -- and compare it to
+how many rows carry a figure.
+
+    fund rows printed on pages 23-26 ......... 185
+    rows carrying a figure ................... 140
+
+A gap is not proof of a defect; 15 of page 25's rows print a DASH rather than a zero, and a
+closed grant with nothing in it is a real row with no figure. But a gap is the alarm, and
+an alarm is what was missing. Any extractor reading a scan should publish this ratio beside
+its output, the way `search_minutes.py` prints its denominator on every run and for the same
+reason: **a reader who is told nothing assumes nothing was lost.**
+
+### 2. RENDER THE PAGE AND READ IT
+
+    swift scripts/render_page.swift <pdf> <page> /tmp/p.png 4
+
+`render_page.swift` says in its own header that it exists *"for reading with human or model
+eyes"*, and this is the case it was written for. Read the page, and compare it to what the
+extract holds -- not the other way round. The question is never *does the OCR look
+plausible*, it is *what does the page say, and did we get it*.
+
+**Where the two disagree, the page wins and the OCR is discarded for that page** -- the same
+rule as the text-layer gate, for the same reason. What comes out is a TRANSCRIPTION, and it
+is stored as data with its provenance, never typed into code: which document, which page,
+who read it. The transcription is then a source like any other and the extractor consumes
+it.
+
+**AND THE TOTAL IS WHAT MAKES IT SAFE, NOT THE READER.** A model read and a machine read are
+both readings; one of them can see the page and neither is trustworthy on its own. What
+settles it is the arithmetic the page states about itself -- 60 rows landing on a printed
+$4,963,068.15 cannot be luck, and a single wrong digit anywhere breaks it. So:
+
+- **Where the page prints a total, read it and prove it.** That is a complete answer.
+- **Where it prints none**, a read by eye is a HAND-BUILT figure in rule 13a's sense --
+  an argument somebody assembled -- and it is worth exactly as much as the care taken. Say
+  so, and look for a second printing of the same quantity elsewhere in the document before
+  publishing it as established.
+
+**DO IT IN ISOLATION, NEVER IN A LONG SESSION (rule 7g).** Reading a page has no dependency
+on a conversation's history: it takes a page and a rule and produces rows. Every turn
+re-sends the whole conversation, so the same read costs several times more at turn 200 than
+at turn 3. It belongs in `claude -p`, the way `write_recording_minutes.py` and
+`extract_official_votes.py` already work. The test is the one rule 7g gives: *could this run
+with none of this conversation in front of it?* For a page read the answer is always yes.
+
+**What this is NOT.** It is not a licence to transcribe instead of extracting. An extractor
+that reads a page is reproducible and a transcription is not -- run twice, recognition gives
+the same answer and a reader may not. That is why the transcription becomes the durable
+artefact and the arithmetic re-proves it on every run: the reading happens once, the check
+happens every time. Reach for it when the count is short and recognition cannot be made to
+close, not before.
+
 
 ## THE PROCESS -- three steps, in this order
 
