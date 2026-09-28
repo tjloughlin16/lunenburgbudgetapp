@@ -714,6 +714,30 @@ def subject_of(texts, whole_page=()):
     return 'unknown'
 
 
+
+# A PAGE THE REPORT PRINTS TWICE IS NOT TWO PAGES OF WORK.
+#
+# FY2017 prints its omnibus budget at pp168-169 and AGAIN, as a two-column reprint, inside
+# the Article 8 warrant text at pp156-158. `extraction-plan.csv` says so in as many words --
+# "USE THE p168-169 VERSION, not the p156-158 one" -- and until 28 September 2026 the plan
+# parser scraped BOTH ranges out of that sentence and read the reprint too, which
+# reconciled at -$7,922,127.08 and was reported for days as FY2017 being broken.
+#
+# Fixing the parser made those three pages stop being read, so this map called them
+# `unread` -- work nobody has started -- and the unfinished count went UP by two in
+# response to a correct fix. That is the counter punishing progress, and it is the third
+# time in one day it has done so.
+#
+# They are not unread. They are a second printing of a table this archive reads properly at
+# its other location, and counting them makes one table look like two. Recorded here with
+# WHERE the real reading is, so the claim is checkable rather than a quiet exclusion.
+REPRINTS = {
+    (2017, 156): 'a two-column reprint of the omnibus budget read at FY2017 pp168-169',
+    (2017, 157): 'a two-column reprint of the omnibus budget read at FY2017 pp168-169',
+    (2017, 158): 'a two-column reprint of the omnibus budget read at FY2017 pp168-169',
+}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
@@ -732,6 +756,8 @@ def main():
         for b in T.read_boxes(f):
             by_page[b['page']].append(b)
         for page, boxes in sorted(by_page.items()):
+            if (fy, page) in REPRINTS:
+                continue
             figs = rev = 0
             for b in boxes:
                 t = (b['text'] or '').strip()

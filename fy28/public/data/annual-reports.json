@@ -18,7 +18,7 @@
   },
   {
    "means": "what the town paid its people, name by name",
-   "pages": 66,
+   "pages": 65,
    "proven": 4,
    "refused": 1,
    "subject": "payroll",
@@ -66,7 +66,7 @@
   },
   {
    "means": "the assessment from the regional school district",
-   "pages": 19,
+   "pages": 18,
    "proven": 1,
    "refused": 1,
    "subject": "regional-school",
@@ -133,14 +133,14 @@
   {
    "basis": "`annual-report-pages.csv`, which is generated from what the extractors actually wrote and refuses to publish a count off a stale database.",
    "bearing": "sizes",
-   "claim": "All 479 pages holding a financial table have been read.",
+   "claim": "All 477 pages holding a financial table have been read.",
    "detail": "Sixteen documents, opened page by page. A page counted here is one that holds a financial table, not every page of the book.",
    "figure": "pages",
    "figures": {
     "pages": {
-     "text": "479",
+     "text": "477",
      "unit": "pages holding a financial table",
-     "value": 479
+     "value": 477
     }
    },
    "id": "every-financial-page-has-been-read",
@@ -153,14 +153,14 @@
   {
    "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
    "bearing": "sizes",
-   "claim": "186 of 479 pages tie to a total the page itself prints.",
+   "claim": "186 of 477 pages tie to a total the page itself prints.",
    "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
    "figure": "proven",
    "figures": {
     "all": {
-     "text": "479",
+     "text": "477",
      "unit": "pages holding a financial table",
-     "value": 479
+     "value": 477
     },
     "proven": {
      "text": "186",
@@ -621,11 +621,11 @@
   },
   {
    "label": "pages holding a financial table",
-   "value": "479"
+   "value": "477"
   },
   {
    "label": "pages tied to a total the page prints",
-   "value": "186 of 479"
+   "value": "186 of 477"
   },
   {
    "label": "rows read out of them",
