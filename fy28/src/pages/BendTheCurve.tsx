@@ -388,7 +388,7 @@ export function BendTheCurve({ option = null }: {
           lists are not solutions, they are the price of not having fixed a rate.{' '}
           <Go to="why" className="font-semibold"
             style={{ color: 'var(--series-cost)' }}>
-            The static version of this argument is on &ldquo;Why it repeats&rdquo; &rarr;
+            The static version of this argument is on &ldquo;Why the gap returns each year&rdquo; &rarr;
           </Go>
         </Note>
         <Note>

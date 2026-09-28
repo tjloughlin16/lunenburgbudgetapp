@@ -26,6 +26,8 @@ import subprocess
 import sys
 import tempfile
 
+import d1_incremental as INC
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 APP = os.path.join(ROOT, 'fy28')
@@ -110,12 +112,64 @@ def compare():
     return want, got, bad
 
 
+def remote_digests():
+    """What D1 says it holds, per table, from its own `synced_table`.
+
+    A missing table is not an error: it means the remote has never had an incremental push
+    and every table counts as new. That is the correct reading -- we genuinely do not know
+    what is there -- and it is why this returns {} rather than failing.
+    """
+    r = wrangler('d1', 'execute', NAME, '--remote', '--json', '--command',
+                 'SELECT name, sha256, rows FROM %s' % INC.SYNC_TABLE, '-y')
+    if r.returncode != 0:
+        return {}
+    try:
+        payload = json.loads(re.sub(r'^[^\[{]*', '', r.stdout.strip(), count=1))
+    except ValueError:
+        return {}
+    rows = []
+    for block in (payload if isinstance(payload, list) else [payload]):
+        rows.extend(block.get('results', []) or [])
+    return INC.parse_remote(rows)
+
+
+def push_incremental(limit, dry=False):
+    """Send only the tables whose digest differs. Returns (sent, deferred, rc)."""
+    local = INC.local_state(DB)
+    remote = remote_digests()
+    if not remote:
+        print('  D1 records no per-table digests yet, so every table counts as new.\n'
+              '  This first run will take several days at the free tier; each one clears\n'
+              '  what fits and names what is left.')
+    send, drop, deferred, total = INC.plan(local, remote, limit, INC.parents(DB))
+    for line in INC.describe(send, drop, deferred, total, limit):
+        print('  ' + line)
+    if dry or (not send and not drop):
+        return len(send), len(deferred), 0
+    sql = INC.batch_sql(local, send, drop)
+    with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
+        fh.write(sql)
+        path = fh.name
+    print('  sending %.1f MB' % (os.path.getsize(path) / 1e6))
+    r = wrangler('d1', 'execute', NAME, '--remote', '--file', path, '-y')
+    os.unlink(path)
+    if r.returncode != 0:
+        print('  push failed:\n' + (r.stderr or r.stdout)[-1200:])
+        return len(send), len(deferred), 1
+    return len(send), len(deferred), 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true',
                     help='compare row counts and fail on any difference')
     ap.add_argument('--force', action='store_true',
                     help='import even if this database has already been imported')
+    ap.add_argument('--full', action='store_true',
+                    help='replace EVERY table (needs ~2 rows of writes per row; the free '
+                         'tier allows 100,000 a day and this database is past that)')
+    ap.add_argument('--limit', type=int, default=40000,
+                    help='most rows to send in one run (default 40,000)')
     ap.add_argument('--plan', action='store_true',
                     help='say what a push WOULD do, without touching the network')
     args = ap.parse_args()
@@ -179,7 +233,40 @@ def main():
               f'  100,000 a day, so it is not run for a database that has not changed.\n'
               f'  Use --force if you believe the live copy has drifted, or --check to ask it.')
         return 0
-    print(f'importing {rows:,} rows (~{rows * 2:,} writes with indexes) — the free tier '
+    # INCREMENTAL BY DEFAULT, because a full replace no longer fits in a day. 153,414
+    # rows is ~306,828 writes against a 100,000/day free tier, so the whole-database path
+    # cannot complete however many times it is retried -- and a push route that only works
+    # while the data barely changes is not a push route.
+    if not args.full:
+        print(f'incremental push — only tables whose digest differs are sent')
+        sent, deferred, rc = push_incremental(args.limit)
+        if rc:
+            return rc
+        # THE CONSISTENCY CHECK CANNOT RUN MID-CONVERGENCE, and must not be mistaken for
+        # a failure when it does. compare() counts EVERY table, including ones this run
+        # deliberately deferred -- and a COUNT over a table the remote does not have yet
+        # errors, which killed an otherwise successful push after it had landed 100 tables.
+        # A partial sync is the designed state while a backlog drains, so it reports what
+        # is left and stops, rather than asking a question that has no answer yet.
+        if deferred:
+            print(f'\n{deferred} table(s) still to send; run again when the daily budget '
+                  f'resets. The consistency check is skipped until then, because counting '
+                  f'a table D1 does not hold yet errors rather than returning zero.')
+            return 0
+        want, got, bad = compare()
+        if bad:
+            print(f'\nFAIL: D1 still disagrees on {len(bad)} table(s):')
+            for b in bad[:12]:
+                print('  ' + b)
+            return 1
+        with open(PUSHED, 'w') as fh:
+            fh.write(here + '\n')
+        with open(PUSHED_TABLES, 'w') as fh:
+            fh.write('\n'.join(sorted(want)) + '\n')
+        print(f'ok: D1 matches — {len(want)} tables, {sum(want.values()):,} rows')
+        return 0
+
+    print(f'FULL replace: {rows:,} rows (~{rows * 2:,} writes with indexes) — the free tier '
           f'allows 100,000 a day')
 
     src = sqlite3.connect(DB)

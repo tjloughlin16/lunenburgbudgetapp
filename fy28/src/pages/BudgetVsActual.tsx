@@ -21,7 +21,7 @@ import type { Conclusion } from '../components/report'
  *  reader lands on is the finding, which needs the data to state. */
 const TAB: Tab = 'variance'
 const DATA = '/data/budget-vs-actual.json'
-const TITLE = 'Budgets against what was later reported'
+const TITLE = 'Budget against reported spending'
 
 /** Budgets against what was later REPORTED spent, charted.
  *

@@ -380,7 +380,7 @@ export function Walkthrough() {
         <Doors items={[
           ['growth', 'Commercial development', `${usdShort(DEVELOPMENT.fiveYear.value)} a year, and what the town actually built`],
           ['homestudents', 'Homes and students', 'the town builds, the schools do not grow'],
-          ['development', 'Try growth', 'the dials'],
+          ['development', 'Commercial growth scenarios', 'the dials'],
         ]} />
       </Room>
 

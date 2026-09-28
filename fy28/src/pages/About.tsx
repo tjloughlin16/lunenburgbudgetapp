@@ -82,7 +82,7 @@ export function About() {
       </Body>
       <Body>
         <a className="underline" href="/ask-us">Ask a question or flag something</a> ·{' '}
-        <a className="underline" href="/sources">Every document this is built on</a> ·{' '}
+        <a className="underline" href="/sources">Source documents</a> ·{' '}
         <a className="underline" href="/what-we-cannot-answer">What we cannot answer</a>
       </Body>
     </ReportShell>

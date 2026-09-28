@@ -418,7 +418,7 @@ export default function App() {
               </svg>
               <span className="hidden sm:inline">Search</span>
             </Go>
-            <Go to="sources" title="Every document this is built on"
+            <Go to="sources" title="Source documents — every one this site rests on"
               aria-current={tab === 'sources' ? 'page' : undefined}
               className="inline-flex text-xs font-semibold px-2 py-1 rounded
                          whitespace-nowrap shrink-0"

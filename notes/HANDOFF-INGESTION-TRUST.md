@@ -21,11 +21,17 @@ From `bash scripts/status.sh --once`, and every figure carries what it counts:
 | Votes from the town's minutes | 1,607 of 4,487 | 2,880 sets of minutes still to read | one set of minutes |
 | Our minutes of recordings | 549 of 2,433 | 1,884 recordings still to write up | one recording |
 | Reconciling annual-report tables | 567 of 13,789 | 13,222 rows still to reconcile | one row that must tie to a printed total |
-| Annual report pages | 459 of 474 | 15 pages still to prove | one PAGE of a report |
+| Annual report pages | 445 of 474 | 29 pages still to prove | one PAGE of a report |
 
 **The annual-report page queue is finished as a reading job.** All 474 pages have been
-looked at. 459 produced rows that prove; 15 were read and REFUSED. **None is waiting for a
+looked at. 445 produced rows that prove; 29 were read and REFUSED. **None is waiting for a
 first reading**, and spending model tokens on them returns the same refusals.
+
+The figure fell from 459 to 445 later the same day, and the archive did not change. Four of
+the eight `*-refused.csv` files carry no `state` column, so each was CREDITING the pages it
+refused -- recording that an extractor could not read a page marked the page READ. Twelve of
+the fourteen were debt pages. A refusal file is now skipped by NAME as well as by column, in
+both halves of the join. See section 2b.
 
 ## 1. THE FOUR FAILURES OF THAT DAY, AND WHAT EACH ONE COST
 
@@ -75,8 +81,8 @@ A page nobody has opened needs somebody to read it. A page an extractor READ and
 REFUSED needs the extractor fixed — the page is legible and the reader exists. Those are
 different jobs for different people, and the queue could not say which.
 
-    459 of 474 pages READ
-     15 of 474 pages READ AND REFUSED -- the rows would not prove
+    445 of 474 pages READ
+     29 of 474 pages READ AND REFUSED -- the rows would not prove
       0 of 474 pages NOT YET READ
 
 `map_annual_report_pages.py` marks a page `refused` when a `*-refused.csv` cites it, or when
@@ -121,20 +127,27 @@ budget-state readings. Captions and OCR are free.
 
 ## 3. WHAT IS STILL OPEN
 
-### 3a. NO LEASE ON THE PAGE QUEUE — the one that costs money
+### 3a. THE LEASE — DONE
 
-Two processes read the same 16 pages on 27 September because the work list is DERIVED from
-`annual-report-pages.csv` and nothing claims a page while it is being read. A page in flight
-is byte-identical to a page nobody has touched.
+`scripts/worklease.py`, claimed inside `benchmark_ingest.py`. **The claim is on the PAGE and
+not on the batch**, which is the whole lesson: a lock around the batch would not have helped,
+because the second run was a second batch holding its own lock over the same pages.
 
-`scripts/ingest.py` already solved this for documents: `sources/data/ingest-pending.csv`
-registers one as IN FLIGHT so the next run retries rather than duplicates. The page reader
-has no equivalent. **This is the only one of the four failures that costs dollars rather
-than credibility, and it is not fixed.**
+Four behaviours tested, because a lease that cannot be shown to block is not a lease:
 
-Note also that `bash scripts/status.sh` reported `0 running` while a duplicate pass was
-under way — it tracks the votes and minutes sweeps, and `benchmark_ingest.py` is not one of
-its streams. So the check that would have caught it had no power to.
+  * skips a real read in 0.164s, spending nothing
+  * releases when its holder exits, including on an exception
+  * a DEAD holder's lease is ignored and taken over
+  * an EXPIRED lease is taken over even when its pid is alive, so a recycled pid cannot
+    park a page forever
+
+`O_EXCL` makes the check and the claim one operation. A read followed by a write is the
+check-then-act race that caused the duplicate.
+
+Still true and worth knowing: `bash scripts/status.sh` reported `0 running` while the
+duplicate pass was under way, because it tracks the votes and minutes sweeps and
+`benchmark_ingest.py` is not one of its streams. The check that would have caught it had no
+power to.
 
 ### 3b. THE 15 REFUSED PAGES — engineering time, not model time
 
@@ -192,6 +205,81 @@ generator changed inputs for another. The dependencies that bit:
 
 Nothing encodes this. It is four rounds of guessing every time, and it is why a "quick
 rebuild" took an hour.
+
+### 3f. D1 — FIXED, AND IT CONVERGES OVER DAYS
+
+The push was broken in a way that no retry could fix:
+
+    importing 153,414 rows (~306,828 writes with indexes)
+    the free tier allows 100,000 a day
+
+`sync_d1.py` replaced the whole database, so the published copy could not be brought up to
+date on that day or any later one. CLAUDE.md still says "a full replace is ~51,000 rows";
+that is stale by 3x.
+
+TJ, 27 September 2026: *"We need to make the d1 sync work. I dont want to leave that sitting
+broken. Thats a deployment issue and we can't react in an emergency."* Right, and that is
+the real cost -- not the staleness, the loss of a push route.
+
+**`scripts/d1_incremental.py` sends only the tables whose DIGEST differs**, and is now the
+default; `--full` forces the old behaviour. Measured: run one sent 100 tables / 39,891 rows,
+run two sent 10 more / 39,448 rows, 9 tables / 74,075 rows remain and it exits 0 telling you
+to run again. The remote holds a `synced_table` row per table, and `/api/query` now answers
+about `build_meta`.
+
+Four things it had to get right, each learned by failing:
+
+  * **A digest, not a row count.** A corrected figure leaves the count identical, which is
+    exactly the drift `--check` exists to catch. The digest covers the CREATE too, so a new
+    column counts as a change even with no row moved.
+  * **Two kinds of change.** Same CREATE and different rows -> `DELETE` then `INSERT`, so
+    nothing referencing the table is touched. Different CREATE, or new -> `DROP`, `CREATE`,
+    `INSERT`.
+  * **`PRAGMA defer_foreign_keys = true`** opens every batch, because the schema has real
+    foreign keys and D1 enforces them. It defers CHECKING -- it does NOT make a referenced
+    table exist, which is the next one.
+  * **A parent must exist before its children's rows.** Sorting purely by size put a small
+    child ahead of `document`, which it references, and D1 answered `no such table:
+    main.document` at INSERT. A child is now only eligible once every parent is already
+    remote or earlier in the same batch, computed from the live schema.
+
+And the consistency check is SKIPPED while tables are deferred: `compare()` counts every
+table, and a COUNT over a table the remote does not hold yet errors rather than returning
+zero -- which killed an otherwise successful push after it had landed 100 tables. A partial
+sync is the designed state while a backlog drains.
+
+**What is left:** run `python3 scripts/sync_d1.py` on each of the next two days to clear the
+remaining 9 tables. After that, ordinary changes are a few thousand rows and land in one run.
+
+### 3g. THE DEBT PAGES — diagnosed, ready to write
+
+The 12 debt pages are the biggest single bucket of the 29, and **the recorded refusal reason
+is wrong**. It says *"the page is a scanned image; there is no text layer to read, and the
+issue columns are too narrow for Vision"* while its own evidence says *"Vision reads 356
+boxes, e.g. `$9,180`"*.
+
+What FY2011 p76 actually holds, read off the boxes:
+
+  * the title, `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30`
+  * a full year header at y~0.925: `2019 2020 2021 2022 2023 2024 2025 [2026 2027] 2028
+    2029 2030` -- every year its own box at a ~0.038 pitch, EXCEPT one merged box
+  * 60 row labels at x<0.20, structured per bond issue: `PRINCIPAL`, `INTEREST`,
+    `TOTAL MASS WATER POOL TRUST`
+  * 285 money boxes on a clean grid, ~0.04 pitch
+
+**The table states an identity about itself: `PRINCIPAL + INTEREST = TOTAL <issue>`**, for
+every issue in every year column -- roughly 15 issues x 11 columns of arithmetic that a
+wrong column assignment cannot survive. That is what makes this safe to read from OCR at
+all, and it is rule 13b's own argument.
+
+The merged `2026 2027` box is the FY2017 p149 trap in a tractable form: both years are
+PRINTED and READ, the pitch is measurable, and years ascend left to right, so the two column
+centres are predicted rather than invented. Nothing is named from a position.
+
+So: read the year header, split merged boxes by the measured pitch, band the rows off the
+label column, place figures by nearest column centre, and publish only the columns where
+principal + interest foots to the printed total. `read_trust_table.py` is the worked example
+of the same shape.
 
 ## 4. THE RULE THAT CAME OUT OF IT
 

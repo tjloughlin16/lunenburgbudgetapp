@@ -1419,10 +1419,20 @@ immediately before writing, and preserve the file's existing newline convention.
                                                 #   doubled, a heading read as a person, a grouping with one value
     python3 scripts/classify_roster_roles.py    # what job each printed roster title is
     python3 scripts/classify_roster_roles.py --check   # ...and fail if it is stale
-    python3 scripts/sync_d1.py                  # push the database to D1 — SKIPS if unchanged;
-                                                #   a full replace is ~51,000 rows against a
-                                                #   free-tier limit of 100,000 writes a day
-    python3 scripts/sync_d1.py --check          # ...and fail if the two copies disagree
+    python3 scripts/sync_d1.py                  # push the database to D1 — INCREMENTAL: only
+                                                #   tables whose DIGEST differs are sent, at most
+                                                #   40,000 rows a run, and what does not fit is
+                                                #   named and waits for tomorrow. A big change
+                                                #   converges over days instead of failing
+                                                #   forever. --full forces a whole replace and
+                                                #   NO LONGER FITS: 153,414 rows is ~306,828
+                                                #   writes against 100,000 a day. This line
+                                                #   used to say ~51,000 and was stale by 3x,
+                                                #   which is how a broken push route looked fine
+    python3 scripts/sync_d1.py --check          # ...and fail if the two copies disagree;
+                                                #   SKIPPED while tables are still deferred,
+                                                #   because counting a table D1 does not hold
+                                                #   yet errors rather than returning zero
     python3 scripts/build_search_index.py       # one FTS index over pages, posts, documents, minutes, transcripts
     python3 scripts/build_search_index.py --check    # ...and fail if any input has changed since
     python3 scripts/sync_search_d1.py           # push it to D1, INCREMENTALLY, inside the shared

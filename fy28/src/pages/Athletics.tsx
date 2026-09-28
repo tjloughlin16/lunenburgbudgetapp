@@ -260,7 +260,7 @@ export function Athletics() {
         <Go to="context"
           className="text-xs font-semibold px-3 py-2 rounded-md"
           style={{ background: 'var(--surface-3)', color: 'var(--text-primary)' }}>
-          ← The situation
+          ← The budget gap
         </Go>
         <a href="https://lunenburgbudgetproject.org/docs/analyses/athletics.md"
           className="text-xs font-semibold px-3 py-2 rounded-md"

@@ -19,7 +19,7 @@ import type { Conclusion } from '../components/report'
  *  reader lands on is the finding, which needs the data to state. */
 const TAB: Tab = 'stopped'
 const DATA = '/data/stopped-funding.json'
-const TITLE = 'What stopped being funded'
+const TITLE = 'Funding that stopped'
 
 /** What stopped being funded — every school line the district's own book took to zero.
  *
