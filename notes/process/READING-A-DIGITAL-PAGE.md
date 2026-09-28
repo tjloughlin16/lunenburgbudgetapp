@@ -23,6 +23,32 @@ Under ~40 words is a scan. Three hundred is a page whose characters are IN THE F
   heading `as of June 30, 2025`.
 - Days spent hunting figures that were never lost.
 
+## STEP 0 -- ASK WHAT WE ALREADY HAVE, BEFORE TOUCHING ANYTHING
+
+TJ, 28 September 2026: *"the process needs to start with my questions too."* These are his,
+in his order, and every one of them changed what the work turned out to be:
+
+**"What format do we have the data currently in?"**
+Name the actual file and show a row. `sources/data/<x>.csv`, its columns, three real rows.
+Half the answers to "what is left to do" turn out to be "it is already there".
+
+**"Is it in a CSV already?"**
+FY2025 gross wages was -- 532 rows. That sounds finished and was not: the page prints 612.
+*Having rows is not having the data.* Count what the page holds and compare.
+
+**"Was this OCR'd too?"**
+Check the reader's input, not the output. `RP.load(edition, ocr=True)` means recognition.
+Then check whether the page even needed it -- see the one-line test below. Seven times out
+of seven today the answer was: digital page, recognised anyway.
+
+**"What is left to make it FINISHED?"**
+And finished means ONE thing: *the page leaves the unfinished count.* Not "the data is
+right", not "I read it into a scratch file". If the answer has an intermediate state in
+it, it is not an answer -- say which of the three steps below are outstanding.
+
+Answer all four before writing any code. On FY2025 they took about a minute each and they
+are what stopped four tables being rebuilt that did not need rebuilding.
+
 ## THE PROCESS -- three steps, in this order
 
 ### 1. READ the text layer into the CSV
