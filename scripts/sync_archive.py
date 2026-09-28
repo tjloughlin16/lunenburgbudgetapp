@@ -44,6 +44,33 @@ import archive_storage as A  # noqa: E402
 STATE_COLS = ['key', 'bytes', 'sha256', 'verified_at']
 
 
+DEFECTS = os.path.join(A.ROOT, 'sources', 'data', 'document-defects.csv') \
+    if hasattr(A, 'ROOT') else os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        'sources', 'data', 'document-defects.csv')
+
+
+def declared_defects():
+    """Archive keys written up in `document-defects.csv` as a document that legitimately
+    differs from our recorded copy.
+
+    Matched on the EXACT key in the `document` column, so a row has to name the file the
+    manifest names. Three of these were already described in prose -- one row reading
+    `state-dls/assessedvalues.xlsx and new_growth.xlsx` -- which is readable, is not a key,
+    and no amount of it would ever have matched. Rule 13's positional-name trap in another
+    coat: a description of a document is not its address.
+    """
+    out = set()
+    if not os.path.exists(DEFECTS):
+        return out
+    with open(DEFECTS, encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            doc = (r.get('document') or '').strip()
+            if '/' in doc and ' ' not in doc:
+                out.add(doc)
+    return out
+
+
 def build_manifest(quiet=False):
     """Hash every file under sources/ and write the manifest -- NEVER dropping a document.
 
@@ -107,6 +134,23 @@ def build_manifest(quiet=False):
         if not quiet and i % 500 == 0:
             print(f'  hashed {i}/{len(keys)}', flush=True)
 
+    # THE REGISTER IS NOW READ, AND USED TO BE ONLY NAMED. This refusal told a person to
+    # declare the key in `document-defects.csv` and then consulted nothing, so a declared
+    # defect blocked the index exactly as hard as an undeclared one. Between 26 and 28
+    # September 2026 that held the whole manifest shut: four DLS exports were left over
+    # from the fixed-name rule this archive replaced on the 26th, three of them already
+    # written up in the register, and every later change to any file went unindexed.
+    #
+    # A refusal whose stated remedy does nothing is worse than one with no remedy, because
+    # it reads as a step somebody can take. Rule 7c's shape, applied to an error message.
+    declared = declared_defects()
+    waived = [c for c in changed if c[0] in declared]
+    changed = [c for c in changed if c[0] not in declared]
+    for key, old_sha, new_sha in sorted(waived):
+        # Said on EVERY run, never once. A declared defect that stops being mentioned is a
+        # divergence nobody is looking at any more.
+        print(f'  declared defect, indexing the copy on disk: {key}\n'
+              f'     was {old_sha[:16]}  now {new_sha[:16]}')
     if changed:
         for key, old_sha, new_sha in changed[:10]:
             print(f'  !! {key}\n     manifest {old_sha[:16]}  disk {new_sha[:16]}')
