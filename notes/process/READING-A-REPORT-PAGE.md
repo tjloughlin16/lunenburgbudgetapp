@@ -291,8 +291,21 @@ block on page 25 reads to a total $20 from the printed GRAND TOTAL, which is exa
 misread digit looks like -- and choosing the digit that makes it close is fitting the answer
 to the check. That is the compensating-error trap rule 14 describes, manufactured on purpose.
 
-Register it as a gap, name what would close it -- a better scan of the one page, or the
-department's own file -- and move to the next section.
+**MARK IT AND MOVE ON.** TJ, 28 September 2026, having opened the page himself: *"its too
+blurry. we need to mark it as TOO BLURRY and call it HARD BLOCKED. and move on."*
+
+`sources/data/page-blocked.csv` is the register, and `blocked` is a state of its own in the
+page tracker, beside `proven`, `unproven` and `refused`.
+
+**A page nobody has got to yet and a page nobody CAN get to are different facts**, and
+leaving both in one bucket means the backlog never stops containing the second kind: every
+pass rediscovers it, re-renders it, and re-concludes it. That is the cost this state removes.
+
+Nothing infers a block. An extractor that cannot read a page says `refused`, which is a
+statement about the EXTRACTOR; `blocked` is a statement about the DOCUMENT and a person has
+to have looked. The row records what was tried, what the obstacle measures, and the one
+thing that would remove it -- here, a better scan of the one page or the Treasurer's own
+receipts file. Register the question in `money-gaps.csv` too, and go to the next section.
 
 ## COUNT WHAT THE PAGE PRINTS AGAINST WHAT YOU HOLD
 

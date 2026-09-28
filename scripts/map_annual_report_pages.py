@@ -558,6 +558,10 @@ PROOF = {
     # the register of stabilization rows that did NOT foot. Its rows are real and published
     # with the reconciliation that fails; it is the definition of unproven.
     'stabilization-unfooted': (None, NOTHING),
+    # the register of pages that CANNOT be read. It carries no verdict about any figure --
+    # that is the point of it, a page in here has no figures we could verify - so NOTHING.
+    # The page's state comes from the register itself, not from a column here.
+    'page-blocked': (None, NOTHING),
 }
 
 
@@ -800,6 +804,33 @@ REPRINTS = {
 }
 
 
+def blocked_pages():
+    """`{(fy, page): reason}` -- pages that CANNOT be read, and why.
+
+    HARD BLOCKED IS NOT UNFINISHED. TJ, 28 September 2026, on the FY2023 receipts page:
+    *"we need to mark it as TOO BLURRY and call it HARD BLOCKED. and move on."*
+
+    A page nobody has got to yet and a page nobody CAN get to are different facts, and
+    leaving both in one bucket means the backlog never stops containing the second kind --
+    every pass rediscovers it, re-renders it, and re-concludes it. The register says what
+    was tried, what the obstacle measures, and the one thing that would remove it.
+
+    It is deliberately a small file that a person writes. Nothing infers a block: an
+    extractor that cannot read a page says `refused`, which is a statement about the
+    extractor. `blocked` is a statement about the DOCUMENT, and it needs somebody to have
+    looked.
+    """
+    out = {}
+    f = os.path.join(DATA, 'page-blocked.csv')
+    if os.path.exists(f):
+        for r in csv.DictReader(open(f, encoding='utf-8')):
+            try:
+                out[(int(r['fy']), int(r['page']))] = r.get('reason', 'blocked')
+            except (KeyError, ValueError):
+                continue
+    return out
+
+
 def transcribed_pages():
     """`{(fy, page)}` for every page a person has read off the render.
 
@@ -826,6 +857,7 @@ def main():
     done, said = read_pages()
     refused = refusals()
     transcribed = transcribed_pages()
+    blocked = blocked_pages()
     rows = []
     for f in sorted(glob.glob(os.path.join(OCR, '*annual-town-report.tsv'))):
         m = re.search(r'fy-(\d{4})-', f)
@@ -895,6 +927,9 @@ def main():
             # last and is the ONLY one that costs model tokens.
             if proved:
                 state = 'proven'
+            elif (fy, page) in blocked:
+                # CANNOT be read, as against not read YET. See `page-blocked.csv`.
+                state = 'blocked'
             elif hits:
                 state = 'unproven'
             elif direction == 'reversed':
