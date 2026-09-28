@@ -130,7 +130,15 @@ def main():
                 attested[key]['column:' + r['column']] = note
                 continue
             if (r.get('kind') or 'fund') == 'check':
-                declared[key][r['column']] = r['value']
+                # A PAGE MAY STATE SEVERAL IDENTITIES, so `row_identity` accumulates.
+                # The trust fund summary states five -- net earnings, ending principal,
+                # ending earnings, ending cash value and ending market value -- and keeping
+                # only the last would have checked a fifth of what the page asserts while
+                # reporting that it closed.
+                if r['column'] == 'row_identity':
+                    declared[key].setdefault('row_identity', []).append(r['value'])
+                else:
+                    declared[key][r['column']] = r['value']
                 continue
             if (r.get('kind') or 'fund') == 'total':
                 want[key][r['column']] = float(r['value'])
@@ -206,7 +214,7 @@ def main():
                 if wrong:
                     ok = False
                     notes[-1] += ' -- WRONG: %s' % wrong
-            if d.get('row_identity'):
+            for identity in (d.get('row_identity') or []):
                 # EVERY ROW PROVES ITSELF. The receivables summary prints no grand total but
                 # states an identity on each line -- forward plus commitments, abatements,
                 # payments, refunds, transfers and adjustments equals the balance carried.
@@ -219,7 +227,7 @@ def main():
                 # less encumbered is the balance returned to revenue -- and writing that as
                 # a sum would mean storing expended as a negative, which is not what the
                 # page prints and not what a reader would expect of the column.
-                parts, _, whole = d['row_identity'].partition('=')
+                parts, _, whole = identity.partition('=')
                 if '-' in parts:
                     first, *rest = [c.strip() for c in parts.split('-')]
                     parts = [(first, 1)] + [(c, -1) for c in rest]
@@ -243,8 +251,7 @@ def main():
                             off.append('p%s %s: %s vs %s' % (pg, name, format(lhs, ','),
                                                              format(wnt, ',')))
                 notes.append('%d of %d rows close on %s'
-                             % (len(rows_) - len(off) - len(att), len(rows_),
-                                d['row_identity']))
+                             % (len(rows_) - len(off) - len(att), len(rows_), identity))
                 for a in att:
                     notes.append('ATTESTED, the town\u2019s own arithmetic: ' + a)
                 if off:
