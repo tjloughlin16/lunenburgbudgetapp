@@ -194,15 +194,62 @@ close, not before.
 
 ## THE PROCESS -- three steps, in this order
 
-### 1. READ the text layer into the CSV
-`pdfplumber.extract_words()` gives every word with `x0` and `top`. Band by `top` into
-printed lines, then split each line into columns by `x0`. Two things bite every time:
+### 1. READ the page into a CSV -- with `page_table.py`, not by hand
 
-- **A figure arrives SPLIT.** `2@351 | 22,940.64@355` is one cell, 222,940.64. Join the
-  fragments inside a column; never take them as separate values.
-- **A dash glues itself to its neighbour.** A `-` placeholder at x=463 concatenated onto
-  the column at 398-455 makes `1,072,661.74-`, which parses as nothing -- so the column
-  silently vanishes. Drop `-` and `$` tokens before joining.
+**Do not write the reading code again.** `scripts/page_table.py` is it. Four extractors were
+written against this archive on one afternoon; the three built on word boxes took about
+twenty minutes each and closed on the page's own arithmetic, and the one that re-derived the
+reading from a page flattened to text lines took the whole day and was abandoned. The
+difference was never the table -- the trust matrix prints its fund names SIDEWAYS and closed
+first time. See `notes/process/AN-EXTRACTOR.md`.
+
+    import page_table as PT
+
+    LAYOUT = {'project_cost': (395, 470, 'Project Cost'),      # x from, x to, what it SAYS
+              'cumulative':   (470, 540, 'Cumulative Cost')}
+    BAND, BODY = (290, 315), (315, 760)                        # the heading, then the table
+
+    ws   = PT.words(pdf, page)            # or PT.boxes(tsv, page) for a photograph
+    cols = PT.declare(ws, BAND, LAYOUT)   # refuses if the page's heading disagrees
+    run  = 0
+    for r in PT.rows(ws, within=BODY):    # banded on the page's MEASURED gap
+        cell = PT.place(r, cols)          # each figure under the column it is printed in
+        ...
+    PT.check('FY2025 Option 1', ('the projects against the printed Total', run, total))
+
+Measured on FY2025's two capital plans: `p138  20 projects  1,225,000  breaks 0` and
+`p139  16 projects  1,225,000  breaks 0`, in twenty-five lines, the same figures the
+hand-written extractor produces.
+
+**DECLARE THE LAYOUT. DO NOT INFER IT.** This is rule 13b's fourth rule and it is the one I
+keep trying to automate. It cannot be done: `Project Cost` sits at x=404 and `Cumulative
+Cost` at x=480, so the gap between `Cost` and `Cumulative` is SMALLER than the gap between
+`Project` and `Cost`, and no clustering rule separates them. A person reading the page
+separates them instantly. So a person reads the page, writes the layout down, and
+`declare()` refuses any page whose printed heading disagrees with it -- which is what makes
+one year's layout safe to try on another. FY2014's nine columns were proposed for four other
+years; two accepted them and two refused, and the two that refused were right to.
+
+**Four things bite every time, and `page_table` handles three of them.**
+
+- **A bare integer is not money.** `1`, `2`, `13` are CPC rankings, warrant line numbers, the
+  page number at the foot. Read as figures they land in whatever column they are nearest and
+  join the sums: one capital page came out $50,000 high and the other $2, and the $2 was
+  `Option 2` in the heading. A figure must carry a currency sign, a thousands separator or
+  cents.
+- **A thousands group is three digits.** `[\d,]+` accepts `3,` and `2,025`, so `May 3, 2025`
+  in the prose under a table yields two figures.
+- **A page is not a table.** Bound the body. FY2025 page 138 carries two tables and page 139
+  carries a table and then the vote that adopted it, `$1,225,000` and all.
+- **A figure arrives SPLIT, and a dash glues itself to its neighbour.** `2@351 |
+  22,940.64@355` is one cell, 222,940.64; a `-` placeholder at x=463 concatenated onto the
+  column at 398-455 makes `1,072,661.74-`, which parses as nothing, so the column silently
+  vanishes. This one is still the caller's to handle -- join fragments inside a column, and
+  drop `-` and `$` before joining.
+
+**And x does not always mean a column.** On a TABLE it does. On a BAR CHART x is the VALUE --
+a label sits at the end of its segment -- so there the ORDER is the series and a row without
+one figure per series is refused. `PT.place` is for tables; `PT.series` is for charts.
 
 ### 2. Make it DURABLE
 A reading done in a shell is gone on the next run, and the next run will overwrite it with
