@@ -135,6 +135,66 @@ takes a page and a rule and produces rows. Every turn re-sends the whole convers
 same read costs several times more at turn 200 than at turn 3. One `claude -p` job per page,
 the way `write_recording_minutes.py` and `extract_official_votes.py` already work.
 
+## A LANDSCAPE PAGE: ROTATE IT FIRST, THEN CROP ONCE YOU CAN SEE THE GRID
+
+FY2024 page 37 is the debt repayment schedule -- about fifty debt issues against twenty-three
+fiscal years, roughly 1,200 figures, printed sideways. It cost six wasted image reads before
+anything was recorded, and every one of them was the same mistake: **aiming a crop at
+coordinates I had guessed.**
+
+**WHY THE GUESSING FAILS.** The renderer calibrates orientation per page and the recognition
+TSV uses a bottom-left origin, so the two disagree about where anything is. A crop aimed from
+one lands somewhere else in the other, and a blank crop looks exactly like an empty region of
+the page. Worse, the OCR could not find the words `GRAND TOTAL` at all, so it could not even
+be used to locate the block.
+
+**THE ORDER THAT WORKS.**
+
+1. **Rotate the page into its own one-page PDF**, so the table is the right way up and crop
+   coordinates mean what they look like:
+
+        python3 -c "import pypdf; r=pypdf.PdfReader(SRC); p=r.pages[N-1]; p.rotate(90); \
+                    w=pypdf.PdfWriter(); w.add_page(p); w.write('/tmp/rot.pdf')"
+
+2. **Render the WHOLE rotated page once, at a low scale, and look at it.** That read is not
+   overhead -- it is how you learn where the header row, the label column and the total block
+   actually are. Guessing costs more reads than looking.
+3. **Then crop to bands you can now name**, at a high scale.
+
+**WHY CROPPING IS NEEDED AT ALL.** The image is downsampled to a fixed budget of roughly
+1546x2000 whatever scale it was rendered at, so what limits a read is PIXELS PER CELL. A
+portrait page of sixty rows and one money column is comfortable in one read; a landscape
+table of fifty rows and twenty-four money columns is not, and no render scale fixes that.
+Cropping is how you spend the budget on fewer cells.
+
+## A PAGE THAT PRINTS DISPLAYED FIGURES CANNOT TIE TO THE CENT
+
+The debt schedule shows whole dollars over amounts that carry cents, so its printed total is
+the ROUNDED SUM and not the sum of the rounded parts. Across twenty-three years the interest
+column misses by $1 and principal-and-interest by $2.
+
+**What makes that safe to accept rather than a misread:** the two columns with no cents under
+them -- bond principal, and the MWPAT admin fees -- tie EXACTLY, principal at $33,256,561
+across twenty-three values. That contrast is the evidence. It is not proof: the page does not
+say it rounds, and a single wrong digit usually misses by more than a dollar but need not.
+
+So a transcription may DECLARE a `tolerance` on its total row, and only with the reason
+written beside it in `proof`. The default is a cent. Never widen one to make a read pass.
+
+## READING PART OF A PAGE IS FINE. CALLING IT FINISHED IS NOT
+
+Only page 37's GRAND TOTAL block was transcribed -- the town's debt service by year, which is
+the series anybody would chart. The fifty per-issue rows were not, so a resident still cannot
+see which bond ends in which year.
+
+That limit is now a row in `sources/data/money-gaps.csv`, which is rule 7c: *when an analysis
+stops short because the data will not carry it, that stopping point is a finding and it gets
+REGISTERED*, not left in the prose of one page. Say it in the transcription's `proof` too, in
+capitals, so the next reader of the file meets it.
+
+**The failure to avoid is the quiet one:** a partial read that clears the tracker and leaves
+nobody any way to know what is missing.
+
 ## COUNT WHAT THE PAGE PRINTS AGAINST WHAT YOU HOLD
 
 Free, instant, and it is the alarm that was missing all along. Count something the page has

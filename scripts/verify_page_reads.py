@@ -59,6 +59,17 @@ OUT = os.path.join(ROOT, 'sources', 'data', 'pages-read.csv')
 FIELDS = ['fy', 'page', 'document', 'fund_number', 'fund_name', 'column', 'value',
           'status', 'reconciliation', 'read_by', 'proof']
 
+# A TOLERANCE IS DECLARED BY THE TRANSCRIPTION, AND ONLY WITH A REASON.
+#
+# Most of these tables foot to the cent and anything looser hides a misread. But a page that
+# prints DISPLAYED figures cannot: FY2024's debt repayment schedule shows whole dollars over
+# amounts carrying cents, so the printed total is the rounded sum and not the sum of the
+# rounded parts. Its interest column misses by $1 across 23 years and its principal column --
+# bond principal, which has no cents -- ties EXACTLY. That contrast is what says rounding
+# rather than a bad read, and it is why the tolerance is per group and written down beside
+# the figures rather than applied everywhere.
+DEFAULT_TOL = 0.02
+
 # THE TOTAL IS READ OFF THE PAGE TOO, and lives in the transcription as `kind=total` --
 # not typed in here. Rule 2: a figure in prose or in code is the one thing that can be
 # silently wrong, and a check whose expected value is hardcoded stops being a check the day
@@ -70,6 +81,7 @@ def main():
 
     got = collections.defaultdict(lambda: collections.defaultdict(float))
     want = collections.defaultdict(dict)
+    tol = {}
     printed_on = {}
     rows = collections.Counter()
     pages = collections.defaultdict(set)
@@ -81,6 +93,8 @@ def main():
                 continue
             if (r.get('kind') or 'fund') == 'total':
                 want[key][r['column']] = float(r['value'])
+                tol[key] = max(tol.get(key, DEFAULT_TOL),
+                               float(r.get('tolerance') or DEFAULT_TOL))
                 printed_on[key] = 'page %s, the row `%s`' % (r['page'], r['fund_name'])
                 continue
             got[key][r['column']] += float(r['value'])
@@ -98,7 +112,7 @@ def main():
               % (key[0], key[1], rows[key], len(pages[key]), printed_on[key]))
         for col, printed in sorted(want[key].items()):
             g = round(got[key].get(col, 0.0), 2)
-            ok = abs(g - printed) <= 0.02
+            ok = abs(g - printed) <= tol.get(key, DEFAULT_TOL)
             print('    %-22s %16s   printed %16s   %s'
                   % (col, format(g, ','), format(printed, ','),
                      'ties' if ok else 'OFF BY %s' % format(round(g - printed, 2), ',')))
@@ -114,7 +128,7 @@ def main():
         name = os.path.basename(f)
         key = (name.split('-')[0][2:], '-'.join(name.split('-')[2:]).replace('.csv', ''))
         if key in want:
-            ok = all(abs(round(got[key].get(c, 0.0), 2) - p) <= 0.02
+            ok = all(abs(round(got[key].get(c, 0.0), 2) - p) <= tol.get(key, DEFAULT_TOL)
                      for c, p in want[key].items())
             verdict = 'checked' if ok else 'check failed'
             why = '%s: %s' % (printed_on[key],
