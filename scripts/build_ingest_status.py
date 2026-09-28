@@ -678,9 +678,10 @@ def streams():
     # So the name is the document and the output line says what we take from it, with
     # `today` doing real work: it marks the gap rather than hiding it.
     s.append(dict(key='votes', unit=('set of the town’s minutes processed', 'sets of the town’s minutes processed', 'sets of the town’s minutes still to process'), name='The town’s OFFICIAL minutes',
-                  io='in: the minutes the town published &rarr; out: the votes they state, '
-                     'each with the town’s words quoted verbatim &mdash; all we take '
-                     'from them today, though they hold a great deal more',
+                  io='in: the minutes the town published, whose TEXT is already '
+                     'extracted and searchable &rarr; out: the votes they state as '
+                     'structured rows, each quoted verbatim &mdash; votes are the only '
+                     'OBJECT we build from them today',
                   done=len(glob.glob(os.path.join(DATA, 'official-votes', '*', '*.json'))),
                   todo=sum(p['n'] for p in vp), blocked=0, blocked_why='',
                   cost='~0.03% of the week each, runs by itself',
