@@ -5,7 +5,7 @@ Sixteen documents, 477 pages of financial tables, 23,639 rows read out of them.
 ## The short version
 
 - Every financial page in every report has been read. **None is unread.**
-- **201 of 477** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
+- **208 of 477** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
 - **10 pages** an extractor reached and wrote nothing from. Each says why.
 - What is left is **code, not reading**.
 
@@ -38,23 +38,23 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 
 | category | what it answers | pages | proven | unproven | refused |
 |---|---|---:|---:|---:|---:|
-| appropriations | what Town Meeting voted to spend, article by article | 95 | 16 | 78 | 1 |
+| appropriations | what Town Meeting voted to spend, article by article | 95 | 17 | 77 | 1 |
 | special revenue | the funds that sit outside the budget — grants, gifts, revolving | 68 | 53 | 15 | 0 |
 | payroll | what the town paid its people, name by name | 65 | 5 | 59 | 1 |
 | debt | what the town owes and when it falls due | 46 | 14 | 31 | 1 |
-| trust and stabilization | the reserves, and how much is in each | 39 | 22 | 16 | 1 |
+| trust and stabilization | the reserves, and how much is in each | 39 | 25 | 13 | 1 |
 | receivables | what is owed TO the town, account by account | 28 | 18 | 7 | 3 |
 | unknown | a financial table whose heading we could not classify | 27 | 12 | 15 | 0 |
 | tax collection | what was committed, collected and abated | 21 | 9 | 11 | 1 |
-| regional school | the assessment from the regional school district | 18 | 1 | 16 | 1 |
+| regional school | the assessment from the regional school district | 18 | 2 | 15 | 1 |
 | balance sheet | what the town held and owed at year end | 17 | 16 | 1 | 0 |
 | valuation | what the town is worth, by class of property | 16 | 8 | 8 | 0 |
 | treasurers cash | the cash the Treasurer held | 15 | 14 | 0 | 1 |
-| capital | the capital projects and what they cost | 13 | 9 | 4 | 0 |
-| enrollment | how many children are in the schools | 6 | 3 | 3 | 0 |
+| capital | the capital projects and what they cost | 13 | 10 | 3 | 0 |
+| enrollment | how many children are in the schools | 6 | 4 | 2 | 0 |
 | elections | how the town voted | 2 | 1 | 1 | 0 |
 | cultural council | the grants the cultural council made | 1 | 0 | 1 | 0 |
-| **total** |  | **477** | **201** | **266** | **10** |
+| **total** |  | **477** | **208** | **259** | **10** |
 
 ## By report
 
@@ -73,8 +73,8 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | FY2021 | 37 | 16 | 21 | 0 |
 | FY2022 | 33 | 18 | 15 | 0 |
 | FY2023 | 34 | 15 | 17 | 2 |
-| FY2024 | 22 | 10 | 12 | 0 |
-| FY2025 | 23 | 17 | 6 | 0 |
+| FY2024 | 22 | 11 | 11 | 0 |
+| FY2025 | 23 | 23 | 0 | 0 |
 
 ## The datasets read out of them
 

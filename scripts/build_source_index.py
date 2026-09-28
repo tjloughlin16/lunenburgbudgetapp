@@ -1923,6 +1923,45 @@ GROUPS = [
              'refuses to write unless the stabilization accounts tie; where another '
              'account disagrees that is recorded per row rather than suppressed. See '
              'scripts/extract_trust_balance_detail.py.'),
+            ('data/trust-fund-matrix.csv',
+             'Every trust fund and every measure, off the wide matrix the report prints', 3,
+             'The FY2025 annual report\u2019s `TRUST FUNDS` page: 29 funds and 4 group '
+             'subtotals and a grand total across the page, 14 measures down it \u2014 '
+             'beginning and ending principal, earnings, net income, realized and unrealized '
+             'gain, transfers, ending cash and market value. 462 figures on one page. It '
+             'went unread because the fund names are printed SIDEWAYS, one per column, and '
+             'every reader here looks for a label at the left of a row; they come out of '
+             'the text layer perfectly because only the RENDERING is rotated. Nothing is '
+             'written unless every group subtotal foots its own funds, the grand total '
+             'foots the subtotals, and four identities the page states about itself close '
+             'on all 33 columns. Its `ending cash value` is a second printing of the '
+             'balances in data/trust-fund-balances.csv. See scripts/extract_trust_matrix.py.'),
+            ('data/monty-tech-expenses.csv',
+             'Monty Tech\u2019s spending by category, three years, off a chart', 3,
+             'The other school district Lunenburg pays into, broken down: eight spending '
+             'categories and a `District Expenses` total for FY23, FY24 and FY25, read off '
+             'the stacked bar chart the FY2025 annual report embeds as an IMAGE \u2014 the '
+             'page carries its own text and the figures are not in it, which is the one '
+             'case where recognition is the only reader. Nothing is written unless the '
+             'total is the sum of the categories in every year drawn. THIS IS NOT '
+             'LUNENBURG\u2019S MONEY (rule 11): it is the regional vocational district\u2019s '
+             'own spending across eighteen member towns, and Lunenburg\u2019s budget carries '
+             'a single assessment line. It must never be summed with the Lunenburg '
+             'district\u2019s. See scripts/extract_monty_tech_expenses.py.'),
+            ('data/capital-program-options.csv',
+             'The two capital plans the town meeting was asked to choose between', 3,
+             'The warrant does not put one capital plan to the meeting. It puts TWO, priced '
+             'to the same $1,225,000, and asks which one: FY2026 Option 1 funds twenty '
+             'projects, Option 2 funds fifteen of those twenty, drops five, and adds a '
+             'Primary School heat pump system carried as the local match for a Green '
+             'Communities award. So this is the clearest published statement in the archive '
+             'of what the town chose NOT to buy, at the moment it was choosing. Each table '
+             'prints a running `Cumulative Cost`, which asserts something at every row '
+             'rather than once at the foot, and nothing is written unless every step closes '
+             'and the last equals the printed Total. The CPC rankings have gaps \u2014 there '
+             'is no 14, 18 or 21 \u2014 because they rank a longer list than either option '
+             'funds; the running total is what makes a gap safe to read as a project not '
+             'carried rather than a row we missed. See scripts/extract_capital_options.py.'),
             ('data/trust-agency-balances.csv',
              'Every trust and stabilization fund, as the accounting system prints it', 3,
              'MUNIS\u2019s own trust and agency report: account number, fund name, '

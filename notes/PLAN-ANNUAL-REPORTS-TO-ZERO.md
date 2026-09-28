@@ -117,6 +117,29 @@ Every hypothesis costs a full run over sixteen reports. That is the single large
 remaining tax on iteration.
 **Not yet changed.** Next.
 
+### 7. Entry 2 named the problem and did not make it a RULE, so I did it again
+
+Entry 2 above says, in its own heading, that we fought OCR on pages that carry a digital
+text layer. Three tables later I opened FY2025's trust listing, found 30 rows where the
+page prints 40, and spent the time diagnosing three of them as a disagreement between two
+TOWN documents -- a finding about Lunenburg's books -- without once checking that the
+reader had been given a photograph of a page that carries its own text. TJ, before I got
+there: *"im assuming you used the OCR data."*
+
+**The gap was not knowledge. It was that the process doc had the fact and not the GATE.**
+Step 0 asked *"was this OCR'd too?"* and then said nothing about what to do when the
+answer is yes, so it read as a diagnostic curiosity rather than a stop. A question with no
+consequence attached gets answered and walked past.
+
+`READING-A-DIGITAL-PAGE.md` now opens the process with a gate instead: a text layer
+supersedes OCR, the OCR reading of that page is discarded rather than reconciled, and the
+one-line word-count test that decides it. TJ: *"this process needs to throw out OCR data
+if we have a digital text layer for the data. its more reliable. OCR is a fallback."*
+
+**The cost, counted:** ten of forty rows silently absent, and a wrong conclusion about the
+town nearly written up. **What it buys:** the test is one second and half the archive is
+born-digital.
+
 ### What is now proven to work, end to end
 An agent reads the page, writes a `read` or `attested` row into
 `sources/data/table-corrections.csv` with its evidence, the extractor re-runs, the year's

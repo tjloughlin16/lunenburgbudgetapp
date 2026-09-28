@@ -156,6 +156,116 @@ def rows_on(path, page, boxes):
     return out
 
 
+# A TEXT LAYER OUTRANKS OCR, ALWAYS. Eight of the sixteen annual reports are born-digital
+# and this listing's two years are both among them, so every row below was being RECOGNISED
+# off a picture of a page that carries its own text. That is rule 13 exactly -- a rendering
+# quoted in place of the source -- and it cost 10 of FY2025's 40 rows, silently: OCR does
+# not refuse a page, it returns a shorter one, and a fund that vanishes looks precisely like
+# a fund the town does not have.
+#
+# So `read_page` tries this first and falls back to the TSVs only for a page with no text.
+# Nothing here reconciles the two readings; where a text layer exists the OCR reading of
+# that page is superseded and discarded.
+MIN_TEXT_WORDS = 40
+
+
+def _pdf_for(tsv):
+    """The published PDF this OCR cache was made from, if we hold it."""
+    name = os.path.basename(tsv).replace('.tsv', '.pdf')
+    hits = glob.glob(os.path.join(ROOT, 'sources', '**', name), recursive=True)
+    return hits[0] if hits else None
+
+
+def _lines(words):
+    """Printed lines, banded on `top`. The pitch here is ~15pt and uniform, so a third of
+    it separates rows without merging the wrapped fund names."""
+    band = collections.defaultdict(list)
+    for w in words:
+        band[round(w['top'] / 5.0)].append(w)
+    return [sorted(v, key=lambda w: w['x0']) for _, v in sorted(band.items())]
+
+
+def text_layer_rows(pdf, tsv):
+    """Every account in the TRUST FUND BALANCE listing, read off the page's own text.
+
+    THE LISTING IS A SECTION, NOT A PAGE, and reading it as a page is the second half of
+    what went wrong. FY2025 prints it across a spread -- eight accounts under the heading at
+    the foot of p30, thirty-two more on p31 -- and the OCR reader scored each page on its
+    own and kept the better one, so the eight were not misread, they were never looked at.
+    Follow the heading forward instead, and stop at the first page that carries no account.
+    """
+    try:
+        import pdfplumber
+    except Exception:
+        return None
+
+    # READ FORWARD TO THE SECTION AND STOP, rather than parsing the book. These editions
+    # run to two hundred pages and the listing is one spread of them; extracting every
+    # page's words to find it took minutes per report and is most of what the reader cost.
+    with pdfplumber.open(pdf) as doc:
+        # SAMPLE BEFORE PARSING ANYTHING. Half these editions are scans of paper and carry
+        # no text at all. A handful of pages from the middle answers that in a second, and
+        # a sample with no text cannot be hiding a layer on the listing alone: the layer is
+        # a property of how the edition was PRODUCED, not of one page.
+        n = len(doc.pages)
+        if sum(len(doc.pages[i].extract_words())
+               for i in range(n // 4, min(n, n // 4 + 6))) < MIN_TEXT_WORDS:
+            return None                  # a scanned edition: OCR is the only reader
+
+        out, started, floor = [], False, 0.0
+        for i in range(n):
+            words = doc.pages[i].extract_words()
+            if not started:
+                for ln in _lines(words):
+                    if HEADING.search(' '.join(w['text'] for w in ln)):
+                        started, floor = True, ln[0]['top']
+                        break
+                if not started:
+                    continue
+            got = []
+            for ln in _lines(words):
+                if ln[0]['top'] <= floor or not CODE.match(ln[0]['text'].strip()):
+                    continue
+                figs = [w for w in ln if MONEY.match(w['text'].strip())]
+                if not figs:
+                    continue
+                got.append(dict(account=ln[0]['text'].strip().split()[0],
+                                name=' '.join(w['text'] for w in ln[1:]
+                                              if w['x0'] < figs[0]['x0']),
+                                balance=num(figs[0]['text']),
+                                x=figs[0]['x1'], page=i + 1,
+                                document=os.path.relpath(pdf, ROOT)))
+            floor = 0.0
+            if not got:
+                # THE HEADING IS PRINTED TWICE, and the first one is not the table. Every
+                # edition lists its own sections, so `TRUST FUND BALANCE` appears in the
+                # index thirty pages before the listing; starting there found no accounts
+                # and read the absence as the end of a section that had not begun. Only a
+                # page that yielded a row can end the run.
+                if out:
+                    break
+                started = False
+                continue
+            out.extend(got)
+        if not started:
+            return []
+
+    # PLACE BY COLUMN POSITION, NEVER BY ORDER (rule 13b). Taking the leftmost figure is an
+    # ORDER rule, and it is right only while the balance column is never blank. Measure the
+    # column the page actually prints and refuse a row whose figure is not in it, so a blank
+    # balance reads as a refusal rather than as somebody's receipts.
+    if out:
+        mid = sorted(r['x'] for r in out)[len(out) // 2]
+        stray = [r for r in out if abs(r['x'] - mid) > 25]
+        if stray:
+            raise SystemExit('%s: %d rows have no figure in the balance column at x=%.0f: %s'
+                             % (os.path.basename(pdf), len(stray), mid,
+                                ', '.join(r['account'] for r in stray)))
+        for r in out:
+            del r['x']
+    return out
+
+
 def read_page(path):
     """The listing page, if this report has one.
 
@@ -165,6 +275,14 @@ def read_page(path):
     limit`. `pdf_tables.read_boxes` splits on tabs line by line, which is why nothing
     downstream of it has ever lost a row.
     """
+    pdf = _pdf_for(path)
+    if pdf:
+        rows = text_layer_rows(pdf, path)
+        if rows:
+            return str(rows[0]['page']), rows
+        if rows is not None and rows == []:
+            return None, []
+
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import pdf_tables as T
     by_page = collections.defaultdict(list)
@@ -210,6 +328,13 @@ def ledger():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
+    # ONE YEAR AT A TIME. Reading sixteen editions to fix one is most of what this work has
+    # cost: the reader walks a two-hundred-page book per edition, so a change aimed at
+    # FY2025 took minutes to see. `--year` is the difference between iterating and waiting.
+    # It REWRITES ONLY THAT YEAR'S ROWS and keeps every other year's, so a narrowed run
+    # cannot quietly shrink the file.
+    ap.add_argument('--year', type=int, action='append',
+                    help='only this fiscal year; repeatable')
     a = ap.parse_args()
 
     body, found = [], []
@@ -218,6 +343,8 @@ def main():
         if not m:
             continue
         fy = int(m.group(1))
+        if a.year and fy not in a.year:
+            continue
         page, rows = read_page(f)
         if not rows:
             continue
@@ -267,6 +394,18 @@ def main():
         print('FY2025 stabilization accounts do not tie to the general ledger:\n  %s'
               % '\n  '.join(bad), file=sys.stderr)
         return 1
+
+    # A NARROWED RUN MERGES; IT DOES NOT TRUNCATE. `--year 2025` reads one edition, and
+    # writing only what it read would silently drop fourteen years from the file -- the
+    # exact shape of defect this archive keeps finding, an output that looks finished
+    # because nothing compared it to what was there before.
+    if a.year:
+        keep = [r for r in csv.DictReader(open(OUT, encoding='utf-8'))
+                if int(r['fy']) not in a.year] if os.path.exists(OUT) else []
+        for r in keep:
+            r['fy'] = int(r['fy'])
+            r['balance'] = float(r['balance'])
+        body = keep + body
 
     body.sort(key=lambda r: (r['fy'], r['account']))
     buf = io.StringIO()

@@ -37,9 +37,10 @@ FY2025 gross wages was -- 532 rows. That sounds finished and was not: the page p
 *Having rows is not having the data.* Count what the page holds and compare.
 
 **"Was this OCR'd too?"**
-Check the reader's input, not the output. `RP.load(edition, ocr=True)` means recognition.
-Then check whether the page even needed it -- see the one-line test below. Seven times out
-of seven today the answer was: digital page, recognised anyway.
+Check the reader's INPUT, not its output. `RP.load(edition, ocr=True)`, or a path under
+`sources/town-budget/ocr/`, means recognition. Then check whether the page even needed it
+-- the one-line test is below. Seven times out of seven today the answer was: digital page,
+recognised anyway. If the answer is yes and the page is digital, STOP and read the gate.
 
 **"What is left to do to MOVE IT TO FINISHED?"**
 And finished means ONE thing: *the page leaves the unfinished count.* Not "the data is
@@ -48,6 +49,53 @@ it, it is not an answer -- say which of the three steps below are outstanding.
 
 Answer all four before writing any code. On FY2025 they took about a minute each and they
 are what stopped four tables being rebuilt that did not need rebuilding.
+
+## THE GATE -- A TEXT LAYER OUTRANKS OCR. ALWAYS. THROW THE OCR AWAY
+
+TJ, 28 September 2026: *"this process needs to throw out OCR data if we have a digital text
+layer for the data. its more reliable. OCR is a fallback."*
+
+**The one-line test, before anything else:**
+
+    python3 -c "import pdfplumber,sys; d=pdfplumber.open(sys.argv[1]); print(len(d.pages[int(sys.argv[2])-1].extract_words()))" <pdf> <page>
+
+More than a handful of words means the page carries its own text. From that moment the OCR
+reading of that page is not a second opinion, it is **superseded**, and the work is to
+REPLACE it -- not to reconcile the two, not to fill the text layer's gaps from it, and above
+all not to diagnose the OCR read's disagreements as findings about the town.
+
+**Why it is not a judgement call.** This is rule 13 in the archive's own terms: *quote the
+source, never your rendering of it.* OCR output IS a rendering -- a model's guess at what
+ink was on a page. The text layer is the bytes the publisher embedded. They are not two
+readings of one document; one is the document and the other is a photograph of it. Where
+they disagree the text layer is right, and there is nothing to weigh.
+
+**And OCR fails QUIETLY, which is what makes an existing OCR read so dangerous.** It does
+not refuse a page, it returns a shorter one. FY2025 p31 prints 32 trust accounts and the
+OCR-derived CSV holds 30 -- `8116 School Prize Fund` and `8140 Health Insurance
+Stabilization` simply absent, with nothing anywhere saying a row was lost. A missing row
+looks exactly like a fund the town does not have (rule 13c), and three rows in that same
+read disagreed with the ledger and were about to be written up as a reconciliation problem
+in the town's books. They were a reading problem in ours.
+
+**So the order is fixed, and the first question is not "is there OCR on disk":**
+
+| | |
+|---|---|
+| the page has a text layer | read it. Delete the OCR path for that page. |
+| the page has none | OCR, and say so in the extractor. |
+| we are unsure | run the one-line test. It costs a second. |
+
+**Doing this leaves the extractor with two readers, and that is fine** -- what is not fine
+is leaving the choice to whichever ran first or to which cache happened to be warm. Pick on
+the DOCUMENT: a `TEXT_LAYER` set naming the editions and pages that carry one, consulted
+before the OCR branch, exactly as `extract_gross_wages.py` and `extract_special_revenue.py`
+now do. Eight of the sixteen annual reports are born-digital -- FY2014, FY2015, FY2016,
+FY2017, FY2018, FY2020, FY2024, FY2025 -- so this is half the archive, not an edge case.
+
+**Re-check every verdict that rested on an OCR read of a digital page.** A check that passed
+on a short read passed on less than the page, and a check that failed may have been failing
+on ink, not on arithmetic.
 
 ## THE PROCESS -- three steps, in this order
 

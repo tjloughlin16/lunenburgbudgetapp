@@ -291,13 +291,41 @@ def reconcile_revenue(edition, doc, page, head, rows):
     else:
         notes.append('no Revenue Total printed')
         ok = False
+    # WHAT THE CLOSING LINE IS TAKEN FROM CHANGED IN FY2025, and a fixed identity reported
+    # the change as an error in the town's arithmetic.
+    #
+    # Through FY2024 the table runs receipts -> subtotal -> expenses -> closing line, and
+    # the closing line is the subtotal less expenses. FY2024: 252,882 - 174,150 = 78,732.
+    #
+    # FY2025 inserts a row nothing before it had, BETWEEN the expenses and the close:
+    # `Beginning Balance  208,772`. The page's prose says what it is -- *"The budget
+    # starting balance was set at $208,772 for FY25 projected expenses and capital
+    # costs."* -- so it is a BUDGET, and the closing line is that budget less what was
+    # spent: 208,772 - 178,140 = 30,632, exact to the dollar. Against the old identity the
+    # page appeared to be out by $53,793.
+    #
+    # So the base is chosen by a label the page PRINTS, not by position: a beginning
+    # balance below the subtotal when there is one, the revenue subtotal when there is not.
+    #
+    # AND THE TWO CLOSING LINES ARE NOT THE SAME QUANTITY. FY2024's $78,732 is revenue
+    # less expenses; FY2025's $30,632 is budget remaining. They are printed under nearly
+    # the same heading and a series drawn straight through them would be nonsense, so the
+    # basis is recorded beside every row rather than left to be inferred from the label.
+    begin = next((lbl for lbl, _ in after
+                  if re.match(r'^(Beginning|Starting) Balance$', lbl, re.I)), None)
+    base = begin or 'Revenue Total'
+    if begin:
+        by['Revenue Total'] = by.get('Revenue Total', 0.0)   # keep the receipts check
     tot = by.get('__close__')
-    if tot is not None and 'Revenue Total' in by and 'Expenses' in by:
-        want = by['Revenue Total'] - by['Expenses']
+    have = by.get(begin) if begin else by.get('Revenue Total')
+    if tot is not None and have is not None and 'Expenses' in by:
+        want = have - by['Expenses']
+        basis = ('budget remaining: the beginning balance less expenses' if begin
+                 else 'revenue less expenses')
         if abs(want - tot) < 0.02:
-            notes.append(f'{close}: {tot:,.2f} = {sub} less Expenses')
+            notes.append(f'{close}: {tot:,.2f} = {base} less Expenses ({basis})')
         else:
-            notes.append(f'{close}: {sub} less Expenses is {want:,.2f} against a '
+            notes.append(f'{close}: {base} less Expenses is {want:,.2f} against a '
                          f'printed {tot:,.2f} ({want - tot:+,.2f})')
             ok = False
     else:

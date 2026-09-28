@@ -453,7 +453,6 @@ PROOF = {
     # a literal yes
     'debt-repayment-detail': ('column_foots', YES),
     'special-revenue-read': ('row_ties', YES),
-    'trust-fund-balances': ('ledger_agrees', YES),
     # a column only ever filled with an identity that closed
     'outstanding-debt': ('identities_closed', CLOSED),
     'receivables': ('checked', CLOSED),
@@ -461,6 +460,22 @@ PROOF = {
     'tax-collection': ('proof', CLOSED),
     'appropriations-supplement': ('proof', CLOSED),
     'stabilization-balances': ('basis', CLOSED),
+    # the wide TRUST FUNDS matrix on the FY2025 page: 29 funds and 4 group subtotals across,
+    # 14 measures down. `extract_trust_matrix.py` writes nothing at all unless every group
+    # subtotal foots its own funds, the grand total foots the subtotals, and four identities
+    # the page states about itself close on all 33 columns -- so a filled `proof` cell is
+    # 462 figures' worth of arithmetic, not one row's.
+    'trust-fund-matrix': ('proof', CLOSED),
+    # Monty Tech's expenses by category, read off the CHART the FY2025 page embeds as an
+    # image. `extract_monty_tech_expenses.py` writes nothing unless `District Expenses` is
+    # the sum of the eight categories in every year drawn, which is what makes reading
+    # digits off a picture safe at all.
+    'monty-tech-expenses': ('proof', CLOSED),
+    # the two capital plans the town meeting was asked to choose between.
+    # `extract_capital_options.py` writes nothing unless every printed `Cumulative Cost` is
+    # the one above it plus that project, and the last equals the printed `Total` -- an
+    # assertion at every row rather than one at the foot.
+    'capital-program-options': ('proof', CLOSED),
     # published only when it footed; the rest are in the paired refusals file
     'balance-sheet': (None, CONSTRUCTION),
     # `revenue_history` exists only in the database and has no CSV, which is how it was
@@ -510,6 +525,28 @@ PROOF = {
     # having no check anywhere, which was a statement about this registry and not about the
     # extractor. Declared here having read that code -- `kept` is appended only inside
     # `abs(got - total) <= TOL`.
+    # A CROSS-DOCUMENT COMPARISON IS NOT A PROOF OF OUR READING, and registering it as one
+    # marked this page FAILED because two town documents disagree.
+    #
+    # `ledger_agrees` compares the annual report's closing balance to MUNIS's opening
+    # balance for the same account in `trust-agency-fy2026-p09.xlsx` -- a different system,
+    # a different report, a different date. 36 of FY2025's 40 accounts tie to the cent. The
+    # four that do not are two town documents saying different things: two of them are the
+    # special-detail AGENCY accounts, where MUNIS carries the sign the other way round
+    # (-25,436.07 against 22,954.77), which is a convention rather than a difference in the
+    # money. That is a FLAG, and it is recorded per row so a reader meets it beside the
+    # figure. It is not evidence that anybody misread the page.
+    #
+    # TJ, 28 September 2026: *"these are 2 independent sources. we can reconcile later....
+    # if they dont reconcile, we can flag, but we shouldnt be FAILING to complete the
+    # ingest of these."*
+    #
+    # What proves the READING is the extract's own gate: it refuses to write at all unless
+    # every account MUNIS files under STABILIZATION FUNDS ties to the cent. A column read
+    # off the wrong x, a row banded onto its neighbour or a page read upside down breaks
+    # all of them at once, so a row's existence in this file is the verdict -- CONSTRUCTION,
+    # the same argument as `treasurers-cash` below.
+    'trust-fund-balances': (None, CONSTRUCTION),
     'treasurers-cash': (None, CONSTRUCTION),
     # the register of stabilization rows that did NOT foot. Its rows are real and published
     # with the reconciliation that fails; it is the definition of unproven.

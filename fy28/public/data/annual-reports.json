@@ -3,10 +3,10 @@
   {
    "means": "what Town Meeting voted to spend, article by article",
    "pages": 95,
-   "proven": 16,
+   "proven": 17,
    "refused": 1,
    "subject": "appropriations",
-   "unproven": 78
+   "unproven": 77
   },
   {
    "means": "the funds that sit outside the budget — grants, gifts, revolving",
@@ -35,10 +35,10 @@
   {
    "means": "the reserves, and how much is in each",
    "pages": 39,
-   "proven": 22,
+   "proven": 25,
    "refused": 1,
    "subject": "trust-and-stabilization",
-   "unproven": 16
+   "unproven": 13
   },
   {
    "means": "what is owed TO the town, account by account",
@@ -67,10 +67,10 @@
   {
    "means": "the assessment from the regional school district",
    "pages": 18,
-   "proven": 1,
+   "proven": 2,
    "refused": 1,
    "subject": "regional-school",
-   "unproven": 16
+   "unproven": 15
   },
   {
    "means": "what the town held and owed at year end",
@@ -99,18 +99,18 @@
   {
    "means": "the capital projects and what they cost",
    "pages": 13,
-   "proven": 9,
+   "proven": 10,
    "refused": 0,
    "subject": "capital",
-   "unproven": 4
+   "unproven": 3
   },
   {
    "means": "how many children are in the schools",
    "pages": 6,
-   "proven": 3,
+   "proven": 4,
    "refused": 0,
    "subject": "enrollment",
-   "unproven": 3
+   "unproven": 2
   },
   {
    "means": "how the town voted",
@@ -153,7 +153,7 @@
   {
    "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
    "bearing": "sizes",
-   "claim": "201 of 477 pages tie to a total the page itself prints.",
+   "claim": "208 of 477 pages tie to a total the page itself prints.",
    "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
    "figure": "proven",
    "figures": {
@@ -163,14 +163,14 @@
      "value": 477
     },
     "proven": {
-     "text": "201",
+     "text": "208",
      "unit": "pages tied to a printed total",
-     "value": 201
+     "value": 208
     },
     "rest": {
-     "text": "276",
+     "text": "269",
      "unit": "pages with no such check",
-     "value": 276
+     "value": 269
     }
    },
    "id": "a-third-of-the-pages-are-checked-against-the-page-itself",
@@ -178,19 +178,19 @@
    "literals": [],
    "not_shown": "That an UNPROVEN figure is wrong. It means nothing has checked it, which is a different claim and the reason the column exists.",
    "see": [],
-   "so_what": "The other 276 carry real figures that no arithmetic has confirmed."
+   "so_what": "The other 269 carry real figures that no arithmetic has confirmed."
   },
   {
    "basis": "`annual-report-pages.csv` grouped by subject and state.",
    "bearing": "lever",
-   "claim": "Appropriations is the least checked: 78 of its 95 pages have no check at all.",
-   "detail": "These pages print what Town Meeting voted, article by article. 16 of them do tie to a printed total; the rest are read and unconfirmed.",
+   "claim": "Appropriations is the least checked: 77 of its 95 pages have no check at all.",
+   "detail": "These pages print what Town Meeting voted, article by article. 17 of them do tie to a printed total; the rest are read and unconfirmed.",
    "figure": "un",
    "figures": {
     "ok": {
-     "text": "16",
+     "text": "17",
      "unit": "pages tied to a printed total",
-     "value": 16
+     "value": 17
     },
     "tot": {
      "text": "95",
@@ -198,9 +198,9 @@
      "value": 95
     },
     "un": {
-     "text": "78",
+     "text": "77",
      "unit": "pages with no check",
-     "value": 78
+     "value": 77
     }
    },
    "id": "the-largest-unchecked-category-is-what-town-meeting-voted",
@@ -625,7 +625,7 @@
   },
   {
    "label": "pages tied to a total the page prints",
-   "value": "201 of 477"
+   "value": "208 of 477"
   },
   {
    "label": "rows read out of them",
