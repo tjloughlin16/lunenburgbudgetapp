@@ -4,11 +4,11 @@
 
 Every outstanding machine-reading job, placed by the **meeting’s own date** — not by when we discovered it. 5,311 jobs, about $1,052, roughly 2.1 of a week’s allowance.
 
-| stream | what one job is | jobs | $ each | $ total |
+| stream | one job is | documents | $ each | $ total |
 |---|---|---:|---:|---:|
-| `votes` | the votes in the town’s minutes, with verbatim quotes | 3,041 | $0.09 | $261 |
-| `reconcile` | our minutes of a recording against the town’s, one meeting | 157 | — | — |
-| `minutes` | our minutes written from a recording’s captions | 2,113 | $0.37 | $791 |
+| `votes` | one set of the town’s minutes, read for the votes in it | 3,041 | $0.09 | $261 |
+| `reconcile` | one meeting where we hold both records, compared | 157 | — | — |
+| `minutes` | one recording, minutes written from its captions | 2,113 | $0.37 | $791 |
 
 **The streams are not interchangeable and must not be added into one bar.** `reconcile` can only exist where a recording exists, so its zero before 2025 is the channel’s start date, not neglect.
 

@@ -2095,7 +2095,7 @@
  ],
  "estimated_usd": 1052.14,
  "estimated_weeks": 2.1,
- "grain": "One row per outstanding machine-reading job, placed by the MEETING’s own date. Streams are counted separately and must not be added: a vote extraction, a reconciliation and a set of written minutes are three different pieces of work at three different prices.",
+ "grain": "One row per DOCUMENT still to process, placed by the MEETING’s own date — never the things inside it: one set of minutes may hold eight votes or none, so this counts sets of minutes and not votes. Streams are counted separately and must not be added, being three different pieces of work at three different prices.",
  "id": "backlog-depth",
  "not_established": [
   "When any of this will be done. The sweep runs in whatever allowance is left before the weekly reset, which varies.",

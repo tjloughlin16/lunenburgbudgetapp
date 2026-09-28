@@ -755,9 +755,16 @@ def streams():
         # reconciliation and a set of written minutes are three different pieces of work at
         # three different prices, and `reconcile` can only exist where a RECORDING exists --
         # so its zero before 2025 is the channel's start date and not neglect.
-        what = {'votes': 'the votes in the town\u2019s minutes, with verbatim quotes',
-                'reconcile': 'our minutes of a recording against the town\u2019s',
-                'minutes': 'our minutes written from a recording\u2019s captions'}
+        # THE UNIT IS WHAT A JOB IS, NOT WHAT IT IS ABOUT. `votes` reads ONE FILE PER SET
+        # OF MINUTES, so 3,041 is sets of minutes still to read -- a set may hold eight
+        # votes or none. Labelled `the votes in the town's minutes` beside that figure it
+        # read as a count of votes, which is the units failure rule 7b exists to stop:
+        # ten children, ten documents and ten budget lines must not look alike.
+        what = {'votes': 'sets of the town\u2019s minutes still to read for the votes '
+                         'in them \u2014 a set may hold several votes or none',
+                'reconcile': 'meetings where we hold BOTH records and have not compared '
+                             'them',
+                'minutes': 'recordings still to have minutes written from their captions'}
         stream_rows = []
         for st in bd['streams']:
             stream_rows.append((st['name'], st['jobs'], what.get(st['name'], ''),
@@ -852,7 +859,8 @@ def backlog_chart(bd):
     W, H, PAD, GAP = 1000, 210, 26, 4
     bw = max(6.0, (W - PAD * 2) / max(len(rows), 1) - GAP)
     out = ['<div class="card"><div class="row"><b class="grow">Backlog by fiscal year of '
-           'the meeting</b><span class="tiny">%s jobs &middot; tallest bar %s</span></div>'
+           'the meeting</b><span class="tiny">%s documents to process &middot; tallest '
+           'bar %s</span></div>'
            % (format(bd['total_jobs'], ','), format(hi, ','))]
     out.append('<svg viewBox="0 0 %d %d" width="100%%" height="%d" '
                'style="display:block;margin:8px 0 2px">' % (W, H, H))
@@ -876,12 +884,18 @@ def backlog_chart(bd):
                    'text-anchor="middle">%s</text>'
                    % (x + bw / 2, y - 3, format(r['total'], ',')))
     out.append('</svg>')
-    out.append('<div class="tiny">%s &middot; by the MEETING\u2019s own date, not by when '
-               'we found it. Hover a block for its count. Stacked to show a year\u2019s '
-               'COMPOSITION \u2014 the streams are different jobs at different prices and '
-               'are never added into one figure.</div></div>'
-               % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, n)
+    legend = {'votes': 'sets of minutes to read for votes',
+              'reconcile': 'meetings to compare against the town\u2019s minutes',
+              'minutes': 'recordings to write minutes for'}
+    out.append('<div class="tiny">%s</div>'
+               % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, legend[n])
                                  for n, c in STREAM_COLOUR))
+    out.append('<div class="tiny" style="margin-top:4px">Every bar counts DOCUMENTS to '
+               'process, never the things inside them \u2014 one set of minutes may hold '
+               'eight votes or none. By the MEETING\u2019s own date, not by when we found '
+               'it. Hover a block for its count; stacked to show a year\u2019s '
+               'composition, since the three are different jobs at different prices and '
+               'are never added into one figure.</div></div>')
     return ''.join(out)
 
 

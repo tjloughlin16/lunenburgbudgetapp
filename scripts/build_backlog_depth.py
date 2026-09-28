@@ -25,9 +25,15 @@ with the queue that drains it would be worse than no number.
 
 THE THREE STREAMS ARE NOT INTERCHANGEABLE and the chart must not add them:
 
-  votes      the votes in the TOWN'S minutes, each with its verbatim quote  ~$0.15
-  reconcile  our minutes of a recording against the town's, for one meeting ~$0.32
-  minutes    OUR minutes written from a recording's captions               ~$0.45
+  votes      ONE SET of the town's minutes, read for the votes in it        ~$0.09
+  reconcile  ONE MEETING where we hold both records, compared               ~$0.32
+  minutes    ONE RECORDING, minutes written from its captions               ~$0.37
+
+EVERY COUNT HERE IS DOCUMENTS TO PROCESS, NEVER THE THINGS INSIDE THEM. A set of minutes
+may hold eight votes or none, so `votes 3,041` is three thousand SETS OF MINUTES still to
+read and not three thousand votes. Labelled `the votes in the town's minutes` beside that
+figure it read as a count of votes, which is the units failure rule 7b exists to stop --
+ten children, ten documents and ten budget lines must not look alike.
 
 `reconcile` can only ever exist where a RECORDING exists, so it is empty before 2025 by
 construction rather than by neglect -- the channel does not go back further. Reading its
@@ -98,10 +104,11 @@ def payload(jobs, by_year, by_month, by_board, costs):
     return {
         'id': 'backlog-depth',
         'title': 'How deep the backlog is',
-        'grain': 'One row per outstanding machine-reading job, placed by the MEETING’s '
-                 'own date. Streams are counted separately and must not be added: a vote '
-                 'extraction, a reconciliation and a set of written minutes are three '
-                 'different pieces of work at three different prices.',
+        'grain': 'One row per DOCUMENT still to process, placed by the MEETING’s own '
+                 'date — never the things inside it: one set of minutes may hold eight '
+                 'votes or none, so this counts sets of minutes and not votes. Streams are '
+                 'counted separately and must not be added, being three different pieces '
+                 'of work at three different prices.',
         'streams': [{'name': s, 'jobs': tot[s],
                      'unit_cost': round(costs[s], 3) if costs.get(s) else None,
                      'estimated_usd': round(est[s], 2) if costs.get(s) else None}
@@ -146,11 +153,15 @@ def render(pay):
       'allowance.' % (f"{pay['total_jobs']:,}", f"{pay['estimated_usd']:,.0f}",
                       f"{pay['estimated_weeks']:.1f}"))
     w('')
-    w('| stream | what one job is | jobs | $ each | $ total |')
+    w('| stream | one job is | documents | $ each | $ total |')
     w('|---|---|---:|---:|---:|')
-    what = {'votes': 'the votes in the town’s minutes, with verbatim quotes',
-            'reconcile': 'our minutes of a recording against the town’s, one meeting',
-            'minutes': 'our minutes written from a recording’s captions'}
+    # WHAT A JOB IS, NOT WHAT IT IS ABOUT. `votes` reads ONE FILE PER SET OF MINUTES, so
+    # its count is sets of minutes and not votes -- a set may hold eight or none. Labelled
+    # `the votes in the town's minutes` beside 3,041 it read as a count of votes, which is
+    # the units failure rule 7b exists to stop.
+    what = {'votes': 'one set of the town\u2019s minutes, read for the votes in it',
+            'reconcile': 'one meeting where we hold both records, compared',
+            'minutes': 'one recording, minutes written from its captions'}
     for s in pay['streams']:
         w('| `%s` | %s | %s | %s | %s |'
           % (s['name'], what.get(s['name'], ''), f"{s['jobs']:,}",
