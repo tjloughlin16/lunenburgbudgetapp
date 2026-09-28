@@ -107,7 +107,8 @@ Rule 7b applied to the dashboard. `459 done` did not say done of what.
 
 - Each stream declares a triple: the singular, the plural, and **a separate phrase for the
   remainder**. `15 pages with proven rows left` said the opposite of the truth about those
-  fifteen pages; it now reads `15 pages still to prove`.
+  those pages; it now reads `N pages still to prove`, the done phrase and the
+  remaining phrase being different sentences about different sets.
 - The backlog headline said **`18,001 still to process`**, which added 13,222 ROWS to 2,880
   SETS OF MINUTES to 1,884 RECORDINGS to 15 PAGES. Nothing in the world is 18,001 of
   anything. It now names the streams instead: *4 of 6 streams have work outstanding; the
@@ -214,7 +215,7 @@ The push was broken in a way that no retry could fix:
     the free tier allows 100,000 a day
 
 `sync_d1.py` replaced the whole database, so the published copy could not be brought up to
-date on that day or any later one. CLAUDE.md still says "a full replace is ~51,000 rows";
+date on that day or any later one. CLAUDE.md said "a full replace is ~51,000 rows" until it was corrected that night;
 that is stale by 3x.
 
 TJ, 27 September 2026: *"We need to make the d1 sync work. I dont want to leave that sitting
