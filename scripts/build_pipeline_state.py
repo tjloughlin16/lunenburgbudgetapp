@@ -253,7 +253,11 @@ def page_map():
     for r in csv.DictReader(open(PAGES, encoding='utf-8')):
         key = (int(r['fy']), r['subject'])
         found[key].append(r['page'])
-        if r['state'] == 'read':
+        # THE DERIVED COLUMN, because this function means what it says: which pages any
+        # dataset has CITED. `state` now separates PROVEN from UNPROVEN and would make
+        # this count something else -- whether the page's rows tie to its own printed
+        # total, which is `proven` and a different question from `located`.
+        if r.get('read') == 'yes':
             read[key].append(r['page'])
     return found, read
 

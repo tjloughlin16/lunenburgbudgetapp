@@ -246,8 +246,13 @@ PRIORITY = {
         'lost. These have to be looked at before they can be ranked.'),
 }
 
-FIELDS = ['fy', 'page', 'subject', 'priority', 'state', 'figures', 'figures_reversed',
-          'read_by', 'heading', 'answers', 'document']
+# `read` IS KEPT, DERIVED, so nothing already reading this file breaks: it is yes when a
+# page is proven or unproven, which is what `state == 'read'` used to mean. `proved_by`
+# names the datasets whose own check closed, so a PROVEN page can be audited back to the
+# identity that proved it rather than taken on the state's word.
+FIELDS = ['fy', 'page', 'subject', 'priority', 'state', 'read', 'figures',
+          'figures_reversed', 'read_by', 'proved_by', 'failed_by', 'refused_by',
+          'heading', 'answers', 'document']
 
 
 def unreversed(t):
@@ -319,6 +324,24 @@ CATALOGUES = {'annual_report_survey', 'annual_report_pages', 'extraction_plan',
 # and stabilization queue from 13 to 3 on paper and changed nothing in the archive.
 CATALOGUE_COLUMNS = {'state', 'rows_published', 'figures_reversed'}
 
+# AND THREE FILES THAT ARE ABOUT READING RATHER THAN A READING, each named because its
+# columns do not give it away.
+#
+#   `ingest-benchmark.csv` records what it COST to attempt a page, so the attempt was
+#   counted as the result -- including FY2017 p149, which returned no rows and refused.
+#
+#   `extraction-blocked.csv` is a refusals register that predates the `*-refused.csv`
+#   convention and so is not caught by the name test. It holds two columns that do not foot
+#   to the page's own printed total, and it was the only thing citing FY2015 p4 and FY2019
+#   p44 -- so two pages were counted READ on the strength of a record that our reading of
+#   them FAILED. That is the third instance of this one inversion; see read_pages().
+#
+#   `table-corrections.csv` is a log of cells corrected in ANOTHER dataset, not a table of
+#   figures. All four of its pages are cited by `report-appropriations` anyway, so excluding
+#   it moves no page -- which is the point of doing it before it does.
+NOT_READINGS = {'annual-report-pages', 'ingest-benchmark', 'extraction-blocked',
+                'table-corrections'}
+
 # WHICH COLUMN HOLDS THE YEAR OF THE BOOK THE PAGE IS IN. Requiring the literal name `fy`
 # made `outstanding-debt.csv` invisible: it names that column `report_fy`, so 1,038 proven
 # rows across 34 pages joined to nothing and the queue went on printing `debt 34 pages
@@ -344,6 +367,142 @@ YEAR_COLUMNS = ('fy', 'report_fy')
 PAGE_COLUMNS = ('page', 'page_pdf')
 
 
+# ------------------------------------------------------------ WHAT PROVES A PAGE
+#
+# TJ, 27 September 2026, after the count moved three times in one day: *"i think we need a
+# different metric then. read and refused as separate? (refused need to be... rerun?!)"*
+#
+# The parenthesis is the evidence that the metric was wrong rather than merely noisy. A
+# refused page must NEVER be rerun -- rerunning returns the same refusal and pays a model
+# for it -- and `15 left` on the dashboard invited exactly that purchase.
+#
+# WHY `read` DRIFTS. `read` meant *any dataset mentions this page*. That is a property of
+# our FILING, so it moves whenever a file is added or a column is renamed, in either
+# direction, and it did twice on one day. It is not a property of the archive, and it
+# answers a question nobody asked: a page one row was taken from and a page whose whole
+# table foots to its own printed total are the same `read`.
+#
+# `proven` cannot drift that way. It depends on whether the page's own printed total agrees
+# with our rows, which changes only when the arithmetic changes.
+#
+# FOUR STATES, AND EACH MAPS TO EXACTLY ONE ACTION. Only one of them costs model tokens:
+#
+#   PROVEN    rows tie to a total the page prints          nothing, it is done
+#   UNPROVEN  rows exist, nothing proved them              write the check        (code)
+#   REFUSED   an extractor reached it and wrote nothing    fix the extractor      (code)
+#   UNREAD    nobody has looked                            read it                (TOKENS)
+#
+# HOW A PROOF IS RECOGNISED, and why it is a DECLARED registry rather than a sniff. The
+# vocabulary is genuinely heterogeneous -- nine different columns across fifty-one
+# datasets, because each table family states a different identity about itself -- and a
+# script that guessed which column meant `proved` would be reading a position as a name,
+# which is rule 13's own trap. So every dataset that cites a page is named below with the
+# column that carries its verdict and the style that column is written in. `--check`
+# FAILS when a page-citing dataset is missing from this table, because a new extractor
+# landing silently in UNPROVEN would look like a finding about the archive.
+VERDICT = 'verdict'       # a `checked` / `check failed` / `no check` column
+YES = 'yes'              # a column whose affirmative value is the literal `yes`
+CLOSED = 'closed'        # a column the extractor fills ONLY with an identity that closed,
+                         # so any value in it is an affirmative and empty is silence
+PROSE = 'prose'          # a check recorded in prose, or a confidence label of ours. It may
+                         # well be a real check; a script cannot read it, so it never
+                         # proves. The remedy is to record the verdict in a column, not to
+                         # parse the sentence -- `none — the page states no total` and
+                         # `Checked the identity ... it held exactly` sit in the same field
+CONSTRUCTION = 'construction'  # the extractor publishes a row ONLY when it footed and
+                               # registers the rest in `<name>-refused.csv`, so the row's
+                               # existence is the verdict. Declared only where the code was
+                               # read and says so
+NOTHING = None           # nothing anywhere records a check on these rows
+
+PROOF = {
+    # the `report_*` family, all from extract_tables.py, all carrying `status`
+    'appropriations': ('status', VERDICT),
+    'capital-projects': ('status', VERDICT),
+    'debt': ('status', VERDICT),
+    'dept-activity': ('status', VERDICT),
+    'elections': ('status', VERDICT),
+    'enrollment-mcas': ('status', VERDICT),
+    'gross-wages': ('status', VERDICT),
+    'monty-tech': ('status', VERDICT),
+    'officials': ('status', VERDICT),
+    'trust-funds': ('status', VERDICT),
+    'valuation': ('status', VERDICT),
+    'vital-records': ('status', VERDICT),
+    # bespoke extractors that record a verdict in the same words
+    'annual-report-receipts': ('status', VERDICT),
+    'capital-plans': ('status', VERDICT),
+    'peg-access-fund': ('status', VERDICT),
+    'special-revenue-funds': ('status', VERDICT),
+    'valuation-by-class': ('status', VERDICT),
+    'department-rosters': ('roster_check', VERDICT),
+    'town-personnel': ('size_check', VERDICT),
+    # a literal yes
+    'debt-repayment-detail': ('column_foots', YES),
+    'special-revenue-read': ('row_ties', YES),
+    'trust-fund-balances': ('ledger_agrees', YES),
+    # a column only ever filled with an identity that closed
+    'outstanding-debt': ('identities_closed', CLOSED),
+    'receivables': ('checked', CLOSED),
+    'placement-counts': ('checks', CLOSED),
+    'tax-collection': ('proof', CLOSED),
+    'appropriations-supplement': ('proof', CLOSED),
+    'stabilization-balances': ('basis', CLOSED),
+    # published only when it footed; the rest are in the paired refusals file
+    'balance-sheet': (None, CONSTRUCTION),
+    # `revenue_history` exists only in the database and has no CSV, which is how it was
+    # missed until the completeness check above named it. It is a DERIVED projection of
+    # `annual_report_receipts`, selected `WHERE status='checked'`, so its WHERE clause is
+    # the verdict and every row it holds is one that proved.
+    'revenue-history': (None, CONSTRUCTION),
+    # a check that exists and cannot be read mechanically
+    'annual-report-reads': ('proved', PROSE),
+    'salary-schedule': ('confirmed_by', PROSE),
+    'stabilization-flows': ('confidence', PROSE),
+    # THE PRINTED TOTAL IS NOT A PROOF OF ITSELF. These four hold the figure the page
+    # prints, quoted, which is what the sibling dataset's rows are checked AGAINST. On its
+    # own it proves nothing, and the page is proven only if the sibling says so.
+    'balance-sheet-printed-totals': (None, NOTHING),
+    'enterprise-balance-sheet-printed-totals': (None, NOTHING),
+    'peg-access-printed-totals': (None, NOTHING),
+    'special-revenue-printed-totals': (None, NOTHING),
+    # NOTHING RECORDS A CHECK. Not a judgement about the reading: a statement that the
+    # verdict was never written down, so the remedy is code and never tokens.
+    'board-chairs': (None, NOTHING),
+    'debt-repayment': (None, NOTHING),
+    'department-staffing': (None, NOTHING),
+    'enterprise-balance-sheet': (None, NOTHING),
+    'grants-history': (None, NOTHING),
+    'peg-access': (None, NOTHING),
+    'signatures': (None, NOTHING),
+    'staff-roster-entries': (None, NOTHING),
+    'stated-cuts': (None, NOTHING),
+    'town-meeting-votes': (None, NOTHING),
+    'treasurers-cash': (None, NOTHING),
+    # the register of stabilization rows that did NOT foot. Its rows are real and published
+    # with the reconciliation that fails; it is the definition of unproven.
+    'stabilization-unfooted': (None, NOTHING),
+}
+
+
+def proof_verdict(style, value):
+    """`proven`, `failed`, or None when the cell says neither."""
+    if style is CONSTRUCTION:
+        return 'proven'
+    v = (value or '').strip()
+    if style is VERDICT:
+        if v == 'checked':
+            return 'proven'
+        return 'failed' if v == 'check failed' else None
+    if style is YES:
+        if v == 'yes':
+            return 'proven'
+        return 'failed' if v else None
+    if style is CLOSED:
+        return 'proven' if v else None
+    return None
+
+
 def _year_column(cols):
     """The first year-of-the-book column a table has, or None."""
     return next((c for c in YEAR_COLUMNS if c in cols), None)
@@ -362,7 +521,11 @@ def _label(name):
 
 
 def read_pages():
-    """{(fy, page): 'dataset, dataset'} for every page some dataset cites.
+    """Two dicts: who CITES each page, and what each citing dataset's check SAID.
+
+    `{(fy, page): {label}}` and `{(fy, page): {label: {'proven'|'failed'}}}`. The second is
+    what the four states are built from; see PROOF for why the verdict is looked up in a
+    declared registry rather than sniffed out of a column name.
 
     BOTH THE CSVs AND THE DATABASE, and the CSVs matter more. CLAUDE.md is explicit that
     the CSVs are the source of truth and the database is a DERIVED read model rebuilt from
@@ -375,6 +538,7 @@ def read_pages():
     the difference between a live count and a stale one.
     """
     out = collections.defaultdict(set)
+    said = collections.defaultdict(lambda: collections.defaultdict(set))
     for f in sorted(glob.glob(os.path.join(DATA, '*.csv'))):
         name = os.path.basename(f)[:-4]
         # A LEDGER ABOUT READING IS NOT A READING. `ingest-benchmark.csv` records what it
@@ -382,8 +546,7 @@ def read_pages():
         # attempt as the result -- including FY2017 p149, which returned no rows and
         # refused. That moves the number without moving the archive, which is the one
         # thing this count must never do.
-        if name.replace('-', '_') in CATALOGUES or name in (
-                'annual-report-pages', 'ingest-benchmark'):
+        if name.replace('-', '_') in CATALOGUES or name in NOT_READINGS:
             continue
         # A REFUSAL IS NEVER A READING, AND THE COLUMN TEST WAS NOT ENOUGH.
         #
@@ -408,19 +571,25 @@ def read_pages():
                 year, page = _year_column(cols), _page_column(cols)
                 if not year or not page or cols & CATALOGUE_COLUMNS:
                     continue
+                lab = _label(name)
+                col, style = PROOF.get(lab, (None, NOTHING))
                 for row in r:
                     try:
-                        out[(int(row[year]), int(row[page]))].add(_label(name))
+                        key = (int(row[year]), int(row[page]))
                     except (TypeError, ValueError):
                         continue
+                    out[key].add(lab)
+                    v = proof_verdict(style, row.get(col) if col else None)
+                    if v:
+                        said[key][lab].add(v)
         except OSError:
             continue
     if not os.path.exists(DB):
-        return out
+        return out, said
     db = sqlite3.connect('file:%s?mode=ro' % DB, uri=True)
     try:
         for (t,) in db.execute("SELECT name FROM sqlite_master WHERE type='table'"):
-            if t in CATALOGUES:
+            if t in CATALOGUES or t.replace('_', '-') in NOT_READINGS:
                 continue
             cols = {r[1] for r in db.execute('PRAGMA table_info("%s")' % t)}
             # THE SAME CATALOGUE TEST AS THE CSV HALF, which this branch did not apply.
@@ -438,15 +607,23 @@ def read_pages():
             year, page = _year_column(cols), _page_column(cols)
             if not year or not page or cols & CATALOGUE_COLUMNS:
                 continue
-            for fy, pg in db.execute(
-                    'SELECT DISTINCT "%s", "%s" FROM "%s"' % (year, page, t)):
+            lab = _label(t)
+            col, style = PROOF.get(lab, (None, NOTHING))
+            sel = '"%s", "%s"' % (year, page)
+            if col and col in cols:
+                sel += ', "%s"' % col
+            for r in db.execute('SELECT DISTINCT %s FROM "%s"' % (sel, t)):
                 try:
-                    out[(int(fy), int(pg))].add(_label(t))
+                    key = (int(r[0]), int(r[1]))
                 except (TypeError, ValueError):
                     continue
+                out[key].add(lab)
+                v = proof_verdict(style, r[2] if len(r) > 2 else None)
+                if v:
+                    said[key][lab].add(v)
     finally:
         db.close()
-    return out
+    return out, said
 
 
 def refusals():
@@ -468,7 +645,11 @@ def refusals():
         so nothing else records that the page was looked at.
     """
     out = collections.defaultdict(set)
-    for f in sorted(glob.glob(os.path.join(DATA, '*-refused.csv'))):
+    files = sorted(glob.glob(os.path.join(DATA, '*-refused.csv')))
+    # `extraction-blocked.csv` predates the `*-refused` naming and records the same thing:
+    # a column that would not foot to the total its own page prints.
+    files.append(os.path.join(DATA, 'extraction-blocked.csv'))
+    for f in files:
         name = _label(os.path.basename(f)[:-4])
         try:
             with open(f, encoding='utf-8', errors='replace') as fh:
@@ -524,7 +705,7 @@ def main():
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
 
-    done = read_pages()
+    done, said = read_pages()
     refused = refusals()
     rows = []
     for f in sorted(glob.glob(os.path.join(OCR, '*annual-town-report.tsv'))):
@@ -562,10 +743,25 @@ def main():
                 # mangled as its figures. Read them the other way round.
                 top = [unreversed(t) for t in top]
             hits = done.get((fy, page), set())
-            # `refused` outranks `unread` and never outranks `read`: a page some dataset
-            # cites IS read, whatever else also refused part of it.
-            if hits:
-                state = 'read'
+            # PROVEN NEEDS A CLEAN READING, NOT A LUCKY ROW. A dataset proves this page
+            # when its own check closed here AND nothing it read here failed. Taking `any
+            # row passed` would call report_appropriations proven on pages where 4,870 rows
+            # failed beside 157 that passed, which is the exact aggregation CLAUDE.md
+            # forbids without splitting on `status`.
+            verdicts = said.get((fy, page), {})
+            proved = sorted(l for l, v in verdicts.items()
+                            if 'proven' in v and 'failed' not in v)
+            failed = sorted(l for l, v in verdicts.items() if 'failed' in v)
+            # THE ORDER IS THE POINT, because each state is one action and they are not
+            # interchangeable. `proven` outranks everything; a page with rows is `unproven`
+            # however loudly something else refused part of it, because the rows are there
+            # and what is missing is the check; `reversed` before `refused` because a
+            # mirrored page is a re-OCR job rather than an extractor job; and `unread` is
+            # last and is the ONLY one that costs model tokens.
+            if proved:
+                state = 'proven'
+            elif hits:
+                state = 'unproven'
             elif direction == 'reversed':
                 state = 'reversed'
             elif (fy, page) in refused:
@@ -579,8 +775,13 @@ def main():
             pri, why = PRIORITY.get(subj, (99, ''))
             rows.append(dict(
                 fy=fy, page=page, subject=subj, priority=pri, answers=why, state=state,
+                read=('yes' if hits else 'no'),
                 figures=figs, figures_reversed=rev,
                 read_by=', '.join(sorted(hits)),
+                proved_by=', '.join(proved), failed_by=', '.join(failed),
+                # WHO REFUSED IT, because `build_extraction_gaps.py` has to name the
+                # extractor to be fixed and a gap with no named remedy is a grievance.
+                refused_by=', '.join(sorted(refused.get((fy, page), ()))),
                 heading=(top[0] if top else '')[:60], document=doc))
 
     # PRIORITY FIRST, then newest. The queue is meant to be read top-down.
@@ -590,6 +791,19 @@ def main():
     wr.writeheader()
     wr.writerows(rows)
     text = buf.getvalue()
+
+    # A DATASET MISSING FROM `PROOF` IS A DEFECT, NOT AN UNPROVEN PAGE. A new extractor
+    # whose verdict column nothing knows about would put its pages in UNPROVEN and read as
+    # a finding about the archive -- the silent-zero shape CLAUDE.md names as four of
+    # thirteen defects in one day. So it is named and it fails, in the run as well as in
+    # `--check`, because a build that only fails under `--check` fails for nobody.
+    missing = sorted({l for labs in done.values() for l in labs} - set(PROOF))
+    if missing:
+        print('UNDECLARED: %d dataset(s) cite a page and are not in PROOF in %s:\n    %s\n'
+              'Add each with the column carrying its verdict, or (None, NOTHING) if it '
+              'records none.' % (len(missing), os.path.basename(__file__),
+                                 '\n    '.join(missing)), file=sys.stderr)
+        return 1
 
     if a.check:
         cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
@@ -617,18 +831,27 @@ def main():
     # UNITS, because these get quoted. `459 done` says nothing about what was counted
     # or what `done` means, and the queue published `469 read` off a stale database for
     # four days without anybody being able to see what the number was about.
-    print('  %d of %d pages READ -- a page is read when a dataset cites its fy and page'
-          % (st['read'], len(rows)))
-    print('  %d of %d pages READ AND REFUSED -- an extractor read them and the rows '
-          'would not prove' % (st['refused'], len(rows)))
-    print('  %d of %d pages NOT YET READ; %d whose OCR came out reversed'
-          % (st['unread'], len(rows), st['reversed']))
+    # FOUR STATES, EACH WITH THE ONE ACTION IT ASKS FOR, and the only one that costs
+    # model tokens said out loud. `445 read, 29 refused` invited a purchase that does not
+    # exist: UNREAD is what spend moves, and on this stream it is zero.
+    print('  %d of %d PROVEN    rows tie to a total the page prints -- done'
+          % (st['proven'], len(rows)))
+    print('  %d of %d UNPROVEN  rows exist, nothing proved them -- write the check (code)'
+          % (st['unproven'], len(rows)))
+    print('  %d of %d REFUSED   an extractor reached it and wrote nothing -- fix the '
+          'extractor (code)' % (st['refused'], len(rows)))
+    print('  %d of %d UNREAD    nobody has looked -- read it (THE ONLY ONE THAT COSTS '
+          'TOKENS)' % (st['unread'], len(rows)))
+    print('  %d of %d reversed  the OCR came out mirrored -- re-OCR the page'
+          % (st['reversed'], len(rows)))
+    print('  %d of %d read, DERIVED = proven + unproven, kept so older readers of this '
+          'file still work' % (st['proven'] + st['unproven'], len(rows)))
     print()
-    print('  what carries no proven rows yet, by subject (not read OR refused):')
-    todo = collections.Counter(r['subject'] for r in rows if r['state'] != 'read')
+    print('  what is not proven, by subject:')
+    todo = collections.Counter(r['subject'] for r in rows if r['state'] != 'proven')
     for s, n in sorted(todo.items(), key=lambda kv: PRIORITY.get(kv[0], (99,))[0]):
         yrs = sorted({r['fy'] for r in rows
-                      if r['subject'] == s and r['state'] != 'read'})
+                      if r['subject'] == s and r['state'] != 'proven'})
         print('    %2d. %-24s %3d pages  FY%d-FY%d'
               % (PRIORITY.get(s, (99,))[0], s, n, yrs[0], yrs[-1]))
     return 0

@@ -8,6 +8,11 @@ document is `notes/findings/COUNT-5-TO-15.md`, which is the worked case that pro
 of it. `notes/HANDOFF-INGEST-COST.md` covers what ingest COSTS and where it must run; this
 one is about whether its counts can be believed.
 
+**If you are here to DO the remaining work rather than to understand the counts, go to
+`notes/HANDOFF-ANNUAL-REPORT-PAGES.md`.** It is the queue, ranked, with the page numbers, the
+diagnosis for each job and the one decision still outstanding. Everything left on that stream
+is code; `UNREAD` is 0.
+
 ---
 
 ## 0. WHERE THE NUMBERS STAND
@@ -21,11 +26,22 @@ From `bash scripts/status.sh --once`, and every figure carries what it counts:
 | Votes from the town's minutes | 1,607 of 4,487 | 2,880 sets of minutes still to read | one set of minutes |
 | Our minutes of recordings | 549 of 2,433 | 1,884 recordings still to write up | one recording |
 | Reconciling annual-report tables | 567 of 13,789 | 13,222 rows still to reconcile | one row that must tie to a printed total |
-| Annual report pages | 445 of 474 | 29 pages still to prove | one PAGE of a report |
+| Annual report pages | 162 PROVEN of 474 | 312 pages unfinished | one PAGE of a report |
 
-**The annual-report page queue is finished as a reading job.** All 474 pages have been
-looked at. 445 produced rows that prove; 29 were read and REFUSED. **None is waiting for a
-first reading**, and spending model tokens on them returns the same refusals.
+**The annual-report page queue is finished as a reading job, and the metric now says so.**
+All 474 pages have been looked at. **UNREAD is 0**, and no amount of model spend moves this
+stream; everything unfinished is code. See section 3h, which is now DONE:
+
+    162 PROVEN    rows tie to a total the page prints          done
+    282 UNPROVEN  rows exist, nothing recorded a check         write the check   (code)
+     30 REFUSED   an extractor reached it and wrote nothing    fix the extractor (code)
+      0 UNREAD    nobody has looked                            read it           (TOKENS)
+      0 reversed  the OCR came out mirrored                    re-OCR            (free)
+
+`read` is KEPT as a derived column -- proven + unproven, 444 -- so nothing that already
+reads the CSV breaks, and the dashboard's headline is now **312 of 474 pages unfinished**
+with those five terms itemised inside the panel rather than a `done` that had to pick one
+meaning of done.
 
 The figure fell from 459 to 445 later the same day, and the archive did not change. Four of
 the eight `*-refused.csv` files carry no `state` column, so each was CREDITING the pages it
@@ -75,7 +91,7 @@ The tables are created with the SCHEMA, not at the end of the build: `table-sema
 publishes a worked query for every table and `build_db.py` executes all of them mid-build,
 so a table created last fails its own example.
 
-### 2b. A third state, because `unread` was carrying two facts
+### 2b. A third state, because `unread` was carrying two facts (now FOUR -- see 3h)
 
 A page nobody has opened needs somebody to read it. A page an extractor READ and then
 REFUSED needs the extractor fixed — the page is legible and the reader exists. Those are
@@ -88,6 +104,11 @@ different jobs for different people, and the queue could not say which.
 `map_annual_report_pages.py` marks a page `refused` when a `*-refused.csv` cites it, or when
 an `annual-report-reads/*.json` returned no rows. `refused` outranks `unread` and never
 outranks `read`.
+
+**That was the right direction and one state short.** `read` still meant *any dataset cites
+this page*, which lumps a page one row was taken from together with a page whose whole table
+foots to its own printed total. Section 3h replaced it with four states and is DONE; the
+counts above are the last figures the three-state version produced.
 
 ### 2c. Refusals are written down, not printed
 
@@ -182,10 +203,37 @@ two-column layout loses a third to a half of the given names. Reading those two 
 move the counter and produce rows nobody consumes. TJ has not said whether that is worth
 doing.
 
-### 3c. `money_gaps` may owe a row
+### 3c. `money_gaps` OWED SIX ROWS -- DONE, AND GENERATED
 
 Ten receivables pages cannot be published because their rows will not prove. Under rule 7c
-that is a registered gap, not merely a queue entry. Not yet added.
+that is a registered gap, not merely a queue entry.
+
+`build_extraction_gaps.py` now emits one `extraction` row **per refusing extractor**, read
+off the page map's new `refused_by` column, because the remedy is per extractor and a gap
+with no named remedy is a grievance:
+
+| register | pages | years |
+|---|---:|---|
+| `debt-repayment-detail-refused` | 12 | FY2011, FY2012, FY2013, FY2018, FY2019, FY2020, FY2022 |
+| `receivables-refused` | 11 | FY2013, FY2017, FY2018, FY2020, FY2021, FY2022, FY2023 |
+| `gross-wages-refused` | 3 | FY2012, FY2019 |
+| `read-and-refused` (a model read that returned no rows) | 3 | FY2013, FY2017, FY2019, FY2023 |
+| `appropriations-supplement-refused` | 1 | FY2017 |
+| `extraction-blocked` (treasurer's cash) | 1 | FY2019 |
+
+Three things about the shape, each of which was got wrong first:
+
+- **GENERATED, for rule 2's reason.** These counts fall as each extractor is fixed, and a
+  hand-typed *ten pages* would be wrong the first time one was -- which is the same failure
+  the state machine was rewritten to stop.
+- **The source is the page map, not the refusal files.** A page one extractor refused and
+  another read is READ: nothing is missing and there is no gap. `state == 'refused'` is the
+  join already made -- refused by somebody, cited by nobody.
+- **The years are LISTED, never a range.** The first draft said `FY2013-FY2023`, which
+  claims eleven years of silence where there are seven, and a resident reading the gaps page
+  has no way to tell which. A range is only honest when it is contiguous.
+- **A register missing from `REFUSED_FAMILY` fails the build** rather than going
+  unregistered, which is the same discipline as `PROOF` below.
 
 ### 3d. Two verifier problems that are not data problems
 
@@ -195,17 +243,41 @@ that is a registered gap, not merely a queue entry. Not yet added.
 - **`write_recording_minutes.py --check` is red** on five pre-existing files needing
   `--retag`, which calls `claude` — about $0.25. Predates this work.
 
-### 3e. Rebuild ORDER is undocumented and was learned by failing
+### 3e. Rebuild ORDER -- DONE: `check_generated.py --rebuild`
 
 `check_generated.py` went 7 stale → 12 → 7 → 4 across passes because rebuilding one
-generator changed inputs for another. The dependencies that bit:
+generator changed inputs for another. It is four rounds of guessing every time, and it is
+why a "quick rebuild" took an hour.
 
-    build_db            before  build_finance, build_money_flow, build_town_flow
-    build_feeds/notices/meeting_feed   before  build_boards
-    map_annual_report_pages            before  build_ingest_plan
+    python3 scripts/check_generated.py --rebuild
 
-Nothing encodes this. It is four rounds of guessing every time, and it is why a "quick
-rebuild" took an hour.
+It checks, rebuilds what is stale in dependency order, and **re-checks and goes again until
+nothing is stale.** Four things it had to get right:
+
+- **The graph is INCOMPLETE ON PURPOSE and the loop is what makes that safe.** There are 157
+  generators and nothing has ever mapped every edge; a graph claimed to be complete would be
+  the worst of the three options, because it would be believed. `PREREQ` declares only the
+  edges somebody has been bitten by. The graph makes it converge in fewer rounds; the loop is
+  what makes it converge at all. Past six rounds it stops and says an edge is missing.
+- **A VERIFIER IS NOT STALENESS AND MAY NOT BE BUILT AWAY.** A check is rebuildable exactly
+  when it was invoked with `--check`; dropping the flag is the generator. The other 29
+  entries recompute a published figure or assert every source is catalogued, and running one
+  again reports the same failure and changes nothing -- the same trap as rerunning a refused
+  page. They are listed separately as *needing a person*.
+- **Seven generators may never be rebuilt by it.** `SPENDS_ALLOWANCE` names the ones that
+  call `claude -p`. A convenience flag must not outrun the caps the refresh drips them at,
+  and rule 7g says interactive work on something a process covers needs TJ to agree in that
+  turn.
+- **A cycle is reported, not recursed into.** An undeclared cycle among 157 generators is
+  possible and a `RecursionError` is a terrible way to be told.
+
+One edge learned writing this, and it is the reverse of the intuition: **`build_db` comes
+AFTER `build_extraction_gaps`**, because the database reads `money-gaps.csv`, which the gap
+generator writes. A gap registry is not downstream of the data.
+
+`build_pipeline_state.py` was NOT in `CHECKS` at all, which is why its staleness went
+unnoticed until it was run by hand -- a generator outside that list is a generator whose
+staleness is invisible. Added.
 
 ### 3f. D1 — FIXED, AND IT CONVERGES OVER DAYS
 
@@ -249,8 +321,19 @@ table, and a COUNT over a table the remote does not hold yet errors rather than 
 zero -- which killed an otherwise successful push after it had landed 100 tables. A partial
 sync is the designed state while a backlog drains.
 
-**What is left:** run `python3 scripts/sync_d1.py` on each of the next two days to clear the
-remaining 9 tables. After that, ordinary changes are a few thousand rows and land in one run.
+**CAUGHT UP, in one session rather than two days.** Two runs on 27 September landed the
+9 remaining tables -- 5 tables / 36,388 rows, then 4 / 37,687 -- and the consistency check
+passes: `ok: D1 matches -- 119 tables, 153,414 rows`. Ordinary changes from here are a few
+thousand rows and land in one run.
+
+**One thing that did not add up and is worth not relying on.** 74,075 rows at the ~2x
+write-with-indexes estimate is about 148,000 writes against a 100,000-a-day free tier, and
+both runs succeeded. So either the multiplier is pessimistic or the cap counts something
+other than what the estimate assumes. The incremental push is right either way; the
+arithmetic in the note above is not a budget anybody should plan against.
+
+**`money_gaps` changed today (3c) and has not been pushed.** It is one small table; the next
+`sync_d1.py` takes it.
 
 ### 3g. THE DEBT PAGES — diagnosed, ready to write
 
@@ -282,41 +365,96 @@ label column, place figures by nearest column centre, and publish only the colum
 principal + interest foots to the printed total. `read_trust_table.py` is the worked example
 of the same shape.
 
-### 3h. THE METRIC ITSELF IS STILL WRONG, and TJ said so
+### 3h. THE METRIC -- REPLACED, DONE
 
 TJ, 27 September 2026, after the count moved three times in a day: *"i think we need a
 different metric then. read and refused as separate? (refused need to be... rerun?!)"*
 
 **No -- a refused page must NEVER be rerun.** Rerunning returns the same refusal and pays
-for it. That misunderstanding is the dashboard's fault: `15 left` invites exactly that
-purchase, and it is the clearest evidence the metric is wrong rather than merely noisy.
+for it. That misunderstanding was the dashboard's fault: `15 left` invites exactly that
+purchase, and it is the clearest evidence the metric was wrong rather than merely noisy.
 
-WHY IT KEEPS MOVING. `read` means *any dataset mentions this page*. That is a property of
-our FILING, so it changes whenever a file is added -- which happened twice on one day, in
-both directions. It is not a property of the archive, and it answers a question nobody asked.
+WHY IT KEPT MOVING. `read` meant *any dataset mentions this page*. That is a property of our
+FILING, so it changed whenever a file was added -- which happened twice on one day, in both
+directions. It was not a property of the archive, and it answered a question nobody asked.
 
-THE REPLACEMENT, four states, each mapping to exactly ONE action, and only one of them
-costing model tokens:
+THE REPLACEMENT, shipped. Four states, each mapping to exactly ONE action, and only one of
+them costing model tokens:
 
-| state | means | to fix it | costs |
-|---|---|---|---|
-| PROVEN | rows tie to a total the page prints | nothing, it is done | -- |
-| UNPROVEN | rows exist, nothing proved them | write the check | code |
-| REFUSED | an extractor reached it and wrote nothing, with a reason | fix the extractor | code |
-| UNREAD | nobody has looked | read it | TOKENS |
+| state | means | to fix it | costs | now |
+|---|---|---|---|---:|
+| PROVEN | rows tie to a total the page prints | nothing, it is done | -- | 162 |
+| UNPROVEN | rows exist, nothing proved them | write the check | code | 282 |
+| REFUSED | an extractor reached it and wrote nothing, with a reason | fix the extractor | code | 30 |
+| UNREAD | nobody has looked | read it | TOKENS | **0** |
 
-Two things to say out loud when it ships:
+**UNREAD is 0. No amount of spend moves this stream**, and the old card was inviting a
+purchase that does not exist. **PROVEN is 162, not 445**, because most of those pages are
+cited by rows that never reconciled -- better to publish that than to be corrected a fourth
+time.
 
-  * **UNREAD is 0 for this stream.** No amount of spend moves it. Everything left is code,
-    and the current card has been inviting a purchase that does not exist.
-  * **PROVEN will be LOWER than 445**, because some of those pages are cited by rows that
-    never reconciled. Better to publish that than to be corrected a fourth time.
+#### The registry is the part worth keeping
 
-`proven` cannot drift the way `read` does: it depends on whether the page's own printed
-total agrees with our rows, which changes only when the arithmetic changes.
+`PROOF` in `map_annual_report_pages.py` names, for every one of the 49 datasets that cites a
+page, **the column carrying its verdict and the style that column is written in**. It is
+declared rather than sniffed because the vocabulary is genuinely heterogeneous -- nine
+different columns, because each table family states a different identity about itself -- and
+a script guessing which column meant `proved` would be reading a position as a name, which
+is rule 13's own trap. Five styles:
 
-Touches `map_annual_report_pages.py` (the state machine) and `build_ingest_status.py` (the
-card). Keep `read` as a derived total so nothing currently reading the CSV breaks.
+    VERDICT       a `checked` / `check failed` / `no check` column          19 datasets
+    NOTHING       nothing anywhere records a check                          16
+    CLOSED        filled ONLY with an identity that closed; empty is silence  6
+    YES           the affirmative value is the literal `yes`                  3
+    PROSE         a real check, recorded in a sentence no script can read     3
+    CONSTRUCTION  published only when it footed; the rest are in `*-refused`  2
+
+`PROSE` is the one to notice: `none -- the page states no total` and `Checked the identity
+... it held exactly` sit in the same field of `annual-report-reads.csv`. Those pages are
+UNPROVEN, and the remedy is to record the verdict in a column, **not to parse the
+sentence**.
+
+**A dataset missing from `PROOF` FAILS the build**, in the ordinary run as well as under
+`--check`, because a new extractor landing silently in UNPROVEN would read as a finding about
+the archive -- the silent-zero shape CLAUDE.md names as four of thirteen defects in a day.
+It earned that on its first run: `revenue_history` cites pages, exists only in the database
+with no CSV, and was absent from the survey that built the registry. (It is a projection of
+`annual_report_receipts WHERE status='checked'`, so its WHERE clause is its verdict.)
+
+#### Three details that were wrong first
+
+- **PROVEN NEEDS A CLEAN READING, not a lucky row.** A dataset proves a page when its check
+  closed there AND nothing it read there failed. `any row passed` would call
+  `report_appropriations` proven on pages where 4,870 rows failed beside 157 that passed --
+  the aggregation CLAUDE.md forbids without splitting on `status`. 100 unproven pages carry
+  `appropriations` in the new `failed_by` column, which is 3i at page grain.
+- **REFUSED went 29 to 30.** `extraction-blocked.csv` is a refusals register that predates
+  the `*-refused.csv` naming, so neither the column test nor the name test caught it, and it
+  was the ONLY thing citing FY2019 p44 -- a page counted READ on the strength of a record
+  that our reading of it FAILED. **Third instance of that one inversion.** FY2015 p4, its
+  other page, has too few figures to be in the map at all.
+- **`table-corrections.csv` is excluded too**, as a log about another dataset's cells rather
+  than a table of figures. All four of its pages are cited by `report-appropriations` anyway,
+  so excluding it moved nothing -- which is the point of doing it before it does.
+
+#### What it touched
+
+`read` survives as a DERIVED column (proven + unproven = 444), so nothing already reading the
+CSV breaks, and `proved_by` / `failed_by` / `refused_by` were added so a state can be audited
+back to the identity behind it rather than taken on the state's word. Converted:
+`build_ingest_status.py` (the card), `build_ingest_plan.py` and `build_pipeline_state.py`
+(both now read the derived `read`, because both mean *located*, not *proven*).
+
+**The dashboard headline is `unfinished`, not `done`.** TJ, 27 September 2026: *"the upper
+metric for that annual report page needs to be 'unfinished' with an itemized breakdown inside
+the panel with these specific terms"*. Right, and for a reason the other five streams do not
+have: the remainder here is four different jobs. A headline counting what is DONE has to pick
+one definition of done and every choice was wrong -- `read` drifted with our filing, `proven`
+is honest and reads as though 312 pages were unstarted. `unfinished` is true whichever job
+you mean, the five terms are itemised beneath it uncollapsed, and the pill carries the only
+figure spend can move: *nothing left to READ -- every unfinished page is code.* A zero row
+is KEPT, because `UNREAD 0` is the most useful line on the card and a row that vanishes at
+zero cannot say it.
 
 ### 3i. TWO THINGS FOUND WHILE DOING THE ABOVE, both worse than they look
 
@@ -367,3 +505,27 @@ prove its inputs have not moved.** The database is not a source — it is a copy
 on it, and on 27 September the date had been wrong since breakfast. Every count on the
 dashboard now names what it counts, and the one that reads the database refuses rather than
 guesses.
+
+## 5. AND A SECOND RULE, FROM THE METRIC ITSELF
+
+**A PROGRESS COUNT MUST BE A PROPERTY OF THE WORK, NOT OF OUR FILING. Where it cannot be,
+count what is UNFINISHED.**
+
+`read` moved twice in one day, in both directions, without the archive changing — because it
+meant *some file of ours mentions this page*. Adding a dataset moved it up; classifying one
+as a catalogue moved it down. Neither event was progress, and both were published as
+progress. `proven` cannot do that: it depends on whether the page's own printed total agrees
+with our rows, which changes only when the arithmetic changes.
+
+**The corollary is the headline.** Any count of DONE has to pick one definition of done, and
+where the remainder is several different jobs every choice misleads. `unfinished` is true
+whichever job you mean. So: **the upper metric is what is left, the panel itemises what kinds
+of left, and each kind names its ONE action and whether that action costs model tokens.** A
+zero stays on the board — `UNREAD 0` is the most useful line on this card, and it is the line
+that says no amount of spend moves the stream.
+
+**And the enforcement lives in a declared registry that fails the build.** `PROOF` (what
+proves a page) and `REFUSED_FAMILY` (what would close a refusal) both refuse to run when a
+new dataset is absent from them. That is the difference between this and the three earlier
+attempts at the same count: the failure mode of an unmapped dataset is now a build that stops
+and names it, rather than a number that quietly reads as a finding about the town.

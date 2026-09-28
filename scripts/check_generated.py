@@ -70,6 +70,12 @@ CHECKS = [
     # findable has to surface as itself rather than as a report quietly losing a row.
     # WHAT IS IN THE ANNUAL REPORTS AND WHAT HAS READ IT, before anything that reads one.
     ('map_annual_report_pages.py', ['--check']),
+    # ADDED 27 September 2026, after it had already drifted and nothing said so. Where
+    # every fiscal year stands in the annual-report pipeline, step by step -- a page map
+    # that changes what `read` means moves 225 rows of it, and the only reason anybody
+    # noticed was running it by hand. A generator outside this list is a generator whose
+    # staleness is invisible, which is the shape this whole file exists to stop.
+    ('build_pipeline_state.py', ['--check']),
     # ...and the plan built on it, so the two cannot disagree about what is left.
     ('build_ingest_plan.py', ['--check']),
     ('map_stabilization_pages.py', ['--check']),
@@ -672,13 +678,199 @@ CHECKS = [
 ]
 
 
+# ------------------------------------------- REBUILDING, IN AN ORDER THAT CONVERGES
+#
+# WHAT THIS IS FOR. `check_generated` names what is stale; rebuilding it by hand went
+# 7 stale -> 12 -> 7 -> 4 across four passes, because rebuilding one generator changes an
+# input of another. That is four rounds of guessing every time and it is why a "quick
+# rebuild" took an hour.
+#
+# THE GRAPH IS INCOMPLETE ON PURPOSE, AND THE LOOP IS WHAT MAKES THAT SAFE. There are 157
+# generators here and nothing has ever mapped every edge between them; a graph claimed to
+# be complete would be the worst of the three options, because it would be believed. So
+# this declares only the edges somebody has actually been bitten by, and then RE-CHECKS
+# after each round and goes again until nothing is stale. The graph makes it converge in
+# fewer rounds; the loop is what makes it converge at all.
+#
+# Each key must be rebuilt AFTER the values it lists.
+PREREQ = {
+    # THE DATABASE IS AN INPUT, not an output, to everything that reads a table out of it.
+    'build_finance.py': ['build_db.py'],
+    'build_money_flow.py': ['build_db.py'],
+    'build_town_flow.py': ['build_db.py'],
+    # ...and the database READS money-gaps.csv, which this writes. So the gaps come first
+    # and the database after, which is the reverse of the intuition that a gap registry is
+    # downstream of the data.
+    'build_db.py': ['build_extraction_gaps.py'],
+    # THE PAGE MAP IS UPSTREAM OF THE QUEUE AND OF THE GAPS IT IMPLIES. Both read its
+    # `state` column: the plan to decide what is still worth a model read, the gap registry
+    # to name the pages that were read and refused.
+    'build_ingest_plan.py': ['map_annual_report_pages.py'],
+    'build_extraction_gaps.py': ['map_annual_report_pages.py'],
+    'build_pipeline_state.py': ['map_annual_report_pages.py'],
+    # A BOARD PAGE QUOTES THE FEEDS. Rebuilding the boards first leaves them quoting
+    # yesterday's notices, which is a wrong date on a public page rather than a stale file.
+    'build_boards.py': ['build_feeds.py', 'build_notices.py', 'build_meeting_feed.py'],
+}
+
+
+# AND EIGHT GENERATORS MAY NEVER BE REBUILT BY THIS, because rebuilding them SPENDS A
+# BUDGET rather than writing a file.
+#
+# Seven of them call `claude -p`, so "rebuild what is stale" would quietly buy model reads --
+# and CLAUDE.md is explicit that interactive work on something a scheduled process already
+# covers needs TJ to agree to it in that turn. The refresh drips these at a cap on purpose;
+# a convenience flag must not outrun that cap.
+#
+# THE EIGHTH IS `sync_d1.py`, AND IT WAS FOUND BY THIS FLAG DOING IT. `sync_d1.py --check`
+# compares the two copies and touches nothing; `sync_d1.py` PUSHES, against a free tier that
+# allows 100,000 writes a day and then fails every query until tomorrow. So the rule "drop
+# `--check` and you have the generator" is true of every entry in CHECKS except the one
+# whose `--check` is the only read-only half of a script that otherwise writes to a REMOTE.
+# It ran unasked on 27 September, minutes after I had said the push should wait for the next
+# day's budget.
+#
+# The general form, worth more than the list: A CHECK AND ITS GENERATOR DO NOT ALWAYS SPEND
+# THE SAME THING. Dropping a flag is a safe way to find the builder and not a safe way to
+# decide whether running it is free.
+SPENDS_ALLOWANCE = {
+    'extract_official_votes.py', 'reconcile_minutes.py', 'tag_document_affinity.py',
+    'write_agenda_preview.py', 'write_budget_state.py', 'write_document_budget_state.py',
+    'write_recording_minutes.py',
+    # a remote write against a hard daily budget, not a file
+    'sync_d1.py', 'sync_search_d1.py',
+}
+
+
+def _rebuild_cmd(job):
+    """The argv that REBUILDS what `job` checks, or None if nothing can.
+
+    A check is rebuildable exactly when it was invoked with `--check`: dropping the flag is
+    the generator. Everything else in CHECKS is a VERIFIER -- it recomputes a published
+    figure, or asserts that every source is catalogued -- and a verifier failing is a
+    defect for a person, never staleness to be built away. Running one again would report
+    the same failure and change nothing, which is the same trap as rerunning a refused page.
+    """
+    script, args = job
+    if '--check' not in args or script in SPENDS_ALLOWANCE:
+        return None
+    return [script, [a for a in args if a != '--check']]
+
+
+def _order(scripts):
+    """`scripts` sorted so that nothing is rebuilt before its declared prerequisites.
+
+    A depth-first walk with a visiting set, so a cycle is reported rather than recursed
+    into: an undeclared cycle among 157 generators is possible and a RecursionError is a
+    terrible way to be told about it.
+    """
+    out, done, path = [], set(), []
+
+    def visit(name):
+        if name in done:
+            return
+        if name in path:
+            raise SystemExit('PREREQ has a cycle: %s' % ' -> '.join(path + [name]))
+        path.append(name)
+        for dep in PREREQ.get(name, ()):
+            if dep in scripts:
+                visit(dep)
+        path.pop()
+        done.add(name)
+        out.append(name)
+
+    for n in scripts:
+        visit(n)
+    return out
+
+
+def rebuild(jobs, rounds=6):
+    """Check, rebuild what is stale in dependency order, and go again until it settles."""
+    for round_no in range(1, rounds + 1):
+        results = _check_all(jobs)
+        stale, unfixable = [], []
+        for job in jobs:
+            label = _label(job)
+            if results[label][0] == 0:
+                continue
+            (stale if _rebuild_cmd(job) else unfixable).append(job)
+        if not stale:
+            print('\nnothing stale after %d round(s)' % (round_no - 1))
+            return unfixable, []
+        print('\nround %d: %d stale, rebuilding in dependency order'
+              % (round_no, len(stale)))
+        by_script = {}
+        for job in stale:
+            by_script.setdefault(job[0], []).append(job)
+        broke = []
+        for script in _order(list(by_script)):
+            for job in by_script[script]:
+                cmd = _rebuild_cmd(job)
+                r = subprocess.run([sys.executable,
+                                    os.path.join(ROOT, 'scripts', cmd[0]), *cmd[1]],
+                                   cwd=ROOT, capture_output=True, text=True)
+                mark = ' ok ' if r.returncode == 0 else 'FAIL'
+                print('  %s  %s' % (mark, _label((cmd[0], cmd[1]))))
+                if r.returncode != 0:
+                    broke.append((_label(job), (r.stdout or r.stderr).strip()))
+        if broke:
+            return unfixable, broke
+    print('\nSTILL STALE after %d rounds -- an edge is missing from PREREQ, or two '
+          'generators disagree about one file. Run with --serial and read the diff.'
+          % rounds)
+    return unfixable, [('did not converge', '')]
+
+
+def _label(job):
+    script, args = job
+    return script + (' ' + ' '.join(args) if args else '')
+
+
+def _check_all(jobs, workers=None):
+    """{label: (rc, output)} for every job, run concurrently."""
+    results = {}
+    if workers == 1:
+        for job in jobs:
+            label, rc, out = _run(job)
+            results[label] = (rc, out)
+        return results
+    with cf.ThreadPoolExecutor(max_workers=workers or min(8, (os.cpu_count() or 4))) as p:
+        for label, rc, out in p.map(_run, jobs):
+            results[label] = (rc, out)
+    return results
+
+
+# NO CHECK MAY RUN FOREVER, because a hung one stalls every round after it.
+#
+# On 27 September a `--rebuild` run sat for nineteen minutes with five checks alive and no
+# progress: `build_blog.py --check`, `verify_blog.py`, `build_if_students_leave.py --check`,
+# `build_peer_spending.py --check` and `build_special_education.py --check`. It had to be
+# killed, and killing it lost the output, so which round it was in is not known either.
+#
+# WHAT IS ESTABLISHED: those five were running for over ten minutes and the run did not
+# advance. WHAT IS NOT: why. The handoff records `build_if_students_leave.py --check` WRITING
+# to `lunenburg.db` while another check holds it -- a real concurrency defect, and it does not
+# explain `build_blog.py`, which does not open the database at all. Two explanations fit and
+# nothing here distinguishes them.
+#
+# So this does not pretend to fix the cause. It bounds the symptom: a check that has not
+# answered in TIMEOUT seconds is reported as TIMED OUT, with its own name, and the run
+# continues. That turns an indefinite stall into a named failure -- which is the difference
+# between a defect somebody can chase and an afternoon nobody can account for.
+TIMEOUT = 600
+
+
 def _run(job):
     """One generator's --check, as a subprocess. Returns (label, rc, output)."""
     script, args = job
     path = os.path.join(ROOT, 'scripts', script)
     label = script + (' ' + ' '.join(args) if args else '')
-    r = subprocess.run([sys.executable, path, *args], cwd=ROOT,
-                       capture_output=True, text=True)
+    try:
+        r = subprocess.run([sys.executable, path, *args], cwd=ROOT,
+                           capture_output=True, text=True, timeout=TIMEOUT)
+    except subprocess.TimeoutExpired:
+        return label, 124, ('TIMED OUT after %ds and was killed. It is not stale -- nothing '
+                            'is known about its output. Run it on its own.' % TIMEOUT)
     return label, r.returncode, (r.stdout or r.stderr).strip()
 
 
@@ -688,10 +880,26 @@ def main():
                     help='how many checks to run at once (default: CPU count, max 8)')
     ap.add_argument('--serial', action='store_true',
                     help='one at a time, for debugging a check that misbehaves')
+    ap.add_argument('--rebuild', action='store_true',
+                    help='rebuild whatever is stale, in dependency order, until it '
+                         'settles -- see PREREQ')
     args_ns = ap.parse_args()
 
     jobs = [(s, a) for s, a in CHECKS
             if os.path.exists(os.path.join(ROOT, 'scripts', s))]
+
+    if args_ns.rebuild:
+        unfixable, broke = rebuild(jobs)
+        for label, out in broke:
+            print('\nFAILED TO REBUILD %s\n%s'
+                  % (label, '\n'.join(out.splitlines()[-6:])))
+        if unfixable:
+            print('\n%d verifier(s) failing, which is NOT staleness and cannot be built '
+                  'away \u2014 a published figure no longer recomputes, or a source is '
+                  'uncatalogued. These need a person:' % len(unfixable))
+            for job in unfixable:
+                print('  ' + _label(job))
+        return 1 if (broke or unfixable) else 0
 
     # RUN THEM AT ONCE. This was a serial loop and it grew to 63 generators, which is
     # roughly half an hour -- long enough that it stops being run before a commit, which
@@ -703,15 +911,8 @@ def main():
     # which is why results are collected and printed in the order CHECKS declares them
     # rather than in the order they happen to finish -- a run whose output reshuffles
     # between invocations is hard to diff, and diffing runs is how a new failure is spotted.
-    results = {}
-    if args_ns.serial or args_ns.jobs <= 1:
-        for job in jobs:
-            label, rc, out = _run(job)
-            results[label] = (rc, out)
-    else:
-        with cf.ThreadPoolExecutor(max_workers=args_ns.jobs) as pool:
-            for label, rc, out in pool.map(_run, jobs):
-                results[label] = (rc, out)
+    results = _check_all(
+        jobs, workers=(1 if (args_ns.serial or args_ns.jobs <= 1) else args_ns.jobs))
 
     failed = []
     for script, a in jobs:

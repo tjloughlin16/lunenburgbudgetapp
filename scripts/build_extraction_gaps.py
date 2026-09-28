@@ -38,6 +38,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLAN = os.path.join(ROOT, 'sources', 'data', 'extraction-plan.csv')
+PAGES = os.path.join(ROOT, 'sources', 'data', 'annual-report-pages.csv')
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 GAPS = os.path.join(ROOT, 'sources', 'data', 'money-gaps.csv')
 SIDE = 'extraction'
@@ -65,6 +66,129 @@ WORTH_SAYING = {
     'report_gross_wages': ('gross wages, name by name',
                            'what the town pays its people in total'),
 }
+
+
+# ------------------------------------------- A PAGE READ AND REFUSED IS A GAP, NOT A QUEUE
+#
+# The two kinds of shortfall here are not the same thing and were only registered as one.
+# A row that failed its reconciliation IS PUBLISHED and looks confident -- that is what
+# everything above this line is about. A page an extractor READ AND REFUSED publishes
+# NOTHING: its rows were never written, or were deleted for not summing to the total the
+# page itself prints, so a query about that year returns silence and the silence reads as
+# though the town never printed it.
+#
+# Rule 7c: a conclusion we cannot draw is a GAP and it gets registered, not merely written
+# in the prose of whichever page hit it. Ten receivables pages sat in a queue counter for
+# four days as work nobody had started.
+#
+# GENERATED, for rule 2's reason. These counts fall as each extractor is fixed, and a
+# hand-typed "ten pages" would be wrong the first time one was -- which is the exact
+# failure the state machine in map_annual_report_pages.py was rewritten to stop.
+#
+# ONE ROW PER REFUSING EXTRACTOR, because the remedy is per extractor. The question is
+# phrased as what a READER cannot answer, never as a complaint about our code, and a family
+# missing from this table FAILS the build rather than going unregistered.
+REFUSED_FAMILY = {
+    'debt-repayment-detail-refused': (
+        'What did the town owe on each bond issue, principal and interest, in the years '
+        'whose repayment schedule cannot be read?',
+        'the debt repayment schedule',
+        'a reader of `scripts/extract_debt_tables.py` measuring the year header and '
+        'splitting the merged year boxes by the pitch the page itself sets, then '
+        'publishing only the columns where PRINCIPAL + INTEREST foots to the printed '
+        'TOTAL for that issue'),
+    'receivables-refused': (
+        'What was the town owed, account by account, in the years whose receivables page '
+        'will not foot?',
+        'what is owed to the town',
+        '`scripts/extract_receivables.py` made to sum to the totals those pages print; '
+        'the pages are legible and they grade the extractor'),
+    'gross-wages-refused': (
+        'What did the town pay its people, name by name, in the years whose payroll '
+        'listing produced nothing?',
+        'gross wages, name by name',
+        'word-level PDF geometry for the two-column payroll layout. Note that the town '
+        'stopped printing the department beside each name after FY2016, so these pages '
+        'bound the question rather than settling it'),
+    'appropriations-supplement-refused': (
+        'What was appropriated on the supplementary pages that do not foot to their own '
+        'subtotals?',
+        'what Town Meeting appropriated',
+        'the subtotal identity those pages state about themselves, applied per column'),
+    'extraction-blocked': (
+        'What cash did the Treasurer hold in the years whose column does not foot to the '
+        'page\u2019s own printed total?',
+        'the Treasurer\u2019s cash on hand',
+        'the column ruler in the treasurer\u2019s-cash reader; the page prints the total '
+        'the column must reach, and `sources/data/extraction-blocked.csv` records both '
+        'figures'),
+    'read-and-refused': (
+        'What is on the pages a model read and returned no rows for?',
+        'pages with no extractor of their own',
+        'reading the refusal note in `sources/data/annual-report-reads/` and deciding '
+        'whether the page holds a table at all \u2014 some of them correctly do not'),
+}
+
+
+def refused_pages():
+    """{register: [fy]} for pages in state `refused`, off the generated page map.
+
+    THE MAP IS THE SOURCE and not the refusal files, because a page one extractor refused
+    and another read is READ: nothing is missing and there is no gap. `state == 'refused'`
+    is the join already made -- refused by somebody and cited by nobody.
+    """
+    out = collections.defaultdict(list)
+    if not os.path.exists(PAGES):
+        return out
+    for r in csv.DictReader(open(PAGES, encoding='utf-8')):
+        if (r.get('state') or '') != 'refused':
+            continue
+        for who in (r.get('refused_by') or '').split(','):
+            who = who.strip()
+            if who:
+                out[who].append(int(r['fy']))
+    return out
+
+
+def refusal_gap_rows():
+    rows = []
+    found = refused_pages()
+    unknown = sorted(set(found) - set(REFUSED_FAMILY))
+    if unknown:
+        raise SystemExit(
+            'UNDECLARED: %s refused pages and is not in REFUSED_FAMILY in %s. Add the '
+            'question a reader cannot answer and the document or fix that would close it.'
+            % (', '.join(unknown), os.path.basename(__file__)))
+    for who, (what, subject, closes) in sorted(REFUSED_FAMILY.items()):
+        yrs = sorted(set(found.get(who, ())))
+        if not yrs:
+            continue
+        pages = len(found[who])
+        rows.append({
+            'side': SIDE,
+            'what': what,
+            'why': ('%d page%s of %s in the annual town reports %s READ AND REFUSED: an '
+                    'extractor reached %s, could not tie the rows to a total the page '
+                    'itself prints, and published nothing. So a query about %s returns '
+                    'silence for %s, and the silence is ours rather than the town’s '
+                    '— every one of these pages IS printed. Refusals and their '
+                    'reasons are in `sources/data/%s.csv`; the pages are listed in '
+                    '`sources/data/annual-report-pages.csv` where `state` is `refused`. '
+                    'Re-running a model over them returns the same refusal and pays for '
+                    'it. — closes: %s.'
+                    % (pages, '' if pages == 1 else 's', subject,
+                       'is' if pages == 1 else 'are',
+                       'them' if pages > 1 else 'it', subject,
+                       # THE YEARS THEMSELVES, NOT A RANGE. `FY2013–FY2023` claims
+                       # eleven years of silence where there are seven, and a resident
+                       # reading the gaps page has no way to tell which. A range is only
+                       # honest when it is contiguous.
+                       ', '.join('FY%d' % y for y in yrs)
+                       if yrs[-1] - yrs[0] + 1 != len(yrs) or len(yrs) < 3
+                       else 'FY%d–FY%d' % (yrs[0], yrs[-1]),
+                       who, closes)),
+        })
+    return rows
 
 
 def counts():
@@ -109,7 +233,7 @@ def difficulty(table):
 
 
 def gap_rows():
-    rows = []
+    rows = refusal_gap_rows()
     for table, c in sorted(counts().items()):
         if c['checked'] == c['total']:
             continue

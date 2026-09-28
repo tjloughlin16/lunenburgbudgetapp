@@ -2331,7 +2331,7 @@
      "stars": 2,
      "what": "One row per fiscal year and table family, and a step from 1 to 7: the PDF held, OCR run, text present, tables located, extracted to CSV, loaded to the database, used in a report. Every cell is derived from the artefact it describes, so it cannot go stale the way a hand-kept list does. It exists because the same question — which years do we have for this fund — was answered three different ways from three different artefacts in one afternoon, each true about the artefact and false about the archive.",
      "kind": "Data",
-     "bytes": 14703,
+     "bytes": 14739,
      "url": "/docs/data/pipeline-state.csv",
      "count": 225,
      "unit": "rows",
@@ -2774,6 +2774,18 @@
      "textUrl": "/docs/analyses/charts/stabilization-flows.svg"
     },
     {
+     "path": "data/gross-wages-refused.csv",
+     "title": "Payroll pages that would not read, and why each refused",
+     "stars": 1,
+     "what": "Written by us. Two pages, both a PAIRING failure rather than a faint scan: FY2011 p98 pairs 80 half-rows and refuses 71, reading 93 names against 138 money figures; FY2012 p114 reads 131 money figures and not one personal name, so the department words left on it cannot be attributed to anybody. Neither was guessed at — an amount beside the wrong name is worse than an amount nobody has.",
+     "kind": "Data",
+     "bytes": 4655,
+     "url": "/docs/data/gross-wages-refused.csv",
+     "count": 24,
+     "unit": "rows",
+     "textUrl": "/docs/data/gross-wages-refused.csv"
+    },
+    {
      "path": "analyses/charts/fy26-town-spend.svg",
      "title": "FY26 town: where the money went",
      "stars": 1,
@@ -2964,18 +2976,6 @@
      "textUrl": "/docs/data/capital-plans-refused.csv"
     },
     {
-     "path": "data/gross-wages-refused.csv",
-     "title": "Payroll pages that would not read, and why each refused",
-     "stars": 1,
-     "what": "Written by us. Two pages, both a PAIRING failure rather than a faint scan: FY2011 p98 pairs 80 half-rows and refuses 71, reading 93 names against 138 money figures; FY2012 p114 reads 131 money figures and not one personal name, so the department words left on it cannot be attributed to anybody. Neither was guessed at — an amount beside the wrong name is worse than an amount nobody has.",
-     "kind": "Data",
-     "bytes": 564,
-     "url": "/docs/data/gross-wages-refused.csv",
-     "count": 2,
-     "unit": "rows",
-     "textUrl": "/docs/data/gross-wages-refused.csv"
-    },
-    {
      "path": "data/valuation-refused.csv",
      "title": "Valuation pages that would not read — currently none",
      "stars": 1,
@@ -3036,7 +3036,7 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 190802,
+     "bytes": 203305,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 474,
      "unit": "rows",
@@ -3360,9 +3360,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 151279,
+     "bytes": 156708,
      "url": "/docs/data/money-gaps.csv",
-     "count": 183,
+     "count": 189,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3384,9 +3384,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 84592,
+     "bytes": 85709,
      "url": "/docs/data/table-semantics.csv",
-     "count": 133,
+     "count": 135,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -3564,7 +3564,7 @@
      "stars": 2,
      "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
      "kind": "Data",
-     "bytes": 5675,
+     "bytes": 5713,
      "url": "/docs/data/ingest-plan.csv",
      "count": 13,
      "unit": "rows",
@@ -3871,7 +3871,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 40312832,
+     "bytes": 40316928,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -17551,7 +17551,7 @@
  "totals": {
   "documents": 1528,
   "groups": 22,
-  "bytes": 2220717810,
+  "bytes": 2220745120,
   "loadBearing": 162
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

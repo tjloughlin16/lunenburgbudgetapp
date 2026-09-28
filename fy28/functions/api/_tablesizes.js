@@ -17,6 +17,8 @@ export const ROWS = {
  "ballot_questions": 9,
  "budget_figure": 9503,
  "budget_line": 688,
+ "build_inputs": 116,
+ "build_meta": 2,
  "capital_funding_history": 10,
  "capital_plan_fy27": 22,
  "capital_plans": 201,
@@ -69,7 +71,7 @@ export const ROWS = {
  "money_assumptions": 6,
  "money_classification": 252,
  "money_edges": 11,
- "money_gaps": 179,
+ "money_gaps": 185,
  "munis_ledger": 983,
  "ood_tuition_history": 30,
  "outstanding_debt": 1038,
@@ -79,7 +81,7 @@ export const ROWS = {
  "peg_access_printed_totals": 77,
  "placement_counts": 15,
  "rate_register": 71,
- "receivables": 522,
+ "receivables": 180,
  "receivables_reconciliation": 12,
  "report_anomalies": 521,
  "report_appropriations": 5027,
@@ -110,7 +112,7 @@ export const ROWS = {
  "staff_roster_entries": 3751,
  "stated_cuts": 193,
  "stated_figure": 2,
- "table_semantics": 133,
+ "table_semantics": 135,
  "tax_collection": 250,
  "tax_collection_unreconciled": 13,
  "total_expenses_history": 28,
@@ -146,6 +148,12 @@ export const UNIQUE = {
  ],
  "budget_line": [
   "line_key"
+ ],
+ "build_inputs": [
+  "path"
+ ],
+ "build_meta": [
+  "key"
  ],
  "document": [
   "doc_id"

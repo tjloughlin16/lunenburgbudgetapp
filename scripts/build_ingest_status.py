@@ -453,31 +453,39 @@ def annual_report_pages():
     """
     f = os.path.join(DATA, 'annual-report-pages.csv')
     if not os.path.exists(f):
-        return 0, []
-    # REMAINING WORK IS TWO DIFFERENT JOBS AND THE COUNT MUST SAY WHICH.
+        return 0, 0, 0, 0, 0, []
+    # REMAINING WORK IS FOUR DIFFERENT JOBS AND THE COUNT MUST SAY WHICH. ONE OF THEM
+    # COSTS MODEL TOKENS AND THE OTHERS DO NOT.
     #
-    # A page nobody has opened needs somebody to read it. A page an extractor READ and then
-    # REFUSED needs the extractor fixed -- the page is legible, the reader exists, and what
-    # is wrong is ours. Ten receivables pages sat here as plain `unread` for four days after
-    # their rows were deleted for not summing to the totals the pages print, which reads as
-    # work nobody has started and is the opposite of true.
+    # TJ, 27 September 2026, after the number moved three times in one day: *"i think we
+    # need a different metric then. read and refused as separate? (refused need to be...
+    # rerun?!)"* A refused page must never be rerun -- it returns the same refusal and pays
+    # for it -- and that this card made rerunning look like the remedy is the clearest
+    # evidence `N left` was the wrong figure rather than merely a noisy one.
     #
-    # Both are remaining, so both stay in the count a reader watches go down. What changes
-    # is that the label says which kind, so "let's work on X" picks a real job.
-    done, refused, todo = 0, 0, []
+    # `done` is now PROVEN: the page's rows tie to a total the page itself prints. It is
+    # lower than the `read` it replaces, and deliberately: `read` meant any dataset cites
+    # this page, which is a fact about our FILING and moved twice in a day in both
+    # directions without the archive changing. See PROOF in map_annual_report_pages.py.
+    done, refused, unread, unproven, reversed_, todo = 0, 0, 0, 0, 0, []
     for r in rows('annual-report-pages.csv'):
         st = r.get('state')
-        if st == 'read':
+        if st == 'proven':
             done += 1
             continue
         label = r.get('subject') or 'unknown'
         if st == 'reversed':
+            reversed_ += 1
             label += ' \u2014 needs re-OCR'
         elif st == 'refused':
             refused += 1
-            label += ' \u2014 read & REFUSED, fix the extractor'
+            label += ' \u2014 read & REFUSED, fix the extractor (code)'
+        elif st == 'unproven':
+            unproven += 1
+            label += ' \u2014 rows exist, UNPROVEN, write the check (code)'
         else:
-            label += ' \u2014 not yet read'
+            unread += 1
+            label += ' \u2014 not yet read (TOKENS)'
         todo.append((label, '%s-06-30' % r['fy']))
     out = group(todo)
     for g in out:
@@ -496,7 +504,7 @@ def annual_report_pages():
     for g in out:
         g['rank'] = rank.get(g['board'].split(' (')[0], 99)
     out.sort(key=lambda g: (g['rank'], -g['n']))
-    return done, refused, out
+    return done, refused, unproven, unread, reversed_, out
 
 
 def extraction_pending():
@@ -684,22 +692,61 @@ def streams():
     # THE ANNUAL REPORTS, BY WHAT IS ON THE PAGE. Counted from the pages rather than from
     # the datasets, so a table with no extractor yet is in the queue instead of absent
     # from it.
-    ar_done, ar_refused, ar_todo = annual_report_pages()
+    (ar_done, ar_refused, ar_unproven, ar_unread, ar_reversed,
+     ar_todo) = annual_report_pages()
     if ar_done or ar_todo:
-        s.append(dict(key='annualpages', unit=('page with proven rows', 'pages with proven rows', 'pages still to prove'), name='Annual report pages, by what is on them',
+        # THE UPPER METRIC IS UNFINISHED, AND THE PANEL ITEMISES IT. TJ, 27 September
+        # 2026: *"the upper metric for that annual report page needs to be 'unfinished'
+        # with an itemized breakdown inside the panel with these specific terms"*.
+        #
+        # Right, and for a reason the other five streams do not have: the remainder here
+        # is FOUR different jobs and only one of them costs model tokens. A headline
+        # counting what is DONE has to pick one definition of done, and every choice was
+        # wrong -- `read` drifted with our filing, `proven` is honest and reads as though
+        # 312 pages were unstarted. `unfinished` is the one figure that is true whichever
+        # job you mean, and the itemisation below is where the four terms say which.
+        ar_unfinished = ar_refused + ar_unproven + ar_unread + ar_reversed
+        s.append(dict(key='annualpages', unit=('page whose rows PROVE against its own printed total', 'pages whose rows PROVE against their own printed total', 'pages not yet proven'),
+                      headline=_counted(ar_unfinished,
+                                        ('page unfinished', 'pages unfinished',
+                                         'pages unfinished'),
+                                        total=ar_done + ar_unfinished),
+                      # THE PILL CARRIES THE ONLY FIGURE SPEND CAN MOVE. Everything else
+                      # left on this stream is code, and `312 left` beside a token cost is
+                      # what invited rerunning a refused page.
+                      pill=('nothing left to READ &mdash; every unfinished page is code'
+                            if not ar_unread else
+                            _counted(ar_unread, ('page still to read',
+                                                 'pages still to read',
+                                                 'pages still to read'))),
+                      breakdown=[
+                          ('PROVEN', ar_done, 'rows tie to a total the page prints',
+                           'done'),
+                          ('UNPROVEN', ar_unproven,
+                           'rows exist, nothing recorded a check',
+                           'write the check &mdash; code'),
+                          ('REFUSED', ar_refused,
+                           'an extractor reached it and wrote nothing, with a reason',
+                           'fix the extractor &mdash; code'),
+                          ('UNREAD', ar_unread, 'nobody has looked',
+                           'read it &mdash; THE ONLY ONE THAT COSTS TOKENS'),
+                          ('reversed', ar_reversed,
+                           'the OCR of the page came out mirrored', 're-OCR it &mdash; '
+                           'free, background'),
+                      ], name='Annual report pages, by what is on them',
                       io='in: 15 annual town reports, page by page &rarr; out: the tables '
                          'nobody has extracted yet, grouped by subject',
                       done=ar_done, todo=sum(p['n'] for p in ar_todo),
                       blocked=0, blocked_why='',
                       cost='~0.12% of the week a page if run on its own; far more if done in a conversation',
                       last=ago(newest([os.path.join(DATA, 'annual-report-pages.csv')])),
-                      note='%d of the remaining pages were READ AND REFUSED \u2014 an '
-                           'extractor reached them and the rows would not prove against '
-                           'the totals the page itself prints, so the work is fixing the '
-                           'extractor, not a first reading. A page counts as read when ANY '
-                           'dataset cites it, which says it was looked at rather than '
-                           'exhausted; the subject is read off the page\u2019s own '
-                           'headings and is a guess' % ar_refused,
+                      # WHAT THE ITEMISATION BELOW CANNOT SAY. The four counts and their
+                      # actions are rendered as rows, so repeating them here would be the
+                      # block of context rule 7a exists to remove. What is left is the
+                      # thing a reader has to be told rather than shown.
+                      note='A REFUSED PAGE IS NEVER RERUN \u2014 it returns the same '
+                           'refusal and pays a model for it. The subject is read off the '
+                           'page\u2019s own headings and is a guess',
                       pending=ar_todo))
 
     return s
@@ -1796,14 +1843,30 @@ def page_backlog(st):
                     (' <span class="tag agentic">agentic</span>'
                      if 'allowance' in s['cost'] else ''),
                     ('last landed %s' % html.escape(s['last'])) if s['last'] else '',
+                    s.get('headline') or
                     _counted(s['done'], s.get('unit'), total=(s['done'] + (todo or 0))),
                     'go' if todo == 0 else 'warn',
                     'complete' if todo == 0 else
-                    (_counted(todo, s.get('unit'), remaining=True)
+                    (s.get('pill') or _counted(todo, s.get('unit'), remaining=True)
                      if todo is not None else 'unknown'),
                     bar(s['done'], todo or 0), s.get('io', ''), html.escape(s['cost']),
                     html.escape(s['note']),
                     (' &middot; %d blocked: %s' % (s['blocked'], html.escape(s['blocked_why']))) if s['blocked'] else ''))
+        # THE TERMS, ITEMISED AND NOT COLLAPSED. A headline of `unfinished` is only honest
+        # if what it is made of is visible without a click -- four states, four different
+        # jobs, and the one that costs model tokens marked as such. A zero row is KEPT:
+        # `UNREAD 0` is the most useful line here, because it says no amount of spend moves
+        # this stream, and a row that disappears when it reaches zero cannot say that.
+        for term, n, means, action in (s.get('breakdown') or []):
+            h.append('<div class="tiny" style="margin-top:4px;display:flex;gap:8px;'
+                     'flex-wrap:wrap">'
+                     '<b style="flex:0 0 5.5rem;color:%s">%s</b>'
+                     '<span style="flex:0 0 3.5rem;text-align:right">%s</span>'
+                     '<span class="grow">%s</span>'
+                     '<span style="color:#8b949e">%s</span></div>'
+                     % ('#3fb950' if term == 'PROVEN' else
+                        '#d29922' if term in ('UNPROVEN', 'REFUSED') else '#8b949e',
+                        html.escape(term), '{:,}'.format(n), html.escape(means), action))
         # THE BREAKDOWN, COLLAPSED. A backlog total says how worried to be; the boards and
         # the years say what it actually is. Collapsed because the number is the thing a
         # glance wants and the detail is the thing a decision wants.

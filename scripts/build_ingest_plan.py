@@ -292,7 +292,12 @@ def counts():
     if not os.path.exists(PAGES):
         return by, rev
     for r in csv.DictReader(open(PAGES, encoding='utf-8')):
-        if r['state'] == 'read':
+        # THIS PLAN BUYS MODEL READS, so what it must skip is every page that has been
+        # READ -- the derived column, not one of the four states. `state` now separates
+        # PROVEN from UNPROVEN, and an unproven page needs a check written, which is code
+        # and costs nothing here; listing it would put 282 pages into a plan quoted in
+        # tokens and invite the purchase that does not exist.
+        if r.get('read') == 'yes' or r['state'] == 'proven':
             continue
         if r['state'] == 'reversed':
             rev.append(int(r['fy']))
