@@ -212,6 +212,11 @@ CHECKS = [
     # KeyError and the committed CSV could not be regenerated. It was not in this list,
     # which is the file whose whole job is catching that.
     ('extract_special_revenue.py', ['--check']),
+    # EVERY PAGE SOMEBODY READ, against the total its own document prints. The extractor
+    # check above proves the CSV still reproduces FROM the transcriptions; this proves the
+    # transcriptions themselves are still right. Two different failures: one is a file going
+    # missing, the other is a figure in it being wrong, and only this one catches the second.
+    ('verify_page_reads.py', []),
     # The read-from-the-page version, checked against the report's own printed GRAND TOTAL
     # and against the identity the table states. Two independent checks; a year that does
     # not pass both is not in the dataset.
