@@ -330,12 +330,25 @@ table's own `status` column. CLAUDE.md already says nothing may be aggregated wi
 splitting on `status`; this is the scale of why. A page-level `read` count says nothing about
 it, which is part of 3h's argument.
 
-### 3j. THE SMALL OUTSTANDING TASK
+### 3j. DEFERRED, BY DECISION: the cosmetic title leftovers
 
-`npx wrangler pages deploy` from `fy28/`, once the site build finishes, to carry seven
-cosmetic title leftovers -- two page headings (`StoppedFunding`, `BudgetVsActual`), three
-cross-links, the nav tooltip. Cosmetic only; the substantive rename, the markdown de-listing
-and the `noindex` headers are already live and verified.
+**TJ, 27 September 2026: "defer title change deploy is fine then." Not an oversight -- a
+decision, so it does not need re-deciding.**
+
+Live and verified already: the markdown de-listing, the `X-Robots-Tag: noindex` headers,
+`Source documents`, and the renamed page headings. What is NOT live is a handful of labels:
+two door tiles on `/the-money` and `/reports` still read `What stopped being funded`.
+
+Why it needs a whole build rather than a file copy: a door title is prerendered into HTML
+from `reports.json`, so `dist/` holds it in four files and only a rebuild clears them. The
+payloads themselves are already correct in `fy28/public/data/`. It rides along with the next
+build anybody runs.
+
+THE RENAME HAD THREE LAYERS AND THAT IS THE LESSON. `LABEL` in `routes.ts` drives the nav; a
+separate `TITLE` constant in each page drives its own heading; and a GENERATED payload drives
+the door tiles. Each was found only by checking the live site after deploying, never by a
+check. Three times in one day the same mistake was made -- change one consumer of a value,
+assume the rest -- on the sitemap, then the titles, then the payload.
 
 Worth knowing for any future deploy: **`MAX_UPLOAD_GATEWAY_ERRORS = 5` is hardcoded in
 wrangler**, and at 17,105 files five dropped sockets anywhere in a run aborts everything. It
