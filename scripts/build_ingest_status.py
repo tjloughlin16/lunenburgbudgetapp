@@ -824,6 +824,67 @@ def backlog_depth():
     except (OSError, ValueError):
         return None
 
+
+# ------------------------------------------------------- the backlog, as a picture
+#
+# TJ, 28 September 2026: *"i wanted a chart. like a bar chart"* and *"put at the top"*.
+# The first version of this was a table of counts inside a card, which is a breakdown and
+# not a visualization -- the shape of a backlog is the thing to see, and a column of
+# numbers makes the eye do the work a bar does for free.
+#
+# STACKED BY STREAM, ONE BAR PER FISCAL YEAR. The streams are never added into a single
+# total bar, because a vote extraction, a reconciliation and a set of written minutes are
+# three different jobs at three different prices -- but stacking them in one column is how
+# the COMPOSITION of a year becomes visible, which is the question: FY2019 is votes,
+# FY2024 is minutes, FY2026 is reconcile, and those are three different problems.
+#
+# Inline SVG, no library: this page is a local file opened from disk, and a chart that
+# needed a CDN would be a blank rectangle the first time the machine was offline.
+STREAM_COLOUR = [('votes', '#6cb6ff'), ('reconcile', '#d29922'), ('minutes', '#a371f7')]
+
+
+def backlog_chart(bd):
+    """One stacked bar per fiscal year of the MEETING, by stream."""
+    rows = [r for r in bd.get('by_fiscal_year', []) if r.get('total')]
+    if not rows:
+        return ''
+    hi = max(r['total'] for r in rows)
+    W, H, PAD, GAP = 1000, 210, 26, 4
+    bw = max(6.0, (W - PAD * 2) / max(len(rows), 1) - GAP)
+    out = ['<div class="card"><div class="row"><b class="grow">Backlog by fiscal year of '
+           'the meeting</b><span class="tiny">%s jobs &middot; tallest bar %s</span></div>'
+           % (format(bd['total_jobs'], ','), format(hi, ','))]
+    out.append('<svg viewBox="0 0 %d %d" width="100%%" height="%d" '
+               'style="display:block;margin:8px 0 2px">' % (W, H, H))
+    base = H - 26
+    for i, r in enumerate(rows):
+        x = PAD + i * (bw + GAP)
+        y = base
+        for name, col in STREAM_COLOUR:
+            n = r.get(name, 0)
+            if not n:
+                continue
+            bh = (base - 14) * n / hi
+            y -= bh
+            out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="%s">'
+                       '<title>%s %s: %s</title></rect>'
+                       % (x, y, bw, bh, col, r['fy'], name, format(n, ',')))
+        out.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="10" '
+                   'text-anchor="middle">%s</text>'
+                   % (x + bw / 2, base + 12, '\u2019' + r['fy'][-2:]))
+        out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" '
+                   'text-anchor="middle">%s</text>'
+                   % (x + bw / 2, y - 3, format(r['total'], ',')))
+    out.append('</svg>')
+    out.append('<div class="tiny">%s &middot; by the MEETING\u2019s own date, not by when '
+               'we found it. Hover a block for its count. Stacked to show a year\u2019s '
+               'COMPOSITION \u2014 the streams are different jobs at different prices and '
+               'are never added into one figure.</div></div>'
+               % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, n)
+                                 for n, c in STREAM_COLOUR))
+    return ''.join(out)
+
+
 # -------------------------------------------------------------------- the refresh
 # WHERE THE PIPELINE LOOKS, AS ADDRESSES A PERSON CAN OPEN.
 #
@@ -1903,6 +1964,9 @@ def page_backlog(st):
                 (', %d delivery not filed' % unfiled) if unfiled == 1 else
                 (', %d deliveries not filed' % unfiled) if unfiled else '',
                 st['generated'], TABS % ('', ' class="sel"', '')))
+    bd = backlog_depth()
+    if bd and bd.get('total_jobs'):
+        h.append(backlog_chart(bd))
     h.append('<h2>Streams</h2>')
     for s in S:
         todo = s['todo']
