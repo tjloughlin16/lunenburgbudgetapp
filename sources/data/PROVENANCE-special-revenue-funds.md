@@ -41,7 +41,7 @@ published thing to telling those apart.
 | FY2021 | 5 | 167 | 4 | v1: 5,545,980.90 vs printed 5,596,048.89 (-50,067.99)<br>v3: 5,410,067.84 vs printed 6,269,397.74 (-859,329.90)<br>v4: 6,414,742.67 vs printed 6,414,742.67 |
 | FY2022 | 5 | 172 | 4 | v1: 6,355,645.20 vs printed 6,414,742.67 (-59,097.47)<br>v2: 9,228,323.51 vs printed 9,236,164.01 (-7,840.50)<br>v3: 6,960,959.84 vs printed 7,004,408.01 (-43,448.17)<br>v4: 8,670,588.49 vs printed 8,645,488.67 (+25,099.82) |
 | FY2023 | 10 | 209 | 4 | v1: 8,790,242.22 vs printed 8,663,349.91 (+126,892.31)<br>v2: 9,102,889.73 vs printed 9,102,807.73 (+82.00)<br>v3: 7,735,057.86 vs printed 7,735,057.86<br>v4: 10,035,020.31 vs printed 10,031,099.78 (+3,920.53) |
-| FY2024 | 4 | 151 | 0 | no GRAND TOTAL row found |
+| FY2024 | 0 | 164 | 0 | accounts_receivable: 83.86 vs printed 83.86<br>bans: 0.00 vs printed 0.00<br>deferred_revenue: 83.86 vs printed 83.86<br>fund_balance: 4,963,068.15 vs printed 4,963,068.15<br>receipts: 116,241.96 vs printed 116,241.96<br>remaining_deficit: -719,886.84 vs printed -719,886.84 |
 | FY2025 | 0 | 172 | 0 | no GRAND TOTAL row found |
 
 ## Where the residual comes from — what has been ruled out

@@ -50,23 +50,18 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 READS = os.path.join(ROOT, 'sources', 'data', 'page-reads')
 
-# What each set of transcribed pages must foot to, and where the town prints it.
-# Written down from the page, like everything else here.
-TOTALS = {
-    ('2024', 'special-revenue'): dict(
-        printed_on='page 26, the row `Total Special Revenue Fund Balance`',
-        columns={'accounts_receivable': 83.86, 'deferred_revenue': 83.86,
-                 'fund_balance': 4963068.15, 'receipts': 116241.96,
-                 'remaining_deficit': -719886.84}),
-}
-
-
+# THE TOTAL IS READ OFF THE PAGE TOO, and lives in the transcription as `kind=total` --
+# not typed in here. Rule 2: a figure in prose or in code is the one thing that can be
+# silently wrong, and a check whose expected value is hardcoded stops being a check the day
+# somebody corrects the data.
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     ap.parse_args()
 
     got = collections.defaultdict(lambda: collections.defaultdict(float))
+    want = collections.defaultdict(dict)
+    printed_on = {}
     rows = collections.Counter()
     pages = collections.defaultdict(set)
     for f in sorted(glob.glob(os.path.join(READS, '*.csv'))):
@@ -75,18 +70,24 @@ def main():
         for r in csv.DictReader(open(f, encoding='utf-8')):
             if not (r.get('value') or '').strip():
                 continue
+            if (r.get('kind') or 'fund') == 'total':
+                want[key][r['column']] = float(r['value'])
+                printed_on[key] = 'page %s, the row `%s`' % (r['page'], r['fund_name'])
+                continue
             got[key][r['column']] += float(r['value'])
             rows[key] += 1
             pages[key].add(r['page'])
 
     bad = []
-    for key, want in sorted(TOTALS.items()):
-        if key not in got:
-            bad.append('FY%s %s: nothing transcribed' % key)
+    for key in sorted(got):
+        if key not in want:
+            print('FY%s %s -- %d rows across %d pages, NO PRINTED TOTAL: the transcription '
+                  'must say in `proof` what checks it' % (key[0], key[1], rows[key],
+                                                          len(pages[key])))
             continue
         print('FY%s %s -- %d rows across %d pages, against %s'
-              % (key[0], key[1], rows[key], len(pages[key]), want['printed_on']))
-        for col, printed in sorted(want['columns'].items()):
+              % (key[0], key[1], rows[key], len(pages[key]), printed_on[key]))
+        for col, printed in sorted(want[key].items()):
             g = round(got[key].get(col, 0.0), 2)
             ok = abs(g - printed) <= 0.02
             print('    %-22s %16s   printed %16s   %s'
@@ -95,6 +96,7 @@ def main():
             if not ok:
                 bad.append('FY%s %s %s: %s against a printed %s'
                            % (key[0], key[1], col, format(g, ','), format(printed, ',')))
+
     if bad:
         print('\n%d transcribed column(s) do not tie:\n  %s'
               % (len(bad), '\n  '.join(bad)), file=sys.stderr)

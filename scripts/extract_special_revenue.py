@@ -35,6 +35,7 @@ printed, the rows above it must sum to it; where none is printed the year is mar
 import argparse
 import collections
 import csv
+import glob
 import io
 import os
 import re
@@ -293,6 +294,44 @@ def header_of(lines):
 # row. So the identity here is COVERAGE -- every money figure printed on the page is
 # captured -- and not arithmetic. That is the same verdict the wage lists take, for the
 # same reason, and it has power to fail: a row the reader drops takes its figures with it.
+
+# ======================================================================================
+# A PHOTOGRAPHED PAGE IS READ, NOT RECOGNISED
+# ======================================================================================
+#
+# TJ, 28 September 2026: *"i'm 100% done with OCR."* The measurement that settled it is
+# THIS schedule, FY2024 pages 23-26, 164 fund rows, both readings of one document:
+#
+#   recognition   14 of 60 rows on page 25 -- and re-run at six resolutions it returned
+#                 DIFFERENT DIGITS for the same row, 90.61 and 0.61, 94.65 and 4.65, so
+#                 there was no majority to take and merging the passes could not help.
+#   read          164 of 164, and ALL SIX columns tie to the totals the page prints, first
+#                 attempt, in about ten minutes.
+#
+# So a page somebody READ replaces this extractor's reading of it, exactly as a text layer
+# does: two readings of one page are not more data, and the one that could see the page
+# wins. The transcriptions live in `sources/data/page-reads/` with the document, the page,
+# who read it and what proves it -- DATA, never typed into this file.
+#
+# THE COLUMNS COME NAMED, which is the whole difficulty this schedule had. `v1..v6` are
+# slots in a ruler rebuilt per page, so `v1` means a different printed column on two pages
+# of one table and summing it added Fund Balance to Deferred Revenue. A transcription says
+# `fund_balance` because a person read the heading.
+PAGE_READS = os.path.join(ROOT, 'sources', 'data', 'page-reads')
+NAMED = ['fund_balance', 'accounts_receivable', 'deferred_revenue', 'receipts', 'bans',
+         'remaining_deficit']
+
+
+def page_reads():
+    """`{(fy, page): [row, ...]}` for every page somebody has transcribed."""
+    out = collections.defaultdict(list)
+    for f in sorted(glob.glob(os.path.join(PAGE_READS, '*.csv'))):
+        for r in csv.DictReader(open(f, encoding='utf-8')):
+            if (r.get('value') or '').strip():
+                out[(int(r['fy']), int(r['page']))].append(r)
+    return out
+
+
 TEXT_LAYER_EDITIONS = {'FY2025': '4130-fy-2025-annual-town-report.pdf'}
 SR_COLS = [('fund_balance', 250, 340), ('receipts', 340, 420),
            ('remaining_deficits', 420, 530)]
@@ -379,7 +418,8 @@ def main():
                     help='re-extract and fail if the committed CSV no longer reproduces')
     args = ap.parse_args()
 
-    rows, ledger = [], []
+    rows, ledger, eye_totals = [], [], {}
+    READS = page_reads()
     for edition in RP.editions():
         fy = int(re.search(r'(\d{4})', edition).group(1))
         want = catalogue_pages(edition)
@@ -390,7 +430,9 @@ def main():
         text_rows = (text_layer_rows(TEXT_LAYER_EDITIONS[edition], want)
                      if edition in TEXT_LAYER_EDITIONS else {})
         pages = RP.load(edition, ocr=True) or RP.load(edition)
-        got = [p for p in want if p in pages and p not in text_rows]
+        read_by_eye = {pg: rs for (y, pg), rs in READS.items() if y == fy}
+        got = [p for p in want if p in pages and p not in text_rows
+               and p not in read_by_eye]
 
         header, group, n_before = '', '', len(rows)
         grand_values = []
@@ -523,6 +565,28 @@ def main():
                                 for i, v in enumerate(values[:6])},
                              'n_values': sum(1 for v in values if v is not None),
                              'status': ''})
+        # THE PAGES SOMEBODY READ, and the total they foot to.
+        eye, eye_total = collections.defaultdict(dict), {}
+        for pg, rs in sorted(read_by_eye.items()):
+            for r in rs:
+                if (r.get('kind') or 'fund') == 'total':
+                    eye_total[r['column']] = float(r['value'])
+                    continue
+                key = (pg, r['fund_number'], r['fund_name'])
+                eye[key][r['column']] = float(r['value'])
+        for (pg, code, name), cells in eye.items():
+            rows.append({
+                'fy': fy, 'edition': edition, 'group': '',
+                'fund': ('%s %s' % (code, name)).strip(), 'page': pg,
+                'is_subtotal': '', 'columns_as_printed': header,
+                'column_meaning': 'named by the reader, off the printed heading',
+                'read_by': read_by_eye[pg][0].get('read_by', ''),
+                'n_values': len(cells),
+                **{k: '%.2f' % v for k, v in cells.items()},
+                'status': ''})
+        if eye_total:
+            eye_totals[edition] = eye_total
+
         # THE ARITHMETIC SUBTOTAL DETECTOR IS DELIBERATELY NOT RUN ON THIS SCHEDULE.
         #
         # It exists for the APPROPRIATIONS schedule, which prints a department total after
@@ -598,6 +662,29 @@ def main():
         mine = [r for r in rows if r['edition'] == led['edition']
                 and r.get('is_subtotal') != 'yes']
         led['checks'], led['ok'] = [], False
+
+        # A TRANSCRIBED EDITION IS CHECKED ON ITS NAMED COLUMNS, and that is the only
+        # arithmetic on this schedule that has ever had the power to be right. The slots
+        # cannot be summed across pages -- see `page_reads` above -- so an edition read by
+        # eye is footed column by column against the total the page itself prints, which
+        # the transcription also carries.
+        if eye_totals.get(led['edition']):
+            want = eye_totals[led['edition']]
+            ties = []
+            for col, printed in sorted(want.items()):
+                total = round(sum(float(r[col]) for r in mine if r.get(col)), 2)
+                ok = abs(total - printed) <= 0.02
+                ties.append(ok)
+                led['checks'].append('%s: %s vs printed %s%s'
+                                     % (col, f'{total:,.2f}', f'{printed:,.2f}',
+                                        '' if ok else f' ({total - printed:+,.2f})'))
+            led['ok'] = all(ties) and any(ties)
+            for r in mine:
+                r['status'] = 'checked' if led['ok'] else 'check failed'
+                r['columns_tying'] = sum(1 for t in ties if t)
+                r['reconciliation'] = ' ; '.join(led['checks'])
+            continue
+
         if not led['grand_values'] or not mine:
             for r in mine:
                 # A ROW THAT ALREADY CARRIES A VERDICT KEEPS IT. The text-layer path
@@ -632,7 +719,8 @@ def main():
             r['reconciliation'] = ' ; '.join(led['checks'])
 
     fields = (['fy', 'edition', 'group', 'fund', 'page', 'is_subtotal',
-               'columns_as_printed'] + [f'v{i}' for i in range(1, 7)]
+               'columns_as_printed'] + NAMED + ['read_by', 'column_meaning']
+              + [f'v{i}' for i in range(1, 7)]
               + ['n_values', 'ruler_spanned', 'row_check', 'derived_cell',
                  'columns_tying', 'status', 'reconciliation'])
     # --check exists because this file raised KeyError on every run for an unknown
