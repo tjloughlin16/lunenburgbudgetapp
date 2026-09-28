@@ -6,7 +6,7 @@ Sixteen documents, 478 pages of financial tables, 23,284 rows read out of them.
 
 - Every financial page in every report has been read. **None is unread.**
 - **162 of 478** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
-- **24 pages** an extractor reached and wrote nothing from. Each says why.
+- **17 pages** an extractor reached and wrote nothing from. Each says why.
 - What is left is **code, not reading**.
 
 ## The sixteen reports
@@ -41,7 +41,7 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | appropriations | what Town Meeting voted to spend, article by article | 94 | 15 | 78 | 1 |
 | special revenue | the funds that sit outside the budget — grants, gifts, revolving | 68 | 51 | 17 | 0 |
 | payroll | what the town paid its people, name by name | 66 | 2 | 63 | 1 |
-| debt | what the town owes and when it falls due | 46 | 14 | 24 | 8 |
+| debt | what the town owes and when it falls due | 46 | 14 | 31 | 1 |
 | trust and stabilization | the reserves, and how much is in each | 39 | 22 | 16 | 1 |
 | receivables | what is owed TO the town, account by account | 28 | 11 | 7 | 10 |
 | unknown | a financial table whose heading we could not classify | 27 | 5 | 22 | 0 |
@@ -54,24 +54,24 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | enrollment | how many children are in the schools | 6 | 3 | 3 | 0 |
 | elections | how the town voted | 2 | 1 | 1 | 0 |
 | cultural council | the grants the cultural council made | 1 | 0 | 1 | 0 |
-| **total** |  | **478** | **162** | **292** | **24** |
+| **total** |  | **478** | **162** | **299** | **17** |
 
 ## By report
 
 | fiscal year | pages | proven | unproven | refused |
 |---|---:|---:|---:|---:|
 | FY2011 | 28 | 9 | 18 | 1 |
-| FY2012 | 26 | 8 | 16 | 2 |
-| FY2013 | 29 | 7 | 20 | 2 |
+| FY2012 | 26 | 8 | 17 | 1 |
+| FY2013 | 29 | 7 | 21 | 1 |
 | FY2014 | 27 | 13 | 14 | 0 |
 | FY2015 | 31 | 12 | 19 | 0 |
 | FY2016 | 41 | 11 | 30 | 0 |
 | FY2017 | 35 | 11 | 19 | 5 |
-| FY2018 | 35 | 15 | 18 | 2 |
-| FY2019 | 38 | 11 | 25 | 2 |
-| FY2020 | 39 | 15 | 22 | 2 |
+| FY2018 | 35 | 15 | 19 | 1 |
+| FY2019 | 38 | 11 | 26 | 1 |
+| FY2020 | 39 | 15 | 23 | 1 |
 | FY2021 | 37 | 10 | 25 | 2 |
-| FY2022 | 33 | 16 | 14 | 3 |
+| FY2022 | 33 | 16 | 16 | 1 |
 | FY2023 | 34 | 13 | 18 | 3 |
 | FY2024 | 22 | 7 | 15 | 0 |
 | FY2025 | 23 | 4 | 19 | 0 |

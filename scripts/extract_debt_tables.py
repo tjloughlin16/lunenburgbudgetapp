@@ -1080,12 +1080,37 @@ def _ocr_lines(boxes):
     boxes = deskew(split_merged([b for b in boxes if (b.get('text') or '').strip()]))
     if not boxes:
         return []
+    # THE PITCH COMES OFF A COLUMN THAT PRINTS ONE BOX PER ROW. The label column is the
+    # obvious one and it is not always long enough: a continuation sheet carrying four
+    # issues has four labels, and four gaps will not measure anything. So the money
+    # columns are candidates too -- a figure column also prints at most one box per row --
+    # and the first candidate with enough gaps wins. A page where none has enough is
+    # refused by the caller rather than read at a guessed pitch.
     left = min(b['x'] for b in boxes)
-    col = sorted({round(b['Y'], 4) for b in boxes if b['x'] < left + 0.06})
-    gaps = sorted(q - p for p, q in zip(col, col[1:]) if 0.002 < q - p < 0.06)
-    if len(gaps) < 8:
-        return []                       # not measurable: say nothing rather than guess
-    band = statistics.median(gaps) / 2.0
+    cands = [[b for b in boxes if b['x'] < left + 0.06]]
+    bycol = collections.defaultdict(list)
+    for b in boxes:
+        if money(b['text']) is not None:
+            bycol[round((b['x'] + b['w']) * 40)].append(b)
+    cands += [v for v in sorted(bycol.values(), key=len, reverse=True)]
+    band = None
+    for c in cands:
+        ys = sorted({round(b['Y'], 4) for b in c})
+        gaps = sorted(q - p for p, q in zip(ys, ys[1:]) if 0.002 < q - p < 0.06)
+        if len(gaps) >= 8:
+            band = statistics.median(gaps) / 2.0
+            break
+    if band is None:
+        # A SHORT SHEET HAS NO LONG COLUMN, and three continuation pages carrying four or
+        # five issues were refused for it. The page's own TYPE SIZE measures the same
+        # thing: a printed row's boxes share a baseline, and rows are set more than a line
+        # apart, so six tenths of the median box height separates them. It is derived from
+        # the page rather than chosen -- on FY2011 page 76, where the long-column pitch is
+        # measurable, it gives 0.0079 against the 0.0075 that column yields.
+        hs = [b['h'] for b in boxes if b['h'] > 0]
+        if not hs:
+            return []
+        band = statistics.median(hs) * 0.6
     rows = []
     for b in sorted(boxes, key=lambda b: (b['Y'], b['x'])):
         if rows and b['Y'] - rows[-1][0]['Y'] < band:
@@ -1106,6 +1131,121 @@ def _ocr_lines(boxes):
                               'x1': x0 + w * (i + 1) / n, 'top': top})
     chars.sort(key=lambda c: (c['top'], c['x0']))
     return _lines(chars)
+
+
+YEAR_BOX = re.compile(r'^\D{0,2}(20[0-9]{2})\D{0,2}$')
+
+
+def _reversed_page(boxes):
+    """Does this page's YEAR HEADER run right to left? Measured, never assumed.
+
+    Six of the refused debt sheets print `2035 2034 2033 ... 2019 EISCAL YEAR` -- the
+    years descending across the page and the stub column on the RIGHT, because the sheet
+    was fed to the scanner upside down. The text itself is
+    the right way up and spelled correctly, so nothing about the reading looks wrong; only
+    the ORDER is. `annual-report-pages.csv` has carried a `figures_reversed` column for
+    exactly this since the generic extracts were built, and the debt reader never tested
+    for it, so six legible pages were refused for `the year header could not be read`.
+
+    The test is the table's own: a fiscal-year header ASCENDS. Take every box that is a
+    bare four-digit year, pair each with every other, and count how many pairs have the
+    later year further LEFT. A clear majority one way is the page's direction; anything
+    less decides nothing and the page is left alone.
+    """
+    yrs = []
+    for b in boxes:
+        m = YEAR_BOX.match((b.get('text') or '').strip())
+        if m:
+            yrs.append((b['x'] + b['w'] / 2.0, int(m.group(1))))
+    # FOUR YEARS IS ENOUGH TO SEE A DIRECTION. The threshold was five and FY2013 page 82
+    # prints `2047 2046 2045 2044 FISCAL YEAR` -- plainly over, and refused for a year
+    # short of the bar. Four readings give six pairs, which is a direction when they all
+    # agree; the majority test carries the weight, not the sample size. A wrong flip is
+    # self-punishing anyway: it cannot make principal + interest = total close.
+    if len(yrs) < 4:
+        return False
+    back = fwd = 0
+    for i, (xa, va) in enumerate(yrs):
+        for xb, vb in yrs[i + 1:]:
+            if va == vb or abs(xa - xb) < 0.005:
+                continue
+            if (vb > va) == (xb > xa):
+                fwd += 1
+            else:
+                back += 1
+    return back > fwd * 2 and back >= 3
+
+
+def _turn_over(boxes):
+    """The page turned through 180 degrees. Positions only; no text is touched.
+
+    BOTH AXES, and flipping only x was wrong in a way that read as almost right: the
+    header came out ascending and the issue blocks came out BOTTOM TO TOP, so every block
+    ran `TOTAL`, `INTEREST`, `PRINCIPAL`, then the name of the issue those figures belong
+    to. Vision reads 180-degree text correctly -- it finds the orientation and returns the
+    characters the right way round -- so nothing in the TEXT says the page is over. Only
+    the geometry does, in two directions at once.
+    """
+    return [dict(b, x=1.0 - b['x'] - b['w'], y=1.0 - b['y'] - b['h']) for b in boxes]
+
+
+def _header_years_fitted(lines, problems, where):
+    """The year columns when the header did not read CLEANLY -- fitted, then voted on.
+
+    `_header_years` wants years that are distinct and ascending, which is right and is too
+    strict for a scan. FY2020 page 43 prints sixteen columns and Vision returns `EISCAL
+    YEAR 2021 2022 2023 2024 2025 2026 2022 2028 ...` -- one misread in the seventh
+    column, and the whole page was refused for it. Eight of the fourteen debt pages still
+    refused were this.
+
+    `year_grid` is already the answer and was only wired to the grand-total block: the
+    columns are CONSECUTIVE years at a fixed pitch, so the pitch and the first year are
+    fitted from the readings and every reading then votes on the fit. A single misread
+    loses its vote instead of the page. It refuses outright if a third of the readings
+    disagree, and it never extrapolates past the leftmost or rightmost year actually read
+    -- so no column is named from a position, which is rule 13b #4.
+    """
+    best = None
+    for i, ln in enumerate(lines):
+        raw = []
+        for m in re.finditer(r'\b(20[0-9]{2})\b', ln['text']):
+            bx = [b for b in ln['boxes'][m.start():m.end()] if b]
+            if bx:
+                raw.append(((min(b['x0'] for b in bx) + max(b['x1'] for b in bx)) / 2.0
+                            / PAGE_W, int(m.group(1)), ln['top'] / PAGE_H, m.start()))
+        if len(raw) >= 5 and (best is None or len(raw) > len(best[1])):
+            best = (i, raw)
+    if best is None:
+        # THE LAST SHEET OF A SCHEDULE HAS ONE YEAR COLUMN AND A TOTAL. FY2012 page 77
+        # prints `FISCAL YEAR 2031 TOTAL` and was refused for having fewer than the two
+        # years a header needs -- a rule that is right about a title line and wrong about
+        # the end of a table. It is accepted only where the line SAYS it is the header,
+        # which is what tells it apart from the title: a title carries the report's own
+        # year and never the word FISCAL.
+        for i, ln in enumerate(lines):
+            up = re.sub(r'\s+', ' ', ln['text']).upper()
+            if not up.startswith(('FISCAL', 'EISCAL', 'FISCAI', 'EISCAI')):
+                continue
+            cols = []
+            for m in re.finditer(r'\b(20[0-9]{2})\b|\bTOTAL\b', ln['text']):
+                bx = [b for b in ln['boxes'][m.start():m.end()] if b]
+                if bx:
+                    cols.append({'name': m.group(0), 'start': m.start(),
+                                 'c': (min(b['x0'] for b in bx)
+                                       + max(b['x1'] for b in bx)) / 2.0})
+            if len(cols) >= 2:
+                cols.sort(key=lambda c: c['c'])
+                return cols, i, ''
+        return None, None, None
+    i, raw = best
+    edges, yrs = year_grid([(x, v, y) for x, v, y, _ in raw], problems, where)
+    if not edges:
+        return None, None, None
+    cols = [{'name': str(v), 'start': 0, 'c': x * PAGE_W} for x, v in zip(edges, yrs)]
+    head = re.sub(r'\s+', ' ', lines[i]['text'][:min(st for _, _, _, st in raw)]).strip()
+    if head.upper().startswith(('FISC', 'EISC', 'FISC')):
+        head = ''
+    return cols, i, head
 
 
 def read_repayment_detail(fy, doc, pdf_path, catalogue_pages, ocr, problems, refused):
@@ -1142,22 +1282,51 @@ def read_repayment_detail(fy, doc, pdf_path, catalogue_pages, ocr, problems, ref
                 # print a header and foot its own grand total below; nothing here lowers
                 # the bar, it only stops throwing the page away before the bar is applied.
                 read_by = 'vision'
-                lines = _ocr_lines(ocr.get(page_no, []))
+                seen_boxes = ocr.get(page_no, [])
+                if _reversed_page(seen_boxes):
+                    seen_boxes = _turn_over(seen_boxes)
+                    read_by = 'vision, page turned over'
+                    problems.append('FY%s page %d: the year header runs right to left, so '
+                                    'the page is upside down; read turned over'
+                                    % (fy, page_no))
+                lines = _ocr_lines(seen_boxes)
                 if not lines:
+                    # SAY WHICH OF THE TWO IT IS. This branch first reported `Vision read
+                    # nothing on it either` and `0 boxes` for three pages whose cache
+                    # holds 90, 81 and 67 -- a refusal that misstated its own evidence,
+                    # which is the defect this file has spent all day correcting. Vision
+                    # read them; what failed is that no column on the page printed one
+                    # box per row often enough to measure a pitch from.
+                    n = len(seen_boxes)
                     refused.append({
                         'report_fy': fy, 'document': doc, 'page': page_no,
                         'subject': 'debt',
-                        'reason': 'the page is a scanned image and Vision read nothing on '
-                                  'it either',
-                        'evidence': '%d characters and %d image(s) in the PDF; 0 boxes'
-                                    % (len(page.chars), len(page.images))})
+                        'reason': ('the page is a scanned image and Vision read nothing '
+                                   'on it either') if not n else
+                                  ('Vision read the page but no column on it prints one '
+                                   'box per row often enough to measure a row pitch'),
+                        'evidence': '%d characters and %d image(s) in the PDF; Vision '
+                                    'reads %d box(es), %d of them money'
+                                    % (len(page.chars), len(page.images), n,
+                                       sum(1 for b in seen_boxes
+                                           if money(b['text']) is not None))})
                     continue
             else:
                 read_by = 'text layer'
                 chars, orient = _upright_chars(page)
                 lines = _lines(chars)
             flat = ' '.join(ln['text'] for ln in lines).upper().replace(' ', '')
-            if 'GRANDTOTALPRINCIPAL' not in flat:
+            # A CONTINUATION SHEET PRINTS NO GRAND TOTAL, and requiring one threw away
+            # ten pages that hold nothing but issue rows. The grand total is the guard
+            # against a COMPENSATING error -- a figure in the wrong column breaks its own
+            # row identity AND the column sum -- so a page without one is weaker evidence
+            # and not unreadable. It still has to print a year header and close
+            # principal + interest = total, and `column_foots` records that it could not
+            # be footed, which is the same thing the text-layer path already says for
+            # FY2018 page 49. What is NOT allowed is inheriting the previous page's year
+            # map: these sheets continue into different years, and naming a column from a
+            # neighbour is rule 13b #4 exactly.
+            if 'GRANDTOTALPRINCIPAL' not in flat and read_by == 'text layer':
                 if is_schedule:
                     refused.append({
                         'report_fy': fy, 'document': doc, 'page': page_no,
@@ -1171,6 +1340,9 @@ def read_repayment_detail(fy, doc, pdf_path, catalogue_pages, ocr, problems, ref
                                     % (read_by, ' '.join(l['text'] for l in lines)[:90])})
                 continue
             cols, hidx, hlabel = _header_years(lines)
+            if not cols and read_by.startswith('vision'):
+                cols, hidx, hlabel = _header_years_fitted(
+                    lines, problems, 'FY%s page %d' % (fy, page_no))
             if not cols:
                 refused.append({'report_fy': fy, 'document': doc, 'page': page_no,
                                 'subject': 'debt',
@@ -1210,10 +1382,48 @@ def read_repayment_detail(fy, doc, pdf_path, catalogue_pages, ocr, problems, ref
                                             % (best['closed'], best['closed'] + best['open'])})
                 continue
             if not best['cells']:
+                # A PAGE THAT PRINTS ONLY THE GRAND TOTAL IS NOT A FAILURE TO READ IT.
+                # FY2021 pages 44 and 46 carry the summary block and no issue rows at all
+                # -- five GRAND TOTAL lines and the footnote -- and were being refused for
+                # `no issue block on the page held a readable row`, which says our reader
+                # failed where the truth is that the page has no issue detail on it. Those
+                # figures are read by `read_repayment` and are in `debt-repayment.csv`.
+                # Rule 13c: distinguish what the page does not print from what we could
+                # not find.
+                issue_rows = sum(
+                    1 for ln in lines[hidx + 1:]
+                    for h in [re.sub(r'\s+', ' ', ln['text']).upper().strip()]
+                    if h.startswith(('PRINCIPAL', 'INTEREST', 'ADMIN FEE', 'MWPAT ADMIN'))
+                    or (h.startswith('TOTAL') and not h.startswith('TOTAL DEBT')))
+                if not issue_rows:
+                    problems.append(
+                        'FY%s page %d: prints the grand-total block and no issue rows; '
+                        'its figures are in debt-repayment.csv' % (fy, page_no))
+                    continue
+                # SAY WHERE THE FIGURES WENT. A page can hold perfectly good rows and
+                # publish none of them because its HEADER is short: FY2011 page 76 prints
+                # about nineteen year columns and Vision reads the rightmost twelve, so
+                # every figure in the first seven sits outside every column that has a
+                # name. `9,180 + 3,257 = 12,437` on that page -- the arithmetic closes and
+                # the column cannot be named, which are different failures and used to
+                # read as one. Naming those columns would mean extrapolating the grid past
+                # the years actually read, which `year_grid` refuses and rule 13b #4
+                # forbids: a position is not a name.
+                lo = min(c['c'] for c in cols)
+                stray = sum(1 for ln in lines[hidx + 1:] for f in _figures(ln)
+                            if f['x1'] < lo - pitch * 0.75)
                 refused.append({'report_fy': fy, 'document': doc, 'page': page_no,
                                 'subject': 'debt',
-                                'reason': 'no issue block on the page held a readable row',
-                                'evidence': 'header columns: %s' % ' '.join(names)})
+                                'reason': 'the page prints issue rows but none of them '
+                                          'formed a block that closes principal + '
+                                          'interest = total',
+                                'evidence': '%d issue row(s); %d header column(s) read (%s)'
+                                            '%s' % (
+                                    issue_rows, len(names), ' '.join(names),
+                                    '; %d figure(s) sit LEFT of the leftmost named column, '
+                                    'so the table is wider than its readable header and '
+                                    'those columns cannot be named without extrapolating '
+                                    'the grid' % stray if stray else '')})
                 continue
             for c in best['cells']:
                 c.update({'report_fy': fy, 'document': doc, 'page': page_no,
