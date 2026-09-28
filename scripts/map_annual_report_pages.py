@@ -385,6 +385,22 @@ def read_pages():
         if name.replace('-', '_') in CATALOGUES or name in (
                 'annual-report-pages', 'ingest-benchmark'):
             continue
+        # A REFUSAL IS NEVER A READING, AND THE COLUMN TEST WAS NOT ENOUGH.
+        #
+        # The rule below says a catalogue describes itself, by carrying a `state` column.
+        # Four of the eight `*-refused.csv` files do not carry one -- debt-repayment-detail,
+        # gross-wages, report-appropriations-supplement, salary-schedule -- so each of them
+        # was CREDITING the pages it refused. Recording that an extractor could not read a
+        # page marked the page read, which is the precise inversion this count must never
+        # make, and it was invisible until a run added 22 refusal rows and the read count
+        # went UP by two.
+        #
+        # Self-description is the right idea and it cannot be the only guard, because it
+        # fails silently for the file that forgets. The name is a second, independent test:
+        # anything called `<something>-refused` is a record of failure whatever columns it
+        # happens to have.
+        if name.endswith('-refused'):
+            continue
         try:
             with open(f, encoding='utf-8', errors='replace') as fh:
                 r = csv.DictReader(fh)
@@ -414,6 +430,11 @@ def read_pages():
             # capital-plans-refused`, a page nothing holds a figure for. A refusal is not
             # a reading, and keeping the test in one half of a two-half join is how it
             # stopped being true in the other.
+            # The same name test as the CSV half, for the same reason: keeping a guard
+            # in one half of a two-half join is how it stopped being true in the other,
+            # which this function's own comment above already records happening once.
+            if t.endswith('_refused'):
+                continue
             year, page = _year_column(cols), _page_column(cols)
             if not year or not page or cols & CATALOGUE_COLUMNS:
                 continue

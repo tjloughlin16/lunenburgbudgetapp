@@ -35,6 +35,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import pdf_tables as T  # noqa: E402
+import worklease  # noqa: E402
 
 OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 OUT = os.path.join(ROOT, 'sources', 'data', 'ingest-benchmark.csv')
@@ -93,6 +94,22 @@ def main():
     ap.add_argument('--model', default=MODEL)
     a = ap.parse_args()
 
+    # ONE PAGE, ONE READER. Two processes read this same page seventeen minutes apart on
+    # 27 September 2026 -- about $4 of model spend for a second copy of an answer we had --
+    # because both derived the same work list the same correct way and a page being read
+    # looked exactly like a page nobody had opened. The claim is on the PAGE and not on the
+    # batch, so any number of drivers, sweeps or sessions converge instead of colliding; a
+    # lock around a batch would have been held by each of them separately.
+    with worklease.claim('annual-page-fy%d-p%d' % (a.fy, a.page),
+                         note='benchmark_ingest.py') as got:
+        if not got:
+            print('FY%d page %d is already being read by another process; skipped'
+                  % (a.fy, a.page))
+            return 0
+        return read_page(a)
+
+
+def read_page(a):
     bx = page_boxes(a.fy, a.page)
     prompt = ('Annual town report FY%d, page %d. OCR boxes, top to bottom, as '
               'y x text:\n\n' % (a.fy, a.page)

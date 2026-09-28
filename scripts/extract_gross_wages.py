@@ -159,14 +159,36 @@ def parse_line(t):
     return out
 
 
-def read_year(fy):
+def read_year(fy, refused=None, doc=''):
+    """Rows of the wage list for one year, and a REFUSAL for every page that yielded none.
+
+    A PAGE THAT YIELDS NOTHING USED TO YIELD SILENCE. `wage_pages()` correctly returns all
+    seven of FY2019's payroll pages, 197 to 203. Four of them -- 198, 201, 202, 203 --
+    produce no rows and produced no record of it either, so the archive held pages 197, 199
+    and 200 of a seven-page list and nothing anywhere said the other four had been looked at.
+    They were indistinguishable from pages nobody had opened, and two of them were reported
+    to TJ as pages the town does not print a header on.
+
+    The same defect as the receivables refusals, one step worse: those at least printed a
+    line to a terminal. A page the extractor reached and could not read is a finding about
+    OUR reader, and rule 13c says exactly that -- a pattern that does not match is not an
+    absence.
+    """
     by = pages(fy)
     rows = []
     for p in wage_pages(by, fy):
+        before = len(rows)
         for t in by[p]:
             for name, amt, dept in parse_line(t):
                 rows.append(dict(fy=fy, page=p, name=name, amount='%.2f' % amt,
                                  department=dept, as_printed=t[:160]))
+        if refused is not None and len(rows) == before:
+            refused.append({'report_fy': fy, 'document': doc, 'page': p,
+                            'subject': 'payroll',
+                            'reason': 'the page is in the wage list and no line on it '
+                                      'paired a name with an amount',
+                            'evidence': '%d cached line(s) on the page; parse_line() '
+                                        'returned nothing for any of them' % len(by[p])})
     return rows
 
 
@@ -332,7 +354,7 @@ def main():
     for f in sorted(glob.glob(os.path.join(PAGES, 'FY*.ocr.txt'))):
         m = re.search(r'FY(\d{4})\.ocr', f)
         if m:
-            rows += read_year(m.group(1))
+            rows += read_year(m.group(1), refused, os.path.basename(f))
     for fy in sorted(OCR_ONLY):
         doc, want = OCR_ONLY[fy]
         cache = pages(fy)
