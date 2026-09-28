@@ -137,9 +137,39 @@ def jobs():
     for t in refresh.minutes_targets(refresh.policy()):
         out.append(dict(stream='minutes', board=t['board_slug'], date=t['meeting_date'], recent=t['meeting_date'] >= recent,
                         cmd=['python3', 'scripts/write_recording_minutes.py', t['board_slug'], t['meeting_date']]))
+    # RECONCILE, WHICH HAD NO DRAIN AT ALL UNTIL NOW. Our minutes of a recording against
+    # the minutes the town published for the same meeting. It was only ever worked by
+    # `refresh.py`, which called it with no cap, so on 28 September 2026 it ran two hours
+    # inside the daily refresh and spent $22.73 with 157 pairs still to go. The refresh is
+    # now bounded, and a bounded daily step with no second drain is a backlog that never
+    # clears -- so it belongs here, where the week's unused allowance pays for it and a
+    # person working stops it.
+    #
+    # A pair is work when we hold BOTH records and have not compared them. That is the
+    # same test `reconcile_minutes.py` applies, imported rather than restated so the two
+    # cannot disagree about what is outstanding.
+    import json
+    import reconcile_minutes as RM
+    import write_recording_minutes as W
+    for f in sorted(glob.glob(os.path.join(W.OUT, '*', '*.json'))):
+        try:
+            d = json.load(open(f, encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
+        if d.get('reconciliation') or not RM.official_for(d)[0]:
+            continue
+        board, date = d.get('board_slug', ''), d.get('meeting_date', '')
+        if not board or not date:
+            continue
+        out.append(dict(stream='reconcile', board=board, date=date, recent=date >= recent,
+                        cmd=['python3', 'scripts/reconcile_minutes.py', board, date]))
     # Both streams' recent work before either stream's older work; votes (cheap) before
     # minutes inside each; newest first.
-    out.sort(key=lambda j: (0 if j['recent'] else 1, 0 if j['stream'] == 'votes' else 1, -int(j['date'].replace('-', ''))))
+    # Recent work in every stream before any stream's older work; inside a tier, cheapest
+    # first -- votes ~$0.15, reconcile ~$0.32, minutes ~$0.45 -- then newest first.
+    order = {'votes': 0, 'reconcile': 1, 'minutes': 2}
+    out.sort(key=lambda j: (0 if j['recent'] else 1, order.get(j['stream'], 9),
+                            -int(j['date'].replace('-', ''))))
     return out
 
 
