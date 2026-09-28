@@ -590,6 +590,10 @@ def main():
         # night's ingestion.
         py('pull_questions.py', check=False)
         py('build_agentic_backlog.py', check=False)     # where every machine-reading stream stands, notes/generated/AGENTIC-BACKLOG.md
+        # AND HOW DEEP IT IS, by the MEETING's own date rather than by when we found it.
+        # Runs after the streams above have done their work, so the figure on the
+        # dashboard falls as the queue drains rather than describing this morning.
+        py('build_backlog_depth.py', check=False)       # notes/generated/BACKLOG-DEPTH.md + /data/backlog-depth.json
         # 9. The search index to D1 -- the analysis database push is NOT run here.
         if not a.no_push:
             py('sync_search_d1.py', '--limit', str(SEARCH_PUSH_LIMIT), check=False)

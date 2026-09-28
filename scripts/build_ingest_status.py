@@ -749,7 +749,76 @@ def streams():
                            'page\u2019s own headings and is a guess',
                       pending=ar_todo))
 
+    bd = backlog_depth()
+    if bd and bd.get('total_jobs'):
+        # THE THREE STREAMS ARE NEVER SUMMED INTO ONE BAR. A vote extraction, a
+        # reconciliation and a set of written minutes are three different pieces of work at
+        # three different prices, and `reconcile` can only exist where a RECORDING exists --
+        # so its zero before 2025 is the channel's start date and not neglect.
+        what = {'votes': 'the votes in the town\u2019s minutes, with verbatim quotes',
+                'reconcile': 'our minutes of a recording against the town\u2019s',
+                'minutes': 'our minutes written from a recording\u2019s captions'}
+        stream_rows = []
+        for st in bd['streams']:
+            stream_rows.append((st['name'], st['jobs'], what.get(st['name'], ''),
+                         ('~$%.2f a job' % st['unit_cost']) if st.get('unit_cost')
+                         else 'no measured cost yet'))
+        pend = [dict(board=r['fy'], n=r['total'], first='', last='',
+                     dates=['%s %s' % (r[k], k) for k in ('votes', 'reconcile', 'minutes')
+                            if r.get(k)])
+                for r in reversed(bd.get('by_fiscal_year', [])) if r['total']]
+        s.append(dict(
+            key='backlogdepth',
+            unit=('job off the backlog', 'jobs off the backlog', 'jobs left'),
+            headline=_counted(bd['total_jobs'],
+                              ('job in the backlog', 'jobs in the backlog',
+                               'jobs in the backlog')),
+            pill='by the MEETING\u2019s own date, not by when we found it',
+            breakdown=stream_rows,
+            name='How deep the backlog is, by fiscal year of the meeting',
+            io='in: every outstanding machine-reading job &rarr; out: where it piles up, '
+               'by the town\u2019s own dates',
+            done=0, todo=bd['total_jobs'], blocked=0, blocked_why='',
+            cost=('about $%s to clear, roughly %s of a week\u2019s allowance'
+                  % (format(int(bd['estimated_usd']), ','), bd['estimated_weeks'])),
+            last=ago(newest([BACKLOG_DEPTH])),
+            note='Streams are counted separately and must never be added \u2014 '
+                 '`reconcile` cannot exist before the recordings do, so its zero before '
+                 'FY2025 is the channel\u2019s start date, not a gap. Falls on its own as '
+                 'work comes off the queue',
+            pending=pend))
+
     return s
+
+
+
+# -------------------------------------------------------- how deep the backlog is
+#
+# TJ, 28 September 2026: *"i want a visualization in the backlog that shows all the
+# documents in the backlog and their MEETING DATE (NOT discover date) as a count. so i can
+# see how deep the backlog is based on month+year, or a rollup per year, and the type."*
+#
+# WHY THE MEETING DATE. `first_seen` is when our crawler found a document and is the right
+# key for deciding what is NEW. It is the wrong key for depth: discovery dates cluster on
+# the days we happened to crawl, so a chart of them shows our crawling schedule rather than
+# the town's record. The meeting date is the town's own and does not move.
+#
+# IT READS THE GENERATED PAYLOAD, NOT THE QUEUE. `sweep_backlog.jobs()` globs thousands of
+# files and this page rewrites itself every twenty seconds; recomputing it here would make
+# the dashboard the most expensive thing on the machine. `build_backlog_depth.py` writes
+# the payload, the refresh runs it daily, and the panel says how old it is rather than
+# implying it is live.
+BACKLOG_DEPTH = os.path.join(ROOT, 'fy28', 'public', 'data', 'backlog-depth.json')
+
+
+def backlog_depth():
+    if not os.path.exists(BACKLOG_DEPTH):
+        return None
+    try:
+        with open(BACKLOG_DEPTH, encoding='utf-8') as fh:
+            return json.load(fh)
+    except (OSError, ValueError):
+        return None
 
 # -------------------------------------------------------------------- the refresh
 # WHERE THE PIPELINE LOOKS, AS ADDRESSES A PERSON CAN OPEN.
