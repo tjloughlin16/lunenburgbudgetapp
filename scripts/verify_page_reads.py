@@ -76,7 +76,7 @@ DEFAULT_TOL = 0.02
 #
 #   column `rows_per_page`   every page but the last carries exactly this many rows
 #   column `ordered_by`      the named column never goes backwards through the whole run
-#   column `row_identity`    `a,b,c=d` -- every row's components sum to its own total
+#   column `row_identity`    `a,b,c=d` or `a-b-c=d` -- every row's components make its total
 #
 # AND A ROW MAY BE `kind=attested`: WE READ IT RIGHT AND THE DOCUMENT DISAGREES WITH ITSELF.
 # `table-corrections.csv` already carries this idea for the generic extracts and it is the
@@ -130,6 +130,12 @@ def main():
                 tol[key] = max(tol.get(key, DEFAULT_TOL),
                                float(r.get('tolerance') or DEFAULT_TOL))
                 printed_on[key] = 'page %s, the row `%s`' % (r['page'], r['fund_name'])
+                continue
+            if (r.get('kind') or 'fund') == 'line':
+                # DETAIL BENEATH A TOTAL. Kept, because the line items are the reading and
+                # dropping them would publish a department's total with nothing under it --
+                # but NOT summed and NOT identity-checked, or every figure counts twice and
+                # a line that states no balance looks like a broken identity.
                 continue
             got[key][r['column']] += float(r['value'])
             seen[key].append((int(r['page']), r.get('fund_number', '')))
@@ -196,21 +202,33 @@ def main():
                 # and it is why this page's refusal was wrong: the extractor looked for ONE
                 # sign convention across the page when the page prints negatives in
                 # parentheses per column.
+                # `a,b,c=d` adds; `a-b-c=d` subtracts after the first. The appropriations
+                # schedule states its identity as a SUBTRACTION -- available less expended
+                # less encumbered is the balance returned to revenue -- and writing that as
+                # a sum would mean storing expended as a negative, which is not what the
+                # page prints and not what a reader would expect of the column.
                 parts, _, whole = d['row_identity'].partition('=')
-                parts = [c.strip() for c in parts.split(',')]
+                if '-' in parts:
+                    first, *rest = [c.strip() for c in parts.split('-')]
+                    parts = [(first, 1)] + [(c, -1) for c in rest]
+                else:
+                    parts = [(c.strip(), 1) for c in parts.split(',')]
                 rows_, off, att = collections.defaultdict(dict), [], []
                 for r in per_row[key]:
                     rows_[(r['page'], r['fund_number'])][r['column']] = float(r['value'])
                 for (pg, name), cells in sorted(rows_.items()):
-                    got = round(sum(cells.get(c, 0.0) for c in parts), 2)
+                    # NOT `got` -- that is the outer dict of column sums, and shadowing it
+                    # here made the dataset writer crash with `'float' object is not
+                    # subscriptable` after every check had already passed.
+                    lhs = round(sum(sign * cells.get(c, 0.0) for c, sign in parts), 2)
                     wnt = round(cells.get(whole.strip(), 0.0), 2)
-                    if abs(got - wnt) > tol.get(key, DEFAULT_TOL):
+                    if abs(lhs - wnt) > tol.get(key, DEFAULT_TOL):
                         if name in attested[key]:
                             att.append('p%s %s: the DOCUMENT is out by %s -- %s'
-                                       % (pg, name, format(round(got - wnt, 2), ','),
+                                       % (pg, name, format(round(lhs - wnt, 2), ','),
                                           attested[key][name]))
                         else:
-                            off.append('p%s %s: %s vs %s' % (pg, name, format(got, ','),
+                            off.append('p%s %s: %s vs %s' % (pg, name, format(lhs, ','),
                                                              format(wnt, ',')))
                 notes.append('%d of %d rows close on %s'
                              % (len(rows_) - len(off) - len(att), len(rows_),
