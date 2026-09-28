@@ -96,10 +96,27 @@ def plan_for(dataset):
     for r in csv.DictReader(open(PLAN)):
         if r['dataset'] != dataset:
             continue
-        for a, b in re.findall(r'(\d+)\s*[-–]\s*(\d+)', r['pages'] or ''):
+        # ONLY THE LEADING EXPRESSION. The `pages` cell does TWO jobs -- a machine-readable
+        # range and a human note -- and reading numbers out of the note invented a whole
+        # phantom run. FY2017's cell says:
+        #
+        #   168-169 (a two-column reprint of the same table also appears at 156-158
+        #            inside the Article 8 text)
+        #
+        # ...and the description says outright USE THE p168-169 VERSION. Both regexes ran
+        # over the entire string, so the run became 8, 24-28, 156-158, 168-169: `156-158`
+        # harvested from the warning not to use it, and a bare `8` from the words "Article
+        # 8". The 156-158 reading starts MID-TABLE and reconciled at -7,922,127.08, which
+        # was then reported for three days as FY2017 being structurally broken. The real
+        # run, 168-169, closes at -0.51.
+        #
+        # A field parsed permissively enough to read its own commentary is not a field.
+        # Everything from the first `(` is prose.
+        cell = (r['pages'] or '').split('(')[0]
+        for a, b in re.findall(r'(\d+)\s*[-–]\s*(\d+)', cell):
             if int(b) >= int(a) and int(b) - int(a) < 25:
                 want[r['edition']].update(range(int(a), int(b) + 1))
-        for n in re.findall(r'(?<![\d-])(\d{1,3})(?![\d-])', r['pages'] or ''):
+        for n in re.findall(r'(?<![\d-])(\d{1,3})(?![\d-])', cell):
             want[r['edition']].add(int(n))
     return {k: sorted(v) for k, v in want.items()}
 
@@ -792,6 +809,7 @@ def extract(dataset):
             head = HEADINGS.get((edition, run[0]))
             if head:
                 trim_to_heading(in_run, head)
+            repair_dollar_as_digit(in_run)
             apply_corrections(in_run, dataset, fy, CORRECTIONS_APPLIED)
             mark_page_furniture(in_run)
             mark_arithmetic_subtotals(in_run)
@@ -1195,6 +1213,58 @@ def load_corrections():
         return [r for r in csv.DictReader(fh)]
 
 
+def repair_dollar_as_digit(rows_in):
+    """Vision reads the `$` of a right-aligned currency column as a DIGIT. Undo it, but
+    only where the page itself proves the correct value.
+
+    The signature, on the largest lines in the budget:
+
+        FY2011 p64   64,175,275.0   the page prints  $4,175,275.00   +$60,000,000
+        FY2013 p69   35,034,615.    the page prints  $5,034,615.00   +$30,000,000
+
+    Both are the School Department's `Other Expenses`, and both were invisible until the
+    page cache was rebuilt and gave those years a check they could fail -- rule 14's
+    compensating-error unmasking, exactly.
+
+    WHY THIS IS A READING AND NOT A GUESS. The accountant's schedule prints APPROPRIATED
+    and TOTAL AVAILABLE side by side, and on these rows they are equal. So the correct
+    digits are printed ON THE SAME ROW, one column to the right. The repair fires only
+    where dropping the leading digit makes the two match CHARACTER FOR CHARACTER -- not
+    approximately, not within a tolerance. A row where they merely differ is left alone,
+    because that is a real difference between two columns and none of our business.
+
+    Measured before writing it: 7 rows across FY2011, FY2013, FY2019 and FY2022 carry the
+    signature. Every one is recorded in `repaired_cells` and `row_check` with the raw token,
+    because a repaired figure nobody can tell from a read one is what rule 13 forbids.
+    """
+    for r in rows_in:
+        names = {}
+        for part in (r.get('column_meaning') or '').split('|'):
+            m = re.match(r'\s*(v\d)=(\w+)', part)
+            if m:
+                names[m.group(2)] = m.group(1)
+        ca, cb = names.get('appropriated'), names.get('available')
+        if not ca or not cb:
+            continue
+        try:
+            a, b = float(r.get(ca) or ''), float(r.get(cb) or '')
+        except ValueError:
+            continue
+        if b <= 0 or a <= b:
+            continue
+        sa, sb = '%.2f' % a, '%.2f' % b
+        if len(sa) != len(sb) + 1 or sa[1:] != sb:
+            continue
+        r[ca] = sb
+        r['repaired_cells'] = (r.get('repaired_cells') or 0) + 1
+        r['row_check'] = ((r.get('row_check') or '')
+                          + ('; ' if r.get('row_check') else '')
+                          + 'the appropriated cell read %s, one digit longer than the '
+                            'available cell printed beside it and identical after the '
+                            'first character: Vision read the `$` as a digit. Repaired to '
+                            '%s, which the page prints in the next column' % (sa, sb))
+
+
 def apply_corrections(rows_in, dataset, fy, applied):
     """Put the read values in, and mark every row they touch."""
     for c in load_corrections():
@@ -1467,9 +1537,34 @@ def mark_page_furniture(rows_in):
         elif FOOTNOTE.search(squash(r['label'])):
             r['kind'] = 'footnote'
             r['row_check'] = "the schedule's own key to its `fwd` marker, not a program"
-        elif seen_grand and r['kind'] == 'row':
+        elif seen_grand and r['kind'] == 'row' and not (r.get('line_no') or '').strip():
             r['kind'] = 'footnote'
             r['row_check'] = 'printed below the grand total, which ends the table'
+        elif seen_grand and r['kind'] == 'row':
+            # A LINE NUMBER OUTRANKS READING ORDER, because the table numbers itself.
+            #
+            # `the grand total ends the table` is true of a one-column page and false of a
+            # two-column one, where the total sits in the RIGHT column part-way down while
+            # the LEFT column is still running. Reading top-to-bottom then puts real lines
+            # after it and deleted them silently:
+            #
+            #     FY2011 p85  line 73 Snow Removal Expense      $250,000.00
+            #     FY2012 p82  lines 62-69, the whole DPW block  $937,934.00
+            #     FY2013 p88  lines 75-76, Veterans             $ 21,750.00
+            #
+            # Over a million dollars removed from three published sums by a matcher that
+            # was describing our reading order as a fact about the document -- rule 13c.
+            #
+            # The document settles it: this table NUMBERS ITS OWN LINES, so a row carrying
+            # one is part of the table wherever the reading order happened to put it. Of
+            # 255 rows currently dropped by this rule, 13 carry a line number; the other
+            # 242 are genuine footers and page numbers and still drop. The test is the
+            # table's own ordering, not a position we inferred.
+            r['row_check'] = ((r.get('row_check') or '')
+                              + ('; ' if r.get('row_check') else '')
+                              + 'read after the grand total, but it carries line %s, so it '
+                                'is part of the table: the page is set in two columns and '
+                                'the total sits in the other one' % r['line_no'])
 
 
 def mark_arithmetic_subtotals(rows_in, tol=0.02):
