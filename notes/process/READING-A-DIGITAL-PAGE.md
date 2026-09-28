@@ -41,7 +41,7 @@ Check the reader's input, not the output. `RP.load(edition, ocr=True)` means rec
 Then check whether the page even needed it -- see the one-line test below. Seven times out
 of seven today the answer was: digital page, recognised anyway.
 
-**"What is left to make it FINISHED?"**
+**"What is left to do to MOVE IT TO FINISHED?"**
 And finished means ONE thing: *the page leaves the unfinished count.* Not "the data is
 right", not "I read it into a scratch file". If the answer has an intermediate state in
 it, it is not an answer -- say which of the three steps below are outstanding.
