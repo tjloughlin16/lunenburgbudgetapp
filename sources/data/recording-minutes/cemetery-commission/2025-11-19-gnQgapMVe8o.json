@@ -505,5 +505,278 @@
    "at": "2026-09-27T11:47:42Z",
    "cost_usd": 0.18849
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11192025-7519",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-11-19-minutes-7519.txt",
+   "path": "sources/meetings/cemetery-commission/2025-11-19-minutes-7519.pdf"
+  },
+  "official_sha256": "bb1812ae0dbafb53a1277fa05e203f00fec45761a20c59d332eeed3afe9a0414",
+  "coverage": "official minutes are a summary only",
+  "summary": "The core financial fact both records anchor on — the $10,000 Sale-of-Lots-to-Capital-Article transfer and the resulting fund balances, plus the $7,800 Fish Street wall cost and $800 grave price — line up once caption digit-grouping is accounted for, and the solar-light and plaque-timing decisions agree. But the official minutes are a condensed narrative that drops nearly every other figure our transcript-based minutes captured (perpetual care balances, the trust-fund investment mix, wall/chain cost estimates, next-meeting date, winter closure policy) and several items don't match cleanly — most notably the attendee roles, where official names Mike Clark as Chair and Bill Bernard as DPW Director while ours has Mike as DPW director and Bill as an unlabeled member, which is worth checking against the recording.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 5,
+   "only_in_ours": 16,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Mike's identity and role",
+    "ours": "the chair (unnamed); Mike (DPW director)",
+    "official": "Chair: Chair Mike Clark",
+    "note": "Ours never names the chair and instead labels a person named 'Mike' as DPW director; official identifies Mike Clark as Chair. Check the recording for how Mike was introduced — the caption model likely misassigned his title."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bill's role",
+    "ours": "Bill (member)",
+    "official": "DPW Department Director: Bill Bernard",
+    "note": "Official lists Bill Bernard as DPW Department Director, not a plain commission member; check the recording to confirm his stated role."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dave's role",
+    "ours": "Dave (member)",
+    "official": "Vice-Chair: Dave Dorren",
+    "note": "Official lists Dave Dorren as Vice-Chair; ours has him as an unspecified member. Check the recording for his title."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Clerk attendance",
+    "ours": "",
+    "official": "Clerk: Clerk Donna Landry - Absent",
+    "note": "Ours does not list a clerk role or note anyone as absent."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "nature of the $10,000 transfer decision",
+    "ours": "Sale of lots fund to capital article fund ... (voted)",
+    "official": "the Warrant Article was presented and passed last night at Town Meeting and $10,000 in funds were transferred",
+    "note": "Ours marks this as something 'voted' at this meeting; official frames it as Town Meeting's action the prior night being reported to the commission, not a commission vote. Check the recording for whether the commission took any vote of its own on this transfer.",
+    "t": 221
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sale of Lots Fund starting/ending balance",
+    "ours": "105971, 10K, 95971",
+    "official": "reducing Sale of Lots Fund from $105,971.13 to $95,971.13",
+    "official_reading": "$105,971.13 to $95,971.13",
+    "note": "Same figures, captions dropped the cents and comma formatting.",
+    "t": 221
+   },
+   {
+    "kind": "caption_error",
+    "about": "Capital/Cemetery Fund balance after transfer",
+    "ours": "4283, 10k, 14283",
+    "official": "increasing the Cemetery Fund from $4,283.61 to $14,283.61",
+    "official_reading": "$4,283.61 to $14,283.61",
+    "note": "Same figures, captions dropped the cents.",
+    "t": 264
+   },
+   {
+    "kind": "agree",
+    "about": "Fish Street Cemetery Wall final construction cost",
+    "ours": "7800",
+    "official": "the $7,800.00 for the construction of the stone wall at the Fish Street Cemetery is to come out of the Capital Article Fund",
+    "note": "Figures match exactly.",
+    "t": 2601
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "interim Fish Street wall funding figures discussed mid-meeting",
+    "ours": "7500, 6,500, 283",
+    "official": "",
+    "note": "Official only states the final $7,800 figure; the intermediate funding-source figures aren't in the official summary.",
+    "t": 349
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "perpetual care expendable balance",
+    "ours": "23482",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverified figure.",
+    "t": 284
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "perpetual care allocations already invoiced",
+    "ours": "18,000",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverified figure.",
+    "t": 306
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "perpetual care remaining balance",
+    "ours": "48, 5774",
+    "official": "",
+    "note": "Not mentioned in official minutes; figure itself looks garbled in the captions and is unverified.",
+    "t": 327
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "perpetual care balance after Fish Street work",
+    "ours": "28361",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverified figure.",
+    "t": 403
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "additional funds toward perpetual care balance",
+    "ours": "4857, 283",
+    "official": "",
+    "note": "Not mentioned in official minutes; unverified figure.",
+    "t": 433
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "second plaque / additional stone work cost estimate",
+    "ours": "4,000",
+    "official": "Additional pricing will be provided for the stone cleaning and repairs along with mounting the plaque.",
+    "note": "Official says pricing is still to come, with no figure given; ours states a specific $4,000 — check the recording for whether that figure was actually stated or is a caption artifact.",
+    "t": 973
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "chain purchase for granite posts",
+    "ours": "a few hundred dollars",
+    "official": "",
+    "note": "Not mentioned in official minutes.",
+    "t": 1379
+   },
+   {
+    "kind": "agree",
+    "about": "grave pricing",
+    "ours": "800, 1,600",
+    "official": "the price per grave is $800.00, 2 lot purchase required",
+    "note": "$800 matches exactly; $1,600 is consistent with the stated 2-lot requirement."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "older perpetual care fund balance figure",
+    "ours": "2 237",
+    "official": "",
+    "note": "Not mentioned in official minutes; figure is garbled in the captions and unverified.",
+    "t": 1713
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "town trust fund investment mix and return",
+    "ours": "2.1 million, 1.66, 6040, 2.5%, 12%",
+    "official": "",
+    "note": "Not mentioned at all in official minutes; this whole topic is absent from the official record.",
+    "t": 1774
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "annual perpetual care spending target",
+    "ours": "40k",
+    "official": "",
+    "note": "Not mentioned in official minutes.",
+    "t": 2129
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Amanda Construction invoice amount",
+    "ours": "$3,000",
+    "official": "Issues related to the delay in paying the Amanda Construction invoice were discussed. Work was completed October 9th and they are still waiting for payment.",
+    "note": "Official confirms the invoice/delay issue but gives no dollar amount to check against ours.",
+    "t": 2296
+   },
+   {
+    "kind": "discrepancy",
+    "about": "North Cemetery backlot expansion status",
+    "ours": "North Cemetery back lot expansion engineering: 50",
+    "official": "No update on the Backlot Expansion at North Cemetery at this time from DPW. Bill Bernard will reach out to Dillis & Roy",
+    "note": "Ours implies an engineering figure (possibly $50k) was discussed; official explicitly says there was no update. Check the recording for what '50' referred to."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "South Street wall repair cost estimate",
+    "ours": "$3,000, 800 ft, 600 ft, 550 ft, $6,000",
+    "official": "",
+    "note": "Not mentioned anywhere in official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "delaying the second Goodrich plaque and stone work",
+    "ours": "Hold off ordering the second Goodrich plaque and additional stone repair/power-washing work until spring.",
+    "official": "The committee decided to wait on expenditures outside of the wall installation until spring.",
+    "note": "Same decision.",
+    "t": 1015
+   },
+   {
+    "kind": "agree",
+    "about": "new invoice sign-off procedure",
+    "ours": "Adopt a new sign-off procedure where the superintendent and a commissioner sign a simple account/amount form at the meeting, to avoid missing town payment cutoffs.",
+    "official": "Myleen put together an invoicing template which the committee reviewed and agreed to use. Todd Holman and Bill Bernard will provide future invoices at meetings, to be dated and signed by the Cemetery Commission, and later submitted by Todd for a faster turn-around.",
+    "note": "Same underlying decision to formalize an in-meeting invoice sign-off process, described in different words.",
+    "t": 2418
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "postponing South Cemetery headstone straightening/repair",
+    "ours": "Postpone the South Cemetery headstone straightening and repair project until spring due to expected ground frost.",
+    "official": "",
+    "note": "This item does not appear anywhere in the official minutes.",
+    "t": 2870
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "next meeting date",
+    "ours": "Set the next meeting for December 11th.",
+    "official": "",
+    "note": "Official minutes do not state a next meeting date.",
+    "t": 3218
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cemetery winter closure policy",
+    "ours": "Cemeteries remain open until ice/snow conditions require closure, and will reopen once conditions improve.",
+    "official": "",
+    "note": "Not recorded in official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Historical Society research handoff",
+    "ours": "",
+    "official": "All of Todd Holman's research has been sent over to the Historical Society.",
+    "note": "Not captured in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "leaf cleanup status",
+    "ours": "",
+    "official": "Leaf cleanup in North and South Cemetery is underway, waiting on cleanup for shrub fertilizer application.",
+    "note": "Not captured in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "thanks to Franny McNamara",
+    "ours": "",
+    "official": "Todd thanked Franny McNamara from Lunenburg Water for providing access to water for the shrubs",
+    "note": "Not captured in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "future backlot expansion promotion and fundraising discussion",
+    "ours": "",
+    "official": "General discussion on future plans to promote Backlot Expansion, and increase of funds. To be discussed in future.",
+    "note": "Not captured anywhere in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:00:45Z",
+   "cost_usd": 0.311114
+  }
  }
 }

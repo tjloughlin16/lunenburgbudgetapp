@@ -504,5 +504,239 @@
    "at": "2026-09-27T11:45:58Z",
    "cost_usd": 0.197776
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12032025-7541",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-12-03-minutes-7541.txt",
+   "path": "sources/meetings/conservation-commission/2025-12-03-minutes-7541.pdf"
+  },
+  "official_sha256": "7e32a8689eacdd81de3b958e0e1e7c65183868f515182e3381ecddce70311c40",
+  "coverage": "partial",
+  "summary": "The two records agree closely on every hearing's final outcome and roll-call tally (6-0 on all seven substantive votes), and most differences are caption mis-hearings of names and dollar-figure formatting. The one thing to check: our recording shows the 199 Mass Ave NOI was approved, then rescinded, then re-approved in three separate motions, while the official minutes record only a single final motion — and several \"next step\" decisions (RTP grant extension length, Tom Anelons's grooming conditions, the Hollis Road cleanup plan, trust-fund research, job-duty changes) appear substantively different or missing between the two records.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 11,
+   "discrepancy": 7,
+   "only_in_ours": 5,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "199 Mass Ave NOI vote sequence",
+    "ours": "Three separate motions: approve (t=1082, 6-0), rescind the approval (t=1274, 6-0), then re-approve with erosion protection stated as not required (t=1298, 6-0)",
+    "official": "Motion: R. Bursch, to approve with the following additional conditions: 1. A report from Dillis & Roy when the work is complete. 2. A 12-month follow-up report. 3. Erosion protection as drawn on the plan is not required.",
+    "note": "Official records only one motion/vote; check the video between t=1082 and t=1298 to confirm the commission really held three roll-call votes (approve, rescind, re-approve) rather than the minutes-writer folding a corrected single vote into one clean record."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Hawes Fund total balance",
+    "ours": "30,42123",
+    "official": "$30,421.23 in the fund.",
+    "official_reading": "$30,421.23",
+    "note": "Missing decimal point/comma grouping in the caption rendering; same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation Trust Fund deposit amount",
+    "ours": "869,83041",
+    "official": "a deposit of $869,830.41 on 11/16/2023 from the Shawn Kelly fund",
+    "official_reading": "$869,830.41",
+    "note": "Digit grouping dropped by the caption; same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation Trust Fund current balance",
+    "ours": "96. 67,726.65",
+    "official": "has a balance of $967,726.65. It is called fund 8125.",
+    "official_reading": "$967,726.65",
+    "note": "Caption dropped/garbled the leading '9'; fund number 8125 matches in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Timber Rights fund balance",
+    "ours": "41,74320",
+    "official": "The Timber Rights fund balance is $41,743.20.",
+    "official_reading": "$41,743.20",
+    "note": "Missing decimal point in the caption rendering; same figure. The $10,000 budget figure matches in both records."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Extra Hawes Fund figures discussed (36,484 / 30,000 / 6,484)",
+    "ours": "36,484, 30,000, 6484 listed among figures heard",
+    "official": "",
+    "note": "Official only prints the final $30,421.23/$10,000-plus-remainder figures; these interim numbers from discussion are not in the official minutes — check the recording near t=4859 to see what they referred to."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Timber Rights fund budget breakdown (9,000/1,000)",
+    "ours": "9,000, 1,000 listed alongside the $10,000 timber rights budget",
+    "official": "",
+    "note": "Official states only the $10,000 total budget with no breakdown; check recording near t=5306."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Recreational Trails Program matching-fund figures (61,000/12,000/9,000)",
+    "ours": "61,000, 12,000, 9,000",
+    "official": "",
+    "note": "Official's only RTP mention is the grant-extension note under Communications; these matching-fund figures are not recorded — check recording near t=5497."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "RTP grant reimbursement received ($28,639.70)",
+    "ours": "28,639.7",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes — check recording near t=5539 and grant correspondence."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Conservation agent reclassification/pay grade (step 13)",
+    "ours": "Conservation agent position reclassification and pay grade: step 13",
+    "official": "",
+    "note": "No mention of a reclassification or pay step in the official minutes at all — check recording near t=4232 and any personnel/HR record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Recreational Trails Program grant extension length",
+    "ours": "Commission received an extension on the RTP grant to the end of December, after requesting eight months (t=5842)",
+    "official": "M. Wilson noted that the recreational trails grant was extended for one year.",
+    "note": "\"To the end of December\" and \"for one year\" are materially different durations; check the actual grant extension letter/correspondence to see which is correct."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "199 Mass Ave restoration planting timing",
+    "ours": "Planting/boulder installation will begin in spring, not immediately, due to frozen/snow-covered ground (t=1147)",
+    "official": "Most of the cleanup is now complete, but further restoration is planned.",
+    "note": "Official does not state a spring timeline; check the recording near t=1147 to confirm the timing was actually discussed as stated."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ken McNamara written continuance option (OpenGov)",
+    "ours": "McNamara may file a written continuance request in OpenGov if Herlin cannot get out to measure before the next meeting (t=2938)",
+    "official": "Ken McNamara was present. He was unable to get Herlin to visit. The applicant is unsure what starting point to use for measurement.",
+    "note": "No mention of an OpenGov filing option in the official minutes; check recording near t=2938 for whether this was actually offered/discussed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Tom Anelons winter-grooming conditions for Dec 17",
+    "ours": "Frames it as a requirement: Analon must appear in person at Dec 17 with a map of trails before grooming permission is granted again (t=3901)",
+    "official": "M. Wilson has seen the grooming and considers it a big service but wants Tom to come in with detailed controls. R. Burch would like the request to identify what trails are included.",
+    "note": "Official presents these as individual members' requests/preferences, not a stated commission requirement or vote; check recording near t=3901 for whether this was formalized as a condition."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair to research legal uses of Conservation Trust Fund",
+    "ours": "Chair will research what the trust fund money can legally be used for before spending is proposed (t=5237)",
+    "official": "The Conservation Trust Fund, after a deposit of $869,830.41 on 11/16/2023 from the Shawn Kelly fund and after interest, has a balance of $967,726.65. It is called fund 8125. It may have been combined with previous funds.",
+    "note": "Official records the fund's history/balance but not this planned research step; check recording near t=5237."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Adding Hollis property duties to conservation agent's job description",
+    "ours": "Chair will ask the town to add Hollis property land management and conservation restriction administration to the agent's written responsibilities (t=4403)",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all; check recording near t=4403 and whether any job description update followed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Michael Ray providing Hollis Residence cost estimates",
+    "ours": "",
+    "official": "Michael Ray will be providing cost estimates.",
+    "note": "Not captured in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Model-T Ford sold at Hollis Residence",
+    "ours": "",
+    "official": "The Model-T Ford has been sold to somebody else who will come to pick it up.",
+    "note": "Not captured in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Michael Larouche absent",
+    "ours": "",
+    "official": "Roll Call: C. St Germain, T. Doucette, A. Burnap, R. Bursch, M. Wilson, J. Pewtherer / Absent: M. Larouche.",
+    "note": "Our attendee list omits noting that a seventh member (Clerk M. Larouche) was absent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Herlin Jamie, Interim Conservation Administrator",
+    "ours": "",
+    "official": "Herlin Jamie - Interim Consv. Admin",
+    "note": "Referenced only indirectly in our decisions (as \"Herlin\") but not listed as staff/attendee."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Michael Gale, Admin Assistant",
+    "ours": "",
+    "official": "Michael Gale - Admin Assistant",
+    "note": "Minutes preparer, not listed in our attendee set."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Jenny Puther",
+    "official": "Jennifer Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Misheard name for the same person (Chair)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: St. Germain",
+    "ours": "Chris St. Germaine",
+    "official": "Chris St Germain",
+    "official_reading": "Chris St Germain",
+    "note": "Minor spelling variant from captions, same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Doucette",
+    "ours": "Teddy Ducet",
+    "official": "Teddy Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Misheard surname, same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Burnap",
+    "ours": "Andrea Bernett",
+    "official": "Andrea Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Misheard surname, same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "199 Mass Ave applicants' surname",
+    "ours": "Mike Chaplain / Mark Chaplain",
+    "official": "Mike Chapdelaine and Mark Chapdelaine present.",
+    "official_reading": "Chapdelaine",
+    "note": "Misheard surname for both applicants."
+   },
+   {
+    "kind": "caption_error",
+    "about": "13 Birch Island Way homeowners' surname",
+    "ours": "Paul Foran / Caroline Foran",
+    "official": "Paul and Caroline Fortin and their contractor (Michael McPhee) attended.",
+    "official_reading": "Fortin",
+    "note": "Misheard surname for both homeowners."
+   },
+   {
+    "kind": "caption_error",
+    "about": "13 Birch Island Way contractor's name",
+    "ours": "Michael McIver",
+    "official": "their contractor (Michael McPhee)",
+    "official_reading": "Michael McPhee",
+    "note": "Misheard surname for the contractor/builder."
+   }
+  ],
+  "quotes_not_in_official_dropped": 10,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:47:41Z",
+   "cost_usd": 0.375482
+  }
  }
 }

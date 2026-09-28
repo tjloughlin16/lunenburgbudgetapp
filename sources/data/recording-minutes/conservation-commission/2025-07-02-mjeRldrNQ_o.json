@@ -533,5 +533,227 @@
    "at": "2026-09-28T00:36:09Z",
    "cost_usd": 0.19876
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07022025-7297",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-07-02-minutes-7297.txt",
+   "path": "sources/meetings/conservation-commission/2025-07-02-minutes-7297.pdf"
+  },
+  "official_sha256": "2a09e92a5f7ac59552aace22d96550d7e8cd3d6befd39e988d60462a652794c9",
+  "coverage": "full",
+  "summary": "The two records agree closely on the substance of every hearing outcome, tree/COC approvals, and the $9,000/$1,000 fund split, with most differences being caption mishearings of names and addresses (Pewtherer, Bursch, Larouche, Doucette, Burnap, \"Townsend Harbor\" heard as \"Towns and Harbor,\" \"1083 Northfield\" heard as \"183\"). The one thing worth checking: our minutes record a vote approving the 100 Townsend Harbor Rd RDA with a special condition, but the official minutes show only discussion and a requested narrative for that item with no motion or vote recorded at all — someone should confirm against the recording whether a vote actually occurred.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 9,
+   "discrepancy": 4,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "vote on 100 Townsend Harbor Rd RDA",
+    "t": 2258,
+    "ours": "Approve the 100 Towns and Harbor Road RDA (DCSJ LLC) with a special condition requiring the wetland delineation data markers — passed",
+    "official": "iv. The chair was asked to have administrators include DEP comments in OpenGov records.",
+    "note": "Official minutes for this item end with discussion points (soil/stormwater, narrative requested, site walk fine) and no Motion/Second/Vote block at all, unlike every other item; check the recording at t=2258 to confirm whether a vote actually took place and what condition, if any, was attached."
+   },
+   {
+    "kind": "caption_error",
+    "about": "street name heard as 'Towns and Harbor Road'",
+    "ours": "100 Towns and Harbor Road; 167 Towns and Harbor Road",
+    "official": "100 Townsend Harbor Rd - RDA-25-8",
+    "official_reading": "Townsend Harbor Road",
+    "note": "The captions consistently dropped/misheard 'Townsend' as 'Towns and' for both the 100 and 167 addresses on this road."
+   },
+   {
+    "kind": "caption_error",
+    "about": "street number for Northfield Rd NOI",
+    "ours": "183 Northfield Road NOI continued to July 16",
+    "official": "1083 Northfield Rd - NOI-25-10 (Cont. from 06-04)",
+    "official_reading": "1083 Northfield Road",
+    "note": "Caption appears to have dropped a leading digit ('1083' heard as '183')."
+   },
+   {
+    "kind": "caption_error",
+    "about": "address for the second certificate of compliance",
+    "ours": "Certificate of compliance for 390 New Towns Road",
+    "official": "390 New West Townsend Rd - COC-25-7",
+    "official_reading": "390 New West Townsend Road",
+    "note": "Captions simplified/misheard 'New West Townsend' as 'New Towns'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "833 Flat Hill Rd hearing name",
+    "ours": "833 Flatville Road hearing could not proceed for lack of abutter notice",
+    "official": "833 Flat Hill Rd - RDA-25-7 Request for Determination of Applicability by Susan Ropiak",
+    "official_reading": "833 Flat Hill Road",
+    "note": "'Flat Hill' was misheard as 'Flatville'; the substance (abutter-notice deficiency) matches official point ii for this item."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "name of the $10,000 fund being allocated",
+    "ours": "FY2026 timber rights fund budget: $10,000; split $9,000 supplies / $1,000 purchase of service",
+    "official": "Conservation Budget: $10,000 spending limit across two funds; Purchase of Service, Supplies.",
+    "note": "Official never calls this a 'timber rights fund' — it is just 'Conservation Budget.' The dollar figures match exactly, but someone should check the recording for whether a specific fund name like 'timber rights' was actually used or the captions invented it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who requests the COC for town-owned property",
+    "t": 4270,
+    "ours": "The chair will follow up with the office on whether the town or the original applicant should request the certificate of compliance for the 452 boulder installation, since it is now town property.",
+    "official": "40 Fire Rd 12: Town has to submit the request as it is Town property. Administrator to follow up.",
+    "note": "Both describe a town-property COC/request follow-up with the same theme, but the address/description ('452 boulder installation' vs '40 Fire Rd 12') differs too much to be a simple misheard digit — check the recording around t=4270 to see if these are the same item."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "identity/title of the conservation administrator",
+    "ours": "Sophie (interim conservation administrator)",
+    "official": "Sophia Dorow - Conservation Admin",
+    "official_reading": "Sophia Dorow, Conservation Admin (not 'interim')",
+    "note": "Official lists Sophia Dorow as the (outgoing, last day July 8th) Conservation Admin and a separate person, Herlin Jaime, as Interim Consv. Admin — ours conflates the two into one 'interim' Sophie; check the recording for which title was actually used for her."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Eagle Scout rain barrel project cost",
+    "ours": "Eagle Scout rain barrel project funding: $814",
+    "official": "",
+    "note": "Official only says the Eagle Scout 'raised all funding and needed permission' with no dollar figure — check the recording for whether $814 was actually stated."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "stormwater utility revenue estimate",
+    "ours": "Proposed stormwater utility revenue: 300,000, 600,000",
+    "official": "",
+    "note": "Official's stormwater note is limited to 'Met this month and went over how to classify properties' plus a general note about funding source — no revenue figures appear."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "stormwater utility fee per household",
+    "ours": "Proposed stormwater utility fee per household: $10, $25",
+    "official": "",
+    "note": "Not recorded in official minutes at all; worth checking the recording since this is a resident-facing fee figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DPW stormwater budget context figure",
+    "ours": "DPW stormwater budget (context): a million dollars",
+    "official": "",
+    "note": "Not recorded in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "instruction to site-visit 833 Flat Hill Rd",
+    "t": 1297,
+    "ours": "The interim conservation administrator was asked to visit the 833 Flatville Road site and take notes to post in OpenGov ahead of the next hearing.",
+    "official": "",
+    "note": "Official's write-up of this hearing does not record this specific instruction; check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote to approve January 8 minutes",
+    "ours": "",
+    "official": "M. Wilson, to approve the January 8th minutes as posted.",
+    "note": "Ours has no record of this vote at all, including R. Bursch's comment that the Jan 22 minutes may have missed reporting a violation at 1168 Mass Ave — worth adding since it touches an open enforcement matter."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Hollis Rd Residence lease item",
+    "ours": "",
+    "official": "d. Hollis Rd Residence: i. Lease Agreements & Tenant Responsibilities",
+    "note": "No mention of this agenda item in ours at all — check the recording for whether it was substantively discussed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee Michael Gale",
+    "ours": "",
+    "official": "Michael Gale - Admin Asst.",
+    "note": "Listed as minutes preparer in official roster; not mentioned in our attendee list."
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair's name",
+    "ours": "Jenny (chair)",
+    "official": "Jennifer Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "First name only was captured; surname missing/misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "commissioner surname",
+    "ours": "Richard Burch (commissioner)",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch (Vice Chair)",
+    "note": "Misheard 'Bursch' as 'Burch'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "commissioner name",
+    "ours": "Mike LaRouche (commissioner)",
+    "official": "Michael Larouche",
+    "official_reading": "Michael Larouche (Clerk)",
+    "note": "Name capitalization/first-name variant misheard by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "commissioner name",
+    "ours": "Teddy Ducet (commissioner (new))",
+    "official": "Teddy Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Misheard surname spelling."
+   },
+   {
+    "kind": "caption_error",
+    "about": "commissioner name",
+    "ours": "Andrea Bernap (commissioner (new))",
+    "official": "Andrea Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Misheard surname ('Burnap' heard as 'Bernap')."
+   },
+   {
+    "kind": "agree",
+    "about": "390 Howard Street continuance with warning",
+    "ours": "Continue 390 Howard Street to July 16, 2025, with a warning that lack of applicant action could lead to denial — passed (limited voters; some members recused/ineligible)",
+    "official": "R. Bursch, to continue to the July 16th meeting and reach out to the applicant to ensure they know what information is needed at that meeting or face possible vote of denial due to lack of action on the applicant's part.",
+    "note": "Substance matches closely, including T. Doucette's abstention consistent with ours noting a limited/ineligible voter."
+   },
+   {
+    "kind": "agree",
+    "about": "30 Peninsula Drive dead tree removal",
+    "ours": "Approve removal of the dead pine tree at 30 Peninsula Drive, leaving the stump in place — passed",
+    "official": "M. Larouche, to approve removal of one dead tree keeping the stump in place.",
+    "note": "Matches exactly on outcome and condition."
+   },
+   {
+    "kind": "agree",
+    "about": "Mass Trails grant reimbursement figures",
+    "ours": "Mass Trails grant reimbursement: $28,000, $34,000",
+    "official": "About $28,000 reimbursement for a $34,000 expenditure.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "DEP comment emails into OpenGov",
+    "ours": "The administrator was directed to upload DEP comment emails into OpenGov going forward so all commissioners can see them.",
+    "official": "iv. The chair was asked to have administrators include DEP comments in OpenGov records.",
+    "note": "Matches in substance."
+   },
+   {
+    "kind": "agree",
+    "about": "167 Townsend Harbor Rd reclassification decision",
+    "ours": "The office will be asked to correct the agenda for 167 Towns and Harbor Road, since the application appears to involve removal of about 19 trees rather than the 3 dead trees listed, which may require reclassifying it from a determination to an RDA.",
+    "official": "Noted that the Agent Determination for 167 Towsend Harbor Road may need to be changed to an RDA as the request is for the removal of 19 trees and not 3 dead trees.",
+    "note": "Matches closely on substance (name caption error noted separately)."
+   }
+  ],
+  "quotes_not_in_official_dropped": 5,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:27:40Z",
+   "cost_usd": 0.358242
+  }
  }
 }

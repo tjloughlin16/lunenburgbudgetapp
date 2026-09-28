@@ -385,5 +385,239 @@
    "at": "2026-09-27T11:58:00Z",
    "cost_usd": 0.19269799999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11032025-7487",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-11-03-minutes-7487.txt",
+   "path": "sources/meetings/board-of-assessors/2025-11-03-minutes-7487.pdf"
+  },
+  "official_sha256": "63e2bc42646e3d346285eaf0bfbda900c88b8b23f1c8b10c0d29ac1f3be03ac4",
+  "coverage": "partial",
+  "summary": "The two records agree on the core LA4/abatement/exemption figures and the LA4 vote, but our minutes carry many budget-discussion figures (new growth, personal property, senior-exemption specifics) and procedural decisions the official minutes omit entirely, while the official minutes cover several agenda items (interim adjustments by neighborhood, the 41A warrant, minutes review, classification hearing date) our minutes skip. The one place readers should double-check is the proposed joint meeting date with the Select Board, which differs between the two records (17th/20th vs. 17th/19th).",
+  "counts": {
+   "agree": 5,
+   "caption_error": 4,
+   "discrepancy": 4,
+   "only_in_ours": 9,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Motor vehicle excise abatements processed",
+    "ours": "51",
+    "official": "51 motor vehicle excise tax abatements were processed.",
+    "note": "Same figure in both records.",
+    "t": 269
+   },
+   {
+    "kind": "agree",
+    "about": "Property exemptions approved (count and total)",
+    "ours": "96, $74,221",
+    "official": "96 property exemptions were approved totaling $74,221.",
+    "note": "Same figures in both records.",
+    "t": 290
+   },
+   {
+    "kind": "agree",
+    "about": "Single-family sale price and % increase",
+    "ours": "517,296, 2.7%",
+    "official": "Single family homes increased 2.7% from last year. The average single-family sale price for fiscal 2026 is $517,296.",
+    "note": "Same figures in both records.",
+    "t": 519
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Second sale-price/ratio figures (504,937, 2.4%)",
+    "ours": "504,937, 2.4%",
+    "official": "",
+    "note": "Our minutes give a second price/percentage pair the official minutes do not mention at all; check the recording near t=519 to see whether this was a prior-year comparison figure or a caption duplication of the 2.7%/517,296 figures.",
+    "t": 519
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Median assessment-to-sales ratio",
+    "ours": "",
+    "official": "The median assessment to sales ratio is 95%. This information is due to the DOR for FY2026 as of January 1, 2025. The ratio must be between 90% to 110%.",
+    "note": "A DOR compliance figure present only in the official minutes; not captured in our figures-as-heard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "LA13 new growth figure",
+    "ours": "518,980, 518,650",
+    "official": "The LA13 growth for FY2025 has been updated to $518,650.",
+    "official_reading": "$518,650",
+    "note": "Our minutes list an extra close-but-different figure (518,980) alongside the correct 518,650; likely a caption mishearing/duplication of the same number rather than a second real figure.",
+    "t": 1243
+   },
+   {
+    "kind": "agree",
+    "about": "Original budgeted new-growth estimate",
+    "ours": "$400,000",
+    "official": "Our original estimate for the budget had been $400,000.",
+    "note": "Same figure in both records.",
+    "t": 1263
+   },
+   {
+    "kind": "discrepancy",
+    "about": "New growth vs. budget expressed as a percentage",
+    "ours": "25%",
+    "official": "",
+    "note": "Our minutes state new growth exceeded budget by 25%; the official minutes give only the two dollar figures with no percentage. Check the recording to confirm whether 25% was actually spoken or is a derived/misheard figure.",
+    "t": 1263
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prior year new growth (commercial building)",
+    "ours": "732",
+    "official": "",
+    "note": "A prior-year new-growth figure tied to a commercial building appears only in our minutes; not in the official summary.",
+    "t": 1305
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "New growth vs. budget net dollar difference",
+    "ours": "$518,650, 118,650",
+    "official": "",
+    "note": "The net dollar difference (118,650) between actual and budgeted new growth is only in our minutes; official minutes state the two components but not the computed difference.",
+    "t": 1347
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Personal property assessments line item figure",
+    "ours": "1.3",
+    "official": "",
+    "note": "This figure has no corresponding statement in the official minutes; check the recording at t=1367 to confirm what it refers to (e.g., a percentage or dollar amount in thousands).",
+    "t": 1367
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior means-tested exemption tax shift amount",
+    "ours": "couple of cents",
+    "official": "",
+    "note": "Official minutes record only that Brian Laffond asked about the funding process and that overlay funding may be used for year one; the tax-rate-shift magnitude is only in our minutes.",
+    "t": 1798
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior means-tested exemption application counts",
+    "ours": "six, four, two, two",
+    "official": "",
+    "note": "Application/approval counts by category appear only in our minutes, not in the official summary of this topic.",
+    "t": 1882
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "GIS/CI vendor invoice timing",
+    "ours": "four or five months",
+    "official": "",
+    "note": "This detail about vendor invoicing timeline is not in the official minutes at all.",
+    "t": 2394
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to accept the LA4 as presented",
+    "ours": "Motion to accept the LA4 as presented — passed",
+    "official": "There was a motion to accept the LA4 as presented by Sarah Cammer, seconded by Brian Laffond.",
+    "note": "Both records confirm the LA4 motion was made and (by context) carried; official adds the mover/seconder our minutes omit.",
+    "t": 1080
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mover and seconder of the LA4 motion",
+    "ours": "",
+    "official": "There was a motion to accept the LA4 as presented by Sarah Cammer, seconded by Brian Laffond.",
+    "note": "Our minutes record the vote but not who moved/seconded it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision on senior means-tested exemption funding/methodology",
+    "ours": "Principal assessor to research and bring back a methodology for calculating the adjusted tax rate needed to redistribute the senior means-tested exemption shift onto other taxpayers.",
+    "official": "Brian Laffond inquired what the process is to fund Senior Means Tested Exemption. Lynda Cajka is unsure but will contact colleagues who have addressed those exemptions. We may fund through overlay for the first year.",
+    "note": "Our minutes frame this as a tax-rate redistribution methodology assignment; the official minutes frame it as an open question about funding mechanism (overlay) with the principal assessor consulting colleagues. Check the recording near t=1717 to see which framing (or both) was actually decided."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Consensus to keep neighborhood/site-index review in-house",
+    "ours": "Consensus to keep the neighborhood/site-index review process in-house rather than contracting it out, pending the seasonal position being funded at town meeting.",
+    "official": "",
+    "note": "This decision does not appear in the official minutes, which instead discuss the neighborhood review under a separate agenda item without recording an in-house-vs-contract decision."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Proposed joint meeting dates with Select Board (new member appointment)",
+    "ours": "Monday the 17th at 5:30pm or Thursday the 20th at 7:00pm",
+    "official": "There needs to be an upcoming meeting with the Select Board about appointing another member. Brian Laffond will inquire with the new potential member about his availability. We expect either November 17, 2025, or November 19, 2025.",
+    "note": "The two alternative dates differ (17th/20th in ours vs. 17th/19th in official) and ours adds specific times not in the official record; check the recording near t=3239 to confirm the actual proposed dates."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Agenda decision: keep senior exemption item on Nov 19 agenda",
+    "ours": "Keep the senior exemption tax methodology item on the November 19th agenda.",
+    "official": "",
+    "note": "Not recorded in the official minutes, which list November 19 only as an upcoming meeting date without this agenda detail."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Agenda decision: move Clause 18/GIS-CI item to Dec 3",
+    "ours": "Move discussion of Clause 18 and the GIS/CI vendor decision from November 19th to the December 3rd meeting.",
+    "official": "",
+    "note": "Not recorded in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Status of minutes review for multiple prior meetings",
+    "ours": "",
+    "official": "The Board has been unable to review any minutes. Lynda Cajka is working on writing the executive session minutes for October.",
+    "note": "Not captured in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Interim adjustments by neighborhood",
+    "ours": "",
+    "official": "In Vision, the site index stayed at 3.7 for FY25 to FY26. Below are the adjustments for each neighborhood: Neighborhood 1A: Declined to 2.45% in 2026; Neighborhood 1B: remained at 2.43%; Neighborhood 2: remained at 1.1%; Neighborhood 3: remained at 1%; Neighborhood 4: remained at .95%; Neighborhood 5: remained at .8%",
+    "note": "An entire block of detailed per-neighborhood figures present only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "41A Warrant for Income Limitation Increase",
+    "ours": "",
+    "official": "The warrant document has been completed and is ready for presentation at Special Town Meeting. Lynda Cajka confirmed that Town Council did re-work some portions and believes it may still be confusing.",
+    "note": "This agenda item is absent from our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Vice Chair",
+    "ours": "Sarah Cameron (board member (assessor))",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "Captions misheard the surname Cammer as Cameron; same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chair",
+    "ours": "Brian Leaf (board member (assessor))",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Captions misheard the surname Laffond as Leaf; same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Principal Assessor",
+    "ours": "Linda Chica (principal assessor)",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Captions misheard the name Lynda Cajka as Linda Chica; same person."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:25:22Z",
+   "cost_usd": 0.254732
+  }
  }
 }

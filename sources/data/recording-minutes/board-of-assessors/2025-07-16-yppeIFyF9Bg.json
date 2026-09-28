@@ -484,5 +484,200 @@
    "at": "2026-09-27T12:55:33Z",
    "cost_usd": 0.19443
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07162025-7312",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-07-16-minutes-7312.txt",
+   "path": "sources/meetings/board-of-assessors/2025-07-16-minutes-7312.pdf"
+  },
+  "official_sha256": "eaae87d5cdcd249c8e76ab3e6a24f71eaf1ad229e45d97d24bc26431623a4f6a",
+  "coverage": "partial",
+  "summary": "The two records agree closely wherever both cover the same topic — nearly all figures, all seven substantive decisions, and the fact that no formal votes were taken — with only two names garbled by captions and one figure split by a comma-misread. The real gap is coverage: the official minutes include five agenda items (abutters/excise stats, invoice and lien signatures, Clause 18, Cammer's workflow proposal, and FY27 chapter-land mailing) that our recording-based minutes never mention, and our minutes carry several granular figures (call volume, brochure counts, hours, an RFP term, a purchase year) that the official summary omits or states differently — most notably a roll-back parcel's transaction date, which is worth checking against the source document.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 3,
+   "discrepancy": 0,
+   "only_in_ours": 6,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Leaf",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Misheard surname; same person and role in both records."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal Assessor's name",
+    "ours": "Linda Chica",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Misheard name; same role (Principal Assessor) in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sarah Cammer's role and attendance mode",
+    "ours": "Sarah Cammer (member of the board)",
+    "official": "Vice Chair Sarah Cammer (Zoom)",
+    "note": "Official specifies she is Vice Chair and attended remotely; ours has neither detail — not a conflict, just missing."
+   },
+   {
+    "t": 1273,
+    "kind": "only_in_ours",
+    "about": "Roll-back invoice timing dates",
+    "ours": "June 16th, July 15th",
+    "official": "",
+    "note": "Official's minutes do not give specific dates for roll-back invoice timing; not necessarily wrong, just absent from the official summary."
+   },
+   {
+    "t": 1595,
+    "kind": "agree",
+    "about": "FY2026 cyclical inspection phase 2 postcards",
+    "ours": "500 blue postcards",
+    "official": "500 blue postcards were mailed.",
+    "note": "Matches exactly."
+   },
+   {
+    "t": 1695,
+    "kind": "only_in_ours",
+    "about": "Resident phone call volume",
+    "ours": "20 calls",
+    "official": "",
+    "note": "Official does not give a specific count of resident phone calls received about the obsolescence issue."
+   },
+   {
+    "t": 1780,
+    "kind": "agree",
+    "about": "Vision Appraisal interim adjustments due date",
+    "ours": "September 30th",
+    "official": "Current due date is September 30, 2025.",
+    "note": "Matches."
+   },
+   {
+    "t": 1884,
+    "kind": "caption_error",
+    "about": "FY2026 assessed growth figure",
+    "ours": "27,758, $770,000",
+    "official": "Current assessed value of growth for FY26 is $27,758,770.",
+    "official_reading": "$27,758,770",
+    "note": "The captions split one figure ($27,758,770) into two pieces ('27,758' and '$770,000') across a comma; same underlying number."
+   },
+   {
+    "t": 1884,
+    "kind": "agree",
+    "about": "FY2026 growth excluding personal property",
+    "ours": "$398,615.93",
+    "official": "The dollar amount that does not include personal property is $398,615.93.",
+    "note": "Matches exactly."
+   },
+   {
+    "t": 2807,
+    "kind": "only_in_ours",
+    "about": "RFP timeframe for neighborhood/site index study",
+    "ours": "3 years",
+    "official": "",
+    "note": "Official does not mention a 3-year figure for this RFP; check the recording for what this number actually referred to (e.g., a contract or review-cycle length) since it's not corroborated."
+   },
+   {
+    "t": 3452,
+    "kind": "agree",
+    "about": "41A income limitation dollar figure",
+    "ours": "$20,000",
+    "official": "There is a maximum income of $20,000 to partake in the deferral program.",
+    "note": "Matches."
+   },
+   {
+    "t": 3452,
+    "kind": "only_in_ours",
+    "about": "Year the 41A limitation was last set",
+    "ours": "1988",
+    "official": "",
+    "note": "Official only says the limitation 'hasn't been updated in decades,' without naming 1988; worth checking the statute/bylaw history if this date matters for the warrant article."
+   },
+   {
+    "t": 3619,
+    "kind": "only_in_ours",
+    "about": "Senior exemption brochure print counts",
+    "ours": "100 brochures, 20 copies",
+    "official": "",
+    "note": "Official only says a brochure was created and made available; no print quantities given."
+   },
+   {
+    "t": 3342,
+    "kind": "only_in_ours",
+    "about": "New billing responsibilities workload",
+    "ours": "32 hours a week",
+    "official": "",
+    "note": "Official mentions 'Addition of tax billing responsibilities in office' but gives no hours figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision to postpone minutes approval",
+    "ours": "Postpone review and approval of regular and executive session minutes to the August 13 meeting.",
+    "official": "The review and approval of minutes will take place at the first meeting in August while all members are physically present.",
+    "note": "Same decision; official doesn't state the exact date but matches the later-listed August 13 meeting."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision to draft 41A warrant article",
+    "ours": "Draft a warrant article to update the outdated 41A income limitation for the next town meeting.",
+    "official": "Brian Laffond will write up a warrant article for the next town meeting to be reviewed at our next meeting.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision on standing meeting schedule",
+    "ours": "Move toward a standing schedule of two meetings per month starting in September rather than ad hoc dates.",
+    "official": "tentative meetings are scheduled for the first and third Wednesday starting in September. Lynda will send proposed dates.",
+    "note": "Same decision — first/third Wednesday equals two meetings a month."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision to publicize board vacancy",
+    "ours": "Publicize the current vacancy on the Board of Assessors to encourage applicants.",
+    "official": "Brian Laffond states there is an opening on the Board of Assessors and asks anyone interested to fill out and submit a talent bank application.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Abutters list requests and excise abatements processed",
+    "ours": "",
+    "official": "In the last month there have been 12 abutters lists requests. A total of 70 motor vehicle excise tax abatements have been processed in MUNIS and are awaiting payment processing by the tax collector.",
+    "note": "Entirely absent from our minutes; a routine office-status figure the captions/model did not pick up or that was said outside the transcribed window."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Invoice/lien review and signature requirements",
+    "ours": "",
+    "official": "There were no invoices, vouchers or billing errors to review. There are 2 Liens for Chapter Lands that must be signed, but signatures for liens must be notarized. Brian Laffond will come into the office for them. Sarah Cammer will have to come to the office to sign the commitment for Real Estate and Personal Property.",
+    "note": "This agenda item and its follow-up actions do not appear anywhere in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Criteria for Clause 18 (postponed topic)",
+    "ours": "",
+    "official": "POSTPONED TOPICS\nCriteria for Clause 18.",
+    "note": "Listed as a postponed agenda topic in the official minutes with no elaboration; not mentioned at all in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sarah Cammer's workflow/software streamlining proposal",
+    "ours": "",
+    "official": "Sarah Cammer proposed reviewing the workflow going through the Assessor's Office. There are multiple systems and papers going back and forth. There may be some additional software available that may streamline tasks.",
+    "note": "Not captured in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 8,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:15:27Z",
+   "cost_usd": 0.285592
+  }
  }
 }

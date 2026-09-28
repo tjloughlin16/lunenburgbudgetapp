@@ -404,5 +404,176 @@
    "at": "2026-09-27T02:24:58Z",
    "cost_usd": 0.19264
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06032026-7834",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2026-06-03-minutes-7834.txt",
+   "path": "sources/meetings/board-of-assessors/2026-06-03-minutes-7834.pdf"
+  },
+  "official_sha256": "5f909aff2377015b6f30b00b8cfbea4a6e3153362b8b3484b960e1a187bd36bc",
+  "coverage": "partial",
+  "summary": "The two records agree on the broad strokes — election of chair/vice-chair, the FY27 billing figures, the summer meeting schedule, and the GIS server plan — but each contains several standalone votes, decisions and figures the other omits entirely, and captions garbled nearly every proper name. The one finding a reader should check first is the clerk election: our minutes have Brian LaFond elected clerk, while the official minutes name Bryant Moscon.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 7,
+   "discrepancy": 5,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Election of chair and vice chair",
+    "t": 268,
+    "ours": "Nominate and elect Brian LaFond as chair, Sarah Cameron as vice chair... voted together — passed",
+    "official": "Sarah Cammer nominated Brian LaƯond for the Chair position. Brian LaƯond nominated Sarah Cammer for the Vice Chair position.",
+    "note": "Same outcome in both records for these two officer positions."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Election of clerk",
+    "t": 268,
+    "ours": "...and Brian LaFond as clerk, voted together — passed",
+    "official": "Brian LaƯond nominated Bryant Moscon for the Clerk position. All in favor.",
+    "note": "Our minutes name Brian LaFond as clerk; the official minutes name Bryant Moscon. Someone should check the recording around t=268 to confirm who was actually nominated/elected clerk — this is a substantive conflict about who holds the position, not a misheard name (Moscon and LaFond are not phonetically similar)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve May 13, 2026 executive session minutes",
+    "ours": "",
+    "official": "There was a motion to approve the executive session minutes of May 13, 2026, by Sarah Cammer, seconded by Brian LaƯond.",
+    "note": "This vote appears only in the official minutes; our minutes (from captions) do not record it at all. Check the recording for a motion/second/vote around the review-of-minutes agenda item."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair's name",
+    "ours": "Sarah Cameron",
+    "official": "Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "Same person, name misheard by captions throughout our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal assessor's name",
+    "t": 268,
+    "ours": "Wendy Checker (assessor); Linda (principal assessor, outgoing)",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Captions appear to have rendered the same person's name two different wrong ways (\"Wendy Checker\" and \"Linda\"); both refer to outgoing Principal Assessor Lynda Cajka."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance director's name and role",
+    "ours": "Ken Berry (town of Canton finance director)",
+    "official": "Finance Director/Town Accountant Karen Barrett",
+    "official_reading": "Karen Barrett, Finance Director/Town Accountant",
+    "note": "Name misheard (Karen Barrett → Ken Berry) and role garbled; official minutes give no indication she is from another town (Canton) — likely a caption mishearing rather than a real detail."
+   },
+   {
+    "kind": "caption_error",
+    "about": "New board member's name",
+    "ours": "Brian Moskowitz (new member of the Board of Assessors)",
+    "official": "Member Bryant Moscon",
+    "official_reading": "Bryant Moscon",
+    "note": "Same new member, name misheard by captions; note this is the same person our minutes separately (and incorrectly per official) name as elected clerk."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Consultant's name",
+    "ours": "Rena Sweezey (consultant, neighborhood valuation review project)",
+    "official": "Consultant Rena Swezey",
+    "official_reading": "Rena Swezey",
+    "note": "Minor spelling variant of the same name, consistent with a caption mishearing."
+   },
+   {
+    "kind": "caption_error",
+    "about": "May abutters/abatement counts",
+    "t": 1463,
+    "ours": "Abatement and motor vehicle excise abatement requests for May: six, 81",
+    "official": "There were 6 abutters list requests received for the month of May. 81 motor vehicle excise tax abatements were processed in MUNIS and are awaiting payment by the tax collector.",
+    "official_reading": "6 abutters list requests; 81 motor vehicle excise tax abatements processed",
+    "note": "The two counts (6 and 81) match, but our minutes mislabel the '6' as an abatement request when the official minutes say it was an abutters list request — likely 'abutters' misheard as 'abatement'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY27 preliminary real estate warrant total (cents)",
+    "t": 1483,
+    "ours": "16 million 928,074 dollars and 91 cents",
+    "official": "The were a total of 5,318 preliminary FY27 real estate bills completed totaling $16,928,074.99",
+    "official_reading": "$16,928,074.99",
+    "note": "Cents digit differs (91 vs 99); the dollar figure otherwise matches exactly, consistent with a misheard digit rather than a different amount."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Count of FY26 supplemental real estate bills",
+    "t": 1580,
+    "ours": "",
+    "official": "Lynda Cajka mailed out 3 FY26 supplemental real estate tax bills totaling $11,960.",
+    "note": "Our minutes give only the total ($11,960, which agrees) but omit the count of 3 bills that the official minutes state."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tax deferral program interest rate",
+    "t": 1092,
+    "ours": "Tax deferral program interest rate: 4%",
+    "official": "",
+    "note": "No mention of a tax deferral program or interest rate anywhere in the official minutes; worth checking the recording near t=1092 for context on why this was discussed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter land lien release recording fee",
+    "t": 2475,
+    "ours": "Chapter land lien release recording fee: $105",
+    "official": "The single chapter land lien release will be notarized tomorrow.",
+    "note": "Official minutes mention the lien release being notarized but state no $105 fee; check the recording to confirm this figure was actually said and by whom."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Land condition factors count from last year's review",
+    "ours": "",
+    "official": "Last year, the neighborhood review discovered 400 land conditions factors were included.",
+    "note": "This figure (400 land condition factors) is not present anywhere in our minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision to restore both property record card website views",
+    "t": 2023,
+    "ours": "Board agreed to restore both property record card views on the website, with the more frequently updated one clearly labeled 'in process' to avoid confusing residents.",
+    "official": "",
+    "note": "This decision does not appear anywhere in the official minutes. Check the recording around t=2023 and confirm whether this was actually decided or discussed only informally."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision to eliminate 'average'/'below average' waterfront ratings",
+    "t": 4538,
+    "ours": "Board agreed to eliminate the 'average' and 'below average' waterfront quality ratings entirely and instead apply valuation factors based on actual property quality.",
+    "official": "Sarah Cammer and Rena Swezey will attempt to work together to review neighborhood factors and codes.",
+    "note": "The official minutes describe only an ongoing review, not a completed decision to eliminate these rating categories; check the recording near t=4538 to see whether this was a final board decision or a proposal under discussion."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Town's intent to acquire chapter-land property",
+    "t": 2393,
+    "ours": "Board indicated the town intends to acquire the chapter-land property at issue, pending a letter from the Select Board.",
+    "official": "The single chapter land lien release will be notarized tomorrow.",
+    "note": "Official minutes make no mention of an acquisition intent or a pending Select Board letter; check the recording near t=2393, since this is a substantive claim about town policy absent from the town's own record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board signing of roll-back tax warrant and FY27 tax commitment/warrant",
+    "ours": "",
+    "official": "The Board signed the roll back tax for 35 Leominster Road, the real estate warrant from the tax collector; the preliminary FY 27 tax commitment and warrant.",
+    "note": "These signing actions by the Board are not mentioned in our minutes at all; worth checking the recording since signing a warrant/commitment is a board action, not merely a status update."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:42:01Z",
+   "cost_usd": 0.30736600000000003
+  }
  }
 }

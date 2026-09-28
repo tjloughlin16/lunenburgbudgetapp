@@ -414,5 +414,119 @@
    "at": "2026-09-27T11:17:19Z",
    "cost_usd": 0.21880000000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02042026-7633",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-02-04-minutes-7633.txt",
+   "path": "sources/meetings/conservation-commission/2026-02-04-minutes-7633.pdf"
+  },
+  "official_sha256": "5cac74b596c36fcb9a2470807afa6005b87f24d5916028be09d08940c0a510c1",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the five continuance/approval votes (all 4-0) and on the core facts of the Hickory Hills dam-toe tree removal and replanting condition, with only misheard names differing. The real gap is financial: our minutes report a Cam's Heating payment and a timber-rights-fund grant match with specific dollar figures that appear nowhere in the official minutes, and the official minutes report several routine agenda items (roll call detail, admin determinations, a commissioner comment) that our minutes omit entirely.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Doucette's name",
+    "ours": "Teddy Ducet (commissioner)",
+    "official": "T. Doucette",
+    "official_reading": "T. Doucette (Teddy Doucette)",
+    "note": "Same person misheard by the captions; no substantive difference."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Burnap's name",
+    "ours": "Andrea Bernett (commissioner)",
+    "official": "A. Burnap",
+    "official_reading": "A. Burnap (Andrea Burnap)",
+    "note": "Same person misheard by the captions; no substantive difference."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant representative's name at 30 Summer St / 27 Fire Road 15A",
+    "ours": "Greg Roy (presenter/representative for applicants (also heard as Nelson Roy))",
+    "official": "Greg Roy (Dillis & Roy) represented the applicant.",
+    "official_reading": "G. Roy, Dillis & Roy",
+    "note": "Same person; captions produced an alternate misheard first name (\"Nelson\") alongside the correct one."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cam's Heating emergency payment ($265 of $400 approved)",
+    "ours": "Payment to Cam's Heating for emergency heating-system service, against a previously approved amount — $265 out of the $400 that had been approved",
+    "official": "",
+    "note": "This payment and figures do not appear anywhere in the official minutes, including under the otherwise-empty 'Conservation budget' agenda item. Someone should check the conservation budget line item or warrant records to confirm the payment was made and for how much."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Timber rights fund covering grant match (Raino/Table Rock) and Master Plan Steering Committee figures",
+    "ours": "Use of timber rights fund to cover the town's local match on the Raino and Table Rock grant applications — 20% of each grant ... roughly 60,000, 80%, 20%, $42 per hour",
+    "official": "i. Master Plan Steering Committee: None",
+    "note": "The official minutes report no Master Plan Steering Committee update at all, while our minutes describe a substantive discussion with specific dollar and percentage figures. Check the commission's own records or the video for whether this discussion and the funding figures actually occurred as described."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DEP notice-of-intent filing fee figure at 30 Summer Street",
+    "ours": "DEP notice-of-intent filing fee (30 Summer Street): one and a half times",
+    "official": "",
+    "note": "No corresponding figure or mention appears in the official minutes' 30 Summer Street section; not a vote or decision, so treated as omission rather than discrepancy."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Nature of the Herlin-related agenda item (fee structure vs by-law discussion)",
+    "ours": "Wait for the incoming conservation agent (starting February 9) to advise on revamping the fee structure and consultant fees before acting further",
+    "official": "c. By-Law Discussion: Message sent to Herlin, who starts full time February 9!",
+    "note": "Both reference waiting for Herlin (starting Feb 9), but ours frames the topic as fee/consultant-fee structure while official frames it as a by-law discussion. Check the recording to see whether the topic was fees, by-laws, or both."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Specific Earth Day coordination detail (pollinator-habitat group Feb 17 meeting)",
+    "ours": "Coordinate with the pollinator-habitat group's February 17 planning meeting to develop an Earth Day activity",
+    "official": "e. Lunenburg April Earth Days: Discussions to take place.",
+    "note": "Official confirms Earth Day discussions are planned but omits the specific coordination with the pollinator-habitat group's February 17 meeting; not a vote, so an omission rather than a discrepancy."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Open Space Committee representative succession (Andrea replacing Chris)",
+    "ours": "Andrea will consider becoming the commission's representative to the Open Space Committee, replacing Chris, who is expected to step down before his term ends",
+    "official": "ii. Open Space: May need a new contact for this.",
+    "note": "Official only vaguely flags a need for a new contact, without naming Andrea as a candidate or confirming Chris is stepping down. Check subsequent minutes or the video to confirm whether Andrea agreed and whether Chris's departure is actually planned."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Commissioner comment thanking Doucette and St. Germain for 123 Hollis Road help",
+    "ours": "",
+    "official": "M. Larouche thanked T. Doucette and C. St. Germain for the help they provided so that the servicing could be accomplished at 123 Hollis Road.",
+    "note": "An informational commissioner comment with no corresponding item in our minutes; not a vote or decision."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Administrative determinations: applicants not present (833 Flat Hill Rd, 72 Hemlock Dr)",
+    "ours": "",
+    "official": "a. 833 Flat Hill Rd- CAD-25-21 i. Applicant not present for a third time. Asking H. Jaime to check in on him. b. 72 Hemlock Dr: CAD-26-1 i. The applicant is not present.",
+    "note": "Routine administrative-determination status notes absent from our minutes; not votes or decisions."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Storm Water committee update",
+    "ours": "",
+    "official": "iii. Storm Water: Presenting to Finance Committee on February 5th.",
+    "note": "An informational committee-report line with no corresponding item in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:55:58Z",
+   "cost_usd": 0.280208
+  }
  }
 }

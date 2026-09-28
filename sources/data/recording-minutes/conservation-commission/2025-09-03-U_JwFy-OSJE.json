@@ -395,5 +395,121 @@
    "at": "2026-09-27T12:36:42Z",
    "cost_usd": 0.200498
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09032025-7377",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-09-03-minutes-7377.txt",
+   "path": "sources/meetings/conservation-commission/2025-09-03-minutes-7377.pdf"
+  },
+  "official_sha256": "5c5192c7af5f83f8cf304fcd505d20f573d20d77121b1aba6cef10689bfa6e9d",
+  "coverage": "full",
+  "summary": "The two records agree closely on outcomes for the nine non-procedural votes — all five continuances and four approvals match in result and vote count (5-0) — and most attendee names are simply captioning errors of the same five people. The real things to check: our minutes record a failed no-quorum vote attempt on 68A Laurel Lane that the official minutes never tally as a vote, the stated reason for continuing the 1083 Northfield Rd driveway differs (applicant's request vs. peer review), the official minutes record a \"none approved\" decision on six sets of back minutes that our minutes omit entirely, and two decisions in our minutes (the section 4.2 publicize/footnote decision, the MACC member-list resend) are not corroborated in the official text.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 4,
+   "discrepancy": 5,
+   "only_in_ours": 1,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "1083 Northfield Rd common driveway — stated reason for continuance",
+    "ours": "Continue the NOI hearing for the common driveway at 1083 Northfield Road to September 17, 2025, per applicant's request — passed 5-0",
+    "official": "M. Larouche, to continue to September 17 to allow for peer review",
+    "note": "The two records give different reasons for the same continuance (applicant's request vs. peer review); check the recording around t=4200 to confirm which reason was actually stated, since these are not interchangeable facts."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "68A Laurel Lane — first (no-quorum) vote attempt",
+    "ours": "[t=4704] Approve the NOI for demolition and construction of a two-unit dwelling at 68A Laurel Lane — failed - no quorum (two members present had not attended the prior hearing)",
+    "official": "M. Larouche and R. Bursch were not at the previous meeting and had not filed Mullin Rule documentation, meaning there was not a quorum for this item. This required the applicant to re-present all the information from the last meeting.",
+    "note": "Our minutes record this as a formal failed vote; the official minutes narrate the quorum problem but record no vote tally for it at all. Check the recording near t=4704 to see whether a motion was actually made and failed, or whether the chair simply noted the quorum problem before any vote was taken."
+   },
+   {
+    "kind": "agree",
+    "about": "6 Peninsula Drive certificate of compliance vote",
+    "ours": "[t=6862] Approve the certificate of compliance for 6 Peninsula Drive — passed 5-0",
+    "official": "Motion: M. Wilson, to approve. Second R. Bursch Vote: R. Bursch - AYE, J. Pewtherer - AYE, M. Wilson - AYE, M. Larouche - Aye, A. Burnap - AYE",
+    "note": "Same outcome, same 5-0 roll call."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of six sets of back minutes (04-02-25 through 08-20-25)",
+    "ours": "",
+    "official": "Minutes Approval: 04-02-25, 04-16-25, 05-07-25, 07-16-25, 08-06-25, 08-20-25 Discussion regarding several typos and questions about voting. None approved.",
+    "note": "A decision (declining to approve six sets of prior minutes) that appears only in the official record; our minutes omit it entirely. Check the recording around the start of the meeting to confirm this discussion/non-approval occurred as described."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Homeowner utility bill figure, 560 Mulpus Rd solar project",
+    "ours": "[t=1176] Homeowner utility bill (560 Mulpus Road solar project): 1,400 to $2,200",
+    "official": "",
+    "note": "No corresponding figure appears anywhere in the official minutes for this hearing; check the recording at t=1176 to confirm this figure was actually said and by whom, since the official minutes' account of this hearing does not mention utility bills at all."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Section 4.2 submission-deadline decision (publicize/footnote)",
+    "ours": "[t=8086] The commission agreed, without a formal vote, to enforce and publicize the existing regulation (section 4.2) requiring all changes/supplemental information on NOI, RDA and ANRAD filings be submitted at least seven calendar days before the next scheduled hearing, and to add a footnote about it to the website and application materials.",
+    "official": "We talked about the need for deadlines for submission of items to allow time for review. J. Pewtherer will discuss with Herlin. R. Bursch read the following (from version 4.2): All changes made to Notice of Intent, RDA, Abbreviated Notice of Intent, whether initiated by applicant or requested by Conservation Commission, shall be submitted to the Commission no later than seven calendar days prior to the next scheduled hearing.",
+    "note": "Our minutes describe this as an agreed decision to publicize the rule and add a website footnote; the official minutes describe it only as discussion, with the chair to follow up with the administrator. Check the recording near t=8086 to see whether the commission actually reached a decision to publicize/footnote it or left it as an item to be discussed further."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "MACC membership list resend by the chair",
+    "ours": "[t=7180] The chair will resend the full, current list of Lunenburg Conservation Commission members to MACC to fix a membership/login problem several members were having.",
+    "official": "MACC training spreadsheet will be going out soon.",
+    "note": "The official minutes mention an unrelated MACC training spreadsheet under New Business but say nothing about a membership-list/login problem or the chair resending a member list; check the recording near t=7180 to confirm this action item was actually decided and not conflated with the training-spreadsheet item."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Jenny (Chair)",
+    "official": "J. Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Captions rendered the chair's given name informally ('Jenny') and dropped the surname; official minutes give the full name Jennifer Pewtherer."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Bursch's name",
+    "ours": "Richard Burch (Commissioner)",
+    "official": "R. Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "Captions misheard 'Bursch' as 'Burch'; same person (Vice Chair) throughout the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Larouche's first name",
+    "ours": "Mike Larouche (Commissioner)",
+    "official": "M. Larouche",
+    "official_reading": "Michael Larouche",
+    "note": "Captions rendered 'Michael' informally as 'Mike'; same person (Clerk) throughout."
+   },
+   {
+    "kind": "agree",
+    "about": "Commissioner Mary Wilson",
+    "ours": "Mary Wilson (Commissioner)",
+    "official": "M. Wilson",
+    "official_reading": "",
+    "note": "Name matches exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Burnap's surname",
+    "ours": "Andrea Bernap (Commissioner)",
+    "official": "A. Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Captions misheard 'Burnap' as 'Bernap'; same person throughout the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 7,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:35:06Z",
+   "cost_usd": 0.29222600000000004
+  }
  }
 }

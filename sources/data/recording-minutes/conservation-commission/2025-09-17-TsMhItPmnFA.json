@@ -409,5 +409,254 @@
    "at": "2026-09-27T12:28:20Z",
    "cost_usd": 0.195528
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09172025-7407",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-09-17-minutes-7407.txt",
+   "path": "sources/meetings/conservation-commission/2025-09-17-minutes-7407.pdf"
+  },
+  "official_sha256": "e9fabcfc67caa1f7cc2e9f6d0c9da105564d454e83e13fb790400d4e308e45f9",
+  "coverage": "full",
+  "summary": "The two records agree closely on substance: all five non-procedural votes ours captured (culvert continuance, driveway continuance, solar negative determination, Chase Rd approval, Hemlock Terrace tree removal) match the official motions and outcomes, with most differences being captions mangling names and a digit (Mopus/Mulpus, Ernco/ERCO, Herlin/Harlow, Doucette/Ducette, Burnap/Bernard, NOI-25-19/25-9). The one thing worth checking: the official roll call shows the chair did not vote on the culvert motion and T. Doucette abstained on the tree-removal motion, and the trails-grant follow-up is phrased as already done (\"has asked\") in the official record versus still-pending (\"will ask\") in ours — none of which ours' \"passed\" summaries surface.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 7,
+   "discrepancy": 1,
+   "only_in_ours": 6,
+   "only_in_official": 9
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Culvert NOI docket number",
+    "ours": "NOI-25-9",
+    "official": "NOI-25-19",
+    "official_reading": "NOI-25-19",
+    "note": "Digits misheard/dropped; the official filing number for the 763 Northfield Rd culvert project is NOI-25-19, not NOI-25-9.",
+    "t": 3437
+   },
+   {
+    "kind": "caption_error",
+    "about": "Reviewer name (culvert NOI)",
+    "ours": "Harlow/Harland's review",
+    "official": "M. Larouche wants Herlin's review.",
+    "official_reading": "Herlin",
+    "note": "This is Herlin Jamie, the Interim Conservation Administrator named in the letterhead, misheard as Harlow/Harland by the captions.",
+    "t": 3437
+   },
+   {
+    "kind": "caption_error",
+    "about": "Road name (solar PV site)",
+    "ours": "560 Mopus Road",
+    "official": "560 Mulpus Rd- RDA-25-9 (Cont. From 09-03) Video link",
+    "official_reading": "Mulpus",
+    "note": "The road is Mulpus Road (also the same brook named in the culvert project); captions rendered it as Mopus throughout ours.",
+    "t": 5720
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name (809 Chase Rd)",
+    "ours": "ERCO Development",
+    "official": "A Notice of Intent by Ernco Development Corporation for the Construction of a driveway to serve a single-family home",
+    "official_reading": "Ernco Development Corporation",
+    "note": "Same applicant, name misheard; official gives the full corporate name.",
+    "t": 5952
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name (member)",
+    "ours": "Teddy Ducette",
+    "official": "Teddy Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Same person; captions dropped the 'o' in Doucette."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name (member)",
+    "ours": "Andrea Bernard",
+    "official": "Andrea Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Same person; surname misheard as Bernard instead of Burnap."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name (member)",
+    "ours": "Chris/Kirsty Germaine (also heard as \"St. Germaine\")",
+    "official": "Chris St Germain",
+    "official_reading": "Chris St Germain",
+    "note": "Same person; ours correctly flagged the alternate hearing but the primary transcription and first name (Kirsty) are off."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue Northfield Rd culvert NOI to Oct 1",
+    "ours": "Continue the Northfield Road culvert NOI (NOI-25-9) to October 1st, 2025, pending updated delineation, property-owner permission letters or DPW clarification, limit-of-work callout, and Harlow/Harland's review — passed",
+    "official": "M. Wilson, to continue to the October 1 meeting with the following requirements:",
+    "note": "Same four conditions (delineation, property-owner permission/DPW explanation, Herlin's review, DEP responses) and same outcome; only the docket number and reviewer name differ (flagged separately as caption errors).",
+    "t": 3437
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair's vote on culvert continuance",
+    "ours": "",
+    "official": "J. Pewtherer - did\nnot vote",
+    "note": "Ours reports the motion simply as \"passed\" with no roll-call detail; the official minutes show Chair Pewtherer did not vote on this motion. Check the recording to confirm whether this was a deliberate abstention/non-vote or a chair's customary practice of only voting to break ties.",
+    "t": 3437
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 1083 Northfield Rd driveway NOI to Oct 1",
+    "ours": "Continue the 1083 Northfield Road common driveway NOI to October 1st, 2025, to await Ecotech peer-reviewer Art Allen's written comments — passed",
+    "official": "M. Wilson, to continue to the October 1 meeting with the following requirements:\n1. Final comments from peer reviewer",
+    "note": "Same continuance and same reason (awaiting peer reviewer's final comments) and same outcome.",
+    "t": 4831
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Peer reviewer's name and firm (1083 Northfield Rd)",
+    "ours": "Ecotech peer-reviewer Art Allen",
+    "official": "",
+    "note": "Official only says \"peer reviewer\" with no name; check the recording to confirm the reviewer's name and firm, since nothing in the official record corroborates \"Ecotech\" or \"Art Allen.\"",
+    "t": 4831
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: 560 Mulpus Rd solar PV negative determination",
+    "ours": "Approve a negative determination for the 560 Mopus Road solar PV RDA (RDA-25-9), conditioned on the erosion-control barrier being the limit of work and the PVC conduit being no greater than 2-inch schedule 40 — passed",
+    "official": "M. Wilson, for a Negative Determination with the following conditions:\n1. The erosion control barrier is also the limit of work\n2. The PVC laid in the trench will be no greater than 2-inch Schedule 40.",
+    "note": "Same conditions, same docket number (RDA-25-9), same outcome; only the road name differs (flagged separately as a caption error).",
+    "t": 5720
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: 809 Chase Rd NOI approval",
+    "ours": "Approve the 809 Chase Road NOI (ERCO Development driveway/well line) as proposed — passed",
+    "official": "M. Wilson, to approve",
+    "note": "Same project and outcome; only the applicant's corporate name differs (flagged separately as a caption error).",
+    "t": 5952
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: 44 Hemlock Terrace tree removal, no replacement required",
+    "ours": "Approve removal of the 20 dead trees at 44 Hemlock Terrace as proposed in the administrative determination, without requiring replacement vegetation or trees — passed",
+    "official": "M. Wilson, to approve the removal of trees as proposed in the administrative\ndetermination without need for replacement (vegetation or trees).",
+    "note": "Same motion, same conditions, same address, same outcome.",
+    "t": 6763
+   },
+   {
+    "kind": "only_in_official",
+    "about": "T. Doucette's vote on tree removal",
+    "ours": "",
+    "official": "T. Doucette - Abstain",
+    "note": "Ours records the vote simply as \"passed\" with no mention of an abstention; the official roll call shows T. Doucette abstained, making the vote 5-0-1 rather than unanimous. Check the recording to confirm and note the abstention if this vote is cited as unanimous.",
+    "t": 6763
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CAD-25-12 address correction",
+    "ours": "",
+    "official": "The address is incorrect and should be 44 Hemlock Terrace.",
+    "note": "The administrative determination was originally filed under \"141 Hemlock Drive\" and corrected at the meeting; ours reports only the corrected address with no mention of the original error, which could matter if anyone checks the filed paperwork against the address ours cites."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Status of trails grant extension request",
+    "ours": "The chair/grant contact will ask the state grant administrator whether an extension can be requested on the recreational trails grant before its December 31 close.",
+    "official": "Extensions are rarely granted but M. Wilson has asked the grant administrator.",
+    "note": "Ours frames the outreach as a future action (\"will ask\"); official states M. Wilson already asked (\"has asked\"). Check the recording to determine whether the request had already been made at the time of the meeting or was being proposed as a next step."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Recreational trails grant figure (50%)",
+    "ours": "Recreational trails grant: 50%",
+    "official": "The current grant closes December 31 and we may not be able to get all the work done in time.",
+    "note": "No corresponding \"50%\" figure appears in the official minutes. Check the recording near this timestamp for what the 50% refers to (e.g., percent of work completed or funds committed), since the official text gives no numeric detail here at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Solar tax credit deadline (560 Mulpus/Mopus Rd)",
+    "ours": "Solar tax credit deadline (560 Mopus Road): end of the year",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes' account of the RDA-25-9 discussion; check the recording, as it may have been an aside not deemed worth minuting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DPW's approach to abutting property access (culvert project)",
+    "ours": "DPW will handle work on abutting private property via a temporary, unrecorded grading access letter agreement with the homeowner rather than a recorded easement.",
+    "official": "",
+    "note": "The official minutes list \"Property owner permission or DPW Director explanation as to why it is not needed\" only as an open requirement for the October 1 continuance, not as a decided approach. Check the recording to confirm whether this letter-agreement method was actually settled on or merely discussed as an option."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Directive that engineers respond to DEP letters via OpenGov",
+    "ours": "Going forward, applicants' engineers should respond to DEP comment letters in writing, uploaded to the OpenGov portal, so there is a record of the response.",
+    "official": "He went over all 9 points from the review, which have also been uploaded to OpenGov.",
+    "note": "Official only notes that the current project's peer-review responses were uploaded to OpenGov; it does not state this as a general going-forward policy. Check whether this was a one-off comment about this project or an actual standing instruction to applicants."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Master plan spreadsheet as its own agenda item",
+    "ours": "The master plan steering committee feedback spreadsheet will be placed as its own agenda item at the next meeting so commissioners have more time to review and comment.",
+    "official": "Spreadsheet has been sent out for comment and review. T. Doucette reviewed the document.",
+    "note": "Official records that the spreadsheet was sent out and reviewed by T. Doucette, but not a decision to schedule it as its own agenda item next meeting. Check the recording to confirm whether this future-agenda decision was actually made."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Culvert dimensions (763 Northfield Rd)",
+    "ours": "",
+    "official": "The proposed culvert replacement is a 38-foot, 4-foot diameter precast reinforced concrete piped culvert with precast headwalls at both pipe ends.",
+    "note": "This engineering detail is absent from ours entirely; a reader wanting it should consult the official minutes or the recording near t=3437."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Wetlands replication ratio (763 Northfield Rd)",
+    "ours": "",
+    "official": "M. Lundsted indicated 2:1.",
+    "note": "The 2:1 replication ratio for the culvert project's wetlands mix plan is not in ours at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Wetlands replication ratio (1083 Northfield Rd)",
+    "ours": "",
+    "official": "M. Wilson asked for the replication ratio which is 1.6:1.",
+    "note": "The 1.6:1 replication ratio for the driveway project is not in ours at all; ours only mentions awaiting the peer reviewer's comments."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Solar system specifications (560 Mulpus Rd)",
+    "ours": "",
+    "official": "A Request for Determination of Applicability for 8.920 KW, Ground Mounted, Solar PV System (44 panels) with no battery in between the 100ft and 200ft Riverfront Area buffer zone",
+    "note": "The system's size (8.92 kW, 44 panels, no battery) is not in ours, which only records the vote's conditions."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair's name",
+    "ours": "not stated (self-identified only as \"I\" during roll call) (Chair)",
+    "official": "Jennifer Pewtherer",
+    "note": "The captions never caught the chair's name; the official minutes and roster identify her as Jennifer Pewtherer, who called the meeting to order."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vice Chair Richard Bursch's absence",
+    "ours": "",
+    "official": "Absent: R. Bursch",
+    "note": "Ours has no roll call and does not mention any absent member; official records Vice Chair Richard Bursch as absent. Not a contradiction, just missing from ours' attendee list."
+   },
+   {
+    "kind": "agree",
+    "about": "Member name (Larouche)",
+    "ours": "Mike Larouche (member)",
+    "official": "Michael Larouche",
+    "note": "Same person; \"Mike\" vs \"Michael\" is a trivial naming difference, not a real discrepancy."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:38:23Z",
+   "cost_usd": 0.40398999999999996
+  }
  }
 }

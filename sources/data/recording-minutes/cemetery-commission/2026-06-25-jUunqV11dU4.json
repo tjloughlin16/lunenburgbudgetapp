@@ -514,5 +514,261 @@
    "at": "2026-09-27T02:17:57Z",
    "cost_usd": 0.19762600000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06252026-7863",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2026-06-25-minutes-7863.txt",
+   "path": "sources/meetings/cemetery-commission/2026-06-25-minutes-7863.pdf"
+  },
+  "official_sha256": "a3e8b722288798fcf4e7fc75f07c5089259c9af401ccb3a040d8ea4496955135",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the core dollar figures — the $45,000 back-lot expansion transfer, the $3,500 monument invoice, and the new $1,200/$500/$300/$300 fee schedule — but diverge sharply in scope: our minutes capture extensive discussion (fund balances, competing bid figures, the Asco lot-return request, vault/natural-burial research, staffing numbers, a next-meeting date) the official minutes omit entirely, while the official minutes record a public comment, Flag Burning Day recognition, and a Facebook-posting discussion absent from ours. The one item a reader should check first is whether the $750/$450 sale-of-lots/perpetual-care fee split was actually voted (official) or is still pending town confirmation (ours) — that's a real outcome conflict, not a captioning slip.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 7,
+   "discrepancy": 5,
+   "only_in_ours": 10,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "vote to commit $45K from sale-of-lots fund for North Cemetery back-lot expansion",
+    "ours": "Commit up to $45,000 (from the sale-of-lots fund) toward the North Cemetery back-lot expansion project to go out to bid — passed",
+    "official": "David Dorren made a motion to allocate $45K - from the “Sale of Lots Fund” to DPW, for the North Cemetery Back Lot expansion, Donna Landry seconded the motion, AIF .",
+    "note": "Same vote, same amount and source fund; official frames it as an allocation to DPW while ours frames it as authorization to go to bid — not a substantive conflict.",
+    "t": 3745
+   },
+   {
+    "kind": "caption_error",
+    "about": "monument vendor name on the $3,500 invoice",
+    "ours": "Limestone/Leavitt Stone Monument",
+    "official": "David Dorren made a motion to pay $3500 invoice to Leominster Monument; Donna Landry seconded the motion AIF .",
+    "official_reading": "Leominster Monument",
+    "note": "The amount and the vote both match; the captions misheard the vendor's name 'Leominster' as 'Limestone'/'Leavitt Stone'.",
+    "t": 4383
+   },
+   {
+    "kind": "discrepancy",
+    "about": "what work the $3,500 invoice/headstone fix covers",
+    "ours": "Approve payment of $3,500 to Limestone/Leavitt Stone Monument for headstone correction, cleaning and engraving work, including the unmarked 1864 burial found in South Cemetery",
+    "official": "Todd Holman discussed ﬁxing the Levi Jr. headstone at the Fich Street Cemetery.",
+    "note": "Ours ties the invoice to an unmarked 1864 burial in South Cemetery; official separately records a Levi Jr. headstone fix at Fich (Fitch) Street Cemetery. Check the recording/invoice to confirm which cemetery and whose headstone the $3,500 actually paid for.",
+    "t": 4383
+   },
+   {
+    "kind": "agree",
+    "about": "new lot/burial fee amounts",
+    "ours": "Set new fees effective July 1, 2026: one-grave lot at $1,200 ($2,400 for the standard two-lot sale), full-body burial opening at $500, cremation opening at $300, and the second niche-wall opening at $300 (first opening still free) — passed",
+    "official": "(Single lot fee, two lot minimum, $1200.00 $750.00 to Sale of lots Fund, $450.00 to Perpetual Care Fund, $500 full body burial, $300 cremation, $300 Niche wall).",
+    "note": "The headline fee figures — $1,200 lot, $500 full body, $300 cremation, $300 niche wall — agree in both records.",
+    "t": 6647
+   },
+   {
+    "kind": "discrepancy",
+    "about": "whether the $750/$450 sale-of-lots/perpetual-care split was voted on",
+    "ours": "Proposed re-splitting of the new $1,200 lot fee between the sale-of-lots and perpetual-care accounts (previously $500/$300 split on the $800 fee) — discussed only, pending confirmation from the town (\"Marilyn\")",
+    "official": "$1200.00 $750.00 to Sale of lots Fund, $450.00 to Perpetual Care Fund",
+    "note": "Official records the $750/$450 split as part of the fee motion that passed (AIF); ours records the split as still pending town confirmation. Check whether the split was actually finalized at this meeting or is still awaiting confirmation.",
+    "t": 5784
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$20,000 previously pulled from sale-of-lots capital for South Cemetery gravestone straightening",
+    "ours": "Approximately $20,000 previously pulled from the sale-of-lots capital money to cover South Cemetery gravestone straightening work",
+    "official": "",
+    "note": "This prior transfer, discussed as already completed, is not mentioned anywhere in the official minutes.",
+    "t": 2511
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "account number for the $3,500 monument invoice",
+    "ours": "$3,500 Limestone Monument invoice paid out of the sale-of-lots account (referenced as account 8115)",
+    "official": "",
+    "note": "Official confirms the $3,500 payment but does not name an account number; verify against the town ledger if account 8115 matters for tracking.",
+    "t": 4463
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sims Cloud annual maintenance cost",
+    "ours": "$2,691",
+    "official": "Sims Cloud annual maintenance $2961, is it worth getting a license for Cemetery Division.",
+    "official_reading": "$2,961",
+    "note": "Digit transposition in the captions — 2,691 vs 2,961 — same figure, misheard.",
+    "t": 845
+   },
+   {
+    "kind": "discrepancy",
+    "about": "resolution of the Sims Cloud licensing discussion",
+    "ours": "Postpone the Sims Cloud/burial-search software license discussion to the next meeting so the vendor bill could be broken out.",
+    "official": "Mike Clark to ﬁnd out through Brandon Fiinley. Donna Landry to contact Brandon Finley and get a breakdown on costs.",
+    "note": "Ours records a formal postponement to the next meeting; official records specific follow-up assignments (Mike Clark and Donna Landry each to contact Brandon Finley) with no explicit 'postponed' language. Check the recording for how the item was actually left.",
+    "t": 1135
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "range of contractor bid figures discussed for the back-lot expansion",
+    "ours": "62,000, just under 79,000, 50,000, 15,000, 35,000, 35 to 40,000, approximately 40,000, 78,000, up to 45k, 45 thousand dollars",
+    "official": "",
+    "note": "Official records only the final $45K figure that was voted; the discussion of competing bid numbers does not appear.",
+    "t": 2491
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "perpetual care and sale-of-lots fund balances",
+    "ours": "241K, 106,000, 106, -7,500, 300 per lot, 14,700, 500 per lot, 10,000, 1,700, 1,400, 10k, 241",
+    "official": "",
+    "note": "None of these balance figures appear in the official minutes.",
+    "t": 3202
+   },
+   {
+    "kind": "discrepancy",
+    "about": "seasonal/part-time cemetery staffing count",
+    "ours": "19",
+    "official": "DPW currently has 3 part time workers, and a volunteer, and also receives assistance from participants from the Worcester County Sheriƒ’s Oƒice Community Service Program.",
+    "note": "Ours captions a figure of 19 in this discussion; official states 3 part-time workers plus a volunteer and Sheriff's-office community-service participants. Check the recording for what '19' actually referred to, since it does not match the official headcount.",
+    "t": 3936
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "additional figures discussed while setting new fees",
+    "ours": "800, 1750, 600, 1,200, 2,400, 200, 500, 100, 300, 1,000, $500",
+    "official": "",
+    "note": "Beyond the final fee amounts (which agree, see above), the intermediate numbers discussed do not appear in the official minutes.",
+    "t": 4985
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "request by the Asco family to return two North Cemetery lots",
+    "ours": "Return of two North Cemetery lots (Asco family): 25 years, 5 years, 12 hundred",
+    "official": "",
+    "note": "This entire topic, including the decision to ask the family to put the request in writing before a refund amount is set, is absent from the official minutes.",
+    "t": 4763
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "researching vault-burial requirements and natural burial rules",
+    "ours": "Look into whether Massachusetts law and Lunenburg's own rules currently require burial in a vault, and research natural burial rules through the Massachusetts Cemetery Association before proceeding.",
+    "official": "",
+    "note": "Not recorded in the official minutes at all.",
+    "t": 1846
+   },
+   {
+    "kind": "agree",
+    "about": "possibility of renting the mausoleum to funeral homes",
+    "ours": "Todd Holman to find out from local funeral directors what winter mausoleum rental for bodies might be worth, as possible revenue.",
+    "official": "Discussed the possibility of renting Mausoleum to funeral homes, who have requested the space.",
+    "note": "Same topic in both; official omits that Todd Holman specifically was tasked with following up and the 'winter' framing.",
+    "t": 1971
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "target timeline for putting the expansion out to bid",
+    "ours": "Try to get the back-lot expansion project out to bid within about a month and completed before winter.",
+    "official": "",
+    "note": "Official records the $45K vote but not this timeline goal.",
+    "t": 2553
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "accepting donated trees to reduce expansion contract cost",
+    "ours": "Accept donated trees (dogwood, red maple) to reduce the tree-removal cost in the expansion contract.",
+    "official": "",
+    "note": "Not mentioned in the official minutes.",
+    "t": 2784
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "date/time of next meeting",
+    "ours": "Next meeting set for July 30 at 6:00 p.m., to include wrapping up the Sims software question.",
+    "official": "",
+    "note": "Official minutes do not record a next-meeting date.",
+    "t": 6850
+   },
+   {
+    "kind": "only_in_official",
+    "about": "public comment thanking the commission",
+    "ours": "",
+    "official": "Dave Rodgers, of 82 Highland Street came to meeting to thank all for the upkeep of the cemetery and its improvement.",
+    "note": "This public comment does not appear anywhere in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "recognition for Flag Burning Day efforts",
+    "ours": "",
+    "official": "Mike Clark gave recognition and appreciation to John Bowen Jr., Todd Holman, The Scouts, Marines, Bill Barnard and the Cemetery commission for their eƒorts in Flag Burning Day.",
+    "note": "Our minutes only contain a passing, unclear reference to a commissioner having 'attended the flag ceremony' (heard as 'Don Landry') — this fuller recognition, and the name Bill Barnard, are only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "discussion of posting Commission messages on Facebook/Discussing Lunenburg",
+    "ours": "",
+    "official": "Discussed some of the issues and concerns on how to get messages out and posted from the Cemetery Commission on FB and Discussing Lunenburg.",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Todd Holman's title",
+    "ours": "Todd Holman (DPW Director / cemetery superintendent)",
+    "official": "Cemetery Superintendent: Todd Holman",
+    "official_reading": "Cemetery Superintendent (the DPW Director is a separate person, Bill Bernard)",
+    "note": "Ours conflates Todd Holman with the DPW Director title; official lists those as two different people."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee 'Dave'",
+    "ours": "Dave (commissioner)",
+    "official": "David Dorren, Vice-Chair",
+    "official_reading": "David Dorren",
+    "note": "Same person, captioned only by first name and without his Vice-Chair role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee 'Latonya'",
+    "ours": "Latonya (commissioner (name heard once; may be same person as \"Donna\"))",
+    "official": "Donna Landry, Clerk",
+    "official_reading": "Donna Landry",
+    "note": "No 'Latonya' appears among the official attendees; this is almost certainly a mishearing of Donna Landry."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee 'Mike'",
+    "ours": "Mike (commissioner (works with town financial/Munis figures))",
+    "official": "Mike Clark, Chair",
+    "official_reading": "Mike Clark",
+    "note": "Ours never identifies him as the meeting's Chair, unlike official."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee 'Bill'",
+    "ours": "Bill (commissioner or town finance official (unclear which))",
+    "official": "DPW Department Director: Bill Bernard",
+    "official_reading": "Bill Bernard",
+    "note": "Official resolves the uncertainty in ours: Bill Bernard is the DPW Department Director, not a commissioner."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "commissioner named as having attended the flag ceremony",
+    "ours": "Don Landry (commissioner (named by another commissioner as having attended the flag ceremony))",
+    "official": "Mike Clark gave recognition and appreciation to John Bowen Jr., Todd Holman, The Scouts, Marines, Bill Barnard and the Cemetery commission for their eƒorts in Flag Burning Day.",
+    "note": "No 'Don Landry' appears in the official attendee list; the person credited for Flag Day in the official minutes is Bill Barnard. Check the recording — this may be a mishearing of that name, or an attendee the official minutes omitted."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee John Bowen Jr.",
+    "ours": "",
+    "official": "Mike Clark gave recognition and appreciation to John Bowen Jr., Todd Holman, The Scouts, Marines, Bill Barnard and the Cemetery commission for their eƒorts in Flag Burning Day.",
+    "note": "John Bowen Jr. is named in the official minutes (also referenced in a correction to the April minutes) but does not appear anywhere in our attendee list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:11:19Z",
+   "cost_usd": 0.403258
+  }
  }
 }

@@ -487,5 +487,178 @@
    "at": "2026-09-27T11:35:56Z",
    "cost_usd": 0.191778
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12112025-7556",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-12-11-minutes-7556.txt",
+   "path": "sources/meetings/cemetery-commission/2025-12-11-minutes-7556.pdf"
+  },
+  "official_sha256": "9790f58d76ad08cb57f5406b916b7d0ac12eb99e62304e711faa5d95af5e5bb1",
+  "coverage": "full",
+  "summary": "The two records agree closely on the core budget figures, both non-procedural votes, and most decisions — several apparent differences resolve to caption/digit errors (a fund balance, a wall-cost estimate, a monument company's name, the lighting total) rather than real disagreements. The two things a reader should actually check: whether \"Dave\" (listed as a present commissioner in ours) is David Dorren, whom the official minutes mark \"not present,\" and whether the electrician cost really increased/changed vendors and whether the payment forms were signed during the meeting or only after the work, since ours and the official minutes tell those two stories differently.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "attendee: Dave / David Dorren",
+    "t": 0,
+    "ours": "Dave (commissioner) — listed among those present",
+    "official": "David Dorren, Vice-Chair (not present)",
+    "note": "Ours lists a 'Dave' as attending while the official letterhead explicitly marks David Dorren, the Vice-Chair, as not present — check the recording's roll/attendance moment to see whether a 'Dave' actually spoke or was just named in passing."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee: Bill Bernard",
+    "ours": "",
+    "official": "Bill Bernard, DPW Director",
+    "note": "Bill Bernard is listed as present and gives the North Lot Expansion engineering update (section 12); our minutes never mention him."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: Fish Street stone restoration, $3,020",
+    "t": 3160,
+    "ours": "Approve the work ... for the Fish Street monuments and plaque — passed",
+    "official": "unanimously approved the $3,020 expenditure for restoration work at Fish Street Cemetery",
+    "note": "Outcome and amount match; only the vendor name differs (see caption_error above)."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: revised lighting-project electrician cost",
+    "t": 3354,
+    "ours": "Approve the increased cost for the different electrician on the solar lighting project — passed",
+    "official": "Donna Landry made a motion, Mike Clark seconded, unanimously approved the revised amount",
+    "note": "Both records show the same vote passing; official adds the mover/seconder that ours omits."
+   },
+   {
+    "kind": "caption_error",
+    "about": "sale-of-lots fund new balance",
+    "t": 539,
+    "ours": "94,226",
+    "official": "New balance: ~$94,326",
+    "official_reading": "$94,326",
+    "note": "A digit transposition (94,226 vs 94,326) consistent with a misheard/mistyped digit, not a different balance."
+   },
+   {
+    "kind": "agree",
+    "about": "perpetual care fund figures",
+    "t": 560,
+    "ours": "23482.74, 18,625, 4,857.74",
+    "official": "Available interest: $23,482.74; Spent to date: $18,625; Remaining: $4,857.74",
+    "note": "All three figures match exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "trust fund cabinet: extra figure 700",
+    "t": 583,
+    "ours": "1744, 700",
+    "official": "$1,744 for the storage cabinet has been paid",
+    "note": "Official confirms $1,744 but never mentions a second figure of $700; check the recording near t=583 for what that number referred to."
+   },
+   {
+    "kind": "agree",
+    "about": "current burial-rate split total",
+    "t": 667,
+    "ours": "$800, 500",
+    "official": "Current split: $500 Sale of Lots / $300 Perpetual Care",
+    "note": "$500 matches directly, and $500+$300=$800 accounts for the other figure heard; likely the total rate was stated alongside the split."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FY25 lot sales revenue figures",
+    "t": 748,
+    "ours": "18,300, 8,700, 3,800",
+    "official": "Burials revenue: $3,800",
+    "note": "Only $3,800 is corroborated by the official minutes; $18,300 and $8,700 appear nowhere in the official text — check the recording around t=748 for what those two figures actually referred to."
+   },
+   {
+    "kind": "agree",
+    "about": "Fish Street plaque cost correction",
+    "t": 364,
+    "ours": "2,000, 1,200, $800",
+    "official": "Actual plaque cost: $1,200 (not $2,000); Additional work: $800",
+    "note": "All three figures match exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "lift rental cost heard mid-discussion",
+    "t": 3251,
+    "ours": "276",
+    "official": "Lift rental (Mackie's): $260.98 (after removing tax)",
+    "official_reading": "$260.98",
+    "note": "Close but garbled digits for the same lift-rental figure that appears correctly later at t=3604 ($260.98)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "lighting project total",
+    "t": 3251,
+    "ours": "1,02, $1,0003",
+    "official": "Total: $1,003",
+    "official_reading": "$1,003",
+    "note": "Both garbled renderings are consistent with a misheard/mistyped $1,003 total."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "electrician cost change / possible vendor switch",
+    "t": 3251,
+    "ours": "Approve the increased cost for the different electrician ... figures heard: 800, 650",
+    "official": "Electrician (Dan Haney Electrical): $400",
+    "note": "Ours implies a vote about a cost increase from switching to a different electrician (with figures like $650/$800 in play); the official minutes state a single flat $400 electrician line with no mention of a vendor switch or increase — check the recording near t=3251-3395 for whether an original quote was replaced."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "lift rental pre-tax figure",
+    "t": 3604,
+    "ours": "$275.81 (pre-tax)",
+    "official": "",
+    "note": "Official only states the post-tax $260.98 figure; the pre-tax amount is an explanatory detail only in ours, not a conflict."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "discussion of moving capital funds from south cemetery to Fish Street",
+    "t": 2435,
+    "ours": "Remaining capital funds discussed as needing to be moved from planned south cemetery work toward finishing the Fish Street project before town meeting — 6500 (discussed only)",
+    "official": "",
+    "note": "This discussion, including the $6,500 figure, does not appear anywhere in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: Fish Street bronze plaque ordering deferred pending Goodrich family plaque",
+    "t": 3079,
+    "ours": "Ordering of the Fish Street bronze plaque was deferred until the wording/layout for the Goodrich family plaque is finalized, but the monument company was authorized to proceed with the stone work",
+    "official": "",
+    "note": "The official minutes record only the $3,020 stone-restoration vote and never mention a bronze plaque, a deferral, or the Goodrich family — worth checking since it affects what was actually authorized versus deferred."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "timing of lighting-project reimbursement/payment forms",
+    "t": 3395,
+    "ours": "Reimbursement forms for the lighting-project vendors would be filled out and signed immediately after the work is done, rather than waiting for the normal warrant cycle",
+    "official": "Payment forms were completed during the meeting to expedite warrant processing",
+    "note": "Ours describes this as a future action to happen after the work; official states the forms were already completed during the meeting itself — check the recording for the actual timing."
+   },
+   {
+    "kind": "agree",
+    "about": "decision: next meeting January 22",
+    "t": 4560,
+    "ours": "The next regular Cemetery Commission meeting was set for January 22",
+    "official": "January 22 - Chair Mike Clark will attend via Zoom",
+    "note": "Date matches; official adds that the chair will attend remotely, which ours omits but does not contradict."
+   }
+  ],
+  "quotes_not_in_official_dropped": 8,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:03:04Z",
+   "cost_usd": 0.344902
+  }
  }
 }

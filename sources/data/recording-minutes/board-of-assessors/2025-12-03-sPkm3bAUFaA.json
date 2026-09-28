@@ -498,5 +498,230 @@
    "at": "2026-09-27T11:41:54Z",
    "cost_usd": 0.19567
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12032025-7538",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-12-03-minutes-7538.txt",
+   "path": "sources/meetings/board-of-assessors/2025-12-03-minutes-7538.pdf"
+  },
+  "official_sha256": "5a4f758c5eb931facb0c505f763cd85f3b1c88dc1f762dbbc6efc75df820c24f",
+  "coverage": "partial",
+  "summary": "The two records cover the same open-session agenda closely and agree on every figure that appears in both (excise abatements, commitment #6, home value/tax bill dollars), but ours is far richer on dollar figures from the report-out (forestry sale, roll-back rate, exemption threshold, CIP split) that the official minutes never print, while the official minutes alone record the executive session — five real estate exemption votes — which the recording-based minutes have no way to capture. The one thing a reader should check first is the FY2026 tax rate (two different numbers heard, \"1439\" and \"1436,\" against the official's single $14.39) and whether \"average\" vs. \"median\" single-family home value is a genuine difference in the underlying report.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 12,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Leond",
+    "official": "Chair Brian Laffond,",
+    "official_reading": "Brian Laffond",
+    "note": "Same person, misheard surname; captions rendered \"Leond\" for \"Laffond\".",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "New member's name",
+    "ours": "Brian Marle Chica",
+    "official": "Member Brian Marple,",
+    "official_reading": "Brian Marple",
+    "note": "Captions garbled \"Marple\" into \"Marle Chica\"."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name",
+    "ours": "Sarah Cameron",
+    "official": "Vice Chair Sarah Cammer,",
+    "official_reading": "Sarah Cammer",
+    "note": "Misheard surname, Cameron for Cammer."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sarah Cammer's title",
+    "ours": "member",
+    "official": "Vice Chair Sarah Cammer,",
+    "note": "Ours does not capture that Cammer holds the Vice Chair title; check the recording for whether it was stated aloud."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal assessor's name",
+    "ours": "Linda",
+    "official": "Principal Assessor Lynda Cajka.",
+    "official_reading": "Lynda Cajka",
+    "note": "First name close (Linda/Lynda); surname Cajka entirely missing from captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Staff member's name",
+    "ours": "Robin",
+    "official": "Robin Nano has processed commitment number 6 of 2025.",
+    "official_reading": "Robin Nano",
+    "note": "Surname dropped by captions; also note the official \"Present Members\" list does not include Robin Nano at all, so her attendance status (staff vs. board member) should be checked."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FY2026 tax rate figure",
+    "ours": "1439, 1436",
+    "official": "a residential single tax rate that is estimated to be around $14.39 per thousand",
+    "note": "Ours records two distinct numbers (14.39 and 14.36) where official states only one ($14.39); check the recording near t=558 for whether a second, different rate figure was actually spoken (e.g., an earlier draft rate) or this is a caption duplication.",
+    "t": 558
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Average vs. median single-family home value",
+    "ours": "Average single-family home value and tax bill, FY2026: $517,296, $7,443.89",
+    "official": "The median single family home value for FY 2026 was $517,296 and the average tax was $7,443.89.",
+    "note": "The dollar figures agree exactly, but ours labels the home value figure \"average\" while official labels it \"median\" (and mixes average for the tax bill) — average and median are different statistics; check which term the assessor actually used.",
+    "t": 578
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Year-over-year value change figures",
+    "ours": "13,000, 500,000, 3.3%, 36",
+    "official": "",
+    "note": "Official minutes contain no year-over-year value-change statistic at all; verify against the recording that this figure was reported and not conflated from another topic.",
+    "t": 610
+   },
+   {
+    "kind": "agree",
+    "about": "Motor vehicle excise tax abatements count",
+    "ours": "35",
+    "official": "35 motor vehicle excise tax abatements were received.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Excise tax commitment #6 of 2025",
+    "ours": "442, $44,864.32",
+    "official": "There were 442 excise tax bills that totaled $44,864.32.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter land forestry property sale price/acreage",
+    "ours": "700,000, 44 acres",
+    "official": "Lynda Cajka came across a property that was coded as forestry that was sold in October that had a lean, no application, no new lean, no affidavit.",
+    "note": "Official confirms the forestry-coded property sale but states no sale price or acreage; check the recording for these figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Forestry plan certificate change cost",
+    "ours": "$150",
+    "official": "",
+    "note": "No mention of this fee anywhere in official minutes; verify against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Roll-back tax terms on chapter land",
+    "ours": "Five years, 5% interest",
+    "official": "",
+    "note": "Not mentioned in official minutes at all; verify against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Personal property tax exemption threshold",
+    "ours": "$2,500",
+    "official": "",
+    "note": "Not mentioned in official minutes, which cover Clause 18 only as ongoing research with no dollar threshold; verify against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Residential vs. CIP tax share percentages",
+    "ours": "92%, 8%, 91, 9%, 1%",
+    "official": "",
+    "note": "Not mentioned anywhere in official minutes; verify against the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Abutters list requests count",
+    "ours": "",
+    "official": "The office has received 9 abutters list requests.",
+    "note": "Ours has no corresponding figure; likely simply omitted rather than mis-transcribed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Resubmission of FY2026 tax classification data",
+    "ours": "Resubmit the FY2026 tax classification data to the Department of Revenue a second time and await approval.",
+    "official": "The tax classification hearing took place last week and is currently awaiting approval from the state.",
+    "note": "Ours states data was being resubmitted a second time; official only says the hearing occurred and approval is pending, with no mention of a resubmission. Check the recording for whether a prior rejection/resubmission was actually discussed."
+   },
+   {
+    "kind": "agree",
+    "about": "Neighborhood review start date",
+    "ours": "Begin planning the neighborhood review once billing is out, targeting the first of the year, pending securing a resource.",
+    "official": "The anticipated review start date is the beginning of January, 2026.",
+    "note": "Target start date (beginning of January) matches; official omits the conditions (billing done, resource secured) that ours records."
+   },
+   {
+    "kind": "agree",
+    "about": "Certified letter to buyer/lawyer re missing lien",
+    "ours": "Send a certified letter to the property buyer/lawyer regarding the missing lien and forestry plan update rather than involve town counsel yet.",
+    "official": "A certified letter was mailed, and Lynda Cajka will follow up.",
+    "note": "The core action (certified letter sent) matches in both."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Deferring to town counsel",
+    "ours": "rather than involve town counsel yet",
+    "official": "",
+    "note": "Official does not mention town counsel being considered or deferred; verify against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Circulating Clause 18 research copies",
+    "ours": "Have the principal assessor make copies of the clause 18 research and circulate it to the full board.",
+    "official": "Continued research of Clause 18.",
+    "note": "Official lists Clause 18 research only as an ongoing task with no mention of making/circulating copies; verify against the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Code-of-conduct policy taken under advisement",
+    "ours": "Take the draft code-of-conduct policy under advisement and bring feedback to the next meeting.",
+    "official": "Lynda Cajka provided a sample of the policies that the town of Littleton developed. The Board will review and discuss at a future meeting.",
+    "note": "Both records agree the policy sample is deferred for future board review/discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Documenting new office procedures going forward",
+    "ours": "Going forward, document all new office procedures/policies (rather than retroactively converting old binder material) and link to OneDrive.",
+    "official": "Lynda Cajka confirms the documents are saved on the OneDrive and are organized.",
+    "note": "Official confirms OneDrive organization but records no explicit forward-looking documentation policy decision; verify against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Idea of requesting town funding for online policies binder",
+    "ours": "Keep in mind, but do not yet act on, the idea of asking the town for funding to put the full policies binder online.",
+    "official": "Brian Laffond questions if these documents and information can be added to the website. Lynda Cajka confirms the documents are saved on the OneDrive and are organized. Additionally, uploading everything to the website would be tedious.",
+    "note": "Official records discussion of putting the binder online but no mention of seeking town funding for it; verify against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reason for skipping February 18 meeting",
+    "ours": "Set February meetings for February 4 and February 25, skipping February 18 due to school vacation week.",
+    "official": "Additional meetings were scheduled for February 4, 2026, and February 25, 2026.",
+    "note": "The two February dates agree exactly; official gives no reason for skipping February 18, so the vacation-week rationale should be checked against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dropping fixed end times from agenda postings",
+    "ours": "Stop listing a fixed end time on future meeting agenda postings.",
+    "official": "",
+    "note": "Not mentioned anywhere in official minutes; verify against the recording."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:29:19Z",
+   "cost_usd": 0.287028
+  }
  }
 }

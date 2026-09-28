@@ -433,5 +433,149 @@
    "at": "2026-09-27T19:30:55Z",
    "cost_usd": 0.200974
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05192025-7225",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-05-19-minutes-7225.txt",
+   "path": "sources/meetings/board-of-assessors/2025-05-19-minutes-7225.pdf"
+  },
+  "official_sha256": "9379eb4bffb5b2e6582c06c224856e1bcb428165dd524bebaa8af770a96ea4e5",
+  "coverage": "full",
+  "summary": "The two records agree closely on every substantive vote our minutes captured — the chair/vice-chair elections and all three chapter-land actions — with only minor caption slips in names, an acreage figure, and a digit-grouping error in the new-growth figure. The one real gap: the official minutes record two additional votes (approving the April 16 and May 5 executive-session minutes) that our minutes never log as votes, only as a general labeling decision, and the official minutes carry a large block of status-report and administrative content (abatement/growth detail, minutes-review postponements, Clause 41/17 warrant approval, postponed topics) that our minutes omit entirely.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 5,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: elect chair",
+    "ours": "[t=275] Nominate and elect the chair for the coming year — passed",
+    "official": "Sarah Cammer nominated Brian Laffond for Chair, seconded by Brian Laffond. All in favor.",
+    "note": "Same vote and outcome; ours just doesn't name Brian Laffond."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: elect vice chair",
+    "ours": "[t=285] Nominate and elect Sarah as vice chair — passed",
+    "official": "Brian Laffond nominated Sarah Cammer for Vice Chair, seconded by Sarah Cammer. All in favor.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: chapter 61 forestry application, 150 White Street",
+    "ours": "[t=1590] Approve chapter 61 (forestry) application for 150 White Street — passed",
+    "official": "There was a motion to approve the application for 150 White Street by Sarah Cammer, seconded by Brian Laffond. All in favor.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: chapter 61B recreation application, 233 Island Road",
+    "ours": "[t=1779] Accept 233 Island Road into chapter 61B passive recreation land — passed",
+    "official": "There was a motion to approve the application for 233 Island Road by Sarah Cammer, seconded by Brian Laffond. All in favor.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: release chapter land lien, 100 Townsend Road",
+    "ours": "[t=2098] Accept release of the chapter land lien on 100 Towns[end] Harbor Road — passed",
+    "official": "There was a motion to accept the release of the lien on 100 Townsend Road by Sarah Cammer, seconded by Brian Laffond. All in favor.",
+    "note": "Same vote and outcome; the address discrepancy is handled separately as a caption error."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Acreage, chapter 61 forestry application at 150 White Street",
+    "ours": "[t=1508] almost 54 acres",
+    "official": "The Board reviewed the chapter land application for 53 acres of forestry at 150 White Street.",
+    "official_reading": "53 acres",
+    "note": "Likely a misheard count ('53' captioned as 'almost 54'); check the recording at t=1508 against the application."
+   },
+   {
+    "kind": "agree",
+    "about": "Acreage, chapter 61B application at 233 Island Road",
+    "ours": "[t=1631] 8.9 acres",
+    "official": "roughly 9 recreational acres at 233 Island Road",
+    "note": "8.9 acres rounds to 'roughly 9' — consistent figures, not a discrepancy."
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY2026 real estate exemptions and abatements counts",
+    "ours": "[t=379] 13, 132, 30",
+    "official": "14 abutters list requests and 30 motor vehicle excise tax abatements have been received. There were 132 real estate exemptions for FY2026.",
+    "official_reading": "14 abutters list requests",
+    "note": "The 132 (real estate exemptions) and 30 (motor vehicle excise abatements) match; only the abutters-list count was misheard as 13 instead of 14."
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY2026 new growth assessed value",
+    "ours": "[t=659] $333,842, 23,248,70, 400,000",
+    "official": "Currently the growth is $333,842.29 which is an assessed value of $23,248,070. It was estimated to be $400,000 for FY 2026.",
+    "official_reading": "$23,248,070",
+    "note": "Classic digit-grouping slip — a zero dropped from '23,248,070' captioned as '23,248,70'; the $333,842 and $400,000 figures match (cents truncated, immaterial)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Address of the released chapter land lien",
+    "ours": "100 Towns[end] Harbor Road",
+    "official": "100 Townsend Road",
+    "official_reading": "100 Townsend Road",
+    "note": "Captions inserted an extra word ('Harbor') not in the official address; check the recording at t=2098."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair's name",
+    "ours": "Sarah / Miss Cameron (vice chair)",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "Surname misheard as 'Cameron' instead of 'Cammer.'"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair's and principal assessor's full names",
+    "ours": "the chair; the principal assessor",
+    "official": "Present Members: Chair Brian Laffond, Vice Chair Sarah Cammer, Principal Assessor Lynda McQuade",
+    "note": "Ours never attempts these two names, only generic titles; not a misheard name so treated as an omission rather than a caption error."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: check on large-format plotter/printer access",
+    "ours": "[t=925] Check with Brian at the land use department about access to a large-format (11x17 or bigger) plotter/printer for mapping work.",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes; likely an informal aside not recorded as town business."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Commentary on whether lien releases require a formal vote",
+    "ours": "[t=2013] Documentation releasing a chapter land lien does not require a formal board vote when it is simply being signed/filed, except where the board chose to vote for clarity.",
+    "official": "",
+    "note": "Explanatory aside captured in our minutes; the official minutes just record the lien-release vote itself without this procedural commentary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Timeline for mailing chapter land renewal applications",
+    "ours": "[t=2313] Chapter land renewal applications will be mailed out to property owners in July or August ahead of the December 1st deadline.",
+    "official": "",
+    "note": "Official minutes discuss chapter land status (unreturned applications, properties without liens) but do not mention this July/August mailing plan."
+   },
+   {
+    "kind": "agree",
+    "about": "Upcoming meeting dates",
+    "ours": "[t=2504] Set upcoming meeting dates as June 11th, July 16th, and August 13th, moving to a once-per-month summer schedule.",
+    "official": "Upcoming Meetings: June 11, 2025 (Tentatively scheduled), July 16, 2025, and August 13, 2025.",
+    "note": "Same three dates; official adds that June 11 is only tentatively scheduled, a nuance ours omits, but not a substantive conflict."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:12:55Z",
+   "cost_usd": 0.268884
+  }
  }
 }

@@ -492,5 +492,144 @@
    "at": "2026-09-27T12:22:37Z",
    "cost_usd": 0.186942
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09252025-7418",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-09-25-minutes-7418.txt",
+   "path": "sources/meetings/cemetery-commission/2025-09-25-minutes-7418.pdf"
+  },
+  "official_sha256": "cb4122107ed0ee2d39854e8d9a2ea4b22514b5c852c3f0931b1cc140760515b7",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the small core of substantive actions — the $7,500 hedge-trimming vote and the two-year trim cycle — but diverge heavily everywhere else: ours carries a dozen dollar figures and decisions the official minutes never mention, the official minutes carry several agenda items (flailing, headstone repairs, two supply purchases, two missing attendees) ours never mention, and the one dollar figure both records share — the $10,000 — is attached to two different stated purposes. The single thing a reader should check first is that $10,000 vote: ours calls it a draw to cover hedge trimming and grounds work, the official minutes call it a warrant-article transfer from the Sale of Lots Fund to the Capital Article Fund.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 10,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "hedge trimming cycle decision",
+    "ours": "[t=1644] Hedge trimming will be done on a two-year cycle going forward.",
+    "official": "Agreed we needed to trim every two years to keep them looking their best.",
+    "note": "Matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "perpetual care / capital transfer fund allocation",
+    "ours": "[t=407] Prior year's approved expenditures allocated between the perpetual care fund and the capital transfer fund — 9,435 / 4,364 (discussed only)",
+    "official": "",
+    "note": "Official minutes only say generically that account funds and expenditures were reviewed (item 5); no figures given, so nothing to check this against."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "amount owed on approved projects",
+    "ours": "[t=382] Remaining amount owed on approved projects: $13,79964",
+    "official": "",
+    "note": "Likely a garbled digit grouping ($13,799.64) but the official minutes give no figure to confirm the reading against."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "fund balances after allocation",
+    "ours": "[t=428] Remaining balances after allocation: 20,78, 10,643, 10,606, 6,241",
+    "official": "",
+    "note": "No corresponding figures in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "funds left after committed expenses",
+    "ours": "[t=591] Funds left after committed expenses: 16, 168, 137.99, 13550, 16885",
+    "official": "",
+    "note": "No corresponding figures in the official minutes; several of these look like caption fragments of larger dollar amounts but there is nothing official to check them against."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "sale of lots fund balance",
+    "ours": "[t=759] Sale of lots fund balance: 94,494",
+    "official": "",
+    "note": "Not stated in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "backlot expansion bid timing decision",
+    "ours": "[t=1250] Backlot expansion bid work will be scheduled for summer rather than winter.",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all, which only describe the wetlands flagging and expected preliminary plan timeline."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "remaining backlot expansion capital funds",
+    "ours": "[t=1418] Remaining backlot expansion capital funds: 35,000, 38,000, 3435",
+    "official": "",
+    "note": "No corresponding figures in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "hedge planting cost figure",
+    "ours": "[t=1750] Hedge trimming and hedge planting expenditures: 5875, $7,500",
+    "official": "Bill Bernard and Todd Holman also informed us that the replacement shrubs were received and planted in front of the North Cemetery.",
+    "note": "The $7,500 matches the hedge-trimming vote already logged as agreeing; the 5875 figure (likely the planting cost) has no official figure to check against."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "next meeting dates",
+    "ours": "[t=3595] Next meetings set for October 30th and November 19th, with a target of meeting again in the second week of December rather than skipping to February.",
+    "official": "",
+    "note": "The official minutes contain no scheduling item for future meetings."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "SIMS/CIMS training session not to be publicized or recorded",
+    "ours": "[t=3874] A SIMS software training session will be scheduled separately and will not be publicized or recorded as a regular open meeting.",
+    "official": "",
+    "note": "The official minutes list CIMS Software only as a reviewed budget item; the plan to hold an unpublicized, unrecorded training session is not mentioned at all — worth checking the recording directly since it is a decision with no paper trail."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bill's title/role",
+    "ours": "Bill (sexton/superintendent (grounds, burials, cremations))",
+    "official": "DPW Department Director: Bill Bernard / Cemetery Superintendent: Todd Holman",
+    "note": "Ours attributes a superintendent role and sexton duties to Bill, but the official minutes separate two people and titles — Bill Bernard as DPW Department Director and Todd Holman as Cemetery Superintendent — check the recording for how Bill introduced himself and whether Todd Holman was present and speaking."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee Todd Holman",
+    "ours": "",
+    "official": "Cemetery Superintendent: Todd Holman",
+    "note": "Todd Holman is named repeatedly in the official minutes as an active participant (engineering update, hedge/shrub update, headstone repairs) but does not appear in our attendee list, possibly folded into \"Bill\" — see the Bill title discrepancy above."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "flailing (overhanging tree/branch trimming) completed",
+    "ours": "",
+    "official": "Flailing completed (trimming overhanging trees/shrubs/branches over the stone walls next to cemetery internal roadways) in both North and South Cemeteries.",
+    "note": "Not mentioned in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "headstone repairs discussion",
+    "ours": "",
+    "official": "Todd Holman reviewed and discussed necessary headstone repairs for Fish Street Cemetery, adult and children's headstones, and headstone in South Cemetery. Plaques will need to be inscribed by Leominster Monument/Vitelli Monument.",
+    "note": "Not mentioned in our minutes; distinct from the \"South Cemetery stone wall repair\" figures ours records, which concern a wall rather than headstones."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Memorial Day Flowers and Fireproof File Cabinet line items",
+    "ours": "",
+    "official": "Reviewed account funds and expenditures including: *Memorial Day Flowers *Fireproof File Cabinet",
+    "note": "Neither item appears anywhere in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:57:01Z",
+   "cost_usd": 0.28296200000000005
+  }
  }
 }

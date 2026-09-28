@@ -286,5 +286,125 @@
    "at": "2026-09-27T12:42:34Z",
    "cost_usd": 0.18552
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08142025-7346",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-08-14-minutes-7346.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-08-14-minutes-7346.pdf"
+  },
+  "official_sha256": "df6c8d8f61c73c1dcd1c9e1de3ef7730bf7c75728b434a29c6e87d78f335efc8",
+  "coverage": "partial",
+  "summary": "The two records agree on the substance of both recorded votes and the September 11 meeting date, but our minutes carry several specific action-item details (who drafts what, who represents APDC where) that the official minutes either omit or attribute differently, and the official minutes hold a large block of Master Plan Steering Committee discussion and an Old Business merger update that our minutes do not capture at all. The one thing to know: check the 50 Main Street letter and the historic-district-boundary item against the recording — our minutes and the official minutes disagree on who is tasked with each and on some of the specifics.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: 3 Main Street window replacement DoA",
+    "ours": "[t=392] Approve the determination of applicability for window replacement at 3 Main Street — passed",
+    "official": "Motion to approved by McGrath, seconded by Lloyd, Approved by all.",
+    "note": "Same vote, same outcome (approved unanimously); both records agree on the substance."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mover/seconder, DoA vote",
+    "ours": "",
+    "official": "Motion to approved by McGrath, seconded by Lloyd, Approved by all.",
+    "note": "Official names the mover and seconder for the 3 Main Street vote; our minutes record only the outcome. Not a substantive conflict, just missing detail."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: APDC representative on Municipal Building Design Committee",
+    "ours": "[t=648] Approve an APDC member (the chair) to represent the commission on the Lunenburg Municipal Building Design Committee — passed",
+    "official": "Motion to approve member Sculimbrene to represent the APDC on the LMDC by member Lloyd, seconded by McGrath, approved by all.",
+    "note": "Both records agree the chair (Sculimbrene) was approved to represent APDC on the committee, unanimously."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mover/seconder, LMDC representative vote",
+    "ours": "",
+    "official": "Motion to approve member Sculimbrene to represent the APDC on the LMDC by member Lloyd, seconded by McGrath, approved by all.",
+    "note": "Official names Lloyd as mover and McGrath as seconder; ours has no mover/seconder detail for this vote."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Tony Skellenbury (chair)",
+    "official": "Anthony Sculimbrene, Chairman",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Same person (the chair) — captions misheard the surname; no substantive issue."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member William's surname",
+    "ours": "William (member)",
+    "official": "William Lloyd, Clerk",
+    "official_reading": "William Lloyd",
+    "note": "Captions caught the first name but dropped the surname (and the fact he is Clerk, not just a member) — same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: review Master Plan items before September meeting",
+    "ours": "[t=913] Members agreed to review the two APDC-assigned Master Plan recommendation items in the spreadsheet before the September meeting.",
+    "official": "The APDC members will review the questions at own leisure and discuss at the September meeting and vote on committees' feedback to the MPSC.",
+    "note": "Core decision matches (review before September, vote on committee feedback then); official does not confirm the specific count of 'two' items, worth a quick check of the spreadsheet referenced on the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: chair to draft Master Plan response language",
+    "ours": "[t=2863] Chair will draft response language for the two master plan recommendations based on tonight's discussion, to bring to the September meeting for a committee vote.",
+    "official": "",
+    "note": "Official records only that members will review and vote on feedback at the September meeting; it does not record the chair being tasked with drafting response language. Check the recording at t=2863 to confirm this specific assignment was actually made."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: APDC representative for 'Committee Confidential' interview series",
+    "ours": "[t=2948] William agreed to represent the APDC in the town's 'Committee Confidential' interview series; chair will forward his contact info to the organizer.",
+    "official": "Public Access Channel (PAC) has asked to interview committees to give input on the activities.",
+    "note": "Official records the PAC request but not who was designated to represent APDC or that contact info would be forwarded. Check the recording to confirm William was actually the one who agreed, since this detail is entirely absent from the official record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Letter to 50 Main Street property owner",
+    "ours": "[t=3216] Chair will draft a letter to the property owner at 50 Main Street requesting a meeting to discuss the condition of the church steeple/cupola.",
+    "official": "Member Lockwood's recommends that we send a formal letter inviting them to out next meeting to discuss way forward. Will see what response we get, and make next steps as needed.",
+    "note": "Both records agree a letter will be sent, but they disagree on who is tasked with drafting it (chair vs. a recommendation by Lockwood) and on the stated purpose (steeple/cupola condition vs. general 'way forward'). Check the recording to confirm the drafter and the letter's actual subject."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "[t=3320] Next APDC meeting set for September 11.",
+    "official": "Next Meeting: Meeting Schedule: Thursday, September 11, 2025",
+    "note": "Both records agree on the September 11 date."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Historic district boundary extension down Mass Ave",
+    "ours": "[t=3463] Chair will raise with the Planning Board, ahead of the September meeting, a possible extension of the historic district boundary down Mass Ave to the Chestnut Street intersection, to be put on the September agenda.",
+    "official": "Need to discuss the extension of the historic district farther down Mass Ave. at next meeting. a. Extending to the cross street to Chestnut, or police station",
+    "note": "Official does not mention the chair raising this with the Planning Board separately, and it lists an alternate possible endpoint ('police station') that our minutes omit entirely. Check the recording to confirm whether Planning Board outreach was actually decided and whether the police station was discussed as an alternate boundary point."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "APDC/Historical Commission merger status",
+    "ours": "",
+    "official": "Met with town counsel about the merger, the Monday after our last meeting. He is working on a consolidate merger plan for the two committees. Was unaware of some of the ease of efforts to join.",
+    "note": "A status update on the merger with the Historical Commission is in the official minutes but entirely absent from ours — not a vote or firm decision, so this is a coverage gap rather than a discrepancy."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T12:58:56Z",
+   "cost_usd": 0.275244
+  }
  }
 }

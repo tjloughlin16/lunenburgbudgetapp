@@ -417,5 +417,142 @@
    "at": "2026-09-27T02:53:07Z",
    "cost_usd": 0.193614
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03182026-7715",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-03-18-minutes-7715.txt",
+   "path": "sources/meetings/conservation-commission/2026-03-18-minutes-7715.pdf"
+  },
+  "official_sha256": "5b5f36290e93eb8deb38263dd9d00e83aa39546fcbe66682a0e650e674106a83",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the votes that both capture — six continuances/ratifications, all 4-0 — and most caption mismatches are simple misheard names, not substantive errors. The one thing to check: the official minutes record a continuance of the 860 New West Townsend Road NOI (no formal motion/vote block shown) that is entirely absent from our recording-based minutes, and several process/budget decisions and a $300 fine figure for 314 Highland Street appear in only one record.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 5,
+   "only_in_ours": 0,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Jennifer Futher (chair)",
+    "official": "Call to Order at 7:13pm by J. Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Misheard surname; role (chair) matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name / role",
+    "ours": "Andrea Baron (member)",
+    "official": "A. Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Misheard surname; role matches (Member)."
+   },
+   {
+    "kind": "agree",
+    "about": "Member name and role",
+    "ours": "Mike Larouche (member)",
+    "official": "Michael Larouche, Clerk",
+    "note": "Name matches; official adds the title Clerk which ours does not capture, but this is a minor role omission rather than a naming error."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation agent's name",
+    "ours": "Harlin (conservation agent)",
+    "official": "Herlin Jamie - Conservation Agent",
+    "official_reading": "Herlin Jamie (referred to in the narrative as H. Jaime)",
+    "note": "Misheard/partial name; note the official document itself is inconsistent between 'Jamie' in the header and 'Jaime' in the body."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "Absent: M. Wilson, T. Doucette",
+    "note": "These two members were absent and so do not appear in our attendee list built from who spoke; not a discrepancy, just not capturable from the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name at 922 Flat Hill Road",
+    "ours": "Paskki NOI (922 Flat Hill Road)",
+    "official": "Notice of Intent by Mike Potasky for the construction of a single-family home with a garage",
+    "official_reading": "Potasky",
+    "note": "Misheard applicant surname; the vote and continuance date (April 15) otherwise agree."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name at 30 Summer Street",
+    "ours": "Safe Store Real Estate NOI (30 Summer Street)",
+    "official": "Notice of Intent by SafStor Real Estate Co., LLC",
+    "official_reading": "SafStor Real Estate Co., LLC",
+    "note": "Misheard company name; vote and continuance date otherwise agree."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Continuance of 860 New West Townsend Road NOI (NOI-26-1)",
+    "ours": "",
+    "official": "Notice of Intent by Daniel di Rachel Brackett for a common driveway to provide access to four residential lots. (Continued to April 1)",
+    "note": "This whole agenda item and its continuance to April 1 is entirely absent from our recording-based minutes, and unlike every other continuance in the official minutes, no Motion/Second/Vote block is printed for it — check the recording (and the official minutes' own vote record) for whether a formal vote occurred here."
+   },
+   {
+    "kind": "agree",
+    "about": "Tree removal fine amount, 922 Flat Hill Road",
+    "ours": "$300",
+    "official": "H. Jaime recommended a $300 fine for removing the trees without permission, or additional replanting in lieu of the fees",
+    "note": "Figure matches exactly; both records also agree the applicant chose remediation/plotting on the plan instead of paying the fine."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Tree removal fine amount, 314 Highland Street",
+    "ours": "$300",
+    "official": "H. Jaime stated she spoke with the owner and explained the concerns about the driveway and that violations or remediation may be required.",
+    "note": "The official minutes describe possible violations/remediation for this address but state no dollar figure; check the recording to confirm whether $300 was actually stated for 314 Highland Street or whether the figure carried over from the Flat Hill Road discussion."
+   },
+   {
+    "kind": "agree",
+    "about": "1147 Massachusetts Avenue tree-removal violation, no vote",
+    "ours": "No vote needed; agent will arrange a site inspection with the property owner and advise on required filings for the removed tree.",
+    "official": "H. Jaime recommended that she meet with the applicant, explain the requirements, and propose a going-forward plan.",
+    "note": "Same substance (no vote, agent to follow up with the owner on required filings), described in slightly different words."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Required plan revisions for 189 Hemlock Drive (Catales/Katrakis)",
+    "ours": "No enclosed porch, no new retaining wall, removal of the carport, and additional plantings, ahead of a site walk.",
+    "official": "Updated plan showing the patio not being enclosed / Removal of the retaining wall / Show carport removed with plantings / Remove the outdoor kitchen from the 50-foot zone / Replacement of existing retaining wall / Complete a second site visit",
+    "note": "Official's own list is internally odd (both 'removal' and 'replacement' of the retaining wall) and includes an outdoor-kitchen removal condition that ours omits entirely; check the recording against the official's six-item list for the exact set of required revisions."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Agent bringing administrative determinations before the full commission",
+    "ours": "The agent will continue bringing administrative determinations before the full commission while she becomes familiar with local regulations, rather than deciding them independently.",
+    "official": "",
+    "note": "This process decision does not appear anywhere in the official minutes; check the recording near t=9022 to confirm it was actually said and decided, since it is not procedural and would be a real commission policy if true."
+   },
+   {
+    "kind": "agree",
+    "about": "314 Highland Street violation held pending owner's April 1 appearance",
+    "ours": "Commission will hold off on any formal violation or fine for 314 Highland Street until the property owner appears at the April 1 meeting.",
+    "official": "The property owner attended the meeting but asked for a continuance due to the length of the meeting. H. Jaime stated she spoke with the owner and explained the concerns about the driveway and that violations or remediation may be required.",
+    "note": "Consistent: the owner's matter was pushed off rather than acted on that night, and the next meeting is April 1."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Conservation budget timeline commitment",
+    "ours": "Commission agreed to give the agent about a month before presenting concrete budget figures.",
+    "official": "9. OLD BUSINESS a. Conservation budget:",
+    "note": "The official minutes list 'Conservation budget' as an agenda heading with no content recorded under it; check the recording near t=10296 to confirm this commitment was made, since the official record gives no detail at all."
+   }
+  ],
+  "quotes_not_in_official_dropped": 11,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T15:04:42Z",
+   "cost_usd": 0.29484
+  }
  }
 }

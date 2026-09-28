@@ -440,5 +440,202 @@
    "at": "2026-09-27T02:40:50Z",
    "cost_usd": 0.194464
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04232026-7777",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2026-04-23-minutes-7777.txt",
+   "path": "sources/meetings/cemetery-commission/2026-04-23-minutes-7777.pdf"
+  },
+  "official_sha256": "ca184ea854c9a6267b742970fce3b3769d2a880f3bd8aacb9b5bc8e2e7c47fd5",
+  "coverage": "partial",
+  "summary": "The two records agree on most decisions in outline — the North Cemetery expansion's reduced first phase (~$140K), the July 1 rate increase with lock-in, the June 14th flag ceremony, and the second seasonal hire still open — but the official minutes are much thinner on figures, and several items are framed differently enough (South Cemetery stone work, the DOC crew's frequency, the Memorial Day flag plan, the governing-document discussion, and the $20k transfer) that a reader should check the recording before treating either account as settled. The attendee list also has a real mismatch: our minutes split the chair and \"Mike\" into two people and swap the DPW Director / Cemetery Superintendent titles between Bill and Todd, and omit the absent Vice-Chair David Dorren entirely.</parameter>\n</invoke>\n",
+  "counts": {
+   "agree": 4,
+   "caption_error": 0,
+   "discrepancy": 5,
+   "only_in_ours": 8,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "DPW Director / Cemetery Superintendent role assignment",
+    "ours": "Bill (commission member); Todd (DPW Director / Cemetery Superintendent)",
+    "official": "DPW Department Director: Bill\nBernard Bernard\nCemetery Superintendent: Todd\nHolman Holman",
+    "note": "Official lists Bill Bernard as DPW Director and Todd Holman separately as Cemetery Superintendent; our minutes merge both titles onto Todd and list Bill as a generic commission member — check who actually holds which title."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "chair identity",
+    "ours": "the chair (chair) ... Mike (commission member)",
+    "official": "Mike Clark, Chair",
+    "note": "Official names Mike Clark as chair; our list has \"the chair\" and \"Mike\" as two separate attendees, apparently double-counting one person — confirm no one else chaired."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vice-Chair attendance",
+    "ours": "",
+    "official": "David Dorren, Vice-Chair - absent",
+    "note": "Official records the Vice-Chair as absent; our attendee list omits this person entirely."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "$20k transfer, sale of lots to North Cemetery expansion capital",
+    "ours": "Sale of lots account to the capital article (North Cemetery expansion capital funds) — 20k (voted)",
+    "official": "",
+    "t": 1090,
+    "note": "Our minutes record a voted $20,000 transfer that does not appear anywhere in the official minutes — check whether this vote occurred and should be documented."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "excavation fee for wall footings",
+    "ours": "$1,500",
+    "official": "",
+    "t": 436,
+    "note": "Not mentioned in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "hitching post installation cost",
+    "ours": "a couple hundred / 300 bucks / maybe 200 bucks",
+    "official": "",
+    "t": 517,
+    "note": "Not mentioned in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cemetery lighting project cost",
+    "ours": "650, 1,0003, 1003 (as heard)",
+    "official": "",
+    "t": 215,
+    "note": "Not mentioned in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "sale of lots fund and capital article balances",
+    "ours": "9422640, 20, 7422640, 1428361, 3428361 (as heard)",
+    "official": "",
+    "t": 1090,
+    "note": "No fund balance figures appear in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "plaque project name and cost",
+    "ours": "Leominster Monument stone repair, cleaning and plaque: 2K",
+    "official": "Todd Holman discussed Mike McGrath of the Lunenburg Historical Society, making up a plaque for the Fish Street project to be coordinated with Cemetery Commission.",
+    "t": 1179,
+    "note": "The project name differs entirely (Leominster Monument vs. Fish Street) and official gives no dollar figure — check whether this is the same item garbled by captions or two different agenda items."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "South Cemetery stone repair figures discussed",
+    "ours": "13,800, 13550, $10,000, 9,900, 900, 3,000, 9999",
+    "official": "",
+    "t": 2117,
+    "note": "No cost figures for this item appear in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "North Cemetery expansion reduced first phase and estimated cost",
+    "ours": "Proceed with a reduced first phase of the North Cemetery expansion (roughly half the planned area) ... figures as heard: 300,000, 366, 200,000, 141,000",
+    "official": "Bill Bernard discussed getting the costs down to about $140K and that would allow us to send this project out to bid by doing half now, and the other 400 plots at a later date.",
+    "t": 1450,
+    "note": "Both agree on a reduced (half-now) first phase at roughly $140K; the other heard figures ($300K, $200K) likely reflect earlier estimates mentioned in the same discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "tree plantings and plot-corner markers added to expansion scope",
+    "ours": "contractor asked to add tree plantings and plot-corner markers",
+    "official": "",
+    "t": 1450,
+    "note": "This scope addition is not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "uncommitted balance and perpetual care fund figures",
+    "ours": "5293, 3857",
+    "official": "",
+    "t": 1223,
+    "note": "No such figures appear in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "returning seasonal volunteer's name and schedule",
+    "ours": "A prior seasonal volunteer will return in mid-June for a few months",
+    "official": "Volunteer coming back, Chase Jasma, for 3 months 2 to 3 days a week.",
+    "t": 1889,
+    "note": "Official names the volunteer (Chase Jasma) and gives a 2-3 days/week schedule that our minutes omit; also confirm \"mid-June\" against the official's unspecified start."
+   },
+   {
+    "kind": "agree",
+    "about": "second seasonal position still unfilled",
+    "ours": "the commission will keep trying to fill a second seasonal position",
+    "official": "Discussed the hiring of 2 part time workers – one took another job, still waiting for a new applicant.",
+    "t": 1889,
+    "note": "Both agree one position remains open and the commission is still seeking a candidate."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "payment arrangement for DOC crew",
+    "ours": "",
+    "official": "and we only have to pay for their meals",
+    "note": "This cost detail is not in our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "flag retirement/burning ceremony date and organizer",
+    "ours": "A flag retirement/burning ceremony organized by John Bowen Jr. is being planned for around June 14th, pending his own approach to the town's Board of Selectmen.",
+    "official": "June 14th, John Bowen Jr, to champion ceremony of Flag Burning Day and go to the town to get approval.",
+    "t": 2396,
+    "note": "Both records match on organizer, date, and that town approval is still pending."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "restructuring the cemetery's governing document",
+    "ours": "Split the cemetery's governing document into 'rules and regulations' aimed at lot purchasers and a separate 'policies' document covering maintenance matters, before updating the town website.",
+    "official": "Rules and By Law, under cemetery commission lunenburgmas.gov Chapter 310, goes through charter that we can modify, up to commissions and committees' level 300 and below, Who can update the links? Town Clerk to repopulate.",
+    "t": 3121,
+    "note": "Official frames this as a discussion of charter authority over Chapter 310 and who updates the website links (Town Clerk to repopulate), not as a decision to split into two named documents — check the recording for what was actually decided."
+   },
+   {
+    "kind": "agree",
+    "about": "rate increase effective date and lock-in for prospective buyers",
+    "ours": "Rate increases targeted to take effect July 1, aligned with the fiscal year; the roughly 10-12 people already interested in buying lots will be asked to put down money to lock in the current $800 rate before the increase.",
+    "official": "Discussed costs of cemetery which should be increased by July 1, 2026. Todd Holman to inform the current potential burial plot people of increase and to lock in before July 1.",
+    "t": 3411,
+    "note": "Both agree rates rise July 1 and that current prospective buyers will be told to lock in beforehand."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "specific lot/burial fee dollar figures",
+    "ours": "1250, 1750, 1,550, 525, 850, 750, $200, 300, 500, $1,100, $1,200, 800",
+    "official": "",
+    "t": 3163,
+    "note": "Official gives no dollar figures for the fee increases, so none of the heard amounts can be corroborated."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fish Street plaque / Historical Society coordination",
+    "ours": "",
+    "official": "Todd Holman discussed Mike McGrath of the Lunenburg Historical Society, making up a plaque for the Fish Street project to be coordinated with Cemetery Commission.",
+    "note": "This item does not appear in our minutes at all; it may be the source of the garbled \"Leominster Monument\" entry above."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "North Cemetery shrubs status update",
+    "ours": "",
+    "official": "North Cemetery shrubs survived winter.",
+    "note": "Minor update not captured in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 5,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:08:30Z",
+   "cost_usd": 0.4254764
+  }
  }
 }

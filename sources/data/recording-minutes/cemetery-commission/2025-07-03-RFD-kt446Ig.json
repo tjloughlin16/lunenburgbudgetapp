@@ -217,5 +217,102 @@
    "at": "2026-09-27T13:06:03Z",
    "cost_usd": 0.2015194
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07032025-7294",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-07-03-minutes-7294.txt",
+   "path": "sources/meetings/cemetery-commission/2025-07-03-minutes-7294.pdf"
+  },
+  "official_sha256": "79bc7b4ed38d0fd090f9b9fc4b0f9e7aba32e0c82a4e5aba68b993b7bec0e030",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the one vote both capture — the $560 Lakeview Landscaping invoice — but diverge sharply everywhere else: the official minutes record a second vote (correcting the April 23 meeting date) that our minutes never mention at all, and our minutes carry substantial conversational detail (GIS map, grant contact Michelle, town-hall follow-up) that the official summary omits entirely. A reader should specifically check the video around the back-lot discussion, since our minutes describe the group \"agreeing on a list of items to raise with Bill\" while the official minutes say Bill Barnard simply wasn't available to discuss those same items — that's a different account of what happened, not just a difference in detail.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 0,
+   "discrepancy": 3,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Lakeview Landscaping invoice",
+    "ours": "[t=87] Approve the invoice from Lake View Landscaping in the amount of $560 — passed",
+    "official": "Mike Clark made a motion to approve the payment of the invoice from Lakeview Landscaping in the amount of $560.00, Donna Landry seconded – AIF",
+    "note": "Same vote, same amount, same outcome; only the vendor spelling ('Lake View' vs 'Lakeview') differs, which is trivial."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: correcting the meeting date (April 23 -> April 24, 2025)",
+    "ours": "",
+    "official": "Mike Clark made a motion to approve the change of date, Donna Landry seconded – AIF",
+    "note": "This is a second non-procedural vote taken at the meeting and it does not appear anywhere in our minutes; check the recording for where this vote occurs, since it may simply be outside the range our minutes covered or may have been missed entirely."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Back-lot expansion discussion with Bill",
+    "ours": "[t=232] Agreed on the list of items to raise with Bill about the back lot expansion: maps of the north and south cemetery, which trees are coming down and when surveyors (Dillis and Roy) will be on site, removing tree stumps, and mowing.",
+    "official": "Review/update on the backlot expansion – Bill Barnard was not available to discuss the following: a) Survey or maps of North & South Cemetery. b) Which trees will be removed. c) When will Dillis & Roy Civil Design Group be coming in to review back-lot so that the Commission can be there also. d) What should be done about the stumps. f) Review of mowing. g) What percentage of North Cemetery is wooded area.",
+    "note": "The topic list matches closely, but the framing is substantively different: ours implies the commission actively agreed on a list of items to bring to Bill, while the official minutes state Bill Barnard was not available and the item was essentially left undiscussed — check the recording to see whether this was a forward-looking decision or a stalled agenda item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Back-lot item: percentage of North Cemetery that is wooded",
+    "ours": "",
+    "official": "g) What percentage of North Cemetery is wooded area.",
+    "note": "This sub-item of the backlot discussion is listed in the official minutes but not captured in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figures heard while discussing the invoice amount",
+    "ours": "[t=44] Lake View Nursery/Landscaping invoice for cemetery plantings: $260, $300, $560, $15 less",
+    "official": "",
+    "note": "The official minutes state only the final $560.00 figure; the intermediate figures ($260, $300, $15 less) our minutes captured during discussion of how that total was reached are not confirmable against the official record — a person should check the recording near t=44 to see if these reflect a real breakdown or a caption misread."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: printing the GIS map of the 22 acres",
+    "ours": "[t=337] A member will look into whether the GIS map of the 22 acres, including the wooded section, can be printed.",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: checking on a survey/plot plan with metes and bounds",
+    "ours": "[t=420] The chair will check with town hall, and the group will also ask Bill, about whether a survey or plot plan with metes and bounds/markers exists for the property.",
+    "official": "",
+    "note": "Related in subject to the official's 'Survey or maps of North & South Cemetery' item, but the specific follow-up action (chair checking with town hall) is not recorded in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: Michelle / Boys and Girls Club grant research",
+    "ours": "[t=568] Michelle (Boys and Girls Club contact) will look into grant options for the cemetery and provide a price/proposal once she has spoken with people in town; expected in a week or two given the holiday.",
+    "official": "5. Items for next Agenda: a) Grants.",
+    "note": "The official minutes reduce this to a one-word next-agenda item ('Grants') with no name or detail; the identity of Michelle and the timeline are only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Invoice submission and signing follow-up",
+    "ours": "",
+    "official": "Dave Dorren to submit approved Invoice to Town Hall on Monday, 7, 2025 / Invoice signed by Mike Clark, Dave Dorren, Donna Landry",
+    "note": "Administrative follow-up detail on the approved invoice that our minutes do not capture."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "the chair (chair); unnamed commission member (member)",
+    "official": "Chair, Mike Clark; Vice-Chair, Dave Dorren; Clerk, Donna Landry",
+    "note": "Our minutes identify only two generic roles with no names, while the official minutes name three specific attendees including a Clerk not identified at all in ours — check the recording to confirm all three were present and correctly identified."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:53:23Z",
+   "cost_usd": 0.239904
+  }
  }
 }

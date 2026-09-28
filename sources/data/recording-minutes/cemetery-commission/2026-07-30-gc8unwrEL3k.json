@@ -409,5 +409,169 @@
    "at": "2026-09-27T02:09:27Z",
    "cost_usd": 0.19266999999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07302026-7928",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2026-07-30-minutes-7928.txt",
+   "path": "sources/meetings/cemetery-commission/2026-07-30-minutes-7928.pdf"
+  },
+  "official_sha256": "6a662eca3c49524065ae8957335626fdfbab1149279a1ba9504688ff56dea8aa",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the four core votes (reorganization, the SIMS/CIMS invoice, the Yasko refund, and the Maki/Mackey refund) once misheard names and digit-groupings are set aside, and the Yasko account split matches exactly. Where they genuinely diverge, a reader should check: whether the Mackey refund was actually split across two accounts (ours) or paid whole (official), whether the flower-placement vote and the North-Cemetery-buyer policy and the four additional 2026 meeting dates were actually adopted (all absent from the official minutes), and who actually delivered the DPW burial/lot report (ours credits \"Dave,\" official credits Todd Holman as Cemetery Superintendent).",
+  "counts": {
+   "agree": 5,
+   "caption_error": 4,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "only_in_official",
+    "about": "attendee: Mike Clark",
+    "ours": "",
+    "official": "Mike Clark",
+    "note": "Ours lists no one matching the Chair; check whether \"Mark\" in our attendee list is a mishearing of Mike Clark or a separate omission."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name heard as \"Mark\"",
+    "ours": "Mark (commission member)",
+    "official": "Mike Clark",
+    "official_reading": "Mike Clark",
+    "note": "No \"Mark\" appears in the official attendance list; the Chair, Mike Clark, is the only name unaccounted for in ours, so this is likely a misheard first name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "software/hosting vendor name",
+    "ours": "SIMS cloud/burial search hosting invoice",
+    "official": "the current CIMS Cloud Annual Maintenance & burial hosting renewal of $2691.00",
+    "official_reading": "CIMS",
+    "note": "Same invoice and amount; \"SIMS\" is almost certainly a mishearing of \"CIMS.\""
+   },
+   {
+    "kind": "agree",
+    "about": "vote to keep committee organization/officers the same",
+    "ours": "Maintain the committee's existing organization/officers — passed",
+    "official": "David Dorren make a motion to approve to keep the organization the same, Donna Landry seconded, AIF",
+    "note": "Same vote, same outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "CIMS invoice amount",
+    "ours": "2,691, 2691, 2961",
+    "official": "$2691.00",
+    "official_reading": "$2,691.00",
+    "note": "Two of the three heard figures match the official amount exactly; \"2961\" is a digit-transposition mishearing of 2691."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "savings from dropping SIMS/CIMS read-only tier",
+    "ours": "$600 savings from dropping SIMS read-only access",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes; likely part of discussion around the invoice vote that the official minutes summarized away."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cemetery budget backlog allocation figure",
+    "ours": "45K",
+    "official": "",
+    "note": "No corresponding figure in the official minutes; check the recording context (e.g. North Cemetery backlot expansion) to see what this referred to."
+   },
+   {
+    "kind": "agree",
+    "about": "Yasko refund account split",
+    "ours": "$800 from account 8115 (sale of lots), $400 from account 8001 (perpetual care), total $1,200 (voted)",
+    "official": "$800 from sale of lots, $400 from Perpetual Care",
+    "note": "Dollar split matches exactly; only ours names the specific account numbers, which is additional detail rather than a conflict."
+   },
+   {
+    "kind": "caption_error",
+    "about": "name of the man requesting the 2007 lot refund",
+    "ours": "Raymond Mackey",
+    "official": "Raymond Maki contacted Todd 6/22/26 regarding $1200 that he never received when he asked for the return of his lot in 2007",
+    "official_reading": "Raymond Maki",
+    "note": "Same person, same 2007 request, same $1,200 and Lot 288 in the South Cemetery; \"Mackey\" is a mishearing of \"Maki.\""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "vote restricting flower placement to the front of the headstone base",
+    "ours": "Restrict flower placement to the front of the headstone base only — not audible",
+    "official": "",
+    "note": "This vote does not appear anywhere in the official minutes and our own audio for it was inaudible; check the recording/town records to confirm whether this vote actually took place and what it decided."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "perpetual care account balance check figure",
+    "ours": "$14,000 perpetual care account balance check",
+    "official": "",
+    "note": "No corresponding balance figure appears in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "policy on directing new buyers to North Cemetery once South Cemetery reserved lots are sold",
+    "ours": "Once the last five reserved South Cemetery lots are sold to existing families, new buyers with no family already interred there will be directed to the North Cemetery",
+    "official": "",
+    "note": "Official minutes only note \"5 left in the South Cemetery\" under the DPW report with no policy statement; check whether the commission actually adopted this as a decision or it was informal discussion."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision to wait for bid paperwork before scheduling a special meeting",
+    "ours": "Wait for equipment/service bid paperwork before scheduling a special meeting, rather than acting immediately",
+    "official": "North Cemetery Backlot expansion - No update on Dillis and Roy, project has not yet gone out to bid.",
+    "note": "Official confirms the project has not gone out to bid but records no decision about a special meeting; check whether a special meeting was actually discussed and deferred."
+   },
+   {
+    "kind": "agree",
+    "about": "deferring rules/bylaws finalization until DPW Director Bill Bernard returns",
+    "ours": "Continue revising the cemetery rules and bylaws two sections at a time at future meetings, waiting for the DPW director's return before finalizing burial regulations",
+    "official": "Need to review and discuss rules and regulations – need to review with Bill Bernard present.",
+    "note": "Core decision (wait for Bill Bernard) matches; the \"two sections at a time\" detail is only in ours, likely omitted by the official minutes as a summary rather than a conflicting fact."
+   },
+   {
+    "kind": "agree",
+    "about": "next meeting moved to August 19th at DPW",
+    "ours": "Move the August meeting from August 27th to August 19th (Wednesday) at the DPW conference room, since a member would be unavailable on the 27th",
+    "official": "August 19th is the next meeting, location DPW.",
+    "note": "Both agree on the resulting date and location; the original date (Aug 27) and the stated reason (member unavailability) appear only in ours as additional context, not a conflict."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "setting meeting dates through December (Sept 24, Oct 29, Nov 19, Dec 17)",
+    "ours": "Set upcoming meeting dates as September 24, October 29, November 19, and December 17, all at the DPW conference room going forward",
+    "official": "August 19th is the next meeting, location DPW.",
+    "note": "Official names only the immediate next meeting (Aug 19); the four later dates do not appear at all, so check whether they were actually set at this meeting or added later."
+   },
+   {
+    "kind": "agree",
+    "about": "tabling grants and natural burials discussion",
+    "ours": "Table discussion of grants and natural burials to the next meeting",
+    "official": "Grants and natural burials to be discussed at next meeting.",
+    "note": "Same decision, same outcome."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fish Street Cemetery headstone repair",
+    "ours": "",
+    "official": "Fish Street Cemetery - Todd Holman spoke to Rich McGrath, who repaired Levi's headstone – should have headstone in next week",
+    "note": "Not recorded in ours at all; a minor operational item the official minutes include that ours omits."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "lot pricing review needing Town approval in November",
+    "ours": "",
+    "official": "Review of lot pricing, needs to be approved by the Town in November.",
+    "note": "Not recorded in ours; check whether this was discussed but not captured, or occurred outside the portion transcribed."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:12:49Z",
+   "cost_usd": 0.285434
+  }
  }
 }

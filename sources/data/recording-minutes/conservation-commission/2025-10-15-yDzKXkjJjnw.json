@@ -368,5 +368,132 @@
    "at": "2026-09-27T12:12:22Z",
    "cost_usd": 0.210681
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10152025-7456",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-10-15-minutes-7456.txt",
+   "path": "sources/meetings/conservation-commission/2025-10-15-minutes-7456.pdf"
+  },
+  "official_sha256": "b3d32b4f8d4e453b01a5101e6eec78b87a099de82ea9f2ed3934b0ca6a30b8f2",
+  "coverage": "full",
+  "summary": "The two records agree closely on every substantive vote outcome (all 5-0) and on the major dollar figures once the caption misreadings are resolved, with the official minutes adding narrative detail (violations list, forest cutting plans, absentees, DEP file numbers) that our machine-generated minutes simply don't capture. The one thing to check is the $2,000 Timber Rights Fund transfer to the \"Maki Purchase Order\" (misheard throughout as \"MACPO\"), which our minutes also garbled as \"20,000\" in the motion wording — and the extension-request item, where our minutes describe a \"wildlife-viewing-platform access road\" project but the official minutes describe the same grant extension as being for \"handicapped access,\" a difference worth confirming against the recording.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: NOI 23 Tilton Avenue",
+    "ours": "Approve the NOI for 23 Tilton Avenue as presented — passed 5-0",
+    "official": "M. Wilson - AYE / M. Larouche - AYE / J. Pewtherer - AYE / C. St. Germain - AYE / R. Bursch - AYE",
+    "note": "Same vote, same 5-0 outcome, same project."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "155 Reservoir Road COC — lot 6 restriction",
+    "ours": "",
+    "official": "Applies only to lot 6 at 155 Reservoir Road under the original order 208-1080",
+    "note": "Our minutes record the approval and order number but omit that it applies only to lot 6 (105 Reservoir Road remains open separately) — worth adding for precision, though the vote outcome itself agrees."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Fund/PO name: 'MACPO'",
+    "ours": "MACPO (used throughout for the trail/bridge maintenance account and the transfer destination)",
+    "official": "Maki purchase order",
+    "official_reading": "Maki Purchase Order (\"Maki PO\")",
+    "note": "The captions appear to have heard \"Maki PO\" as \"MACPO\"; same underlying account, name misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Timber Rights Fund transfer amount",
+    "ours": "from the Timber Rights Fund to the MACPO — $2,000 (stated as \"20,000\" in the amended motion wording)",
+    "official": "Motion: M. Larouche, to approve an additional $2,000 to the Maki Purchase Order, coming from the Timber Rights Fund.",
+    "official_reading": "$2,000",
+    "note": "Our own minutes are internally inconsistent ($2,000 in the figures list vs \"20,000\" in the motion transcript); official confirms $2,000 — check the recording at t=1737 for a misheard \"two thousand\" as \"twenty thousand.\""
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: Maki PO/MACPO trail maintenance account",
+    "ours": "MACPO / trail maintenance account: $2,000",
+    "official": "M. Wilson reviewed the work. $2,000 would cover the arrears, existing needs, and leave about $1,500 for further needs.",
+    "note": "Same $2,000 figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MACPO catwalk materials remaining cost",
+    "ours": "MACPO — remaining catwalk materials: slightly less than $300",
+    "official": "",
+    "note": "Official minutes are a narrative summary and omit this line-item detail; not contradicted, just absent."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: MACPO/Maki PO projected remaining balance",
+    "ours": "MACPO — projected remaining balance: $1,500",
+    "official": "leave about $1,500 for further needs",
+    "note": "Same $1,500 figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: grant reimbursement amounts",
+    "ours": "Grant reimbursement: $35,000, 28,000, 7,000",
+    "official": "M. Wilson applied for reimbursement for invoices totaling approximately $35,000, and we received about $28,000 reimbursement. Another $7,000 is funded through ARPA grant money.",
+    "note": "All three figures match exactly."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Grant extension project description",
+    "ours": "Consultant engineer will send a formal letter outlining next steps, and the chair will request an extension from the grant administrator for the wildlife-viewing-platform access road project.",
+    "official": "M. Wilson reviewed the status, which included requesting an extension to improve handicapped access. She is writing the proposal.",
+    "note": "The two describe the extension request for what sound like different projects (a wildlife-viewing-platform access road vs. handicapped-access improvements) — check the recording near t=2478 to confirm which project the extension actually concerns, and who is writing the proposal (chair vs. M. Wilson)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Consultant engineer's formal letter",
+    "ours": "Consultant engineer will send a formal letter outlining next steps.",
+    "official": "",
+    "note": "Not mentioned in the official minutes' grant-update paragraph; may be a caption-only detail or an omission by the official minutes — cannot resolve from text alone."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: unauthorized trail-building in Lane/Largetown Forest",
+    "ours": "Chair will contact the town manager and the town's attorney, Adam Costa, about unauthorized trail-building in the Lane and Largetown Forest conservation area.",
+    "official": "M. Wilson noted that in the Lane/Large Town Forest area there have been reports of new trails being created without permission. J. Pewtherer will reach out to the Town Manager and the town attorney.",
+    "note": "Same decision and same location; core action agrees."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town attorney's name",
+    "ours": "the town's attorney, Adam Costa",
+    "official": "the town attorney",
+    "note": "Official minutes do not name the attorney; the name may be accurate detail picked up from the recording or a caption artifact — not verifiable from the official text alone."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Agenda PDF hyperlink follow-up",
+    "ours": "Chair will follow up with a commission member (Mike) about the agenda PDF's hyperlink not working when converted/uploaded.",
+    "official": "It was noted that the agenda links need to be clickable for the public to use.",
+    "note": "Official minutes record only that the issue was noted, with no named follow-up owner; ours assigns a specific action to the chair and Mike — check the recording near t=2768 to see whether a follow-up was actually assigned or just discussed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "Absent: A. Burnap, T. Doucette",
+    "note": "Our minutes list only the members present and never note who was absent; not a contradiction, just an omission."
+   }
+  ],
+  "quotes_not_in_official_dropped": 11,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:40:55Z",
+   "cost_usd": 0.279528
+  }
  }
 }

@@ -510,5 +510,224 @@
    "at": "2026-09-27T11:27:24Z",
    "cost_usd": 0.191812
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01072026-7580",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2026-01-07-minutes-7580.txt",
+   "path": "sources/meetings/board-of-assessors/2026-01-07-minutes-7580.pdf"
+  },
+  "official_sha256": "b0bed4fb785cffa05b35eec25806e5f68282da9076221c3ec226d754c54529e4",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the votes actually captured (the $260,000 overlay target, the $400,000 growth-estimate motion, land condition factors, and most senior exemption figures), and several of our garbled digit strings resolve cleanly against the official text as caption errors. The most important gap is structural, not textual: the official minutes cover a full Executive Session — 5 real estate exemptions voted and approved, 3 FY26 abatements deferred — plus routine office-status items (abutters requests, excise abatements, tax-bill mailing, a DOR staffing posting) that our recording-based minutes never touch at all, while several of our decision items (Data Scout staging, who drafts the FY25 annual report, attendee roles) differ substantively enough from the official account to need checking against the recording.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 4,
+   "discrepancy": 4,
+   "only_in_ours": 8,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: FY27 overlay reserve target $260,000",
+    "ours": "Set the FY27 overlay reserve target at $260,000 — passed (stated unanimous)",
+    "official": "There was a motion to set the target overlay for FY27 at $260,000 by Brian Laffond, seconded by Bian Marple. All in favor.",
+    "note": "Same motion, same mover/seconder, same unanimous outcome.",
+    "t": 3063
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: postpone approving draft minutes",
+    "ours": "Hold off reviewing and approving draft minutes until the absent board member (Sarah) is present",
+    "official": "This topic was postponed until the next meeting when Sarah Cammer will also be present.",
+    "note": "Same decision, same reason.",
+    "t": 1044
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: land condition factor review counts",
+    "ours": "358, 289, 69",
+    "official": "There have been 358 land condition adjustments identified that need to be inspected. 289 parcels are residential and 69 are commercial/industrial.",
+    "note": "Exact match on all three figures.",
+    "t": 5513
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: FY27 assessors office budget overall increase",
+    "ours": "5%",
+    "official": "In total there was a +5% increase from last year. This is largely driven by inflation and existing contracted services.",
+    "note": "The 5% figure matches; a co-heard 6.98% does not (see discrepancy entry).",
+    "t": 4936
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY2026 tax rate",
+    "ours": "1439",
+    "official": "The FY26 tax rate of $14.39 per thousand was certified by the Massachusetts Bureau of Accounts on December 4, 2025.",
+    "official_reading": "$14.39 per thousand",
+    "note": "Digit grouping/decimal lost in the caption stream."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Lefond (chair)",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Same person, misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY27 projected SMTE dollar amount",
+    "ours": "55,000",
+    "official": "Lynda Cajka estimated that we could expect about 20 applications for FY2027 (for about $56,400).",
+    "official_reading": "$56,400",
+    "note": "Close enough (55,000 vs 56,400) to be a mishearing of the same estimate rather than a different figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Upcoming meeting dates",
+    "ours": "Next meeting set for February 4th, with tentative future meetings around February 25th and March 4th or 25th",
+    "official": "Upcoming Tentative Meetings: February 4, 2026, February 25, 2026 & March 4, 2026.",
+    "official_reading": "February 4, 2026, February 25, 2026 & March 4, 2026",
+    "note": "Official lists exactly three dates with no March 25; the caption apparently duplicated the '25' from February onto March as an alternate."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FY27 assessors office budget percentage",
+    "ours": "6.98%, 2 298, 314, 5%",
+    "official": "In total there was a +5% increase from last year.",
+    "note": "Two different percentages were captioned (6.98% and 5%); only 5% is confirmed by the official text — check the recording for where 6.98% came from, it may be a different sub-figure (e.g., a specific line) rather than the overall increase."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FY2026 overlay year-end actual balance",
+    "ours": "175,000, 230, 55,000, 260,000, 145, 150, 3%",
+    "official": "The estimated overlay budget for FY2026 was originally $175,000. We wound with ~$164,000. We will exceed that amount.",
+    "note": "175,000 and 260,000 match, but official's year-end figure (~$164,000) has no clear counterpart among our captioned candidates (145, 150, 230) — check the recording for the actual year-end overlay balance."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Data Scout / GIS field-update decision",
+    "ours": "Any new field-mapping/GIS update tool (Data Scout) should stage edits in a buffer for review before pushing changes to the live database, rather than updating live data directly from the field",
+    "official": "Lynda Cajka followed up with Data Scout and wants them to come in for a presentation. She was informed that their system has the capacity and accessibility to update information from the field.",
+    "note": "Official describes only an informational exchange about the vendor's capability, with no mention of a board decision requiring a staging/buffer step; check the recording to see whether the board actually imposed that requirement or whether it is an inference.",
+    "t": 5246
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee count and role for Lynda Cajka",
+    "ours": "Linda Cha (member); the principal assessor (principal assessor (staff...))",
+    "official": "Present Members: Chair Brian Laffond, Member Brian Marple, Principal Assessor Lynda Cajka",
+    "note": "Official lists only 3 people present; our minutes appear to list Lynda Cajka twice — once misheard as a separate 'member' named Linda Cha, and again anonymously as 'the principal assessor' — check the recording to confirm only 3 people were present."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Transfer discussion: FY2023 overlay transfer for lake-area abatements",
+    "ours": "Transfer into the overlay account to cover a spike in FY2023 abatements tied to lake-area property valuations — $1.3 million (discussed only)",
+    "official": "",
+    "note": "No mention of a $1.3 million lake-area abatement transfer anywhere in the official minutes; not a vote, so flagged as ours-only rather than a discrepancy.",
+    "t": 2018
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY2026 personal property tax warrant amount",
+    "ours": "5, 61, 34025",
+    "official": "",
+    "note": "Official states only the real estate warrant total; no personal property warrant figure appears in the official minutes.",
+    "t": 579
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Multi-year total exemptions/abatements figures",
+    "ours": "166,000, 127, 128,000, 129,000, 140, 149,000, 16,380, 255,000, 135, 140,000",
+    "official": "",
+    "note": "No multi-year summary of total exemptions and abatements appears in the official minutes.",
+    "t": 3144
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Measure and list contracted services percentage",
+    "ours": "11%",
+    "official": "",
+    "note": "Official mentions 'existing contracted services' as a driver of the 5% budget increase but gives no percentage for this sub-item.",
+    "t": 4398
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Mileage line item figure",
+    "ours": "900",
+    "official": "",
+    "note": "Not mentioned in the official minutes.",
+    "t": 5120
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MLS subscription dues figure",
+    "ours": "105",
+    "official": "",
+    "note": "Not mentioned in the official minutes.",
+    "t": 5225
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Weekly abatement-count reporting decision",
+    "ours": "Principal assessor will send the board a weekly (Monday) count of abatement applications received",
+    "official": "",
+    "note": "No such recurring reporting commitment appears in the official minutes.",
+    "t": 6250
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Specific list of website fixes",
+    "ours": "consolidate abatement and exemption sections together, group senior-related items together, fix the broken Chapter Land link, fix the illegible parcel maps/legend link, correct a motor-vehicle-excise page typo, and address the tax-rate lookup defaulting to the wrong year",
+    "official": "There was some discussion about formatting issues, broken links, and minor changes to address.",
+    "note": "Official summarizes generically; the specific fixes are not contradicted, just not itemized there.",
+    "t": 1608
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision: add YouTube links to the minutes",
+    "ours": "",
+    "official": "Brian Laffond wants to have the YouTube links added to the minutes for accessibility.",
+    "note": "This website/accessibility decision is not mentioned anywhere in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Figure: motor vehicle excise abatements processed",
+    "ours": "",
+    "official": "27 motor vehicle excise tax abatements were received and processed.",
+    "note": "Absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Status: tax bills mailed",
+    "ours": "",
+    "official": "All tax bills were sent to the company to print and were mailed on December 19, 2025.",
+    "note": "Absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision: post Special Assistant to the Assessor position",
+    "ours": "",
+    "official": "The position of Special Assistant to the Assessor (in support of the Directive from the DOR) needs to be posted.",
+    "note": "Absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision: meeting on personal property bridge issue",
+    "ours": "",
+    "official": "Lynda Cajka and Randy Mercier will be meeting next month to discuss the personal property bridge issue that has not been corrected.",
+    "note": "Absent from our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 10,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:31:20Z",
+   "cost_usd": 0.33328
+  }
  }
 }

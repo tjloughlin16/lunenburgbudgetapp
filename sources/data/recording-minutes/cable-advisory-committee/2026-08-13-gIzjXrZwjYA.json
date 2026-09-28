@@ -349,5 +349,202 @@
    "at": "2026-09-27T02:03:20Z",
    "cost_usd": 0.190174
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08132026-7954",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cable-advisory-committee/2026-08-13-minutes-7954.txt",
+   "path": "sources/meetings/cable-advisory-committee/2026-08-13-minutes-7954.pdf"
+  },
+  "official_sha256": "25348736abb9b11652c9184fb0756bd61825b5bf2fe3cd2093c6f0f8da994dcb",
+  "coverage": "partial",
+  "summary": "The two records agree on the broad shape of the meeting — attendance, Brian V's facility tour, the departmental/school outreach assignments, and an October-Tuesday target for the next meeting — but the official minutes are much thinner, entirely omitting the ascertainment deadline, the complaint-records check, the minutes-to-clerk decision, and the public hearing plan, while adding a few specifics (the Town Teen Center, the \"similar size towns\" criterion, \"financial documents\" for Brian Lehtenin) that our machine-transcribed minutes never capture. The single thing to check first is the vote logged only in the official minutes (\"K. Menard, 2nd B. Vienneau - Passed\") whose subject is never stated — confirm whether it was just the adjournment or something substantive our minutes missed.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 1,
+   "discrepancy": 5,
+   "only_in_ours": 6,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "attendee name: Karen vs Karin Menard",
+    "ours": "Karen (member)",
+    "official": "CAC  members  present:Steve  Archambault,  Karin  Menard,  Tom  Bodkin,  Brian  Vienneau",
+    "official_reading": "Karin Menard",
+    "note": "the captions rendered the surname-bearing member's first name as the more common 'Karen'; official spelling is 'Karin'."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: Tom Bodkin",
+    "ours": "Tom (member)",
+    "official": "CAC  members  present:Steve  Archambault,  Karin  Menard,  Tom  Bodkin,  Brian  Vienneau",
+    "note": "same person, official just gives the surname our minutes omit."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: Brian Vienneau, secretary",
+    "ours": "Brian V (member, secretary (took minutes))",
+    "official": "CAC  members  present:Steve  Archambault,  Karin  Menard,  Tom  Bodkin,  Brian  Vienneau",
+    "note": "same person; official does not label him secretary but that role is corroborated by his minutes-related task at t=2192."
+   },
+   {
+    "kind": "agree",
+    "about": "attendee: Steve Archambault",
+    "ours": "Steve (member)",
+    "official": "CAC  members  present:Steve  Archambault,  Karin  Menard,  Tom  Bodkin,  Brian  Vienneau",
+    "note": "same person, surname omitted in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "absence of Brian Lehtenin",
+    "ours": "Brian L, though absent, will be asked to review the license and other circulated documents.",
+    "official": "Not  present:  Brian  Lehtenin",
+    "note": "both records confirm this member was absent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Cable Access Manager Jo Toale attending",
+    "ours": "",
+    "official": "Cable  Access  Manager  Jo  Toale  was  also  in  attendance",
+    "note": "our minutes never mention this staff attendee at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ascertainment process deadline",
+    "ours": "The ascertainment process for the Comcast license renewal must be completed by February 28, 2027.",
+    "official": "",
+    "t": 354,
+    "note": "a hard regulatory deadline that the official minutes do not record; worth confirming Feb 28, 2027 against the actual license-renewal filing requirement."
+   },
+   {
+    "kind": "agree",
+    "about": "Brian V's facility tour, general assignment",
+    "ours": "Brian V will tour the cable operator's technical facilities and the PEG access studio.",
+    "official": "B.  Vienneau  will  conduct  a  tour  of  the  operating  facilities",
+    "t": 436,
+    "note": "same assignment and task; official's phrasing is more general (see next finding for the PEG studio detail)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "PEG access studio as part of the tour",
+    "ours": "...and the PEG access studio.",
+    "official": "",
+    "t": 436,
+    "note": "official's 'operating facilities' may or may not include the PEG studio specifically; check whether that stop actually happened."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who researches other towns' cable agreements",
+    "ours": "A member will research what other communities' cable agreements include, using outreach calls and AI tools as a starting point.",
+    "official": "K.  Menard  and  S.  Archambault  will  continue  to  review  the  surrounding  towns'  \nlicence\n \nagreements\n \nwith\n \nComcast,\n \nK.\n \nMenard\n \nrecommended\n \nensuring\n \nwe\n \nselect\n \ntowns\n \nthat\n \nare\n \na\n \nsimilar\n \nsize\n \nto\n \nLunenburg\n \nitself",
+    "t": 476,
+    "note": "official names two specific people and a 'similar-size town' selection criterion neither of which our minutes capture, while ours adds an 'AI tools' detail official never mentions; check who was actually assigned and whether AI tools were discussed."
+   },
+   {
+    "kind": "agree",
+    "about": "Karen leading town-department outreach",
+    "ours": "Karen will lead outreach to town departments",
+    "official": "K.  Menard  will  do  the  same  for  the  town’s  departments",
+    "t": 709,
+    "note": "matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Tom handling the school district",
+    "ours": "the chair will handle the library; Tom will handle the school district.",
+    "official": "T.  Bodkin  will  reach  out  to  the  school  system  and  see  what  their  needs  are",
+    "t": 709,
+    "note": "matches; official omits the superintendent-then-IT sequencing (see next finding)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "order of contacting school district (superintendent then IT)",
+    "ours": "Tom will contact the school district through the superintendent first, then the IT staff.",
+    "official": "",
+    "t": 1040,
+    "note": "this sequencing detail is not in the official minutes; minor, but worth confirming if the order mattered to the outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "library outreach scope",
+    "ours": "the chair will handle the library",
+    "official": "S.  Archambault  will  check  with  the  Library  and  Town  Teen  Center",
+    "t": 709,
+    "note": "official adds the Town Teen Center to this assignment, which our minutes never mention at all; check whether the Teen Center was actually included in this task."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Comcast complaint records check",
+    "ours": "Karen will check with the town whether Comcast complaint records exist, including checking the town manager's and select board's offices.",
+    "official": "",
+    "t": 1142,
+    "note": "entirely absent from the official minutes; confirm this task was actually assigned."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who finds the service-area map, and whose area",
+    "ours": "A member will try to find a map of the Comcast service area, checking with the state or Comcast.",
+    "official": "S.  Archambault  will  check  for  a  map  of  the  town’s  current  service  area",
+    "t": 1801,
+    "note": "official names S. Archambault specifically and frames it as the town's own service area, while ours is unattributed and frames it as Comcast's service area with the state/Comcast as sources; check who is doing this and what map is actually being sought."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "scope of documents for Brian Lehtenin to review",
+    "ours": "Brian L, though absent, will be asked to review the license and other circulated documents.",
+    "official": "We  will  check  if  B.  Lehtenin  can  review  the  town’s  relevant  financial  documents",
+    "t": 1822,
+    "note": "ours says license/circulated documents, official says financial documents — a substantively different scope; check which documents Brian L was actually asked to review."
+   },
+   {
+    "kind": "agree",
+    "about": "survey timing tied to completing outreach steps",
+    "ours": "The public hearing and municipal-wide survey will be held off until more preliminary information is gathered from town departments.",
+    "official": "After  we  complete  these  steps  we  can  start  putting  together  a  survey",
+    "t": 1718,
+    "note": "both agree the survey waits on the outreach/research steps being finished first."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "a public hearing being planned",
+    "ours": "The public hearing and municipal-wide survey will be held off until more preliminary information is gathered from town departments.",
+    "official": "",
+    "t": 1718,
+    "note": "the official minutes mention only the survey, never a public hearing; confirm whether a hearing is actually planned."
+   },
+   {
+    "kind": "agree",
+    "about": "next meeting date (October, Tuesday, TBA)",
+    "ours": "The committee tentatively targeted Tuesday, October 13 or Tuesday, October 20 for its next meeting, pending the attorney; minutes will list the date as 'October Tuesday TBA.'",
+    "official": "It  was  decided  that  we  will  meet  on  a  Tuesday  in  October,  the  exact  date  is  TBA",
+    "t": 1865,
+    "note": "matches; official omits the two candidate dates (Oct 13 / Oct 20) our minutes give."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "minutes distributed as PDF to town clerk",
+    "ours": "Brian V, as secretary, will send approved minutes as a PDF to the town clerk going forward.",
+    "official": "",
+    "t": 2192,
+    "note": "this procedural handling decision is not recorded in the official minutes at all."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "unattributed closing vote",
+    "ours": "",
+    "official": "●  (K.  Menard,  2nd  B.  Vienneau)  -  Passed)",
+    "note": "our minutes record no non-procedural votes at all, but the official minutes log a vote (Menard moved, Vienneau seconded, passed) whose subject is not stated in this excerpt — check whether it was simply the motion to adjourn or something substantive that our minutes missed."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:47:04Z",
+   "cost_usd": 0.321368
+  }
  }
 }

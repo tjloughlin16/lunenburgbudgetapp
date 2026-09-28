@@ -372,5 +372,165 @@
    "at": "2026-09-27T19:44:13Z",
    "cost_usd": 0.19674799999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04242025-7169",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-04-24-minutes-7169.txt",
+   "path": "sources/meetings/cemetery-commission/2025-04-24-minutes-7169.pdf"
+  },
+  "official_sha256": "d4695c8da9ff152a190612f601fd6e91ddc77c03e40b2bc9ea87ab9e9d33f987",
+  "coverage": "partial",
+  "summary": "The two records agree on the meeting's one substantive vote (the $2,000 file cabinet) and on the Fish Street/McGrath follow-up, but our minutes carry several names/roles the official minutes assign differently (notably who is \"DPW director\" — Mike vs. Bill Bernard) and a cabinet-weight figure that doesn't match. The one thing a reader should check first: the official minutes contain no mention of the DD214-access-restriction decision our minutes report, so that should be verified against the recording before being treated as settled.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 5,
+   "discrepancy": 5,
+   "only_in_ours": 6,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "identity/role of \"Bill\"",
+    "ours": "Bill (commissioner (Bill Tyler, former chair))",
+    "official": "DPW Director Bill Bernard",
+    "note": "Official gives a different surname and a different role (DPW Director, not commissioner) for \"Bill\" — check the recording to confirm whether this is one person misheard or two people conflated by the captions.",
+    "t": 1799
+   },
+   {
+    "kind": "discrepancy",
+    "about": "role of \"Mike\"",
+    "ours": "Mike (DPW director / cemetery report presenter)",
+    "official": "Clerk Mike Clark",
+    "note": "Official lists Mike Clark as Clerk (and Bill Bernard as DPW Director giving the cemetery updates in section 4), the reverse of our attribution — check the recording for who actually delivered the DPW report.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: Vice Chair",
+    "ours": "Dave (commissioner)",
+    "official": "Vice-Chair David Doreen",
+    "official_reading": "David Doreen",
+    "note": "Same person; captions caught only the first name and under-specified the role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: chair",
+    "ours": "Madame Chairman (name not stated)",
+    "official": "Chair Nancy Foss Yasko",
+    "official_reading": "Nancy Foss Yasko",
+    "note": "Captions caught the title but not the name; official supplies it."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: finance director",
+    "ours": "Ezekiel Anala (town finance director, presenter)",
+    "official": "Director of Municipal Finance/Town Accountant, Ezequiel Ayala",
+    "official_reading": "Ezequiel Ayala",
+    "note": "Misheard surname (Anala vs. Ayala), same role and person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: town manager",
+    "ours": "Jennifer Warren (town manager, attending as guest)",
+    "official": "Town Manager Jennifer Dyment Warren",
+    "official_reading": "Jennifer Dyment Warren",
+    "note": "Same person; captions dropped the middle name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "transfer fund source for file cabinet",
+    "ours": "Sale of lots fund to purchase of a secure fire-resistant file cabinet for DPW recordkeeping — up to $2,000 (voted)",
+    "official": "",
+    "note": "Official's motion text does not name which fund the $2,000 comes from; worth confirming against the recording that \"sale of lots\" is correct, since a wrong fund citation would misstate which account is debited."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "capital article fund figures",
+    "ours": "Capital article fund (fund 3006): 50K, 10,000, 20 to 25,000",
+    "official": "Capital Article Fund 3006",
+    "note": "Official names the fund but records no dollar figures from the finance director's presentation."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "perpetual care trust fund figures",
+    "ours": "Cemetery perpetual care trust fund (principal fund 801, interest fund 8000): 33125, 17,000, 2,800, 20,78",
+    "official": "Perpetual Care Fund",
+    "note": "Official names the fund only; no figures recorded."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "per-plot fee split",
+    "ours": "Per-plot fee split between sale of lots and perpetual care: $800, 500, 300, 400, 400",
+    "official": "",
+    "note": "Not mentioned in official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cemetery gift fund figure",
+    "ours": "Cemetery gift fund (fund 1548): 200 and something dollars",
+    "official": "Cemetery Gift Fund 1548",
+    "note": "Official names the fund only; no figure recorded."
+   },
+   {
+    "kind": "agree",
+    "about": "file cabinet price quotes",
+    "ours": "Fire-resistant file cabinets for DD214/records storage: $2,879, $1,744",
+    "official": "from $2879.00 to $1744.00",
+    "note": "Same two price quotes in both records."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "file cabinet weight",
+    "ours": "58 lb, 445 lb",
+    "official": "508 lbs",
+    "note": "Official gives a single weight (508 lbs) for the cabinet; ours has two different, non-matching numbers — check the recording at ~t=1799 for the actual weight, since this doesn't look like a simple digit-grouping slip."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "time estimate to digitize records",
+    "ours": "Cost/time to digitize old DD214 and grave record boxes into RainMaker: 60 hours, 100 hours",
+    "official": "Bill will provide a time estimate on how long it will take to go through the records.",
+    "note": "Our minutes report specific hour figures (60–100) as already stated; official says the estimate is still to be provided — check the recording for whether a number was actually given live at this meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to split into two projects",
+    "ours": "Start with purchasing one file cabinet for DD214/veteran records now, and treat digitizing/organizing the remaining record boxes as a separate second project to be scoped later.",
+    "official": "",
+    "note": "Official implies the same sequence (cabinet purchased now, records review to follow) but never frames it as a formal two-project decision."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "DD214 records access restriction",
+    "ours": "DD214 records in the new locked file cabinet will not be accessible to commissioners, only to DPW, to protect personal veteran information.",
+    "official": "",
+    "note": "This access-control decision does not appear anywhere in the official minutes — check the recording to confirm whether this was actually decided/voted or was informal discussion that the town chose not to record."
+   },
+   {
+    "kind": "caption_error",
+    "about": "street name for wall project",
+    "ours": "Fish/Fist Street wall project",
+    "official": "Fish Street",
+    "official_reading": "Fish Street",
+    "note": "Captions produced an ambiguous \"Fish/Fist\"; official confirms it is Fish Street."
+   },
+   {
+    "kind": "agree",
+    "about": "McGrath follow-up on Fish Street",
+    "ours": "DPW to keep following up with contractor Richard McGrath on pricing for the Fish/Fist Street wall project.",
+    "official": "Fish Street – reached out to Richard McGrath – has not gotten back to Bill yet.",
+    "note": "Same status reported in both: contacted, no response yet."
+   }
+  ],
+  "quotes_not_in_official_dropped": 5,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:48:25Z",
+   "cost_usd": 0.273704
+  }
  }
 }

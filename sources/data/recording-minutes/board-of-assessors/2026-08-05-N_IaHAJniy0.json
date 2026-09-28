@@ -411,5 +411,197 @@
    "at": "2026-09-27T02:07:24Z",
    "cost_usd": 0.21930120000000003
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08052026-7942",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2026-08-05-minutes-7942.txt",
+   "path": "sources/meetings/board-of-assessors/2026-08-05-minutes-7942.pdf"
+  },
+  "official_sha256": "f6d2ddbbac3bc57cee08d5ad47f2c237e70c5b3d4298797824d6b15e6b6243ff",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records describe the same meeting but diverge heavily: names are consistently mis-heard by the captions (fixable), several figures and a whole decision (Zoom-AI minutes drafting) exist only in ours, several agenda items (Principal Assessor ratification, Senior Means Tested Exemption presentation, postponed topics) exist only in the official minutes, and there are real substantive conflicts — who chairs the board, the range of veterans'-exemption dollar amounts discussed, and whether an executive session is tied to the September 9/23 meetings or scheduled separately for August 11/12. A reader should treat the chair identity and the executive-session scheduling as the two discrepancies most worth checking against the recording or town clerk.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 4,
+   "discrepancy": 5,
+   "only_in_ours": 9,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "identity of the board Chair",
+    "ours": "Sarah K (chair)",
+    "official": "Present Members: Chair Brian Laffond, Vice Chair Sarah Cammer, Member Bryant Moscon, Consultant Rena Swezey",
+    "note": "Our minutes name Sarah K as chair while the official minutes name Brian Laffond as Chair and Sarah Cammer as Vice Chair; check the recording for whoever is addressed as 'Mr./Madam Chair' to confirm who actually held the gavel that night."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's name",
+    "ours": "Sarah K (chair)",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "'Sarah K' is a mis-heard rendering of 'Sarah Cammer'; the surname was likely captioned as an initial."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member's name",
+    "ours": "Bryant Moskin (member)",
+    "official": "Member Bryant Moscon",
+    "official_reading": "Bryant Moscon",
+    "note": "'Moskin' vs 'Moscon' is a phonetic mis-hearing of the same surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member's name",
+    "ours": "Brian Leant (member)",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "'Leant' vs 'Laffond' is a phonetic mis-hearing of the same surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "assessor/consultant's name",
+    "ours": "Reena Swezy (member (assessor))",
+    "official": "Consultant Rena Swezey",
+    "official_reading": "Rena Swezey",
+    "note": "Minor spelling variant of the same name ('Reena'/'Rena', 'Swezy'/'Swezey'); role is also given differently (member vs. consultant) but the name itself is a caption spelling issue."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee 'Marina'",
+    "ours": "Marina (member)",
+    "official": "",
+    "note": "Official's Present Members list has only four names and does not include a 'Marina'; check whether this is a fifth attendee the official minutes omitted or a mis-transcription of one of the four listed members."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to draft minutes from Zoom AI transcript",
+    "ours": "Starting with the July minutes, administrative staff (Robin) may begin drafting board minutes from the Zoom AI transcript instead of a board member, pending town manager's office confirmation.",
+    "official": "",
+    "note": "This administrative/process decision does not appear anywhere in the official minutes; worth confirming it was actually adopted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Weston & Sampson stormwater contract amount",
+    "ours": "$450,000",
+    "official": "",
+    "note": "Official minutes mention Weston and Sampson were hired as contractors but state no dollar figure for the contract."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "proposed residential stormwater utility fee",
+    "ours": "$100",
+    "official": "",
+    "note": "Official minutes describe the fee being based on impermeable area but give no dollar amount."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "stormwater utility billing frequency/amount",
+    "ours": "Stormwater utility billing frequency: $20",
+    "official": "Properties will be assessed and bills will be sent to property owners once a year.",
+    "note": "Ours attaches a dollar figure ($20) to what the official minutes describe only as an annual billing frequency with no amount; check the recording to see whether $20 was a separate figure (e.g., a minimum bill) or a captioning artifact of 'once a year'."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "commercial/industrial tax rate check",
+    "ours": "14.39 per thousand",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "residential vs. commercial share of the tax levy",
+    "ours": "92%",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "stormwater line item as share of town budget",
+    "ours": "half a percent",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "range of veterans' exemption (Clause 22) increase amounts discussed",
+    "ours": "$400, $600, $800",
+    "official": "a resident came into the office inquiring why his friends in other communities are getting more than a $400 exemption",
+    "note": "Official minutes reference only the current $400 amount and a resident's complaint; they do not mention $600 or $800 as discussed increase options — check the recording to see whether those were proposed figures or a misheard range."
+   },
+   {
+    "kind": "agree",
+    "about": "number of Clause 22 (veterans) exemption applicants",
+    "ours": "62, 57, 60",
+    "official": "over the past 2 years, on average there have been about 60 Clause 22 applications approved",
+    "note": "Our year-by-year figures average to about 60, consistent with the official minutes' rounded 2-year average; official is a summary, ours has more granularity."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "comparison to town's band concerts budget cut",
+    "ours": "$10,000",
+    "official": "",
+    "note": "This comparison does not appear in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "estimated total cost of veterans' exemption increase",
+    "ours": "$1,200 per applicant across 62 applicants",
+    "official": "",
+    "note": "Official minutes state no estimated total cost for the proposed increase."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "target timeline for finishing neighborhood reclassification",
+    "ours": "The board will aim to have reclassification (including waterfront/lakeback areas) ready for the next rebilling cycle, targeting it ahead of the directive's later deadline.",
+    "official": "According to the directive the Neighborhood review needs to be completed by 2029.",
+    "note": "Ours describes an aggressive internal target (next rebilling cycle); official only cites the 2029 statutory deadline with no mention of an earlier target — check which timeline the board actually committed to."
+   },
+   {
+    "kind": "agree",
+    "about": "Sarah/Reena meeting date for neighborhood three",
+    "ours": "Sarah and Reena will meet on either August 12th or August 18th to work on neighborhood three.",
+    "official": "There will be further discussion between Rena Swezey and Sarah Cammer (on August 12th or August 18th) regarding Neighborhood 3 and next steps.",
+    "note": "Same fact in both."
+   },
+   {
+    "kind": "agree",
+    "about": "tabling the veterans' exemption increase for a November town meeting",
+    "ours": "The board will table the Clause 22 increase for the September warrant and target the November town meeting to allow time to inform the public.",
+    "official": "Sarah Cammer is unsure if there is enough time to spread awareness before the September special meeting. The Board anticipates having to present more information and supply a presentation potentially for the November town meeting.",
+    "note": "Same decision, described consistently in both."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "scheduling of the executive session",
+    "ours": "The board tentatively scheduled meetings for September 9th and 23rd, recognizing an executive session will be needed to review pending exemption applications.",
+    "official": "Tonight's planned Executive Session will be postponed. The next executive session will be held on either August 11, 2026, or August 12, 2026, depending on Karen Barrett's availability.",
+    "note": "Ours ties the needed executive session to the September 9/23 meetings; official schedules the next executive session for August 11 or 12, separate from those dates — check which is correct, since this affects when exemption applications are actually reviewed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Principal Assessor search status",
+    "ours": "",
+    "official": "Brian Laffond confirms that a Principal Assessor, Brian Fernandes, was ratified by the Select Board on August 4, 2026. His anticipated start date is August 18, 2026.",
+    "note": "Not mentioned anywhere in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "postponed agenda topics",
+    "ours": "",
+    "official": "POSTPONED TOPICS: Criteria for Clause 18, BOA Polices Binder",
+    "note": "Not mentioned anywhere in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:45:01Z",
+   "cost_usd": 0.27274200000000004
+  }
  }
 }

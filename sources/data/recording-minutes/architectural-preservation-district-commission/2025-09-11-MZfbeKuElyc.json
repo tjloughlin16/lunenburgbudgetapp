@@ -193,5 +193,101 @@
    "at": "2026-09-27T12:29:25Z",
    "cost_usd": 0.18783000000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09112025-7395",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-09-11-minutes-7395.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-09-11-minutes-7395.pdf"
+  },
+  "official_sha256": "f642c7ba5cd35ddb0cc5858badb9d45e14f4ea472dc70bfb955d516fb67b1807",
+  "coverage": "full",
+  "summary": "The two records agree closely on the substantive decisions that both capture — the address correction (One vs. Three Main Street), the gazebo relocation position, and the Brooks House/T.C. Passios positions — with only one misheard name (Passios→Pacios). The main things a reader should check: the official minutes record a formal vote adopting the MPSC comments and list a third approved renovation item (a fiberglass window lintel) that our recording-based minutes missed, and the official minutes cover three agenda items (the APDC/Historical Committee merger, the 763 Mass Ave and 50 Main St old-business updates) that our minutes don't mention at all.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote outcome on Aug DoA address-correction motion",
+    "ours": "Motion to correct the record so that the determination of applicability approved in August is reflected as One Main Street rather than Three Main Street — not audible",
+    "official": "Motion to update the record for the previous DoA to change address from 3 Main St to 1 Main St as it shows on the Town GIS map. Motion by McGrath, seconded by Lloyd, Approved by all members.",
+    "note": "Our captions could not resolve the vote's outcome, mover, or seconder; check the recording near t=217 to confirm it passed unanimously as the official minutes state.",
+    "t": 217
+   },
+   {
+    "kind": "caption_error",
+    "about": "Building name in demolition/density discussion",
+    "ours": "the TC Pacios building",
+    "official": "Demo of T.C. Passios or a partial demo could be considered; however, the Brooks House should not be considered for demo but slated for reuse.",
+    "official_reading": "T.C. Passios",
+    "note": "Same building; captions rendered 'Passios' as 'Pacios'.",
+    "t": 1052
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Applicant and business name for the One Main Street DoA",
+    "ours": "Lunenburg Village Realty ... (Bad Larry's/Hilltop Farms convenience store)",
+    "official": "",
+    "note": "Official minutes identify the property only as '1 Main Street' with no applicant or tenant named; not contradicted, just not corroborated by the official text.",
+    "t": 368
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Whether T.C. Passios demolition was explicitly conditioned on added density",
+    "ours": "Commission agreed ... demolition of the TC Pacios building would be acceptable in exchange for increased density in a town center redevelopment.",
+    "official": "Increasing population could affect historical structures in the town center. Village district by laws has more influence on the guide development of that area. Demo of T.C. Passios or a partial demo could be considered; however, the Brooks House should not be considered for demo but slated for reuse.",
+    "note": "Official states the density/population rationale as general town-center context, not explicitly as a trade condition tied to T.C. Passios; check the recording near t=1052 for whether commissioners actually linked the two, or whether ours infers the link.",
+    "t": 1052
+   },
+   {
+    "kind": "agree",
+    "about": "Position on relocating the town green gazebo",
+    "ours": "Commission agreed it would support relocating the current town green gazebo, noting it is not historic and citing traffic and parking concerns, for input to the master plan steering committee.",
+    "official": "Current gazebo is not historic, but APDC does understand that the location is not ideal due to safety, traffic, and limited parking and would support a change.",
+    "note": "Same substance in both records — not historic, safety/traffic/parking concerns, commission supports a change.",
+    "t": 828
+   },
+   {
+    "kind": "only_in_official",
+    "about": "APDC/Historical Committee merger warrant update",
+    "ours": "",
+    "official": "Adam Costa has handed off the paperwork to another member of the firm to ensure we have the warrant finished before the deadline to have it posted for November town meeting.",
+    "note": "No counterpart in our minutes at all — check whether this agenda item falls within the recording our minutes were generated from."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "763 Mass Ave Street demolition-by-neglect letter",
+    "ours": "",
+    "official": "Historical commission sent a certified letter to owner, to address the demolition by neglect. Letter was returned to sender with no contact made.",
+    "note": "Old Business item entirely absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "50 Main Street owner outreach letter",
+    "ours": "",
+    "official": "Member Sculimbrene has drafted a formal letter to the owner of 50 Main St to invite them to our next meeting or we could hold a separate meeting at a date or time of their convenience.",
+    "note": "Old Business item entirely absent from our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Presence of any dollar/budget figures",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record contains any monetary figures — this was not a budget-bearing meeting."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:00:20Z",
+   "cost_usd": 0.278298
+  }
  }
 }

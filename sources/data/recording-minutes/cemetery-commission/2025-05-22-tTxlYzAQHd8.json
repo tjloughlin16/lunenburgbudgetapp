@@ -264,5 +264,125 @@
    "at": "2026-09-27T19:27:05Z",
    "cost_usd": 0.187426
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05222025-7205",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-05-22-minutes-7205.txt",
+   "path": "sources/meetings/cemetery-commission/2025-05-22-minutes-7205.pdf"
+  },
+  "official_sha256": "f9aa1ed7e9661c6f09894d87000a25b215e05bd29af6ee8631384ccefc78f484",
+  "coverage": "partial",
+  "summary": "The two records agree on the substance of the reorganization votes (Mike Clark as chair, David Dorren as vice chair, Donna Landry as clerk, all unanimous) and on the 6:00 PM meeting time, but diverge on several details worth checking: who is covering the spring Memorial Day flower costs (DPW vs. \"Department of Correction\"/Bill Bernardi), whether the new meeting day was actually settled (3rd Thursday per official vs. still open between 3rd/4th per ours), and who was tasked with contacting the library (Vice Chair David Dorren per official vs. \"the chair\" per ours). The official minutes also omit the April-minutes approval vote's absence from ours, the $350 flowers figure, and attendee \"John,\" while our minutes misheard \"David Dorren\" as \"Dave Doran.\"",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "vote to elect Mike Clark as chair",
+    "ours": "Motion for Mike to be chairperson — passed",
+    "official": "Vice Chair David Dorren motioned for Mike Clark to be chair, Donna Landry seconded, Roll Call: Mike Clark aye, David Dorren aye, Donna Landry aye",
+    "note": "Same outcome; official additionally records the unanimous roll call and who made the motion, which ours omits.",
+    "t": 343
+   },
+   {
+    "kind": "agree",
+    "about": "vote to elect vice chair",
+    "ours": "Motion for Dave Doran to take the role of vice chair — passed",
+    "official": "Mike Clerk motioned, for David Dorren to take the roll of Vice Chair, Donna Landry seconded, Roll Call: Mike Clark aye, David Dorren aye, Donna Landry aye",
+    "note": "Same outcome, unanimous per official's roll call; ours does not give the count or the mover.",
+    "t": 405
+   },
+   {
+    "kind": "agree",
+    "about": "vote to elect clerk",
+    "ours": "Motion for Donna Landry to be clerk of the cemetery commission — passed 3-0",
+    "official": "David Dorren motioned for Donna Landry to take the roll of Clerk, Mike Clark, Roll Call: Mike Clark ayes, David Dorren aye, Donna Landry aye",
+    "note": "Both agree: unanimous, 3-0.",
+    "t": 425
+   },
+   {
+    "kind": "discrepancy",
+    "about": "vote to approve April 24, 2025 minutes",
+    "ours": "",
+    "official": "Mike Clark made a motion to approve the minutes of April 24, 2025, Donna Landry seconded – AIF",
+    "note": "This routine vote is entirely absent from our minutes; check the start of the recording to see whether it was audible or simply not captured."
+   },
+   {
+    "kind": "caption_error",
+    "about": "vice chair's surname",
+    "ours": "Dave Doran",
+    "official": "David Dorren",
+    "official_reading": "David Dorren",
+    "note": "Same person, surname misheard (\"Doran\" for \"Dorren\"); note the official document itself is internally inconsistent, also spelling it \"Doreen\" once."
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair's full name",
+    "ours": "Mike",
+    "official": "Mike Clark",
+    "official_reading": "Mike Clark",
+    "note": "Captions caught only the first name; official supplies the surname \"Clark.\""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Memorial Day flowers/grounds cost figure",
+    "ours": "$350",
+    "official": "",
+    "note": "Official minutes mention funds being approved for flowers but state no dollar amount; check the recording or a budget line for the $350 figure."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who will check on the new meeting venue",
+    "ours": "the chair checking availability with the library (and re-confirming the specific Thursday)",
+    "official": "Vice Chair David Dorren to check with the library on conference room availability.",
+    "note": "Ours attributes the library follow-up to \"the chair\" generally; official specifically names Vice Chair David Dorren — check who was actually tasked with contacting the library.",
+    "t": 618
+   },
+   {
+    "kind": "discrepancy",
+    "about": "whether the new meeting day was settled",
+    "ours": "the chair will check with the library whether the third or fourth Thursday of the month works",
+    "official": "Future Meeting Schedule was discussed – All members are available on the 3rd Thursday of each month, at 6:00pm.",
+    "note": "Official states the day was already agreed (3rd Thursday) at this meeting; ours suggests two options were still being weighed — check whether a specific day was in fact settled.",
+    "t": 638
+   },
+   {
+    "kind": "agree",
+    "about": "future meeting start time",
+    "ours": "Future meetings will start around 6:00 PM rather than daytime, to accommodate members' work schedules.",
+    "official": "All members are available on the 3rd Thursday of each month, at 6:00pm.",
+    "note": "Both agree meetings will start at 6:00 PM.",
+    "t": 489
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "notifying members by phone",
+    "ours": "notify members by phone (since not all have email on file)",
+    "official": "",
+    "note": "Administrative detail not recorded in official minutes; minor, but worth noting for future contact planning.",
+    "t": 638
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "remote attendee John",
+    "ours": "John (attendee (remote, had audio/echo difficulties))",
+    "official": "",
+    "note": "Official minutes list only the three elected officers; \"John\" does not appear — check whether John was a member of the public or a commission member omitted from the roster."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:49:56Z",
+   "cost_usd": 0.288276
+  }
  }
 }

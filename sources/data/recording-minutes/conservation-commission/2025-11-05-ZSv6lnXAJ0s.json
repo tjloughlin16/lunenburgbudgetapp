@@ -504,5 +504,184 @@
    "at": "2026-09-27T11:56:11Z",
    "cost_usd": 0.200658
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11052025-7493",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-11-05-minutes-7493.txt",
+   "path": "sources/meetings/conservation-commission/2025-11-05-minutes-7493.pdf"
+  },
+  "official_sha256": "0325d8347e0a247669fa0f724d2dbc9a3c6067a27f61564a49a7486de4e37778",
+  "coverage": "full",
+  "summary": "The two records agree closely on every vote's outcome and on the bulk of the budget figures discussed, with most differences being captions mangling names (Pewtherer, Burnap, Doucette, Larouche, St Germain, the Chase/Whalom names) rather than substance. The one thing worth checking is who was tasked with getting the Mass Trails grant contract signed (ours says the chair, official says the Town Manager) and whether a buffer-zone stop-work order at 199 Mass Ave was actually issued, since official minutes record no such directive at all.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 3,
+   "discrepancy": 5,
+   "only_in_ours": 4,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chase applicants' names and lake name",
+    "ours": "Mark and Linda Chase's Lake Wham retaining wall repair",
+    "official": "A REQUEST FOR DETERMINATION OF APPLICABILITY by Marc and Linda Chase for emergency repairs to a 50+ year old retaining wall on the shore of Lake Whalom.",
+    "official_reading": "Marc and Linda Chase, Lake Whalom",
+    "note": "Captions misheard 'Marc' as 'Mark' and 'Whalom' as 'Wham' — same applicants, same lake.",
+    "t": 1801
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chase property street address",
+    "ours": "",
+    "official": "34 Pine Grove Rd - RDA-25-13",
+    "note": "Ours never captures a street address for this hearing; official gives 34 Pine Grove Rd."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "nature of the 36 Peninsula Drive tree-removal vote",
+    "ours": "Approve removal of one dead tree at 36 Peninsula Drive — passed (roll call: all 'I')",
+    "official": "M. Larouche, to ratify the approval to remove the tree.",
+    "note": "Official frames this as ratifying a prior administrative determination (CAD-25-20) rather than a fresh approval; check the recording near t=2881 for whether the tree removal had already been administratively approved before this vote.",
+    "t": 2881
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who is responsible for the Mass Trails grant contract signature",
+    "ours": "authorize the chair to obtain a new signature on the contract",
+    "official": "It was approved but the Town Manager needs to sign the revised contract.",
+    "note": "Ours has the chair obtaining the signature; official says the Town Manager needs to sign. Check the recording near t=5399 for which official was actually tasked.",
+    "t": 5399
+   },
+   {
+    "kind": "caption_error",
+    "about": "interim conservation administrator's name",
+    "ours": "Herland (interim administrator)",
+    "official": "Herlin Jamie - Interim Consv. Admin",
+    "official_reading": "Herlin Jamie",
+    "note": "Same role and function (fielding the erosion-control question at 199 Mass Ave), captioned surname differs."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who proposed the bylaw review ('Jen Warren')",
+    "ours": "",
+    "official": "Jen Warren wants all Commission to review By Laws and make any suggestions or comments.",
+    "note": "\"Jen Warren\" appears in neither the board's roster nor the staff list (chair is Jennifer Pewtherer, admin assistant is Michael Gale); check whether this is an OCR misread of \"J. Pewtherer\" or an actual person (e.g., Town Manager's office) not otherwise named in either record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "jurisdiction question on bylaw review",
+    "ours": "",
+    "official": "M. Wilson wondered if we had jurisdiction and suggested we ask the Town Manager.",
+    "note": "Not captured in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CPA map presentation",
+    "ours": "",
+    "official": "A. Burnap presented a map of communities in the CPA and suggested we participate.",
+    "note": "Not mentioned in ours at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "smaller lot sizes suggestion from MACC conference",
+    "ours": "",
+    "official": "T. Doucette noted that the Conservation Commission Conference suggested smaller lot sizes.",
+    "note": "Not mentioned in ours."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "stop-work restriction at 199 Mass Ave buffer zone",
+    "ours": "No work is to occur in the buffer zone at 199 Mass Ave until the commission determines next steps at the next meeting.",
+    "official": "",
+    "note": "Official records only that a conditions/restoration plan is in development and that no vote could be taken (not properly advertised); it states no work-stoppage order. Check the recording near t=4123 to confirm this directive was actually voiced and not inferred.",
+    "t": 4123
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "compiling questions before next 199 Mass Ave hearing",
+    "ours": "it will be listed under hearings at the next meeting and members will compile questions in the meantime",
+    "official": "",
+    "note": "Not recorded in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "office/chair task to properly advertise the 199 Mass Ave hearing",
+    "ours": "Office/chair to ensure the 199 Mass Ave hearing is properly advertised and placed on the next meeting's agenda.",
+    "official": "",
+    "note": "Official implies the outcome (it will be addressed next meeting) but does not state this as an explicit to-do."
+   },
+   {
+    "kind": "agree",
+    "about": "215 Sunset Ln removed from violations without a vote",
+    "ours": "215 Sunset Lane will be removed from the violations list without a formal vote, per a member's opinion that no vote is required since there is no active enforcement action to decide.",
+    "official": "J. Pewtherer decided to remove this from Violations.",
+    "note": "Same outcome (removed without a vote); ours attributes the call to \"a member's opinion\" generically while official names J. Pewtherer specifically.",
+    "t": 4949
+   },
+   {
+    "kind": "only_in_official",
+    "about": "underlying complaint behind the 215 Sunset Ln violation",
+    "ours": "",
+    "official": "M. Wilson asked what the actual violation was that raised the issue. There was a complaint that sediment was being deposited into the street after a significant rainstorm.",
+    "note": "This background is not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "five other open enforcement/violation matters",
+    "ours": "",
+    "official": "i. 10 Mass Ave- they were supposed to file by April, but nothing has come in ii. 1168 Mass Ave Rear- Violation fine was mailed, returned, and remailed to correct address ill. 48 Meadow Ln- In contact with property owners iv. 1147 Mass Ave- certified mail returned v. 314 Highland St- Violation fine to be mailed",
+    "note": "None of these five enforcement status items appear in ours at all."
+   },
+   {
+    "kind": "agree",
+    "about": "timber rights fund balance and transfer amount",
+    "ours": "8575, $2,000, 6575",
+    "official": "Timber Rights Fund has $8,575, but we are moving $2000 to MAKI PO.",
+    "note": "$8,575 and $2,000 match; the $6,575 remainder is arithmetic (8575-2000) present only in ours, not stated by the official minutes.",
+    "t": 8115
+   },
+   {
+    "kind": "caption_error",
+    "about": "name of the fund/account receiving the $2,000 timber-rights transfer",
+    "ours": "'Mac EPO' (as heard)",
+    "official": "moving $2000 to MAKI PO",
+    "official_reading": "MAKI PO",
+    "note": "Both records garble this fund name differently (likely the same fund); check the town's chart of accounts for the actual name.",
+    "t": 8115
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sean H. Kelly estate fund value",
+    "ours": "$800,000, $835,000",
+    "official": "we were the beneficiary of an estate (Shawn Kelley) worth about $835,000",
+    "note": "Official records only $835,000; check the recording near t=8196 for whether $800,000 was an earlier/rough estimate mentioned before the $835,000 figure was given.",
+    "t": 8196
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "wetlands bylaw consulting fee structure figures",
+    "ours": "$100,000, $500",
+    "official": "J. Pewtherer suggested we review the fee structure.",
+    "note": "Official records the topic but no figures; check the recording near t=6397, since $500 vs $100,000 is a wide spread to leave unrecorded.",
+    "t": 6397
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MACC fundamentals training cost",
+    "ours": "$15",
+    "official": "General discussion about training received. Educational efforts were also discussed.",
+    "note": "No figure appears in the official minutes for this."
+   }
+  ],
+  "quotes_not_in_official_dropped": 14,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:43:49Z",
+   "cost_usd": 0.393166
+  }
  }
 }

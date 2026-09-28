@@ -348,5 +348,109 @@
    "at": "2026-09-27T19:36:55Z",
    "cost_usd": 0.20246999999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082025-7209",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-05-08-minutes-7209.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-05-08-minutes-7209.pdf"
+  },
+  "official_sha256": "85a2915e0f4f79cb079f86d5cc23005041e843eb8574c4af812328d2f8ea56a0",
+  "coverage": "partial",
+  "summary": "The two records overlap only loosely: our minutes surface specific dollar figures and space-need numbers the official minutes never state, while the official minutes cover several agenda items (the LMBDC 2/3 vote, Lloyd's reappointment, 763 Mass Ave, Whiting House, OpenGov access) that our extraction omits entirely. The one thing a reader should check first is that a real Town Meeting vote outcome — \"LMBDC did not meet the 2/3 vote to be approved\" — is recorded only in the official minutes and not flagged as a vote in ours at all.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 5,
+   "only_in_ours": 3,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA funds for Municipal Building Design Project",
+    "ours": "Select board set aside ARPA funds for the Municipal Building Design Project (Ritter renovation/annex) — $225,000 (discussed only)",
+    "official": "",
+    "note": "The official minutes never mention ARPA funding or a $225,000 figure for this project at all; check the recording near t=926 to confirm the figure and whether it belongs in the official record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Municipal Building Design Project space-need figures",
+    "ours": "40, 8,000 square feet, 5,700, 14,400 square ft, 4,000 square foot, 10,000 square ft",
+    "official": "Is the design out of scope? Original ask was 4K SF of annex space, the design voted on was over 14K SF.",
+    "note": "Two of our numbers (4,000 and 14,400) roughly track official's 4K/14K+, but our minutes also list 8,000, 5,700, 10,000 and 40 with no counterpart in official — check the recording at t=883 to see whether those are separate figures discussed (e.g. alternate design options) or caption noise."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Brooks House prevailing wage figure",
+    "ours": "$50, $60 an hour",
+    "official": "",
+    "note": "Official minutes note that \"Prevailing wage also will come into play\" for the Brooks House but state no dollar amount; check the recording at t=489 for the actual figure discussed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Jones House sale price figures",
+    "ours": "100, 53",
+    "official": "",
+    "note": "Official minutes describe the Jones House sale price as \"reduced\" with no numbers given; check the recording at t=1051 for the actual sale price(s) discussed and whether 100/53 refer to thousands of dollars."
+   },
+   {
+    "kind": "agree",
+    "about": "APDC/historical commission annual budget amount",
+    "ours": "$500, $5,000, 4,000 to ,500",
+    "official": "Reduced to $500 annually, originally not believed to be an annual reoccurrence.",
+    "note": "Both records agree the current budget is $500 annually; the extra figures in ours ($5,000, 4,000-to-,500) reflect a separate discussion about what should be budgeted, not a contradiction of the $500 figure."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "future agenda item on what APDC needs to spend money on",
+    "ours": "The commission will add to a future agenda a discussion of what the APDC actually needs to spend money on, rather than assuming a $5,000 figure.",
+    "official": "",
+    "note": "This specific decision to revisit the $5,000 assumption on a future agenda is not recorded in the official minutes at all, which only note the budget was \"reduced to $500 annually\" — check whether this agenda commitment was actually made."
+   },
+   {
+    "kind": "agree",
+    "about": "April 10 minutes approval deferred",
+    "ours": "April 10th meeting minutes will not be approved tonight; they will be reviewed and approved at next month's meeting.",
+    "official": "Motion to approve 10 April minutes will be voted on at the June meeting.",
+    "note": "Both records agree the April minutes vote was pushed to the next (June) meeting."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "timing of Chair/Adam Costa merger discussion",
+    "ours": "Chair will meet with Adam next week to discuss merging the APDC with the Historical Commission.",
+    "official": "There was a separate conversation with Adam Costa about the merger of APDC and historical commission. He will follow up in June.",
+    "note": "Ours frames this as an upcoming meeting \"next week\"; official frames it as a conversation that already occurred with follow-up in June — check the recording at t=1258 to see which timeline is accurate."
+   },
+   {
+    "kind": "agree",
+    "about": "next meeting date",
+    "ours": "The commission decided to keep its next meeting on June 12 rather than move the date, since the Master Plan steering committee meeting was unlikely to conflict.",
+    "official": "Next Meeting: Meeting Schedule: Thursday, June 12, 2025",
+    "note": "Both records agree the next meeting is June 12; official does not record the deliberation over whether to move it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "deliberation to keep June 12 meeting date",
+    "ours": "The commission decided to keep its next meeting on June 12 rather than move the date, since the Master Plan steering committee meeting was unlikely to conflict.",
+    "official": "",
+    "note": "Official records only the resulting date, not that there was a discussion about moving it — a minor decision omitted from the official minutes; check the recording at t=2658 to confirm this deliberation took place."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "LMBDC Town Meeting 2/3 vote outcome",
+    "ours": "",
+    "official": "LMBDC – did not meet the 2/3 vote to be approved",
+    "note": "A real vote outcome (the LMBDC article failing to reach 2/3 at Town Meeting) appears only in the official minutes and is not captured anywhere in our vote/decision extraction — check the recording for discussion of this Town Meeting result, since our minutes list \"none\" for non-procedural votes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T12:55:17Z",
+   "cost_usd": 0.28405400000000003
+  }
  }
 }

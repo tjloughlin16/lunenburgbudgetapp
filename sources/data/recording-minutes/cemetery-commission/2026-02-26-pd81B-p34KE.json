@@ -442,5 +442,204 @@
    "at": "2026-09-27T11:03:52Z",
    "cost_usd": 0.193532
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02262026-7666",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2026-02-26-minutes-7666.txt",
+   "path": "sources/meetings/cemetery-commission/2026-02-26-minutes-7666.pdf"
+  },
+  "official_sha256": "50a091baf5ba2cb866b82232ffccf74cffc9ff54737945d986f83331ff71f27e",
+  "coverage": "official minutes are a summary only",
+  "summary": "Both non-procedural votes (the $20K sale-of-lots-to-capital transfer and the $2,000 Fish Street plaque/headstone work) and most named decisions match cleanly between the two records. The official minutes are a condensed narrative that drops nearly every dollar figure our minutes captured from discussion (fund balances, quotes, interest rates), omits a listed attendee (\"Steve\"), and reassigns responsibility differently than ours on three decisions (the minutes-under-review date, the hedge-trimming/flailing rotation, and who is doing the lot-pricing research and rules-and-regs drafting) — those three are worth checking against the recording.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 10,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: $20,000 sale-of-lots→capital transfer for cemetery embellishment",
+    "ours": "Request $20,000 transfer from the sale-of-lots fund to the capital fund for embellishment of (all) the cemeteries, to go on the May town warrant — passed",
+    "official": "Vice Chair David Dorren made a motion to request a $20K transfer from the Sale of Lots Fund to Capital fund for embellishment of the Cemeteries. Clerk Donna Landry seconded. AIF",
+    "note": "Same motion, same amount, same purpose, and outcome (AIF = approved in full) matches 'passed'; official adds the maker/seconder names which ours does not capture.",
+    "t": 2223
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: $2,000 for Fish Street plaque/headstone work",
+    "ours": "Spend $2,000 on the plaque and headstone work (Fish Street Cemetery) — passed",
+    "official": "David Dorren made a motion to approve 2k for headstone work and plaque for Fish Street cemetery. Donna seconded, AIF .",
+    "note": "Amount, subject, and outcome agree.",
+    "t": 2890
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer: $20,000 sale-of-lots fund to capital fund",
+    "ours": "Transfer from the sale-of-lots fund to the capital fund, for embellishment of the cemeteries (to be requested via a May town meeting warrant article) — $20,000 (voted)",
+    "official": "Vice Chair David Dorren made a motion to request a $20K transfer from the Sale of Lots Fund to Capital fund for embellishment of the Cemeteries. Clerk Donna Landry seconded. AIF",
+    "note": "Same transfer as the vote above; figures and direction of funds agree.",
+    "t": 2223
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: site improvements/capital article budget line",
+    "ours": "14283, 1428361, 10,000",
+    "official": "",
+    "note": "Official minutes give no budget-line figures for this discussion at all; nothing to compare a caption reading against.",
+    "t": 857
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: purchase-of-service / perpetual care budget line",
+    "ours": "48274, 19025, 4,457",
+    "official": "",
+    "note": "Not mentioned in the official summary; verify against the actual budget worksheet shown at the meeting if this figure is needed.",
+    "t": 1117
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: sale-of-lots fund balance",
+    "ours": "94,000",
+    "official": "",
+    "note": "Official minutes state no fund balance figure; check the fund report if this number matters for planning the $20K request.",
+    "t": 1269
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: perpetual care fund balance",
+    "ours": "235,000",
+    "official": "",
+    "note": "Not in official minutes; no independent record to corroborate the captioned figure.",
+    "t": 1269
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: perpetual care annual interest amount/rate",
+    "ours": "$1,700, two and a half%, three and a half%",
+    "official": "",
+    "note": "Official minutes omit this entirely; the multiple percentages heard suggest possible caption confusion between two different rates discussed, worth checking the recording directly.",
+    "t": 1290
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: South Cemetery gravestone repair quote(s)",
+    "ours": "13,000, 13550, 9,050, 6,500, 7,50",
+    "official": "",
+    "note": "Official minutes do not mention a South Cemetery gravestone repair quote at all (they mention South Cemetery hedge trimming instead); confirm whether this is a separate, unrecorded expenditure item.",
+    "t": 1541
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: committed expense vs. available capital funds",
+    "ours": "9800, 483, 4483",
+    "official": "",
+    "note": "Not addressed in the official minutes; no basis for comparison.",
+    "t": 1859
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: requested transfer amount for cemetery projects",
+    "ours": "10, 20, 94, 74",
+    "official": "",
+    "note": "These look like fragments of the fund-balance/transfer discussion (94,000 balance, 20,000 request) rather than a clean figure; official minutes give no equivalent breakdown to check against.",
+    "t": 2073
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: Fish Street plaque/headstone cost breakdown",
+    "ours": "2,000, 800, 1,200",
+    "official": "",
+    "note": "The $2,000 total matches the official vote figure, but the $800/$1,200 split is not in the official minutes; check if that breakdown was ever formally recorded.",
+    "t": 1698
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Which minutes were under review (December 11 vs. December 19)",
+    "ours": "The December 11 minutes were not ready; the chair would circulate the February draft for final comments and bring both sets back for approval at the next meeting.",
+    "official": "Review and Approve Minutes. Reviewed draft of Dec 19 minutes, waiting for AI export of Dec 11 minutes.",
+    "note": "Ours names a 'February draft' under review; official names a 'Dec 19' draft, and 'AI export' is an unclear term. Check the recording for the actual dates/drafts discussed.",
+    "t": 505
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: cemetery building sign wording change",
+    "ours": "The cemetery building sign will get a sticker/overlay changing 'Department' to 'Division' rather than being replaced entirely.",
+    "official": "Cemetery Building Sign needs to state Division of DPW, not Dept of due to 2001 change.",
+    "note": "Both agree on the substance (Department → Division); official adds the 2001-change rationale, ours adds the sticker/overlay method — complementary, not conflicting.",
+    "t": 334
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: request clarification on perpetual care interest/fund management",
+    "ours": "The board will ask the town manager and town accountant to clarify how perpetual care interest and fund balances are managed and when interest is allocated.",
+    "official": "",
+    "note": "Not mentioned in official minutes at all; worth confirming whether this follow-up request was actually made or only discussed informally.",
+    "t": 1248
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: letter supporting full-time cemetery employee",
+    "ours": "The board will draft its own letter supporting hiring a full-time cemetery employee, in addition to the superintendent's request.",
+    "official": "Discussed in general, Bill Bernard put in for a fulltime employee as part of goals, Mike Clark to follow up with letter.",
+    "note": "Both agree Bill (DPW director) requested the position and the chair (Mike Clark) will follow up with a letter.",
+    "t": 4175
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: next several meetings scheduled, room reserved",
+    "ours": "Meetings for the next several months were set for the fourth week of March, April, May and June, with the room to be reserved.",
+    "official": "Next meeting time – March 26th, 6:00 pm David will reserve room (also April, May & June)",
+    "note": "Both agree meetings were set through June with the room to be reserved (March 26 falls in the fourth week of March, consistent with ours).",
+    "t": 4504
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: 'Steve'",
+    "ours": "Steve (member)",
+    "official": "",
+    "note": "The official minutes' letterhead lists only three commission members — Mike Clark (Chair), David Dorren (Vice-Chair), Donna Landry (Clerk) — plus DPW staff Bill Bernard and Todd Holman; no 'Steve' appears anywhere. Confirm whether Steve is a commission member, a misheard name, or a guest.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Burial/cremation schedule for spring",
+    "ours": "",
+    "official": "Todd Holman – Scheduled 4 burials to do in spring, 2 in mausoleum, 10 cremations, 5 additional not committed yet.",
+    "note": "Not captured in our minutes at all; a substantive operational figure missing from our record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "North Cemetery Backlot Expansion engineering review",
+    "ours": "",
+    "official": "DPW Director Bill Bernard called Greg Roy (Dillis & Roy), working on cost estimates.",
+    "note": "An ongoing capital project item entirely absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Internship availability inquiry",
+    "ours": "",
+    "official": "David Dorren asked if there are internships available, no paid but for college course credit",
+    "note": "Not present in our minutes; a minor discussion point the official record captured and ours did not."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Invoices due: none (light pole work completed)",
+    "ours": "",
+    "official": "Invoices Due – none due (lights on Poles have been completed)",
+    "note": "A status item (no pending invoices, pole lighting completed) not mentioned in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:04:32Z",
+   "cost_usd": 0.28991
+  }
  }
 }

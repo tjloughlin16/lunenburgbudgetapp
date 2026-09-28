@@ -418,5 +418,159 @@
    "at": "2026-09-27T18:09:36Z",
    "cost_usd": 0.19877
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06182025-7278",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-06-18-minutes-7278.txt",
+   "path": "sources/meetings/conservation-commission/2025-06-18-minutes-7278.pdf"
+  },
+  "official_sha256": "81331d50c5422e43e774387276668972800aa511f74fb17a510da9b0b950f979",
+  "coverage": "full",
+  "summary": "The two records agree closely on every recorded vote's outcome and on most decisions — the negative determination, the continuance, the Park St Terrace waiver, the certificate of compliance, and the July meeting-date shift all match. The one thing a reader should check is the MACC dues item: our minutes show two separate votes ($320, then amended to $525) with several intermediate figures, while the official minutes record only a single $525 vote with no mention of an earlier motion or amendment.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 6,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Applicant name for 5 Electric Ave",
+    "ours": "Kenneth Culture",
+    "official": "Kenneth Cloutier",
+    "official_reading": "Kenneth Cloutier",
+    "note": "Same applicant, name misheard by the captions.",
+    "t": 1234
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name for 67 Island Road",
+    "ours": "Melissa Canavino",
+    "official": "Melissa Cannavino",
+    "official_reading": "Melissa Cannavino",
+    "note": "Same applicant, one letter dropped by the captions.",
+    "t": 1340
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of interim conservation administrator whose determination was accepted",
+    "ours": "Harland's determination",
+    "official": "Herlin Jamie's recommendation",
+    "official_reading": "Herlin Jamie (listed on the letterhead as Herlin Jaime, Interim Consv. Admin.)",
+    "note": "Misheard name; the administrator being credited is the same person.",
+    "t": 1599
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reason the chair did not vote on 5 Park St Terrace",
+    "ours": "chair not participating due to a family connection to the applicant",
+    "official": "R. Bursch - Abstained",
+    "note": "Official minutes record the abstention but not a reason; a person should check the recording to confirm the stated 'family connection' reason before publishing it as fact, since only our transcript carries it.",
+    "t": 1599
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Intermediate MACC dues figures discussed",
+    "ours": "MACC dues, amended to add administrator access: 385; MACC dues, further amended for handbook and admin: 140, 460, 65, 525",
+    "official": "",
+    "note": "Official minutes state only the final $525.00 figure; the intermediate amounts our transcript heard ($385, $140, $460, $65) do not appear anywhere in the official record and may reflect a live back-and-forth that was captioned imprecisely.",
+    "t": 2451
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Whether 'handbook' access was part of the increased MACC dues",
+    "ours": "amended for handbook and admin",
+    "official": "for MACC dues for members and admin access from July 1, 2025, to June 30, 2026",
+    "note": "Official describes the increase as covering 'members and admin access' only, with no mention of a handbook; a person should check the recording around t=2484 to confirm whether 'handbook' access was actually part of what the $525 purchased.",
+    "t": 2484
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: July meeting schedule change",
+    "ours": "Moved the July meeting schedule from the 2nd/16th to the 9th and 23rd to ensure a quorum for a continuation hearing.",
+    "official": "R. Bursch discussed moving July meetings from July 2 and July 16 to July 9 and July 23 and to determine if a quorum would be present.",
+    "note": "Same decision, same dates, in both records.",
+    "t": 191
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Basis and scope of the 390 Howard Street plan",
+    "ours": "On town counsel's advice, the 390 Howard Street applicant will be told to renotify abutters and the commission will 'recommission' to rule on the application once a quorum exists again; the chair will decide whether to renotify under the existing filing or have the applicant refile as a clean, no-additional-fee filing.",
+    "official": "This will lose quorum after this meeting; the application will need to be recommissioned. We were close to the end but did not receive the final drawing. A new filing will get a new OpenGov record, but we can waive the filing fee.",
+    "note": "Official minutes describe the loss of quorum, the missing final drawing, and a waived filing fee, but never mention town counsel's advice or renotifying abutters; a person should check the recording near t=2117 to confirm whether renotification was actually recommended by town counsel before repeating that detail.",
+    "t": 2117
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Confirmation of RDA closing process for a departing member",
+    "ours": "Confirmed for a departing member that his RDA decision needs no closing process once the permitted work is complete; it simply expires if unused after three years.",
+    "official": "",
+    "note": "This exchange does not appear anywhere in the official minutes.",
+    "t": 3007
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair Jennifer Pewtherer's absence",
+    "ours": "",
+    "official": "Absent: J. Pewtherer, P. Stella",
+    "note": "Jennifer Pewtherer, the commission's actual Chair, is named as absent in the official roll call and letterhead but does not appear anywhere in our attendee list."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Acting chair's name",
+    "ours": "Richard Bersi (Chair)",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "Same person, surname misheard by the captions."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Acting chair's title",
+    "ours": "Richard Bersi (Chair)",
+    "official": "Richard Bursch, Vice Chair",
+    "note": "Official letterhead lists Richard Bursch as Vice Chair (Jennifer Pewtherer is Chair, absent that night); our minutes call him 'Chair' outright. A person should check whether he was introduced on the recording as acting/presiding chair, since that distinction is lost in our label."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name St. Germaine",
+    "ours": "Chris St. Germaine",
+    "official": "Chris St Germain",
+    "official_reading": "Chris St Germain",
+    "note": "Same person; spelling variant likely from the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "New commissioner's full name",
+    "ours": "Teddy (newly appointed commissioner (not yet participating in votes))",
+    "official": "R. Bursch welcomed Teddy Doucette as a new member starting with the July 9 meeting.",
+    "official_reading": "Teddy Doucette",
+    "note": "Our minutes capture only the first name; official gives the full name and confirms he does not start until the July 9 meeting, consistent with 'not yet participating.'"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reason given for Jeff Viviano's departure",
+    "ours": "Jeff Viviano (member (last meeting; did not seek reappointment))",
+    "official": "M. Wilson: Noted that tonight is Jeff Viviano's last night and wanted to thank him for his service. Additional thanks and congratulations from other Committee members.",
+    "note": "Both agree this was Viviano's last meeting; only our minutes state the reason ('did not seek reappointment'), which does not appear in the official text — worth checking against the recording before treating it as established."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unidentified speaker 'Matt'",
+    "ours": "Matt (speaking on behalf of the town)",
+    "official": "",
+    "note": "No 'Matt' is named anywhere in the official minutes; a person should check the recording to identify who this was (e.g. staff or town counsel) and whether the official minutes simply omitted him."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:25:19Z",
+   "cost_usd": 0.325512
+  }
  }
 }

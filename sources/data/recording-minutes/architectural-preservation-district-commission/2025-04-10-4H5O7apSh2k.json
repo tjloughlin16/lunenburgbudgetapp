@@ -295,5 +295,101 @@
    "at": "2026-09-27T22:53:59Z",
    "cost_usd": 0.19045800000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04102025-7155",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-04-10-minutes-7155.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-04-10-minutes-7155.pdf"
+  },
+  "official_sha256": "942d79e822ccac6755201046cba6fa6831beb16ee9e696fb3c6c0ba7aae27be1",
+  "coverage": "partial",
+  "summary": "The two records agree closely on everything our minutes actually captured — both votes, the Brooks House decision, and the four commissioners present — but ours covers only part of the meeting: the entire \"Old Business\" section (Town Hall/Ritter repairs, Historical Commission/APDC merger, 763 Mass Ave, 50 Main Street, the historical survey) is in the official minutes and absent from ours, while ours includes a William-reappointment discussion the official minutes never mention. The one figure worth checking is the Master Plan Steering Committee date: ours flags the recording as inconsistent between June 12 and June 14, and the official minutes settle on June 12.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: 3 Oak Avenue determination of applicability",
+    "ours": "[t=518] Approve the determination of applicability for 3 Oak Avenue as not requiring a certificate to alter — passed",
+    "official": "Motion to approve by Member Lloyd, seconded by Member Lockwood, approved by all members.",
+    "note": "Same vote, same outcome (unanimous approval); no action needed.",
+    "t": 518
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: general response to Select Board on Brooks House warrant article",
+    "ours": "[t=1699] Approve a general response to raise with the Select Board regarding the Brooks House warrant article — passed",
+    "official": "Motion to approve to General response to Select Board by member Lockwood, Seconded by Lloyd, Approved by all members.",
+    "note": "Same vote, same outcome (unanimous approval); no action needed.",
+    "t": 1699
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Procedural vote to approve prior (13 March) meeting minutes",
+    "ours": "",
+    "official": "Motion to approve 13 March minutes by Member Lockwood, seconded by Lloyd, approved by all members.",
+    "note": "Procedural minutes-approval vote, not required for comparison, but noting it exists only in the official record for completeness."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Substance of the Brooks House discussion behind the warrant-article decision",
+    "ours": "[t=958] The commission will raise the Brooks House warrant-article compliance question at the next select board meeting under comments from other boards/commissions.",
+    "official": "Member Sculimbrene brought comments to the Select Board as a private citizen about the purpose of the warrant and that the LMBDC discussion does not meet that intent.",
+    "note": "The underlying decision to raise the issue matches in both, but ours omits the substantive detail (the LMBDC chair's demolition recommendation, Sculimbrene's private-citizen remarks, and the economic-development rationale); a reader wanting the full context should check the official minutes.",
+    "t": 958
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "William's reappointment decision",
+    "ours": "[t=1994] William was asked to inform the commission as soon as possible whether he will seek reappointment, since the deadline for appointments is in June.",
+    "official": "",
+    "note": "This discussion is not recorded anywhere in the official minutes; check the recording to confirm it was said and whether it belongs in a future official record.",
+    "t": 1994
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Master Plan Steering Committee meeting date",
+    "ours": "[t=2707] A master plan steering committee discussion meeting was tentatively set, to be held at Smoke Stacks coffee shop, with the date given inconsistently as June 12th or June 14th at 6:30 p.m.",
+    "official": "Meeting to be schedule June 12 at 6:30PM at coffee shop",
+    "note": "Our minutes flag the recording itself as internally inconsistent between June 12 and June 14; the official minutes give only June 12. Check the recording at t=2707 to hear which date was actually stated, since this determines the correct meeting date.",
+    "t": 2707
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Name of the coffee shop for the Master Plan Steering Committee meeting",
+    "ours": "",
+    "official": "Meeting to be schedule June 12 at 6:30PM at coffee shop",
+    "note": "Ours names the venue as 'Smoke Stacks'; the official minutes just say 'coffee shop' with no name, so this detail cannot be cross-checked against the official record.",
+    "t": 2707
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees present",
+    "ours": "Anthony (chair), Nathan (member), William (member), Richard (member)",
+    "official": "Present: Chairman Sculimbrene, Lloyd, McGrath, Lockwood",
+    "note": "Same four people present in both records; only_in_official detail is that the roster gives full names and William Lloyd's actual role as Clerk (not just 'member'), which ours does not capture — not a conflict, just missing detail."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Old Business agenda items (Town Hall/Ritter repairs, Historical Commission/APDC merger, 763 Mass Ave, 50 Main Street, Historical Commission survey)",
+    "ours": "",
+    "official": "2) Historical Commission/APDC Merger Update a. Historical commission this month did not have a quorum this month, has been an issue over the past several months.",
+    "note": "Our minutes stop after the Brooks House and reappointment discussions and do not cover any of the five Old Business items the official minutes record; check whether the recording or transcript we drew from ran the full length of the meeting."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T12:53:49Z",
+   "cost_usd": 0.38016419999999995
+  }
  }
 }

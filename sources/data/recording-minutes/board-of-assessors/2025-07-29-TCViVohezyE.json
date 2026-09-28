@@ -307,5 +307,168 @@
    "at": "2026-09-27T12:50:49Z",
    "cost_usd": 0.18997
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07292025-7325",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-07-29-minutes-7325.txt",
+   "path": "sources/meetings/board-of-assessors/2025-07-29-minutes-7325.pdf"
+  },
+  "official_sha256": "75fbd2f5910db663fa8f6c60949d914db75b27deccd9ba3af1506bc7082d8820",
+  "coverage": "partial",
+  "summary": "The two records agree on the broad shape of the meeting (brochure sign-off, the October–December meeting dates, and the ATB follow-up) but diverge on several names, on who is doing what regarding the addendum and the sales-report request, and each record has a cluster of items — mostly dollar figures and the GIS/opening-comments discussion — that the other omits entirely. A reader should check the addendum-drafting attribution (Cameron vs. Laffond) and the Vision sales-report decision, since those describe different actions, not just different wording.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 3,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Lefon (Chair)",
+    "official": "Present Members: Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Misheard surname; same person, same role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name",
+    "ours": "Sarah Cameron (Member)",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "Misheard surname (Cameron vs. Cammer); same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name",
+    "ours": "Linda Chaika (Member)",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Misheard first and last name (Linda Chaika vs. Lynda Cajka); same person."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "attendee titles/roles",
+    "ours": "Sarah Cameron (Member); Linda Chaika (Member)",
+    "official": "Vice Chair Sarah Cammer, Principal Assessor Lynda Cajka",
+    "note": "Our minutes list both as plain 'Member' while the official minutes give Cammer the officer title Vice Chair and Cajka the staff title Principal Assessor — check the board's own roster/bylaws for correct titles."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "personal property tax exemption threshold figure",
+    "ours": "[t=1893] Personal property tax exemption threshold: 2,500, 2500",
+    "official": "",
+    "note": "No dollar figure for a personal property tax exemption threshold appears anywhere in the official minutes; check the recording against any assessor worksheet to confirm this figure was actually stated in this meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "brochure printing cost figure",
+    "ours": "[t=3346] Senior tax exemption brochure printing: 100",
+    "official": "",
+    "note": "The official minutes describe finalizing and printing the senior exemption brochure but state no dollar cost; check any printer invoice or quote referenced in the meeting."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who drafts the investigation-report addendum",
+    "ours": "[t=3140] Sarah Cameron will draft an addendum arguing the investigation report did not fully address communication/oversight issues or offer remedies; to be reviewed at the next meeting and appended to the document.",
+    "official": "Brian Laffond suggests writing an addendum to include: The investigation seemed to indicate that communication, supervision, and oversight were lacking during this crisis but there were no recommended solutions in the investigation. The Board has undertaken to improve communication, supervision, and oversight. Brian Laffond will be unable to attend the meeting on August 19th but will provide the letter to Sarah Cammer to present in case it is needed.",
+    "note": "The two records disagree on who originates and drafts the addendum text — ours has Cameron drafting it, official has Laffond writing it and handing it to Cammer only to present; check the recording to see which member actually volunteered to write it."
+   },
+   {
+    "kind": "agree",
+    "about": "senior brochure content decision",
+    "ours": "[t=3241] No changes needed to the senior real estate tax exemption brochure; combine the two files into one document and send to a printer on glossy paper.",
+    "official": "The team agreed the form was great as submitted. Once the 2 separate pages are concatenated, it will be good to go out for printing.",
+    "note": "Both records agree the brochure needs no content changes and the two pages should be combined before printing."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "glossy paper printing instruction",
+    "ours": "[t=3241] ...send to a printer on glossy paper.",
+    "official": "",
+    "note": "The official minutes say the brochure will 'go out for printing' but do not specify paper stock; check the recording to confirm the glossy-paper instruction was actually given."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "upcoming August/September meeting dates",
+    "ours": "",
+    "official": "Upcoming Meetings: August 13, 2025 (Ritter Building), September 3, 2025, and Tentative Date at the end of September (9/24/2025 is not available for any location).",
+    "note": "Our minutes have no entry for the August 13 or September 3 meetings; check the recording for whether these near-term dates were announced."
+   },
+   {
+    "kind": "agree",
+    "about": "October tentative meeting dates",
+    "ours": "[t=3684] Tentatively set October 1st and October 15th (first and third Wednesdays) as the next two regular meeting dates.",
+    "official": "October 1 October 15",
+    "note": "Dates match; official omits the 'first and third Wednesdays' framing but the dates agree."
+   },
+   {
+    "kind": "agree",
+    "about": "November/December tentative meeting dates",
+    "ours": "[t=3766] Tentatively set November 5th and 19th, and December 3rd and 17th as meeting dates.",
+    "official": "November 5 November 19 December 3 December17",
+    "note": "Dates match exactly between both records."
+   },
+   {
+    "kind": "agree",
+    "about": "outreach to Appellate Tax Board",
+    "ours": "[t=4287] Reach out to the Appellate Tax Board before the next meeting to find out if there are any outstanding cases against Lunenburg.",
+    "official": "Brian Laffond requests Lynda Cajka to reach out to our contact at ATB to see if there are any outstanding cases against Lunenburg. We have been surprised in the past.",
+    "note": "Both records agree on the substance of the request; official adds who was asked to do it and a reason, which does not conflict with ours."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "sales report from Vision decision",
+    "ours": "[t=4392] The assessor's office will pull its own sales report from the deeds before receiving Vision's analysis.",
+    "official": "Sarah Cammer asked for an update from Vision on the status of the Sales Report, etc. for the Interim valuation. Vision was late last year.",
+    "note": "Ours describes a decision for the assessor's office to independently pull a sales report from the deeds; official describes only a request for a status update from Vision, with no mention of the office doing its own report — check the recording to see whether an independent report was actually decided."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "no executive session for September 13 meeting",
+    "ours": "[t=4481] No executive session is needed for the September 13th meeting since there are no pending exemption or chapter land matters.",
+    "official": "",
+    "note": "The official minutes name no September 13th meeting at all (only August 13, September 3, and a tentative late-September date) and make no mention of an executive-session decision; check the recording for the correct date and whether this decision was made."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to document the board vacancy in the investigation response",
+    "ours": "[t=404] Add a line to the investigation-response document noting the vacancy on the Board of Assessors.",
+    "official": "Sarah Cammer reminded everyone that there is still an opening for another Board of Assessor member.",
+    "note": "Official records the vacancy reminder but not the specific decision to add a line about it to the investigation-response document; check the recording for whether that specific editorial decision was made."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision to prioritize and highlight the vacancy in the select board presentation",
+    "ours": "[t=2891] State in the report that filling the vacant assessor seat should be a priority, and highlight that sentence when presenting to the select board.",
+    "official": "",
+    "note": "The official minutes mention the vacancy reminder but not a decision to state it as a priority or to highlight it during the select board presentation; check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "GIS brochure / land records discussion",
+    "ours": "",
+    "official": "Sarah Cammer recently attended a conference and received a brochure from GIS that highlighted land records and land administration. This may be an option for streamlining, especially if there is a town account with Mass GIS.",
+    "note": "This opening-comments discussion is entirely absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "closing comments on Mass GIS presentation/parcel access",
+    "ours": "",
+    "official": "Sarah Cammer contemplates creating a small presentation about Mass GIS. It would be ideal to have town wide access to see all parcels. It would be great to directly update GIS information while in the field. The town would need someone who is knowledgeable with GIS that can update plans and add parcels. Sarah Cammer states there are many towns that have already integrated this system.",
+    "note": "This closing-comments discussion about a future GIS presentation is entirely absent from our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:16:50Z",
+   "cost_usd": 0.3307452
+  }
  }
 }

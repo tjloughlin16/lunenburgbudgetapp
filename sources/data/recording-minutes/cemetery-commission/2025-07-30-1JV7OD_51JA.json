@@ -558,5 +558,274 @@
    "at": "2026-09-27T12:50:51Z",
    "cost_usd": 0.19417
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07302025-7330",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-07-30-minutes-7330.txt",
+   "path": "sources/meetings/cemetery-commission/2025-07-30-minutes-7330.pdf"
+  },
+  "official_sha256": "e406de3d15646c7544daef0ff5bacee2a1b96db9c7c0b4a16387eb71e5afc388",
+  "coverage": "official minutes are a summary only",
+  "summary": "The official minutes are a brief topic-by-topic summary that confirms both votes happened (engineering plans, fireproof cabinet) but drops nearly every dollar figure, contractor detail, and several decisions our transcript-based minutes captured in full — including one notable omission (giving the electrical contractor one more chance) and one topic (crack sealing) that appears only in the official minutes. The most consequential things for a reader to check are the engineering-plan dollar amount ($11,435 official vs. $50,000/$12,000 in ours), the added site-visit postponement in the official minutes not present in our recording, and an internal inconsistency in the official minutes about who actually chaired the meeting.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 24,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "vendor name for fireproof cabinet",
+    "ours": "WB Mason",
+    "official": "W.D. Mason",
+    "note": "Neither is obviously the caption's fault — 'W.B. Mason' is the real office-supply company, so ours may be closer and the official minutes may have the typo; check the actual invoice for the correct vendor name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "transfer — capital article carryover for North Cemetery",
+    "ours": "[t=4669] prior 2024 capital article carryover, $10,606, discussed only",
+    "official": "",
+    "note": "Official minutes never mention this balance or the transfer discussion at all; worth checking the capital article ledger to confirm $10,606 is accurate since it is unconfirmed by any other source here."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — North Cemetery engineering scope estimate",
+    "ours": "[t=1100] $50,000",
+    "official": "",
+    "note": "No official corroboration of this scope-of-work estimate; official only states the $11,435 plan fee (see vote finding above)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — bidding threshold/exception",
+    "ours": "[t=1367] 10, 10,000",
+    "official": "",
+    "note": "Procedural bidding-law figures not mentioned in the official summary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — arborvitae/tree replacement quotes",
+    "ours": "[t=1555] $7,000, $5,600, 20, 15",
+    "official": "",
+    "note": "Official only says shrub-replacement scenarios were reviewed (#8), with no dollar figures — check meeting recording if these quote figures need to be cited publicly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — post-and-rail fencing cost estimate",
+    "ours": "[t=1828] $260, $100, 360",
+    "official": "",
+    "note": "Not mentioned in official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — granite post supplier quote (Swenson, NH)",
+    "ours": "[t=1873] 70, 10, 5K",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — Amanda Construction headstone repair quote",
+    "ours": "[t=2609] 120, $4,800, 13, 135, 10,000",
+    "official": "Initial review of stonewall to be repaired by Amanda Construction.",
+    "note": "Official confirms the contractor and topic but gives no dollar figures or counts — check the actual Amanda Construction quote to verify these numbers before citing them publicly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — alternative headstone-straightening quote",
+    "ours": "[t=3210] 35",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — Bullock Brothers hedge trimming quote",
+    "ours": "[t=3756] $7,500",
+    "official": "",
+    "note": "Not mentioned; official item #11 discusses tree/shrub trimming generically with no contractor name or figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — Ray Morin roadside branch-trimming service",
+    "ours": "[t=4009] 4600, 21",
+    "official": "",
+    "note": "Not mentioned; official item #11 is the closest topical match but names no vendor or figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — sale-of-lots and perpetual-care fund balances",
+    "ours": "[t=4219] 94K, 94494, 233 602, $328,97",
+    "official": "",
+    "note": "No fund-balance figures appear anywhere in the official minutes; treat these as unverified until checked against the trust fund statements."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — trust fund interest rate assumption",
+    "ours": "[t=4283] 2 and 12%, 2.54, 8,200",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — five-year lot sales history",
+    "ours": "[t=4351] 48, 141, 800, 51",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — average annual lot sales/revenue estimate",
+    "ours": "[t=4417] 9.6, 32, 33,000",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — spendable amount without depleting principal",
+    "ours": "[t=4541] 41,000, 40",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figure — FY spending plan across current projects",
+    "ours": "[t=4936] 24945, 14, 5700, 48",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "decision — software training name",
+    "ours": "Chair will coordinate scheduling of 'SIM software'/GIS training with the vendor",
+    "official": "Discussed CIMS Software training – Mike to check with Brian Finley to schedule training.",
+    "official_reading": "CIMS Software",
+    "note": "'SIM' is a mishearing of 'CIMS' (the actual software name); the substance (schedule training pending calendar/vendor contact) agrees."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "decision — GIS/CIMS training contact person",
+    "ours": "",
+    "official": "Mike to check with Brian Finley to schedule training.",
+    "note": "Vendor contact's name (Brian Finley) is only in official minutes — captions likely only captured 'the vendor.'"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "decision — CIMS/GIS integration follow-up",
+    "ours": "",
+    "official": "Mike discussed the integration between CIMS software and GIS as well as training – to be determined in the future.",
+    "note": "Not distinctly captured in ours; likely folded into the training decision above."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision — private pre-meeting with engineering firm",
+    "ours": "[t=1121] hold a private working meeting with the engineering firm before the public back-lot-design meeting",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision — add construction-specifications section to scope of work",
+    "ours": "[t=1057] have engineering firm add specs section so project can go to bid once designed",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision — request additional headstone quote from Brett Ramsen",
+    "ours": "[t=3296] request additional quote from Brett Ramsen for comparison",
+    "official": "",
+    "note": "Not mentioned in official minutes, which only names Amanda Construction."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision — pilot phase on ~120 leaning headstones first",
+    "ours": "[t=3170] proceed first with ~120 leaning/fallen headstones as a pilot before broader repairs",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision — Ray Morin's crew to handle roadside branch trimming",
+    "ours": "[t=4053] Ray Morin's crew handles roadside trimming, cemetery staff cleans up after",
+    "official": "",
+    "note": "Official item #11 covers tree/shrub trimming generically without naming a contractor."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "topic — crack sealing review",
+    "ours": "",
+    "official": "Reviewed crack sealing cemetery in North and South Cemetery.",
+    "note": "This topic does not appear anywhere in our minutes at all — check the recording around this point in case it was missed entirely by the transcript/summary."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision — keep spending conservative, revisit trust funds in November",
+    "ours": "[t=5102] keep spending conservative for now, revisit pulling additional trust-fund money at November meeting",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision — site visit dates for North/South Cemetery",
+    "ours": "[t=5934] North Cemetery August 14 at 7:30am; South Cemetery August 28 at 7:30am",
+    "official": "Planned future onsite meetings at the North Cemetery for August 14th and South Cemetery for August 28th (postponed to September 9th at 7:30 am for North, and South Cemetery on September 18th).",
+    "note": "Official minutes append a postponement (to Sept 9 and Sept 18) that is not in our recording of the July 30 meeting — check whether that postponement was decided later and added to these minutes afterward, or happened live and was missed by the transcript."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision — review neighboring towns' cemetery rules/regulations",
+    "ours": "[t=5829] chair/John to review neighboring towns' forms and draft updated Lunenburg proposal",
+    "official": "",
+    "note": "Not mentioned in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision — give electrical contractor one more chance on Fitch-area work",
+    "ours": "[t=6236] give contractor (heard as WMD/MWD Electric) one more chance to complete approved Fitch-area electrical work before seeking another contractor",
+    "official": "",
+    "note": "A notable decision entirely absent from official minutes — worth checking the recording directly since it concerns contractor performance and could matter if the work is later disputed."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee — Bill's last name",
+    "ours": "Bill (commission member / DPW liaison)",
+    "official": "Bill Bernard",
+    "official_reading": "Bill Bernard",
+    "note": "Captions only caught the first name; role (DPW) matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee — Mike's last name",
+    "ours": "Mike (commission member)",
+    "official": "Mike Clark",
+    "official_reading": "Mike Clark",
+    "note": "Captions only caught the first name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee — 'Don' vs Donna Landry",
+    "ours": "Don (commission member)",
+    "official": "Donna Landry",
+    "official_reading": "Donna Landry",
+    "note": "'Don' is a plausible mishearing of 'Donna' by the caption engine; role (Clerk) not captured in ours."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "attendee — 'John' has no official counterpart",
+    "ours": "John (commission member)",
+    "official": "Mike Clark, Dave Dorren, Donna Landry, Bill Bernard",
+    "note": "None of the four official attendees is named John — check whether this is a mishearing of 'Dave' (Dorren) or an unlisted additional speaker (e.g., a vendor rep or Cemetery Superintendent Todd Holman)."
+   }
+  ],
+  "quotes_not_in_official_dropped": 7,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:55:38Z",
+   "cost_usd": 0.337586
+  }
  }
 }

@@ -312,5 +312,154 @@
    "at": "2026-09-27T02:39:55Z",
    "cost_usd": 0.19250799999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04222026-7773",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2026-04-22-minutes-7773.txt",
+   "path": "sources/meetings/board-of-assessors/2026-04-22-minutes-7773.pdf"
+  },
+  "official_sha256": "30e1ff744560a60283bebf996dff663138105f8783f662710e2d527c935ac4d8",
+  "coverage": "partial",
+  "summary": "The two records cover much of the same ground but diverge in a dozen-plus specific places: several dollar figures, a possible chair-identity mix-up, and at least three genuine process questions (was the 61A application actually approved in-meeting, who is chasing the CAI fee schedule, and whether the website rename already happened) need checking against the recording/official record. Official minutes also record a motion to enter executive session that our minutes omit entirely, and each record has figures/topics the other simply doesn't mention.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 4,
+   "discrepancy": 4,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "total motor vehicle/trailer excise warrant",
+    "ours": "$245,21",
+    "official": "Signed motor vehicle and trailer excise warrants from various commitments totaling $245,021.",
+    "official_reading": "$245,021",
+    "note": "Digit-grouping caption error — same figure, comma/digit dropped by the model.",
+    "t": 650
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY2025 excise commitment #8 amount",
+    "ours": "$52",
+    "official": "The motor vehicle excise tax warrant for commitment number 8 of FY25 totaling $5.02 was signed by the Board.",
+    "official_reading": "$5.02",
+    "note": "Decimal point lost in transcription; check the warrant itself but this reads as the same figure.",
+    "t": 719
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "boat excise commitment figure",
+    "ours": "$5",
+    "official": "",
+    "note": "No boat excise figure appears anywhere in the official minutes; confirm this amount against the actual warrant.",
+    "t": 784
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "agricultural Ch. 61A filing fee",
+    "ours": "$105",
+    "official": "",
+    "note": "Official minutes describe the 61A application (check, registry, lien, notarization) but state no filing-fee dollar amount; verify $105 against the application paperwork.",
+    "t": 1013
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Vision GIS alternative cost estimate",
+    "ours": "$4,000",
+    "official": "",
+    "note": "Not mentioned in official minutes at all; confirm this figure was actually discussed and not a caption artifact.",
+    "t": 1657
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "per-photo/document upload fee",
+    "ours": "$20 each",
+    "official": "",
+    "note": "No corresponding figure in official minutes; verify against the GIS vendor's fee materials.",
+    "t": 1533
+   },
+   {
+    "kind": "caption_error",
+    "about": "consultant's name",
+    "ours": "Reena",
+    "official": "Consultant Rena Swezey",
+    "official_reading": "Rena Swezey",
+    "note": "Same person, name misheard/truncated by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "GIS vendor name",
+    "ours": "CI",
+    "official": "Questions for CAl as we execute the Neighborhood Review Project",
+    "official_reading": "CAI",
+    "note": "Likely the same vendor (CAI, OCR'd as 'CAl'); our minutes shortened/misheard it as 'CI'."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "meet-and-greet event details and board attendance",
+    "ours": "An office staff member (Denise) will staff an informational booth at next Tuesday's town hall meet-and-greet on exemptions/abatements/deferrals/tax workoffs; board members' own availability was still unconfirmed.",
+    "official": "Brian Laffond stated there is a Meet and Greet at the Adult Activity Center on April 28th at 7 PM. Residents are welcome to come to the Assessors booth with any questions. The Board members will not be present, but the Assessor's Office Data Collector, Denise McCue, and Karen Barrett will be present.",
+    "note": "Venue ('town hall' vs 'Adult Activity Center') and certainty of board attendance ('unconfirmed' vs 'will not be present') differ; check the actual event location/date and confirm attendee list."
+   },
+   {
+    "kind": "agree",
+    "about": "follow-up on supplemental tax bills",
+    "ours": "The finance director will look into whether supplemental tax bills have gone out and report back at the next meeting.",
+    "official": "There was a brief discussion about supplemental bills. Karen Barrett will follow up and provide information to the Board.",
+    "note": "Same decision in both records."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "status of the 61A application approval",
+    "ours": "The board's signature will serve as the vote to approve the agricultural Chapter 61A exemption filing, once notarized.",
+    "official": "A new 61A application was approved. It includes the Check for the registry and the lien. It was approved by the board and will need to be notarized tomorrow.",
+    "note": "Ours frames approval as pending (occurring only once signed/notarized); official states it 'was approved' already, with notarization still to follow. Check whether a vote/approval actually occurred in this meeting or is still outstanding."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who follows up with the GIS vendor on fees",
+    "ours": "The chair will ask the GIS vendor (CI) for an updated, written fee schedule ahead of the May 12 vendor meeting.",
+    "official": "Karen Barrett is going to get a price list of features and the fee schedules. Karen Barrett will also try to obtain copies of previous CAl contracts.",
+    "note": "Different person is tasked with the fee-schedule follow-up (the chair vs. Karen Barrett) — check who actually took this action item."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "December tax bill target for lake-neighborhood reclassification",
+    "ours": "The consultant will aim to have the problematic lake-area neighborhood (currently lumped into one oversized neighborhood) reclassified in time for the December tax bill, though this was called an aggressive, non-guaranteed target.",
+    "official": "",
+    "note": "Official confirms the lakes (Site Index 1, 1A, 1B) as a starting focus for sub-neighborhood work but states no December deadline; verify whether that timeline was actually discussed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "status of the website exemptions page rename",
+    "ours": "The website's exemptions page title will be changed to also reference deferrals, to make it easier for residents to find, to be handled by the town's web team (Cara/Carara) by the next day.",
+    "official": "Brian Laffond received feedback from a resident regarding the website. To clarify the exemptions page has been renamed to exemptions and deferrals.",
+    "note": "Ours frames this as a future action pending web-team follow-through; official states it 'has been renamed' already. Check whether the change was completed by meeting time or was still pending, and who (web team vs. already done) actually made it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "invitation to appear on Committee Confidential",
+    "ours": "",
+    "official": "Jo Toale from Public Access Cable asked Brian Laffond if he would appear on an episode of Committee Confidential to talk about the Board.",
+    "note": "Not recorded in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote to enter executive session",
+    "ours": "none",
+    "official": "There was a motion to adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session by Sarah Cammer, seconded by Brian Laffond. All in favor.",
+    "note": "Our minutes list no non-procedural votes and do not mention an executive session at all; this is a substantive, recorded vote missing from our record — check the recording for this motion."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:38:35Z",
+   "cost_usd": 0.284348
+  }
  }
 }

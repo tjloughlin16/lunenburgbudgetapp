@@ -397,5 +397,202 @@
    "at": "2026-09-27T19:30:41Z",
    "cost_usd": 0.200868
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05212025-7234",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-05-21-minutes-7234.txt",
+   "path": "sources/meetings/conservation-commission/2025-05-21-minutes-7234.pdf"
+  },
+  "official_sha256": "7294d3406e993a4db588701d9665418ebd17b84a723f834c6a507f274c2ca083",
+  "coverage": "partial",
+  "summary": "The official minutes are a partial transcript that documents cut off after 30 minutes and gives no recorded vote or outcome for four of the five continuances/hearings, several decisions, and the grant figures our minutes capture in detail. Where both records cover the same item the substance matches, but nearly every applicant/presenter name in our minutes is a caption mishearing of the name printed in the official document (e.g. Lahi/Lahti, Farrell/Farrow, Shane/Sheehan, Maretti/Marchetti, Burch/Bursch).",
+  "counts": {
+   "agree": 5,
+   "caption_error": 6,
+   "discrepancy": 8,
+   "only_in_ours": 3,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Hickory Hills flumioxazin treatment vote tally",
+    "ours": "passed",
+    "t": 917,
+    "official": "M. Wilson - AYE\nR. Bursch - AYE\nM. Larouche - AYE\nC. St Germain - AYE\nP. Stella - AYE\nJ. Pewtherer - No vote",
+    "note": "Ours records only that the motion passed; the official minutes show a 5-0 roll call with the chair (Pewtherer) not voting. Check whether ours should note the chair abstained."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "417 Howard St NOI continuance vote",
+    "ours": "continue to June 4 — passed 5-1",
+    "t": 2517,
+    "official": "",
+    "note": "The official minutes document is explicitly cut off ('<<<<< stopped at 30:48 or 1:59:21 >>>>>>') right after this agenda item's discussion, before any vote is recorded. Check the recording or a later meeting's minutes to confirm the 5-1 vote."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "390 Howard St ANRAD continuance vote",
+    "ours": "continue to June 4 — passed",
+    "t": 2843,
+    "official": "390 Howard St - ANRAD, DEP# 208-1304. (Cont. from 05-07 to 05-21)\nAbbreviated Notice of Resource Area Delineation by Kevin O'Brien at 390 Howard Street (DEP # 208-1304)",
+    "note": "Official minutes list the hearing item but record no vote or new continuance date; confirm the June 4 continuance and outcome against the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "31 Round Rd NOI continuance vote",
+    "ours": "continue to June 4 — passed",
+    "t": 3005,
+    "official": "31 Round Rd - NOI-25-8 (Cont. From 05-07 to 05-21)\nNOTICE OF INTENT by Shawn Farrow for the construction of two landscape replacement walls, placement of two removable docks & replenishment of beach sand within the 100 ft, 50 ft & 30 ft buffer zone of a wetland resource area on Lake Shirley. (NOI-25-8)",
+    "note": "Official minutes list the hearing item but record no vote or continuance date; confirm outcome against the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "221 Electric Ave NOI continuance vote and conditions",
+    "ours": "continue to June 4, requiring removal of unverified 200-series flags and not requiring a delineation report — passed",
+    "t": 3925,
+    "official": "221 Electric Ave - NOI-24-9 (Cont. from 05-07 to 05-21)\nNotice of Intent by Daniel Sheehan of Haley Ward Construction for construction of a two-family dwelling and rain garden within the 100-foot buffer zone of a bordering vegetated wetland located at 221 Electric Avenue, (NOI-24-9).",
+    "note": "Official minutes list the hearing item but omit the vote entirely and the specific conditions our minutes describe; verify those conditions were actually adopted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "LCC state grant figures for Table Rock/Rainbow-Raino",
+    "ours": "$35,000, 80%, roughly $28,000",
+    "t": 6126,
+    "official": "ii. Grants Update (LCC sponsored, award year 2023)",
+    "note": "Official minutes only flag the topic under Old Business with no dollar figures; verify the $35,000/80%/$28,000 figures against the grant paperwork."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision to have administrator walk the 417 Howard St site",
+    "ours": "ask the interim administrator to walk the 417 Howard Street site with the applicant and Three Oaks Environmental before the next meeting to resolve the wetland flagging dispute",
+    "t": 1944,
+    "official": "iv. Discussed having an administrator walk the site and confirm the delineation is accurate.",
+    "note": "Same underlying decision in both records; ours adds detail (Three Oaks Environmental, timing) that the official summary omits, but that is an omission, not a contradiction."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "5 Electric Ave directed to refile as RDA",
+    "ours": "direct the 5 Electric Avenue applicant to refile the patio/wall project as a Request for Determination of Applicability (RDA) rather than proceeding as an administrative determination",
+    "t": 4456,
+    "official": "5 Electric Ave - CAD-25-5\nProposed 18'x58' stone patio & wall.",
+    "note": "Official minutes list the item with no recorded decision or outcome; confirm whether the commission actually directed a refiling as an RDA."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "1168 Mass Ave rear — state resources directive",
+    "ours": "ask the interim administrator to look into additional state resources for managing the large, long-standing wetland alteration violation at 1168 Mass Ave rear",
+    "t": 4969,
+    "official": "ii. 1168 Mass Ave Rear",
+    "note": "Listed only as a bare enforcement item with no accompanying decision text; confirm whether this directive was actually given."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Trailhead kiosk volunteer sign-up placard with QR code",
+    "ours": "approve adding a volunteer sign-up placard with a QR code to the trailhead kiosks to recruit trail-maintenance volunteers",
+    "t": 5667,
+    "official": "",
+    "note": "This item does not appear anywhere in New Business, Old Business, or elsewhere in the official minutes; check whether it was actually approved or misattributed by the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Jenny (chair)",
+    "official": "Jennifer Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Captions rendered the chair's name as a casual nickname; official minutes and roll call use 'J. Pewtherer'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member surname",
+    "ours": "Richard Burch (member)",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "Captions misheard 'Bursch' as 'Burch'; official minutes list him as Vice Chair R. Bursch."
+   },
+   {
+    "kind": "caption_error",
+    "about": "417 Howard St applicant name",
+    "ours": "Steven Lahi",
+    "official": "NOTICE OF INTENT by STEPHEN LAHTI",
+    "official_reading": "Stephen Lahti",
+    "note": "Captions misheard the applicant's name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "417 Howard St presenter surname",
+    "ours": "Brian Maretti (presenter)",
+    "official": "Brian Marchetti represented the applicant",
+    "official_reading": "Brian Marchetti",
+    "note": "Captions misheard the presenter's surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "31 Round Rd applicant name",
+    "ours": "Sean Farrell",
+    "official": "NOTICE OF INTENT by Shawn Farrow",
+    "official_reading": "Shawn Farrow",
+    "note": "Captions misheard the applicant's name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "221 Electric Ave presenter/applicant name",
+    "ours": "Dan Shane (presenter)",
+    "official": "Notice of Intent by Daniel Sheehan of Haley Ward Construction",
+    "official_reading": "Daniel Sheehan",
+    "note": "Captions misheard the presenter's name; likely the same person as the NOI applicant."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Presenter Dominic Moringalo",
+    "ours": "Dominic Moringalo (presenter)",
+    "official": "",
+    "note": "No matching name appears anywhere in the official minutes; could not be reconciled to any listed applicant or representative."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Presenter Kim",
+    "ours": "Kim (presenter)",
+    "official": "",
+    "note": "No matching name appears in the official minutes; possibly an unnamed Solitude Lake Management representative for the Hickory Hills item."
+   },
+   {
+    "kind": "agree",
+    "about": "Member Mary Wilson",
+    "ours": "Mary Wilson (member)",
+    "official": "Mary Wilson",
+    "note": "Same person, same name, in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Member Peter Stella",
+    "ours": "Peter Stella (member)",
+    "official": "Peter Stella",
+    "note": "Same person, same name, in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Member Mike/Michael Larouche",
+    "ours": "Mike Larouche (member)",
+    "official": "Michael Larouche",
+    "note": "Same person; 'Mike' is a spoken short form of 'Michael', not a mishearing."
+   },
+   {
+    "kind": "agree",
+    "about": "Member Chris St. Germaine/St Germain",
+    "ours": "Chris St. Germaine (member)",
+    "official": "Chris St Germain",
+    "note": "Same person; only a minor spelling variant."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:20:57Z",
+   "cost_usd": 0.308474
+  }
  }
 }

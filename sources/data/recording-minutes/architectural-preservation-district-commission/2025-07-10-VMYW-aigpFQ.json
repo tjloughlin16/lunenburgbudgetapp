@@ -236,5 +236,147 @@
    "at": "2026-09-27T13:01:24Z",
    "cost_usd": 0.18573800000000001
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07102025-7310",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-07-10-minutes-7310.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-07-10-minutes-7310.pdf"
+  },
+  "official_sha256": "2e7820c814eb3e80472515386da5684483d879638d0ad0b1a8031e3fa9a02469",
+  "coverage": "full",
+  "summary": "The two records agree on the meeting's one substantive vote and the next-meeting date, but the official minutes carry several agenda items (Ritter Building status, the two property updates, the Hometown Heroes budget transfer and presentation, Brook's House interest) that our recording-based minutes never captured, while ours carry a $80/hour figure and a \"face-to-face vs. phone/email\" framing of the merger decision that the official minutes do not state. The one thing to check first: whether the commission actually decided to switch to face-to-face contact with the town manager, since the official minutes only describe the chairman as already having reached out.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 8
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "MBDC appointment recommendation vote",
+    "ours": "[t=1319] to recommend that the select board appoint a member of the APDC to the Lunenburg Municipal Building Design Committee — passed",
+    "official": "Motion to recommend the Select Board to appoint a member of the APDC to the MBDC by member Lloyd, seconded by McGrath, approved by all members.",
+    "note": "Same motion, same outcome (unanimous approval)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MBDC vote mover/seconder",
+    "ours": "",
+    "official": "Motion to recommend the Select Board to appoint a member of the APDC to the MBDC by member Lloyd, seconded by McGrath, approved by all members.",
+    "note": "The captions-based minutes record the vote and outcome but not who moved/seconded it; not a conflict, just a detail only the clerk recorded."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "how the merger-bylaw follow-up was decided",
+    "ours": "[t=751] Pursue a face-to-face meeting with the town manager about the APDC/Historical Commission merger bylaw and the citizen-petition option, rather than continuing by phone and email.",
+    "official": "Have not seen any progress.   Chairman Sculimbrene has reached out to town council and town manager to follow up.  Concern that time is running short to make it to special town meeting.  Should we bring up a citizen request to try to approach this from another angle ?",
+    "note": "Official minutes describe the chairman already contacting the town manager by some means and raising the citizen-petition idea as an open question, not a decision to move from phone/email to face-to-face; check the recording near t=751 to see whether a face-to-face meeting was actually resolved on or merely proposed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "APDC budget surplus disposition",
+    "ours": "",
+    "official": "Remainder of last year's APDC budget was pushed towards the Hometown Heros project.",
+    "note": "A budget transfer/decision our minutes omit entirely — should be checked against the recording for a missed segment."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "contract administrative assistant hourly rate",
+    "ours": "[t=1061] Contract administrative assistant cost, Town Hall: $80 an hour",
+    "official": "",
+    "note": "This figure does not appear anywhere in the official minutes; confirm against the recording that $80/hour was actually stated and in what context, since the official record gives no corroboration."
+   },
+   {
+    "kind": "agree",
+    "about": "next meeting date",
+    "ours": "[t=1656] Next APDC meeting set for August 14.",
+    "official": "Thursday, August 14, 2025",
+    "note": "Both records agree on the next meeting date."
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair's name",
+    "ours": "the chair (chair)",
+    "official": "Anthony Sculimbrene, Chairman",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Our minutes never resolved the chair's name from captions; official gives it as Anthony Sculimbrene."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member Nathan's surname",
+    "ours": "Nathan (member)",
+    "official": "Nathan Lockwood, Member",
+    "official_reading": "Nathan Lockwood",
+    "note": "Captions likely dropped the surname; official confirms it is Nathan Lockwood."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member William's surname",
+    "ours": "William (member)",
+    "official": "William Lloyd, Clerk",
+    "official_reading": "William Lloyd",
+    "note": "Captions likely dropped the surname; official confirms it is William Lloyd, who also serves as Clerk."
+   },
+   {
+    "kind": "agree",
+    "about": "member Richard McGrath",
+    "ours": "Richard McGrath (member)",
+    "official": "Richard McGrath, Member",
+    "note": "Name and role match exactly."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vacant commission seat",
+    "ours": "",
+    "official": "Vacancy",
+    "note": "Our attendee list only reflects who spoke/was heard; the official roster additionally notes an unfilled seat on the commission."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ritter Building punch-list status",
+    "ours": "",
+    "official": "Have completed most of the work. Currently working punch-list items. Fixed all the slate, repaired all gutters, and wood around the roof perimeter, lined gutters with a rubber coating.",
+    "note": "An old-business status update entirely absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "763 Mass Ave Street status",
+    "ours": "",
+    "official": "No update",
+    "note": "Agenda item with no update; not captured in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "50 Main Street status",
+    "ours": "",
+    "official": "No update",
+    "note": "Agenda item with no update; not captured in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Hometown Heroes presentation reception",
+    "ours": "",
+    "official": "Hometown Heros presentation to Select board, was received well by all.",
+    "note": "A Historical Commission update our minutes omit."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "school committee interest in Brook's House",
+    "ours": "",
+    "official": "Seems like there is interest in the Brook's House from the school committee.",
+    "note": "A remark under the MBDC agenda item not present in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T12:57:34Z",
+   "cost_usd": 0.232792
+  }
  }
 }

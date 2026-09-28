@@ -447,5 +447,183 @@
    "at": "2026-09-27T23:05:58Z",
    "cost_usd": 0.193628
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04022025-7133",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-04-02-minutes-7133.txt",
+   "path": "sources/meetings/conservation-commission/2025-04-02-minutes-7133.pdf"
+  },
+  "official_sha256": "d9f9ffb6675b0d58efaa0c13223796694a2fa98b0fe949e7c488ff768e1e9ecd",
+  "coverage": "partial",
+  "summary": "The two records agree on the outcome of nearly every vote and on the substance of most decisions, but the official minutes carry roll-call detail (individual abstentions/NA votes) that our summary collapses into a bare \"passed,\" while our transcript mis-hears several names, one address, and one dollar figure by two decimal places. The one thing a reader should check first: the two records name different people as having agreed to follow up with NHESP on the Proctor project (Greg Roy vs. Chair Wilson), and they disagree on both the vote count and the funding source for the pollinator-habitat invoice.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 4,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "only_in_official",
+    "about": "Pajari NOI continuance vote tally",
+    "ours": "Continue the Pajari NOI hearing (215 Sunset Lane) to April 16th — passed",
+    "official": "M. Wilson - Abstain",
+    "note": "Outcome matches (continuance passed), but only the official minutes record that Chair Wilson abstained; check the recording for why.",
+    "t": 1429
+   },
+   {
+    "kind": "agree",
+    "about": "Proctor Mass Ave Realty Trust NOI approval, condition 41",
+    "ours": "Approve the Proctor Massachusetts Ave. Realty Trust NOI with condition 41 modified to strike the SWPPP/NPDES documentation language — passed 7-0",
+    "official": "to approve, with standard conditions except condition 41 (SWIP) modified by striking the language relative to the SWIP.",
+    "note": "Same motion and unanimous 7-0 vote; the official's OCR rendering 'SWIP' for 'SWPPP' is a document-scan artifact, not a substantive difference.",
+    "t": 2636
+   },
+   {
+    "kind": "only_in_official",
+    "about": "10 Sandy Cove Road continuance vote tally",
+    "ours": "Continue the 10 Sandy Cove Road administrative determination to April 16th — passed",
+    "official": "M. Wilson - Abstain",
+    "note": "Outcome matches; only official records Wilson's abstention.",
+    "t": 3745
+   },
+   {
+    "kind": "caption_error",
+    "about": "Pollinator-habitat invoice amount",
+    "ours": "$43324",
+    "official": "The proposal is for $433.24.",
+    "official_reading": "$433.24",
+    "note": "Classic decimal/digit-grouping caption error — $43,324 heard for $433.24.",
+    "t": 7886
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Second pollinator-habitat figure ($58,963)",
+    "ours": "$58963",
+    "official": "",
+    "note": "No corresponding figure appears anywhere in the official minutes for this item; check the recording to see what this second number actually referred to.",
+    "t": 7886
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Funding source for the pollinator-habitat payment",
+    "ours": "Payment for the Native Plant Trust invoice from the Pause/Hollis Road-funded account",
+    "official": "M. Larouche suggested we use the Haws fund.",
+    "note": "The two records name different funds ('Haws fund' vs. a 'Pause/Hollis Road' account) — check the town's fund ledger for which one actually paid this invoice.",
+    "t": 7973
+   },
+   {
+    "kind": "caption_error",
+    "about": "Purchase order recipient name",
+    "ours": "Approve a $2,000 addition to the existing Mackie purchase order (timber rights fund) — passed 7-0",
+    "official": "M. Wilson suggested increasing the Maki PO, funded out of the timber rights fund",
+    "official_reading": "Maki (PO)",
+    "note": "Misheard surname; vote (7-0) and fund (timber rights) both agree.",
+    "t": 8185
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who will confirm with NHESP on the Proctor project",
+    "ours": "Greg Roy agreed to informally confirm with NHESP offline whether the Proctor Massachusetts Ave. project needs to file despite being outside the mapped habitat polygon, and report back.",
+    "official": "M. Wilson agreed to validate the need off-line and get back to Greg if it is indeed required.",
+    "note": "The two records reverse who is doing the follow-up: ours has the applicant's rep (Greg Roy) checking with NHESP, official has Chair Wilson checking and reporting back to Greg — check the recording to see who actually took this on.",
+    "t": 2242
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Engineer's commitment to email Sophie after erosion work",
+    "ours": "The applicant's engineer agreed to email Sophie once corrective erosion and sedimentation work is completed at the 7-Eleven Massachusetts Ave. site.",
+    "official": "D. Sheehan agreed this erosion needed to be corrected immediately.",
+    "note": "Official records the agreement to fix the erosion but not the specific follow-up commitment to email Sophie once it's done.",
+    "t": 7361
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street address for Kevin O'Brien erosion issue",
+    "ours": "Agreed to have Sophie notify Kevin O'Brien separately about erosion/violation concerns at 39 Howard Street and set up a distinct hearing, rather than folding it into the pending continuance.",
+    "official": "390 Howard Street M. Wilson noted that a site visit noted a lot of erosion. A meeting with Kevin O'Brien is needed.",
+    "official_reading": "390 Howard Street",
+    "note": "Digit dropped in the caption ('39' for '390'); this is the same property discussed earlier in the meeting as the ANRAD continuance.",
+    "t": 7446
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Plan to set up a distinct hearing for the Howard Street erosion issue",
+    "ours": "set up a distinct hearing, rather than folding it into the pending continuance",
+    "official": "A meeting with Kevin O'Brien is needed.",
+    "note": "Official only records the general need for a meeting, not the specific procedural decision to keep it separate from the pending continuance.",
+    "t": 7446
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assignment of the peer-review hours estimate task",
+    "ours": "Chair will seek criteria offline from Rich and Bob to help the office scope estimated annual peer-review engineering hours for an annual horizontal-engineering quote.",
+    "official": "We should engage in a peer review any time we have any question about the delineation. Need to estimate annual hours for this requirement so that we can engage in a contract.",
+    "note": "Official states the general need but does not name who (Chair, Rich, Bob) is tasked with it.",
+    "t": 7570
+   },
+   {
+    "kind": "agree",
+    "about": "Chair's resignation announcement",
+    "ours": "Chair announced she will resign as chair at the end of the month",
+    "official": "M. Wilson announced she will resign as Chair at the end of the month.",
+    "note": "Matches.",
+    "t": 8846
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Details of chair succession plan",
+    "ours": "but remain a member through the end of her term in June; chair and vice-chair nominations to be taken up at the April 16th meeting",
+    "official": "",
+    "note": "Official records only the resignation announcement itself, not the plan to remain a member through June or the timeline for nominations.",
+    "t": 8846
+   },
+   {
+    "kind": "caption_error",
+    "about": "Rich Burch's surname",
+    "ours": "Rich Burch (member)",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "Misheard surname (Burch vs. Bursch) and shortened first name; same person, same role."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair's name",
+    "ours": "the chair (chair)",
+    "official": "Mary Wilson, Chair",
+    "note": "Ours never names the chair; the official masthead and roll call give her as M. Wilson / Mary Wilson."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vacant Commission seat",
+    "ours": "",
+    "official": "Vacancy Member",
+    "note": "The official masthead records one vacant member seat; not mentioned in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Staff present",
+    "ours": "",
+    "official": "Sophia Dorow - Conservation Admin / Logan O'Connell - Temp Admin Assist",
+    "note": "Non-voting staff attendees listed in the official masthead but not captured in our attendee list."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "7pm appointment: Hollis Resident Caretaker/Custodian License Agreement",
+    "ours": "",
+    "official": "7pm Appointment Review of the Hollis Resident Caretaker/Custodian License Agreement",
+    "note": "A scheduled agenda item with no corresponding entry in our minutes; check the recording for whether it was discussed and what, if anything, was decided."
+   }
+  ],
+  "quotes_not_in_official_dropped": 9,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:15:30Z",
+   "cost_usd": 0.381316
+  }
  }
 }

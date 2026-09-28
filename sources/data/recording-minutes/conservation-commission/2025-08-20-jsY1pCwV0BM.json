@@ -450,5 +450,146 @@
    "at": "2026-09-27T12:41:53Z",
    "cost_usd": 0.198794
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08202025-7354",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-08-20-minutes-7354.txt",
+   "path": "sources/meetings/conservation-commission/2025-08-20-minutes-7354.pdf"
+  },
+  "official_sha256": "85b6160452ed936d8848d8d79b4a5abcbaf61ccc280f37eca21ea63106d88234",
+  "coverage": "full",
+  "summary": "The two records agree closely on every substantive vote and outcome from the recording — eleven approvals/continuances/negative determinations all match in substance and tally — with the differences almost all caption mishearings of applicant, street and lake names. The real things to check are: a committee vote (Open Space declining first refusal on West Townsend Road) and several administrative follow-up decisions that appear only in one record, and a muddled thread around the Master Plan spreadsheet / Executive Session / Hollis Road where our minutes and the official minutes attribute the executive session to different subjects.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 9,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Applicant name, 795 Leominster Rd project",
+    "ours": "Ken Chaplain",
+    "official": "Ken Chaplin",
+    "official_reading": "Ken Chaplin",
+    "note": "Misheard surname; same person and project otherwise match."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name, driveway/stormwater basin project",
+    "ours": "795 Lemonster Road",
+    "official": "795 Leominster Rd",
+    "official_reading": "795 Leominster Rd",
+    "note": "Misheard street name (Leominster is a nearby city); same address otherwise."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name, 1498 Lancaster Ave septic upgrade",
+    "ours": "Jireina Costa",
+    "official": "Jirina Kos",
+    "official_reading": "Jirina Kos",
+    "note": "Misheard given and family name; same project."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Lake name, aquatic plant/algae management NOI",
+    "ours": "Lake Wham",
+    "official": "Lake Whalom",
+    "official_reading": "Lake Whalom",
+    "note": "Consistently misheard throughout our minutes as 'Wham'; official spells it Whalom (also 'O Whalom Ra' i.e. 0 Whalom Rd in the NOI heading)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost estimate for the 5-year order of conditions request (Lake Whalom)",
+    "ours": "[t=3469] Lake Wham 5-year order of conditions request: between $5 to $10,000",
+    "official": "",
+    "note": "Official minutes note the 5-year term reduces ongoing cost to the town but state no dollar figure; check the recording/budget backup for this range before treating it as established."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Abutter notification cost for herbicide treatment",
+    "ours": "[t=3797] Abutter notification for Lake Wham herbicide treatment: $500",
+    "official": "",
+    "note": "Official minutes mention notification would likely be by social media but give no dollar figure; verify against the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name, 1178 Northfield Rd artesian well",
+    "ours": "Richard Pequette",
+    "official": "Richard Paquette",
+    "official_reading": "Richard Paquette",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name, 105 Horizon Island Rd deck replacement",
+    "ours": "John Trainer",
+    "official": "John Trainor",
+    "official_reading": "John Trainor",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name, Lake Shirley landscape wall/dock plan",
+    "ours": "Shawn Pharaoh",
+    "official": "Shawn Farrow",
+    "official_reading": "Shawn Farrow",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name, hazard tree removal",
+    "ours": "167 Towns Harbor Road",
+    "official": "167 Townsend Harbor Rd",
+    "official_reading": "167 Townsend Harbor Rd",
+    "note": "Misheard street name."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Open Space Committee vote on West Townsend Road first refusal",
+    "ours": "",
+    "official": "i. Open Space: Voted to not exercise first right of refusal on the West Townsend Road property.",
+    "note": "A non-procedural vote reported at this meeting that our minutes does not mention at all; check the recording around the committee-reports segment to confirm this vote occurred and was reported as stated."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "155 Reservoir Road COC deferred to next agenda",
+    "ours": "[t=6857] The certificate of compliance for 155 Reservoir Road will be added to the next meeting's agenda since neither the applicant nor the agent's notes were available.",
+    "official": "ii. 155 Reservoir Road - COC-25-4: No updates",
+    "note": "Official gives no reason and no explicit decision to re-agenda; confirm against the recording that this was actually decided rather than simply carried over by default."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "44 Hemlock Terrace tree removal: site visit timing",
+    "ours": "[t=7786] The tree-removal request for 44 Hemlock Terrace will go on the September 3rd agenda after a site visit is completed beforehand.",
+    "official": "(NOTE: Carol Thorburn attended the meeting after having received a notice that she was on the agenda for an Administrative Determination. Site visit was missed. Commissioners agreed they have insufficient information and will ensure this gets placed on the September 3 meeting.)",
+    "note": "Ours implies a site visit is planned to happen before Sept 3; the official note implies a site visit was already missed and that is why the item was punted, without confirming one will occur before Sept 3 — check the recording for whether a pre-meeting site visit was actually scheduled."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Jenny",
+    "official": "Jennifer Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Misheard/abbreviated first name."
+   },
+   {
+    "kind": "agree",
+    "about": "Member name, Chris St. Germaine",
+    "ours": "Chris St. Germaine",
+    "official": "C. St Germain",
+    "note": "Same name, trivial spelling variant, not a substantive mishearing."
+   }
+  ],
+  "quotes_not_in_official_dropped": 17,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:33:46Z",
+   "cost_usd": 0.366594
+  }
  }
 }

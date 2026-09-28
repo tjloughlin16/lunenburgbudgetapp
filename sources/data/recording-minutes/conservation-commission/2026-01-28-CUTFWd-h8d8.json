@@ -537,5 +537,226 @@
    "at": "2026-09-27T11:22:24Z",
    "cost_usd": 0.19391
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01282026-7620",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-01-28-minutes-7620.txt",
+   "path": "sources/meetings/conservation-commission/2026-01-28-minutes-7620.pdf"
+  },
+  "official_sha256": "525afa10d8f3bb3ca7f8e4795626b17c4356bbcb745e5d1182483e70a5e6b5c7",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the substantive outcomes of most hearings, the two grant-related dollar figures, and the $1,500 oil PO amount, with most name/place mismatches traceable to caption mishearing. The reader should check three real discrepancies: the Peterson Oil PO vote tally (5-0 in ours vs. 6-0 in the official), the stated reason for continuing the 30 Summer Street hearing, and whether real discussion occurred on the 833 Flat Hill Road tree removal that the official minutes log only as \"No update\" — plus a vote (approving the 12/17 and 1/7 minutes) that appears only in the official record.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 10,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "member name",
+    "ours": "Teddy Ducet",
+    "official": "T. Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Misheard surname; same person, listed as a Member in the official header."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name",
+    "ours": "Richard Burch",
+    "official": "R. Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "Misheard surname; official header lists him as Vice Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name",
+    "ours": "Andrea Bernap",
+    "official": "A. Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter name/firm, 58 Spring St",
+    "ours": "Moren Herold (North Environmental Services, for Dubbie Construction/Daniel Dubie)",
+    "official": "Maureen Herald (Norse Environmental Services) represented the applicant.",
+    "official_reading": "Maureen Herald, Norse Environmental Services, for DDuby Construction LLC - Daniel Duby",
+    "note": "Multiple misheard proper nouns in one presenter credit; same person/role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter firm, 30 Summer St & 27 Fire Road",
+    "ours": "Greg Roy (Dillon Roy/Doulson Roy engineering)",
+    "official": "Greg Roy (Dillis & Roy) represented the applicant",
+    "official_reading": "Dillis & Roy",
+    "note": "Firm name misheard two different ways in our minutes for the same speaker."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "chair's name",
+    "ours": "",
+    "official": "Call to Order at 7:04pm by J. Pewtherer",
+    "note": "Our minutes never capture the chair's name, only \"Madam Chair\"; official header confirms Jennifer Pewtherer is Chair."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee, Chris St Germain",
+    "ours": "",
+    "official": "Absent: M. Larouche (joined at 7:10PM), C. St Germain",
+    "note": "A seventh commission member (absent) is not mentioned anywhere in our minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "type of determination, 41 Hilltop Lane",
+    "t": 320,
+    "ours": "Motion to approve the administrative determination allowing removal of trees at 41 Hilltop Lane (25-23)",
+    "official": "Motion: R. Bursch, to ratify the negative determination which allows the removal of all five identified trees",
+    "note": "Official text calls it a \"negative determination\" while the case is filed as a CAD (Certificate of Administrative Determination, per the official's own section heading); check the case file for the correct term — the official minutes may be internally inconsistent."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "reason for continuing 30 Summer Street hearing",
+    "t": 1859,
+    "ours": "30 Summer Street continuance granted because the applicant's submission had only just been uploaded and the commission had not had time to review it.",
+    "official": "Greg Roy (Dillis & Roy) represented the applicant and indicated he had expected to be at the 4 February meeting.",
+    "note": "The two records give different reasons for the same continuance; check the recording for which (if either) was actually stated as the reason."
+   },
+   {
+    "kind": "caption_error",
+    "about": "case number, 27 Fire Road",
+    "t": 2009,
+    "ours": "27 Fire Road NOI-15A hearing (Steve Bean)",
+    "official": "27 Fire Road 15A: NOI-25-25",
+    "official_reading": "NOI-25-25 (the \"15A\" is part of the street address, not the case number)",
+    "note": "Our minutes fused the address suffix into the NOI number."
+   },
+   {
+    "kind": "caption_error",
+    "about": "street name, DPW culvert hearing",
+    "t": 1945,
+    "ours": "763 Northville Road NOI (Lunenburg DPW)",
+    "official": "763 Northfield Rd: NOI-25-19",
+    "official_reading": "763 Northfield Road",
+    "note": "\"Northville\" is a mishearing of \"Northfield\"."
+   },
+   {
+    "kind": "caption_error",
+    "about": "street name, tree-removal discussion",
+    "t": 3162,
+    "ours": "833 Flatville Road",
+    "official": "833 Flat Hill Rd- CAD-25-21: No update",
+    "official_reading": "833 Flat Hill Road",
+    "note": "\"Flatville\" is a mishearing of \"Flat Hill\"."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "substance of 833 Flat Hill Road discussion",
+    "t": 3271,
+    "ours": "Chair to send the conservation agent notes asking for a recommendation and clarification on whether one or two trees are proposed for removal; commission wants tree replacements consistent with the bylaw for the mature white pines being removed.",
+    "official": "833 Flat Hill Rd- CAD-25-21: No update",
+    "note": "Our minutes describe a substantive discussion (agent follow-up, bylaw tree-replacement expectation) that the official minutes log only as \"No update\"; check the recording to confirm this discussion occurred as described."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "engineering/consulting cost-structure review",
+    "t": 3669,
+    "ours": "Chair to check with the conservation agent about reviewing the engineering cost structure and to check how the planning department/board handles similar costs.",
+    "official": "The cost structure for consulting should be reviewed. M. Wilson feels this should be in regulation and not in the by-laws.",
+    "note": "Ours attributes the follow-up action to the chair checking with the agent; official attributes a specific opinion (regulation vs. bylaw) to M. Wilson — check who said what and whether both are accurate."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Earth Day coordination detail",
+    "t": 4051,
+    "ours": "Commission will again help coordinate Earth Day cleanup volunteers (Boy Scouts, youth leagues) using the usual flyer and web-form approach.",
+    "official": "",
+    "note": "Detail on the coordination method is not in the official minutes, which record only \"General discussion.\""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Table Rock 20% grant match figure",
+    "t": 4956,
+    "ours": "$10,287,000, 26,000",
+    "official": "The conservation budget would have to cover 20% of overall construction costs at Table Rock, which would be a not-to-exceed amount of $10,287.",
+    "official_reading": "$10,287",
+    "note": "Captions inflated the figure by 1000x and appended a spurious \"26,000\"; official figure is $10,287."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Timber Rights Fund balance",
+    "t": 5064,
+    "ours": "41,74, 41,000, 43",
+    "official": "The Timber Rights fund currently has over $41,000.",
+    "official_reading": "over $41,000",
+    "note": "Multiple garbled partial captures of the same figure; the official figure ($41,000+) is consistent with the clearest of them."
+   },
+   {
+    "kind": "agree",
+    "about": "Raino Road grant 20% match figure",
+    "t": 5128,
+    "ours": "9,462",
+    "official": "The conservation budget would have to cover 20% of overall construction costs for Raino, which would be a not-to-exceed amount of $9,462.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "combined grant match / Timber Rights transfer",
+    "t": 5149,
+    "ours": "19,749",
+    "official": "Funding from Timber Rights and not exceeding $19,749.",
+    "note": "Figures match exactly, both for the vote caveat and the transfer amount."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Table Rock phase-one construction bid figure",
+    "t": 4913,
+    "ours": "$51,000",
+    "official": "",
+    "note": "The underlying construction bid amount is not stated in the official minutes, which give only the 20% match figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Raino Road parking installation bid figure",
+    "t": 5107,
+    "ours": "47,310",
+    "official": "",
+    "note": "The underlying installation bid amount is not stated in the official minutes, which give only the 20% match figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Peterson Oil invoice detail and projected monthly cost",
+    "t": 5357,
+    "ours": "665, 66566, 150ish, 289.45; projected $300 a month through April",
+    "official": "",
+    "note": "The official minutes record only the resulting PO approval, not the invoice history or monthly projection discussed."
+   },
+   {
+    "kind": "agree",
+    "about": "Peterson Oil PO not-to-exceed amount",
+    "t": 5527,
+    "ours": "1500, up to 1500",
+    "official": "not to exceed $1,500",
+    "note": "Dollar amount matches exactly."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "grant program staffing context",
+    "ours": "",
+    "official": "She and J. Pewtherer have taken on a more proactive role as Bob focuses on his health.",
+    "note": "Personal/staffing context about who is running grant applications is absent from our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 5,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:54:44Z",
+   "cost_usd": 0.360026
+  }
  }
 }

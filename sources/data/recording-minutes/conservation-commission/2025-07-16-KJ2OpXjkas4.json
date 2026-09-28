@@ -492,5 +492,205 @@
    "at": "2026-09-27T12:59:22Z",
    "cost_usd": 0.18969
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07162025-7316",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-07-16-minutes-7316.txt",
+   "path": "sources/meetings/conservation-commission/2025-07-16-minutes-7316.pdf"
+  },
+  "official_sha256": "7d4fde14343962975290b151af3064e7e2bd203c4234116823d8045518c94e7d",
+  "coverage": "full",
+  "summary": "The two records agree closely on topics and outcomes for most agenda items, but the official minutes' roll-call detail surfaces several vote-tally and recusal/abstention discrepancies that our summary-level \"passed\" glosses over, and two votes we recorded (1083 Northfield NOI continuance, Lake Shirley continuance) have no matching motion in the official text at all. A reader should double-check the Eagle Scout vote count (6-0 vs. a 7-0 roll call), the Howard Street recusal/abstention detail, who was tasked with the 40 Fire Road Certificate of Compliance (Chair vs. Herlin), and the identity of the \"Carolyn\" staff attendee against \"Michael Gale, Admin Asst.\"",
+  "counts": {
+   "agree": 5,
+   "caption_error": 5,
+   "discrepancy": 6,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Eagle Scout projects vote tally",
+    "ours": "Approve both Eagle Scout projects (Colby Golding's picnic area and Brendan Stokes's kiosk) as proposed — passed 6-0",
+    "official": "M. Wilson - AYE / T. Doucette - AYE / M. Larouche - AYE / C. St Germain - AYE / A. Burnap - AYE / J. Pewtherer - AYE / R. Bursch - AYE",
+    "t": 1387,
+    "note": "Official roll call lists all seven members voting AYE (7-0), while ours records 6-0; check the recording against the original signed minutes to see if a member was mis-tallied."
+   },
+   {
+    "kind": "caption_error",
+    "about": "833 Flat Hill Rd street name as heard",
+    "ours": "833 Flatill (Flatuel) Road",
+    "official": "833 Flat Hill Rd",
+    "official_reading": "833 Flat Hill Rd",
+    "t": 2710,
+    "note": "Captions misheard the street name; official spelling should be used."
+   },
+   {
+    "kind": "agree",
+    "about": "225 Island Road NOI approval condition",
+    "ours": "Approve the 225 Island Road NOI (Bertram) with the added comments on stockpile area and silt fence — passed",
+    "official": "C. St Germain, to approve with requirement for silt fence if materials are stored on site.",
+    "t": 3524,
+    "note": "Same applicant (Bertram/Thomas Bertram) and same silt-fence condition, worded slightly differently but the substance matches."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "67 Island Road continuance vote detail",
+    "ours": "Continue the 67 Island Road RDA (Canavino) hearing to August 6, 2025 — passed",
+    "official": "M. Wilson - AYE / A. Burnap - AYE / M. Larouche - AYE / T. Doucette - AYE / R. Bursch - AYE / J. Pewtherer - Abstain / C. St Germain - AYE",
+    "t": 5243,
+    "note": "Official records J. Pewtherer abstaining; ours records a plain pass with no abstention noted — worth confirming against the recording whether an abstention actually occurred."
+   },
+   {
+    "kind": "agree",
+    "about": "1083 Northfield Rd peer review vote",
+    "ours": "Move forward with obtaining a peer review for the 1083 Northfield Road project — passed 5-0 (only 5 seated members eligible to vote)",
+    "official": "M. Larouche - AYE / A. Burnap - N/A / M. Wilson - AYE / T. Doucette - N/A / C. St Germain - AYE / J. Pewtherer - AYE / R. Bursch - AYE",
+    "t": 7402,
+    "note": "Five AYE votes with two members marked N/A (not eligible) matches ours' '5-0 of 5 eligible' framing."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "1083 Northfield Rd NOI continuance vote",
+    "ours": "Continue the 1083 Northfield Road NOI (Cole) hearing to August 6, 2025 — passed",
+    "official": "",
+    "t": 7444,
+    "note": "No separate continuance motion or vote appears in the official minutes for this item — only the peer-review vote is recorded; check the recording to see whether a continuance was actually voted or just discussed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "390 Howard St ANRAD continuance vote detail",
+    "ours": "Continue the 390 Howard Street ANRAD (O'Brien) hearing to August 6, 2025 — passed, Teddy Det recused",
+    "official": "M. Wilson - AYE / T. Doucette - / M. Larouche - AYE / C. St Germain - Aye Abstain / A. Burnap - AYE / J. Pewtherer - Abstain / R. Bursch - AYE",
+    "t": 8942,
+    "note": "Official roll call is garbled but shows T. Doucette with no recorded vote (consistent with recusal) and J. Pewtherer marked Abstain, which ours does not mention; check the original signed minutes for the clean vote record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Lake Shirley NOI continuance vote",
+    "ours": "Continue the Lake Shirley NOI (Pharaoh) hearing to August 6, 2025 at applicant's request — passed",
+    "official": "",
+    "note": "No mention of a Lake Shirley or Pharaoh hearing appears anywhere in the official minutes; check whether this item was on the actual agenda or misattributed from another meeting."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes-approval item (five prior meetings' minutes)",
+    "ours": "",
+    "official": "Most Commissioners have not yet reviewed the minutes. R. Bursch reiterated concern about the Jan 22 minutes without specifics about how to adjust. He also indicated a repeating error regarding the term 'silt fence' versus 'silk fence. No minutes were approved.",
+    "note": "A whole agenda item (review/non-approval of five sets of prior minutes) is absent from ours entirely."
+   },
+   {
+    "kind": "agree",
+    "about": "Eagle Scout picnic area cost estimate",
+    "ours": "Eagle Scout picnic-area project (Colby Golding), Small Town Forest: $400, $500",
+    "official": "Total cost is estimated to be between $400-$500.",
+    "t": 289,
+    "note": "Same figures, same project."
+   },
+   {
+    "kind": "agree",
+    "about": "Eagle Scout kiosk cost",
+    "ours": "Eagle Scout kiosk project (Brendan Stokes), Reno conservation area: $321.31",
+    "official": "Total cost is $321.31 (Home Depot quotes).",
+    "t": 1152,
+    "note": "Figure matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Rain barrel tote adapters cost",
+    "ours": "Rain barrel tote adapters, pollinator habitat: $15",
+    "official": "",
+    "t": 1766,
+    "note": "Official mentions the rain barrel system was discussed but records no dollar figure for it."
+   },
+   {
+    "kind": "agree",
+    "about": "Wetland violation enforcement fine amount",
+    "ours": "Wetland violation enforcement fines: $300",
+    "official": "Herlin suggested sending certified notices for each violation demanding an update in 30 days or receiving a $300 violation fee.",
+    "t": 9376,
+    "note": "Figure matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Future minutes-distribution process",
+    "ours": "Minutes will be sent out by Michael as soon as completed going forward, rather than in a backlog.",
+    "official": "",
+    "t": 1957,
+    "note": "No such procedural commitment appears in the official minutes, which instead just note that draft minutes have not been reviewed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who will contact Town Manager re: 40 Fire Rd Certificate of Compliance",
+    "ours": "Chair will speak with the Town Manager about who can file a Certificate of Compliance for town-owned 40 Fire Road.",
+    "official": "40 Fire Rd 12: The Town can request the COC. Herlin will speak with the Town Manager to see if she will file it or get an execution plan.",
+    "t": 9231,
+    "note": "Ours attributes the follow-up to the Chair; official attributes it to Herlin (the conservation agent) — check the recording to confirm who actually volunteered."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "SharePoint migration / violation-tracking system",
+    "ours": "Herllin will migrate remaining Google Drive files into SharePoint and add the new violation-notice letter as a reusable template; a violation-tracking system will be developed.",
+    "official": "",
+    "t": 9608,
+    "note": "Not recorded anywhere in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "167 Townsend Harbor Rd tree removal (CAD-25-10)",
+    "ours": "",
+    "official": "167 Townsend Harbor Rd - CAD-25-10 (Removal of 3 dead trees and an additional 16 that are hollow, dying, dangerously close to housing, and preventing healthy growth of the existing trees). Awaiting clarification on how many trees will be removed before we decide if we want them to file an RDA.",
+    "note": "This administrative-determination discussion is entirely absent from ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Conservation budget restructuring",
+    "ours": "",
+    "official": "Conservation Budget: Budget has changed to a single collapsed Land Use budget. Still clarifying what this actually means to us.",
+    "note": "Not mentioned in ours at all."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Andrea Burnap",
+    "ours": "Andrea Bernup (Commission member)",
+    "official": "Andrea Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Richard Bursch",
+    "ours": "Richard Burch (Commission member)",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Teddy Doucette",
+    "ours": "Teddy Det (Commission member)",
+    "official": "Teddy Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Herlin (conservation agent)",
+    "ours": "Herllin (Conservation agent (part-time/interim))",
+    "official": "Herlin Jaime - Interim Consv. Admin",
+    "official_reading": "Herlin Jaime",
+    "note": "Misheard/misspelled given name; official also supplies a surname (Jaime) not captured in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:29:10Z",
+   "cost_usd": 0.308138
+  }
  }
 }

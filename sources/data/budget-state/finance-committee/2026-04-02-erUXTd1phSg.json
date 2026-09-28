@@ -12,44 +12,105 @@
     "amount_as_heard": null,
     "fiscal_year": 2027,
     "fte_as_heard": null,
-    "item": "IT and Communications Manager position",
+    "item": "IT and communications manager position (eliminated to fund new assistant town manager position)",
     "scope": "town",
     "status": "announced",
     "t": 6624,
-    "who": "the finance director"
+    "who": "the town manager"
    }
   ],
   "nothing_on_the_budget": false,
   "statements": [
    {
-    "amount_as_heard": "$615,000",
-    "fiscal_year": 2026,
-    "kind": "deficit",
-    "scope": "town",
-    "statement": "Current estimated FY2026/prior-year operating deficit, mostly snow and ice removal, stated as $615,000 with final snow and ice bills not yet in.",
-    "status": "announced",
-    "t": 1203,
-    "who": "the finance director"
-   },
-   {
-    "amount_as_heard": "up to $500,000",
-    "fiscal_year": 2026,
-    "kind": "free_cash",
-    "scope": "town",
-    "statement": "Up to $500,000 of free cash earmarked in the spending plan to help cover the FY2026 deficit, expected to be less than that once transfers and final snow/ice bills are known.",
-    "status": "announced",
-    "t": 1224,
-    "who": "the finance director"
-   },
-   {
-    "amount_as_heard": "$2.4 million for tier 1, $3.3 million for tier 2",
+    "amount_as_heard": "$2.4 million (tier 1)",
     "fiscal_year": 2027,
     "kind": "override",
     "scope": "both",
-    "statement": "Proposed FY2027 Proposition 2.5 override to supplement the town's general operating fund and the schools, in two tiers, with only the highest approved tier to be implemented if voters approve more than one.",
-    "status": "announced",
-    "t": 1392,
+    "statement": "Proposed Tier 1 Prop 2.5 override amount to supplement the FY2027 general operating fund of the town and the Lunenburg public schools",
+    "status": "proposed",
+    "t": 1391,
     "who": "the chair"
+   },
+   {
+    "amount_as_heard": "$3.3 million (tier 2)",
+    "fiscal_year": 2027,
+    "kind": "override",
+    "scope": "both",
+    "statement": "Proposed Tier 2 Prop 2.5 override amount to supplement the FY2027 general operating fund of the town and the Lunenburg public schools",
+    "status": "proposed",
+    "t": 1391,
+    "who": "the chair"
+   },
+   {
+    "amount_as_heard": "approximately $52,000",
+    "fiscal_year": 2027,
+    "kind": "other",
+    "scope": "town",
+    "statement": "FY2027 3% cost-of-living increase for SAP (non-union) employees, transferred from the salary reserve",
+    "status": "voted",
+    "t": 3463,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$335,437",
+    "fiscal_year": 2027,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Certified free cash transferred to the OPEB trust fund, per the town's financial policy of a 10% transfer",
+    "status": "voted",
+    "t": 4043,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$250,000",
+    "fiscal_year": 2027,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Free cash appropriated to the town's general stabilization fund",
+    "status": "voted",
+    "t": 4334,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "$250,000",
+    "fiscal_year": 2027,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Free cash appropriated to the health-insurance special purpose stabilization fund, as a cushion against a high-increase year",
+    "status": "voted",
+    "t": 4458,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "close to $8 million",
+    "fiscal_year": 2027,
+    "kind": "other",
+    "scope": "both",
+    "statement": "Total town and school health insurance costs across active-employee and retiree buckets",
+    "status": "announced",
+    "t": 4567,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "$270,000",
+    "fiscal_year": 2027,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Free cash to buy out 100% of outstanding employee vacation liability ahead of the transition to the new accrual-based vacation system",
+    "status": "voted",
+    "t": 5228,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "positions at the school",
+    "condition": "if the override doesn't pass",
+    "fiscal_year": 2027,
+    "prediction": "would prefer to redirect the $250,000 earmarked for the health-insurance stabilization fund toward trying to save school positions instead",
+    "scope": "school",
+    "t": 5036,
+    "who": "a member"
    }
   ]
  },
@@ -57,9 +118,10 @@
  "video_url": "https://www.youtube.com/watch?v=erUXTd1phSg",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T18:11:42Z",
+  "at": "2026-09-28T12:49:52Z",
   "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.32765579999999994,
-  "model": "sonnet"
+  "cost_usd": 0.5193920000000001,
+  "model": "sonnet",
+  "schema": 2
  }
 }

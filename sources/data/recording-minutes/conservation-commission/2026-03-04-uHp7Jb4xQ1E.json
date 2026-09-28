@@ -524,5 +524,194 @@
    "at": "2026-09-27T11:02:15Z",
    "cost_usd": 0.197272
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03042026-7681",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-03-04-minutes-7681.txt",
+   "path": "sources/meetings/conservation-commission/2026-03-04-minutes-7681.pdf"
+  },
+  "official_sha256": "36939f003f62ae31acdfa1a2f1ec4270ef67f1aac70468b59cf127bfea711d76",
+  "coverage": "full",
+  "summary": "The two records agree closely on vote outcomes and most figures, and nearly every difference between them is a misheard proper noun (street names, surnames, a firm name) rather than a substantive one. The real things to check are: two \"continuances\" our minutes show as voted at this meeting (30 Summer St, 763 Northfield Rd) that the official minutes say were actually approved at the prior (Feb 18) meeting; the address behind the Right-of-First-Refusal vote, which is missing/garbled in the official text; and three decision items (the Earth Day event, the off-trail snowmobile matter, the fee-schedule/town-counsel plan) where our minutes assert more resolution than the official record supports or the official record doesn't mention at all.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 7,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "street name, NOI-26-1 continuance",
+    "ours": "860 New Westminster Road",
+    "official": "860 New West Townsend Road: NOI-26-1",
+    "official_reading": "New West Townsend Road",
+    "note": "Same NOI number and hearing content; the street name was misheard by the captions (or, given OCR quality, possibly misread the other way) — check the town's own agenda posting for the correct spelling.",
+    "t": 1708
+   },
+   {
+    "kind": "agree",
+    "about": "vote: negative determination with conditions, 1010 Flat Hill Rd (RDA-26-1)",
+    "ours": "Issue a negative determination with conditions for 1010 Flat Hill Road (RDA-26-1). — passed",
+    "official": "M. Larouche, for a negative determination with the following conditions: • Stockpile materials on the driveway. • Concrete base to be no larger than 4.25 ft x 8 in by 4 in deep. • Staked waddles at the limit of work or 30-foot zone, whichever is closer to the house.",
+    "note": "Outcome agrees; the official minutes carry the specific conditions in detail, which ours summarized without listing.",
+    "t": 2448
+   },
+   {
+    "kind": "caption_error",
+    "about": "road name, RDA-26-2 battery storage project",
+    "ours": "475 Lunenburg-Shirley Road battery storage project (RDA-26-2)",
+    "official": "475 Leominster- Shirley Road: RDA-26-2",
+    "official_reading": "Leominster-Shirley Road",
+    "note": "Leominster-Shirley Road is the actual local road name; the captions likely substituted the more familiar town name \"Lunenburg\" for \"Leominster.\"",
+    "t": 3057
+   },
+   {
+    "kind": "agree",
+    "about": "vote: negative determination with conditions, 475 Leominster-Shirley Rd (RDA-26-2)",
+    "ours": "Issue a negative determination with conditions for 475 Lunenburg-Shirley Road battery storage project (RDA-26-2). — passed",
+    "official": "M. Larouche, for a negative determination with the following conditions: • Erosion controls to be placed where the work is being performed.",
+    "note": "Outcome agrees.",
+    "t": 3057
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "dollar figure for the 1083 Northfield Road property",
+    "ours": "$765,000",
+    "official": "",
+    "note": "No dollar figure appears anywhere in the legible official text for this item; likely lost to the OCR gap noted above rather than never having been said.",
+    "t": 9317
+   },
+   {
+    "kind": "caption_error",
+    "about": "surname of the Open Space liaison appointee",
+    "ours": "Andrea Bernett",
+    "official": "Andrea Burnap",
+    "official_reading": "Burnap",
+    "note": "Same person and same appointment; \"Bernett\" is a mishearing of \"Burnap.\"",
+    "t": 12506
+   },
+   {
+    "kind": "only_in_official",
+    "about": "recusal note on the Open Space liaison vote",
+    "ours": "",
+    "official": "(NOTE: A. Burnap was not included in the roll call vote as she was the subject of the vote.)",
+    "note": "A procedural detail about the vote mechanics that ours does not mention; not a difference in outcome.",
+    "t": 12506
+   },
+   {
+    "kind": "caption_error",
+    "about": "cost of the \"Extraordinary Caterpillar\" documentary license",
+    "ours": "about $100, 150",
+    "official": "The cost is about $150.",
+    "official_reading": "$150",
+    "note": "The captions produced a garbled double figure (\"$100, 150\"); the official minutes give a single clean number.",
+    "t": 11628
+   },
+   {
+    "kind": "agree",
+    "about": "budget figure for the wetlands buffer-zone flyer",
+    "ours": "$1,200 or less",
+    "official": "She recalled S. Dorrow planning for a budget of $1,200.",
+    "note": "Figures match.",
+    "t": 11336
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "20% grant match requirement for conservation land funding",
+    "ours": "20%",
+    "official": "",
+    "note": "No mention of a grant match percentage appears anywhere in the legible official minutes; check the recording near t=12153 to confirm this was actually said and where in the meeting it fits.",
+    "t": 12153
+   },
+   {
+    "kind": "agree",
+    "about": "decision: 50 Pine Grove Rd amended order withdrawn and to be refiled",
+    "ours": "The applicant for the 50 Pine Grove Road amended order agreed to withdraw the request and refile it with proper abutter and DEP notification rather than continue without a duly noticed public hearing.",
+    "official": "Applicant withdraws without prejudice and will re-file",
+    "note": "Matches, though the official minutes state it far more briefly.",
+    "t": 7147
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision on off-trail snowmobile use near the Lane property",
+    "ours": "The commission decided to take no formal action on reported off-trail snowmobile use near the Lane property for now, and to monitor and coordinate with the snowmobile club if it recurs.",
+    "official": "",
+    "note": "No mention of snowmobiles, off-trail use, or a \"Lane property\" appears anywhere in the official minutes. Check whether this was raised in a portion of the meeting the official minutes summarized very briefly or omitted.",
+    "t": 8960
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision: fee schedule / town counsel / unbilled administrative fees",
+    "ours": "The conservation agent will meet with town counsel about moving the commission's fee schedule out of the town charter and into its own bylaw, and about charging fees for administrative items not currently billed.",
+    "official": "H. Jaime noted that the fee schedule sits in the Town Charter and in our Bylaws. This means we cannot update the fees without going to the Select Board and then to Town Meeting. Other towns refer fees to the Bylaws and gives the Commission the authority to make changes. Currently, we are only collecting fees for NOI applications.",
+    "note": "The underlying topic matches (fee schedule is charter-bound; only NOI fees are currently collected), but the official minutes record no decision or plan for the agent to meet with town counsel, nor any decision to begin charging for previously-unbilled administrative items. Check the recording for whether that next step was actually stated or is an inference.",
+    "t": 10254
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision/outcome: Earth Day event at TC Pacios",
+    "ours": "The agent will proceed with planning a small Earth Day event on April 22 at TC Pacios with local environmental organizations despite the short notice.",
+    "official": "H. Jaime explained her idea of a small event with a few local vendors, hopefully indoors at T.C. Passios. She has learned she must first present to the Select Board for approvals prior to contacting vendors. The short timeframe may make this impossible.",
+    "note": "Ours states a decision to proceed; the official minutes describe an unresolved plan still pending Select Board approval and explicitly note the timeframe \"may make this impossible.\" Also, no April 22 date appears in the official text. Check the recording for whether \"proceed\" was actually decided or whether the agent only described an intention contingent on approval.",
+    "t": 11818
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: stormwater committee public info session details",
+    "ours": "The stormwater committee set a public information session with Weston and Samson at the library the next evening and plans to reduce meeting frequency afterward, ahead of town meeting.",
+    "official": "iv. Storm Water: Finished reviewing the documents for the public information meeting.",
+    "note": "Official confirms a public information meeting exists but gives none of the specifics (Weston and Samson, the library, \"the next evening,\" or a plan to reduce meeting frequency). Worth checking the recording for these details' accuracy.",
+    "t": 12633
+   },
+   {
+    "kind": "caption_error",
+    "about": "conservation agent's name",
+    "ours": "Harlin (Conservation Agent)",
+    "official": "Herlin Jamie - Conservation Agent",
+    "official_reading": "Herlin Jamie",
+    "note": "First name misheard and surname dropped entirely by the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter's firm name, Greg Roy",
+    "ours": "Greg Roy (presenter, representing several applicants (Dillon Roy))",
+    "official": "Greg Roy (Dillis & Roy) represented the applicant.",
+    "official_reading": "Dillis & Roy",
+    "note": "\"Dillon Roy\" is a mishearing of the firm name \"Dillis & Roy\"; Greg Roy himself is correctly identified."
+   },
+   {
+    "kind": "agree",
+    "about": "presenter for New Leaf Energy",
+    "ours": "Brandon Smith (presenter, New Leaf Energy)",
+    "official": "Brandon Smith (New Leaf Energy) represented the applicant.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "applicant's name behind David Pictor's presentation",
+    "ours": "David Pictor (presenter/applicant)",
+    "official": "A Request for Determination of Applicability by Patrick Byrne for the replacement of an existing deck and stairs. David Pictor represented the applicant.",
+    "note": "Official names the actual applicant (Patrick Byrne) with Pictor as his representative; ours only captured Pictor."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter's surname, Bill Hanigan/Hannigan",
+    "ours": "Bill Hanigan (presenter, project update on 260 Fitchburg Road)",
+    "official": "Bill Hannigan represented the applicant.",
+    "official_reading": "Bill Hannigan",
+    "note": "Minor spelling mishearing, single vs. double \"n.\""
+   }
+  ],
+  "quotes_not_in_official_dropped": 15,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T15:03:18Z",
+   "cost_usd": 0.5199708000000001
+  }
  }
 }

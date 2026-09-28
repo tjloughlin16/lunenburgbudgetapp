@@ -558,5 +558,277 @@
    "at": "2026-09-27T11:11:02Z",
    "cost_usd": 0.200124
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02182026-7652",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-02-18-minutes-7652.txt",
+   "path": "sources/meetings/conservation-commission/2026-02-18-minutes-7652.pdf"
+  },
+  "official_sha256": "f6d4ee8ef39df7cc679d6129105b163e41d8b070062f1358ef611883dbe042f5",
+  "coverage": "full",
+  "summary": "The two records agree closely on outcomes: every substantive motion in ours (reorganization, associate-member nomination, the four hearing dispositions, the ratification, and both fund authorizations) matches a corresponding official motion, second and unanimous vote. The one thing a reader should check first is the 763 Northfield Road culvert continuance — our minutes say it was pushed to March 4, but the official minutes record it continued to March 18, the same date as 30 Summer Street, which is either a captioning slip or a real scheduling conflict worth confirming before anyone plans around it.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 7,
+   "discrepancy": 7,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "the chair",
+    "official": "Jennifer Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Our minutes never resolved the chair's name from captions and used a placeholder; official minutes name her."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's surname",
+    "ours": "Richard Burch",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "Misheard surname; same person, same role throughout."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's first name/surname",
+    "ours": "Teddy Ducet",
+    "official": "Teddy Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Misheard surname spelling, same member."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's surname",
+    "ours": "Andrea Bernett",
+    "official": "Andrea Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Misheard surname, same member."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation agent's name",
+    "ours": "Harlin",
+    "official": "Herlin Jamie - Conservation Agent",
+    "official_reading": "Herlin Jamie",
+    "note": "Captions gave only a first-name-like fragment; official minutes give a fuller (if internally inconsistent, 'Jaime' vs 'Jamie') name for the same agent."
+   },
+   {
+    "kind": "agree",
+    "about": "Clerk's name",
+    "ours": "Mike Larouche",
+    "official": "Michael Larouche",
+    "note": "Nickname vs formal name, same person, no error."
+   },
+   {
+    "kind": "agree",
+    "about": "Member's name spelling",
+    "ours": "Chris St. Germaine",
+    "official": "Chris St Germain",
+    "note": "Trivial spelling variant, same person and role change (member to associate) tracked identically in both."
+   },
+   {
+    "kind": "agree",
+    "about": "Member's name",
+    "ours": "Mary Wilson",
+    "official": "Mary Wilson",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Admin assistant present",
+    "ours": "",
+    "official": "Michael Gale - Admin Assistant",
+    "note": "Staff attendee recorded only in the official minutes; not a commission member so not a substantive omission."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Mary Wilson's attendance window",
+    "ours": "Mary Wilson (member)",
+    "official": "Absent: M. Wilson (joined during Public Comment and left at 8:12 for personal reasons)",
+    "note": "Official minutes show Wilson absent at roll call, arriving late and leaving mid-meeting (consistent with her disappearing from later vote tallies); ours lists her as a continuously present voting member with no departure noted — check the recording around 8:12pm for when she actually left."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to reorganize the commission",
+    "ours": "[t=526] reorganize the commission — passed",
+    "official": "M. Wilson, to reorganize the Commission dropping C. St Germain as a Commissioner.",
+    "note": "Same motion and unanimous outcome in both."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to add St. Germaine as associate member",
+    "ours": "[t=860] add Chris St. Germaine as an associate member pending town manager approval — passed",
+    "official": "M. Wilson, to nominate C. St Germain as an Associate Commissioner pending review by\nTown Manager.",
+    "note": "Same motion, condition, and unanimous outcome."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of prior meeting minutes",
+    "ours": "",
+    "official": "T. Doucette, to approve meeting minutes of 11/5.",
+    "note": "Official minutes record three separate votes approving minutes of 1/28, 11/5, and 10/15; none of these appear in our minutes at all — worth checking whether the model treated these as procedural and dropped them."
+   },
+   {
+    "kind": "agree",
+    "about": "151 Flynn Road septic NOI vote",
+    "ours": "[t=1516] approve 151 Flynn Road septic NOI with a letter documenting exhausted siting alternatives — passed",
+    "official": "R. Bursch, to approve the project as proposed with the following condition:",
+    "note": "Same condition (letter on exhausted alternatives, filed with order of conditions) and unanimous vote."
+   },
+   {
+    "kind": "agree",
+    "about": "822 New West Townsend Road negative determination",
+    "ours": "[t=2079] issue a negative determination for 822 New West Townsend Road with stockpiles outside 100-foot buffer — passed",
+    "official": "TM. Wilson, negative determination with the following condition:",
+    "note": "Same condition and unanimous vote (official's 'TM.' is an OCR artifact for 'M.')."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "58 Spring Street Extension patio vote composition",
+    "ours": "[t=2340] accept the 58 Spring Street Extension patio reconstruction project as presented — passed",
+    "official": "M. Larouche recused himself from the vote as he was not at the previous meeting.",
+    "note": "Official records M. Larouche as recused/abstaining because he missed the prior meeting; ours records a plain 'passed' with no abstention noted. Outcome is the same either way, but check whether the recusal should have been captured."
+   },
+   {
+    "kind": "agree",
+    "about": "30 Summer Street continuance date",
+    "ours": "[t=2546] continue the 30 Summer Street hearing to March 18, 2026 — passed",
+    "official": "G. Roy requested a continuance to March 18.",
+    "note": "Dates and outcome match."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "763 Northfield Road culvert continuance date",
+    "ours": "[t=2673] continue the 763 Northfield Road culvert hearing to March 4, 2026 — passed",
+    "official": "Applicant requested a continuance\nMotion:\nT. Doucette, to continue to the March 18 meeting.",
+    "note": "Ours gives March 4; the official minutes give March 18 (the same date as 30 Summer Street). Check the recording around t=2673 for which date was actually stated — this affects when the item is next heard."
+   },
+   {
+    "kind": "agree",
+    "about": "27 Fire Road 15A continuance date",
+    "ours": "[t=4085] continue the 27 Fire Road 15A hearing to March 4, 2026 — passed",
+    "official": "M. Wilson, continue to the March 4 meeting.",
+    "note": "Dates and outcome match."
+   },
+   {
+    "kind": "agree",
+    "about": "833 Flat Hill Road tree removal ratification",
+    "ours": "[t=4846] ratify Harlin's administrative determination on the 833 Flat Hill Road tree removal — passed",
+    "official": "R. Bursch, to ratify Agent's determination with the following conditions:",
+    "note": "Same ratification and unanimous vote; official adds specific conditions (crane/hand removal, no stump removal, wood chips remain/burned, planting plan) that ours summarizes generally."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Number of MACC convention attendees funded",
+    "ours": "[t=9731] approve funds for MACC convention registration for three attendees — passed",
+    "official": "No budget has been established; the member's cost is $180.",
+    "note": "Ours states three attendees were funded (consistent with $180 x 3 = $540); official minutes never state a headcount, only a per-member cost. Worth checking the recording to confirm three people were actually authorized."
+   },
+   {
+    "kind": "agree",
+    "about": "MACC convention fund authorization and fallback source",
+    "ours": "[t=9731] MACC convention registration for three attendees, from the fund previously used ... or the WPA fund if unavailable — 540 (voted)",
+    "official": "M. Larouche, to authorize $540 for MACC training coming out of the previously used\nfund. If that fund is insufficient, use the WPA funds.",
+    "note": "Amount ($540), primary fund, and WPA fallback all match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Beaver-deceiver maintenance invoice payment and transfer",
+    "ours": "[t=9817] approve payment of the beaver-deceiver maintenance invoice from the timber rights fund — passed; $783 (voted)",
+    "official": "M. Larouche, to authorize $783 for annual culvert maintenance by Beaver Solutions,\ncoming out of the Timber Rights fund.",
+    "note": "Amount and funding source match exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "MACC convention registration fee",
+    "ours": "MACC convention registration fee: 165, 150, $180, 200 something, 540",
+    "official": "No budget has been established; the member's cost is $180.",
+    "official_reading": "$180 per member",
+    "note": "Captions produced several candidate figures for a per-member cost before settling; official confirms $180 per member is correct, with $540 being the total for three members."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "WPA fund balance figure",
+    "ours": "[t=9605] WPA fund balance: $4,000",
+    "official": "",
+    "note": "Official minutes mention the WPA fund only as a fallback source, with no balance figure; check the recording near t=9605 for where this number came from."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Beaver deceiver installation prior authorization figure",
+    "ours": "[t=9848] Beaver deceiver installation (prior authorization): $3,300",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes; likely background context given orally that the town chose to summarize out."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Wetlands Protection Act violation fines figure",
+    "ours": "[t=5559] Wetlands Protection Act violation fines: $300",
+    "official": "Recommend sending out a final letter advising that fees will be accrued unless they start working with us.",
+    "note": "Official describes the enforcement escalation generally but states no dollar figure for the fine; check the recording for where $300 came from."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Proposed stormwater utility fee figures",
+    "ours": "[t=10290] Proposed stormwater utility fee: 60, 75",
+    "official": "progressing rapidly. Public Information Session is on March 5 at 7:15pm in the Town Library.",
+    "note": "Official minutes note the stormwater committee update and an upcoming public session but give no fee figures at all."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Deadline given in final enforcement notice",
+    "ours": "[t=5539] Send a final notice giving non-responsive violation cases 15 days to come before the commission before fines are pursued",
+    "official": "Recommend sending out a final letter advising that fees will be accrued unless they start working with us.",
+    "note": "Official does not state a 15-day window; check the recording near t=5539 to confirm whether a specific deadline was actually given."
+   },
+   {
+    "kind": "caption_error",
+    "about": "215 Sunset Lane next-step terminology",
+    "ours": "[t=6259] place a written field-change request on the March 4, 2026 agenda",
+    "official": "These items to be uploaded and the project to be added to the next meeting agenda after filing a Plan Modification/Plan\nChange Request.",
+    "official_reading": "Plan Modification/Plan Change Request",
+    "note": "Same procedural step (adding the item to the next, March 4, agenda after a change-request filing), described with the correct formal term in the official minutes versus a paraphrase in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Replanting guidance for 833 Flat Hill Road",
+    "ours": "[t=4581] Agent Harlin to share an understory planting plan with the 833 Flat Hill Road applicant near the wetland",
+    "official": "H. Jaime will give the applicant replanting suggestions.",
+    "note": "Same commitment by the agent, matches."
+   },
+   {
+    "kind": "agree",
+    "about": "72 Hemlock Drive outcome",
+    "ours": "[t=5453] For 72 Hemlock Drive, no vote taken; agent Harlin to work with the applicant on a tree replacement plan",
+    "official": "A replacement plan showing location and tree type was requested. Due\nto the amount of snow, the trees' actual size was not collected.",
+    "note": "Official minutes have no Motion/Vote block for this item, confirming no vote was taken, and record the same request for a replacement plan."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Earth Day / trail-maintenance decision",
+    "ours": "[t=8853] Plan a smaller-scale Earth Day/trail-maintenance event this year, with agent Harlin taking the lead on logistics for the next meeting",
+    "official": "T. Doucette suggested a free raffle\nfor a small garden bed. J. Pewtherer suggested a spring trail maintenance day. J. Pewtherer would like to see a volunteer\ntracking process as this is needed for grant submissions.",
+    "note": "Official minutes read as open brainstorming with several individual suggestions and no recorded decision or lead assignment; ours states a firm decision was reached. Check the recording near t=8853 for whether the group actually settled on a plan and assigned Harlin logistics."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "St. Germaine's resignation letter routing",
+    "ours": "[t=901] Chris St. Germaine to submit his resignation letter to the Select Board/town manager rather than to the commission",
+    "official": "C. St Germain announced his intention to step down as an active member but wished to remain on as an associate. H.\nJaime described the process needed",
+    "note": "Official minutes note only that the agent described 'the process needed' without specifying it as submitting a letter to the Select Board/town manager; check the recording near t=901 for the specific instruction given."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:59:44Z",
+   "cost_usd": 0.46456600000000003
+  }
  }
 }

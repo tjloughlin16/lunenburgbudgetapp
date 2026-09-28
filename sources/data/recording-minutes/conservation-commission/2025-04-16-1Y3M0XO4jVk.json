@@ -517,5 +517,209 @@
    "at": "2026-09-27T19:52:22Z",
    "cost_usd": 0.20141599999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04162025-7173",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-04-16-minutes-7173.txt",
+   "path": "sources/meetings/conservation-commission/2025-04-16-minutes-7173.pdf"
+  },
+  "official_sha256": "6f588d2fae7b0543dca01c1401a7977a424c4cde1161e82b3c9343ce7197d49d",
+  "coverage": "full",
+  "summary": "The two records agree closely on outcomes for six of the eleven votes and on most decisions and attendee identities, but the official minutes record three abstentions (390 Howard St, 7 Park St Terrace dock, and R. Bursch's own Vice-Chair nomination) that our minutes report as unanimous passes. A reader should also check the 691 Chase Road certificate-of-compliance item, which our minutes describe as discussed but the official minutes list as \"None,\" and the 221 Electric Ave and 201 Leominster-Shirley Rd vote tallies, where the official document's own OCR listing looks incomplete or garbled.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 6,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "73 Round Rd RDA vote",
+    "ours": "passed 6-0",
+    "official": "J. Pewtherer - AYE / M. Larouche - AYE / R. Bursch - AYE / C. St Germain - AYE / J. Viviano - AYE / M. Wilson - AYE",
+    "note": "Six members present (Stella not yet arrived) all voted AYE in both records; counts match."
+   },
+   {
+    "kind": "agree",
+    "about": "52 Birch Island Way NOI vote",
+    "ours": "passed 6-0",
+    "official": "R. Bursch - AYE / M. Larouche - AYE / J. Viviano - AYE / C. St Germain - AYE / J. Viviano - AYE / M. Wilson - AYE",
+    "note": "Six AYE votes in both (official's list has a duplicated 'J. Viviano' entry, likely an OCR artifact, in place of Pewtherer, the motion's maker); outcome matches."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "31 Round Rd continuance conditions",
+    "ours": "",
+    "official": "to continue to May 7 with more detail on material used to build the wall, confirm that the rock wall face is no closer to the water line than the existing wall, and confirm the work be completed during a draw down",
+    "note": "Our minutes record the continuance to May 7 (7-0) but not the specific wall-material/setback conditions attached to the motion; worth checking if these were captured elsewhere in our record."
+   },
+   {
+    "kind": "agree",
+    "about": "31 Round Rd continuance vote",
+    "ours": "passed 7-0",
+    "official": "R. Bursch - AYE / C. St Germain - AYE / J. Viviano - AYE / P. Stella - AYE / M. Larouche - AYE / M. Wilson - AYE / J. Pewtherer - AYE",
+    "note": "Seven AYE votes in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "4 Cove Rd (Fox) NOI vote",
+    "ours": "passed 7-0",
+    "official": "R. Bursch - AYE / J. Pewtherer - AYE / J. Viviano - AYE / P. Stella - AYE / M. Larouche - AYE / M. Wilson - AYE / C. St Germain - AYE",
+    "note": "Seven AYE votes in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "215 Sunset Lane (Pajari) NOI vote",
+    "ours": "approved with standard order of conditions, including added SWPPP-related language, passed 7-0",
+    "official": "R. Bursch - AYE / C. St Germain - AYE / J. Viviano - AYE / P. Stella - AYE / M. Larouche - AYE / M. Wilson - AYE / J. Pewtherer - AYE",
+    "note": "Vote count matches; official's discussion notes confirm Greg Roy suggested adding SWPPP verbiage to the standard conditions."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "390 Howard St continuance vote",
+    "ours": "Motion to continue ... to May 7 — passed",
+    "official": "J. Pewtherer - AYE / C. St Germain - AYE / R. Bursch - AYE / P. Stella - AYE / J. Viviano - AYE / M. Wilson - Abstain / M. Larouche - AYE",
+    "note": "Official records M. Wilson abstaining (6 AYE, 1 abstain); our minutes give no vote count at all and imply a clean pass — check the recording near t=5720 for whether an abstention was announced."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "221 Electric Ave continuance vote",
+    "ours": "passed 7-0",
+    "official": "R. Bursch - AYE / J. Viviano - AYE / C. St Germain - AYE | P. Stella - AYE",
+    "note": "The official document's own vote list shows only four AYE entries (possibly cut off across a page break) versus our 7-0; check the original minutes PDF for the complete tally."
+   },
+   {
+    "kind": "caption_error",
+    "about": "address for the Leominster-Shirley Rd continuance",
+    "ours": "2011 [Lancaster/Lunenburg] Shirley Road",
+    "official": "201 Leominster-Shirley Rd - RDA-25-1",
+    "official_reading": "201 Leominster-Shirley Rd",
+    "note": "The captions misheard '201 Leominster-Shirley Road' as '2011 ... Shirley Road'; same agenda item (continued to May 7)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "201 Leominster-Shirley Rd continuance vote count",
+    "ours": "passed 7-0",
+    "official": "R. Bursch - AYE / J. Pewtherer - AYE / TJ. Viviano - AYE / P. Stella - AYE / M. Larouche - AYE / M. Wilson - AYE / J. Pewtherer - AYE / M. Larouche - AYE / M. Wilson - AYE / _ C. St Germain - AYE",
+    "note": "Official's printed list has ten AYE entries with names repeated for a seven-member board, apparently OCR-garbled; someone should check the source minutes to confirm the true 7-0 tally matches ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "67 Island Rd continuance",
+    "ours": "",
+    "official": "e. 67 Island Rd - RDA-24-9 (Cont. from March 5th, 2025 to May 7'h, 2025)",
+    "note": "This continuance item appears in the official minutes with no separate motion recorded and is absent from our minutes entirely."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "7 Park St/Terrace dock replacement vote",
+    "ours": "passed 7-0",
+    "official": "J. Pewtherer - AYE / C. St Germain - AYE / R. Bursch - AYE / P. Stella - AYE / J. Viviano - AYE / M. Wilson - Abstain / M. Larouche - AYE",
+    "note": "Official records M. Wilson abstaining (6 AYE, 1 abstain) rather than a unanimous 7-0; check the recording near t=6309."
+   },
+   {
+    "kind": "agree",
+    "about": "election of Chair",
+    "ours": "Motion to elect Jenny as chair — passed 7-0",
+    "official": "R. Bursch - AYE / P. Stella - AYE / J. Viviano - AYE / M. Wilson - AYE / M. Larouche - AYE / J. Pewtherer - AYE / C. St Germain - AYE",
+    "note": "'Jenny' is J. Pewtherer, the outgoing Vice Chair; seven AYE votes in both records."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "election of Vice Chair",
+    "ours": "Motion to nominate Rich as vice chair — passed 7-0",
+    "official": "M. Larouche - AYE / J. Viviano - AYE / C. St Germain - AYE / M. Wilson - AYE / P. Stella - AYE / R. Bursch - Abstain / J. Pewtherer - AYE",
+    "note": "Official shows R. Bursch ('Rich') abstaining on his own nomination (6 AYE, 1 abstain), not a unanimous 7-0 — check the recording near t=8891."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cost estimate for lake dock replacement",
+    "ours": "$8,000",
+    "official": "",
+    "note": "No dollar figure for dock replacement appears anywhere in the official minutes; verify this figure against the recording if it needs to be cited independently."
+   },
+   {
+    "kind": "agree",
+    "about": "31 Round Rd draw-down condition",
+    "ours": "Commission leaned toward requiring wall/dock work during lake draw-down",
+    "official": "confirm the work be completed during a draw down",
+    "note": "Matches; this became one of the formal continuance conditions."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "policy on RDA requirement for dock-for-dock replacements",
+    "ours": "Commission agreed the conservation agent need not require a full RDA/application for simple same-size, same-location dock-for-dock replacements",
+    "official": "",
+    "note": "Official minutes show the 7 Park St dock swap being handled as an Administrative Determination, consistent with this practice, but do not state it as an explicit general policy; worth confirming this was said aloud as a standing rule."
+   },
+   {
+    "kind": "agree",
+    "about": "follow-up on default continuation legal exposure",
+    "ours": "Rich and the chair will follow up directly with town counsel on legal exposure from the commission's 'default continuation' practice",
+    "official": "M. Wilson and R. Bursch will follow up with Adam.",
+    "note": "Same two people (chair M. Wilson, Rich/Bursch) and same topic; 'Adam' is presumably the town counsel contact ours names generically."
+   },
+   {
+    "kind": "agree",
+    "about": "199 Mass Ave RDA filing directive",
+    "ours": "Property owners directed to file an RDA for wetland-area clearing already performed",
+    "official": "M. Wilson explained the filing process for an RDA.",
+    "note": "Consistent with the enforcement discussion of unauthorized tree-cutting at that address."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "691 Chase Rd certificate of compliance",
+    "ours": "The certificate of compliance request for 691 Chase Road will be handled once the conservation agent returns from leave",
+    "official": "d. Certificates of Compliance: None",
+    "note": "Official minutes explicitly list no certificate-of-compliance items this meeting, contradicting our record of a specific pending request at 691 Chase Rd — check the recording near t=6647 and confirm the address."
+   },
+   {
+    "kind": "agree",
+    "about": "Earth Day pollinator cleanup event",
+    "ours": "rescheduled to April 26, 10 a.m. to noon",
+    "official": "Pollinator habitat garden cleanout and open house on April 26 10:00-12:00.",
+    "note": "Same event and date/time in both records."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "NHS volunteer boardwalk work at Table Rock",
+    "ours": "National Honor Society volunteers to help move boardwalk materials at Table Rock on April 26, with ATV assistance arranged",
+    "official": "The National Honor Society will have multiple volunteers doing several small jobs.",
+    "note": "Official minutes are vaguer about what the NHS volunteers will do; the Table Rock/boardwalk/ATV detail is only in our minutes and should be checked against the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner identity: Chris St Germain vs. Viviano",
+    "ours": "Chris (Commissioner (referred to as Commissioner Viviano))",
+    "official": "Chris St Germain - Member",
+    "official_reading": "C. St Germain",
+    "note": "The captions appear to have confused Chris St Germain with the separate commissioner Jeffrey Viviano; the official roster clearly lists them as two different people."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Jeff Viviano's term end date",
+    "ours": "Jeff (Commissioner (term ends June 30, not seeking reelection))",
+    "official": "J. Viviano indicated he would not be returning.",
+    "note": "Both agree he is not returning, but the specific 'term ends June 30' date is not stated in the official minutes; confirm it was said on the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "staff present at the meeting",
+    "ours": "",
+    "official": "Sophia Dorow - Interim Consv. Admin / Logan O'Connell - Temp Admin Asst.",
+    "note": "The conservation agent and temp admin assistant are listed in the official minutes' masthead/roster but not captured in our attendee list, even though 'the agent' is referenced in our decisions section."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:17:32Z",
+   "cost_usd": 0.34586
+  }
  }
 }

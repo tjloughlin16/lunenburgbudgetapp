@@ -538,5 +538,298 @@
    "at": "2026-09-27T19:49:15Z",
    "cost_usd": 0.196772
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04162025-7166",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-04-16-minutes-7166.txt",
+   "path": "sources/meetings/board-of-assessors/2025-04-16-minutes-7166.pdf"
+  },
+  "official_sha256": "2ebf81c80406e3596f5f26785f591fc1525137b09878838aff9342cca3c857bb",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the open-session figures and decisions that both capture — exemption/abatement counts, the overlay submission, and the chapter-land and outreach-letter decisions all line up. The biggest gap is structural, not factual: our minutes (drawn from the public recording) show zero votes and no executive session, while the official minutes record a floor vote to release executive-session minutes plus seven executive-session decisions (the 41A denial, an abatement settlement, etc.) that the recording never captured.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 9,
+   "only_in_official": 9
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Principal assessor's name",
+    "ours": "Linda",
+    "official": "Principal Assessor Lynda McQuade, Rena Swezey.",
+    "official_reading": "Lynda McQuade",
+    "note": "Same person, name misheard/misspelled by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Consultant's name",
+    "ours": "Reena",
+    "official": "Principal Assessor Lynda McQuade, Rena Swezey.",
+    "official_reading": "Rena Swezey",
+    "note": "Same person; captions dropped the surname and altered the first name's spelling."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk's name",
+    "ours": "Mr. Rabbit",
+    "official": "Present Members: Chair Brian Laffond, Vice Chair Sarah Cammer, Clerk John Rabbitt",
+    "official_reading": "John Rabbitt",
+    "note": "Same person; captions dropped the first name and the double-t spelling."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "\"the chair\" listed separately from \"Brian\"",
+    "ours": "the chair (chair); Brian (board member)",
+    "official": "Present Members: Chair Brian Laffond, Vice Chair Sarah Cammer, Clerk John Rabbitt, Principal Assessor Lynda McQuade, Rena Swezey.",
+    "note": "The official minutes show Brian Laffond as chair — check whether our transcript split one person (Brian, the chair) into two separate attendee entries."
+   },
+   {
+    "kind": "discrepancy",
+    "t": 1300,
+    "about": "identity of the outreach person sending chapter-land letters",
+    "ours": "Neil (outreach officer)",
+    "official": "Robin Nano has sent 2 letters, an initial letter and a follow up letter asking residents to send in their applications.",
+    "note": "Roles match (outreach letters on chapter land) but the names are very different, not a simple mishearing — check the recording around 21:40 to confirm who is meant."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board of Health liaison attendee",
+    "ours": "",
+    "official": "Andrea Schnepf from BoH volunteered to work with Lynda to improve communication flow and interpret deeds.",
+    "note": "Not mentioned in our minutes at all."
+   },
+   {
+    "kind": "agree",
+    "about": "Denise McCue's attendance/role",
+    "ours": "Denise (assessing department staff / data collector)",
+    "official": "Denise McCue is continuing to follow up with building permits and inspections.",
+    "note": "Same person, same role, in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote to release executive session minutes",
+    "ours": "",
+    "official": "There was a motion by Brian Laffond to approve for release the executive session minutes of April 2, 2025. Seconded by Sarah Cammer. All in favor.",
+    "note": "Our minutes list no votes at all; check the recording for this motion, which the official minutes record as taken in open session."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote denying the 41A application",
+    "ours": "",
+    "official": "Jack recused himself on the 41A application. Brian Laffond, the Chair, and Sarah Cammer, Vice Chair, denied the 41A application for being incomplete as; only one of the owners was on the application and the property is owned jointly and there was no letter or indication of bank approval of the lien.",
+    "note": "Executive-session vote; not capturable from the public recording, but flagged because our votes list says \"none.\""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "$600 additional Clause 22E veteran exemption",
+    "ours": "",
+    "official": "Reviewed and approved an additional $600 for one application for a Clause 22 veteran that was converted to a Clause 22E.",
+    "note": "Executive-session action absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "2 abatements approved for fire-damaged properties",
+    "ours": "",
+    "official": "The Board of Assessors approved 2 abatements for properties that had fires.",
+    "note": "Executive-session vote absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "2 abatements denied for refusal to schedule inspection",
+    "ours": "",
+    "official": "The Board of Assessors denied 2 real estate abatements for refusal to schedule inspections which is a part of the abatement process",
+    "note": "Executive-session vote absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "2 abatements approved after second inspection",
+    "ours": "",
+    "official": "The Board of Assessors approved 2 real estate abatements for changes after 2nd inspection was requested by the attorney for misinformation during the first inspections",
+    "note": "Executive-session vote absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "chapter land lien application approved",
+    "ours": "",
+    "official": "The new application Chapter land lien for was approved by the Board of Assessors",
+    "note": "Executive-session vote; our minutes only discuss chapter-land letters/full-value process in open session, not this approval."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "ATB settlement for 39 Round Rd",
+    "ours": "",
+    "official": "Settlement of ATB case for 39 Round Rd for approval of FY2024 abatement and withdrawal of FY2025 real estate abatement",
+    "note": "Our minutes only note that an ATB case would be \"reviewed later this evening\" (implied from official's open-session note) but do not record the outcome; check the recording for whether this settlement was discussed on tape at all."
+   },
+   {
+    "kind": "discrepancy",
+    "t": 838,
+    "about": "internal transfer for postcard printing/postage",
+    "ours": "Moving money around within the assessing department's accounts to cover unbudgeted postcard printing and postage costs — not stated (discussed only)",
+    "official": "",
+    "note": "No corresponding transfer appears in the official minutes at all; check warrant/transfer records to see if this was formalized."
+   },
+   {
+    "kind": "agree",
+    "about": "real estate exemptions received to date",
+    "ours": "132",
+    "official": "To date, 132 real estate exemptions have been received.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "motor vehicle excise tax abatements received",
+    "ours": "41",
+    "official": "41 motor vehicle excise tax abatements have been received.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Vision Appraisal mailing credit",
+    "ours": "$500",
+    "official": "A $500 credit was reimbursed for the cost of mailing that the office provided.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Vision Appraisal inspections completed",
+    "ours": "112",
+    "official": "Currently there have been 112 appraisals completed.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "t": 650,
+    "about": "Vision Appraisal inspection target of 500",
+    "ours": "500",
+    "official": "",
+    "note": "Official minutes give the completed count (112) and contract details but never state a target of 500; not corroborated."
+   },
+   {
+    "kind": "only_in_ours",
+    "t": 1300,
+    "about": "chapter land lien filing fee of $105",
+    "ours": "$105",
+    "official": "",
+    "note": "Official minutes discuss lien issues generally but never state a $105 fee; not corroborated."
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 overlay amount submitted to town meeting",
+    "ours": "175,000",
+    "official": "$175,000 was submitted by the Board of Assessors to be voted on.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "t": 2773,
+    "about": "additional overlay detail figures (35,000/120/127/202/75,000)",
+    "ours": "35,000, 120, 127, 202, 75,000",
+    "official": "",
+    "note": "Only the top-line $175,000 submission appears officially; these component figures from the discussion are not corroborated."
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 overlay spent to date",
+    "ours": "168",
+    "official": "So far this year $168,000 has been used from the overlay.",
+    "note": "Matches ($168,000)."
+   },
+   {
+    "kind": "only_in_ours",
+    "t": 2880,
+    "about": "accumulated overlay account balance of 330",
+    "ours": "330",
+    "official": "",
+    "note": "No accumulated-balance figure appears in the official minutes; not corroborated."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cost of adopting COLA for exemptions / overlay impact",
+    "ours": "$4,600 (stated at t=2945 and again at t=6690)",
+    "official": "",
+    "note": "Official minutes note only that a 30-slide Clause 41/17 presentation will be reviewed next meeting, with no figures; the $4,600 cost is not corroborated."
+   },
+   {
+    "kind": "only_in_ours",
+    "t": 6521,
+    "about": "Clause 41C exemption increase figures",
+    "ours": "750, 1,000",
+    "official": "",
+    "note": "Deferred to next meeting per official minutes; no figures given there."
+   },
+   {
+    "kind": "only_in_ours",
+    "t": 6606,
+    "about": "Clause 17E/17F asset and exemption limit figures",
+    "ours": "$40,000, $185, 68,244, $343",
+    "official": "",
+    "note": "Deferred to next meeting per official minutes; no figures given there."
+   },
+   {
+    "kind": "only_in_ours",
+    "t": 6649,
+    "about": "Clause 41D income and asset limit figures",
+    "ours": "24,000, 30,000, 40,000, 55,000, 32,571, 40,946, 54,492, 75,172",
+    "official": "",
+    "note": "Deferred to next meeting per official minutes; no figures given there."
+   },
+   {
+    "kind": "discrepancy",
+    "t": 1530,
+    "about": "additional letter to properties sold out of chapter land without new application/lien",
+    "ours": "Send an additional letter to the roughly five or six properties sold out of chapter land without a new application or lien, requiring them to file or be returned to full value.",
+    "official": "Some parcels do not have an existing lien. The office is following up to correct this.",
+    "note": "Official minutes describe the same general problem but give no count and no mention of a specific additional letter; a person should check the recording for the '5 or 6 properties' figure and the letter decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "t": 2645,
+    "about": "folding deed-plan and cyclical inspection updates into the principal assessor's report",
+    "ours": "Fold deed-plan issues and cyclical inspection updates into the principal assessor's regular status report rather than keeping them as separate agenda items.",
+    "official": "",
+    "note": "Official minutes still list Deed/Plan Issues and Cyclical Inspection Program as separate agenda bullets this meeting; no mention of a decision to consolidate them going forward."
+   },
+   {
+    "kind": "agree",
+    "about": "confirming the FY2026 overlay figure for town meeting",
+    "ours": "Confirm the FY2026 overlay figure going to town meeting as submitted.",
+    "official": "$175,000 was submitted by the Board of Assessors to be voted on.",
+    "note": "Consistent — the submitted figure stands."
+   },
+   {
+    "kind": "agree",
+    "about": "neighborhood/waterfront classification update timing",
+    "ours": "Staff to return with a neighborhood/waterfront classification progress update in about a month, targeting the May 21st meeting.",
+    "official": "Rena Swezey will provide an update in another month.",
+    "note": "Consistent timing; official does not name the specific May 21st date but the month-out estimate matches."
+   },
+   {
+    "kind": "agree",
+    "about": "revising the 41A outreach letter and sending to town counsel",
+    "ours": "Revise the general 41A outreach letter to note the April 1st completed-application deadline, then send it to town counsel for review.",
+    "official": "Brian Laffond created a letter with Information that can be sent to 41A applicants. He will submit the letter to the Town Counsel for their feedback. All exemptions need to be submitted and completed by April 1st.",
+    "note": "Consistent across both records."
+   },
+   {
+    "kind": "agree",
+    "about": "tentative dates for the next meeting",
+    "ours": "Set the next meeting tentatively for May 5th, with May 14th as a backup, so the full board including the outgoing member can be present for the 41A discussion.",
+    "official": "Upcoming Meetings: May 5, 2025 Tentative) May 7, 2025, May 14, 2025 (Tentative), May 21, 2025, June 18, 2025.",
+    "note": "May 5 and May 14 are both marked tentative in both records; official also lists further routine calendar dates (May 7, May 21, June 18) not tied to the 41A discussion."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:09:32Z",
+   "cost_usd": 0.338866
+  }
  }
 }

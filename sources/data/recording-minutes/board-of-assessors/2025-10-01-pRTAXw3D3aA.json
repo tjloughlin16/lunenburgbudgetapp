@@ -534,5 +534,212 @@
    "at": "2026-09-27T12:19:21Z",
    "cost_usd": 0.195838
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012025-7425",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-10-01-minutes-7425.txt",
+   "path": "sources/meetings/board-of-assessors/2025-10-01-minutes-7425.pdf"
+  },
+  "official_sha256": "86f0afbb36544aa8d261407c5ff50d5a40e1dfac4025581793c505286a811638",
+  "coverage": "full",
+  "summary": "The official minutes are a full, detailed record that agrees with ours on most figures and several decisions (the 41D social-security deduction amounts, FY2026 new growth, the 41A warrant timing, and the Council on Aging article being superfluous), but our minutes attach several dollar figures and topics (GIS/Data Scout costs, roll-back-tax lots, overlay-account amounts, staffing hours, economic-obsolescence figures) that appear nowhere in the official text, while the official record contains at least two agenda items — Master Plan Response and the Office Hours decision — and, most importantly, the actual approval of the eight means-tested exemption applications, that our minutes describe as decided but the official minutes never record as having happened. A person should specifically check whether the board actually voted to approve the eight means-tested exemption applications, since our minutes report that as a decision (t=5738) and the official minutes only discuss the unresolved MUNIS implementation problem with no approval recorded.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 8,
+   "only_in_ours": 7,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "chair/vice-chair roles",
+    "ours": "Sarah (chair, as heard); Linda Cha (board member); Brian Lead (board member)",
+    "official": "Present Members: Chair Brian Laffond, Vice Chair Sarah Cammer, Principal Assessor Lynda Cajka",
+    "note": "Ours has the chair and vice-chair roles reversed (Sarah as chair vs. official's Brian Laffond as chair) and calls Lynda Cajka a board member when official lists her as Principal Assessor (staff, not a voting member) — check the recording for how each was actually addressed."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: Sarah",
+    "ours": "Sarah",
+    "official": "",
+    "official_reading": "Sarah Cammer",
+    "note": "Same person, surname dropped by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: Linda Cha",
+    "ours": "Linda Cha",
+    "official": "",
+    "official_reading": "Lynda Cajka",
+    "note": "Misheard surname; same person (Principal Assessor)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name: Brian Lead",
+    "ours": "Brian Lead",
+    "official": "",
+    "official_reading": "Brian Laffond",
+    "note": "Misheard surname; same person (Chair)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "abutters-list requests vs abatement applications count",
+    "ours": "Motor vehicle excise tax abatements: four, 43",
+    "official": "4 requests for abutters lists were received. 43 motor vehicle excise tax abatement applications were received.",
+    "note": "Ours collapses two separate items (4 abutters-list requests, 43 abatement applications) into one bullet about abatements; check the recording to confirm 'four' was not actually about abatements."
+   },
+   {
+    "kind": "caption_error",
+    "about": "41D exemption new amount",
+    "ours": "a,000, 2.9%, ,029",
+    "official": "The new amounts for the 41D exemption totaled $1,029.",
+    "official_reading": "$1,029",
+    "note": "Garbled digit grouping from captions ('a,000' and ',029' are fragments of $1,029); the 2.9% has no clear counterpart in the official text."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "17E/F exemption mention",
+    "ours": "41D and 17E/F exemption amounts with COLA",
+    "official": "",
+    "note": "Official minutes make no mention of a 17E/F exemption at all; confirm this was actually discussed or was a captioning artifact."
+   },
+   {
+    "kind": "agree",
+    "about": "social security income deduction figures for 41D",
+    "ours": "$5,980, 2,990, 8,970",
+    "official": "the deduction is $5,980 and their spouse $2,990. Married couples would receive $8,970",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "functional obsolescence discount amount",
+    "ours": "$8,231.15, $573,200",
+    "official": "The discounts totaled $8,231.45 with an assessed value of $573,200.",
+    "official_reading": "$8,231.45",
+    "note": "Cents misheard (.15 vs .45); the assessed value figure matches exactly."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "economic obsolescence discount figures",
+    "ours": "Economic obsolescence discount removals: $845,600, $12,142",
+    "official": "The discounts totaled $8,231.45 with an assessed value of $573,200.",
+    "note": "Official gives one combined obsolescence total with no separate economic-obsolescence figures; ours reports entirely different numbers under this heading — check the recording for whether a separate economic-obsolescence figure was actually stated."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "41A deferral income limit historical figure",
+    "ours": "41A deferral income limit, historical comparison: $20,000",
+    "official": "",
+    "note": "No dollar figure for 41A appears anywhere in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Council on Aging's proposed 41A interest rate",
+    "ours": "41A adoption/interest rate proposal from Council on Aging: 4%",
+    "official": "Jack Rabbitt submitted (on behalf of the Council on Aging) a warrant article to have 41A adopted and to decrease the interest rate.",
+    "note": "Official confirms the proposal existed but states no percentage; the 4% figure is not corroborated."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "roll-back taxes / chapter land release, six lots",
+    "ours": "Roll-back taxes, chapter land release (six lots): $6,000, little less than $5,000",
+    "official": "",
+    "note": "This entire topic and its figures are absent from the official minutes — confirm it was actually discussed at this meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "count of means-tested exemption applications",
+    "ours": "Means-tested (circuit breaker) exemption applications: eight, less than the 1%",
+    "official": "At this time there is apparently no process to shift the tax burden for this exemption within MUNIS. This first year we may need to utilize Overlay.",
+    "note": "Official does not state a count of applications in this section; check the recording for the source of 'eight'."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "overlay account transfer amounts",
+    "ours": "Possible use of the overlay reserve account to cover means-tested exemptions (discussed only) — $2730 / $23,000",
+    "official": "This first year we may need to utilize Overlay.",
+    "note": "Official confirms Overlay was discussed as a possible funding source but gives no dollar amounts; the $2,730/$23,000 figures are uncorroborated."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "assessing office staffing hours",
+    "ours": "Assessing office staffing hours: 19 hours, 500",
+    "official": "Office hours were discussed. The Board agreed our goal is to keep the Assessor's Office open for business whenever the Town Hall is open for business.",
+    "note": "Official records only the goal, not specific hour figures; check the recording for the source of '19 hours' and '500'."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "documenting Select Board's declination of first refusal, 222 West Townsend Road",
+    "ours": "Assessor asked the Town Manager's office to document the Select Board's declination of first refusal on 222 West Townsend Road in a letter for the file.",
+    "official": "",
+    "note": "This entire decision is absent from the official minutes; confirm whether it was actually raised at this meeting or belongs to a different session."
+   },
+   {
+    "kind": "agree",
+    "about": "sales report sorting requests",
+    "ours": "Board asked the assessor to have future sales reports sorted by percent change rather than by ratio, and broken out by neighborhood/site index.",
+    "official": "Sarah Cammer requested an additional option to sort by the site index. Brian Laffond requested an additional option to sort by Y/Y % of change on the Old vs. New values.",
+    "note": "Substance matches; official attributes the requests to specific members while ours describes it as a general board request."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "holding off on new vendor sales report pending DOR submission",
+    "ours": "Board agreed to hold off requesting a new sales report from the vendor until the Department of Revenue submission process is complete.",
+    "official": "",
+    "note": "Official's parallel section (154 qualified sales under review, no bids on Neighborhood Review RFP) does not record this decision — check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "41A warrant article submission timing",
+    "ours": "Revised 41A warrant article draft (with added income explanation) to be submitted to the Town Manager ahead of tomorrow's deadline.",
+    "official": "Brian Laffond sent a draft of the warrant to the Board. Either Lynda Cajka or Brian Laffond will submit the warrant because the deadline is tomorrow.",
+    "note": "Both records agree on the draft and the next-day deadline."
+   },
+   {
+    "kind": "agree",
+    "about": "no action on Council on Aging's 41A proposal",
+    "ours": "No action needed on the Council on Aging's proposed 41A adoption/interest-rate warrant article, since 41A is already state-mandated and previously adopted; feedback given to the Town Manager.",
+    "official": "it was determined to be state mandated and not a local option, and further, the Town had already decreased the interest rate. That article is superfluous. Brian Laffond provided his feedback to the Town Manager.",
+    "note": "Matches closely."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "approval of eight means-tested exemption applications",
+    "ours": "Board will approve the eight qualifying means-tested exemption applications tonight contingent on later resolving how they will actually be funded/implemented in Munis.",
+    "official": "At this time there is apparently no process to shift the tax burden for this exemption within MUNIS. This first year we may need to utilize Overlay.",
+    "note": "Ours describes an actual approval action taken that night; official's parallel section records only the unresolved implementation problem with no approval or vote mentioned — check the recording for whether an approval genuinely occurred, since this would be a non-procedural vote/decision the official minutes omit."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Master Plan Response decision",
+    "ours": "",
+    "official": "Lynda Cajka confirms she has been working on this and will provide an update at the next meeting. Brian Laffond explained that he would be willing to provide a draft to relieve Lynda of that additional burden.",
+    "note": "This decision/discussion is entirely absent from our minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "office hours goal decision",
+    "ours": "",
+    "official": "The Board agreed our goal is to keep the Assessor's Office open for business whenever the Town Hall is open for business.",
+    "note": "This decision is not captured in our minutes' decisions list, only loosely related figures appear under staffing hours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "count of qualified sales under review",
+    "ours": "",
+    "official": "There are 154 qualified Sales that Vision is currently reviewing and analyzing.",
+    "note": "Figure not captured anywhere in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:21:22Z",
+   "cost_usd": 0.323806
+  }
  }
 }

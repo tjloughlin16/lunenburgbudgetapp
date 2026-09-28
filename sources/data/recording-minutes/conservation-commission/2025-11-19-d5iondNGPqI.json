@@ -388,5 +388,84 @@
    "at": "2026-09-27T11:48:14Z",
    "cost_usd": 0.193208
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11192025-7523",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-11-19-minutes-7523.txt",
+   "path": "sources/meetings/conservation-commission/2025-11-19-minutes-7523.pdf"
+  },
+  "official_sha256": "20823eec72598810f8dd1a7edf477a4a6ae8f9feedb82596d18c64e51478a8e1",
+  "coverage": "partial",
+  "summary": "The two records agree closely on every substantive vote and on the two decisions with clear parallels (the McNamara riparian-line site visit and the well-abandonment bylaw exemption finding); nearly all differences are caption mishearings of member surnames. The one place they diverge on substance is the well-abandonment discussion, where our minutes add a notifier name, \"monitoring wells\" (plural), and a directive to consult DEP that the official minutes' one-sentence summary does not mention — worth checking against the recording — and the official minutes cover several administrative sections (enforcement log, old business, committee reports) our minutes omit entirely.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 0,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Chris St. Germaine",
+    "ours": "Chris St. Germaine (member)",
+    "official": "C. St Germain",
+    "official_reading": "Chris St Germain",
+    "note": "Same person, spelling misheard by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Andrea Bernup",
+    "ours": "Andrea Bernup (member)",
+    "official": "A. Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Same person, captions misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Teddy Ducet",
+    "ours": "Teddy Ducet (member)",
+    "official": "T. Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Same person, captions misheard the surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: McNamara shed — agent to verify riparian buffer line on site",
+    "ours": "[t=3525] Continue the McNamara shed RDA and have the conservation agent go verify with the applicant on site exactly where the 100-foot riparian buffer line falls before further review.",
+    "official": "R. Bursch, to continue to the December 3 meeting with the tollowing understanding: 1. H. Jaime to visit the site and verify the location of the 100-foot line with the applicant",
+    "note": "Same decision, same substance; both agree."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: fence applicant to check with Building Department",
+    "ours": "[t=4086] Recommend the fence applicant (Malcolm Parker) contact the town building department to confirm no additional permitting is needed given the fence is on a property line.",
+    "official": "R. Bursch recommended that the applicant check with the Building Department and the fence regulations to determine if the fence location needs to be moved.",
+    "note": "Same underlying recommendation (checking with the Building Department about the fence location/permitting); phrasing differs slightly but substance agrees."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Well-abandonment notification (451 Mass Ave) — what the agent was directed to do",
+    "ours": "[t=4837] Have the conservation agent contact the well-abandonment notifier (PMG Northeast) to ask why the monitoring wells were installed and why they are being abandoned, and consult DEP on what action the commission should take.",
+    "official": "M. Wilson suggested Herlin check with the notifier to understand the original intent of the well and our responsibilities with this process.",
+    "note": "Ours names a specific notifier (PMG Northeast), refers to 'monitoring wells' (plural), and adds a directive to consult DEP that the official summary does not mention at all; check the recording to confirm the notifier's name, whether multiple wells were discussed, and whether a DEP consultation was actually directed or is an inference."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: well-abandonment exemption does not exist under local bylaw, RDA required",
+    "ours": "[t=4899] Inform the well-abandonment applicant that the exemption they are claiming does not exist under the town's local wetlands bylaw and that they must file at minimum a Request for Determination of Applicability.",
+    "official": "R. Burch noted that the exemption they claim is not allowed in our by-laws. An RDA would be required.",
+    "note": "Same finding and same required next step (file an RDA); both agree."
+   }
+  ],
+  "quotes_not_in_official_dropped": 13,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:45:05Z",
+   "cost_usd": 0.289066
+  }
  }
 }

@@ -410,5 +410,219 @@
    "at": "2026-09-27T18:02:22Z",
    "cost_usd": 0.203772
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06262025-7285",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-06-26-minutes-7285.txt",
+   "path": "sources/meetings/cemetery-commission/2025-06-26-minutes-7285.pdf"
+  },
+  "official_sha256": "69fbaefd2e024d51a6d7aad8d08c95a7f4782eba20cc38a87ad094aee7fd0e39",
+  "coverage": "full",
+  "summary": "The two records agree on the single formal vote (the $2,620 CIMS/RainMaker invoice, passed) and on most later-meeting decisions about funding process and scheduling, but they diverge sharply on who was tasked with several North Cemetery follow-up items — our minutes repeatedly credit \"the Chair\" where the official minutes credit Vice Chair Dave Dorren (and once the reverse, for the stone-wall pricing task) — which a reader should verify against the recording. Our minutes also preserve dollar figures (fund balances, fee breakdowns, grant-writer rates) that the official minutes never publish, while the official minutes record several discussion items — South Cemetery's 10 available plots, the holiday-mowing plan, a Zoom/IT issue, the day-to-day point-of-contact question, and the previous chair's grant list — that do not appear in ours at all.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 11,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "CIMS/RainMaker invoice vote amount and outcome",
+    "ours": "Approve the RainMaker/SIMS invoice for $2620 — passed",
+    "official": "Chair David Dorren motioned we approve the CIMS invoice for $2620.00, Clerk Donna Landry seconded, AIF",
+    "note": "Same amount and same passed outcome; the software's name differs between records (see separate caption_error finding).",
+    "t": 538
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's surname",
+    "ours": "Dave Doran",
+    "official": "Dave Dorren",
+    "official_reading": "Dorren",
+    "note": "Misheard surname; role (vice chair) and first name agree in both records."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "CIMS annual maintenance fee breakdown",
+    "ours": "$1,420 (t=196)",
+    "official": "",
+    "note": "Official records only the combined $2,620.00 invoice total voted on, not this component; check the invoice itself — $1,420 + $1,200 (next finding) = $2,620.",
+    "t": 196
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Burial-search hosting license fee",
+    "ours": "$1,200 (t=305)",
+    "official": "",
+    "note": "Not broken out in official minutes, which record only the $2,620.00 total invoice.",
+    "t": 305
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Grant-writer comparison fees",
+    "ours": "$50, $60/hr, $800 (t=3277)",
+    "official": "",
+    "note": "Official's grant-writing paragraph mentions a point of contact and the Town Manager but no dollar figures; check the recording if these numbers matter to a funding decision.",
+    "t": 3277
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sale of lots fund balance",
+    "ours": "$94,490 (t=3583)",
+    "official": "",
+    "note": "Official says balances were \"reviewed and discussed at length\" but publishes no figures for any fund — check the town's fund ledger directly.",
+    "t": 3583
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital fund balance",
+    "ours": "$10,606 (t=3605)",
+    "official": "",
+    "note": "Not in official minutes, which give no dollar figures for any fund discussed.",
+    "t": 3605
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Perpetual care interest (expendable) balance",
+    "ours": "$20,000 (t=3605)",
+    "official": "",
+    "note": "Not in official minutes; check the perpetual care trust statement directly.",
+    "t": 3605
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Perpetual care principal (non-expendable) balance",
+    "ours": "$233,000 (t=3625)",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 3625
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Gift fund balance",
+    "ours": "$209 39 (t=3625)",
+    "official": "",
+    "note": "Rendered oddly by captions (likely $209.39); absent from official minutes so it cannot be cross-checked here.",
+    "t": 3625
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital article allocation for cemetery work",
+    "ours": "$10,000 (t=3666)",
+    "official": "",
+    "note": "Not mentioned in official minutes.",
+    "t": 3666
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hypothetical sale-of-lots spend-down figures",
+    "ours": "$88,000, 60 (t=4258)",
+    "official": "",
+    "note": "An illustrative/hypothetical figure, not a decision; official records no numbers from the funds discussion.",
+    "t": 4258
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who is contacting Bill Bernard about survey/tree removal, and the assessor's-office step",
+    "ours": "Chair will contact Bill regarding survey work and tree removal for the North Cemetery expansion, and check with the assessor's office about existing GIS/survey maps.",
+    "official": "Vice Chair David Dorren will call DPW Superintendent Bill Bernard regarding the Survey and the Trees, along with the start of the Backlot project. Vice Chair David Dorren will ask DPW Superintendent Bill Bernard if he has a set of maps.",
+    "note": "Attribution differs (Chair vs. Vice Chair) and ours adds a step — the assessor's office — not in official; check the recording at t=1431 for both points.",
+    "t": 1431
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who is pricing stone wall repair",
+    "ours": "Donna Landry will look into pricing for stone wall repair around the cemeteries.",
+    "official": "Chair Mike Clark will investigate sourcing a couple of local stone masons who could perform the repairs and quote, determining scope that we can support.",
+    "note": "Ours assigns this to the Clerk (Donna Landry); official assigns it to the Chair (Mike Clark) — check the recording at t=2140 for who actually took it on.",
+    "t": 2140
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Previous chair's list of grants",
+    "ours": "",
+    "official": "Also review the list of grants that the previous chair, Nancy Foss Yasko had provided.",
+    "note": "Our minutes never mention this list or name the previous chair."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Zoom timeout / town IT follow-up",
+    "ours": "",
+    "official": "Issues were experienced with the Zoom timeout, Chair Mike Clark to check with town IT on Zoom.",
+    "note": "Not captured anywhere in our minutes, likely a housekeeping aside rather than a numbered decision."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "South Cemetery available plot count",
+    "ours": "",
+    "official": "Bill had estimated as 10 plots available. Use the CIMS software to go in and identify all viable plots.",
+    "note": "This figure and follow-up task are absent from our minutes entirely."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Point of contact for day-to-day cemetery issues",
+    "ours": "",
+    "official": "who is the point of contact for day-to-day cemetery issues, Vice Chair David Dorren will contact the Town Manager to discuss.",
+    "note": "Absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Who moved and seconded the CIMS invoice vote",
+    "ours": "",
+    "official": "Chair David Dorren motioned we approve the CIMS invoice for $2620.00, Clerk Donna Landry seconded, AIF",
+    "note": "Our minutes record the vote and amount but not who moved or seconded it."
+   },
+   {
+    "kind": "agree",
+    "about": "Consulting Town Manager on grants before hiring outside grant writer",
+    "ours": "Commission will contact Town Manager Jennifer about the process for pursuing grants before deciding whether to seek an outside grant writer.",
+    "official": "Vice Chair David to follow up with his contact and Chair Mike Clark to follow up with the town manager.",
+    "note": "Same underlying decision to loop in the Town Manager first; official specifies Chair Mike Clark by role where ours adds the Town Manager's first name (Jennifer), which official omits.",
+    "t": 3230
+   },
+   {
+    "kind": "agree",
+    "about": "Investigating how a prior earmark request was submitted",
+    "ours": "A member will look into how a prior earmark request was submitted (via the state representative/senator's office) to pursue funding again.",
+    "official": "Earmarks were discussed, contacting our state representatives, Chair Mike Clark will reach out to them on establishing the process for requests.",
+    "note": "Same decision; official names Chair Mike Clark specifically where ours says \"a member.\"",
+    "t": 3469
+   },
+   {
+    "kind": "agree",
+    "about": "Deferring the August meeting date to July",
+    "ours": "Commission will wait until July to finalize and notice the August meeting date, to be held at the cemeteries.",
+    "official": "Clerk Donna Landry asked if we had scheduled a date for an August meeting, Vice Chair David Dorren suggested 6:00 pm weekdays, or a weekend. This would be a physical tour of the cemeteries.",
+    "note": "Both agree the August date was unfixed at this meeting and would be a cemetery walking tour.",
+    "t": 4494
+   },
+   {
+    "kind": "agree",
+    "about": "Touring North and South Cemetery on separate dates",
+    "ours": "Commission will meet at the North Cemetery parking lot and walk that cemetery, with South Cemetery to be walked on a separate date.",
+    "official": "Tour a cemetery a night.",
+    "note": "Matches official's plan to tour one cemetery per night; ours adds a North Cemetery parking-lot meeting detail that official omits.",
+    "t": 4537
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Scheduling RainMaker/CIMS training via Zoom",
+    "ours": "Commission will schedule a future meeting for RainMaker to train the three commissioners on the SIMS software via Zoom.",
+    "official": "",
+    "note": "Not mentioned anywhere in official minutes; check the recording at t=347 to confirm this training commitment was actually made.",
+    "t": 347
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:52:29Z",
+   "cost_usd": 0.37271
+  }
  }
 }

@@ -517,5 +517,201 @@
    "at": "2026-09-27T12:49:02Z",
    "cost_usd": 0.195826
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08062025-7331",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-08-06-minutes-7331.txt",
+   "path": "sources/meetings/conservation-commission/2025-08-06-minutes-7331.pdf"
+  },
+  "official_sha256": "a186f4e1749e08fddf5d7a269a0b94193bba3f57d1ff57f82e4b59de5c93f7cd",
+  "coverage": "partial",
+  "summary": "Every clearly-stated vote outcome (approve/deny/continue) agrees between the two records, but the official minutes carry information ours cannot capture from audio alone: full roll-call tallies (revealing a contested 4-3 vote on 499 Northfields Road that ours reports simply as \"passed\"), and two places where the official minutes are themselves incomplete or garbled (31 Round Road has no recorded motion/vote at all, and the 159 Holman St Lot 4 motion text appears to be a copy-paste error). The remaining differences are almost all caption mishearings of street numbers and names (260 Vuola/Falulah Road, 183/1083 Northfield Road, several presenter and commission-member surnames) plus a handful of decisions and one figure (a $15 MACC fee, a United Way follow-up) that appear in only one of the two records.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 10,
+   "discrepancy": 3,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "499 Northfields Road NOI vote tally",
+    "t": 3934,
+    "ours": "Approve NOI for 499 Northfields Road ... with the stipulation of extending the erosion control barrier — passed",
+    "official": "M. Wilson - AYE / R. Bursch - NAY / C. St Germain - AYE / T. Doucette - NAY / A. Burnap - AYE / J. Pewtherer - AYE / M. Larouche - NAY",
+    "note": "Official records a contested 4-3 vote (three members voting NAY); ours reports only 'passed' with no tally. Check the recording near t=3934 for the roll call to confirm the split."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "31 Round Road (Lake Shirley) continuance vote",
+    "t": 6942,
+    "ours": "Continue the 31 Round Road (Lake Shirley) NOI to August 20, 2025, pending a revised plan removing the new retaining wall from the 30/50-foot buffer and showing two docks — passed",
+    "official": "R. Bursch stated he was not in favor of building a new wall inside the 30-foot zone. --Missing Motion vote info?--",
+    "note": "The official minutes explicitly flag that the motion/vote for this item is missing. Check the recording around t=6942 to confirm a vote actually occurred and what its conditions were, and flag the gap to the town clerk."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "January grant / parking-area figure",
+    "t": 9436,
+    "ours": "Possible January grant application for a parking area (Raino or Table Rock): 80%, 20%",
+    "official": "Reviewed some potential handicap improvement projects that would be reimbursed at 80%.",
+    "note": "Official describes handicap-improvement projects reimbursed at 80%, with no mention of a parking area, Table Rock/Raino, January, or a 20% figure. Check the recording near t=9436 against the Grants Update discussion to see whether these are the same item or two different ones."
+   },
+   {
+    "kind": "caption_error",
+    "about": "street name, CAOC-25-2",
+    "t": 1706,
+    "ours": "260 Vuola Road",
+    "official": "260 Falulah Road- CAOC-25-2",
+    "official_reading": "260 Falulah Road",
+    "note": "Misheard street name; same amended-order-of-conditions case (Fitchburg Land Property Owner LLC)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "engineering firm name",
+    "t": 1706,
+    "ours": "Bill Hanigan (Hanigan Engineering)",
+    "official": "Bill Hannigan from Hannigan Engineering",
+    "official_reading": "Bill Hannigan, Hannigan Engineering",
+    "note": "Minor spelling mishearing of the same presenter/firm."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter name, 499 Northfields Road",
+    "t": 3934,
+    "ours": "Justin McCarti",
+    "official": "Justin LeClair represented the applicant.",
+    "official_reading": "Justin LeClair",
+    "note": "Misheard surname for the same representative."
+   },
+   {
+    "kind": "caption_error",
+    "about": "address, common-driveway NOI",
+    "t": 5047,
+    "ours": "183 Northfield Road",
+    "official": "1083 Northfield Rd - NOI-25-10",
+    "official_reading": "1083 Northfield Rd",
+    "note": "Digits dropped/misheard; same continuance vote to August 20."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter name, 31 Round Road",
+    "t": 6942,
+    "ours": "Matt Marorrow",
+    "official": "Matt Marro represented the applicant.",
+    "official_reading": "Matt Marro",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "new project engineer, 31 Round Road",
+    "ours": "",
+    "official": "Christopher Stoddard (Royalston) is the new engineer on the project and re-evaluated all the plans.",
+    "note": "Not captured anywhere in our attendee/presenter list."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter name, 390 Howard Street",
+    "t": 7407,
+    "ours": "Chuck (Charles) Karen",
+    "official": "Charles Caron represented the applicant and summarized the Commission's previous concern.",
+    "official_reading": "Charles Caron",
+    "note": "Misheard surname (Karen vs. Caron); applicant name Kevin O'Brien matches in both."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "presenter name, 406 Sunset Lane",
+    "ours": "Nancy Mady (presenter, 406 Sunset Lane)",
+    "official": "Applicant was present.",
+    "note": "Official does not name the applicant present for this certificate of compliance; only ours supplies a name, which is unverifiable against the official text."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "presenter/homeowner, 141 Hemlock Drive",
+    "ours": "Jim (applicant/homeowner, 141 Hemlock Drive)",
+    "official": "",
+    "note": "Official minutes describe the tree-removal request without naming any homeowner/presenter."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: chair to follow up with MACC on fee/logins",
+    "t": 9036,
+    "ours": "The chair will check in with the town's wetlands agent and follow up with MACC about the $15 repeat-rate training registration and outstanding logins for newer members.",
+    "official": "",
+    "note": "Not recorded in the official minutes' Communications section, which only records a different question from C. St Germain about reminder workflows."
+   },
+   {
+    "kind": "agree",
+    "about": "decision: research reminders for 1-/2-year RDA follow-ups",
+    "t": 10153,
+    "ours": "The chair will ask the town's OpenGov administrator about building reminders into the workflow so one- and two-year RDA follow-up reports ... are not missed.",
+    "official": "C. St Germain wondered how we are reminded of items like the 1 and 2-year updates we applied earlier. J. Pewtherer will research.",
+    "note": "Same underlying commitment (chair/Pewtherer to look into a reminder mechanism), though ours attributes the trigger to the chair checking with OpenGov rather than to C. St Germain's question."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: United Way day-of-caring follow-up",
+    "t": 9613,
+    "ours": "Mary will respond to a United Way volunteer coordinator about a possible day-of-caring trail/repair project in the Cowry area, copying Bob and the chair.",
+    "official": "",
+    "note": "No mention anywhere in the official minutes; worth confirming this item actually occurred at this meeting rather than being carried over from another conversation."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "chair's name",
+    "ours": "the Chair (name not stated in captions)",
+    "official": "Jennifer Pewtherer, Chair",
+    "note": "Captions never surfaced the chair's name at all; not a mishearing but a complete omission ours should fill from the official record."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name: Mike Larouche",
+    "ours": "Mike Larouche (member)",
+    "official": "Michael Larouche, Clerk",
+    "official_reading": "Michael Larouche",
+    "note": "Same commissioner (also the board's Clerk, a role ours omits)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name: Richard Burch",
+    "ours": "Richard Burch (member)",
+    "official": "Richard Bursch, Vice Chair",
+    "official_reading": "Richard Bursch",
+    "note": "Misheard surname; also ours omits that he is Vice Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name: Andrea Berna",
+    "ours": "Andrea Berna (member)",
+    "official": "Andrea Burnap, Member",
+    "official_reading": "Andrea Burnap",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name: Teddy Ducet",
+    "ours": "Teddy Ducet (member)",
+    "official": "Teddy Doucette, Member",
+    "official_reading": "Teddy Doucette",
+    "note": "Misheard surname, consistent with the same mishearing elsewhere (e.g. Master Plan Committee item)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "staff attendees",
+    "ours": "",
+    "official": "Herlin Jamie - Interim Consv. Admin; Michael Gale - Admin Assistant",
+    "note": "Neither staff member appears in our attendee list, though Herlin's reviews/recommendations are referenced repeatedly throughout the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 8,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:31:28Z",
+   "cost_usd": 0.36411799999999994
+  }
  }
 }

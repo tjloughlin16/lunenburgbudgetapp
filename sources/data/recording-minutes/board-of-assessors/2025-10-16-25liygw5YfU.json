@@ -450,5 +450,168 @@
    "at": "2026-09-27T12:12:06Z",
    "cost_usd": 0.194642
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10162025-7450",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-10-16-minutes-7450.txt",
+   "path": "sources/meetings/board-of-assessors/2025-10-16-minutes-7450.pdf"
+  },
+  "official_sha256": "d340e0317d6bb3f8c2e77c2627fcd82299b756d5a63671ef66d469267eb12304",
+  "coverage": "partial",
+  "summary": "Where both records cover the same ground (the FY26 growth figures, the excise commitment) they agree closely once caption misreadings of names and digit-grouping are accounted for. The official text supplied stops right after the excise-tax item — roughly the first quarter of a meeting ours tracks to t=5212 — so nearly every later vote and decision in ours (the master-plan response, the Oct 22 meeting, the classification hearing date, the chapter-land hold, the code of conduct, IT access, the vacant seat) has no counterpart here; a reader should get the full official minutes rather than conclude the town omitted them.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 10,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Lefon (chair)",
+    "official": "Present Members: Chair Brian Laffond, Vice Chair Sarah Cammer, Principal Assessor Lynda Cajka",
+    "official_reading": "Brian Laffond",
+    "note": "Same person, misheard by captions; no action needed."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name and title",
+    "ours": "Sarah Cameron (member)",
+    "official": "Present Members: Chair Brian Laffond, Vice Chair Sarah Cammer, Principal Assessor Lynda Cajka",
+    "official_reading": "Sarah Cammer",
+    "note": "Name misheard, and our minutes also drop her Vice Chair title, which the official minutes carry — worth adding to our attendee record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee count / identity",
+    "ours": "Linda Chica (member); the principal assessor (not self-identified by name)",
+    "official": "Present Members: Chair Brian Laffond, Vice Chair Sarah Cammer, Principal Assessor Lynda Cajka",
+    "note": "Official lists only 3 attendees total, and Lynda Cajka IS the principal assessor — the same person our minutes appear to have split into two separate attendee entries. Check the recording to confirm only 3 people were present, not 4."
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 personal property growth figures",
+    "ours": "Personal property valuation growth (FY26): 68,178,180, $979,038",
+    "official": "The assessed value of growth for personal property has been received from RRC and totaled $68,178,180. The tax dollars totaled $979,038 and the previously determined total for residential, commercial and industrial totaled $398,000. Total New Growth will be ~$1.3M.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Residential/commercial/industrial growth total",
+    "ours": "Residential/commercial/industrial growth: 398,000",
+    "official": "the previously determined total for residential, commercial and industrial totaled $398,000",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "Total new growth vs. estimate (the $1.3M figure)",
+    "ours": "Total growth vs. original estimate: 1.3 million, 400,000",
+    "official": "Total New Growth will be ~$1.3M.",
+    "note": "The 1.3 million figure matches; see separate finding on the extra 400,000 figure ours includes that official omits."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "An additional growth figure (400,000) beside the $1.3M total",
+    "ours": "Total growth vs. original estimate: 1.3 million, 400,000",
+    "official": "",
+    "note": "Official states only the ~$1.3M total; check the recording near t=583 for what the 400,000 figure referred to (e.g., an original estimate or variance) since official doesn't break it out."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Motor vehicle excise commitment #5 amount",
+    "ours": "Motor vehicle excise tax commitment #5: 500, 79,000, $79,42.68",
+    "official": "Motor vehicle excise commitment number 5 was signed. There were 500 bills totaling $79,042.68.",
+    "official_reading": "$79,042.68",
+    "note": "Bill count (500) matches; the dollar figure is the same amount with a dropped digit/misplaced comma in the caption ($79,42.68 vs $79,042.68)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Cyclical inspection target for FY26",
+    "ours": "",
+    "official": "The target of 500 cyclical inspections has been completed for FY26.",
+    "note": "Not mentioned anywhere in our minutes; note the '500' here is a different fact from the 500 excise bills and should not be conflated with it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Volunteer application (Talent Bank) for the vacant board seat",
+    "ours": "",
+    "official": "Lynda Cajka indicated that a Volunteer Application (Talent Bank) was dropped off at the office by Brian Marple to potentially join the Board.",
+    "note": "Ours has a later decision (t=5212) about prioritizing meeting new applicants for the vacant seat, but never names Brian Marple or the Talent Bank application — check whether this is the same applicant the t=5212 decision refers to."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Clause/Chapter 18 hardship criteria discussion",
+    "ours": "Put establishing hardship criteria for Clause 18 tax relief on the agenda for the next meeting, before any application is reviewed.",
+    "official": "Lynda Cajka believes a Chapter 18 application may be submitted. If so, the Board will need to discuss criteria, as none currently exist. Lynda Cajka will check with her contacts for any available criteria.",
+    "note": "Both records describe the same underlying issue (no hardship criteria exist yet) but differ on the statutory label — ours says 'Clause 18', official says 'Chapter 18' — and on the concrete next step (agenda item next meeting vs. checking with contacts). Check the statute reference (M.G.L. c.59 exemptions are usually cited as 'Clause', not 'Chapter') and confirm whether an agenda item was actually agreed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Executive session minutes from Oct 1 — vote to release vs. decision to revise language",
+    "ours": "Revise the executive session minutes language to read \"the first two of a total of eight\" applications reviewed, rather than implying all eight were reviewed.",
+    "official": "There was a motion to approve for release the executive session minutes from October 1, 2025, by Sarah Cammer, seconded by Brian Laffond. All in favor.",
+    "note": "A vote to release the Oct 1 executive session minutes is recorded officially but not in ours; a decision to revise wording in those minutes is in ours but not officially. Check whether these are the same action described two ways, or two separate actions, and whether the wording revision was actually adopted before the release vote."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Additional meeting Oct 22 for interim adjustments",
+    "ours": "Try to schedule an additional meeting the following week, tentatively Wednesday October 22 at 6:30pm, focused on reviewing interim adjustments.",
+    "official": "",
+    "note": "Not present in the official text supplied, which stops earlier in the meeting; check the full official minutes for whether this meeting was scheduled and held."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Classification hearing date (Nov 25 or Dec 2)",
+    "ours": "Hold the tentative classification hearing on November 25 or December 2, pending approval of the LA-3/LA-15 submission.",
+    "official": "",
+    "note": "Not present in the official text supplied; check the full official minutes for the confirmed hearing date."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote/decision to send master plan response",
+    "ours": "[t=3733] Accept the board's drafted master plan response — not audible; [t=3754] Send the board's drafted response to the master planning committee covering exemptions and chapter land programs.",
+    "official": "",
+    "note": "Not present in the official text supplied; our own audio for the vote itself was inaudible, so this vote's outcome should be checked against the full official minutes, not assumed from the recording alone."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chapter-land property under purchase-and-sale — holding action",
+    "ours": "The board will hold off on any action regarding the chapter-land property under a purchase-and-sale agreement until the Select Board's first-right-of-refusal process and open space committee review progress further.",
+    "official": "",
+    "note": "Not present in the official text supplied; check the full official minutes for how this was recorded."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Code-of-conduct document (Littleton model) for future agenda",
+    "ours": "Add a code-of-conduct document (modeled on one from Littleton) to a future agenda for discussion.",
+    "official": "",
+    "note": "Not present in the official text supplied; check the full official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Shared file system access for board members",
+    "ours": "Have the principal assessor ask the town's IT/records contact whether board members can be granted access to a shared file system without each creating a separate account.",
+    "official": "",
+    "note": "Not present in the official text supplied; check the full official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Prioritizing meetings with vacant-seat applicants",
+    "ours": "Prioritize meeting with any new applicants for the vacant board seat at the next meeting if scheduling allows.",
+    "official": "",
+    "note": "Not present in the official text supplied, though it may connect to official's mention of Brian Marple's Talent Bank application; check the full official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:23:02Z",
+   "cost_usd": 0.286048
+  }
  }
 }

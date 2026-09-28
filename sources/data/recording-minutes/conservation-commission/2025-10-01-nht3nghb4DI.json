@@ -468,5 +468,118 @@
    "at": "2026-09-27T12:19:57Z",
    "cost_usd": 0.195502
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012025-7426",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-10-01-minutes-7426.txt",
+   "path": "sources/meetings/conservation-commission/2025-10-01-minutes-7426.pdf"
+  },
+  "official_sha256": "51910489943d04321ea3d1d374c9d285d21b742ffffb062c50e600013fca07ae",
+  "coverage": "partial",
+  "summary": "The two records agree closely on every roll-call vote and its outcome, and the sequence of hearings/administrative items lines up one-to-one; most differences are captions mishearing names and street addresses (Bursch/Burch, Burnap/Bernab, Doucette/Ducet, DiPinto/Depinto, Flynn/Glen Road, Novelli/Nolli, Dillis & Roy/Dillson Roy). The one thing a reader should check is the closing volunteer-recognition item (Bob, Josie, Eagle Scout, a Select Board plan) and the chair's stated plan to build erosion-control review into staff process — both appear only in our transcript-based minutes with specifics the official minutes do not corroborate, and the official minutes omit an entire replication-ratio condition on the Tanner Cole driveway approval.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 6,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Tanner Cole common driveway NOI approval conditions",
+    "ours": "Approve with a special condition of 2-year wetland replication monitoring — passed 4-0 (Andrea and Teddy did not vote)",
+    "official": "M. Wilson, to approve with the following conditions: 1. 1.6-1 replication 2. 2 years of monitoring",
+    "t": 2025,
+    "note": "Ours records only the monitoring-duration condition and omits the 1.6-to-1 replication ratio condition entirely; a person should check the recording/permit for the full condition list actually imposed."
+   },
+   {
+    "kind": "caption_error",
+    "about": "tree-removal address, second CAD item",
+    "ours": "19 Cliff View Road",
+    "official": "19 Cliffview Tr- CAD-25-15",
+    "official_reading": "19 Cliffview Tr",
+    "note": "Same application and vote; captions rendered the street name/type slightly differently."
+   },
+   {
+    "kind": "caption_error",
+    "about": "deck application street address",
+    "ours": "135 Glen Road",
+    "official": "135 Flynn Rd- CAD-25-16",
+    "official_reading": "135 Flynn Road",
+    "note": "Same applicant/decision (deck replacement, footings/RDA refile discussion) — captions misheard the street name; check the recording against the official address."
+   },
+   {
+    "kind": "caption_error",
+    "about": "135 Flynn Road applicant name",
+    "ours": "Louise Tat",
+    "official": "Louise Tata",
+    "official_reading": "Louise Tata",
+    "note": "Same applicant, captions dropped the final vowel."
+   },
+   {
+    "kind": "caption_error",
+    "about": "100 Howard St applicant's agent name",
+    "ours": "Maryanne Depinto",
+    "official": "Mary Ann DiPinto",
+    "official_reading": "Mary Ann DiPinto",
+    "note": "Same presenter, Three Oaks Environmental — name misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "driveway applicant's engineering firm/presenter name",
+    "ours": "Greg Roy (Dillson Roy)",
+    "official": "Greg Roy (Dillis & Roy)",
+    "official_reading": "Dillis & Roy",
+    "note": "Same presenter, firm name misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "77 Peninsula Drive applicant name",
+    "ours": "Bob Nolli",
+    "official": "Bob Novelli",
+    "official_reading": "Bob Novelli",
+    "note": "Same applicant/address — surname misheard."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "chair's stated plan on erosion-control/stockpile review process",
+    "ours": "The chair said she wants to build erosion-control and stockpile-plan requirements into the office's administrative review process before applications reach the agenda",
+    "official": "",
+    "t": 3400,
+    "note": "Not recorded in the official minutes at all; a person should check the recording to confirm this statement was made and by whom, since the official minutes name the chair as J. Pewtherer but ours never captured her name."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "volunteer certificate-of-appreciation discussion",
+    "ours": "Mary and the chair agreed to pursue a town certificate-of-appreciation format to recognize volunteers (including Bob, Josie, and Eagle Scout groups) and to raise recognition of them at a Select Board meeting",
+    "official": "M. Wilson wondered if the Town has Certificates of Appreciation we can send to volunteers.",
+    "t": 5897,
+    "note": "Official records only a question from M. Wilson, with no named volunteers, no stated agreement from the chair, and no Select Board plan; check the recording for whether Bob/Josie were actually named and whether any agreement or Select Board plan was actually reached, since none of that is corroborated."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "absent member",
+    "ours": "",
+    "official": "Absent: C. St. Germain",
+    "note": "Ours has no attendee list entry noting an absence; not a substantive conflict since an absent member naturally has no role in our minutes, but worth noting for completeness."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "administrator's name",
+    "ours": "",
+    "official": "Herlin Jamie - Interim Consv. Admin",
+    "note": "Ours repeatedly cites \"the administrator's recommendation\" without a name; official names the interim administrator as Herlin Jamie."
+   }
+  ],
+  "quotes_not_in_official_dropped": 16,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:39:40Z",
+   "cost_usd": 0.288368
+  }
  }
 }

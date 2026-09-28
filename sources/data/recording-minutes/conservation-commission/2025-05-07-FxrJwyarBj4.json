@@ -589,5 +589,202 @@
    "at": "2026-09-27T19:38:19Z",
    "cost_usd": 0.201984
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05072025-7208",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-05-07-minutes-7208.txt",
+   "path": "sources/meetings/conservation-commission/2025-05-07-minutes-7208.pdf"
+  },
+  "official_sha256": "bcf40fa5839415b42015026dd96dcdc86eeb21561b26b9fe157fb92e8285883b",
+  "coverage": "full",
+  "summary": "The two records agree closely on the substance of most hearings, decisions and dollar figures, but three roll-call votes differ in who is recorded as voting or how they voted, and two items (stump disposal, trimmer voltage) contain outright contradictions rather than misheard digits. A reader should check the 67 Island Road vote (abstention vs. unanimous), the associate-commissioner and pollinator-purchase vote rosters, and the stump/trimmer details against the recording before relying on any of them.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 5,
+   "discrepancy": 7,
+   "only_in_ours": 5,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "address for the Keolis RDA item",
+    "ours": "2011 Lunenburg/Shirley Road (Keolis RDA)",
+    "official": "201 Leominster-Shirley Rd - RDA-25-1",
+    "official_reading": "201 Leominster-Shirley Rd",
+    "note": "Misheard street name/number; the vote content and 5-person roll call otherwise match.",
+    "t": 930
+   },
+   {
+    "kind": "discrepancy",
+    "about": "67 Island Road (Canavino) roll call — chair's vote",
+    "ours": "Continue to June 18 — passed roll call: Richard, Mike, Mary, Peter, Chris, chair all yes",
+    "official": "R. Bursch - AYE, P. Stella - AYE, M. Larouche - AYE, C. St Germain - AYE, M. Wilson - AYE, J. Pewtherer - Abstain",
+    "note": "Our minutes records the chair (Pewtherer) voting yes; the official minutes record her abstaining. Check the recording around t=4688 for the chair's actual vote.",
+    "t": 4688
+   },
+   {
+    "kind": "caption_error",
+    "about": "address for the pine tree removal item",
+    "ours": "791 Lunenburg Road tree removal",
+    "official": "191 Leominster Ra - CAD-25-4",
+    "official_reading": "191 Leominster Rd",
+    "note": "Misheard street name/number.",
+    "t": 7764
+   },
+   {
+    "kind": "discrepancy",
+    "about": "handling of the removed tree stumps",
+    "ours": "...with 3-to-1 native replacement, stump grinding, and manual removal for one tree",
+    "official": "Stumps must stay in the ground because removing them is very disruptive to the soil in the 30-foot zone.",
+    "note": "Not a misheard digit — the two records state opposite dispositions for the stumps (ground down vs. left in place). Check the recording to see which was actually approved.",
+    "t": 7764
+   },
+   {
+    "kind": "discrepancy",
+    "about": "string trimmer voltage purchased for the pollinator habitat",
+    "ours": "$229, 40 volt, 18 volt",
+    "official": "For $229 we can get an 18-vold heavy-duty battery-operated trimmer",
+    "note": "The dollar figure matches, but our minutes records two voltages while the official minutes name only 18-volt; check the recording for whether a 40V option was discussed and rejected or is a captioning artifact.",
+    "t": 9982
+   },
+   {
+    "kind": "caption_error",
+    "about": "name of the fund used for the pollinator purchase",
+    "ours": "HA fund / HA fund request",
+    "official": "approve $447 from the HAW account",
+    "official_reading": "HAW account",
+    "note": "Likely a misheard fund name (HA vs. HAW); the dollar amount and purpose match exactly.",
+    "t": 10005
+   },
+   {
+    "kind": "discrepancy",
+    "about": "roll call for creating the associate-commissioner position",
+    "ours": "passed roll call: Chris, Mike, Pete, Richard, Mary, chair all yes (6 voters)",
+    "official": "C. St Germain - AYE, M. Wilson- AYE, P. Stella - AYE, J. Pewtherer - AYE, R. Bursch - AYE",
+    "note": "Official's printed roll call lists only 5 votes and omits M. Larouche (the motion's seconder); our minutes has all 6. Check the recording to confirm Larouche voted.",
+    "t": 9092
+   },
+   {
+    "kind": "discrepancy",
+    "about": "roll call for the pollinator habitat purchase ($447)",
+    "ours": "roll call: Pete, Mary, Richard, Chris, chair all yes (5 voters, no Mike Larouche)",
+    "official": "P. Stella - AYE, C. St Germain - AYE, M. Wilson - AYE, M. Larouche - AYE, R. Bursch - AYE, J. Pewtherer - AYE",
+    "note": "Official records all 6 members voting including M. Larouche; our minutes omits him. Check the recording for his vote.",
+    "t": 10005
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "HA fund balance figure",
+    "ours": "HA fund balance: $4,000",
+    "official": "",
+    "note": "No fund-balance figure appears anywhere in the official minutes for this item.",
+    "t": 10220
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "OpenGov technology fee on the Northfield Road application",
+    "ours": "OpenGov technology fee: $1.20",
+    "official": "",
+    "note": "Not mentioned in the official minutes.",
+    "t": 1155
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cost estimate to rebuild the Island Road deck",
+    "ours": "Cost of rebuilding the Island Road deck to comply: $28,000",
+    "official": "",
+    "note": "The official minutes discuss the 67 Island Rd patio/stairs/walkway renovation but state no dollar figure.",
+    "t": 3466
+   },
+   {
+    "kind": "agree",
+    "about": "pollinator habitat plant order figure",
+    "ours": "Pollinator habitat final plant order: $218",
+    "official": "Submitted a $218 order for final plants for the season",
+    "note": "Matches.",
+    "t": 9962
+   },
+   {
+    "kind": "agree",
+    "about": "total pollinator habitat request/transfer",
+    "ours": "Total HA fund request for pollinator habitat: $447 (voted, paid from HA fund)",
+    "official": "R. Bursch, approve $447 from the HAW account to cover $218 for plants and $229 for a trimmer.",
+    "note": "Dollar total and purpose match; fund name spelled differently (see separate caption_error finding).",
+    "t": 10005
+   },
+   {
+    "kind": "agree",
+    "about": "maximum daily wetlands violation fine",
+    "ours": "Wetlands violation daily fines: $300 per day",
+    "official": "Daily fines have a maximum of $300 per day and must be issued every day.",
+    "note": "Matches exactly.",
+    "t": 9491
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "timing of Mary Wilson's appointment to the new associate-commissioner seat",
+    "ours": "Agreed to hold off appointing Mary Wilson until she is no longer a sitting commissioner, likely at the July meeting.",
+    "official": "",
+    "note": "The official minutes record creating the associate-commissioner position but say nothing about appointing Wilson to it or timing.",
+    "t": 9154
+   },
+   {
+    "kind": "discrepancy",
+    "about": "whether an RFQ for third-party engineering peer review was being scoped",
+    "ours": "Agreed offline follow-up is still needed to scope numbers for an RFQ for third-party (horizontal) engineering peer review.",
+    "official": "Peer Review Process: None",
+    "note": "Official minutes record nothing under this agenda heading, while our minutes record an active decision to pursue an RFQ; check the recording for whether this discussion happened.",
+    "t": 9259
+   },
+   {
+    "kind": "discrepancy",
+    "about": "follow-up with outside counsel on default-continuation practice",
+    "ours": "Agreed to seek a short meeting with the town's outside counsel (Adam Costa) to confirm the commission's understanding of its default-continuation practice.",
+    "official": "Default Continuations Practice: as long as meetings are properly opened and the applicant is coming to meetings then we are on stable ground, but a better rubric should be developed.",
+    "note": "Official reads as a settled conclusion with no mention of consulting counsel by name; check the recording for whether a meeting with Adam Costa was actually proposed.",
+    "t": 9366
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "question about Fitchburg's compliance with the 21-day notice-to-act rule",
+    "ours": "Agreed to ask the incoming interim conservation agent how Fitchburg, which meets only monthly, complies with the 21-day notice-to-act requirement.",
+    "official": "Conservation administrator: The Fitchburg admin will be onboarding as our interim admin.",
+    "note": "Official only notes the hiring, not any planned question about Fitchburg's compliance practice.",
+    "t": 10668
+   },
+   {
+    "kind": "only_in_official",
+    "about": "distance measurement for the 42 Meadow Lane inquiry",
+    "ours": "",
+    "official": "Mass Mapper indicated the area in question is approximately 653 feet from the wetlands, so it is within the 100-foot zone.",
+    "note": "Our minutes records the RDA recommendation but not this distance figure; note the official figure itself looks internally inconsistent (653 ft stated as \"within the 100-foot zone\") and may be an OCR error worth checking against the source document."
+   },
+   {
+    "kind": "caption_error",
+    "about": "commissioner name Richard Burch/Bursch",
+    "ours": "Richard Burch (commissioner)",
+    "official": "R. Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "commissioner name spelling",
+    "ours": "Chris St. Germaine (commissioner)",
+    "official": "Chris St Germain",
+    "official_reading": "Chris St Germain",
+    "note": "Minor misspelling of the surname."
+   }
+  ],
+  "quotes_not_in_official_dropped": 5,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:19:22Z",
+   "cost_usd": 0.335864
+  }
  }
 }

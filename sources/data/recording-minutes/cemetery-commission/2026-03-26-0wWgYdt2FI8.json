@@ -423,5 +423,227 @@
    "at": "2026-09-27T02:50:43Z",
    "cost_usd": 0.191396
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03262026-7741",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2026-03-26-minutes-7741.txt",
+   "path": "sources/meetings/cemetery-commission/2026-03-26-minutes-7741.pdf"
+  },
+  "official_sha256": "f4f369b2bfb44fbd2681b9c41e570d893f14db1d70309dca42bf51641e1fa28c",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on every vote's outcome and on most decisions and dates, but the official minutes are a bare summary that drops nearly every dollar figure our minutes captured, several procedural decisions, and one attendee (Donna Landry) entirely. The one thing to check: the official minutes themselves give inconsistent lot numbers for the Watson donation (3UC in the narrative, 5UC in the motion), and neither figure matches ours (29UC/5U) — someone should pull the actual motion language for that vote and confirm titles/roles for Todd Holman vs. Bill Bernard, which our minutes appear to have merged.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 0,
+   "discrepancy": 9,
+   "only_in_ours": 10,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote: purpose of the $20,000 sale-of-lots transfer",
+    "ours": "Notify the town they want to transfer $20,000 from sale of lots for cemetery care/improvement/expansion — passed",
+    "official": "David Dorren made a motion that we want to transfer 20k from sale of lots for embellishment, Donna Landry seconded, AIF",
+    "note": "Both records show the vote passed for the same $20,000, but the stated purpose differs — 'care, improvement and expansion' versus 'embellishment' — someone should check the actual motion text/warrant article wording to see which purpose was formally recorded.",
+    "t": 740
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Fish Street plaque design",
+    "ours": "Approve the plaque design for the Fish Street Cemetery — passed",
+    "official": "David Dorren made a motion to approve plaque for Fish Street; Donna Landry seconded the motion. AIF",
+    "note": "Same vote, same outcome, same subject.",
+    "t": 3581
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: Watson donation lot exchange numbers",
+    "ours": "Accept the donated lot from the Watson family and exchange designation of 29UC/5U so the commission can resell the freed cremation lot — passed",
+    "official": "David Dorren made a motion to accept 5UC lots from Watson, and exchange 29UC for 5UC, Donna Landry seconded, AIF",
+    "note": "The vote passing is agreed, but the lot numbers are inconsistent even within the official minutes (narrative says Scott Watson's plot was '3UC', the motion says '5UC'), and ours gives '29UC/5U' — a person should check the actual deed/plot records to confirm which lot number (3UC or 5UC) was donated and which was freed for resale.",
+    "t": 4409
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer of $20,000 from sale-of-lots account",
+    "ours": "$20,000 from the sale-of-lots account to fund cemetery care, improvement and expansion — $20,000 (voted)",
+    "official": "transfer 20k from sale of lots for embellishment",
+    "note": "The dollar amount matches exactly; only the stated purpose differs (see the linked vote finding above).",
+    "t": 740
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Committed cemetery repair costs figure",
+    "ours": "13550, 7,800, 2000",
+    "official": "",
+    "note": "Official minutes are a narrative summary and state no dollar figures for repair costs; nothing to reconcile against.",
+    "t": 369
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Memorial Day flowers cost figure",
+    "ours": "56, 560, 600, 610",
+    "official": "",
+    "note": "Official minutes record the flowers motion but no cost figure.",
+    "t": 432
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "South Cemetery / Fish Street project funding need figures",
+    "ours": "25970, 14283, 11,686",
+    "official": "",
+    "note": "Official minutes reference the backlot expansion discussion generally ('costs were higher than expected') but publish no figures to compare.",
+    "t": 791
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Remaining balance after transfer and flowers",
+    "ours": "8,300, 38, 8,000",
+    "official": "",
+    "note": "Not mentioned in the official summary at all.",
+    "t": 858
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Back lot expansion cost estimate figure",
+    "ours": "$50,000, 366,000",
+    "official": "",
+    "note": "Official minutes describe the same discussion topic ('Bill Bernard presented the Design Cost estimates and plan for the North Cemetery backlot expansion... costs were higher than expected... DPW to go back to Dillis and Roy to see where we can decrease costs') but state no dollar figure to check against the wide range our captions produced.",
+    "t": 1006
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Engineering services during bidding/construction cost",
+    "ours": "$29,000",
+    "official": "",
+    "note": "No corresponding figure in the official summary.",
+    "t": 1280
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Mobilization/demobilization line item",
+    "ours": "33,000",
+    "official": "",
+    "note": "No corresponding figure in the official summary.",
+    "t": 1609
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sale of lots and perpetual care account balances",
+    "ours": "90, 20, 70, 198,000",
+    "official": "",
+    "note": "No corresponding figures in the official summary.",
+    "t": 1670
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stump and tree removal cost",
+    "ours": "$7,000, $110, 21,000",
+    "official": "",
+    "note": "No corresponding figure in the official summary.",
+    "t": 3339
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Seasonal cemetery help budget figure",
+    "ours": "20,000",
+    "official": "",
+    "note": "Official minutes mention a related but different fact ('DPW rehiring 2 part time workers') with no budget figure attached; the two records describe adjacent but not identical information — someone should check if the $20,000 figure refers to the rehiring mentioned officially.",
+    "t": 3529
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: bypass town meeting warrant for future sale-of-lots transfers",
+    "ours": "Going forward, the commission will submit written authorization to the town treasurer/accountant to transfer sale-of-lots funds rather than seeking a town meeting warrant article each year.",
+    "official": "",
+    "note": "This is a substantive procedural decision present only in our minutes; someone should check the recording/treasurer correspondence to confirm whether this was actually decided, since the official minutes only record the one-time transfer vote and say nothing about changing the process going forward.",
+    "t": 617
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: revise expansion cost estimate before bidding",
+    "ours": "The commission agreed it does not want to drain the sale-of-lots account to a low balance and will revise the expansion cost estimate before deciding how much of the project to bid.",
+    "official": "In-depth discussion of cost of projected work for the addition to North Cemetery as costs were higher than expected. Bill - DPW to go back to Dillis and Roy to see where we can decrease costs.",
+    "note": "Both records describe the same underlying decision — costs came in high and DPW/the engineer will revise the estimate before proceeding — even though ours adds the account-balance rationale that official omits.",
+    "t": 1854
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: cannot solicit donations directly as a town body",
+    "ours": "The commission cannot solicit donations from town residents directly since it is a town body, though it could accept unsolicited gifts or support a resident-formed 501(c)3.",
+    "official": "",
+    "note": "Not recorded in the official minutes at all; check the recording to confirm this was actually stated as a formal position and not just an aside, since the official minutes give no indication this topic came up.",
+    "t": 2290
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: hold off bidding until funding confirmed",
+    "ours": "The commission will not go out to bid until the funding amount is confirmed; the DPW director will first revise the cost estimate and reduce scope where possible.",
+    "official": "Bill - DPW to go back to Dillis and Roy to see where we can decrease costs.",
+    "note": "Official confirms DPW will revise the estimate but does not state the commission committed to withholding the bid until funding is confirmed — check whether that specific commitment was actually made or is an inference from the discussion.",
+    "t": 2925
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: review revised cemetery rules and regulations",
+    "ours": "Board members will take home the revised cemetery rules and regulations document to review before discussing changes at the next meeting.",
+    "official": "Todd Holman handed out a recommendation on Rules updates, Review of Cemetery Rules to be reviewed by Commission and discussed at next meeting.",
+    "note": "Same decision, same plan to discuss at the next meeting.",
+    "t": 3706
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: next meeting date",
+    "ours": "Next meeting set for April 23rd.",
+    "official": "Next meeting April 23, 2026",
+    "note": "Dates match exactly.",
+    "t": 4582
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: David Dorren's role",
+    "ours": "Dave (member)",
+    "official": "David Dorren, Vice-Chair",
+    "note": "Same person by name, but ours gives a generic 'member' role while official states he is Vice-Chair; worth checking since Vice-Chair carries specific authority (e.g., chairing in the Chair's absence)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Todd Holman's title merged with DPW Director role",
+    "ours": "Todd (DPW Director / Cemetery Superintendent)",
+    "official": "DPW Department Director: Bill Bernard; Cemetery Superintendent: Todd Holman",
+    "note": "Official lists these as two separate people with two separate titles; ours appears to have merged both titles onto 'Todd' — check the recording to confirm Todd Holman is Cemetery Superintendent only, and Bill Bernard holds the DPW Director title."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Bill's role listed as 'member'",
+    "ours": "Bill (member)",
+    "official": "DPW Department Director: Bill Bernard",
+    "note": "Official identifies Bill as the DPW Department Director, not a commission member — ours may have miscategorized his role; check the recording for how he was introduced."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: possible duplication of Mike / 'the chair'",
+    "ours": "Mike (member); the chair (chair)",
+    "official": "Mike Clark, Chair",
+    "note": "Official lists only one person, Mike Clark, as Chair; ours lists 'Mike' and 'the chair' as if they might be two separate attendees — check the recording to confirm these both refer to Mike Clark and are not two different people."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Donna Landry, Clerk",
+    "ours": "",
+    "official": "Donna Landry, Clerk",
+    "note": "Donna Landry is named throughout the official minutes as the seconder on nearly every motion but does not appear anywhere in our attendee list — likely a captioning gap since she is not identified as speaking a full name during the recording."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:06:18Z",
+   "cost_usd": 0.29215
+  }
  }
 }

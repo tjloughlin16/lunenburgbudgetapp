@@ -575,5 +575,169 @@
    "at": "2026-09-27T11:29:27Z",
    "cost_usd": 0.196698
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01072026-7585",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-01-07-minutes-7585.txt",
+   "path": "sources/meetings/conservation-commission/2026-01-07-minutes-7585.pdf"
+  },
+  "official_sha256": "690fec5d0524598180cc3e87f3e6fbcbe9c2eb37cfaf105f5ad7d5f58dcef834",
+  "coverage": "partial",
+  "summary": "The two records agree closely on outcomes: all 14 non-procedural votes ours logged map one-to-one onto the official minutes and every one passed unanimously in both. Where they differ it is mostly attendee names mangled by captions and a handful of added or missing decision details (the 8 Iris Court tree count, the reason given for continuing 30 Summer St, and whether the buffer-zone mailing was actually voted a budget line or just discussed) — a reader should check those against the recording rather than assume either record is right.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "49 Cliff View Terrace admin determination vote",
+    "ours": "Approve the administrative determination for 49 Cliff View Terrace (removal of 11 dead hemlock trees) as presented — passed 5-0",
+    "official": "Vote: A. Burnap – AYE M. Wilson – AYE M. Larouche - AYE T. Doucette – AYE J. Pewtherer – AYE",
+    "note": "Same motion, same unanimous outcome; official just itemizes the 5 stipulations ours summarized as 'as presented'.",
+    "t": 412
+   },
+   {
+    "kind": "agree",
+    "about": "Table Rock trail map vote outcome",
+    "ours": "Approve the newer Table Rock trail map as the sanctioned groomable trails, excluding trails on private (gray) land — passed 5-0",
+    "official": "Motion: M. Larouche, to approve the updated map for Table Rock and approve grooming any trail deemed 'groom-able' with the following stipulations: 1. Gray trails are on private land and may not be included",
+    "note": "Outcome and gray-land exclusion agree; see separate finding for the specific trail color list official records that ours omits.",
+    "t": 3783
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Table Rock groomable trail colors",
+    "ours": "",
+    "official": "2. Only allowed for yellow, orange, red, blue, brown, and green trails",
+    "note": "Ours states only the exclusion (gray/private land) but not the affirmative list of six colors the official minutes name; not a conflict, just a detail ours dropped."
+   },
+   {
+    "kind": "caption_error",
+    "about": "480 Mulpus Road address",
+    "ours": "Approve the shed project at 480 Mpus Road as presented, with conditions recommended by the conservation administrator — passed 5-0",
+    "official": "480 Mulpus Rd: RDA-25-15",
+    "official_reading": "Mulpus Road",
+    "note": "Captions dropped the 'lu' in Mulpus; same vote and outcome otherwise agree."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "reason for continuing 30 Summer Street",
+    "ours": "Continue the 30 Summer Street hearing to January 21, 2026 at the engineer's request — passed 5-0",
+    "official": "Motion: M. Wilson, to continue to 21 January 2026.",
+    "note": "Official records no stated reason for this continuance; ours attributes it to an engineer's request. Check the recording near t=5046 to confirm who asked for the continuance."
+   },
+   {
+    "kind": "agree",
+    "about": "763 Northfield Road culvert continuance",
+    "ours": "Continue the 763 Northfield Road culvert replacement hearing to January 21, 2026 pending abutter right-of-entry permission — passed 5-0",
+    "official": "Motion: M. Wilson, to continue to 21 January 2026 pending landowner permission",
+    "note": "'Abutter' and 'landowner' refer to the same permission requirement; substance agrees."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "27 Fire Road 15A continuance condition",
+    "ours": "Continue the 27 Fire Road 15A hearing to January 21, 2026 as requested by the applicant — passed 5-0",
+    "official": "Motion: M. Wilson, to continue to 21 January 2026 pending landowner permission",
+    "note": "Official adds 'pending landowner permission' as a condition of the continuance; ours only gives the applicant's request as the reason and omits this condition."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "833 Flat Hill Rd administrative determination (CAD-25-21)",
+    "ours": "",
+    "official": "833 Flat Hill Rd - CAD-25-21 Applicant was not present.",
+    "note": "No vote was taken (applicant absent), which is presumably why the captions/our minutes never registered this agenda item at all — worth confirming nothing else happened on it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "continued-hearing tracking policy",
+    "ours": "Continued hearings awaiting outside documentation (e.g., abutter permission) stay on the agenda for tracking, but will only be continued further at the applicant's or engineer's request.",
+    "official": "",
+    "note": "A general procedural policy statement in ours with no equivalent sentence in the official minutes; likely accurate discussion but unconfirmed by the official record.",
+    "t": 5677
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "'place the applicant on as an appointment' for the continued admin determination",
+    "ours": "Continue the administrative determination (tree-removal count discrepancy) to January 21, 2026 and place the applicant on as an appointment — passed 5-0",
+    "official": "Motion: M. Wilson, to continue to 21 January 2026 pending a more detailed graphic and listing of damaged trees.",
+    "note": "Official ties the continuance to needing better documentation; it says nothing about scheduling the applicant as an 'appointment' on 1/21 — check the recording around t=7007 for whether that was actually said or is a caption artifact.",
+    "t": 7007
+   },
+   {
+    "kind": "agree",
+    "about": "143 Island Road certificate of compliance",
+    "ours": "Issue a certificate of compliance for 143 Island Road based on the conservation administrator's site visit confirming conditions met — passed 5-0",
+    "official": "Motion: M. Wilson, to approve issuance of COC based on Administrator's findings.",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "98 Horizon Island Road tree removal/pruning",
+    "ours": "Approve the tree removal and hazard-branch pruning at 98 Horizon Island Road as proposed and amplified by the administrator's notes — passed 5-0",
+    "official": "Motion: M. Wilson, to approve removal of tree removal and damaged branches as proposed with the following stipulations",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Unitil purchase order amount and vote",
+    "ours": "Open a purchase order not to exceed $500 for Unitil bills at the Hollis Road residence — passed 5-0",
+    "official": "Motion: M. Wilson, to approve a Purchase Order not to exceed $500 to cover the cost of electricity for 123 Hollis Road.",
+    "note": "Amount and outcome match; official gives the specific address 123 Hollis Road, which ours omits.",
+    "t": 9805
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$350 / $50-a-month figures for Hollis Road utility costs",
+    "ours": "Purchase order for Unitil utility bills, Hollis Road residence: 350, $50 a month, 500",
+    "official": "",
+    "note": "Official minutes state only the $500 not-to-exceed cap with no breakdown; these intermediate figures (350, $50/month) appear only in ours and are not corroborated.",
+    "t": 9750
+   },
+   {
+    "kind": "discrepancy",
+    "about": "$500 figure tied to heating system servicing",
+    "ours": "Heating system servicing, Hollis Road residence: $500",
+    "official": "Cam's heating will service the heating system at the end of January. They do not need to enter the property.",
+    "note": "Official mentions no cost at all for the heating service and no dollar figure — ours may be conflating the $500 electricity purchase order with the separate heating-service item. Check the recording near t=9902 for whether $500 was actually said in connection with heating.",
+    "t": 9902
+   },
+   {
+    "kind": "discrepancy",
+    "about": "buffer-zone flyer/mailing as a budgeted line item",
+    "ours": "Commission agreed to add the buffer-zone information flyer/mailing as a budgeted line item for the coming fiscal year.",
+    "official": "M. Wilson reviewed a mailing we would like to include in a future Town Mailing. Need to budget for this activity and cost.",
+    "note": "Ours states this as a settled decision ('agreed to add... as a budgeted line item'); official phrases it as an unresolved need ('need to budget for this'), with no recorded vote or agreement. Check the recording at t=9622 for whether the Commission actually reached agreement or just flagged the need.",
+    "t": 9622
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name 'Teddy Det/Ducet'",
+    "ours": "Teddy Det / Teddy Ducet (member)",
+    "official": "T. Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Misheard surname; same person, listed as a Member in the official roster."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name 'Andrea Bernett/Bernap/Bernout/Bernad'",
+    "ours": "Andrea Bernett / Bernap / Bernout / Bernad (member)",
+    "official": "A. Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Captions produced several variant spellings; official spelling is Burnap."
+   }
+  ],
+  "quotes_not_in_official_dropped": 8,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:52:28Z",
+   "cost_usd": 0.340426
+  }
  }
 }

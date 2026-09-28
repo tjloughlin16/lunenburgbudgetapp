@@ -463,5 +463,203 @@
    "at": "2026-09-27T18:22:13Z",
    "cost_usd": 0.196466
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06042025-7249",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-06-04-minutes-7249.txt",
+   "path": "sources/meetings/conservation-commission/2025-06-04-minutes-7249.pdf"
+  },
+  "official_sha256": "12c02518dd3a8cedf44fae923e45bf3b7411ee634345ac9b775814bbf7533db0",
+  "coverage": "full",
+  "summary": "The two records agree closely on every vote's outcome and on the one dollar figure discussed, with most differences being either caption-garbled names or agenda items one record covers and the other doesn't. The one real discrepancy worth checking is the 222 West Townsend Road vote — ours logs it 5-0 but the official minutes list six AYE votes, including the Chair, who had been unable to vote (per official notes, due to connection issues) on every other roll call that night.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Jenny (Chair)",
+    "official": "Jennifer Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Captions shortened \"Jennifer\" to \"Jenny\"; same person, confirmed by role (Chair) and by her recurring \"connection issues\" noted in nearly every roll call.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's surname",
+    "ours": "Richard Bers (Vice Chair/Commissioner)",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "\"Bers\" is a mishearing of \"Bursch\"; role (Vice Chair) matches exactly.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "221 Electric Ave applicant/presenter name",
+    "ours": "Dan Shan (presenter, Haley Ward)",
+    "official": "NOTICE OF INTENT by Daniel Sheehan (Haley Ward Construction) to construct a two-family dwelling and rain garden within the 100-foot buffer zone of a bordering vegetated wetland.",
+    "official_reading": "Daniel Sheehan",
+    "note": "\"Dan Shan\" is a mishearing of \"Daniel Sheehan\"; the firm name Haley Ward matches in both.",
+    "t": 2527
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Michael Larouche's board role",
+    "ours": "Mike Larouche (Commissioner)",
+    "official": "Jennifer Pewtherer\nRichard Bursch\nMichael Larouche\nJeffrey Viviano\nChris St Germain\nPeter Stella\nMary Wilson\nTOWN OF LUNENBURG\nLunenburg Conservation Commission\nChair\nVice Chair\nClerk\nMember\nMember\nMember\nMember",
+    "note": "Official lists Larouche as the Commission's Clerk, not a plain member; ours just calls everyone 'Commissioner'. Not substantive, but worth knowing for future minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "10 Sandy Cove Road presenter",
+    "ours": "Chris Anderson (presenter, Hanning Engineering)",
+    "official": "",
+    "note": "Official minutes name only the applicant (Christine Furtado), not the presenting engineer; no way to confirm this name against the official text.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "1083 Northfield Road / 60 Cross Road presenter",
+    "ours": "John Pifco (presenter, Marti Engineering)",
+    "official": "",
+    "note": "Official minutes name only applicants (e.g. Tanner Cole), not presenting engineers; unverifiable against official text.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "10 Sandy Cove Road RDA vote",
+    "ours": "Negative determination (RDA) for 10 Sandy Cove Road dock installation — passed 5-0",
+    "official": "Motion for negative determination raised by M. Larouche and seconded by M. Wilson. Roll call vote; AYE: M. Larouche, M. Wilson, J. Viviano, P. Stella, R. Bursch. (J. Pewtherer had connection issues.)",
+    "note": "Same 5-0 outcome; the Chair did not vote due to connection issues in both records.",
+    "t": 532
+   },
+   {
+    "kind": "agree",
+    "about": "1083 Northfield Road continuance vote",
+    "ours": "Continue 1083 Northfield Road NOI hearing to June 18 — passed 5-0",
+    "official": "Motion for continuation to June 18 raised by M. Larouche and seconded by M. Wilson. Roll call vote; AYE: M. Larouche, M. Wilson, J. Viviano, P. Stella, R. Bursch. (J. Pewtherer had connection issues.)",
+    "note": "Matches exactly.",
+    "t": 637
+   },
+   {
+    "kind": "agree",
+    "about": "60 Cross Road CAOC vote",
+    "ours": "Approve amended order of conditions (CAOC) for 60 Cross Road — passed 5-0",
+    "official": "Motion to approve the CAOC raised by M. Larouche and seconded by M. Wilson. Roll call vote; AYE: M. Larouche, M. Wilson, J. Viviano, P. Stella, R. Bursch. (J. Pewtherer connection issues.)",
+    "note": "Matches exactly.",
+    "t": 998
+   },
+   {
+    "kind": "only_in_official",
+    "about": "417 Howard Street vote tally detail",
+    "ours": "",
+    "official": "Roll call vote; AYE: M. Larouche, M. Wilson, P. Stella, R. Bursch. ABSTAIN: J. Viviano. NO VOTE: J. Pewtherer",
+    "note": "Ours records the outcome and Viviano's abstention but doesn't note that the Chair was present and simply did not vote (\"NO VOTE\") rather than being absent.",
+    "t": 1758
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reason for Viviano's abstention on 417 Howard Street",
+    "ours": "Jeff Viviano abstained, having missed prior meeting/no Mullen's form",
+    "official": "ABSTAIN: J. Viviano",
+    "note": "Official records the abstention but not the stated reason; check the recording near t=1758 to confirm the 'no Mullen's form' explanation was actually given aloud.",
+    "t": 1758
+   },
+   {
+    "kind": "agree",
+    "about": "31 Round Road NOI continuance vote",
+    "ours": "Continue 31 Round Road NOI to June 18, 2025 — passed 5-0",
+    "official": "Motion to continue to June 18th raised by M. Larouche and seconded. Roll call vote; AYE: M. Larouche, M. Wilson, J. Viviano, P. Stella, R. Bursch. NO VOTE: J. Pewtherer",
+    "note": "Matches; note the official's own agenda header for this item confusingly says 'Requested to be continued to July 2nd meeting' even though the vote taken was for June 18 — that inconsistency is internal to the official minutes, not a difference from ours.",
+    "t": 2142
+   },
+   {
+    "kind": "only_in_official",
+    "about": "221 Electric Ave vote tally detail",
+    "ours": "Approve 221 Electric Ave NOI — passed (Jeff Viviano abstained, having missed prior meeting)",
+    "official": "Roll call vote; AYE: M. Larouche, M. Wilson, P. Stella, R. Bursch. ABSTAIN: J. Viviano. NO VOTE: J. Pewtherer",
+    "note": "Ours doesn't note the Chair's 'NO VOTE' status, same omission pattern as the 417 Howard St vote.",
+    "t": 2527
+   },
+   {
+    "kind": "discrepancy",
+    "about": "222 West Townsend Road right-of-first-refusal vote tally",
+    "ours": "Recommend not to exercise right of first refusal / not to purchase 222 West Townsend Road (Chapter 61 property) — passed 5-0",
+    "official": "Motion to recommend not exercising our right of first refusal on this property raised by M. Wilson and seconded by R. Bursch. Roll call vote; AYE: M. Larouche, M. Wilson, P. Stella, R. Bursch, J. Viviano, J. Pewtherer",
+    "note": "Official lists SIX ayes including Chair Pewtherer, who had connection issues and did not vote on every earlier roll call that night; ours says 5-0. Check the recording near t=4599 to see whether the Chair actually cast a vote on this item or whether the official minutes over-counted.",
+    "t": 4599
+   },
+   {
+    "kind": "agree",
+    "about": "Mass Trails grant reimbursement figure",
+    "ours": "Mass Trails grant reimbursement: $28,000, 80%",
+    "official": "M. Wilson completed Parking Planning Grant and the request for 80% reimbursement (approximately $28,000). Documentation submitted to Mass Trails Administrator, except awaiting copies of cancelled checks.",
+    "note": "Figures match exactly.",
+    "t": 4683
+   },
+   {
+    "kind": "agree",
+    "about": "Boilerplate OOC large-parcel language tabled",
+    "ours": "Tabled the proposal for boilerplate order-of-conditions language on large-parcel delineation, pending review by town counsel and DEP, with a preference to instead raise the issue directly with applicants at hearings",
+    "official": "After discussion, it was suggested to have the existing draft written up and reviewed by the Town and Legal. Concern then noted that having this in the OOC may be too late in the process. Item was tabled.",
+    "note": "Same decision and same underlying concern (that boilerplate language comes too late in the process, i.e. better raised directly with applicants).",
+    "t": 3264
+   },
+   {
+    "kind": "discrepancy",
+    "about": "July meeting schedule follow-up",
+    "ours": "Chair will put moving the July meeting dates to the second and fourth Wednesdays (instead of first and third) on the next agenda for discussion, to avoid a holiday-week conflict",
+    "official": "Discussion about next fiscal year's meeting schedule. M. Wilson will double check as a partial schedule may have been published. Need to confirm July dates and ensure the Zoom session is available.",
+    "note": "Different who's-doing-what: ours has the Chair adding it to the next agenda with a specific new Wednesday pattern; official has M. Wilson double-checking a possibly-already-published schedule. Check the recording near t=3919 to confirm who was actually tasked and whether the 2nd/4th-Wednesday proposal was said aloud.",
+    "t": 3919
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unpermitted land alteration reporting protocol",
+    "ours": "A commissioner's concern about apparent unpermitted land alteration at a property should be reported to the interim agent/office rather than raised first in an open meeting",
+    "official": "",
+    "note": "No corresponding item appears in the official minutes' Enforcement section or elsewhere; if this happened, check whether it belongs under item 6 (Enforcement).",
+    "t": 5791
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Drone footage investigation protocol",
+    "ours": "Any request to use drone footage to investigate a property should be sent privately to the chair and vice chair first, so legal advice can be obtained from town counsel before proceeding",
+    "official": "",
+    "note": "No corresponding item in the official minutes.",
+    "t": 5936
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Enforcement status updates",
+    "ours": "",
+    "official": "40 Fire Rd 12: Notified that boulders were replaced. Picture shared. Town to ask for a COC.",
+    "note": "Ours has no Enforcement section at all; official lists status (mostly 'no update') for eight properties, with 40 Fire Rd 12 the one with an actual pending action (request a Certificate of Compliance).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Conservation budget process",
+    "ours": "",
+    "official": "Conservation Budget: Process unclear, should be in meeting folder. J. Pewtherer will investigate to ensure we have an update for the next meeting.",
+    "note": "An open action item (Chair to investigate budget process) that ours does not capture.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:23:21Z",
+   "cost_usd": 0.352108
+  }
  }
 }

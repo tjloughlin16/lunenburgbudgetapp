@@ -559,5 +559,218 @@
    "at": "2026-09-27T18:18:29Z",
    "cost_usd": 0.20042
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06112025-7256",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-06-11-minutes-7256.txt",
+   "path": "sources/meetings/board-of-assessors/2025-06-11-minutes-7256.pdf"
+  },
+  "official_sha256": "b745f5a573544ed892f59527e2d3e3e2df2aae9dff8936f2461c0f561fce976a",
+  "coverage": "partial",
+  "summary": "The two records agree on the meeting's one recorded vote and on most dollar-and-count figures tied to motor vehicle excise, but they diverge sharply elsewhere: many figures our minutes captured (the FY2026 tax warrant total, parcel-count reconciliation, circuit-breaker/means-tested exemption numbers, Chapter 61 parcel counts) have no corresponding figure in the official minutes at all, and two decisions — the senior-exemption brochure and the DOR-directives status item — are described in ways that actually conflict rather than merely differ in detail. Attendee names are also badly mis-transcribed and the chair/vice-chair roles are swapped, which a reader should verify against the roster rather than trust either record's role labels alone.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 4,
+   "discrepancy": 5,
+   "only_in_ours": 8,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: move 222 West Townsend Road out of chapter land",
+    "ours": "[t=2202] Approve moving the property at 222 West Townsend Road out of chapter land for potential sale — passed",
+    "official": "There was a notion to support the move of 222 West Townsend Road out of Chapter Land for potential sale by Sarah Cammer, seconded by Brian Laffond. All in favor.",
+    "note": "Same vote and outcome; official adds the mover/seconder (Cammer/Laffond) that our minutes omit."
+   },
+   {
+    "kind": "agree",
+    "about": "Motor vehicle excise abatement count",
+    "ours": "[t=309] Motor vehicle excise tax abatements: 17",
+    "official": "17 motor vehicle excise tax abatements were processed by Robin Nano.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Real-estate abatement counts by year",
+    "ours": "[t=946] Real-estate abatement counts, year over year: 427, 42, 37, 41",
+    "official": "In 2023 there were 427 abatements, 2024 there were 42 abatements and last year there were 37 abatements.",
+    "note": "Official names only three years/figures (427, 42, 37); our fourth number (41) has no match — check the recording near t=946 for what it refers to."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Roll-back taxes / chapter-land property figures",
+    "ours": "[t=4758] Roll-back taxes on a sold Chapter 61 property: 23, 24, 25, 6,27",
+    "official": "There are 4 properties in chapter land that don't have a lien or application. Lynda McQuade is currently undertaking the process of rolling back taxes on these properties.",
+    "note": "Neither the count (4) nor any of our five numbers line up; check the recording near t=4758 to determine what those figures (parcel IDs? map-lot numbers? tax years?) actually represent."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY2026 preliminary real estate tax warrant total",
+    "ours": "[t=3257] FY2026 preliminary real estate tax warrant: 16,599, 989.32",
+    "official": "The real estate and personal property preliminary bills for Fiscal Year 2026 were signed.",
+    "note": "Official records that the bills were signed but states no dollar figure; likely $16,599,989.32 as heard."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY2026 preliminary billing parcel-count reconciliation",
+    "ours": "[t=3766] Parcel-count reconciliation for FY2026 preliminary billing: 5,276, 5,108, 217, 168, 64, 62, 54",
+    "official": "",
+    "note": "Official minutes give no parcel-count figures for the preliminary billing at all."
+   },
+   {
+    "kind": "agree",
+    "about": "Motor vehicle excise commitment #2",
+    "ours": "[t=4345] Motor vehicle excise commitment #2: 272,922, 882",
+    "official": "Motor vehicle excise tax for commitment 2 were signed. The total is $272,922 and represented 882 motor vehicle bills.",
+    "note": "Total dollar amount and bill count both match."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Motor vehicle excise commitment #3 total",
+    "ours": "[t=4496] Motor vehicle excise commitment #3: 138,65087, 620",
+    "official": "Motor vehicle excise tax for commitment 3 were signed. The total is $138,650.87 and represented 620 motor vehicle bills.",
+    "official_reading": "$138,650.87",
+    "note": "Caption dropped the decimal point in $138,650.87, producing 138,65087; the 620 bill count matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Cost Manual purchase price",
+    "ours": "[t=6230] Cost manual purchase for commercial valuation: $514",
+    "official": "Lynda McQuade states the Assessor's Office received the Cost Manual for reference that cost $514.",
+    "note": "Figures match exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior circuit breaker credit / means-tested exemption dollar figure",
+    "ours": "[t=5751] Senior circuit breaker credit and means-tested exemption: $5,400",
+    "official": "A new summary of the all exemptions is now available on the website, as well as in the office.",
+    "note": "Official mentions the exemption summary but gives no $5,400 figure — check the recording for what this figure represents."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior means-tested exemption application threshold",
+    "ours": "[t=5519] Senior means-tested exemption application threshold: 540",
+    "official": "",
+    "note": "No corresponding threshold figure appears anywhere in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 61/61A/61B and APR parcel counts",
+    "ours": "[t=1862] Chapter 61/61A/61B and APR parcel counts: 16, 3, 14, 24, 16, 64",
+    "official": "",
+    "note": "Official minutes give no per-classification parcel counts."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chapter-land properties lacking lien or application",
+    "ours": "",
+    "official": "There are 4 properties in chapter land that don't have a lien or application.",
+    "note": "Not captured in our minutes as a standalone figure (see the related roll-back-tax discrepancy above)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Abutters lists requests received",
+    "ours": "",
+    "official": "7 abutters lists requests have been received.",
+    "note": "Not mentioned in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Deed issues in past month",
+    "ours": "",
+    "official": "In the past month there have been 2 deed issues.",
+    "note": "Not mentioned in our minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Safety protocol for inspecting chapter-land parcels",
+    "ours": "[t=1091] Assessors will carry mace and stay on the same street (not necessarily the same property) together for safety while inspecting chapter-land parcels.",
+    "official": "",
+    "note": "Official minutes do not mention this safety decision at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Exploring police boat for lakefront inspections",
+    "ours": "[t=1132] The office will explore using the police boat to inspect lakefront properties rather than entering by land.",
+    "official": "",
+    "note": "Official minutes do not mention this decision."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "41A appellant application decision",
+    "ours": "[t=2098] The pending 41A appellant must submit a complete, signed application and bank documentation well ahead of any board meeting, not at the last minute.",
+    "official": "The office is still following up with a 41A application. After speaking to the town counsel, they may still be having negotiations prior to them going to ATB as long as they are within their appeal period.",
+    "note": "Ours describes a documentation-deadline requirement; official describes ongoing settlement negotiations before an ATB appeal — these describe different aspects/outcomes of the same 41A matter and should be checked against the recording for what was actually decided."
+   },
+   {
+    "kind": "agree",
+    "about": "Seasonal employee inquiry via town manager",
+    "ours": "[t=2317] Direction given to continue pursuing a seasonal employee, through the town manager, to help with neighborhood-review corrections rather than finalizing a scope of work now.",
+    "official": "Lynda McQuade has inquired with the Town Manager about obtaining a seasonal employee to help with the neighborhood review.",
+    "note": "Same underlying matter and status."
+   },
+   {
+    "kind": "agree",
+    "about": "Clause 18 exemption criteria postponed",
+    "ours": "[t=5919] Discussion of Clause 18 exemption criteria postponed until the fall.",
+    "official": "POSTPONED TOPICS • Criteria for Clause 18.",
+    "note": "Both records confirm this was postponed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town counsel guidance on open vs. executive session for chapter-land liens",
+    "ours": "[t=6605] Per town counsel's guidance, discussion of chapter-land liens and roll-back taxes on specific parcels will be held in open/public session, not executive session.",
+    "official": "There was a Chapter Lien signed by the Board where \"half\" of the property is in Lunenburg and the other \"half\" in Fitchburg.",
+    "note": "Official records a related chapter-lien item but not this counsel guidance about which session type to use."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Sarah Cameron",
+    "ours": "Sarah Cameron (chair)",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "Misheard surname (Cameron for Cammer)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Brian Lefod",
+    "ours": "Brian Lefod (member)",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Misheard surname (Lefod for Laffond)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Linda McUade",
+    "ours": "Linda McUade (member)",
+    "official": "Principal Assessor Lynda McQuade",
+    "official_reading": "Lynda McQuade",
+    "note": "Misheard first and last name (Linda McUade for Lynda McQuade)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair / Vice Chair role assignment",
+    "ours": "Sarah Cameron (chair); Brian Lefod (member)",
+    "official": "Chair Brian Laffond, Vice Chair Sarah Cammer",
+    "note": "Our minutes make Cameron/Cammer the chair and Lefod/Laffond a plain member; official has the roles reversed (Laffond chair, Cammer vice chair) — check the roster/appointment record to confirm who actually chairs the board."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Principal assessor listed as a duplicate attendee",
+    "ours": "Linda McUade (member); the principal assessor (principal assessor)",
+    "official": "Principal Assessor Lynda McQuade",
+    "note": "Our minutes appear to list McQuade twice under two different labels (a general \"member\" and a separate \"principal assessor\" entry); official lists her once, as Principal Assessor — confirm she is not two different people."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:14:12Z",
+   "cost_usd": 0.28639200000000004
+  }
  }
 }

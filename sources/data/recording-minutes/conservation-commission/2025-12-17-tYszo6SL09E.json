@@ -454,5 +454,283 @@
    "at": "2026-09-27T11:32:39Z",
    "cost_usd": 0.191444
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12172025-7569",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-12-17-minutes-7569.txt",
+   "path": "sources/meetings/conservation-commission/2025-12-17-minutes-7569.pdf"
+  },
+  "official_sha256": "912f76c11f99b98d73f095e4caa7248e538c54536d8c23eb06494f97ed6a14cc",
+  "coverage": "partial",
+  "summary": "The two records agree on every substantive vote outcome for the four continued hearings, the Shirley Reservoir extension, and all three Hollis Road expenditures, and most figures reconcile once caption digit-grouping is unwound. The real gaps are one vote-adjacent claim that contradicts the official record outright (an emergency tree certification our minutes say was requested, which the official minutes list as \"None\"), plus an entire enforcement section, a trail-map GPS requirement, and several conditions attached to continuances that exist only in the official minutes.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 8,
+   "discrepancy": 4,
+   "only_in_ours": 2,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "480 Mulpus Rd hearing continued to Jan 7",
+    "ours": "[t=3181] Continue 480 Mopus Road hearing to January 7, 2026 — passed",
+    "official": "480 Mulpus Rd",
+    "note": "Both records agree the hearing was continued to January 7 and the vote passed unanimously.",
+    "t": 3181
+   },
+   {
+    "kind": "caption_error",
+    "about": "address name for the continued hearing",
+    "ours": "480 Mopus Road",
+    "official": "480 Mulpus Rd",
+    "official_reading": "480 Mulpus Rd",
+    "note": "Captions misheard \"Mulpus\" as \"Mopus\" — same street, no substantive difference.",
+    "t": 3181
+   },
+   {
+    "kind": "only_in_official",
+    "about": "condition attached to 480 Mulpus continuance",
+    "ours": "",
+    "official": "1. Updated plan showing the new location",
+    "note": "Official minutes record a specific condition (updated site plan) that our minutes omit."
+   },
+   {
+    "kind": "agree",
+    "about": "30 Summer St hearing continued to Jan 7",
+    "ours": "[t=3268] Continue 30 Summer Street hearing to January 7, 2026 — passed",
+    "official": "30 Summer St- NOI-25-22",
+    "note": "Both records agree on the continuance and unanimous vote.",
+    "t": 3268
+   },
+   {
+    "kind": "agree",
+    "about": "Northfield Road culvert hearing continued to Jan 7",
+    "ours": "[t=5844] Continue Northfield Road culvert hearing to January 7, 2026 — passed",
+    "official": "763 Northfield Rd- NOI-25-19",
+    "note": "Both records agree on the continuance and unanimous vote.",
+    "t": 5844
+   },
+   {
+    "kind": "only_in_official",
+    "about": "conditions attached to Northfield Rd continuance",
+    "ours": "",
+    "official": "1. Corrected buffer zone lines\n2. Updated W1 answer to DEP and removal of 'pump around' note.\n3. Abutter permission received",
+    "note": "Official minutes list three specific conditions on the continuance that our minutes do not capture."
+   },
+   {
+    "kind": "agree",
+    "about": "27 Fire Road 15A hearing continued to Jan 7",
+    "ours": "[t=7469] Continue 27 Fire Road 15A hearing to January 7, 2026 — passed",
+    "official": "a. 27 Fire Road 15A - NOI-25-25",
+    "note": "Both records agree on the continuance and unanimous vote.",
+    "t": 7469
+   },
+   {
+    "kind": "agree",
+    "about": "833 Flat Hill Rd matter continued",
+    "ours": "[t=8064] Continue 833 Flat Hill Road matter — passed",
+    "official": "a. 833 Flat Hill Rd- CAD-25-21: Site visit scheduled for January.",
+    "note": "Both records agree the matter was continued/deferred pending a January site visit.",
+    "t": 8064
+   },
+   {
+    "kind": "agree",
+    "about": "O Shirley Reservoir order-of-conditions extension",
+    "ours": "[t=8244] Extend Zero Shirley Reservoir Road order of conditions to August 2029 — passed",
+    "official": "R. Bursch, extend approval for three years.",
+    "note": "Official minutes state a 3-year extension from an August 2026 expiration, which computes to August 2029 as our minutes state; both agree on substance.",
+    "t": 8244
+   },
+   {
+    "kind": "agree",
+    "about": "Approval of up to $400 for Hollis Rd heating service",
+    "ours": "[t=8760] Approve up to $400 for Hollis Road heating service — passed",
+    "official": "M. Wilson, to approve not more than $400 for heating system maintenance.",
+    "note": "Both records agree on the amount and unanimous vote.",
+    "t": 8760
+   },
+   {
+    "kind": "agree",
+    "about": "Approval to pay 123 Hollis invoices",
+    "ours": "[t=9724] Approve payment of Hollis Road bills from the Hollis fund — passed",
+    "official": "T. Doucette, to approve payment for the following 123 Hollis invoices:\n1. $311.84 to James Lock for lock replacement\n2. $28.49 to Unitil for first monthly bill\n3. $685.86 to Peterson Oil",
+    "note": "Both records agree the three invoices were approved for payment unanimously.",
+    "t": 9724
+   },
+   {
+    "kind": "discrepancy",
+    "about": "funding source for Hollis Rd bill payment",
+    "ours": "Approve payment of Hollis Road bills from the Hollis fund",
+    "official": "T. Doucette, to approve payment for the following 123 Hollis invoices:",
+    "note": "Our minutes name \"the Hollis fund\" as the payment source; the official minutes name no fund at all. Check the recording near t=9724 for whether a specific fund was actually named or this was an inference.",
+    "t": 9724
+   },
+   {
+    "kind": "agree",
+    "about": "Purchase of MARCELL monitoring device, up to $200",
+    "ours": "[t=9936] Purchase Marcel monitoring device for Hollis Road, up to $200 — passed",
+    "official": "R. Bursch, to approve up to $200 for the following purchases (to be set up by M. Larouche)\n1. One MARCELL unit (currently on sale for $99)\n2. Monthly service for $11.99 per month",
+    "note": "Both records agree on the $200 cap and unanimous vote.",
+    "t": 9936
+   },
+   {
+    "kind": "caption_error",
+    "about": "name of the monitoring device",
+    "ours": "Marcel",
+    "official": "MARCELL",
+    "official_reading": "MARCELL",
+    "note": "Captions rendered the brand name \"MARCELL\" as \"Marcel\" — same product.",
+    "t": 9936
+   },
+   {
+    "kind": "agree",
+    "about": "consultant review fee cap figures",
+    "ours": "[t=8402] Consultant review fee cap in the bylaw: $500, $100,000",
+    "official": "Max fee for a $100,000 project is $500.",
+    "note": "Figures match exactly.",
+    "t": 8402
+   },
+   {
+    "kind": "discrepancy",
+    "about": "a $300 figure for Hollis heating service",
+    "ours": "[t=8676] Hollis Road heating system service: $300, $400",
+    "official": "M. LaRouche requested $400 to clean and service the heating system.",
+    "note": "Official minutes and the approved motion mention only $400; no $300 figure appears anywhere in the official text. Check the recording near t=8676 for whether $300 was a distinct number discussed (e.g., an initial estimate) or a caption artifact.",
+    "t": 8676
+   },
+   {
+    "kind": "caption_error",
+    "about": "Unitil bill amount for 123 Hollis",
+    "ours": "$2849, $2843",
+    "official": "$28.49 for first month of Unitil",
+    "official_reading": "$28.49",
+    "note": "Captions dropped the decimal point and produced two slightly different digit strings for the same $28.49 Unitil bill.",
+    "t": 9641
+   },
+   {
+    "kind": "discrepancy",
+    "about": "an $11.95 monthly-service figure for the MARCELL device",
+    "ours": "[t=8989] ... $11.95, $11.99",
+    "official": "2. Monthly service for $11.99 per month",
+    "note": "The official minutes give $11 as the price mentioned in discussion and $11.99 as the figure in the approved motion; no $11.95 appears. Check the recording near t=8989 for whether $11.95 was a distinct number said aloud or a mis-transcription of $11.99.",
+    "t": 8989
+   },
+   {
+    "kind": "agree",
+    "about": "trail grooming halted pending a marked map",
+    "ours": "[t=2593] Trail grooming is halted until the volunteer submits a marked-up map of trails and gets commission approval.",
+    "official": "M. Wilson requested a map of all trails proposed, with GPS coordinates, for all properties, prior to further grooming.",
+    "note": "Both records agree further grooming is conditioned on submitting a map for commission review.",
+    "t": 2593
+   },
+   {
+    "kind": "only_in_official",
+    "about": "GPS-coordinate requirement for the trail map",
+    "ours": "",
+    "official": "M. Wilson requested a map of all trails proposed, with GPS coordinates, for all properties, prior to further grooming.",
+    "note": "Official minutes specify the required map must include GPS coordinates for all properties; our minutes describe only a \"marked-up map.\""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "rescheduling of agenda items dropped for a posting error",
+    "ours": "[t=7650] Applicants left off the agenda due to a posting error will be rescheduled to January 7, 2026.",
+    "official": "",
+    "note": "No mention of a posting error or resulting reschedule appears anywhere in the official minutes. Check the recording near t=7650 to confirm this was actually said and whether the official minutes should have recorded it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "emergency certification for a hazardous tree at 98 Horizon Island Road",
+    "ours": "[t=7938] The conservation agent will be asked to issue an emergency certification for a hazardous tree at 98 Horizon Island Road.",
+    "official": "b. Emergency Certifications: None",
+    "note": "Our minutes describe a specific emergency certification request; the official minutes' Enforcement section states none occurred. Check the recording near t=7938 — this may be a request made at the meeting that had not yet been acted on when the official minutes were written, or a caption misattribution.",
+    "t": 7938
+   },
+   {
+    "kind": "agree",
+    "about": "proposal to move the consultant fee cap out of the bylaw",
+    "ours": "[t=8634] The bylaw's consultant fee cap should be revisited via an easier-to-change regulation.",
+    "official": "It was also suggested that this amount be documented in a place the Commission can adjust easier (as opposed to in the Bylaws).",
+    "note": "Both records agree on the substance of this suggestion.",
+    "t": 8634
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "future agenda item for the Hollis Rd residence's use",
+    "ours": "[t=9331] The future use of the Hollis Road residence will be a full future agenda item.",
+    "official": "",
+    "note": "Official minutes note the building needs significant improvements but do not record a decision to make its future use a dedicated future agenda item. Check the recording near t=9331."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "enforcement violations and actions list",
+    "ours": "",
+    "official": "i. 10 Mass Ave: Certified mail returned\nii. 1168 Mass Ave Rear: Certified mail returned\nili. 48 Meadow Ln\niv. 1147 Mass Ave\nv. 314 Highland St: Violation letter to be mailed\nvi. 715 Reservoir Rd: Meeting being scheduled",
+    "note": "An entire enforcement section — six open violation matters, including a letter to be mailed and a meeting being scheduled — is absent from our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Jenny Puther",
+    "official": "Jennifer Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Captions misheard the Chair's name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name and title (Vice Chair)",
+    "ours": "Richard Bur (Member)",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch (Vice Chair)",
+    "note": "Captions misheard \"Bursch\" as \"Bur\"; official minutes also identify him as Vice Chair, a title our minutes label generically as \"Member.\""
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name",
+    "ours": "Andrea Bernett",
+    "official": "Andrea Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Captions misheard the member's surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name",
+    "ours": "Teddy Ducet",
+    "official": "Teddy Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Captions misheard the member's surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "trail-groomer presenter's name",
+    "ours": "Tom Analons",
+    "official": "Tom Anelons",
+    "official_reading": "Tom Anelons",
+    "note": "Minor caption mishearing of the presenter's surname."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Michael Larouche's board title",
+    "ours": "",
+    "official": "Clerk",
+    "note": "Official minutes identify Larouche as Clerk; our minutes list him only as \"Member.\""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "public commenter John O'Connor",
+    "ours": "",
+    "official": "John O'Connor (236 West Street) expressed appreciation for the work T. Anelons does on the trails.",
+    "note": "A public commenter is recorded in the official minutes but not listed in our attendees/participants."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T14:50:32Z",
+   "cost_usd": 0.39784200000000003
+  }
  }
 }

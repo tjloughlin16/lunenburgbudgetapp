@@ -193,5 +193,94 @@
    "at": "2026-09-27T11:10:32Z",
    "cost_usd": 0.18821
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02122026-7647",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2026-02-12-minutes-7647.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2026-02-12-minutes-7647.pdf"
+  },
+  "official_sha256": "601f1654a75bcbd5ea234b45f28feba26e6603dac9c13e38b715d179f8229141",
+  "coverage": "partial",
+  "summary": "The two records agree on the substantive outcomes — the 50 Main Street letter/April 16 vote and the March 12 next-meeting date — but each holds material the other omits: ours drops the entire RFP/consultant discussion for 925 Mass Ave, while the official minutes drop the Seattle scheduling reason and the Zoom caveat. One figure needs a listen-back: our minutes pair \"$135,000\" with the contradictory phrase \"a quarter of a million dollars,\" and only the former matches the official's \"$135K.\"",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "attendees present",
+    "ours": "Tony (Chair), Nathan (Member), William (Member)",
+    "official": "Present: Chairman Sculimbrene, Lloyd, Lockwood",
+    "note": "Same three people (Tony=Sculimbrene, Nathan=Lockwood, William=Lloyd), first names vs. surnames."
+   },
+   {
+    "kind": "caption_error",
+    "about": "William's board title",
+    "ours": "William (Member)",
+    "official": "William Lloyd, Clerk",
+    "official_reading": "Clerk",
+    "note": "Same person attending; our minutes render his role as Member where the town's own roster lists him as Clerk — check whether the recording actually named a title or this was inferred."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to resend 50 Main Street letter and set April 16 meeting",
+    "ours": "Motion for the board to approve drafting a similar letter to the (corrected) trust responsible for 50 Main Street and establishing a meeting date of Thursday, April 16th at 7:30 p.m. — passed 3-0",
+    "official": "Motion by member Lockwood to resend the letter with a proposed April 16 meeting date with the trustees i. Lloyd: Aye, Sculimbrene; Aye, Lockwood: Aye - - Motion Passes.",
+    "note": "Same motion, same date, same unanimous 3-0 outcome; wording differs (drafting vs. resending) but the substance matches."
+   },
+   {
+    "t": 554,
+    "kind": "only_in_ours",
+    "about": "7:30 p.m. start time for the April 16 meeting",
+    "ours": "establishing a meeting date of Thursday, April 16th at 7:30 p.m.",
+    "official": "",
+    "note": "The official minutes give only the date, not a time — not a vote/decision discrepancy on its own, just extra detail worth confirming against the recording."
+   },
+   {
+    "t": 241,
+    "kind": "only_in_ours",
+    "about": "reason for departing from the normal second-Thursday schedule",
+    "ours": "Rather than meeting the condo trust on the commission's normal second-Thursday schedule in April, a different date will be set because the chair will be in Seattle.",
+    "official": "",
+    "note": "Official minutes state the resulting April 16 date but never explain why it deviates from the usual schedule — plausible omission, not necessarily an error, but worth checking the recording for the Seattle detail."
+   },
+   {
+    "t": 965,
+    "kind": "discrepancy",
+    "about": "925 Mass Avenue appraisal figure",
+    "ours": "Appraisal of 925 Mass Avenue (old gas station) site: $135,000, a quarter of a million dollars",
+    "official": "Appraised value $135K.",
+    "note": "The $135,000 figure matches the official's $135K, but our minutes also assert 'a quarter of a million dollars' in the same breath, which is roughly double and internally inconsistent — listen back to the recording to see what was actually said and whether a second, larger figure was mentioned and dropped."
+   },
+   {
+    "t": 1783,
+    "kind": "agree",
+    "about": "next meeting date",
+    "ours": "Next meeting set for March 12, likely by Zoom unless larger business arises.",
+    "official": "Thursday, March 12, 2026",
+    "note": "Both agree on March 12 as the next meeting date."
+   },
+   {
+    "t": 1783,
+    "kind": "only_in_ours",
+    "about": "Zoom format for the March 12 meeting",
+    "ours": "likely by Zoom unless larger business arises",
+    "official": "",
+    "note": "Official minutes state only the date and location is not addressed for the next meeting; the Zoom caveat is not recorded — check the recording to confirm it was actually said, since it changes how a resident would plan to attend."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:04:15Z",
+   "cost_usd": 0.231476
+  }
  }
 }

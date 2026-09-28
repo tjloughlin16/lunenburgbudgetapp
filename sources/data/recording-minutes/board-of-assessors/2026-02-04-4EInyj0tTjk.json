@@ -515,5 +515,328 @@
    "at": "2026-09-27T11:16:58Z",
    "cost_usd": 0.19628800000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02042026-7628",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2026-02-04-minutes-7628.txt",
+   "path": "sources/meetings/board-of-assessors/2026-02-04-minutes-7628.pdf"
+  },
+  "official_sha256": "9e1c9cbf253c07a4f76b28031b0310e5fc3fa489ce29d7f5e3ffe6305f9866d2",
+  "coverage": "partial",
+  "summary": "The two records agree on the meeting's two substantive votes (the exemption due-date and the code-of-conduct adoption) and on several headline figures (the $260,000 overlay budget, the $1,819,740.97 excise commitment), but they cover different slices of the meeting: ours captures far more of the discussion-stage dollar figures while the official minutes alone record the executive session, the formal roll-call votes on minutes/abatements, and several status-report statistics. The most consequential thing to check is the board chair — our minutes attribute the chair title to \"Brian Marle,\" but the official minutes list Brian Laffond as Chair and Brian Marple as a plain Member.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 6,
+   "discrepancy": 8,
+   "only_in_ours": 7,
+   "only_in_official": 10
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "board chair identity",
+    "t": 0,
+    "ours": "Brian Marle (chair)",
+    "official": "Present Members: Chair Brian Laffond, Vice Chair Sarah Cammer, Principal Assessor Lynda Cajka, Finance Director/Town Accountant Karen Barrett, Member Brian Marple",
+    "note": "Captions attached the chair title to the wrong surname family — check with the town which of Laffond/Marple actually chairs the board."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name",
+    "ours": "Brian Marle",
+    "official": "",
+    "official_reading": "Brian Marple",
+    "note": "Phonetic mishearing of the same board member's surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name",
+    "ours": "Linda Chica",
+    "official": "",
+    "official_reading": "Lynda Cajka",
+    "note": "Phonetic mishearing of the Principal Assessor's name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name",
+    "ours": "Sarah Cameron",
+    "official": "",
+    "official_reading": "Sarah Cammer",
+    "note": "Phonetic mishearing of the Vice Chair's surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name",
+    "ours": "Brian Lefond",
+    "official": "",
+    "official_reading": "Brian Laffond",
+    "note": "Phonetic mishearing of the Chair's surname."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: senior exemption due date",
+    "t": 6902,
+    "ours": "Set the due date for senior means-tested real estate tax exemption applications as the first Wednesday in September — passed",
+    "official": "There was a motion to approve the first Wednesday in September as the annual due date to submit applications for the Senior Means Tested Exemption by Sarah Cammer, seconded by Brian Marple. Sarah Cammer aye, Brian Marple aye, Brian Laffond aye.",
+    "note": "Same vote and outcome; official adds the roll-call detail."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: code of conduct adoption",
+    "t": 7347,
+    "ours": "Adopt the (Littleton-derived) code of conduct policy for the board, amended to say Lunenburg — passed",
+    "official": "There was a motion to approve and implement the Code of Conduct/Policies document with modifications by Sarah Cammer, seconded by Brian Marple. Sarah Cammer aye, Brian Marple aye, Brian Laffond aye.",
+    "note": "Same vote and outcome; official adds the roll-call detail."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "vote to enter executive session",
+    "ours": "",
+    "official": "There was a motion to adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session by Sarah Cammer, seconded by Brian Marple. All in favor.",
+    "note": "This vote also determined the board would not return to open session — a substantive procedural decision not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY2026 abatement approvals/denials",
+    "ours": "",
+    "official": "The Board of Assessors approved 4 of the real estate abatements. A total of 8 abatements were denied which consisted of 2 real estate abatements and 6 personal property abatements. The 6 personal property abatements were denied as the abatements were submitted by a solar company that leases their solar systems to residents and solar is not taxable for residential properties.",
+    "note": "A substantive abatement vote in executive session, entirely absent from ours."
+   },
+   {
+    "kind": "agree",
+    "about": "transfer: special assistant/neighborhood review funding",
+    "t": 1988,
+    "ours": "Funds for the special assistant/neighborhood-review temporary position moved from where they were originally allocated into the appropriate budget category — not stated (discussed only)",
+    "official": "Lynda Cajka has drafted a job description for the temporary position of Special Assistant to work on the neighborhood review. Funding for Neighborhood Review project was also discussed.",
+    "note": "Both records agree this was discussed with no funding source finalized."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "funding source for senior means-tested exemption",
+    "t": 297,
+    "ours": "Cost of the senior means-tested tax exemption taken out of the overlay account rather than a dedicated line, since no mechanism yet exists to spread it (the tax shift) across other taxpayers — not stated (discussed only)",
+    "official": "Sarah Cammer questions how to handle funding the Senior Means Tested Exemption. Karen Barrett will look into this further. Brian Laffond inquired about a possible tax shift for the funds from last year. Brian Laffond asks Karen Barrett how the town funds the senior tax work off program and if those funds come from the overlay account.",
+    "note": "Ours presents the overlay-account funding as settled; official frames it as an open question Karen Barrett was asked to research — check meeting recording for whether an answer was actually given."
+   },
+   {
+    "kind": "agree",
+    "about": "FY2027 overlay budget figure",
+    "t": 606,
+    "ours": "260,000",
+    "official": "The current proposal for the overlay is $260,000.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "historical overlay spending figures",
+    "t": 728,
+    "ours": "130 to $140,000, 151,000, 175,000",
+    "official": "After reviewing the 4 previous years, the average was $151,000.",
+    "note": "The $151,000 average matches, but ours reports additional range/figure ($130-140k, $175k) with no official counterpart — check the recording for what those extra numbers referred to."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "overlay account balance",
+    "t": 502,
+    "ours": "442",
+    "official": "Brian Laffond inquires into the balance of the overlay account. The Board is only aware of a rough estimate from April of 2025.",
+    "note": "Ours states a specific figure (likely $442,000) that official does not confirm — official says only a rough, undated estimate exists; check the recording for the actual number cited."
+   },
+   {
+    "kind": "caption_error",
+    "about": "senior work-off program FY25 total",
+    "t": 1005,
+    "ours": "9,67.50",
+    "official": "In FY25, 9 applications were approved and totaled $9,674.50.",
+    "official_reading": "$9,674.50",
+    "note": "Digit-grouping caption error for the same figure."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "senior work-off program application counts",
+    "ours": "",
+    "official": "Lynda Cajka states 6 applications have been submitted for FY26 for the senior work off program. In FY25, 9 applications were approved and totaled $9,674.50.",
+    "note": "The FY26/FY25 application counts are not in ours at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "other senior work-off figures",
+    "t": 1005,
+    "ours": "$4,46.25, $4,000",
+    "official": "",
+    "note": "No official counterpart found for these two figures; check the recording for what they referred to."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "means-tested exemption figures \"20 and 25\"",
+    "t": 811,
+    "ours": "20 and 25",
+    "official": "",
+    "note": "No matching figures appear in the official minutes; unclear what these numbers represent."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Clause 41C exemption reimbursement example",
+    "t": 1248,
+    "ours": "18,000, 9,000, $36",
+    "official": "",
+    "note": "No matching figures or example appear anywhere in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "MV excise Commitment 7 (FY2025) total",
+    "t": 1433,
+    "ours": "288, $13,2028",
+    "official": "Commitment number 7 of 2025 included 288 bills totaling $13,200.28.",
+    "official_reading": "$13,200.28",
+    "note": "Missing decimal/comma in the captioned figure; bill count of 288 matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "MV excise Commitment 1 (FY2026) total",
+    "t": 1433,
+    "ours": "12,622, $1,819,740.97",
+    "official": "Commitment 1 for 2026 included 12,622 bills totaling $1,819,740.97.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY2027 new-growth estimate figures",
+    "t": 6943,
+    "ours": "400,000, 513, 543, 58",
+    "official": "",
+    "note": "Official only says Laffond does not suggest changing the growth estimates; none of these specific figures appear."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "CI/Vision mapping and CAMA vendor fees",
+    "t": 8016,
+    "ours": "7,400, 3,000, 11,374",
+    "official": "",
+    "note": "Official states the mapping upgrade was dropped for budget reasons but gives no dollar figures; check the recording for these amounts."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: Karen may speak up anytime",
+    "t": 2737,
+    "ours": "The board agreed Karen (the town accountant) may speak up at any point during meetings.",
+    "official": "",
+    "note": "Not mentioned anywhere in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "sewer betterment paperwork tabled",
+    "t": 3936,
+    "ours": "The board tabled signing the sewer betterment/commitment paperwork pending more research into whether assessors should be signing it at all.",
+    "official": "There was some discussion about the sewer bill and enterprise fund showing up on the commitment. Karen Barrett will get additional information over to the Board. This will be added to future agenda for further discussion.",
+    "note": "Both describe a deferred sewer-related issue, but ours frames it as a signing-authority question while official frames it as the sewer bill/enterprise fund appearing on the commitment — check the recording for which is accurate."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decision: sewer commission decides betterment reassignment",
+    "t": 4354,
+    "ours": "The board agreed that decisions about reassigning sewer betterment charges after a parcel split belong to the sewer commission, not the assessors or tax collector.",
+    "official": "",
+    "note": "No mention of this decision in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "annual report fiscal-year correction",
+    "t": 5231,
+    "ours": "The draft annual report will be corrected to consistently reflect fiscal year 2025, not 2026, before submission.",
+    "official": "The Annual Report was briefly discussed, and members will have further discussion at the next meeting.",
+    "note": "Official gives no detail about a year-labeling error — check the recording for whether this specific correction was actually discussed."
+   },
+   {
+    "kind": "agree",
+    "about": "decision: overlay not reduced for FY2027",
+    "t": 7207,
+    "ours": "The board will not reduce the proposed overlay for FY2027 despite fewer abatement requests, citing anticipated cost increases from the expanded exemptions and pending neighborhood-factor corrections.",
+    "official": "Brian Laffond expressed that he doesn't suggest changing the growth estimates at this time. The Board also agreed not to reduce the overlay.",
+    "note": "Same decision and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "decision: mapping software upgrade dropped",
+    "t": 8016,
+    "ours": "The planned upgrade to the mapping/GIS software was dropped for FY2027 due to budget constraints.",
+    "official": "Update to New Mapping Software: Lynda Cajka states the upgrade for the mapping software will not be going forward due to the budget.",
+    "note": "Same decision and reason."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "upcoming meeting dates",
+    "t": 8462,
+    "ours": "Upcoming abatement-hearing meeting dates (early March) were left tentatively on the calendar to be finalized at the next meeting, given member travel conflicts.",
+    "official": "Upcoming Tentative Meetings: February 25, 2026, March 4, 2026 & March 18, 2026, March 25, 2026 (All meetings scheduled for 6:30p.m. with location varying each meeting).",
+    "note": "Official lists specific dates including one in February and does not mention travel conflicts as the reason for tentativeness — check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "resuming monthly meetings",
+    "t": 8503,
+    "ours": "The board discussed returning to monthly (rather than twice-monthly) meetings once the current backlog of abatements and minutes is cleared, possibly starting in April.",
+    "official": "Brian Laffond suggests returning to monthly meetings starting in May once all of the abatements have been processed.",
+    "note": "The proposed restart month differs — April in ours, May in official; check the recording for which month was actually said."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY2024 financial statement not yet posted",
+    "ours": "",
+    "official": "Brian Laffond stated while reviewing the accounting's office website, he came across the financial statement from 2023, but 2024 was not posted. It was confirmed that Karen Brochu was in the process of finishing and closing out the 2024 statement.",
+    "note": "Not mentioned in ours at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Clause 18 future discussion request",
+    "ours": "",
+    "official": "Sarah Cammer would like some additional information for a future discussion regarding the requirements for Clause 18.",
+    "note": "Not mentioned in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY2026 abatement/status-report statistics",
+    "ours": "",
+    "official": "The Assessor's Office has received 8 abutters lists requests. 10 motor vehicle excise tax abatements were processed in MUNIS and are awaiting payment from the tax collector. We received 27 Real Estate (21) and Personal Property Abatement (6) applications. Currently 6 out of the 27 real estate abatement applications have been inspected.",
+    "note": "A block of status-report figures with no counterpart in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vision/MUNIS bridging work with Randy Mercier",
+    "ours": "",
+    "official": "Continue ongoing work with Randy Mercier to fix bridging issue.",
+    "note": "Not mentioned in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "chapter land release signing",
+    "ours": "",
+    "official": "The Board signed the release to remove 1083 Northfield Road and 356 Mass Ave. from chapter land.",
+    "note": "A signed decision entirely absent from ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "land condition factor adjustments",
+    "ours": "",
+    "official": "There have been 358 land conditions adjustments. 289 were residential, 69 are commercial property, with 113 of the residential being on the water.",
+    "note": "A block of figures with no counterpart in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "closing comments on website improvements",
+    "ours": "",
+    "official": "The Board members were happy with the additions to the website and feel it is more user friendly.",
+    "note": "Minor closing remark absent from ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:33:20Z",
+   "cost_usd": 0.34093799999999996
+  }
  }
 }

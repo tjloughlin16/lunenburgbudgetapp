@@ -270,5 +270,103 @@
    "at": "2026-09-27T11:25:43Z",
    "cost_usd": 0.187244
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082026-7593",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2026-01-08-minutes-7593.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2026-01-08-minutes-7593.pdf"
+  },
+  "official_sha256": "0137a2fb6a2e6a2e175ec945f0dcb5763d0c0cfd0256500a89f49afe5bf596dc",
+  "coverage": "partial",
+  "summary": "The two records agree on the substance of the one real vote (send the 50 Main Street letter as drafted, subject to legal review, by January 20) and on the January 8 date and February 12 next-meeting date, but the official minutes are much terser — they omit the mailing-cost figures, the town-clerk email housekeeping item, and the next-meeting time/contingency that our minutes captured from the recording. The one item worth a person's attention is Sanderson's \"newly appointed\" status in ours, which the official roster does not corroborate.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "only_in_official",
+    "about": "Roll call tally for the letter vote",
+    "ours": "",
+    "official": "Jen Aye; Lockwood Aye: Lloyd Aye; Sculimbrene Aye; motion approved",
+    "note": "Ours records only that the vote passed, not each member's individual vote; check t=1234 in the recording to confirm the roll call if the per-member vote matters."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Tony (chair)",
+    "official": "Anthony Sculimbrene, Chairman",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Captions rendered the chair's name as the informal \"Tony\"; same person as the official \"Anthony Sculimbrene.\""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "William Lloyd's officer title",
+    "ours": "William Lloyd (member)",
+    "official": "William Lloyd, Clerk",
+    "note": "Official roster lists Lloyd as Clerk, a distinct officer role our minutes did not capture; check the commission's current roster to confirm his title."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Jennifer Sanderson's appointment status",
+    "ours": "Jennifer Sanderson (member (newly appointed))",
+    "official": "Jennifer Sanderson, Member",
+    "note": "The official minutes do not corroborate \"newly appointed\"; check the recording near her introduction, or town appointment records, to confirm whether she was in fact newly appointed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vacant commission seat",
+    "ours": "",
+    "official": "Vacancy",
+    "note": "Official roster notes an open seat on the commission that our minutes never mention."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Mailing cost figures for the 50 Main Street letter",
+    "ours": "[t=1357] Registered return-receipt mailing cost: $13; [t=1377] Chair's offer to cover mailing cost: $13",
+    "official": "",
+    "note": "The official minutes record the letter vote but not the discussion of mailing cost or who offered to pay it; check the recording around t=1357-1377 if this figure needs to be verified or if it belongs in the public record."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town counsel named as \"Adam\"",
+    "ours": "Give the town counsel (Adam) seven business days to comment on the draft letter, with a hard deadline of January 20",
+    "official": "Letter will be sent to the owner, seven business days from today, (Jan 20, 2026) if no comments from town council on edits.",
+    "note": "Both describe the same seven-business-day review with the same Jan 20 hard deadline; only ours names the counsel as \"Adam\" — official just says \"town council\" (likely town counsel). Check the recording near t=1173 to confirm the name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair confirming APDC email redirect with town clerk",
+    "ours": "[t=1577] Chair will confirm with the town clerk (Cara) that the APDC email address properly redirects to his town email account.",
+    "official": "",
+    "note": "This housekeeping item from the recording is absent from the official minutes entirely."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting time and in-person contingency",
+    "ours": "[t=1772] Next meeting set for February 12 at 7:30, to be held in person, contingent on the 50 Main Street responsible party confirming participation.",
+    "official": "Thursday, February 12, 2026",
+    "note": "Both agree on the February 12 date; official gives no time and no mention of an in-person format or a contingency on the property owner's participation — check the recording near t=1772 to see whether that detail was actually decided or just discussed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Who drafted and vetted the 50 Main Street letter",
+    "ours": "",
+    "official": "Letter to owner has been drafted by member Lockwood i. Lockwood comments – edited original letter, checked address for owner and tax information matches the address we have.",
+    "note": "Official minutes credit Lockwood with drafting and fact-checking the letter — detail our minutes did not surface."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:03:28Z",
+   "cost_usd": 0.24659799999999998
+  }
  }
 }

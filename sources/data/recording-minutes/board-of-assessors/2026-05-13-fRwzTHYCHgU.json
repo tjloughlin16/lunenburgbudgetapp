@@ -455,5 +455,218 @@
    "at": "2026-09-27T02:31:26Z",
    "cost_usd": 0.193386
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05132026-7802",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2026-05-13-minutes-7802.txt",
+   "path": "sources/meetings/board-of-assessors/2026-05-13-minutes-7802.pdf"
+  },
+  "official_sha256": "8bd10d4a1a04f938003310a619b630b6d5eb45bcb713e3a5b556cf6ff41dcb66",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the numeric substance of the public session — abatement counts, the Hollis Road vote, the growth estimate, and the in-house-cyclicals decision all match once caption digit-grouping and misheard names are accounted for. The official minutes additionally cover the closed executive session (a 17E exemption vote) that our recording never captured, while our minutes preserve several spoken specifics (job-description wording changes, a few dollar figures) that the official minutes only summarize or omit — and one \"vote\" in our minutes (monthly CI card updates) reads in the official text as an unresolved request rather than a completed motion, which is worth checking against the recording.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 10,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "vote on monthly CI property card updates",
+    "ours": "[t=1059] Bring back the CI property cards, updated once a month, with clear delineation of update dates — not audible",
+    "official": "Sarah Cammer wants to request monthly card and maps updates from CAl. Lynda Cajka will inquire with CAl to confirm there will be annual updates to the Vision property record cards, monthly updates to the CAl property record cards, and weekly CAl map updates.",
+    "note": "Officially this reads as a request pending CAI confirmation, not a completed board motion; check the recording near t=1059 for whether an actual vote occurred."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to recommend non-purchase of Hollis Road property",
+    "ours": "[t=1780] Recommend the town not purchase the foreclosed property on Hollis Road — passed (stated unanimous)",
+    "official": "There was a motion to recommend non-purchase of 350 and 356 Hollis Road by Sarah Cammer, seconded by Brian Laffond. All in favor.",
+    "note": "Same vote, same unanimous outcome; official adds the property addresses and the movers."
+   },
+   {
+    "kind": "agree",
+    "about": "vote to approve notice of commitment for supplemental bills",
+    "ours": "[t=3868] Approve the notice of commitment for the supplemental real estate bills — not audible",
+    "official": "There was a motion to approve the notice of commitment totaling $11,964.63 by Sarah Cammer, seconded by Brian Marple. All in favor.",
+    "note": "Same vote; ours could not resolve the outcome/mover from audio, official supplies the unanimous result, amount, and movers."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "executive session vote on 17E exemption",
+    "ours": "",
+    "official": "The one 17E exemption application was approved by the Board of Assessors.",
+    "note": "This decision happened in the closed executive session, which our recording-based minutes do not cover."
+   },
+   {
+    "kind": "caption_error",
+    "about": "MV excise commitment #2 of 2026, count and total",
+    "ours": "830, $245,21.38",
+    "official": "831 motor vehicles totaling $245,021.38",
+    "official_reading": "831 motor vehicles totaling $245,021.38",
+    "note": "Captions misheard the count by one and dropped a digit grouping in the dollar figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "MV excise commitment #8 of 2025 amount",
+    "ours": "$52",
+    "official": "$5.02 (previously signed)",
+    "official_reading": "$5.02",
+    "note": "Captions likely misheard \"five-oh-two\" as \"fifty-two\"; check the recording near t=481."
+   },
+   {
+    "kind": "agree",
+    "about": "motor vehicle excise abatements received",
+    "ours": "64",
+    "official": "64",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY26 real estate abatements granted total",
+    "ours": "27, 15, $31,19753, 12",
+    "official": "27 received and 15 of those were granted totaling $31,197.53. 12 were denied",
+    "official_reading": "$31,197.53",
+    "note": "Counts (27, 15, 12) match; only the dollar figure lost its comma/decimal formatting in the captions."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "breakdown of the 12 denied real estate abatements",
+    "ours": "",
+    "official": "12 were denied including 6 real estate abatements and 6 that were personal property.",
+    "note": "Official further splits the 12 denials into 6 real estate and 6 personal property; ours only states the total of 12."
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 supplemental real estate bills total",
+    "ours": "[t=524] $11,963",
+    "official": "Lynda Cajka prepared the FY26 supplemental real estate bills totaling $11,963 consisting of 3 properties.",
+    "note": "Dollar figure matches; official adds that it covers 3 properties."
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY27 new growth estimate, commercial/industrial figure",
+    "ours": "400,000, 243,542,000, $16,924,400, 124,684",
+    "official": "The FY27 growth was estimated at $400,000. The current growth for commercial and industrial is $243,542 which equates to an assessed value of $16,924,400. The personal property growth is $124,684.",
+    "official_reading": "$243,542",
+    "note": "Three of four figures match exactly; the CI growth figure gained a spurious extra \"000\" in the captions — check the recording near t=1491."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Vision printing cost for CAI-style property cards",
+    "ours": "[t=1385] $400",
+    "official": "",
+    "note": "Official's account of the card-update discussion states no dollar figure for this."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "CI/GIS continuous data update cost figures",
+    "ours": "[t=3375] 1,800, 900",
+    "official": "",
+    "note": "Official discusses the CAI/Vision GIS update problem and its fix but states no dollar figures for it."
+   },
+   {
+    "kind": "caption_error",
+    "about": "signed supplemental real estate bill commitment total",
+    "ours": "[t=3891] $1,96463",
+    "official": "There was a motion to approve the notice of commitment totaling $11,964.63 by Sarah Cammer, seconded by Brian Marple.",
+    "official_reading": "$11,964.63",
+    "note": "The leading '1' of $11,964.63 appears to have been dropped or merged in the captions."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "senior tax deferral interest rate",
+    "ours": "[t=5889] 4%",
+    "official": "",
+    "note": "Official's closing comments mention the Senior Means Tested Exemption and deferral option but state no interest rate."
+   },
+   {
+    "kind": "agree",
+    "about": "keeping both Vision (annual) and CI (monthly) property cards",
+    "ours": "[t=1067] Board leaned toward keeping both the fixed annual Vision property card and a CI-based card updated monthly, clearly labeled.",
+    "official": "Lynda Cajka will inquire with CAl to confirm there will be annual updates to the Vision property record cards, monthly updates to the CAl property record cards, and weekly CAl map updates. CAl cards and Vision cards should be clearly labeled and dated.",
+    "note": "Same plan in both; official adds a weekly CAI map-update cadence ours does not mention."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "job description itemized changes (experience requirement, MAA designation, tax-rate language, deferrals, tax maps)",
+    "ours": "[t=2020,2436,2684,2809,2830] Five specific wording/requirement changes to the assessor job posting/description.",
+    "official": "Brian Laffond drafted a job posting and description. The board reviewed, modified and approved the draft.",
+    "note": "Official records only that the board reviewed and approved a modified draft; it does not itemize any of the specific changes ours captured — the official minutes are a summary here."
+   },
+   {
+    "kind": "agree",
+    "about": "bringing cyclical property inspections in-house",
+    "ours": "[t=4321] Board intends to bring cyclical property inspections in-house going forward rather than continue contracting them out.",
+    "official": "The Board confirms that they intend to complete cyclicals in-house as much as possible to minimize/eliminate contracted services for that activity.",
+    "note": "Matches."
+   },
+   {
+    "kind": "agree",
+    "about": "next Board of Assessors meeting date",
+    "ours": "[t=5654] Next Board of Assessors meeting set for June 3rd.",
+    "official": "Upcoming Tentative Meetings: June 3, 2026, July 1, 2026, and August 5, 2026.",
+    "note": "June 3 matches; official additionally lists two further tentative meeting dates ours does not mention."
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair's name",
+    "ours": "Brian Leond (chair)",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "attendee listed as 'Chica'",
+    "ours": "Chica (member)",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "",
+    "note": "No attendee named Chica appears in the official list; likely the captions split \"Vice Chair Sarah Cammer\" into a spurious separate entry — check the recording's roll call to confirm this is not a real seventh attendee."
+   },
+   {
+    "kind": "caption_error",
+    "about": "member name 'Brian Harple'",
+    "ours": "Brian Harple (member)",
+    "official": "Member Brian Marple",
+    "official_reading": "Brian Marple",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee name 'Cameron Barrett'",
+    "ours": "Cameron Barrett (member)",
+    "official": "Finance Director/Town Accountant Karen Barrett",
+    "official_reading": "Karen Barrett",
+    "note": "Misheard first name; also her role is Finance Director/Town Accountant, not a board member, which ours does not capture."
+   },
+   {
+    "kind": "caption_error",
+    "about": "principal assessor's name",
+    "ours": "Linda (principal assessor)",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Role matches; official minutes supply the correct spelling/surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "presenter's name for neighborhood review",
+    "ours": "Reena (board member/presenter, neighborhood review)",
+    "official": "Consultant Rena Swezey",
+    "official_reading": "Rena Swezey",
+    "note": "Name close but surname missing in ours; she is a Consultant, not a board member, which ours mislabels."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:40:18Z",
+   "cost_usd": 0.31952
+  }
  }
 }

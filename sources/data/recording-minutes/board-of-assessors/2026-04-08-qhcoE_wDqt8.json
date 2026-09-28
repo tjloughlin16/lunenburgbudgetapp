@@ -490,5 +490,280 @@
    "at": "2026-09-27T02:45:42Z",
    "cost_usd": 0.193958
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04082026-7722",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2026-04-08-minutes-7722.txt",
+   "path": "sources/meetings/board-of-assessors/2026-04-08-minutes-7722.pdf"
+  },
+  "official_sha256": "647edf0d8e2d6a07395625a2f1f9008dddec0fdc741b31549af9566f32a89367",
+  "coverage": "full",
+  "summary": "The two records agree closely on the open-session votes, the transfer, and most abatement/exemption dollar figures — differences there are almost all digit-grouping caption errors. The one thing to check: our minutes have no record of the Executive Session at all (three actions there — an exemption approval and an abatement denial/referral), and the roll-back tax item names a different property (35 Leominster Road vs. the official's 1083 Northfield Rd.) — both worth checking against the recording/original document.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 7,
+   "discrepancy": 9,
+   "only_in_ours": 2,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: right of first refusal, 35 Leominster Road",
+    "ours": "That the board not exercise the right of first refusal on the property at 35 Leominster Road — passed",
+    "official": "There was a motion that the Board of Assessors does not recommend exercising the right of first refusal for 35 Leominster Road by Sarah Cammer, seconded by Brian Marple. All in favor.",
+    "note": "Same vote, same outcome, same property.",
+    "t": 2669
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: release $27,500 from overlay reserve",
+    "ours": "Release $27,500 from the overlay reserve to help fund the neighborhood review project position for 2027 — passed",
+    "official": "There was a motion to release $27,500 from the overlay account to pay for the position to continue with the neighborhood review by Sarah Cammer, seconded by Brian Marple. All in favor.",
+    "note": "Same vote, same amount, same purpose.",
+    "t": 3728
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer: overlay reserve to neighborhood review position",
+    "ours": "From the overlay reserve to fund the neighborhood review project position's salary for 2027 — $27,500 (voted)",
+    "official": "There was a motion to release $27,500 from the overlay account to pay for the position to continue with the neighborhood review by Sarah Cammer, seconded by Brian Marple. All in favor.",
+    "note": "Same transfer amount and purpose as the vote above.",
+    "t": 3728
+   },
+   {
+    "kind": "agree",
+    "about": "Motor vehicle excise tax abatements count",
+    "ours": "Motor vehicle excise tax abatements: 122",
+    "official": "There were 122 motor vehicle excise tax abatements received in the past month.",
+    "note": "Figure matches exactly.",
+    "t": 549
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 real estate tax abatements count",
+    "ours": "FY2026 real estate tax abatements: 27",
+    "official": "Lynda Cajka has completed 27 real estate tax abatements for FY 2026.",
+    "note": "Figure matches exactly.",
+    "t": 549
+   },
+   {
+    "kind": "agree",
+    "about": "Hero Act credit exemption count",
+    "ours": "Hero Act motor vehicle excise credit / motor vehicle exemption reimbursement: 28, 32, 44143, 185, 13, 10,6525",
+    "official": "There were 32 exemptions received and approved for the Hero Act credit totaling $7,983.85.",
+    "note": "The '32' figure matches official's Hero Act exemption count.",
+    "t": 881
+   },
+   {
+    "kind": "agree",
+    "about": "22d exemption count",
+    "ours": "Hero Act motor vehicle excise credit / motor vehicle exemption reimbursement: 28, 32, 44143, 185, 13, 10,6525",
+    "official": "13 of the 22d exemption totaling $10,065.25.",
+    "note": "The '13' figure matches official's 22d exemption count.",
+    "t": 881
+   },
+   {
+    "kind": "agree",
+    "about": "Postponed topics: Clause 18 and policies binder",
+    "ours": "The board declined to discuss Clause 18 criteria or the board of assessors policies binder at this meeting.",
+    "official": "POSTPONED TOPICS • Criteria for Clause 18 • BOA Polices Binder",
+    "note": "Same two items, described as declined/postponed in both.",
+    "t": 3988
+   },
+   {
+    "kind": "agree",
+    "about": "Next two meeting dates",
+    "ours": "Next two meetings set for April 22nd and May 13th, with a return to monthly meetings expected over the summer.",
+    "official": "Upcoming Tentative Meeting: April 22, 2026 & May 13, 2026. (All meetings scheduled for 6:30p.m. with location varying each meeting).",
+    "note": "Dates match exactly.",
+    "t": 4160
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Lefon",
+    "official": "Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Same person, name misheard by captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal Assessor's name",
+    "ours": "Linda Chica",
+    "official": "Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Same person, name misheard by captions; this is likely also the 'unnamed staff/appraiser giving the status report' our minutes list separately — official has only one such person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Abatements/exemptions worth (Veterans/MDM1/MVE)",
+    "ours": "$160,57",
+    "official": "There were 121 abatements/exemptions worth $160,507, which we received $136,067.30 reimbursement from the state.",
+    "official_reading": "$160,507",
+    "note": "Digit grouping error, same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "State reimbursement for Veterans/MDM1/MVE abatements",
+    "ours": "13 36,67.3",
+    "official": "There were 121 abatements/exemptions worth $160,507, which we received $136,067.30 reimbursement from the state.",
+    "official_reading": "$136,067.30",
+    "note": "Digit grouping error, same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Blind exemption total",
+    "ours": "44143",
+    "official": "There were 2 blind exemptions approved totaling $441.43",
+    "official_reading": "$441.43",
+    "note": "Missing decimal point, same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "22d exemption total dollar amount",
+    "ours": "10,6525",
+    "official": "13 of the 22d exemption totaling $10,065.25.",
+    "official_reading": "$10,065.25",
+    "note": "Digit grouping error, same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Total state reimbursement for exemptions",
+    "ours": "76 11, 113, 915, 113,283, 113,283 and 3 cents",
+    "official": "Total of all Reimbursements will be $113,283.03.",
+    "official_reading": "$113,283.03",
+    "note": "Captions garbled the same figure multiple times as it was read aloud, settling on '113,283 and 3 cents' which matches $113,283.03; the earlier fragments ('76 11', '915') are the same figure being mis-transcribed, not separate amounts."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who is leaving the board after the election",
+    "ours": "Brian Lefon (chair (leading intros and procedural steps; stated he will no longer be on the board after the election))",
+    "official": "Brian Laffond thanked Brian Marple for his time on the Board.",
+    "note": "Our minutes say the chair (Laffond) is leaving the board; official minutes have the chair thanking Marple for his board service, implying Marple is the one leaving. Check the recording around the closing comments to determine who is actually departing."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Executive session: real estate exemption approval",
+    "ours": "",
+    "official": "Lynda Cajka presented 7 administrative real estate exemption to the board to review which was approved by the Board of Assessors.",
+    "note": "Our minutes, built from the public recording, contain no record of the Executive Session at all. Check whether the Executive Session was recorded/available; if not, this is a coverage gap rather than a transcription error."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Executive session: real estate abatement denial and referral",
+    "ours": "",
+    "official": "The Board of Assessors denied the administrative real estate abatement and requested that the Principal Assessor research additional information for the 1 real estate abatement.",
+    "note": "Same Executive Session coverage gap as above — no recording-based record exists in ours to compare against."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision to reorder the agenda (minutes before status report)",
+    "ours": "The board agreed to reorder its agenda going forward so that approval of minutes happens before the status report.",
+    "official": "",
+    "note": "Official minutes do not record this as a decision, though its own agenda order (Minutes, then Status Report) is consistent with it. Check the recording near the start of the meeting to confirm whether this was stated as an ongoing policy or just this meeting's order.",
+    "t": 217
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Reasoning for declining right of first refusal",
+    "ours": "The board deferred to the Open Space Commission and other town committees on the 35 Leominster Road right-of-first-refusal question, seeing no assessor-specific reason to purchase.",
+    "official": "",
+    "note": "Official records only the motion and outcome, not this stated reasoning; check the recording to confirm this rationale was actually given.",
+    "t": 2649
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Deferring neighborhood-code criteria discussion to next meeting",
+    "ours": "Further discussion of neighborhood-code criteria for the neighborhood review project was set for the next meeting, ideally with the newly hired staff member present.",
+    "official": "",
+    "note": "Official records the neighborhood review discussion (DOT traffic layer, market adjustment reporting) and the resulting $27,500 vote, but does not state that criteria discussion was explicitly deferred to next meeting. Check the recording.",
+    "t": 2249
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Hero Act cluster: unreconciled figures (28, 185) and missing Hero Act dollar total",
+    "ours": "Hero Act motor vehicle excise credit / motor vehicle exemption reimbursement: 28, 32, 44143, 185, 13, 10,6525",
+    "official": "There were 32 exemptions received and approved for the Hero Act credit totaling $7,983.85. There were 2 blind exemptions approved totaling $441.43, 2 handicap exemptions, and 13 of the 22d exemption totaling $10,065.25.",
+    "note": "The '32', '441.43'-as-44143, and '10,065.25'-as-10,6525 line up, but our '28' and '185' don't clearly map to anything official states, and official's Hero Act dollar total ($7,983.85) doesn't appear anywhere in our figures. Check the recording around t=881 to see what these numbers actually referred to.",
+    "t": 881
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FY2026 supplemental tax bills — '50%' figure",
+    "ours": "FY2026 supplemental tax bills: three, 50%",
+    "official": "The goals for next month include preparing 3 supplemental bills for 2026 and complete preliminary FY27 file in May.",
+    "note": "'Three' matches official's '3 supplemental bills', but '50%' has no counterpart in official minutes at all. Check the recording at t=1130 for what this percentage referred to.",
+    "t": 1130
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Roll-back tax: property and figures",
+    "ours": "Roll-back tax calculation for 35 Leominster Road: 15 acres, $14,722, 9/10 of a cent",
+    "official": "The Board signed the commitment for previously approved roll back tax on 1083 Northfield Ra.",
+    "note": "Different property addresses entirely (35 Leominster Road vs. 1083 Northfield Rd.), and official gives no supporting figures (acreage, dollar amount, tax rate) to compare against ours. Check the recording and the signed commitment document to confirm which property and figures are correct — this may be two different roll-back tax matters conflated, or a misheard address.",
+    "t": 2946
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "New growth / new parcel IDs count",
+    "ours": "New growth / new parcel IDs: 40",
+    "official": "",
+    "note": "Official minutes do not mention this figure anywhere in the excerpt provided.",
+    "t": 1273
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Return to monthly meetings over the summer",
+    "ours": "...with a return to monthly meetings expected over the summer.",
+    "official": "",
+    "note": "Official minutes give the two tentative meeting dates but do not mention an expected return to a monthly schedule.",
+    "t": 4160
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sarah Cammer's role as Vice Chair",
+    "ours": "",
+    "official": "Members Present: Chair Brian Laffond, Vice Chair Sarah Cammer, Member Brian Marple, Principal Assessor Lynda Cajka",
+    "note": "Our attendee list has Sarah Cammer as a plain member with no officer title."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Rena Swezey contract status",
+    "ours": "",
+    "official": "The Board of Assessors' Office is awaiting approval of the contract for Rena Swezey for assistance. Brian Laffond spoke to Town Manager and expects the contract to be reviewed by the end of the week.",
+    "note": "An administrative status item not present in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Motor vehicle commitment 2 of 2026 received",
+    "ours": "",
+    "official": "Commitment 2 of the 2026 motor vehicle commitment was received.",
+    "note": "Status item not present in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Abutters lists received",
+    "ours": "",
+    "official": "In the past 2 months, 14 abutters lists were received.",
+    "note": "Status item not present in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Battery Storage Facility discussion",
+    "ours": "",
+    "official": "Lynda Cajka states of the properties in question already has a storage facility that wasn't previously noted. Lynda Cajka will photograph the property and talk to Mike Tarello about value. The owner of the property wants to meet with Lynda Cajka and the Board of Assessors.",
+    "note": "An entire agenda item (485 Leominster Shirley Road battery storage facility) is absent from our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:37:04Z",
+   "cost_usd": 0.345214
+  }
  }
 }

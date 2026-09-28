@@ -465,5 +465,221 @@
    "at": "2026-09-27T19:39:34Z",
    "cost_usd": 0.198048
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05052025-7202",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-05-05-minutes-7202.txt",
+   "path": "sources/meetings/board-of-assessors/2025-05-05-minutes-7202.pdf"
+  },
+  "official_sha256": "cbc2d899e964dfa29ad4343ad657b4d9ccfd0a1042580514b209cc9d569f34b5",
+  "coverage": "partial",
+  "summary": "The two records agree closely wherever both touch the same concrete item — the May 12 inspection restart, the $500 vendor credit, the $190 postcard invoice, the $103k/$12,142 reimbursement figures, and the May 19/21 date swap — but they cover largely different territory otherwise: ours has no record at all of the executive session (abatement denial, the $5,054.85 DOR-approved abatement, Chapter 61A liens) or of several open-session items (the taxpayer complaint letter, the DOR Neighborhood/Site Index item, minutes approvals), while the official minutes have none of the extended means-tested senior exemption/levy-cap figures or several process decisions (the lien-fee courtesy trip to the registry, incomplete-application stamping, denial-notice language, the summer meeting cadence) that our minutes describe in detail. A reader should specifically check the \"27,000\" abatement total (official ties $27,106.21 to \"2026\" while ours labels it \"FY2025\"), the \"300\" postcard figure against official's \"220,\" and whether an August summer meeting was actually set, since official's upcoming-meetings list only shows June 11 and July 16.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 8,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brian Leavand",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Misheard surname; same person and role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk's name",
+    "ours": "John Rabbit",
+    "official": "Clerk John Rabbitt",
+    "official_reading": "John Rabbitt",
+    "note": "Misheard surname (also appears as \"Jack Rabbitt\" in the executive-session copies); same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's name",
+    "ours": "Sarah Camera",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "Misheard surname; same person and role."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board titles (Vice Chair, Clerk)",
+    "ours": "Sarah Camera (Member); John Rabbit (Member)",
+    "official": "Chair Brian Laffond, Vice Chair Sarah Cammer, Clerk John Rabbitt",
+    "note": "Ours records everyone as generic \"Member\"; official gives each their board office."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "8 of 58 FY2024/PY2024 abatement amount",
+    "ours": "",
+    "official": "The 8 of 58 application was approved by the Department of Revenue for an abatement of $5,054.85 by the Board of Assessors.",
+    "note": "A specific dollar figure with no counterpart in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY abatement total",
+    "ours": "27,000",
+    "official": "22 were granted totaling $27, 106.21",
+    "official_reading": "$27,106.21",
+    "t": 573,
+    "note": "Rounded/misheard digit grouping of the same total."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Abatement figure $1,621",
+    "ours": "$1621",
+    "official": "",
+    "t": 573,
+    "note": "No corresponding figure appears anywhere in the official minutes; check the recording for what this number referred to."
+   },
+   {
+    "kind": "agree",
+    "about": "MDM1 reimbursement total",
+    "ours": "103,000",
+    "official": "MDM1 reimbursement totaled $103k.",
+    "t": 2032,
+    "note": "Same figure in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Veterans exemption reimbursement total",
+    "ours": "5778,000ish",
+    "official": "Veterans exemption reimbursement totaled $78k.",
+    "official_reading": "$78,000 (approximately)",
+    "t": 2032,
+    "note": "Garbled digits around the same $78k figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Motor vehicle excise reimbursement total",
+    "ours": "12,142",
+    "official": "Motor vehicle reimbursement totaled $12,142.",
+    "t": 2032,
+    "note": "Exact match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reimbursement figure $142",
+    "ours": "$142",
+    "official": "",
+    "t": 2032,
+    "note": "No matching figure in official; may be a caption artifact duplicating the $12,142 figure — check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Aggregate reimbursement total \"nearly $200,000\"",
+    "ours": "nearly $200,000",
+    "official": "",
+    "t": 2032,
+    "note": "Official states the three reimbursements separately ($103k+$78k+$12,142≈$193k) but never states this combined figure; not a conflict, just an unstated sum."
+   },
+   {
+    "kind": "agree",
+    "about": "Vendor credit for cyclical inspection notification issue",
+    "ours": "$500",
+    "official": "There was a $500 credit to the account by the company completing inspections.",
+    "t": 2144,
+    "note": "Same figure and same issue (vendor didn't notify residents before inspection)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Number of postcards mailed",
+    "ours": "300",
+    "official": "220 postcards were mailed out for the next cyclical inspections",
+    "official_reading": "220",
+    "t": 2144,
+    "note": "Likely a misheard count for the same postcard mailing."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter land lien recording fee and registry trip",
+    "ours": "The assessors' office will go to the registry of deeds as a courtesy to record chapter land liens once a property owner pays the fee. ($105)",
+    "official": "",
+    "t": 850,
+    "note": "No mention of a $105 fee or a courtesy registry trip in the official minutes' chapter land discussion (which instead discusses letters and 15-day notice)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Incomplete-application stamping procedure",
+    "ours": "Going forward, incomplete applications will be stamped as received with the date and marked incomplete rather than processed as complete submissions.",
+    "official": "",
+    "t": 1541,
+    "note": "Not present in the official minutes; check the recording for whether this was formally decided."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Revised denial-notice language",
+    "ours": "Linda McQuade will draft revised denial-notice language identifying reasons for denial and send it to the board before the next meeting.",
+    "official": "",
+    "t": 1870,
+    "note": "No mention in official minutes of this drafting task."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "'How to Read Your Vision Card' document format decision",
+    "ours": "The 'How to Read Your Vision Card' document will be kept generic/timeless, with year-specific data moved to a separate report.",
+    "official": "Lynda McQuade has made several changes including land costs and neighborhood site indexes. The office has been unable to update condo factors as the report provided didn't include any information pertaining to condos.",
+    "note": "Official describes specific content edits and a data gap, not a generic/timeless-format decision; check the recording for whether that framing was actually stated."
+   },
+   {
+    "kind": "agree",
+    "about": "Request for a fuller Vision data report",
+    "ours": "The office will request a data report from Vision for commercial properties similar to the residential/condo report received.",
+    "official": "The Board is requesting complete report from Vision.",
+    "t": 3401,
+    "note": "Both records show the board asking Vision for a more complete data report, prompted by the missing condo/commercial detail."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Classification hearing timing / tax rate target",
+    "ours": "The board will aim to hold the classification hearing in late October so the tax rate can be set by November 1.",
+    "official": "",
+    "t": 4258,
+    "note": "Not mentioned anywhere in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Neighborhood/Site Index Plan and Rena Sweezey invite",
+    "ours": "",
+    "official": "The Board will request Rena Sweezey attend the next meeting to discuss this topic.",
+    "note": "Whole agenda item absent from ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Means-tested senior exemption levy cap figures",
+    "ours": "540,000, 1%, 33 million, 31 million, 2370, 120, 130, 40",
+    "official": "All the exemptions articles passed and are now going through the formal review process.",
+    "t": 4051,
+    "note": "Official covers this topic in one general sentence with no figures at all, while ours has an extended set of numbers with no official figures to check them against — worth verifying against the recording or town meeting warrant."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "New growth work",
+    "ours": "",
+    "official": "Denise McCue and Lynda McQuade are working on new growth...",
+    "note": "Not present in ours; official text itself trails off incomplete."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Closing thanks to John Rabbitt",
+    "ours": "",
+    "official": "Brian Laffond thanked John Rabbitt for his work on the Board, especially his efforts to \"modernize\" our exemptions.",
+    "note": "Not present in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 11,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:11:46Z",
+   "cost_usd": 0.33634600000000003
+  }
  }
 }

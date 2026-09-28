@@ -219,5 +219,60 @@
    "at": "2026-09-27T11:50:53Z",
    "cost_usd": 0.18432199999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11132025-7509",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-11-13-minutes-7509.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-11-13-minutes-7509.pdf"
+  },
+  "official_sha256": "6035c4c03c339280fd058693af04fc95dc44110ca57370d909f7ccc2a12f2b1d",
+  "coverage": "official minutes are a summary only",
+  "summary": "Where both records cover the same ground they largely agree — dropping the APDC/Historical Commission merger and Richard McGrath's resignation match closely — but the official minutes record a vote (approving the 11 September minutes) that ours has no trace of at all, and ours instead describes October minutes as not yet voted on; the official minutes also cover three substantive agenda items (763 Mass Ave, the Historical Commission quota/misinformation discussion, and a warrant-article comment) that never appear in our recording-based minutes. A reader should check the recording near the start of the meeting to see what vote was actually taken on prior minutes and whether those three additional items were genuinely discussed at this meeting.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 0,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "vote on prior meeting's minutes",
+    "ours": "[t=108] October meeting minutes will not be voted on tonight; the chair is still editing them and they will come up at the next meeting.",
+    "official": "Motion to approve 11 September minutes by Member Lloyd, Seconded by McGrath, approved by all.",
+    "note": "Official records an actual unanimous vote approving the 11 September minutes; our minutes record no vote at all and instead describe October minutes as unfinished/not on the agenda. Check the start of the recording to see whether a vote was taken and which month's minutes were actually being discussed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who is tasked with writing the 50 Main Street letter",
+    "ours": "[t=792] Nathan agreed to write and send the letter to the owners of 50 Main Street requested by the commission, after the chair said he would not do it himself.",
+    "official": "Will take resources to move forward to include a formal letter and invitation to the next APDC meeting.",
+    "note": "Official confirms a letter will be sent but does not attribute the task to any individual; check the recording to confirm whether Nathan specifically was assigned to write it."
+   },
+   {
+    "kind": "agree",
+    "about": "Richard McGrath's resignation from the APDC",
+    "ours": "[t=1310] Richard announced he is resigning from the APDC effective tonight and will send a resignation letter to the select board.",
+    "official": "Member McGrath has stated that he will resign from his position on the APDC and submit this official letter to the Select Board.",
+    "note": "Same person and same decision — Richard's surname is McGrath per the roster — both records agree he is resigning and will notify the Select Board in writing."
+   },
+   {
+    "kind": "agree",
+    "about": "attendees",
+    "ours": "Anthony (chair), William (member), Richard (member), Nathan (member)",
+    "official": "Present: Chairman Sculimbrene, Lloyd, McGrath, Lockwood",
+    "note": "Same four people attended (Anthony Sculimbrene, William Lloyd, Richard McGrath, Nathan Lockwood); ours uses first names and a generic 'member' label where official notes William Lloyd is specifically the Clerk, but there is no misidentification."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:01:24Z",
+   "cost_usd": 0.252966
+  }
  }
 }

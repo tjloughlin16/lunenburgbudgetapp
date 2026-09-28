@@ -398,5 +398,196 @@
    "at": "2026-09-27T11:05:31Z",
    "cost_usd": 0.195188
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02252026-7665",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2026-02-25-minutes-7665.txt",
+   "path": "sources/meetings/board-of-assessors/2026-02-25-minutes-7665.pdf"
+  },
+  "official_sha256": "e936320550fd26121c1b9744c6680edce2da74a5f4662193fd09cde2c1591a80",
+  "coverage": "partial",
+  "summary": "The two records agree on the shape of the meeting (minutes review, abatement status, the Northfield Road ROFR item, sewer billing discussion, Cycle Electric contact, FY27 growth estimate, and the postponed/upcoming items) but diverge sharply on detail: ours carries dollar figures (roll-back tax amounts, sewer betterment numbers, exemption limits) the official minutes never states, while the official minutes carries whole blocks — abatement counts, executive-session results, the Neighborhood Review Project, the Eagle House presentation date — that our recording-based minutes never captured. The one thing a reader should check first is the ROFR vote: official records it unanimous (3 ayes) while ours heard only two audible ayes plus a prior stated intent to abstain from one member.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 7,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote: recommend against purchasing 1083 Northfield Road under ROFR",
+    "t": 1975,
+    "ours": "passed (two audible ayes; one member had earlier stated intent to abstain)",
+    "official": "Brian Laffond made a motion that the Board of Assessor contact the Select Board with their recommendation that we do not purchase the property at 1083 Northfield Road under the right of first refusal, seconded by Sarah Cammer. All in favor. Sarah Cammer aye, Brian Laffond aye, Brian Marple aye.",
+    "note": "Official records a unanimous 3-0 roll call; ours records only two audible ayes and notes a member had earlier signaled intent to abstain. Someone should re-listen around t=1975 to confirm whether the third member actually voted aye on the recording, since this changes whether the vote was truly unanimous."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chairman's name",
+    "ours": "Brian Leaf (chairman)",
+    "official": "Present Members: Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Misheard surname — 'Leaf' for 'Laffond'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name",
+    "ours": "Sarah Camemer (member)",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "Misheard surname — 'Camemer' for 'Cammer'; also see separate finding on her title."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sarah Cammer's title",
+    "ours": "",
+    "official": "Vice Chair Sarah Cammer",
+    "note": "Ours lists her only as 'member' in the attendee list, though our minutes separately note the exec session would be 'chaired by the vice chair' — the two should be reconciled to the same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal assessor's name",
+    "ours": "Linda (principal assessor (as stated))",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Only a first name was caught by the captions, and even that is a near-miss ('Linda' for 'Lynda'); surname was not captured at all."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Roll-back tax bill, 1083 Northfield Road",
+    "t": 1039,
+    "ours": "$15,25763",
+    "official": "The total bill was $15,257.63.",
+    "official_reading": "$15,257.63",
+    "note": "Same figure; captions dropped the decimal point/comma grouping."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ROFR purchase price and response window",
+    "t": 2193,
+    "ours": "$775,000, 120 days",
+    "official": "",
+    "note": "Official records the recommendation not to purchase but never states the price or the 120-day statutory window; a reader wanting to verify $775,000 should check the assessor's ROFR notice/packet for this property."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Roll-back tax warrant amounts, three properties",
+    "t": 2630,
+    "ours": "222 West Townsend, 781 Page St rear, 801 Lancaster: 3,000, 5,750, roughly five, 13",
+    "official": "The Board signed rollback taxes for 222 West Townsend Road, 801 Lancaster Road, and 781 Page Street.",
+    "note": "The three properties match, but official gives no dollar figures at all; the captioned amounts (some clearly garbled, e.g. 'roughly five') should be checked against the actual warrant documents rather than trusted as transcribed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sewer/water betterment and privilege-fee figures (Q3/Q4 billing)",
+    "t": 3073,
+    "ours": "475,000, 8,994,000, 8,914,000, 475, 30,87, 15,043, 25,000, 16056, 11655, 32111, 80,044, 3,000, 150510, 15057, 126,000, 2521 144, 624876, 73,000, 4,400, 4,4625",
+    "official": "Lynda Cajka provided supporting documents that include sewer charges to the board. The numbers provided only included installments 3 and 4. Lynda Cajka is going to further break down the document during executive session.",
+    "note": "Topic matches (Q3/Q4 = installments 3 and 4), but official states no figures and explicitly defers the breakdown to executive session; the long garbled figure string in ours should not be relied on and should be checked against the actual sewer billing document."
+   },
+   {
+    "kind": "agree",
+    "about": "FY27 growth estimate for tax dollars",
+    "t": 5836,
+    "ours": "130,429",
+    "official": "The growth estimate for FY27 tax dollars is currently $130,429.",
+    "note": "Figure matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Extra figure fragment near FY27 growth estimate",
+    "t": 5836,
+    "ours": "400",
+    "official": "",
+    "note": "An unexplained additional number the captions attached to the FY27 estimate; official gives only $130,429 with nothing else, so this fragment should be checked against the recording rather than assumed to be a real second figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior means-tested/deferred exemption limits",
+    "t": 5648,
+    "ours": "$75,000, 40,946, 42,000",
+    "official": "",
+    "note": "Official mentions only that an updated Eagle House presentation with a new circuit-breaker total exists, without stating these asset/income limit figures; check the presentation materials for March 12 for the actual numbers."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Agenda reordering decision",
+    "t": 174,
+    "ours": "Agenda reordered to take up approval of minutes before the principal assessor's status report, going forward.",
+    "official": "",
+    "note": "The official minutes' order (minutes review, then status report) is consistent with this, but the minutes never narrate a decision to reorder going forward — not a conflict, just missing from the official record."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Detail of next executive session (three-person, in office, chaired by vice chair)",
+    "t": 701,
+    "ours": "Board agreed the assessor could hold a three-person executive session next week in the office rather than a full meeting room, chaired by the vice chair.",
+    "official": "Upcoming Meetings: February 25, 2026, March 4, 2026 (executive session only) & April 8, 2026.",
+    "note": "Official lists March 4 as an executive-session-only meeting but gives none of the logistical detail (three-person, in-office, vice-chair-led) that ours records; check the March 4 meeting's own minutes to confirm these arrangements were followed."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting dates (March 11 tentative, April 8 to follow)",
+    "t": 6479,
+    "ours": "Board tentatively set the next full meeting for March 11th... with April 8th to follow.",
+    "official": "An additional meeting is tentatively scheduled for March 11, 2026.",
+    "note": "Both agree March 11 is tentative and April 8 is on the schedule."
+   },
+   {
+    "kind": "agree",
+    "about": "Clause 18 criteria review postponed",
+    "t": 6042,
+    "ours": "Clause 18 criteria review stays on the list of old business but will not be addressed now for lack of staff capacity.",
+    "official": "POSTPONED TOPICS • Criteria for Clause 18",
+    "note": "Both agree it's postponed; official gives no reason, so the 'lack of staff capacity' explanation in ours is unconfirmed by the official text."
+   },
+   {
+    "kind": "agree",
+    "about": "Policy binder digitization",
+    "t": 6104,
+    "ours": "Policy binder material (senior work-off, chapter land guidance) will eventually be digitized/scanned rather than kept only in the paper binder.",
+    "official": "Lynda Cajka added the senior work off information to the policy binder. Sarah Cammer requested the binder also be made digital.",
+    "note": "Core facts match (senior work-off content, request to digitize); official does not mention 'chapter land guidance' as part of what was added or is to be digitized."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY2026 abatement counts and outcomes",
+    "ours": "",
+    "official": "Lynda Cajka states there were a total of 27 abatements. So far, 12 inspections have been completed, 5 are to be reviewed in executive session, and there are 10 that remain. Brian Laffond states that 8 previous abatements were denied and 4 were accepted.",
+    "note": "Entire block of figures absent from our minutes — our recording-based transcript apparently missed or did not surface this status-report segment."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive session outcome on abatements and exemption",
+    "ours": "",
+    "official": "Lynda Cajka presented 1 real estate exemption to the board to review which was approved by the Board of Assessors. The Assessor also discussed the 5 Real Estate Abatements and the findings of the inspections for FY2026. The Board of Assessors approved 4 of the real estate abatements and denied 1 real estate abatement.",
+    "note": "Executive session results (1 exemption approved; 4 of 5 abatements approved, 1 denied) are recorded only in the official minutes, in a separately-dated executive session document — worth confirming that document is correctly dated to this meeting given its header reads 'August 5, 2026'."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Neighborhood Review Project status",
+    "ours": "",
+    "official": "Lynda Cajka will be meeting with Jennifer Warren-Dyment, Julie Belliveau and Karen Barrett for further discussion. At the moment, there are 2 applicants.",
+    "note": "Not mentioned anywhere in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Senior Center (Eagle House) exemption presentation details",
+    "ours": "",
+    "official": "Senior Center (Eagle House) Real Estate Tax Exemption Presentation, Thursday, March 12th at 9:00a.m. Lynda Cajka provided the Board with an updated presentation and included the new circuit breaker total. Margaret Scarsdale will be in attendance.",
+    "note": "Absent from our minutes, though it is likely the context for the exemption limit figures ours captured separately under FIGURES AS HEARD."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:34:54Z",
+   "cost_usd": 0.295712
+  }
  }
 }

@@ -533,5 +533,176 @@
    "at": "2026-09-27T12:44:51Z",
    "cost_usd": 0.19458
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08132025-7343",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-08-13-minutes-7343.txt",
+   "path": "sources/meetings/board-of-assessors/2025-08-13-minutes-7343.pdf"
+  },
+  "official_sha256": "dbb2c5dbb132ea78c01037987d3d57889b683ff7ae9bebd10db3312f5541d450",
+  "coverage": "partial",
+  "summary": "The two records overlap closely on the one formal vote and on the real-estate new-growth figures, but diverge heavily elsewhere: three attendee names were misheard, several discussion-stage figures (obsolescence discounts, the chapter-land use-value table, the senior COLA) appear only in ours, and at least three decisions — who drafts the master-plan response, whether Sept 24 was cancelled, and what was decided about senior-center outreach timing — are stated differently in each and should be checked against the recording or the board's records.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "attendee: Sarah Camera",
+    "ours": "Sarah Camera (board member)",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer, Vice Chair",
+    "note": "Misheard surname; same person and role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: Brian Fond",
+    "ours": "Brian Fond (board member)",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond, Chair",
+    "note": "Misheard surname; same person, and captions also dropped that he is Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: Linda Chica",
+    "ours": "Linda Chica (principal assessor)",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka, Principal Assessor",
+    "note": "Misheard first and last name; same role."
+   },
+   {
+    "kind": "agree",
+    "about": "vote: 222 West Townsend Road right-of-refusal",
+    "ours": "[t=5216] Vote to pass on (decline to purchase) the property at 222 West Townsend Road — passed",
+    "official": "There was a motion to pass on the first-right-of-refusal for the property at 222 West Townsend Road by Brian Laffond, seconded by Sarah Cammer. All in favor.",
+    "note": "Same vote and outcome; official additionally names the mover/seconder, which ours omits."
+   },
+   {
+    "kind": "caption_error",
+    "about": "monthly office activity counts",
+    "ours": "[t=236] Motor vehicle excise tax abatements: 12, 17",
+    "official": "In the past month the office has received 12 abutters list requests, 17 motor vehicle excise tax exemptions, and 1 motor vehicle commitment.",
+    "official_reading": "12 abutters list requests, 17 motor vehicle excise tax exemptions",
+    "note": "The two counts are real but the captions merged two separate figures under one wrong label ('abatements'); the underlying numbers 12 and 17 match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "chapter land use-value cost table figures",
+    "ours": "[t=2807] Chapter land (agricultural) use-value cost table update: 13300, 1395, 13.95, 17.6, $400, 30%, 25%",
+    "official": "There was discussion about the current practice of using \"Above Average\" as a ranking for most chapter land properties. Lynda Cajka will research further.",
+    "note": "Official's summary omits every specific figure from this discussion; a reader wanting the table values must go to the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY2026 senior exemption COLA",
+    "ours": "[t=1055] FY2026 senior real estate exemption COLA: 2.9%",
+    "official": "A review of available exemptions, including Senior Real Estate Means-tested Exemption, was presented at the Adult Activities Center today.",
+    "note": "Official mentions the exemption presentation but not the 2.9% COLA figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY2026 new growth (additional 600,000 figure)",
+    "ours": "[t=1801] FY2026 new growth: 600,000",
+    "official": "",
+    "note": "Official gives only $394K and the $400K projection; the 600,000 figure heard in the recording has no counterpart — check whether this was a total-with-personal-property estimate that the official minutes simply didn't record."
+   },
+   {
+    "kind": "agree",
+    "about": "obsolescence/abatement review scheduling",
+    "ours": "[t=764] Put the property obsolescence/abatement review on the September 3rd agenda for a possible vote.",
+    "official": "This will be added to the next agenda to continue to review.",
+    "note": "Same decision; official doesn't name the date but Sept 3 is consistent with the next scheduled meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "veteran + senior means-tested exemption stacking",
+    "ours": "[t=1514] A person receiving a veteran exemption who also becomes eligible for the new senior means-tested exemption should be allowed to receive both, until told otherwise.",
+    "official": "",
+    "note": "No mention in official minutes of this eligibility decision at all — worth confirming with the assessor whether this was in fact decided or just discussed informally."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "senior-center outreach session timing",
+    "ours": "[t=1740] Defer deciding the frequency/timing of senior-center outreach sessions to the September 3rd meeting.",
+    "official": "Sarah Cammer suggested a follow up exemptions presentation after bills go out in 2026.",
+    "note": "These describe different outcomes on the same topic — ours says the timing decision was deferred to Sept 3, official says a specific timing (after 2026 bills go out) was already suggested; check the recording near t=1740 to see which was actually decided."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DOR land condition factors request",
+    "ours": "[t=2571] Postpone DOR's request to limit land condition factors until neighborhood value corrections are further along; add to a future goals list.",
+    "official": "",
+    "note": "Official minutes contain no reference to a DOR request on land condition factors."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "chapter land 'above average' rating decision",
+    "ours": "[t=3392] Keep the updated 'above average' chapter land agricultural values as already entered for this year and research the history of the rating in the meantime.",
+    "official": "There was discussion about the current practice of using \"Above Average\" as a ranking for most chapter land properties. Lynda Cajka will research further.",
+    "note": "Official confirms the research-further part but not that the board affirmatively decided to keep this year's values as entered; check whether that was a formal decision or an assumption in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "jury duty phone participation",
+    "ours": "[t=4900] If called for jury duty on the day of a future meeting, the board member will try to participate by phone rather than in person.",
+    "official": "",
+    "note": "No mention in official minutes; likely an aside not deemed minute-worthy by the town."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "who drafts the master-plan questionnaire response",
+    "ours": "[t=5380] The principal assessor will draft a proposed response to the master-plan feedback questionnaire for the board to review before September 3rd.",
+    "official": "There was a request from the Master Planning Steering Committee for Assessor input. Brian Laffond will draft a response for next meeting.",
+    "note": "The two records name different people as responsible for the draft (principal assessor Lynda Cajka vs. Chair Brian Laffond) — check the recording at t=5380 to confirm who actually volunteered."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "motor vehicle excise commitment signed",
+    "ours": "",
+    "official": "Commitment 8 of 2024 motor vehicle excise tax was signed.",
+    "note": "Routine invoice/commitment action not mentioned in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "41A warrant article inquiry",
+    "ours": "",
+    "official": "Lynda Cajka will inquire with Jennifer Warren-Dyment about when the warrant articles are due for November Town Meeting.",
+    "note": "A follow-up task on the Clause 41A income-limitation increase, absent from ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "BOA Policies Binder",
+    "ours": "",
+    "official": "Lynda Cajka provided a draft Policies Binder, based on one graciously provided by the Assessor from Everett. The team suggests that this be used as a template.",
+    "note": "A postponed-topics item and decision not captured in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY2026 tax classification hearing date",
+    "ours": "",
+    "official": "FY2026 Tax Classification Hearing Date: Tentative November 4, 2025.",
+    "note": "A scheduling figure/decision present only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Select Board investigation report response",
+    "ours": "",
+    "official": "Final Review of Response to Select Board Investigation Report — This topic was not discussed.",
+    "note": "An agenda item explicitly noted as not discussed; absent from ours, though it records a non-event rather than a decision."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:18:15Z",
+   "cost_usd": 0.278312
+  }
  }
 }

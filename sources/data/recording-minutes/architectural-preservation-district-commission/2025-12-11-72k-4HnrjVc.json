@@ -292,5 +292,88 @@
    "at": "2026-09-27T11:34:26Z",
    "cost_usd": 0.19269000000000003
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12112025-7557",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-12-11-minutes-7557.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-12-11-minutes-7557.pdf"
+  },
+  "official_sha256": "1e68e5efa65e3c30c2e773097f7403bcd9ff1143c5c12adb910c0ca088e44547",
+  "coverage": "partial",
+  "summary": "The one recorded vote and the core administrative decisions (minutes deferred to January, next meeting Jan 8, 50 Main Street letter) agree between the two records, including the 3-0 vote tally on the Brooks House/Select Board motion. Our minutes carry several dollar figures (consultant cost, a historical project cost, GSA space standards) the official minutes never state and so cannot corroborate, while the official minutes contain a substantial block of Municipal Building Design Committee discussion, and a role detail for William Lloyd, that our minutes omit or describe differently.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "William Lloyd's official role/title",
+    "ours": "William (member)",
+    "official": "William Lloyd, Clerk",
+    "note": "Official minutes and the commission's own roster list Lloyd as Clerk, not a general member; a reader should check the town's current APDC roster to confirm whether 'member' in our minutes is simply a caption-level simplification or an actual error."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Master plan steering committee consultant cost figure",
+    "ours": "[t=1806] Master plan steering committee consultant work: $145,000",
+    "official": "",
+    "note": "Official minutes describe the master plan discussion in prose with no dollar figure at all; this $145,000 cannot be cross-verified against the official record and should be checked against a budget document or the master-plan committee's own materials."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "2004 town meeting Ritter addition project cost",
+    "ours": "[t=475] 2004 town meeting Ritter addition project (May town meeting project): $22 million",
+    "official": "",
+    "note": "No reference to a 2004/May town meeting vote or a $22 million figure appears anywhere in the official minutes' discussion of the Ritter Building or the Municipal Building Design Committee; verify this figure and its date against town meeting warrant records before relying on it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "GSA employee office space standard figures",
+    "ours": "[t=601] Employee office space standards (GSA): 200 square feet, 165 square feet, 200 200 square foot",
+    "official": "iii. Will use GSA square footage for town office personal planning.",
+    "note": "Official confirms the general practice of using GSA square-footage standards but states no specific numbers, so the 200/165 sq ft figures (and the garbled '200 200') are unverified by the official record — check against the actual GSA space standard schedule."
+   },
+   {
+    "kind": "agree",
+    "about": "Minutes approval deferred to January meeting",
+    "ours": "[t=84] Vote on approval of the October and November meeting minutes will be deferred to the January meeting since not all members had reviewed the November minutes.",
+    "official": "Minutes will be voted in January 8th meeting.",
+    "note": "Same decision; official omits the stated reason (not all members had reviewed the November minutes), which is a minor detail only ours records, not a conflict."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "[t=133] Confirmed the next APDC meeting is January 8, correcting an earlier stated date of January 18.",
+    "official": "Next Meeting: Meeting Schedule: Thursday, January 8, 2026",
+    "note": "Both agree the next meeting is January 8; the in-meeting correction from a misstated January 18 is naturally not something the official minutes would record."
+   },
+   {
+    "kind": "agree",
+    "about": "50 Main Street letter to owner",
+    "ours": "[t=154] Nathan will draft and send a letter to the owner of the 50 Main Street office condo over the holidays, a task carried over from the November meeting.",
+    "official": "Letter to owner will be completed over the holiday break. Will have to send to multiple members of the trust.",
+    "note": "Same task and timeline; official adds that it must go to multiple trust members and does not name Nathan specifically, but nothing contradicts."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair to raise Brooks House again in January regardless of Select Board outcome",
+    "ours": "[t=1394] The chair will bring the Brooks House issue back up at the January APDC meeting regardless of the Select Board outcome.",
+    "official": "",
+    "note": "This follow-up commitment does not appear in the official minutes' Old/Current Business or Next Meeting sections; worth confirming it is on the January 8 agenda."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:02:32Z",
+   "cost_usd": 0.254486
+  }
  }
 }

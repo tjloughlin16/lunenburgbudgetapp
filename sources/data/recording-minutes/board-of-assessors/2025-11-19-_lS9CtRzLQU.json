@@ -566,5 +566,230 @@
    "at": "2026-09-27T11:49:46Z",
    "cost_usd": 0.193048
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11192025-7512",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-11-19-minutes-7512.txt",
+   "path": "sources/meetings/board-of-assessors/2025-11-19-minutes-7512.pdf"
+  },
+  "official_sha256": "8edd578de1deda3a1ab05628102ce1647cd799d9f1d0510c7a34c3348a339a0c",
+  "coverage": "partial",
+  "summary": "Where both records cover the same ground they agree — the unanimous Marple appointment and the open status of Clause 18 criteria and the mapping-software question — but each side holds a large block of material the other lacks entirely: ours carries specific figures (assessed values, abatements, tax rates, mailing costs) the official minutes never state, while the official minutes record a whole executive session (14 real estate exemptions approved), the website-review item, and a 41A wording correction that our recording-derived minutes never mention. The transfer for the assessing-assistant position and the prerequisites before Marple can vote are described differently enough in the two records that a reader should check them against another source rather than assume either is complete.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 6,
+   "discrepancy": 4,
+   "only_in_ours": 9,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "vote to appoint Brian Marple",
+    "ours": "Appoint Brian Marple to the Board of Assessors, term to expire at the next annual town election — passed unanimously",
+    "official": "There was a motion to appoint Brian Marple to the Board of Assessors with a term to expire at the next annual town election by Caesar Nuzzolo, seconded by Brian Laffond. Roll call vote. Renee Emkey aye, Glenn McLeod aye, Brian Laffond aye, Brian Lehtinen aye, Sarah Cammer aye, Caesar Nuzzolo aye. The motion passed unanimously.",
+    "note": "Same vote, same unanimous outcome; official simply adds the mover, seconder and full roll call that ours omits.",
+    "t": 633
+   },
+   {
+    "kind": "discrepancy",
+    "about": "transfer of May-set-aside revaluation funds into salary administration line",
+    "ours": "Funds set aside in May toward outside help with the neighborhood-revaluation study moved into the salary administration line to create a temporary assessing-assistant contract position — (voted)",
+    "official": "The Board of Assessors is looking to hire a temporary assessing assistant who specializes in this field to complete the reviews. This position has been approved in both the Salary Administration Plan and the Town Budget.",
+    "note": "Ours describes a specific voted transfer; official describes the position as already approved in the Plan and Budget with no mention of a vote or a May set-aside being moved — check the board's transfer/vote record or the town warrant to confirm a transfer vote actually happened at this meeting.",
+    "t": 3892
+   },
+   {
+    "kind": "discrepancy",
+    "about": "single vs split tax rate decision",
+    "ours": "Continue to propose a single tax rate rather than a split rate for the classification hearing, having found no significant change in the town's property-class distribution.",
+    "official": "",
+    "note": "This decision does not appear in the official minutes at all; check the classification hearing's own minutes (tentatively Nov 25) for how the rate was actually decided.",
+    "t": 1606
+   },
+   {
+    "kind": "agree",
+    "about": "Clause 18 hardship-abatement criteria still open",
+    "ours": "Gather other towns' Clause 18 hardship-abatement criteria before the next meeting or two so the board can draft its own criteria rather than deciding case by case.",
+    "official": "POSTPONED TOPICS • Criteria for Clause 18",
+    "note": "Both agree the item is unresolved/postponed; official just doesn't spell out the plan to survey other towns that ours captures.",
+    "t": 5096
+   },
+   {
+    "kind": "agree",
+    "about": "Board of Assessors meeting cadence",
+    "ours": "Continue holding Board of Assessors meetings roughly twice a month in the evenings, for transparency and public viewing.",
+    "official": "Upcoming Meetings: December 3, 2025, and December 17, 2025. All meetings are scheduled for 6:30p.m. with location varying each meeting.",
+    "note": "The listed December dates (twice that month, evenings) match ours' description of the cadence; official states it as a schedule rather than a stated transparency rationale.",
+    "t": 5761
+   },
+   {
+    "kind": "discrepancy",
+    "about": "what Brian Marple must complete before he can vote",
+    "ours": "New member Brian Marple's initial role will be to observe, listen and complete required Department of Revenue training modules, open meeting law training and conflict of interest training before voting.",
+    "official": "Brian Marple will need to meet with the Town Clerk to get sworn in before he can vote.",
+    "note": "Both identify a prerequisite before Marple can vote but name different requirements (swearing-in vs. training modules) — check whether both are actually required or one record is incomplete.",
+    "t": 5987
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY2026 new growth (LA13) dollar figure",
+    "ours": "400,000, 518,650, 518, 27%",
+    "official": "The growth for FY 2026 totaled $518,650.",
+    "official_reading": "$518,650",
+    "note": "Only $518,650 is confirmed; the other numbers heard look like caption fragments of the same figure repeated.",
+    "t": 1823
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY2026 average residential assessed value and YoY change",
+    "ours": "517,296, 570, 517, 54,900, 2.4%",
+    "official": "The LA13 average residential assessed value for FY 2026 is $517,296. This is a 2.4% increase from last year (FY 2025).",
+    "official_reading": "$517,296; 2.4% increase",
+    "note": "$517,296 and 2.4% both confirmed; the extra numbers (570, 517, 54,900) are caption noise around the same repeated figure.",
+    "t": 1721
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "LA4 class-by-class assessed value change",
+    "ours": "2.7%, 6.4%, 10 parcels",
+    "official": "",
+    "note": "Official only says LA4 was approved November 10, 2025, without the class breakdown ours reports.",
+    "t": 1108
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "property value mix by class (pie chart)",
+    "ours": "91%, 4%, 3%, 2%",
+    "official": "",
+    "note": "Official mentions the classification hearing document included 5 classes of property but gives no percentages.",
+    "t": 1246
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "abatement counts/amounts",
+    "ours": "27, 40 something, 42, 400 something",
+    "official": "",
+    "note": "No abatement figures appear anywhere officially; ours' own figures are garbled enough (\"40 something\", \"400 something\") to check directly against the board's abatement log.",
+    "t": 1885
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter land lien recording fee",
+    "ours": "$105",
+    "official": "",
+    "note": "Official discusses a Chapter Land release for 222 West Townsend Road but never states a lien recording fee.",
+    "t": 2162
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "41A elderly tax deferral income-limit amount",
+    "ours": "20,000",
+    "official": "",
+    "note": "Official confirms the 41A warrant article passed at Town Meeting but never states the dollar figure; check the Town Meeting warrant article text.",
+    "t": 3303
+   },
+   {
+    "kind": "only_in_official",
+    "about": "41A warrant article's fiscal-year wording error",
+    "ours": "",
+    "official": "Lynda Cajka did point out the last sentence states, \"deferrals granted for taxes assessed for the fiscal years beginning on or after July, 2026\". This needs to be clarified to FY 2027.",
+    "note": "This drafting correction on the 41A article is not mentioned anywhere in our minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cost attributed to prior lax assessing oversight",
+    "ours": "1.3, $1.4 million",
+    "official": "",
+    "note": "This notable claim doesn't appear in the official minutes at all — worth checking the recording directly, especially since the figure itself is inconsistent (1.3 vs $1.4 million).",
+    "t": 4406
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "average commercial/industrial assessed value",
+    "ours": "449,158, 3%, 435,910",
+    "official": "",
+    "note": "No commercial/industrial value figures appear in the official minutes.",
+    "t": 4761
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY2025 tax rate as finally set by DOR",
+    "ours": "14.36",
+    "official": "",
+    "note": "Official only discusses the FY2026 rate as pending (DOR sets it once the levy and hearing are complete) and never states a finalized FY2025 rate.",
+    "t": 4824
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "cost of more frequent tax bill mailing",
+    "ours": "1,700",
+    "official": "",
+    "note": "No discussion of mailing frequency or its cost appears in the official minutes.",
+    "t": 5262
+   },
+   {
+    "kind": "only_in_official",
+    "about": "assessor website update/review status",
+    "ours": "",
+    "official": "Neither Brian Laffond nor Sarah Cammer were able to review the website. Lynda Cajka provided a document to Kara McCarthy to be uploaded to the website. This document allows homeowners to see the new values.",
+    "note": "This agenda item does not appear anywhere in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board of Assessors Chair's name",
+    "ours": "Brian Leaf (Board of Assessors member)",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Captions misheard the surname \"Laffond\" as \"Leaf\"; ours also doesn't record him as Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal Assessor's name",
+    "ours": "Linda Chaika (Principal Assessor)",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Captions misheard \"Cajka\" as \"Chaika\" and \"Lynda\" as \"Linda\"."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member's full name",
+    "ours": "Renee (Select Board member)",
+    "official": "Renee Emkey aye",
+    "official_reading": "Renee Emkey",
+    "note": "Captions caught only the first name; surname dropped."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member's full name",
+    "ours": "Glenn (Select Board member)",
+    "official": "Glenn McLeod aye",
+    "official_reading": "Glenn McLeod",
+    "note": "Captions caught only the first name; surname dropped."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Select Board member who made the motion to appoint Marple",
+    "ours": "",
+    "official": "Caesar Nuzzolo",
+    "note": "Caesar Nuzzolo — who made the motion to appoint Marple and voted aye — doesn't appear anywhere in our attendee list or vote record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "identity of the two unnamed \"Brian (Select Board member)\" attendees",
+    "ours": "Brian (Select Board member); Brian (Select Board member)",
+    "official": "Brian Laffond aye, Brian Lehtinen aye",
+    "note": "Official's roll call names two different Brians (Laffond, actually Assessors chair, and Lehtinen, a Select Board member); check the recording to confirm whether ours' two generic \"Brian\" entries map to Lehtinen plus a redundant Laffond mention, since neither can be Caesar Nuzzolo."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:27:54Z",
+   "cost_usd": 0.38117599999999996
+  }
  }
 }

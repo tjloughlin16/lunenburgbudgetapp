@@ -256,5 +256,104 @@
    "at": "2026-09-27T02:53:18Z",
    "cost_usd": 0.18831799999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122026-7709",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2026-03-12-minutes-7709.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2026-03-12-minutes-7709.pdf"
+  },
+  "official_sha256": "451e2e953e97874ee29abac3fb52f2b612986a104040fae406e975a24f7d3fc8",
+  "coverage": "partial",
+  "summary": "The two records agree on the substance of the one recorded vote (936 Mass Ave, 3-0 aye) and on the next meeting date, but three decision-level items in our minutes (Gillis's appointment timeline, Nathan's second letter to 50 Main St, the stated reason for rescheduling) do not appear anywhere in the official minutes, which instead include procedural detail (mover/seconder, minutes approval) and one attendee (Sanderson) that ours omits. The one clear caption problem is the chair's name, misheard as \"Tony Skelmany\" for Anthony Sculimbrene.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "936 Massachusetts Avenue determination-of-applicability vote",
+    "ours": "Motion to approve the determination of applicability for 936 Massachusetts Avenue — passed 3-0",
+    "official": "Lloyd, Aye; Lockwood, Aye; Sculimbrene, Aye",
+    "note": "Same outcome, same unanimous 3-0 count."
+   },
+   {
+    "kind": "caption_error",
+    "about": "chairman's name",
+    "ours": "Tony Skelmany (chair)",
+    "official": "Anthony Sculimbrene, Chairman",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Captions misheard the chairman's name throughout; same person, different spelling/hearing."
+   },
+   {
+    "kind": "caption_error",
+    "about": "William's role/surname",
+    "ours": "William (commission member)",
+    "official": "William Lloyd, Clerk",
+    "official_reading": "William Lloyd, Clerk",
+    "note": "Captions caught the first name but not the surname or that his role is Clerk rather than a generic member; same person."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "attendee Jennifer Sanderson",
+    "ours": "",
+    "official": "Present: Chairman Sculimbrene, Lloyd, Lockwood, Sanderson",
+    "note": "Our attendee list omits Sanderson entirely; check the recording's roll call/opening for a mention of her."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "who moved/seconded the 936 Mass Ave motion",
+    "ours": "",
+    "official": "Motion to approve by Lockwood, seconded by Lloyd",
+    "note": "Our minutes record the vote outcome but not who made or seconded the motion; check the recording around t=630 for these names."
+   },
+   {
+    "kind": "agree",
+    "about": "next meeting date",
+    "ours": "Next meeting moved from the second Thursday to the third Thursday of April",
+    "official": "Thursday, April 16, 2026",
+    "note": "April 16, 2026 is the third Thursday of April, so the dates align even though the official minutes state it plainly rather than describing the move."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "reason for the meeting-date change",
+    "ours": "due to the chair's travel",
+    "official": "",
+    "note": "Not a conflicting fact, just omitted detail in the official minutes; confirm against the recording near t=1858 if the reason matters for the record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Andrew Gillis's anticipated appointment timeline",
+    "ours": "Commission anticipates Andrew Gillis could be appointed to the commission by the April meeting if he reviews the bylaw/guidelines and submits the volunteer form",
+    "official": "",
+    "note": "Official minutes record only Gillis's biography under Current Business, with no mention of an appointment timeline or conditions; check the recording near t=1694 to confirm whether this was actually stated as an expectation or is an inference."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Nathan sending a second letter to 50 Main Street owners",
+    "ours": "Nathan will send a second letter to the 50 Main Street property owners by the end of next week",
+    "official": "",
+    "note": "This action item is entirely absent from the official minutes; check the recording near t=1846 and ask the clerk whether it was intentionally left out or did not actually occur."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "format/topic of the 50 Main Street April 16 meeting",
+    "ours": "Commission will meet in person with the owners of 50 Main Street ... regarding the deteriorating former church steeple/base",
+    "official": "Will be meeting with the owners' representatives on 16 April",
+    "note": "Official confirms the meeting and date but not that it is in person or that the topic is the steeple/base; not contradictory, just less detail — check the recording near t=1797 if the specifics matter."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:05:16Z",
+   "cost_usd": 0.250186
+  }
  }
 }

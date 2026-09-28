@@ -516,5 +516,267 @@
    "at": "2026-09-27T11:59:02Z",
    "cost_usd": 0.191482
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10302025-7483",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-10-30-minutes-7483.txt",
+   "path": "sources/meetings/cemetery-commission/2025-10-30-minutes-7483.pdf"
+  },
+  "official_sha256": "86384c0ff6f63a653fc83290ca04a916ae0150f403f11da190f4f99e2fc1d5e7",
+  "coverage": "full",
+  "summary": "The two records describe the same meeting and agree on the core dollar totals that both happened to state (Sale of Lots, Capital Article Fund, Capital Plan, Perpetual Care Trust and its expendable interest, the two paid invoices, the corrected $7,857.74 balance, the South Cemetery wall job, and both site-walkthrough dates), with several of \"ours\" figures being caption-garbled digit groupings of the same official numbers. The larger issue is not figures but content: our minutes record a $10,000 stone-straightening transfer, a finance-director sit-down, a specific letter recipient, and a \"cloud repository\" decision that the official minutes do not corroborate (and in two cases directly contradict — the letter's recipient and whether the SharePoint idea was decided or tabled) — a reader should check the recording at those timestamps.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 3,
+   "discrepancy": 8,
+   "only_in_ours": 8,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "chair identification",
+    "ours": "the chair (chair) — listed separately from Mike, a commission member",
+    "official": "Chair: Chair Mike Clark",
+    "note": "Our minutes never link the unnamed \"chair\" to Mike, and list Mike separately as an ordinary member; check the recording to confirm Mike Clark chaired and was not double-counted as two attendees.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dave's role",
+    "ours": "Dave (board member / DPW-related official)",
+    "official": "Vice-Chair: Dave Dorren",
+    "note": "Our minutes describe Dave as DPW-related rather than as the commission's Vice-Chair; check the recording for how he was introduced."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Clerk attendee",
+    "ours": "",
+    "official": "Clerk: Clerk Donna Landry",
+    "note": "The Clerk is entirely absent from our attendee list even though she is later assigned an action item (grants research)."
+   },
+   {
+    "kind": "agree",
+    "about": "DPW Director attendee",
+    "ours": "Bill (DPW official (budget/labor advocate))",
+    "official": "DPW Department Director: Bill Bernard",
+    "note": "Same person and role, matched on first name and function."
+   },
+   {
+    "kind": "agree",
+    "about": "Cemetery Superintendent attendee",
+    "ours": "Todd (cemetery superintendent)",
+    "official": "Cemetery Superintendent: Todd Holman",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "agree",
+    "about": "Sale of Lots fund current balance",
+    "ours": "105971",
+    "official": "Sale of Lots increased to S105971.13",
+    "note": "Same figure to the dollar; official's \"S\" is an OCR artifact for \"$\"."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sale of Lots fund prior balance",
+    "ours": "94494",
+    "official": "",
+    "note": "Our minutes give a prior/before figure the official minutes do not state; not a misheard version of 105,971, so likely genuine extra detail from the discussion — confirm against the recording if the prior balance matters."
+   },
+   {
+    "kind": "agree",
+    "about": "Capital Article Fund (expendable)",
+    "ours": "4,283",
+    "official": "Capital Article Fund $4283.61",
+    "note": "Same figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital Article Fund extra figures",
+    "ours": "10,606, 1700",
+    "official": "",
+    "note": "A prior balance (10,606) and a smaller figure (1,700, possibly the survey-invoice amount Bill was checking on) appear only in our transcript; official mentions the invoice but gives no amount."
+   },
+   {
+    "kind": "agree",
+    "about": "North Cemetery Capital Plan",
+    "ours": "50,000",
+    "official": "Capital Plan at $50,000.00",
+    "note": "Same figure."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Perpetual Care Trust Fund balance",
+    "ours": "237,82",
+    "official": "Perpetual Care Trust Fund $237802.91 is the updated balance",
+    "official_reading": "$237,802.91",
+    "note": "Digit-grouping caption error — the transcript dropped digits rendering $237,802.91 as \"237,82\"."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Perpetual Care Trust Fund prior balance",
+    "ours": "233,62",
+    "official": "",
+    "note": "Likely the pre-update balance mentioned in discussion before the Finance Director's corrected figure; official states only the updated total."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Expendable (interest) fund balance",
+    "ours": "23,482",
+    "official": "Expendable (interest) is $23482.74",
+    "official_reading": "$23,482.74",
+    "note": "Same figure, official gives the cents ours omits — a rounding/digit-grouping caption artifact rather than a different fact."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Expendable interest fund prior balance",
+    "ours": "20,000 78",
+    "official": "",
+    "note": "Garbled prior-balance figure with no clean official counterpart; likely the pre-correction number, but the transcript is too mangled to confirm."
+   },
+   {
+    "kind": "agree",
+    "about": "Perpetual care unrecorded expenditures",
+    "ours": "$7,500, $8125",
+    "official": "7500.00 Beaulac Brothers (Hedge Trimming) and 8125.00 to Lakeview Nurseries (Cedar Tree replacement)",
+    "note": "Same two figures; official additionally names the vendors and purpose, which ours omits."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "$10,000 stone-straightening transfer",
+    "ours": "Town-meeting-authorized transfer into the capital article fund to cover cemetery stone straightening work — 10,000 (discussed only)",
+    "official": "",
+    "note": "A specific $10,000 transfer figure discussed in our recording has no corresponding mention anywhere in the official minutes, which instead describe only a $3K initial investment for 150 feet of wall; check the recording to see whether this $10,000 is a separate town-meeting article or a mistranscription of the $3K figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "unexpended stone-straightening funds",
+    "ours": "13 550",
+    "official": "",
+    "note": "A figure for leftover/unexpended funds appears only in our minutes with no official corroboration."
+   },
+   {
+    "kind": "agree",
+    "about": "South Cemetery wall straightening",
+    "ours": "South Cemetery wall rebuild cost: $3,000, 150 feet, 800 ft",
+    "official": "150 feet of stonewall of South Cemetery was straightened for initial investment of $3K to determine how quickly the rest of the cemetery could be done",
+    "note": "The $3,000 and 150-foot figures match; \"800 ft\" in ours (likely the remaining wall length) has no official counterpart, so treat that number as only_in_ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "flagpole/lighting cost figure",
+    "ours": "10,000",
+    "official": "",
+    "note": "Our minutes give a $10,000 figure for the flagpole/lighting project; the official minutes describe the project (32 ft flagpole, ~4 LED lights) but state no dollar amount — check the recording for whether $10,000 was actually quoted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Holman Street lot figures",
+    "ours": "2.39 acres, 100,000, 102, 2.31",
+    "official": "",
+    "note": "Acreage and dollar figures for the lot appear only in ours; official mentions the lot but states no numbers at all."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "reason for declining Holman Street lot",
+    "ours": "Decided not to pursue purchasing the adjacent Holman Street lot at this time, citing other funding priorities.",
+    "official": "Agreed that at this point, we did not have an immediate need due to the current acreage of the North Cemetery.",
+    "note": "Both agree the commission declined to pursue the lot, but the stated reason differs — funding priorities (ours) versus sufficient existing acreage (official); check the recording for the actual rationale given."
+   },
+   {
+    "kind": "caption_error",
+    "about": "cemetery mapping software name",
+    "ours": "SIMS cemetery software support hours",
+    "official": "CIM Software review",
+    "official_reading": "CIM Software",
+    "note": "Likely a misheard software name (\"SIMS\" vs \"CIM\")."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "software training details",
+    "ours": "",
+    "official": "Commission did an online training with Brandon Finley on October 27th to get a better overview of the mapping and capabilities",
+    "note": "Trainer name and date are in the official minutes but not reflected in our figures/decisions."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "software support hours",
+    "ours": "3 hours",
+    "official": "",
+    "note": "A specific hours figure for software support appears only in ours; official describes a training session instead, with no hour count."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "finance director / town accountant meeting",
+    "ours": "Schedule a joint sit-down with the new Finance Director (Katie McKenna) and the Town Accountant (Jennifer) to review fund definitions and fiduciary responsibilities before town meeting.",
+    "official": "Lunenburg's Finance Director provided an update on the value of our funds",
+    "note": "Our minutes record a decision to schedule a FUTURE meeting with the Finance Director and Town Accountant; the official minutes instead describe the Finance Director's update as already delivered at this meeting, with no mention of a future sit-down being scheduled — check the recording to see whether a follow-up meeting was actually agreed."
+   },
+   {
+    "kind": "agree",
+    "about": "Fish Street site walkthrough date",
+    "ours": "Set a site walkthrough at the Fish Street cemetery for Thursday, November 6, at 8:00 a.m.",
+    "official": "Scheduled onsite Meetings at Fish Street for Thursday, November 6th.",
+    "note": "Same date agreed; the 8:00 a.m. time appears only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "South Cemetery walkthrough date",
+    "ours": "Set a follow-up site walkthrough at South Cemetery to review the wall work for Thursday, November 13, at 8:00 a.m.",
+    "official": "South Cemetery meeting scheduled for 8:00 am on Thursday, November 13th.",
+    "note": "Exact match on date and time."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "full-time cemetery employee letter",
+    "ours": "Draft and sign a joint letter from the commission to the Town Manager (Jennifer) advocating for a full-time cemetery employee.",
+    "official": "Mike Clark added that he would send a letter to the Select Board requesting an additional full-time person for the DPW Cemetery Department.",
+    "note": "Both records agree a letter advocating for a full-time position will be sent, but they disagree on both the sender (the commission jointly vs. Mike Clark personally) and the recipient (Town Manager vs. Select Board) — check the recording to confirm who is sending the letter and to whom."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "grant research assignment",
+    "ours": "Contact Bill Tyler at the historical society/commission and look at other towns' cemetery commissions to find out how grants have been obtained in the past.",
+    "official": "Donna Landry to investigate other areas, including the Historical Society, to determine how we can access them, where to look and what we can get, including other townships.",
+    "note": "Both describe researching grants via the historical society and other towns, but ours names Bill Tyler as the contact while official assigns the task to Donna Landry with no \"Bill Tyler\" mentioned — check the recording for who was actually tasked and whether a Bill Tyler contact was named."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "records repository decision",
+    "ours": "Ask the town's IT/office staff (Carara McCarthy) about setting up a cloud-based (e.g. SharePoint) repository for commission records.",
+    "official": "Discussed the need for a better way for us to keep track of our minutes, agenda, etc. for future use. To be tabled for now and discussed later.",
+    "note": "Our minutes present this as an action item (ask a named staffer about SharePoint); the official minutes say the topic was tabled with no action taken — check the recording for whether anyone was actually asked to look into a system."
+   },
+   {
+    "kind": "agree",
+    "about": "green burial determination",
+    "ours": "Determined the commission is not currently set up to offer green burials under existing cemetery rules, but will keep it as a future educational topic.",
+    "official": "Discussed what a \"green\" burial is, as we had a prior request, and determined by DPW that is something we cannot do.",
+    "note": "Both agree green burials cannot currently be offered; the \"keep it as a future educational topic\" framing appears only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "fertilizer delivery",
+    "ours": "",
+    "official": "DPW also mentioned that Fertilizer came in for the South and North Cemetery.",
+    "note": "Minor operational note present only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "North Cemetery backlot expansion timeline",
+    "ours": "",
+    "official": "We should get an update from Dillis and Roy in 2 weeks for a draft plan of what needs to be done and what it will look like.",
+    "note": "Our minutes give the capital-plan dollar figure for this project but omit the decision to await a draft plan from Dillis and Roy in two weeks."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:59:01Z",
+   "cost_usd": 0.325658
+  }
  }
 }

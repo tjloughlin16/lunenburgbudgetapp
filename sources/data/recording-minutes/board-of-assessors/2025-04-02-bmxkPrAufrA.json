@@ -449,5 +449,187 @@
    "at": "2026-09-27T23:07:52Z",
    "cost_usd": 0.192482
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04022025-7136",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-04-02-minutes-7136.txt",
+   "path": "sources/meetings/board-of-assessors/2025-04-02-minutes-7136.pdf"
+  },
+  "official_sha256": "925e0775815a317dcc1dcc7f3abd293dc54152b8bfcd42a64d1f97eae198a469",
+  "coverage": "partial",
+  "summary": "Where our transcript and the official minutes overlap, they agree closely — the two decisions and two figures both records captured (the 117-parcel levy-cap calculation, the 500-inspection cyclical target, the organizational-metrics deferral, and the choice to proceed on Clause 41D/17 despite possible DOR pushback) match. But coverage differs by design in both directions: our minutes, built from the recording, never see the Executive Session (exemption/abatement approvals, dollar figures, the 41A letter discussion), while the official minutes are a summary that drops most of the granular figures and several secondary decisions (state-vs-federal tax return, document numbering, brochure-year removal, the end-of-April deferral deadline) our transcript caught — and the one formal open-session vote appears in both, but ours could not confirm it passed while official records it \"All in favor,\" named and seconded.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 0,
+   "discrepancy": 3,
+   "only_in_ours": 12,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to proceed with Clause 41D/17 exemption changes",
+    "t": 4225,
+    "ours": "Motion to proceed with the Clause 41D/17 exemption changes as amended by Town Council — not audible (outcome/mover/seconder not captured)",
+    "official": "There was a motion to proceed with the documents as amended by Town Counsel by John Rabbitt, seconded by Brian Laffond. All in favor.",
+    "note": "The vote itself is recorded in both, but ours could not confirm it passed. Check the recording around t=4225 to verify unanimous approval and that John Rabbitt moved / Brian Laffond seconded, since a substantive vote outcome should never be assumed from the official record alone."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Third board member Sarah Cammer",
+    "ours": "",
+    "official": "will be reviewed when full including, Sarah Cammer, is present.",
+    "note": "A third board member, Sarah Cammer, is named in the official minutes as apparently absent; she does not appear anywhere in our transcript-based minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Cyclical inspection completion target",
+    "ours": "[t=3579] 500, 55, 5200, 166 a day, 166 a month",
+    "official": "There are 500 inspections that need to be completed by June.",
+    "note": "The 500-inspection target and the deadline (\"by June\") match. The other digits (55, 5200, 166/day, 166/month) are not confirmed in the official text."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Abatement application count",
+    "ours": "[t=248] 37, four",
+    "official": "",
+    "note": "No matching count of abatement applications appears in the official open-session summary; a different figure (3 admin abatements) appears in the unrelated Executive Session portion and should not be assumed to be the same item — check the recording near t=248."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Senior population count for exemption planning",
+    "ours": "[t=820] 2800, 26",
+    "official": "Lynda McQuade inquired with the Town Clerk: They determined there are residents 65 years of age or older.",
+    "note": "The official minutes leave the actual figure blank (an OCR/typing gap). A candidate number, \"2,826,\" appears as an isolated, unattached fragment elsewhere in the OCR text and may belong here, but the scan does not let this be confirmed. Check the original PDF/DOCX of the official minutes for the actual figure and compare to the captioned \"2800, 26.\""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Median sale price threshold for senior exemption",
+    "ours": "[t=884] 54,000, 540 540, 504 5, 540,000, 500 4,000",
+    "official": "",
+    "note": "No corresponding threshold figure appears in the official minutes; likely omitted as detail in the summary. Check the recording near t=884 for the actual figure discussed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Partial ownership / trust exemption question",
+    "ours": "[t=1220] 50%",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Income limits for senior circuit breaker exemption",
+    "ours": "[t=2280] 72,000, 91,000, 109,000",
+    "official": "",
+    "note": "Official minutes do not state specific income limit figures for this exemption."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "One-acre valuation cap under Clause 41A",
+    "ours": "[t=1975] one acre",
+    "official": "",
+    "note": "The official minutes discuss the 41A deferral document generally but do not restate the one-acre cap detail."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Deferred property tax example figures in brochure",
+    "ours": "[t=2521] 5744, 478, 77 745, 72037, 737, 145, 149",
+    "official": "",
+    "note": "No example dollar figures for the deferral brochure appear in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assessor's office staffing / workload figures",
+    "ours": "[t=3070] 1.4 billion, 32-hour, 40, 19",
+    "official": "John Rabbitt believes this tool would be imperative to stay on track. This topic will be added to the next meeting's agenda.",
+    "note": "Official minutes describe the organizational metrics discussion with no figures at all. \"1.4 billion\" is an implausible figure for a staffing/workload context and is a likely caption misfire, but nothing in the official text anchors what it should be — check the recording near t=3070."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Clause 41D/17 exemption dollar impact on town",
+    "ours": "[t=4102] couple thousand, 5,000",
+    "official": "",
+    "note": "The official minutes discuss the baseline-reset risk with DOR/AG but state no dollar impact figure."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Reason BOA policies document review was deferred",
+    "ours": "[t=738] Board policies document review held over to next meeting since it had not yet been reviewed.",
+    "official": "Lynda McQuade provided a new document that will be reviewed when full including, Sarah Cammer, is present.",
+    "note": "Both records agree the review was deferred, but give different reasons — ours says it simply hadn't been reviewed yet, official says it's waiting for the full board (specifically Sarah Cammer) to be present. Check the recording to confirm the actual stated reason."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "State-only vs. federal income tax return requirement for senior exemption application",
+    "ours": "[t=1136] Board leaned toward requiring only the state (not federal) income tax return on the senior exemption application, with a final recommendation due next meeting.",
+    "official": "",
+    "note": "Official minutes note changes were made to the application generally but do not mention this specific state-vs-federal tax-return decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prefixing/numbering of application document packets",
+    "ours": "[t=2092] Application documents will be prefixed and numbered separately (e.g., circuit-breaker vs. deferral materials) to distinguish which packet each page belongs to.",
+    "official": "",
+    "note": "Not mentioned in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Removing the year from the senior exemption brochure",
+    "ours": "[t=2195] Assessor will investigate removing the specific year from the senior exemption application/brochure so it does not need reprinting every year.",
+    "official": "The brochure that she created is going to be made into a tri-fold.",
+    "note": "Official notes a brochure change (tri-fold format) but not this specific year-removal plan — likely a real decision the summary simply omitted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "End-of-April deadline for preliminary deferral agreement",
+    "ours": "[t=2843] Board will target the end of April as the informal deadline for completing the preliminary deferral agreement with the pending applicant.",
+    "official": "Brian Laffond spoke to the Town Counsel regarding the deferral document created by John Rabbitt. There were some edits/corrections made. Lynda McQuade spoke to Ezequiel Ayala and was told an account has been set up specifically for deferrals.",
+    "note": "Official covers the same 41A deferral topic but omits the end-of-April informal deadline."
+   },
+   {
+    "kind": "agree",
+    "about": "Deferral of detailed staffing/workload metrics review to next meeting",
+    "ours": "[t=3175] Detailed review of the organizational workload/staffing metrics document deferred to the next meeting for a fuller conversation.",
+    "official": "Assessor Organizational Metrics. John Rabbitt believes this tool would be imperative to stay on track. This topic will be added to the next meeting's agenda.",
+    "note": "Both records agree this topic was pushed to the next meeting."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive Session exemption approvals (22E $1,000 disabled exemption; §22 $400 exemption)",
+    "ours": "",
+    "official": "22E $1000.00 exemption 100% Disabled • 2 approved • 1 exemption needs clarification-new or revised reimbursement of $600.00 • 22 $400.00 exemption • 3 approved",
+    "note": "Entirely absent from our minutes because the recording does not capture Executive Session. These are approvals of specific exemption applications with dollar figures a reader should be aware were decided outside the public portion."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Real estate abatements approved in Executive Session",
+    "ours": "",
+    "official": "3 admin abatements granted, land cost error. Total $6001.38.",
+    "note": "Not in our minutes; another item decided in the non-public Executive Session."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "41A letter to Adam Costa discussed in Executive Session",
+    "ours": "",
+    "official": "Discussed application and letter that Jack drafted for Adam Costa to review.",
+    "note": "Not captured in our minutes; Executive Session content."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "DOR Directives / chapter land files (postponed topic)",
+    "ours": "",
+    "official": "POSTPONED TOPICS • DOR Directives. Robin Nano is working on and organizing the chapter land files.",
+    "note": "A postponed agenda item named in the official minutes with no counterpart in our transcript-based minutes — check the recording for whether this was mentioned but not transcribed, or genuinely not discussed in the open session captured."
+   }
+  ],
+  "quotes_not_in_official_dropped": 6,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:07:28Z",
+   "cost_usd": 0.33444399999999996
+  }
  }
 }

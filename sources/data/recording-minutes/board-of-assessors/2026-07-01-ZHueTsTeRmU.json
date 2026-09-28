@@ -414,5 +414,303 @@
    "at": "2026-09-27T02:16:47Z",
    "cost_usd": 0.194
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07012026-7885",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2026-07-01-minutes-7885.txt",
+   "path": "sources/meetings/board-of-assessors/2026-07-01-minutes-7885.pdf"
+  },
+  "official_sha256": "4ce60b484ef13e7f15000d12c5aeaec02f9a34314778060cbf344f05c549ac86",
+  "coverage": "official minutes are a summary only",
+  "summary": "The official minutes hit the same agenda topics as ours but almost never carry a figure or a rationale — of the thirteen figures our captions caught, only the veterans-exemption numbers appear at all, and several of our recorded decisions (holding waterfront recoding until August, the software fix, the tax-shift research plan) are absent entirely. Two attendee roles are worth checking directly: Karen is titled \"assessing office staff\" in ours but \"Finance Director/Town Accountant\" officially, and Rina/Rena Sweezey is a board member in ours but a \"Consultant\" officially.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 8,
+   "only_in_ours": 14,
+   "only_in_official": 7
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "non-procedural votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record shows a formal vote taken at this meeting."
+   },
+   {
+    "kind": "agree",
+    "about": "transfers",
+    "ours": "",
+    "official": "",
+    "note": "No transfers were discussed or recorded in either version."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "waterfront value drop avoided",
+    "ours": "$50,000–$60,000 (t=272)",
+    "official": "",
+    "note": "Official gives no figure for the value drop the board was trying to avoid; not a decision/vote so it is an omission rather than a discrepancy."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "site index one factor",
+    "ours": "2.0 (t=293)",
+    "official": "",
+    "note": "Official says the site indexes were completed but states no factor value."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "seven-neighborhoods factor",
+    "ours": "1.85, 3.7, 3.75 (t=315)",
+    "official": "",
+    "note": "No neighborhood factor values appear in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "waterfront parcel valuation discrepancy",
+    "ours": "$200, $217,000, $120,000, $270,000 (t=524)",
+    "official": "",
+    "note": "The specific parcel valuations discussed are not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "proposed lake-back sub-neighborhood value",
+    "ours": "$20,000 (t=1145)",
+    "official": "",
+    "note": "Not mentioned officially."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "lake-back sub-neighborhood factor",
+    "ours": "110, 10% (t=1229)",
+    "official": "",
+    "note": "Not mentioned officially."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "assessment-to-sale ratio target",
+    "ours": "95%, 96, 95 (t=1460)",
+    "official": "",
+    "note": "Not mentioned officially."
+   },
+   {
+    "kind": "caption_error",
+    "about": "current veterans exemption amount",
+    "ours": "$4,000 (t=2040)",
+    "official": "whether the Town would adopt an increase from $400 to $600 (or some other amount)",
+    "official_reading": "$400",
+    "note": "Captions almost certainly added a zero; official states the current exemption is $400, not $4,000."
+   },
+   {
+    "kind": "agree",
+    "about": "proposed veterans exemption increase",
+    "ours": "$600 (t=2081)",
+    "official": "whether the Town would adopt an increase from $400 to $600 (or some other amount)",
+    "note": "Both records agree the discussed new amount is $600."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "state reimbursement formula detail",
+    "ours": "$387 (t=2081)",
+    "official": "",
+    "note": "Official does not mention any reimbursement-formula figure; check the recording near t=2081 for what $387 refers to."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "assessing office staffing hours",
+    "ours": "19 hours a week (t=2266)",
+    "official": "",
+    "note": "Not mentioned officially."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "senior means-tested exemption utilization, prior year",
+    "ours": "Eight, Six (t=2534)",
+    "official": "",
+    "note": "Not mentioned officially."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "combined circuit breaker and exemption benefit",
+    "ours": "2027, $20,800, $5,500 (t=2574)",
+    "official": "",
+    "note": "Not mentioned officially."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "redistributing a larger senior exemption",
+    "ours": "$5,000 (t=2635)",
+    "official": "",
+    "note": "Not mentioned officially."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "decision on waterfront site index/neighborhood factors",
+    "ours": "Keep the waterfront site index one factor and seven-neighborhoods factor essentially unchanged so parcel values do not drop, rather than following raw sales-derived factors (t=293)",
+    "official": "Rena Swezey has completed the site indexes for the lakefront/waterfront properties. Along the way, she identified and corrected mislabeled properties. There were also several land use codes that needed to manually be changed.",
+    "note": "Official frames this as completed correction work, not as a deliberate decision to hold factors flat to avoid a value drop — check the recording to confirm whether that rationale was actually voted/agreed or is our inference."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "timing of waterfront parcel recoding",
+    "ours": "Hold off recoding waterfront parcels' site index/land use codes until around August, after the second round of preliminary tax bills, so new values first appear on the actual tax bill (t=836)",
+    "official": "",
+    "note": "This scheduling decision is entirely absent from the official minutes; check whether it was actually decided or just discussed informally."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "senior exemption presentation date/venue",
+    "ours": "Hold the senior means-tested exemption public presentation the week of August 10th at the senior center (t=1855)",
+    "official": "Brian Laffond suggests having the presentation at the Adult Activity Center in early August. Karen Barrett will reach out to the Director at the Adult Activity Center regarding scheduling.",
+    "note": "Official treats this as a suggestion still pending scheduling, not a set date, and names a different venue (\"Adult Activity Center\") than ours (\"senior center\") — check whether these are the same building and whether August 10th was ever confirmed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "PDF/Adobe software decision",
+    "ours": "The assessing office resolved its PDF/Adobe software need directly with vendor staff, so the town does not need to purchase a license (t=2308)",
+    "official": "",
+    "note": "Not mentioned at all in the official minutes; check the recording to confirm this was actually resolved as stated."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "next scheduled meetings",
+    "ours": "Tentatively set the board's next two meetings for September 9th and September 23rd (t=2449)",
+    "official": "Upcoming Tentative Meetings: August 5, 2026, September 9, 2026, September 23, 2026.",
+    "note": "Official lists a third tentative meeting, August 5, that our minutes omit — check the recording around t=2449 for whether August 5 was mentioned and missed by the captions."
+   },
+   {
+    "kind": "agree",
+    "about": "veterans exemption sponsorship for Nov STM",
+    "ours": "Discuss increasing the veterans exemption further at a future meeting before deciding whether the board will sponsor it for the November special town meeting (t=2183)",
+    "official": "There will be further discussion at upcoming meetings in hopes of having something to present at the November Special Town Meeting.",
+    "note": "Both records agree the veterans exemption increase is deferred to a future meeting, targeting the November Special Town Meeting."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "redistributing senior exemption via tax shift",
+    "ours": "The assessor will research how a larger senior exemption amount could be redistributed across all tax bills via a tax shift instead of being funded through the overlay (t=2756)",
+    "official": "",
+    "note": "Not mentioned in the official minutes at all; check whether this research task was actually assigned."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair's name",
+    "ours": "Sarah Cameron",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "Same person; captions rendered \"Cammer\" as \"Cameron.\""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Consultant's name",
+    "ours": "Rina Sweezey",
+    "official": "Consultant Rena Swezey",
+    "official_reading": "Rena Swezey",
+    "note": "Same person; captions rendered \"Rena\" as \"Rina.\""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member's name",
+    "ours": "Bryant Moskin",
+    "official": "Member Bryant Moscon",
+    "official_reading": "Bryant Moscon",
+    "note": "Same person; captions rendered \"Moscon\" as \"Moskin.\""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Bryant Lafont",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Same person; captions misheard \"Brian Laffond\" as \"Bryant Lafont,\" also dropping the Chair title."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Karen's role/title",
+    "ours": "Karen — assessing office staff (addressed re: time slips, office software)",
+    "official": "Finance Director/Town Accountant Karen Barrett",
+    "note": "Ours characterizes Karen as assessing-office staff while official lists her as Finance Director/Town Accountant — check which capacity she was actually attending and speaking in."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Rena Swezey's role",
+    "ours": "board member / presenter of neighborhood review project",
+    "official": "Consultant Rena Swezey",
+    "note": "Official lists her as a Consultant, not a board Member — check whether she has a voting role or is a hired consultant to the board."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee \"Cameron Abbott\"",
+    "ours": "Cameron Abbott (board member)",
+    "official": "",
+    "note": "No corresponding name appears among the official minutes' five listed attendees; check the recording for who this refers to."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendee \"Denise\"",
+    "ours": "Denise — assessing office staff (referenced as currently running the office)",
+    "official": "",
+    "note": "Not listed among official attendees; she may have been referenced in conversation without being formally present."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "prior minutes approval",
+    "ours": "",
+    "official": "No public or executive session minutes were reviewed or approved.",
+    "note": "Our minutes do not record that approval of six sets of prior minutes (and three executive session sets) was on the agenda and not acted on."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Principal Assessor search status",
+    "ours": "",
+    "official": "Karen Barrett confirmed there are 2 candidates that will be going into the second round of interviews.",
+    "note": "This hiring update does not appear anywhere in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "senior exemption application window",
+    "ours": "",
+    "official": "Applications for the Senior Means Tested Exemption will be accepted beginning in early August through September 2, 2026.",
+    "note": "The application deadline is not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Lou Franco legislative contact",
+    "ours": "",
+    "official": "Brian Laffond contacted Lou Franco who facilitated the writing and sponsored the legislation to the legislature.",
+    "note": "This contact/background detail on the senior exemption legislation is absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "presentation recording availability",
+    "ours": "",
+    "official": "Brian Laffond stated the recording of the presentation will be shared and made available to view on the Lunenburg Public Access channel.",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "postponed topics",
+    "ours": "",
+    "official": "Criteria for Clause 18; BOA Polices Binder",
+    "note": "Our minutes do not list any postponed topics for this meeting."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "next neighborhood review target",
+    "ours": "",
+    "official": "Rena Swezey anticipates starting to review \"Little Hickory\" next.",
+    "note": "Our minutes do not mention what neighborhood is reviewed next."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:43:51Z",
+   "cost_usd": 0.314322
+  }
  }
 }

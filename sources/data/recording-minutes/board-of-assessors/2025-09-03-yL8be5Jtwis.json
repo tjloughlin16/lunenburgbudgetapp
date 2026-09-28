@@ -425,5 +425,200 @@
    "at": "2026-09-27T12:34:24Z",
    "cost_usd": 0.191112
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09032025-7367",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-09-03-minutes-7367.txt",
+   "path": "sources/meetings/board-of-assessors/2025-09-03-minutes-7367.pdf"
+  },
+  "official_sha256": "9a1c1ee778fa6b17c1794a8e860c2f2d7302e4f50939b01898c05300e17d35b3",
+  "coverage": "partial",
+  "summary": "The two records overlap on the headline growth figure and the chapter-land correction but diverge everywhere else: our transcript-based minutes carry several figures and decisions (GIS/contract costs, mold cure plan, minutes-approval practice, classification-hearing approach) the official minutes never mention, while the official minutes add whole agenda items (Master Plan Response, postponed topics, the full meeting schedule, RFP status, functional-obsolescence property counts) that never surface in ours. The most consequential discrepancy is the senior means-tested exemption: our captions produced a string of disconnected numbers where the official minutes plainly state \"9 applications have been received.\"",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 8,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Board chair's name",
+    "ours": "Brian Lefond (chair)",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Same person, name misheard by captions as 'Lefond'."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sarah Cammer's board role/title",
+    "ours": "Sarah Cammer (member)",
+    "official": "Vice Chair Sarah Cammer",
+    "note": "This isn't a misheard name, it's a missing/different title; check the town's board roster to confirm whether Cammer holds the Vice Chair role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal Assessor's name",
+    "ours": "Linda Ta (principal assessor)",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Same role, name misheard by captions as 'Linda Ta'."
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 assessed growth figure",
+    "ours": "FY assessed growth (residential/commercial/industrial/chapter land): 27,324,570, $392,380.83",
+    "official": "The assessed growth for residential, commercial and industrial totals $27,324,570 with a tax value of $392,380.83",
+    "note": "Figures match exactly; our note adding 'chapter land' to the category list is the only discrepancy in wording, not in the number.",
+    "t": 237
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Estimated personal-property/500s growth ($400,000)",
+    "ours": "Estimated growth from personal property/500s: 400,000",
+    "official": "",
+    "note": "Official minutes report only the residential/commercial/industrial total, not a separate personal-property estimate.",
+    "t": 282
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Senior means-tested exemption count",
+    "ours": "2730, 20, 64, 32 million, 120 to 130, 27,300",
+    "official": "In total, 9 applications have been received for the senior means exemption.",
+    "note": "Our captured figures look like caption fragments that don't reduce to '9 applications'; someone should re-listen to the recording at this timestamp to see what was actually said about application counts and thresholds.",
+    "t": 1460
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "GIS/mapping software subscription cost",
+    "ours": "$2,200 per year, 400",
+    "official": "",
+    "note": "Official minutes describe the GIS software discussion (Sarah Cammer's slideshow, Northeast Arc User Group) but state no cost figures.",
+    "t": 5473
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Current Vision/appraisal contract cost",
+    "ours": "17,000",
+    "official": "",
+    "note": "Official minutes don't mention a contract cost figure at all.",
+    "t": 5811
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter land grading correction",
+    "ours": "Chapter land grading was corrected from 'above average' back to 'average' for consistency.",
+    "official": "Corrections were made regarding chapter land, and the option of above average was removed.",
+    "note": "Same underlying correction described in both.",
+    "t": 1168
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Functional-obsolescence adjustment standardization",
+    "ours": "The office adopted standard functional-obsolescence adjustment percentages (e.g., basement access, structural issues, shared-lot situations) to replace ad hoc, undocumented discounts.",
+    "official": "Mike Tirello from Vision updated the functional and economic obsolescence adjustments discussed at a prior meeting.",
+    "note": "Ours frames this as the assessor's office adopting standardized percentages; official frames it as Vision's contractor giving a status update. Check the recording to see whether a formal adoption decision was actually made or whether this was just a progress report.",
+    "t": 598
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Functional-obsolescence property counts",
+    "ours": "",
+    "official": "In total there were 33 functional obsolescence properties with 24 being residential, 8 being commercial, and 1 town building. So far there have been 10 inspections completed.",
+    "note": "These counts don't appear anywhere in our minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Mold-related 'cost to cure' plan",
+    "ours": "A property owner with a mold-related adjustment will be asked for a 'cost to cure' and given roughly a year to address it before the adjustment is reconsidered.",
+    "official": "",
+    "note": "Official minutes don't mention this specific case."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Practice of noting minutes-approval date",
+    "ours": "Going forward, approved minutes will carry a noted approval date before being sent to the clerk's office.",
+    "official": "",
+    "note": "Not narrated as a decision in the official text, though the official minutes document itself is stamped 'APPROVED 2/4/26 B.P.L.', consistent with the practice.",
+    "t": 1792
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Classification hearing comparison method",
+    "ours": "For the classification hearing, the board will focus on an old-versus-new value comparison (rather than a straight tax-percentage comparison) to flag the largest tax changes.",
+    "official": "",
+    "note": "Official minutes make no mention of a classification hearing.",
+    "t": 3069
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date (October 1)",
+    "ours": "Next Board of Assessors meeting set for October 1st, including an executive session for senior means-tested exemption review.",
+    "official": "October 1, 2025",
+    "note": "The date matches; see next finding for the executive-session detail.",
+    "t": 6412
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Executive session purpose at Oct 1 meeting",
+    "ours": "...including an executive session for senior means-tested exemption review.",
+    "official": "",
+    "note": "Official schedule lists the date only, with no mention of an executive session or its purpose.",
+    "t": 6412
+   },
+   {
+    "kind": "agree",
+    "about": "Checking CAI/MassGIS before new GIS purchase",
+    "ours": "Before committing to new GIS software, the assessor will check what mapping/data access CAI (the town's current vendor) and MassGIS can offer...",
+    "official": "Lynda Cajka will check with CEl and Mass GIS to see if there are any additional features available that can be utilized.",
+    "note": "Same decision; 'CEl' in the official OCR text is almost certainly a scan error for 'CAI'.",
+    "t": 5643
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Data Scout cost comparison",
+    "ours": "...and get cost comparisons from Data Scout and others.",
+    "official": "",
+    "note": "Official minutes mention checking CAI/MassGIS for features but not a vendor cost comparison with Data Scout."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "RFP for neighborhood review",
+    "ours": "",
+    "official": "The RFP for the neighborhood review has been submitted.",
+    "note": "Not mentioned in our minutes at all."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Master Plan Response assignment",
+    "ours": "",
+    "official": "A response is due back to the Master Planning Committee in October. Brian Laffond and Lynda Cajka will work together to create a response.",
+    "note": "Whole agenda item absent from our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Postponed topics list",
+    "ours": "",
+    "official": "Criteria for Clause 18 / BOA Policies Binder / Website",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Full upcoming-meeting schedule",
+    "ours": "",
+    "official": "September 24, 2025 - CANCELED; October 1, 2025; October 15, 2025; November 5, 2025; November 19, 2025; December 3, 2025; December 17, 2025",
+    "note": "Our minutes note only the October 1 meeting; the rest of the schedule and the Sept 24 cancellation are only in the official record."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:19:26Z",
+   "cost_usd": 0.258946
+  }
  }
 }

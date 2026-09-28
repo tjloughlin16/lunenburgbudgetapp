@@ -348,5 +348,188 @@
    "at": "2026-09-27T12:10:24Z",
    "cost_usd": 0.189576
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10222025-7470",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-10-22-minutes-7470.txt",
+   "path": "sources/meetings/board-of-assessors/2025-10-22-minutes-7470.pdf"
+  },
+  "official_sha256": "431f3b9feea1e6956977a66a4a583527228bdd5534b802c6aa6e99130ce97aef",
+  "coverage": "partial",
+  "summary": "The two records barely overlap: ours captures granular figures from the open-session discussion (site indexes, Vision's contract, warrant-article thresholds) that the official minutes never print, while the official minutes record procedural votes and a detailed executive-session breakdown (95 exemptions reviewed, 84 approved by category) that our recording-based minutes have nothing on. The one place they should line up — the FY2026 LA4 rate changes and new-growth figures — mostly agrees once a dropped digit and a garbled property class are accounted for, but the \"eight\" senior means-tested applications in ours vs. \"2 Senior Means Tested\" approved in the official executive-session tally is a real numbers mismatch that should be checked against the LA4/exemption records.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 8,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Board member name: Sarah Cameron",
+    "ours": "Sarah Cameron",
+    "official": "Vice Chair Sarah Cammer",
+    "official_reading": "Sarah Cammer",
+    "note": "Captions misheard the surname; same person, same role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member name: Brian Lefond",
+    "ours": "Brian Lefond",
+    "official": "Chair Brian Laffond",
+    "official_reading": "Brian Laffond",
+    "note": "Captions misheard the surname; same person, same role (Chair, omitted in ours)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal assessor name: Linda Chaika",
+    "ours": "Linda Chaika",
+    "official": "Principal Assessor Lynda Cajka",
+    "official_reading": "Lynda Cajka",
+    "note": "Captions misheard both first and last name."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FY2026 LA4 rate change, second/third property class",
+    "t": 2609,
+    "ours": "1.8%, 2.9%, 6.6%, 2.3%, 4.2%",
+    "official": "Single Family increased 1.8% / Condos went up 2.9% (previously reported as 4.5%) / 2 families went up 3.3% / 3 families went up 4.2%",
+    "note": "Three figures line up (1.8%, 2.9%, 4.2%) but ours has two extra/garbled values (6.6%, 2.3%) where official has one (3.3% for 2-family); pull the actual LA4 report to see whether a category was mis-split or misheard, not just a digit error."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Prior condo rate estimate",
+    "ours": "",
+    "official": "Condos went up 2.9% (previously reported as 4.5%)",
+    "note": "Context ours omits entirely — worth checking if the recording mentioned the 4.5% prior figure at all."
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY2026 new growth, personal property",
+    "t": 2803,
+    "ours": "24,684",
+    "official": "The new growth for personal property tax was $124,684.",
+    "official_reading": "$124,684",
+    "note": "Leading digit dropped by the caption model; same figure otherwise."
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 new growth, real estate",
+    "ours": "394,297",
+    "official": "The FY26 real estate tax dollars were roughly $394,297.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 total new growth",
+    "ours": "$518,980",
+    "official": "The total growth for FY 26 is $518,980.",
+    "note": "Matches exactly."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Condo complex sales adjustment percentages",
+    "t": 2652,
+    "ours": "Condo complex sales adjustment: 4%, 2%",
+    "official": "",
+    "note": "No corresponding figure in the official minutes; check the recording context to see if this belongs under the LA4 discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Site index cost changes by neighborhood",
+    "t": 2484,
+    "ours": "2.5, 2.45, 2.42, 3.7",
+    "official": "Previously the Board requested a new report with the site indexes included and those were received.",
+    "note": "Official acknowledges site-index figures exist but never prints them; ours has the numbers the official minutes summarized away."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Means-tested senior exemption dollar amount",
+    "t": 3236,
+    "ours": "Means-tested senior tax exemption: $2,700 a year",
+    "official": "",
+    "note": "No dollar amount appears anywhere in the official minutes for this exemption."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "41A warrant income-limit figure",
+    "t": 3627,
+    "ours": "41A income-limit warrant article: 72,000",
+    "official": "The Board is awaiting feedback from Town Counsel regarding the warrant article. The Board did receive positive feedback from the Select Board.",
+    "note": "Official confirms the warrant article is pending but never states the $72,000 threshold; verify against the actual warrant article text."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Historic exemption income qualifier",
+    "t": 1301,
+    "ours": "Historic exemption income qualifiers: $20,000",
+    "official": "",
+    "note": "No mention of a historic exemption or its income threshold in the official minutes at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision to revisit chair/vice-chair once third member appointed",
+    "t": 1780,
+    "ours": "Board will revisit chair and vice-chair assignments once a third member is appointed.",
+    "official": "",
+    "note": "Not recorded in the official minutes, though the Brian Marple talent-bank item suggests a third member is indeed pending — check the recording for this exchange."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Resuming posted qualified sales data",
+    "t": 3163,
+    "ours": "Board agreed to resume posting qualified sales data outside the office, with a staff member (Robin) asked to do it.",
+    "official": "",
+    "note": "No mention of this decision or of a staff member named Robin anywhere in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant article for disabled-resident tax exemption",
+    "t": 3277,
+    "ours": "Board agreed to explore a warrant article next spring creating a property tax exemption for disabled residents.",
+    "official": "",
+    "note": "Only the 41A income-limitation warrant article appears in the official minutes; this disabled-resident exemption idea is absent — confirm it was actually discussed and not conflated with 41A."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "t": 3854,
+    "ours": "Next meeting tentatively set for Monday, November 3rd.",
+    "official": "Meetings are scheduled for the first week of November, 3 2025 (date may change)",
+    "note": "Matches, including the same-day-may-change caveat."
+   },
+   {
+    "kind": "agree",
+    "about": "Meeting after Town Meeting",
+    "t": 3875,
+    "ours": "Meeting following town meeting set for November 19th.",
+    "official": "November 19, 2025",
+    "note": "Matches; official also lists Dec 3 and Dec 17, which ours does not mention (only_in_official, minor)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive session exemption review results",
+    "ours": "",
+    "official": "A total of 95 real estate exemptions were reviewed with Lynda Cajka, the Assessor. Of the 95 real estate exemptions, the Board of Assessors approved 84 applications, and 11 were not approved due to inadequate documentation.",
+    "note": "Entire executive-session substance (95 reviewed, 84 approved with a category breakdown, 11 denied for missing VA/other paperwork) is absent from our minutes, which only cover the open session captured on video."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Procedural votes (minutes approval, executive session entry)",
+    "ours": "none",
+    "official": "There was a motion to approve the minutes from May 19, 2025, and June 11, 2025, by Sarah Cammer, seconded by Brian Laffond. All in favor.",
+    "note": "Treated as procedural per instructions and not required for comparison, but noting for completeness that ours records zero votes while official records three procedural ones."
+   }
+  ],
+  "quotes_not_in_official_dropped": 5,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T13:24:28Z",
+   "cost_usd": 0.28011400000000003
+  }
  }
 }

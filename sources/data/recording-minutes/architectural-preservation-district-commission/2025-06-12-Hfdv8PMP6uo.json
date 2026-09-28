@@ -417,5 +417,145 @@
    "at": "2026-09-27T18:14:27Z",
    "cost_usd": 0.19959400000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06122025-7264",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-06-12-minutes-7264.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-06-12-minutes-7264.pdf"
+  },
+  "official_sha256": "30e239fb9a7d7efccf99437f236b24493c08332f5949b7ac5fb2121e85582bb0",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the meeting's headline votes (Jones House siding, mailer cap amount, Hometown Heroes funding) but our minutes cover only roughly the first half of the meeting — everything after the Brooks House discussion (50 Main Street, 763 Main Street, the full Historical Commission report, and the Master Plan Committee's quorum problem) is entirely absent, while several figures and characterizations in our minutes (the $5,000 APDC allocation's nature, the 936 Mass Ave vote's substance, and the November timeline for the merger) diverge enough from the official text to need a recording check. The single clearest caption error is \"Hardy plank\" for \"Hardie Board\" siding.</summary>\n",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 5,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Attendee roster (count and identity)",
+    "ours": "the chair (chair), William (member), Richard (member), Nathan (member)",
+    "official": "Present: Chairman Sculimbrene, Lloyd, McGrath, Lockwood",
+    "note": "Same four people attended; ours captured only first names from the captions while the official minutes give surnames — William=Lloyd, Richard=McGrath, Nathan=Lockwood."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Jones House siding material name",
+    "ours": "the proposed Hardy plank siding change at the Jones House",
+    "official": "House siding replacement, plan to replace with like Hardie Board to match.",
+    "official_reading": "Hardie Board",
+    "note": "Same brand product (Hardie Board/HardiePlank fiber-cement siding), misheard by captions as \"Hardy plank.\""
+   },
+   {
+    "kind": "agree",
+    "about": "Jones House siding vote",
+    "ours": "Motion to approve the proposed Hardy plank siding change at the Jones House — passed [t=372]",
+    "official": "Motion to approved by Lockwood, seconded by Lloyd, approved by all",
+    "note": "Same vote, same outcome (unanimous approval)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Jones House siding classified as maintenance, not requiring a Determination of Applicability",
+    "ours": "The committee agreed the Jones House siding replacement should be classified as maintenance, not requiring a separate Determination of Applicability form (though a motion was still made for the record). [t=337]",
+    "official": "",
+    "note": "This is a substantive classification decision that the official minutes omit entirely; worth checking the recording near t=337 to confirm it was actually said, since it changes what kind of review the project needed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Garage jurisdiction determination at 936 Mass Avenue",
+    "ours": "The proposed new garage at 936 Mass Ave falls primarily under the building commissioner, and possibly the zoning board of appeals or planning board, with APDC serving only in an advisory capacity. [t=1930]",
+    "official": "Contractor asked about a future plan for a garage on the property. Wanted to verify process for a new structure is the same for a renovation.",
+    "note": "The official minutes record only that the question was asked, not the answer; check the recording near t=1930 to confirm whether the commission actually stated which board has jurisdiction, since the official record leaves this open."
+   },
+   {
+    "kind": "agree",
+    "about": "APDC annual budget figures",
+    "ours": "APDC town budget line: $5,000, $500 [t=2202]",
+    "official": "It was not realized that the $5K was an annual budget. Was reduced to $500 annually.",
+    "note": "Both records agree the APDC line was $5,000 and was reduced to $500 annually."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Nature of the $5,000 in play (current-year leftover vs. annual budget)",
+    "ours": "Uncertainty over whether the current fiscal year's remaining $5,000 APDC allocation could be moved or reallocated before the fiscal year closes — 5,000 (discussed only) [t=2243]; Year-end fund availability: 5,000, 20 days [t=2266]",
+    "official": "It was not realized that the $5K was an annual budget. Was reduced to $500 annually.",
+    "note": "Ours describes this as leftover current-year money that might expire in ~20 days; official describes it as a recognition that $5K was the (now-reduced) annual budget figure. These are different claims about what the $5,000 represents — check the recording to determine whether the $5,000 discussed was a current-year unspent balance or the prior annual budget amount."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Hometown Heroes banner funding — prior-year vs. current-year funds",
+    "ours": "Motion to direct available APDC funds to the hometown heroes banner project, if current fiscal year funds are confirmed available — passed [t=2457]",
+    "official": "Motion to donate remaining prior year funds to support the project, seconded by McGraph, approved by all.",
+    "note": "Both show a passed motion funding the Hometown Heroes project, but ours conditions it on current-year funds while official specifies prior-year funds — check which fiscal year's money was actually voted, since it affects whether the funding was contingent as ours suggests."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Historical Society set-aside funds figure",
+    "ours": "Historical commission set-aside funds: 2850 [t=2311]",
+    "official": "Question was asked if there any funding in historical society for this; yes, there are some funds aside for that project.",
+    "note": "Official confirms set-aside funds exist but states no amount, so the $2,850 figure cannot be checked against the official text — verify it against the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Mailer procurement vote outcome recorded",
+    "ours": "Motion to procure envelopes and stamps for next year's mailers, capped around $100 — passed [t=2539]",
+    "official": "Motion to approve spending up to $100 to purchase materials for the APDC mailers.",
+    "note": "The $100 cap matches, but the official minutes do not state this motion's outcome (no 'approved by all' follows it, unlike the motion just before it) — check the recording to confirm the mailer motion passed as ours reports."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Intermediate $50 figure discussed for mailer supplies",
+    "ours": "Mailer supplies (envelopes, stamps): 50 bucks, 100 [t=2560]",
+    "official": "Motion to approve spending up to $100 to purchase materials for the APDC mailers.",
+    "note": "Official records only the final $100 cap; the $50 figure ours captured may have been an earlier estimate discussed before settling on $100."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Whether November timing applies to the merger discussion or the Brooks House warrant",
+    "ours": "Adam Costa will ask the town manager how a resident's letter opposing the APDC/historical commission merger affects the timeline, before the group meets again ahead of a targeted November special town meeting. [t=2685]",
+    "official": "Asked Adam to have a conversation with the Town Manager to gauge the input from the town. There are three options, one there is no change, second option is that the historical commission takes over APDC responsibilities, or third is APDC expands to cover the entire town.",
+    "note": "Official does not tie a November special town meeting to the merger question — November is mentioned only in connection with the separate Brooks House warrant article; check the recording around t=2685 to confirm whether the November deadline applies to the merger timeline or was conflated with the Brooks House item."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Jones House siding cost estimate",
+    "ours": "Jones House siding material choice: $10,000 [t=349]",
+    "official": "",
+    "note": "No dollar figure for the siding project appears anywhere in the official minutes; verify the $10,000 against the recording since it may be a misheard or extraneous figure."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "50 Main Street update",
+    "ours": "",
+    "official": "Has some bids in. Will have a more detailed response at next meeting.",
+    "note": "Entirely absent from our minutes — the recording our minutes were built from appears not to cover this agenda item (t range ends at 2895, well before an 8:15 PM adjournment)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "763 Main Street demolition delay status",
+    "ours": "",
+    "official": "Still in demo delay, no response back from the owner. Will send a formal letter to owners in Florida.",
+    "note": "Not present in our minutes at all; likely outside the portion of the recording our minutes were generated from."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Lunenburg Master Plan Committee quorum problem",
+    "ours": "",
+    "official": "Quorum for meetings is 8, which is leading to continuous meeting cancelations. This is limiting the committee ability to meet and accomplish any work.",
+    "note": "Not captured in our minutes; another indicator our minutes cover only part of the meeting."
+   }
+  ],
+  "quotes_not_in_official_dropped": 5,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-28T12:56:50Z",
+   "cost_usd": 0.292028
+  }
  }
 }
