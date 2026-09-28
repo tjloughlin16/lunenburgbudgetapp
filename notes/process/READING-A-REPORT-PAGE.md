@@ -211,6 +211,51 @@ is why 46 missing rows looked exactly like 46 funds the town does not have (rule
 `search_minutes.py` prints its denominator on every run and for the same reason: **a reader
 who is told nothing assumes nothing was lost.**
 
+## FIND THE WHOLE TABLE BEFORE READING ANY OF IT
+
+**A table is a RUN, and the tracker lists pages.** The two are not the same thing and the
+difference is where a partial read hides.
+
+FY2024's gross wage list runs from page 186 to page 193. The tracker listed 187, 192 and
+193. Working the flagged pages would have transcribed 205 names of 675 and called the job
+done -- and the coverage check would have PASSED, because those three pages are each
+internally in order. A check cannot see a page it was never given.
+
+**So before reading anything, establish the extent:**
+
+- **Read the first flagged page and look at what it starts and ends with.** A wage list
+  beginning at `CAMPBELL` is not the beginning of the alphabet, so pages come before it.
+- **Walk outward until the table stops.** Page 186 opens at `ABRAHAM` and page 193 closes at
+  `ZRATE`; that is the run, and it is eight pages.
+- **Ask what the whole thing should hold**, from the shape rather than from our data. 47
+  printed rows in two columns is 94 a page. Against that, `111 rows across four pages` is
+  visibly wrong before a single page is read.
+
+**And the tracker's own list is not the answer to `which pages`.** It holds a page only when
+recognition found fifteen money figures on it, so a page recognition failed on entirely is
+not listed as unfinished -- it is not listed at all. Five of those eight were invisible that
+way, and FY2024 was published as 22 financial pages when it has at least 28. A page somebody
+has READ is now added to the map, but nothing finds the pages nobody has looked at yet: see
+`sources/data/money-gaps.csv`.
+
+## A PAGE THAT PRINTS NO TOTAL IS CHECKED ON COVERAGE, AND THE CHECK IS DECLARED
+
+The wage lists print no total anywhere, so there is no arithmetic to close. The page still
+asserts things about its own shape, and the transcription DECLARES them in `kind=check` rows
+that `verify_page_reads.py` asserts on every run:
+
+    column `rows_per_page`   every page but the last carries exactly this many rows
+    column `ordered_by`      the named column never goes backwards through the whole run
+
+**Both, or neither is worth much.** The sequence catches a page or a block dropped and
+cannot see a single name skipped; the count catches a skipped name and cannot see a dropped
+page. FY2024: seven full pages at 94 rows, and `ABRAHAM` to `ZRATE` without going backwards
+once in 675 rows.
+
+**A coverage check is weaker than arithmetic and should say so.** It proves the shape, not
+the figures: a misread digit survives both assertions untouched. Where a second printing of
+the same quantity exists anywhere in the archive, reconcile to it instead.
+
 ## THE PROCESS -- three steps, in this order
 
 ### 1. READ the page into a CSV -- with `page_table.py`, not by hand
