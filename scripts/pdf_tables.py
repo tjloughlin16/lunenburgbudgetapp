@@ -241,6 +241,27 @@ def amount(text):
     # and unclosed it parses as nothing, so the page's own total cannot be read and the
     # year has nothing to be proven against. Only gaps BETWEEN digits and separators are
     # closed, so `1 234` in prose is still two numbers.
+    # ...BUT IT CANNOT CLOSE A GAP BETWEEN TWO SEPARATE CELLS. The rule above was written
+    # for `44,024, 349.19`, one figure split after a group separator. It cannot tell that
+    # apart from two adjacent right-aligned figures the column ruler could not cut, because
+    # `min_gutter=2` and they are a single space apart -- and the "last separator followed
+    # by two digits is the decimal point" rule then blesses the result:
+    #
+    #     `$13,260.96 $2,451.81`  ->  13,260,962,451.81      FY2013 p66
+    #     `$1,191.03  $1,191.03`  ->   1,191,031,191.03      FY2012 p62
+    #
+    # Sixteen cells of the accountant schedule held $100,000,000 or more and summed to
+    # $140 BILLION, in a table whose printed grand total is about $45M. `ABSURD = 1e11` is
+    # three orders of magnitude above anything this archive can contain, so every one
+    # passed. That is where FY2017's `+293,416,284.93` came from.
+    #
+    # So: if what sits to the LEFT of an internal space is already a complete money token,
+    # this is two cells and not one number. Refuse it. Returning None puts it in
+    # `unparsed_cells` where it is visible and stops the total it belongs to from closing,
+    # which is the honest outcome -- a page that cannot be read must not quietly read as a
+    # billion dollars.
+    if re.search(r'\d[.,]\d\d\s+[\d$]', t):
+        return None
     t = re.sub(r'(?<=[\d.,])\s+(?=[\d.,])', '', t)
 
     # Separators, whichever glyph OCR produced for them.

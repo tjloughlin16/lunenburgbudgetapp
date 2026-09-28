@@ -242,10 +242,27 @@ def best_ruler(figures, num=None):
         got = spanned = wordy = 0
         for f in figures:
             cs = T.cells(f, ruler)
-            if cs and cs[-1] == '!':
+            # A RULER MUST NOT EARN CREDIT FOR FIGURES IT CREATED BY CUTTING ONE IN HALF.
+            # `got` counted every cell that parses as a number, including the two halves a
+            # cut through `$27,798.82` makes -- `$27,798.8` and `2` -- so slicing a figure
+            # scored (got+1, -(spanned+1)) against (got, -spanned), which is strictly
+            # greater under tuple comparison. `-spanned` is a tiebreaker and can never
+            # outweigh a `got` it just bought, so the finer ruler always won and won by
+            # destroying figures. 466 of 2,765 rows of the accountant schedule carried
+            # `ruler_spanned=yes`, and on twenty pages the extractor parsed MORE money
+            # cells than the page prints -- manufacturing figures is the signature.
+            #
+            # That is where `-0.02 over 4 lines` and `+2.00 over 4 lines` came from, on the
+            # same rows at the same moment: the cents stay in one column and the orphaned
+            # digit lands in the next. Not a tolerance to widen -- a reward the objective
+            # should never have offered. A spanned row now contributes its span and
+            # nothing else, so a cut has to pay for itself out of rows it cut CLEANLY.
+            spanned_row = bool(cs and cs[-1] == '!')
+            if spanned_row:
                 spanned += 1
                 cs = cs[:-1]
-            got += sum(1 for c in cs if num(c) is not None)
+            if not spanned_row:
+                got += sum(1 for c in cs if num(c) is not None)
             # A finer ruler must not buy figures by chopping words up. FY2019's grand
             # total came through as `GRAND` and `TOTAL  $41,178,985.82` in two cells, so
             # the row stopped being recognised as the total and the year lost its only
