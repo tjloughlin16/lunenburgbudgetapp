@@ -1,11 +1,11 @@
 # The annual town reports
 
-Sixteen documents, 477 pages of financial tables, 23,637 rows read out of them.
+Sixteen documents, 477 pages of financial tables, 23,639 rows read out of them.
 
 ## The short version
 
 - Every financial page in every report has been read. **None is unread.**
-- **199 of 477** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
+- **201 of 477** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
 - **10 pages** an extractor reached and wrote nothing from. Each says why.
 - What is left is **code, not reading**.
 
@@ -50,18 +50,18 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | balance sheet | what the town held and owed at year end | 17 | 16 | 1 | 0 |
 | valuation | what the town is worth, by class of property | 16 | 8 | 8 | 0 |
 | treasurers cash | the cash the Treasurer held | 15 | 14 | 0 | 1 |
-| capital | the capital projects and what they cost | 13 | 7 | 6 | 0 |
+| capital | the capital projects and what they cost | 13 | 9 | 4 | 0 |
 | enrollment | how many children are in the schools | 6 | 3 | 3 | 0 |
 | elections | how the town voted | 2 | 1 | 1 | 0 |
 | cultural council | the grants the cultural council made | 1 | 0 | 1 | 0 |
-| **total** |  | **477** | **199** | **268** | **10** |
+| **total** |  | **477** | **201** | **266** | **10** |
 
 ## By report
 
 | fiscal year | pages | proven | unproven | refused |
 |---|---:|---:|---:|---:|
 | FY2011 | 28 | 10 | 17 | 1 |
-| FY2012 | 27 | 9 | 17 | 1 |
+| FY2012 | 27 | 10 | 16 | 1 |
 | FY2013 | 29 | 8 | 20 | 1 |
 | FY2014 | 27 | 14 | 13 | 0 |
 | FY2015 | 31 | 13 | 18 | 0 |
@@ -74,7 +74,7 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | FY2022 | 33 | 18 | 15 | 0 |
 | FY2023 | 34 | 15 | 17 | 2 |
 | FY2024 | 22 | 10 | 12 | 0 |
-| FY2025 | 23 | 16 | 7 | 0 |
+| FY2025 | 23 | 17 | 6 | 0 |
 
 ## The datasets read out of them
 
@@ -91,7 +91,7 @@ A **dedicated** extractor knows what its table means and can check it against a 
 | `staff-roster-counts.csv` | 698 | 2011–2025 | dedicated |  — | — | —  |
 | `report-index.csv` | 652 | 2011–2025 | generic |  — | — | —  |
 | `report-trust-funds.csv` | 644 | 2011–2025 | generic | 12 | 418 | 214 |
-| `report-capital-projects.csv` | 616 | 2011–2025 | generic | 0 | 529 | 87 |
+| `report-capital-projects.csv` | 618 | 2011–2025 | generic | 48 | 544 | 26 |
 | `staff-position-map.csv` | 525 | — | dedicated |  — | — | —  |
 | `report-dept-activity.csv` | 515 | 2011–2025 | generic | 0 | 0 | 515 |
 | `report-debt.csv` | 366 | 2011–2025 | generic | 75 | 99 | 192 |

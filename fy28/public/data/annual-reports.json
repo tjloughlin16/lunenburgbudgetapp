@@ -99,10 +99,10 @@
   {
    "means": "the capital projects and what they cost",
    "pages": 13,
-   "proven": 7,
+   "proven": 9,
    "refused": 0,
    "subject": "capital",
-   "unproven": 6
+   "unproven": 4
   },
   {
    "means": "how many children are in the schools",
@@ -153,7 +153,7 @@
   {
    "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
    "bearing": "sizes",
-   "claim": "199 of 477 pages tie to a total the page itself prints.",
+   "claim": "201 of 477 pages tie to a total the page itself prints.",
    "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
    "figure": "proven",
    "figures": {
@@ -163,14 +163,14 @@
      "value": 477
     },
     "proven": {
-     "text": "199",
+     "text": "201",
      "unit": "pages tied to a printed total",
-     "value": 199
+     "value": 201
     },
     "rest": {
-     "text": "278",
+     "text": "276",
      "unit": "pages with no such check",
-     "value": 278
+     "value": 276
     }
    },
    "id": "a-third-of-the-pages-are-checked-against-the-page-itself",
@@ -178,7 +178,7 @@
    "literals": [],
    "not_shown": "That an UNPROVEN figure is wrong. It means nothing has checked it, which is a different claim and the reason the column exists.",
    "see": [],
-   "so_what": "The other 278 carry real figures that no arithmetic has confirmed."
+   "so_what": "The other 276 carry real figures that no arithmetic has confirmed."
   },
   {
    "basis": "`annual-report-pages.csv` grouped by subject and state.",
@@ -329,11 +329,11 @@
   },
   {
    "built_by": "generic",
-   "checked": 0,
-   "failed": 529,
+   "checked": 48,
+   "failed": 544,
    "name": "report-capital-projects",
-   "nocheck": 87,
-   "rows": 616,
+   "nocheck": 26,
+   "rows": 618,
    "years": "2011–2025"
   },
   {
@@ -625,11 +625,11 @@
   },
   {
    "label": "pages tied to a total the page prints",
-   "value": "199 of 477"
+   "value": "201 of 477"
   },
   {
    "label": "rows read out of them",
-   "value": "23,637"
+   "value": "23,639"
   }
  ],
  "title": "The annual town reports"

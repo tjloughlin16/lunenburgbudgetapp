@@ -90,6 +90,85 @@ def is_column_heading(label):
     return bool(COLUMN_HEADING.match(squash(label)))
 
 
+
+# ======================================================================================
+# A DIGITAL PAGE IS READ, NOT RECOGNISED
+# ======================================================================================
+#
+# Eight of the sixteen annual reports are BORN DIGITAL -- FY2014, FY2015, FY2016, FY2017,
+# FY2018, FY2020, FY2024, FY2025 -- and this extractor renders every one of them to an
+# image and runs character recognition over it. On FY2025's wage pages that cost 80 people
+# and $3.7M; on its special revenue pages the first row came out as `fund: 'as'`, sliced
+# out of the heading `as of June 30, 2025`.
+#
+# Recognition is a guess. A text layer is the characters the document actually holds, with
+# their coordinates. Where there is one, it wins.
+#
+# THE REGISTRY IS EXPLICIT rather than automatic, because a page's COLUMNS still have to be
+# named and only a person reading the page can say what they are. `columns` is (name, x
+# from, x to) read off the printed header; `total` is the pattern of the row the table
+# foots to, which is what turns a reading into a proof.
+TEXT_LAYER_RUNS = {
+    ('capital_projects', 'FY2025'): dict(
+        doc='4130-fy-2025-annual-town-report.pdf', pages=[30], stop_below=460,
+        columns=[('fund balance', 320, 400), ('receipts', 400, 480),
+                 ('remaining deficits', 480, 560)],
+        total=r'TOTAL CAPITAL PROJECT FUND BALANCE',
+        label_max=320),
+}
+
+
+def read_text_layer_run(dataset, edition):
+    """Rows and the table's own printed total, off a digital page. ([], None) if none."""
+    spec = TEXT_LAYER_RUNS.get((dataset, edition))
+    if not spec:
+        return [], None
+    try:
+        import pdfplumber
+    except ImportError:
+        return [], None
+    path = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs', spec['doc'])
+    if not os.path.exists(path):
+        return [], None
+    rows, total = [], None
+    with pdfplumber.open(path) as pdf:
+        for n in spec['pages']:
+            words = pdf.pages[n - 1].extract_words()
+            if len(words) < 40:
+                continue
+            lines = {}
+            for w in words:
+                lines.setdefault(round(w['top']), []).append(w)
+            for top in sorted(lines):
+                if spec.get('stop_below') and top > spec['stop_below']:
+                    break
+                ws = sorted(lines[top], key=lambda w: w['x0'])
+                label = ' '.join(w['text'] for w in ws
+                                 if w['x0'] < spec['label_max']).strip()
+                if not label:
+                    continue
+                vals = {}
+                for name, lo, hi in spec['columns']:
+                    frag = [w['text'] for w in ws if lo <= w['x0'] < hi
+                            and w['text'].strip() not in ('-', '\u2013', '$')]
+                    if not frag:
+                        continue
+                    t = ''.join(frag).replace(',', '').replace('$', '')
+                    neg = t.startswith('(') and t.endswith(')')
+                    t = t.strip('()')
+                    try:
+                        v = float(t)
+                    except ValueError:
+                        continue
+                    vals[name] = -v if neg else v
+                if re.match(spec['total'], label, re.I):
+                    total = vals
+                    continue
+                if re.match(r'^\d{3,4}\b', label) and vals:
+                    rows.append({'page': n, 'label': label, 'values': vals})
+    return rows, total
+
+
 def plan_for(dataset):
     """Page ranges per edition, from the catalogue-derived plan."""
     want = collections.defaultdict(set)
@@ -804,6 +883,43 @@ def extract(dataset):
         # $161,209,998.22 against a printed $43,104,912.84, which says nothing about
         # either. A table is a contiguous run of pages; each run is checked against its own
         # total.
+        # THE TEXT LAYER REPLACES THE OCR READING OF THIS RUN, where there is one. It is
+        # done here, before the run is assembled, so everything downstream -- naming,
+        # reconciliation, the ledger -- sees one reading of the page and not two.
+        tl_rows, tl_total = read_text_layer_run(dataset, edition)
+        if tl_rows:
+            tl_pages = {r['page'] for r in tl_rows}
+            names_tl = [c[0] for c in TEXT_LAYER_RUNS[(dataset, edition)]['columns']]
+            ties_tl = {}
+            for i, nm in enumerate(names_tl, start=1):
+                if tl_total and nm in tl_total:
+                    got = sum(r['values'].get(nm, 0.0) for r in tl_rows)
+                    ties_tl[nm] = abs(got - tl_total[nm]) <= 0.005
+            verdict = ('checked' if ties_tl and all(ties_tl.values())
+                       else 'check failed' if ties_tl else 'no check')
+            why = (('every row sums to the total the table prints for itself in %s; read '
+                    'from the PDF\u2019s own TEXT LAYER rather than recognised'
+                    % ', '.join('%s (%s)' % (k, 'ties' if v else 'OUT')
+                                for k, v in sorted(ties_tl.items())))
+                   if ties_tl else 'read from the text layer; no printed total found')
+            keep = [r for r in rows[n0:] if r['page'] not in tl_pages]
+            del rows[n0:]
+            rows.extend(keep)
+            for r in tl_rows:
+                row = {k: '' for k in FIELDS} if 'FIELDS' in globals() else {}
+                row.update({'dataset': dataset, 'fy': str(fy), 'edition': edition,
+                            'page': r['page'], 'kind': 'row', 'label': r['label'],
+                            'table_family': dataset,
+                            'columns_as_printed': ' | '.join(names_tl),
+                            'column_meaning': ' | '.join(
+                                'v%d=%s' % (i, nm) for i, nm in enumerate(names_tl, 1))
+                            + ' -- named from the header the page prints',
+                            'n_values': str(len(r['values'])),
+                            'status': verdict, 'reconciliation': why})
+                for i, nm in enumerate(names_tl, start=1):
+                    row['v%d' % i] = ('%.2f' % r['values'][nm]) if nm in r['values'] else ''
+                rows.append(row)
+            continue
         for run in runs:
             in_run = [r for r in rows[n0:] if r['page'] in run]
             head = HEADINGS.get((edition, run[0]))
