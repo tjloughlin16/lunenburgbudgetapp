@@ -76,6 +76,7 @@ DEFAULT_TOL = 0.02
 #
 #   column `rows_per_page`   every page but the last carries exactly this many rows
 #   column `ordered_by`      the named column never goes backwards through the whole run
+#   column `row_identity`    `a,b,c=d` -- every row's components sum to its own total
 #
 # The wage lists are why. They print 675 names across eight pages and no total anywhere, so
 # there is no arithmetic to close -- but the page's own shape is an assertion: 47 printed
@@ -97,6 +98,7 @@ def main():
     tol = {}
     declared = collections.defaultdict(dict)
     seen = collections.defaultdict(list)
+    per_row = collections.defaultdict(list)
     printed_on = {}
     rows = collections.Counter()
     pages = collections.defaultdict(set)
@@ -117,6 +119,7 @@ def main():
                 continue
             got[key][r['column']] += float(r['value'])
             seen[key].append((int(r['page']), r.get('fund_number', '')))
+            per_row[key].append(r)
             rows[key] += 1
             pages[key].add(r['page'])
 
@@ -156,7 +159,7 @@ def main():
                                          % (c, format(round(got[key].get(c, 0.0), 2), ','),
                                             format(p, ','))
                                          for c, p in sorted(want[key].items())))
-        elif declared.get(key):
+        if declared.get(key):
             # COVERAGE: the shape the page asserts about itself.
             d, notes, ok = declared[key], [], True
             if d.get('rows_per_page'):
@@ -171,6 +174,30 @@ def main():
                 if wrong:
                     ok = False
                     notes[-1] += ' -- WRONG: %s' % wrong
+            if d.get('row_identity'):
+                # EVERY ROW PROVES ITSELF. The receivables summary prints no grand total but
+                # states an identity on each line -- forward plus commitments, abatements,
+                # payments, refunds, transfers and adjustments equals the balance carried.
+                # Sixty-three independent assertions is a far stronger check than one total,
+                # and it is why this page's refusal was wrong: the extractor looked for ONE
+                # sign convention across the page when the page prints negatives in
+                # parentheses per column.
+                parts, _, whole = d['row_identity'].partition('=')
+                parts = [c.strip() for c in parts.split(',')]
+                rows_, off = collections.defaultdict(dict), []
+                for r in per_row[key]:
+                    rows_[(r['page'], r['fund_number'])][r['column']] = float(r['value'])
+                for (pg, name), cells in sorted(rows_.items()):
+                    got = round(sum(cells.get(c, 0.0) for c in parts), 2)
+                    wnt = round(cells.get(whole.strip(), 0.0), 2)
+                    if abs(got - wnt) > tol.get(key, DEFAULT_TOL):
+                        off.append('p%s %s: %s vs %s' % (pg, name, format(got, ','),
+                                                         format(wnt, ',')))
+                notes.append('%d of %d rows close on %s'
+                             % (len(rows_) - len(off), len(rows_), d['row_identity']))
+                if off:
+                    ok = False
+                    notes[-1] += ' -- ' + '; '.join(off[:4])
             if d.get('ordered_by'):
                 keys = [re.sub(r'[^A-Z ]', '', v.upper()) for _, v in seen[key]]
                 back = sum(1 for a, b in zip(keys, keys[1:]) if b < a)
@@ -180,12 +207,18 @@ def main():
                              '%s goes BACKWARDS %d times' % (d['ordered_by'], back))
                 if back:
                     ok = False
-            verdict, why = ('checked' if ok else 'check failed'), '; '.join(notes)
-            print('FY%s %s -- %d rows across %d pages, coverage: %s'
-                  % (key[0], key[1], rows[key], len(pages[key]), why))
+            print('FY%s %s -- declared: %s' % (key[0], key[1], '; '.join(notes)))
             if not ok:
-                bad.append('FY%s %s: %s' % (key[0], key[1], why))
-        else:
+                bad.append('FY%s %s: %s' % (key[0], key[1], '; '.join(notes)))
+            if key in want:
+                # the printed total already decided the verdict above; a declared check
+                # can only take it away, never grant it
+                if not ok:
+                    verdict = 'check failed'
+                    why += ' ; ' + '; '.join(notes)
+            else:
+                verdict, why = ('checked' if ok else 'check failed'), '; '.join(notes)
+        elif key not in want:
             verdict, why = 'no check', 'this group prints no total; see `proof`'
         for r in csv.DictReader(open(f, encoding='utf-8')):
             if not (r.get('value') or '').strip() or (r.get('kind') or 'fund') == 'total':
