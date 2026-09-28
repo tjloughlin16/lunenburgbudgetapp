@@ -852,7 +852,7 @@ def provenance(five, repay, detail, refused, problems):
 
 DETAIL_FIELDS = ['report_fy', 'document', 'page', 'as_of', 'issue_seq', 'issue', 'due_fy',
                  'principal', 'interest', 'admin_fee', 'total', 'cells_printed',
-                 'rows_offset', 'column_foots']
+                 'rows_offset', 'column_foots', 'read_by']
 REFUSED_FIELDS = ['report_fy', 'document', 'page', 'subject', 'reason', 'evidence']
 
 OUT_DETAIL = os.path.join(ROOT, 'sources', 'data', 'debt-repayment-detail.csv')
@@ -1027,6 +1027,87 @@ def _place(figs, cols, pitch):
     return {k: v[0] for k, v in out.items() if len(v) == 1}
 
 
+# A Vision reading rendered as printed LINES, so the schedule reader does not care which
+# instrument produced the page.
+#
+# The per-issue detail was read off the PDF text layer and nothing else, so the eleven
+# reports that arrived as pure scans were refused with `the page is a scanned image; there
+# is no text layer to read, and the issue columns are too narrow for Vision`. The first
+# half was true. The second was never measured and is false: Vision reads 284 money
+# figures on FY2011 page 76, 332 on FY2020 page 43, and 93-100% of the boxes on all 24
+# refused pages are wider than they are tall, which is this archive's own test for a page
+# that was read the right way up. Rule 13c: a matcher that was never run is not an absence.
+#
+# WHY SYNTHETIC CHARACTER BOXES ARE EXACT WHERE IT MATTERS. `_figures` places a figure by
+# the RIGHT EDGE of its last character and `_header_years` by the span of its match. Vision
+# gives a box per WORD, so a character box is interpolated across the word -- an
+# approximation everywhere, and exactly right whenever the match is a whole word, which a
+# `$1,060,000` and a `2024` always are. The interpolation is never load-bearing.
+#
+# Coordinates are scaled to points because `_lines` bands on a real pitch and inserts a
+# space on a real gap; both thresholds are meaningless in a 0-1 normalised space.
+PAGE_W, PAGE_H = 612.0, 792.0
+
+
+def _ocr_lines(boxes):
+    """Vision word boxes as the same {text, boxes, top} lines the text layer produces.
+
+    THE PAGE IS MEASURED AND STRAIGHTENED FIRST, because a scan is turned by a fraction of
+    a degree and `_lines` bands on `top` alone. Read raw, FY2011 page 76 comes apart: one
+    printed row becomes two to four bands, and the year header alone splits into `2028
+    2030` / `2022 2023 2024 2025 2026 2027 2029` / `2020 2021` / `FISCAL YEAR 2019`, which
+    is why the header would not read and no issue block held a row. Rule 13b #1 -- measure
+    the rotation, do not fight it -- and `skew()` and `deskew()` were already here for the
+    grand-total block.
+
+    `split_merged` runs first because Vision returns several year cells as ONE observation
+    on these pages, and a merged box has one right edge where `_place` needs several.
+
+    AND THE ROWS ARE SNAPPED HERE RATHER THAN LEFT TO `_lines`. That function takes the
+    median gap between consecutive `top` values and halves it, which is right for a text
+    layer -- every character of a printed line shares an exact `top` -- and wrong for a
+    scan, where the boxes of one row scatter by about a fifth of the pitch. On FY2011 page
+    76 the two populations land in one median: 0.0019 against a true row pitch of 0.015,
+    an eightfold error, so the band came out smaller than the jitter it was meant to
+    absorb. One printed row became two to four, the year header split into four pieces
+    (`2028 2030` / `2022 ... 2029` / `2020 2021` / `FISCAL YEAR 2019`), and the page was
+    refused for having no readable header.
+
+    So the pitch is measured on the LABEL COLUMN, which prints exactly one box per row --
+    rule 13b #2, and the same correction the wage pages needed. Every box in a row is then
+    given its row's own `top`, and `_lines` groups them trivially rather than guessing.
+    """
+    boxes = deskew(split_merged([b for b in boxes if (b.get('text') or '').strip()]))
+    if not boxes:
+        return []
+    left = min(b['x'] for b in boxes)
+    col = sorted({round(b['Y'], 4) for b in boxes if b['x'] < left + 0.06})
+    gaps = sorted(q - p for p, q in zip(col, col[1:]) if 0.002 < q - p < 0.06)
+    if len(gaps) < 8:
+        return []                       # not measurable: say nothing rather than guess
+    band = statistics.median(gaps) / 2.0
+    rows = []
+    for b in sorted(boxes, key=lambda b: (b['Y'], b['x'])):
+        if rows and b['Y'] - rows[-1][0]['Y'] < band:
+            rows[-1].append(b)
+        else:
+            rows.append([b])
+    chars = []
+    for r in rows:
+        top = statistics.median([b['Y'] for b in r]) * PAGE_H
+        for b in sorted(r, key=lambda b: b['x']):
+            t = (b.get('text') or '').strip()
+            if not t or b['w'] <= 0:
+                continue
+            x0, w = b['x'] * PAGE_W, b['w'] * PAGE_W
+            n = len(t)
+            for i, ch in enumerate(t):
+                chars.append({'t': ch, 'x0': x0 + w * i / n,
+                              'x1': x0 + w * (i + 1) / n, 'top': top})
+    chars.sort(key=lambda c: (c['top'], c['x0']))
+    return _lines(chars)
+
+
 def read_repayment_detail(fy, doc, pdf_path, catalogue_pages, ocr, problems, refused):
     """The issue-level schedule off the text layer, where the report has one."""
     rows = []
@@ -1055,31 +1136,39 @@ def read_repayment_detail(fy, doc, pdf_path, catalogue_pages, ocr, problems, ref
             is_schedule = page_no in catalogue_pages and (
                 'REPAYMENT' in seen or 'GRAND TOTAL' in seen or 'TOTAL DEBT' in seen)
             if len(page.chars) < 30:
-                if is_schedule:
+                if not is_schedule:
+                    continue
+                # THE SCAN IS READ BY VISION INSTEAD OF BEING REFUSED. It still has to
+                # print a header and foot its own grand total below; nothing here lowers
+                # the bar, it only stops throwing the page away before the bar is applied.
+                read_by = 'vision'
+                lines = _ocr_lines(ocr.get(page_no, []))
+                if not lines:
                     refused.append({
                         'report_fy': fy, 'document': doc, 'page': page_no,
                         'subject': 'debt',
-                        'reason': 'the page is a scanned image; there is no text layer to '
-                                  'read, and the issue columns are too narrow for Vision',
-                        'evidence': '%d characters and %d image(s) in the PDF; Vision reads '
-                                    '%d boxes, e.g. %r'
-                                    % (len(page.chars), len(page.images),
-                                       len(ocr.get(page_no, [])),
-                                       next((b['text'] for b in ocr.get(page_no, [])
-                                             if money(b['text']) is not None), ''))})
-                continue
-            chars, orient = _upright_chars(page)
-            lines = _lines(chars)
+                        'reason': 'the page is a scanned image and Vision read nothing on '
+                                  'it either',
+                        'evidence': '%d characters and %d image(s) in the PDF; 0 boxes'
+                                    % (len(page.chars), len(page.images))})
+                    continue
+            else:
+                read_by = 'text layer'
+                chars, orient = _upright_chars(page)
+                lines = _lines(chars)
             flat = ' '.join(ln['text'] for ln in lines).upper().replace(' ', '')
             if 'GRANDTOTALPRINCIPAL' not in flat:
                 if is_schedule:
                     refused.append({
                         'report_fy': fy, 'document': doc, 'page': page_no,
                         'subject': 'debt',
-                        'reason': 'the page carries a text layer but no repayment '
-                                  'schedule in it; the table is a scanned image on top',
-                        'evidence': 'the whole text layer reads %r'
-                                    % ' '.join(l['text'] for l in lines)[:90]})
+                        'reason': ('the page carries a text layer but no repayment '
+                                   'schedule in it; the table is a scanned image on top')
+                        if read_by == 'text layer' else
+                        ('Vision read the page but no GRAND TOTAL PRINCIPAL line, so '
+                         'there is nothing to foot the issues against'),
+                        'evidence': 'the whole %s reads %r'
+                                    % (read_by, ' '.join(l['text'] for l in lines)[:90])})
                 continue
             cols, hidx, hlabel = _header_years(lines)
             if not cols:
@@ -1127,7 +1216,8 @@ def read_repayment_detail(fy, doc, pdf_path, catalogue_pages, ocr, problems, ref
                                 'evidence': 'header columns: %s' % ' '.join(names)})
                 continue
             for c in best['cells']:
-                c.update({'report_fy': fy, 'document': doc, 'page': page_no, 'as_of': as_of})
+                c.update({'report_fy': fy, 'document': doc, 'page': page_no,
+                          'as_of': as_of, 'read_by': read_by})
                 rows.append(c)
             if best['open']:
                 problems.append('FY%s page %d: %d of %d issue cells do not close '

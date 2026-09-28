@@ -72,12 +72,12 @@ Vision returns it as runs like `52782335 52547440 52531098`. What was never chec
 is whether every report IS a scan. Five are not: their PDFs carry a real text layer
 and the schedule reads exact to the dollar out of it, with no OCR anywhere.
 
-- **831 rows** off **10 pages** in **5** reports: FY2014, FY2015, FY2016, FY2018, FY2025.
-- **61 issues** and **33 due years**, plus the TOTAL column each schedule prints.
+- **861 rows** off **16 pages** in **10** reports: FY2011, FY2012, FY2013, FY2014, FY2015, FY2016, FY2017, FY2018, FY2020, FY2025.
+- **74 issues** and **35 due years**, plus the TOTAL column each schedule prints.
 - Every row closes the identity its own table states: **principal + interest
   (+ MWPAT admin fee where one is printed) = the issue total**, to the dollar. 299 of them also sit in a year column whose issues sum to the page's own printed GRAND TOTAL.
-- **24 pages are refused**, listed in the refusal file with what is actually on
-  them. 24 of them are scans with no text layer at all.
+- **18 pages are refused**, listed in the refusal file with what is actually on
+  them. 3 of them are scans with no text layer at all.
 
 **Where a column does not foot, the shortfall is printed rather than hidden behind
 a no.** Two kinds turn up and they are not alike. FY2014, FY2016 and FY2025 are out
@@ -92,15 +92,18 @@ town issues a bond. Both readings are right.
 
 ## Everything refused, and why
 
-49 refusals and warnings. This list is the dataset as much as the rows are.
+54 refusals and warnings. This list is the dataset as much as the rows are.
 
 - FY2011 2008: the outside the debt limit purposes sum to 1,790,436, printed total 2,629,564 -- those rows are not published
 - FY2011 page 76: no year column in the grand-total block foots
+- FY2011 page 77: 2 of 8 issue cells do not close principal + interest (+ admin fee) = total
 - FY2012 2012: REFUSED -- the printed totals are not all readable
 - FY2012 page 76: no year column in the grand-total block foots
+- FY2012 page 76: 29 of 37 issue cells do not close principal + interest (+ admin fee) = total
 - FY2013 2012: the inside the debt limit purposes sum to 14,959,565, printed total 21,815,436 -- those rows are not published
 - FY2013 page 81: no year column in the grand-total block foots
 - FY2013 page 82: the FISCAL YEAR header did not read (4 years)
+- FY2013 page 81: 5 of 8 issue cells do not close principal + interest (+ admin fee) = total
 - FY2014 page 41: 2 of 11 header years misread or unread; the grid is fitted at a 0.039 pitch, 2029-2045
 - FY2014 page 41: no year column in the grand-total block foots
 - FY2014 page 42: the FISCAL YEAR header did not read (2 years)
@@ -118,12 +121,14 @@ town issues a bond. Both readings are right.
 - FY2017 page 42: 2 of 17 header years misread or unread; the grid is fitted at a 0.033 pitch, 2029-2046
 - FY2017 due 2034: principal is 31,399,353, more than eight times the median of its row -- a currency sign read as a digit; REFUSED
 - FY2017 due 2036: principal is 51,485,908, more than eight times the median of its row -- a currency sign read as a digit; REFUSED
+- FY2017 page 41: 4 of 5 issue cells do not close principal + interest (+ admin fee) = total
 - FY2018 2016: the outside the debt limit purposes sum to 35,835,089, printed total 36,889,530 -- those rows are not published
 - FY2018 page 49: 2 of 34 issue cells do not close principal + interest (+ admin fee) = total
 - FY2019 page 50: 1 of 13 header years misread or unread; the grid is fitted at a 0.049 pitch, 2020-2032
 - FY2019 page 50: no year column in the grand-total block foots
 - FY2020 page 44: no year column in the grand-total block foots
 - FY2020 page 46: the FISCAL YEAR header did not read (0 years)
+- FY2020 page 44: 7 of 10 issue cells do not close principal + interest (+ admin fee) = total
 - FY2021 2021: a short-term total is printed but Total Outstanding did not read, so the short-term rows are not published
 - FY2021 2021: the inside the debt limit purposes sum to 7,963,751, printed total 9,067,107 -- those rows are not published
 - FY2021 2019: a short-term total is printed but Total Outstanding did not read, so the short-term rows are not published
