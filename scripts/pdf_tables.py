@@ -284,6 +284,20 @@ def amount(text):
         t = m5.group(1) + m5.group(3) + '.' + m5.group(4)
     m = re.fullmatch(r'(-?[\d.,]*[\d])([.,])(\d\d)', t)
     if m and re.search(r'[.,]', m.group(1)):
+        # A THOUSANDS GROUP IS THREE DIGITS, AND ACCEPTING TWO IS A SILENT COERCION.
+        # Vision read FY2018 p157's `$ 1,000.00` as `1,00.00` at confidence 1.000. This
+        # branch stripped the separators and returned 100.00 -- a well-formed, plausible,
+        # WRONG number that carries no evidence it was ever malformed, and it cost the
+        # Health & Sanitation subtotal exactly the $900 by which the year failed to close.
+        #
+        # That is the dangerous class: a lenient parse turning a broken reading into a
+        # valid value. Returning None instead puts the cell in `unparsed_cells`, where
+        # `looks_like_money()` flags it and a person can look -- failing fast rather than
+        # inventing. The legitimate cases this branch exists for all have three-digit
+        # groups (`2.306,293.24`, `29.075.55`) and are untouched.
+        groups = re.split(r'[.,]', m.group(1).lstrip('-'))
+        if any(len(g) != 3 for g in groups[1:]):
+            return None
         t = re.sub(r'[.,]', '', m.group(1)) + '.' + m.group(3)
     else:
         t = t.replace(',', '')
