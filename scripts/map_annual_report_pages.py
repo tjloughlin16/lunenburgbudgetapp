@@ -445,6 +445,13 @@ PROOF = {
     # bespoke extractors that record a verdict in the same words
     'annual-report-receipts': ('status', VERDICT),
     'capital-plans': ('status', VERDICT),
+    # EVERY PAGE SOMEBODY READ OFF THE RENDER, with the verdict its own group earned.
+    # `verify_page_reads.py` foots each group to the total its document prints and writes
+    # `checked`, `check failed`, or `no check` where the group has no printed total -- the
+    # same three words every other extractor here uses, in a column a script can read rather
+    # than in a sentence about how careful somebody was. A read by eye is a READING like any
+    # other (rule 13a); what proves it is the arithmetic, and that is what this records.
+    'pages-read': ('status', VERDICT),
     'peg-access-fund': ('status', VERDICT),
     'special-revenue-funds': ('status', VERDICT),
     'valuation-by-class': ('status', VERDICT),

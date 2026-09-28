@@ -44,11 +44,20 @@ import argparse
 import collections
 import csv
 import glob
+import io
 import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 READS = os.path.join(ROOT, 'sources', 'data', 'page-reads')
+# THE DATASET THE TRACKER READS. Every transcribed figure, with the verdict its own group
+# earned, so a page read by eye proves itself the same way a page read by a parser does --
+# through a column a script can look at, not through a sentence. `status` is `checked` when
+# every column of that group ties to the total its document prints, and `no check` when the
+# group has no printed total, which is a real state and not a failure.
+OUT = os.path.join(ROOT, 'sources', 'data', 'pages-read.csv')
+FIELDS = ['fy', 'page', 'document', 'fund_number', 'fund_name', 'column', 'value',
+          'status', 'reconciliation', 'read_by', 'proof']
 
 # THE TOTAL IS READ OFF THE PAGE TOO, and lives in the transcription as `kind=total` --
 # not typed in here. Rule 2: a figure in prose or in code is the one thing that can be
@@ -96,6 +105,42 @@ def main():
             if not ok:
                 bad.append('FY%s %s %s: %s against a printed %s'
                            % (key[0], key[1], col, format(g, ','), format(printed, ',')))
+
+    # WRITE THE DATASET, whatever the verdict. A group that does not tie is published with
+    # `check failed` rather than withheld: the rows are a real reading and hiding them would
+    # make a broken transcription look like a page nobody had read.
+    body = []
+    for f in sorted(glob.glob(os.path.join(READS, '*.csv'))):
+        name = os.path.basename(f)
+        key = (name.split('-')[0][2:], '-'.join(name.split('-')[2:]).replace('.csv', ''))
+        if key in want:
+            ok = all(abs(round(got[key].get(c, 0.0), 2) - p) <= 0.02
+                     for c, p in want[key].items())
+            verdict = 'checked' if ok else 'check failed'
+            why = '%s: %s' % (printed_on[key],
+                              ' ; '.join('%s %s vs printed %s'
+                                         % (c, format(round(got[key].get(c, 0.0), 2), ','),
+                                            format(p, ','))
+                                         for c, p in sorted(want[key].items())))
+        else:
+            verdict, why = 'no check', 'this group prints no total; see `proof`'
+        for r in csv.DictReader(open(f, encoding='utf-8')):
+            if not (r.get('value') or '').strip() or (r.get('kind') or 'fund') == 'total':
+                continue
+            body.append({**{k: r.get(k, '') for k in FIELDS},
+                         'status': verdict, 'reconciliation': why})
+
+    body.sort(key=lambda r: (int(r['fy']), int(r['page']), r['fund_number'], r['column']))
+    buf = io.StringIO()
+    wr = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\n')
+    wr.writeheader()
+    wr.writerows(body)
+    text = buf.getvalue()
+    cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
+    if cur != text:
+        with open(OUT, 'w', encoding='utf-8') as fh:
+            fh.write(text)
+        print('\nwrote %s -- %d figures' % (os.path.relpath(OUT, ROOT), len(body)))
 
     if bad:
         print('\n%d transcribed column(s) do not tie:\n  %s'
