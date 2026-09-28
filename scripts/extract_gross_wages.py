@@ -35,6 +35,7 @@ import csv
 import glob
 import os
 import re
+import statistics
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -176,7 +177,12 @@ def read_year(fy, refused=None, doc=''):
     """
     by = pages(fy)
     rows = []
+    owned = set(SPLIT_NAME.get(fy, ('', []))[1])
     for p in wage_pages(by, fy):
+        if p in owned:
+            # Read from the Vision boxes instead -- the line cache merges this page's two
+            # columns into one box and loses the right-hand person on every row.
+            continue
         before = len(rows)
         for t in by[p]:
             for name, amt, dept in parse_line(t):
@@ -265,7 +271,10 @@ def ocr_boxes(doc, page):
             except ValueError:
                 continue
             if p == page:
-                out.append({'x': x, 'y': y, 't': '\t'.join(f[6:]).strip()})
+                # `w` is carried because measured_skew() needs the box's RIGHT edge to
+                # find its neighbour; read_ocr_page() ignores it.
+                out.append({'x': x, 'y': y, 'w': float(f[3] or 0),
+                            't': '\t'.join(f[6:]).strip()})
     return out
 
 
@@ -346,6 +355,242 @@ def read_ocr_page(fy, doc, page, cache, refused):
     return rows
 
 
+# ======================================================================================
+# THE PAGES WHOSE NAMES ARE PRINTED AS TWO WORDS -- read by measured geometry
+# ======================================================================================
+#
+# `read_ocr_page` above pairs a name with an amount and expects the name in ONE box:
+# `OCR_NAME` wants `SURNAME, GIVEN` with the comma printed. FY2019 does not print the
+# comma. Its list sets six columns -- surname, given name, amount, and the same again --
+# so Vision returns `RHODES` `GARRY` `12,661.62` as three boxes, and no pattern over a
+# single box can see a person in that.
+#
+# TJ, 28 September 2026, reading the document himself: *"i see the gross wage table
+# starting on pdf page 197 and ending on page 203, and i dont see any loss of info."*
+#
+# HE WAS RIGHT AND FOUR RECORDED REASONS WERE WRONG. What the archive said about these
+# pages, against what the pages hold:
+#
+#   "mid-table continuation, no header printed"   every one of the seven prints
+#                                                 `CALENDAR YEAR 2019 WAGES`
+#   "the two-column layout loses a third to a     both columns carry them; the boxes were
+#    half of the given names"                     missing from OUR CACHE, not the page
+#   "a stray ZRATE in the surname x-position"     ZRATE is the last surname in the list
+#   p203 defective                                the list runs out of names, so the
+#                                                 right-hand column is empty. Correct
+#
+# The cache was the whole of it. It held 871 boxes for the seven pages where a re-read
+# gives 1,753, and on pages 201 and 202 it held the surname column and NOTHING ELSE --
+# zero money boxes against 94 printed. Somebody measured that and wrote it down as a fact
+# about how the town sets the page. Rule 13c: a matcher that finds nothing is a statement
+# about our instrument, and this one had been restated twice in `money-gaps.csv`.
+#
+# It is not a resolution problem. Page 202 re-read at scale 2.0, 3.0 and 4.0 gives 94
+# money boxes every time, against 0 cached.
+#
+# WHAT PROVES A ROW HERE. A wage page prints no total -- checked box by box on all seven;
+# the list ends `ZRATE SEAN 142,893.22` and then the page number -- so there is no
+# arithmetic to foot against and every row stays `no check`. Two things stand in for it,
+# and neither is a reconciliation:
+#
+#   THE PAIRING. A row is written only where one amount and at least two name words sit in
+#   one printed row on one side of the page. Anything else is refused and counted.
+#
+#   THE ALPHABET. The list is ordered, and that is an identity the table states about
+#   itself -- ABARE on 197 through ZRATE on 203. A row banded onto its neighbour, or a
+#   figure taken from the wrong half of the page, breaks the order. So the order is
+#   asserted per column and a page that breaks it is refused rather than published. It
+#   proves the ASSIGNMENT. It says nothing about whether a digit was read correctly.
+
+SPLIT_NAME = {
+    '2019': ('4126-fy-2019-annual-town-report.pdf', list(range(197, 204))),
+}
+HEADER_BAND = 0.86        # the running head sits above this; the list is below it
+MIN_PAIRS = 8             # below this a measurement is REFUSED, never defaulted to zero
+WORD = re.compile(r"^[A-Z][A-Za-z'\-\.]*$")
+
+
+def measured_skew(boxes):
+    """(slope, n_pairs) -- rule 13b #1, with the pair count returned deliberately.
+
+    A scan is slightly turned, so a printed row's boxes do not share a `y`. The rotation is
+    recoverable from the page itself: take each box's nearest neighbour to its right, take
+    the MEDIAN slope between them.
+
+    IT RETURNS THE PAIR COUNT BECAUSE A MEASURED ZERO AND AN UNMEASURABLE PAGE MUST NOT
+    LOOK ALIKE. FY2013 p83 was recorded as rotated on the strength of a skew function that
+    returned `0.00000` for `fewer than 8 usable pairs` -- a failure signalled with a value
+    the successful measurement can legitimately produce. Three of these seven pages really
+    are square, measured from 237 pairs each, and that is a different statement from
+    silence wearing the same number.
+    """
+    slopes = []
+    for b in boxes:
+        right = [c for c in boxes
+                 if c['x'] > b['x'] + b['w'] * 0.5 and abs(c['y'] - b['y']) < 0.012]
+        if not right:
+            continue
+        n = min(right, key=lambda c: c['x'])
+        dx = n['x'] - b['x']
+        if dx > 0.01:
+            slopes.append((n['y'] - b['y']) / dx)
+    if len(slopes) < MIN_PAIRS:
+        return None, len(slopes)
+    return statistics.median(slopes), len(slopes)
+
+
+def row_pitch(boxes, slope):
+    """The page's own row pitch, measured on the LEFTMOST column -- rule 13b #2.
+
+    Not a constant, and not measured over every box on the page: the surname column prints
+    exactly one box per row, so its gaps ARE the pitch. Measured over all boxes it
+    collapses, because two boxes of one printed row differ by a fraction of a line and drag
+    the median under a real gap -- which banded FY2019 p199 into 70 rows for 47 printed.
+    """
+    for b in boxes:
+        b['Y'] = b['y'] - slope * b['x']
+    x0 = min(b['x'] for b in boxes)
+    col = sorted((b['Y'] for b in boxes if b['x'] < x0 + 0.04), reverse=True)
+    gaps = sorted(a - b for a, b in zip(col, col[1:]) if 0.004 < a - b < 0.06)
+    if len(gaps) < MIN_PAIRS:
+        return None
+    return statistics.median(gaps)
+
+
+def unread_block(boxes, pitch):
+    """A run of printed rows Vision did not read AT ALL, measured rather than inferred.
+
+    FY2019 p200 reads 25 surnames where its neighbours read 47, and the missing ones are
+    not scattered: a single gap of 0.353 sits between `LANDI` and `LEVASSEUR`, about 22
+    rows of one column that produced no box of any kind. A page short because the list
+    ended and a page short because the scan lost a band are different facts about the
+    archive, and only the gap tells them apart. Returned as evidence, never repaired.
+    """
+    x0 = min(b['x'] for b in boxes)
+    col = sorted(((b['Y'], b['t']) for b in boxes if b['x'] < x0 + 0.04), reverse=True)
+    worst = None
+    for (ya, ta), (yb, tb) in zip(col, col[1:]):
+        if ya - yb > pitch * 3 and (worst is None or ya - yb > worst[0]):
+            worst = (ya - yb, ta, tb)
+    if not worst:
+        return ''
+    return '; %d printed row(s) between %s and %s produced no box at all (a gap of %.4f ' \
+           'against a measured pitch of %.5f)' % (
+               round(worst[0] / pitch) - 1, worst[1], worst[2], worst[0], pitch)
+
+
+def _side_of(row, side):
+    return row.get('_side') == side
+
+
+def read_words_page(fy, doc, page, refused):
+    """Rows off the word boxes, for a list that prints the name as two words.
+
+    Measure the rotation, band at half the page's own pitch, split at the gutter, pair --
+    and refuse, with a count, everything that will not pair.
+    """
+    def bail(reason, evidence):
+        refused.append({'report_fy': fy, 'document': doc, 'page': page,
+                        'subject': 'payroll', 'reason': reason, 'evidence': evidence})
+        return []
+
+    boxes = [b for b in ocr_boxes(doc, page) if b['y'] < HEADER_BAND]
+    if not boxes:
+        return bail('the page has no Vision reading in the archive', '0 boxes')
+    slope, pairs = measured_skew(boxes)
+    if slope is None:
+        return bail('the page rotation could not be measured, so its rows cannot be banded',
+                    '%d box(es); only %d usable neighbour pair(s), %d needed'
+                    % (len(boxes), pairs, MIN_PAIRS))
+    pitch = row_pitch(boxes, slope)
+    if pitch is None:
+        return bail('the page row pitch could not be measured, so its rows cannot be banded',
+                    '%d box(es); fewer than %d gaps in the label column'
+                    % (len(boxes), MIN_PAIRS))
+    printed = []
+    for b in sorted(boxes, key=lambda b: (-b['Y'], b['x'])):
+        if printed and abs(b['Y'] - printed[-1][0]['Y']) < pitch / 2.0:
+            printed[-1].append(b)
+        else:
+            printed.append([b])
+    rows, unpaired, sides = [], 0, {0: [], 1: []}
+    for r in printed:
+        for side, (lo, hi) in enumerate(((0.0, 0.5), (0.5, 1.0))):
+            half = sorted([b for b in r if lo <= b['x'] < hi], key=lambda b: b['x'])
+            if not half:
+                continue
+            words = [b for b in half if not OCR_MONEY.match(b['t'])]
+            amts = [b for b in half if OCR_MONEY.match(b['t'])]
+            if len(words) >= 2 and len(amts) == 1 and all(WORD.match(w['t']) for w in words):
+                row = dict(fy=fy, page=page,
+                           name=' '.join(w['t'] for w in words),
+                           amount='%.2f' % float(
+                               OCR_MONEY.match(amts[0]['t']).group(1).replace(',', '')),
+                           department='',
+                           as_printed=' '.join(b['t'] for b in half)[:160])
+                row['_side'] = side
+                rows.append(row)
+                sides[side].append(words[0]['t'])
+            else:
+                unpaired += 1
+    money = sum(1 for b in boxes if OCR_MONEY.match(b['t']))
+    if not rows:
+        return bail('no name on the page could be paired with an amount',
+                    '%d box(es) in %d printed row(s), %d of them money'
+                    % (len(boxes), len(printed), money))
+    # THE ALPHABET, ASSERTED PER COLUMN -- and the response GRADED, because one inversion
+    # and fifty are different findings.
+    #
+    # An out-of-order surname means the row was misassigned OR the surname was misread,
+    # and the order alone cannot tell which. The COUNT can. A banding failure or a figure
+    # taken from the wrong half puts a page comprehensively out of order; a scanner
+    # dropping a character puts one name out of place and leaves the other thirty-three
+    # exactly where the town printed them.
+    #
+    # The first draft of this check refused the whole page on any inversion and threw away
+    # all 34 rows of FY2019 p203 for `ZAMORA -> IZIVOJINOVIC` -- which is `ZIVOJINOVIC`
+    # with a leading `I` hallucinated by the scanner, on the last page of the alphabet.
+    # That is the shape this project keeps having to correct: a check that cannot tell our
+    # instrument from the document reported one as the other.
+    #
+    # So: past the threshold the PAGE is refused, because the assignment is not trustworthy.
+    # Under it the offending ROWS are dropped and counted, because the page is fine and one
+    # name is not.
+    for side, names in sides.items():
+        bad = [(a, b) for a, b in zip(names, names[1:]) if a > b]
+        if not bad:
+            continue
+        where = 'left' if side == 0 else 'right'
+        if len(bad) > max(2, len(names) // 20):
+            return bail('the surnames read off this column are not in the order the list '
+                        'prints them, so rows have been misassigned',
+                        '%d inversion(s) in %d name(s) on the %s column, first at '
+                        '%s -> %s' % (len(bad), len(names), where, bad[0][0], bad[0][1]))
+        drop = {b for _, b in bad}
+        rows = [r for r in rows
+                if not (r['name'].split()[0] in drop and _side_of(r, side))]
+        refused.append({
+            'report_fy': fy, 'document': doc, 'page': page, 'subject': 'payroll',
+            'reason': 'a surname was read out of the order the list prints it, so that '
+                      'row was dropped rather than published under a name we may have '
+                      'misread',
+            'evidence': '%d inversion(s) in %d name(s) on the %s column: %s'
+                        % (len(bad), len(names), where,
+                           ', '.join('%s -> %s' % p for p in bad))})
+    if unpaired:
+        refused.append({
+            'report_fy': fy, 'document': doc, 'page': page, 'subject': 'payroll',
+            'reason': 'a printed row held a name without an amount, or an amount without '
+                      'a name, and was not guessed at',
+            'evidence': '%d row(s) paired, %d refused; Vision reads %d box(es) in %d '
+                        'printed row(s), %d of them money%s'
+                        % (len(rows), unpaired, len(boxes), len(printed), money,
+                           unread_block(boxes, pitch))})
+    for r in rows:
+        r.pop('_side', None)
+    return rows
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
@@ -360,6 +605,10 @@ def main():
         cache = pages(fy)
         for page in want:
             rows += read_ocr_page(fy, doc, page, cache, refused)
+    for fy in sorted(SPLIT_NAME):
+        doc, want = SPLIT_NAME[fy]
+        for page in want:
+            rows += read_words_page(fy, doc, page, refused)
     rows.sort(key=lambda r: (r['fy'], int(r['page']), r['name']))
     refused.sort(key=lambda r: (r['report_fy'], int(r['page']), r['reason']))
     if a.check:

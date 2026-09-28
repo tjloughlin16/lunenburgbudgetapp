@@ -107,9 +107,14 @@ REFUSED_FAMILY = {
         'What did the town pay its people, name by name, in the years whose payroll '
         'listing produced nothing?',
         'gross wages, name by name',
-        'word-level PDF geometry for the two-column payroll layout. Note that the town '
-        'stopped printing the department beside each name after FY2016, so these pages '
-        'bound the question rather than settling it'),
+        'a Vision RE-READ of the page, which is free and is what closed FY2019: its '
+        'seven pages held 871 boxes in our cache against 1,753 on a re-read, and two of '
+        'them held the surname column and no money at all. The refusals that survive a '
+        're-read are scan defects rather than layout \u2014 FY2019 p200 loses a 21-row '
+        'band that produced no box at scale 2, 3, 4, 5, 6 or 8 \u2014 and those close '
+        'only with a better copy of the page from the Town. Note that the town stopped '
+        'printing the department beside each name after FY2016, so these pages bound the '
+        'question rather than settling it'),
     'appropriations-supplement-refused': (
         'What was appropriated on the supplementary pages that do not foot to their own '
         'subtotals?',
@@ -261,9 +266,29 @@ def why_for(table, c):
         base += (' Every page was surveyed before anyone tried: of %d years, %d need real '
                  'PDF geometry rather than text, %d are messy and %d are clean — mirrored '
                  'layouts, rows offset from their own names, a missing fund-name column, '
-                 'and column counts that change between years. %d of %d years do print a '
-                 'grand total to reconcile against, so the anchor exists.'
-                 % (d['years'], hard, messy, clean, d['checkable'], d['years']))
+                 'and column counts that change between years.'
+                 % (d['years'], hard, messy, clean))
+        # THE ANCHOR CLAUSE IS CONDITIONAL AND USED NOT TO BE. It read `%d of %d years do
+        # print a grand total to reconcile against, so the anchor exists` whatever the
+        # count was, so the gross wages row said `0 of 16 ... so the anchor exists` and
+        # then promised a remedy `tied to the printed total on each page`. A wage page
+        # prints no total -- checked box by box on all seven of FY2019's -- so the row was
+        # naming a document that does not exist as the thing that would settle it. Rule
+        # 7c: a gap with no named remedy is a grievance, and a gap with an IMPOSSIBLE one
+        # is worse, because it reads as a records request somebody could make.
+        if d['checkable']:
+            base += (' %d of %d years do print a grand total to reconcile against, so the '
+                     'anchor exists.' % (d['checkable'], d['years']))
+            return base + (' — closes: a geometry-aware extractor for this table family, '
+                           'tied to the printed total on each page. The per-year survey '
+                           'is in `sources/data/extraction-plan.csv`.')
+        base += (' NO year of this family prints a grand total, so there is no arithmetic '
+                 'on the page to foot a row against and no extractor can supply one.')
+        return base + (' — closes: nothing we can build. What stands in for a total here '
+                       'is the PAIRING and the order the list prints itself in, both of '
+                       'which prove the assignment and say nothing about the digits; a '
+                       'reconcilable figure needs a total from the Town. The per-year '
+                       'survey is in `sources/data/extraction-plan.csv`.')
     return base + (' — closes: a geometry-aware extractor for this table family, tied to '
                    'the printed total on each page. The per-year survey is in '
                    '`sources/data/extraction-plan.csv`.')
