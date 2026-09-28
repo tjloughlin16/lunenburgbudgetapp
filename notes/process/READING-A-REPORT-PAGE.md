@@ -265,6 +265,35 @@ capitals, so the next reader of the file meets it.
 **The failure to avoid is the quiet one:** a partial read that clears the tracker and leaves
 nobody any way to know what is missing.
 
+## SOME PAGES CANNOT BE READ AT ALL, AND THE DPI SAYS SO BEFORE YOU TRY
+
+A photograph is stored at some resolution and no render scale adds detail that is not in
+the file. Measure it first:
+
+    python3 -c "
+    import pdfplumber; d=pdfplumber.open(PDF)
+    for p in PAGES:
+        pg=d.pages[p-1]
+        for im in pg.images:
+            print(p, im['srcsize'], round(im['srcsize'][0]/pg.width*72), 'dpi')"
+
+FY2023, the same report, page by page: 183 dpi on page 50 and 156 on page 53, both legible;
+**93 dpi on page 25**, which packs about 150 line items across three column-pairs of a
+LANDSCAPE page and cannot be read at any magnification -- `588` and `568`, `405` and `465`
+are the same handful of pixels.
+
+**It is dpi AND density, not dpi alone.** Page 24 is stored at 72 dpi and read perfectly:
+portrait, one table, large type. What decides it is how many characters are crammed into the
+pixels there are.
+
+**WHEN A PAGE CANNOT BE READ, STOP. DO NOT LET THE ARITHMETIC PICK THE DIGIT.** The summary
+block on page 25 reads to a total $20 from the printed GRAND TOTAL, which is exactly what one
+misread digit looks like -- and choosing the digit that makes it close is fitting the answer
+to the check. That is the compensating-error trap rule 14 describes, manufactured on purpose.
+
+Register it as a gap, name what would close it -- a better scan of the one page, or the
+department's own file -- and move to the next section.
+
 ## COUNT WHAT THE PAGE PRINTS AGAINST WHAT YOU HOLD
 
 Free, instant, and it is the alarm that was missing all along. Count something the page has
