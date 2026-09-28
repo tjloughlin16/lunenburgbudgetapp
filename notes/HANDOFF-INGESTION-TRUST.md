@@ -149,7 +149,7 @@ duplicate pass was under way, because it tracks the votes and minutes sweeps and
 `benchmark_ingest.py` is not one of its streams. The check that would have caught it had no
 power to.
 
-### 3b. THE 15 REFUSED PAGES — engineering time, not model time
+### 3b. THE 29 REFUSED PAGES — engineering time, not model time
 
 **Ten receivables pages** were read and their rows deleted for not summing to the totals
 their own pages print. The work is fixing `extract_receivables.py`, and the pages grade it:
@@ -280,6 +280,71 @@ So: read the year header, split merged boxes by the measured pitch, band the row
 label column, place figures by nearest column centre, and publish only the columns where
 principal + interest foots to the printed total. `read_trust_table.py` is the worked example
 of the same shape.
+
+### 3h. THE METRIC ITSELF IS STILL WRONG, and TJ said so
+
+TJ, 27 September 2026, after the count moved three times in a day: *"i think we need a
+different metric then. read and refused as separate? (refused need to be... rerun?!)"*
+
+**No -- a refused page must NEVER be rerun.** Rerunning returns the same refusal and pays
+for it. That misunderstanding is the dashboard's fault: `15 left` invites exactly that
+purchase, and it is the clearest evidence the metric is wrong rather than merely noisy.
+
+WHY IT KEEPS MOVING. `read` means *any dataset mentions this page*. That is a property of
+our FILING, so it changes whenever a file is added -- which happened twice on one day, in
+both directions. It is not a property of the archive, and it answers a question nobody asked.
+
+THE REPLACEMENT, four states, each mapping to exactly ONE action, and only one of them
+costing model tokens:
+
+| state | means | to fix it | costs |
+|---|---|---|---|
+| PROVEN | rows tie to a total the page prints | nothing, it is done | -- |
+| UNPROVEN | rows exist, nothing proved them | write the check | code |
+| REFUSED | an extractor reached it and wrote nothing, with a reason | fix the extractor | code |
+| UNREAD | nobody has looked | read it | TOKENS |
+
+Two things to say out loud when it ships:
+
+  * **UNREAD is 0 for this stream.** No amount of spend moves it. Everything left is code,
+    and the current card has been inviting a purchase that does not exist.
+  * **PROVEN will be LOWER than 445**, because some of those pages are cited by rows that
+    never reconciled. Better to publish that than to be corrected a fourth time.
+
+`proven` cannot drift the way `read` does: it depends on whether the page's own printed
+total agrees with our rows, which changes only when the arithmetic changes.
+
+Touches `map_annual_report_pages.py` (the state machine) and `build_ingest_status.py` (the
+card). Keep `read` as a derived total so nothing currently reading the CSV breaks.
+
+### 3i. TWO THINGS FOUND WHILE DOING THE ABOVE, both worse than they look
+
+**FY2023 GROSS WAGES IS EFFECTIVELY UNREAD AND LOOKS FINE.** Adding refusal recording to
+`extract_gross_wages.py` took its recorded refusals from 2 to 24, and the distribution is
+the finding: FY2023 has SEVEN silent pages, and the year published **one name totalling
+$73**. Seven pages of a payroll listing produced one row and nothing anywhere said so. The
+whole year needs re-reading, and until it is, nothing may cite FY2023 wages.
+
+**report_appropriations: 4,870 rows `check failed` against 157 `checked`.** Read off the
+table's own `status` column. CLAUDE.md already says nothing may be aggregated without
+splitting on `status`; this is the scale of why. A page-level `read` count says nothing about
+it, which is part of 3h's argument.
+
+### 3j. THE SMALL OUTSTANDING TASK
+
+`npx wrangler pages deploy` from `fy28/`, once the site build finishes, to carry seven
+cosmetic title leftovers -- two page headings (`StoppedFunding`, `BudgetVsActual`), three
+cross-links, the nav tooltip. Cosmetic only; the substantive rename, the markdown de-listing
+and the `noindex` headers are already live and verified.
+
+Worth knowing for any future deploy: **`MAX_UPLOAD_GATEWAY_ERRORS = 5` is hardcoded in
+wrangler**, and at 17,105 files five dropped sockets anywhere in a run aborts everything. It
+failed three times before succeeding on the fourth, and the reason a retry works is that
+uploads are content-addressed -- the successful run reported `Uploaded 803 files (16299
+already uploaded)`. If it starts failing consistently, 12,019 of those files are
+`dist/docs/minutes`, and they cannot simply be dropped: the bucket's copy of our DERIVED
+files is a frozen 5 September snapshot and objects there cannot be overwritten, so serving
+them from R2 would quietly publish three-week-old extractions.
 
 ## 4. THE RULE THAT CAME OUT OF IT
 
