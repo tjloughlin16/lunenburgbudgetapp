@@ -227,17 +227,33 @@ def main():
     # and a half hours and roughly a tenth of the week's allowance, in one step of one run.
     ap.add_argument('--limit', type=int, default=0,
                     help='at most this many reconciliations; 0 means no cap')
-    # THE WINDOW IS WHAT MAKES THIS A DIFF RATHER THAN A SWEEP. Official minutes appear
-    # weeks after a meeting, so the daily question is only ever about RECENT meetings:
-    # measured on 28 September 2026, 228 pairs were unreconciled and 2 of them were within
-    # 45 days. Everything else is backlog, and backlog belongs to sweep_backlog.py, which
-    # runs in the week's unused allowance and stops when a person is working.
+    # `--since` FILTERS ON THE MEETING DATE, WHICH IS NOT WHEN THE WORK ARRIVED, and that
+    # is why the daily run does not use it.
+    #
+    # TJ, 28 September 2026: *"there may be a meeting from a year ago, that only recently
+    # had its transcript filled in, or its minutes added. So the NEW is relevant to new
+    # files/info created/pushed out by the boards/depts, not based on the meeting dates...
+    # otherwise we'll miss things."*
+    #
+    # He is right and this flag was briefly wired into refresh.py, where it would have
+    # pruned exactly that case out of the daily run -- and since sweep_backlog.py has no
+    # reconcile stream, out of every run. A pair becomes eligible when the town publishes
+    # its minutes, which can be a year after the meeting, and `sources/meetings/index.csv`
+    # records no fetch date to filter on. So the daily run EXCLUDES NOTHING and is bounded
+    # by `--limit` alone, newest first: a meeting that becomes eligible today is reached
+    # within a day or two whatever its date, and nothing is ever permanently skipped.
+    # The flag stays for working one span by hand.
     ap.add_argument('--since', default='',
-                    help='only meetings on or after this date (YYYY-MM-DD)')
+                    help='only meetings on or after this date -- for working a span by '
+                         'hand; the daily run does not use it, see the note in the code')
     a = ap.parse_args()
     if a.check:
         return check()
-    files = sorted(glob.glob(os.path.join(W.OUT, '*', '*.json')))
+    # NEWEST MEETING FIRST, so a bounded run spends its budget on what a reader is most
+    # likely to be looking at, and an old pair that only just became eligible is still
+    # reached within a day or two rather than never.
+    files = sorted(glob.glob(os.path.join(W.OUT, '*', '*.json')),
+                   key=lambda f: (os.path.basename(f)[:10], f), reverse=True)
     if a.board and a.date:
         files = [f for f in files if a.board in f and os.path.basename(f).startswith(a.date)]
     if a.status:
