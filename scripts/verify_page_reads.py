@@ -78,6 +78,16 @@ DEFAULT_TOL = 0.02
 #   column `ordered_by`      the named column never goes backwards through the whole run
 #   column `row_identity`    `a,b,c=d` -- every row's components sum to its own total
 #
+# AND A ROW MAY BE `kind=attested`: WE READ IT RIGHT AND THE DOCUMENT DISAGREES WITH ITSELF.
+# `table-corrections.csv` already carries this idea for the generic extracts and it is the
+# same one -- the town's FY2024 Finance Committee report prints a levy build-up whose FY22
+# and FY23 columns foot to the cent and whose FY24 column is $55,184.33 short of its own
+# printed total. That is a defect in the published report, not in the reading, and counting
+# it as our failure would be the archive blaming itself for the town's arithmetic.
+#
+# An attested row is EXCLUDED from the identity and REPORTED, loudly, every run. It is never
+# silent and it is never a tolerance: a tolerance hides a discrepancy, and this names it.
+#
 # The wage lists are why. They print 675 names across eight pages and no total anywhere, so
 # there is no arithmetic to close -- but the page's own shape is an assertion: 47 printed
 # rows in two columns is 94 names, and the surnames run A to Z. The sequence catches a page
@@ -97,6 +107,7 @@ def main():
     want = collections.defaultdict(dict)
     tol = {}
     declared = collections.defaultdict(dict)
+    attested = collections.defaultdict(dict)
     seen = collections.defaultdict(list)
     per_row = collections.defaultdict(list)
     printed_on = {}
@@ -107,6 +118,9 @@ def main():
         key = (name.split('-')[0][2:], '-'.join(name.split('-')[2:]).replace('.csv', ''))
         for r in csv.DictReader(open(f, encoding='utf-8')):
             if not (r.get('value') or '').strip():
+                continue
+            if (r.get('kind') or 'fund') == 'attested':
+                attested[key][r['fund_number']] = r.get('proof', '') or r['value']
                 continue
             if (r.get('kind') or 'fund') == 'check':
                 declared[key][r['column']] = r['value']
@@ -184,17 +198,25 @@ def main():
                 # parentheses per column.
                 parts, _, whole = d['row_identity'].partition('=')
                 parts = [c.strip() for c in parts.split(',')]
-                rows_, off = collections.defaultdict(dict), []
+                rows_, off, att = collections.defaultdict(dict), [], []
                 for r in per_row[key]:
                     rows_[(r['page'], r['fund_number'])][r['column']] = float(r['value'])
                 for (pg, name), cells in sorted(rows_.items()):
                     got = round(sum(cells.get(c, 0.0) for c in parts), 2)
                     wnt = round(cells.get(whole.strip(), 0.0), 2)
                     if abs(got - wnt) > tol.get(key, DEFAULT_TOL):
-                        off.append('p%s %s: %s vs %s' % (pg, name, format(got, ','),
-                                                         format(wnt, ',')))
+                        if name in attested[key]:
+                            att.append('p%s %s: the DOCUMENT is out by %s -- %s'
+                                       % (pg, name, format(round(got - wnt, 2), ','),
+                                          attested[key][name]))
+                        else:
+                            off.append('p%s %s: %s vs %s' % (pg, name, format(got, ','),
+                                                             format(wnt, ',')))
                 notes.append('%d of %d rows close on %s'
-                             % (len(rows_) - len(off), len(rows_), d['row_identity']))
+                             % (len(rows_) - len(off) - len(att), len(rows_),
+                                d['row_identity']))
+                for a in att:
+                    notes.append('ATTESTED, the town\u2019s own arithmetic: ' + a)
                 if off:
                     ok = False
                     notes[-1] += ' -- ' + '; '.join(off[:4])
