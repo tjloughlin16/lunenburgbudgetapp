@@ -33,6 +33,76 @@ test to the REGION the figures are in, not only to the page.
   heading `as of June 30, 2025`.
 - Days spent hunting figures that were never lost.
 
+## START WITH THE YEAR, NOT THE PAGE
+
+TJ, 28 September 2026: *"lets make this a system. maybe update the process to be full year
+focused. answer the question `whats left for FYXYZ?` then work through that table section by
+section until the FY is completed using the process."*
+
+**Take one report. Build the table once. Then work the table.** Not page by page as the
+tracker happens to list them -- the tracker lists PAGES and the work is in SECTIONS, and
+every expensive mistake here has lived in that gap.
+
+### 1. What is left, as sections
+
+    python3 -c "
+    import csv, collections
+    rs=[r for r in csv.DictReader(open('sources/data/annual-report-pages.csv')) if r['fy']=='2023']
+    print(collections.Counter(r['state'] for r in rs))
+    for r in sorted(rs, key=lambda r: int(r['page'])):
+        if r['state']!='proven':
+            print(r['page'], r['state'], r['subject'], '|', (r['failed_by'] or r['refused_by'] or '-'), '|', r['heading'][:40])"
+
+Then group the pages into sections BY HAND, and the grouping is the judgement the table
+cannot make for you:
+
+- **Adjacent pages are usually one table**, whatever subject each is labelled.
+- **THE SUBJECT LABEL IS A GUESS FROM THE WORDS AT THE TOP OF THE PAGE**, so on a table that
+  runs for several pages it is whatever line item happens to be printed first. FY2023 pages
+  164 to 167 are labelled `trust-and-stabilization`, `payroll`, `payroll` and
+  `regional-school`, from the headings `INFRA21-03`, `Reserve Fund`, `Police Lock Up` and
+  `Traffic Signs & Devices`. They are four pages of ONE appropriations schedule.
+- **What actually says two pages are the same table is that the same EXTRACTOR holds rows
+  for both.** That is a fact about the archive; the heading is a guess about a page.
+
+### 2. For each section, before reading anything
+
+| | |
+|---|---|
+| **extent** | where does the table start and stop? Walk outward until it does. |
+| **holes** | is there a page BETWEEN or BESIDE the run that the tracker does not list at all? |
+| **reader** | per PAGE: does it carry its own text, or is it a photograph? |
+| **held** | what does a dataset already hold, and what is its verdict? |
+| **size** | what SHOULD the whole thing hold, from the page's shape rather than from our data? |
+
+That last one is what actually catches a short read, and it is free. 47 printed rows in two
+columns is 94 names a page; against that, `111 rows across four pages` for a wage list is
+visibly wrong before a single page is rendered. Ask it before reading, not after.
+
+**THE HOLES ARE THE ONE THE LIST CANNOT TELL YOU.** A page enters the tracker only when
+recognition found fifteen money figures on it, so a page it failed on entirely is not
+unfinished -- it is ABSENT. Five pages of FY2024's gross wages were invisible that way, each
+with a full table on it. In FY2023 the same check flags pages 23, 26, 45, 47, 57, 163 and
+168 as sitting beside a run and listed nowhere. Open each one. Most will be prose; the cost
+of the one that is not is telling a resident the town does not publish something it does.
+
+    python3 -c "
+    import csv
+    have={int(r['page']) for r in csv.DictReader(open('sources/data/annual-report-pages.csv')) if r['fy']=='2023'}
+    print([p for p in range(LO,HI) if p not in have])"
+
+### 3. Work the sections one at a time, all the way through
+
+Each one goes through the whole of this document -- gate, read, durable, verdict -- and gets
+committed before the next begins. **Do not read a page until the section's extent is
+settled**, and do not start a second section while the first is half done.
+
+**Order them by what will teach you the most, not by page number.** A section whose
+extractor says `check failed` often means the reading is right and the DOCUMENT does not
+foot -- FY2024's levy build-up was exactly that -- and those are quick. A section holding
+`no check` needs the arithmetic found. A `refused` section usually means the extractor was
+looking for a rule the page does not follow.
+
 ## STEP 0 -- ASK WHAT WE ALREADY HAVE, BEFORE TOUCHING ANYTHING
 
 TJ, 28 September 2026: *"the process needs to start with my questions too."* These are his,
@@ -210,33 +280,6 @@ is why 46 missing rows looked exactly like 46 funds the town does not have (rule
 `page_table.coverage()` computes it; publish it beside any extract, the way
 `search_minutes.py` prints its denominator on every run and for the same reason: **a reader
 who is told nothing assumes nothing was lost.**
-
-## FIND THE WHOLE TABLE BEFORE READING ANY OF IT
-
-**A table is a RUN, and the tracker lists pages.** The two are not the same thing and the
-difference is where a partial read hides.
-
-FY2024's gross wage list runs from page 186 to page 193. The tracker listed 187, 192 and
-193. Working the flagged pages would have transcribed 205 names of 675 and called the job
-done -- and the coverage check would have PASSED, because those three pages are each
-internally in order. A check cannot see a page it was never given.
-
-**So before reading anything, establish the extent:**
-
-- **Read the first flagged page and look at what it starts and ends with.** A wage list
-  beginning at `CAMPBELL` is not the beginning of the alphabet, so pages come before it.
-- **Walk outward until the table stops.** Page 186 opens at `ABRAHAM` and page 193 closes at
-  `ZRATE`; that is the run, and it is eight pages.
-- **Ask what the whole thing should hold**, from the shape rather than from our data. 47
-  printed rows in two columns is 94 a page. Against that, `111 rows across four pages` is
-  visibly wrong before a single page is read.
-
-**And the tracker's own list is not the answer to `which pages`.** It holds a page only when
-recognition found fifteen money figures on it, so a page recognition failed on entirely is
-not listed as unfinished -- it is not listed at all. Five of those eight were invisible that
-way, and FY2024 was published as 22 financial pages when it has at least 28. A page somebody
-has READ is now added to the map, but nothing finds the pages nobody has looked at yet: see
-`sources/data/money-gaps.csv`.
 
 ## A PAGE THAT PRINTS NO TOTAL IS CHECKED ON COVERAGE, AND THE CHECK IS DECLARED
 
