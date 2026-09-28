@@ -353,7 +353,14 @@ NOT_READINGS = {'annual-report-pages', 'ingest-benchmark', 'extraction-blocked',
 # printed in. `as_of_fy` and `due_fy` are years a ROW is about -- the debt tables carry
 # both, five as-of years per page and a schedule running to FY2047 -- and joining on
 # either would credit pages in books that do not exist yet.
-YEAR_COLUMNS = ('fy', 'report_fy')
+# `report_fy` FIRST, BECAUSE IT NAMES THE BOOK. A dataset may carry both, and where it
+# does they mean different things: `fy` can be the year the MONEY belongs to, `report_fy`
+# is always the report the page is in. Treasurer's Cash prints a prior-year column, so 36
+# of its rows carry a `fy` one earlier than the document they were printed in -- and this
+# join, which is (year, page), was crediting a reading on FY2020 page 44 to FY2019 page 44.
+# Only `balance-sheet` and `treasurers-cash` carry both; balance-sheet's agree on all 774
+# rows, so the reorder changes exactly the rows it was meant to.
+YEAR_COLUMNS = ('report_fy', 'fy')
 
 # AND WHICH COLUMN HOLDS THE PAGE. The same bug, one column over, and it hid three pages
 # that had already been read: `enterprise-balance-sheet.csv` names its page `page_pdf`, so
@@ -478,7 +485,14 @@ PROOF = {
     'staff-roster-entries': (None, NOTHING),
     'stated-cuts': (None, NOTHING),
     'town-meeting-votes': (None, NOTHING),
-    'treasurers-cash': (None, NOTHING),
+    # PUBLISHED ONLY WHEN THE COLUMN FOOTS, so the row's existence IS the verdict --
+    # CONSTRUCTION, not NOTHING. `extract_treasurers_cash.py` reconciles each column to the
+    # total the page prints and takes NOTHING from a column that does not tie, writing the
+    # failures to `extraction-blocked.csv`. Registered as NOTHING it reported 14 pages as
+    # having no check anywhere, which was a statement about this registry and not about the
+    # extractor. Declared here having read that code -- `kept` is appended only inside
+    # `abs(got - total) <= TOL`.
+    'treasurers-cash': (None, CONSTRUCTION),
     # the register of stabilization rows that did NOT foot. Its rows are real and published
     # with the reconciliation that fails; it is the definition of unproven.
     'stabilization-unfooted': (None, NOTHING),

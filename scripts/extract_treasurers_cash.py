@@ -71,7 +71,15 @@ MONEY = re.compile(r'^\$?\s*-?\(?\d{1,3}(?:[.,]\d{3})*[.,]\d{2}\)?$|'
 # The heading carries the date the column is measured to.
 ASOF = re.compile(r'(\d{1,2})/(\d{1,2})/(\d{2,4})')
 
-FIELDS = ['fy', 'held_as', 'amount', 'column', 'page', 'document']
+# `report_fy` IS THE BOOK, `fy` IS THE MONEY, AND THEY ARE NOT THE SAME COLUMN.
+# A Treasurer's Cash page prints two columns -- the year it is headed with and the year
+# before -- so 36 of these rows carry a year one earlier than the report they were PRINTED
+# in. Anything joining on (fy, page) therefore credited FY2019 page 44 with a reading that
+# is on FY2020 page 44, a different document's page 44 entirely, and the annual-report page
+# queue does exactly that join. The money's year is what a reader wants; the book's year is
+# what an address needs; one column for both is rule 13's positional-name trap with a date
+# in it.
+FIELDS = ['fy', 'report_fy', 'held_as', 'amount', 'column', 'page', 'document']
 TOL = 1.0
 
 
@@ -375,7 +383,8 @@ def main():
                 for name, vals in rows:
                     if vals[i] is None:
                         continue
-                    body.append(dict(fy=year, held_as=name, amount=round(vals[i], 2),
+                    body.append(dict(fy=year, report_fy=fy, held_as=name,
+                                     amount=round(vals[i], 2),
                                      column='as printed' if i == 0 else 'prior year',
                                      page=page, document=doc))
     # ---- THE DEFERRED PRIOR-YEAR COLUMNS, against the other year's own total -------
@@ -419,7 +428,8 @@ def main():
         for name, vals in rows:
             if vals[i] is None:
                 continue
-            body.append(dict(fy=year, held_as=name, amount=round(vals[i], 2),
+            body.append(dict(fy=year, report_fy=fy, held_as=name,
+                             amount=round(vals[i], 2),
                              column='prior year', page=page, document=doc))
 
     if not body:

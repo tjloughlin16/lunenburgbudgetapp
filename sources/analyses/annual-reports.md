@@ -5,7 +5,7 @@ Sixteen documents, 478 pages of financial tables, 23,284 rows read out of them.
 ## The short version
 
 - Every financial page in every report has been read. **None is unread.**
-- **169 of 478** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
+- **183 of 478** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
 - **10 pages** an extractor reached and wrote nothing from. Each says why.
 - What is left is **code, not reading**.
 
@@ -49,32 +49,32 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | regional school | the assessment from the regional school district | 19 | 1 | 17 | 1 |
 | balance sheet | what the town held and owed at year end | 17 | 13 | 4 | 0 |
 | valuation | what the town is worth, by class of property | 16 | 8 | 8 | 0 |
-| treasurers cash | the cash the Treasurer held | 15 | 0 | 14 | 1 |
+| treasurers cash | the cash the Treasurer held | 15 | 14 | 0 | 1 |
 | capital | the capital projects and what they cost | 13 | 7 | 6 | 0 |
 | enrollment | how many children are in the schools | 6 | 3 | 3 | 0 |
 | elections | how the town voted | 2 | 1 | 1 | 0 |
 | cultural council | the grants the cultural council made | 1 | 0 | 1 | 0 |
-| **total** |  | **478** | **169** | **299** | **10** |
+| **total** |  | **478** | **183** | **285** | **10** |
 
 ## By report
 
 | fiscal year | pages | proven | unproven | refused |
 |---|---:|---:|---:|---:|
-| FY2011 | 28 | 9 | 18 | 1 |
-| FY2012 | 26 | 8 | 17 | 1 |
-| FY2013 | 29 | 7 | 21 | 1 |
-| FY2014 | 27 | 13 | 14 | 0 |
-| FY2015 | 31 | 12 | 19 | 0 |
-| FY2016 | 41 | 11 | 30 | 0 |
-| FY2017 | 35 | 13 | 19 | 3 |
-| FY2018 | 35 | 16 | 19 | 0 |
+| FY2011 | 28 | 10 | 17 | 1 |
+| FY2012 | 26 | 9 | 16 | 1 |
+| FY2013 | 29 | 8 | 20 | 1 |
+| FY2014 | 27 | 14 | 13 | 0 |
+| FY2015 | 31 | 13 | 18 | 0 |
+| FY2016 | 41 | 12 | 29 | 0 |
+| FY2017 | 35 | 14 | 18 | 3 |
+| FY2018 | 35 | 17 | 18 | 0 |
 | FY2019 | 38 | 11 | 26 | 1 |
-| FY2020 | 39 | 15 | 23 | 1 |
-| FY2021 | 37 | 12 | 25 | 0 |
-| FY2022 | 33 | 17 | 16 | 0 |
-| FY2023 | 34 | 14 | 18 | 2 |
-| FY2024 | 22 | 7 | 15 | 0 |
-| FY2025 | 23 | 4 | 19 | 0 |
+| FY2020 | 39 | 16 | 22 | 1 |
+| FY2021 | 37 | 13 | 24 | 0 |
+| FY2022 | 33 | 18 | 15 | 0 |
+| FY2023 | 34 | 15 | 17 | 2 |
+| FY2024 | 22 | 8 | 14 | 0 |
+| FY2025 | 23 | 5 | 18 | 0 |
 
 ## The datasets read out of them
 
