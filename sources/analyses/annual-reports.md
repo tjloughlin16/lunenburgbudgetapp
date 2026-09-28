@@ -1,6 +1,6 @@
 # The annual town reports
 
-Sixteen documents, 478 pages of financial tables, 23,507 rows read out of them.
+Sixteen documents, 478 pages of financial tables, 23,554 rows read out of them.
 
 ## The short version
 
@@ -82,7 +82,7 @@ A **dedicated** extractor knows what its table means and can check it against a 
 
 | dataset | rows | years | built by | checked | check failed | no check |
 |---|---:|---|---|---:|---:|---:|
-| `report-appropriations.csv` | 5,250 | 2011–2025 | generic | 311 | 4939 | 0 |
+| `report-appropriations.csv` | 5,297 | 2011–2025 | generic | 311 | 4986 | 0 |
 | `staff-roster-entries.csv` | 3,751 | 2011–2025 | dedicated |  — | — | —  |
 | `report-gross-wages.csv` | 3,547 | 2011–2025 | generic | 0 | 0 | 3547 |
 | `special-revenue-funds.csv` | 2,387 | 2011–2025 | dedicated | 0 | 2058 | 328 |
