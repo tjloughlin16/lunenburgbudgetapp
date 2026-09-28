@@ -810,7 +810,7 @@ def extract(dataset):
             if head:
                 trim_to_heading(in_run, head)
             repair_dollar_as_digit(in_run)
-            apply_corrections(in_run, dataset, fy, CORRECTIONS_APPLIED)
+            rows.extend(apply_corrections(in_run, dataset, fy, CORRECTIONS_APPLIED))
             mark_page_furniture(in_run)
             mark_arithmetic_subtotals(in_run)
             mine = [r for r in in_run if r['kind'] == 'row']
@@ -824,7 +824,24 @@ def extract(dataset):
             fam = next((r.get('table_family') for r in in_run if r.get('table_family')), '')
             names = (NAMED_COLUMNS.get((dataset, fam))
                      or (('recommended', 'voted') if fam == 'omnibus-budget' else None))
-            named_run = bool(names) and all(r.get('_names') for r in in_run)
+            # A PAGE OF PROSE MUST NOT COST THE RUN ITS COLUMN NAMES. `all(...)` over
+            # every row meant one valueless page disabled the named reading for the whole
+            # year -- and with it `group_reconciliation`, the finer instrument, because
+            # that call sits inside the `if named_run` branch.
+            #
+            # FY2013's run carries page 86: 42 rows, NOT ONE with a value, every one
+            # Article 14/15 warrant prose. FY2012 carries page 83, the Article 9 override
+            # article, 42 valueless rows. Both years therefore reconciled on ORDINAL `v1`
+            # columns and lost their group checks, which is why FY2013's grand total can
+            # close to the cent -- 28,177,263.00 against 28,177,263.00 -- and the year
+            # still fails, on a line-numbering gap the group checks exist to forgive.
+            #
+            # A row with no value says nothing about whether the COLUMNS were named, so it
+            # gets no vote. Rows that carry a figure decide it.
+            valued = [r for r in in_run
+                      if any(r.get(f'v{i}') for i in range(1, 9))]
+            named_run = bool(names) and bool(valued) and all(
+                r.get('_names') for r in valued)
             if named_run and grand_row:
                 # Reconcile BY NAME. `v1` is where a figure landed on one page, not a
                 # column of the report -- see NAMED_COLUMNS. Summing v1 across a run added
@@ -1266,7 +1283,13 @@ def repair_dollar_as_digit(rows_in):
 
 
 def apply_corrections(rows_in, dataset, fy, applied):
-    """Put the read values in, and mark every row they touch."""
+    """Put the read values in, mark every row they touch, and return any row INSERTED.
+
+    The inserted rows are handed back because `rows_in` is a fresh list built per run --
+    `[r for r in rows[n0:] if r['page'] in run]` -- so appending to it feeds the
+    reconciliation and never reaches the output. The caller has to put them in `rows`.
+    """
+    inserted = []
     for c in load_corrections():
         if c['dataset'] != dataset or c['fy'] != str(fy):
             continue
@@ -1333,7 +1356,9 @@ def apply_corrections(rows_in, dataset, fy, applied):
                                              'read off the page: %.2f'
                                              % float(c['corrected'])})
                     rows_in.append(row)
+                    inserted.append(row)
                     applied.add((c['dataset'], c['fy'], c['page'], c['label']))
+    return inserted
 
 
 def heading_pages(dataset):

@@ -1,11 +1,11 @@
 # The annual town reports
 
-Sixteen documents, 478 pages of financial tables, 23,284 rows read out of them.
+Sixteen documents, 478 pages of financial tables, 23,507 rows read out of them.
 
 ## The short version
 
 - Every financial page in every report has been read. **None is unread.**
-- **183 of 478** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
+- **186 of 478** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
 - **10 pages** an extractor reached and wrote nothing from. Each says why.
 - What is left is **code, not reading**.
 
@@ -38,15 +38,15 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 
 | category | what it answers | pages | proven | unproven | refused |
 |---|---|---:|---:|---:|---:|
-| appropriations | what Town Meeting voted to spend, article by article | 94 | 15 | 78 | 1 |
+| appropriations | what Town Meeting voted to spend, article by article | 94 | 16 | 77 | 1 |
 | special revenue | the funds that sit outside the budget — grants, gifts, revolving | 68 | 51 | 17 | 0 |
-| payroll | what the town paid its people, name by name | 66 | 2 | 63 | 1 |
+| payroll | what the town paid its people, name by name | 66 | 4 | 60 | 1 |
 | debt | what the town owes and when it falls due | 46 | 14 | 31 | 1 |
 | trust and stabilization | the reserves, and how much is in each | 39 | 22 | 16 | 1 |
 | receivables | what is owed TO the town, account by account | 28 | 18 | 7 | 3 |
 | unknown | a financial table whose heading we could not classify | 27 | 5 | 22 | 0 |
 | tax collection | what was committed, collected and abated | 21 | 9 | 11 | 1 |
-| regional school | the assessment from the regional school district | 19 | 1 | 17 | 1 |
+| regional school | the assessment from the regional school district | 19 | 1 | 16 | 1 |
 | balance sheet | what the town held and owed at year end | 17 | 13 | 4 | 0 |
 | valuation | what the town is worth, by class of property | 16 | 8 | 8 | 0 |
 | treasurers cash | the cash the Treasurer held | 15 | 14 | 0 | 1 |
@@ -54,7 +54,7 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | enrollment | how many children are in the schools | 6 | 3 | 3 | 0 |
 | elections | how the town voted | 2 | 1 | 1 | 0 |
 | cultural council | the grants the cultural council made | 1 | 0 | 1 | 0 |
-| **total** |  | **478** | **183** | **285** | **10** |
+| **total** |  | **478** | **186** | **280** | **10** |
 
 ## By report
 
@@ -66,11 +66,11 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | FY2014 | 27 | 14 | 13 | 0 |
 | FY2015 | 31 | 13 | 18 | 0 |
 | FY2016 | 41 | 12 | 29 | 0 |
-| FY2017 | 35 | 14 | 18 | 3 |
+| FY2017 | 35 | 14 | 16 | 3 |
 | FY2018 | 35 | 17 | 18 | 0 |
 | FY2019 | 38 | 11 | 26 | 1 |
 | FY2020 | 39 | 16 | 22 | 1 |
-| FY2021 | 37 | 13 | 24 | 0 |
+| FY2021 | 37 | 16 | 21 | 0 |
 | FY2022 | 33 | 18 | 15 | 0 |
 | FY2023 | 34 | 15 | 17 | 2 |
 | FY2024 | 22 | 8 | 14 | 0 |
@@ -82,7 +82,7 @@ A **dedicated** extractor knows what its table means and can check it against a 
 
 | dataset | rows | years | built by | checked | check failed | no check |
 |---|---:|---|---|---:|---:|---:|
-| `report-appropriations.csv` | 5,027 | 2011–2025 | generic | 157 | 4870 | 0 |
+| `report-appropriations.csv` | 5,250 | 2011–2025 | generic | 311 | 4939 | 0 |
 | `staff-roster-entries.csv` | 3,751 | 2011–2025 | dedicated |  — | — | —  |
 | `report-gross-wages.csv` | 3,547 | 2011–2025 | generic | 0 | 0 | 3547 |
 | `special-revenue-funds.csv` | 2,387 | 2011–2025 | dedicated | 0 | 2058 | 328 |
