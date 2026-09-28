@@ -82,3 +82,21 @@ are kerned rather than positioned, which is what `report_pages` documents it for
 inside another task. It is 2,422 rows across sixteen editions and the check that exists
 today ties five of them; a migration has to keep those tied while naming the columns, and
 attempting it mid-afternoon inside a FY2024 page fix is how the afternoon went.
+
+## And the reader for a photographed page is not recognition
+
+TJ, 28 September 2026: *"i'm 100% done with OCR."*
+
+Everything above is about tables whose page carries its own text. For a page that is a
+photograph, the reader is `render_page.swift` and a pair of eyes, and the transcription is a
+SOURCE in `sources/data/page-reads/` -- see `notes/process/READING-A-REPORT-PAGE.md`.
+
+`page_table.boxes()` reads a recognition TSV and stays for the caches that already exist, but
+nothing new should be built on it. The measurement that settled it: FY2024's special revenue
+schedule, 164 rows, recognition got 14 of 60 on one page and returned different digits at
+different resolutions; read, it was 164 of 164 with all six columns tying to the printed
+totals on the first attempt, in about ten minutes.
+
+**The rules above do not change.** Declare the layout, place by column, refuse rather than
+publish. They apply to what a person read exactly as they apply to what a parser read,
+because what makes either safe is the arithmetic the page states about itself.
