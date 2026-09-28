@@ -11,10 +11,10 @@
   {
    "means": "the funds that sit outside the budget — grants, gifts, revolving",
    "pages": 68,
-   "proven": 51,
+   "proven": 53,
    "refused": 0,
    "subject": "special-revenue",
-   "unproven": 17
+   "unproven": 15
   },
   {
    "means": "what the town paid its people, name by name",
@@ -51,10 +51,10 @@
   {
    "means": "a financial table whose heading we could not classify",
    "pages": 27,
-   "proven": 10,
+   "proven": 12,
    "refused": 0,
    "subject": "unknown",
-   "unproven": 17
+   "unproven": 15
   },
   {
    "means": "what was committed, collected and abated",
@@ -153,7 +153,7 @@
   {
    "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
    "bearing": "sizes",
-   "claim": "195 of 477 pages tie to a total the page itself prints.",
+   "claim": "199 of 477 pages tie to a total the page itself prints.",
    "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
    "figure": "proven",
    "figures": {
@@ -163,14 +163,14 @@
      "value": 477
     },
     "proven": {
-     "text": "195",
+     "text": "199",
      "unit": "pages tied to a printed total",
-     "value": 195
+     "value": 199
     },
     "rest": {
-     "text": "282",
+     "text": "278",
      "unit": "pages with no such check",
-     "value": 282
+     "value": 278
     }
    },
    "id": "a-third-of-the-pages-are-checked-against-the-page-itself",
@@ -178,7 +178,7 @@
    "literals": [],
    "not_shown": "That an UNPROVEN figure is wrong. It means nothing has checked it, which is a different claim and the reason the column exists.",
    "see": [],
-   "so_what": "The other 282 carry real figures that no arithmetic has confirmed."
+   "so_what": "The other 278 carry real figures that no arithmetic has confirmed."
   },
   {
    "basis": "`annual-report-pages.csv` grouped by subject and state.",
@@ -275,11 +275,11 @@
   },
   {
    "built_by": "dedicated",
-   "checked": 0,
-   "failed": 2058,
+   "checked": 172,
+   "failed": 2098,
    "name": "special-revenue-funds",
-   "nocheck": 328,
-   "rows": 2387,
+   "nocheck": 151,
+   "rows": 2422,
    "years": "2011–2025"
   },
   {
@@ -625,11 +625,11 @@
   },
   {
    "label": "pages tied to a total the page prints",
-   "value": "195 of 477"
+   "value": "199 of 477"
   },
   {
    "label": "rows read out of them",
-   "value": "23,602"
+   "value": "23,637"
   }
  ],
  "title": "The annual town reports"

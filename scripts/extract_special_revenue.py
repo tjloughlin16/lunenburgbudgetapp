@@ -278,6 +278,100 @@ def header_of(lines):
     return ' ; '.join(head[-4:])
 
 
+
+# ======================================================================================
+# A DIGITAL PAGE IS READ, NOT RECOGNISED
+# ======================================================================================
+#
+# Eight of the sixteen annual reports are born digital -- FY2014, FY2015, FY2016, FY2017,
+# FY2018, FY2020, FY2024, FY2025 -- and this extractor was running OCR over all of them.
+# The first FY2025 row in the output was `fund: 'as'`, sliced out of the page's own
+# heading `as of June 30, 2025`, which is what recognising a page you could simply read
+# looks like.
+#
+# THE TABLE PRINTS NO TOTAL. Checked on all four FY2025 pages: not one `Total` or `Grand`
+# row. So the identity here is COVERAGE -- every money figure printed on the page is
+# captured -- and not arithmetic. That is the same verdict the wage lists take, for the
+# same reason, and it has power to fail: a row the reader drops takes its figures with it.
+TEXT_LAYER_EDITIONS = {'FY2025': '4130-fy-2025-annual-town-report.pdf'}
+SR_COLS = [('fund_balance', 250, 340), ('receipts', 340, 420),
+           ('remaining_deficits', 420, 530)]
+
+
+def text_layer_rows(doc, want):
+    """{page: [ {fund, values{}, printed_money} ]} from a digital PDF, or {}."""
+    try:
+        import pdfplumber
+    except ImportError:
+        return {}
+    path = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs', doc)
+    if not os.path.exists(path):
+        return {}
+    out, grand = {}, {}
+    with pdfplumber.open(path) as pdf:
+        for n in want:
+            if n < 1 or n > len(pdf.pages):
+                continue
+            words = pdf.pages[n - 1].extract_words()
+            if len(words) < 40:
+                continue
+            lines = {}
+            for w in words:
+                lines.setdefault(round(w['top']), []).append(w)
+            found = []
+            for top in sorted(lines):
+                ws = sorted(lines[top], key=lambda w: w['x0'])
+                label = ' '.join(w['text'] for w in ws if w['x0'] < 250).strip()
+                # A fund line opens with its ACCOUNT NUMBER. That is what tells it from
+                # the heading, the column titles and the page furniture, none of which do.
+                # THE TABLE'S OWN TOTAL IS LABELLED `FUND BALANCE`, NOT `TOTAL`, which
+                # is why a search for `total|grand` found none and this was first graded
+                # on coverage. It is a real grand total and it ties exactly, so the check
+                # here is arithmetic after all.
+                if re.match(r'^FUND\s+BALANCE\b', label, re.I):
+                    tot = {}
+                    for name, lo, hi in SR_COLS:
+                        frag = [w['text'] for w in ws if lo <= w['x0'] < hi
+                                and w['text'].strip() not in ('-', '\u2013', '$')]
+                        if not frag:
+                            continue
+                        t = ''.join(frag).replace(',', '').replace('$', '')
+                        neg = t.startswith('(') and t.endswith(')')
+                        t = t.strip('()')
+                        try:
+                            v = float(t)
+                        except ValueError:
+                            continue
+                        tot[name] = -v if neg else v
+                    if tot:
+                        grand.update(tot)
+                    continue
+                if not re.match(r'^\d{3,4}\b', label):
+                    continue
+                vals = {}
+                for name, lo, hi in SR_COLS:
+                    frag = [w['text'] for w in ws if lo <= w['x0'] < hi
+                            and w['text'].strip() not in ('-', '\u2013', '$')]
+                    if not frag:
+                        continue
+                    t = ''.join(frag).replace(',', '').replace('$', '')
+                    neg = t.startswith('(') and t.endswith(')')
+                    t = t.strip('()')
+                    try:
+                        v = float(t)
+                    except ValueError:
+                        continue
+                    vals[name] = -v if neg else v
+                found.append({'fund': label, 'values': vals})
+            if found:
+                money = sum(1 for w in words
+                            if re.fullmatch(r'\(?[\d,]+\.\d\d\)?', w['text']))
+                out[n] = {'rows': found, 'printed_money': money}
+    if out:
+        out['grand'] = grand
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--boxes', default=os.path.join(ROOT, 'sources', 'town-budget', 'ocr'))
@@ -291,11 +385,60 @@ def main():
         want = catalogue_pages(edition)
         if not want:
             continue
+        # THE TEXT LAYER WINS WHERE THERE IS ONE, and it REPLACES the OCR reading of
+        # those pages rather than adding to it: two readings of one page are not more data.
+        text_rows = (text_layer_rows(TEXT_LAYER_EDITIONS[edition], want)
+                     if edition in TEXT_LAYER_EDITIONS else {})
         pages = RP.load(edition, ocr=True) or RP.load(edition)
-        got = [p for p in want if p in pages]
+        got = [p for p in want if p in pages and p not in text_rows]
 
         header, group, n_before = '', '', len(rows)
         grand_values = []
+        grand = text_rows.pop('grand', {}) if text_rows else {}
+        if grand:
+            sums = {k: 0.0 for k in grand}
+            for f in text_rows.values():
+                for r in f['rows']:
+                    for k, v in r['values'].items():
+                        if k in sums:
+                            sums[k] += v
+            ties = {k: abs(sums[k] - grand[k]) <= 0.005 for k in grand}
+        else:
+            ties = {}
+        for page, found in sorted(text_rows.items()):
+            printed = found['printed_money']
+            got_n = sum(len(r['values']) for r in found['rows'])
+            if ties:
+                verdict = 'checked' if all(ties.values()) else 'check failed'
+                why = ('every fund row in this edition sums to the total the table prints '
+                       'for itself -- labelled FUND BALANCE, not Total -- in all %d '
+                       'columns: %s. Read from the PDF\u2019s own text layer rather than '
+                       'recognised'
+                       % (len(ties), ', '.join('%s %s' % (k, 'ties' if v else 'OUT')
+                                               for k, v in sorted(ties.items()))))
+            else:
+                verdict = 'checked' if got_n >= printed else 'check failed'
+                why = ('%d of %d money figures printed on the page are captured, each on '
+                       'its own fund line; no grand total was found to tie against'
+                       % (got_n, printed))
+            for r in found['rows']:
+                v = r['values']
+                rows.append({
+                    'fy': str(fy), 'edition': edition, 'group': '', 'fund': r['fund'],
+                    'page': str(page), 'is_subtotal': '',
+                    'columns_as_printed': 'Fund Balance 6/30/%d | Receipts thru 9/30/%d | '
+                                          'Remaining Deficits' % (fy, fy - 1),
+                    'v1': ('%.2f' % v['fund_balance']) if 'fund_balance' in v else '',
+                    'v2': ('%.2f' % v['receipts']) if 'receipts' in v else '',
+                    'v3': ('%.2f' % v['remaining_deficits'])
+                          if 'remaining_deficits' in v else '',
+                    'v4': '', 'v5': '', 'v6': '',
+                    'n_values': str(len(v)), 'ruler_spanned': '', 'row_check': '',
+                    'derived_cell': '',
+                    'columns_tying': 'v1=fund balance, v2=receipts, v3=remaining deficits '
+                                     '-- named from the header the page prints, not from '
+                                     'the order they were read in',
+                    'status': verdict, 'reconciliation': why})
         for page in got:
             lines = [l for l in pages[page] if l.strip()]
             if not header:
@@ -457,7 +600,12 @@ def main():
         led['checks'], led['ok'] = [], False
         if not led['grand_values'] or not mine:
             for r in mine:
-                r['status'] = 'no check'
+                # A ROW THAT ALREADY CARRIES A VERDICT KEEPS IT. The text-layer path
+                # grades its pages on COVERAGE, because this table prints no grand total
+                # to tie against -- and this branch, which exists for exactly that case,
+                # was overwriting `checked` with `no check` and undoing it.
+                if not r.get('status'):
+                    r['status'] = 'no check'
             continue
         ties = []
         for i, printed in enumerate(led['grand_values'], start=1):
