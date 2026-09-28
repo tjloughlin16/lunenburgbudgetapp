@@ -68,3 +68,57 @@ is most of the last three days.
 first question is whether our reading of the page is current and complete — not what the
 town did. Rule 13c already says a matcher that finds nothing is a statement about our
 instrument. This plan is that rule applied to the whole pipeline instead of one regex.
+
+---
+
+## The learning loop
+
+TJ, 28 September 2026: *"i need you to have a learning loop built into this. i need you
+to review what is taking so long at every step, and improve it."*
+
+Each entry is a thing that cost real time, what it cost, and the change made so the next
+one is cheaper. Append to it; do not rewrite it.
+
+### 1. We debugged a four-week-stale cache for three days
+`pages/*.ocr.txt` is derived from `ocr/*.tsv` and had no dependency link to it, so a
+rebuilt OCR left the cache silently wrong. FY2021 read as $22.5M short when the figure was
+in the OCR the whole time.
+**Changed:** the cache now writes the sha256 of every TSV it was built from, and
+`report_pages.stale(edition)` answers whether it is current.
+**Rule:** check the instrument before you debug the data.
+
+### 2. We fought OCR on pages that have a digital TEXT LAYER
+FY2014 and FY2020's pages read cleanly with `pdfplumber` — exact characters, no
+mishearing. Two whole years were diagnosed in minutes once an agent tried it, after hours
+of arguing with OCR boxes.
+**Rule:** before reading a page by geometry, ask whether it has a text layer. Not every
+year does -- FY2021 and FY2013 have none -- so ASK, never assume either way.
+
+### 3. The same four steps are written nine times, and the shared library is ignored
+`pdf_tables.py` holds twenty functions and nineteen scripts import it -- including
+`looks_flipped()` and `unflip()`, which ONE script uses. I hand-wrote half-turn detection
+today that was already there, better documented.
+**Rule:** grep `pdf_tables.py` before writing any geometry. If the primitive is missing,
+add it THERE.
+
+### 4. A correction could mend a row but never supply one
+The figures that matter most are the ones OCR dropped whole -- FY2020 p151 line 19 is the
+entire reconciliation gap for that year and is absent from the extract.
+**Changed:** a `read` correction that matches no row now inserts it, flagged
+`inserted_row` so it can never be mistaken for something we extracted.
+
+### 5. An agent needs the exact contract, not a description of it
+Two agents wrote `column=v1` where the file's convention is `1`, so every correction built
+`vv1` and silently did nothing. The run reported no error because the rows "matched".
+**Rule:** when delegating, give the exact header AND one real example row from the file.
+
+### 6. No extractor has a `--year` or `--page` flag
+Every hypothesis costs a full run over sixteen reports. That is the single largest
+remaining tax on iteration.
+**Not yet changed.** Next.
+
+### What is now proven to work, end to end
+An agent reads the page, writes a `read` or `attested` row into
+`sources/data/table-corrections.csv` with its evidence, the extractor re-runs, the year's
+arithmetic closes, and the pages move to PROVEN. FY2015 and FY2021 both closed this way
+today. It parallelises: one agent per year, and they do not contend.

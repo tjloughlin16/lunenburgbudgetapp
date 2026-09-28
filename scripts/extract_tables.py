@@ -1234,6 +1234,36 @@ def apply_corrections(rows_in, dataset, fy, applied):
                                   f"the page prints {float(c['corrected']):,.2f}")
             applied.add((c['dataset'], c['fy'], c['page'], c['label']))
             break
+        else:
+            # A CORRECTION COULD ONLY EVER MEND A ROW, NEVER SUPPLY ONE -- and the rows
+            # that matter most are the ones OCR dropped WHOLE. FY2020 p151 line 19,
+            # `Selectmen's Administration $124,738.87`, is absent from the extract
+            # entirely: the label box read cleanly and the figure box came back as
+            # `124,78.57`, so the row was discarded rather than kept with an empty value.
+            # That single line is the whole of that year's reconciliation gap, and there
+            # was no way to record it short of editing a generated file by hand.
+            #
+            # So a `read` correction that matches nothing INSERTS the row. It carries the
+            # same evidence and the same `row_check` as any other, and `inserted_row` says
+            # plainly that this line came off the page rather than out of the reading --
+            # a figure nobody can tell from an extracted one is exactly what rule 13
+            # forbids. An `attested` correction never inserts: attesting is a statement
+            # about a row we already hold.
+            if c.get('kind') != 'attested' and c.get('corrected'):
+                kin = next((r for r in rows_in if str(r['page']) == want_page), None)
+                if kin is not None:
+                    row = {k: '' for k in kin}
+                    row.update({k: kin.get(k) for k in
+                                ('dataset', 'fy', 'edition', 'page', 'table_family')})
+                    row.update({'kind': 'row', 'label': c['label'],
+                                'line_no': c.get('line_no') or '',
+                                f"v{c['column']}": f"{float(c['corrected']):.2f}",
+                                'inserted_row': 'read off the page',
+                                'row_check': 'this line is absent from the reading and is '
+                                             'read off the page: %.2f'
+                                             % float(c['corrected'])})
+                    rows_in.append(row)
+                    applied.add((c['dataset'], c['fy'], c['page'], c['label']))
 
 
 def heading_pages(dataset):

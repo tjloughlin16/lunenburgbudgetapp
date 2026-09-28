@@ -18,6 +18,7 @@ Rebuild it after any change to the OCR:
 
 import argparse
 import glob
+import hashlib
 import os
 import re
 import sys
@@ -101,7 +102,12 @@ def build(pdf, boxes_dir, out_dir):
     # reads the second; a pattern-based one reads the first.
     ocr_out = os.path.join(out_dir, edition_of(doc) + '.ocr.txt')
     with open(ocr_out, 'w') as fh:
-        fh.write(f'# {doc}\n# OCR geometry, {len(ocr)} pages\n\n')
+        fh.write(f'# {doc}\n# OCR geometry, {len(ocr)} pages\n')
+        # THE CACHE RECORDS WHAT IT WAS BUILT FROM, so `stale()` can answer for it and
+        # nothing has to take its currency on trust. See the note above `stale()`.
+        for name, digest in sorted(sources_for(edition_of(doc)).items()):
+            fh.write(f'# source {name} sha256 {digest}\n')
+        fh.write('\n')
         for p in sorted(ocr):
             keep = [l.rstrip() for l in T.layout_from_boxes(ocr[p]) if l.strip()]
             fh.write(f'===PAGE {p}=== (ocr, {len(keep)} lines)\n')
@@ -120,6 +126,68 @@ def build(pdf, boxes_dir, out_dir):
                 fh.write(f'{i:4d}| {l}\n')
             fh.write('\n')
     return len(reader.pages), len(pages), os.path.getsize(out)
+
+
+# ---------------------------------------------------------- THE STALENESS GATE
+#
+# THIS CACHE IS DERIVED AND HAD NO WAY OF KNOWING IT WAS OUT OF DATE, WHICH COST ABOUT
+# THREE DAYS. It was built 5 September 2026. The OCR it derives from was rebuilt on
+# 21 September (the renderer had been clipping rotated pages) and again on 28 September,
+# and `--rebuild` is a separate manual step nobody ran. So every extractor went on reading
+# a four-week-old rendering and reporting what it found as facts about the town:
+#
+#     FY2021 short by $22,568,463   the $21.65M School Department line was in the OCR the
+#                                   whole time; only the 5 September rendering lacked the row
+#     FY2012 short by  $3,744,480
+#     FY2013 short by    $837,727
+#
+# There is even a comment in extract_tables.py asserting that line 79 "is absent from both
+# renderings of both pages it could be on", written against the stale cache and false.
+#
+# A derived artefact that outlives its input and keeps answering confidently is cache
+# invalidation, and it is the same defect CLAUDE.md's own list of thirteen describes: a
+# rendering quoted as the document. The repo already has the discipline for it --
+# check_generated.py re-runs every generator's --check -- and this cache simply was not
+# one of the things it checked. Now it is, and it can answer for itself.
+def sources_for(edition):
+    """The OCR TSV(s) this edition's cache is built from, and their digests."""
+    out = {}
+    for p in sorted(glob.glob(os.path.join(ROOT, 'sources', 'town-budget', 'ocr', '*.tsv'))):
+        if edition_of(os.path.basename(p)) == edition:
+            h = hashlib.sha256()
+            with open(p, 'rb') as fh:
+                for chunk in iter(lambda: fh.read(1 << 20), b''):
+                    h.update(chunk)
+            out[os.path.basename(p)] = h.hexdigest()
+    return out
+
+
+def stale(edition):
+    """Why this edition's cache is out of date, or '' if it is current.
+
+    Compares the digests recorded in the cache header against the TSVs on disk. A cache
+    written before this gate existed carries no digests at all, which is itself a reason
+    to rebuild -- it cannot prove it is current, and an unprovable cache is what we just
+    spent three days trusting.
+    """
+    path = os.path.join(PAGES, edition + '.ocr.txt')
+    if not os.path.exists(path):
+        return 'no cache'
+    want = sources_for(edition)
+    got = {}
+    with open(path, encoding='utf-8', errors='replace') as fh:
+        for line in fh:
+            if not line.startswith('#'):
+                break
+            m = re.match(r'# source (\S+) sha256 ([0-9a-f]{64})', line)
+            if m:
+                got[m.group(1)] = m.group(2)
+    if not got:
+        return 'the cache records no source digests, so it cannot prove it is current'
+    if got != want:
+        moved = sorted(k for k in set(got) | set(want) if got.get(k) != want.get(k))
+        return 'built from a different reading of %s' % ', '.join(moved[:3])
+    return ''
 
 
 def load(edition, ocr=False):
