@@ -45,6 +45,7 @@ import collections
 import csv
 import glob
 import io
+import re
 import os
 import sys
 
@@ -70,6 +71,18 @@ FIELDS = ['fy', 'page', 'document', 'fund_number', 'fund_name', 'column', 'value
 # the figures rather than applied everywhere.
 DEFAULT_TOL = 0.02
 
+# A GROUP THAT PRINTS NO TOTAL IS CHECKED ON COVERAGE, and the coverage test is DECLARED by
+# the transcription rather than assumed here. A `kind=check` row says what to assert:
+#
+#   column `rows_per_page`   every page but the last carries exactly this many rows
+#   column `ordered_by`      the named column never goes backwards through the whole run
+#
+# The wage lists are why. They print 675 names across eight pages and no total anywhere, so
+# there is no arithmetic to close -- but the page's own shape is an assertion: 47 printed
+# rows in two columns is 94 names, and the surnames run A to Z. The sequence catches a page
+# or a block dropped; the count catches a single name skipped, which the sequence cannot.
+# Both, or neither is worth much.
+
 # THE TOTAL IS READ OFF THE PAGE TOO, and lives in the transcription as `kind=total` --
 # not typed in here. Rule 2: a figure in prose or in code is the one thing that can be
 # silently wrong, and a check whose expected value is hardcoded stops being a check the day
@@ -82,6 +95,8 @@ def main():
     got = collections.defaultdict(lambda: collections.defaultdict(float))
     want = collections.defaultdict(dict)
     tol = {}
+    declared = collections.defaultdict(dict)
+    seen = collections.defaultdict(list)
     printed_on = {}
     rows = collections.Counter()
     pages = collections.defaultdict(set)
@@ -91,6 +106,9 @@ def main():
         for r in csv.DictReader(open(f, encoding='utf-8')):
             if not (r.get('value') or '').strip():
                 continue
+            if (r.get('kind') or 'fund') == 'check':
+                declared[key][r['column']] = r['value']
+                continue
             if (r.get('kind') or 'fund') == 'total':
                 want[key][r['column']] = float(r['value'])
                 tol[key] = max(tol.get(key, DEFAULT_TOL),
@@ -98,16 +116,18 @@ def main():
                 printed_on[key] = 'page %s, the row `%s`' % (r['page'], r['fund_name'])
                 continue
             got[key][r['column']] += float(r['value'])
+            seen[key].append((int(r['page']), r.get('fund_number', '')))
             rows[key] += 1
             pages[key].add(r['page'])
 
     bad = []
     for key in sorted(got):
         if key not in want:
-            print('FY%s %s -- %d rows across %d pages, NO PRINTED TOTAL: the transcription '
-                  'must say in `proof` what checks it' % (key[0], key[1], rows[key],
-                                                          len(pages[key])))
-            continue
+            if key not in declared:
+                print('FY%s %s -- %d rows across %d pages, NO PRINTED TOTAL and no coverage '
+                      'check declared: nothing here can fail'
+                      % (key[0], key[1], rows[key], len(pages[key])))
+            continue          # a coverage group is reported below, where it is computed
         print('FY%s %s -- %d rows across %d pages, against %s'
               % (key[0], key[1], rows[key], len(pages[key]), printed_on[key]))
         for col, printed in sorted(want[key].items()):
@@ -136,6 +156,35 @@ def main():
                                          % (c, format(round(got[key].get(c, 0.0), 2), ','),
                                             format(p, ','))
                                          for c, p in sorted(want[key].items())))
+        elif declared.get(key):
+            # COVERAGE: the shape the page asserts about itself.
+            d, notes, ok = declared[key], [], True
+            if d.get('rows_per_page'):
+                n = int(d['rows_per_page'])
+                per = collections.Counter(pg for pg, _ in seen[key])
+                full = sorted(per)[:-1]
+                wrong = {pg: per[pg] for pg in full if per[pg] != n}
+                # THE LAST PAGE IS SHORT BY DESIGN and is not asserted -- a run ends where
+                # the names end. Say so, rather than claiming all pages carry the count.
+                notes.append('%d full pages carry %d rows, the last carries %d'
+                             % (len(full), n, per[sorted(per)[-1]]))
+                if wrong:
+                    ok = False
+                    notes[-1] += ' -- WRONG: %s' % wrong
+            if d.get('ordered_by'):
+                keys = [re.sub(r'[^A-Z ]', '', v.upper()) for _, v in seen[key]]
+                back = sum(1 for a, b in zip(keys, keys[1:]) if b < a)
+                notes.append('%s runs in order through all %d rows'
+                             % (d['ordered_by'], len(keys))
+                             if not back else
+                             '%s goes BACKWARDS %d times' % (d['ordered_by'], back))
+                if back:
+                    ok = False
+            verdict, why = ('checked' if ok else 'check failed'), '; '.join(notes)
+            print('FY%s %s -- %d rows across %d pages, coverage: %s'
+                  % (key[0], key[1], rows[key], len(pages[key]), why))
+            if not ok:
+                bad.append('FY%s %s: %s' % (key[0], key[1], why))
         else:
             verdict, why = 'no check', 'this group prints no total; see `proof`'
         for r in csv.DictReader(open(f, encoding='utf-8')):

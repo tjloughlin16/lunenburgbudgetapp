@@ -800,6 +800,24 @@ REPRINTS = {
 }
 
 
+def transcribed_pages():
+    """`{(fy, page)}` for every page a person has read off the render.
+
+    See `sources/data/page-reads/`. These pages are on the map because somebody looked at
+    them, which is a better authority on whether a page is financial than a count of what
+    recognition managed to recognise.
+    """
+    out = set()
+    d = os.path.join(DATA, 'page-reads')
+    for f in sorted(glob.glob(os.path.join(d, '*.csv'))):
+        for r in csv.DictReader(open(f, encoding='utf-8')):
+            try:
+                out.add((int(r['fy']), int(r['page'])))
+            except (KeyError, ValueError):
+                continue
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
@@ -807,6 +825,7 @@ def main():
 
     done, said = read_pages()
     refused = refusals()
+    transcribed = transcribed_pages()
     rows = []
     for f in sorted(glob.glob(os.path.join(OCR, '*annual-town-report.tsv'))):
         m = re.search(r'fy-(\d{4})-', f)
@@ -829,7 +848,21 @@ def main():
                     figs += 1
                 elif MONEY.match(unreversed(t)):
                     rev += 1
-            if figs + rev < MIN_FIGURES:
+            # A PAGE SOMEBODY READ IS A FINANCIAL PAGE, whatever recognition made of it.
+            #
+            # This threshold is the archive's blind spot, and it hid five pages of the
+            # FY2024 gross wage list. A page enters this map only when recognition found
+            # fifteen money figures on it; page 189 prints ninety-six wages and recognition
+            # found ZERO, so it was not unfinished -- it was ABSENT. Five of the eight pages
+            # of that run were, and FY2024's total of 22 financial pages was short by five
+            # with nothing anywhere saying so.
+            #
+            # That is rule 13c at the level of the whole tracker: a count built from what
+            # our instrument FOUND cannot report what it missed, and a page that never
+            # appears looks exactly like a page that does not exist. The remedy is not a
+            # lower threshold -- recognition found nothing at all on those pages, so no
+            # threshold reaches them. It is to let a READING put a page on the map.
+            if figs + rev < MIN_FIGURES and (fy, page) not in transcribed:
                 continue
             top = [' '.join((b['text'] or '').split())
                    for b in sorted(boxes, key=lambda b: -b['y'])[:10]]
