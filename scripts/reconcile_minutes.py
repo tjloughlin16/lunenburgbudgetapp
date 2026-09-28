@@ -219,6 +219,21 @@ def main():
     ap.add_argument('--force', action='store_true')
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--status', action='store_true')
+    # A CAP, BECAUSE THIS ONE NEVER HAD ONE. Every other model step in refresh.py is
+    # bounded -- MAX_MINUTES_PER_RUN, MAX_OFFICIAL_VOTES_PER_RUN, MAX_OCR_PER_RUN -- and
+    # this was added without one and called bare, so it walked the whole backlog every
+    # day. On 28 September 2026 it ran two hours, made 89 model calls and spent $22.73
+    # API-equivalent before it was killed, with about 157 pairs still to go: another four
+    # and a half hours and roughly a tenth of the week's allowance, in one step of one run.
+    ap.add_argument('--limit', type=int, default=0,
+                    help='at most this many reconciliations; 0 means no cap')
+    # THE WINDOW IS WHAT MAKES THIS A DIFF RATHER THAN A SWEEP. Official minutes appear
+    # weeks after a meeting, so the daily question is only ever about RECENT meetings:
+    # measured on 28 September 2026, 228 pairs were unreconciled and 2 of them were within
+    # 45 days. Everything else is backlog, and backlog belongs to sweep_backlog.py, which
+    # runs in the week's unused allowance and stops when a person is working.
+    ap.add_argument('--since', default='',
+                    help='only meetings on or after this date (YYYY-MM-DD)')
     a = ap.parse_args()
     if a.check:
         return check()
@@ -230,8 +245,26 @@ def main():
         done = sum(1 for f in files if json.load(open(f)).get('reconciliation'))
         print('%d minutes file(s); %d have official minutes; %d reconciled' % (len(files), both, done))
         return 0
+    # COUNT WHAT IS SPENT, NOT WHAT IS LOOKED AT. `files` is every minutes file; most are
+    # already reconciled or have no official minutes to compare against, and skipping one
+    # costs nothing. The limit therefore counts the ones that actually CALLED the model.
+    spent, pending = 0, 0
+    if a.since:
+        files = [f for f in files
+                 if (json.load(open(f)).get('meeting_date') or '') >= a.since]
     for f in files:
-        print('%s  %s' % (os.path.relpath(f, W.OUT), reconcile(f, force=a.force)), flush=True)
+        if a.limit and spent >= a.limit:
+            pending += 1
+            continue
+        before = json.load(open(f)).get('reconciliation')
+        out = reconcile(f, force=a.force)
+        after = json.load(open(f)).get('reconciliation')
+        if after and after is not before:
+            spent += 1
+        print('%s  %s' % (os.path.relpath(f, W.OUT), out), flush=True)
+    if pending:
+        print('%d reconciliation(s) done this run (--limit %d); %d file(s) not looked at '
+              '-- they wait for tomorrow' % (spent, a.limit, pending), flush=True)
     return 0
 
 

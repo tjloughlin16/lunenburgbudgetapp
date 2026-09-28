@@ -75,6 +75,8 @@ MAX_MINUTES_PER_RUN = 3
 # every quote checked) but 4,600 of them, so newest first and capped, every board.
 MAX_OFFICIAL_VOTES_PER_RUN = 40
 MAX_OCR_PER_RUN = 40             # ~20 minutes of local CPU; nothing charged to the plan
+MAX_RECONCILE_PER_RUN = 10       # a backstop; the window below is what keeps this small
+RECONCILE_WINDOW_DAYS = 60       # official minutes appear weeks after a meeting
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 RUN_COLS = ['ran_at', 'as_of', 'new_agendas', 'new_minutes', 'new_videos',
@@ -517,10 +519,26 @@ def main():
         except Exception as e:
             notes.append('could not count proposed season rows: %s' % e)
 
-    # 7b. Against the town's minutes, wherever both now exist. Official minutes appear
-    # weeks after a meeting, so this is asked every day and does work only when new.
+    # 7b. Against the town's minutes, FOR RECENT MEETINGS ONLY.
+    #
+    # THIS COMMENT USED TO SAY `does work only when new` AND THE CALL BELOW HAD NO WINDOW,
+    # so it reconciled every unreconciled pair in the archive, every day. On 28 September
+    # 2026 it ran for two hours inside the daily refresh, made 89 model calls and spent
+    # $22.73 API-equivalent with 157 pairs still to go -- another four and a half hours and
+    # about a tenth of the week's allowance, in one step.
+    #
+    # TJ, that day: *"REFRESH is intended to fetch anything NEW that was added. Not churn
+    # through a backlog... it should be fast, and small. its a DIFF based tool."*
+    #
+    # Official minutes appear weeks after a meeting, so a window of RECONCILE_WINDOW_DAYS
+    # is what `new` means here. Measured the same day: 228 pairs were unreconciled and 2
+    # were within 45 days. The backlog is sweep_backlog.py's job -- it runs in the week's
+    # unused allowance, newest first, and stops the moment a person starts working.
     if not a.dry_run and not a.no_minutes:
-        py('reconcile_minutes.py', check=False)
+        since = (dt.date.fromisoformat(a.as_of)
+                 - dt.timedelta(days=RECONCILE_WINDOW_DAYS)).isoformat()
+        py('reconcile_minutes.py', '--since', since,
+           '--limit', str(MAX_RECONCILE_PER_RUN), check=False)
 
     # 8. Rebuild everything derived from the above.
     if not a.dry_run:
