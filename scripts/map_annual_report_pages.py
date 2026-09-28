@@ -484,7 +484,19 @@ PROOF = {
     'board-chairs': (None, NOTHING),
     'debt-repayment': (None, NOTHING),
     'department-staffing': (None, NOTHING),
-    'enterprise-balance-sheet': (None, NOTHING),
+    # PUBLISHED ONLY WHEN THE YEAR TIES, so the row's existence IS the verdict --
+    # CONSTRUCTION, the same declaration `balance-sheet` and `treasurers-cash` carry.
+    # `append_enterprise_balance_sheet_year.py` merges a staged edition into a COPY, runs
+    # `verify_enterprise_balance_sheet.py` against it, and replaces the real files only if
+    # every check passes; on failure it writes nothing at all. Its own docstring says why:
+    # "a year that does not tie is not written down -- so the writing has to be what is
+    # gated, not the reporting."
+    #
+    # Declared here having read that code, per the rule above. Registered as NOTHING it
+    # reported FY2025 page 25 as unchecked while the verifier passed every column of it:
+    # assets, liabilities and fund equity each footing to a total the town printed, on all
+    # four funds, and the memorandum column equal to the four added across.
+    'enterprise-balance-sheet': (None, CONSTRUCTION),
     'grants-history': (None, NOTHING),
     'peg-access': (None, NOTHING),
     'signatures': (None, NOTHING),
