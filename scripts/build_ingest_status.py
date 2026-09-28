@@ -662,15 +662,32 @@ def streams():
     # topics, public comment, budget items -- of which votes are one part. Every card now
     # prints its input and its output, because a label alone could not carry the
     # distinction and the distinction is the whole point (rule 13: ours and theirs).
-    s.append(dict(key='votes', unit=('set of minutes read for votes', 'sets of minutes read for votes', 'sets of minutes still to read'), name='Votes, from the town’s own minutes',
-                  io='in: the minutes the town published &rarr; out: each vote, with the town’s words quoted verbatim',
+    # NAMED FOR THE DOCUMENT, NOT FOR WHAT WE CURRENTLY TAKE OUT OF IT. TJ raised this on
+    # 19 September and again on 28 September: *"why are you so focused on votes? We process
+    # OFFICIAL minutes and we create our own minutes. votes is ONE PIECE of what the
+    # minutes have in them."*
+    #
+    # The first answer was that the stream really does produce only votes, and every card
+    # was given an input and an output line so the two streams could be told apart. That
+    # was true and it missed the point. A set of the town's minutes holds decisions,
+    # transfers, appointments, public comment; votes are all we EXTRACT today, which is a
+    # limitation of our reader and not a description of the document. Calling the stream
+    # `Votes` put that limitation in the name, where it reads as the definition -- and made
+    # a backlog of 3,041 DOCUMENTS look like a vote tally.
+    #
+    # So the name is the document and the output line says what we take from it, with
+    # `today` doing real work: it marks the gap rather than hiding it.
+    s.append(dict(key='votes', unit=('set of the town’s minutes processed', 'sets of the town’s minutes processed', 'sets of the town’s minutes still to process'), name='The town’s OFFICIAL minutes',
+                  io='in: the minutes the town published &rarr; out: the votes they state, '
+                     'each with the town’s words quoted verbatim &mdash; all we take '
+                     'from them today, though they hold a great deal more',
                   done=len(glob.glob(os.path.join(DATA, 'official-votes', '*', '*.json'))),
                   todo=sum(p['n'] for p in vp), blocked=0, blocked_why='',
                   cost='~0.03% of the week each, runs by itself',
                   last=ago(newest([os.path.join(DATA, 'official-votes', '*', '*.json')])), note='every vote carries a quote checked verbatim against the minutes',
                   pending=vp))
     mp = register_pending(lambda r: bool(r.get('transcript_paths')), 'recording-minutes')
-    s.append(dict(key='ourminutes', unit=('recording written up', 'recordings written up', 'recordings still to write up'), name='Our minutes, written from the recordings',
+    s.append(dict(key='ourminutes', unit=('recording written up', 'recordings written up', 'recordings still to write up'), name='OUR minutes, written from the recordings',
                   io='in: our machine captions of a video &rarr; out: the whole meeting — decisions, '
                      'votes, transfers, budget items, topics, public comment',
                   done=len(glob.glob(os.path.join(DATA, 'recording-minutes', '*', '*.json'))),
