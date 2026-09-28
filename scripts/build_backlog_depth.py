@@ -25,9 +25,15 @@ with the queue that drains it would be worse than no number.
 
 THE THREE STREAMS ARE NOT INTERCHANGEABLE and the chart must not add them:
 
-  votes      ONE SET of the town's minutes, read for the votes in it        ~$0.09
-  reconcile  ONE MEETING where we hold both records, compared               ~$0.32
-  minutes    ONE RECORDING, minutes written from its captions               ~$0.37
+  votes      ONE SET of the town's OFFICIAL minutes, processed              ~$0.09
+  reconcile  ONE MEETING's two records, compared                            ~$0.32
+  minutes    ONE RECORDING, OUR minutes written from it                     ~$0.37
+
+THE STREAM CALLED `votes` IS THE TOWN'S OFFICIAL MINUTES. TJ, 28 September 2026: *"why are
+you so focused on votes? We process OFFICIAL minutes and we create our own minutes. votes
+is ONE PIECE of what the minutes have in them."* The stream is named after the extractor
+that reads it today, which framed a document-processing backlog as a vote-counting one.
+The key stays `votes` because that is the script; what a reader is shown is the document.
 
 EVERY COUNT HERE IS DOCUMENTS TO PROCESS, NEVER THE THINGS INSIDE THEM. A set of minutes
 may hold eight votes or none, so `votes 3,041` is three thousand SETS OF MINUTES still to
@@ -159,9 +165,9 @@ def render(pay):
     # its count is sets of minutes and not votes -- a set may hold eight or none. Labelled
     # `the votes in the town's minutes` beside 3,041 it read as a count of votes, which is
     # the units failure rule 7b exists to stop.
-    what = {'votes': 'one set of the town\u2019s minutes, read for the votes in it',
-            'reconcile': 'one meeting where we hold both records, compared',
-            'minutes': 'one recording, minutes written from its captions'}
+    what = {'votes': 'one set of the town\u2019s OFFICIAL minutes, processed',
+            'reconcile': 'one meeting\u2019s two records, compared',
+            'minutes': 'one recording, OUR minutes written from it'}
     for s in pay['streams']:
         w('| `%s` | %s | %s | %s | %s |'
           % (s['name'], what.get(s['name'], ''), f"{s['jobs']:,}",

@@ -760,11 +760,18 @@ def streams():
         # votes or none. Labelled `the votes in the town's minutes` beside that figure it
         # read as a count of votes, which is the units failure rule 7b exists to stop:
         # ten children, ten documents and ten budget lines must not look alike.
-        what = {'votes': 'sets of the town\u2019s minutes still to read for the votes '
-                         'in them \u2014 a set may hold several votes or none',
-                'reconcile': 'meetings where we hold BOTH records and have not compared '
-                             'them',
-                'minutes': 'recordings still to have minutes written from their captions'}
+        # NAME THE DOCUMENT AND THE WORK, NOT TODAY'S EXTRACTOR. TJ: *"why are you so
+        # focused on votes? We process OFFICIAL minutes and we create our own minutes.
+        # votes is ONE PIECE of what the minutes have in them."* Right -- the stream is
+        # THE TOWN'S OFFICIAL MINUTES, PROCESSED; votes are what we happen to take out of
+        # them today, and calling the stream `votes` framed a document-processing backlog
+        # as a vote-counting one. The internal key stays `votes` because that is the
+        # script; what a reader is shown is the document.
+        what = {'votes': 'the town\u2019s OFFICIAL minutes, still to process \u2014 votes '
+                         'are what we extract from them today, not all they hold',
+                'reconcile': 'meetings where we hold both records and have not compared '
+                             'ours against the town\u2019s',
+                'minutes': 'recordings we have not yet written OUR minutes from'}
         stream_rows = []
         for st in bd['streams']:
             stream_rows.append((st['name'], st['jobs'], what.get(st['name'], ''),
@@ -884,18 +891,19 @@ def backlog_chart(bd):
                    'text-anchor="middle">%s</text>'
                    % (x + bw / 2, y - 3, format(r['total'], ',')))
     out.append('</svg>')
-    legend = {'votes': 'sets of minutes to read for votes',
-              'reconcile': 'meetings to compare against the town\u2019s minutes',
-              'minutes': 'recordings to write minutes for'}
+    legend = {'votes': 'the town\u2019s official minutes, to process',
+              'reconcile': 'the two records of a meeting, to compare',
+              'minutes': 'recordings, to write OUR minutes from'}
     out.append('<div class="tiny">%s</div>'
                % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, legend[n])
                                  for n, c in STREAM_COLOUR))
-    out.append('<div class="tiny" style="margin-top:4px">Every bar counts DOCUMENTS to '
-               'process, never the things inside them \u2014 one set of minutes may hold '
-               'eight votes or none. By the MEETING\u2019s own date, not by when we found '
-               'it. Hover a block for its count; stacked to show a year\u2019s '
-               'composition, since the three are different jobs at different prices and '
-               'are never added into one figure.</div></div>')
+    out.append('<div class="tiny" style="margin-top:4px">Two records of every meeting: '
+               'the minutes the TOWN published, and the minutes WE write from the '
+               'recording \u2014 then a comparison of the two. Every bar counts DOCUMENTS '
+               'still to process, never what is inside them. By the MEETING\u2019s own '
+               'date, not by when we found it. Hover a block for its count; stacked to '
+               'show a year\u2019s composition, since the three are different jobs at '
+               'different prices and are never added into one figure.</div></div>')
     return ''.join(out)
 
 
