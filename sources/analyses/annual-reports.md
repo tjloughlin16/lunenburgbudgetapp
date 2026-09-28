@@ -1,11 +1,11 @@
 # The annual town reports
 
-Sixteen documents, 478 pages of financial tables, 23,554 rows read out of them.
+Sixteen documents, 479 pages of financial tables, 23,602 rows read out of them.
 
 ## The short version
 
 - Every financial page in every report has been read. **None is unread.**
-- **186 of 478** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
+- **186 of 479** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
 - **10 pages** an extractor reached and wrote nothing from. Each says why.
 - What is left is **code, not reading**.
 
@@ -38,7 +38,7 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 
 | category | what it answers | pages | proven | unproven | refused |
 |---|---|---:|---:|---:|---:|
-| appropriations | what Town Meeting voted to spend, article by article | 94 | 16 | 77 | 1 |
+| appropriations | what Town Meeting voted to spend, article by article | 95 | 16 | 78 | 1 |
 | special revenue | the funds that sit outside the budget — grants, gifts, revolving | 68 | 51 | 17 | 0 |
 | payroll | what the town paid its people, name by name | 66 | 4 | 60 | 1 |
 | debt | what the town owes and when it falls due | 46 | 14 | 31 | 1 |
@@ -54,14 +54,14 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | enrollment | how many children are in the schools | 6 | 3 | 3 | 0 |
 | elections | how the town voted | 2 | 1 | 1 | 0 |
 | cultural council | the grants the cultural council made | 1 | 0 | 1 | 0 |
-| **total** |  | **478** | **186** | **280** | **10** |
+| **total** |  | **479** | **186** | **281** | **10** |
 
 ## By report
 
 | fiscal year | pages | proven | unproven | refused |
 |---|---:|---:|---:|---:|
 | FY2011 | 28 | 10 | 17 | 1 |
-| FY2012 | 26 | 9 | 16 | 1 |
+| FY2012 | 27 | 9 | 17 | 1 |
 | FY2013 | 29 | 8 | 20 | 1 |
 | FY2014 | 27 | 14 | 13 | 0 |
 | FY2015 | 31 | 13 | 18 | 0 |
@@ -82,7 +82,7 @@ A **dedicated** extractor knows what its table means and can check it against a 
 
 | dataset | rows | years | built by | checked | check failed | no check |
 |---|---:|---|---|---:|---:|---:|
-| `report-appropriations.csv` | 5,297 | 2011–2025 | generic | 311 | 4986 | 0 |
+| `report-appropriations.csv` | 5,345 | 2011–2025 | generic | 311 | 5034 | 0 |
 | `staff-roster-entries.csv` | 3,751 | 2011–2025 | dedicated |  — | — | —  |
 | `report-gross-wages.csv` | 3,547 | 2011–2025 | generic | 0 | 0 | 3547 |
 | `special-revenue-funds.csv` | 2,387 | 2011–2025 | dedicated | 0 | 2058 | 328 |

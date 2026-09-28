@@ -2,11 +2,11 @@
  "categories": [
   {
    "means": "what Town Meeting voted to spend, article by article",
-   "pages": 94,
+   "pages": 95,
    "proven": 16,
    "refused": 1,
    "subject": "appropriations",
-   "unproven": 77
+   "unproven": 78
   },
   {
    "means": "the funds that sit outside the budget — grants, gifts, revolving",
@@ -133,14 +133,14 @@
   {
    "basis": "`annual-report-pages.csv`, which is generated from what the extractors actually wrote and refuses to publish a count off a stale database.",
    "bearing": "sizes",
-   "claim": "All 478 pages holding a financial table have been read.",
+   "claim": "All 479 pages holding a financial table have been read.",
    "detail": "Sixteen documents, opened page by page. A page counted here is one that holds a financial table, not every page of the book.",
    "figure": "pages",
    "figures": {
     "pages": {
-     "text": "478",
+     "text": "479",
      "unit": "pages holding a financial table",
-     "value": 478
+     "value": 479
     }
    },
    "id": "every-financial-page-has-been-read",
@@ -153,14 +153,14 @@
   {
    "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
    "bearing": "sizes",
-   "claim": "186 of 478 pages tie to a total the page itself prints.",
+   "claim": "186 of 479 pages tie to a total the page itself prints.",
    "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
    "figure": "proven",
    "figures": {
     "all": {
-     "text": "478",
+     "text": "479",
      "unit": "pages holding a financial table",
-     "value": 478
+     "value": 479
     },
     "proven": {
      "text": "186",
@@ -168,9 +168,9 @@
      "value": 186
     },
     "rest": {
-     "text": "290",
+     "text": "291",
      "unit": "pages with no such check",
-     "value": 290
+     "value": 291
     }
    },
    "id": "a-third-of-the-pages-are-checked-against-the-page-itself",
@@ -178,12 +178,12 @@
    "literals": [],
    "not_shown": "That an UNPROVEN figure is wrong. It means nothing has checked it, which is a different claim and the reason the column exists.",
    "see": [],
-   "so_what": "The other 290 carry real figures that no arithmetic has confirmed."
+   "so_what": "The other 291 carry real figures that no arithmetic has confirmed."
   },
   {
    "basis": "`annual-report-pages.csv` grouped by subject and state.",
    "bearing": "lever",
-   "claim": "Appropriations is the least checked: 77 of its 94 pages have no check at all.",
+   "claim": "Appropriations is the least checked: 78 of its 95 pages have no check at all.",
    "detail": "These pages print what Town Meeting voted, article by article. 16 of them do tie to a printed total; the rest are read and unconfirmed.",
    "figure": "un",
    "figures": {
@@ -193,14 +193,14 @@
      "value": 16
     },
     "tot": {
-     "text": "94",
+     "text": "95",
      "unit": "pages in this category",
-     "value": 94
+     "value": 95
     },
     "un": {
-     "text": "77",
+     "text": "78",
      "unit": "pages with no check",
-     "value": 77
+     "value": 78
     }
    },
    "id": "the-largest-unchecked-category-is-what-town-meeting-voted",
@@ -249,10 +249,10 @@
   {
    "built_by": "generic",
    "checked": 311,
-   "failed": 4986,
+   "failed": 5034,
    "name": "report-appropriations",
    "nocheck": 0,
-   "rows": 5297,
+   "rows": 5345,
    "years": "2011–2025"
   },
   {
@@ -621,15 +621,15 @@
   },
   {
    "label": "pages holding a financial table",
-   "value": "478"
+   "value": "479"
   },
   {
    "label": "pages tied to a total the page prints",
-   "value": "186 of 478"
+   "value": "186 of 479"
   },
   {
    "label": "rows read out of them",
-   "value": "23,554"
+   "value": "23,602"
   }
  ],
  "title": "The annual town reports"
