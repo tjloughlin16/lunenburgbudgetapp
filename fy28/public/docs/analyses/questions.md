@@ -516,7 +516,7 @@ Returns `category`, `rates`, `with_a_document` — for example: category=athleti
 SELECT edition, status, COUNT(*) AS rows FROM report_appropriations GROUP BY edition, status ORDER BY edition, rows DESC
 ```
 
-Returns `edition`, `status`, `rows` — for example: edition=FY2011, status=check failed, rows=299
+Returns `edition`, `status`, `rows` — for example: edition=FY2011, status=check failed, rows=354
 
 > ALWAYS split on `status`. `checked`, `check failed` and `no check` are three different claims and nothing may be aggregated across them.
 
@@ -542,7 +542,7 @@ Returns `edition`, `rows`, `checked` — for example: edition=FY2011, rows=22, c
 SELECT edition, label, status FROM report_capital_projects WHERE label <> '' ORDER BY edition DESC LIMIT 20
 ```
 
-Returns `edition`, `label`, `status` — for example: edition=FY2025, label=3006 8/2STM & 6/6 STM Dev Cem, status=no check
+Returns `edition`, `label`, `status` — for example: edition=FY2025, label=3006 8/2STM & 6/6 STM Dev Cem, status=checked
 
 **What is in the trust funds?**
 
@@ -664,7 +664,7 @@ Returns `fy`, `edition`, `table`, `kind`, `detail` — for example: fy=2025, edi
 SELECT fy, [group], COUNT(*) AS rows FROM special_revenue_funds GROUP BY fy, [group] ORDER BY fy DESC, rows DESC LIMIT 20
 ```
 
-Returns `fy`, `group`, `rows` — for example: fy=2025, group=, rows=177
+Returns `fy`, `group`, `rows` — for example: fy=2025, group=, rows=172
 
 **How many figures did each annual report yield, and how many were checked?**
 
@@ -672,7 +672,7 @@ Returns `fy`, `group`, `rows` — for example: fy=2025, group=, rows=177
 SELECT edition, COUNT(*) AS rows, SUM(CASE WHEN status='checked' THEN 1 ELSE 0 END) AS checked FROM report_appropriations GROUP BY edition ORDER BY edition
 ```
 
-Returns `edition`, `rows`, `checked` — for example: edition=FY2011, rows=299, checked=0
+Returns `edition`, `rows`, `checked` — for example: edition=FY2011, rows=354, checked=0
 
 **Which report tables print a total we can reconcile to?**
 
@@ -878,7 +878,7 @@ Returns `budget_lines`, `mapped` — for example: budget_lines=688, mapped=0
 SELECT edition, COUNT(*) AS rows FROM report_appropriations WHERE column_meaning LIKE 'not established%' GROUP BY edition ORDER BY rows DESC
 ```
 
-Returns `edition`, `rows` — for example: edition=FY2014, rows=90
+Returns `edition`, `rows` — for example: edition=FY2021, rows=170
 
 > `v1` is an ordinal -- the first column of THIS page that held figures -- not a column name. Read `column_meaning` before summing anything.
 
@@ -888,7 +888,7 @@ Returns `edition`, `rows` — for example: edition=FY2014, rows=90
 SELECT 'appropriations' AS t, status, COUNT(*) AS rows FROM report_appropriations GROUP BY status UNION ALL SELECT 'gross_wages', status, COUNT(*) FROM report_gross_wages GROUP BY status ORDER BY t, rows DESC
 ```
 
-Returns `t`, `status`, `rows` — for example: t=appropriations, status=check failed, rows=4870
+Returns `t`, `status`, `rows` — for example: t=appropriations, status=check failed, rows=5034
 
 **Which documents were obtained by records request rather than published?**
 

@@ -27,7 +27,7 @@ prints no total. **Nothing here may be aggregated without splitting on `status` 
 | `placement-counts.csv` | 15 | 2011–2025 | parts sum to the total; each year states its predecessor | yes | yes | yes |
 | `ballot-questions.csv` | 9 | 2012–2025 | every tally against its own precinct figures | yes | — | yes |
 | `annual-report-receipts.csv` | 1,137 | 2011–2023 | 504 checked / 85 failed / 548 no check | yes | yes | yes |
-| `special-revenue-funds.csv` | 2,387 | 2011–2025 | 0 checked / 2,058 failed / 328 no check | yes | yes | yes |
+| `special-revenue-funds.csv` | 2,434 | 2011–2025 | 336 checked / 2,098 failed / 0 no check | yes | yes | yes |
 | `staff-roster-entries.csv` | 3,751 | 2011–2025 | every line of every page accounted for | yes | — | yes |
 | `staff-roster-counts.csv` | 698 | 2011–2025 | derived from the above | yes | — | yes |
 | `staff-position-map.csv` | 525 | — | a hypothesis about which titles are the same job | yes | — | yes |
@@ -41,8 +41,8 @@ Read `column_meaning` before reading a value.
 |---|---:|---|---|---|---|---|
 | `report-appropriations-supplement-refused.csv` | 3 | — | — | **no** | shared | yes |
 | `report-appropriations-supplement.csv` | 32 | — | — | **no** | shared | yes |
-| `report-appropriations.csv` | 5,027 | 2011–2025 | 157 checked / 4,870 failed / 0 no check | yes | shared | yes |
-| `report-capital-projects.csv` | 616 | 2011–2025 | 0 checked / 529 failed / 87 no check | yes | shared | yes |
+| `report-appropriations.csv` | 5,345 | 2011–2025 | 311 checked / 5,034 failed / 0 no check | yes | shared | yes |
+| `report-capital-projects.csv` | 618 | 2011–2025 | 48 checked / 544 failed / 26 no check | yes | shared | yes |
 | `report-debt.csv` | 366 | 2011–2025 | 75 checked / 99 failed / 192 no check | yes | shared | yes |
 | `report-dept-activity.csv` | 515 | 2011–2025 | 0 checked / 0 failed / 515 no check | yes | shared | yes |
 | `report-elections.csv` | 2,012 | 2011–2025 | 323 checked / 1,688 failed / 1 no check | yes | shared | yes |

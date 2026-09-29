@@ -1,181 +1,149 @@
 # The annual-report page stream: what to do next
 
-27 September 2026. **Everything left on this stream is CODE. `UNREAD` is 0, and no amount of
-model spend moves it.** That is the one sentence to carry away, because the metric spent a
-day inviting the opposite purchase.
+**28 September 2026.** Everything on this stream is now READ A PAGE, one year at a time,
+one section at a time. The process is `notes/process/READING-A-REPORT-PAGE.md` and it is
+not optional reading -- every rule in it was paid for today.
 
-Where the 474 financial pages stand, from `python3 scripts/map_annual_report_pages.py`:
+Where the 484 financial pages stand (`python3 scripts/map_annual_report_pages.py`):
 
-    162 PROVEN    rows tie to a total the page prints          done
-    282 UNPROVEN  rows exist, nothing recorded a check         write the check   (code)
-     30 REFUSED   an extractor reached it and wrote nothing    fix the extractor (code)
-      0 UNREAD    nobody has looked                            read it           (TOKENS)
-      0 reversed  the OCR came out mirrored                    re-OCR            (free)
+    244 PROVEN    figures tie to something the page states about itself
+    231 UNPROVEN  rows exist, nothing has checked them
+      8 REFUSED   an extractor reached the page and wrote nothing
+      1 BLOCKED   the page CANNOT be read; see sources/data/page-blocked.csv
 
-The four states, why `read` was replaced, and the `PROOF` registry that decides which is
-which are in `notes/HANDOFF-INGESTION-TRUST.md` §3h. This document is only the queue.
+Three years are at zero. This morning it was none.
 
----
-
-## THE JOBS, RANKED
-
-### 1. The 12 debt-repayment pages — diagnosed, ready to write
-
-    FY2011 p76   FY2012 p76, p77   FY2013 p81, p82   FY2018 p48, p51
-    FY2019 p49   FY2020 p43, p44   FY2022 p45, p47
-
-**The recorded refusal reason is WRONG and must not be trusted.** It says *"the page is a
-scanned image; there is no text layer to read, and the issue columns are too narrow for
-Vision"* — while its own evidence field says *"Vision reads 356 boxes, e.g. `$9,180`"*. Rule
-13c: a matcher that found nothing was written down as a fact about the document.
-
-What FY2011 p76 actually holds, read off the boxes:
-
-* the title, `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30`
-* a year header at y≈0.925: `2019 2020 2021 2022 2023 2024 2025 [2026 2027] 2028 2029 2030`
-  — every year its own box at a ~0.038 pitch, **except one merged box**
-* 60 row labels at x<0.20, structured per bond issue: `PRINCIPAL`, `INTEREST`,
-  `TOTAL MASS WATER POOL TRUST`
-* 285 money boxes on a clean grid, ~0.04 pitch
-
-**Why this is safe to read from OCR at all: the table states an identity about itself.**
-`PRINCIPAL + INTEREST = TOTAL <issue>`, for every issue in every year column — roughly 15
-issues × 11 columns of arithmetic that a wrong column assignment cannot survive. That is rule
-13b's own argument, and `scripts/read_trust_table.py` is the worked example of the same shape.
-
-The merged `2026 2027` box is the FY2017 p149 trap in a tractable form: both years are
-PRINTED and READ, the pitch is measurable, and years ascend left to right, so the two column
-centres are **predicted rather than invented**. Nothing is named from a position.
-
-The order: read the year header, split merged boxes by the measured pitch, band the rows off
-the label column, place figures by nearest column centre, and **publish only the columns
-where principal + interest foots to the printed total.** Everything else goes in
-`debt-repayment-detail-refused.csv` with its reason.
-
-### 2. The 10 receivables pages — the pages grade the extractor
-
-    FY2017 p43, p44, p45   FY2018 p54   FY2020 p49
-    FY2021 p47, p49        FY2022 p51   FY2023 p55, p56
-
-These were read and their rows DELETED for not summing to the totals their own pages print.
-The work is fixing `scripts/extract_receivables.py`; the pages are legible and they grade it.
-Registered as a gap, so the count falls as the extractor improves.
-
-### 3. Five pages refused for a header or parse reason, each different
-
-| page | why | remedy |
-|---|---|---|
-| FY2013 p83 | 50 figures carry trailing scanner marks (`$`, `S`, `\|`, a doubled paren) so they match no money pattern and its rows never form | a conservative gate stripping ONLY those marks recovers all 50 and takes the page from 124 figures to 174. Rows must be anchored on the label column at x≈0.131 (51 rows, 0.01135 pitch), **not** by clustering figures. A residual vertical offset still leaves 51 figures unassigned and must be MEASURED |
-| FY2019 p198 | mid-table continuation, no header printed on the page | inherit the column map from the page where the table starts — **but see the open decision below** |
-| FY2019 p203 | same; also prints its own number as `201`, and a stray `ZRATE` sits in the surname x-position | same |
-| FY2023 p51 | only `ACCOUNT NUMBER` and `FUND NAME` survive; the rest of the header band is OCR garbage (`CAN GES`, `5=5=2255225229`). FY2023 prints TWO trust tables with different headers | read the header off the PDF text layer, not the OCR cache |
-| FY2017 p149 | 16 town names occupy 8 OCR boxes — one reads `HARVARD HUBBARDSTON LUNENBURG ROYALSTON,` | word-level PDF geometry. Only Lunenburg's column matters to this project |
-
-**FY2013 p83's stated reason was WRONG.** It said the page was rotated. Measured skew came
-back exactly `0.00000`, which is that function's silent *"fewer than 8 usable pairs"*
-fallback; correcting for a measured −0.0381 made the clustering worse, not better. **The page
-is not rotated.** Same defect as the debt pages: a refusal that was a statement about our
-instrument.
-
-### 4. Three more singletons
-
-    FY2012 p114   gross wages
-    FY2017 p155   appropriations supplement — does not foot to its own subtotals
-    FY2019 p44    treasurer's cash — the column does not foot; ours 11,763,248.59 against a
-                  printed 15,084,021.00, both recorded in extraction-blocked.csv
-
-### 5. THE 282 UNPROVEN PAGES — the largest bucket, and the least understood
-
-This is the number that appeared when `read` was replaced, and nobody has worked it yet.
-`failed_by` in `annual-report-pages.csv` splits it into two genuinely different jobs:
-
-| subject | pages | what `failed_by` says |
-|---|---:|---|
-| appropriations | 78 | `appropriations` failed on 65, `capital-projects` on 9 |
-| payroll | 56 | **nothing recorded on 37**; `appropriations` failed on 19 |
-| unknown | 23 | nothing recorded on 18 |
-| debt | 20 | nothing recorded on 8, `debt-repayment-detail` failed on 8 |
-| special-revenue | 17 | `special-revenue-funds` failed on 11 |
-| regional-school | 17 | `appropriations` failed on 12 |
-| trust-and-stabilization | 16 | nothing recorded on 8, `trust-funds` on 6 |
-| treasurers-cash | 14 | **nothing recorded on all 14** |
-
-**A page with a name in `failed_by` and a page with nothing recorded are not the same work.**
-The first has a check that ran and disagreed with the page — that is the 4,870-against-157 in
-`report_appropriations`, and it is a real reconciliation problem. The second has no check at
-all, and the remedy is to write one; `treasurers-cash` is the clean example, 14 pages with
-nothing recorded anywhere.
-
-Do not start here without splitting on that column first.
+    FY2025   23 of 23     FY2024   28 of 28     FY2023   34 of 35, one blocked
 
 ---
 
-## THE OPEN DECISION, FOR TJ
+## THE ONE THING THAT CHANGED: STOP RUNNING OCR
 
-**FY2019 p198 and p203 — the gross-wages table. Worth reading, or leave them REFUSED?**
+TJ, 28 September 2026: *"i'm 100% done with OCR. that's totally a waste of my time and
+credits."* Measured on FY2024's special revenue schedule, 164 rows, both readings of one
+document:
 
-`notes/generated/AGENTIC-BACKLOG.md` says this table is deliberately NOT published, and it is
-registered in `money-gaps.csv` instead: the town stopped printing the department beside each
-name after FY2016, and the two-column layout loses a third to a half of the given names.
-Reading those two pages would move the counter and produce rows nobody consumes.
+    recognition   14 of 60 rows on one page, and DIFFERENT DIGITS for the same row at
+                  different resolutions -- 90.61 and 0.61 -- so merging passes cannot help
+    read          164 of 164, all six columns tying to the printed totals, first attempt,
+                  about ten minutes
 
-Nothing else waits on this. Both readings are defensible; the gap row already carries the
-explanation either way.
+**A page that carries its own text is read with `pdfplumber`. A page that is a photograph is
+RENDERED AND READ.** Not recognised, not as a cross-check, not as a fallback. If a
+recognition cache already exists for a page it is not evidence and not a starting point.
 
 ---
 
-## BEFORE STARTING ANY OF IT
+## HOW THE WORK GOES NOW
 
-    python3 scripts/db_freshness.py         # is lunenburg.db still true? milliseconds, offline
-    python3 scripts/map_annual_report_pages.py    # the queue, and the four counts
+**One year. Build the table once. Work the sections, top to bottom, committing each.**
 
-**`map_annual_report_pages.py` refuses to write a count off a stale database**, so if
-`db_freshness` is red, fix that first — on 27 September the page count was published off a
-four-day-old copy for twelve hours.
+    python3 -c "
+    import csv, collections
+    rs=[r for r in csv.DictReader(open('sources/data/annual-report-pages.csv')) if r['fy']=='2014']
+    print(collections.Counter(r['state'] for r in rs))
+    for r in sorted(rs, key=lambda r: int(r['page'])):
+        if r['state']!='proven':
+            print(r['page'], r['state'], r['subject'], '|', (r['failed_by'] or r['refused_by'] or '-'), '|', r['heading'][:40])"
 
-**A dataset missing from `PROOF` FAILS the build.** If you add an extractor, add it there
-with the column carrying its verdict, or `(None, NOTHING)` if it records none. The build stops
-and names it rather than filing its pages as UNPROVEN, which would read as a finding about the
-archive.
+Then, before reading anything in a section:
 
-**A refusal register missing from `REFUSED_FAMILY`** in `build_extraction_gaps.py` fails the
-same way, and needs the question a reader cannot answer plus the fix that would close it.
+| | |
+|---|---|
+| **extent** | where does the table start and stop? Walk outward until it does. |
+| **holes** | a page BETWEEN or BESIDE the run that the tracker does not list at all |
+| **reader** | per PAGE: its own text, or a photograph? And what dpi? |
+| **size** | what SHOULD it hold, from the page's shape rather than from our data? |
 
-**AND A REFUSED PAGE IS NEVER RERUN.** It returns the same refusal and pays a model for it.
+**THE HOLES ARE THE ONE THE LIST CANNOT TELL YOU**, and they are not hypothetical: five pages
+of FY2024's gross wages and one page of FY2023's omnibus budget were absent from the tracker
+entirely, each with a full table on it. A page is listed only when recognition found fifteen
+money figures, so a page it failed on completely is not unfinished -- it does not appear.
+A page somebody has READ is now added to the map, but nothing finds the ones nobody has
+looked at yet.
 
-## WHEN FINISHED
+**The subject label is a guess from the words at the top of the page.** FY2023's pages 164-167
+are labelled trust-and-stabilization, payroll, payroll and regional-school, from the headings
+`INFRA21-03`, `Reserve Fund`, `Police Lock Up` and `Traffic Signs & Devices`. They are one
+omnibus budget. What says two pages are the same table is that the same EXTRACTOR holds rows
+for both.
 
-    python3 scripts/check_generated.py --rebuild    # dependency-ordered, loops to fixpoint
+---
 
-One run, at the end, not as you go — it starts 8 checks at once and several agents each
-running it takes the load average past 11. Verifiers that fail are reported separately as
-*needing a person*, because a verifier failing is a defect and not staleness to be built away.
+## WHAT A TRANSCRIPTION IS
 
-**Nine generators are excluded from `--rebuild` and the reason generalises.** Seven call
-`claude -p`; two (`sync_d1.py`, `sync_search_d1.py`) push to a remote with a hard daily write
-budget. The rule *drop `--check` and you have the generator* is true of every other entry —
-and `sync_d1.py` is where it bit on the first run, pushing unasked minutes after the push had
-been deferred to the next day's budget. **A CHECK AND ITS GENERATOR DO NOT ALWAYS SPEND THE
-SAME THING.** Dropping a flag is a safe way to find the builder and not a safe way to decide
-whether running it is free.
+`sources/data/page-reads/` -- 17 files, 3,342 figures. Each row carries the document, the
+page, the column, who read it and what proves it. **It is DATA, never typed into an
+extractor**, and `scripts/verify_page_reads.py` re-proves every one on every run. That is
+the property recognition had and a read does not: the reading happens once, the check
+happens for ever. It is in `check_generated.py`.
 
-**A `--rebuild` run hung for nineteen minutes on 27 September and had to be killed**, with
-five checks alive and no progress: `build_blog.py --check`, `verify_blog.py`,
-`build_if_students_leave.py --check`, `build_peer_spending.py --check` and
-`build_special_education.py --check`. Killing it lost the output, so which round it was in is
-not known.
+A transcription declares what checks it:
 
-WHAT IS ESTABLISHED: those five ran over ten minutes and the run did not advance. WHAT IS
-NOT: why. The trust handoff's §3d records `build_if_students_leave.py --check` writing to
-`lunenburg.db` while another check holds it — a real concurrency defect — and that does NOT
-explain `build_blog.py`, which never opens the database. Two explanations fit and nothing
-distinguishes them yet.
+    kind=total        the figure the page prints, that the rows must foot to
+    kind=check        `row_identity`  a,b,c=d  or  a-b-c=d   -- accumulates, a page may
+                                      state several; the trust summary states five
+                      `rows_per_page` / `ordered_by`  -- COVERAGE, for a page with no total
+    kind=attested     WE READ IT RIGHT AND THE DOCUMENT DISAGREES WITH ITSELF. Excluded
+                      from the check and REPORTED, loudly, every run. Never a tolerance.
+    tolerance         only with a reason: a page printing DISPLAYED whole dollars over
+                      figures carrying cents cannot tie to the cent
 
-Every check is now bounded by `TIMEOUT = 600`, so a hung one is reported as TIMED OUT by name
-and the run continues. **That bounds the symptom and does not fix the cause**, which is still
-open: the remaining question is what those five actually contend over. `--serial` runs clean,
-which is the workaround and also a clue.
+**What makes a read safe is the arithmetic, not the reader.** A person or a model reading a
+page is a reading like any other (rule 13a). What settles it is 164 rows landing on six
+printed totals, or 46 funds closing five identities each, or 115 figures matching a
+different year's report.
 
-`money_gaps` changed on 27 September and has NOT reached D1. The next `python3
-scripts/sync_d1.py` takes it; it is one small table. Do not run it the same day as a large
-push — two runs that day already put ~74,000 rows through a 100,000-write daily budget.
+---
+
+## WHERE EACH YEAR STANDS
+
+| year | pages | proven | left | notes |
+|---|---:|---:|---:|---|
+| FY2011 | 28 | 10 | 18 | all photographs |
+| FY2012 | 27 | 10 | 17 | all photographs |
+| FY2013 | 29 | 8 | 21 | all photographs |
+| **FY2014** | 27 | 14 | **13** | **every one carries its own text -- do this next** |
+| FY2015 | 31 | 13 | 18 | 15 of 18 digital |
+| FY2016 | 41 | 12 | 29 | 28 of 29 digital -- the biggest digital haul |
+| FY2017 | 33 | 14 | 19 | 11 digital |
+| FY2018 | 35 | 17 | 18 | 10 digital |
+| FY2019 | 38 | 11 | 27 | all photographs |
+| FY2020 | 39 | 16 | 23 | 4 digital |
+| FY2021 | 37 | 16 | 21 | all photographs |
+| FY2022 | 33 | 18 | 15 | 5 digital |
+| FY2023 | 35 | **34** | 1 | **at zero** but for p25, blocked at 93 dpi |
+| FY2024 | 28 | **28** | 0 | **at zero** |
+| FY2025 | 23 | **23** | 0 | **at zero** |
+
+Counts per page are generated into `notes/generated/TEXT-LAYER-COVERAGE.md` by
+`scripts/survey_text_layer.py`; it is a property of the PAGE, not of the report, and the
+per-report version of that table is what made FY2024 look like the cheapest year when it was
+the most expensive.
+
+**Take FY2014 next.** Thirteen pages, all digital, and it finishes a year.
+
+---
+
+## WHAT TO EXPECT, FROM THE THREE YEARS DONE
+
+**Most `refused` pages were read correctly and refused for something that is not the page's
+own arithmetic.** FY2023's balance sheet was refused on a CROSS-DOCUMENT comparison while
+every one of its own identities closed in all six columns. Both receivables runs were
+refused for `no single sign convention` when the page simply prints negatives in
+parentheses. FY2023's debt schedule was refused because `the year header could not be read`
+-- it reads fine once the IMAGE is turned.
+
+**Some pages do not foot and the town is why.** FY2024's levy build-up is $55,184.33 short
+in one of three columns; FY2023's tax recapitulation is $790,537.77 short, which is exactly
+798,523.00 less 7,985.23, a decimal shift; FY2023's `Total General Government` misses its own
+lines by eighty cents. Each is attested, registered in `document-defects.csv`, and says
+plainly that WHICH FIGURE IS WRONG IS NOT ESTABLISHED.
+
+**Reading part of a page is fine. Calling it finished is not.** The two debt schedules have
+only their GRAND TOTAL blocks transcribed -- about fifty per-issue rows each are not -- and
+that is a row in `money-gaps.csv`, not a footnote.
+
+**A page can be unreadable and that is a finding.** `page-blocked.csv`, `blocked` in the
+tracker. Measure dpi before rendering; it is dpi AND density, since FY2023 p24 reads
+perfectly at 72 dpi and p25 is hopeless at 93.

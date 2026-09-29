@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-27",
+ "generated": "2026-09-28",
  "origins": [
   {
    "id": "school",
@@ -1678,6 +1678,18 @@
      "textUrl": "/docs/data/valuation-by-class.csv"
     },
     {
+     "path": "data/peg-access-fund.csv",
+     "title": "The cable fund: what Comcast pays, and what it buys",
+     "stars": 3,
+     "what": "FY2015-FY2025, and NOTHING IN THIS ARCHIVE HELD ANY OF IT until now — it was found because two of its pages had been classified as enrollment and one as payroll. It is rule 11 in miniature: cable licence money paying real salaries, in no budget line anybody votes on, so a reader of the town’s appropriations cannot see the people it employs. 147 of 165 rows tie to a printed total. Three years disagree with themselves and are recorded rather than reconciled: FY2017’s printed TOTAL omits a $450.00 vendor expense, FY2025’s ending balance is beginning less expenses and ignores the year’s own $262,565 of revenue, and FY2020 and FY2024 each print their expenses twice on one page with the two copies disagreeing.",
+     "kind": "Data",
+     "bytes": 45942,
+     "url": "/docs/data/peg-access-fund.csv",
+     "count": 165,
+     "unit": "rows",
+     "textUrl": "/docs/data/peg-access-fund.csv"
+    },
+    {
      "path": "analyses/stabilization-funds.md",
      "title": "The stabilization funds, and who may spend them",
      "stars": 3,
@@ -1690,16 +1702,16 @@
      "textUrl": "/docs/analyses/stabilization-funds.md"
     },
     {
-     "path": "data/peg-access-fund.csv",
-     "title": "The cable fund: what Comcast pays, and what it buys",
+     "path": "data/receivables.csv",
+     "title": "What the town was still owed on 30 June, levy by levy",
      "stars": 3,
-     "what": "FY2015-FY2025, and NOTHING IN THIS ARCHIVE HELD ANY OF IT until now — it was found because two of its pages had been classified as enrollment and one as payroll. It is rule 11 in miniature: cable licence money paying real salaries, in no budget line anybody votes on, so a reader of the town’s appropriations cannot see the people it employs. 147 of 165 rows tie to a printed total. Three years disagree with themselves and are recorded rather than reconciled: FY2017’s printed TOTAL omits a $450.00 vendor expense, FY2025’s ending balance is beginning less expenses and ignores the year’s own $262,565 of revenue, and FY2020 and FY2024 each print their expenses twice on one page with the two copies disagreeing.",
+     "what": "The Collector’s RECEIVABLES SUMMARY out of the annual reports: one row per tax levy and charge, eight columns from BALANCE FORWARD through COMMITTMENTS, ABATEMENTS, PAYMENTS, REFUNDS, TRANSFER and ADJUSTMENTS to BALANCES, ending in the town’s own printed GRAND TOTAL. 522 rows, and every one closes the table’s per-row identity. THE COLUMN ORDER CHANGES MID-ARCHIVE — FY2016-FY2018 print ADJUSTMENTS REFUNDS PAYMENTS ABATEMENTS and FY2019 onward print ABATEMENTS PAYMENTS REFUNDS TRANSFER ADJUSTMENTS — so four columns transpose silently for anyone who assumes one layout. And FY2023 and FY2024 are both headed `FY2021 COLLECTION OF TAXES`, a stale template; the fiscal year cannot be read off the heading.",
      "kind": "Data",
-     "bytes": 44479,
-     "url": "/docs/data/peg-access-fund.csv",
-     "count": 165,
+     "bytes": 42695,
+     "url": "/docs/data/receivables.csv",
+     "count": 319,
      "unit": "rows",
-     "textUrl": "/docs/data/peg-access-fund.csv"
+     "textUrl": "/docs/data/receivables.csv"
     },
     {
      "path": "analyses/sped-and-the-curve.md",
@@ -1736,18 +1748,6 @@
      "count": 447,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics-ledger.md"
-    },
-    {
-     "path": "data/receivables.csv",
-     "title": "What the town was still owed on 30 June, levy by levy",
-     "stars": 3,
-     "what": "The Collector’s RECEIVABLES SUMMARY out of the annual reports: one row per tax levy and charge, eight columns from BALANCE FORWARD through COMMITTMENTS, ABATEMENTS, PAYMENTS, REFUNDS, TRANSFER and ADJUSTMENTS to BALANCES, ending in the town’s own printed GRAND TOTAL. 522 rows, and every one closes the table’s per-row identity. THE COLUMN ORDER CHANGES MID-ARCHIVE — FY2016-FY2018 print ADJUSTMENTS REFUNDS PAYMENTS ABATEMENTS and FY2019 onward print ABATEMENTS PAYMENTS REFUNDS TRANSFER ADJUSTMENTS — so four columns transpose silently for anyone who assumes one layout. And FY2023 and FY2024 are both headed `FY2021 COLLECTION OF TAXES`, a stale template; the fiscal year cannot be read off the heading.",
-     "kind": "Data",
-     "bytes": 23632,
-     "url": "/docs/data/receivables.csv",
-     "count": 180,
-     "unit": "rows",
-     "textUrl": "/docs/data/receivables.csv"
     },
     {
      "path": "analyses/monty-tech.md",
@@ -1844,6 +1844,18 @@
      "count": 124,
      "unit": "lines",
      "textUrl": "/docs/analyses/spending-compared.md"
+    },
+    {
+     "path": "analyses/annual-reports.md",
+     "title": "The sixteen annual town reports, and what has been read out of them",
+     "stars": 3,
+     "what": "Every financial page in every annual town report, what state it is in and what proved it. `proven` means the figures tie to something the page states about itself; `unproven` means the rows exist and nothing has checked them, which is NOT the same as wrong; `refused` means an extractor reached the page and wrote nothing; `blocked` means the page cannot be read at all. Generated by scripts/build_annual_reports.py from sources/data/annual-report-pages.csv, so its counts cannot drift from the queue they describe.",
+     "kind": "Notes",
+     "bytes": 8656,
+     "url": "/docs/analyses/annual-reports.md",
+     "count": 125,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/annual-reports.md"
     },
     {
      "path": "analyses/town-budgets.md",
@@ -2043,9 +2055,9 @@
      "stars": 2,
      "what": "Every name and amount the annual report’s `Town & School Employee Gross Wages` list prints, for the years it reads. NOTHING ON THE SITE USES IT AND nothing should until it reads in full: four years come back near-complete (FY2017, FY2020, FY2021, FY2025) and six read badly or not at all, and the list is set in two columns whose second column loses its given names, so a third to a half of the entries cannot be matched to a person. A department total built on it would rank the scan rather than the payroll. TJ: *“if we dont have the data, we shouldn’t show partial data. that may be misleading”* — so it is held here as working material, and the two things it would answer are registered in money-gaps.csv instead.",
      "kind": "Data",
-     "bytes": 239735,
+     "bytes": 776606,
      "url": "/docs/data/gross-wages.csv",
-     "count": 2946,
+     "count": 3715,
      "unit": "rows",
      "textUrl": "/docs/data/gross-wages.csv"
     },
@@ -2115,9 +2127,9 @@
      "stars": 2,
      "what": "831 rows off the annual reports’ debt pages. `column_foots` states, per row, whether the printed columns add up — and says `interest out by -1` where they miss by a dollar rather than smoothing it, because a rounding difference the town printed is the town’s. `due_fy` is the year a payment falls due and runs past this archive to FY2047; `report_fy` is the book it was printed in. Joining on the wrong one of those credits pages in reports that do not exist yet.",
      "kind": "Data",
-     "bytes": 109008,
+     "bytes": 149103,
      "url": "/docs/data/debt-repayment-detail.csv",
-     "count": 831,
+     "count": 1032,
      "unit": "rows",
      "textUrl": "/docs/data/debt-repayment-detail.csv"
     },
@@ -2216,6 +2228,18 @@
      "count": 744,
      "unit": "lines",
      "textUrl": "/docs/analyses/athletics.md"
+    },
+    {
+     "path": "data/table-corrections.csv",
+     "title": "Cells read off the page image, and cells checked against it",
+     "stars": 2,
+     "what": "Two kinds of row. `read` says OCR got a cell wrong and gives what the page prints, with the page that was looked at. `attested` says OCR got it RIGHT and the DOCUMENT is what does not add up — FY2023 prints a General Government total 80 cents under its own lines — so nobody re-reads a page hunting a fault that was never there. A row matching nothing fails the extractor.",
+     "kind": "Data",
+     "bytes": 40109,
+     "url": "/docs/data/table-corrections.csv",
+     "count": 145,
+     "unit": "rows",
+     "textUrl": "/docs/data/table-corrections.csv"
     },
     {
      "path": "data/staffing-coverage.csv",
@@ -2331,7 +2355,7 @@
      "stars": 2,
      "what": "One row per fiscal year and table family, and a step from 1 to 7: the PDF held, OCR run, text present, tables located, extracted to CSV, loaded to the database, used in a report. Every cell is derived from the artefact it describes, so it cannot go stale the way a hand-kept list does. It exists because the same question — which years do we have for this fund — was answered three different ways from three different artefacts in one afternoon, each true about the artefact and false about the archive.",
      "kind": "Data",
-     "bytes": 14739,
+     "bytes": 14779,
      "url": "/docs/data/pipeline-state.csv",
      "count": 225,
      "unit": "rows",
@@ -2362,6 +2386,18 @@
      "textUrl": "/docs/data/threads.csv"
     },
     {
+     "path": "data/PROVENANCE-debt-tables.md",
+     "title": "Where both debt tables came from, and every page that refused",
+     "stars": 2,
+     "what": "Written by us, and generated, so its counts cannot drift. It lists the refusals rather than only the successes — including the one that matters most: FY2017 page 42 reads a currency sign as a `3` in two figures on one column, both gain exactly $30,000,000, and `principal + interest = TOTAL DEBT` then closes PERFECTLY at twenty times every other year on the page. An identity cannot see a compensating error, so the extractor refuses a figure more than eight times the median of its own row and calls that a guard rather than a proof.",
+     "kind": "Notes",
+     "bytes": 12776,
+     "url": "/docs/data/PROVENANCE-debt-tables.md",
+     "count": 175,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-debt-tables.md"
+    },
+    {
      "path": "data/report-filing.csv",
      "title": "Which bodies file an annual report, and which say they did not",
      "stars": 2,
@@ -2374,16 +2410,16 @@
      "textUrl": "/docs/data/report-filing.csv"
     },
     {
-     "path": "data/PROVENANCE-debt-tables.md",
-     "title": "Where both debt tables came from, and every page that refused",
+     "path": "data/document-defects.csv",
+     "title": "Where a document the town published is itself incomplete",
      "stars": 2,
-     "what": "Written by us, and generated, so its counts cannot drift. It lists the refusals rather than only the successes — including the one that matters most: FY2017 page 42 reads a currency sign as a `3` in two figures on one column, both gain exactly $30,000,000, and `principal + interest = TOTAL DEBT` then closes PERFECTLY at twenty times every other year on the page. An identity cannot see a compensating error, so the extractor refuses a figure more than eight times the median of its own row and calls that a guard rather than a proof.",
-     "kind": "Notes",
-     "bytes": 9754,
-     "url": "/docs/data/PROVENANCE-debt-tables.md",
-     "count": 145,
-     "unit": "lines",
-     "textUrl": "/docs/data/PROVENANCE-debt-tables.md"
+     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
+     "kind": "Data",
+     "bytes": 10389,
+     "url": "/docs/data/document-defects.csv",
+     "count": 10,
+     "unit": "rows",
+     "textUrl": "/docs/data/document-defects.csv"
     },
     {
      "path": "analyses/peer-districts.md",
@@ -2468,30 +2504,6 @@
      "count": 13,
      "unit": "rows",
      "textUrl": "/docs/data/tax-collection-unreconciled.csv"
-    },
-    {
-     "path": "data/table-corrections.csv",
-     "title": "Cells read off the page image, and cells checked against it",
-     "stars": 2,
-     "what": "Two kinds of row. `read` says OCR got a cell wrong and gives what the page prints, with the page that was looked at. `attested` says OCR got it RIGHT and the DOCUMENT is what does not add up — FY2023 prints a General Government total 80 cents under its own lines — so nobody re-reads a page hunting a fault that was never there. A row matching nothing fails the extractor.",
-     "kind": "Data",
-     "bytes": 3399,
-     "url": "/docs/data/table-corrections.csv",
-     "count": 6,
-     "unit": "rows",
-     "textUrl": "/docs/data/table-corrections.csv"
-    },
-    {
-     "path": "data/document-defects.csv",
-     "title": "Where a document the town published is itself incomplete",
-     "stars": 2,
-     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
-     "kind": "Data",
-     "bytes": 2787,
-     "url": "/docs/data/document-defects.csv",
-     "count": 4,
-     "unit": "rows",
-     "textUrl": "/docs/data/document-defects.csv"
     },
     {
      "path": "data/pec-history.csv",
@@ -2682,6 +2694,18 @@
      "textUrl": "/docs/analyses/charts/fy26-town-variance.svg"
     },
     {
+     "path": "data/gross-wages-refused.csv",
+     "title": "Payroll pages that would not read, and why each refused",
+     "stars": 1,
+     "what": "Written by us. Two pages, both a PAIRING failure rather than a faint scan: FY2011 p98 pairs 80 half-rows and refuses 71, reading 93 names against 138 money figures; FY2012 p114 reads 131 money figures and not one personal name, so the department words left on it cannot be attributed to anybody. Neither was guessed at — an amount beside the wrong name is worse than an amount nobody has.",
+     "kind": "Data",
+     "bytes": 6035,
+     "url": "/docs/data/gross-wages-refused.csv",
+     "count": 28,
+     "unit": "rows",
+     "textUrl": "/docs/data/gross-wages-refused.csv"
+    },
+    {
      "path": "analyses/charts/town-budgets-all.svg",
      "title": "All twelve departments on one axis",
      "stars": 1,
@@ -2690,18 +2714,6 @@
      "bytes": 6023,
      "url": "/docs/analyses/charts/town-budgets-all.svg",
      "textUrl": "/docs/analyses/charts/town-budgets-all.svg"
-    },
-    {
-     "path": "data/debt-repayment-detail-refused.csv",
-     "title": "Debt pages that would not read — 24 of them, all one cause",
-     "stars": 1,
-     "what": "Written by us. Every row is a scanned page with no text layer whose issue columns are too narrow for Vision to separate: FY2011 p76 returns 356 boxes and none of them a column. The evidence column carries the character count, the image count and a sample box, so the refusal is a reading somebody can pick up rather than a year quietly absent.",
-     "kind": "Data",
-     "bytes": 5802,
-     "url": "/docs/data/debt-repayment-detail-refused.csv",
-     "count": 24,
-     "unit": "rows",
-     "textUrl": "/docs/data/debt-repayment-detail-refused.csv"
     },
     {
      "path": "analyses/charts/town-budgets-share.svg",
@@ -2772,18 +2784,6 @@
      "bytes": 4663,
      "url": "/docs/analyses/charts/stabilization-flows.svg",
      "textUrl": "/docs/analyses/charts/stabilization-flows.svg"
-    },
-    {
-     "path": "data/gross-wages-refused.csv",
-     "title": "Payroll pages that would not read, and why each refused",
-     "stars": 1,
-     "what": "Written by us. Two pages, both a PAIRING failure rather than a faint scan: FY2011 p98 pairs 80 half-rows and refuses 71, reading 93 names against 138 money figures; FY2012 p114 reads 131 money figures and not one personal name, so the department words left on it cannot be attributed to anybody. Neither was guessed at — an amount beside the wrong name is worse than an amount nobody has.",
-     "kind": "Data",
-     "bytes": 4655,
-     "url": "/docs/data/gross-wages-refused.csv",
-     "count": 24,
-     "unit": "rows",
-     "textUrl": "/docs/data/gross-wages-refused.csv"
     },
     {
      "path": "analyses/charts/fy26-town-spend.svg",
@@ -2928,6 +2928,18 @@
      "textUrl": "/docs/analyses/charts/fy26-school-budget.svg"
     },
     {
+     "path": "data/debt-repayment-detail-refused.csv",
+     "title": "Debt pages that would not read — 24 of them, all one cause",
+     "stars": 1,
+     "what": "Written by us. Every row is a scanned page with no text layer whose issue columns are too narrow for Vision to separate: FY2011 p76 returns 356 boxes and none of them a column. The evidence column carries the character count, the image count and a sample box, so the refusal is a reading somebody can pick up rather than a year quietly absent.",
+     "kind": "Data",
+     "bytes": 1605,
+     "url": "/docs/data/debt-repayment-detail-refused.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/debt-repayment-detail-refused.csv"
+    },
+    {
      "path": "data/report-appropriations-supplement-refused.csv",
      "title": "Appropriation programs whose lines do not sum to their own subtotal",
      "stars": 1,
@@ -2995,14 +3007,26 @@
    "blurb": "The sixteen annual town reports, FY2011–FY2025, read page by page and turned into machine-readable tables. Two of these answer questions this project had recorded as unanswerable. Most of the rest are transcriptions that arithmetic cannot yet check, and every row says which it is. Start with PROVENANCE-report-tables.md below, which says what a figure in these means before you quote one.",
    "items": [
     {
+     "path": "data/pages-read.csv",
+     "title": "Every figure somebody READ off a page, with the verdict its group earned",
+     "stars": 3,
+     "what": "Recognition cannot read some of these pages at all -- the FY2024 special revenue schedule prints 164 rows and it found 14 on one page, returning different DIGITS for the same row at different resolutions. So those pages are rendered and READ, and the transcription is data with its document, its page, its column, who read it and what proves it. This file consolidates them: `status` is `checked`, `check failed` or `no check`, the same three words every other extractor here uses, in a column a script can read rather than in a sentence about how careful somebody was. WHAT MAKES A READ SAFE IS THE ARITHMETIC, NOT THE READER — 164 rows landing on six totals the town printed, 46 trust funds closing five identities each, 115 figures matching a different year’s report. See scripts/verify_page_reads.py, which re-proves every one on every run, and notes/process/READING-A-REPORT-PAGE.md.",
+     "kind": "Data",
+     "bytes": 3823044,
+     "url": "/docs/data/pages-read.csv",
+     "count": 4650,
+     "unit": "rows",
+     "textUrl": "/docs/data/pages-read.csv"
+    },
+    {
      "path": "data/special-revenue-funds.csv",
      "title": "The special revenue funds, FY2011–FY2025",
      "stars": 3,
      "what": "2,387 rows. These are the funds rule 11 says the budget documents cannot show you — grants, revolving funds and gifts that pay for real staff and appear nowhere in the appropriation. 693 rows prove themselves on the fund’s own identity (forward + receipts − disbursements = carried forward), and 351 lost cells are recovered from it, written into their own column and never into a value column. See data/PROVENANCE-special-revenue-funds.md.",
      "kind": "Data",
-     "bytes": 950305,
+     "bytes": 1165540,
      "url": "/docs/data/special-revenue-funds.csv",
-     "count": 2387,
+     "count": 2434,
      "unit": "rows",
      "textUrl": "/docs/data/special-revenue-funds.csv"
     },
@@ -3036,9 +3060,9 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 203305,
+     "bytes": 208904,
      "url": "/docs/data/annual-report-pages.csv",
-     "count": 474,
+     "count": 484,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-pages.csv"
     },
@@ -3053,6 +3077,18 @@
      "count": 774,
      "unit": "rows",
      "textUrl": "/docs/data/balance-sheet.csv"
+    },
+    {
+     "path": "data/trust-fund-matrix.csv",
+     "title": "Every trust fund and every measure, off the wide matrix the report prints",
+     "stars": 3,
+     "what": "The FY2025 annual report’s `TRUST FUNDS` page: 29 funds and 4 group subtotals and a grand total across the page, 14 measures down it — beginning and ending principal, earnings, net income, realized and unrealized gain, transfers, ending cash and market value. 462 figures on one page. It went unread because the fund names are printed SIDEWAYS, one per column, and every reader here looks for a label at the left of a row; they come out of the text layer perfectly because only the RENDERING is rotated. Nothing is written unless every group subtotal foots its own funds, the grand total foots the subtotals, and four identities the page states about itself close on all 33 columns. Its `ending cash value` is a second printing of the balances in data/trust-fund-balances.csv. See scripts/extract_trust_matrix.py.",
+     "kind": "Data",
+     "bytes": 95928,
+     "url": "/docs/data/trust-fund-matrix.csv",
+     "count": 462,
+     "unit": "rows",
+     "textUrl": "/docs/data/trust-fund-matrix.csv"
     },
     {
      "path": "data/annual-report-receipts.csv",
@@ -3084,7 +3120,7 @@
      "stars": 3,
      "what": "The `Treasurer’s Cash as of 6/30` page that every annual town report prints: what the town holds and where, with the funds named. It carries `Bartholomew Stabilization Fund` — the GENERAL Stabilization Fund, which the trust-table pages omit entirely. Each page sets this year beside last year, so one report yields two fiscal years and every interior year is read twice from two documents. Every column is footed to the `Total Treasurer Cash` line the page prints and a column that does not tie is dropped rather than published. NOTE THE GRAIN: this is CASH HELD BY CUSTODIAN, not a fund balance — where it differs from trust-agency-balances.csv, the ledger is the fund and this is the cash. See scripts/extract_treasurers_cash.py.",
      "kind": "Data",
-     "bytes": 59439,
+     "bytes": 61959,
      "url": "/docs/data/treasurers-cash.csv",
      "count": 502,
      "unit": "rows",
@@ -3108,7 +3144,7 @@
      "stars": 3,
      "what": "What the four RATEPAYER funds — Sewer, Water, Solid Waste and PEG Access — hold at 30 June, from the only balance sheet the FY2024 and FY2025 annual reports print. Neither of those reports contains the town-wide combined balance sheet above, so this is a separate dataset with a different population, not more rows of it. FY2024 prints the same sheet TWICE, on printed pages 21 and 28, and both printings are transcribed and asserted to agree. None of this money is available to the general fund. See data/PROVENANCE-enterprise-balance-sheet.md.",
      "kind": "Data",
-     "bytes": 17605,
+     "bytes": 17547,
      "url": "/docs/data/enterprise-balance-sheet.csv",
      "count": 114,
      "unit": "rows",
@@ -3151,16 +3187,40 @@
      "textUrl": "/docs/analyses/what-you-can-ask.md"
     },
     {
+     "path": "data/capital-program-options.csv",
+     "title": "The two capital plans the town meeting was asked to choose between",
+     "stars": 3,
+     "what": "The warrant does not put one capital plan to the meeting. It puts TWO, priced to the same $1,225,000, and asks which one: FY2026 Option 1 funds twenty projects, Option 2 funds fifteen of those twenty, drops five, and adds a Primary School heat pump system carried as the local match for a Green Communities award. So this is the clearest published statement in the archive of what the town chose NOT to buy, at the moment it was choosing. Each table prints a running `Cumulative Cost`, which asserts something at every row rather than once at the foot, and nothing is written unless every step closes and the last equals the printed Total. The CPC rankings have gaps — there is no 14, 18 or 21 — because they rank a longer list than either option funds; the running total is what makes a gap safe to read as a project not carried rather than a row we missed. See scripts/extract_capital_options.py.",
+     "kind": "Data",
+     "bytes": 9120,
+     "url": "/docs/data/capital-program-options.csv",
+     "count": 38,
+     "unit": "rows",
+     "textUrl": "/docs/data/capital-program-options.csv"
+    },
+    {
      "path": "data/trust-fund-balances.csv",
      "title": "Every trust fund and its balance, from the annual report’s own listing",
      "stars": 3,
      "what": "The `Trust Fund Balance Detail` page that the FY2024 and FY2025 annual reports print: one line per account number with the fund balance beside it. It is the COMPLETE list, where the trust-table pages this archive spent weeks on cover only the funds held at other banks and omit the general Stabilization Fund entirely. Read only from pages carrying that heading, because shape alone is not enough — the other-banks table is also a grid of accounts and money and its leftmost column is the BEGINNING principal, which produced a figure $380 wrong before the heading was required. Every FY2025 balance is checked against the general ledger and the extract refuses to write unless the stabilization accounts tie; where another account disagrees that is recorded per row rather than suppressed. See scripts/extract_trust_balance_detail.py.",
      "kind": "Data",
-     "bytes": 6846,
+     "bytes": 8371,
      "url": "/docs/data/trust-fund-balances.csv",
-     "count": 58,
+     "count": 68,
      "unit": "rows",
      "textUrl": "/docs/data/trust-fund-balances.csv"
+    },
+    {
+     "path": "data/monty-tech-expenses.csv",
+     "title": "Monty Tech’s spending by category, three years, off a chart",
+     "stars": 3,
+     "what": "The other school district Lunenburg pays into, broken down: eight spending categories and a `District Expenses` total for FY23, FY24 and FY25, read off the stacked bar chart the FY2025 annual report embeds as an IMAGE — the page carries its own text and the figures are not in it, which is the one case where recognition is the only reader. Nothing is written unless the total is the sum of the categories in every year drawn. THIS IS NOT LUNENBURG’S MONEY (rule 11): it is the regional vocational district’s own spending across eighteen member towns, and Lunenburg’s budget carries a single assessment line. It must never be summed with the Lunenburg district’s. See scripts/extract_monty_tech_expenses.py.",
+     "kind": "Data",
+     "bytes": 7130,
+     "url": "/docs/data/monty-tech-expenses.csv",
+     "count": 27,
+     "unit": "rows",
+     "textUrl": "/docs/data/monty-tech-expenses.csv"
     },
     {
      "path": "data/PROVENANCE-youtube-classification.md",
@@ -3247,14 +3307,26 @@
      "textUrl": "/docs/data/placement-counts.csv"
     },
     {
+     "path": "data/page-blocked.csv",
+     "title": "Pages that CANNOT be read, and what would change that",
+     "stars": 3,
+     "what": "A page nobody has got to yet and a page nobody CAN get to are different facts, and keeping both in one bucket means the backlog never stops containing the second kind. The FY2023 receipts page is stored as a photograph at 93 dpi carrying about 150 line items across three column-pairs of a landscape page, so the digits are below the resolution of the file and no magnification adds detail that is not there. Each row says what was tried, what the obstacle measures, and the one thing that would remove it. NOTHING INFERS A BLOCK: an extractor that cannot read a page says `refused`, which is a statement about the extractor, where this is a statement about the DOCUMENT and needs somebody to have looked at it.",
+     "kind": "Data",
+     "bytes": 772,
+     "url": "/docs/data/page-blocked.csv",
+     "count": 1,
+     "unit": "rows",
+     "textUrl": "/docs/data/page-blocked.csv"
+    },
+    {
      "path": "data/report-appropriations.csv",
      "title": "The general fund appropriations, both tables, FY2011–FY2025",
      "stars": 2,
      "what": "4,665 rows and the largest of these extracts. It holds TWO different tables — the Town Accountant’s schedule of the year that closed, and the town meeting omnibus budget for the year ahead — told apart by the table_family column, because averaging one against the other would be a confident wrong answer. Read column_meaning before reading a value: the v columns are ordinals, and where the table states an identity that fixes them they are named. No year currently ties to its own printed total.",
      "kind": "Data",
-     "bytes": 6075124,
+     "bytes": 5452904,
      "url": "/docs/data/report-appropriations.csv",
-     "count": 5027,
+     "count": 5345,
      "unit": "rows",
      "textUrl": "/docs/data/report-appropriations.csv"
     },
@@ -3343,6 +3415,18 @@
      "textUrl": "/docs/data/extraction-plan.csv"
     },
     {
+     "path": "data/money-gaps.csv",
+     "title": "What the town’s records cannot answer",
+     "stars": 2,
+     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
+     "kind": "Data",
+     "bytes": 160937,
+     "url": "/docs/data/money-gaps.csv",
+     "count": 193,
+     "unit": "rows",
+     "textUrl": "/docs/data/money-gaps.csv"
+    },
+    {
      "path": "data/report-anomalies.csv",
      "title": "What looks wrong in the extracts, and where to look",
      "stars": 2,
@@ -3353,18 +3437,6 @@
      "count": 521,
      "unit": "rows",
      "textUrl": "/docs/data/report-anomalies.csv"
-    },
-    {
-     "path": "data/money-gaps.csv",
-     "title": "What the town’s records cannot answer",
-     "stars": 2,
-     "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
-     "kind": "Data",
-     "bytes": 156708,
-     "url": "/docs/data/money-gaps.csv",
-     "count": 189,
-     "unit": "rows",
-     "textUrl": "/docs/data/money-gaps.csv"
     },
     {
      "path": "data/stated-cuts.csv",
@@ -3516,7 +3588,7 @@
      "stars": 2,
      "what": "The independent check on the file above, quoted off the page with the raw cell text, the printed page number and the PDF index, which are not the same number. The sheet carries its own Proof row and that is what a reading is reconciled to.",
      "kind": "Data",
-     "bytes": 11424,
+     "bytes": 12211,
      "url": "/docs/data/enterprise-balance-sheet-printed-totals.csv",
      "count": 75,
      "unit": "rows",
@@ -3528,7 +3600,7 @@
      "stars": 2,
      "what": "Written by us: the identity each row is checked against, what a recovered cell is, and why a recovered value is never written into a value column.",
      "kind": "Notes",
-     "bytes": 6627,
+     "bytes": 6912,
      "url": "/docs/data/PROVENANCE-special-revenue-funds.md",
      "count": 88,
      "unit": "lines",
@@ -3588,9 +3660,9 @@
      "stars": 2,
      "what": "One row per page of an annual town report whose receivables table was read and then NOT written: the fiscal year, the page, and the reason in the extractor’s own words — an unreadable header, no BALANCES column, no row carrying both a label and a balance, or no single sign convention that proves the page. It exists because a refusal printed to a terminal is lost, and a page read-and-refused then looks identical to a page nobody opened: the queue carried ten of these as `unread` for four days, which describes a job nobody has started rather than an extractor that needs fixing. `state` is always `refused`, which is also what stops this file being counted as a reading. See scripts/extract_receivables.py.",
      "kind": "Data",
-     "bytes": 3759,
+     "bytes": 3171,
      "url": "/docs/data/receivables-refused.csv",
-     "count": 39,
+     "count": 32,
      "unit": "rows",
      "textUrl": "/docs/data/receivables-refused.csv"
     },
@@ -3672,9 +3744,9 @@
      "stars": 1,
      "what": "616 rows. None tie yet.",
      "kind": "Data",
-     "bytes": 409728,
+     "bytes": 451567,
      "url": "/docs/data/report-capital-projects.csv",
-     "count": 616,
+     "count": 618,
      "unit": "rows",
      "textUrl": "/docs/data/report-capital-projects.csv"
     },
@@ -3871,7 +3943,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 40316928,
+     "bytes": 39837696,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -3881,7 +3953,7 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3378807,
+     "bytes": 3381705,
      "url": "/docs/data/meeting-register.csv",
      "count": 7047,
      "unit": "rows",
@@ -4765,6 +4837,18 @@
      "textUrl": "/docs/data/budget-seasons/fy26.csv"
     },
     {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 14350,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 9,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
+    },
+    {
      "path": "contracts/CONTRACTS.md",
      "title": "Research notes: union contracts",
      "stars": 2,
@@ -4775,18 +4859,6 @@
      "count": 202,
      "unit": "lines",
      "textUrl": "/docs/contracts/CONTRACTS.md"
-    },
-    {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 11695,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 8,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "data/one-big-report-story.csv",
@@ -5067,6 +5139,18 @@
      "textUrl": "/docs/data/sped-transport-history.csv"
     },
     {
+     "path": "data/meeting-watch-runs.csv",
+     "title": "When we looked, how much answered, and what was new",
+     "stars": 2,
+     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 582,
+     "url": "/docs/data/meeting-watch-runs.csv",
+     "count": 16,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-runs.csv"
+    },
+    {
      "path": "data/capital-funding-history.csv",
      "title": "How the capital programme has been paid for",
      "stars": 2,
@@ -5077,18 +5161,6 @@
      "count": 10,
      "unit": "rows",
      "textUrl": "/docs/data/capital-funding-history.csv"
-    },
-    {
-     "path": "data/meeting-watch-runs.csv",
-     "title": "When we looked, how much answered, and what was new",
-     "stars": 2,
-     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 551,
-     "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 15,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
     {
      "path": "data/budget-seasons/fy28.proposed.csv",
@@ -17549,10 +17621,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1528,
+  "documents": 1534,
   "groups": 22,
-  "bytes": 2220745120,
-  "loadBearing": 162
+  "bytes": 2224507324,
+  "loadBearing": 168
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
