@@ -315,7 +315,18 @@ def main():
         print('nothing to register')
         return 0
 
-    merged = kept + mine
+    # AND AN `extraction` ROW THIS SCRIPT DID NOT AUTHOR IS KEPT, NOT DESTROYED.
+    # Dropping every row of this side and rewriting its own deleted four gaps a
+    # person had registered here by hand -- among them the FY2023 receipts page
+    # that is blocked at 93 dpi and the tracker's own recognition blind spot,
+    # both of which are still true. money-gaps.csv has several authors, and a
+    # generator that owns a SIDE does not thereby own every row in it. Rows are
+    # matched on their question, which is what identifies a gap.
+    asked = {r['what'] for r in mine}
+    inherited = [r for r in existing
+                 if (r.get('side') or '') == SIDE and r['what'] not in asked]
+
+    merged = kept + inherited + mine
     buf = io.StringIO()
     w = csv.DictWriter(buf, fieldnames=['side', 'what', 'why'], lineterminator=nl)
     w.writeheader()

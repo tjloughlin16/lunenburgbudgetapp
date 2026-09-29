@@ -323,12 +323,25 @@ NAMED = ['fund_balance', 'accounts_receivable', 'deferred_revenue', 'receipts', 
 
 
 def page_reads():
-    """`{(fy, page): [row, ...]}` for every page somebody has transcribed."""
+    """`{(fy, page): [row, ...]}` for every page somebody has transcribed.
+
+    A `check` row's VALUE IS AN IDENTITY, not a figure -- `available-expended-
+    encumbered=balance` -- so letting one through crashed this script on
+    `float()` the moment a transcription beside a special revenue page declared
+    one. Only rows carrying a figure belong here.
+    """
     out = collections.defaultdict(list)
     for f in sorted(glob.glob(os.path.join(PAGE_READS, '*.csv'))):
         for r in csv.DictReader(open(f, encoding='utf-8')):
-            if (r.get('value') or '').strip():
-                out[(int(r['fy']), int(r['page']))].append(r)
+            if (r.get('kind') or 'fund') == 'check':
+                continue
+            if not (r.get('value') or '').strip():
+                continue
+            try:
+                float(r['value'])
+            except ValueError:
+                continue
+            out[(int(r['fy']), int(r['page']))].append(r)
     return out
 
 
@@ -430,7 +443,12 @@ def main():
         text_rows = (text_layer_rows(TEXT_LAYER_EDITIONS[edition], want)
                      if edition in TEXT_LAYER_EDITIONS else {})
         pages = RP.load(edition, ocr=True) or RP.load(edition)
-        read_by_eye = {pg: rs for (y, pg), rs in READS.items() if y == fy}
+        # AND ONLY THE PAGES THIS EXTRACTOR IS ABOUT. Keyed on the year alone, every
+        # transcription of that year's report flowed in here -- appropriations, trust
+        # funds, the debt schedule -- and special-revenue-funds.csv went from 2,435 rows
+        # to 4,454 of things that are not special revenue funds.
+        read_by_eye = {pg: rs for (y, pg), rs in READS.items()
+                       if y == fy and pg in want}
         got = [p for p in want if p in pages and p not in text_rows
                and p not in read_by_eye]
 
