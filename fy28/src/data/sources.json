@@ -2139,9 +2139,9 @@
      "stars": 2,
      "what": "Both departments list every officer and firefighter by rank and assignment in every annual report. Read from the WORD geometry because both are set in two columns. The Fire Department also states its strength in a sentence, so the book gives the same quantity twice and `roster_check` records whether the two agree — in most years they do not, and the difference is published rather than averaged away.",
      "kind": "Data",
-     "bytes": 96226,
+     "bytes": 96431,
      "url": "/docs/data/department-rosters.csv",
-     "count": 894,
+     "count": 896,
      "unit": "rows",
      "textUrl": "/docs/data/department-rosters.csv"
     },
@@ -2151,11 +2151,23 @@
      "stars": 2,
      "what": "The CONTENTS PAGE of each annual report, read as data: one row per department per year, with the pages its report occupies — or the town’s own words, `No Report Submitted`, where there is none. This is the town’s department list rather than ours, which is why Facilities is on it; every list in this project before it was typed from memory. The page numbers are PRINTED page numbers and the offset to the PDF differs per year, so it is measured from the numbers each book prints at its own feet.",
      "kind": "Data",
-     "bytes": 67405,
+     "bytes": 75054,
      "url": "/docs/data/report-index.csv",
-     "count": 652,
+     "count": 693,
      "unit": "rows",
      "textUrl": "/docs/data/report-index.csv"
+    },
+    {
+     "path": "data/staffing-by-section.csv",
+     "title": "What each department says about its own staff, on its own pages",
+     "stars": 2,
+     "what": "For every department-year in `report-index.csv`, its own pages read for a headcount in any of the six forms the town uses. Where there is no number the row carries a REASON — `mentions staff, states no number` or `no mention of staff on its own pages` — because those are different problems and a blank cannot tell them apart.",
+     "kind": "Data",
+     "bytes": 60274,
+     "url": "/docs/data/staffing-by-section.csv",
+     "count": 434,
+     "unit": "rows",
+     "textUrl": "/docs/data/staffing-by-section.csv"
     },
     {
      "path": "data/capital-plans.csv",
@@ -2168,18 +2180,6 @@
      "count": 201,
      "unit": "rows",
      "textUrl": "/docs/data/capital-plans.csv"
-    },
-    {
-     "path": "data/staffing-by-section.csv",
-     "title": "What each department says about its own staff, on its own pages",
-     "stars": 2,
-     "what": "For every department-year in `report-index.csv`, its own pages read for a headcount in any of the six forms the town uses. Where there is no number the row carries a REASON — `mentions staff, states no number` or `no mention of staff on its own pages` — because those are different problems and a blank cannot tell them apart.",
-     "kind": "Data",
-     "bytes": 54653,
-     "url": "/docs/data/staffing-by-section.csv",
-     "count": 401,
-     "unit": "rows",
-     "textUrl": "/docs/data/staffing-by-section.csv"
     },
     {
      "path": "analyses/fy26-closeout.md",
@@ -2199,9 +2199,9 @@
      "stars": 2,
      "what": "Departments describe their staffing in the PROSE of their annual-report sections — no heading names it in any year, which is why it went unread. The sentence is stored as printed because that is the source; counts are parsed into their own columns only where the form is unambiguous, and a statement that cannot be counted still gets a row with `parsed=no`. The forms do not agree with each other — a count and a range from the Fire Department, an establishment post by post from the DPW, a list of names from the Building Department — so `measure` says which kind each row is and nothing may be summed across kinds.",
      "kind": "Data",
-     "bytes": 43731,
+     "bytes": 45273,
      "url": "/docs/data/department-staffing.csv",
-     "count": 102,
+     "count": 105,
      "unit": "rows",
      "textUrl": "/docs/data/department-staffing.csv"
     },
@@ -2355,7 +2355,7 @@
      "stars": 2,
      "what": "One row per fiscal year and table family, and a step from 1 to 7: the PDF held, OCR run, text present, tables located, extracted to CSV, loaded to the database, used in a report. Every cell is derived from the artefact it describes, so it cannot go stale the way a hand-kept list does. It exists because the same question — which years do we have for this fund — was answered three different ways from three different artefacts in one afternoon, each true about the artefact and false about the archive.",
      "kind": "Data",
-     "bytes": 14779,
+     "bytes": 14809,
      "url": "/docs/data/pipeline-state.csv",
      "count": 225,
      "unit": "rows",
@@ -3612,7 +3612,7 @@
      "stars": 2,
      "what": "Every page of every annual town report that carries a stabilization or trust fund table: which report, which page, what KIND of table it is, and whether we have read it. Four different tables carry these funds and they are not interchangeable — the `other-banks` table omits the general Stabilization Fund entirely, which is why a chart of it once stopped four years early. `state` is the work queue: `read`, `unread`, or `reversed` for a page whose OCR came out upside down and on which no extractor can see a figure at all. Sorted newest report first, because that is the order the work is done in. See scripts/map_stabilization_pages.py.",
      "kind": "Data",
-     "bytes": 6309,
+     "bytes": 6307,
      "url": "/docs/data/stabilization-pages.csv",
      "count": 65,
      "unit": "rows",
@@ -3636,7 +3636,7 @@
      "stars": 2,
      "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
      "kind": "Data",
-     "bytes": 5713,
+     "bytes": 5677,
      "url": "/docs/data/ingest-plan.csv",
      "count": 13,
      "unit": "rows",
@@ -17623,7 +17623,7 @@
  "totals": {
   "documents": 1534,
   "groups": 22,
-  "bytes": 2228873567,
+  "bytes": 2228888576,
   "loadBearing": 168
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

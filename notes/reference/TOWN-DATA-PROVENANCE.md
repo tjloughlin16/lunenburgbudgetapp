@@ -225,17 +225,16 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 |---|---|---|
 | Board of Assessors | FY2023, FY2025 | an establishment, one post at a time |
 | Building Department | FY2020–FY2022 | a named staff list |
+| Coming Soon | FY2013 | prose, not counted |
 | Cougare | FY2020 | prose, not counted |
-| Council on Aging | FY2011, FY2014–FY2020, FY2022–FY2025 | a named staff list; board membership, not staff |
+| Council on Aging | FY2011, FY2014–FY2025 | a named staff list; board membership, not staff |
 | Department of Public Works | FY2023–FY2025 | establishment, post by post |
 | Education | FY2018, FY2020, FY2023 | prose, not counted |
 | Facilities Management | FY2017–FY2019 | on-call availability, not a headcount |
 | Finance Committee | FY2025 | prose, not counted |
 | Fire Department | FY2012, FY2016–FY2025 | career and on-call firefighters |
 | Fire Rescue | FY2020 | prose, not counted |
-| Green Communities Committee | FY2021 | prose, not counted |
 | Historical Commission | FY2013, FY2017–FY2018 | board membership, not staff |
-| Incidents | FY2013 | prose, not counted |
 | Information Technology | FY2016–FY2018, FY2020 | a named roster, one biography per person |
 | Letter From Leadership | FY2025 | prose, not counted |
 | Library | FY2018–FY2019 | a stated headcount |
@@ -244,24 +243,24 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | Lunenburg Primary School | FY2022, FY2024 | prose, not counted |
 | Mcas Results | FY2024 | prose, not counted |
 | Monty Bha | FY2022 | prose, not counted |
+| Nashoba Associated Boards of Health | FY2021 | prose, not counted |
 | Our School Community | FY2024 | prose, not counted |
 | Planning | FY2019 | board membership, not staff |
 | Planning Board | FY2017–FY2018, FY2024 | board membership, not staff |
 | Police Department | FY2017–FY2019, FY2022 | prose, not counted |
-| Property | FY2021 | prose, not counted |
-| Sewer Commission | FY2024 | prose, not counted |
+| Sewer Commission | FY2021, FY2024 | prose, not counted |
 | Student Support Services | FY2025 | prose, not counted |
 | Superintendent- Director Report | FY2016 | prose, not counted |
 | T.C. Passios Elementary School | FY2011 | prose, not counted |
 | Turkey Hill Elementary School | FY2016 | prose, not counted |
-| Zoning Board of Appeals | FY2012–FY2014, FY2016, FY2020–FY2022, FY2024–FY2025 | board membership, not staff |
+| Zoning Board of Appeals | FY2011–FY2014, FY2016, FY2020–FY2022, FY2024–FY2025 | board membership, not staff |
 
 ## Named rosters
 
 | department | years | names | agrees with the stated strength |
 |---|---|---:|---|
 | Fire Department | FY2011–FY2025 | 577 | 2 of 15 years |
-| Police Department | FY2012–FY2025 | 317 | 0 of 14 years |
+| Police Department | FY2012–FY2025 | 319 | 0 of 14 years |
 
 ## What is missing, and from whom
 
