@@ -57,6 +57,7 @@ import csv
 import html
 import json
 import os
+import re
 import random
 import sqlite3
 from datetime import date
@@ -1156,6 +1157,11 @@ every run.</p>
 '''
 
 
+def _without_build_time(html):
+    """The page with its `built_at` cell blanked, for comparison only."""
+    return re.sub(r'(<td>built_at</td><td>)[^<]*(</td>)', r'\1\2', html)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
@@ -1165,7 +1171,14 @@ def main():
     if args.check:
         if not os.path.exists(OUT):
             raise SystemExit(f'{rel} does not exist. Run without --check.')
-        if open(OUT, encoding='utf-8').read() != fresh:
+        # EXCEPT THE BUILD TIME, WHICH IS NOT THE SCHEMA. `built_at` is stamped from
+        # the database, so every rebuild of the database made this page stale and
+        # regenerating it changed one line -- a timestamp. A check that cannot stay
+        # green past one `build_db.py` is a check that gets ignored, which is the
+        # exact failure the seeded sample thirty lines up exists to avoid. The
+        # question here is whether the SCHEMA reproduces, not when the db was built.
+        if _without_build_time(open(OUT, encoding='utf-8').read()) != \
+                _without_build_time(fresh):
             raise SystemExit(f'STALE: {rel} no longer reproduces.\n'
                              f'  Run: python3 scripts/build_schema_page.py')
         print(f'ok: {rel} still reproduces')
