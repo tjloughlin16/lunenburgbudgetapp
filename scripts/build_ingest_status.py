@@ -515,28 +515,37 @@ def annual_report_pages():
 
 
 def first_class_today():
-    """[(label, n, is_ours)] for the latest refresh run, from sources/data/refresh-runs.csv.
+    """[(label, n)] for the latest refresh run -- ONLY the objects with a count.
 
     THE COLUMNS ARE REFRESH.PY'S OWN. It writes one `new_<object>` column per first-class
-    object, so this reads whatever it wrote rather than keeping a second list that would
-    drift. A run with every count at zero still renders -- "nothing was published today"
-    is a status, and an empty panel reads as a broken dashboard.
+    document class, so this reads whatever it wrote rather than keeping a second list that
+    would drift apart from it.
+
+    ONLY NON-ZEROES. TJ, 29 September 2026: *"you can only show non-0s"*. Fifteen rows of
+    which thirteen read zero is not a status, it is a table of things that did not happen,
+    and the two that did are lost in it. A day on which nothing arrived says so in one
+    line instead.
     """
     runs = rows('refresh-runs.csv')
     if not runs:
         return []
     last = sorted(runs, key=lambda r: r.get('as_of') or '')[-1]
+    # Rows written before 29 September 2026 use the older, shorter column names. Mapped
+    # rather than dropped, so yesterday's run still reads as a run.
+    WAS = {'minutes': 'official minutes', 'our_minutes': 'generated minutes'}
     out = []
     for col, v in last.items():
         if not col.startswith('new_'):
             continue
-        label = col[4:].replace('_', ' ')
         try:
             n = int(v or 0)
         except ValueError:
             continue
-        out.append((label, n, label == 'generated minutes'))
-    return out
+        if not n:
+            continue
+        key = col[4:]
+        out.append((WAS.get(key, key.replace('_', ' ')), n))
+    return sorted(out, key=lambda t: -t[1])
 
 
 def annual_reports_whole():
@@ -2039,11 +2048,11 @@ def page_live(st):
     # defines them in FIRST_CLASS; nothing else is counted here, and never a vote.
     fc = first_class_today()
     if fc:
-        h.append('<table class="tiny" style="margin-top:8px">')
-        for label, n, made in fc:
-            h.append('<tr><td>%s%s</td><td class="num" style="text-align:right">'
-                     '<b>%d</b></td></tr>' % ('we wrote ' if made else '', label, n))
-        h.append('</table>')
+        h.append('<div class="row tiny" style="margin-top:8px">' + ' &middot; '.join(
+            '<b>%d</b> %s' % (n, label) for label, n in fc) + '</div>')
+    elif rows('refresh-runs.csv'):
+        h.append('<div class="row tiny" style="margin-top:8px">'
+                 'no new documents today</div>')
     elif F['found']:
         h.append('<div class="row tiny" style="margin-top:6px">Found: ' +
                  ' &middot; '.join('<b>%d</b> %s' % (f['n'], f['label']) for f in F['found']) + '</div>')

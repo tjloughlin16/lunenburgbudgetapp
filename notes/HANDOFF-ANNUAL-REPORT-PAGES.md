@@ -1,20 +1,29 @@
 # The annual-report page stream: what to do next
 
-**28 September 2026.** Everything on this stream is now READ A PAGE, one year at a time,
+**28 September 2026, updated 29 September.** Everything on this stream is now READ A PAGE, one year at a time,
 one section at a time. The process is `notes/process/READING-A-REPORT-PAGE.md` and it is
 not optional reading -- every rule in it was paid for today.
 
 Where the 484 financial pages stand (`python3 scripts/map_annual_report_pages.py`):
 
-    258 PROVEN    figures tie to something the page states about itself
-    218 UNPROVEN  rows exist, nothing has checked them
+    281 PROVEN    figures tie to something the page states about itself
+    203 UNPROVEN  rows exist, nothing has checked them
       8 REFUSED   an extractor reached the page and wrote nothing
       1 BLOCKED   the page CANNOT be read; see sources/data/page-blocked.csv
 
-Four years are at zero. Yesterday morning it was none.
+FIVE years are at zero. Two mornings ago it was none.
 
     FY2025   23 of 23     FY2024   28 of 28     FY2023   34 of 35, one blocked
-    FY2014   28 of 28
+    FY2022   41 of 41     FY2014   28 of 28
+
+**FY2022 GREW BY EIGHT PAGES WHILE BEING READ**, from 33 to 41, and every one of the eight
+was a hole the tracker could not have named -- pages 46 and 48 (the debt schedule's whole
+GRAND TOTAL block, the town's forward debt service FY2023-FY2047, never read by anything),
+146 (the omnibus budget's HEADER row, without which its one money column has no name), and
+186, 187, 189, 190, 191 (five of the seven gross wage pages). The pattern is worth carrying
+into the next year: **a page enters the tracker on fifteen money figures, so the page holding
+a table's TOTALS and the page holding its COLUMN HEADINGS are the two most likely to be
+invisible -- and they are the two a table cannot be proved without.**
 
 ---
 
@@ -39,7 +48,9 @@ recognition cache already exists for a page it is not evidence and not a startin
 
 **FIRST, OPEN THE RUN SHEET: `notes/process/runs/FY<YEAR>.md`.** Create it or append to it
 before anything else, with every step of the process already a row at `todo`, and work from
-it. `notes/process/runs/FY2022.md` is written and waiting. A step that is not on the page
+it. `notes/process/runs/FY2022.md` is the worked example, start to finish -- nine sections,
+eight steps each, a comment with a figure in it on every row, and a table at its foot of what
+the year taught. `notes/process/runs/FY2021.md` is the next one to write. A step that is not on the page
 gets skipped -- that is how FY2014 skipped `page_table.py` three times.
 
 **Then take the MOST RECENT unfinished year** -- see the table below, and do not re-rank it
@@ -121,8 +132,8 @@ FY2022, which has five. Read the expensive recent year anyway.
 | FY2025 | 23 | **23** | 0 | **at zero** |
 | FY2024 | 28 | **28** | 0 | **at zero** |
 | FY2023 | 35 | **34** | 1 | **at zero** but for p25, blocked at 93 dpi |
-| **FY2022** | 33 | 18 | **15** | **do this next.** 5 digital, so most of it is read, not parsed |
-| FY2021 | 37 | 16 | 21 | all photographs |
+| FY2022 | **41** | **41** | 0 | **at zero** -- opened at 18 of 33 and GREW by eight pages, all of them holes |
+| **FY2021** | 37 | 16 | **21** | **do this next.** All photographs |
 | FY2020 | 39 | 16 | 23 | 4 digital |
 | FY2019 | 38 | 11 | 27 | all photographs |
 | FY2018 | 35 | 17 | 18 | 10 digital |
@@ -147,7 +158,7 @@ from a survey that systematically misses part of what it is counting, so the err
 way and no care with the arithmetic fixes it. Expect a year to GROW while you read it, and
 walk outward from every section rather than trusting the list.
 
-**Take FY2022 next**, then FY2021, then FY2020. Do not re-rank by how digital a year looks.
+**Take FY2021 next**, then FY2020, then FY2019. Do not re-rank by how digital a year looks.
 
 ### AND READ THE PAGE WITH `page_table.py`, WHICH FY2014 DID NOT
 

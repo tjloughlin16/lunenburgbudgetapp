@@ -385,6 +385,70 @@ once in 675 rows.
 the figures: a misread digit survives both assertions untouched. Where a second printing of
 the same quantity exists anywhere in the archive, reconcile to it instead.
 
+## FY2022, AND THE FIVE THINGS THAT WENT INTO THE TOOL RATHER THAN BESIDE IT
+
+FY2022 was taken to zero on 29 September 2026. It opened at 18 of 33 pages proven and closed
+at **41 of 41** -- it GREW by eight pages, and every one of the eight was a hole the tracker
+could not have named. Two of them, pages 46 and 48, carry the town's WHOLE forward debt
+service, FY2023 to FY2047, and had never been read by anything.
+
+**THE HOLES ARE THE WHOLE JOB, AND THEY ARE NOT WHERE YOU EXPECT.** The run sheet predicted
+one, off FY2024's wage run, and it was right -- five of seven gross wage pages were missing.
+It did not predict the other three, which were the grand-total pages of the debt schedule and
+the HEADER PAGE of the omnibus budget. The pattern: **a page enters the tracker on fifteen
+money figures, so the pages that carry a table's TOTALS and the page that carries its COLUMN
+HEADINGS are the ones most likely to be invisible** -- five rows and a header are not fifteen
+figures. Those are also the two pages a table cannot be proved without.
+
+**A PAGE MARKED `proven` IS NOT A PAGE FULLY READ.** Page 42 was proven, by an extractor that
+reads five of its 46 funds. Page 41 is `Page 1 of 2` of the same statement and prints no grand
+total, so it could not be proved without 42. Walk the extent outward past `proven` pages too,
+and look at what actually proved them.
+
+Four changes went into `page_table.py` and `verify_page_reads.py`, and each was paid for:
+
+**`rows()` now measures the ZERO-JITTER case.** A typeset page puts every token of a printed
+row at exactly the same `top`, so the small population the ratio rule looks for is not small,
+it is EMPTY -- the biggest ratio jump then lands between the section gap and the page gap.
+On the omnibus budget that put the band at 46.8pt against a pitch of 14.76, which bands a
+whole table into four rows and **looks like a page of headings rather than like a failure**.
+The test is the ABSENCE of a small population, not the presence of ties: a first cut on ties
+alone broke page 38 of the same report, which has 497 ties and a real 1.281pt jitter.
+
+**`one(row, x_from)` is new: the single figure of a ONE-COLUMN table.** There is no ruler to
+place against when there is one column, and the figures still arrive split -- `$ 1, 000.00`
+is three tokens and `amount()` on each in turn returns None, None and 0.00. It also reads
+`$ -` as the explicit zero FY2014 paid $16,687,431 to learn it is.
+
+**`cells_per_row` is new in the verifier: what a GRID states when it states nothing else.**
+The salary schedule prints 20 grades against `STEP 1` to `STEP 8` and no total anywhere, so
+there is no arithmetic to close -- but the printed header says how wide every row is, and a
+row that came out seven cells long is a figure lost.
+
+**`ordered_by` was a check with no power to fail on any numeric key.** It stripped every
+character but A-Z before comparing, so `GRADE 1` through `GRADE 20` all collapsed to the same
+string and the sequence could not go backwards however the rows were ordered. It now compares
+numbers as numbers.
+
+### Three more things this year taught
+
+**COMPUTE EVERY SUBTOTAL THE PAGE PRINTS, NOT ONLY THE GRAND TOTAL, AND DO IT BEFORE
+WRITING.** The trust statement asserts five identities per fund and `change in unrealized
+gain/loss` appears in none of them, so for that column the group subtotal is the ONLY check.
+It failed twice, and both were real misreads. **A column that no row identity touches is
+exactly where a read needs the subtotal.**
+
+**TEST A REGULARITY BEFORE OFFERING IT AS A CHECK.** The salary schedule's steps sit about 3%
+apart and it is tempting to use that as the arithmetic the page lacks. It does not hold --
+`round(step_1 x 1.03^(n-1))` misses 50 of 140 cells -- and publishing it would have been a
+hypothesis dressed as a proof. Where the test fails, the ABSENCE is the finding: register it.
+
+**TWO COLUMNS ON A PAGE NEED NOT BE ONE LIST.** The gross wage pages print two columns and
+each is alphabetised A to Z independently across all seven pages -- ABRAHAM to ZRATE on the
+left, BIERY to YOURK on the right. Read left to right row by row they produce a list in no
+order at all. Nothing in the document says what separates them, so they are transcribed as
+two groups and NOT merged: merging them would be our claim and not the document's.
+
 ## THE PROCESS -- three steps, in this order
 
 ### 1. READ the page into a CSV -- with `page_table.py`, not by hand

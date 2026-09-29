@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28",
+ "generated": "2026-09-29",
  "origins": [
   {
    "id": "school",
@@ -2338,6 +2338,18 @@
      "textUrl": "/docs/data/report-signatures.csv"
     },
     {
+     "path": "data/document-defects.csv",
+     "title": "Where a document the town published is itself incomplete",
+     "stars": 2,
+     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
+     "kind": "Data",
+     "bytes": 16792,
+     "url": "/docs/data/document-defects.csv",
+     "count": 32,
+     "unit": "rows",
+     "textUrl": "/docs/data/document-defects.csv"
+    },
+    {
      "path": "data/board-goals.csv",
      "title": "What each board adopted as its goals, and when",
      "stars": 2,
@@ -2372,18 +2384,6 @@
      "count": 32,
      "unit": "rows",
      "textUrl": "/docs/data/report-appropriations-supplement.csv"
-    },
-    {
-     "path": "data/document-defects.csv",
-     "title": "Where a document the town published is itself incomplete",
-     "stars": 2,
-     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
-     "kind": "Data",
-     "bytes": 14157,
-     "url": "/docs/data/document-defects.csv",
-     "count": 29,
-     "unit": "rows",
-     "textUrl": "/docs/data/document-defects.csv"
     },
     {
      "path": "data/threads.csv",
@@ -3012,9 +3012,9 @@
      "stars": 3,
      "what": "Recognition cannot read some of these pages at all -- the FY2024 special revenue schedule prints 164 rows and it found 14 on one page, returning different DIGITS for the same row at different resolutions. So those pages are rendered and READ, and the transcription is data with its document, its page, its column, who read it and what proves it. This file consolidates them: `status` is `checked`, `check failed` or `no check`, the same three words every other extractor here uses, in a column a script can read rather than in a sentence about how careful somebody was. WHAT MAKES A READ SAFE IS THE ARITHMETIC, NOT THE READER — 164 rows landing on six totals the town printed, 46 trust funds closing five identities each, 115 figures matching a different year’s report. See scripts/verify_page_reads.py, which re-proves every one on every run, and notes/process/READING-A-REPORT-PAGE.md.",
      "kind": "Data",
-     "bytes": 8184239,
+     "bytes": 13760673,
      "url": "/docs/data/pages-read.csv",
-     "count": 9161,
+     "count": 12359,
      "unit": "rows",
      "textUrl": "/docs/data/pages-read.csv"
     },
@@ -3060,9 +3060,9 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 210200,
+     "bytes": 214679,
      "url": "/docs/data/annual-report-pages.csv",
-     "count": 485,
+     "count": 493,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-pages.csv"
     },
@@ -3420,9 +3420,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 160921,
+     "bytes": 163679,
      "url": "/docs/data/money-gaps.csv",
-     "count": 193,
+     "count": 195,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3943,7 +3943,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 39837696,
+     "bytes": 39841792,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -17623,7 +17623,7 @@
  "totals": {
   "documents": 1534,
   "groups": 22,
-  "bytes": 2228888675,
+  "bytes": 2234479077,
   "loadBearing": 168
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
