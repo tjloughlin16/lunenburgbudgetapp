@@ -75,8 +75,15 @@ DEFAULT_TOL = 0.02
 # the transcription rather than assumed here. A `kind=check` row says what to assert:
 #
 #   column `rows_per_page`   every page but the last carries exactly this many rows
+#   column `cells_per_row`   every row carries exactly this many figures
 #   column `ordered_by`      the named column never goes backwards through the whole run
 #   column `row_identity`    `a,b,c=d` or `a-b-c=d` -- every row's components make its total
+#
+# `cells_per_row` is what a GRID states about itself when it states nothing else. The FY2023
+# salary schedule on p152 of the FY2022 report prints 20 grades against `STEP 1` to `STEP 8`
+# and no total anywhere, so there is no arithmetic to close -- but the printed header says
+# how wide every row is, and a row that came out seven cells long is a figure lost. It is a
+# weaker check than arithmetic and says so: it proves the SHAPE, not the digits.
 #
 # AND A ROW MAY BE `kind=attested`: WE READ IT RIGHT AND THE DOCUMENT DISAGREES WITH ITSELF.
 # `table-corrections.csv` already carries this idea for the generic extracts and it is the
@@ -271,8 +278,29 @@ def main():
                 if off:
                     ok = False
                     notes[-1] += ' -- ' + '; '.join(off[:4])
+            if d.get('cells_per_row'):
+                # EVERY ROW IS THE SAME WIDTH, and the page's own header says how wide.
+                n = int(d['cells_per_row'])
+                per = collections.Counter((r['page'], r['fund_number'])
+                                          for r in per_row[key])
+                wrong = {k: v for k, v in sorted(per.items()) if v != n}
+                notes.append('%d of %d rows carry exactly %d figures'
+                             % (len(per) - len(wrong), len(per), n))
+                if wrong:
+                    ok = False
+                    notes[-1] += ' -- WRONG: %s' % '; '.join(
+                        'p%s %s has %d' % (pg, nm, v) for (pg, nm), v in wrong.items())
             if d.get('ordered_by'):
-                keys = [re.sub(r'[^A-Z ]', '', v.upper()) for _, v in seen[key]]
+                raw = [v for _, v in seen[key]]
+                # A NUMERIC KEY WAS A CHECK WITH NO POWER TO FAIL. This stripped everything
+                # but A-Z, so `GRADE 1` through `GRADE 20` all collapsed to `GRADE` and the
+                # sequence could not go backwards however the rows were ordered -- it
+                # reported `runs in order through all 160 rows` about nothing. Where every
+                # key is a number, compare the numbers.
+                if raw and all(re.fullmatch(r'\s*\d+\s*', v or '') for v in raw):
+                    keys = [int(v) for v in raw]
+                else:
+                    keys = [re.sub(r'[^A-Z ]', '', v.upper()) for v in raw]
                 back = sum(1 for a, b in zip(keys, keys[1:]) if b < a)
                 notes.append('%s runs in order through all %d rows'
                              % (d['ordered_by'], len(keys))
