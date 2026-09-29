@@ -37,9 +37,14 @@ recognition cache already exists for a page it is not evidence and not a startin
 
 ## HOW THE WORK GOES NOW
 
-**Take the MOST RECENT unfinished year** -- see the table below, and do not re-rank it by
-how cheap a year looks. **Then build the table once and work the sections, top to bottom,
-committing each.**
+**FIRST, OPEN THE RUN SHEET: `notes/process/runs/FY<YEAR>.md`.** Create it or append to it
+before anything else, with every step of the process already a row at `todo`, and work from
+it. `notes/process/runs/FY2022.md` is written and waiting. A step that is not on the page
+gets skipped -- that is how FY2014 skipped `page_table.py` three times.
+
+**Then take the MOST RECENT unfinished year** -- see the table below, and do not re-rank it
+by how cheap a year looks. **Build the table once and work the sections, top to bottom,
+committing each, filling in a status AND A COMMENT on the sheet as you go.**
 
     python3 -c "
     import csv, collections

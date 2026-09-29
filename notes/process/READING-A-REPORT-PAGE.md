@@ -33,6 +33,50 @@ test to the REGION the figures are in, not only to the page.
   heading `as of June 30, 2025`.
 - Days spent hunting figures that were never lost.
 
+## STEP 0 OF STEP 0 -- OPEN THE RUN SHEET BEFORE YOU OPEN A PAGE
+
+**`notes/process/runs/FY<YEAR>.md`. Create it, or append to it, as the FIRST action of the
+year -- before the tracker is queried, before a PDF is opened.** Then work from it.
+
+TJ, 29 September 2026: *"I want a process report when you run these. So the first step
+should be to create or append to an existing doc with all the steps for the FY, and fill in
+the status with a comment for each step. Always work from this so you don't fuck up again."*
+
+**Why it is a FILE and not a habit.** FY2014 skipped step 1 of this document -- *do not
+write the reading code again, `page_table.py` is it* -- three separate times, and nobody
+noticed until TJ asked afterwards whether the process had been followed. Nothing was
+concealed and nothing failed; the step simply was not in front of me, because I was working
+from my memory of this document rather than from this document. That is rule 13's own trap
+(*a summary in this conversation is not a source*) pointed at the process instead of the
+data, and a checklist written before the work is the only thing that catches it.
+
+**Every step is a ROW, at `todo`, before any page is read.** Pre-filled, all of them, for
+every section of the year. A step that is not on the page gets skipped. `notes/process/runs/FY2022.md`
+is the worked example: nine sections, eight steps each, seventy-two rows, written before
+page one.
+
+    | step                                          | status | comment |
+    |-----------------------------------------------|--------|---------|
+    | **extent** -- where does this table START and STOP  | DONE   | walked p22-p27; the table is p23-26, p27 is prose |
+    | **holes** -- a page the tracker does not list       | DONE   | p25 absent and carries a full table |
+    | **reader** -- own text or photograph, at what dpi   | DONE   | photographs, 150 dpi, legible |
+    | **size** -- what it SHOULD hold, from the page      | DONE   | 60 rows, counted off the printed page |
+    | **1 READ** -- `page_table.py`, layout DECLARED      | DONE   | PT.boxes + declare(); heading agreed |
+    | **2 DURABLE** -- a row per figure in `page-reads/`  | DONE   | fy2022-p23-special-revenue.csv, 360 figures |
+    | **3 VERDICT** -- verify, then re-map the tracker    | DONE   | 60 of 60 rows, all six columns tie |
+    | **committed**                                      | DONE   | 9ecdae77 |
+
+**A STATUS WITH NO COMMENT IS NOT A REPORT, and `DONE` with a figure in it is worth ten
+without one.** `60 of 60 rows, all six columns tie` says the step happened. `read it` says
+somebody typed a word. The comment is where a `blocked` earns its blocking and an `n/a`
+earns its exemption.
+
+**The sheet also carries what the year TAUGHT**, in a table at its foot, which is what gets
+folded back into this document when the year closes. Not a diary -- a thing that cost real
+time and the change that stops it costing again.
+
+---
+
 ## START WITH THE YEAR, NOT THE PAGE
 
 TJ, 28 September 2026: *"lets make this a system. maybe update the process to be full year
