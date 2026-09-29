@@ -1,0 +1,65 @@
+{
+ "board": "Select Board",
+ "board_slug": "select-board",
+ "meeting_date": "2025-03-18",
+ "source": {
+  "sha256": "fb7eae48ca47335c39bb9967f843d815da4d45b20ba502bc5709be2a21d1513f",
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-03-18-GDJ_3KO5gZc.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$2,993 37",
+    "fiscal_year": 2026,
+    "kind": "override",
+    "scope": "both",
+    "statement": "A citizen petition school override article is on the warrant.",
+    "status": "announced",
+    "t": 10475,
+    "who": "the chair"
+   },
+   {
+    "amount_as_heard": "2 million",
+    "fiscal_year": 2026,
+    "kind": "deficit",
+    "scope": "school",
+    "statement": "Letter cites a shortfall for a level service school budget.",
+    "status": "proposed",
+    "t": 10974,
+    "who": "the chair"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "school-only override",
+    "condition": "if a school-only override",
+    "fiscal_year": 2026,
+    "prediction": "A school-only override would create devastating cuts townwide.",
+    "scope": "town",
+    "t": 10517,
+    "who": "a member"
+   },
+   {
+    "about": "firefighter positions",
+    "condition": "without an override",
+    "fiscal_year": 2026,
+    "prediction": "Firefighter positions will never be funded without an override.",
+    "scope": "town",
+    "t": 3779,
+    "who": "a resident"
+   }
+  ]
+ },
+ "video_id": "GDJ_3KO5gZc",
+ "video_url": "https://www.youtube.com/watch?v=GDJ_3KO5gZc",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-09-29T11:12:19Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

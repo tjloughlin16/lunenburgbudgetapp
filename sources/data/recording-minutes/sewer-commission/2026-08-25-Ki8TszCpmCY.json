@@ -325,5 +325,187 @@
    "at": "2026-09-27T02:00:00Z",
    "cost_usd": 0.193564
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08252026-7974",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-08-25-minutes-7974.txt",
+   "path": "sources/meetings/sewer-commission/2026-08-25-minutes-7974.pdf"
+  },
+  "official_sha256": "066fe2a3f8fb400422dd35898a260a945c4c86d795e11c3f7bd5bd9807e144f0",
+  "coverage": "full",
+  "summary": "The two records agree closely on substance: 100 Laurel Lane, privilege fee, the 786-796 Mass Ave fee, the CTE contract, the future agenda item and Arthur's resignation. The differences are caption errors in names and figures, plus one official-minutes vote (approval of the 8/11 minutes) that our minutes omit.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chairman's name",
+    "ours": "Brent Ramson (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard name; same person and role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-chair name",
+    "ours": "Scott Dah (commissioner)",
+    "official": "Vice-Chair- Scott Dall",
+    "official_reading": "Scott Dall",
+    "note": "Misheard surname; our minutes also omit his vice-chair role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Arthur's surname",
+    "ours": "Arthur (commissioner)",
+    "official": "Member: Arthur Katis",
+    "official_reading": "Arthur Katis",
+    "note": "Captions gave only a first name; the official minutes supply the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer Business Manager's name",
+    "ours": "Andrew Valier (staff, DPW/sewer)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "official_reading": "Andrew Valliere",
+    "note": "Misspelled surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees (Dan Proctor, Chip Wilson, Bill Bernard)",
+    "ours": "Dan Proctor (commissioner); Chip Wilson (commissioner); Bill Bernard (DPW director / sewer business manager)",
+    "official": "Clerk- Dan Proctor, Member: Arthur Katis and Chip \nWilson, DPW Director- Bill Bernard",
+    "note": "Same people and roles."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent minutes clerk",
+    "ours": "",
+    "official": "Absent: Minutes Clerk- Jane Ranley",
+    "note": "Only the official minutes name the absent clerk."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to accept 8/11/26 minutes",
+    "ours": "",
+    "official": "To accept the minutes of 8/11/26.          Roll Call Vote: Arthur-aye, Scott-aye, Chip-aye, Dan-aye and Brett-aye.",
+    "note": "The official minutes record a 5-0 roll call vote; ours record no votes. Check the recording for this vote."
+   },
+   {
+    "kind": "agree",
+    "about": "100 Laurel Lane costs",
+    "ours": "20,000, 8,200, 2,000",
+    "official": "Scott asked if the work came in well under the $20K budget and Andrew replied it was about $8,200 for labor and \n$2,000 for materials.",
+    "note": "Figures match: $20K budget, $8,200 labor, $2,000 materials.",
+    "t": 383
+   },
+   {
+    "kind": "agree",
+    "about": "100 Laurel Lane item removed as complete",
+    "ours": "100 Laurel Lane sewer connection item removed from the agenda as complete.",
+    "official": "Bill reported the project is finished.",
+    "note": "Both record the project as finished; the official minutes do not mention agenda removal.",
+    "t": 317
+   },
+   {
+    "kind": "caption_error",
+    "about": "786-796 Mass Ave connection fee",
+    "ours": "50,000 $462.96",
+    "official": "The Connection Fee will be $50,462.96",
+    "official_reading": "$50,462.96",
+    "note": "Digits split by the captions; same amount.",
+    "t": 768
+   },
+   {
+    "kind": "agree",
+    "about": "Original betterment about $11,000 and 4 more betterments",
+    "ours": "11,000, ... four",
+    "official": "based on the original betterment of around $11,000.  They had paid 2 betterments and now they will be charged 4 more \nbetterments for the 6 units.",
+    "note": "Same figures.",
+    "t": 768
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Heard figure '5775 and 75'",
+    "ours": "5775 and 75",
+    "official": "",
+    "note": "Not in the official minutes and unclear; likely a per-unit figure or a caption error. Check the recording at this point.",
+    "t": 768
+   },
+   {
+    "kind": "agree",
+    "about": "Privilege fee: keep charging half the betterment",
+    "ours": "Privilege fee item removed from the agenda after town counsel's recommendation to keep charging half the betterment was accepted.",
+    "official": "Town \nCounsel recommended staying with charging ½ of the Betterment as a Privilege Fee, which is what they have been \ndoing.",
+    "note": "Same substance; the official minutes record no formal removal from the agenda.",
+    "t": 713
+   },
+   {
+    "kind": "agree",
+    "about": "Asking contractors to check for leaks/inflow near manholes",
+    "ours": "Commission will continue asking contractors to informally check for and report on inflow/infiltration issues near connections when work is being done, even without a formal betterment charge.",
+    "official": "Scott asked if they will still consider asking contractors to check for any leaks/issues in manholes they open and \nthe other Commissioners agreed it would be a good idea.",
+    "note": "Same informal consensus, no formal vote.",
+    "t": 1067
+   },
+   {
+    "kind": "agree",
+    "about": "Future agenda items",
+    "ours": "67 Pratt Street privilege fee assessment added to a future agenda item. CTE O&M contract item stays on the agenda until the town manager signs it, so the commission can then approve going out to bid.",
+    "official": "---Future Agenda Items- 67 Pratt Street Privilege Fee assessment, CTE O&M Contract",
+    "note": "Both list 67 Pratt Street and the CTE O&M contract.",
+    "t": 1163
+   },
+   {
+    "kind": "discrepancy",
+    "about": "CTE O&M contract status and next step",
+    "ours": "CTE O&M contract item stays on the agenda until the town manager signs it, so the commission can then approve going out to bid.",
+    "official": "CTE signed off on the extension, and it was just waiting for the Town Manager’s approval. This gives them time to \nadvertise the contract and the request for bid will be sent out to all the contractors that can do this type of work.",
+    "note": "Ours says the commission must approve going out to bid after the town manager signs; the official minutes say the bid request will be sent out and record no commission approval step. Check the recording.",
+    "t": 1181
+   },
+   {
+    "kind": "agree",
+    "about": "Arthur's resignation",
+    "ours": "Arthur will send a letter of resignation, with his resignation date, to Bill Bernard so the commission can begin looking for a replacement.",
+    "official": "Arthur announced that he was offered more hours at work on Tuesday nights and will \nneed to resign for now.",
+    "note": "Both record the resignation. The letter to Bill Bernard and the replacement search appear only in ours.",
+    "t": 1329
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Touch-A-Truck announcement",
+    "ours": "",
+    "official": "Bill reminded all that Friday (8/28) will be the Touch-A-Truck event, \nstarting at 12:30 to 3 pm at the TC Passios building.",
+    "note": "Public announcement not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Laurel Lane work details (104 Laurel Lane stub, inaccurate as-built)",
+    "ours": "",
+    "official": "A day or two later, they put the stub for the \nproperty at 104 Laurel Lane.",
+    "note": "Official minutes carry detail on crew, as-built error and 104 Laurel Lane that ours omit."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Upcoming meeting schedule",
+    "ours": "",
+    "official": "September 8, 2026 @ 6pm – Regular (Hybrid) Meeting",
+    "note": "Upcoming schedule appears only in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-29T11:36:51Z",
+   "cost_usd": 0.28599399999999997
+  }
  }
 }

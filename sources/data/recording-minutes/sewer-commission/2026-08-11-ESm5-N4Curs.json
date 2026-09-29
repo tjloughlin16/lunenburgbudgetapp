@@ -352,5 +352,144 @@
    "at": "2026-09-27T02:05:01Z",
    "cost_usd": 0.19184400000000001
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08112026-7953",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-08-11-minutes-7953.txt",
+   "path": "sources/meetings/sewer-commission/2026-08-11-minutes-7953.pdf"
+  },
+  "official_sha256": "f8dffc0e3b0493471fa9f8a574379f8b6f1894ef4a09a11ce7775ddd097e9670",
+  "coverage": "full",
+  "summary": "The two records agree on the Q1 FY27 commitment ($339,779.55), the CTE extension, the 100 Laurel Lane plan and the fee figures. They differ in how the O&M contract structure is described, and in the attendee names, where the fifth member is Arthur Katis in the official minutes but David Adams in ours, so check that against the recording.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 0,
+   "discrepancy": 4,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Q1 FY2027 sewer billing commitment vote and amount",
+    "ours": "Motion to accept the first quarter FY2027 sewer billing commitment — passed; $339,779.55",
+    "official": "To accept the Q1 FY27 Commitment of $339,779.55.",
+    "note": "Same motion, same amount; official records a unanimous roll call (Arthur, Scott, Dan, Chip, Brett aye).",
+    "t": 561
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 7/28/26 minutes",
+    "ours": "",
+    "official": "To accept the minutes of 7/28/26.       Roll Call Vote: Chip-aye, Dan-aye, Scott-aye, Arthur-aye and Brett-Aye.",
+    "note": "Official records a vote to accept prior minutes that our minutes omit (routine, but a vote).",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "CTE O&M contract extended to November",
+    "ours": "Extend the current CTE operations and maintenance contract into November rather than let it lapse August 25th.",
+    "official": "Bill reported that they are going to extend their contract to November, which gives them plenty of time to get the new contract in place.",
+    "note": "Both record the extension into November; the August 25th lapse date appears only in ours.",
+    "t": 656
+   },
+   {
+    "kind": "discrepancy",
+    "about": "O&M procurement structure and Town Meeting purpose",
+    "ours": "Move forward with restructuring the O&M procurement as a service-only contract, separate from construction work, requiring town meeting and state legislative action.",
+    "official": "It will go out as a Service Contract only but they are working on language to go to Town Meeting to make it Service and Construction Work.",
+    "note": "Ours says construction is kept separate; official says the contract goes out service-only now while Town Meeting language would make it Service and Construction Work. Check the recording.",
+    "t": 717
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CTE contract term",
+    "ours": "",
+    "official": "The new contract will be for 1 year, with the option to extend 2 more times and expires in November.",
+    "note": "Term and extension options are not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "100 Laurel Lane work plan",
+    "ours": "Combine DPW highway crew labor (digging, patching, backfilling) with a contractor's help (pipe placement, manhole work) to extend sewer service near 100 Laurel Lane, work to start the following week.",
+    "official": "Bill stated that the DPW highway crew will do most of the work on this project such as the digging, backfilling and patching. Dan’s company will help with putting the pipes in and getting through the manhole.",
+    "note": "Same plan, and both give a start next week.",
+    "t": 800
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on 104 Laurel Lane",
+    "ours": "",
+    "official": "Chip Guercio, a resident of Shirley, MA, stated he owns property at 104 Laurel Lane",
+    "note": "Public comment and the third stub line for 104 Laurel are not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Betterment on subdivided property, about $35,000",
+    "ours": "Betterment vs. connection/privilege fees on subdivided properties (790 Mass Ave example): almost $35,000",
+    "official": "for a total of almost $35K",
+    "note": "Same figure.",
+    "t": 1067
+   },
+   {
+    "kind": "agree",
+    "about": "Outstanding betterment debt about $1.9 million",
+    "ours": "Outstanding betterment debt being serviced: almost 2 million, 1.9",
+    "official": "Andrew replied about $1.9 million.",
+    "note": "Same figure.",
+    "t": 1190
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Privilege fee vs betterment follow-up",
+    "ours": "Staff will go back to town counsel to clarify why the sewer privilege fee has been billed at half the betterment amount when the bylaw appears to require it be equivalent, and will check the minutes for the prior determination.",
+    "official": "Bill stated that this topic was discussed with Town Counsel who said a privilege fee is half of a betterment. However, Dan read from the by-laws that they were equal.",
+    "note": "Both say staff will seek town counsel clarification, but only ours adds checking prior minutes and says billing is at half. Check the recording.",
+    "t": 1291
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Historical phase betterment costs",
+    "ours": "Historical phase betterment costs: 13,000, 11, almost 12",
+    "official": "The Commission discussed how the sewer was done in phases and the cost varied for residents depending on how many homes connected in that phase.",
+    "note": "Official mentions the phase discussion but gives no figures, so ours cannot be verified.",
+    "t": 1499
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Touch-a-Truck location",
+    "ours": "Commission members will participate in the town's Touch-a-Truck event on August 28th at TCP (Turkey Hill/town property referenced as TCP), bringing trucks and a cotton candy machine.",
+    "official": "will be on August 28th at the TC Passios building 12 – 2:30 pm.",
+    "note": "Date matches, but our gloss of TCP as Turkey Hill is likely a caption mishearing of TC Passios; check the recording.",
+    "t": 1712
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee names",
+    "ours": "Brett Manchin (chairman); Scott Doll; Dan Proctor; David Adams; Chip Olson; Bill Burnett; Andrew Bellia; Dan Remley",
+    "official": "Chair- Brett Ramsden, Vice-Chair- Scott Dall, Clerk- Dan Proctor, Member: Arthur Katis and Chip \nWilson, DPW Director- Bill Bernard, Sewer Business Manager- Andrew Valliere, Minutes Clerk- Jane Ranley",
+    "note": "Most names are misheard; the fifth member is Arthur Katis in the official minutes but David Adams in ours, which is not a phonetic match. Check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Adjournment and upcoming meetings",
+    "ours": "",
+    "official": "UPCOMING SCHEDULED SEWER COMMISSION ACTIVITIES:",
+    "note": "The schedule of upcoming meetings is only in the official minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-29T11:37:29Z",
+   "cost_usd": 0.21289639999999999
+  }
  }
 }

@@ -316,5 +316,165 @@
    "at": "2026-09-27T02:02:34Z",
    "cost_usd": 0.190498
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08172026-7962",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-08-17-minutes-7962.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-08-17-minutes-7962.pdf"
+  },
+  "official_sha256": "d92be23d21a73fda7cf3c6115f656111ace2d5556930f49bcd1f825bb8ed330f",
+  "coverage": "full",
+  "summary": "The two records agree on the main topics (space planning, conference-room data, records retention, next meeting on August 31), but the official minutes are a fuller narrative with no votes on substantive matters, and ours capture some decisions and dollar figures they omit. Check the Steve Walton/Wallace name, the attendee list (we heard seven people, the town lists five present) and the figures and select-board decisions that appear only in our minutes.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next meeting set for August 31st; Steve Walton, the town's land use director, will be invited to join to discuss possibilities for the TC Pacios building.",
+    "official": "The next meeting was scheduled for Monday, August 31, 2026, at approximately 5:30 PM.",
+    "note": "Both give August 31 as the next meeting date.",
+    "t": 4994
+   },
+   {
+    "kind": "caption_error",
+    "about": "Land use director's name",
+    "ours": "Steve Walton, the town's land use director",
+    "official": "Invite PACC/Land Use Director (Steve Wallace) to next meeting",
+    "note": "Same person and same invitation; the captions misheard the surname.",
+    "official_reading": "Steve Wallace",
+    "t": 4994
+   },
+   {
+    "kind": "caption_error",
+    "about": "Building name TC Pacios",
+    "ours": "TC Pacios building",
+    "official": "Walkthrough Report (Ritter / TC Passios)",
+    "note": "Same building; the captions misspelled the name.",
+    "official_reading": "TC Passios",
+    "t": 4994
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Purpose of inviting the land use director",
+    "ours": "Steve Walton, the town's land use director, will be invited to join to discuss possibilities for the TC Pacios building.",
+    "official": "Recommendation: Invite PACC/Land Use Director (Steve Wallace) to next meeting to clarify PACC intentions and space requirements.",
+    "note": "Same invitation, but the stated topic differs (TC Passios building possibilities vs PACC intentions and space requirements); check the recording to see which was discussed.",
+    "t": 4994
+   },
+   {
+    "kind": "agree",
+    "about": "Ask departments for weekly meeting hours",
+    "ours": "Ask department heads (assessor, town clerk, accounting, treasurer, payroll, town manager) to report their weekly meeting hours to help size conference room needs.",
+    "official": "Suggestion: collect meeting-hour data from each department using a clear definition of meeting.",
+    "note": "Both record collecting meeting hours from departments to size conference rooms.",
+    "t": 2691
+   },
+   {
+    "kind": "agree",
+    "about": "Records retention determination",
+    "ours": "Determine, department by department, which records must legally be retained in paper and for how long, to size future storage needs rather than planning storage for records that could be digitized or discarded.",
+    "official": "Which documents must remain physical by law, and required retention periods.",
+    "note": "Both record determining legally required paper retention and periods to size storage.",
+    "t": 3852
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Committee presents several options to the select board",
+    "ours": "The committee will present the select board with several space-planning options rather than bringing multiple choices directly to town meeting, leaving the select board to choose which option to advance.",
+    "official": "",
+    "note": "The official minutes do not record this decision about routing options through the select board; check the recording.",
+    "t": 4453
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Facility to house only town administration, not school offices",
+    "ours": "Any new or renovated town facility will house only town administration functions, not school department offices, reversing the scope of the earlier failed project.",
+    "official": "Project scope: Town administration building planning, planning target assumed ~30 employees (conservative planning number) and 10 visitors at peak. Police and Fire excluded.",
+    "note": "The official scope is town administration with Police and Fire excluded but does not mention school offices or the earlier failed project; this is a decision on scope, so check the recording.",
+    "t": 4851
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Smaller architectural scoping effort before full design contract",
+    "ours": "Pursue a smaller architectural/consultant scoping effort (layouts, square footage, utilities) before committing to a full design contract, rather than repeating the prior process of handing the project to an architect with no detailed requirements.",
+    "official": "",
+    "note": "The official minutes only say the architect/designer would develop the counter layout during design; the scoping-before-design decision is not recorded. Check the recording.",
+    "t": 4705
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dollar figures on past and future project costs",
+    "ours": "2025 renovation study cost estimate: 2 2.6 million, 2 million; Failed prior town hall/school project design cost: $180,000, $22 million; Future architectural/scoping consultant cost: 10,000; Full design contract cost avoided: $500,000",
+    "official": "",
+    "note": "The official minutes contain no dollar figures for these items; the captured figures are garbled and need verifying against the recording.",
+    "t": 4125
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prior PACK/basement facility cost",
+    "ours": "Prior PACK/basement facility cost: a million dollar facility, more than that",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 4809
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "the chair (chair); Brian; Tony; Tom; Steve; Denny; Dave",
+    "official": "Members Present:   Brian Lehtinen, Tom Gray, David Blatt, Matthew Brenner, Anthony Sculumbrine",
+    "note": "Official lists five members present. Ours lists seven, including Steve and Denny, who match no official name, and the chair (possibly David Blatt, listed here as Dave) counted separately. Check who attended.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of prior minutes",
+    "ours": "",
+    "official": "Motion to approve minutes of July 28, seconded and approved unanimously.",
+    "note": "The official minutes record votes approving the July 28 and August 3 minutes; ours list no votes. Confirm whether they were taken during the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Roof condition",
+    "ours": "",
+    "official": "Roof condition: Despite leaks, wooden roof deck largely in good condition; minimal decking replacement may be required.",
+    "note": "Roof deck observation appears only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Square footage guidance and staffing assumptions",
+    "ours": "",
+    "official": "Total building square footage guideline per referenced quick-planning: ~6,300–8,400 sq ft.",
+    "note": "Square-footage targets and the ~30-employee planning figure appear only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PACC location uncertainty",
+    "ours": "",
+    "official": "PACC location unclear: currently operating out of \"Eagle House\" semi-permanently",
+    "note": "The PACC space and cable contract discussion appears only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Shared counter and reception recommendation",
+    "ours": "",
+    "official": "Shared reception/counter for quick acknowledgment and triage recommended; this would minimize need for separate counters for each department.",
+    "note": "The counter layout and time-and-motion study recommendation appear only in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-29T11:37:10Z",
+   "cost_usd": 0.21477639999999998
+  }
  }
 }

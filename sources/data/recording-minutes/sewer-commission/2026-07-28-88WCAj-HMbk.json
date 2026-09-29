@@ -427,5 +427,236 @@
    "at": "2026-09-27T02:08:54Z",
    "cost_usd": 0.197512
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07282026-7927",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-07-28-minutes-7927.txt",
+   "path": "sources/meetings/sewer-commission/2026-07-28-minutes-7927.pdf"
+  },
+  "official_sha256": "7600879d1d95324d907a82cc47999a809141ee12a6d953b80827eaff8246f8f5",
+  "coverage": "full",
+  "summary": "The two records agree on the substance: the topics, the $20K and $50K bids, the $7,468 pump repair, the $163K billing error, the $550 refund and the roughly $2 Million in special assessments. The one thing to know is that the official minutes record roll-call votes (approval of the 7/14 minutes) that our minutes list as \"none\", and they say the 100 Laurel Lane work is 3 pressure lines where our captions call it a gravity line.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 4,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to accept minutes of 7/14/26",
+    "ours": "VOTES (non-procedural): none",
+    "official": "To accept the minutes of 7/14/26.   \nRoll Call Vote: Scott-aye, Dan-aye, Arthur-aye and Chip-aye. Brett abstained.",
+    "note": "Official minutes record a roll-call vote (4 aye, chair abstained) that ours does not list; approving prior minutes may have been treated as procedural, so check the recording for whether it happened.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brett Mston (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-chair name",
+    "ours": "Scott Dah (commissioner)",
+    "official": "Vice-Chair- Scott Dall",
+    "note": "Misheard surname; the official minutes also give his role as Vice-Chair.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner name",
+    "ours": "Arthur Cadis (commissioner)",
+    "official": "Member: Arthur Katis",
+    "note": "Misheard surname.",
+    "official_reading": "Arthur Katis",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer business manager name",
+    "ours": "Andrew Vier (staff)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "note": "Misheard surname; official gives his title as Sewer Business Manager.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees",
+    "ours": "Dan Proctor (commissioner); Chip Wilson (commissioner); Bill Bernard (director); Jane Ranley (staff)",
+    "official": "Clerk- Dan Proctor, Member: Arthur Katis and Chip \nWilson, DPW Director- Bill Bernard, Sewer Business Manager- Andrew Valliere, Minutes Clerk- Jane Ranley",
+    "note": "These five attendees match.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters and Steeves family",
+    "ours": "",
+    "official": "Aaron Steeves, representing the 100 Laurel Lane project, stated he had \na couple of questions.",
+    "note": "Aaron and Gary Steeves take part in the official record; ours refers only to Aaron Steves, in a decision line.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "CTE contract one-month extension",
+    "ours": "Pursue a one-month extension of the current CTE contract while the new 30B service-contract bid language is finalized and advertised.",
+    "official": "They are doing a 1-month extension on the \ncurrent contract, to allow time to advertise it.",
+    "note": "Same item. The official minutes report it as an update, not a vote.",
+    "t": 356
+   },
+   {
+    "kind": "agree",
+    "about": "Special legislation for service and construction under one contract",
+    "ours": "Move forward with seeking special state legislation (via town meeting and the state representative) to allow the CTE contractor to perform both service and construction work under one contract.",
+    "official": "the State could \ndo separate legislation to allow Lunenburg to have a contract for both service and construction. Town Counsel will \nput together the language, and the Sewer Commission will have to vote to approve.",
+    "note": "Our minutes record a decision to proceed. The official minutes say the Commission will still have to vote to approve, so check whether any decision was actually made.",
+    "t": 459
+   },
+   {
+    "kind": "agree",
+    "about": "$10,000 construction threshold",
+    "ours": "Construction work threshold under CTE 30B service contract: $10,000",
+    "official": "If the cost is over $10K, he will need to go out to bid.",
+    "note": "Same figure.",
+    "t": 397
+   },
+   {
+    "kind": "agree",
+    "about": "100 Laurel Lane bids of $20K and $50K",
+    "ours": "100 Laurel Lane sewer line bid - bidder 1: $20,000; bidder 2: $50,000",
+    "official": "One bid was $20K but the bidder did \nnot  submit the required forms. The 2nd bid was very high at $50K so both bids were thrown out.",
+    "note": "Same figures. The official minutes add that both bids were rejected.",
+    "t": 661
+   },
+   {
+    "kind": "discrepancy",
+    "about": "100 Laurel Lane earlier bids and target budget",
+    "ours": "100 Laurel Lane - earlier gravity-line bids and target budget: 15,000, 20,000, around 15,000",
+    "official": "put out an IFB to install 3 pressure lines \nfrom the manhole to the property line at 100 Laurel Lane and only got 2 bids.",
+    "note": "Our minutes have a $15,000 figure and earlier gravity-line bids that the official minutes do not mention, and the official minutes describe pressure lines. Check the recording around t=953 to see whether these were separate earlier bids.",
+    "t": 953
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hypothetical settled bid price",
+    "ours": "100 Laurel Lane - hypothetical settled bid price: 47,500 bucks",
+    "official": "",
+    "note": "The official minutes do not mention a $47,500 figure.",
+    "t": 1358
+   },
+   {
+    "kind": "agree",
+    "about": "Bill to send Aaron a copy of the bid document",
+    "ours": "Bill will send Aaron Steves a copy of the 100 Laurel Lane RFP so he can help recruit additional bidders.",
+    "official": "Bill will send Aaron a copy of the RFB and agreed the town owes them the stub.",
+    "note": "Same commitment. The official minutes call it an RFB and add that the town owes them the stub.",
+    "t": 1265
+   },
+   {
+    "kind": "agree",
+    "about": "Francis Street pump replacement cost",
+    "ours": "Francis Street pump station replacement: 7468",
+    "official": "a pump \nreplacement at the Francis St. station at a cost of $7,468.",
+    "note": "Same figure.",
+    "t": 1451
+   },
+   {
+    "kind": "agree",
+    "about": "Pump repair contract threshold and expiration",
+    "ours": "Pump station repair contract threshold and expiration: 10 grand, August 20, 26",
+    "official": "hopefully \nbefore the contract expires on 8/26. A few are under $10K",
+    "note": "Same $10K threshold. The captions heard 'August 20, 26' and the official minutes give 8/26, which is most likely August 26 (a date, not a figure).",
+    "t": 1493
+   },
+   {
+    "kind": "agree",
+    "about": "Billing system error",
+    "ours": "Billing system error: $163,000",
+    "official": "charging a customer $163K for no \nreason",
+    "note": "Same figure.",
+    "t": 1620
+   },
+   {
+    "kind": "agree",
+    "about": "990 Mass Ave refund",
+    "ours": "990 Massachusetts Ave - connection fee overcharge to be refunded: 550",
+    "official": "Town \nCounsel said they will need to give them back the $550 collected for the extra bedroom.",
+    "note": "Same figure.",
+    "t": 1745
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "990 Mass Ave additional betterment owed",
+    "ours": "990 Massachusetts Ave - additional betterment owed: 50",
+    "official": "",
+    "note": "The official minutes give no amount for additional betterment owed. Check the recording for the figure.",
+    "t": 1812
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Current sewer connection fee",
+    "ours": "Current sewer connection fee: 3,900, 3900",
+    "official": "",
+    "note": "The official minutes give no connection fee amount.",
+    "t": 2351
+   },
+   {
+    "kind": "agree",
+    "about": "Betterments go to the Reserve, then the operating budget",
+    "ours": "Betterment payments collected are placed into the sewer department's reserve, then allocated into the operating budget annually — not stated (discussed only)",
+    "official": "the betterments go into their Reserve, from which they allocate into the \noperating budget.",
+    "note": "Same description of the flow. No transfer vote is recorded in either.",
+    "t": 2573
+   },
+   {
+    "kind": "agree",
+    "about": "Remaining special assessments",
+    "ours": "Remaining special assessments (betterments) for 2026: almost almost two million",
+    "official": "under special assessments, the remaining amount is almost $2 Million.",
+    "note": "Same figure.",
+    "t": 2716
+   },
+   {
+    "kind": "agree",
+    "about": "Betterment vs connection fee on next agenda",
+    "ours": "Put the betterment-versus-connection-fee policy question on the agenda for the next meeting for further discussion.",
+    "official": "The \nCommission will discuss more at the next meeting.",
+    "note": "Same item; the official minutes also list it under Future Agenda Items.",
+    "t": 2763
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bid distribution",
+    "ours": "",
+    "official": "Bill noted that the IFB went out \nto 20 companies, to include the 10 drain layers that work with the town but received only 2 bids.",
+    "note": "Our minutes do not record how many companies received the IFB.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Q1 FY27 billing",
+    "ours": "",
+    "official": "Quarter 1 FY27 Sewer Billing – Andrew reported that the Q1 bills have been completed, printed and it took 5 \ndays to do them.",
+    "note": "Our minutes have no Q1 billing item beyond the $163K error figure.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-29T11:38:07Z",
+   "cost_usd": 0.240694
+  }
  }
 }
