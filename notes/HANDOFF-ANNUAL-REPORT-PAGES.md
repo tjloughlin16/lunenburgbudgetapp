@@ -37,11 +37,13 @@ recognition cache already exists for a page it is not evidence and not a startin
 
 ## HOW THE WORK GOES NOW
 
-**One year. Build the table once. Work the sections, top to bottom, committing each.**
+**Take the MOST RECENT unfinished year** -- see the table below, and do not re-rank it by
+how cheap a year looks. **Then build the table once and work the sections, top to bottom,
+committing each.**
 
     python3 -c "
     import csv, collections
-    rs=[r for r in csv.DictReader(open('sources/data/annual-report-pages.csv')) if r['fy']=='2014']
+    rs=[r for r in csv.DictReader(open('sources/data/annual-report-pages.csv')) if r['fy']=='2022']
     print(collections.Counter(r['state'] for r in rs))
     for r in sorted(rs, key=lambda r: int(r['page'])):
         if r['state']!='proven':
@@ -99,31 +101,65 @@ different year's report.
 
 ## WHERE EACH YEAR STANDS
 
+**MOST RECENT FIRST. Work DOWN this table.** TJ, 29 September 2026, asked why FY2014 had
+been taken when FY2016 was next on a list ranked by how cheap a year looked: *"I meant work
+from most recent."*
+
+The order is the point and it is not about cost. The most recent year is the one a resident
+is asking about, the one a board is budgeting against, and the one whose figures are still
+live -- so a page read there is worth more the day it is read than the same page in FY2011.
+Cheapness ranked FY2016 first because 28 of its pages are born-digital; recency ranks
+FY2022, which has five. Read the expensive recent year anyway.
+
 | year | pages | proven | left | notes |
 |---|---:|---:|---:|---|
-| FY2011 | 28 | 10 | 18 | all photographs |
-| FY2012 | 27 | 10 | 17 | all photographs |
-| FY2013 | 29 | 8 | 21 | all photographs |
-| FY2014 | 28 | **28** | 0 | **at zero** -- and it GREW by one page while being read |
-| FY2015 | 31 | 13 | 18 | 15 of 18 digital |
-| **FY2016** | 41 | 12 | **29** | **28 of 29 digital -- the biggest digital haul, do this next** |
-| FY2017 | 33 | 14 | 19 | 11 digital |
-| FY2018 | 35 | 17 | 18 | 10 digital |
-| FY2019 | 38 | 11 | 27 | all photographs |
-| FY2020 | 39 | 16 | 23 | 4 digital |
-| FY2021 | 37 | 16 | 21 | all photographs |
-| FY2022 | 33 | 18 | 15 | 5 digital |
-| FY2023 | 35 | **34** | 1 | **at zero** but for p25, blocked at 93 dpi |
-| FY2024 | 28 | **28** | 0 | **at zero** |
 | FY2025 | 23 | **23** | 0 | **at zero** |
+| FY2024 | 28 | **28** | 0 | **at zero** |
+| FY2023 | 35 | **34** | 1 | **at zero** but for p25, blocked at 93 dpi |
+| **FY2022** | 33 | 18 | **15** | **do this next.** 5 digital, so most of it is read, not parsed |
+| FY2021 | 37 | 16 | 21 | all photographs |
+| FY2020 | 39 | 16 | 23 | 4 digital |
+| FY2019 | 38 | 11 | 27 | all photographs |
+| FY2018 | 35 | 17 | 18 | 10 digital |
+| FY2017 | 33 | 14 | 19 | 11 digital |
+| FY2016 | 41 | 12 | 29 | 28 of 29 digital -- the biggest digital haul, and it still waits its turn |
+| FY2015 | 31 | 13 | 18 | 15 of 18 digital |
+| FY2014 | 28 | **28** | 0 | **at zero** -- taken out of order, and it GREW by one page while being read |
+| FY2013 | 29 | 8 | 21 | all photographs |
+| FY2012 | 27 | 10 | 17 | all photographs |
+| FY2011 | 28 | 10 | 18 | all photographs |
 
 Counts per page are generated into `notes/generated/TEXT-LAYER-COVERAGE.md` by
 `scripts/survey_text_layer.py`; it is a property of the PAGE, not of the report, and the
 per-report version of that table is what made FY2024 look like the cheapest year when it was
 the most expensive.
 
-**Take FY2016 next**, then FY2015. Those two hold 43 of the 47 digital pages left; after them
-the remaining years are photographs and get read, not parsed.
+**EVERY `left` FIGURE HERE IS A LOWER BOUND.** A page enters the tracker only if recognition
+found fifteen money figures on it, so pages it failed on entirely are ABSENT rather than
+unfinished. Five have turned up that way -- most recently FY2014 p41, a full debt schedule
+sitting between two listed pages. The term for it is frame undercoverage: the list is drawn
+from a survey that systematically misses part of what it is counting, so the error runs one
+way and no care with the arithmetic fixes it. Expect a year to GROW while you read it, and
+walk outward from every section rather than trusting the list.
+
+**Take FY2022 next**, then FY2021, then FY2020. Do not re-rank by how digital a year looks.
+
+### AND READ THE PAGE WITH `page_table.py`, WHICH FY2014 DID NOT
+
+Step 1 of the process opens with *do not write the reading code again*, and FY2014 was read
+with three bespoke readers instead -- one for the trust pages, one for the debt schedule,
+one for the omnibus budget. The data is sound because the pages' own arithmetic proved it,
+but the defects hit along the way were precisely the ones `page_table` exists to stop: a
+money pattern that rejected `($2,087.97)` because the bracket came before the dollar, `$ -`
+read as a missing figure rather than an explicit zero, band positions hardcoded with nothing
+checking them against the printed heading, and figures free to land in a column silently.
+
+`PT.declare()` refuses a page whose heading disagrees with the layout, and `PT.place()`
+reports a stray or a collision instead of overwriting. Neither was in play.
+
+**Where a page needs handling `page_table` does not have -- the mirrored, transposed text
+layer of FY2014's pp.34-42 is a real example -- the answer is to put it IN `page_table`,
+where the next year gets it, not beside it in a working file that is deleted.**
 
 ---
 
