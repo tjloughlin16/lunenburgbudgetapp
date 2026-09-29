@@ -84,6 +84,43 @@ MAX_OCR_PER_RUN = 40             # ~20 minutes of local CPU; nothing charged to 
 MAX_RECONCILE_PER_RUN = 10       # ~3 minutes, ~$3; excludes nothing, just bounds a run
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
+
+# THE PAYLOADS THE SITE SERVES, rebuilt every run because the database is.
+#
+# The refresh never rebuilt `lunenburg.db` at all, so every payload derived from it drifted
+# from the day's own data and the run deployed anyway: on 29 September 2026 merging one
+# refresh commit took check_generated from 3 failures to 28. A reader was served athletics,
+# Chapter 70, peer spending and twenty more built from a database nobody had rebuilt.
+#
+# EXTRACTORS ARE DELIBERATELY ABSENT. These are pure functions of the database and the
+# tracked CSVs -- read, write a payload, touch nothing else -- and that is the whole test
+# for being on this list. Three EXTRACTORS were found on 29 September 2026 to DESTROY data
+# when run unattended: extract_trust_balance_detail deleted a year of trust balances,
+# build_finance would have published receipts as closing balances, build_extraction_gaps
+# deleted four registered gaps. Nothing that reads a PDF or rewrites a source CSV belongs
+# here; a person runs those and reads the diff.
+SITE_PAYLOADS = [
+    'build_db.py', 'build_api.py',
+    'build_athletics_charts.py', 'build_insurance_charts.py', 'build_monty_tech.py',
+    'build_ch70_formula.py', 'build_minimum_aid.py', 'build_peer_spending.py',
+    'build_special_education.py', 'build_sped_regulation.py', 'build_spending_vs_required.py',
+    'build_stopped_funding.py', 'build_cut_register.py', 'build_grant_unwinding.py',
+    'build_attrition.py', 'build_course_offerings.py', 'build_staffing_charts.py',
+    'build_board_posting.py', 'build_youth_sports.py', 'build_lunenburg_by_the_numbers.py',
+    'build_no_captions_report.py', 'build_app_metrics.py', 'build_reports_index.py',
+    'build_sitemap.py',
+]
+
+# A FAILING CHECK THAT IS NOT STALENESS, and why. Everything else blocks the deploy.
+# Each entry has to say what it is instead, so this cannot quietly become the place a
+# real failure goes to be ignored.
+NOT_BLOCKING = {
+    'build_if_students_leave.py': 'a FINDING about the archive, not a stale file: FY2011 '
+                                  'School Choice does not state its own arithmetic',
+    'sync_d1.py': 'an external service, and rule 10 keeps that push manual',
+    'build_search_index.py': 'rebuilt below; it re-checks its own inputs and a document '
+                             'fetched mid-run always looks newer than the index',
+}
 # THE FIRST-CLASS OBJECTS OF A STATUS REPORT. TJ, 29 September 2026: *"consider those the
 # first class objects for status reports... things like votes are not first class objects"*.
 #
@@ -657,6 +694,12 @@ def main():
         py('build_boards.py', '--as-of', a.as_of)
         py('build_budget_feed.py', '--as-of', a.as_of)
         py('build_feeds.py')
+        # AND THE DATABASE, AND EVERYTHING THE SITE SERVES OFF IT. See SITE_PAYLOADS:
+        # this run has just changed the minutes, the transcripts and the meeting record,
+        # and every payload built from them was being left at yesterday's figures and
+        # deployed anyway.
+        for gen in SITE_PAYLOADS:
+            py(gen, check=False)
         # A new budget episode the feed thinks it sees -- a Special Town Meeting date, an
         # override, the Governor's budget, the season opening -- is PROPOSED here, with its
         # evidence, for TJ or the agent to confirm by adding a row to budget-episodes.csv.
@@ -719,8 +762,35 @@ def main():
     arrived = {k: [after[k][i] for i in after[k] if i not in before[k]] for k in after}
     delta = {k: len(v) for k, v in arrived.items()}
 
-    # 10. The site, only when asked.
+    # 10. The site, only when asked -- AND ONLY IF IT REPRODUCES.
     deployed = False
+    # A STALE TREE MAY NOT SHIP. check_generated runs every generator's own --check and
+    # fails if an output no longer reproduces from its inputs. That is exactly the question
+    # `is this site consistent with its data` and the refresh never asked it: on 29
+    # September 2026 one refresh commit carried twenty-five stale public payloads to
+    # production, and every run that did it exited 0.
+    #
+    # The whole output is read, never its tail. Fifteen of twenty-three failures went
+    # unread that morning because a person was reading a 259-line report through `tail -25`.
+    if a.deploy and not a.dry_run:
+        chk = subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'check_generated.py')],
+                             cwd=ROOT, capture_output=True, text=True)
+        stale = []
+        for line in (chk.stdout or '').splitlines():
+            if not line.startswith('  FAIL'):
+                continue
+            name = line.split()[1]
+            if name.split(' ')[0] not in NOT_BLOCKING:
+                stale.append(name)
+        if stale:
+            notes.append('DID NOT DEPLOY: %d generated output(s) no longer reproduce from '
+                         'their inputs, so the site would not match its own data: %s'
+                         % (len(stale), ', '.join(sorted(set(stale))[:8])))
+            print('  NOT deploying: %d stale generated output(s): %s'
+                  % (len(stale), ', '.join(sorted(set(stale)))))
+            a.deploy = False
+        else:
+            print('  every generated output reproduces; safe to deploy')
     # DEPLOY ONLY FROM MAIN, or from the refresh tree's branch that IS main. Cloudflare
     # Pages sends any other branch to a preview alias and the log would still say
     # "deployed" -- which is exactly what happened on 15 September 2026.
