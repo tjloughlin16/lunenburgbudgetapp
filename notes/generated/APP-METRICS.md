@@ -20,7 +20,7 @@
 - **38 analyses** and **195 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.
 - **191 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
-- **205 pages** on the site.
+- **206 pages** on the site.
 
 ## Where it came from
 
