@@ -192,10 +192,36 @@ def rows(ws, gap=None, within=None):
             # whichever population has more members, and that is the jitter on a wide page
             # and the pitch on a narrow one. Multiplying it by three banded a 20-row table
             # into ONE row.
-            best, gap = 0.0, steps[-1]
-            for a, b in zip(steps, steps[1:]):
-                if a > 0 and b / a > best:
-                    best, gap = b / a, (a + b) / 2
+            # A PAGE WITH NO JITTER AT ALL BREAKS THE RATIO RULE, and it breaks it
+            # SILENTLY -- by banding the whole table into four rows, which looks like a
+            # page of headings rather than like a failure. FY2022's omnibus budget
+            # (pp.146-149) is typeset, so every token of a printed row shares its `top`
+            # EXACTLY and the jitter population is not small, it is empty. The smallest
+            # positive step is then already the row PITCH, the biggest ratio jump falls
+            # between the section gap and the page gap (30.5 -> 63.1 beats 14.9 -> 26.2),
+            # and `gap` comes out at 46.8pt against a pitch of 14.76.
+            #
+            # The page says which case it is. Count the consecutive pairs that share a y
+            # exactly: where those dominate, jitter is zero and EVERY positive step is a
+            # row boundary, so the cut goes below the smallest one. 154 of 191 pairs tie
+            # on FY2022 p147; on a scan, or on a born-digital page whose glyph heights
+            # differ, almost none do and the ratio rule stands.
+            # AND THE TEST IS THE ABSENCE OF A SMALL POPULATION, not the presence of ties.
+            # A first cut on ties alone broke page 38 of this same report, which has 497
+            # of them AND a real 1.281pt jitter: every article's number sits a fraction
+            # above its own purpose, so `steps[0] / 2` split each printed row in two and
+            # the labels came away from the figures. Ties say a page is typeset; what says
+            # the jitter is EMPTY is that the smallest positive step is already of the same
+            # order as the median one. p147: 14.741 against a median of 14.760. p38: 1.281
+            # against 9.815, so the ratio rule stands there and is right to.
+            tied = sum(1 for a, b in zip(ys, ys[1:]) if b['y'] == a['y'])
+            if tied > len(ys) / 2 and steps[0] > statistics.median(steps) / 2:
+                gap = steps[0] / 2
+            else:
+                best, gap = 0.0, steps[-1]
+                for a, b in zip(steps, steps[1:]):
+                    if a > 0 and b / a > best:
+                        best, gap = b / a, (a + b) / 2
     out = [[ys[0]]]
     for a, b in zip(ys, ys[1:]):
         if b['y'] - a['y'] > gap:
@@ -291,6 +317,38 @@ def place(row, cols, tolerance=0.06):
     if problems:
         out[None] = problems
     return out
+
+
+def one(row, x_from):
+    """The SINGLE money figure a row carries, right of `x_from`, with its fragments JOINED.
+
+    `place()` needs a ruler and a one-column table has none to measure -- there is nothing
+    for a figure to be placed against, and every figure in the row belongs to the same
+    column by construction. So this joins instead of placing.
+
+    TWO THINGS IT HANDLES, both paid for on FY2022's omnibus budget (pp.146-149).
+
+    A FIGURE ARRIVES SPLIT. That page prints `Animal Inspector Salary  $ 1, 000.00` as
+    three tokens, and `amount()` on each of them in turn returns None, None and 0.00 --
+    so the line reads as a thousand dollars of nothing and the section total stops footing.
+    `page_table`'s own header names this as the caller's to handle; a one-column table is
+    the case where the caller can always do it, because concatenation cannot cross a
+    column boundary that does not exist.
+
+    `$ -` IS AN EXPLICIT ZERO, NOT A MISSING FIGURE. FY2014 read the dash as absent, turned
+    a line into a section heading and dropped $16,687,431 out of Total Schools. Here twelve
+    of 91 omnibus lines print it -- every article the town funded at nothing this year --
+    and they are real lines with a real figure of zero.
+
+    Returns None only when the row carries no figure at all, which is what a section
+    HEADING looks like.
+    """
+    t = ''.join((w['text'] or '') for w in sorted(row, key=lambda w: w['x'])
+                if w['x'] >= x_from)
+    t = t.strip()
+    if re.fullmatch(r'\$?\s*[-\u2013\u2014]', t):
+        return 0.0
+    return amount(t)
 
 
 def series(row, n):

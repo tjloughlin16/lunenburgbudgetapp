@@ -248,6 +248,39 @@ def adopt_new_meeting_documents(as_of):
     return added
 
 
+def inventory():
+    """WHICH DOCUMENTS we hold, not how many.
+
+    This used to return five counts, so a run could say `new agendas 3` and nothing in
+    the log, the run row or the dashboard could say WHICH three. TJ, 29 September 2026,
+    after a third attempt to get a legible answer out of a finished run: *"i want counts
+    of full documents"*, and before that *"we're still not getting a clear update from
+    daily refresh"*. A count is not an update. The identity of the document is.
+
+    Each value is a dict of {key: label}, so the run diffs them and gets the new
+    documents themselves.
+    """
+    inv = {}
+    ev = read_csv(MEETING_EVENTS)
+    for kind in ('agenda', 'minutes'):
+        inv[kind + 's'] = {e['file_id'] or (e['board_slug'] + e['meeting_date']):
+                           '%s  %s' % (e['board'], e['meeting_date'])
+                           for e in ev if e['kind'] == kind}
+    inv['videos'] = {e['video_id']: '%s  %s' % (e.get('uploaded') or '', e.get('title') or '')
+                     for e in read_csv(YOUTUBE_EVENTS)}
+    tr = read_csv(TRANSCRIPT_INDEX)
+    inv['transcripts'] = {(t.get('video_id') or t.get('id') or str(i)):
+                          '%s  %s' % (t.get('meeting_date') or t.get('uploaded') or '',
+                                      t.get('board') or t.get('title') or '')
+                          for i, t in enumerate(tr)}
+    ours = {}
+    for f in glob.glob(os.path.join(RECORDED, '*', '*.json')):
+        board = os.path.basename(os.path.dirname(f))
+        ours[f] = '%s  %s' % (board.replace('-', ' '), os.path.basename(f)[:10])
+    inv['ours'] = ours
+    return inv
+
+
 def whats_new(as_of, days=14):
     """The last two weeks of every event log, as one announcement payload."""
     since = (dt.date.fromisoformat(as_of) - dt.timedelta(days=days)).isoformat()
@@ -370,13 +403,7 @@ def main():
             bad += py(s, *args, check=False).returncode != 0
         return 1 if bad else 0
 
-    before = {
-        'agendas': sum(1 for e in read_csv(MEETING_EVENTS) if e['kind'] == 'agenda'),
-        'minutes': sum(1 for e in read_csv(MEETING_EVENTS) if e['kind'] == 'minutes'),
-        'videos': len(read_csv(YOUTUBE_EVENTS)),
-        'transcripts': len(read_csv(TRANSCRIPT_INDEX)),
-        'ours': len(glob.glob(os.path.join(RECORDED, '*', '*.json'))),
-    }
+    before = inventory()
     notes = []
 
     # 0. THE TREE IS MADE WHOLE BEFORE ANYTHING COUNTS IT.
@@ -619,14 +646,10 @@ def main():
             notes.append('the meeting watcher has missed days recently -- run '
                          'check_watch_gaps.py; `first seen` is no better than the gap')
 
-    after = {
-        'agendas': sum(1 for e in read_csv(MEETING_EVENTS) if e['kind'] == 'agenda'),
-        'minutes': sum(1 for e in read_csv(MEETING_EVENTS) if e['kind'] == 'minutes'),
-        'videos': len(read_csv(YOUTUBE_EVENTS)),
-        'transcripts': len(read_csv(TRANSCRIPT_INDEX)),
-        'ours': len(glob.glob(os.path.join(RECORDED, '*', '*.json'))),
-    }
-    delta = {k: after[k] - before[k] for k in after}
+    after = inventory()
+    # THE DOCUMENTS THEMSELVES, not the difference between two counts.
+    arrived = {k: [after[k][i] for i in after[k] if i not in before[k]] for k in after}
+    delta = {k: len(v) for k, v in arrived.items()}
 
     # 10. The site, only when asked.
     deployed = False
@@ -693,16 +716,44 @@ def main():
             fh.write('\n')
         record_run(a, delta, deployed, 'ok', notes)
 
+    # THE DOCUMENTS FIRST. WHAT CAME IN, WHAT WE MADE, THEN THE CLOCK.
+    #
+    # This block used to be fifty lines of seconds followed by one line of counts, and
+    # TJ asked three times in one morning for something legible out of it: "we're still
+    # not getting a clear update from daily refresh", then "i want a list of all the
+    # documents it found and their type, and then what it generated", then "i want
+    # counts of full documents". A step that took 2069 seconds is not the news. Five
+    # agendas and three minutes we wrote is the news, and the run knew both all along.
     total = sum(t[1] for t in TIMINGS)
-    print('\n=== refresh %s — %d min %d s ===' % (a.as_of, total // 60, total % 60))
+    IN = (('agendas', 'agenda'), ('minutes', 'minutes'),
+          ('videos', 'video'), ('transcripts', 'transcript'))
+    n_in = sum(delta[k] for k, _ in IN)
+    print('\n=== refresh %s — %d document(s) in, %d written, %d min %d s ==='
+          % (a.as_of, n_in, delta['ours'], total // 60, total % 60))
+
+    print('\n  FOUND -- %d document(s)' % n_in)
+    for key, label in IN:
+        print('    %-12s %d' % (label, delta[key]))
+        for line in sorted(arrived[key]):
+            print('        %s' % line)
+    if not n_in:
+        print('    nothing new was published today')
+
+    print('\n  WROTE -- %d document(s) of our own' % delta['ours'])
+    for line in sorted(arrived['ours']):
+        print('        minutes   %s' % line)
+    if not delta['ours']:
+        print('        none')
+
+    for n in notes:
+        print('\n  note: ' + n)
+    print('\n  deployed' if deployed else '\n  NOT deployed (pass --deploy)')
+
+    # The clock last, because it is about US and not about the town.
+    print('\n  --- where the time went ---')
     print('  %-46s %8s' % ('step', 'seconds'))
     for name, secs, rc in sorted(TIMINGS, key=lambda t: -t[1]):
         print('  %-46s %8.1f%s' % (name[:46], secs, '' if rc == 0 else '  exit %d' % rc))
-    print('  new agendas %d · new minutes %d · new videos %d · new transcripts %d · our minutes +%d'
-          % (delta['agendas'], delta['minutes'], delta['videos'], delta['transcripts'], delta['ours']))
-    for n in notes:
-        print('  note: ' + n)
-    print('  deployed' if deployed else '  not deployed (pass --deploy)')
     return 0
 
 
