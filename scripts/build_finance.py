@@ -167,10 +167,19 @@ def sr_read_history():
 
 
 def sr_ocr_balances():
-    """FY2024 and FY2025 closing balances, by fund code, from the OCR extract of the annual
-    reports' balance tables. The column is read by position (v2 = Fund Balance 6/30), which
-    the FY2024 page confirms for fund 1306; each figure is checked against the FY26 opening
-    balance where the years chain."""
+    """FY2024 and FY2025 closing balances, by fund code, from the annual reports' balance
+    tables. Each figure is checked against the FY26 opening balance where the years chain.
+
+    A NAMED COLUMN FIRST, AND ONLY THEN THE ORDINAL. `v2` is `the second column of this
+    page that held figures` -- an ordinal, not a column name, which is the thing CLAUDE.md
+    warns about -- and it was the only thing read here. When FY2024's schedule was re-read
+    off the page by eye its 164 rows came back under the column the page actually PRINTS,
+    `fund_balance`, leaving `v2` empty. Nothing failed: this function simply returned 32
+    balances where it used to return 288, and regenerating finance.json would have dropped
+    256 fund-years off a public page without a single check going red.
+
+    So prefer `fund_balance` and fall back to `v2` for the years still read by position.
+    """
     out = {}
     for r in csv.DictReader(io.open(SR_OCR, encoding='utf-8')):
         if r['fy'] not in ('2024', '2025'):
@@ -178,7 +187,19 @@ def sr_ocr_balances():
         m = re.match(r"^\s*'?(\d{4})\s", r['fund'] or '')
         if not m:
             continue
-        v = num(r['v2'])
+        # AND WHERE ONLY ORDINALS EXIST, ASK THE ROW WHICH ONE IS THE BALANCE.
+        # `v2` was hardcoded. FY2025's own `columns_tying` says `v1 = fund balance,
+        # v2 = receipts, v3 = remaining deficits`, so v2 is RECEIPTS in that edition
+        # and this function was one regeneration away from publishing 32 receipt
+        # figures as closing balances. A positional name is not a column name --
+        # rule 13, and the row states the mapping precisely so it need not be guessed.
+        v = num(r.get('fund_balance'))
+        if v is None:
+            m2 = re.search(r'\bv(\d)\s*=\s*fund balance', r.get('columns_tying') or '',
+                           re.I)
+            if not m2:
+                continue
+            v = num(r.get('v' + m2.group(1)))
         if v is None:
             continue
         out.setdefault(m.group(1), {})[int(r['fy'])] = v

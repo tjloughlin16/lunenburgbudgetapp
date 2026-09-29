@@ -248,7 +248,19 @@ def text_layer_rows(pdf, tsv):
                 continue
             out.extend(got)
         if not started:
-            return []
+            # THE HEADING IS NOWHERE IN THE TEXT LAYER, so the text layer cannot read this
+            # listing and OCR is the only reader for it. Returning [] here meant REFUSED --
+            # the caller declines to fall back -- and FY2024's twenty-eight accounts were
+            # deleted from trust-fund-balances.csv by the next run of this script. Its p29
+            # is a photograph carrying one word, the page number, while pages sampled from
+            # the middle of the same edition are born-digital.
+            #
+            # Which is the correction the comment above the sample needs too: a text layer
+            # is a property of the PAGE, not of the edition. Half of these reports are
+            # mixed, and this archive has already been caught by that -- FY2025 p115 is
+            # born-digital with its table embedded as an image. None means `I cannot read
+            # this, use the other reader`; [] means `I read it and it is empty`.
+            return None
 
     # PLACE BY COLUMN POSITION, NEVER BY ORDER (rule 13b). Taking the leftmost figure is an
     # ORDER rule, and it is right only while the balance column is never blank. Measure the

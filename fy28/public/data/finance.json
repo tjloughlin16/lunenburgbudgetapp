@@ -697,13 +697,18 @@
   },
   {
    "side": "extraction",
+   "what": "Which of the town's two FY2023 statements of what the special revenue and enterprise funds held is right?",
+   "why": "The FY2023 combined balance sheet gives special revenue fund equity as 6,131,303.68 and enterprise fund equity as 3,812,502.24, together 9,943,805.92. The special revenue schedule in the SAME annual report prints a grand total carried forward of 10,031,099.78. They are 87,293.86 apart. The comparison ties to the cent in FY2011, FY2013, FY2019 and FY2022, and the balance sheet's own arithmetic is complete -- every column foots to its own printed totals and liabilities plus equity equals assets -- so this is two published tables disagreeing and not a reading error. — closes: the Town Accountant's FY2023 trial balance, which would say which of the two the books support."
+  },
+  {
+   "side": "extraction",
    "what": "Can we trust what Town Meeting appropriated, article by article enough to chart what the town voted to spend, year over year?",
-   "why": "157 of 5,027 rows in `report_appropriations` are reconciled to a total the document itself prints — 4,870 failed that check and 0 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 30 years, 1 need real PDF geometry rather than text, 16 are messy and 13 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 30 of 30 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+   "why": "311 of 5,345 rows in `report_appropriations` are reconciled to a total the document itself prints — 5,034 failed that check and 0 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 30 years, 1 need real PDF geometry rather than text, 16 are messy and 13 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 30 of 30 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
   },
   {
    "side": "extraction",
    "what": "Can we trust the capital projects and what they cost enough to chart what the town has built and what it paid?",
-   "why": "0 of 616 rows in `report_capital_projects` are reconciled to a total the document itself prints — 529 failed that check and 87 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 19 years, 2 need real PDF geometry rather than text, 9 are messy and 8 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 19 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+   "why": "48 of 618 rows in `report_capital_projects` are reconciled to a total the document itself prints — 544 failed that check and 26 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 19 years, 2 need real PDF geometry rather than text, 9 are messy and 8 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 19 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
   },
   {
    "side": "extraction",
@@ -713,7 +718,7 @@
   {
    "side": "extraction",
    "what": "Can we trust gross wages, name by name enough to chart what the town pays its people in total?",
-   "why": "0 of 3,547 rows in `report_gross_wages` are reconciled to a total the document itself prints — 0 failed that check and 3,547 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 16 years, 6 need real PDF geometry rather than text, 9 are messy and 1 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 0 of 16 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+   "why": "0 of 3,547 rows in `report_gross_wages` are reconciled to a total the document itself prints — 0 failed that check and 3,547 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 16 years, 6 need real PDF geometry rather than text, 9 are messy and 1 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. NO year of this family prints a grand total, so there is no arithmetic on the page to foot a row against and no extractor can supply one. — closes: nothing we can build. What stands in for a total here is the PAIRING and the order the list prints itself in, both of which prove the assignment and say nothing about the digits; a reconcilable figure needs a total from the Town. The per-year survey is in `sources/data/extraction-plan.csv`."
   },
   {
    "side": "extraction",
@@ -10587,6 +10592,13 @@
      "fy": 2024,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
+     "chains": true,
+     "closing": 1298.66,
+     "fy": 2025,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
     }
    ],
    "id": "sr-1309",
@@ -11663,6 +11675,13 @@
      "fy": 2024,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
+     "chains": true,
+     "closing": 9530.07,
+     "fy": 2025,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
     }
    ],
    "id": "sr-1502",
@@ -11745,7 +11764,7 @@
     },
     {
      "chains": false,
-     "closing": 9383.21,
+     "closing": 9383.27,
      "fy": 2025,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
@@ -11780,6 +11799,12 @@
     "spent": 45070.23
    },
    "history": [
+    {
+     "closing": -3388.31,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": false,
      "closing": 3204.86,
@@ -13684,6 +13709,12 @@
      "spent": null
     },
     {
+     "closing": 10000.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 10000.0,
      "fy": 2025,
@@ -13764,14 +13795,14 @@
    },
    "history": [
     {
-     "closing": 0.0,
+     "closing": 5000.0,
      "fy": 2024,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
     },
     {
-     "chains": false,
-     "closing": 0.0,
+     "chains": true,
+     "closing": 5000.0,
      "fy": 2025,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
@@ -13807,7 +13838,7 @@
    },
    "history": [
     {
-     "closing": 0.0,
+     "closing": 5000.0,
      "fy": 2024,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
@@ -14383,8 +14414,8 @@
      "report": "sources/data/special-revenue-funds.csv"
     },
     {
-     "chains": false,
-     "closing": 9.1,
+     "chains": true,
+     "closing": 9.18,
      "fy": 2025,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
@@ -15029,6 +15060,13 @@
      "fy": 2024,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
+     "chains": true,
+     "closing": 121454.26,
+     "fy": 2025,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
     }
    ],
    "id": "sr-2451",
@@ -15311,8 +15349,8 @@
      "report": "sources/data/special-revenue-funds.csv"
     },
     {
-     "chains": false,
-     "closing": 0.0,
+     "chains": true,
+     "closing": 50.0,
      "fy": 2025,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
@@ -16602,6 +16640,13 @@
      "fy": 2024,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
+     "chains": false,
+     "closing": 333494.89,
+     "fy": 2025,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
     }
    ],
    "id": "sr-2640",
@@ -17276,6 +17321,12 @@
    },
    "history": [
     {
+     "closing": 0.5,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 0.5,
      "fy": 2025,
@@ -17552,6 +17603,12 @@
      "spent": null
     },
     {
+     "closing": 35.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 35.0,
      "fy": 2025,
@@ -17587,7 +17644,15 @@
     "salaries": 0,
     "spent": 0
    },
-   "history": [],
+   "history": [
+    {
+     "chains": true,
+     "closing": 33867.6,
+     "fy": 2025,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    }
+   ],
    "id": "sr-2713",
    "kind": "special-revenue",
    "name": "FY25 TITLE 1 #305",
@@ -17617,6 +17682,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 0.4,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 0.4,
@@ -17655,6 +17726,12 @@
    },
    "history": [
     {
+     "closing": 8677.5,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 8325.0,
      "fy": 2025,
@@ -17691,6 +17768,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 43.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 43.0,
@@ -17758,6 +17841,12 @@
    },
    "history": [
     {
+     "closing": -18.5,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": false,
      "closing": 18.5,
      "fy": 2025,
@@ -17794,6 +17883,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 212.69,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 212.69,
@@ -17869,6 +17964,12 @@
    },
    "history": [
     {
+     "closing": -502.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": -502.0,
      "fy": 2025,
@@ -17905,6 +18006,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": -200.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": -200.0,
@@ -17943,6 +18050,12 @@
    },
    "history": [
     {
+     "closing": -267.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": -267.0,
      "fy": 2025,
@@ -17980,6 +18093,12 @@
    },
    "history": [
     {
+     "closing": -99.78,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": -99.78,
      "fy": 2025,
@@ -18016,6 +18135,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 4.55,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 4.55,
@@ -18091,6 +18216,12 @@
    },
    "history": [
     {
+     "closing": 947.51,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 947.51,
      "fy": 2025,
@@ -18127,6 +18258,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 21.63,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 21.63,
@@ -18201,6 +18338,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": -0.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": -1408.46,
@@ -18368,6 +18511,12 @@
    },
    "history": [
     {
+     "closing": 214.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 214.0,
      "fy": 2025,
@@ -18404,6 +18553,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": -5680.42,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": -5680.42,
@@ -18449,7 +18604,7 @@
     },
     {
      "chains": false,
-     "closing": 0.1,
+     "closing": 0.12,
      "fy": 2025,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
@@ -18771,6 +18926,12 @@
      "spent": null
     },
     {
+     "closing": 94.65,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 94.65,
      "fy": 2025,
@@ -18925,6 +19086,12 @@
      "spent": null
     },
     {
+     "closing": 1450.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 1450.0,
      "fy": 2025,
@@ -19077,6 +19244,12 @@
      "report": "sources/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
      "revenue": null,
      "spent": null
+    },
+    {
+     "closing": 113.45,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
     },
     {
      "chains": true,
@@ -19393,6 +19566,12 @@
      "spent": null
     },
     {
+     "closing": 40.42,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 40.42,
      "fy": 2025,
@@ -19429,6 +19608,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 1000.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 1000.0,
@@ -19467,6 +19652,12 @@
    },
    "history": [
     {
+     "closing": 24.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 24.0,
      "fy": 2025,
@@ -19503,6 +19694,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 1600.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 1600.0,
@@ -19541,8 +19738,14 @@
    },
    "history": [
     {
-     "chains": false,
-     "closing": 0.0,
+     "closing": 500.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
+     "chains": true,
+     "closing": 500.0,
      "fy": 2025,
      "grade": "transcribed",
      "report": "sources/data/special-revenue-funds.csv"
@@ -19577,6 +19780,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 1617.25,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 1617.25,
@@ -19658,6 +19867,12 @@
    },
    "history": [
     {
+     "closing": 3000.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 3000.0,
      "fy": 2025,
@@ -19694,6 +19909,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 963.54,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 963.54,
@@ -19732,6 +19953,12 @@
    },
    "history": [
     {
+     "closing": 3243.5,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": 2952.88,
      "fy": 2025,
@@ -19768,6 +19995,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 685.69,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 685.69,
@@ -19806,6 +20039,12 @@
    },
    "history": [
     {
+     "closing": -3919.22,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
+    {
      "chains": true,
      "closing": -3919.22,
      "fy": 2025,
@@ -19842,6 +20081,12 @@
     "spent": 0
    },
    "history": [
+    {
+     "closing": 1300.0,
+     "fy": 2024,
+     "grade": "transcribed",
+     "report": "sources/data/special-revenue-funds.csv"
+    },
     {
      "chains": true,
      "closing": 1300.0,
