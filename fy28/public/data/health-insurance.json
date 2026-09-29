@@ -56,7 +56,7 @@
    "basis": "The GENERAL FUND APPROPRIATIONS classification printed in each annual town report, insurance department, appropriated column only \u2014 every year kept is one whose component rows sum to the `Total Insurance` the same page prints \u2014 plus the FY2026 ledger for the last point. One stage throughout: appropriation against appropriation, never an actual.",
    "bearing": "sizes",
    "claim": "The town\u2019s insurance department grows 4.3% a year.",
-   "detail": "The town\u2019s insurance department has nearly doubled since FY2011, to $3,713,520 \u2014 4.3% a year, against a levy limit Proposition 2\u00bd raises by 2.5% a year plus new growth. Insurance takes a growing share of every increase the town votes. $1,970,826 in FY2011 against $3,713,520 in FY2026, appropriation against appropriation in every year: 12 of the 15 annual reports print an insurance block whose component lines sum, to the cent, to the subtotal the page itself prints, and the last point comes from the town\u2019s ledger. The school-named part of it grew faster still over the short run that can be measured at all \u2014 $1,213,618 in FY2023 to $1,521,536 in FY2026, 7.8% a year \u2014 but that is two observations from two publishers, not a trend.",
+   "detail": "The town\u2019s insurance department has nearly doubled since FY2011, to $3,713,520 \u2014 4.3% a year, against a levy limit Proposition 2\u00bd raises by 2.5% a year plus new growth. Insurance takes a growing share of every increase the town votes. $1,970,826 in FY2011 against $3,713,520 in FY2026, appropriation against appropriation in every year: 10 of the 15 annual reports print an insurance block whose component lines sum, to the cent, to the subtotal the page itself prints, and the last point comes from the town\u2019s ledger. The school-named part of it grew faster still over the short run that can be measured at all \u2014 $1,213,618 in FY2023 to $1,521,536 in FY2026, 7.8% a year \u2014 but that is two observations from two publishers, not a trend.",
    "figure": "cagr",
    "figures": {
     "cagr": {
@@ -65,9 +65,9 @@
      "value": 4.313975384697133
     },
     "checked": {
-     "text": "12",
+     "text": "10",
      "unit": "",
-     "value": 12
+     "value": 10
     },
     "editions": {
      "text": "15",
@@ -460,8 +460,6 @@
  "reports": {
   "checked": [
    2011,
-   2012,
-   2013,
    2015,
    2016,
    2017,
@@ -485,6 +483,14 @@
    2023
   ],
   "not_checked": [
+   {
+    "fy": 2012,
+    "why": "no insurance classification printed in this edition"
+   },
+   {
+    "fy": 2013,
+    "why": "no insurance classification printed in this edition"
+   },
    {
     "fy": 2014,
     "why": "components sum to 1,902,595.27 against a printed 1,908,745.27"
@@ -526,7 +532,7 @@
     "checked": true,
     "difference": 0.0,
     "fy": 2011,
-    "line_no": "3-8",
+    "line_no": "7-12",
     "names_school_share": false,
     "page": "65",
     "printed_expended": 1896544.33,
@@ -573,103 +579,31 @@
    },
    {
     "carried_forward": 0.0,
-    "checked": true,
-    "difference": 0.0,
+    "checked": false,
+    "difference": null,
     "fy": 2012,
-    "line_no": "7-12",
+    "line_no": null,
     "names_school_share": false,
-    "page": "65",
-    "printed_expended": 0.0,
-    "printed_total": 2119333.71,
-    "rows": [
-     {
-      "appropriated": 1869686.83,
-      "expended": null,
-      "key": "health_ins",
-      "label": "Health Insurance CH 32B",
-      "side": "unnamed"
-     },
-     {
-      "appropriated": 18421.0,
-      "expended": null,
-      "key": "life",
-      "label": "Life Insurance",
-      "side": "unnamed"
-     },
-     {
-      "appropriated": 204575.88,
-      "expended": null,
-      "key": "medicare",
-      "label": "Medicare",
-      "side": "unnamed"
-     },
-     {
-      "appropriated": 26150.0,
-      "expended": null,
-      "key": "cost_control",
-      "label": "Insurance Cost Control",
-      "side": "unnamed"
-     },
-     {
-      "appropriated": 500.0,
-      "expended": null,
-      "key": "pec",
-      "label": "Public Employee Committee Expenses",
-      "side": "unnamed"
-     }
-    ],
+    "page": null,
+    "printed_expended": null,
+    "printed_total": null,
+    "rows": [],
     "source": "sources/town-budget/pages/FY2012.txt",
-    "summed_components": 2119333.71
+    "summed_components": null
    },
    {
     "carried_forward": 0.0,
-    "checked": true,
-    "difference": 0.0,
+    "checked": false,
+    "difference": null,
     "fy": 2013,
-    "line_no": "27-32",
+    "line_no": null,
     "names_school_share": false,
-    "page": "69",
-    "printed_expended": 2047358.94,
-    "printed_total": 2053508.94,
-    "rows": [
-     {
-      "appropriated": 1832971.17,
-      "expended": 6150.0,
-      "key": "health_ins",
-      "label": "Health Insurance CH 32B",
-      "side": "unnamed"
-     },
-     {
-      "appropriated": 9622.5,
-      "expended": 9622.5,
-      "key": "life",
-      "label": "Life Insurance",
-      "side": "unnamed"
-     },
-     {
-      "appropriated": 202915.27,
-      "expended": 202915.27,
-      "key": "medicare",
-      "label": "Medicare",
-      "side": "unnamed"
-     },
-     {
-      "appropriated": 8000.0,
-      "expended": 8000.0,
-      "key": "cost_control",
-      "label": "Insurance Cost Control",
-      "side": "unnamed"
-     },
-     {
-      "appropriated": 0.0,
-      "expended": 0.0,
-      "key": "pec",
-      "label": "Public Employee Committee Expenses",
-      "side": "unnamed"
-     }
-    ],
+    "page": null,
+    "printed_expended": null,
+    "printed_total": null,
+    "rows": [],
     "source": "sources/town-budget/pages/FY2013.txt",
-    "summed_components": 2053508.94
+    "summed_components": null
    },
    {
     "carried_forward": 0.0,
@@ -1026,7 +960,7 @@
     "checked": true,
     "difference": 0.0,
     "fy": 2021,
-    "line_no": "7-12",
+    "line_no": "17-22",
     "names_school_share": false,
     "page": "31",
     "printed_expended": 2382566.91,
@@ -1282,18 +1216,6 @@
    "appropriated": 1970826.33,
    "fy": 2011,
    "page": "65",
-   "source": "annual report"
-  },
-  {
-   "appropriated": 2119333.71,
-   "fy": 2012,
-   "page": "65",
-   "source": "annual report"
-  },
-  {
-   "appropriated": 2053508.94,
-   "fy": 2013,
-   "page": "69",
    "source": "annual report"
   },
   {
