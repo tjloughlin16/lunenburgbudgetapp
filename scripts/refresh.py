@@ -65,6 +65,10 @@ FEED_SOURCES = os.path.join(ROOT, 'sources', 'data', 'feed-sources.csv')
 DOC_EVENTS = os.path.join(ROOT, 'sources', 'data', 'document-watch-events.csv')
 TRANSCRIPT_INDEX = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
 RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
+FEED_EVENTS = os.path.join(ROOT, 'sources', 'data', 'feed-watch-events.csv')
+BUDGET_DOCS = (os.path.join(ROOT, 'sources', 'district-budget', 'index.csv'),
+               os.path.join(ROOT, 'sources', 'town-budget', 'index.csv'))
+OTHER_DOCS = (os.path.join(ROOT, 'sources', 'town-supplementary', 'index.csv'),)
 NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
 # THREE A DAY. Measured 13-14 September 2026: one minutes run is about 0.09% of the Max
 # plan's weekly allowance, so three a day is ~2% a week -- the pace TJ set. The whole
@@ -78,13 +82,25 @@ MAX_OCR_PER_RUN = 40             # ~20 minutes of local CPU; nothing charged to 
 MAX_RECONCILE_PER_RUN = 10       # ~3 minutes, ~$3; excludes nothing, just bounds a run
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
-RUN_COLS = ['ran_at', 'as_of', 'new_agendas', 'new_minutes', 'new_videos',
-            'new_transcripts', 'new_our_minutes', 'deployed', 'seconds', 'timings', 'notes',
+# THE FIRST-CLASS OBJECTS OF A STATUS REPORT. TJ, 29 September 2026: *"consider those the
+# first class objects for status reports... things like votes are not first class objects"*.
+#
+# Seven arrive from outside and one we make. A status report counts THESE and nothing else:
+# a vote, a segment, a byte and a row are all things that happen INSIDE a document, and
+# counting them tells a reader how talkative a meeting was rather than what moved. Defined
+# once, here, and read by the run row, the printed summary and the dashboard, so the three
+# cannot drift into three different answers.
+ARRIVES = ('agendas', 'official minutes', 'videos', 'transcripts',
+           'budget documents', 'other town documents', 'announcements')
+MAKES = ('generated minutes',)
+FIRST_CLASS = ARRIVES + MAKES
+RUN_COLS = (['ran_at', 'as_of'] + ['new_' + k.replace(' ', '_') for k in FIRST_CLASS] +
+            ['deployed', 'seconds', 'timings', 'notes',
             # `incomplete` until the run reaches its own end. A row that stays incomplete
             # is a run that died, and that is a fact worth keeping rather than an absence
             # to be guessed at. Old rows have no value here and read as finished, which
             # they are.
-            'state']
+            'state'])
 
 
 TIMINGS = []          # (step, seconds, exit code) -- printed at the end and written to the run row
@@ -126,9 +142,8 @@ def record_run(a, delta, deployed, state, notes=()):
     """
     runs = [r for r in read_csv(RUNS) if r['as_of'] != a.as_of]     # one row per day
     runs.append({'ran_at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                 'as_of': a.as_of, 'new_agendas': delta['agendas'], 'new_minutes': delta['minutes'],
-                 'new_videos': delta['videos'], 'new_transcripts': delta['transcripts'],
-                 'new_our_minutes': delta['ours'], 'deployed': 'yes' if deployed else 'no',
+                 'as_of': a.as_of, 'deployed': 'yes' if deployed else 'no',
+                 **{'new_' + k.replace(' ', '_'): delta[k] for k in FIRST_CLASS},
                  'seconds': int(sum(t[1] for t in TIMINGS)),
                  'timings': ' '.join('%s=%d' % (n.replace(' ', '_'), int(sec)) for n, sec, _ in TIMINGS),
                  'notes': '; '.join(notes), 'state': state})
@@ -262,10 +277,12 @@ def inventory():
     """
     inv = {}
     ev = read_csv(MEETING_EVENTS)
-    for kind in ('agenda', 'minutes'):
-        inv[kind + 's'] = {e['file_id'] or (e['board_slug'] + e['meeting_date']):
-                           '%s  %s' % (e['board'], e['meeting_date'])
-                           for e in ev if e['kind'] == kind}
+    inv['agendas'] = {e['file_id'] or (e['board_slug'] + e['meeting_date']):
+                      '%s  %s' % (e['board'], e['meeting_date'])
+                      for e in ev if e['kind'] == 'agenda'}
+    inv['official minutes'] = {e['file_id'] or (e['board_slug'] + e['meeting_date']):
+                               '%s  %s' % (e['board'], e['meeting_date'])
+                               for e in ev if e['kind'] == 'minutes'}
     inv['videos'] = {e['video_id']: '%s  %s' % (e.get('uploaded') or '', e.get('title') or '')
                      for e in read_csv(YOUTUBE_EVENTS)}
     tr = read_csv(TRANSCRIPT_INDEX)
@@ -277,7 +294,22 @@ def inventory():
     for f in glob.glob(os.path.join(RECORDED, '*', '*.json')):
         board = os.path.basename(os.path.dirname(f))
         ours[f] = '%s  %s' % (board.replace('-', ' '), os.path.basename(f)[:10])
-    inv['ours'] = ours
+    inv['generated minutes'] = ours
+
+    def _docs(paths):
+        out = {}
+        for path in paths:
+            for r in read_csv(path):
+                key = r.get('sha256') or r.get('local') or r.get('label')
+                if key:
+                    out[key] = (r.get('label') or r.get('local') or '')[:70]
+        return out
+
+    inv['budget documents'] = _docs(BUDGET_DOCS)
+    inv['other town documents'] = _docs(OTHER_DOCS)
+    inv['announcements'] = {(e.get('link') or e.get('title') or str(i)):
+                            '%s  %s' % (e.get('source') or '', (e.get('title') or '')[:60])
+                            for i, e in enumerate(read_csv(FEED_EVENTS))}
     return inv
 
 
@@ -351,7 +383,8 @@ def write_to_post(as_of):
     for u in new_up:
         print('  NEW  upcoming  %s %s — %s' % (u['board'], u['date'], u['one_line'][:90]))
     for r in new_re:
-        print('  NEW  happened  %s %s — %d vote(s), %d transfer(s)' % (r['board'], r['date'], r['votes'], r['transfers']))
+        # NOT a vote count: votes are not a first-class object -- see FIRST_CLASS.
+        print('  NEW  happened  %s %s' % (r['board'], r['date']))
 
 
 def back_up_documents(notes, why):
@@ -725,24 +758,25 @@ def main():
     # counts of full documents". A step that took 2069 seconds is not the news. Five
     # agendas and three minutes we wrote is the news, and the run knew both all along.
     total = sum(t[1] for t in TIMINGS)
-    IN = (('agendas', 'agenda'), ('minutes', 'minutes'),
-          ('videos', 'video'), ('transcripts', 'transcript'))
-    n_in = sum(delta[k] for k, _ in IN)
+    # THE EIGHT OBJECTS TJ ASKED FOR, 29 September 2026, and no others. Never a count of
+    # VOTES: "telling me the number of votes it found is absurd" -- a vote count measures
+    # how often somebody moved a motion, not what the town published or what we made.
+    n_in = sum(delta[k] for k in ARRIVES)
     print('\n=== refresh %s — %d document(s) in, %d written, %d min %d s ==='
-          % (a.as_of, n_in, delta['ours'], total // 60, total % 60))
+          % (a.as_of, n_in, delta['generated minutes'], total // 60, total % 60))
 
     print('\n  FOUND -- %d document(s)' % n_in)
-    for key, label in IN:
-        print('    %-12s %d' % (label, delta[key]))
+    for key in ARRIVES:
+        print('    %-22s %d' % (key, delta[key]))
         for line in sorted(arrived[key]):
             print('        %s' % line)
     if not n_in:
         print('    nothing new was published today')
 
-    print('\n  WROTE -- %d document(s) of our own' % delta['ours'])
-    for line in sorted(arrived['ours']):
-        print('        minutes   %s' % line)
-    if not delta['ours']:
+    print('\n  WROTE -- %d document(s) of our own' % delta['generated minutes'])
+    for line in sorted(arrived['generated minutes']):
+        print('        generated minutes   %s' % line)
+    if not delta['generated minutes']:
         print('        none')
 
     for n in notes:
