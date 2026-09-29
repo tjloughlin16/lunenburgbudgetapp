@@ -443,3 +443,66 @@ The page leaves the unfinished count. Not "the data is right" -- that is step 1 
 | 30 | capital projects | 15 rows sum to the printed 3,096,913.16 |
 
 About four minutes a table.
+
+---
+
+## A TOKEN IS NOT A CELL. FY2014, AND THE SIX WAYS ONE PAGE HID MONEY
+
+FY2014 was the fourth year taken to zero and the first where nothing was a photograph.
+Every page carried its own text, and the text layer still lost money six different ways.
+Each one looked, at the moment it happened, like the town not printing something.
+
+**1. A MIRRORED, VERTICAL TEXT LAYER.** pp.34, 37-38 and 40-41 come out backwards --
+`SDNUF TCEJORP LATIPAC`. Reverse each word, flip x (`W - x1`), and the page TRANSPOSES: a
+constant-y band is a table COLUMN and a constant-x run is a ROW. Nothing else about the
+reading changes once that is done.
+
+**2. TWO FIGURES IN ONE TOKEN.** `($7,367.79)$2,503,900.36` is one word spanning two
+columns. Split it into its money substrings and assign them to the bands the token's own
+vertical extent covers.
+
+**3. A NAME PRINTED OVER A FIGURE.** The zoning stabilization row holds
+`)0H9T.1R2O8N,6K2N2$AB` -- letters and digits interleaved, character by character. Partition
+into alphabetic and non-alphabetic: `BANKNORTH` and `$226,821.90`. **That is a hypothesis
+until the arithmetic takes it**, and here it did, to the cent, against the printed grand
+total -- then the figure was read off the rendered page as well.
+
+**4. THE FIGURE COLUMN SAT ONE ROW OFF ITS LABELS.** On p42 every figure belongs to the
+label one row pitch (11.2pt) ABOVE it. **Do not settle that by eye.** At +11.2 the TOTAL
+column reproduces the sum of the two preceding pages for 37 of 41 rows; at 0 or -11.2 almost
+nothing ties. An independent total is what decides an alignment, never the look of it.
+
+**5. THE COLUMN RULER CHANGES BETWEEN PAGES OF ONE TABLE.** The omnibus budget puts its
+amounts at x=405, then 256, then 291. Measure the ruler on every page off that page's own
+`$` glyphs. Read with the previous page's ruler, p141 swept every figure into the account
+name and looked like a page of headings.
+
+**6. `$ -` IS AN EXPLICIT ZERO, AND A TOTAL ROW NEED NOT BE LABELLED.** Reading the dash as
+a missing figure turned a line into a section heading and dropped $16,687,431 out of Total
+Schools. And Health & Sanitation is closed by a row with a `$`, a figure, and no words at
+all -- so a reader that skips nameless rows loses the only place that section's total is
+stated. A row with no `$` anywhere is a heading; a row with a `$` always carries a figure,
+even when the figure is nil.
+
+### AND ABSENT IS NOT ZERO, IN THE CHECKER AS WELL AS THE READER
+
+`verify_page_reads.py` was scoring an identity with `cells.get(col, 0.0)`, so a row that
+prints its components and NO total read as `a + b = 0` and was reported as the town's
+arithmetic failing. Four FY2014 debt rows were named that way and all four were the document
+simply leaving the group total blank.
+
+Rows that do not print the whole are now **counted and named separately** -- not passed, not
+failed. Which immediately paid for itself elsewhere: FY2014's appropriations had been
+reporting `81 of 81 rows close` while five of those rows printed no balance at all and were
+passing on `0 = 0`. A check with no power to fail, in the exact shape rule 13 describes.
+
+### THE ARITHMETIC IS WHAT MAKES ANY OF THIS SAFE
+
+Six unusual decodings went into FY2014 and not one of them is asserted. The trust pages foot
+on two identities across 45 funds, six group subtotals and two grand totals in nine columns;
+the debt schedule closes on 156 of 156 checkable cells and sums to its printed grand total to
+the DOLLAR in both principal and interest; the omnibus budget's line items foot ten of eleven
+section totals exactly. **A wrong un-mirroring, a wrong split or a wrong row offset cannot
+make real arithmetic close.** Where it did not close, the gap was the document's -- and four
+FY2014 defects are now in `document-defects.csv` saying which figures disagree and that which
+one is wrong is not established.

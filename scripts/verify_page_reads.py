@@ -236,7 +236,17 @@ def main():
                 rows_, off, att = collections.defaultdict(dict), [], []
                 for r in per_row[key]:
                     rows_[(r['page'], r['fund_number'])][r['column']] = float(r['value'])
+                blank = []
                 for (pg, name), cells in sorted(rows_.items()):
+                    # A ROW THAT DOES NOT PRINT ITS OWN TOTAL CANNOT BE CHECKED AGAINST IT.
+                    # Treating the absent cell as 0.0 made four FY2014 debt rows read as
+                    # arithmetic failures when the document simply leaves the group TOTAL
+                    # blank -- a statement about our reader dressed up as one about the
+                    # town. They are counted here instead, and named, so the hole stays
+                    # visible rather than being either a failure or silently dropped.
+                    if whole.strip() not in cells:
+                        blank.append('p%s %s' % (pg, name))
+                        continue
                     # NOT `got` -- that is the outer dict of column sums, and shadowing it
                     # here made the dataset writer crash with `'float' object is not
                     # subscriptable` after every check had already passed.
@@ -251,7 +261,11 @@ def main():
                             off.append('p%s %s: %s vs %s' % (pg, name, format(lhs, ','),
                                                              format(wnt, ',')))
                 notes.append('%d of %d rows close on %s'
-                             % (len(rows_) - len(off) - len(att), len(rows_), identity))
+                             % (len(rows_) - len(off) - len(att) - len(blank),
+                                len(rows_) - len(blank), identity))
+                if blank:
+                    notes.append('%d row(s) print no %s at all, so nothing asserts it: %s'
+                                 % (len(blank), whole.strip(), '; '.join(blank)))
                 for a in att:
                     notes.append('ATTESTED, the town\u2019s own arithmetic: ' + a)
                 if off:

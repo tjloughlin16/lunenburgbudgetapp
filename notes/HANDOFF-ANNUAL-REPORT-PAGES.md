@@ -6,14 +6,15 @@ not optional reading -- every rule in it was paid for today.
 
 Where the 484 financial pages stand (`python3 scripts/map_annual_report_pages.py`):
 
-    244 PROVEN    figures tie to something the page states about itself
-    231 UNPROVEN  rows exist, nothing has checked them
+    258 PROVEN    figures tie to something the page states about itself
+    218 UNPROVEN  rows exist, nothing has checked them
       8 REFUSED   an extractor reached the page and wrote nothing
       1 BLOCKED   the page CANNOT be read; see sources/data/page-blocked.csv
 
-Three years are at zero. This morning it was none.
+Four years are at zero. Yesterday morning it was none.
 
     FY2025   23 of 23     FY2024   28 of 28     FY2023   34 of 35, one blocked
+    FY2014   28 of 28
 
 ---
 
@@ -103,9 +104,9 @@ different year's report.
 | FY2011 | 28 | 10 | 18 | all photographs |
 | FY2012 | 27 | 10 | 17 | all photographs |
 | FY2013 | 29 | 8 | 21 | all photographs |
-| **FY2014** | 27 | 14 | **13** | **every one carries its own text -- do this next** |
+| FY2014 | 28 | **28** | 0 | **at zero** -- and it GREW by one page while being read |
 | FY2015 | 31 | 13 | 18 | 15 of 18 digital |
-| FY2016 | 41 | 12 | 29 | 28 of 29 digital -- the biggest digital haul |
+| **FY2016** | 41 | 12 | **29** | **28 of 29 digital -- the biggest digital haul, do this next** |
 | FY2017 | 33 | 14 | 19 | 11 digital |
 | FY2018 | 35 | 17 | 18 | 10 digital |
 | FY2019 | 38 | 11 | 27 | all photographs |
@@ -121,7 +122,8 @@ Counts per page are generated into `notes/generated/TEXT-LAYER-COVERAGE.md` by
 per-report version of that table is what made FY2024 look like the cheapest year when it was
 the most expensive.
 
-**Take FY2014 next.** Thirteen pages, all digital, and it finishes a year.
+**Take FY2016 next**, then FY2015. Those two hold 43 of the 47 digital pages left; after them
+the remaining years are photographs and get read, not parsed.
 
 ---
 

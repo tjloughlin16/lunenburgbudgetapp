@@ -2374,6 +2374,18 @@
      "textUrl": "/docs/data/report-appropriations-supplement.csv"
     },
     {
+     "path": "data/document-defects.csv",
+     "title": "Where a document the town published is itself incomplete",
+     "stars": 2,
+     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
+     "kind": "Data",
+     "bytes": 14157,
+     "url": "/docs/data/document-defects.csv",
+     "count": 29,
+     "unit": "rows",
+     "textUrl": "/docs/data/document-defects.csv"
+    },
+    {
      "path": "data/threads.csv",
      "title": "The matters this project tracks across boards",
      "stars": 2,
@@ -2408,18 +2420,6 @@
      "count": 104,
      "unit": "rows",
      "textUrl": "/docs/data/report-filing.csv"
-    },
-    {
-     "path": "data/document-defects.csv",
-     "title": "Where a document the town published is itself incomplete",
-     "stars": 2,
-     "what": "TYPED BY HAND, because a defect in somebody else’s printing cannot be derived — it has to be found by a person and written down with its evidence. One row per defect: what is wrong, HOW IT WAS FOUND, and what in the document proves it. The first is the FY2022 annual report, whose Fire Department roster stops mid-entry at the foot of page 85 and omits the call firefighters entirely — twelve names against a strength the same report states as forty. Read alongside `roster-completeness.csv`, which measures the shortfall, and `money-gaps.csv`, which holds the questions nobody published an answer to. Keeping the three apart is the point: a defective document, a thin reading of ours, and an unpublished fact are three different things.",
-     "kind": "Data",
-     "bytes": 10389,
-     "url": "/docs/data/document-defects.csv",
-     "count": 10,
-     "unit": "rows",
-     "textUrl": "/docs/data/document-defects.csv"
     },
     {
      "path": "analyses/peer-districts.md",
@@ -3012,9 +3012,9 @@
      "stars": 3,
      "what": "Recognition cannot read some of these pages at all -- the FY2024 special revenue schedule prints 164 rows and it found 14 on one page, returning different DIGITS for the same row at different resolutions. So those pages are rendered and READ, and the transcription is data with its document, its page, its column, who read it and what proves it. This file consolidates them: `status` is `checked`, `check failed` or `no check`, the same three words every other extractor here uses, in a column a script can read rather than in a sentence about how careful somebody was. WHAT MAKES A READ SAFE IS THE ARITHMETIC, NOT THE READER — 164 rows landing on six totals the town printed, 46 trust funds closing five identities each, 115 figures matching a different year’s report. See scripts/verify_page_reads.py, which re-proves every one on every run, and notes/process/READING-A-REPORT-PAGE.md.",
      "kind": "Data",
-     "bytes": 3823044,
+     "bytes": 8184239,
      "url": "/docs/data/pages-read.csv",
-     "count": 4650,
+     "count": 9161,
      "unit": "rows",
      "textUrl": "/docs/data/pages-read.csv"
     },
@@ -3060,9 +3060,9 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 208904,
+     "bytes": 210200,
      "url": "/docs/data/annual-report-pages.csv",
-     "count": 484,
+     "count": 485,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-pages.csv"
     },
@@ -17623,7 +17623,7 @@
  "totals": {
   "documents": 1534,
   "groups": 22,
-  "bytes": 2224507324,
+  "bytes": 2228873583,
   "loadBearing": 168
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
