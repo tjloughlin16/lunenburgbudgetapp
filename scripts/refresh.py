@@ -61,11 +61,13 @@ WHATS_NEW = os.path.join(ROOT, 'fy28', 'public', 'data', 'whats-new.json')
 MEETING_EVENTS = os.path.join(ROOT, 'sources', 'data', 'meeting-watch-events.csv')
 YOUTUBE_EVENTS = os.path.join(ROOT, 'sources', 'data', 'youtube-watch-events.csv')
 FEED_EVENTS = os.path.join(ROOT, 'sources', 'data', 'feed-watch-events.csv')
+MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 FEED_SOURCES = os.path.join(ROOT, 'sources', 'data', 'feed-sources.csv')
 DOC_EVENTS = os.path.join(ROOT, 'sources', 'data', 'document-watch-events.csv')
 TRANSCRIPT_INDEX = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
 RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 FEED_EVENTS = os.path.join(ROOT, 'sources', 'data', 'feed-watch-events.csv')
+MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 BUDGET_DOCS = (os.path.join(ROOT, 'sources', 'district-budget', 'index.csv'),
                os.path.join(ROOT, 'sources', 'town-budget', 'index.csv'))
 OTHER_DOCS = (os.path.join(ROOT, 'sources', 'town-supplementary', 'index.csv'),)
@@ -90,9 +92,31 @@ TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 # counting them tells a reader how talkative a meeting was rather than what moved. Defined
 # once, here, and read by the run row, the printed summary and the dashboard, so the three
 # cannot drift into three different answers.
-ARRIVES = ('agendas', 'official minutes', 'videos', 'transcripts',
-           'budget documents', 'other town documents', 'announcements')
-MAKES = ('generated minutes',)
+# EVERY FOLDER OF THE ARCHIVE IS MAPPED, and a folder that is not raises. TJ, 29
+# September 2026: *"literally anything that is a 'document' i want trcked. i dont want
+# things INSIDE documents, like votes or public commment or segments or data sizes"*.
+# So the classes are read off the archive rather than typed here from memory: a new
+# top-level folder appears in the report the day it appears in `sources/`, the same way
+# money-gaps takes its `side` values off the data. `data/` is OURS -- extracted text,
+# derived CSVs, caption files -- so it is not a document and is named here as ignored
+# rather than silently dropped.
+ARCHIVE_GROUPS = {
+    'district-budget': 'budget documents', 'town-budget': 'budget documents',
+    'budget-workbooks': 'budget documents',
+    'state-dls': 'state documents', 'state-dese': 'state documents',
+    'state-census': 'state documents', 'state-massgis': 'state documents',
+    'town-annual-reports': 'annual reports', 'town-ledgers': 'ledgers',
+    'contracts': 'contracts', 'correspondence': 'correspondence',
+    'peer-districts': 'peer district documents',
+    'town-supplementary': 'other town documents',
+    'analyses': 'analyses',                      # ours
+}
+ARCHIVE_IGNORE = {'data', 'meetings'}            # ours; and meetings come from the events
+ARRIVES = ('agendas', 'official minutes', 'videos', 'transcripts', 'announcements',
+           'budget documents', 'state documents', 'other town documents',
+           'annual reports', 'ledgers', 'contracts', 'correspondence',
+           'peer district documents')
+MAKES = ('generated minutes', 'analyses')
 FIRST_CLASS = ARRIVES + MAKES
 RUN_COLS = (['ran_at', 'as_of'] + ['new_' + k.replace(' ', '_') for k in FIRST_CLASS] +
             ['deployed', 'seconds', 'timings', 'notes',
@@ -296,20 +320,31 @@ def inventory():
         ours[f] = '%s  %s' % (board.replace('-', ' '), os.path.basename(f)[:10])
     inv['generated minutes'] = ours
 
-    def _docs(paths):
-        out = {}
-        for path in paths:
-            for r in read_csv(path):
-                key = r.get('sha256') or r.get('local') or r.get('label')
-                if key:
-                    out[key] = (r.get('label') or r.get('local') or '')[:70]
-        return out
-
-    inv['budget documents'] = _docs(BUDGET_DOCS)
-    inv['other town documents'] = _docs(OTHER_DOCS)
     inv['announcements'] = {(e.get('link') or e.get('title') or str(i)):
                             '%s  %s' % (e.get('source') or '', (e.get('title') or '')[:60])
                             for i, e in enumerate(read_csv(FEED_EVENTS))}
+
+    # THE REST COME OFF THE ARCHIVE MANIFEST, which is the index of every document this
+    # project holds. Keyed on SHA256, so a publisher who overwrites a file in place --
+    # which the state does, and the district's web pages do -- shows up as a new document
+    # rather than as nothing at all.
+    for group in set(ARCHIVE_GROUPS.values()):
+        inv[group] = {}
+    unmapped = set()
+    for r in read_csv(MANIFEST):
+        top = (r.get('key') or '').split('/')[0]
+        if not top or top in ARCHIVE_IGNORE or '/' not in (r.get('key') or ''):
+            continue
+        group = ARCHIVE_GROUPS.get(top)
+        if group is None:
+            unmapped.add(top)
+            continue
+        inv[group][r.get('sha256') or r['key']] = r['key'].split('/')[-1][:70]
+    if unmapped:
+        # LOUD, NOT SILENT. An unmapped folder is a class of document nobody is counting,
+        # which is the one outcome this whole change exists to prevent.
+        raise SystemExit('refresh: %d archive folder(s) are not in ARCHIVE_GROUPS and so '
+                         'would go uncounted: %s' % (len(unmapped), ', '.join(sorted(unmapped))))
     return inv
 
 
