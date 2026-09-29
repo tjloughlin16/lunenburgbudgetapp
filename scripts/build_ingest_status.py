@@ -514,7 +514,7 @@ def annual_report_pages():
     return done, refused, unproven, unread, reversed_, blocked, out
 
 
-def first_class_today():
+def first_class_today(as_of=None):
     """[(label, n)] for the latest refresh run -- ONLY the objects with a count.
 
     THE COLUMNS ARE REFRESH.PY'S OWN. It writes one `new_<object>` column per first-class
@@ -528,8 +528,16 @@ def first_class_today():
     """
     runs = rows('refresh-runs.csv')
     if not runs:
-        return []
+        return None
     last = sorted(runs, key=lambda r: r.get('as_of') or '')[-1]
+    # AND IT MUST BE THE DAY THE CARD IS ABOUT. This panel is headed `Today's run` and was
+    # rendering the LAST row whatever its date, so on 29 September 2026 it showed the 28th's
+    # three documents under today's heading -- today's row being in origin/main, one commit
+    # ahead of this tree. A stale figure under a dated heading is worse than no figure:
+    # nothing about it looks wrong. None means `this day has no row`, which the caller says
+    # out loud.
+    if as_of and (last.get('as_of') or '') != as_of:
+        return None
     # Rows written before 29 September 2026 use the older, shorter column names. Mapped
     # rather than dropped, so yesterday's run still reads as a run.
     WAS = {'minutes': 'official minutes', 'our_minutes': 'generated minutes'}
@@ -544,7 +552,11 @@ def first_class_today():
         if not n:
             continue
         key = col[4:]
-        out.append((WAS.get(key, key.replace('_', ' ')), n))
+        label = WAS.get(key, key.replace('_', ' '))
+        if n == 1:                       # `1 videos` reads like a bug in the dashboard
+            label = {'analyses': 'analysis'}.get(label, label[:-1] if label.endswith('s')
+                                                 and not label.endswith('ss') else label)
+        out.append((label, n))
     return sorted(out, key=lambda t: -t[1])
 
 
@@ -2046,13 +2058,15 @@ def page_live(st):
     # THE FIRST-CLASS OBJECTS, read off the run row that refresh.py wrote, so this panel
     # and the run's own printed summary cannot give two different answers. `refresh.py`
     # defines them in FIRST_CLASS; nothing else is counted here, and never a vote.
-    fc = first_class_today()
+    fc = first_class_today(F['today'])
     if fc:
         h.append('<div class="row tiny" style="margin-top:8px">' + ' &middot; '.join(
             '<b>%d</b> %s' % (n, label) for label, n in fc) + '</div>')
-    elif rows('refresh-runs.csv'):
+    elif fc == []:
+        h.append('<div class="row tiny" style="margin-top:8px">no new documents today</div>')
+    elif fc is None:
         h.append('<div class="row tiny" style="margin-top:8px">'
-                 'no new documents today</div>')
+                 'this run has not recorded its row yet</div>')
     elif F['found']:
         h.append('<div class="row tiny" style="margin-top:6px">Found: ' +
                  ' &middot; '.join('<b>%d</b> %s' % (f['n'], f['label']) for f in F['found']) + '</div>')
