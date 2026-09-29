@@ -453,7 +453,7 @@ def annual_report_pages():
     """
     f = os.path.join(DATA, 'annual-report-pages.csv')
     if not os.path.exists(f):
-        return 0, 0, 0, 0, 0, []
+        return 0, 0, 0, 0, 0, 0, []
     # REMAINING WORK IS FOUR DIFFERENT JOBS AND THE COUNT MUST SAY WHICH. ONE OF THEM
     # COSTS MODEL TOKENS AND THE OTHERS DO NOT.
     #
@@ -467,7 +467,7 @@ def annual_report_pages():
     # lower than the `read` it replaces, and deliberately: `read` meant any dataset cites
     # this page, which is a fact about our FILING and moved twice in a day in both
     # directions without the archive changing. See PROOF in map_annual_report_pages.py.
-    done, refused, unread, unproven, reversed_, todo = 0, 0, 0, 0, 0, []
+    done, refused, unread, unproven, reversed_, blocked, todo = 0, 0, 0, 0, 0, 0, []
     for r in rows('annual-report-pages.csv'):
         st = r.get('state')
         if st == 'proven':
@@ -483,6 +483,13 @@ def annual_report_pages():
         elif st == 'unproven':
             unproven += 1
             label += ' \u2014 rows exist, UNPROVEN, write the check (code)'
+        elif st == 'blocked':
+            # NOT UNREAD. A blocked page is one somebody HAS looked at and cannot read --
+            # FY2023 p25 is stored at 93 dpi with about 150 line items on it -- and it fell
+            # into the `else` here, which labels a page `not yet read (TOKENS)`. That is the
+            # exact opposite of true: it is the one state model spend cannot move.
+            blocked += 1
+            label += ' \u2014 BLOCKED, the page cannot be read (see page-blocked.csv)'
         else:
             unread += 1
             label += ' \u2014 not yet read (TOKENS)'
@@ -504,7 +511,50 @@ def annual_report_pages():
     for g in out:
         g['rank'] = rank.get(g['board'].split(' (')[0], 99)
     out.sort(key=lambda g: (g['rank'], -g['n']))
-    return done, refused, unproven, unread, reversed_, out
+    return done, refused, unproven, unread, reversed_, blocked, out
+
+
+def annual_reports_whole():
+    """The sixteen annual town reports, counted as REPORTS rather than as pages.
+
+    TJ, 28 September 2026: *"can you add a row for `total annual reports`. I want to see how
+    many annual reports we have fully ingested vs partially vs none."*
+
+    The page card beside this one answers *how much work is left*; this one answers *how far
+    through the archive are we*, and they are different questions with different shapes. 244
+    pages proven out of 484 reads as half done. It is not half done in the sense that
+    matters: three reports are FINISHED and twelve are part-read, and a report you can quote
+    end to end is worth more than the same number of pages scattered across twelve.
+
+    A report is FINISHED when nothing is left that anybody could do -- every page proven, or
+    proven except pages that CANNOT be read. FY2023 is finished with one blocked page on it,
+    and calling it unfinished for ever would be the same mistake `blocked` exists to fix.
+    """
+    f = os.path.join(DATA, 'annual-report-pages.csv')
+    if not os.path.exists(f):
+        return 0, 0, 0, []
+    by = collections.defaultdict(collections.Counter)
+    for r in rows('annual-report-pages.csv'):
+        by[r.get('fy')][r.get('state')] += 1
+    done = part = none = 0
+    pending = []
+    for fy, c in sorted(by.items()):
+        left = c['unproven'] + c['refused'] + c['unread'] + c['reversed']
+        if not left:
+            done += 1
+            continue
+        if c['proven']:
+            part += 1
+            what = '%d of %d pages proven' % (c['proven'], sum(c.values()))
+        else:
+            none += 1
+            what = 'nothing proven yet, %d pages' % sum(c.values())
+        pending.append(('FY%s \u2014 %s' % (fy, what), '%s-06-30' % fy))
+    out = group(pending)
+    for g in out:
+        g['dates'] = ['%s (%s)' % (d, '{:,}'.format(n))
+                      for d, n in sorted(collections.Counter(g['dates']).items())]
+    return done, part, none, out
 
 
 def extraction_pending():
@@ -710,8 +760,49 @@ def streams():
     # THE ANNUAL REPORTS, BY WHAT IS ON THE PAGE. Counted from the pages rather than from
     # the datasets, so a table with no extractor yet is in the queue instead of absent
     # from it.
-    (ar_done, ar_refused, ar_unproven, ar_unread, ar_reversed,
+    (ar_done, ar_refused, ar_unproven, ar_unread, ar_reversed, ar_blocked,
      ar_todo) = annual_report_pages()
+
+    # THE WHOLE REPORTS, beside the pages. A report finished end to end is a different
+    # thing from the same number of pages scattered across twelve of them, and the page
+    # card cannot say which you have.
+    rep_done, rep_part, rep_none, rep_todo = annual_reports_whole()
+    if rep_done or rep_part or rep_none:
+        s.append(dict(key='annualreports', name='Annual reports, finished end to end',
+                      unit=('annual report read end to end',
+                            'annual reports read end to end',
+                            'reports with pages still to do'),
+                      headline=_counted(rep_part + rep_none,
+                                        ('report not finished',
+                                         'reports not finished',
+                                         'reports not finished'),
+                                        total=rep_done + rep_part + rep_none),
+                      pill=(_counted(rep_done, ('report FINISHED',
+                                                'reports FINISHED',
+                                                'reports FINISHED'))
+                            if rep_done else 'no report finished yet'),
+                      breakdown=[
+                          ('FINISHED', rep_done,
+                           'every page proven, or proven but for pages that cannot be read',
+                           'done'),
+                          ('PART-READ', rep_part,
+                           'some pages proven, some still to do',
+                           'finish the year, section by section'),
+                          ('NOT STARTED', rep_none,
+                           'no page in the report proves yet',
+                           'start the year'),
+                      ],
+                      io='in: 15 annual town reports &rarr; out: reports a resident can '
+                         'quote end to end',
+                      done=rep_done, todo=rep_part + rep_none,
+                      blocked=0, blocked_why='',
+                      cost='a year at a time, section by section \u2014 see '
+                           'notes/process/READING-A-REPORT-PAGE.md',
+                      last=ago(newest([os.path.join(DATA, 'annual-report-pages.csv')])),
+                      note='A REPORT IS FINISHED WHEN NOTHING IS LEFT THAT ANYBODY COULD '
+                           'DO \u2014 a page nobody CAN read does not hold a year open for '
+                           'ever. FY2023 is finished with one such page on it',
+                      pending=rep_todo))
     if ar_done or ar_todo:
         # THE UPPER METRIC IS UNFINISHED, AND THE PANEL ITEMISES IT. TJ, 27 September
         # 2026: *"the upper metric for that annual report page needs to be 'unfinished'
@@ -723,6 +814,9 @@ def streams():
         # wrong -- `read` drifted with our filing, `proven` is honest and reads as though
         # 312 pages were unstarted. `unfinished` is the one figure that is true whichever
         # job you mean, and the itemisation below is where the four terms say which.
+        # BLOCKED IS NOT IN THE UNFINISHED COUNT. Unfinished means work somebody could
+        # do; a page nobody CAN read is not waiting on anybody. It is shown in the
+        # breakdown and in `blocked` so it never simply disappears.
         ar_unfinished = ar_refused + ar_unproven + ar_unread + ar_reversed
         s.append(dict(key='annualpages', unit=('page whose rows PROVE against its own printed total', 'pages whose rows PROVE against their own printed total', 'pages not yet proven'),
                       headline=_counted(ar_unfinished,
@@ -751,11 +845,16 @@ def streams():
                           ('reversed', ar_reversed,
                            'the OCR of the page came out mirrored', 're-OCR it &mdash; '
                            'free, background'),
+                          ('BLOCKED', ar_blocked,
+                           'somebody looked and the page cannot be read at all',
+                           'nothing here &mdash; needs a better scan'),
                       ], name='Annual report pages, by what is on them',
                       io='in: 15 annual town reports, page by page &rarr; out: the tables '
                          'nobody has extracted yet, grouped by subject',
                       done=ar_done, todo=sum(p['n'] for p in ar_todo),
-                      blocked=0, blocked_why='',
+                      blocked=ar_blocked,
+                      blocked_why=('the page cannot be read: see '
+                                   'sources/data/page-blocked.csv'),
                       cost='~0.12% of the week a page if run on its own; far more if done in a conversation',
                       last=ago(newest([os.path.join(DATA, 'annual-report-pages.csv')])),
                       # WHAT THE ITEMISATION BELOW CANNOT SAY. The four counts and their
