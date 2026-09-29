@@ -606,9 +606,27 @@ def choice_in(c):
         fail('no School Choice rows in special_revenue_funds — the fund join matched '
              'nothing, which looks exactly like a town that has no such fund')
 
+    # A DOLLAR SIGN RECOGNISED AS A FIVE. The FY2011 row read 5,379,696.77 and
+    # 5,191,468.27 where page 67 of that report prints $379,696.77 and $191,468.27 --
+    # the leading 5 is the `$` glyph, and the page was RENDERED AND READ to establish
+    # that (29 September 2026). Corrected here, keyed on the exact string, with both
+    # halves of the proof: the row then foots its own arithmetic to the cent, and its
+    # carried balance equals FY2012's opening balance in a separately published report.
+    #
+    # THIS IS A PATCH ON A SYMPTOM AND IT SAYS SO. The figures live in
+    # special-revenue-funds.csv, extracted by recognition from a scan, and the real
+    # remedy is to READ FY2011's special revenue pages -- which is FY2011's own queued
+    # work in notes/process/runs/. The correction is keyed on the exact misread string so
+    # it can only ever fire on this one cell, and it disappears the day that page is read.
+    MISREAD = {'5379696.77': 379696.77, '5191468.27': 191468.27}
+
     def num(s):
         s = (s or '').strip()
-        return float(s.replace(',', '')) if s else None
+        if not s:
+            return None
+        if s.replace(',', '') in MISREAD:
+            return MISREAD[s.replace(',', '')]
+        return float(s.replace(',', ''))
 
     series, chain_checks, arith_checks = [], 0, 0
     prev = None

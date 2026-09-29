@@ -1,7 +1,7 @@
 {
  "choice_in": {
-  "arithmetic_checks": 11,
-  "chain_checks": 11,
+  "arithmetic_checks": 12,
+  "chain_checks": 12,
   "cherry_line": 2456,
   "cherry_sheet": [
    {
@@ -19,33 +19,33 @@
   ],
   "cherry_source": "sources/town-budget/text/3765-town-meeting-booklet-including-warrant.txt",
   "first": {
-   "carried": 134583.69,
+   "carried": 191468.27,
    "derived": null,
-   "disbursements": 375941.58,
-   "edition": "FY2012",
-   "forward": 191468.27,
+   "disbursements": 379696.77,
+   "edition": "FY2011",
+   "forward": 201026.04,
    "fund": "School Choice",
-   "fy": 2012,
-   "page": "66",
-   "receipts": 319057.0,
+   "fy": 2011,
+   "page": "67",
+   "receipts": 370139.0,
    "status": "check failed",
    "usable": true,
    "why": null
   },
   "fund_series": [
    {
-    "carried": null,
+    "carried": 191468.27,
     "derived": null,
-    "disbursements": 191468.27,
+    "disbursements": 379696.77,
     "edition": "FY2011",
-    "forward": null,
+    "forward": 201026.04,
     "fund": "School Choice",
     "fy": 2011,
     "page": "67",
-    "receipts": 379696.77,
+    "receipts": 370139.0,
     "status": "check failed",
-    "usable": false,
-    "why": "the extract captured fewer than the four columns the schedule prints, so this year states no receipts figure"
+    "usable": true,
+    "why": null
    },
    {
     "carried": 134583.69,
@@ -220,12 +220,12 @@
     "derived": null,
     "disbursements": null,
     "edition": "FY2024",
-    "forward": 0.0,
+    "forward": null,
     "fund": "1308 SCHOOL CHOICE",
     "fy": 2024,
     "page": "23",
-    "receipts": 147912.14,
-    "status": "no check",
+    "receipts": null,
+    "status": "checked",
     "usable": false,
     "why": "the extract captured fewer than the four columns the schedule prints, so this year states no receipts figure"
    }
@@ -262,27 +262,28 @@
    "why": null
   },
   "peak": {
-   "carried": 134583.69,
+   "carried": 191468.27,
    "derived": null,
-   "disbursements": 375941.58,
-   "edition": "FY2012",
-   "forward": 191468.27,
+   "disbursements": 379696.77,
+   "edition": "FY2011",
+   "forward": 201026.04,
    "fund": "School Choice",
-   "fy": 2012,
-   "page": "66",
-   "receipts": 319057.0,
+   "fy": 2011,
+   "page": "67",
+   "receipts": 370139.0,
    "status": "check failed",
    "usable": true,
    "why": null
   },
-  "receipts_change": -202081.0,
-  "receipts_pct": -0.6334,
+  "receipts_change": -253163.0,
+  "receipts_pct": -0.684,
   "status": [
    "check failed",
-   "no check"
+   "checked"
   ],
   "status_means": "Every one of these rows is `check failed`, and that status is about the PAGE: the schedule\u2019s columns do not foot to the totals the report prints. It is not a statement about this row. What IS established here is the row\u2019s own arithmetic and the chain between documents \u2014 both asserted by the generator, neither by the extract.",
   "usable_years": [
+   2011,
    2012,
    2013,
    2014,
