@@ -337,5 +337,89 @@
    "at": "2026-09-27T02:06:08Z",
    "cost_usd": 0.19515
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08102026-7937",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-08-10-minutes-7937.txt",
+   "path": "sources/meetings/planning-board/2026-08-10-minutes-7937.pdf"
+  },
+  "official_sha256": "d91a969a44f7449f7686878fcacaaa2d7788d45617ac4e0ea6180df101ac9326",
+  "coverage": "official minutes are a summary only",
+  "summary": "The official minutes are a topic-level summary of a working session and record no votes, figures or specific decisions, so almost none of our detail can be confirmed or contradicted. The one substantive difference is attendance: the official record has Chair Brenner absent and Vice Chair Willsmer presiding, while ours refers to 'the chair' as present.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Attendees / who chaired",
+    "ours": "the chair (chair); Tim (board member); Adam (board member)",
+    "official": "Roll Call: T. Willsmer, A. Reid, A. Burney, A. Nicastro \nAbsent: M. Brenner.",
+    "note": "Official minutes say the Chair (Brenner) was absent and Vice Chair Willsmer ran the meeting, while ours has 'the chair' present and Tim (probably Timothy Willsmer) as a member; check the recording to see who presided and whether the chair speaker is really the vice chair.",
+    "t": 1390
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Amanda Reid and Anthony Nicastro",
+    "ours": "",
+    "official": "Roll Call: T. Willsmer, A. Reid, A. Burney, A. Nicastro",
+    "note": "Official lists four members present, including Reid and Nicastro, whom our minutes do not name as attendees."
+   },
+   {
+    "kind": "agree",
+    "about": "Adam / A. Burney present",
+    "ours": "Adam (board member)",
+    "official": "Adam Burney, Member",
+    "note": "Both records have Adam (Burney) attending."
+   },
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote; the only official motion was to adjourn, which is skipped."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Native shade trees language in cluster and senior housing bylaws",
+    "ours": "Add language specifying shade trees must be of native species in both the cluster and senior housing bylaw sections.",
+    "official": "",
+    "note": "Official minutes list topics only and record none of our specific decisions."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Inclusionary payment-in-lieu figures and tiers",
+    "ours": "Run the payment-in-lieu numbers at 5% (8-16 units), 7.5% (17-24 units), and 10% (25+ units) for the next draft.",
+    "official": "Inclusionary Housing – issues discussed: by right or by special permit, affordability requirements, payments in lieu, allowing affordable housing units off-site, thresholds of applicability, density bonuses, development standards and enforcement. ",
+    "note": "Official names payments in lieu as a topic but gives no tiers or dollar figures, so the figures we heard cannot be checked against it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Common-driveway change held for May 2027 warrant, public forum, board meetings, Parmiter Road",
+    "ours": "Hold the common-driveway/dwelling-unit-count bylaw change until after the state legislature acts on a possible statewide duplex-by-right mandate, then add it to the May 2027 town meeting warrant.",
+    "official": "",
+    "note": "Official minutes do not mention the common-driveway item, board outreach, the forum venue, the topographic model, or the Parmiter Road inspector question; a person should confirm from the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minor site plan review topic and meeting times",
+    "ours": "Address extra submission standards for cluster and senior cluster developments in the site plan rules and regulations rather than in the bylaw itself, to be done when regs are updated for minor site plan review.",
+    "official": "Minor Site Plan Review – issues discussed: allowing minor site plan review for changes of use where no alteration of the building or parking are proposed, thresholds for environmental and traffic reviews, eventual changes to the site plan regulations.",
+    "note": "Official describes minor site plan review topics (changes of use, thresholds) that our minutes touch only in passing; ours records a decision to put standards in the regs, which official does not state."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-09-29T11:37:44Z",
+   "cost_usd": 0.1994244
+  }
  }
 }
