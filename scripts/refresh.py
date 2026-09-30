@@ -100,15 +100,28 @@ TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 # deleted four registered gaps. Nothing that reads a PDF or rewrites a source CSV belongs
 # here; a person runs those and reads the diff.
 SITE_PAYLOADS = [
+    # 1. CATALOGUE THE DOCUMENTS THIS RUN FETCHED, before anything counts them. On 30
+    #    September 2026 the run fetched three agendas and three sets of minutes and left
+    #    them uncatalogued, so the source index, the views, the search index over the
+    #    minutes and every count derived from them were stale at the gate and the site
+    #    did not deploy. The database was one layer of the same fault; this is the other.
+    'build_source_index.py', 'build_views.py',
+    # 2. The database, and the API published from it.
     'build_db.py', 'build_api.py',
+    # 3. The payloads the site serves off the database.
     'build_athletics_charts.py', 'build_insurance_charts.py', 'build_monty_tech.py',
     'build_ch70_formula.py', 'build_minimum_aid.py', 'build_peer_spending.py',
     'build_special_education.py', 'build_sped_regulation.py', 'build_spending_vs_required.py',
     'build_stopped_funding.py', 'build_cut_register.py', 'build_grant_unwinding.py',
     'build_attrition.py', 'build_course_offerings.py', 'build_staffing_charts.py',
     'build_board_posting.py', 'build_youth_sports.py', 'build_lunenburg_by_the_numbers.py',
-    'build_no_captions_report.py', 'build_app_metrics.py', 'build_reports_index.py',
-    'build_sitemap.py',
+    'build_what_families_pay.py', 'build_no_captions_report.py',
+    # 4. The indexes and the written pages that count what is now held.
+    'build_minutes_fts.py', 'build_reading_time.py', 'build_short_versions.py',
+    'build_schema_page.py', 'build_reference_pages.py', 'build_decisions_doc.py',
+    'build_ingest_plan.py', 'build_reports_index.py', 'build_sitemap.py',
+    # 5. LAST, because they count everything above them.
+    'build_readme.py', 'build_app_metrics.py',
 ]
 
 # A FAILING CHECK THAT IS NOT STALENESS, and why. Everything else blocks the deploy.
@@ -120,6 +133,10 @@ NOT_BLOCKING = {
     'sync_d1.py': 'an external service, and rule 10 keeps that push manual',
     'build_search_index.py': 'rebuilt below; it re-checks its own inputs and a document '
                              'fetched mid-run always looks newer than the index',
+    'check_github_mirror.py': 'it asks whether files are COMMITTED, and this run commits '
+                              'AFTER the gate -- so it cannot pass at the moment the gate '
+                              'reads it, whatever the tree holds. daily_refresh.sh runs it '
+                              'after the push, which is where the question is answerable',
 }
 # THE FIRST-CLASS OBJECTS OF A STATUS REPORT. TJ, 29 September 2026: *"consider those the
 # first class objects for status reports... things like votes are not first class objects"*.
@@ -775,19 +792,26 @@ def main():
     if a.deploy and not a.dry_run:
         chk = subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'check_generated.py')],
                              cwd=ROOT, capture_output=True, text=True)
+        # AND WHY, NOT JUST WHICH. The first cut printed the names alone, so the log said
+        # fourteen outputs were stale and nothing said what any of them wanted -- and two
+        # of the fourteen turned out not to be staleness at all. A refusal a person cannot
+        # act on is most of the way to a refusal a person learns to ignore.
         stale = []
         for line in (chk.stdout or '').splitlines():
             if not line.startswith('  FAIL'):
                 continue
-            name = line.split()[1]
-            if name.split(' ')[0] not in NOT_BLOCKING:
-                stale.append(name)
+            parts = line.split(None, 2)
+            name = parts[1] if len(parts) > 1 else '?'
+            why = (parts[2] if len(parts) > 2 else '').strip()
+            if name not in NOT_BLOCKING:
+                stale.append((name, why))
         if stale:
             notes.append('DID NOT DEPLOY: %d generated output(s) no longer reproduce from '
                          'their inputs, so the site would not match its own data: %s'
-                         % (len(stale), ', '.join(sorted(set(stale))[:8])))
-            print('  NOT deploying: %d stale generated output(s): %s'
-                  % (len(stale), ', '.join(sorted(set(stale)))))
+                         % (len(stale), ', '.join(sorted(n for n, _ in stale))))
+            print('  NOT deploying: %d stale generated output(s)' % len(stale))
+            for name, why in sorted(stale):
+                print('      %-34s %s' % (name, why[:110]))
             a.deploy = False
         else:
             print('  every generated output reproduces; safe to deploy')
