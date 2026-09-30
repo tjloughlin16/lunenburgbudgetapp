@@ -133,10 +133,47 @@ NOT_BLOCKING = {
     'sync_d1.py': 'an external service, and rule 10 keeps that push manual',
     'build_search_index.py': 'rebuilt below; it re-checks its own inputs and a document '
                              'fetched mid-run always looks newer than the index',
+    # THE REST OF THIS SET ARE CONTENT CHECKS, not reproducibility checks. They read the
+    # archive and report what they find there; a finding is worth a note and is not a reason
+    # to withhold a site that matches its own data. Each still appears in the run's notes.
+    'write_recording_minutes.py': 'checks 558 of OUR minutes files parse, link and match '
+        'their transcript. A problem in one is a finding about that file, not a site that '
+        'disagrees with its data -- and --relink fixes the common one, the town publishing '
+        'its own minutes for a meeting we had only a recording of',
+    'write_budget_state.py': 'reports how many meetings still have no budget state written; '
+        'being behind is the backlog, not staleness',
+    'fetch_board_pages.py': 'compares the town\u2019s live board pages against the bytes our '
+        'extract was read from. A change there is the TOWN editing a page, which is a thing '
+        'to look at rather than a thing to rebuild',
     'check_github_mirror.py': 'it asks whether files are COMMITTED, and this run commits '
                               'AFTER the gate -- so it cannot pass at the moment the gate '
                               'reads it, whatever the tree holds. daily_refresh.sh runs it '
                               'after the push, which is where the question is answerable',
+}
+
+# A GENERATOR A PERSON RUNS, AND WHY IT MAY NOT RUN HERE. These block the deploy when they
+# go stale -- the site would not match its data -- but the run must NOT fix them itself.
+# Every one was found on 29 September 2026 to DESTROY or MISSTATE data when run unattended.
+# Rebuilt earlier in the run, in step 8, for ordering reasons -- the meeting record has to
+# exist before anything that lists meetings reads it. Named here so the gate knows they were
+# already rebuilt and a still-stale one reads as a defect rather than as unclassified.
+STEP_8 = (
+    'extract_document_timestamps.py', 'build_meeting_register.py', 'build_meeting_feed.py',
+    'build_recording_minutes.py', 'build_notices.py', 'extract_personnel.py',
+    'build_open_seats.py', 'build_board_composition.py', 'build_town_personnel.py',
+    'build_boards.py', 'build_budget_feed.py', 'build_feeds.py',
+)
+
+BY_HAND = {
+    'extract_trust_balance_detail.py': 'ran unattended it DELETED a year of trust balances: '
+        'its text-layer reader returns [] for `the heading is not here`, which the caller '
+        'reads as `refused` rather than `use OCR`',
+    'extract_special_revenue.py': 'reads every transcription of a year and once pulled '
+        'appropriations, trust and debt rows into the special revenue dataset',
+    'build_extraction_gaps.py': 'owns side=extraction in money-gaps.csv and rewrites it, '
+        'which deleted four gaps a person had registered by hand',
+    'build_finance.py': 'reads the special revenue balance by ORDINAL column, and the '
+        'ordinal means receipts in one edition and the balance in another',
 }
 # THE FIRST-CLASS OBJECTS OF A STATUS REPORT. TJ, 29 September 2026: *"consider those the
 # first class objects for status reports... things like votes are not first class objects"*.
@@ -805,13 +842,37 @@ def main():
             why = (parts[2] if len(parts) > 2 else '').strip()
             if name not in NOT_BLOCKING:
                 stale.append((name, why))
+        # THREE KINDS OF STALE, and the third is the one that matters. A generator the run
+        # already rebuilt and which is STILL stale is a real defect in this pipeline. One a
+        # person must run is named with the reason it may not run here. And one that is in
+        # NEITHER list is UNCLASSIFIED -- nobody has ever decided whether the refresh may
+        # touch it -- which is how the list stayed incomplete for as long as it did: it was
+        # only ever extended when somebody noticed a deploy had shipped stale.
+        #
+        # The classification completes itself from real events rather than from a guess at
+        # all 158 checks: an unclassified generator blocks, is named, and asks to be put in
+        # one of the two lists. Safe by default, and the list grows only where it must.
         if stale:
+            made = set(SITE_PAYLOADS) | set(STEP_8)
+            rebuilt = [(n, w) for n, w in stale if n in made]
+            by_hand = [(n, w) for n, w in stale if n in BY_HAND]
+            unknown = [(n, w) for n, w in stale if n not in made and n not in BY_HAND]
             notes.append('DID NOT DEPLOY: %d generated output(s) no longer reproduce from '
                          'their inputs, so the site would not match its own data: %s'
                          % (len(stale), ', '.join(sorted(n for n, _ in stale))))
             print('  NOT deploying: %d stale generated output(s)' % len(stale))
-            for name, why in sorted(stale):
-                print('      %-34s %s' % (name, why[:110]))
+            for label, group in (('REBUILT BY THIS RUN AND STILL STALE -- a defect here',
+                                  rebuilt),
+                                 ('A PERSON RUNS THESE', by_hand),
+                                 ('UNCLASSIFIED -- decide whether the refresh may rebuild '
+                                  'it, then add it to SITE_PAYLOADS or BY_HAND', unknown)):
+                if not group:
+                    continue
+                print('    %s' % label)
+                for name, why in sorted(group):
+                    print('      %-34s %s' % (name, why[:104]))
+                    if name in BY_HAND:
+                        print('      %-34s   because %s' % ('', BY_HAND[name][:88]))
             a.deploy = False
         else:
             print('  every generated output reproduces; safe to deploy')
