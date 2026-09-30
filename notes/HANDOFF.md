@@ -11,6 +11,63 @@ it had never been fixed anywhere. Check anything load-bearing against the repo.
 ---
 ---
 
+## 29-30 SEPTEMBER 2026 — FOUR GENERATORS THAT DESTROY DATA, AND A REFRESH THAT NOW CLOSES ITS LOOP
+
+**READ THIS BEFORE RUNNING ANY GENERATOR UNATTENDED.** Five separate times over two days a
+check went red and was pointing at OUR INSTRUMENT rather than at the town — and three of
+those were generators that destroy or misstate data the moment somebody does what the check
+tells them to do, which is *run the generator*.
+
+`scripts/refresh.py` now holds the list as `BY_HAND`, each entry saying what it costs:
+
+| generator | what it did |
+|---|---|
+| `extract_trust_balance_detail.py` | **deleted FY2024's 28 trust balances**, the whole year. Its text-layer reader returned `[]` for *the heading is not here*, and the caller reads `[]` as *refused* rather than *use OCR* |
+| `build_finance.py` | would have **published 32 receipt figures as closing balances**. It read the balance from `v2`, an ORDINAL, and FY2025's own data says `v2 = receipts` |
+| `build_extraction_gaps.py` | **deleted four registered gaps**. It owns `side=extraction` in `money-gaps.csv` and rewrote it wholesale |
+| `extract_special_revenue.py` | crashed on a `kind=check` row, and fixing that let a whole year's appropriations, trust and debt rows into the special revenue dataset — 2,435 rows to 4,454 |
+
+All four are fixed. The register exists so the next person does not rediscover them.
+
+**THE REFRESH HAD NO MODEL OF WHAT IT INVALIDATES**, which is why it "never worked fully".
+It never ran `build_db.py` at all, so every payload derived from the database shipped at
+yesterday's figures; it never catalogued the documents it had just fetched; and it never
+asked whether the site matched its data. One refresh commit merged on 29 September took
+`check_generated` from 3 failures to 28.
+
+Every generator it can meet is now in exactly one of four places, and **an unclassified one
+BLOCKS the deploy, is named, and asks to be classified** — because nobody will ever classify
+158 checks in advance, and the list stayed incomplete for as long as it did precisely because
+it was only extended after a bad deploy.
+
+    SITE_PAYLOADS + STEP_8   47   the run rebuilds, in dependency order
+    BY_HAND                   4   a person runs; see the table above
+    NOT_BLOCKING              7   not staleness; each says what it is instead
+    unclassified                  blocks and asks
+
+**TWO PATCHES THAT MUST NOT BECOME FURNITURE.**
+
+- `build_if_students_leave.py` carries a `MISREAD` map for exactly two strings:
+  `5379696.77` and `5191468.27`. Page 67 of the FY2011 report prints `$379,696.77` and
+  `$191,468.27` — recognition read each `$` as a `5`. It was RENDERED AND READ to establish
+  that, and the corrected row then foots to the cent AND equals FY2012's opening balance in
+  a separately published report. **The real remedy is reading FY2011's special revenue
+  pages**, and the patch disappears that day.
+- `fetch_youtube_transcripts.py` writes straight into `sources/data/` instead of staging
+  through `ingest.py`. On 30 September a Select Board transcript was fetched, indexed,
+  QUOTED IN MINUTES WE PUBLISHED, and never backed up — it existed on one disk, in a
+  worktree, and the bucket returned 404 for it. Transcripts are GITIGNORED, so for them the
+  bucket is not a backup, it is the only copy. That file is recovered and served; **the
+  route is unchanged.** And note the refresh's own `ARCHIVE BACKUP FAILED` note fired three
+  times that morning and the run still exited 0 — an alert that fires daily teaches you to
+  explain it away, and it was explained away before the evidence forced it.
+
+**AND NEVER READ A CHECK THROUGH `tail`.** `check_generated.py` prints 259 lines. Fifteen of
+twenty-three failures went unread on 29 September because they were above a `tail -25`,
+including all three destructive ones. Write the run to a file and read the whole of it.
+
+---
+
 ## The current plan — `notes/HANDOFF-INGESTION-PLAN.md`, 25 September 2026
 
 Where the work stands and what is next, written at TJ's request before a context reset.
