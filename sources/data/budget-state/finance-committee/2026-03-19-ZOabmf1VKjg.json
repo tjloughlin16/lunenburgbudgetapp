@@ -12,33 +12,34 @@
   "statements": [
    {
     "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "budget_total",
-    "scope": "school",
-    "statement": "The school committee was not expected to present Finance Committee a balanced budget.",
+    "fiscal_year": null,
+    "kind": "other",
+    "scope": "both",
+    "statement": "Plan is at least two budgets for the school and two for the town: a non-override budget and an override budget (maybe two); the school must have a budget for if the override doesn't pass.",
     "status": "announced",
-    "t": 106,
+    "t": 439,
     "who": "the chair"
    },
    {
     "amount_as_heard": null,
-    "fiscal_year": 2027,
+    "fiscal_year": null,
     "kind": "override",
     "scope": "both",
-    "statement": "There will be at least two budgets for the school and two for the town \u2014 one without an override and one with an override, possibly a third.",
-    "status": "announced",
-    "t": 460,
-    "who": "the chair"
-   },
-   {
-    "amount_as_heard": null,
-    "fiscal_year": 2027,
-    "kind": "override",
-    "scope": "both",
-    "statement": "The town and schools are each building a core-services budget and a separate restoration budget tied to whether the override passes.",
+    "statement": "At the tri-board meeting a straw vote was taken on a multi-override: a core services budget plus a restoration budget; the town appears to be creating a core services and a restoration budget as well.",
     "status": "proposed",
-    "t": 562,
-    "who": "the chair"
+    "t": 541,
+    "who": "a member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "school budget presentation / cuts if override fails",
+    "condition": "if the school presents only a dollar figure and no cuts",
+    "fiscal_year": null,
+    "prediction": "Residents given only a dollar figure won't know what a vote against the override means in cuts; the school should present cuts so people vote on something real.",
+    "scope": "school",
+    "t": 500,
+    "who": "a member"
    }
   ]
  },
@@ -46,9 +47,10 @@
  "video_url": "https://www.youtube.com/watch?v=ZOabmf1VKjg",
  "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
  "written": {
-  "at": "2026-09-14T18:22:47Z",
+  "at": "2026-09-30T11:40:29Z",
   "by": "scripts/write_budget_state.py",
-  "cost_usd": 0.1601878,
-  "model": "sonnet"
+  "cost_usd": 0.27080400000000004,
+  "model": "sonnet",
+  "schema": 2
  }
 }
