@@ -4,7 +4,7 @@
 
 ## What the town and the state published — and we hold
 
-- **13,240 documents** — PDFs, spreadsheets, Word files and slide decks — 32,218 files and 5.9 GB in all, each with its address, its publisher’s filename and a checksum.
+- **13,240 documents** — PDFs, spreadsheets, Word files and slide decks — 32,266 files and 5.91 GB in all, each with its address, its publisher’s filename and a checksum.
 - **14 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, meetings, peer-districts, state-census, state-dese, state-dls, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,153 meeting documents** from **51 town boards**: 4,708 sets of minutes and 7,445 agendas, 2009-01-05 to 2026-09-30 — **18 years**.
 - **5,345 annual town report appropriation lines**, FY2011–FY2025, read page by page.
@@ -14,7 +14,7 @@
 
 ## What we made from it
 
-- **4,490 hours of meeting recordings transcribed** — 2,670 meetings, 187.1 days of audio end to end, 2012-05-02 to 2026-09-29. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
+- **4,480 hours of meeting recordings transcribed** — 2,663 meetings, 186.7 days of audio end to end, 2012-05-02 to 2026-09-24. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
 - **558 meetings with our own minutes** written from those recordings — **1950 substantive votes** and **477 transfers** logged, each linked to the second of the video.
 - **A database of 153,932 rows in 119 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
 - **38 analyses** and **195 published conclusions**, every figure recomputed by a script before it ships.
