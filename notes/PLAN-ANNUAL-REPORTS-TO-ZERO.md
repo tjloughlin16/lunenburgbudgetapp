@@ -241,6 +241,47 @@ script's. Check an exit code without a pipe, or use `PIPESTATUS`.
 **The cost:** about an hour, in which a year could have been processed. **What it buys:**
 one command, and a definition of done that lives in code instead of in four documents.
 
+### 10. Two instruments disagreed about what `blocked` MEANS, and the board re-opened a closed page
+
+FY2023 was marked `blocked` on page 25 on 28 September, by TJ, who had opened the page
+himself: *"its too blurry. we need to mark it as TOO BLURRY and call it HARD BLOCKED. and
+move on."* `map_annual_report_pages.blocked_pages()` wrote that down in its own docstring --
+**HARD BLOCKED IS NOT UNFINISHED** -- and gave the reason: *"leaving both in one bucket
+means the backlog never stops containing the second kind -- every pass rediscovers it,
+re-renders it, and re-concludes it."*
+
+`annual_report_progress.py`, written three days later, counted `blocked` as not done. So the
+board named FY2023 as NEXT, one page short, for three days -- and on 1 October an agent did
+precisely what the register was built to stop: extracted the embedded bitmap, measured its
+grid by projection, rendered the amount columns at 7x, 13x and 20x, and re-reached the
+conclusion already sitting in `page-blocked.csv`. The archive did not move.
+
+**The register was right and the scoreboard was the stale instrument** -- which is this
+plan's own rule, pointed at our progress rather than at the town. Entry 9 built the
+scoreboard to stop project state being derived from the wrong grain; it then defined `done`
+without reading the register it queries.
+
+**What it cost:** a session. **What it bought:** two things, and the second is the general one.
+
+- `annual_report_progress.py` counts a year done when every page is `proven` OR `blocked`.
+  A blocked page is never called PROVEN: it keeps its own column, a year carrying one is
+  flagged `YES*` and not `YES`, and the pages are named under the board with the reason and
+  the one document that would remove the block. The claim is *nothing is left to do here*,
+  not *this was fully read*.
+- **A terminal state has to be terminal in every instrument that reads it, or it is not a
+  state -- it is a label.** `blocked` existed, was documented, was populated by a person, and
+  still cost a full re-read, because the one script anybody runs first scored it as work. When
+  adding a state, grep every consumer before claiming the state does anything.
+
+**And the re-read did produce one new fact, which is now in the register so it is not found a
+third time.** `money-gaps.csv` said the gap closes on *"a better scan of this one page, or the
+Treasurer's own FY2023 receipts file"*. A better scan is not a remedy that exists: of the two
+publisher addresses on record, `DocumentCenter/View/4131` returns HTTP 404 and
+`ArchiveCenter/ViewFile/Item/160` returns 18,274,143 bytes -- byte-for-byte the copy held
+here. The town publishes one copy and we have it. **A gap whose named remedy cannot be
+obtained is a gap with no remedy named**, and rule 7c's `— closes:` is worth exactly as much
+as whether anybody checked that the document can still be got.
+
 ### What is now proven to work, end to end
 An agent reads the page, writes a `read` or `attested` row into
 `sources/data/table-corrections.csv` with its evidence, the extractor re-runs, the year's
