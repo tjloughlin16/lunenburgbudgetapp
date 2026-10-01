@@ -206,3 +206,50 @@ on FY2011 page 64 and 55 of that page's 98 figures parsed as nothing.
 **A fix upstream of the page cache does nothing until the cache is rebuilt.** That cost an
 hour once: the flip correction was verified working on raw geometry, the extractors were
 re-run, and the output was unchanged — because they read the cache.
+
+---
+
+## FY2021, 1 October 2026: 16 of 37 pages proven -> 26 of 37
+
+Every one of the ten closed by READING the page and committing it to
+`sources/data/page-reads/`, not by changing an extractor. Four facts below are
+about the whole archive rather than about FY2021, and they are the reason the
+work went quickly.
+
+**FY2021 HAS NO TEXT LAYER. Tested, not assumed:** `pdfplumber` returns **0 words on
+every one of the 22 unproven pages**. So it is the photograph path throughout —
+render and read. The page cache is NOT stale (`report_pages.stale('FY2021')` is
+empty), and it is a good reading: every figure the OCR produced for the
+appropriations and capital runs proved correct against the pages' own arithmetic.
+What the OCR does is DROP things, not mis-see them.
+
+**THE PRINTED FOLIO IS ONE LESS THAN THE PDF PAGE IN THIS REPORT, and two
+instruments got that wrong in opposite directions.**
+
+- `mark_page_furniture()` in `extract_tables.py` calls a label-less lone figure a
+  page number when it equals `int(r['page'])` -- the PDF page. On FY2021 page 28
+  the folio prints `27`, so it did not match and **27.00 was summed as an
+  appropriation**. The remedy is to MEASURE the offset off the run (every page of
+  a run carries the same one) rather than assume zero. Not done; it touches every
+  year and this session was not the place to change `extract_tables.py`.
+- `special-revenue-read.csv` numbered FY2021 BY THE FOLIO where all fifteen other
+  years carry the PDF page. All five pages were out by one -- so the schedule's
+  last page had no proof and PDF 31, the APPROPRIATIONS grand total, was marked
+  proven by a dataset that has never read it. Fixed, with
+  `special-revenue-printed-totals.csv`.
+
+**A `fwd` LINE IS A LINE OF THE COLUMN, not an annotation.** The appropriations
+column is headed `APPROPRIATED FORWARD` and every department's printed subtotal
+includes its `fwd` line. The schedule then prints the total of them at the foot --
+FY2021: `fwd - forward from FY 2020  $838,486.09` -- which is a SECOND identity to
+close a run against, independent of the grand total, and it closed to the cent.
+Use it. `srt - Salary Reserve Transfer` is a third.
+
+**WHAT IS LEFT, 11 pages, and what each needs:**
+
+| page | what it is | the obstacle, and the identity that would close it |
+|---|---|---|
+| 162-168 | `Calendar Year 2021 Wages`, 7 pages | ~613 names. NO TOTAL ANYWHERE, so the check is coverage. The run is ONE alphabetical sequence read down the LEFT column then down the RIGHT, page by page: ADAMOWICZ-BODKIN, BOGGIO-CANTATORE, CAPPUCCI-COTONI, COURTEMANCHE-FERDELLA, FEREBEE-GRANT, GRAVELL-KILCOMMINS, KLAFT-LORDAN, LORENZEN-MCNAMARA, MELENDY-ORNE, ORTEGA-RIOS, ROBERTS-SMITH, SMITH-TOCCI, TOMLINSON-ZRATE. 47 rows a column except p163's 48; p168 is a single column. `report-gross-wages` holds 477 of them, so ~136 are missing from the extract. **And the OCR's first name is ADAMOWICZ where FY2022 and FY2024 both begin ABRAHAM -- check whether a row is hidden under the header before trusting the count.** |
+| 43, 45 | the debt schedule's per-ISSUE detail | a 26-column matrix over two pages, and the scan has mangled much of it (`S1,595,000`, `$04,550`, `22238220000002`). It is the largest single read left and it is fully self-proving: principal + interest + admin fee = the issue's total, per issue per year, and the issues must add to the GRAND TOTAL rows **which are already read and proven** -- `page-reads/fy2021-p44-debt-schedule.csv` holds all 26 years of them. So the detail has 26 printed column totals waiting for it. |
+| 40 | `TRUST AND OPEB FUNDS`, page 1 of 2 | ~40 funds x 10 columns, SUBTOTALS per group. Page 2 of 2 (p41) is proven by `stabilization-balances`. Three identities per row, verified by hand on PERPETUAL CARE BEQUEST: beginning_principal + beginning_earnings + net_earnings + transfers_of_principal + transfers_of_earnings = ending cash value; + unrealized gain/loss = ending market value; and beginning market value + net earnings + transfers + change in unrealized = ending market value. |
+| 25 | `FY 2021 RECEIPTS - JUNE 2021` | the Treasurer's receipts page, three free-form columns. The SAME TABLE FAMILY AS FY2023 p25, WHICH IS HARD BLOCKED FOR BEING UNREADABLE. This one is not obviously that bad, but the OCR shows amounts truncated at the right edge and labels missing, and `receivables` refused it with `the header could not be read`. It prints its own `SUMMARY OF RECEIPTS` block with a GRAND TOTAL, so it is checkable if it is legible. **Render it and decide before transcribing anything.** |
