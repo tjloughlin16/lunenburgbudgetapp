@@ -57,6 +57,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 OUT = os.path.join(ROOT, 'sources', 'data', 'stabilization-balances.csv')
 
+CODE_RE = re.compile(r'8\d{3}')
+
 FIELDS = ['fy', 'code', 'name', 'registry_name', 'name_disagrees', 'ending_cash',
           'ending_market', 'page', 'basis', 'document']
 
@@ -101,18 +103,112 @@ def fund_keys(code, name):
     return keys
 
 
-def _basis(r, prior):
+def _basis(r, prior, footed=None):
     """Which proof actually carried this row -- never a constant.
 
     A row proven by the prior year's ending cash must not claim the table's own identity:
     they establish different things, and the weaker one cannot check how the beginning
-    balance splits between principal and earnings.
+    balance splits between principal and earnings. A row carried by its COLUMN footing to
+    the page's printed GRAND TOTALS is a third thing again -- it establishes the ending
+    figures and nothing about the row's internal split -- so it says so.
     """
     ok, why = R.verify(r['cells'])
     if ok:
         return why
     last = next((prior[k] for k in fund_keys(r['code'], r['name']) if k in prior), None)
-    return R.verify_from_prior(r['cells'], last)[1]
+    ok2, why2 = R.verify_from_prior(r['cells'], last)
+    if ok2:
+        return why2
+    if footed:
+        return footed
+    return why2
+
+
+# THE COLUMNS AS A PAGE-READ NAMES THEM, mapped to the reader's names. Only the columns
+# `verify()` actually uses are mapped: `net_income`, `realized_gain_loss`,
+# `ending_principal` and `ending_earnings` are COMPONENTS of columns already in the sum --
+# read_trust_table.FOURTEEN says why -- and mapping them would count the same money twice
+# and refuse every row.
+READ_COLUMNS = {
+    'beginning_market_value': 'begin_market',
+    'beginning_principal': 'begin_principal',
+    'beginning_earnings': 'begin_earnings',
+    'net_earnings': 'net_earnings',
+    'transfers_of_principal': 'transfers_principal',
+    'transfers_of_earnings': 'transfers_earnings',
+    'ending_cash_value': 'ending_cash',
+    'change_in_unrealized': 'change_unrealized',
+    'unrealized_gain_loss': 'unrealized',
+    'ending_market_value': 'ending_market',
+    # THE SAME COLUMN UNDER THREE SPELLINGS, because each transcription names the columns
+    # as ITS OWN page prints them and the town does not print them the same way twice.
+    # `CHANGE IN UNREALIZED GAIN/LOSS` is `change_in_unrealized` in the FY2023 read and
+    # `change_in_unrealized_gain_loss` in the FY2022 one; FY2014's nine-column table calls
+    # its transfers `transfer_of_earnings`, singular, and prints two columns the wide
+    # table does not. A name missing from this map is SILENT -- the column simply does not
+    # reach the identity -- and that is exactly how it failed: FY2022's general fund
+    # missed its second identity by $78,633.33, which is its own opening unrealised gain
+    # counted once instead of twice, and FY2014's missed its first by $286,958.00, which
+    # is the whole of `CONTRIB TO PRINCIPAL`. Both are a map entry, not a bad reading.
+    'change_in_unrealized_gain_loss': 'change_unrealized',
+    'contributions_to_principal': 'contrib_principal',
+    'disburse_from_principal': 'disburse_principal',
+    'transfer_of_earnings': 'transfers_earnings',
+}
+
+
+def page_reads(fy):
+    """Stabilization rows from pages somebody READ, re-proved here rather than trusted.
+
+    WHY THIS EXISTS. FY2023's general Stabilization Fund is printed on PDF page 51 and
+    macOS Vision cannot read that block at any raster scale: it returns the five funds'
+    whole figure area as the two tokens `5=5=2255225229` and `4883322 1833332`, at
+    confidence 1.000, at scale 6.0 and again unchanged at 9.0 and 12.0, while the
+    SUBTOTALS line beneath them recognises perfectly. No header and no layout fixes that.
+    The page itself is clean, and `sources/data/page-reads/` is where this archive already
+    puts a page read directly -- see `verify_page_reads.py`, which re-proves every one of
+    them against the total its own document prints, on every run.
+
+    RULE 13C, AND IT BIT HERE. `extract_stabilization.py` reported FY2023 as a year with
+    no readable table and the figures were in the archive the whole time, read and checked
+    under a different pipeline. A pattern that does not match is not an absence, and
+    neither is one extractor's empty output.
+
+    NOTHING IS TRUSTED ON ARRIVAL. A read is an instrument's output exactly as OCR is, so
+    a row is taken only where `verify_page_reads.py` has recorded `status = checked` --
+    its column ties to the printed total -- AND the table's own two identities close on it
+    here, computed from the transcribed cells. Both, or the row is not published.
+    """
+    f = os.path.join(ROOT, 'sources', 'data', 'pages-read.csv')
+    if not os.path.exists(f):
+        return []
+    by = {}
+    for r in csv.DictReader(open(f, encoding='utf-8')):
+        if int(r['fy']) != fy or r['status'] != 'checked':
+            continue
+        name = ' '.join((r['fund_name'] or '').split())
+        if 'STABIL' not in name.upper() or '::' in name:
+            continue
+        col = READ_COLUMNS.get(r['column'])
+        if not col or not (r['value'] or '').strip():
+            continue
+        by.setdefault((r['page'], name, r['document']), {})[col] = float(r['value'])
+    out = []
+    for (page, name, doc), cells in sorted(by.items()):
+        # A FUND BALANCE, NOT AN APPROPRIATION. `Transfer to Stabilization Funds/OPEB` is
+        # a line on the appropriations page and carries the same word; it has no ending
+        # cash value and must never be read as one.
+        if 'ending_cash' not in cells:
+            continue
+        ok, why = R.verify(cells)
+        if not ok:
+            continue
+        code = name.split()[0] if CODE_RE.fullmatch(name.split()[0]) else ''
+        out.append((int(page), doc, dict(
+            code=code, name=' '.join(name.split()[1:]) if code else name,
+            cells=cells, basis=why + ' (the page READ, and checked against the total it '
+                                 'prints; OCR cannot read this block)')))
+    return out
 
 
 def extract(fy, path, verbose=False, prior=None):
@@ -135,7 +231,8 @@ def extract(fy, path, verbose=False, prior=None):
     found = {}
     for p in pages:
         pb = [b for b in boxes if b['page'] == p]
-        rows, cols = R.rows(pb, fy)
+        geom = {}
+        rows, cols = R.rows(pb, fy, geom=geom)
         # THREE, NOT SIX. The six was a cheap stand-in for "is this a trust table",
         # written before the reader could test a layout against the document's own
         # arithmetic. It is now the thing that decides, and it is far stricter than a
@@ -153,6 +250,13 @@ def extract(fy, path, verbose=False, prior=None):
         # Rule 13c: a row that refuses is a statement about our reading, not about the
         # town. Before this, FY2019's general Stabilization Fund was reported as absent
         # because a 6 had been scanned as a 5.
+        # A THIRD PROOF, AND IT IS THE PAGE'S NOT THE ROW'S. See R.foot_to_total():
+        # the whole ENDING CASH column summed against the GRAND TOTALS the table prints
+        # under it, with the total row required to close its own identity first. It is
+        # what reads FY2023's "held by other banks" page, where ten of eleven funds are
+        # dormant and can never close a row identity -- their activity columns are blank
+        # on the page, not misread -- while the column foots to the cent.
+        footed_ok, footed_why, _detail = R.foot_to_total(rows, cols, geom)
         proven = []
         for r in rows:
             ok, _ = R.verify(r['cells'])
@@ -164,7 +268,7 @@ def extract(fy, path, verbose=False, prior=None):
             last = next((prior[k] for k in fund_keys(r['code'], r['name'])
                          if k in prior), None)
             ok2, _ = R.verify_from_prior(r['cells'], last)
-            if ok2:
+            if ok2 or (footed_ok and 'ending_cash' in r['cells']):
                 proven.append(r)
         for r in proven:
             if 'STABIL' not in (r['code'] + r['name']).upper():
@@ -173,11 +277,27 @@ def extract(fy, path, verbose=False, prior=None):
             # report -- a listing and a recap -- and a fund read off both must not appear
             # twice. Keyed on the account number where the page prints one and on the
             # name where it does not, and the stronger proof keeps the slot.
+            r['footed'] = footed_why if footed_ok else ''
             key = r['code'] or ' '.join(r['name'].split()).upper()[:30]
             better = (R.verify(r['cells'])[1] == 'both identities hold',
                       len(r['cells']))
             if key not in found or better > found[key][0]:
                 found[key] = (better, p, r)
+    # AND THE PAGES SOMEBODY READ, which are a different instrument rather than a better
+    # version of this one -- verify_page_reads.py makes that argument in full.
+    #
+    # A READ ROW TAKES THE SLOT. It arrives having closed both identities here AND having
+    # tied to the total its own document prints, which is two proofs where an OCR row has
+    # one, and it carries what recognition loses first: FY2014's general fund came out of
+    # OCR as `STABILIZATION 8124` with an empty code, and FY2019's zoning fund as
+    # `ZONING INCENTIVE STABILIZATION (TL`. No published FIGURE moved when this was
+    # switched on -- the two instruments agree on every fund they both prove, to the cent
+    # -- so what it changes is the name, the account number and the basis.
+    for page, doc, r in page_reads(fy):
+        key = r['code'] or ' '.join(r['name'].split()).upper()[:30]
+        better = (True, len(r['cells']) + 1)
+        if key not in found or better > found[key][0]:
+            found[key] = (better, page, dict(r, document=doc))
     if not found:
         return [], 'no page proves a stabilization row'
     stab = [(p, r) for _, p, r in found.values()]
@@ -228,8 +348,12 @@ def extract(fy, path, verbose=False, prior=None):
                  # THE BASIS IS WHAT THE CHECK ACTUALLY RETURNED. It was a constant
                  # string, written when both identities were the only way through, and it
                  # would now be stating two proofs for a row that has one.
-                 page=page, basis=_basis(r, prior),
-                 document=os.path.relpath(path, ROOT)) for page, r in stab], None
+                 page=page, basis=r.get('basis') or _basis(r, prior, r.get('footed')),
+                 # THE DOCUMENT THAT WAS ACTUALLY READ. An OCR row cites the TSV it came
+                 # out of; a page-read row cites the PDF, because that is what was read
+                 # and the TSV has nothing of it.
+                 document=r.get('document') or os.path.relpath(path, ROOT))
+            for page, r in stab], None
 
 
 def main():

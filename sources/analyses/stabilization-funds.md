@@ -42,6 +42,7 @@ Some years print no ending market value at all: FY2019’s table carries the hea
 | FY2020 | $2,041,061.72 |
 | FY2021 | $2,526,388.54 |
 | FY2022 | $2,572,737.97 |
+| FY2023 | $2,725,541.17 |
 | FY2024 | $2,967,682.91 |
 
 That is **$1,764,820.06 more between FY2011 and FY2024**, a rise of 147%, in a fund whose purpose is to be available.
@@ -436,8 +437,8 @@ Every proven row:
 | FY2011 | `—` | STABILIZATION | $1,186,776.91 | $1,202,862.85 |
 | FY2012 | `—` | STABILIZATION | $989,608.54 | $1,005,630.47 |
 | FY2013 | `—` | STABILIZATION | $999,548.94 | $1,002,847.47 |
-| FY2014 | `—` | STABILIZATION 8124 | $1,299,077.98 | $1,312,062.64 |
-| FY2014 | `—` | ZONING INCENTIVE STABILIZATION (TL 8129 | $227,201.90 | $227,201.90 |
+| FY2014 | `8124` | STABILIZATION | $1,299,077.98 | $1,312,062.64 |
+| FY2014 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $227,201.90 | $227,201.90 |
 | FY2015 | `—` | STABILIZATION | $1,388,105.33 | $1,398,606.47 |
 | FY2015 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $227,542.95 | $227,542.95 |
 | FY2016 | `—` | STABILIZATION | $1,511,526.92 | $1,551,001.18 |
@@ -448,16 +449,22 @@ Every proven row:
 | FY2018 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $236,302.39 | — |
 | FY2018 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $228,891.82 | — |
 | FY2019 | `—` | STABILIZATION | $1,848,802.86 | — |
-| FY2019 | `—` | VEHICLE/EQUIPMENT STABILIZATION (N 8136 | $643,788.80 | — |
+| FY2019 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (N | $643,788.80 | — |
 | FY2019 | `—` | ZONING INCENTIVE STABILIZATION (TD | | $229,464.69 | — |
 | FY2020 | `—` | STABILIZATION | $1,978,347.74 | $2,041,061.72 |
 | FY2020 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $945,669.29 | $945,669.29 |
 | FY2020 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $230,431.40 | $230,431.40 |
 | FY2021 | `—` | STABILIZATION | $2,447,755.21 | $2,526,388.54 |
 | FY2022 | `—` | HEALTH INSURANCE STABILIZATION | $372,940.88 | $372,660.58 |
+| FY2022 | `—` | SEWER CAPITAL RESERVE STABILIZATION | $124,232.42 | $124,139.04 |
 | FY2022 | `—` | STABILIZATION | $2,574,673.21 | $2,572,737.97 |
 | FY2022 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREE* | $1,457,123.63 | $1,457,123.63 |
 | FY2022 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTI | $231,007.68 | $231,007.68 |
+| FY2023 | `—` | HEALTH INSURANCE STABILIZATION | $380,741.82 | $380,036.32 |
+| FY2023 | `—` | SEWER CAPITAL RESERVE STABILIZATION | $142,702.11 | $142,437.70 |
+| FY2023 | `—` | STABILIZATION | $2,730,600.73 | $2,725,541.17 |
+| FY2023 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $1,936,143.89 | $1,936,143.89 |
+| FY2023 | `8129` | ZONING INCENTIVE STABILIZATION (TD BANKNORTH | $235,681.11 | $235,681.11 |
 | FY2024 | `—` | OPIOID STABILIZATION | $176,302.50 | $180,345.23 |
 | FY2024 | `—` | STABILIZATION | $2,901,157.60 | $2,967,682.91 |
 | FY2024 | `8136` | VEHICLE/EQUIPMENT STABILIZATION (MAIN STREET | $2,254,933.99 | $2,254,933.99 |
@@ -466,7 +473,7 @@ Every proven row:
 
 **Nine funds, fifteen years, and most of the grid is empty.** Only 3 of the 9 funds have any history at all; the other 6 are known from one reading, the ledger’s. Across FY2011 to FY2025 that is about 41 of 135 possible fund-years.
 
-**30 of those readings are proved, across 14 years — and that is a limit of OUR reading, not of the town’s record.** The annual reports print the whole trust and stabilization table every year, every fund, and roughly ten times as many fund rows are visible in our scans of them as this page publishes. A row appears here only where the page’s own arithmetic closes on it, because publishing one that does not would be worse than publishing nothing — so the empty cells are a queue of work, not an absence of evidence.
+**36 of those readings are proved, across 15 years — and that is a limit of OUR reading, not of the town’s record.** The annual reports print the whole trust and stabilization table every year, every fund, and roughly ten times as many fund rows are visible in our scans of them as this page publishes. A row appears here only where the page’s own arithmetic closes on it, because publishing one that does not would be worse than publishing nothing — so the empty cells are a queue of work, not an absence of evidence.
 
 Two things would empty that queue, and they are not alternatives. A better reader gets the figures the town has already printed. The MUNIS trust report for earlier years would get them from the accounting system instead, with revenue and expenditure beside every balance — which the annual report tables do not carry at all.
 

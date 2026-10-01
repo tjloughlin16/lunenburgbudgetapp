@@ -62,6 +62,14 @@ MONEY = re.compile(r'^\(?-?[$S]?-?[\d.,]{1,15}[.,]\d{2}\)?$')
 # holding two cells can be taken apart. Anchored matching is what silently drops them.
 MONEY_TOKEN = re.compile(r'\(?-?[$S]?-?[\d.,]{1,15}[.,]\d{2}\)?')
 CODE = re.compile(r'^8\d{3}$')
+# AN ACCOUNT NUMBER AND ITS FUND NAME IN ONE OBSERVATION. Vision sometimes returns the
+# code and the name as a single box -- FY2023 page 49 prints `8132 SEWER RESERVE CAPACITY
+# (UNIBANK)` that way while every other row on the page keeps them apart -- and the
+# anchor test asked for either a BARE code or a string starting with a LETTER. A merged
+# box is neither, so the row was not an anchor at all: not misread, absent. It cost the
+# whole page, because the proof that page offers is a COLUMN footing to its printed
+# GRAND TOTALS and one dropped row makes the column short by exactly that row.
+CODE_NAME = re.compile(r'^8\d{3}\s+\S')
 
 # Column headings as the reports print them, mapped to one name each. The labels arrive as
 # separate observations -- `BEGINNING` on one line and `MARKET VALUE` under it -- so they
@@ -505,8 +513,16 @@ def infer_layout(centres, place):
     return (best[1], best[2]) if best else ([], [])
 
 
-def rows(boxes, fy):
-    """Fund rows of one page: (code, name, {column: value}), before any verification."""
+def rows(boxes, fy, geom=None):
+    """Fund rows of one page: (code, name, {column: value}), before any verification.
+
+    `geom`, if a dict is passed in, is FILLED with the geometry this reading measured --
+    the de-skewed Y, the figure boxes, the row band, and the lines SKIP rejected as
+    totals. It is an out-parameter and nothing here reads it, so no existing caller
+    changes behaviour; `foot_to_total()` needs the same measurements and must not measure
+    them a second time, because two measurements of one page that disagree are worse than
+    none.
+    """
     boxes = split_merged(upright(boxes))
     m = skew(boxes)
     Y = lambda b: b['y'] - m * b['x']
@@ -516,17 +532,31 @@ def rows(boxes, fy):
 
     SKIP = ('SUBTOTAL', 'GRAND', 'TOTAL', 'FUNDS HELD', 'STABILIZATION FUNDS',
             'TRUST FUNDS', 'FISCAL YEAR', 'FUND NAME', 'ACCOUNT')
-    anchors = []
+    anchors, total_lines = [], []
     for b in sorted(boxes, key=lambda b: -Y(b)):
         t = b['text'].strip()
         if MONEY.match(t):
             continue
-        if not (CODE.match(t) or (len(t) > 6 and t[0].isalpha())):
+        if not (CODE.match(t) or CODE_NAME.match(t)
+                or (len(t) > 6 and t[0].isalpha())):
             continue
         if any(s in t.upper() for s in SKIP):
+            if 'GRAND' in t.upper() and 'TOTAL' in t.upper():
+                a = dict(b); a['text'] = t
+                total_lines.append(a)
             continue
         if anchors and abs(Y(anchors[-1]) - Y(b)) < 0.004:
-            anchors[-1]['text'] += ' ' + t
+            # A BARE ACCOUNT NUMBER GOES TO THE FRONT. The merge appends, and the row's
+            # printed order is code-then-name, so a code whose box sits a thousandth
+            # BELOW its own name arrives second and was appended -- `ZONING INCENTIVE
+            # STABILIZATION (TD BANKNORTH 8129`. `CODE.match` then reads the first word,
+            # finds a letter, and the row publishes with an EMPTY code and the number
+            # stranded inside its name. The `bare` pass further down already prepends,
+            # and never saw this one because the 0.004 merge had consumed it first.
+            if CODE.fullmatch(t):
+                anchors[-1]['text'] = t + ' ' + anchors[-1]['text']
+            else:
+                anchors[-1]['text'] += ' ' + t
             continue
         a = dict(b); a['text'] = t
         anchors.append(a)
@@ -631,6 +661,10 @@ def rows(boxes, fy):
                             cells=cells, n_figures=len(mine)))
         return got, cols
 
+    if geom is not None:
+        geom.update(Y=Y, vals=vals, band=band, centres=centres,
+                    total_lines=total_lines)
+
     # Try every candidate of this page's width and keep whichever the arithmetic accepts.
     best = None
     for layout in CANDIDATES:
@@ -679,6 +713,98 @@ def rows(boxes, fy):
         return [], [dict(x=c, name=None) for c in centres]
     got, cols = place(layout)
     return got, cols
+
+
+def foot_to_total(got, cols, geom, tol=0.02):
+    """Prove a COLUMN by footing it to the GRAND TOTALS the table prints under it.
+
+    Returns (ok, why, detail). `why` is the BASIS written against every row it carries.
+
+    WHY A THIRD PROOF EXISTS, AND WHY IT IS NOT A LOOSENING. The two row identities need
+    a row's own beginning balance and activity to be legible. On a "held by other banks"
+    table most funds are dormant: OCR keeps their ENDING CASH and ENDING MARKET -- which
+    are equal, because nothing there is carried at anything but cash -- and drops the
+    columns that are zero or blank anyway. Those rows can never close a row identity,
+    and nothing is wrong with them.
+
+    The table states a second kind of identity about itself, and CLAUDE.md rule 13 names
+    it: *when an extract has a total the source itself prints, reconcile to it.* So:
+
+        every data row's ENDING CASH, summed  =  the GRAND TOTALS row's ENDING CASH
+
+    FY2023 page 49 is the worked example. Eleven funds, and the column sums to
+    $2,363,536.23 -- the printed grand total, to the cent -- while the grand total row
+    ALSO closes its own row identity:
+
+        $1,796,165.08 + $50,388.03 + $529,653.12 - $12,670.00 = $2,363,536.23
+
+    TWO GUARDS, AND THEY ARE WHAT MAKE IT A TEST RATHER THAN A PREFERENCE.
+
+    1. **The TOTAL row must close its own row identity.** Without that the total is just
+       another OCR reading, and a column footing to a misread total proves nothing. It
+       also pins the column positions: a layout that put ENDING CASH somewhere else would
+       have to make four other columns sum to that other column, on the one row where
+       every column is populated.
+
+    2. **Every data row must carry the column.** A row whose ending cash was lost
+       contributes nothing and the sum comes up short, so the check fails -- which is
+       correct. This proof is about a COMPLETE column or no column at all; it cannot be
+       used to publish some of a page's rows and quietly drop the rest.
+
+    WHAT IT DOES NOT ESTABLISH, because a sum does not care how its terms are arranged:
+    nothing about the row's INTERNAL split between principal and earnings, and nothing
+    about which activity column is which. Exactly the reservation `verify()` already
+    records for a cash-only row, one level up. It establishes the ENDING figures, which
+    is what this extract publishes.
+    """
+    if geom is None or not geom.get('total_lines'):
+        return False, 'no printed GRAND TOTALS row on the page', {}
+    Y, vals, band = geom['Y'], geom['vals'], geom['band']
+    named = [c for c in cols if c.get('name')]
+    if not named:
+        return False, 'no column is named, so nothing can be footed', {}
+
+    # THE SAME PLACEMENT RULE AS A DATA ROW, right edge against right edge. A total row
+    # printed in a wider face would otherwise land one column left of its own column.
+    best = None
+    for t in geom['total_lines']:
+        cells = {}
+        for v in vals:
+            if abs(Y(v) - Y(t)) >= band * 1.6:
+                continue
+            right = v['x'] + v.get('w', 0.0)
+            c = min(named, key=lambda c: abs(c['x'] - right))
+            if abs(c['x'] - right) > 0.05:
+                continue
+            try:
+                cells[c['name']] = money(v['text'])
+            except ValueError:
+                pass
+        if best is None or len(cells) > len(best):
+            best = cells
+    cells = best or {}
+    ok, why = verify(cells)
+    if not ok:
+        return False, 'the printed GRAND TOTALS row does not close: ' + why, cells
+
+    footed, detail = [], {}
+    for col in ('ending_cash', 'ending_market'):
+        if col not in cells:
+            continue
+        if any(col not in r['cells'] for r in got):
+            detail[col] = 'a data row carries no %s' % col
+            continue
+        s = sum(r['cells'][col] for r in got)
+        detail[col] = (s, cells[col])
+        if abs(s - cells[col]) <= tol:
+            footed.append(col)
+    if 'ending_cash' not in footed:
+        return False, 'the ending cash column does not foot to the printed total', detail
+    names = {'ending_cash': 'ending cash', 'ending_market': 'ending market'}
+    return True, ('%s column%s foot%s to the printed GRAND TOTALS'
+                  % (' and '.join(names[c] for c in footed),
+                     's' if len(footed) > 1 else '',
+                     '' if len(footed) > 1 else 's')), detail
 
 
 def verify_from_prior(cells, prior_ending, tol=0.02):
