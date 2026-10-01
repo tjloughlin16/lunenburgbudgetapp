@@ -1,5 +1,15 @@
 # Getting the annual reports to zero: the plan
 
+**BEFORE ANYTHING, RUN THIS. It answers *what is done* and *what is next*:**
+
+    python3 scripts/annual_report_progress.py
+
+A year is DONE when every financial page the map holds for it is `proven` -- the page
+closed on an identity the page itself prints. That is the ONLY definition; row-level
+`status` across the `report-*` CSVs measures whether a table was EXHAUSTED, which is a
+different question, and a year can be done with most of its rows still `check failed`.
+Confusing the two cost an hour on 1 October 2026 -- learning loop entry 9.
+
 **28 September 2026.** TJ: *"can you make this systematic man. its been days days days
 ... we keep finding major mistakes ... write a PLAN. work from it. iterate. test. improve."*
 
@@ -167,6 +177,69 @@ and the rule that a new extractor starts from the boxes.
 **And the migration is its own work.** Trying it inside a page fix is exactly what went
 wrong; `extract_special_revenue.py` is 2,422 rows across sixteen editions and five of them
 tie today.
+
+### 9. I could not say which years were DONE, and spent an hour getting it wrong twice
+
+TJ, 1 October 2026, asking what years were fully done and to process the next one:
+*"I really don't understand..."*, then *"I don't understand. We already finished this
+year."*, and finally: **"By now you could have been done processing a FY."**
+
+He was right at every step. The answer is four years and one command; it took eleven tool
+calls and two confidently wrong answers to produce.
+
+| I said | where it came from | what was true |
+|---|---|---|
+| "FY2022 is the only year closed" | `git log \| grep -iE "FY20[0-9]{2} closed"` | four years are done. I grepped COMMIT MESSAGE WORDING and reported the miss as a fact about the work |
+| "FY2021 is the next year, recommended" | the same grep | FY2021 already has a proven stabilization row. FY2023 is next, one page short |
+| "no year is fully done; FY2024 is best at 22%" | ROW-level `status` across twelve `report-*` CSVs | FY2014, FY2022, FY2024 and FY2025 are done. Rows are not the unit |
+| "step 1 for FY2025" (ran it) | — | FY2025 was finished three days earlier, by `595148b1`, whose message says the same thing step 1 printed |
+
+**The first and second failures are rule 13c, for the third time in this file.** A matcher
+that finds nothing is a statement about our instrument. `grep` over commit subjects is an
+instrument, and this project records a finished year in `annual-report-pages.csv`, not in
+how somebody phrased a commit.
+
+**The third failure is the one worth keeping, because it was not sloppiness.** Both numbers
+were real and they answer different questions:
+
+- **A year is DONE when every financial page the map holds for it is `proven`** -- the page
+  closed on an identity the page itself prints. `595148b1`: *"FY2025 is read: 23 of 23
+  pages, every one tied to arithmetic the page states."*
+- **Row `status` measures whether a table was EXHAUSTED**, which is `verify_report_tables.py`'s
+  question. A year can be DONE with most of its rows still `check failed`.
+
+I reported the second as the answer to the first, then watched it contradict the ingestion
+dashboard and concluded the DASHBOARD was coarse. The dashboard was right. This is the
+proxy error CLAUDE.md rule 7 names, pointed at our own progress instead of at the town's:
+**a count of checked rows is not a count of finished years**, the same way dollars are not
+students.
+
+**And the fourth is navigation.** `notes/PLAN-ANNUAL-REPORTS-TO-ZERO.md` -- this file --
+answers all of it in one read, including the definition of done and the phase order. I had
+read `INGESTING-A-TABLE-FAMILY.md` and `HANDOFF-ANNUAL-REPORTS.md` and never opened the
+PLAN, because nothing pointed at it from where I started. Its own first line is TJ asking
+for this to stop happening.
+
+**Changed:** `scripts/annual_report_progress.py` -- the single authoritative answer.
+Prints the board, names the years that are done, and NAMES THE NEXT YEAR with its most
+blocking state and the action for it. `--next` gives the bare year for a script; `--check`
+fails if the page map is stale. It is listed in CLAUDE.md's checks and named from the top
+of this file and from `ANNUAL-REPORTS.md`.
+
+**And it refuses to answer off a stale map**, because every defect in this plan's own table
+was a stale instrument answering confidently. It fired on its first run: the FY2023 work
+then in flight had moved an input, so the board was one step behind and said so.
+
+**Rule:** before reporting what is done, run the script that defines done. Never derive
+project state from commit messages, and never from a count at a different grain than the
+thing being asked about.
+
+**A latent trap found while building it**, which did NOT cause the above but would hide a
+failure: `python3 script.py --check | tail -5; echo $?` reports TAIL's exit code, not the
+script's. Check an exit code without a pipe, or use `PIPESTATUS`.
+
+**The cost:** about an hour, in which a year could have been processed. **What it buys:**
+one command, and a definition of done that lives in code instead of in four documents.
 
 ### What is now proven to work, end to end
 An agent reads the page, writes a `read` or `attested` row into

@@ -331,6 +331,11 @@ all arrived in the same register and had to be read closely to tell apart:
 
 Three labels, used in replies to him — not in commits, documents or anything published.
 
+**These three are now GLOBAL** — `~/.claude/CLAUDE.md` carries them for every repo, along
+with `[GRILLED]` and `[ASSUMING]`, which grill a claim before it reaches him. This section
+stays because the worked examples below are this project's own. If the two ever disagree,
+the global file is the one every other repo reads.
+
 | label | answers | for |
 |---|---|---|
 | `[TASK-COMPLETE]` | *is it done?* | a thing he asked for is finished and VERIFIED — the check passed, the count moved, the page renders. Not "I have finished typing" |
@@ -942,7 +947,23 @@ show up on re-reading your own work.
 
 ## The annual town reports
 
-Sixteen of them, FY2011-FY2025, read page by page into 25 datasets. **The entry point is
+Sixteen of them, FY2011-FY2025, read page by page into 25 datasets.
+
+**WHICH YEARS ARE DONE, AND WHICH IS NEXT -- one command, and it is the only answer:**
+
+    python3 scripts/annual_report_progress.py
+
+**A year is DONE when EVERY financial page the map holds for it is `proven`**, meaning the
+page closed on an identity the page itself prints. Four are done. Row-level `status` across
+the `report-*` CSVs answers a DIFFERENT question -- whether a table was exhausted -- and a
+year can be done with most of its rows still `check failed`. Reporting the second as the
+answer to the first cost an hour on 1 October 2026, and then led to the ingestion dashboard
+being called coarse when it was right. Never derive which years are done from commit
+messages; `git log | grep` is an instrument, and rule 13c applies to it. The story is
+`notes/PLAN-ANNUAL-REPORTS-TO-ZERO.md`, learning loop entry 9 -- and that PLAN is what to
+read before working a year, in front of everything else.
+
+**The other entry point is
 `notes/reference/ANNUAL-REPORTS.md`** -- what exists, where each thing lives, what state it is
 in, and what is still uncaptured. It is generated, so its counts cannot drift.
 
@@ -1375,6 +1396,10 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_views.py --check       # ...and every symlink in them still resolves
     python3 scripts/check_archive_layout.py      # is every document where the layout says, under the right name
     python3 scripts/check_moved_docs.py          # every address published before the reorg still resolves
+    python3 scripts/annual_report_progress.py   # WHICH ANNUAL-REPORT YEARS ARE DONE, and which is next.
+                                             #   A year is done when EVERY financial page is `proven`;
+                                             #   row-level status is a different question. --next gives
+                                             #   the bare year; --check refuses off a stale page map
     python3 scripts/extract_tables.py <dataset>  # the annual reports, one table family at a time
     python3 scripts/verify_report_tables.py      # every reconciliation those extracts state, recomputed
     python3 scripts/build_report_tables_provenance.py  # what the generic extracts are, generated from them
