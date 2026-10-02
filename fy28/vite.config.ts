@@ -4,6 +4,7 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { viteSingleFile } from 'vite-plugin-singlefile'
+import devApiSearch from './vite-dev-api-search.js'
 
 // `npm run build`        -> dist/            (normal multi-file build, for hosting)
 // `SINGLE=1 npm run build` -> dist-single/   (one self-contained .html you can email)
@@ -84,7 +85,7 @@ export default defineConfig({
   // The hosted site is served from the domain root, so `/` is correct there; the
   // single-file build keeps `./` because it is opened from a filesystem.
   base: single ? './' : '/',
-  plugins: [react(), tailwindcss(), devOnlyBlogPreview(),
+  plugins: [react(), tailwindcss(), devOnlyBlogPreview(), devApiSearch(),
             ...(single ? [viteSingleFile()] : [])],
   build: single
     ? { outDir: 'dist-single', assetsInlineLimit: 100_000_000, cssCodeSplit: false,
