@@ -844,7 +844,7 @@ In one afternoon, on one fund:
 | "FY2019 has no general Stabilization row" | it is on a different page, labelled just `STABILIZATION` with no bank in front of it |
 | "FY2022–FY2025 are missing" | FY2022 and FY2025 were in the data; I had read the poorer of two code paths |
 | "fourteen pages came out upside down" | none of them had; the test matched round thousands |
-| "the extractor publishes nothing for FY2023" | that report prints TWO trust tables with different headers, and the stabilization funds are on the narrower one |
+| "the extractor publishes nothing for FY2023" | that report prints TWO trust tables with different headers, and `LAYOUTS` was keyed by year, so one was always wrong. **The general Stabilization Fund is on the WIDER one** -- the fourteen-column `TRUST FUNDS / FISCAL YEAR 2023 SUMMARY / Page 4 of 9` at pdf page 51, not the eight-column `HELD BY OTHER BANKS` at page 49. This line said "the narrower one" until 1 October 2026, when FY2023 was read and closed: five funds, both printed identities, footing to the page's own SUBTOTALS, and corroborated by the `Treasurer's Cash as of 6/30/2023` listing on page 48 printing `Bartholomew Stabilization Fund 2,730,600.73`, identical. A rule written to stop a wrong claim about a document carried one |
 | "the column does not foot, so the year is unreadable" | a comma was scanned as a full stop, so a million dollars never matched the money pattern |
 
 **The common shape: a matcher failed, and I reported the failure as a fact about the

@@ -149,15 +149,25 @@ def blocked_rows():
 
 
 def pick_next(by):
-    """The year nearest to finishing. Fewest pages LEFT TO ACT ON, then newest -- so a
-    year one page short is always next, and ties go to the year whose layout is freshest
-    in mind. A hard-blocked page is not a page left: counting it here is what made the
-    board name FY2023 as next for three days after the only thing left on it was a scan
-    nobody can improve."""
-    open_years = [(fy, c) for fy, c in by.items() if not is_done(c)]
+    """NEWEST FIRST. TJ decided this on 2 October 2026; it is the project's rule, not
+    this script's preference.
+
+    It matches the backlog rule CLAUDE.md already states for every other stream --
+    *the last two years first, newest first* -- so there is ONE ordering across the
+    project instead of one per workstream, and the recent years are the ones residents
+    ask about.
+
+    What it replaces was `fewest pages left to act on, then newest`, which closed years
+    soonest but made the queue jump around by year. That was MY choice, carried as a
+    stated assumption for two days -- and a queue order nobody decided is one that gets
+    re-litigated every session.
+
+    Fewest-pages-left is still the right lens for what to do INSIDE a year, and the
+    board prints every year's page counts so that judgement stays available."""
+    open_years = [fy for fy, c in by.items() if not is_done(c)]
     if not open_years:
         return None
-    return sorted(open_years, key=lambda kv: (kv[1]['pages'] - closed(kv[1]), -int(kv[0])))[0][0]
+    return sorted(open_years, key=lambda fy: -int(fy))[0]
 
 
 def main():
