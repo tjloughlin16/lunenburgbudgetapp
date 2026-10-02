@@ -1721,6 +1721,22 @@ def held_but_unread():
     if os.path.exists(f):
         proven_years = len({r['fy'] for r in csv.DictReader(open(f, encoding='utf-8'))})
 
+    # The annual reports at PAGE grain, which is the project's own definition of done.
+    import collections as _c
+    _by = _c.defaultdict(_c.Counter)
+    _f = os.path.join(DATA, 'annual-report-pages.csv')
+    for _r in csv.DictReader(open(_f, encoding='utf-8-sig')):
+        _fy = (_r.get('fy') or '').strip()
+        if not _fy:
+            continue
+        _by[_fy][(_r.get('state') or '').strip()] += 1
+        _by[_fy]['pages'] += 1
+    _ar_total = len(_by)
+    _ar_done = sum(1 for _c2 in _by.values()
+                   if _c2['proven'] + _c2['blocked'] == _c2['pages'])
+    _ar_pages = sum(_c2['pages'] for _c2 in _by.values())
+    _ar_blocked = sum(_c2['blocked'] for _c2 in _by.values())
+    _ar_left = sum(_c2['pages'] - _c2['proven'] - _c2['blocked'] for _c2 in _by.values())
     return [
         dict(held='Machine captions of meetings', n=transcripts,
              made='%s written up as minutes' % '{:,}'.format(minutes),
@@ -1733,12 +1749,20 @@ def held_but_unread():
              left=max(0, ocr_minutes - votes),
              note='An OCR\u2019d scan enters search immediately; the votes are a '
                   'separate reading.'),
-        dict(held='Annual reports with OCR geometry', n=reports_ocr,
-             made='%d year(s) yielding a PROVEN stabilization row' % proven_years,
-             left=max(0, reports_ocr - proven_years),
-             note='The geometry is cached and the tables are legible. What is missing is '
-                  'a column layout read off each year\u2019s printed header \u2014 see '
-                  'rule 13b.'),
+        # A STABILIZATION ROW IS NOT A READ REPORT, and this card used to say it was:
+        # `N year(s) yielding a PROVEN stabilization row` out of sixteen reports, with the
+        # remainder as `unread`. One table standing in for a whole document -- rule 7's
+        # proxy error pointed at our own progress. The question the project actually
+        # defines is per PAGE, and `annual_report_progress.py` answers it.
+        dict(held='Annual reports, financial pages', n=_ar_pages,
+             made='%d of %d year(s) CLOSED -- every page proven or blocked' % (_ar_done, _ar_total),
+             left=_ar_left,
+             note='A year is closed when every financial page it holds is `proven` or '
+                  '`blocked`; run `annual_report_progress.py`. %d page(s) are BLOCKED -- a '
+                  'person read them and could not -- so CLOSED does not mean every figure '
+                  'is in a dataset. And do not read the row counts in AGENTIC-BACKLOG.md '
+                  'as a backlog: a page read by eye supersedes the generic extract without '
+                  'emptying it.' % _ar_blocked),
     ]
 
 

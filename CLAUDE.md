@@ -949,12 +949,32 @@ show up on re-reading your own work.
 
 Sixteen of them, FY2011-FY2025, read page by page into 25 datasets.
 
+**THEY ARE FINISHED. 15 of 15 years, 2 October 2026.** Every financial page of every annual
+town report, FY2011-FY2025, is `proven` or `blocked`.
+
+    python3 scripts/annual_report_progress.py   # prints: Every year is done. Nothing to pick.
+
+**DONE MEANS EVERY PAGE IS `proven` OR `blocked`. IT DOES NOT MEAN EVERY FIGURE IS IN A
+DATASET.** Three pages across fifteen years are closed WITHOUT being read, each registered in
+`sources/data/page-blocked.csv` with its reason and the ONE document that would settle it:
+FY2023 p25, a 93 dpi scan whose digits are below the resolution of the file; and FY2016 p23
+and p49, which the TOWN printed short -- p49 prints four of the eight columns its own run
+uses, and p23 is page one of a receipts list that needs two with no continuation anywhere in
+its 204 pages. For those three a better scan is not a remedy that exists; the remedy is
+another document.
+
+**AND DO NOT READ THE ROW COUNTS AS A BACKLOG.** `status` on a `report_*` row says whether a
+GENERIC extract was exhausted, and a page read by eye SUPERSEDES that extract without
+emptying it -- so `notes/generated/AGENTIC-BACKLOG.md` still shows thousands of unreconciled
+rows on years that are finished, and now says so at the top. ROW GRAIN IS NOT PAGE GRAIN,
+and reporting the first as the answer to the second cost an hour on 1 October 2026.
+
 **WHICH YEARS ARE DONE, AND WHICH IS NEXT -- one command, and it is the only answer:**
 
     python3 scripts/annual_report_progress.py
 
 **A year is DONE when EVERY financial page the map holds for it is `proven`**, meaning the
-page closed on an identity the page itself prints. Four are done. Row-level `status` across
+page closed on an identity the page itself prints. ALL FIFTEEN are done. Row-level `status` across
 the `report-*` CSVs answers a DIFFERENT question -- whether a table was exhausted -- and a
 year can be done with most of its rows still `check failed`. Reporting the second as the
 answer to the first cost an hour on 1 October 2026, and then led to the ingestion dashboard
