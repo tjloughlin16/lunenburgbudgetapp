@@ -282,6 +282,43 @@ here. The town publishes one copy and we have it. **A gap whose named remedy can
 obtained is a gap with no remedy named**, and rule 7c's `— closes:` is worth exactly as much
 as whether anybody checked that the document can still be got.
 
+### 11. The RENDERER clipped the page, and the clip is invisible in a picture
+
+FY2021 p40 is the trust and OPEB summary: ten money columns, and the last two --
+`UNREALIZED GAIN/LOSS` and `ENDING MARKET VALUE` -- are the two every row identity on
+the page closes into. `scripts/render_page.swift` wrote a **612x792** image of a page
+whose mediaBox is **792x612**. The right 180 points went in the bin. Nothing said so.
+
+**A clipped render does not look clipped.** It looks like a page with a wide margin, and
+the margin is where the answer was. That is the same defect the top of this file records
+costing 20% of every landscape document in FY2019 -- found there by `/Rotate` handling in
+`ocr_pdf.swift`, and still live in the diagnostic script that step 3.4 of the process tells
+every agent to run. The mechanism is the one `render_pdf_page.swift` documents in its own
+header: PDFKit's `bounds(for:)` applies `/Rotate` and `draw(with:to:)` does not, so a tool
+built on PDFKit can size a canvas for one page and draw a different one into it.
+`render_pdf_page.swift` goes through `CGPDFPage` precisely so the two agree.
+
+**What it cost here: nothing, by luck.** The previous agent had used
+`render_pdf_page.swift` and read all ten columns; the clipped render was mine, and the two
+disagreed in a way that was only noticeable because a *header* was missing rather than a
+figure. Had it been the other way round, the page would have been transcribed eight columns
+wide and the row identities -- which need all ten -- could not have been stated at all.
+
+**Changed:** `render_page.swift` now prints the mediaBox and the page size it actually
+drew, and says `*** CLIPPED OR REORIENTED` when they differ. It says "or reorientated"
+because the script cannot tell which, and claiming a clip it has not established would be
+the same error pointed at ourselves. Two of FY2021's pages trip it, 40 and 57.
+
+**Not changed, deliberately:** the orientation logic itself. `upright()` scores four
+rotations by how wide Vision thinks the text is, and rewriting it would change every
+render in the archive on an afternoon's evidence. The warning makes the defect visible,
+which is what was missing; the fix needs its own pass.
+
+**Rule:** a renderer is an instrument and the picture is its reading, so it states the
+geometry it assumed. **For a landscape page use `render_pdf_page.swift`.** And when a
+table seems to have fewer columns than the handoff says, check the image against the
+mediaBox before concluding anything about the document.
+
 ### What is now proven to work, end to end
 An agent reads the page, writes a `read` or `attested` row into
 `sources/data/table-corrections.csv` with its evidence, the extractor re-runs, the year's

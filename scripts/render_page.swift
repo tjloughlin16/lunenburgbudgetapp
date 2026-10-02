@@ -85,4 +85,19 @@ guard let dst = CGImageDestinationCreateWithURL(
 }
 CGImageDestinationAddImage(dst, img, nil)
 CGImageDestinationFinalize(dst)
-FileHandle.standardError.write("wrote \(a[3]) (\(img.width)x\(img.height))\n".data(using: .utf8)!)
+// SAY WHAT GEOMETRY WAS ASSUMED, so a CLIPPED render is visible in this script's own output.
+// FY2021 p40 has a 792x612 mediaBox and /Rotate 270; `upright()` picked a sideways canvas and
+// this script wrote a 612x792 page, so the two rightmost columns of the trust table -- UNREALIZED
+// GAIN/LOSS and ENDING MARKET VALUE, the two everything is checked against -- were simply not in
+// the file. Nothing said so. Printing the mediaBox beside the image size makes the mismatch
+// readable at a glance: 1836x2376 at scale 3 is a 612x792 page and the box says 792x612.
+// The clipping itself is NOT fixed here; for a landscape page use render_pdf_page.swift, which
+// draws through CGPDFPage so getBoxRect and drawPDFPage agree about what the page is.
+let box = page.pageRef?.getBoxRect(.mediaBox) ?? page.bounds(for: .mediaBox)
+let drawn = "\(Double(img.width)/scale)x\(Double(img.height)/scale)"
+let boxed = "\(box.width)x\(box.height)"
+let warn = (drawn == boxed || a.count >= 9) ? ""
+           : "  *** CLIPPED OR REORIENTED: the page is \(boxed) and this render is \(drawn)"
+FileHandle.standardError.write(
+    "wrote \(a[3]) (\(img.width)x\(img.height))  scale \(scale)  mediaBox \(boxed)\(warn)\n"
+        .data(using: .utf8)!)
