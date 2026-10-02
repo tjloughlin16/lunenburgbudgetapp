@@ -47,7 +47,9 @@ warnings.filterwarnings('ignore')
 
 import pdf_tables as T
 import report_pages as RP
-import page_reads
+# ALIASED: this module already defines a FUNCTION `page_reads()`, so a bare
+# `import page_reads` resolves to the function and `.rows` raises AttributeError.
+import page_reads as PAGE_READS_IO
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The sixteen annual town reports moved out of town-budget/ on 5 September 2026.
@@ -333,7 +335,7 @@ def page_reads():
     """
     out = collections.defaultdict(list)
     for f in sorted(glob.glob(os.path.join(PAGE_READS, '*.csv'))):
-        for r in page_reads.rows(f):
+        for r in PAGE_READS_IO.rows(f):
             if (r.get('kind') or 'fund') == 'check':
                 continue
             if not (r.get('value') or '').strip():

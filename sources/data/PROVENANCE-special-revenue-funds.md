@@ -27,12 +27,12 @@ published thing to telling those apart.
 
 | FY | pages | funds | columns | reconciliation |
 |---|---|---:|---:|---|
-| FY2011 | 5 | 164 | 4 | v1: 2,625,179.76 vs printed 2,688,344.09 (-63,164.33)<br>v2: 6,117,226.48 vs printed 6,127,226.48 (-10,000.00)<br>v3: 16,382,834.81 vs printed 6,048,615.90 (+10,334,218.91) |
-| FY2012 | 5 | 137 | 4 | v1: 2,893,719.46 vs printed 2,766,954.67 (+126,764.79)<br>v2: 5,976,644.29 vs printed 5,976,644.29<br>v3: 6,680,977.17 vs printed 6,680,977.17<br>v4: 2,062,621.79 vs printed 2,062,621.79 |
-| FY2013 | 5 | 131 | 4 | v1: 2,062,349.00 vs printed 2,062,621.79 (-272.79)<br>v2: 5,805,695.03 vs printed 5,844,092.35 (-38,397.32)<br>v3: 5,697,713.47 vs printed 5,697,713.47<br>v4: 2,208,998.70 vs printed 2,209,000.67 (-1.97) |
+| FY2011 | 0 | 159 | 0 | balance_fwd_to_fy12: 2,766,954.67 vs printed 2,766,954.67<br>forward_7_1_2010: 2,688,344.09 vs printed 2,688,344.09<br>total_disbursements: 6,048,615.90 vs printed 6,048,615.90<br>total_receipts: 6,127,226.48 vs printed 6,127,226.48 |
+| FY2012 | 0 | 127 | 0 | balance_fwd: 2,062,621.79 vs printed 2,062,621.79<br>forward: 2,766,954.67 vs printed 2,766,954.67<br>total_disbursements: 6,680,977.17 vs printed 6,680,977.17<br>total_receipts: 5,976,644.29 vs printed 5,976,644.29 |
+| FY2013 | 0 | 126 | 0 | balance_fwd: 2,209,000.67 vs printed 2,209,000.67<br>disbursements: 5,697,713.47 vs printed 5,697,713.47<br>forward: 2,062,621.79 vs printed 2,062,621.79<br>receipts: 5,844,092.35 vs printed 5,844,092.35 |
 | FY2014 | 5 | 135 | 4 | v1: 2,242,812.24 vs printed 2,209,000.67 (+33,811.57)<br>v2: 5,443,975.18 vs printed 5,443,849.18 (+126.00)<br>v3: 4,853,456.99 vs printed 5,052,956.22 (-199,499.23)<br>v4: 2,599,893.63 vs printed 2,599,893.63 |
 | FY2015 | 5 | 129 | 4 | v1: 2,571,243.89 vs printed 2,599,893.63 (-28,649.74)<br>v2: 5,285,171.77 vs printed 5,285,016.77 (+155.00)<br>v3: 5,180,429.68 vs printed 5,180,429.68<br>v4: 2,704,480.72 vs printed 2,704,480.72 |
-| FY2016 | 5 | 162 | 4 | v1: 2,711,371.31 vs printed 2,704,480.72 (+6,890.59)<br>v2: 7,995,835.53 vs printed 6,543,358.01 (+1,452,477.52)<br>v3: 7,073,504.22 vs printed 6,074,216.03 (+999,288.19)<br>v4: 3,586,984.69 vs printed 3,173,622.70 (+413,361.99) |
+| FY2016 | 0 | 214 | 0 | carried: 3,173,622.70 vs printed 3,173,622.70<br>disbursements: 6,074,216.03 vs printed 6,074,216.03<br>forward: 2,704,480.72 vs printed 2,704,480.72<br>receipts: 6,543,358.01 vs printed 6,543,358.01 |
 | FY2016-addendum | 5 | 123 | 4 | v1: 2,681,299.89 vs printed 2,704,480.72 (-23,180.83)<br>v2: 6,402,239.96 vs printed 6,543,358.01 (-141,118.05)<br>v3: 5,004,921.81 vs printed 6,074,216.03 (-1,069,294.22)<br>v4: 3,532,319.89 vs printed 3,173,622.70 (+358,697.19) |
 | FY2017 | 5 | 133 | 4 | v1: 3,097,802.70 vs printed 3,173,622.70 (-75,820.00)<br>v2: 6,383,702.24 vs printed 6,383,702.24<br>v3: 5,993,188.58 vs printed 5,993,188.58<br>v4: 3,564,136.36 vs printed 3,564,136.36 |
 | FY2018 | 5 | 140 | 4 | v1: 3,560,171.36 vs printed 3,564,136.36 (-3,965.00)<br>v2: 6,246,072.62 vs printed 6,246,072.62<br>v3: 5,837,989.85 vs printed 5,837,989.85<br>v4: 3,922,169.13 vs printed 3,972,219.13 (-50,050.00) |
