@@ -319,6 +319,45 @@ geometry it assumed. **For a landscape page use `render_pdf_page.swift`.** And w
 table seems to have fewer columns than the handoff says, check the image against the
 mediaBox before concluding anything about the document.
 
+### 12. OUR OWN DOCUMENTS SENT AGENTS AFTER A GHOST, SIX TIMES IN TWO DAYS
+
+Every one of these is a document written to PREVENT an error, carrying one. Each recorded
+a symptom in the present tense and was never revisited when the symptom was fixed or
+disproved.
+
+| what we told an agent | what was true |
+|---|---|
+| rule 13c: FY2023's stabilization funds are on the NARROWER trust table | they are on the fourteen-column one at p51 |
+| the plan: `Monty Tech $967,652.00` is printed on FY2016 p30 and absent from its OCR | it is the COUNTY RETIREMENT assessment, it IS in the text layer, and it is NOT printed on the page |
+| the handoff: FY2012's grand total row `is not one`, at $1,032,000.00 | recognition noise in a `printed_total` cell, shifting the string one column; fixed in a correction row five days earlier |
+| the handoff: FY2013 pp.67-68 and FY2012 pp.60-64's columns `cannot be established` | both print a clean six-column header at 518 dpi; the CACHE was degraded, not the document |
+| CLAUDE.md: FY2011 p64 has `55 of 98 figures parse as nothing` | 8 of 126 on today's cache, six of them labels and the folio |
+| our notes: FY2016 p49's title is `cut mid-word -- FY2016 COLLECTION OF TAXE` | the layer holds `SEXAT`, which un-mirrors to `TAXES`, with zero characters outside the page rectangle |
+
+**THE SHAPE IS ALWAYS THE SAME: a statement about OUR INSTRUMENT, written down as a
+statement about the TOWN.** Rule 13c says a matcher that finds nothing is a statement about
+our instrument. These are that rule's output, promoted to prose and then quoted back as
+evidence.
+
+**And the sixth one exposed the deeper fault.** FY2016 pp.23 and 49 were called `clipped`
+by an agent that had, four lines earlier in its own report, correctly recorded that both
+pages are BORN-DIGITAL. A born-digital page has no scan to clip. The gate asked the right
+question, got the right answer, and NOTHING SAID WHAT FOLLOWS FROM IT -- so the answer was
+recorded and walked past, exactly as entry 7 describes. `READING-A-REPORT-PAGE.md` now
+carries the consequence: a fixed list of scan words that cannot be used about a page whose
+text layer we hold, and the two conclusions that remain available.
+
+**Changed:** the consequence clause above. **And a rule for briefing:** before telling an
+agent what is wrong with a year, `git log --oneline -- sources/data/table-corrections.csv`
+and grep that file for the year. A finding already in the archive is a FINDING, NOT A TASK.
+The plan's own defect table needs a `fixed in` column; until it has one, every row in it
+reads as open.
+
+**The cost, counted:** two agents re-derived `attested` findings already on record, one was
+sent to re-render a page that was in the hard-block register, and one afternoon went on a
+phantom page range. **What it buys:** the clause, and the habit of asking the data instead
+of the write-up.
+
 ### What is now proven to work, end to end
 An agent reads the page, writes a `read` or `attested` row into
 `sources/data/table-corrections.csv` with its evidence, the extractor re-runs, the year's

@@ -189,6 +189,41 @@ off of broken ocr."*
 not as a fallback. If a recognition cache already exists for a page, it is not evidence and
 it is not a starting point -- discard it.
 
+### WHAT FOLLOWS FROM `YES`, AND IT IS THE HALF THAT WAS MISSING
+
+**A page whose text layer we hold CANNOT be any of these:**
+
+    clipped   cut off   cut mid-word   too blurry   too low-resolution   misread
+    illegible   below the resolution of the file   a bad scan
+
+Those are all SCAN words. There is no scan. The characters are in the file, at exact
+positions, and `pdfplumber` will hand them over identically every time. If a conclusion
+about a born-digital page uses one of those words, it is a statement about OUR READING
+wearing a finding's clothes -- rule 13c -- and the only honest conclusions left are:
+
+- **the document OMITS it** -- the figures are not printed, here or anywhere in the report;
+  say which pages you searched, and the remedy is another document, never a better scan.
+- **we have NOT READ it yet** -- the figures are printed and the work is outstanding.
+
+**WHY THIS IS WRITTEN HERE AND NOT AS ADVICE.** On 2 October 2026 an agent ran this gate
+on FY2016 pp.23 and 49, recorded the answer correctly -- *"both pages carry their own text
+layer (225 and 99 words, no image)"* -- and four lines later headed its own section *"the
+town printed these CLIPPED"*. Both cannot be true. It then said *"no render was needed"*,
+so nobody opened either page, and the orchestrator relayed the conclusion without noticing
+it contradicted the evidence in the same report. The page is not clipped: it is FULL, 38
+printed rows across two columns, and the report simply never prints the second page of a
+receipts list that needs two. Different finding, different remedy.
+
+That is learning-loop entry 7 one level up: the process asked the question and attached NO
+CONSEQUENCE to the answer, so the answer got recorded and walked past. The list above is
+the consequence. It is a fixed set of words against a per-page fact we already store, so it
+is checkable rather than advisory.
+
+**And the same logic runs the other way.** A PHOTOGRAPHED page cannot be described as
+`the document omits it` on the strength of a reading that failed -- that is the instrument
+again. For a photograph, `too blurry` is available, and FY2023 p25 is the worked example:
+92 dpi, ~150 line items, digits below the resolution of the file, measured and registered.
+
 ## WHY, MEASURED, ON ONE DAY
 
 Two tables, both of which had been read by recognition and were sitting in the archive as
