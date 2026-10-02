@@ -47,6 +47,7 @@ warnings.filterwarnings('ignore')
 
 import pdf_tables as T
 import report_pages as RP
+import page_reads
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The sixteen annual town reports moved out of town-budget/ on 5 September 2026.
@@ -332,7 +333,7 @@ def page_reads():
     """
     out = collections.defaultdict(list)
     for f in sorted(glob.glob(os.path.join(PAGE_READS, '*.csv'))):
-        for r in csv.DictReader(open(f, encoding='utf-8')):
+        for r in page_reads.rows(f):
             if (r.get('kind') or 'fund') == 'check':
                 continue
             if not (r.get('value') or '').strip():

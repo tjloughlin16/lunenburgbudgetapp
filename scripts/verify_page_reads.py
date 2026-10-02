@@ -49,6 +49,9 @@ import re
 import os
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import page_reads  # noqa: E402  -- a blank sticky cell means `same as above`
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 READS = os.path.join(ROOT, 'sources', 'data', 'page-reads')
 # THE DATASET THE TRACKER READS. Every transcribed figure, with the verdict its own group
@@ -123,7 +126,7 @@ def main():
     for f in sorted(glob.glob(os.path.join(READS, '*.csv'))):
         name = os.path.basename(f)
         key = (name.split('-')[0][2:], '-'.join(name.split('-')[2:]).replace('.csv', ''))
-        for r in csv.DictReader(open(f, encoding='utf-8')):
+        for r in page_reads.rows(f):
             if not (r.get('value') or '').strip():
                 continue
             if (r.get('kind') or 'fund') == 'attested':
@@ -321,7 +324,7 @@ def main():
                 verdict, why = ('checked' if ok else 'check failed'), '; '.join(notes)
         elif key not in want:
             verdict, why = 'no check', 'this group prints no total; see `proof`'
-        for r in csv.DictReader(open(f, encoding='utf-8')):
+        for r in page_reads.rows(f):
             if not (r.get('value') or '').strip() or (r.get('kind') or 'fund') == 'total':
                 continue
             body.append({**{k: r.get(k, '') for k in FIELDS},

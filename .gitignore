@@ -189,3 +189,8 @@ sources/data/reader-questions.csv
 # Spotlight: keep it out of directories the ingestion writes hundreds of small files
 # into. Not repo content -- a local index hint, and it differs per machine.
 .metadata_never_index
+
+# DERIVED from sources/data/page-reads/*.csv by scripts/verify_page_reads.py, and it
+# reached 114 MB because the aggregate re-expands every sticky cell. Regenerate it;
+# never version it. The page-reads files are the artifact.
+sources/data/pages-read.csv
