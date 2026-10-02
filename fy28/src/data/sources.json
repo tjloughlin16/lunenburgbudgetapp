@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01",
+ "generated": "2026-10-02",
  "origins": [
   {
    "id": "school",
@@ -3012,9 +3012,9 @@
      "stars": 3,
      "what": "Recognition cannot read some of these pages at all -- the FY2024 special revenue schedule prints 164 rows and it found 14 on one page, returning different DIGITS for the same row at different resolutions. So those pages are rendered and READ, and the transcription is data with its document, its page, its column, who read it and what proves it. This file consolidates them: `status` is `checked`, `check failed` or `no check`, the same three words every other extractor here uses, in a column a script can read rather than in a sentence about how careful somebody was. WHAT MAKES A READ SAFE IS THE ARITHMETIC, NOT THE READER — 164 rows landing on six totals the town printed, 46 trust funds closing five identities each, 115 figures matching a different year’s report. See scripts/verify_page_reads.py, which re-proves every one on every run, and notes/process/READING-A-REPORT-PAGE.md.",
      "kind": "Data",
-     "bytes": 13760673,
+     "bytes": 15474069,
      "url": "/docs/data/pages-read.csv",
-     "count": 12359,
+     "count": 13925,
      "unit": "rows",
      "textUrl": "/docs/data/pages-read.csv"
     },
@@ -3060,7 +3060,7 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 214679,
+     "bytes": 215083,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 493,
      "unit": "rows",
@@ -3420,9 +3420,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 166000,
+     "bytes": 168652,
      "url": "/docs/data/money-gaps.csv",
-     "count": 196,
+     "count": 198,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3708,7 +3708,7 @@
      "stars": 2,
      "what": "The independent check on the file above, quoted off the page with its page number. Kept separate and never computed from our own rows — the OCR misread this very figure by $1,010, so the reconciliation had been measured against a wrong target.",
      "kind": "Data",
-     "bytes": 1194,
+     "bytes": 1217,
      "url": "/docs/data/special-revenue-printed-totals.csv",
      "count": 13,
      "unit": "rows",
@@ -17623,7 +17623,7 @@
  "totals": {
   "documents": 1534,
   "groups": 22,
-  "bytes": 2234512441,
+  "bytes": 2236228812,
   "loadBearing": 168
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 34 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
