@@ -798,6 +798,7 @@ def subject_of(texts, whole_page=()):
 # its other location, and counting them makes one table look like two. Recorded here with
 # WHERE the real reading is, so the claim is checkable rather than a quiet exclusion.
 REPRINTS = {
+    (2017, 155): 'a two-column reprint of the omnibus budget read at FY2017 pp168-169',
     (2017, 156): 'a two-column reprint of the omnibus budget read at FY2017 pp168-169',
     (2017, 157): 'a two-column reprint of the omnibus budget read at FY2017 pp168-169',
     (2017, 158): 'a two-column reprint of the omnibus budget read at FY2017 pp168-169',
