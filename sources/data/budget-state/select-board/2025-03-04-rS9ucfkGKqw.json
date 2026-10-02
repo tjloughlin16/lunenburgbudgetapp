@@ -1,0 +1,86 @@
+{
+ "board": "Select Board",
+ "board_slug": "select-board",
+ "meeting_date": "2025-03-04",
+ "source": {
+  "sha256": "fd919d1a9086b1b24580b17421cd2fd31a509ae8bcca891d9edd52c8f12def2f",
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-03-04-rS9ucfkGKqw.json"
+ },
+ "state": {
+  "cuts": [
+   {
+    "amount_as_heard": null,
+    "fiscal_year": null,
+    "fte_as_heard": null,
+    "item": "pavement management line reduced to zero",
+    "scope": "town",
+    "status": "proposed",
+    "t": 3096,
+    "who": "the town manager"
+   }
+  ],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2026,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The town manager presented a preliminary budget to the finance committee; to balance it the pavement management line was reduced to zero.",
+    "status": "announced",
+    "t": 3096,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "690,000",
+    "fiscal_year": null,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Chapter 90 apportionment received, substantially higher than prior years, contingent on a state bond authorization.",
+    "status": "announced",
+    "t": 3137,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": null,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Possible use of one-time free cash to restore part of the pavement line, shown in a standalone warrant article placeholder.",
+    "status": "proposed",
+    "t": 3456,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "free cash and capital program",
+    "condition": "if the town buys 100 Townsend Harbor Road",
+    "fiscal_year": 2027,
+    "prediction": "Adding the Townsend Harbor Road purchase would require dramatic adjustment of the capital program and leave the next fiscal year with no starting free cash.",
+    "scope": "town",
+    "t": 3745,
+    "who": "the town manager"
+   },
+   {
+    "about": "budget season",
+    "condition": null,
+    "fiscal_year": null,
+    "prediction": "Changes could occur between the final budget and town meeting floor, and adjustments at a special town meeting; nothing will happen as normal this season.",
+    "scope": "both",
+    "t": 3372,
+    "who": "the town manager"
+   }
+  ]
+ },
+ "video_id": "rS9ucfkGKqw",
+ "video_url": "https://www.youtube.com/watch?v=rS9ucfkGKqw",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-02T11:13:04Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

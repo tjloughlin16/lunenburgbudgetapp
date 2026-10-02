@@ -1,495 +1,792 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "conservation-commission",
-  "board": "Conservation Commission",
-  "video_title": "Conservation Commission",
-  "meeting_date": "2026-08-19",
-  "video_id": "cNWQtYXh2fQ",
-  "video_url": "https://www.youtube.com/watch?v=cNWQtYXh2fQ",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/conservation-commission/2026-08-19-cNWQtYXh2fQ.json",
-    "sha256": "326a453adfa20d824263d9fc27b97f255642614dfdb7932b01de24a13d8645f4",
-    "caption_lines": 345,
-    "segments": 2759
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2026-08-19",
+ "video_id": "cNWQtYXh2fQ",
+ "video_url": "https://www.youtube.com/watch?v=cNWQtYXh2fQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2026-08-19-cNWQtYXh2fQ.json",
+  "sha256": "326a453adfa20d824263d9fc27b97f255642614dfdb7932b01de24a13d8645f4",
+  "caption_lines": 345,
+  "segments": 2759
+ },
+ "recording": {
+  "duration_s": 7356,
+  "duration": "2:02",
+  "spoken_chars": 87019,
+  "words_approx": 14503
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08192026-7969",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-19-agenda-7969.txt",
+   "path": "sources/meetings/conservation-commission/2026-08-19-agenda-7969.pdf"
   },
-  "recording": {
-    "duration_s": 7356,
-    "duration": "2:02",
-    "spoken_chars": 87019,
-    "words_approx": 14503
-  },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08192026-7969",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-19-agenda-7969.txt",
-      "path": "sources/meetings/conservation-commission/2026-08-19-agenda-7969.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08192026-7969",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-19-minutes-7969.txt",
-      "path": "sources/meetings/conservation-commission/2026-08-19-minutes-7969.pdf"
-    }
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08192026-7969",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-19-minutes-7969.txt",
+   "path": "sources/meetings/conservation-commission/2026-08-19-minutes-7969.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T02:02:29Z",
+  "cost_usd": 0.450244
+ },
+ "minutes": {
+  "headline": "Commission ratified an emergency order clearing a blocked culvert that flooded a Lancaster Ave home.",
+  "summary": "The Conservation Commission acted on several wetlands permits (approving a deck expansion at 200 Island Road with erosion conditions, continuing hearings on a Calry Nature Center ADA trail, a substation, a boat ramp, and an irrigation pond at 157 Goodrich Street where an abutter raised concerns), issued a certificate of compliance, extended an enforcement deadline, and ratified an emergency order to clear a flooded culvert on Lancaster Avenue. It also spent significant time on the town-owned house at 123 Hollis Road, where a decision on new flooring was tabled pending clarification of prevailing-wage and procurement requirements, and on a proposed bylaw change that was tabled until the full commission, including the absent chair, could be present.",
+  "attendees": [
+   {
+    "name_as_heard": "Richard Bers",
+    "role": "chair (presiding)"
+   },
+   {
+    "name_as_heard": "Mike Larouche",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mary Wilson",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Andrea Bernap",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Teddy Ducet",
+    "role": "member (arrived late)"
+   },
+   {
+    "name_as_heard": "Harland (Hurland)",
+    "role": "Conservation Agent"
+   },
+   {
+    "name_as_heard": "Chris Baker",
+    "role": "presenter (representing applicant John Harrison, 200 Island Road)"
+   },
+   {
+    "name_as_heard": "Ryan Proctor",
+    "role": "presenter (Dillis and Roy, representing applicants)"
+   },
+   {
+    "name_as_heard": "John Mara",
+    "role": "presenter (representing applicant Steve Violet's farm)"
+   },
+   {
+    "name_as_heard": "Brian Marcetti (Maretti)",
+    "role": "presenter (McCarti Engineering, representing 1168 Mass Ave rear owner)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 2354,
+    "speaker_as_heard": "Patricia Whitney",
+    "stated_role": "abutting property owner, 137 Goodrich Street",
+    "topic": "Raised concerns about the size and placement of a proposed irrigation pond near her property line, its possible effect on her own pond, and whether tree removal would affect the wetlands; asked to review the plans in person with the engineer."
+   }
+  ],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "facilities",
+   "grants",
+   "legal",
+   "planning-and-zoning",
+   "policy",
+   "public-safety",
+   "recreation",
+   "roads-and-dpw",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 390,
+    "motion": "Approve the minutes of August 5th",
+    "moved_by": "Mary Wilson",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 1098,
+    "motion": "Issue a negative (3) determination for 200 Island Road with conditions for a siltation barrier/hay bales",
+    "moved_by": "Mary Wilson",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1809,
+    "motion": "Continue the 1625 Massachusetts Ave hearing to September 2nd",
+    "moved_by": "Mike Larouche",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1874,
+    "motion": "Continue the 934 Massachusetts Ave hearing to September 16th",
+    "moved_by": "Mary Wilson",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1935,
+    "motion": "Continue the 701 Reservoir Road hearing to September 2nd",
+    "moved_by": "Mike Larouche",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3839,
+    "motion": "Continue the 157 Goodrich Street hearing to September 2nd",
+    "moved_by": "Teddy Ducet",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4092,
+    "motion": "Issue the certificate of compliance for 420 Goodrich Street",
+    "moved_by": "Mike Larouche",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4370,
+    "motion": "Extend the enforcement deadline for 1168 Mass Ave rear 60 days, to October 21st",
+    "moved_by": "Teddy Ducet",
+    "outcome": "passed (Mary Wilson recused)",
+    "procedural": false
+   },
+   {
+    "t": 4617,
+    "motion": "Ratify the emergency certification for 467 Lancaster Ave culvert clearing",
+    "moved_by": "Mary Wilson",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6379,
+    "motion": "Have Mike Larouche move forward with vinyl sheeting and carpeting at 123 Hollis Road per the Empire Group quote",
+    "moved_by": "Teddy Ducet",
+    "outcome": "not audible (superseded by decision to table pending prevailing-wage information)",
+    "procedural": false
+   },
+   {
+    "t": 7300,
+    "motion": "Adjourn",
+    "moved_by": "Mary Wilson",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1415,
+    "topic": "Mass RTP trail grant, Calry Nature Center/1625 Mass Ave",
+    "what_was_said": "A commissioner reported determining the remaining unspent balance in the trail grant after the project scope was revised to access from the Mulpus Road side instead of rebuilding the old roadway.",
+    "figures_as_heard": [
+     "$24,000"
+    ]
+   },
+   {
+    "t": 1455,
+    "topic": "Revised engineering quote, Calry Nature Center trail/bridge",
+    "what_was_said": "A revised quote from Dillis and Roy for the engineering work on the new trail/bridge scope was reported, leaving a small margin against the grant maximum.",
+    "figures_as_heard": [
+     "21,000",
+     "21,180"
+    ]
+   },
+   {
+    "t": 5019,
+    "topic": "123 Hollis Road flooring - carpet/vinyl quote",
+    "what_was_said": "A vendor's quote to remove old carpet and pad throughout the house and install new Berber carpet, plus vinyl in the laundry room, was presented as the preferred option.",
+    "figures_as_heard": [
+     "$4,190 53"
+    ]
+   },
+   {
+    "t": 5019,
+    "topic": "123 Hollis Road flooring - vinyl planking alternate quotes",
+    "what_was_said": "Two additional quotes were obtained for installing vinyl plank flooring instead of carpet throughout, described as roughly double the cost of the carpet option.",
+    "figures_as_heard": [
+     "9,64522",
+     "10,000 $63.81"
+    ]
+   },
+   {
+    "t": 5105,
+    "topic": "123 Hollis Road (HO) account budget",
+    "what_was_said": "A member noted the current balance available in the property's account, framing it against the cost of replacing carpet versus vinyl planking.",
+    "figures_as_heard": [
+     "$26,000"
+    ]
+   },
+   {
+    "t": 5149,
+    "topic": "Smoke detector replacement, 123 Hollis Road",
+    "what_was_said": "A member estimated the cost to replace missing smoke detectors ahead of a fire department site visit.",
+    "figures_as_heard": [
+     "$400 to $500"
+    ]
+   },
+   {
+    "t": 6525,
+    "topic": "Procurement threshold for the Hollis Road flooring project",
+    "what_was_said": "Staff relayed guidance from the town's finance official that projects estimated to stay under a certain dollar threshold do not require formal bidding but still require prevailing wages and three quotes.",
+    "figures_as_heard": [
+     "$10,000"
+    ]
+   },
+   {
+    "t": 6961,
+    "topic": "Prevailing wage rates for the flooring project",
+    "what_was_said": "A commissioner read out the state's prevailing wage schedule components for laborers and floor coverers to clarify what the vendor would be required to pay.",
+    "figures_as_heard": [
+     "$50.80 an hour",
+     "$10.90 an hour",
+     "$9.75 an hour",
+     "65 cents an hour",
+     "8110 per hour",
+     "7958 per hour"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2860,
+    "decision": "The applicant's engineer agreed to meet one-on-one with abutter Patricia Whitney, through the conservation office, to review the 157 Goodrich Street pond plans in person."
+   },
+   {
+    "t": 3199,
+    "decision": "Commission indicated it would condition approval of the 157 Goodrich Street pond on the applicant obtaining a Mass DEP water quality certificate before construction begins."
+   },
+   {
+    "t": 4783,
+    "decision": "Proposed bylaw language changes will wait for a meeting with the full commission present, including the absent chair, before any vote to proceed."
+   },
+   {
+    "t": 6897,
+    "decision": "Decision on the Hollis Road flooring vendor was tabled until the commission gets clarity on prevailing-wage requirements and procurement process."
+   },
+   {
+    "t": 6917,
+    "decision": "The Conservation Agent will keep pursuing a meeting with the town manager and town counsel to update the custodial/occupancy agreement for 123 Hollis Road."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 108,
+    "topic": "Call to order, Zoom/AI recording notice, roll call",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 108,
+    "t_end": 128,
+    "topic": "Announcements",
+    "resolution": "informational, none raised",
+    "tags": []
+   },
+   {
+    "t_start": 128,
+    "t_end": 362,
+    "topic": "Pollinator habitat update and shed roof progress",
+    "resolution": "informational",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 382,
+    "t_end": 421,
+    "topic": "Approval of August 5th minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 421,
+    "t_end": 1160,
+    "topic": "200 Island Road - deck expansion request for determination of applicability",
+    "resolution": "voted (negative determination with conditions)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1160,
+    "t_end": 1852,
+    "topic": "1625 Massachusetts Ave - Calry Nature Center ADA trail/bridge notice of intent",
+    "resolution": "continued (voted)",
+    "tags": [
+     "planning-and-zoning",
+     "grants",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 1852,
+    "t_end": 1915,
+    "topic": "934 Massachusetts Ave - substation notice of intent",
+    "resolution": "continued (voted)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1915,
+    "t_end": 2017,
+    "topic": "701 Reservoir Road - boat ramp notice of intent",
+    "resolution": "continued (voted)",
+    "tags": [
+     "planning-and-zoning",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 2017,
+    "t_end": 3859,
+    "topic": "157 Goodrich Street - irrigation pond notice of intent, abutter concerns",
+    "resolution": "continued (voted), replication area condition noted",
+    "tags": [
+     "planning-and-zoning",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3859,
+    "t_end": 4136,
+    "topic": "Certificate of compliance - 420 Goodrich Street",
+    "resolution": "voted (issued)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4136,
+    "t_end": 4430,
+    "topic": "Enforcement update and extension - 1168 Massachusetts Ave rear",
+    "resolution": "voted (60-day extension)",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4430,
+    "t_end": 4658,
+    "topic": "Emergency certification ratified - 467 Lancaster Ave culvert clearing",
+    "resolution": "voted (ratified)",
+    "tags": [
+     "roads-and-dpw",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 4658,
+    "t_end": 4742,
+    "topic": "Touch a Truck outreach event and permitting handouts",
+    "resolution": "informational",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 4742,
+    "t_end": 4932,
+    "topic": "Proposed bylaw language changes",
+    "resolution": "tabled until full commission present",
+    "tags": [
+     "policy",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4932,
+    "t_end": 4952,
+    "topic": "Budget and encroachment issue updates (old business)",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4952,
+    "t_end": 7280,
+    "topic": "123 Hollis Road town-owned house - flooring quotes, custodian/occupancy agreement, prevailing wage",
+    "resolution": "tabled pending prevailing-wage and procurement clarification",
+    "tags": [
+     "facilities",
+     "budget",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 7280,
+    "t_end": 7300,
+    "topic": "Committee reports (master plan, open space, storm water)",
+    "resolution": "informational, none to report",
+    "tags": []
+   },
+   {
+    "t_start": 7300,
+    "t_end": 7343,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact spelling of several member/staff names varies across captions (e.g., \"Bernap\"/\"Bernamp\"/\"Bernab\"; \"Harland\"/\"Hurland\"; \"Maretti\"/\"Marcetti\").",
+   "Precise vote tallies are inferred from each named member saying \"I\" on roll call; no separate stated count or nay votes appear in the captions.",
+   "The reason for Mary Wilson's recusal on the 1168 Massachusetts Ave rear enforcement extension is not stated.",
+   "Exact seconding member is unclear/self-corrected in several motions (e.g., 467 Lancaster Ave, 1168 Mass Ave extension).",
+   "The prevailing-wage total figure \"8110 per hour\" appears to be a caption/transcription error, likely intended as a decimal figure.",
+   "Several dollar figures for Hollis Road flooring quotes render oddly (e.g., \"$4,190 53\", \"9,64522\") and may not reflect the true amounts."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Commission ratified an emergency order that cleared a blocked culvert on Lancaster Avenue after it flooded a home.",
+    "t": 4617
+   },
+   {
+    "line": "Commission approved a negative determination for a Island Road deck expansion, conditioned on erosion controls.",
+    "t": 1098
+   },
+   {
+    "line": "A decision on new flooring for the town-owned house at 123 Hollis Road was tabled pending prevailing-wage and procurement guidance.",
+    "t": 6897
+   },
+   {
+    "line": "The Goodrich Street irrigation pond hearing was continued after an abutter's concerns, with any approval expected to require a state water-quality permit first.",
+    "t": 3199
+   },
+   {
+    "line": "A proposed wetlands bylaw change was tabled until the full commission, including the absent chair, can be present to vote.",
+    "t": 4783
+   }
+  ],
+  "why_it_matters": [
+   "The emergency culvert order and enforcement extensions show the commission acting on flooding and compliance issues that affect specific homeowners and abutters.",
+   "Any town spending on the Hollis Road property depends on sorting out prevailing-wage and procurement rules before a vendor is chosen.",
+   "Property owners near pending wetlands applications -- the pond, the boat ramp, the substation -- will see those decisions delayed to the commission's next meetings."
+  ],
+  "watch_next": [
+   "September 2nd: continued hearings on 1625 Massachusetts Ave, 701 Reservoir Road, and 157 Goodrich Street",
+   "A future meeting with the full commission present to vote on the proposed bylaw language changes"
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-27T02:02:29Z",
-    "cost_usd": 0.450244
-  },
-  "minutes": {
-    "headline": "Commission ratified an emergency order clearing a blocked culvert that flooded a Lancaster Ave home.",
-    "summary": "The Conservation Commission acted on several wetlands permits (approving a deck expansion at 200 Island Road with erosion conditions, continuing hearings on a Calry Nature Center ADA trail, a substation, a boat ramp, and an irrigation pond at 157 Goodrich Street where an abutter raised concerns), issued a certificate of compliance, extended an enforcement deadline, and ratified an emergency order to clear a flooded culvert on Lancaster Avenue. It also spent significant time on the town-owned house at 123 Hollis Road, where a decision on new flooring was tabled pending clarification of prevailing-wage and procurement requirements, and on a proposed bylaw change that was tabled until the full commission, including the absent chair, could be present.",
-    "attendees": [
-      {
-        "name_as_heard": "Richard Bers",
-        "role": "chair (presiding)"
-      },
-      {
-        "name_as_heard": "Mike Larouche",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Mary Wilson",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Andrea Bernap",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Teddy Ducet",
-        "role": "member (arrived late)"
-      },
-      {
-        "name_as_heard": "Harland (Hurland)",
-        "role": "Conservation Agent"
-      },
-      {
-        "name_as_heard": "Chris Baker",
-        "role": "presenter (representing applicant John Harrison, 200 Island Road)"
-      },
-      {
-        "name_as_heard": "Ryan Proctor",
-        "role": "presenter (Dillis and Roy, representing applicants)"
-      },
-      {
-        "name_as_heard": "John Mara",
-        "role": "presenter (representing applicant Steve Violet's farm)"
-      },
-      {
-        "name_as_heard": "Brian Marcetti (Maretti)",
-        "role": "presenter (McCarti Engineering, representing 1168 Mass Ave rear owner)"
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 2354,
-        "speaker_as_heard": "Patricia Whitney",
-        "stated_role": "abutting property owner, 137 Goodrich Street",
-        "topic": "Raised concerns about the size and placement of a proposed irrigation pond near her property line, its possible effect on her own pond, and whether tree removal would affect the wetlands; asked to review the plans in person with the engineer."
-      }
-    ],
-    "tags": [
-      "budget",
-      "contracts-and-unions",
-      "facilities",
-      "grants",
-      "legal",
-      "planning-and-zoning",
-      "policy",
-      "public-safety",
-      "recreation",
-      "roads-and-dpw",
-      "water-sewer"
-    ],
-    "votes": [
-      {
-        "t": 390,
-        "motion": "Approve the minutes of August 5th",
-        "moved_by": "Mary Wilson",
-        "outcome": "passed",
-        "procedural": true
-      },
-      {
-        "t": 1098,
-        "motion": "Issue a negative (3) determination for 200 Island Road with conditions for a siltation barrier/hay bales",
-        "moved_by": "Mary Wilson",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 1809,
-        "motion": "Continue the 1625 Massachusetts Ave hearing to September 2nd",
-        "moved_by": "Mike Larouche",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 1874,
-        "motion": "Continue the 934 Massachusetts Ave hearing to September 16th",
-        "moved_by": "Mary Wilson",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 1935,
-        "motion": "Continue the 701 Reservoir Road hearing to September 2nd",
-        "moved_by": "Mike Larouche",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 3839,
-        "motion": "Continue the 157 Goodrich Street hearing to September 2nd",
-        "moved_by": "Teddy Ducet",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 4092,
-        "motion": "Issue the certificate of compliance for 420 Goodrich Street",
-        "moved_by": "Mike Larouche",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 4370,
-        "motion": "Extend the enforcement deadline for 1168 Mass Ave rear 60 days, to October 21st",
-        "moved_by": "Teddy Ducet",
-        "outcome": "passed (Mary Wilson recused)",
-        "procedural": false
-      },
-      {
-        "t": 4617,
-        "motion": "Ratify the emergency certification for 467 Lancaster Ave culvert clearing",
-        "moved_by": "Mary Wilson",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 6379,
-        "motion": "Have Mike Larouche move forward with vinyl sheeting and carpeting at 123 Hollis Road per the Empire Group quote",
-        "moved_by": "Teddy Ducet",
-        "outcome": "not audible (superseded by decision to table pending prevailing-wage information)",
-        "procedural": false
-      },
-      {
-        "t": 7300,
-        "motion": "Adjourn",
-        "moved_by": "Mary Wilson",
-        "outcome": "passed",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 1415,
-        "topic": "Mass RTP trail grant, Calry Nature Center/1625 Mass Ave",
-        "what_was_said": "A commissioner reported determining the remaining unspent balance in the trail grant after the project scope was revised to access from the Mulpus Road side instead of rebuilding the old roadway.",
-        "figures_as_heard": [
-          "$24,000"
-        ]
-      },
-      {
-        "t": 1455,
-        "topic": "Revised engineering quote, Calry Nature Center trail/bridge",
-        "what_was_said": "A revised quote from Dillis and Roy for the engineering work on the new trail/bridge scope was reported, leaving a small margin against the grant maximum.",
-        "figures_as_heard": [
-          "21,000",
-          "21,180"
-        ]
-      },
-      {
-        "t": 5019,
-        "topic": "123 Hollis Road flooring - carpet/vinyl quote",
-        "what_was_said": "A vendor's quote to remove old carpet and pad throughout the house and install new Berber carpet, plus vinyl in the laundry room, was presented as the preferred option.",
-        "figures_as_heard": [
-          "$4,190 53"
-        ]
-      },
-      {
-        "t": 5019,
-        "topic": "123 Hollis Road flooring - vinyl planking alternate quotes",
-        "what_was_said": "Two additional quotes were obtained for installing vinyl plank flooring instead of carpet throughout, described as roughly double the cost of the carpet option.",
-        "figures_as_heard": [
-          "9,64522",
-          "10,000 $63.81"
-        ]
-      },
-      {
-        "t": 5105,
-        "topic": "123 Hollis Road (HO) account budget",
-        "what_was_said": "A member noted the current balance available in the property's account, framing it against the cost of replacing carpet versus vinyl planking.",
-        "figures_as_heard": [
-          "$26,000"
-        ]
-      },
-      {
-        "t": 5149,
-        "topic": "Smoke detector replacement, 123 Hollis Road",
-        "what_was_said": "A member estimated the cost to replace missing smoke detectors ahead of a fire department site visit.",
-        "figures_as_heard": [
-          "$400 to $500"
-        ]
-      },
-      {
-        "t": 6525,
-        "topic": "Procurement threshold for the Hollis Road flooring project",
-        "what_was_said": "Staff relayed guidance from the town's finance official that projects estimated to stay under a certain dollar threshold do not require formal bidding but still require prevailing wages and three quotes.",
-        "figures_as_heard": [
-          "$10,000"
-        ]
-      },
-      {
-        "t": 6961,
-        "topic": "Prevailing wage rates for the flooring project",
-        "what_was_said": "A commissioner read out the state's prevailing wage schedule components for laborers and floor coverers to clarify what the vendor would be required to pay.",
-        "figures_as_heard": [
-          "$50.80 an hour",
-          "$10.90 an hour",
-          "$9.75 an hour",
-          "65 cents an hour",
-          "8110 per hour",
-          "7958 per hour"
-        ]
-      }
-    ],
-    "transfers": [],
-    "decisions": [
-      {
-        "t": 2860,
-        "decision": "The applicant's engineer agreed to meet one-on-one with abutter Patricia Whitney, through the conservation office, to review the 157 Goodrich Street pond plans in person."
-      },
-      {
-        "t": 3199,
-        "decision": "Commission indicated it would condition approval of the 157 Goodrich Street pond on the applicant obtaining a Mass DEP water quality certificate before construction begins."
-      },
-      {
-        "t": 4783,
-        "decision": "Proposed bylaw language changes will wait for a meeting with the full commission present, including the absent chair, before any vote to proceed."
-      },
-      {
-        "t": 6897,
-        "decision": "Decision on the Hollis Road flooring vendor was tabled until the commission gets clarity on prevailing-wage requirements and procurement process."
-      },
-      {
-        "t": 6917,
-        "decision": "The Conservation Agent will keep pursuing a meeting with the town manager and town counsel to update the custodial/occupancy agreement for 123 Hollis Road."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 0,
-        "t_end": 108,
-        "topic": "Call to order, Zoom/AI recording notice, roll call",
-        "resolution": "procedural",
-        "tags": []
-      },
-      {
-        "t_start": 108,
-        "t_end": 128,
-        "topic": "Announcements",
-        "resolution": "informational, none raised",
-        "tags": []
-      },
-      {
-        "t_start": 128,
-        "t_end": 362,
-        "topic": "Pollinator habitat update and shed roof progress",
-        "resolution": "informational",
-        "tags": [
-          "facilities"
-        ]
-      },
-      {
-        "t_start": 382,
-        "t_end": 421,
-        "topic": "Approval of August 5th minutes",
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "t_start": 421,
-        "t_end": 1160,
-        "topic": "200 Island Road - deck expansion request for determination of applicability",
-        "resolution": "voted (negative determination with conditions)",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 1160,
-        "t_end": 1852,
-        "topic": "1625 Massachusetts Ave - Calry Nature Center ADA trail/bridge notice of intent",
-        "resolution": "continued (voted)",
-        "tags": [
-          "planning-and-zoning",
-          "grants",
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 1852,
-        "t_end": 1915,
-        "topic": "934 Massachusetts Ave - substation notice of intent",
-        "resolution": "continued (voted)",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 1915,
-        "t_end": 2017,
-        "topic": "701 Reservoir Road - boat ramp notice of intent",
-        "resolution": "continued (voted)",
-        "tags": [
-          "planning-and-zoning",
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 2017,
-        "t_end": 3859,
-        "topic": "157 Goodrich Street - irrigation pond notice of intent, abutter concerns",
-        "resolution": "continued (voted), replication area condition noted",
-        "tags": [
-          "planning-and-zoning",
-          "water-sewer"
-        ]
-      },
-      {
-        "t_start": 3859,
-        "t_end": 4136,
-        "topic": "Certificate of compliance - 420 Goodrich Street",
-        "resolution": "voted (issued)",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 4136,
-        "t_end": 4430,
-        "topic": "Enforcement update and extension - 1168 Massachusetts Ave rear",
-        "resolution": "voted (60-day extension)",
-        "tags": [
-          "planning-and-zoning",
-          "legal"
-        ]
-      },
-      {
-        "t_start": 4430,
-        "t_end": 4658,
-        "topic": "Emergency certification ratified - 467 Lancaster Ave culvert clearing",
-        "resolution": "voted (ratified)",
-        "tags": [
-          "roads-and-dpw",
-          "public-safety"
-        ]
-      },
-      {
-        "t_start": 4658,
-        "t_end": 4742,
-        "topic": "Touch a Truck outreach event and permitting handouts",
-        "resolution": "informational",
-        "tags": [
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 4742,
-        "t_end": 4932,
-        "topic": "Proposed bylaw language changes",
-        "resolution": "tabled until full commission present",
-        "tags": [
-          "policy",
-          "legal"
-        ]
-      },
-      {
-        "t_start": 4932,
-        "t_end": 4952,
-        "topic": "Budget and encroachment issue updates (old business)",
-        "resolution": "informational",
-        "tags": [
-          "budget"
-        ]
-      },
-      {
-        "t_start": 4952,
-        "t_end": 7280,
-        "topic": "123 Hollis Road town-owned house - flooring quotes, custodian/occupancy agreement, prevailing wage",
-        "resolution": "tabled pending prevailing-wage and procurement clarification",
-        "tags": [
-          "facilities",
-          "budget",
-          "contracts-and-unions"
-        ]
-      },
-      {
-        "t_start": 7280,
-        "t_end": 7300,
-        "topic": "Committee reports (master plan, open space, storm water)",
-        "resolution": "informational, none to report",
-        "tags": []
-      },
-      {
-        "t_start": 7300,
-        "t_end": 7343,
-        "topic": "Adjournment",
-        "resolution": "voted",
-        "tags": []
-      }
-    ],
-    "not_audible": [
-      "Exact spelling of several member/staff names varies across captions (e.g., \"Bernap\"/\"Bernamp\"/\"Bernab\"; \"Harland\"/\"Hurland\"; \"Maretti\"/\"Marcetti\").",
-      "Precise vote tallies are inferred from each named member saying \"I\" on roll call; no separate stated count or nay votes appear in the captions.",
-      "The reason for Mary Wilson's recusal on the 1168 Massachusetts Ave rear enforcement extension is not stated.",
-      "Exact seconding member is unclear/self-corrected in several motions (e.g., 467 Lancaster Ave, 1168 Mass Ave extension).",
-      "The prevailing-wage total figure \"8110 per hour\" appears to be a caption/transcription error, likely intended as a decimal figure.",
-      "Several dollar figures for Hollis Road flooring quotes render oddly (e.g., \"$4,190 53\", \"9,64522\") and may not reflect the true amounts."
-    ],
-    "confidence": "moderate"
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "Commission ratified an emergency order that cleared a blocked culvert on Lancaster Avenue after it flooded a home.",
-        "t": 4617
-      },
-      {
-        "line": "Commission approved a negative determination for a Island Road deck expansion, conditioned on erosion controls.",
-        "t": 1098
-      },
-      {
-        "line": "A decision on new flooring for the town-owned house at 123 Hollis Road was tabled pending prevailing-wage and procurement guidance.",
-        "t": 6897
-      },
-      {
-        "line": "The Goodrich Street irrigation pond hearing was continued after an abutter's concerns, with any approval expected to require a state water-quality permit first.",
-        "t": 3199
-      },
-      {
-        "line": "A proposed wetlands bylaw change was tabled until the full commission, including the absent chair, can be present to vote.",
-        "t": 4783
-      }
-    ],
-    "why_it_matters": [
-      "The emergency culvert order and enforcement extensions show the commission acting on flooding and compliance issues that affect specific homeowners and abutters.",
-      "Any town spending on the Hollis Road property depends on sorting out prevailing-wage and procurement rules before a vendor is chosen.",
-      "Property owners near pending wetlands applications -- the pond, the boat ramp, the substation -- will see those decisions delayed to the commission's next meetings."
-    ],
-    "watch_next": [
-      "September 2nd: continued hearings on 1625 Massachusetts Ave, 701 Reservoir Road, and 157 Goodrich Street",
-      "A future meeting with the full commission present to vote on the proposed bylaw language changes"
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-27T02:02:48Z",
-      "cost_usd": 0.195046
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T02:02:48Z",
+   "cost_usd": 0.195046
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08192026-7969",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-19-minutes-7969.txt",
+   "path": "sources/meetings/conservation-commission/2026-08-19-minutes-7969.pdf"
+  },
+  "official_sha256": "2d110d9dcebad2fbad4b250818b063cc0ac994eb1b70a3cf4838905462098d1d",
+  "coverage": "full",
+  "summary": "The two records agree on every vote's outcome except the 934 Massachusetts Ave continuance date, and the money figures match once the caption garbling is read as the official dollar amounts. The one thing to check is 934 Massachusetts Ave: the official minutes say both \"September 26\" and \"September 2\", while our recording-based minutes say September 16.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 9,
+   "discrepancy": 1,
+   "only_in_ours": 7,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "934 Massachusetts Ave continuance date",
+    "t": 1874,
+    "ours": "Continue the 934 Massachusetts Ave hearing to September 16th — passed",
+    "official": "Applicant requested a continuance until September 26, 2026",
+    "note": "Three dates appear: ours says Sept 16, the official request line says Sept 26, and the official motion says \"Motion: M. Wilson to Continue to September 2, 2026\"; check the recording at this vote and the Unitil hearing notice for the actual date.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "200 Island Road negative determination with siltation barrier condition",
+    "t": 1098,
+    "ours": "Issue a negative (3) determination for 200 Island Road with conditions for a siltation barrier/hay bales — passed",
+    "official": "Motion: M. Wilson for a Negative determination with the condition that hay bales or straw wattles",
+    "note": "Same outcome and condition; the official minutes add straw wattles and prior office approval."
+   },
+   {
+    "kind": "agree",
+    "about": "1625 Massachusetts Ave continued to Sept 2",
+    "t": 1809,
+    "ours": "Continue the 1625 Massachusetts Ave hearing to September 2nd — passed",
+    "official": "Motion: L. Larouche to Continue to September 2, 2026",
+    "note": "Same outcome and date."
+   },
+   {
+    "kind": "agree",
+    "about": "701 Reservoir Road continued to Sept 2",
+    "t": 1935,
+    "ours": "Continue the 701 Reservoir Road hearing to September 2nd — passed",
+    "official": "Motion: M. Wilson to Continue to September 2, 2026",
+    "note": "Same outcome and date."
+   },
+   {
+    "kind": "agree",
+    "about": "157 Goodrich Street continued to Sept 2",
+    "t": 3839,
+    "ours": "Continue the 157 Goodrich Street hearing to September 2nd — passed",
+    "official": "Motion: T. Doucette to Continue to September 2, 2026",
+    "note": "Same outcome and date."
+   },
+   {
+    "kind": "agree",
+    "about": "420 Goodrich Street certificate of compliance",
+    "t": 4092,
+    "ours": "Issue the certificate of compliance for 420 Goodrich Street — passed",
+    "official": "Motion: M. Larouche to approve issuance of Certificate of Compliance",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "1168 Mass Ave Rear enforcement extension",
+    "t": 4370,
+    "ours": "Extend the enforcement deadline for 1168 Mass Ave rear 60 days, to October 21st — passed (Mary Wilson recused)",
+    "official": "Motion: T. Doucette to extend the Enforcement Order for 60 days to October 21, 2026",
+    "note": "Same 60 days, same date, same Wilson recusal."
+   },
+   {
+    "kind": "agree",
+    "about": "467 Lancaster Ave emergency certification ratified",
+    "t": 4617,
+    "ours": "Ratify the emergency certification for 467 Lancaster Ave culvert clearing — passed",
+    "official": "Motion: M. Willson to ratify the Emergency Certification",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Hollis Road flooring vote superseded by tabling",
+    "t": 6379,
+    "ours": "Have Mike Larouche move forward with vinyl sheeting and carpeting at 123 Hollis Road per the Empire Group quote — not audible (superseded by decision to table pending prevailing-wage information)",
+    "official": "A motion was initially made to proceed with the carpeting and vinyl flooring but questions arose regarding procurement requirements and prevailing wage requirements.",
+    "note": "Both records show an initial motion to proceed that was overtaken by tabling; neither records a vote result."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Revised engineering quote, Cowdery trail/bridge",
+    "t": 1455,
+    "ours": "21,000, 21,180",
+    "official": "A revised engineering scope was discussed at approximately $21,180.",
+    "note": "Same item; the official minutes give one figure, $21,180, so the 21,000 in ours looks like a misheard or intermediate figure. Also the site name is Cowdery, not Calry.",
+    "official_reading": "$21,180"
+   },
+   {
+    "kind": "agree",
+    "about": "Mass RTP trail grant remaining",
+    "t": 1415,
+    "ours": "Mass RTP trail grant, Calry Nature Center/1625 Mass Ave: $24,000",
+    "official": "Approximately $24,000 remains available under the existing Mass Recreational Trails grant.",
+    "note": "Same figure; ours misheard the site name (official: Cowdery Nature Center)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Empire Group carpet/vinyl quote",
+    "t": 5019,
+    "ours": "$4,190 53",
+    "official": "On quote from Empire Group was $4,190.53",
+    "note": "Decimal point lost in captions.",
+    "official_reading": "$4,190.53"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vinyl plank quotes",
+    "t": 5019,
+    "ours": "9,64522, 10,000 $63.81",
+    "official": "Two additional quotes for vinyl plank flooring were $9,645.22 and $10,063.81.",
+    "note": "Digit grouping garbled; the second quote is $10,063.81, not $10,000.",
+    "official_reading": "$9,645.22 and $10,063.81"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "123 Hollis Road (HO) account budget",
+    "t": 5105,
+    "ours": "123 Hollis Road (HO) account budget: $26,000",
+    "official": "",
+    "note": "The official minutes give no account balance; check the recording if the figure matters."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Smoke detector cost",
+    "t": 5149,
+    "ours": "Smoke detector replacement, 123 Hollis Road: $400 to $500",
+    "official": "",
+    "note": "The official minutes mention smoke detectors and a Fire Department visit but give no price."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Procurement threshold",
+    "t": 6525,
+    "ours": "Procurement threshold for the Hollis Road flooring project: $10,000",
+    "official": "",
+    "note": "The official minutes mention procurement requirements without a threshold figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prevailing wage rates",
+    "t": 6961,
+    "ours": "Prevailing wage rates for the flooring project: $50.80 an hour, $10.90 an hour, $9.75 an hour, 65 cents an hour, 8110 per hour, 7958 per hour",
+    "official": "",
+    "note": "The official minutes give no rates; the captions are garbled, so these should not be quoted without checking the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Hollis Road flooring tabled",
+    "t": 6897,
+    "ours": "Decision on the Hollis Road flooring vendor was tabled until the commission gets clarity on prevailing-wage requirements and procurement process.",
+    "official": "The Commission ultimately tabled the flooring decision pending clarification of the applicable requirements.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "agree",
+    "about": "157 Goodrich pond conditioned on Water Quality Certificate",
+    "t": 3199,
+    "ours": "Commission indicated it would condition approval of the 157 Goodrich Street pond on the applicant obtaining a Mass DEP water quality certificate before construction begins.",
+    "official": "The applicant agreed to include approval of the Water Quality Certificate as a condition prior to construction.",
+    "note": "Same condition; the official minutes attribute the agreement to the applicant."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Engineer agrees to meet abutter Whitney",
+    "t": 2860,
+    "ours": "The applicant's engineer agreed to meet one-on-one with abutter Patricia Whitney, through the conservation office, to review the 157 Goodrich Street pond plans in person.",
+    "official": "",
+    "note": "The official minutes record only that Whitney requested an in-person review, not that the engineer agreed."
+   },
+   {
+    "kind": "agree",
+    "about": "Bylaw changes wait for full commission",
+    "t": 4783,
+    "ours": "Proposed bylaw language changes will wait for a meeting with the full commission present, including the absent chair, before any vote to proceed.",
+    "official": "It was agreed that the matter should be continued until the full commission is present, including the Chair.",
+    "note": "Same decision; the official minutes add that it concerns the fee schedule and targets May Town Meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Agent pursuing meeting with town manager and counsel on 123 Hollis Road agreement",
+    "t": 6917,
+    "ours": "The Conservation Agent will keep pursuing a meeting with the town manager and town counsel to update the custodial/occupancy agreement for 123 Hollis Road.",
+    "official": "",
+    "note": "Not in the official minutes; check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 08/05/26 minutes",
+    "ours": "",
+    "official": "Motion: M. Wilson to approve",
+    "note": "A recorded roll-call vote approving prior minutes that our minutes do not list; likely treated as procedural."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "108 Sunny Hill Road hearing",
+    "ours": "",
+    "official": "108 Sunny Hill Road: NOI-26-24  Previously Continued to 09/02",
+    "note": "Listed on the agenda as previously continued; no vote and no discussion in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Touch-A-Truck and pollinator update",
+    "ours": "",
+    "official": "The Recreational Department will hold a Touch-A-Truck event on Friday, August 28th from 12:00 pm to 2:30 pm.",
+    "note": "Announcements the official record has that ours does not; no vote."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair/presiding member name",
+    "ours": "Richard Bers (chair (presiding))",
+    "official": "Call to Order at 7:04 pm by R. Burch",
+    "note": "Misheard surname; the official roll call lists Bursch/Burch (spelled both ways), and the official letterhead lists Jennifer Pewtherer as Chair and Richard Bursch as Vice Chair, so our \"chair\" label may be wrong.",
+    "official_reading": "Richard Bursch"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Andrea Burnap",
+    "ours": "Andrea Bernap (member)",
+    "official": "A. Burnap",
+    "note": "Misheard surname.",
+    "official_reading": "Andrea Burnap"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Teddy Doucette",
+    "ours": "Teddy Ducet (member (arrived late))",
+    "official": "T. Doucette (arrived later)",
+    "note": "Misheard surname; late arrival agrees.",
+    "official_reading": "Teddy Doucette"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation Agent name",
+    "ours": "Harland (Hurland) (Conservation Agent)",
+    "official": "Herlin Jaime – Conservation Agent",
+    "note": "Misheard name.",
+    "official_reading": "Herlin Jaime"
+   },
+   {
+    "kind": "caption_error",
+    "about": "1168 Mass Ave engineer",
+    "ours": "Brian Marcetti (Maretti) (presenter (McCarti Engineering, representing 1168 Mass Ave rear owner))",
+    "official": "Brian Marcetti of McCarty Engineering",
+    "note": "Firm name misspelled in captions.",
+    "official_reading": "McCarty Engineering"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Ryan Proctor's firm",
+    "ours": "Ryan Proctor (presenter (Dillis and Roy, representing applicants))",
+    "official": "Ryan Proctor (Dill & Roy) represented the applicant",
+    "note": "Firm name misheard.",
+    "official_reading": "Dill & Roy"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Chris Baker, 200 Island Road",
+    "ours": "Chris Baker (presenter (representing applicant John Harrison, 200 Island Road))",
+    "official": "Chris Baker was present representing John Harrison and Bertivia Homes.",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "John Mara as presenter for Violette farm",
+    "ours": "John Mara (presenter (representing applicant Steve Violet's farm))",
+    "official": "",
+    "note": "The official minutes name only Ryan Proctor as representing the applicant (Stephen Violette); verify whether John Mara spoke."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Jennifer Pewtherer",
+    "ours": "",
+    "official": "Absent:  J. Pewtherer",
+    "note": "Our attendee list does not name the absent member; ours only refers to an absent chair."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-02T11:49:50Z",
+   "cost_usd": 0.270147
+  }
+ }
 }
