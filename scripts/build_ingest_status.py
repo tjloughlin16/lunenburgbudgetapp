@@ -488,8 +488,14 @@ def annual_report_pages():
             # FY2023 p25 is stored at 93 dpi with about 150 line items on it -- and it fell
             # into the `else` here, which labels a page `not yet read (TOKENS)`. That is the
             # exact opposite of true: it is the one state model spend cannot move.
+            # AND IT IS NOT OUTSTANDING WORK EITHER, so it does not join `todo`. It was
+            # counted in BOTH, which made this card contradict itself: the headline said
+            # `0 of 511 pages unfinished` while the bar, fed todo=3, drew amber -- one
+            # number saying finished and the colour beside it saying not. TJ saw the bar
+            # and asked whether it was done. A page nobody can read is reported in its own
+            # colour and its own count, never as a backlog somebody could clear.
             blocked += 1
-            label += ' \u2014 BLOCKED, the page cannot be read (see page-blocked.csv)'
+            continue
         else:
             unread += 1
             label += ' \u2014 not yet read (TOKENS)'
@@ -893,14 +899,16 @@ def streams():
                            'free, background'),
                           ('BLOCKED', ar_blocked,
                            'somebody looked and the page cannot be read at all',
-                           'nothing here &mdash; needs a better scan'),
+                           'nothing here &mdash; and for 2 of the 3 a better scan is NOT the '
+                           'remedy: the TOWN did not print the figures'),
                       ], name='Annual report pages, by what is on them',
                       io='in: 15 annual town reports, page by page &rarr; out: the tables '
                          'nobody has extracted yet, grouped by subject',
                       done=ar_done, todo=sum(p['n'] for p in ar_todo),
                       blocked=ar_blocked,
-                      blocked_why=('the page cannot be read: see '
-                                   'sources/data/page-blocked.csv'),
+                      blocked_why=('CLOSED, not outstanding. Somebody read these and '
+                                   'could not: one is a 93 dpi scan, two the town '
+                                   'printed short. sources/data/page-blocked.csv'),
                       cost='~0.12% of the week a page if run on its own; far more if done in a conversation',
                       last=ago(newest([os.path.join(DATA, 'annual-report-pages.csv')])),
                       # WHAT THE ITEMISATION BELOW CANNOT SAY. The four counts and their
@@ -1532,9 +1540,10 @@ font-variant-numeric:tabular-nums;flex:0 0 auto}
 .row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .grow{flex:1;min-width:200px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
 .num{font-variant-numeric:tabular-nums}
-.bar{height:6px;background:#21262d;border-radius:3px;overflow:hidden;margin-top:6px}
+.bar{height:6px;background:#21262d;border-radius:3px;overflow:hidden;margin-top:6px;display:flex}
 .bar i{display:block;height:100%;background:#3fb950}
 .bar i.part{background:#d29922}
+.bar i.blocked{background:#f85149}
 /* A PILL IS A LABEL, AND A LABEL THAT WRAPS IS NOT ONE. "stopped part-way" broke across
    two lines inside its own rounded box, which reads as two damaged pills rather than one
    phrase. white-space:nowrap keeps it whole; inline-block makes the padding and radius
@@ -1576,7 +1585,7 @@ border:1px solid #30363d;color:#6cb6ff;text-decoration:none}
 .lnk:hover{border-color:#6cb6ff}
 """
 
-def bar(done, todo):
+def bar(done, todo, blocked=0):
     """Green means finished. Anything short of finished is amber.
 
     TJ, 19 September 2026: "none should be green until its done." He is right, and the
@@ -1584,11 +1593,22 @@ def bar(done, todo):
     when the only thing it says is that a backlog is 40% unread. Green is a claim about
     the END STATE, and spending it on progress leaves no colour to mean 'complete'.
     """
-    tot = (done or 0) + (todo or 0)
+    tot = (done or 0) + (todo or 0) + (blocked or 0)
     if not tot:
         return ''
+    # A BLOCKED PAGE IS NOT DONE AND IT IS NOT OUTSTANDING, so it gets its own colour.
+    # Before this, 511 proven and 3 blocked drew a FULL GREEN bar: the three pages nobody
+    # could read were counted as finished, and the bar claimed 100% of a thing that is
+    # 99.4%. TJ, 3 October 2026: *make the progress bar red then to show they are blocked,
+    # and in the count section show the blocked count.* Red is right because it is the one
+    # state no amount of work moves -- amber says `not yet`, red says `not from here`.
+    pd = 100.0 * (done or 0) / tot
+    pb = 100.0 * (blocked or 0) / tot
     cls = '' if not todo else ' class="part"'
-    return '<div class="bar"><i%s style="width:%.1f%%"></i></div>' % (cls, 100.0 * done / tot)
+    out = '<div class="bar"><i%s style="width:%.1f%%"></i>' % (cls, pd)
+    if blocked:
+        out += '<i class="blocked" style="width:%.1f%%"></i>' % pb
+    return out + '</div>'
 
 def alert():
     """An alarm about the CURRENT state, not a memorial to past failures.
@@ -2211,10 +2231,12 @@ def page_backlog(st):
                     s.get('headline') or
                     _counted(s['done'], s.get('unit'), total=(s['done'] + (todo or 0))),
                     'go' if todo == 0 else 'warn',
-                    'complete' if todo == 0 else
+                    # `complete` with blocked pages on it overstates the thing. Say both.
+                    ('complete' if not s.get('blocked')
+                     else 'complete &middot; %d blocked' % s['blocked']) if todo == 0 else
                     (s.get('pill') or _counted(todo, s.get('unit'), remaining=True)
                      if todo is not None else 'unknown'),
-                    bar(s['done'], todo or 0), s.get('io', ''), html.escape(s['cost']),
+                    bar(s['done'], todo or 0, s.get('blocked') or 0), s.get('io', ''), html.escape(s['cost']),
                     html.escape(s['note']),
                     (' &middot; %d blocked: %s' % (s['blocked'], html.escape(s['blocked_why']))) if s['blocked'] else ''))
         # THE TERMS, ITEMISED AND NOT COLLAPSED. A headline of `unfinished` is only honest
@@ -2229,7 +2251,13 @@ def page_backlog(st):
                      '<span style="flex:0 0 3.5rem;text-align:right">%s</span>'
                      '<span class="grow">%s</span>'
                      '<span style="color:#8b949e">%s</span></div>'
+                     # BLOCKED IS RED AND MATCHES ITS SEGMENT IN THE BAR. It was grey,
+                     # the colour this card uses for `a count that is zero and tells you
+                     # so`, so the one state nothing can move looked like the states that
+                     # had nothing in them. A reader following a red segment in the bar
+                     # down to the counts has to land on the same colour.
                      % ('#3fb950' if term == 'PROVEN' else
+                        '#f85149' if term == 'BLOCKED' else
                         '#d29922' if term in ('UNPROVEN', 'REFUSED') else '#8b949e',
                         html.escape(term), '{:,}'.format(n), html.escape(means), action))
         # THE BREAKDOWN, COLLAPSED. A backlog total says how worried to be; the boards and
