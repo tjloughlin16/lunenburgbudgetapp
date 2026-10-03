@@ -38,6 +38,24 @@
  * than 2,000 hits in a corpus and local past that -- stated in the response rather than
  * hidden. Identical queries are served from the edge for ten minutes, as /api/query is.
  *
+ * THE ORDER IS A PARAMETER, AND IT IS PER CORPUS -- AND IT COSTS NOTHING
+ *
+ *     &sort=newest     newest first, in the corpora whose rows carry a date
+ *     &sort=relevance  bm25 everywhere (the default, and what every caller got before)
+ *
+ * `sort=newest` changes ONLY the OUTER `ORDER BY` of the query that was already running:
+ * the inner subselect still reads the same `LIMIT CANDIDATES` rows, so rows read -- the
+ * thing D1 bills and rations -- is identical. Reordering rows already in memory is free.
+ *
+ * It is applied PER CORPUS because a date is not a thing every corpus has. Measured on the
+ * index: 0 of 11,928 `source` rows and 0 of 1,233 `page` rows carry a date, and every row
+ * of `minutes`, `recorded` and `transcript` does. So a GLOBAL newest-first would hand back
+ * the archive's documents in whatever order an empty date string sorts in, and bury the
+ * contract a reader came for under hundreds of recent minutes -- silently, which is the
+ * failure mode this endpoint exists to refuse. `sortedBy` in the response names the order
+ * each corpus actually came back in, so a caller never has to infer it, and a row with a
+ * missing or malformed date sorts LAST within its corpus rather than first.
+ *
  * THE QUERY IS REWRITTEN, NOT PASSED THROUGH
  *
  * FTS5's MATCH syntax throws on an unbalanced quote or a stray colon, and a resident
@@ -49,6 +67,10 @@
 
 const SITE = 'https://lunenburgbudgetproject.org'
 const CORPORA = ['post', 'page', 'recorded', 'source', 'minutes', 'transcript']
+/** The only corpora whose rows carry a date. Measured on the index, not assumed:
+ *  every `minutes`, `recorded` and `transcript` row has one; no `source` or `page` row
+ *  does. A date sort is offered for these three and refused for the rest. */
+const DATED = ['minutes', 'recorded', 'transcript']
 const PER_CORPUS = 12          // hits returned per corpus
 const CANDIDATES = 2000        // rows a corpus search may read before ranking
 const CACHE_SECONDS = 600
@@ -95,6 +117,8 @@ export async function onRequest(context) {
   const corpora = corpusParam.length ? CORPORA.filter(c => corpusParam.includes(c)) : CORPORA
   const board = (url.searchParams.get('board') || '').trim().slice(0, 80)
   const since = (url.searchParams.get('since') || '').trim().slice(0, 10)
+  // Default `relevance`, so a caller that does not ask gets exactly what it got before.
+  const sort = (url.searchParams.get('sort') || '').trim() === 'newest' ? 'newest' : 'relevance'
   const expr = ftsExpression(q)
 
   // The index's own statement of what it holds, written by the push. Read, never counted
@@ -114,7 +138,7 @@ export async function onRequest(context) {
   if (!expr) return json({ resource: 'search', q, expression: '', index, results: {}, counts: {} })
 
   const cache = caches.default
-  const cacheKey = new Request(`https://search.invalid/${encodeURIComponent(expr)}|${corpora.join(',')}|${board}|${since}`, { method: 'GET' })
+  const cacheKey = new Request(`https://search.invalid/${encodeURIComponent(expr)}|${corpora.join(',')}|${board}|${since}|${sort}`, { method: 'GET' })
   const hit = await cache.match(cacheKey)
   if (hit) {
     return new Response(await hit.text(), { headers: { ...HEADERS, 'cache-control': `public, max-age=${CACHE_SECONDS}`, 'x-query-cache': 'hit' } })
@@ -124,6 +148,7 @@ export async function onRequest(context) {
   let rowsRead = 0
   const results = {}
   const counts = {}
+  const sortedBy = {}
   const filters = []
   const binds = []
   if (board) { filters.push('board_slug = ?'); binds.push(board) }
@@ -147,6 +172,18 @@ export async function onRequest(context) {
 
   try {
     for (const c of corpora) {
+      // The outer ORDER BY, over rows the subselect has already read. A row whose date is
+      // missing, empty OR NOT AN ISO DATE goes LAST, and the test is the shape of the
+      // string rather than its emptiness. '' sorts before every real date, so a bare DESC
+      // would put undated rows on TOP of a newest-first list; and anything non-numeric --
+      // 'undated', 'n.d.' -- sorts AFTER '2026', so emptiness alone is not enough. Every
+      // dated row in the index today is ISO (checked: 0 of 290,720 are not), which is
+      // exactly why a guard is cheap now and would be archaeology later.
+      const byDate = sort === 'newest' && DATED.includes(c)
+      sortedBy[c] = byDate ? 'date' : 'rank'
+      const order = byDate
+        ? "ORDER BY (date GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') DESC, date DESC, rank"
+        : 'ORDER BY rank'
       const sql = `
         SELECT * FROM (
           SELECT corpus, doc_key, title, board, board_slug, date, kind, cite_url, source_url,
@@ -154,7 +191,7 @@ export async function onRequest(context) {
                  snippet(search, 0, '‹', '›', '…', 20) AS snippet
           FROM search WHERE search MATCH ?1 AND corpus = ?2${where}
           LIMIT ${CANDIDATES}
-        ) ORDER BY rank LIMIT ${PER_CORPUS}`
+        ) ${order} LIMIT ${PER_CORPUS}`
       const countSql = `SELECT COUNT(*) AS n FROM (SELECT rowid FROM search WHERE search MATCH ?1 AND corpus = ?2${where} LIMIT ${CANDIDATES})`
       const [r, n] = await Promise.all([
         db.prepare(sql).bind(expr, c, ...binds).all(),
@@ -206,9 +243,12 @@ export async function onRequest(context) {
     corpora,
     board: board || null,
     since: since || null,
+    sort,
+    sortedBy,
+    dated: DATED,
     perCorpus: PER_CORPUS,
     candidates: CANDIDATES,
-    ranking: `bm25 within the first ${CANDIDATES} matching rows of each corpus; a count of ${CANDIDATES}+ means the cap was hit and ranking is local to those rows`,
+    ranking: `${sort === 'newest' ? 'newest first in ' + DATED.join(', ') + ' and bm25 in the rest' : 'bm25'}, within the first ${CANDIDATES} matching rows of each corpus; a count of ${CANDIDATES}+ means the cap was hit and the order is local to those rows`,
     index,
     counts,
     results,

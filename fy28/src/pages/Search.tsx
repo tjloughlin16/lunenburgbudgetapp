@@ -70,7 +70,53 @@ const VOCAB = '/data/search-vocabulary.json'
  *  offers the archive's own terms for what was typed, from a curated list, and never a
  *  semantically similar passage: similar is the one thing this project does not publish.
  *  It now offers them whether or not the search found anything, because "landscaping"
- *  finds 2,189 things and none of them is the grounds contract. */
+ *  finds 2,189 things and none of them is the grounds contract.
+ *
+ *  THE ORDER IS A CONTROL, IT IS NEWEST-FIRST BY DEFAULT, AND IT IS PER SECTION.
+ *
+ *  TJ, 2 October 2026: *"need sort order. newest first by default. relevance next?"*
+ *
+ *  The fact that shapes it: **0 of 11,928 document rows in the index carry a date, and 0 of
+ *  1,233 site pages. Not one.** Only minutes (11,020), our notes from the recordings (558)
+ *  and the machine captions (279,142) have one. So a GLOBAL newest-first would hand a
+ *  reader hundreds of recent minutes and file every document in the archive underneath them
+ *  -- including the Parks grounds bid this page was rebuilt to surface -- and it would do it
+ *  SILENTLY. That is the same misreading as the date filter: `date >= '2025-07-01'` removes
+ *  every document, and a greyed `Documents 0` reads as *the town never published one*.
+ *
+ *  So the order is applied PER SECTION -- AND THEREFORE SO IS THE CONTROL.
+ *
+ *  The first build of this put a global `Sort: [Newest first] [Relevance]` row under the
+ *  chips. TJ: *"dont you think its too many primary CTAs in the same area?"* Two reasons it
+ *  was wrong, and the second is the one that matters:
+ *
+ *   - FOUR CONTROL CLUSTERS ABOVE THE RESULTS, of which one is genuinely primary. The chips
+ *     are not really a control at all, they are the ANSWER -- `Documents 132` says where the
+ *     thing is before anybody clicks -- and a refinement almost nobody touches cannot carry
+ *     the same weight.
+ *   - A GLOBAL CONTROL THAT APPLIES TO SOME SECTIONS IS THE BOARD/DATE MISTAKE AGAIN, one
+ *     row higher. A general-looking control that silently does nothing to what the reader
+ *     came for is the whole confusion this page was rebuilt to remove.
+ *
+ *  So it is small, muted, right-aligned furniture on each section heading, where it cannot
+ *  misstate its own scope:
+ *
+ *   - A DATED SECTION gets the toggle -- `newest first · relevance`, both visible, because
+ *     there are only two and a select would hide the choice. Newest is the default.
+ *   - AN UNDATED SECTION gets the FACT AND NOT A DISABLED CONTROL: `by relevance — these
+ *     carry no date`. A greyed-out toggle invites a reader to wonder what they did wrong;
+ *     a sentence answers them.
+ *   - EVERY HEADING SAYS WHICH ORDER IT IS IN either way, so nobody has to infer it.
+ *   - `sort=` IS IN THE URL beside `type=`, always and explicitly, so a pasted link means
+ *     the same thing after the default moves. One parameter binds all the dated sections;
+ *     the undated ones cannot vary, so there is nothing for it to say about them.
+ *
+ *  It is a server parameter rather than a client sort because the API returns the 12
+ *  BEST-RANKED rows per corpus. Sorting those twelve by date gives "the newest of the most
+ *  relevant twelve", which for 391 matching minutes is not the newest minutes and would be
+ *  labelled as though it were. It costs nothing: `sort=newest` changes only the OUTER
+ *  `ORDER BY` of a query whose inner subselect already read those rows, so rows read -- what
+ *  D1 bills -- is unchanged. */
 
 type Hit = {
   corpus: Corpus
@@ -96,6 +142,8 @@ type Payload = {
   expression: string
   index: { built: string | null; holds: Record<Corpus, number> }
   counts: Partial<Record<Corpus, Count>>
+  sort?: Sort
+  sortedBy?: Partial<Record<Corpus, 'date' | 'rank'>>
   results: Partial<Record<Corpus, Hit[]>>
   rowsRead?: number
   ms?: number
@@ -122,18 +170,70 @@ const ORDER: Corpus[] = ['source', 'minutes', 'page', 'post', 'recorded', 'trans
  *  here) and `recorded`/`transcript` are one place to look (the video). They stay SEPARATE
  *  SECTIONS underneath: our minutes of a recording and the machine captions of it are
  *  derived to different depths and must not be summed or merged. */
-const GROUPS: { id: string; label: string; hint: string; corpora: Corpus[] }[] = [
-  { id: 'documents', label: 'Documents', corpora: ['source'],
+/** `short` is the chip's own label, and it exists because of the GRID. Four equal cells at
+ *  half of 400px leave about 150px of content, and `Minutes & agendas` and `Meeting
+ *  recordings` both wrap in that -- which makes one cell two lines tall and the row ragged
+ *  again, the exact thing the grid is for. So the chip carries the short word and `label`
+ *  carries the full one wherever there is room for it: the hint list, the sentence above the
+ *  results, the screen-reader line on every card. Shortening the label everywhere would
+ *  have cost `agendas`, and an agenda is not a set of minutes. */
+const GROUPS: { id: string; label: string; short: string; hint: string; corpora: Corpus[] }[] = [
+  { id: 'documents', label: 'Documents', short: 'Documents', corpora: ['source'],
     hint: 'Budgets, contracts, purchase orders, annual reports and state files, cited to the page. Not minutes.' },
-  { id: 'minutes', label: 'Minutes & agendas', corpora: ['minutes'],
-    hint: 'What the town published before and after a meeting. A record.' },
-  { id: 'recordings', label: 'Meeting recordings', corpora: ['recorded', 'transcript'],
+  { id: 'minutes', label: 'Minutes & agendas', short: 'Minutes', corpora: ['minutes'],
+    hint: 'What the town published before and after a meeting — minutes and agendas both. A record.' },
+  { id: 'recordings', label: 'Meeting recordings', short: 'Recordings', corpora: ['recorded', 'transcript'],
     hint: 'Machine captions of the videos, and our own notes written from them. A finding aid, never the record.' },
-  { id: 'site', label: 'On this site', corpora: ['page', 'post'],
+  { id: 'site', label: 'On this site', short: 'This site', corpora: ['page', 'post'],
     hint: 'The analyses, the board and meeting pages, and the posts written by this project.' },
 ]
 /** The kinds a board or a date can narrow at all: only these rows carry either. */
 const DATED: Corpus[] = ['minutes', 'recorded', 'transcript']
+
+/** THE TWO ORDERS, AND THE DEFAULT. `newest` first because that is what a reader asks of a
+ *  record; `relevance` kept because it is the only order the undated nine tenths of the
+ *  index has, and because a search for a word wants the best match for it. */
+type Sort = 'newest' | 'relevance'
+const SORTS: { id: Sort; label: string }[] = [
+  { id: 'newest', label: 'newest first' },
+  { id: 'relevance', label: 'relevance' },
+]
+
+/** THE ORDER, ON THE HEADING OF THE SECTION IT ORDERS.
+ *
+ *  WHETHER THERE IS A TOGGLE AT ALL turns on whether this CORPUS HAS DATES, and the first
+ *  build got that wrong by reading the API's `sortedBy` -- the order the rows actually came
+ *  back in. In relevance mode every corpus comes back by rank, so all six sections printed
+ *  `by relevance — these carry no date` and the minutes, which are dated to the day, lost
+ *  the switch that would have got a reader back. `sortedBy` says what happened; `dated`
+ *  says what is POSSIBLE, and only the second may decide whether a control exists.
+ *
+ *  `by` is still read, as the assertion that the API did what the heading claims: a dated
+ *  section showing `newest first` whose rows came back by rank would be the page lying
+ *  about its own order, so it says `by relevance` instead. */
+function Order({ dated, by, set }: {
+  dated: boolean; by?: 'date' | 'rank'; set: (s: Sort) => void
+}) {
+  if (!dated) return (
+    <span className="text-xs sm:ml-auto" style={{ color: 'var(--text-muted)' }}>
+      by relevance — these carry no date
+    </span>
+  )
+  const live: Sort = by === 'date' ? 'newest' : 'relevance'
+  return (
+    <span className="text-xs sm:ml-auto inline-flex items-center gap-1.5" role="group" aria-label="Order these">
+      {SORTS.map((o, i) => (
+        <span key={o.id} className="inline-flex items-center gap-1.5">
+          {i > 0 && <span aria-hidden="true" style={{ color: 'var(--grid)' }}>·</span>}
+          {live === o.id
+            ? <span aria-current="true" style={{ color: 'var(--text-secondary)' }}>{o.label}</span>
+            : <button type="button" onClick={() => set(o.id)} className="underline"
+                style={{ color: 'var(--series-cost)' }}>{o.label}</button>}
+        </span>
+      ))}
+    </span>
+  )
+}
 const groupOf = (c: Corpus) => GROUPS.find(g => g.corpora.includes(c))!
 
 const NAME: Record<Corpus, string> = {
@@ -152,6 +252,20 @@ const UNIT: Record<Corpus, [string, string]> = {
   minutes: ['document', 'documents'],
   transcript: ['minute of recording', 'minutes of recording'],
 }
+/** THE SECTION'S OWN SENTENCE -- PRINTED ONLY WHERE IT IS LOAD-BEARING, OR ASKED FOR.
+ *
+ *  It used to print on every section, which at 400px put three lines of furniture between a
+ *  heading and the first result: the denominator, the order, and this. Two of the three had
+ *  to stay. This one is per-section prose a returning reader has already read, and the chip
+ *  for every kind carries the same sentence as its hint -- shown under the chips the moment
+ *  a reader filters to that kind.
+ *
+ *  SO IT PRINTS UNCONDITIONALLY FOR EXACTLY THE TWO KINDS THAT ARE OURS. `transcript` is a
+ *  caption model's hearing of a recording and `recorded` is our notes written off those
+ *  captions; a reader who takes either for the record has been misled, and that warning is
+ *  not furniture. Both sections render LAST, so neither costs a line above the first result.
+ *  Every other kind shows it when that kind is the one being looked at. */
+const WHAT_ALWAYS: Corpus[] = ['recorded', 'transcript']
 const WHAT: Record<Corpus, string> = {
   post: 'What this project has published, one finding at a time.',
   page: 'The analyses and reference pages here.',
@@ -212,12 +326,14 @@ export default function Search() {
       board: u.searchParams.get('board') || '',
       since: u.searchParams.get('since') || '',
       type: GROUPS.some(g => g.id === t) ? t : '',
+      sort: (u.searchParams.get('sort') === 'relevance' ? 'relevance' : 'newest') as Sort,
     }
   }, [])
   const [q, setQ] = useState(initial.q)
   const [board, setBoard] = useState(initial.board)
   const [since, setSince] = useState(initial.since)
   const [type, setType] = useState(initial.type)
+  const [sort, setSort] = useState<Sort>(initial.sort)
   const [asked, setAsked] = useState(initial.q)
   const [data, setData] = useState<Payload | null>(null)
   const [busy, setBusy] = useState(false)
@@ -242,8 +358,11 @@ export default function Search() {
     if (board) u.searchParams.set('board', board); else u.searchParams.delete('board')
     if (since) u.searchParams.set('since', since); else u.searchParams.delete('since')
     if (type) u.searchParams.set('type', type); else u.searchParams.delete('type')
+    // Written even when it is the default: a shared link should keep its meaning if the
+    // default ever moves, which is not true of a parameter that is only present when set.
+    if (asked) u.searchParams.set('sort', sort); else u.searchParams.delete('sort')
     window.history.replaceState(null, '', u.pathname + u.search)
-  }, [asked, board, since, type])
+  }, [asked, board, since, type, sort])
 
   useEffect(() => {
     let alive = true
@@ -256,6 +375,11 @@ export default function Search() {
     const params = new URLSearchParams({ q: asked })
     if (board) params.set('board', board)
     if (since) params.set('since', since)
+    // The order is the API's business, not this page's: it returns the twelve BEST-RANKED
+    // rows per corpus, so sorting those twelve here would produce "the newest of the most
+    // relevant twelve" and call it newest first. It costs no extra rows read -- only the
+    // outer ORDER BY of a query that already read them changes.
+    params.set('sort', sort)
     // For about half a minute after a deploy the static site is live before the API
     // function is, and /api/search answers with the page's own HTML. TJ hit exactly that
     // (15 Sep: "Unexpected token '<', '<!doctype'"). Read the body as text, and if it is
@@ -277,7 +401,7 @@ export default function Search() {
       .catch(e => { if (alive) setErr(e instanceof Error ? e.message : String(e)) })
       .finally(() => { if (alive) setBusy(false) })
     return () => { alive = false }
-  }, [asked, board, since])
+  }, [asked, board, since, sort])
 
   const total = data ? ORDER.reduce((n, c) => n + (data.counts[c]?.hits || 0), 0) : 0
   const groupCount = (gid: string) => {
@@ -318,31 +442,53 @@ export default function Search() {
   })
 
   return (
-    <ReportShell tab={TAB} kicker="Find it" title="Search everything this project holds"
-      standfirst="Documents, minutes, meeting recordings and the pages here — in one box." noPrint>
+    /* THE BOX IS THE PAGE, SO IT STARTS NEAR THE TOP. Rule 7a, measured rather than
+       argued: at a true 400px the old header -- a two-line H1 and a three-line standfirst
+       saying the same thing again -- put the input 280px down and the first result 726px
+       down, on a screen that shows about 850. A search page that opens with five lines
+       about searching is the four-page correction this file already carries, applied to
+       the one page where the thing is a text field. */
+    <ReportShell tab={TAB} kicker="Find it" title="Search everything"
+      standfirst="Documents, minutes, recordings and this site." noPrint>
 
-      <form className="mt-6 flex flex-wrap gap-2 items-center"
+      {/* THE BUTTON SITS IN THE ROW, NOT UNDER IT. `w-full` on the input pushed a
+          full-width blue button onto a line of its own, for a tap almost nobody makes --
+          the form submits on Enter. */}
+      <form className="mt-4 sm:mt-6 flex gap-2 items-center"
         onSubmit={e => { e.preventDefault(); setAsked(q.trim()) }}>
         <input ref={box} value={q} onChange={e => setQ(e.target.value)}
           placeholder='A word, or a "phrase in quotes"'
           aria-label="Search"
-          className="px-3 py-2 text-base rounded border w-full sm:w-[26rem] min-w-0"
+          className="px-3 py-2 text-base rounded border flex-1 sm:flex-none sm:w-[26rem] min-w-0"
           style={{ background: 'var(--surface-2)', borderColor: 'var(--grid)', color: 'var(--text-primary)' }} />
-        <button type="submit" className="px-4 py-2 text-sm font-semibold rounded"
+        <button type="submit" className="px-4 py-2 text-sm font-semibold rounded shrink-0"
           style={{ background: 'var(--series-cost)', color: '#fff' }}>Search</button>
       </form>
 
-      {/* WHAT KIND OF THING, AND HOW MANY OF EACH. The primary control, directly under the
-          box, with the count for the live query on every chip -- so "where is the
-          contract" is answered by reading one line rather than by scrolling past a
-          thousand captions. */}
+      {/* WHAT KIND OF THING, AND HOW MANY OF EACH -- IN A GRID, BECAUSE THE COUNTS ARE THE
+          POINT OF IT.
+
+          TJ, 2 October 2026: *"shouldn't the filter buttons be more.... strictly organized?
+          they are just wrapped which looks haphazard"*. Wrapped flex put `Everything` and
+          `Documents` on one line and then gave each remaining chip a line of its own, every
+          one a different width -- four ragged rows for five chips at 400px, and a rag reads
+          as nobody having decided anything.
+          
+          But the structural fault is the one worth fixing: THESE WERE NEVER FIVE OF A KIND.
+          `Everything` is not a content type, it is the absence of a filter, and laying it
+          out as a peer of the four types is what the rag was a picture of. So the four types
+          get a strict 2x2 (1fr 1fr) that becomes 4x1 on a wider screen, and the reset is a
+          quiet line that only exists while there is something to reset.
+          
+          EQUAL CELLS ARE WHAT MAKES THE NUMBERS READABLE. The counts are right-aligned in
+          cells of identical width, so `where is it?` is answered by reading a column of four
+          figures rather than four figures scattered across four x positions -- which is the
+          whole reason the count is on the chip. A zero keeps its cell for the same reason:
+          an empty cell in an even grid IS the statement that the archive holds nothing of
+          that kind for this query, and it now costs no line at all. */}
       {asked && data && !err && (
         <div className="mt-3">
-          <div className="flex flex-wrap gap-2" role="group" aria-label="What kind of thing">
-            <button type="button" onClick={() => setType('')} aria-pressed={!type}
-              className="px-3 py-1.5 text-sm rounded-full border font-semibold" style={chip(!type)}>
-              Everything <span className="tnum font-normal opacity-80">{fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''}</span>
-            </button>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" role="group" aria-label="What kind of thing">
             {GROUPS.map(g => {
               const { hits, capped } = groupCount(g.id)
               const active = type === g.id
@@ -351,13 +497,22 @@ export default function Search() {
                   onClick={() => setType(active ? '' : g.id)}
                   disabled={hits === 0 && !active}
                   title={g.hint}
-                  className="px-3 py-1.5 text-sm rounded-full border font-semibold disabled:opacity-45"
+                  className="w-full px-3 py-1.5 text-sm rounded-full border font-semibold disabled:opacity-45 flex items-baseline justify-between gap-2 whitespace-nowrap"
                   style={chip(active)}>
-                  {g.label} <span className="tnum font-normal opacity-80">{fmt(hits)}{capped ? '+' : ''}</span>
+                  <span>{g.short}</span>
+                  <span className="tnum font-normal opacity-80">{fmt(hits)}{capped ? '+' : ''}</span>
                 </button>
               )
             })}
           </div>
+          {type && (
+            <p className="text-sm mt-2">
+              <button type="button" onClick={() => setType('')} className="underline"
+                style={{ color: 'var(--series-cost)' }}>
+                Clear — show all {fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''}
+              </button>
+            </p>
+          )}
           {type && (
             <p className="text-xs mt-2 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
               {GROUPS.find(g => g.id === type)!.hint}
@@ -429,13 +584,12 @@ export default function Search() {
 
       {data && asked && !err && (
         <>
-          <p className="mt-6 text-sm" style={{ color: 'var(--text-secondary)' }}>
+          <p className="mt-4 sm:mt-6 text-sm" style={{ color: 'var(--text-secondary)' }}>
             {busy ? 'Searching…' : total === 0
               ? <>Nothing matched <strong>{asked}</strong>.</>
-              : <><strong>{fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''}</strong> hits for <strong>{asked}</strong>
-                  {type
-                    ? <> — showing the <strong>{fmt(groupCount(type).hits)}{groupCount(type).capped ? '+' : ''}</strong> in {GROUPS.find(g => g.id === type)!.label.toLowerCase()}.</>
-                    : <>, by what kind of thing they are.</>}</>}
+              : type
+                ? <><strong>{fmt(groupCount(type).hits)}{groupCount(type).capped ? '+' : ''}</strong> of {fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''} hits for <strong>{asked}</strong> are {GROUPS.find(g => g.id === type)!.label.toLowerCase()}.</>
+                : <><strong>{fmt(total)}{ORDER.some(c => data.counts[c]?.capped) ? '+' : ''}</strong> hits for <strong>{asked}</strong>.</>}
           </p>
 
           {/* THE TOWN'S WORD FOR YOURS, WHETHER OR NOT ANYTHING WAS FOUND. A search for
@@ -481,8 +635,13 @@ export default function Search() {
               searched" -- so the corpora with nothing are summed into one line under the
               results rather than each getting a heading over an empty space. */}
           {!busy && topic.length > 0 && (
-            <section className="mt-8" aria-label="Pages about this">
-              <h2 className="text-lg font-semibold">Pages about this</h2>
+            <section className="mt-6 sm:mt-8" aria-label="Pages about this">
+              <div className="flex flex-wrap items-baseline gap-x-3">
+                <h2 className="text-lg font-semibold">Pages about this</h2>
+                <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                  by relevance — a marking carries no date
+                </span>
+              </div>
               <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
                 Marked by hand as being about <em>{asked}</em>. The word itself may not
                 appear on them — that is the point of the list.
@@ -496,23 +655,29 @@ export default function Search() {
             const count = data.counts[c]
             if (!count) return null
             return (
-              <section key={c} className="mt-8" aria-label={NAME[c]}>
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <section key={c} className="mt-6 sm:mt-8" aria-label={NAME[c]}>
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                   <h2 className="text-lg font-semibold" style={c === 'transcript' ? { color: 'var(--series-revenue, #b5540f)' } : undefined}>
                     {c === 'transcript' && <span aria-hidden="true">&#9654;&nbsp;</span>}{NAME[c]}
                   </h2>
                   <span className="text-sm tnum" style={{ color: 'var(--text-secondary)' }}>
                     {fmt(count.hits)}{count.capped ? '+' : ''} of {fmt(count.holds)} {count.holds === 1 ? UNIT[c][0] : UNIT[c][1]} searched
                   </span>
+                  {/* THE ORDER, AND THE SWITCH FOR IT, ON THIS SECTION'S OWN HEADING --
+                      quiet furniture rather than a button, because it refines what one
+                      reader in fifty asked for and the chips above it are the answer. */}
+                  <Order dated={DATED.includes(c)} by={data.sortedBy?.[c]} set={setSort} />
                 </div>
-                <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{WHAT[c]}</p>
+                {(WHAT_ALWAYS.includes(c) || (type && GROUPS.find(g => g.id === type)!.corpora.includes(c))) && (
+                  <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{WHAT[c]}</p>
+                )}
                 <ol className="mt-3 space-y-3">
                   {hits.map(h => <Result key={h.doc_key} h={h} />)}
                 </ol>
                 {count.hits > hits.length && (
                   <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>
-                    Showing the {hits.length} best-ranked of {fmt(count.hits)}{count.capped ? '+' : ''}.
-                    {count.capped && ' The count stopped at the cap, so ranking is within the first rows found rather than across everything; add a board or a date to narrow it.'}
+                    Showing {data.sortedBy?.[c] === 'date' ? `the ${hits.length} newest` : `the ${hits.length} best-ranked`} of {fmt(count.hits)}{count.capped ? '+' : ''}.
+                    {count.capped && ' The count stopped at the cap, so the order — whichever of the two it is — is within the first rows found rather than across everything; add a board or a date to narrow it.'}
                   </p>
                 )}
               </section>
