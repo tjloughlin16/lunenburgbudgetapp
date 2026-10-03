@@ -86,9 +86,9 @@ RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 VOCAB_CSV = os.path.join(ROOT, 'sources', 'data', 'search-vocabulary.csv')
 VOCAB_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'search-vocabulary.json')
 # EVERY BOARD THE SEARCH CAN ACTUALLY NARROW TO, generated from the index itself.
-# `Search.tsx` carried a hardcoded list of SIX, so Parks Commission -- 421 sets of
-# minutes and recordings -- could not be selected at all, and neither could the other
-# fifty. TJ: *"the search board drop-down doesn't have all..it's a limited set."*
+# `Search.tsx` carried a hardcoded list of SIX, so Parks Commission -- 186 meeting dates
+# of minutes, agendas and recordings -- could not be selected at all, and neither could
+# the other fifty. TJ: *"the search board drop-down doesn't have all..it's a limited set."*
 # A hardcoded list of things the data already knows is this repo's most common defect
 # (CLAUDE.md, `A LOCATION WAS HARDCODED where location is not identity`), and the
 # remedy is the same every time: derive it, and let a check fail when it drifts.

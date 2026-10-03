@@ -294,7 +294,8 @@ type BoardOpt = { slug: string; label: string; meetings: number; first: string; 
 /** EVERY BOARD, FROM `/data/search-boards.json`, WHICH IS GENERATED FROM THE INDEX.
  *
  *  This was a hardcoded list of SIX. Fifty-one boards the archive holds minutes for could
- *  not be selected at all -- Parks Commission among them, with 421 meetings on record, and
+ *  not be selected at all -- Parks Commission among them, with 186 meetings in the dated
+ *  corpora (193 in the meeting register, which counts dates with no searchable document), and
  *  a reader looking for what the Parks Commission said about its budget had no way to ask.
  *  TJ: *"the search board drop-down doesn't have all..it's a limited set."*
  *
