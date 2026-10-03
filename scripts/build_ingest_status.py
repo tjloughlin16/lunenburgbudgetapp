@@ -28,6 +28,8 @@ port. The document table is a separate `sources.js` loaded with a <script> tag, 
 import argparse, collections, csv, datetime as dt, glob, html, json, os, re, subprocess, sqlite3, sys, time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+import stream_cost as COST  # noqa: E402
 DATA = os.path.join(ROOT, 'sources', 'data')
 OUT  = os.path.join(ROOT, 'build', 'status')
 TREE = os.path.join(os.path.dirname(ROOT), 'lunenburgbudgets-refresh')
@@ -811,7 +813,12 @@ def streams():
                      'OBJECT we build from them today',
                   done=v_done,
                   todo=sum(p['n'] for p in vp), blocked=0, blocked_why='',
-                  cost='~0.03%% of the week each, runs by itself &middot; %s vote files '
+                  # DERIVED, NOT TYPED. This said `~0.03% of the week each` and the
+                  # measured figure is <=0.0193% -- a 35-55% overstatement in the number
+                  # anybody sizes a batch against. Every vote file carries its own
+                  # `cost_usd`; see notes/findings/METERED-BATCH-COST.md.
+                  cost=COST.phrase('official-votes', '~0.03% of the week each, runs by itself')
+                       + ' &middot; %s vote files '
                        'written, one per minutes DOCUMENT; 198 dates hold more than one '
                        'set, so files and meetings are different counts and are never '
                        'added' % '{:,}'.format(
@@ -824,7 +831,8 @@ def streams():
                      'votes, transfers, budget items, topics, public comment',
                   done=m_done,
                   todo=sum(p['n'] for p in mp), blocked=0, blocked_why='',
-                  cost='~0.09%% of the week each, runs by itself &middot; %s files written, '
+                  cost=COST.phrase('recording-minutes', '~0.09% of the week each, runs by itself')
+                       + ' &middot; %s files written, '
                        'one per RECORDING' % '{:,}'.format(
                            len(glob.glob(os.path.join(DATA, 'recording-minutes', '*', '*.json')))),
                   last=ago(newest([os.path.join(DATA, 'recording-minutes', '*', '*.json')])), note='written from our captions; two derived layers from the meeting',

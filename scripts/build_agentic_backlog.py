@@ -20,6 +20,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+import stream_cost as COST  # noqa: E402
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 OUT = os.path.join(ROOT, 'notes', 'generated', 'AGENTIC-BACKLOG.md')
 RECENT = (dt.date.today() - dt.timedelta(days=730)).isoformat()
 
@@ -265,8 +267,15 @@ def _superseded():
 def main():
     streams = [
         ('Captions for recordings', 'fetch_youtube_transcripts.py — free, throttled by YouTube; run_transcript_backfill.sh sweeps the last two years across every board, then the rest; the refresh takes 12 a day', transcripts()),
-        ('Our minutes of recordings', 'write_recording_minutes.py — claude -p, ~0.09% of the weekly allowance each; the refresh writes 3 a day, last two years first, then the three budget boards deeper', recording_minutes()),
-        ('Votes from the town’s minutes', 'extract_official_votes.py — claude -p on the small model, ~0.03% each, every quote checked verbatim; the refresh reads 40 a day, newest first across every board', official_votes()),
+        ('Our minutes of recordings', 'write_recording_minutes.py — claude -p, %s; the refresh writes 3 a day, last two years first, then the three budget boards deeper'
+         % COST.phrase('recording-minutes', '~0.09% of the weekly allowance each', html=False).split(', runs by itself')[0], recording_minutes()),
+        # THE COST IS MEASURED FROM THE FILES, NOT TYPED. `~0.03% each` was wrong by
+        # 35-55%: every vote file carries its own `cost_usd` and the mean over the last
+        # 300 runs is $0.110, which is <=0.0193% of the week. Rule 2 reaches this
+        # sentence too -- it is the figure a reader sizes a thousand calls against.
+        # notes/findings/METERED-BATCH-COST.md carries the derivation.
+        ('Votes from the town’s minutes', 'extract_official_votes.py — claude -p on the small model, %s, every quote checked verbatim; the refresh reads 40 a day, newest first across every board'
+         % COST.phrase('official-votes', '~0.03% each', html=False).split(', runs by itself')[0], official_votes()),
         ('Reconciling the annual-report tables', 'the largest backlog here and not an '
          'agentic one: rows are READ, and a row is only usable once it ties to a total '
          'the document itself prints. Mostly a per-page column ruler putting ACCOUNT '
