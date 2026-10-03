@@ -85,6 +85,14 @@ RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 # public search reads as "the town never discussed it".
 VOCAB_CSV = os.path.join(ROOT, 'sources', 'data', 'search-vocabulary.csv')
 VOCAB_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'search-vocabulary.json')
+# EVERY BOARD THE SEARCH CAN ACTUALLY NARROW TO, generated from the index itself.
+# `Search.tsx` carried a hardcoded list of SIX, so Parks Commission -- 421 sets of
+# minutes and recordings -- could not be selected at all, and neither could the other
+# fifty. TJ: *"the search board drop-down doesn't have all..it's a limited set."*
+# A hardcoded list of things the data already knows is this repo's most common defect
+# (CLAUDE.md, `A LOCATION WAS HARDCODED where location is not identity`), and the
+# remedy is the same every time: derive it, and let a check fail when it drifts.
+BOARDS_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'search-boards.json')
 # AFFINITY -- what a page is ABOUT, as words, whether or not its text says them often.
 # TJ, 11 September: "put 'affinity' so that certain words hit more with certain pages and
 # reports or minutes even if the words don't show up as much." The search-engine term is
@@ -749,6 +757,55 @@ def vocabulary():
     return json.dumps(out, indent=1, ensure_ascii=False) + '\n'
 
 
+def boards(db):
+    """The board filter's options, as JSON, counted in MEETINGS.
+
+    ONLY THE DATED CORPORA. The control is disabled unless the selected type carries a
+    date -- minutes, agendas, our notes and machine captions -- so a board with nothing
+    but `source` rows would be an option that can never match. That is also why the
+    source TREES (`town-ledgers`, `contracts`, `peer-districts`, ...) do not appear: they
+    share the `board_slug` column and are not boards.
+
+    COUNTED IN MEETINGS, NOT ROWS. `doc_key` is one row per CHUNK in these corpora, so a
+    count of them is a count of our own slicing -- rule 7's proxy trap, and it would have
+    put `57,154` beside Select Board. Distinct DATE per board is a real quantity: one
+    meeting, however many artifacts it left behind.
+
+    THE LABEL IS THE TOWN'S OWN. `Nashoba Valley Reginal Dispatch Committee` keeps its
+    spelling and `Tcp Building Design Committee` its capitalisation, because the name a
+    resident needs is the one the AgendaCenter prints, not a tidier one of ours.
+    """
+    rows = db.execute(
+        "SELECT board_slug slug, board label, COUNT(DISTINCT date) meetings, "
+        "       MIN(date) first, MAX(date) last "
+        '  FROM search '
+        " WHERE corpus IN ('minutes','recorded','transcript') "
+        "   AND board_slug IS NOT NULL AND board_slug != '' "
+        "   AND date IS NOT NULL AND date != '' "
+        ' GROUP BY board_slug ORDER BY meetings DESC, slug').fetchall()
+    if len(rows) < 20:
+        raise SystemExit('the index yielded %d board(s) for the search filter; refusing to '
+                         'publish a list that short -- the hardcoded six is what this '
+                         'replaces' % len(rows))
+    out = [{'slug': r['slug'], 'label': r['label'] or r['slug'],
+            'meetings': r['meetings'], 'first': r['first'], 'last': r['last']}
+           for r in rows]
+    return json.dumps(out, indent=1, ensure_ascii=False) + '\n'
+
+
+def write_boards(db):
+    with open(BOARDS_JSON, 'w', encoding='utf-8') as fh:
+        fh.write(boards(db))
+
+
+def check_boards(db):
+    current = open(BOARDS_JSON, encoding='utf-8').read() if os.path.exists(BOARDS_JSON) else ''
+    if current != boards(db):
+        print('STALE: %s does not reproduce from the index' % rel(BOARDS_JSON))
+        return 1
+    return 0
+
+
 def write_vocabulary():
     with open(VOCAB_JSON, 'w', encoding='utf-8') as fh:
         fh.write(vocabulary())
@@ -791,7 +848,7 @@ def check(db):
         for k in (added + changed + removed)[:12]:
             print('  ' + k)
         return 1
-    if check_vocabulary():
+    if check_vocabulary() or check_boards(db):
         return 1
     print('ok: %s matches its %d input files; the vocabulary reproduces' % (rel(DB), len(w)))
     return 0
@@ -812,6 +869,7 @@ def main():
         return check(db) if a.check else (status(db) or 0)
     db = build(rebuild=a.rebuild, quiet=a.quiet)
     write_vocabulary()
+    write_boards(db)
     status(db)
     return 0
 

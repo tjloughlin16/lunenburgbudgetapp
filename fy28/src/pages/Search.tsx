@@ -6,6 +6,7 @@ import { ReportShell, Body } from '../components/report'
 const TAB: Tab = 'search'
 const API = '/api/search'
 const VOCAB = '/data/search-vocabulary.json'
+const BOARDS_URL = '/data/search-boards.json'
 
 /** SEARCH EVERYTHING, AND SAY HOW MUCH WAS SEARCHED.
  *
@@ -288,15 +289,32 @@ function badge(h: Hit): string {
   }
 }
 
-const BOARDS: [string, string][] = [
-  ['', 'Every board'],
-  ['school-committee', 'School Committee'],
-  ['select-board', 'Select Board'],
-  ['finance-committee', 'Finance Committee'],
-  ['planning-board', 'Planning Board'],
-  ['capital-planning-committee', 'Capital Planning'],
-  ['board-of-assessors', 'Board of Assessors'],
+type BoardOpt = { slug: string; label: string; meetings: number; first: string; last: string }
+
+/** EVERY BOARD, FROM `/data/search-boards.json`, WHICH IS GENERATED FROM THE INDEX.
+ *
+ *  This was a hardcoded list of SIX. Fifty-one boards the archive holds minutes for could
+ *  not be selected at all -- Parks Commission among them, with 421 meetings on record, and
+ *  a reader looking for what the Parks Commission said about its budget had no way to ask.
+ *  TJ: *"the search board drop-down doesn't have all..it's a limited set."*
+ *
+ *  The six below remain as a FALLBACK for the one case that matters: the payload failing to
+ *  load. A control that empties is worse than a control that is short, because a reader
+ *  cannot tell an empty filter from a filter that found nothing.
+ */
+const BOARDS_FALLBACK: BoardOpt[] = [
+  { slug: 'select-board', label: 'Select Board', meetings: 0, first: '', last: '' },
+  { slug: 'school-committee', label: 'School Committee', meetings: 0, first: '', last: '' },
+  { slug: 'finance-committee', label: 'Finance Committee', meetings: 0, first: '', last: '' },
+  { slug: 'planning-board', label: 'Planning Board', meetings: 0, first: '', last: '' },
+  { slug: 'capital-planning-committee', label: 'Capital Planning Committee', meetings: 0, first: '', last: '' },
+  { slug: 'board-of-assessors', label: 'Board of Assessors', meetings: 0, first: '', last: '' },
 ]
+
+/** How many to show above the A-Z list. Fifty-seven options in one flat menu is a wall;
+ *  the five busiest boards are most of what anybody asks for, and the rest is findable
+ *  alphabetically rather than by scanning a frequency order nobody can predict. */
+const BUSIEST = 5
 
 function hms(s: number) {
   const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60
@@ -339,9 +357,15 @@ export default function Search() {
   const [busy, setBusy] = useState(false)
   const [err, setErr] = useState<string | null>(null)
   const [vocab, setVocab] = useState<Vocab>({})
+  const [boards, setBoards] = useState<BoardOpt[]>(BOARDS_FALLBACK)
   const box = useRef<HTMLInputElement>(null)
 
   useEffect(() => { fetch(VOCAB).then(r => r.json()).then(setVocab).catch(() => {}) }, [])
+  useEffect(() => {
+    fetch(BOARDS_URL).then(r => r.json())
+      .then((b: BoardOpt[]) => { if (Array.isArray(b) && b.length) setBoards(b) })
+      .catch(() => {})   // keep the fallback; never empty the control
+  }, [])
   useEffect(() => { if (!initial.q) box.current?.focus() }, [initial.q])
 
   // The narrowing a board or a date cannot do. `source` rows carry the archive FOLDER in
@@ -540,7 +564,7 @@ export default function Search() {
         <summary className="text-sm cursor-pointer" style={{ color: 'var(--series-cost)' }}>
           Narrow by board or date
           <span className="ml-1 text-xs" style={{ color: 'var(--text-muted)' }}>
-            — minutes, agendas and recordings only{narrowed ? ' · on' : ''}
+            — {boards.length} boards; minutes, agendas and recordings only{narrowed ? ' · on' : ''}
           </span>
         </summary>
         <div className="mt-2 flex flex-wrap gap-3 items-center">
@@ -548,7 +572,27 @@ export default function Search() {
             disabled={!typeIsDated}
             className="px-2 py-2 text-sm rounded border disabled:opacity-45"
             style={{ background: 'var(--surface-2)', borderColor: 'var(--grid)', color: 'var(--text-primary)' }}>
-            {BOARDS.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
+            <option value="">Every board</option>
+            {/* THE BUSIEST FIVE, THEN A-Z. The count is MEETINGS on record, which is what
+                tells a reader whether an empty result means `nobody said it` or `we hold
+                one meeting for this body`. Both groups are rendered from the same list, so
+                a board cannot appear in one and not the other. */}
+            {boards.length > BUSIEST && (
+              <optgroup label="Most on record">
+                {boards.slice(0, BUSIEST).map(b => (
+                  <option key={b.slug} value={b.slug}>
+                    {b.label}{b.meetings ? ` (${fmt(b.meetings)})` : ''}
+                  </option>
+                ))}
+              </optgroup>
+            )}
+            <optgroup label={boards.length > BUSIEST ? 'Every board, A\u2013Z' : 'Boards'}>
+              {[...boards].sort((a, b) => a.label.localeCompare(b.label)).map(b => (
+                <option key={b.slug} value={b.slug}>
+                  {b.label}{b.meetings ? ` (${fmt(b.meetings)})` : ''}
+                </option>
+              ))}
+            </optgroup>
           </select>
           <label className="text-xs inline-flex items-center gap-2" style={{ color: 'var(--text-secondary)' }}>
             since
