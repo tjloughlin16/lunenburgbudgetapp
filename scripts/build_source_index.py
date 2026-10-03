@@ -3946,7 +3946,12 @@ def main():
             continue
         for fn in filenames:
             rel = os.path.join(rel_dir, fn).replace(os.sep, '/')
-            if (fn.startswith('.') or fn in SKIP_FILES or rel in SKIP_FILES
+            # A tree's own `index.csv` is the catalogue OF that tree, not a document in
+            # it -- which SKIP_FILES already said for the two mirror folders, one name at
+            # a time. Said once here instead, because four more trees got one on
+            # 2 October 2026 (build_unfetched_indexes.py) and the next tree will too.
+            if (fn.startswith('.') or fn == 'index.csv'
+                    or fn in SKIP_FILES or rel in SKIP_FILES
                     or rel in catalogued or is_edition(rel, catalogued)
                     or in_family(rel)):
                 continue

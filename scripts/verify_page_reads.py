@@ -334,7 +334,13 @@ def main():
     buf = io.StringIO()
     wr = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\n')
     wr.writeheader()
-    wr.writerows(body)
+    # ABBREVIATED, for the same reason the page-reads files are: `proof`, `read_by`,
+    # `document` and `reconciliation` are facts about a GROUP, and writing them on every
+    # one of 38,879 rows made this file 133 MB -- over GitHub's blob limit, on a URL the
+    # site publishes. A blank in a sticky column means `the same as the row above`, and
+    # `page_reads.rows()` is the only way to read it. Nothing else in the archive wants a
+    # 133 MB re-expansion of 4.2 MB of source.
+    wr.writerows(page_reads.abbreviate(body))
     text = buf.getvalue()
     cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''
     if cur != text:

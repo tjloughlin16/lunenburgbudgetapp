@@ -97,10 +97,39 @@ SITE = M.SITE
 TOKENIZE = M.TOKENIZE
 PAGE_MARKER = re.compile(r'^===PAGE (\d+)===$', re.M)
 
-# Source folders whose documents are indexed by page. `meetings` is the minutes corpus and
-# has its own reader; `data`, `analyses` and `views` are ours or are symlinks.
-SOURCE_FOLDERS = ('district-budget', 'state-dese', 'town-annual-reports', 'town-budget',
-                  'town-supplementary')
+# Source folders whose documents are indexed by page. DISCOVERED, never listed.
+#
+# This was a hardcoded allowlist of five folders, and it is why TJ went looking for the
+# landscaping contract on 2 October 2026 and found nothing: the document is in
+# `town-ledgers`, which was not on the list, and neither were ten other trees. That is
+# CLAUDE.md's own defect #1 -- *a location was hardcoded where location is not identity* --
+# sitting in the one script whose output a resident reads. A list of eleven would be the
+# same bug with a longer constant.
+#
+# So the gate is the CONTRACT rather than the name: a folder is indexed when it has an
+# `index.csv` carrying `label`, `local` and `text`, which is what `source_files()` reads
+# and what gives every row a citation. A tree gets searched the day it gets a conforming
+# catalogue, and a tree with no catalogue -- or with a mirror's four-column one, as
+# `state-dls` and `state-massgis` have -- stays out until somebody writes one.
+#
+# `meetings` is excluded by name and not by contract: it is the minutes corpus, it has its
+# own reader and its own denominator, and its index is a different shape entirely.
+SOURCE_INDEX_COLUMNS = {'label', 'local', 'text'}
+SOURCE_FOLDERS_SKIP = {'meetings'}
+
+
+def source_folders():
+    out = []
+    for idx in sorted(glob.glob(os.path.join(SRC, '*', 'index.csv'))):
+        folder = os.path.basename(os.path.dirname(idx))
+        if folder in SOURCE_FOLDERS_SKIP:
+            continue
+        with open(idx, encoding='utf-8', errors='replace') as fh:
+            cols = set(next(csv.reader(fh), []))
+        if SOURCE_INDEX_COLUMNS <= cols:
+            out.append(folder)
+    return out
+
 
 # Site pages that are not content: forms, the machine-facing pages, the drafts page.
 PAGE_SKIP = {'ask', 'ask-a-question', 'agents', 'blog-drafts', '404', 'not-found', 'search'}
@@ -166,10 +195,8 @@ def source_files():
     a stray text file with no label and no upstream must not enter with no citation.
     """
     out = []
-    for folder in SOURCE_FOLDERS:
+    for folder in source_folders():
         idx = os.path.join(SRC, folder, 'index.csv')
-        if not os.path.exists(idx):
-            continue
         for r in csv.DictReader(open(idx, encoding='utf-8', errors='replace')):
             text = (r.get('text') or '').strip()
             if not text:

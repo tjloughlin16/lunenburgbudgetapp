@@ -32,7 +32,9 @@ import sys
 csv.field_size_limit(10 ** 9)
 
 # Facts about the page, not about the figure.
-STICKY = ('document', 'read_by', 'tolerance', 'proof')
+# NOT `status`: `map_annual_report_pages.PROOF` reads it PER ROW out of the aggregate and
+# does not forward-fill, so blanking it would un-prove every page in the archive.
+STICKY = ('document', 'read_by', 'tolerance', 'proof', 'reconciliation')
 
 
 def rows(path):

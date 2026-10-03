@@ -356,9 +356,11 @@ def upstream_urls():
         if not os.path.exists(idx):
             continue
         matched = 0
+        offered = 0
         with open(idx, newline='') as fh:
             for row in csv.DictReader(fh):
                 url = (row.get('upstream') or row.get('url') or '').strip()
+                offered += 1 if url else 0
                 for col in ('local', 'text', 'path'):
                     rel = (row.get(col) or '').strip()
                     if not rel:
@@ -378,9 +380,17 @@ def upstream_urls():
                     if url and rel not in out:
                         out[rel] = url
                         matched += 1
-        # AND IT ASSERTS THAT IT MATCHED. An index that stops joining must fail loudly
-        # rather than quietly contribute nothing.
-        if matched == 0:
+        # AND IT ASSERTS THAT IT MATCHED -- but only where there was something to match.
+        # An index that stops joining must fail loudly rather than quietly contribute
+        # nothing. A tree whose documents HAVE no publisher address is a different thing
+        # entirely, and it is not an error: `correspondence` is emails and `town-ledgers`
+        # is MUNIS reports answered to a records request, so every `upstream` in both is
+        # empty on purpose and the address is carried in the label (rule 12 -- "Obtained
+        # from the Town by records request" is an address, and this column renders as an
+        # href, so it cannot hold one). Asserting on `matched` alone turned those two
+        # catalogues into a hard failure of sync_archive.py --manifest the moment they
+        # were written.
+        if offered and matched == 0:
             raise SystemExit(
                 'sources/%s/index.csv yielded no upstream addresses. Either it has no '
                 'url column or its paths no longer line up with the manifest keys; '

@@ -51,7 +51,11 @@ import warnings
 warnings.filterwarnings('ignore')
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pdf_tables as T            # noqa: E402
-import read_trust_table as R      # noqa: E402
+import read_trust_table as R
+# ALIASED: this module defines a FUNCTION `page_reads()` at line ~161, so a bare
+# `import page_reads` resolves to the function and `.rows` raises AttributeError.
+# Third time this exact collision bit today -- see extract_special_revenue.py.
+import page_reads as PAGE_READS_IO      # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
@@ -183,7 +187,7 @@ def page_reads(fy):
     if not os.path.exists(f):
         return []
     by = {}
-    for r in csv.DictReader(open(f, encoding='utf-8')):
+    for r in PAGE_READS_IO.rows(f):
         if int(r['fy']) != fy or r['status'] != 'checked':
             continue
         name = ' '.join((r['fund_name'] or '').split())
