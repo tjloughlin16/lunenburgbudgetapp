@@ -74,7 +74,7 @@
    "status": "on the record"
   }
  ],
- "as_of": "2026-09-30",
+ "as_of": "2026-10-02",
  "calendar": [
   {
    "key": "budget-presentation",
@@ -235,6 +235,7 @@
      "this_cycle": [
       "2026-09-03",
       "2026-09-29",
+      "2026-10-06",
       "2026-11-17"
      ],
      "typical_first": "Sep 5",
@@ -265,6 +266,7 @@
       "2026-09-03",
       "2026-09-15",
       "2026-09-29",
+      "2026-10-06",
       "2026-11-17",
       "2026-05-19"
      ],
@@ -346,7 +348,7 @@
  "counts": {
   "boards": 22,
   "by_board": {
-   "Board of Assessors": 13,
+   "Board of Assessors": 14,
    "By-Law Committee": 2,
    "Cable Advisory Committee": 1,
    "Cemetery Commission": 7,
@@ -362,28 +364,56 @@
    "Personnel Committee": 20,
    "Planning Board": 5,
    "Public Access Cable Committee (PACC)": 7,
-   "School Committee": 50,
+   "School Committee": 51,
    "Select Board": 78,
    "Sewer Commission": 12,
    "Stormwater Task Force": 11,
    "Town Meeting": 20,
    "Trust Fund Commission": 16
   },
-  "entries": 334,
+  "entries": 336,
   "kinds": {
    "budget item": 131,
    "official agenda": 11,
-   "official minutes": 4,
-   "topic": 166,
+   "official minutes": 5,
+   "topic": 167,
    "vote": 22
   },
-  "upcoming": 1
+  "upcoming": 0
  },
  "cycle_closes": "",
  "cycle_fy": 2028,
  "cycle_opens": "2026-05-17",
  "documents": [],
  "entries": [
+  {
+   "board": "School Committee",
+   "board_slug": "school-committee",
+   "date": "2026-10-01",
+   "detail": "voted, passed unanimously",
+   "kind": "topic",
+   "minutes": 6,
+   "page": "/meeting-minutes/school-committee/2026-10-01-kWX2YIfTOMg",
+   "t": 291,
+   "tags": [
+    "budget-fy27"
+   ],
+   "text": "Appointment of temporary director of finance and operations",
+   "video_url": "https://www.youtube.com/watch?v=kWX2YIfTOMg&t=291s"
+  },
+  {
+   "board": "Board of Assessors",
+   "board_slug": "board-of-assessors",
+   "date": "2026-09-30",
+   "detail": null,
+   "kind": "official agenda",
+   "markers": [
+    "warrant",
+    "town meeting"
+   ],
+   "page": "/docs/meetings/board-of-assessors/2026-09-30-agenda-8043.pdf",
+   "text": "warrant, town meeting"
+  },
   {
    "board": "Select Board",
    "board_slug": "select-board",
@@ -1095,14 +1125,15 @@
    "board_slug": "planning-board",
    "date": "2026-09-14",
    "detail": null,
-   "kind": "official agenda",
+   "kind": "official minutes",
    "markers": [
     "town meeting",
     "warrant",
-    "capital plan"
+    "capital plan",
+    "operating budget"
    ],
-   "page": "/docs/meetings/planning-board/2026-09-14-agenda-8010.pdf",
-   "text": "town meeting, warrant, capital plan"
+   "page": "/docs/meetings/planning-board/2026-09-14-minutes-8010.pdf",
+   "text": "town meeting, warrant, capital plan, operating budget"
   },
   {
    "board": "Trust Fund Commission",
@@ -5331,12 +5362,12 @@
     "cuts": [],
     "first_date": "2026-09-09",
     "history": {},
-    "last_date": "2026-09-29",
+    "last_date": "2026-10-01",
     "latest": {},
     "live_by_scope": {},
     "live_cuts": 0,
     "log": [],
-    "meetings_read": 5,
+    "meetings_read": 6,
     "warnings": [
      {
       "about": "district finances and the need for a strong finance director",
@@ -10493,9 +10524,7 @@
   }
  ],
  "generated_by": "scripts/build_budget_feed.py",
- "markers": [
-  "budget"
- ],
+ "markers": [],
  "notices": [
   {
    "first_seen": "2026-09-12",
@@ -14702,7 +14731,7 @@
     }
    ]
   },
-  "last_date": "2026-09-29",
+  "last_date": "2026-10-01",
   "latest": {
    "both/free_cash": {
     "amount_as_heard": "$465,000",
@@ -15159,7 +15188,7 @@
     "page": "/meeting-minutes/school-committee/2026-05-20-WMLR7WqrZPw"
    }
   ],
-  "meetings_read": 32,
+  "meetings_read": 33,
   "warnings": [
    {
     "about": "middle school track",
@@ -16446,24 +16475,6 @@
    "question": ""
   }
  ],
- "upcoming": [
-  {
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09302026-8037",
-   "attend": null,
-   "board": "Parks Commission",
-   "board_page": "/boards/parks-commission",
-   "board_slug": "parks-commission",
-   "date": "2026-09-30",
-   "days_away": 0,
-   "hook": null,
-   "items": [],
-   "join": null,
-   "markers": [
-    "budget"
-   ],
-   "time": null,
-   "where": null
-  }
- ],
+ "upcoming": [],
  "whole_cycle": false
 }

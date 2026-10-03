@@ -1,541 +1,816 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "conservation-commission",
-  "board": "Conservation Commission",
-  "video_title": "Conservation Commission",
-  "meeting_date": "2026-08-05",
-  "video_id": "GZqWkWkz8IY",
-  "video_url": "https://www.youtube.com/watch?v=GZqWkWkz8IY",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/conservation-commission/2026-08-05-GZqWkWkz8IY.json",
-    "sha256": "8dc5261911d2e993b94fa7e702126d2588875cf24eb4111acdcab9f310cc33e1",
-    "caption_lines": 463,
-    "segments": 4207
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2026-08-05",
+ "video_id": "GZqWkWkz8IY",
+ "video_url": "https://www.youtube.com/watch?v=GZqWkWkz8IY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2026-08-05-GZqWkWkz8IY.json",
+  "sha256": "8dc5261911d2e993b94fa7e702126d2588875cf24eb4111acdcab9f310cc33e1",
+  "caption_lines": 463,
+  "segments": 4207
+ },
+ "recording": {
+  "duration_s": 9700,
+  "duration": "2:41",
+  "spoken_chars": 118295,
+  "words_approx": 19715
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08052026-7944",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-05-agenda-7944.txt",
+   "path": "sources/meetings/conservation-commission/2026-08-05-agenda-7944.pdf"
   },
-  "recording": {
-    "duration_s": 9700,
-    "duration": "2:41",
-    "spoken_chars": 118295,
-    "words_approx": 19715
-  },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08052026-7944",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-05-agenda-7944.txt",
-      "path": "sources/meetings/conservation-commission/2026-08-05-agenda-7944.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08052026-7944",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-05-minutes-7944.txt",
-      "path": "sources/meetings/conservation-commission/2026-08-05-minutes-7944.pdf"
-    }
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08052026-7944",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-05-minutes-7944.txt",
+   "path": "sources/meetings/conservation-commission/2026-08-05-minutes-7944.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T02:07:59Z",
+  "cost_usd": 0.518162
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Mary Wilson",
+    "role": "Chair (acting; regular chair Jenny Puthrer absent)"
+   },
+   {
+    "name_as_heard": "Rich Bursch",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike Larouche",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Eddie Doucette",
+    "role": "member (also heard as \"Teddy Doucette\")"
+   },
+   {
+    "name_as_heard": "Andrea Burnette",
+    "role": "member (also heard as \"Bernett\"/\"Bernat\")"
+   },
+   {
+    "name_as_heard": "Harland",
+    "role": "Conservation Agent (name also heard as Herland, Hurling, Orlin, Arlene, Erlene, Errol)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 189,
+    "speaker_as_heard": "Greg Roy",
+    "stated_role": "representing the applicant, Olson (Dillis) Roy",
+    "topic": "requested an early continuation for 91 Round Road because DEP comments/file number had not yet been received"
+   },
+   {
+    "t": 231,
+    "speaker_as_heard": "Chris McKenzie",
+    "stated_role": "representing applicant, Dilworth & Lally",
+    "topic": "confirmed a DEP file number for the Round Road matter had not been received"
+   },
+   {
+    "t": 1995,
+    "speaker_as_heard": "Colleen Kostitch",
+    "stated_role": "resident, 119 Sunny Hill Road",
+    "topic": "described severe flooding at her property and concern that the proposed 108 Sunny Hill Road driveway crossing would worsen existing road/stormwater problems"
+   },
+   {
+    "t": 4573,
+    "topic": "an abutter (identified by the chair as Patricia Whitney, an owner of a certified wildlife refuge pond) raised concern that excavating the proposed irrigation pond would drain her own 40-year-old pond, fed by underground springs"
+   }
+  ],
+  "tags": [
+   "budget",
+   "facilities",
+   "fees",
+   "legal",
+   "library",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "recreation",
+   "roads-and-dpw",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 420,
+    "motion": "approve meeting minutes from 7/15",
+    "moved_by": "Andrea Burnette",
+    "outcome": "passed 5-0",
+    "procedural": true
+   },
+   {
+    "t": 537,
+    "motion": "continue the 701 Reservoir Road boat ramp hearing to August 19",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 2929,
+    "motion": "continue the 108 Sunny Hill Road driveway crossing hearing to September 2",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 5148,
+    "motion": "continue the 157 Goodrich Street irrigation pond hearing to August 19",
+    "moved_by": "Teddy Doucette",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 5280,
+    "motion": "continue the Unitil substation hearing to August 19",
+    "moved_by": "Rich Bursch",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6010,
+    "motion": "approve 507 West Townsend Road wetland crossing with two added conditions (plantings/stabilization concurrent with span installation; two growing seasons of wetland monitoring)",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6784,
+    "motion": "approve 91 Round Road (Benjamin Builders) driveway entrance and rain garden",
+    "moved_by": "Mike Larouche",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6992,
+    "motion": "approve 15 White Street septic system repair (Carlos Silveira)",
+    "moved_by": "Mike Larouche",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7137,
+    "motion": "approve certificate of compliance for 23 Tilton Ave",
+    "moved_by": "Mike Larouche",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7999,
+    "motion": "approve the library's mushroom walk program on conservation land",
+    "moved_by": "Mike Larouche",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 8489,
+    "motion": "approve funding not to exceed $600 from the Timber Rights fund for the Eagle Scout picnic table project",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 9238,
+    "motion": "approve purchase not to exceed $100 from the Laws fund for an additional bundle of roofing shingles",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 9666,
+    "motion": "adjourn",
+    "moved_by": "Rich Bursch",
+    "outcome": "passed 5-0",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 8296,
+    "topic": "Eagle Scout ADA picnic tables (Timber Rights fund)",
+    "what_was_said": "The chair proposed funding materials for an Eagle Scout's ADA-accessible picnic table project from the Timber Rights fund, based on a lumberyard quote obtained by a prior commissioner.",
+    "figures_as_heard": [
+     "$548",
+     "$600"
+    ]
+   },
+   {
+    "t": 9006,
+    "topic": "Hollis Road shed roofing shingles (Laws fund)",
+    "what_was_said": "A commissioner asked to buy one more bundle of architectural shingles to finish re-roofing the pollinator habitat shed, having come up six shingles short; estimated bundle cost was discussed.",
+    "figures_as_heard": [
+     "$60",
+     "$60 to $75",
+     "$35 to $45",
+     "$100"
+    ]
+   },
+   {
+    "t": 8610,
+    "topic": "Lunenburg Ledger advertisement",
+    "what_was_said": "The agent obtained pricing for a newspaper ad to raise awareness of wetlands regulations, but the Ledger was unsure it could deliver a town-wide mailing; no vote was taken.",
+    "figures_as_heard": [
+     "$125"
+    ]
+   },
+   {
+    "t": 8090,
+    "topic": "Conservation Commission fee schedule (bylaw change)",
+    "what_was_said": "The agent described working with town counsel to let the commission set and maintain its own permit fee schedule via a town meeting warrant article, with a commission vote needed by mid-September.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 8548,
+    "topic": "Timber Rights fund / purchase order closeout",
+    "what_was_said": "An existing purchase order tied to the Eagle Scout project will be closed and its unused balance returned to the Timber Rights fund while a new PO is processed.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6531,
+    "topic": "Stormwater permitting, 91 Round Road subdivision",
+    "what_was_said": "The applicant's engineer explained that every lot in the 25-lot subdivision separately requires a stormwater permit and maintenance plan from the planning board under the town's stormwater bylaw.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 8548,
+    "description": "unused balance on the existing Eagle Scout project purchase order returned to the Timber Rights fund once closed out",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1844,
+    "decision": "engineer for 108 Sunny Hill Road agreed to add a construction schedule requiring the wetland replication area to be built and stabilized concurrently with, and no later than, the driveway construction"
+   },
+   {
+    "t": 4000,
+    "decision": "applicant's engineer for the Goodrich Street pond agreed to add erosion control along the new driveway area after being shown it was down-gradient of the wetland"
+   },
+   {
+    "t": 5258,
+    "decision": "agent to contact Unitil to warn that continued non-responsiveness could lead the commission to consider a vote on the application without them"
+   },
+   {
+    "t": 7452,
+    "decision": "commission to have a commissioner and/or a prior commissioner assess Caldury Trail overgrowth/missing markers and recruit volunteers, potentially NHS students in the fall, to clear the trail"
+   },
+   {
+    "t": 8153,
+    "decision": "commission will hold its vote on the proposed fee-schedule bylaw change until all commissioners, including the chair, are present, ahead of a mid-September deadline"
+   },
+   {
+    "t": 9280,
+    "decision": "agent to obtain quotes from two local carpet companies for possibly replacing carpets at the Hollis Road house"
+   },
+   {
+    "t": 9427,
+    "decision": "agent to schedule a meeting next week with the town manager about next steps for the Hollis Road property, coordinated around the chair's availability"
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 126,
+    "topic": "Opening, Zoom/recording notice, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 126,
+    "t_end": 313,
+    "topic": "Public comment period",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 313,
+    "t_end": 396,
+    "topic": "Pollinator habitat update",
+    "resolution": "informational",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 396,
+    "t_end": 460,
+    "topic": "Approval of 7/15 meeting minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 460,
+    "t_end": 586,
+    "topic": "701 Reservoir Road boat ramp continuance",
+    "resolution": "voted (continued to 8/19)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 586,
+    "t_end": 2951,
+    "topic": "108 Sunny Hill Road driveway crossing hearing (Jacqueline Rager)",
+    "resolution": "voted (continued to 9/2)",
+    "tags": [
+     "planning-and-zoning",
+     "roads-and-dpw",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 2963,
+    "t_end": 5169,
+    "topic": "157 Goodrich Street irrigation pond hearing (Steven Violette)",
+    "resolution": "voted (continued to 8/19)",
+    "tags": [
+     "planning-and-zoning",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 5189,
+    "t_end": 5324,
+    "topic": "Unitil substation/utility pole hearing, 934 Mass Ave",
+    "resolution": "voted (continued to 8/19)",
+    "tags": [
+     "planning-and-zoning",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5324,
+    "t_end": 6042,
+    "topic": "507 West Townsend Road wetland crossing hearing (John Key Construction)",
+    "resolution": "voted (approved with conditions)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 6042,
+    "t_end": 6804,
+    "topic": "91 Round Road / 10 Farmer Road driveway and rain garden (Benjamin Builders)",
+    "resolution": "voted (approved)",
+    "tags": [
+     "planning-and-zoning",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 6804,
+    "t_end": 7034,
+    "topic": "15 White Street failed septic repair (Carlos Silveira)",
+    "resolution": "voted (approved)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 7034,
+    "t_end": 7160,
+    "topic": "Certificate of compliance, 23 Tilton Ave",
+    "resolution": "voted (approved)",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 7160,
+    "t_end": 7308,
+    "topic": "Enforcement update, 1168 Mass Ave",
+    "resolution": "informational",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 7308,
+    "t_end": 7534,
+    "topic": "Caldury Trail overgrowth/missing markers",
+    "resolution": "referred (agent/commissioners to investigate)",
+    "tags": [
+     "facilities",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 7534,
+    "t_end": 8029,
+    "topic": "Library-sponsored mushroom walk on Lane property",
+    "resolution": "voted (approved)",
+    "tags": [
+     "recreation",
+     "library"
+    ]
+   },
+   {
+    "t_start": 8029,
+    "t_end": 8070,
+    "topic": "Old business check-in (land use policy document)",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 8070,
+    "t_end": 8255,
+    "topic": "Fee schedule bylaw change discussion",
+    "resolution": "tabled (no vote; targeted for mid-September)",
+    "tags": [
+     "policy",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 8255,
+    "t_end": 8610,
+    "topic": "Eagle Scout ADA picnic table project funding",
+    "resolution": "voted (approved, not to exceed $600)",
+    "tags": [
+     "budget",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 8610,
+    "t_end": 9006,
+    "topic": "Lunenburg Ledger wetlands-awareness advertisement",
+    "resolution": "no resolution (socialized only)",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 9006,
+    "t_end": 9259,
+    "topic": "Hollis Road shed shingles purchase",
+    "resolution": "voted (approved, not to exceed $100)",
+    "tags": [
+     "budget",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 9259,
+    "t_end": 9615,
+    "topic": "Hollis Road house update (carpet cleaning, future use)",
+    "resolution": "referred (quotes and town manager meeting planned)",
+    "tags": [
+     "facilities",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 9615,
+    "t_end": 9656,
+    "topic": "Committee reports (master plan steering, open space, stormwater)",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 9656,
+    "t_end": 9697,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Formal vote tallies were only heard as individual roll-call 'aye' responses; no spoken 'motion carries' or numeric count.",
+   "The conservation agent's name was rendered inconsistently across captions (Harland/Herland/Hurling/Orlin/Arlene/Erlene/Errol) and could not be settled to one spelling.",
+   "Full text of DEP's comments on 507 West Townsend Road was referenced but not read aloud in the recording.",
+   "Exact per-bundle shingle cost was never confirmed (estimates ranged from $35-$45 to $60-$75).",
+   "Outcome of DEP's scheduled August 13 hearing on the 1168 Mass Ave enforcement matter is not covered in this recording."
+  ],
+  "confidence": "moderate",
+  "headline": "Commission to seek Town Meeting authority to set its own wetlands permit fee schedule, vote due mid-September",
+  "summary": "The Conservation Commission worked through six wetlands hearings — continuing four (a boat ramp, a driveway crossing, an irrigation pond, and a Unitil substation) and approving two (a wetland-crossing home site and a driveway/rain garden) — plus a septic repair and a certificate of compliance. In other business it discussed pursuing town meeting authority to set its own fee schedule, approved small expenditures for an Eagle Scout picnic-table project and shed shingles, and took up trail maintenance and the future use of the commission's Hollis Road house."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission plans to ask Town Meeting for authority to set its own wetlands permit fee schedule, with its own vote due by mid-September.",
+    "t": 8090
+   },
+   {
+    "line": "It approved a wetland crossing at 507 West Townsend Road with added planting and two growing seasons of monitoring, and a driveway/rain garden at 91 Round Road.",
+    "t": 6010
+   },
+   {
+    "line": "Four other hearings were continued, including a boat ramp, a driveway crossing where an abutter described existing flooding, and an irrigation pond an abutter said could drain her own pond.",
+    "t": 1995
+   },
+   {
+    "line": "The agent was directed to warn Unitil that continued non-responsiveness on its substation hearing could lead the commission to vote without them.",
+    "t": 5258
+   },
+   {
+    "line": "Small expenditures were approved for an Eagle Scout picnic-table project and shed shingles, and the future use of the commission's Hollis Road house is under discussion.",
+    "t": 8489
+   }
+  ],
+  "why_it_matters": [
+   "A move to let the commission set its own fee schedule would change how wetlands permit costs are set for property owners doing work near wetlands, subject to a Town Meeting vote."
+  ],
+  "watch_next": [
+   "Commission vote on the fee-schedule warrant article, expected by mid-September, once all commissioners are present.",
+   "Continued hearings return August 19 (boat ramp, irrigation pond, Unitil substation) and September 2 (driveway crossing)."
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-27T02:07:59Z",
-    "cost_usd": 0.518162
-  },
-  "minutes": {
-    "attendees": [
-      {
-        "name_as_heard": "Mary Wilson",
-        "role": "Chair (acting; regular chair Jenny Puthrer absent)"
-      },
-      {
-        "name_as_heard": "Rich Bursch",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Mike Larouche",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Eddie Doucette",
-        "role": "member (also heard as \"Teddy Doucette\")"
-      },
-      {
-        "name_as_heard": "Andrea Burnette",
-        "role": "member (also heard as \"Bernett\"/\"Bernat\")"
-      },
-      {
-        "name_as_heard": "Harland",
-        "role": "Conservation Agent (name also heard as Herland, Hurling, Orlin, Arlene, Erlene, Errol)"
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 189,
-        "speaker_as_heard": "Greg Roy",
-        "stated_role": "representing the applicant, Olson (Dillis) Roy",
-        "topic": "requested an early continuation for 91 Round Road because DEP comments/file number had not yet been received"
-      },
-      {
-        "t": 231,
-        "speaker_as_heard": "Chris McKenzie",
-        "stated_role": "representing applicant, Dilworth & Lally",
-        "topic": "confirmed a DEP file number for the Round Road matter had not been received"
-      },
-      {
-        "t": 1995,
-        "speaker_as_heard": "Colleen Kostitch",
-        "stated_role": "resident, 119 Sunny Hill Road",
-        "topic": "described severe flooding at her property and concern that the proposed 108 Sunny Hill Road driveway crossing would worsen existing road/stormwater problems"
-      },
-      {
-        "t": 4573,
-        "topic": "an abutter (identified by the chair as Patricia Whitney, an owner of a certified wildlife refuge pond) raised concern that excavating the proposed irrigation pond would drain her own 40-year-old pond, fed by underground springs"
-      }
-    ],
-    "tags": [
-      "budget",
-      "facilities",
-      "fees",
-      "legal",
-      "library",
-      "planning-and-zoning",
-      "policy",
-      "public-comment",
-      "recreation",
-      "roads-and-dpw",
-      "town-departments"
-    ],
-    "votes": [
-      {
-        "t": 420,
-        "motion": "approve meeting minutes from 7/15",
-        "moved_by": "Andrea Burnette",
-        "outcome": "passed 5-0",
-        "procedural": true
-      },
-      {
-        "t": 537,
-        "motion": "continue the 701 Reservoir Road boat ramp hearing to August 19",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 2929,
-        "motion": "continue the 108 Sunny Hill Road driveway crossing hearing to September 2",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 5148,
-        "motion": "continue the 157 Goodrich Street irrigation pond hearing to August 19",
-        "moved_by": "Teddy Doucette",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 5280,
-        "motion": "continue the Unitil substation hearing to August 19",
-        "moved_by": "Rich Bursch",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 6010,
-        "motion": "approve 507 West Townsend Road wetland crossing with two added conditions (plantings/stabilization concurrent with span installation; two growing seasons of wetland monitoring)",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 6784,
-        "motion": "approve 91 Round Road (Benjamin Builders) driveway entrance and rain garden",
-        "moved_by": "Mike Larouche",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 6992,
-        "motion": "approve 15 White Street septic system repair (Carlos Silveira)",
-        "moved_by": "Mike Larouche",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 7137,
-        "motion": "approve certificate of compliance for 23 Tilton Ave",
-        "moved_by": "Mike Larouche",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 7999,
-        "motion": "approve the library's mushroom walk program on conservation land",
-        "moved_by": "Mike Larouche",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 8489,
-        "motion": "approve funding not to exceed $600 from the Timber Rights fund for the Eagle Scout picnic table project",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 9238,
-        "motion": "approve purchase not to exceed $100 from the Laws fund for an additional bundle of roofing shingles",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 9666,
-        "motion": "adjourn",
-        "moved_by": "Rich Bursch",
-        "outcome": "passed 5-0",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 8296,
-        "topic": "Eagle Scout ADA picnic tables (Timber Rights fund)",
-        "what_was_said": "The chair proposed funding materials for an Eagle Scout's ADA-accessible picnic table project from the Timber Rights fund, based on a lumberyard quote obtained by a prior commissioner.",
-        "figures_as_heard": [
-          "$548",
-          "$600"
-        ]
-      },
-      {
-        "t": 9006,
-        "topic": "Hollis Road shed roofing shingles (Laws fund)",
-        "what_was_said": "A commissioner asked to buy one more bundle of architectural shingles to finish re-roofing the pollinator habitat shed, having come up six shingles short; estimated bundle cost was discussed.",
-        "figures_as_heard": [
-          "$60",
-          "$60 to $75",
-          "$35 to $45",
-          "$100"
-        ]
-      },
-      {
-        "t": 8610,
-        "topic": "Lunenburg Ledger advertisement",
-        "what_was_said": "The agent obtained pricing for a newspaper ad to raise awareness of wetlands regulations, but the Ledger was unsure it could deliver a town-wide mailing; no vote was taken.",
-        "figures_as_heard": [
-          "$125"
-        ]
-      },
-      {
-        "t": 8090,
-        "topic": "Conservation Commission fee schedule (bylaw change)",
-        "what_was_said": "The agent described working with town counsel to let the commission set and maintain its own permit fee schedule via a town meeting warrant article, with a commission vote needed by mid-September.",
-        "figures_as_heard": []
-      },
-      {
-        "t": 8548,
-        "topic": "Timber Rights fund / purchase order closeout",
-        "what_was_said": "An existing purchase order tied to the Eagle Scout project will be closed and its unused balance returned to the Timber Rights fund while a new PO is processed.",
-        "figures_as_heard": []
-      },
-      {
-        "t": 6531,
-        "topic": "Stormwater permitting, 91 Round Road subdivision",
-        "what_was_said": "The applicant's engineer explained that every lot in the 25-lot subdivision separately requires a stormwater permit and maintenance plan from the planning board under the town's stormwater bylaw.",
-        "figures_as_heard": []
-      }
-    ],
-    "transfers": [
-      {
-        "t": 8548,
-        "description": "unused balance on the existing Eagle Scout project purchase order returned to the Timber Rights fund once closed out",
-        "amount_as_heard": "not stated",
-        "outcome": "discussed only"
-      }
-    ],
-    "decisions": [
-      {
-        "t": 1844,
-        "decision": "engineer for 108 Sunny Hill Road agreed to add a construction schedule requiring the wetland replication area to be built and stabilized concurrently with, and no later than, the driveway construction"
-      },
-      {
-        "t": 4000,
-        "decision": "applicant's engineer for the Goodrich Street pond agreed to add erosion control along the new driveway area after being shown it was down-gradient of the wetland"
-      },
-      {
-        "t": 5258,
-        "decision": "agent to contact Unitil to warn that continued non-responsiveness could lead the commission to consider a vote on the application without them"
-      },
-      {
-        "t": 7452,
-        "decision": "commission to have a commissioner and/or a prior commissioner assess Caldury Trail overgrowth/missing markers and recruit volunteers, potentially NHS students in the fall, to clear the trail"
-      },
-      {
-        "t": 8153,
-        "decision": "commission will hold its vote on the proposed fee-schedule bylaw change until all commissioners, including the chair, are present, ahead of a mid-September deadline"
-      },
-      {
-        "t": 9280,
-        "decision": "agent to obtain quotes from two local carpet companies for possibly replacing carpets at the Hollis Road house"
-      },
-      {
-        "t": 9427,
-        "decision": "agent to schedule a meeting next week with the town manager about next steps for the Hollis Road property, coordinated around the chair's availability"
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 0,
-        "t_end": 126,
-        "topic": "Opening, Zoom/recording notice, roll call",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 126,
-        "t_end": 313,
-        "topic": "Public comment period",
-        "resolution": "informational",
-        "tags": [
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 313,
-        "t_end": 396,
-        "topic": "Pollinator habitat update",
-        "resolution": "informational",
-        "tags": [
-          "facilities"
-        ]
-      },
-      {
-        "t_start": 396,
-        "t_end": 460,
-        "topic": "Approval of 7/15 meeting minutes",
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "t_start": 460,
-        "t_end": 586,
-        "topic": "701 Reservoir Road boat ramp continuance",
-        "resolution": "voted (continued to 8/19)",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 586,
-        "t_end": 2951,
-        "topic": "108 Sunny Hill Road driveway crossing hearing (Jacqueline Rager)",
-        "resolution": "voted (continued to 9/2)",
-        "tags": [
-          "planning-and-zoning",
-          "roads-and-dpw",
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 2963,
-        "t_end": 5169,
-        "topic": "157 Goodrich Street irrigation pond hearing (Steven Violette)",
-        "resolution": "voted (continued to 8/19)",
-        "tags": [
-          "planning-and-zoning",
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 5189,
-        "t_end": 5324,
-        "topic": "Unitil substation/utility pole hearing, 934 Mass Ave",
-        "resolution": "voted (continued to 8/19)",
-        "tags": [
-          "planning-and-zoning",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 5324,
-        "t_end": 6042,
-        "topic": "507 West Townsend Road wetland crossing hearing (John Key Construction)",
-        "resolution": "voted (approved with conditions)",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 6042,
-        "t_end": 6804,
-        "topic": "91 Round Road / 10 Farmer Road driveway and rain garden (Benjamin Builders)",
-        "resolution": "voted (approved)",
-        "tags": [
-          "planning-and-zoning",
-          "roads-and-dpw"
-        ]
-      },
-      {
-        "t_start": 6804,
-        "t_end": 7034,
-        "topic": "15 White Street failed septic repair (Carlos Silveira)",
-        "resolution": "voted (approved)",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 7034,
-        "t_end": 7160,
-        "topic": "Certificate of compliance, 23 Tilton Ave",
-        "resolution": "voted (approved)",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 7160,
-        "t_end": 7308,
-        "topic": "Enforcement update, 1168 Mass Ave",
-        "resolution": "informational",
-        "tags": [
-          "legal",
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 7308,
-        "t_end": 7534,
-        "topic": "Caldury Trail overgrowth/missing markers",
-        "resolution": "referred (agent/commissioners to investigate)",
-        "tags": [
-          "facilities",
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 7534,
-        "t_end": 8029,
-        "topic": "Library-sponsored mushroom walk on Lane property",
-        "resolution": "voted (approved)",
-        "tags": [
-          "recreation",
-          "library"
-        ]
-      },
-      {
-        "t_start": 8029,
-        "t_end": 8070,
-        "topic": "Old business check-in (land use policy document)",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 8070,
-        "t_end": 8255,
-        "topic": "Fee schedule bylaw change discussion",
-        "resolution": "tabled (no vote; targeted for mid-September)",
-        "tags": [
-          "policy",
-          "fees"
-        ]
-      },
-      {
-        "t_start": 8255,
-        "t_end": 8610,
-        "topic": "Eagle Scout ADA picnic table project funding",
-        "resolution": "voted (approved, not to exceed $600)",
-        "tags": [
-          "budget",
-          "capital"
-        ]
-      },
-      {
-        "t_start": 8610,
-        "t_end": 9006,
-        "topic": "Lunenburg Ledger wetlands-awareness advertisement",
-        "resolution": "no resolution (socialized only)",
-        "tags": [
-          "budget"
-        ]
-      },
-      {
-        "t_start": 9006,
-        "t_end": 9259,
-        "topic": "Hollis Road shed shingles purchase",
-        "resolution": "voted (approved, not to exceed $100)",
-        "tags": [
-          "budget",
-          "facilities"
-        ]
-      },
-      {
-        "t_start": 9259,
-        "t_end": 9615,
-        "topic": "Hollis Road house update (carpet cleaning, future use)",
-        "resolution": "referred (quotes and town manager meeting planned)",
-        "tags": [
-          "facilities",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 9615,
-        "t_end": 9656,
-        "topic": "Committee reports (master plan steering, open space, stormwater)",
-        "resolution": "informational",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 9656,
-        "t_end": 9697,
-        "topic": "Adjournment",
-        "resolution": "voted",
-        "tags": []
-      }
-    ],
-    "not_audible": [
-      "Formal vote tallies were only heard as individual roll-call 'aye' responses; no spoken 'motion carries' or numeric count.",
-      "The conservation agent's name was rendered inconsistently across captions (Harland/Herland/Hurling/Orlin/Arlene/Erlene/Errol) and could not be settled to one spelling.",
-      "Full text of DEP's comments on 507 West Townsend Road was referenced but not read aloud in the recording.",
-      "Exact per-bundle shingle cost was never confirmed (estimates ranged from $35-$45 to $60-$75).",
-      "Outcome of DEP's scheduled August 13 hearing on the 1168 Mass Ave enforcement matter is not covered in this recording."
-    ],
-    "confidence": "moderate",
-    "headline": "Commission to seek Town Meeting authority to set its own wetlands permit fee schedule, vote due mid-September",
-    "summary": "The Conservation Commission worked through six wetlands hearings — continuing four (a boat ramp, a driveway crossing, an irrigation pond, and a Unitil substation) and approving two (a wetland-crossing home site and a driveway/rain garden) — plus a septic repair and a certificate of compliance. In other business it discussed pursuing town meeting authority to set its own fee schedule, approved small expenditures for an Eagle Scout picnic-table project and shed shingles, and took up trail maintenance and the future use of the commission's Hollis Road house."
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "The commission plans to ask Town Meeting for authority to set its own wetlands permit fee schedule, with its own vote due by mid-September.",
-        "t": 8090
-      },
-      {
-        "line": "It approved a wetland crossing at 507 West Townsend Road with added planting and two growing seasons of monitoring, and a driveway/rain garden at 91 Round Road.",
-        "t": 6010
-      },
-      {
-        "line": "Four other hearings were continued, including a boat ramp, a driveway crossing where an abutter described existing flooding, and an irrigation pond an abutter said could drain her own pond.",
-        "t": 1995
-      },
-      {
-        "line": "The agent was directed to warn Unitil that continued non-responsiveness on its substation hearing could lead the commission to vote without them.",
-        "t": 5258
-      },
-      {
-        "line": "Small expenditures were approved for an Eagle Scout picnic-table project and shed shingles, and the future use of the commission's Hollis Road house is under discussion.",
-        "t": 8489
-      }
-    ],
-    "why_it_matters": [
-      "A move to let the commission set its own fee schedule would change how wetlands permit costs are set for property owners doing work near wetlands, subject to a Town Meeting vote."
-    ],
-    "watch_next": [
-      "Commission vote on the fee-schedule warrant article, expected by mid-September, once all commissioners are present.",
-      "Continued hearings return August 19 (boat ramp, irrigation pond, Unitil substation) and September 2 (driveway crossing)."
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-27T02:08:18Z",
-      "cost_usd": 0.194376
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T02:08:18Z",
+   "cost_usd": 0.194376
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08052026-7944",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-08-05-minutes-7944.txt",
+   "path": "sources/meetings/conservation-commission/2026-08-05-minutes-7944.pdf"
+  },
+  "official_sha256": "c0062797c90560de08532ca62b40d4a16920255ea8676c6fb3e80dfc7e6b17b5",
+  "coverage": "full",
+  "summary": "The two records agree on all eleven non-procedural votes, each 5-0 with the same outcome and the same continuance dates. The differences that matter are three. Our $100 shingle vote names a different fund from the official minutes. Who gets the carpet quotes differs. The official minutes also record the 1625 Massachusetts Avenue continuance and the 1168 Mass Ave enforcement item, which ours omit.",
+  "counts": {
+   "agree": 16,
+   "caption_error": 7,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: continue 701 Reservoir Road boat ramp hearing to 8/19",
+    "t": 537,
+    "ours": "continue the 701 Reservoir Road boat ramp hearing to August 19 — passed 5-0",
+    "official": "Motion By:  M. Larouche to continue until 8/19",
+    "note": "Same item, same date, and the official roll call is five AYE."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 108 Sunny Hill Road hearing to 9/2",
+    "t": 2929,
+    "ours": "continue the 108 Sunny Hill Road driveway crossing hearing to September 2 — passed 5-0",
+    "official": "Motion By: M. Doucette to continue to 9/2",
+    "note": "Same item and date; the official roll call is five AYE."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 157 Goodrich Street irrigation pond hearing to 8/19",
+    "t": 5148,
+    "ours": "continue the 157 Goodrich Street irrigation pond hearing to August 19 — passed 5-0",
+    "official": "Motion By: T. Douchette to continue to 8/19",
+    "note": "Same item and date; the official roll call is five AYE."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue Unitil substation hearing to 8/19",
+    "t": 5280,
+    "ours": "continue the Unitil substation hearing to August 19 — passed 5-0",
+    "official": "Motion By: M. Larouche to continue to 8/19",
+    "note": "Same item and date; the official roll call is five AYE."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve 507 West Townsend Road wetland crossing with added conditions",
+    "t": 6010,
+    "ours": "approve 507 West Townsend Road wetland crossing with two added conditions (plantings/stabilization concurrent with span installation; two growing seasons of wetland monitoring) — passed 5-0",
+    "official": "Motion by: T. Doucette to approve Order of Conditions to include stabilization and plantings are in place at the time the culver is installed and 2 year growing supervision.",
+    "note": "Same outcome and the same two conditions; the official wording \"2 year growing supervision\" is looser than \"two growing seasons\"."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve 91 Round Road driveway entrance and rain garden",
+    "t": 6784,
+    "ours": "approve 91 Round Road (Benjamin Builders) driveway entrance and rain garden — passed 5-0",
+    "official": "Motion By: M. Larouche to approve Notice of Intent",
+    "note": "Same item and outcome; the official roll call is five AYE."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve 15 White Street septic repair",
+    "t": 6992,
+    "ours": "approve 15 White Street septic system repair (Carlos Silveira) — passed 5-0",
+    "official": "Motion By: M. Larouche to approve Notice of Intent",
+    "note": "Same item and outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name, 15 White Street",
+    "t": 6992,
+    "ours": "Carlos Silveira",
+    "official": "Notice of Intent by Carlos Silvera for the repair/upgrade of a failed septic system",
+    "note": "Spelling of the applicant's surname differs.",
+    "official_reading": "Carlos Silvera"
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: certificate of compliance, 23 Tilton Ave",
+    "t": 7137,
+    "ours": "approve certificate of compliance for 23 Tilton Ave — passed 5-0",
+    "official": "Motion: M. Larouche to approve issuance of Certificate of Compliance",
+    "note": "Same item and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: library mushroom walk on conservation land",
+    "t": 7999,
+    "ours": "approve the library's mushroom walk program on conservation land — passed 5-0",
+    "official": "Motion By:  M. Larouche to approve the event",
+    "note": "Same item and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Eagle Scout picnic tables, Timber Rights fund, up to $600",
+    "t": 8489,
+    "ours": "approve funding not to exceed $600 from the Timber Rights fund for the Eagle Scout picnic table project — passed 5-0",
+    "official": "Motion By:  T. Doucette to approve the funding not to exceed $600 from the timber account",
+    "note": "Same amount, cap and fund."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Fund for the $100 shingle purchase",
+    "t": 9238,
+    "ours": "approve purchase not to exceed $100 from the Laws fund for an additional bundle of roofing shingles — passed 5-0",
+    "official": "Motion By: M. Larouche to approve the funding not to exceed $100 from the HAAS Act",
+    "note": "Same $100 vote and outcome; \"Laws\" is probably a mishearing of the fund's name, but a person should confirm the actual account against the town's records.",
+    "official_reading": "HAAS Act"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Return of unused Eagle Scout purchase order balance",
+    "t": 8548,
+    "ours": "unused balance on the existing Eagle Scout project purchase order returned to the Timber Rights fund once closed out — not stated (discussed only)",
+    "official": "",
+    "note": "The official minutes say only that H. Jaime will facilitate the funding and that the recipient is now responsible for it; they say nothing about a returned balance."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: Eagle Scout tables $548 and $600 cap",
+    "t": 8296,
+    "ours": "Eagle Scout ADA picnic tables (Timber Rights fund): $548, $600",
+    "official": "B. Pease got the actual cost for materials at Maki lumber and it was $548.",
+    "note": "Both records give $548 for materials and a $600 cap."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: Ledger advertisement $125",
+    "t": 8610,
+    "ours": "Lunenburg Ledger advertisement: $125",
+    "official": "a quarter page ad would be $125",
+    "note": "Same amount."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Shingle price estimates ($60, $60 to $75, $35 to $45)",
+    "t": 9006,
+    "ours": "Hollis Road shed roofing shingles (Laws fund): $60, $60 to $75, $35 to $45, $100",
+    "official": "",
+    "note": "The official minutes give only the $100 cap; the per-bundle price estimates appear only in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Trail name",
+    "t": 7452,
+    "ours": "Caldury Trail overgrowth/missing markers",
+    "official": "Cowdrey Trail Overgrowth & Bridge",
+    "note": "Same agenda item; the trail name was misheard.",
+    "official_reading": "Cowdrey Trail"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who acts on the trail overgrowth",
+    "t": 7452,
+    "ours": "commission to have a commissioner and/or a prior commissioner assess Caldury Trail overgrowth/missing markers and recruit volunteers, potentially NHS students in the fall, to clear the trail",
+    "official": "M. Wilson is familiar with that area and will try and get down there or others familiar with the trails and report back to the Commission.",
+    "note": "Both have commissioners assess the trail and volunteers helping, but the official minutes do not mention NHS students or the fall, and they name M. Wilson to report back. Check the recording for the assignment."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: 108 Sunny Hill construction schedule",
+    "t": 1844,
+    "ours": "engineer for 108 Sunny Hill Road agreed to add a construction schedule requiring the wetland replication area to be built and stabilized concurrently with, and no later than, the driveway construction",
+    "official": "The Commission is requiring a construction schedule with the stabilization and replication done during the construction phase",
+    "note": "Same requirement; the official minutes also record other asks (a water garden, a 2:1 ratio, DPW contact) that ours do not."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Goodrich Street erosion control on new driveway",
+    "t": 4000,
+    "ours": "applicant's engineer for the Goodrich Street pond agreed to add erosion control along the new driveway area after being shown it was down-gradient of the wetland",
+    "official": "After discussion it was decided that the lower portion of the driveway would require erosion control.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Agent to warn Unitil about non-responsiveness",
+    "t": 5258,
+    "ours": "agent to contact Unitil to warn that continued non-responsiveness could lead the commission to consider a vote on the application without them",
+    "official": "",
+    "note": "The official minutes record only the continuance of the Unitil hearing; the warning appears only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: hold bylaw vote until full board",
+    "t": 8153,
+    "ours": "commission will hold its vote on the proposed fee-schedule bylaw change until all commissioners, including the chair, are present, ahead of a mid-September deadline",
+    "official": "A vote would be necessary by mid-September.  There were no questions from the Commission.  Continued until there is a full board.",
+    "note": "Same decision; the official minutes do not call it a fee-schedule change."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Carpet replacement quotes at Hollis Road house",
+    "t": 9280,
+    "ours": "agent to obtain quotes from two local carpet companies for possibly replacing carpets at the Hollis Road house",
+    "official": "He has gone ahead and scheduled two local carpet people to give a number of what it would cost to replace the carpet",
+    "note": "Ours assigns the quotes to the agent; the official minutes say a commissioner (M./Mike Doucette) arranged them. Check the recording for who is obtaining the quotes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting with Town Manager on Hollis Road property",
+    "t": 9427,
+    "ours": "agent to schedule a meeting next week with the town manager about next steps for the Hollis Road property, coordinated around the chair's availability",
+    "official": "M. Wilson would like to plan the meeting around the chair’s availability.",
+    "note": "The official minutes give no \"next week\" timing and add that town counsel would also be included; check the recording for the timing and attendees."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "1625 Massachusetts Avenue continuance",
+    "ours": "",
+    "official": "Continued to 8/19 by request of the applicant",
+    "note": "Our minutes list no 1625 Massachusetts Avenue continuance; the official minutes record it with no roll-call vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "1168 Mass Ave Rear enforcement item",
+    "ours": "",
+    "official": "A Notice of Enforcement Conference was received from DEP dated July 20, 2026.",
+    "note": "The enforcement item is not in ours, and no vote was taken."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Conservation Agent",
+    "ours": "Harland (Conservation Agent (name also heard as Herland, Hurling, Orlin, Arlene, Erlene, Errol))",
+    "official": "Herlin Jaime – Conservation Agent",
+    "note": "Misheard first name.",
+    "official_reading": "Herlin Jaime"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Doucette",
+    "ours": "Eddie Doucette (member (also heard as \"Teddy Doucette\"))",
+    "official": "Present: M. Wilson, R. Bursch, A. Burnap, M. Larouche, and T. Doucette.",
+    "note": "Same member; the official roster header spells the first name Teddy.",
+    "official_reading": "Teddy Doucette"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Andrea Burnap",
+    "ours": "Andrea Burnette (member (also heard as \"Bernett\"/\"Bernat\"))",
+    "official": "Present: M. Wilson, R. Bursch, A. Burnap, M. Larouche, and T. Doucette.",
+    "note": "Misheard surname.",
+    "official_reading": "Andrea Burnap"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Absent chair's name",
+    "ours": "Chair (acting; regular chair Jenny Puthrer absent)",
+    "official": "Absent: J. Pewtherer,",
+    "note": "Same absent chair; the surname was misheard.",
+    "official_reading": "Jennifer Pewtherer"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees present: Wilson, Bursch, Larouche",
+    "ours": "Mary Wilson (Chair (acting; regular chair Jenny Puthrer absent)); Rich Bursch; Mike Larouche",
+    "official": "Call to Order at 7:04 pm by M. Wilson",
+    "note": "Five members present in both; Wilson ran the meeting."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-02T11:50:29Z",
+   "cost_usd": 0.283181
+  }
+ }
 }
