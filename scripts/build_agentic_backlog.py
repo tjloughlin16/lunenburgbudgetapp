@@ -33,13 +33,42 @@ def split(dates_done, dates_todo):
     return r(dates_done), r(dates_todo)
 
 
+def transcript_disk_lag():
+    """Captions the INDEX records that this checkout does not hold on disk.
+
+    Not a backlog -- nobody has to fetch them again. It is how far this tree is behind
+    the archive, and it is only ever non-zero in a tree that is not the one the refresh
+    runs in. Printed so a thin checkout is visible instead of silently shrinking a count.
+    """
+    idx = {r['video_id'] for r in read(os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv'))}
+    disk = {os.path.basename(p)[-16:-5] for p in glob.glob(os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts', '*', '*.json'))}
+    return len(idx - disk)
+
+
 def transcripts():
     # ONE ROW PER RECORDING. youtube-video-boards.csv is one row per (video, board), so a
     # joint body's meeting appears under each board that was in it -- a Tri-Board meeting is
     # four rows. Counting rows counts that recording four times in a backlog of recordings.
     rows = read(os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv'))
     rows = list({r['video_id']: r for r in rows}.values())
-    have = {os.path.basename(p)[-16:-5] for p in glob.glob(os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts', '*', '*.json'))}
+    # THE TRACKED INDEX, NOT THE FILES ON DISK. `youtube-transcripts/` is GITIGNORED, so
+    # this used to publish a figure about whichever CHECKOUT ran the generator and read as
+    # a figure about the archive -- the defect CLAUDE.md names for
+    # `build_minutes_searchable.py`, which now refuses rather than guess.
+    #
+    # It bit on 3 October 2026. The daily refresh runs in its own worktree and fetched 8
+    # captions overnight into ITS ignored directory; this tree holds 2,666 files and that
+    # one holds 2,674, so merging its generated copy and regenerating here moved the row
+    # from `702 held, 0 to do` to `694 held, 8 to do`. Nothing about the town changed and
+    # no caption was lost -- the 8 are in the index, which is TRACKED and identical in
+    # both trees. Tomorrow's refresh would have flipped it back, which is worse than
+    # being wrong once: a figure that oscillates with whoever last ran the build.
+    #
+    # So the count comes off the index, the archive's own record of what captions exist,
+    # and the files are its payload. `disk_lag()` reports the difference rather than
+    # hiding it, because a checkout missing payload is worth seeing -- just not worth
+    # publishing as a backlog somebody should clear.
+    have = {r['video_id'] for r in read(os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv'))}
     nocap = {r['video_id'] for r in read(os.path.join(ROOT, 'sources', 'data', 'youtube-no-captions.csv'))}
     done = [r['meeting_date'] for r in rows if r['video_id'] in have]
     todo = [r['meeting_date'] for r in rows if r['video_id'] not in have and r['video_id'] not in nocap and r['meeting_date']]
@@ -254,6 +283,14 @@ def main():
     for name, how, (done, todo) in streams:
         (dr, do), (tr, to) = split(done, todo)
         b.write('| %s | %d | **%d** | %d | %d | %s |\n' % (name, dr, tr, do, to, how))
+    lag = transcript_disk_lag()
+    if lag:
+        # SAID OUT LOUD, BESIDE THE TABLE, so a thin checkout is visible without the
+        # count moving. This is not work: the captions exist and the index records them.
+        b.write('\n*This checkout holds no local copy of %d caption file(s) the index '
+                'records -- `sources/data/youtube-transcripts/` is gitignored and the daily '
+                'refresh fetches into its own worktree. Nothing to fetch again; the counts '
+                'above come from the tracked index, not from this disk.*\n' % lag)
     # `recording-minutes-policy.csv` READS LIKE A SCOPE FILE AND IS NOT. Its `*` row
     # covers any board since 2000-01-01, so refresh.covered() matches every transcript:
     # the file sets PRIORITY -- Town Meeting, then the three budget boards, then the rest
