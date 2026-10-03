@@ -422,19 +422,44 @@ def caption_pending():
     return group((r['board_slug'], r['meeting_date']) for r in todo)
 
 
-def register_pending(want, have_dir):
-    """Meetings the register says CAN be read, for which no file exists yet."""
+def register_split(want, have_dir):
+    """(meetings with a file, meetings without) -- ONE GRAIN, from ONE join.
+
+    BOTH SIDES COME OUT OF HERE BECAUSE THE CARD ADDS THEM. TJ, reading the votes card:
+    *"i see `1,828 of 4,515 sets of the town's minutes processed`"* -- and 4,515 is not a
+    quantity. It was `done + todo` where `done` counted FILES, one per minutes DOCUMENT,
+    and `todo` counted MEETINGS out of the register. 198 dates hold more than one set of
+    minutes (Planning Board 2022-10-24 holds five), so the two diverge, and their sum is
+    documents plus meetings: neither of the three real denominators, which are 4,702
+    documents, 4,428 distinct board-and-date among them, and 4,438 register meetings.
+
+    The comment this replaces had already caught a symptom -- `1,201 in the pill and
+    1,206 in the table` -- and fixed it by trusting the pending side and leaving `done` a
+    file count. That kept the two figures from disagreeing with each other and let their
+    TOTAL be wrong instead. Counting both from one join is what actually closes it: the
+    sum is the register's own figure by construction.
+
+    The document count is not lost -- the card states it as a note, because `how many
+    files did we write` and `how many meetings are covered` are both worth knowing and
+    must never be added together.
+    """
     have = {os.path.relpath(p, os.path.join(DATA, have_dir))[:-5].split('/')[0] + '|' +
             os.path.basename(p)[:10]
             for p in glob.glob(os.path.join(DATA, have_dir, '*', '*.json'))}
-    out = []
+    covered, out = 0, []
     for r in rows('meeting-register.csv'):
         if r.get('part_of') or not want(r):
             continue
         if '%s|%s' % (r['board_slug'], r['date']) in have:
+            covered += 1
             continue
         out.append((r['board_slug'], r['date']))
-    return group(out)
+    return covered, group(out)
+
+
+def register_pending(want, have_dir):
+    """Just the pending half, for callers that do not state a total."""
+    return register_split(want, have_dir)[1]
 
 
 
@@ -753,7 +778,7 @@ def streams():
     # file exists but whose register row no longer matches it. That difference is worth
     # finding, and it is not worth guessing at from a dashboard, so the page states the
     # one figure it can stand behind: how many meetings have no file.
-    vp = register_pending(lambda r: r.get('minutes') == '1', 'official-votes')
+    v_done, vp = register_split(lambda r: r.get('minutes') == '1', 'official-votes')
     # NAMED FOR WHAT IT PRODUCES, WHICH IS ONLY VOTES. TJ, 19 September 2026: "why do you
     # call it 'Votes from the town's minutes'? I assume this means 'Our own minutes'
     # because its more than votes isnt it that we're processing for?" -- a fair reading,
@@ -784,18 +809,24 @@ def streams():
                      'extracted and searchable &rarr; out: the votes they state as '
                      'structured rows, each quoted verbatim &mdash; votes are the only '
                      'OBJECT we build from them today',
-                  done=len(glob.glob(os.path.join(DATA, 'official-votes', '*', '*.json'))),
+                  done=v_done,
                   todo=sum(p['n'] for p in vp), blocked=0, blocked_why='',
-                  cost='~0.03% of the week each, runs by itself',
+                  cost='~0.03%% of the week each, runs by itself &middot; %s vote files '
+                       'written, one per minutes DOCUMENT; 198 dates hold more than one '
+                       'set, so files and meetings are different counts and are never '
+                       'added' % '{:,}'.format(
+                           len(glob.glob(os.path.join(DATA, 'official-votes', '*', '*.json')))),
                   last=ago(newest([os.path.join(DATA, 'official-votes', '*', '*.json')])), note='every vote carries a quote checked verbatim against the minutes',
                   pending=vp))
-    mp = register_pending(lambda r: bool(r.get('transcript_paths')), 'recording-minutes')
+    m_done, mp = register_split(lambda r: bool(r.get('transcript_paths')), 'recording-minutes')
     s.append(dict(key='ourminutes', unit=('recording written up', 'recordings written up', 'recordings still to write up'), name='OUR minutes, written from the recordings',
                   io='in: our machine captions of a video &rarr; out: the whole meeting — decisions, '
                      'votes, transfers, budget items, topics, public comment',
-                  done=len(glob.glob(os.path.join(DATA, 'recording-minutes', '*', '*.json'))),
+                  done=m_done,
                   todo=sum(p['n'] for p in mp), blocked=0, blocked_why='',
-                  cost='~0.09% of the week each, runs by itself',
+                  cost='~0.09%% of the week each, runs by itself &middot; %s files written, '
+                       'one per RECORDING' % '{:,}'.format(
+                           len(glob.glob(os.path.join(DATA, 'recording-minutes', '*', '*.json')))),
                   last=ago(newest([os.path.join(DATA, 'recording-minutes', '*', '*.json')])), note='written from our captions; two derived layers from the meeting',
                   pending=mp))
     # THE ANNUAL REPORTS. Free, ours, and the biggest pile in the project.
