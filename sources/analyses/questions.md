@@ -818,7 +818,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=1097
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=1141
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -826,7 +826,7 @@ Returns `source_type`, `basis`, `documents` — for example: source_type=primary
 SELECT doc_id, link_state, copy_state, url FROM document WHERE copy_state NOT IN ('identical','') OR link_state NOT IN ('200','') LIMIT 20
 ```
 
-Returns `doc_id`, `link_state`, `copy_state`, `url` — for example: doc_id=sources/district-budget/docs/fy26-superintendent-39-s-proposed-budget-2-26-25-updated-3-12-25.pdf, link_state=200, copy_state=reflowed, url=https://drive.google.com/file/d/1sqlWrNsH43AE8JqAAnqNPpOt1mi3gCDU/view?usp=drive_link
+Returns `doc_id`, `link_state`, `copy_state`, `url` — for example: doc_id=sources/contracts/pdf/nonaffiliated-salary-schedule.pdf, link_state=401, copy_state=restricted, url=https://drive.google.com/file/d/0B-TXWy9uLFrVelNCaVFfSnpXbzA/view
 
 **Which documents have no upstream address at all?**
 
@@ -896,7 +896,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=check fa
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=1097
+Returns `source_type`, `documents` — for example: source_type=primary, documents=1141
 
 **What basis does each document have for the figures it prints?**
 

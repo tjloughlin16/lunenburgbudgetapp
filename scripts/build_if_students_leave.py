@@ -629,6 +629,7 @@ def choice_in(c):
         return float(s.replace(',', ''))
 
     series, chain_checks, arith_checks = [], 0, 0
+    chain_breaks = []   # (last usable year, next usable year) -- the chain is NOT checked across these
     prev = None
     for r in rows:
         fwd, rec, dis, car = (num(r['v1']), num(r['v2']), num(r['v3']), num(r['v4']))
@@ -644,12 +645,36 @@ def choice_in(c):
             else:
                 arith_checks += 1
         usable = fwd is not None and rec is not None and dis is not None
-        if prev is not None and usable and prev['carried'] is not None:
+        # THE CHAIN MAY ONLY BE CHECKED BETWEEN CONSECUTIVE YEARS, and it was not.
+        #
+        # `prev` is the last USABLE year, not the previous one, so when a year's row does
+        # not parse the check reached across it and compared two balances a year apart as
+        # though they were the same quantity. On 4 October 2026 that produced:
+        #
+        #     FY2017 opens at 396,869.58 against FY2015's carried balance of
+        #     254,512.23 -- two annual town reports disagree about the same balance
+        #
+        # 254,512.23 is the School Choice balance forward at 7/1/2015 (FY2015 report,
+        # p29) and 396,869.58 is the forward at 7/1/2016 (FY2017 report, p30). A YEAR
+        # APART. FY2016 sits between them, in the `FY2016-addendum` edition, and its row
+        # parsed without a fund so it is not usable. The documents do not disagree about
+        # anything; our check skipped a year and then described the gap as the town's
+        # arithmetic failing.
+        #
+        # That is rule 13c in the place it does most damage -- a refusal that reads as a
+        # finding -- and it would have been registered in money-gaps.csv as `two annual
+        # reports disagree` had the figures not been looked up. So the chain is checked
+        # only across adjacent years, and a skipped year is RECORDED rather than bridged:
+        # it is a hole in what we can verify, not evidence about the town.
+        adjacent = prev is not None and int(r['fy']) == int(prev['fy']) + 1
+        if prev is not None and usable and prev['carried'] is not None and adjacent:
             if abs(prev['carried'] - fwd) > CENT:
                 fail(f'FY{r["fy"]} opens at {fwd:,.2f} against FY{prev["fy"]}’s carried '
                      f'balance of {prev["carried"]:,.2f} — two annual town reports '
                      'disagree about the same balance')
             chain_checks += 1
+        elif prev is not None and usable and not adjacent:
+            chain_breaks.append((int(prev['fy']), int(r['fy'])))
         row = dict(fy=int(r['fy']), edition=r['edition'], page=r['page'],
                    fund=r['fund'], status=r['status'],
                    forward=fwd, receipts=rec, disbursements=dis, carried=car,
@@ -665,6 +690,10 @@ def choice_in(c):
     if len(usable) < 5:
         fail(f'only {len(usable)} School Choice fund years survive their own arithmetic — '
              'a series this short is not a series')
+    if chain_breaks:
+        print('  the balance chain is NOT checked across %d gap(s): %s -- a year whose row '
+              'does not parse, not a disagreement between documents'
+              % (len(chain_breaks), ', '.join('FY%d->FY%d' % g for g in chain_breaks)))
     if chain_checks < 5:
         fail(f'only {chain_checks} year-to-year balance chains could be checked across the '
              'annual reports — the cross-document check this series rests on is missing')
@@ -699,6 +728,11 @@ def choice_in(c):
                       'established here is the row’s own arithmetic and the chain between '
                       'documents — both asserted by the generator, neither by the extract.'),
         arithmetic_checks=arith_checks, chain_checks=chain_checks,
+        # THE YEARS THE CHAIN COULD NOT CROSS, published rather than merely skipped. The
+        # check used to reach across an unparsed year and report the jump as the town's
+        # documents disagreeing; a hole in what we can verify is ours, and it belongs in
+        # the payload beside the count of what we did verify.
+        chain_breaks=[{'from': a, 'to': b} for a, b in chain_breaks],
         first=first, last=last,
         receipts_change=round(last['receipts'] - first['receipts'], 2),
         receipts_pct=round(last['receipts'] / first['receipts'] - 1.0, 4),

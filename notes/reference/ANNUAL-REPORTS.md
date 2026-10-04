@@ -27,7 +27,7 @@ prints no total. **Nothing here may be aggregated without splitting on `status` 
 | `placement-counts.csv` | 15 | 2011–2025 | parts sum to the total; each year states its predecessor | yes | yes | yes |
 | `ballot-questions.csv` | 9 | 2012–2025 | every tally against its own precinct figures | yes | — | yes |
 | `annual-report-receipts.csv` | 1,137 | 2011–2023 | 504 checked / 85 failed / 548 no check | yes | yes | yes |
-| `special-revenue-funds.csv` | 2,466 | 2011–2025 | 962 checked / 1,504 failed / 0 no check | yes | yes | yes |
+| `special-revenue-funds.csv` | 2,473 | 2011–2025 | 962 checked / 1,365 failed / 146 no check | yes | yes | yes |
 | `staff-roster-entries.csv` | 3,751 | 2011–2025 | every line of every page accounted for | yes | — | yes |
 | `staff-roster-counts.csv` | 698 | 2011–2025 | derived from the above | yes | — | yes |
 | `staff-position-map.csv` | 525 | — | a hypothesis about which titles are the same job | yes | — | yes |
@@ -49,7 +49,7 @@ Read `column_meaning` before reading a value.
 | `report-enrollment-mcas.csv` | 338 | 2011–2025 | 0 checked / 0 failed / 338 no check | yes | shared | yes |
 | `report-filing.csv` | 104 | — | — | **no** | shared | yes |
 | `report-gross-wages.csv` | 3,547 | 2011–2025 | 0 checked / 0 failed / 3,547 no check | yes | shared | yes |
-| `report-index.csv` | 693 | 2011–2025 | — | **no** | shared | yes |
+| `report-index.csv` | 698 | 2011–2025 | — | **no** | shared | yes |
 | `report-monty-tech.csv` | 70 | 2017–2017 | 0 checked / 0 failed / 70 no check | yes | shared | yes |
 | `report-officials.csv` | 237 | 2011–2024 | 0 checked / 0 failed / 237 no check | yes | shared | yes |
 | `report-signatures.csv` | 182 | 2013–2025 | — | **no** | shared | yes |

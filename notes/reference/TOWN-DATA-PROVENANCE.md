@@ -82,13 +82,12 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 
 ## Posts and boards
 
-`town-personnel.csv`, FY2016–FY2025, 2,118 rows across 132 distinct posts. Checks: 492 checked, 299 check failed, 1327 no check — and nothing may be counted without splitting on that column.
+`town-personnel.csv`, FY2016–FY2025, 2,159 rows across 132 distinct posts. Checks: 492 checked, 299 check failed, 1368 no check — and nothing may be counted without splitting on that column.
 
 | board, committee or post | years listed | how it is filled | states its size |
 |---|---|---|---|
 | 'AX CUSTODIAI | FY2017 | appointed officer | no |
-| 4VLV | FY2019 |  officer | no |
-| AGRICULTURAL COMMISSION | FY2016–FY2018, FY2020–FY2025 | appointed board seat | 5 |
+| AGRICULTURAL COMMISSION | FY2016–FY2025 | appointed board seat | 5 |
 | AMERICANS WITH DISABILITIES COMMITTEE | FY2019–FY2021, FY2024–FY2025 | appointed board seat | 5 |
 | ANIMAL CONTROL OFFICER | FY2016–FY2024 | appointed officer | no |
 | ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC) | FY2016–FY2023, FY2025 | appointed board seat | 5 |
@@ -96,7 +95,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | ASSISTANT DAM KEEPER | FY2016–FY2025 | appointed officer | no |
 | ASSISTANT TAX COLLECTOR/TREASURER | FY2021–FY2025 | appointed officer | no |
 | ASSISTANT TOWN CLERK | FY2018–FY2025 | appointed officer | no |
-| ASST. INSPECTOR OF PLUMBING/GAS | FY2016–FY2018, FY2020–FY2025 | appointed officer | no |
+| ASST. INSPECTOR OF PLUMBING/GAS | FY2016–FY2025 | appointed officer | no |
 | ASST. INSPECTOR OF WIRING | FY2017–FY2025 | appointed officer | no |
 | Associate Members | FY2024–FY2025 | appointed board seat | no |
 | Associate Members (2) | FY2025 | appointed board seat | no |
@@ -110,13 +109,13 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | BUILDING REUSE COMMITTEE | FY2016 | appointed officer | no |
 | BULDING COMMISSIONER/ZONING ENFORCEMENT OFFICER | FY2023 | appointed officer | no |
 | BYLAW REVIEW COMMITTEE | FY2016 | appointed officer | no |
-| Board of Assessors | FY2016–FY2018, FY2020–FY2024 | elected board seat | 3 |
+| Board of Assessors | FY2016–FY2024 | elected board seat | 3 |
 | Board of Health | FY2016–FY2024 | elected board seat | 5 |
 | Board of Selectmen | FY2016–FY2019 | elected board seat | no |
 | CABLE ADVISORY COMMITTEE | FY2016–FY2018 | appointed officer | no |
 | CAPITAL PLANNING COMMITTEE | FY2016–FY2025 | appointed board seat | 5 |
 | CEMETERY COMMISSION | FY2025 | elected board seat | 3 |
-| CHARTER REVIEW COMMITTEE | FY2017–FY2018 | appointed officer | no |
+| CHARTER REVIEW COMMITTEE | FY2017–FY2019 | appointed officer | no |
 | CLOCK WINDERS | FY2016 | appointed officer | no |
 | CONSERVATION COMMISSION | FY2016–FY2025 | appointed board seat | 7 |
 | CONSTABLE | FY2016–FY2021, FY2025 | appointed officer | no |
@@ -148,18 +147,18 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | HISTORICAL COMMISSION | FY2016–FY2025 | appointed board seat | 3-7 |
 | HOUSING AUTHORITY | FY2025 | elected board seat | 5 |
 | Housing Authority | FY2016–FY2024 | elected board seat | 5 |
-| INSPECTOR OF PLUMBING & GAS FITTINGS | FY2016–FY2018, FY2020–FY2021 | appointed officer | no |
+| INSPECTOR OF PLUMBING & GAS FITTINGS | FY2016–FY2021 | appointed officer | no |
 | INSPECTOR OF PLUMBING/GAS | FY2022–FY2025 | appointed officer | no |
-| INSPECTOR OF WEIGHTS & MEASURES | FY2016–FY2018, FY2020–FY2025 | appointed officer | no |
+| INSPECTOR OF WEIGHTS & MEASURES | FY2016–FY2025 | appointed officer | no |
 | INSPECTOR OF WIRING | FY2016–FY2025 | appointed officer | no |
 | INTERIM TOWN MANAGER | FY2016 | appointed officer | no |
 | INTERIM VETERANS SERVICES AGENT | FY2022–FY2023 | appointed officer | no |
-| John Palumbo-Member at Large | FY2019 |  board seat | no |
-| LAND ACQUISITION COMMITTEE | FY2019 |  officer | no |
+| John Palumbo-Member at Large | FY2019 | appointed board seat | no |
+| LAND ACQUISITION COMMITTEE | FY2019 | appointed officer | no |
 | LIBRARY TRUSTEES | FY2025 | elected board seat | 7 |
 | LOCAL BUILDING INSPECTOR | FY2017–FY2019 | appointed officer | no |
-| LOCAL CENSUS LIAISON | FY2016, FY2018–FY2025 | appointed officer | no |
-| LULL | FY2019 |  officer | no |
+| LOCAL CENSUS LIAISOL | FY2019 | appointed officer | no |
+| LOCAL CENSUS LIAISON | FY2016, FY2018, FY2020–FY2025 | appointed officer | no |
 | LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE | FY2023–FY2025 | appointed officer | no |
 | LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE (eff. 1/4/2022) | FY2022 | appointed officer | no |
 | Library Trustees | FY2016–FY2024 | elected board seat | 7 |
@@ -176,26 +175,27 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | OCAL CENSUS LIAISON | FY2017 | appointed officer | no |
 | OPEN SPACE COMMITTEE (ad hoc) | FY2020 | appointed board seat | 7 |
 | PARKS COMMISSION | FY2025 | elected board seat | 5 |
-| PERSONNEL COMMITTEE | FY2016–FY2018, FY2020–FY2025 | appointed board seat | 5 |
+| PERSONNEL COMMITTEE | FY2016–FY2025 | appointed board seat | 5 |
 | PLANNING BOARD | FY2025 | elected board seat | 5 |
 | POLICE CHIEF | FY2016–FY2025 | appointed officer | no |
 | POUND KEEPER | FY2016–FY2025 | appointed officer | no |
 | PUBLIC ACCESS CABLE COMMITTEE | FY2016–FY2025 | appointed board seat | 5 |
 | PUBLIC RECORDS ACCESS OFFICERS | FY2017–FY2025 | appointed officer | no |
-| Park Commission | FY2016–FY2018, FY2020 | elected board seat | 5 |
+| Park Commission | FY2016–FY2020 | elected board seat | 5 |
 | Parks Commission | FY2021–FY2024 | elected board seat | 5 |
-| Planning Board | FY2016–FY2018, FY2020–FY2024 | elected board seat | 5 |
+| Planning Board | FY2016–FY2024 | elected board seat | 5 |
 | RECREATION DIRECTOR | FY2023–FY2025 | appointed officer | no |
 | SCHOOL BUILDING COMMITTEE | FY2016 | appointed officer | no |
 | SCHOOL COMMITTEE | FY2025 | elected board seat | 5 |
 | SELECT BOARD | FY2025 | elected board seat | 5 |
 | SENIOR CITIZEN PROPERTY TAX WORK-OFF PROGRAM & TAXATION AID COMMITTEE | FY2021 | appointed officer | no |
 | SEWER COMMISSION - 1/2 | FY2025 | elected board seat | 5 |
-| STORM WATER TASK FORCE | FY2016–FY2018, FY2020–FY2025 | appointed board seat | 3 |
+| STORM WATER TASK FORCE | FY2016–FY2025 | appointed board seat | 3 |
 | School Committee | FY2016–FY2024 | elected board seat | 5 |
 | Select Board | FY2020–FY2024 | elected board seat | 5 |
 | Sewer Commission - 1/2 | FY2016–FY2024 | elected board seat | 5 |
-| TAX COLLECTOR/TREASURER/TAX CUSTODIAN | FY2019–FY2025 | appointed officer | no |
+| TAX COLLECTOR/TREASURER TA CUSTOMA | FY2019 | appointed officer | no |
+| TAX COLLECTOR/TREASURER/TAX CUSTODIAN | FY2020–FY2025 | appointed officer | no |
 | TAX CUSTODIAN | FY2018 | appointed officer | no |
 | TAXATION AID COMMITTEE | FY2016–FY2020 | appointed officer | 5 |
 | TC PASSIOS BUILDING DESIGN COMMITTEE | FY2020–FY2021 | appointed board seat | 7 |
@@ -224,7 +224,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | department | years | how it states it |
 |---|---|---|
 | Board of Assessors | FY2023, FY2025 | an establishment, one post at a time |
-| Building Department | FY2020–FY2022 | a named staff list |
+| Building Department | FY2019–FY2022 | a named staff list |
 | Coming Soon | FY2013 | prose, not counted |
 | Cougare | FY2020 | prose, not counted |
 | Council on Aging | FY2011, FY2014–FY2025 | a named staff list; board membership, not staff |
@@ -245,7 +245,6 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | Monty Bha | FY2022 | prose, not counted |
 | Nashoba Associated Boards of Health | FY2021 | prose, not counted |
 | Our School Community | FY2024 | prose, not counted |
-| Planning | FY2019 | board membership, not staff |
 | Planning Board | FY2017–FY2018, FY2024 | board membership, not staff |
 | Police Department | FY2017–FY2019, FY2022 | prose, not counted |
 | Sewer Commission | FY2021, FY2024 | prose, not counted |
@@ -253,7 +252,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 | Superintendent- Director Report | FY2016 | prose, not counted |
 | T.C. Passios Elementary School | FY2011 | prose, not counted |
 | Turkey Hill Elementary School | FY2016 | prose, not counted |
-| Zoning Board of Appeals | FY2011–FY2014, FY2016, FY2020–FY2022, FY2024–FY2025 | board membership, not staff |
+| Zoning Board of Appeals | FY2011–FY2014, FY2016, FY2019–FY2022, FY2024–FY2025 | board membership, not staff |
 
 ## Named rosters
 
