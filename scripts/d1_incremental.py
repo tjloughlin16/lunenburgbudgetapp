@@ -197,7 +197,41 @@ def plan(local, remote, limit, deps=None):
 
 
 def batch_sql(local, send, drop):
-    """One transaction's worth of SQL: defer the keys, then replace only what changed."""
+    """One transaction's worth of SQL: defer the keys, then replace only what changed.
+
+    THE DEFERRAL DOES NOT SURVIVE WRANGLER, AND THIS IS CURRENTLY BROKEN. On 4 October
+    2026 a 14-table, 12,846-row incremental push failed outright:
+
+        FOREIGN KEY constraint failed: SQLITE_CONSTRAINT_FOREIGNKEY
+
+    `PRAGMA defer_foreign_keys` is emitted first and is TRANSACTION-SCOPED. A HYPOTHESIS,
+    and the only one that fits: `wrangler d1 execute --file` runs the file in BATCHES --
+    sync_d1.py's own header says so -- so each batch is its own transaction and the pragma
+    covers the first one only. `DELETE FROM "document";` then runs with keys enforced while
+    tables NOT in this batch still reference its rows, and the whole push is refused.
+
+    Nothing partial landed -- /api/query answered in 22ms afterwards -- so the live copy is
+    intact and merely a few tables behind. It is availability that is at risk here, never
+    correctness.
+
+    WHAT WOULD FIX IT, none of them a one-liner, and the choice is a real decision:
+
+      * `INSERT OR REPLACE` instead of `DELETE` + `INSERT` for a same-shape table, so no
+        row is ever deleted and no child is ever orphaned. Cheapest, and WRONG where a row
+        was removed locally: the remote keeps it for ever.
+      * Send a parent and every table referencing it in ONE batch, so the deletes and the
+        reinserts are always in the same transaction. Correct, and it makes the batch as
+        large as the subgraph -- `document` has many children, which is how a 97-row lag
+        became a 12,846-row push in the first place.
+      * Delete only the keys that are actually going away, computed by diffing local
+        against remote. Correct and minimal, and it needs a read of the remote's keys,
+        which is rows-read against the daily budget.
+
+    Until one is chosen the push is attempted and refused, which is loud and safe. Do not
+    reach for `PRAGMA foreign_keys = OFF`: it is connection-scoped, D1 gives no guarantee
+    about the connection between batches, and a push that silently breaks referential
+    integrity is worse than one that refuses.
+    """
     out = ['PRAGMA defer_foreign_keys = true;', SYNC_SCHEMA + ';']
     for t in drop:
         out.append('DROP TABLE IF EXISTS "%s";' % t)

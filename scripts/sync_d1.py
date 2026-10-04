@@ -208,7 +208,49 @@ def main():
         print(f'  last pushed      {(last[:12] or "never"):12}  '
               f'{"DIFFERENT — a push is owed" if due else "identical — nothing to push"}')
         print(f'  indexes          {idx}')
-        print(f'\n  a full replace writes ~{rows:,} rows plus index maintenance.')
+        # THE PLAN MUST DESCRIBE THE PUSH THAT WOULD ACTUALLY RUN, and it described a
+        # different one. `--plan` printed the FULL-replace arithmetic -- `a full replace
+        # writes ~154,054 rows` against a 100,000/day limit -- while a bare `sync_d1.py`
+        # has been INCREMENTAL by default for weeks and sends only the tables whose digest
+        # differs, capped at `--limit` (40,000).
+        #
+        # On 4 October 2026 two tables were behind by 97 rows in total, about 200 writes.
+        # The plan made that look like a six-figure operation that could take /api/query
+        # dark for the day, so it was not run -- a planner that overstates by three orders
+        # of magnitude does not protect the budget, it protects the backlog.
+        #
+        # The incremental size is computed from the same per-table digests the push uses,
+        # and the full-replace figure stays BELOW it, as the thing `--full` would do.
+        # THE PLAN MUST DESCRIBE THE PUSH THAT WOULD ACTUALLY RUN, and it described a
+        # different one. `--plan` printed the FULL-replace arithmetic -- `a full replace
+        # writes ~154,054 rows` against a 100,000/day limit -- while a bare `sync_d1.py`
+        # has been INCREMENTAL by default for weeks: only the tables whose digest differs,
+        # capped at `--limit` (40,000).
+        #
+        # On 4 October 2026 two tables were behind by 97 rows in total, about 200 writes.
+        # The plan made that look like a six-figure operation that could take /api/query
+        # dark for the day, so it was not run -- a planner that overstates by three orders
+        # of magnitude does not protect the budget, it protects the backlog.
+        #
+        # It stays OFFLINE, which is the whole point of `--plan`: the remote digests need
+        # a request, so the local side is shown in full and the one unknown is NAMED
+        # rather than guessed at. The full-replace figure stays, below, as what `--full`
+        # would do.
+        local_state = INC.local_state(DB)
+        print(f'\n  WHAT A BARE `sync_d1.py` WOULD DO -- incremental, the DEFAULT:')
+        print(f'    {len(local_state)} table(s) locally, {rows:,} rows in total')
+        print(f'    it sends only the tables whose digest differs from the remote\'s, at')
+        print(f'    most {40000:,} rows a run. Which tables that is needs ONE request to')
+        print(f'    D1 for its recorded digests, so it is not computed here -- run')
+        print(f'    `python3 scripts/sync_d1.py` and it names the tables and the row')
+        print(f'    count BEFORE sending anything.')
+        known = _last_tables()
+        if known:
+            new_t = sorted(set(counts) - set(known))
+            print(f'    tables the published copy has never held: '
+                  f'{len(new_t)}{" -- " + ", ".join(new_t) if new_t else ""}')
+        print(f'\n  and `--full`, which is NOT the default:')
+        print(f'  a full replace writes ~{rows:,} rows plus index maintenance.')
         print(f'  The free tier allows 100,000 writes a day. This database is larger than')
         print(f'  that, and the last full replace still succeeded, so the accounting is')
         print(f'  not simply rows x 2 — but it is the right order of magnitude and four')
