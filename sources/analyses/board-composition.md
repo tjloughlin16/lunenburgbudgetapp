@@ -25,21 +25,21 @@ A board’s charter fixes how many seats it has, so the seat COUNT is not a tren
 
 | | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| stayed from the year before | 145 | 158 | 137 | 100 | 144 | 121 | 132 | 115 | 106 |
-| new that year | 57 | 48 | 38 | 102 | 58 | 67 | 52 | 56 | 67 |
-| gone from the year before | 75 | 44 | 69 | 75 | 58 | 81 | 56 | 69 | 65 |
+| stayed from the year before | 145 | 158 | 163 | 115 | 144 | 121 | 132 | 115 | 106 |
+| new that year | 57 | 48 | 51 | 87 | 58 | 67 | 52 | 56 | 67 |
+| gone from the year before | 75 | 44 | 43 | 99 | 58 | 81 | 56 | 69 | 65 |
 
-18 of the 694 people listed at any point across the ten years appear in all of them.
+19 of the 703 people listed at any point across the ten years appear in all of them.
 
 ## Which boards change most
 
-Seats changing hands each year, over bodies of three seats or more. `years compared` is how many times the body appears in two consecutive years and can therefore be differenced — the listing is readable for ten years but not consecutively in all of them, so a body with 5 has been measured five times and one with 2 twice. A one-seat post whose holder changed reads as a hundred per cent and is one person leaving a job, so it is left out. The median across the 36 bodies here is 31%.
+Seats changing hands each year, over bodies of three seats or more. `years compared` is how many times the body appears in two consecutive years and can therefore be differenced — the listing is readable for ten years but not consecutively in all of them, so a body with 5 has been measured five times and one with 2 twice. A one-seat post whose holder changed reads as a hundred per cent and is one person leaving a job, so it is left out. The median across the 37 bodies here is 32%.
 
 | board or committee | seats | years compared | seats changing hands |
 |---|---:|---:|---:|
 | GCTF ADVISORS | 3.5 | 3 | 71% |
 | MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL REPRESENTATIVE | 8.0 | 3 | 67% |
-| STORM WATER TASK FORCE | 3.4 | 7 | 57% |
+| STORM WATER TASK FORCE | 3.3 | 9 | 63% |
 | AMERICANS WITH DISABILITIES COMMITTEE | 3.8 | 3 | 56% |
 | ECONOMIC DEVELOPMENT COMMITTEE | 4.0 | 4 | 56% |
 | GREEN COMMUNITIES COMMITTEE | 3.7 | 3 | 54% |
@@ -47,27 +47,28 @@ Seats changing hands each year, over bodies of three seats or more. `years compa
 | LUNENBURG MUNICIPAL BUILDING DESIGN COMMITTEE | 5.5 | 2 | 46% |
 | HISTORICAL COMMISSION | 4.1 | 9 | 42% |
 | Sewer Commission - 1/2 | 5.4 | 8 | 40% |
+| Park Commission | 4.1 | 4 | 39% |
 | CAPITAL PLANNING COMMITTEE | 6.2 | 9 | 39% |
-| AGRICULTURAL COMMISSION | 5.7 | 7 | 38% |
 | TAXATION AID COMMITTEE | 4.8 | 4 | 37% |
+| AGRICULTURAL COMMISSION | 5.6 | 9 | 37% |
 | FINANCE COMMITTEE | 7.2 | 6 | 36% |
-| CULTURAL COUNCIL | 7.8 | 7 | 34% |
+| Planning Board | 5.8 | 8 | 35% |
+| PERSONNEL COMMITTEE | 5.6 | 8 | 35% |
 | Board of Selectmen | 5.0 | 3 | 33% |
 | School Committee | 5.1 | 8 | 32% |
-| Planning Board | 5.6 | 6 | 31% |
 | Housing Authority | 4.3 | 8 | 30% |
+| CULTURAL COUNCIL | 8.2 | 7 | 30% |
+| CHARTER REVIEW COMMITTEE | 9.0 | 2 | 28% |
 | Parks Commission | 5.0 | 3 | 27% |
-| Board of Assessors | 3.2 | 6 | 26% |
-| PERSONNEL COMMITTEE | 5.4 | 6 | 26% |
-| Park Commission | 4.0 | 2 | 25% |
 | Cemetery Commission | 3.3 | 8 | 24% |
 | Select Board | 5.2 | 4 | 24% |
 | CONSERVATION COMMISSION | 7.1 | 9 | 23% |
-| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC) | 7.1 | 7 | 19% |
+| Board of Assessors | 3.1 | 8 | 20% |
 | Board of Health | 5.2 | 8 | 19% |
 | Library Trustees | 7.2 | 8 | 19% |
 | PUBLIC ACCESS CABLE COMMITTEE | 4.7 | 9 | 18% |
 | COUNCIL ON AGING- - (11 members) | 11.5 | 2 | 17% |
+| ARCHITECTURAL PRESERVATION DISTRICT COMMISSION (APDC) | 7.1 | 7 | 17% |
 | COUNCIL ON AGING | 11.3 | 5 | 15% |
 | ZONING BOARD OF APPEALS | 4.9 | 9 | 15% |
 | TOWN CLOCK WINDERS | 6.2 | 2 | 12% |
@@ -145,8 +146,8 @@ FY2025, filled seats only.
 
 | | FY2016 | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Elected seats — filled by the voters | 57 | 58 | 56 | 41 | 59 | 56 | 53 | 56 | 51 | 53 |
-| Appointed board seats — filled by the Select Board | 69 | 72 | 72 | 58 | 103 | 106 | 86 | 92 | 79 | 79 |
+| Elected seats — filled by the voters | 57 | 58 | 56 | 53 | 59 | 56 | 53 | 56 | 51 | 53 |
+| Appointed board seats — filled by the Select Board | 69 | 72 | 72 | 79 | 103 | 106 | 86 | 92 | 79 | 79 |
 
 ## What this cannot show
 
@@ -157,7 +158,7 @@ FY2025, filled seats only.
 
 ## How well we read it
 
-Most headings state their own membership, so the page checks itself: 492 rows sit under a board where the stated size and the printed names agree, 299 where they differ, and 1,327 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — a note about our extraction rather than about the town.
+Most headings state their own membership, so the page checks itself: 492 rows sit under a board where the stated size and the printed names agree, 299 where they differ, and 1,368 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — a note about our extraction rather than about the town.
 
 ## Where it comes from
 
