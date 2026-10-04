@@ -39,6 +39,7 @@ current files skipped, the cost recorded. Runs inside the refresh for the three 
 boards' new recordings, and by hand for a window.
 """
 import argparse
+import csv
 import datetime as dt
 import glob
 import hashlib
@@ -52,6 +53,7 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from write_recording_minutes import transcripts, lines_for, sha256_of, NODE22, MODEL   # noqa: E402
 
 OUT = os.path.join(ROOT, 'sources', 'data', 'budget-state')
+TRANSCRIPT_INDEX = os.path.join(ROOT, 'sources', 'data', 'youtube-transcript-index.csv')
 BOARDS = ('school-committee', 'select-board', 'finance-committee')
 
 SYSTEM = """You read machine captions of a Massachusetts town board meeting and extract ONLY what was put on the record about THE BUDGET BEING BUILT for a coming fiscal year and what will go to Town Meeting: deficits or gaps stated, budget totals stated, override amounts, state aid (Chapter 70) figures, free cash to be used, and every CUT named (a position, a program, a line) with its amount and FTE where said.
@@ -176,16 +178,41 @@ def main():
     ts = [t for t in transcripts() if t['board_slug'] in BOARDS]
     if a.check:
         bad = behind = 0
+        # INDEXED BUT NOT ON THIS DISK IS NOT STALE. `not os.path.exists(p) or sha256(p)
+        # != ...` collapsed two different facts into one word: a transcript that CHANGED
+        # since we read it, and one this checkout simply does not hold. The transcripts
+        # are gitignored, so the second happens on any tree that is not the refresh's --
+        # and on 4 October 2026 it reported school-committee/2026-10-01 as STALE when the
+        # file is in the index and absent here, and `sync_archive.py --pull` cannot fetch
+        # it (404 in the bucket). Only one of the two is a problem with what we wrote.
+        indexed = set()
+        try:
+            for r in csv.DictReader(open(TRANSCRIPT_INDEX, encoding='utf-8', errors='replace')):
+                indexed.add(r['path'])
+        except OSError:
+            pass
+        not_held = []
         # documents/ holds the DOCUMENT extracts (write_document_budget_state.py), keyed
         # on the document's own sha256; that script's --check covers them.
         files = [f for f in glob.glob(os.path.join(OUT, '*', '*.json')) if os.path.basename(os.path.dirname(f)) != 'documents']
         for f in files:
             d = json.load(open(f))
             p = os.path.join(ROOT, d['source']['transcript'])
-            if not os.path.exists(p) or sha256_of(p) != d['source']['sha256']:
-                print('STALE', os.path.relpath(f, ROOT)); bad += 1
+            if not os.path.exists(p) and d['source']['transcript'] in indexed:
+                not_held.append(os.path.relpath(f, ROOT))
+            elif not os.path.exists(p):
+                print('MISSING %s: its transcript is in no index row either'
+                      % os.path.relpath(f, ROOT)); bad += 1
+            elif sha256_of(p) != d['source']['sha256']:
+                print('STALE %s: the transcript changed since this was written'
+                      % os.path.relpath(f, ROOT)); bad += 1
             elif d.get('written', {}).get('schema') != SCHEMA_VERSION:
                 behind += 1
+        if not_held:
+            print('  %d file(s) could NOT be verified here: their transcript is indexed and'
+                  ' not in this checkout. Run scripts/sync_archive.py --pull.' % len(not_held))
+            for r in not_held[:5]:
+                print('    ' + r)
         print('%d budget-state file(s), %d problem(s), %d behind schema %d (re-read inside the refresh cap)' % (len(files), bad, behind, SCHEMA_VERSION))
         return 1 if bad else 0
     if a.status:

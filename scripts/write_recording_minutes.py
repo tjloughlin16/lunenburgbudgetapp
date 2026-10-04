@@ -610,7 +610,29 @@ def retag(path):
 def check():
     docs = town_documents()
     by_rel = {t['rel']: t for t in transcripts()}
-    bad = 0
+    # EVERY ROW THE INDEX HOLDS, whether or not this checkout has the file.
+    #
+    # `transcripts()` filters by os.path.exists, so an INDEXED transcript whose file is
+    # not on this disk fell out of `by_rel` and the check reported
+    #
+    #     ORPHAN ...: transcript ... is not in the index
+    #
+    # which is false. On 4 October 2026 that was school-committee/2026-10-01: the row is
+    # in youtube-transcript-index.csv, the file is gitignored, and `sync_archive.py
+    # --pull` cannot fetch it (404 in the bucket). A thin CHECKOUT reported as a defect in
+    # the DATA -- the same shape as every other instrument failure here, and the reason
+    # `archive_storage.incomplete()` exists for corpus counts.
+    #
+    # The two cases need different words and different consequences: a row the index does
+    # not have is a real orphan, and a file this tree does not hold is a `--pull` away
+    # from being checkable and is not a problem with anything we wrote.
+    indexed = set()
+    try:
+        for r in csv.DictReader(open(TRANSCRIPT_INDEX, encoding='utf-8', errors='replace')):
+            indexed.add(r['path'])
+    except OSError:
+        pass
+    bad, not_held = 0, []
     files = glob.glob(os.path.join(OUT, '*', '*.json'))
     for f in sorted(files):
         try:
@@ -619,8 +641,12 @@ def check():
             print('UNREADABLE %s: %s' % (os.path.relpath(f, ROOT), e)); bad += 1; continue
         src = m.get('source', {}).get('transcript')
         t = by_rel.get(src)
+        if not t and src in indexed:
+            # Indexed, just not on this disk. Its sha256 cannot be checked here, which is
+            # a limit on THIS RUN and not a fault in the file.
+            not_held.append(os.path.relpath(f, ROOT)); continue
         if not t:
-            print('ORPHAN %s: transcript %s is not in the index' % (os.path.relpath(f, ROOT), src)); bad += 1; continue
+            print('ORPHAN %s: transcript %s is in no index row' % (os.path.relpath(f, ROOT), src)); bad += 1; continue
         if sha256_of(t['path']) != m['source']['sha256']:
             print('STALE %s: transcript changed since these minutes were written' % os.path.relpath(f, ROOT)); bad += 1
         mm = m.get('minutes', {})
@@ -643,6 +669,11 @@ def check():
                     print('NO TIME %s: %s item without a second' % (os.path.relpath(f, ROOT), k)); bad += 1
         if m.get('town_published') != docs.get((m['board_slug'], m['meeting_date']), []):
             print('LINKS %s: the town-published documents for this meeting have changed' % os.path.relpath(f, ROOT)); bad += 1
+    if not_held:
+        print('  %d file(s) could NOT be verified here: their transcript is in the index and'
+              ' not in this checkout. Run scripts/sync_archive.py --pull.' % len(not_held))
+        for r in not_held[:5]:
+            print('    ' + r)
     print('%d minutes file(s) checked, %d problem(s)' % (len(files), bad))
     return 1 if bad else 0
 
