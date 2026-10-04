@@ -1,5 +1,21 @@
 # What is queued, in order
 
+## SEND TOMORROW — 5 OCTOBER 2026, TWO FILINGS, TJ SENDS BY HAND
+
+Drafted 4 October, not sent. **`notes/HANDOFF-FILINGS.md` is the whole brief** — both
+drafts, the placeholders to fill, the figures and how they were checked, and the one
+open question before #2 goes.
+
+1. **Open Meeting Law complaint** → the TOWN (Laura Brzozoski, Chair, School Committee;
+   copy `openmeeting@mass.gov`) — School Committee minutes. 38 announced meetings with
+   none posted; newest minutes 24 June 2026.
+2. **Public records appeal** → the STATE (`pre@sec.state.ma.us`) — the 4 September MUNIS
+   request to the Town Manager, nine business days overdue.
+
+They go to different places and were drafted the wrong way round first. Do not swap them.
+
+---
+
 ## WHERE EVERY ITEM STANDS — 12 SEPTEMBER 2026
 
 The two order blocks below are kept for their reasoning; this table is the status. Every
