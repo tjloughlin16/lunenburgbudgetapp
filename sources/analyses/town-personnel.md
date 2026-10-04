@@ -13,13 +13,12 @@ How many people each part of the town employs, which are growing and which have 
 | part of the town | people | as of | first published | change | a year | what it counts |
 |---|---:|---|---:|---:|---:|---|
 | Schools | 232 | FY2025 | 200 in FY2011 | +32 | +2.3 | every member of staff, named |
-| Veterans' Services | 47 | FY2019 | 47 in FY2019 | +0 | — | career staff plus the low end of the on-call range |
 | Fire Department | 40 | FY2025 | 36 in FY2011 | +4 | +0.3 | career staff plus the low end of the on-call range |
 | Police Department | 29 | FY2025 | 13 in FY2012 | +16 | +1.2 | every member of staff, named on its roster |
 | Department of Public Works | 14 | FY2025 | 14 in FY2023 | +0 | +0.0 | an establishment, post by post |
 | Council on Aging | 11 | FY2025 | 7 in FY2011 | +4 | +0.3 | a named staff list |
 | Library | 10 | FY2019 | 10 in FY2019 | +0 | — | a stated headcount |
-| Building Department | 4 | FY2022 | 4 in FY2020 | +0 | +0.0 | a named staff list |
+| Building Department | 4 | FY2022 | 4 in FY2019 | +0 | +0.0 | a named staff list |
 | Board of Assessors | 3 | FY2025 | 2 in FY2023 | +1 | +0.5 | an establishment, one post at a time |
 | Information Technology | 3 | FY2020 | 4 in FY2016 | −1 | −0.2 | a named roster, one biography per person |
 
@@ -27,7 +26,7 @@ Department of Public Works and Board of Assessors report an ESTABLISHMENT rather
 
 These are not identical measures — a named roster, a career count plus the low end of an on-call range, and an establishment of posts — and they are answers to two different questions: how many people are there, and how many posts the department says it has. Where a department states a range the LOW end is used, so none is flattered by its own vagueness.
 
-**change** is measured over each department’s own record, and those records do not line up: the Schools record spans 14 years and the Board of Assessors’s 2, so +32 and +1 are not the same claim. No year is published by all 10 — the fullest is FY2019, with 6 of them — and standardising on that would drop the four that STOPPED publishing, which is the part worth seeing. **a year** is the change divided by the years it spans, and that column compares.
+**change** is measured over each department’s own record, and those records do not line up: the Schools record spans 14 years and the Board of Assessors’s 2, so +32 and +1 are not the same claim. No year is published by all 9 — the fullest is FY2019, with 6 of them — and standardising on that would drop the three that STOPPED publishing, which is the part worth seeing. **a year** is the change divided by the years it spans, and that column compares.
 
 A year whose count reads under half the year before it is dropped as a short read rather than published as a cut: Police Department FY2014. The Police roster comes back as seven officers in FY2024 against twenty-five in FY2023, which is a page this reader did not find, not three quarters of a police force.
 
@@ -39,11 +38,11 @@ On one scale the relation is plain, and it is the one the panels below deliberat
 
 ![Eight small panels, one per part of the town that publishes a staff count, each showing headcount year by year on its own scale. A hollow point marks a year dropped as a misreading.](charts/town-personnel-counts.svg)
 
-Schools moves between 170 and 272 across 15 published years; Fire Department moves between 36 and 48 across 15 published years; Police Department moves between 13 and 33 across 13 published years. Veterans' Services, Library and Board of Assessors publish too few years to show a trend at all.
+Schools moves between 170 and 272 across 15 published years; Fire Department moves between 36 and 48 across 15 published years; Police Department moves between 13 and 33 across 13 published years. Library and Board of Assessors publish too few years to show a trend at all.
 
 ## The schools, in detail
 
-Five times the next employer, so worth breaking out. FY2025.
+Six times the next employer, so worth breaking out. FY2025.
 
 | school | staff |
 |---|---:|
@@ -132,7 +131,7 @@ A roster is also a point in time and undated within its year, so N appearances i
 ## What this cannot show
 
 - What anybody is paid. No salary is read here, and none is inferred from a post’s name.
-- How many people the town employs. Ten departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2016.
+- How many people the town employs. Nine departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2016.
 - FTE. A career post and an on-call post are not the same job and cannot be netted against each other.
 - Whether a post was CUT. A roster is people IN post and a cut removes a POST, and those come apart both ways: someone retires and the post sits vacant but funded, so the count falls and nothing was cut; or a post is eliminated and its holder moves to another vacancy, so the count holds and something was. The town’s own words for it are in the Assessing office’s FY2024 report — “we are fully staffed for the first time in over a year” — a year of posts that existed and were empty. A rise or a fall here is a change in PEOPLE PRESENT, never a decision about establishment.
 - When in the year anybody was counted. A roster is a point in time and is undated within its year, so a September departure and a June one are the same figure.

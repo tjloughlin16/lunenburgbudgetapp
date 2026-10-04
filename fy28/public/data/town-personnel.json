@@ -4,14 +4,14 @@
   {
    "basis": "The per-school staff rosters in the annual report, against the Fire and Police rosters and the DPW establishment.",
    "bearing": "sizes",
-   "claim": "The schools employ more people as the rest of the town put together",
-   "detail": "Before any question about who is growing: this is the scale of the town’s workforce, and one part of it is nearly all of it. The schools name 232 members of staff in FY2025. Every other part of the town that publishes a count — Veterans' Services, Fire Department, Police Department, Department of Public Works, Council on Aging, Library, Building Department, Board of Assessors and Information Technology — comes to 161 between them.",
+   "claim": "The schools employ more than twice as many people as the rest of the town put together",
+   "detail": "Before any question about who is growing: this is the scale of the town’s workforce, and one part of it is nearly all of it. The schools name 232 members of staff in FY2025. Every other part of the town that publishes a count — Fire Department, Police Department, Department of Public Works, Council on Aging, Library, Building Department, Board of Assessors and Information Technology — comes to 114 between them.",
    "figure": "schools",
    "figures": {
     "others": {
-     "text": "161",
+     "text": "114",
      "unit": "in every other department that publishes a count",
-     "value": 161
+     "value": 114
     },
     "schools": {
      "text": "232",
@@ -32,7 +32,7 @@
    "basis": "Each department’s own published count, first published year against last, with any year reading under half its predecessor dropped as a short read rather than a cut.",
    "bearing": "sizes",
    "claim": "One department has fewer people than when it first published. The rest are flat or larger",
-   "detail": "How many people each department printed, first year against last. A change here is people present, not a decision about posts. Information Technology is down 1, from 4 to 3. The other nine departments are larger or unchanged.",
+   "detail": "How many people each department printed, first year against last. A change here is people present, not a decision about posts. Information Technology is down 1, from 4 to 3. The other eight departments are larger or unchanged.",
    "figure": "shrank",
    "figures": {
     "d0": {
@@ -51,9 +51,9 @@
      "value": 3
     },
     "rest": {
-     "text": "nine",
+     "text": "eight",
      "unit": "flat or larger",
-     "value": 9
+     "value": 8
     },
     "shrank": {
      "text": "One",
@@ -161,24 +161,6 @@
    "years": 15
   },
   {
-   "change": 0,
-   "department": "Veterans' Services",
-   "first": 47,
-   "first_fy": "2019",
-   "kind": "career staff plus the low end of the on-call range",
-   "last_fy": "2019",
-   "people": 47,
-   "series": [
-    {
-     "fy": "2019",
-     "people": 47,
-     "suspect": false
-    }
-   ],
-   "suspect": [],
-   "years": 1
-  },
-  {
    "change": 4,
    "department": "Fire Department",
    "first": 36,
@@ -229,7 +211,7 @@
     },
     {
      "fy": "2019",
-     "people": 40,
+     "people": 47,
      "suspect": false
     },
     {
@@ -479,11 +461,16 @@
    "change": 0,
    "department": "Building Department",
    "first": 4,
-   "first_fy": "2020",
+   "first_fy": "2019",
    "kind": "a named staff list",
    "last_fy": "2022",
    "people": 4,
    "series": [
+    {
+     "fy": "2019",
+     "people": 4,
+     "suspect": false
+    },
     {
      "fy": "2020",
      "people": 4,
@@ -501,7 +488,7 @@
     }
    ],
    "suspect": [],
-   "years": 3
+   "years": 4
   },
   {
    "change": 1,
@@ -630,7 +617,7 @@
  "last": "2025",
  "not_established": [
   "What anybody is paid. No salary is read here, and none is inferred from a post’s name.",
-  "How many people the town employs. Ten departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2016.",
+  "How many people the town employs. Nine departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2016.",
   "FTE. A career post and an on-call post are not the same job and cannot be netted against each other.",
   "Whether a post was CUT. A roster is people IN post and a cut removes a POST, and those come apart both ways: someone retires and the post sits vacant but funded, so the count falls and nothing was cut; or a post is eliminated and its holder moves to another vacancy, so the count holds and something was. The town’s own words for it are in the Assessing office’s FY2024 report — “we are fully staffed for the first time in over a year” — a year of posts that existed and were empty. A rise or a fall here is a change in PEOPLE PRESENT, never a decision about establishment.",
   "When in the year anybody was counted. A roster is a point in time and is undated within its year, so a September departure and a June one are the same figure.",
@@ -691,6 +678,15 @@
     "2",
     "2",
     "5"
+   ]
+  },
+  {
+   "department": "Building Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "9"
    ]
   },
   {
@@ -862,6 +858,15 @@
     "1",
     "2",
     "8"
+   ]
+  },
+  {
+   "department": "Fire Department",
+   "forms": [
+    "0",
+    "1",
+    "2",
+    "9"
    ]
   },
   {
@@ -955,15 +960,6 @@
    ]
   },
   {
-   "department": "Veterans' Services",
-   "forms": [
-    "0",
-    "1",
-    "2",
-    "9"
-   ]
-  },
-  {
    "department": "Information Technology",
    "forms": [
     "0",
@@ -1118,15 +1114,6 @@
   },
   {
    "department": "Police Department",
-   "forms": [
-    "0",
-    "1",
-    "2",
-    "9"
-   ]
-  },
-  {
-   "department": "Fire Department",
    "forms": [
     "0",
     "1",
@@ -1600,17 +1587,17 @@
  ],
  "stats": [
   {
-   "label": "school staff — more as everywhere else that publishes a count, put together",
+   "label": "school staff — more than twice as many as everywhere else that publishes a count, put together",
    "value": "232"
   },
   {
-   "label": "in the other nine parts of the town that publish a count, added up",
-   "value": "161"
+   "label": "in the other eight parts of the town that publish a count, added up",
+   "value": "114"
   },
   {
    "label": "parts of the town that publish any staff count at all",
    "tone": "var(--series-cost)",
-   "value": "10 of 60"
+   "value": "9 of 60"
   }
  ],
  "tenure": [
