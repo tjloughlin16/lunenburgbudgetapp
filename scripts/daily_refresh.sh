@@ -203,12 +203,39 @@ Automated by scripts/daily_refresh.sh."
     # Push to main. If main moved while this ran (somebody merged), rebase the one
     # refresh commit onto it and try once more; the refresh only touches data paths,
     # so a real conflict means a person changed the same data file today.
+    # SAVE THE COMMIT BEFORE TRYING ANYTHING THAT CAN LOSE IT. This block stranded the
+    # refresh on 3 and 4 October 2026 -- both times main had moved under an hour-long run
+    # -- and on the 4th the recovery nearly destroyed it: the failed `pull --rebase` left
+    # a half-finished rebase, and `git rebase --abort` reset this branch back to a commit
+    # from 22 September, leaving the day's work reachable only through the reflog. 2,108
+    # files, recovered by hand from a hash that happened to be in a terminal.
+    #
+    # So the FIRST thing that happens is a dated branch, pushed to origin. After that
+    # every later step is recoverable by name instead of by luck, which is the whole of
+    # the fix -- the rebase was never the dangerous part, having one copy was.
+    SAVED="refresh-$(date +%Y-%m-%d)"
+    git branch -f "$SAVED" HEAD
+    if git push -q -f origin "$SAVED:$SAVED"; then
+      echo "refresh commit saved to origin/$SAVED before touching main"
+    else
+      echo "WARNING: could not push $SAVED to origin; the commit exists only in $HERE"
+    fi
     if git push -q origin HEAD:main; then
       echo "committed and pushed to main"
+      git push -q origin --delete "$SAVED" 2>/dev/null && echo "  (origin/$SAVED no longer needed, deleted)"
     elif git pull -q --rebase origin main && git push -q origin HEAD:main; then
       echo "committed, rebased onto a moved main, and pushed"
+      git push -q origin --delete "$SAVED" 2>/dev/null && echo "  (origin/$SAVED no longer needed, deleted)"
     else
-      echo "PUSH FAILED: main moved and the rebase did not resolve; the refresh commit is on branch 'refresh' in $HERE"
+      # LEAVE NO HALF-FINISHED REBASE. An interrupted rebase makes the next run's
+      # `git status` dirty, which the top of this script treats as abnormal and stops on --
+      # so one stranded day used to block every following day as well.
+      git rebase --abort 2>/dev/null && echo "  (aborted the half-finished rebase)"
+      git reset -q --hard "$SAVED"
+      echo "PUSH FAILED: main moved and the rebase did not resolve."
+      echo "  The refresh commit is SAFE on origin/$SAVED and on branch $SAVED in $HERE."
+      echo "  Merge it with:  git checkout main && git merge $SAVED"
+      echo "  Conflicts will be generated files; resolve by regenerating, not by picking a side."
     fi
   else
     echo "nothing to commit"

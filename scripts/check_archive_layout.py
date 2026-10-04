@@ -119,6 +119,18 @@ def main():
     if os.path.isdir(base):
         for entry in sorted(os.listdir(base)):
             p = os.path.join(base, entry)
+            # THE CATALOGUE IS NOT A MUNIS REPORT. `index.csv` at a tree's root is the
+            # convention the whole archive is keyed on -- twelve of the thirteen trees
+            # carry one -- and `PROVENANCE*.md` records how a delivery arrived, which is
+            # the address itself when nothing came off a website (rule 12). Neither is a
+            # report that could live in `expenses/` or `revenue/`, and rule 2's folder
+            # discipline exists to stop `records-request-2026-06/`, not to stop the index.
+            #
+            # Flagged on 4 October 2026, the day after `sources/town-ledgers/index.csv`
+            # was created to make that tree searchable: the rule was written when the tree
+            # held nothing but reports and no catalogue existed for it.
+            if entry == 'index.csv' or entry.startswith('PROVENANCE'):
+                continue
             if os.path.isfile(p):
                 problems.append(
                     'sources/town-ledgers/%s sits loose. Every MUNIS report goes in the '
