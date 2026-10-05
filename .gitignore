@@ -199,3 +199,6 @@ sources/data/reader-questions.csv
 # reached 114 MB because the aggregate re-expands every sticky cell. Regenerate it;
 # never version it. The page-reads files are the artifact.
 sources/data/pages-read.csv
+
+# The OML complaint as filed carries a home address and phone; held locally, hashed in MANIFEST.json
+notes/outbound/sent-2026-10/*.pdf
