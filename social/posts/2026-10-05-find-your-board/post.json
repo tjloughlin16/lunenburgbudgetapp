@@ -1,0 +1,56 @@
+{
+  "posted": "2026-10-05",
+  "about": "The first post to the members' group. One capability: every board has its own page, shown through the Select Board's.",
+  "data": {
+    "m": "app-metrics.json",
+    "boards": "boards.json#boards",
+    "sb": "boards.json#boards[slug=select-board]",
+    "nx": "boards.json#boards[slug=select-board].meetings[date=2026-10-06]"
+  },
+  "literal": [],
+  "flare": {"accent": "royal", "motif": "contours"},
+  "image": {
+    "layout": "spotlight",
+    "size": "square",
+    "headline": "Every town board has its own page",
+    "emphasis": "its own page",
+    "headline_size": 68,
+    "sub": "Here’s the Select Board’s, one of {boards|len} board and committee pages.",
+    "card": {
+      "eyebrow": "BOARD PAGE",
+      "title": "{sb.name}",
+      "rows": [
+        {"label": "Next meeting", "value": "{nx.date|day} · {nx.attend}"},
+        {"label": "On the agenda", "value": "{nx.hook}"}
+      ],
+      "chips": ["Agenda", "Minutes", "Recording", "Recent votes", "Follow"],
+      "stats": [
+        {"value": "{sb.counts.agendas|n}", "label": "agendas"},
+        {"value": "{sb.counts.minutes|n}", "label": "sets of minutes"},
+        {"value": "{sb.counts.recordings|n}", "label": "recordings"}
+      ]
+    },
+    "path": "/boards",
+    "as_of": "As of {m.as_of|short}"
+  },
+  "text": [
+    "Welcome to the Lunenburg Budget Project 👋",
+    "",
+    "This is our first post, so let's start with the thing I use most: the board pages.",
+    "",
+    "Every town board and committee has its own page. Open one and you get:",
+    "",
+    "📅 The next meeting: when it is, and what's on the agenda",
+    "🗳️ What the board recently voted on",
+    "📄 Past meetings, with the agenda, minutes and recording wherever they were posted",
+    "🔔 For many boards, a feed you can follow, so you hear when something new is posted",
+    "",
+    "For example, the Select Board meets {nx.date|day}. On the agenda: {nx.hook}.",
+    "👉 https://lunenburgbudgetproject.org/boards/select-board",
+    "",
+    "Every board, in one list:",
+    "👉 https://lunenburgbudgetproject.org/boards",
+    "",
+    "Try it: pick a board you care about, open its page, and tell us in the comments what you found, or what you wish was there."
+  ]
+}
