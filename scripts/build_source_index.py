@@ -2650,6 +2650,23 @@ GROUPS = [
              'year-end ledger at period 13 for every fund, its FY2023 and part-year FY2025 '
              'ledgers, and the town’s FY2025 general fund revenue -- each section tied '
              'to the total the report prints. Built by scripts/extract_fincom_ledgers.py.'),
+            ('data/capital-requests.csv',
+             'Capital requests and ranked plans, FY2025–FY2034 and FY2027', 2,
+             'Written by us, from the Capital Planning Committee’s and Town Manager’s '
+             'workbooks: requests by department and year, and the ranked lists, each tied to '
+             'its printed total. Built by scripts/extract_fincom_capital_funds.py.'),
+            ('data/debt-service-projections.csv',
+             'Excluded debt service projected to FY2050, Town Hall and Marshall Park included', 2,
+             'Written by us, from the town’s debt analysis and its financial adviser’s '
+             'schedules, which tie to each other year for year. Projections, not payments made.'),
+            ('data/fund-balances-fincom.csv',
+             'Special revenue, Chapter 90 and trust fund balances from the Finance Committee’s files', 2,
+             'Written by us: the FY2020 special revenue funds, the Chapter 90 ledger, the FY2021 '
+             'trust fund summary and the 2025 trust quarterlies, each tied to its own totals.'),
+            ('data/opeb-valuations.csv',
+             'Retiree health benefit (OPEB) liability, FY2017 and FY2018 valuations', 2,
+             'Written by us, from the actuary’s two reports; each satisfies its own '
+             'liability-minus-assets identity and the two agree on their shared valuation date.'),
             ('data/school-target-fy26.csv',
              'The school budget under the Town Manager’s FY2026 target, four versions', 2,
              'Written by us, from hand-built district workbooks: every line in every version, '

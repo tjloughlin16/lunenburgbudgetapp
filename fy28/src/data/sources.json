@@ -1334,7 +1334,7 @@
      "stars": 1,
      "what": "Written by us. One row per task for turning the delivery into tables: the documents it covers, what it produces, the check that makes it done, and its state. Progress is rendered in notes/generated/FINANCE-COMMITTEE-INGEST.md.",
      "kind": "Data",
-     "bytes": 11256,
+     "bytes": 11901,
      "url": "/docs/data/finance-committee-tasks.csv",
      "count": 37,
      "unit": "rows",
@@ -4922,6 +4922,30 @@
      "textUrl": "/docs/data/school-target-fy26.csv"
     },
     {
+     "path": "data/fund-balances-fincom.csv",
+     "title": "Special revenue, Chapter 90 and trust fund balances from the Finance Committee’s files",
+     "stars": 2,
+     "what": "Written by us: the FY2020 special revenue funds, the Chapter 90 ledger, the FY2021 trust fund summary and the 2025 trust quarterlies, each tied to its own totals.",
+     "kind": "Data",
+     "bytes": 419494,
+     "url": "/docs/data/fund-balances-fincom.csv",
+     "count": 1820,
+     "unit": "rows",
+     "textUrl": "/docs/data/fund-balances-fincom.csv"
+    },
+    {
+     "path": "data/capital-requests.csv",
+     "title": "Capital requests and ranked plans, FY2025–FY2034 and FY2027",
+     "stars": 2,
+     "what": "Written by us, from the Capital Planning Committee’s and Town Manager’s workbooks: requests by department and year, and the ranked lists, each tied to its printed total. Built by scripts/extract_fincom_capital_funds.py.",
+     "kind": "Data",
+     "bytes": 142247,
+     "url": "/docs/data/capital-requests.csv",
+     "count": 499,
+     "unit": "rows",
+     "textUrl": "/docs/data/capital-requests.csv"
+    },
+    {
      "path": "data/search-affinity.csv",
      "title": "Which words pin which page or document at the top of a search",
      "stars": 2,
@@ -4932,6 +4956,18 @@
      "count": 996,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
+    },
+    {
+     "path": "data/debt-service-projections.csv",
+     "title": "Excluded debt service projected to FY2050, Town Hall and Marshall Park included",
+     "stars": 2,
+     "what": "Written by us, from the town’s debt analysis and its financial adviser’s schedules, which tie to each other year for year. Projections, not payments made.",
+     "kind": "Data",
+     "bytes": 117113,
+     "url": "/docs/data/debt-service-projections.csv",
+     "count": 474,
+     "unit": "rows",
+     "textUrl": "/docs/data/debt-service-projections.csv"
     },
     {
      "path": "data/fund-owners.csv",
@@ -4992,6 +5028,18 @@
      "count": 396,
      "unit": "lines",
      "textUrl": "/docs/MANIFEST.md"
+    },
+    {
+     "path": "data/opeb-valuations.csv",
+     "title": "Retiree health benefit (OPEB) liability, FY2017 and FY2018 valuations",
+     "stars": 2,
+     "what": "Written by us, from the actuary’s two reports; each satisfies its own liability-minus-assets identity and the two agree on their shared valuation date.",
+     "kind": "Data",
+     "bytes": 28132,
+     "url": "/docs/data/opeb-valuations.csv",
+     "count": 85,
+     "unit": "rows",
+     "textUrl": "/docs/data/opeb-valuations.csv"
     },
     {
      "path": "data/youtube-no-captions.csv",
@@ -20848,9 +20896,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1825,
+  "documents": 1829,
   "groups": 23,
-  "bytes": 3602826523,
+  "bytes": 3603534154,
   "loadBearing": 175
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 35 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
