@@ -34,7 +34,19 @@ Government — never the Secretary of State. Public records appeals (c.66 §10A,
   the copy as actually sent, sha256 in that folder's `MANIFEST.json`.
 - **Neither has been rendered to PDF.** Offered, not done.
 
-## THE ONE UNRESOLVED THING — check before sending #2
+## #2 REWRITTEN 5 October 2026 from the emails as sent -- and a #3
+
+TJ pasted both threads. **The Town Manager DID acknowledge the MUNIS request**, on 14 Sep:
+*"You are in the queue! Targeting Thu/Fri."* Follow-ups on 24 Sep and 2 Oct (the 2 Oct one
+cc'd a fellow resident, not a Town official) went unanswered. The appeal now says exactly
+that. The acknowledgement also answers the "collegial ask" worry below: the Town treated
+it as a request to fill.
+
+**#3, the PEC agreement**, `APPEAL-supervisor-of-records-pec-agreement.md`: asked 19 Sep
+(a Saturday) of the Town Manager and Dr. Fortuna, due 5 Oct, so **not appealable before
+6 Oct**. On 5 Oct TJ told both he would be appealing.
+
+## THE ONE UNRESOLVED THING — check before sending #2 (SUPERSEDED -- kept for the record)
 
 **The 4 September request never cites M.G.L. c.66 §10, never says "public records
 request", and opens "Hello again."** Massachusetts needs no magic words (950 CMR

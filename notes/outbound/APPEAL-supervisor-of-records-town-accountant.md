@@ -1,20 +1,27 @@
 # Appeal to the Supervisor of Records — Town of Lunenburg, MUNIS reports
 
 **To:** pre@sec.state.ma.us
-**Subject:** Petition for appeal — Town of Lunenburg — no response to a 4 September 2026 records request
+**Subject:** Petition for appeal — Town of Lunenburg — 4 September 2026 records request, acknowledged and not fulfilled
+
+**Checked against the emails as sent, 5 October 2026** (TJ pasted both threads), and every claim about the request against the text of `sent-2026-09/RECORDS-REQUEST-TOWN-ACCOUNTANT.pdf`. The request asks for no fee contact -- an earlier draft said it did. The first
+draft said the Town gave no response of any kind; the Town Manager acknowledged the request
+on 14 September. Do not restore that sentence.
 
 Dear Supervisor of Records,
 
-I petition for review under M.G.L. c.66, §10A and 950 CMR 32.08. A request I made on
-**4 September 2026** has received no response of any kind — no records, no denial, no fee
-estimate, no extension, no acknowledgement.
+I petition for review under M.G.L. c.66, §10A and 950 CMR 32.08 of the Town of Lunenburg's
+handling of a public records request I made on **4 September 2026**. The Town acknowledged
+the request, set its own date for responding, and then neither provided the records nor
+responded again.
 
 | | |
 |---|---|
-| **Request made** | 4 September 2026, by email, with the request attached as a PDF |
-| **Made to** | Jennifer Warren-Dyment, Town Manager, Town of Lunenburg |
+| **Request made** | 4 September 2026, by email to Jennifer Warren-Dyment, Town Manager, with the request attached as a PDF headed *Records request — school department reports, FY2023 to FY2026* |
 | **Response due** | 21 September 2026 (ten business days, excluding Labor Day, 7 September) |
-| **Received to date** | nothing. **Nine business days overdue** as of 4 October 2026 |
+| **14 September** | After my follow-up, the Town Manager replied: *"You are in the queue! Targeting Thu/Fri."* — that is, 17 or 18 September |
+| **24 September** | I asked for an update and offered to meet in person. No reply |
+| **2 October** | I asked again. No reply |
+| **Received to date** | no records, no fee estimate, no extension, and no reply since 14 September. **Ten business days past the statutory deadline** as of 5 October 2026 |
 
 ## What was requested
 
@@ -32,18 +39,19 @@ department, FY2023 to FY2026 — **five report configurations, 23 runs**:
 
 The request named each configuration, the account type, the period and the funds, and
 said plainly that if a different report produced the same information I would rather have
-that. It also asked to be contacted before any fee was incurred so that I could narrow
-the request. No such contact was made.
+that.
 
-**These are not novel reports.** The Town has already produced reports of types 1 and 2
-in response to an earlier request, in June 2026 — the same `glytdbud` format and the same
-`Account_Detail` export, for a different fund and period. What is sought here is the same
-reports for the remaining funds, periods and years.
+**These are not novel reports.** The Town has already produced both of the first two
+types this year: `Account_Detail` exports in response to a records request made on 17 June
+2026, and Year-to-Date Budget Reports in August 2026 and again on 2 September 2026, when the
+Town Manager emailed one two days before this request. What is sought here is the
+same reports for the remaining funds, periods and years.
 
 ## Why it matters
 
 The school budget is published net — a line is what the Town must raise after grants and
-fees have paid part of the cost — and the records I hold cover one fund only. Without the
+fees have paid part of the cost — and the transaction detail I hold
+covers one fund only. Without the
 other funds and the year-end period 13 close, public money appropriated to the schools
 cannot be followed from the appropriation to the ledger. I publish this analysis for
 residents at no charge.
@@ -51,17 +59,19 @@ residents at no charge.
 ## What I ask
 
 1. An order that the Town respond to the 4 September 2026 request.
-2. If the request as framed is burdensome, that the Town provide the fee estimate and
-   the narrowing conversation that §10(b) and 950 CMR 32.07 contemplate, rather than
-   silence.
+2. If the request as framed is burdensome, that the Town provide a fee estimate or
+   propose a narrower scope, as §10 and 950 CMR 32.07 contemplate, rather than silence.
+   I am willing to narrow it.
 3. Confirmation of who the Records Access Officer for the Town's financial records is,
    so that future requests reach the right custodian.
 
 I am content to receive everything electronically, in whatever format the Town already
 holds, and I am happy to take the reports in batches.
 
-I attach my 4 September 2026 request as sent.
+I attach my 4 September 2026 request as sent, and the email threads showing the Town's
+acknowledgement of 14 September and my follow-ups of 24 September and 2 October.
 
 Thank you for your time.
 
-[name] · [address] · [email] · [phone]
+TJ Loughlin
+[contact details -- added when sending, kept out of this public repository]

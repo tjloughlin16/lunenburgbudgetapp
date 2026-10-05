@@ -1,18 +1,15 @@
 # What is queued, in order
 
-## SEND TOMORROW — 5 OCTOBER 2026, TWO FILINGS, TJ SENDS BY HAND
+## FILINGS — STATE ON 5 OCTOBER 2026. TJ SENDS BY HAND
 
-Drafted 4 October, not sent. **`notes/HANDOFF-FILINGS.md` is the whole brief** — both
-drafts, the placeholders to fill, the figures and how they were checked, and the one
-open question before #2 goes.
+`notes/HANDOFF-FILINGS.md` is the whole brief.
 
-1. **Open Meeting Law complaint** → the TOWN (Laura Brzozoski, Chair, School Committee;
-   copy `openmeeting@mass.gov`) — School Committee minutes. 38 announced meetings with
-   none posted; newest minutes 24 June 2026.
-2. **Public records appeal** → the STATE (`pre@sec.state.ma.us`) — the 4 September MUNIS
-   request to the Town Manager, nine business days overdue.
-
-They go to different places and were drafted the wrong way round first. Do not swap them.
+1. ~~Open Meeting Law complaint, School Committee minutes~~ **FILED 5 Oct**, to the Chair,
+   cc the Town Clerk. Response due **26 Oct**; AG window 4 Nov to 30 Dec.
+2. ~~Records appeal, MUNIS~~ **FILED 5 Oct** with the Supervisor of Records, with the
+   request and both Gmail threads attached.
+3. **Records appeal, PEC agreement** → `pre@sec.state.ma.us`. **SEND 6 OCTOBER, NOT
+   BEFORE** -- the Town's ten business days end 5 Oct. Attach the 19 Sep / 2 Oct thread.
 
 ---
 
