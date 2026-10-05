@@ -2636,6 +2636,22 @@ GROUPS = [
              'year-end ledger at period 13 for every fund, its FY2023 and part-year FY2025 '
              'ledgers, and the town’s FY2025 general fund revenue -- each section tied '
              'to the total the report prints. Built by scripts/extract_fincom_ledgers.py.'),
+            ('data/eoyr-schedule1.csv',
+             'The district’s End of Year Financial Report, Schedule 1, FY2023 and FY2024', 3,
+             'Written by us, from the district’s working copies of its DESE filing: revenue '
+             'and spending by function code and by fund. Working copies, not the reports as '
+             'filed; differences from DESE’s published figures are listed by '
+             'scripts/extract_eoyr.py.'),
+            ('data/eoyr-schedule3.csv',
+             'The End of Year Financial Report, Schedule 3, by function and fund', 2,
+             'Written by us. District totals by function across the general fund, grants and '
+             'revolving funds, with the header cells each column name was built from. In the '
+             'FY2024 working copy the grant columns evaluate to zero.'),
+            ('data/eoyr-nss.csv',
+             'Net school spending as the End of Year Report computes it, FY2023 and FY2024', 2,
+             'Written by us. Every numbered line of the actual-year net school spending '
+             'calculation, with the workbook’s own notes where a town-side figure was '
+             'taken from the budget.'),
             ('data/gl-history.csv',
              'Every general fund account, budget and actual, FY2010–FY2025', 3,
              'Written by us, from a workbook the Finance Committee holds that was assembled '
