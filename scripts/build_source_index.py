@@ -2621,6 +2621,19 @@ GROUPS = [
              'how it was paired. 23 rows pair with nothing, and 6 accounts were spent '
              'against with neither an appropriation nor a transfer. Rebuild with '
              'scripts/build_code_reconciliation_xlsx.py.'),
+            ('data/fincom-ledgers.csv',
+             'The MUNIS ledgers in the Finance Committee’s files, one table', 3,
+             'Written by us, from system printouts. The school department’s FY2024 '
+             'year-end ledger at period 13 for every fund, its FY2023 and part-year FY2025 '
+             'ledgers, and the town’s FY2025 general fund revenue -- each section tied '
+             'to the total the report prints. Built by scripts/extract_fincom_ledgers.py.'),
+            ('data/gl-history.csv',
+             'Every general fund account, budget and actual, FY2010–FY2025', 3,
+             'Written by us, from a workbook the Finance Committee holds that was assembled '
+             'from MUNIS exports: original budget, transfers in and out, revised budget and '
+             'actual, for every department and account. Each year ties to the workbook’s '
+             'own Grand Total; FY2025 is part-year and flagged. Built by '
+             'scripts/extract_gl_history.py.'),
             ('data/munis-ledger.csv',
              'Every MUNIS budget report we hold, one table', 3,
              'The Town Accountant\u2019s year-to-date budget reports \u2014 expenditures '
