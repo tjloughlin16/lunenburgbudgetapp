@@ -26,6 +26,10 @@ The keys here are slugged from those names because a bucket key may only hold
 was made, the date the committee answered, and the wording of the request. Neither the
 archive nor its members carry them. The correspondence would settle all three.
 
+**The download is complete.** One folder arrived empty, `FY24 Budget/20230302 - IT & Police/`;
+TJ confirmed on 5 October 2026 that it is empty on the committee's OneDrive as well, so nothing
+was lost in the download.
+
 ## What the folders are
 
 The committee's tree, kept: one folder per budget year (`FY20 Budget` to `FY27 Budget`),
