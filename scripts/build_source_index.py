@@ -661,6 +661,12 @@ GROUPS = [
                  'them. Provenance, the town’s own filenames and a sha256 for each file '
                  'are in PROVENANCE.md, listed below.',
         'items': [
+            ('town-ledgers/expenses/PROVENANCE-fy2024-p13-school.md',
+             'Where the school department’s FY2024 year-end ledger is held', 2,
+             'Written by us. The FY2024 period 13 report for every school fund arrived inside '
+             'the Finance Committee’s files and is kept there, with that delivery. This '
+             'note says where, quotes the report’s own header, and says it is not yet '
+             'read.'),
             ('town-ledgers/expenses/PROVENANCE-fy2026-p12.md',
              'Where the FY26 period 12 report came from', 2,
              'The email, the sender, the date, both filenames as sent, and the sha256 of '

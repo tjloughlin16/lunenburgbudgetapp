@@ -1125,8 +1125,12 @@ interface and where the bytes are kept is an implementation detail -- which is a
 **The line between the two is the line rule 12 already drew.** A document somebody else
 published does not change: if our copy ever differed from what we uploaded that is a
 defect, not a revision, and the bucket freezes it -- a lock blocks deletion *and*
-overwriting for ten years across every prefix, confirmed by attempting one and being
-refused (`HTTP 409, the object is locked by the bucket policy`). Everything we derive from
+overwriting for ten years across every prefix. An OVERWRITE is refused loudly (`HTTP 409, the
+object is locked by the bucket policy`). **A DELETE is not: R2 answers it with success and
+keeps the object** -- found on 5 October 2026, when a delete meant to prove the lock was
+working reported success and the object was still listed and still served. So whether an
+object is gone is answered by LISTING it afterwards, never by the response. Everything we
+derive from
 those documents does change -- the extracted text when an extractor improves, the analyses
 when a rate does -- and git versions that properly: atomic across files, with a message,
 reviewable before it merges. `archive_storage.frozen()` is where that line is drawn, in one

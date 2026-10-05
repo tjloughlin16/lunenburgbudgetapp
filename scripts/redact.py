@@ -78,7 +78,15 @@ DECISIONS = ('pending', 'publish', 'redact', 'withhold')
 # What makes an OCR reading of a page trustworthy enough to clear it. Below LOW_DPI the
 # annual reports' digits merged into the same pixels; below PAGE_MIN characters a page was
 # not read, whatever it holds. Either keeps a document held for a person.
-LOW_DPI = 150
+#
+# THE BAR DEPENDS ON WHERE THE PICTURE CAME FROM. 150 dpi is a PAPER standard: FY2023 p25 of
+# the annual reports is a scan at 93 dpi whose digits are the same pixels. A picture inside a
+# DIGITAL document is almost always a screen capture -- taken at screen resolution, so 100 dpi
+# is crisp. Of the eighteen Finance Committee documents held under the paper bar on
+# 4 October 2026, every held page turned out to be a legible screenshot or a photo, at 69 to
+# 145 dpi. Below 60 even a screen capture's digits merge, so that still goes to a person.
+LOW_DPI = 150            # a page of a SCAN
+LOW_DPI_SCREEN = 60      # a picture page inside an otherwise digital document
 PAGE_MIN = 20
 
 NOTICE = 'UNOFFICIAL DOCUMENT, REDACTION DONE BY LUNENBURGBUDGETPROJECT.ORG'
@@ -564,7 +572,8 @@ def review():
                 if p['kind'] not in pdf_kind.OCR_KINDS:
                     continue
                 n = len(re.sub(r'\s', '', got.get(p['page'], '')))
-                low = p['dpi'] is not None and p['dpi'] < LOW_DPI
+                bar = LOW_DPI if k['verdict'] == 'scan' else LOW_DPI_SCREEN
+                low = p['dpi'] is not None and p['dpi'] < bar
                 # LOW RESOLUTION MATTERS WHEN WORDS WERE READ FROM IT. FY2023 p25 OCR'd
                 # confidently and wrongly at 93 dpi: text read off pixels that cannot hold
                 # it. A low-resolution picture that yields NO words is a logo or a photo on

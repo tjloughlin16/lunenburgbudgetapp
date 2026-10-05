@@ -211,6 +211,9 @@ TREES = {
          'account-details/PROVENANCE-field-rental-lysa.md',
          "Where the Lunenburg Youth Soccer field rental receipts came from, and which fund the "
          "money lands in (our provenance note)"),
+        ('expenses/PROVENANCE-fy2024-p13-school.md', 'expenses/PROVENANCE-fy2024-p13-school.md',
+         "Where the school department's FY2024 period 13 MUNIS report is held -- with the "
+         "Finance Committee's files, not here -- and why (our provenance note)"),
         ('expenses/PROVENANCE-fy2026-p09.md', 'expenses/PROVENANCE-fy2026-p09.md',
          "Where the FY2026 period 9 quarterly reports came from, and what is bounded rather than "
          "known about the request (our provenance note)"),
