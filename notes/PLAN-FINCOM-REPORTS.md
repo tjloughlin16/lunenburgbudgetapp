@@ -72,7 +72,22 @@ general fund's private tuition line ran 464,031 under budget over FY22-FY24.
 **Hypothesis to test, not to state:** that the other funds absorb tuition the general fund
 budgeted. The object codes can test it line by line.
 
-### 7. Do the revolving funds pay their own way?
+### 7. Are we spending what comes in? (and do the revolving funds pay their own way?)
+TJ, 5 October 2026: *"are we spending what we are earning? If we take in a ton of money from fees
+and grants, are we actually spending it?"*
+**Measured (special revenue funds, all together, as each annual report prints them --
+`special-revenue-printed-totals.csv`):** money in exceeded money out in 11 of 13 years, FY2011-FY2023;
+the balance carried grew from 2.69M forward into FY2011 to 10.03M carried out of FY2023, faster
+after FY2020. The schools' FY2024 outside funds went the other way: revolving and gifts spent
+383,599 more than came in (a drawdown); grants' gap is mostly reimbursement timing.
+**Not established:** why the balance grew -- federal COVID money paid upfront (ARPA, timing),
+fees above program cost, or restricted money. Settled by the PER-FUND balances in
+`special-revenue-funds.csv` (stored as printed per page: read `columns_as_printed`, not
+`fund_balance`, which is empty for most rows -- a first query read the wrong field).
+**Also register:** FY2022 carried 8,645,489 but FY2023 opens at 8,663,350.
+**The constructive finding, if it holds (rule 8):** a fee fund carrying years of surplus could
+lower the fee or pay costs the general fund now carries.
+
 **Question:** for each fee-funded fund, receipts against spending in the same year.
 **Measured:** lunch 827,319 in / 837,499 out; school choice 80,540 in / 214,516 out.
 **Caution:** spending above receipts means a drawdown of earlier balances for a revolving fund,
