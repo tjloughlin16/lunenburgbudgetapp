@@ -679,6 +679,7 @@ CHECKS = [
     # data that has not been described yet is exactly the data somebody is about to build
     # a page on.
     ('describe_data.py', ['--undescribed']),
+    ('build_fincom_tasks.py', ['--check']),
     ('sync_d1.py', ['--check']),
 ]
 

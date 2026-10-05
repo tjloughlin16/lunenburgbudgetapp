@@ -264,6 +264,11 @@ def _superseded():
         % (off, off_junk, posts, wages, ours, trust, trust_ok, stab_rows, stab_years))
 
 
+def fincom_tasks():
+    import build_fincom_tasks
+    return build_fincom_tasks.stream()
+
+
 def main():
     streams = [
         ('Captions for recordings', 'fetch_youtube_transcripts.py — free, throttled by YouTube; run_transcript_backfill.sh sweeps the last two years across every board, then the rest; the refresh takes 12 a day', transcripts()),
@@ -282,6 +287,14 @@ def main():
          'NUMBER where the first figure belongs, and ten of seventeen trust-fund years '
          'needing real PDF geometry. Survey: sources/data/extraction-plan.csv',
          extraction()),
+        # TJ, 5 October 2026: *"make sure this is added to the ingestion backlog ... I want to
+        # make sure we read everything from this dump into readable format."* Counted in
+        # TASKS, not documents -- one extractor per kind of document -- and every one of the
+        # delivery's files is assigned to exactly one task or build_fincom_tasks.py refuses.
+        ('Finance Committee files into tables', 'by hand, a task at a time, in isolation -- '
+         'not in a long session (CLAUDE.md 7g). Every task ties its dataset to a total the '
+         'document prints. Tasks, priorities and progress: '
+         'notes/generated/FINANCE-COMMITTEE-INGEST.md', fincom_tasks()),
         ('OCR of scanned minutes', 'ocr_scanned_minutes.py — macOS Vision, local and free, ~30 s each; the refresh reads 40 a day, newest first; a scan read here enters search and the votes stream', ocr()),
     ]
     b = io.StringIO()
