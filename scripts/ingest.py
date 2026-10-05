@@ -174,11 +174,22 @@ def _atomic_write(path, blob):
     os.replace(tmp, path)
 
 
-def stage(key, blob, upstream='', when=''):
-    """Validate a document and put it in flight. Returns (ok, reason)."""
+def stage(key, blob, upstream='', when='', delivered_as=''):
+    """Validate a document and put it in flight. Returns (ok, reason).
+
+    A document with NO public upstream -- a records request, an email, a MUNIS run -- is
+    screened first, by `redact.gate()`. The public bucket cannot delete anything for ten
+    years, so a document that might be about identifiable people goes to the PRIVATE bucket
+    and waits for a decision instead. That is reported as not-ok, with a reason beginning
+    `HELD`, because the document is not in flight to the archive: it is held.
+    """
     ok, why = sniff(key, blob)
     if not ok:
         return False, why
+    import redact  # here, not at the top: redact imports archive_storage, as this does
+    held = redact.gate(key, blob, upstream, delivered_as)
+    if held:
+        return False, held
     sha = hashlib.sha256(blob).hexdigest()
 
     held = A.local_path(key)
@@ -214,6 +225,30 @@ def stage(key, blob, upstream='', when=''):
                  'state': 'staged', 'note': ''})
     _write(rows)
     return True, ''
+
+
+def unstage(key):
+    """Take a document OUT of flight, before it has been pushed. Returns True if it was in.
+
+    For a document staged under a rule that has since changed -- the Finance Committee's
+    files were staged before the redaction gate existed, and had to go back through it. A
+    document already pushed cannot be unstaged, because the bucket cannot forget it; this
+    refuses rather than leave the register saying otherwise.
+    """
+    rows = _rows()
+    hit = [r for r in rows if r['key'] == key]
+    if not hit:
+        return False
+    # The BUCKET is asked, not the push state: the push state is written at the end of a
+    # run, so a run interrupted mid-push leaves objects in the bucket that it does not name.
+    # That is exactly how this function came to be needed.
+    if key in _pushed() or any(o.get('key') == key for o in A.list_objects(key)):
+        raise RuntimeError(f'{key} is already in the bucket; it cannot be unstaged')
+    path = _staged_path(key)
+    if os.path.exists(path):
+        os.remove(path)
+    _write([r for r in rows if r['key'] != key])
+    return True
 
 
 def secure(quiet=False):

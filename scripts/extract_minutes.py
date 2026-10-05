@@ -45,7 +45,7 @@ def from_legacy_doc(path: pathlib.Path) -> str:
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent / 'sources' / 'meetings'
 TEXT = ROOT / 'text'
-scanned, done, failed = [], 0, []
+scanned, done, failed, partly = [], 0, [], []
 
 OCR_MARKER = '===OCR'
 SOURCES = ('*.pdf', '*.docx', '*.doc', '*.xlsx')
@@ -82,16 +82,29 @@ for src in sorted(p for pat in SOURCES for p in ROOT.rglob(pat)):
     out.write_text(body)
     done += 1
     by_format[src.suffix] = by_format.get(src.suffix, 0) + 1
-    # A page averaging under ~200 characters is a scan, not a document. Only meaningful
-    # for a PDF: a Word file that is short is short, not unscanned.
-    if src.suffix == '.pdf' and sum(len(t) for t in pages) < 200 * max(1, len(pages)):
-        scanned.append(str(src.relative_to(ROOT)))
+    # WHETHER IT NEEDS OCR IS READ OFF THE PAGES, not off a character count: a digital
+    # PDF with unmapped fonts used to be queued here as "a scan" (`pdf_kind.py`). Only
+    # whole-document cases go on the OCR queue, because `ocr_scanned_minutes.py` replaces
+    # the whole extract -- a mixed document keeps its text layer and is reported apart.
+    if src.suffix == '.pdf':
+        import pdf_kind
+        try:
+            k = pdf_kind.classify(str(src))
+        except Exception:
+            k = None
+        if k and k['verdict'] in ('scan', 'digital, text unreadable', 'outlines'):
+            scanned.append(str(src.relative_to(ROOT)))
+        elif k and k['verdict'] == 'mixed':
+            partly.append(f'{src.relative_to(ROOT)}  ({pdf_kind.summary(k)})')
 
 print(f'extracted {done}' + (f'  ({", ".join(f"{k} {v}" for k, v in sorted(by_format.items()))})' if by_format else ''))
 if failed:
     print(f'\nunreadable ({len(failed)}):'); [print('  ', f) for f in failed[:10]]
+if partly:
+    print(f'\ndigital, with picture-only pages the text layer does not reach ({len(partly)}):')
+    for s in partly[:15]: print('  ', s)
 if scanned:
-    print(f'\nno text layer — needs OCR ({len(scanned)}):')
+    print(f'\nno readable text on any page — needs OCR ({len(scanned)}):')
     for s in scanned[:15]: print('  ', s)
     (TEXT / '_needs-ocr.txt').write_text('\n'.join(scanned) + '\n')
     print(f'  full list -> {TEXT / "_needs-ocr.txt"}')

@@ -875,6 +875,60 @@ did or did not print.
 The cost of getting this wrong is not a slow afternoon. It is telling a resident the town
 does not publish something it publishes every year.
 
+### 13d. A PDF IS A SCAN ONLY IF ITS PAGES SAY SO. Never because an extractor got nothing
+
+TJ, 4 October 2026: *"just make sure they aren't digital-first. you made that mistake
+before"* -- and then: *"put this as a rule somewhere in the extraction/ingestion flow, to
+validate digital text vs assuming."*
+
+Four scripts decided "scan" because an extractor returned fewer than about 200 characters.
+That measures the EXTRACTOR. A digital PDF with unmapped fonts returns nothing; so does text
+drawn as outlines; so does a reader that failed to open the file. All three were called
+scans, OCR'd, and labelled `ocr` as if a camera had been involved. It is 13c pointed at a
+document.
+
+**`scripts/pdf_kind.py` is the only answer to "is this a scan".** It reads each page's
+STRUCTURE -- fonts, raster images, vector paths -- and reads its text with TWO extractors
+before calling any page unreadable. A document is `digital`, `scan`, `mixed`,
+`digital, text unreadable`, `outlines` or `blank`, and the label on any OCR says which.
+
+**`mixed` is the case the old rule could not see at all.** Twenty-eight of the Finance
+Committee's PDFs are digital documents with some pages that are only pictures -- the FY27
+school budget presentation to the committee has 19 of 51. A whole-document character count
+passed every one of them as digital and never read those pages. `pdf_kind.extract_text()`
+keeps the text layer where it reads and takes OCR only for the pages that need it.
+
+**The ingest screen fails closed on it.** `pii_screen.py` holds any PDF with even one page it
+cannot read, because a picture page is exactly where a screenshot of a staff list would be.
+
+Do not write a new character-count test. Call `pdf_kind`.
+
+### 13e. The raw is private. The public copy is ours. The decision is written down
+
+TJ, 4 October 2026, after a records-request delivery put one employee's number, start date,
+grade and salary into the public bucket -- which cannot delete it for ten years: *"we
+probably need a REDACTION mechanism, so that we can have a private storage of the raw, and a
+public version with all redacted PII removed. This will come up in MUNIS data too."*
+
+- **The gate.** `ingest.stage()` calls `redact.gate()` on every document with no public
+  upstream -- a records request, an email, a MUNIS run. Anything `pii_screen.py` flags or
+  cannot read goes to the PRIVATE bucket (`lunenburg-budget-private`, no public URL) and
+  waits as `pending`. Nothing reaches the public bucket until `sources/data/redactions.csv`
+  says `publish`, or as our redacted copy.
+- **The redacted copy** is built by `redact.py` from the raw and a declared rule,
+  deterministically, and `--check` rebuilds it byte for byte. It opens -- first sheet, first
+  page, first slide -- with **UNOFFICIAL DOCUMENT, REDACTION DONE BY
+  LUNENBURGBUDGETPROJECT.ORG** and *Official document available upon request*, TJ's words.
+- **Redact quasi-identifiers, not only names.** Job title and hire date name everybody in a
+  department of four. A document whose rows cannot be made anonymous is WITHHELD.
+- **A redacted PDF is rebuilt as images.** Black boxes over a live text layer -- overlay
+  redaction -- hide nothing from anybody who selects the text.
+- **Every redacted output is screened again**, and every mask pattern must be gone from it,
+  or nothing is written.
+
+A screen is not a clearance: it finds per-person TABLES and identifier PATTERNS, and cannot
+recognise a name in running prose. The register's `decided_by` says who looked.
+
 
 ---
 

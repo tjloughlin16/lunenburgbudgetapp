@@ -274,16 +274,14 @@ def extract(path, out_txt):
     ext = os.path.splitext(path)[1].lower()
     try:
         if ext == '.pdf':
-            import pypdf
-            t = '\n'.join(f'===PAGE {i+1}===\n' + (p.extract_text() or '')
-                          for i, p in enumerate(pypdf.PdfReader(path).pages))
-            if len(re.sub(r'===PAGE \d+===|\s', '', t)) < 200:
-                r = subprocess.run(['swift', os.path.join(ROOT, 'scripts', 'ocr_pdf.swift'),
-                                    path, out_txt], capture_output=True, text=True)
-                return 'ocr' if r.returncode == 0 else 'ocr failed'
-            open(out_txt, 'w').write(t)
-            return 'pdf text layer'
-        if ext == '.xlsx':
+            # Scan or digital is decided from what is ON each page, not from how many
+            # characters an extractor returned. See `pdf_kind.py` for why.
+            import pdf_kind
+            return pdf_kind.extract_text(path, out_txt)
+        # The macro-enabled variants are the same container with a VBA part added; the
+        # cells and the slides read identically. First met in the Finance Committee's
+        # files, October 2026 -- the town's own site has never served one.
+        if ext in ('.xlsx', '.xlsm'):
             import openpyxl
             wb = openpyxl.load_workbook(path, data_only=True, read_only=True)
             with open(out_txt, 'w') as fh:
@@ -294,9 +292,14 @@ def extract(path, out_txt):
                         if any(c is not None for c in row):
                             w.writerow(['' if c is None else c for c in row])
             return 'spreadsheet'
-        if ext in ('.docx', '.pptx'):
+        if ext == '.doc':
+            # Pre-2007 Word. macOS ships `textutil`, which reads it; nothing in pip does well.
+            r = subprocess.run(['textutil', '-convert', 'txt', '-output', out_txt, path],
+                               capture_output=True)
+            return 'document' if r.returncode == 0 else 'extract failed: textutil'
+        if ext in ('.docx', '.pptx', '.pptm'):
             z = zipfile.ZipFile(path)
-            if ext == '.pptx':
+            if ext in ('.pptx', '.pptm'):
                 parts = sorted((n for n in z.namelist()
                                 if re.match(r'ppt/slides/slide\d+\.xml$', n)),
                                key=lambda s: int(re.findall(r'\d+', s)[0]))
@@ -306,7 +309,7 @@ def extract(path, out_txt):
                 x = z.read('word/document.xml').decode('utf8', 'ignore')
                 txt = re.sub(r'<[^>]+>', '', re.sub(r'</w:p>', '\n', x))
             open(out_txt, 'w').write(txt)
-            return 'slides' if ext == '.pptx' else 'document'
+            return 'document' if ext == '.docx' else 'slides'
     except Exception as e:
         return f'extract failed: {type(e).__name__}'
     return 'no extractor'

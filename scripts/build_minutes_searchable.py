@@ -110,43 +110,8 @@ def searchable_text(path):
     return PAGE_MARKER.sub('', body).strip()
 
 
-def _walk_resources(res, seen, acc, depth=0):
-    """Does this resource tree reach a font, or a raster image?
-
-    Form XObjects nest, and the archive contains files whose only image sits two levels
-    down inside one. A non-recursive check reported those as neither text nor picture,
-    which is a category that would have needed explaining and does not exist.
-    """
-    if depth > 6 or res is None:
-        return
-    try:
-        res = res.get_object()
-    except Exception:
-        return
-    if not hasattr(res, 'get'):
-        return
-    if res.get('/Font'):
-        acc['font'] = True
-    xobjects = res.get('/XObject')
-    if not xobjects:
-        return
-    try:
-        xobjects = xobjects.get_object()
-    except Exception:
-        return
-    for key in list(xobjects.keys()):
-        try:
-            obj = xobjects[key].get_object()
-        except Exception:
-            continue
-        subtype = obj.get('/Subtype')
-        if subtype == '/Image':
-            acc['image'] = True
-        elif subtype == '/Form':
-            if id(obj) in seen:
-                continue
-            seen.add(id(obj))
-            _walk_resources(obj.get('/Resources'), seen, acc, depth + 1)
+# The resource walk lives in `pdf_kind.py` now, with the rule it serves.
+from pdf_kind import walk_resources as _walk_resources  # noqa: E402
 
 
 def diagnose(src):
