@@ -1334,7 +1334,7 @@
      "stars": 1,
      "what": "Written by us. One row per task for turning the delivery into tables: the documents it covers, what it produces, the check that makes it done, and its state. Progress is rendered in notes/generated/FINANCE-COMMITTEE-INGEST.md.",
      "kind": "Data",
-     "bytes": 10753,
+     "bytes": 11256,
      "url": "/docs/data/finance-committee-tasks.csv",
      "count": 37,
      "unit": "rows",
@@ -4477,6 +4477,18 @@
      "textUrl": "/docs/data/agentic-spend.csv"
     },
     {
+     "path": "data/school-staff-fte.csv",
+     "title": "District staff FTE by DESE job code, FY2016–FY2025",
+     "stars": 3,
+     "what": "Written by us, from the district’s own staffing workbook: FTE by job code and year, district totals only -- not by school. Tied to the workbook’s pivot.",
+     "kind": "Data",
+     "bytes": 57609,
+     "url": "/docs/data/school-staff-fte.csv",
+     "count": 760,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-staff-fte.csv"
+    },
+    {
      "path": "data/athletics-by-sport.csv",
      "title": "Athletics by sport, long form",
      "stars": 3,
@@ -4896,6 +4908,18 @@
      "count": 5627,
      "unit": "rows",
      "textUrl": "/docs/data/eoyr-schedule3.csv"
+    },
+    {
+     "path": "data/school-target-fy26.csv",
+     "title": "The school budget under the Town Manager’s FY2026 target, four versions",
+     "stars": 2,
+     "what": "Written by us, from hand-built district workbooks: every line in every version, columns named from their headers, each version tied to its printed total. Built by scripts/extract_school_workbooks.py.",
+     "kind": "Data",
+     "bytes": 488642,
+     "url": "/docs/data/school-target-fy26.csv",
+     "count": 1560,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-target-fy26.csv"
     },
     {
      "path": "data/search-affinity.csv",
@@ -5392,6 +5416,18 @@
      "count": 8,
      "unit": "lines",
      "textUrl": "/docs/town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md"
+    },
+    {
+     "path": "data/school-enrollment-lps-staff.csv",
+     "title": "Enrollment, FY2016–FY2025, as the staffing workbook prints it",
+     "stars": 1,
+     "what": "Written by us, from the same workbook’s enrollment sheet.",
+     "kind": "Data",
+     "bytes": 143,
+     "url": "/docs/data/school-enrollment-lps-staff.csv",
+     "count": 10,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-enrollment-lps-staff.csv"
     }
    ]
   },
@@ -20812,10 +20848,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1822,
+  "documents": 1825,
   "groups": 23,
-  "bytes": 3602279626,
-  "loadBearing": 174
+  "bytes": 3602826523,
+  "loadBearing": 175
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 35 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

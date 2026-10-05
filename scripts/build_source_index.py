@@ -2650,6 +2650,18 @@ GROUPS = [
              'year-end ledger at period 13 for every fund, its FY2023 and part-year FY2025 '
              'ledgers, and the town’s FY2025 general fund revenue -- each section tied '
              'to the total the report prints. Built by scripts/extract_fincom_ledgers.py.'),
+            ('data/school-target-fy26.csv',
+             'The school budget under the Town Manager’s FY2026 target, four versions', 2,
+             'Written by us, from hand-built district workbooks: every line in every version, '
+             'columns named from their headers, each version tied to its printed total. Built '
+             'by scripts/extract_school_workbooks.py.'),
+            ('data/school-staff-fte.csv',
+             'District staff FTE by DESE job code, FY2016–FY2025', 3,
+             'Written by us, from the district’s own staffing workbook: FTE by job code and '
+             'year, district totals only -- not by school. Tied to the workbook’s pivot.'),
+            ('data/school-enrollment-lps-staff.csv',
+             'Enrollment, FY2016–FY2025, as the staffing workbook prints it', 1,
+             'Written by us, from the same workbook’s enrollment sheet.'),
             ('data/omnibus-history.csv',
              'The town’s omnibus budget by line, FY1997–FY2026', 3,
              'Written by us, from the Finance Committee’s FY26 Budget Master: every year '
