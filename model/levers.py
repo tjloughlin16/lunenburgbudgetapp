@@ -186,6 +186,15 @@ LEVERS = [
                   '“more, but not less, than fifty per cent.” An employee share above 50% '
                   'is not a choice the town declined to make; it is one no town may make.',
       legal_url='https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIV/Chapter32B/Section7A',
+      # AND A SIGNED AGREEMENT HOLDS IT UNTIL JUNE 2029. The FY27-FY29 PEC memorandum sets
+      # 75/25 on every active plan "from July 1, 2026 through June 30, 2029", reopenable
+      # only for federal ACA changes. TJ, 5 October 2026: keep the option and say it "is not
+      # available until after FY29 due to PEC agreement". So the slider still prices it.
+      held_until='2029-06-30',
+      held_basis='The Town’s health insurance agreement with the Public Employee Committee '
+                 'sets 75/25 on every active plan through 30 June 2029. The only reopener it '
+                 'names is federal changes under the Affordable Care Act.',
+      held_url='/docs/contracts/pdf/pec-agreement-fy27-fy29.pdf',
       # AND THE ROUTE IS BARGAINING, NOT THE 2011 REFORM. §21(f): "The panel shall not
       # impose any change to contribution ratios." The plan-design process moves copays
       # and deductibles; the SPLIT stays at the table under c.150E and the town's §19

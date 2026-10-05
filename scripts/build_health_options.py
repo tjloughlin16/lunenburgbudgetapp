@@ -101,6 +101,7 @@ def cagr(a, b, years):
     return (b / a) ** (1.0 / years) - 1 if a > 0 and b > 0 and years else None
 
 
+PEC_DOC = '/docs/contracts/pdf/pec-agreement-fy27-fy29.pdf'
 PEC_HISTORY = os.path.join(ROOT, 'sources', 'data', 'pec-history.csv')
 
 
@@ -183,6 +184,11 @@ def build():
                           under_4_share=round(100.0 * sum(1 for v in vals if v < 4) / len(vals), 1),
                           has_town=kinds.get(TOWN) == k))
     law = rows(LAW)
+    # AN OPTION THE PEC AGREEMENT HOLDS stays on the menu and says until when. TJ, 5 October
+    # 2026: keep the options, and show that one "is not available until after FY29 due to
+    # PEC agreement". The agreement is the document every such note cites.
+    for r in law:
+        r['held_doc'] = PEC_DOC if r.get('held_until') else ''
     if not any(r['available_to_lunenburg'] == 'no' for r in law):
         raise SystemExit('the law file lists nothing the town cannot do; that is not this statute')
     return dict(

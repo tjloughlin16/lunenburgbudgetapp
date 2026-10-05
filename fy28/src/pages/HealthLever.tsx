@@ -31,6 +31,7 @@ const O = HEALTH_LEVERS.optOut
 type Option = {
   id: string; option: string; statute: string; statute_url: string; who_decides: string; threshold: string
   available_to_lunenburg: string; effect_on_the_gap: string; who_it_lands_on: string; note: string
+  held_until?: string; held_by?: string; held_doc?: string
 }
 type Peer = { municipality: string; first: number; last: number; growth: number }
 type Options = {
@@ -101,7 +102,7 @@ export function HealthLever() {
           </Insight>
         </div>
         <NotShown>
-          Whether any of it is bargainable this year. Plan design goes through the insurance advisory committee and the unions under c.32B; the FY27 rate came in at {pct(HEALTH_LEVERS.actualFy27, 1)} against the {pct(HEALTH_LEVERS.assumed, 0)} assumed, and nothing here predicts next year&rsquo;s. This page prices the routes; it does not say which one the town should take.
+          Whether any of it is open before FY30. The <a className="underline" href="/docs/contracts/pdf/pec-agreement-fy27-fy29.pdf">PEC agreement</a> fixes the plans, the copays and the 75/25 split through 30 June 2029, and what it amends is not yet in hand; the FY27 rate came in at {pct(HEALTH_LEVERS.actualFy27, 1)} against the {pct(HEALTH_LEVERS.assumed, 0)} assumed, and nothing here predicts next year&rsquo;s. This page prices the routes; it does not say which one the town should take.
         </NotShown>
       </ShortVersion>
 
@@ -117,7 +118,14 @@ export function HealthLever() {
                 <tbody>{d.options.filter(o => o.available_to_lunenburg !== 'no').map(o => (
                   <tr key={o.id} style={{ borderTop: '1px solid var(--grid)' }}>
                     <td className="py-2 pr-4 align-top" style={{ minWidth: 220 }}><span className="font-semibold">{o.option}</span>
-                      <span className="block text-[11.5px] mt-0.5" style={{ color: 'var(--text-muted)' }}>{o.note}</span></td>
+                      <span className="block text-[11.5px] mt-0.5" style={{ color: 'var(--text-muted)' }}>{o.note}</span>
+                      {/* HELD BY AN AGREEMENT: still an option, not yet an available one. */}
+                      {o.held_until && (
+                        <span className="block text-[11.5px] mt-1 pl-2 border-l-2" style={{ color: 'var(--text-secondary)', borderColor: 'var(--status-serious)' }}>
+                          <strong>Not available until after FY{o.held_until.slice(2, 4)}.</strong> {o.held_by}{' '}
+                          {o.held_doc && <a className="underline" href={o.held_doc}>Read the agreement</a>}
+                        </span>
+                      )}</td>
                     <td className="py-2 pr-4 align-top">{o.who_decides}</td>
                     <td className="py-2 pr-4 align-top text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>{o.threshold}</td>
                     <td className="py-2 pr-4 align-top text-[12.5px]" style={{ color: 'var(--text-secondary)' }}>{o.who_it_lands_on}</td>

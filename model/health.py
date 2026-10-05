@@ -3,7 +3,11 @@
 Source: "Health Insurance / Open Enrollment - July 1, 2026", Payroll & Benefits
 Coordinator, Town of Lunenburg, 21 April 2026. Rates rose 5.38% for FY27.
 
-The Town pays 75% of premium and the employee 25%. (Town Employee Benefits page.)
+The Town pays 75% of premium and the employee 25% on every active plan, 50/50 on Medex.
+Source: the Memorandum of Agreement between the Town and the Lunenburg Public Employee
+Committee, effective 1 July 2026 to 30 June 2029 (sources/contracts/pdf/
+pec-agreement-fy27-fy29.pdf), received by records request 5 October 2026. Previously cited
+to the Town's Employee Benefits page, which states the same split.
 
 Note on the source: in the rate letter the Access Blue Saver rows have the IND and FAM
 labels transposed -- $2,602.28 is plainly the family rate and $989.46 the individual,

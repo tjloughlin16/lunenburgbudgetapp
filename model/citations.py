@@ -87,6 +87,16 @@ CITATIONS = [
          source='Health Insurance Rates July 1, 2026 (Town of Lunenburg), and the FY27 '
                 'budget narrative'),
 
+    dict(id='health-split', metric='Health insurance contribution split',
+         value='75% Town / 25% employee, through 30 June 2029',
+         kind='contract',
+         basis='Every active plan and Managed Blue for Seniors 75/25; Medex 50/50. Fixed '
+               'for the agreement’s term; the only reopener it names is federal ACA '
+               'changes',
+         doc='contracts/pdf/pec-agreement-fy27-fy29.pdf',
+         source='Memorandum of Agreement, Town of Lunenburg and Lunenburg Public Employee '
+                'Committee, 1 July 2026 to 30 June 2029 (records request, 5 October 2026)'),
+
     dict(id='sped-tuition', metric='Out-of-district special education growth',
          value='held flat',
          kind='ours',

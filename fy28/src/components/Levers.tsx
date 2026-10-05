@@ -141,6 +141,13 @@ export function LeverWorkbench({ gap, vals, setVals, basis, setBasis, showTotal 
                   {l.legal_url && <a className="underline" href={l.legal_url} target="_blank" rel="noreferrer">Read the section</a>}
                 </p>
               )}
+              {/* HELD BY A SIGNED AGREEMENT until a date: still priced, not yet available. */}
+              {l.held_until && (
+                <p className="text-[11px] mt-1 pl-2 border-l-2" style={{ color: 'var(--text-muted)', borderColor: 'var(--status-serious)' }}>
+                  <strong>Not available until after FY{l.held_until.slice(2, 4)}.</strong> {l.held_basis}{' '}
+                  {l.held_url && <a className="underline" href={l.held_url}>Read the agreement</a>}
+                </p>
+              )}
               {isFee && (
                 <div className="flex items-start justify-between text-[10px] -mt-0.5"
                   style={{ color: 'var(--text-muted)' }}>
@@ -174,13 +181,6 @@ export function LeverWorkbench({ gap, vals, setVals, basis, setBasis, showTotal 
                 </div>
               )}
 
-              {/* THE LAW'S CEILING, said out loud under the control that stops at it. */}
-              {l.legal_max && (
-                <p className="text-[11px] mt-1 pl-2 border-l-2" style={{ color: 'var(--text-muted)', borderColor: 'var(--status-critical)' }}>
-                  <strong>The law stops this one.</strong> {l.legal_basis}{' '}
-                  {l.legal_url && <a className="underline" href={l.legal_url} target="_blank" rel="noreferrer">Read the section</a>}
-                </p>
-              )}
               {isFee && (
                 <div className="flex items-center gap-2 mt-1.5">
                   <label htmlFor={`b-${l.id}`} className="text-[11px] shrink-0"
@@ -195,13 +195,6 @@ export function LeverWorkbench({ gap, vals, setVals, basis, setBasis, showTotal 
                              color: 'var(--text-primary)' }} />
                 </div>
               )}
-              {/* THE LAW'S CEILING, said out loud under the control that stops at it. */}
-              {l.legal_max && (
-                <p className="text-[11px] mt-1 pl-2 border-l-2" style={{ color: 'var(--text-muted)', borderColor: 'var(--status-critical)' }}>
-                  <strong>The law stops this one.</strong> {l.legal_basis}{' '}
-                  {l.legal_url && <a className="underline" href={l.legal_url} target="_blank" rel="noreferrer">Read the section</a>}
-                </p>
-              )}
               {isFee && (payers[l.id]?.removed ?? 0) > 0 && (
                 <p className="text-[10px] leading-snug mt-1"
                   style={{ color: 'var(--status-serious)' }}>
@@ -212,13 +205,6 @@ export function LeverWorkbench({ gap, vals, setVals, basis, setBasis, showTotal 
 
               {/* Flat break-even: what one participant would pay if the program
                   fully covered itself, ignoring waivers and drop-off. */}
-              {/* THE LAW'S CEILING, said out loud under the control that stops at it. */}
-              {l.legal_max && (
-                <p className="text-[11px] mt-1 pl-2 border-l-2" style={{ color: 'var(--text-muted)', borderColor: 'var(--status-critical)' }}>
-                  <strong>The law stops this one.</strong> {l.legal_basis}{' '}
-                  {l.legal_url && <a className="underline" href={l.legal_url} target="_blank" rel="noreferrer">Read the section</a>}
-                </p>
-              )}
               {isFee && (() => {
                 const pool = poolOf(l)
                 const cap = capOf(l)

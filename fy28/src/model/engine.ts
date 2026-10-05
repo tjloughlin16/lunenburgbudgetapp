@@ -27,6 +27,12 @@ export interface Lever {
   legal_max?: number
   legal_basis?: string
   legal_url?: string
+  /** HELD BY AN AGREEMENT until a date. Unlike `legal_max` the option is lawful and the
+   *  slider still works -- a reader can price it -- but it is not on the table before
+   *  `held_until`, and `held_basis` says which signed document holds it. */
+  held_until?: string
+  held_basis?: string
+  held_url?: string
   /** Cut a named line at a time rather than a percentage of an aggregate. */
   isLadder?: boolean
   rungs?: LeverRung[]
