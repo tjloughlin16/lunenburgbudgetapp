@@ -11,6 +11,50 @@ it had never been fixed anywhere. Check anything load-bearing against the repo.
 ---
 ---
 
+## 5 OCTOBER 2026 — THE PEC AGREEMENT ARRIVED, AND THE MUNIS REQUEST AS A SPREADSHEET
+
+Three commits: `6c2616c6`, `33e0e069`, `a7dd6d77`. Nothing deployed (rule 10).
+
+**1. MUNIS request, fund by fund.** `notes/outbound/drafts/MUNIS-REQUEST-FUNDS.xlsx`, built
+by `scripts/build_munis_request_xlsx.py` from the 4 September request as sent and the Town's
+FY26 special revenue report (p9). 63 fund rows × 4 reports × FY23–26, the 10 revenue accounts,
+the 23 runs with dates. TJ was reviewing it; NOT YET SENT to the Town. Open choice: keep the
+grey `n/a?` cells (our guess from grant names) or make them all NEED. The MUNIS appeal to
+the Supervisor of Records was filed 5 Oct and is separate.
+
+**2. PEC agreement received 5 Oct** -> `sources/contracts/pdf/pec-agreement-fy27-fy29.pdf`,
+sha256 `6f12f5a0…`. A §19 memorandum, 1 Jul 2026 – 30 Jun 2029: 75/25 active and Managed
+Blue for Seniors, 50/50 Medex, $96/mo Part B, HSA $1,000/$2,000. **The PEC appeal is
+WITHDRAWN — do not send it** (draft, register, QUEUE all say so). Missing from the copy:
+the in-force agreement it amends, and Attachments A (brochures) and B (opt-out plan), which
+are blank. **TJ asked for all three on 5 Oct** -> register row
+`2026-10-05-pec-base-and-attachments`. When they land: close the two PEC rows in
+`money-gaps.csv`, fill the opt-out figure, and compare plan design to the prior terms.
+Who at the Town sent the memo is not recorded — ask TJ.
+
+**3. Options held until after FY29.** TJ: keep every option, say it is not available
+until after FY29. New fields `held_until/held_basis/held_url` on a lever (rendered in
+`Levers.tsx`) and `held_until/held_by` in `health-insurance-law.csv` (rendered in
+`HealthLever.tsx`). Applied to the employee-share lever, plan design, and both GIC routes.
+Both pages were rendered and read back.
+
+**NOT established, do not restate:** that §§21–22 could or could not override the
+agreement (turns on whether §§21–23 were ever accepted — no vote found); that the memo's
+"PPO/HMO/HMO Blue Select Benchmark 4" are the rate letter's Blue Care Elect / Network Blue
+NE / Blue Select (our reading); what changed in the FY27 round (prior terms not held).
+Not done, offered: Part B reimbursement and the HSA in the model.
+
+**Left stale, on purpose (battery):** `build_reading_time`, `build_short_versions`,
+`build_search_index` need a site build; `build_reports_index` stale from something else;
+`sync_d1.py --check` failed on Cloudflare API error 7403. Six regenerated public files
+(youtube indexes, meeting register, finance-committee PROVENANCE) sit uncommitted — drift
+from earlier commits, not this work.
+
+**Fixed in passing:** `archive_storage.write_manifest` and `sync_archive.write_state` wrote
+CRLF over LF files, rewriting the whole manifest on every ingest.
+
+---
+
 ## 29-30 SEPTEMBER 2026 — FOUR GENERATORS THAT DESTROY DATA, AND A REFRESH THAT NOW CLOSES ITS LOOP
 
 **READ THIS BEFORE RUNNING ANY GENERATOR UNATTENDED.** Five separate times over two days a
