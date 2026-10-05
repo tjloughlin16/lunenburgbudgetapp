@@ -97,9 +97,21 @@ general fund, grant and revolving money alike.
 | 6 | PROGRAM (08 school office, 11 paras/aides, 06 special education...) | descriptions grouped under each value |
 | 7 | salary/expense split (1, 2, 4) | pattern |
 
-### 8. What each school and program really costs
-**Question:** each building's and program's general fund budget PLUS the grant and revolving money
-spent in the same building and program (FY2024 period 13).
-**Says:** how much of each school's real spending the voted budget does not show -- invisible, not
-subtracted. Whether that is substitution or supplement is report 5's test (when ESSER ended, did
-the same building-and-program general fund lines rise?).
+### 8. What each part of Lunenburg really costs -- town departments AND schools
+TJ, 5 October 2026: *"the combined appropriated budgets (for school AND for Town) with their spent
+funds outside the budget."*
+**Three layers per department / school / program, shown stacked, NEVER blended into one figure:**
+1. **Appropriated** -- the voted general fund, spent (`gl-history.csv`, both sides). Observed.
+2. **Spent outside the vote** -- grants, revolving, special revenue. Observed. Schools: FY24 period
+   13, account x building x program (the key above). Town: fund-level receipts and disbursements
+   per year from the annual reports (`special-revenue-funds.csv`, `special-revenue-printed-totals.csv`),
+   attributed to a department by fund name -- OUR mapping, labelled as such.
+3. **Carried elsewhere** -- retiree health, county retirement, building debt, facilities, booked in
+   another department. Needs an allocation method: OURS, labelled, shown separately.
+**The asymmetry, said on the page:** the schools' outside money is account-level, the town's is
+fund-level, so the town's will look lumpier -- a property of the data, not of the town. Remedy (a
+registered gap): the town's `glytdbud` report for its special revenue funds.
+**Traps the generator must handle:** interfund transfers netted out (or they count twice);
+enterprise funds (sewer, PEG Access) shown separately, not inside a department.
+**For the schools, also:** whether outside money is substitution or supplement (report 5's test;
+Title I and IDEA must legally supplement, not supplant -- ESSER did not have to).
