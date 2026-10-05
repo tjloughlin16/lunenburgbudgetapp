@@ -16,7 +16,7 @@ file. Everything else is derived here.
 EVERY DOCUMENT BELONGS TO EXACTLY ONE TASK, or this refuses to write. The universe is the
 delivery register -- every file filed, redacted or withheld, so the private ones are counted
 too -- and each is assigned to the first task whose `documents` pattern matches its delivered
-name, private tasks (K) first. A file that matches nothing would be a file nobody is going to
+name, private tasks (K) first and the four catch-all presentation buckets (I1-I4) last. A file that matches nothing would be a file nobody is going to
 read, which is exactly the thing this list exists to make impossible.
 
 A TASK IS DONE WHEN ITS `done_when` HOLDS, and `state` says so. Text has been extracted for
@@ -50,7 +50,13 @@ def load():
 
 
 def assign(tasks, docs):
-    order = sorted(tasks, key=lambda t: 0 if t['id'].startswith('K') else 1)
+    # PRIVATE TASKS FIRST, THE CATCH-ALL PRESENTATION BUCKETS LAST. I1-I4 match a whole budget
+    # year's folder (`^FY27 Budget/`), so in file order they claimed the trust fund records
+    # before J1 could -- J1 had zero documents while an agent did its work by finding the
+    # files itself. Found 5 October 2026. Specific before general.
+    BROAD = {'I1', 'I2', 'I3', 'I4'}
+    order = sorted(tasks, key=lambda t: 0 if t['id'].startswith('K')
+                   else (2 if t['id'] in BROAD else 1))
     out, orphans = [], []
     for d in docs:
         for t in order:

@@ -1334,9 +1334,9 @@
      "stars": 1,
      "what": "Written by us. One row per task for turning the delivery into tables: the documents it covers, what it produces, the check that makes it done, and its state. Progress is rendered in notes/generated/FINANCE-COMMITTEE-INGEST.md.",
      "kind": "Data",
-     "bytes": 11901,
+     "bytes": 15148,
      "url": "/docs/data/finance-committee-tasks.csv",
-     "count": 37,
+     "count": 38,
      "unit": "rows",
      "textUrl": "/docs/data/finance-committee-tasks.csv"
     },
@@ -3517,7 +3517,7 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 205463,
+     "bytes": 206071,
      "url": "/docs/data/money-gaps.csv",
      "count": 224,
      "unit": "rows",
@@ -4693,6 +4693,18 @@
      "textUrl": "/docs/data/account-names.csv"
     },
     {
+     "path": "data/monty-tech-assessment.csv",
+     "title": "Lunenburg’s Monty Tech assessment by component, FY2023–FY2026",
+     "stars": 3,
+     "what": "Written by us, from Monty Tech’s budget books: minimum contribution, transportation, capital and debt, each tied to the assessment printed.",
+     "kind": "Data",
+     "bytes": 8145,
+     "url": "/docs/data/monty-tech-assessment.csv",
+     "count": 32,
+     "unit": "rows",
+     "textUrl": "/docs/data/monty-tech-assessment.csv"
+    },
+    {
      "path": "data/town-ledger-fy26-q3.csv",
      "title": "The town’s own ledger, FY26 to 31 March",
      "stars": 3,
@@ -4850,6 +4862,18 @@
      "textUrl": "/docs/data/total-expenses-history.csv"
     },
     {
+     "path": "data/town-budget-versions.csv",
+     "title": "Town Manager line-item budgets FY2024-FY2025, every version",
+     "stars": 2,
+     "what": "Written by us: both FY24 preliminary versions, the FY25 line-item budget and five dated revenue-expense drafts, tied at every level, with anomalies logged by cell. Built by scripts/extract_town_budget_versions.py.",
+     "kind": "Data",
+     "bytes": 10505877,
+     "url": "/docs/data/town-budget-versions.csv",
+     "count": 51996,
+     "unit": "rows",
+     "textUrl": "/docs/data/town-budget-versions.csv"
+    },
+    {
      "path": "data/meeting-document-timestamps.csv",
      "title": "When each agenda and each set of minutes was MADE, from the document itself",
      "stars": 2,
@@ -4922,6 +4946,18 @@
      "textUrl": "/docs/data/school-target-fy26.csv"
     },
     {
+     "path": "data/fincom-presentation-tables.csv",
+     "title": "Tables read from Finance Committee presentations",
+     "stars": 2,
+     "what": "Written by us: the tables extracted so far from slides and PDFs, each tied to the total it prints.",
+     "kind": "Data",
+     "bytes": 484692,
+     "url": "/docs/data/fincom-presentation-tables.csv",
+     "count": 2360,
+     "unit": "rows",
+     "textUrl": "/docs/data/fincom-presentation-tables.csv"
+    },
+    {
      "path": "data/fund-balances-fincom.csv",
      "title": "Special revenue, Chapter 90 and trust fund balances from the Finance Committee’s files",
      "stars": 2,
@@ -4932,6 +4968,30 @@
      "count": 1820,
      "unit": "rows",
      "textUrl": "/docs/data/fund-balances-fincom.csv"
+    },
+    {
+     "path": "data/department-budgets-fincom-fy27.csv",
+     "title": "FY2027 department budgets as presented to the Finance Committee",
+     "stars": 2,
+     "what": "Written by us: Police, Fire, Facilities, IT, Land Use and PACC worksheets, each tied to its printed totals.",
+     "kind": "Data",
+     "bytes": 213496,
+     "url": "/docs/data/department-budgets-fincom-fy27.csv",
+     "count": 1035,
+     "unit": "rows",
+     "textUrl": "/docs/data/department-budgets-fincom-fy27.csv"
+    },
+    {
+     "path": "data/fy20-q4-reports.csv",
+     "title": "The town’s FY2020 fourth-quarter report, read off the scans",
+     "stars": 2,
+     "what": "Written by us: only rows that prove both of the report’s own identities to the cent are published. Built by scripts/extract_fincom_records.py.",
+     "kind": "Data",
+     "bytes": 157315,
+     "url": "/docs/data/fy20-q4-reports.csv",
+     "count": 702,
+     "unit": "rows",
+     "textUrl": "/docs/data/fy20-q4-reports.csv"
     },
     {
      "path": "data/capital-requests.csv",
@@ -4946,6 +5006,18 @@
      "textUrl": "/docs/data/capital-requests.csv"
     },
     {
+     "path": "data/warrant-articles-fincom.csv",
+     "title": "Town Meeting warrant articles and amounts, FY2024–FY2027 drafts",
+     "stars": 2,
+     "what": "Written by us, from six draft warrants: every article with an amount and its funding source. Built by scripts/extract_fincom_records.py.",
+     "kind": "Data",
+     "bytes": 131956,
+     "url": "/docs/data/warrant-articles-fincom.csv",
+     "count": 347,
+     "unit": "rows",
+     "textUrl": "/docs/data/warrant-articles-fincom.csv"
+    },
+    {
      "path": "data/search-affinity.csv",
      "title": "Which words pin which page or document at the top of a search",
      "stars": 2,
@@ -4956,6 +5028,18 @@
      "count": 996,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
+    },
+    {
+     "path": "data/public-safety-staffing-plans.csv",
+     "title": "Police and fire staffing plans: positions PLANNED, not hired",
+     "stars": 2,
+     "what": "Written by us, from the 2020 police plan, the FY21 fire plan, the FY25 hiring plan summary and the overtime and 2.5% analyses. Plans, not hires.",
+     "kind": "Data",
+     "bytes": 128430,
+     "url": "/docs/data/public-safety-staffing-plans.csv",
+     "count": 450,
+     "unit": "rows",
+     "textUrl": "/docs/data/public-safety-staffing-plans.csv"
     },
     {
      "path": "data/debt-service-projections.csv",
@@ -4982,6 +5066,18 @@
      "textUrl": "/docs/data/fund-owners.csv"
     },
     {
+     "path": "data/athletics-fincom.csv",
+     "title": "Athletics costs, participation and peer staffing from the Finance Committee’s files",
+     "stars": 2,
+     "what": "Written by us, from hand-built district sheets: costs and counts by sport, with every published total kept side by side rather than reconciled.",
+     "kind": "Data",
+     "bytes": 100485,
+     "url": "/docs/data/athletics-fincom.csv",
+     "count": 463,
+     "unit": "rows",
+     "textUrl": "/docs/data/athletics-fincom.csv"
+    },
+    {
      "path": "data/copy-status.csv",
      "title": "Whether the publisher’s copy is still our copy",
      "stars": 2,
@@ -4992,6 +5088,18 @@
      "count": 342,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
+    },
+    {
+     "path": "data/police-expended.csv",
+     "title": "Police spending as expended, FY2015-FY2023",
+     "stars": 2,
+     "what": "Written by us, from the department’s own attachment: every line by year, each category tied to its printed total.",
+     "kind": "Data",
+     "bytes": 80674,
+     "url": "/docs/data/police-expended.csv",
+     "count": 453,
+     "unit": "rows",
+     "textUrl": "/docs/data/police-expended.csv"
     },
     {
      "path": "data/link-status.csv",
@@ -5066,6 +5174,18 @@
      "textUrl": "/docs/data/budget-seasons/fy27.csv"
     },
     {
+     "path": "data/school-budget-comparison-fy25.csv",
+     "title": "The FY2025 school budget scenarios presented to the Finance Committee",
+     "stars": 2,
+     "what": "Written by us: three draft FY25 scenarios by function, tied to the workbook’s Grand Totals. Built by scripts/extract_fincom_school_side.py.",
+     "kind": "Data",
+     "bytes": 19548,
+     "url": "/docs/data/school-budget-comparison-fy25.csv",
+     "count": 66,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-budget-comparison-fy25.csv"
+    },
+    {
      "path": "data/athletics-by-sport-reconciliation.csv",
      "title": "Where the district’s workbook does not add up",
      "stars": 2,
@@ -5100,6 +5220,18 @@
      "count": 91,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-events.csv"
+    },
+    {
+     "path": "data/revenue-distribution-fy26.csv",
+     "title": "How new FY2026 revenue was divided between town, schools and Monty Tech",
+     "stars": 2,
+     "what": "Written by us, from the draft revenue distribution workbook, tied to its totals.",
+     "kind": "Data",
+     "bytes": 13130,
+     "url": "/docs/data/revenue-distribution-fy26.csv",
+     "count": 113,
+     "unit": "rows",
+     "textUrl": "/docs/data/revenue-distribution-fy26.csv"
     },
     {
      "path": "contracts/CONTRACTS.md",
@@ -5150,6 +5282,18 @@
      "textUrl": "/docs/data/budget-seasons/fy27-summer-governors-budget.csv"
     },
     {
+     "path": "data/trust-fund-purposes.csv",
+     "title": "What each trust fund is for, from its deed and summary",
+     "stars": 2,
+     "what": "Written by us, transcribed from the typed trust summaries and the cy pres memo, with page citations.",
+     "kind": "Data",
+     "bytes": 7853,
+     "url": "/docs/data/trust-fund-purposes.csv",
+     "count": 92,
+     "unit": "rows",
+     "textUrl": "/docs/data/trust-fund-purposes.csv"
+    },
+    {
      "path": "data/budget-seasons/fy27-lines.csv",
      "title": "Every budget line the FY27 scenarios differ on, school and town",
      "stars": 2,
@@ -5197,6 +5341,30 @@
      "count": 36,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-watch-events.csv"
+    },
+    {
+     "path": "data/free-cash-fy26.csv",
+     "title": "Free cash appropriations for FY2026, two versions",
+     "stars": 2,
+     "what": "Written by us: the 22 and 27 February 2025 versions, item by item.",
+     "kind": "Data",
+     "bytes": 3958,
+     "url": "/docs/data/free-cash-fy26.csv",
+     "count": 32,
+     "unit": "rows",
+     "textUrl": "/docs/data/free-cash-fy26.csv"
+    },
+    {
+     "path": "data/trust-ledger-entries.csv",
+     "title": "Trust funds by category, from the ledger’s summary page",
+     "stars": 2,
+     "what": "Written by us: the summary roll-up, tied to its printed grand total.",
+     "kind": "Data",
+     "bytes": 3778,
+     "url": "/docs/data/trust-ledger-entries.csv",
+     "count": 20,
+     "unit": "rows",
+     "textUrl": "/docs/data/trust-ledger-entries.csv"
     },
     {
      "path": "data/search-vocabulary.csv",
@@ -5258,6 +5426,18 @@
      "count": 15,
      "unit": "rows",
      "textUrl": "/docs/data/budget-seasons/fy28.csv"
+    },
+    {
+     "path": "data/ambulance-receipts.csv",
+     "title": "Ambulance receipts, FY2014-FY2025",
+     "stars": 2,
+     "what": "Written by us, from a MUNIS account inquiry: one revenue account, as printed and as a receipt.",
+     "kind": "Data",
+     "bytes": 2331,
+     "url": "/docs/data/ambulance-receipts.csv",
+     "count": 12,
+     "unit": "rows",
+     "textUrl": "/docs/data/ambulance-receipts.csv"
     },
     {
      "path": "data/budget-episodes.csv",
@@ -5330,6 +5510,18 @@
      "count": 3,
      "unit": "rows",
      "textUrl": "/docs/data/myths.csv"
+    },
+    {
+     "path": "data/school-insurance-tiers.csv",
+     "title": "School health insurance subscribers by plan and tier, as totals",
+     "stars": 2,
+     "what": "Written by us from a withheld per-employee sheet: counts and premiums by plan and tier only, no cell under 10 subscribers. The sheet itself is held privately.",
+     "kind": "Data",
+     "bytes": 1092,
+     "url": "/docs/data/school-insurance-tiers.csv",
+     "count": 15,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-insurance-tiers.csv"
     },
     {
      "path": "data/feed-sources.csv",
@@ -5440,6 +5632,198 @@
      "textUrl": "/docs/data/caption-corrections.csv"
     },
     {
+     "path": "data/fy20-q4-unreadable.csv",
+     "title": "FY2020 fourth-quarter rows that could not be proven",
+     "stars": 1,
+     "what": "Written by us: every row or page refused, with the reason.",
+     "kind": "Data",
+     "bytes": 175523,
+     "url": "/docs/data/fy20-q4-unreadable.csv",
+     "count": 922,
+     "unit": "rows",
+     "textUrl": "/docs/data/fy20-q4-unreadable.csv"
+    },
+    {
+     "path": "data/fincom-presentation-survey.csv",
+     "title": "Every Finance Committee presentation, surveyed for tables",
+     "stars": 1,
+     "what": "Written by us: one row per presentation, memo and Q&A, saying whether it holds a table no dataset has captured yet. Built by scripts/survey_fincom_presentations.py.",
+     "kind": "Data",
+     "bytes": 72848,
+     "url": "/docs/data/fincom-presentation-survey.csv",
+     "count": 161,
+     "unit": "rows",
+     "textUrl": "/docs/data/fincom-presentation-survey.csv"
+    },
+    {
+     "path": "data/warrant-vs-votes-fincom.csv",
+     "title": "Draft warrant amounts against recorded Town Meeting votes",
+     "stars": 1,
+     "what": "Written by us: same-amount matches graded by subject overlap, not forced.",
+     "kind": "Data",
+     "bytes": 50285,
+     "url": "/docs/data/warrant-vs-votes-fincom.csv",
+     "count": 259,
+     "unit": "rows",
+     "textUrl": "/docs/data/warrant-vs-votes-fincom.csv"
+    },
+    {
+     "path": "data/warrant-article-tracking-fincom.csv",
+     "title": "The Finance Committee’s warrant article tracking sheets",
+     "stars": 1,
+     "what": "Written by us, from the FY26 and FY27 tracking snapshots.",
+     "kind": "Data",
+     "bytes": 32398,
+     "url": "/docs/data/warrant-article-tracking-fincom.csv",
+     "count": 193,
+     "unit": "rows",
+     "textUrl": "/docs/data/warrant-article-tracking-fincom.csv"
+    },
+    {
+     "path": "data/department-budgets-fincom-fy27-vs-town-budget-fy27.csv",
+     "title": "FY2027 department budgets, compared with the working budget",
+     "stars": 1,
+     "what": "Written by us: account by account against the town’s FY27 working budget.",
+     "kind": "Data",
+     "bytes": 10949,
+     "url": "/docs/data/department-budgets-fincom-fy27-vs-town-budget-fy27.csv",
+     "count": 133,
+     "unit": "rows",
+     "textUrl": "/docs/data/department-budgets-fincom-fy27-vs-town-budget-fy27.csv"
+    },
+    {
+     "path": "data/tax-impact-fy27.csv",
+     "title": "What the FY2027 increase does to a tax bill",
+     "stars": 1,
+     "what": "Written by us: every scenario recomputed from assessed value times rate.",
+     "kind": "Data",
+     "bytes": 6486,
+     "url": "/docs/data/tax-impact-fy27.csv",
+     "count": 63,
+     "unit": "rows",
+     "textUrl": "/docs/data/tax-impact-fy27.csv"
+    },
+    {
+     "path": "data/department-budgets-fincom-fy27-vs-gl-history.csv",
+     "title": "FY2027 department budgets, compared with the general fund history",
+     "stars": 1,
+     "what": "Written by us: the FY24-FY26 budget columns against the voted originals.",
+     "kind": "Data",
+     "bytes": 4278,
+     "url": "/docs/data/department-budgets-fincom-fy27-vs-gl-history.csv",
+     "count": 69,
+     "unit": "rows",
+     "textUrl": "/docs/data/department-budgets-fincom-fy27-vs-gl-history.csv"
+    },
+    {
+     "path": "data/fy20-q4-vs-gl-history.csv",
+     "title": "FY2020 fourth-quarter report against the general fund history",
+     "stars": 1,
+     "what": "Written by us: department by department, differences shown, not forced.",
+     "kind": "Data",
+     "bytes": 3410,
+     "url": "/docs/data/fy20-q4-vs-gl-history.csv",
+     "count": 41,
+     "unit": "rows",
+     "textUrl": "/docs/data/fy20-q4-vs-gl-history.csv"
+    },
+    {
+     "path": "data/police-expended-vs-gl-history.csv",
+     "title": "Police as expended, compared with the general fund history",
+     "stars": 1,
+     "what": "Written by us: where the two agree and where they differ, category by year.",
+     "kind": "Data",
+     "bytes": 3200,
+     "url": "/docs/data/police-expended-vs-gl-history.csv",
+     "count": 54,
+     "unit": "rows",
+     "textUrl": "/docs/data/police-expended-vs-gl-history.csv"
+    },
+    {
+     "path": "data/warrant-article-tracking-diff.csv",
+     "title": "How the tracking sheets changed between snapshots",
+     "stars": 1,
+     "what": "Written by us.",
+     "kind": "Data",
+     "bytes": 2307,
+     "url": "/docs/data/warrant-article-tracking-diff.csv",
+     "count": 8,
+     "unit": "rows",
+     "textUrl": "/docs/data/warrant-article-tracking-diff.csv"
+    },
+    {
+     "path": "data/j1-unreadable.csv",
+     "title": "Trust fund pages that could not be read reliably",
+     "stars": 1,
+     "what": "Written by us: handwritten and aged pages refused, with the reason.",
+     "kind": "Data",
+     "bytes": 2173,
+     "url": "/docs/data/j1-unreadable.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/j1-unreadable.csv"
+    },
+    {
+     "path": "data/public-safety-staffing-plans-vs-roster.csv",
+     "title": "Planned positions against the published roster",
+     "stars": 1,
+     "what": "Written by us: a bound, not a match -- the roster counts names, not FTE.",
+     "kind": "Data",
+     "bytes": 1635,
+     "url": "/docs/data/public-safety-staffing-plans-vs-roster.csv",
+     "count": 6,
+     "unit": "rows",
+     "textUrl": "/docs/data/public-safety-staffing-plans-vs-roster.csv"
+    },
+    {
+     "path": "data/free-cash-history-fincom.csv",
+     "title": "Free cash history, as the FY2027 fact sheet prints it",
+     "stars": 1,
+     "what": "Written by us: the fact sheet’s own table, transcribed.",
+     "kind": "Data",
+     "bytes": 1546,
+     "url": "/docs/data/free-cash-history-fincom.csv",
+     "count": 11,
+     "unit": "rows",
+     "textUrl": "/docs/data/free-cash-history-fincom.csv"
+    },
+    {
+     "path": "data/warrant-article-amount-diff.csv",
+     "title": "How warrant article amounts changed between the FY2027 drafts",
+     "stars": 1,
+     "what": "Written by us.",
+     "kind": "Data",
+     "bytes": 1328,
+     "url": "/docs/data/warrant-article-amount-diff.csv",
+     "count": 13,
+     "unit": "rows",
+     "textUrl": "/docs/data/warrant-article-amount-diff.csv"
+    },
+    {
+     "path": "data/vacation-buyout-total.csv",
+     "title": "Town vacation buyout liability, as totals",
+     "stars": 1,
+     "what": "Written by us from a withheld per-employee sheet: the total, and group totals only where at least 10 people stand behind them. The sheet itself is held privately.",
+     "kind": "Data",
+     "bytes": 1124,
+     "url": "/docs/data/vacation-buyout-total.csv",
+     "count": 7,
+     "unit": "rows",
+     "textUrl": "/docs/data/vacation-buyout-total.csv"
+    },
+    {
+     "path": "data/fy20-q4-memo-diff.csv",
+     "title": "The Town Accountant’s FY2020 memo: what was corrected",
+     "stars": 1,
+     "what": "Written by us: the two sentences that changed between versions, with both amounts.",
+     "kind": "Data",
+     "bytes": 529,
+     "url": "/docs/data/fy20-q4-memo-diff.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/fy20-q4-memo-diff.csv"
+    },
+    {
      "path": "town-ledgers/revenue/PROVENANCE-fy2026-p09.md",
      "title": "Provenance for the FY26 period 9 revenue reports",
      "stars": 1,
@@ -5466,6 +5850,30 @@
      "textUrl": "/docs/town-ledgers/fund-balances/PROVENANCE-fy2026-p09.md"
     },
     {
+     "path": "data/ambulance-receipts-vs-gl-history.csv",
+     "title": "Ambulance receipts, compared with the general fund history",
+     "stars": 1,
+     "what": "Written by us. The history carries no revenue, which this records.",
+     "kind": "Data",
+     "bytes": 453,
+     "url": "/docs/data/ambulance-receipts-vs-gl-history.csv",
+     "count": 12,
+     "unit": "rows",
+     "textUrl": "/docs/data/ambulance-receipts-vs-gl-history.csv"
+    },
+    {
+     "path": "data/prior-year-bills-fincom.csv",
+     "title": "Prior-year bills on the FY2027 warrant",
+     "stars": 1,
+     "what": "Written by us, from the tracking workbook.",
+     "kind": "Data",
+     "bytes": 387,
+     "url": "/docs/data/prior-year-bills-fincom.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/prior-year-bills-fincom.csv"
+    },
+    {
      "path": "data/school-enrollment-lps-staff.csv",
      "title": "Enrollment, FY2016–FY2025, as the staffing workbook prints it",
      "stars": 1,
@@ -5476,6 +5884,16 @@
      "count": 10,
      "unit": "rows",
      "textUrl": "/docs/data/school-enrollment-lps-staff.csv"
+    },
+    {
+     "path": "data/fy20-q4-version-diff.csv",
+     "title": "FY2020 fourth-quarter report: original against revised",
+     "stars": 1,
+     "what": "Written by us: the figures are identical between the two versions.",
+     "kind": "Data",
+     "bytes": 66,
+     "url": "/docs/data/fy20-q4-version-diff.csv",
+     "textUrl": "/docs/data/fy20-q4-version-diff.csv"
     }
    ]
   },
@@ -20896,10 +21314,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1829,
+  "documents": 1864,
   "groups": 23,
-  "bytes": 3603534154,
-  "loadBearing": 175
+  "bytes": 3615771694,
+  "loadBearing": 176
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 35 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

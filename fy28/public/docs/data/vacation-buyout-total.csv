@@ -1,0 +1,8 @@
+group,employee_count,total_buyout,source,note
+ALL (sheet's own printed TOTAL),82,265916.17,stated_total_row,"rule 13a: the workbook's own printed figure, quoted as printed; the sheet's own grand total (row 106, =K93+K42+K63+K30+K17+K103) does not include every row this script sums: full re-sum is 1424.54 higher. Checked by reading the subtotal formulas: one bargaining-group subtotal's own SUM range excludes 2 employees under that same group label."
+"ALL (full re-sum, every employee row)",82,267340.71,derived_resum,"the sheet's own grand total (row 106, =K93+K42+K63+K30+K17+K103) does not include every row this script sums: full re-sum is 1424.54 higher. Checked by reading the subtotal formulas: one bargaining-group subtotal's own SUM range excludes 2 employees under that same group label."
+AFSCME - MUNIC EMPL UNION,14,35508.99,derived_resum,
+DEPT OF PUBLIC WORKS,10,33465.08,derived_resum,
+POLICE UNION,17,37365.14,derived_resum,
+SALARY ADMIN PLAN,26,66406.6,derived_resum,
+"OTHER GROUPS (2, each under 10 people)",15,94594.9,derived_resum,merged so that no published total rests on fewer than 10 people
