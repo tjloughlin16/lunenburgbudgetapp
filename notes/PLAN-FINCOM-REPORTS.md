@@ -130,3 +130,48 @@ registered gap): the town's `glytdbud` report for its special revenue funds.
 enterprise funds (sewer, PEG Access) shown separately, not inside a department.
 **For the schools, also:** whether outside money is substitution or supplement (report 5's test;
 Title I and IDEA must legally supplement, not supplant -- ESSER did not have to).
+
+---
+
+## Added 5 October 2026, after TJ: *"There are theories running around that the school (and now
+## im questioning the town) are not spending a ton of money they have. I need to figure out how
+## to show that."*
+
+### 9. Is anyone sitting on money? Town and schools
+**Question:** how much unspent money do the town and the schools hold outside the voted budget,
+where, and is it growing?
+**Measured already:** town special revenue balances 2.69M (into FY2011) -> 10.03M (out of FY2023);
+the schools' 62 special revenue funds held 1,592,666.94 on 31 March 2026
+(`school-special-revenue-fy26-q3.csv`): circuit breaker 615,301 (4,005 spent by March), school
+choice 299,461, lunch 287,771, athletics revolving 169,945, after-school 148,578, gifts 109,398.
+**The test that shows it:** YEAR-END balance per fund, every year, from the annual reports'
+per-fund tables (`special-revenue-funds.csv` -- read `columns_as_printed`), school and town funds
+alike; plus free cash, stabilization (`report-trust-funds.csv`, FY2021 from
+`fund-balances-fincom.csv`), and each year's turnback (gl-history revised - actual) and
+encumbrances carried (period 13).
+**Do not conclude from one snapshot:** circuit breaker is commonly applied late in the year and may
+lawfully be carried; grants are reimbursed after spending. Growth across YEARS is the finding;
+a March balance is not.
+
+### 10. What is over-budgeted, against what is actually spent -- town and schools
+**Question:** which accounts are budgeted well above what they spend, year after year?
+**Data:** `gl-history.csv`, FY2010-FY2024 (never FY2025), account by account, both sides.
+**Method:** persistence, not one year: e.g. spent under 90% of the final budget in at least 4 of
+the last 5 years, ranked by dollars left unspent. Compare budget with actual within a year
+(allowed); never build a growth rate from one to the other (rule 1).
+**Already seen:** highway maintenance 27.4% unspent over FY10-FY24; legal 16.1%; school private SPED
+tuition 464,031 under FY22-FY24 while school health insurance ran 478,469 over.
+**Caution:** a line can underspend because a grant or revolving fund paid instead (report 8's
+layers) -- check before calling it over-budgeted.
+
+### 11. What athletics actually costs -- through the books
+**Measured:** FY2024 actual spending, general fund function 3510 (14 accounts) 295,979.27 + the
+athletics revolving fund 1301 300,499.63 = 596,478.90 -- above all three published "cost" figures
+(185,355.62 / 275,947.63 / 349,145.39). Likely because those exclude director, trainer or
+transportation -- a hypothesis the line items test.
+**What the books cannot give:** cost PER SPORT. The general fund codes athletics by type (director,
+trainer, officials, transportation, uniforms...), the revolving fund by building (6 = High School).
+**Closes with (records request):** the accounts-payable detail behind the athletics warrants, and
+the coaching stipend schedule by sport (the teachers' contract) -- together, cost per sport from
+records rather than estimates. Fields, custodial and utilities are not coded 3510 at all
+(money-gaps row on athletics' share of grounds).
