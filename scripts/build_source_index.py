@@ -2650,6 +2650,18 @@ GROUPS = [
              'year-end ledger at period 13 for every fund, its FY2023 and part-year FY2025 '
              'ledgers, and the town’s FY2025 general fund revenue -- each section tied '
              'to the total the report prints. Built by scripts/extract_fincom_ledgers.py.'),
+            ('data/town-budget-versions.csv',
+             'Town Manager line-item budgets FY2024-FY2025, every version', 2,
+             'Written by us: both FY24 preliminary versions, the FY25 line-item budget and five dated revenue-expense drafts, tied at every level, with anomalies logged by cell. Built by scripts/extract_town_budget_versions.py.'),
+            ('data/revenue-distribution-fy26.csv',
+             'How new FY2026 revenue was divided between town, schools and Monty Tech', 2,
+             'Written by us, from the draft revenue distribution workbook, tied to its totals.'),
+            ('data/free-cash-fy26.csv',
+             'Free cash appropriations for FY2026, two versions', 2,
+             'Written by us: the 22 and 27 February 2025 versions, item by item.'),
+            ('data/tax-impact-fy27.csv',
+             'What the FY2027 increase does to a tax bill', 1,
+             'Written by us: every scenario recomputed from assessed value times rate.'),
             ('data/police-expended.csv',
              'Police spending as expended, FY2015-FY2023', 2,
              'Written by us, from the department’s own attachment: every line by year, each category tied to its printed total.'),
