@@ -1233,7 +1233,7 @@ function Drivers() {
           {a.ifNothingOutran.fy28 > 0
             ? <>{usd(a.ifNothingOutran.fy28)} instead of {usd(GAPS[0].cumulative)}: most of
               it gone, not all of it,</>
-            : <>gone, with {usd(-a.ifNothingOutran.fy28)} to spare,</>}
+            : <>gone, with {usd(-a.ifNothingOutran.fy28)} to spare,</>}{' '}
           and by FY{GAPS[4].fy} it would be{' '}
           {a.ifNothingOutran.fy32 > 0
             ? <>{usd(a.ifNothingOutran.fy32)} short instead of {usd(GAPS[4].cumulative)}</>
