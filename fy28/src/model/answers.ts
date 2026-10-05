@@ -622,6 +622,8 @@ export const HEALTH_LEVERS = (() => {
 const DRIVERS: { key: keyof Assumptions; label: string; note: string }[] = [
   { key: 'health', label: 'Health insurance', note: 'A contract, set by the insurance market' },
   { key: 'salaries', label: 'Salaries', note: 'Bargained, three years at a time' },
+  { key: 'sped', label: 'Special education, in district',
+    note: 'Set by each child’s plan, and by the law' },
   { key: 'sped_tuition', label: 'Out-of-district special education',
     note: 'Set by law and by which children enrol' },
   { key: 'transport', label: 'Transportation', note: 'Contracted, fuel-exposed' },
@@ -653,7 +655,7 @@ export const ATTRIBUTION = (() => {
 
   const all = project(6, {
     ...A, salaries: LEVY_CAP, health: LEVY_CAP, transport: LEVY_CAP,
-    sped_tuition: LEVY_CAP, utilities: LEVY_CAP, other: LEVY_CAP,
+    sped: LEVY_CAP, sped_tuition: LEVY_CAP, utilities: LEVY_CAP, other: LEVY_CAP,
   })
   const health = lines.find(l => l.key === 'health')!
   const salaries = lines.find(l => l.key === 'salaries')!

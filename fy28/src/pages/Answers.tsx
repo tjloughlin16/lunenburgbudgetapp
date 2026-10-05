@@ -162,7 +162,7 @@ export function Answers() {
       <Section id="lookback" eyebrow="Looking backwards"
         title="How much of this was the raises?"
         lede={<>Salaries put {pct(ATTRIBUTION.salaries.shareOfGap)} of next year&rsquo;s
-          hole into it, and unlike the other five drivers, that one was decided &mdash; the
+          hole into it, and unlike the other {count(ATTRIBUTION.lines.length - 1)} drivers, that one was decided &mdash; the
           scale rose {CONTRACT.cola.map(c => pct(c.pct, 1)).join(', ')} over the last three
           years, by agreement, in a room. So it is fair to ask: if those years had been
           smaller, where would the hole be now? A measurement, not a proposal &mdash; none
@@ -1122,6 +1122,10 @@ function BuildOut() {
  *  A budget conversation defaults to arguing about the biggest number in the room. This
  *  is the chart that says the biggest number is not the problem in proportion to its
  *  size, and a much smaller one is. */
+/** A small count as a word, so the prose follows the table when a line is added. */
+const count = (n: number) =>
+  ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][n] ?? String(n)
+
 function Drivers() {
   const a = ATTRIBUTION
   const max = Math.max(...a.lines.map(l => l.shareOfGap))
@@ -1223,14 +1227,19 @@ function Drivers() {
 
       <div className="card p-5" style={{ background: 'var(--surface-3)' }}>
         <p className="text-[14px] leading-relaxed">
-          <strong>And the bottom of the table is the proof of the whole page.</strong> If
+          <strong>And the bottom of the table is the test of the whole page.</strong> If
           nothing the schools buy outran the {pct(a.cap, 1)} the town is allowed to collect
-          &mdash; if every line held to the cap &mdash; there would be no hole next year at
-          all. Not a smaller one: {usd(Math.abs(a.ifNothingOutran.fy28))} to spare, and{' '}
-          {usd(Math.abs(a.ifNothingOutran.fy32))} to spare in FY{GAPS[4].fy}. Nothing here
-          was overspent, mismanaged or voted through carelessly. The gap is the distance
-          between one number the state fixed in 1980 and six numbers nobody in Lunenburg
-          gets to set.
+          &mdash; if every line held to the cap &mdash; next year&rsquo;s hole would be{' '}
+          {a.ifNothingOutran.fy28 > 0
+            ? <>{usd(a.ifNothingOutran.fy28)} instead of {usd(GAPS[0].cumulative)}: most of
+              it gone, not all of it,</>
+            : <>gone, with {usd(-a.ifNothingOutran.fy28)} to spare,</>}
+          and by FY{GAPS[4].fy} it would be{' '}
+          {a.ifNothingOutran.fy32 > 0
+            ? <>{usd(a.ifNothingOutran.fy32)} short instead of {usd(GAPS[4].cumulative)}</>
+            : <>{usd(-a.ifNothingOutran.fy32)} to spare instead of {usd(GAPS[4].cumulative)} short</>}.
+          Almost all of the gap is the distance between one number the state fixed in 1980
+          and {count(a.lines.length)} numbers nobody in Lunenburg gets to set.
         </p>
       </div>
       <Note>
@@ -1240,7 +1249,7 @@ function Drivers() {
         unaffected.
       </Note>
       <Note>
-        One of these six is different from the other five: the salary line is the only one
+        One of these {count(a.lines.length)} is different from the other {count(a.lines.length - 1)}: the salary line is the only one
         set by people in a room, three years at a time. That makes it the only one it is
         fair to ask a backwards question about, and{' '}
         <a href="#lookback" style={{ color: 'var(--series-cost)' }}>
