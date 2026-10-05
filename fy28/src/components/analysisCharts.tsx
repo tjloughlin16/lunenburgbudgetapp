@@ -15,6 +15,7 @@ import {
   TownBudgetsShare, TownBudgetsAll, TownBudgetsRates, TownBudgetsPull,
   TownBudgetsTrends, TownBudgetsTotal, TownBudgetsTown,
 } from './TownBudgetsCharts'
+import { DepartmentBudgetsIndex, DepartmentBudgetsPull } from './DepartmentBudgetsCharts'
 import {
   TownsLikeUsMap, TownsLikeUsDrivers, TownsLikeUsFunding, TownsLikeUsPositions,
   TownsLikeUsHeat,
@@ -63,6 +64,8 @@ const has = (...keys: string[]) => (d: Record<string, unknown>) =>
   keys.every(k => d?.[k] != null)
 
 export const ANALYSIS_CHARTS: Record<string, Entry> = {
+  'department-budgets-index': { render: DepartmentBudgetsIndex, needs: has('index_series','index_keys') },
+  'department-budgets-pull': { render: DepartmentBudgetsPull, needs: has('groups') },
   'towns-like-us-map': { render: TownsLikeUsMap, needs: has('map','local','twins') },
   'towns-like-us-drivers': { render: TownsLikeUsDrivers, needs: has('correlations') },
   'towns-like-us-funding': { render: TownsLikeUsFunding, needs: has('funding') },
