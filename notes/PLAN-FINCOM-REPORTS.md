@@ -78,3 +78,28 @@ budgeted. The object codes can test it line by line.
 **Caution:** spending above receipts means a drawdown of earlier balances for a revolving fund,
 but is usually TIMING for a grant (reimbursed after it spends). The ledger holds no balances;
 the annual reports' special revenue tables do.
+
+---
+
+## The key that places every school dollar by building and program
+
+Found 5 October 2026. A school org code is a compression of the account string: `S0511061` =
+`S0` + segments 51-1-06-1 of `0100-3-300-2330-51-1-06-1-519015`. Grant and revolving org codes
+keep the last three of those segments: `13082061` = fund 1308 + 2-06-1. So one key places
+general fund, grant and revolving money alike.
+
+| segment (in `gl-history.csv` account) | meaning | evidence |
+|---|---|---|
+| 3 | DESE function (2305 teachers, 2330 paras, 2210 principals...) | known; NOT carried into grant/revolving org codes -- use `eoyr-schedule3.csv` for fund x function |
+| 5 | BUILDING: 1 district-wide; 2, 4, 5, 6 the four schools | four separate principal-office line sets (2210) under 2/4/5/6 |
+| 5 = 6 | the High School | graduation, accreditation and every athletics line sit only there |
+| 5 = 2, 4, 5 | Primary, Turkey Hill, Middle -- WHICH IS WHICH IS A HYPOTHESIS (teacher budgets ascend 2->4->5, as grade would) | closes with the district's MUNIS location-code list, one line in a records request |
+| 6 | PROGRAM (08 school office, 11 paras/aides, 06 special education...) | descriptions grouped under each value |
+| 7 | salary/expense split (1, 2, 4) | pattern |
+
+### 8. What each school and program really costs
+**Question:** each building's and program's general fund budget PLUS the grant and revolving money
+spent in the same building and program (FY2024 period 13).
+**Says:** how much of each school's real spending the voted budget does not show -- invisible, not
+subtracted. Whether that is substitution or supplement is report 5's test (when ESSER ended, did
+the same building-and-program general fund lines rise?).
