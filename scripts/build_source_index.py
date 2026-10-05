@@ -605,6 +605,15 @@ GROUPS = [
              'redact, withhold), the rule, how much was removed, the reason and who decided. '
              'The raw copy of anything redacted or withheld is held privately; this register '
              'never holds a redacted value, only where one was.'),
+            ('data/finance-committee-tasks.csv',
+             'The Finance Committee’s files, as reading tasks', 1,
+             'Written by us. One row per task for turning the delivery into tables: the '
+             'documents it covers, what it produces, the check that makes it done, and its '
+             'state. Progress is rendered in notes/generated/FINANCE-COMMITTEE-INGEST.md.'),
+            ('data/finance-committee-task-docs.csv',
+             'Which reading task each delivered file belongs to', 1,
+             'Written by us, generated: every file in the delivery assigned to exactly one '
+             'task, by scripts/build_fincom_tasks.py, which refuses if any file has none.'),
             ('data/finance-committee-delivery.csv',
              'Every file in the Finance Committee’s delivery, and what became of it', 2,
              'Written by us. One row per file in the October 2026 delivery, under the name '

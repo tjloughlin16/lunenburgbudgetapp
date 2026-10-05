@@ -50,7 +50,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 35 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 48 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 35 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 50 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -1315,6 +1315,30 @@
      "count": 4744,
      "unit": "rows",
      "textUrl": "/docs/state-dls/OverrideUnderrideVotes.xlsx"
+    },
+    {
+     "path": "data/finance-committee-task-docs.csv",
+     "title": "Which reading task each delivered file belongs to",
+     "stars": 1,
+     "what": "Written by us, generated: every file in the delivery assigned to exactly one task, by scripts/build_fincom_tasks.py, which refuses if any file has none.",
+     "kind": "Data",
+     "bytes": 75860,
+     "url": "/docs/data/finance-committee-task-docs.csv",
+     "count": 274,
+     "unit": "rows",
+     "textUrl": "/docs/data/finance-committee-task-docs.csv"
+    },
+    {
+     "path": "data/finance-committee-tasks.csv",
+     "title": "The Finance Committee’s files, as reading tasks",
+     "stars": 1,
+     "what": "Written by us. One row per task for turning the delivery into tables: the documents it covers, what it produces, the check that makes it done, and its state. Progress is rendered in notes/generated/FINANCE-COMMITTEE-INGEST.md.",
+     "kind": "Data",
+     "bytes": 9954,
+     "url": "/docs/data/finance-committee-tasks.csv",
+     "count": 37,
+     "unit": "rows",
+     "textUrl": "/docs/data/finance-committee-tasks.csv"
     },
     {
      "path": "state-dls/free-cash-proof-littleton.xlsx",
@@ -3461,9 +3485,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 200450,
+     "bytes": 201184,
      "url": "/docs/data/money-gaps.csv",
-     "count": 219,
+     "count": 220,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -3989,6 +4013,18 @@
      "textUrl": "/docs/data/lunenburg.db"
     },
     {
+     "path": "data/gl-history.csv",
+     "title": "Every general fund account, budget and actual, FY2010–FY2025",
+     "stars": 3,
+     "what": "Written by us, from a workbook the Finance Committee holds that was assembled from MUNIS exports: original budget, transfers in and out, revised budget and actual, for every department and account. Each year ties to the workbook’s own Grand Total; FY2025 is part-year and flagged. Built by scripts/extract_gl_history.py.",
+     "kind": "Data",
+     "bytes": 3515709,
+     "url": "/docs/data/gl-history.csv",
+     "count": 24048,
+     "unit": "rows",
+     "textUrl": "/docs/data/gl-history.csv"
+    },
+    {
      "path": "data/meeting-register.csv",
      "title": "Every meeting, and what survives of it",
      "stars": 3,
@@ -4131,6 +4167,18 @@
      "count": 5344,
      "unit": "rows",
      "textUrl": "/docs/data/dese-radar.csv"
+    },
+    {
+     "path": "data/fincom-ledgers.csv",
+     "title": "The MUNIS ledgers in the Finance Committee’s files, one table",
+     "stars": 3,
+     "what": "Written by us, from system printouts. The school department’s FY2024 year-end ledger at period 13 for every fund, its FY2023 and part-year FY2025 ledgers, and the town’s FY2025 general fund revenue -- each section tied to the total the report prints. Built by scripts/extract_fincom_ledgers.py.",
+     "kind": "Data",
+     "bytes": 463821,
+     "url": "/docs/data/fincom-ledgers.csv",
+     "count": 1476,
+     "unit": "rows",
+     "textUrl": "/docs/data/fincom-ledgers.csv"
     },
     {
      "path": "data/youtube-transcript-index.csv",
@@ -20672,10 +20720,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1810,
+  "documents": 1814,
   "groups": 23,
-  "bytes": 3593812219,
-  "loadBearing": 168
+  "bytes": 3597878297,
+  "loadBearing": 170
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 35 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
