@@ -70,6 +70,17 @@ One of them, `PACCDraft 1 (version 3).xlsx`, holds a per-person salary row. The 
 our redacted copy of it instead; the raw remains at its original key. The rest were read again
 after OCR, or looked at page by page, and none held anything about a person.
 
+## Deleted from the public bucket
+
+Two redacted copies of the withheld email were published and then deleted on 5 October 2026,
+on TJ's instruction: the first copy's cover described what had been redacted. The bucket's lock
+rule was lifted for seven seconds to do it and restored identical; both objects were confirmed
+absent afterwards. They are recorded here by sha256 only, because their keys were derived from
+a filename that names a person:
+
+- `bdb16b7118db95f5a58e60fe35f28cdb412e5d49aee6253964ca4ecf24b64421`
+- `e7b57637fa73ff0ccb1d3fa8ed06fecaa4c7226e894708738320c05085697cae`
+
 ## What kind of evidence this is (rule 13a)
 
 **Most of this delivery is people's working files, not accounting-system printouts.**
