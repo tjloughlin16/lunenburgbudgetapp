@@ -2650,6 +2650,16 @@ GROUPS = [
              'year-end ledger at period 13 for every fund, its FY2023 and part-year FY2025 '
              'ledgers, and the town’s FY2025 general fund revenue -- each section tied '
              'to the total the report prints. Built by scripts/extract_fincom_ledgers.py.'),
+            ('data/omnibus-history.csv',
+             'The town’s omnibus budget by line, FY1997–FY2026', 3,
+             'Written by us, from the Finance Committee’s FY26 Budget Master: every year '
+             'column read from its own header, never from its position; columns with no year '
+             'in their header are reported and left out. Built by scripts/extract_town_budgets.py.'),
+            ('data/town-budget-fy26-fy27.csv',
+             'The FY2026 omnibus and the two FY2027 working budgets, line by line', 3,
+             'Written by us: the FY26 omnibus as revised, and the 3 March and 23 March 2026 '
+             'working budgets with their balanced and override tiers, each tied to its printed '
+             'totals. Built by scripts/extract_town_budgets.py.'),
             ('data/eoyr-schedule1.csv',
              'The district’s End of Year Financial Report, Schedule 1, FY2023 and FY2024', 3,
              'Written by us, from the district’s working copies of its DESE filing: revenue '

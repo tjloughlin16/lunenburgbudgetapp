@@ -1334,7 +1334,7 @@
      "stars": 1,
      "what": "Written by us. One row per task for turning the delivery into tables: the documents it covers, what it produces, the check that makes it done, and its state. Progress is rendered in notes/generated/FINANCE-COMMITTEE-INGEST.md.",
      "kind": "Data",
-     "bytes": 10366,
+     "bytes": 10753,
      "url": "/docs/data/finance-committee-tasks.csv",
      "count": 37,
      "unit": "rows",
@@ -4069,6 +4069,18 @@
      "textUrl": "/docs/data/meeting-register.csv"
     },
     {
+     "path": "data/town-budget-fy26-fy27.csv",
+     "title": "The FY2026 omnibus and the two FY2027 working budgets, line by line",
+     "stars": 3,
+     "what": "Written by us: the FY26 omnibus as revised, and the 3 March and 23 March 2026 working budgets with their balanced and override tiers, each tied to its printed totals. Built by scripts/extract_town_budgets.py.",
+     "kind": "Data",
+     "bytes": 2738784,
+     "url": "/docs/data/town-budget-fy26-fy27.csv",
+     "count": 16994,
+     "unit": "rows",
+     "textUrl": "/docs/data/town-budget-fy26-fy27.csv"
+    },
+    {
      "path": "data/dls-avg-tax-bill.csv",
      "title": "Average single-family tax bill, eleven towns, FY1988–FY2026",
      "stars": 3,
@@ -4199,6 +4211,18 @@
      "count": 5344,
      "unit": "rows",
      "textUrl": "/docs/data/dese-radar.csv"
+    },
+    {
+     "path": "data/omnibus-history.csv",
+     "title": "The town’s omnibus budget by line, FY1997–FY2026",
+     "stars": 3,
+     "what": "Written by us, from the Finance Committee’s FY26 Budget Master: every year column read from its own header, never from its position; columns with no year in their header are reported and left out. Built by scripts/extract_town_budgets.py.",
+     "kind": "Data",
+     "bytes": 515526,
+     "url": "/docs/data/omnibus-history.csv",
+     "count": 6460,
+     "unit": "rows",
+     "textUrl": "/docs/data/omnibus-history.csv"
     },
     {
      "path": "data/fincom-ledgers.csv",
@@ -20788,10 +20812,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1820,
+  "documents": 1822,
   "groups": 23,
-  "bytes": 3599024929,
-  "loadBearing": 172
+  "bytes": 3602279626,
+  "loadBearing": 174
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 35 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
