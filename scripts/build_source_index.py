@@ -2650,6 +2650,12 @@ GROUPS = [
              'year-end ledger at period 13 for every fund, its FY2023 and part-year FY2025 '
              'ledgers, and the town’s FY2025 general fund revenue -- each section tied '
              'to the total the report prints. Built by scripts/extract_fincom_ledgers.py.'),
+            ('data/fincom-presentation-survey.csv',
+             'Every Finance Committee presentation, surveyed for tables', 1,
+             'Written by us: one row per presentation, memo and Q&A, saying whether it holds a table no dataset has captured yet. Built by scripts/survey_fincom_presentations.py.'),
+            ('data/fincom-presentation-tables.csv',
+             'Tables read from Finance Committee presentations', 2,
+             'Written by us: the tables extracted so far from slides and PDFs, each tied to the total it prints.'),
             ('data/school-budget-comparison-fy25.csv',
              'The FY2025 school budget scenarios presented to the Finance Committee', 2,
              'Written by us: three draft FY25 scenarios by function, tied to the workbook’s Grand Totals. Built by scripts/extract_fincom_school_side.py.'),
