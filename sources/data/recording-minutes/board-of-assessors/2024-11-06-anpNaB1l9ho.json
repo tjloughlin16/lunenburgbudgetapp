@@ -2,13 +2,14 @@
  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
  "board_slug": "board-of-assessors",
  "board": "Board of Assessors",
- "meeting_date": "2027-11-06",
+ "video_title": "Board of Assessors",
+ "meeting_date": "2024-11-06",
  "video_id": "anpNaB1l9ho",
  "video_url": "https://www.youtube.com/watch?v=anpNaB1l9ho",
  "cite": "the video at &t=<seconds>s; every t below is such a second",
  "source": {
-  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2027-11-06-anpNaB1l9ho.json",
-  "sha256": "dceedde214ba80f0951a2fa6f6cd6c0cfbf1db18209c8b66273df00b496d17d6",
+  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2024-11-06-anpNaB1l9ho.json",
+  "sha256": "f4f0bcd2411857878941f0e70975524df9c0be392418df29c781149f8bc165ae",
   "caption_lines": 510,
   "segments": 3786
  },
@@ -18,273 +19,213 @@
   "spoken_chars": 123630,
   "words_approx": 20605
  },
- "town_published": [],
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11062024-6865",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2024-11-06-agenda-6865.txt",
+   "path": "sources/meetings/board-of-assessors/2024-11-06-agenda-6865.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11062024-6865",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2024-11-06-minutes-6865.txt",
+   "path": "sources/meetings/board-of-assessors/2024-11-06-minutes-6865.pdf"
+  }
+ ],
  "written": {
   "by": "scripts/write_recording_minutes.py",
   "model": "sonnet",
-  "at": "2026-09-18T16:18:43Z",
-  "cost_usd": 0.6228480000000001
+  "at": "2026-10-05T18:39:02Z",
+  "cost_usd": 0.5332254
  },
  "minutes": {
+  "headline": "Assessors voted to recommend against the residential and small commercial exemptions and for a single tax rate.",
+  "summary": "The Board of Assessors reviewed the principal assessor's status report (interim values approved, tax rate delayed by MUNIS data problems). They also reworked the exemption warrant article slides and the classification hearing presentation, and discussed hiring a third party to redo neighborhood codes. They approved prior minutes and settled their recommendations for the select board's classification hearing.",
   "attendees": [
    {
     "name_as_heard": "Brian Leon",
     "role": "chair"
    },
    {
-    "name_as_heard": "John",
-    "role": "board member"
+    "name_as_heard": "Linda mcque",
+    "role": "member"
    },
    {
-    "name_as_heard": "Linda McQue",
-    "role": "board member"
-   },
-   {
-    "name_as_heard": "Sarah",
-    "role": "principal assessor"
+    "name_as_heard": "Sarah C",
+    "role": "member"
    },
    {
     "name_as_heard": "Rea",
-    "role": "board member"
+    "role": "assessing staff"
+   },
+   {
+    "name_as_heard": "Denise",
+    "role": "assessing staff"
+   },
+   {
+    "name_as_heard": "the principal assessor",
+    "role": "principal assessor"
+   },
+   {
+    "name_as_heard": "Robin",
+    "role": "new admin (starting Tuesday)"
    }
   ],
-  "public_comment": [],
+  "public_comment": [
+   {
+    "t": 471,
+    "topic": "Chair called for public comment; none was offered and no one was on Zoom."
+   },
+   {
+    "t": 10805,
+    "topic": "Second call for public comment at the end; none."
+   }
+  ],
   "tags": [
-   "budget",
-   "fees",
    "personnel",
    "planning-and-zoning",
-   "policy",
-   "public-comment",
    "seniors",
-   "staffing",
    "tax-rate",
    "technology",
    "town-departments",
    "town-meeting",
    "warrant-article"
   ],
-  "headline": "Assessors will recommend a single (not split) tax rate and rejecting all three optional exemptions for FY2026",
-  "summary": "The Board of Assessors reviewed FY2026 valuation and growth figures, worked through mapping and MUNIS data delays, and discussed hiring a third party to redo property neighborhoods after a citizen work group flagged inconsistent boundaries. Most of the meeting was spent line-editing a classification-hearing presentation, ending in board recommendations to reject the residential, open-space, and small commercial exemptions and to keep a single tax rate, plus review of a fall town meeting exemption/COLA warrant article and website fixes.",
   "votes": [
    {
-    "t": 1876,
-    "motion": "Approve the minutes of September 4th as amended (motor vehicle abatement batch and updated DLS Clause 41C income/asset limits)",
-    "outcome": "passed",
+    "t": 1875,
+    "motion": "Approve the September 4th minutes with the stated changes",
+    "outcome": "passed (all in favor, none opposed; count not stated)",
     "procedural": true
    },
    {
     "t": 2190,
-    "motion": "Approve two previously-held executive session minutes (dated 8/19 and 7/29)",
-    "outcome": "passed",
+    "motion": "Approve the executive session minutes (7/29 and 8/19)",
+    "outcome": "passed (all in favor, none opposed; count not stated)",
     "procedural": true
    },
    {
-    "t": 7897,
-    "motion": "Reject adoption of the residential exemption for the FY2026 classification",
+    "t": 7913,
+    "motion": "Reject adoption of the residential exemption (recommend select board not adopt)",
     "outcome": "not audible",
     "procedural": false
    },
    {
-    "t": 7997,
-    "motion": "Reject adoption of the small commercial exemption for the FY2026 classification",
+    "t": 7975,
+    "motion": "Reject the small commercial exemption",
     "outcome": "not audible",
     "procedural": false
    },
    {
-    "t": 9503,
-    "motion": "Recommend a single (not split) tax rate for FY2026 rather than a split rate",
+    "t": 8314,
+    "motion": "Vote on rejecting adoption of the small commercial exemption",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 9523,
+    "motion": "Recommend a single tax rate rather than a split rate",
     "outcome": "not audible",
     "procedural": false
    },
    {
     "t": 10826,
-    "motion": "Adjourn the meeting",
+    "motion": "Adjourn",
     "outcome": "not audible",
     "procedural": true
    }
   ],
   "budget_items": [
    {
-    "t": 577,
-    "topic": "FY2026 residential property valuation increase",
-    "what_was_said": "The principal assessor pointed the board to the LA-4 and comparison reports showing residential values increased for FY2026.",
+    "t": 505,
+    "topic": "Interim valuation approval and LA-4",
+    "what_was_said": "Interim values were approved by the Department of Revenue; single-family values and total valuation rose, with commercial higher.",
     "figures_as_heard": [
-     "5%"
-    ]
-   },
-   {
-    "t": 686,
-    "topic": "Total valuation change across all classes",
-    "what_was_said": "A board member asked for and was shown the overall total valuation change summed across all property classes, not just residential.",
-    "figures_as_heard": [
+     "5%",
      "5.3%",
-     "5.0",
      "7.7"
     ]
    },
    {
-    "t": 706,
-    "topic": "Chapter 61 agricultural/forest land values",
-    "what_was_said": "The assessor explained that agricultural and forest land values dropped because Chapter land per-acre crop values are set annually by the Farm Bureau and the state Department of Agriculture.",
+    "t": 815,
+    "topic": "Tax rate timing",
+    "what_was_said": "The levy is unknown because the finance director has not finished entering data in Gateway amid MUNIS problems, putting the November 19th classification hearing at risk.",
     "figures_as_heard": []
    },
    {
-    "t": 986,
-    "topic": "New growth figure (LA-13 report)",
-    "what_was_said": "Staff reported the new growth figure that will appear in the LA-13 growth report.",
+    "t": 987,
+    "topic": "New growth",
+    "what_was_said": "New growth was certified on the LA-13.",
     "figures_as_heard": [
-     "5 527,000",
-     "280"
+     "527,000"
     ]
    },
    {
-    "t": 1007,
-    "topic": "Motor vehicle excise abatements processed",
-    "what_was_said": "Staff said they cleared a backlog of motor vehicle excise abatements, with more already piling up behind it.",
-    "figures_as_heard": [
-     "30",
-     "32"
-    ]
-   },
-   {
-    "t": 1855,
-    "topic": "DLS Clause 41C senior exemption income/asset limits",
-    "what_was_said": "Minutes corrections reflected new DLS-approved Clause 41C limits, raising the income limit and the asset limits for single and married applicants.",
-    "figures_as_heard": [
-     "10,000",
-     "20,000",
-     "30,000",
-     "40,000",
-     "55,000"
-    ]
-   },
-   {
-    "t": 2236,
-    "topic": "Vision software annual maintenance invoice",
-    "what_was_said": "The board needed to sign an annual software maintenance bill from Vision for the assessing system.",
+    "t": 2230,
+    "topic": "Vision software maintenance invoice",
+    "what_was_said": "An annual software maintenance bill from Vision was mentioned for signature.",
     "figures_as_heard": [
      "13581"
     ]
    },
    {
+    "t": 1687,
+    "topic": "Value of the temporary assessing staffer",
+    "what_was_said": "Board members said the staffer's catch of missed value brought in revenue exceeding the cost of keeping her.",
+    "figures_as_heard": [
+     "$40,000",
+     "24 32"
+    ]
+   },
+   {
     "t": 3810,
-    "topic": "Cost of adopting COLA-linked exemption clauses (warrant article)",
-    "what_was_said": "The assessor said the printed warrant article incorrectly showed zero cost; adopting the COLA adjustment clauses actually carries a small real cost to the town that needs correcting before town meeting.",
+    "topic": "Cost of adopting COLA clauses for exemptions",
+    "what_was_said": "The warrant listed zero cost, but the assessor said there is a cost to the town, to be confirmed; the increase falls on other taxpayers via the overlay.",
     "figures_as_heard": [
      "$486",
-     "42%",
-     "48"
-    ]
-   },
-   {
-    "t": 3852,
-    "topic": "Number of residents on Clause 41C exemption",
-    "what_was_said": "The board discussed and corrected the number of residents currently receiving the Clause 41C senior exemption for the warrant materials.",
-    "figures_as_heard": [
+     "$380",
+     "18",
      "27",
-     "29",
-     "18"
+     "$1,000",
+     "$500"
     ]
    },
    {
-    "t": 3914,
-    "topic": "Incremental tax impact of COLA exemption adoption, funded from overlay",
-    "what_was_said": "The assessor said exemptions are paid out of the overlay account with only partial state reimbursement, and calculated the incremental cost shifted to other taxpayers from adopting the COLA update.",
+    "t": 4160,
+    "topic": "41C limits",
+    "what_was_said": "Income and asset limits were discussed for the chart on the exemption slides.",
     "figures_as_heard": [
-     "380",
-     "500",
-     "270"
+     "31,000"
     ]
    },
    {
-    "t": 7345,
-    "topic": "Small commercial exemption cost precedent",
-    "what_was_said": "In discussing warrant costs a board member cited a prior year's minor cost from a similar exemption item.",
-    "figures_as_heard": [
-     "$1,500"
-    ]
-   },
-   {
-    "t": 7620,
-    "topic": "Number of effective tax rates from exemptions plus a split rate",
-    "what_was_said": "A board member noted that combining the exemptions under discussion with a split tax rate could effectively create several different tax rates depending on property type.",
-    "figures_as_heard": [
-     "four",
-     "five",
-     "seven"
-    ]
-   },
-   {
-    "t": 8112,
-    "topic": "Small business owner's estimate of split-rate tax impact",
-    "what_was_said": "The board relayed a local small commercial property owner's estimate that a split tax rate could raise their taxes sharply, potentially forcing relocation and cutting community donations.",
-    "figures_as_heard": [
-     "50%"
-    ]
-   },
-   {
-    "t": 8608,
-    "topic": "FY2026 tax base composition by property class",
-    "what_was_said": "The presentation showed Lunenburg's tax base is overwhelmingly residential, with commercial, industrial and personal property combined well under the share DOR recommends before considering a split rate.",
-    "figures_as_heard": [
-     "92%",
-     "4%",
-     "1%",
-     "3%",
-     "10%"
-    ]
-   },
-   {
-    "t": 8819,
-    "topic": "Median single-family home value",
-    "what_was_said": "The presentation highlighted that the median single-family home value crossed a threshold for the first time, up from the prior year.",
+    "t": 8840,
+    "topic": "Average single family value",
+    "what_was_said": "Median single-family value passed half a million dollars for the first time, up about 5%.",
     "figures_as_heard": [
      "54,3 197",
-     "5%"
+     "$25,000"
     ]
    },
    {
     "t": 9226,
-    "topic": "Placeholder FY2026 tax levy used for rate scenarios",
-    "what_was_said": "Lacking final Gateway data from the finance director, the assessor used a levy figure from an earlier budget task force exercise to model tax rate scenarios.",
+    "topic": "Tax rate scenarios for split rate",
+    "what_was_said": "Scenarios using last year's levy show a CIP shift greatly raises commercial bills while barely lowering residential bills.",
     "figures_as_heard": [
-     "31 m628"
-    ]
-   },
-   {
-    "t": 9269,
-    "topic": "FY2026 estimated tax bill scenarios under CIP shift options",
-    "what_was_said": "The presentation modeled sample tax bills for several home values and a commercial property under different CIP shift scenarios, showing commercial bills rising much faster than residential bills fall.",
-    "figures_as_heard": [
-     "$325,000",
-     "$600,000",
-     "$1.2 million",
-     "100%",
-     "150%",
-     "130%"
-    ]
-   },
-   {
-    "t": 9371,
-    "topic": "Example CIP shift impact on a $600,000 commercial property",
-    "what_was_said": "Under a larger CIP shift, a sample $600,000 commercial property's tax bill was shown rising sharply compared with the single-rate baseline.",
-    "figures_as_heard": [
-     "8,34",
-     "12,000",
+     "31 m628",
      "1339",
-     "1277"
+     "1277",
+     "$12,000",
+     "8,34"
     ]
    },
    {
-    "t": 9605,
-    "topic": "Historical valuation and tax rate trend",
-    "what_was_said": "The board reviewed a history slide showing valuation dipped briefly around 2022-2023 after certain lake-area properties were revalued, then rose sharply after a full revaluation the following year.",
+    "t": 7343,
+    "topic": "Small commercial exemption cost",
+    "what_was_said": "A cost figure was mentioned in passing, unclear in the captions.",
     "figures_as_heard": [
-     "1774",
-     "179",
-     "1.5 million",
-     "18%"
+     "$1,500"
     ]
    }
   ],
@@ -292,208 +233,179 @@
   "decisions": [
    {
     "t": 451,
-    "decision": "Add a resident outreach conference on abatements/exemptions to the November 20 agenda for further planning."
+    "decision": "An exemptions outreach conference will go on the Nov. 20 agenda, with the chair given leave to follow up with the senior center, aiming for early January."
    },
    {
-    "t": 1978,
-    "decision": "Postpone review of the October 2 and October 16 minutes to the next meeting."
+    "t": 1958,
+    "decision": "Review of the October 2 and October 16 minutes postponed to the next meeting."
    },
    {
-    "t": 2926,
-    "decision": "Board leaned toward hiring a third-party company, rather than the citizen work group, to review and reassign property neighborhoods."
+    "t": 3683,
+    "decision": "The board agreed in principle to pursue a third-party review of neighborhood codes via an RFP and funding request, with details to come later; waterfront fixes may be done in-house."
    },
    {
-    "t": 7953,
-    "decision": "Board took no formal position on the open-space discount exemption since Lunenburg has no land classified as open space for tax purposes."
+    "t": 8207,
+    "decision": "The board will advise the select board to reject the residential exemption and small commercial exemption, take no position on open space discount, and recommend a single tax rate."
    },
    {
-    "t": 9958,
-    "decision": "Assessor said she fixed a software glitch causing an empty site-index page and agreed to look at adding a table of contents, removing a duplicate directory, and adding a revision-control log similar to the Board of Health's."
+    "t": 9867,
+    "decision": "A public information release will be posted on the town website."
    },
    {
-    "t": 10442,
-    "decision": "Reaffirmed that no further changes will be made to the assessors' website without board approval."
-   },
-   {
-    "t": 10613,
-    "decision": "Scheduled the next meetings for November 20 at Town Hall, and tentatively December 3 and December 18, pending room availability."
+    "t": 10591,
+    "decision": "Next meeting set for Nov. 20 and a tentative meeting in early December; Dec. 18 was floated."
    }
   ],
   "topics": [
    {
     "t_start": 3,
-    "t_end": 176,
-    "topic": "Meeting opening, Open Meeting Law notice, remote access instructions, roll call",
+    "t_end": 196,
+    "topic": "Open meeting law call to order",
     "resolution": "procedural",
     "tags": []
    },
    {
-    "t_start": 176,
-    "t_end": 460,
-    "topic": "Chair's proposal for a spring outreach conference on abatements and senior exemptions",
-    "resolution": "referred to next agenda",
+    "t_start": 196,
+    "t_end": 471,
+    "topic": "Proposed exemptions outreach conference",
+    "resolution": "to go on next agenda",
     "tags": [
      "seniors",
-     "policy"
+     "tax-rate"
     ]
    },
    {
-    "t_start": 460,
-    "t_end": 490,
-    "topic": "Call for public comment",
-    "resolution": "no one spoke",
+    "t_start": 471,
+    "t_end": 505,
+    "topic": "Public comment",
+    "resolution": "none offered",
     "tags": [
      "public-comment"
     ]
    },
    {
-    "t_start": 490,
-    "t_end": 1030,
-    "topic": "Principal assessor's status report: interim values, valuation changes by class, growth figures, abatement backlog",
-    "resolution": "informational",
-    "tags": [
-     "budget",
-     "tax-rate"
-    ]
-   },
-   {
-    "t_start": 1030,
-    "t_end": 1330,
-    "topic": "Mapping/GIS gaps: missed 2022 parcel and permit updates discovered via building department",
-    "resolution": "informational, ongoing correction",
-    "tags": [
-     "planning-and-zoning",
-     "town-departments"
-    ]
-   },
-   {
-    "t_start": 1330,
+    "t_start": 505,
     "t_end": 1830,
-    "topic": "MUNIS/Gateway data delays affecting the tax rate; cloud software decision; new administrative assistant hired; office space shortage",
+    "topic": "Principal assessor status report: values, tax rate delay, mapping, staffing",
     "resolution": "informational",
     "tags": [
+     "tax-rate",
      "technology",
-     "staffing",
      "personnel"
     ]
    },
    {
     "t_start": 1830,
-    "t_end": 2230,
-    "topic": "Review and approval of minutes: September 4 approved as amended, October 2/16 postponed, two executive session minutes approved",
+    "t_end": 2210,
+    "topic": "Minutes approval",
     "resolution": "voted",
-    "tags": [
-     "policy"
-    ]
+    "tags": []
    },
    {
-    "t_start": 2230,
-    "t_end": 2360,
-    "topic": "Review and signing of invoices, warrants, and the motor vehicle abatement batch",
-    "resolution": "signed/approved administratively",
-    "tags": [
-     "budget",
-     "fees"
-    ]
+    "t_start": 2210,
+    "t_end": 2500,
+    "topic": "Invoices, warrants, signing",
+    "resolution": "signed; stamp discussion deferred",
+    "tags": []
    },
    {
     "t_start": 2500,
-    "t_end": 2926,
-    "topic": "Neighborhood classification review work group findings and proposal to hire a third-party consultant",
-    "resolution": "no formal vote; board leaning toward outside consultant",
+    "t_end": 3768,
+    "topic": "Neighborhood review work group and third-party plan",
+    "resolution": "consensus to explore third party",
     "tags": [
-     "planning-and-zoning",
-     "policy"
+     "planning-and-zoning"
     ]
    },
    {
     "t_start": 3768,
     "t_end": 5250,
-    "topic": "Drafting the fall town meeting exemption warrant article (COLA adjustments to Clauses 41C/41D/17D/17E/17F)",
-    "resolution": "in progress; cost and wording corrected for presentation",
+    "topic": "Exemption (COLA) warrant article slides",
+    "resolution": "edits agreed",
     "tags": [
      "warrant-article",
-     "seniors",
+     "town-meeting",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 5250,
+    "t_end": 9500,
+    "topic": "Classification hearing presentation and recommendations",
+    "resolution": "recommendations settled",
+    "tags": [
      "tax-rate"
     ]
    },
    {
-    "t_start": 5273,
-    "t_end": 9711,
-    "topic": "Preparing the FY2026 tax classification hearing presentation and voting on exemption/tax-rate recommendations",
-    "resolution": "voted; recommended rejecting residential, open-space, and small commercial exemptions and keeping a single tax rate",
-    "tags": [
-     "tax-rate",
-     "fees",
-     "budget"
-    ]
-   },
-   {
     "t_start": 9756,
-    "t_end": 10527,
-    "topic": "Assessors' office website updates: information-release page, site-index bug fix, duplicate search results, revision-control log",
-    "resolution": "informational; fixes agreed",
+    "t_end": 10590,
+    "topic": "Website updates",
+    "resolution": "informational",
     "tags": [
-     "technology",
-     "policy"
+     "technology"
     ]
    },
    {
-    "t_start": 10527,
+    "t_start": 10590,
     "t_end": 10826,
-    "topic": "Assessing calendar, scheduling upcoming meetings, public comment call, adjournment",
-    "resolution": "meeting dates set; adjourned",
-    "tags": [
-     "staffing"
-    ]
+    "topic": "Upcoming meetings",
+    "resolution": "dates set",
+    "tags": []
+   },
+   {
+    "t_start": 10805,
+    "t_end": 10830,
+    "topic": "Final public comment and adjournment",
+    "resolution": "adjourned",
+    "tags": []
    }
   ],
   "not_audible": [
-   "Board members' names in the opening roll call (heard as 'Brian Leon', 'Linda McQue', 'Sarah', 'C Rea', 'squeezy') are garbled and may not be accurate.",
-   "Exact vote counts/outcomes on the motions to reject the residential exemption, reject the small commercial exemption, and recommend a single tax rate are not clearly stated in the captions.",
-   "Long stretches of the classification-hearing slide-editing discussion (roughly 5273-9711 seconds) involve overlapping, unattributed speakers.",
-   "The precise median single-family home value figure (heard as '54,3 197') is unclear.",
-   "Dollar/percentage figures for the exemption warrant article's cost to the town (heard variously as $486, 42%, 48, $380) are inconsistent."
+   "Vote counts for the exemption and tax-rate recommendation motions",
+   "Exact cost figures for the exemption warrant article (several different numbers heard)",
+   "The number of missed parcels in the mapping problem",
+   "Whether the adjournment vote was recorded as unanimous",
+   "Speaker identities throughout"
   ],
-  "confidence": "moderate"
+  "confidence": "low"
  },
  "digest": {
   "what_happened": [
    {
-    "line": "The Board of Assessors recommended a single, not split, tax rate for FY2026.",
-    "t": 9503
+    "line": "The Board of Assessors settled its advice to the select board: reject the residential exemption and the small commercial exemption, and recommend a single tax rate.",
+    "t": 8207
    },
    {
-    "line": "The board voted to reject adopting the residential exemption for the FY2026 classification.",
-    "t": 7897
+    "line": "The recorded votes on those items were not audible, so the minutes cannot give a tally; the single-rate recommendation came near the end of the classification discussion.",
+    "t": 9523
    },
    {
-    "line": "The board also voted to reject adopting the small commercial exemption for FY2026.",
-    "t": 7997
+    "line": "The principal assessor reported that the tax rate is delayed because the finance director has not finished entering data amid MUNIS problems, which puts the Nov. 19 classification hearing at risk.",
+    "t": 815
    },
    {
-    "line": "The board leaned toward hiring an outside firm, rather than the citizen work group, to redo property-neighborhood boundaries after inconsistencies were flagged.",
-    "t": 2926
+    "line": "The board agreed in principle to seek a third-party review of neighborhood codes through an RFP and a funding request, with details to come.",
+    "t": 3683
    },
    {
-    "line": "The assessor said the printed fall town meeting warrant article understated the cost of adopting COLA-linked exemption updates as zero and said it needs correcting before town meeting.",
-    "t": 3810
+    "line": "Scenarios for a split rate, run on last year's levy, showed a shift to commercial greatly raising commercial bills while barely lowering residential bills.",
+    "t": 9226
    }
   ],
   "why_it_matters": [
-   "A single versus split tax rate changes how the tax levy is divided between residential and commercial/industrial property, which shows up directly in individual tax bills.",
-   "Declining the residential and small commercial exemptions means the classification hearing will not shift additional tax burden between property types beyond the rate decision itself.",
-   "The COLA-linked exemption warrant article, once its cost is corrected, goes to voters at fall town meeting and is paid from the overlay account, meaning any expansion is funded by other taxpayers rather than the town budget."
+   "The select board's classification hearing decides whether homes and small businesses get an exemption and whether commercial property is taxed at a higher rate, so this advice bears on the share of the levy that falls on a household's bill.",
+   "If the tax rate is not set in time for the hearing, the timing of the hearing and the tax bills that follow could slip, a result of data entry problems in the town's accounting system."
   ],
   "watch_next": [
-   "November 20 Board of Assessors meeting, including a planned resident outreach conference on abatements and exemptions",
-   "The fall town meeting warrant article on COLA adjustments to Clauses 41C/41D/17D/17E/17F, once its cost figure is corrected"
+   "Select board classification hearing, listed for Nov. 19 but at risk while the levy remains unentered.",
+   "Assessors' next meeting on Nov. 20, with a tentative early-December meeting (Dec. 18 floated)."
   ],
   "written": {
    "by": "scripts/write_recording_minutes.py --digest",
    "model": "sonnet",
-   "at": "2026-09-18T16:19:01Z",
-   "cost_usd": 0.1589056
+   "at": "2026-10-05T18:39:12Z",
+   "cost_usd": 0.282822
   }
  }
 }
