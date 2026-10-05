@@ -598,6 +598,18 @@ GROUPS = [
              'purpose: while a row is in it, `check_archive_backed_up.py` refuses every '
              'destructive operation, so a failed push means the next run retries rather '
              'than the next run destroying.'),
+            ('data/redactions.csv',
+             'What was redacted or withheld, and why', 2,
+             'Written by us. One row per document that arrived by request rather than off a '
+             'website and that the screen flagged or could not read: the decision (publish, '
+             'redact, withhold), the rule, how much was removed, the reason and who decided. '
+             'The raw copy of anything redacted or withheld is held privately; this register '
+             'never holds a redacted value, only where one was.'),
+            ('data/finance-committee-delivery.csv',
+             'Every file in the Finance Committee’s delivery, and what became of it', 2,
+             'Written by us. One row per file in the October 2026 delivery, under the name '
+             'the committee gave it: filed, redacted, withheld, already held, or a duplicate '
+             'of another file in the same delivery, with its sha256 and where it now lives.'),
             ('data/archive-orphans.csv',
              'Objects in the bucket that the index no longer names', 2,
              'The bucket forbids deletion for ten years and cannot be listed, so a document '
@@ -649,6 +661,12 @@ GROUPS = [
                  'them. Provenance, the town’s own filenames and a sha256 for each file '
                  'are in PROVENANCE.md, listed below.',
         'items': [
+            ('town-ledgers/expenses/PROVENANCE-fy2024-p13-school.md',
+             'Where the school department’s FY2024 year-end ledger is held', 2,
+             'Written by us. The FY2024 period 13 report for every school fund arrived inside '
+             'the Finance Committee’s files and is kept there, with that delivery. This '
+             'note says where, quotes the report’s own header, and says it is not yet '
+             'read.'),
             ('town-ledgers/expenses/PROVENANCE-fy2026-p12.md',
              'Where the FY26 period 12 report came from', 2,
              'The email, the sender, the date, both filenames as sent, and the sha256 of '
@@ -3209,7 +3227,9 @@ GROUPS = [
 ]
 
 KIND = {'.pdf': 'PDF', '.xlsx': 'Spreadsheet', '.csv': 'Data', '.md': 'Notes',
-        '.docx': 'Document', '.pptx': 'Slides', '.txt': 'Text'}
+        '.docx': 'Document', '.pptx': 'Slides', '.txt': 'Text',
+        '.xlsm': 'Spreadsheet', '.pptm': 'Slides', '.doc': 'Document', '.ppt': 'Slides',
+        '.png': 'Image'}
 
 # Catalogued by group above, or deliberately not a "document": extracted text mirrors its
 # own source, and the meeting archive is summarized as a corpus instead.
@@ -3258,6 +3278,9 @@ def in_family(rel):
 
 SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              'town-budget', 'town-supplementary', 'town-annual-reports', 'state-dese',
+             # Described from its own catalogue, `budget-workbooks/index.csv`, by
+             # `finance_committee_group()` below.
+             'budget-workbooks/finance-committee',
              # Working files, one per page, that the catalogue and the datasets summarise.
              # `data/inventory/` is what an agent read off each report page before anything
              # was extracted, and `data/rosters/` the parsed roster blocks. They are kept
@@ -3304,6 +3327,8 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
 # records what `sync_archive.py` has uploaded and read back. Both are described on the
 # sources page as a group of their own rather than as documents.
 SKIP_FILES = {'supplemental.csv',
+              # Catalogued, but by `finance_committee_group()`, which runs after this walk.
+              'budget-workbooks/PROVENANCE-finance-committee.md',
               # A BUILD CONTROL FILE, not a source document. It names which analyses are
               # published and linked from nowhere, so cataloguing it published it at
               # /docs/analyses/UNLISTED -- an unlinked report's slug, at a guessable
@@ -3735,7 +3760,8 @@ def upstream_by_hash():
     return known
 
 
-def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes):
+def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes,
+                 what='Mirrored from the publisher. Not used in any figure on this site.'):
     """A crawled mirror, described from its own manifest rather than by hand.
 
     Curating a blurb for every one of these would go stale faster than it could be
@@ -3763,8 +3789,7 @@ def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes):
             items.append({
                 'path': rel, 'title': r['label'], 'stars': 2 if used else 1,
                 'what': (f'Also catalogued above as a source this analysis is built on '
-                         f'({used}). Same file, byte for byte.' if used else
-                         'Mirrored from the publisher. Not used in any figure on this site.'),
+                         f'({used}). Same file, byte for byte.' if used else what),
                 'kind': KIND.get(ext, ext.lstrip('.').upper()),
                 'bytes': size,
                 'url': '/docs/' + rel,
@@ -3777,6 +3802,38 @@ def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes):
     items.sort(key=lambda i: (-i['stars'], i['title']))
     return {'section': 'reference', 'id': gid, 'origin': origin,
             'title': title, 'blurb': blurb.format(n=len(items)), 'items': items}
+
+
+def finance_committee_group(catalogued_hashes):
+    """The Finance Committee's files, received 4 October 2026 by records request.
+
+    Described from `budget-workbooks/index.csv`, which `ingest_finance_committee.py`
+    writes, under the name each file was DELIVERED as -- the committee's own -- so a reader
+    can ask for it by that name. The provenance note leads, because nothing here came off
+    a website and the request is the address.
+    """
+    g = mirror_group(
+        'budget-workbooks', 'finance-committee',
+        'The Finance Committee’s files, by records request',
+        '{n} documents from the committee’s own folders, FY20 to FY27: department '
+        'presentations, the Town Manager’s line-item workbooks, capital plans, warrant '
+        'drafts and trust fund records. Mostly working files people built, so a figure from '
+        'one is what somebody stated, not what the books printed.',
+        'town', catalogued_hashes,
+        what='Finance Committee working file, by records request. Not yet used in any '
+             'figure on this site.')
+    if not g:
+        return None
+    rel = 'budget-workbooks/PROVENANCE-finance-committee.md'
+    publish(rel)
+    g['items'].insert(0, {
+        'path': rel, 'title': 'How the Finance Committee’s files reached us', 'stars': 2,
+        'what': 'Written by us. The request, the delivery’s sha256, what became of each '
+                'of its 299 files, and the two withheld because they are about identifiable '
+                'people.',
+        'kind': KIND['.md'], 'bytes': os.path.getsize(os.path.join(SRC, rel)),
+        'url': '/docs/' + rel, 'upstream': ''})
+    return g
 
 
 def district_page_group(catalogued_hashes):
@@ -3971,6 +4028,7 @@ def main():
                 catalogued_hashes[sha(fp)] = i['path']
     for g in [
         district_page_group(catalogued_hashes),
+        finance_committee_group(catalogued_hashes),
         mirror_group('town-budget', 'town-budget',
                      'The town’s budget and finance documents, mirrored',
                      'Every budget-relevant document linked from the town’s finance pages '

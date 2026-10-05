@@ -24,6 +24,7 @@ this module only reads it and asks wrangler to refresh it when it is close to ex
 """
 import csv
 import hashlib
+import io
 import os
 import re
 import subprocess
@@ -41,6 +42,13 @@ BUCKET = 'lunenburg-budget-project'
 PUBLIC_BASE = 'https://pub-5baef0f2604545c398a39a176e400e34.r2.dev'
 API = (f'https://api.cloudflare.com/client/v4/accounts/{ACCOUNT}'
        f'/r2/buckets/{BUCKET}')
+
+# THE PRIVATE STORE, for the raw copy of anything that cannot be published as received.
+# Created 4 October 2026 when the Finance Committee's files arrived holding data about
+# named people. Public access is disabled on it, it has no r2.dev URL, and nothing in it is
+# named in the published manifest -- `sources/data/redactions.csv` is its register. The
+# rule that governs what goes here is in `scripts/redact.py`.
+PRIVATE_BUCKET = 'lunenburg-budget-private'
 
 MANIFEST = os.path.join(SRC, 'data', 'archive-manifest.csv')
 # What --push has already uploaded and read back. A cache, so a resumed run does not
@@ -229,22 +237,22 @@ def _request(method, url, data=None, headers=None, timeout=300):
     raise RuntimeError(last or 'request failed')
 
 
-def _object_url(key):
+def _object_url(key, bucket=BUCKET):
     # The key goes in the path. Every character in this archive's keys is already
     # URL-safe -- no spaces, no quotes -- and quoting the slashes would break the path,
     # so the assertion is made rather than assumed.
     assert re.fullmatch(r'[A-Za-z0-9._/-]+', key), f'unsafe key: {key!r}'
-    return f'{API}/objects/{key}'
+    return f'{API.rsplit("/", 1)[0]}/{bucket}/objects/{key}'
 
 
-def get_object(key, sink=None):
+def get_object(key, sink=None, bucket=BUCKET):
     """Stream an object out of the bucket, returning (sha256, md5, bytes read).
 
     Reads back rather than trusting the write. The point of the whole exercise is that
     the copy in the bucket is the document, and an upload that reported success is a
     claim about the upload, not about the object.
     """
-    res = _request('GET', _object_url(key))
+    res = _request('GET', _object_url(key, bucket))
     sha, md5, n = hashlib.sha256(), hashlib.md5(), 0
     while True:
         chunk = res.read(1 << 20)
@@ -266,7 +274,7 @@ def put_object(key, path):
                       'Content-Length': str(len(body))})
 
 
-def list_objects(prefix=''):
+def list_objects(prefix='', bucket=BUCKET):
     """Every object in the bucket, as the bucket reports it: name, size, etag.
 
     The etag of a single-part upload is the MD5 of the bytes, which is the only thing a
@@ -275,7 +283,7 @@ def list_objects(prefix=''):
     import json
     out, cursor = [], None
     while True:
-        url = f'{API}/objects?per_page=1000'
+        url = f'{API.rsplit("/", 1)[0]}/{bucket}/objects?per_page=1000'
         if prefix:
             url += '&prefix=' + urllib.request.quote(prefix)
         if cursor:
@@ -290,6 +298,27 @@ def list_objects(prefix=''):
 
 
 # --- the manifest ---------------------------------------------------------------------
+
+def put_private(key, blob):
+    """Write raw bytes to the PRIVATE bucket and read them back. Returns the sha256.
+
+    Not locked, unlike the public bucket: a raw copy held here may be superseded. But it is
+    still read back, because a write that reported success is a claim about the write.
+    """
+    _request('PUT', _object_url(key, PRIVATE_BUCKET), data=blob,
+             headers={'Content-Type': 'application/octet-stream'})
+    sha = get_object(key, bucket=PRIVATE_BUCKET)[0]
+    if sha != hashlib.sha256(blob).hexdigest():
+        raise RuntimeError(f'private bucket read-back differs for {key}')
+    return sha
+
+
+def get_private(key):
+    """The raw bytes of a privately held document."""
+    buf = io.BytesIO()
+    get_object(key, sink=buf, bucket=PRIVATE_BUCKET)
+    return buf.getvalue()
+
 
 def hash_file(path):
     sha, md5, n = hashlib.sha256(), hashlib.md5(), 0
@@ -416,7 +445,11 @@ def upstream_urls():
 # `data/` are ours whatever the extension; `text/`, `ocr/` and `pages/` are our renderings
 # of somebody else's document, sitting beside it.
 ORIGINAL_EXTS = {'.pdf', '.xlsx', '.xls', '.docx', '.doc', '.pptx', '.ppt',
-                 '.html', '.zip', '.bin', '.key'}
+                 '.html', '.zip', '.bin', '.key',
+                 # The macro-enabled Office formats and a bare image, first held when the
+                 # Finance Committee's files arrived (October 2026). Left off, they would
+                 # be classed as OURS and the backup gate would not require them.
+                 '.xlsm', '.pptm', '.png'}
 OURS_TOP = {'analyses', 'data'}
 OURS_DIRS = {'text', 'ocr', 'pages'}
 

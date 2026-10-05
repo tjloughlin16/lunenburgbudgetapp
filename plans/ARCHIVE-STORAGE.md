@@ -160,6 +160,7 @@ R2 is S3-compatible and already in use: the 51 MB teacher contract is served fro
 To settle from the docs rather than memory, because the whole point is deletion safety:
 
 - **CONFIRMED 5 Sep: R2 has NO object versioning.** Use **bucket locks**, which prevent deletion *and* overwriting, per prefix or bucket-wide, Age / date / Indefinite, and apply to existing objects too
+- **CONFIRMED 5 Oct 2026: a locked DELETE returns SUCCESS and deletes nothing.** Only an overwrite is refused with a 409. Check deletion by listing the key afterwards. The one deliberate deletion so far -- two redacted copies of a withheld email, on TJ's instruction -- removed the `immutable-sources` rule through the API (`PUT .../lock` with `rules: []`), deleted, confirmed absent by listing, and PUT the identical rule back: unlocked for seven seconds. The site's edge cache went on serving one of them until the zone cache was purged, which the project's API token is not permitted to do.
 - **lifecycle rules** — and whether one could ever expire an object we depend on
 - **retention / object-lock** semantics, if any
 - whether public `r2.dev` access is appropriate for the archive, or a custom domain is

@@ -177,16 +177,10 @@ def extract(path, out_txt):
     ext = os.path.splitext(path)[1].lower()
     try:
         if ext == '.pdf':
-            import pypdf
-            t = '\n'.join(f'===PAGE {i+1}===\n' + (p.extract_text() or '')
-                          for i, p in enumerate(pypdf.PdfReader(path).pages))
-            if len(re.sub(r'===PAGE \d+===|\s', '', t)) < 200:
-                # No text layer. macOS Vision reads the scan; nothing to install.
-                r = subprocess.run(['swift', os.path.join(ROOT, 'scripts', 'ocr_pdf.swift'),
-                                    path, out_txt], capture_output=True, text=True)
-                return 'ocr' if r.returncode == 0 else f'ocr failed: {r.returncode}'
-            open(out_txt, 'w').write(t)
-            return 'pdf text layer'
+            # Scan or digital is decided from what is ON each page, not from how many
+            # characters an extractor returned. See `pdf_kind.py` for why.
+            import pdf_kind
+            return pdf_kind.extract_text(path, out_txt)
         if ext == '.xlsx':
             import openpyxl
             wb = openpyxl.load_workbook(path, data_only=True, read_only=True)

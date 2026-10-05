@@ -109,11 +109,16 @@ sources/**/*.html
 sources/**/*.zip
 sources/**/*.bin
 sources/**/*.key
+sources/**/*.xlsm
+sources/**/*.pptm
+sources/**/*.png
 
 # Except the four documents this project generates itself. They are ours, they change
 # when the model does, and git is where a change like that has to show up in a diff.
 !sources/analyses/*.pdf
 !sources/data/*.xlsx
+# ...and the verification crops and brand art under data/, which are ours.
+!sources/data/**/*.png
 
 # The same binaries were also copied into the site build -- 415 files, 722 MB, the
 # identical bytes under a second path, so untracking one copy and not the other would

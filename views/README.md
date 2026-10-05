@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**321 of 1534 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**582 of 1809 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **1213 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **1227 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -36,24 +36,24 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY10 | 1 |
 | FY13 | 1 |
 | FY14 | 9 |
-| FY15 | 14 |
+| FY15 | 15 |
 | FY16 | 14 |
-| FY17 | 17 |
-| FY18 | 19 |
+| FY17 | 18 |
+| FY18 | 20 |
 | FY19 | 30 |
-| FY20 | 45 |
-| FY21 | 16 |
-| FY22 | 21 |
-| FY23 | 39 |
-| FY24 | 67 |
-| FY25 | 68 |
-| FY26 | 89 |
-| FY27 | 67 |
+| FY20 | 48 |
+| FY21 | 17 |
+| FY22 | 22 |
+| FY23 | 45 |
+| FY24 | 89 |
+| FY25 | 114 |
+| FY26 | 149 |
+| FY27 | 205 |
 | FY28 | 6 |
 | FY29 | 2 |
 | FY32 | 1 |
-| FY33 | 6 |
-| FY34 | 8 |
+| FY33 | 7 |
+| FY34 | 11 |
 | FY35 | 2 |
 
 ## Documents with no stated fiscal year
@@ -126,7 +126,19 @@ Listed so this view cannot look more complete than it is.
 - `analyses/town-personnel.md` — Who runs the town: every elected seat, appointed seat and officer
 - `analyses/towns-like-us.md` — How Lunenburg compares: neighbours, peers, look-alikes and destinations
 - `analyses/what-you-can-ask.md` — What you can ask this archive, in plain English
+- `budget-workbooks/PROVENANCE-finance-committee.md` — How the Finance Committee’s files reached us
 - `budget-workbooks/dese-all-districts.xlsx` — DESE per-pupil expenditures, FY2018–FY2024
+- `budget-workbooks/finance-committee/data-and-trends/lps-staff-2019-2025.xlsx` — LPS Staff 2019-2025 — Finance Committee, Data and Trends
+- `budget-workbooks/finance-committee/dls-levylimitsprimer.pdf` — DLS levylimitsprimer — Finance Committee
+- `budget-workbooks/finance-committee/dls-municipalglossary-2020.pdf` — DLS municipalglossary 2020 — Finance Committee
+- `budget-workbooks/finance-committee/finance-committee-town-department-budget-presentation-template.docx` — Finance Committee Town Department Budget Presentation Template — Finance Committee
+- `budget-workbooks/finance-committee/fund-balances/chapter-90-balances-10.15.2020.xlsx` — Chapter 90 Balances 10.15.2020 — Finance Committee, Fund Balances
+- `budget-workbooks/finance-committee/fund-balances/fy-2021-trust-funds-summary-report-fc.xlsx` — FY 2021 Trust Funds Summary Report FC — Finance Committee, Fund Balances
+- `budget-workbooks/finance-committee/proposition2-and-a-half-ballotquestions.pdf` — Proposition2 and a half ballotquestions — Finance Committee
+- `budget-workbooks/finance-committee/staffing-plans/10-year-plan-narrative-1-21-2020.docx` — 10 year Plan Narrative 1-21-2020 — Finance Committee, Staffing Plans
+- `budget-workbooks/finance-committee/staffing-plans/additional-officers-10-year-plan-1-21-2020.xlsx` — Additional Officers 10 Year Plan 1-21-2020 — Finance Committee, Staffing Plans
+- `budget-workbooks/finance-committee/staffing-plans/fd-staffing-plan-fy-21-update.xlsx` — FD Staffing Plan- FY'21 update — Finance Committee, Staffing Plans
+- `budget-workbooks/finance-committee/town-revenue-and-proposition-2-half-updated-20240125.pptx` — Town Revenue & Proposition 2 ½ - Updated 20240125 — Finance Committee
 - `contracts/CONTRACTS.md` — Research notes: union contracts
 - `contracts/pdf/custodial-2023-2026.pdf` — Custodial agreement, 2023–2026
 - `contracts/pdf/custodial-moa-2026.pdf` — Custodial memorandum of agreement, 2026
@@ -227,6 +239,7 @@ Listed so this view cannot look more complete than it is.
 - `data/feed-sources.csv` — The town and community feeds the refresh watches
 - `data/feed-watch-events.csv` — What appeared in those feeds
 - `data/field-rental-receipts-lysa.csv` — Field rental receipts from Lunenburg Youth Soccer, FY2024–FY2026
+- `data/finance-committee-delivery.csv` — Every file in the Finance Committee’s delivery, and what became of it
 - `data/free-cash-proof.csv` — Free cash, nine towns, five years, line by line
 - `data/fund-1301-cash-journal.csv` — The athletics revolving fund’s cashbook, three years
 - `data/fund-owners.csv` — The account registry: every accounting measure the town prints, and who owns it
@@ -275,6 +288,7 @@ Listed so this view cannot look more complete than it is.
 - `data/receivables-refused.csv` — The receivables pages an extractor read and refused, and why
 - `data/receivables.csv` — What the town was still owed on 30 June, levy by levy
 - `data/recording-minutes-policy.csv` — Which boards TJ has approved minutes for, from when, in what order
+- `data/redactions.csv` — What was redacted or withheld, and why
 - `data/refresh-runs.csv` — Every daily refresh, timed
 - `data/report-anomalies.csv` — What looks wrong in the extracts, and where to look
 - `data/report-appropriations-supplement-refused.csv` — Appropriation programs whose lines do not sum to their own subtotal
@@ -446,17 +460,3 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/sc-meetings/2023-09-06-action-plan-cc-c-2-feb-update.pdf` — Action Plan CC & C 2 Feb Update
 - `district-budget/docs/sc-meetings/2023-09-06-action-plan-cc-c-3-feb-update.pdf` — Action Plan CC & C 3 Feb Update
 - `district-budget/docs/sc-meetings/2023-09-06-action-plan-cc-c-feb-update.pdf` — Action Plan CC & C Feb Update
-- `district-budget/docs/sc-meetings/2023-09-06-action-plan-eaao-1-feb-update.pdf` — Action Plan EAAO 1 Feb Update
-- `district-budget/docs/sc-meetings/2023-09-06-action-plan-eaao-2-feb-update.pdf` — Action Plan EAAO 2 Feb Update
-- `district-budget/docs/sc-meetings/2023-09-06-action-plan-tt-l-1-feb-update.pdf` — Action Plan TT & L 1 Feb Update
-- `district-budget/docs/sc-meetings/2023-09-06-action-plan-tt-l-2-feb-update.pdf` — Action Plan TT & L 2 Feb Update
-- `district-budget/docs/sc-meetings/2023-09-06-action-plan-tt-l-3-feb-update.pdf` — Action Plan TT & L 3 Feb Update
-- `district-budget/docs/sc-meetings/2023-09-06-agenda-3-17-21.pdf` — Agenda 3-17-21
-- `district-budget/docs/sc-meetings/2023-09-06-air-quality-update.pdf` — Air Quality Update
-- `district-budget/docs/sc-meetings/2023-09-06-alternate-proposal-i.pdf` — Alternate Proposal I
-- `district-budget/docs/sc-meetings/2023-09-06-alternate-proposal-ii.pdf` — Alternate Proposal II
-- `district-budget/docs/sc-meetings/2023-09-06-alternate-proposal-iii.pdf` — Alternate Proposal III
-- `district-budget/docs/sc-meetings/2023-09-06-approved-early-learning-center-handbook-amended-5-24-23.pdf` — Approved Early Learning Center Handbook Amended 5-24-23
-- `district-budget/docs/sc-meetings/2023-09-06-approved-extended-day-handbook-amended-5-24-23.pdf` — Approved Extended Day Handbook Amended 5-24-23
-- `district-budget/docs/sc-meetings/2023-09-06-arpa-sidewalk-distances.pdf` — ARPA-Sidewalk Distances
-- `district-budget/docs/sc-meetings/2023-09-06-behavioral-health-presentation.pdf` — Behavioral Health Presentation
