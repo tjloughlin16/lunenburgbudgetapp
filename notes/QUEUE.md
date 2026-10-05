@@ -8,8 +8,9 @@
    cc the Town Clerk. Response due **26 Oct**; AG window 4 Nov to 30 Dec.
 2. ~~Records appeal, MUNIS~~ **FILED 5 Oct** with the Supervisor of Records, with the
    request and both Gmail threads attached.
-3. **Records appeal, PEC agreement** → `pre@sec.state.ma.us`. **SEND 6 OCTOBER, NOT
-   BEFORE** -- the Town's ten business days end 5 Oct. Attach the 19 Sep / 2 Oct thread.
+3. ~~Records appeal, PEC agreement~~ **DO NOT SEND.** The agreement arrived 5 Oct
+   (`sources/contracts/pdf/pec-agreement-fy27-fy29.pdf`). Attachments A and B were blank;
+   ask for them as a follow-up, not an appeal.
 
 ---
 

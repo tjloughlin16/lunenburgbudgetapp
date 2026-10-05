@@ -3,7 +3,12 @@
 **To:** pre@sec.state.ma.us
 **Subject:** Petition for appeal — Town of Lunenburg and Lunenburg Public Schools — no response to a 19 September 2026 records request
 
-**DO NOT SEND BEFORE 6 OCTOBER 2026.** The request went out on a Saturday, so the ten
+> **WITHDRAWN 5 OCTOBER 2026 — DO NOT SEND.** The agreement arrived the same day, in answer
+> to the 19 September request: `sources/contracts/pdf/pec-agreement-fy27-fy29.pdf`. TJ
+> cancelled the appeal. Kept for the record only. Its Attachments A and B were blank; that is
+> a follow-up to the Town, not an appeal.
+
+~~DO NOT SEND BEFORE 6 OCTOBER 2026.~~ The request went out on a Saturday, so the ten
 business days run from Monday 21 September and end on 5 October. Drafted from the email as
 sent (TJ pasted it, 5 October 2026).
 

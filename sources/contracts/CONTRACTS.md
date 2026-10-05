@@ -44,6 +44,30 @@ their address is what the HR page links, and the claim that our copy is what tha
 serves rests on the download made on 20 August and on nothing since. Nobody has been able
 to re-check it.
 
+### The health insurance agreement, by records request
+
+| our copy | the publisher's address | checked |
+|---|---|---|
+| `pdf/pec-agreement-fy27-fy29.pdf` | no URL: not published. Received **5 October 2026** in answer to the records request of **19 September 2026**, made by email to the Town Manager and the Superintendent (`notes/reference/records-requests.csv`, `2026-09-19-pec-agreement`). Publisher's filename: **`Lunenburg PEC Agreement FY27 - FY29.pdf`** | sha256 `6f12f5a0d6f54e09c0ea752da2c70204d4d697f20992955acd8d1b22b7c644df`, 124,142 bytes |
+
+A memorandum of agreement between the Town and the Lunenburg Public Employee Committee
+under c.32B §19, effective 1 July 2026 to 30 June 2029. Five pages, digital (`pdf_kind`:
+every page has a text layer). It states the plan menu, in-network cost-sharing, the HSA
+contribution for the high-deductible plan, a $96 monthly Medicare Part B reimbursement, and
+the splits: Town 75% / subscriber 25% on every active plan and on Managed Blue for Seniors,
+50/50 on Medex.
+
+**What it does not contain, read off the pages rather than assumed:**
+
+- **The base agreement.** It *"amends the current in-force health insurance agreement"*
+  and does not attach it. The union contracts name that one as the PEC Agreement of
+  16 June 2008. Still not held.
+- **Attachments A and B.** Page 4 prints `ATTACHMENT A` (the benefit brochures) and page 5
+  `ATTACHMENT B` (the opt-out plan), and nothing else. So the opt-out payment, which the
+  School Committee raised to $3,000/$6,000 on 18 March 2026 (below), is not in this copy.
+- **A signing date.** The signature page prints five names, one for the Town as Chair, and
+  no date.
+
 The district copy of the teachers' agreement is
 [Lunenburg Education Association 2024-2027](https://drive.google.com/file/d/19IaKYDVtYXgJ63J0MOod-8Io6F3oZ6dw/view),
 70pp. We keep DESE's 72pp filing instead because it is the same document plus the stipend
@@ -182,6 +206,9 @@ benefits:
 4. **Headcount by step and lane.** Without it, the split between COLA and step/lane drift
    in the district's 4% salary assumption cannot be reproduced from published documents —
    only bounded.
+
+5. **The PEC agreement's Attachments A and B, and the 2008 base agreement it amends.** The
+   FY27–FY29 memorandum arrived without them; see *The health insurance agreement* above.
 
 Items 2 and 3 are a public records request to the district; item 4 is a question for the
 Business Manager.

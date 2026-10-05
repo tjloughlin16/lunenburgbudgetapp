@@ -45,6 +45,8 @@ it as a request to fill.
 **#3, the PEC agreement**, `APPEAL-supervisor-of-records-pec-agreement.md`: asked 19 Sep
 (a Saturday) of the Town Manager and Dr. Fortuna, due 5 Oct, so **not appealable before
 6 Oct**. On 5 Oct TJ told both he would be appealing.
+**ANSWERED 5 Oct, the same day — the appeal is withdrawn and must not be sent.** Filed at
+`sources/contracts/pdf/pec-agreement-fy27-fy29.pdf`; its Attachments A and B are blank.
 
 ## THE ONE UNRESOLVED THING — check before sending #2 (SUPERSEDED -- kept for the record)
 

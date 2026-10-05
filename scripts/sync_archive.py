@@ -185,7 +185,7 @@ def read_state():
 def write_state(state):
     tmp = A.STATE + '.tmp'
     with open(tmp, 'w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=STATE_COLS)
+        w = csv.DictWriter(fh, fieldnames=STATE_COLS, lineterminator='\n')  # the committed file is LF; the csv default rewrites every line
         w.writeheader()
         for key in sorted(state):
             w.writerow({c: state[key].get(c, '') for c in STATE_COLS})

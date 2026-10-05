@@ -364,7 +364,7 @@ def write_manifest(rows, path=MANIFEST):
     cols = ['key', 'bytes', 'sha256', 'etag_md5', 'upstream']
     tmp = path + '.tmp'
     with open(tmp, 'w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=cols)
+        w = csv.DictWriter(fh, fieldnames=cols, lineterminator='\n')  # the committed file is LF; the csv default rewrites every line
         w.writeheader()
         for r in rows:
             w.writerow({c: r.get(c, '') for c in cols})

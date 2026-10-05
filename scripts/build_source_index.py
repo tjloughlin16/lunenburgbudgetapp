@@ -442,6 +442,10 @@ GROUPS = [
              'The expiring custodial contract.'),
             ('contracts/pdf/custodial-moa-2026.pdf', 'Custodial memorandum of agreement, 2026', 2,
              'Successor terms: 3.5%, 2.5%, 2.5% through FY29.'),
+            ('contracts/pdf/pec-agreement-fy27-fy29.pdf', 'Health insurance agreement (PEC), FY27–FY29', 3,
+             'Obtained by records request, 5 October 2026. The Town pays 75% of every active plan '
+             'and 50% of Medex, 1 July 2026 to 30 June 2029. Amends a base agreement it does not '
+             'attach, and its two attachments are blank in the copy received.'),
             ('contracts/pdf/nonaffiliated-salary-schedule.pdf', 'Non-affiliated salary schedule', 1,
              'Staff outside any bargaining unit.'),
             ('contracts/pdf/nonaffiliated-benefits.pdf', 'Non-affiliated benefits', 1,

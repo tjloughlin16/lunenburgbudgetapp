@@ -50,7 +50,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 35 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 50 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 35 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 40 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 51 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -822,6 +822,18 @@
      "count": 2,
      "unit": "pages",
      "textUrl": "/docs/town-supplementary/text/health-insurance-rates-2025.txt"
+    },
+    {
+     "path": "contracts/pdf/pec-agreement-fy27-fy29.pdf",
+     "title": "Health insurance agreement (PEC), FY27–FY29",
+     "stars": 3,
+     "what": "Obtained by records request, 5 October 2026. The Town pays 75% of every active plan and 50% of Medex, 1 July 2026 to 30 June 2029. Amends a base agreement it does not attach, and its two attachments are blank in the copy received.",
+     "kind": "PDF",
+     "bytes": 124142,
+     "url": "/docs/contracts/pdf/pec-agreement-fy27-fy29.pdf",
+     "count": 5,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/pec-agreement-fy27-fy29.txt"
     },
     {
      "path": "contracts/data/lea-teacher-salary-schedule.csv",
@@ -2571,6 +2583,18 @@
      "textUrl": "/docs/data/debt-repayment.csv"
     },
     {
+     "path": "data/pec-history.csv",
+     "title": "The Public Employees Committee agreement, event by event",
+     "stars": 2,
+     "what": "Dated events in the town’s PEC agreement — the body that governs health insurance plan design and the contribution split under c.32B §§21-23 — each with the verbatim quote it rests on and the document it came from.",
+     "kind": "Data",
+     "bytes": 3515,
+     "url": "/docs/data/pec-history.csv",
+     "count": 7,
+     "unit": "rows",
+     "textUrl": "/docs/data/pec-history.csv"
+    },
+    {
      "path": "data/tax-collection-unreconciled.csv",
      "title": "The thirteen years it will not publish, and why each refuses",
      "stars": 2,
@@ -2581,18 +2605,6 @@
      "count": 13,
      "unit": "rows",
      "textUrl": "/docs/data/tax-collection-unreconciled.csv"
-    },
-    {
-     "path": "data/pec-history.csv",
-     "title": "The Public Employees Committee agreement, event by event",
-     "stars": 2,
-     "what": "Dated events in the town’s PEC agreement — the body that governs health insurance plan design and the contribution split under c.32B §§21-23 — each with the verbatim quote it rests on and the document it came from.",
-     "kind": "Data",
-     "bytes": 2765,
-     "url": "/docs/data/pec-history.csv",
-     "count": 6,
-     "unit": "rows",
-     "textUrl": "/docs/data/pec-history.csv"
     },
     {
      "path": "data/threads-declined.csv",
@@ -3445,7 +3457,7 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1046147,
+     "bytes": 1046448,
      "url": "/docs/data/youtube-video-classification.csv",
      "count": 4707,
      "unit": "rows",
@@ -3481,7 +3493,7 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 454504,
+     "bytes": 454532,
      "url": "/docs/data/youtube-video-boards.csv",
      "count": 2908,
      "unit": "rows",
@@ -3517,7 +3529,7 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 206071,
+     "bytes": 206300,
      "url": "/docs/data/money-gaps.csv",
      "count": 224,
      "unit": "rows",
@@ -3997,8 +4009,10 @@
      "stars": 1,
      "what": "Keyed on video id, READ by the classifier and never written by it. Without it every improvement to the classification would silently discard every correction. Currently empty, and the generator reports how many it applied on every run.",
      "kind": "Data",
-     "bytes": 73,
+     "bytes": 586,
      "url": "/docs/data/youtube-classification-overrides.csv",
+     "count": 2,
+     "unit": "rows",
      "textUrl": "/docs/data/youtube-classification-overrides.csv"
     }
    ]
@@ -4062,9 +4076,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3485958,
+     "bytes": 3485558,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7059,
+     "count": 7057,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -5222,6 +5236,18 @@
      "textUrl": "/docs/data/meeting-watch-events.csv"
     },
     {
+     "path": "contracts/CONTRACTS.md",
+     "title": "Research notes: union contracts",
+     "stars": 2,
+     "what": "What each agreement pays, when it expires, how the figures were verified, and what is still missing.",
+     "kind": "Notes",
+     "bytes": 13775,
+     "url": "/docs/contracts/CONTRACTS.md",
+     "count": 229,
+     "unit": "lines",
+     "textUrl": "/docs/contracts/CONTRACTS.md"
+    },
+    {
      "path": "data/revenue-distribution-fy26.csv",
      "title": "How new FY2026 revenue was divided between town, schools and Monty Tech",
      "stars": 2,
@@ -5232,18 +5258,6 @@
      "count": 113,
      "unit": "rows",
      "textUrl": "/docs/data/revenue-distribution-fy26.csv"
-    },
-    {
-     "path": "contracts/CONTRACTS.md",
-     "title": "Research notes: union contracts",
-     "stars": 2,
-     "what": "What each agreement pays, when it expires, how the figures were verified, and what is still missing.",
-     "kind": "Notes",
-     "bytes": 11921,
-     "url": "/docs/contracts/CONTRACTS.md",
-     "count": 202,
-     "unit": "lines",
-     "textUrl": "/docs/contracts/CONTRACTS.md"
     },
     {
      "path": "data/one-big-report-story.csv",
@@ -14909,7 +14923,7 @@
      "stars": 2,
      "what": "Written by us. The request, the delivery’s sha256, what became of each of its 299 files, and the two withheld because they are about identifiable people.",
      "kind": "Notes",
-     "bytes": 5079,
+     "bytes": 5297,
      "url": "/docs/budget-workbooks/PROVENANCE-finance-committee.md",
      "upstream": ""
     },
@@ -21314,10 +21328,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1864,
+  "documents": 1865,
   "groups": 23,
-  "bytes": 3615775790,
-  "loadBearing": 176
+  "bytes": 3615903425,
+  "loadBearing": 177
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 35 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
