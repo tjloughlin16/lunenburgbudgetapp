@@ -54,7 +54,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 1370 of these 1386 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 1386 of these 1402 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -2523,6 +2523,18 @@
      "textUrl": "/docs/analyses/peer-districts.md"
     },
     {
+     "path": "data/school-job-postings.csv",
+     "title": "The district’s job postings, as a history: what was listed, and when it left",
+     "stars": 2,
+     "what": "Written by us, from the snapshots of Lunenburg Public Schools’ own SchoolSpring account (employer 11047) that `fetch_school_job_postings.py` takes daily, one row per posting keyed on SchoolSpring’s job id. Post, display and closing dates are the publisher’s. `first_seen`, `last_seen` and `removed_seen` ARE OURS: they are the days we looked, bounded by the fetch cadence, never the day a post went up or came down. A REMOVAL IS NOT A HIRE — a posting leaves when it is filled, closes, is withdrawn or is reposted, and nothing here says which. Pay is printed only where the district shows it.",
+     "kind": "Data",
+     "bytes": 7467,
+     "url": "/docs/data/school-job-postings.csv",
+     "count": 15,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-job-postings.csv"
+    },
+    {
      "path": "data/roster-completeness.csv",
      "title": "How many of a body’s people the org chart holds, against the town’s own count",
      "stars": 2,
@@ -2605,6 +2617,18 @@
      "count": 13,
      "unit": "rows",
      "textUrl": "/docs/data/tax-collection-unreconciled.csv"
+    },
+    {
+     "path": "data/school-job-posting-changes.csv",
+     "title": "Every change we saw to a district job posting, one row per event",
+     "stars": 2,
+     "what": "Written by us, from the same snapshots as the row above: `posted` (first listed), `edited` (one row per field that differs between two looks, with the before and after -- descriptions compared as text, whitespace ignored), `relisted` and `removed`. `date` IS THE LOOK THAT SAW IT and `prev_look` the one before; the district made the change somewhere between the two, and the data cannot narrow it further. Pay is compared as SchoolSpring displays it, so a change to a figure the district hides is not an event here.",
+     "kind": "Data",
+     "bytes": 3072,
+     "url": "/docs/data/school-job-posting-changes.csv",
+     "count": 15,
+     "unit": "rows",
+     "textUrl": "/docs/data/school-job-posting-changes.csv"
     },
     {
      "path": "data/threads-declined.csv",
@@ -4395,6 +4419,18 @@
      "textUrl": "/docs/data/line-history-disagreements.csv"
     },
     {
+     "path": "data/agentic-spend.csv",
+     "title": "What the scripted reading cost, job by job",
+     "stars": 3,
+     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
+     "kind": "Data",
+     "bytes": 145565,
+     "url": "/docs/data/agentic-spend.csv",
+     "count": 2123,
+     "unit": "rows",
+     "textUrl": "/docs/data/agentic-spend.csv"
+    },
+    {
      "path": "data/dese-educator-workforce.csv",
      "title": "Staff HEADCOUNT by job class, with hires and retention, SY2021–SY2023",
      "stars": 3,
@@ -4477,18 +4513,6 @@
      "count": 684,
      "unit": "rows",
      "textUrl": "/docs/data/dese-sped-movement.csv"
-    },
-    {
-     "path": "data/agentic-spend.csv",
-     "title": "What the scripted reading cost, job by job",
-     "stars": 3,
-     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
-     "kind": "Data",
-     "bytes": 72857,
-     "url": "/docs/data/agentic-spend.csv",
-     "count": 1019,
-     "unit": "rows",
-     "textUrl": "/docs/data/agentic-spend.csv"
     },
     {
      "path": "data/school-staff-fte.csv",
@@ -5916,7 +5940,7 @@
    "id": "district-page",
    "origin": "school",
    "title": "The district budget page, mirrored in full",
-   "blurb": "Every document linked from the district’s budget information page — 818 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
+   "blurb": "Every document linked from the district’s budget information page — 834 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
    "items": [
     {
      "path": "district-budget/docs/additional-town-revenue-spending-plan.pdf",
@@ -10450,6 +10474,166 @@
      "url": "/docs/district-budget/docs/sc-meetings/2025-2026-james-j-larkin-scholarship.pdf",
      "textUrl": "/docs/district-budget/text/sc-meetings/2025-2026-james-j-larkin-scholarship.txt",
      "upstream": "https://drive.google.com/file/d/139_G-PPD1h66MjQhnUF4Xi4o2348-A8k/view?usp=drive_link"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5822484.json",
+     "title": "Job postings: SchoolSpring posting 5822484, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 3757,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5822484.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5822484?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5822489.json",
+     "title": "Job postings: SchoolSpring posting 5822489, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 3485,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5822489.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5822489?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5822498.json",
+     "title": "Job postings: SchoolSpring posting 5822498, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 4367,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5822498.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5822498?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5822506.json",
+     "title": "Job postings: SchoolSpring posting 5822506, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 3661,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5822506.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5822506?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5880726.json",
+     "title": "Job postings: SchoolSpring posting 5880726, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 9373,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5880726.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5880726?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5882191.json",
+     "title": "Job postings: SchoolSpring posting 5882191, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 5598,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5882191.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5882191?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5899812.json",
+     "title": "Job postings: SchoolSpring posting 5899812, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 5527,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5899812.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5899812?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5914236.json",
+     "title": "Job postings: SchoolSpring posting 5914236, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 4475,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5914236.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5914236?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5915634.json",
+     "title": "Job postings: SchoolSpring posting 5915634, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 2752,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5915634.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5915634?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5917125.json",
+     "title": "Job postings: SchoolSpring posting 5917125, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 8561,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5917125.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5917125?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5926148.json",
+     "title": "Job postings: SchoolSpring posting 5926148, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 11479,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5926148.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5926148?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5928041.json",
+     "title": "Job postings: SchoolSpring posting 5928041, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 4466,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5928041.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5928041?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5931978.json",
+     "title": "Job postings: SchoolSpring posting 5931978, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 5040,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5931978.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5931978?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5937399.json",
+     "title": "Job postings: SchoolSpring posting 5937399, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 3926,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5937399.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5937399?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/job-5947400.json",
+     "title": "Job postings: SchoolSpring posting 5947400, detail, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 9847,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/job-5947400.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5947400?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-05/listing.json",
+     "title": "Job postings: the open postings SchoolSpring lists for Lunenburg Public Schools, fetched 2026-10-05",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 2989,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-05/listing.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false"
     },
     {
      "path": "district-budget/docs/sc-meetings/2023-09-06-joint-meeting-agenda-school-committee-select-board-finance-.pdf",
@@ -21328,9 +21512,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 1865,
+  "documents": 1883,
   "groups": 23,
-  "bytes": 3615899895,
+  "bytes": 3616072445,
   "loadBearing": 177
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 35 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

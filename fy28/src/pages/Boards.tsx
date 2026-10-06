@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { boardSlugFromPath, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
 import { BoardGoals } from '../components/BoardGoals'
+import { SchoolJobPostings } from '../components/SchoolJobPostings'
 import { Subscribe, useFeedLink } from '../components/Subscribe'
 import { JoinLinks, type Join } from '../components/BoardsThisWeek'
 import { daysAway as daysFromToday, meetingBody, splitMeetings } from '../lib/meetings'
@@ -527,6 +528,11 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
           <p className="text-xs mt-1 max-w-3xl" style={{ color: 'var(--text-muted)' }}>The town&rsquo;s minutes are the record: a vote from them carries the minutes&rsquo; own words, checked verbatim. A vote from the recording only was written by a language model from machine captions &mdash; a motion as heard, and “not audible” a finding about the recording &mdash; and links to the second in the video. Both records are read as they arrive and joined here, whichever came first.</p>
         </>
       )}
+
+      {/* THE DISTRICT'S JOB OPENINGS, open now and as a history -- only on the School
+          Committee's page, since the district is the employer and the committee is its
+          board. Its own payload; see components/SchoolJobPostings.tsx. */}
+      {b.slug === 'school-committee' && <SchoolJobPostings />}
 
       {/* -------------------------------------------------------------------- time */}
       {b.time_by_tag.length > 0 && (

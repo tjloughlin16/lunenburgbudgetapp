@@ -293,6 +293,57 @@ def py(script, *args, **kw):
     return sh([sys.executable, os.path.join(SCRIPTS, script), *args], **kw)
 
 
+SCHOOLSPRING_ALERT = os.path.join(ROOT, 'build', 'schoolspring-ALERT.txt')
+
+
+def schoolspring_alert(rc, notes):
+    """A LOUD notice when SchoolSpring stops answering us, and silence when it answers.
+
+    The job-postings feed reads an UNDOCUMENTED API (see fetch_school_job_postings.py), so
+    the day it is locked down is expected rather than hypothetical. TJ, 5 October 2026:
+    *"make a big failure notice in refresh if that happens."* So: a full-width banner in
+    the run's output, a desktop notification with a sound, and a STICKY file that names
+    the day it started -- because a notification is gone when dismissed and the machine
+    may be asleep. A success deletes the file: an alert that outlives its cause trains
+    you to ignore it.
+
+    Exit 3 (LOCKED) is loud from the first run. Exit 2 (TRANSIENT -- a timeout, a 5xx)
+    is a note until it has lasted three days, then loud too: a "transient" failure that
+    never clears is a lockout by another name.
+    """
+    if rc == 0:
+        if os.path.exists(SCHOOLSPRING_ALERT):
+            os.remove(SCHOOLSPRING_ALERT)
+        return
+    today = dt.date.today().isoformat()
+    since = today
+    if os.path.exists(SCHOOLSPRING_ALERT):
+        for line in open(SCHOOLSPRING_ALERT, encoding='utf-8'):
+            if line.startswith('since: '):
+                since = line.split(': ', 1)[1].strip()
+    days = (dt.date.fromisoformat(today) - dt.date.fromisoformat(since)).days
+    kind = {3: 'LOCKED OR CHANGED', 2: 'UNREACHABLE'}.get(rc, 'FAILED (exit %d)' % rc)
+    os.makedirs(os.path.dirname(SCHOOLSPRING_ALERT), exist_ok=True)
+    with open(SCHOOLSPRING_ALERT, 'w', encoding='utf-8') as fh:
+        fh.write('SchoolSpring job postings: %s\nsince: %s\nlast: %s\n'
+                 'No postings were read, and none were marked removed. '
+                 'Run: python3 scripts/fetch_school_job_postings.py --dry-run\n'
+                 % (kind, since, today))
+    loud = rc != 2 or days >= 3
+    msg = 'SCHOOLSPRING %s since %s -- job postings are NOT being tracked' % (kind, since)
+    notes.append(('!!! ' if loud else '') + msg)
+    if not loud:
+        return
+    bar = '!' * 78
+    print('\n%s\n!!!  %-70s !!!\n!!!  %-70s !!!\n!!!  %-70s !!!\n%s\n'
+          % (bar, 'SCHOOLSPRING JOB POSTINGS: %s' % kind,
+             'failing since %s (%d day(s)); nothing read or marked removed' % (since, days),
+             'see build/schoolspring-ALERT.txt', bar))
+    subprocess.run(['osascript', '-e', 'display notification "job postings are not being '
+                    'tracked since %s" with title "SchoolSpring %s" sound name "Basso"'
+                    % (since, kind)], capture_output=True)
+
+
 def backfill_running():
     r = subprocess.run(['pgrep', '-f', '[r]un_transcript_backfill|[f]etch_youtube_transcripts'],
                        capture_output=True, text=True)
@@ -642,6 +693,25 @@ def main():
                 py(script, '--if-changed', check=False)
         py('extract_staff_directory.py', check=False)
         py('extract_school_staff_directory.py', check=False)
+
+    # 3f. THE DISTRICT'S JOB POSTINGS, DAILY. TJ, 5 October 2026: "put this on the refresh
+    # list to see if new job postings are added or some removed... and keep the history as
+    # a table." Off SchoolSpring's public JSON API for the district's own employer account
+    # (Indeed only syndicates it, refuses scripts, and forbids scraping).
+    #
+    # DAILY, NOT WEEKLY LIKE THE DIRECTORIES, because the thing being measured is turnover:
+    # the fifteen open on 5 October 2026 print close dates one to three months after their
+    # post dates, but a posting can come down the day it is filled, so a weekly look would
+    # widen every `removed_seen` to a seven-day window and could miss a short posting
+    # altogether. A daily look costs four seconds and sixteen small GETs, and
+    # it is still CHANGE-ONLY -- the API is byte-stable, so an unchanged day writes nothing
+    # to the frozen bucket and only appends to `checked.csv`, and a posting's detail is
+    # stored once, not once per day it stays open. The fetcher secures what it writes
+    # through `ingest`, so no separate backup step is needed here.
+    if not a.dry_run:
+        r = py('fetch_school_job_postings.py', '--if-changed', check=False)
+        schoolspring_alert(r.returncode, notes)
+        py('extract_school_job_postings.py', check=False)
 
     # 3c. The town's and the community's feeds -- news, alerts, registrations. Linked and
     # attributed, never republished (QUEUE 13, 14).

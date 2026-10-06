@@ -1241,6 +1241,25 @@ GROUPS = [
              'IS MEASURED IS THE REPETITION; \u201ca shared specialist\u201d is a hypothesis and '
              'nothing here tests it, since no sheet says what fraction of a post sits in '
              'which building.'),
+            ('data/school-job-postings.csv',
+             'The district’s job postings, as a history: what was listed, and when it left', 2,
+             'Written by us, from the snapshots of Lunenburg Public Schools’ own SchoolSpring '
+             'account (employer 11047) that `fetch_school_job_postings.py` takes daily, '
+             'one row per posting keyed on SchoolSpring’s job id. Post, display and '
+             'closing dates are the publisher’s. `first_seen`, `last_seen` and '
+             '`removed_seen` ARE OURS: they are the days we looked, bounded by the fetch '
+             'cadence, never the day a post went up or came down. A REMOVAL IS NOT A HIRE '
+             '— a posting leaves when it is filled, closes, is withdrawn or is reposted, '
+             'and nothing here says which. Pay is printed only where the district shows it.'),
+            ('data/school-job-posting-changes.csv',
+             'Every change we saw to a district job posting, one row per event', 2,
+             'Written by us, from the same snapshots as the row above: `posted` (first '
+             'listed), `edited` (one row per field that differs between two looks, with the '
+             'before and after -- descriptions compared as text, whitespace ignored), '
+             '`relisted` and `removed`. `date` IS THE LOOK THAT SAW IT and `prev_look` the '
+             'one before; the district made the change somewhere between the two, and the '
+             'data cannot narrow it further. Pay is compared as SchoolSpring displays it, so '
+             'a change to a figure the district hides is not an event here.'),
             ('data/report-filing.csv',
              'Which bodies file an annual report, and which say they did not', 2,
              'One row per body: the years it filed, and the years the contents page '

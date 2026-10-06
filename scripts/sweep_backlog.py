@@ -194,6 +194,9 @@ def main():
                          'Counted across every run since the Thursday 11:00 reset, not '
                          'just this one, so several nights add up to one ceiling.')
     ap.add_argument('--max', type=int, default=10_000)
+    ap.add_argument('--streams', default=None,
+                    help='comma-separated streams to run (votes, reconcile, minutes); '
+                         'default all. `--streams votes` is the town\u2019s official minutes only')
     ap.add_argument('--parallel', type=int, default=4, help='jobs at once; the first sweep (17 Sep 2026) ran serial and cleared 77 in 65 minutes for 1.4%% of the week -- time, not allowance, was the limit')
     a = ap.parse_args()
     hh, mm = map(int, a.until.split(':'))
@@ -202,6 +205,9 @@ def main():
     if until <= now:
         until += dt.timedelta(days=1)
     js = jobs()
+    if a.streams:
+        keep = set(a.streams.split(','))
+        js = [j for j in js if j['stream'] in keep]
     print('%d jobs queued (%d in the last two years); running until %s' % (len(js), sum(1 for j in js if j['recent']), until.strftime('%H:%M')))
     if a.dry_run:
         for j in js[:20]:
