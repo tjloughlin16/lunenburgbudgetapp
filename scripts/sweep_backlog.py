@@ -48,7 +48,13 @@ PCT_DOLLARS = 5.0
 
 
 def week_start():
-    """The most recent Thursday 11:00 America/New_York, as a UTC datetime.
+    """The most recent Thursday 23:00 America/New_York, as a UTC datetime.
+
+    23:00, NOT 11:00. `/usage` read twice on 5 October 2026: *"resets Oct 8 at 10:59pm"*
+    and *"Oct 8 at 11pm"*. The 11:00 this used before came from "reset is TOMORROW at 11"
+    (23 September), read as morning; the plan's own screen says evening. Counting from
+    11:00 started every week twelve hours early, so Thursday afternoon's spend was billed
+    to the week that was about to end.
 
     The plan's weekly allowance resets then. This file's own sibling had it as Wednesday
     22:59 for weeks and handed back half of every sweep window as a result, so the day is
@@ -56,7 +62,7 @@ def week_start():
     """
     now = dt.datetime.now().astimezone()
     back = (now.weekday() - 3) % 7          # Thursday is 3
-    start = (now - dt.timedelta(days=back)).replace(hour=11, minute=0, second=0,
+    start = (now - dt.timedelta(days=back)).replace(hour=23, minute=0, second=0,
                                                     microsecond=0)
     if start > now:
         start -= dt.timedelta(days=7)
@@ -98,10 +104,17 @@ MAX_FAILURES = 3
 # rendering rather than the source (rule 13). So the CLI's own words are now printed
 # with the stop, rather than our interpretation of them standing alone.
 HARD_LIMIT_WORDS = ('usage limit', 'limit reached', 'out of credits', 'quota',
-                    'weekly limit', 'insufficient credit')
+                    'weekly limit', 'insufficient credit',
+                    # the five-hour window. Not the week -- but waiting it out inside a
+                    # sweep holds the window shut on TJ's own session, so stop cleanly.
+                    'session limit')
 TRANSIENT_WORDS = ('rate limit', 'too many requests', '429', '529', 'overloaded',
                    'timed out', 'timeout', 'connection', 'econnreset', 'socket hang up',
-                   'internal server error', '500', '502', '503')
+                   'internal server error', '500', '502', '503',
+                   # The CLI briefly vanishing during its own auto-update: three jobs on
+                   # 5 October 2026 failed with FileNotFoundError: 'claude' and ended the
+                   # night. The binary returns within minutes; that is a wait, not a defect.
+                   "no such file or directory: 'claude'")
 BACKOFF = (60, 300, 900, 1800)      # what to wait before retrying a transient refusal
 MY_SESSION = os.environ.get('CLAUDE_SESSION_FILE', '')
 
@@ -130,6 +143,12 @@ def jobs():
     out = []
     have = {os.path.relpath(p, E.OUT)[:-5] for p in glob.glob(os.path.join(E.OUT, '*', '*.json'))}
     votes = [e for e in E.minutes_files() if '%s/%s-%s' % (e['board_slug'], e['date'], e['docid']) not in have]
+    # A stub the extractor will refuse as `no text` is not work. It exits 0 and writes
+    # nothing, so it was logged `ok` at $0 and re-queued by every sweep -- the first seven
+    # jobs on 5 October 2026 were these, and looked like a sweep that was not calling the
+    # model. Same test the extractor applies, imported rather than restated.
+    votes = [e for e in votes
+             if len(E.norm(open(e['path'], encoding='utf-8', errors='replace').read())) >= E.MIN_CHARS]
     recent = refresh.recent_since()
     for e in votes:                                # already newest first
         out.append(dict(stream='votes', board=e['board_slug'], date=e['date'], recent=e['date'] >= recent,
@@ -191,7 +210,7 @@ def main():
     ap.add_argument('--budget-pct', type=float, default=None,
                     help='stop once the WEEK\u2019s scripted spend reaches this share of '
                          'the plan\u2019s weekly allowance (1%% ~ $5 API-equivalent). '
-                         'Counted across every run since the Thursday 11:00 reset, not '
+                         'Counted across every run since the Thursday 23:00 reset, not '
                          'just this one, so several nights add up to one ceiling.')
     ap.add_argument('--max', type=int, default=10_000)
     ap.add_argument('--streams', default=None,
@@ -225,7 +244,7 @@ def main():
     #
     # It counts the WHOLE WEEK, not this run, because reaching a total across several
     # nights is the thing being asked for; a per-run cap would be three separate 80%s.
-    # The week begins at the Thursday 11:00 reset (America/New_York) -- see
+    # The week begins at the Thursday 23:00 reset (America/New_York) -- see
     # weekly_sweep.sh for why that date is written down rather than assumed.
     week_before = spend_this_week()
     budget = (a.budget_pct * PCT_DOLLARS) if a.budget_pct else None
