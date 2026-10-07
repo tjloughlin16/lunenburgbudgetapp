@@ -732,6 +732,63 @@ GROUPS = [
              'FY2026 to 12 June 2026 — eighteen days short of year-end, so not a closed '
              'year. Its payroll total ties to the cent to the salary line in the fund’s own '
              'year-end reconciliation. The town’s filename is FY26 Account_Detail.xlsx.'),
+            ('town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx',
+             'School general fund at year-end, FY2026, account by account', 2,
+             'MUNIS year-to-date budget report at period 13 -- the closed year -- for the school '
+             'department\u2019s general fund: original appropriation, transfers, revised budget, '
+             'spent, encumbered and available on every account. Run on 6 October 2026 and sent '
+             'in answer to our 4 September records request. Published as the spreadsheet; the '
+             'printed copy is held back because every page carries a system login.'),
+            ('town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx',
+             'School special funds at year-end, FY2026, account by account', 2,
+             'The same period-13 report for the school department\u2019s special funds -- '
+             'revolving funds and grants, revenue and expense -- the money that pays for '
+             'school lines and never appears in the general fund budget. Same request, same '
+             'run date; spreadsheet published, printed copy held back.'),
+            ('town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx',
+             'School general fund at year-end, FY2025, account by account', 1,
+             'MUNIS year-to-date budget report at period 13 -- the closed year -- for the school '
+             'department\u2019s general fund: original appropriation, transfers, revised budget, '
+             'spent, encumbered and available on every account. Run on 6 October 2026 and sent '
+             'in answer to our 4 September records request. Published as the spreadsheet; the '
+             'printed copy is held back because every page carries a system login.'),
+            ('town-ledgers/expenses/glytdbud-expense-fy2025-p13-special-school.xlsx',
+             'School special funds at year-end, FY2025, account by account', 1,
+             'The same period-13 report for the school department\u2019s special funds -- '
+             'revolving funds and grants, revenue and expense -- the money that pays for '
+             'school lines and never appears in the general fund budget. Same request, same '
+             'run date; spreadsheet published, printed copy held back.'),
+            ('town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx',
+             'School general fund at year-end, FY2024, account by account', 1,
+             'MUNIS year-to-date budget report at period 13 -- the closed year -- for the school '
+             'department\u2019s general fund: original appropriation, transfers, revised budget, '
+             'spent, encumbered and available on every account. Run on 6 October 2026 and sent '
+             'in answer to our 4 September records request. Published as the spreadsheet; the '
+             'printed copy is held back because every page carries a system login.'),
+            ('town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx',
+             'School special funds at year-end, FY2024, account by account', 1,
+             'The same period-13 report for the school department\u2019s special funds -- '
+             'revolving funds and grants, revenue and expense -- the money that pays for '
+             'school lines and never appears in the general fund budget. Same request, same '
+             'run date; spreadsheet published, printed copy held back.'),
+            ('town-ledgers/expenses/glytdbud-expense-fy2023-p13-gf-school.xlsx',
+             'School general fund at year-end, FY2023, account by account', 1,
+             'MUNIS year-to-date budget report at period 13 -- the closed year -- for the school '
+             'department\u2019s general fund: original appropriation, transfers, revised budget, '
+             'spent, encumbered and available on every account. Run on 6 October 2026 and sent '
+             'in answer to our 4 September records request. Published as the spreadsheet; the '
+             'printed copy is held back because every page carries a system login.'),
+            ('town-ledgers/expenses/glytdbud-expense-fy2023-p13-special-school.xlsx',
+             'School special funds at year-end, FY2023, account by account', 1,
+             'The same period-13 report for the school department\u2019s special funds -- '
+             'revolving funds and grants, revenue and expense -- the money that pays for '
+             'school lines and never appears in the general fund budget. Same request, same '
+             'run date; spreadsheet published, printed copy held back.'),
+            ('town-ledgers/account-details/account-details-fy2026-trial-balance-fund1300.xlsx',
+             'Lost books and technology revolving fund, FY2026 trial balance', 1,
+             'MUNIS account trial balance for fund 1300, periods 1 to 13 of FY2026, with every '
+             'journal line: opening balance, debits, credits and closing balance by account. '
+             'Journal references name vendors only. Same records request.'),
             ('town-ledgers/account-details/athletics-by-sport-fy2024-fy2026.xlsx',
              'Athletics by sport, three school years', 3,
              'The district’s own operating workbook: one row per sport, with participation '
@@ -2412,6 +2469,13 @@ GROUPS = [
              'rather than known -- the date the request was filed, and whether the town '
              'sent a caveat with the figures, because we are one remove from the town '
              'and its response message is not in this archive.'),
+            ('town-ledgers/expenses/PROVENANCE-fy2023-fy2026-p13-school.md',
+             'Provenance for the school period-13 reports, FY2023 to FY2026', 3,
+             'Written by us. What the reports say about themselves -- program glytdbud, '
+             'period 13, all four years run on 6 October 2026 -- how they came: the Town\u2019s '
+             'answer to our 4 September records request, delivered as two zip files whose '
+             'sha256 are recorded. Why the spreadsheets are published and the printed copies '
+             'are not, and that FY2024 period 13 now exists in two runs two years apart.'),
             ('town-ledgers/revenue/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 revenue reports', 1,
              'A pointer: these arrived in the same package as the expenditure reports, and '
