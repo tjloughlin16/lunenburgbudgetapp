@@ -595,15 +595,15 @@ def vendor_help(funds):
     missing = [f for f in SPED_FUNDS if f not in funds]
     if missing:
         PROBLEMS.append(f'vendor_help: funds not on the request: {missing}')
-    listed = ', '.join(SPED_FUNDS)
     # JUST THE STEPS (TJ, 7 October 2026: "simplify ... to just be the steps? no context").
     # Each step keeps its checked citation.
     return [
         ('Export the Account Detail report to Excel. If the export screen lets you pick columns, '
          'untick VDR NAME/ITEM DESC there.',
          [c('L', 6, 'Check/ or uncheck anything you want to see or not see within this report')]),
-        (f'For funds {listed}: delete the VDR NAME/ITEM DESC column.', [h('ad', 'VDR NAME/ITEM DESC')]),
-        ('For the same funds: delete CHECK NO, VOUCHER and WARRANT.',
+        ('For any fund whose payees include private individuals: delete the VDR NAME/ITEM DESC column.',
+         [h('ad', 'VDR NAME/ITEM DESC')]),
+        ('For those funds: delete CHECK NO, VOUCHER and WARRANT.',
          [h('ad', 'CHECK NO'), h('ad', 'VOUCHER'), h('ad', 'WARRANT')]),
         ('Look through REFERENCE, REF1, REF3 and COMMENTS for any person\u2019s name, and clear those cells.',
          [h('ad', 'REFERENCE'), h('ad', 'REF1'), h('ad', 'REF3'), h('ad', 'COMMENTS')]),

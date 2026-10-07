@@ -1098,8 +1098,12 @@ STREAM_COLOUR = [('official', '#6cb6ff'), ('official-v1', '#2f5d8a'), ('reconcil
 # eye reads "this is not a coloured job" rather than "this is a fourth kind of job". Each
 # tuple is (stream key, background shade, hatch-line spacing, hatch-line width); the same
 # shade is reused for the legend swatch so the two match.
-MISSING_COLOUR = [('missing_minutes', '#2d333b', 5, 1.6), ('missing_video', '#343b44', 7, 1.8),
-                  ('missing_transcript', '#3a414b', 9, 2.0)]
+MISSING_COLOUR = [('missing_minutes', '#3a2a2c', 5, 1.6), ('missing_video', '#25362e', 7, 1.8),
+                  ('missing_transcript', '#38331f', 9, 2.0)]
+# ONE HUE PER KIND OF GAP (TJ, 7 October 2026: three greys could only be told apart by
+# hovering). Still hatched, so a gap never reads as a fifth kind of job; the hue says which
+# gap. Chosen clear of the job colours (blues, orange, purple).
+MISSING_LINE = {'missing_minutes': '#d07878', 'missing_video': '#6fbf95', 'missing_transcript': '#c8b46a'}
 MISSING_LABEL = {'missing_minutes': 'no town minutes', 'missing_video': 'no recording',
                  'missing_transcript': 'no transcript'}
 
@@ -1130,8 +1134,8 @@ def _jobs_svg(rows, key='x'):
     out.append('<defs>%s</defs>' % ''.join(
         '<pattern id="bk-hatch-%s-%s" width="%d" height="%d" patternTransform="rotate(45)" '
         'patternUnits="userSpaceOnUse"><rect width="%d" height="%d" fill="%s"/>'
-        '<line x1="0" y1="0" x2="0" y2="%d" stroke="#8b949e" stroke-width="%.1f"/></pattern>'
-        % (pid, name, spacing, spacing, spacing, spacing, bg, spacing, sw)
+        '<line x1="0" y1="0" x2="0" y2="%d" stroke="%s" stroke-width="%.1f"/></pattern>'
+        % (pid, name, spacing, spacing, spacing, spacing, bg, spacing, MISSING_LINE[name], sw)
         for name, bg, spacing, sw in MISSING_COLOUR))
     base = H - 26
     for i, r in enumerate(rows):
@@ -1242,7 +1246,7 @@ def backlog_chart(bd):
                % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, legend[n]) for n, c in STREAM_COLOUR))
     out.append('<div class="tiny bkl" data-for="jobs" style="margin-top:2px">Not available \u2014 not work '
                'we can do: %s</div>'
-               % ' \u00b7 '.join('<span style="color:%s">\u25a0</span> %s' % (bg, MISSING_LABEL[n])
+               % ' \u00b7 '.join('<span style="color:%s">\u25a0</span> %s' % (MISSING_LINE[n], MISSING_LABEL[n])
                                   for n, bg, _sp, _sw in MISSING_COLOUR))
     out.append('<div class="tiny bkl" data-for="pct" style="display:none"><span style="color:#d29922">\u25a0</span> '
                'still open &nbsp; <span style="color:#21262d">\u25a0</span> done. Of the board\u2019s meetings '
