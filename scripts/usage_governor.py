@@ -41,7 +41,8 @@ BAND = 2.0               # points either side of the line that count as "on it"
 RAMP_S = 300             # at most one added worker per five minutes
 SLOPE_S = 900            # the window the emergency slope is measured over
 EMERGENCY_X = 2.0        # filling at more than this multiple of the planned slope
-PER_MEETING_PCT = 0.5    # what one in-flight meeting adds to the five-hour bar, about
+PER_MEETING_PCT = 0.5    # what one in-flight meeting adds to the five-hour bar -- the
+                         # STARTING guess only; the run measures its own (Plan.per_meeting)
 MARGIN_MAX_S = 600       # stop aiming this long before the deadline...
 MARGIN_FRAC = 0.10       # ...or this fraction of a short horizon, whichever is smaller
 
@@ -79,6 +80,22 @@ class Plan:
     def __init__(self, session_cap=95.0, week_cap=90.0, by=None, max_jobs=3, ramp=RAMP_S):
         self.session_cap, self.week_cap, self.by, self.max_jobs = session_cap, week_cap, by, max_jobs
         self.ramp = ramp                         # seconds between added workers
+        # MEASURED, not assumed. A fixed 0.5 points a meeting stopped the 7 October retest at
+        # 60% of a 63% cap: six $0.016 meetings in flight were reserved as 3 points. The run
+        # calls measured() as meetings finish and the bar moves.
+        self.per_meeting = PER_MEETING_PCT
+        self.m0 = self.mu0 = None
+
+    def measured(self, done, u5):
+        """Points per finished meeting since the first call: the bar's rise over the
+        meetings done. Only once the bar has moved 2 points (it reports whole percents),
+        and bounded, so one odd reading cannot make the reserve 0 or 10."""
+        if self.m0 is None:
+            self.m0, self.mu0 = done, u5
+            return
+        dn, du = done - self.m0, u5 - self.mu0
+        if dn >= 10 and du >= 2:
+            self.per_meeting = min(1.0, max(0.02, du / dn))
         self.t0 = self.u0 = self.window = None   # the line's start, re-anchored each window
         self.jobs = 1
         self.last_change = 0.0
@@ -110,7 +127,7 @@ def decide(plan, hist, now, in_flight=0):
         plan.window, plan.t0, plan.u0 = reset, now, u5
 
     dl = plan.deadline(reset)
-    if u5 + in_flight * PER_MEETING_PCT >= plan.session_cap:
+    if u5 + in_flight * plan.per_meeting >= plan.session_cap:
         past_by = plan.by and (not reset or plan.by <= reset)
         return dict(jobs=0, start=False, stop=('session cap %g%% reached by the --by time' % plan.session_cap)
                     if past_by else None, wait_reset=not past_by, target=plan.session_cap,
@@ -202,6 +219,10 @@ def _test():
     p4 = Plan(session_cap=90)
     d = decide(p4, [R(now - 10, 89.6)], now, in_flight=2)
     case('at the cap counting in-flight: start nothing, wait for reset', not d['start'] and d['wait_reset'])
+    p4b = Plan(session_cap=63)
+    p4b.measured(0, 58); p4b.measured(79, 60)
+    d = decide(p4b, [R(now - 10, 60)], now, in_flight=6)
+    case('six cheap meetings in flight at 60%: MEASURED reserve, keep going', d['start'] and abs(p4b.per_meeting - 0.0253) < 0.001)
     p5 = Plan(session_cap=90, week_cap=80)
     d = decide(p5, [R(now - 10, 40, 80)], now)
     case('weekly cap reached: stop', bool(d['stop']) and 'weekly' in d['stop'])
@@ -221,7 +242,7 @@ def _test():
     new = dict(t=now + 4 * 3600, u5=2, u7=35, reset=reset + 5 * 3600)
     d = decide(p9, [new], now + 4 * 3600 + 5)
     case('a new window re-anchors the line at its own start', p9.u0 == 2 and d['start'])
-    print('%d of %d rules hold' % (11 - len(fails), 11))
+    print('%d of %d rules hold' % (12 - len(fails), 12))
     return 1 if fails else 0
 
 

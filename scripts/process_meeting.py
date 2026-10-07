@@ -491,11 +491,14 @@ def run_governed(plan, a, S, ceiling):
             now = time.time()
             if now - last_tick >= TICK:
                 last_tick = now
-                d = G.decide(gp, G.readings(), now, in_flight=len(active))
-                line = '5h %s (target %s) workers %d/%d  %s' % (
-                    ('%g%%' % G.readings()[-1]['u5']) if G.readings() else '?',
+                h = G.readings()
+                if h and now - h[-1]['t'] < G.STALE_S:
+                    gp.measured(T.done, h[-1]['u5'])
+                d = G.decide(gp, h, now, in_flight=len(active))
+                line = '5h %s (target %s) workers %d/%d  %s  [%.2f pt/meeting]' % (
+                    ('%g%%' % h[-1]['u5']) if h else '?',
                     ('%.0f%%' % d['target']) if d['target'] is not None else '-',
-                    len(active), d['jobs'], d['note'])
+                    len(active), d['jobs'], d['note'], gp.per_meeting)
                 if d['note'] != (last_line or ('', ''))[1] or d['jobs'] != (last_line or (0,))[0]:
                     say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), line))
                     last_line = (d['jobs'], d['note'])
