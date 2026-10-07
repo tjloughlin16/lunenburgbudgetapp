@@ -13,6 +13,7 @@ Inputs, both read rather than typed:
 
     python3 scripts/build_munis_request_xlsx.py
 """
+import datetime as dt
 import re
 import sys
 from pathlib import Path
@@ -42,6 +43,32 @@ HELD = {
     ("1301", "2", 2025): "HAVE — Jun 2026 request",
     ("1301", "2", 2026): "HAVE — Jun 2026 request",
 }
+
+# WHAT ARRIVED, READ FROM THE DATA RATHER THAN TYPED. The Town's 6 October 2026 answer is
+# extracted to sources/data/munis-school-ytd.csv; a fund-year counts as received for item 1
+# exactly when that file holds the fund for that year. Department 301 is never in it -- the
+# report was run for orgs beginning S, department 300 -- so its row stays NEED.
+DELIVERED_ON = "2026-10-06"
+YTD = ROOT / "sources/data/munis-school-ytd.csv"
+TB = ROOT / "sources/data/munis-trial-balance-journal.csv"
+PARTIAL = PatternFill("solid", fgColor="FFD9A8")
+
+
+def delivered():
+    """{(fund-or-dept-row key, fiscal year)} the 6 October delivery holds for item 1."""
+    import csv
+    got = set()
+    if not YTD.exists():
+        return got
+    for r in csv.DictReader(YTD.open(encoding="utf-8")):
+        fy = int(str(r["fiscal_year"])[-4:])
+        if r["report"] == "gf-school":
+            seg = r["account"].split("-")
+            got.add(("0100/" + (seg[2] if len(seg) > 2 else "?"), fy))
+        else:
+            got.add((r["fund"], fy))
+    return got
+
 
 YELLOW = PatternFill("solid", fgColor="FFF4C2")
 GREEN = PatternFill("solid", fgColor="CDEFD3")
@@ -158,6 +185,7 @@ def build():
         sec, bal, srow = sections[num]
         rows.append((num, funds[num], kind(num, funds[num]), sec, bal, f"row {srow}"))
 
+    got = delivered()
     r = 6
     for num, name, knd, sec, bal, srow in rows:
         gy = grant_year(name)
@@ -172,7 +200,12 @@ def build():
             for j, fy in enumerate(YEARS):
                 cell = ws.cell(row=r, column=nfix + 1 + k * len(YEARS) + j)
                 held = HELD.get((num, item, fy))
-                if held:
+                key = ("0100/" + ("301" if "301" in name else "300")) if num == "0100" else num
+                if item == "1" and (key, fy) in got:
+                    cell.value, cell.fill = "HAVE — 6 Oct 2026", GREEN
+                elif item == "2" and num == "1300" and fy == 2026 and TB.exists():
+                    cell.value, cell.fill = "PART — trial balance + journal, 6 Oct", PARTIAL
+                elif held:
                     cell.value, cell.fill = held, GREEN
                 elif gy and fy < gy:
                     cell.value, cell.fill = "n/a?", GREY
@@ -181,7 +214,11 @@ def build():
                 cell.alignment, cell.border = CENTRE, BOX
                 cell.number_format = "d mmm yyyy"
         if num == "0100" and "300" in name:
-            notes.append("FY26: we hold period 12 (sent 2 Sep 2026), not the period 13 close.")
+            notes.append("Period 13 for FY23–FY26 received 6 Oct 2026 (orgs beginning S).")
+        if num == "0100" and "301" in name:
+            notes.append("Not in the 6 Oct 2026 delivery: the report was run for department 300 only.")
+        if num == "1300":
+            notes.append("FY26 trial balance with every journal line received 6 Oct 2026 -- a trial balance, not the full Account Detail export.")
         if num == "1301":
             notes.append("Athletics. Account Detail FY24–26 already received; not needed again.")
         if num == "2903":
@@ -298,10 +335,20 @@ def build():
         note = ""
         if g == "2" and fy >= 2024:
             note = "Fund 1301 (athletics) already received for this year — everything else needed."
-        if g == "1a" and fy == 2026:
-            note = "We hold period 12 (2 Sep 2026); this asks for the period 13 close."
+        received, files = None, None
+        if g == "1a" and ("0100/300", fy) in got:
+            received = dt.date.fromisoformat(DELIVERED_ON)
+            files = f"glytdbud-expense-fy{fy}-p13-gf-school.xlsx"
+            note = "Department 300 only -- department 301 was not included."
+        if g == "1b" and all((f, fy) in got for f in funds):
+            received = dt.date.fromisoformat(DELIVERED_ON)
+            files = f"glytdbud-expense-fy{fy}-p13-special-school.xlsx"
+            note = f"All {len(funds)} funds."
+        if g == "2" and fy == 2026 and TB.exists():
+            note = ("Fund 1300 only, as a trial balance with journal lines (6 Oct 2026); "
+                    "everything else still needed. Fund 1301 received earlier.")
         vals = [f"{g}.{fy % 100}", name[g], how[g], f"FY{fy}",
-                f"1 Jul {fy - 1} – 30 Jun {fy}, {period}", scope[g], REQUESTED, None, None, None, note]
+                f"1 Jul {fy - 1} – 30 Jun {fy}, {period}", scope[g], REQUESTED, None, received, files, note]
         for c, v in enumerate(vals, 1):
             cell = wn.cell(row=rr, column=c, value=v)
             cell.border, cell.alignment = BOX, WRAP
@@ -321,7 +368,8 @@ def build():
         ("What this is", "The records request of 4 September 2026, laid out one fund per row so nothing is ambiguous."),
         ("Format", "The spreadsheet export, please — it carries the full account code. The printed copy alongside if that is no trouble."),
         ("NEED (yellow)", "Not yet received. Type the date it arrives over the word and the cell turns green."),
-        ("HAVE (green)", "Already received; no need to send again."),
+        ("HAVE (green)", "Already received; no need to send again. Cells reading 'HAVE — 6 Oct 2026' are filled from the delivered data itself (sources/data/munis-school-ytd.csv), not typed."),
+        ("PART (orange)", "Some of what was asked for arrived, not all of it -- the note says what is still needed."),
         ("n/a? (grey)", "Our guess, from the fund's name, that it had no activity that year. If it did, please include it."),
         ("Kind", "Our reading of the fund name. The Town's own section heading is in the next column, verbatim."),
         ("Balance", "As printed in the Town's FY26 special revenue report, period 9 (31 March 2026). Minus is the available balance, per the report's own note."),
