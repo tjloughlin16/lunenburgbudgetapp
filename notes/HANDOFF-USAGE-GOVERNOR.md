@@ -24,6 +24,38 @@ until 9 pm), which is retired once this is proven. `--next N` and `--max-usd` st
 bound it further. The caps default to 95 session / 90 weekly (TJ: "your decisions are fine").
 An emergency stop writes `build/STOP-METERED`, which ends the whole run.
 
+## The RATE -- derived from the caps and the clock, never typed
+
+TJ, 7 October 2026: *"how can we set the RATE that we reach those"* -- and *"what if i want
+to hit the session limit in the next 1 hour"*.
+
+    session rate = (session-cap - u5) / (time to the 5h reset - 10 min)     %/hour of the window
+    weekly rate  = (week-cap  - u7) / (time to the weekly reset)            %/hour of the week
+
+The run follows the SLOWER of the two, so neither cap is overshot, and re-derives both every
+minute from the live bars (closed loop: behind -> add a worker, ahead -> wait).
+
+**`--by TIME`** moves the deadline: `--by +1h`, `--by 16:30`, `--by "thu 23:00"`. It replaces
+the reset as the end of the target line, for whichever cap it is given with:
+
+    process_meeting.py --until-usage --session-cap 90 --by +1h     # fill the window in an hour
+
+**`--rate N`** holds the session bar at a fixed N %/hour instead (room kept for interactive
+work). **`--max-jobs`** (default 3) is the speed limit: one worker is ~16 %/h of a window, so
+3 is ~48 %/h at most, ramped one worker per 5 minutes.
+
+**It says up front when a target cannot be met**, rather than quietly missing it:
+
+    [gov] session 90% by 15:40 needs 60%/h; 3 workers reach ~48%/h -> ETA 16:05
+    [gov] at the session cap every window, the week reaches only ~70% by Thu 23:00
+
+The 5-hour window bounds how fast the WEEK can fill (one window at ~$32-37, ~7 windows in
+the last 35 hours of a week), so a weekly cap can be unreachable however the session is run.
+
+**The emergency stop is relative to the plan** -- more than 2x the PLANNED slope -- so a
+deliberately fast hour does not trip it and a runaway beyond it does. Stopping is
+anticipated by ~1 point per worker in flight, so a 90% cap lands just under 90.
+
 ## What exists today, and what this replaces
 
 | piece | today | after |
