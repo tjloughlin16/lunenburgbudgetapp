@@ -76,8 +76,9 @@ def readings(path=LOG):
 class Plan:
     """What the run is aiming at, and what it has decided so far."""
 
-    def __init__(self, session_cap=95.0, week_cap=90.0, by=None, max_jobs=3):
+    def __init__(self, session_cap=95.0, week_cap=90.0, by=None, max_jobs=3, ramp=RAMP_S):
         self.session_cap, self.week_cap, self.by, self.max_jobs = session_cap, week_cap, by, max_jobs
+        self.ramp = ramp                         # seconds between added workers
         self.t0 = self.u0 = self.window = None   # the line's start, re-anchored each window
         self.jobs = 1
         self.last_change = 0.0
@@ -144,7 +145,7 @@ def decide(plan, hist, now, in_flight=0):
         else:
             return dict(jobs=1, start=False, stop=None, wait_reset=False, target=target,
                         note='ahead by %.0f -- pausing' % gap)
-    elif gap < -BAND and plan.jobs < plan.max_jobs and now - plan.last_change >= RAMP_S:
+    elif gap < -BAND and plan.jobs < plan.max_jobs and now - plan.last_change >= plan.ramp:
         plan.jobs += 1
         plan.last_change = now
         note = 'behind by %.0f -- one more worker' % -gap

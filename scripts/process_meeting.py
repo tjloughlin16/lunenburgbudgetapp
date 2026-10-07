@@ -292,6 +292,7 @@ def main():
     ap.add_argument('--session-cap', type=float, default=95.0, help='governor: stop starting meetings at this %% of the 5-hour window')
     ap.add_argument('--week-cap', type=float, default=90.0, help='governor: stop at this %% of the week')
     ap.add_argument('--by', help='governor: reach the session cap by +1h, +30m, 16:30 or "thu 23:00" (default: the reset)')
+    ap.add_argument('--ramp', type=float, default=300, help='governor: seconds between adding workers (the brake on a fast fill)')
     ap.add_argument('--max-jobs', type=int, default=3, help='governor: most workers at once (one is ~16%%/h of a window)')
     a = ap.parse_args()
 
@@ -461,7 +462,7 @@ def run_governed(plan, a, S, ceiling):
     import backlog_pace as BP
     import usage_governor as G
     by = parse_by(a.by)
-    gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs)
+    gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs, ramp=a.ramp)
     say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), G.describe(gp, G.readings(), time.time())))
     T, stop = Tally(), None
     pool = cf.ThreadPoolExecutor(max_workers=a.max_jobs)
