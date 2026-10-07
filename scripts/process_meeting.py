@@ -158,7 +158,18 @@ def snapshot():
     return dict(official=official, ours=ours, reconcile=recon, has_official=has_official, held=held)
 
 
+STEPS = threading.Lock()
+
+
 def steps(board, date, snap=None):
+    """Thread-safe wrapper: read_order keeps a module-level cache that `reset()` empties, and
+    two governed workers calling this at once had one wipe it while the other read it --
+    `KeyError: 'ours'`, 2 times in 8 on a threaded test, 7 October 2026. One at a time."""
+    with STEPS:
+        return _steps(board, date, snap)
+
+
+def _steps(board, date, snap=None):
     """The steps this meeting still needs, in order. Without `snap`, read fresh from disk --
     which is how the run re-checks a meeting after working it.
 
@@ -464,7 +475,9 @@ def run_governed(plan, a, S, ceiling):
                 try:
                     outcome, cost, why = f.result()
                 except Exception as e:                       # noqa: BLE001 -- a worker crash is a stop
-                    outcome, cost, why = 'stopped', 0.0, 'worker crashed on %s %s: %s' % (date, board, e)
+                    import traceback
+                    say(traceback.format_exc())
+                    outcome, cost, why = 'stopped', 0.0, 'worker crashed on %s %s: %r' % (date, board, e)
                 stop = stop or why or T.add(outcome, cost)
             if stop:
                 break
