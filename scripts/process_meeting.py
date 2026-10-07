@@ -46,7 +46,15 @@ perfect pace."* One serial run of this script, measured that day from
 Against a five-hour window ESTIMATED at ~$37 (one confounded reading; not yet measured on an
 idle account) that is ~16% of the window an hour -- ~80% over five hours, leaving room for
 interactive work. Two runs at once would be ~32% an hour and fill a window in about three.
-So: ONE run, and the lock above enforces it. Quote a batch with `--dry-run` (it prints % of
+So: ONE run, and the lock above enforces it.
+
+THE ONE EXCEPTION: `--oldest --gap SECONDS`, a SLOW second run from the other end of the
+queue, to use what one run leaves of a window (TJ, 7 October 2026: *"15% remaining in the
+session is quite a lot"*). It takes its OWN lock, so there is still never more than one run
+per end; it works oldest-first, so it cannot reach a meeting the newest-first run is on --
+the two ends are thousands of meetings apart; and it sleeps `--gap` seconds between
+meetings, so it adds a measured trickle rather than doubling the rate. Give it a `--max-usd`
+equal to the headroom in dollars. Quote a batch with `--dry-run` (it prints % of
 the week); the window share is hours x 16%. The derivation, and the `/usage` reading that
 would confirm the $37, is `notes/findings/METERED-BATCH-COST.md` section 6.
 """
@@ -60,6 +68,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
@@ -250,6 +259,8 @@ def main():
     ap.add_argument('--next', type=int, help='process the N newest meetings that need anything')
     ap.add_argument('--max-usd', type=float, help='stop once this much is spent (default: twice the estimate, at least $1)')
     ap.add_argument('--dry-run', action='store_true', help='show the plan and its estimate; call nothing')
+    ap.add_argument('--oldest', action='store_true', help='work from the OLDEST end, under its own lock (see the docstring)')
+    ap.add_argument('--gap', type=float, default=0, help='seconds to wait between meetings: a slow second run')
     ap.add_argument('--status', action='store_true')
     a = ap.parse_args()
 
@@ -278,15 +289,15 @@ def main():
             print('%s %s: nothing to do' % (a.board, a.date))
             return 0
     elif a.next:
-        plan = queue()[:a.next]
+        plan = (queue()[::-1] if a.oldest else queue())[:a.next]
     else:
         ap.error('name a board and date, or --next N')
 
     est = estimate(plan)
     # TWICE THE ESTIMATE, never less than a dollar: room for a long meeting, not for a spin.
     ceiling = a.max_usd if a.max_usd is not None else max(1.0, round(2 * est, 2))
-    print('%d meeting(s), newest first; estimated $%.2f (~%.1f%% of the week); ceiling $%.2f'
-          % (len(plan), est, est / S.PCT_DOLLARS, ceiling), flush=True)
+    print('%d meeting(s), %s first; estimated $%.2f (~%.1f%% of the week); ceiling $%.2f'
+          % (len(plan), 'OLDEST' if a.oldest else 'newest', est, est / S.PCT_DOLLARS, ceiling), flush=True)
     for board, date, st in plan:
         print('  %s %-40s %s' % (date, board, ' -> '.join(st)), flush=True)
     if a.dry_run:
@@ -295,11 +306,12 @@ def main():
     if S.kill_switch():
         sys.exit('not starting -- %s' % S.kill_switch())
     os.makedirs(os.path.dirname(LOCK), exist_ok=True)
-    lock = open(LOCK, 'w')
+    lock_path = LOCK.replace('.lock', '-oldest.lock') if a.oldest else LOCK
+    lock = open(lock_path, 'w')
     try:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except BlockingIOError:
-        sys.exit('not starting -- another process_meeting.py run holds %s' % os.path.relpath(LOCK, ROOT))
+        sys.exit('not starting -- another process_meeting.py run holds %s' % os.path.relpath(lock_path, ROOT))
     lock.write(str(os.getpid()))
     lock.flush()
 
@@ -308,6 +320,11 @@ def main():
         if spent >= ceiling:
             stop = 'the ceiling: $%.2f spent of $%.2f' % (spent, ceiling)
             break
+        if a.gap and i > 1:
+            time.sleep(a.gap)
+            if S.kill_switch():
+                stop = S.kill_switch()
+                break
         todo = steps(board, date)              # fresh: an earlier meeting's step may have done this one's
         print('\n[%d/%d] %s %s: %s' % (i, len(plan), date, board, ' -> '.join(todo) or 'nothing left'), flush=True)
         failed = False
