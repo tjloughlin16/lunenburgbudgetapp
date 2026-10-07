@@ -44,6 +44,29 @@ ten children, ten documents and ten budget lines must not look alike.
 `reconcile` can only ever exist where a RECORDING exists, so it is empty before 2025 by
 construction rather than by neglect -- the channel does not go back further. Reading its
 zero for 2019 as a gap would be reading our instrument again.
+
+MISSING RECORDS ARE NOT BACKLOG -- a fourth thing on the same chart, never summed into it.
+TJ, 7 October 2026: *"update the backlog dash to have a different category on the FY bars
+for MISSING information... if we clear all work, i want to still visualize on this chart
+the ones that are missing and not yet available."* A job is work our pipeline can still do;
+a missing record is the town never having published the minutes, never having recorded the
+meeting, or the recording having no transcript -- there is no command to run that produces
+one. Conflating the two would make a fully-worked year that the town simply never recorded
+look identical to a year nobody has touched, so they are counted, coloured and labelled
+separately everywhere this payload is read. Read straight from `meeting-register.csv`
+(rows with `part_of` set skipped -- that meeting's record lives under another board's row):
+
+  missing_minutes      minutes != '1'                        the town published none
+  missing_video        the board records, this date is on/   no recording exists for a
+                        after its first dated recording,      board that otherwise has one
+                        and video != '1'
+  missing_transcript   video == '1' and transcript != '1'     captions disabled, or not
+                                                               yet fetched (`captions_disabled`
+                                                               carried as a sub-count)
+
+Verified against the file before trusting them (rule 13c): `minutes`, `video`, `transcript`
+and `captions_disabled` are each only ever `'0'` or `'1'` across all 7,057 rows, checked
+6 October 2026.
 """
 import argparse
 import collections
@@ -60,6 +83,10 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 OUT = os.path.join(ROOT, 'notes', 'generated', 'BACKLOG-DEPTH.md')
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'backlog-depth.json')
 STREAMS = ('official', 'official-v1', 'reconcile', 'minutes')
+MISSING_STREAMS = ('missing_minutes', 'missing_video', 'missing_transcript')
+MISSING_LABEL = {'missing_minutes': 'no town minutes', 'missing_video': 'no recording',
+                 'missing_transcript': 'no transcript'}
+REGISTER = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
 # THE TWO OFFICIAL STREAMS ARE ONE READ IN TWO STATES (TJ, 6 October 2026): `official` is a
 # set of the town's minutes never read; `official-v1` was read for votes only and waits to
 # be re-read STRUCTURED (schema 2). Same command, same price, so they share a unit cost --
@@ -155,6 +182,70 @@ def by_board_fy(jobs):
     return out
 
 
+def missing_records():
+    """Every (board, date) meeting still missing a record the town or our own pipeline is
+    expected to produce -- not work, an absence. Read straight off `meeting-register.csv`,
+    never off `jobs()`: a job is something a command can still do, and there is no command
+    that produces a transcript the town never recorded."""
+    rows = [r for r in csv.DictReader(open(REGISTER, encoding='utf-8')) if not r.get('part_of')]
+    first_video = {}
+    for r in rows:
+        d = r.get('date', '')
+        if r.get('video') == '1' and len(d) >= 7:
+            b = r['board_slug']
+            if b not in first_video or d < first_video[b]:
+                first_video[b] = d
+    out = []
+    for r in rows:
+        d = r.get('date', '')
+        if len(d) < 7:
+            continue
+        b = r['board_slug']
+        mm = r.get('minutes') != '1'
+        mv = b in first_video and d >= first_video[b] and r.get('video') != '1'
+        mt = r.get('video') == '1' and r.get('transcript') != '1'
+        if mm or mv or mt:
+            out.append(dict(board=b, date=d, missing_minutes=mm, missing_video=mv,
+                             missing_transcript=mt,
+                             captions_disabled=mt and r.get('captions_disabled') == '1'))
+    return out
+
+
+def missing_by_fy(missing):
+    """`missing_records()` rolled up by fiscal year, for 'all' and each FILTER_BOARD --
+    the same key shape `by_board_fy` uses, so the two merge row for row."""
+    out = {}
+    for key, keep in [('all', None)] + [(slug, slug) for slug, _ in FILTER_BOARDS]:
+        rows = collections.defaultdict(collections.Counter)
+        for m in missing:
+            if keep is None or m['board'] == keep:
+                fy = 'FY%d' % fiscal_year(m['date'][:7])
+                for s in MISSING_STREAMS:
+                    if m[s]:
+                        rows[fy][s] += 1
+                if m['captions_disabled']:
+                    rows[fy]['captions_disabled'] += 1
+        out[key] = rows
+    return out
+
+
+def _with_missing(rows, counts_by_fy, zero):
+    """`rows` (a list of per-fiscal-year dicts, each already holding `fy`) with the three
+    missing-record columns merged in. A fiscal year present only in `counts_by_fy` -- every
+    job cleared, something still missing -- gets a new row rather than being dropped,
+    which is the whole point TJ asked for: the bar must still show."""
+    idx = {r['fy']: dict(r) for r in rows}
+    for fy in counts_by_fy:
+        if fy not in idx:
+            idx[fy] = dict(fy=fy, **zero)
+    for fy, base in idx.items():
+        c = counts_by_fy.get(fy, collections.Counter())
+        for s in MISSING_STREAMS:
+            base[s] = c.get(s, 0)
+        base['captions_disabled'] = c.get('captions_disabled', 0)
+    return [idx[fy] for fy in sorted(idx)]
+
+
 def fiscal_year(ym):
     """Massachusetts FY: July starts the next one. FY2023 is Jul 2022 - Jun 2023."""
     y, m = int(ym[:4]), int(ym[5:7])
@@ -168,6 +259,22 @@ def payload(jobs, by_year, by_month, by_board, costs):
         for s, n in c.items():
             by_fy['FY%d' % fiscal_year(ym)][s] += n
     est = {s: (costs.get(s) or 0) * tot[s] for s in STREAMS}
+    missing = missing_records()
+    missing_fy = missing_by_fy(missing)
+    missing_tot = collections.Counter()
+    for m in missing:
+        for s in MISSING_STREAMS:
+            if m[s]:
+                missing_tot[s] += 1
+        if m['captions_disabled']:
+            missing_tot['captions_disabled'] += 1
+    fy_zero = dict(**{s: 0 for s in STREAMS}, total=0)
+    board_fy_zero = dict(**{s: 0 for s in STREAMS}, total=0, meetings=0, meetings_open=0, pct_open=0.0)
+    byfy_all = _with_missing(
+        [dict(fy=f, **{s: by_fy[f][s] for s in STREAMS}, total=sum(by_fy[f].values())) for f in sorted(by_fy)],
+        missing_fy['all'], fy_zero)
+    byfy_board = by_board_fy(jobs)
+    byfy_board = {k: _with_missing(rows, missing_fy.get(k, {}), board_fy_zero) for k, rows in byfy_board.items()}
     return {
         'id': 'backlog-depth',
         'title': 'How deep the backlog is',
@@ -181,28 +288,38 @@ def payload(jobs, by_year, by_month, by_board, costs):
                      'unit_cost': round(costs[s], 3) if costs.get(s) else None,
                      'estimated_usd': round(est[s], 2) if costs.get(s) else None}
                     for s in STREAMS],
+        # MISSING RECORDS ARE NOT JOBS. Counted and totalled here the same way the job
+        # streams are, but never folded into `total_jobs`, `estimated_usd` or `pct_open` --
+        # there is no command that fixes an absence, so it is not backlog.
+        'missing_streams': [{'name': s, 'label': MISSING_LABEL[s], 'meetings': missing_tot[s]}
+                            for s in MISSING_STREAMS],
+        'missing_meetings': len(missing),
+        'missing_captions_disabled': missing_tot['captions_disabled'],
         'total_jobs': len(jobs),
         'estimated_usd': round(sum(est.values()), 2),
         'estimated_weeks': round(sum(est.values()) / 500.0, 2),
         'by_year': [dict(year=y, **{s: by_year[y][s] for s in STREAMS},
                          total=sum(by_year[y].values()))
                     for y in sorted(by_year)],
-        'by_fiscal_year': [dict(fy=f, **{s: by_fy[f][s] for s in STREAMS},
-                                total=sum(by_fy[f].values()))
-                           for f in sorted(by_fy)],
+        'by_fiscal_year': byfy_all,
         'by_month': [dict(month=m, **{s: by_month[m][s] for s in STREAMS},
                           total=sum(by_month[m].values()))
                      for m in sorted(by_month)],
         'by_board': [dict(board=b, **{s: by_board[b][s] for s in STREAMS},
                           total=sum(by_board[b].values()))
                      for b in sorted(by_board, key=lambda k: -sum(by_board[k].values()))],
-        'by_board_fiscal_year': by_board_fy(jobs),
+        'by_board_fiscal_year': byfy_board,
         'filter_boards': [dict(slug=s_, name=n_) for s_, n_ in FILTER_BOARDS],
         'not_established': [
             'When any of this will be done. The sweep runs in whatever allowance is left '
             'before the weekly reset, which varies.',
             'That a zero is an absence. `reconcile` cannot exist before the recordings do, '
             'so its zero before 2025 is the channel’s start date and not a gap.',
+            'Whether a missing recording is a technical failure or a board that stopped '
+            'recording for good. `missing_video` only asks whether the date is on or after '
+            'the board’s own first dated recording, never whether the board still records '
+            'today, so a board that recorded once years ago and never again shows every '
+            'later meeting as missing rather than as a policy change.',
         ],
     }
 
@@ -217,6 +334,20 @@ def table(w, head, key, rows, hi, width=40):
     for r in rows:
         w('| %s | %s | **%d** |%s' % (r[key], ' | '.join('%d' % r[s] for s in STREAMS), r['total'],
                                        ' `%s` |' % bar(r['total'], hi, width) if hi else ''))
+
+
+def missing_table(w, rows):
+    """Fiscal years with at least one missing record -- a separate table from the job
+    counts above it, never a shared total, because a missing record is not backlog."""
+    show = [r for r in rows if any(r.get(s) for s in MISSING_STREAMS)]
+    if not show:
+        w('Nothing missing.')
+        return
+    w('| fiscal year | %s | missing total |' % ' | '.join(MISSING_LABEL[s] for s in MISSING_STREAMS))
+    w('|---|%s---:|' % ('---:|' * len(MISSING_STREAMS)))
+    for r in show:
+        tot = sum(r.get(s, 0) for s in MISSING_STREAMS)
+        w('| %s | %s | **%d** |' % (r['fy'], ' | '.join('%d' % r.get(s, 0) for s in MISSING_STREAMS), tot))
 
 
 def render(pay):
@@ -260,6 +391,13 @@ def render(pay):
           % (f"{sum(x['jobs'] for x in unpriced):,}",
              ' and '.join('`%s`' % x['name'] for x in unpriced)))
     w('')
+    w('**%s meeting(s) are missing a record outright and are not counted above: %s.** Not '
+      'backlog -- there is no command that produces a transcript the town never recorded.'
+      % (f"{pay['missing_meetings']:,}",
+         ', '.join('%s %s' % (f"{m['meetings']:,}", m['label']) for m in pay['missing_streams']))
+      + (' Of the missing transcripts, %s have captions disabled rather than unfetched.'
+         % f"{pay['missing_captions_disabled']:,}" if pay['missing_captions_disabled'] else ''))
+    w('')
     w('## By calendar year of the meeting')
     w('')
     hi = max((r['total'] for r in pay['by_year']), default=1)
@@ -269,6 +407,13 @@ def render(pay):
     w('')
     hi = max((r['total'] for r in pay['by_fiscal_year']), default=1)
     table(w, 'fiscal year', 'fy', pay['by_fiscal_year'], hi)
+    w('')
+    w('### Missing records, by fiscal year -- not backlog')
+    w('')
+    w('The town never published minutes, never recorded the meeting, or the recording has '
+      'no transcript. A fiscal year can appear here with every job above cleared.')
+    w('')
+    missing_table(w, pay['by_fiscal_year'])
     w('')
     for slug, name in FILTER_BOARDS:
         rows = pay['by_board_fiscal_year'].get(slug, [])
@@ -283,6 +428,10 @@ def render(pay):
         for r in rows:
             w('| %s | %d | %d | %.0f%% | %s |' % (r['fy'], r['meetings'], r['meetings_open'], r['pct_open'],
                                                 ' | '.join('%d' % r[s] for s in STREAMS)))
+        w('')
+        w('**Missing records (not backlog):**')
+        w('')
+        missing_table(w, rows)
         w('')
     w('## The last two years, month by month')
     w('')

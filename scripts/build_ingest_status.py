@@ -1091,6 +1091,18 @@ def backlog_depth():
 STREAM_COLOUR = [('official', '#6cb6ff'), ('official-v1', '#2f5d8a'), ('reconcile', '#d29922'),
                  ('minutes', '#a371f7')]
 
+# MISSING RECORDS ARE NOT WORK, so they are never a STREAM colour. TJ, 7 October 2026:
+# *"if we clear all work, i want to still visualize on this chart the ones that are missing
+# and not yet available."* Drawn as their own hatched, neutral-grey segments stacked ABOVE
+# the job stack on the same bar -- three hatch densities on one grey, not three hues, so the
+# eye reads "this is not a coloured job" rather than "this is a fourth kind of job". Each
+# tuple is (stream key, background shade, hatch-line spacing, hatch-line width); the same
+# shade is reused for the legend swatch so the two match.
+MISSING_COLOUR = [('missing_minutes', '#2d333b', 5, 1.6), ('missing_video', '#343b44', 7, 1.8),
+                  ('missing_transcript', '#3a414b', 9, 2.0)]
+MISSING_LABEL = {'missing_minutes': 'no town minutes', 'missing_video': 'no recording',
+                 'missing_transcript': 'no transcript'}
+
 
 # THE CHART FILTERS TO A BOARD, AND SWITCHES MEASURE. TJ, 6 October 2026: *"the select
 # board/school/finance was supposed to be a filter/toggle on the main bar chart so i could
@@ -1102,15 +1114,25 @@ STREAM_COLOUR = [('official', '#6cb6ff'), ('official-v1', '#2f5d8a'), ('reconcil
 #   % open  of the MEETINGS with a record to process in that year, the share still open:
 #           one unit over the same unit, so it can be a percentage (jobs cannot -- a meeting
 #           waiting in two streams is two jobs). Read off build_backlog_depth's payload.
-def _jobs_svg(rows):
-    rows = [r for r in rows if r.get('total')]
+def _jobs_svg(rows, key='x'):
+    # NEITHER "no jobs" NOR "nothing open" MAY HIDE A YEAR WITH SOMETHING MISSING. A fiscal
+    # year can have every job cleared and still owe a bar, because a missing record is not
+    # work and clearing the backlog does not make the town's record complete.
+    rows = [r for r in rows if r.get('total') or any(r.get(s) for s, _, _, _ in MISSING_COLOUR)]
     if not rows:
-        return '<div class="tiny" style="margin:12px 0">Nothing open.</div>'
-    hi = max(r['total'] for r in rows)
+        return '<div class="tiny" style="margin:12px 0">Nothing open, and nothing missing.</div>'
+    hi = max(r['total'] + sum(r.get(s, 0) for s, _, _, _ in MISSING_COLOUR) for r in rows)
     W, H, PAD, GAP = 1000, 210, 26, 4
     bw = max(6.0, (W - PAD * 2) / max(len(rows), 1) - GAP)
+    pid = re.sub(r'[^a-z0-9]+', '-', key.lower()).strip('-') or 'x'
     out = ['<svg viewBox="0 0 %d %d" width="100%%" height="%d" style="display:block;margin:8px 0 2px">'
            % (W, H, H)]
+    out.append('<defs>%s</defs>' % ''.join(
+        '<pattern id="bk-hatch-%s-%s" width="%d" height="%d" patternTransform="rotate(45)" '
+        'patternUnits="userSpaceOnUse"><rect width="%d" height="%d" fill="%s"/>'
+        '<line x1="0" y1="0" x2="0" y2="%d" stroke="#8b949e" stroke-width="%.1f"/></pattern>'
+        % (pid, name, spacing, spacing, spacing, spacing, bg, spacing, sw)
+        for name, bg, spacing, sw in MISSING_COLOUR))
     base = H - 26
     for i, r in enumerate(rows):
         x = PAD + i * (bw + GAP)
@@ -1123,10 +1145,35 @@ def _jobs_svg(rows):
             y -= bh
             out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="%s">'
                        '<title>%s %s: %s</title></rect>' % (x, y, bw, bh, col, r['fy'], name, format(n, ',')))
+        job_top = y
+        for name, _bg, _sp, _sw in MISSING_COLOUR:
+            n = r.get(name, 0)
+            if not n:
+                continue
+            bh = (base - 14) * n / hi
+            y -= bh
+            out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="url(#bk-hatch-%s-%s)">'
+                       '<title>%s %s: %s meeting(s) \u2014 not work, the record is simply '
+                       'incomplete</title></rect>'
+                       % (x, y, bw, bh, pid, name, r['fy'], MISSING_LABEL[name], format(n, ',')))
         out.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="10" text-anchor="middle">%s</text>'
                    % (x + bw / 2, base + 12, '\u2019' + r['fy'][-2:]))
-        out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" text-anchor="middle">%s</text>'
-                   % (x + bw / 2, y - 3, format(r['total'], ',')))
+        # THE BAR'S TOTAL LABEL IS THE JOB TOTAL, NEVER THE COMBINED HEIGHT -- a reader must
+        # not read the two numbers as one. The missing total gets its own, smaller "+N"
+        # label above the hatch (the word "missing" is in the legend and the hover title,
+        # not repeated per bar -- it does not fit a narrow fiscal-year column without
+        # colliding with its neighbour, which it did at first draft). A minimum 10px gap is
+        # forced between the two labels even where a segment is a sliver a pixel tall, so a
+        # tiny job total and a tiny missing total never print on top of each other.
+        job_label_y = job_top - 3
+        if r['total']:
+            out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" text-anchor="middle">%s</text>'
+                       % (x + bw / 2, job_label_y, format(r['total'], ',')))
+        miss_tot = sum(r.get(s, 0) for s, _, _, _ in MISSING_COLOUR)
+        if miss_tot:
+            miss_label_y = min(y - 3, job_label_y - 10) if r['total'] else y - 3
+            out.append('<text x="%.1f" y="%.1f" fill="#8b949e" font-size="8" text-anchor="middle">+%s</text>'
+                       % (x + bw / 2, miss_label_y, format(miss_tot, ',')))
     out.append('</svg>')
     return ''.join(out)
 
@@ -1183,7 +1230,7 @@ def backlog_chart(bd):
         held = sum(r.get('meetings', 0) for r in rows)
         summary = ('%s: %s of %s meetings with a record to process still have something open'
                    % (html.escape(name), format(open_m, ','), format(held, ','))) if held else ''
-        for m, draw in (('jobs', _jobs_svg), ('pct', _pct_svg)):
+        for m, draw in (('jobs', lambda rs, kk=k: _jobs_svg(rs, key=kk)), ('pct', _pct_svg)):
             out.append('<div class="bkp" data-board="%s" data-measure="%s" style="display:%s">'
                        '<div class="tiny" style="margin-top:6px">%s</div>%s</div>'
                        % (k, m, 'block' if (k, m) == ('all', 'jobs') else 'none', summary, draw(rows)))
@@ -1193,6 +1240,10 @@ def backlog_chart(bd):
               'minutes': 'recordings, to write OUR minutes from'}
     out.append('<div class="tiny bkl" data-for="jobs">%s</div>'
                % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, legend[n]) for n, c in STREAM_COLOUR))
+    out.append('<div class="tiny bkl" data-for="jobs" style="margin-top:2px">Not available \u2014 not work '
+               'we can do: %s</div>'
+               % ' \u00b7 '.join('<span style="color:%s">\u25a0</span> %s' % (bg, MISSING_LABEL[n])
+                                  for n, bg, _sp, _sw in MISSING_COLOUR))
     out.append('<div class="tiny bkl" data-for="pct" style="display:none"><span style="color:#d29922">\u25a0</span> '
                'still open &nbsp; <span style="color:#21262d">\u25a0</span> done. Of the board\u2019s meetings '
                'in that fiscal year that have a record to process \u2014 the town\u2019s minutes with readable '
