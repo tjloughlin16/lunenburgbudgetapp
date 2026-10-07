@@ -68,6 +68,7 @@ import os
 import re
 import subprocess
 import sys
+import threading
 import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -222,13 +223,27 @@ def cost_in(text):
     return float(m.group(1)) if m else 0.0
 
 
-def run_step(step, board, date):
-    """(ok, cost, output) -- the step's output streamed to the terminal as it arrives."""
+PRINT = threading.Lock()     # several workers share one log; a line is never torn
+LEDGER = threading.Lock()    # ...and one spend ledger
+
+
+def say(msg):
+    with PRINT:
+        print(msg, flush=True)
+
+
+def run_step(step, board, date, quiet=False):
+    """(ok, cost, output). Serial: the step's output streamed as it arrives. Parallel
+    (`quiet`): only its `wrote` / failure lines, each tagged with the meeting, so several
+    workers' output stays readable in one log."""
     cmd = COMMAND[step](board, date)
     p = subprocess.Popen(cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     seen = []
     for line in p.stdout:
-        print('      ' + line, end='', flush=True)
+        if not quiet:
+            say('      ' + line.rstrip('\n'))
+        elif re.search(r'wrote|FAIL|Error|limit', line, flags=re.I):
+            say('      [%s %s] %s' % (date, board, line.strip()))
         seen.append(line)
     out = ''.join(seen)
     return p.wait() == 0, cost_in(out), out
@@ -262,6 +277,11 @@ def main():
     ap.add_argument('--oldest', action='store_true', help='work from the OLDEST end, under its own lock (see the docstring)')
     ap.add_argument('--gap', type=float, default=0, help='seconds to wait between meetings: a slow second run')
     ap.add_argument('--status', action='store_true')
+    ap.add_argument('--until-usage', action='store_true', help='run the backlog until a usage cap, paced by the live bars (the governor)')
+    ap.add_argument('--session-cap', type=float, default=95.0, help='governor: stop starting meetings at this %% of the 5-hour window')
+    ap.add_argument('--week-cap', type=float, default=90.0, help='governor: stop at this %% of the week')
+    ap.add_argument('--by', help='governor: reach the session cap by +1h, +30m, 16:30 or "thu 23:00" (default: the reset)')
+    ap.add_argument('--max-jobs', type=int, default=3, help='governor: most workers at once (one is ~16%%/h of a window)')
     a = ap.parse_args()
 
     if a.status:
@@ -288,18 +308,30 @@ def main():
         if not plan[0][2]:
             print('%s %s: nothing to do' % (a.board, a.date))
             return 0
-    elif a.next:
-        plan = (queue()[::-1] if a.oldest else queue())[:a.next]
+    elif a.next or a.until_usage:
+        q = queue()[::-1] if a.oldest else queue()
+        plan = q[:a.next] if a.next else q
     else:
         ap.error('name a board and date, or --next N')
 
     est = estimate(plan)
     # TWICE THE ESTIMATE, never less than a dollar: room for a long meeting, not for a spin.
     ceiling = a.max_usd if a.max_usd is not None else max(1.0, round(2 * est, 2))
+    if a.until_usage and a.max_usd is None:
+        # THE GOVERNOR'S BACKSTOP: the dollars the weekly headroom is worth, plus a fifth. The
+        # caps stop it first; this is what stops it if the bars are wrong.
+        import usage_governor as G
+        h = G.readings()
+        week_left = max(0.0, a.week_cap - (h[-1]['u7'] if h else 0.0))
+        ceiling = min(ceiling, max(1.0, round(week_left * S.PCT_DOLLARS * 1.2, 2)))
     print('%d meeting(s), %s first; estimated $%.2f (~%.1f%% of the week); ceiling $%.2f'
           % (len(plan), 'OLDEST' if a.oldest else 'newest', est, est / S.PCT_DOLLARS, ceiling), flush=True)
-    for board, date, st in plan:
+    for board, date, st in (plan[:15] if a.until_usage else plan):
         print('  %s %-40s %s' % (date, board, ' -> '.join(st)), flush=True)
+    if a.until_usage:
+        import usage_governor as G
+        print('  ... (%d in all)\n[gov] %s' % (len(plan), G.describe(
+            G.Plan(a.session_cap, a.week_cap, parse_by(a.by), a.max_jobs), G.readings(), time.time())), flush=True)
     if a.dry_run:
         return 0
 
@@ -315,63 +347,209 @@ def main():
     lock.write(str(os.getpid()))
     lock.flush()
 
-    spent, done, failed_row, stuck_row, stop = 0.0, 0, 0, 0, None
+    if a.until_usage:
+        return run_governed(plan, a, S, ceiling)
+    return run_serial(plan, a, S, ceiling)
+
+
+def work_meeting(board, date, S, label, quiet=False):
+    """ONE MEETING, every step it still needs, with every per-step guard. Shared by the
+    serial run and the governed one, so the two cannot drift apart.
+    -> (outcome, cost, stop): outcome is 'done' | 'failed' | 'stuck' | 'stopped'."""
+    todo = steps(board, date)              # fresh: an earlier meeting's step may have done this one's
+    say('\n[%s] %s %s: %s' % (label, date, board, ' -> '.join(todo) or 'nothing left'))
+    cost_total = 0.0
+    for step in todo:
+        if S.kill_switch():
+            return 'stopped', cost_total, S.kill_switch()
+        if step != 'ours' and step not in steps(board, date):
+            continue                        # already done -- by an earlier step or meeting
+        ok, cost, out = run_step(step, board, date, quiet)
+        cost_total += cost
+        with LEDGER:
+            S.log(dict(at=dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                       stream=stream_for(step, board, date) if ok else step, board=board, date=date,
+                       cost_usd='%.4f' % cost if cost else '', result='ok' if ok else 'failed'))
+        low = out.lower()
+        hit = next((w for w in S.HARD_LIMIT_WORDS if w in low), None)
+        if hit:
+            return 'stopped', cost_total, 'a limit (%r) in %s. It said: %s' % (
+                hit, step, out.strip()[-300:].replace('\n', ' '))
+        if not ok:
+            say('    [%s %s] %s FAILED; the rest of this meeting waits for the next run' % (date, board, step))
+            return 'failed', cost_total, None
+    left = steps(board, date)
+    if left and left == todo:
+        say('    [%s %s] NO PROGRESS: every step reported success and the meeting still needs %s'
+            % (date, board, ' -> '.join(left)))
+        return 'stuck', cost_total, None
+    return 'done', cost_total, None
+
+
+class Tally:
+    """Spend and the in-a-row counters, shared by however many workers there are."""
+
+    def __init__(self):
+        self.lock = threading.Lock()
+        self.spent, self.done, self.failed_row, self.stuck_row = 0.0, 0, 0, 0
+
+    def add(self, outcome, cost):
+        """-> a stop reason, or None."""
+        with self.lock:
+            self.spent += cost
+            if outcome == 'failed':
+                self.failed_row += 1
+                if self.failed_row >= MAX_FAILED_IN_A_ROW:
+                    return '%d meetings in a row failed' % self.failed_row
+                return None
+            self.failed_row = 0
+            if outcome == 'stuck':
+                self.stuck_row += 1
+                if self.stuck_row >= MAX_STUCK_IN_A_ROW:
+                    return 'no progress on %d meetings in a row -- steps say ok, the files say otherwise' % self.stuck_row
+                return None
+            if outcome == 'done':
+                self.stuck_row = 0
+                self.done += 1
+            return None
+
+
+def finish(T, plan_n, stop, S):
+    say('\n%s' % ('STOPPED: ' + stop if stop else 'done'))
+    say('%d of %d meeting(s) completed; $%.2f (~%.2f%% of the week)'
+        % (T.done, plan_n, T.spent, T.spent / S.PCT_DOLLARS))
+    return 1 if stop else 0
+
+
+def run_serial(plan, a, S, ceiling):
+    T, stop = Tally(), None
     for i, (board, date, _) in enumerate(plan, 1):
-        if spent >= ceiling:
-            stop = 'the ceiling: $%.2f spent of $%.2f' % (spent, ceiling)
+        if T.spent >= ceiling:
+            stop = 'the ceiling: $%.2f spent of $%.2f' % (T.spent, ceiling)
             break
         if a.gap and i > 1:
             time.sleep(a.gap)
             if S.kill_switch():
                 stop = S.kill_switch()
                 break
-        todo = steps(board, date)              # fresh: an earlier meeting's step may have done this one's
-        print('\n[%d/%d] %s %s: %s' % (i, len(plan), date, board, ' -> '.join(todo) or 'nothing left'), flush=True)
-        failed = False
-        for step in todo:
+        outcome, cost, why = work_meeting(board, date, S, '%d/%d' % (i, len(plan)))
+        stop = why or T.add(outcome, cost)
+        if stop:
+            break
+    return finish(T, len(plan), stop, S)
+
+
+def run_governed(plan, a, S, ceiling):
+    """THE GOVERNOR (notes/HANDOFF-USAGE-GOVERNOR.md): 1 to --max-jobs workers on ONE queue,
+    how many decided every TICK seconds by usage_governor.decide() from the live usage bars,
+    and the output guard (backlog_pace.guard) checked before every new meeting. A meeting is
+    handed out once, by this loop alone, so no two workers can ever pay for the same one.
+    On any stop, nothing new starts and the meetings in flight finish -- a step killed half
+    way is paid for and produces nothing."""
+    import concurrent.futures as cf
+    import backlog_pace as BP
+    import usage_governor as G
+    by = parse_by(a.by)
+    gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs)
+    say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), G.describe(gp, G.readings(), time.time())))
+    T, stop = Tally(), None
+    pool = cf.ThreadPoolExecutor(max_workers=a.max_jobs)
+    active = {}
+    nxt, n = 0, len(plan)
+    d, last_tick, last_line, last_guard = None, 0.0, None, 0.0
+    try:
+        while True:
+            for f in [f for f in active if f.done()]:
+                board, date = active.pop(f)
+                try:
+                    outcome, cost, why = f.result()
+                except Exception as e:                       # noqa: BLE001 -- a worker crash is a stop
+                    outcome, cost, why = 'stopped', 0.0, 'worker crashed on %s %s: %s' % (date, board, e)
+                stop = stop or why or T.add(outcome, cost)
+            if stop:
+                break
             if S.kill_switch():
                 stop = S.kill_switch()
                 break
-            if step != 'ours' and step not in steps(board, date):
-                continue                        # already done -- by an earlier step or meeting
-            ok, cost, out = run_step(step, board, date)
-            spent += cost
-            S.log(dict(at=dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                       stream=stream_for(step, board, date) if ok else step, board=board, date=date,
-                       cost_usd='%.4f' % cost if cost else '', result='ok' if ok else 'failed'))
-            low = out.lower()
-            hit = next((w for w in S.HARD_LIMIT_WORDS if w in low), None)
-            if hit:
-                stop = 'a limit (%r) in %s. It said: %s' % (hit, step, out.strip()[-300:].replace('\n', ' '))
+            if T.spent >= ceiling:
+                stop = 'the ceiling: $%.2f spent of $%.2f' % (T.spent, ceiling)
                 break
-            if not ok:
-                failed = True
-                print('    %s FAILED; the rest of this meeting waits for the next run' % step, flush=True)
+            now = time.time()
+            if now - last_tick >= TICK:
+                last_tick = now
+                d = G.decide(gp, G.readings(), now, in_flight=len(active))
+                line = '5h %s (target %s) workers %d/%d  %s' % (
+                    ('%g%%' % G.readings()[-1]['u5']) if G.readings() else '?',
+                    ('%.0f%%' % d['target']) if d['target'] is not None else '-',
+                    len(active), d['jobs'], d['note'])
+                if d['note'] != (last_line or ('', ''))[1] or d['jobs'] != (last_line or (0,))[0]:
+                    say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), line))
+                    last_line = (d['jobs'], d['note'])
+                if d['stop']:
+                    stop = d['stop']
+                    break
+            if now - last_guard >= GUARD_EVERY:
+                last_guard = now
+                problems = BP.guard()[0]
+                if problems:
+                    stop = 'the output guard: ' + '; '.join(problems)
+                    break
+            if d and d['wait_reset'] and not active:
+                say('[gov %s] session cap reached -- waiting for the window to reset' % dt.datetime.now().strftime('%H:%M'))
+                while not S.kill_switch():
+                    time.sleep(30)
+                    h = G.readings()
+                    if h and h[-1]['reset'] != gp.window and time.time() - h[-1]['t'] < G.STALE_S:
+                        break
+                last_tick = 0
+                continue
+            if nxt >= n and not active:
                 break
-        if stop:
-            break
-        left = steps(board, date)
-        if failed:
-            failed_row += 1
-            if failed_row >= MAX_FAILED_IN_A_ROW:
-                stop = '%d meetings in a row failed' % failed_row
-                break
-            continue
-        failed_row = 0
-        if left and left == todo:
-            stuck_row += 1
-            print('    NO PROGRESS: every step reported success and the meeting still needs %s'
-                  % ' -> '.join(left), flush=True)
-            if stuck_row >= MAX_STUCK_IN_A_ROW:
-                stop = 'no progress on %d meetings in a row -- steps say ok, the files say otherwise' % stuck_row
-                break
-            continue
-        stuck_row = 0
-        done += 1
-    print('\n%s' % ('STOPPED: ' + stop if stop else 'done'), flush=True)
-    print('%d of %d meeting(s) completed; $%.2f (~%.2f%% of the week)'
-          % (done, len(plan), spent, spent / S.PCT_DOLLARS), flush=True)
-    return 1 if stop else 0
+            if d and d['start'] and nxt < n and len(active) < d['jobs']:
+                board, date, _ = plan[nxt]
+                nxt += 1
+                fut = pool.submit(work_meeting, board, date, S, '%d/%d' % (nxt, n), a.max_jobs > 1)
+                active[fut] = (board, date)
+                last_tick = 0 if len(active) < d['jobs'] else last_tick   # fill up promptly
+                continue
+            time.sleep(2)
+    finally:
+        if active:
+            say('[gov %s] %d meeting(s) in flight -- letting them finish' % (dt.datetime.now().strftime('%H:%M'), len(active)))
+        for f in list(active):
+            try:
+                outcome, cost, why = f.result()
+            except Exception:                                  # noqa: BLE001
+                outcome, cost, why = 'stopped', 0.0, None
+            T.add(outcome, cost)
+        pool.shutdown(wait=True)
+    return finish(T, n, stop, S)
+
+
+TICK = 30            # seconds between governor decisions (the bars refresh every 60)
+GUARD_EVERY = 60     # seconds between output-guard audits
+
+
+def parse_by(v):
+    """'+1h' / '+30m' / '16:30' / 'thu 23:00' -> epoch, or None."""
+    if not v:
+        return None
+    v = v.strip().lower()
+    now = dt.datetime.now()
+    m = re.fullmatch(r'\+(\d+(?:\.\d+)?)\s*([hm])', v)
+    if m:
+        n = float(m.group(1))
+        return (now + dt.timedelta(hours=n) if m.group(2) == 'h' else now + dt.timedelta(minutes=n)).timestamp()
+    days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+    m = re.fullmatch(r'(?:(mon|tue|wed|thu|fri|sat|sun)\s+)?(\d{1,2}):(\d{2})', v)
+    if not m:
+        raise SystemExit('--by: give +1h, +30m, 16:30 or "thu 23:00"; got %r' % v)
+    t = now.replace(hour=int(m.group(2)), minute=int(m.group(3)), second=0, microsecond=0)
+    if m.group(1):
+        t += dt.timedelta(days=(days.index(m.group(1)) - now.weekday()) % 7)
+    if t <= now:
+        t += dt.timedelta(days=7 if m.group(1) else 1)
+    return t.timestamp()
 
 
 if __name__ == '__main__':

@@ -120,21 +120,15 @@ def audit(since_utc, now=None):
     return matched, bad, unpaid
 
 
-def check():
-    now = dt.datetime.now(dt.timezone.utc)
-    rows = [r for r in csv.DictReader(open(SPEND, encoding='utf-8'))
-            if r.get('at', '') >= (now - dt.timedelta(hours=1)).strftime('%Y-%m-%dT%H:%M')]
-    usd = sum(float(r['cost_usd'] or 0) for r in rows)
-    produced = 0   # set from the audit below
-    last = max((dt.datetime.fromisoformat(r['at'].replace('Z', '+00:00')) for r in rows), default=None)
-    ago = (now - last).total_seconds() / 60 if last else None
-    chain = subprocess.run(['pgrep', '-f', '[r]un_backlog_until'], capture_output=True).returncode == 0
-    run = subprocess.run(['pgrep', '-f', '[p]rocess_meeting.py --next'], capture_output=True).returncode == 0
-    log = os.path.join(ROOT, 'build', 'process-meeting-%s.log' % dt.date.today().isoformat())
-    tail = open(log, encoding='utf-8', errors='replace').read()[-4000:] if os.path.exists(log) else ''
-    waiting = 'waiting for the window to reset' in tail.rsplit('chunk of', 1)[-1]
-    problems = []
+def guard(now=None):
+    """The OUTPUT checks alone -- spend matched to files, cost per file, REPEATING -- over
+    the last hour. [] when healthy. process_meeting.py --until-usage calls this before it
+    starts each meeting, so a run whose spend stops producing minutes stops itself."""
+    now = now or dt.datetime.now(dt.timezone.utc)
     hour_ago = (now - dt.timedelta(hours=1)).strftime('%Y-%m-%dT%H:%M')
+    rows = [r for r in csv.DictReader(open(SPEND, encoding='utf-8')) if r.get('at', '') >= hour_ago]
+    usd = sum(float(r['cost_usd'] or 0) for r in rows)
+    problems = []
     matched, unmatched, unpaid = audit(hour_ago, now)
     if unmatched:
         problems.append('%d paid call(s) with no output: %s' % (len(unmatched), unmatched[0]))
@@ -147,13 +141,6 @@ def check():
     if usd >= 1 and per > 0.50:
         problems.append('$%.2f spent for %d output file(s) in the last hour -- $%s each, expected ~$0.14'
                         % (usd, matched, 'inf' if not matched else '%.2f' % per))
-    if 'STOPPED' in tail.rsplit('chunk of', 1)[-1]:
-        problems.append('a run STOPPED')
-    if not chain and not run:
-        problems.append('nothing running')
-    elif not waiting:
-        if ago is None or ago > STALE_MIN:
-            problems.append('STUCK: running, but no costed call for %s min' % ('60+' if ago is None else int(ago)))
     # REPEATING: the same step paid for the same meeting twice inside the hour. Every step
     # is skipped once done, so a second paid call means the save did not take and the run
     # is going round -- the shape of the 6 October runaway, which spun on refused calls.
@@ -165,11 +152,32 @@ def check():
     if again:
         problems.append('REPEATING: %d meeting step(s) paid for twice this hour, e.g. %s %s %s'
                         % ((len(again),) + again[0]))
-        if usd > HI:
-            problems.append('spend $%.2f/h is above $%g -- too fast' % (usd, HI))
+    return problems, matched, len(unmatched)
+
+
+def check():
+    now = dt.datetime.now(dt.timezone.utc)
+    rows = [r for r in csv.DictReader(open(SPEND, encoding='utf-8'))
+            if r.get('at', '') >= (now - dt.timedelta(hours=1)).strftime('%Y-%m-%dT%H:%M')]
+    usd = sum(float(r['cost_usd'] or 0) for r in rows)
+    last = max((dt.datetime.fromisoformat(r['at'].replace('Z', '+00:00')) for r in rows), default=None)
+    ago = (now - last).total_seconds() / 60 if last else None
+    chain = subprocess.run(['pgrep', '-f', '[r]un_backlog_until'], capture_output=True).returncode == 0
+    run = subprocess.run(['pgrep', '-f', '[p]rocess_meeting.py --(next|until-usage)'], capture_output=True).returncode == 0
+    log = os.path.join(ROOT, 'build', 'process-meeting-%s.log' % dt.date.today().isoformat())
+    tail = open(log, encoding='utf-8', errors='replace').read()[-4000:] if os.path.exists(log) else ''
+    waiting = 'waiting for the window to reset' in tail.rsplit('chunk of', 1)[-1]
+    problems, matched, n_unmatched = guard(now)
+    if 'STOPPED' in tail.rsplit('chunk of', 1)[-1]:
+        problems.append('a run STOPPED')
+    if not chain and not run:
+        problems.append('nothing running')
+    elif not waiting:
+        if ago is None or ago > STALE_MIN:
+            problems.append('STUCK: running, but no costed call for %s min' % ('60+' if ago is None else int(ago)))
     line = '%s  %s  $%.2f/h  %d mtg/h  %d/%d paid calls matched to output  last %s ago  chain %s%s' % (
         dt.datetime.now().strftime('%H:%M'), 'PROBLEM: ' + '; '.join(problems) if problems else 'ok',
-        usd, len(rows), matched, matched + len(unmatched), '%dm' % ago if ago is not None else 'none', 'up' if chain else 'down',
+        usd, len(rows), matched, matched + n_unmatched, '%dm' % ago if ago is not None else 'none', 'up' if chain else 'down',
         '  (waiting for reset)' if waiting else '')
     return line, problems
 
