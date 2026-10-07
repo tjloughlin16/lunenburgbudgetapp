@@ -1443,6 +1443,9 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_show_your_work.py       # regenerate the method document
     python3 scripts/build_show_your_work.py --check   # fail if it is stale (audit_provenance runs this)
     python3 scripts/extract_munis_report.py --check   # every MUNIS glytdbud report, tied to its own GRAND TOTAL
+    python3 scripts/extract_munis_school_ytd.py --check  # the school dept's MUNIS YTD reports (FY23-FY26 P13) and
+                                                 #   the fund 1300 trial balance, from the PUBLISHED xlsx only --
+                                                 #   never the private PDFs; tied to every total the sheet prints
     python3 scripts/check_function_crosswalk.py  # the Town's function coding against the district's book
     python3 scripts/build_db.py --check          # rebuild the analysis database; fail if a reconciliation drifts
     python3 scripts/export_ledger.py             # regenerate the ledger page's data from the database
@@ -1774,7 +1777,14 @@ consistently use. Neither was hard to get once anybody looked.
   0.4 music teacher and a full-timer are one row each; **no funding source**, which is the
   question that actually matters; and it is a point in time, undated within the year. A
   count of names the town printed is a real quantity and it is not a staffing level.
-- The FY26 **year-end** figures. Everything we hold for FY26 stops at 31 March.
+- ~~The FY26 **year-end** figures.~~ **HELD FOR THE SCHOOLS, at the close; not yet for the
+  town.** The school department's General Fund and special funds at **period 13** -- the
+  closed year, FY2023 to FY2026 -- arrived 6 October 2026 in the Town's answer to the
+  4 September records request (`town-ledgers/expenses/*-p13-*-school.xlsx`, extracted to
+  `sources/data/munis-school-ytd.csv`). The town General Fund is held only to **period 12**
+  (June, before the close; `PROVENANCE-fy2026-p12.md`), so its closing adjustments are not.
+  This line said everything stopped at 31 March for a month after period 12 arrived --
+  a standing question is prose, and rule 2 applies to it too.
 - **How grants and state funding map onto the budget lines.** The budget shows the general
   fund and nothing else, so a line rising because a grant ended looks exactly like a line
   rising because the district grew. This one is load-bearing: the in-district special

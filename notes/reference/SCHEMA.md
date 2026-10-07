@@ -4,6 +4,7 @@
 query, because two of the tables look joinable and are not.
 
     python3 scripts/extract_munis_report.py --check   # MUNIS reports -> munis-ledger.csv
+    python3 scripts/extract_munis_school_ytd.py --check  # school YTD + trial balance (public xlsx only) -> 3 CSVs
     python3 scripts/build_db.py --check               # CSVs -> lunenburg.db, or fail
 
 ---
@@ -78,6 +79,59 @@ to state FY25's surplus as $603,885.97.
 **`transfers` is cumulative, not incremental.** Movement between two periods is the
 difference of the column, never the later value. `v_transfer_history` does that
 subtraction; do not re-do it by hand.
+
+### `munis_school_ytd`, `munis_trial_balance_account`, `munis_trial_balance_journal`
+
+A SEPARATE delivery from `munis-ledger.csv` / `ledger_snapshot` above, and these three
+tables do not join to it. They are the school department's MUNIS `glytdbud` YTD budget
+reports at period 13 (year-end close), FY2023-FY2026, plus a fund 1300 (Lost Books / Tech
+Revenue) trial balance for FY2026 -- the Town's answer to the 4 September 2026 records
+request. Extracted by `scripts/extract_munis_school_ytd.py` from the 9 PUBLISHED
+spreadsheets only, under `sources/town-ledgers/expenses/` and
+`sources/town-ledgers/account-details/`
+(`sources/town-ledgers/expenses/PROVENANCE-fy2023-fy2026-p13-school.md`). **The PDFs of
+these same reports are PRIVATE** (CLAUDE.md 13e) and never reach this database; a
+separate, gitignored script cross-checks the published spreadsheets against those PDFs
+without writing anything here.
+
+| table | one row per | grain |
+|---|---|---|
+| `munis_school_ytd` | account × report (`gf-school` / `special-school`) × fiscal year | account-level, period 13 only |
+| `munis_trial_balance_account` | account (GL or budget/object) | fund 1300, FY2026, periods 1-13 |
+| `munis_trial_balance_journal` | journal line | fund 1300, FY2026 |
+
+**Trap 1: the expended column changes its printed header between reports, and both
+headers land in one column.** `munis_school_ytd.ytd_expended` is printed `YTD EXPENDED`
+on the general-fund (`gf-school`) reports and `  YTD ACTUAL` on the special-funds
+(`special-school`) reports — the same field, because MUNIS prints `YTD ACTUAL` wherever
+a report can show revenue rows (`type='R'`) and `YTD EXPENDED` where every row is
+type-E. The raw header text is not carried into this table.
+
+**Trap 2: `net_change`/`running_balance` mean two different things at two grains of the
+trial balance, and treating them alike is exactly the derived-quoted-as-observed mistake
+rule 13 warns about.** On `munis_trial_balance_account`, `net_change` is that account's
+Debits minus Credits for the WHOLE PERIOD — a total, equal to `ending - beginning`. On
+`munis_trial_balance_journal`, the sheet's equivalent column is a RUNNING BALANCE
+(beginning balance plus every debit, minus every credit, posted so far for that
+account), stored here as `running_balance` so nobody sums it expecting a total — it is
+not that line's own debit minus credit, and summing it answers nothing the report
+states.
+
+**And one journal line per account restates the account's own opening balance.** Source
+code `SOY` ("OPENING BALANCE") is a journal line whose debit minus credit equals that
+account's `beginning` exactly — the account row's own `debits`/`credits` already
+EXCLUDE it. `is_soy_opening_balance` flags it rather than dropping it; exclude it when
+summing journal lines to an account's own Debits/Credits, the way
+`extract_munis_school_ytd.py`'s own tie check does.
+
+Every row in these three tables ties, at extraction time, to a total the source
+spreadsheet prints itself (every org's accounts to its `Total` row, every fund to its
+total, the file to its Grand Total; the trial balance's `beginning + debits - credits =
+ending` per account, journal lines excluding SOY to each account's own Debits/Credits,
+and accounts to the sheet's own totals) — `extract_munis_school_ytd.py --check` refuses
+to write if any of that fails. `build_db.py`'s loader additionally asserts that every
+`munis_trial_balance_journal` row's `key` resolves in `munis_trial_balance_account`
+(CLAUDE.md: a join that matches nothing looks exactly like absent data).
 
 ---
 

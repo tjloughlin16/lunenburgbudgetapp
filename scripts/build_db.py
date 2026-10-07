@@ -166,6 +166,96 @@ CREATE TABLE ledger_snapshot (
     PRIMARY KEY (account_id, fy, period, doc_id)
 );
 
+-- The school department's MUNIS `glytdbud` YTD budget reports, period 13 (year-end
+-- close), FY2023-FY2026 -- the Town's answer to the 4 September 2026 records request
+-- (scripts/extract_munis_school_ytd.py, from the PUBLIC spreadsheets only; the PDFs of
+-- these same reports are private per CLAUDE.md 13e and never reach this table).
+-- One row per account per report. `report` is 'gf-school' (fund 0100 only) or
+-- 'special-school' (every other fund the school touches, which also carries revenue
+-- rows, type='R').
+--
+-- TRAP: `ytd_expended` is printed under TWO different headers depending on the report --
+-- 'YTD EXPENDED' on the general-fund reports, '  YTD ACTUAL' on the special-funds ones --
+-- same field, mapped to one column name here. The raw header text is not kept in this
+-- table (see the extractor's own tie output if it matters).
+--
+-- This table does NOT join to `ledger_snapshot`: it is a separate extraction of a
+-- separate delivery, keyed on `source` rather than `account_id`, and nothing here has
+-- been reconciled against the general ledger's own rows.
+CREATE TABLE munis_school_ytd (
+    source                  TEXT NOT NULL REFERENCES document(doc_id),
+    fiscal_year             INTEGER NOT NULL,
+    period                  INTEGER NOT NULL,
+    report                  TEXT NOT NULL,       -- 'gf-school' | 'special-school'
+    fund                    TEXT NOT NULL,
+    org                     TEXT NOT NULL,
+    obj                     TEXT,
+    project                 TEXT,
+    account                 TEXT,
+    description             TEXT,
+    type                    TEXT,                -- 'E' expense | 'R' revenue
+    rollup                  TEXT,
+    sub_rollup              TEXT,
+    original_approp         REAL,
+    transfers_adjustments   REAL,
+    revised_budget          REAL,
+    ytd_expended            REAL,
+    encumbrances            REAL,
+    available_budget        REAL,
+    pct_used                REAL
+);
+
+-- Fund 1300 (Lost Books / Tech Revenue) Account Trial Balance, FY2026 periods 1-13 --
+-- the same records-request delivery's fifth document. One row per GL account (e.g.
+-- CASH) or budget/object account the fund touched.
+--
+-- TRAP: `net_change` here is that account's Debits minus Credits for the WHOLE PERIOD
+-- (a total, and it equals ending - beginning) -- see `munis_trial_balance_journal` for
+-- the OTHER meaning the same column name carries at journal grain. Confirmed by
+-- replaying the arithmetic, not assumed; see scripts/extract_munis_school_ytd.py.
+CREATE TABLE munis_trial_balance_account (
+    source              TEXT NOT NULL REFERENCES document(doc_id),
+    fiscal_year         INTEGER NOT NULL,
+    period              INTEGER NOT NULL,
+    fund                TEXT NOT NULL,
+    key                 TEXT NOT NULL,       -- as the sheet prints it, e.g. '1300 104000'
+    org                 TEXT,
+    account             TEXT,
+    description         TEXT,
+    beginning           REAL,
+    debits              REAL,
+    credits             REAL,
+    net_change          REAL,
+    ending              REAL,
+    PRIMARY KEY (source, key)
+);
+
+-- Every journal line behind those account balances.
+--
+-- TRAP 1: `running_balance` is a RUNNING TOTAL (beginning balance plus every debit,
+-- minus every credit, posted so far for that account) -- NOT that line's own debit
+-- minus credit, and not a figure to sum.
+-- TRAP 2: one line per account carries `src='SOY'` ("OPENING BALANCE") and restates
+-- that account's own Beginning Bal as a transaction. `is_soy_opening_balance` flags it
+-- rather than dropping it, and it must be EXCLUDED when summing debits/credits to an
+-- account's own totals -- the account row's Debits/Credits already exclude it.
+CREATE TABLE munis_trial_balance_journal (
+    source                  TEXT NOT NULL REFERENCES document(doc_id),
+    fiscal_year             INTEGER NOT NULL,
+    key                     TEXT NOT NULL REFERENCES munis_trial_balance_account(key),
+    org                     TEXT,
+    account                 TEXT,
+    period                  INTEGER,         -- the MUNIS period (1-13) the line posted in
+    journal                 TEXT,
+    src                     TEXT,
+    is_soy_opening_balance  INTEGER NOT NULL DEFAULT 0,
+    eff_date                TEXT,
+    reference               TEXT,
+    debits                  REAL,
+    credits                 REAL,
+    running_balance         REAL
+);
+
 -- One row per budget line per year per STAGE. From line-history.csv, which is already
 -- tidy: 19,453 readings normalised to distinct lines across 24 documents.
 CREATE TABLE budget_figure (
@@ -1526,6 +1616,64 @@ def load_munis(db):
     db.executemany('INSERT OR REPLACE INTO ledger_snapshot VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
                    facts)
     return len(accounts)
+
+
+def load_munis_school_ytd(db):
+    """The school department's MUNIS `glytdbud` YTD budget reports at period 13 and the
+    fund 1300 trial balance, from scripts/extract_munis_school_ytd.py -- a SEPARATE
+    delivery from munis-ledger.csv, loaded into its own three tables (see the SCHEMA
+    comments above `munis_school_ytd` for the two traps: the two headers that both mean
+    `ytd_expended`, and the two meanings of a 'Net Change'/'running_balance' column at
+    two different grains of the trial balance).
+    """
+    ytd = []
+    for r in rows('munis-school-ytd'):
+        ytd.append((r['source'], int(r['fiscal_year']), int(r['period']), r['report'],
+                    r['fund'], r['org'], r['obj'] or None, r['project'] or None,
+                    r['account'] or None, r['description'] or None, r['type'] or None,
+                    r['rollup'] or None, r['sub_rollup'] or None,
+                    num(r['original_approp']), num(r['transfers_adjustments']),
+                    num(r['revised_budget']), num(r['ytd_expended']),
+                    num(r['encumbrances']), num(r['available_budget']), num(r['pct_used'])))
+    db.executemany(
+        'INSERT INTO munis_school_ytd VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', ytd)
+
+    tb_accounts = []
+    for r in rows('munis-trial-balance'):
+        tb_accounts.append((r['source'], int(r['fiscal_year']), int(r['period']), r['fund'],
+                             r['key'], r['org'] or None, r['account'] or None,
+                             r['description'] or None, num(r['beginning']), num(r['debits']),
+                             num(r['credits']), num(r['net_change']), num(r['ending'])))
+    db.executemany('INSERT INTO munis_trial_balance_account VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                   tb_accounts)
+    # The key the sheet itself prints -- 'source' is dropped from the join key because
+    # this delivery holds exactly one trial-balance source; a second year would need the
+    # pair, which `munis_trial_balance_account`'s own PRIMARY KEY already carries.
+    acct_keys = {a[4] for a in tb_accounts}
+
+    tb_journal = []
+    for r in rows('munis-trial-balance-journal'):
+        tb_journal.append((r['source'], int(r['fiscal_year']), r['key'], r['org'] or None,
+                            r['account'] or None,
+                            int(r['period']) if (r['period'] or '').strip() else None,
+                            r['journal'] or None, r['src'] or None,
+                            1 if r['is_soy_opening_balance'] in ('1', 'True', 'true') else 0,
+                            r['eff_date'] or None, r['reference'] or None,
+                            num(r['debits']), num(r['credits']), num(r['running_balance'])))
+    db.executemany(
+        'INSERT INTO munis_trial_balance_journal VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+        tb_journal)
+
+    # CLAUDE.md, "the shape almost every defect here has taken": a join that matches
+    # nothing looks exactly like absent data. Every journal line must belong to an
+    # account this same load actually holds -- not asserted anywhere else.
+    orphans = sorted({j[2] for j in tb_journal if j[2] not in acct_keys})
+    if orphans:
+        raise ValueError(
+            '%d distinct trial-balance journal key(s) do not join to '
+            'munis_trial_balance_account: %r' % (len(orphans), orphans[:10]))
+
+    return len(ytd), len(tb_accounts), len(tb_journal)
 
 
 def load_funds(db):
@@ -2982,6 +3130,9 @@ def main():
         'SELECT COUNT(*) FROM fund').fetchone()[0])
     print('  ledger snapshots %5d' % db.execute(
         'SELECT COUNT(*) FROM ledger_snapshot').fetchone()[0])
+    n_ytd, n_tba, n_tbj = load_munis_school_ytd(db)
+    print('  school MUNIS YTD %5d  (trial balance: %d accounts, %d journal lines)'
+          % (n_ytd, n_tba, n_tbj))
     print('  budget figures   %5d' % load_budget_figures(db))
     print('  workbook figures %5d' % load_workbook(db))
     print('  budget lines     %5d' % db.execute(
@@ -3027,7 +3178,10 @@ def main():
            UNION SELECT DISTINCT doc_id FROM dese_ch70_contribution
            UNION SELECT DISTINCT doc_id FROM dese_circuit_breaker
            UNION SELECT DISTINCT doc_id FROM stated_figure
-           UNION SELECT DISTINCT doc_id FROM fund_activity""")]
+           UNION SELECT DISTINCT doc_id FROM fund_activity
+           UNION SELECT DISTINCT source AS doc_id FROM munis_school_ytd
+           UNION SELECT DISTINCT source AS doc_id FROM munis_trial_balance_account
+           UNION SELECT DISTINCT source AS doc_id FROM munis_trial_balance_journal""")]
     n_docs, hashed = finish_documents(db, docs, cited)
     print('  documents        %5d  (%d hashed from disk)' % (n_docs, hashed))
     db.executescript(VIEWS)
