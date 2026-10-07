@@ -39,6 +39,7 @@ import hashlib
 import json
 import datetime as dt
 import os
+import re
 import subprocess
 import sys
 import time
@@ -182,9 +183,13 @@ def check():
     run = subprocess.run(['pgrep', '-f', '[p]rocess_meeting.py --(next|until-usage)'], capture_output=True).returncode == 0
     log = os.path.join(ROOT, 'build', 'process-meeting-%s.log' % dt.date.today().isoformat())
     tail = open(log, encoding='utf-8', errors='replace').read()[-4000:] if os.path.exists(log) else ''
-    waiting = 'waiting for the window to reset' in tail.rsplit('chunk of', 1)[-1]
+    # ONLY THE CURRENT RUN'S LINES: after the last chunk the chainer started, or the last
+    # governed run's opening `[gov] ` line -- an earlier run's STOPPED is history.
+    marks = [m.end() for m in re.finditer(r'chunk of|\n\[gov\] ', tail)]
+    current = tail[marks[-1]:] if marks else tail
+    waiting = 'waiting for the window to reset' in current
     problems, matched, n_unmatched = guard(now)
-    if 'STOPPED' in tail.rsplit('chunk of', 1)[-1]:
+    if 'STOPPED' in current:
         problems.append('a run STOPPED')
     if not chain and not run:
         problems.append('nothing running')
