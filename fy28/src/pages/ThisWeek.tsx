@@ -21,7 +21,7 @@ const NEW = 'whats-new.json'
  *  Rule 7a: the thing first. The next seven days, then what was just posted, then our
  *  minutes of the recordings, then the caveats. */
 
-type Upcoming = { agenda_url: string; board: string; board_slug: string; date: string; days_away: number; file_id: string; body_as_printed?: string | null }
+type Upcoming = { agenda_url: string; board: string; board_slug: string; date: string; days_away: number; file_id: string; body_as_printed?: string | null; via?: string; via_note?: string }
 type Announced = { board: string; board_slug: string; first_seen: string; kind: string; meeting_date: string; url: string; days_after_meeting_upper_bound: number | null }
 type Awaiting = { agenda_url: string; board: string; board_slug: string; date: string; days_since_meeting: number }
 type Feed = {
@@ -149,6 +149,7 @@ export function ThisWeek() {
                   <span className="tnum text-xs w-24 shrink-0" style={{ color: 'var(--text-secondary)' }}>{longDate(m.date)}</span>
                   <span>{m.board}</span>
                   <a className="text-xs underline" style={{ color: 'var(--text-muted)' }} href={m.agenda_url} target="_blank" rel="noreferrer">agenda</a>
+                  {m.via_note && <span className="text-xs italic" style={{ color: 'var(--text-muted)' }}>{m.via_note}</span>}
                 </li>
               ))}
             </ul>

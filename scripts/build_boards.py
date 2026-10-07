@@ -365,6 +365,15 @@ def build(as_of=None):
         slug = r['path'].split('/')[0]
         names.setdefault(slug, r['board'])
         docs[slug][r['date']][r['kind']] = r
+    # NOTICES THE TOWN SENT SOME OTHER WAY -- the same register build_meeting_feed.py reads,
+    # so a meeting announced only by email (the School Committee, 7 October 2026) is on its
+    # board's page too, linked to our archived copy. A crawled agenda always wins.
+    email = os.path.join(ROOT, 'sources', 'data', 'meeting-notices-email.csv')
+    for r in (read_csv(email) if os.path.exists(email) else []):
+        if r['kind'] == 'agenda' and 'agenda' not in docs[r['board_slug']].get(r['date'], {}):
+            names.setdefault(r['board_slug'], r['board'])
+            docs[r['board_slug']][r['date']]['agenda'] = dict(
+                r, url='https://lunenburgbudgetproject.org/docs/meetings/' + r['path'])
     vids = collections.defaultdict(dict)                                     # slug -> date -> video row
     cls = {r['video_id']: r for r in read_csv(CLASS)}
     for r in read_csv(VIDEOS):

@@ -14,7 +14,7 @@ import { useReport } from './report'
  *  is ON the agenda and predicts nothing. A board with no meeting in the window says so,
  *  which is the fast answer the row exists to give. */
 
-type Upcoming = { agenda_url: string; board: string; board_slug: string; date: string; days_away: number; file_id: string; body_as_printed?: string | null }
+type Upcoming = { agenda_url: string; board: string; board_slug: string; date: string; days_away: number; file_id: string; body_as_printed?: string | null; via?: string; via_note?: string }
 type Feed = { as_of: string; upcoming: { horizon_days: number; meetings: Upcoming[] } }
 type PreviewItem = { agenda_line: string; why_it_matters: string; kind: string; vote_expected?: boolean; important?: boolean }
 export type Join = { zoom?: string | null; facebook?: string | null; youtube?: string | null; meeting_id?: string | null; passcode?: string | null; phone?: string | null; facebook_live?: string | null; facebook_live_url?: string | null }
@@ -232,6 +232,7 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
                 {p?.attend && p.attend !== 'not stated' && <Chip>{p.attend}</Chip>}
                 {!compact && <a className="text-[11.5px] underline ml-auto" style={{ color: 'var(--text-muted)' }}
                   href={m.agenda_url} target="_blank" rel="noreferrer">agenda</a>}
+                {!compact && m.via_note && <span className="text-[11px] italic" style={{ color: 'var(--text-muted)' }}>{m.via_note}</span>}
                 {compact && <span className="text-[11.5px] ml-auto" style={{ color: 'var(--series-cost)' }}>details &rarr;</span>}
               </div>
               {hook && (

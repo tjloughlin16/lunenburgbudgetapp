@@ -53,6 +53,18 @@ AWAITING_WINDOW_DAYS = 365
 UPCOMING_HORIZON_DAYS = 28
 
 
+EMAIL_NOTICES = os.path.join(DATA, 'meeting-notices-email.csv')
+SITE_DOCS = 'https://lunenburgbudgetproject.org/docs/'
+
+
+def rows_if(path):
+    """A register that may legitimately be absent."""
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding='utf-8') as fh:
+        return list(csv.DictReader(fh))
+
+
 def rows(path):
     if not os.path.exists(path):
         raise SystemExit('%s is absent. Run scripts/watch_meetings.py --seed first.'
@@ -83,6 +95,17 @@ def build():
     minutes = {(r['board_slug'], r['date'], r['file_id'])
                for r in state if r['kind'] == 'minutes'}
     agendas = [r for r in state if r['kind'] == 'agenda']
+    # NOTICES THE TOWN SENT SOME OTHER WAY. On 7 October 2026 the School Committee met with no
+    # agenda on the AgendaCenter -- the agenda came only in the Superintendent's email to
+    # families -- so a feed built from the crawl alone would have shown no meeting that night.
+    # sources/data/meeting-notices-email.csv holds such notices, each with its archived copy;
+    # they join the list labelled with how they arrived, and a crawled agenda for the same
+    # board and date wins. Being missing from the town's own site is itself a fact a reader
+    # should see.
+    crawled = {(r['board_slug'], r['date']) for r in agendas}
+    for e in rows_if(EMAIL_NOTICES):
+        if e['kind'] == 'agenda' and (e['board_slug'], e['date']) not in crawled:
+            agendas.append(dict(e, url=SITE_DOCS + 'meetings/' + e['path'], via='email'))
     paired = [r for r in agendas
               if (r['board_slug'], r['date'], r['file_id']) in minutes]
     if not paired:
@@ -106,7 +129,9 @@ def build():
         ({'board': r['board'], 'board_slug': r['board_slug'], 'date': r['date'],
           'days_away': days(r['date'], as_of), 'agenda_url': r['url'],
           'body_as_printed': printed.get((r['board_slug'], r['date']), ''),
-          'file_id': r['file_id']}
+          'file_id': r['file_id'],
+          **({'via': 'email', 'via_note': 'Agenda sent by email; not posted on the town\u2019s site'}
+             if r.get('via') == 'email' else {})}
          for r in agendas
          if r['date'] >= as_of and days(r['date'], as_of) <= UPCOMING_HORIZON_DAYS),
         key=lambda d: (d['date'], d['board']))
