@@ -51,6 +51,12 @@ LO, HI, STALE_MIN = 2.0, 10.0, 15
 
 
 OUT_DIRS = ('official-votes', 'recording-minutes')
+# A FILE IS NOT JUDGED UNPAID UNTIL ITS STEP HAS CERTAINLY LOGGED. A step that reads two
+# sets of minutes writes the first file, then the second, then ONE ledger row -- school-
+# committee 2025-08-06 wrote at 15:48:43 and logged at 15:49:06, and a governed run's audit
+# at 15:50 found the file with its row still inside the 2-minute grace: a false stop. No
+# single step runs 15 minutes; a file that old with no row really has none.
+FILE_SETTLE_S = 900
 
 
 def audit(since_utc, now=None):
@@ -116,7 +122,7 @@ def audit(since_utc, now=None):
     lo = t(since_utc + ':00Z' if len(since_utc) == 16 else since_utc)
     unpaid = [os.path.relpath(f, ROOT) for d in OUT_DIRS
               for f in glob.glob(os.path.join(ROOT, 'sources', 'data', d, '*', '*.json'))
-              if f not in used and lo.timestamp() <= os.path.getmtime(f) <= now.timestamp() - 120]
+              if f not in used and lo.timestamp() <= os.path.getmtime(f) <= now.timestamp() - FILE_SETTLE_S]
     return matched, bad, unpaid
 
 
