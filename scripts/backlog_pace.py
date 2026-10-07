@@ -131,7 +131,18 @@ def check():
         problems.append('nothing running')
     elif not waiting:
         if ago is None or ago > STALE_MIN:
-            problems.append('no costed call for %s min' % ('60+' if ago is None else int(ago)))
+            problems.append('STUCK: running, but no costed call for %s min' % ('60+' if ago is None else int(ago)))
+    # REPEATING: the same step paid for the same meeting twice inside the hour. Every step
+    # is skipped once done, so a second paid call means the save did not take and the run
+    # is going round -- the shape of the 6 October runaway, which spun on refused calls.
+    seen = {}
+    for r in rows:
+        k = (r['stream'], r['board'], r['date'])
+        seen[k] = seen.get(k, 0) + 1
+    again = [k for k, n in seen.items() if n > 1]
+    if again:
+        problems.append('REPEATING: %d meeting step(s) paid for twice this hour, e.g. %s %s %s'
+                        % ((len(again),) + again[0]))
         if usd > HI:
             problems.append('spend $%.2f/h is above $%g -- too fast' % (usd, HI))
     line = '%s  %s  $%.2f/h  %d mtg/h  %d/%d paid calls matched to output  last %s ago  chain %s%s' % (
@@ -155,14 +166,27 @@ def main():
         line, p = check()
         print(line)
         return 1 if p else 0
+    # INTO THE RUN'S OWN LOG TOO, as `[watch HH:MM] ...` -- TJ tails that log through
+    # `grep -E "^\[|wrote|FAILED|STOPPED|done|completed"`, and a line starting `[` shows up
+    # there. A problem is written every pass while it lasts (STUCK or REPEATING in the
+    # line); an `ok` once an hour, so silence there means the watcher is down, not well.
+    # The ALERT file and the notification fire once, on the first problem.
+    alerted, last_ok = False, 0
     while True:
         line, p = check()
         open(OUT, 'a').write(line + '\n')
-        if p:
+        run_log = os.path.join(ROOT, 'build', 'process-meeting-%s.log' % dt.date.today().isoformat())
+        if p or time.time() - last_ok >= 3600:
+            open(run_log, 'a').write('[watch %s] %s\n' % (line[:5], line[7:]))
+            if not p:
+                last_ok = time.time()
+        if p and not alerted:
             open(ALERT, 'w').write(line + '\n')
             subprocess.run(['osascript', '-e', 'display notification "%s" with title "Backlog run"'
-                            % line.replace('"', "'")])
-            return 1
+                            % line.replace('"', "'")[:200]])
+            alerted = True
+        if p and 'nothing running' in line:
+            return 1                     # the run is over; nothing left to watch
         time.sleep(600)
 
 
