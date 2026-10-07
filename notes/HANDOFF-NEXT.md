@@ -13,11 +13,9 @@ detail. Everything below the line "Done" is context, not work.
 2. **Make the site build incremental** -- `notes/HANDOFF-FASTER-SITE-BUILD.md`. A full build
    took 36.5 minutes on 7 October (781 routes, serial, one Chrome per page). Re-render only
    pages whose code or data files changed; render 3-4 at once; print per-page progress.
-3. **A way to delete from the archive** -- `notes/HANDOFF-TAKEDOWN.md`. Register + 410 Gone
-   + a delete that lifts and re-locks the bucket, refusing anything not in a verified
-   backup snapshot (`scripts/backup_snapshot.py --covers`). First case: 16 already-public
-   MUNIS documents that print staff MUNIS logins (grep `User: +[a-z]` in
-   `sources/town-ledgers` and `sources/budget-workbooks`). Take a FRESH snapshot first.
+3. **A way to delete from the archive** -- `notes/HANDOFF-TAKEDOWN.md`. Still wanted, but
+   it has NO current case: the MUNIS logins it was for look like staff email names, and TJ
+   decided on 7 October they are not an issue (see the top of that handoff). Not urgent.
 4. **The meeting backlog** -- TJ runs it, ideally outside a long session:
    `python3 scripts/process_meeting.py --next N --dry-run`, then without `--dry-run`,
    redirecting to `build/process-meeting-<date>.log`. Watch for free with
@@ -35,10 +33,10 @@ detail. Everything below the line "Done" is context, not work.
    person; logins in PDF headers), publish what is safe, THEN build (CLAUDE.md 13e). Re-run
    `scripts/build_munis_request_xlsx.py` and `build_munis_request_runs_pdf.py` -- they fill
    in what arrived from the data.
-7. **The 9 PDFs of the 6 October MUNIS delivery** stay `pending` in `redactions.csv`
-   (every page prints the report user's login). Publish as login-masked copies once the
-   takedown work gives us redaction-by-mask for PDFs, or leave them; the spreadsheets carry
-   every figure.
+7. **The 9 PDFs of the 6 October MUNIS delivery** are `pending` in `redactions.csv` only
+   because every page prints the report user's login. With the 7 October decision that
+   logins are not an issue, they can be screened and published as-is -- TJ to confirm,
+   since it is a publish (13e). The spreadsheets already carry every figure.
 8. **Next full site build** will also: relabel an email-notice agenda link (the board page
    says "the posted agenda" -- wrong for one that was emailed; the label is in the page
    code), and refresh the prerendered HTML behind today's data-only deploys.

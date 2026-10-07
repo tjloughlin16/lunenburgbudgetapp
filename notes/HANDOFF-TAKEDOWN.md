@@ -2,6 +2,32 @@
 
 Written 6 October 2026 for a fresh session. Nothing here is built yet.
 
+## DECIDED 7 October 2026: the logins are NOT a reason to delete anything
+
+TJ, told the logins look like staff email names: *"ok if its emails then fine, not an
+issue."* So the "first case" below is closed and nothing is to be taken down for it.
+
+What was established before that decision, so it is not re-derived:
+
+- The `User: +[a-z]` grep found ONE of three MUNIS header layouts. The others put the login
+  on its own line after the run timestamp, or just before `Program ID`. Across `sources/`
+  that is **25 documents and six logins** (OCR variants folded: `korochu` = `kbrochu`;
+  `mcnamara`, `cmchalara`, `cmcnamard` = `cmcnamara`): 17 first published by us (records
+  requests: `town-ledgers/`, the Finance Committee delivery) and 8 published by the town or
+  district themselves (district quarterly reports, select-board minutes 2011 and 2013).
+- Checked against the staff listings (`sources/data/staff-directory.csv`,
+  `school-staff-directory.csv`) and the archive: `kbarrett@lunenburgma.gov` and
+  `cmcnamara@lunenburgschools.net` are printed in the directories; `kbrochu@lunenburgonline.com`
+  in a 2015 budget; `eayala@lunenburgma.gov` (Ezequiel Ayala) in the change metadata of the
+  Finance Committee's `fy26-budget/preliminary-budget-presentation.pptx`. `adriggers` and
+  `pstewart` are in neither listing nor the rosters -- former staff, it appears -- and are
+  covered only by the district's own stated rule, *"All Emails are first initial, last name
+  @lunenburgschools.net"*, which is consistent with all six. That a MUNIS login is DEFINED as
+  the email name, rather than matching it for these six, is not established.
+
+The delete mechanism itself is still wanted (TJ, 6 October: *"we HAVE to have a way to delete
+things"*); it simply has no current case. The design below stands for when one arrives.
+
 ## Why
 
 TJ, 6 October 2026: *"we HAVE to have a way to delete things. it can't truly be permanent.
