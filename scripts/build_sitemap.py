@@ -136,6 +136,12 @@ def board_pages():
     # THE FINANCE TAB, for every board that owns an account (the registry decides which).
     # The School Committee's is a top-level route of its own and is already in `routes()`.
     out += ['/boards/%s/finance' % b['slug'] for b in boards if b.get('finance') and b['slug'] != 'school-committee']
+    # THE RECORDS TAB -- every board the meeting register resolves a slug for (board_records.py
+    # drops the ~50 rows with no resolved board_slug at all; see its own build_board_records.py).
+    rp = os.path.join(PUB, 'data', 'board-records.json')
+    if os.path.exists(rp):
+        recs = json.load(io.open(rp, encoding='utf-8')).get('boards', [])
+        out += ['/boards/%s/records' % b['board_slug'] for b in recs]
     return out
 
 

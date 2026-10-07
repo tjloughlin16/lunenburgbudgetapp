@@ -972,6 +972,13 @@ export function boardFinanceSlugFromPath(pathname: string): string | null {
   return m ? m[1] : null
 }
 
+/** The board a `/boards/<slug>/records` address names, or null. TJ, 7 October 2026:
+ *  "every board should have a link that shows its missing data." */
+export function boardRecordsSlugFromPath(pathname: string): string | null {
+  const m = /^\/boards\/([a-z0-9-]+)\/records\/?$/.exec(pathname.toLowerCase())
+  return m ? m[1] : null
+}
+
 /** The department a `/departments/<slug>` address names, or null for the index. */
 export function departmentSlugFromPath(pathname: string): string | null {
   const m = /^\/departments\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())

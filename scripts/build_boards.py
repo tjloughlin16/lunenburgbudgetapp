@@ -35,6 +35,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import sys
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from budget_cycles import fy_of as cycle_fy_of   # noqa: E402
+import meeting_records as MR   # noqa: E402
 INDEX = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
 TEXT = os.path.join(ROOT, 'sources', 'meetings', 'text')
 VIDEOS = os.path.join(ROOT, 'sources', 'data', 'youtube-video-boards.csv')
@@ -406,6 +407,12 @@ def build(as_of=None):
                          'scripts/build_meeting_register.py. Refusing to publish board pages '
                          'whose meeting lists would silently fall back to the documents we '
                          'happen to hold.')
+    # MISSING, VERSUS NOT YET EXPECTED -- read through `meeting_records`, the one module the
+    # backlog-depth chart and the per-board records pages also read, so the Recent-meetings
+    # table cannot disagree with either about what counts as a gap. `first_video` and the
+    # policy rows are each read once here rather than per meeting.
+    first_video = MR.first_video_dates(reg.values())
+    pol_rows = MR.policy_rows()
     feed = json.load(open(FEED, encoding='utf-8'))
     notices = json.load(open(NOTICES, encoding='utf-8'))
     previews = {(n['board_slug'], n['date']): n for n in notices.get('upcoming', [])}
@@ -452,6 +459,28 @@ def build(as_of=None):
             o = ours[slug].get(d)
             rg = reg.get((slug, d), {})
             pv = previews.get((slug, d))
+            # THE SAME RULES, FED FROM THE RICHER JOIN THIS PAGE ALREADY HAS. `meeting_records.
+            # status()` takes a row shaped like the register's; this page already resolved
+            # agenda/minutes/video/transcript from several sources (docs, vids, trans, nocap),
+            # so a synthetic row carries those resolved facts rather than re-reading the
+            # register alone, which can lag behind what this page has already joined.
+            _video_url = ('https://www.youtube.com/watch?v=' + v['video_id']) if v \
+                else ((rg.get('video_urls') or '').split(' ')[0] or None)
+            _has_transcript = ((slug, d) in trans) or rg.get('transcript') == '1'
+            _has_captions_disabled = ((slug, d) in nocap) or rg.get('captions_disabled') == '1'
+            _status_row = dict(
+                board_slug=slug, date=d,
+                agenda='1' if (a or rg.get('agenda') == '1') else '0',
+                minutes='1' if (mn or rg.get('minutes') == '1') else '0',
+                video='1' if (v or rg.get('video') == '1') else '0',
+                transcript='1' if _has_transcript else '0',
+                captions_disabled='1' if _has_captions_disabled else '0',
+                agenda_url=(a and a['url']) or rg.get('agenda_url') or None,
+                minutes_url=(mn and mn['url']) or rg.get('minutes_url') or None,
+                video_url=_video_url)
+            _st = MR.status(_status_row, first_video)
+            _our_minutes = MR.our_minutes_status(o is not None, _st['video']['status'],
+                                                 MR.in_policy(slug, d, pol_rows))
             meetings.append(dict(
                 date=d,
                 # What the agenda calls the body, where that is not the board it is filed
@@ -470,6 +499,12 @@ def build(as_of=None):
                 ours=o and dict(slug=o['slug'], headline=o.get('headline'), digest=o.get('digest'),
                                 votes=o['counts'].get('votes'), reconciled=o.get('has_official_minutes'),
                                 discrepancies=o.get('discrepancies')),
+                # STATUS, FOR THE TABLE TO COLOUR. video/minutes/transcript are each
+                # 'posted'/'missing'/'n/a' (meeting_records.status); our_minutes is a
+                # fourth, separate question -- 'posted'/'pending'/'needs-video'/'n/a' --
+                # because it is OUR queue, not the town's record.
+                record=dict(video=_st['video'], minutes=_st['minutes'], transcript=_st['transcript'],
+                            our_minutes=_our_minutes),
                 # The preview, where write_agenda_preview.py wrote one. It is only ever
                 # available BEFORE a meeting, so it travels on the row rather than in a
                 # separate `upcoming` list -- the row is the meeting, whenever it is read.

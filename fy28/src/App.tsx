@@ -47,6 +47,7 @@ import { About } from './pages/About'
 import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
 import { Boards } from './pages/Boards'
+import { BoardRecords } from './pages/BoardRecords'
 import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
 import { OrgCharts } from './pages/OrgCharts'
 import { Parks } from './pages/Parks'
@@ -88,7 +89,7 @@ import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
-import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle, setShareMeta, shareFromPage } from './lib/title'
 import { track } from './lib/track'
@@ -520,7 +521,8 @@ export default function App() {
       {tab === 'about' && <About />}
       {tab === 'search' && <Search />}
       {tab === 'recorded' && <WhatWasSaid />}
-      {tab === 'boards' && (boardFinanceSlugFromPath(window.location.pathname) ? <BoardFinance /> : <Boards />)}
+      {tab === 'boards' && (boardRecordsSlugFromPath(window.location.pathname) ? <BoardRecords />
+        : boardFinanceSlugFromPath(window.location.pathname) ? <BoardFinance /> : <Boards />)}
       {tab === 'schoolfinance' && <SchoolFinance />}
       {tab === 'departments' && <Departments />}
       {tab === 'accounts' && <Accounts />}

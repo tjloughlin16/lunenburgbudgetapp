@@ -53,14 +53,23 @@ a missing record is the town never having published the minutes, never having re
 meeting, or the recording having no transcript -- there is no command to run that produces
 one. Conflating the two would make a fully-worked year that the town simply never recorded
 look identical to a year nobody has touched, so they are counted, coloured and labelled
-separately everywhere this payload is read. Read straight from `meeting-register.csv`
-(rows with `part_of` set skipped -- that meeting's record lives under another board's row):
+separately everywhere this payload is read.
 
-  missing_minutes      minutes != '1'                        the town published none
-  missing_video        the board records, this date is on/   no recording exists for a
-                        after its first dated recording,      board that otherwise has one
-                        and video != '1'
-  missing_transcript   video == '1' and transcript != '1'     captions disabled, or not
+THE DEFINITION LIVES IN ONE PLACE: `scripts/meeting_records.py`. TJ, 7 October 2026,
+building the per-board "missing records" pages: the same test has to decide what counts
+as missing wherever it is asked, so `records()` reads `meeting-register.csv` once (rows
+with `part_of` set skipped -- that meeting's record lives under another board's row) and
+this module imports it rather than restating the test:
+
+  missing_minutes      minutes.status == 'missing'          the town published none
+  missing_video        video.status == 'missing'             no recording exists for a
+                                                               board that otherwise has one
+                                                               (never true before the
+                                                               board's own first recording,
+                                                               or for a board that has
+                                                               never recorded at all --
+                                                               those are 'n/a')
+  missing_transcript   transcript.status == 'missing'        captions disabled, or not
                                                                yet fetched (`captions_disabled`
                                                                carried as a sub-count)
 
@@ -80,13 +89,14 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 
+import meeting_records as MR
+
 OUT = os.path.join(ROOT, 'notes', 'generated', 'BACKLOG-DEPTH.md')
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'backlog-depth.json')
 STREAMS = ('official', 'official-v1', 'reconcile', 'minutes')
 MISSING_STREAMS = ('missing_minutes', 'missing_video', 'missing_transcript')
 MISSING_LABEL = {'missing_minutes': 'no town minutes', 'missing_video': 'no recording',
                  'missing_transcript': 'no transcript'}
-REGISTER = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
 # THE TWO OFFICIAL STREAMS ARE ONE READ IN TWO STATES (TJ, 6 October 2026): `official` is a
 # set of the town's minutes never read; `official-v1` was read for votes only and waits to
 # be re-read STRUCTURED (schema 2). Same command, same price, so they share a unit cost --
@@ -206,30 +216,20 @@ def by_board_fy(jobs):
 
 def missing_records():
     """Every (board, date) meeting still missing a record the town or our own pipeline is
-    expected to produce -- not work, an absence. Read straight off `meeting-register.csv`,
+    expected to produce -- not work, an absence. Read through `meeting_records.records()`,
     never off `jobs()`: a job is something a command can still do, and there is no command
-    that produces a transcript the town never recorded."""
-    rows = [r for r in csv.DictReader(open(REGISTER, encoding='utf-8')) if not r.get('part_of')]
-    first_video = {}
-    for r in rows:
-        d = r.get('date', '')
-        if r.get('video') == '1' and len(d) >= 7:
-            b = r['board_slug']
-            if b not in first_video or d < first_video[b]:
-                first_video[b] = d
+    that produces a transcript the town never recorded. `meeting_records` is the ONE
+    definition -- the per-board records pages (`build_board_records.py`) read the same
+    function, so the chart and the pages cannot disagree about what counts as missing."""
     out = []
-    for r in rows:
-        d = r.get('date', '')
-        if len(d) < 7:
-            continue
-        b = r['board_slug']
-        mm = r.get('minutes') != '1'
-        mv = b in first_video and d >= first_video[b] and r.get('video') != '1'
-        mt = r.get('video') == '1' and r.get('transcript') != '1'
+    for m in MR.records():
+        mm = m['minutes']['status'] == 'missing'
+        mv = m['video']['status'] == 'missing'
+        mt = m['transcript']['status'] == 'missing'
         if mm or mv or mt:
-            out.append(dict(board=b, date=d, missing_minutes=mm, missing_video=mv,
+            out.append(dict(board=m['board_slug'], date=m['date'], missing_minutes=mm, missing_video=mv,
                              missing_transcript=mt,
-                             captions_disabled=mt and r.get('captions_disabled') == '1'))
+                             captions_disabled=mt and m['transcript']['captions_disabled']))
     return out
 
 
@@ -268,10 +268,7 @@ def _with_missing(rows, counts_by_fy, zero):
     return [idx[fy] for fy in sorted(idx)]
 
 
-def fiscal_year(ym):
-    """Massachusetts FY: July starts the next one. FY2023 is Jul 2022 - Jun 2023."""
-    y, m = int(ym[:4]), int(ym[5:7])
-    return y + 1 if m >= 7 else y
+fiscal_year = MR.fiscal_year
 
 
 def payload(jobs, by_year, by_month, by_board, costs):

@@ -32,6 +32,16 @@ type Meeting = {
   minutes_url?: string | null; minutes_doc?: string | null
   video_url?: string | null; transcript: boolean; captions_disabled: boolean
   ours?: { slug: string; headline?: string | null; digest?: string | null; votes?: number; reconciled?: boolean; discrepancies?: number } | null
+  // STATUS, for the table to colour -- meeting_records.status()/our_minutes_status(),
+  // the same rules the backlog-depth chart and the board records pages read. 'n/a' is
+  // never a stand-in for 'missing': it means the record was never going to exist (the
+  // board doesn't record, or this is before its first recording).
+  record?: {
+    video: { status: 'posted' | 'missing' | 'n/a'; url?: string | null; reason?: string | null }
+    minutes: { status: 'posted' | 'missing'; url?: string | null }
+    transcript: { status: 'posted' | 'missing' | 'n/a'; captions_disabled: boolean; reason?: string | null }
+    our_minutes: { state: 'posted' | 'pending' | 'needs-video' | 'n/a'; reason?: string | null }
+  } | null
   // Written before the meeting by write_agenda_preview.py, so only ever present on one that
   // has not happened yet -- carried on the row rather than in a separate list.
   body_as_printed?: string | null
@@ -72,6 +82,17 @@ type Payload = { about: string; as_of: string; boards: Board[]; the_three: strin
 const n0 = (n: number) => n.toLocaleString('en-US')
 const pct = (x: number) => `${Math.round(x * 100)}%`
 const hours = (s: number) => `${(s / 3600).toFixed(1)} h`
+
+/** ONE CELL, for video or minutes: a link when posted, bold MISSING in the one colour
+ *  this table already uses for "something went wrong" (the failed-vote/conflict red,
+ *  `--status-critical`), or a muted "n/a" with a short tooltip saying why it will never
+ *  exist. Never a bare dash -- a dash does not say whether the record is overdue or was
+ *  never going to be there. */
+function RecordCell({ status, url, label, reason }: { status: 'posted' | 'missing' | 'n/a'; url?: string | null; label: string; reason?: string | null }) {
+  if (status === 'posted') return url ? <a className="underline" href={url}>{label}</a> : <span>{label}</span>
+  if (status === 'missing') return <strong style={{ color: 'var(--status-critical)' }}>MISSING</strong>
+  return <span title={reason || undefined} style={{ color: 'var(--text-muted)' }}>n/a</span>
+}
 const FY = (fy: number) => 'FY' + String(fy).slice(2)
 const dateText = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
 const mmdd = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -185,6 +206,7 @@ function Sidebar({ b, open, setOpen }: { b: Board; open: boolean; setOpen: (v: b
     ...(p?.facebook && p.facebook_scope === 'board' ? [[p.facebook, 'Facebook ↗'] as [string, string]] : []),
     ...(b.counts.our_minutes ? [[`${b.urls.what_was_said}#${b.slug}`, 'Its meeting minutes'] as [string, string]] : []),
     ...(b.finance ? [[`/boards/${b.slug}/finance`, `Finance — ${b.finance.accounts} account${b.finance.accounts === 1 ? '' : 's'}`] as [string, string]] : []),
+    [`/boards/${b.slug}/records`, 'Missing records →'] as [string, string],
     ...(p ? [[p.charter_url, 'Charter & bylaws ↗'] as [string, string]] : []),
   ]
   const elsewhere: [string, string][] = [
@@ -487,10 +509,18 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
           <tbody>{past.slice(0, 15).map(r => (
             <tr key={r.date} style={{ borderTop: '1px solid var(--grid)' }}>
               <td className="py-2 pr-3 tnum font-semibold whitespace-nowrap align-top">{mmdd(r.date)} {r.date.slice(0, 4)}</td>
-              <td className="py-2 pr-3 align-top">{r.ours ? <><a className="font-semibold" href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{r.ours.headline || 'our minutes'}</a><span className="text-xs" style={{ color: 'var(--text-muted)' }}> · {r.ours.votes ?? 0} votes{r.ours.reconciled ? (r.ours.discrepancies ? ` · ${r.ours.discrepancies} difference${r.ours.discrepancies === 1 ? '' : 's'} from the official minutes` : ' · agrees with the official minutes') : ''}</span></> : r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}>transcript held; minutes not yet written</span> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
-              <td className="py-2 pr-3 align-top">{r.video_url ? <a className="underline" href={r.video_url}>video</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>}{r.video_url && r.captions_disabled ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no captions</span> : r.video_url && !r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no transcript yet</span> : null}</td>
+              <td className="py-2 pr-3 align-top">
+                {r.ours ? <><a className="font-semibold" href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{r.ours.headline || 'our minutes'}</a><span className="text-xs" style={{ color: 'var(--text-muted)' }}> · {r.ours.votes ?? 0} votes{r.ours.reconciled ? (r.ours.discrepancies ? ` · ${r.ours.discrepancies} difference${r.ours.discrepancies === 1 ? '' : 's'} from the official minutes` : ' · agrees with the official minutes') : ''}</span></>
+                  : r.record?.our_minutes.state === 'pending' ? <span title="in our queue" style={{ color: 'var(--text-muted)' }}>pending</span>
+                  : r.record?.our_minutes.state === 'n/a' ? <span title={r.record.our_minutes.reason || undefined} style={{ color: 'var(--text-muted)' }}>n/a</span>
+                  : <span title="written from the recording" style={{ color: 'var(--text-muted)' }}>needs video</span>}
+              </td>
+              <td className="py-2 pr-3 align-top">
+                {r.record ? <RecordCell status={r.record.video.status} url={r.record.video.url} label="video" reason={r.record.video.reason} /> : (r.video_url ? <a className="underline" href={r.video_url}>video</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>)}
+                {r.record?.video.status === 'posted' && (r.captions_disabled ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no captions</span> : !r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no transcript yet</span> : null)}
+              </td>
               <td className="py-2 pr-3 align-top">{r.agenda_doc ? <a className="underline" href={r.agenda_doc}>agenda</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
-              <td className="py-2 align-top">{r.minutes_doc ? <a className="underline" href={r.minutes_doc}>minutes</a> : <span style={{ color: 'var(--text-muted)' }}>not yet</span>}</td>
+              <td className="py-2 align-top">{r.record ? <RecordCell status={r.record.minutes.status} url={r.minutes_doc} label="minutes" /> : (r.minutes_doc ? <a className="underline" href={r.minutes_doc}>minutes</a> : <span style={{ color: 'var(--text-muted)' }}>not yet</span>)}</td>
             </tr>))}</tbody>
         </table>
       </div>

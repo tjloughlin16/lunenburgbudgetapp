@@ -178,6 +178,15 @@ async function readRoutes() {
     finance = all.filter(b => b.finance && b.slug !== 'school-committee').map(b => `/boards/${b.slug}/finance`).sort()
     console.log(`  ${finance.length} board finance pages at /boards/<slug>/finance`)
   }
+  // THE RECORDS TAB, for every board the meeting register resolves a slug for --
+  // build_board_records.py drops the rows with no resolved board_slug at all.
+  const recordsFile = join(APP, 'public', 'data', 'board-records.json')
+  let records = []
+  if (existsSync(recordsFile)) {
+    const recs = JSON.parse(await readFile(recordsFile, 'utf8')).boards
+    records = recs.map(b => `/boards/${b.board_slug}/records`).sort()
+    console.log(`  ${records.length} board records pages at /boards/<slug>/records`)
+  }
   // EVERY MEETING WITH OUR MINUTES. Client-rendered until 17 September 2026, so a link
   // shared on Facebook carried the site's description rather than the meeting's headline.
   const minutesFile = join(APP, 'public', 'data', 'recording-minutes.json')
@@ -193,7 +202,7 @@ async function readRoutes() {
     departments = f.departments.filter(x => f.owners[x.slug]).map(x => `/departments/${x.slug}`).sort()
     console.log(`  ${departments.length} departments at /departments/<slug>`)
   }
-  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...finance, ...departments, ...meetings]
+  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...finance, ...records, ...departments, ...meetings]
 }
 
 /** Serve dist, falling back to the PRISTINE shell.

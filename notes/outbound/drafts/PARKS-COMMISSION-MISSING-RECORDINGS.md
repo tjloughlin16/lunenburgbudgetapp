@@ -22,4 +22,4 @@ As of 7 October 2026. Each meeting below had an agenda posted; only meetings mis
 | [Mon 27 Oct 2025](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10272025-7480) | **MISSING** | posted |
 | [Wed 17 Dec 2025](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12172025-7570) | posted | **MISSING** |
 
-Checked against the town's AgendaCenter (agendas and minutes, 7 October 2026) and every upload on the Lunenburg Access YouTube channel (as of 5 October 2026), matched by board and date and searched again by title.
+Checked against the town's AgendaCenter (agendas and minutes, 7 October 2026) and every upload on the Lunenburg Access YouTube channel (as of 7 October 2026), matched by board and date and searched again by title.
