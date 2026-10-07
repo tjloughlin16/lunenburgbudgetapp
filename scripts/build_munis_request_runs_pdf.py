@@ -603,19 +603,41 @@ def vendor_help(funds):
         ('Export the Account Detail report to Excel. If the export screen lets you pick columns, '
          'untick VDR NAME/ITEM DESC there.',
          [c('L', 6, 'Check/ or uncheck anything you want to see or not see within this report')]),
-        ('Keep the vendor number. On a payment line the reference starts with it, then the invoice or PO '
-         'number, then the name. In a new column headed VENDOR NO, =LEFT(cell, FIND(" ", cell) - 1) keeps '
-         'just the number.',
-         [h('tb', 'Reference'), c('F', 59, 'may contain the vendor number')]),
+        ('Keep the vendor number. It is on invoice lines (source API): the reference is the 6-digit vendor '
+         'number, the invoice number, then the name. Example, from the Town\u2019s 6 October trial balance: '
+         '016364 190817 <name> and 016364 194356 <name> \u2014 one vendor, two invoices. In a new column '
+         'VENDOR NO: =IF(AND(ISNUMBER(--LEFT(A2,6)),MID(A2,7,1)=" "),LEFT(A2,6),"") \u2014 it stays blank on '
+         'lines with no vendor, such as payment batches (17 26).',
+         [h('tb', '016364 190817'), h('tb', '016364 194356'), c('F', 59, 'may contain the vendor number')]),
         ('For any fund whose payees include private individuals: delete the VDR NAME/ITEM DESC column.',
          [h('ad', 'VDR NAME/ITEM DESC')]),
-        ('In REFERENCE, REF1, REF3 and COMMENTS, clear any person\u2019s name; the VENDOR NO column still '
-         'says who was paid.',
+        ('In REFERENCE, REF1, REF3 and COMMENTS, clear any person\u2019s name; VENDOR NO still says who was '
+         'invoiced.',
          [h('ad', 'REFERENCE'), h('ad', 'REF1'), h('ad', 'REF3'), h('ad', 'COMMENTS')]),
         ('For those funds: delete CHECK NO, VOUCHER and WARRANT.',
          [h('ad', 'CHECK NO'), h('ad', 'VOUCHER'), h('ad', 'WARRANT')]),
         ('Save and send.', []),
     ]
+
+
+def vendor_checked():
+    """One line under the steps: what they were checked against, counted from the Town\u2019s own
+    exports rather than typed (TJ, 7 October 2026: \u201cput something about the data we have and
+    what we got\u201d)."""
+    tb = os.path.join(ROOT, 'sources', 'data', 'munis-trial-balance-journal.csv')
+    ap = [r for r in csv.DictReader(open(tb, encoding='utf-8')) if r['src'].startswith('AP')]
+    inv = [r for r in ap if re.match(r'^\d{6} \d', r['reference'])]
+    vendors = {r['reference'][:6] for r in inv}
+    if not inv or any(not r['src'] == 'API' for r in inv):
+        PROBLEMS.append('vendor_checked: the trial balance no longer shows vendor numbers on invoice lines only')
+    return (f'Checked against what the Town has sent us. In the 6 October trial balance for fund 1300, '
+            f'{len(inv)} of {len(ap)} accounts-payable lines carry a vendor number \u2014 every one an '
+            f'invoice line, {len(vendors)} vendors, each number always the same name. The other '
+            f'{len(ap) - len(inv)} carry none ({sum(1 for r in ap if r["src"] == "APP")} payment batches, '
+            f'{sum(1 for r in ap if r["src"] == "API" and r not in inv)} invoice lines with a blank reference), '
+            f'and the formula above leaves those blank. The June Account Detail export '
+            f'for fund 1301 shows payments only as batch lines, so whether a vendor number appears depends '
+            f'on how the report is run.')
 
 
 # --------------------------------------------------------------------------- render
@@ -745,7 +767,7 @@ def render(runs, account, excel, selection, combine, vendor, gaps_used, hashes):
 <h2>Notes that apply to every row</h2>
 {boxes}
 <h2>Removing payee names from the Account Detail export: steps</h2>
-<div class="vendor">{vendor_box}</div>
+<div class="vendor">{vendor_box}<p class="foot" style="margin-top:3pt">{esc(vendor_checked())}</p></div>
 <h2>Where the option names come from</h2>
 <p class="foot">Lunenburg publishes no MUNIS guide. Option names are given exactly as these guides print them — chiefly the CNMI’s guide (C) and Tyler’s 2020.2 procedures (F) — and Lunenburg’s version may label some differently. Where a guide only shows an option in a screenshot it is marked (screenshot). Anything not named in a row: leave it as the Town usually runs the report. If a box here is missing from the Town’s screen, or a run cannot be made as written, saying so is as useful as the data.</p>
 {key}
