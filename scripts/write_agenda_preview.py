@@ -64,7 +64,7 @@ SCHEMA = {
             'properties': {
                 'agenda_line': {'type': 'string', 'description': 'the item EXACTLY as printed on the agenda, verbatim, one line'},
                 'why_it_matters': {'type': 'string', 'description': 'one sentence, plain English, no figures the agenda does not print, no prediction of the outcome'},
-                'kind': {'type': 'string', 'enum': ['vote', 'hearing', 'budget', 'contract', 'staffing', 'facilities', 'fees', 'policy', 'grant', 'transfer', 'presentation', 'other'],
+                'kind': {'type': 'string', 'enum': ['vote', 'hearing', 'budget', 'contract', 'staffing', 'facilities', 'fees', 'policy', 'grant', 'transfer', 'presentation', 'executive session', 'other'],
                          'description': "'budget' ONLY for the town's or the schools' operating budget being built for a coming fiscal year: a budget presentation or hearing, a deficit or shortfall, proposed cuts, an override, the levy, state aid or Chapter 70, free cash for the operating budget, a Tri-Board budget meeting. NOT a warrant article on zoning or a bylaw, not a department's routine spending, not a transfer within the current year (that is 'transfer')."},
                 'vote_expected': {'type': 'boolean', 'description': 'true only if the agenda says a vote is scheduled (e.g. "VOTE", "to approve", "action item")'},
                 'important': {'type': 'boolean', 'description': 'true if this item touches the schools, the budget, taxes or fees, a contract or hiring decision, a building, or a service residents use -- something a resident would want to know was being decided. false for routine or administrative items.'},
@@ -77,12 +77,14 @@ SCHEMA = {
 SYSTEM = """You read a public meeting agenda and pick out what a resident who cannot attend would want notice of.
 
 Rules:
-1. agenda_line is VERBATIM from the agenda text you are given. Do not paraphrase it, do not merge two lines. It will be checked against the file.
-2. Pick items touching money, votes, public hearings, contracts, hiring or cuts, buildings, fees, policy changes, grants, transfers, and anything marked for a vote. Skip the pledge, approval of prior minutes, adjournment, and standing reports with nothing specific under them.
+1. agenda_line is VERBATIM from the agenda text you are given. Do not paraphrase it, do not merge two lines. It will be checked against the file. If an item runs onto more than one line, copy ONLY its first line -- agendas are often printed in two columns, and a second line in the text may belong to the other column. Put the rest of what the item says in why_it_matters.
+2. Pick items touching money, votes, public hearings, contracts, hiring or cuts, buildings, fees, policy changes, grants, transfers, executive sessions, and anything marked for a vote. Skip the pledge, approval of prior minutes, adjournment, and standing reports with nothing specific under them.
 3. why_it_matters is one plain sentence. Never predict what will be decided; an agenda lists what may be discussed.
 4. Do not invent figures. If the agenda prints an amount you may repeat it inside agenda_line only.
 5. important is true for an item that touches the schools, the budget, taxes or fees, a contract or hiring decision, a building, or a service residents use. Introductions, acknowledgements, correspondence, appointments to committees and housekeeping are not important.
 6. hook is the headline a resident scans: the two or three items that matter, as a phrase, no date and no board name. one_line is for a notice: when, which board, and those items, under 200 characters.
+7. An EXECUTIVE SESSION is always an item, kind "executive session", important true: the public cannot watch it, so notice of it matters. agenda_line is the first line of the item as printed (it usually starts with the item number and "Executive Session"); why_it_matters states the purpose the agenda gives for closing the session, in plain words, and says the public cannot attend that part -- nothing beyond what the agenda prints.
+8. ORDER the items by how much a resident needs notice of them (TJ, 7 October 2026): first any executive session; then any interview, appointment or hiring of a department head or senior official; then contracts, pay and salary schedules; then votes on money; then everything else in agenda order. The hook names the FIRST THREE items in that order, and only those; one_line leads with the same three.
 
 Return only the JSON."""
 
